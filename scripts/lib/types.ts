@@ -3,26 +3,91 @@
  */
 
 // =============================================================================
+// SHARED NESTED TYPES
+// =============================================================================
+
+export interface Version {
+  name: string;
+  releaseDate?: string;
+  preRelease?: boolean;
+  unofficial?: boolean;
+  url?: string;
+  description?: string;
+  prices?: Price[];
+  links?: Link[];
+}
+
+export interface Price {
+  amount: number;
+  currency: string;
+}
+
+export interface Link {
+  type: string;
+  title?: string;
+  url?: string;
+  videoId?: string;
+  provider?: string;
+  description?: string;
+}
+
+export interface IO {
+  name: string;
+  signalFlow: string;
+  category: string;
+  type: string;
+  connection: string;
+  maxConnections?: number;
+  position?: string;
+  columnPosition?: number;
+  rowPosition?: number;
+  description?: string;
+}
+
+export interface Revision {
+  name: string;
+  releaseDate?: string;
+  url?: string;
+  description?: string;
+  io?: IO[];
+  versions?: Version[];
+  prices?: Price[];
+  links?: Link[];
+}
+
+// =============================================================================
 // DATA TYPES
 // =============================================================================
 
 export interface Manufacturer {
   slug: string;
   name: string;
+  companyName?: string;
+  parentCompany?: string;
   website?: string;
+  description?: string;
+  searchTerms?: string[];
 }
 
 export interface Software {
   slug: string;
   name: string;
   manufacturer: string;
-  type: string;
   categories: string[];
   formats?: string[];
   platforms?: string[];
   identifiers?: Record<string, string>;
   website?: string;
+  releaseDate?: string;
+  primaryCategory?: string;
+  secondaryCategory?: string;
+  searchTerms?: string[];
   description?: string;
+  details?: string;
+  specs?: string;
+  versions?: Version[];
+  prices?: Price[];
+  links?: Link[];
 }
 
 export interface Daw {
@@ -32,14 +97,28 @@ export interface Daw {
   bundleIdentifier?: string;
   platforms?: string[];
   website?: string;
+  description?: string;
+  searchTerms?: string[];
 }
 
 export interface Hardware {
   slug: string;
   name: string;
   manufacturer: string;
-  type?: string;
+  categories?: string[];
   website?: string;
+  releaseDate?: string;
+  primaryCategory?: string;
+  secondaryCategory?: string;
+  searchTerms?: string[];
+  description?: string;
+  details?: string;
+  specs?: string;
+  io?: IO[];
+  versions?: Version[];
+  revisions?: Revision[];
+  prices?: Price[];
+  links?: Link[];
 }
 
 // =============================================================================
@@ -56,10 +135,6 @@ export interface FormatsSchema {
 
 export interface PlatformsSchema {
   platforms: string[];
-}
-
-export interface TypesSchema {
-  types: string[];
 }
 
 // =============================================================================

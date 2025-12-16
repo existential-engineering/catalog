@@ -14,7 +14,6 @@ import type {
   CategoriesSchema,
   FormatsSchema,
   PlatformsSchema,
-  TypesSchema,
   ValidationError,
   ValidationResult,
 } from "./lib/types.js";
@@ -40,17 +39,96 @@ const formatsSchema = loadYamlFile<FormatsSchema>(
 const platformsSchema = loadYamlFile<PlatformsSchema>(
   path.join(SCHEMA_DIR, "platforms.yaml")
 );
-const typesSchema = loadYamlFile<TypesSchema>(
-  path.join(SCHEMA_DIR, "software-types.yaml")
-);
 
 const VALID_CATEGORIES = new Set(categoriesSchema.categories);
 const VALID_FORMATS = new Set(formatsSchema.formats);
 const VALID_PLATFORMS = new Set(platformsSchema.platforms);
-const VALID_TYPES = new Set(typesSchema.types);
 
 // =============================================================================
-// ZOD SCHEMAS WITH HELPFUL ERRORS
+// SHARED ZOD SCHEMAS
+// =============================================================================
+
+const PriceSchema = z.object({
+  amount: z.number(),
+  currency: z.string(),
+});
+
+const LinkSchema = z.object({
+  type: z.string(),
+  title: z.string().optional(),
+  url: z.string().url().optional(),
+  videoId: z.string().optional(),
+  provider: z.string().optional(),
+  description: z.string().optional(),
+});
+
+const VersionSchema = z.object({
+  name: z.string(),
+  releaseDate: z.string().optional(),
+  preRelease: z.boolean().optional(),
+  unofficial: z.boolean().optional(),
+  url: z.string().url().optional(),
+  description: z.string().optional(),
+  prices: z.array(PriceSchema).optional(),
+  links: z.array(LinkSchema).optional(),
+});
+
+const IOSchema = z.object({
+  name: z.string(),
+  signalFlow: z.string(),
+  category: z.string(),
+  type: z.string(),
+  connection: z.string(),
+  maxConnections: z.number().optional(),
+  position: z.string().optional(),
+  columnPosition: z.number().optional(),
+  rowPosition: z.number().optional(),
+  description: z.string().optional(),
+});
+
+const RevisionSchema = z.object({
+  name: z.string(),
+  releaseDate: z.string().optional(),
+  url: z.string().url().optional(),
+  description: z.string().optional(),
+  io: z.array(IOSchema).optional(),
+  versions: z.array(VersionSchema).optional(),
+  prices: z.array(PriceSchema).optional(),
+  links: z.array(LinkSchema).optional(),
+});
+
+// Helper for category validation with suggestions
+const createCategoryValidator = () =>
+  z.string().check((ctx) => {
+    if (!VALID_CATEGORIES.has(ctx.value)) {
+      const suggestion = findClosestMatch(ctx.value, VALID_CATEGORIES);
+      let message = `Invalid category '${ctx.value}'.`;
+      if (suggestion) {
+        message += ` Did you mean '${suggestion}'?`;
+      }
+      ctx.issues.push({ code: "custom", message, input: ctx.value });
+    }
+  });
+
+// Helper for platform validation
+const createPlatformArrayValidator = () =>
+  z
+    .array(z.string())
+    .optional()
+    .check((ctx) => {
+      if (!ctx.value) return;
+      const invalid = ctx.value.filter((p) => !VALID_PLATFORMS.has(p));
+      if (invalid.length > 0) {
+        for (const plat of invalid) {
+          let message = `Invalid platform '${plat}'.`;
+          message += ` Valid platforms: ${formatValidOptions(VALID_PLATFORMS)}`;
+          ctx.issues.push({ code: "custom", message, input: plat });
+        }
+      }
+    });
+
+// =============================================================================
+// COLLECTION ZOD SCHEMAS
 // =============================================================================
 
 const ManufacturerSchema = z.object({
@@ -58,7 +136,11 @@ const ManufacturerSchema = z.object({
     .string()
     .regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens"),
   name: z.string().min(1, "Name is required"),
+  companyName: z.string().optional(),
+  parentCompany: z.string().optional(),
   website: z.string().url().optional(),
+  description: z.string().optional(),
+  searchTerms: z.array(z.string()).optional(),
 });
 
 const SoftwareSchema = z.object({
@@ -67,17 +149,6 @@ const SoftwareSchema = z.object({
     .regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens"),
   name: z.string().min(1, "Name is required"),
   manufacturer: z.string().min(1, "Manufacturer reference is required"),
-  type: z.string().check((ctx) => {
-    if (!VALID_TYPES.has(ctx.value)) {
-      const suggestion = findClosestMatch(ctx.value, VALID_TYPES);
-      let message = `Invalid type '${ctx.value}'.`;
-      if (suggestion) {
-        message += ` Did you mean '${suggestion}'?`;
-      }
-      message += ` Valid types: ${formatValidOptions(VALID_TYPES)}`;
-      ctx.issues.push({ code: "custom", message, input: ctx.value });
-    }
-  }),
   categories: z
     .array(z.string())
     .min(1, "At least one category is required")
@@ -112,23 +183,19 @@ const SoftwareSchema = z.object({
         }
       }
     }),
-  platforms: z
-    .array(z.string())
-    .optional()
-    .check((ctx) => {
-      if (!ctx.value) return;
-      const invalid = ctx.value.filter((p) => !VALID_PLATFORMS.has(p));
-      if (invalid.length > 0) {
-        for (const plat of invalid) {
-          let message = `Invalid platform '${plat}'.`;
-          message += ` Valid platforms: ${formatValidOptions(VALID_PLATFORMS)}`;
-          ctx.issues.push({ code: "custom", message, input: plat });
-        }
-      }
-    }),
+  platforms: createPlatformArrayValidator(),
   identifiers: z.record(z.string(), z.string()).optional(),
   website: z.string().url().optional(),
+  releaseDate: z.string().optional(),
+  primaryCategory: createCategoryValidator().optional(),
+  secondaryCategory: createCategoryValidator().optional(),
+  searchTerms: z.array(z.string()).optional(),
   description: z.string().optional(),
+  details: z.string().optional(),
+  specs: z.string().optional(),
+  versions: z.array(VersionSchema).optional(),
+  prices: z.array(PriceSchema).optional(),
+  links: z.array(LinkSchema).optional(),
 });
 
 const DawSchema = z.object({
@@ -138,21 +205,10 @@ const DawSchema = z.object({
   name: z.string().min(1, "Name is required"),
   manufacturer: z.string().min(1, "Manufacturer reference is required"),
   bundleIdentifier: z.string().optional(),
-  platforms: z
-    .array(z.string())
-    .optional()
-    .check((ctx) => {
-      if (!ctx.value) return;
-      const invalid = ctx.value.filter((p) => !VALID_PLATFORMS.has(p));
-      if (invalid.length > 0) {
-        for (const plat of invalid) {
-          let message = `Invalid platform '${plat}'.`;
-          message += ` Valid platforms: ${formatValidOptions(VALID_PLATFORMS)}`;
-          ctx.issues.push({ code: "custom", message, input: plat });
-        }
-      }
-    }),
+  platforms: createPlatformArrayValidator(),
   website: z.string().url().optional(),
+  description: z.string().optional(),
+  searchTerms: z.array(z.string()).optional(),
 });
 
 const HardwareSchema = z.object({
@@ -161,8 +217,36 @@ const HardwareSchema = z.object({
     .regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens"),
   name: z.string().min(1, "Name is required"),
   manufacturer: z.string().min(1, "Manufacturer reference is required"),
-  type: z.string().optional(),
+  categories: z
+    .array(z.string())
+    .optional()
+    .check((ctx) => {
+      if (!ctx.value) return;
+      const invalid = ctx.value.filter((c) => !VALID_CATEGORIES.has(c));
+      if (invalid.length > 0) {
+        for (const cat of invalid) {
+          const suggestion = findClosestMatch(cat, VALID_CATEGORIES);
+          let message = `Invalid category '${cat}'.`;
+          if (suggestion) {
+            message += ` Did you mean '${suggestion}'?`;
+          }
+          ctx.issues.push({ code: "custom", message, input: cat });
+        }
+      }
+    }),
   website: z.string().url().optional(),
+  releaseDate: z.string().optional(),
+  primaryCategory: createCategoryValidator().optional(),
+  secondaryCategory: createCategoryValidator().optional(),
+  searchTerms: z.array(z.string()).optional(),
+  description: z.string().optional(),
+  details: z.string().optional(),
+  specs: z.string().optional(),
+  io: z.array(IOSchema).optional(),
+  versions: z.array(VersionSchema).optional(),
+  revisions: z.array(RevisionSchema).optional(),
+  prices: z.array(PriceSchema).optional(),
+  links: z.array(LinkSchema).optional(),
 });
 
 // =============================================================================

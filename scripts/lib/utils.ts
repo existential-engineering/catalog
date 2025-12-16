@@ -118,3 +118,4 @@ export function escapeSQL(value: string | null | undefined): string {
   return `'${value.replace(/'/g, "''")}'`;
 }
 
+
