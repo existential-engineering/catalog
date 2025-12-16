@@ -58,28 +58,48 @@ const SoftwareSchema = z.object({
     .regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens"),
   name: z.string().min(1, "Name is required"),
   manufacturer: z.string().min(1, "Manufacturer reference is required"),
-  type: z.string().refine((t) => VALID_TYPES.has(t), {
-    message: `Type must be one of: ${[...VALID_TYPES].join(", ")}`,
+  type: z.string().check((ctx) => {
+    if (!VALID_TYPES.has(ctx.value)) {
+      ctx.issues.push({
+        code: "custom",
+        message: `Type must be one of: ${[...VALID_TYPES].join(", ")}`,
+      });
+    }
   }),
   categories: z
     .array(z.string())
     .min(1, "At least one category is required")
-    .refine((cats) => cats.every((c) => VALID_CATEGORIES.has(c)), {
-      message: `Categories must be from the canonical list`,
+    .check((ctx) => {
+      if (!ctx.value.every((c) => VALID_CATEGORIES.has(c))) {
+        ctx.issues.push({
+          code: "custom",
+          message: `Categories must be from the canonical list`,
+        });
+      }
     }),
   formats: z
     .array(z.string())
     .optional()
-    .refine((fmts) => !fmts || fmts.every((f) => VALID_FORMATS.has(f)), {
-      message: `Formats must be from the canonical list`,
+    .check((ctx) => {
+      if (ctx.value && !ctx.value.every((f) => VALID_FORMATS.has(f))) {
+        ctx.issues.push({
+          code: "custom",
+          message: `Formats must be from the canonical list`,
+        });
+      }
     }),
   platforms: z
     .array(z.string())
     .optional()
-    .refine((plats) => !plats || plats.every((p) => VALID_PLATFORMS.has(p)), {
-      message: `Platforms must be from the canonical list`,
+    .check((ctx) => {
+      if (ctx.value && !ctx.value.every((p) => VALID_PLATFORMS.has(p))) {
+        ctx.issues.push({
+          code: "custom",
+          message: `Platforms must be from the canonical list`,
+        });
+      }
     }),
-  identifiers: z.record(z.string()).optional(),
+  identifiers: z.record(z.string(), z.string()).optional(),
   website: z.string().url().optional(),
   description: z.string().optional(),
 });
@@ -94,8 +114,13 @@ const DawSchema = z.object({
   platforms: z
     .array(z.string())
     .optional()
-    .refine((plats) => !plats || plats.every((p) => VALID_PLATFORMS.has(p)), {
-      message: `Platforms must be from the canonical list`,
+    .check((ctx) => {
+      if (ctx.value && !ctx.value.every((p) => VALID_PLATFORMS.has(p))) {
+        ctx.issues.push({
+          code: "custom",
+          message: `Platforms must be from the canonical list`,
+        });
+      }
     }),
   website: z.string().url().optional(),
 });
@@ -140,7 +165,7 @@ function getYamlFiles(dir: string): string[] {
 
 function validateFile(
   filePath: string,
-  schema: z.ZodSchema,
+  schema: z.$ZodType,
   allManufacturers: Set<string>
 ): ValidationError | null {
   try {
@@ -264,37 +289,86 @@ function validate(): ValidationResult {
 }
 
 // =============================================================================
+// OUTPUT FUNCTIONS
+// =============================================================================
+
+function writeGitHubSummary(result: ValidationResult): void {
+  const summaryPath = process.env.GITHUB_STEP_SUMMARY;
+  if (!summaryPath) return;
+
+  const total =
+    result.stats.manufacturers +
+    result.stats.software +
+    result.stats.daws +
+    result.stats.hardware;
+
+  let summary = "";
+
+  if (result.valid) {
+    summary += `## ✅ Validation Passed\n\n`;
+    summary += `All files validated successfully!\n\n`;
+  } else {
+    summary += `## ❌ Validation Failed\n\n`;
+    summary += `Found ${result.errors.length} file(s) with errors:\n\n`;
+
+    for (const error of result.errors) {
+      summary += `### \`${error.file}\`\n\n`;
+      for (const msg of error.errors) {
+        summary += `- ${msg}\n`;
+      }
+      summary += "\n";
+    }
+  }
+
+  summary += `## 📊 Catalog Stats\n\n`;
+  summary += `| Type | Count |\n`;
+  summary += `|------|-------|\n`;
+  summary += `| Manufacturers | ${result.stats.manufacturers} |\n`;
+  summary += `| Software | ${result.stats.software} |\n`;
+  summary += `| DAWs | ${result.stats.daws} |\n`;
+  summary += `| Hardware | ${result.stats.hardware} |\n`;
+  summary += `| **Total** | **${total}** |\n`;
+
+  fs.appendFileSync(summaryPath, summary);
+}
+
+function writeConsoleOutput(result: ValidationResult): void {
+  console.log("\n📋 Catalog Validation Results\n");
+  console.log("─".repeat(50));
+
+  if (result.valid) {
+    console.log("✅ All files validated successfully!\n");
+  } else {
+    console.log("❌ Validation failed!\n");
+    for (const error of result.errors) {
+      console.log(`\n📄 ${error.file}`);
+      for (const msg of error.errors) {
+        console.log(`   ⚠️  ${msg}`);
+      }
+    }
+    console.log();
+  }
+
+  console.log("─".repeat(50));
+  console.log("📊 Stats:");
+  console.log(`   Manufacturers: ${result.stats.manufacturers}`);
+  console.log(`   Software:      ${result.stats.software}`);
+  console.log(`   DAWs:          ${result.stats.daws}`);
+  console.log(`   Hardware:      ${result.stats.hardware}`);
+  console.log(
+    `   Total:         ${result.stats.manufacturers + result.stats.software + result.stats.daws + result.stats.hardware}`
+  );
+  console.log();
+}
+
+// =============================================================================
 // MAIN
 // =============================================================================
 
 const result = validate();
 
-console.log("\n📋 Catalog Validation Results\n");
-console.log("─".repeat(50));
-
-if (result.valid) {
-  console.log("✅ All files validated successfully!\n");
-} else {
-  console.log("❌ Validation failed!\n");
-  for (const error of result.errors) {
-    console.log(`\n📄 ${error.file}`);
-    for (const msg of error.errors) {
-      console.log(`   ⚠️  ${msg}`);
-    }
-  }
-  console.log();
-}
-
-console.log("─".repeat(50));
-console.log("📊 Stats:");
-console.log(`   Manufacturers: ${result.stats.manufacturers}`);
-console.log(`   Software:      ${result.stats.software}`);
-console.log(`   DAWs:          ${result.stats.daws}`);
-console.log(`   Hardware:      ${result.stats.hardware}`);
-console.log(
-  `   Total:         ${result.stats.manufacturers + result.stats.software + result.stats.daws + result.stats.hardware}`
-);
-console.log();
+writeConsoleOutput(result);
+writeGitHubSummary(result);
 
 process.exit(result.valid ? 0 : 1);
 
