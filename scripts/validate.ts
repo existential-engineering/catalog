@@ -10,28 +10,37 @@ import path from "node:path";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
 
-const DATA_DIR = path.join(import.meta.dirname, "..", "data");
-const SCHEMA_DIR = path.join(import.meta.dirname, "..", "schema");
+import type {
+  CategoriesSchema,
+  FormatsSchema,
+  PlatformsSchema,
+  TypesSchema,
+  ValidationError,
+  ValidationResult,
+} from "./lib/types.js";
+import {
+  DATA_DIR,
+  SCHEMA_DIR,
+  loadYamlFile,
+  getYamlFiles,
+  findClosestMatch,
+  formatValidOptions,
+} from "./lib/utils.js";
 
 // =============================================================================
 // LOAD CANONICAL SCHEMAS
 // =============================================================================
 
-function loadYamlFile<T>(filePath: string): T {
-  const content = fs.readFileSync(filePath, "utf-8");
-  return parseYaml(content) as T;
-}
-
-const categoriesSchema = loadYamlFile<{ categories: string[] }>(
+const categoriesSchema = loadYamlFile<CategoriesSchema>(
   path.join(SCHEMA_DIR, "categories.yaml")
 );
-const formatsSchema = loadYamlFile<{ formats: string[] }>(
+const formatsSchema = loadYamlFile<FormatsSchema>(
   path.join(SCHEMA_DIR, "formats.yaml")
 );
-const platformsSchema = loadYamlFile<{ platforms: string[] }>(
+const platformsSchema = loadYamlFile<PlatformsSchema>(
   path.join(SCHEMA_DIR, "platforms.yaml")
 );
-const typesSchema = loadYamlFile<{ types: string[] }>(
+const typesSchema = loadYamlFile<TypesSchema>(
   path.join(SCHEMA_DIR, "software-types.yaml")
 );
 
@@ -41,7 +50,7 @@ const VALID_PLATFORMS = new Set(platformsSchema.platforms);
 const VALID_TYPES = new Set(typesSchema.types);
 
 // =============================================================================
-// ZOD SCHEMAS
+// ZOD SCHEMAS WITH HELPFUL ERRORS
 // =============================================================================
 
 const ManufacturerSchema = z.object({
@@ -60,43 +69,61 @@ const SoftwareSchema = z.object({
   manufacturer: z.string().min(1, "Manufacturer reference is required"),
   type: z.string().check((ctx) => {
     if (!VALID_TYPES.has(ctx.value)) {
-      ctx.issues.push({
-        code: "custom",
-        message: `Type must be one of: ${[...VALID_TYPES].join(", ")}`,
-      });
+      const suggestion = findClosestMatch(ctx.value, VALID_TYPES);
+      let message = `Invalid type '${ctx.value}'.`;
+      if (suggestion) {
+        message += ` Did you mean '${suggestion}'?`;
+      }
+      message += ` Valid types: ${formatValidOptions(VALID_TYPES)}`;
+      ctx.issues.push({ code: "custom", message, input: ctx.value });
     }
   }),
   categories: z
     .array(z.string())
     .min(1, "At least one category is required")
     .check((ctx) => {
-      if (!ctx.value.every((c) => VALID_CATEGORIES.has(c))) {
-        ctx.issues.push({
-          code: "custom",
-          message: `Categories must be from the canonical list`,
-        });
+      const invalid = ctx.value.filter((c) => !VALID_CATEGORIES.has(c));
+      if (invalid.length > 0) {
+        for (const cat of invalid) {
+          const suggestion = findClosestMatch(cat, VALID_CATEGORIES);
+          let message = `Invalid category '${cat}'.`;
+          if (suggestion) {
+            message += ` Did you mean '${suggestion}'?`;
+          }
+          ctx.issues.push({ code: "custom", message, input: cat });
+        }
       }
     }),
   formats: z
     .array(z.string())
     .optional()
     .check((ctx) => {
-      if (ctx.value && !ctx.value.every((f) => VALID_FORMATS.has(f))) {
-        ctx.issues.push({
-          code: "custom",
-          message: `Formats must be from the canonical list`,
-        });
+      if (!ctx.value) return;
+      const invalid = ctx.value.filter((f) => !VALID_FORMATS.has(f));
+      if (invalid.length > 0) {
+        for (const fmt of invalid) {
+          const suggestion = findClosestMatch(fmt, VALID_FORMATS);
+          let message = `Invalid format '${fmt}'.`;
+          if (suggestion) {
+            message += ` Did you mean '${suggestion}'?`;
+          }
+          message += ` Valid formats: ${formatValidOptions(VALID_FORMATS)}`;
+          ctx.issues.push({ code: "custom", message, input: fmt });
+        }
       }
     }),
   platforms: z
     .array(z.string())
     .optional()
     .check((ctx) => {
-      if (ctx.value && !ctx.value.every((p) => VALID_PLATFORMS.has(p))) {
-        ctx.issues.push({
-          code: "custom",
-          message: `Platforms must be from the canonical list`,
-        });
+      if (!ctx.value) return;
+      const invalid = ctx.value.filter((p) => !VALID_PLATFORMS.has(p));
+      if (invalid.length > 0) {
+        for (const plat of invalid) {
+          let message = `Invalid platform '${plat}'.`;
+          message += ` Valid platforms: ${formatValidOptions(VALID_PLATFORMS)}`;
+          ctx.issues.push({ code: "custom", message, input: plat });
+        }
       }
     }),
   identifiers: z.record(z.string(), z.string()).optional(),
@@ -115,11 +142,14 @@ const DawSchema = z.object({
     .array(z.string())
     .optional()
     .check((ctx) => {
-      if (ctx.value && !ctx.value.every((p) => VALID_PLATFORMS.has(p))) {
-        ctx.issues.push({
-          code: "custom",
-          message: `Platforms must be from the canonical list`,
-        });
+      if (!ctx.value) return;
+      const invalid = ctx.value.filter((p) => !VALID_PLATFORMS.has(p));
+      if (invalid.length > 0) {
+        for (const plat of invalid) {
+          let message = `Invalid platform '${plat}'.`;
+          message += ` Valid platforms: ${formatValidOptions(VALID_PLATFORMS)}`;
+          ctx.issues.push({ code: "custom", message, input: plat });
+        }
       }
     }),
   website: z.string().url().optional(),
@@ -139,33 +169,9 @@ const HardwareSchema = z.object({
 // VALIDATION FUNCTIONS
 // =============================================================================
 
-interface ValidationError {
-  file: string;
-  errors: string[];
-}
-
-interface ValidationResult {
-  valid: boolean;
-  errors: ValidationError[];
-  stats: {
-    manufacturers: number;
-    software: number;
-    daws: number;
-    hardware: number;
-  };
-}
-
-function getYamlFiles(dir: string): string[] {
-  if (!fs.existsSync(dir)) return [];
-  return fs
-    .readdirSync(dir)
-    .filter((f) => f.endsWith(".yaml") || f.endsWith(".yml"))
-    .map((f) => path.join(dir, f));
-}
-
 function validateFile(
   filePath: string,
-  schema: z.$ZodType,
+  schema: z.ZodType,
   allManufacturers: Set<string>
 ): ValidationError | null {
   try {
@@ -178,7 +184,7 @@ function validateFile(
     if (!result.success) {
       return {
         file: path.relative(process.cwd(), filePath),
-        errors: result.error.errors.map(
+        errors: result.error.issues.map(
           (e) => `${e.path.join(".")}: ${e.message}`
         ),
       };
@@ -187,11 +193,17 @@ function validateFile(
     // Check manufacturer reference exists
     if ("manufacturer" in data && typeof data.manufacturer === "string") {
       if (!allManufacturers.has(data.manufacturer)) {
+        const suggestion = findClosestMatch(data.manufacturer, allManufacturers);
+        let message = `Referenced manufacturer '${data.manufacturer}' does not exist.`;
+        if (suggestion) {
+          message += ` Did you mean '${suggestion}'?`;
+        }
+        if (allManufacturers.size <= 10) {
+          message += ` Available: ${[...allManufacturers].join(", ")}`;
+        }
         return {
           file: path.relative(process.cwd(), filePath),
-          errors: [
-            `manufacturer: Referenced manufacturer '${data.manufacturer}' does not exist`,
-          ],
+          errors: [`manufacturer: ${message}`],
         };
       }
     }
@@ -202,7 +214,7 @@ function validateFile(
       return {
         file: path.relative(process.cwd(), filePath),
         errors: [
-          `slug: Slug '${data.slug}' does not match filename '${expectedSlug}'`,
+          `slug: Slug '${data.slug}' does not match filename. Expected '${expectedSlug}'`,
         ],
       };
     }
@@ -371,4 +383,3 @@ writeConsoleOutput(result);
 writeGitHubSummary(result);
 
 process.exit(result.valid ? 0 : 1);
-

@@ -10,19 +10,15 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 
-const DATA_DIR = path.join(import.meta.dirname, "..", "data");
+import type { ChangelogEntry } from "./lib/types.js";
+import { DATA_DIR, loadYamlFile } from "./lib/utils.js";
+
+// Git's empty tree SHA - used to diff against "nothing" for initial releases
+const EMPTY_TREE = "4b825dc642cb6eb9a060e54bf8d69288fbee4904";
 
 // =============================================================================
 // TYPES
 // =============================================================================
-
-interface ChangelogEntry {
-  type: "added" | "updated" | "removed";
-  category: "manufacturers" | "software" | "daws" | "hardware";
-  name: string;
-  manufacturer?: string;
-  details?: string;
-}
 
 interface YamlData {
   slug: string;
@@ -71,19 +67,6 @@ function getLatestTag(): string | null {
   }
 }
 
-function getFirstCommit(): string | null {
-  try {
-    return execSync("git rev-list --max-parents=0 HEAD", {
-      encoding: "utf-8",
-    }).trim();
-  } catch {
-    return null;
-  }
-}
-
-// Git's empty tree SHA - used to diff against "nothing" for initial releases
-const EMPTY_TREE = "4b825dc642cb6eb9a060e54bf8d69288fbee4904";
-
 function getGitChanges(since: string): {
   added: string[];
   modified: string[];
@@ -131,9 +114,9 @@ function loadYamlData(file: string): YamlData | null {
 
 function getManufacturerName(manufacturerSlug: string): string {
   try {
-    const filePath = path.join(DATA_DIR, "manufacturers", `${manufacturerSlug}.yaml`);
-    const content = fs.readFileSync(filePath, "utf-8");
-    const data = parseYaml(content) as { name: string };
+    const data = loadYamlFile<{ name: string }>(
+      path.join(DATA_DIR, "manufacturers", `${manufacturerSlug}.yaml`)
+    );
     return data.name;
   } catch {
     return manufacturerSlug;
@@ -337,4 +320,3 @@ if (args.output) {
 } else {
   console.log(changelog);
 }
-

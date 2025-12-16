@@ -10,55 +10,10 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 
-const DATA_DIR = path.join(import.meta.dirname, "..", "data");
-const OUTPUT_DIR = path.join(import.meta.dirname, "..", "dist", "patches");
+import type { Change, Manufacturer, Software, Daw, Hardware } from "./lib/types.js";
+import { DATA_DIR, OUTPUT_DIR, escapeSQL } from "./lib/utils.js";
 
-// =============================================================================
-// TYPES
-// =============================================================================
-
-interface Change {
-  type: "added" | "modified" | "deleted";
-  category: "manufacturers" | "software" | "daws" | "hardware";
-  file: string;
-  slug: string;
-}
-
-interface Manufacturer {
-  slug: string;
-  name: string;
-  website?: string;
-}
-
-interface Software {
-  slug: string;
-  name: string;
-  manufacturer: string;
-  type: string;
-  categories: string[];
-  formats?: string[];
-  platforms?: string[];
-  identifiers?: Record<string, string>;
-  website?: string;
-  description?: string;
-}
-
-interface Daw {
-  slug: string;
-  name: string;
-  manufacturer: string;
-  bundleIdentifier?: string;
-  platforms?: string[];
-  website?: string;
-}
-
-interface Hardware {
-  slug: string;
-  name: string;
-  manufacturer: string;
-  type?: string;
-  website?: string;
-}
+const PATCHES_DIR = path.join(OUTPUT_DIR, "patches");
 
 // =============================================================================
 // GIT HELPERS
@@ -68,6 +23,7 @@ function getLatestTag(): string | null {
   try {
     return execSync("git describe --tags --abbrev=0", {
       encoding: "utf-8",
+      stdio: ["pipe", "pipe", "pipe"],
     }).trim();
   } catch {
     return null;
@@ -122,11 +78,6 @@ function getChangedFiles(since: string): Change[] {
 // =============================================================================
 // SQL GENERATORS
 // =============================================================================
-
-function escapeSQL(value: string | null | undefined): string {
-  if (value === null || value === undefined) return "NULL";
-  return `'${value.replace(/'/g, "''")}'`;
-}
 
 function generateManufacturerSQL(
   change: Change,
@@ -274,22 +225,21 @@ function generateHardwareSQL(change: Change, data: Hardware | null): string[] {
 // MAIN
 // =============================================================================
 
-function generatePatch(fromVersion: number, toVersion: number): void {
-  const tag = `v${fromVersion}`;
-  const changes = getChangedFiles(tag);
+function generatePatch(fromTag: string, toVersion: string): void {
+  const changes = getChangedFiles(fromTag);
 
   if (changes.length === 0) {
     console.log("No changes detected since last release.");
     return;
   }
 
-  console.log(`\n📝 Generating patch v${fromVersion} → v${toVersion}\n`);
+  console.log(`\n📝 Generating patch ${fromTag} → ${toVersion}\n`);
   console.log(`   Found ${changes.length} changes\n`);
 
   const sql: string[] = [];
 
   // Add header
-  sql.push(`-- Catalog patch: v${fromVersion} → v${toVersion}`);
+  sql.push(`-- Catalog patch: ${fromTag} → ${toVersion}`);
   sql.push(`-- Generated: ${new Date().toISOString()}`);
   sql.push(`-- Changes: ${changes.length}`);
   sql.push("");
@@ -350,10 +300,10 @@ function generatePatch(fromVersion: number, toVersion: number): void {
   sql.push("COMMIT;");
 
   // Ensure output directory exists
-  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  fs.mkdirSync(PATCHES_DIR, { recursive: true });
 
   // Write patch file
-  const patchFile = path.join(OUTPUT_DIR, `patch-${fromVersion}-${toVersion}.sql`);
+  const patchFile = path.join(PATCHES_DIR, `patch-${fromTag}-${toVersion}.sql`);
   fs.writeFileSync(patchFile, sql.join("\n"));
 
   const stats = fs.statSync(patchFile);
@@ -365,18 +315,19 @@ function generatePatch(fromVersion: number, toVersion: number): void {
 }
 
 // Parse arguments
-const fromVersion = parseInt(process.argv[2] ?? "0", 10);
-const toVersion = parseInt(process.argv[3] ?? String(fromVersion + 1), 10);
+const fromArg = process.argv[2];
+const toArg = process.argv[3];
 
-if (fromVersion === 0) {
+if (fromArg && toArg) {
+  // Explicit versions provided
+  generatePatch(fromArg, toArg);
+} else {
+  // Auto-detect from latest tag
   const latestTag = getLatestTag();
   if (latestTag) {
-    const version = parseInt(latestTag.replace(/^v/, ""), 10);
-    generatePatch(version, version + 1);
+    const toVersion = toArg ?? "next";
+    generatePatch(latestTag, toVersion);
   } else {
-    console.log("No previous release found. Build a baseline first.");
+    console.log("No previous release found. Build a baseline first with: pnpm build");
   }
-} else {
-  generatePatch(fromVersion, toVersion);
 }
-

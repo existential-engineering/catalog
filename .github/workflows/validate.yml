@@ -33,9 +33,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Type check
+        run: pnpm typecheck
+
       - name: Validate YAML files
         run: pnpm validate
 
       - name: Build database (test)
         run: pnpm build 0
-

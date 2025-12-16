@@ -8,69 +8,12 @@
 import Database from "better-sqlite3";
 import fs from "node:fs";
 import path from "node:path";
-import { parse as parseYaml } from "yaml";
 
-const DATA_DIR = path.join(import.meta.dirname, "..", "data");
+import type { Manufacturer, Software, Daw, Hardware } from "./lib/types.js";
+import { DATA_DIR, OUTPUT_DIR, loadYamlFile, getYamlFiles } from "./lib/utils.js";
+
 const SCHEMA_FILE = path.join(import.meta.dirname, "schema.sql");
-const OUTPUT_DIR = path.join(import.meta.dirname, "..", "dist");
 const OUTPUT_FILE = path.join(OUTPUT_DIR, "catalog.sqlite");
-
-// =============================================================================
-// TYPES
-// =============================================================================
-
-interface Manufacturer {
-  slug: string;
-  name: string;
-  website?: string;
-}
-
-interface Software {
-  slug: string;
-  name: string;
-  manufacturer: string;
-  type: string;
-  categories: string[];
-  formats?: string[];
-  platforms?: string[];
-  identifiers?: Record<string, string>;
-  website?: string;
-  description?: string;
-}
-
-interface Daw {
-  slug: string;
-  name: string;
-  manufacturer: string;
-  bundleIdentifier?: string;
-  platforms?: string[];
-  website?: string;
-}
-
-interface Hardware {
-  slug: string;
-  name: string;
-  manufacturer: string;
-  type?: string;
-  website?: string;
-}
-
-// =============================================================================
-// HELPERS
-// =============================================================================
-
-function loadYamlFile<T>(filePath: string): T {
-  const content = fs.readFileSync(filePath, "utf-8");
-  return parseYaml(content) as T;
-}
-
-function getYamlFiles(dir: string): string[] {
-  if (!fs.existsSync(dir)) return [];
-  return fs
-    .readdirSync(dir)
-    .filter((f) => f.endsWith(".yaml") || f.endsWith(".yml"))
-    .map((f) => path.join(dir, f));
-}
 
 // =============================================================================
 // BUILD FUNCTIONS
@@ -281,4 +224,3 @@ const version = parseInt(process.argv[2] ?? "1", 10);
 console.log("\n🔨 Building catalog database...\n");
 buildDatabase(version);
 console.log();
-
