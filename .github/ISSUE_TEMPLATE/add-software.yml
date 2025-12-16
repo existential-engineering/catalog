@@ -1,0 +1,92 @@
+name: Add Software
+description: Request to add a new plugin or software to the catalog
+title: "[Add] "
+labels: ["addition", "software"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping expand the catalog! Please fill out the information below.
+
+  - type: input
+    id: name
+    attributes:
+      label: Software Name
+      description: The full name of the plugin or software
+      placeholder: e.g., Serum
+    validations:
+      required: true
+
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Manufacturer
+      description: The company or developer who makes it
+      placeholder: e.g., Xfer Records
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      description: What kind of software is this?
+      options:
+        - plugin
+        - standalone
+        - suite
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: formats
+    attributes:
+      label: Formats
+      description: Which plugin formats are available?
+      options:
+        - label: AU (Audio Unit)
+        - label: VST2
+        - label: VST3
+        - label: AAX
+        - label: CLAP
+        - label: Standalone
+
+  - type: checkboxes
+    id: platforms
+    attributes:
+      label: Platforms
+      description: Which operating systems are supported?
+      options:
+        - label: macOS
+        - label: Windows
+        - label: Linux
+
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      description: Link to the product page
+      placeholder: https://...
+
+  - type: textarea
+    id: identifiers
+    attributes:
+      label: Bundle Identifiers (optional)
+      description: |
+        If you know the bundle identifiers for macOS, please include them.
+        Format: `format: identifier`
+      placeholder: |
+        au: com.xferrecords.Serum
+        vst3: com.xferrecords.Serum.vst3
+
+  - type: textarea
+    id: categories
+    attributes:
+      label: Categories
+      description: |
+        List relevant categories from the schema.
+        See schema/categories.yaml for valid options.
+      placeholder: |
+        synthesizer
+        wavetable
+

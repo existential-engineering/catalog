@@ -1,0 +1,161 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+  workflow_dispatch:
+    inputs:
+      force_rebase:
+        description: "Force baseline rebase (rebuild full database)"
+        type: boolean
+        default: false
+      release_notes:
+        description: "Additional release notes (optional)"
+        type: string
+        default: ""
+      include_pending:
+        description: "Include all pending changes on main"
+        type: boolean
+        default: true
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate before release
+        run: pnpm validate
+
+      - name: Get current version
+        id: version
+        run: |
+          # Get the latest tag, default to v0 if none exists
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0")
+          CURRENT_VERSION=${LATEST_TAG#v}
+          NEXT_VERSION=$((CURRENT_VERSION + 1))
+          echo "current=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          echo "next=$NEXT_VERSION" >> $GITHUB_OUTPUT
+          echo "tag=v$NEXT_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Check for changes
+        id: changes
+        run: |
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          if [ -z "$LATEST_TAG" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "is_initial=true" >> $GITHUB_OUTPUT
+          else
+            CHANGES=$(git diff --name-only $LATEST_TAG HEAD -- data/ | wc -l)
+            if [ "$CHANGES" -gt "0" ]; then
+              echo "has_changes=true" >> $GITHUB_OUTPUT
+            else
+              echo "has_changes=false" >> $GITHUB_OUTPUT
+            fi
+            echo "is_initial=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Skip if no changes
+        if: steps.changes.outputs.has_changes == 'false' && github.event_name != 'workflow_dispatch'
+        run: |
+          echo "No changes to release"
+          exit 0
+
+      - name: Determine if rebase needed
+        id: rebase
+        run: |
+          FORCE_REBASE="${{ github.event.inputs.force_rebase }}"
+          IS_INITIAL="${{ steps.changes.outputs.is_initial }}"
+          CURRENT="${{ steps.version.outputs.current }}"
+          
+          # Check accumulated patch count
+          PATCH_COUNT=$(ls dist/patches/*.sql 2>/dev/null | wc -l || echo "0")
+          
+          # Rebase if: forced, initial release, or every 50 versions
+          if [ "$FORCE_REBASE" = "true" ] || [ "$IS_INITIAL" = "true" ] || [ "$((CURRENT % 50))" = "0" ]; then
+            echo "needed=true" >> $GITHUB_OUTPUT
+          else
+            echo "needed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build baseline database
+        if: steps.rebase.outputs.needed == 'true'
+        run: |
+          pnpm build ${{ steps.version.outputs.next }}
+          mv dist/catalog.sqlite dist/baseline-${{ steps.version.outputs.next }}.sqlite
+
+      - name: Generate patch
+        if: steps.rebase.outputs.needed != 'true' && steps.changes.outputs.is_initial != 'true'
+        run: |
+          pnpm patch ${{ steps.version.outputs.current }} ${{ steps.version.outputs.next }}
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          NOTES="${{ github.event.inputs.release_notes }}"
+          if [ -n "$NOTES" ]; then
+            pnpm changelog --output=CHANGELOG.md --notes="$NOTES"
+          else
+            pnpm changelog --output=CHANGELOG.md
+          fi
+
+      - name: Generate manifest
+        run: |
+          REBASE="${{ steps.rebase.outputs.needed }}"
+          VERSION="${{ steps.version.outputs.next }}"
+          
+          if [ "$REBASE" = "true" ]; then
+            BASELINE="baseline-${VERSION}.sqlite"
+          else
+            # Find the latest baseline
+            BASELINE=$(ls -1 dist/baseline-*.sqlite 2>/dev/null | sort -V | tail -1 | xargs basename || echo "")
+          fi
+          
+          # Create manifest
+          cat > dist/manifest.json << EOF
+          {
+            "version": $VERSION,
+            "baseline": "$BASELINE",
+            "patches": $(ls dist/patches/*.sql 2>/dev/null | xargs -I{} basename {} | jq -R . | jq -s . || echo "[]"),
+            "updatedAt": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          }
+          EOF
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: Catalog ${{ steps.version.outputs.tag }}
+          body_path: CHANGELOG.md
+          files: |
+            dist/manifest.json
+            dist/baseline-*.sqlite
+            dist/patches/*.sql
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

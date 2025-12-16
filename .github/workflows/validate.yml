@@ -1,0 +1,43 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "schema/**"
+      - "scripts/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "schema/**"
+      - "scripts/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate YAML files
+        run: pnpm validate
+
+      - name: Build database (test)
+        run: pnpm build 0
+

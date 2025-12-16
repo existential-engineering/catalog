@@ -1,0 +1,52 @@
+name: Add DAW
+description: Request to add a new Digital Audio Workstation to the catalog
+title: "[Add DAW] "
+labels: ["addition", "daw"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping expand the catalog! Please fill out the information below.
+
+  - type: input
+    id: name
+    attributes:
+      label: DAW Name
+      description: The full name of the DAW
+      placeholder: e.g., Ableton Live
+    validations:
+      required: true
+
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Manufacturer
+      description: The company who makes it
+      placeholder: e.g., Ableton
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: platforms
+    attributes:
+      label: Platforms
+      description: Which operating systems are supported?
+      options:
+        - label: macOS
+        - label: Windows
+        - label: Linux
+
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      description: Link to the product page
+      placeholder: https://...
+
+  - type: input
+    id: bundle_identifier
+    attributes:
+      label: Bundle Identifier (macOS)
+      description: The macOS bundle identifier if known
+      placeholder: e.g., com.ableton.live
+

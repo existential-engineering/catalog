@@ -1,0 +1,55 @@
+name: Update Entry
+description: Report incorrect or outdated information in an existing entry
+title: "[Update] "
+labels: ["update"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Found something wrong? Let us know what needs to be corrected.
+
+  - type: input
+    id: entry
+    attributes:
+      label: Entry Name
+      description: Which software, DAW, or manufacturer needs updating?
+      placeholder: e.g., Serum
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: What type of entry is this?
+      options:
+        - Software
+        - DAW
+        - Manufacturer
+        - Hardware
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current Information
+      description: What is currently in the catalog that's wrong?
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct
+    attributes:
+      label: Correct Information
+      description: What should it be instead?
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source (optional)
+      description: Link to verify the correct information
+      placeholder: https://...
+
