@@ -64,11 +64,25 @@ function getLatestTag(): string | null {
   try {
     return execSync("git describe --tags --abbrev=0", {
       encoding: "utf-8",
+      stdio: ["pipe", "pipe", "pipe"],
     }).trim();
   } catch {
     return null;
   }
 }
+
+function getFirstCommit(): string | null {
+  try {
+    return execSync("git rev-list --max-parents=0 HEAD", {
+      encoding: "utf-8",
+    }).trim();
+  } catch {
+    return null;
+  }
+}
+
+// Git's empty tree SHA - used to diff against "nothing" for initial releases
+const EMPTY_TREE = "4b825dc642cb6eb9a060e54bf8d69288fbee4904";
 
 function getGitChanges(since: string): {
   added: string[];
@@ -204,22 +218,16 @@ function generateEntries(gitChanges: ReturnType<typeof getGitChanges>): Changelo
 
 function formatChangelog(
   entries: ChangelogEntry[],
-  version: string,
+  title: string,
   manualNotes?: string
 ): string {
   const added = entries.filter((e) => e.type === "added");
   const updated = entries.filter((e) => e.type === "updated");
   const removed = entries.filter((e) => e.type === "removed");
 
-  const date = new Date().toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-
   const lines: string[] = [];
 
-  lines.push(`## Catalog ${version} - ${date}`);
+  lines.push(`## ${title}`);
   lines.push("");
 
   // Added section
@@ -291,15 +299,22 @@ const args = parseArgs();
 
 // Determine the reference point
 let since = args.since;
+let isInitialRelease = false;
+
 if (!since) {
   since = getLatestTag();
   if (!since) {
-    console.error("No tags found. Specify --since=<ref> or create a release tag.");
-    process.exit(1);
+    // No tags - use empty tree to show all files as "added" for initial release
+    since = EMPTY_TREE;
+    isInitialRelease = true;
   }
 }
 
-console.log(`\n📝 Generating changelog since ${since}...\n`);
+console.log(
+  isInitialRelease
+    ? `\n📝 Generating initial changelog...\n`
+    : `\n📝 Generating changelog since ${since}...\n`
+);
 
 const gitChanges = getGitChanges(since);
 const totalChanges = gitChanges.added.length + gitChanges.modified.length + gitChanges.deleted.length;
@@ -310,10 +325,11 @@ if (totalChanges === 0) {
 }
 
 const entries = generateEntries(gitChanges);
-const version = since.replace(/^v/, "");
-const nextVersion = `v${parseInt(version, 10) + 1}`;
 
-const changelog = formatChangelog(entries, nextVersion, args.notes ?? undefined);
+// For changelog display, just show what changed - version is determined by release workflow
+const displayVersion = isInitialRelease ? "Initial Release" : `Changes since ${since}`;
+
+const changelog = formatChangelog(entries, displayVersion, args.notes ?? undefined);
 
 if (args.output) {
   fs.writeFileSync(args.output, changelog);

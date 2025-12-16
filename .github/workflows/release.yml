@@ -1,28 +1,17 @@
 name: Release
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "data/**"
   workflow_dispatch:
     inputs:
-      force_rebase:
-        description: "Force baseline rebase (rebuild full database)"
-        type: boolean
-        default: false
-      release_notes:
-        description: "Additional release notes (optional)"
-        type: string
-        default: ""
-      include_pending:
-        description: "Include all pending changes on main"
-        type: boolean
-        default: true
-
-concurrency:
-  group: release
-  cancel-in-progress: false
+      bump:
+        description: "Version bump type (auto-detects if empty)"
+        required: false
+        type: choice
+        options:
+          - ""
+          - patch
+          - minor
+          - major
 
 jobs:
   release:
@@ -50,110 +39,106 @@ jobs:
       - name: Validate before release
         run: pnpm validate
 
-      - name: Get current version
+      - name: Determine version bump
+        id: bump
+        run: |
+          # Use manual input if provided
+          if [ -n "${{ inputs.bump }}" ]; then
+            echo "type=${{ inputs.bump }}" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Get the latest tag or use empty tree for first release
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          
+          if [ -z "$LATEST_TAG" ]; then
+            echo "type=minor" >> $GITHUB_OUTPUT
+            echo "First release - using minor"
+            exit 0
+          fi
+
+          # Check what changed since last tag
+          SCHEMA_CHANGES=$(git diff --name-only "$LATEST_TAG" HEAD -- schema/ | wc -l)
+          NEW_DATA_FILES=$(git diff --name-status "$LATEST_TAG" HEAD -- data/ | grep "^A" | wc -l)
+          MODIFIED_DATA_FILES=$(git diff --name-status "$LATEST_TAG" HEAD -- data/ | grep "^M" | wc -l)
+
+          echo "Schema changes: $SCHEMA_CHANGES"
+          echo "New data files: $NEW_DATA_FILES"
+          echo "Modified data files: $MODIFIED_DATA_FILES"
+
+          if [ "$SCHEMA_CHANGES" -gt 0 ]; then
+            echo "type=major" >> $GITHUB_OUTPUT
+          elif [ "$NEW_DATA_FILES" -gt 0 ]; then
+            echo "type=minor" >> $GITHUB_OUTPUT
+          elif [ "$MODIFIED_DATA_FILES" -gt 0 ]; then
+            echo "type=patch" >> $GITHUB_OUTPUT
+          else
+            echo "type=patch" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Calculate next version
         id: version
         run: |
-          # Get the latest tag, default to v0 if none exists
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0")
-          CURRENT_VERSION=${LATEST_TAG#v}
-          NEXT_VERSION=$((CURRENT_VERSION + 1))
-          echo "current=$CURRENT_VERSION" >> $GITHUB_OUTPUT
-          echo "next=$NEXT_VERSION" >> $GITHUB_OUTPUT
-          echo "tag=v$NEXT_VERSION" >> $GITHUB_OUTPUT
-
-      - name: Check for changes
-        id: changes
-        run: |
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
-          if [ -z "$LATEST_TAG" ]; then
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "is_initial=true" >> $GITHUB_OUTPUT
-          else
-            CHANGES=$(git diff --name-only $LATEST_TAG HEAD -- data/ | wc -l)
-            if [ "$CHANGES" -gt "0" ]; then
-              echo "has_changes=true" >> $GITHUB_OUTPUT
-            else
-              echo "has_changes=false" >> $GITHUB_OUTPUT
-            fi
-            echo "is_initial=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Skip if no changes
-        if: steps.changes.outputs.has_changes == 'false' && github.event_name != 'workflow_dispatch'
-        run: |
-          echo "No changes to release"
-          exit 0
-
-      - name: Determine if rebase needed
-        id: rebase
-        run: |
-          FORCE_REBASE="${{ github.event.inputs.force_rebase }}"
-          IS_INITIAL="${{ steps.changes.outputs.is_initial }}"
-          CURRENT="${{ steps.version.outputs.current }}"
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
           
-          # Check accumulated patch count
-          PATCH_COUNT=$(ls dist/patches/*.sql 2>/dev/null | wc -l || echo "0")
-          
-          # Rebase if: forced, initial release, or every 50 versions
-          if [ "$FORCE_REBASE" = "true" ] || [ "$IS_INITIAL" = "true" ] || [ "$((CURRENT % 50))" = "0" ]; then
-            echo "needed=true" >> $GITHUB_OUTPUT
-          else
-            echo "needed=false" >> $GITHUB_OUTPUT
-          fi
+          # Strip 'v' prefix and split into parts
+          VERSION=${LATEST_TAG#v}
+          MAJOR=$(echo "$VERSION" | cut -d. -f1)
+          MINOR=$(echo "$VERSION" | cut -d. -f2)
+          PATCH=$(echo "$VERSION" | cut -d. -f3)
 
-      - name: Build baseline database
-        if: steps.rebase.outputs.needed == 'true'
-        run: |
-          pnpm build ${{ steps.version.outputs.next }}
-          mv dist/catalog.sqlite dist/baseline-${{ steps.version.outputs.next }}.sqlite
+          # Default to 0 if empty
+          MAJOR=${MAJOR:-0}
+          MINOR=${MINOR:-0}
+          PATCH=${PATCH:-0}
 
-      - name: Generate patch
-        if: steps.rebase.outputs.needed != 'true' && steps.changes.outputs.is_initial != 'true'
+          case "${{ steps.bump.outputs.type }}" in
+            major)
+              MAJOR=$((MAJOR + 1))
+              MINOR=0
+              PATCH=0
+              ;;
+            minor)
+              MINOR=$((MINOR + 1))
+              PATCH=0
+              ;;
+            patch)
+              PATCH=$((PATCH + 1))
+              ;;
+          esac
+
+          NEXT_VERSION="v${MAJOR}.${MINOR}.${PATCH}"
+          echo "version=$NEXT_VERSION" >> $GITHUB_OUTPUT
+          echo "Next version: $NEXT_VERSION (${{ steps.bump.outputs.type }} bump)"
+
+      - name: Update package.json version
         run: |
-          pnpm patch ${{ steps.version.outputs.current }} ${{ steps.version.outputs.next }}
+          VERSION="${{ steps.version.outputs.version }}"
+          VERSION_NUM="${VERSION#v}"
+          npm pkg set version="$VERSION_NUM"
+          echo "Updated package.json to $VERSION_NUM"
 
       - name: Generate changelog
-        id: changelog
         run: |
-          NOTES="${{ github.event.inputs.release_notes }}"
-          if [ -n "$NOTES" ]; then
-            pnpm changelog --output=CHANGELOG.md --notes="$NOTES"
-          else
-            pnpm changelog --output=CHANGELOG.md
-          fi
+          pnpm changelog --output=RELEASE_NOTES.md
+          cat RELEASE_NOTES.md
 
-      - name: Generate manifest
+      - name: Build database
+        run: pnpm build
+
+      - name: Commit version bump
         run: |
-          REBASE="${{ steps.rebase.outputs.needed }}"
-          VERSION="${{ steps.version.outputs.next }}"
-          
-          if [ "$REBASE" = "true" ]; then
-            BASELINE="baseline-${VERSION}.sqlite"
-          else
-            # Find the latest baseline
-            BASELINE=$(ls -1 dist/baseline-*.sqlite 2>/dev/null | sort -V | tail -1 | xargs basename || echo "")
-          fi
-          
-          # Create manifest
-          cat > dist/manifest.json << EOF
-          {
-            "version": $VERSION,
-            "baseline": "$BASELINE",
-            "patches": $(ls dist/patches/*.sql 2>/dev/null | xargs -I{} basename {} | jq -R . | jq -s . || echo "[]"),
-            "updatedAt": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
-          }
-          EOF
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add package.json
+          git commit -m "chore: bump version to ${{ steps.version.outputs.version }}"
+          git push
 
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.version.outputs.tag }}
-          name: Catalog ${{ steps.version.outputs.tag }}
-          body_path: CHANGELOG.md
+          tag_name: ${{ steps.version.outputs.version }}
+          name: Catalog ${{ steps.version.outputs.version }}
+          body_path: RELEASE_NOTES.md
           files: |
-            dist/manifest.json
-            dist/baseline-*.sqlite
-            dist/patches/*.sql
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+            dist/catalog.sqlite
