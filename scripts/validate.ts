@@ -97,6 +97,11 @@ const RevisionSchema = z.object({
   links: z.array(LinkSchema).optional(),
 });
 
+const ImageSchema = z.object({
+  source: z.string().url(),
+  alt: z.string().optional(),
+});
+
 // Helper for category validation with suggestions
 const createCategoryValidator = () =>
   z.string().check((ctx) => {
@@ -141,6 +146,7 @@ const ManufacturerSchema = z.object({
   website: z.string().url().optional(),
   description: z.string().optional(),
   searchTerms: z.array(z.string()).optional(),
+  images: z.array(ImageSchema).optional(),
 });
 
 const SoftwareSchema = z.object({
@@ -196,6 +202,7 @@ const SoftwareSchema = z.object({
   versions: z.array(VersionSchema).optional(),
   prices: z.array(PriceSchema).optional(),
   links: z.array(LinkSchema).optional(),
+  images: z.array(ImageSchema).optional(),
 });
 
 const DawSchema = z.object({
@@ -209,6 +216,7 @@ const DawSchema = z.object({
   website: z.string().url().optional(),
   description: z.string().optional(),
   searchTerms: z.array(z.string()).optional(),
+  images: z.array(ImageSchema).optional(),
 });
 
 const HardwareSchema = z.object({
@@ -247,6 +255,7 @@ const HardwareSchema = z.object({
   revisions: z.array(RevisionSchema).optional(),
   prices: z.array(PriceSchema).optional(),
   links: z.array(LinkSchema).optional(),
+  images: z.array(ImageSchema).optional(),
 });
 
 // =============================================================================

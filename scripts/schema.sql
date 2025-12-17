@@ -29,6 +29,15 @@ CREATE TABLE IF NOT EXISTS manufacturer_search_terms (
     PRIMARY KEY (manufacturer_id, term)
 );
 
+-- Manufacturer Images
+CREATE TABLE IF NOT EXISTS manufacturer_images (
+    manufacturer_id TEXT NOT NULL REFERENCES manufacturers(id) ON DELETE CASCADE,
+    source TEXT NOT NULL,
+    alt TEXT,
+    position INTEGER DEFAULT 0,
+    PRIMARY KEY (manufacturer_id, source)
+);
+
 -- Software (Plugins, Standalone apps)
 CREATE TABLE IF NOT EXISTS software (
     id TEXT PRIMARY KEY,              -- slug (e.g., 'serum')
@@ -120,6 +129,15 @@ CREATE TABLE IF NOT EXISTS software_links (
 
 CREATE INDEX idx_software_links_software ON software_links(software_id);
 
+-- Software Images
+CREATE TABLE IF NOT EXISTS software_images (
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    source TEXT NOT NULL,
+    alt TEXT,
+    position INTEGER DEFAULT 0,
+    PRIMARY KEY (software_id, source)
+);
+
 -- DAWs (Digital Audio Workstations)
 CREATE TABLE IF NOT EXISTS daws (
     id TEXT PRIMARY KEY,              -- slug (e.g., 'ableton-live')
@@ -147,6 +165,15 @@ CREATE TABLE IF NOT EXISTS daw_search_terms (
     daw_id TEXT NOT NULL REFERENCES daws(id) ON DELETE CASCADE,
     term TEXT NOT NULL,
     PRIMARY KEY (daw_id, term)
+);
+
+-- DAW Images
+CREATE TABLE IF NOT EXISTS daw_images (
+    daw_id TEXT NOT NULL REFERENCES daws(id) ON DELETE CASCADE,
+    source TEXT NOT NULL,
+    alt TEXT,
+    position INTEGER DEFAULT 0,
+    PRIMARY KEY (daw_id, source)
 );
 
 -- Hardware
@@ -305,6 +332,15 @@ CREATE TABLE IF NOT EXISTS hardware_revision_links (
     description TEXT
 );
 
+-- Hardware Images
+CREATE TABLE IF NOT EXISTS hardware_images (
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    source TEXT NOT NULL,
+    alt TEXT,
+    position INTEGER DEFAULT 0,
+    PRIMARY KEY (hardware_id, source)
+);
+
 -- =============================================================================
 -- FULL-TEXT SEARCH
 -- =============================================================================
@@ -353,6 +389,6 @@ CREATE TABLE IF NOT EXISTS catalog_meta (
 -- Insert initial metadata
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES 
     ('version', '1'),
-    ('schema_version', '2'),
+    ('schema_version', '3'),
     ('created_at', datetime('now')),
     ('updated_at', datetime('now'));

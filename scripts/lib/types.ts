@@ -55,6 +55,11 @@ export interface Revision {
   links?: Link[];
 }
 
+export interface Image {
+  source: string;
+  alt?: string;
+}
+
 // =============================================================================
 // DATA TYPES
 // =============================================================================
@@ -67,6 +72,7 @@ export interface Manufacturer {
   website?: string;
   description?: string;
   searchTerms?: string[];
+  images?: Image[];
 }
 
 export interface Software {
@@ -88,6 +94,7 @@ export interface Software {
   versions?: Version[];
   prices?: Price[];
   links?: Link[];
+  images?: Image[];
 }
 
 export interface Daw {
@@ -99,6 +106,7 @@ export interface Daw {
   website?: string;
   description?: string;
   searchTerms?: string[];
+  images?: Image[];
 }
 
 export interface Hardware {
@@ -119,6 +127,7 @@ export interface Hardware {
   revisions?: Revision[];
   prices?: Price[];
   links?: Link[];
+  images?: Image[];
 }
 
 // =============================================================================
