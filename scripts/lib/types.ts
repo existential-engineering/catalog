@@ -167,18 +167,6 @@ export interface ValidationResult {
 }
 
 // =============================================================================
-// CHANGELOG TYPES
-// =============================================================================
-
-export interface ChangelogEntry {
-  type: "added" | "updated" | "removed";
-  category: "manufacturers" | "software" | "daws" | "hardware";
-  name: string;
-  manufacturer?: string;
-  details?: string;
-}
-
-// =============================================================================
 // PATCH TYPES
 // =============================================================================
 

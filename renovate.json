@@ -1,0 +1,29 @@
+{
+  "baseBranches": ["main"],
+  "extends": ["config:base", ":disableDependencyDashboard"],
+  "prHourlyLimit": 5,
+  "updateNotScheduled": false,
+  "timezone": "America/New_York",
+  "schedule": ["every weekday"],
+  "packageRules": [
+    {
+      "matchDatasources": ["npm"],
+      "stabilityDays": 3
+    },
+    {
+      "matchFiles": ["package.json"],
+      "matchDepTypes": ["dependencies"],
+      "rangeStrategy": "pin"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "rangeStrategy": "auto",
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ]
+}
+

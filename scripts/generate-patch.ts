@@ -89,11 +89,11 @@ function generateManufacturerSQL(
     sql.push(`DELETE FROM manufacturers WHERE id = ${escapeSQL(change.slug)};`);
   } else if (change.type === "added" && data) {
     sql.push(
-      `INSERT INTO manufacturers (id, name, website, updated_at) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, ${escapeSQL(data.website)}, datetime('now'));`
+      `INSERT INTO manufacturers (id, name, company_name, parent_company, website, description, updated_at) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, ${escapeSQL(data.companyName)}, ${escapeSQL(data.parentCompany)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, datetime('now'));`
     );
   } else if (change.type === "modified" && data) {
     sql.push(
-      `UPDATE manufacturers SET name = ${escapeSQL(data.name)}, website = ${escapeSQL(data.website)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.slug)};`
+      `UPDATE manufacturers SET name = ${escapeSQL(data.name)}, company_name = ${escapeSQL(data.companyName)}, parent_company = ${escapeSQL(data.parentCompany)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.slug)};`
     );
   }
 
@@ -121,11 +121,11 @@ function generateSoftwareSQL(change: Change, data: Software | null): string[] {
       );
       sql.push(`DELETE FROM software_fts WHERE id = ${escapeSQL(data.slug)};`);
       sql.push(
-        `UPDATE software SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(data.manufacturer)}, type = ${escapeSQL(data.type)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.slug)};`
+        `UPDATE software SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(data.manufacturer)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(data.details)}, specs = ${escapeSQL(data.specs)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.slug)};`
       );
     } else {
       sql.push(
-        `INSERT INTO software (id, name, manufacturer_id, type, website, description, updated_at) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, ${escapeSQL(data.manufacturer)}, ${escapeSQL(data.type)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, datetime('now'));`
+        `INSERT INTO software (id, name, manufacturer_id, website, description, release_date, primary_category, secondary_category, details, specs, updated_at) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, ${escapeSQL(data.manufacturer)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, ${escapeSQL(data.releaseDate)}, ${escapeSQL(data.primaryCategory)}, ${escapeSQL(data.secondaryCategory)}, ${escapeSQL(data.details)}, ${escapeSQL(data.specs)}, datetime('now'));`
       );
     }
 
@@ -177,11 +177,11 @@ function generateDawSQL(change: Change, data: Daw | null): string[] {
       );
       sql.push(`DELETE FROM daws_fts WHERE id = ${escapeSQL(data.slug)};`);
       sql.push(
-        `UPDATE daws SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(data.manufacturer)}, bundle_identifier = ${escapeSQL(data.bundleIdentifier)}, website = ${escapeSQL(data.website)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.slug)};`
+        `UPDATE daws SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(data.manufacturer)}, bundle_identifier = ${escapeSQL(data.bundleIdentifier)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.slug)};`
       );
     } else {
       sql.push(
-        `INSERT INTO daws (id, name, manufacturer_id, bundle_identifier, website, updated_at) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, ${escapeSQL(data.manufacturer)}, ${escapeSQL(data.bundleIdentifier)}, ${escapeSQL(data.website)}, datetime('now'));`
+        `INSERT INTO daws (id, name, manufacturer_id, bundle_identifier, website, description, updated_at) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, ${escapeSQL(data.manufacturer)}, ${escapeSQL(data.bundleIdentifier)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, datetime('now'));`
       );
     }
 
@@ -196,7 +196,7 @@ function generateDawSQL(change: Change, data: Daw | null): string[] {
 
     // Insert FTS
     sql.push(
-      `INSERT INTO daws_fts (id, name, manufacturer_name) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, (SELECT name FROM manufacturers WHERE id = ${escapeSQL(data.manufacturer)}));`
+      `INSERT INTO daws_fts (id, name, manufacturer_name, description) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, (SELECT name FROM manufacturers WHERE id = ${escapeSQL(data.manufacturer)}), ${escapeSQL(data.description)});`
     );
   }
 
@@ -207,14 +207,37 @@ function generateHardwareSQL(change: Change, data: Hardware | null): string[] {
   const sql: string[] = [];
 
   if (change.type === "deleted") {
+    sql.push(`DELETE FROM hardware_fts WHERE id = ${escapeSQL(change.slug)};`);
     sql.push(`DELETE FROM hardware WHERE id = ${escapeSQL(change.slug)};`);
-  } else if (change.type === "added" && data) {
+  } else if (data) {
+    if (change.type === "modified") {
+      // Delete existing related data first
+      sql.push(
+        `DELETE FROM hardware_categories WHERE hardware_id = ${escapeSQL(data.slug)};`
+      );
+      sql.push(`DELETE FROM hardware_fts WHERE id = ${escapeSQL(data.slug)};`);
+      sql.push(
+        `UPDATE hardware SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(data.manufacturer)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(data.details)}, specs = ${escapeSQL(data.specs)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.slug)};`
+      );
+    } else {
+      sql.push(
+        `INSERT INTO hardware (id, name, manufacturer_id, website, description, release_date, primary_category, secondary_category, details, specs, updated_at) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, ${escapeSQL(data.manufacturer)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, ${escapeSQL(data.releaseDate)}, ${escapeSQL(data.primaryCategory)}, ${escapeSQL(data.secondaryCategory)}, ${escapeSQL(data.details)}, ${escapeSQL(data.specs)}, datetime('now'));`
+      );
+    }
+
+    // Insert categories
+    if (data.categories) {
+      for (const category of data.categories) {
+        sql.push(
+          `INSERT INTO hardware_categories (hardware_id, category) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(category)});`
+        );
+      }
+    }
+
+    // Insert FTS
+    const categories = data.categories?.join(" ") ?? "";
     sql.push(
-      `INSERT INTO hardware (id, name, manufacturer_id, type, website, updated_at) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, ${escapeSQL(data.manufacturer)}, ${escapeSQL(data.type)}, ${escapeSQL(data.website)}, datetime('now'));`
-    );
-  } else if (change.type === "modified" && data) {
-    sql.push(
-      `UPDATE hardware SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(data.manufacturer)}, type = ${escapeSQL(data.type)}, website = ${escapeSQL(data.website)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.slug)};`
+      `INSERT INTO hardware_fts (id, name, manufacturer_name, description, categories) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, (SELECT name FROM manufacturers WHERE id = ${escapeSQL(data.manufacturer)}), ${escapeSQL(data.description)}, ${escapeSQL(categories)});`
     );
   }
 
