@@ -205,20 +205,6 @@ const SoftwareSchema = z.object({
   images: z.array(ImageSchema).optional(),
 });
 
-const DawSchema = z.object({
-  slug: z
-    .string()
-    .regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens"),
-  name: z.string().min(1, "Name is required"),
-  manufacturer: z.string().min(1, "Manufacturer reference is required"),
-  bundleIdentifier: z.string().optional(),
-  platforms: createPlatformArrayValidator(),
-  website: z.string().url().optional(),
-  description: z.string().optional(),
-  searchTerms: z.array(z.string()).optional(),
-  images: z.array(ImageSchema).optional(),
-});
-
 const HardwareSchema = z.object({
   slug: z
     .string()
@@ -325,7 +311,7 @@ function validateFile(
 
 function validate(): ValidationResult {
   const errors: ValidationError[] = [];
-  const stats = { manufacturers: 0, software: 0, daws: 0, hardware: 0 };
+  const stats = { manufacturers: 0, software: 0, hardware: 0 };
 
   // First pass: collect all manufacturer slugs
   const manufacturerFiles = getYamlFiles(path.join(DATA_DIR, "manufacturers"));
@@ -364,17 +350,6 @@ function validate(): ValidationResult {
     }
   }
 
-  // Validate DAWs
-  const dawFiles = getYamlFiles(path.join(DATA_DIR, "daws"));
-  for (const file of dawFiles) {
-    const error = validateFile(file, DawSchema, allManufacturers);
-    if (error) {
-      errors.push(error);
-    } else {
-      stats.daws++;
-    }
-  }
-
   // Validate hardware
   const hardwareFiles = getYamlFiles(path.join(DATA_DIR, "hardware"));
   for (const file of hardwareFiles) {
@@ -404,7 +379,6 @@ function writeGitHubSummary(result: ValidationResult): void {
   const total =
     result.stats.manufacturers +
     result.stats.software +
-    result.stats.daws +
     result.stats.hardware;
 
   let summary = "";
@@ -430,7 +404,6 @@ function writeGitHubSummary(result: ValidationResult): void {
   summary += `|------|-------|\n`;
   summary += `| Manufacturers | ${result.stats.manufacturers} |\n`;
   summary += `| Software | ${result.stats.software} |\n`;
-  summary += `| DAWs | ${result.stats.daws} |\n`;
   summary += `| Hardware | ${result.stats.hardware} |\n`;
   summary += `| **Total** | **${total}** |\n`;
 
@@ -458,10 +431,9 @@ function writeConsoleOutput(result: ValidationResult): void {
   console.log("📊 Stats:");
   console.log(`   Manufacturers: ${result.stats.manufacturers}`);
   console.log(`   Software:      ${result.stats.software}`);
-  console.log(`   DAWs:          ${result.stats.daws}`);
   console.log(`   Hardware:      ${result.stats.hardware}`);
   console.log(
-    `   Total:         ${result.stats.manufacturers + result.stats.software + result.stats.daws + result.stats.hardware}`
+    `   Total:         ${result.stats.manufacturers + result.stats.software + result.stats.hardware}`
   );
   console.log();
 }
@@ -476,3 +448,5 @@ writeConsoleOutput(result);
 writeGitHubSummary(result);
 
 process.exit(result.valid ? 0 : 1);
+
+

@@ -10,7 +10,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 
-import type { Change, Manufacturer, Software, Daw, Hardware } from "./lib/types.js";
+import type { Change, Manufacturer, Software, Hardware } from "./lib/types.js";
 import { DATA_DIR, OUTPUT_DIR, escapeSQL } from "./lib/utils.js";
 
 const PATCHES_DIR = path.join(OUTPUT_DIR, "patches");
@@ -164,45 +164,6 @@ function generateSoftwareSQL(change: Change, data: Software | null): string[] {
   return sql;
 }
 
-function generateDawSQL(change: Change, data: Daw | null): string[] {
-  const sql: string[] = [];
-
-  if (change.type === "deleted") {
-    sql.push(`DELETE FROM daws_fts WHERE id = ${escapeSQL(change.slug)};`);
-    sql.push(`DELETE FROM daws WHERE id = ${escapeSQL(change.slug)};`);
-  } else if (data) {
-    if (change.type === "modified") {
-      sql.push(
-        `DELETE FROM daw_platforms WHERE daw_id = ${escapeSQL(data.slug)};`
-      );
-      sql.push(`DELETE FROM daws_fts WHERE id = ${escapeSQL(data.slug)};`);
-      sql.push(
-        `UPDATE daws SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(data.manufacturer)}, bundle_identifier = ${escapeSQL(data.bundleIdentifier)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.slug)};`
-      );
-    } else {
-      sql.push(
-        `INSERT INTO daws (id, name, manufacturer_id, bundle_identifier, website, description, updated_at) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, ${escapeSQL(data.manufacturer)}, ${escapeSQL(data.bundleIdentifier)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, datetime('now'));`
-      );
-    }
-
-    // Insert platforms
-    if (data.platforms) {
-      for (const platform of data.platforms) {
-        sql.push(
-          `INSERT INTO daw_platforms (daw_id, platform) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(platform)});`
-        );
-      }
-    }
-
-    // Insert FTS
-    sql.push(
-      `INSERT INTO daws_fts (id, name, manufacturer_name, description) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, (SELECT name FROM manufacturers WHERE id = ${escapeSQL(data.manufacturer)}), ${escapeSQL(data.description)});`
-    );
-  }
-
-  return sql;
-}
-
 function generateHardwareSQL(change: Change, data: Hardware | null): string[] {
   const sql: string[] = [];
 
@@ -271,7 +232,7 @@ function generatePatch(fromTag: string, toVersion: string): void {
 
   // Process changes in order: manufacturers first (for foreign keys)
   const sortedChanges = [...changes].sort((a, b) => {
-    const order = { manufacturers: 0, software: 1, daws: 2, hardware: 3 };
+    const order = { manufacturers: 0, software: 1, hardware: 2 };
     return order[a.category] - order[b.category];
   });
 
@@ -298,9 +259,6 @@ function generatePatch(fromTag: string, toVersion: string): void {
         break;
       case "software":
         statements = generateSoftwareSQL(change, data as Software);
-        break;
-      case "daws":
-        statements = generateDawSQL(change, data as Daw);
         break;
       case "hardware":
         statements = generateHardwareSQL(change, data as Hardware);
@@ -354,3 +312,5 @@ if (fromArg && toArg) {
     console.log("No previous release found. Build a baseline first with: pnpm build");
   }
 }
+
+

@@ -138,44 +138,6 @@ CREATE TABLE IF NOT EXISTS software_images (
     PRIMARY KEY (software_id, source)
 );
 
--- DAWs (Digital Audio Workstations)
-CREATE TABLE IF NOT EXISTS daws (
-    id TEXT PRIMARY KEY,              -- slug (e.g., 'ableton-live')
-    name TEXT NOT NULL,               -- Display name
-    manufacturer_id TEXT REFERENCES manufacturers(id),
-    bundle_identifier TEXT,           -- macOS bundle ID
-    website TEXT,
-    description TEXT,
-    created_at TEXT DEFAULT (datetime('now')),
-    updated_at TEXT DEFAULT (datetime('now'))
-);
-
-CREATE INDEX idx_daws_name ON daws(name);
-CREATE INDEX idx_daws_bundle_identifier ON daws(bundle_identifier);
-
--- DAW Platforms
-CREATE TABLE IF NOT EXISTS daw_platforms (
-    daw_id TEXT NOT NULL REFERENCES daws(id) ON DELETE CASCADE,
-    platform TEXT NOT NULL,
-    PRIMARY KEY (daw_id, platform)
-);
-
--- DAW Search Terms
-CREATE TABLE IF NOT EXISTS daw_search_terms (
-    daw_id TEXT NOT NULL REFERENCES daws(id) ON DELETE CASCADE,
-    term TEXT NOT NULL,
-    PRIMARY KEY (daw_id, term)
-);
-
--- DAW Images
-CREATE TABLE IF NOT EXISTS daw_images (
-    daw_id TEXT NOT NULL REFERENCES daws(id) ON DELETE CASCADE,
-    source TEXT NOT NULL,
-    alt TEXT,
-    position INTEGER DEFAULT 0,
-    PRIMARY KEY (daw_id, source)
-);
-
 -- Hardware
 CREATE TABLE IF NOT EXISTS hardware (
     id TEXT PRIMARY KEY,
@@ -356,16 +318,6 @@ CREATE VIRTUAL TABLE IF NOT EXISTS software_fts USING fts5(
     tokenize='porter unicode61'
 );
 
--- DAW FTS index  
-CREATE VIRTUAL TABLE IF NOT EXISTS daws_fts USING fts5(
-    id,
-    name,
-    manufacturer_name,
-    description,
-    content='',
-    tokenize='porter unicode61'
-);
-
 -- Hardware FTS index
 CREATE VIRTUAL TABLE IF NOT EXISTS hardware_fts USING fts5(
     id,
@@ -392,3 +344,5 @@ INSERT OR REPLACE INTO catalog_meta (key, value) VALUES
     ('schema_version', '3'),
     ('created_at', datetime('now')),
     ('updated_at', datetime('now'));
+
+

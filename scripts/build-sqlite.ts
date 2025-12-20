@@ -9,7 +9,7 @@ import Database from "better-sqlite3";
 import fs from "node:fs";
 import path from "node:path";
 
-import type { Manufacturer, Software, Daw, Hardware, IO, Version, Price, Link, Revision, Image } from "./lib/types.js";
+import type { Manufacturer, Software, Hardware, IO, Version, Price, Link, Revision, Image } from "./lib/types.js";
 import { DATA_DIR, OUTPUT_DIR, loadYamlFile, getYamlFiles } from "./lib/utils.js";
 
 const SCHEMA_FILE = path.join(import.meta.dirname, "schema.sql");
@@ -227,73 +227,6 @@ function buildDatabase(version: number): void {
   }
 
   console.log(`  ✓ Inserted ${softwareCount} software entries`);
-
-  // Load and insert DAWs
-  const dawFiles = getYamlFiles(path.join(DATA_DIR, "daws"));
-  let dawCount = 0;
-
-  const insertDaw = db.prepare(`
-    INSERT INTO daws (id, name, manufacturer_id, bundle_identifier, website, description)
-    VALUES (?, ?, ?, ?, ?, ?)
-  `);
-  const insertDawPlatform = db.prepare(`
-    INSERT INTO daw_platforms (daw_id, platform)
-    VALUES (?, ?)
-  `);
-  const insertDawSearchTerm = db.prepare(`
-    INSERT INTO daw_search_terms (daw_id, term)
-    VALUES (?, ?)
-  `);
-  const insertDawImage = db.prepare(`
-    INSERT INTO daw_images (daw_id, source, alt, position)
-    VALUES (?, ?, ?, ?)
-  `);
-  const insertDawFts = db.prepare(`
-    INSERT INTO daws_fts (id, name, manufacturer_name, description)
-    VALUES (?, ?, ?, ?)
-  `);
-
-  for (const file of dawFiles) {
-    const data = loadYamlFile<Daw>(file);
-    const manufacturer = manufacturers.get(data.manufacturer);
-
-    insertDaw.run(
-      data.slug,
-      data.name,
-      data.manufacturer,
-      data.bundleIdentifier ?? null,
-      data.website ?? null,
-      data.description ?? null
-    );
-
-    // Insert platforms
-    if (data.platforms) {
-      for (const platform of data.platforms) {
-        insertDawPlatform.run(data.slug, platform);
-      }
-    }
-
-    // Insert search terms
-    if (data.searchTerms) {
-      for (const term of data.searchTerms) {
-        insertDawSearchTerm.run(data.slug, term);
-      }
-    }
-
-    // Insert images
-    if (data.images) {
-      data.images.forEach((img, index) => {
-        insertDawImage.run(data.slug, img.source, img.alt ?? null, index);
-      });
-    }
-
-    // Insert FTS entry
-    insertDawFts.run(data.slug, data.name, manufacturer?.name ?? "", data.description ?? "");
-
-    dawCount++;
-  }
-
-  console.log(`  ✓ Inserted ${dawCount} DAW entries`);
 
   // Load and insert hardware
   const hardwareFiles = getYamlFiles(path.join(DATA_DIR, "hardware"));
@@ -568,3 +501,5 @@ const version = parseInt(process.argv[2] ?? "1", 10);
 console.log("\n🔨 Building catalog database...\n");
 buildDatabase(version);
 console.log();
+
+

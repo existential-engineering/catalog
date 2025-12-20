@@ -141,3 +141,6 @@ VST3 plugins use the same identifier scheme but are stored differently. Check th
 
 Open a [Discussion](https://github.com/racks-fm/catalog/discussions) or reach out to the maintainers.
 
+
+
+

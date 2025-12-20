@@ -97,18 +97,6 @@ export interface Software {
   images?: Image[];
 }
 
-export interface Daw {
-  slug: string;
-  name: string;
-  manufacturer: string;
-  bundleIdentifier?: string;
-  platforms?: string[];
-  website?: string;
-  description?: string;
-  searchTerms?: string[];
-  images?: Image[];
-}
-
 export interface Hardware {
   slug: string;
   name: string;
@@ -161,7 +149,6 @@ export interface ValidationResult {
   stats: {
     manufacturers: number;
     software: number;
-    daws: number;
     hardware: number;
   };
 }
@@ -172,7 +159,7 @@ export interface ValidationResult {
 
 export interface Change {
   type: "added" | "modified" | "deleted";
-  category: "manufacturers" | "software" | "daws" | "hardware";
+  category: "manufacturers" | "software" | "hardware";
   file: string;
   slug: string;
 }
