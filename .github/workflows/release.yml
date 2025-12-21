@@ -63,6 +63,17 @@ jobs:
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
 
+      - name: Rebuild slug index
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        run: pnpm rebuild-slug-index
+
+      - name: Commit slug index
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update slug index"
+          file_pattern: ".slug-index.json"
+
       - name: Create GitHub Release
         if: steps.changesets.outputs.hasChangesets == 'false' && steps.tag_check.outputs.exists == 'false'
         uses: softprops/action-gh-release@v2
