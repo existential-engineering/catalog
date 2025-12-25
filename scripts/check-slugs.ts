@@ -3,7 +3,25 @@
  *
  * Validates slug uniqueness for changed files in a PR.
  * Checks against .slug-index.json for O(1) lookups.
- * Run with: pnpm check-slugs
+ *
+ * Workflow / index usage:
+ * - The repository maintains a precomputed slug index in `.slug-index.json`.
+ *   This file maps each known slug to its collection and is used here for
+ *   constant-time (O(1)) existence checks instead of re-scanning all data.
+ * - The slug index should be (re)built whenever the global set of slugs may
+ *   have changed (e.g. after adding, removing, or renaming entries in
+ *   `data/manufacturers`, `data/software`, or `data/hardware`). This is
+ *   typically done by a separate maintenance/CI script that scans all data
+ *   files and writes `.slug-index.json` at the repository root.
+ * - This script does not rebuild the index; it only:
+ *     1) determines which YAML files have changed in the current branch/PR,
+ *     2) extracts their `slug` fields, and
+ *     3) checks those slugs against the existing `.slug-index.json` to
+ *        detect duplicates or collisions across the whole dataset.
+ *
+ * Typical usage:
+ * - Ensure the slug index is up to date (via your dedicated index builder).
+ * - Run with: `pnpm check-slugs` to validate the slugs in the current change.
  */
 
 import { execSync } from "node:child_process";
@@ -43,6 +61,12 @@ function loadSlugIndex(): SlugIndex {
 
 function getChangedYamlFiles(): string[] {
   try {
+    // Verify that origin/main exists
+    execSync("git rev-parse --verify origin/main", {
+      encoding: "utf-8",
+      stdio: ["pipe", "pipe", "pipe"],
+    });
+
     // Get files changed compared to origin/main
     const output = execSync("git diff --name-only origin/main -- data/", {
       encoding: "utf-8",
@@ -52,7 +76,9 @@ function getChangedYamlFiles(): string[] {
     return output
       .split("\n")
       .filter((f) => f && (f.endsWith(".yaml") || f.endsWith(".yml")));
-  } catch {
+  } catch (error) {
+    console.warn("⚠️  origin/main not available, falling back to staged files");
+    
     // Fallback: check all staged files (for local testing)
     try {
       const output = execSync("git diff --name-only --cached -- data/", {
@@ -82,7 +108,8 @@ function extractSlugFromFile(filePath: string): string | null {
     const content = fs.readFileSync(fullPath, "utf-8");
     const data = parseYaml(content) as { slug?: string };
     return data.slug ?? null;
-  } catch {
+  } catch (error) {
+    console.warn(`⚠️  Failed to read or parse YAML file for slug extraction: ${filePath}`, error);
     return null;
   }
 }
@@ -130,11 +157,28 @@ function checkSlugs(): void {
     }
 
     // Check against index (existing slugs in repo)
-    if (index[slug] && index[slug] !== collection) {
-      errors.push(
-        `Slug '${slug}' in ${filePath} conflicts with existing ${index[slug]}/${slug}`
+    const existingCollection = index[slug];
+    if (existingCollection && existingCollection !== collection) {
+      // Only report a conflict if the existing slug file still exists
+      const existingYamlPath = path.join(
+        DATA_DIR,
+        existingCollection,
+        `${slug}.yaml`
       );
-    } else if (index[slug] === collection) {
+      const existingYmlPath = path.join(
+        DATA_DIR,
+        existingCollection,
+        `${slug}.yml`
+      );
+      const existingFileStillExists =
+        fs.existsSync(existingYamlPath) || fs.existsSync(existingYmlPath);
+
+      if (existingFileStillExists) {
+        errors.push(
+          `Slug '${slug}' in ${filePath} conflicts with existing ${existingCollection}/${slug}`
+        );
+      }
+    } else if (existingCollection === collection) {
       // Same collection, this is an update to existing file - that's fine
       // But check the filename matches the slug
       const expectedFilename = `${slug}.yaml`;
