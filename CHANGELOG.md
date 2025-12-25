@@ -1,5 +1,11 @@
 # catalog
 
+## 0.2.2
+
+### Patch Changes
+
+- 68b0a68: chore: remove duplicate manufacturer in Ableton Live
+
 ## 0.2.1
 
 ### Patch Changes
