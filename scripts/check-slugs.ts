@@ -128,6 +128,50 @@ function getCollectionFromPath(filePath: string): Collection | null {
   return null;
 }
 
+function doesSlugFileExist(collection: Collection, slug: string): boolean {
+  const yamlPath = path.join(DATA_DIR, collection, `${slug}.yaml`);
+  const ymlPath = path.join(DATA_DIR, collection, `${slug}.yml`);
+  return fs.existsSync(yamlPath) || fs.existsSync(ymlPath);
+}
+
+function validateFilenameMatchesSlug(filePath: string, slug: string): string | null {
+  const actualFilename = path.basename(filePath);
+  const expectedYaml = `${slug}.yaml`;
+  const expectedYml = `${slug}.yml`;
+  
+  if (actualFilename !== expectedYaml && actualFilename !== expectedYml) {
+    return `Slug '${slug}' in ${filePath} doesn't match filename (expected ${expectedYaml})`;
+  }
+  
+  return null;
+}
+
+function validateSlugAgainstIndex(
+  slug: string,
+  filePath: string,
+  collection: Collection,
+  index: SlugIndex
+): string | null {
+  const existingCollection = index[slug];
+  
+  if (!existingCollection) {
+    // New slug, no conflict
+    return null;
+  }
+  
+  if (existingCollection !== collection) {
+    // Slug exists in a different collection - only report if file still exists
+    if (doesSlugFileExist(existingCollection, slug)) {
+      return `Slug '${slug}' in ${filePath} conflicts with existing ${existingCollection}/${slug}`;
+    }
+    return null;
+  }
+  
+  // Same collection - this is an update to existing file
+  // Validate that filename matches the slug
+  return validateFilenameMatchesSlug(filePath, slug);
+}
+
 function checkSlugs(): void {
   console.log("\n🔍 Checking slug uniqueness...\n");
 
@@ -156,38 +200,10 @@ function checkSlugs(): void {
       continue;
     }
 
-    // Check against index (existing slugs in repo)
-    const existingCollection = index[slug];
-    if (existingCollection && existingCollection !== collection) {
-      // Only report a conflict if the existing slug file still exists
-      const existingYamlPath = path.join(
-        DATA_DIR,
-        existingCollection,
-        `${slug}.yaml`
-      );
-      const existingYmlPath = path.join(
-        DATA_DIR,
-        existingCollection,
-        `${slug}.yml`
-      );
-      const existingFileStillExists =
-        fs.existsSync(existingYamlPath) || fs.existsSync(existingYmlPath);
-
-      if (existingFileStillExists) {
-        errors.push(
-          `Slug '${slug}' in ${filePath} conflicts with existing ${existingCollection}/${slug}`
-        );
-      }
-    } else if (existingCollection === collection) {
-      // Same collection, this is an update to existing file - that's fine
-      // But check the filename matches the slug
-      const expectedFilename = `${slug}.yaml`;
-      const actualFilename = path.basename(filePath);
-      if (actualFilename !== expectedFilename && actualFilename !== `${slug}.yml`) {
-        errors.push(
-          `Slug '${slug}' in ${filePath} doesn't match filename (expected ${expectedFilename})`
-        );
-      }
+    // Validate slug against index (existing slugs in repo)
+    const indexError = validateSlugAgainstIndex(slug, filePath, collection, index);
+    if (indexError) {
+      errors.push(indexError);
     }
 
     // Check against other files in this PR
