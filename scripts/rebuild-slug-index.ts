@@ -34,7 +34,12 @@ function extractSlug(filePath: string): string | null {
     const content = fs.readFileSync(filePath, "utf-8");
     const data = parseYaml(content) as { slug?: string };
     return data.slug ?? null;
-  } catch {
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : String(error);
+    console.error(
+      `❌ Failed to extract slug from YAML file ${path.relative(process.cwd(), filePath)}: ${message}`
+    );
     return null;
   }
 }
@@ -66,7 +71,9 @@ function rebuildIndex(): void {
         // Already exists in another collection
         const existing = duplicates.find((d) => d.slug === slug);
         if (existing) {
-          existing.collections.push(collection);
+          if (!existing.collections.includes(collection)) {
+            existing.collections.push(collection);
+          }
         } else {
           duplicates.push({ slug, collections: [index[slug], collection] });
         }
@@ -79,9 +86,9 @@ function rebuildIndex(): void {
   // Report duplicates
   if (duplicates.length > 0) {
     console.error("\n❌ Duplicate slugs found:\n");
-    for (const dup of duplicates) {
-      const locations = slugLocations.get(dup.slug) ?? [];
-      console.error(`   ${dup.slug}:`);
+    for (const duplicate of duplicates) {
+      const locations = slugLocations.get(duplicate.slug) ?? [];
+      console.error(`   ${duplicate.slug}:`);
       for (const loc of locations) {
         console.error(`     - ${loc}`);
       }
@@ -91,10 +98,9 @@ function rebuildIndex(): void {
   }
 
   // Sort index alphabetically
-  const sortedIndex: SlugIndex = {};
-  for (const key of Object.keys(index).sort()) {
-    sortedIndex[key] = index[key];
-  }
+  const sortedIndex: SlugIndex = Object.fromEntries(
+    Object.entries(index).sort(([a], [b]) => a.localeCompare(b))
+  ) as SlugIndex;
 
   // Write index file
   fs.writeFileSync(INDEX_FILE, JSON.stringify(sortedIndex, null, 2) + "\n");
