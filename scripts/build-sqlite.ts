@@ -40,8 +40,11 @@ function buildDatabase(version: number): void {
   const manufacturers = new Map<string, Manufacturer>();
 
   const insertManufacturer = db.prepare(`
-    INSERT INTO manufacturers (id, name, company_name, parent_company, website, description)
-    VALUES (?, ?, ?, ?, ?, ?)
+    INSERT INTO manufacturers (id, name, company_name, website, description)
+    VALUES (?, ?, ?, ?, ?)
+  `);
+  const updateManufacturerParent = db.prepare(`
+    UPDATE manufacturers SET parent_company_id = ? WHERE id = ?
   `);
   const insertManufacturerSearchTerm = db.prepare(`
     INSERT INTO manufacturer_search_terms (manufacturer_id, term)
@@ -52,6 +55,7 @@ function buildDatabase(version: number): void {
     VALUES (?, ?, ?, ?)
   `);
 
+  // First pass: insert all manufacturers without parent references
   for (const file of manufacturerFiles) {
     const data = loadYamlFile<Manufacturer>(file);
     manufacturers.set(data.slug, data);
@@ -59,11 +63,10 @@ function buildDatabase(version: number): void {
       data.slug,
       data.name,
       data.companyName ?? null,
-      data.parentCompany ?? null,
       data.website ?? null,
       data.description ?? null
     );
-    
+
     // Insert search terms
     if (data.searchTerms) {
       for (const term of data.searchTerms) {
@@ -76,6 +79,13 @@ function buildDatabase(version: number): void {
       data.images.forEach((img, index) => {
         insertManufacturerImage.run(data.slug, img.source, img.alt ?? null, index);
       });
+    }
+  }
+
+  // Second pass: update parent company references
+  for (const data of manufacturers.values()) {
+    if (data.parentCompany) {
+      updateManufacturerParent.run(data.parentCompany, data.slug);
     }
   }
 
