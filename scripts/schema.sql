@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS manufacturers (
     id TEXT PRIMARY KEY,              -- slug (e.g., 'xfer-records')
     name TEXT NOT NULL,               -- Display name
     company_name TEXT,                -- Official company name (if different)
-    parent_company TEXT,              -- Parent company name
+    parent_company_id TEXT REFERENCES manufacturers(id), -- Parent company slug
     website TEXT,                     -- Company website
     description TEXT,                 -- Description
     created_at TEXT DEFAULT (datetime('now')),
@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS manufacturers (
 );
 
 CREATE INDEX idx_manufacturers_name ON manufacturers(name);
+CREATE INDEX idx_manufacturers_parent ON manufacturers(parent_company_id);
 
 -- Manufacturer Search Terms
 CREATE TABLE IF NOT EXISTS manufacturer_search_terms (
@@ -339,9 +340,9 @@ CREATE TABLE IF NOT EXISTS catalog_meta (
 );
 
 -- Insert initial metadata
-INSERT OR REPLACE INTO catalog_meta (key, value) VALUES 
+INSERT OR REPLACE INTO catalog_meta (key, value) VALUES
     ('version', '1'),
-    ('schema_version', '3'),
+    ('schema_version', '4'),
     ('created_at', datetime('now')),
     ('updated_at', datetime('now'));
 
