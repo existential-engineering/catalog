@@ -12,6 +12,10 @@ import path from "node:path";
 import type { Manufacturer, Software, Hardware, IO, Version, Price, Link, Revision, Image } from "./lib/types.js";
 import { DATA_DIR, OUTPUT_DIR, loadYamlFile, getYamlFiles } from "./lib/utils.js";
 
+// Read version from package.json
+const packageJson = JSON.parse(fs.readFileSync(path.join(import.meta.dirname, "../package.json"), "utf-8"));
+const CATALOG_VERSION = packageJson.version;
+
 const SCHEMA_FILE = path.join(import.meta.dirname, "schema.sql");
 const OUTPUT_FILE = path.join(OUTPUT_DIR, "catalog.sqlite");
 
@@ -19,7 +23,7 @@ const OUTPUT_FILE = path.join(OUTPUT_DIR, "catalog.sqlite");
 // BUILD FUNCTIONS
 // =============================================================================
 
-function buildDatabase(version: number): void {
+function buildDatabase(version: string): void {
   // Ensure output directory exists
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
@@ -482,7 +486,7 @@ function buildDatabase(version: number): void {
     INSERT OR REPLACE INTO catalog_meta (key, value)
     VALUES (?, ?)
   `);
-  updateMeta.run("version", String(version));
+  updateMeta.run("version", version);
   updateMeta.run("updated_at", new Date().toISOString());
 
   // Optimize database
@@ -505,11 +509,8 @@ function buildDatabase(version: number): void {
 // MAIN
 // =============================================================================
 
-// Get version from argument or default to 1
-const version = parseInt(process.argv[2] ?? "1", 10);
-
 console.log("\n🔨 Building catalog database...\n");
-buildDatabase(version);
+buildDatabase(CATALOG_VERSION);
 console.log();
 
 
