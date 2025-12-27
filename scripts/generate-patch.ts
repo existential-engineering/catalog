@@ -130,10 +130,12 @@ function generateSoftwareSQL(change: Change, data: Software | null): string[] {
     }
 
     // Insert categories
-    for (const category of data.categories) {
-      sql.push(
-        `INSERT INTO software_categories (software_id, category) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(category)});`
-      );
+    if (data.categories) {
+      for (const category of data.categories) {
+        sql.push(
+          `INSERT INTO software_categories (software_id, category) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(category)});`
+        );
+      }
     }
 
     // Insert formats
@@ -157,7 +159,7 @@ function generateSoftwareSQL(change: Change, data: Software | null): string[] {
 
     // Insert FTS
     sql.push(
-      `INSERT INTO software_fts (id, name, manufacturer_name, categories) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, (SELECT name FROM manufacturers WHERE id = ${escapeSQL(data.manufacturer)}), ${escapeSQL(data.categories.join(" "))});`
+      `INSERT INTO software_fts (id, name, manufacturer_name, categories) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, (SELECT name FROM manufacturers WHERE id = ${escapeSQL(data.manufacturer)}), ${escapeSQL(data.categories?.join(" ") ?? "")});`
     );
   }
 
