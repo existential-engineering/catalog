@@ -298,6 +298,41 @@ function validateFile(
       };
     }
 
+    // Check for duplicate categories
+    if (Array.isArray(data.categories)) {
+      const categoryErrors: string[] = [];
+
+      // Check if primaryCategory is duplicated in categories array
+      if (data.primaryCategory && data.categories.includes(data.primaryCategory)) {
+        categoryErrors.push(
+          `categories: primaryCategory '${data.primaryCategory}' should not be duplicated in categories array`
+        );
+      }
+
+      // Check if secondaryCategory is duplicated in categories array
+      if (data.secondaryCategory && data.categories.includes(data.secondaryCategory)) {
+        categoryErrors.push(
+          `categories: secondaryCategory '${data.secondaryCategory}' should not be duplicated in categories array`
+        );
+      }
+
+      // Check for duplicates within the categories array itself
+      const seen = new Set<string>();
+      for (const cat of data.categories) {
+        if (seen.has(cat)) {
+          categoryErrors.push(`categories: duplicate category '${cat}' in array`);
+        }
+        seen.add(cat);
+      }
+
+      if (categoryErrors.length > 0) {
+        return {
+          file: path.relative(process.cwd(), filePath),
+          errors: categoryErrors,
+        };
+      }
+    }
+
     return null;
   } catch (error) {
     return {
