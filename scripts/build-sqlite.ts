@@ -9,8 +9,21 @@ import Database from "better-sqlite3";
 import fs from "node:fs";
 import path from "node:path";
 
-import type { Manufacturer, Software, Hardware, IO, Version, Price, Link, Revision, Image } from "./lib/types.js";
-import { DATA_DIR, OUTPUT_DIR, loadYamlFile, getYamlFiles } from "./lib/utils.js";
+import type { Manufacturer, Software, Hardware, IO, Version, Price, Link, Revision, Image, CategoryAliasesSchema } from "./lib/types.js";
+import { DATA_DIR, OUTPUT_DIR, SCHEMA_DIR, loadYamlFile, getYamlFiles } from "./lib/utils.js";
+
+// Load category aliases for normalization
+const categoryAliasesSchema = loadYamlFile<CategoryAliasesSchema>(
+  path.join(SCHEMA_DIR, "category-aliases.yaml")
+);
+const CATEGORY_ALIASES = new Map<string, string>(
+  Object.entries(categoryAliasesSchema.aliases)
+);
+
+// Normalize a category to its canonical form
+function normalizeCategory(category: string): string {
+  return CATEGORY_ALIASES.get(category) ?? category;
+}
 
 // Read version from package.json
 const packageJson = JSON.parse(fs.readFileSync(path.join(import.meta.dirname, "../package.json"), "utf-8"));
@@ -144,21 +157,26 @@ function buildDatabase(version: string): void {
     const data = loadYamlFile<Software>(file);
     const manufacturer = manufacturers.get(data.manufacturer);
 
+    // Normalize categories to canonical form
+    const normalizedCategories = data.categories?.map(normalizeCategory) ?? [];
+    const normalizedPrimaryCategory = data.primaryCategory ? normalizeCategory(data.primaryCategory) : null;
+    const normalizedSecondaryCategory = data.secondaryCategory ? normalizeCategory(data.secondaryCategory) : null;
+
     insertSoftware.run(
       data.slug,
       data.name,
       data.manufacturer,
       data.website ?? null,
       data.releaseDate ?? null,
-      data.primaryCategory ?? null,
-      data.secondaryCategory ?? null,
+      normalizedPrimaryCategory,
+      normalizedSecondaryCategory,
       data.description ?? null,
       data.details ?? null,
       data.specs ?? null
     );
 
-    // Insert categories
-    for (const category of data.categories) {
+    // Insert categories (normalized)
+    for (const category of normalizedCategories) {
       insertCategory.run(data.slug, category);
     }
 
@@ -228,12 +246,12 @@ function buildDatabase(version: string): void {
       });
     }
 
-    // Insert FTS entry
+    // Insert FTS entry (with normalized categories)
     insertSoftwareFts.run(
       data.slug,
       data.name,
       manufacturer?.name ?? "",
-      data.categories.join(" "),
+      normalizedCategories.join(" "),
       data.description ?? ""
     );
 
@@ -307,24 +325,27 @@ function buildDatabase(version: string): void {
     const data = loadYamlFile<Hardware>(file);
     const manufacturer = manufacturers.get(data.manufacturer);
 
+    // Normalize categories to canonical form
+    const normalizedCategories = data.categories?.map(normalizeCategory) ?? [];
+    const normalizedPrimaryCategory = data.primaryCategory ? normalizeCategory(data.primaryCategory) : null;
+    const normalizedSecondaryCategory = data.secondaryCategory ? normalizeCategory(data.secondaryCategory) : null;
+
     insertHardware.run(
       data.slug,
       data.name,
       data.manufacturer,
       data.website ?? null,
       data.releaseDate ?? null,
-      data.primaryCategory ?? null,
-      data.secondaryCategory ?? null,
+      normalizedPrimaryCategory,
+      normalizedSecondaryCategory,
       data.description ?? null,
       data.details ?? null,
       data.specs ?? null
     );
 
-    // Insert categories
-    if (data.categories) {
-      for (const category of data.categories) {
-        insertHardwareCategory.run(data.slug, category);
-      }
+    // Insert categories (normalized)
+    for (const category of normalizedCategories) {
+      insertHardwareCategory.run(data.slug, category);
     }
 
     // Insert search terms
@@ -467,12 +488,12 @@ function buildDatabase(version: string): void {
       });
     }
 
-    // Insert FTS entry
+    // Insert FTS entry (with normalized categories)
     insertHardwareFts.run(
       data.slug,
       data.name,
       manufacturer?.name ?? "",
-      data.categories?.join(" ") ?? "",
+      normalizedCategories.join(" "),
       data.description ?? ""
     );
 
