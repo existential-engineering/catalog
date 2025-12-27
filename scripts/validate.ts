@@ -12,6 +12,7 @@ import { z } from "zod";
 
 import type {
   CategoriesSchema,
+  CategoryAliasesSchema,
   FormatsSchema,
   PlatformsSchema,
   ValidationError,
@@ -33,6 +34,9 @@ import {
 const categoriesSchema = loadYamlFile<CategoriesSchema>(
   path.join(SCHEMA_DIR, "categories.yaml")
 );
+const categoryAliasesSchema = loadYamlFile<CategoryAliasesSchema>(
+  path.join(SCHEMA_DIR, "category-aliases.yaml")
+);
 const formatsSchema = loadYamlFile<FormatsSchema>(
   path.join(SCHEMA_DIR, "formats.yaml")
 );
@@ -40,9 +44,28 @@ const platformsSchema = loadYamlFile<PlatformsSchema>(
   path.join(SCHEMA_DIR, "platforms.yaml")
 );
 
+// Canonical categories
 const VALID_CATEGORIES = new Set(categoriesSchema.categories);
+
+// Map of alias -> canonical category
+const CATEGORY_ALIASES = new Map<string, string>(
+  Object.entries(categoryAliasesSchema.aliases)
+);
+
+// All valid category inputs (canonical + aliases)
+const ALL_VALID_CATEGORY_INPUTS = new Set([
+  ...categoriesSchema.categories,
+  ...Object.keys(categoryAliasesSchema.aliases),
+]);
+
 const VALID_FORMATS = new Set(formatsSchema.formats);
 const VALID_PLATFORMS = new Set(platformsSchema.platforms);
+
+// Helper to check if a category is valid (canonical or alias)
+function isValidCategory(cat: string): boolean {
+  return ALL_VALID_CATEGORY_INPUTS.has(cat);
+}
+
 
 // =============================================================================
 // SHARED ZOD SCHEMAS
@@ -103,9 +126,11 @@ const ImageSchema = z.object({
 });
 
 // Helper for category validation with suggestions
+// Accepts both canonical categories and aliases
 const createCategoryValidator = () =>
   z.string().check((ctx) => {
-    if (!VALID_CATEGORIES.has(ctx.value)) {
+    if (!isValidCategory(ctx.value)) {
+      // Suggest only canonical categories, not aliases
       const suggestion = findClosestMatch(ctx.value, VALID_CATEGORIES);
       let message = `Invalid category '${ctx.value}'.`;
       if (suggestion) {
@@ -157,11 +182,14 @@ const SoftwareSchema = z.object({
   manufacturer: z.string().min(1, "Manufacturer reference is required"),
   categories: z
     .array(z.string())
-    .min(1, "At least one category is required")
+    .optional()
     .check((ctx) => {
-      const invalid = ctx.value.filter((c) => !VALID_CATEGORIES.has(c));
+      if (!ctx.value) return;
+      // Accept both canonical categories and aliases
+      const invalid = ctx.value.filter((c) => !isValidCategory(c));
       if (invalid.length > 0) {
         for (const cat of invalid) {
+          // Suggest only canonical categories
           const suggestion = findClosestMatch(cat, VALID_CATEGORIES);
           let message = `Invalid category '${cat}'.`;
           if (suggestion) {
@@ -216,9 +244,11 @@ const HardwareSchema = z.object({
     .optional()
     .check((ctx) => {
       if (!ctx.value) return;
-      const invalid = ctx.value.filter((c) => !VALID_CATEGORIES.has(c));
+      // Accept both canonical categories and aliases
+      const invalid = ctx.value.filter((c) => !isValidCategory(c));
       if (invalid.length > 0) {
         for (const cat of invalid) {
+          // Suggest only canonical categories
           const suggestion = findClosestMatch(cat, VALID_CATEGORIES);
           let message = `Invalid category '${cat}'.`;
           if (suggestion) {

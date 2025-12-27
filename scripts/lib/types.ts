@@ -79,7 +79,7 @@ export interface Software {
   slug: string;
   name: string;
   manufacturer: string;
-  categories: string[];
+  categories?: string[];
   formats?: string[];
   platforms?: string[];
   identifiers?: Record<string, string>;
@@ -124,6 +124,10 @@ export interface Hardware {
 
 export interface CategoriesSchema {
   categories: string[];
+}
+
+export interface CategoryAliasesSchema {
+  aliases: Record<string, string>;
 }
 
 export interface FormatsSchema {
