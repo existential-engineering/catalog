@@ -1,5 +1,11 @@
 # catalog
 
+## 0.3.1
+
+### Patch Changes
+
+- 3f576a7: fix: use semver as catalog version
+
 ## 0.3.0
 
 ### Minor Changes
