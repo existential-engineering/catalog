@@ -1,5 +1,12 @@
 # catalog
 
+## 0.3.0
+
+### Minor Changes
+
+- c9e4ba3: feat: add uniqueness checks for slugs
+- cab907e: feat: additional manufacturers; related parentCompany instead of text field
+
 ## 0.2.2
 
 ### Patch Changes
