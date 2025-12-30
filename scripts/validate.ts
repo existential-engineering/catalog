@@ -9,6 +9,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
+import { marked } from "marked";
 
 import type {
   CategoriesSchema,
@@ -66,6 +67,68 @@ function isValidCategory(cat: string): boolean {
   return ALL_VALID_CATEGORY_INPUTS.has(cat);
 }
 
+// Configure marked for validation
+marked.setOptions({
+  gfm: true,
+  breaks: false,
+});
+
+// Helper to validate markdown content
+function validateMarkdown(content: string): { valid: boolean; error?: string } {
+  try {
+    // Try to parse the markdown
+    marked.parse(content);
+
+    // Check for common markdown issues
+    const issues: string[] = [];
+
+    // Check for unclosed code blocks
+    const codeBlockCount = (content.match(/```/g) || []).length;
+    if (codeBlockCount % 2 !== 0) {
+      issues.push("unclosed code block (``` without closing ```)");
+    }
+
+    // Check for unclosed inline code
+    const lines = content.split("\n");
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      // Count backticks not part of code blocks
+      if (!line.startsWith("```")) {
+        const backtickCount = (line.match(/`/g) || []).length;
+        if (backtickCount % 2 !== 0) {
+          issues.push(`unclosed inline code on line ${i + 1}`);
+        }
+      }
+    }
+
+    if (issues.length > 0) {
+      return { valid: false, error: issues.join("; ") };
+    }
+
+    return { valid: true };
+  } catch (error) {
+    return {
+      valid: false,
+      error: error instanceof Error ? error.message : "Invalid markdown",
+    };
+  }
+}
+
+// Zod schema for markdown content validation
+const MarkdownSchema = z
+  .string()
+  .optional()
+  .check((ctx) => {
+    if (!ctx.value) return;
+    const result = validateMarkdown(ctx.value);
+    if (!result.valid) {
+      ctx.issues.push({
+        code: "custom",
+        message: `Invalid markdown: ${result.error}`,
+        input: ctx.value,
+      });
+    }
+  });
 
 // =============================================================================
 // SHARED ZOD SCHEMAS
@@ -169,7 +232,7 @@ const ManufacturerSchema = z.object({
   companyName: z.string().optional(),
   parentCompany: z.string().optional(),
   website: z.string().url().optional(),
-  description: z.string().optional(),
+  description: MarkdownSchema,
   searchTerms: z.array(z.string()).optional(),
   images: z.array(ImageSchema).optional(),
 });
@@ -224,9 +287,9 @@ const SoftwareSchema = z.object({
   primaryCategory: createCategoryValidator().optional(),
   secondaryCategory: createCategoryValidator().optional(),
   searchTerms: z.array(z.string()).optional(),
-  description: z.string().optional(),
-  details: z.string().optional(),
-  specs: z.string().optional(),
+  description: MarkdownSchema,
+  details: MarkdownSchema,
+  specs: MarkdownSchema,
   versions: z.array(VersionSchema).optional(),
   prices: z.array(PriceSchema).optional(),
   links: z.array(LinkSchema).optional(),
@@ -263,9 +326,9 @@ const HardwareSchema = z.object({
   primaryCategory: createCategoryValidator().optional(),
   secondaryCategory: createCategoryValidator().optional(),
   searchTerms: z.array(z.string()).optional(),
-  description: z.string().optional(),
-  details: z.string().optional(),
-  specs: z.string().optional(),
+  description: MarkdownSchema,
+  details: MarkdownSchema,
+  specs: MarkdownSchema,
   io: z.array(IOSchema).optional(),
   versions: z.array(VersionSchema).optional(),
   revisions: z.array(RevisionSchema).optional(),
