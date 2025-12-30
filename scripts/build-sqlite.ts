@@ -2,15 +2,33 @@
  * SQLite Build Script
  *
  * Generates a SQLite database from YAML source files.
+ * Converts Markdown fields to HTML for consumption by apps.
  * Run with: pnpm build
  */
 
 import Database from "better-sqlite3";
 import fs from "node:fs";
 import path from "node:path";
+import { marked } from "marked";
 
 import type { Manufacturer, Software, Hardware, IO, Version, Price, Link, Revision, Image, CategoryAliasesSchema } from "./lib/types.js";
 import { DATA_DIR, OUTPUT_DIR, SCHEMA_DIR, loadYamlFile, getYamlFiles } from "./lib/utils.js";
+
+// Configure marked for safe HTML output
+marked.setOptions({
+  gfm: true, // GitHub Flavored Markdown
+  breaks: false, // Don't convert \n to <br>
+});
+
+/**
+ * Convert Markdown to HTML, or return null if input is empty
+ */
+function markdownToHtml(markdown: string | undefined | null): string | null {
+  if (!markdown) return null;
+  const html = marked.parse(markdown);
+  // marked.parse can return a Promise in async mode, but we're using sync mode
+  return typeof html === "string" ? html.trim() : null;
+}
 
 // Load category aliases for normalization
 const categoryAliasesSchema = loadYamlFile<CategoryAliasesSchema>(
@@ -81,7 +99,7 @@ function buildDatabase(version: string): void {
       data.name,
       data.companyName ?? null,
       data.website ?? null,
-      data.description ?? null
+      markdownToHtml(data.description)
     );
 
     // Insert search terms
@@ -170,9 +188,9 @@ function buildDatabase(version: string): void {
       data.releaseDate ?? null,
       normalizedPrimaryCategory,
       normalizedSecondaryCategory,
-      data.description ?? null,
-      data.details ?? null,
-      data.specs ?? null
+      markdownToHtml(data.description),
+      markdownToHtml(data.details),
+      markdownToHtml(data.specs)
     );
 
     // Insert categories (normalized)
@@ -338,9 +356,9 @@ function buildDatabase(version: string): void {
       data.releaseDate ?? null,
       normalizedPrimaryCategory,
       normalizedSecondaryCategory,
-      data.description ?? null,
-      data.details ?? null,
-      data.specs ?? null
+      markdownToHtml(data.description),
+      markdownToHtml(data.details),
+      markdownToHtml(data.specs)
     );
 
     // Insert categories (normalized)
