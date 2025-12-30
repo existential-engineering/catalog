@@ -19,7 +19,9 @@
     "version": "changeset version",
     "release": "changeset publish",
     "check-slugs": "tsx scripts/check-slugs.ts",
-    "rebuild-slug-index": "tsx scripts/rebuild-slug-index.ts"
+    "rebuild-slug-index": "tsx scripts/rebuild-slug-index.ts",
+    "format": "prettier --write \"data/**/*.yaml\"",
+    "format:check": "prettier --check \"data/**/*.yaml\""
   },
   "keywords": [
     "audio",
@@ -33,11 +35,12 @@
   "author": "Jeffrey Louden <jeff@racks.fm>",
   "license": "MIT",
   "devDependencies": {
-    "@changesets/cli": "2.29.4",
+    "@changesets/cli": "2.29.8",
     "@types/better-sqlite3": "7.6.13",
-    "@types/node": "25.0.2",
+    "@types/node": "25.0.3",
     "better-sqlite3": "12.5.0",
     "marked": "^17.0.1",
+    "prettier": "^3.7.4",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
     "yaml": "2.8.2",
