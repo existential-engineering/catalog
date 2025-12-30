@@ -269,6 +269,8 @@ CREATE TABLE IF NOT EXISTS hardware_revision_prices (
     currency TEXT NOT NULL
 );
 
+CREATE INDEX idx_hardware_revision_prices_revision ON hardware_revision_prices(revision_id);
+
 -- Hardware Links
 CREATE TABLE IF NOT EXISTS hardware_links (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -294,6 +296,8 @@ CREATE TABLE IF NOT EXISTS hardware_revision_links (
     provider TEXT,
     description TEXT
 );
+
+CREATE INDEX idx_hardware_revision_links_revision ON hardware_revision_links(revision_id);
 
 -- Hardware Images
 CREATE TABLE IF NOT EXISTS hardware_images (
