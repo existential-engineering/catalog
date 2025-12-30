@@ -313,13 +313,14 @@ CREATE TABLE IF NOT EXISTS hardware_images (
 -- =============================================================================
 
 -- Software FTS index
+-- Note: Not using content='' (contentless mode) because we need to retrieve
+-- the id column to join back to the software table for full results
 CREATE VIRTUAL TABLE IF NOT EXISTS software_fts USING fts5(
     id,
     name,
     manufacturer_name,
     categories,
     description,
-    content='',                       -- External content mode
     tokenize='porter unicode61'
 );
 
@@ -330,7 +331,6 @@ CREATE VIRTUAL TABLE IF NOT EXISTS hardware_fts USING fts5(
     manufacturer_name,
     categories,
     description,
-    content='',
     tokenize='porter unicode61'
 );
 
