@@ -1,5 +1,11 @@
 # catalog
 
+## 0.3.3
+
+### Patch Changes
+
+- 6389557: feat: markdown formatting in more complex fields
+
 ## 0.3.2
 
 ### Patch Changes
