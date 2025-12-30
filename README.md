@@ -1,5 +1,10 @@
 # Catalog
 
+[![Validate](https://github.com/racks-fm/catalog/actions/workflows/validate.yml/badge.svg)](https://github.com/racks-fm/catalog/actions/workflows/validate.yml)
+[![Release](https://github.com/racks-fm/catalog/actions/workflows/release.yml/badge.svg)](https://github.com/racks-fm/catalog/actions/workflows/release.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Data: CC0](https://img.shields.io/badge/Data-CC0%201.0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+
 Open source database of audio software, plugins, DAWs, and hardware for the music production community.
 
 ## Overview
@@ -17,12 +22,11 @@ This repository contains:
 data/
 ├── manufacturers/     # Companies and developers
 │   └── xfer-records.yaml
-├── software/          # Plugins and standalone apps
-│   └── serum.yaml
-├── daws/              # Digital Audio Workstations
+├── software/          # Plugins, DAWs, and standalone apps
+│   ├── serum.yaml
 │   └── ableton-live.yaml
-└── hardware/          # Audio interfaces, controllers, etc.
-    └── ...
+└── hardware/          # Audio interfaces, controllers, instruments, etc.
+    └── apollo-twin-x.yaml
 ```
 
 ## YAML Format
@@ -41,34 +45,48 @@ website: https://xferrecords.com
 slug: serum
 name: Serum
 manufacturer: xfer-records
-type: plugin
+primaryCategory: synthesizer
 categories:
-  - synthesizer
+  - plugin
   - wavetable
 formats:
   - au
   - vst3
   - aax
 platforms:
-  - darwin
-  - win32
+  - mac
+  - windows
 identifiers:
   au: com.xferrecords.Serum
   vst3: com.xferrecords.Serum.vst3
 website: https://xferrecords.com/products/serum
+description: Advanced wavetable synthesizer with visual feedback
 ```
 
-### DAW
+### Software (DAW)
 
 ```yaml
 slug: ableton-live
-name: Ableton Live
+name: Live
 manufacturer: ableton
-bundleIdentifier: com.ableton.live
+primaryCategory: daw
 platforms:
-  - darwin
-  - win32
+  - mac
+  - windows
+identifiers:
+  bundle: com.ableton.live
 website: https://ableton.com/live
+```
+
+### Hardware
+
+```yaml
+slug: apollo-twin-x
+name: Apollo Twin X
+manufacturer: universal-audio
+primaryCategory: audio-interface
+website: https://www.uaudio.com/products/apollo-twin-x
+description: Desktop Thunderbolt audio interface with UAD processing
 ```
 
 ## Using the Database
@@ -76,17 +94,14 @@ website: https://ableton.com/live
 ### Download Latest Release
 
 ```bash
-# Get the latest manifest
-curl -L https://github.com/racks-fm/catalog/releases/latest/download/manifest.json
-
-# Download the baseline database
-curl -L https://github.com/racks-fm/catalog/releases/latest/download/baseline-{version}.sqlite
+# Get the latest SQLite database
+curl -L https://github.com/racks-fm/catalog/releases/latest/download/catalog.sqlite -o catalog.sqlite
 ```
 
 ### Query Examples
 
 ```sql
--- Search for plugins
+-- Search for plugins by name
 SELECT s.name, m.name as manufacturer
 FROM software s
 JOIN manufacturers m ON s.manufacturer_id = m.id
@@ -105,6 +120,12 @@ WHERE sc.category = 'synthesizer';
 SELECT sf.format, sf.identifier
 FROM software_formats sf
 WHERE sf.software_id = 'serum';
+
+-- Find all DAWs
+SELECT s.name, m.name as manufacturer
+FROM software s
+JOIN manufacturers m ON s.manufacturer_id = m.id
+WHERE s.primary_category = 'daw';
 ```
 
 ## Contributing
@@ -137,8 +158,8 @@ pnpm validate
 # Build SQLite database locally
 pnpm build
 
-# Generate changelog
-pnpm changelog
+# Type check
+pnpm typecheck
 ```
 
 ## License
@@ -149,7 +170,3 @@ pnpm changelog
 ## Related Projects
 
 - [Racks](https://racks.fm) — Studio organization app that uses this catalog
-
-
-
-
