@@ -1,5 +1,5 @@
 name: Add Software
-description: Request to add a new plugin or software to the catalog
+description: Request to add a new plugin, DAW, or software to the catalog
 title: "[Add] "
 labels: ["addition", "software"]
 body:
@@ -32,9 +32,10 @@ body:
       label: Type
       description: What kind of software is this?
       options:
-        - plugin
-        - standalone
-        - suite
+        - Plugin
+        - DAW
+        - Standalone
+        - Suite
     validations:
       required: true
 
