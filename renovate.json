@@ -1,17 +1,19 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "baseBranches": ["main"],
-  "extends": ["config:base", ":disableDependencyDashboard"],
+  "extends": ["config:recommended", ":semanticCommits", ":disableDependencyDashboard"],
   "prHourlyLimit": 5,
   "updateNotScheduled": false,
   "timezone": "America/New_York",
   "schedule": ["every weekday"],
+  "labels": ["dependencies"],
   "packageRules": [
     {
       "matchDatasources": ["npm"],
       "stabilityDays": 3
     },
     {
-      "matchFiles": ["package.json"],
+      "matchFileNames": ["package.json"],
       "matchDepTypes": ["dependencies"],
       "rangeStrategy": "pin"
     },
@@ -23,10 +25,15 @@
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
+    },
+    {
+      "groupName": "github-actions",
+      "matchManagers": ["github-actions"],
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["^@types/"],
+      "automerge": true
     }
   ]
 }
-
-
-
-
