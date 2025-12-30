@@ -16,7 +16,7 @@
     "patch": "tsx scripts/generate-patch.ts",
     "dev": "tsx watch scripts/validate.ts",
     "changeset": "changeset",
-    "version": "changeset version",
+    "version": "changeset version && pnpm rebuild-slug-index",
     "release": "changeset publish",
     "check-slugs": "tsx scripts/check-slugs.ts",
     "rebuild-slug-index": "tsx scripts/rebuild-slug-index.ts"
