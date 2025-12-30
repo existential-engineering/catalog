@@ -1,5 +1,11 @@
 # catalog
 
+## 0.3.4
+
+### Patch Changes
+
+- 4d0fb6d: enhance: prepare public repo
+
 ## 0.3.3
 
 ### Patch Changes
