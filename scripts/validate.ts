@@ -127,14 +127,14 @@ function validateMarkdown(content: string): { valid: boolean; error?: string } {
 const MarkdownSchema = z
   .string()
   .optional()
-  .superRefine((value, ctx) => {
-    if (!value) return;
-    const result = validateMarkdown(value);
+  .check((ctx) => {
+    if (!ctx.value) return;
+    const result = validateMarkdown(ctx.value);
     if (!result.valid) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
+      ctx.issues.push({
+        code: "custom",
         message: `Invalid markdown: ${result.error}`,
-        path: ctx.path,
+        input: ctx.value,
       });
     }
   });
