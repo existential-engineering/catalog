@@ -90,14 +90,23 @@ function validateMarkdown(content: string): { valid: boolean; error?: string } {
 
     // Check for unclosed inline code
     const lines = content.split("\n");
+    let inCodeBlock = false;
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
+      const trimmedLine = line.trim();
+      // Track fenced code blocks (``` and ```language)
+      if (trimmedLine.startsWith("```")) {
+        inCodeBlock = !inCodeBlock;
+        continue;
+      }
+      // Skip lines that are inside fenced code blocks
+      if (inCodeBlock) {
+        continue;
+      }
       // Count backticks not part of code blocks
-      if (!line.startsWith("```")) {
-        const backtickCount = (line.match(/`/g) || []).length;
-        if (backtickCount % 2 !== 0) {
-          issues.push(`unclosed inline code on line ${i + 1}`);
-        }
+      const backtickCount = (line.match(/`/g) || []).length;
+      if (backtickCount % 2 !== 0) {
+        issues.push(`unclosed inline code on line ${i + 1}`);
       }
     }
 
