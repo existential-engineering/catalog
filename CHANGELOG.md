@@ -1,5 +1,12 @@
 # catalog
 
+## 0.3.2
+
+### Patch Changes
+
+- 42832f9: feat: sync data from postgres
+- e468f3f: feat: add missing revision indexes
+
 ## 0.3.1
 
 ### Patch Changes
