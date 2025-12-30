@@ -1,0 +1,31 @@
+# Configuration for actions/labeler
+
+software:
+  - changed-files:
+      - any-glob-to-any-file: 'data/software/**/*'
+
+hardware:
+  - changed-files:
+      - any-glob-to-any-file: 'data/hardware/**/*'
+
+manufacturer:
+  - changed-files:
+      - any-glob-to-any-file: 'data/manufacturers/**/*'
+
+schema:
+  - changed-files:
+      - any-glob-to-any-file: 'schema/**/*'
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file: '.github/**/*'
+
+scripts:
+  - changed-files:
+      - any-glob-to-any-file: 'scripts/**/*'
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '*.md'
+          - 'docs/**/*'
