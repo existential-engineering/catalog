@@ -325,6 +325,8 @@ CREATE VIRTUAL TABLE IF NOT EXISTS software_fts USING fts5(
 );
 
 -- Hardware FTS index
+-- Note: Not using content='' (contentless mode) because we need to retrieve
+-- the id column to join back to the hardware table for full results
 CREATE VIRTUAL TABLE IF NOT EXISTS hardware_fts USING fts5(
     id,
     name,
