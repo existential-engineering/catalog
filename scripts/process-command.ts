@@ -30,16 +30,6 @@ type CommandHandler = (
   flags: Record<string, boolean | string>
 ) => Promise<{ success: boolean; message: string }>;
 
-const COMMANDS: Record<string, CommandHandler> = {
-  crawl: handleCrawl,
-  parse: handleParse,
-  enrich: handleEnrich,
-  submit: handleSubmit,
-  preview: handlePreview,
-  reject: handleReject,
-  duplicate: handleDuplicate,
-};
-
 // Enrich is a combination of crawl + parse
 async function handleEnrich(
   ctx: ReturnType<typeof getDiscussionContext>,
@@ -67,6 +57,16 @@ async function handleEnrich(
     message: `### Enrichment Complete\n\n${crawlResult.message}\n\n---\n\n${parseResult.message}`,
   };
 }
+
+const COMMANDS: Record<string, CommandHandler> = {
+  crawl: handleCrawl,
+  parse: handleParse,
+  enrich: handleEnrich,
+  submit: handleSubmit,
+  preview: handlePreview,
+  reject: handleReject,
+  duplicate: handleDuplicate,
+};
 
 // =============================================================================
 // MAIN

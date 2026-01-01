@@ -55,7 +55,7 @@ export async function handleDuplicate(
 
     const response = formatSuccess(
       "Duplicate Entry",
-      `This ${existing.collection?.slice(0, -1) || "item"} already exists in the catalog!
+      `This ${existing.collection!.slice(0, -1) || "item"} already exists in the catalog!
 
 **Existing entry:** [${slug}](${yamlUrl})
 
