@@ -205,27 +205,56 @@ export async function pullRequestExists(
 }
 
 /**
- * Check if a branch exists in the repository
+ * Check if a slug is being used in any open PRs
+ * This helps prevent race conditions where multiple discussions submit the same slug
  */
-export async function branchExists(
+export async function slugInOpenPR(
   owner: string,
   repo: string,
-  branch: string
-): Promise<boolean> {
+  slug: string,
+  collection: string
+): Promise<{ exists: boolean; number?: number; url?: string }> {
   const client = getOctokit();
 
   try {
-    await client.git.getRef({
+    // List all open PRs
+    const { data: pulls } = await client.pulls.list({
       owner,
       repo,
-      ref: `heads/${branch}`,
+      state: "open",
+      per_page: 100, // Get more PRs to check
     });
-    return true;
-  } catch (error: unknown) {
-    if (typeof error === "object" && error !== null && "status" in error && error.status === 404) {
-      return false;
+
+    // Check each PR for the slug file
+    for (const pr of pulls) {
+      try {
+        const { data: files } = await client.pulls.listFiles({
+          owner,
+          repo,
+          pull_number: pr.number,
+          per_page: 100,
+        });
+
+        // Check if this PR adds/modifies the slug file
+        const slugFile = `data/${collection}/${slug}.yaml`;
+        const hasSlugFile = files.some((file: { filename: string }) => file.filename === slugFile);
+
+        if (hasSlugFile) {
+          return {
+            exists: true,
+            number: pr.number,
+            url: pr.html_url,
+          };
+        }
+      } catch {
+        // If we can't list files for a PR, skip it
+        continue;
+      }
     }
-    throw error;
+
+    return { exists: false };
+  } catch {
+    return { exists: false };
   }
 }
 

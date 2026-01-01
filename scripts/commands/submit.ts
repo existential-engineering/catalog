@@ -6,7 +6,7 @@
  */
 
 import type { DiscussionContext, DiscussionMetadata } from "../lib/github.js";
-import { createPullRequest, getDiscussionComments } from "../lib/github.js";
+import { createPullRequest, getDiscussionComments, slugInOpenPR } from "../lib/github.js";
 import {
   formatSuccess,
   formatError,
@@ -96,11 +96,11 @@ export async function handleSubmit(
 
   const { yaml, slug } = yamlData;
 
-  // Check if slug already exists in the catalog
-  // Note: While there's a potential race condition if two different discussions
-  // submit the same slug simultaneously, they will have different branch names
-  // due to the discussion number suffix. The slug check here ensures we don't
-  // create PRs for slugs that are already merged in the main branch.
+  // Determine type and collection folder first (needed for slug checks)
+  const type = getRequestType(metadata, ctx.discussionBody);
+  const collection = type === "manufacturer" ? "manufacturers" : type;
+
+  // Check if slug already exists in the catalog (merged PRs)
   const existing = slugExists(slug);
   if (existing.exists) {
     return {
@@ -116,9 +116,24 @@ export async function handleSubmit(
     };
   }
 
-  // Determine type and collection folder
-  const type = getRequestType(metadata, ctx.discussionBody);
-  const collection = type === "manufacturer" ? "manufacturers" : type;
+  // Check if slug is being used in any open PRs
+  // This prevents race conditions where multiple discussions submit the same slug
+  const inProgress = await slugInOpenPR(ctx.owner, ctx.repo, slug, collection);
+  if (inProgress.exists) {
+    return {
+      success: false,
+      message: formatError(
+        "Submit Failed",
+        `Slug \`${slug}\` is already being added in PR #${inProgress.number}.`,
+        [
+          `View the existing PR: ${inProgress.url}`,
+          "Choose a different slug if this is a different item",
+          `Or use \`/duplicate ${slug}\` if this is truly a duplicate`,
+          "Wait for the other PR to be merged or closed before resubmitting",
+        ]
+      ),
+    };
+  }
 
   // Extract name for PR title
   const nameMatch = yaml.match(/^name:\s*(.+)$/m);
@@ -188,14 +203,51 @@ This discussion is linked in the PR for reference.`
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : "Failed to create pull request";
     
+    // Check if the error is due to a branch already existing
+    const isBranchConflict = errorMessage.includes("Reference already exists") || 
+                             errorMessage.includes("already exists");
+    
+    // Check if the error is due to a PR already existing
+    const isPRConflict = errorMessage.includes("pull request already exists");
+    
+    if (isBranchConflict) {
+      return {
+        success: false,
+        message: formatError(
+          "Submit Failed",
+          `A branch with the same name already exists. This might indicate that this discussion has already submitted a PR.`,
+          [
+            "Check the discussion comments for an existing PR link",
+            "If the previous PR was closed, the branch may still exist",
+            "Contact a repository maintainer if you believe this is an error",
+          ]
+        ),
+      };
+    }
+    
+    if (isPRConflict) {
+      return {
+        success: false,
+        message: formatError(
+          "Submit Failed",
+          errorMessage,
+          [
+            "A PR already exists for this branch",
+            "Check the discussion comments for the existing PR link",
+          ]
+        ),
+      };
+    }
+    
     return {
       success: false,
       message: formatError(
         "Submit Failed",
         errorMessage,
         [
-          "If a PR already exists for this discussion, check the discussion comments for the PR link",
           "Ensure the bot has write access to the repository",
+          "Check if there are any repository restrictions preventing the operation",
+          "Contact a repository maintainer if the issue persists",
         ]
       ),
     };
