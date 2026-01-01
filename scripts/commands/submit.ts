@@ -96,7 +96,11 @@ export async function handleSubmit(
 
   const { yaml, slug } = yamlData;
 
-  // Check if slug already exists
+  // Check if slug already exists in the catalog
+  // Note: While there's a potential race condition if two different discussions
+  // submit the same slug simultaneously, they will have different branch names
+  // due to the discussion number suffix. The slug check here ensures we don't
+  // create PRs for slugs that are already merged in the main branch.
   const existing = slugExists(slug);
   if (existing.exists) {
     return {
@@ -120,7 +124,8 @@ export async function handleSubmit(
   const nameMatch = yaml.match(/^name:\s*(.+)$/m);
   const name = nameMatch ? nameMatch[1].trim() : slug;
 
-  // Generate branch name
+  // Generate branch name with discussion number to ensure uniqueness per discussion
+  // This prevents conflicts when the same discussion runs /submit multiple times
   const branchName = `contribution/${collection}/${slug}-${ctx.discussionNumber}`;
 
   // Generate changeset
