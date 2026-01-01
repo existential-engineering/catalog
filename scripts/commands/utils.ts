@@ -193,14 +193,14 @@ export function getRequestType(
     return metadata.type;
   }
 
-  // Try to infer from content
-  const lowerBody = discussionBody.toLowerCase();
-  if (lowerBody.includes("manufacturer") || lowerBody.includes("company")) {
-    return "manufacturer";
-  }
-  if (lowerBody.includes("hardware") || lowerBody.includes("synth") || lowerBody.includes("interface")) {
-    return "hardware";
+  // Try to read an explicit type from a metadata table in the body
+  const typeMatch = discussionBody.match(
+    /\|\s*\*\*Type\*\*\s*\|\s*(software|hardware|manufacturer)\s*\|/i
+  );
+  if (typeMatch) {
+    return typeMatch[1].toLowerCase() as "software" | "hardware" | "manufacturer";
   }
 
+  // Fallback: default to software when no explicit type is provided
   return "software";
 }
