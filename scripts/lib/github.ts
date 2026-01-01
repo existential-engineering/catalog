@@ -205,6 +205,60 @@ export async function pullRequestExists(
 }
 
 /**
+ * Check if a slug is being used in any open PRs
+ * This helps prevent race conditions where multiple discussions submit the same slug
+ */
+export async function slugInOpenPR(
+  owner: string,
+  repo: string,
+  slug: string,
+  collection: string
+): Promise<{ exists: boolean; number?: number; url?: string }> {
+  const client = getOctokit();
+
+  try {
+    // List all open PRs
+    const { data: pulls } = await client.pulls.list({
+      owner,
+      repo,
+      state: "open",
+      per_page: 100, // Get more PRs to check
+    });
+
+    // Check each PR for the slug file
+    for (const pr of pulls) {
+      try {
+        const { data: files } = await client.pulls.listFiles({
+          owner,
+          repo,
+          pull_number: pr.number,
+          per_page: 100,
+        });
+
+        // Check if this PR adds/modifies the slug file
+        const slugFile = `data/${collection}/${slug}.yaml`;
+        const hasSlugFile = files.some((file: { filename: string }) => file.filename === slugFile);
+
+        if (hasSlugFile) {
+          return {
+            exists: true,
+            number: pr.number,
+            url: pr.html_url,
+          };
+        }
+      } catch {
+        // If we can't list files for a PR, skip it
+        continue;
+      }
+    }
+
+    return { exists: false };
+  } catch {
+    return { exists: false };
+  }
+}
+
+/**
  * Get discussion comments using GraphQL
  */
 export async function getDiscussionComments(
