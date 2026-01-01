@@ -45,10 +45,29 @@ async function extractCrawledDataFromDiscussion(
     }
   } catch (error) {
     console.error("Failed to fetch discussion comments:", error);
-    // Fall through to return null
   }
 
   return null;
+}
+
+/**
+ * Extract crawled data from a single body of text
+ * Looks for JSON in code blocks from crawl results
+ */
+function extractCrawledData(body: string): Record<string, unknown> | null {
+  // ... existing helper function
+
+  }
+
+  // Use the last JSON code block as the most recent crawl result
+  const lastMatch = matches[matches.length - 1];
+  const jsonContent = lastMatch[1];
+
+  try {
+    return JSON.parse(jsonContent);
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -108,10 +127,20 @@ export async function handleParse(
   });
 
   if (!result.success || result.validationErrors?.length) {
-    const errors = result.validationErrors || ["Unknown validation error"];
+    if (result.validationErrors?.length) {
+      return {
+        success: false,
+        message: formatError(
+          "Parse Failed",
+          "Validation errors found:",
+          result.validationErrors
+        ),
+      };
+    }
+
     return {
       success: false,
-      message: formatError("Parse Failed", "Validation errors found:", errors),
+      message: formatError("Parse Failed", "Unknown validation error"),
     };
   }
 
