@@ -221,8 +221,8 @@ export async function branchExists(
       ref: `heads/${branch}`,
     });
     return true;
-  } catch (error: any) {
-    if (error.status === 404) {
+  } catch (error: unknown) {
+    if (typeof error === "object" && error !== null && "status" in error && error.status === 404) {
       return false;
     }
     throw error;
