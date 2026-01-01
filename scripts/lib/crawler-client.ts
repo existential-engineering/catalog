@@ -93,8 +93,10 @@ async function apiRequest<T>(
   });
 
   if (!response.ok) {
-    const text = await response.text();
-    throw new Error(`API request failed: ${response.status} ${text}`);
+    const statusText = response.statusText || "Unknown status";
+    throw new Error(
+      `API request failed with status ${response.status} ${statusText}`
+    );
   }
 
   return response.json() as Promise<T>;
