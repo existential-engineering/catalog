@@ -87,7 +87,7 @@ export async function handleSubmit(
         `Slug \`${slug}\` already exists in ${existing.collection}.`,
         [
           "Choose a different slug by modifying the YAML",
-          "Or use `/duplicate ${slug}` if this is a duplicate request",
+          `Or use \`/duplicate ${slug}\` if this is a duplicate request`,
         ]
       ),
     };
