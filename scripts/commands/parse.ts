@@ -119,10 +119,20 @@ export async function handleParse(
   });
 
   if (!result.success || result.validationErrors?.length) {
-    const errors = result.validationErrors || ["Unknown validation error"];
+    if (result.validationErrors?.length) {
+      return {
+        success: false,
+        message: formatError(
+          "Parse Failed",
+          "Validation errors found:",
+          result.validationErrors
+        ),
+      };
+    }
+
     return {
       success: false,
-      message: formatError("Parse Failed", "Validation errors found:", errors),
+      message: formatError("Parse Failed", "Unknown validation error"),
     };
   }
 
