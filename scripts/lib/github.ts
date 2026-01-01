@@ -205,6 +205,31 @@ export async function pullRequestExists(
 }
 
 /**
+ * Check if a branch exists in the repository
+ */
+export async function branchExists(
+  owner: string,
+  repo: string,
+  branch: string
+): Promise<boolean> {
+  const client = getOctokit();
+
+  try {
+    await client.git.getRef({
+      owner,
+      repo,
+      ref: `heads/${branch}`,
+    });
+    return true;
+  } catch (error: any) {
+    if (error.status === 404) {
+      return false;
+    }
+    throw error;
+  }
+}
+
+/**
  * Get discussion comments using GraphQL
  */
 export async function getDiscussionComments(
@@ -283,6 +308,16 @@ export async function createPullRequest(
   if (existingPR.exists) {
     throw new Error(
       `A pull request already exists for branch '${options.branch}': #${existingPR.number} (${existingPR.url})`
+    );
+  }
+
+  // Check if the branch already exists
+  const branchAlreadyExists = await branchExists(options.owner, options.repo, options.branch);
+  if (branchAlreadyExists) {
+    throw new Error(
+      `Branch '${options.branch}' already exists but has no open pull request. ` +
+      `This may occur if a previous /submit command created the branch but failed to create the PR. ` +
+      `Please use a different branch name or manually delete the existing branch.`
     );
   }
 
