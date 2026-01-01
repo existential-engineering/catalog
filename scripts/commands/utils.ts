@@ -191,7 +191,7 @@ export function extractWebsiteUrl(
   if (urlMatch) {
     const rawUrl = urlMatch[0];
     // Strip common trailing punctuation that may follow a URL in prose
-    const cleanedUrl = rawUrl.replace(/[.,;:!?)\]]*$/, "");
+    const cleanedUrl = rawUrl.replace(/[].,;:!?\)]*$/, "");
     return cleanedUrl;
   }
 
