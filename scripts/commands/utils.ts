@@ -4,7 +4,6 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { parse as parseYaml } from "yaml";
 import type { DiscussionContext, DiscussionMetadata } from "../lib/github.js";
 import { DATA_DIR } from "../lib/utils.js";
 
