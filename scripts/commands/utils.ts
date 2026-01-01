@@ -189,7 +189,10 @@ export function extractWebsiteUrl(
   // Try to find any URL in the body
   const urlMatch = body.match(/https?:\/\/[^\s<>"]+/);
   if (urlMatch) {
-    return urlMatch[0];
+    const rawUrl = urlMatch[0];
+    // Strip common trailing punctuation that may follow a URL in prose
+    const cleanedUrl = rawUrl.replace(/[.,;:!?)\]]*$/, "");
+    return cleanedUrl;
   }
 
   return null;
@@ -216,4 +219,42 @@ export function getRequestType(
 
   // Fallback: default to software when no explicit type is provided
   return "software";
+}
+
+/**
+ * Extract data from discussion table
+ */
+export function extractTableData(body: string): Record<string, unknown> {
+  const data: Record<string, unknown> = {};
+
+  // Extract fields from markdown table
+  const nameMatch = body.match(/\|\s*\*\*Name\*\*\s*\|\s*(.+?)\s*\|/);
+  if (nameMatch) data.name = nameMatch[1].trim();
+
+  const manufacturerMatch = body.match(/\|\s*\*\*Manufacturer\*\*\s*\|\s*(.+?)\s*\|/);
+  if (manufacturerMatch) data.manufacturer = manufacturerMatch[1].trim();
+
+  const formatsMatch = body.match(/\|\s*\*\*Formats\*\*\s*\|\s*(.+?)\s*\|/);
+  if (formatsMatch) {
+    data.formats = formatsMatch[1]
+      .split(/[,\s]+/)
+      .map((f) => f.trim().toLowerCase())
+      .filter(Boolean);
+  }
+
+  const platformMatch = body.match(/\|\s*\*\*Platform\*\*\s*\|\s*(.+?)\s*\|/);
+  if (platformMatch) {
+    data.platforms = platformMatch[1]
+      .split(/[,\s]+/)
+      .map((p) => p.trim().toLowerCase())
+      .filter(Boolean);
+  }
+
+  const websiteMatch = body.match(/\|\s*\*\*Website\*\*\s*\|\s*(.+?)\s*\|/);
+  if (websiteMatch) data.website = websiteMatch[1].trim();
+
+  const identifierMatch = body.match(/\|\s*\*\*Identifier\*\*\s*\|\s*`?(.+?)`?\s*\|/);
+  if (identifierMatch) data.identifier = identifierMatch[1].trim();
+
+  return data;
 }

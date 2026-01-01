@@ -172,6 +172,92 @@ export async function addReactionToComment(
 // PULL REQUEST CREATION
 // =============================================================================
 
+/**
+ * Check if a pull request already exists for a branch
+ */
+export async function pullRequestExists(
+  owner: string,
+  repo: string,
+  branch: string
+): Promise<{ exists: boolean; number?: number; url?: string }> {
+  const client = getOctokit();
+
+  try {
+    const { data: pulls } = await client.pulls.list({
+      owner,
+      repo,
+      state: "open",
+      head: `${owner}:${branch}`,
+    });
+
+    if (pulls.length > 0) {
+      return {
+        exists: true,
+        number: pulls[0].number,
+        url: pulls[0].html_url,
+      };
+    }
+
+    return { exists: false };
+  } catch {
+    return { exists: false };
+  }
+}
+
+/**
+ * Get discussion comments using GraphQL
+ */
+export async function getDiscussionComments(
+  discussionNodeId: string
+): Promise<Array<{ body: string; author: string; createdAt: string }>> {
+  const client = getOctokit();
+
+  try {
+    const result = await client.graphql(
+      `
+      query($discussionId: ID!) {
+        node(id: $discussionId) {
+          ... on Discussion {
+            comments(first: 100) {
+              nodes {
+                body
+                author {
+                  login
+                }
+                createdAt
+              }
+            }
+          }
+        }
+      }
+    `,
+      {
+        discussionId: discussionNodeId,
+      }
+    );
+
+    const discussion = result as {
+      node: {
+        comments: {
+          nodes: Array<{
+            body: string;
+            author: { login: string };
+            createdAt: string;
+          }>;
+        };
+      };
+    };
+
+    return discussion.node.comments.nodes.map((node) => ({
+      body: node.body,
+      author: node.author.login,
+      createdAt: node.createdAt,
+    }));
+  } catch {
+    return [];
+  }
+}
+
 export interface CreatePROptions {
   owner: string;
   repo: string;
@@ -191,6 +277,14 @@ export async function createPullRequest(
 ): Promise<{ number: number; url: string }> {
   const client = getOctokit();
   const baseBranch = options.baseBranch || "main";
+
+  // Check if a PR already exists for this branch
+  const existingPR = await pullRequestExists(options.owner, options.repo, options.branch);
+  if (existingPR.exists) {
+    throw new Error(
+      `A pull request already exists for branch '${options.branch}': #${existingPR.number} (${existingPR.url})`
+    );
+  }
 
   // Get the base branch SHA
   const { data: ref } = await client.git.getRef({
