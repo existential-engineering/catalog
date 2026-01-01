@@ -230,7 +230,11 @@ This discussion is linked in the PR for reference.`
     };
   } catch (error) {
     // Check if this is a branch already exists error
-    if (error instanceof Error && error.message.includes("Reference already exists")) {
+    // Note: The Octokit library throws errors with message strings. While fragile,
+    // this is the most practical way to detect this specific error case.
+    if (error instanceof Error && 
+        (error.message.includes("Reference already exists") || 
+         error.message.includes("already exists"))) {
       return {
         success: false,
         message: formatError(

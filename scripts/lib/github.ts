@@ -170,6 +170,9 @@ export async function addReactionToComment(
 
 /**
  * Fetch all comments from a discussion
+ * Note: This currently fetches the first 100 comments. For discussions with more comments,
+ * pagination would be needed. Since most discussions will have fewer than 100 comments,
+ * this is sufficient for the initial implementation.
  */
 export async function getDiscussionComments(
   discussionNodeId: string
