@@ -17,25 +17,29 @@ import {
 } from "./utils.js";
 
 /**
- * Extract crawled data from previous bot comments in the discussion
- * Looks for JSON in code blocks from crawl results
+ * Extract crawled data from previous bot comments in the discussion.
+ *
+ * Scans the discussion body for JSON code blocks that contain crawl results
+ * and returns the most recent (last) valid JSON object found.
  */
 function extractCrawledData(discussionBody: string): Record<string, unknown> | null {
-  // This is a simplified version - in practice, we'd need to fetch discussion comments
-  // and find the most recent crawl result
-  // For now, we'll extract from the metadata enrichment field if present
+  // Find all JSON code blocks in the discussion body
+  const jsonBlockRegex = /```json\n([\s\S]*?)\n```/g;
+  const matches = Array.from(discussionBody.matchAll(jsonBlockRegex));
 
-  // Try to find JSON in a code block
-  const jsonMatch = discussionBody.match(/```json\n([\s\S]*?)\n```/);
-  if (jsonMatch) {
-    try {
-      return JSON.parse(jsonMatch[1]);
-    } catch {
-      return null;
-    }
+  if (matches.length === 0) {
+    return null;
   }
 
-  return null;
+  // Use the last JSON code block as the most recent crawl result
+  const lastMatch = matches[matches.length - 1];
+  const jsonContent = lastMatch[1];
+
+  try {
+    return JSON.parse(jsonContent);
+  } catch {
+    return null;
+  }
 }
 
 /**
