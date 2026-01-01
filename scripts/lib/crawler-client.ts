@@ -83,6 +83,8 @@ function getConfig(): { url: string; apiKey: string } {
   }
 
   // Basic format validation: API keys should not contain whitespace or control characters.
+  // We use a permissive pattern (printable ASCII) to support various API key formats.
+  // If your API requires a specific format (e.g., alphanumeric only), adjust this validation.
   if (!/^[\x21-\x7E]+$/.test(trimmedApiKey)) {
     throw new Error(
       "CRAWLER_API_KEY environment variable has an invalid format. It must contain only printable non-whitespace characters."
