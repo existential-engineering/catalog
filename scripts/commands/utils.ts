@@ -100,11 +100,25 @@ export function slugExists(slug: string): { exists: boolean; collection?: string
  * Generate a unique slug from a name
  */
 export function generateSlug(name: string): string {
-  return name
+  const base = name
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 50);
+    .replace(/^-+|-+$/g, "");
+
+  if (base.length <= 50) {
+    return base;
+  }
+
+  const truncated = base.slice(0, 50);
+  const lastHyphen = truncated.lastIndexOf("-");
+
+  if (lastHyphen === -1) {
+    // No word boundary within limit; return the hard truncation
+   return truncated;
+  }
+
+  const atWordBoundary = truncated.slice(0, lastHyphen);
+  return atWordBoundary.length > 0 ? atWordBoundary : truncated;
 }
 
 // =============================================================================
