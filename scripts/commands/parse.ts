@@ -82,15 +82,11 @@ export async function handleParse(
   _args: string[],
   _flags: Record<string, boolean | string>
 ): Promise<CommandResult> {
-  // Try to get crawled data from previous comments or discussion body
-  let data = extractCrawledData(ctx.discussionBody);
+  // Try to get crawled data from previous comments or discussion body,
+  // falling back to extracting from the discussion table if none is found
+  const data = extractCrawledData(ctx.discussionBody) ?? extractTableData(ctx.discussionBody);
 
-  if (!data) {
-    // Fall back to extracting from the discussion table
-    data = extractTableData(ctx.discussionBody);
-  }
-
-  if (!data || Object.keys(data).length === 0) {
+  if (Object.keys(data).length === 0) {
     return {
       success: false,
       message: formatError(
