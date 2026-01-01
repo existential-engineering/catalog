@@ -74,7 +74,23 @@ function getConfig(): { url: string; apiKey: string } {
     );
   }
 
-  return { url: url.replace(/\/$/, ""), apiKey };
+  const trimmedApiKey = apiKey.trim();
+
+  if (!trimmedApiKey) {
+    throw new Error(
+      "CRAWLER_API_KEY environment variable must not be empty or whitespace only."
+    );
+  }
+
+  // Basic format validation: API keys should not contain whitespace or control characters.
+  if (!/^[\x21-\x7E]+$/.test(trimmedApiKey)) {
+    throw new Error(
+      "CRAWLER_API_KEY environment variable has an invalid format. It must contain only printable non-whitespace characters."
+    );
+  }
+
+  const normalizedUrl = url === "/" ? "/" : url.replace(/\/+$/, "");
+  return { url: normalizedUrl, apiKey: trimmedApiKey };
 }
 
 async function apiRequest<T>(

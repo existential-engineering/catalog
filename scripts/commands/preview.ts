@@ -14,42 +14,9 @@ import {
   getRequestType,
   getExistingManufacturers,
   slugExists,
+  extractTableData,
   type CommandResult,
 } from "./utils.js";
-
-/**
- * Extract data from discussion table
- */
-function extractTableData(body: string): Record<string, unknown> {
-  const data: Record<string, unknown> = {};
-
-  const nameMatch = body.match(/\|\s*\*\*Name\*\*\s*\|\s*(.+?)\s*\|/);
-  if (nameMatch) data.name = nameMatch[1].trim();
-
-  const manufacturerMatch = body.match(/\|\s*\*\*Manufacturer\*\*\s*\|\s*(.+?)\s*\|/);
-  if (manufacturerMatch) data.manufacturer = manufacturerMatch[1].trim();
-
-  const formatsMatch = body.match(/\|\s*\*\*Formats\*\*\s*\|\s*(.+?)\s*\|/);
-  if (formatsMatch) {
-    data.formats = formatsMatch[1]
-      .split(/[,\s]+/)
-      .map((f) => f.trim().toLowerCase())
-      .filter(Boolean);
-  }
-
-  const platformMatch = body.match(/\|\s*\*\*Platform\*\*\s*\|\s*(.+?)\s*\|/);
-  if (platformMatch) {
-    data.platforms = platformMatch[1]
-      .split(/[,\s]+/)
-      .map((p) => p.trim().toLowerCase())
-      .filter(Boolean);
-  }
-
-  const websiteMatch = body.match(/\|\s*\*\*Website\*\*\s*\|\s*(.+?)\s*\|/);
-  if (websiteMatch) data.website = websiteMatch[1].trim();
-
-  return data;
-}
 
 export async function handlePreview(
   ctx: DiscussionContext,

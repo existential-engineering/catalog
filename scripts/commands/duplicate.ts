@@ -51,11 +51,13 @@ export async function handleDuplicate(
     // Close the discussion
     await closeDiscussion(ctx.discussionNodeId, "DUPLICATE");
 
-    const yamlUrl = `https://github.com/${ctx.owner}/${ctx.repo}/blob/main/data/${existing.collection}/${slug}.yaml`;
+    // At this point, existing.exists is true, so collection is guaranteed to be defined
+    const collection = existing.collection!;
+    const yamlUrl = `https://github.com/${ctx.owner}/${ctx.repo}/blob/main/data/${collection}/${slug}.yaml`;
 
     const response = formatSuccess(
       "Duplicate Entry",
-      `This ${existing.collection?.slice(0, -1) || "item"} already exists in the catalog!
+      `This ${collection.slice(0, -1) || "item"} already exists in the catalog!
 
 **Existing entry:** [${slug}](${yamlUrl})
 

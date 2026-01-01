@@ -4,6 +4,12 @@ on:
   discussion_comment:
     types: [created]
 
+# Note: These permissions are required for the workflow to function properly:
+# - contents: write - needed to create branches and commits
+# - discussions: write - needed to post comments and close discussions
+# - pull-requests: write - needed to create pull requests
+# Rate limiting is enforced by the permission check step which restricts
+# command execution to OWNER, MEMBER, and COLLABORATOR roles only.
 permissions:
   contents: write
   discussions: write

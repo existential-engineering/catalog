@@ -6,7 +6,7 @@
  */
 
 import type { DiscussionContext, DiscussionMetadata } from "../lib/github.js";
-import { createPullRequest } from "../lib/github.js";
+import { createPullRequest, getDiscussionComments } from "../lib/github.js";
 import {
   formatSuccess,
   formatError,
@@ -16,18 +16,37 @@ import {
 } from "./utils.js";
 
 /**
- * Extract YAML from previous parse result in discussion comments
+ * Extract YAML from previous parse result in discussion comments or body
  */
-function extractYamlFromBody(body: string): { yaml: string; slug: string } | null {
-  // Look for YAML in a code block
-  const yamlMatch = body.match(/```yaml\n([\s\S]*?)\n```/);
+async function extractYamlFromDiscussion(
+  ctx: DiscussionContext
+): Promise<{ yaml: string; slug: string } | null> {
+  // First, try to get YAML from discussion comments (bot responses from /parse or /enrich)
+  const comments = await getDiscussionComments(ctx.discussionNodeId);
+  
+  // Search comments in reverse order to find the most recent YAML
+  for (let i = comments.length - 1; i >= 0; i--) {
+    const comment = comments[i];
+    const yamlMatch = comment.body.match(/```yaml\n([\s\S]*?)\n```/);
+    if (yamlMatch) {
+      const yaml = yamlMatch[1];
+      const slugMatch = yaml.match(/^slug:\s*(.+)$/m);
+      if (slugMatch) {
+        return {
+          yaml,
+          slug: slugMatch[1].trim(),
+        };
+      }
+    }
+  }
+
+  // Fallback: check the discussion body
+  const yamlMatch = ctx.discussionBody.match(/```yaml\n([\s\S]*?)\n```/);
   if (!yamlMatch) {
     return null;
   }
 
   const yaml = yamlMatch[1];
-
-  // Extract slug from YAML
   const slugMatch = yaml.match(/^slug:\s*(.+)$/m);
   if (!slugMatch) {
     return null;
@@ -59,8 +78,8 @@ export async function handleSubmit(
 ): Promise<CommandResult> {
   const isDraft = flags.draft === true;
 
-  // Extract YAML from discussion
-  const yamlData = extractYamlFromBody(ctx.discussionBody);
+  // Extract YAML from discussion comments or body
+  const yamlData = await extractYamlFromDiscussion(ctx);
   if (!yamlData) {
     return {
       success: false,
@@ -162,13 +181,15 @@ This discussion is linked in the PR for reference.`
       message: response,
     };
   } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : "Failed to create pull request";
+    
     return {
       success: false,
       message: formatError(
         "Submit Failed",
-        error instanceof Error ? error.message : "Failed to create pull request",
+        errorMessage,
         [
-          "Check if the branch already exists",
+          "If a PR already exists for this discussion, check the discussion comments for the PR link",
           "Ensure the bot has write access to the repository",
         ]
       ),
