@@ -87,9 +87,23 @@ async function main(): Promise<void> {
     return;
   }
 
+  const safeArgsSummary = Array.isArray(command.args)
+    ? `${command.args.length} arg(s)`
+    : "n/a";
+  const safeFlagsSummary =
+    command.flags && typeof command.flags === "object"
+      ? Object.keys(command.flags)
+          .map((key) =>
+            typeof command.flags[key] === "boolean"
+              ? `${key}`
+              : `${key}=<redacted>`
+          )
+          .join(", ")
+      : "n/a";
+
   console.log(`Command: /${command.name}`);
-  console.log(`Args: ${JSON.stringify(command.args)}`);
-  console.log(`Flags: ${JSON.stringify(command.flags)}`);
+  console.log(`Args: ${safeArgsSummary}`);
+  console.log(`Flags: ${safeFlagsSummary}`);
 
   // Parse discussion metadata
   const metadata = parseDiscussionMetadata(ctx.discussionBody);
