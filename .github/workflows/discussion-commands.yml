@@ -26,16 +26,22 @@ jobs:
 
             if (!allowed.includes(authorAssociation)) {
               // Post a comment explaining the permission issue
-              await github.graphql(`
-                mutation($discussionId: ID!, $body: String!) {
-                  addDiscussionComment(input: {discussionId: $discussionId, body: $body}) {
-                    comment { id }
+              try {
+                await github.graphql(`
+                  mutation($discussionId: ID!, $body: String!) {
+                    addDiscussionComment(input: {discussionId: $discussionId, body: $body}) {
+                      comment { id }
+                    }
                   }
-                }
-              `, {
-                discussionId: context.payload.discussion.node_id,
-                body: `> ${context.payload.comment.body}\n\n⚠️ Sorry @${context.payload.comment.user.login}, only maintainers can run slash commands.`
-              });
+                `, {
+                  discussionId: context.payload.discussion.node_id,
+                  body: `> ${context.payload.comment.body}\n\n⚠️ Sorry @${context.payload.comment.user.login}, only maintainers can run slash commands.`
+                });
+              } catch (error) {
+                core.error(`Failed to post permission warning comment for @${context.payload.comment.user.login}: ${error}`);
+                core.setFailed(`Could not notify user ${context.payload.comment.user.login} (${authorAssociation}) about insufficient permissions`);
+                return;
+              }
 
               core.setFailed(`User ${context.payload.comment.user.login} (${authorAssociation}) does not have permission to run commands`);
               return;

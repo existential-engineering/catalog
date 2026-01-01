@@ -7,6 +7,7 @@
 
 import type { DiscussionContext, DiscussionMetadata } from "../lib/github.js";
 import { parse } from "../lib/crawler-client.js";
+import { getDiscussionComments } from "../lib/github.js";
 import {
   formatSuccess,
   formatError,
@@ -18,16 +19,45 @@ import {
 } from "./utils.js";
 
 /**
- * Extract crawled data from previous bot comments in the discussion
+ * Extract crawled data from discussion body or comments
+ * Searches through comments in reverse chronological order to find the most recent crawl result
+ */
+async function extractCrawledDataFromDiscussion(
+  ctx: DiscussionContext
+): Promise<Record<string, unknown> | null> {
+  // First, try to extract from the discussion body
+  const bodyResult = extractCrawledData(ctx.discussionBody);
+  if (bodyResult) {
+    return bodyResult;
+  }
+
+  // If not found in body, search through comments
+  try {
+    const comments = await getDiscussionComments(ctx.discussionNodeId);
+    
+    // Search comments in reverse order (most recent first)
+    for (let i = comments.length - 1; i >= 0; i--) {
+      const comment = comments[i];
+      const result = extractCrawledData(comment.body);
+      if (result) {
+        return result;
+      }
+    }
+  } catch (error) {
+    console.error("Failed to fetch discussion comments:", error);
+    // Fall through to return null
+  }
+
+  return null;
+}
+
+/**
+ * Extract crawled data from a single body of text
  * Looks for JSON in code blocks from crawl results
  */
-function extractCrawledData(discussionBody: string): Record<string, unknown> | null {
-  // This is a simplified version - in practice, we'd need to fetch discussion comments
-  // and find the most recent crawl result
-  // For now, we'll extract from the metadata enrichment field if present
-
+function extractCrawledData(body: string): Record<string, unknown> | null {
   // Try to find JSON in a code block
-  const jsonMatch = discussionBody.match(/```json\n([\s\S]*?)\n```/);
+  const jsonMatch = body.match(/```json\n([\s\S]*?)\n```/);
   if (jsonMatch) {
     try {
       return JSON.parse(jsonMatch[1]);
@@ -45,9 +75,9 @@ export async function handleParse(
   _args: string[],
   _flags: Record<string, boolean | string>
 ): Promise<CommandResult> {
-  // Try to get crawled data from previous comments or discussion body,
+  // Try to get crawled data from comments or discussion body,
   // falling back to extracting from the discussion table if none is found
-  const data = extractCrawledData(ctx.discussionBody) ?? extractTableData(ctx.discussionBody);
+  const data = (await extractCrawledDataFromDiscussion(ctx)) ?? extractTableData(ctx.discussionBody);
 
   if (Object.keys(data).length === 0) {
     return {

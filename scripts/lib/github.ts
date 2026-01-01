@@ -168,6 +168,120 @@ export async function addReactionToComment(
   );
 }
 
+/**
+ * Fetch all comments from a discussion
+ */
+export async function getDiscussionComments(
+  discussionNodeId: string
+): Promise<Array<{ id: string; body: string; author: string; createdAt: string }>> {
+  const client = getOctokit();
+
+  const result = await client.graphql<{
+    node: {
+      comments: {
+        nodes: Array<{
+          id: string;
+          body: string;
+          author: { login: string };
+          createdAt: string;
+        }>;
+      };
+    };
+  }>(
+    `
+    query($discussionId: ID!) {
+      node(id: $discussionId) {
+        ... on Discussion {
+          comments(first: 100) {
+            nodes {
+              id
+              body
+              author {
+                login
+              }
+              createdAt
+            }
+          }
+        }
+      }
+    }
+  `,
+    {
+      discussionId: discussionNodeId,
+    }
+  );
+
+  return result.node.comments.nodes.map((comment) => ({
+    id: comment.id,
+    body: comment.body,
+    author: comment.author.login,
+    createdAt: comment.createdAt,
+  }));
+}
+
+// =============================================================================
+// BRANCH AND PR HELPERS
+// =============================================================================
+
+/**
+ * Check if a branch exists
+ */
+export async function branchExists(
+  owner: string,
+  repo: string,
+  branch: string
+): Promise<boolean> {
+  const client = getOctokit();
+  
+  try {
+    await client.git.getRef({
+      owner,
+      repo,
+      ref: `heads/${branch}`,
+    });
+    return true;
+  } catch (error: any) {
+    if (error.status === 404) {
+      return false;
+    }
+    throw error;
+  }
+}
+
+/**
+ * Check if a PR exists for a branch
+ */
+export async function findPullRequestForBranch(
+  owner: string,
+  repo: string,
+  branch: string
+): Promise<{ number: number; url: string; state: string } | null> {
+  const client = getOctokit();
+  
+  try {
+    const { data: pulls } = await client.pulls.list({
+      owner,
+      repo,
+      head: `${owner}:${branch}`,
+      state: "all",
+    });
+    
+    if (pulls.length > 0) {
+      const pr = pulls[0];
+      return {
+        number: pr.number,
+        url: pr.html_url,
+        state: pr.state,
+      };
+    }
+    
+    return null;
+  } catch (error) {
+    console.error("Error checking for existing PR:", error);
+    return null;
+  }
+}
+
 // =============================================================================
 // PULL REQUEST CREATION
 // =============================================================================
