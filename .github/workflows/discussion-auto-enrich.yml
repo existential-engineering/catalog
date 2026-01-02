@@ -1,0 +1,38 @@
+name: Auto-Enrich Discussion
+
+on:
+  discussion:
+    types: [created]
+
+permissions:
+  contents: write
+  discussions: write
+  pull-requests: write
+
+jobs:
+  auto-enrich:
+    runs-on: ubuntu-latest
+    # Only run for discussions with [Add] in the title (from template)
+    if: startsWith(github.event.discussion.title, '[Add]')
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Auto-enrich
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CRAWLER_API_URL: ${{ secrets.CRAWLER_API_URL }}
+          CRAWLER_API_KEY: ${{ secrets.CRAWLER_API_KEY }}
+        run: pnpm tsx scripts/auto-enrich.ts

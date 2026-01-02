@@ -1,0 +1,27 @@
+title: "[Add] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request to add data to the catalog. Just provide the URL - we'll fetch the details automatically!
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Link to the product or manufacturer page (required for manual submissions)
+      placeholder: https://www.fabfilter.com/products/pro-q-4-equalizer-plug-in
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes (optional)
+      description: Anything else we should know? Leave blank if none.
+
+  - type: textarea
+    id: metadata
+    attributes:
+      label: Sync Metadata (auto-filled)
+      description: This field is automatically populated by Racks sync. Leave empty for manual submissions.
+      render: html

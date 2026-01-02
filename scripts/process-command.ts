@@ -18,6 +18,8 @@ import { handleSubmit } from "./commands/submit.js";
 import { handlePreview } from "./commands/preview.js";
 import { handleReject } from "./commands/reject.js";
 import { handleDuplicate } from "./commands/duplicate.js";
+import { handleHelp } from "./commands/help.js";
+import { handleAdd } from "./commands/add.js";
 
 // =============================================================================
 // COMMAND HANDLERS
@@ -59,6 +61,8 @@ async function handleEnrich(
 }
 
 const COMMANDS: Record<string, CommandHandler> = {
+  help: handleHelp,
+  add: handleAdd,
   crawl: handleCrawl,
   parse: handleParse,
   enrich: handleEnrich,
@@ -120,9 +124,8 @@ async function main(): Promise<void> {
       "Unknown Command",
       `\`/${command.name}\` is not a recognized command.`,
       [
-        "Available commands: /crawl, /parse, /enrich, /submit, /preview, /reject, /duplicate",
-        "Use `/crawl <url>` to fetch product data",
-        "Use `/enrich` to crawl and parse in one step",
+        "Use `/help` to see all available commands",
+        "Common commands: /crawl, /parse, /enrich, /submit",
       ]
     );
 
