@@ -96,7 +96,12 @@ function extractUrl(body: string): string | null {
   }
 
   // Fallback: look for any https URL (but not in metadata blocks)
-  const bodyWithoutMetadata = body.replace(/<!--[\s\S]*?-->/g, "");
+  let bodyWithoutMetadata = body;
+  let previous: string;
+  do {
+    previous = bodyWithoutMetadata;
+    bodyWithoutMetadata = bodyWithoutMetadata.replace(/<!--[\s\S]*?-->/g, "");
+  } while (bodyWithoutMetadata !== previous);
   const httpsMatch = bodyWithoutMetadata.match(/https?:\/\/[^\s\)]+/);
   if (httpsMatch) {
     return httpsMatch[0];
