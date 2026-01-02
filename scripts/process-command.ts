@@ -19,6 +19,7 @@ import { handlePreview } from "./commands/preview.js";
 import { handleReject } from "./commands/reject.js";
 import { handleDuplicate } from "./commands/duplicate.js";
 import { handleHelp } from "./commands/help.js";
+import { handleAdd } from "./commands/add.js";
 
 // =============================================================================
 // COMMAND HANDLERS
@@ -61,6 +62,7 @@ async function handleEnrich(
 
 const COMMANDS: Record<string, CommandHandler> = {
   help: handleHelp,
+  add: handleAdd,
   crawl: handleCrawl,
   parse: handleParse,
   enrich: handleEnrich,

@@ -19,6 +19,7 @@ export async function handleHelp(
 | Command | Description |
 |---------|-------------|
 | \`/help\` | Show this help message |
+| \`/add [url]\` | **One-shot**: crawl + parse + submit in one command |
 | \`/crawl [url]\` | Fetch product data from a URL |
 | \`/parse\` | Validate and structure crawled data into YAML |
 | \`/enrich\` | Run crawl + parse in one step |
@@ -29,32 +30,44 @@ export async function handleHelp(
 
 ---
 
-### Typical Workflow
+### Automatic Flow
 
-1. **Start a discussion** using the "Add Software" template
-2. **Enrich the data**: \`/enrich\` or \`/crawl <url>\` followed by \`/parse\`
-3. **Review the YAML**: Check the generated output
-4. **Submit**: \`/submit\` to create a PR (or \`/submit --draft\` for draft PR)
+New discussions automatically create a **draft PR** - no commands needed!
+
+1. User submits discussion with URL
+2. Bot creates draft PR with generated YAML
+3. Review and merge the PR
+4. Discussion auto-closes
+
+### When to Use Commands
+
+Commands are for edge cases:
+- \`/add\` - Retry if auto-PR failed
+- \`/reject\` - Close invalid requests
+- \`/duplicate\` - Mark as duplicate
 
 ### Command Details
 
+#### \`/add [url] [--draft]\`
+One-shot command that runs crawl → parse → submit in sequence. Use \`--draft\` for a draft PR.
+
 #### \`/crawl [url]\`
-Fetches product information from the manufacturer's website. If no URL is provided, it will try to use the Website field from the discussion.
+Fetches product information from the manufacturer's website. If no URL is provided, uses the URL from the discussion.
 
 #### \`/parse\`
-Takes the crawled data and validates it against the catalog schema, generating a properly formatted YAML file.
+Validates crawled data and generates a YAML file.
 
 #### \`/enrich\`
-Convenience command that runs \`/crawl\` and \`/parse\` in sequence.
+Runs \`/crawl\` + \`/parse\` in sequence (without submitting).
 
 #### \`/submit [--draft]\`
-Creates a pull request with the generated YAML. Use \`--draft\` to create a draft PR for further review.
+Creates a pull request with the generated YAML.
 
 #### \`/reject <reason>\`
-Closes the discussion with the provided reason. Use for requests that don't meet contribution guidelines.
+Closes the discussion with the provided reason.
 
 #### \`/duplicate <slug>\`
-Closes the discussion as a duplicate, linking to the existing catalog entry.
+Closes as duplicate, linking to the existing catalog entry.
 
 ---
 

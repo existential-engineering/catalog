@@ -148,6 +148,7 @@ Type `/help` in any discussion to see available commands.
 | Command | Description |
 |---------|-------------|
 | `/help` | Show available commands |
+| `/add [url]` | **One-shot**: crawl + parse + submit in one command |
 | `/crawl [url]` | Fetch product data from a URL |
 | `/parse` | Validate and structure crawled data into YAML |
 | `/enrich` | Run crawl + parse in one step |
@@ -158,10 +159,14 @@ Type `/help` in any discussion to see available commands.
 
 ### Typical Workflow
 
-1. User opens a discussion using the "Add Software" template
-2. Maintainer runs `/enrich` to fetch and parse the product data
-3. Review the generated YAML for accuracy
-4. Run `/submit` to create a PR (or `/submit --draft` for draft)
+New discussions automatically create a **draft PR** - no manual commands needed!
+
+1. User opens a discussion with a product URL
+2. Bot crawls, parses, and creates a draft PR
+3. Maintainer reviews the PR, requests changes if needed, and merges
+4. Discussion auto-closes when PR is merged
+
+Slash commands are available for edge cases (retry failed crawls, duplicates, etc.).
 
 ## Questions?
 
