@@ -137,6 +137,32 @@ VST3 plugins use the same identifier scheme but are stored differently. Check th
 - Focus on accuracy and helpfulness
 - Credit original sources when possible
 
+## Slash Commands (Maintainers)
+
+When processing contribution requests via GitHub Discussions, maintainers can use slash commands to automate the workflow.
+
+Type `/help` in any discussion to see available commands.
+
+### Quick Reference
+
+| Command | Description |
+|---------|-------------|
+| `/help` | Show available commands |
+| `/crawl [url]` | Fetch product data from a URL |
+| `/parse` | Validate and structure crawled data into YAML |
+| `/enrich` | Run crawl + parse in one step |
+| `/preview` | Show a YAML preview without creating a PR |
+| `/submit` | Create a PR with the generated YAML |
+| `/reject <reason>` | Close the discussion with a rejection reason |
+| `/duplicate <slug>` | Mark as duplicate of an existing entry |
+
+### Typical Workflow
+
+1. User opens a discussion using the "Add Software" template
+2. Maintainer runs `/enrich` to fetch and parse the product data
+3. Review the generated YAML for accuracy
+4. Run `/submit` to create a PR (or `/submit --draft` for draft)
+
 ## Questions?
 
 Open a [Discussion](https://github.com/racks-fm/catalog/discussions) or reach out to the maintainers.
