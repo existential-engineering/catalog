@@ -119,11 +119,12 @@ function hasMetadata(body: string): boolean {
 
 /**
  * Extract type from discussion category
+ * Categories are named: software-requests, hardware-requests, manufacturer-requests
  */
 function extractType(categoryName: string): "software" | "hardware" | "manufacturer" {
   const name = categoryName.toLowerCase();
-  if (name.includes("manufacturer")) return "manufacturer";
-  if (name.includes("hardware")) return "hardware";
+  if (name.startsWith("manufacturer")) return "manufacturer";
+  if (name.startsWith("hardware")) return "hardware";
   // Default to software for any other category
   return "software";
 }

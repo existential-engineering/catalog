@@ -1,0 +1,20 @@
+title: "[Add] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Request to add hardware to the catalog. Just provide the URL - we'll fetch the details automatically!
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Link to the product page
+      placeholder: https://www.native-instruments.com/en/products/komplete/keyboards/komplete-kontrol-s88/
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes (optional)
+      description: Anything else we should know? Leave blank if none.
