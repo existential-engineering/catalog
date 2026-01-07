@@ -137,40 +137,9 @@ VST3 plugins use the same identifier scheme but are stored differently. Check th
 - Focus on accuracy and helpfulness
 - Credit original sources when possible
 
-## Slash Commands (Maintainers)
-
-When processing contribution requests via GitHub Discussions, maintainers can use slash commands to automate the workflow.
-
-Type `/help` in any discussion to see available commands.
-
-### Quick Reference
-
-| Command | Description |
-|---------|-------------|
-| `/help` | Show available commands |
-| `/add [url]` | **One-shot**: crawl + parse + submit in one command |
-| `/crawl [url]` | Fetch product data from a URL |
-| `/parse` | Validate and structure crawled data into YAML |
-| `/enrich` | Run crawl + parse in one step |
-| `/preview` | Show a YAML preview without creating a PR |
-| `/submit` | Create a PR with the generated YAML |
-| `/reject <reason>` | Close the discussion with a rejection reason |
-| `/duplicate <slug>` | Mark as duplicate of an existing entry |
-
-### Typical Workflow
-
-New discussions automatically create a **draft PR** - no manual commands needed!
-
-1. User opens a discussion with a product URL
-2. Bot crawls, parses, and creates a draft PR
-3. Maintainer reviews the PR, requests changes if needed, and merges
-4. Discussion auto-closes when PR is merged
-
-Slash commands are available for edge cases (retry failed crawls, duplicates, etc.).
-
 ## Questions?
 
-Open a [Discussion](https://github.com/racks-fm/catalog/discussions) or reach out to the maintainers.
+Open an issue or reach out to the maintainers.
 
 
 
