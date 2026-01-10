@@ -1,5 +1,12 @@
 # catalog
 
+## 0.3.5
+
+### Patch Changes
+
+- 469fc05: feat(manufacturer): add sonible
+- 469fc05: feat(software): add sonible smart:limit
+
 ## 0.3.4
 
 ### Patch Changes
