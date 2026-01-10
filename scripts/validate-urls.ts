@@ -273,6 +273,14 @@ async function validate(changedOnly: boolean, baseSha?: string): Promise<Validat
 }
 
 // Write GitHub Actions summary
+function escapeMarkdownCell(value: string | undefined | null): string {
+  if (value == null) {
+    return "";
+  }
+  // Escape backslashes first, then pipe characters used in Markdown tables.
+  return value.replace(/\\/g, "\\\\").replace(/\|/g, "\\|");
+}
+
 function writeGitHubSummary(result: ValidationResult): void {
   const summaryPath = process.env.GITHUB_STEP_SUMMARY;
   if (!summaryPath) return;
@@ -299,8 +307,11 @@ function writeGitHubSummary(result: ValidationResult): void {
     summary += `| File | URL | Status |\n`;
     summary += `|------|-----|--------|\n`;
     for (const item of broken) {
-      const status = item.status === "error" ? `Error: ${item.error?.replace(/\|/g, "\\|")}` : item.status;
-      summary += `| \`${item.file}\` | \`${item.url}\` | ${status} |\n`;
+      const status =
+        item.status === "error"
+          ? `Error: ${escapeMarkdownCell(item.error)}`
+          : String(item.status);
+      summary += `| \`${item.file}\` | \`${escapeMarkdownCell(String(item.url))}\` | ${escapeMarkdownCell(status)} |\n`;
     }
     summary += "\n";
   }
@@ -315,7 +326,7 @@ function writeGitHubSummary(result: ValidationResult): void {
     summary += `| File | Original URL | Redirects To |\n`;
     summary += `|------|--------------|---------------|\n`;
     for (const item of redirects) {
-      summary += `| \`${item.file}\` | \`${item.url}\` | \`${item.finalUrl}\` |\n`;
+      summary += `| \`${item.file}\` | \`${escapeMarkdownCell(String(item.url))}\` | \`${escapeMarkdownCell(String(item.finalUrl))}\` |\n`;
     }
     summary += "\n";
   }
