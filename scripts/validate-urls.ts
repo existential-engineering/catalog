@@ -76,6 +76,12 @@ function parseArgs(): { changedOnly: boolean; baseSha?: string } {
 
 // Get list of changed YAML files in data/
 function getChangedFiles(baseSha: string): string[] {
+  // Validate SHA format to prevent command injection
+  if (!/^[a-f0-9]{7,40}$/i.test(baseSha)) {
+    console.error(`Invalid git SHA format: ${baseSha}`);
+    return [];
+  }
+
   try {
     const output = execSync(`git diff --name-only ${baseSha} HEAD`, {
       encoding: "utf-8",
@@ -93,12 +99,10 @@ function getChangedFiles(baseSha: string): string[] {
 }
 
 // Extract all URLs from a parsed YAML object
-function extractUrls(data: Record<string, unknown>, prefix = ""): string[] {
+function extractUrls(data: Record<string, unknown>): string[] {
   const urls: string[] = [];
 
   for (const [key, value] of Object.entries(data)) {
-    const currentPath = prefix ? `${prefix}.${key}` : key;
-
     if (typeof value === "string") {
       // Check if this is a URL field
       if (key === "url" || key === "website" || key === "source") {
@@ -107,14 +111,13 @@ function extractUrls(data: Record<string, unknown>, prefix = ""): string[] {
         }
       }
     } else if (Array.isArray(value)) {
-      for (let i = 0; i < value.length; i++) {
-        const item = value[i];
+      for (const item of value) {
         if (typeof item === "object" && item !== null) {
-          urls.push(...extractUrls(item as Record<string, unknown>, `${currentPath}[${i}]`));
+          urls.push(...extractUrls(item as Record<string, unknown>));
         }
       }
     } else if (typeof value === "object" && value !== null) {
-      urls.push(...extractUrls(value as Record<string, unknown>, currentPath));
+      urls.push(...extractUrls(value as Record<string, unknown>));
     }
   }
 
