@@ -83,6 +83,9 @@ jobs:
                   name: label
                 });
               } catch (e) {
-                // Label might not be on PR
+                // Ignore 404 (label not on PR), re-throw other errors
+                if (e.status !== 404) {
+                  throw e;
+                }
               }
             }

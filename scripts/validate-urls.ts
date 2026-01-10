@@ -15,6 +15,31 @@ import path from "node:path";
 import { parse as parseYaml } from "yaml";
 import { DATA_DIR, getYamlFiles } from "./lib/utils.js";
 
+const MAX_CONCURRENT_REQUESTS = 10;
+const MAX_CONCURRENT_FILES = 5;
+
+// Run async tasks with a concurrency limit
+async function runWithConcurrency<T, R>(
+  items: T[],
+  limit: number,
+  fn: (item: T) => Promise<R>
+): Promise<R[]> {
+  const results: R[] = [];
+  let index = 0;
+
+  async function worker(): Promise<void> {
+    while (index < items.length) {
+      const currentIndex = index++;
+      results[currentIndex] = await fn(items[currentIndex]);
+    }
+  }
+
+  const workers = Array.from({ length: Math.min(limit, items.length) }, () => worker());
+  await Promise.all(workers);
+
+  return results;
+}
+
 interface UrlCheckResult {
   url: string;
   status: number | "error";
@@ -98,20 +123,15 @@ function extractUrls(data: Record<string, unknown>, prefix = ""): string[] {
 
 // Check a single URL
 async function checkUrl(url: string): Promise<UrlCheckResult> {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 10000);
-
   try {
     const response = await fetch(url, {
       method: "HEAD",
       redirect: "follow",
-      signal: controller.signal,
+      signal: AbortSignal.timeout(10000),
       headers: {
         "User-Agent": "Racks-Catalog-Validator/1.0",
       },
     });
-
-    clearTimeout(timeout);
 
     const redirected = response.url !== url;
 
@@ -122,8 +142,6 @@ async function checkUrl(url: string): Promise<UrlCheckResult> {
       finalUrl: redirected ? response.url : undefined,
     };
   } catch {
-    clearTimeout(timeout);
-
     // Try GET request as fallback (some servers don't support HEAD)
     try {
       const response = await fetch(url, {
@@ -156,19 +174,47 @@ async function checkUrl(url: string): Promise<UrlCheckResult> {
 
 // Process a single file
 async function processFile(filePath: string): Promise<FileResult> {
-  const content = fs.readFileSync(filePath, "utf-8");
-  const data = parseYaml(content) as Record<string, unknown>;
-  const urls = [...new Set(extractUrls(data))]; // Dedupe URLs
+  const relativePath = path.relative(process.cwd(), filePath);
 
-  const results: UrlCheckResult[] = [];
-
-  for (const url of urls) {
-    const result = await checkUrl(url);
-    results.push(result);
+  let content: string;
+  try {
+    content = fs.readFileSync(filePath, "utf-8");
+  } catch (error) {
+    return {
+      file: relativePath,
+      urls: [
+        {
+          url: "(file read error)",
+          status: "error",
+          redirected: false,
+          error: error instanceof Error ? error.message : String(error),
+        },
+      ],
+    };
   }
 
+  let data: Record<string, unknown>;
+  try {
+    data = parseYaml(content) as Record<string, unknown>;
+  } catch (error) {
+    return {
+      file: relativePath,
+      urls: [
+        {
+          url: "(yaml parse error)",
+          status: "error",
+          redirected: false,
+          error: error instanceof Error ? error.message : String(error),
+        },
+      ],
+    };
+  }
+
+  const urls = [...new Set(extractUrls(data))]; // Dedupe URLs
+  const results = await runWithConcurrency(urls, MAX_CONCURRENT_REQUESTS, checkUrl);
+
   return {
-    file: path.relative(process.cwd(), filePath),
+    file: relativePath,
     urls: results,
   };
 }
@@ -179,6 +225,12 @@ async function validate(changedOnly: boolean, baseSha?: string): Promise<Validat
 
   if (changedOnly && baseSha) {
     files = getChangedFiles(baseSha);
+    if (files.length === 0) {
+      console.warn(
+        `Warning: No changed YAML files found between ${baseSha} and HEAD.\n` +
+          `This may indicate an issue with the base SHA or git configuration.`
+      );
+    }
     console.log(`Checking ${files.length} changed file(s)...`);
   } else {
     // Get all YAML files
@@ -190,15 +242,13 @@ async function validate(changedOnly: boolean, baseSha?: string): Promise<Validat
     console.log(`Checking ${files.length} file(s)...`);
   }
 
-  const results: FileResult[] = [];
+  const results = await runWithConcurrency(files, MAX_CONCURRENT_FILES, processFile);
+
   let totalUrls = 0;
   let brokenCount = 0;
   let redirectCount = 0;
 
-  for (const file of files) {
-    const fileResult = await processFile(file);
-    results.push(fileResult);
-
+  for (const fileResult of results) {
     for (const urlResult of fileResult.urls) {
       totalUrls++;
 
@@ -249,8 +299,8 @@ function writeGitHubSummary(result: ValidationResult): void {
     summary += `| File | URL | Status |\n`;
     summary += `|------|-----|--------|\n`;
     for (const item of broken) {
-      const status = item.status === "error" ? `Error: ${item.error}` : item.status;
-      summary += `| \`${item.file}\` | ${item.url} | ${status} |\n`;
+      const status = item.status === "error" ? `Error: ${item.error?.replace(/\|/g, "\\|")}` : item.status;
+      summary += `| \`${item.file}\` | \`${item.url}\` | ${status} |\n`;
     }
     summary += "\n";
   }
@@ -265,7 +315,7 @@ function writeGitHubSummary(result: ValidationResult): void {
     summary += `| File | Original URL | Redirects To |\n`;
     summary += `|------|--------------|---------------|\n`;
     for (const item of redirects) {
-      summary += `| \`${item.file}\` | ${item.url} | ${item.finalUrl} |\n`;
+      summary += `| \`${item.file}\` | \`${item.url}\` | \`${item.finalUrl}\` |\n`;
     }
     summary += "\n";
   }
@@ -313,8 +363,9 @@ function writeConsoleOutput(result: ValidationResult): void {
   if (redirects.length > 0) {
     console.log(`\nRedirected URLs (${redirects.length}):`);
     for (const item of redirects) {
-      console.log(`   ${item.url}`);
-      console.log(`   -> ${item.finalUrl}`);
+      console.log(`\n   ${item.file}`);
+      console.log(`      ${item.url}`);
+      console.log(`      -> ${item.finalUrl}`);
     }
   }
 
