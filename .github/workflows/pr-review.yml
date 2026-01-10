@@ -1,0 +1,91 @@
+name: PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - "data/**"
+
+jobs:
+  review:
+    name: Review PR
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate URLs
+        id: urls
+        run: pnpm validate-urls --changed-only --base "${{ github.event.pull_request.base.sha }}"
+        continue-on-error: true
+
+      - name: Update labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const passed = '${{ steps.urls.outcome }}' === 'success';
+
+            const toAdd = passed ? ['ready-for-review'] : ['broken-urls'];
+            const toRemove = passed ? ['broken-urls'] : ['ready-for-review'];
+
+            // Ensure labels exist
+            for (const label of [...toAdd, ...toRemove]) {
+              try {
+                await github.rest.issues.getLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: label
+                });
+              } catch (e) {
+                if (e.status === 404) {
+                  await github.rest.issues.createLabel({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    name: label,
+                    color: label === 'broken-urls' ? 'D93F0B' : '0E8A16'
+                  });
+                }
+              }
+            }
+
+            // Add labels
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: toAdd
+            });
+
+            // Remove labels
+            for (const label of toRemove) {
+              try {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  name: label
+                });
+              } catch (e) {
+                // Ignore 404 (label not on PR), re-throw other errors
+                if (e.status !== 404) {
+                  throw e;
+                }
+              }
+            }
