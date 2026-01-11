@@ -1,5 +1,11 @@
 # catalog
 
+## 0.3.6
+
+### Patch Changes
+
+- 9dceb03: software: add fabfilter pro-l 2
+
 ## 0.3.5
 
 ### Patch Changes
