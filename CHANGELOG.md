@@ -1,5 +1,12 @@
 # catalog
 
+## 0.3.6
+
+### Patch Changes
+
+- 0f17fc9: software: add sonible true:level
+- 9dceb03: software: add fabfilter pro-l 2
+
 ## 0.3.5
 
 ### Patch Changes
