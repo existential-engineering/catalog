@@ -1,5 +1,11 @@
 # catalog
 
+## 0.3.7
+
+### Patch Changes
+
+- b68885a: software: add amplitube 5
+
 ## 0.3.6
 
 ### Patch Changes
