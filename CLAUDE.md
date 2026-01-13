@@ -35,5 +35,7 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 ## Data Entry Format
 
 Manufacturers require: slug, name, website
-Software requires: slug, name, manufacturer, category, formats, platforms, identifiers
-Hardware requires: slug, name, manufacturer, category, description
+Software requires: slug, name, manufacturer, primaryCategory, platforms, identifiers
+Hardware requires: slug, name, manufacturer, primaryCategory, description
+
+Optional fields: categories (array), website, description

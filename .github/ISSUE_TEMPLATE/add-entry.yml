@@ -1,56 +1,52 @@
-name: Update Item
-description: Report incorrect or outdated information in an existing item
+name: Add Entry
+description: Request a new software, hardware, or manufacturer be added to the catalog
 title: "[Add] "
-labels: ["new-item"]
+labels: ["new-entry"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Found something wrong? Let us know what needs to be corrected.
-
-  - type: input
-    id: item
-    attributes:
-      label: Item Name
-      description: Which software, or manufacturer needs updating?
-      placeholder: e.g., Serum
-    validations:
-      required: true
-
   - type: dropdown
-    id: category
+    id: type
     attributes:
-      label: Category
-      description: What type of item is this?
+      label: Type
       options:
+        - Software (plugin, DAW, app)
+        - Hardware (synth, controller, interface)
         - Manufacturer
-        - Software
-        - Hardware
-    validations:
-      required: true
-
-  - type: textarea
-    id: current
-    attributes:
-      label: Current Information
-      description: What is currently in the catalog that's wrong?
-    validations:
-      required: true
-
-  - type: textarea
-    id: correct
-    attributes:
-      label: Correct Information
-      description: What should it be instead?
     validations:
       required: true
 
   - type: input
-    id: source
+    id: name
     attributes:
-      label: Source (optional)
-      description: Link to verify the correct information
+      label: Name
+      placeholder: e.g., Serum, Moog Subsequent 37
+    validations:
+      required: true
+
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Manufacturer
+      description: Leave blank if adding a manufacturer
+      placeholder: e.g., Xfer Records, Moog
+
+  - type: input
+    id: url
+    attributes:
+      label: Product URL
+      description: Official product or manufacturer website
       placeholder: https://...
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Additional Details
+      description: Any other relevant info (plugin formats, platforms, category, etc.)
+      placeholder: |
+        Formats: VST3, AU, AAX
+        Platforms: Windows, macOS
+        Category: Synthesizer
 
 
 
