@@ -1,0 +1,32 @@
+language: en-US
+
+reviews:
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+  path_instructions:
+    - path: "data/**/*.yaml"
+      instructions: |
+        Focus on data quality. Check for:
+        - Correct slug format (lowercase, hyphens only, no spaces)
+        - Required fields present based on entry type
+        - Valid URLs for website fields
+        - Proper bundle identifier formatting (reverse domain notation)
+        - Categories should exist in schema/categories.yaml
+
+        Check for potential duplicates:
+        - Flag if product name is very similar to an existing entry
+        - Flag if website URL matches another entry in the same collection
+        - Flag if the same product might exist under a different slug/name
+        - Software products should NOT be in manufacturers/ (they belong in software/)
+
+    - path: "schema/**/*.yaml"
+      instructions: |
+        Schema changes affect all data validation. Verify:
+        - Backwards compatibility with existing entries
+        - Consistent naming conventions
+
+chat:
+  auto_reply: true
