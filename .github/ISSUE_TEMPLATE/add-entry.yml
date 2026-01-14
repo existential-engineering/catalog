@@ -1,0 +1,53 @@
+name: Add Item
+description: Request a new software, hardware, or manufacturer be added to the catalog
+title: "[Add] "
+labels: ["new-item"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - Software (plugin, DAW, app)
+        - Hardware (synth, controller, interface)
+        - Manufacturer
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: e.g., Serum, Moog Subsequent 37
+    validations:
+      required: true
+
+  - type: input
+    id: manufacturer
+    attributes:
+      label: Manufacturer
+      description: Leave blank if adding a manufacturer
+      placeholder: e.g., Xfer Records, Moog
+
+  - type: input
+    id: url
+    attributes:
+      label: Product URL
+      description: Official product or manufacturer website
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Additional Details
+      description: Any other relevant info (plugin formats, platforms, category, etc.)
+      placeholder: |
+        Formats: VST3, AU, AAX
+        Platforms: Windows, macOS
+        Category: Synthesizer
+
+
+
+

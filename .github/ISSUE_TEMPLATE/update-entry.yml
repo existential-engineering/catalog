@@ -1,5 +1,5 @@
-name: Update Entry
-description: Report incorrect or outdated information in an existing entry
+name: Update Item
+description: Report incorrect or outdated information in an existing item
 title: "[Update] "
 labels: ["update"]
 body:
@@ -9,10 +9,10 @@ body:
         Found something wrong? Let us know what needs to be corrected.
 
   - type: input
-    id: entry
+    id: item
     attributes:
-      label: Entry Name
-      description: Which software, DAW, or manufacturer needs updating?
+      label: Item Name
+      description: Which software, hardware, or manufacturer needs updating?
       placeholder: e.g., Serum
     validations:
       required: true
@@ -21,11 +21,10 @@ body:
     id: category
     attributes:
       label: Category
-      description: What type of entry is this?
+      description: What type of item is this?
       options:
-        - Software
-        - DAW
         - Manufacturer
+        - Software
         - Hardware
     validations:
       required: true
