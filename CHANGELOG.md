@@ -1,5 +1,12 @@
 # catalog
 
+## 0.3.8
+
+### Patch Changes
+
+- a361cb3: Add CLAUDE.md and CodeRabbit configuration files for AI-assisted development and code review.
+- a361cb3: Fix data issues: remove duplicate Brigade Chorus & Vibrato entry, move Traktor and ACID Pro from manufacturers to software.
+
 ## 0.3.7
 
 ### Patch Changes
