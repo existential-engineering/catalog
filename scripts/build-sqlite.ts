@@ -640,7 +640,15 @@ function buildDatabase(version: string): void {
 
         // Insert I/O translations (merge semantics)
         if (trans.io) {
+          const sourceIONames = new Set(data.io?.map(io => io.name) ?? []);
           for (const ioTrans of trans.io) {
+            if (!sourceIONames.has(ioTrans.originalName)) {
+              console.warn(
+                `  ⚠️  Warning: hardware '${data.slug}' locale '${locale}' references unknown I/O port '${ioTrans.originalName}'. ` +
+                `Available: ${[...sourceIONames].join(", ") || "(none)"}`
+              );
+              continue;
+            }
             insertHardwareIOTranslation.run(
               data.slug,
               locale,

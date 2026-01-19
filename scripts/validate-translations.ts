@@ -220,8 +220,11 @@ function validateTranslations(): TranslationValidationResult {
 
       const error = validateManufacturerTranslations(data, file);
       if (error) errors.push(error);
-    } catch {
-      // Parse errors handled by main validate.ts
+    } catch (err) {
+      errors.push({
+        file: path.relative(process.cwd(), file),
+        errors: [`Parse error: ${err instanceof Error ? err.message : String(err)}`],
+      });
     }
   }
 
@@ -242,8 +245,11 @@ function validateTranslations(): TranslationValidationResult {
 
       const error = validateSoftwareTranslations(data, file);
       if (error) errors.push(error);
-    } catch {
-      // Parse errors handled by main validate.ts
+    } catch (err) {
+      errors.push({
+        file: path.relative(process.cwd(), file),
+        errors: [`Parse error: ${err instanceof Error ? err.message : String(err)}`],
+      });
     }
   }
 
@@ -264,8 +270,11 @@ function validateTranslations(): TranslationValidationResult {
 
       const error = validateHardwareTranslations(data, file);
       if (error) errors.push(error);
-    } catch {
-      // Parse errors handled by main validate.ts
+    } catch (err) {
+      errors.push({
+        file: path.relative(process.cwd(), file),
+        errors: [`Parse error: ${err instanceof Error ? err.message : String(err)}`],
+      });
     }
   }
 

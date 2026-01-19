@@ -176,6 +176,8 @@ CREATE TABLE IF NOT EXISTS hardware_search_terms (
 );
 
 -- Hardware I/O Ports
+-- Note: (hardware_id, name) is NOT unique - devices can have multiple ports with same name
+-- I/O translation validation is handled at build time in build-sqlite.ts
 CREATE TABLE IF NOT EXISTS hardware_io (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
@@ -395,6 +397,8 @@ CREATE INDEX idx_hardware_links_localized ON hardware_links_localized(hardware_i
 
 -- Hardware I/O translations (MERGE semantics - only translates name/description)
 -- Technical fields (signalFlow, type, connection, position) come from hardware_io
+-- Note: No FK to hardware_io because (hardware_id, name) is not unique
+-- Validation is handled at build time in build-sqlite.ts
 CREATE TABLE IF NOT EXISTS hardware_io_translations (
     hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
