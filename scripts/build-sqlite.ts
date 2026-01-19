@@ -11,7 +11,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { marked } from "marked";
 
-import type { Manufacturer, Software, Hardware, IO, Version, Price, Link, Revision, Image, CategoryAliasesSchema } from "./lib/types.js";
+import type { Manufacturer, Software, Hardware, IO, Version, Price, Link, Revision, Image, CategoryAliasesSchema, LocalesSchema, ContentTranslation } from "./lib/types.js";
 import { DATA_DIR, OUTPUT_DIR, SCHEMA_DIR, loadYamlFile, getYamlFiles } from "./lib/utils.js";
 
 // Configure marked for safe HTML output
@@ -37,6 +37,12 @@ const categoryAliasesSchema = loadYamlFile<CategoryAliasesSchema>(
 const CATEGORY_ALIASES = new Map<string, string>(
   Object.entries(categoryAliasesSchema.aliases)
 );
+
+// Load approved locales
+const localesSchema = loadYamlFile<LocalesSchema>(
+  path.join(SCHEMA_DIR, "locales.yaml")
+);
+const APPROVED_LOCALES = new Set(localesSchema.locales.map(l => l.code));
 
 // Normalize a category to its canonical form
 function normalizeCategory(category: string): string {
@@ -70,6 +76,16 @@ function buildDatabase(version: string): void {
   const schema = fs.readFileSync(SCHEMA_FILE, "utf-8");
   db.exec(schema);
 
+  // Insert approved locales
+  const insertLocale = db.prepare(`
+    INSERT INTO locales (code, name, native_name, enabled)
+    VALUES (?, ?, ?, 1)
+  `);
+  for (const locale of localesSchema.locales) {
+    insertLocale.run(locale.code, locale.name, locale.nativeName);
+  }
+  console.log(`  ✓ Inserted ${localesSchema.locales.length} locales`);
+
   // Load and insert manufacturers
   const manufacturerFiles = getYamlFiles(path.join(DATA_DIR, "manufacturers"));
   const manufacturers = new Map<string, Manufacturer>();
@@ -87,6 +103,10 @@ function buildDatabase(version: string): void {
   `);
   const insertManufacturerImage = db.prepare(`
     INSERT INTO manufacturer_images (manufacturer_id, source, alt, position)
+    VALUES (?, ?, ?, ?)
+  `);
+  const insertManufacturerTranslation = db.prepare(`
+    INSERT INTO manufacturer_translations (manufacturer_id, locale, description, website)
     VALUES (?, ?, ?, ?)
   `);
 
@@ -114,6 +134,21 @@ function buildDatabase(version: string): void {
       data.images.forEach((img, index) => {
         insertManufacturerImage.run(data.slug, img.source, img.alt ?? null, index);
       });
+    }
+
+    // Insert translations
+    if (data.translations) {
+      for (const [locale, trans] of Object.entries(data.translations)) {
+        if (!APPROVED_LOCALES.has(locale)) continue;
+        if (trans.description || trans.website) {
+          insertManufacturerTranslation.run(
+            data.slug,
+            locale,
+            markdownToHtml(trans.description),
+            trans.website ?? null
+          );
+        }
+      }
     }
   }
 
@@ -169,6 +204,14 @@ function buildDatabase(version: string): void {
   const insertSoftwareFts = db.prepare(`
     INSERT INTO software_fts (id, name, manufacturer_name, categories, description)
     VALUES (?, ?, ?, ?, ?)
+  `);
+  const insertSoftwareTranslation = db.prepare(`
+    INSERT INTO software_translations (software_id, locale, description, details, specs, website)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `);
+  const insertSoftwareLinkLocalized = db.prepare(`
+    INSERT INTO software_links_localized (software_id, locale, type, title, url, video_id, provider, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
 
   for (const file of softwareFiles) {
@@ -273,6 +316,41 @@ function buildDatabase(version: string): void {
       data.description ?? ""
     );
 
+    // Insert translations
+    if (data.translations) {
+      for (const [locale, trans] of Object.entries(data.translations)) {
+        if (!APPROVED_LOCALES.has(locale)) continue;
+
+        // Insert content translation
+        if (trans.description || trans.details || trans.specs || trans.website) {
+          insertSoftwareTranslation.run(
+            data.slug,
+            locale,
+            markdownToHtml(trans.description),
+            markdownToHtml(trans.details),
+            markdownToHtml(trans.specs),
+            trans.website ?? null
+          );
+        }
+
+        // Insert localized links (replaces default links for this locale)
+        if (trans.links) {
+          for (const link of trans.links) {
+            insertSoftwareLinkLocalized.run(
+              data.slug,
+              locale,
+              link.type,
+              link.title ?? null,
+              link.url ?? null,
+              link.videoId ?? null,
+              link.provider ?? null,
+              link.description ?? null
+            );
+          }
+        }
+      }
+    }
+
     softwareCount++;
   }
 
@@ -336,6 +414,18 @@ function buildDatabase(version: string): void {
   `);
   const insertHardwareFts = db.prepare(`
     INSERT INTO hardware_fts (id, name, manufacturer_name, categories, description)
+    VALUES (?, ?, ?, ?, ?)
+  `);
+  const insertHardwareTranslation = db.prepare(`
+    INSERT INTO hardware_translations (hardware_id, locale, description, details, specs, website)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `);
+  const insertHardwareLinkLocalized = db.prepare(`
+    INSERT INTO hardware_links_localized (hardware_id, locale, type, title, url, video_id, provider, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+  const insertHardwareIOTranslation = db.prepare(`
+    INSERT INTO hardware_io_translations (hardware_id, locale, original_name, translated_name, translated_description)
     VALUES (?, ?, ?, ?, ?)
   `);
 
@@ -514,6 +604,62 @@ function buildDatabase(version: string): void {
       normalizedCategories.join(" "),
       data.description ?? ""
     );
+
+    // Insert translations
+    if (data.translations) {
+      for (const [locale, trans] of Object.entries(data.translations)) {
+        if (!APPROVED_LOCALES.has(locale)) continue;
+
+        // Insert content translation
+        if (trans.description || trans.details || trans.specs || trans.website) {
+          insertHardwareTranslation.run(
+            data.slug,
+            locale,
+            markdownToHtml(trans.description),
+            markdownToHtml(trans.details),
+            markdownToHtml(trans.specs),
+            trans.website ?? null
+          );
+        }
+
+        // Insert localized links (replaces default links for this locale)
+        if (trans.links) {
+          for (const link of trans.links) {
+            insertHardwareLinkLocalized.run(
+              data.slug,
+              locale,
+              link.type,
+              link.title ?? null,
+              link.url ?? null,
+              link.videoId ?? null,
+              link.provider ?? null,
+              link.description ?? null
+            );
+          }
+        }
+
+        // Insert I/O translations (merge semantics)
+        if (trans.io) {
+          const sourceIONames = new Set(data.io?.map(io => io.name) ?? []);
+          for (const ioTrans of trans.io) {
+            if (!sourceIONames.has(ioTrans.originalName)) {
+              console.warn(
+                `  ⚠️  Warning: hardware '${data.slug}' locale '${locale}' references unknown I/O port '${ioTrans.originalName}'. ` +
+                `Available: ${[...sourceIONames].join(", ") || "(none)"}`
+              );
+              continue;
+            }
+            insertHardwareIOTranslation.run(
+              data.slug,
+              locale,
+              ioTrans.originalName,
+              ioTrans.name ?? null,
+              ioTrans.description ?? null
+            );
+          }
+        }
+      }
+    }
 
     hardwareCount++;
   }

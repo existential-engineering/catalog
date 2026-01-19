@@ -176,6 +176,8 @@ CREATE TABLE IF NOT EXISTS hardware_search_terms (
 );
 
 -- Hardware I/O Ports
+-- Note: (hardware_id, name) is NOT unique - devices can have multiple ports with same name
+-- I/O translation validation is handled at build time in build-sqlite.ts
 CREATE TABLE IF NOT EXISTS hardware_io (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
@@ -309,6 +311,106 @@ CREATE TABLE IF NOT EXISTS hardware_images (
 );
 
 -- =============================================================================
+-- LOCALIZATION / TRANSLATIONS
+-- =============================================================================
+
+-- Supported locales registry
+CREATE TABLE IF NOT EXISTS locales (
+    code TEXT PRIMARY KEY,          -- ISO 639-1 code (e.g., 'de', 'ja')
+    name TEXT NOT NULL,             -- English name (e.g., 'German')
+    native_name TEXT,               -- Native name (e.g., 'Deutsch')
+    enabled INTEGER DEFAULT 1       -- Whether locale is active
+);
+
+-- Category translations
+CREATE TABLE IF NOT EXISTS category_translations (
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    category_key TEXT NOT NULL,     -- e.g., 'synthesizer', 'compressor'
+    translated_name TEXT NOT NULL,
+    PRIMARY KEY (locale, category_key)
+);
+
+-- Manufacturer translations
+CREATE TABLE IF NOT EXISTS manufacturer_translations (
+    manufacturer_id TEXT NOT NULL REFERENCES manufacturers(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    description TEXT,               -- Translated description (HTML)
+    website TEXT,                   -- Locale-specific website URL
+    PRIMARY KEY (manufacturer_id, locale)
+);
+
+-- Software translations
+CREATE TABLE IF NOT EXISTS software_translations (
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    description TEXT,               -- Translated short description (HTML)
+    details TEXT,                   -- Translated detailed description (HTML)
+    specs TEXT,                     -- Translated specifications (HTML)
+    website TEXT,                   -- Locale-specific website URL
+    PRIMARY KEY (software_id, locale)
+);
+
+CREATE INDEX idx_software_translations_locale ON software_translations(locale);
+
+-- Hardware translations
+CREATE TABLE IF NOT EXISTS hardware_translations (
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    description TEXT,               -- Translated short description (HTML)
+    details TEXT,                   -- Translated detailed description (HTML)
+    specs TEXT,                     -- Translated specifications (HTML)
+    website TEXT,                   -- Locale-specific website URL
+    PRIMARY KEY (hardware_id, locale)
+);
+
+CREATE INDEX idx_hardware_translations_locale ON hardware_translations(locale);
+
+-- Localized software links (videos, purchase, affiliate, docs per locale)
+CREATE TABLE IF NOT EXISTS software_links_localized (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    type TEXT NOT NULL,             -- video, documentation, purchase, etc.
+    title TEXT,
+    url TEXT,
+    video_id TEXT,
+    provider TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_software_links_localized ON software_links_localized(software_id, locale);
+
+-- Localized hardware links
+CREATE TABLE IF NOT EXISTS hardware_links_localized (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    type TEXT NOT NULL,
+    title TEXT,
+    url TEXT,
+    video_id TEXT,
+    provider TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_hardware_links_localized ON hardware_links_localized(hardware_id, locale);
+
+-- Hardware I/O translations (MERGE semantics - only translates name/description)
+-- Technical fields (signalFlow, type, connection, position) come from hardware_io
+-- Note: No FK to hardware_io because (hardware_id, name) is not unique
+-- Validation is handled at build time in build-sqlite.ts
+CREATE TABLE IF NOT EXISTS hardware_io_translations (
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    original_name TEXT NOT NULL,    -- Matches hardware_io.name for merging
+    translated_name TEXT,
+    translated_description TEXT,
+    PRIMARY KEY (hardware_id, locale, original_name)
+);
+
+CREATE INDEX idx_hardware_io_translations ON hardware_io_translations(hardware_id, locale);
+
+-- =============================================================================
 -- FULL-TEXT SEARCH
 -- =============================================================================
 
@@ -348,7 +450,7 @@ CREATE TABLE IF NOT EXISTS catalog_meta (
 -- Insert initial metadata
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES
     ('version', '1'),
-    ('schema_version', '4'),
+    ('schema_version', '5'),
     ('created_at', datetime('now')),
     ('updated_at', datetime('now'));
 
