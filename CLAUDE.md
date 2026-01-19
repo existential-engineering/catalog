@@ -39,3 +39,42 @@ Software requires: slug, name, manufacturer, primaryCategory, platforms, identif
 Hardware requires: slug, name, manufacturer, primaryCategory, description
 
 Optional fields: categories (array), website, description
+
+## Translations
+
+Translations are optional and added inline to YAML files using a `translations` key:
+
+```yaml
+slug: example
+description: English description...
+
+translations:
+  de:
+    description: German description...
+  ja:
+    description: Japanese description...
+```
+
+**Translatable fields:**
+
+- `description`, `details`, `specs` (content - converted to HTML)
+- `website` (locale-specific URLs)
+- `links` (replaces default links for that locale)
+- Hardware `io` (merge semantics - uses `originalName` to match)
+
+**Adding a new locale:**
+
+1. Add locale to `schema/locales.yaml`
+2. Add translations to relevant YAML files
+3. Run `pnpm validate:translations` to check
+
+**Hardware I/O translations:**
+
+```yaml
+translations:
+  de:
+    io:
+      - originalName: Headphone Out
+        name: Kopfhörerausgang
+        description: Hochwertiger Kopfhörerverstärker
+```

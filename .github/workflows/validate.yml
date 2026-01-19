@@ -43,6 +43,9 @@ jobs:
       - name: Validate YAML files
         run: pnpm validate
 
+      - name: Validate translations
+        run: pnpm validate:translations
+
       - name: Check formatting
         run: pnpm format:check
 

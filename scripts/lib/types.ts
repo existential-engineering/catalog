@@ -73,6 +73,7 @@ export interface Manufacturer {
   description?: string;
   searchTerms?: string[];
   images?: Image[];
+  translations?: TranslationsMap;
 }
 
 export interface Software {
@@ -95,6 +96,7 @@ export interface Software {
   prices?: Price[];
   links?: Link[];
   images?: Image[];
+  translations?: TranslationsMap;
 }
 
 export interface Hardware {
@@ -116,7 +118,42 @@ export interface Hardware {
   prices?: Price[];
   links?: Link[];
   images?: Image[];
+  translations?: TranslationsMap;
 }
+
+// =============================================================================
+// TRANSLATION TYPES
+// =============================================================================
+
+export interface Locale {
+  code: string;
+  name: string;
+  nativeName: string;
+}
+
+export interface LocalesSchema {
+  locales: Locale[];
+}
+
+// I/O translation (for hardware)
+export interface IOTranslation {
+  originalName: string;
+  name?: string;
+  description?: string;
+}
+
+// Content translation (shared fields for manufacturer/software/hardware)
+export interface ContentTranslation {
+  description?: string;
+  details?: string;
+  specs?: string;
+  website?: string;
+  links?: Link[];
+  io?: IOTranslation[];
+}
+
+// Map of locale code to translation
+export type TranslationsMap = Record<string, ContentTranslation>;
 
 // =============================================================================
 // SCHEMA TYPES
