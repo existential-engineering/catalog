@@ -1,0 +1,46 @@
+name: Assign IDs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**/*.yaml"
+
+concurrency:
+  group: assign-ids
+  cancel-in-progress: false
+
+jobs:
+  assign-ids:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Assign IDs to new entries
+        run: pnpm assign-ids
+
+      - name: Format YAML files
+        run: pnpm format
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: assign IDs to new entries"
+          git push

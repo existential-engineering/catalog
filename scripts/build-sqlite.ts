@@ -89,10 +89,11 @@ function buildDatabase(version: string): void {
   // Load and insert manufacturers
   const manufacturerFiles = getYamlFiles(path.join(DATA_DIR, "manufacturers"));
   const manufacturers = new Map<string, Manufacturer>();
+  const manufacturerIds = new Map<string, number>(); // slug -> id mapping
 
   const insertManufacturer = db.prepare(`
-    INSERT INTO manufacturers (id, name, company_name, website, description)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO manufacturers (id, slug, name, company_name, website, description)
+    VALUES (?, ?, ?, ?, ?, ?)
   `);
   const updateManufacturerParent = db.prepare(`
     UPDATE manufacturers SET parent_company_id = ? WHERE id = ?
@@ -114,7 +115,16 @@ function buildDatabase(version: string): void {
   for (const file of manufacturerFiles) {
     const data = loadYamlFile<Manufacturer>(file);
     manufacturers.set(data.slug, data);
+
+    // Get ID from YAML (must be present - run 'pnpm assign-ids' if missing)
+    const id = data.id;
+    if (!id) {
+      throw new Error(`Missing id in ${file}. Run 'pnpm assign-ids' to assign IDs to new entries.`);
+    }
+    manufacturerIds.set(data.slug, id);
+
     insertManufacturer.run(
+      id,
       data.slug,
       data.name,
       data.companyName ?? null,
@@ -125,14 +135,14 @@ function buildDatabase(version: string): void {
     // Insert search terms
     if (data.searchTerms) {
       for (const term of data.searchTerms) {
-        insertManufacturerSearchTerm.run(data.slug, term);
+        insertManufacturerSearchTerm.run(id, term);
       }
     }
 
     // Insert images
     if (data.images) {
       data.images.forEach((img, index) => {
-        insertManufacturerImage.run(data.slug, img.source, img.alt ?? null, index);
+        insertManufacturerImage.run(id, img.source, img.alt ?? null, index);
       });
     }
 
@@ -142,7 +152,7 @@ function buildDatabase(version: string): void {
         if (!APPROVED_LOCALES.has(locale)) continue;
         if (trans.description || trans.website) {
           insertManufacturerTranslation.run(
-            data.slug,
+            id,
             locale,
             markdownToHtml(trans.description),
             trans.website ?? null
@@ -155,7 +165,11 @@ function buildDatabase(version: string): void {
   // Second pass: update parent company references
   for (const data of manufacturers.values()) {
     if (data.parentCompany) {
-      updateManufacturerParent.run(data.parentCompany, data.slug);
+      const parentId = manufacturerIds.get(data.parentCompany);
+      const childId = manufacturerIds.get(data.slug);
+      if (parentId && childId) {
+        updateManufacturerParent.run(parentId, childId);
+      }
     }
   }
 
@@ -166,8 +180,8 @@ function buildDatabase(version: string): void {
   let softwareCount = 0;
 
   const insertSoftware = db.prepare(`
-    INSERT INTO software (id, name, manufacturer_id, website, release_date, primary_category, secondary_category, description, details, specs)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO software (id, slug, name, manufacturer_id, website, release_date, primary_category, secondary_category, description, details, specs)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertCategory = db.prepare(`
     INSERT INTO software_categories (software_id, category)
@@ -202,8 +216,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?)
   `);
   const insertSoftwareFts = db.prepare(`
-    INSERT INTO software_fts (id, name, manufacturer_name, categories, description)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO software_fts (id, slug, name, manufacturer_name, categories, description)
+    VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertSoftwareTranslation = db.prepare(`
     INSERT INTO software_translations (software_id, locale, description, details, specs, website)
@@ -217,6 +231,13 @@ function buildDatabase(version: string): void {
   for (const file of softwareFiles) {
     const data = loadYamlFile<Software>(file);
     const manufacturer = manufacturers.get(data.manufacturer);
+    const manufacturerId = manufacturerIds.get(data.manufacturer);
+
+    // Get ID from YAML (must be present - run 'pnpm assign-ids' if missing)
+    const id = data.id;
+    if (!id) {
+      throw new Error(`Missing id in ${file}. Run 'pnpm assign-ids' to assign IDs to new entries.`);
+    }
 
     // Normalize categories to canonical form
     const normalizedCategories = data.categories?.map(normalizeCategory) ?? [];
@@ -224,9 +245,10 @@ function buildDatabase(version: string): void {
     const normalizedSecondaryCategory = data.secondaryCategory ? normalizeCategory(data.secondaryCategory) : null;
 
     insertSoftware.run(
+      id,
       data.slug,
       data.name,
-      data.manufacturer,
+      manufacturerId ?? null,
       data.website ?? null,
       data.releaseDate ?? null,
       normalizedPrimaryCategory,
@@ -238,13 +260,13 @@ function buildDatabase(version: string): void {
 
     // Insert categories (normalized)
     for (const category of normalizedCategories) {
-      insertCategory.run(data.slug, category);
+      insertCategory.run(id, category);
     }
 
     // Insert search terms
     if (data.searchTerms) {
       for (const term of data.searchTerms) {
-        insertSearchTerm.run(data.slug, term);
+        insertSearchTerm.run(id, term);
       }
     }
 
@@ -252,14 +274,14 @@ function buildDatabase(version: string): void {
     if (data.formats) {
       for (const format of data.formats) {
         const identifier = data.identifiers?.[format] ?? null;
-        insertFormat.run(data.slug, format, identifier);
+        insertFormat.run(id, format, identifier);
       }
     }
 
     // Insert platforms
     if (data.platforms) {
       for (const platform of data.platforms) {
-        insertPlatform.run(data.slug, platform);
+        insertPlatform.run(id, platform);
       }
     }
 
@@ -267,7 +289,7 @@ function buildDatabase(version: string): void {
     if (data.versions) {
       for (const ver of data.versions) {
         insertSoftwareVersion.run(
-          data.slug,
+          id,
           ver.name,
           ver.releaseDate ?? null,
           ver.preRelease ? 1 : 0,
@@ -281,7 +303,7 @@ function buildDatabase(version: string): void {
     // Insert prices
     if (data.prices) {
       for (const price of data.prices) {
-        insertSoftwarePrice.run(data.slug, price.amount, price.currency);
+        insertSoftwarePrice.run(id, price.amount, price.currency);
       }
     }
 
@@ -289,7 +311,7 @@ function buildDatabase(version: string): void {
     if (data.links) {
       for (const link of data.links) {
         insertSoftwareLink.run(
-          data.slug,
+          id,
           link.type,
           link.title ?? null,
           link.url ?? null,
@@ -303,12 +325,13 @@ function buildDatabase(version: string): void {
     // Insert images
     if (data.images) {
       data.images.forEach((img, index) => {
-        insertSoftwareImage.run(data.slug, img.source, img.alt ?? null, index);
+        insertSoftwareImage.run(id, img.source, img.alt ?? null, index);
       });
     }
 
     // Insert FTS entry (with normalized categories)
     insertSoftwareFts.run(
+      id,
       data.slug,
       data.name,
       manufacturer?.name ?? "",
@@ -324,7 +347,7 @@ function buildDatabase(version: string): void {
         // Insert content translation
         if (trans.description || trans.details || trans.specs || trans.website) {
           insertSoftwareTranslation.run(
-            data.slug,
+            id,
             locale,
             markdownToHtml(trans.description),
             markdownToHtml(trans.details),
@@ -337,7 +360,7 @@ function buildDatabase(version: string): void {
         if (trans.links) {
           for (const link of trans.links) {
             insertSoftwareLinkLocalized.run(
-              data.slug,
+              id,
               locale,
               link.type,
               link.title ?? null,
@@ -361,8 +384,8 @@ function buildDatabase(version: string): void {
   let hardwareCount = 0;
 
   const insertHardware = db.prepare(`
-    INSERT INTO hardware (id, name, manufacturer_id, website, release_date, primary_category, secondary_category, description, details, specs)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware (id, slug, name, manufacturer_id, website, release_date, primary_category, secondary_category, description, details, specs)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareCategory = db.prepare(`
     INSERT INTO hardware_categories (hardware_id, category)
@@ -413,8 +436,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?)
   `);
   const insertHardwareFts = db.prepare(`
-    INSERT INTO hardware_fts (id, name, manufacturer_name, categories, description)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO hardware_fts (id, slug, name, manufacturer_name, categories, description)
+    VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareTranslation = db.prepare(`
     INSERT INTO hardware_translations (hardware_id, locale, description, details, specs, website)
@@ -432,6 +455,13 @@ function buildDatabase(version: string): void {
   for (const file of hardwareFiles) {
     const data = loadYamlFile<Hardware>(file);
     const manufacturer = manufacturers.get(data.manufacturer);
+    const manufacturerId = manufacturerIds.get(data.manufacturer);
+
+    // Get ID from YAML (must be present - run 'pnpm assign-ids' if missing)
+    const id = data.id;
+    if (!id) {
+      throw new Error(`Missing id in ${file}. Run 'pnpm assign-ids' to assign IDs to new entries.`);
+    }
 
     // Normalize categories to canonical form
     const normalizedCategories = data.categories?.map(normalizeCategory) ?? [];
@@ -439,9 +469,10 @@ function buildDatabase(version: string): void {
     const normalizedSecondaryCategory = data.secondaryCategory ? normalizeCategory(data.secondaryCategory) : null;
 
     insertHardware.run(
+      id,
       data.slug,
       data.name,
-      data.manufacturer,
+      manufacturerId ?? null,
       data.website ?? null,
       data.releaseDate ?? null,
       normalizedPrimaryCategory,
@@ -453,13 +484,13 @@ function buildDatabase(version: string): void {
 
     // Insert categories (normalized)
     for (const category of normalizedCategories) {
-      insertHardwareCategory.run(data.slug, category);
+      insertHardwareCategory.run(id, category);
     }
 
     // Insert search terms
     if (data.searchTerms) {
       for (const term of data.searchTerms) {
-        insertHardwareSearchTerm.run(data.slug, term);
+        insertHardwareSearchTerm.run(id, term);
       }
     }
 
@@ -467,7 +498,7 @@ function buildDatabase(version: string): void {
     if (data.io) {
       for (const io of data.io) {
         insertHardwareIO.run(
-          data.slug,
+          id,
           io.name,
           io.signalFlow,
           io.category,
@@ -486,7 +517,7 @@ function buildDatabase(version: string): void {
     if (data.versions) {
       for (const ver of data.versions) {
         insertHardwareVersion.run(
-          data.slug,
+          id,
           ver.name,
           ver.releaseDate ?? null,
           ver.preRelease ? 1 : 0,
@@ -501,7 +532,7 @@ function buildDatabase(version: string): void {
     if (data.revisions) {
       for (const rev of data.revisions) {
         const result = insertHardwareRevision.run(
-          data.slug,
+          id,
           rev.name,
           rev.releaseDate ?? null,
           rev.url ?? null,
@@ -570,7 +601,7 @@ function buildDatabase(version: string): void {
     // Insert prices
     if (data.prices) {
       for (const price of data.prices) {
-        insertHardwarePrice.run(data.slug, price.amount, price.currency);
+        insertHardwarePrice.run(id, price.amount, price.currency);
       }
     }
 
@@ -578,7 +609,7 @@ function buildDatabase(version: string): void {
     if (data.links) {
       for (const link of data.links) {
         insertHardwareLink.run(
-          data.slug,
+          id,
           link.type,
           link.title ?? null,
           link.url ?? null,
@@ -592,12 +623,13 @@ function buildDatabase(version: string): void {
     // Insert images
     if (data.images) {
       data.images.forEach((img, index) => {
-        insertHardwareImage.run(data.slug, img.source, img.alt ?? null, index);
+        insertHardwareImage.run(id, img.source, img.alt ?? null, index);
       });
     }
 
     // Insert FTS entry (with normalized categories)
     insertHardwareFts.run(
+      id,
       data.slug,
       data.name,
       manufacturer?.name ?? "",
@@ -613,7 +645,7 @@ function buildDatabase(version: string): void {
         // Insert content translation
         if (trans.description || trans.details || trans.specs || trans.website) {
           insertHardwareTranslation.run(
-            data.slug,
+            id,
             locale,
             markdownToHtml(trans.description),
             markdownToHtml(trans.details),
@@ -626,7 +658,7 @@ function buildDatabase(version: string): void {
         if (trans.links) {
           for (const link of trans.links) {
             insertHardwareLinkLocalized.run(
-              data.slug,
+              id,
               locale,
               link.type,
               link.title ?? null,
@@ -650,7 +682,7 @@ function buildDatabase(version: string): void {
               continue;
             }
             insertHardwareIOTranslation.run(
-              data.slug,
+              id,
               locale,
               ioTrans.originalName,
               ioTrans.name ?? null,

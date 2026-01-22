@@ -65,6 +65,7 @@ export interface Image {
 // =============================================================================
 
 export interface Manufacturer {
+  id?: number; // Assigned post-merge, not in PRs
   slug: string;
   name: string;
   companyName?: string;
@@ -77,6 +78,7 @@ export interface Manufacturer {
 }
 
 export interface Software {
+  id?: number; // Assigned post-merge, not in PRs
   slug: string;
   name: string;
   manufacturer: string;
@@ -100,6 +102,7 @@ export interface Software {
 }
 
 export interface Hardware {
+  id?: number; // Assigned post-merge, not in PRs
   slug: string;
   name: string;
   manufacturer: string;
@@ -204,4 +207,13 @@ export interface Change {
   file: string;
   slug: string;
 }
+
+// =============================================================================
+// ID TYPES
+// =============================================================================
+
+export type Collection = "manufacturers" | "software" | "hardware";
+
+// Simple counter for next available IDs (stored in .id-counter.json)
+export type IdCounter = Record<Collection, number>;
 

@@ -27,6 +27,7 @@ import {
   findClosestMatch,
   formatValidOptions,
 } from "./lib/utils.js";
+import type { Collection } from "./lib/types.js";
 
 // =============================================================================
 // LOAD CANONICAL SCHEMAS
@@ -506,6 +507,70 @@ function validate(): ValidationResult {
 }
 
 // =============================================================================
+// ID VALIDATION
+// =============================================================================
+
+interface IdValidationResult {
+  valid: boolean;
+  errors: string[];
+  stats: {
+    withIds: number;
+    withoutIds: number;
+    duplicates: number;
+  };
+}
+
+function validateIds(): IdValidationResult {
+  const errors: string[] = [];
+  const stats = {
+    withIds: 0,
+    withoutIds: 0,
+    duplicates: 0,
+  };
+
+  const collections: Collection[] = ["manufacturers", "software", "hardware"];
+
+  for (const collection of collections) {
+    const files = getYamlFiles(path.join(DATA_DIR, collection));
+    const seenIds = new Map<number, string>(); // id -> slug
+
+    for (const file of files) {
+      try {
+        const content = fs.readFileSync(file, "utf-8");
+        const data = parseYaml(content) as { id?: unknown; slug?: string };
+        const slug = data.slug ?? path.basename(file, path.extname(file));
+
+        if (data.id !== undefined) {
+          // Validate ID is a positive integer
+          if (typeof data.id !== "number" || !Number.isInteger(data.id) || data.id < 1) {
+            errors.push(`${collection}/${slug}: id must be a positive integer, got ${JSON.stringify(data.id)}`);
+            continue;
+          }
+
+          // Check for duplicates
+          if (seenIds.has(data.id)) {
+            errors.push(`${collection}: duplicate id ${data.id} in '${seenIds.get(data.id)}' and '${slug}'`);
+            stats.duplicates++;
+          }
+          seenIds.set(data.id, slug);
+          stats.withIds++;
+        } else {
+          stats.withoutIds++;
+        }
+      } catch {
+        // Ignore parse errors - they're caught by YAML validation
+      }
+    }
+  }
+
+  return {
+    valid: errors.length === 0,
+    errors,
+    stats,
+  };
+}
+
+// =============================================================================
 // OUTPUT FUNCTIONS
 // =============================================================================
 
@@ -580,10 +645,31 @@ function writeConsoleOutput(result: ValidationResult): void {
 // =============================================================================
 
 const result = validate();
+const idResult = validateIds();
 
 writeConsoleOutput(result);
+
+// Output ID validation results
+console.log("─".repeat(50));
+console.log("🔢 ID Validation:");
+if (idResult.valid) {
+  console.log("   ✅ No duplicate or invalid IDs");
+} else {
+  console.log("   ❌ ID validation errors:");
+  for (const error of idResult.errors) {
+    console.log(`      ⚠️  ${error}`);
+  }
+}
+console.log(`   Entries with IDs:    ${idResult.stats.withIds}`);
+console.log(`   Entries without IDs: ${idResult.stats.withoutIds}`);
+if (idResult.stats.withoutIds > 0) {
+  console.log(`   (Run 'pnpm assign-ids' to assign IDs to new entries)`);
+}
+console.log();
+
 writeGitHubSummary(result);
 
-process.exit(result.valid ? 0 : 1);
+const isValid = result.valid && idResult.valid;
+process.exit(isValid ? 0 : 1);
 
 
