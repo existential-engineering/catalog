@@ -8,7 +8,7 @@ on:
 
 concurrency:
   group: assign-ids
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   assign-ids:
@@ -20,6 +20,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
+
+      - name: Pull latest changes
+        run: git pull --rebase origin main
 
       - uses: pnpm/action-setup@v4
 
