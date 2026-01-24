@@ -1,5 +1,11 @@
 # catalog
 
+## 0.3.9
+
+### Patch Changes
+
+- 14773df: feat: add missing descriptions
+
 ## 0.3.8
 
 ### Patch Changes
