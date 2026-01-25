@@ -11,7 +11,6 @@ PRAGMA foreign_keys = ON;
 -- Manufacturers / Companies
 CREATE TABLE IF NOT EXISTS manufacturers (
     id INTEGER PRIMARY KEY,           -- Auto-generated ID
-    slug TEXT UNIQUE NOT NULL,        -- Slug (e.g., 'xfer-records')
     name TEXT NOT NULL,               -- Display name
     company_name TEXT,                -- Official company name (if different)
     parent_company_id INTEGER REFERENCES manufacturers(id), -- Parent company ID
@@ -22,7 +21,6 @@ CREATE TABLE IF NOT EXISTS manufacturers (
 );
 
 CREATE INDEX idx_manufacturers_name ON manufacturers(name);
-CREATE INDEX idx_manufacturers_slug ON manufacturers(slug);
 CREATE INDEX idx_manufacturers_parent ON manufacturers(parent_company_id);
 
 -- Manufacturer Search Terms
@@ -44,7 +42,6 @@ CREATE TABLE IF NOT EXISTS manufacturer_images (
 -- Software (Plugins, Standalone apps)
 CREATE TABLE IF NOT EXISTS software (
     id INTEGER PRIMARY KEY,           -- Auto-generated ID
-    slug TEXT UNIQUE NOT NULL,        -- Slug (e.g., 'serum')
     name TEXT NOT NULL,               -- Display name
     manufacturer_id INTEGER REFERENCES manufacturers(id),
     website TEXT,                     -- Product page URL
@@ -59,7 +56,6 @@ CREATE TABLE IF NOT EXISTS software (
 );
 
 CREATE INDEX idx_software_name ON software(name);
-CREATE INDEX idx_software_slug ON software(slug);
 CREATE INDEX idx_software_manufacturer ON software(manufacturer_id);
 CREATE INDEX idx_software_primary_category ON software(primary_category);
 
@@ -146,7 +142,6 @@ CREATE TABLE IF NOT EXISTS software_images (
 -- Hardware
 CREATE TABLE IF NOT EXISTS hardware (
     id INTEGER PRIMARY KEY,           -- Auto-generated ID
-    slug TEXT UNIQUE NOT NULL,        -- Slug (e.g., 'apollo-twin-x')
     name TEXT NOT NULL,
     manufacturer_id INTEGER REFERENCES manufacturers(id),
     website TEXT,
@@ -161,7 +156,6 @@ CREATE TABLE IF NOT EXISTS hardware (
 );
 
 CREATE INDEX idx_hardware_name ON hardware(name);
-CREATE INDEX idx_hardware_slug ON hardware(slug);
 CREATE INDEX idx_hardware_manufacturer ON hardware(manufacturer_id);
 CREATE INDEX idx_hardware_primary_category ON hardware(primary_category);
 
@@ -425,7 +419,6 @@ CREATE INDEX idx_hardware_io_translations ON hardware_io_translations(hardware_i
 -- the id column to join back to the software table for full results
 CREATE VIRTUAL TABLE IF NOT EXISTS software_fts USING fts5(
     id,
-    slug,
     name,
     manufacturer_name,
     categories,
@@ -438,7 +431,6 @@ CREATE VIRTUAL TABLE IF NOT EXISTS software_fts USING fts5(
 -- the id column to join back to the hardware table for full results
 CREATE VIRTUAL TABLE IF NOT EXISTS hardware_fts USING fts5(
     id,
-    slug,
     name,
     manufacturer_name,
     categories,
@@ -458,7 +450,7 @@ CREATE TABLE IF NOT EXISTS catalog_meta (
 -- Insert initial metadata
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES
     ('version', '1'),
-    ('schema_version', '6'),
+    ('schema_version', '7'),
     ('created_at', datetime('now')),
     ('updated_at', datetime('now'));
 

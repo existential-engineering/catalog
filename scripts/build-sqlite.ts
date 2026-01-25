@@ -92,8 +92,8 @@ function buildDatabase(version: string): void {
   const manufacturerIds = new Map<string, number>(); // slug -> id mapping
 
   const insertManufacturer = db.prepare(`
-    INSERT INTO manufacturers (id, slug, name, company_name, website, description)
-    VALUES (?, ?, ?, ?, ?, ?)
+    INSERT INTO manufacturers (id, name, company_name, website, description)
+    VALUES (?, ?, ?, ?, ?)
   `);
   const updateManufacturerParent = db.prepare(`
     UPDATE manufacturers SET parent_company_id = ? WHERE id = ?
@@ -125,7 +125,6 @@ function buildDatabase(version: string): void {
 
     insertManufacturer.run(
       id,
-      data.slug,
       data.name,
       data.companyName ?? null,
       data.website ?? null,
@@ -180,8 +179,8 @@ function buildDatabase(version: string): void {
   let softwareCount = 0;
 
   const insertSoftware = db.prepare(`
-    INSERT INTO software (id, slug, name, manufacturer_id, website, release_date, primary_category, secondary_category, description, details, specs)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO software (id, name, manufacturer_id, website, release_date, primary_category, secondary_category, description, details, specs)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertCategory = db.prepare(`
     INSERT INTO software_categories (software_id, category)
@@ -216,8 +215,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?)
   `);
   const insertSoftwareFts = db.prepare(`
-    INSERT INTO software_fts (id, slug, name, manufacturer_name, categories, description)
-    VALUES (?, ?, ?, ?, ?, ?)
+    INSERT INTO software_fts (id, name, manufacturer_name, categories, description)
+    VALUES (?, ?, ?, ?, ?)
   `);
   const insertSoftwareTranslation = db.prepare(`
     INSERT INTO software_translations (software_id, locale, description, details, specs, website)
@@ -246,7 +245,6 @@ function buildDatabase(version: string): void {
 
     insertSoftware.run(
       id,
-      data.slug,
       data.name,
       manufacturerId ?? null,
       data.website ?? null,
@@ -332,7 +330,6 @@ function buildDatabase(version: string): void {
     // Insert FTS entry (with normalized categories)
     insertSoftwareFts.run(
       id,
-      data.slug,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
@@ -384,8 +381,8 @@ function buildDatabase(version: string): void {
   let hardwareCount = 0;
 
   const insertHardware = db.prepare(`
-    INSERT INTO hardware (id, slug, name, manufacturer_id, website, release_date, primary_category, secondary_category, description, details, specs)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware (id, name, manufacturer_id, website, release_date, primary_category, secondary_category, description, details, specs)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareCategory = db.prepare(`
     INSERT INTO hardware_categories (hardware_id, category)
@@ -436,8 +433,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?)
   `);
   const insertHardwareFts = db.prepare(`
-    INSERT INTO hardware_fts (id, slug, name, manufacturer_name, categories, description)
-    VALUES (?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware_fts (id, name, manufacturer_name, categories, description)
+    VALUES (?, ?, ?, ?, ?)
   `);
   const insertHardwareTranslation = db.prepare(`
     INSERT INTO hardware_translations (hardware_id, locale, description, details, specs, website)
@@ -470,7 +467,6 @@ function buildDatabase(version: string): void {
 
     insertHardware.run(
       id,
-      data.slug,
       data.name,
       manufacturerId ?? null,
       data.website ?? null,
@@ -630,7 +626,6 @@ function buildDatabase(version: string): void {
     // Insert FTS entry (with normalized categories)
     insertHardwareFts.run(
       id,
-      data.slug,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
