@@ -154,21 +154,37 @@ const YOUTUBE_CANONICAL_PATTERN = /^https:\/\/www\.youtube\.com\/watch\?v=[\w-]+
 
 // Validate YouTube URLs use canonical format
 function validateYouTubeUrl(url: string): { valid: boolean; error?: string } {
-  // Check if this is a YouTube URL
-  if (!url.includes("youtube.com") && !url.includes("youtu.be")) {
+  // Parse the URL to check the hostname
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    // If the URL cannot be parsed, treat it as not a YouTube URL for this format check
+    return { valid: true };
+  }
+
+  const hostname = parsed.hostname.toLowerCase();
+  const youtubeHosts = new Set([
+    "youtube.com",
+    "www.youtube.com",
+    "m.youtube.com",
+    "youtu.be",
+  ]);
+
+  if (!youtubeHosts.has(hostname)) {
     return { valid: true }; // Not a YouTube URL, skip
   }
 
-  // Check for non-www YouTube URLs
-  if (url.match(/^https?:\/\/youtube\.com\//)) {
+  // Check for non-www YouTube URLs (youtube.com or m.youtube.com)
+  if (hostname === "youtube.com" || hostname === "m.youtube.com") {
     return {
       valid: false,
-      error: `YouTube URL should use 'www.youtube.com' instead of 'youtube.com'`,
+      error: `YouTube URL should use 'www.youtube.com' instead of '${hostname}'`,
     };
   }
 
   // Check for embed URLs
-  if (url.includes("/embed/")) {
+  if (parsed.pathname.startsWith("/embed/")) {
     return {
       valid: false,
       error: `YouTube URL should use '/watch?v=' format instead of '/embed/'`,
@@ -176,7 +192,7 @@ function validateYouTubeUrl(url: string): { valid: boolean; error?: string } {
   }
 
   // Check for youtu.be short URLs
-  if (url.includes("youtu.be")) {
+  if (hostname === "youtu.be") {
     return {
       valid: false,
       error: `YouTube URL should use 'www.youtube.com/watch?v=' format instead of 'youtu.be'`,
