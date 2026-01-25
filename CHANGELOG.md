@@ -1,5 +1,11 @@
 # catalog
 
+## 0.3.10
+
+### Patch Changes
+
+- 0625f44: hardware(add): Tonverk
+
 ## 0.3.9
 
 ### Patch Changes
