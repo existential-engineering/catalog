@@ -42,10 +42,75 @@ async function runWithConcurrency<T, R>(
 
 interface UrlCheckResult {
   url: string;
-  status: number | "error";
+  status: number | "error" | "format_error";
   redirected: boolean;
   finalUrl?: string;
   error?: string;
+}
+
+// =============================================================================
+// YOUTUBE URL FORMAT VALIDATION
+// =============================================================================
+
+// Canonical YouTube URL format: https://www.youtube.com/watch?v={videoId}
+const YOUTUBE_CANONICAL_PATTERN = /^https:\/\/www\.youtube\.com\/watch\?v=[\w-]+$/;
+
+// Pre-flight check for YouTube URL format (no network request needed)
+function validateYouTubeUrlFormat(url: string): { valid: boolean; error?: string } {
+  // Parse the URL to check the hostname
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    // If the URL cannot be parsed, treat it as not a YouTube URL for this format check
+    return { valid: true };
+  }
+
+  const hostname = parsed.hostname.toLowerCase();
+  const youtubeHosts = new Set([
+    "youtube.com",
+    "www.youtube.com",
+    "m.youtube.com",
+    "youtu.be",
+  ]);
+
+  if (!youtubeHosts.has(hostname)) {
+    return { valid: true }; // Not a YouTube URL, skip
+  }
+
+  // Check for non-www YouTube URLs (youtube.com or m.youtube.com)
+  if (hostname === "youtube.com" || hostname === "m.youtube.com") {
+    return {
+      valid: false,
+      error: `YouTube URL should use 'www.youtube.com' instead of '${hostname}'`,
+    };
+  }
+
+  // Check for embed URLs
+  if (parsed.pathname.startsWith("/embed/")) {
+    return {
+      valid: false,
+      error: `YouTube URL should use '/watch?v=' format instead of '/embed/'`,
+    };
+  }
+
+  // Check for youtu.be short URLs
+  if (hostname === "youtu.be") {
+    return {
+      valid: false,
+      error: `YouTube URL should use 'www.youtube.com/watch?v=' format instead of 'youtu.be'`,
+    };
+  }
+
+  // Verify it matches the canonical pattern
+  if (!YOUTUBE_CANONICAL_PATTERN.test(url)) {
+    return {
+      valid: false,
+      error: `YouTube URL should match format 'https://www.youtube.com/watch?v={videoId}'`,
+    };
+  }
+
+  return { valid: true };
 }
 
 interface FileResult {
@@ -126,6 +191,17 @@ function extractUrls(data: Record<string, unknown>): string[] {
 
 // Check a single URL
 async function checkUrl(url: string): Promise<UrlCheckResult> {
+  // Pre-flight check for YouTube URL format (no network request needed)
+  const formatCheck = validateYouTubeUrlFormat(url);
+  if (!formatCheck.valid) {
+    return {
+      url,
+      status: "format_error",
+      redirected: false,
+      error: formatCheck.error,
+    };
+  }
+
   try {
     const response = await fetch(url, {
       method: "HEAD",
@@ -255,7 +331,7 @@ async function validate(changedOnly: boolean, baseSha?: string): Promise<Validat
     for (const urlResult of fileResult.urls) {
       totalUrls++;
 
-      if (urlResult.status === "error" || (typeof urlResult.status === "number" && urlResult.status >= 400)) {
+      if (urlResult.status === "error" || urlResult.status === "format_error" || (typeof urlResult.status === "number" && urlResult.status >= 400)) {
         brokenCount++;
       } else if (urlResult.redirected) {
         redirectCount++;
@@ -301,7 +377,7 @@ function writeGitHubSummary(result: ValidationResult): void {
   // Show broken URLs
   const broken = result.results.flatMap((r) =>
     r.urls
-      .filter((u) => u.status === "error" || (typeof u.status === "number" && u.status >= 400))
+      .filter((u) => u.status === "error" || u.status === "format_error" || (typeof u.status === "number" && u.status >= 400))
       .map((u) => ({ file: r.file, ...u }))
   );
 
@@ -311,7 +387,7 @@ function writeGitHubSummary(result: ValidationResult): void {
     summary += `|------|-----|--------|\n`;
     for (const item of broken) {
       const status =
-        item.status === "error"
+        item.status === "error" || item.status === "format_error"
           ? `Error: ${escapeMarkdownCell(item.error)}`
           : String(item.status);
       summary += `| \`${item.file}\` | \`${escapeMarkdownCell(String(item.url))}\` | ${escapeMarkdownCell(status)} |\n`;
@@ -355,13 +431,16 @@ function writeConsoleOutput(result: ValidationResult): void {
 
     for (const fileResult of result.results) {
       const broken = fileResult.urls.filter(
-        (u) => u.status === "error" || (typeof u.status === "number" && u.status >= 400)
+        (u) => u.status === "error" || u.status === "format_error" || (typeof u.status === "number" && u.status >= 400)
       );
 
       if (broken.length > 0) {
         console.log(`\n${fileResult.file}`);
         for (const url of broken) {
-          const status = url.status === "error" ? `Error: ${url.error}` : `HTTP ${url.status}`;
+          const status =
+            url.status === "error" || url.status === "format_error"
+              ? `Error: ${url.error}`
+              : `HTTP ${url.status}`;
           console.log(`   ${url.url}`);
           console.log(`      ${status}`);
         }

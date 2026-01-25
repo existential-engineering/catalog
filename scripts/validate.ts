@@ -149,14 +149,88 @@ const PriceSchema = z.object({
   currency: z.string(),
 });
 
-const LinkSchema = z.object({
-  type: z.string(),
-  title: z.string().optional(),
-  url: z.string().url().optional(),
-  videoId: z.string().optional(),
-  provider: z.string().optional(),
-  description: z.string().optional(),
-});
+// Canonical YouTube URL format: https://www.youtube.com/watch?v={videoId}
+const YOUTUBE_CANONICAL_PATTERN = /^https:\/\/www\.youtube\.com\/watch\?v=[\w-]+$/;
+
+// Validate YouTube URLs use canonical format
+function validateYouTubeUrl(url: string): { valid: boolean; error?: string } {
+  // Parse the URL to check the hostname
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    // If the URL cannot be parsed, treat it as not a YouTube URL for this format check
+    return { valid: true };
+  }
+
+  const hostname = parsed.hostname.toLowerCase();
+  const youtubeHosts = new Set([
+    "youtube.com",
+    "www.youtube.com",
+    "m.youtube.com",
+    "youtu.be",
+  ]);
+
+  if (!youtubeHosts.has(hostname)) {
+    return { valid: true }; // Not a YouTube URL, skip
+  }
+
+  // Check for non-www YouTube URLs (youtube.com or m.youtube.com)
+  if (hostname === "youtube.com" || hostname === "m.youtube.com") {
+    return {
+      valid: false,
+      error: `YouTube URL should use 'www.youtube.com' instead of '${hostname}'`,
+    };
+  }
+
+  // Check for embed URLs
+  if (parsed.pathname.startsWith("/embed/")) {
+    return {
+      valid: false,
+      error: `YouTube URL should use '/watch?v=' format instead of '/embed/'`,
+    };
+  }
+
+  // Check for youtu.be short URLs
+  if (hostname === "youtu.be") {
+    return {
+      valid: false,
+      error: `YouTube URL should use 'www.youtube.com/watch?v=' format instead of 'youtu.be'`,
+    };
+  }
+
+  // Verify it matches the canonical pattern
+  if (!YOUTUBE_CANONICAL_PATTERN.test(url)) {
+    return {
+      valid: false,
+      error: `YouTube URL should match format 'https://www.youtube.com/watch?v={videoId}'`,
+    };
+  }
+
+  return { valid: true };
+}
+
+const LinkSchema = z
+  .object({
+    type: z.string(),
+    title: z.string().optional(),
+    url: z.string().url().optional(),
+    videoId: z.string().optional(),
+    provider: z.string().optional(),
+    description: z.string().optional(),
+  })
+  .check((ctx) => {
+    if (!ctx.value.url) return;
+    const result = validateYouTubeUrl(ctx.value.url);
+    if (!result.valid) {
+      ctx.issues.push({
+        code: "custom",
+        message: result.error!,
+        input: ctx.value.url,
+        path: ["url"],
+      });
+    }
+  });
 
 const VersionSchema = z.object({
   name: z.string(),
