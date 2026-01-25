@@ -149,14 +149,72 @@ const PriceSchema = z.object({
   currency: z.string(),
 });
 
-const LinkSchema = z.object({
-  type: z.string(),
-  title: z.string().optional(),
-  url: z.string().url().optional(),
-  videoId: z.string().optional(),
-  provider: z.string().optional(),
-  description: z.string().optional(),
-});
+// Canonical YouTube URL format: https://www.youtube.com/watch?v={videoId}
+const YOUTUBE_CANONICAL_PATTERN = /^https:\/\/www\.youtube\.com\/watch\?v=[\w-]+$/;
+
+// Validate YouTube URLs use canonical format
+function validateYouTubeUrl(url: string): { valid: boolean; error?: string } {
+  // Check if this is a YouTube URL
+  if (!url.includes("youtube.com") && !url.includes("youtu.be")) {
+    return { valid: true }; // Not a YouTube URL, skip
+  }
+
+  // Check for non-www YouTube URLs
+  if (url.match(/^https?:\/\/youtube\.com\//)) {
+    return {
+      valid: false,
+      error: `YouTube URL should use 'www.youtube.com' instead of 'youtube.com'`,
+    };
+  }
+
+  // Check for embed URLs
+  if (url.includes("/embed/")) {
+    return {
+      valid: false,
+      error: `YouTube URL should use '/watch?v=' format instead of '/embed/'`,
+    };
+  }
+
+  // Check for youtu.be short URLs
+  if (url.includes("youtu.be")) {
+    return {
+      valid: false,
+      error: `YouTube URL should use 'www.youtube.com/watch?v=' format instead of 'youtu.be'`,
+    };
+  }
+
+  // Verify it matches the canonical pattern
+  if (!YOUTUBE_CANONICAL_PATTERN.test(url)) {
+    return {
+      valid: false,
+      error: `YouTube URL should match format 'https://www.youtube.com/watch?v={videoId}'`,
+    };
+  }
+
+  return { valid: true };
+}
+
+const LinkSchema = z
+  .object({
+    type: z.string(),
+    title: z.string().optional(),
+    url: z.string().url().optional(),
+    videoId: z.string().optional(),
+    provider: z.string().optional(),
+    description: z.string().optional(),
+  })
+  .check((ctx) => {
+    if (!ctx.value.url) return;
+    const result = validateYouTubeUrl(ctx.value.url);
+    if (!result.valid) {
+      ctx.issues.push({
+        code: "custom",
+        message: result.error!,
+        input: ctx.value.url,
+        path: ["url"],
+      });
+    }
+  });
 
 const VersionSchema = z.object({
   name: z.string(),
