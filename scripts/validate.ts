@@ -232,17 +232,22 @@ const LinkSchema = z
     }
   });
 
-const VersionSchema = z.object({
-  name: z.string(),
-  releaseDate: z.string().optional(),
-  releaseDateYearOnly: z.boolean().optional(),
-  preRelease: z.boolean().optional(),
-  unofficial: z.boolean().optional(),
-  url: z.string().url().optional(),
-  description: z.string().optional(),
-  prices: z.array(PriceSchema).optional(),
-  links: z.array(LinkSchema).optional(),
-});
+const VersionSchema = z
+  .object({
+    name: z.string(),
+    releaseDate: z.string().optional(),
+    releaseDateYearOnly: z.boolean().optional(),
+    preRelease: z.boolean().optional(),
+    unofficial: z.boolean().optional(),
+    url: z.string().url().optional(),
+    description: z.string().optional(),
+    prices: z.array(PriceSchema).optional(),
+    links: z.array(LinkSchema).optional(),
+  })
+  .refine((data) => !data.releaseDateYearOnly || !!data.releaseDate, {
+    message: "releaseDateYearOnly requires releaseDate",
+    path: ["releaseDateYearOnly"],
+  });
 
 const IOSchema = z.object({
   name: z.string(),
@@ -257,17 +262,22 @@ const IOSchema = z.object({
   description: z.string().optional(),
 });
 
-const RevisionSchema = z.object({
-  name: z.string(),
-  releaseDate: z.string().optional(),
-  releaseDateYearOnly: z.boolean().optional(),
-  url: z.string().url().optional(),
-  description: z.string().optional(),
-  io: z.array(IOSchema).optional(),
-  versions: z.array(VersionSchema).optional(),
-  prices: z.array(PriceSchema).optional(),
-  links: z.array(LinkSchema).optional(),
-});
+const RevisionSchema = z
+  .object({
+    name: z.string(),
+    releaseDate: z.string().optional(),
+    releaseDateYearOnly: z.boolean().optional(),
+    url: z.string().url().optional(),
+    description: z.string().optional(),
+    io: z.array(IOSchema).optional(),
+    versions: z.array(VersionSchema).optional(),
+    prices: z.array(PriceSchema).optional(),
+    links: z.array(LinkSchema).optional(),
+  })
+  .refine((data) => !data.releaseDateYearOnly || !!data.releaseDate, {
+    message: "releaseDateYearOnly requires releaseDate",
+    path: ["releaseDateYearOnly"],
+  });
 
 // Helper for category validation with suggestions
 // Accepts both canonical categories and aliases
@@ -317,105 +327,115 @@ const ManufacturerSchema = z.object({
   searchTerms: z.array(z.string()).optional(),
 });
 
-const SoftwareSchema = z.object({
-  slug: z
-    .string()
-    .regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens"),
-  name: z.string().min(1, "Name is required"),
-  manufacturer: z.string().min(1, "Manufacturer reference is required"),
-  categories: z
-    .array(z.string())
-    .optional()
-    .check((ctx) => {
-      if (!ctx.value) return;
-      // Accept both canonical categories and aliases
-      const invalid = ctx.value.filter((c) => !isValidCategory(c));
-      if (invalid.length > 0) {
-        for (const cat of invalid) {
-          // Suggest only canonical categories
-          const suggestion = findClosestMatch(cat, VALID_CATEGORIES);
-          let message = `Invalid category '${cat}'.`;
-          if (suggestion) {
-            message += ` Did you mean '${suggestion}'?`;
+const SoftwareSchema = z
+  .object({
+    slug: z
+      .string()
+      .regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens"),
+    name: z.string().min(1, "Name is required"),
+    manufacturer: z.string().min(1, "Manufacturer reference is required"),
+    categories: z
+      .array(z.string())
+      .optional()
+      .check((ctx) => {
+        if (!ctx.value) return;
+        // Accept both canonical categories and aliases
+        const invalid = ctx.value.filter((c) => !isValidCategory(c));
+        if (invalid.length > 0) {
+          for (const cat of invalid) {
+            // Suggest only canonical categories
+            const suggestion = findClosestMatch(cat, VALID_CATEGORIES);
+            let message = `Invalid category '${cat}'.`;
+            if (suggestion) {
+              message += ` Did you mean '${suggestion}'?`;
+            }
+            ctx.issues.push({ code: "custom", message, input: cat });
           }
-          ctx.issues.push({ code: "custom", message, input: cat });
         }
-      }
-    }),
-  formats: z
-    .array(z.string())
-    .optional()
-    .check((ctx) => {
-      if (!ctx.value) return;
-      const invalid = ctx.value.filter((f) => !VALID_FORMATS.has(f));
-      if (invalid.length > 0) {
-        for (const fmt of invalid) {
-          const suggestion = findClosestMatch(fmt, VALID_FORMATS);
-          let message = `Invalid format '${fmt}'.`;
-          if (suggestion) {
-            message += ` Did you mean '${suggestion}'?`;
+      }),
+    formats: z
+      .array(z.string())
+      .optional()
+      .check((ctx) => {
+        if (!ctx.value) return;
+        const invalid = ctx.value.filter((f) => !VALID_FORMATS.has(f));
+        if (invalid.length > 0) {
+          for (const fmt of invalid) {
+            const suggestion = findClosestMatch(fmt, VALID_FORMATS);
+            let message = `Invalid format '${fmt}'.`;
+            if (suggestion) {
+              message += ` Did you mean '${suggestion}'?`;
+            }
+            message += ` Valid formats: ${formatValidOptions(VALID_FORMATS)}`;
+            ctx.issues.push({ code: "custom", message, input: fmt });
           }
-          message += ` Valid formats: ${formatValidOptions(VALID_FORMATS)}`;
-          ctx.issues.push({ code: "custom", message, input: fmt });
         }
-      }
-    }),
-  platforms: createPlatformArrayValidator(),
-  identifiers: z.record(z.string(), z.string()).optional(),
-  website: z.string().url().optional(),
-  releaseDate: z.string().optional(),
-  releaseDateYearOnly: z.boolean().optional(),
-  primaryCategory: createCategoryValidator().optional(),
-  secondaryCategory: createCategoryValidator().optional(),
-  searchTerms: z.array(z.string()).optional(),
-  description: MarkdownSchema,
-  details: MarkdownSchema,
-  specs: MarkdownSchema,
-  versions: z.array(VersionSchema).optional(),
-  prices: z.array(PriceSchema).optional(),
-  links: z.array(LinkSchema).optional(),
-});
+      }),
+    platforms: createPlatformArrayValidator(),
+    identifiers: z.record(z.string(), z.string()).optional(),
+    website: z.string().url().optional(),
+    releaseDate: z.string().optional(),
+    releaseDateYearOnly: z.boolean().optional(),
+    primaryCategory: createCategoryValidator().optional(),
+    secondaryCategory: createCategoryValidator().optional(),
+    searchTerms: z.array(z.string()).optional(),
+    description: MarkdownSchema,
+    details: MarkdownSchema,
+    specs: MarkdownSchema,
+    versions: z.array(VersionSchema).optional(),
+    prices: z.array(PriceSchema).optional(),
+    links: z.array(LinkSchema).optional(),
+  })
+  .refine((data) => !data.releaseDateYearOnly || !!data.releaseDate, {
+    message: "releaseDateYearOnly requires releaseDate",
+    path: ["releaseDateYearOnly"],
+  });
 
-const HardwareSchema = z.object({
-  slug: z
-    .string()
-    .regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens"),
-  name: z.string().min(1, "Name is required"),
-  manufacturer: z.string().min(1, "Manufacturer reference is required"),
-  categories: z
-    .array(z.string())
-    .optional()
-    .check((ctx) => {
-      if (!ctx.value) return;
-      // Accept both canonical categories and aliases
-      const invalid = ctx.value.filter((c) => !isValidCategory(c));
-      if (invalid.length > 0) {
-        for (const cat of invalid) {
-          // Suggest only canonical categories
-          const suggestion = findClosestMatch(cat, VALID_CATEGORIES);
-          let message = `Invalid category '${cat}'.`;
-          if (suggestion) {
-            message += ` Did you mean '${suggestion}'?`;
+const HardwareSchema = z
+  .object({
+    slug: z
+      .string()
+      .regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens"),
+    name: z.string().min(1, "Name is required"),
+    manufacturer: z.string().min(1, "Manufacturer reference is required"),
+    categories: z
+      .array(z.string())
+      .optional()
+      .check((ctx) => {
+        if (!ctx.value) return;
+        // Accept both canonical categories and aliases
+        const invalid = ctx.value.filter((c) => !isValidCategory(c));
+        if (invalid.length > 0) {
+          for (const cat of invalid) {
+            // Suggest only canonical categories
+            const suggestion = findClosestMatch(cat, VALID_CATEGORIES);
+            let message = `Invalid category '${cat}'.`;
+            if (suggestion) {
+              message += ` Did you mean '${suggestion}'?`;
+            }
+            ctx.issues.push({ code: "custom", message, input: cat });
           }
-          ctx.issues.push({ code: "custom", message, input: cat });
         }
-      }
-    }),
-  website: z.string().url().optional(),
-  releaseDate: z.string().optional(),
-  releaseDateYearOnly: z.boolean().optional(),
-  primaryCategory: createCategoryValidator().optional(),
-  secondaryCategory: createCategoryValidator().optional(),
-  searchTerms: z.array(z.string()).optional(),
-  description: MarkdownSchema,
-  details: MarkdownSchema,
-  specs: MarkdownSchema,
-  io: z.array(IOSchema).optional(),
-  versions: z.array(VersionSchema).optional(),
-  revisions: z.array(RevisionSchema).optional(),
-  prices: z.array(PriceSchema).optional(),
-  links: z.array(LinkSchema).optional(),
-});
+      }),
+    website: z.string().url().optional(),
+    releaseDate: z.string().optional(),
+    releaseDateYearOnly: z.boolean().optional(),
+    primaryCategory: createCategoryValidator().optional(),
+    secondaryCategory: createCategoryValidator().optional(),
+    searchTerms: z.array(z.string()).optional(),
+    description: MarkdownSchema,
+    details: MarkdownSchema,
+    specs: MarkdownSchema,
+    io: z.array(IOSchema).optional(),
+    versions: z.array(VersionSchema).optional(),
+    revisions: z.array(RevisionSchema).optional(),
+    prices: z.array(PriceSchema).optional(),
+    links: z.array(LinkSchema).optional(),
+  })
+  .refine((data) => !data.releaseDateYearOnly || !!data.releaseDate, {
+    message: "releaseDateYearOnly requires releaseDate",
+    path: ["releaseDateYearOnly"],
+  });
 
 // =============================================================================
 // VALIDATION FUNCTIONS
