@@ -244,10 +244,15 @@ const VersionSchema = z
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
   })
-  .refine((data) => !data.releaseDateYearOnly || !!data.releaseDate, {
-    message: "releaseDateYearOnly requires releaseDate",
-    path: ["releaseDateYearOnly"],
-  });
+  .refine(
+    (data) =>
+      !data.releaseDateYearOnly ||
+      (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
+    {
+      message: "releaseDateYearOnly requires releaseDate in YYYY format",
+      path: ["releaseDateYearOnly"],
+    }
+  );
 
 const IOSchema = z.object({
   name: z.string(),
@@ -274,10 +279,15 @@ const RevisionSchema = z
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
   })
-  .refine((data) => !data.releaseDateYearOnly || !!data.releaseDate, {
-    message: "releaseDateYearOnly requires releaseDate",
-    path: ["releaseDateYearOnly"],
-  });
+  .refine(
+    (data) =>
+      !data.releaseDateYearOnly ||
+      (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
+    {
+      message: "releaseDateYearOnly requires releaseDate in YYYY format",
+      path: ["releaseDateYearOnly"],
+    }
+  );
 
 // Helper for category validation with suggestions
 // Accepts both canonical categories and aliases
@@ -386,10 +396,15 @@ const SoftwareSchema = z
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
   })
-  .refine((data) => !data.releaseDateYearOnly || !!data.releaseDate, {
-    message: "releaseDateYearOnly requires releaseDate",
-    path: ["releaseDateYearOnly"],
-  });
+  .refine(
+    (data) =>
+      !data.releaseDateYearOnly ||
+      (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
+    {
+      message: "releaseDateYearOnly requires releaseDate in YYYY format",
+      path: ["releaseDateYearOnly"],
+    }
+  );
 
 const HardwareSchema = z
   .object({
@@ -432,10 +447,15 @@ const HardwareSchema = z
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
   })
-  .refine((data) => !data.releaseDateYearOnly || !!data.releaseDate, {
-    message: "releaseDateYearOnly requires releaseDate",
-    path: ["releaseDateYearOnly"],
-  });
+  .refine(
+    (data) =>
+      !data.releaseDateYearOnly ||
+      (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
+    {
+      message: "releaseDateYearOnly requires releaseDate in YYYY format",
+      path: ["releaseDateYearOnly"],
+    }
+  );
 
 // =============================================================================
 // VALIDATION FUNCTIONS
