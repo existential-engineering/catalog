@@ -55,10 +55,6 @@ export interface Revision {
   links?: Link[];
 }
 
-export interface Image {
-  source: string;
-  alt?: string;
-}
 
 // =============================================================================
 // DATA TYPES
@@ -73,7 +69,6 @@ export interface Manufacturer {
   website?: string;
   description?: string;
   searchTerms?: string[];
-  images?: Image[];
   translations?: TranslationsMap;
 }
 
@@ -97,7 +92,6 @@ export interface Software {
   versions?: Version[];
   prices?: Price[];
   links?: Link[];
-  images?: Image[];
   translations?: TranslationsMap;
 }
 
@@ -120,7 +114,6 @@ export interface Hardware {
   revisions?: Revision[];
   prices?: Price[];
   links?: Link[];
-  images?: Image[];
   translations?: TranslationsMap;
 }
 

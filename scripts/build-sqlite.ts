@@ -11,7 +11,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { marked } from "marked";
 
-import type { Manufacturer, Software, Hardware, IO, Version, Price, Link, Revision, Image, CategoryAliasesSchema, LocalesSchema, ContentTranslation } from "./lib/types.js";
+import type { Manufacturer, Software, Hardware, IO, Version, Price, Link, Revision, CategoryAliasesSchema, LocalesSchema, ContentTranslation } from "./lib/types.js";
 import { DATA_DIR, OUTPUT_DIR, SCHEMA_DIR, loadYamlFile, getYamlFiles } from "./lib/utils.js";
 
 // Configure marked for safe HTML output
@@ -102,10 +102,6 @@ function buildDatabase(version: string): void {
     INSERT INTO manufacturer_search_terms (manufacturer_id, term)
     VALUES (?, ?)
   `);
-  const insertManufacturerImage = db.prepare(`
-    INSERT INTO manufacturer_images (manufacturer_id, source, alt, position)
-    VALUES (?, ?, ?, ?)
-  `);
   const insertManufacturerTranslation = db.prepare(`
     INSERT INTO manufacturer_translations (manufacturer_id, locale, description, website)
     VALUES (?, ?, ?, ?)
@@ -136,13 +132,6 @@ function buildDatabase(version: string): void {
       for (const term of data.searchTerms) {
         insertManufacturerSearchTerm.run(id, term);
       }
-    }
-
-    // Insert images
-    if (data.images) {
-      data.images.forEach((img, index) => {
-        insertManufacturerImage.run(id, img.source, img.alt ?? null, index);
-      });
     }
 
     // Insert translations
@@ -209,10 +198,6 @@ function buildDatabase(version: string): void {
   const insertSoftwareLink = db.prepare(`
     INSERT INTO software_links (software_id, type, title, url, video_id, provider, description)
     VALUES (?, ?, ?, ?, ?, ?, ?)
-  `);
-  const insertSoftwareImage = db.prepare(`
-    INSERT INTO software_images (software_id, source, alt, position)
-    VALUES (?, ?, ?, ?)
   `);
   const insertSoftwareFts = db.prepare(`
     INSERT INTO software_fts (id, name, manufacturer_name, categories, description)
@@ -320,13 +305,6 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert images
-    if (data.images) {
-      data.images.forEach((img, index) => {
-        insertSoftwareImage.run(id, img.source, img.alt ?? null, index);
-      });
-    }
-
     // Insert FTS entry (with normalized categories)
     insertSoftwareFts.run(
       id,
@@ -427,10 +405,6 @@ function buildDatabase(version: string): void {
   const insertHardwareRevisionLink = db.prepare(`
     INSERT INTO hardware_revision_links (revision_id, type, title, url, video_id, provider, description)
     VALUES (?, ?, ?, ?, ?, ?, ?)
-  `);
-  const insertHardwareImage = db.prepare(`
-    INSERT INTO hardware_images (hardware_id, source, alt, position)
-    VALUES (?, ?, ?, ?)
   `);
   const insertHardwareFts = db.prepare(`
     INSERT INTO hardware_fts (id, name, manufacturer_name, categories, description)
@@ -614,13 +588,6 @@ function buildDatabase(version: string): void {
           link.description ?? null
         );
       }
-    }
-
-    // Insert images
-    if (data.images) {
-      data.images.forEach((img, index) => {
-        insertHardwareImage.run(id, img.source, img.alt ?? null, index);
-      });
     }
 
     // Insert FTS entry (with normalized categories)

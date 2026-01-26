@@ -30,15 +30,6 @@ CREATE TABLE IF NOT EXISTS manufacturer_search_terms (
     PRIMARY KEY (manufacturer_id, term)
 );
 
--- Manufacturer Images
-CREATE TABLE IF NOT EXISTS manufacturer_images (
-    manufacturer_id INTEGER NOT NULL REFERENCES manufacturers(id) ON DELETE CASCADE,
-    source TEXT NOT NULL,
-    alt TEXT,
-    position INTEGER DEFAULT 0,
-    PRIMARY KEY (manufacturer_id, source)
-);
-
 -- Software (Plugins, Standalone apps)
 CREATE TABLE IF NOT EXISTS software (
     id INTEGER PRIMARY KEY,           -- Auto-generated ID
@@ -129,15 +120,6 @@ CREATE TABLE IF NOT EXISTS software_links (
 );
 
 CREATE INDEX idx_software_links_software ON software_links(software_id);
-
--- Software Images
-CREATE TABLE IF NOT EXISTS software_images (
-    software_id INTEGER NOT NULL REFERENCES software(id) ON DELETE CASCADE,
-    source TEXT NOT NULL,
-    alt TEXT,
-    position INTEGER DEFAULT 0,
-    PRIMARY KEY (software_id, source)
-);
 
 -- Hardware
 CREATE TABLE IF NOT EXISTS hardware (
@@ -300,15 +282,6 @@ CREATE TABLE IF NOT EXISTS hardware_revision_links (
 );
 
 CREATE INDEX idx_hardware_revision_links_revision ON hardware_revision_links(revision_id);
-
--- Hardware Images
-CREATE TABLE IF NOT EXISTS hardware_images (
-    hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
-    source TEXT NOT NULL,
-    alt TEXT,
-    position INTEGER DEFAULT 0,
-    PRIMARY KEY (hardware_id, source)
-);
 
 -- =============================================================================
 -- LOCALIZATION / TRANSLATIONS
