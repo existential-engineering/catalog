@@ -1,5 +1,11 @@
 # catalog
 
+## 0.5.0
+
+### Minor Changes
+
+- beac328: feat: allow year-only release date when specific date is unknown
+
 ## 0.4.0
 
 ### Minor Changes
