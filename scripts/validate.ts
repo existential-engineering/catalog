@@ -235,6 +235,7 @@ const LinkSchema = z
 const VersionSchema = z.object({
   name: z.string(),
   releaseDate: z.string().optional(),
+  releaseDateYearOnly: z.boolean().optional(),
   preRelease: z.boolean().optional(),
   unofficial: z.boolean().optional(),
   url: z.string().url().optional(),
@@ -259,6 +260,7 @@ const IOSchema = z.object({
 const RevisionSchema = z.object({
   name: z.string(),
   releaseDate: z.string().optional(),
+  releaseDateYearOnly: z.boolean().optional(),
   url: z.string().url().optional(),
   description: z.string().optional(),
   io: z.array(IOSchema).optional(),
@@ -362,6 +364,7 @@ const SoftwareSchema = z.object({
   identifiers: z.record(z.string(), z.string()).optional(),
   website: z.string().url().optional(),
   releaseDate: z.string().optional(),
+  releaseDateYearOnly: z.boolean().optional(),
   primaryCategory: createCategoryValidator().optional(),
   secondaryCategory: createCategoryValidator().optional(),
   searchTerms: z.array(z.string()).optional(),
@@ -400,6 +403,7 @@ const HardwareSchema = z.object({
     }),
   website: z.string().url().optional(),
   releaseDate: z.string().optional(),
+  releaseDateYearOnly: z.boolean().optional(),
   primaryCategory: createCategoryValidator().optional(),
   secondaryCategory: createCategoryValidator().optional(),
   searchTerms: z.array(z.string()).optional(),

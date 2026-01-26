@@ -9,6 +9,7 @@
 export interface Version {
   name: string;
   releaseDate?: string;
+  releaseDateYearOnly?: boolean;
   preRelease?: boolean;
   unofficial?: boolean;
   url?: string;
@@ -47,6 +48,7 @@ export interface IO {
 export interface Revision {
   name: string;
   releaseDate?: string;
+  releaseDateYearOnly?: boolean;
   url?: string;
   description?: string;
   io?: IO[];
@@ -83,6 +85,7 @@ export interface Software {
   identifiers?: Record<string, string>;
   website?: string;
   releaseDate?: string;
+  releaseDateYearOnly?: boolean;
   primaryCategory?: string;
   secondaryCategory?: string;
   searchTerms?: string[];
@@ -103,6 +106,7 @@ export interface Hardware {
   categories?: string[];
   website?: string;
   releaseDate?: string;
+  releaseDateYearOnly?: boolean;
   primaryCategory?: string;
   secondaryCategory?: string;
   searchTerms?: string[];

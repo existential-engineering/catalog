@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS software (
     manufacturer_id INTEGER REFERENCES manufacturers(id),
     website TEXT,                     -- Product page URL
     release_date TEXT,                -- Initial release date
+    release_date_year_only INTEGER DEFAULT 0, -- If 1, only year is meaningful
     primary_category TEXT,            -- Primary category
     secondary_category TEXT,          -- Secondary category
     description TEXT,                 -- Short description
@@ -89,6 +90,7 @@ CREATE TABLE IF NOT EXISTS software_versions (
     software_id INTEGER NOT NULL REFERENCES software(id) ON DELETE CASCADE,
     name TEXT NOT NULL,               -- Version number (e.g., '1.2.3')
     release_date TEXT,
+    release_date_year_only INTEGER DEFAULT 0,
     pre_release INTEGER DEFAULT 0,    -- Boolean
     unofficial INTEGER DEFAULT 0,     -- Boolean
     url TEXT,
@@ -128,6 +130,7 @@ CREATE TABLE IF NOT EXISTS hardware (
     manufacturer_id INTEGER REFERENCES manufacturers(id),
     website TEXT,
     release_date TEXT,
+    release_date_year_only INTEGER DEFAULT 0,
     primary_category TEXT,
     secondary_category TEXT,
     description TEXT,
@@ -183,6 +186,7 @@ CREATE TABLE IF NOT EXISTS hardware_versions (
     hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     name TEXT NOT NULL,
     release_date TEXT,
+    release_date_year_only INTEGER DEFAULT 0,
     pre_release INTEGER DEFAULT 0,
     unofficial INTEGER DEFAULT 0,
     url TEXT,
@@ -197,6 +201,7 @@ CREATE TABLE IF NOT EXISTS hardware_revisions (
     hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     name TEXT NOT NULL,
     release_date TEXT,
+    release_date_year_only INTEGER DEFAULT 0,
     url TEXT,
     description TEXT
 );
@@ -227,6 +232,7 @@ CREATE TABLE IF NOT EXISTS hardware_revision_versions (
     revision_id INTEGER NOT NULL REFERENCES hardware_revisions(id) ON DELETE CASCADE,
     name TEXT NOT NULL,
     release_date TEXT,
+    release_date_year_only INTEGER DEFAULT 0,
     pre_release INTEGER DEFAULT 0,
     unofficial INTEGER DEFAULT 0,
     url TEXT,
@@ -423,7 +429,7 @@ CREATE TABLE IF NOT EXISTS catalog_meta (
 -- Insert initial metadata
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES
     ('version', '1'),
-    ('schema_version', '7'),
+    ('schema_version', '8'),
     ('created_at', datetime('now')),
     ('updated_at', datetime('now'));
 
