@@ -168,8 +168,8 @@ function buildDatabase(version: string): void {
   let softwareCount = 0;
 
   const insertSoftware = db.prepare(`
-    INSERT INTO software (id, name, manufacturer_id, website, release_date, primary_category, secondary_category, description, details, specs)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO software (id, name, manufacturer_id, website, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertCategory = db.prepare(`
     INSERT INTO software_categories (software_id, category)
@@ -188,8 +188,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?)
   `);
   const insertSoftwareVersion = db.prepare(`
-    INSERT INTO software_versions (software_id, name, release_date, pre_release, unofficial, url, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO software_versions (software_id, name, release_date, release_date_year_only, pre_release, unofficial, url, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertSoftwarePrice = db.prepare(`
     INSERT INTO software_prices (software_id, amount, currency)
@@ -234,6 +234,7 @@ function buildDatabase(version: string): void {
       manufacturerId ?? null,
       data.website ?? null,
       data.releaseDate ?? null,
+      data.releaseDateYearOnly ? 1 : 0,
       normalizedPrimaryCategory,
       normalizedSecondaryCategory,
       markdownToHtml(data.description),
@@ -275,6 +276,7 @@ function buildDatabase(version: string): void {
           id,
           ver.name,
           ver.releaseDate ?? null,
+          ver.releaseDateYearOnly ? 1 : 0,
           ver.preRelease ? 1 : 0,
           ver.unofficial ? 1 : 0,
           ver.url ?? null,
@@ -359,8 +361,8 @@ function buildDatabase(version: string): void {
   let hardwareCount = 0;
 
   const insertHardware = db.prepare(`
-    INSERT INTO hardware (id, name, manufacturer_id, website, release_date, primary_category, secondary_category, description, details, specs)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware (id, name, manufacturer_id, website, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareCategory = db.prepare(`
     INSERT INTO hardware_categories (hardware_id, category)
@@ -375,20 +377,20 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareVersion = db.prepare(`
-    INSERT INTO hardware_versions (hardware_id, name, release_date, pre_release, unofficial, url, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware_versions (hardware_id, name, release_date, release_date_year_only, pre_release, unofficial, url, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareRevision = db.prepare(`
-    INSERT INTO hardware_revisions (hardware_id, name, release_date, url, description)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO hardware_revisions (hardware_id, name, release_date, release_date_year_only, url, description)
+    VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareRevisionIO = db.prepare(`
     INSERT INTO hardware_revision_io (revision_id, name, signal_flow, category, type, connection, max_connections, position, column_position, row_position, description)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareRevisionVersion = db.prepare(`
-    INSERT INTO hardware_revision_versions (revision_id, name, release_date, pre_release, unofficial, url, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware_revision_versions (revision_id, name, release_date, release_date_year_only, pre_release, unofficial, url, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwarePrice = db.prepare(`
     INSERT INTO hardware_prices (hardware_id, amount, currency)
@@ -445,6 +447,7 @@ function buildDatabase(version: string): void {
       manufacturerId ?? null,
       data.website ?? null,
       data.releaseDate ?? null,
+      data.releaseDateYearOnly ? 1 : 0,
       normalizedPrimaryCategory,
       normalizedSecondaryCategory,
       markdownToHtml(data.description),
@@ -490,6 +493,7 @@ function buildDatabase(version: string): void {
           id,
           ver.name,
           ver.releaseDate ?? null,
+          ver.releaseDateYearOnly ? 1 : 0,
           ver.preRelease ? 1 : 0,
           ver.unofficial ? 1 : 0,
           ver.url ?? null,
@@ -505,6 +509,7 @@ function buildDatabase(version: string): void {
           id,
           rev.name,
           rev.releaseDate ?? null,
+          rev.releaseDateYearOnly ? 1 : 0,
           rev.url ?? null,
           rev.description ?? null
         );
@@ -536,6 +541,7 @@ function buildDatabase(version: string): void {
               revisionId,
               ver.name,
               ver.releaseDate ?? null,
+              ver.releaseDateYearOnly ? 1 : 0,
               ver.preRelease ? 1 : 0,
               ver.unofficial ? 1 : 0,
               ver.url ?? null,
