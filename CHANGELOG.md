@@ -1,5 +1,11 @@
 # catalog
 
+## 0.5.1
+
+### Patch Changes
+
+- 57fcb83: software(add): Diva
+
 ## 0.5.0
 
 ### Minor Changes
