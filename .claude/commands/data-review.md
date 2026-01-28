@@ -41,7 +41,7 @@ Launch these agents in parallel, each performing deep analysis with extended thi
 **Agent 2 - Slug & ID Integrity:**
 
 - Read `.slug-index.json` to check for slug collisions across all collections
-- Verify all slugs are lowercase with hyphens only (`^[a-z0-9-]+$`)
+- Verify all slugs are lowercase with hyphens only (`^[a-z0-9][a-z0-9-]*[a-z0-9]$` or single char `^[a-z0-9]$`)
 - Check that existing IDs have not been modified (compare with main branch)
 - Use fuzzy matching (Levenshtein distance) to flag near-duplicate names across all data files
 - Verify no two entries share the same slug across manufacturers, software, and hardware

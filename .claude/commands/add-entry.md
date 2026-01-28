@@ -29,26 +29,25 @@ Prompt the user for relevant fields based on entry type. Use the schema files to
 
 **For Software:**
 
-- **Required:** name, manufacturer (slug reference), primaryCategory
+- **Required:** name, manufacturer (slug reference), primaryCategory, platforms, identifiers
 - Read `schema/categories.yaml` and suggest relevant categories for primaryCategory. Common software categories:
   daw, plugin, synthesizer, sampler, effect, compressor, equalizer, reverb, delay, distortion, utility, analyzer
 - **Recommended:**
   - categories (additional from `schema/categories.yaml`)
   - formats (from `schema/formats.yaml`: au, vst, vst2, vst3, aax, rtas, tdm, clap, lv2, standalone)
-  - platforms (from `schema/platforms.yaml`: mac, windows, linux, ios, android)
-  - identifiers (plugin bundle IDs, e.g., `vst3: com.vendor.product.vst3`, `au: vendor: product`)
+- platforms must be from `schema/platforms.yaml`: mac, windows, linux, ios, android
+- identifiers are plugin bundle IDs, e.g., `vst3: com.vendor.product.vst3`, `au: vendor: product`
 - **Optional:** website, description, prices, links, releaseDate, searchTerms
 - **Auto-generated:** slug (from name)
 
 **For Hardware:**
 
-- **Required:** name, manufacturer (slug reference), primaryCategory
+- **Required:** name, manufacturer (slug reference), primaryCategory, description
 - Read `schema/categories.yaml` and suggest relevant categories for primaryCategory. Common hardware categories:
   audio-interface, synthesizer, drum-machine, sampler, groovebox, mixer, midi-controller, pedal, effects-pedal,
   microphone, studio-monitor, headphones, amplifier
 - **Recommended:**
   - categories (additional from `schema/categories.yaml`)
-  - description
 - **Optional:** website, prices, io (I/O ports), links, releaseDate, searchTerms
 - **Auto-generated:** slug (from name)
 
