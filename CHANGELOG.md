@@ -1,5 +1,11 @@
 # catalog
 
+## 1.0.0
+
+### Major Changes
+
+- 924c4fe: Migrate all entity IDs from sequential integers to nanoid strings. Schema version bumped to 9 with all primary/foreign key columns changed from INTEGER to TEXT. Existing SQLite databases must be rebuilt.
+
 ## 0.5.1
 
 ### Patch Changes
