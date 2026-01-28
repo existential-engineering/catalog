@@ -89,7 +89,7 @@ function buildDatabase(version: string): void {
   // Load and insert manufacturers
   const manufacturerFiles = getYamlFiles(path.join(DATA_DIR, "manufacturers"));
   const manufacturers = new Map<string, Manufacturer>();
-  const manufacturerIds = new Map<string, number>(); // slug -> id mapping
+  const manufacturerIds = new Map<string, string>(); // slug -> id mapping
 
   const insertManufacturer = db.prepare(`
     INSERT INTO manufacturers (id, name, company_name, website, description)

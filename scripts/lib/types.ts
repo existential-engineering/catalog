@@ -63,7 +63,7 @@ export interface Revision {
 // =============================================================================
 
 export interface Manufacturer {
-  id?: number; // Assigned post-merge, not in PRs
+  id?: string; // Assigned on PR creation via nanoid
   slug: string;
   name: string;
   companyName?: string;
@@ -75,7 +75,7 @@ export interface Manufacturer {
 }
 
 export interface Software {
-  id?: number; // Assigned post-merge, not in PRs
+  id?: string; // Assigned on PR creation via nanoid
   slug: string;
   name: string;
   manufacturer: string;
@@ -99,7 +99,7 @@ export interface Software {
 }
 
 export interface Hardware {
-  id?: number; // Assigned post-merge, not in PRs
+  id?: string; // Assigned on PR creation via nanoid
   slug: string;
   name: string;
   manufacturer: string;
@@ -211,6 +211,4 @@ export interface Change {
 
 export type Collection = "manufacturers" | "software" | "hardware";
 
-// Simple counter for next available IDs (stored in .id-counter.json)
-export type IdCounter = Record<Collection, number>;
 

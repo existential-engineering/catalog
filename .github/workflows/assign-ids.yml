@@ -1,13 +1,13 @@
 name: Assign IDs
 
 on:
-  push:
-    branches: [main]
+  pull_request:
+    types: [opened, synchronize]
     paths:
       - "data/**/*.yaml"
 
 concurrency:
-  group: assign-ids
+  group: assign-ids-${{ github.head_ref }}
   cancel-in-progress: true
 
 jobs:
@@ -19,11 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.head_ref }}
           fetch-depth: 0
-          ref: main
-
-      - name: Pull latest changes
-        run: git pull --rebase origin main
 
       - uses: pnpm/action-setup@v4
 

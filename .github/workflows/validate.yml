@@ -53,5 +53,9 @@ jobs:
         if: github.event_name == 'pull_request'
         run: pnpm check-slugs
 
+      - name: Check ID immutability
+        if: github.event_name == 'pull_request'
+        run: tsx scripts/check-id-immutability.ts origin/main
+
       - name: Build database (test)
         run: pnpm build 0

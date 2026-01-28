@@ -1,24 +1,24 @@
 /**
- * Assign IDs Script (Post-Merge)
+ * Assign IDs Script (PR Creation)
  *
- * Assigns IDs to any YAML entries that don't have one.
- * Run after merging PRs: pnpm assign-ids
+ * Assigns nanoid-based string IDs to any YAML entries that don't have one.
+ * Run on PR creation/sync: pnpm assign-ids
  *
  * This script:
- * 1. Scans all YAML files for entries without an `id` field
- * 2. Assigns the next available ID from .id-counter.json
- * 3. Updates the YAML files with the new ID
- * 4. Updates .id-counter.json with new next values
+ * 1. Loads all existing IDs into a Set for collision checking
+ * 2. Scans all YAML files for entries without an `id` field
+ * 3. Generates a unique nanoid for each new entry
+ * 4. Updates the YAML files with the new ID
  */
 
 import fs from "node:fs";
 import path from "node:path";
-import { parse as parseYaml, stringify as stringifyYaml, parseDocument } from "yaml";
-import type { Collection, IdCounter } from "./lib/types.js";
+import { nanoid } from "nanoid";
+import { parseDocument } from "yaml";
+import type { Collection } from "./lib/types.js";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 const DATA_DIR = path.join(REPO_ROOT, "data");
-const ID_COUNTER_FILE = path.join(REPO_ROOT, ".id-counter.json");
 
 function getYamlFiles(dir: string): string[] {
   if (!fs.existsSync(dir)) {
@@ -30,23 +30,38 @@ function getYamlFiles(dir: string): string[] {
     .map((f) => path.join(dir, f));
 }
 
-function loadIdCounter(): IdCounter {
-  if (!fs.existsSync(ID_COUNTER_FILE)) {
-    return {
-      manufacturers: 1,
-      software: 1,
-      hardware: 1,
-    };
+/** Load all existing IDs across all collections into a Set */
+function loadExistingIds(): Set<string> {
+  const ids = new Set<string>();
+  const collections: Collection[] = ["manufacturers", "software", "hardware"];
+
+  for (const collection of collections) {
+    const files = getYamlFiles(path.join(DATA_DIR, collection));
+    for (const file of files) {
+      const content = fs.readFileSync(file, "utf-8");
+      const doc = parseDocument(content);
+      const data = doc.toJSON() as Record<string, unknown>;
+      if (typeof data.id === "string" && data.id.length > 0) {
+        ids.add(data.id);
+      }
+    }
   }
-  return JSON.parse(fs.readFileSync(ID_COUNTER_FILE, "utf-8")) as IdCounter;
+
+  return ids;
 }
 
-function saveIdCounter(counter: IdCounter): void {
-  fs.writeFileSync(ID_COUNTER_FILE, JSON.stringify(counter, null, 2) + "\n");
+/** Generate a unique nanoid that doesn't collide with existing IDs */
+function generateUniqueId(existingIds: Set<string>): string {
+  let id: string;
+  do {
+    id = nanoid();
+  } while (existingIds.has(id));
+  existingIds.add(id);
+  return id;
 }
 
 function assignIds(): void {
-  const counter = loadIdCounter();
+  const existingIds = loadExistingIds();
   const collections: Collection[] = ["manufacturers", "software", "hardware"];
   const stats = { assigned: 0, skipped: 0 };
 
@@ -64,12 +79,10 @@ function assignIds(): void {
         continue;
       }
 
-      // Assign the next ID
-      const newId = counter[collection];
-      counter[collection]++;
+      // Assign a unique nanoid
+      const newId = generateUniqueId(existingIds);
 
       // Add id at the beginning of the document
-      // We need to preserve the original formatting, so we'll use parseDocument
       doc.set("id", newId);
 
       // Reorder to put id first
@@ -88,9 +101,6 @@ function assignIds(): void {
       stats.assigned++;
     }
   }
-
-  // Save updated counter
-  saveIdCounter(counter);
 
   console.log(`\n✅ ID assignment complete!`);
   console.log(`   Assigned: ${stats.assigned}`);
