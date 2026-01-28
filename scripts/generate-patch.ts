@@ -16,6 +16,40 @@ import { DATA_DIR, OUTPUT_DIR, escapeSQL } from "./lib/utils.js";
 const PATCHES_DIR = path.join(OUTPUT_DIR, "patches");
 
 // =============================================================================
+// HELPERS
+// =============================================================================
+
+/** Build a map of manufacturer slug -> nanoid from all manufacturer YAML files */
+function buildManufacturerIdMap(): Map<string, string> {
+  const map = new Map<string, string>();
+  const dir = path.join(DATA_DIR, "manufacturers");
+  if (!fs.existsSync(dir)) return map;
+
+  for (const file of fs.readdirSync(dir).filter((f) => f.endsWith(".yaml") || f.endsWith(".yml"))) {
+    const content = fs.readFileSync(path.join(dir, file), "utf-8");
+    const data = parseYaml(content) as { slug?: string; id?: string };
+    if (data.slug && data.id) {
+      map.set(data.slug, data.id);
+    }
+  }
+  return map;
+}
+
+/** Get the nanoid of a deleted entry by reading it from git history */
+function getDeletedEntryId(since: string, filePath: string): string | null {
+  try {
+    const content = execSync(`git show ${since}:${filePath}`, {
+      encoding: "utf-8",
+      stdio: ["pipe", "pipe", "pipe"],
+    });
+    const data = parseYaml(content) as { id?: string };
+    return data.id ?? null;
+  } catch {
+    return null;
+  }
+}
+
+// =============================================================================
 // GIT HELPERS
 // =============================================================================
 
@@ -81,51 +115,67 @@ function getChangedFiles(since: string): Change[] {
 
 function generateManufacturerSQL(
   change: Change,
-  data: Manufacturer | null
+  data: Manufacturer | null,
+  deletedId: string | null
 ): string[] {
   const sql: string[] = [];
 
   if (change.type === "deleted") {
-    sql.push(`DELETE FROM manufacturers WHERE id = ${escapeSQL(change.slug)};`);
+    if (!deletedId) {
+      sql.push(`-- WARNING: Could not resolve ID for deleted manufacturer ${change.slug}`);
+      return sql;
+    }
+    sql.push(`DELETE FROM manufacturers WHERE id = ${escapeSQL(deletedId)};`);
   } else if (change.type === "added" && data) {
     sql.push(
-      `INSERT INTO manufacturers (id, name, company_name, parent_company, website, description, updated_at) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, ${escapeSQL(data.companyName)}, ${escapeSQL(data.parentCompany)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, datetime('now'));`
+      `INSERT INTO manufacturers (id, name, company_name, parent_company, website, description, updated_at) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, ${escapeSQL(data.companyName)}, ${escapeSQL(data.parentCompany)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, datetime('now'));`
     );
   } else if (change.type === "modified" && data) {
     sql.push(
-      `UPDATE manufacturers SET name = ${escapeSQL(data.name)}, company_name = ${escapeSQL(data.companyName)}, parent_company = ${escapeSQL(data.parentCompany)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.slug)};`
+      `UPDATE manufacturers SET name = ${escapeSQL(data.name)}, company_name = ${escapeSQL(data.companyName)}, parent_company = ${escapeSQL(data.parentCompany)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.id)};`
     );
   }
 
   return sql;
 }
 
-function generateSoftwareSQL(change: Change, data: Software | null): string[] {
+function generateSoftwareSQL(
+  change: Change,
+  data: Software | null,
+  deletedId: string | null,
+  manufacturerIds: Map<string, string>
+): string[] {
   const sql: string[] = [];
 
   if (change.type === "deleted") {
+    if (!deletedId) {
+      sql.push(`-- WARNING: Could not resolve ID for deleted software ${change.slug}`);
+      return sql;
+    }
     // Cascade deletes handle related tables
-    sql.push(`DELETE FROM software_fts WHERE id = ${escapeSQL(change.slug)};`);
-    sql.push(`DELETE FROM software WHERE id = ${escapeSQL(change.slug)};`);
+    sql.push(`DELETE FROM software_fts WHERE id = ${escapeSQL(deletedId)};`);
+    sql.push(`DELETE FROM software WHERE id = ${escapeSQL(deletedId)};`);
   } else if (data) {
+    const mfgId = manufacturerIds.get(data.manufacturer) ?? null;
+
     if (change.type === "modified") {
       // Delete existing related data first
       sql.push(
-        `DELETE FROM software_categories WHERE software_id = ${escapeSQL(data.slug)};`
+        `DELETE FROM software_categories WHERE software_id = ${escapeSQL(data.id)};`
       );
       sql.push(
-        `DELETE FROM software_formats WHERE software_id = ${escapeSQL(data.slug)};`
+        `DELETE FROM software_formats WHERE software_id = ${escapeSQL(data.id)};`
       );
       sql.push(
-        `DELETE FROM software_platforms WHERE software_id = ${escapeSQL(data.slug)};`
+        `DELETE FROM software_platforms WHERE software_id = ${escapeSQL(data.id)};`
       );
-      sql.push(`DELETE FROM software_fts WHERE id = ${escapeSQL(data.slug)};`);
+      sql.push(`DELETE FROM software_fts WHERE id = ${escapeSQL(data.id)};`);
       sql.push(
-        `UPDATE software SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(data.manufacturer)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(data.details)}, specs = ${escapeSQL(data.specs)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.slug)};`
+        `UPDATE software SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(mfgId)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(data.details)}, specs = ${escapeSQL(data.specs)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.id)};`
       );
     } else {
       sql.push(
-        `INSERT INTO software (id, name, manufacturer_id, website, description, release_date, primary_category, secondary_category, details, specs, updated_at) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, ${escapeSQL(data.manufacturer)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, ${escapeSQL(data.releaseDate)}, ${escapeSQL(data.primaryCategory)}, ${escapeSQL(data.secondaryCategory)}, ${escapeSQL(data.details)}, ${escapeSQL(data.specs)}, datetime('now'));`
+        `INSERT INTO software (id, name, manufacturer_id, website, description, release_date, primary_category, secondary_category, details, specs, updated_at) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, ${escapeSQL(mfgId)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, ${escapeSQL(data.releaseDate)}, ${escapeSQL(data.primaryCategory)}, ${escapeSQL(data.secondaryCategory)}, ${escapeSQL(data.details)}, ${escapeSQL(data.specs)}, datetime('now'));`
       );
     }
 
@@ -133,7 +183,7 @@ function generateSoftwareSQL(change: Change, data: Software | null): string[] {
     if (data.categories) {
       for (const category of data.categories) {
         sql.push(
-          `INSERT INTO software_categories (software_id, category) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(category)});`
+          `INSERT INTO software_categories (software_id, category) VALUES (${escapeSQL(data.id)}, ${escapeSQL(category)});`
         );
       }
     }
@@ -143,7 +193,7 @@ function generateSoftwareSQL(change: Change, data: Software | null): string[] {
       for (const format of data.formats) {
         const identifier = data.identifiers?.[format];
         sql.push(
-          `INSERT INTO software_formats (software_id, format, identifier) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(format)}, ${escapeSQL(identifier)});`
+          `INSERT INTO software_formats (software_id, format, identifier) VALUES (${escapeSQL(data.id)}, ${escapeSQL(format)}, ${escapeSQL(identifier)});`
         );
       }
     }
@@ -152,39 +202,50 @@ function generateSoftwareSQL(change: Change, data: Software | null): string[] {
     if (data.platforms) {
       for (const platform of data.platforms) {
         sql.push(
-          `INSERT INTO software_platforms (software_id, platform) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(platform)});`
+          `INSERT INTO software_platforms (software_id, platform) VALUES (${escapeSQL(data.id)}, ${escapeSQL(platform)});`
         );
       }
     }
 
     // Insert FTS
     sql.push(
-      `INSERT INTO software_fts (id, name, manufacturer_name, categories) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, (SELECT name FROM manufacturers WHERE id = ${escapeSQL(data.manufacturer)}), ${escapeSQL(data.categories?.join(" ") ?? "")});`
+      `INSERT INTO software_fts (id, name, manufacturer_name, categories) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, (SELECT name FROM manufacturers WHERE id = ${escapeSQL(mfgId)}), ${escapeSQL(data.categories?.join(" ") ?? "")});`
     );
   }
 
   return sql;
 }
 
-function generateHardwareSQL(change: Change, data: Hardware | null): string[] {
+function generateHardwareSQL(
+  change: Change,
+  data: Hardware | null,
+  deletedId: string | null,
+  manufacturerIds: Map<string, string>
+): string[] {
   const sql: string[] = [];
 
   if (change.type === "deleted") {
-    sql.push(`DELETE FROM hardware_fts WHERE id = ${escapeSQL(change.slug)};`);
-    sql.push(`DELETE FROM hardware WHERE id = ${escapeSQL(change.slug)};`);
+    if (!deletedId) {
+      sql.push(`-- WARNING: Could not resolve ID for deleted hardware ${change.slug}`);
+      return sql;
+    }
+    sql.push(`DELETE FROM hardware_fts WHERE id = ${escapeSQL(deletedId)};`);
+    sql.push(`DELETE FROM hardware WHERE id = ${escapeSQL(deletedId)};`);
   } else if (data) {
+    const mfgId = manufacturerIds.get(data.manufacturer) ?? null;
+
     if (change.type === "modified") {
       // Delete existing related data first
       sql.push(
-        `DELETE FROM hardware_categories WHERE hardware_id = ${escapeSQL(data.slug)};`
+        `DELETE FROM hardware_categories WHERE hardware_id = ${escapeSQL(data.id)};`
       );
-      sql.push(`DELETE FROM hardware_fts WHERE id = ${escapeSQL(data.slug)};`);
+      sql.push(`DELETE FROM hardware_fts WHERE id = ${escapeSQL(data.id)};`);
       sql.push(
-        `UPDATE hardware SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(data.manufacturer)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(data.details)}, specs = ${escapeSQL(data.specs)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.slug)};`
+        `UPDATE hardware SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(mfgId)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(data.details)}, specs = ${escapeSQL(data.specs)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.id)};`
       );
     } else {
       sql.push(
-        `INSERT INTO hardware (id, name, manufacturer_id, website, description, release_date, primary_category, secondary_category, details, specs, updated_at) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, ${escapeSQL(data.manufacturer)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, ${escapeSQL(data.releaseDate)}, ${escapeSQL(data.primaryCategory)}, ${escapeSQL(data.secondaryCategory)}, ${escapeSQL(data.details)}, ${escapeSQL(data.specs)}, datetime('now'));`
+        `INSERT INTO hardware (id, name, manufacturer_id, website, description, release_date, primary_category, secondary_category, details, specs, updated_at) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, ${escapeSQL(mfgId)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, ${escapeSQL(data.releaseDate)}, ${escapeSQL(data.primaryCategory)}, ${escapeSQL(data.secondaryCategory)}, ${escapeSQL(data.details)}, ${escapeSQL(data.specs)}, datetime('now'));`
       );
     }
 
@@ -192,7 +253,7 @@ function generateHardwareSQL(change: Change, data: Hardware | null): string[] {
     if (data.categories) {
       for (const category of data.categories) {
         sql.push(
-          `INSERT INTO hardware_categories (hardware_id, category) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(category)});`
+          `INSERT INTO hardware_categories (hardware_id, category) VALUES (${escapeSQL(data.id)}, ${escapeSQL(category)});`
         );
       }
     }
@@ -200,7 +261,7 @@ function generateHardwareSQL(change: Change, data: Hardware | null): string[] {
     // Insert FTS
     const categories = data.categories?.join(" ") ?? "";
     sql.push(
-      `INSERT INTO hardware_fts (id, name, manufacturer_name, description, categories) VALUES (${escapeSQL(data.slug)}, ${escapeSQL(data.name)}, (SELECT name FROM manufacturers WHERE id = ${escapeSQL(data.manufacturer)}), ${escapeSQL(data.description)}, ${escapeSQL(categories)});`
+      `INSERT INTO hardware_fts (id, name, manufacturer_name, description, categories) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, (SELECT name FROM manufacturers WHERE id = ${escapeSQL(mfgId)}), ${escapeSQL(data.description)}, ${escapeSQL(categories)});`
     );
   }
 
@@ -221,6 +282,9 @@ function generatePatch(fromTag: string, toVersion: string): void {
 
   console.log(`\n📝 Generating patch ${fromTag} → ${toVersion}\n`);
   console.log(`   Found ${changes.length} changes\n`);
+
+  // Build manufacturer slug -> nanoid map for FK resolution
+  const manufacturerIds = buildManufacturerIdMap();
 
   const sql: string[] = [];
 
@@ -254,16 +318,21 @@ function generatePatch(fromTag: string, toVersion: string): void {
       }
     }
 
+    // For deletions, resolve the nanoid from the base version
+    const deletedId = change.type === "deleted"
+      ? getDeletedEntryId(fromTag, change.file)
+      : null;
+
     let statements: string[] = [];
     switch (change.category) {
       case "manufacturers":
-        statements = generateManufacturerSQL(change, data as Manufacturer);
+        statements = generateManufacturerSQL(change, data as Manufacturer, deletedId);
         break;
       case "software":
-        statements = generateSoftwareSQL(change, data as Software);
+        statements = generateSoftwareSQL(change, data as Software, deletedId, manufacturerIds);
         break;
       case "hardware":
-        statements = generateHardwareSQL(change, data as Hardware);
+        statements = generateHardwareSQL(change, data as Hardware, deletedId, manufacturerIds);
         break;
     }
 

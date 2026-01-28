@@ -1,17 +1,18 @@
 name: Assign IDs
 
 on:
-  push:
-    branches: [main]
+  pull_request:
+    types: [opened, synchronize]
     paths:
       - "data/**/*.yaml"
 
 concurrency:
-  group: assign-ids
+  group: assign-ids-${{ github.head_ref }}
   cancel-in-progress: true
 
 jobs:
   assign-ids:
+    if: github.event.pull_request.head.repo.fork == false
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -19,17 +20,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.head_ref }}
           fetch-depth: 0
-          ref: main
-
-      - name: Pull latest changes
-        run: git pull --rebase origin main
 
       - uses: pnpm/action-setup@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: "22"
           cache: "pnpm"
 
       - name: Install dependencies

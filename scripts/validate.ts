@@ -642,7 +642,7 @@ function validateIds(): IdValidationResult {
 
   for (const collection of collections) {
     const files = getYamlFiles(path.join(DATA_DIR, collection));
-    const seenIds = new Map<number, string>(); // id -> slug
+    const seenIds = new Map<string, string>(); // id -> slug
 
     for (const file of files) {
       try {
@@ -651,15 +651,15 @@ function validateIds(): IdValidationResult {
         const slug = data.slug ?? path.basename(file, path.extname(file));
 
         if (data.id !== undefined) {
-          // Validate ID is a positive integer
-          if (typeof data.id !== "number" || !Number.isInteger(data.id) || data.id < 1) {
-            errors.push(`${collection}/${slug}: id must be a positive integer, got ${JSON.stringify(data.id)}`);
+          // Validate ID is a non-empty string
+          if (typeof data.id !== "string" || data.id.length === 0) {
+            errors.push(`${collection}/${slug}: id must be a non-empty string, got ${JSON.stringify(data.id)}`);
             continue;
           }
 
           // Check for duplicates
           if (seenIds.has(data.id)) {
-            errors.push(`${collection}: duplicate id ${data.id} in '${seenIds.get(data.id)}' and '${slug}'`);
+            errors.push(`${collection}: duplicate id '${data.id}' in '${seenIds.get(data.id)}' and '${slug}'`);
             stats.duplicates++;
           }
           seenIds.set(data.id, slug);

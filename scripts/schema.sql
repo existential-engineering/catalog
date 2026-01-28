@@ -10,10 +10,10 @@ PRAGMA foreign_keys = ON;
 
 -- Manufacturers / Companies
 CREATE TABLE IF NOT EXISTS manufacturers (
-    id INTEGER PRIMARY KEY,           -- Auto-generated ID
+    id TEXT PRIMARY KEY NOT NULL,     -- Nanoid string ID
     name TEXT NOT NULL,               -- Display name
     company_name TEXT,                -- Official company name (if different)
-    parent_company_id INTEGER REFERENCES manufacturers(id), -- Parent company ID
+    parent_company_id TEXT REFERENCES manufacturers(id), -- Parent company ID
     website TEXT,                     -- Company website
     description TEXT,                 -- Description
     created_at TEXT DEFAULT (datetime('now')),
@@ -25,16 +25,16 @@ CREATE INDEX idx_manufacturers_parent ON manufacturers(parent_company_id);
 
 -- Manufacturer Search Terms
 CREATE TABLE IF NOT EXISTS manufacturer_search_terms (
-    manufacturer_id INTEGER NOT NULL REFERENCES manufacturers(id) ON DELETE CASCADE,
+    manufacturer_id TEXT NOT NULL REFERENCES manufacturers(id) ON DELETE CASCADE,
     term TEXT NOT NULL,
     PRIMARY KEY (manufacturer_id, term)
 );
 
 -- Software (Plugins, Standalone apps)
 CREATE TABLE IF NOT EXISTS software (
-    id INTEGER PRIMARY KEY,           -- Auto-generated ID
+    id TEXT PRIMARY KEY NOT NULL,     -- Nanoid string ID
     name TEXT NOT NULL,               -- Display name
-    manufacturer_id INTEGER REFERENCES manufacturers(id),
+    manufacturer_id TEXT REFERENCES manufacturers(id),
     website TEXT,                     -- Product page URL
     release_date TEXT,                -- Initial release date
     release_date_year_only INTEGER DEFAULT 0, -- If 1, only year is meaningful
@@ -53,7 +53,7 @@ CREATE INDEX idx_software_primary_category ON software(primary_category);
 
 -- Software Categories (many-to-many)
 CREATE TABLE IF NOT EXISTS software_categories (
-    software_id INTEGER NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
     category TEXT NOT NULL,
     PRIMARY KEY (software_id, category)
 );
@@ -62,14 +62,14 @@ CREATE INDEX idx_software_categories_category ON software_categories(category);
 
 -- Software Search Terms
 CREATE TABLE IF NOT EXISTS software_search_terms (
-    software_id INTEGER NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
     term TEXT NOT NULL,
     PRIMARY KEY (software_id, term)
 );
 
 -- Software Formats (many-to-many with identifiers)
 CREATE TABLE IF NOT EXISTS software_formats (
-    software_id INTEGER NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
     format TEXT NOT NULL,             -- au, vst3, aax, etc.
     identifier TEXT,                  -- Bundle ID for this format
     PRIMARY KEY (software_id, format)
@@ -79,7 +79,7 @@ CREATE INDEX idx_software_formats_format ON software_formats(format);
 
 -- Software Platforms (many-to-many)
 CREATE TABLE IF NOT EXISTS software_platforms (
-    software_id INTEGER NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
     platform TEXT NOT NULL,           -- mac, windows, linux, ios, android
     PRIMARY KEY (software_id, platform)
 );
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS software_platforms (
 -- Software Versions
 CREATE TABLE IF NOT EXISTS software_versions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    software_id INTEGER NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
     name TEXT NOT NULL,               -- Version number (e.g., '1.2.3')
     release_date TEXT,
     release_date_year_only INTEGER DEFAULT 0,
@@ -102,7 +102,7 @@ CREATE INDEX idx_software_versions_software ON software_versions(software_id);
 -- Software Prices
 CREATE TABLE IF NOT EXISTS software_prices (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    software_id INTEGER NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
     amount REAL NOT NULL,
     currency TEXT NOT NULL
 );
@@ -112,7 +112,7 @@ CREATE INDEX idx_software_prices_software ON software_prices(software_id);
 -- Software Links
 CREATE TABLE IF NOT EXISTS software_links (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    software_id INTEGER NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
     type TEXT NOT NULL,
     title TEXT,
     url TEXT,
@@ -125,9 +125,9 @@ CREATE INDEX idx_software_links_software ON software_links(software_id);
 
 -- Hardware
 CREATE TABLE IF NOT EXISTS hardware (
-    id INTEGER PRIMARY KEY,           -- Auto-generated ID
+    id TEXT PRIMARY KEY NOT NULL,     -- Nanoid string ID
     name TEXT NOT NULL,
-    manufacturer_id INTEGER REFERENCES manufacturers(id),
+    manufacturer_id TEXT REFERENCES manufacturers(id),
     website TEXT,
     release_date TEXT,
     release_date_year_only INTEGER DEFAULT 0,
@@ -146,7 +146,7 @@ CREATE INDEX idx_hardware_primary_category ON hardware(primary_category);
 
 -- Hardware Categories (many-to-many)
 CREATE TABLE IF NOT EXISTS hardware_categories (
-    hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     category TEXT NOT NULL,
     PRIMARY KEY (hardware_id, category)
 );
@@ -155,7 +155,7 @@ CREATE INDEX idx_hardware_categories_category ON hardware_categories(category);
 
 -- Hardware Search Terms
 CREATE TABLE IF NOT EXISTS hardware_search_terms (
-    hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     term TEXT NOT NULL,
     PRIMARY KEY (hardware_id, term)
 );
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS hardware_search_terms (
 -- I/O translation validation is handled at build time in build-sqlite.ts
 CREATE TABLE IF NOT EXISTS hardware_io (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     name TEXT NOT NULL,
     signal_flow TEXT NOT NULL,        -- input, output
     category TEXT NOT NULL,           -- audio, digital, midi, power
@@ -183,7 +183,7 @@ CREATE INDEX idx_hardware_io_hardware ON hardware_io(hardware_id);
 -- Hardware Versions (Firmware)
 CREATE TABLE IF NOT EXISTS hardware_versions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     name TEXT NOT NULL,
     release_date TEXT,
     release_date_year_only INTEGER DEFAULT 0,
@@ -198,7 +198,7 @@ CREATE INDEX idx_hardware_versions_hardware ON hardware_versions(hardware_id);
 -- Hardware Revisions
 CREATE TABLE IF NOT EXISTS hardware_revisions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     name TEXT NOT NULL,
     release_date TEXT,
     release_date_year_only INTEGER DEFAULT 0,
@@ -244,7 +244,7 @@ CREATE INDEX idx_hardware_revision_versions_revision ON hardware_revision_versio
 -- Hardware Prices
 CREATE TABLE IF NOT EXISTS hardware_prices (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     amount REAL NOT NULL,
     currency TEXT NOT NULL
 );
@@ -264,7 +264,7 @@ CREATE INDEX idx_hardware_revision_prices_revision ON hardware_revision_prices(r
 -- Hardware Links
 CREATE TABLE IF NOT EXISTS hardware_links (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     type TEXT NOT NULL,
     title TEXT,
     url TEXT,
@@ -311,7 +311,7 @@ CREATE TABLE IF NOT EXISTS category_translations (
 
 -- Manufacturer translations
 CREATE TABLE IF NOT EXISTS manufacturer_translations (
-    manufacturer_id INTEGER NOT NULL REFERENCES manufacturers(id) ON DELETE CASCADE,
+    manufacturer_id TEXT NOT NULL REFERENCES manufacturers(id) ON DELETE CASCADE,
     locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
     description TEXT,               -- Translated description (HTML)
     website TEXT,                   -- Locale-specific website URL
@@ -320,7 +320,7 @@ CREATE TABLE IF NOT EXISTS manufacturer_translations (
 
 -- Software translations
 CREATE TABLE IF NOT EXISTS software_translations (
-    software_id INTEGER NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
     locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
     description TEXT,               -- Translated short description (HTML)
     details TEXT,                   -- Translated detailed description (HTML)
@@ -333,7 +333,7 @@ CREATE INDEX idx_software_translations_locale ON software_translations(locale);
 
 -- Hardware translations
 CREATE TABLE IF NOT EXISTS hardware_translations (
-    hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
     description TEXT,               -- Translated short description (HTML)
     details TEXT,                   -- Translated detailed description (HTML)
@@ -347,7 +347,7 @@ CREATE INDEX idx_hardware_translations_locale ON hardware_translations(locale);
 -- Localized software links (videos, purchase, affiliate, docs per locale)
 CREATE TABLE IF NOT EXISTS software_links_localized (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    software_id INTEGER NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
     locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
     type TEXT NOT NULL,             -- video, documentation, purchase, etc.
     title TEXT,
@@ -362,7 +362,7 @@ CREATE INDEX idx_software_links_localized ON software_links_localized(software_i
 -- Localized hardware links
 CREATE TABLE IF NOT EXISTS hardware_links_localized (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
     type TEXT NOT NULL,
     title TEXT,
@@ -379,7 +379,7 @@ CREATE INDEX idx_hardware_links_localized ON hardware_links_localized(hardware_i
 -- Note: No FK to hardware_io because (hardware_id, name) is not unique
 -- Validation is handled at build time in build-sqlite.ts
 CREATE TABLE IF NOT EXISTS hardware_io_translations (
-    hardware_id INTEGER NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
     original_name TEXT NOT NULL,    -- Matches hardware_io.name for merging
     translated_name TEXT,
@@ -429,7 +429,7 @@ CREATE TABLE IF NOT EXISTS catalog_meta (
 -- Insert initial metadata
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES
     ('version', '1'),
-    ('schema_version', '8'),
+    ('schema_version', '9'),
     ('created_at', datetime('now')),
     ('updated_at', datetime('now'));
 
