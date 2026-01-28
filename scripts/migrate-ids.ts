@@ -60,6 +60,16 @@ function migrateIds(): void {
       // Replace the ID
       doc.set("id", newId);
 
+      // Reorder to put id first
+      const items = doc.contents as { items?: { key: { value: string } }[] };
+      if (items?.items) {
+        const idIndex = items.items.findIndex((item) => item.key?.value === "id");
+        if (idIndex > 0) {
+          const [idItem] = items.items.splice(idIndex, 1);
+          items.items.unshift(idItem);
+        }
+      }
+
       // Write back
       fs.writeFileSync(file, doc.toString());
       mapping[collection][oldId] = newId;

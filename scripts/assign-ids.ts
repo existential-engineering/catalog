@@ -73,8 +73,8 @@ function assignIds(): void {
       const doc = parseDocument(content);
       const data = doc.toJSON() as Record<string, unknown>;
 
-      // Skip if already has an id
-      if (data.id !== undefined) {
+      // Skip if already has a valid id
+      if (typeof data.id === "string" && data.id.length > 0) {
         stats.skipped++;
         continue;
       }
