@@ -426,10 +426,30 @@ CREATE TABLE IF NOT EXISTS catalog_meta (
     value TEXT NOT NULL
 );
 
--- Insert initial metadata
+-- Schema migrations table for version tracking
+CREATE TABLE IF NOT EXISTS schema_migrations (
+    version INTEGER PRIMARY KEY,
+    description TEXT NOT NULL,
+    breaking_change INTEGER DEFAULT 0,
+    applied_at TEXT DEFAULT (datetime('now'))
+);
+
+-- Insert schema migration history
+INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change) VALUES
+    (1, 'Initial schema with manufacturers, software, hardware tables', 0),
+    (2, 'Added software_categories many-to-many table', 0),
+    (3, 'Added FTS5 full-text search for software and hardware', 0),
+    (4, 'Added hardware_io table for I/O port definitions', 0),
+    (5, 'Added prices and links tables for software and hardware', 0),
+    (6, 'Added locales and translation tables', 0),
+    (7, 'Added hardware_revisions tables for hardware variants', 0),
+    (8, 'Added hardware_io_translations table', 0),
+    (9, 'Migrated IDs from auto-increment integers to nanoid strings', 1),
+    (10, 'Added schema_migrations table for version tracking', 0);
+
+-- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES
     ('version', '1'),
-    ('schema_version', '9'),
     ('created_at', datetime('now')),
     ('updated_at', datetime('now'));
 

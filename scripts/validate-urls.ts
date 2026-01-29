@@ -5,8 +5,11 @@
  * Can validate all files or only changed files (for PR reviews).
  *
  * Usage:
- *   pnpm validate-urls                    # Validate all files
+ *   pnpm validate-urls                              # Validate all files
  *   pnpm validate-urls --changed-only --base <sha>  # Validate only changed files
+ *   pnpm validate-urls --use-cache                  # Use cached results
+ *   pnpm validate-urls --update-cache               # Update cache with results
+ *   pnpm validate-urls --ignore-cache               # Force recheck all URLs
  */
 
 import { execSync } from "node:child_process";
@@ -14,6 +17,15 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 import { DATA_DIR, getYamlFiles } from "./lib/utils.js";
+import {
+  loadUrlCache,
+  saveUrlCache,
+  getCachedUrl,
+  setCachedUrl,
+  getCacheStats,
+  pruneExpiredEntries,
+  type UrlCache,
+} from "./lib/url-cache.js";
 
 const MAX_CONCURRENT_REQUESTS = 10;
 const MAX_CONCURRENT_FILES = 5;
@@ -130,13 +142,24 @@ interface ValidationResult {
 }
 
 // Parse command line arguments
-function parseArgs(): { changedOnly: boolean; baseSha?: string } {
+interface ParsedArgs {
+  changedOnly: boolean;
+  baseSha?: string;
+  useCache: boolean;
+  updateCache: boolean;
+  ignoreCache: boolean;
+}
+
+function parseArgs(): ParsedArgs {
   const args = process.argv.slice(2);
   const changedOnly = args.includes("--changed-only");
   const baseIndex = args.indexOf("--base");
   const baseSha = baseIndex !== -1 ? args[baseIndex + 1] : undefined;
+  const useCache = args.includes("--use-cache");
+  const updateCache = args.includes("--update-cache");
+  const ignoreCache = args.includes("--ignore-cache");
 
-  return { changedOnly, baseSha };
+  return { changedOnly, baseSha, useCache, updateCache, ignoreCache };
 }
 
 // Get list of changed YAML files in data/
@@ -189,8 +212,15 @@ function extractUrls(data: Record<string, unknown>): string[] {
   return urls;
 }
 
-// Check a single URL
-async function checkUrl(url: string): Promise<UrlCheckResult> {
+// Check a single URL (with optional cache support)
+async function checkUrl(
+  url: string,
+  options?: {
+    cache?: UrlCache;
+    useCache?: boolean;
+    updateCache?: boolean;
+  }
+): Promise<UrlCheckResult> {
   // Pre-flight check for YouTube URL format (no network request needed)
   const formatCheck = validateYouTubeUrlFormat(url);
   if (!formatCheck.valid) {
@@ -201,6 +231,22 @@ async function checkUrl(url: string): Promise<UrlCheckResult> {
       error: formatCheck.error,
     };
   }
+
+  // Check cache if enabled
+  if (options?.useCache && options.cache) {
+    const cached = getCachedUrl(options.cache, url);
+    if (cached) {
+      return {
+        url,
+        status: cached.status === "error" ? "error" : cached.status,
+        redirected: !!cached.redirectsTo,
+        finalUrl: cached.redirectsTo,
+        error: cached.errorMessage,
+      };
+    }
+  }
+
+  let result: UrlCheckResult;
 
   try {
     const response = await fetch(url, {
@@ -214,7 +260,7 @@ async function checkUrl(url: string): Promise<UrlCheckResult> {
 
     const redirected = response.url !== url;
 
-    return {
+    result = {
       url,
       status: response.status,
       redirected,
@@ -234,14 +280,14 @@ async function checkUrl(url: string): Promise<UrlCheckResult> {
 
       const redirected = response.url !== url;
 
-      return {
+      result = {
         url,
         status: response.status,
         redirected,
         finalUrl: redirected ? response.url : undefined,
       };
     } catch (getError) {
-      return {
+      result = {
         url,
         status: "error",
         redirected: false,
@@ -249,10 +295,28 @@ async function checkUrl(url: string): Promise<UrlCheckResult> {
       };
     }
   }
+
+  // Update cache if enabled
+  if (options?.updateCache && options.cache) {
+    const status = result.status === "format_error" ? "error" : result.status;
+    setCachedUrl(options.cache, url, status, {
+      errorMessage: result.error,
+      redirectsTo: result.finalUrl,
+    });
+  }
+
+  return result;
 }
 
 // Process a single file
-async function processFile(filePath: string): Promise<FileResult> {
+async function processFile(
+  filePath: string,
+  options?: {
+    cache?: UrlCache;
+    useCache?: boolean;
+    updateCache?: boolean;
+  }
+): Promise<FileResult> {
   const relativePath = path.relative(process.cwd(), filePath);
 
   let content: string;
@@ -290,7 +354,9 @@ async function processFile(filePath: string): Promise<FileResult> {
   }
 
   const urls = [...new Set(extractUrls(data))]; // Dedupe URLs
-  const results = await runWithConcurrency(urls, MAX_CONCURRENT_REQUESTS, checkUrl);
+  const results = await runWithConcurrency(urls, MAX_CONCURRENT_REQUESTS, (url) =>
+    checkUrl(url, options)
+  );
 
   return {
     file: relativePath,
@@ -299,7 +365,15 @@ async function processFile(filePath: string): Promise<FileResult> {
 }
 
 // Main validation function
-async function validate(changedOnly: boolean, baseSha?: string): Promise<ValidationResult> {
+async function validate(
+  changedOnly: boolean,
+  baseSha?: string,
+  cacheOptions?: {
+    useCache: boolean;
+    updateCache: boolean;
+    ignoreCache: boolean;
+  }
+): Promise<ValidationResult> {
   let files: string[];
 
   if (changedOnly && baseSha) {
@@ -321,7 +395,24 @@ async function validate(changedOnly: boolean, baseSha?: string): Promise<Validat
     console.log(`Checking ${files.length} file(s)...`);
   }
 
-  const results = await runWithConcurrency(files, MAX_CONCURRENT_FILES, processFile);
+  // Load cache if needed
+  let cache: UrlCache | undefined;
+  const useCache = cacheOptions?.useCache && !cacheOptions?.ignoreCache;
+  const updateCache = cacheOptions?.updateCache;
+
+  if (useCache || updateCache) {
+    cache = loadUrlCache();
+    if (useCache) {
+      const stats = getCacheStats(cache);
+      console.log(
+        `Cache loaded: ${stats.totalEntries} entries (${stats.successCount} valid, ${stats.expiredCount} expired)`
+      );
+    }
+  }
+
+  const results = await runWithConcurrency(files, MAX_CONCURRENT_FILES, (file) =>
+    processFile(file, { cache, useCache, updateCache })
+  );
 
   let totalUrls = 0;
   let brokenCount = 0;
@@ -337,6 +428,16 @@ async function validate(changedOnly: boolean, baseSha?: string): Promise<Validat
         redirectCount++;
       }
     }
+  }
+
+  // Save cache if updating
+  if (updateCache && cache) {
+    const pruned = pruneExpiredEntries(cache);
+    if (pruned > 0) {
+      console.log(`Pruned ${pruned} expired cache entries`);
+    }
+    saveUrlCache(cache);
+    console.log(`Cache saved with ${Object.keys(cache.entries).length} entries`);
   }
 
   return {
@@ -472,14 +573,18 @@ function writeConsoleOutput(result: ValidationResult): void {
 }
 
 // Main
-const { changedOnly, baseSha } = parseArgs();
+const { changedOnly, baseSha, useCache, updateCache, ignoreCache } = parseArgs();
 
 if (changedOnly && !baseSha) {
   console.error("Error: --changed-only requires --base <sha>");
   process.exit(1);
 }
 
-const result = await validate(changedOnly, baseSha);
+const result = await validate(changedOnly, baseSha, {
+  useCache,
+  updateCache,
+  ignoreCache,
+});
 
 writeConsoleOutput(result);
 writeGitHubSummary(result);

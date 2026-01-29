@@ -1,0 +1,153 @@
+name: Staleness Check
+
+on:
+  schedule:
+    # Run monthly on the 1st at midnight UTC
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate staleness report
+        id: report
+        run: |
+          pnpm staleness-report --json > staleness-report.json
+          echo "report<<EOF" >> $GITHUB_OUTPUT
+          cat staleness-report.json >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create or update staleness issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('staleness-report.json', 'utf-8'));
+
+            // Only create issue if there are items needing attention
+            const totalItems = report.summary.neverVerified + report.summary.staleEntries + report.summary.stalePrices;
+
+            if (totalItems === 0) {
+              console.log('No stale entries found, skipping issue creation');
+              return;
+            }
+
+            const title = '📊 Monthly Staleness Report';
+
+            // Build issue body
+            let body = `## Staleness Report
+
+            Generated: ${report.generatedAt}
+
+            ### Summary
+
+            | Metric | Count |
+            |--------|-------|
+            | Total entries | ${report.summary.totalEntries} |
+            | Never verified | ${report.summary.neverVerified} |
+            | Stale entries (180+ days) | ${report.summary.staleEntries} |
+            | Stale prices (90+ days) | ${report.summary.stalePrices} |
+            | Discontinued | ${report.summary.discontinued} |
+
+            `;
+
+            if (report.neverVerified.length > 0) {
+              body += `### Never Verified (${report.neverVerified.length})
+
+            <details>
+            <summary>Click to expand</summary>
+
+            | File | Name | Type |
+            |------|------|------|
+            ${report.neverVerified.slice(0, 50).map(e => `| \`${e.file}\` | ${e.name} | ${e.type} |`).join('\n')}
+            ${report.neverVerified.length > 50 ? `\n*... and ${report.neverVerified.length - 50} more*` : ''}
+
+            </details>
+
+            `;
+            }
+
+            if (report.staleEntries.length > 0) {
+              body += `### Stale Entries (${report.staleEntries.length})
+
+            <details>
+            <summary>Click to expand</summary>
+
+            | File | Name | Days Since Verification |
+            |------|------|------------------------|
+            ${report.staleEntries.slice(0, 50).map(e => `| \`${e.file}\` | ${e.name} | ${e.daysSinceVerification} |`).join('\n')}
+            ${report.staleEntries.length > 50 ? `\n*... and ${report.staleEntries.length - 50} more*` : ''}
+
+            </details>
+
+            `;
+            }
+
+            if (report.stalePrices.length > 0) {
+              body += `### Stale Prices (${report.stalePrices.length})
+
+            <details>
+            <summary>Click to expand</summary>
+
+            | File | Name | Price | Days Old |
+            |------|------|-------|----------|
+            ${report.stalePrices.slice(0, 50).map(p => `| \`${p.file}\` | ${p.name} | ${p.currency} ${p.amount} | ${p.daysSincePriceCheck} |`).join('\n')}
+            ${report.stalePrices.length > 50 ? `\n*... and ${report.stalePrices.length - 50} more*` : ''}
+
+            </details>
+
+            `;
+            }
+
+            body += `---
+            *This issue is automatically created by the monthly staleness check workflow.*
+            `;
+
+            // Find existing issue
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'staleness-report'
+            });
+
+            const existingIssue = issues.find(i => i.title === title);
+
+            if (existingIssue) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssue.number,
+                body
+              });
+              console.log(`Updated existing issue #${existingIssue.number}`);
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['staleness-report']
+              });
+              console.log('Created new staleness report issue');
+            }

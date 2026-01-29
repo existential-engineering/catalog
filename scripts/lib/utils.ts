@@ -4,7 +4,14 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { parse as parseYaml } from "yaml";
+import {
+  parse as parseYaml,
+  parseDocument,
+  LineCounter,
+  Document,
+  isMap,
+  isSeq,
+} from "yaml";
 
 // =============================================================================
 // PATHS
@@ -25,6 +32,100 @@ export const OUTPUT_DIR = path.join(REPO_ROOT, "dist");
 export function loadYamlFile<T>(filePath: string): T {
   const content = fs.readFileSync(filePath, "utf-8");
   return parseYaml(content) as T;
+}
+
+/**
+ * Result of parsing YAML with position tracking
+ */
+export interface ParsedYamlWithPositions<T> {
+  /** Parsed data object */
+  data: T;
+  /** Line counter for position lookups */
+  lineCounter: LineCounter;
+  /** YAML document AST */
+  document: Document;
+  /** Raw file content */
+  content: string;
+}
+
+/**
+ * Load and parse a YAML file with position tracking for error reporting
+ */
+export function loadYamlFileWithPositions<T>(
+  filePath: string
+): ParsedYamlWithPositions<T> {
+  const content = fs.readFileSync(filePath, "utf-8");
+  const lineCounter = new LineCounter();
+  const document = parseDocument(content, { lineCounter });
+
+  return {
+    data: document.toJS() as T,
+    lineCounter,
+    document,
+    content,
+  };
+}
+
+/**
+ * Get the line number for a path in a YAML document
+ *
+ * @param document - The parsed YAML document
+ * @param lineCounter - The line counter from parsing
+ * @param path - Array of keys/indices to traverse (e.g., ["categories", 0])
+ * @returns Line number (1-indexed) or null if not found
+ */
+export function getLineForPath(
+  document: Document,
+  lineCounter: LineCounter,
+  path: (string | number)[]
+): number | null {
+  let node: unknown = document.contents;
+
+  for (const key of path) {
+    if (!node) return null;
+
+    if (isMap(node)) {
+      // For maps, get the value node for the key
+      const pair = node.items.find((item) => {
+        const keyNode = item.key;
+        if (!keyNode || typeof keyNode !== "object") return false;
+        const keyObj = keyNode as { value?: unknown };
+        return keyObj.value === key;
+      });
+      node = pair?.value;
+    } else if (isSeq(node) && typeof key === "number") {
+      // For sequences, get the item at index
+      node = node.items[key];
+    } else {
+      return null;
+    }
+  }
+
+  // Get the range from the node
+  if (node && typeof node === "object" && node !== null) {
+    const nodeWithRange = node as { range?: [number, number, number] };
+    if (nodeWithRange.range) {
+      const pos = lineCounter.linePos(nodeWithRange.range[0]);
+      return pos.line;
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Parse a Zod error path string into an array of keys/indices
+ *
+ * @param pathStr - Path string like "categories.0" or "manufacturer"
+ * @returns Array of keys/indices like ["categories", 0]
+ */
+export function parseErrorPath(pathStr: string): (string | number)[] {
+  if (!pathStr) return [];
+
+  return pathStr.split(".").map((part) => {
+    const num = parseInt(part, 10);
+    return isNaN(num) ? part : num;
+  });
 }
 
 /**
