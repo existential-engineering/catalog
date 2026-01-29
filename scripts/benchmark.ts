@@ -51,7 +51,6 @@ interface BenchmarkReport {
 // =============================================================================
 
 function benchmark(
-  db: Database.Database,
   name: string,
   fn: () => void
 ): BenchmarkResult {
@@ -190,53 +189,53 @@ function runBenchmarks(): BenchmarkReport {
   // Run benchmarks
   const benchmarks: BenchmarkResult[] = [
     // FTS
-    benchmark(db, "FTS: simple term (synth)", () => {
+    benchmark("FTS: simple term (synth)", () => {
       stmts.ftsSimple.all("synth");
     }),
-    benchmark(db, "FTS: manufacturer name", () => {
+    benchmark("FTS: manufacturer name", () => {
       stmts.ftsManufacturer.all("native instruments");
     }),
-    benchmark(db, "FTS: hardware search", () => {
+    benchmark("FTS: hardware search", () => {
       stmts.ftsHardware.all("audio interface");
     }),
 
     // Lookups
-    benchmark(db, "Lookup: software by ID", () => {
+    benchmark("Lookup: software by ID", () => {
       stmts.softwareById.get(sampleSoftwareId);
     }),
-    benchmark(db, "Lookup: software by manufacturer", () => {
+    benchmark("Lookup: software by manufacturer", () => {
       stmts.softwareByManufacturer.all(sampleManufacturerId);
     }),
-    benchmark(db, "Lookup: manufacturer by name (LIKE)", () => {
+    benchmark("Lookup: manufacturer by name (LIKE)", () => {
       stmts.manufacturerByName.all("Native%");
     }),
 
     // Joins
-    benchmark(db, "Join: software + manufacturer", () => {
+    benchmark("Join: software + manufacturer", () => {
       stmts.softwareWithManufacturer.all();
     }),
-    benchmark(db, "Join: hardware + manufacturer", () => {
+    benchmark("Join: hardware + manufacturer", () => {
       stmts.hardwareWithManufacturer.all();
     }),
 
     // Pagination
-    benchmark(db, "Pagination: page 1 (offset 0)", () => {
+    benchmark("Pagination: page 1 (offset 0)", () => {
       stmts.paginationPage1.all();
     }),
-    benchmark(db, "Pagination: page 5 (offset 80)", () => {
+    benchmark("Pagination: page 5 (offset 80)", () => {
       stmts.paginationPage5.all();
     }),
 
     // Aggregations
-    benchmark(db, "Aggregate: category counts", () => {
+    benchmark("Aggregate: category counts", () => {
       stmts.categoryCounts.all();
     }),
-    benchmark(db, "Aggregate: format counts", () => {
+    benchmark("Aggregate: format counts", () => {
       stmts.formatCounts.all();
     }),
 
     // Complex
-    benchmark(db, "Complex: software by category (join)", () => {
+    benchmark("Complex: software by category (join)", () => {
       stmts.softwareByCategory.all("synthesizer");
     }),
   ];

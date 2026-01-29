@@ -15,7 +15,7 @@
 import path from "node:path";
 import { loadYamlFile, getYamlFiles, DATA_DIR } from "./lib/utils.js";
 import type { Software } from "./lib/types.js";
-import { validateIdentifier, getKnownFormats } from "./lib/identifier-validation.js";
+import { validateIdentifier } from "./lib/identifier-validation.js";
 
 // =============================================================================
 // TYPES

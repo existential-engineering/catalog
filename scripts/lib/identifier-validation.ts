@@ -29,7 +29,7 @@ const IDENTIFIER_PATTERNS: Record<string, RegExp> = {
   // CLAP uses reverse domain notation
   clap: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z][a-zA-Z0-9-]*){1,}$/,
 
-  // AAX uses PACE iLok manufacturer codes (4 uppercase letters)
+  // AAX uses PACE iLok manufacturer codes (4 alphanumeric characters)
   aax: /^[A-Za-z0-9]{4}$/,
 
   // LV2 uses URIs

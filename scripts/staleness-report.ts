@@ -75,6 +75,9 @@ interface StalenessReport {
 
 function daysSince(dateStr: string): number {
   const date = new Date(dateStr);
+  if (isNaN(date.getTime())) {
+    return -1; // Invalid date
+  }
   const now = new Date();
   return Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
 }

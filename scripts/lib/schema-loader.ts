@@ -124,7 +124,12 @@ export function loadSlugIndex(): SlugIndex {
   }
 
   const content = fs.readFileSync(indexPath, "utf-8");
-  cachedSlugIndex = JSON.parse(content) as SlugIndex;
+  try {
+    cachedSlugIndex = JSON.parse(content) as SlugIndex;
+  } catch (error) {
+    console.error(`Warning: Failed to parse .slug-index.json: ${error instanceof Error ? error.message : error}`);
+    cachedSlugIndex = {};
+  }
   return cachedSlugIndex;
 }
 

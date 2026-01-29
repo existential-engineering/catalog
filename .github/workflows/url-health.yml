@@ -51,9 +51,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .github/url-cache.json
-          git diff --staged --quiet || git commit -m "chore: update URL cache"
-          git push
+          # Only add cache file if it exists (first run may not create it)
+          if [ -f .github/url-cache.json ]; then
+            git add .github/url-cache.json
+            git diff --staged --quiet || git commit -m "chore: update URL cache"
+            git push || echo "Push failed - may need manual intervention"
+          fi
 
       - name: Create or update issue for broken URLs
         if: steps.urls.outcome == 'failure'

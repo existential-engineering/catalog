@@ -27,11 +27,11 @@ A required field is missing from the entry.
 
 **Required fields by type:**
 
-| Entry Type   | Required Fields                                                  |
-| ------------ | ---------------------------------------------------------------- |
-| Manufacturer | `slug`, `name`, `website`                                        |
-| Software     | `slug`, `name`, `manufacturer`, `primaryCategory`, `platforms`   |
-| Hardware     | `slug`, `name`, `manufacturer`, `primaryCategory`, `description` |
+| Entry Type   | Required Fields                | Recommended Fields                              |
+| ------------ | ------------------------------ | ----------------------------------------------- |
+| Manufacturer | `slug`, `name`                 | `website`                                       |
+| Software     | `slug`, `name`, `manufacturer` | `primaryCategory`, `platforms`, `identifiers`   |
+| Hardware     | `slug`, `name`, `manufacturer` | `primaryCategory`, `description`                |
 
 **Fix:** Add the missing field to your YAML file.
 

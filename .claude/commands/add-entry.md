@@ -28,28 +28,32 @@ Prompt the user for relevant fields based on entry type. Reference `schema/CONTE
 
 **For Manufacturer:**
 
-- **Required:** name, website
+- **Required:** name
+- **Recommended:** website
 - **Optional:** companyName (if different from name), parentCompany, description, searchTerms
 - **Auto-generated:** slug (from name: lowercase, spaces to hyphens, remove special characters)
 
 **For Software:**
 
-- **Required:** name, manufacturer (slug reference), primaryCategory, platforms, identifiers
-- Reference `schema/CONTEXT.md` for valid categories - suggest relevant ones based on the software type
+- **Required:** name, manufacturer (slug reference)
 - **Recommended:**
+  - primaryCategory (from CONTEXT.md categories)
+  - platforms (from CONTEXT.md platforms section)
+  - identifiers (plugin bundle IDs, e.g., `vst3: com.vendor.product.vst3`, `au: vendor: product`)
   - categories (additional categories from CONTEXT.md)
   - formats (from CONTEXT.md formats section)
-- platforms must be from CONTEXT.md platforms section
-- identifiers are plugin bundle IDs, e.g., `vst3: com.vendor.product.vst3`, `au: vendor: product`
+- Reference `schema/CONTEXT.md` for valid categories - suggest relevant ones based on the software type
 - **Optional:** website, description, prices, links, releaseDate, searchTerms
 - **Auto-generated:** slug (from name)
 
 **For Hardware:**
 
-- **Required:** name, manufacturer (slug reference), primaryCategory, description
-- Reference `schema/CONTEXT.md` for valid categories - suggest relevant ones based on the hardware type
+- **Required:** name, manufacturer (slug reference)
 - **Recommended:**
+  - primaryCategory (from CONTEXT.md categories)
+  - description
   - categories (additional categories from CONTEXT.md)
+- Reference `schema/CONTEXT.md` for valid categories - suggest relevant ones based on the hardware type
 - **Optional:** website, prices, io (I/O ports), links, releaseDate, searchTerms
 - **Auto-generated:** slug (from name)
 
