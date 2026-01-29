@@ -1,0 +1,166 @@
+name: URL Health Check
+
+on:
+  schedule:
+    # Run weekly on Monday at 6 AM UTC
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      force_recheck:
+        description: "Force recheck all URLs (ignore cache)"
+        required: false
+        default: "false"
+        type: boolean
+
+jobs:
+  check-urls:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run URL validation
+        id: urls
+        continue-on-error: true
+        run: |
+          if [ "${{ inputs.force_recheck }}" = "true" ]; then
+            pnpm validate-urls --update-cache --ignore-cache
+          else
+            pnpm validate-urls --use-cache --update-cache
+          fi
+
+      - name: Commit cache updates
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Only add cache file if it exists (first run may not create it)
+          if [ -f .github/url-cache.json ]; then
+            git add .github/url-cache.json
+            git diff --staged --quiet || git commit -m "chore: update URL cache"
+            git push || echo "Push failed - may need manual intervention"
+          fi
+
+      - name: Create or update issue for broken URLs
+        if: steps.urls.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Read the URL cache to get broken URLs
+            let brokenUrls = [];
+            try {
+              const cache = JSON.parse(fs.readFileSync('.github/url-cache.json', 'utf-8'));
+              for (const [url, entry] of Object.entries(cache.entries)) {
+                if (entry.status === 'error' || (typeof entry.status === 'number' && entry.status >= 400)) {
+                  brokenUrls.push({
+                    url,
+                    status: entry.status,
+                    errorMessage: entry.errorMessage || `HTTP ${entry.status}`,
+                    lastChecked: entry.lastChecked
+                  });
+                }
+              }
+            } catch (e) {
+              console.log('Could not read URL cache:', e.message);
+            }
+
+            if (brokenUrls.length === 0) {
+              console.log('No broken URLs found in cache');
+              return;
+            }
+
+            const title = '🔗 Broken URLs detected';
+            const body = `## Broken URLs Report
+
+            The weekly URL health check found ${brokenUrls.length} broken URL(s):
+
+            | URL | Status | Last Checked |
+            |-----|--------|--------------|
+            ${brokenUrls.map(u => `| ${u.url} | ${u.status} | ${u.lastChecked} |`).join('\n')}
+
+            ### Next Steps
+
+            1. Check if these URLs are temporarily down
+            2. Update entries with corrected URLs
+            3. Remove entries for discontinued products
+
+            ---
+            *This issue was automatically created by the URL Health Check workflow.*
+            `;
+
+            // Find existing issue
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'broken-urls'
+            });
+
+            const existingIssue = issues.find(i => i.title === title);
+
+            if (existingIssue) {
+              // Update existing issue
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssue.number,
+                body
+              });
+              console.log(`Updated existing issue #${existingIssue.number}`);
+            } else {
+              // Create new issue
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['broken-urls']
+              });
+              console.log('Created new issue for broken URLs');
+            }
+
+      - name: Close issue if no broken URLs
+        if: steps.urls.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = '🔗 Broken URLs detected';
+
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'broken-urls'
+            });
+
+            const existingIssue = issues.find(i => i.title === title);
+
+            if (existingIssue) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssue.number,
+                state: 'closed',
+                body: existingIssue.body + '\n\n---\n✅ All URLs are now valid. Closing this issue.'
+              });
+              console.log(`Closed issue #${existingIssue.number}`);
+            }

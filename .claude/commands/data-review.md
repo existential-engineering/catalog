@@ -14,7 +14,17 @@ thinking to analyze every detail.
 3. Run `git diff main...HEAD --stat` to get an overview of all changed files
 4. Run `git diff main...HEAD` to get the full diff
 5. Run `git log main..HEAD --oneline` to see all commits on this branch
-6. Read the schema files for reference: `schema/categories.yaml`, `schema/formats.yaml`, `schema/platforms.yaml`, `schema/locales.yaml`
+6. Read `schema/CONTEXT.md` for all valid categories, formats, platforms, and locales (auto-generated reference)
+
+### Phase 1b: Run Automated Quality Checks
+
+Run these validation scripts to gather automated analysis:
+
+1. `pnpm validate` - Schema validation with **line numbers and error codes** (e.g., `E104:12: Invalid category`)
+2. `pnpm identifier-coverage --json` - Check identifier coverage for software entries
+3. `pnpm staleness-report --json` - Check for entries missing verification metadata
+
+Parse the JSON output from these tools to incorporate into the agent analysis below.
 
 ### Phase 2: Parallel Deep Analysis (use 4 Opus agents concurrently)
 
@@ -22,14 +32,20 @@ Launch these agents in parallel, each performing deep analysis with extended thi
 
 **Agent 1 - Schema & Data Quality:**
 
+Start by reviewing the output from `pnpm validate` - errors include:
+
+- Error codes (E1xx-E4xx) with documentation links
+- Line numbers pointing to exact location of issues
+- Suggested fixes for common errors
+
+Then perform deeper analysis:
+
 - Read each modified YAML file in full
 - Verify all required fields are present:
   - Manufacturers: slug, name, website
   - Software: slug, name, manufacturer, primaryCategory, platforms, identifiers
   - Hardware: slug, name, manufacturer, primaryCategory, description
-- Verify categories reference valid values from `schema/categories.yaml`
-- Verify formats reference valid values from `schema/formats.yaml`
-- Verify platforms reference valid values from `schema/platforms.yaml`
+- Cross-reference with `schema/CONTEXT.md` for valid categories, formats, platforms
 - Check that manufacturer references resolve to existing files in `data/manufacturers/`
 - Verify slug matches the filename (e.g., `serum.yaml` should have `slug: serum`)
 - Check description quality (too short, generic, or missing?)
@@ -37,6 +53,12 @@ Launch these agents in parallel, each performing deep analysis with extended thi
 - Check that `id` field is NOT included in new entries (IDs are assigned by CI)
 - Verify prices have both `amount` (number) and `currency` (string)
 - Check links have `type` and `url` at minimum
+
+**Identifier & Staleness Analysis** (from automated tools):
+
+- Review `identifier-coverage` output for new software entries missing plugin identifiers
+- Check if new entries have `verification` metadata (lastVerified, status)
+- Flag high-priority missing identifiers (AU/VST3/AAX formats without bundle IDs)
 
 **Agent 2 - Slug & ID Integrity:**
 
@@ -76,9 +98,11 @@ After all parallel agents complete:
    - **WARNING**: Missing recommended fields, description quality issues, translation gaps
    - **INFO**: Formatting suggestions, optional field additions, structural improvements
 4. For each finding, provide:
-   - File path reference
+   - File path with line number (e.g., `data/software/serum.yaml:16`)
+   - Error code if from automated validation (e.g., `E104`, `E200`)
    - Clear description of the issue
    - Suggested fix or resolution
+   - Link to docs if applicable (from `docs/VALIDATION_ERRORS.md`)
 
 ### Phase 4: Holistic Check
 
@@ -105,13 +129,25 @@ Present findings in this structure:
 - Modified entries: X
 
 ### BLOCKING (must fix before merge)
-[numbered list with file references]
+
+1. `data/software/example.yaml:12` - **E104**: Invalid category 'synth'. Did you mean 'synthesizer'?
+   - Docs: docs/VALIDATION_ERRORS.md#e104-invalid-category
+
+[numbered list with file:line references and error codes]
 
 ### WARNING (should fix)
+
 [numbered list with file references]
 
 ### INFO (suggestions)
+
 [numbered list with file references]
+
+### Identifier Coverage (new software)
+
+| Entry | AU | VST3 | AAX | CLAP | Status |
+|-------|-----|------|-----|------|--------|
+| example | ✓ | ✓ | - | - | Partial |
 
 ### Translation Coverage
 | Entry | de | es | fr | ja | ko | pt-BR | zh |
