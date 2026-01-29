@@ -245,7 +245,7 @@ export function createDetailedError(
     autoFix?: AutoFixSuggestion;
   }
 ): DetailedError {
-  return {
+  return DetailedErrorSchema.parse({
     code,
     message,
     path,
@@ -253,7 +253,7 @@ export function createDetailedError(
     column: options?.column,
     docsUrl: getDocsUrl(code),
     autoFix: options?.autoFix,
-  };
+  });
 }
 
 /**

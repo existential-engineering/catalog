@@ -318,7 +318,7 @@ url: https://www.youtube.com/watch?v=abc123
 
 ### E302: Unclosed Code Block
 
-A markdown code block (triple backticks) is not properly closed.
+A Markdown code block (triple backticks) is not properly closed.
 
 **Example:**
 
@@ -361,12 +361,12 @@ A plugin identifier doesn't match the expected format.
 
 **Expected formats:**
 
-| Format | Pattern                         | Example                        |
-| ------ | ------------------------------- | ------------------------------ |
-| `au`   | Reverse domain                  | `com.xferrecords.Serum`        |
-| `vst3` | Reverse domain                  | `com.native-instruments.Massive` |
-| `aax`  | 4-letter PACE code              | `XfRc`                         |
-| `clap` | Reverse domain                  | `com.u-he.Diva`                |
+| Format | Pattern            | Example                            |
+| ------ | ------------------ | ---------------------------------- |
+| `au`   | Reverse domain     | `com.xferrecords.Serum`            |
+| `vst3` | Reverse domain     | `com.native-instruments.Massive`   |
+| `aax`  | 4-letter PACE code | `XfRc`                             |
+| `clap` | Reverse domain     | `com.u-he.Diva`                    |
 
 **Fix:** Update the identifier to match the expected format for that plugin type.
 
