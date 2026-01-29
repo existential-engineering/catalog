@@ -66,11 +66,13 @@ export const StalenessReportSchema = z.object({
     neverVerified: z.number(),
     staleEntries: z.number(),
     stalePrices: z.number(),
+    neverPriced: z.number(),
     discontinued: z.number(),
   }),
   neverVerified: z.array(StaleEntrySchema),
   staleEntries: z.array(StaleEntrySchema),
   stalePrices: z.array(StalePriceSchema),
+  neverPriced: z.array(StalePriceSchema),
   discontinued: z.array(StaleEntrySchema),
 });
 export type StalenessReport = z.infer<typeof StalenessReportSchema>;
@@ -145,6 +147,15 @@ function processEntry(
             currency: price.currency,
           });
         }
+      } else {
+        // Price has no asOf date - track as never priced
+        report.neverPriced.push({
+          file: relativePath,
+          name: data.name,
+          type,
+          amount: price.amount,
+          currency: price.currency,
+        });
       }
     }
   }
@@ -166,11 +177,13 @@ function generateReport(): StalenessReport {
       neverVerified: 0,
       staleEntries: 0,
       stalePrices: 0,
+      neverPriced: 0,
       discontinued: 0,
     },
     neverVerified: [],
     staleEntries: [],
     stalePrices: [],
+    neverPriced: [],
     discontinued: [],
   };
 
@@ -194,6 +207,7 @@ function generateReport(): StalenessReport {
   report.summary.neverVerified = report.neverVerified.length;
   report.summary.staleEntries = report.staleEntries.length;
   report.summary.stalePrices = report.stalePrices.length;
+  report.summary.neverPriced = report.neverPriced.length;
   report.summary.discontinued = report.discontinued.length;
 
   return report;
@@ -213,6 +227,7 @@ function printConsoleReport(report: StalenessReport): void {
   console.log(`  Never verified:   ${report.summary.neverVerified}`);
   console.log(`  Stale entries:    ${report.summary.staleEntries}`);
   console.log(`  Stale prices:     ${report.summary.stalePrices}`);
+  console.log(`  Never priced:     ${report.summary.neverPriced}`);
   console.log(`  Discontinued:     ${report.summary.discontinued}`);
   console.log();
 
@@ -254,6 +269,20 @@ function printConsoleReport(report: StalenessReport): void {
     }
     if (report.stalePrices.length > 10) {
       console.log(`  ... and ${report.stalePrices.length - 10} more`);
+    }
+    console.log();
+  }
+
+  // Never priced (prices without asOf date)
+  if (report.neverPriced.length > 0) {
+    console.log("💵 Never Priced (missing asOf date)");
+    console.log("─".repeat(40));
+    for (const price of report.neverPriced.slice(0, 10)) {
+      console.log(`  ${price.file}`);
+      console.log(`    ${price.name} - ${price.currency} ${price.amount}`);
+    }
+    if (report.neverPriced.length > 10) {
+      console.log(`  ... and ${report.neverPriced.length - 10} more`);
     }
     console.log();
   }

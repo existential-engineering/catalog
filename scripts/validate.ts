@@ -87,7 +87,12 @@ marked.setOptions({
  * Determine the appropriate error code from a Zod issue
  */
 function getErrorCodeFromZodIssue(
-  issue: { code: string; message: string; path: readonly (string | number | symbol)[] }
+  issue: {
+    code: string;
+    message: string;
+    path: readonly (string | number | symbol)[];
+    received?: unknown;
+  }
 ): ValidationErrorCode {
   const path = issue.path.join(".");
   const message = issue.message.toLowerCase();
@@ -142,13 +147,12 @@ function getErrorCodeFromZodIssue(
     return ValidationErrorCode.E300_INVALID_MARKDOWN;
   }
 
-  // Missing required field
-  if (issue.code === "invalid_type" && message.includes("required")) {
-    return ValidationErrorCode.E100_MISSING_REQUIRED_FIELD;
-  }
-
-  // Type errors
+  // Missing required field (Zod v4: received === "undefined", fallback: message contains "required")
   if (issue.code === "invalid_type") {
+    if (issue.received === "undefined" || message.includes("required")) {
+      return ValidationErrorCode.E100_MISSING_REQUIRED_FIELD;
+    }
+    // Other type errors
     return ValidationErrorCode.E101_INVALID_FIELD_TYPE;
   }
 
@@ -229,6 +233,10 @@ const MarkdownSchema = z
 const PriceSchema = z.object({
   amount: z.number(),
   currency: z.string(),
+  /** ISO date when price was last verified */
+  asOf: z.string().optional(),
+  /** Source of price (e.g., "official-website", "retailer") */
+  source: z.string().optional(),
 });
 
 // Canonical YouTube URL format: https://www.youtube.com/watch?v={videoId}

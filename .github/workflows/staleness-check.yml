@@ -44,6 +44,9 @@ jobs:
             const fs = require('fs');
             const report = JSON.parse(fs.readFileSync('staleness-report.json', 'utf-8'));
 
+            // Helper to strip leading whitespace from template literals
+            const dedent = (str) => str.replace(/^[ \t]+/gm, '');
+
             const totalItems = report.summary.neverVerified + report.summary.staleEntries + report.summary.stalePrices;
             const title = '📊 Monthly Staleness Report';
 
@@ -80,7 +83,7 @@ jobs:
             }
 
             // Build issue body for stale items
-            let body = `## Staleness Report
+            let body = dedent(`## Staleness Report
 
             Generated: ${report.generatedAt}
 
@@ -94,59 +97,59 @@ jobs:
             | Stale prices (90+ days) | ${report.summary.stalePrices} |
             | Discontinued | ${report.summary.discontinued} |
 
-            `;
+            `);
 
             if (report.neverVerified.length > 0) {
-              body += `### Never Verified (${report.neverVerified.length})
+              body += dedent(`### Never Verified (${report.neverVerified.length})
 
-            <details>
-            <summary>Click to expand</summary>
+              <details>
+              <summary>Click to expand</summary>
 
-            | File | Name | Type |
-            |------|------|------|
-            ${report.neverVerified.slice(0, 50).map(e => `| \`${e.file}\` | ${e.name} | ${e.type} |`).join('\n')}
-            ${report.neverVerified.length > 50 ? `\n*... and ${report.neverVerified.length - 50} more*` : ''}
+              | File | Name | Type |
+              |------|------|------|
+              ${report.neverVerified.slice(0, 50).map(e => `| \`${e.file}\` | ${e.name} | ${e.type} |`).join('\n')}
+              ${report.neverVerified.length > 50 ? `\n*... and ${report.neverVerified.length - 50} more*` : ''}
 
-            </details>
+              </details>
 
-            `;
+              `);
             }
 
             if (report.staleEntries.length > 0) {
-              body += `### Stale Entries (${report.staleEntries.length})
+              body += dedent(`### Stale Entries (${report.staleEntries.length})
 
-            <details>
-            <summary>Click to expand</summary>
+              <details>
+              <summary>Click to expand</summary>
 
-            | File | Name | Days Since Verification |
-            |------|------|------------------------|
-            ${report.staleEntries.slice(0, 50).map(e => `| \`${e.file}\` | ${e.name} | ${e.daysSinceVerification} |`).join('\n')}
-            ${report.staleEntries.length > 50 ? `\n*... and ${report.staleEntries.length - 50} more*` : ''}
+              | File | Name | Days Since Verification |
+              |------|------|------------------------|
+              ${report.staleEntries.slice(0, 50).map(e => `| \`${e.file}\` | ${e.name} | ${e.daysSinceVerification} |`).join('\n')}
+              ${report.staleEntries.length > 50 ? `\n*... and ${report.staleEntries.length - 50} more*` : ''}
 
-            </details>
+              </details>
 
-            `;
+              `);
             }
 
             if (report.stalePrices.length > 0) {
-              body += `### Stale Prices (${report.stalePrices.length})
+              body += dedent(`### Stale Prices (${report.stalePrices.length})
 
-            <details>
-            <summary>Click to expand</summary>
+              <details>
+              <summary>Click to expand</summary>
 
-            | File | Name | Price | Days Old |
-            |------|------|-------|----------|
-            ${report.stalePrices.slice(0, 50).map(p => `| \`${p.file}\` | ${p.name} | ${p.currency} ${p.amount} | ${p.daysSincePriceCheck} |`).join('\n')}
-            ${report.stalePrices.length > 50 ? `\n*... and ${report.stalePrices.length - 50} more*` : ''}
+              | File | Name | Price | Days Old |
+              |------|------|-------|----------|
+              ${report.stalePrices.slice(0, 50).map(p => `| \`${p.file}\` | ${p.name} | ${p.currency} ${p.amount} | ${p.daysSincePriceCheck} |`).join('\n')}
+              ${report.stalePrices.length > 50 ? `\n*... and ${report.stalePrices.length - 50} more*` : ''}
 
-            </details>
+              </details>
 
-            `;
+              `);
             }
 
-            body += `---
+            body += dedent(`---
             *This issue is automatically created by the monthly staleness check workflow.*
-            `;
+            `);
 
             // Create or update the staleness issue
             if (existingIssue) {
