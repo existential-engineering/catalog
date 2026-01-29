@@ -178,6 +178,27 @@ Slug in file: slug: serum-vst   # Should be "serum"
 
 ---
 
+### E110: YAML Syntax Error
+
+The YAML file has a syntax error and cannot be parsed.
+
+**Common causes:**
+
+- Incorrect indentation (YAML requires consistent spaces, not tabs)
+- Missing colons after keys
+- Unquoted special characters
+- Unclosed quotes or brackets
+
+**Example:**
+
+```text
+E110:3: bad indentation of a mapping entry
+```
+
+**Fix:** Check the YAML syntax at the indicated line number. Use a YAML validator or editor with YAML support to identify the exact issue.
+
+---
+
 ### E199: Validation Error
 
 A generic validation error that doesn't fall into a more specific category.

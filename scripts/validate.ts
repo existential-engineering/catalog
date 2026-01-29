@@ -234,7 +234,7 @@ const PriceSchema = z.object({
   amount: z.number(),
   currency: z.string(),
   /** ISO date when price was last verified */
-  asOf: z.string().optional(),
+  asOf: z.iso.date().optional(),
   /** Source of price (e.g., "official-website", "retailer") */
   source: z.string().optional(),
 });
@@ -567,6 +567,25 @@ function validateFile(
   try {
     // Load YAML with position tracking for line numbers
     const { data: rawData, document, lineCounter } = loadYamlFileWithPositions(filePath);
+
+    // Check for YAML parse errors before proceeding with validation
+    if (document.errors && document.errors.length > 0) {
+      const relativeFile = path.relative(process.cwd(), filePath);
+      const errorCode = ValidationErrorCode.E110_YAML_SYNTAX_ERROR;
+      const details: ValidationErrorDetail[] = document.errors.map((err) => ({
+        code: errorCode,
+        message: err.message,
+        path: "(yaml)",
+        line: err.linePos?.[0]?.line,
+        docsUrl: getDocsUrl(errorCode),
+      }));
+      const errors = document.errors.map((err) => {
+        const lineInfo = err.linePos?.[0]?.line ? `:${err.linePos[0].line}` : "";
+        return `yaml${lineInfo}: ${err.message}`;
+      });
+      return { file: relativeFile, errors, details };
+    }
+
     const data = rawData as DataWithOptionalFields;
 
     // Validate against Zod schema

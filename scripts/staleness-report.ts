@@ -44,6 +44,15 @@ export const StaleEntrySchema = z.object({
 });
 export type StaleEntry = z.infer<typeof StaleEntrySchema>;
 
+export const MalformedDateEntrySchema = z.object({
+  file: z.string(),
+  name: z.string(),
+  type: EntryTypeSchema,
+  field: z.string(),
+  invalidValue: z.string(),
+});
+export type MalformedDateEntry = z.infer<typeof MalformedDateEntrySchema>;
+
 export const StalePriceSchema = z.object({
   file: z.string(),
   name: z.string(),
@@ -68,12 +77,14 @@ export const StalenessReportSchema = z.object({
     stalePrices: z.number(),
     neverPriced: z.number(),
     discontinued: z.number(),
+    malformedDates: z.number(),
   }),
   neverVerified: z.array(StaleEntrySchema),
   staleEntries: z.array(StaleEntrySchema),
   stalePrices: z.array(StalePriceSchema),
   neverPriced: z.array(StalePriceSchema),
   discontinued: z.array(StaleEntrySchema),
+  malformedDates: z.array(MalformedDateEntrySchema),
 });
 export type StalenessReport = z.infer<typeof StalenessReportSchema>;
 
@@ -108,7 +119,16 @@ function processEntry(
     });
   } else {
     const days = daysSince(data.verification.lastVerified);
-    if (days > ENTRY_STALE_DAYS) {
+    if (days === -1) {
+      // Malformed date - track separately
+      report.malformedDates.push({
+        file: relativePath,
+        name: data.name,
+        type,
+        field: "verification.lastVerified",
+        invalidValue: data.verification.lastVerified,
+      });
+    } else if (days > ENTRY_STALE_DAYS) {
       report.staleEntries.push({
         file: relativePath,
         name: data.name,
@@ -136,7 +156,16 @@ function processEntry(
     for (const price of data.prices) {
       if (price.asOf) {
         const days = daysSince(price.asOf);
-        if (days > PRICE_STALE_DAYS) {
+        if (days === -1) {
+          // Malformed date - track separately
+          report.malformedDates.push({
+            file: relativePath,
+            name: data.name,
+            type,
+            field: "prices[].asOf",
+            invalidValue: price.asOf,
+          });
+        } else if (days > PRICE_STALE_DAYS) {
           report.stalePrices.push({
             file: relativePath,
             name: data.name,
@@ -179,12 +208,14 @@ function generateReport(): StalenessReport {
       stalePrices: 0,
       neverPriced: 0,
       discontinued: 0,
+      malformedDates: 0,
     },
     neverVerified: [],
     staleEntries: [],
     stalePrices: [],
     neverPriced: [],
     discontinued: [],
+    malformedDates: [],
   };
 
   // Process software entries
@@ -209,6 +240,7 @@ function generateReport(): StalenessReport {
   report.summary.stalePrices = report.stalePrices.length;
   report.summary.neverPriced = report.neverPriced.length;
   report.summary.discontinued = report.discontinued.length;
+  report.summary.malformedDates = report.malformedDates.length;
 
   return report;
 }
@@ -229,6 +261,7 @@ function printConsoleReport(report: StalenessReport): void {
   console.log(`  Stale prices:     ${report.summary.stalePrices}`);
   console.log(`  Never priced:     ${report.summary.neverPriced}`);
   console.log(`  Discontinued:     ${report.summary.discontinued}`);
+  console.log(`  Malformed dates:  ${report.summary.malformedDates}`);
   console.log();
 
   // Never verified
@@ -294,6 +327,20 @@ function printConsoleReport(report: StalenessReport): void {
     for (const entry of report.discontinued) {
       console.log(`  ${entry.file}`);
       console.log(`    ${entry.name} (${entry.type})`);
+    }
+    console.log();
+  }
+
+  // Malformed dates
+  if (report.malformedDates.length > 0) {
+    console.log("⚠️  Malformed Dates (invalid date format)");
+    console.log("─".repeat(40));
+    for (const entry of report.malformedDates.slice(0, 10)) {
+      console.log(`  ${entry.file}`);
+      console.log(`    ${entry.name} - ${entry.field}: "${entry.invalidValue}"`);
+    }
+    if (report.malformedDates.length > 10) {
+      console.log(`  ... and ${report.malformedDates.length - 10} more`);
     }
     console.log();
   }

@@ -32,6 +32,7 @@ export enum ValidationErrorCode {
   E107_INVALID_LOCALE = "E107",
   E108_INVALID_DATE_FORMAT = "E108",
   E109_SLUG_FILENAME_MISMATCH = "E109",
+  E110_YAML_SYNTAX_ERROR = "E110",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
@@ -151,6 +152,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E109_SLUG_FILENAME_MISMATCH]: {
     title: "Slug does not match filename",
     anchor: "e109-slug-filename-mismatch",
+  },
+  [ValidationErrorCode.E110_YAML_SYNTAX_ERROR]: {
+    title: "YAML syntax error",
+    anchor: "e110-yaml-syntax-error",
   },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",

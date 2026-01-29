@@ -359,7 +359,7 @@ Supported operating systems:
 Approved locales for translations:
 
 | Code | Name | Native Name |
-|------|------|-------------|
+| ------ | ------ | ------------- |
 | `de` | German | Deutsch |
 | `es` | Spanish | Español |
 | `fr` | French | Français |
