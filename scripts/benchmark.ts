@@ -179,12 +179,18 @@ function runBenchmarks(): BenchmarkReport {
     .prepare("SELECT id FROM manufacturers LIMIT 1")
     .get() as { id: string } | undefined;
   const sampleManufacturerId = sampleManufacturer?.id || "";
+  if (!sampleManufacturer) {
+    console.warn("Warning: No manufacturers found - lookup benchmarks will query empty results");
+  }
 
   // Get a sample software ID
   const sampleSoftware = db
     .prepare("SELECT id FROM software LIMIT 1")
     .get() as { id: string } | undefined;
   const sampleSoftwareId = sampleSoftware?.id || "";
+  if (!sampleSoftware) {
+    console.warn("Warning: No software found - lookup benchmarks will query empty results");
+  }
 
   // Run benchmarks
   const benchmarks: BenchmarkResult[] = [

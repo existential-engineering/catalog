@@ -14,8 +14,9 @@
  */
 
 import path from "node:path";
+import { z } from "zod";
 import { loadYamlFile, getYamlFiles, DATA_DIR } from "./lib/utils.js";
-import type { Software, Hardware, Price } from "./lib/types.js";
+import type { Software, Hardware } from "./lib/types.js";
 
 // =============================================================================
 // CONFIGURATION
@@ -28,46 +29,51 @@ const ENTRY_STALE_DAYS = 180;
 const PRICE_STALE_DAYS = 90;
 
 // =============================================================================
-// TYPES
+// SCHEMAS
 // =============================================================================
 
-interface StaleEntry {
-  file: string;
-  name: string;
-  type: "software" | "hardware";
-  lastVerified?: string;
-  daysSinceVerification?: number;
-  status?: string;
-}
+const EntryTypeSchema = z.enum(["software", "hardware"]);
 
-interface StalePrice {
-  file: string;
-  name: string;
-  type: "software" | "hardware";
-  priceAsOf?: string;
-  daysSincePriceCheck?: number;
-  amount: number;
-  currency: string;
-}
+export const StaleEntrySchema = z.object({
+  file: z.string(),
+  name: z.string(),
+  type: EntryTypeSchema,
+  lastVerified: z.string().optional(),
+  daysSinceVerification: z.number().optional(),
+  status: z.string().optional(),
+});
+export type StaleEntry = z.infer<typeof StaleEntrySchema>;
 
-interface StalenessReport {
-  generatedAt: string;
-  thresholds: {
-    entryDays: number;
-    priceDays: number;
-  };
-  summary: {
-    totalEntries: number;
-    neverVerified: number;
-    staleEntries: number;
-    stalePrices: number;
-    discontinued: number;
-  };
-  neverVerified: StaleEntry[];
-  staleEntries: StaleEntry[];
-  stalePrices: StalePrice[];
-  discontinued: StaleEntry[];
-}
+export const StalePriceSchema = z.object({
+  file: z.string(),
+  name: z.string(),
+  type: EntryTypeSchema,
+  priceAsOf: z.string().optional(),
+  daysSincePriceCheck: z.number().optional(),
+  amount: z.number(),
+  currency: z.string(),
+});
+export type StalePrice = z.infer<typeof StalePriceSchema>;
+
+export const StalenessReportSchema = z.object({
+  generatedAt: z.string(),
+  thresholds: z.object({
+    entryDays: z.number(),
+    priceDays: z.number(),
+  }),
+  summary: z.object({
+    totalEntries: z.number(),
+    neverVerified: z.number(),
+    staleEntries: z.number(),
+    stalePrices: z.number(),
+    discontinued: z.number(),
+  }),
+  neverVerified: z.array(StaleEntrySchema),
+  staleEntries: z.array(StaleEntrySchema),
+  stalePrices: z.array(StalePriceSchema),
+  discontinued: z.array(StaleEntrySchema),
+});
+export type StalenessReport = z.infer<typeof StalenessReportSchema>;
 
 // =============================================================================
 // HELPERS

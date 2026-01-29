@@ -11,14 +11,121 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { z } from "zod";
 import { loadSchemaContext, SLUG_PATTERN } from "./lib/schema-loader.js";
-import { SCHEMA_DIR } from "./lib/utils.js";
+import { SCHEMA_DIR, loadYamlFile } from "./lib/utils.js";
+
+// =============================================================================
+// CATEGORY GROUPS SCHEMA
+// =============================================================================
+
+const CategoryGroupsFileSchema = z.object({
+  groups: z.record(z.string(), z.array(z.string())),
+});
+
+interface CategoryGroupsFile {
+  groups: Record<string, string[]>;
+}
+
+// =============================================================================
+// CATEGORY GROUP LOADING & VALIDATION
+// =============================================================================
+
+/**
+ * Load category groups from YAML file and validate against canonical categories.
+ * Fails loudly if any category is unmapped or if there are orphan mappings.
+ */
+function loadAndValidateCategoryGroups(
+  categories: string[]
+): Record<string, string[]> {
+  const groupsPath = path.join(SCHEMA_DIR, "category-groups.yaml");
+
+  // Load and parse the groups file
+  const rawData = loadYamlFile<CategoryGroupsFile>(groupsPath);
+  const parseResult = CategoryGroupsFileSchema.safeParse(rawData);
+
+  if (!parseResult.success) {
+    console.error("❌ Invalid category-groups.yaml structure:");
+    for (const issue of parseResult.error.issues) {
+      console.error(`   ${issue.path.join(".")}: ${issue.message}`);
+    }
+    process.exit(1);
+  }
+
+  const { groups } = parseResult.data;
+
+  // Build a set of all categories in the groups file
+  const mappedCategories = new Set<string>();
+  const categoryToGroup = new Map<string, string>();
+
+  for (const [groupName, groupCategories] of Object.entries(groups)) {
+    for (const cat of groupCategories) {
+      if (mappedCategories.has(cat)) {
+        console.error(
+          `❌ Category "${cat}" is mapped to multiple groups: ` +
+            `"${categoryToGroup.get(cat)}" and "${groupName}"`
+        );
+        process.exit(1);
+      }
+      mappedCategories.add(cat);
+      categoryToGroup.set(cat, groupName);
+    }
+  }
+
+  // Check for unmapped categories (categories.yaml has category not in groups)
+  const canonicalSet = new Set(categories);
+  const unmappedCategories = categories.filter((c) => !mappedCategories.has(c));
+
+  if (unmappedCategories.length > 0) {
+    console.error("❌ Unmapped categories found in categories.yaml:");
+    console.error(
+      "   The following categories need to be added to category-groups.yaml:"
+    );
+    for (const cat of unmappedCategories) {
+      console.error(`   - ${cat}`);
+    }
+    process.exit(1);
+  }
+
+  // Check for orphan mappings (groups has category not in categories.yaml)
+  const orphanMappings = [...mappedCategories].filter(
+    (c) => !canonicalSet.has(c)
+  );
+
+  if (orphanMappings.length > 0) {
+    console.error("❌ Orphan mappings found in category-groups.yaml:");
+    console.error(
+      "   The following categories are mapped but don't exist in categories.yaml:"
+    );
+    for (const cat of orphanMappings) {
+      console.error(`   - ${cat} (in group "${categoryToGroup.get(cat)}")`);
+    }
+    process.exit(1);
+  }
+
+  // Return groups filtered to only include categories that exist
+  // (preserves group order from YAML file)
+  const result: Record<string, string[]> = {};
+
+  for (const [groupName, groupCategories] of Object.entries(groups)) {
+    const validCategories = groupCategories.filter((c) => canonicalSet.has(c));
+    if (validCategories.length > 0) {
+      result[groupName] = validCategories;
+    }
+  }
+
+  return result;
+}
+
+// =============================================================================
+// MAIN
+// =============================================================================
 
 function generateContext(): void {
   const context = loadSchemaContext();
 
-  // Group categories by type for better readability
-  const categoryGroups = groupCategories(context.categories);
+  // Load and validate category groups
+  const categoryGroups = loadAndValidateCategoryGroups(context.categories);
 
   const output = `# Schema Context for Entry Creation
 
@@ -147,210 +254,6 @@ ${context.locales.map((l) => `| \`${l.code}\` | ${l.name} | ${l.nativeName} |`).
   fs.writeFileSync(outputPath, output, "utf-8");
 
   console.log(`✅ Generated ${outputPath}`);
-}
-
-/**
- * Group categories by logical type for readability
- */
-function groupCategories(
-  categories: string[]
-): Record<string, string[]> {
-  const groups: Record<string, string[]> = {
-    "Software Types": [],
-    "Synthesis & Instruments": [],
-    "Effects": [],
-    "Utility & Tools": [],
-    "Hardware": [],
-    "Instruments": [],
-    "Genre & Style": [],
-    "Other": [],
-  };
-
-  const softwareTypes = new Set([
-    "daw",
-    "dj-software",
-    "plugin",
-    "standalone",
-    "suite",
-  ]);
-
-  const synthesis = new Set([
-    "synthesizer",
-    "virtual-instrument",
-    "sampler",
-    "rompler",
-    "drum-machine",
-    "groovebox",
-    "workstation",
-    "analog",
-    "digital",
-    "wavetable",
-    "fm",
-    "granular",
-    "additive",
-    "subtractive",
-    "physical-modeling",
-    "hybrid",
-    "modular",
-    "semi-modular",
-  ]);
-
-  const effects = new Set([
-    "effect",
-    "compressor",
-    "limiter",
-    "gate",
-    "expander",
-    "dynamics",
-    "transient",
-    "transient-shaper",
-    "de-esser",
-    "multiband",
-    "equalizer",
-    "filter",
-    "exciter",
-    "enhancer",
-    "saturation",
-    "distortion",
-    "boost",
-    "amp-sim",
-    "cabinet-sim",
-    "emulation",
-    "reverb",
-    "plate",
-    "delay",
-    "echo",
-    "modulation",
-    "chorus",
-    "flanger",
-    "phaser",
-    "tremolo",
-    "vibrato",
-    "rotary",
-    "ring-modulator",
-    "pitch",
-    "pitch-shifter",
-    "harmonizer",
-    "vocoder",
-    "autotune",
-    "stereo",
-    "mid-side",
-    "panning",
-    "spatial",
-    "surround",
-    "binaural",
-    "immersive",
-  ]);
-
-  const utility = new Set([
-    "utility",
-    "analyzer",
-    "meter",
-    "tuner",
-    "noise",
-    "noise-gate",
-    "test-tone",
-    "gain",
-    "routing",
-    "channel-strip",
-    "preamp",
-    "di-box",
-    "patch-bay",
-    "midi",
-    "arpeggiator",
-    "sequencer",
-    "loop-station",
-    "looper",
-    "mastering",
-    "loudness",
-    "dither",
-    "sample-rate-converter",
-    "metering",
-    "creative",
-    "lo-fi",
-    "tape",
-    "vinyl",
-    "glitch",
-    "stutter",
-    "slice",
-    "grain",
-    "spectral",
-  ]);
-
-  const hardware = new Set([
-    "mixer",
-    "audio-interface",
-    "microphone",
-    "studio-monitor",
-    "monitor",
-    "headphone",
-    "headphones",
-    "amplifier",
-    "guitar-amplifier",
-    "bass-amplifier",
-    "pedal",
-    "effects-pedal",
-    "midi-controller",
-    "control-surface",
-    "turntable",
-    "portable-recorder",
-    "field-recorder",
-    "speaker",
-    "subwoofer",
-    "power-amp",
-    "rack-mount",
-    "outboard",
-    "console",
-    "summing-mixer",
-    "condenser",
-    "dynamic",
-    "ribbon",
-    "shotgun",
-    "lavalier",
-    "usb-microphone",
-    "headset",
-    "cardioid",
-    "modeling",
-    "vocal",
-  ]);
-
-  const genre = new Set([
-    "cinematic",
-    "ambient",
-    "electronic",
-    "vintage",
-    "orchestral",
-    "acoustic",
-    "world",
-  ]);
-
-  for (const cat of categories) {
-    if (softwareTypes.has(cat)) {
-      groups["Software Types"].push(cat);
-    } else if (synthesis.has(cat)) {
-      groups["Synthesis & Instruments"].push(cat);
-    } else if (effects.has(cat)) {
-      groups["Effects"].push(cat);
-    } else if (utility.has(cat)) {
-      groups["Utility & Tools"].push(cat);
-    } else if (hardware.has(cat)) {
-      groups["Hardware"].push(cat);
-    } else if (genre.has(cat)) {
-      groups["Genre & Style"].push(cat);
-    } else {
-      // Remaining are likely instruments
-      groups["Instruments"].push(cat);
-    }
-  }
-
-  // Remove empty groups
-  for (const key of Object.keys(groups)) {
-    if (groups[key].length === 0) {
-      delete groups[key];
-    }
-  }
-
-  return groups;
 }
 
 // Run the script

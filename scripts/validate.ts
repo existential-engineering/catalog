@@ -32,12 +32,7 @@ import {
   parseErrorPath,
 } from "./lib/utils.js";
 import type { Collection } from "./lib/types.js";
-import {
-  ValidationErrorCode,
-  getDocsUrl,
-  type DetailedError,
-  type AutoFixSuggestion,
-} from "./lib/error-codes.js";
+import { ValidationErrorCode, getDocsUrl } from "./lib/error-codes.js";
 
 // =============================================================================
 // LOAD CANONICAL SCHEMAS
@@ -157,8 +152,8 @@ function getErrorCodeFromZodIssue(
     return ValidationErrorCode.E101_INVALID_FIELD_TYPE;
   }
 
-  // Default to generic missing required field
-  return ValidationErrorCode.E100_MISSING_REQUIRED_FIELD;
+  // Default to generic validation error for unclassified issues
+  return ValidationErrorCode.E199_VALIDATION_ERROR;
 }
 
 // Helper to validate markdown content

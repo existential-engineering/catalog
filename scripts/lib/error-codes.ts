@@ -5,6 +5,8 @@
  * Each code links to documentation in docs/VALIDATION_ERRORS.md
  */
 
+import { z } from "zod";
+
 // =============================================================================
 // ERROR CODE ENUM
 // =============================================================================
@@ -30,6 +32,7 @@ export enum ValidationErrorCode {
   E107_INVALID_LOCALE = "E107",
   E108_INVALID_DATE_FORMAT = "E108",
   E109_SLUG_FILENAME_MISMATCH = "E109",
+  E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
   E200_MANUFACTURER_NOT_FOUND = "E200",
@@ -53,55 +56,59 @@ export enum ValidationErrorCode {
 // AUTO-FIX SUGGESTIONS
 // =============================================================================
 
-export type AutoFixType = "replace" | "add" | "remove" | "rename";
+export const AutoFixTypeSchema = z.enum(["replace", "add", "remove", "rename"]);
+export type AutoFixType = z.infer<typeof AutoFixTypeSchema>;
 
-export interface AutoFixSuggestion {
+export const AutoFixSuggestionSchema = z.object({
   /** Type of fix to apply */
-  type: AutoFixType;
+  type: AutoFixTypeSchema,
   /** Human-readable description of the fix */
-  description: string;
+  description: z.string(),
   /** Original value (for replace/remove) */
-  oldValue?: string;
+  oldValue: z.string().optional(),
   /** New value (for replace/add) */
-  newValue?: string;
+  newValue: z.string().optional(),
   /** Field path where fix applies */
-  path?: string;
-}
+  path: z.string().optional(),
+});
+export type AutoFixSuggestion = z.infer<typeof AutoFixSuggestionSchema>;
 
 // =============================================================================
 // DETAILED ERROR
 // =============================================================================
 
-export interface DetailedError {
+export const DetailedErrorSchema = z.object({
   /** Error code for programmatic handling */
-  code: ValidationErrorCode;
+  code: z.nativeEnum(ValidationErrorCode),
   /** Human-readable error message */
-  message: string;
+  message: z.string(),
   /** Path to the field (e.g., "categories[0]") */
-  path: string;
+  path: z.string(),
   /** Line number in the YAML file (1-indexed) */
-  line?: number;
+  line: z.number().optional(),
   /** Column number (1-indexed) */
-  column?: number;
+  column: z.number().optional(),
   /** Link to documentation */
-  docsUrl: string;
+  docsUrl: z.string(),
   /** Optional auto-fix suggestion */
-  autoFix?: AutoFixSuggestion;
-}
+  autoFix: AutoFixSuggestionSchema.optional(),
+});
+export type DetailedError = z.infer<typeof DetailedErrorSchema>;
 
 // =============================================================================
 // ERROR INFO REGISTRY
 // =============================================================================
 
 const DOCS_BASE_URL =
-  "https://github.com/jeffreylouden/catalog/blob/main/docs/VALIDATION_ERRORS.md";
+  "https://github.com/existential-engineering/catalog/blob/main/docs/VALIDATION_ERRORS.md";
 
-interface ErrorInfoEntry {
+const ErrorInfoEntrySchema = z.object({
   /** Short description of the error */
-  title: string;
+  title: z.string(),
   /** URL anchor for docs link */
-  anchor: string;
-}
+  anchor: z.string(),
+});
+type ErrorInfoEntry = z.infer<typeof ErrorInfoEntrySchema>;
 
 const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   // Schema errors
@@ -144,6 +151,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E109_SLUG_FILENAME_MISMATCH]: {
     title: "Slug does not match filename",
     anchor: "e109-slug-filename-mismatch",
+  },
+  [ValidationErrorCode.E199_VALIDATION_ERROR]: {
+    title: "Validation error",
+    anchor: "e199-validation-error",
   },
 
   // Reference errors

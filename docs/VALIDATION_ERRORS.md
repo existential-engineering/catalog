@@ -169,12 +169,20 @@ The slug in the YAML file doesn't match the filename.
 
 **Example:**
 
-```
+```text
 File: data/software/serum.yaml
 Slug in file: slug: serum-vst   # Should be "serum"
 ```
 
 **Fix:** The slug must match the filename (without `.yaml` extension).
+
+---
+
+### E199: Validation Error
+
+A generic validation error that doesn't fall into a more specific category.
+
+**Fix:** Review the error message for details about what validation rule was violated. This error typically indicates an issue with the data structure or format that doesn't match other specific error codes.
 
 ---
 

@@ -233,5 +233,5 @@ The latest database is available from GitHub Releases:
 
 ```bash
 curl -L -o catalog.sqlite \
-  https://github.com/jeffreylouden/catalog/releases/latest/download/catalog.sqlite
+  https://github.com/existential-engineering/catalog/releases/latest/download/catalog.sqlite
 ```

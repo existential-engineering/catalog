@@ -44,17 +44,42 @@ jobs:
             const fs = require('fs');
             const report = JSON.parse(fs.readFileSync('staleness-report.json', 'utf-8'));
 
-            // Only create issue if there are items needing attention
             const totalItems = report.summary.neverVerified + report.summary.staleEntries + report.summary.stalePrices;
+            const title = '📊 Monthly Staleness Report';
 
+            // Find existing issue first (needed for both create/update and close paths)
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'staleness-report'
+            });
+
+            const existingIssue = issues.find(i => i.title === title);
+
+            // If no stale items, close any existing issue and exit
             if (totalItems === 0) {
-              console.log('No stale entries found, skipping issue creation');
+              console.log('No stale entries found');
+              if (existingIssue) {
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: existingIssue.number,
+                  state: 'closed',
+                  state_reason: 'completed'
+                });
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: existingIssue.number,
+                  body: `✅ All staleness issues have been resolved as of ${report.generatedAt}. Closing this issue.`
+                });
+                console.log(`Closed existing issue #${existingIssue.number} - no stale items remaining`);
+              }
               return;
             }
 
-            const title = '📊 Monthly Staleness Report';
-
-            // Build issue body
+            // Build issue body for stale items
             let body = `## Staleness Report
 
             Generated: ${report.generatedAt}
@@ -123,16 +148,7 @@ jobs:
             *This issue is automatically created by the monthly staleness check workflow.*
             `;
 
-            // Find existing issue
-            const { data: issues } = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'open',
-              labels: 'staleness-report'
-            });
-
-            const existingIssue = issues.find(i => i.title === title);
-
+            // Create or update the staleness issue
             if (existingIssue) {
               await github.rest.issues.update({
                 owner: context.repo.owner,
