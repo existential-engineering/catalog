@@ -31,7 +31,7 @@ Prompt the user for relevant fields based on entry type. Reference `schema/CONTE
 - **Required:** name
 - **Recommended:** website
 - **Optional:** companyName (if different from name), parentCompany, description, searchTerms
-- **Auto-generated:** slug (from name: lowercase, spaces to hyphens, remove special characters)
+- **Filename:** derived from name (lowercase, spaces to hyphens, remove special characters)
 
 **For Software:**
 
@@ -44,7 +44,7 @@ Prompt the user for relevant fields based on entry type. Reference `schema/CONTE
   - formats (from CONTEXT.md formats section)
 - Reference `schema/CONTEXT.md` for valid categories - suggest relevant ones based on the software type
 - **Optional:** website, description, prices, links, releaseDate, searchTerms
-- **Auto-generated:** slug (from name)
+- **Filename:** derived from name (lowercase, spaces to hyphens, remove special characters)
 
 **For Hardware:**
 
@@ -55,17 +55,16 @@ Prompt the user for relevant fields based on entry type. Reference `schema/CONTE
   - categories (additional categories from CONTEXT.md)
 - Reference `schema/CONTEXT.md` for valid categories - suggest relevant ones based on the hardware type
 - **Optional:** website, prices, io (I/O ports), links, releaseDate, searchTerms
-- **Auto-generated:** slug (from name)
+- **Filename:** derived from name (lowercase, spaces to hyphens, remove special characters)
 
 ### Phase 3: Validate Before Writing
 
 Before creating any files, verify:
 
-1. **Slug format:** Must match the pattern in CONTEXT.md (lowercase, hyphens, no leading/trailing hyphens)
-2. **Slug uniqueness:** Read `.slug-index.json` and verify the slug doesn't collide with any existing entry across
-   manufacturers, software, and hardware collections
-3. **Manufacturer reference:** For software/hardware, verify the manufacturer slug resolves to an existing file in
-   `data/manufacturers/` (or will be created in this batch)
+1. **Filename format:** Must be a valid slug (lowercase, hyphens, no leading/trailing hyphens) with .yaml extension
+2. **Filename uniqueness:** Check that the file doesn't already exist in the target collection directory
+3. **Manufacturer reference:** For software/hardware, verify the manufacturer slug (filename) resolves to an existing
+   file in `data/manufacturers/` (or will be created in this batch)
 4. **Category validation:** All categories must exist in `schema/CONTEXT.md` (either canonical or alias)
 5. **Format validation:** All formats must be listed in `schema/CONTEXT.md`
 6. **Platform validation:** All platforms must be listed in `schema/CONTEXT.md`
@@ -79,13 +78,14 @@ Create the YAML file(s) in the appropriate `data/` subdirectory.
 **Important rules:**
 
 - Do NOT include an `id` field. IDs are assigned automatically by CI via the `assign-ids` workflow on PR creation.
+- Do NOT include a `slug` field. Slugs are derived from the filename.
 - Follow the field ordering convention observed in existing entries:
-  - Manufacturer: slug, name, companyName, parentCompany, website, description, searchTerms
-  - Software: slug, name, manufacturer, primaryCategory, categories, formats, platforms, identifiers, website,
+  - Manufacturer: name, companyName, parentCompany, website, description, searchTerms
+  - Software: name, manufacturer, primaryCategory, categories, formats, platforms, identifiers, website,
     prices, description, details, specs, versions, links, translations
-  - Hardware: slug, name, manufacturer, primaryCategory, categories, website, prices, description, details, specs,
+  - Hardware: name, manufacturer, primaryCategory, categories, website, prices, description, details, specs,
     io, versions, revisions, links, translations
-- File name must match the slug: `data/{type}/{slug}.yaml`
+- File name IS the slug: `data/{type}/{slug}.yaml`
 
 After writing the file(s):
 
@@ -121,10 +121,9 @@ Present the results:
 
 ## Examples
 
-**Adding a software plugin:**
+**Adding a software plugin (filename: `serum.yaml`):**
 
 ```yaml
-slug: serum
 name: Serum
 manufacturer: xfer-records
 primaryCategory: synthesizer
@@ -149,19 +148,17 @@ description: Advanced wavetable synthesizer with visual and creative
   system, and built-in effects.
 ```
 
-**Adding a manufacturer:**
+**Adding a manufacturer (filename: `xfer-records.yaml`):**
 
 ```yaml
-slug: xfer-records
 name: Xfer Records
 website: https://xferrecords.com
 description: Developer of Serum wavetable synthesizer and other audio plugins.
 ```
 
-**Adding hardware:**
+**Adding hardware (filename: `digitakt.yaml`):**
 
 ```yaml
-slug: digitakt
 name: Digitakt
 manufacturer: elektron
 primaryCategory: sampler

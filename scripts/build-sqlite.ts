@@ -110,14 +110,15 @@ function buildDatabase(version: string): void {
   // First pass: insert all manufacturers without parent references
   for (const file of manufacturerFiles) {
     const data = loadYamlFile<Manufacturer>(file);
-    manufacturers.set(data.slug, data);
+    const slug = path.basename(file, path.extname(file));
+    manufacturers.set(slug, data);
 
     // Get ID from YAML (must be present - run 'pnpm assign-ids' if missing)
     const id = data.id;
     if (!id) {
       throw new Error(`Missing id in ${file}. Run 'pnpm assign-ids' to assign IDs to new entries.`);
     }
-    manufacturerIds.set(data.slug, id);
+    manufacturerIds.set(slug, id);
 
     insertManufacturer.run(
       id,
@@ -151,10 +152,10 @@ function buildDatabase(version: string): void {
   }
 
   // Second pass: update parent company references
-  for (const data of manufacturers.values()) {
+  for (const [slug, data] of manufacturers.entries()) {
     if (data.parentCompany) {
       const parentId = manufacturerIds.get(data.parentCompany);
-      const childId = manufacturerIds.get(data.slug);
+      const childId = manufacturerIds.get(slug);
       if (parentId && childId) {
         updateManufacturerParent.run(parentId, childId);
       }
@@ -427,6 +428,7 @@ function buildDatabase(version: string): void {
 
   for (const file of hardwareFiles) {
     const data = loadYamlFile<Hardware>(file);
+    const slug = path.basename(file, path.extname(file));
     const manufacturer = manufacturers.get(data.manufacturer);
     const manufacturerId = manufacturerIds.get(data.manufacturer);
 
@@ -644,7 +646,7 @@ function buildDatabase(version: string): void {
           for (const ioTrans of trans.io) {
             if (!sourceIONames.has(ioTrans.originalName)) {
               console.warn(
-                `  ⚠️  Warning: hardware '${data.slug}' locale '${locale}' references unknown I/O port '${ioTrans.originalName}'. ` +
+                `  ⚠️  Warning: hardware '${slug}' locale '${locale}' references unknown I/O port '${ioTrans.originalName}'. ` +
                 `Available: ${[...sourceIONames].join(", ") || "(none)"}`
               );
               continue;

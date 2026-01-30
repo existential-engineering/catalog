@@ -97,13 +97,6 @@ function getErrorCodeFromZodIssue(
   const path = issue.path.join(".");
   const message = issue.message.toLowerCase();
 
-  // Slug errors
-  if (path === "slug" || message.includes("slug")) {
-    if (message.includes("lowercase") || message.includes("alphanumeric")) {
-      return ValidationErrorCode.E102_INVALID_SLUG_FORMAT;
-    }
-  }
-
   // URL errors
   if (message.includes("url") || message.includes("invalid url")) {
     if (message.includes("youtube")) {
@@ -416,9 +409,6 @@ const createPlatformArrayValidator = () =>
 // =============================================================================
 
 const ManufacturerSchema = z.object({
-  slug: z
-    .string()
-    .regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens"),
   name: z.string().min(1, "Name is required"),
   companyName: z.string().optional(),
   parentCompany: z.string().optional(),
@@ -429,9 +419,6 @@ const ManufacturerSchema = z.object({
 
 const SoftwareSchema = z
   .object({
-    slug: z
-      .string()
-      .regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens"),
     name: z.string().min(1, "Name is required"),
     manufacturer: z.string().min(1, "Manufacturer reference is required"),
     categories: z
@@ -498,9 +485,6 @@ const SoftwareSchema = z
 
 const HardwareSchema = z
   .object({
-    slug: z
-      .string()
-      .regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with hyphens"),
     name: z.string().min(1, "Name is required"),
     manufacturer: z.string().min(1, "Manufacturer reference is required"),
     categories: z
@@ -552,7 +536,6 @@ const HardwareSchema = z
 // =============================================================================
 
 interface DataWithOptionalFields {
-  slug?: string;
   manufacturer?: string;
   primaryCategory?: string;
   secondaryCategory?: string;
@@ -648,26 +631,6 @@ function validateFile(
       }
     }
 
-    // Check slug matches filename
-    const expectedSlug = path.basename(filePath, path.extname(filePath));
-    if (data.slug !== expectedSlug) {
-      const message = `Slug '${data.slug}' does not match filename. Expected '${expectedSlug}'`;
-      const line = getLineForPath(document, lineCounter, ["slug"]);
-      const errorCode = ValidationErrorCode.E109_SLUG_FILENAME_MISMATCH;
-
-      return {
-        file: path.relative(process.cwd(), filePath),
-        errors: [`slug: ${message}`],
-        details: [{
-          code: errorCode,
-          message,
-          path: "slug",
-          line: line ?? undefined,
-          docsUrl: getDocsUrl(errorCode),
-        }],
-      };
-    }
-
     // Check for duplicate categories
     if (Array.isArray(data.categories)) {
       const categoryErrors: string[] = [];
@@ -745,20 +708,13 @@ function validate(): ValidationResult {
   const errors: ValidationError[] = [];
   const stats = { manufacturers: 0, software: 0, hardware: 0 };
 
-  // First pass: collect all manufacturer slugs
+  // First pass: collect all manufacturer slugs (derived from filenames)
   const manufacturerFiles = getYamlFiles(path.join(DATA_DIR, "manufacturers"));
   const allManufacturers = new Set<string>();
 
   for (const file of manufacturerFiles) {
-    try {
-      const content = fs.readFileSync(file, "utf-8");
-      const data = parseYaml(content) as { slug?: string };
-      if (data.slug) {
-        allManufacturers.add(data.slug);
-      }
-    } catch {
-      // Will be caught in validation pass
-    }
+    const slug = path.basename(file, path.extname(file));
+    allManufacturers.add(slug);
   }
 
   // Validate manufacturers
@@ -831,8 +787,8 @@ function validateIds(): IdValidationResult {
     for (const file of files) {
       try {
         const content = fs.readFileSync(file, "utf-8");
-        const data = parseYaml(content) as { id?: unknown; slug?: string };
-        const slug = data.slug ?? path.basename(file, path.extname(file));
+        const data = parseYaml(content) as { id?: unknown };
+        const slug = path.basename(file, path.extname(file));
 
         if (data.id !== undefined) {
           // Validate ID is a non-empty string
