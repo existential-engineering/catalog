@@ -17,6 +17,7 @@ import type {
   FormatsSchema,
   PlatformsSchema,
   ValidationError,
+  ValidationErrorDetail,
   ValidationResult,
 } from "./lib/types.js";
 import {
@@ -26,8 +27,12 @@ import {
   getYamlFiles,
   findClosestMatch,
   formatValidOptions,
+  loadYamlFileWithPositions,
+  getLineForPath,
+  parseErrorPath,
 } from "./lib/utils.js";
 import type { Collection } from "./lib/types.js";
+import { ValidationErrorCode, getDocsUrl } from "./lib/error-codes.js";
 
 // =============================================================================
 // LOAD CANONICAL SCHEMAS
@@ -73,6 +78,87 @@ marked.setOptions({
   gfm: true,
   breaks: false,
 });
+
+// =============================================================================
+// ERROR CODE MAPPING
+// =============================================================================
+
+/**
+ * Determine the appropriate error code from a Zod issue
+ */
+function getErrorCodeFromZodIssue(
+  issue: {
+    code: string;
+    message: string;
+    path: readonly (string | number | symbol)[];
+    received?: unknown;
+  }
+): ValidationErrorCode {
+  const path = issue.path.join(".");
+  const message = issue.message.toLowerCase();
+
+  // Slug errors
+  if (path === "slug" || message.includes("slug")) {
+    if (message.includes("lowercase") || message.includes("alphanumeric")) {
+      return ValidationErrorCode.E102_INVALID_SLUG_FORMAT;
+    }
+  }
+
+  // URL errors
+  if (message.includes("url") || message.includes("invalid url")) {
+    if (message.includes("youtube")) {
+      return ValidationErrorCode.E301_YOUTUBE_URL_FORMAT;
+    }
+    return ValidationErrorCode.E103_INVALID_URL_FORMAT;
+  }
+
+  // Category errors
+  if (
+    path.includes("categories") ||
+    path.includes("primaryCategory") ||
+    path.includes("secondaryCategory")
+  ) {
+    if (message.includes("invalid category")) {
+      return ValidationErrorCode.E104_INVALID_CATEGORY;
+    }
+    if (message.includes("duplicate")) {
+      return ValidationErrorCode.E202_DUPLICATE_CATEGORY;
+    }
+  }
+
+  // Platform errors
+  if (path.includes("platforms") && message.includes("invalid platform")) {
+    return ValidationErrorCode.E105_INVALID_PLATFORM;
+  }
+
+  // Format errors
+  if (path.includes("formats") && message.includes("invalid format")) {
+    return ValidationErrorCode.E106_INVALID_FORMAT;
+  }
+
+  // Markdown errors
+  if (message.includes("markdown") || message.includes("code block")) {
+    if (message.includes("unclosed code block")) {
+      return ValidationErrorCode.E302_UNCLOSED_CODE_BLOCK;
+    }
+    if (message.includes("unclosed inline code")) {
+      return ValidationErrorCode.E303_UNBALANCED_BACKTICKS;
+    }
+    return ValidationErrorCode.E300_INVALID_MARKDOWN;
+  }
+
+  // Missing required field (Zod v4: received === "undefined", fallback: message contains "required")
+  if (issue.code === "invalid_type") {
+    if (issue.received === "undefined" || message.includes("required")) {
+      return ValidationErrorCode.E100_MISSING_REQUIRED_FIELD;
+    }
+    // Other type errors
+    return ValidationErrorCode.E101_INVALID_FIELD_TYPE;
+  }
+
+  // Default to generic validation error for unclassified issues
+  return ValidationErrorCode.E199_VALIDATION_ERROR;
+}
 
 // Helper to validate markdown content
 function validateMarkdown(content: string): { valid: boolean; error?: string } {
@@ -147,6 +233,10 @@ const MarkdownSchema = z
 const PriceSchema = z.object({
   amount: z.number(),
   currency: z.string(),
+  /** ISO date when price was last verified */
+  asOf: z.iso.date().optional(),
+  /** Source of price (e.g., "official-website", "retailer") */
+  source: z.string().optional(),
 });
 
 // Canonical YouTube URL format: https://www.youtube.com/watch?v={videoId}
@@ -461,25 +551,72 @@ const HardwareSchema = z
 // VALIDATION FUNCTIONS
 // =============================================================================
 
+interface DataWithOptionalFields {
+  slug?: string;
+  manufacturer?: string;
+  primaryCategory?: string;
+  secondaryCategory?: string;
+  categories?: string[];
+}
+
 function validateFile(
   filePath: string,
   schema: z.ZodType,
   allManufacturers: Set<string>
 ): ValidationError | null {
   try {
-    const content = fs.readFileSync(filePath, "utf-8");
-    const data = parseYaml(content);
+    // Load YAML with position tracking for line numbers
+    const { data: rawData, document, lineCounter } = loadYamlFileWithPositions(filePath);
+
+    // Check for YAML parse errors before proceeding with validation
+    if (document.errors && document.errors.length > 0) {
+      const relativeFile = path.relative(process.cwd(), filePath);
+      const errorCode = ValidationErrorCode.E110_YAML_SYNTAX_ERROR;
+      const details: ValidationErrorDetail[] = document.errors.map((err) => ({
+        code: errorCode,
+        message: err.message,
+        path: "(yaml)",
+        line: err.linePos?.[0]?.line,
+        docsUrl: getDocsUrl(errorCode),
+      }));
+      const errors = document.errors.map((err) => {
+        const lineInfo = err.linePos?.[0]?.line ? `:${err.linePos[0].line}` : "";
+        return `yaml${lineInfo}: ${err.message}`;
+      });
+      return { file: relativeFile, errors, details };
+    }
+
+    const data = rawData as DataWithOptionalFields;
 
     // Validate against Zod schema
-    const result = schema.safeParse(data);
+    const result = schema.safeParse(rawData);
 
     if (!result.success) {
-      return {
-        file: path.relative(process.cwd(), filePath),
-        errors: result.error.issues.map(
-          (e) => `${e.path.join(".")}: ${e.message}`
-        ),
-      };
+      const relativeFile = path.relative(process.cwd(), filePath);
+      const details: ValidationErrorDetail[] = [];
+      const errors: string[] = [];
+
+      for (const issue of result.error.issues) {
+        const pathStr = issue.path.join(".");
+        const errorCode = getErrorCodeFromZodIssue(issue);
+        const parsedPath = parseErrorPath(pathStr);
+        const line = getLineForPath(document, lineCounter, parsedPath);
+        const docsUrl = getDocsUrl(errorCode);
+
+        details.push({
+          code: errorCode,
+          message: issue.message,
+          path: pathStr || "(root)",
+          line: line ?? undefined,
+          docsUrl,
+        });
+
+        // Keep simple error for backward compatibility
+        const lineInfo = line ? `:${line}` : "";
+        errors.push(`${pathStr}${lineInfo}: ${issue.message}`);
+      }
+
+      return { file: relativeFile, errors, details };
     }
 
     // Check manufacturer reference exists
@@ -493,9 +630,20 @@ function validateFile(
         if (allManufacturers.size <= 10) {
           message += ` Available: ${[...allManufacturers].join(", ")}`;
         }
+
+        const line = getLineForPath(document, lineCounter, ["manufacturer"]);
+        const errorCode = ValidationErrorCode.E200_MANUFACTURER_NOT_FOUND;
+
         return {
           file: path.relative(process.cwd(), filePath),
           errors: [`manufacturer: ${message}`],
+          details: [{
+            code: errorCode,
+            message,
+            path: "manufacturer",
+            line: line ?? undefined,
+            docsUrl: getDocsUrl(errorCode),
+          }],
         };
       }
     }
@@ -503,37 +651,72 @@ function validateFile(
     // Check slug matches filename
     const expectedSlug = path.basename(filePath, path.extname(filePath));
     if (data.slug !== expectedSlug) {
+      const message = `Slug '${data.slug}' does not match filename. Expected '${expectedSlug}'`;
+      const line = getLineForPath(document, lineCounter, ["slug"]);
+      const errorCode = ValidationErrorCode.E109_SLUG_FILENAME_MISMATCH;
+
       return {
         file: path.relative(process.cwd(), filePath),
-        errors: [
-          `slug: Slug '${data.slug}' does not match filename. Expected '${expectedSlug}'`,
-        ],
+        errors: [`slug: ${message}`],
+        details: [{
+          code: errorCode,
+          message,
+          path: "slug",
+          line: line ?? undefined,
+          docsUrl: getDocsUrl(errorCode),
+        }],
       };
     }
 
     // Check for duplicate categories
     if (Array.isArray(data.categories)) {
       const categoryErrors: string[] = [];
+      const categoryDetails: ValidationErrorDetail[] = [];
+      const errorCode = ValidationErrorCode.E202_DUPLICATE_CATEGORY;
 
       // Check if primaryCategory is duplicated in categories array
       if (data.primaryCategory && data.categories.includes(data.primaryCategory)) {
-        categoryErrors.push(
-          `categories: primaryCategory '${data.primaryCategory}' should not be duplicated in categories array`
-        );
+        const message = `primaryCategory '${data.primaryCategory}' should not be duplicated in categories array`;
+        const line = getLineForPath(document, lineCounter, ["categories"]);
+        categoryErrors.push(`categories: ${message}`);
+        categoryDetails.push({
+          code: errorCode,
+          message,
+          path: "categories",
+          line: line ?? undefined,
+          docsUrl: getDocsUrl(errorCode),
+        });
       }
 
       // Check if secondaryCategory is duplicated in categories array
       if (data.secondaryCategory && data.categories.includes(data.secondaryCategory)) {
-        categoryErrors.push(
-          `categories: secondaryCategory '${data.secondaryCategory}' should not be duplicated in categories array`
-        );
+        const message = `secondaryCategory '${data.secondaryCategory}' should not be duplicated in categories array`;
+        const line = getLineForPath(document, lineCounter, ["categories"]);
+        categoryErrors.push(`categories: ${message}`);
+        categoryDetails.push({
+          code: errorCode,
+          message,
+          path: "categories",
+          line: line ?? undefined,
+          docsUrl: getDocsUrl(errorCode),
+        });
       }
 
       // Check for duplicates within the categories array itself
       const seen = new Set<string>();
-      for (const cat of data.categories) {
+      for (let i = 0; i < data.categories.length; i++) {
+        const cat = data.categories[i];
         if (seen.has(cat)) {
-          categoryErrors.push(`categories: duplicate category '${cat}' in array`);
+          const message = `duplicate category '${cat}' in array`;
+          const line = getLineForPath(document, lineCounter, ["categories", i]);
+          categoryErrors.push(`categories: ${message}`);
+          categoryDetails.push({
+            code: errorCode,
+            message,
+            path: `categories[${i}]`,
+            line: line ?? undefined,
+            docsUrl: getDocsUrl(errorCode),
+          });
         }
         seen.add(cat);
       }
@@ -542,6 +725,7 @@ function validateFile(
         return {
           file: path.relative(process.cwd(), filePath),
           errors: categoryErrors,
+          details: categoryDetails,
         };
       }
     }
@@ -724,22 +908,37 @@ function writeGitHubSummary(result: ValidationResult): void {
 
 function writeConsoleOutput(result: ValidationResult): void {
   console.log("\n📋 Catalog Validation Results\n");
-  console.log("─".repeat(50));
+  console.log("─".repeat(70));
 
   if (result.valid) {
     console.log("✅ All files validated successfully!\n");
   } else {
     console.log("❌ Validation failed!\n");
     for (const error of result.errors) {
-      console.log(`\n📄 ${error.file}`);
-      for (const msg of error.errors) {
-        console.log(`   ⚠️  ${msg}`);
+      // Use enhanced output if details are available
+      if (error.details && error.details.length > 0) {
+        console.log(`\n📄 ${error.file}`);
+        for (const detail of error.details) {
+          const lineInfo = detail.line ? `:${detail.line}` : "";
+          const codeStr = detail.code ? `${detail.code}` : "";
+          console.log(`   ${codeStr}${lineInfo}: ${detail.message}`);
+          console.log(`         Path: ${detail.path}`);
+          if (detail.docsUrl) {
+            console.log(`         Docs: ${detail.docsUrl}`);
+          }
+        }
+      } else {
+        // Fallback to simple output
+        console.log(`\n📄 ${error.file}`);
+        for (const msg of error.errors) {
+          console.log(`   ⚠️  ${msg}`);
+        }
       }
     }
     console.log();
   }
 
-  console.log("─".repeat(50));
+  console.log("─".repeat(70));
   console.log("📊 Stats:");
   console.log(`   Manufacturers: ${result.stats.manufacturers}`);
   console.log(`   Software:      ${result.stats.software}`);

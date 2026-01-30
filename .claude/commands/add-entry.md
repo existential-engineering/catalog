@@ -4,6 +4,11 @@ description: Scaffold a new manufacturer, software, or hardware entry
 
 Interactively create a new catalog entry with proper structure, validation, and manufacturer dependency resolution.
 
+## Before Starting
+
+**Read `schema/CONTEXT.md` first** - this auto-generated file contains all valid categories, formats, platforms, and
+other schema values. Use it to suggest valid options and validate user input.
+
 ## Process
 
 ### Phase 1: Determine Entry Type
@@ -19,35 +24,36 @@ in `data/manufacturers/`. If the manufacturer does not exist, create it first be
 
 ### Phase 2: Gather Information
 
-Prompt the user for relevant fields based on entry type. Use the schema files to suggest valid values.
+Prompt the user for relevant fields based on entry type. Reference `schema/CONTEXT.md` for all valid values.
 
 **For Manufacturer:**
 
-- **Required:** name, website
+- **Required:** name
+- **Recommended:** website
 - **Optional:** companyName (if different from name), parentCompany, description, searchTerms
 - **Auto-generated:** slug (from name: lowercase, spaces to hyphens, remove special characters)
 
 **For Software:**
 
-- **Required:** name, manufacturer (slug reference), primaryCategory, platforms, identifiers
-- Read `schema/categories.yaml` and suggest relevant categories for primaryCategory. Common software categories:
-  daw, plugin, synthesizer, sampler, effect, compressor, equalizer, reverb, delay, distortion, utility, analyzer
+- **Required:** name, manufacturer (slug reference)
 - **Recommended:**
-  - categories (additional from `schema/categories.yaml`)
-  - formats (from `schema/formats.yaml`: au, vst, vst2, vst3, aax, rtas, tdm, clap, lv2, standalone)
-- platforms must be from `schema/platforms.yaml`: mac, windows, linux, ios, android
-- identifiers are plugin bundle IDs, e.g., `vst3: com.vendor.product.vst3`, `au: vendor: product`
+  - primaryCategory (from CONTEXT.md categories)
+  - platforms (from CONTEXT.md platforms section)
+  - identifiers (plugin bundle IDs, e.g., `vst3: com.vendor.product.vst3`, `au: vendor: product`)
+  - categories (additional categories from CONTEXT.md)
+  - formats (from CONTEXT.md formats section)
+- Reference `schema/CONTEXT.md` for valid categories - suggest relevant ones based on the software type
 - **Optional:** website, description, prices, links, releaseDate, searchTerms
 - **Auto-generated:** slug (from name)
 
 **For Hardware:**
 
-- **Required:** name, manufacturer (slug reference), primaryCategory, description
-- Read `schema/categories.yaml` and suggest relevant categories for primaryCategory. Common hardware categories:
-  audio-interface, synthesizer, drum-machine, sampler, groovebox, mixer, midi-controller, pedal, effects-pedal,
-  microphone, studio-monitor, headphones, amplifier
+- **Required:** name, manufacturer (slug reference)
 - **Recommended:**
-  - categories (additional from `schema/categories.yaml`)
+  - primaryCategory (from CONTEXT.md categories)
+  - description
+  - categories (additional categories from CONTEXT.md)
+- Reference `schema/CONTEXT.md` for valid categories - suggest relevant ones based on the hardware type
 - **Optional:** website, prices, io (I/O ports), links, releaseDate, searchTerms
 - **Auto-generated:** slug (from name)
 
@@ -55,14 +61,14 @@ Prompt the user for relevant fields based on entry type. Use the schema files to
 
 Before creating any files, verify:
 
-1. **Slug format:** Must match `^[a-z0-9][a-z0-9-]*[a-z0-9]$` (lowercase, hyphens, no leading/trailing hyphens)
+1. **Slug format:** Must match the pattern in CONTEXT.md (lowercase, hyphens, no leading/trailing hyphens)
 2. **Slug uniqueness:** Read `.slug-index.json` and verify the slug doesn't collide with any existing entry across
    manufacturers, software, and hardware collections
 3. **Manufacturer reference:** For software/hardware, verify the manufacturer slug resolves to an existing file in
    `data/manufacturers/` (or will be created in this batch)
-4. **Category validation:** All categories must exist in `schema/categories.yaml`
-5. **Format validation:** All formats must exist in `schema/formats.yaml`
-6. **Platform validation:** All platforms must exist in `schema/platforms.yaml`
+4. **Category validation:** All categories must exist in `schema/CONTEXT.md` (either canonical or alias)
+5. **Format validation:** All formats must be listed in `schema/CONTEXT.md`
+6. **Platform validation:** All platforms must be listed in `schema/CONTEXT.md`
 
 If any validation fails, report the issue and ask the user to correct it before proceeding.
 

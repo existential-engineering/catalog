@@ -21,6 +21,29 @@ export interface Version {
 export interface Price {
   amount: number;
   currency: string;
+  /** ISO date when price was last verified */
+  asOf?: string;
+  /** Source of price (e.g., "official-website", "retailer") */
+  source?: string;
+}
+
+// =============================================================================
+// VERIFICATION METADATA
+// =============================================================================
+
+export type VerificationStatus = "active" | "discontinued" | "unknown";
+
+export interface VerificationMetadata {
+  /** ISO date when entry was last verified */
+  lastVerified?: string;
+  /** Who verified the entry (GitHub username or "automated") */
+  verifiedBy?: string;
+  /** Product status */
+  status?: VerificationStatus;
+  /** ISO date when product was discontinued */
+  discontinuedDate?: string;
+  /** Reason for discontinuation */
+  discontinuedReason?: string;
 }
 
 export interface Link {
@@ -96,6 +119,7 @@ export interface Software {
   prices?: Price[];
   links?: Link[];
   translations?: TranslationsMap;
+  verification?: VerificationMetadata;
 }
 
 export interface Hardware {
@@ -119,6 +143,7 @@ export interface Hardware {
   prices?: Price[];
   links?: Link[];
   translations?: TranslationsMap;
+  verification?: VerificationMetadata;
 }
 
 // =============================================================================
@@ -179,9 +204,24 @@ export interface PlatformsSchema {
 // VALIDATION TYPES
 // =============================================================================
 
+export interface ValidationErrorDetail {
+  /** Error code for programmatic handling */
+  code?: string;
+  /** Human-readable error message */
+  message: string;
+  /** Path to the field (e.g., "categories[0]") */
+  path: string;
+  /** Line number in the YAML file (1-indexed) */
+  line?: number;
+  /** Link to documentation */
+  docsUrl?: string;
+}
+
 export interface ValidationError {
   file: string;
   errors: string[];
+  /** Enhanced error details with line numbers and codes */
+  details?: ValidationErrorDetail[];
 }
 
 export interface ValidationResult {
