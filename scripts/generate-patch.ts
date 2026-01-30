@@ -27,9 +27,10 @@ function buildManufacturerIdMap(): Map<string, string> {
 
   for (const file of fs.readdirSync(dir).filter((f) => f.endsWith(".yaml") || f.endsWith(".yml"))) {
     const content = fs.readFileSync(path.join(dir, file), "utf-8");
-    const data = parseYaml(content) as { slug?: string; id?: string };
-    if (data.slug && data.id) {
-      map.set(data.slug, data.id);
+    const data = parseYaml(content) as { id?: string };
+    const slug = path.basename(file, path.extname(file));
+    if (data.id) {
+      map.set(slug, data.id);
     }
   }
   return map;

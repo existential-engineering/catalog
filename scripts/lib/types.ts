@@ -87,7 +87,6 @@ export interface Revision {
 
 export interface Manufacturer {
   id?: string; // Assigned on PR creation via nanoid
-  slug: string;
   name: string;
   companyName?: string;
   parentCompany?: string;
@@ -99,7 +98,6 @@ export interface Manufacturer {
 
 export interface Software {
   id?: string; // Assigned on PR creation via nanoid
-  slug: string;
   name: string;
   manufacturer: string;
   categories?: string[];
@@ -124,7 +122,6 @@ export interface Software {
 
 export interface Hardware {
   id?: string; // Assigned on PR creation via nanoid
-  slug: string;
   name: string;
   manufacturer: string;
   categories?: string[];

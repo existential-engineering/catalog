@@ -16,7 +16,6 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 - `pnpm build` - Build SQLite database
 - `pnpm format` - Format YAML files with Prettier
 - `pnpm format:check` - Check formatting
-- `pnpm check-slugs` - Check for duplicate slugs
 
 ## Project Structure
 
@@ -27,25 +26,26 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 
 ## Conventions
 
-- Slugs: lowercase with hyphens (e.g., `serum`, `massive-x`)
+- Filenames are slugs: lowercase with hyphens (e.g., `serum.yaml`, `massive-x.yaml`)
 - All entries must pass `pnpm validate` before commit
 - Use Prettier for YAML formatting
 - Data follows strict schemas defined in `scripts/lib/types.ts`
 
 ## Data Entry Format
 
-Manufacturers require: slug, name, website
-Software requires: slug, name, manufacturer, primaryCategory, platforms, identifiers
-Hardware requires: slug, name, manufacturer, primaryCategory, description
+Manufacturers require: name, website
+Software requires: name, manufacturer, primaryCategory, platforms, identifiers
+Hardware requires: name, manufacturer, primaryCategory, description
 
 Optional fields: categories (array), website, description
+
+Note: Slugs are derived from filenames, not stored in the YAML files.
 
 ## Translations
 
 Translations are optional and added inline to YAML files using a `translations` key:
 
 ```yaml
-slug: example
 description: English description...
 
 translations:

@@ -49,10 +49,6 @@ jobs:
       - name: Check formatting
         run: pnpm format:check
 
-      - name: Check slug uniqueness
-        if: github.event_name == 'pull_request'
-        run: pnpm check-slugs
-
       - name: Check ID immutability
         if: github.event_name == 'pull_request'
         run: pnpm exec tsx scripts/check-id-immutability.ts origin/main

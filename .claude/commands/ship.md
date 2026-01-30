@@ -20,14 +20,13 @@ Run each check in order. **Stop immediately if any check fails** and report the 
 These checks mirror `.github/workflows/validate.yml` so issues are caught locally before pushing.
 
 1. `pnpm typecheck` - TypeScript type checking
-2. `pnpm validate` - Full YAML schema validation (Zod schemas, manufacturer references, slug-filename match, categories, formats, platforms, markdown, IDs)
+2. `pnpm validate` - Full YAML schema validation (Zod schemas, manufacturer references, filename format, categories, formats, platforms, markdown, IDs)
 3. `pnpm validate:translations` - Translation validation (approved locales, valid fields, I/O translation references)
 4. `pnpm format:check` - Prettier formatting check
 
    **If formatting fails:** Ask the user if they want to auto-fix with `pnpm format`. If yes, run it and stage the changes.
 
-5. `pnpm check-slugs` - Slug uniqueness against `.slug-index.json`
-6. `pnpm build 0` - Test database build (ensures YAML can be compiled to valid SQLite)
+5. `pnpm build 0` - Test database build (ensures YAML can be compiled to valid SQLite)
 
 ### Phase 3: Analyze Changes
 
@@ -107,7 +106,6 @@ Use `gh pr create` with:
 - [x] YAML schema validation passed
 - [x] Translation validation passed
 - [x] Formatting check passed
-- [x] Slug uniqueness verified
 - [x] Database build successful
 ```
 

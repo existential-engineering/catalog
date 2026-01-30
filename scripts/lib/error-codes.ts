@@ -24,20 +24,17 @@ export enum ValidationErrorCode {
   // Schema errors (E1xx)
   E100_MISSING_REQUIRED_FIELD = "E100",
   E101_INVALID_FIELD_TYPE = "E101",
-  E102_INVALID_SLUG_FORMAT = "E102",
   E103_INVALID_URL_FORMAT = "E103",
   E104_INVALID_CATEGORY = "E104",
   E105_INVALID_PLATFORM = "E105",
   E106_INVALID_FORMAT = "E106",
   E107_INVALID_LOCALE = "E107",
   E108_INVALID_DATE_FORMAT = "E108",
-  E109_SLUG_FILENAME_MISMATCH = "E109",
   E110_YAML_SYNTAX_ERROR = "E110",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
   E200_MANUFACTURER_NOT_FOUND = "E200",
-  E201_DUPLICATE_SLUG = "E201",
   E202_DUPLICATE_CATEGORY = "E202",
   E203_PARENT_COMPANY_NOT_FOUND = "E203",
   E204_IO_TRANSLATION_MISMATCH = "E204",
@@ -121,10 +118,6 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     title: "Invalid field type",
     anchor: "e101-invalid-field-type",
   },
-  [ValidationErrorCode.E102_INVALID_SLUG_FORMAT]: {
-    title: "Invalid slug format",
-    anchor: "e102-invalid-slug-format",
-  },
   [ValidationErrorCode.E103_INVALID_URL_FORMAT]: {
     title: "Invalid URL format",
     anchor: "e103-invalid-url-format",
@@ -149,10 +142,6 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     title: "Invalid date format",
     anchor: "e108-invalid-date-format",
   },
-  [ValidationErrorCode.E109_SLUG_FILENAME_MISMATCH]: {
-    title: "Slug does not match filename",
-    anchor: "e109-slug-filename-mismatch",
-  },
   [ValidationErrorCode.E110_YAML_SYNTAX_ERROR]: {
     title: "YAML syntax error",
     anchor: "e110-yaml-syntax-error",
@@ -166,10 +155,6 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E200_MANUFACTURER_NOT_FOUND]: {
     title: "Manufacturer not found",
     anchor: "e200-manufacturer-not-found",
-  },
-  [ValidationErrorCode.E201_DUPLICATE_SLUG]: {
-    title: "Duplicate slug",
-    anchor: "e201-duplicate-slug",
   },
   [ValidationErrorCode.E202_DUPLICATE_CATEGORY]: {
     title: "Duplicate category",

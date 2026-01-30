@@ -5,9 +5,8 @@
  * Used by validation scripts, build scripts, and the Claude /add-entry command.
  */
 
-import fs from "node:fs";
 import path from "node:path";
-import { loadYamlFile, REPO_ROOT, SCHEMA_DIR } from "./utils.js";
+import { loadYamlFile, SCHEMA_DIR } from "./utils.js";
 
 // =============================================================================
 // TYPES
@@ -54,14 +53,11 @@ interface LocalesYaml {
   locales: LocaleInfo[];
 }
 
-type SlugIndex = Record<string, "manufacturers" | "software" | "hardware">;
-
 // =============================================================================
 // CACHED DATA
 // =============================================================================
 
 let cachedContext: SchemaContext | null = null;
-let cachedSlugIndex: SlugIndex | null = null;
 
 // =============================================================================
 // SCHEMA LOADING
@@ -109,36 +105,10 @@ export function loadSchemaContext(): SchemaContext {
 }
 
 /**
- * Load the slug index (maps slugs to their collection type)
- * Results are cached for performance
- */
-export function loadSlugIndex(): SlugIndex {
-  if (cachedSlugIndex) {
-    return cachedSlugIndex;
-  }
-
-  const indexPath = path.join(REPO_ROOT, ".slug-index.json");
-  if (!fs.existsSync(indexPath)) {
-    cachedSlugIndex = {};
-    return cachedSlugIndex;
-  }
-
-  const content = fs.readFileSync(indexPath, "utf-8");
-  try {
-    cachedSlugIndex = JSON.parse(content) as SlugIndex;
-  } catch (error) {
-    console.error(`Warning: Failed to parse .slug-index.json: ${error instanceof Error ? error.message : error}`);
-    cachedSlugIndex = {};
-  }
-  return cachedSlugIndex;
-}
-
-/**
  * Clear cached data (useful for testing or after schema changes)
  */
 export function clearSchemaCache(): void {
   cachedContext = null;
-  cachedSlugIndex = null;
 }
 
 // =============================================================================
@@ -206,24 +176,6 @@ export function isValidSlugFormat(slug: string): boolean {
 }
 
 /**
- * Check if a slug is available (not already in use)
- */
-export function isSlugAvailable(slug: string): boolean {
-  const index = loadSlugIndex();
-  return !(slug in index);
-}
-
-/**
- * Get the collection type for an existing slug
- */
-export function getSlugCollection(
-  slug: string
-): "manufacturers" | "software" | "hardware" | null {
-  const index = loadSlugIndex();
-  return index[slug] ?? null;
-}
-
-/**
  * Generate a slug from a name
  */
 export function generateSlug(name: string): string {
@@ -233,18 +185,6 @@ export function generateSlug(name: string): string {
     .replace(/\s+/g, "-") // Replace spaces with hyphens
     .replace(/-+/g, "-") // Collapse multiple hyphens
     .replace(/^-|-$/g, ""); // Remove leading/trailing hyphens
-}
-
-/**
- * Get all manufacturer slugs from the slug index
- */
-export function getManufacturerSlugs(): Set<string> {
-  const index = loadSlugIndex();
-  return new Set(
-    Object.entries(index)
-      .filter(([, type]) => type === "manufacturers")
-      .map(([slug]) => slug)
-  );
 }
 
 // =============================================================================
