@@ -20,7 +20,7 @@ Run each check in order. **Stop immediately if any check fails** and report the 
 These checks mirror `.github/workflows/validate.yml` so issues are caught locally before pushing.
 
 1. `pnpm typecheck` - TypeScript type checking
-2. `pnpm validate` - Full YAML schema validation (Zod schemas, manufacturer references, slug-filename match, categories, formats, platforms, markdown, IDs)
+2. `pnpm validate` - Full YAML schema validation (Zod schemas, manufacturer references, filename format, categories, formats, platforms, markdown, IDs)
 3. `pnpm validate:translations` - Translation validation (approved locales, valid fields, I/O translation references)
 4. `pnpm format:check` - Prettier formatting check
 
