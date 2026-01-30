@@ -1,5 +1,22 @@
 # catalog
 
+## 1.1.0
+
+### Minor Changes
+
+- 63eff4a: Add enhanced validation infrastructure with line numbers, error codes, and reporting tools
+  - Enhanced error reporting with line numbers, error codes (E1xx-E4xx), and documentation links
+  - New scripts: identifier-coverage, staleness-report, benchmark, generate-context
+  - New schema-loader module for shared schema access
+  - URL health checking workflow with caching
+  - Staleness detection workflow for data quality monitoring
+  - Schema versioning with migrations table
+  - Updated /data-review skill to use automated tools
+
+### Patch Changes
+
+- 29ae985: Remove redundant slug field from all YAML files - slugs are now derived from filenames. Fix Ruby '63 Top Boost Amplifier entry data.
+
 ## 1.0.0
 
 ### Major Changes
