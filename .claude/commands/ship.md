@@ -26,8 +26,7 @@ These checks mirror `.github/workflows/validate.yml` so issues are caught locall
 
    **If formatting fails:** Ask the user if they want to auto-fix with `pnpm format`. If yes, run it and stage the changes.
 
-5. `pnpm check-slugs` - Slug uniqueness against `.slug-index.json`
-6. `pnpm build 0` - Test database build (ensures YAML can be compiled to valid SQLite)
+5. `pnpm build 0` - Test database build (ensures YAML can be compiled to valid SQLite)
 
 ### Phase 3: Analyze Changes
 
@@ -107,7 +106,6 @@ Use `gh pr create` with:
 - [x] YAML schema validation passed
 - [x] Translation validation passed
 - [x] Formatting check passed
-- [x] Slug uniqueness verified
 - [x] Database build successful
 ```
 

@@ -42,12 +42,12 @@ Then perform deeper analysis:
 
 - Read each modified YAML file in full
 - Verify all required fields are present:
-  - Manufacturers: slug, name, website
-  - Software: slug, name, manufacturer, primaryCategory, platforms, identifiers
-  - Hardware: slug, name, manufacturer, primaryCategory, description
+  - Manufacturers: name, website
+  - Software: name, manufacturer, primaryCategory, platforms, identifiers
+  - Hardware: name, manufacturer, primaryCategory, description
 - Cross-reference with `schema/CONTEXT.md` for valid categories, formats, platforms
 - Check that manufacturer references resolve to existing files in `data/manufacturers/`
-- Verify slug matches the filename (e.g., `serum.yaml` should have `slug: serum`)
+- Verify filename follows slug pattern (lowercase, hyphens, e.g., `serum.yaml`)
 - Check description quality (too short, generic, or missing?)
 - Validate markdown in description/details/specs fields
 - Check that `id` field is NOT included in new entries (IDs are assigned by CI)
@@ -60,13 +60,12 @@ Then perform deeper analysis:
 - Check if new entries have `verification` metadata (lastVerified, status)
 - Flag high-priority missing identifiers (AU/VST3/AAX formats without bundle IDs)
 
-**Agent 2 - Slug & ID Integrity:**
+**Agent 2 - Filename & ID Integrity:**
 
-- Read `.slug-index.json` to check for slug collisions across all collections
-- Verify all slugs are lowercase with hyphens only (`^[a-z0-9][a-z0-9-]*[a-z0-9]$` or single char `^[a-z0-9]$`)
+- Verify all filenames follow slug pattern (`^[a-z0-9][a-z0-9-]*[a-z0-9]$` or single char `^[a-z0-9]$`)
 - Check that existing IDs have not been modified (compare with main branch)
 - Use fuzzy matching (Levenshtein distance) to flag near-duplicate names across all data files
-- Verify no two entries share the same slug across manufacturers, software, and hardware
+- Check for potential filename conflicts within each collection directory
 
 **Agent 3 - Translation Audit:**
 
@@ -94,7 +93,7 @@ After all parallel agents complete:
 1. Collect all findings from the 4 agents
 2. De-duplicate similar issues
 3. Prioritize findings by severity:
-   - **BLOCKING**: Missing required fields, invalid schema references, slug collisions, modified IDs
+   - **BLOCKING**: Missing required fields, invalid schema references, invalid filename format, modified IDs
    - **WARNING**: Missing recommended fields, description quality issues, translation gaps
    - **INFO**: Formatting suggestions, optional field additions, structural improvements
 4. For each finding, provide:
