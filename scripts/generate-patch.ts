@@ -10,8 +10,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 
-import type { Change, Manufacturer, Software, Hardware } from "./lib/types.js";
-import { DATA_DIR, OUTPUT_DIR, escapeSQL } from "./lib/utils.js";
+import type { Change, Hardware, Manufacturer, Software } from "./lib/types.js";
+import { DATA_DIR, escapeSQL, OUTPUT_DIR } from "./lib/utils.js";
 
 const PATCHES_DIR = path.join(OUTPUT_DIR, "patches");
 
@@ -161,15 +161,9 @@ function generateSoftwareSQL(
 
     if (change.type === "modified") {
       // Delete existing related data first
-      sql.push(
-        `DELETE FROM software_categories WHERE software_id = ${escapeSQL(data.id)};`
-      );
-      sql.push(
-        `DELETE FROM software_formats WHERE software_id = ${escapeSQL(data.id)};`
-      );
-      sql.push(
-        `DELETE FROM software_platforms WHERE software_id = ${escapeSQL(data.id)};`
-      );
+      sql.push(`DELETE FROM software_categories WHERE software_id = ${escapeSQL(data.id)};`);
+      sql.push(`DELETE FROM software_formats WHERE software_id = ${escapeSQL(data.id)};`);
+      sql.push(`DELETE FROM software_platforms WHERE software_id = ${escapeSQL(data.id)};`);
       sql.push(`DELETE FROM software_fts WHERE id = ${escapeSQL(data.id)};`);
       sql.push(
         `UPDATE software SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(mfgId)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(data.details)}, specs = ${escapeSQL(data.specs)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.id)};`
@@ -237,9 +231,7 @@ function generateHardwareSQL(
 
     if (change.type === "modified") {
       // Delete existing related data first
-      sql.push(
-        `DELETE FROM hardware_categories WHERE hardware_id = ${escapeSQL(data.id)};`
-      );
+      sql.push(`DELETE FROM hardware_categories WHERE hardware_id = ${escapeSQL(data.id)};`);
       sql.push(`DELETE FROM hardware_fts WHERE id = ${escapeSQL(data.id)};`);
       sql.push(
         `UPDATE hardware SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(mfgId)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(data.details)}, specs = ${escapeSQL(data.specs)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.id)};`
@@ -320,9 +312,7 @@ function generatePatch(fromTag: string, toVersion: string): void {
     }
 
     // For deletions, resolve the nanoid from the base version
-    const deletedId = change.type === "deleted"
-      ? getDeletedEntryId(fromTag, change.file)
-      : null;
+    const deletedId = change.type === "deleted" ? getDeletedEntryId(fromTag, change.file) : null;
 
     let statements: string[] = [];
     switch (change.category) {
@@ -343,12 +333,8 @@ function generatePatch(fromTag: string, toVersion: string): void {
 
   // Update version metadata
   sql.push("-- Update catalog version");
-  sql.push(
-    `UPDATE catalog_meta SET value = '${toVersion}' WHERE key = 'version';`
-  );
-  sql.push(
-    `UPDATE catalog_meta SET value = datetime('now') WHERE key = 'updated_at';`
-  );
+  sql.push(`UPDATE catalog_meta SET value = '${toVersion}' WHERE key = 'version';`);
+  sql.push(`UPDATE catalog_meta SET value = datetime('now') WHERE key = 'updated_at';`);
   sql.push("");
   sql.push("COMMIT;");
 
@@ -384,5 +370,3 @@ if (fromArg && toArg) {
     console.log("No previous release found. Build a baseline first with: pnpm build");
   }
 }
-
-

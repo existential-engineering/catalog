@@ -86,7 +86,7 @@ function migrateIds(): void {
     fs.mkdirSync(distDir, { recursive: true });
   }
   const mapFile = path.join(distDir, "id-migration-map.json");
-  fs.writeFileSync(mapFile, JSON.stringify(mapping, null, 2) + "\n");
+  fs.writeFileSync(mapFile, `${JSON.stringify(mapping, null, 2)}\n`);
   console.log(`\nMapping written to ${mapFile}`);
 }
 

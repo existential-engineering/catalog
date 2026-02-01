@@ -72,25 +72,17 @@ export function loadSchemaContext(): SchemaContext {
     return cachedContext;
   }
 
-  const categoriesData = loadYamlFile<CategoriesYaml>(
-    path.join(SCHEMA_DIR, "categories.yaml")
-  );
+  const categoriesData = loadYamlFile<CategoriesYaml>(path.join(SCHEMA_DIR, "categories.yaml"));
 
   const aliasesData = loadYamlFile<CategoryAliasesYaml>(
     path.join(SCHEMA_DIR, "category-aliases.yaml")
   );
 
-  const formatsData = loadYamlFile<FormatsYaml>(
-    path.join(SCHEMA_DIR, "formats.yaml")
-  );
+  const formatsData = loadYamlFile<FormatsYaml>(path.join(SCHEMA_DIR, "formats.yaml"));
 
-  const platformsData = loadYamlFile<PlatformsYaml>(
-    path.join(SCHEMA_DIR, "platforms.yaml")
-  );
+  const platformsData = loadYamlFile<PlatformsYaml>(path.join(SCHEMA_DIR, "platforms.yaml"));
 
-  const localesData = loadYamlFile<LocalesYaml>(
-    path.join(SCHEMA_DIR, "locales.yaml")
-  );
+  const localesData = loadYamlFile<LocalesYaml>(path.join(SCHEMA_DIR, "locales.yaml"));
 
   cachedContext = {
     categories: categoriesData.categories,
@@ -120,10 +112,7 @@ export function clearSchemaCache(): void {
  */
 export function isValidCategory(category: string): boolean {
   const context = loadSchemaContext();
-  return (
-    context.categories.includes(category) ||
-    category in context.categoryAliases
-  );
+  return context.categories.includes(category) || category in context.categoryAliases;
 }
 
 /**

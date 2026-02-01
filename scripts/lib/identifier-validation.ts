@@ -61,10 +61,7 @@ export interface IdentifierValidationResult {
 /**
  * Validate an identifier for a specific format
  */
-export function validateIdentifier(
-  format: string,
-  value: string
-): IdentifierValidationResult {
+export function validateIdentifier(format: string, value: string): IdentifierValidationResult {
   const pattern = IDENTIFIER_PATTERNS[format];
 
   // Unknown format - accept any value

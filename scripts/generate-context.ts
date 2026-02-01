@@ -13,7 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { z } from "zod";
 import { loadSchemaContext, SLUG_PATTERN } from "./lib/schema-loader.js";
-import { SCHEMA_DIR, loadYamlFile } from "./lib/utils.js";
+import { loadYamlFile, SCHEMA_DIR } from "./lib/utils.js";
 
 // =============================================================================
 // CATEGORY GROUPS SCHEMA
@@ -35,9 +35,7 @@ interface CategoryGroupsFile {
  * Load category groups from YAML file and validate against canonical categories.
  * Fails loudly if any category is unmapped or if there are orphan mappings.
  */
-function loadAndValidateCategoryGroups(
-  categories: string[]
-): Record<string, string[]> {
+function loadAndValidateCategoryGroups(categories: string[]): Record<string, string[]> {
   const groupsPath = path.join(SCHEMA_DIR, "category-groups.yaml");
 
   // Load and parse the groups file
@@ -78,9 +76,7 @@ function loadAndValidateCategoryGroups(
 
   if (unmappedCategories.length > 0) {
     console.error("❌ Unmapped categories found in categories.yaml:");
-    console.error(
-      "   The following categories need to be added to category-groups.yaml:"
-    );
+    console.error("   The following categories need to be added to category-groups.yaml:");
     for (const cat of unmappedCategories) {
       console.error(`   - ${cat}`);
     }
@@ -88,15 +84,11 @@ function loadAndValidateCategoryGroups(
   }
 
   // Check for orphan mappings (groups has category not in categories.yaml)
-  const orphanMappings = [...mappedCategories].filter(
-    (c) => !canonicalSet.has(c)
-  );
+  const orphanMappings = [...mappedCategories].filter((c) => !canonicalSet.has(c));
 
   if (orphanMappings.length > 0) {
     console.error("❌ Orphan mappings found in category-groups.yaml:");
-    console.error(
-      "   The following categories are mapped but don't exist in categories.yaml:"
-    );
+    console.error("   The following categories are mapped but don't exist in categories.yaml:");
     for (const cat of orphanMappings) {
       console.error(`   - ${cat} (in group "${categoryToGroup.get(cat)}")`);
     }
