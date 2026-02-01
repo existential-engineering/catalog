@@ -16,16 +16,16 @@ import { execSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
-import { DATA_DIR, getYamlFiles } from "./lib/utils.js";
 import {
-  loadUrlCache,
-  saveUrlCache,
   getCachedUrl,
-  setCachedUrl,
   getCacheStats,
+  loadUrlCache,
   pruneExpiredEntries,
+  saveUrlCache,
+  setCachedUrl,
   type UrlCache,
 } from "./lib/url-cache.js";
+import { DATA_DIR, getYamlFiles } from "./lib/utils.js";
 
 const MAX_CONCURRENT_REQUESTS = 10;
 const MAX_CONCURRENT_FILES = 5;
@@ -79,12 +79,7 @@ function validateYouTubeUrlFormat(url: string): { valid: boolean; error?: string
   }
 
   const hostname = parsed.hostname.toLowerCase();
-  const youtubeHosts = new Set([
-    "youtube.com",
-    "www.youtube.com",
-    "m.youtube.com",
-    "youtu.be",
-  ]);
+  const youtubeHosts = new Set(["youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"]);
 
   if (!youtubeHosts.has(hostname)) {
     return { valid: true }; // Not a YouTube URL, skip
@@ -422,7 +417,11 @@ async function validate(
     for (const urlResult of fileResult.urls) {
       totalUrls++;
 
-      if (urlResult.status === "error" || urlResult.status === "format_error" || (typeof urlResult.status === "number" && urlResult.status >= 400)) {
+      if (
+        urlResult.status === "error" ||
+        urlResult.status === "format_error" ||
+        (typeof urlResult.status === "number" && urlResult.status >= 400)
+      ) {
         brokenCount++;
       } else if (urlResult.redirected) {
         redirectCount++;
@@ -478,7 +477,12 @@ function writeGitHubSummary(result: ValidationResult): void {
   // Show broken URLs
   const broken = result.results.flatMap((r) =>
     r.urls
-      .filter((u) => u.status === "error" || u.status === "format_error" || (typeof u.status === "number" && u.status >= 400))
+      .filter(
+        (u) =>
+          u.status === "error" ||
+          u.status === "format_error" ||
+          (typeof u.status === "number" && u.status >= 400)
+      )
       .map((u) => ({ file: r.file, ...u }))
   );
 
@@ -532,7 +536,10 @@ function writeConsoleOutput(result: ValidationResult): void {
 
     for (const fileResult of result.results) {
       const broken = fileResult.urls.filter(
-        (u) => u.status === "error" || u.status === "format_error" || (typeof u.status === "number" && u.status >= 400)
+        (u) =>
+          u.status === "error" ||
+          u.status === "format_error" ||
+          (typeof u.status === "number" && u.status >= 400)
       );
 
       if (broken.length > 0) {
@@ -563,7 +570,7 @@ function writeConsoleOutput(result: ValidationResult): void {
     }
   }
 
-  console.log("\n" + "-".repeat(50));
+  console.log(`\n${"-".repeat(50)}`);
   console.log("Stats:");
   console.log(`   Files checked: ${result.stats.filesChecked}`);
   console.log(`   URLs checked:  ${result.stats.urlsChecked}`);

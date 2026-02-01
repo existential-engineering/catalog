@@ -26,7 +26,20 @@
     "generate:context": "tsx scripts/generate-context.ts",
     "staleness-report": "tsx scripts/staleness-report.ts",
     "identifier-coverage": "tsx scripts/identifier-coverage.ts",
-    "benchmark": "tsx scripts/benchmark.ts"
+    "benchmark": "tsx scripts/benchmark.ts",
+    "lint": "biome check scripts/",
+    "lint:fix": "biome check --write scripts/",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "scripts/**/*.ts": [
+      "biome check --write"
+    ],
+    "data/**/*.yaml": [
+      "prettier --write"
+    ]
   },
   "keywords": [
     "audio",
@@ -40,17 +53,21 @@
   "author": "Jeffrey Louden <jeff@racks.fm>",
   "license": "MIT",
   "devDependencies": {
+    "@biomejs/biome": "^2.3.13",
     "@changesets/cli": "2.29.8",
     "@octokit/auth-app": "^8.1.2",
     "@octokit/rest": "^22.0.1",
     "@types/better-sqlite3": "7.6.13",
     "@types/node": "25.0.3",
     "better-sqlite3": "12.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "marked": "^17.0.1",
     "nanoid": "^5.1.6",
     "prettier": "^3.7.4",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
+    "vitest": "^4.0.18",
     "yaml": "2.8.2",
     "zod": "4.3.4"
   },

@@ -4,14 +4,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import {
-  parse as parseYaml,
-  parseDocument,
-  LineCounter,
-  Document,
-  isMap,
-  isSeq,
-} from "yaml";
+import { type Document, isMap, isSeq, LineCounter, parseDocument, parse as parseYaml } from "yaml";
 
 // =============================================================================
 // PATHS
@@ -51,9 +44,7 @@ export interface ParsedYamlWithPositions<T> {
 /**
  * Load and parse a YAML file with position tracking for error reporting
  */
-export function loadYamlFileWithPositions<T>(
-  filePath: string
-): ParsedYamlWithPositions<T> {
+export function loadYamlFileWithPositions<T>(filePath: string): ParsedYamlWithPositions<T> {
   const content = fs.readFileSync(filePath, "utf-8");
   const lineCounter = new LineCounter();
   const document = parseDocument(content, { lineCounter });
@@ -124,7 +115,7 @@ export function parseErrorPath(pathStr: string): (string | number)[] {
 
   return pathStr.split(".").map((part) => {
     const num = parseInt(part, 10);
-    return isNaN(num) ? part : num;
+    return Number.isNaN(num) ? part : num;
   });
 }
 
@@ -147,10 +138,7 @@ export function getYamlFiles(dir: string): string[] {
  * Find the closest match to a string from a set of valid options
  * Uses Levenshtein distance for fuzzy matching
  */
-export function findClosestMatch(
-  input: string,
-  validOptions: Set<string>
-): string | null {
+export function findClosestMatch(input: string, validOptions: Set<string>): string | null {
   const options = [...validOptions];
   let closest: string | null = null;
   let minDistance = Infinity;
@@ -204,7 +192,7 @@ export function formatValidOptions(options: Set<string>, limit = 10): string {
   if (sorted.length <= limit) {
     return sorted.join(", ");
   }
-  return sorted.slice(0, limit).join(", ") + `, ... (${sorted.length} total)`;
+  return `${sorted.slice(0, limit).join(", ")}, ... (${sorted.length} total)`;
 }
 
 // =============================================================================
@@ -218,8 +206,3 @@ export function escapeSQL(value: string | null | undefined): string {
   if (value === null || value === undefined) return "NULL";
   return `'${value.replace(/'/g, "''")}'`;
 }
-
-
-
-
-

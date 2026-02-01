@@ -10,22 +10,20 @@ import path from "node:path";
 import { parse as parseYaml } from "yaml";
 
 import type {
+  ContentTranslation,
+  Hardware,
+  IOTranslation,
   LocalesSchema,
   Manufacturer,
   Software,
-  Hardware,
-  ContentTranslation,
-  IOTranslation,
 } from "./lib/types.js";
-import { DATA_DIR, SCHEMA_DIR, loadYamlFile, getYamlFiles } from "./lib/utils.js";
+import { DATA_DIR, getYamlFiles, loadYamlFile, SCHEMA_DIR } from "./lib/utils.js";
 
 // =============================================================================
 // LOAD APPROVED LOCALES
 // =============================================================================
 
-const localesSchema = loadYamlFile<LocalesSchema>(
-  path.join(SCHEMA_DIR, "locales.yaml")
-);
+const localesSchema = loadYamlFile<LocalesSchema>(path.join(SCHEMA_DIR, "locales.yaml"));
 const APPROVED_LOCALES = new Set(localesSchema.locales.map((l) => l.code));
 
 // =============================================================================
@@ -49,13 +47,7 @@ interface TranslationValidationResult {
 
 // Valid translation fields for each entity type
 const VALID_MANUFACTURER_FIELDS = new Set(["description", "website"]);
-const VALID_SOFTWARE_FIELDS = new Set([
-  "description",
-  "details",
-  "specs",
-  "website",
-  "links",
-]);
+const VALID_SOFTWARE_FIELDS = new Set(["description", "details", "specs", "website", "links"]);
 const VALID_HARDWARE_FIELDS = new Set([
   "description",
   "details",
@@ -98,9 +90,7 @@ function validateIOTranslations(
 
   for (const ioTrans of ioTranslations) {
     if (!ioTrans.originalName) {
-      errors.push(
-        `translations.${locale}.io: Missing 'originalName' field`
-      );
+      errors.push(`translations.${locale}.io: Missing 'originalName' field`);
       continue;
     }
 
@@ -130,20 +120,13 @@ function validateManufacturerTranslations(
       continue;
     }
 
-    errors.push(
-      ...validateTranslationFields(trans, VALID_MANUFACTURER_FIELDS, locale)
-    );
+    errors.push(...validateTranslationFields(trans, VALID_MANUFACTURER_FIELDS, locale));
   }
 
-  return errors.length > 0
-    ? { file: path.relative(process.cwd(), filePath), errors }
-    : null;
+  return errors.length > 0 ? { file: path.relative(process.cwd(), filePath), errors } : null;
 }
 
-function validateSoftwareTranslations(
-  data: Software,
-  filePath: string
-): TranslationError | null {
+function validateSoftwareTranslations(data: Software, filePath: string): TranslationError | null {
   if (!data.translations) return null;
 
   const errors: string[] = [];
@@ -156,20 +139,13 @@ function validateSoftwareTranslations(
       continue;
     }
 
-    errors.push(
-      ...validateTranslationFields(trans, VALID_SOFTWARE_FIELDS, locale)
-    );
+    errors.push(...validateTranslationFields(trans, VALID_SOFTWARE_FIELDS, locale));
   }
 
-  return errors.length > 0
-    ? { file: path.relative(process.cwd(), filePath), errors }
-    : null;
+  return errors.length > 0 ? { file: path.relative(process.cwd(), filePath), errors } : null;
 }
 
-function validateHardwareTranslations(
-  data: Hardware,
-  filePath: string
-): TranslationError | null {
+function validateHardwareTranslations(data: Hardware, filePath: string): TranslationError | null {
   if (!data.translations) return null;
 
   const errors: string[] = [];
@@ -182,17 +158,13 @@ function validateHardwareTranslations(
       continue;
     }
 
-    errors.push(
-      ...validateTranslationFields(trans, VALID_HARDWARE_FIELDS, locale)
-    );
+    errors.push(...validateTranslationFields(trans, VALID_HARDWARE_FIELDS, locale));
 
     // Validate I/O translations reference existing I/O ports
     errors.push(...validateIOTranslations(trans.io, data.io, locale));
   }
 
-  return errors.length > 0
-    ? { file: path.relative(process.cwd(), filePath), errors }
-    : null;
+  return errors.length > 0 ? { file: path.relative(process.cwd(), filePath), errors } : null;
 }
 
 function validateTranslations(): TranslationValidationResult {
@@ -342,7 +314,9 @@ function writeConsoleOutput(result: TranslationValidationResult): void {
   console.log("📊 Stats:");
   console.log(`   Files with translations: ${result.stats.filesWithTranslations}`);
   console.log(`   Total translations:      ${result.stats.totalTranslations}`);
-  console.log(`   Locales used:            ${[...result.stats.localesUsed].join(", ") || "(none)"}`);
+  console.log(
+    `   Locales used:            ${[...result.stats.localesUsed].join(", ") || "(none)"}`
+  );
   console.log(`   Approved locales:        ${[...APPROVED_LOCALES].join(", ")}`);
   console.log();
 }

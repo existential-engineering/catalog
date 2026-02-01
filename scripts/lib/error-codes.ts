@@ -244,10 +244,7 @@ export function createDetailedError(
 /**
  * Format a detailed error for console output
  */
-export function formatDetailedError(
-  error: DetailedError,
-  filePath: string
-): string {
+export function formatDetailedError(error: DetailedError, filePath: string): string {
   const location = error.line
     ? `${filePath}:${error.line}${error.column ? `:${error.column}` : ""}`
     : filePath;
@@ -267,10 +264,7 @@ export function formatDetailedError(
 /**
  * Format multiple errors for a file
  */
-export function formatFileErrors(
-  filePath: string,
-  errors: DetailedError[]
-): string {
+export function formatFileErrors(filePath: string, errors: DetailedError[]): string {
   if (errors.length === 0) return "";
 
   const lines: string[] = [`\n📄 ${filePath}`];

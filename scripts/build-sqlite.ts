@@ -6,13 +6,19 @@
  * Run with: pnpm build
  */
 
-import Database from "better-sqlite3";
 import fs from "node:fs";
 import path from "node:path";
+import Database from "better-sqlite3";
 import { marked } from "marked";
 
-import type { Manufacturer, Software, Hardware, IO, Version, Price, Link, Revision, CategoryAliasesSchema, LocalesSchema, ContentTranslation } from "./lib/types.js";
-import { DATA_DIR, OUTPUT_DIR, SCHEMA_DIR, loadYamlFile, getYamlFiles } from "./lib/utils.js";
+import type {
+  CategoryAliasesSchema,
+  Hardware,
+  LocalesSchema,
+  Manufacturer,
+  Software,
+} from "./lib/types.js";
+import { DATA_DIR, getYamlFiles, loadYamlFile, OUTPUT_DIR, SCHEMA_DIR } from "./lib/utils.js";
 
 // Configure marked for safe HTML output
 marked.setOptions({
@@ -34,15 +40,11 @@ function markdownToHtml(markdown: string | undefined | null): string | null {
 const categoryAliasesSchema = loadYamlFile<CategoryAliasesSchema>(
   path.join(SCHEMA_DIR, "category-aliases.yaml")
 );
-const CATEGORY_ALIASES = new Map<string, string>(
-  Object.entries(categoryAliasesSchema.aliases)
-);
+const CATEGORY_ALIASES = new Map<string, string>(Object.entries(categoryAliasesSchema.aliases));
 
 // Load approved locales
-const localesSchema = loadYamlFile<LocalesSchema>(
-  path.join(SCHEMA_DIR, "locales.yaml")
-);
-const APPROVED_LOCALES = new Set(localesSchema.locales.map(l => l.code));
+const localesSchema = loadYamlFile<LocalesSchema>(path.join(SCHEMA_DIR, "locales.yaml"));
+const APPROVED_LOCALES = new Set(localesSchema.locales.map((l) => l.code));
 
 // Normalize a category to its canonical form
 function normalizeCategory(category: string): string {
@@ -50,7 +52,9 @@ function normalizeCategory(category: string): string {
 }
 
 // Read version from package.json
-const packageJson = JSON.parse(fs.readFileSync(path.join(import.meta.dirname, "../package.json"), "utf-8"));
+const packageJson = JSON.parse(
+  fs.readFileSync(path.join(import.meta.dirname, "../package.json"), "utf-8")
+);
 const CATALOG_VERSION = packageJson.version;
 
 const SCHEMA_FILE = path.join(import.meta.dirname, "schema.sql");
@@ -226,8 +230,12 @@ function buildDatabase(version: string): void {
 
     // Normalize categories to canonical form
     const normalizedCategories = data.categories?.map(normalizeCategory) ?? [];
-    const normalizedPrimaryCategory = data.primaryCategory ? normalizeCategory(data.primaryCategory) : null;
-    const normalizedSecondaryCategory = data.secondaryCategory ? normalizeCategory(data.secondaryCategory) : null;
+    const normalizedPrimaryCategory = data.primaryCategory
+      ? normalizeCategory(data.primaryCategory)
+      : null;
+    const normalizedSecondaryCategory = data.secondaryCategory
+      ? normalizeCategory(data.secondaryCategory)
+      : null;
 
     insertSoftware.run(
       id,
@@ -440,8 +448,12 @@ function buildDatabase(version: string): void {
 
     // Normalize categories to canonical form
     const normalizedCategories = data.categories?.map(normalizeCategory) ?? [];
-    const normalizedPrimaryCategory = data.primaryCategory ? normalizeCategory(data.primaryCategory) : null;
-    const normalizedSecondaryCategory = data.secondaryCategory ? normalizeCategory(data.secondaryCategory) : null;
+    const normalizedPrimaryCategory = data.primaryCategory
+      ? normalizeCategory(data.primaryCategory)
+      : null;
+    const normalizedSecondaryCategory = data.secondaryCategory
+      ? normalizeCategory(data.secondaryCategory)
+      : null;
 
     insertHardware.run(
       id,
@@ -642,12 +654,12 @@ function buildDatabase(version: string): void {
 
         // Insert I/O translations (merge semantics)
         if (trans.io) {
-          const sourceIONames = new Set(data.io?.map(io => io.name) ?? []);
+          const sourceIONames = new Set(data.io?.map((io) => io.name) ?? []);
           for (const ioTrans of trans.io) {
             if (!sourceIONames.has(ioTrans.originalName)) {
               console.warn(
                 `  ⚠️  Warning: hardware '${slug}' locale '${locale}' references unknown I/O port '${ioTrans.originalName}'. ` +
-                `Available: ${[...sourceIONames].join(", ") || "(none)"}`
+                  `Available: ${[...sourceIONames].join(", ") || "(none)"}`
               );
               continue;
             }
@@ -699,5 +711,3 @@ function buildDatabase(version: string): void {
 console.log("\n🔨 Building catalog database...\n");
 buildDatabase(CATALOG_VERSION);
 console.log();
-
-

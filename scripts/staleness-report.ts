@@ -15,8 +15,8 @@
 
 import path from "node:path";
 import { z } from "zod";
-import { loadYamlFile, getYamlFiles, DATA_DIR } from "./lib/utils.js";
-import type { Software, Hardware } from "./lib/types.js";
+import type { Hardware, Software } from "./lib/types.js";
+import { DATA_DIR, getYamlFiles, loadYamlFile } from "./lib/utils.js";
 
 // =============================================================================
 // CONFIGURATION
@@ -94,7 +94,7 @@ export type StalenessReport = z.infer<typeof StalenessReportSchema>;
 
 function daysSince(dateStr: string): number {
   const date = new Date(dateStr);
-  if (isNaN(date.getTime())) {
+  if (Number.isNaN(date.getTime())) {
     return -1; // Invalid date
   }
   const now = new Date();
@@ -249,7 +249,9 @@ function printConsoleReport(report: StalenessReport): void {
   console.log("\n📊 Staleness Report");
   console.log("═".repeat(60));
   console.log(`Generated: ${report.generatedAt}`);
-  console.log(`Thresholds: ${report.thresholds.entryDays} days (entries), ${report.thresholds.priceDays} days (prices)`);
+  console.log(
+    `Thresholds: ${report.thresholds.entryDays} days (entries), ${report.thresholds.priceDays} days (prices)`
+  );
   console.log();
 
   // Summary
@@ -298,7 +300,9 @@ function printConsoleReport(report: StalenessReport): void {
     console.log("─".repeat(40));
     for (const price of report.stalePrices.slice(0, 10)) {
       console.log(`  ${price.file}`);
-      console.log(`    ${price.name} - ${price.currency} ${price.amount} (${price.daysSincePriceCheck} days old)`);
+      console.log(
+        `    ${price.name} - ${price.currency} ${price.amount} (${price.daysSincePriceCheck} days old)`
+      );
     }
     if (report.stalePrices.length > 10) {
       console.log(`  ... and ${report.stalePrices.length - 10} more`);

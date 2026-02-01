@@ -13,9 +13,9 @@
  */
 
 import path from "node:path";
-import { loadYamlFile, getYamlFiles, DATA_DIR } from "./lib/utils.js";
-import type { Software } from "./lib/types.js";
 import { validateIdentifier } from "./lib/identifier-validation.js";
+import type { Software } from "./lib/types.js";
+import { DATA_DIR, getYamlFiles, loadYamlFile } from "./lib/utils.js";
 
 // =============================================================================
 // TYPES
@@ -109,11 +109,12 @@ function calculateFormatCoverage(entries: SoftwareEntry[]): FormatCoverage[] {
         formatStats.set(format, { withFormat: 0, withIdentifier: 0 });
       }
 
-      const stats = formatStats.get(format)!;
-      stats.withFormat++;
-
-      if (entry.identifiers[format]) {
-        stats.withIdentifier++;
+      const stats = formatStats.get(format);
+      if (stats) {
+        stats.withFormat++;
+        if (entry.identifiers[format]) {
+          stats.withIdentifier++;
+        }
       }
     }
   }
@@ -125,9 +126,7 @@ function calculateFormatCoverage(entries: SoftwareEntry[]): FormatCoverage[] {
       entriesWithFormat: stats.withFormat,
       entriesWithIdentifier: stats.withIdentifier,
       coveragePercent:
-        stats.withFormat > 0
-          ? Math.round((stats.withIdentifier / stats.withFormat) * 100)
-          : 0,
+        stats.withFormat > 0 ? Math.round((stats.withIdentifier / stats.withFormat) * 100) : 0,
     });
   }
 
@@ -135,9 +134,7 @@ function calculateFormatCoverage(entries: SoftwareEntry[]): FormatCoverage[] {
   return coverage.sort((a, b) => b.entriesWithFormat - a.entriesWithFormat);
 }
 
-function categorizePriority(
-  entries: SoftwareEntry[]
-): CoverageReport["priority"] {
+function categorizePriority(entries: SoftwareEntry[]): CoverageReport["priority"] {
   const high: SoftwareEntry[] = [];
   const medium: SoftwareEntry[] = [];
   const low: SoftwareEntry[] = [];
@@ -146,9 +143,7 @@ function categorizePriority(
     if (entry.hasIdentifiers) continue; // Already has identifiers
 
     // High priority: Has AU or VST3 format without identifier
-    const hasPluginFormats = entry.formats.some((f) =>
-      ["au", "vst3", "aax", "clap"].includes(f)
-    );
+    const hasPluginFormats = entry.formats.some((f) => ["au", "vst3", "aax", "clap"].includes(f));
 
     if (hasPluginFormats && entry.missingFormats.length > 0) {
       high.push(entry);
@@ -198,9 +193,7 @@ function generateReport(): CoverageReport {
       withIdentifiers,
       withoutIdentifiers,
       coveragePercent:
-        entries.length > 0
-          ? Math.round((withIdentifiers / entries.length) * 100)
-          : 0,
+        entries.length > 0 ? Math.round((withIdentifiers / entries.length) * 100) : 0,
       invalidIdentifiers: allInvalid.length,
     },
     byFormat: calculateFormatCoverage(entries),
@@ -232,7 +225,7 @@ function printConsoleReport(report: CoverageReport): void {
     console.log("📋 Coverage by Format");
     console.log("─".repeat(40));
     console.log("  Format     Entries   With ID   Coverage");
-    console.log("  " + "─".repeat(38));
+    console.log(`  ${"─".repeat(38)}`);
     for (const fc of report.byFormat) {
       const format = fc.format.padEnd(10);
       const entries = String(fc.entriesWithFormat).padStart(7);

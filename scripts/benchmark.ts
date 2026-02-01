@@ -1,4 +1,5 @@
 #!/usr/bin/env tsx
+
 /**
  * Query Performance Benchmark
  *
@@ -10,9 +11,9 @@
  *   pnpm benchmark --json      # JSON output
  */
 
-import Database from "better-sqlite3";
 import fs from "node:fs";
 import path from "node:path";
+import Database from "better-sqlite3";
 import { OUTPUT_DIR } from "./lib/utils.js";
 
 // =============================================================================
@@ -50,10 +51,7 @@ interface BenchmarkReport {
 // BENCHMARK RUNNER
 // =============================================================================
 
-function benchmark(
-  name: string,
-  fn: () => void
-): BenchmarkResult {
+function benchmark(name: string, fn: () => void): BenchmarkResult {
   const times: number[] = [];
 
   // Warm up
@@ -112,24 +110,14 @@ function runBenchmarks(): BenchmarkReport {
   // Prepare statements for benchmarks
   const stmts = {
     // FTS queries
-    ftsSimple: db.prepare(
-      "SELECT * FROM software_fts WHERE software_fts MATCH ? LIMIT 10"
-    ),
-    ftsManufacturer: db.prepare(
-      "SELECT * FROM software_fts WHERE software_fts MATCH ? LIMIT 10"
-    ),
-    ftsHardware: db.prepare(
-      "SELECT * FROM hardware_fts WHERE hardware_fts MATCH ? LIMIT 10"
-    ),
+    ftsSimple: db.prepare("SELECT * FROM software_fts WHERE software_fts MATCH ? LIMIT 10"),
+    ftsManufacturer: db.prepare("SELECT * FROM software_fts WHERE software_fts MATCH ? LIMIT 10"),
+    ftsHardware: db.prepare("SELECT * FROM hardware_fts WHERE hardware_fts MATCH ? LIMIT 10"),
 
     // Lookups
     softwareById: db.prepare("SELECT * FROM software WHERE id = ?"),
-    softwareByManufacturer: db.prepare(
-      "SELECT * FROM software WHERE manufacturer_id = ?"
-    ),
-    manufacturerByName: db.prepare(
-      "SELECT * FROM manufacturers WHERE name LIKE ?"
-    ),
+    softwareByManufacturer: db.prepare("SELECT * FROM software WHERE manufacturer_id = ?"),
+    manufacturerByName: db.prepare("SELECT * FROM manufacturers WHERE name LIKE ?"),
 
     // Joins
     softwareWithManufacturer: db.prepare(`
@@ -175,18 +163,18 @@ function runBenchmarks(): BenchmarkReport {
   };
 
   // Get a sample manufacturer ID for lookups
-  const sampleManufacturer = db
-    .prepare("SELECT id FROM manufacturers LIMIT 1")
-    .get() as { id: string } | undefined;
+  const sampleManufacturer = db.prepare("SELECT id FROM manufacturers LIMIT 1").get() as
+    | { id: string }
+    | undefined;
   const sampleManufacturerId = sampleManufacturer?.id || "";
   if (!sampleManufacturer) {
     console.warn("Warning: No manufacturers found - lookup benchmarks will query empty results");
   }
 
   // Get a sample software ID
-  const sampleSoftware = db
-    .prepare("SELECT id FROM software LIMIT 1")
-    .get() as { id: string } | undefined;
+  const sampleSoftware = db.prepare("SELECT id FROM software LIMIT 1").get() as
+    | { id: string }
+    | undefined;
   const sampleSoftwareId = sampleSoftware?.id || "";
   if (!sampleSoftware) {
     console.warn("Warning: No software found - lookup benchmarks will query empty results");
@@ -273,11 +261,13 @@ function printConsoleReport(report: BenchmarkReport): void {
   console.log(`Iterations per benchmark: ${ITERATIONS}`);
   console.log();
 
-  console.log("Query".padEnd(45) + "Avg (ms)".padStart(10) + "Min".padStart(10) + "Max".padStart(10));
+  console.log(
+    "Query".padEnd(45) + "Avg (ms)".padStart(10) + "Min".padStart(10) + "Max".padStart(10)
+  );
   console.log("─".repeat(75));
 
   for (const result of report.benchmarks) {
-    const name = result.name.length > 44 ? result.name.slice(0, 41) + "..." : result.name;
+    const name = result.name.length > 44 ? `${result.name.slice(0, 41)}...` : result.name;
     console.log(
       name.padEnd(45) +
         result.avgMs.toFixed(3).padStart(10) +
@@ -302,7 +292,7 @@ function printConsoleReport(report: BenchmarkReport): void {
     }
   }
 
-  console.log("\n" + "═".repeat(70));
+  console.log(`\n${"═".repeat(70)}`);
 }
 
 // Run

@@ -7,13 +7,14 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { marked } from "marked";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
-import { marked } from "marked";
-
+import { getDocsUrl, ValidationErrorCode } from "./lib/error-codes.js";
 import type {
   CategoriesSchema,
   CategoryAliasesSchema,
+  Collection,
   FormatsSchema,
   PlatformsSchema,
   ValidationError,
@@ -22,42 +23,32 @@ import type {
 } from "./lib/types.js";
 import {
   DATA_DIR,
-  SCHEMA_DIR,
-  loadYamlFile,
-  getYamlFiles,
   findClosestMatch,
   formatValidOptions,
-  loadYamlFileWithPositions,
   getLineForPath,
+  getYamlFiles,
+  loadYamlFile,
+  loadYamlFileWithPositions,
   parseErrorPath,
+  SCHEMA_DIR,
 } from "./lib/utils.js";
-import type { Collection } from "./lib/types.js";
-import { ValidationErrorCode, getDocsUrl } from "./lib/error-codes.js";
 
 // =============================================================================
 // LOAD CANONICAL SCHEMAS
 // =============================================================================
 
-const categoriesSchema = loadYamlFile<CategoriesSchema>(
-  path.join(SCHEMA_DIR, "categories.yaml")
-);
+const categoriesSchema = loadYamlFile<CategoriesSchema>(path.join(SCHEMA_DIR, "categories.yaml"));
 const categoryAliasesSchema = loadYamlFile<CategoryAliasesSchema>(
   path.join(SCHEMA_DIR, "category-aliases.yaml")
 );
-const formatsSchema = loadYamlFile<FormatsSchema>(
-  path.join(SCHEMA_DIR, "formats.yaml")
-);
-const platformsSchema = loadYamlFile<PlatformsSchema>(
-  path.join(SCHEMA_DIR, "platforms.yaml")
-);
+const formatsSchema = loadYamlFile<FormatsSchema>(path.join(SCHEMA_DIR, "formats.yaml"));
+const platformsSchema = loadYamlFile<PlatformsSchema>(path.join(SCHEMA_DIR, "platforms.yaml"));
 
 // Canonical categories
 const VALID_CATEGORIES = new Set(categoriesSchema.categories);
 
 // Map of alias -> canonical category
-const CATEGORY_ALIASES = new Map<string, string>(
-  Object.entries(categoryAliasesSchema.aliases)
-);
+const _CATEGORY_ALIASES = new Map<string, string>(Object.entries(categoryAliasesSchema.aliases));
 
 // All valid category inputs (canonical + aliases)
 const ALL_VALID_CATEGORY_INPUTS = new Set([
@@ -86,14 +77,12 @@ marked.setOptions({
 /**
  * Determine the appropriate error code from a Zod issue
  */
-function getErrorCodeFromZodIssue(
-  issue: {
-    code: string;
-    message: string;
-    path: readonly (string | number | symbol)[];
-    received?: unknown;
-  }
-): ValidationErrorCode {
+function getErrorCodeFromZodIssue(issue: {
+  code: string;
+  message: string;
+  path: readonly (string | number | symbol)[];
+  received?: unknown;
+}): ValidationErrorCode {
   const path = issue.path.join(".");
   const message = issue.message.toLowerCase();
 
@@ -247,12 +236,7 @@ function validateYouTubeUrl(url: string): { valid: boolean; error?: string } {
   }
 
   const hostname = parsed.hostname.toLowerCase();
-  const youtubeHosts = new Set([
-    "youtube.com",
-    "www.youtube.com",
-    "m.youtube.com",
-    "youtu.be",
-  ]);
+  const youtubeHosts = new Set(["youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"]);
 
   if (!youtubeHosts.has(hostname)) {
     return { valid: true }; // Not a YouTube URL, skip
@@ -305,10 +289,10 @@ const LinkSchema = z
   .check((ctx) => {
     if (!ctx.value.url) return;
     const result = validateYouTubeUrl(ctx.value.url);
-    if (!result.valid) {
+    if (!result.valid && result.error) {
       ctx.issues.push({
         code: "custom",
-        message: result.error!,
+        message: result.error,
         input: ctx.value.url,
         path: ["url"],
       });
@@ -328,9 +312,7 @@ const VersionSchema = z
     links: z.array(LinkSchema).optional(),
   })
   .refine(
-    (data) =>
-      !data.releaseDateYearOnly ||
-      (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
+    (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
     {
       message: "releaseDateYearOnly requires releaseDate in YYYY format",
       path: ["releaseDateYearOnly"],
@@ -363,9 +345,7 @@ const RevisionSchema = z
     links: z.array(LinkSchema).optional(),
   })
   .refine(
-    (data) =>
-      !data.releaseDateYearOnly ||
-      (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
+    (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
     {
       message: "releaseDateYearOnly requires releaseDate in YYYY format",
       path: ["releaseDateYearOnly"],
@@ -474,9 +454,7 @@ const SoftwareSchema = z
     links: z.array(LinkSchema).optional(),
   })
   .refine(
-    (data) =>
-      !data.releaseDateYearOnly ||
-      (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
+    (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
     {
       message: "releaseDateYearOnly requires releaseDate in YYYY format",
       path: ["releaseDateYearOnly"],
@@ -522,9 +500,7 @@ const HardwareSchema = z
     links: z.array(LinkSchema).optional(),
   })
   .refine(
-    (data) =>
-      !data.releaseDateYearOnly ||
-      (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
+    (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
     {
       message: "releaseDateYearOnly requires releaseDate in YYYY format",
       path: ["releaseDateYearOnly"],
@@ -620,13 +596,15 @@ function validateFile(
         return {
           file: path.relative(process.cwd(), filePath),
           errors: [`manufacturer: ${message}`],
-          details: [{
-            code: errorCode,
-            message,
-            path: "manufacturer",
-            line: line ?? undefined,
-            docsUrl: getDocsUrl(errorCode),
-          }],
+          details: [
+            {
+              code: errorCode,
+              message,
+              path: "manufacturer",
+              line: line ?? undefined,
+              docsUrl: getDocsUrl(errorCode),
+            },
+          ],
         };
       }
     }
@@ -697,9 +675,7 @@ function validateFile(
   } catch (error) {
     return {
       file: path.relative(process.cwd(), filePath),
-      errors: [
-        `Parse error: ${error instanceof Error ? error.message : String(error)}`,
-      ],
+      errors: [`Parse error: ${error instanceof Error ? error.message : String(error)}`],
     };
   }
 }
@@ -793,13 +769,17 @@ function validateIds(): IdValidationResult {
         if (data.id !== undefined) {
           // Validate ID is a non-empty string
           if (typeof data.id !== "string" || data.id.length === 0) {
-            errors.push(`${collection}/${slug}: id must be a non-empty string, got ${JSON.stringify(data.id)}`);
+            errors.push(
+              `${collection}/${slug}: id must be a non-empty string, got ${JSON.stringify(data.id)}`
+            );
             continue;
           }
 
           // Check for duplicates
           if (seenIds.has(data.id)) {
-            errors.push(`${collection}: duplicate id '${data.id}' in '${seenIds.get(data.id)}' and '${slug}'`);
+            errors.push(
+              `${collection}: duplicate id '${data.id}' in '${seenIds.get(data.id)}' and '${slug}'`
+            );
             stats.duplicates++;
           }
           seenIds.set(data.id, slug);
@@ -828,10 +808,7 @@ function writeGitHubSummary(result: ValidationResult): void {
   const summaryPath = process.env.GITHUB_STEP_SUMMARY;
   if (!summaryPath) return;
 
-  const total =
-    result.stats.manufacturers +
-    result.stats.software +
-    result.stats.hardware;
+  const total = result.stats.manufacturers + result.stats.software + result.stats.hardware;
 
   let summary = "";
 
@@ -936,5 +913,3 @@ writeGitHubSummary(result);
 
 const isValid = result.valid && idResult.valid;
 process.exit(isValid ? 0 : 1);
-
-
