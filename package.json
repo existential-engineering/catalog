@@ -27,8 +27,8 @@
     "staleness-report": "tsx scripts/staleness-report.ts",
     "identifier-coverage": "tsx scripts/identifier-coverage.ts",
     "benchmark": "tsx scripts/benchmark.ts",
-    "lint": "biome check scripts/",
-    "lint:fix": "biome check --write scripts/",
+    "lint": "biome check scripts/ vitest.config.ts",
+    "lint:fix": "biome check --write scripts/ vitest.config.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "prepare": "husky"
