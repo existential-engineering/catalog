@@ -1,5 +1,12 @@
 # catalog
 
+## 1.2.1
+
+### Patch Changes
+
+- fe73100: Add development infrastructure: Biome for linting/formatting, Vitest for testing, and husky pre-commit hooks
+- 1a1b597: software(add): Satin
+
 ## 1.2.0
 
 ### Minor Changes
