@@ -192,10 +192,20 @@ function validateMarkdown(content: string): { valid: boolean; error?: string } {
   }
 }
 
-// Zod schema for markdown content validation
+// Helper to normalize string or string[] to a single markdown string
+function normalizeToMarkdownString(value: string | string[]): string {
+  if (Array.isArray(value)) {
+    // Join array items with double newlines (paragraph breaks)
+    return value.join("\n\n");
+  }
+  return value;
+}
+
+// Zod schema for markdown content validation (accepts string or string[])
 const MarkdownSchema = z
-  .string()
+  .union([z.string(), z.array(z.string())])
   .optional()
+  .transform((val) => (val ? normalizeToMarkdownString(val) : val))
   .check((ctx) => {
     if (!ctx.value) return;
     const result = validateMarkdown(ctx.value);

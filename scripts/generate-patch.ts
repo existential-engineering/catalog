@@ -11,7 +11,7 @@ import path from "node:path";
 import { parse as parseYaml } from "yaml";
 
 import type { Change, Hardware, Manufacturer, Software } from "./lib/types.js";
-import { DATA_DIR, escapeSQL, OUTPUT_DIR } from "./lib/utils.js";
+import { DATA_DIR, escapeSQL, normalizeMarkdown, OUTPUT_DIR } from "./lib/utils.js";
 
 const PATCHES_DIR = path.join(OUTPUT_DIR, "patches");
 
@@ -166,11 +166,11 @@ function generateSoftwareSQL(
       sql.push(`DELETE FROM software_platforms WHERE software_id = ${escapeSQL(data.id)};`);
       sql.push(`DELETE FROM software_fts WHERE id = ${escapeSQL(data.id)};`);
       sql.push(
-        `UPDATE software SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(mfgId)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(data.details)}, specs = ${escapeSQL(data.specs)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.id)};`
+        `UPDATE software SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(mfgId)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(normalizeMarkdown(data.details))}, specs = ${escapeSQL(normalizeMarkdown(data.specs))}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.id)};`
       );
     } else {
       sql.push(
-        `INSERT INTO software (id, name, manufacturer_id, website, description, release_date, primary_category, secondary_category, details, specs, updated_at) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, ${escapeSQL(mfgId)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, ${escapeSQL(data.releaseDate)}, ${escapeSQL(data.primaryCategory)}, ${escapeSQL(data.secondaryCategory)}, ${escapeSQL(data.details)}, ${escapeSQL(data.specs)}, datetime('now'));`
+        `INSERT INTO software (id, name, manufacturer_id, website, description, release_date, primary_category, secondary_category, details, specs, updated_at) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, ${escapeSQL(mfgId)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, ${escapeSQL(data.releaseDate)}, ${escapeSQL(data.primaryCategory)}, ${escapeSQL(data.secondaryCategory)}, ${escapeSQL(normalizeMarkdown(data.details))}, ${escapeSQL(normalizeMarkdown(data.specs))}, datetime('now'));`
       );
     }
 
@@ -234,11 +234,11 @@ function generateHardwareSQL(
       sql.push(`DELETE FROM hardware_categories WHERE hardware_id = ${escapeSQL(data.id)};`);
       sql.push(`DELETE FROM hardware_fts WHERE id = ${escapeSQL(data.id)};`);
       sql.push(
-        `UPDATE hardware SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(mfgId)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(data.details)}, specs = ${escapeSQL(data.specs)}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.id)};`
+        `UPDATE hardware SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(mfgId)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(normalizeMarkdown(data.details))}, specs = ${escapeSQL(normalizeMarkdown(data.specs))}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.id)};`
       );
     } else {
       sql.push(
-        `INSERT INTO hardware (id, name, manufacturer_id, website, description, release_date, primary_category, secondary_category, details, specs, updated_at) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, ${escapeSQL(mfgId)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, ${escapeSQL(data.releaseDate)}, ${escapeSQL(data.primaryCategory)}, ${escapeSQL(data.secondaryCategory)}, ${escapeSQL(data.details)}, ${escapeSQL(data.specs)}, datetime('now'));`
+        `INSERT INTO hardware (id, name, manufacturer_id, website, description, release_date, primary_category, secondary_category, details, specs, updated_at) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, ${escapeSQL(mfgId)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, ${escapeSQL(data.releaseDate)}, ${escapeSQL(data.primaryCategory)}, ${escapeSQL(data.secondaryCategory)}, ${escapeSQL(normalizeMarkdown(data.details))}, ${escapeSQL(normalizeMarkdown(data.specs))}, datetime('now'));`
       );
     }
 

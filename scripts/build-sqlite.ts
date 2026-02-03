@@ -18,7 +18,14 @@ import type {
   Manufacturer,
   Software,
 } from "./lib/types.js";
-import { DATA_DIR, getYamlFiles, loadYamlFile, OUTPUT_DIR, SCHEMA_DIR } from "./lib/utils.js";
+import {
+  DATA_DIR,
+  getYamlFiles,
+  loadYamlFile,
+  normalizeMarkdown,
+  OUTPUT_DIR,
+  SCHEMA_DIR,
+} from "./lib/utils.js";
 
 // Configure marked for safe HTML output
 marked.setOptions({
@@ -247,8 +254,8 @@ function buildDatabase(version: string): void {
       normalizedPrimaryCategory,
       normalizedSecondaryCategory,
       markdownToHtml(data.description),
-      markdownToHtml(data.details),
-      markdownToHtml(data.specs)
+      markdownToHtml(normalizeMarkdown(data.details)),
+      markdownToHtml(normalizeMarkdown(data.specs))
     );
 
     // Insert categories (normalized)
@@ -465,8 +472,8 @@ function buildDatabase(version: string): void {
       normalizedPrimaryCategory,
       normalizedSecondaryCategory,
       markdownToHtml(data.description),
-      markdownToHtml(data.details),
-      markdownToHtml(data.specs)
+      markdownToHtml(normalizeMarkdown(data.details)),
+      markdownToHtml(normalizeMarkdown(data.specs))
     );
 
     // Insert categories (normalized)

@@ -110,8 +110,8 @@ export interface Software {
   secondaryCategory?: string;
   searchTerms?: string[];
   description?: string;
-  details?: string;
-  specs?: string;
+  details?: string | string[];
+  specs?: string | string[];
   versions?: Version[];
   prices?: Price[];
   links?: Link[];
@@ -131,8 +131,8 @@ export interface Hardware {
   secondaryCategory?: string;
   searchTerms?: string[];
   description?: string;
-  details?: string;
-  specs?: string;
+  details?: string | string[];
+  specs?: string | string[];
   io?: IO[];
   versions?: Version[];
   revisions?: Revision[];

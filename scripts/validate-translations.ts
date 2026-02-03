@@ -35,13 +35,20 @@ interface TranslationError {
   errors: string[];
 }
 
+interface TranslationWarning {
+  file: string;
+  warnings: string[];
+}
+
 interface TranslationValidationResult {
   valid: boolean;
   errors: TranslationError[];
+  warnings: TranslationWarning[];
   stats: {
     filesWithTranslations: number;
     totalTranslations: number;
     localesUsed: Set<string>;
+    unapprovedLocalesUsed: Set<string>;
   };
 }
 
@@ -107,55 +114,72 @@ function validateIOTranslations(
 function validateManufacturerTranslations(
   data: Manufacturer,
   filePath: string
-): TranslationError | null {
-  if (!data.translations) return null;
+): { error: TranslationError | null; warning: TranslationWarning | null } {
+  if (!data.translations) return { error: null, warning: null };
 
   const errors: string[] = [];
+  const warnings: string[] = [];
 
   for (const [locale, trans] of Object.entries(data.translations)) {
     if (!APPROVED_LOCALES.has(locale)) {
-      errors.push(
-        `translations.${locale}: Locale '${locale}' is not approved. Add it to schema/locales.yaml first. Approved: ${[...APPROVED_LOCALES].join(", ")}`
+      warnings.push(
+        `translations.${locale}: Locale '${locale}' is not yet approved. Add it to schema/locales.yaml to enable full support.`
       );
-      continue;
+      // Still validate the fields for unapproved locales
     }
 
     errors.push(...validateTranslationFields(trans, VALID_MANUFACTURER_FIELDS, locale));
   }
 
-  return errors.length > 0 ? { file: path.relative(process.cwd(), filePath), errors } : null;
+  return {
+    error: errors.length > 0 ? { file: path.relative(process.cwd(), filePath), errors } : null,
+    warning:
+      warnings.length > 0 ? { file: path.relative(process.cwd(), filePath), warnings } : null,
+  };
 }
 
-function validateSoftwareTranslations(data: Software, filePath: string): TranslationError | null {
-  if (!data.translations) return null;
+function validateSoftwareTranslations(
+  data: Software,
+  filePath: string
+): { error: TranslationError | null; warning: TranslationWarning | null } {
+  if (!data.translations) return { error: null, warning: null };
 
   const errors: string[] = [];
+  const warnings: string[] = [];
 
   for (const [locale, trans] of Object.entries(data.translations)) {
     if (!APPROVED_LOCALES.has(locale)) {
-      errors.push(
-        `translations.${locale}: Locale '${locale}' is not approved. Add it to schema/locales.yaml first. Approved: ${[...APPROVED_LOCALES].join(", ")}`
+      warnings.push(
+        `translations.${locale}: Locale '${locale}' is not yet approved. Add it to schema/locales.yaml to enable full support.`
       );
-      continue;
+      // Still validate the fields for unapproved locales
     }
 
     errors.push(...validateTranslationFields(trans, VALID_SOFTWARE_FIELDS, locale));
   }
 
-  return errors.length > 0 ? { file: path.relative(process.cwd(), filePath), errors } : null;
+  return {
+    error: errors.length > 0 ? { file: path.relative(process.cwd(), filePath), errors } : null,
+    warning:
+      warnings.length > 0 ? { file: path.relative(process.cwd(), filePath), warnings } : null,
+  };
 }
 
-function validateHardwareTranslations(data: Hardware, filePath: string): TranslationError | null {
-  if (!data.translations) return null;
+function validateHardwareTranslations(
+  data: Hardware,
+  filePath: string
+): { error: TranslationError | null; warning: TranslationWarning | null } {
+  if (!data.translations) return { error: null, warning: null };
 
   const errors: string[] = [];
+  const warnings: string[] = [];
 
   for (const [locale, trans] of Object.entries(data.translations)) {
     if (!APPROVED_LOCALES.has(locale)) {
-      errors.push(
-        `translations.${locale}: Locale '${locale}' is not approved. Add it to schema/locales.yaml first. Approved: ${[...APPROVED_LOCALES].join(", ")}`
+      warnings.push(
+        `translations.${locale}: Locale '${locale}' is not yet approved. Add it to schema/locales.yaml to enable full support.`
       );
-      continue;
+      // Still validate the fields for unapproved locales
     }
 
     errors.push(...validateTranslationFields(trans, VALID_HARDWARE_FIELDS, locale));
@@ -164,15 +188,21 @@ function validateHardwareTranslations(data: Hardware, filePath: string): Transla
     errors.push(...validateIOTranslations(trans.io, data.io, locale));
   }
 
-  return errors.length > 0 ? { file: path.relative(process.cwd(), filePath), errors } : null;
+  return {
+    error: errors.length > 0 ? { file: path.relative(process.cwd(), filePath), errors } : null,
+    warning:
+      warnings.length > 0 ? { file: path.relative(process.cwd(), filePath), warnings } : null,
+  };
 }
 
 function validateTranslations(): TranslationValidationResult {
   const errors: TranslationError[] = [];
+  const warnings: TranslationWarning[] = [];
   const stats = {
     filesWithTranslations: 0,
     totalTranslations: 0,
     localesUsed: new Set<string>(),
+    unapprovedLocalesUsed: new Set<string>(),
   };
 
   // Validate manufacturers
@@ -187,11 +217,15 @@ function validateTranslations(): TranslationValidationResult {
         for (const locale of Object.keys(data.translations)) {
           stats.totalTranslations++;
           stats.localesUsed.add(locale);
+          if (!APPROVED_LOCALES.has(locale)) {
+            stats.unapprovedLocalesUsed.add(locale);
+          }
         }
       }
 
-      const error = validateManufacturerTranslations(data, file);
-      if (error) errors.push(error);
+      const result = validateManufacturerTranslations(data, file);
+      if (result.error) errors.push(result.error);
+      if (result.warning) warnings.push(result.warning);
     } catch (err) {
       errors.push({
         file: path.relative(process.cwd(), file),
@@ -212,11 +246,15 @@ function validateTranslations(): TranslationValidationResult {
         for (const locale of Object.keys(data.translations)) {
           stats.totalTranslations++;
           stats.localesUsed.add(locale);
+          if (!APPROVED_LOCALES.has(locale)) {
+            stats.unapprovedLocalesUsed.add(locale);
+          }
         }
       }
 
-      const error = validateSoftwareTranslations(data, file);
-      if (error) errors.push(error);
+      const result = validateSoftwareTranslations(data, file);
+      if (result.error) errors.push(result.error);
+      if (result.warning) warnings.push(result.warning);
     } catch (err) {
       errors.push({
         file: path.relative(process.cwd(), file),
@@ -237,11 +275,15 @@ function validateTranslations(): TranslationValidationResult {
         for (const locale of Object.keys(data.translations)) {
           stats.totalTranslations++;
           stats.localesUsed.add(locale);
+          if (!APPROVED_LOCALES.has(locale)) {
+            stats.unapprovedLocalesUsed.add(locale);
+          }
         }
       }
 
-      const error = validateHardwareTranslations(data, file);
-      if (error) errors.push(error);
+      const result = validateHardwareTranslations(data, file);
+      if (result.error) errors.push(result.error);
+      if (result.warning) warnings.push(result.warning);
     } catch (err) {
       errors.push({
         file: path.relative(process.cwd(), file),
@@ -253,6 +295,7 @@ function validateTranslations(): TranslationValidationResult {
   return {
     valid: errors.length === 0,
     errors,
+    warnings,
     stats,
   };
 }
@@ -282,12 +325,26 @@ function writeGitHubSummary(result: TranslationValidationResult): void {
     }
   }
 
+  if (result.warnings.length > 0) {
+    summary += `## ⚠️ Translation Warnings\n\n`;
+    summary += `Found ${result.warnings.length} file(s) with unapproved locales (content preserved for future use):\n\n`;
+
+    for (const warning of result.warnings) {
+      summary += `### \`${warning.file}\`\n\n`;
+      for (const msg of warning.warnings) {
+        summary += `- ${msg}\n`;
+      }
+      summary += "\n";
+    }
+  }
+
   summary += `## 📊 Translation Stats\n\n`;
   summary += `| Metric | Value |\n`;
   summary += `|--------|-------|\n`;
   summary += `| Files with translations | ${result.stats.filesWithTranslations} |\n`;
   summary += `| Total translations | ${result.stats.totalTranslations} |\n`;
   summary += `| Locales used | ${[...result.stats.localesUsed].join(", ") || "(none)"} |\n`;
+  summary += `| Unapproved locales | ${[...result.stats.unapprovedLocalesUsed].join(", ") || "(none)"} |\n`;
   summary += `| Approved locales | ${[...APPROVED_LOCALES].join(", ")} |\n`;
 
   fs.appendFileSync(summaryPath, summary);
@@ -304,6 +361,18 @@ function writeConsoleOutput(result: TranslationValidationResult): void {
     for (const error of result.errors) {
       console.log(`\n📄 ${error.file}`);
       for (const msg of error.errors) {
+        console.log(`   ❌ ${msg}`);
+      }
+    }
+    console.log();
+  }
+
+  if (result.warnings.length > 0) {
+    console.log("─".repeat(50));
+    console.log("⚠️  Unapproved locales (content preserved for future use):\n");
+    for (const warning of result.warnings) {
+      console.log(`📄 ${warning.file}`);
+      for (const msg of warning.warnings) {
         console.log(`   ⚠️  ${msg}`);
       }
     }
@@ -317,6 +386,11 @@ function writeConsoleOutput(result: TranslationValidationResult): void {
   console.log(
     `   Locales used:            ${[...result.stats.localesUsed].join(", ") || "(none)"}`
   );
+  if (result.stats.unapprovedLocalesUsed.size > 0) {
+    console.log(
+      `   Unapproved locales:      ${[...result.stats.unapprovedLocalesUsed].join(", ")}`
+    );
+  }
   console.log(`   Approved locales:        ${[...APPROVED_LOCALES].join(", ")}`);
   console.log();
 }

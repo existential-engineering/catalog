@@ -62,6 +62,8 @@ translations:
 - `links` (replaces default links for that locale)
 - Hardware `io` (merge semantics - uses `originalName` to match)
 
+**Important:** Locale-specific links (e.g., "User Manual (Spanish)") should NOT go in the main `links` array. Instead, move them to `translations.<locale>.links` with a localized title. Supported locales are in `schema/locales.yaml`.
+
 **Adding a new locale:**
 
 1. Add locale to `schema/locales.yaml`
