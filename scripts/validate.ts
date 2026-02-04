@@ -455,6 +455,7 @@ const SoftwareSchema = z
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator().optional(),
     secondaryCategory: createCategoryValidator().optional(),
+    supersedes: z.string().optional(),
     searchTerms: z.array(z.string()).optional(),
     description: MarkdownSchema,
     details: MarkdownSchema,
@@ -499,6 +500,7 @@ const HardwareSchema = z
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator().optional(),
     secondaryCategory: createCategoryValidator().optional(),
+    supersedes: z.string().optional(),
     searchTerms: z.array(z.string()).optional(),
     description: MarkdownSchema,
     details: MarkdownSchema,
@@ -526,12 +528,14 @@ interface DataWithOptionalFields {
   primaryCategory?: string;
   secondaryCategory?: string;
   categories?: string[];
+  supersedes?: string;
 }
 
 function validateFile(
   filePath: string,
   schema: z.ZodType,
-  allManufacturers: Set<string>
+  allManufacturers: Set<string>,
+  validSupersedesSlugs?: Set<string>
 ): ValidationError | null {
   try {
     // Load YAML with position tracking for line numbers
@@ -619,6 +623,34 @@ function validateFile(
       }
     }
 
+    // Check supersedes reference exists
+    if (validSupersedesSlugs && "supersedes" in data && typeof data.supersedes === "string") {
+      if (!validSupersedesSlugs.has(data.supersedes)) {
+        const suggestion = findClosestMatch(data.supersedes, validSupersedesSlugs);
+        let message = `Referenced supersedes slug '${data.supersedes}' does not exist.`;
+        if (suggestion) {
+          message += ` Did you mean '${suggestion}'?`;
+        }
+
+        const line = getLineForPath(document, lineCounter, ["supersedes"]);
+        const errorCode = ValidationErrorCode.E199_VALIDATION_ERROR;
+
+        return {
+          file: path.relative(process.cwd(), filePath),
+          errors: [`supersedes: ${message}`],
+          details: [
+            {
+              code: errorCode,
+              message,
+              path: "supersedes",
+              line: line ?? undefined,
+              docsUrl: getDocsUrl(errorCode),
+            },
+          ],
+        };
+      }
+    }
+
     // Check for duplicate categories
     if (Array.isArray(data.categories)) {
       const categoryErrors: string[] = [];
@@ -694,13 +726,28 @@ function validate(): ValidationResult {
   const errors: ValidationError[] = [];
   const stats = { manufacturers: 0, software: 0, hardware: 0 };
 
-  // First pass: collect all manufacturer slugs (derived from filenames)
+  // First pass: collect all slugs (derived from filenames)
   const manufacturerFiles = getYamlFiles(path.join(DATA_DIR, "manufacturers"));
+  const softwareFiles = getYamlFiles(path.join(DATA_DIR, "software"));
+  const hardwareFiles = getYamlFiles(path.join(DATA_DIR, "hardware"));
+
   const allManufacturers = new Set<string>();
+  const allSoftware = new Set<string>();
+  const allHardware = new Set<string>();
 
   for (const file of manufacturerFiles) {
     const slug = path.basename(file, path.extname(file));
     allManufacturers.add(slug);
+  }
+
+  for (const file of softwareFiles) {
+    const slug = path.basename(file, path.extname(file));
+    allSoftware.add(slug);
+  }
+
+  for (const file of hardwareFiles) {
+    const slug = path.basename(file, path.extname(file));
+    allHardware.add(slug);
   }
 
   // Validate manufacturers
@@ -713,10 +760,9 @@ function validate(): ValidationResult {
     }
   }
 
-  // Validate software
-  const softwareFiles = getYamlFiles(path.join(DATA_DIR, "software"));
+  // Validate software (supersedes must reference other software)
   for (const file of softwareFiles) {
-    const error = validateFile(file, SoftwareSchema, allManufacturers);
+    const error = validateFile(file, SoftwareSchema, allManufacturers, allSoftware);
     if (error) {
       errors.push(error);
     } else {
@@ -724,10 +770,9 @@ function validate(): ValidationResult {
     }
   }
 
-  // Validate hardware
-  const hardwareFiles = getYamlFiles(path.join(DATA_DIR, "hardware"));
+  // Validate hardware (supersedes must reference other hardware)
   for (const file of hardwareFiles) {
-    const error = validateFile(file, HardwareSchema, allManufacturers);
+    const error = validateFile(file, HardwareSchema, allManufacturers, allHardware);
     if (error) {
       errors.push(error);
     } else {

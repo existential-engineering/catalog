@@ -108,6 +108,8 @@ export interface Software {
   releaseDateYearOnly?: boolean;
   primaryCategory?: string;
   secondaryCategory?: string;
+  /** Slug of the software entry this supersedes (for major version upgrades) */
+  supersedes?: string;
   searchTerms?: string[];
   description?: string;
   details?: string | string[];
@@ -129,6 +131,8 @@ export interface Hardware {
   releaseDateYearOnly?: boolean;
   primaryCategory?: string;
   secondaryCategory?: string;
+  /** Slug of the hardware entry this supersedes (for product line upgrades) */
+  supersedes?: string;
   searchTerms?: string[];
   description?: string;
   details?: string | string[];
