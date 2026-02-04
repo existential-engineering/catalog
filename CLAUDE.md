@@ -41,6 +41,37 @@ Optional fields: categories (array), website, description
 
 Note: Slugs are derived from filenames, not stored in the YAML files.
 
+## Product Lineage
+
+Use `supersedes` to link major product versions (e.g., Pro-Q 4 supersedes Pro-Q 3):
+
+```yaml
+# pro-q-4.yaml
+name: Pro-Q 4
+manufacturer: fabfilter
+supersedes: pro-q-3
+identifiers:
+  au: com.fabfilter.Pro-Q.AU.4
+```
+
+The referenced slug must exist in the same collection (software or hardware). Validation will fail if the slug is not found.
+
+## Versions
+
+Software and hardware entries can have a `versions` array with release history.
+
+**Version fields:**
+
+- `name` (required) - version number (e.g., "1.3.3")
+- `releaseDate` - ISO date or year-only (YYYY)
+- `releaseDateYearOnly` - set true if releaseDate is year-only
+- `preRelease` - true for beta/RC versions
+- `unofficial` - true for unofficial builds
+- `url` - link to official download/info page (prefer official pages over direct download links to reduce data drift)
+- `description` - version notes
+- `prices` - version-specific pricing
+- `links` - version-specific links
+
 ## Translations
 
 Translations are optional and added inline to YAML files using a `translations` key:
@@ -61,6 +92,8 @@ translations:
 - `website` (locale-specific URLs)
 - `links` (replaces default links for that locale)
 - Hardware `io` (merge semantics - uses `originalName` to match)
+
+**Important:** Locale-specific links (e.g., "User Manual (Spanish)") should NOT go in the main `links` array. Instead, move them to `translations.<locale>.links` with a localized title. Supported locales are in `schema/locales.yaml`.
 
 **Adding a new locale:**
 

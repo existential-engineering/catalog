@@ -22,6 +22,12 @@ reviews:
         - Flag if the same product might exist under a different slug/name
         - Software products should NOT be in manufacturers/ (they belong in software/)
 
+        Translations and locale-specific content:
+        - Links with locale indicators in titles (e.g., "User Manual (Spanish)") should use translations section instead
+        - If a link title contains a language name in parentheses, it should be moved to translations.<locale>.links
+        - Supported locales are defined in schema/locales.yaml (de, es, fr, ja, ko, pt-BR, zh)
+        - For unsupported locales, either add the locale to schema/locales.yaml or keep as a general link
+
     - path: "schema/**/*.yaml"
       instructions: |
         Schema changes affect all data validation. Verify:

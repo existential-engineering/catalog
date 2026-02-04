@@ -16,6 +16,22 @@ export const SCHEMA_DIR = path.join(REPO_ROOT, "schema");
 export const OUTPUT_DIR = path.join(REPO_ROOT, "dist");
 
 // =============================================================================
+// CONTENT HELPERS
+// =============================================================================
+
+/**
+ * Normalize markdown content from string or string[] to a single string.
+ * Arrays are joined with double newlines (paragraph breaks).
+ */
+export function normalizeMarkdown(value: string | string[] | undefined): string | undefined {
+  if (value === undefined) return undefined;
+  if (Array.isArray(value)) {
+    return value.join("\n\n");
+  }
+  return value;
+}
+
+// =============================================================================
 // FILE HELPERS
 // =============================================================================
 
