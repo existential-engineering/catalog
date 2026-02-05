@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS software (
     id TEXT PRIMARY KEY NOT NULL,     -- Nanoid string ID
     name TEXT NOT NULL,               -- Display name
     manufacturer_id TEXT REFERENCES manufacturers(id),
+    supersedes_id TEXT REFERENCES software(id), -- ID of product this supersedes (older version)
     website TEXT,                     -- Product page URL
     release_date TEXT,                -- Initial release date
     release_date_year_only INTEGER DEFAULT 0, -- If 1, only year is meaningful
@@ -50,6 +51,7 @@ CREATE TABLE IF NOT EXISTS software (
 CREATE INDEX idx_software_name ON software(name);
 CREATE INDEX idx_software_manufacturer ON software(manufacturer_id);
 CREATE INDEX idx_software_primary_category ON software(primary_category);
+CREATE INDEX idx_software_supersedes ON software(supersedes_id);
 
 -- Software Categories (many-to-many)
 CREATE TABLE IF NOT EXISTS software_categories (
@@ -128,6 +130,7 @@ CREATE TABLE IF NOT EXISTS hardware (
     id TEXT PRIMARY KEY NOT NULL,     -- Nanoid string ID
     name TEXT NOT NULL,
     manufacturer_id TEXT REFERENCES manufacturers(id),
+    supersedes_id TEXT REFERENCES hardware(id), -- ID of product this supersedes (older version)
     website TEXT,
     release_date TEXT,
     release_date_year_only INTEGER DEFAULT 0,
@@ -143,6 +146,7 @@ CREATE TABLE IF NOT EXISTS hardware (
 CREATE INDEX idx_hardware_name ON hardware(name);
 CREATE INDEX idx_hardware_manufacturer ON hardware(manufacturer_id);
 CREATE INDEX idx_hardware_primary_category ON hardware(primary_category);
+CREATE INDEX idx_hardware_supersedes ON hardware(supersedes_id);
 
 -- Hardware Categories (many-to-many)
 CREATE TABLE IF NOT EXISTS hardware_categories (
@@ -445,7 +449,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (7, 'Added hardware_revisions tables for hardware variants', 0),
     (8, 'Added hardware_io_translations table', 0),
     (9, 'Migrated IDs from auto-increment integers to nanoid strings', 1),
-    (10, 'Added schema_migrations table for version tracking', 0);
+    (10, 'Added schema_migrations table for version tracking', 0),
+    (11, 'Added supersedes_id column for product lineage tracking', 0);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES
