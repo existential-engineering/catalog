@@ -69,7 +69,11 @@ const OUTPUT_FILE = path.join(OUTPUT_DIR, "catalog.sqlite");
 
 // =============================================================================
 // BUILD FUNCTIONS
-// =============================================================================
+/**
+ * Builds the catalog SQLite database file from schema and YAML source data, inserting locales, manufacturers, software, and hardware, then records metadata and optimizes the database.
+ *
+ * @param version - The catalog version string to store in the database metadata
+ * @throws Error if a YAML entry is missing an `id` (e.g., when new entries need IDs assigned)
 
 function buildDatabase(version: string): void {
   // Ensure output directory exists
