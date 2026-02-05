@@ -531,6 +531,15 @@ interface DataWithOptionalFields {
   supersedes?: string;
 }
 
+/**
+ * Validate a single YAML data file against the provided Zod schema and collection-level rules.
+ *
+ * @param filePath - Filesystem path to the YAML file to validate
+ * @param schema - Zod schema describing the expected structure for the file's collection
+ * @param allManufacturers - Set of known manufacturer IDs used to verify any `manufacturer` reference
+ * @param validSupersedesIds - Optional set of valid IDs in the same collection used to verify a `supersedes` reference
+ * @returns A ValidationError object containing a summary `errors` array and optional `details` (each with `code`, `message`, `path`, `line`, and `docsUrl`) when validation fails, or `null` when the file is valid
+ */
 function validateFile(
   filePath: string,
   schema: z.ZodType,
@@ -719,8 +728,12 @@ function validateFile(
 }
 
 /**
- * Detect cycles in supersedes chains
- * Returns the cycle path if a cycle is found, null otherwise
+ * Detects a cycle in a chain of supersedes relationships starting from the given ID.
+ *
+ * @param startId - The ID at which to begin following the supersedes chain
+ * @param supersedesMap - Map from an item's ID to the ID it supersedes
+ * @param idToSlug - Map from an ID to its corresponding slug used for human-readable paths
+ * @returns An array of slugs representing the cycle path (the first slug is repeated at the end to close the cycle), or `null` if no cycle is found
  */
 function detectSupersedeCycle(
   startId: string,
@@ -747,6 +760,18 @@ function detectSupersedeCycle(
   return null;
 }
 
+/**
+ * Runs full repository validation over manufacturer, software, and hardware YAML files.
+ *
+ * Performs schema validation against canonical schemas, verifies manufacturer references, validates
+ * supersedes references by ID, detects cycles in supersedes chains, and aggregates validation errors
+ * and collection statistics.
+ *
+ * @returns An object with:
+ *  - `valid`: `true` if no validation errors were found, `false` otherwise.
+ *  - `errors`: an array of `ValidationError` entries describing per-file failures and detailed issues.
+ *  - `stats`: an object with counts `{ manufacturers, software, hardware }` of successfully validated files.
+ */
 function validate(): ValidationResult {
   const errors: ValidationError[] = [];
   const stats = { manufacturers: 0, software: 0, hardware: 0 };
