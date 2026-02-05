@@ -43,18 +43,23 @@ Note: Slugs are derived from filenames, not stored in the YAML files.
 
 ## Product Lineage
 
-Use `supersedes` to link major product versions (e.g., Pro-Q 4 supersedes Pro-Q 3):
+Use `supersedes` to link major product versions (e.g., Pro-C 3 supersedes Pro-C 2). The value must be the **ID** of the older product:
 
 ```yaml
-# pro-q-4.yaml
-name: Pro-Q 4
+# pro-c-3.yaml
+name: Pro-C 3
 manufacturer: fabfilter
-supersedes: pro-q-3
+supersedes: 7QMeWge0fOrmQz_oVLCKk  # ID of Pro-C 2
 identifiers:
-  au: com.fabfilter.Pro-Q.AU.4
+  au: com.fabfilter.Pro-C.AU.3
 ```
 
-The referenced slug must exist in the same collection (software or hardware). Validation will fail if the slug is not found.
+The referenced ID must exist in the same collection (software or hardware). Validation will fail if the ID is not found or if a cycle is detected in the supersedes chain.
+
+The relationship is **bidirectional** - the database can query both directions:
+
+- "What does this product supersede?" (older version)
+- "What supersedes this product?" (newer version)
 
 ## Versions
 

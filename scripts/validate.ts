@@ -535,7 +535,7 @@ function validateFile(
   filePath: string,
   schema: z.ZodType,
   allManufacturers: Set<string>,
-  validSupersedesSlugs?: Set<string>
+  validSupersedesIds?: Set<string>
 ): ValidationError | null {
   try {
     // Load YAML with position tracking for line numbers
@@ -623,14 +623,10 @@ function validateFile(
       }
     }
 
-    // Check supersedes reference exists
-    if (validSupersedesSlugs && "supersedes" in data && typeof data.supersedes === "string") {
-      if (!validSupersedesSlugs.has(data.supersedes)) {
-        const suggestion = findClosestMatch(data.supersedes, validSupersedesSlugs);
-        let message = `Referenced supersedes slug '${data.supersedes}' does not exist.`;
-        if (suggestion) {
-          message += ` Did you mean '${suggestion}'?`;
-        }
+    // Check supersedes reference exists (must be a valid ID in the same collection)
+    if (validSupersedesIds && "supersedes" in data && typeof data.supersedes === "string") {
+      if (!validSupersedesIds.has(data.supersedes)) {
+        const message = `Referenced supersedes ID '${data.supersedes}' does not exist in this collection.`;
 
         const line = getLineForPath(document, lineCounter, ["supersedes"]);
         const errorCode = ValidationErrorCode.E199_VALIDATION_ERROR;
@@ -722,32 +718,94 @@ function validateFile(
   }
 }
 
+/**
+ * Detect cycles in supersedes chains
+ * Returns the cycle path if a cycle is found, null otherwise
+ */
+function detectSupersedeCycle(
+  startId: string,
+  supersedesMap: Map<string, string>,
+  idToSlug: Map<string, string>
+): string[] | null {
+  const visited = new Set<string>();
+  const path: string[] = [];
+  let current: string | undefined = startId;
+
+  while (current) {
+    if (visited.has(current)) {
+      // Found a cycle - return the path from the cycle start
+      const cycleStartIndex = path.indexOf(current);
+      const cyclePath = path.slice(cycleStartIndex);
+      cyclePath.push(current); // Complete the cycle
+      return cyclePath.map((id) => idToSlug.get(id) || id);
+    }
+    visited.add(current);
+    path.push(current);
+    current = supersedesMap.get(current);
+  }
+
+  return null;
+}
+
 function validate(): ValidationResult {
   const errors: ValidationError[] = [];
   const stats = { manufacturers: 0, software: 0, hardware: 0 };
 
-  // First pass: collect all slugs (derived from filenames)
+  // First pass: collect all slugs (derived from filenames) and IDs
   const manufacturerFiles = getYamlFiles(path.join(DATA_DIR, "manufacturers"));
   const softwareFiles = getYamlFiles(path.join(DATA_DIR, "software"));
   const hardwareFiles = getYamlFiles(path.join(DATA_DIR, "hardware"));
 
   const allManufacturers = new Set<string>();
-  const allSoftware = new Set<string>();
-  const allHardware = new Set<string>();
+
+  // Maps for ID-based validation
+  const softwareIds = new Set<string>();
+  const softwareIdToSlug = new Map<string, string>();
+  const softwareSupersedesMap = new Map<string, string>(); // id -> supersedes_id
+
+  const hardwareIds = new Set<string>();
+  const hardwareIdToSlug = new Map<string, string>();
+  const hardwareSupersedesMap = new Map<string, string>(); // id -> supersedes_id
 
   for (const file of manufacturerFiles) {
     const slug = path.basename(file, path.extname(file));
     allManufacturers.add(slug);
   }
 
+  // Collect software IDs and supersedes relationships
   for (const file of softwareFiles) {
     const slug = path.basename(file, path.extname(file));
-    allSoftware.add(slug);
+    try {
+      const content = fs.readFileSync(file, "utf-8");
+      const data = parseYaml(content) as { id?: string; supersedes?: string };
+      if (data.id) {
+        softwareIds.add(data.id);
+        softwareIdToSlug.set(data.id, slug);
+        if (data.supersedes) {
+          softwareSupersedesMap.set(data.id, data.supersedes);
+        }
+      }
+    } catch {
+      // Ignore parse errors - they're caught later
+    }
   }
 
+  // Collect hardware IDs and supersedes relationships
   for (const file of hardwareFiles) {
     const slug = path.basename(file, path.extname(file));
-    allHardware.add(slug);
+    try {
+      const content = fs.readFileSync(file, "utf-8");
+      const data = parseYaml(content) as { id?: string; supersedes?: string };
+      if (data.id) {
+        hardwareIds.add(data.id);
+        hardwareIdToSlug.set(data.id, slug);
+        if (data.supersedes) {
+          hardwareSupersedesMap.set(data.id, data.supersedes);
+        }
+      }
+    } catch {
+      // Ignore parse errors - they're caught later
+    }
   }
 
   // Validate manufacturers
@@ -760,9 +818,9 @@ function validate(): ValidationResult {
     }
   }
 
-  // Validate software (supersedes must reference other software)
+  // Validate software (supersedes must reference valid software ID)
   for (const file of softwareFiles) {
-    const error = validateFile(file, SoftwareSchema, allManufacturers, allSoftware);
+    const error = validateFile(file, SoftwareSchema, allManufacturers, softwareIds);
     if (error) {
       errors.push(error);
     } else {
@@ -770,13 +828,53 @@ function validate(): ValidationResult {
     }
   }
 
-  // Validate hardware (supersedes must reference other hardware)
+  // Validate hardware (supersedes must reference valid hardware ID)
   for (const file of hardwareFiles) {
-    const error = validateFile(file, HardwareSchema, allManufacturers, allHardware);
+    const error = validateFile(file, HardwareSchema, allManufacturers, hardwareIds);
     if (error) {
       errors.push(error);
     } else {
       stats.hardware++;
+    }
+  }
+
+  // Check for cycles in supersedes chains (software)
+  for (const [id, _supersedes] of softwareSupersedesMap) {
+    const cycle = detectSupersedeCycle(id, softwareSupersedesMap, softwareIdToSlug);
+    if (cycle) {
+      const slug = softwareIdToSlug.get(id) || id;
+      errors.push({
+        file: `data/software/${slug}.yaml`,
+        errors: [`supersedes: Cycle detected in supersedes chain: ${cycle.join(" → ")}`],
+        details: [
+          {
+            code: ValidationErrorCode.E199_VALIDATION_ERROR,
+            message: `Cycle detected in supersedes chain: ${cycle.join(" → ")}`,
+            path: "supersedes",
+            docsUrl: getDocsUrl(ValidationErrorCode.E199_VALIDATION_ERROR),
+          },
+        ],
+      });
+    }
+  }
+
+  // Check for cycles in supersedes chains (hardware)
+  for (const [id, _supersedes] of hardwareSupersedesMap) {
+    const cycle = detectSupersedeCycle(id, hardwareSupersedesMap, hardwareIdToSlug);
+    if (cycle) {
+      const slug = hardwareIdToSlug.get(id) || id;
+      errors.push({
+        file: `data/hardware/${slug}.yaml`,
+        errors: [`supersedes: Cycle detected in supersedes chain: ${cycle.join(" → ")}`],
+        details: [
+          {
+            code: ValidationErrorCode.E199_VALIDATION_ERROR,
+            message: `Cycle detected in supersedes chain: ${cycle.join(" → ")}`,
+            path: "supersedes",
+            docsUrl: getDocsUrl(ValidationErrorCode.E199_VALIDATION_ERROR),
+          },
+        ],
+      });
     }
   }
 

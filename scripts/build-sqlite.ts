@@ -177,11 +177,15 @@ function buildDatabase(version: string): void {
 
   // Load and insert software
   const softwareFiles = getYamlFiles(path.join(DATA_DIR, "software"));
+  const softwareSupersedes = new Map<string, string>(); // id -> supersedes_id
   let softwareCount = 0;
 
   const insertSoftware = db.prepare(`
     INSERT INTO software (id, name, manufacturer_id, website, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+  const updateSoftwareSupersedes = db.prepare(`
+    UPDATE software SET supersedes_id = ? WHERE id = ?
   `);
   const insertCategory = db.prepare(`
     INSERT INTO software_categories (software_id, category)
@@ -257,6 +261,11 @@ function buildDatabase(version: string): void {
       markdownToHtml(normalizeMarkdown(data.details)),
       markdownToHtml(normalizeMarkdown(data.specs))
     );
+
+    // Store supersedes for later update
+    if (data.supersedes) {
+      softwareSupersedes.set(id, data.supersedes);
+    }
 
     // Insert categories (normalized)
     for (const category of normalizedCategories) {
@@ -372,13 +381,22 @@ function buildDatabase(version: string): void {
 
   console.log(`  ✓ Inserted ${softwareCount} software entries`);
 
+  // Second pass: update supersedes relationships
+  for (const [id, supersedesId] of softwareSupersedes) {
+    updateSoftwareSupersedes.run(supersedesId, id);
+  }
+
   // Load and insert hardware
   const hardwareFiles = getYamlFiles(path.join(DATA_DIR, "hardware"));
+  const hardwareSupersedes = new Map<string, string>(); // id -> supersedes_id
   let hardwareCount = 0;
 
   const insertHardware = db.prepare(`
     INSERT INTO hardware (id, name, manufacturer_id, website, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+  const updateHardwareSupersedes = db.prepare(`
+    UPDATE hardware SET supersedes_id = ? WHERE id = ?
   `);
   const insertHardwareCategory = db.prepare(`
     INSERT INTO hardware_categories (hardware_id, category)
@@ -475,6 +493,11 @@ function buildDatabase(version: string): void {
       markdownToHtml(normalizeMarkdown(data.details)),
       markdownToHtml(normalizeMarkdown(data.specs))
     );
+
+    // Store supersedes for later update
+    if (data.supersedes) {
+      hardwareSupersedes.set(id, data.supersedes);
+    }
 
     // Insert categories (normalized)
     for (const category of normalizedCategories) {
@@ -686,6 +709,11 @@ function buildDatabase(version: string): void {
   }
 
   console.log(`  ✓ Inserted ${hardwareCount} hardware entries`);
+
+  // Second pass: update supersedes relationships
+  for (const [id, supersedesId] of hardwareSupersedes) {
+    updateHardwareSupersedes.run(supersedesId, id);
+  }
 
   // Update metadata
   const updateMeta = db.prepare(`
