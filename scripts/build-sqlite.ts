@@ -74,7 +74,7 @@ const OUTPUT_FILE = path.join(OUTPUT_DIR, "catalog.sqlite");
  *
  * @param version - The catalog version string to store in the database metadata
  * @throws Error if a YAML entry is missing an `id` (e.g., when new entries need IDs assigned)
-
+ */
 function buildDatabase(version: string): void {
   // Ensure output directory exists
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
