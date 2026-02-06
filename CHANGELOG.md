@@ -1,5 +1,11 @@
 # catalog
 
+## 1.4.2
+
+### Patch Changes
+
+- e3f6b2d: software(add): smart:deess
+
 ## 1.4.1
 
 ### Patch Changes
