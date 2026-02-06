@@ -1,5 +1,11 @@
 # catalog
 
+## 1.4.3
+
+### Patch Changes
+
+- 1c0effc: software(add): Pro-Mb
+
 ## 1.4.2
 
 ### Patch Changes
