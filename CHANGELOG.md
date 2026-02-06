@@ -1,5 +1,11 @@
 # catalog
 
+## 1.4.1
+
+### Patch Changes
+
+- a5c9d1e: software(add): Plate
+
 ## 1.4.0
 
 ### Minor Changes
