@@ -2,4 +2,4 @@
 "catalog": patch
 ---
 
-software(add): Plate
+hardware(update): Tonverk

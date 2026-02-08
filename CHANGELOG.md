@@ -1,5 +1,23 @@
 # catalog
 
+## 1.4.3
+
+### Patch Changes
+
+- 1c0effc: software(add): Pro-Mb
+
+## 1.4.2
+
+### Patch Changes
+
+- e3f6b2d: software(add): smart:deess
+
+## 1.4.1
+
+### Patch Changes
+
+- a5c9d1e: software(add): Plate
+
 ## 1.4.0
 
 ### Minor Changes
