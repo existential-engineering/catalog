@@ -1,5 +1,11 @@
 # catalog
 
+## 1.4.7
+
+### Patch Changes
+
+- 0c57862: software(add): Vintageverb
+
 ## 1.4.6
 
 ### Patch Changes
