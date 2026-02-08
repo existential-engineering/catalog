@@ -1,5 +1,11 @@
 # catalog
 
+## 1.4.6
+
+### Patch Changes
+
+- 6ca56b7: software(add): Gullfoss
+
 ## 1.4.5
 
 ### Patch Changes
