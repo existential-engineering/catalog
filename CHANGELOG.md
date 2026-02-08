@@ -1,5 +1,11 @@
 # catalog
 
+## 1.4.4
+
+### Patch Changes
+
+- e8e6830: hardware(update): Tonverk
+
 ## 1.4.3
 
 ### Patch Changes
