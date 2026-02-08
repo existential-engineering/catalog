@@ -1,5 +1,11 @@
 # catalog
 
+## 1.4.5
+
+### Patch Changes
+
+- d000d0f: hardware(update): Microcosm
+
 ## 1.4.4
 
 ### Patch Changes
