@@ -1,75 +1,61 @@
 id: Bab8S6E9DQW6FgQqpJiW-
 name: Dream Sequence
-manufacturer: hologram-electronics
+manufacturer: Hologram Electronics
 primaryCategory: pedal
 categories:
   - pitch-shifter
   - sequencer
-website: https://www.hologramelectronics.com/dream-sequence
-description: Dream Sequence is a programmable pedal that uses sequencing,
-  envelope shaping, and pitch shifting to create synth-like arpeggios, pulsating
-  sheets of sub-octave distortion, shimmering, ethereal chord washes, and a
-  limitless number of other new sounds. Features include tap tempo, analog
-  drive, MIDI sync, hold sampler, expression control, and more.
-details: |-
-  Dream Sequence is a programmable rhythm and octave pedal that uses sequencing, envelope shaping, and pitch shifting to create synth-like arpeggios, pulsating sheets of sub-octave distortion, shimmering, ethereal chord washes, and a limitless number of other new sounds.
-
-  The pedal features octave-up and octave-down pitch shifting, a pattern sequencer with rhythmic gating, and tap tempo for syncing to your performance. The digitally-controlled analog drive and tone section adds warmth and character while maintaining an analog dry path for signal integrity.
-
-  Dream Sequence includes an infinite hold sampler that captures and sustains your input, 24 built-in presets, and the ability to save custom presets. The pattern recorder lets you create and store custom sequences for unique rhythmic textures.
-
-  Full MIDI implementation with in/out connections allows for external sync and control, while the expression pedal input enables real-time parameter manipulation during performance.
-specs: |-
+website: https://www.hologramelectronics.com/pages/dream-sequence
+description: A programmable pedal that uses sequencing, envelope shaping, and pitch shifting to create synth-like arpeggios, pulsating sub-octave distortion, shimmering chord washes, and innovative sound transformations.
+details:
+  - The dream sequence is a programmable rhythm and octave pedal that uses advanced sequencing, envelope shaping, and pitch shifting technologies to create a wide range of innovative sonic textures. It can generate synth-like arpeggios, pulsating sub-octave distortions, shimmering chord washes, and numerous experimental sound possibilities.
+  - 'The pedal features a sophisticated sequencing system with three distinct preset banks: user, factory, and saved. The user bank contains 12 customizable step sequencer patterns, while the factory bank offers more complex, evolving presets. Users can create and save custom patterns by tapping footswitches or using MIDI in daws like ableton live or logic.'
+  - The device offers extensive control options, including a shape knob that morphs waveform contours from percussive square-wave sounds to backwards-guitar-like ramp waves. Users can record and automate knob movements, manipulate drive, tone, and shape controls, and save these configurations as presets.
+  - An expression pedal input allows users to assign control to multiple parameters including distortion, tone, pattern subdivision, or tempo. The pedal supports MIDI clock synchronization and can even clock other pedals via its MIDI output, providing flexible integration with other musical equipment.
+  - The dream sequence's hold function enables musicians to sample and sustain chords or notes indefinitely, feeding these samples into the pattern sequencer to create unique harmonies, drones, and innovative tonal landscapes.
+specs:
   - Octave up and down pitch shifting
   - Pattern sequencer
-  - Rhythmic gate
+  - Rhythmic gate with dynamic adsr morphing
   - Tap tempo
   - Digitally-controlled analog drive and tone
   - Analog dry path
-  - Infinite "hold" sampler
+  - Infinite hold sampler
   - 24 built-in presets
-  - Save custom presets
+  - 11 custom preset save slots
   - Pattern recorder
+  - Knob automation recording
   - MIDI in/out
   - Expression pedal input
-  - True bypass switching
-  - Auxiliary modes
+  - True bypass switching (electromechanical relay)
 io:
   - name: MIDI in
-    signalFlow: input
-    category: midi
     type: midi
+    category: midi
+    position: Bottom
     connection: 5-pin din
-    maxConnections: 1
-    position: Top
+    signalFlow: input
   - name: MIDI Out
-    signalFlow: output
-    category: midi
     type: midi
+    category: midi
+    position: Bottom
     connection: 5-pin din
-    maxConnections: 1
-    position: Top
-  - name: Expression Pedal Input
-    signalFlow: input
-    category: audio
-    type: cv/gate
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Top
-  - name: Audio Output
     signalFlow: output
+  - name: Expression Pedal Input
+    type: cv/gate
     category: audio
-    type: line
+    position: Bottom
     connection: 1/4-inch
-    maxConnections: 1
-    position: Top
-  - name: Audio Input
     signalFlow: input
-    category: audio
-    type: line
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Top
 prices:
   - amount: 299
     currency: USD
+links:
+  - url: https://www.youtube.com/watch?v=IkCWLaLLbfI
+    type: video
+    title: Dream Sequence Demo
+    videoId: IkCWLaLLbfI
+    provider: youtube
+  - url: https://cdn.shopify.com/s/files/1/0920/2928/8752/files/Dream_Sequence_Manual_WEB.pdf?v=1758823505
+    type: resource
+    title: Dream Sequence User Manual
