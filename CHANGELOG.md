@@ -1,5 +1,11 @@
 # catalog
 
+## 1.5.0
+
+### Minor Changes
+
+- 61a1f44: Add slug column to hardware revisions for stable identifiers
+
 ## 1.4.8
 
 ### Patch Changes
