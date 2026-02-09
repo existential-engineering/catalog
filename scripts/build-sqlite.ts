@@ -38,10 +38,14 @@ marked.setOptions({
  * e.g. "SPS-1 MKII" → "sps-1-mkii", "3rd Gen" → "3rd-gen"
  */
 function slugify(input: string): string {
-  return input
+  const slug = input
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
+  if (!slug) {
+    throw new Error(`Cannot generate slug from input: '${input}'`);
+  }
+  return slug;
 }
 
 /**

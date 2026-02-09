@@ -291,7 +291,7 @@ const LinkSchema = z
   .object({
     type: z.string(),
     title: z.string().optional(),
-    url: z.string().url().optional(),
+    url: z.url().optional(),
     videoId: z.string().optional(),
     provider: z.string().optional(),
     description: z.string().optional(),
@@ -316,7 +316,7 @@ const VersionSchema = z
     releaseDateYearOnly: z.boolean().optional(),
     preRelease: z.boolean().optional(),
     unofficial: z.boolean().optional(),
-    url: z.string().url().optional(),
+    url: z.url().optional(),
     description: z.string().optional(),
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
@@ -354,7 +354,7 @@ const RevisionSchema = z
       .optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
-    url: z.string().url().optional(),
+    url: z.url().optional(),
     description: z.string().optional(),
     io: z.array(IOSchema).optional(),
     versions: z.array(VersionSchema).optional(),
@@ -409,7 +409,7 @@ const ManufacturerSchema = z.object({
   name: z.string().min(1, "Name is required"),
   companyName: z.string().optional(),
   parentCompany: z.string().optional(),
-  website: z.string().url().optional(),
+  website: z.url().optional(),
   description: MarkdownSchema,
   searchTerms: z.array(z.string()).optional(),
 });
@@ -457,7 +457,7 @@ const SoftwareSchema = z
       }),
     platforms: createPlatformArrayValidator(),
     identifiers: z.record(z.string(), z.string()).optional(),
-    website: z.string().url().optional(),
+    website: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator().optional(),
@@ -502,7 +502,7 @@ const HardwareSchema = z
           }
         }
       }),
-    website: z.string().url().optional(),
+    website: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator().optional(),
@@ -528,7 +528,14 @@ const HardwareSchema = z
   .refine(
     (data) => {
       if (!data.revisions) return true;
-      const slugs = data.revisions.map((r) => r.slug).filter((s): s is string => !!s);
+      const slugs = data.revisions.map(
+        (r) =>
+          r.slug ??
+          r.name
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "")
+      );
       return new Set(slugs).size === slugs.length;
     },
     {
