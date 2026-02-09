@@ -31,6 +31,7 @@ import {
   loadYamlFileWithPositions,
   parseErrorPath,
   SCHEMA_DIR,
+  slugify,
 } from "./lib/utils.js";
 
 // =============================================================================
@@ -291,7 +292,7 @@ const LinkSchema = z
   .object({
     type: z.string(),
     title: z.string().optional(),
-    url: z.string().url().optional(),
+    url: z.url().optional(),
     videoId: z.string().optional(),
     provider: z.string().optional(),
     description: z.string().optional(),
@@ -316,7 +317,7 @@ const VersionSchema = z
     releaseDateYearOnly: z.boolean().optional(),
     preRelease: z.boolean().optional(),
     unofficial: z.boolean().optional(),
-    url: z.string().url().optional(),
+    url: z.url().optional(),
     description: z.string().optional(),
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
@@ -345,9 +346,16 @@ const IOSchema = z.object({
 const RevisionSchema = z
   .object({
     name: z.string(),
+    slug: z
+      .string()
+      .regex(
+        /^[a-z0-9][a-z0-9-]{0,49}$/,
+        "Slug must be lowercase alphanumeric with hyphens, 1-50 chars"
+      )
+      .optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
-    url: z.string().url().optional(),
+    url: z.url().optional(),
     description: z.string().optional(),
     io: z.array(IOSchema).optional(),
     versions: z.array(VersionSchema).optional(),
@@ -402,7 +410,7 @@ const ManufacturerSchema = z.object({
   name: z.string().min(1, "Name is required"),
   companyName: z.string().optional(),
   parentCompany: z.string().optional(),
-  website: z.string().url().optional(),
+  website: z.url().optional(),
   description: MarkdownSchema,
   searchTerms: z.array(z.string()).optional(),
 });
@@ -450,7 +458,7 @@ const SoftwareSchema = z
       }),
     platforms: createPlatformArrayValidator(),
     identifiers: z.record(z.string(), z.string()).optional(),
-    website: z.string().url().optional(),
+    website: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator().optional(),
@@ -495,7 +503,7 @@ const HardwareSchema = z
           }
         }
       }),
-    website: z.string().url().optional(),
+    website: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator().optional(),
@@ -516,6 +524,19 @@ const HardwareSchema = z
     {
       message: "releaseDateYearOnly requires releaseDate in YYYY format",
       path: ["releaseDateYearOnly"],
+    }
+  )
+  .refine(
+    (data) => {
+      if (!data.revisions) return true;
+      const slugs = data.revisions.map((r) => r.slug ?? slugify(r.name));
+      if (slugs.some((s) => !s || s.length > 50)) return false;
+      return new Set(slugs).size === slugs.length;
+    },
+    {
+      message:
+        "Revision slugs must be unique, non-empty, and at most 50 characters within a hardware entry",
+      path: ["revisions"],
     }
   );
 

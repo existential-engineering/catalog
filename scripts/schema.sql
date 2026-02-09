@@ -204,10 +204,12 @@ CREATE TABLE IF NOT EXISTS hardware_revisions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     name TEXT NOT NULL,
+    slug TEXT NOT NULL,
     release_date TEXT,
     release_date_year_only INTEGER DEFAULT 0,
     url TEXT,
-    description TEXT
+    description TEXT,
+    UNIQUE(hardware_id, slug)
 );
 
 CREATE INDEX idx_hardware_revisions_hardware ON hardware_revisions(hardware_id);
@@ -450,7 +452,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (8, 'Added hardware_io_translations table', 0),
     (9, 'Migrated IDs from auto-increment integers to nanoid strings', 1),
     (10, 'Added schema_migrations table for version tracking', 0),
-    (11, 'Added supersedes_id column for product lineage tracking', 0);
+    (11, 'Added supersedes_id column for product lineage tracking', 0),
+    (12, 'Added slug column to hardware_revisions for stable identifiers', 0);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES

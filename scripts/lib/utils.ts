@@ -16,6 +16,25 @@ export const SCHEMA_DIR = path.join(REPO_ROOT, "schema");
 export const OUTPUT_DIR = path.join(REPO_ROOT, "dist");
 
 // =============================================================================
+// SLUG HELPERS
+// =============================================================================
+
+/**
+ * Generate a kebab-case slug from a string.
+ * e.g. "SPS-1 MKII" -> "sps-1-mkii", "3rd Gen" -> "3rd-gen"
+ */
+export function slugify(input: string): string {
+  const slug = input
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  if (!slug) {
+    throw new Error(`Cannot generate slug from input: '${input}'`);
+  }
+  return slug;
+}
+
+// =============================================================================
 // CONTENT HELPERS
 // =============================================================================
 

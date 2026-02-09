@@ -25,6 +25,7 @@ import {
   normalizeMarkdown,
   OUTPUT_DIR,
   SCHEMA_DIR,
+  slugify,
 } from "./lib/utils.js";
 
 // Configure marked for safe HTML output
@@ -419,8 +420,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareRevision = db.prepare(`
-    INSERT INTO hardware_revisions (hardware_id, name, release_date, release_date_year_only, url, description)
-    VALUES (?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware_revisions (hardware_id, name, slug, release_date, release_date_year_only, url, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareRevisionIO = db.prepare(`
     INSERT INTO hardware_revision_io (revision_id, name, signal_flow, category, type, connection, max_connections, position, column_position, row_position, description)
@@ -552,10 +553,20 @@ function buildDatabase(version: string): void {
 
     // Insert revisions
     if (data.revisions) {
+      const usedSlugs = new Set<string>();
       for (const rev of data.revisions) {
+        const revSlug = rev.slug ?? slugify(rev.name);
+        if (usedSlugs.has(revSlug)) {
+          throw new Error(
+            `Duplicate revision slug '${revSlug}' in ${file}. Add explicit slugs to disambiguate.`
+          );
+        }
+        usedSlugs.add(revSlug);
+
         const result = insertHardwareRevision.run(
           id,
           rev.name,
+          revSlug,
           rev.releaseDate ?? null,
           rev.releaseDateYearOnly ? 1 : 0,
           rev.url ?? null,
