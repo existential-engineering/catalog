@@ -16,6 +16,7 @@ export interface Version {
   description?: string;
   prices?: Price[];
   links?: Link[];
+  videos?: VideoLink[];
 }
 
 export interface Price {
@@ -49,9 +50,14 @@ export interface VerificationMetadata {
 export interface Link {
   type: string;
   title?: string;
-  url?: string;
-  videoId?: string;
+  url: string;
+  description?: string;
+}
+
+export interface VideoLink {
+  videoId: string;
   provider?: string;
+  title?: string;
   description?: string;
 }
 
@@ -70,6 +76,7 @@ export interface IO {
 
 export interface Revision {
   name: string;
+  slug?: string;
   releaseDate?: string;
   releaseDateYearOnly?: boolean;
   url?: string;
@@ -78,6 +85,7 @@ export interface Revision {
   versions?: Version[];
   prices?: Price[];
   links?: Link[];
+  videos?: VideoLink[];
 }
 
 // =============================================================================
@@ -117,6 +125,7 @@ export interface Software {
   versions?: Version[];
   prices?: Price[];
   links?: Link[];
+  videos?: VideoLink[];
   translations?: TranslationsMap;
   verification?: VerificationMetadata;
 }
@@ -142,6 +151,7 @@ export interface Hardware {
   revisions?: Revision[];
   prices?: Price[];
   links?: Link[];
+  videos?: VideoLink[];
   translations?: TranslationsMap;
   verification?: VerificationMetadata;
 }
@@ -174,6 +184,7 @@ export interface ContentTranslation {
   specs?: string;
   website?: string;
   links?: Link[];
+  videos?: VideoLink[];
   io?: IOTranslation[];
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "catalog",
-  "version": "1.4.7",
+  "version": "2.0.0",
   "description": "Open source audio software and hardware catalog",
   "type": "module",
   "pnpm": {
@@ -23,6 +23,7 @@
     "format": "prettier --write \"data/**/*.yaml\"",
     "format:check": "prettier --check \"data/**/*.yaml\"",
     "validate-urls": "tsx scripts/validate-urls.ts",
+    "validate:videos": "tsx scripts/validate-videos.ts",
     "generate:context": "tsx scripts/generate-context.ts",
     "staleness-report": "tsx scripts/staleness-report.ts",
     "identifier-coverage": "tsx scripts/identifier-coverage.ts",

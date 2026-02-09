@@ -18,7 +18,7 @@ This repository contains:
 
 ## Data Structure
 
-```
+```text
 data/
 ├── manufacturers/     # Companies and developers
 │   └── xfer-records.yaml
@@ -42,7 +42,6 @@ website: https://xferrecords.com
 ### Software (Plugin)
 
 ```yaml
-slug: serum
 name: Serum
 manufacturer: xfer-records
 primaryCategory: synthesizer
@@ -66,7 +65,6 @@ description: Advanced wavetable synthesizer with visual feedback
 ### Software (DAW)
 
 ```yaml
-slug: ableton-live
 name: Live
 manufacturer: ableton
 primaryCategory: daw
@@ -81,7 +79,6 @@ website: https://ableton.com/live
 ### Hardware
 
 ```yaml
-slug: apollo-twin-x
 name: Apollo Twin X
 manufacturer: universal-audio
 primaryCategory: audio-interface

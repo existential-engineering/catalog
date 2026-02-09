@@ -1,5 +1,35 @@
 # catalog
 
+## 2.0.0
+
+### Major Changes
+
+- 25f52bb: Separate video links into dedicated `videos` array with new SQLite tables. Videos are no longer stored in the `links` array.
+
+## 1.5.2
+
+### Patch Changes
+
+- 22d8639: Standardize specs and details fields to block scalar format. Add full version history to Gullfoss.
+
+## 1.5.1
+
+### Patch Changes
+
+- 05c9ac1: hardware(update): Dream Sequence
+
+## 1.5.0
+
+### Minor Changes
+
+- 61a1f44: Add slug column to hardware revisions for stable identifiers
+
+## 1.4.8
+
+### Patch Changes
+
+- c42213b: add new effect and hardware categories, fix effects->effect typo
+
 ## 1.4.7
 
 ### Patch Changes

@@ -25,6 +25,7 @@ import {
   normalizeMarkdown,
   OUTPUT_DIR,
   SCHEMA_DIR,
+  slugify,
 } from "./lib/utils.js";
 
 // Configure marked for safe HTML output
@@ -216,8 +217,12 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?)
   `);
   const insertSoftwareLink = db.prepare(`
-    INSERT INTO software_links (software_id, type, title, url, video_id, provider, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO software_links (software_id, type, title, url, description)
+    VALUES (?, ?, ?, ?, ?)
+  `);
+  const insertSoftwareVideo = db.prepare(`
+    INSERT INTO software_videos (software_id, video_id, provider, title, description)
+    VALUES (?, ?, ?, ?, ?)
   `);
   const insertSoftwareFts = db.prepare(`
     INSERT INTO software_fts (id, name, manufacturer_name, categories, description)
@@ -228,8 +233,12 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertSoftwareLinkLocalized = db.prepare(`
-    INSERT INTO software_links_localized (software_id, locale, type, title, url, video_id, provider, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO software_links_localized (software_id, locale, type, title, url, description)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `);
+  const insertSoftwareVideoLocalized = db.prepare(`
+    INSERT INTO software_videos_localized (software_id, locale, video_id, provider, title, description)
+    VALUES (?, ?, ?, ?, ?, ?)
   `);
 
   for (const file of softwareFiles) {
@@ -328,10 +337,21 @@ function buildDatabase(version: string): void {
           id,
           link.type,
           link.title ?? null,
-          link.url ?? null,
-          link.videoId ?? null,
-          link.provider ?? null,
+          link.url,
           link.description ?? null
+        );
+      }
+    }
+
+    // Insert videos
+    if (data.videos) {
+      for (const video of data.videos) {
+        insertSoftwareVideo.run(
+          id,
+          video.videoId,
+          video.provider ?? "youtube",
+          video.title ?? null,
+          video.description ?? null
         );
       }
     }
@@ -370,10 +390,22 @@ function buildDatabase(version: string): void {
               locale,
               link.type,
               link.title ?? null,
-              link.url ?? null,
-              link.videoId ?? null,
-              link.provider ?? null,
+              link.url,
               link.description ?? null
+            );
+          }
+        }
+
+        // Insert localized videos (replaces default videos for this locale)
+        if (trans.videos) {
+          for (const video of trans.videos) {
+            insertSoftwareVideoLocalized.run(
+              id,
+              locale,
+              video.videoId,
+              video.provider ?? "youtube",
+              video.title ?? null,
+              video.description ?? null
             );
           }
         }
@@ -419,8 +451,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareRevision = db.prepare(`
-    INSERT INTO hardware_revisions (hardware_id, name, release_date, release_date_year_only, url, description)
-    VALUES (?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware_revisions (hardware_id, name, slug, release_date, release_date_year_only, url, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareRevisionIO = db.prepare(`
     INSERT INTO hardware_revision_io (revision_id, name, signal_flow, category, type, connection, max_connections, position, column_position, row_position, description)
@@ -439,12 +471,20 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?)
   `);
   const insertHardwareLink = db.prepare(`
-    INSERT INTO hardware_links (hardware_id, type, title, url, video_id, provider, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware_links (hardware_id, type, title, url, description)
+    VALUES (?, ?, ?, ?, ?)
+  `);
+  const insertHardwareVideo = db.prepare(`
+    INSERT INTO hardware_videos (hardware_id, video_id, provider, title, description)
+    VALUES (?, ?, ?, ?, ?)
   `);
   const insertHardwareRevisionLink = db.prepare(`
-    INSERT INTO hardware_revision_links (revision_id, type, title, url, video_id, provider, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware_revision_links (revision_id, type, title, url, description)
+    VALUES (?, ?, ?, ?, ?)
+  `);
+  const insertHardwareRevisionVideo = db.prepare(`
+    INSERT INTO hardware_revision_videos (revision_id, video_id, provider, title, description)
+    VALUES (?, ?, ?, ?, ?)
   `);
   const insertHardwareFts = db.prepare(`
     INSERT INTO hardware_fts (id, name, manufacturer_name, categories, description)
@@ -455,8 +495,12 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareLinkLocalized = db.prepare(`
-    INSERT INTO hardware_links_localized (hardware_id, locale, type, title, url, video_id, provider, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware_links_localized (hardware_id, locale, type, title, url, description)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `);
+  const insertHardwareVideoLocalized = db.prepare(`
+    INSERT INTO hardware_videos_localized (hardware_id, locale, video_id, provider, title, description)
+    VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareIOTranslation = db.prepare(`
     INSERT INTO hardware_io_translations (hardware_id, locale, original_name, translated_name, translated_description)
@@ -552,10 +596,20 @@ function buildDatabase(version: string): void {
 
     // Insert revisions
     if (data.revisions) {
+      const usedSlugs = new Set<string>();
       for (const rev of data.revisions) {
+        const revSlug = rev.slug ?? slugify(rev.name);
+        if (usedSlugs.has(revSlug)) {
+          throw new Error(
+            `Duplicate revision slug '${revSlug}' in ${file}. Add explicit slugs to disambiguate.`
+          );
+        }
+        usedSlugs.add(revSlug);
+
         const result = insertHardwareRevision.run(
           id,
           rev.name,
+          revSlug,
           rev.releaseDate ?? null,
           rev.releaseDateYearOnly ? 1 : 0,
           rev.url ?? null,
@@ -612,10 +666,21 @@ function buildDatabase(version: string): void {
               revisionId,
               link.type,
               link.title ?? null,
-              link.url ?? null,
-              link.videoId ?? null,
-              link.provider ?? null,
+              link.url,
               link.description ?? null
+            );
+          }
+        }
+
+        // Insert revision videos
+        if (rev.videos) {
+          for (const video of rev.videos) {
+            insertHardwareRevisionVideo.run(
+              revisionId,
+              video.videoId,
+              video.provider ?? "youtube",
+              video.title ?? null,
+              video.description ?? null
             );
           }
         }
@@ -636,10 +701,21 @@ function buildDatabase(version: string): void {
           id,
           link.type,
           link.title ?? null,
-          link.url ?? null,
-          link.videoId ?? null,
-          link.provider ?? null,
+          link.url,
           link.description ?? null
+        );
+      }
+    }
+
+    // Insert videos
+    if (data.videos) {
+      for (const video of data.videos) {
+        insertHardwareVideo.run(
+          id,
+          video.videoId,
+          video.provider ?? "youtube",
+          video.title ?? null,
+          video.description ?? null
         );
       }
     }
@@ -678,10 +754,22 @@ function buildDatabase(version: string): void {
               locale,
               link.type,
               link.title ?? null,
-              link.url ?? null,
-              link.videoId ?? null,
-              link.provider ?? null,
+              link.url,
               link.description ?? null
+            );
+          }
+        }
+
+        // Insert localized videos (replaces default videos for this locale)
+        if (trans.videos) {
+          for (const video of trans.videos) {
+            insertHardwareVideoLocalized.run(
+              id,
+              locale,
+              video.videoId,
+              video.provider ?? "youtube",
+              video.title ?? null,
+              video.description ?? null
             );
           }
         }
