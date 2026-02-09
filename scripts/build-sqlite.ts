@@ -25,6 +25,7 @@ import {
   normalizeMarkdown,
   OUTPUT_DIR,
   SCHEMA_DIR,
+  slugify,
 } from "./lib/utils.js";
 
 // Configure marked for safe HTML output
@@ -32,21 +33,6 @@ marked.setOptions({
   gfm: true, // GitHub Flavored Markdown
   breaks: false, // Don't convert \n to <br>
 });
-
-/**
- * Generate a kebab-case slug from a string.
- * e.g. "SPS-1 MKII" → "sps-1-mkii", "3rd Gen" → "3rd-gen"
- */
-function slugify(input: string): string {
-  const slug = input
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-  if (!slug) {
-    throw new Error(`Cannot generate slug from input: '${input}'`);
-  }
-  return slug;
-}
 
 /**
  * Convert Markdown to HTML, or return null if input is empty

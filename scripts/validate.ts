@@ -31,6 +31,7 @@ import {
   loadYamlFileWithPositions,
   parseErrorPath,
   SCHEMA_DIR,
+  slugify,
 } from "./lib/utils.js";
 
 // =============================================================================
@@ -528,18 +529,13 @@ const HardwareSchema = z
   .refine(
     (data) => {
       if (!data.revisions) return true;
-      const slugs = data.revisions.map(
-        (r) =>
-          r.slug ??
-          r.name
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/^-+|-+$/g, "")
-      );
+      const slugs = data.revisions.map((r) => r.slug ?? slugify(r.name));
+      if (slugs.some((s) => !s || s.length > 50)) return false;
       return new Set(slugs).size === slugs.length;
     },
     {
-      message: "Revision slugs must be unique within a hardware entry",
+      message:
+        "Revision slugs must be unique, non-empty, and at most 50 characters within a hardware entry",
       path: ["revisions"],
     }
   );
