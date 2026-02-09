@@ -1,5 +1,11 @@
 # catalog
 
+## 1.4.8
+
+### Patch Changes
+
+- c42213b: add new effect and hardware categories, fix effects->effect typo
+
 ## 1.4.7
 
 ### Patch Changes
