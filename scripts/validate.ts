@@ -345,6 +345,13 @@ const IOSchema = z.object({
 const RevisionSchema = z
   .object({
     name: z.string(),
+    slug: z
+      .string()
+      .regex(
+        /^[a-z0-9][a-z0-9-]{0,49}$/,
+        "Slug must be lowercase alphanumeric with hyphens, 1-50 chars"
+      )
+      .optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     url: z.string().url().optional(),
@@ -516,6 +523,17 @@ const HardwareSchema = z
     {
       message: "releaseDateYearOnly requires releaseDate in YYYY format",
       path: ["releaseDateYearOnly"],
+    }
+  )
+  .refine(
+    (data) => {
+      if (!data.revisions) return true;
+      const slugs = data.revisions.map((r) => r.slug).filter((s): s is string => !!s);
+      return new Set(slugs).size === slugs.length;
+    },
+    {
+      message: "Revision slugs must be unique within a hardware entry",
+      path: ["revisions"],
     }
   );
 

@@ -70,6 +70,7 @@ export interface IO {
 
 export interface Revision {
   name: string;
+  slug?: string;
   releaseDate?: string;
   releaseDateYearOnly?: boolean;
   url?: string;
