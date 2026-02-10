@@ -28,30 +28,24 @@ Prompt the user for relevant fields based on entry type. Reference `schema/CONTE
 
 **For Manufacturer:**
 
-- **Required:** name
-- **Recommended:** website
+- **Required:** name, website
 - **Optional:** companyName (if different from name), parentCompany, description, searchTerms
 - **Filename:** derived from name (lowercase, spaces to hyphens, remove special characters)
 
 **For Software:**
 
-- **Required:** name, manufacturer (slug reference)
+- **Required:** name, manufacturer (slug reference), primaryCategory, platforms, identifiers
 - **Recommended:**
-  - primaryCategory (from CONTEXT.md categories)
-  - platforms (from CONTEXT.md platforms section)
-  - identifiers (plugin bundle IDs, e.g., `vst3: com.vendor.product.vst3`, `au: vendor: product`)
   - categories (additional categories from CONTEXT.md)
   - formats (from CONTEXT.md formats section)
-- Reference `schema/CONTEXT.md` for valid categories - suggest relevant ones based on the software type
+- Reference `schema/CONTEXT.md` for valid categories, platforms, and formats
 - **Optional:** website, description, prices, links, releaseDate, searchTerms
 - **Filename:** derived from name (lowercase, spaces to hyphens, remove special characters)
 
 **For Hardware:**
 
-- **Required:** name, manufacturer (slug reference)
+- **Required:** name, manufacturer (slug reference), primaryCategory, description
 - **Recommended:**
-  - primaryCategory (from CONTEXT.md categories)
-  - description
   - categories (additional categories from CONTEXT.md)
 - Reference `schema/CONTEXT.md` for valid categories - suggest relevant ones based on the hardware type
 - **Optional:** website, prices, io (I/O ports), links, releaseDate, searchTerms
