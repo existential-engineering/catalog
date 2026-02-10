@@ -16,6 +16,15 @@ reviews:
         - Proper bundle identifier formatting (reverse domain notation)
         - Categories should exist in schema/categories.yaml
 
+        Field formatting conventions:
+        - `manufacturer` must be a slug reference (lowercase-with-hyphens filename), NOT a display name
+        - `details` must use block scalar `|-` with paragraphs separated by blank lines, NOT YAML arrays
+        - `specs` must use block scalar `|-` with `- ` prefixed list items, NOT YAML arrays
+        - `description` should use flow scalar format (Prettier auto-wraps)
+        - Do NOT use `|` for block scalars; always use `|-` (strips trailing newlines)
+        - Hardware `io` entries must use field order: name, signalFlow, category, type, connection, maxConnections, position
+        - Hardware `io` entries should include `maxConnections` field
+
         Check for potential duplicates:
         - Flag if product name is very similar to an existing entry
         - Flag if website URL matches another entry in the same collection

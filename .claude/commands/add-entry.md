@@ -79,6 +79,7 @@ Create the YAML file(s) in the appropriate `data/` subdirectory.
 
 - Do NOT include an `id` field. IDs are assigned automatically by CI via the `assign-ids` workflow on PR creation.
 - Do NOT include a `slug` field. Slugs are derived from the filename.
+- `manufacturer` must be a slug reference (lowercase-with-hyphens), NOT the display name
 - Follow the field ordering convention observed in existing entries:
   - Manufacturer: name, companyName, parentCompany, website, description, searchTerms
   - Software: name, manufacturer, primaryCategory, categories, formats, platforms, identifiers, website,
@@ -86,6 +87,13 @@ Create the YAML file(s) in the appropriate `data/` subdirectory.
   - Hardware: name, manufacturer, primaryCategory, categories, website, prices, description, details, specs,
     io, versions, revisions, links, translations
 - File name IS the slug: `data/{type}/{slug}.yaml`
+
+**Field formatting:**
+
+- `details` must use block scalar `|-` with paragraphs separated by blank lines (NOT YAML arrays)
+- `specs` must use block scalar `|-` with `- ` prefixed list items (NOT YAML arrays)
+- `description` uses flow scalar format (Prettier auto-wraps long lines)
+- Hardware `io` entries use field order: name, signalFlow, category, type, connection, maxConnections, position
 
 After writing the file(s):
 
@@ -156,7 +164,7 @@ website: https://xferrecords.com
 description: Developer of Serum wavetable synthesizer and other audio plugins.
 ```
 
-**Adding hardware (filename: `digitakt.yaml`):**
+**Adding hardware with details/specs/io (filename: `digitakt.yaml`):**
 
 ```yaml
 name: Digitakt
@@ -169,4 +177,22 @@ prices:
     currency: USD
 description: Eight-track digital drum machine and sampler with Elektron's
   signature sequencer.
+details: |-
+  The Digitakt is an eight-track digital drum machine and sampler. It features Elektron's signature parameter-lock sequencer with up to 64 steps per pattern.
+
+  Each track offers a full multimode filter, base-width amp controls, and an overdrive circuit for sound shaping.
+specs: |-
+  - 8 audio tracks
+  - 8 MIDI tracks
+  - 64-step sequencer
+  - Sampling via audio inputs or USB
+  - Overbridge support
+io:
+  - name: Audio Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
 ```
