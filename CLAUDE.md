@@ -66,7 +66,7 @@ details: |-
   Second paragraph continues here with more information.
 ```
 
-**`specs`** uses block scalar `|-` with `- ` prefixed list items:
+**`specs`** uses block scalar `|-` with `"- "` prefixed list items:
 
 ```yaml
 specs: |-

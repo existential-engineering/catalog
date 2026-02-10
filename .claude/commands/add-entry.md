@@ -91,7 +91,7 @@ Create the YAML file(s) in the appropriate `data/` subdirectory.
 **Field formatting:**
 
 - `details` must use block scalar `|-` with paragraphs separated by blank lines (NOT YAML arrays)
-- `specs` must use block scalar `|-` with `- ` prefixed list items (NOT YAML arrays)
+- `specs` must use block scalar `|-` with `"- "` prefixed list items (NOT YAML arrays)
 - `description` uses flow scalar format (Prettier auto-wraps long lines)
 - Hardware `io` entries use field order: name, signalFlow, category, type, connection, maxConnections, position
 
