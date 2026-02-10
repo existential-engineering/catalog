@@ -1,5 +1,11 @@
 # catalog
 
+## 1.5.2
+
+### Patch Changes
+
+- 22d8639: Standardize specs and details fields to block scalar format. Add full version history to Gullfoss.
+
 ## 1.5.1
 
 ### Patch Changes
