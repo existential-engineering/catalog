@@ -41,6 +41,56 @@ Optional fields: categories (array), website, description
 
 Note: Slugs are derived from filenames, not stored in the YAML files.
 
+## Field Formatting Conventions
+
+**`manufacturer`** must be a slug reference (the manufacturer's filename without `.yaml`), not the display name:
+
+```yaml
+manufacturer: hologram-electronics  # correct (slug)
+manufacturer: Hologram Electronics   # wrong (display name)
+```
+
+**`description`** uses flow scalar format (Prettier auto-wraps long lines):
+
+```yaml
+description: Dream Sequence is a programmable pedal that uses sequencing,
+  envelope shaping, and pitch shifting to create synth-like arpeggios.
+```
+
+**`details`** uses block scalar `|-` with paragraphs separated by blank lines:
+
+```yaml
+details: |-
+  First paragraph of details text here.
+
+  Second paragraph continues here with more information.
+```
+
+**`specs`** uses block scalar `|-` with `"- "` prefixed list items:
+
+```yaml
+specs: |-
+  - Octave up and down pitch shifting
+  - Pattern sequencer
+  - Tap tempo
+  - MIDI in/out
+```
+
+Do NOT use YAML arrays for `details` or `specs`. Do NOT use `|` (use `|-` to strip trailing newlines).
+
+**Hardware I/O entries** use this field order with all fields present:
+
+```yaml
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+```
+
 ## Product Lineage
 
 Use `supersedes` to link major product versions (e.g., Pro-C 3 supersedes Pro-C 2). The value must be the **ID** of the older product:
