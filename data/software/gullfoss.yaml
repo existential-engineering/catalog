@@ -36,3 +36,289 @@ details: |-
   The software offers two primary auditory model variations: a standard model suitable for live music mixing and tracking with minimal transient treatment, and an extended model tuned for mastering with higher precision and slightly higher cpu consumption.
 
   The plugin represents an innovative approach to audio processing, offering musicians and engineers a tool that can dramatically improve mix clarity and definition with minimal manual intervention.
+versions:
+  - name: 1.11.9
+    releaseDate: 2025-11-04
+    description: "[WIN] Fixed a freeze that could occur during loading of the plug-in."
+  - name: 1.11.8
+    releaseDate: 2025-10-06
+    description: "[MAC] Fixed a crash that could occur when unloading the plug-in."
+  - name: 1.11.7
+    releaseDate: 2025-07-31
+    description: "[MAC] Fixed GarageBand compatibility on Intel Macs."
+  - name: 1.11.6
+    releaseDate: 2025-02-25
+    description: "[WIN] Included a fix to support the Zen 5 architecture. Fixed the
+      Boost parameter unit label."
+  - name: 1.11.5
+    releaseDate: 2023-05-22
+    description: "[MAC] Added setting to leave the mouse cursor always visible. Fixed
+      the initial value for the default graph scale setting."
+  - name: 1.11.4
+    releaseDate: 2022-11-06
+    description: "[MAC] Fixed mouse behavior when using the AUHostingService."
+  - name: 1.11.3
+    releaseDate: 2022-10-17
+    description: "[MAC] Fixed AU plug-in validation on macOS Ventura."
+  - name: 1.11.2
+    releaseDate: 2022-04-23
+    description: "[MAC] Fixed an issue when changing buffer size in Ableton Live 11.
+      [MAC] Apple Silicon support for the installer."
+  - name: 1.11.1
+    releaseDate: 2021-11-19
+    description: "[MAC] Improved performance under Rosetta 2."
+  - name: 1.11.0
+    releaseDate: 2021-11-12
+    description: "[MAC] Apple Silicon support. SHIFT-drag changes the parameters
+      faster in Gullfoss Master."
+  - name: 1.10.0
+    releaseDate: 2021-07-05
+    description: Added Gullfoss Master Edition. Improved quantization noise floor.
+  - name: 1.9.3
+    releaseDate: 2021-05-02
+    description: Fixed a numerical precision issue on certain Intel CPUs. Fixed a
+      cause for a possible crash with exports from Ableton Live.
+  - name: 1.9.2
+    releaseDate: 2021-04-21
+    description: Fixed the gain values in the graph display popup after changing the
+      gain scale. [MAC] Fixed the installer signature for macOS El Capitan or
+      earlier.
+  - name: 1.9.1
+    releaseDate: 2021-04-13
+    description: Fixed an issue that could lead to a crash in Wavelab 10. Fixed an
+      error in detection of the sidechain channel count. Added user preference for
+      default gain axis scaling.
+  - name: 1.9.0
+    releaseDate: 2021-03-25
+    description: Added Gullfoss Live for low latency processing. Added sidechain
+      input for Gullfoss and Gullfoss Live. Added graph view dB scaling. Improved
+      audio quality for extra transparency. Reduced CPU consumption. Increased
+      screen brightness. Fixed a possible cause for instability. Many small bug
+      fixes for improved host compatibility. [MAC] Fixed possible cause for audio
+      unit validation errors.
+  - name: 1.8.2
+    releaseDate: 2021-01-28
+    description: "[MAC] Fixed a temporary deadlock when running under Rosetta and
+      Logic. [MAC] Fixed crash in Ableton Live when trial has run out."
+  - name: 1.8.1
+    releaseDate: 2020-11-28
+    description: "[MAC] Fixed an issue with the VST2/VST3 plug-ins which would get
+      blacklisted in Cubase."
+  - name: 1.8.0
+    releaseDate: 2020-11-19
+    description: Mouse wheel support for the number boxes. [MAC] Fixed an issue with
+      opening the editor for the AU plug-in on Big Sur. [WIN] Fixed installation on
+      non-system drives.
+  - name: 1.7.0
+    releaseDate: 2020-07-14
+    description: Added "session bypass" affecting all instances accessible by
+      SHIFT-clicking the bypass button. [WIN] Improved processing performance.
+  - name: 1.6.3
+    releaseDate: 2020-06-05
+    description: Fixed an issue that could lead to the mouse pointer vanishing.
+      [MAC] Fixed an issue with audio unit instantiation on older macOS versions.
+  - name: 1.6.2
+    releaseDate: 2020-05-09
+    description: Fixed a problem with mouse dragging with UI scaling enabled.
+  - name: 1.6.1
+    releaseDate: 2020-04-28
+    description: Fixed an issue that could prevent proper parameter saving and
+      loading with VST2. The license dialog now appears on every launch if the
+      plugin is not activated.
+  - name: 1.6.0
+    releaseDate: 2020-04-06
+    description: Added audio quality control for both realtime playback and offline
+      rendering. Fixed a bug that could reduce the audio quality in rare cases.
+  - name: 1.5.1
+    releaseDate: 2020-03-24
+    description: Fixed an issue that would cause illegal instruction errors on older
+      CPUs.
+  - name: 1.5.0
+    releaseDate: 2020-03-13
+    description: Added support for 384kHz and Pyramix DXD. Added user setting for
+      interface scaling. Added user setting for display refresh rate. Improved
+      compatibility and higher performance on non-Intel CPUs. [MAC] Improved
+      compliance with Apple's notarization requirements. [MAC] Improved graphics
+      rendering performance. [WIN] Fixed a bug that could lead to a frozen EQ Graph
+      display.
+  - name: 1.4.3
+    releaseDate: 2020-02-13
+    description: Fixed a processing bug that disabled any sound processing.
+  - name: 1.4.2
+    releaseDate: 2020-02-12
+    description: Updated external dependencies for better stability. Improved
+      readability of the license agreement during installation.
+  - name: 1.4.1
+    releaseDate: 2019-11-04
+    description: Fixed an issue that could result in erratic bypass behaviour with
+      VST3. Fixed a possible cause for crashes when the host quits. [MAC] Code
+      signing changed for better compatibility with Ableton Live.
+  - name: 1.4.0
+    releaseDate: 2019-08-08
+    description: First cross platform release for Windows and MacOS. Improved PACE
+      dialog and activation experience. Improved compatibility with Garageband.
+      Improved processor feature detection for modern CPUs. Diverse fixes for minor
+      issues. [WIN] Fixed possible crashes under Windows 7 on modern CPUs. [WIN]
+      Improved keyboard and mouse handling. [WIN] Better support for older graphics
+      cards and openGL versions.
+  - name: 1.2.10
+    releaseDate: 2019-02-21
+    description: Added error dialogs for reporting problems with the license daemon.
+  - name: 1.2.9
+    releaseDate: 2019-02-15
+    description: Renamed "online activation" and "offline activation" to "cloud
+      activation" and "machine activation", respectively.
+  - name: 1.2.8
+    releaseDate: 2019-02-14
+    description: Fixed an issue that could crash a host when quitting.
+  - name: 1.2.7
+    releaseDate: 2018-12-21
+    description: Fixed an issue that could cause an 'internal error' message.
+  - name: 1.2.6
+    releaseDate: 2018-12-16
+    description: Fixed an issue with certain hosts that could cause Gullfoss to not
+      process audio.
+  - name: 1.2.5
+    releaseDate: 2018-12-07
+    description: Fixed an issue with Cubase and Nuendo that could cause playback and
+      latency compensation problems.
+  - name: 1.2.4
+    releaseDate: 2018-12-04
+    description: Fixed an issue that could prevent Logic Pro from receiving the
+      proper delay compensation information. Fixed an issue that could result in the
+      parameters being restored with wrong values.
+  - name: 1.2.3
+    releaseDate: 2018-11-29
+    description: Fixed a communication issue with the license daemon.
+  - name: 1.2.2
+    releaseDate: 2018-11-20
+    description: Fixed an issue that could lead to numbers in the GUI not being
+      rendered correctly.
+  - name: 1.2.1
+    releaseDate: 2018-11-11
+    description: Fixed an issue with instantiating Gullfoss for Mono processing.
+      Improved performance for Mono processing. Tuned auditory model to avoid
+      unintended beating in rare situations. Reduced processing latency from over
+      45ms to just over 21ms.
+  - name: 1.2.0
+    releaseDate: 2018-10-10
+    description: Greatly improved computational performance. Support for higher
+      sampling rates up to 192 kHz.
+  - name: 1.1.5
+    releaseDate: 2018-09-24
+    description: Improved error messages. Fixed an issue that could lead to disabled
+      audio processing.
+  - name: 1.1.4
+    releaseDate: 2018-06-18
+    description: Fixed another possible cause for CPU load spikes. Added uninstaller
+      script in /Library/Application Support/Soundtheory/. Fixed an issue that could
+      cause the installer to not finish.
+  - name: 1.1.3
+    releaseDate: 2018-05-17
+    description: Fixed a possible cause for CPU load spikes. Improved license
+      robustness. Changed communication port for better compatibility with some
+      firewalls.
+  - name: 1.1.2
+    releaseDate: 2018-04-22
+    description: Fixed spelling errors. License related bug fixes.
+  - name: 1.1.1
+    releaseDate: 2018-04-18
+    description: Improved authorisation procedure.
+  - name: 1.1.0
+    releaseDate: 2018-04-17
+    description: Internal changes in preparation for end of early access. Improved
+      license dialog.
+  - name: 1.0.19
+    releaseDate: 2018-04-16
+    description: Protools bypass automation now works reliably. Unified bypass
+      behaviour in Protools. Improved general reliability with Protools.
+  - name: 1.0.18
+    releaseDate: 2018-04-09
+    description: Added support for direct offline processing in Cubase/Nuendo for
+      VST2/VST3. Fixed an issue with VST3 state restoration in Wavelab.
+  - name: 1.0.17
+    releaseDate: 2018-04-05
+    description: Fixed an issue with parameter initialisation during offline
+      rendering or when changing the sampling rate.
+  - name: 1.0.16
+    releaseDate: 2018-04-04
+    description: Added crosshair in EQ graph showing exact frequency and gain at
+      mouse pointer position. Fixed a possible crash with offline rendering in
+      reaper. Increased the font size of the frequency range labels. Improved thread
+      scheduling.
+  - name: 1.0.15
+    releaseDate: 2018-03-20
+    description: Fixed a possible hang upon trial license expiration. Fixed a
+      possible crash during validation.
+  - name: 1.0.14
+    releaseDate: 2018-03-15
+    description: Added automatic machine authorisation update without the need to
+      reinstall. Improved license related error and status messages. Added support
+      for license deactivation. Improved license handling in general.
+  - name: 1.0.13
+    releaseDate: 2018-03-14
+    description: Added online/offline activation indicator on the info page.
+      Improved support for silent license updating. Fixed a faulty error message
+      upon trial time expiration. Improved license system robustness.
+  - name: 1.0.12
+    releaseDate: 2018-03-14
+    description: Fixed a crash when machine key not present. Improved error
+      reporting for machine key issues. Better graphics resource usage. Improved
+      performance with several instances.
+  - name: 1.0.11
+    releaseDate: 2018-03-13
+    description: Fixed missing EQ graph problem in Ableton Live. Improved license
+      handling.
+  - name: 1.0.10
+    releaseDate: 2018-03-07
+    description: Fixed ALT-click behaviour with AAX. Fixed an issue that could lead
+      to hanging the host. Improved robustness and error reporting.
+  - name: 1.0.9
+    releaseDate: 2018-03-03
+    description: Fixed an issue with bypass in Logic interrupting processing.
+      Improved graphics performance and lower resource usage.
+  - name: 1.0.8
+    releaseDate: 2018-03-01
+    description: Added support for AVX512 on Xeon Knights Landing, Xeon Phi and
+      Skylake-X. Fixed an issue with the bypass state after reloading a project.
+      ALT-click on number boxes now alternates between the default value and the
+      last non-default value. Entering numerical value with the keyboard now gives
+      visual feedback.
+  - name: 1.0.7
+    releaseDate: 2018-02-28
+    description: Fixed several issues that could cause crashes. Improved license
+      dialog error handling. Fixed VST3 parameter communication with host. Fixed
+      VST3 context menu location. Added native bypass support for VST3 hosts.
+      Improved multi-core performance.
+  - name: 1.0.6
+    releaseDate: 2018-02-26
+    description: Fixed a possible instability resulting in a crash. Fixed a thread
+      scheduling issue with Cubase. Fixed a mouse pointer issue with Cubase.
+  - name: 1.0.5
+    releaseDate: 2018-02-22
+    description: Fixed an issue that could result in installation failure. Fixed an
+      issue that could result in a hanging installer. Fixed an issue that could
+      result in the plugin hanging.
+  - name: 1.0.4
+    releaseDate: 2018-02-21
+    description: Fixed an issue that would cause an "internal error" message. Fixed
+      a deadlock resulting in a spinning beach ball after authorization changes.
+      Fixed an issue with switching from trial to proper activation. Improved
+      general robustness.
+  - name: 1.0.3
+    releaseDate: 2018-02-12
+    description: Improved the installer to avoid problems with the running license
+      daemon. Improved compatibility with certain host software. Fixed an issue with
+      lost authorizations.
+  - name: 1.0.2
+    releaseDate: 2018-02-08
+    description: Fixed incompatibility with several hosts like Ableton Live 10.
+      Fixed several possible crashing conditions. Improved performance with several
+      instances running at the same time. Improved error messages to make more
+      meaningful statements.
+  - name: 1.0.1
+    releaseDate: 2018-01-24
+    description: Hotfix for crash if machine has not been authorized properly.
+  - name: 1.0.0
+    releaseDate: 2018-01-18
+    description: First public release.
