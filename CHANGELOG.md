@@ -1,5 +1,11 @@
 # catalog
 
+## 1.5.1
+
+### Patch Changes
+
+- 05c9ac1: hardware(update): Dream Sequence
+
 ## 1.5.0
 
 ### Minor Changes
