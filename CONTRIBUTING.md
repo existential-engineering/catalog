@@ -30,7 +30,6 @@ Look in `data/manufacturers/` for the company. If it doesn't exist, create it:
 
 ```yaml
 # data/manufacturers/xfer-records.yaml
-slug: xfer-records
 name: Xfer Records
 website: https://xferrecords.com
 ```
@@ -39,7 +38,6 @@ website: https://xferrecords.com
 
 ```yaml
 # data/software/serum.yaml
-slug: serum
 name: Serum
 manufacturer: xfer-records    # Must match a manufacturer slug
 type: plugin
@@ -87,15 +85,19 @@ Fix any errors before submitting.
 Use categories from `schema/categories.yaml`. Common ones:
 
 **Instruments:**
+
 - `synthesizer`, `sampler`, `drum-machine`, `piano`, `strings`
 
 **Synthesis Types:**
+
 - `analog`, `wavetable`, `fm`, `granular`, `physical-modeling`
 
 **Effects:**
+
 - `equalizer`, `compressor`, `reverb`, `delay`, `distortion`
 
 **Utility:**
+
 - `utility`, `analyzer`, `meter`, `routing`, `midi`
 
 ### Formats
@@ -140,7 +142,3 @@ VST3 plugins use the same identifier scheme but are stored differently. Check th
 ## Questions?
 
 Open an issue or reach out to the maintainers.
-
-
-
-
