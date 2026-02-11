@@ -1,5 +1,11 @@
 # catalog
 
+## 2.0.2
+
+### Patch Changes
+
+- eae825d: hardware(add): Chroma Console
+
 ## 2.0.1
 
 ### Patch Changes
