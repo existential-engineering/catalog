@@ -2,41 +2,46 @@ name: H90 Harmonizer
 manufacturer: eventide-audio
 primaryCategory: multi-effect
 website: https://www.eventideaudio.com/pedals/h90/
-description: A next-generation multi-effects powerhouse with 68 algorithms and
+description: A next-generation multi-effects powerhouse with 74 algorithms and
   comprehensive I/o, designed for guitar, bass, synths, and more, offering
   flexible routing and extensive sound possibilities.
 io:
   - name: Expression Input 1
-    type: cv/gate
-    category: audio
-    position: Bottom
-    connection: 1/4-inch
     signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
   - name: Expression Input 2
-    type: cv/gate
+    signalFlow: input
     category: audio
-    position: Bottom
+    type: cv/gate
     connection: 1/4-inch
-    signalFlow: input
+    maxConnections: 1
+    position: Bottom
   - name: MIDI in
-    type: midi
+    signalFlow: input
     category: midi
-    position: Bottom
+    type: midi
     connection: 5-pin din
-    signalFlow: input
+    maxConnections: 1
+    position: Bottom
   - name: USB Control
-    type: usb
+    signalFlow: input
     category: digital
-    position: Bottom
+    type: usb
     connection: usb-c
-    signalFlow: input
-  - name: Power Input
-    type: power
-    category: power
+    maxConnections: 1
     position: Bottom
-    connection: barrel
+  - name: Power Input
     signalFlow: input
-specs:
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+specs: |-
   - 74 professional algorithms
   - Dual algorithm design
   - True spillover between programs
@@ -63,28 +68,14 @@ links:
 prices:
   - amount: 899
     currency: USD
-details:
-  - The h90 harmonizer is a next-generation multi-effects pedal featuring 74
-    professional algorithms and hundreds of curated programs, designed to be the
-    heart of a musician's rig. It combines advanced sound design capabilities
-    with versatile performance features, offering both iconic effects and
-    cutting-edge sonic manipulations.
-  - "The pedal includes four new granular effects that create blooming reverse
-    delays, rhythmic glitchy stutters, and morphing textures. It also features a
-    groundbreaking harmonizer+ vocal effects suite with four studio-grade vocal
-    algorithms: vocaltune, vocalshift, vocalshiftmidi, and quadravox+, derived
-    from eventide's flagship h9000 processor."
-  - The h90 offers extensive performance controls with six programmable
-    footswitches, a perform mode, and three push-button quick knobs. Users can
-    map functions like tap tempo, preset bypass, and performance parameters such
-    as reverb freeze and pitch flex. The comprehensive ui allows for detailed
-    parameter control through a hi-res OLED display and five push knobs.
-  - The device provides flexible routing options, including the ability to use
-    two algorithms simultaneously, route effects in series or parallel, and
-    incorporate two mono inserts or one stereo insert anywhere in the signal
-    chain. It supports dual-mode processing for two independent stereo signals
-    and includes extensive connectivity options.
-  - The h90 control app enables remote programming, allowing users to manage
-    programs, perform system updates, program MIDI mappings, and import/export
-    user lists via Bluetooth or USB-c on computers and ipads.
+details: |-
+  The h90 harmonizer is a next-generation multi-effects pedal featuring 74 professional algorithms and hundreds of curated programs, designed to be the heart of a musician's rig. It combines advanced sound design capabilities with versatile performance features, offering both iconic effects and cutting-edge sonic manipulations.
+
+  The pedal includes four new granular effects that create blooming reverse delays, rhythmic glitchy stutters, and morphing textures. It also features a groundbreaking harmonizer+ vocal effects suite with four studio-grade vocal algorithms: vocaltune, vocalshift, vocalshiftmidi, and quadravox+, derived from eventide's flagship h9000 processor.
+
+  The h90 offers extensive performance controls with six programmable footswitches, a perform mode, and three push-button quick knobs. Users can map functions like tap tempo, preset bypass, and performance parameters such as reverb freeze and pitch flex. The comprehensive ui allows for detailed parameter control through a hi-res OLED display and five push knobs.
+
+  The device provides flexible routing options, including the ability to use two algorithms simultaneously, route effects in series or parallel, and incorporate two mono inserts or one stereo insert anywhere in the signal chain. It supports dual-mode processing for two independent stereo signals and includes extensive connectivity options.
+
+  The h90 control app enables remote programming, allowing users to manage programs, perform system updates, program MIDI mappings, and import/export user lists via Bluetooth or USB-c on computers and ipads.
 id: hOnDO-Sd704wA5rDB8s8X
