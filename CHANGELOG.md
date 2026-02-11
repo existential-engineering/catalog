@@ -1,5 +1,12 @@
 # catalog
 
+## 2.0.1
+
+### Patch Changes
+
+- 3567f93: hardware(add): H90 Harmonizer
+- 3b090dd: hardware(update): Infinite Jets
+
 ## 2.0.0
 
 ### Major Changes
