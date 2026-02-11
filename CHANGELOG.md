@@ -1,5 +1,11 @@
 # catalog
 
+## 2.0.3
+
+### Patch Changes
+
+- f07822f: hardware(add): Tone Master Pro
+
 ## 2.0.2
 
 ### Patch Changes
