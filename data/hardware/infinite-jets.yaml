@@ -5,31 +5,36 @@ primaryCategory: synthesizer
 categories:
   - pedal
   - effect
-website: https://www.hologramelectronics.com/infinite-jets
-description: Infinite Jets resynthesizes individual notes/chords into new sounds
-  using two independent sampling channels. 10 unique presets can be manipulated
-  by its internal LFO, envelope shaping, analog drive, and expression controls.
-  Create infinite sustain, ambient washes, abrupt glitch, and unique delay
-  effects with one guitar pedal.
+website: https://www.hologramelectronics.com/pages/infinite-jets
+description: A multi-voice synth and glitch pedal that resynthesizes individual notes/chords into new sounds using two independent sampling channels. Features 10 unique presets with LFO, envelope shaping, analog drive, and expression controls.
 details: |-
-  Infinite Jets is a multi-voice synth pedal that resynthesizes individual notes/chords into new sounds using two independent sampling channels. It offers 4 separate sampling effects in one: Blur, Synth, Glitch, and Swell. Create lush ambient textures that seamlessly fade from one chord to the next, infinite sustain, glitching granular loops, filtered synthesizer sounds, violin-like fuzz and swell effects, drones, distorted delay and vibrato, and much more.
+  The Infinite Jets is a multi-voice synth pedal that resynthesizes individual notes and chords using two independent sampling channels. It offers four distinct effect styles: blur, synth, glitch, and swell, allowing musicians to create ambient textures, infinite sustain, and unique sonic manipulations.
 
-  The pedal uses two channels of sampling (A & B) to sustain notes indefinitely. They can be triggered by your playing automatically or via footswitches. Because there are two channels of sampling, notes can attack, sustain, and decay on top of each other. This allows for unique harmony, drone, and textural effects.
+  The pedal provides multiple triggering modes including mono (one channel at a time), poly (both channels can sustain simultaneously), and manual (independent channel triggering via footswitches). Each effect style offers unique sound transformation capabilities, from creating hazy atmospheric textures to generating synthesizer-like sounds and glitchy audio fragments.
 
-  Alternate between forward and reverse effect playback in real time with the press of a button. The synth-style resonant lowpass filter allows for dramatic tone sculpting, while the internal LFO and envelope generators provide modulation options.
+  The dimension control is a versatile feature that changes parameters differently for each effect type: controlling space and feedback in blur mode, filter cutoff in synth mode, sample length in glitch a, and sample selection in glitch b. Users can automate this control through envelope generators, LFO, or by recording knob movements.
 
-  All 10 presets can be manipulated by the internal LFO, envelope shaping, analog drive, and expression controls. The digitally-controlled analog drive, tone, and dry mix controls preserve signal integrity while adding character.
+  Advanced sound-shaping capabilities include octave variations, dynamic processing, and the ability to create complex textural effects. The swell presets allow for dramatic volume effects, tremolo, and unique sustained sounds, while the glitch modes enable real-time audio remixing and pattern evolution.
+
+  The pedal features professional-grade technical design, including an analog dry path, true bypass switching via an electromechanical relay, and an expression pedal input that can be mapped to multiple controls, ensuring high-quality sound preservation and extensive performance flexibility.
 specs: |-
-  - Two independent channels of sampling
-  - 4 separate effect styles (Blur, Synth, Glitch, and Swell)
-  - 10 preset variations
+  - Two independent sampling channels
+  - 4 effect styles (blur, synth, glitch, swell)
+  - 10 unique presets
+  - 2 user save slots
   - Envelope shape control
   - Dimension control
-  - Record and save knob movements
-  - Internal LFO and envelope generators
-  - Digitally-controlled analog drive, tone, and dry mix controls
+  - Internal LFO
+  - Internal envelope generators
+  - Digitally-controlled analog drive
+  - Tone control
+  - Dry mix control
+  - Analog dry path
   - Expression pedal input
-  - True bypass switching (electromechanical relay)
+  - True bypass switching
+  - Mono/poly/manual trigger modes
+  - +1 octave, -1 octave, +/- 1 octave variations
+  - Footswitch triggering
 io:
   - name: Expression Pedal Input
     signalFlow: input
@@ -37,21 +42,14 @@ io:
     type: cv/gate
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - name: Input
-    signalFlow: input
-    category: audio
-    type: instrument
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Right
-  - name: Output
-    signalFlow: output
-    category: audio
-    type: instrument
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Left
+    position: Bottom
 prices:
   - amount: 299
     currency: USD
+videos:
+  - videoId: Fvg6j5KyQDA
+    title: Infinite Jets Demo
+links:
+  - url: https://cdn.shopify.com/s/files/1/0920/2928/8752/files/Infinite_Jets_User_Manual_WEB.pdf?v=1758823496
+    type: resource
+    title: Infinite Jets User Manual
