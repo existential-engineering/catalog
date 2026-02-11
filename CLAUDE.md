@@ -142,6 +142,28 @@ Software and hardware entries can have a `versions` array with release history.
 - `prices` - version-specific pricing
 - `links` - version-specific links
 
+## Video Links
+
+Videos use a dedicated `videos` array (not the `links` array):
+
+```yaml
+videos:
+  - videoId: lgKAzohhZjs
+    title: Product Demo
+  - videoId: "1017281280"
+    provider: vimeo
+    title: Overview
+```
+
+**Fields:**
+
+- `videoId` (required) - platform-specific video identifier
+- `provider` - video platform: `youtube` (default) or `vimeo`. Omit for YouTube.
+- `title` - optional display title
+- `description` - optional description
+
+Do NOT put videos in the `links` array. The `links` array is for non-video links only (resources, reviews, support, etc.).
+
 ## Translations
 
 Translations are optional and added inline to YAML files using a `translations` key:
@@ -161,6 +183,7 @@ translations:
 - `description`, `details`, `specs` (content - converted to HTML)
 - `website` (locale-specific URLs)
 - `links` (replaces default links for that locale)
+- `videos` (replaces default videos for that locale)
 - Hardware `io` (merge semantics - uses `originalName` to match)
 
 **Important:** Locale-specific links (e.g., "User Manual (Spanish)") should NOT go in the main `links` array. Instead, move them to `translations.<locale>.links` with a localized title. Supported locales are in `schema/locales.yaml`.

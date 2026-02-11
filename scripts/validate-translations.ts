@@ -54,13 +54,21 @@ interface TranslationValidationResult {
 
 // Valid translation fields for each entity type
 const VALID_MANUFACTURER_FIELDS = new Set(["description", "website"]);
-const VALID_SOFTWARE_FIELDS = new Set(["description", "details", "specs", "website", "links"]);
+const VALID_SOFTWARE_FIELDS = new Set([
+  "description",
+  "details",
+  "specs",
+  "website",
+  "links",
+  "videos",
+]);
 const VALID_HARDWARE_FIELDS = new Set([
   "description",
   "details",
   "specs",
   "website",
   "links",
+  "videos",
   "io",
 ]);
 

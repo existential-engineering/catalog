@@ -118,12 +118,22 @@ CREATE TABLE IF NOT EXISTS software_links (
     type TEXT NOT NULL,
     title TEXT,
     url TEXT,
-    video_id TEXT,
-    provider TEXT,
     description TEXT
 );
 
 CREATE INDEX idx_software_links_software ON software_links(software_id);
+
+-- Software Videos
+CREATE TABLE IF NOT EXISTS software_videos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    video_id TEXT NOT NULL,
+    provider TEXT NOT NULL DEFAULT 'youtube',
+    title TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_software_videos_software ON software_videos(software_id);
 
 -- Hardware
 CREATE TABLE IF NOT EXISTS hardware (
@@ -274,12 +284,22 @@ CREATE TABLE IF NOT EXISTS hardware_links (
     type TEXT NOT NULL,
     title TEXT,
     url TEXT,
-    video_id TEXT,
-    provider TEXT,
     description TEXT
 );
 
 CREATE INDEX idx_hardware_links_hardware ON hardware_links(hardware_id);
+
+-- Hardware Videos
+CREATE TABLE IF NOT EXISTS hardware_videos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    video_id TEXT NOT NULL,
+    provider TEXT NOT NULL DEFAULT 'youtube',
+    title TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_hardware_videos_hardware ON hardware_videos(hardware_id);
 
 -- Hardware Revision Links
 CREATE TABLE IF NOT EXISTS hardware_revision_links (
@@ -288,12 +308,22 @@ CREATE TABLE IF NOT EXISTS hardware_revision_links (
     type TEXT NOT NULL,
     title TEXT,
     url TEXT,
-    video_id TEXT,
-    provider TEXT,
     description TEXT
 );
 
 CREATE INDEX idx_hardware_revision_links_revision ON hardware_revision_links(revision_id);
+
+-- Hardware Revision Videos
+CREATE TABLE IF NOT EXISTS hardware_revision_videos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    revision_id INTEGER NOT NULL REFERENCES hardware_revisions(id) ON DELETE CASCADE,
+    video_id TEXT NOT NULL,
+    provider TEXT NOT NULL DEFAULT 'youtube',
+    title TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_hardware_revision_videos_revision ON hardware_revision_videos(revision_id);
 
 -- =============================================================================
 -- LOCALIZATION / TRANSLATIONS
@@ -350,20 +380,31 @@ CREATE TABLE IF NOT EXISTS hardware_translations (
 
 CREATE INDEX idx_hardware_translations_locale ON hardware_translations(locale);
 
--- Localized software links (videos, purchase, affiliate, docs per locale)
+-- Localized software links (purchase, affiliate, docs per locale)
 CREATE TABLE IF NOT EXISTS software_links_localized (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
     locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
-    type TEXT NOT NULL,             -- video, documentation, purchase, etc.
+    type TEXT NOT NULL,
     title TEXT,
     url TEXT,
-    video_id TEXT,
-    provider TEXT,
     description TEXT
 );
 
 CREATE INDEX idx_software_links_localized ON software_links_localized(software_id, locale);
+
+-- Localized software videos
+CREATE TABLE IF NOT EXISTS software_videos_localized (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    video_id TEXT NOT NULL,
+    provider TEXT NOT NULL DEFAULT 'youtube',
+    title TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_software_videos_localized ON software_videos_localized(software_id, locale);
 
 -- Localized hardware links
 CREATE TABLE IF NOT EXISTS hardware_links_localized (
@@ -373,12 +414,23 @@ CREATE TABLE IF NOT EXISTS hardware_links_localized (
     type TEXT NOT NULL,
     title TEXT,
     url TEXT,
-    video_id TEXT,
-    provider TEXT,
     description TEXT
 );
 
 CREATE INDEX idx_hardware_links_localized ON hardware_links_localized(hardware_id, locale);
+
+-- Localized hardware videos
+CREATE TABLE IF NOT EXISTS hardware_videos_localized (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    video_id TEXT NOT NULL,
+    provider TEXT NOT NULL DEFAULT 'youtube',
+    title TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_hardware_videos_localized ON hardware_videos_localized(hardware_id, locale);
 
 -- Hardware I/O translations (MERGE semantics - only translates name/description)
 -- Technical fields (signalFlow, type, connection, position) come from hardware_io
@@ -453,7 +505,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (9, 'Migrated IDs from auto-increment integers to nanoid strings', 1),
     (10, 'Added schema_migrations table for version tracking', 0),
     (11, 'Added supersedes_id column for product lineage tracking', 0),
-    (12, 'Added slug column to hardware_revisions for stable identifiers', 0);
+    (12, 'Added slug column to hardware_revisions for stable identifiers', 0),
+    (13, 'Separated video links into dedicated video tables', 1);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES

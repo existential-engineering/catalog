@@ -232,83 +232,19 @@ const PriceSchema = z.object({
   source: z.string().optional(),
 });
 
-// Canonical YouTube URL format: https://www.youtube.com/watch?v={videoId}
-const YOUTUBE_CANONICAL_PATTERN = /^https:\/\/www\.youtube\.com\/watch\?v=[\w-]+$/;
+const VideoLinkSchema = z.object({
+  videoId: z.string().min(1, "videoId is required"),
+  provider: z.enum(["youtube", "vimeo"]).default("youtube"),
+  title: z.string().optional(),
+  description: z.string().optional(),
+});
 
-// Validate YouTube URLs use canonical format
-function validateYouTubeUrl(url: string): { valid: boolean; error?: string } {
-  // Parse the URL to check the hostname
-  let parsed: URL;
-  try {
-    parsed = new URL(url);
-  } catch {
-    // If the URL cannot be parsed, treat it as not a YouTube URL for this format check
-    return { valid: true };
-  }
-
-  const hostname = parsed.hostname.toLowerCase();
-  const youtubeHosts = new Set(["youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"]);
-
-  if (!youtubeHosts.has(hostname)) {
-    return { valid: true }; // Not a YouTube URL, skip
-  }
-
-  // Check for non-www YouTube URLs (youtube.com or m.youtube.com)
-  if (hostname === "youtube.com" || hostname === "m.youtube.com") {
-    return {
-      valid: false,
-      error: `YouTube URL should use 'www.youtube.com' instead of '${hostname}'`,
-    };
-  }
-
-  // Check for embed URLs
-  if (parsed.pathname.startsWith("/embed/")) {
-    return {
-      valid: false,
-      error: `YouTube URL should use '/watch?v=' format instead of '/embed/'`,
-    };
-  }
-
-  // Check for youtu.be short URLs
-  if (hostname === "youtu.be") {
-    return {
-      valid: false,
-      error: `YouTube URL should use 'www.youtube.com/watch?v=' format instead of 'youtu.be'`,
-    };
-  }
-
-  // Verify it matches the canonical pattern
-  if (!YOUTUBE_CANONICAL_PATTERN.test(url)) {
-    return {
-      valid: false,
-      error: `YouTube URL should match format 'https://www.youtube.com/watch?v={videoId}'`,
-    };
-  }
-
-  return { valid: true };
-}
-
-const LinkSchema = z
-  .object({
-    type: z.string(),
-    title: z.string().optional(),
-    url: z.url().optional(),
-    videoId: z.string().optional(),
-    provider: z.string().optional(),
-    description: z.string().optional(),
-  })
-  .check((ctx) => {
-    if (!ctx.value.url) return;
-    const result = validateYouTubeUrl(ctx.value.url);
-    if (!result.valid && result.error) {
-      ctx.issues.push({
-        code: "custom",
-        message: result.error,
-        input: ctx.value.url,
-        path: ["url"],
-      });
-    }
-  });
+const LinkSchema = z.object({
+  type: z.string(),
+  title: z.string().optional(),
+  url: z.url(),
+  description: z.string().optional(),
+});
 
 const VersionSchema = z
   .object({
@@ -321,6 +257,7 @@ const VersionSchema = z
     description: z.string().optional(),
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
+    videos: z.array(VideoLinkSchema).optional(),
   })
   .refine(
     (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
@@ -361,6 +298,7 @@ const RevisionSchema = z
     versions: z.array(VersionSchema).optional(),
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
+    videos: z.array(VideoLinkSchema).optional(),
   })
   .refine(
     (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
@@ -471,6 +409,7 @@ const SoftwareSchema = z
     versions: z.array(VersionSchema).optional(),
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
+    videos: z.array(VideoLinkSchema).optional(),
   })
   .refine(
     (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
@@ -518,6 +457,7 @@ const HardwareSchema = z
     revisions: z.array(RevisionSchema).optional(),
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
+    videos: z.array(VideoLinkSchema).optional(),
   })
   .refine(
     (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
