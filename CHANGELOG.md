@@ -1,5 +1,11 @@
 # catalog
 
+## 2.0.0
+
+### Major Changes
+
+- 25f52bb: Separate video links into dedicated `videos` array with new SQLite tables. Videos are no longer stored in the `links` array.
+
 ## 1.5.2
 
 ### Patch Changes
