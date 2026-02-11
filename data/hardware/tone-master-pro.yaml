@@ -1,112 +1,129 @@
 name: Tone Master Pro
-manufacturer: Fender
-primaryCategory: multi-effects
+manufacturer: fender
+primaryCategory: multi-effect
 website: https://www.fender.com/products/tone-master-pro
 description: A multi-effects guitar workstation featuring a full-color 7" touch screen, 6000 factory impulse response cabs, 4 external effects loops, and a control app for comprehensive sound shaping and performance.
 io:
   - name: Instrument Input
+    signalFlow: input
+    category: audio
     type: instrument
-    category: audio
-    position: Left
     connection: 1/4-inch
-    signalFlow: input
+    maxConnections: 1
+    position: Left
   - name: Xlr Mic Input
+    signalFlow: input
+    category: audio
     type: mic
-    category: audio
-    position: Left
     connection: xlr
-    signalFlow: input
+    maxConnections: 1
+    position: Left
   - name: Output 1
-    type: line
-    category: audio
-    position: Right
-    connection: 1/4-inch
     signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - name: Output 2
-    type: line
-    category: audio
-    position: Right
-    connection: 1/4-inch
     signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - name: Stereo Headphone Output
+    signalFlow: output
+    category: audio
     type: headphone
-    category: audio
-    position: Right
     connection: 1/4-inch
-    signalFlow: output
+    maxConnections: 2
+    position: Right
   - name: Expression Pedal 1
-    type: cv/gate
-    category: audio
-    position: Left
-    connection: 1/4-inch
     signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
   - name: Expression Pedal 2
+    signalFlow: input
+    category: audio
     type: cv/gate
-    category: audio
+    connection: 1/4-inch
+    maxConnections: 1
     position: Left
-    connection: 1/4-inch
-    signalFlow: input
   - name: Effects Loop 1
-    type: line
-    category: audio
-    position: Right
-    connection: 1/4-inch
     signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - name: Effects Loop 1
-    type: line
-    category: audio
-    position: Right
-    connection: 1/4-inch
     signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - name: Effects Loop 2
-    type: line
-    category: audio
-    position: Right
-    connection: 1/4-inch
     signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - name: Effects Loop 2
-    type: line
-    category: audio
-    position: Right
-    connection: 1/4-inch
     signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - name: Effects Loop 3
-    type: line
-    category: audio
-    position: Right
-    connection: 1/4-inch
     signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - name: Effects Loop 3
-    type: line
-    category: audio
-    position: Right
-    connection: 1/4-inch
     signalFlow: output
-  - name: Effects Loop 4
-    type: line
     category: audio
-    position: Right
+    type: line
     connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Effects Loop 4
     signalFlow: input
-  - name: Effects Loop 4
-    type: line
     category: audio
-    position: Right
+    type: line
     connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Effects Loop 4
     signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - name: Auxiliary Input
-    type: line
+    signalFlow: input
     category: audio
-    position: Left
+    type: line
     connection: 1/8-inch
-    signalFlow: input
-  - name: USB Port
-    type: usb
-    category: digital
+    maxConnections: 1
     position: Left
-    connection: usb-b
+  - name: USB Port
     signalFlow: input
-specs:
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Left
+specs: |-
   - Full-color 7-inch touch screen
   - 10 footswitch encoders with LCD scribble strips
   - Over 100 amp and effect models
@@ -115,7 +132,7 @@ specs:
   - 60-second stereo looper
   - Instrument and xlr mic inputs
   - Bluetooth wireless audio streaming
-  - 'Frequency response: 20 hz - 20 khz'
+  - Frequency response: 20 hz - 20 khz
   - USB firmware updates
   - Stereo headphone output
   - Compatible with expression pedal
@@ -123,18 +140,22 @@ specs:
   - True preset spillover
   - 3rd party ir support
 links:
-  - url: https://www.fender.com/pages/tone-master-pro
+  - url: https://www.fender.com/products/tone-master-pro
     type: resource
     title: Tone Master Pro Product Page
-  - url: https://support.fender.com/en-us/knowledgebase/article/KA-02068
+  - url: https://support.fender.com/en-us/knowledgebase/article/KA-02068/
     type: support
     title: Tone Master Pro Support Article
 prices:
   - amount: 1599.99
     currency: USD
-details:
-  - The tone master pro is a comprehensive multi-effects guitar workstation designed to deliver exceptional sound quality and versatility. It combines an intuitive interface with a powerful processing platform, offering musicians a professional-grade guitar processor with extensive tone-shaping capabilities. The device features a proprietary tone master modeling process that accurately replicates over 100 of the world's most popular amps and effects.
-  - The processor includes a large full-color touchscreen with stunning graphics and an intuitive user interface, making tone editing and preset creation remarkably straightforward. Musicians can create custom presets, customize footswitch assignments, and organize sounds into songs and setlists with remarkable ease. The 10 custom-designed footswitch encoders provide instant access to presets and parameters, allowing for real-time adjustments.
-  - The tone master pro offers extensive connectivity and integration options, including a USB connection to the tone master pro control app for creating, editing, and sharing presets. Users can access over 500 built-in user presets and download thousands more from the cloud. The device supports 3rd party impulse responses and includes 6000 fender-captured cabinet irs, providing musicians with unprecedented tonal flexibility.
-  - Advanced features include a 60-second stereo looper, four external effects loops for integrating additional pedals, and true preset spillover for delay and reverb tails. The processor supports Bluetooth wireless audio streaming and is compatible with the mission engineering sp1-tmp expression pedal for real-time parameter control.
-  - Designed for stage and studio use, the tone master pro is lightweight (under 9 lbs) and features a rugged, stage-friendly form factor. It provides comprehensive input and output options, including instrument and xlr mic inputs, stereo headphone output, and multiple line outputs with balanced and unbalanced configurations.
+details: |-
+  The tone master pro is a comprehensive multi-effects guitar workstation designed to deliver exceptional sound quality and versatility. It combines an intuitive interface with a powerful processing platform, offering musicians a professional-grade guitar processor with extensive tone-shaping capabilities. The device features a proprietary tone master modeling process that accurately replicates over 100 of the world's most popular amps and effects.
+
+  The processor includes a large full-color touchscreen with stunning graphics and an intuitive user interface, making tone editing and preset creation remarkably straightforward. Musicians can create custom presets, customize footswitch assignments, and organize sounds into songs and setlists with remarkable ease. The 10 custom-designed footswitch encoders provide instant access to presets and parameters, allowing for real-time adjustments.
+
+  The tone master pro offers extensive connectivity and integration options, including a USB connection to the tone master pro control app for creating, editing, and sharing presets. Users can access over 500 built-in user presets and download thousands more from the cloud. The device supports 3rd party impulse responses and includes 6000 fender-captured cabinet irs, providing musicians with unprecedented tonal flexibility.
+
+  Advanced features include a 60-second stereo looper, four external effects loops for integrating additional pedals, and true preset spillover for delay and reverb tails. The processor supports Bluetooth wireless audio streaming and is compatible with the mission engineering sp1-tmp expression pedal for real-time parameter control.
+
+  Designed for stage and studio use, the tone master pro is lightweight (under 9 lbs) and features a rugged, stage-friendly form factor. It provides comprehensive input and output options, including instrument and xlr mic inputs, stereo headphone output, and multiple line outputs with balanced and unbalanced configurations.
