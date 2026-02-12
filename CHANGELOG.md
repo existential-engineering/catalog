@@ -1,5 +1,11 @@
 # catalog
 
+## 2.0.5
+
+### Patch Changes
+
+- 1d3f2d2: software(update): AmpliTube 5
+
 ## 2.0.4
 
 ### Patch Changes
