@@ -1,5 +1,11 @@
 # catalog
 
+## 2.0.4
+
+### Patch Changes
+
+- 2ca6d2d: software(update): Pro-L 2
+
 ## 2.0.3
 
 ### Patch Changes
