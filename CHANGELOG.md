@@ -1,5 +1,11 @@
 # catalog
 
+## 2.0.6
+
+### Patch Changes
+
+- 9f9292b: hardware(add): 1992 High Gain Amp
+
 ## 2.0.5
 
 ### Patch Changes
