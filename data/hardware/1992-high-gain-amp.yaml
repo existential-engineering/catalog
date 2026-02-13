@@ -1,73 +1,90 @@
 name: 1992 High Gain Amp
-manufacturer: Universal Audio
-primaryCategory: amp sim
+manufacturer: universal-audio
+primaryCategory: amp-sim
+categories:
+  - pedal
+  - cabinet-sim
 website: https://www.uaudio.com/products/anti-1992-high-gain-amp
-description: A stereo amp and cab emulation pedal featuring six famous mic/speaker pairs, built-in boosts, live and preset modes, and customizable settings via uafx mobile app.
+description: A stereo amp and cab emulation pedal featuring six famous mic/speaker
+  pairs, built-in boosts, live and preset modes, and customizable settings via UAFX
+  mobile app.
+details: |-
+  The UAFX Anti 1992 High Gain Amp is a digital guitar pedal that recreates the iconic 120-watt tube amp sound associated with modern metal genres. It delivers a wide range of tones from crystalline cleans to bone-crushing high-gain distortion, capturing the aggressive sound of bands like Slipknot and Machine Head.
+
+  The pedal features multiple tone-shaping capabilities, including a built-in noise gate, TS-style overdrive, and an integrated preamp boost. Musicians can explore six carefully modeled mic and speaker combinations, allowing them to craft sounds ranging from Scandinavian death metal to American thrash with precision and versatility.
+
+  Users can control the Anti 1992 through the UAFX Control app, which enables deep tone customization, preset management, and artist tone loading. The pedal offers Bluetooth and hardwired connectivity, with the ability to save up to four onboard presets and access a live mode for dynamic performance control.
+
+  The Anti 1992 provides extensive connectivity options, including a rear panel USB-to-MIDI connection that allows integration into programmable MIDI rigs. It supports real-time control of boosts, EQ, and other parameters, making it a flexible tool for modern guitarists.
+
+  Powered by a 9V DC isolated power supply, the pedal requires 400 mA for full-sized models and can be updated via USB-C using the UA Connect application. It is compatible with both desktop and mobile apps for comprehensive control and firmware management.
+specs: |-
+  - Six mic/speaker pair combinations
+  - Built-in noise gate
+  - TS-style overdrive boost
+  - Integrated preamp boost
+  - Four onboard presets
+  - Live mode for dynamic performance control
+  - Bluetooth and USB-C connectivity
+  - UAFX Control mobile app support
+  - USB-to-MIDI support
+  - 9V DC power, 400 mA
 io:
   - name: Input L
-    type: instrument
-    category: audio
-    position: Top
-    connection: 1/4-inch
     signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
     maxConnections: 1
+    position: Top
   - name: Input R
-    type: instrument
-    category: audio
-    position: Top
-    connection: 1/4-inch
     signalFlow: input
-    maxConnections: 1
-  - name: Output L
-    type: instrument
     category: audio
-    position: Top
-    connection: 1/4-inch
-    signalFlow: output
-    maxConnections: 1
-  - name: Output L
     type: instrument
-    category: audio
-    position: Top
     connection: 1/4-inch
-    signalFlow: output
     maxConnections: 1
+    position: Top
+  - name: Output L
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Output R
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
   - name: USB
-    type: midi
+    signalFlow: input
     category: digital
-    position: Top
+    type: usb
     connection: usb-c
-    signalFlow: input
     maxConnections: 1
-  - name: Power Input
-    type: power
-    category: power
     position: Top
-    connection: barrel
+  - name: Power Input
     signalFlow: input
+    category: power
+    type: power
+    connection: barrel
     maxConnections: 1
+    position: Top
 links:
-  - url: https://www.uaudio.com/products/610-collection
-    type: product
-    title: 610 Collection
   - url: https://help.uaudio.com/hc/en-us
     type: support
     title: Universal Audio Help Center
   - url: https://www.uaudio.com/blogs/ua/unlock-uafx-with-usb-midi-control
     type: resource
-    title: Unlock Uafx with USB MIDI Control
+    title: Unlock UAFX with USB MIDI Control
   - url: https://www.uaudio.com/uafx/start
     type: resource
-    title: Ua Connect Application
+    title: UA Connect Application
   - url: https://help.uaudio.com/hc/en-us/categories/25496127324436-Guitar-Products
     type: support
     title: Guitar Products Knowledge Base
 prices:
   - amount: 399
     currency: USD
-details:
-  - The uafx anti 1992 high gain amp is a digital guitar pedal that recreates the iconic 120-watt tube amp sound associated with modern metal genres. It delivers a wide range of tones from crystalline cleans to bone-crushing high-gain distortion, capturing the aggressive sound of bands like slipknot and machine head.
-  - The pedal features multiple tone-shaping capabilities, including a built-in noise gate, ts-style overdrive, and an integrated preamp boost. Musicians can explore six carefully modeled mic and speaker combinations, allowing them to craft sounds ranging from scandinavian death metal to american thrash with precision and versatility.
-  - Users can control the anti 1992 through the uafx control app, which enables deep tone customization, preset management, and artist tone loading. The pedal offers Bluetooth and hardwired connectivity, with the ability to save up to four onboard presets and access a live mode for dynamic performance control.
-  - The anti 1992 provides extensive connectivity options, including a rear panel USB-to-MIDI connection that allows integration into programmable MIDI rigs. It supports real-time control of boosts, eq, and other parameters, making it a flexible tool for modern guitarists.
-  - Powered by a 9v dc isolated power supply, the pedal requires 400 ma for full-sized models and can be updated via USB-c using the ua connect application. It is compatible with both desktop and mobile apps for comprehensive control and firmware management.
