@@ -1,5 +1,11 @@
 # catalog
 
+## 2.0.7
+
+### Patch Changes
+
+- 074d6f3: software(update): Diva
+
 ## 2.0.6
 
 ### Patch Changes
