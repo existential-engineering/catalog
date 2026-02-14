@@ -1,79 +1,87 @@
-name: Mpc Live Iii
-manufacturer: Akai Professional
+id: udXDuZzT6KRsPYFlcNKdW
+name: MPC Live III
+manufacturer: akai
+supersedes: zy83xMFXqTRfUuxTrr0OQ
 primaryCategory: sampler
 website: https://www.akaipro.com/mpc-live-3/
-description: A powerful standalone music production workstation that combines legendary mpc workflow with modern production tools, offering comprehensive studio and live performance capabilities in a portable design.
+description: The latest standalone MPC featuring enhanced performance
+  capabilities, improved display, and expanded connectivity for portable music
+  production.
+details: |-
+  The MPC Live III is a powerful standalone music production center designed for producers who need a portable, all-in-one creative solution. It features advanced production tools, responsive controls, and the fastest processor ever used in an MPC, enabling users to create music anywhere without a computer.
+
+  The device introduces innovative MPCe pads with 3D-sensing technology, offering ultra-responsive performance capabilities. These pads enable x/y control of one-shot layers, seamless sample blending, and dynamic note repeats, providing musicians with more expressive performance options.
+
+  The MPC Live III offers expanded workflow features including clip launching, step sequencing, and assignable performance buttons. This allows producers to trigger clips, lock in basslines, and create complex arrangements directly on the device, breaking beyond traditional production methods.
+
+  The system comes with a comprehensive MPC3 Pro Pack, which includes studio-grade time-stretch, clip-launching, expanded CV control, and professional plugins like AIR Reverb Pro, AIR Visual EQ4, and other creative tools. It also provides access to a world-class sample library and premium plugin collection.
+
+  With its built-in battery, speakers, and microphone, the MPC Live III is designed to be a truly portable music production center. Users can create, sample, and perform music anywhere, with the flexibility to connect to other devices or work completely standalone.
 io:
-  - name: Combo Xlr/Trs Input
-    type: line
+  - name: Combo XLR/TRS Input
+    signalFlow: input
     category: audio
-    position: Bottom
+    type: line
     connection: combo jack
-    signalFlow: input
     maxConnections: 1
-  - name: 1/4-Inch Trs Output
-    type: line
-    category: audio
     position: Bottom
-    connection: 1/4-inch
+  - name: 1/4-Inch TRS Output
     signalFlow: output
-    maxConnections: 1
-  - name: Rca Input
-    type: line
     category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Bottom
+  - name: RCA Input
+    signalFlow: input
+    category: audio
+    type: line
     connection: rca
-    signalFlow: input
     maxConnections: 1
+    position: Bottom
   - name: MIDI Input
-    type: midi
-    category: midi
-    position: Bottom
-    connection: 5-pin din
     signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
     maxConnections: 1
+    position: Bottom
   - name: MIDI Output
-    type: midi
+    signalFlow: output
     category: midi
-    position: Bottom
+    type: midi
     connection: 5-pin din
-    signalFlow: output
     maxConnections: 1
+    position: Bottom
   - name: CV/Gate Output
-    type: cv/gate
-    category: audio
-    position: Bottom
-    connection: 1/4-inch
     signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
     maxConnections: 1
-  - name: USB Type-a Port
-    type: usb
-    category: digital
     position: Bottom
+  - name: USB Type-A Port
+    signalFlow: input
+    category: digital
+    type: usb
     connection: usb-a
-    signalFlow: input
     maxConnections: 1
+    position: Bottom
   - name: USB Type-C Port
-    type: usb
+    signalFlow: input
     category: digital
-    position: Bottom
+    type: usb
     connection: usb-c
-    signalFlow: input
     maxConnections: 1
-  - name: Power Adapter Input
-    type: power
-    category: power
     position: Bottom
-    connection: barrel
+  - name: Power Adapter Input
     signalFlow: input
+    category: power
+    type: power
+    connection: barrel
     maxConnections: 1
+    position: Bottom
 links:
   - url: https://support.akaipro.com/en/support/home
     type: support
     title: Akai Professional Support
-details:
-  - The mpc live iii is a powerful standalone music production center designed for producers who need a portable, all-in-one creative solution. It features advanced production tools, responsive controls, and the fastest processor ever used in an mpc, enabling users to create music anywhere without a computer.
-  - The device introduces innovative mpce pads with 3d-sensing technology, offering ultra-responsive performance capabilities. These pads enable x/y control of one-shot layers, seamless sample blending, and dynamic note repeats, providing musicians with more expressive performance options.
-  - The mpc live iii offers expanded workflow features including clip launching, step sequencing, and assignable performance buttons. This allows producers to trigger clips, lock in basslines, and create complex arrangements directly on the device, breaking beyond traditional production methods.
-  - The system comes with a comprehensive mpc3 pro pack, which includes studio-grade time-stretch, clip-launching, expanded CV control, and professional plugins like air reverb pro, air visual eq4, and other creative tools. It also provides access to a world-class sample library and premium plugin collection.
-  - With its built-in battery, speakers, and microphone, the mpc live iii is designed to be a truly portable music production center. Users can create, sample, and perform music anywhere, with the flexibility to connect to other devices or work completely standalone.
