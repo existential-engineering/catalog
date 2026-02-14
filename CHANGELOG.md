@@ -1,5 +1,14 @@
 # catalog
 
+## 2.0.8
+
+### Patch Changes
+
+- 23548cd: software(add): Flavor Pro
+- 56fb243: hardware(add): LCT 940
+- 764e341: hardware(add): Quad Cortex Mini
+- ee7767d: software(add): Tekno
+
 ## 2.0.7
 
 ### Patch Changes
