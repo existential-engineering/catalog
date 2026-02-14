@@ -1,5 +1,11 @@
 # catalog
 
+## 2.0.9
+
+### Patch Changes
+
+- c416d79: hardware(update): MPC Live III - add I/O, details, links; rename from mpc-live-3
+
 ## 2.0.8
 
 ### Patch Changes
