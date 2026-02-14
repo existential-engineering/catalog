@@ -1,100 +1,115 @@
 name: Quad Cortex Mini
-manufacturer: Neural DSP
-primaryCategory: effectsprocessor
+manufacturer: neural-dsp
+primaryCategory: multi-effect
 website: https://neuraldsp.com/quad-cortex-mini
-description: A compact digital effects processor and amp modeler with full quad cortex processing power, offering arena-level performance in a more than 50% smaller footprint for live and studio use.
+description: A compact digital effects processor and amp modeler with full Quad
+  Cortex processing power in a smaller form factor, designed for live performance
+  and studio use.
 io:
   - name: Input 1
+    signalFlow: input
+    category: audio
     type: instrument
-    category: audio
-    position: Left
     connection: 1/4-inch
-    signalFlow: input
     maxConnections: 1
+    position: Left
   - name: Input 2/Capture Input
+    signalFlow: input
+    category: audio
     type: mic
-    category: audio
-    position: Left
     connection: combo jack
-    signalFlow: input
     maxConnections: 1
+    position: Left
   - name: Returns 1/2
-    type: line
-    category: audio
-    position: Left
-    connection: 1/4-inch
     signalFlow: input
-    maxConnections: 1
-  - name: Xlr Outputs 1/2
-    type: line
     category: audio
-    position: Right
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: XLR Outputs 1/2
+    signalFlow: output
+    category: audio
+    type: line
     connection: xlr
-    signalFlow: output
     maxConnections: 1
-  - name: Ts Outputs 3/4
-    type: line
-    category: audio
     position: Right
-    connection: 1/4-inch
+  - name: TS Outputs 3/4
     signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
     maxConnections: 1
+    position: Right
   - name: Sends 1/2
-    type: line
-    category: audio
-    position: Right
-    connection: 1/4-inch
     signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
     maxConnections: 1
+    position: Right
   - name: Capture Out
+    signalFlow: output
+    category: audio
     type: line
-    category: audio
-    position: Right
     connection: 1/4-inch
-    signalFlow: output
     maxConnections: 1
+    position: Right
   - name: Headphones
+    signalFlow: output
+    category: audio
     type: headphone
-    category: audio
-    position: Right
     connection: 1/8-inch
-    signalFlow: output
     maxConnections: 2
+    position: Right
   - name: USB Audio
-    type: usb
+    signalFlow: input
     category: digital
-    position: Bottom
+    type: usb
     connection: usb-c
-    signalFlow: input
     maxConnections: 1
-  - name: MIDI in
-    type: midi
-    category: midi
-    position: Left
-    connection: 1/8-inch
-    signalFlow: input
-    maxConnections: 1
-  - name: MIDI Out
-    type: midi
-    category: midi
-    position: Left
-    connection: 1/8-inch
-    signalFlow: output
-    maxConnections: 1
-  - name: Expression Input 1
-    type: cv/gate
-    category: audio
-    position: Left
-    connection: 1/4-inch
-    signalFlow: input
-    maxConnections: 1
-  - name: Power Input
-    type: power
-    category: power
     position: Bottom
-    connection: barrel
+  - name: MIDI In
     signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
     maxConnections: 1
+    position: Left
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Expression Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+specs: |-
+  - Quad-core SHARC processor architecture
+  - 7-inch touchscreen display
+  - Neural Capture technology (v1 and v2)
+  - Over 2000 factory neural captures
+  - Grid visual signal chain editor
+  - Preset, scene, stomp, and hybrid control modes
+  - Multichannel USB-C audio interface
+  - Wi-Fi for wireless content and firmware updates
+  - Cortex Cloud and Cortex Control desktop app integration
+  - MIDI in/out via 1/8-inch TRS
+  - Expression pedal input
+  - Effects loop (send/return)
 links:
   - url: https://neuraldsp.com/cloud
     type: resource
@@ -105,17 +120,19 @@ links:
   - url: https://neuraldsp.com/downloads
     type: resource
     title: Downloads
-videos:
   - url: https://discord.com/invite/7c9RZ9Tp36
-    title: Neural Dsp Discord
-    videoId: 7c9RZ9Tp36
-    provider: youtube
+    type: community
+    title: Neural DSP Discord
 prices:
   - amount: 1399
     currency: USD
-details:
-  - Quad cortex mini is a compact guitar and bass processing unit that delivers full quad cortex performance in a significantly smaller footprint. It provides a complete creative toolkit for musicians, offering arena-level performance in a remarkably portable design that fits easily into pedalboards, modern rigs, and desktop setups.
-  - The device features neural capture technology, allowing users to create and play ultra-accurate digital replicas of real amps, cabinets, drive pedals, and compressors. It comes preloaded with over 2000 high-quality factory neural captures and supports both neural capture v1 (offline processing) and v2 (cloud-based high-resolution capturing).
-  - The grid visual workspace enables intuitive signal chain creation, allowing users to place virtual device blocks, rearrange signal paths, and split signals with precision. The interface supports multiple control modes including preset, scene, stomp, and hybrid modes for flexible performance options.
-  - Quad cortex mini is designed as a versatile tool for live performance, studio recording, and practice. It functions as a multichannel USB-c audio interface, supports wireless content downloads and firmware updates, and is part of a platform that continues to evolve through ongoing coros updates.
-  - The device integrates with cortex cloud and cortex control desktop app, allowing users to share neural captures, explore new sounds, and manage their device and content efficiently across different workflows.
+details: |-
+  Quad Cortex Mini is a compact guitar and bass processing unit that delivers full Quad Cortex performance in a significantly smaller footprint. It provides a complete creative toolkit for musicians, offering professional-grade tone in a portable design that fits easily into pedalboards, modern rigs, and desktop setups.
+
+  The device features Neural Capture technology, allowing users to create and play ultra-accurate digital replicas of real amps, cabinets, drive pedals, and compressors. It comes preloaded with over 2000 high-quality factory neural captures and supports both Neural Capture v1 (offline processing) and v2 (cloud-based high-resolution capturing).
+
+  The Grid visual workspace enables intuitive signal chain creation, allowing users to place virtual device blocks, rearrange signal paths, and split signals with precision. The interface supports multiple control modes including preset, scene, stomp, and hybrid modes for flexible performance options.
+
+  Quad Cortex Mini is designed for live performance, studio recording, and practice. It functions as a multichannel USB-C audio interface, supports wireless content downloads and firmware updates, and is part of a platform that continues to evolve through ongoing CorOS updates.
+
+  The device integrates with Cortex Cloud and Cortex Control desktop app, allowing users to share neural captures, explore new sounds, and manage their device and content efficiently across different workflows.
