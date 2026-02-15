@@ -1,5 +1,12 @@
 # catalog
 
+## 2.0.10
+
+### Patch Changes
+
+- 5122b39: software(add): Multiband Filterbank
+- 6f53fde: hardware(add): Nano Cortex
+
 ## 2.0.9
 
 ### Patch Changes
