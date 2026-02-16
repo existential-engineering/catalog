@@ -1,5 +1,15 @@
 # catalog
 
+## 2.2.0
+
+### Minor Changes
+
+- dfd0adb: Add Arturia product catalog with 136 entries (46 hardware, 90 software)
+
+### Patch Changes
+
+- dee7e1a: Add Spectrasonics plugin catalog with Keyscape, Omnisphere 2, Omnisphere 3, Stylus RMX, and Trilian
+
 ## 2.1.0
 
 ### Minor Changes
