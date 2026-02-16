@@ -1,5 +1,11 @@
 # catalog
 
+## 2.4.0
+
+### Minor Changes
+
+- 934e36a: Add 785 hardware and 29 manufacturer entries, consolidate product variants into revisions, and reclassify Virus TDM as software
+
 ## 2.3.0
 
 ### Minor Changes
