@@ -16,6 +16,12 @@ describe("validateIdentifier", () => {
       expect(validateIdentifier("au", "com.native-instruments.Massive")).toEqual({ valid: true });
     });
 
+    it("accepts bundle IDs with digit-starting segments", () => {
+      expect(validateIdentifier("au", "com.fabfilter.Pro-C.AU.3")).toEqual({ valid: true });
+      expect(validateIdentifier("au", "com.fabfilter.Pro-L.AU.2")).toEqual({ valid: true });
+      expect(validateIdentifier("au", "com.fabfilter.Pro-MB.AU.1")).toEqual({ valid: true });
+    });
+
     it("rejects invalid format", () => {
       const result = validateIdentifier("au", "invalid");
       expect(result.valid).toBe(false);
@@ -44,6 +50,11 @@ describe("validateIdentifier", () => {
     it("rejects 5 characters", () => {
       const result = validateIdentifier("aax", "ABCDE");
       expect(result.valid).toBe(false);
+    });
+
+    it("accepts reverse domain notation", () => {
+      expect(validateIdentifier("aax", "com.fabfilter.Pro-MB.AAX.1")).toEqual({ valid: true });
+      expect(validateIdentifier("aax", "com.sonible.smartdeess")).toEqual({ valid: true });
     });
   });
 

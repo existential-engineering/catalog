@@ -18,19 +18,20 @@
 const IDENTIFIER_PATTERNS: Record<string, RegExp> = {
   // Apple bundle IDs (AU, standalone macOS apps)
   // Format: reverse domain notation (e.g., com.vendor.ProductName)
-  au: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z][a-zA-Z0-9-]*){1,}$/,
+  // Segments may start with digits (e.g., com.fabfilter.Pro-C.AU.3)
+  au: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,}$/,
 
   // macOS bundle identifier
-  bundle: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z][a-zA-Z0-9-]*){1,}$/,
+  bundle: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,}$/,
 
   // VST3 uses similar bundle ID format
-  vst3: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z][a-zA-Z0-9-]*){1,}$/,
+  vst3: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,}$/,
 
   // CLAP uses reverse domain notation
-  clap: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z][a-zA-Z0-9-]*){1,}$/,
+  clap: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,}$/,
 
-  // AAX uses PACE iLok manufacturer codes (4 alphanumeric characters)
-  aax: /^[A-Za-z0-9]{4}$/,
+  // AAX: PACE iLok codes (4 chars) or reverse domain notation
+  aax: /^([A-Za-z0-9]{4}|[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,})$/,
 
   // LV2 uses URIs
   lv2: /^https?:\/\/.+$/,
@@ -44,7 +45,7 @@ const FORMAT_HINTS: Record<string, string> = {
   bundle: "Reverse domain notation (e.g., com.vendor.AppName)",
   vst3: "Reverse domain notation (e.g., com.native-instruments.Massive)",
   clap: "Reverse domain notation (e.g., com.u-he.Diva)",
-  aax: "4-character PACE code (e.g., XfRc)",
+  aax: "4-character PACE code (e.g., XfRc) or reverse domain notation",
   lv2: "URI format (e.g., https://vendor.com/plugins/name)",
 };
 
