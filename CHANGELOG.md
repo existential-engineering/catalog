@@ -1,5 +1,11 @@
 # catalog
 
+## 2.5.0
+
+### Minor Changes
+
+- ce60fe6: Add Universal Audio hardware and software catalog (59 hardware, 139 software entries)
+
 ## 2.4.0
 
 ### Minor Changes
