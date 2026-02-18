@@ -4,12 +4,201 @@ manufacturer: arturia
 primaryCategory: midi-controller
 categories:
   - sequencer
+  - keyboard
 website: https://www.arturia.com/products/hybrid-synths/keystep-pro-chroma/overview
 prices:
   - amount: 574
     currency: USD
 description: >
-  KeyStep Pro Chroma is a special-edition version of the unparalleled 4-track
-  sequencer & keyboard, embellished with a sleek dark gray finish, great-feeling
-  knob caps and customizable track colors. The same all-in-one power, with more
-  edge.
+  KeyStep Pro Chroma is a special-edition version of the unparalleled 4-track sequencer & keyboard, embellished with a sleek dark gray finish, great-feeling knob caps and customizable track colors. The same all-in-one power, with more edge.
+details: |-
+  The keystep pro chroma is a special-edition 4-track sequencer and keyboard controller featuring a sleek dark gray finish with vivid blue leds and customizable track colors. It combines the playability of a keyboard with comprehensive sequencing power, designed to control hardware synths, software instruments, and daws simultaneously. The device serves as a modular sequencer, MIDI controller, and live performance keyboard that synchronizes all gear to a DAW click track.
+
+  The melodic sequencer offers real-time and step recording with extensive note editing capabilities including pitch, velocity, gate length, time shift, and probability control. The 4-track step sequencer supports up to 64 steps per sequence with 16 notes of polyphony per step, while the integrated 24-part drum sequencer provides dedicated control with 8 outputs for modular modules. Performance modes include forward and random playing options with pattern randomization, and both quantized and unquantized recording modes.
+
+  The interface features a 37-note slim keyboard with velocity and aftertouch sensitivity, LED feedback above each key, and an OLED display for detailed navigation and editing information. Controls include dedicated hands-on parameter access, secondary function buttons for fast sequence modification, and a capacitive strip for intuitive looper control. A piezo speaker provides tempo reference with a dedicated audio click output for synchronizing with other gear.
+
+  Connectivity is extensive with 1 MIDI in and 2 MIDI outputs for controlling hardware and software, CV/gate/mod outputs with free routing for polyphonic control, and sync in/out with reset output for eurorack sequencers. The device includes USB connectivity for DAW integration and supports chain, project, pattern, and scene creation for complex workflow management. Analog lab intro provides hundreds of out-of-the-box sounds, while ableton live lite integration augments live setups.
+
+  The chroma aesthetic combines futuristic design with practical functionality, featuring a dark gray shell that evokes both space station aesthetics and classic car styling. Customizable LED colors for each track allow every project to look as unique as it sounds, while premium knob caps and metal exterior construction deliver professional build quality. The compact form factor (23.2 x 8.2 x 1.5 inches, 5.9 lbs) makes it suitable for both studio and live performance environments.
+specs: |-
+  - 37-note slim keys with velocity and aftertouch sensitivity
+  - LED illumination above each key
+  - 4-track step sequencer with 16 step buttons
+  - Up to 64 steps per sequence
+  - Up to 16 notes of polyphony per step
+  - Melodic sequencer with real-time recording
+  - Step recording and step editing
+  - Pitch, velocity, gate length, time shift, and probability control per note
+  - Scale quantization with user scales
+  - Polyphonic CV outputs
+  - Forward and random playing modes
+  - Pattern randomization
+  - Quantized and unquantized recording
+  - Looper functionality
+  - 24-part integrated drum sequencer
+  - OLED display
+  - LED-illuminated controls
+  - Piezo speaker for tempo reference
+  - Audio click output
+  - CV, gate, and mod outputs with free routing
+  - 8 dedicated outputs for drum mode
+  - MIDI in and 2 MIDI outputs
+  - Sync in and out with reset output
+  - USB connectivity
+  - Dark gray casing with blue leds
+  - Customizable track LED colors
+  - Premium knob caps
+  - Size: 23.2 x 8.2 x 1.5 inches (589 x 208 x 38mm)
+  - Weight: 5.9 lbs (2.7 kg)
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out 1
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out 2
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: CV Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Gate Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Gate Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Gate Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Gate Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Mod Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Mod Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Mod Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Mod Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 7
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Clock In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Clock Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Reset Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Audio Click Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Metronome Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+  - name: Power Supply
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel

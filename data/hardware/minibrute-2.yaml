@@ -4,12 +4,89 @@ manufacturer: arturia
 primaryCategory: synthesizer
 categories:
   - analog
+  - keyboard
 website: https://www.arturia.com/products/hardware-synths/minibrute-2/overview
 prices:
   - amount: 549
     currency: USD
 description: >
-  MiniBrute 2 has evolved from the legendary monosynth that revolutionized the
-  analog scene with its mixable waveforms, Steiner-Parker filter, and Brute
-  Factor. Now with semi-modular architecture, you can splice its genome and
-  expand its raw power into the world of Eurorack modular.
+  MiniBrute 2 has evolved from the legendary monosynth that revolutionized the analog scene with its mixable waveforms, Steiner-Parker filter, and Brute Factor. Now with semi-modular architecture, you can splice its genome and expand its raw power into the world of Eurorack modular.
+details: |-
+  Minibrute 2 is an adaptable, dynamic analog synthesizer with semi-modular architecture that evolved from the legendary monosynth that revolutionized the analog scene. It combines mixable waveforms, a steiner-parker filter, and the signature brute factor, now expanded with enhanced connectivity and modulation possibilities. The synth is designed as a compact, self-contained, and versatile instrument that sounds huge while remaining portable and comprehensive.
+
+  The synthesizer features two analog vcos with extensive waveform options: vco1 offers sawtooth, pulse, and triangle waves with unique modifiers (ultra saw for huge sounds, metalizer for complex harmonics) and direct fm control, while vco2 provides sine, saw, and square waveforms with multiple tuning modes. The steiner-parker multimode filter delivers low pass, high pass, band pass, and notch modes with resonance capable of self-oscillation. The brute factor adds subtle drive effects to full intermodulation havoc, while the loopable ad envelope with CV-controllable attack and decay times provides dynamic modulation capabilities.
+
+  Two lfos supply 6 waveforms each (sine, triangle, sawtooth, square, random, slew random) and can run in sync with the sequencer at very fast rates. The 48-point CV and gate patchbay provides direct access to control many synthesizer and sequencer elements, with utility modules including inverter, attenuators, and vca for extended possibilities. The oscillator mixer allows blending of vco1, vco2, noise generator, and external inputs.
+
+  The 25-key velocity-sensitive keyboard with aftertouch features octave buttons for transposition up to 5 octaves, while the flexible sequencer and arpeggiator enable instant melodic phrases with 8 step-sequences supporting up to 64 steps each. Arpeggiator modes include up, down, inclusive, exclusive, random, note order, double up, and double down, with sequencer note entry supporting rest, tie, and legato modes. The synth syncs to MIDI clock over USB and MIDI in for integration with daws and hardware equipment.
+
+  Minibrute 2 integrates seamlessly into larger creative ecosystems through its semi-modular architecture and eurorack modular compatibility. The exclusive link system allows connection to rackbrute cases for expanded configurations with additional eurorack modules. Performance controls include assignable mod wheel and aftertouch destinations with adjustable pitch bend amounts, while line and headphones outputs provide flexible connectivity for studio and stage use.
+specs: |-
+  - 2 analog vcos
+  - Vco1: sawtooth, pulse, triangle waves with ultra saw and metalizer modifiers
+  - Vco1: direct fm control
+  - Vco2: sine, saw, square waveforms
+  - Vco2: three tuning ranges
+  - Vco2 hard sync to vco1
+  - Steiner-parker multimode filter
+  - Filter modes: low pass, high pass, band pass, notch
+  - Filter: 12db per octave
+  - Filter resonance with self-oscillation
+  - Adsr envelope generator
+  - Ad envelope with trigger and gate modes
+  - Ad envelope: one shot or loop modes
+  - Ad envelope: CV-controllable attack and decay times
+  - Brute factor drive and intermodulation effects
+  - 2 lfos with 6 waveforms each
+  - Lfo waveforms: sine, triangle, sawtooth, square, random, slew random
+  - Lfo sync to sequencer
+  - White noise generator
+  - Oscillator mixer for vco1, vco2, noise, and external inputs
+  - 48-point CV and gate patchbay
+  - Patchbay utility modules: inverter, attenuators, vca
+  - 25-key velocity-sensitive keyboard with aftertouch
+  - Octave buttons with up to 5 octaves transposition
+  - Sequencer/arpeggiator with 8 step-sequences
+  - Sequencer: up to 64 steps per sequence
+  - Sequencer note entry: rest, tie, and legato modes
+  - Arpeggiator modes: up, down, inclusive, exclusive, random, note order, double up, double down
+  - MIDI clock sync over USB and MIDI in
+  - Mod wheel with assignable destinations
+  - Aftertouch with assignable destinations
+  - Pitch bend with adjustable amounts
+  - Line and headphones outputs
+  - Semi-modular architecture
+  - Eurorack modular compatibility
+  - Size: 75 x 484 x 336 mm (2.95 x 19.06 x 13.23 inches)
+  - Weight: 4.82 kg (10.63 lb)
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Headphones Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b

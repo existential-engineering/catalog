@@ -4,11 +4,96 @@ manufacturer: arturia
 primaryCategory: midi-controller
 categories:
   - sequencer
+  - keyboard
 website: https://www.arturia.com/products/hybrid-synths/keystep-37/overview
 prices:
   - amount: 229
     currency: USD
 description: >
-  A controller, evolved. KeyStep 37 combines a flexible 37-note keyboard with
-  intuitive sequencing, instant chord generation and creative real-time MIDI
-  controls that let you discover and interact with music like never before.
+  A controller, evolved. KeyStep 37 combines a flexible 37-note keyboard with intuitive sequencing, instant chord generation and creative real-time MIDI controls that let you discover and interact with music like never before.
+details: |-
+  Keystep 37 is a 37-note MIDI keyboard controller that combines a flexible slimkey keybed with intuitive sequencing, instant chord generation, and creative real-time MIDI controls. It functions as a powerful tool for controlling hardware and software instruments simultaneously, encouraging spontaneous creativity through its musical features and interactive design. The controller offers velocity sensitivity, aftertouch, and real-time rgb LED indicators for responsive, comfortable performance.
+
+  The sequencer enables recording and performance of up to 64-step sequences with 8-note polyphony across 8 pattern slots, while the arpeggiator provides 8 modes of arpeggiation including up, down, inclusive, exclusive, random, walk, pattern, and order modes. The chord mode generates instant chord sequences responding to velocity with 12 chord types and an articulate instrument-like strum control that animates chords with multiple voicing options. Scale mode quantizes the keyboard to 5 standard scales or a user-defined scale, automatically quantizing played notes to the nearest allowed note and displaying allowed notes via leds above the keys.
+
+  The interface features 4 new control knobs with a screen providing instant access to expressive tools and MIDI tweaking, with 16 assignable MIDI cc parameters across 4 switchable banks for dynamic real-time control of hardware and software. Connectivity includes MIDI in/out for hardware synths, MIDI over USB for VST instruments, CV pitch/gate/modulation outputs for modular integration, and analog sync in/out for synchronization, allowing simultaneous control of all connected devices. The controller includes capacitive pitch bend and mod wheel strips, sustain pedal jack, and dedicated rec, play, and stop buttons for performance control.
+
+  Keystep 37 comes with industry-standard creative software including analog lab intro to expand creative possibilities immediately out of the box. The device measures 21.7 x 5.78 x 1.38 inches (550 x 147 x 35mm) and weighs 3.5 lbs (1.6 kg), providing a lightweight and compact design that serves as an accessible centerpiece for any musical setup. Dc power jack enables standalone operation, while the comprehensive connectivity and intuitive interface make it suitable for various musical styles and ability levels.
+specs: |-
+  - 37-note slimkey keyboard
+  - Velocity sensitivity
+  - Aftertouch
+  - Rgb LED indicators per key
+  - 8 polyphonic step-sequences
+  - 64 steps per sequence
+  - 8 pattern slots
+  - 8 notes polyphony
+  - 8 arpeggiator modes
+  - 12 chord types
+  - Chord strum control
+  - 16 assignable MIDI cc parameters
+  - 4 switchable cc banks
+  - 5 scales plus user-defined scale
+  - Scale quantization
+  - 3-octave keyboard range
+  - MIDI in/out
+  - MIDI over USB
+  - CV pitch output
+  - CV gate output
+  - CV modulation output
+  - Analog sync in/out
+  - Capacitive pitch bend strip
+  - Capacitive mod wheel strip
+  - Sustain pedal jack
+  - Dc power jack
+  - True bypass
+  - Tap tempo
+  - Rest, tie, and legato note entry
+  - Per-key LED feedback
+  - Sequence advancement display
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: USB MIDI
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+  - name: Sync In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Sync Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Pitch Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Modulation Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: DC Power Jack
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel

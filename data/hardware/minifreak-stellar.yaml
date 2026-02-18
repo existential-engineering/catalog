@@ -5,12 +5,106 @@ primaryCategory: synthesizer
 categories:
   - digital
   - hybrid
+  - keyboard
 website: https://www.arturia.com/products/hardware-synths/minifreak-stellar/overview
 prices:
   - amount: 649
     currency: USD
 description: >
-  MiniFreak Stellar is a special edition of the mighty polyphonic hybrid
-  keyboard. The same dual digital sound engines, gnarly analog filters, advanced
-  modulation, sequencing and stereo effects, but with a dark intergalactic edge
-  that will take your sound into deep space and beyond.
+  MiniFreak Stellar is a special edition of the mighty polyphonic hybrid keyboard. The same dual digital sound engines, gnarly analog filters, advanced modulation, sequencing and stereo effects, but with a dark intergalactic edge that will take your sound into deep space and beyond.
+details: |-
+  The minifreak stellar edition is a 6-voice polyphonic hybrid synthesizer featuring a striking all-black exterior with intergalactic-themed graphics. It combines dual digital sound engines with gnarly analog filters, advanced modulation, sequencing, and stereo effects to deliver powerful sound design capabilities in a compact form factor. The instrument includes a 37-note velocity-sensitive slim-key keybed with aftertouch for responsive and comfortable playing.
+
+  The synthesizer features 2 engines with 31 oscillator modes total, including virtual analog, fm, additive, granular, wavetable, sample, karplus strong, and modes from mutable instruments and noise engineering. Engine 2 can process engine 1 itself with specialized modes like comb, filter, destroy, and ring mod for stacked sonic interplay. Polyphonic state-variable resonant filters offer low-pass, band-pass, and high-pass modes with self-oscillation capability, while dual adsr envelopes and 2 lfos provide comprehensive modulation options with 7 sources and dozens of destination combinations.
+
+  The control interface features a one-knob modulation matrix for intuitive navigation, touch strips for tweaking macro controls and spice & dice sequencing mutations, and pads for custom lfo shape editing. A sequencer and arpeggiator allow octave shifting, ratchet functions, and one-touch mutations with randomization. The instrument includes 3 fx engines offering 13 effects per engine for stereo sound design, with a crystal-clear display for real-time feedback and shift key access to secondary settings.
+
+  Minifreak stellar connects via MIDI in/out/thru, USB for updates and preset management, and analog sync for hardware integration. The audio in mode allows processing of external signals through the engines and filters. The included minifreak v VST plugin mirrors the hardware's sound and architecture for seamless DAW integration, allowing users to link hardware and software for synchronized workflow. The instrument receives ongoing free firmware updates that expand capabilities.
+
+  Minifreak stellar comes with a free sound bank designed for outer space sonic exploration, featuring synths, leads, sequences, and sound effects for ambient and atmospheric sound design. The compact design measures 22.75 x 9.09 x 1.57 inches and weighs 6.48 lbs, making it portable for studio and live use. System requirements include windows 10+ or mac os 11+ with 4 gb ram, 4-core cpu at 3.4 ghz, and 3gb free hard disk space.
+specs: |-
+  - 6-voice polyphonic hybrid synthesizer
+  - 37-note velocity-sensitive slim-key keybed with aftertouch
+  - 2 sound engines with 31 oscillator modes total
+  - Virtual analog, fm, additive, granular, wavetable, sample, karplus strong, granular, noise engineering modes
+  - Polyphonic state-variable resonant filters with low-pass, band-pass, and high-pass modes
+  - Self-oscillating filters
+  - Adsr envelope with 4 modes: polyphonic, monophonic, paraphonic, and unison
+  - Shape-adjustable second envelope with run and loop modes
+  - 2 lfos with free-running or synced operation and custom lfo shaper
+  - 7 modulation sources with dozens of destination combinations
+  - 3 fx engines with 13 effects per engine
+  - Stereo effects
+  - Single-knob operation with crystal-clear display
+  - Shift key for secondary settings
+  - Touch strips for macro control and spice & dice sequencing
+  - Sequencer and arpeggiator with octave shifting and ratchet functions
+  - Pads for custom lfo shape editing
+  - MIDI in, out, and thru connectivity
+  - USB connection for updates and preset management
+  - Analog sync connectivity
+  - Audio in mode for processing external signals
+  - Engine 2 can process engine 1 with modes like comb, filter, destroy, and ring mod
+  - Minifreak v VST plugin with mirrored sound and architecture
+  - Free firmware updates
+  - Free outer space-themed sound bank
+  - Dimensions: 22.75 x 9.09 x 1.57 inches (578 x 231 x 55mm)
+  - Weight: 6.48 lbs (2.94 kg)
+  - Windows 10+ (64-bit) compatible
+  - Mac os 11+ compatible
+  - M1 cpu compatible
+  - 4 gb ram minimum
+  - 4 cores cpu at 3.4 ghz minimum
+  - 3gb free hard disk space
+  - Opengl 2.0 compatible gpu required
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-a
+  - name: Audio In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Stereo Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Sustain In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Clock In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Clock Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Power In
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel

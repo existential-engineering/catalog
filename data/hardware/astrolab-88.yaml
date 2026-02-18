@@ -4,12 +4,127 @@ manufacturer: arturia
 primaryCategory: keyboard
 categories:
   - synthesizer
+  - midi-controller
 website: https://www.arturia.com/products/hardware-synths/astrolab/astrolab-88
 prices:
   - amount: 2999
     currency: USD
 description: >
-  Designed for the live musician, AstroLab 88 puts impeccable performance sounds
-  at your fingertips. With a premium hammer-action keybed and powerful software
-  ecosystem, take your signature sounds to the stage and let nothing stand
-  between you and your creative expression.
+  Designed for the live musician, AstroLab 88 puts impeccable performance sounds at your fingertips. With a premium hammer-action keybed and powerful software ecosystem, take your signature sounds to the stage and let nothing stand between you and your creative expression.
+details: |-
+  The astrolab 88 is an avant-garde stage keyboard designed for live musicians, combining a premium hammer-action keybed with a powerful software ecosystem. It features an 88-note fatar tp-40l keybed with piano-size keys and aftertouch, delivering exceptional feel and control for demanding performers. With 44 built-in instruments and 1,800 onboard presets, plus access to over 10,000 additional sounds through v collection and pigments, the astrolab 88 provides a comprehensive sonic palette for studio and stage use.
+
+  The keyboard is powered by 11 distinct sound engines including virtual analog, samples, wavetable, fm, granular, physical modelling, vector synthesis, harmonic, phase distortion, vocoder, and karplus synthesis. It includes 2 dedicated effects (delay and reverb) plus 2 assignable effects, with up to 12 insert fx available for customization. The instrument optimizes polyphony for each engine: pianos, eps, and organs have 48 voices, while most synths have 8 voices, ensuring reliable performance across different sound types.
+
+  The astrolab 88 features an intuitive navigation wheel with a vibrant display for easy sound browsing and preset management, 10 dedicated preset buttons for quick instrument access, and 4 macro controls for real-time parameter editing. The interface includes a mod wheel, pitch wheel, octave buttons, and 4 dedicated fx knobs. Additional performance tools include an arpeggiator, chord and scale modes, looper, hold function, and split keyboard capability for multi-timbral play.
+
+  Connectivity options are extensive, including MIDI din I/o, USB-c for DAW integration and firmware updates, USB-a host for external MIDI input and keyboard control, Bluetooth audio input for playing along with external sources, and Wifi for wireless control via astrolab connect. The keyboard supports up to 4 pedal inputs for sustain, expression, and 2 customizable destinations, stereo audio input with microphone support for vocoder functionality, and both headphone and stereo/mono trs audio outputs.
+
+  The astrolab 88 includes analog lab pro for sound management and organization, and astrolab connect for wireless remote control and library management. The keyboard is compatible with v collection 11 instruments and pigments, with ongoing support for future software updates. It measures 352 x 1316 x 127 mm and weighs 22.2 kg, featuring a road-ready metal chassis designed for touring musicians.
+specs: |-
+  - 88-note fatar tp-40l hammer-action keybed
+  - Piano-size keys with aftertouch
+  - Triple sensors
+  - 44 instruments
+  - 1,800 onboard presets
+  - Up to 10,000 additional sounds via v collection and pigments
+  - 11 sound engines: virtual analog, samples, wavetable, fm, granular, physical modelling, vector synthesis, harmonic, phase distortion, vocoder, karplus synthesis
+  - Navigation wheel with vibrant display
+  - 10 preset buttons
+  - 4 macro controls
+  - 4 dedicated fx knobs
+  - 2 dedicated fx: delay and reverb
+  - Up to 12 insert fx available
+  - Arpeggiator
+  - Chord mode
+  - Scale mode
+  - Looper
+  - MIDI looper
+  - Hold function
+  - Split keyboard mode
+  - Multi-timbral play
+  - Mod wheel
+  - Pitch wheel
+  - Octave buttons
+  - Bluetooth audio input
+  - MIDI din I/o
+  - USB-c connection
+  - USB-a host
+  - Wifi for wireless control
+  - Stereo audio input with microphone support
+  - Vocoder capability
+  - Headphone output
+  - Stereo or mono trs audio output
+  - Up to 4 pedal inputs: sustain, expression, and 2 customizable
+  - External MIDI input via USB-a
+  - External keyboard control capability
+  - Polyphony: 48 voices for pianos/eps/organs, 8 voices for most synths
+  - Size: 352 x 1316 x 127 mm (13.86 x 51.81 x 5.00 in)
+  - Weight: 22.2 kg (48.94 lb)
+  - Windows 10+ (64-bit) compatible
+  - Mac os 11+ compatible
+  - M1 cpu compatible
+  - 4 gb ram minimum
+  - 4 cores cpu, 3.4 ghz (4.0 ghz turbo-boost)
+  - 3gb free hard disk space
+  - Opengl 2.0 compatible gpu
+  - Includes analog lab pro
+  - Includes astrolab connect
+  - V collection 11 instruments supported
+  - Pigments supported
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: Balanced Stereo Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+  - name: Sustain Pedal Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Expression Pedal Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Aux 1 Pedal Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Aux 2 Pedal Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: USB-C
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-c
+  - name: USB-A Host
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: usb-a
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+  - name: Stereo Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr

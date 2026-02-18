@@ -5,13 +5,144 @@ primaryCategory: synthesizer
 categories:
   - digital
   - hybrid
+  - keyboard
 website: https://www.arturia.com/products/hardware-synths/microfreak/overview
 prices:
   - amount: 399
     currency: USD
 description: >
-  A synthesizer like no other, MicroFreak is a peculiar, exceptional instrument
-  that rewards the curious musician. It blends wavetable and digital oscillators
-  with analog filters. It features a unique poly-aftertouch flat keyboard. It
-  adds controlled randomness to sequences. This isn’t a revolution, it’s a
-  mutiny.
+  A synthesizer like no other, MicroFreak is a peculiar, exceptional instrument that rewards the curious musician. It blends wavetable and digital oscillators with analog filters. It features a unique poly-aftertouch flat keyboard. It adds controlled randomness to sequences. This isn’t a revolution, it’s a mutiny.
+details: |-
+  Microfreak is an experimental hybrid synthesizer that blends wavetable and digital oscillators with analog filters, featuring a unique poly-aftertouch flat pcb keyboard. It combines digital synthesis capabilities with analog warmth, offering a versatile instrument for both newcomers and experienced musicians seeking distinctive, unconventional sounds. The synth features 21 digital oscillator modes including wavetable, karplus-strong, harmonic, granular engines, and vocoder functionality, with engines designed by arturia, mutable instruments, and noise engineering.
+
+  The analog signal path includes a state-variable filter inspired by the classic 12db sem design, capable of low-pass, band-pass, and high-pass filtering with self-oscillation capabilities. The filter can be modulated via keyboard pressure or the built-in sequencer for dynamic tonal shaping. Supporting the oscillator and filter are a powerful lfo with multiple waveforms and sync capabilities, plus a flexible cycling envelope that functions as either an lfo or envelope with variable rise and fall times.
+
+  The 25-key capacitive keyboard offers polyphonic aftertouch sensitivity, allowing each key to control parameters independently based on touch pressure, enabling highly expressive performances. A capacitive touch strip provides additional control options, while transpose buttons allow quick switching between bass and lead ranges. The interface includes a crisp OLED display for clear parameter editing and navigation.
+
+  The sequencer is polyphonic with 4 assignable modulation tracks, featuring innovative spice & dice gate randomizers for creating evolving patterns and happy accidents. Users can record up to 4 automation tracks per preset and access 2 patterns per preset, with a powerful 5x7 modulation matrix offering 5 sources and 7 destinations including 3 user-defined points for virtually rewiring the signal chain. The arpeggiator supports up, order, random, and pattern modes with chord and scale quantize functions.
+
+  Connectivity options include 3.5mm headphone output with trrs microphone input compatibility, 6.35mm balanced master output, 3.5mm clock input/output with configurable sync types, MIDI in/out via included breakout cables, and CV/gate/pressure outputs for integration with modular systems and vintage synthesizers. The synth can be powered via included psu or USB, eliminating the need for external power in portable setups. The instrument stores 512 preset slots with 320 factory presets and weighs 1.02 kg.
+specs: |-
+  - 21 digital oscillator modes
+  - Wavetable synthesis
+  - Karplus-strong
+  - Harmonic osc
+  - 3 granular engines
+  - Vocoder mode
+  - Analog state variable filter
+  - 12db/octave
+  - Low pass filter
+  - Band pass filter
+  - High pass filter
+  - Self-oscillating filter
+  - Lfo with sync
+  - Sine, triangle, sawtooth, square, random, slew waveforms
+  - Cycling envelope
+  - Variable rise and fall times
+  - 25-key capacitive keybed
+  - Polyphonic aftertouch
+  - Capacitive touch strip
+  - Monophonic mode
+  - Paraphonic mode
+  - Unison mode
+  - Up to 4 voices
+  - Chord mode
+  - Scale quantize
+  - Polyphonic sequencer
+  - 4 modulation tracks
+  - Spice & dice gate randomizers
+  - 2 patterns per preset
+  - 4 automation tracks per preset
+  - Modulation matrix
+  - 5 modulation sources
+  - 7 destinations
+  - 3 user-defined points
+  - Arpeggiator
+  - Up mode
+  - Order mode
+  - Random mode
+  - Pattern mode
+  - Transpose buttons
+  - 512 preset slots
+  - 320 factory presets
+  - OLED display
+  - 3.5mm headphone output
+  - Trrs-compatible microphone input
+  - 6.35mm master output
+  - 3.5mm clock input and output
+  - 24 ppq clock configuration
+  - 48 ppq clock configuration
+  - 2 ppq clock configuration
+  - Single pulse per step clock
+  - MIDI in and out
+  - 3.5mm MIDI connections
+  - MIDI breakout cables included
+  - CV outputs
+  - Gate outputs
+  - Pressure outputs
+  - USB power
+  - Psu included
+  - USB connectivity
+  - Size: 55 x 311 x 233 mm
+  - Weight: 1.02 kg
+io:
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+  - name: Microphone Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Clock Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+  - name: Clock Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+  - name: CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+  - name: Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+  - name: Pressure Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+  - name: USB Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b-micro
+  - name: PSU Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel

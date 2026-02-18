@@ -4,9 +4,133 @@ manufacturer: arturia
 primaryCategory: synthesizer
 categories:
   - analog
+  - sequencer
 website: https://www.arturia.com/products/hardware-synths/microbrute/overview
 prices:
   - amount: 349
     currency: USD
-description: MicroBrute is a pure analog sonic powerhouse of a synth. Small in
-  size but loaded with features.
+description: MicroBrute is a pure analog sonic powerhouse of a synth. Small in size but loaded with features.
+details: |-
+  The microbrute is a pure analog monophonic synthesizer designed as a compact powerhouse with a 100% pure analog voice path. It combines advanced interconnectivity via MIDI, USB, CV/gate, and audio connections with a semi-modular, sequenceable architecture. The instrument features no presets or menus, allowing direct hands-on sound sculpting and live performance capabilities without menu navigation.
+
+  The oscillator section includes sawtooth, pulse, and triangle waveforms with unique modifiers: ultrasaw generates fat sawtooth tones, metalizer adds complex harmonics to the triangle wave, and the sub oscillator provides deep bass frequencies. The steiner-parker filter offers low pass, high pass, and band pass modes with resonance capable of self-oscillation. The brute factor delivers saturation and rich harmonic enhancement to the signal.
+
+  The modulation matrix enables flexible sound design by connecting modulation sources and destinations, with stackable patch cables providing expanded routing possibilities. The adsr envelope generator allows sharp attacks or extended release times, while the lfo supplies three waveforms and can synchronize with the sequencer. A mod wheel is assignable to cutoff or lfo amount, and keyboard tracking of the vcf cutoff is included for dynamic filter response.
+
+  The step sequencer provides 8 memory slots with up to 64 steps per memory, supporting tap tempo, rate controls, step divisions, and trigger modes all configurable via software. The 25-note mini-key keyboard with octave selector (-3 to +2 octaves) enables compact performance, while pitch and mod wheels provide real-time expression. CV inputs and outputs allow integration with external analog gear and modular systems.
+
+  The microbrute includes comprehensive connectivity options: MIDI in via 5-pin din connector, 1/4 inch audio output, 1/8 inch headphone output, and audio input for processing external signals. The instrument uses 100% analog vcos with fine tuning capability and ships with a user manual, preset sheets, power supply, and two mini-jack patch cables.
+specs: |-
+  - Monophonic synthesizer
+  - 100% analog audio signal path
+  - Steiner-parker 2-pole multimode filter (low pass, band pass, high pass)
+  - Analog voltage controlled oscillator
+  - Oscillator mixer (overtone, sawtooth, square, triangle, audio in)
+  - Overtone sub oscillator/5th generator
+  - Pulse width modulation
+  - Ultrasaw
+  - Metalizer
+  - Brute factor saturation
+  - Lfo with 3 waveforms (sine, sawtooth, square)
+  - Lfo sync to sequencer
+  - Adsr envelope generator
+  - Keyboard tracking of vcf cutoff
+  - 25-note mini-key keyboard
+  - Mod wheel (assignable to cutoff or lfo amount)
+  - Pitch wheel (bend range selectable via software)
+  - Octave selector from -3 to +2 octaves
+  - CV in jacks (pitch, filter, sub-harmonics, pulse width, metalizer, saw animator)
+  - CV out jacks (pitch, envelope, lfo)
+  - MIDI in with 5 pin din connector
+  - 1/4 audio output
+  - 1/8 headphone output
+  - Step sequencer with 8 memories
+  - Up to 64 steps per memory
+  - Step divisions (via software)
+  - Trigger modes (via software)
+  - Tap tempo
+  - 12v dc 1a power supply
+  - Stackable patch cables
+  - Size: 60 x 325 x 221 mm (2.36 x 12.80 x 8.70 in)
+  - Weight: 1.75 kg (3.86 lb)
+io:
+  - name: CV In - Pitch
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV In - Filter
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV In - Sub-harmonics
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV In - Pulse Width
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV In - Metalizer
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV In - Saw Animator
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Out - Pitch
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Out - Envelope
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Out - LFO
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: USB MIDI In
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+  - name: USB MIDI Out
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: usb-b
+  - name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel

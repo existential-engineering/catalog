@@ -9,5 +9,95 @@ prices:
   - amount: 549
     currency: USD
 description: >
-  The synth that kick-started the affordable analog revolution is reborn as an
-  addictive, inspiring step-sequencing synth with huge modular capabilities.
+  The synth that kick-started the affordable analog revolution is reborn as an addictive, inspiring step-sequencing synth with huge modular capabilities.
+details: |-
+  The minibrute 2s is an analog synthesizer that combines the raw sound-shaping power of the original minibrute with a powerful step-sequencer and semi-modular architecture. It features two analog vcos with sawtooth, pulse, and triangle waves on vco1 (including ultra saw and metalizer modifiers), and sine, saw, and square waveforms on vco2 with hard sync capability. The instrument includes a steiner-parker filter with four modes (low pass, high pass, band pass, notch) and resonance that can be pushed into self-oscillation, delivering the characteristic aggressive and expressive sound the minibrute is known for.
+
+  The synthesizer provides comprehensive modulation capabilities through two lfos with six waveforms each that can sync to the sequencer, an adsr envelope generator, and an ad envelope with CV-controllable attack and decay times. The brute factor adds drive effects ranging from subtle to full intermodulation havoc, while the 48-point CV and gate patchbay with utility modules (inverter, attenuators, vca) enables deep sound design and modular integration. These tools allow for near-infinite sound design possibilities and rewiring of signal paths.
+
+  The sequencer is the centerpiece of the minibrute 2s, featuring a multi-pattern, triple-layer, 64-step design with 64 pattern memories organized into four banks. It can sequence pitch, gate, velocity, and pressure on the main track, while the two additional layers can generate gates, CV, pitch, lfos, and envelopes. The 16 pressure and velocity-sensitive pads serve as both a keyboard and step entry interface, with encoders for editing step values, and the sequencer supports both real-time and step recording modes.
+
+  The instrument includes an arpeggiator with multiple modes, tap tempo, metronome, and rock-solid sync capabilities for staying in the groove. Patterns can be chained together to create longer sequences or full songs, and the loop function allows you to loop a portion of the sequence while maintaining sync during performance. The minibrute 2s connects via MIDI, USB, and analog clock, making it compatible with daws and hardware equipment, and can function as both a controlled instrument and master keyboard.
+
+  The minibrute 2s is designed as the creative hub of a modular ecosystem and works seamlessly with the arturia rackbrute system for creating a customizable, portable eurorack setup. The included accessories are a power cord, eight patch cables, and a cook book with sonic recipes. The instrument measures 19 x 11 x 2.2 inches and weighs 7.7 lbs, making it portable while maintaining a substantial hands-on interface for performance and sound design.
+specs: |-
+  - 2 analog vcos
+  - Vco1: sawtooth, pulse, triangle waves with ultra saw and metalizer modifiers
+  - Vco1 linear and exponential fm
+  - Vco2: sine, saw, square waveforms
+  - Vco 2>1 hard sync
+  - Steiner-parker filter with low pass, high pass, band pass, and notch modes
+  - Filter resonance with self-oscillation
+  - Adsr type envelope generator
+  - Ad envelope with trig and gate modes
+  - Attack and decay times CV-controllable
+  - Brute factor drive and intermodulation effects
+  - 2 lfos with 6 waveforms each
+  - Lfo sync to sequencer
+  - 48 CV inputs and outputs
+  - Utility modules: inverter, attenuators, vca
+  - Multi-pattern triple-layer 64-step sequencer
+  - 64 pattern memories organized in four banks
+  - Sequencer controls: pitch, gate, velocity, pressure
+  - Real-time and step editing modes
+  - 16 pressure and velocity sensitive pads
+  - Arpeggiator with multiple modes
+  - Tap tempo
+  - Metronome
+  - Pattern chaining
+  - Loop function
+  - MIDI connectivity
+  - USB connectivity
+  - Analog clock sync
+  - External clock sync
+  - Line and headphones outputs
+  - Semi-modular architecture
+  - Eurorack compatibility
+  - Dimensions: 19 x 11 x 2.2 inches (484 x 277 x 56mm)
+  - Weight: 7.7 lbs (3.5 kg)
+io:
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+  - name: External Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+  - name: CV/Gate Patchbay Inputs
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV/Gate Patchbay Outputs
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel

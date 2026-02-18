@@ -4,11 +4,99 @@ manufacturer: arturia
 primaryCategory: synthesizer
 categories:
   - analog
+  - keyboard
+  - midi-controller
 website: https://www.arturia.com/products/hardware-synths/polybrute-12/overview
 prices:
   - amount: 4999
     currency: USD
 description: >
-  PolyBrute 12 is the most expressive synthesizer ever. With a FullTouch®
-  keyboard, unrivaled sonic palette and advanced software companion - it offers
-  more sonic possibilities than any other analog synthesizer.
+  PolyBrute 12 is the most expressive synthesizer ever. With a FullTouch® keyboard, unrivaled sonic palette and advanced software companion - it offers more sonic possibilities than any other analog synthesizer.
+details: |-
+  Polybrute 12 is a 12-voice analog polyphonic synthesizer featuring a groundbreaking fulltouch mpe keyboard that captures polyphonic aftertouch expression across the entire key movement range. The keyboard enables dynamic composition with three new aftertouch modes, allowing performers to express subtle nuances and details with unparalleled delicacy. Combined with the 12-voice architecture, analog oscillators, advanced modulation matrix, and integrated effects, polybrute 12 delivers an infinite spectrum of sonic color from striking basses to glistening pads and undulating composition textures.
+
+  The synthesizer features two powerful brute analog vcos generating sawtooth, triangle, and square waves simultaneously, with metalizer for edge and sub-oscillator for low-end depth. Two classic filter designs—a steiner 12db/octave multimode filter with continuous morphing and brute factor feedback, and a legendary 24db/octave ladder filter with distortion overdrive—can be configured in series, parallel, or continuously variable modes. Three velocity-sensitive adsr envelope generators and three lfos with waveform selection provide dynamic modulation, while a comprehensive array of stereo digital effects including chorus, phaser, flanger, delays, reverbs, and distortions can be modulated via the matrix to become integral parts of patch designs.
+
+  The morphe controller enables seamless morphing between two preset states with x, y, and z axis mapping to any modulation destination, including the ability to randomize sequences and arpeggios. A resurrected ribbon controller positioned above the keybed allows effortless gliding to alter sound, while a 96-point digital patchbay with up to 32 destinations lets users route any modulation source to influence dozens of parameters simultaneously. The interface includes dedicated controls for voice stereo placement, fine tuning, headphone volume, and master volume, with all parameters accessible through an intuitive visual layout.
+
+  Polybrute 12 offers 768 memory locations with 480 professionally designed presets included, plus advanced sequencing capabilities including a polyphonic sequencer with up to 64 steps, velocity, accents, slides, and randomization. Three parallel modulation tracks can automate timbre changes or serve as exotic envelopes, while the matrix arpeggiator hybrid mode constructs 16-step frameworks for generating complex arpeggios. Parameter motion recording allows instant capture of real-time performance for any single synth control, enabling custom envelope curves for most parameters.
+
+  Polybrute connect provides seamless DAW integration, replicating the entire front panel as a standalone mac/pc app and plugin for all major daws with real-time parameter mirroring between synth and software. The synthesizer is crafted with walnut wood and aluminum exterior, designed for professional musicians and enthusiasts, with passive cooling vents enabling silent operation. Connectivity includes stereo audio output, control voltage in/out for sync with analog gear, expression pedal ports, MIDI in/out/thru, and USB for updates and software integration.
+specs: |-
+  - 61-note mpe polyphonic keyboard with fulltouch technology
+  - 12-voice polyphony with split, layer, and unison capabilities
+  - Two brute analog vcos with sawtooth, triangle, square waves, metalizer, sub-oscillator, cross-mod and sync controls
+  - Steiner 12db/octave multimode filter with continuous lp>notch>hp>bp morphing and brute factor feedback
+  - Ladder 24db/octave lowpass filter with distortion overdrive
+  - Three adsr envelope generators with velocity sensitivity
+  - Three lfos with waveform selection and tempo sync
+  - Morphe controller with x, y, z axis mapping to modulation destinations
+  - Ribbon controller for continuous modulation
+  - 96-point digital patchbay with up to 32 modulation destinations and 64 total connections
+  - 768 memory locations for presets with 480 professionally designed patches included
+  - Polyphonic sequencer with up to 64 steps, velocity, accents, slides, and randomization
+  - Three parallel modulation tracks for sequence automation
+  - Arpeggiator with multiple modes and matrix arpeggiator hybrid mode
+  - Parameter motion recording for custom envelope curves
+  - Stereo digital effects: chorus, phaser, flanger, ring modulation, 9 delay algorithms, 9 reverb algorithms, 7 distortion types
+  - Stereo audio output
+  - Control voltage in/out for sync with analog gear
+  - 1 sustain and 2 expression pedal ports
+  - MIDI in/out/thru connectivity
+  - USB connection for updates and polybrute connect software
+  - Polybrute connect software: mac/pc standalone app and DAW plugin for all major daws
+  - Walnut wood and aluminum exterior construction
+  - Passive cooling vents for silent operation
+  - Dimensions: 38.3 x 17.1 x 6.1 inches (972 x 435 x 156mm)
+  - Weight: 50.7lbs (23kg)
+io:
+  - name: Stereo Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Sustain Pedal Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Expression Pedal Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Expression Pedal Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: USB Port
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b

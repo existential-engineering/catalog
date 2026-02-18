@@ -4,12 +4,116 @@ manufacturer: arturia
 primaryCategory: keyboard
 categories:
   - synthesizer
+  - midi-controller
 website: https://www.arturia.com/products/hardware-synths/astrolab/astrolab-61
 prices:
   - amount: 1999
     currency: USD
 description: >
-  Explore a vast spectrum of classic and modern sounds. AstroLab is a 61-key
-  stage keyboard combining the power of synthesis, intuitive controls, and an
-  innovative ecosystem - inviting you to focus on your creative expression and
-  transition seamlessly from studio to stage.
+  Explore a vast spectrum of classic and modern sounds. AstroLab is a 61-key stage keyboard combining the power of synthesis, intuitive controls, and an innovative ecosystem - inviting you to focus on your creative expression and transition seamlessly from studio to stage.
+details: |-
+  Astrolab 61 is a 61-key stage keyboard that combines synthesis power, intuitive controls, and an innovative ecosystem designed for seamless transitions between studio and stage performance. It features 44 onboard instruments with 1,800 presets, expandable to over 10,000 sounds through v collection and pigments integration. The semi-weighted piano-size keybed with aftertouch delivers expressive performance capabilities, while the navigation wheel with vibrant display provides intuitive sound browsing and real-time feedback for live performance.
+
+  The keyboard incorporates 11 advanced sound engines including virtual analog, wavetable, fm, granular, physical modelling, vector synthesis, and karplus synthesis, enabling deep sound design and editing. Built-in creative tools include an arpeggiator, chord and scale modes, MIDI looper, and hold function for sustained notes. The fx section features 2 dedicated effects (delay and reverb) plus 2 assignable effects, with up to 12 insert fx available for customization. Four macro controls allow quick parameter adjustments for brightness, timbre, time, and movement.
+
+  Control and connectivity are comprehensive, with 10 preset buttons for rapid instrument switching, 4 dedicated fx knobs, mod wheel, pitch wheel, and octave buttons for real-time modulation. The keyboard supports multitimbral play through multis and split modes, enabling two sounds to play simultaneously or in split configuration. Extensive connectivity includes MIDI din I/o, USB-c for DAW integration, USB-a host input, Bluetooth audio input, stereo/mono audio inputs with microphone support for vocoder use, and up to 4 pedal inputs for hands-free modulation.
+
+  The included software ecosystem comprises analog lab pro for sound management and astrolab connect for wireless control via mobile devices, enabling playlist editing and library expansion without cables. The keyboard is compatible with v collection 11 instruments and pigments, with ongoing firmware updates ensuring compatibility with new arturia software instruments. Polyphony is optimized per instrument type: 48 voices for pianos, eps, and organs, and 8 voices for most synthesizers.
+specs: |-
+  - 61-note semi-weighted keyboard with piano-size keys and aftertouch
+  - 44 onboard instruments
+  - 1,800 onboard presets
+  - Up to 10,000 additional sounds via v collection and pigments
+  - Navigation wheel with vibrant display and graphical interface
+  - 10 preset buttons for quick sound access
+  - 4 macro controls for sound parameter editing
+  - 4 dedicated knobs for fx control (delay and reverb)
+  - Up to 12 insert fx to choose from
+  - Built-in arpeggiator
+  - Chord and scale modes
+  - MIDI looper
+  - Hold function for sustained notes and chords
+  - Multis and keyboard split modes
+  - Mod wheel, pitch wheel, and octave buttons
+  - Bluetooth audio input
+  - MIDI din I/o
+  - USB-c connection for DAW integration and updates
+  - USB-a host for external MIDI input and keyboard control
+  - Wifi for wireless control
+  - Stereo and mono audio inputs with microphone support
+  - Vocoder capability
+  - Headphone and stereo/mono trs audio outputs
+  - Up to 4 pedal inputs (1 sustain, 1 expression, 2 customizable)
+  - 11 sound engines: virtual analog, samples, wavetable, fm, granular, physical modelling, vector synthesis, harmonic, phase distortion, vocoder, karplus synthesis
+  - Polyphony: 48 voices for pianos/eps/organs, 8 voices for most synths
+  - Size: 99 x 935 x 330 mm (3.90 x 36.81 x 12.99 in)
+  - Weight: 9.9 kg (21.83 lb)
+  - Included software: analog lab pro and astrolab connect
+  - V collection 11 instruments and pigments compatibility
+  - Metal chassis construction
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: USB-C
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-c
+  - name: USB-A Host
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: usb-a
+  - name: Balanced Stereo Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+  - name: Sustain Pedal Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Expression Pedal Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Aux 1 Pedal Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Aux 2 Pedal Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Stereo Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+  - name: Bluetooth Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: usb-c
+  - name: Power Supply
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel

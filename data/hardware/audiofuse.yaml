@@ -7,7 +7,200 @@ prices:
   - amount: 699
     currency: USD
 description: >
-  The AudioFuse is Arturia's pioneering debut in the field of audio interfaces.
-  It combines the highest quality components with unparalleled workflow and an
-  amazing array of advanced features that truly make you the master of your
-  studio.
+  The AudioFuse is Arturia's pioneering debut in the field of audio interfaces. It combines the highest quality components with unparalleled workflow and an amazing array of advanced features that truly make you the master of your studio.
+details: |-
+  The audiofuse is arturia's pioneering audio interface that combines highest quality components with unparalleled workflow and advanced features for complete studio control. It captures everything from delicate ambience to heavy cacophony while maintaining pristine sound quality. The interface features a super-solid aluminum chassis with hard cover protection and passes rigorous testing before shipment, with each unit including a test specification printout.
+
+  The audiofuse delivers pro studio quality through its two proprietary discretepro microphone preamplifiers and top-notch 24-bit a-d/d-a converters operating at up to 192khz sampling rate. The interface achieves the lowest harmonic distortion, most linear frequency response, highest signal-to-noise ratio, and shortest latency for professional audio capture. Input and output signal paths use the highest quality components for audiophile-quality experience with no compromise.
+
+  The interface provides direct access to essential features including input gain with vu-metering, true 48v phantom power, phase invert, -20db pad, and instrument mode for analog inputs 1&2. Output controls include level with vu-metering, audio mix selection, mono mode, output dimming, mute, and speaker a/b selection. Two independent headphone outputs offer individual level, mono mode, and audio mix selection controls, while zero-latency monitoring allows blending recorded signals into the mix.
+
+  Connectivity options include 2 xlr/balanced 1/4" combo inputs for microphones and instruments, 2 rca/balanced 1/4" phono/line inputs, 4 balanced 1/4" speaker outputs, 2 analog inserts for external processing, MIDI in/out with supplied cable adapters, word clock and s/pdif digital audio connectivity, and adat support for up to 8 digital inputs and outputs. A 3-port USB hub enables connection of master keyboards, USB devices, and dongles, while USB connectivity to computers, tablets, and phones provides most features even with USB power alone.
+
+  The audiofuse includes a built-in talkback microphone for instant communication with talent in another room and features both 1/4" and 1/8" phone connectors for each headphone output. The interface achieves round-trip latency as low as 3 milliseconds for responsive performance. All audiofuse interfaces come complete with the audiofuse creative suite, an ever-evolving selection of creative plugins from arturia's award-winning fx collection.
+specs: |-
+  - 2 discretepro microphone preamps
+  - 2x mic/instrument/line (xlr / 1/4" trs)
+  - 2x phono/line (rca / 1/4" trs)
+  - 4 analog outputs (1/4" trs)
+  - 2 analog inserts (1/4" trs)
+  - 24-bit a-d/d-a converters
+  - 192khz sampling rate
+  - Talkback with built-in microphone
+  - A/b speaker switching
+  - 2 independent headphone outputs
+  - Separate master and monitor mix channels
+  - USB interface with pc, mac, ios, android compatibility
+  - MIDI in/out
+  - Word clock in/out
+  - S/pdif in/out
+  - Adat in/out (8 digital inputs and 8 digital outputs)
+  - 3-port USB hub
+  - Zero-latency monitoring
+  - Input gain with vu-metering
+  - True 48v phantom power
+  - Phase invert
+  - -20db pad
+  - Instrument mode
+  - Output level with vu-metering
+  - Audio mix selection
+  - Mono mode
+  - Output dimming
+  - Mute
+  - Speaker a/b selection
+  - Headphone output level control
+  - Aluminum chassis
+  - Hard leather-covered top cover
+  - Round-trip latency as low as 3 milliseconds
+  - Discretepro technology platform
+io:
+  - name: Mic/Instrument/Line Input 1
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: combo jack
+  - name: Mic/Instrument/Line Input 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: combo jack
+  - name: Phono/Line Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+  - name: Phono/Line Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Insert 1 Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Insert 1 Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Insert 2 Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Insert 2 Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Analog Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Analog Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Analog Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Analog Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Speaker Output A
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Speaker Output B
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Headphone Output 1 (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+  - name: Headphone Output 1 (1/8-inch)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+  - name: Headphone Output 2 (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+  - name: Headphone Output 2 (1/8-inch)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: Word Clock In
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: bnc
+  - name: Word Clock Out
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: bnc
+  - name: S/PDIF In
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+  - name: S/PDIF Out
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: bnc
+  - name: ADAT In
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: toslink
+  - name: ADAT Out
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+  - name: USB Connection
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+  - name: USB Hub Port 1
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: usb-a
+  - name: USB Hub Port 2
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: usb-a
+  - name: USB Hub Port 3
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: usb-a

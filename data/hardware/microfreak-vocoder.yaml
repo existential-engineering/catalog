@@ -5,12 +5,83 @@ primaryCategory: synthesizer
 categories:
   - digital
   - hybrid
+  - vocoder
 website: https://www.arturia.com/products/hardware-synths/microfreak-vocoder/overview
 prices:
   - amount: 460
     currency: USD
 description: >
-  A 16-band vocoder with accessible real-time voicing controls. A detachable
-  gooseneck microphone. A slick new aesthetic. MicroFreak Vocoder Edition takes
-  unhinged hybrid carnage and cranks it up a notch - sing to the tune of
-  pandemonium and lose control.
+  A 16-band vocoder with accessible real-time voicing controls. A detachable gooseneck microphone. A slick new aesthetic. MicroFreak Vocoder Edition takes unhinged hybrid carnage and cranks it up a notch - sing to the tune of pandemonium and lose control.
+details: |-
+  The microfreak vocoder edition is a hybrid synthesizer featuring a 16-band vocoder with accessible real-time voicing controls and a detachable gooseneck microphone. It combines accurate replication of the human voice via 16 frequency bands with the unpredictable microfreak formula, allowing users to sequence vocal melodies, modulate voice parameters with the lfo, and manipulate sound in unconventional ways. The instrument features a limited-edition white finish with a bold swan graphic on the control panel, making it a distinctive addition to any setup.
+
+  The vocoder engine features 3 waveforms—sawtooth, pulse width, and noise—while timbre and shape knobs adjust the 16 frequency bands to twist and transform vocals. The 16 new vocoder presets provide instant access to effects ranging from android translations and crystalline harmonies to vibrant formant sequences. External sound sources like drum machines or synths can be processed through the vocoder mode via the 3.5mm trrs headphone input for unique formant textures and glitchy sound processing.
+
+  Behind the revamped appearance is the core microfreak architecture featuring 21 digital oscillator modes including wavetable, sample playback, and granular processing, plus engines from mutable instruments and noise engineering. The instrument combines sparkling digital and wavetable oscillators with a velvety analog state variable filter (12db/octave, resonant) offering low pass, band pass, and high pass modes. A unique poly-aftertouch pcb keyboard works with a distinctly freaky arpeggiator with up, order, random, and pattern modes, while the erratic mod matrix and spice & dice randomizers enable unpredictable sonic manipulation.
+
+  The detachable gooseneck microphone features a simple removable design with quick position adjustment and easy connection to the headphone socket, allowing simultaneous headphone connection. The utility menu provides control over mic gain and noise gate settings for comfortable, instant vocoding. The instrument includes 512 preset slots with 320 factory presets, and requires firmware v2.1 or later to unlock the vocoder engine and trrs connectivity features.
+
+  The microfreak vocoder edition comes with the synthesizer unit, an electret microphone with gooseneck and headphone adapter, and a power supply. It measures 12.2 x 9.2 x 2.2 inches and weighs 2.3 lbs, making it a compact instrument designed for both studio and performance use.
+specs: |-
+  - 16-band vocoder
+  - 21 digital oscillator modes
+  - Wavetable synthesis
+  - Sample playback
+  - Granular processing
+  - Vocoder engine with 3 waveforms (sawtooth, pulse width, noise)
+  - Analog state variable filter
+  - 12db/octave resonant filter
+  - Low pass, band pass, high pass modes
+  - Poly-aftertouch pcb keyboard
+  - Arpeggiator (up, order, random, pattern modes)
+  - Spice & dice gate randomizers
+  - Mod matrix
+  - Lfo
+  - Scale quantize
+  - Detachable gooseneck microphone
+  - 3.5mm trrs headphone input
+  - Timbre and shape knobs
+  - Mic gain and noise gate controls
+  - 512 preset slots
+  - 320 factory presets
+  - 16 vocoder presets
+  - Firmware v2.1 or later required for vocoder
+  - Limited-edition white finish
+  - Instrument size: 12.2 x 9.2 x 2.2 inches (311 x 233 x 55mm)
+  - Instrument weight: 2.3 lbs (1.02 kg)
+io:
+  - name: Headphone Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+  - name: CV/Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: Clock In
+    signalFlow: input
+    category: digital
+    type: midi
+    connection: 5-pin din
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b

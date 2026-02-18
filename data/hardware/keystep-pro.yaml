@@ -4,11 +4,209 @@ manufacturer: arturia
 primaryCategory: midi-controller
 categories:
   - sequencer
+  - keyboard
 website: https://www.arturia.com/products/hybrid-synths/keystep-pro/overview
 prices:
   - amount: 549
     currency: USD
 description: >
-  Unparalleled sequencing and arpeggiation power in a compact, desktop friendly
-  form. KeyStep Pro lets you connect all your vintage hardware, modular gear,
-  and software instruments together to supercharge your creativity.
+  Unparalleled sequencing and arpeggiation power in a compact, desktop friendly form. KeyStep Pro lets you connect all your vintage hardware, modular gear, and software instruments together to supercharge your creativity.
+details: |-
+  The keystep pro is a polyphonic sequencing controller keyboard that combines unparalleled sequencing and arpeggiation power in a compact, desktop-friendly form. It lets you connect vintage hardware, modular gear, and software instruments together to supercharge creativity. The device removes barriers between you and the music you want to create, enabling both dawless and DAW-based workflows for producers and keyboardists alike.
+
+  The sequencing engine features 4 independent polyphonic sequencers with 16 patterns per track, each supporting up to 64 steps and 16 notes per step. You can link up to 16 patterns together to create entire songs or setlist sections, and access snapshots of all sequences within a pattern for instant switching between sets. Real-time recording, step recording, and step editing provide flexible note input, with per-note control over pitch, velocity, gate length, time shift, and probability. Scale quantization with user scales ensures notes stay in key, while 7 arpeggiator modes with 5 octave range offer performance-oriented sequencing with forward and random playing modes.
+
+  The 37-note slim keyboard with velocity and aftertouch sensitivity features LED feedback above each key for visual confirmation. Control is managed through 5 encoders for cc sending, dedicated tempo and swing controls, project editing capabilities, and track controls for navigating patterns and selecting track types (arp, drum, or sequence). A crisp OLED screen displays project details and editing information, while a capacitive touch strip provides intuitive looper control and a built-in piezo speaker with line output lets you reference tempo and sync with other gear.
+
+  Connectivity is extensive with 4 CV, gate, and mod outputs that can be freely routed for polyphonic CV output, 8 dedicated drum gate outputs for controlling multiple modules, 1 MIDI in, 2 MIDI out, USB for power and DAW control, and clock synchronization with in, out, and reset outputs for eurorack sequencers. A dedicated metronome output provides an audio click for mixers, modules, or drummers. All projects can be loaded, duplicated, tweaked, edited, and saved in onboard memory for an ever-growing collection of sequences and setups.
+specs: |-
+  - 37 note slim keys
+  - Velocity and aftertouch sensitive
+  - LED above each key
+  - 4 independent polyphonic sequencers
+  - 16 patterns per track
+  - Up to 64 steps per sequence
+  - 16 notes per step
+  - Up to 16 notes of polyphony per step
+  - Real-time recording
+  - Step recording
+  - Step editing
+  - Pitch control per note
+  - Velocity control per note
+  - Gate length control per note
+  - Time shift control per note
+  - Probability control per note
+  - Scale quantization with user scales
+  - Polyphonic CV outputs
+  - 7 arpeggiator modes
+  - 5 octave range
+  - Forward and two random playing modes
+  - Pattern randomization
+  - Quantized or unquantized recording
+  - Looper
+  - 5 encoders for cc sending
+  - 4x CV, gate, mod outputs
+  - 8 drum gate outputs
+  - 1 MIDI in
+  - 2 MIDI out
+  - USB
+  - Clock synchronization
+  - Metronome with speaker
+  - Metronome line output
+  - Crisp OLED screen
+  - 16 step buttons
+  - Touch strip
+  - Capacitive strip
+  - Tempo control
+  - Swing control
+  - Project editing
+  - Track controls
+  - Sustain pedal input
+  - Size: 589 x 55 x 209 mm
+  - Weight: 2.7 kg
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out 1
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: MIDI Out 2
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+  - name: CV Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: CV Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Gate Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Gate Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Gate Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Gate Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Mod Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Mod Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Mod Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Mod Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 7
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Drum Gate Output 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Clock In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Clock Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Reset Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: Metronome Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+  - name: Sustain Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
