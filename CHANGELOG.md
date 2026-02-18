@@ -1,5 +1,11 @@
 # catalog
 
+## 2.6.0
+
+### Minor Changes
+
+- 3e504cc: Add Waves Audio software catalog with 245 plugin entries
+
 ## 2.5.0
 
 ### Minor Changes
