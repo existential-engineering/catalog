@@ -11,7 +11,7 @@ prices:
 description: >
   The KeyLab mk3 combines a professional, human-centered design with all the benefits of a fully-featured MIDI controller.
 details: |-
-  Keylab mk3 is an advanced MIDI controller designed for professional music production and live performance, featuring a pro-grade 88-note fully-weighted fatar tp/110 keybed with redesigned aftertouch, touch-sensitive controls, and innovative creative features. The keyboard combines durable high-quality construction with an elevated playing experience, offering seamless integration with software and hardware instruments. Whether used in the studio or on stage, keylab mk3 delivers a high-quality instrument built without compromise that musicians can rely on for every creative endeavor.
+  Keylab mk3 is an advanced MIDI controller designed for professional music production and live performance, featuring a pro-grade 61-note semi-weighted keybed with redesigned aftertouch, touch-sensitive controls, and innovative creative features. The keyboard combines durable high-quality construction with an elevated playing experience, offering seamless integration with software and hardware instruments. Whether used in the studio or on stage, keylab mk3 delivers a high-quality instrument built without compromise that musicians can rely on for every creative endeavor.
 
   The controller features nine touch-sensitive 360-degree rotary potentiometers and nine touch-sensitive 50mm faders for precise sound manipulation and DAW control, complemented by 12 velocity and pressure-sensitive rgb pads for triggering clips, drums, and samples. A bright 3.5-inch full-color display with 8 contextual buttons provides real-time feedback and intuitive navigation of sounds and projects. Advanced creative tools include a multi-mode arpeggiator with hold function, chord play mode with smart voicing for creating rich chords with single keys, and scale mode that locks the keybed to built-in scales to prevent wrong notes.
 
@@ -21,7 +21,7 @@ details: |-
 
   Connectivity options include USB-c for bus-powered connection to computers, MIDI 5-pin din output for controlling external MIDI-compatible gear like synths and drum machines, and a pedal input supporting sustain, modulation, expression, and auxiliary functions. The construction utilizes high-density plastic with ruggedized knobs and real-wood paneling as standard, designed to withstand professional use and stand the test of time. Every unit undergoes 180 individual tests to guarantee impeccable, long-lasting performance, with available 49-key and 61-key options in black or white finishes for different studio and stage setups.
 specs: |-
-  - 88-note fully-weighted fatar tp/110 keybed with aftertouch
+  - 61-note semi-weighted keybed with aftertouch
   - 9 touch-sensitive 360-degree rotary potentiometers
   - 9 touch-sensitive 50mm faders
   - 12 velocity and pressure-sensitive rgb pads
@@ -74,33 +74,40 @@ io:
     category: digital
     type: usb
     connection: usb-c
+    maxConnections: 1
   - name: MIDI In
     signalFlow: input
     category: midi
     type: midi
     connection: 5-pin din
+    maxConnections: 1
   - name: MIDI Out
     signalFlow: output
     category: midi
     type: midi
     connection: 5-pin din
+    maxConnections: 1
   - name: Sustain Pedal Input
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/4-inch
+    maxConnections: 1
   - name: Modulation Pedal Input
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/4-inch
+    maxConnections: 1
   - name: Expression Pedal Input
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/4-inch
+    maxConnections: 1
   - name: Aux In
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/4-inch
+    maxConnections: 1

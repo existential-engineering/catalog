@@ -43,8 +43,6 @@ specs: |-
   - Modular synth sync
   - Korg volcas sync
   - DAW sync
-  - Electromechanical relay true bypass
-  - Analog dry path
   - Dimensions: 13.5 x 9.6 x 2.2 inches (342 x 243 x 57mm)
   - Weight: 4 lbs (1.84 kg)
 io:
@@ -53,48 +51,58 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    maxConnections: 1
   - name: Headphone Output
     signalFlow: output
     category: audio
     type: headphone
     connection: 1/8-inch
+    maxConnections: 1
   - name: Kick Output
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
+    maxConnections: 1
   - name: Snares Output
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
+    maxConnections: 1
   - name: Hi Hats Output
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
+    maxConnections: 1
   - name: FM Sound Output
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
+    maxConnections: 1
   - name: MIDI In
     signalFlow: input
     category: midi
     type: midi
     connection: 5-pin din
+    maxConnections: 1
   - name: USB MIDI
     signalFlow: input
     category: digital
     type: usb
     connection: usb-b
+    maxConnections: 1
   - name: Clock In
     signalFlow: input
     category: midi
     type: midi
     connection: 1/4-inch
+    maxConnections: 1
   - name: Power Input
     signalFlow: input
     category: power
     type: power
     connection: barrel
+    maxConnections: 1
