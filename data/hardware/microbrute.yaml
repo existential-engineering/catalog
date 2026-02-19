@@ -10,3 +10,161 @@ prices:
     currency: USD
 description: MicroBrute is a pure analog sonic powerhouse of a synth. Small in
   size but loaded with features.
+details:
+  - Microbrute is a pure analog sonic powerhouse of a synth. Small in size but
+    loaded with features. The microbrute was designed to be small but still
+    retain an amazing sound quality. With a 100% pure analog voice path and
+    advanced interconnectability via MIDI, USB, CV/gate, this machine is a true
+    powerhouse synthesizer that takes your sound to a new level.
+  - No presets, no menus, nothing to get between you and the ability to sculpt
+    your sound live. Not only does microbrute give you the means to create,
+    perform and be completely original every time you power up, it does it with
+    astounding sound quality. Give your modular a new lfo and envelope
+    generator. Hook up to your DAW and make whole tracks. Hook up to your
+    drumtracks, open your door, and play a whole gig.
+  - Sawtooth, pulse and triangle waves with unique modifiers. Ultra saw makes
+    for huge sounds; metalizer adds complex harmonics to the triangle wave. Sub
+    osc will rattle the house. Beefy filter with low pass, high pass and band
+    pass modes. Resonance can be pushed into self-oscillation.
+  - Modulate the sound of the microbrute by connecting modulation sources and
+    destinations. You can also use it to connect with external gear. With the
+    microbrute's stackable patch cables, you get even more modulation
+    possibilities! You get 8 sequences with up to 64 steps each to create
+    multiple musical phrases.
+  - The microbrute uses 100% analog vcos. Although ours are very stable, you may
+    sometimes need to tune your instrument. Connect your microbrute with your
+    vintage analog gear. Process audio through microbrute; connect it to your
+    favorite devices thanks to its audio input and output as well as MIDI input.
+    Control microbrute from your DAW or use it as a master keyboard.
+specs:
+  - Monophonic synthesizer
+  - 100% analog audio signal path
+  - Steiner-parker 2-pole multimode filter (low pass, band pass, high pass)
+  - Analog voltage controlled oscillator
+  - Oscillator mixer (overtone, sawtooth, square, triangle, audio in)
+  - Overtone sub oscillator/5th generator
+  - Pulse width modulation
+  - Ultrasaw generates fat sawtooth waveforms
+  - Metalizer brings in extreme harmonics
+  - Brute factor delivers saturation and rich harmonics
+  - Lfo with 3 waveforms (sine, sawtooth, square)
+  - Lfo can freerun or sync to arpeggiator
+  - Adsr envelope generator
+  - Keyboard tracking of the vcf cutoff
+  - 25-note mini-key keyboard
+  - Mod wheel (assignable to cutoff or lfo amount)
+  - Pitch wheel (bend range selectable via software)
+  - Octave selector from -3 to +2 octaves
+  - External analog audio input
+  - "CV in jacks: pitch, filter, sub-harmonics, pulse width, metalizer, saw
+    animator"
+  - "CV out jacks: pitch, envelope, lfo"
+  - MIDI in with 5 pin din connector
+  - 1/4 audio output and 1/8 headphone output
+  - "Full-functioned step sequencer: up to 64 steps per memory"
+  - Step divisions (via software)
+  - Trigger modes (via software)
+  - 8 sequences with up to 64 steps each
+  - 12v dc 1a power supply
+  - "Size (mm): 60 x 325 x 221 mm"
+  - "Size (in): 2.36 x 12.80 x 8.70 in"
+  - "Weight (kg): 1.75 kg"
+  - "Weight (lb): 3.86 lb"
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    position: Left
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 2
+    position: Bottom
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    position: Left
+  - name: USB MIDI In
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    position: Top
+  - name: USB MIDI Out
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: usb-b
+    position: Top
+  - name: CV In - Pitch
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    position: Left
+  - name: CV In - Filter
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    position: Left
+  - name: CV In - Sub-harmonics
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    position: Left
+  - name: CV In - Pulse Width
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    position: Left
+  - name: CV In - Metalizer
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    position: Left
+  - name: CV In - Saw Animator
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    position: Left
+  - name: CV Out - Pitch
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    position: Right
+  - name: CV Out - Envelope
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    position: Right
+  - name: CV Out - LFO
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    position: Right
+  - name: Power Supply
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    position: Top
