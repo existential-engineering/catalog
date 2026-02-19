@@ -14,25 +14,17 @@ description: >
   that combines digital oscillators with an analog filter, boundless modulation
   with musical expression, and a sleek black finish with quirky space-age
   graphics - primed for your interplanetary sonic voyage.
-details:
-  - Microfreak stellar is a limited edition of an acclaimed experimental synth
-    that combines digital oscillators with an analog filter, boundless
-    modulation with musical expression, and a sleek black finish with quirky
-    space-age graphics - primed for your interplanetary sonic voyage.
-  - Launched alongside microfreak stellar is another free firmware update for
-    all microfreak users, introducing user sample import, a sampler engine and 3
-    granular engines.
-  - Microfreak stellar & the v5 firmware update brings 21 different oscillator
-    modes to the table, so you can go bigger, deeper, and weirder with your
-    sound than ever before.
-  - Beneath its space-age exterior, youll find sparkling digital and wavetable
-    oscillators collide with a velvety analog filter. A unique poly-aftertouch
-    pcb keyboard combines with a distinctly freaky arpeggiator & sequencer.
-    Bathe your mix in sonic hysterics with the erratic mod matrix or the unique
-    spice & dice randomizers.
-  - Microfreak is the hybrid desktop synth that refuses to stop evolving and
-    continues to inspire with every update.
-specs:
+details: |-
+  Microfreak stellar is a limited edition of an acclaimed experimental synth that combines digital oscillators with an analog filter, boundless modulation with musical expression, and a sleek black finish with quirky space-age graphics - primed for your interplanetary sonic voyage.
+
+  Launched alongside microfreak stellar is another free firmware update for all microfreak users, introducing user sample import, a sampler engine and 3 granular engines.
+
+  Microfreak stellar & the v5 firmware update brings 21 different oscillator modes to the table, so you can go bigger, deeper, and weirder with your sound than ever before.
+
+  Beneath its space-age exterior, youll find sparkling digital and wavetable oscillators collide with a velvety analog filter. A unique poly-aftertouch pcb keyboard combines with a distinctly freaky arpeggiator & sequencer. Bathe your mix in sonic hysterics with the erratic mod matrix or the unique spice & dice randomizers.
+
+  Microfreak is the hybrid desktop synth that refuses to stop evolving and continues to inspire with every update.
+specs: |-
   - 21 digital oscillator modes
   - Wavetable synthesis
   - Sample playback
@@ -100,8 +92,8 @@ specs:
   - Pressure outputs
   - USB power
   - Psu included
-  - "Size: 55 x 311 x 233 mm"
-  - "Weight: 1.02 kg"
+  - Size: 55 x 311 x 233 mm
+  - Weight: 1.02 kg
 io:
   - name: Headphone Output
     signalFlow: output
@@ -115,46 +107,54 @@ io:
     category: audio
     type: mic
     connection: 1/8-inch
+    maxConnections: 1
     position: Left
   - name: Audio Output
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: Clock Input
     signalFlow: input
     category: digital
     type: word clock
     connection: 1/8-inch
+    maxConnections: 1
     position: Left
   - name: Clock Output
     signalFlow: output
     category: digital
     type: word clock
     connection: 1/8-inch
+    maxConnections: 1
     position: Right
   - name: MIDI In
     signalFlow: input
     category: midi
     type: midi
     connection: 1/8-inch
+    maxConnections: 1
     position: Left
   - name: MIDI Out
     signalFlow: output
     category: midi
     type: midi
     connection: 1/8-inch
+    maxConnections: 1
     position: Right
   - name: CV Output
     signalFlow: output
     category: audio
     type: cv/gate
     connection: 1/8-inch
+    maxConnections: 1
     position: Right
   - name: USB
     signalFlow: input
     category: digital
     type: usb
     connection: usb-b-micro
+    maxConnections: 1
     position: Top
