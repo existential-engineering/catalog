@@ -1,5 +1,11 @@
 # catalog
 
+## 2.7.0
+
+### Minor Changes
+
+- 38bd9d9: Add Plugin Alliance software catalog and enhance Arturia entries
+
 ## 2.6.0
 
 ### Minor Changes
