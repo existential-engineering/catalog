@@ -1,26 +1,10 @@
-# Known link types (advisory - warning if not matched, does not block CI)
+# Valid link types (strict - blocks CI if not matched)
 #
-# The `type` field in link entries categorizes the link purpose.
-# Add new values here as they appear in data.
+# These must match the link types accepted by the Studio app.
+# Source of truth: packages/lib/src/constants/links.ts
 types:
-  - changelog
-  - community
-  - demo
-  - document
-  - downloads
-  - family
-  - installation
-  - manual
+  - affiliate
   - product
-  - related
-  - release-notes
   - resource
   - review
-  - social
-  - software
-  - specs
   - support
-  - trial
-  - versions
-  - video
-  - warranty
