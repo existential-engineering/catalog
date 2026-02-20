@@ -55,29 +55,33 @@ io:
   - name: "USB-C"
     signalFlow: bidirectional
     category: digital
-    type: usb-c
-    connection: female
+    type: usb
+    connection: usb-c
     maxConnections: 1
-    position: bottom
+    position: Bottom
   - name: Headphone Output
     signalFlow: output
-    category: analog
-    type: trs-3.5mm
-    connection: female
+    category: audio
+    type: line
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: bottom
+    position: Bottom
   - name: Aux Input
     signalFlow: input
-    category: analog
-    type: trs-3.5mm
-    connection: female
+    category: audio
+    type: line
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: bottom
+    position: Bottom
   - name: Microphone Capsule
     signalFlow: input
-    category: analog
-    type: condenser-capsule
-    connection: integrated
+    category: audio
+    type: mic
+    connection: built-in
     maxConnections: 1
-    position: top
+    position: Top
 id: bpf6gtSrahlcAoAgdirFe

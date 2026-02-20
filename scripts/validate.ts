@@ -20,6 +20,8 @@ import type {
   ValidationError,
   ValidationErrorDetail,
   ValidationResult,
+  ValidationWarning,
+  ValidationWarningDetail,
 } from "./lib/types.js";
 import {
   DATA_DIR,
@@ -65,6 +67,33 @@ function isValidCategory(cat: string): boolean {
   return ALL_VALID_CATEGORY_INPUTS.has(cat);
 }
 
+// =============================================================================
+// LOAD IO, LINK, AND CURRENCY SCHEMAS
+// =============================================================================
+
+import { loadSchemaContext } from "./lib/schema-loader.js";
+
+const schemaContext = loadSchemaContext();
+
+const VALID_IO_SIGNAL_FLOWS = new Set(schemaContext.ioSignalFlows);
+const VALID_IO_CATEGORIES = new Set(schemaContext.ioCategories);
+const VALID_IO_POSITIONS = new Set(schemaContext.ioPositions);
+const IO_POSITION_ALIASES = new Map<string, string>(
+  Object.entries(schemaContext.ioPositionAliases)
+);
+const ALL_VALID_IO_POSITIONS = new Set([
+  ...schemaContext.ioPositions,
+  ...Object.keys(schemaContext.ioPositionAliases),
+]);
+const KNOWN_IO_TYPES = new Set(schemaContext.ioTypes);
+const KNOWN_IO_CONNECTIONS = new Set([
+  ...schemaContext.ioConnections,
+  ...Object.keys(schemaContext.ioConnectionAliases),
+]);
+const IO_CONNECTOR_DETAILS = schemaContext.ioConnectorDetails;
+const KNOWN_LINK_TYPES = new Set(schemaContext.linkTypes);
+const VALID_CURRENCIES = new Set(schemaContext.currencies);
+
 // Configure marked for validation
 marked.setOptions({
   gfm: true,
@@ -107,6 +136,22 @@ function getErrorCodeFromZodIssue(issue: {
     if (message.includes("duplicate")) {
       return ValidationErrorCode.E202_DUPLICATE_CATEGORY;
     }
+  }
+
+  // IO field errors
+  if (message.includes("invalid io signal flow")) {
+    return ValidationErrorCode.E111_INVALID_IO_SIGNAL_FLOW;
+  }
+  if (message.includes("invalid io category")) {
+    return ValidationErrorCode.E112_INVALID_IO_CATEGORY;
+  }
+  if (message.includes("invalid io position")) {
+    return ValidationErrorCode.E113_INVALID_IO_POSITION;
+  }
+
+  // Currency errors
+  if (message.includes("invalid currency")) {
+    return ValidationErrorCode.E114_INVALID_CURRENCY;
   }
 
   // Platform errors
@@ -225,7 +270,13 @@ const MarkdownSchema = z
 
 const PriceSchema = z.object({
   amount: z.number(),
-  currency: z.string(),
+  currency: z.string().check((ctx) => {
+    if (!VALID_CURRENCIES.has(ctx.value)) {
+      let message = `Invalid currency '${ctx.value}'.`;
+      message += ` Valid currencies: ${formatValidOptions(VALID_CURRENCIES)}`;
+      ctx.issues.push({ code: "custom", message, input: ctx.value });
+    }
+  }),
   /** ISO date when price was last verified */
   asOf: z.iso.date().optional(),
   /** Source of price (e.g., "official-website", "retailer") */
@@ -267,18 +318,77 @@ const VersionSchema = z
     }
   );
 
-const IOSchema = z.object({
-  name: z.string(),
-  signalFlow: z.string(),
-  category: z.string(),
-  type: z.string(),
-  connection: z.string(),
-  maxConnections: z.number().optional(),
-  position: z.string().optional(),
-  columnPosition: z.number().optional(),
-  rowPosition: z.number().optional(),
-  description: z.string().optional(),
-});
+const IOSchema = z
+  .object({
+    name: z.string(),
+    signalFlow: z.string().check((ctx) => {
+      if (!VALID_IO_SIGNAL_FLOWS.has(ctx.value)) {
+        const suggestion = findClosestMatch(ctx.value, VALID_IO_SIGNAL_FLOWS);
+        let message = `Invalid IO signal flow '${ctx.value}'.`;
+        if (suggestion) {
+          message += ` Did you mean '${suggestion}'?`;
+        }
+        message += ` Valid values: ${formatValidOptions(VALID_IO_SIGNAL_FLOWS)}`;
+        ctx.issues.push({ code: "custom", message, input: ctx.value });
+      }
+    }),
+    category: z.string().check((ctx) => {
+      if (!VALID_IO_CATEGORIES.has(ctx.value)) {
+        const suggestion = findClosestMatch(ctx.value, VALID_IO_CATEGORIES);
+        let message = `Invalid IO category '${ctx.value}'.`;
+        if (suggestion) {
+          message += ` Did you mean '${suggestion}'?`;
+        }
+        message += ` Valid values: ${formatValidOptions(VALID_IO_CATEGORIES)}`;
+        ctx.issues.push({ code: "custom", message, input: ctx.value });
+      }
+    }),
+    type: z.string(),
+    connection: z.string(),
+    connectorDetail: z.array(z.string()).optional(),
+    maxConnections: z.number().optional(),
+    position: z
+      .string()
+      .optional()
+      .check((ctx) => {
+        if (!ctx.value) return;
+        if (!ALL_VALID_IO_POSITIONS.has(ctx.value)) {
+          const suggestion = findClosestMatch(ctx.value, VALID_IO_POSITIONS);
+          let message = `Invalid IO position '${ctx.value}'.`;
+          if (suggestion) {
+            message += ` Did you mean '${suggestion}'?`;
+          }
+          message += ` Valid values: ${formatValidOptions(VALID_IO_POSITIONS)}`;
+          ctx.issues.push({ code: "custom", message, input: ctx.value });
+        }
+      }),
+    columnPosition: z.number().optional(),
+    rowPosition: z.number().optional(),
+    description: z.string().optional(),
+  })
+  .check((ctx) => {
+    const data = ctx.value;
+    if (!data.connectorDetail || data.connectorDetail.length === 0) return;
+    const validValues = IO_CONNECTOR_DETAILS[data.connection];
+    if (!validValues) {
+      ctx.issues.push({
+        code: "custom",
+        message: `connectorDetail is not supported for connection '${data.connection}'. Only supported for: ${Object.keys(IO_CONNECTOR_DETAILS).join(", ")}`,
+        path: ["connectorDetail"],
+        input: data.connectorDetail,
+      });
+      return;
+    }
+    const invalid = data.connectorDetail.filter((v: string) => !validValues.includes(v));
+    if (invalid.length > 0) {
+      ctx.issues.push({
+        code: "custom",
+        message: `Invalid connectorDetail value(s) '${invalid.join("', '")}' for connection '${data.connection}'. Valid values: ${validValues.join(", ")}`,
+        path: ["connectorDetail"],
+        input: data.connectorDetail,
+      });
+    }
+  });
 
 const RevisionSchema = z
   .object({
@@ -721,6 +831,74 @@ function detectSupersedeCycle(
   return null;
 }
 
+// =============================================================================
+// ADVISORY WARNING COLLECTION
+// =============================================================================
+
+interface WarningContext {
+  io?: Array<{ name: string; type: string; connection: string }>;
+  links?: Array<{ type: string; url: string }>;
+}
+
+/**
+ * Collect advisory warnings for a validated file.
+ * These are non-blocking and do not affect CI exit code.
+ */
+function collectWarnings(
+  filePath: string,
+  data: WarningContext,
+  document: ReturnType<typeof loadYamlFileWithPositions>["document"],
+  lineCounter: ReturnType<typeof loadYamlFileWithPositions>["lineCounter"]
+): ValidationWarning | null {
+  const warnings: ValidationWarningDetail[] = [];
+  const relativeFile = path.relative(process.cwd(), filePath);
+
+  // Check IO types and connections (advisory)
+  if (Array.isArray(data.io)) {
+    for (let i = 0; i < data.io.length; i++) {
+      const io = data.io[i];
+
+      if (io.type && !KNOWN_IO_TYPES.has(io.type)) {
+        const line = getLineForPath(document, lineCounter, ["io", i, "type"]);
+        warnings.push({
+          code: ValidationErrorCode.W120_UNKNOWN_IO_TYPE,
+          message: `Unknown IO type '${io.type}' on '${io.name}'. Consider adding to schema/io-types.yaml if valid.`,
+          path: `io[${i}].type`,
+          line: line ?? undefined,
+        });
+      }
+
+      if (io.connection && !KNOWN_IO_CONNECTIONS.has(io.connection)) {
+        const line = getLineForPath(document, lineCounter, ["io", i, "connection"]);
+        warnings.push({
+          code: ValidationErrorCode.W121_UNKNOWN_IO_CONNECTION,
+          message: `Unknown IO connection '${io.connection}' on '${io.name}'. Consider adding to schema/io-connections.yaml if valid.`,
+          path: `io[${i}].connection`,
+          line: line ?? undefined,
+        });
+      }
+    }
+  }
+
+  // Check link types (advisory)
+  if (Array.isArray(data.links)) {
+    for (let i = 0; i < data.links.length; i++) {
+      const link = data.links[i];
+      if (link.type && !KNOWN_LINK_TYPES.has(link.type)) {
+        const line = getLineForPath(document, lineCounter, ["links", i, "type"]);
+        warnings.push({
+          code: ValidationErrorCode.W122_UNKNOWN_LINK_TYPE,
+          message: `Unknown link type '${link.type}'. Consider adding to schema/link-types.yaml if valid.`,
+          path: `links[${i}].type`,
+          line: line ?? undefined,
+        });
+      }
+    }
+  }
+
+  return warnings.length > 0 ? { file: relativeFile, warnings } : null;
+}
+
 /**
  * Runs full repository validation over manufacturer, software, and hardware YAML files.
  *
@@ -735,6 +913,7 @@ function detectSupersedeCycle(
  */
 function validate(): ValidationResult {
   const errors: ValidationError[] = [];
+  const warnings: ValidationWarning[] = [];
   const stats = { manufacturers: 0, software: 0, hardware: 0 };
 
   // First pass: collect all slugs (derived from filenames) and IDs
@@ -811,6 +990,14 @@ function validate(): ValidationResult {
       errors.push(error);
     } else {
       stats.software++;
+      // Collect advisory warnings for valid files
+      try {
+        const { data, document, lineCounter } = loadYamlFileWithPositions(file);
+        const w = collectWarnings(file, data as WarningContext, document, lineCounter);
+        if (w) warnings.push(w);
+      } catch {
+        // Ignore parse errors - they're caught by YAML validation
+      }
     }
   }
 
@@ -821,6 +1008,14 @@ function validate(): ValidationResult {
       errors.push(error);
     } else {
       stats.hardware++;
+      // Collect advisory warnings for valid files
+      try {
+        const { data, document, lineCounter } = loadYamlFileWithPositions(file);
+        const w = collectWarnings(file, data as WarningContext, document, lineCounter);
+        if (w) warnings.push(w);
+      } catch {
+        // Ignore parse errors - they're caught by YAML validation
+      }
     }
   }
 
@@ -867,6 +1062,7 @@ function validate(): ValidationResult {
   return {
     valid: errors.length === 0,
     errors,
+    warnings,
     stats,
   };
 }
@@ -967,6 +1163,20 @@ function writeGitHubSummary(result: ValidationResult): void {
     }
   }
 
+  // Advisory warnings section
+  if (result.warnings.length > 0) {
+    const totalWarnings = result.warnings.reduce((sum, w) => sum + w.warnings.length, 0);
+    summary += `## ⚠️ Warnings (non-blocking)\n\n`;
+    summary += `Found ${totalWarnings} warning(s) in ${result.warnings.length} file(s):\n\n`;
+    for (const fileWarning of result.warnings) {
+      summary += `### \`${fileWarning.file}\`\n\n`;
+      for (const w of fileWarning.warnings) {
+        summary += `- ${w.code}: ${w.message}\n`;
+      }
+      summary += "\n";
+    }
+  }
+
   summary += `## 📊 Catalog Stats\n\n`;
   summary += `| Type | Count |\n`;
   summary += `|------|-------|\n`;
@@ -1005,6 +1215,23 @@ function writeConsoleOutput(result: ValidationResult): void {
         for (const msg of error.errors) {
           console.log(`   ⚠️  ${msg}`);
         }
+      }
+    }
+    console.log();
+  }
+
+  // Display advisory warnings (non-blocking)
+  if (result.warnings.length > 0) {
+    const totalWarnings = result.warnings.reduce((sum, w) => sum + w.warnings.length, 0);
+    console.log("─".repeat(70));
+    console.log(
+      `\n⚠️  Warnings (non-blocking): ${totalWarnings} warning(s) in ${result.warnings.length} file(s)\n`
+    );
+    for (const fileWarning of result.warnings) {
+      console.log(`📄 ${fileWarning.file}`);
+      for (const w of fileWarning.warnings) {
+        const lineInfo = w.line ? `:${w.line}` : "";
+        console.log(`   ${w.code}${lineInfo}: ${w.message}`);
       }
     }
     console.log();

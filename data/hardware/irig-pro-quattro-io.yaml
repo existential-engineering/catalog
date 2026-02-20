@@ -7,8 +7,6 @@ website: https://www.ikmultimedia.com/products/irigproquattroio/
 prices:
   - amount: 349.99
     currency: USD
-  - amount: 449.99
-    currency: USD
 description: "4-input professional field recording interface and mixer"
 details: |-
   24-bit
@@ -43,106 +41,116 @@ io:
   - name: XLR/TRS Combo Input 1
     signalFlow: input
     category: audio
-    type: combo
-    connection: "xlr-trs-combo"
+    type: mic
+    connection: "combo jack"
     maxConnections: 1
-    position: top
+    position: Top
   - name: XLR/TRS Combo Input 2
     signalFlow: input
     category: audio
-    type: combo
-    connection: "xlr-trs-combo"
+    type: mic
+    connection: "combo jack"
     maxConnections: 1
-    position: top
+    position: Top
   - name: XLR/TRS Combo Input 3
     signalFlow: input
     category: audio
-    type: combo
-    connection: "xlr-trs-combo"
+    type: mic
+    connection: "combo jack"
     maxConnections: 1
-    position: top
+    position: Top
   - name: XLR/TRS Combo Input 4
     signalFlow: input
     category: audio
-    type: combo
-    connection: "xlr-trs-combo"
+    type: mic
+    connection: "combo jack"
     maxConnections: 1
-    position: top
+    position: Top
   - name: RCA Line Input L
     signalFlow: input
     category: audio
     type: line
     connection: rca
     maxConnections: 1
-    position: side
+    position: Right
   - name: RCA Line Input R
     signalFlow: input
     category: audio
     type: line
     connection: rca
     maxConnections: 1
-    position: side
+    position: Right
   - name: 3.5mm TRS Line Input
     signalFlow: input
     category: audio
     type: line
-    connection: "trs-3.5mm"
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: side
+    position: Right
   - name: "Built-in MEMS Microphone"
     signalFlow: input
     category: audio
-    type: microphone
+    type: mic
     connection: "built-in"
     maxConnections: 1
-    position: top
+    position: Top
   - name: Balanced XLR Output L
     signalFlow: output
     category: audio
     type: line
     connection: xlr
     maxConnections: 1
-    position: side
+    position: Right
   - name: Balanced XLR Output R
     signalFlow: output
     category: audio
     type: line
     connection: xlr
     maxConnections: 1
-    position: side
+    position: Right
   - name: Stereo Line Output
     signalFlow: output
     category: audio
     type: line
-    connection: "trs-3.5mm"
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: side
+    position: Right
   - name: Headphone Output
     signalFlow: output
     category: audio
     type: headphone
-    connection: "trs-3.5mm"
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: side
+    position: Right
   - name: MIDI Input
     signalFlow: input
     category: midi
     type: midi
-    connection: "trs-2.5mm"
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: side
+    position: Right
   - name: MIDI Output
     signalFlow: output
     category: midi
     type: midi
-    connection: "trs-2.5mm"
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: side
+    position: Right
   - name: Host Connection
     signalFlow: bidirectional
-    category: data
+    category: digital
     type: usb
     connection: "mini-din"
     maxConnections: 1
-    position: side
+    position: Right
 id: Fg6eYJg62NYAcy_QcWHp7

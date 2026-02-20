@@ -37,80 +37,96 @@ io:
   - name: Audio Output L
     signalFlow: output
     category: audio
-    type: balanced
-    connection: 1/4" TRS
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Audio Output R
     signalFlow: output
     category: audio
-    type: balanced
-    connection: 1/4" TRS
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Audio Input
     signalFlow: input
     category: audio
-    type: mono
-    connection: 1/4" TS
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Headphone Output
     signalFlow: output
     category: audio
-    type: stereo
-    connection: 1/4" TRS
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: MIDI In
     signalFlow: input
     category: midi
     type: midi
-    connection: "5-pin DIN"
+    connection: "5-pin din"
     maxConnections: 1
-    position: rear
+    position: Top
   - name: MIDI Out
     signalFlow: output
     category: midi
     type: midi
-    connection: "5-pin DIN"
+    connection: "5-pin din"
     maxConnections: 1
-    position: rear
+    position: Top
   - name: "USB-C"
     signalFlow: bidirectional
-    category: data
-    type: usb-midi
-    connection: "USB-C"
+    category: digital
+    type: usb
+    connection: usb-c
     maxConnections: 1
-    position: rear
+    position: Top
   - name: CV In
     signalFlow: input
-    category: cv
-    type: cv
-    connection: 3.5mm TS
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: CV Out
     signalFlow: output
-    category: cv
-    type: cv
-    connection: 3.5mm TS
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Gate In
     signalFlow: input
-    category: cv
-    type: gate
-    connection: 3.5mm TS
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Gate Out
     signalFlow: output
-    category: cv
-    type: gate
-    connection: 3.5mm TS
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: rear
+    position: Top
 links:
   - type: product
     title: Product Page

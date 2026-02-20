@@ -88,8 +88,22 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: top
 ```
+
+**IO field validation** uses a two-tier system:
+
+- **Strict (errors, blocks CI):** `signalFlow`, `category`, `position`, `price.currency`
+  - `signalFlow`: input, output, bidirectional
+  - `category`: audio, midi, digital, data, control, power, cv
+  - `position`: top, bottom, left, right, front, rear, side (aliases: Back→rear, capitalized→lowercase)
+  - `currency`: ISO 4217 codes (USD, EUR, GBP, etc.) — see `schema/currencies.yaml`
+- **Advisory (warnings, non-blocking):** `type`, `connection`, `link.type`
+  - Known values listed in `schema/io-types.yaml`, `schema/io-connections.yaml`, `schema/link-types.yaml`
+  - Unknown values produce warnings in `pnpm validate` output
+  - Add new values to schema files via PR when they're confirmed valid
+
+**Semantic distinction:** `type` describes the signal characteristic (line, instrument, headphone, midi, usb, expression). `connection` describes the physical connector (1/4-inch, xlr, usb-c, 5-pin din). Don't swap them.
 
 ## Product Lineage
 

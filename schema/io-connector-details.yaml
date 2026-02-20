@@ -1,0 +1,29 @@
+# Valid connectorDetail values per connection type (strict validation)
+#
+# connectorDetail is an optional array capturing sub-characteristics of physical
+# connectors that are lost when normalizing to canonical connection values.
+# Valid values depend on the connection field. Validation error if connectorDetail
+# is present on a connection type not listed here.
+connector_details:
+  1/4-inch:
+    - TS
+    - TRS
+  1/8-inch:
+    - TS
+    - TRS
+    - TRRS
+  2.5mm:
+    - TS
+    - TRS
+  barrel:
+    - center-negative
+    - center-positive
+    - 9V
+    - 12V
+    - 15V
+    - 18V
+    - 24V
+    - 48V
+  xlr:
+    - 3-pin
+    - 5-pin

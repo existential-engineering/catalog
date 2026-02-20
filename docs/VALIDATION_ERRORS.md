@@ -11,6 +11,7 @@ Error codes follow this naming convention:
 - **E2xx** - Reference errors (missing manufacturers, duplicates)
 - **E3xx** - Content errors (markdown, URLs)
 - **E4xx** - Identifier errors (bundle IDs, format validation)
+- **W1xx** - Advisory warnings (non-blocking, informational)
 
 ---
 
@@ -196,6 +197,54 @@ E110:3: bad indentation of a mapping entry
 ```
 
 **Fix:** Check the YAML syntax at the indicated line number. Use a YAML validator or editor with YAML support to identify the exact issue.
+
+---
+
+### E111: Invalid IO Signal Flow
+
+The `signalFlow` field in an IO entry has an invalid value.
+
+**Valid values:** `input`, `output`, `bidirectional`
+
+**Fix:** Use one of the valid signal flow values listed above.
+
+---
+
+### E112: Invalid IO Category
+
+The `category` field in an IO entry has an invalid value.
+
+**Valid values:** `audio`, `midi`, `digital`, `data`, `control`, `power`, `cv`
+
+**Common mistakes:**
+- `instrument` → use `audio`
+- `headphone` → use `audio`
+- `usb` → use `data`
+- `analog` → use `audio`
+
+**Fix:** Use one of the valid IO category values. See `schema/io-categories.yaml` for the canonical list.
+
+---
+
+### E113: Invalid IO Position
+
+The `position` field in an IO entry has an invalid value.
+
+**Valid values:** `top`, `bottom`, `left`, `right`, `front`, `rear`, `side`
+
+**Aliases accepted:** `Back` → `rear`, `Top` → `top`, etc. (capitalized forms are accepted and normalized)
+
+**Fix:** Use one of the valid position values.
+
+---
+
+### E114: Invalid Currency
+
+The `currency` field in a price entry is not a valid ISO 4217 currency code.
+
+**Common currencies:** `USD`, `EUR`, `GBP`, `JPY`, `CNY`
+
+**Fix:** Use a valid ISO 4217 code. To add a new currency, add it to `schema/currencies.yaml`.
 
 ---
 
@@ -396,6 +445,40 @@ pnpm format:check
 # Fix formatting
 pnpm format
 ```
+
+## Advisory Warnings (W1xx)
+
+Warnings are non-blocking — they appear in `pnpm validate` output but do not affect the exit code or CI status. They flag values that are not in the known schema but may be valid.
+
+### W120: Unknown IO Type
+
+The `type` field in an IO entry is not in the known types list.
+
+**Known types are listed in:** `schema/io-types.yaml`
+
+**Fix:** If the value is valid, add it to `schema/io-types.yaml`. If it's a mistake, correct it in the data file. Note: `type` describes the signal characteristic (e.g., `line`, `instrument`, `headphone`), not the physical connector.
+
+---
+
+### W121: Unknown IO Connection
+
+The `connection` field in an IO entry is not in the known connections list.
+
+**Known connections are listed in:** `schema/io-connections.yaml`
+
+**Fix:** If the value is valid, add it to `schema/io-connections.yaml`. If it's a mistake, correct it in the data file. Note: `connection` describes the physical connector (e.g., `1/4-inch`, `xlr`, `usb-c`), not the signal type.
+
+---
+
+### W122: Unknown Link Type
+
+The `type` field in a link entry is not in the known link types list.
+
+**Known link types are listed in:** `schema/link-types.yaml`
+
+**Fix:** If the value is valid, add it to `schema/link-types.yaml`. If it's a mistake, correct it.
+
+---
 
 ## Getting Help
 

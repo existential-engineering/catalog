@@ -28,50 +28,60 @@ io:
   - name: Combo Input 1
     signalFlow: input
     category: audio
-    type: combo-xlr-trs
-    connection: XLR / 1/4" TRS
+    type: mic
+    connection: combo jack
     maxConnections: 1
-    position: top
+    position: Top
   - name: Combo Input 2
     signalFlow: input
     category: audio
-    type: combo-xlr-trs
-    connection: XLR / 1/4" TRS
+    type: mic
+    connection: combo jack
     maxConnections: 1
-    position: top
+    position: Top
   - name: Balanced Output 1
     signalFlow: output
     category: audio
-    type: trs
-    connection: 1/4" TRS
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Balanced Output 2
     signalFlow: output
     category: audio
-    type: trs
-    connection: 1/4" TRS
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Headphone Output
     signalFlow: output
     category: audio
-    type: trs
-    connection: 1/4" TRS
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: front
+    position: Bottom
   - name: MIDI In
     signalFlow: input
     category: midi
-    type: trs-mini
-    connection: 2.5mm TRS
+    type: headphone
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: MIDI Out
     signalFlow: output
     category: midi
-    type: trs-mini
-    connection: 2.5mm TRS
+    type: headphone
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
 id: YTR6M-z-mX7FuueMLmA7k

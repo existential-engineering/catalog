@@ -35,60 +35,27 @@ specs: |-
   - Dimensions: 190 mm (7.5") x 205 mm (8.1") x 23 mm (0.9")
   - Weight: 547 g (1.2 lb)
 io:
-  - name: "Velocity-Sensitive Pad"
-    signalFlow: input
-    category: midi
-    type: pad
-    connection: integrated
-    maxConnections: 16
-    position: top
-  - name: MIDI Knob
-    signalFlow: input
-    category: midi
-    type: knob
-    connection: integrated
-    maxConnections: 2
-    position: top
-  - name: Pushbutton
-    signalFlow: input
-    category: midi
-    type: button
-    connection: integrated
-    maxConnections: 2
-    position: top
-  - name: Slider
-    signalFlow: input
-    category: midi
-    type: fader
-    connection: integrated
-    maxConnections: 1
-    position: top
-  - name: Pushbutton Rotary Encoder
-    signalFlow: input
-    category: midi
-    type: encoder
-    connection: integrated
-    maxConnections: 1
-    position: top
   - name: Expression/Sustain Pedal Input
     signalFlow: input
     category: midi
-    type: trs
-    connection: rear
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: USB
     signalFlow: bidirectional
-    category: data
+    category: digital
     type: usb
-    connection: rear
+    connection: usb-b-micro
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Lightning Connector
     signalFlow: bidirectional
-    category: data
-    type: lightning
-    connection: rear
+    category: digital
+    type: usb
+    connection: lightning
     maxConnections: 1
-    position: rear
+    position: Top
 id: 4eAcec7XyF7GTxTpKU2hq

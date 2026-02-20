@@ -35,85 +35,102 @@ io:
   - name: Instrument Input 1
     signalFlow: input
     category: audio
-    type: Hi-Z instrument (PURE/JFET/ACTIVE selectable)
-    connection: 1/4" TS
+    type: instrument
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
     position: Top
   - name: Instrument Input 2
     signalFlow: input
     category: audio
-    type: Hi-Z instrument
-    connection: 1/4" TS
+    type: instrument
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
     position: Top
   - name: Mic/Line Input
     signalFlow: input
     category: audio
-    type: Class-A discrete mic preamp / line input
-    connection: XLR/TRS combo
+    type: mic
+    connection: combo jack
     maxConnections: 2
     position: Bottom
   - name: Monitor Output
     signalFlow: output
     category: audio
-    type: Balanced floating line output
-    connection: 1/4" TRS
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 2
     position: Bottom
   - name: Line Output
     signalFlow: output
     category: audio
-    type: Unbalanced line output
-    connection: 1/4" TRS
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 2
     position: Bottom
   - name: Amp Output
     signalFlow: output
     category: audio
-    type: Unbalanced floating re-amp output with ground lift
-    connection: 1/4" TS
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
     position: Top
   - name: Headphone Output
     signalFlow: output
     category: audio
-    type: High-current headphone output
-    connection: 1/4" TRS
+    type: headphone
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Top
   - name: MIDI In
     signalFlow: input
     category: midi
-    type: MIDI input
-    connection: "5-pin DIN"
+    type: midi
+    connection: "5-pin din"
     maxConnections: 1
     position: Bottom
   - name: MIDI Out
     signalFlow: output
     category: midi
-    type: MIDI output
-    connection: "5-pin DIN"
+    type: midi
+    connection: "5-pin din"
     maxConnections: 1
     position: Bottom
   - name: USB
     signalFlow: output
     category: digital
-    type: USB 2.0
-    connection: "USB Type-B"
+    type: usb
+    connection: usb-b
     maxConnections: 1
     position: Bottom
   - name: External Controller Input
     signalFlow: input
     category: audio
-    type: Expression pedal / footswitch input
-    connection: 1/4" TRS
+    type: instrument
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 2
     position: Bottom
   - name: DC Power
     signalFlow: input
     category: power
-    type: External power supply
-    connection: DC barrel
+    type: power
+    connection: barrel
+    connectorDetail:
+      - center-negative
+      - 9V
     maxConnections: 1
     position: Bottom
 id: 823d5Vu7fomTC5zsK7b6c

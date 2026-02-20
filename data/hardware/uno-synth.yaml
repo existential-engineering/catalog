@@ -39,36 +39,44 @@ io:
   - name: Audio Output
     signalFlow: output
     category: audio
-    type: analog
-    connection: "3.5mm mini-jack stereo (mono summed)"
+    type: line
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Audio Input
     signalFlow: input
     category: audio
-    type: analog
-    connection: "3.5mm mini-jack stereo (mono summed)"
+    type: line
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: MIDI In
     signalFlow: input
     category: midi
-    type: digital
-    connection: "2.5mm mini-jack (TRS to DIN cable included)"
+    type: s/pdif
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: MIDI Out
     signalFlow: output
     category: midi
-    type: digital
-    connection: "2.5mm mini-jack (TRS to DIN cable included)"
+    type: s/pdif
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: USB
     signalFlow: bidirectional
-    category: data
-    type: digital
-    connection: Micro USB
+    category: digital
+    type: s/pdif
+    connection: usb-b-micro
     maxConnections: 1
-    position: rear
+    position: Top
 id: C5XwQoEdJ50v7OLRbMNN5

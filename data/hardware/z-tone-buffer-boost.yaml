@@ -41,36 +41,45 @@ io:
   - name: Instrument Input
     signalFlow: input
     category: audio
-    type: ts
-    connection: analog
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: top
+    position: Top
   - name: Link Output
     signalFlow: output
     category: audio
-    type: ts
-    connection: analog
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: top
+    position: Top
   - name: Unbalanced Output
     signalFlow: output
     category: audio
-    type: ts
-    connection: analog
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: top
+    position: Top
   - name: Balanced XLR Output
     signalFlow: output
     category: audio
-    type: xlr
-    connection: analog
+    type: mic
+    connection: xlr
     maxConnections: 1
-    position: top
+    position: Top
   - name: 9V DC Power Input
     signalFlow: input
     category: power
-    type: barrel
-    connection: power
+    type: power
+    connection: barrel
+    connectorDetail:
+      - center-negative
+      - 9V
     maxConnections: 1
-    position: top
+    position: Top
 id: GxVtrSaBdl3EO5YQrYWD7

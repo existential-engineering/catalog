@@ -34,30 +34,28 @@ io:
     type: line
     connection: rca
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Line Input R
     signalFlow: input
     category: audio
     type: line
     connection: rca
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Headphone/Mic Combo
     signalFlow: bidirectional
     category: audio
-    type: headphone-mic
-    connection: "3.5mm-trrs"
+    type: headphone
+    connection: 1/8-inch
+    connectorDetail:
+      - TRRS
     maxConnections: 1
-    position: side
+    position: Right
   - name: USB Output
     signalFlow: output
-    category: data
+    category: digital
     type: usb
-    connection: "usb-micro-b"
+    connection: usb-b-micro
     maxConnections: 1
-    position: rear
-links:
-  - type: product
-    title: iRig Stream Product Page
-    url: https://www.ikmultimedia.com/products/irigstream
+    position: Top
 id: v5ak82VBNdiDftPrq5TmI

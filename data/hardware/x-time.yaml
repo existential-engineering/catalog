@@ -50,66 +50,79 @@ io:
   - name: Input L
     signalFlow: input
     category: audio
-    type: ts
-    connection: 1/4"
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: back
+    position: Top
   - name: Input R
     signalFlow: input
     category: audio
-    type: ts
-    connection: 1/4"
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: back
+    position: Top
   - name: Output L
     signalFlow: output
     category: audio
-    type: ts
-    connection: 1/4"
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: back
+    position: Top
   - name: Output R
     signalFlow: output
     category: audio
-    type: ts
-    connection: 1/4"
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: back
+    position: Top
   - name: MIDI In
     signalFlow: input
     category: midi
-    type: din
-    connection: "5-pin DIN"
+    type: midi
+    connection: "5-pin din"
     maxConnections: 1
-    position: back
+    position: Top
   - name: MIDI Out
     signalFlow: output
     category: midi
-    type: din
-    connection: "5-pin DIN"
+    type: midi
+    connection: "5-pin din"
     maxConnections: 1
-    position: back
+    position: Top
   - name: Ext. Control
     signalFlow: input
-    category: control
-    type: trs
-    connection: 1/4"
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: back
+    position: Top
   - name: USB
     signalFlow: bidirectional
-    category: data
+    category: digital
     type: usb
-    connection: USB
+    connection: usb-b
     maxConnections: 1
-    position: back
+    position: Top
   - name: Power
     signalFlow: input
     category: power
-    type: barrel
-    connection: 9V DC center negative
+    type: power
+    connection: barrel
+    connectorDetail:
+      - center-negative
+      - 9V
     maxConnections: 1
-    position: back
+    position: Top
 links:
   - type: product
     title: X-TIME Product Page

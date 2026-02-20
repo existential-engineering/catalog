@@ -31,36 +31,45 @@ io:
   - name: TO AMP Output
     signalFlow: output
     category: audio
-    type: ts
-    connection: analog
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: FROM AMP Input
     signalFlow: input
     category: audio
-    type: ts
-    connection: analog
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Balanced Output
     signalFlow: output
     category: audio
-    type: xlr
-    connection: analog
+    type: mic
+    connection: xlr
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Cabinet Output
     signalFlow: output
     category: audio
-    type: ts
-    connection: analog
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: 9V DC Power Input
     signalFlow: input
     category: power
-    type: barrel
-    connection: analog
+    type: power
+    connection: barrel
+    connectorDetail:
+      - center-negative
+      - 9V
     maxConnections: 1
-    position: rear
+    position: Top
 id: SI5Bpw0i29agjedEL1u6f

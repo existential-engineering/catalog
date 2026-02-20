@@ -19,51 +19,59 @@ details: |-
 io:
   - name: "USB-A Host"
     signalFlow: bidirectional
-    category: data
-    type: usb-a
-    connection: cable
+    category: digital
+    type: usb
+    connection: usb-a
     maxConnections: 1
-    position: rear
+    position: Top
   - name: "USB-C Host"
     signalFlow: bidirectional
-    category: data
-    type: usb-c
-    connection: cable
+    category: digital
+    type: usb
+    connection: usb-c
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Lightning Host
     signalFlow: bidirectional
-    category: data
-    type: lightning
-    connection: cable
+    category: digital
+    type: usb
+    connection: lightning
     maxConnections: 1
-    position: rear
+    position: Top
   - name: MIDI In
     signalFlow: input
     category: midi
-    type: trs-2.5mm
-    connection: female
+    type: line
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: MIDI Out
     signalFlow: output
     category: midi
-    type: trs-2.5mm
-    connection: female
+    type: line
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Headphone Output
     signalFlow: output
     category: audio
-    type: trs-3.5mm
-    connection: female
+    type: line
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Pedal Input
     signalFlow: input
-    category: control
-    type: ts-2.5mm
-    connection: female
+    category: audio
+    type: line
+    connection: 2.5mm
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: rear
+    position: Top
 id: qFbgHRKwKfs981Ph9_zhU

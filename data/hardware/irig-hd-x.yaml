@@ -38,30 +38,34 @@ specs: |-
 io:
   - name: Instrument Input
     signalFlow: input
-    category: instrument
-    type: ts
-    connection: 1/4"
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: top
+    position: Top
   - name: Headphone/Monitor Output
     signalFlow: output
-    category: headphone
-    type: trs
-    connection: 1/8"
+    category: audio
+    type: line
+    connection: 1/8-inch
     maxConnections: 1
-    position: side
+    position: Right
   - name: Amp Output
     signalFlow: output
-    category: instrument
-    type: ts
-    connection: 1/4"
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: bottom
+    position: Bottom
   - name: "USB-C Host"
     signalFlow: bidirectional
-    category: usb
-    type: usb-c
-    connection: "USB-C"
+    category: digital
+    type: usb
+    connection: usb-c
     maxConnections: 1
-    position: bottom
+    position: Bottom
 id: LABZ6NMj5XCPdu3p1d432

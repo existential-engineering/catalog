@@ -35,45 +35,51 @@ io:
   - name: Combo Input (XLR/TRS)
     signalFlow: input
     category: audio
-    type: combo-xlr-trs
-    connection: "neutrik-combo"
+    type: mic
+    connection: combo jack
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Line Output Left
     signalFlow: output
     category: audio
-    type: balanced
-    connection: "trs-quarter-inch"
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Line Output Right
     signalFlow: output
     category: audio
-    type: balanced
-    connection: "trs-quarter-inch"
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Headphone Output
     signalFlow: output
     category: audio
-    type: stereo
-    connection: "trs-eighth-inch"
+    type: line
+    connection: 1/8-inch
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Pedal Input
     signalFlow: input
-    category: control
-    type: sustain-expression
-    connection: "trs-quarter-inch"
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
-    position: rear
+    position: Top
   - name: Device Port
     signalFlow: bidirectional
-    category: data
-    type: usb-midi-audio
+    category: digital
+    type: usb
     connection: "mini-din"
     maxConnections: 1
-    position: rear
+    position: Top
 links:
   - type: product
     title: Product Page

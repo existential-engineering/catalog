@@ -59,6 +59,32 @@ function normalizeCategory(category: string): string {
   return CATEGORY_ALIASES.get(category) ?? category;
 }
 
+// Load IO position and connection aliases for normalization
+import { loadSchemaContext } from "./lib/schema-loader.js";
+
+const _schemaContext = loadSchemaContext();
+const IO_POSITION_ALIASES = new Map<string, string>(
+  Object.entries(_schemaContext.ioPositionAliases)
+);
+const IO_CONNECTION_ALIASES = new Map<string, string>(
+  Object.entries(_schemaContext.ioConnectionAliases)
+);
+
+// Normalize an IO position to its canonical form
+function normalizeIOPosition(position: string): string {
+  return IO_POSITION_ALIASES.get(position) ?? position;
+}
+
+// Normalize an IO connection to its canonical form
+function normalizeIOConnection(connection: string): string {
+  return IO_CONNECTION_ALIASES.get(connection) ?? connection;
+}
+
+// Normalize bidirectional signal flow to input for studio compatibility
+function normalizeIOSignalFlow(signalFlow: string): string {
+  return signalFlow === "bidirectional" ? "input" : signalFlow;
+}
+
 // Read version from package.json
 const packageJson = JSON.parse(
   fs.readFileSync(path.join(import.meta.dirname, "../package.json"), "utf-8")
@@ -443,8 +469,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?)
   `);
   const insertHardwareIO = db.prepare(`
-    INSERT INTO hardware_io (hardware_id, name, signal_flow, category, type, connection, max_connections, position, column_position, row_position, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware_io (hardware_id, name, signal_flow, category, type, connection, connector_detail, max_connections, position, column_position, row_position, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareVersion = db.prepare(`
     INSERT INTO hardware_versions (hardware_id, name, release_date, release_date_year_only, pre_release, unofficial, url, description)
@@ -455,8 +481,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareRevisionIO = db.prepare(`
-    INSERT INTO hardware_revision_io (revision_id, name, signal_flow, category, type, connection, max_connections, position, column_position, row_position, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware_revision_io (revision_id, name, signal_flow, category, type, connection, connector_detail, max_connections, position, column_position, row_position, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareRevisionVersion = db.prepare(`
     INSERT INTO hardware_revision_versions (revision_id, name, release_date, release_date_year_only, pre_release, unofficial, url, description)
@@ -559,18 +585,19 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert I/O ports
+    // Insert I/O ports (with normalization)
     if (data.io) {
       for (const io of data.io) {
         insertHardwareIO.run(
           id,
           io.name,
-          io.signalFlow,
+          normalizeIOSignalFlow(io.signalFlow),
           io.category,
           io.type,
-          io.connection,
+          normalizeIOConnection(io.connection),
+          io.connectorDetail ? JSON.stringify(io.connectorDetail) : null,
           io.maxConnections ?? 1,
-          io.position ?? null,
+          io.position ? normalizeIOPosition(io.position) : null,
           io.columnPosition ?? null,
           io.rowPosition ?? null,
           io.description ?? null
@@ -617,18 +644,19 @@ function buildDatabase(version: string): void {
         );
         const revisionId = result.lastInsertRowid;
 
-        // Insert revision I/O
+        // Insert revision I/O (with normalization)
         if (rev.io) {
           for (const io of rev.io) {
             insertHardwareRevisionIO.run(
               revisionId,
               io.name,
-              io.signalFlow,
+              normalizeIOSignalFlow(io.signalFlow),
               io.category,
               io.type,
-              io.connection,
+              normalizeIOConnection(io.connection),
+              io.connectorDetail ? JSON.stringify(io.connectorDetail) : null,
               io.maxConnections ?? 1,
-              io.position ?? null,
+              io.position ? normalizeIOPosition(io.position) : null,
               io.columnPosition ?? null,
               io.rowPosition ?? null,
               io.description ?? null

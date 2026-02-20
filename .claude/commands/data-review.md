@@ -51,8 +51,16 @@ Then perform deeper analysis:
 - Check description quality (too short, generic, or missing?)
 - Validate markdown in description/details/specs fields
 - Check that `id` field is NOT included in new entries (IDs are assigned by CI)
-- Verify prices have both `amount` (number) and `currency` (string)
+- Verify prices have both `amount` (number) and `currency` (valid ISO 4217 code from schema/currencies.yaml)
 - Check links have `type` and `url` at minimum
+
+**IO & Link Field Analysis** (from `pnpm validate` warnings W120/W121/W122):
+
+- Review all advisory warnings for unknown IO types, connections, and link types
+- For each unknown value, recommend one of: add to schema, fix in data, or add as alias
+- Flag IO entries where type and connection appear swapped (heuristic: type value found in known connections, or vice versa)
+- Flag IO entries with long descriptive strings in type/connection fields (these should be concise values)
+- Verify IO categories match semantic intent: audio signals → `audio`, MIDI → `midi`, USB/Thunderbolt → `data`, CV → `cv`, expression/switches → `control`, power → `power`
 
 **Identifier & Staleness Analysis** (from automated tools):
 
@@ -152,6 +160,12 @@ Present findings in this structure:
 | Entry | de | es | fr | ja | ko | pt-BR | zh |
 |-------|----|----|----|----|----|----|-----|
 [table rows with checkmarks or dashes]
+
+### Schema Evolution Opportunities
+| Value | Field | File | Recommendation |
+|-------|-------|------|----------------|
+[table rows for unknown IO types/connections/link types from W120/W121/W122 warnings]
+[Recommendation: "add to schema", "fix in data", or "add as alias"]
 
 ### Overall Assessment
 [Final evaluation and recommendation: ready to merge, needs fixes, or needs discussion]

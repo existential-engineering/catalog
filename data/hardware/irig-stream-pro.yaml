@@ -37,50 +37,56 @@ io:
   - name: XLR/TRS Combo Input
     signalFlow: input
     category: audio
-    type: combo-xlr-trs
-    connection: analog
+    type: mic
+    connection: combo jack
     maxConnections: 1
-    position: rear
+    position: Top
   - name: RCA Stereo Line Input L
     signalFlow: input
     category: audio
-    type: rca
-    connection: analog
+    type: phono
+    connection: rca
     maxConnections: 1
-    position: rear
+    position: Top
   - name: RCA Stereo Line Input R
     signalFlow: input
     category: audio
-    type: rca
-    connection: analog
+    type: phono
+    connection: rca
     maxConnections: 1
-    position: rear
+    position: Top
   - name: TRRS Headset/Mic Input
     signalFlow: input
     category: audio
-    type: trrs-3.5mm
-    connection: analog
+    type: headphone
+    connection: 1/8-inch
+    connectorDetail:
+      - TRRS
     maxConnections: 1
-    position: side
+    position: Right
   - name: Headphone Output 1
     signalFlow: output
     category: audio
-    type: trrs-3.5mm
-    connection: analog
+    type: headphone
+    connection: 1/8-inch
+    connectorDetail:
+      - TRRS
     maxConnections: 1
-    position: side
+    position: Right
   - name: Headphone/Line Output 2
     signalFlow: output
     category: audio
-    type: trrs-3.5mm
-    connection: analog
+    type: headphone
+    connection: 1/8-inch
+    connectorDetail:
+      - TRRS
     maxConnections: 1
-    position: side
+    position: Right
   - name: Device Connection
     signalFlow: bidirectional
-    category: data
-    type: mini-din
-    connection: digital
+    category: digital
+    type: midi
+    connection: mini-din
     maxConnections: 1
-    position: side
+    position: Right
 id: WkjcsKLbHpo9C2EE9Fddp

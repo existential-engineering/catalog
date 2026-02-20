@@ -31,6 +31,11 @@ export enum ValidationErrorCode {
   E107_INVALID_LOCALE = "E107",
   E108_INVALID_DATE_FORMAT = "E108",
   E110_YAML_SYNTAX_ERROR = "E110",
+  E111_INVALID_IO_SIGNAL_FLOW = "E111",
+  E112_INVALID_IO_CATEGORY = "E112",
+  E113_INVALID_IO_POSITION = "E113",
+  E114_INVALID_CURRENCY = "E114",
+  E115_INVALID_CONNECTOR_DETAIL = "E115",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
@@ -48,6 +53,11 @@ export enum ValidationErrorCode {
   // Identifier errors (E4xx)
   E400_INVALID_IDENTIFIER_FORMAT = "E400",
   E401_MISSING_IDENTIFIER = "E401",
+
+  // Advisory warnings (W1xx) — non-blocking
+  W120_UNKNOWN_IO_TYPE = "W120",
+  W121_UNKNOWN_IO_CONNECTION = "W121",
+  W122_UNKNOWN_LINK_TYPE = "W122",
 }
 
 // =============================================================================
@@ -146,6 +156,26 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     title: "YAML syntax error",
     anchor: "e110-yaml-syntax-error",
   },
+  [ValidationErrorCode.E111_INVALID_IO_SIGNAL_FLOW]: {
+    title: "Invalid IO signal flow",
+    anchor: "e111-invalid-io-signal-flow",
+  },
+  [ValidationErrorCode.E112_INVALID_IO_CATEGORY]: {
+    title: "Invalid IO category",
+    anchor: "e112-invalid-io-category",
+  },
+  [ValidationErrorCode.E113_INVALID_IO_POSITION]: {
+    title: "Invalid IO position",
+    anchor: "e113-invalid-io-position",
+  },
+  [ValidationErrorCode.E114_INVALID_CURRENCY]: {
+    title: "Invalid currency code",
+    anchor: "e114-invalid-currency",
+  },
+  [ValidationErrorCode.E115_INVALID_CONNECTOR_DETAIL]: {
+    title: "Invalid connector detail",
+    anchor: "e115-invalid-connector-detail",
+  },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",
     anchor: "e199-validation-error",
@@ -195,6 +225,20 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E401_MISSING_IDENTIFIER]: {
     title: "Missing identifier",
     anchor: "e401-missing-identifier",
+  },
+
+  // Advisory warnings
+  [ValidationErrorCode.W120_UNKNOWN_IO_TYPE]: {
+    title: "Unknown IO type",
+    anchor: "w120-unknown-io-type",
+  },
+  [ValidationErrorCode.W121_UNKNOWN_IO_CONNECTION]: {
+    title: "Unknown IO connection",
+    anchor: "w121-unknown-io-connection",
+  },
+  [ValidationErrorCode.W122_UNKNOWN_LINK_TYPE]: {
+    title: "Unknown link type",
+    anchor: "w122-unknown-link-type",
   },
 };
 

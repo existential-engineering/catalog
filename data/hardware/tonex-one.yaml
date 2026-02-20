@@ -37,29 +37,36 @@ io:
   - name: Instrument Input
     signalFlow: input
     category: audio
-    type: TS
-    connection: 1/4"
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
     position: Right
   - name: TRS Output
     signalFlow: output
     category: audio
-    type: TRS
-    connection: 1/4"
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Left
   - name: "USB-C"
     signalFlow: input
     category: digital
-    type: USB-C
-    connection: "USB-C"
+    type: usb
+    connection: usb-c
     maxConnections: 1
     position: Top
   - name: 9V DC Power
     signalFlow: input
     category: power
-    type: DC Barrel
-    connection: 9V DC
+    type: power
+    connection: barrel
+    connectorDetail:
+      - center-negative
+      - 9V
     maxConnections: 1
     position: Top
 versions:

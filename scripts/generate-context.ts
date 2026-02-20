@@ -234,6 +234,52 @@ ${context.locales.map((l) => `| \`${l.code}\` | ${l.name} | ${l.nativeName} |`).
 
 ---
 
+## IO Fields (Hardware)
+
+### Signal Flows (strict)
+
+${context.ioSignalFlows.map((v) => `- \`${v}\``).join("\n")}
+
+### IO Categories (strict)
+
+${context.ioCategories.map((v) => `- \`${v}\``).join("\n")}
+
+### IO Positions (strict)
+
+${context.ioPositions.map((v) => `- \`${v}\``).join("\n")}
+
+**Aliases:**
+${Object.entries(context.ioPositionAliases)
+  .map(([alias, canonical]) => `- \`${alias}\` → \`${canonical}\``)
+  .join("\n")}
+
+### IO Types (advisory — unknown values produce warnings)
+
+${context.ioTypes.map((v) => `- \`${v}\``).join("\n")}
+
+### IO Connections (advisory — unknown values produce warnings)
+
+${context.ioConnections.map((v) => `- \`${v}\``).join("\n")}
+
+**Aliases:**
+${Object.entries(context.ioConnectionAliases)
+  .map(([alias, canonical]) => `- \`${alias}\` → \`${canonical}\``)
+  .join("\n")}
+
+---
+
+## Link Types (advisory — unknown values produce warnings)
+
+${context.linkTypes.map((v) => `- \`${v}\``).join("\n")}
+
+---
+
+## Currencies (strict — ISO 4217)
+
+${context.currencies.map((v) => `- \`${v}\``).join("\n")}
+
+---
+
 ## Notes
 
 - **IDs are auto-assigned**: Never include \`id\` field manually - CI assigns nanoid on PR

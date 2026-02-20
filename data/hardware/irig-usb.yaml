@@ -41,29 +41,33 @@ io:
   - name: Instrument Input
     signalFlow: input
     category: audio
-    type: ts
-    connection: unbalanced
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: top
+    position: Top
   - name: "USB-C"
     signalFlow: bidirectional
-    category: data
-    type: usb-c
-    connection: digital
+    category: digital
+    type: usb
+    connection: usb-c
     maxConnections: 1
-    position: bottom
+    position: Bottom
   - name: Headphone Output
     signalFlow: output
     category: audio
-    type: trs-mini
-    connection: unbalanced
+    type: headphone
+    connection: 1/8-inch
     maxConnections: 1
-    position: side
+    position: Right
   - name: Amp Output
     signalFlow: output
     category: audio
-    type: ts
-    connection: unbalanced
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: side
+    position: Right
 id: rc6n66oH7jvfDjuBOa7Cf
