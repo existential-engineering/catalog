@@ -51,7 +51,7 @@ export interface SchemaContext {
   ioConnectorDetails: Record<string, string[]>;
 
   // Link and currency schemas
-  /** Known link type values (advisory) */
+  /** Valid link type values (strict) */
   linkTypes: string[];
   /** Valid ISO 4217 currency codes (strict) */
   currencies: string[];
@@ -331,9 +331,9 @@ export function connectionSupportsDetail(connection: string): boolean {
 }
 
 /**
- * Check if a link type is a known value (advisory)
+ * Check if a link type is valid (strict)
  */
-export function isKnownLinkType(type: string): boolean {
+export function isValidLinkType(type: string): boolean {
   const context = loadSchemaContext();
   return context.linkTypes.includes(type);
 }
