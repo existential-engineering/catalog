@@ -1,0 +1,87 @@
+name: iRig Keys I/O
+manufacturer: ik-multimedia
+primaryCategory: midi-controller
+categories:
+  - keyboard
+  - audio-interface
+website: https://www.ikmultimedia.com/products/irigkeysio
+prices:
+  - amount: 229.99
+    currency: USD
+  - amount: 329.99
+    currency: USD
+description: "The all-in-one music production station that goes anywhere you
+  want. The only controller integrating full-sized keys with a professional
+  audio interface in a compact, portable format."
+details: |-
+  The iRig Keys I/O combines a full-sized keyboard controller with a professional audio interface in a single portable unit, available in 25-key and 49-key versions with velocity-sensitive synth-action keys. The built-in audio interface features a Class A preamp with 48V phantom power, XLR/TRS combo input, balanced line outputs, and a headphone output.
+
+  The controller section offers 8 velocity-sensitive multicolor assignable pads, 5 programmable touch-sensitive encoders, 2 programmable touch control strips (pitch and modulation by default), and transport controls. It is MFi certified for iOS devices and supports USB bus power, 4x AA batteries, or DC power supply.
+
+  Included accessories are a Lightning cable, USB cable, mobile device stand, and a gooseneck condenser microphone. Compatible with iOS (iPhone 7+), iPad, Mac, and PC.
+specs: |-
+  - 25 or 49 full-size velocity-sensitive synth-action keys
+  - 8 velocity-sensitive multicolor assignable pads
+  - 5 programmable touch-sensitive encoders
+  - 2 programmable touch control strips
+  - Built-in audio interface with Class A preamp
+  - 48V phantom power on XLR/TRS combo input
+  - Balanced line outputs and headphone output
+  - Sustain/expression pedal input
+  - MFi certified for iOS devices
+  - Power: USB bus, 4x AA batteries, or DC supply
+  - Includes gooseneck condenser microphone
+io:
+  - name: Combo Input (XLR/TRS)
+    signalFlow: input
+    category: audio
+    type: combo-xlr-trs
+    connection: "neutrik-combo"
+    maxConnections: 1
+    position: rear
+  - name: Line Output Left
+    signalFlow: output
+    category: audio
+    type: balanced
+    connection: "trs-quarter-inch"
+    maxConnections: 1
+    position: rear
+  - name: Line Output Right
+    signalFlow: output
+    category: audio
+    type: balanced
+    connection: "trs-quarter-inch"
+    maxConnections: 1
+    position: rear
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: stereo
+    connection: "trs-eighth-inch"
+    maxConnections: 1
+    position: rear
+  - name: Pedal Input
+    signalFlow: input
+    category: control
+    type: sustain-expression
+    connection: "trs-quarter-inch"
+    maxConnections: 1
+    position: rear
+  - name: Device Port
+    signalFlow: bidirectional
+    category: data
+    type: usb-midi-audio
+    connection: "mini-din"
+    maxConnections: 1
+    position: rear
+links:
+  - type: product
+    title: Product Page
+    url: https://www.ikmultimedia.com/products/irigkeysio
+  - type: specs
+    title: Specifications
+    url: https://www.ikmultimedia.com/products/irigkeysio/index.php?p=specs
+  - type: versions
+    title: Versions & Pricing
+    url: https://www.ikmultimedia.com/products/irigkeysio/index.php?p=versions
+id: ItZ7kG-Un9wuM35x61gLr

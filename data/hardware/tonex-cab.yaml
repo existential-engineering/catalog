@@ -1,0 +1,75 @@
+name: TONEX Cab
+manufacturer: ik-multimedia
+primaryCategory: cabinet-sim
+categories:
+  - speaker
+  - modeling
+website: https://www.ikmultimedia.com/products/tonexcab
+prices:
+  - amount: 799.99
+    currency: USD
+description: "TONEX CAB is a professional 700 W FRFR cab engineered to deliver
+  unparalleled amp tone, feel and punch."
+specs: |-
+  - Power output: 350 W RMS / 700 W Peak (Class-D)
+  - Frequency response: 60 Hz - 20 kHz
+  - Max peak SPL: 132 dB
+  - Low frequency driver: 12" Celestion guitar speaker
+  - High frequency driver: 1" Lavoce compression driver
+  - 2-way powered cabinet design
+  - 8 recallable presets with MIDI control
+  - Built-in IR loader with 50 premium studio-grade cab IRs
+  - Programmable 3-band EQ (Bass, Mid, Treble)
+  - Ultra-low latency DSP design
+  - Dimensions: 546 x 432 x 230 mm (21.49" x 17.00" x 9.05")
+  - Weight: 12.7 kg (28 lbs)
+  - Wood cabinet with integrated tilt-back legs
+details: |-
+  TONEX CAB is a professional 700 W FRFR powered cabinet featuring a 2-way design with a custom Celestion 12" guitar speaker and Lavoce 1" compression driver. The Class-D amplifier delivers 350 W RMS / 700 W Peak with a max peak SPL of 132 dB.
+
+  The exclusive AMP TONE control delivers amp-in-the-room feel and response. A built-in IR loader provides 8 onboard presets with 50 premium studio-grade cabinet IRs included. The programmable 3-band EQ (Bass, Mid, Treble) supports Pre/Post routing for FOH or cab linking.
+
+  Full MIDI implementation enables complex rig integration. The wood cabinet features integrated tilt-back legs and swappable grill cloth, making it the most compact 12" powered cab in its class. A ground lift switch on the XLR output eliminates hum.
+
+  Includes TONEX Cab Software, TONEX SE, and AmpliTube 5 SE.
+io:
+  - name: Main Input
+    signalFlow: input
+    category: audio
+    type: XLR/TRS combo
+    connection: "xlr-trs-combo"
+    maxConnections: 1
+    position: back
+  - name: AUX Input
+    signalFlow: input
+    category: audio
+    type: XLR/TRS combo
+    connection: "xlr-trs-combo"
+    maxConnections: 1
+    position: back
+  - name: XLR Output
+    signalFlow: output
+    category: audio
+    type: XLR balanced
+    connection: xlr
+    maxConnections: 1
+    position: back
+  - name: MIDI
+    signalFlow: bidirectional
+    category: data
+    type: MIDI
+    connection: midi
+    maxConnections: 1
+    position: back
+  - name: USB
+    signalFlow: bidirectional
+    category: data
+    type: USB
+    connection: usb
+    maxConnections: 1
+    position: back
+links:
+  - type: product
+    title: TONEX Cab Product Page
+    url: https://www.ikmultimedia.com/products/tonexcab
+id: gA7EK0Dpz-wUKSeoCiy12

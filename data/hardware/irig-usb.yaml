@@ -1,0 +1,69 @@
+name: iRig USB
+manufacturer: ik-multimedia
+primaryCategory: audio-interface
+categories:
+  - guitar
+website: https://www.ikmultimedia.com/products/irigusb
+prices:
+  - amount: 69.99
+    currency: USD
+description: "iRig USB gives guitar and bass players an affordable and easy way
+  to practice, play and record at home or on the go. This digital version of
+  IK's widely popular iRig 2 features a sleek new enclosure with USB-C
+  connectivity and comes bundled with IK's latest amp and effects modeling
+  technology."
+details: |-
+  Your guitar journey starts here
+
+  Features: Compact audio interface for guitar or bass, USB-C connectivity compatible with iPad, Mac, PC, and iPhone 15, 1/8" stereo headphones output for silent practice, 1/4" mono amp output, Large gain control knob with LED clipping indicator, Effects bypass switch, Powered by device - no batteries required, Works with learning, practice, and recording apps
+
+  Included Software: TONEX SE with 200 Premium Tone Models, AmpliTube 5 SE (Mac/PC), AmpliTube for iOS
+
+  Included Accessories: USB-C to USB-C cable (60 cm / 23.62")
+specs: |-
+  - 24-bit A/D and D/A conversion
+  - Sample rates: 44.1 kHz, 48 kHz
+  - Instrument input impedance: 500 kOhms
+  - Maximum input level: +13.5 dBu
+  - Input frequency response: 20 Hz - 20 kHz within 0.5 dB (48 kHz)
+  - Input dynamic range: 90 dB(A)
+  - Amp output impedance: 3.3 kOhms
+  - Amp output frequency response: 10 Hz - 20 kHz within 1 dB (48 kHz)
+  - Amp output dynamic range: 97 dB(A)
+  - Headphone output impedance: 22 Ohms
+  - Headphone max output: approx. 6 mW into 50 Ohms
+  - Headphone frequency response: 10 Hz - 20 kHz within 1 dB (48 kHz)
+  - Headphone dynamic range: 94 dB(A)
+  - Dimensions: 99 x 42 x 25 mm (3.9" x 1.65" x 0.98")
+  - Weight: 54 g (1.9 oz)
+  - Connection: USB-C (cable included, 60 cm)
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: ts
+    connection: unbalanced
+    maxConnections: 1
+    position: top
+  - name: "USB-C"
+    signalFlow: bidirectional
+    category: data
+    type: usb-c
+    connection: digital
+    maxConnections: 1
+    position: bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: trs-mini
+    connection: unbalanced
+    maxConnections: 1
+    position: side
+  - name: Amp Output
+    signalFlow: output
+    category: audio
+    type: ts
+    connection: unbalanced
+    maxConnections: 1
+    position: side
+id: rc6n66oH7jvfDjuBOa7Cf

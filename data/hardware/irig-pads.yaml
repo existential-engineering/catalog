@@ -1,0 +1,94 @@
+name: iRig Pads
+manufacturer: ik-multimedia
+primaryCategory: midi-controller
+categories:
+  - drum-machine
+website: https://www.ikmultimedia.com/products/irigpads
+prices:
+  - amount: 149.99
+    currency: USD
+  - amount: 1299.0
+    currency: CNY
+  - amount: 750.0
+    currency: BRL
+description: iRig Pads is an ultra-portable MIDI pad controller with 16
+  velocity-sensitive backlit pads, programmable knobs, buttons, slider, and
+  rotary encoder for beat-making and groove production on iPhone, iPad, Mac,
+  and PC.
+details: |-
+  iRig Pads features 16 velocity-sensitive backlit rubber pads that light in multiple colors depending on velocity and MIDI messages, plus two MIDI knobs, two pushbuttons, one slider, and a pushbutton rotary encoder -- all fully programmable. 16 user-programmable MIDI scenes provide instant recall of custom MIDI maps.
+
+  Fully MIDI class-compliant and designed for beat-making, loop cueing, and DJing. Pre-programmed MIDI scenes for SampleTank are included. The expression/sustain pedal input adds hands-free control. USB port supplies power when connected to iOS devices.
+
+  Includes SampleTank 4 SE for Mac/PC, SampleTank free for iPhone/iPad, and iRig Pads Editor for Mac/PC. In the box: iRig Pads unit, Lightning cable (60cm), and USB cable (60cm).
+specs: |-
+  - 16 velocity-sensitive pads with multicolor indicators
+  - 2 programmable MIDI knobs
+  - 2 programmable pushbuttons
+  - 1 programmable slider
+  - 1 pushbutton rotary encoder
+  - 16 user-programmable MIDI scenes
+  - Expression/sustain pedal input
+  - Fully MIDI class-compliant
+  - Bus powered (no batteries or AC adapter required)
+  - Connectivity: Lightning and USB cables included
+  - Dimensions: 190 mm (7.5") x 205 mm (8.1") x 23 mm (0.9")
+  - Weight: 547 g (1.2 lb)
+io:
+  - name: "Velocity-Sensitive Pad"
+    signalFlow: input
+    category: midi
+    type: pad
+    connection: integrated
+    maxConnections: 16
+    position: top
+  - name: MIDI Knob
+    signalFlow: input
+    category: midi
+    type: knob
+    connection: integrated
+    maxConnections: 2
+    position: top
+  - name: Pushbutton
+    signalFlow: input
+    category: midi
+    type: button
+    connection: integrated
+    maxConnections: 2
+    position: top
+  - name: Slider
+    signalFlow: input
+    category: midi
+    type: fader
+    connection: integrated
+    maxConnections: 1
+    position: top
+  - name: Pushbutton Rotary Encoder
+    signalFlow: input
+    category: midi
+    type: encoder
+    connection: integrated
+    maxConnections: 1
+    position: top
+  - name: Expression/Sustain Pedal Input
+    signalFlow: input
+    category: midi
+    type: trs
+    connection: rear
+    maxConnections: 1
+    position: rear
+  - name: USB
+    signalFlow: bidirectional
+    category: data
+    type: usb
+    connection: rear
+    maxConnections: 1
+    position: rear
+  - name: Lightning Connector
+    signalFlow: bidirectional
+    category: data
+    type: lightning
+    connection: rear
+    maxConnections: 1
+    position: rear
+id: 4eAcec7XyF7GTxTpKU2hq

@@ -1,0 +1,148 @@
+name: iRig Pro Quattro I/O
+manufacturer: ik-multimedia
+primaryCategory: audio-interface
+categories:
+  - field-recorder
+website: https://www.ikmultimedia.com/products/irigproquattroio/
+prices:
+  - amount: 349.99
+    currency: USD
+  - amount: 449.99
+    currency: USD
+description: "4-input professional field recording interface and mixer"
+details: |-
+  24-bit
+
+  24-bit
+
+  Sample Rates: 44100, 48000, 88200, 96000
+
+  48V switchable
+
+  Operation Modes: Multichannel, Stereo, Mono
+
+  Features: Built-in limiter with -12 dB safety mode, Direct monitoring with headphone output, Loopback and Loopback+ for app audio routing, Standalone mixer/preamp operation, MFi-certified for iOS devices, Onboard MEMS microphone (omnidirectional, DSP-controlled)
+
+  Compatibility: iPhone, iPad, Android, Mac, PC, Standalone
+
+  Power Options: 4x AA batteries, USB bus power, 9VDC external power supply
+
+  Battery Life: recording: 1.5 hours (Alkaline) / 3 hours (NiMH); playback: 2.5 hours (Alkaline) / 4 hours (NiMH)
+
+  Included Cables: Lightning to Mini-DIN (60 cm), USB-C to Mini-DIN (60 cm), USB-A to Mini-DIN (60 cm), 2.5mm TRS male to MIDI female adapter (10 cm)
+specs: |-
+  - micInputs1_2
+  - instrumentInputs1_2
+  - micInputs3_4
+  - lineOutputs
+  - headphoneOutput
+  - builtInMems
+  - dimensions
+  - weight
+io:
+  - name: XLR/TRS Combo Input 1
+    signalFlow: input
+    category: audio
+    type: combo
+    connection: "xlr-trs-combo"
+    maxConnections: 1
+    position: top
+  - name: XLR/TRS Combo Input 2
+    signalFlow: input
+    category: audio
+    type: combo
+    connection: "xlr-trs-combo"
+    maxConnections: 1
+    position: top
+  - name: XLR/TRS Combo Input 3
+    signalFlow: input
+    category: audio
+    type: combo
+    connection: "xlr-trs-combo"
+    maxConnections: 1
+    position: top
+  - name: XLR/TRS Combo Input 4
+    signalFlow: input
+    category: audio
+    type: combo
+    connection: "xlr-trs-combo"
+    maxConnections: 1
+    position: top
+  - name: RCA Line Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: side
+  - name: RCA Line Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: side
+  - name: 3.5mm TRS Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: "trs-3.5mm"
+    maxConnections: 1
+    position: side
+  - name: "Built-in MEMS Microphone"
+    signalFlow: input
+    category: audio
+    type: microphone
+    connection: "built-in"
+    maxConnections: 1
+    position: top
+  - name: Balanced XLR Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: side
+  - name: Balanced XLR Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: side
+  - name: Stereo Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: "trs-3.5mm"
+    maxConnections: 1
+    position: side
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: "trs-3.5mm"
+    maxConnections: 1
+    position: side
+  - name: MIDI Input
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: "trs-2.5mm"
+    maxConnections: 1
+    position: side
+  - name: MIDI Output
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: "trs-2.5mm"
+    maxConnections: 1
+    position: side
+  - name: Host Connection
+    signalFlow: bidirectional
+    category: data
+    type: usb
+    connection: "mini-din"
+    maxConnections: 1
+    position: side
+id: Fg6eYJg62NYAcy_QcWHp7

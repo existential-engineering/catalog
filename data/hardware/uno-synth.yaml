@@ -1,0 +1,74 @@
+name: UNO Synth
+manufacturer: ik-multimedia
+primaryCategory: synthesizer
+categories:
+  - analog
+  - keyboard
+  - sequencer
+website: https://www.ikmultimedia.com/products/unosynth
+prices:
+  - amount: 229.99
+    currency: USD
+description: "Ultra-portable true analog monophonic synthesizer with 2 VCOs, multimode
+  filter, 16-step sequencer, 10-mode arpeggiator, 27-note capacitive keyboard,
+  and battery-powered operation."
+details: |-
+  The UNO Synth is an ultra-portable monophonic analog synthesizer featuring 2 VCOs with variable shape waveforms (Triangle, Sawtooth, Pulse with PWM) plus a white noise generator. The 2-pole OTA-based resonant multimode filter supports LPF, HPF, and BPF modes with cutoff, resonance, envelope amount, and drive controls.
+
+  Modulation includes 2 envelopes (AD for filter, AR for amplitude, with full ADSR via MIDI CC or editor), an LFO with 7 shapes (Sine, Triangle, Square, Saw Up, Saw Down, Random, Sample & Hold), and modulation destinations for Amp, Pitch, Filter, PWM, and Waveshape. Built-in effects cover Delay (sync), Overdrive, Dive, Scoop, Vibrato, Wah, and Tremolo.
+
+  The 27-note multi-touch capacitive keyboard supports 13 selectable scales. The 16-step sequencer offers real-time and step recording with 3 directions and 20 automatable parameters per step, while the 10-mode arpeggiator provides a 4-octave range with hold control. 100 presets are available (20 factory, 80 user-writable). Runs on 4x AA batteries or Micro USB power.
+specs: |-
+  - True analog synthesis, monophonic
+  - 2 VCOs with variable shape (Triangle, Sawtooth, Pulse with PWM)
+  - White noise generator
+  - 2-pole OTA-based resonant multimode filter (LPF, HPF, BPF)
+  - 2 envelopes: AD (filter) + AR (amplitude); full ADSR via MIDI/editor
+  - LFO: 7 shapes (Sine, Triangle, Square, Saw Up, Saw Down, Random, S&H)
+  - Effects: delay (sync), overdrive, dive, scoop, vibrato, wah, tremolo
+  - 27-note multi-touch capacitive keyboard, 13 selectable scales
+  - 16-step sequencer with 20 automatable parameters per step
+  - 10-mode arpeggiator, 4-octave range
+  - 100 presets (20 factory, 80 user-writable)
+  - Audio out/in: 3.5 mm mini-jack stereo (mono summed)
+  - MIDI: 2x 2.5 mm mini-jack (IN/OUT), USB MIDI
+  - Dimensions: 25.6 x 15 x 5 cm (10.1" x 5.91" x 1.96")
+  - Weight: 400 g (excluding batteries)
+  - Power: 4x AA batteries (Alkaline or Ni-MH) or Micro USB
+io:
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: analog
+    connection: "3.5mm mini-jack stereo (mono summed)"
+    maxConnections: 1
+    position: rear
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: analog
+    connection: "3.5mm mini-jack stereo (mono summed)"
+    maxConnections: 1
+    position: rear
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: digital
+    connection: "2.5mm mini-jack (TRS to DIN cable included)"
+    maxConnections: 1
+    position: rear
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: digital
+    connection: "2.5mm mini-jack (TRS to DIN cable included)"
+    maxConnections: 1
+    position: rear
+  - name: USB
+    signalFlow: bidirectional
+    category: data
+    type: digital
+    connection: Micro USB
+    maxConnections: 1
+    position: rear
+id: C5XwQoEdJ50v7OLRbMNN5

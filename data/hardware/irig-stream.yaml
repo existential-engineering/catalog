@@ -1,0 +1,63 @@
+name: iRig Stream
+manufacturer: ik-multimedia
+primaryCategory: audio-interface
+website: https://www.ikmultimedia.com/products/irigstream
+prices:
+  - amount: 119.99
+    currency: USD
+description: "The first audio interface designed for sharing - enables
+  connection of instruments and mixers to mobile and desktop devices for
+  streaming across social platforms."
+details: |-
+  iRig Stream is designed for streaming and sharing audio from instruments and mixers to mobile and desktop devices. It features 24-bit/48 kHz A/D and D/A conversion with a mono/stereo switch and loopback mixing for combining device audio with live input.
+
+  Audio level LEDs provide visual monitoring of signal levels. The interface is USB bus-powered from the connected device, requiring no external power supply. Includes USB, USB-C, and Lightning cables for broad device compatibility.
+
+  Compatible with iPhone, iPad, iPod touch, Android, Mac, and PC. Includes iRig Recorder 3 LE software and a custom ASIO driver for low-latency Windows operation.
+specs: |-
+  - 24-bit A/D, 24-bit D/A conversion
+  - Sample rates: 44.1 kHz, 48 kHz
+  - Line input: 2x RCA (unbalanced), nominal -10 dBV
+  - Line input impedance: 16.5 kOhms
+  - Line input frequency response: 20 Hz - 20 kHz
+  - Headphone output power: 100 mW into 50 Ohms
+  - Headphone frequency response: 20 Hz - 20 kHz
+  - Headset/phones: 1/8" TRRS (CTIA wiring)
+  - 3x LED level indicators
+  - Dimensions: 105.5 x 44.5 x 24 mm (4.15" x 1.75" x 0.94")
+  - Weight: 65 g (2.29 oz)
+  - Power: USB bus powered or DC in (optional iRig PSU 3A)
+io:
+  - name: Line Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: rear
+  - name: Line Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: rear
+  - name: Headphone/Mic Combo
+    signalFlow: bidirectional
+    category: audio
+    type: headphone-mic
+    connection: "3.5mm-trrs"
+    maxConnections: 1
+    position: side
+  - name: USB Output
+    signalFlow: output
+    category: data
+    type: usb
+    connection: "usb-micro-b"
+    maxConnections: 1
+    position: rear
+links:
+  - type: product
+    title: iRig Stream Product Page
+    url: https://www.ikmultimedia.com/products/irigstream
+id: v5ak82VBNdiDftPrq5TmI

@@ -1,0 +1,82 @@
+name: UNO Drum
+manufacturer: ik-multimedia
+primaryCategory: drum-machine
+categories:
+  - analog
+  - digital
+  - sequencer
+  - percussion
+website: https://www.ikmultimedia.com/products/unodrum
+prices:
+  - amount: 269.99
+    currency: USD
+  - amount: 269.99
+    currency: EUR
+  - amount: 2198.0
+    currency: CNY
+  - amount: 1350.0
+    currency: BRL
+description: "Ultra-portable hybrid analog/PCM drum machine co-developed with
+  Soundmachines, featuring 6 analog voices, 54 PCM samples, 12 multi-touch pads,
+  64-step sequencer, and analog master effects."
+details: |-
+  The UNO Drum is an ultra-portable hybrid drum machine co-developed with Soundmachines, combining 6 true analog drum voices with 54 PCM samples across 12 elements for a total polyphony of 11 voices. The 12 multi-touch element pads with 2-level velocity provide an intuitive performance interface.
+
+  The 64-step sequencer supports per-step parameter automation for up to 8 parameters with divisions at 16th, 32nd, 3/4, and 6/8. The hands-on control surface includes 5 encoders (4 matrix, 1 global), 2 fixed knobs, 17 sequencer buttons, and 17 utility buttons. 100 preset kits and 100 preset patterns are included.
+
+  Analog master effects include a compressor, drive, random, stutter (10 types with adjustable amount), and roll (4 types, 4 fills). Powered by 4x AA batteries or Micro USB. The UNO Drum Editor for Mac/PC/iPad is available as both a standalone application and DAW plugin.
+specs: |-
+  - Analog/PCM hybrid synthesis
+  - 11-voice polyphony
+  - 6 analog drum voices + 54 PCM samples
+  - 12 total drum elements
+  - 100 preset kits, 100 preset patterns
+  - 64-step sequencer with real-time and step recording
+  - Up to 8 parameters per step automatable
+  - Step divisions: 16th, 32nd, 3/4, 6/8
+  - 12 multi-touch pads with 2-level velocity
+  - Effects: analog master compressor, analog drive, stutter (10 types), roll (4 types + 4 fills)
+  - Audio out: 3.5 mm stereo mini-jack
+  - Audio in: 3.5 mm stereo mini-jack
+  - MIDI: 2x 2.5 mm mini-jack (IN/OUT)
+  - USB: Micro USB (MIDI and power)
+  - Dimensions: 25.6 x 15 x 5 cm
+  - Weight: 400 g (excluding batteries)
+  - Power: 4x AA batteries (Alkaline or Ni-MH) or Micro USB
+io:
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: stereo
+    connection: "3.5mm mini-jack"
+    maxConnections: 1
+    position: rear
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: stereo
+    connection: "3.5mm mini-jack"
+    maxConnections: 1
+    position: rear
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: "2.5mm mini-jack (TRS to DIN adapter included)"
+    maxConnections: 1
+    position: rear
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: "2.5mm mini-jack (TRS to DIN adapter included)"
+    maxConnections: 1
+    position: rear
+  - name: USB
+    signalFlow: bidirectional
+    category: data
+    type: micro-usb
+    connection: Micro USB
+    maxConnections: 1
+    position: rear
+id: I2ZFaV3jd9eth3wl8jQl1

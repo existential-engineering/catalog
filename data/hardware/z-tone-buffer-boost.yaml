@@ -1,0 +1,76 @@
+name: "Z-TONE Buffer Boost"
+manufacturer: ik-multimedia
+primaryCategory: preamp
+categories:
+  - pedal
+  - di-box
+  - boost
+  - guitar
+website: https://www.ikmultimedia.com/products/ztonebufferboost
+prices:
+  - amount: 169.99
+    currency: USD
+description: "Preamp/DI pedal with advanced tone shaping that lets you shape the
+  sound of your instrument with the input circuits from IK Multimedia's
+  award-winning AXE I/O interface. Features active/passive pickup selector, PURE
+  and JFET channels, variable impedance Z-TONE control, output buffering,
+  adjustable boost circuit, balanced XLR output, and true bypass."
+details: |-
+  The Z-TONE Buffer Boost brings the acclaimed tone-shaping input circuits from IK's AXE I/O interface to a pedalboard-friendly format. It features two selectable preamp channels: PURE for transparent, uncolored signal and JFET for warmth and harmonic enhancement. The Z-TONE variable impedance control adjusts from 1 MOhm to 2.2 kOhms to optimize pickup response.
+
+  An active/passive pickup selector ensures correct signal handling, while the boost circuit provides adjustable gain from 0 dB to +10 dB. The output section includes a buffered unbalanced output, a link output, and a balanced XLR DI output with phantom power support and ground lift switch. True bypass switching preserves the dry signal when disengaged.
+
+  Controls include bypass and boost footswitches, boost, gain, and impedance knobs, and switches for pickup selection, preamp mode, and ground lift. Powered by 9V battery or phantom power from the XLR output. Includes AmpliTube 5 SE software.
+specs: |-
+  - Frequency response: 5 Hz - 30 kHz (-1 dB)
+  - Dynamic range: better than 114 dB(A)
+  - THD (balanced, 1 kHz, +4 dBm): 0.0033% (PURE), 0.2% (JFET)
+  - THD (unbalanced, 1 kHz, +4 dBm): 0.00055% (PURE), 0.2% (JFET)
+  - Phase deviation: 0 deg +/-10 deg from 20 Hz to 20 kHz
+  - Gain range: -8 dB to +8 dB
+  - Boost range: 0 dB to +10 dB
+  - Input impedance (PASSIVE): variable 1 MOhm to 2.2 kOhms
+  - Input impedance (ACTIVE): approx. 20 kOhms
+  - Output impedance: 56 Ohms (unbalanced), 600 Ohms (balanced)
+  - Max input level: +13 dBm (48V phantom), +9 dBm (9V battery)
+  - Current consumption: 6.5 mA from P48 source
+  - Dimensions: 108 x 120 x 58 mm (4.25" x 4.72" x 2.28")
+  - Weight: 600 g (21.2 oz)
+  - Power: 9V battery or +48V phantom power on balanced output
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: ts
+    connection: analog
+    maxConnections: 1
+    position: top
+  - name: Link Output
+    signalFlow: output
+    category: audio
+    type: ts
+    connection: analog
+    maxConnections: 1
+    position: top
+  - name: Unbalanced Output
+    signalFlow: output
+    category: audio
+    type: ts
+    connection: analog
+    maxConnections: 1
+    position: top
+  - name: Balanced XLR Output
+    signalFlow: output
+    category: audio
+    type: xlr
+    connection: analog
+    maxConnections: 1
+    position: top
+  - name: 9V DC Power Input
+    signalFlow: input
+    category: power
+    type: barrel
+    connection: power
+    maxConnections: 1
+    position: top
+id: GxVtrSaBdl3EO5YQrYWD7
