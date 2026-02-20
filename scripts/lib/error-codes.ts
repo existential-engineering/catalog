@@ -36,6 +36,7 @@ export enum ValidationErrorCode {
   E113_INVALID_IO_POSITION = "E113",
   E114_INVALID_CURRENCY = "E114",
   E115_INVALID_CONNECTOR_DETAIL = "E115",
+  E116_INVALID_LINK_TYPE = "E116",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
@@ -57,7 +58,6 @@ export enum ValidationErrorCode {
   // Advisory warnings (W1xx) — non-blocking
   W120_UNKNOWN_IO_TYPE = "W120",
   W121_UNKNOWN_IO_CONNECTION = "W121",
-  W122_UNKNOWN_LINK_TYPE = "W122",
 }
 
 // =============================================================================
@@ -176,6 +176,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     title: "Invalid connector detail",
     anchor: "e115-invalid-connector-detail",
   },
+  [ValidationErrorCode.E116_INVALID_LINK_TYPE]: {
+    title: "Invalid link type",
+    anchor: "e116-invalid-link-type",
+  },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",
     anchor: "e199-validation-error",
@@ -235,10 +239,6 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.W121_UNKNOWN_IO_CONNECTION]: {
     title: "Unknown IO connection",
     anchor: "w121-unknown-io-connection",
-  },
-  [ValidationErrorCode.W122_UNKNOWN_LINK_TYPE]: {
-    title: "Unknown link type",
-    anchor: "w122-unknown-link-type",
   },
 };
 
