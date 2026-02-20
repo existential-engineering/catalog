@@ -91,7 +91,7 @@ const KNOWN_IO_CONNECTIONS = new Set([
   ...Object.keys(schemaContext.ioConnectionAliases),
 ]);
 const IO_CONNECTOR_DETAILS = schemaContext.ioConnectorDetails;
-const KNOWN_LINK_TYPES = new Set(schemaContext.linkTypes);
+const VALID_LINK_TYPES = new Set(schemaContext.linkTypes);
 const VALID_CURRENCIES = new Set(schemaContext.currencies);
 
 // Configure marked for validation
@@ -152,6 +152,11 @@ function getErrorCodeFromZodIssue(issue: {
   // Currency errors
   if (message.includes("invalid currency")) {
     return ValidationErrorCode.E114_INVALID_CURRENCY;
+  }
+
+  // Link type errors
+  if (message.includes("invalid link type")) {
+    return ValidationErrorCode.E116_INVALID_LINK_TYPE;
   }
 
   // Platform errors
@@ -291,7 +296,26 @@ const VideoLinkSchema = z.object({
 });
 
 const LinkSchema = z.object({
-  type: z.string(),
+  type: z.string().check((ctx) => {
+    if (!VALID_LINK_TYPES.has(ctx.value)) {
+      let message = `Invalid link type '${ctx.value}'.`;
+      const suggestion = findClosestMatch(
+        ctx.value,
+        VALID_LINK_TYPES
+      );
+      if (suggestion) {
+        message += ` Did you mean '${suggestion}'?`;
+      }
+      message += ` Valid types: ${formatValidOptions(
+        VALID_LINK_TYPES
+      )}`;
+      ctx.issues.push({
+        code: "custom",
+        message,
+        input: ctx.value,
+      });
+    }
+  }),
   title: z.string().optional(),
   url: z.url(),
   description: z.string().optional(),
@@ -837,7 +861,6 @@ function detectSupersedeCycle(
 
 interface WarningContext {
   io?: Array<{ name: string; type: string; connection: string }>;
-  links?: Array<{ type: string; url: string }>;
 }
 
 /**
@@ -874,22 +897,6 @@ function collectWarnings(
           code: ValidationErrorCode.W121_UNKNOWN_IO_CONNECTION,
           message: `Unknown IO connection '${io.connection}' on '${io.name}'. Consider adding to schema/io-connections.yaml if valid.`,
           path: `io[${i}].connection`,
-          line: line ?? undefined,
-        });
-      }
-    }
-  }
-
-  // Check link types (advisory)
-  if (Array.isArray(data.links)) {
-    for (let i = 0; i < data.links.length; i++) {
-      const link = data.links[i];
-      if (link.type && !KNOWN_LINK_TYPES.has(link.type)) {
-        const line = getLineForPath(document, lineCounter, ["links", i, "type"]);
-        warnings.push({
-          code: ValidationErrorCode.W122_UNKNOWN_LINK_TYPE,
-          message: `Unknown link type '${link.type}'. Consider adding to schema/link-types.yaml if valid.`,
-          path: `links[${i}].type`,
           line: line ?? undefined,
         });
       }
