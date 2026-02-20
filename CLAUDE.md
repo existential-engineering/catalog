@@ -88,15 +88,15 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: top
+    position: Top
 ```
 
 **IO field validation** uses a two-tier system:
 
 - **Strict (errors, blocks CI):** `signalFlow`, `category`, `position`, `price.currency`
   - `signalFlow`: input, output, bidirectional
-  - `category`: audio, midi, digital, data, control, power, cv
-  - `position`: top, bottom, left, right, front, rear, side (aliases: Back→rear, capitalized→lowercase)
+  - `category`: audio, midi, digital, power
+  - `position`: Top, Bottom, Left, Right
   - `currency`: ISO 4217 codes (USD, EUR, GBP, etc.) — see `schema/currencies.yaml`
 - **Advisory (warnings, non-blocking):** `type`, `connection`, `link.type`
   - Known values listed in `schema/io-types.yaml`, `schema/io-connections.yaml`, `schema/link-types.yaml`
