@@ -248,6 +248,24 @@ The `currency` field in a price entry is not a valid ISO 4217 currency code.
 
 ---
 
+### E116: Invalid Link Type
+
+The `type` field in a link entry is not a valid value.
+
+**Valid types:** `affiliate`, `product`, `resource`, `review`, `support`
+
+**Common mistakes:**
+
+- `specs` -> use `resource`
+- `manual` -> use `resource`
+- `demo` -> use `product`
+- `trial` -> use `product`
+- `versions` -> use `product`
+
+**Fix:** Use one of the valid link types listed above.
+
+---
+
 ### E199: Validation Error
 
 A generic validation error that doesn't fall into a more specific category.
@@ -467,16 +485,6 @@ The `connection` field in an IO entry is not in the known connections list.
 **Known connections are listed in:** `schema/io-connections.yaml`
 
 **Fix:** If the value is valid, add it to `schema/io-connections.yaml`. If it's a mistake, correct it in the data file. Note: `connection` describes the physical connector (e.g., `1/4-inch`, `xlr`, `usb-c`), not the signal type.
-
----
-
-### W122: Unknown Link Type
-
-The `type` field in a link entry is not in the known link types list.
-
-**Known link types are listed in:** `schema/link-types.yaml`
-
-**Fix:** If the value is valid, add it to `schema/link-types.yaml`. If it's a mistake, correct it.
 
 ---
 
