@@ -78,9 +78,6 @@ const schemaContext = loadSchemaContext();
 const VALID_IO_SIGNAL_FLOWS = new Set(schemaContext.ioSignalFlows);
 const VALID_IO_CATEGORIES = new Set(schemaContext.ioCategories);
 const VALID_IO_POSITIONS = new Set(schemaContext.ioPositions);
-const IO_POSITION_ALIASES = new Map<string, string>(
-  Object.entries(schemaContext.ioPositionAliases)
-);
 const ALL_VALID_IO_POSITIONS = new Set([
   ...schemaContext.ioPositions,
   ...Object.keys(schemaContext.ioPositionAliases),
@@ -147,6 +144,11 @@ function getErrorCodeFromZodIssue(issue: {
   }
   if (message.includes("invalid io position")) {
     return ValidationErrorCode.E113_INVALID_IO_POSITION;
+  }
+
+  // Connector detail errors
+  if (message.includes("connectordetail")) {
+    return ValidationErrorCode.E115_INVALID_CONNECTOR_DETAIL;
   }
 
   // Currency errors
@@ -299,16 +301,11 @@ const LinkSchema = z.object({
   type: z.string().check((ctx) => {
     if (!VALID_LINK_TYPES.has(ctx.value)) {
       let message = `Invalid link type '${ctx.value}'.`;
-      const suggestion = findClosestMatch(
-        ctx.value,
-        VALID_LINK_TYPES
-      );
+      const suggestion = findClosestMatch(ctx.value, VALID_LINK_TYPES);
       if (suggestion) {
         message += ` Did you mean '${suggestion}'?`;
       }
-      message += ` Valid types: ${formatValidOptions(
-        VALID_LINK_TYPES
-      )}`;
+      message += ` Valid types: ${formatValidOptions(VALID_LINK_TYPES)}`;
       ctx.issues.push({
         code: "custom",
         message,
@@ -393,7 +390,9 @@ const IOSchema = z
   .check((ctx) => {
     const data = ctx.value;
     if (!data.connectorDetail || data.connectorDetail.length === 0) return;
-    const validValues = IO_CONNECTOR_DETAILS[data.connection];
+    const canonicalConnection =
+      schemaContext.ioConnectionAliases[data.connection] ?? data.connection;
+    const validValues = IO_CONNECTOR_DETAILS[canonicalConnection];
     if (!validValues) {
       ctx.issues.push({
         code: "custom",

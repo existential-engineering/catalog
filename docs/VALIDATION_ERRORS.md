@@ -248,6 +248,16 @@ The `currency` field in a price entry is not a valid ISO 4217 currency code.
 
 ---
 
+### E115: Invalid Connector Detail
+
+The `connectorDetail` field in an IO entry contains an invalid value for the given connection type, or `connectorDetail` is used on a connection type that doesn't support it.
+
+**Supported connections:** `1/4-inch`, `1/8-inch`, `2.5mm`, `barrel`, `xlr`
+
+**Fix:** Check `schema/io-connector-details.yaml` for valid values per connection type. Remove `connectorDetail` if the connection type doesn't support it.
+
+---
+
 ### E116: Invalid Link Type
 
 The `type` field in a link entry is not a valid value.
