@@ -1,0 +1,155 @@
+name: 4pre
+manufacturer: motu
+primaryCategory: audio-interface
+categories:
+  - midi-controller
+website: http://www.motu.com/products/motuaudio/4pre/audio-io.html
+description: The 4pre packs four mic inputs into a small half-rack form factor,
+  along with additional professional-grade audio connections.
+details: |-
+  The 4pre packs four mic inputs into a small half-rack form factor, along with additional professional-grade audio connections.
+
+  You can record and mix vocals plus guitar for two musicians simultaneously. Or mic a drum kit with overheads and close-ups. Or record lead and background vocals in one take.
+specs: |-
+  - 24-bit converters
+  - Sample rates - 44.1, 48, 88.2, 96khz
+  - Analog in - 4 x xlr/trs combo
+  - 2 x 1/4" trs phone (balanced/unbalanced)
+  - 2 x 1/4" hi-z guitar
+  - Analog outputs - 2 x 1/4" balanced trs main out
+  - 2 x 1/4" balanced trs line out
+  - 2 x 1/4" trs headphone
+  - Digital input - 1 x rca coaxial s/pdif
+  - Digital output - 1 x rca coaxial s/pdif
+  - Computer I/o - 1 x firewire 400 (type b)
+  - 1 x USB 2.0
+  - Sync in/out s/pdif
+  - Smpte time code (ltc)
+  - Headphone output 2 x 1/4" trs phone with independent volume control
+  - Phantom power individual +48v
+  - Front panel - 2 x 10-segment ladder leds main outs
+  - 4 x 5-segment leds inputs
+  - 2 x signal present leds s/pdif I/o
+  - 2 x signal present leds stereo line out
+  - 4 x leds 48v phantom power
+  - 4 x leds -20 db pad
+  - 5 x leds mix/trim (main, line, s/pdif, phone, trim)
+  - 1 x LED vol/pan
+  - Power requirements 9-18v dc, 5w, tip + or -
+  - Firewire bus power
+  - Dc power adapter included
+io:
+  - name: Analog Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    position: Left
+  - name: Analog Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    position: Left
+  - name: Analog Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    position: Left
+  - name: Analog Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    position: Left
+  - name: TRS Phone Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    position: Left
+  - name: TRS Phone Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    position: Left
+  - name: Hi-Z Guitar Input 1
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    position: Left
+  - name: Hi-Z Guitar Input 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    position: Left
+  - name: Main Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    position: Right
+  - name: Main Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    position: Right
+  - name: Line Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    position: Right
+  - name: Line Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    position: Right
+  - name: Headphone Output 1
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Bottom
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Bottom
+  - name: S/PDIF Digital Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    position: Left
+  - name: S/PDIF Digital Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    position: Right
+  - name: FireWire 400
+    signalFlow: input
+    category: digital
+    type: firewire
+    connection: firewire 400
+    position: Top
+  - name: USB 2.0
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    position: Top
+links:
+  - type: product
+    url: http://www.motu.com/products/motuaudio/4pre/audio-io.html
+    title: 4pre
