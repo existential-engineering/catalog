@@ -225,6 +225,13 @@ ${context.locales.map((l) => `| \`${l.code}\` | ${l.name} | ${l.nativeName} |`).
 - \`platforms\` - Array of supported platforms
 - \`identifiers\` - Bundle IDs per format (e.g., \`au: com.xferrecords.Serum\`)
 
+### Content (Software subtype)
+Content entries (presets, sample packs, expansions) are software entries where \`primaryCategory\` is a content type (e.g., \`preset\`, \`preset-pack\`, \`sample-pack\`, \`drum-kit\`, \`loop-pack\`, \`sound-library\`).
+
+- \`platforms\`, \`formats\`, \`identifiers\` are optional for content entries
+- \`compatibleWith\` - Optional array of software slugs for host products (e.g., \`["serum", "omnisphere-2"]\`)
+- Advisory warning W123 fires if a \`compatibleWith\` slug doesn't match an existing software file
+
 ### Hardware
 - \`slug\` - URL-safe identifier
 - \`name\` - Display name

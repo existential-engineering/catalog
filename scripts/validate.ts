@@ -529,6 +529,7 @@ const SoftwareSchema = z
       }),
     platforms: createPlatformArrayValidator(),
     identifiers: z.record(z.string(), z.string()).optional(),
+    compatibleWith: z.array(z.string()).optional(),
     website: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
@@ -860,6 +861,7 @@ function detectSupersedeCycle(
 
 interface WarningContext {
   io?: Array<{ name: string; type: string; connection: string }>;
+  compatibleWith?: string[];
 }
 
 /**
@@ -870,7 +872,8 @@ function collectWarnings(
   filePath: string,
   data: WarningContext,
   document: ReturnType<typeof loadYamlFileWithPositions>["document"],
-  lineCounter: ReturnType<typeof loadYamlFileWithPositions>["lineCounter"]
+  lineCounter: ReturnType<typeof loadYamlFileWithPositions>["lineCounter"],
+  allSoftwareSlugs?: Set<string>
 ): ValidationWarning | null {
   const warnings: ValidationWarningDetail[] = [];
   const relativeFile = path.relative(process.cwd(), filePath);
@@ -896,6 +899,22 @@ function collectWarnings(
           code: ValidationErrorCode.W121_UNKNOWN_IO_CONNECTION,
           message: `Unknown IO connection '${io.connection}' on '${io.name}'. Consider adding to schema/io-connections.yaml if valid.`,
           path: `io[${i}].connection`,
+          line: line ?? undefined,
+        });
+      }
+    }
+  }
+
+  // Check compatibleWith references (advisory)
+  if (Array.isArray(data.compatibleWith) && allSoftwareSlugs) {
+    for (let i = 0; i < data.compatibleWith.length; i++) {
+      const slug = data.compatibleWith[i];
+      if (!allSoftwareSlugs.has(slug)) {
+        const line = getLineForPath(document, lineCounter, ["compatibleWith", i]);
+        warnings.push({
+          code: ValidationErrorCode.W123_UNKNOWN_COMPATIBLE_WITH,
+          message: `Unknown compatibleWith reference '${slug}'. No matching software file found.`,
+          path: `compatibleWith[${i}]`,
           line: line ?? undefined,
         });
       }
@@ -941,6 +960,11 @@ function validate(): ValidationResult {
   for (const file of manufacturerFiles) {
     const slug = path.basename(file, path.extname(file));
     allManufacturers.add(slug);
+  }
+
+  const allSoftwareSlugs = new Set<string>();
+  for (const file of softwareFiles) {
+    allSoftwareSlugs.add(path.basename(file, path.extname(file)));
   }
 
   // Collect software IDs and supersedes relationships
@@ -999,7 +1023,13 @@ function validate(): ValidationResult {
       // Collect advisory warnings for valid files
       try {
         const { data, document, lineCounter } = loadYamlFileWithPositions(file);
-        const w = collectWarnings(file, data as WarningContext, document, lineCounter);
+        const w = collectWarnings(
+          file,
+          data as WarningContext,
+          document,
+          lineCounter,
+          allSoftwareSlugs
+        );
         if (w) warnings.push(w);
       } catch {
         // Ignore parse errors - they're caught by YAML validation

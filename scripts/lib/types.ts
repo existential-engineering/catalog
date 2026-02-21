@@ -119,6 +119,8 @@ export interface Software {
   secondaryCategory?: string;
   /** Slug of the software entry this supersedes (for major version upgrades) */
   supersedes?: string;
+  /** Software slugs for host products this content is compatible with */
+  compatibleWith?: string[];
   searchTerms?: string[];
   description?: string;
   details?: string | string[];

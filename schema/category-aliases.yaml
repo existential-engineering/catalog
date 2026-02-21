@@ -10,15 +10,267 @@
 # During build, aliases are normalized to canonical form in the database.
 
 aliases:
-  # Effects
+  # ===========================================================================
+  # Effects & Processing
+  # ===========================================================================
   effects: effect
   fx: effect
+  audio-effect: effect
+  audio-processing: effect
+  multi-effects: multi-effect
 
-  # EQ
+  # EQ & Tone
   eq: equalizer
+  graphic-equalizer: equalizer
+  dynamic-eq: equalizer
+  resonance-suppressor: equalizer
+
+  # Dynamics
+  saturator: saturation
+  maximizer: limiter
+  bitcrusher: bit-crusher
+  bus-compressor: compressor
+  gate-expander: expander
+  dynamic-processor: dynamics
+  clipper: distortion
+  transient-designer: transient-shaper
+
+  # Amp Simulation
+  amp-simulator: amp-sim
+  amplifier-simulator: amp-sim
+  amp-modeling: amp-sim
+  amp-plugin: amp-sim
+  guitar-amp-simulator: amp-sim
+  guitar-amplifier-simulator: amp-sim
+  guitar-amplifier-emulation: amp-sim
+  bass-amp-simulator: amp-sim
+  bass-amplifier-simulator: amp-sim
+
+  # Guitar
+  guitar-plugin: effect
+  guitar-effect: effect
+  guitar-processor: effect
+  guitar-library: sound-library
+  guitar-loops: loop-pack
+  bass-processor: effect
+  bass-amp: bass-amplifier
+
+  # Stereo & Spatial
+  stereo-imaging: stereo-widener
+  imaging: stereo-widener
+  widener: stereo-widener
+  panner: panning
+  ambisonics: immersive
+  ambisonic: immersive
+  immersive-audio: immersive
 
   # Pitch
   pitchshifting: pitch-shifter
 
+  # Modulation
+  rotary-speaker: rotary
+
+  # Restoration
+  noise-removal: noise-reduction
+  noise-generator: noise
+  microphone-leakage-suppression: noise-reduction
+  speech-separation: stem-separator
+  voice-separation: stem-separator
+
+  # Mastering
+  mastering-plugin: mastering
+  loudness-controller: loudness
+  loudness-meter: metering
+  spectrum-analyzer: analyzer
+
+  # ===========================================================================
+  # Synthesis & Instruments
+  # ===========================================================================
+  modular-synthesizer: modular
+  fm-synthesis: fm
+  instrument: virtual-instrument
+  sound-module: virtual-instrument
+  bass-synth: synthesizer
+  synth-bass: synthesizer
+  bassline: synthesizer
+  waveform-generator: synthesizer
+  string-synthesizer: synthesizer
+  soundscape-generator: synthesizer
+  drum-synth: drum-machine
+  drum-synthesizer: drum-machine
+  cinematic-instrument: cinematic
+  keys: keyboard
+  string: strings
+  ensemble: orchestral
+  ethnic: world
+
+  # ===========================================================================
+  # Content & Assets
+  # ===========================================================================
+  soundbank: preset-pack
+  sound-bank: preset-pack
+  soundset: preset-pack
+  sound-set: preset-pack
+  preset-library: preset-pack
+  expansion-pack: preset-pack
+  expansion: preset-pack
+  integration-pack: preset-pack
+  preset-bundle: preset-pack
+  preset-bank: preset-pack
+  soundware: preset-pack
+  voice-bank: preset-pack
+  production-pack: sample-pack
+  construction-kit: sample-pack
+  sample-kit: sample-pack
+  presets: preset
+  patch: preset
+  patch-bank: preset-pack
+  synthesizer-preset: preset
+  controller-mapping: preset
+  project-template: preset
+  sound-pack: sample-pack
+  samples: sample-pack
+  sample: sample-pack
+  sample-library: sound-library
+  loop: loop-pack
+  loops: loop-pack
+  loop-collection: loop-pack
+  loop-module: loop-pack
+  drum-loop: loop-pack
+  drum-loops: loop-pack
+  drum-samples: sample-pack
+  drum-library: sound-library
+  vocal-library: sound-library
+  orchestral-library: sound-library
+  string-library: sound-library
+  library: sound-library
+  instrument-collection: suite
+  collection: suite
+  bundle: suite
+  orchestral-plugin: orchestral
+  orchestral-strings: strings
+
+  # Ableton-specific rack types
+  drum-kit: drum-sample-pack
+  drum-rack: drum-sample-pack
+  instrument-rack: preset
+  effect-rack: preset
+  rack: preset
+
+  # Kontakt-specific
+  kontakt-instrument: virtual-instrument
+  kontakt-library: sound-library
+  kontakt: sampler
+  kontakt-design-tool: utility
+
+  # ===========================================================================
+  # Drums
+  # ===========================================================================
+  drum: drums
+  drum-enhancer: effect
+  drum-replacement: utility
+
+  # ===========================================================================
+  # Utility & Tools
+  # ===========================================================================
+  plugin-host: utility
+  toolkit: utility
+  designer-toolkit: utility
+  audio-tool: utility
+  audio-analysis: analyzer
+  audio-routing: routing
+  audio-management: utility
+  audio-watermark: utility
+  watermarking: utility
+  batch-processor: utility
+  time-alignment: utility
+  timing: utility
+  librarian: utility
+  manager-application: utility
+  preset-browser: utility
+  headphone-calibrator: utility
+  dialogue-tool: utility
+  adr: utility
+  live-coding: utility
+  music-theory: utility
+  multitrack: utility
+  mixing: utility
+  summing: summing-mixer
+  sound-design: creative
+  microphone-modeler: modeling
+  simulator: emulation
+  console-emulation: channel-strip
+  spectral-editor: spectral
+  sound-editor: audio-editor
+  dialogue-editor: audio-editor
+  adr-editor: audio-editor
+  editor: audio-editor
+  vst-design-tool: utility
+  loop-generator: sequencer
+
+  # ===========================================================================
+  # Genre tags → nearest canonical genre
+  # ===========================================================================
+  atmosphere: ambient
+  atmospheric: ambient
+  ambience: ambient
+  dark-ambient: ambient
+  soundscape: ambient
+  8-bit: lo-fi
+  downtempo: electronic
+  dubstep: electronic
+  hip-hop: electronic
+  psytrance: electronic
+  trap: electronic
+  trance: electronic
+  melodic-techno: electronic
+  techno: electronic
+  drum-and-bass: electronic
+  trailer-toolkit: cinematic
+
+  # ===========================================================================
+  # Platform/format names misused as categories → plugin
+  # ===========================================================================
+  ableton-live: plugin
+  ableton: plugin
+  audio-unit: plugin
+  aax: plugin
+  vst3: plugin
+  lv2: plugin
+  rack-extension: plugin
+  pro-tools: plugin
+  pro-tools-plugin: plugin
+
+  # ===========================================================================
+  # Standalone & Apps
+  # ===========================================================================
+  app: standalone
+  mobile-app: standalone
+
+  # Ambisonics tools
+  decoder: utility
+  encoder: utility
+  audio: utility
+
+  # ===========================================================================
+  # Misc
+  # ===========================================================================
+  breath-controller: wind-controller
+  motion-controller: midi-controller
+  controller: midi-controller
+  midi-interface: midi
+  skin: other
+  theme: other
+  gui-kit: other
+  game: other
+  music-service: other
+  distribution: other
+  video-editor: other
+  education: utility
+  tutorial: utility
+
+  # ===========================================================================
   # Hardware
+  # ===========================================================================
   headphone: headphones
+  guitar-amp: guitar-amplifier

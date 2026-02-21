@@ -266,6 +266,10 @@ function buildDatabase(version: string): void {
     INSERT INTO software_videos_localized (software_id, locale, video_id, provider, title, description)
     VALUES (?, ?, ?, ?, ?, ?)
   `);
+  const insertCompatibility = db.prepare(`
+    INSERT INTO software_compatibility (software_id, compatible_with_slug)
+    VALUES (?, ?)
+  `);
 
   for (const file of softwareFiles) {
     const data = loadYamlFile<Software>(file);
@@ -330,6 +334,13 @@ function buildDatabase(version: string): void {
     if (data.platforms) {
       for (const platform of data.platforms) {
         insertPlatform.run(id, platform);
+      }
+    }
+
+    // Insert compatibility references
+    if (data.compatibleWith) {
+      for (const slug of data.compatibleWith) {
+        insertCompatibility.run(id, slug);
       }
     }
 

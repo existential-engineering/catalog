@@ -58,6 +58,7 @@ export enum ValidationErrorCode {
   // Advisory warnings (W1xx) — non-blocking
   W120_UNKNOWN_IO_TYPE = "W120",
   W121_UNKNOWN_IO_CONNECTION = "W121",
+  W123_UNKNOWN_COMPATIBLE_WITH = "W123",
 }
 
 // =============================================================================
@@ -239,6 +240,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.W121_UNKNOWN_IO_CONNECTION]: {
     title: "Unknown IO connection",
     anchor: "w121-unknown-io-connection",
+  },
+  [ValidationErrorCode.W123_UNKNOWN_COMPATIBLE_WITH]: {
+    title: "Unknown compatibleWith reference",
+    anchor: "w123-unknown-compatible-with",
   },
 };
 
