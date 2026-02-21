@@ -1,0 +1,115 @@
+name: TONEX Pedal
+manufacturer: ik-multimedia
+primaryCategory: pedal
+categories:
+  - amp-sim
+  - modeling
+  - guitar
+website: https://www.ikmultimedia.com/products/tonexpedal
+prices:
+  - amount: 429.99
+    currency: USD
+description: "AmpliTube TONEX - a complete ecosystem based on new AI Machine
+  Modeling technology that lets you experience thousands of ultra-realistic Tone
+  Models of guitar amps and pedals."
+details: |-
+  The TONEX Pedal brings IK Multimedia's AI Machine Modeling technology to the pedalboard in a road-ready anodized aluminum chassis. It stores 150 presets and provides access to over 1,250 premium tone models, with 24-bit/192 kHz converters delivering 123 dB of dynamic range and a frequency response of 5 Hz to 24 kHz.
+
+  The pedal features 3 footswitches, 3 encoders, and an 8-character 16-segment LCD for intuitive control. Built-in effects include noise gate, compressor, 3-band EQ, digital delay, tape delay, chorus, flanger, tremolo, phaser, rotary, spring reverb, room reverb, and plate reverb. VIR multi-impulse response cabinet emulation with a custom IR loader provides realistic cab simulation.
+
+  Included software comprises TONEX MAX, TONEX Editor, and AmpliTube 5.
+specs: |-
+  - Ultra-low noise 24-bit/192 kHz converters
+  - Frequency response: 5 Hz - 24 kHz
+  - Dynamic range: 123 dB
+  - USB audio interface: 24-bit/44.1 kHz
+  - 150 presets (50 banks x 3 slots)
+  - 1,250+ premium tone models included
+  - 3 footswitches, 3 encoders, 5 parameter knobs
+  - 8-character 16-segment LCD display
+  - Effects: noise gate, compressor, 3-band EQ, 2 delays, 5 modulation types, 6 stereo reverbs
+  - VIR multi-IR cabinet emulation with custom IR loader
+  - MIDI In/Out (5-pin DIN)
+  - Expression/switch pedal input
+  - Dimensions: 176 x 142 x 55 mm (6.92" x 5.59" x 2.16")
+  - Weight: 906 g (1.98 lbs)
+  - Power: 9V DC, 320 mA center-negative (included)
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Right
+  - name: Output Left/Mono
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Left
+  - name: Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Left
+  - name: External Control
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Top
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: "5-pin din"
+    maxConnections: 1
+    position: Top
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: "5-pin din"
+    maxConnections: 1
+    position: Top
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top
+links:
+  - type: product
+    title: Product Page
+    url: https://www.ikmultimedia.com/products/tonexpedal
+id: 7jXdlNI0nLwv2h3hw6vub

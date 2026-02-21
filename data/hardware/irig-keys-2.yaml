@@ -1,0 +1,77 @@
+name: iRig Keys 2
+manufacturer: ik-multimedia
+primaryCategory: midi-controller
+categories:
+  - keyboard
+website: https://www.ikmultimedia.com/products/irigkeys2
+prices:
+  - amount: 129.99
+    currency: USD
+description: "Universal MIDI keyboard controller with 37 velocity-sensitive
+  mini-keys, full MIDI I/O, and multi-platform connectivity for iPhone, iPad,
+  Android, Mac and PC."
+details: |-
+  The iRig Keys 2 is a universal MIDI keyboard controller featuring 37 velocity-sensitive mini-keys with multi-platform connectivity via included Lightning, USB-C, and USB-A cables. It works with iPhone, iPad, Android, Mac, and PC right out of the box, and also functions in standalone mode with a USB power supply or battery pack.
+
+  The control surface includes pitch bend and modulation wheels, 4+4 assignable knobs, an assignable data push encoder, octave up/down buttons, program up/down buttons, and audio volume control. The SET button stores up to 4 configurable setup memories for quick recall.
+
+  MIDI I/O is available via 2.5mm TRS (adapter included), with a headphone output and sustain pedal input. Included software comprises SampleTank 4 SE and SampleTank FREE for iOS.
+io:
+  - name: "USB-A Host"
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Top
+  - name: "USB-C Host"
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Top
+  - name: Lightning Host
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: lightning
+    maxConnections: 1
+    position: Top
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Top
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Top
+  - name: Pedal Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 2.5mm
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+id: qFbgHRKwKfs981Ph9_zhU

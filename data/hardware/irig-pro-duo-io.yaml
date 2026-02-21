@@ -1,0 +1,87 @@
+name: iRig Pro Duo I/O
+manufacturer: ik-multimedia
+primaryCategory: audio-interface
+website: https://www.ikmultimedia.com/products/irigproduoio
+prices:
+  - amount: 229.99
+    currency: USD
+description: "Portable 2-channel audio and MIDI interface with 48V phantom power,
+  multi-platform connectivity for iPhone, iPad, Android, Mac and PC, and flexible
+  power options including USB bus power and AA batteries."
+details: |-
+  The iRig Pro Duo I/O is a portable 2-channel audio and MIDI interface designed for mobile recording and streaming. It features two XLR/TRS combo inputs with 48V phantom power and balanced 1/4" TRS outputs, making it suitable for recording vocals, instruments, and podcasts on the go.
+
+  The interface supports multiple power options including USB bus power and 2x AA batteries for truly portable operation. Multi-platform connectivity covers iPhone, iPad, Android, Mac, and PC via included Lightning, USB-C, and USB to Mini-DIN cables. MIDI I/O is available through 2.5mm TRS connections with included 5-pin DIN adapters.
+
+  Included software comprises AmpliTube 5 SE and TONEX SE.
+specs: |-
+  - 2-channel audio interface with XLR/TRS combo inputs
+  - 48V phantom power
+  - Balanced 1/4" TRS outputs
+  - 1/4" TRS headphone output
+  - MIDI In/Out via 2.5mm TRS (adapters included)
+  - USB bus powered or 2x AA battery operation
+  - Compatible with iPhone, iPad, Android, Mac, and PC
+  - Includes Lightning, USB-C, and USB to Mini-DIN cables
+  - Includes AmpliTube 5 SE and TONEX SE
+io:
+  - name: Combo Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Top
+  - name: Combo Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Top
+  - name: Balanced Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Top
+  - name: Balanced Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Top
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Top
+id: YTR6M-z-mX7FuueMLmA7k

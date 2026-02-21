@@ -1,0 +1,60 @@
+name: iRig Stream Mic USB
+manufacturer: ik-multimedia
+primaryCategory: usb-microphone
+categories:
+  - microphone
+  - condenser
+website: https://www.ikmultimedia.com/products/irigstreammicusb
+prices:
+  - amount: 99.99
+    currency: USD
+description: "USB microphone and stereo audio interface that combines a
+  studio-quality cardioid microphone and 16-bit, 48 kHz audio interface for Mac
+  and PC into a single ultra-portable solution for music and content creation."
+details: |-
+  The iRig Stream Mic USB is a USB microphone and stereo audio interface combining a studio-quality condenser electret capsule with a 0.55" gold-sputtered diaphragm in a cardioid polar pattern. It provides 16-bit audio at 44.1 or 48 kHz with 2-in/2-out capability via USB-C bus power.
+
+  Front-panel controls include a main level knob, microphone mute button, monitor mix control, microphone gain control, headphones volume control, loopback switch, and high-pass filter switch (150 Hz). An LED meter provides visual level monitoring, while direct monitoring and Loopback enable low-latency playback and app audio routing.
+
+  A 1/8" TRS auxiliary input accepts external audio sources, and a 1/8" TRS headphone output provides monitoring. The standard 1/4"-20 female thread mounts to any microphone stand or boom arm.
+specs: |-
+  - 16-bit A/D, 16-bit D/A conversion
+  - Sample rates: 44.1 kHz, 48 kHz
+  - Microphone frequency response: 20 Hz - 20 kHz
+  - Maximum SPL: 115 dB
+  - High-pass filter: 150 Hz
+  - Headphone output: 1/8" (3.5 mm) TRS, 7 mW/channel (32 Ohm load)
+  - Headphone frequency response: 20 Hz - 20 kHz
+  - Headphone dynamic range: 90 dB(A)
+  - Auxiliary input: 1/8" (3.5 mm) TRS, nominal -10 dBV
+  - Auxiliary input frequency response: 10 Hz - 20 kHz
+  - Dimensions: 55 x 136 x 38 mm (2.16" x 5.35" x 1.5")
+  - Weight: 435 g
+  - Power: USB bus powered (USB-C)
+io:
+  - name: "USB-C"
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Bottom
+  - name: Aux Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Bottom
+id: bpf6gtSrahlcAoAgdirFe

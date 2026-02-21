@@ -1,0 +1,71 @@
+name: iRig HD X
+manufacturer: ik-multimedia
+primaryCategory: audio-interface
+categories:
+  - guitar
+website: https://www.ikmultimedia.com/products/irighdx
+prices:
+  - amount: 119.99
+    currency: USD
+  - amount: 119.99
+    currency: EUR
+  - amount: 600.0
+    currency: BRL
+  - amount: 829.98
+    currency: CNY
+description: "Compact, portable guitar interface with 24-bit/96 kHz audio
+  quality, USB-C connectivity, and included amp modeling software for mobile and
+  desktop use."
+details: |-
+  The iRig HD X is a compact guitar and bass interface with 24-bit resolution and sample rates up to 96 kHz, delivering 115 dB(A) dynamic range with a 1 MOhm Hi-Z input. The single multi-function knob with LED ring provides intuitive gain control, and an LED input level indicator shows signal status at a glance.
+
+  Features include an ultra-fast onboard tuner (press-and-hold activation), FX/THRU switching for amp output routing, direct monitoring, and Loopback+ virtual effects loop. The 1/4" instrument input, 1/8" headphone/monitor output, and 1/4" amp output cover all essential connections.
+
+  USB-C connectivity works with iPad, Mac, PC, and iPhone 15+. Included cables cover USB-C to USB-C and USB-C to Lightning. Software includes AmpliTube 5 SE (80 gear models) and TONEX SE (200 Premium Tone Models) for desktop, plus TONEX SE and AmpliTube for iPhone/iPad.
+specs: |-
+  - 24-bit resolution, sample rates up to 96 kHz
+  - 115 dB(A) dynamic range
+  - 1 MOhm Hi-Z instrument input, max input level +9 dBu
+  - Frequency response: 20 Hz - 20 kHz (±3 dB at 96 kHz)
+  - Headphone output: 97 dB(A) dynamic range, ~8 mW into 32 Ohm
+  - Amp output: 95 dB(A) dynamic range
+  - Built-in tuner, FX/THRU switching, direct monitoring
+  - Loopback+ virtual effects loop
+  - USB-C bus-powered
+  - Dimensions: 99 x 42 x 25 mm (3.9" x 1.65" x 0.98")
+  - Weight: 54 g (1.9 oz)
+  - Includes AmpliTube 5 SE and TONEX SE
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+  - name: Headphone/Monitor Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Amp Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Bottom
+  - name: "USB-C Host"
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+id: LABZ6NMj5XCPdu3p1d432

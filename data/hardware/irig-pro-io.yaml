@@ -1,0 +1,69 @@
+name: iRig Pro I/O
+manufacturer: ik-multimedia
+primaryCategory: audio-interface
+website: https://www.ikmultimedia.com/products/irigproio
+prices:
+  - amount: 169.99
+    currency: USD
+  - amount: 1298.0
+    currency: CNY
+description: "Universal ultra-compact audio/MIDI interface for iPhone, iPad,
+  Android and Mac/PC"
+details: |-
+  The iRig Pro I/O is a pocket-sized audio and MIDI interface with a single XLR/TRS combo input supporting mic, instrument, and line sources with 48V phantom power. It records at 24-bit/96 kHz resolution and connects to iOS, Mac, PC, and Android devices.
+
+  Flexible power options include USB bus power and 2x AA batteries for portable operation. MIDI I/O is available via 2.5mm connections with included 5-pin DIN adapters, and a Velcro strip enables mic stand mounting.
+
+  The extensive included software bundle covers AmpliTube 5 SE, TONEX SE, T-RackS 5 SE for desktop, plus AmpliTube, VocaLive, Mic Room, iRig Recorder Pro, SampleTank, Syntronik Pro-V, and Cubasis LE for iOS.
+specs: |-
+  - 24-bit/96 kHz audio resolution
+  - XLR/TRS combo input with 48V phantom power
+  - 3.5mm TRS headphone output
+  - MIDI In/Out via 2.5mm (adapters included)
+  - USB bus powered or 2x AA battery operation
+  - Compatible with iOS, Mac, PC, and Android
+  - MFi certified Lightning connection
+  - Extensive software bundle included
+io:
+  - name: XLR/TRS Combo Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: "combo jack"
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out/Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 2.5mm
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Right
+  - name: Device Connector
+    signalFlow: bidirectional
+    category: digital
+    type: midi
+    connection: "mini-din"
+    maxConnections: 1
+    position: Bottom
+id: f0IaLrR5o6La5zMHjYeOm

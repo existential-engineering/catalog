@@ -91,6 +91,20 @@ io:
     position: Top
 ```
 
+**IO field validation** uses a two-tier system:
+
+- **Strict (errors, blocks CI):** `signalFlow`, `category`, `position`, `price.currency`
+  - `signalFlow`: input, output, bidirectional
+  - `category`: audio, midi, digital, power
+  - `position`: Top, Bottom, Left, Right
+  - `currency`: ISO 4217 codes (USD, EUR, GBP, etc.) — see `schema/currencies.yaml`
+- **Advisory (warnings, non-blocking):** `type`, `connection`, `link.type`
+  - Known values listed in `schema/io-types.yaml`, `schema/io-connections.yaml`, `schema/link-types.yaml`
+  - Unknown values produce warnings in `pnpm validate` output
+  - Add new values to schema files via PR when they're confirmed valid
+
+**Semantic distinction:** `type` describes the signal characteristic (line, instrument, headphone, midi, usb, expression). `connection` describes the physical connector (1/4-inch, xlr, usb-c, 5-pin din). Don't swap them.
+
 ## Product Lineage
 
 Use `supersedes` to link major product versions (e.g., Pro-C 3 supersedes Pro-C 2). The value must be the **ID** of the older product:

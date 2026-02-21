@@ -67,6 +67,7 @@ export interface IO {
   category: string;
   type: string;
   connection: string;
+  connectorDetail?: string[];
   maxConnections?: number;
   position?: string;
   columnPosition?: number;
@@ -235,9 +236,26 @@ export interface ValidationError {
   details?: ValidationErrorDetail[];
 }
 
+export interface ValidationWarning {
+  file: string;
+  warnings: ValidationWarningDetail[];
+}
+
+export interface ValidationWarningDetail {
+  /** Warning code (W-prefixed) */
+  code: string;
+  /** Human-readable warning message */
+  message: string;
+  /** Path to the field (e.g., "io[0].type") */
+  path: string;
+  /** Line number in the YAML file (1-indexed) */
+  line?: number;
+}
+
 export interface ValidationResult {
   valid: boolean;
   errors: ValidationError[];
+  warnings: ValidationWarning[];
   stats: {
     manufacturers: number;
     software: number;

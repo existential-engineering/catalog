@@ -1,0 +1,125 @@
+name: iRig Stomp I/O
+manufacturer: ik-multimedia
+primaryCategory: audio-interface
+categories:
+  - midi-controller
+  - pedal
+website: https://www.ikmultimedia.com/products/irigstompio
+description: "USB pedalboard controller and audio interface with 4 stomp switches,
+  built-in expression pedal, Class A preamp with 48V phantom power, and integrated
+  bay for iPhone, iPad, or Microsoft Surface."
+details: |-
+  The iRig Stomp I/O is a floor-based audio interface and MIDI controller that integrates 4 stomp switches with a built-in expression pedal (optical switch) in a rugged metal chassis. It features a Class A preamp with selectable Hi-Z/Mic/Line input and 48V phantom power, making it versatile for guitar, bass, vocals, and line sources.
+
+  An integrated device bay holds an iPhone, iPad, or Microsoft Surface for a complete pedalboard rig. The interface charges connected devices while in use (MFi certified). Controls include input gain and output volume knobs with dual LED VU meters and LED indicators for visual feedback.
+
+  The unit connects to iOS devices via Mini-DIN to Lightning and to computers via USB-B. MIDI In/Out via 5-pin DIN and two external switch/pedal controller inputs expand connectivity. Included software comprises AmpliTube 5 SE and TONEX SE.
+specs: |-
+  - Class A preamp with Hi-Z/Mic/Line selectable input
+  - 48V phantom power
+  - 4 stomp switches with LED indicators
+  - Built-in expression pedal with optical switch
+  - Balanced stereo 1/4" TRS outputs
+  - 1/4" TRS headphone output
+  - MIDI In/Out via 5-pin DIN
+  - 2 external switch/pedal controller inputs
+  - Integrated device bay for iPhone/iPad/Surface
+  - MFi certified with device charging
+  - USB-B and Mini-DIN connectivity
+  - Metal chassis
+io:
+  - name: Combo Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Top
+  - name: Balanced Stereo Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Top
+  - name: Balanced Stereo Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Top
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: "usb-b"
+    maxConnections: 1
+    position: Top
+  - name: iOS Device Connection
+    signalFlow: bidirectional
+    category: digital
+    type: midi
+    connection: "mini-din"
+    maxConnections: 1
+    position: Top
+  - name: Switch/Pedal Controller Input 1
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+  - name: Switch/Pedal Controller Input 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    connectorDetail:
+      - center-negative
+      - 9V
+    maxConnections: 1
+    position: Top
+links:
+  - type: product
+    title: Product Page
+    url: https://www.ikmultimedia.com/products/irigstompio
+id: iyxNwR2uDfRJOjI60ACdR

@@ -1,0 +1,75 @@
+name: TONEX Capture
+manufacturer: ik-multimedia
+primaryCategory: audio-interface
+categories:
+  - amp-sim
+  - emulation
+  - guitar
+website: https://www.ikmultimedia.com/products/tonexcapture
+prices:
+  - amount: 249.99
+    currency: USD
+description: "AmpliTube TONEX Capture is an all-in-one accessory that makes it
+  easy to capture your real amp's tone perfectly, with or without microphones."
+details: |-
+  TONEX Capture is a dedicated hardware accessory that connects between an audio interface and a guitar amplifier to capture the amp's tone using IK's AI Machine Modeling technology. It supports four operating modes: direct amp capture, amp plus cabinet with microphone, amp plus cabinet with direct signal, and pedal routing.
+
+  The unit features two separate gain stages with attenuation controls (up to 24 dB each), along with ground lift switches and galvanic isolation to eliminate hum and noise. The FROM AMP circuit is totally passive, ensuring no tone coloration during capture.
+
+  Includes TONEX SE software with 200 Tone Models and access to ToneNET for uploading and downloading user-generated tones.
+specs: |-
+  - Input attenuation (TO AMP): up to 24 dB
+  - Output attenuation (FROM AMP): up to 24 dB
+  - Two separate gain stages
+  - FROM AMP balanced output: XLR with galvanic isolation
+  - FROM AMP circuit: totally passive (no tone coloration)
+  - Two ground lift switches
+  - Dimensions: 137 x 158 x 45 mm (5.39" x 6.22" x 1.77")
+  - Weight: 980 g (34.57 oz)
+  - Power: 9V DC (PSU included)
+io:
+  - name: TO AMP Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+  - name: FROM AMP Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+  - name: Balanced Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Cabinet Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+  - name: 9V DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    connectorDetail:
+      - center-negative
+      - 9V
+    maxConnections: 1
+    position: Top
+id: SI5Bpw0i29agjedEL1u6f

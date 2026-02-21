@@ -1,0 +1,30 @@
+# Known IO port types (advisory - warning if not matched, does not block CI)
+#
+# The `type` field describes the signal characteristic or function of an IO port.
+# Add new values here as they appear in data. Unknown values generate warnings
+# in `pnpm validate` and are surfaced during data review.
+types:
+  # Audio signal types
+  - line
+  - instrument
+  - mic
+  - headphone
+  - phono
+
+  # MIDI types
+  - midi
+
+  # Digital audio types
+  - s/pdif
+  - word clock
+  - dante
+
+  # USB / host connection types
+  - usb
+  - thunderbolt
+
+  # Control voltage
+  - cv/gate
+
+  # Power types
+  - power

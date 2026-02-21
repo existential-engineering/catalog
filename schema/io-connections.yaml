@@ -1,0 +1,44 @@
+# Valid IO connection/connector types (advisory - warning if not matched)
+#
+# The `connection` field describes the physical connector of an IO port.
+# Add new values here as they appear in data. Unknown values generate warnings
+# in `pnpm validate` and are surfaced during data review.
+connections:
+  # Quarter-inch jacks
+  - 1/4-inch
+
+  # Eighth-inch / 3.5mm jacks
+  - 1/8-inch
+
+  # 2.5mm jacks
+  - 2.5mm
+
+  # XLR connectors
+  - xlr
+  - combo jack
+
+  # DIN connectors
+  - 5-pin din
+  - mini-din
+
+  # RCA
+  - rca
+
+  # USB connectors
+  - usb-a
+  - usb-b
+  - usb-b-micro
+  - usb-c
+
+  # Other digital connectors
+  - thunderbolt 3
+  - toslink
+  - ethernet
+  - lightning
+
+  # Power connectors
+  - barrel
+
+  # Misc
+  - built-in
+  - pin

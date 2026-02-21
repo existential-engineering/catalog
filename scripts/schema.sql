@@ -185,8 +185,9 @@ CREATE TABLE IF NOT EXISTS hardware_io (
     category TEXT NOT NULL,           -- audio, digital, midi, power
     type TEXT NOT NULL,
     connection TEXT NOT NULL,
+    connector_detail TEXT,            -- JSON array: ["TS"], ["center-negative", "9V"], etc.
     max_connections INTEGER DEFAULT 1,
-    position TEXT,                    -- top, right, left, bottom
+    position TEXT,                    -- Top, Right, Left, Bottom
     column_position INTEGER,
     row_position INTEGER,
     description TEXT
@@ -233,6 +234,7 @@ CREATE TABLE IF NOT EXISTS hardware_revision_io (
     category TEXT NOT NULL,
     type TEXT NOT NULL,
     connection TEXT NOT NULL,
+    connector_detail TEXT,            -- JSON array: ["TS"], ["center-negative", "9V"], etc.
     max_connections INTEGER DEFAULT 1,
     position TEXT,
     column_position INTEGER,
@@ -506,7 +508,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (10, 'Added schema_migrations table for version tracking', 0),
     (11, 'Added supersedes_id column for product lineage tracking', 0),
     (12, 'Added slug column to hardware_revisions for stable identifiers', 0),
-    (13, 'Separated video links into dedicated video tables', 1);
+    (13, 'Separated video links into dedicated video tables', 1),
+    (14, 'Added connector_detail column to hardware_io and hardware_revision_io', 0);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES
