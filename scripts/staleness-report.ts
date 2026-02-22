@@ -15,7 +15,7 @@
 
 import path from "node:path";
 import { z } from "zod";
-import type { Hardware, Software } from "./lib/types.js";
+import type { Accessory, Content, Hardware, Software } from "./lib/types.js";
 import { DATA_DIR, getYamlFiles, loadYamlFile } from "./lib/utils.js";
 
 // =============================================================================
@@ -32,7 +32,7 @@ const PRICE_STALE_DAYS = 90;
 // SCHEMAS
 // =============================================================================
 
-const EntryTypeSchema = z.enum(["software", "hardware"]);
+const EntryTypeSchema = z.enum(["software", "content", "hardware", "accessories"]);
 
 export const StaleEntrySchema = z.object({
   file: z.string(),
@@ -103,8 +103,8 @@ function daysSince(dateStr: string): number {
 
 function processEntry(
   filePath: string,
-  data: Software | Hardware,
-  type: "software" | "hardware",
+  data: Software | Content | Hardware | Accessory,
+  type: "software" | "content" | "hardware" | "accessories",
   report: StalenessReport
 ): void {
   const relativePath = path.relative(DATA_DIR, filePath);
@@ -226,11 +226,27 @@ function generateReport(): StalenessReport {
     report.summary.totalEntries++;
   }
 
+  // Process content entries
+  const contentFiles = getYamlFiles(path.join(DATA_DIR, "content"));
+  for (const file of contentFiles) {
+    const data = loadYamlFile<Content>(file);
+    processEntry(file, data, "content", report);
+    report.summary.totalEntries++;
+  }
+
   // Process hardware entries
   const hardwareFiles = getYamlFiles(path.join(DATA_DIR, "hardware"));
   for (const file of hardwareFiles) {
     const data = loadYamlFile<Hardware>(file);
     processEntry(file, data, "hardware", report);
+    report.summary.totalEntries++;
+  }
+
+  // Process accessories entries
+  const accessoriesFiles = getYamlFiles(path.join(DATA_DIR, "accessories"));
+  for (const file of accessoriesFiles) {
+    const data = loadYamlFile<Accessory>(file);
+    processEntry(file, data, "accessories", report);
     report.summary.totalEntries++;
   }
 

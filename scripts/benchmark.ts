@@ -42,7 +42,9 @@ interface BenchmarkReport {
   counts: {
     manufacturers: number;
     software: number;
+    content: number;
     hardware: number;
+    accessories: number;
   };
   benchmarks: BenchmarkResult[];
 }
@@ -106,6 +108,16 @@ function runBenchmarks(): BenchmarkReport {
       count: number;
     }
   ).count;
+  const contentCount = (
+    db.prepare("SELECT COUNT(*) as count FROM content").get() as {
+      count: number;
+    }
+  ).count;
+  const accessoryCount = (
+    db.prepare("SELECT COUNT(*) as count FROM accessories").get() as {
+      count: number;
+    }
+  ).count;
 
   // Prepare statements for benchmarks
   const stmts = {
@@ -113,6 +125,10 @@ function runBenchmarks(): BenchmarkReport {
     ftsSimple: db.prepare("SELECT * FROM software_fts WHERE software_fts MATCH ? LIMIT 10"),
     ftsManufacturer: db.prepare("SELECT * FROM software_fts WHERE software_fts MATCH ? LIMIT 10"),
     ftsHardware: db.prepare("SELECT * FROM hardware_fts WHERE hardware_fts MATCH ? LIMIT 10"),
+    ftsContent: db.prepare("SELECT * FROM content_fts WHERE content_fts MATCH ? LIMIT 10"),
+    ftsAccessories: db.prepare(
+      "SELECT * FROM accessories_fts WHERE accessories_fts MATCH ? LIMIT 10"
+    ),
 
     // Lookups
     softwareById: db.prepare("SELECT * FROM software WHERE id = ?"),
@@ -192,6 +208,12 @@ function runBenchmarks(): BenchmarkReport {
     benchmark("FTS: hardware search", () => {
       stmts.ftsHardware.all("audio interface");
     }),
+    benchmark("FTS: content search", () => {
+      stmts.ftsContent.all("preset");
+    }),
+    benchmark("FTS: accessories search", () => {
+      stmts.ftsAccessories.all("cable");
+    }),
 
     // Lookups
     benchmark("Lookup: software by ID", () => {
@@ -243,7 +265,9 @@ function runBenchmarks(): BenchmarkReport {
     counts: {
       manufacturers: manufacturerCount,
       software: softwareCount,
+      content: contentCount,
       hardware: hardwareCount,
+      accessories: accessoryCount,
     },
     benchmarks,
   };
@@ -256,7 +280,8 @@ function printConsoleReport(report: BenchmarkReport): void {
   console.log(`Database size: ${report.databaseSizeKB} KB`);
   console.log(
     `Entries: ${report.counts.manufacturers} manufacturers, ` +
-      `${report.counts.software} software, ${report.counts.hardware} hardware`
+      `${report.counts.software} software, ${report.counts.content} content, ` +
+      `${report.counts.hardware} hardware, ${report.counts.accessories} accessories`
   );
   console.log(`Iterations per benchmark: ${ITERATIONS}`);
   console.log();

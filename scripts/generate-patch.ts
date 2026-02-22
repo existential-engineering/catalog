@@ -10,7 +10,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 
-import type { Change, Hardware, Manufacturer, Software } from "./lib/types.js";
+import type { Accessory, Change, Content, Hardware, Manufacturer, Software } from "./lib/types.js";
 import { DATA_DIR, escapeSQL, normalizeMarkdown, OUTPUT_DIR } from "./lib/utils.js";
 
 const PATCHES_DIR = path.join(OUTPUT_DIR, "patches");
@@ -261,6 +261,103 @@ function generateHardwareSQL(
   return sql;
 }
 
+function generateContentSQL(
+  change: Change,
+  data: Content | null,
+  deletedId: string | null,
+  manufacturerIds: Map<string, string>
+): string[] {
+  const sql: string[] = [];
+
+  if (change.type === "deleted") {
+    if (!deletedId) {
+      sql.push(`-- WARNING: Could not resolve ID for deleted content ${change.slug}`);
+      return sql;
+    }
+    sql.push(`DELETE FROM content_fts WHERE id = ${escapeSQL(deletedId)};`);
+    sql.push(`DELETE FROM content WHERE id = ${escapeSQL(deletedId)};`);
+  } else if (data) {
+    const mfgId = manufacturerIds.get(data.manufacturer) ?? null;
+
+    if (change.type === "modified") {
+      sql.push(`DELETE FROM content_categories WHERE content_id = ${escapeSQL(data.id)};`);
+      sql.push(`DELETE FROM content_fts WHERE id = ${escapeSQL(data.id)};`);
+      sql.push(
+        `UPDATE content SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(mfgId)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(normalizeMarkdown(data.details))}, specs = ${escapeSQL(normalizeMarkdown(data.specs))}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.id)};`
+      );
+    } else {
+      sql.push(
+        `INSERT INTO content (id, name, manufacturer_id, website, description, release_date, primary_category, secondary_category, details, specs, updated_at) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, ${escapeSQL(mfgId)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, ${escapeSQL(data.releaseDate)}, ${escapeSQL(data.primaryCategory)}, ${escapeSQL(data.secondaryCategory)}, ${escapeSQL(normalizeMarkdown(data.details))}, ${escapeSQL(normalizeMarkdown(data.specs))}, datetime('now'));`
+      );
+    }
+
+    // Insert categories
+    if (data.categories) {
+      for (const category of data.categories) {
+        sql.push(
+          `INSERT INTO content_categories (content_id, category) VALUES (${escapeSQL(data.id)}, ${escapeSQL(category)});`
+        );
+      }
+    }
+
+    // Insert FTS
+    sql.push(
+      `INSERT INTO content_fts (id, name, manufacturer_name, categories) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, (SELECT name FROM manufacturers WHERE id = ${escapeSQL(mfgId)}), ${escapeSQL(data.categories?.join(" ") ?? "")});`
+    );
+  }
+
+  return sql;
+}
+
+function generateAccessorySQL(
+  change: Change,
+  data: Accessory | null,
+  deletedId: string | null,
+  manufacturerIds: Map<string, string>
+): string[] {
+  const sql: string[] = [];
+
+  if (change.type === "deleted") {
+    if (!deletedId) {
+      sql.push(`-- WARNING: Could not resolve ID for deleted accessory ${change.slug}`);
+      return sql;
+    }
+    sql.push(`DELETE FROM accessories_fts WHERE id = ${escapeSQL(deletedId)};`);
+    sql.push(`DELETE FROM accessories WHERE id = ${escapeSQL(deletedId)};`);
+  } else if (data) {
+    const mfgId = manufacturerIds.get(data.manufacturer) ?? null;
+
+    if (change.type === "modified") {
+      sql.push(`DELETE FROM accessories_categories WHERE accessory_id = ${escapeSQL(data.id)};`);
+      sql.push(`DELETE FROM accessories_fts WHERE id = ${escapeSQL(data.id)};`);
+      sql.push(
+        `UPDATE accessories SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(mfgId)}, website = ${escapeSQL(data.website)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(normalizeMarkdown(data.details))}, specs = ${escapeSQL(normalizeMarkdown(data.specs))}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.id)};`
+      );
+    } else {
+      sql.push(
+        `INSERT INTO accessories (id, name, manufacturer_id, website, description, release_date, primary_category, secondary_category, details, specs, updated_at) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, ${escapeSQL(mfgId)}, ${escapeSQL(data.website)}, ${escapeSQL(data.description)}, ${escapeSQL(data.releaseDate)}, ${escapeSQL(data.primaryCategory)}, ${escapeSQL(data.secondaryCategory)}, ${escapeSQL(normalizeMarkdown(data.details))}, ${escapeSQL(normalizeMarkdown(data.specs))}, datetime('now'));`
+      );
+    }
+
+    // Insert categories
+    if (data.categories) {
+      for (const category of data.categories) {
+        sql.push(
+          `INSERT INTO accessories_categories (accessory_id, category) VALUES (${escapeSQL(data.id)}, ${escapeSQL(category)});`
+        );
+      }
+    }
+
+    // Insert FTS
+    const categories = data.categories?.join(" ") ?? "";
+    sql.push(
+      `INSERT INTO accessories_fts (id, name, manufacturer_name, description, categories) VALUES (${escapeSQL(data.id)}, ${escapeSQL(data.name)}, (SELECT name FROM manufacturers WHERE id = ${escapeSQL(mfgId)}), ${escapeSQL(data.description)}, ${escapeSQL(categories)});`
+    );
+  }
+
+  return sql;
+}
+
 // =============================================================================
 // MAIN
 // =============================================================================
@@ -291,8 +388,14 @@ function generatePatch(fromTag: string, toVersion: string): void {
 
   // Process changes in order: manufacturers first (for foreign keys)
   const sortedChanges = [...changes].sort((a, b) => {
-    const order = { manufacturers: 0, software: 1, hardware: 2 };
-    return order[a.category] - order[b.category];
+    const order: Record<string, number> = {
+      manufacturers: 0,
+      software: 1,
+      content: 2,
+      hardware: 3,
+      accessories: 4,
+    };
+    return (order[a.category] ?? 99) - (order[b.category] ?? 99);
   });
 
   for (const change of sortedChanges) {
@@ -322,8 +425,14 @@ function generatePatch(fromTag: string, toVersion: string): void {
       case "software":
         statements = generateSoftwareSQL(change, data as Software, deletedId, manufacturerIds);
         break;
+      case "content":
+        statements = generateContentSQL(change, data as Content, deletedId, manufacturerIds);
+        break;
       case "hardware":
         statements = generateHardwareSQL(change, data as Hardware, deletedId, manufacturerIds);
+        break;
+      case "accessories":
+        statements = generateAccessorySQL(change, data as Accessory, deletedId, manufacturerIds);
         break;
     }
 

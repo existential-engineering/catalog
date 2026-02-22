@@ -133,6 +133,32 @@ export interface Software {
   verification?: VerificationMetadata;
 }
 
+export interface Content {
+  id?: string; // Assigned on PR creation via nanoid
+  name: string;
+  manufacturer: string;
+  categories?: string[];
+  website?: string;
+  releaseDate?: string;
+  releaseDateYearOnly?: boolean;
+  primaryCategory?: string;
+  secondaryCategory?: string;
+  /** ID of the content entry this supersedes */
+  supersedes?: string;
+  /** Software slugs for host products this content is compatible with */
+  compatibleWith?: string[];
+  searchTerms?: string[];
+  description?: string;
+  details?: string | string[];
+  specs?: string | string[];
+  versions?: Version[];
+  prices?: Price[];
+  links?: Link[];
+  videos?: VideoLink[];
+  translations?: TranslationsMap;
+  verification?: VerificationMetadata;
+}
+
 export interface Hardware {
   id?: string; // Assigned on PR creation via nanoid
   name: string;
@@ -152,6 +178,30 @@ export interface Hardware {
   io?: IO[];
   versions?: Version[];
   revisions?: Revision[];
+  prices?: Price[];
+  links?: Link[];
+  videos?: VideoLink[];
+  translations?: TranslationsMap;
+  verification?: VerificationMetadata;
+}
+
+export interface Accessory {
+  id?: string; // Assigned on PR creation via nanoid
+  name: string;
+  manufacturer: string;
+  categories?: string[];
+  website?: string;
+  releaseDate?: string;
+  releaseDateYearOnly?: boolean;
+  primaryCategory?: string;
+  secondaryCategory?: string;
+  /** ID of the accessory entry this supersedes */
+  supersedes?: string;
+  searchTerms?: string[];
+  description?: string;
+  details?: string | string[];
+  specs?: string | string[];
+  versions?: Version[];
   prices?: Price[];
   links?: Link[];
   videos?: VideoLink[];
@@ -261,7 +311,9 @@ export interface ValidationResult {
   stats: {
     manufacturers: number;
     software: number;
+    content: number;
     hardware: number;
+    accessories: number;
   };
 }
 
@@ -271,7 +323,7 @@ export interface ValidationResult {
 
 export interface Change {
   type: "added" | "modified" | "deleted";
-  category: "manufacturers" | "software" | "hardware";
+  category: "manufacturers" | "software" | "content" | "hardware" | "accessories";
   file: string;
   slug: string;
 }
@@ -280,4 +332,4 @@ export interface Change {
 // ID TYPES
 // =============================================================================
 
-export type Collection = "manufacturers" | "software" | "hardware";
+export type Collection = "manufacturers" | "software" | "content" | "hardware" | "accessories";

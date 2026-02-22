@@ -19,7 +19,7 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 
 ## Project Structure
 
-- `data/` - YAML source files (manufacturers, software, hardware)
+- `data/` - YAML source files (manufacturers, software, content, hardware, accessories)
 - `schema/` - Category, format, and platform definitions
 - `scripts/` - Build and validation tools
 - `dist/` - Built SQLite database output
@@ -35,7 +35,9 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 
 Manufacturers require: name, website
 Software requires: name, manufacturer, primaryCategory, platforms, identifiers
+Content requires: name, manufacturer, primaryCategory
 Hardware requires: name, manufacturer, primaryCategory, description
+Accessories require: name, manufacturer, primaryCategory, description
 
 Optional fields: categories (array), website, description
 
@@ -107,10 +109,10 @@ io:
 
 ## Content Entries
 
-Content entries (presets, sample packs, expansions) are software entries where `primaryCategory` is a content type such as `preset`, `preset-pack`, `sample-pack`, `drum-sample-pack`, `loop-pack`, or `sound-library`.
+Content entries (presets, sample packs, expansions) live in `data/content/` as a separate collection. Content `primaryCategory` values include `preset`, `preset-pack`, `sample-pack`, `drum-sample-pack`, `loop-pack`, `sound-library`, `soundfont`, `impulse-response`, and `multisample`.
 
-- `platforms`, `formats`, and `identifiers` are optional for content entries
-- Use `compatibleWith` to reference host products by slug:
+- Content entries do NOT have `platforms`, `formats`, or `identifiers` fields
+- Use `compatibleWith` to reference host software products by slug:
 
 ```yaml
 name: Zeus Presets for Serum
@@ -121,6 +123,13 @@ compatibleWith:
 ```
 
 Advisory warning W123 fires if a `compatibleWith` slug doesn't match an existing software file. Category aliases in `schema/category-aliases.yaml` map common synonyms (e.g., `soundbank` → `preset-pack`) to canonical categories.
+
+## Accessory Entries
+
+Accessory entries (cables, stands, acoustic treatment) live in `data/accessories/` as a separate collection. Accessory `primaryCategory` values include `cable`, `power-conditioner`, `mic-stand`, `boom-arm`, `pop-filter`, `shock-mount`, `reflection-filter`, `acoustic-treatment`, and `acoustic-panel`.
+
+- Accessory entries do NOT have `io` or `revisions` fields (use those for hardware only)
+- Like hardware, accessories require: name, manufacturer, primaryCategory, description
 
 ## Product Lineage
 
@@ -150,7 +159,7 @@ manufacturer: fabfilter
 - IDs are auto-assigned by CI when you run `pnpm assign-ids` for new entries
 - Every product entry must have an `id` field
 
-The referenced ID must exist in the same collection (software or hardware). Validation will fail if the ID is not found or if a cycle is detected in the supersedes chain.
+The referenced ID must exist in the same collection (software, content, hardware, or accessories). Validation will fail if the ID is not found or if a cycle is detected in the supersedes chain.
 
 The relationship is **bidirectional** - the database can query both directions:
 
@@ -159,7 +168,7 @@ The relationship is **bidirectional** - the database can query both directions:
 
 ## Versions
 
-Software and hardware entries can have a `versions` array with release history.
+Software, content, hardware, and accessory entries can have a `versions` array with release history.
 
 **Version fields:**
 

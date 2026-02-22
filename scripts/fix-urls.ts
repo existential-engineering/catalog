@@ -394,7 +394,9 @@ if (cache) {
 const files = [
   ...getYamlFiles(path.join(DATA_DIR, "manufacturers")),
   ...getYamlFiles(path.join(DATA_DIR, "software")),
+  ...getYamlFiles(path.join(DATA_DIR, "content")),
   ...getYamlFiles(path.join(DATA_DIR, "hardware")),
+  ...getYamlFiles(path.join(DATA_DIR, "accessories")),
 ];
 
 console.log(`Processing ${files.length} files...\n`);

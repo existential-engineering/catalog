@@ -268,7 +268,7 @@ function getChangedFiles(baseSha: string): string[] {
     const output = execSync(`git diff --name-only ${baseSha} HEAD`, { encoding: "utf-8" });
     return output
       .split("\n")
-      .filter((f) => f.match(/^data\/(software|hardware)\/.*\.yaml$/))
+      .filter((f) => f.match(/^data\/(software|content|hardware|accessories)\/.*\.yaml$/))
       .map((f) => path.join(process.cwd(), f))
       .filter((f) => fs.existsSync(f));
   } catch {
@@ -296,7 +296,9 @@ if (changedOnly && baseSha) {
 } else {
   files = [
     ...getYamlFiles(path.join(DATA_DIR, "software")),
+    ...getYamlFiles(path.join(DATA_DIR, "content")),
     ...getYamlFiles(path.join(DATA_DIR, "hardware")),
+    ...getYamlFiles(path.join(DATA_DIR, "accessories")),
   ];
   console.log(`\nChecking videos in ${files.length} file(s)...\n`);
 }

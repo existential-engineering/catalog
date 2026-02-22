@@ -7,7 +7,8 @@
  *   tsx scripts/fix-data.ts videos            # Remove redundant provider: youtube
  *   tsx scripts/fix-data.ts io-categories     # Fix hardware IO categories (audio → digital)
  *   tsx scripts/fix-data.ts extract-formats   # Move format/host categories to formats/compatibleWith
- *   tsx scripts/fix-data.ts all               # Run all in sequence
+ *   tsx scripts/fix-data.ts content-cleanup   # Remove platforms + software-centric categories from content
+ *   tsx scripts/fix-data.ts all               # Run all in sequence (excludes content-cleanup)
  *   tsx scripts/fix-data.ts --dry-run <cmd>   # Preview changes without writing
  */
 
@@ -132,7 +133,7 @@ function getYamlFiles(dir: string): string[] {
 }
 
 function getAllDataFiles(collections?: string[]): string[] {
-  const dirs = collections ?? ["manufacturers", "software", "hardware"];
+  const dirs = collections ?? ["manufacturers", "software", "content", "hardware", "accessories"];
   return dirs.flatMap((c) => getYamlFiles(path.join(DATA_DIR, c)));
 }
 
@@ -150,7 +151,7 @@ function fixCategories(dryRun: boolean): number {
   const aliasMap = schema.categoryAliases;
   let totalChanges = 0;
 
-  const files = getAllDataFiles(["software", "hardware"]);
+  const files = getAllDataFiles(["software", "content", "hardware", "accessories"]);
 
   for (const file of files) {
     const content = fs.readFileSync(file, "utf-8");
@@ -263,7 +264,7 @@ function fixCategories(dryRun: boolean): number {
 
 function fixBlockScalars(dryRun: boolean): number {
   let totalChanges = 0;
-  const files = getAllDataFiles(["software", "hardware"]);
+  const files = getAllDataFiles(["software", "content", "hardware", "accessories"]);
 
   for (const file of files) {
     const content = fs.readFileSync(file, "utf-8");
@@ -319,7 +320,7 @@ function fixBlockScalars(dryRun: boolean): number {
 
 function fixVideos(dryRun: boolean): number {
   let totalChanges = 0;
-  const files = getAllDataFiles(["software", "hardware"]);
+  const files = getAllDataFiles(["software", "content", "hardware", "accessories"]);
 
   for (const file of files) {
     const content = fs.readFileSync(file, "utf-8");
@@ -539,6 +540,81 @@ function extractFormats(dryRun: boolean): number {
 }
 
 // =============================================================================
+// COMMAND: content-cleanup
+// =============================================================================
+
+// Categories that describe the host software type, not the content itself.
+// These should be removed from content entries — the `compatibleWith` field
+// is the proper way to reference host software.
+const SOFTWARE_CENTRIC_CATEGORIES = new Set([
+  "synthesizer",
+  "plugin",
+  "effect",
+  "sampler",
+  "drum-machine",
+  "virtual-instrument",
+  "sequencer",
+]);
+
+function fixContentCleanup(dryRun: boolean): number {
+  const files = getAllDataFiles(["content"]);
+  let totalChanges = 0;
+
+  for (const file of files) {
+    const content = fs.readFileSync(file, "utf-8");
+    const doc = parseDocument(content);
+    let changed = false;
+
+    // Strip platforms field (software-only, not valid for content)
+    if (doc.has("platforms")) {
+      doc.delete("platforms");
+      console.log(`  ${relPath(file)}: removed platforms`);
+      changed = true;
+    }
+
+    // Strip software-centric categories
+    const categoriesNode = doc.get("categories");
+    if (isSeq(categoriesNode)) {
+      const indicesToRemove: number[] = [];
+
+      for (let i = 0; i < categoriesNode.items.length; i++) {
+        const item = categoriesNode.items[i];
+        const val =
+          typeof item === "object" && item !== null && "value" in item
+            ? (item as Scalar).value
+            : item;
+        if (typeof val === "string" && SOFTWARE_CENTRIC_CATEGORIES.has(val)) {
+          indicesToRemove.push(i);
+          console.log(`  ${relPath(file)}: removed category '${val}'`);
+          changed = true;
+        }
+      }
+
+      // Remove in reverse order to preserve indices
+      for (const idx of indicesToRemove.sort((a, b) => b - a)) {
+        categoriesNode.items.splice(idx, 1);
+      }
+
+      // Remove empty categories array
+      if (categoriesNode.items.length === 0) {
+        doc.delete("categories");
+        console.log(`  ${relPath(file)}: removed empty categories array`);
+        changed = true;
+      }
+    }
+
+    if (changed) {
+      totalChanges++;
+      if (!dryRun) {
+        fs.writeFileSync(file, doc.toString());
+      }
+    }
+  }
+
+  return totalChanges;
+}
+
+// =============================================================================
 // MAIN
 // =============================================================================
 
@@ -556,6 +632,7 @@ const commands: Record<string, (dryRun: boolean) => number> = {
   videos: fixVideos,
   "io-categories": fixIOCategories,
   "extract-formats": extractFormats,
+  "content-cleanup": fixContentCleanup,
 };
 
 function runCommand(name: string, fn: (dryRun: boolean) => number): void {
@@ -564,8 +641,12 @@ function runCommand(name: string, fn: (dryRun: boolean) => number): void {
   console.log(`\n✅ ${name}: ${count} files ${dryRun ? "would be" : ""} modified`);
 }
 
+// Commands excluded from "all" (one-time cleanups, not recurring fixes)
+const excludeFromAll = new Set(["content-cleanup"]);
+
 if (command === "all") {
   for (const [name, fn] of Object.entries(commands)) {
+    if (excludeFromAll.has(name)) continue;
     runCommand(name, fn);
   }
 } else if (commands[command]) {
