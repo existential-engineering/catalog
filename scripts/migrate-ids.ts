@@ -5,7 +5,7 @@
  * Run once: tsx scripts/migrate-ids.ts
  *
  * This script:
- * 1. Iterates all YAML files across all 3 collections
+ * 1. Iterates all YAML files across all 5 collections
  * 2. Replaces each numeric `id` with a new nanoid
  * 3. Logs a mapping of old -> new IDs for reference
  */
@@ -30,7 +30,13 @@ function getYamlFiles(dir: string): string[] {
 }
 
 function migrateIds(): void {
-  const collections: Collection[] = ["manufacturers", "software", "hardware"];
+  const collections: Collection[] = [
+    "manufacturers",
+    "software",
+    "content",
+    "hardware",
+    "accessories",
+  ];
   const usedIds = new Set<string>();
   const mapping: Record<string, Record<string, string>> = {};
   let migrated = 0;

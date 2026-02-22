@@ -614,6 +614,97 @@ const HardwareSchema = z
     }
   );
 
+// Content schema: like Software but without formats, platforms, identifiers
+const ContentSchema = z
+  .object({
+    name: z.string().min(1, "Name is required"),
+    manufacturer: z.string().min(1, "Manufacturer reference is required"),
+    categories: z
+      .array(z.string())
+      .optional()
+      .check((ctx) => {
+        if (!ctx.value) return;
+        const invalid = ctx.value.filter((c) => !isValidCategory(c));
+        if (invalid.length > 0) {
+          for (const cat of invalid) {
+            const suggestion = findClosestMatch(cat, VALID_CATEGORIES);
+            let message = `Invalid category '${cat}'.`;
+            if (suggestion) {
+              message += ` Did you mean '${suggestion}'?`;
+            }
+            ctx.issues.push({ code: "custom", message, input: cat });
+          }
+        }
+      }),
+    compatibleWith: z.array(z.string()).optional(),
+    website: z.url().optional(),
+    releaseDate: z.string().optional(),
+    releaseDateYearOnly: z.boolean().optional(),
+    primaryCategory: createCategoryValidator().optional(),
+    secondaryCategory: createCategoryValidator().optional(),
+    supersedes: z.string().optional(),
+    searchTerms: z.array(z.string()).optional(),
+    description: MarkdownSchema,
+    details: MarkdownSchema,
+    specs: MarkdownSchema,
+    versions: z.array(VersionSchema).optional(),
+    prices: z.array(PriceSchema).optional(),
+    links: z.array(LinkSchema).optional(),
+    videos: z.array(VideoLinkSchema).optional(),
+  })
+  .refine(
+    (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
+    {
+      message: "releaseDateYearOnly requires releaseDate in YYYY format",
+      path: ["releaseDateYearOnly"],
+    }
+  );
+
+// Accessory schema: like Hardware but without io, revisions
+const AccessorySchema = z
+  .object({
+    name: z.string().min(1, "Name is required"),
+    manufacturer: z.string().min(1, "Manufacturer reference is required"),
+    categories: z
+      .array(z.string())
+      .optional()
+      .check((ctx) => {
+        if (!ctx.value) return;
+        const invalid = ctx.value.filter((c) => !isValidCategory(c));
+        if (invalid.length > 0) {
+          for (const cat of invalid) {
+            const suggestion = findClosestMatch(cat, VALID_CATEGORIES);
+            let message = `Invalid category '${cat}'.`;
+            if (suggestion) {
+              message += ` Did you mean '${suggestion}'?`;
+            }
+            ctx.issues.push({ code: "custom", message, input: cat });
+          }
+        }
+      }),
+    website: z.url().optional(),
+    releaseDate: z.string().optional(),
+    releaseDateYearOnly: z.boolean().optional(),
+    primaryCategory: createCategoryValidator().optional(),
+    secondaryCategory: createCategoryValidator().optional(),
+    supersedes: z.string().optional(),
+    searchTerms: z.array(z.string()).optional(),
+    description: MarkdownSchema,
+    details: MarkdownSchema,
+    specs: MarkdownSchema,
+    versions: z.array(VersionSchema).optional(),
+    prices: z.array(PriceSchema).optional(),
+    links: z.array(LinkSchema).optional(),
+    videos: z.array(VideoLinkSchema).optional(),
+  })
+  .refine(
+    (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
+    {
+      message: "releaseDateYearOnly requires releaseDate in YYYY format",
+      path: ["releaseDateYearOnly"],
+    }
+  );
+
 // =============================================================================
 // VALIDATION FUNCTIONS
 // =============================================================================
@@ -925,7 +1016,7 @@ function collectWarnings(
 }
 
 /**
- * Runs full repository validation over manufacturer, software, and hardware YAML files.
+ * Runs full repository validation over manufacturer, software, content, hardware, and accessories YAML files.
  *
  * Performs schema validation against canonical schemas, verifies manufacturer references, validates
  * supersedes references by ID, detects cycles in supersedes chains, and aggregates validation errors
@@ -934,17 +1025,19 @@ function collectWarnings(
  * @returns An object with:
  *  - `valid`: `true` if no validation errors were found, `false` otherwise.
  *  - `errors`: an array of `ValidationError` entries describing per-file failures and detailed issues.
- *  - `stats`: an object with counts `{ manufacturers, software, hardware }` of successfully validated files.
+ *  - `stats`: an object with counts `{ manufacturers, software, content, hardware, accessories }` of successfully validated files.
  */
 function validate(): ValidationResult {
   const errors: ValidationError[] = [];
   const warnings: ValidationWarning[] = [];
-  const stats = { manufacturers: 0, software: 0, hardware: 0 };
+  const stats = { manufacturers: 0, software: 0, content: 0, hardware: 0, accessories: 0 };
 
   // First pass: collect all slugs (derived from filenames) and IDs
   const manufacturerFiles = getYamlFiles(path.join(DATA_DIR, "manufacturers"));
   const softwareFiles = getYamlFiles(path.join(DATA_DIR, "software"));
+  const contentFiles = getYamlFiles(path.join(DATA_DIR, "content"));
   const hardwareFiles = getYamlFiles(path.join(DATA_DIR, "hardware"));
+  const accessoryFiles = getYamlFiles(path.join(DATA_DIR, "accessories"));
 
   const allManufacturers = new Set<string>();
 
@@ -953,15 +1046,24 @@ function validate(): ValidationResult {
   const softwareIdToSlug = new Map<string, string>();
   const softwareSupersedesMap = new Map<string, string>(); // id -> supersedes_id
 
+  const contentIds = new Set<string>();
+  const contentIdToSlug = new Map<string, string>();
+  const contentSupersedesMap = new Map<string, string>(); // id -> supersedes_id
+
   const hardwareIds = new Set<string>();
   const hardwareIdToSlug = new Map<string, string>();
   const hardwareSupersedesMap = new Map<string, string>(); // id -> supersedes_id
+
+  const accessoryIds = new Set<string>();
+  const accessoryIdToSlug = new Map<string, string>();
+  const accessorySupersedesMap = new Map<string, string>(); // id -> supersedes_id
 
   for (const file of manufacturerFiles) {
     const slug = path.basename(file, path.extname(file));
     allManufacturers.add(slug);
   }
 
+  // allSoftwareSlugs used for compatibleWith validation (software only, not content)
   const allSoftwareSlugs = new Set<string>();
   for (const file of softwareFiles) {
     allSoftwareSlugs.add(path.basename(file, path.extname(file)));
@@ -985,6 +1087,24 @@ function validate(): ValidationResult {
     }
   }
 
+  // Collect content IDs and supersedes relationships
+  for (const file of contentFiles) {
+    const slug = path.basename(file, path.extname(file));
+    try {
+      const rawContent = fs.readFileSync(file, "utf-8");
+      const data = parseYaml(rawContent) as { id?: string; supersedes?: string };
+      if (data.id) {
+        contentIds.add(data.id);
+        contentIdToSlug.set(data.id, slug);
+        if (data.supersedes) {
+          contentSupersedesMap.set(data.id, data.supersedes);
+        }
+      }
+    } catch {
+      // Ignore parse errors - they're caught later
+    }
+  }
+
   // Collect hardware IDs and supersedes relationships
   for (const file of hardwareFiles) {
     const slug = path.basename(file, path.extname(file));
@@ -996,6 +1116,24 @@ function validate(): ValidationResult {
         hardwareIdToSlug.set(data.id, slug);
         if (data.supersedes) {
           hardwareSupersedesMap.set(data.id, data.supersedes);
+        }
+      }
+    } catch {
+      // Ignore parse errors - they're caught later
+    }
+  }
+
+  // Collect accessory IDs and supersedes relationships
+  for (const file of accessoryFiles) {
+    const slug = path.basename(file, path.extname(file));
+    try {
+      const rawContent = fs.readFileSync(file, "utf-8");
+      const data = parseYaml(rawContent) as { id?: string; supersedes?: string };
+      if (data.id) {
+        accessoryIds.add(data.id);
+        accessoryIdToSlug.set(data.id, slug);
+        if (data.supersedes) {
+          accessorySupersedesMap.set(data.id, data.supersedes);
         }
       }
     } catch {
@@ -1037,6 +1175,30 @@ function validate(): ValidationResult {
     }
   }
 
+  // Validate content (supersedes must reference valid content ID)
+  for (const file of contentFiles) {
+    const error = validateFile(file, ContentSchema, allManufacturers, contentIds);
+    if (error) {
+      errors.push(error);
+    } else {
+      stats.content++;
+      // Collect advisory warnings for valid files (compatibleWith checks against software slugs)
+      try {
+        const { data, document, lineCounter } = loadYamlFileWithPositions(file);
+        const w = collectWarnings(
+          file,
+          data as WarningContext,
+          document,
+          lineCounter,
+          allSoftwareSlugs
+        );
+        if (w) warnings.push(w);
+      } catch {
+        // Ignore parse errors - they're caught by YAML validation
+      }
+    }
+  }
+
   // Validate hardware (supersedes must reference valid hardware ID)
   for (const file of hardwareFiles) {
     const error = validateFile(file, HardwareSchema, allManufacturers, hardwareIds);
@@ -1044,6 +1206,24 @@ function validate(): ValidationResult {
       errors.push(error);
     } else {
       stats.hardware++;
+      // Collect advisory warnings for valid files
+      try {
+        const { data, document, lineCounter } = loadYamlFileWithPositions(file);
+        const w = collectWarnings(file, data as WarningContext, document, lineCounter);
+        if (w) warnings.push(w);
+      } catch {
+        // Ignore parse errors - they're caught by YAML validation
+      }
+    }
+  }
+
+  // Validate accessories (supersedes must reference valid accessory ID)
+  for (const file of accessoryFiles) {
+    const error = validateFile(file, AccessorySchema, allManufacturers, accessoryIds);
+    if (error) {
+      errors.push(error);
+    } else {
+      stats.accessories++;
       // Collect advisory warnings for valid files
       try {
         const { data, document, lineCounter } = loadYamlFileWithPositions(file);
@@ -1075,6 +1255,26 @@ function validate(): ValidationResult {
     }
   }
 
+  // Check for cycles in supersedes chains (content)
+  for (const [id, _supersedes] of contentSupersedesMap) {
+    const cycle = detectSupersedeCycle(id, contentSupersedesMap, contentIdToSlug);
+    if (cycle) {
+      const slug = contentIdToSlug.get(id) || id;
+      errors.push({
+        file: `data/content/${slug}.yaml`,
+        errors: [`supersedes: Cycle detected in supersedes chain: ${cycle.join(" → ")}`],
+        details: [
+          {
+            code: ValidationErrorCode.E199_VALIDATION_ERROR,
+            message: `Cycle detected in supersedes chain: ${cycle.join(" → ")}`,
+            path: "supersedes",
+            docsUrl: getDocsUrl(ValidationErrorCode.E199_VALIDATION_ERROR),
+          },
+        ],
+      });
+    }
+  }
+
   // Check for cycles in supersedes chains (hardware)
   for (const [id, _supersedes] of hardwareSupersedesMap) {
     const cycle = detectSupersedeCycle(id, hardwareSupersedesMap, hardwareIdToSlug);
@@ -1082,6 +1282,26 @@ function validate(): ValidationResult {
       const slug = hardwareIdToSlug.get(id) || id;
       errors.push({
         file: `data/hardware/${slug}.yaml`,
+        errors: [`supersedes: Cycle detected in supersedes chain: ${cycle.join(" → ")}`],
+        details: [
+          {
+            code: ValidationErrorCode.E199_VALIDATION_ERROR,
+            message: `Cycle detected in supersedes chain: ${cycle.join(" → ")}`,
+            path: "supersedes",
+            docsUrl: getDocsUrl(ValidationErrorCode.E199_VALIDATION_ERROR),
+          },
+        ],
+      });
+    }
+  }
+
+  // Check for cycles in supersedes chains (accessories)
+  for (const [id, _supersedes] of accessorySupersedesMap) {
+    const cycle = detectSupersedeCycle(id, accessorySupersedesMap, accessoryIdToSlug);
+    if (cycle) {
+      const slug = accessoryIdToSlug.get(id) || id;
+      errors.push({
+        file: `data/accessories/${slug}.yaml`,
         errors: [`supersedes: Cycle detected in supersedes chain: ${cycle.join(" → ")}`],
         details: [
           {
@@ -1125,7 +1345,13 @@ function validateIds(): IdValidationResult {
     duplicates: 0,
   };
 
-  const collections: Collection[] = ["manufacturers", "software", "hardware"];
+  const collections: Collection[] = [
+    "manufacturers",
+    "software",
+    "content",
+    "hardware",
+    "accessories",
+  ];
 
   for (const collection of collections) {
     const files = getYamlFiles(path.join(DATA_DIR, collection));
@@ -1179,7 +1405,12 @@ function writeGitHubSummary(result: ValidationResult): void {
   const summaryPath = process.env.GITHUB_STEP_SUMMARY;
   if (!summaryPath) return;
 
-  const total = result.stats.manufacturers + result.stats.software + result.stats.hardware;
+  const total =
+    result.stats.manufacturers +
+    result.stats.software +
+    result.stats.content +
+    result.stats.hardware +
+    result.stats.accessories;
 
   let summary = "";
 
@@ -1218,7 +1449,9 @@ function writeGitHubSummary(result: ValidationResult): void {
   summary += `|------|-------|\n`;
   summary += `| Manufacturers | ${result.stats.manufacturers} |\n`;
   summary += `| Software | ${result.stats.software} |\n`;
+  summary += `| Content | ${result.stats.content} |\n`;
   summary += `| Hardware | ${result.stats.hardware} |\n`;
+  summary += `| Accessories | ${result.stats.accessories} |\n`;
   summary += `| **Total** | **${total}** |\n`;
 
   fs.appendFileSync(summaryPath, summary);
@@ -1277,9 +1510,11 @@ function writeConsoleOutput(result: ValidationResult): void {
   console.log("📊 Stats:");
   console.log(`   Manufacturers: ${result.stats.manufacturers}`);
   console.log(`   Software:      ${result.stats.software}`);
+  console.log(`   Content:       ${result.stats.content}`);
   console.log(`   Hardware:      ${result.stats.hardware}`);
+  console.log(`   Accessories:   ${result.stats.accessories}`);
   console.log(
-    `   Total:         ${result.stats.manufacturers + result.stats.software + result.stats.hardware}`
+    `   Total:         ${result.stats.manufacturers + result.stats.software + result.stats.content + result.stats.hardware + result.stats.accessories}`
   );
   console.log();
 }

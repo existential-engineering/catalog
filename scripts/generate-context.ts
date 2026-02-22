@@ -137,7 +137,7 @@ Pattern: \`${SLUG_PATTERN.source}\`
 **Rules:**
 - Lowercase letters and numbers only
 - Hyphens allowed between characters (not at start/end)
-- Must be unique across all collections (manufacturers, software, hardware)
+- Must be unique across all collections (manufacturers, software, content, hardware, accessories)
 - Should match the filename (e.g., \`serum.yaml\` → \`slug: serum\`)
 
 **Examples:**
@@ -225,11 +225,15 @@ ${context.locales.map((l) => `| \`${l.code}\` | ${l.name} | ${l.nativeName} |`).
 - \`platforms\` - Array of supported platforms
 - \`identifiers\` - Bundle IDs per format (e.g., \`au: com.xferrecords.Serum\`)
 
-### Content (Software subtype)
-Content entries (presets, sample packs, expansions) are software entries where \`primaryCategory\` is a content type (e.g., \`preset\`, \`preset-pack\`, \`sample-pack\`, \`drum-kit\`, \`loop-pack\`, \`sound-library\`).
+### Content
+Content entries (presets, sample packs, expansions) live in \`data/content/\` as a separate collection.
 
-- \`platforms\`, \`formats\`, \`identifiers\` are optional for content entries
+- \`slug\` - URL-safe identifier
+- \`name\` - Display name
+- \`manufacturer\` - Slug reference to manufacturer
+- \`primaryCategory\` - Content category (e.g., \`preset\`, \`preset-pack\`, \`sample-pack\`, \`sound-library\`)
 - \`compatibleWith\` - Optional array of software slugs for host products (e.g., \`["serum", "omnisphere-2"]\`)
+- Does NOT have \`platforms\`, \`formats\`, or \`identifiers\` fields
 - Advisory warning W123 fires if a \`compatibleWith\` slug doesn't match an existing software file
 
 ### Hardware
@@ -238,6 +242,16 @@ Content entries (presets, sample packs, expansions) are software entries where \
 - \`manufacturer\` - Slug reference to manufacturer
 - \`primaryCategory\` - Main category (from list above)
 - \`description\` - Short description (markdown)
+
+### Accessories
+Accessory entries (cables, stands, acoustic treatment) live in \`data/accessories/\` as a separate collection.
+
+- \`slug\` - URL-safe identifier
+- \`name\` - Display name
+- \`manufacturer\` - Slug reference to manufacturer
+- \`primaryCategory\` - Accessory category (e.g., \`cable\`, \`mic-stand\`, \`acoustic-panel\`)
+- \`description\` - Short description (markdown)
+- Does NOT have \`io\` or \`revisions\` fields
 
 ---
 

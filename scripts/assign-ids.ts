@@ -33,7 +33,13 @@ function getYamlFiles(dir: string): string[] {
 /** Load all existing IDs across all collections into a Set */
 function loadExistingIds(): Set<string> {
   const ids = new Set<string>();
-  const collections: Collection[] = ["manufacturers", "software", "hardware"];
+  const collections: Collection[] = [
+    "manufacturers",
+    "software",
+    "content",
+    "hardware",
+    "accessories",
+  ];
 
   for (const collection of collections) {
     const files = getYamlFiles(path.join(DATA_DIR, collection));
@@ -62,7 +68,13 @@ function generateUniqueId(existingIds: Set<string>): string {
 
 function assignIds(): void {
   const existingIds = loadExistingIds();
-  const collections: Collection[] = ["manufacturers", "software", "hardware"];
+  const collections: Collection[] = [
+    "manufacturers",
+    "software",
+    "content",
+    "hardware",
+    "accessories",
+  ];
   const stats = { assigned: 0, skipped: 0 };
 
   for (const collection of collections) {

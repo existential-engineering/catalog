@@ -172,7 +172,9 @@ function getChangedFiles(baseSha: string): string[] {
 
     return output
       .split("\n")
-      .filter((f) => f.match(/^data\/(software|hardware|manufacturers)\/.*\.yaml$/))
+      .filter((f) =>
+        f.match(/^data\/(software|content|hardware|accessories|manufacturers)\/.*\.yaml$/)
+      )
       .map((f) => path.join(process.cwd(), f))
       .filter((f) => fs.existsSync(f));
   } catch (error) {
@@ -385,7 +387,9 @@ async function validate(
     files = [
       ...getYamlFiles(path.join(DATA_DIR, "manufacturers")),
       ...getYamlFiles(path.join(DATA_DIR, "software")),
+      ...getYamlFiles(path.join(DATA_DIR, "content")),
       ...getYamlFiles(path.join(DATA_DIR, "hardware")),
+      ...getYamlFiles(path.join(DATA_DIR, "accessories")),
     ];
     console.log(`Checking ${files.length} file(s)...`);
   }

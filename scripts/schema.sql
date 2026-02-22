@@ -144,6 +144,103 @@ CREATE TABLE IF NOT EXISTS software_videos (
 
 CREATE INDEX idx_software_videos_software ON software_videos(software_id);
 
+-- Content (Presets, Sample Packs, Sound Libraries, etc.)
+CREATE TABLE IF NOT EXISTS content (
+    id TEXT PRIMARY KEY NOT NULL,     -- Nanoid string ID
+    name TEXT NOT NULL,               -- Display name
+    manufacturer_id TEXT REFERENCES manufacturers(id),
+    supersedes_id TEXT REFERENCES content(id), -- ID of content this supersedes
+    website TEXT,                     -- Product page URL
+    release_date TEXT,                -- Initial release date
+    release_date_year_only INTEGER DEFAULT 0, -- If 1, only year is meaningful
+    primary_category TEXT,            -- Primary category
+    secondary_category TEXT,          -- Secondary category
+    description TEXT,                 -- Short description
+    details TEXT,                     -- Detailed description
+    specs TEXT,                       -- Technical specifications
+    created_at TEXT DEFAULT (datetime('now')),
+    updated_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX idx_content_name ON content(name);
+CREATE INDEX idx_content_manufacturer ON content(manufacturer_id);
+CREATE INDEX idx_content_primary_category ON content(primary_category);
+CREATE INDEX idx_content_supersedes ON content(supersedes_id);
+
+-- Content Categories (many-to-many)
+CREATE TABLE IF NOT EXISTS content_categories (
+    content_id TEXT NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+    category TEXT NOT NULL,
+    PRIMARY KEY (content_id, category)
+);
+
+CREATE INDEX idx_content_categories_category ON content_categories(category);
+
+-- Content Search Terms
+CREATE TABLE IF NOT EXISTS content_search_terms (
+    content_id TEXT NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+    term TEXT NOT NULL,
+    PRIMARY KEY (content_id, term)
+);
+
+-- Content Compatibility (many-to-many, content references software)
+CREATE TABLE IF NOT EXISTS content_compatibility (
+    content_id TEXT NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+    compatible_with_id TEXT NOT NULL REFERENCES software(id),
+    PRIMARY KEY (content_id, compatible_with_id)
+);
+
+CREATE INDEX idx_content_compatibility_target ON content_compatibility(compatible_with_id);
+
+-- Content Versions
+CREATE TABLE IF NOT EXISTS content_versions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content_id TEXT NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+    name TEXT NOT NULL,               -- Version number (e.g., '1.2.3')
+    release_date TEXT,
+    release_date_year_only INTEGER DEFAULT 0,
+    pre_release INTEGER DEFAULT 0,    -- Boolean
+    unofficial INTEGER DEFAULT 0,     -- Boolean
+    url TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_content_versions_content ON content_versions(content_id);
+
+-- Content Prices
+CREATE TABLE IF NOT EXISTS content_prices (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content_id TEXT NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+    amount REAL NOT NULL,
+    currency TEXT NOT NULL
+);
+
+CREATE INDEX idx_content_prices_content ON content_prices(content_id);
+
+-- Content Links
+CREATE TABLE IF NOT EXISTS content_links (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content_id TEXT NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+    type TEXT NOT NULL,
+    title TEXT,
+    url TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_content_links_content ON content_links(content_id);
+
+-- Content Videos
+CREATE TABLE IF NOT EXISTS content_videos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content_id TEXT NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+    video_id TEXT NOT NULL,
+    provider TEXT NOT NULL DEFAULT 'youtube',
+    title TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_content_videos_content ON content_videos(content_id);
+
 -- Hardware
 CREATE TABLE IF NOT EXISTS hardware (
     id TEXT PRIMARY KEY NOT NULL,     -- Nanoid string ID
@@ -336,6 +433,94 @@ CREATE TABLE IF NOT EXISTS hardware_revision_videos (
 
 CREATE INDEX idx_hardware_revision_videos_revision ON hardware_revision_videos(revision_id);
 
+-- Accessories (Cables, Stands, Acoustic Treatment, etc.)
+CREATE TABLE IF NOT EXISTS accessories (
+    id TEXT PRIMARY KEY NOT NULL,     -- Nanoid string ID
+    name TEXT NOT NULL,               -- Display name
+    manufacturer_id TEXT REFERENCES manufacturers(id),
+    supersedes_id TEXT REFERENCES accessories(id), -- ID of accessory this supersedes
+    website TEXT,                     -- Product page URL
+    release_date TEXT,                -- Initial release date
+    release_date_year_only INTEGER DEFAULT 0, -- If 1, only year is meaningful
+    primary_category TEXT,            -- Primary category
+    secondary_category TEXT,          -- Secondary category
+    description TEXT,                 -- Short description
+    details TEXT,                     -- Detailed description
+    specs TEXT,                       -- Technical specifications
+    created_at TEXT DEFAULT (datetime('now')),
+    updated_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX idx_accessories_name ON accessories(name);
+CREATE INDEX idx_accessories_manufacturer ON accessories(manufacturer_id);
+CREATE INDEX idx_accessories_primary_category ON accessories(primary_category);
+CREATE INDEX idx_accessories_supersedes ON accessories(supersedes_id);
+
+-- Accessories Categories (many-to-many)
+CREATE TABLE IF NOT EXISTS accessories_categories (
+    accessory_id TEXT NOT NULL REFERENCES accessories(id) ON DELETE CASCADE,
+    category TEXT NOT NULL,
+    PRIMARY KEY (accessory_id, category)
+);
+
+CREATE INDEX idx_accessories_categories_category ON accessories_categories(category);
+
+-- Accessories Search Terms
+CREATE TABLE IF NOT EXISTS accessories_search_terms (
+    accessory_id TEXT NOT NULL REFERENCES accessories(id) ON DELETE CASCADE,
+    term TEXT NOT NULL,
+    PRIMARY KEY (accessory_id, term)
+);
+
+-- Accessories Versions
+CREATE TABLE IF NOT EXISTS accessories_versions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    accessory_id TEXT NOT NULL REFERENCES accessories(id) ON DELETE CASCADE,
+    name TEXT NOT NULL,
+    release_date TEXT,
+    release_date_year_only INTEGER DEFAULT 0,
+    pre_release INTEGER DEFAULT 0,
+    unofficial INTEGER DEFAULT 0,
+    url TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_accessories_versions_accessory ON accessories_versions(accessory_id);
+
+-- Accessories Prices
+CREATE TABLE IF NOT EXISTS accessories_prices (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    accessory_id TEXT NOT NULL REFERENCES accessories(id) ON DELETE CASCADE,
+    amount REAL NOT NULL,
+    currency TEXT NOT NULL
+);
+
+CREATE INDEX idx_accessories_prices_accessory ON accessories_prices(accessory_id);
+
+-- Accessories Links
+CREATE TABLE IF NOT EXISTS accessories_links (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    accessory_id TEXT NOT NULL REFERENCES accessories(id) ON DELETE CASCADE,
+    type TEXT NOT NULL,
+    title TEXT,
+    url TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_accessories_links_accessory ON accessories_links(accessory_id);
+
+-- Accessories Videos
+CREATE TABLE IF NOT EXISTS accessories_videos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    accessory_id TEXT NOT NULL REFERENCES accessories(id) ON DELETE CASCADE,
+    video_id TEXT NOT NULL,
+    provider TEXT NOT NULL DEFAULT 'youtube',
+    title TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_accessories_videos_accessory ON accessories_videos(accessory_id);
+
 -- =============================================================================
 -- LOCALIZATION / TRANSLATIONS
 -- =============================================================================
@@ -365,6 +550,19 @@ CREATE TABLE IF NOT EXISTS manufacturer_translations (
     PRIMARY KEY (manufacturer_id, locale)
 );
 
+-- Content translations
+CREATE TABLE IF NOT EXISTS content_translations (
+    content_id TEXT NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    description TEXT,               -- Translated short description (HTML)
+    details TEXT,                   -- Translated detailed description (HTML)
+    specs TEXT,                     -- Translated specifications (HTML)
+    website TEXT,                   -- Locale-specific website URL
+    PRIMARY KEY (content_id, locale)
+);
+
+CREATE INDEX idx_content_translations_locale ON content_translations(locale);
+
 -- Software translations
 CREATE TABLE IF NOT EXISTS software_translations (
     software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
@@ -378,6 +576,19 @@ CREATE TABLE IF NOT EXISTS software_translations (
 
 CREATE INDEX idx_software_translations_locale ON software_translations(locale);
 
+-- Accessories translations
+CREATE TABLE IF NOT EXISTS accessories_translations (
+    accessory_id TEXT NOT NULL REFERENCES accessories(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    description TEXT,               -- Translated short description (HTML)
+    details TEXT,                   -- Translated detailed description (HTML)
+    specs TEXT,                     -- Translated specifications (HTML)
+    website TEXT,                   -- Locale-specific website URL
+    PRIMARY KEY (accessory_id, locale)
+);
+
+CREATE INDEX idx_accessories_translations_locale ON accessories_translations(locale);
+
 -- Hardware translations
 CREATE TABLE IF NOT EXISTS hardware_translations (
     hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
@@ -390,6 +601,32 @@ CREATE TABLE IF NOT EXISTS hardware_translations (
 );
 
 CREATE INDEX idx_hardware_translations_locale ON hardware_translations(locale);
+
+-- Localized content links
+CREATE TABLE IF NOT EXISTS content_links_localized (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content_id TEXT NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    type TEXT NOT NULL,
+    title TEXT,
+    url TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_content_links_localized ON content_links_localized(content_id, locale);
+
+-- Localized content videos
+CREATE TABLE IF NOT EXISTS content_videos_localized (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content_id TEXT NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    video_id TEXT NOT NULL,
+    provider TEXT NOT NULL DEFAULT 'youtube',
+    title TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_content_videos_localized ON content_videos_localized(content_id, locale);
 
 -- Localized software links (purchase, affiliate, docs per locale)
 CREATE TABLE IF NOT EXISTS software_links_localized (
@@ -416,6 +653,32 @@ CREATE TABLE IF NOT EXISTS software_videos_localized (
 );
 
 CREATE INDEX idx_software_videos_localized ON software_videos_localized(software_id, locale);
+
+-- Localized accessories links
+CREATE TABLE IF NOT EXISTS accessories_links_localized (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    accessory_id TEXT NOT NULL REFERENCES accessories(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    type TEXT NOT NULL,
+    title TEXT,
+    url TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_accessories_links_localized ON accessories_links_localized(accessory_id, locale);
+
+-- Localized accessories videos
+CREATE TABLE IF NOT EXISTS accessories_videos_localized (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    accessory_id TEXT NOT NULL REFERENCES accessories(id) ON DELETE CASCADE,
+    locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
+    video_id TEXT NOT NULL,
+    provider TEXT NOT NULL DEFAULT 'youtube',
+    title TEXT,
+    description TEXT
+);
+
+CREATE INDEX idx_accessories_videos_localized ON accessories_videos_localized(accessory_id, locale);
 
 -- Localized hardware links
 CREATE TABLE IF NOT EXISTS hardware_links_localized (
@@ -462,6 +725,16 @@ CREATE INDEX idx_hardware_io_translations ON hardware_io_translations(hardware_i
 -- FULL-TEXT SEARCH
 -- =============================================================================
 
+-- Content FTS index
+CREATE VIRTUAL TABLE IF NOT EXISTS content_fts USING fts5(
+    id,
+    name,
+    manufacturer_name,
+    categories,
+    description,
+    tokenize='porter unicode61'
+);
+
 -- Software FTS index
 -- Note: Not using content='' (contentless mode) because we need to retrieve
 -- the id column to join back to the software table for full results
@@ -478,6 +751,16 @@ CREATE VIRTUAL TABLE IF NOT EXISTS software_fts USING fts5(
 -- Note: Not using content='' (contentless mode) because we need to retrieve
 -- the id column to join back to the hardware table for full results
 CREATE VIRTUAL TABLE IF NOT EXISTS hardware_fts USING fts5(
+    id,
+    name,
+    manufacturer_name,
+    categories,
+    description,
+    tokenize='porter unicode61'
+);
+
+-- Accessories FTS index
+CREATE VIRTUAL TABLE IF NOT EXISTS accessories_fts USING fts5(
     id,
     name,
     manufacturer_name,
@@ -518,7 +801,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (11, 'Added supersedes_id column for product lineage tracking', 0),
     (12, 'Added slug column to hardware_revisions for stable identifiers', 0),
     (13, 'Separated video links into dedicated video tables', 1),
-    (14, 'Added connector_detail column to hardware_io and hardware_revision_io', 0);
+    (14, 'Added connector_detail column to hardware_io and hardware_revision_io', 0),
+    (15, 'Added content and accessories tables with related tables, FTS, and translations', 1);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES

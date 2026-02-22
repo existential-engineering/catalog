@@ -12,7 +12,9 @@ import Database from "better-sqlite3";
 import { marked } from "marked";
 
 import type {
+  Accessory,
   CategoryAliasesSchema,
+  Content,
   Hardware,
   LocalesSchema,
   Manufacturer,
@@ -478,6 +480,241 @@ function buildDatabase(version: string): void {
     updateSoftwareSupersedes.run(supersedesId, id);
   }
 
+  // Load and insert content
+  const contentFiles = getYamlFiles(path.join(DATA_DIR, "content"));
+  const contentSupersedes = new Map<string, string>(); // id -> supersedes_id
+  let contentCount = 0;
+
+  const insertContent = db.prepare(`
+    INSERT INTO content (id, name, manufacturer_id, website, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+  const updateContentSupersedes = db.prepare(`
+    UPDATE content SET supersedes_id = ? WHERE id = ?
+  `);
+  const insertContentCategory = db.prepare(`
+    INSERT INTO content_categories (content_id, category)
+    VALUES (?, ?)
+  `);
+  const insertContentSearchTerm = db.prepare(`
+    INSERT INTO content_search_terms (content_id, term)
+    VALUES (?, ?)
+  `);
+  const insertContentCompatibility = db.prepare(`
+    INSERT INTO content_compatibility (content_id, compatible_with_id)
+    VALUES (?, ?)
+  `);
+  const insertContentVersion = db.prepare(`
+    INSERT INTO content_versions (content_id, name, release_date, release_date_year_only, pre_release, unofficial, url, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+  const insertContentPrice = db.prepare(`
+    INSERT INTO content_prices (content_id, amount, currency)
+    VALUES (?, ?, ?)
+  `);
+  const insertContentLink = db.prepare(`
+    INSERT INTO content_links (content_id, type, title, url, description)
+    VALUES (?, ?, ?, ?, ?)
+  `);
+  const insertContentVideo = db.prepare(`
+    INSERT INTO content_videos (content_id, video_id, provider, title, description)
+    VALUES (?, ?, ?, ?, ?)
+  `);
+  const insertContentFts = db.prepare(`
+    INSERT INTO content_fts (id, name, manufacturer_name, categories, description)
+    VALUES (?, ?, ?, ?, ?)
+  `);
+  const insertContentTranslation = db.prepare(`
+    INSERT INTO content_translations (content_id, locale, description, details, specs, website)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `);
+  const insertContentLinkLocalized = db.prepare(`
+    INSERT INTO content_links_localized (content_id, locale, type, title, url, description)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `);
+  const insertContentVideoLocalized = db.prepare(`
+    INSERT INTO content_videos_localized (content_id, locale, video_id, provider, title, description)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `);
+
+  for (const file of contentFiles) {
+    const data = loadYamlFile<Content>(file);
+    const manufacturer = manufacturers.get(data.manufacturer);
+    const manufacturerId = manufacturerIds.get(data.manufacturer);
+
+    const id = data.id;
+    if (!id) {
+      throw new Error(`Missing id in ${file}. Run 'pnpm assign-ids' to assign IDs to new entries.`);
+    }
+
+    const normalizedCategories = data.categories?.map(normalizeCategory) ?? [];
+    const normalizedPrimaryCategory = data.primaryCategory
+      ? normalizeCategory(data.primaryCategory)
+      : null;
+    const normalizedSecondaryCategory = data.secondaryCategory
+      ? normalizeCategory(data.secondaryCategory)
+      : null;
+
+    insertContent.run(
+      id,
+      data.name,
+      manufacturerId ?? null,
+      data.website ?? null,
+      data.releaseDate ?? null,
+      data.releaseDateYearOnly ? 1 : 0,
+      normalizedPrimaryCategory,
+      normalizedSecondaryCategory,
+      markdownToHtml(data.description),
+      markdownToHtml(normalizeMarkdown(data.details)),
+      markdownToHtml(normalizeMarkdown(data.specs))
+    );
+
+    if (data.supersedes) {
+      contentSupersedes.set(id, data.supersedes);
+    }
+
+    // Insert categories
+    const seenContentCategories = new Set<string>();
+    for (const category of normalizedCategories) {
+      if (seenContentCategories.has(category)) {
+        console.warn(`  ⚠ Duplicate category "${category}" in ${file} (after normalization)`);
+        continue;
+      }
+      seenContentCategories.add(category);
+      insertContentCategory.run(id, category);
+    }
+
+    // Insert search terms
+    if (data.searchTerms) {
+      for (const term of data.searchTerms) {
+        insertContentSearchTerm.run(id, term);
+      }
+    }
+
+    // Insert compatibility references (resolve slugs to software IDs)
+    if (data.compatibleWith) {
+      for (const slug of data.compatibleWith) {
+        const resolvedId = slugToId.get(slug);
+        if (resolvedId) {
+          insertContentCompatibility.run(id, resolvedId);
+        } else {
+          console.warn(`  ⚠ Unknown compatibility slug "${slug}" in ${file}`);
+        }
+      }
+    }
+
+    // Insert versions
+    if (data.versions) {
+      for (const ver of data.versions) {
+        insertContentVersion.run(
+          id,
+          ver.name,
+          ver.releaseDate ?? null,
+          ver.releaseDateYearOnly ? 1 : 0,
+          ver.preRelease ? 1 : 0,
+          ver.unofficial ? 1 : 0,
+          ver.url ?? null,
+          ver.description ?? null
+        );
+      }
+    }
+
+    // Insert prices
+    if (data.prices) {
+      for (const price of data.prices) {
+        insertContentPrice.run(id, price.amount, price.currency);
+      }
+    }
+
+    // Insert links
+    if (data.links) {
+      for (const link of data.links) {
+        insertContentLink.run(
+          id,
+          link.type,
+          link.title ?? null,
+          link.url,
+          link.description ?? null
+        );
+      }
+    }
+
+    // Insert videos
+    if (data.videos) {
+      for (const video of data.videos) {
+        insertContentVideo.run(
+          id,
+          video.videoId,
+          video.provider ?? "youtube",
+          video.title ?? null,
+          video.description ?? null
+        );
+      }
+    }
+
+    // Insert FTS entry
+    insertContentFts.run(
+      id,
+      data.name,
+      manufacturer?.name ?? "",
+      normalizedCategories.join(" "),
+      data.description ?? ""
+    );
+
+    // Insert translations
+    if (data.translations) {
+      for (const [locale, trans] of Object.entries(data.translations)) {
+        if (!APPROVED_LOCALES.has(locale)) continue;
+
+        if (trans.description || trans.details || trans.specs || trans.website) {
+          insertContentTranslation.run(
+            id,
+            locale,
+            markdownToHtml(trans.description),
+            markdownToHtml(trans.details),
+            markdownToHtml(trans.specs),
+            trans.website ?? null
+          );
+        }
+
+        if (trans.links) {
+          for (const link of trans.links) {
+            insertContentLinkLocalized.run(
+              id,
+              locale,
+              link.type,
+              link.title ?? null,
+              link.url,
+              link.description ?? null
+            );
+          }
+        }
+
+        if (trans.videos) {
+          for (const video of trans.videos) {
+            insertContentVideoLocalized.run(
+              id,
+              locale,
+              video.videoId,
+              video.provider ?? "youtube",
+              video.title ?? null,
+              video.description ?? null
+            );
+          }
+        }
+      }
+    }
+
+    contentCount++;
+  }
+
+  console.log(`  ✓ Inserted ${contentCount} content entries`);
+
+  // Update content supersedes relationships
+  for (const [id, supersedesId] of contentSupersedes) {
+    updateContentSupersedes.run(supersedesId, id);
+  }
+
   // Load and insert hardware
   const hardwareFiles = getYamlFiles(path.join(DATA_DIR, "hardware"));
   const hardwareSupersedes = new Map<string, string>(); // id -> supersedes_id
@@ -869,6 +1106,225 @@ function buildDatabase(version: string): void {
   // Second pass: update supersedes relationships
   for (const [id, supersedesId] of hardwareSupersedes) {
     updateHardwareSupersedes.run(supersedesId, id);
+  }
+
+  // Load and insert accessories
+  const accessoryFiles = getYamlFiles(path.join(DATA_DIR, "accessories"));
+  const accessorySupersedes = new Map<string, string>(); // id -> supersedes_id
+  let accessoryCount = 0;
+
+  const insertAccessory = db.prepare(`
+    INSERT INTO accessories (id, name, manufacturer_id, website, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+  const updateAccessorySupersedes = db.prepare(`
+    UPDATE accessories SET supersedes_id = ? WHERE id = ?
+  `);
+  const insertAccessoryCategory = db.prepare(`
+    INSERT INTO accessories_categories (accessory_id, category)
+    VALUES (?, ?)
+  `);
+  const insertAccessorySearchTerm = db.prepare(`
+    INSERT INTO accessories_search_terms (accessory_id, term)
+    VALUES (?, ?)
+  `);
+  const insertAccessoryVersion = db.prepare(`
+    INSERT INTO accessories_versions (accessory_id, name, release_date, release_date_year_only, pre_release, unofficial, url, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+  const insertAccessoryPrice = db.prepare(`
+    INSERT INTO accessories_prices (accessory_id, amount, currency)
+    VALUES (?, ?, ?)
+  `);
+  const insertAccessoryLink = db.prepare(`
+    INSERT INTO accessories_links (accessory_id, type, title, url, description)
+    VALUES (?, ?, ?, ?, ?)
+  `);
+  const insertAccessoryVideo = db.prepare(`
+    INSERT INTO accessories_videos (accessory_id, video_id, provider, title, description)
+    VALUES (?, ?, ?, ?, ?)
+  `);
+  const insertAccessoryFts = db.prepare(`
+    INSERT INTO accessories_fts (id, name, manufacturer_name, categories, description)
+    VALUES (?, ?, ?, ?, ?)
+  `);
+  const insertAccessoryTranslation = db.prepare(`
+    INSERT INTO accessories_translations (accessory_id, locale, description, details, specs, website)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `);
+  const insertAccessoryLinkLocalized = db.prepare(`
+    INSERT INTO accessories_links_localized (accessory_id, locale, type, title, url, description)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `);
+  const insertAccessoryVideoLocalized = db.prepare(`
+    INSERT INTO accessories_videos_localized (accessory_id, locale, video_id, provider, title, description)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `);
+
+  for (const file of accessoryFiles) {
+    const data = loadYamlFile<Accessory>(file);
+    const manufacturer = manufacturers.get(data.manufacturer);
+    const manufacturerId = manufacturerIds.get(data.manufacturer);
+
+    const id = data.id;
+    if (!id) {
+      throw new Error(`Missing id in ${file}. Run 'pnpm assign-ids' to assign IDs to new entries.`);
+    }
+
+    const normalizedCategories = data.categories?.map(normalizeCategory) ?? [];
+    const normalizedPrimaryCategory = data.primaryCategory
+      ? normalizeCategory(data.primaryCategory)
+      : null;
+    const normalizedSecondaryCategory = data.secondaryCategory
+      ? normalizeCategory(data.secondaryCategory)
+      : null;
+
+    insertAccessory.run(
+      id,
+      data.name,
+      manufacturerId ?? null,
+      data.website ?? null,
+      data.releaseDate ?? null,
+      data.releaseDateYearOnly ? 1 : 0,
+      normalizedPrimaryCategory,
+      normalizedSecondaryCategory,
+      markdownToHtml(data.description),
+      markdownToHtml(normalizeMarkdown(data.details)),
+      markdownToHtml(normalizeMarkdown(data.specs))
+    );
+
+    if (data.supersedes) {
+      accessorySupersedes.set(id, data.supersedes);
+    }
+
+    // Insert categories
+    const seenAccCategories = new Set<string>();
+    for (const category of normalizedCategories) {
+      if (seenAccCategories.has(category)) {
+        console.warn(`  ⚠ Duplicate category "${category}" in ${file} (after normalization)`);
+        continue;
+      }
+      seenAccCategories.add(category);
+      insertAccessoryCategory.run(id, category);
+    }
+
+    // Insert search terms
+    if (data.searchTerms) {
+      for (const term of data.searchTerms) {
+        insertAccessorySearchTerm.run(id, term);
+      }
+    }
+
+    // Insert versions
+    if (data.versions) {
+      for (const ver of data.versions) {
+        insertAccessoryVersion.run(
+          id,
+          ver.name,
+          ver.releaseDate ?? null,
+          ver.releaseDateYearOnly ? 1 : 0,
+          ver.preRelease ? 1 : 0,
+          ver.unofficial ? 1 : 0,
+          ver.url ?? null,
+          ver.description ?? null
+        );
+      }
+    }
+
+    // Insert prices
+    if (data.prices) {
+      for (const price of data.prices) {
+        insertAccessoryPrice.run(id, price.amount, price.currency);
+      }
+    }
+
+    // Insert links
+    if (data.links) {
+      for (const link of data.links) {
+        insertAccessoryLink.run(
+          id,
+          link.type,
+          link.title ?? null,
+          link.url,
+          link.description ?? null
+        );
+      }
+    }
+
+    // Insert videos
+    if (data.videos) {
+      for (const video of data.videos) {
+        insertAccessoryVideo.run(
+          id,
+          video.videoId,
+          video.provider ?? "youtube",
+          video.title ?? null,
+          video.description ?? null
+        );
+      }
+    }
+
+    // Insert FTS entry
+    insertAccessoryFts.run(
+      id,
+      data.name,
+      manufacturer?.name ?? "",
+      normalizedCategories.join(" "),
+      data.description ?? ""
+    );
+
+    // Insert translations
+    if (data.translations) {
+      for (const [locale, trans] of Object.entries(data.translations)) {
+        if (!APPROVED_LOCALES.has(locale)) continue;
+
+        if (trans.description || trans.details || trans.specs || trans.website) {
+          insertAccessoryTranslation.run(
+            id,
+            locale,
+            markdownToHtml(trans.description),
+            markdownToHtml(trans.details),
+            markdownToHtml(trans.specs),
+            trans.website ?? null
+          );
+        }
+
+        if (trans.links) {
+          for (const link of trans.links) {
+            insertAccessoryLinkLocalized.run(
+              id,
+              locale,
+              link.type,
+              link.title ?? null,
+              link.url,
+              link.description ?? null
+            );
+          }
+        }
+
+        if (trans.videos) {
+          for (const video of trans.videos) {
+            insertAccessoryVideoLocalized.run(
+              id,
+              locale,
+              video.videoId,
+              video.provider ?? "youtube",
+              video.title ?? null,
+              video.description ?? null
+            );
+          }
+        }
+      }
+    }
+
+    accessoryCount++;
+  }
+
+  console.log(`  ✓ Inserted ${accessoryCount} accessory entries`);
+
+  // Update accessory supersedes relationships
+  for (const [id, supersedesId] of accessorySupersedes) {
+    updateAccessorySupersedes.run(supersedesId, id);
   }
 
   // Update metadata

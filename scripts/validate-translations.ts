@@ -10,6 +10,8 @@ import path from "node:path";
 import { parse as parseYaml } from "yaml";
 
 import type {
+  Accessory,
+  Content,
   ContentTranslation,
   Hardware,
   IOTranslation,
@@ -62,6 +64,14 @@ const VALID_SOFTWARE_FIELDS = new Set([
   "links",
   "videos",
 ]);
+const VALID_CONTENT_FIELDS = new Set([
+  "description",
+  "details",
+  "specs",
+  "website",
+  "links",
+  "videos",
+]);
 const VALID_HARDWARE_FIELDS = new Set([
   "description",
   "details",
@@ -70,6 +80,14 @@ const VALID_HARDWARE_FIELDS = new Set([
   "links",
   "videos",
   "io",
+]);
+const VALID_ACCESSORY_FIELDS = new Set([
+  "description",
+  "details",
+  "specs",
+  "website",
+  "links",
+  "videos",
 ]);
 
 // =============================================================================
@@ -164,6 +182,58 @@ function validateSoftwareTranslations(
     }
 
     errors.push(...validateTranslationFields(trans, VALID_SOFTWARE_FIELDS, locale));
+  }
+
+  return {
+    error: errors.length > 0 ? { file: path.relative(process.cwd(), filePath), errors } : null,
+    warning:
+      warnings.length > 0 ? { file: path.relative(process.cwd(), filePath), warnings } : null,
+  };
+}
+
+function validateContentTranslations(
+  data: Content,
+  filePath: string
+): { error: TranslationError | null; warning: TranslationWarning | null } {
+  if (!data.translations) return { error: null, warning: null };
+
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const [locale, trans] of Object.entries(data.translations)) {
+    if (!APPROVED_LOCALES.has(locale)) {
+      warnings.push(
+        `translations.${locale}: Locale '${locale}' is not yet approved. Add it to schema/locales.yaml to enable full support.`
+      );
+    }
+
+    errors.push(...validateTranslationFields(trans, VALID_CONTENT_FIELDS, locale));
+  }
+
+  return {
+    error: errors.length > 0 ? { file: path.relative(process.cwd(), filePath), errors } : null,
+    warning:
+      warnings.length > 0 ? { file: path.relative(process.cwd(), filePath), warnings } : null,
+  };
+}
+
+function validateAccessoryTranslations(
+  data: Accessory,
+  filePath: string
+): { error: TranslationError | null; warning: TranslationWarning | null } {
+  if (!data.translations) return { error: null, warning: null };
+
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const [locale, trans] of Object.entries(data.translations)) {
+    if (!APPROVED_LOCALES.has(locale)) {
+      warnings.push(
+        `translations.${locale}: Locale '${locale}' is not yet approved. Add it to schema/locales.yaml to enable full support.`
+      );
+    }
+
+    errors.push(...validateTranslationFields(trans, VALID_ACCESSORY_FIELDS, locale));
   }
 
   return {
@@ -271,6 +341,35 @@ function validateTranslations(): TranslationValidationResult {
     }
   }
 
+  // Validate content
+  const contentDataFiles = getYamlFiles(path.join(DATA_DIR, "content"));
+  for (const file of contentDataFiles) {
+    try {
+      const rawContent = fs.readFileSync(file, "utf-8");
+      const data = parseYaml(rawContent) as Content;
+
+      if (data.translations) {
+        stats.filesWithTranslations++;
+        for (const locale of Object.keys(data.translations)) {
+          stats.totalTranslations++;
+          stats.localesUsed.add(locale);
+          if (!APPROVED_LOCALES.has(locale)) {
+            stats.unapprovedLocalesUsed.add(locale);
+          }
+        }
+      }
+
+      const result = validateContentTranslations(data, file);
+      if (result.error) errors.push(result.error);
+      if (result.warning) warnings.push(result.warning);
+    } catch (err) {
+      errors.push({
+        file: path.relative(process.cwd(), file),
+        errors: [`Parse error: ${err instanceof Error ? err.message : String(err)}`],
+      });
+    }
+  }
+
   // Validate hardware
   const hardwareFiles = getYamlFiles(path.join(DATA_DIR, "hardware"));
   for (const file of hardwareFiles) {
@@ -290,6 +389,35 @@ function validateTranslations(): TranslationValidationResult {
       }
 
       const result = validateHardwareTranslations(data, file);
+      if (result.error) errors.push(result.error);
+      if (result.warning) warnings.push(result.warning);
+    } catch (err) {
+      errors.push({
+        file: path.relative(process.cwd(), file),
+        errors: [`Parse error: ${err instanceof Error ? err.message : String(err)}`],
+      });
+    }
+  }
+
+  // Validate accessories
+  const accessoryFiles = getYamlFiles(path.join(DATA_DIR, "accessories"));
+  for (const file of accessoryFiles) {
+    try {
+      const rawContent = fs.readFileSync(file, "utf-8");
+      const data = parseYaml(rawContent) as Accessory;
+
+      if (data.translations) {
+        stats.filesWithTranslations++;
+        for (const locale of Object.keys(data.translations)) {
+          stats.totalTranslations++;
+          stats.localesUsed.add(locale);
+          if (!APPROVED_LOCALES.has(locale)) {
+            stats.unapprovedLocalesUsed.add(locale);
+          }
+        }
+      }
+
+      const result = validateAccessoryTranslations(data, file);
       if (result.error) errors.push(result.error);
       if (result.warning) warnings.push(result.warning);
     } catch (err) {
