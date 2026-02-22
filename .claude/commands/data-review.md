@@ -23,8 +23,9 @@ Run these validation scripts to gather automated analysis:
 1. `pnpm validate` - Schema validation with **line numbers and error codes** (e.g., `E104:12: Invalid category`)
 2. `pnpm identifier-coverage --json` - Check identifier coverage for software entries
 3. `pnpm staleness-report --json` - Check for entries missing verification metadata
+4. `pnpm validate-urls --changed-only --base main --use-cache` - Check URLs in changed files for broken links, spam redirects, and dead domains
 
-Parse the JSON output from these tools to incorporate into the agent analysis below.
+Parse the JSON output from these tools to incorporate into the agent analysis below. For URL validation, note that 403 (anti-crawl) and 405 (anti-bot) responses are expected and should be excluded from findings. Focus on: 404s, 5xx errors, fetch failures (dead domains), and cross-domain redirects to spam/parking sites.
 
 ### Phase 2: Parallel Deep Analysis (use 4 Opus agents concurrently)
 
@@ -160,6 +161,12 @@ Present findings in this structure:
 | Entry | de | es | fr | ja | ko | pt-BR | zh |
 |-------|----|----|----|----|----|----|-----|
 [table rows with checkmarks or dashes]
+
+### URL Health (changed files)
+| File | URL | Issue |
+|------|-----|-------|
+[table rows for broken URLs - 404, 5xx, fetch failed, spam redirects]
+[Omit 403/405 (anti-bot) and timeouts (temporary)]
 
 ### Schema Evolution Opportunities
 | Value | Field | File | Recommendation |
