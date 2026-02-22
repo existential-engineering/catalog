@@ -1,5 +1,11 @@
 # catalog
 
+## 2.10.0
+
+### Minor Changes
+
+- ee00147: Add content collection with 613 entries migrated from software
+
 ## 2.9.0
 
 ### Minor Changes
