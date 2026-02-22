@@ -7,34 +7,16 @@ platforms:
   - windows
 description: Adder uses 32 partials, each partial can use one of four different
   waveforms. Sine/saw/triangle and square waves are initially bu...
-details: >-
-  Adder uses 32 partials, each partial can use one of four different waveforms.
-  Sine/saw/triangle and square waves are initially built in but you can use any
-  small sample as a waveform (300 waveforms are supplied with adder for your
-  use).
+details: |-
+  Adder uses 32 partials, each partial can use one of four different waveforms. Sine/saw/triangle and square waves are initially built in but you can use any small sample as a waveform (300 waveforms are supplied with adder for your use).
 
+  Partials - each partial has it's own volume, harmonic, tuning' fm & phase settings, and each belongs to one of eight volume and pitch group. These groups are use in the modulation matrix so partials can have different volume, pitch & fm envelopes / lfos, etc.
 
-  Partials - each partial has it's own volume, harmonic, tuning' fm & phase
-  settings, and each belongs to one of eight volume and pitch group. These
-  groups are use in the modulation matrix so partials can have different volume,
-  pitch & fm envelopes / lfos, etc.
+  Samples - adder's built in sample loader allows to load in any short 16 bit sample. Samples can be looping or single shot and can be re-triggered using step sequences. A sample shaper allows filtering, reversing, distortion, etc. Of any of the samples.
 
+  Filters - two 12/24 low/high/band pass/band reject + ring mod or comb filters. Each partial can be sent to either or both of these filters. These filters have built-in distortion and waveshaping and can be use in serial or in parallel.
 
-  Samples - adder's built in sample loader allows to load in any short 16 bit
-  sample. Samples can be looping or single shot and can be re-triggered using
-  step sequences. A sample shaper allows filtering, reversing, distortion, etc.
-  Of any of the samples.
-
-
-  Filters - two 12/24 low/high/band pass/band reject + ring mod or comb filters.
-  Each partial can be sent to either or both of these filters. These filters
-  have built-in distortion and waveshaping and can be use in serial or in
-  parallel.
-
-
-  Modulators - adder has eight envelopes, step sequences and lfos. Envelope can
-  have up-to 32 stage, each stage having variable slopes. Each envelope has
-  user-definable loop & release points for complex patterns.
+  Modulators - adder has eight envelopes, step sequences and lfos. Envelope can have up-to 32 stage, each stage having variable slopes. Each envelope has user-definable loop & release points for complex patterns.
 specs: |-
   - 32 partials
   - Four waveform types (sine, saw, triangle, square)

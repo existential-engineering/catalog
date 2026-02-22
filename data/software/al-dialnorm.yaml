@@ -9,33 +9,16 @@ platforms:
 website: https://jelstudio.dk/JELSTUDIO_software.html
 description: Jelstudio's al dialnorm (auto loudness for dialogue and speech
   content) a family of automatic loudness controllers for live and offline us...
-details: >-
-  Jelstudio's al dialnorm is an automatic loudness controller for live and
-  offline use, specifically tuned for speech and dialogue content. The al
-  plugin-bundle will automatically and continuously adjust volume-gain to
-  maintain a similar overall perceived-loudness of the audio going through it.
+details: |-
+  Jelstudio's al dialnorm is an automatic loudness controller for live and offline use, specifically tuned for speech and dialogue content. The al plugin-bundle will automatically and continuously adjust volume-gain to maintain a similar overall perceived-loudness of the audio going through it.
 
+  Al dialnorm is not netflix- or dolby- certified, but does attempt to create 'netflix-legal' dialogue. It is a 32/64-bit vst2 audio-effect plugin that can be used in a live VST-host, or in daws and sound/video-editors on windows.
 
-  Al dialnorm is not netflix- or dolby- certified, but does attempt to create
-  'netflix-legal' dialogue. It is a 32/64-bit vst2 audio-effect plugin that can
-  be used in a live VST-host, or in daws and sound/video-editors on windows.
+  Al dialnorm best suits speech-related content including podcasts, talk-shows, movie-dialogue, and tv-show soundtracks. It will attempt to create an even dialnorm-loudness and natural sounding speech across the entire program without 'compressor-pumping'.
 
+  The plugin is inspired by recommendation itu-r bs.1864-0 and recommendation itu-r bs.1770-4. It employs a band-pass filter with full pass-through of audio above 100 hz and below 10,000 hz, with soft roll-off outside those frequencies.
 
-  Al dialnorm best suits speech-related content including podcasts, talk-shows,
-  movie-dialogue, and tv-show soundtracks. It will attempt to create an even
-  dialnorm-loudness and natural sounding speech across the entire program
-  without 'compressor-pumping'.
-
-
-  The plugin is inspired by recommendation itu-r bs.1864-0 and recommendation
-  itu-r bs.1770-4. It employs a band-pass filter with full pass-through of audio
-  above 100 hz and below 10,000 hz, with soft roll-off outside those
-  frequencies.
-
-
-  The gui layout is optimized for 'peripheral vision overview' based on
-  aviation-safety studies, allowing all important displays to be read at a
-  glance when looking at the center of the gui.
+  The gui layout is optimized for 'peripheral vision overview' based on aviation-safety studies, allowing all important displays to be read at a glance when looking at the center of the gui.
 specs: |-
   - 32/64-bit vst2 audio-effect plugin
   - Live VST-host compatible
