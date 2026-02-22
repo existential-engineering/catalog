@@ -159,7 +159,7 @@ async function checkVideo(entry: VideoEntry): Promise<VideoCheckResult> {
   try {
     const response = await fetch(oembedUrl, {
       signal: AbortSignal.timeout(10000),
-      headers: { "User-Agent": "Racks-Catalog-Validator/1.0" },
+      headers: { "User-Agent": "Aureo-Catalog-Validator/1.0" },
     });
 
     if (response.ok) {

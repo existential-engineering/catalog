@@ -71,7 +71,7 @@ async function checkUrlLive(url: string): Promise<{
       method: "HEAD",
       redirect: "follow",
       signal: AbortSignal.timeout(10000),
-      headers: { "User-Agent": "Racks-Catalog-Validator/1.0" },
+      headers: { "User-Agent": "Aureo-Catalog-Validator/1.0" },
     });
 
     if (response.status >= 400) {
@@ -98,7 +98,7 @@ async function checkUrlLive(url: string): Promise<{
         method: "GET",
         redirect: "follow",
         signal: AbortSignal.timeout(10000),
-        headers: { "User-Agent": "Racks-Catalog-Validator/1.0" },
+        headers: { "User-Agent": "Aureo-Catalog-Validator/1.0" },
       });
 
       if (response.status >= 400) {

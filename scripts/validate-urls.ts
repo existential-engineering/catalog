@@ -251,7 +251,7 @@ async function checkUrl(
       redirect: "follow",
       signal: AbortSignal.timeout(10000),
       headers: {
-        "User-Agent": "Racks-Catalog-Validator/1.0",
+        "User-Agent": "Aureo-Catalog-Validator/1.0",
       },
     });
 
@@ -271,7 +271,7 @@ async function checkUrl(
         redirect: "follow",
         signal: AbortSignal.timeout(10000),
         headers: {
-          "User-Agent": "Racks-Catalog-Validator/1.0",
+          "User-Agent": "Aureo-Catalog-Validator/1.0",
         },
       });
 

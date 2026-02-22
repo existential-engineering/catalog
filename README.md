@@ -166,4 +166,4 @@ pnpm typecheck
 
 ## Related Projects
 
-- [Racks](https://racks.fm) — Studio organization app that uses this catalog
+- [Aureo](https://aureo.audio) — Studio organization app that uses this catalog
