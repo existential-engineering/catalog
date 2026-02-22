@@ -1,5 +1,11 @@
 # catalog
 
+## 2.8.0
+
+### Minor Changes
+
+- 3cc4fa3: Add IK Multimedia hardware and software catalog with IO schema standardization
+
 ## 2.7.0
 
 ### Minor Changes
