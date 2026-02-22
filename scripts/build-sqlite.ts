@@ -211,6 +211,14 @@ function buildDatabase(version: string): void {
   const softwareSupersedes = new Map<string, string>(); // id -> supersedes_id
   let softwareCount = 0;
 
+  // Build slug -> nanoid lookup for resolving compatibility references
+  const slugToId = new Map<string, string>();
+  for (const file of softwareFiles) {
+    const data = loadYamlFile<Software>(file);
+    const slug = path.basename(file, ".yaml");
+    if (data.id) slugToId.set(slug, data.id);
+  }
+
   const insertSoftware = db.prepare(`
     INSERT INTO software (id, name, manufacturer_id, website, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -267,7 +275,7 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertCompatibility = db.prepare(`
-    INSERT INTO software_compatibility (software_id, compatible_with_slug)
+    INSERT INTO software_compatibility (software_id, compatible_with_id)
     VALUES (?, ?)
   `);
 
@@ -343,10 +351,15 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert compatibility references
+    // Insert compatibility references (resolve slugs to nanoid IDs)
     if (data.compatibleWith) {
       for (const slug of data.compatibleWith) {
-        insertCompatibility.run(id, slug);
+        const resolvedId = slugToId.get(slug);
+        if (resolvedId) {
+          insertCompatibility.run(id, resolvedId);
+        } else {
+          console.warn(`  ⚠ Unknown compatibility slug "${slug}" in ${file}`);
+        }
       }
     }
 

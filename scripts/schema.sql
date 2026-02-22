@@ -86,14 +86,14 @@ CREATE TABLE IF NOT EXISTS software_platforms (
     PRIMARY KEY (software_id, platform)
 );
 
--- Software Compatibility (many-to-many, slug-based)
+-- Software Compatibility (many-to-many, resolved ID references)
 CREATE TABLE IF NOT EXISTS software_compatibility (
     software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
-    compatible_with_slug TEXT NOT NULL,
-    PRIMARY KEY (software_id, compatible_with_slug)
+    compatible_with_id TEXT NOT NULL,
+    PRIMARY KEY (software_id, compatible_with_id)
 );
 
-CREATE INDEX idx_software_compatibility_slug ON software_compatibility(compatible_with_slug);
+CREATE INDEX idx_software_compatibility_target ON software_compatibility(compatible_with_id);
 
 -- Software Versions
 CREATE TABLE IF NOT EXISTS software_versions (
