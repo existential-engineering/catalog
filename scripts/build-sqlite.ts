@@ -310,8 +310,14 @@ function buildDatabase(version: string): void {
       softwareSupersedes.set(id, data.supersedes);
     }
 
-    // Insert categories (normalized)
+    // Insert categories (normalized, deduplicated)
+    const seenCategories = new Set<string>();
     for (const category of normalizedCategories) {
+      if (seenCategories.has(category)) {
+        console.warn(`  ⚠ Duplicate category "${category}" in ${file} (after normalization)`);
+        continue;
+      }
+      seenCategories.add(category);
       insertCategory.run(id, category);
     }
 
@@ -584,8 +590,14 @@ function buildDatabase(version: string): void {
       hardwareSupersedes.set(id, data.supersedes);
     }
 
-    // Insert categories (normalized)
+    // Insert categories (normalized, deduplicated)
+    const seenHwCategories = new Set<string>();
     for (const category of normalizedCategories) {
+      if (seenHwCategories.has(category)) {
+        console.warn(`  ⚠ Duplicate category "${category}" in ${file} (after normalization)`);
+        continue;
+      }
+      seenHwCategories.add(category);
       insertHardwareCategory.run(id, category);
     }
 
