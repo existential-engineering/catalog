@@ -23,11 +23,12 @@ specs: |-
   - Yamaha bc3-style mouthpiece
   - Adjustable bleed valve
 io:
-  - name: Breath Input
-    signalFlow: input
+  - name: Breath Output
+    signalFlow: output
     category: audio
     type: cv/gate
     connection: 1/8-inch
+    maxConnections: 1
     position: Right
 links:
   - type: product

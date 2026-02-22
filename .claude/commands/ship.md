@@ -16,7 +16,7 @@ Run all quality checks (mirroring the CI pipeline), create a changeset for the c
 
 ### Phase 2: Quality Checks (Sequential, Fail Fast)
 
-Run each check in order. **Stop immediately if any check fails** and report the error to the user.
+Run each check in order. **Stop immediately if any check fails** (except the URL check in step 6, which is non-blocking) and report the error to the user.
 These checks mirror `.github/workflows/validate.yml` so issues are caught locally before pushing.
 
 1. `pnpm typecheck` - TypeScript type checking
