@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Add content collection with 475 entries migrated from software
+Add content collection with 609 entries migrated from software
