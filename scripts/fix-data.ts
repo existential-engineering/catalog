@@ -13,7 +13,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { isMap, isPair, isSeq, parseDocument, Scalar, YAMLMap, YAMLSeq } from "yaml";
+import { isMap, isPair, isSeq, parseDocument, Scalar, YAMLSeq } from "yaml";
 import { loadSchemaContext } from "./lib/schema-loader.js";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");

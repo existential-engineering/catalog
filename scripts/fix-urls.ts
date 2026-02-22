@@ -33,11 +33,6 @@ interface UrlAction {
   reason: string;
 }
 
-interface FileAction {
-  file: string;
-  actions: UrlAction[];
-}
-
 // =============================================================================
 // URL CHECKING
 // =============================================================================
@@ -64,9 +59,7 @@ async function runWithConcurrency<T, R>(
   return results;
 }
 
-async function checkUrlLive(
-  url: string
-): Promise<{
+async function checkUrlLive(url: string): Promise<{
   broken: boolean;
   redirected: boolean;
   finalUrl?: string;
@@ -215,7 +208,7 @@ function getUrlAction(url: string, field: string, cache: UrlCache | null): UrlAc
           field,
           url,
           action: "remove",
-          reason: `broken (${cached.status}${cached.errorMessage ? ": " + cached.errorMessage : ""})`,
+          reason: `broken (${cached.status}${cached.errorMessage ? `: ${cached.errorMessage}` : ""})`,
         };
       }
 
@@ -497,7 +490,7 @@ if (useLive && urlsToCheck.length > 0) {
         const content = fs.readFileSync(item.file, "utf-8");
         fileActionsMap.set(item.file, { actions: [], content });
       }
-      fileActionsMap.get(item.file)!.actions.push(action);
+      fileActionsMap.get(item.file)?.actions.push(action);
     }
   });
 
