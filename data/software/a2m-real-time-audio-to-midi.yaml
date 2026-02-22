@@ -1,0 +1,41 @@
+name: A2M real-time Audio to MIDI
+manufacturer: beat-bars
+primaryCategory: utility
+categories:
+  - plugin
+platforms:
+  - mac
+  - ios
+description: A2m detects the pitch of the audio and converts it into the
+  corresponding MIDI notes in real time. Thanks to this, you can play, e.g., the
+  g...
+details: |-
+  A2m detects the pitch of the audio and converts it into the corresponding MIDI notes in real time. Thanks to this, you can play, e.g., the guitar, saxophone, or even sing, and simultaneously trigger sounds in virtual instruments (not only AU). These acoustic (or electric) instruments, or your voice, act as a MIDI controller.
+
+  A2m comes as an AU v3 plugin and as a standalone application (which is the AU host for this particular plugin). The a2m is quite an unusual audio unit it is both an audio effect and a MIDI effect. Due to its characteristics, it is something in between. On the one hand, it analyzes the input sound, just like any audio effect. On the other hand, it generates output MIDI events, just like any MIDI effect.
+
+  AU hosts compatible with a2m audio unit: audiobus, aum, apematrix. A2m does not work as an AU plugin in garageband on both ios and macos. A2m works (though imperfectly) as an AU plugin in logic pro. The standalone version works with all MIDI-compatible applications, including garageband (ios and macos) and logic pro.
+
+  The smaller the buffer, the higher the cpu load and the lower the latency. A buffer less than 512 should only be set if you have a strong processor. For a2m standalone applications, the buffer size is available in the application settings under audio settings buffer size.
+
+  A2m offers two popular algorithms: based on autocorrelation, the beat bars proprietary method, and fft (with parabolic interpolation). A2m works best when it only recognizes sounds at an appropriate volume level. To eliminate unnecessary background noises, select the appropriate gate threshold value. The latency/accuracy setting at 2 dashes (default) provides the best compromise between accuracy and latency.
+specs: |-
+  - Real-time pitch detection and MIDI conversion
+  - Auv3 plugin
+  - Standalone application
+  - Autocorrelation pitch recognition algorithm
+  - Fft with parabolic interpolation algorithm
+  - Gate threshold control
+  - Input gain control
+  - Latency/accuracy adjustment
+  - Velocity gain control
+  - Audio buffer size adjustment
+  - Virtual MIDI port output
+  - No polyphony
+  - No pitch bending
+  - Macos 11 big sur or later
+  - Ios 14 or later
+prices:
+  - amount: 119
+    currency: USD
+id: lIthpFIBL3Bof9tisUAWS

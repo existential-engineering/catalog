@@ -105,6 +105,23 @@ io:
 
 **Semantic distinction:** `type` describes the signal characteristic (line, instrument, headphone, midi, usb, expression). `connection` describes the physical connector (1/4-inch, xlr, usb-c, 5-pin din). Don't swap them.
 
+## Content Entries
+
+Content entries (presets, sample packs, expansions) are software entries where `primaryCategory` is a content type such as `preset`, `preset-pack`, `sample-pack`, `drum-sample-pack`, `loop-pack`, or `sound-library`.
+
+- `platforms`, `formats`, and `identifiers` are optional for content entries
+- Use `compatibleWith` to reference host products by slug:
+
+```yaml
+name: Zeus Presets for Serum
+manufacturer: some-vendor
+primaryCategory: preset-pack
+compatibleWith:
+  - serum
+```
+
+Advisory warning W123 fires if a `compatibleWith` slug doesn't match an existing software file. Category aliases in `schema/category-aliases.yaml` map common synonyms (e.g., `soundbank` → `preset-pack`) to canonical categories.
+
 ## Product Lineage
 
 Use `supersedes` to link major product versions (e.g., Pro-C 3 supersedes Pro-C 2). The value must be the **ID** of the older product:

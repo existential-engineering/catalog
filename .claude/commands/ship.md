@@ -16,7 +16,7 @@ Run all quality checks (mirroring the CI pipeline), create a changeset for the c
 
 ### Phase 2: Quality Checks (Sequential, Fail Fast)
 
-Run each check in order. **Stop immediately if any check fails** and report the error to the user.
+Run each check in order. **Stop immediately if any check fails** (except the URL check in step 6, which is non-blocking) and report the error to the user.
 These checks mirror `.github/workflows/validate.yml` so issues are caught locally before pushing.
 
 1. `pnpm typecheck` - TypeScript type checking
@@ -27,6 +27,9 @@ These checks mirror `.github/workflows/validate.yml` so issues are caught locall
    **If formatting fails:** Ask the user if they want to auto-fix with `pnpm format`. If yes, run it and stage the changes.
 
 5. `pnpm build 0` - Test database build (ensures YAML can be compiled to valid SQLite)
+6. `pnpm validate-urls --changed-only --base main --use-cache` - Check URLs in changed files for broken links, spam redirects, and dead domains
+
+   **This check is non-blocking** (URLs can be temporarily unreachable). Report any issues as warnings in the PR body but do not fail the ship process. Common non-issues: 403 (anti-crawl), 405 (anti-bot), timeouts (temporary). Flag as problems: 404, 5xx, fetch failures, cross-domain spam redirects.
 
 ### Phase 3: Analyze Changes
 
@@ -107,6 +110,7 @@ Use `gh pr create` with:
 - [x] Translation validation passed
 - [x] Formatting check passed
 - [x] Database build successful
+- [x] URL health check passed (or list warnings)
 ```
 
 Return the PR URL to the user when complete.

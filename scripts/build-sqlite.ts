@@ -211,6 +211,14 @@ function buildDatabase(version: string): void {
   const softwareSupersedes = new Map<string, string>(); // id -> supersedes_id
   let softwareCount = 0;
 
+  // Build slug -> nanoid lookup for resolving compatibility references
+  const slugToId = new Map<string, string>();
+  for (const file of softwareFiles) {
+    const data = loadYamlFile<Software>(file);
+    const slug = path.basename(file, ".yaml");
+    if (data.id) slugToId.set(slug, data.id);
+  }
+
   const insertSoftware = db.prepare(`
     INSERT INTO software (id, name, manufacturer_id, website, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -266,6 +274,10 @@ function buildDatabase(version: string): void {
     INSERT INTO software_videos_localized (software_id, locale, video_id, provider, title, description)
     VALUES (?, ?, ?, ?, ?, ?)
   `);
+  const insertCompatibility = db.prepare(`
+    INSERT INTO software_compatibility (software_id, compatible_with_id)
+    VALUES (?, ?)
+  `);
 
   for (const file of softwareFiles) {
     const data = loadYamlFile<Software>(file);
@@ -306,8 +318,14 @@ function buildDatabase(version: string): void {
       softwareSupersedes.set(id, data.supersedes);
     }
 
-    // Insert categories (normalized)
+    // Insert categories (normalized, deduplicated)
+    const seenCategories = new Set<string>();
     for (const category of normalizedCategories) {
+      if (seenCategories.has(category)) {
+        console.warn(`  ⚠ Duplicate category "${category}" in ${file} (after normalization)`);
+        continue;
+      }
+      seenCategories.add(category);
       insertCategory.run(id, category);
     }
 
@@ -330,6 +348,18 @@ function buildDatabase(version: string): void {
     if (data.platforms) {
       for (const platform of data.platforms) {
         insertPlatform.run(id, platform);
+      }
+    }
+
+    // Insert compatibility references (resolve slugs to nanoid IDs)
+    if (data.compatibleWith) {
+      for (const slug of data.compatibleWith) {
+        const resolvedId = slugToId.get(slug);
+        if (resolvedId) {
+          insertCompatibility.run(id, resolvedId);
+        } else {
+          console.warn(`  ⚠ Unknown compatibility slug "${slug}" in ${file}`);
+        }
       }
     }
 
@@ -573,8 +603,14 @@ function buildDatabase(version: string): void {
       hardwareSupersedes.set(id, data.supersedes);
     }
 
-    // Insert categories (normalized)
+    // Insert categories (normalized, deduplicated)
+    const seenHwCategories = new Set<string>();
     for (const category of normalizedCategories) {
+      if (seenHwCategories.has(category)) {
+        console.warn(`  ⚠ Duplicate category "${category}" in ${file} (after normalization)`);
+        continue;
+      }
+      seenHwCategories.add(category);
       insertHardwareCategory.run(id, category);
     }
 
