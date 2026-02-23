@@ -1,5 +1,11 @@
 # catalog
 
+## 2.11.0
+
+### Minor Changes
+
+- d5ac9de: Add content/accessory schema categories, category aliases, and enrich content entries with compatibleWith references
+
 ## 2.10.0
 
 ### Minor Changes
