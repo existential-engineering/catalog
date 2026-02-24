@@ -59,6 +59,7 @@ export enum ValidationErrorCode {
   W120_UNKNOWN_IO_TYPE = "W120",
   W121_UNKNOWN_IO_CONNECTION = "W121",
   W123_UNKNOWN_COMPATIBLE_WITH = "W123",
+  W124_DUPLICATE_URL = "W124",
 }
 
 // =============================================================================
@@ -244,6 +245,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.W123_UNKNOWN_COMPATIBLE_WITH]: {
     title: "Unknown compatibleWith reference",
     anchor: "w123-unknown-compatible-with",
+  },
+  [ValidationErrorCode.W124_DUPLICATE_URL]: {
+    title: "Duplicate URL",
+    anchor: "w124-duplicate-url",
   },
 };
 
