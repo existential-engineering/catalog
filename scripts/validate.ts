@@ -953,6 +953,8 @@ function detectSupersedeCycle(
 interface WarningContext {
   io?: Array<{ name: string; type: string; connection: string }>;
   compatibleWith?: string[];
+  website?: string;
+  links?: Array<{ url: string }>;
 }
 
 /**
@@ -1008,6 +1010,33 @@ function collectWarnings(
           path: `compatibleWith[${i}]`,
           line: line ?? undefined,
         });
+      }
+    }
+  }
+
+  // Check for duplicate URLs within the file
+  if (Array.isArray(data.links)) {
+    const seenUrls = new Set<string>();
+
+    // If website is set, treat it as the first seen URL
+    if (data.website) {
+      seenUrls.add(data.website);
+    }
+
+    for (let i = 0; i < data.links.length; i++) {
+      const linkUrl = data.links[i].url;
+      if (linkUrl && seenUrls.has(linkUrl)) {
+        const line = getLineForPath(document, lineCounter, ["links", i, "url"]);
+        const source = data.website === linkUrl ? "website" : "links";
+        warnings.push({
+          code: ValidationErrorCode.W124_DUPLICATE_URL,
+          message: `Duplicate URL '${linkUrl}' in links[${i}] (already in ${source}). Remove the duplicate link entry.`,
+          path: `links[${i}].url`,
+          line: line ?? undefined,
+        });
+      }
+      if (linkUrl) {
+        seenUrls.add(linkUrl);
       }
     }
   }

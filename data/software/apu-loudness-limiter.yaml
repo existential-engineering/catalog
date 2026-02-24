@@ -1,0 +1,87 @@
+name: APU Loudness Limiter
+manufacturer: apu-software
+primaryCategory: limiter
+website: https://apu.software/limiter/
+description: The apu loudness limiter is a tool designed for loudness-based
+  limiting. Its core function is to perform limiting across multiple loudness
+  m...
+details: >-
+  The apu loudness limiter is a tool designed for loudness-based limiting. Its
+  core function is to perform limiting across multiple loudness measurement
+  types simultaneously, including modern lufs standards (integrated, short-term,
+  momentary) and traditional metrics (rms, peak, and true peak). The true peak
+  detection is designed to account for inter-sample peaks.
+
+
+  The limiter provides a range of controls to shape its response. In addition to
+  standard threshold, ceiling, attack, and release parameters, it includes a
+  look-ahead feature for preemptive gain reduction. A unique "linear release"
+  mode offers a constant rate of gain change, differing from traditional
+  ballistic envelopes, which can be used to achieve very fast responses or to
+  set a maximum release speed. You can also select between "natural" and more
+  responsive "inertial" ballistics types, with optional dithering.
+
+
+  A central feature is the real-time visualization system, which displays the
+  loudness of the source, target, and output signals over time. You can switch
+  between a rolling history view and a histogram that shows the distribution of
+  loudness levels. This display is highly configurable, with options to adjust
+  layouts, colors, and even add aesthetic shader effects.
+
+
+  Diagnostic tools are also built into the visualizer, such as the "breath
+  residual" feature which helps identify where the limiter is working hardest to
+  meet the target gain, and a snapshot system for comparing loudness histograms.
+
+
+  For workflow, the limiter includes presets that target the loudness and peak
+  requirements of various streaming services and broadcast standards, such as
+  spotify, apple, and ebu r128. It also supports external sidechain input for
+  dynamics processing, and uses a "budget" system for look-ahead and attack
+  times, which allows you to adjust these latency-inducing parameters in
+  real-time without causing audio artifacts.
+specs: |-
+  - Loudness-based limiting
+  - Lufs standards (integrated, short-term, momentary)
+  - Rms measurement
+  - Peak detection
+  - True peak detection
+  - Inter-sample peak detection
+  - Threshold parameter
+  - Ceiling parameter
+  - Attack parameter
+  - Release parameter
+  - Look-ahead feature
+  - Linear release mode
+  - Natural ballistics
+  - Inertial ballistics
+  - Optional dithering
+  - Real-time visualization system
+  - Rolling history view
+  - Histogram display
+  - Configurable layouts and colors
+  - Shader effects
+  - Breath residual diagnostic tool
+  - Snapshot system
+  - External sidechain input
+  - Budget system for look-ahead and attack times
+  - VST 3 plugin
+  - Audio units plugin
+  - AAX plugin
+  - Standalone application
+  - Macos support
+  - Windows support
+prices:
+  - amount: 149
+    currency: USD
+links:
+  - type: product
+    url: https://apu.software
+    title: APU Software
+videos:
+  - videoId: dJyqxsAFIfc
+    title: YouTube Link
+platforms:
+  - mac
+  - windows
+id: UDQSQ2NLLsSjSPjAwNQyE
