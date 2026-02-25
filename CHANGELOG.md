@@ -1,5 +1,16 @@
 # catalog
 
+## 2.12.0
+
+### Minor Changes
+
+- e15ef59: Add 197 new entries (41 manufacturers, 129 software, 17 content, 10 hardware), remove duplicate links across 746 files, add W124 duplicate URL validation warning, and expand IO/category schemas
+
+### Patch Changes
+
+- 0b6432e: hardware(add): Monos CV
+- 2ce9a8f: Rename Racks to Aureo across documentation and scripts
+
 ## 2.11.0
 
 ### Minor Changes
