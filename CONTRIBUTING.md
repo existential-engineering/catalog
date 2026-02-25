@@ -117,7 +117,7 @@ Use categories from `schema/categories.yaml`. Common ones:
 
 ## Finding Bundle Identifiers
 
-Bundle identifiers help Racks identify installed plugins on your system.
+Bundle identifiers help Aureo identify installed plugins on your system.
 
 ### macOS
 
