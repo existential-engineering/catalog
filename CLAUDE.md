@@ -33,13 +33,13 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 
 ## Data Entry Format
 
-Manufacturers require: name, website
+Manufacturers require: name, url
 Software requires: name, manufacturer, primaryCategory, platforms, identifiers
 Content requires: name, manufacturer, primaryCategory
 Hardware requires: name, manufacturer, primaryCategory, description
 Accessories require: name, manufacturer, primaryCategory, description
 
-Optional fields: categories (array), website, description
+Optional fields: categories (array), url, description
 
 Note: Slugs are derived from filenames, not stored in the YAML files.
 
@@ -221,7 +221,7 @@ translations:
 **Translatable fields:**
 
 - `description`, `details`, `specs` (content - converted to HTML)
-- `website` (locale-specific URLs)
+- `url` (locale-specific URLs)
 - `links` (replaces default links for that locale)
 - `videos` (replaces default videos for that locale)
 - Hardware `io` (merge semantics - uses `originalName` to match)

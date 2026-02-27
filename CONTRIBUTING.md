@@ -31,7 +31,7 @@ Look in `data/manufacturers/` for the company. If it doesn't exist, create it:
 ```yaml
 # data/manufacturers/xfer-records.yaml
 name: Xfer Records
-website: https://xferrecords.com
+url: https://xferrecords.com
 ```
 
 ### Step 2: Create the Software Entry
@@ -54,7 +54,7 @@ platforms:
 identifiers:
   au: com.xferrecords.Serum
   vst3: com.xferrecords.Serum.vst3
-website: https://xferrecords.com/products/serum
+url: https://xferrecords.com/products/serum
 ```
 
 ### Step 3: Validate

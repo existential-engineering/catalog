@@ -641,7 +641,7 @@ Approved locales for translations:
 ### Manufacturer
 - `slug` - URL-safe identifier
 - `name` - Display name
-- `website` - Company website URL
+- `url` - Company URL
 
 ### Software
 - `slug` - URL-safe identifier

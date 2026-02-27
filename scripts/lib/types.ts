@@ -98,7 +98,7 @@ export interface Manufacturer {
   name: string;
   companyName?: string;
   parentCompany?: string;
-  website?: string;
+  url?: string;
   description?: string;
   searchTerms?: string[];
   translations?: TranslationsMap;
@@ -112,7 +112,7 @@ export interface Software {
   formats?: string[];
   platforms?: string[];
   identifiers?: Record<string, string>;
-  website?: string;
+  url?: string;
   releaseDate?: string;
   releaseDateYearOnly?: boolean;
   primaryCategory?: string;
@@ -138,7 +138,7 @@ export interface Content {
   name: string;
   manufacturer: string;
   categories?: string[];
-  website?: string;
+  url?: string;
   releaseDate?: string;
   releaseDateYearOnly?: boolean;
   primaryCategory?: string;
@@ -164,7 +164,7 @@ export interface Hardware {
   name: string;
   manufacturer: string;
   categories?: string[];
-  website?: string;
+  url?: string;
   releaseDate?: string;
   releaseDateYearOnly?: boolean;
   primaryCategory?: string;
@@ -190,7 +190,7 @@ export interface Accessory {
   name: string;
   manufacturer: string;
   categories?: string[];
-  website?: string;
+  url?: string;
   releaseDate?: string;
   releaseDateYearOnly?: boolean;
   primaryCategory?: string;
@@ -235,7 +235,7 @@ export interface ContentTranslation {
   description?: string;
   details?: string;
   specs?: string;
-  website?: string;
+  url?: string;
   links?: Link[];
   videos?: VideoLink[];
   io?: IOTranslation[];

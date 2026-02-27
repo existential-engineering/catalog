@@ -28,7 +28,7 @@ Prompt the user for relevant fields based on entry type. Reference `schema/CONTE
 
 **For Manufacturer:**
 
-- **Required:** name, website
+- **Required:** name, url
 - **Optional:** companyName (if different from name), parentCompany, description, searchTerms
 - **Filename:** derived from name (lowercase, spaces to hyphens, remove special characters)
 
@@ -39,7 +39,7 @@ Prompt the user for relevant fields based on entry type. Reference `schema/CONTE
   - categories (additional categories from CONTEXT.md)
   - formats (from CONTEXT.md formats section)
 - Reference `schema/CONTEXT.md` for valid categories, platforms, and formats
-- **Optional:** website, description, prices, links, releaseDate, searchTerms
+- **Optional:** url, description, prices, links, releaseDate, searchTerms
 - **Filename:** derived from name (lowercase, spaces to hyphens, remove special characters)
 
 **For Hardware:**
@@ -48,7 +48,7 @@ Prompt the user for relevant fields based on entry type. Reference `schema/CONTE
 - **Recommended:**
   - categories (additional categories from CONTEXT.md)
 - Reference `schema/CONTEXT.md` for valid categories - suggest relevant ones based on the hardware type
-- **Optional:** website, prices, io (I/O ports), links, releaseDate, searchTerms
+- **Optional:** url, prices, io (I/O ports), links, releaseDate, searchTerms
 - **Filename:** derived from name (lowercase, spaces to hyphens, remove special characters)
 
 ### Phase 3: Validate Before Writing
@@ -75,10 +75,10 @@ Create the YAML file(s) in the appropriate `data/` subdirectory.
 - Do NOT include a `slug` field. Slugs are derived from the filename.
 - `manufacturer` must be a slug reference (lowercase-with-hyphens), NOT the display name
 - Follow the field ordering convention observed in existing entries:
-  - Manufacturer: name, companyName, parentCompany, website, description, searchTerms
-  - Software: name, manufacturer, primaryCategory, categories, formats, platforms, identifiers, website,
+  - Manufacturer: name, companyName, parentCompany, url, description, searchTerms
+  - Software: name, manufacturer, primaryCategory, categories, formats, platforms, identifiers, url,
     prices, description, details, specs, versions, links, translations
-  - Hardware: name, manufacturer, primaryCategory, categories, website, prices, description, details, specs,
+  - Hardware: name, manufacturer, primaryCategory, categories, url, prices, description, details, specs,
     io, versions, revisions, links, translations
 - File name IS the slug: `data/{type}/{slug}.yaml`
 
@@ -141,7 +141,7 @@ platforms:
   - windows
 identifiers:
   vst3: com.xferrecords.Serum.vst3
-website: https://xferrecords.com/products/serum
+url: https://xferrecords.com/products/serum
 prices:
   - amount: 189
     currency: USD
@@ -154,7 +154,7 @@ description: Advanced wavetable synthesizer with visual and creative
 
 ```yaml
 name: Xfer Records
-website: https://xferrecords.com
+url: https://xferrecords.com
 description: Developer of Serum wavetable synthesizer and other audio plugins.
 ```
 
