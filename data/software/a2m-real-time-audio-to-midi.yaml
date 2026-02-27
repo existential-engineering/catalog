@@ -9,13 +9,12 @@ platforms:
 description: A2m detects the pitch of the audio and converts it into the
   corresponding MIDI notes in real time. Thanks to this, you can play, e.g., the
   g...
-details: >-
+details: |-
   A2m detects the pitch of the audio and converts it into the corresponding MIDI
   notes in real time. Thanks to this, you can play, e.g., the guitar, saxophone,
   or even sing, and simultaneously trigger sounds in virtual instruments (not
   only AU). These acoustic (or electric) instruments, or your voice, act as a
   MIDI controller.
-
 
   A2m comes as an AU v3 plugin and as a standalone application (which is the AU
   host for this particular plugin). The a2m is quite an unusual audio unit it is
@@ -24,19 +23,16 @@ details: >-
   any audio effect. On the other hand, it generates output MIDI events, just
   like any MIDI effect.
 
-
   AU hosts compatible with a2m audio unit: audiobus, aum, apematrix. A2m does
   not work as an AU plugin in garageband on both ios and macos. A2m works
   (though imperfectly) as an AU plugin in logic pro. The standalone version
   works with all MIDI-compatible applications, including garageband (ios and
   macos) and logic pro.
 
-
   The smaller the buffer, the higher the cpu load and the lower the latency. A
   buffer less than 512 should only be set if you have a strong processor. For
   a2m standalone applications, the buffer size is available in the application
   settings under audio settings buffer size.
-
 
   A2m offers two popular algorithms: based on autocorrelation, the beat bars
   proprietary method, and fft (with parabolic interpolation). A2m works best
@@ -46,8 +42,7 @@ details: >-
   compromise between accuracy and latency.
 specs: |-
   - Real-time pitch detection and MIDI conversion
-  - Auv3 plugin
-  - Standalone application
+  - AUv3 plugin
   - Autocorrelation pitch recognition algorithm
   - Fft with parabolic interpolation algorithm
   - Gate threshold control
@@ -58,8 +53,8 @@ specs: |-
   - Virtual MIDI port output
   - No polyphony
   - No pitch bending
-  - Macos 11 big sur or later
-  - Ios 14 or later
+  - macOS 11 big sur or later
+  - iOS 14 or later
 prices:
   - amount: 119
     currency: USD

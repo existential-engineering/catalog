@@ -1,28 +1,18 @@
 name: as_fbComp
 manufacturer: anton-savov
 primaryCategory: compressor
-url: http://antonsavov.net/cms/projects/as_fbcomp.html
-description: As_fbcomp is a feedback compressor/limiter. The plug-in uses 2
+url: https://antonsavov.net/cms/projects/as_fbcomp.html
+description: as_fbComp is a feedback compressor/limiter. The plug-in uses 2
   input and 2 output channels.
-details: >-
-  As_fbcomp is a feedback compressor/limiter. The plug-in uses 2 input and 2
-  output channels. There are two modes of operation: mono - the detector uses l
-  and r input channels, but only the l channel is sent out as audio (r input is
-  used as side-chain input). Stereo - the detector uses l and r input channels,
-  and they are both processed with gain reduction and sent out (gain reduction
-  is the same for both).
-
-
+details: |-
   This compressor is not transparent. It has dc-removing filters on the inputs
   and outputs, and the outputs pass through a slightly non-symmetrical
   soft-shaper, which also hard-clips to 0db.
-
 
   Main controls: threshold. Input (pre-amplification). Attack. Release. Output
   (post-amplification). Dry. Side-chain controls: source (balance between l and
   r for the detector, only works in mono mode). Low shelf gain. Low shelf
   cutoff.
-
 
   The compressor works at 4x oversampling. There is a latency of 2 or 3 samples
   which is not reported to the host.
@@ -43,14 +33,13 @@ specs: |-
   - Low shelf gain control
   - Low shelf cutoff control
   - 2 or 3 samples latency
-  - VST plugin
   - Windows compatible
 prices:
   - amount: 40
     currency: USD
 links:
   - type: product
-    url: http://antonsavov.net
+    url: https://antonsavov.net
     title: Anton Savov
 platforms:
   - windows

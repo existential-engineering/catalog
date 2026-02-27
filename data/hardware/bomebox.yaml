@@ -1,0 +1,71 @@
+name: BomeBox
+manufacturer: bome-software
+primaryCategory: controller
+url: https://www.bome.com/products/bomebox
+description: The BomeBox is the solution for connecting and mapping devices via
+  MIDI, Ethernet, Wifi, and USB (without the need of a computer).
+details: |-
+  The bomebox can run basic or complex mappings and scripts on the MIDI data in
+  realtime: load and execute bome MIDI translator pro project files for all your
+  MIDI needs (the editor bome MIDI translator pro is sold separately).
+
+  Quick set-up in the web config via tablet, smartphone, or computer. Create
+  long distance MIDI connections via Ethernet. MIDI networking: centralized
+  access to all MIDI devices connected to the Ethernet network.
+
+  Wireless MIDI connections via built-in Wifi. Wifi works as hotspot, hub, or
+  client. Connects to windows, macos, ios, ipados, linux, and raspberry pi using
+  Ethernet or Wifi (free bome network tool).
+
+  Unlimited mappings/splits/scenes/conditional routing and MIDI processing with
+  built-in MIDI translator pro engine. Use USB qwerty keyboards and map to MIDI
+  (since firmware v1.3). Pass on poe and MIDI connections using poe out port.
+specs: |-
+  - MIDI-din: 1x input, 1x output
+  - USB host type a
+  - Built-in MIDI router
+  - Ethernet connectivity
+  - 2-port Ethernet switch
+  - Wifi connectivity
+  - Power-over-Ethernet (poe) with 48v
+  - 5v micro-USB power supply
+  - Built-in MIDI translator pro engine
+  - USB qwerty keyboard mapping
+  - Allen & heath dlive, gld, qu, sq, and ilive mixer support
+  - Robust reinforced abs case
+  - 180g / 6.3oz weight
+prices:
+  - amount: 245
+    currency: USD
+io:
+  - name: MIDI Input 1
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    position: Left
+  - name: MIDI Output 1
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    position: Right
+  - name: USB Host Type A
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-a
+    position: Left
+  - name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b-micro
+    position: Top
+  - name: PoE Out
+    signalFlow: output
+    category: power
+    type: power
+    connection: ethernet
+    position: Right
+id: quIklbbHldosZ7vnMPx2N

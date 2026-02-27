@@ -10,25 +10,13 @@ platforms:
   - linux
 description: Actuate is a subtractive synthesizer, additive synthesizer,
   sampler, and granulizer made in rust with nih-plug and egui.
-details: >-
-  Actuate is a subtractive synthesizer, additive synthesizer, sampler, and
-  granulizer made in rust with nih-plug and egui. Actuate follows a philosophy
-  of "limited but creative options" for making sounds.
-
-
-  Actuate is a virtual instrument audio plugin for macos, windows and linux. It
-  functions as a VST 3 plugin and a clap plugin. Macos 13+, an m1 mac version is
-  available on the github release page or see downloads page. Windows 10 and up
-  is compatible.
-
-
+details: |-
   Actuate will look for presets and banks at the following locations: linux:
   /home/user/documents/actuatedb/ macos: /users/user/documents/actuatedb/
   windows: c:\users\user\documents\actuatedb\. The default bank is located at:
   linux: /home/user/documents/actuatedb/default/ macos:
   /users/user/documents/actuatedb/default/ windows:
   c:\users\user\documents\actuatedb\default\.
-
 
   Any generator can go to any filter. Samples can be saved into presets. Stereo
   width and ultra wide controls are available.
@@ -37,16 +25,14 @@ specs: |-
   - Additive synthesizer
   - Sampler
   - Granulizer
-  - VST 3 plugin
-  - Clap plugin
   - Two svf filters
-  - Vcf inspired filter
+  - VCF inspired filter
   - Tilt inspired filters
   - Four analog-inspired filters
   - Parallel/serial/bypass filter routing
-  - Adsr envelopes
-  - Two pitch modulations with adsr
-  - Fm options with envelope
+  - ADSR envelopes
+  - Two pitch modulations with ADSR
+  - FM options with envelope
   - 17 oscillator shapes
   - Sine
   - Triangle
@@ -66,7 +52,7 @@ specs: |-
   - Scsaw
   - Asymsaw
   - Additive oscillators with up to 16 harmonics
-  - Fm supported between oscillators/samples/granulizer
+  - FM supported between oscillators/samples/granulizer
   - 3 different stereo algorithms
   - 5 main filter algorithms
   - Svf filter
@@ -79,13 +65,13 @@ specs: |-
   - Bump resonance
   - Powf resonance
   - Tilt filter
-  - Vcf filter
+  - VCF filter
   - A4i averaged 4 pole integrator
   - A4ii averaged 4 pole integrator ii
   - A4iii a4ii with saturation changes
   - A4iv averaged filter idea
-  - 11 different fx for post processing
-  - 3 lfo controllers
+  - 11 different FX for post processing
+  - 3 LFO controllers
   - 2 pitch envelopes
   - 4 modulators
   - Sampler with pitch shifting
@@ -93,14 +79,14 @@ specs: |-
   - Single cycle waveforms support
   - Sampler unison
   - Random seek
-  - Granulizer with adsr
+  - Granulizer with ADSR
   - Crossfading between grains
   - Any generator to any filter routing
   - Samples saved into presets
   - Stereo width control
   - Ultra wide control
   - Preset system
-  - Macos 13+
+  - macOS 13+
   - M1 mac version available
   - Windows 10 and up
   - Linux compatible

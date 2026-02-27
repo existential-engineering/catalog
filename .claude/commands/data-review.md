@@ -21,11 +21,15 @@ thinking to analyze every detail.
 Run these validation scripts to gather automated analysis:
 
 1. `pnpm validate` - Schema validation with **line numbers and error codes** (e.g., `E104:12: Invalid category`)
-2. `pnpm identifier-coverage --json` - Check identifier coverage for software entries
-3. `pnpm staleness-report --json` - Check for entries missing verification metadata
-4. `pnpm validate-urls --changed-only --base main --use-cache` - Check URLs in changed files for broken links, spam redirects, and dead domains
+2. `pnpm build` - Build SQLite database. Catches issues not found by validate, including:
+   - Duplicate categories after alias normalization (e.g., `construction-kit` + `sample-pack` both normalize to `sample-pack`)
+   - Unknown `compatibleWith` slugs that don't match any software entry
+   - Data integrity issues that could make the database unusable by the app
+3. `pnpm identifier-coverage --json` - Check identifier coverage for software entries
+4. `pnpm staleness-report --json` - Check for entries missing verification metadata
+5. `pnpm validate-urls --changed-only --base main --use-cache` - Check URLs in changed files for broken links, spam redirects, and dead domains
 
-Parse the JSON output from these tools to incorporate into the agent analysis below. For URL validation, note that 403 (anti-crawl) and 405 (anti-bot) responses are expected and should be excluded from findings. Focus on: 404s, 5xx errors, fetch failures (dead domains), and cross-domain redirects to spam/parking sites.
+Parse the JSON output from these tools to incorporate into the agent analysis below. For `pnpm build`, capture all lines starting with `⚠` — these are build warnings that should be reported as findings. Duplicate category warnings are BLOCKING (they indicate redundant categories that should be deduplicated). Unknown compatibility slug warnings are INFO (they reference products not yet in the database). For URL validation, note that 403 (anti-crawl) and 405 (anti-bot) responses are expected and should be excluded from findings. Focus on: 404s, 5xx errors, fetch failures (dead domains), and cross-domain redirects to spam/parking sites.
 
 ### Phase 2: Parallel Deep Analysis (use 4 Opus agents concurrently)
 
@@ -118,7 +122,7 @@ Perform a final pass asking:
 
 - Do the new entries represent complete, useful catalog additions?
 - Are there obvious missing pieces (manufacturer without software, software without identifiers)?
-- Would the data pass `pnpm validate` and `pnpm build` successfully?
+- Did `pnpm validate` pass with 0 errors? Did `pnpm build` succeed with no duplicate category warnings?
 - Are there any data quality concerns that automated validation wouldn't catch?
 
 ## Output Format
@@ -167,6 +171,12 @@ Present findings in this structure:
 |------|-----|-------|
 [table rows for broken URLs - 404, 5xx, fetch failed, spam redirects]
 [Omit 403/405 (anti-bot) and timeouts (temporary)]
+
+### Build Health
+| Warning | File | Issue |
+|---------|------|-------|
+[table rows for `pnpm build` warnings - duplicate categories, unknown slugs, etc.]
+[Duplicate category warnings are BLOCKING; unknown compatibility slugs are INFO]
 
 ### Schema Evolution Opportunities
 | Value | Field | File | Recommendation |
