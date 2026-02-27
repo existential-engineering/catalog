@@ -43,7 +43,7 @@ Then perform deeper analysis:
 
 - Read each modified YAML file in full
 - Verify all required fields are present:
-  - Manufacturers: name, website
+  - Manufacturers: name, url
   - Software: name, manufacturer, primaryCategory, platforms, identifiers
   - Hardware: name, manufacturer, primaryCategory, description
 - Cross-reference with `schema/CONTEXT.md` for valid categories, formats, platforms
@@ -79,7 +79,7 @@ Then perform deeper analysis:
 **Agent 3 - Translation Audit:**
 
 - Check `translations` blocks use only approved locale codes: de, es, fr, ja, ko, pt-BR, zh
-- Validate translatable fields are limited to: description, details, specs, website, links, io
+- Validate translatable fields are limited to: description, details, specs, url, links, videos, io
 - For hardware I/O translations, verify `originalName` matches an actual IO entry name
 - Report translation coverage gaps: entries with descriptions but no translations
 - Check that translated links have proper structure (type, title, url)

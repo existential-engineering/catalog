@@ -481,7 +481,7 @@ const ManufacturerSchema = z.object({
   name: z.string().min(1, "Name is required"),
   companyName: z.string().optional(),
   parentCompany: z.string().optional(),
-  website: z.url().optional(),
+  url: z.url().optional(),
   description: MarkdownSchema,
   searchTerms: z.array(z.string()).optional(),
 });
@@ -530,7 +530,7 @@ const SoftwareSchema = z
     platforms: createPlatformArrayValidator(),
     identifiers: z.record(z.string(), z.string()).optional(),
     compatibleWith: z.array(z.string()).optional(),
-    website: z.url().optional(),
+    url: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator().optional(),
@@ -576,7 +576,7 @@ const HardwareSchema = z
           }
         }
       }),
-    website: z.url().optional(),
+    url: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator().optional(),
@@ -637,7 +637,7 @@ const ContentSchema = z
         }
       }),
     compatibleWith: z.array(z.string()).optional(),
-    website: z.url().optional(),
+    url: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator().optional(),
@@ -682,7 +682,7 @@ const AccessorySchema = z
           }
         }
       }),
-    website: z.url().optional(),
+    url: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator().optional(),
@@ -953,7 +953,7 @@ function detectSupersedeCycle(
 interface WarningContext {
   io?: Array<{ name: string; type: string; connection: string }>;
   compatibleWith?: string[];
-  website?: string;
+  url?: string;
   links?: Array<{ url: string }>;
 }
 
@@ -1018,16 +1018,16 @@ function collectWarnings(
   if (Array.isArray(data.links)) {
     const seenUrls = new Set<string>();
 
-    // If website is set, treat it as the first seen URL
-    if (data.website) {
-      seenUrls.add(data.website);
+    // If url is set, treat it as the first seen URL
+    if (data.url) {
+      seenUrls.add(data.url);
     }
 
     for (let i = 0; i < data.links.length; i++) {
       const linkUrl = data.links[i].url;
       if (linkUrl && seenUrls.has(linkUrl)) {
         const line = getLineForPath(document, lineCounter, ["links", i, "url"]);
-        const source = data.website === linkUrl ? "website" : "links";
+        const source = data.url === linkUrl ? "url" : "links";
         warnings.push({
           code: ValidationErrorCode.W124_DUPLICATE_URL,
           message: `Duplicate URL '${linkUrl}' in links[${i}] (already in ${source}). Remove the duplicate link entry.`,

@@ -190,7 +190,7 @@ function extractUrls(data: Record<string, unknown>): string[] {
   for (const [key, value] of Object.entries(data)) {
     if (typeof value === "string") {
       // Check if this is a URL field
-      if (key === "url" || key === "website" || key === "source") {
+      if (key === "url" || key === "source") {
         if (value.startsWith("http://") || value.startsWith("https://")) {
           urls.push(value);
         }

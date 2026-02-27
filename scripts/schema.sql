@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS manufacturers (
     name TEXT NOT NULL,               -- Display name
     company_name TEXT,                -- Official company name (if different)
     parent_company_id TEXT REFERENCES manufacturers(id), -- Parent company ID
-    website TEXT,                     -- Company website
+    url TEXT,                         -- Company URL
     description TEXT,                 -- Description
     created_at TEXT DEFAULT (datetime('now')),
     updated_at TEXT DEFAULT (datetime('now'))
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS software (
     name TEXT NOT NULL,               -- Display name
     manufacturer_id TEXT REFERENCES manufacturers(id),
     supersedes_id TEXT REFERENCES software(id), -- ID of product this supersedes (older version)
-    website TEXT,                     -- Product page URL
+    url TEXT,                         -- Product page URL
     release_date TEXT,                -- Initial release date
     release_date_year_only INTEGER DEFAULT 0, -- If 1, only year is meaningful
     primary_category TEXT,            -- Primary category
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS content (
     name TEXT NOT NULL,               -- Display name
     manufacturer_id TEXT REFERENCES manufacturers(id),
     supersedes_id TEXT REFERENCES content(id), -- ID of content this supersedes
-    website TEXT,                     -- Product page URL
+    url TEXT,                         -- Product page URL
     release_date TEXT,                -- Initial release date
     release_date_year_only INTEGER DEFAULT 0, -- If 1, only year is meaningful
     primary_category TEXT,            -- Primary category
@@ -247,7 +247,7 @@ CREATE TABLE IF NOT EXISTS hardware (
     name TEXT NOT NULL,
     manufacturer_id TEXT REFERENCES manufacturers(id),
     supersedes_id TEXT REFERENCES hardware(id), -- ID of product this supersedes (older version)
-    website TEXT,
+    url TEXT,
     release_date TEXT,
     release_date_year_only INTEGER DEFAULT 0,
     primary_category TEXT,
@@ -439,7 +439,7 @@ CREATE TABLE IF NOT EXISTS accessories (
     name TEXT NOT NULL,               -- Display name
     manufacturer_id TEXT REFERENCES manufacturers(id),
     supersedes_id TEXT REFERENCES accessories(id), -- ID of accessory this supersedes
-    website TEXT,                     -- Product page URL
+    url TEXT,                         -- Product page URL
     release_date TEXT,                -- Initial release date
     release_date_year_only INTEGER DEFAULT 0, -- If 1, only year is meaningful
     primary_category TEXT,            -- Primary category
@@ -546,7 +546,7 @@ CREATE TABLE IF NOT EXISTS manufacturer_translations (
     manufacturer_id TEXT NOT NULL REFERENCES manufacturers(id) ON DELETE CASCADE,
     locale TEXT NOT NULL REFERENCES locales(code) ON DELETE CASCADE,
     description TEXT,               -- Translated description (HTML)
-    website TEXT,                   -- Locale-specific website URL
+    url TEXT,                       -- Locale-specific URL
     PRIMARY KEY (manufacturer_id, locale)
 );
 
@@ -557,7 +557,7 @@ CREATE TABLE IF NOT EXISTS content_translations (
     description TEXT,               -- Translated short description (HTML)
     details TEXT,                   -- Translated detailed description (HTML)
     specs TEXT,                     -- Translated specifications (HTML)
-    website TEXT,                   -- Locale-specific website URL
+    url TEXT,                       -- Locale-specific URL
     PRIMARY KEY (content_id, locale)
 );
 
@@ -570,7 +570,7 @@ CREATE TABLE IF NOT EXISTS software_translations (
     description TEXT,               -- Translated short description (HTML)
     details TEXT,                   -- Translated detailed description (HTML)
     specs TEXT,                     -- Translated specifications (HTML)
-    website TEXT,                   -- Locale-specific website URL
+    url TEXT,                       -- Locale-specific URL
     PRIMARY KEY (software_id, locale)
 );
 
@@ -583,7 +583,7 @@ CREATE TABLE IF NOT EXISTS accessories_translations (
     description TEXT,               -- Translated short description (HTML)
     details TEXT,                   -- Translated detailed description (HTML)
     specs TEXT,                     -- Translated specifications (HTML)
-    website TEXT,                   -- Locale-specific website URL
+    url TEXT,                       -- Locale-specific URL
     PRIMARY KEY (accessory_id, locale)
 );
 
@@ -596,7 +596,7 @@ CREATE TABLE IF NOT EXISTS hardware_translations (
     description TEXT,               -- Translated short description (HTML)
     details TEXT,                   -- Translated detailed description (HTML)
     specs TEXT,                     -- Translated specifications (HTML)
-    website TEXT,                   -- Locale-specific website URL
+    url TEXT,                       -- Locale-specific URL
     PRIMARY KEY (hardware_id, locale)
 );
 
@@ -802,7 +802,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (12, 'Added slug column to hardware_revisions for stable identifiers', 0),
     (13, 'Separated video links into dedicated video tables', 1),
     (14, 'Added connector_detail column to hardware_io and hardware_revision_io', 0),
-    (15, 'Added content and accessories tables with related tables, FTS, and translations', 1);
+    (15, 'Added content and accessories tables with related tables, FTS, and translations', 1),
+    (16, 'Renamed website column to url across all tables', 1);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES

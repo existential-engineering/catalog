@@ -136,7 +136,7 @@ function buildDatabase(version: string): void {
   const manufacturerIds = new Map<string, string>(); // slug -> id mapping
 
   const insertManufacturer = db.prepare(`
-    INSERT INTO manufacturers (id, name, company_name, website, description)
+    INSERT INTO manufacturers (id, name, company_name, url, description)
     VALUES (?, ?, ?, ?, ?)
   `);
   const updateManufacturerParent = db.prepare(`
@@ -147,7 +147,7 @@ function buildDatabase(version: string): void {
     VALUES (?, ?)
   `);
   const insertManufacturerTranslation = db.prepare(`
-    INSERT INTO manufacturer_translations (manufacturer_id, locale, description, website)
+    INSERT INTO manufacturer_translations (manufacturer_id, locale, description, url)
     VALUES (?, ?, ?, ?)
   `);
 
@@ -168,7 +168,7 @@ function buildDatabase(version: string): void {
       id,
       data.name,
       data.companyName ?? null,
-      data.website ?? null,
+      data.url ?? null,
       markdownToHtml(data.description)
     );
 
@@ -183,12 +183,12 @@ function buildDatabase(version: string): void {
     if (data.translations) {
       for (const [locale, trans] of Object.entries(data.translations)) {
         if (!APPROVED_LOCALES.has(locale)) continue;
-        if (trans.description || trans.website) {
+        if (trans.description || trans.url) {
           insertManufacturerTranslation.run(
             id,
             locale,
             markdownToHtml(trans.description),
-            trans.website ?? null
+            trans.url ?? null
           );
         }
       }
@@ -222,7 +222,7 @@ function buildDatabase(version: string): void {
   }
 
   const insertSoftware = db.prepare(`
-    INSERT INTO software (id, name, manufacturer_id, website, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
+    INSERT INTO software (id, name, manufacturer_id, url, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const updateSoftwareSupersedes = db.prepare(`
@@ -265,7 +265,7 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?)
   `);
   const insertSoftwareTranslation = db.prepare(`
-    INSERT INTO software_translations (software_id, locale, description, details, specs, website)
+    INSERT INTO software_translations (software_id, locale, description, details, specs, url)
     VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertSoftwareLinkLocalized = db.prepare(`
@@ -305,7 +305,7 @@ function buildDatabase(version: string): void {
       id,
       data.name,
       manufacturerId ?? null,
-      data.website ?? null,
+      data.url ?? null,
       data.releaseDate ?? null,
       data.releaseDateYearOnly ? 1 : 0,
       normalizedPrimaryCategory,
@@ -429,14 +429,14 @@ function buildDatabase(version: string): void {
         if (!APPROVED_LOCALES.has(locale)) continue;
 
         // Insert content translation
-        if (trans.description || trans.details || trans.specs || trans.website) {
+        if (trans.description || trans.details || trans.specs || trans.url) {
           insertSoftwareTranslation.run(
             id,
             locale,
             markdownToHtml(trans.description),
             markdownToHtml(trans.details),
             markdownToHtml(trans.specs),
-            trans.website ?? null
+            trans.url ?? null
           );
         }
 
@@ -486,7 +486,7 @@ function buildDatabase(version: string): void {
   let contentCount = 0;
 
   const insertContent = db.prepare(`
-    INSERT INTO content (id, name, manufacturer_id, website, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
+    INSERT INTO content (id, name, manufacturer_id, url, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const updateContentSupersedes = db.prepare(`
@@ -525,7 +525,7 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?)
   `);
   const insertContentTranslation = db.prepare(`
-    INSERT INTO content_translations (content_id, locale, description, details, specs, website)
+    INSERT INTO content_translations (content_id, locale, description, details, specs, url)
     VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertContentLinkLocalized = db.prepare(`
@@ -559,7 +559,7 @@ function buildDatabase(version: string): void {
       id,
       data.name,
       manufacturerId ?? null,
-      data.website ?? null,
+      data.url ?? null,
       data.releaseDate ?? null,
       data.releaseDateYearOnly ? 1 : 0,
       normalizedPrimaryCategory,
@@ -666,14 +666,14 @@ function buildDatabase(version: string): void {
       for (const [locale, trans] of Object.entries(data.translations)) {
         if (!APPROVED_LOCALES.has(locale)) continue;
 
-        if (trans.description || trans.details || trans.specs || trans.website) {
+        if (trans.description || trans.details || trans.specs || trans.url) {
           insertContentTranslation.run(
             id,
             locale,
             markdownToHtml(trans.description),
             markdownToHtml(trans.details),
             markdownToHtml(trans.specs),
-            trans.website ?? null
+            trans.url ?? null
           );
         }
 
@@ -721,7 +721,7 @@ function buildDatabase(version: string): void {
   let hardwareCount = 0;
 
   const insertHardware = db.prepare(`
-    INSERT INTO hardware (id, name, manufacturer_id, website, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
+    INSERT INTO hardware (id, name, manufacturer_id, url, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const updateHardwareSupersedes = db.prepare(`
@@ -784,7 +784,7 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?)
   `);
   const insertHardwareTranslation = db.prepare(`
-    INSERT INTO hardware_translations (hardware_id, locale, description, details, specs, website)
+    INSERT INTO hardware_translations (hardware_id, locale, description, details, specs, url)
     VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareLinkLocalized = db.prepare(`
@@ -825,7 +825,7 @@ function buildDatabase(version: string): void {
       id,
       data.name,
       manufacturerId ?? null,
-      data.website ?? null,
+      data.url ?? null,
       data.releaseDate ?? null,
       data.releaseDateYearOnly ? 1 : 0,
       normalizedPrimaryCategory,
@@ -1036,14 +1036,14 @@ function buildDatabase(version: string): void {
         if (!APPROVED_LOCALES.has(locale)) continue;
 
         // Insert content translation
-        if (trans.description || trans.details || trans.specs || trans.website) {
+        if (trans.description || trans.details || trans.specs || trans.url) {
           insertHardwareTranslation.run(
             id,
             locale,
             markdownToHtml(trans.description),
             markdownToHtml(trans.details),
             markdownToHtml(trans.specs),
-            trans.website ?? null
+            trans.url ?? null
           );
         }
 
@@ -1114,7 +1114,7 @@ function buildDatabase(version: string): void {
   let accessoryCount = 0;
 
   const insertAccessory = db.prepare(`
-    INSERT INTO accessories (id, name, manufacturer_id, website, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
+    INSERT INTO accessories (id, name, manufacturer_id, url, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const updateAccessorySupersedes = db.prepare(`
@@ -1149,7 +1149,7 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?)
   `);
   const insertAccessoryTranslation = db.prepare(`
-    INSERT INTO accessories_translations (accessory_id, locale, description, details, specs, website)
+    INSERT INTO accessories_translations (accessory_id, locale, description, details, specs, url)
     VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertAccessoryLinkLocalized = db.prepare(`
@@ -1183,7 +1183,7 @@ function buildDatabase(version: string): void {
       id,
       data.name,
       manufacturerId ?? null,
-      data.website ?? null,
+      data.url ?? null,
       data.releaseDate ?? null,
       data.releaseDateYearOnly ? 1 : 0,
       normalizedPrimaryCategory,
@@ -1278,14 +1278,14 @@ function buildDatabase(version: string): void {
       for (const [locale, trans] of Object.entries(data.translations)) {
         if (!APPROVED_LOCALES.has(locale)) continue;
 
-        if (trans.description || trans.details || trans.specs || trans.website) {
+        if (trans.description || trans.details || trans.specs || trans.url) {
           insertAccessoryTranslation.run(
             id,
             locale,
             markdownToHtml(trans.description),
             markdownToHtml(trans.details),
             markdownToHtml(trans.specs),
-            trans.website ?? null
+            trans.url ?? null
           );
         }
 

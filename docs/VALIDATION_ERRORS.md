@@ -30,7 +30,7 @@ A required field is missing from the entry.
 
 | Entry Type   | Required Fields                | Recommended Fields                              |
 | ------------ | ------------------------------ | ----------------------------------------------- |
-| Manufacturer | `slug`, `name`                 | `website`                                       |
+| Manufacturer | `slug`, `name`                 | `url`                                           |
 | Software     | `slug`, `name`, `manufacturer` | `primaryCategory`, `platforms`, `identifiers`   |
 | Hardware     | `slug`, `name`, `manufacturer` | `primaryCategory`, `description`                |
 
@@ -96,11 +96,11 @@ A URL field is malformed.
 
 ```yaml
 # Wrong
-website: xferrecords.com           # missing protocol
-website: htp://xferrecords.com     # typo in protocol
+url: xferrecords.com           # missing protocol
+url: htp://xferrecords.com     # typo in protocol
 
 # Correct
-website: https://xferrecords.com
+url: https://xferrecords.com
 ```
 
 **Fix:** Ensure URLs include `https://` or `http://` protocol.

@@ -36,7 +36,7 @@ data/
 ```yaml
 slug: xfer-records
 name: Xfer Records
-website: https://xferrecords.com
+url: https://xferrecords.com
 ```
 
 ### Software (Plugin)
@@ -58,7 +58,7 @@ platforms:
 identifiers:
   au: com.xferrecords.Serum
   vst3: com.xferrecords.Serum.vst3
-website: https://xferrecords.com/products/serum
+url: https://xferrecords.com/products/serum
 description: Advanced wavetable synthesizer with visual feedback
 ```
 
@@ -73,7 +73,7 @@ platforms:
   - windows
 identifiers:
   bundle: com.ableton.live
-website: https://ableton.com/live
+url: https://ableton.com/live
 ```
 
 ### Hardware
@@ -82,7 +82,7 @@ website: https://ableton.com/live
 name: Apollo Twin X
 manufacturer: universal-audio
 primaryCategory: audio-interface
-website: https://www.uaudio.com/products/apollo-twin-x
+url: https://www.uaudio.com/products/apollo-twin-x
 description: Desktop Thunderbolt audio interface with UAD processing
 ```
 

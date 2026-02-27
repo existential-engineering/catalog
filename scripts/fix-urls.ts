@@ -26,7 +26,7 @@ import { DATA_DIR, getYamlFiles } from "./lib/utils.js";
 // =============================================================================
 
 interface UrlAction {
-  field: string; // e.g. "website", "links[0].url", "versions[2].url"
+  field: string; // e.g. "url", "links[0].url", "versions[2].url"
   url: string;
   action: "remove" | "update";
   newUrl?: string;
@@ -268,7 +268,7 @@ function extractUrlsWithPaths(data: Record<string, unknown>, prefix = ""): UrlLo
 
     if (typeof value === "string") {
       if (
-        (key === "url" || key === "website" || key === "source") &&
+        (key === "url" || key === "source") &&
         (value.startsWith("http://") || value.startsWith("https://"))
       ) {
         urls.push({ field: fieldPath, url: value });
@@ -302,7 +302,7 @@ function applyActionsToContent(content: string, actions: UrlAction[]): string {
       // Simple string replacement of the URL
       result = result.replace(action.url, action.newUrl);
     } else if (action.action === "remove") {
-      if (action.field === "website" || action.field === "source") {
+      if (action.field === "url" || action.field === "source") {
         // Remove the entire line for top-level fields
         const regex = new RegExp(`^${action.field}:[ ]*${escapeRegex(action.url)}\\n?`, "m");
         result = result.replace(regex, "");
