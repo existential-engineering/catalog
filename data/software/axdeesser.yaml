@@ -1,0 +1,81 @@
+name: aXDeesser
+manufacturer: ssa-plugins
+primaryCategory: de-esser
+url: https://www.ssa-plugins.com/product/axdeesser/
+description: The aXDeesser is a de-essing plugin that can be used on any
+  ambix-format (sn3d/acn) ambisonic signal.
+details: |-
+  The axdeesser also allows you to select the direction you want to focus on for
+  activating the de-essing effect, so the compression will only be activated
+  when signals picked up by the virtual mic are above the threshold. Sounds from
+  other directions will not contribute to activation of the de-esser. Note,
+  however, that the de-esser will be applied to all sources in the sound field
+  when it is activated.
+
+  The axdeesser has the following parameters: frequency: the centre frequency of
+  the band to be compressed. This should be centred on the portion of the
+  spectrum in which you want to reduce sibilance. Bandwidth: the bandwidth, in
+  octaves, of the band you wish to compress. Threshold: set the level threshold
+  at which the compressor begins to act on the defined sibilance band. Ratio:
+  adjust how much compression is applied to signal above the threshold. A ratio
+  of 1 means no compression while higher ratios lead to stronger compression of
+  the sibilance band. Attack: the time in milliseconds (ms) for the compressor
+  to become fully effect once a signal goes above the threshold. Release: the
+  time in milliseconds (ms) for the compressor to fully switch off once a signal
+  goes below the threshold. Monitor sibilance band: you can solo the sibilance
+  band in order to asses the effect of the compression.
+
+  The virtual microphone, used to generate the signal that drives the de-esser,
+  has the following parameters: azimuth: the azimuthal direction you want the
+  virtual microphone to point. Positive angles are in an anti-clockwise
+  direction, meaning +90 degrees is to the left and -90 degrees is to the right.
+  Elevation: the elevation angle of the virtual microphone to be pointer. Zero
+  is on the horizontal, +90 degrees is directly up and -90 degrees is directly
+  down. Focus: the focus controls the directivity of the virtual microphone that
+  is used to drive the de-esser. A focus of 0% leads omnidirectional
+  directivity, meaning all audio in the sound field is used to drive the
+  de-esser. Increasing the focus increases the rejection of sounds away from the
+  direction the virtual microphone is pointed. The maximum narrowness of the
+  100% focus is dependent on the order at which the plugin is operating (shown
+  in the bottom left corner). First-order allows up to cardioid directivity.
+  Higher orders allow for narrower directivity and better rejection of sound
+  sources away from the virtual microphone direction.
+
+  Available with 3 levels of spatial resolution, with different maximum
+  ambisonic orders: a1deesser- de-ess first-order ambisonic signals. A3deesser-
+  de-ess up-to third-order ambisonic signals. A7deesser- de-ess up-to
+  seventh-order ambisonic signals.
+specs: |-
+  - Ambix format (sn3d/acn) ambisonics input/output
+  - De-essing plugin for ambisonic signals
+  - Frequency control
+  - Bandwidth control (in octaves)
+  - Threshold control
+  - Ratio control
+  - Attack time (milliseconds)
+  - Release time (milliseconds)
+  - Monitor sibilance band
+  - Virtual microphone with azimuth control
+  - Virtual microphone with elevation control
+  - Virtual microphone with focus control
+  - Cardioid directivity (first-order)
+  - Higher-order directivity options
+  - AAX (64-bit) for Windows
+  - AAX (apple silicon/intel) for mac
+  - VST3 (64-bit) for Windows
+  - VST3 (apple silicon/intel) for os x
+  - A1deesser - first-order ambisonic signals
+  - A3deesser - third-order ambisonic signals
+  - A7deesser - seventh-order ambisonic signals
+  - 64 channels for seventh-order ambisonics
+prices:
+  - amount: 32
+    currency: USD
+links:
+  - type: product
+    url: https://www.ssa-plugins.com
+    title: SSA Plugins
+platforms:
+  - mac
+  - windows
+id: BZOl_AZQTuSd5xGH-3vD8

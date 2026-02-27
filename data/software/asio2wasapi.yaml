@@ -2,29 +2,22 @@ name: ASIO2WASAPI
 manufacturer: falcosoft
 primaryCategory: utility
 url: https://github.com/Falcosoft/ASIO2WASAPI
-description: Asio2wasapi is a universal asio driver - an interface between asio
+description: ASIO2WASAPI is a universal asio driver - an interface between asio
   and wasapi apis.
-details: >-
-  Asio2wasapi is a universal asio driver - an interface between asio and wasapi
-  apis.
-
-
+details: |-
   Low latency shared mode buffer size can be configured (and needed update
   period is derived from buffer size). Added workaround for hosts that do not
   set control panel dialog's parent window correctly. Fixed problems with
   non-standard sample rates (e.g. 49716). When shared mode format converter is
   used actually any sample rates can be used now.
 
-
   Added win10+ special low latency shared mode. This mode needs proper drivers.
   Usually proprietary vendor drivers from realtek, nvidia etc. Do not support
   low latency shared mode. But generic high definition audio driver from
   microsoft does support it on windows 10/11.
 
-
   Added support for wasapi shared mode. Modified versioning so all projects get
   the version info from driver's version.h.
-
 
   Fixed supported format query. Fixed non modifiable 100 ms latency problem.
   Fixed too quiet rendering in case of supported 24-bit pcm format. Count of
@@ -38,7 +31,7 @@ specs: |-
   - Configurable buffer size
   - Win10+ special low latency shared mode
   - Wasapi shared mode support
-  - 24-bit pcm format support
+  - 24-bit PCM format support
   - Automatic channel count calculation
   - Automatic sample rate calculation
   - Default device support

@@ -1,0 +1,35 @@
+name: Bformat2Binaural - Ambisonic Binaural Decoder
+manufacturer: digenis
+primaryCategory: effect
+description: Bformat2Binaural - Ambisonic Binaural Decoder allows you to decode
+  up to 1st order ambisonics for playback over headphones.
+details: |-
+  The speaker positions are 0, 90, 180, and 270 degrees. Since the left and
+  right ear hrtf are the same at 0 degrees, there is one less convolution
+  required. Same applies for the rear 180 degree position, avoiding a total of
+  two convolutions as opposed to eight required if the speakers were positioned
+  at 45, 135, 225, and 315 degrees.
+
+  While this method requires less processing power, it does not 'seem' to
+  provide as clear a sound field as when decoding speaker feeds with positions
+  45, 135, 225, and 315. More trials need to be done into this.
+
+  Even though it uses the compact 128 tap hrtf set available from the mit media
+  lab instead of the full 512 tap set, it uses straight convolution as opposed
+  to fft convolution, and as a result is quite cpu intensive.
+specs: |-
+  - 1st order ambisonics decoding
+  - Headphone playback
+  - Four speaker feeds
+  - Hrtf convolution
+  - Speaker positions: 0, 90, 180, 270 degrees
+  - 128 tap hrtf filters
+  - Straight convolution processing
+  - 64 bit processing
+  - Windows compatible
+prices:
+  - amount: 119
+    currency: USD
+platforms:
+  - windows
+id: 6RfVwprgGz7bA1gScAAOj
