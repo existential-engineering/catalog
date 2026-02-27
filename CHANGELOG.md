@@ -1,5 +1,15 @@
 # catalog
 
+## 3.0.0
+
+### Major Changes
+
+- 543c90c: Rename `website` field to `url` across all data files, scripts, schema, and documentation. This is a breaking change — the SQLite `website` column is now `url` in all tables and translation tables.
+
+### Minor Changes
+
+- 2c14746: Add 35 content entries, 9 manufacturers, and 17 software entries including major DAWs and instruments
+
 ## 2.12.0
 
 ### Minor Changes
