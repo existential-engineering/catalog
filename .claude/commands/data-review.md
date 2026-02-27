@@ -79,7 +79,7 @@ Then perform deeper analysis:
 **Agent 3 - Translation Audit:**
 
 - Check `translations` blocks use only approved locale codes: de, es, fr, ja, ko, pt-BR, zh
-- Validate translatable fields are limited to: description, details, specs, url, links, io
+- Validate translatable fields are limited to: description, details, specs, url, links, videos, io
 - For hardware I/O translations, verify `originalName` matches an actual IO entry name
 - Report translation coverage gaps: entries with descriptions but no translations
 - Check that translated links have proper structure (type, title, url)
