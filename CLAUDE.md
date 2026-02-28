@@ -126,7 +126,7 @@ Advisory warning W123 fires if a `compatibleWith` slug doesn't match an existing
 
 ## Accessory Entries
 
-Accessory entries (cables, stands, acoustic treatment) live in `data/accessories/` as a separate collection. Accessory `primaryCategory` values include `cable`, `power-conditioner`, `mic-stand`, `boom-arm`, `pop-filter`, `shock-mount`, `reflection-filter`, `acoustic-treatment`, and `acoustic-panel`.
+Accessory entries (cables, stands, acoustic treatment) live in `data/accessories/` as a separate collection. Accessory `primaryCategory` values include `cable`, `power-conditioner`, `mic-stand`, `boom-arm`, `pop-filter`, `shock-mount`, `reflection-filter`, `acoustic-treatment`, `acoustic-panel`, and `windscreen`.
 
 - Accessory entries do NOT have `io` or `revisions` fields (use those for hardware only)
 - Like hardware, accessories require: name, manufacturer, primaryCategory, description
