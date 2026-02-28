@@ -1,5 +1,15 @@
 # catalog
 
+## 3.1.0
+
+### Minor Changes
+
+- 3012d6d: Add 80 initial accessory entries across 10 categories (cables, mic stands, boom arms, pop filters, shock mounts, reflection filters, acoustic panels, acoustic treatment, windscreens, power conditioners) with 22 new manufacturers and a new windscreen category.
+
+### Patch Changes
+
+- 31225a5: Move id field to top of YAML files, add format-yaml script
+
 ## 3.0.0
 
 ### Major Changes
