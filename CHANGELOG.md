@@ -1,5 +1,11 @@
 # catalog
 
+## 3.1.1
+
+### Patch Changes
+
+- 15416ed: software(add): ShaperBox 3
+
 ## 3.1.0
 
 ### Minor Changes
