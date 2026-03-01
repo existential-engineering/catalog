@@ -8,13 +8,14 @@
  *   tsx scripts/fix-data.ts io-categories     # Fix hardware IO categories (audio → digital)
  *   tsx scripts/fix-data.ts extract-formats   # Move format/host categories to formats/compatibleWith
  *   tsx scripts/fix-data.ts content-cleanup   # Remove platforms + software-centric categories from content
+ *   tsx scripts/fix-data.ts truncated-descriptions  # Replace truncated descriptions from details field
  *   tsx scripts/fix-data.ts all               # Run all in sequence (excludes content-cleanup)
  *   tsx scripts/fix-data.ts --dry-run <cmd>   # Preview changes without writing
  */
 
 import fs from "node:fs";
 import path from "node:path";
-import { isMap, isPair, isSeq, parseDocument, Scalar, YAMLSeq } from "yaml";
+import { isMap, isPair, isScalar, isSeq, parseDocument, Scalar, YAMLSeq } from "yaml";
 import { loadSchemaContext } from "./lib/schema-loader.js";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
@@ -615,6 +616,62 @@ function fixContentCleanup(dryRun: boolean): number {
 }
 
 // =============================================================================
+// COMMAND: truncated-descriptions
+// =============================================================================
+
+function fixTruncatedDescriptions(dryRun: boolean): number {
+  let totalChanges = 0;
+  const files = getAllDataFiles(["software", "content", "hardware", "accessories"]);
+
+  for (const file of files) {
+    const content = fs.readFileSync(file, "utf-8");
+    const doc = parseDocument(content);
+    const data = doc.toJSON() as Record<string, unknown>;
+
+    const description = data.description;
+    if (typeof description !== "string") continue;
+    if (!/\.{3,}\s*$/.test(description)) continue;
+
+    // Description is truncated — try to replace from details
+    const details = data.details;
+    if (typeof details !== "string" || details.trim().length === 0) {
+      console.log(`  ⚠ ${relPath(file)}: truncated description but no details field — skipping`);
+      continue;
+    }
+
+    // Extract first paragraph from details and normalize whitespace
+    // Details block scalars have line-wrapped text; collapse to single line
+    const paragraphs = details.split(/\n\n+/);
+    let replacement = paragraphs[0].replace(/\n/g, " ").replace(/\s+/g, " ").trim();
+
+    // If the first paragraph is very long, use the first 2 sentences instead
+    if (replacement.length > 500) {
+      const sentences = replacement.match(/[^.!?]+[.!?]+/g);
+      if (sentences && sentences.length >= 2) {
+        replacement = sentences.slice(0, 2).join("").trim();
+      }
+    }
+
+    // Update the description node in the YAML AST
+    const descNode = doc.get("description", true);
+    if (isScalar(descNode)) {
+      descNode.value = replacement;
+      console.log(`  ${relPath(file)}: description replaced from details`);
+    } else {
+      doc.set("description", replacement);
+      console.log(`  ${relPath(file)}: description set from details`);
+    }
+
+    totalChanges++;
+    if (!dryRun) {
+      fs.writeFileSync(file, doc.toString());
+    }
+  }
+
+  return totalChanges;
+}
+
+// =============================================================================
 // MAIN
 // =============================================================================
 
@@ -633,6 +690,7 @@ const commands: Record<string, (dryRun: boolean) => number> = {
   "io-categories": fixIOCategories,
   "extract-formats": extractFormats,
   "content-cleanup": fixContentCleanup,
+  "truncated-descriptions": fixTruncatedDescriptions,
 };
 
 function runCommand(name: string, fn: (dryRun: boolean) => number): void {
@@ -642,7 +700,7 @@ function runCommand(name: string, fn: (dryRun: boolean) => number): void {
 }
 
 // Commands excluded from "all" (one-time cleanups, not recurring fixes)
-const excludeFromAll = new Set(["content-cleanup"]);
+const excludeFromAll = new Set(["content-cleanup", "truncated-descriptions"]);
 
 if (command === "all") {
   for (const [name, fn] of Object.entries(commands)) {

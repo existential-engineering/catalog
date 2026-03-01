@@ -715,6 +715,9 @@ interface DataWithOptionalFields {
   secondaryCategory?: string;
   categories?: string[];
   supersedes?: string;
+  description?: string | string[];
+  details?: string | string[];
+  specs?: string | string[];
 }
 
 /**
@@ -900,6 +903,34 @@ function validateFile(
           file: path.relative(process.cwd(), filePath),
           errors: categoryErrors,
           details: categoryDetails,
+        };
+      }
+    }
+
+    // Check for truncated description (ending with "...")
+    // Matches text cut mid-word ("featur...") or ending with generic ellipsis,
+    // but excludes legitimate trailing phrases like "and more..." or "etc..."
+    if (data.description) {
+      const descText = Array.isArray(data.description)
+        ? data.description.join("\n\n")
+        : data.description;
+      if (/\.{3,}\s*$/.test(descText) && !/(?:more|etc|others|so on)\.{3,}\s*$/i.test(descText)) {
+        const line = getLineForPath(document, lineCounter, ["description"]);
+        const errorCode = ValidationErrorCode.E304_TRUNCATED_CONTENT;
+        const message =
+          "Description appears to be truncated (ends with '...'). Provide the full text.";
+        return {
+          file: path.relative(process.cwd(), filePath),
+          errors: [`description: ${message}`],
+          details: [
+            {
+              code: errorCode,
+              message,
+              path: "description",
+              line: line ?? undefined,
+              docsUrl: getDocsUrl(errorCode),
+            },
+          ],
         };
       }
     }
