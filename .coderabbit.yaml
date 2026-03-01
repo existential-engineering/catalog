@@ -11,9 +11,10 @@ reviews:
       instructions: |
         Focus on data quality. Check for:
         - Correct slug format (lowercase, hyphens only, no spaces)
-        - Required fields present based on entry type
+        - Required fields present based on entry type (see CLAUDE.md)
+        - Identifiers (bundle IDs) are recommended for software but not required — they are typically populated via sync
         - Valid URLs for url fields
-        - Proper bundle identifier formatting (reverse domain notation)
+        - If identifiers are present, check for proper bundle identifier formatting (reverse domain notation)
         - Categories should exist in schema/categories.yaml
 
         Field formatting conventions:

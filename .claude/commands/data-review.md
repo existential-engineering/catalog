@@ -48,7 +48,7 @@ Then perform deeper analysis:
 - Read each modified YAML file in full
 - Verify all required fields are present:
   - Manufacturers: name, url
-  - Software: name, manufacturer, primaryCategory, platforms, identifiers
+  - Software: name, manufacturer, primaryCategory, platforms
   - Hardware: name, manufacturer, primaryCategory, description
 - Cross-reference with `schema/CONTEXT.md` for valid categories, formats, platforms
 - Check that manufacturer references resolve to existing files in `data/manufacturers/`
@@ -121,7 +121,7 @@ After all parallel agents complete:
 Perform a final pass asking:
 
 - Do the new entries represent complete, useful catalog additions?
-- Are there obvious missing pieces (manufacturer without software, software without identifiers)?
+- Are there obvious missing pieces (manufacturer without software, hardware without description)?
 - Did `pnpm validate` pass with 0 errors? Did `pnpm build` succeed with no duplicate category warnings?
 - Are there any data quality concerns that automated validation wouldn't catch?
 
