@@ -1,5 +1,12 @@
 # catalog
 
+## 3.1.3
+
+### Patch Changes
+
+- b6f4098: Downgrade identifiers from required to recommended for software entries in documentation and review tooling
+- ef70455: software(add): Snapback
+
 ## 3.1.2
 
 ### Patch Changes
