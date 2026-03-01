@@ -17,7 +17,7 @@
 - [ ] YAML files follow the existing format
 - [ ] Manufacturer exists (or I'm adding it in this PR)
 - [ ] Categories and formats are from the schema files
-- [ ] Identifiers are accurate (bundle IDs, etc.)
+- [ ] Identifiers are accurate, if provided (bundle IDs, etc.)
 
 ## Additional Notes
 

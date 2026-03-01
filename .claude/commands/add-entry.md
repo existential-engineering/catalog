@@ -34,8 +34,9 @@ Prompt the user for relevant fields based on entry type. Reference `schema/CONTE
 
 **For Software:**
 
-- **Required:** name, manufacturer (slug reference), primaryCategory, platforms, identifiers
+- **Required:** name, manufacturer (slug reference), primaryCategory, platforms
 - **Recommended:**
+  - identifiers (plugin bundle IDs — typically only available via sync)
   - categories (additional categories from CONTEXT.md)
   - formats (from CONTEXT.md formats section)
 - Reference `schema/CONTEXT.md` for valid categories, platforms, and formats
