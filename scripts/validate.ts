@@ -955,6 +955,7 @@ interface WarningContext {
   compatibleWith?: string[];
   url?: string;
   links?: Array<{ url: string }>;
+  manufacturer?: string;
 }
 
 /**
@@ -966,7 +967,8 @@ function collectWarnings(
   data: WarningContext,
   document: ReturnType<typeof loadYamlFileWithPositions>["document"],
   lineCounter: ReturnType<typeof loadYamlFileWithPositions>["lineCounter"],
-  allSoftwareSlugs?: Set<string>
+  allSoftwareSlugs?: Set<string>,
+  manufacturerUrlMap?: Map<string, string>
 ): ValidationWarning | null {
   const warnings: ValidationWarningDetail[] = [];
   const relativeFile = path.relative(process.cwd(), filePath);
@@ -1041,6 +1043,45 @@ function collectWarnings(
     }
   }
 
+  // Check if url or links match manufacturer homepage (W125)
+  if (data.manufacturer && manufacturerUrlMap) {
+    const mfrUrl = manufacturerUrlMap.get(data.manufacturer);
+    if (mfrUrl) {
+      const normalize = (u: string) =>
+        u
+          .replace(/^https?:\/\//, "")
+          .replace(/^www\./, "")
+          .replace(/\/+$/, "")
+          .toLowerCase();
+      const normalizedMfr = normalize(mfrUrl);
+
+      if (data.url && normalize(data.url) === normalizedMfr) {
+        const line = getLineForPath(document, lineCounter, ["url"]);
+        warnings.push({
+          code: ValidationErrorCode.W125_MANUFACTURER_URL_IN_LINKS,
+          message: `Product url '${data.url}' matches manufacturer homepage. Use a product-specific URL or remove it.`,
+          path: "url",
+          line: line ?? undefined,
+        });
+      }
+
+      if (Array.isArray(data.links)) {
+        for (let i = 0; i < data.links.length; i++) {
+          const linkUrl = data.links[i].url;
+          if (linkUrl && normalize(linkUrl) === normalizedMfr) {
+            const line = getLineForPath(document, lineCounter, ["links", i, "url"]);
+            warnings.push({
+              code: ValidationErrorCode.W125_MANUFACTURER_URL_IN_LINKS,
+              message: `links[${i}].url '${linkUrl}' matches manufacturer homepage. Remove the redundant link entry.`,
+              path: `links[${i}].url`,
+              line: line ?? undefined,
+            });
+          }
+        }
+      }
+    }
+  }
+
   return warnings.length > 0 ? { file: relativeFile, warnings } : null;
 }
 
@@ -1087,9 +1128,17 @@ function validate(): ValidationResult {
   const accessoryIdToSlug = new Map<string, string>();
   const accessorySupersedesMap = new Map<string, string>(); // id -> supersedes_id
 
+  const manufacturerUrlMap = new Map<string, string>();
   for (const file of manufacturerFiles) {
     const slug = path.basename(file, path.extname(file));
     allManufacturers.add(slug);
+    try {
+      const content = fs.readFileSync(file, "utf-8");
+      const mfrData = parseYaml(content) as { url?: string };
+      if (mfrData.url) manufacturerUrlMap.set(slug, mfrData.url);
+    } catch {
+      // Ignore parse errors - they're caught later
+    }
   }
 
   // allSoftwareSlugs used for compatibleWith validation (software only, not content)
@@ -1195,7 +1244,8 @@ function validate(): ValidationResult {
           data as WarningContext,
           document,
           lineCounter,
-          allSoftwareSlugs
+          allSoftwareSlugs,
+          manufacturerUrlMap
         );
         if (w) warnings.push(w);
       } catch {
@@ -1219,7 +1269,8 @@ function validate(): ValidationResult {
           data as WarningContext,
           document,
           lineCounter,
-          allSoftwareSlugs
+          allSoftwareSlugs,
+          manufacturerUrlMap
         );
         if (w) warnings.push(w);
       } catch {
@@ -1238,7 +1289,14 @@ function validate(): ValidationResult {
       // Collect advisory warnings for valid files
       try {
         const { data, document, lineCounter } = loadYamlFileWithPositions(file);
-        const w = collectWarnings(file, data as WarningContext, document, lineCounter);
+        const w = collectWarnings(
+          file,
+          data as WarningContext,
+          document,
+          lineCounter,
+          undefined,
+          manufacturerUrlMap
+        );
         if (w) warnings.push(w);
       } catch {
         // Ignore parse errors - they're caught by YAML validation
@@ -1256,7 +1314,14 @@ function validate(): ValidationResult {
       // Collect advisory warnings for valid files
       try {
         const { data, document, lineCounter } = loadYamlFileWithPositions(file);
-        const w = collectWarnings(file, data as WarningContext, document, lineCounter);
+        const w = collectWarnings(
+          file,
+          data as WarningContext,
+          document,
+          lineCounter,
+          undefined,
+          manufacturerUrlMap
+        );
         if (w) warnings.push(w);
       } catch {
         // Ignore parse errors - they're caught by YAML validation
