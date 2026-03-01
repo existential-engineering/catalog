@@ -1,5 +1,11 @@
 # catalog
 
+## 3.1.2
+
+### Patch Changes
+
+- 05fb0a9: Remove redundant manufacturer homepage links from 1080 data files and add W125 validation warning
+
 ## 3.1.1
 
 ### Patch Changes
