@@ -987,6 +987,9 @@ interface WarningContext {
   url?: string;
   links?: Array<{ url: string }>;
   manufacturer?: string;
+  specs?: string;
+  formats?: string[];
+  platforms?: string[];
 }
 
 /**
@@ -1108,6 +1111,95 @@ function collectWarnings(
               line: line ?? undefined,
             });
           }
+        }
+      }
+    }
+  }
+
+  // Check specs lines for overlap with the file's own formats/platforms (W126)
+  if (typeof data.specs === "string" && data.specs.length > 0) {
+    const fileFormats = new Set(data.formats ?? []);
+    const filePlatforms = new Set(data.platforms ?? []);
+
+    if (fileFormats.size > 0 || filePlatforms.size > 0) {
+      // Map display tokens to canonical format/platform values
+      const TOKEN_TO_FORMAT: Record<string, string> = {
+        au: "au",
+        vst: "vst",
+        vst2: "vst2",
+        vst3: "vst3",
+        aax: "aax",
+        rtas: "rtas",
+        tdm: "tdm",
+        clap: "clap",
+        lv2: "lv2",
+        standalone: "standalone",
+        "rack-extension": "rack-extension",
+      };
+
+      const TOKEN_TO_PLATFORM: Record<string, string> = {
+        macos: "mac",
+        mac: "mac",
+        windows: "windows",
+        win: "windows",
+        pc: "windows",
+        linux: "linux",
+        ios: "ios",
+        ipados: "ios",
+        android: "android",
+      };
+
+      const FILLER_WORDS = new Set([
+        "formats",
+        "format",
+        "support",
+        "supports",
+        "compatibility",
+        "and",
+        "or",
+        "operates",
+        "as",
+        "plugin",
+        "plugins",
+        "64-bit",
+        "64bit",
+      ]);
+
+      const specLines = data.specs.split("\n");
+      for (const rawLine of specLines) {
+        if (!rawLine.startsWith("- ")) continue;
+
+        const stripped = rawLine.slice(2).toLowerCase();
+        const rawTokens = stripped
+          .split(/[\s,/()]+/)
+          .map((t) => t.trim())
+          .filter((t) => t.length > 0);
+
+        const tokens = rawTokens.filter((t) => !FILLER_WORDS.has(t));
+        if (tokens.length === 0) continue;
+
+        // Every token must map to a format or platform the file already declares
+        let allRedundant = true;
+        for (const token of tokens) {
+          const canonicalFormat = TOKEN_TO_FORMAT[token];
+          const canonicalPlatform = TOKEN_TO_PLATFORM[token];
+
+          if (canonicalFormat && fileFormats.has(canonicalFormat)) continue;
+          if (canonicalPlatform && filePlatforms.has(canonicalPlatform)) continue;
+
+          // Token doesn't match a known format/platform in this file's fields
+          allRedundant = false;
+          break;
+        }
+
+        if (allRedundant) {
+          const line = getLineForPath(document, lineCounter, ["specs"]);
+          warnings.push({
+            code: ValidationErrorCode.W126_SPECS_OVERLAP,
+            message: `Specs line "${rawLine.trim()}" restates the structured formats/platforms fields. Remove it from specs.`,
+            path: "specs",
+            line: line ?? undefined,
+          });
         }
       }
     }

@@ -59,13 +59,14 @@ Then perform deeper analysis:
 - Verify prices have both `amount` (number) and `currency` (valid ISO 4217 code from schema/currencies.yaml)
 - Check links have `type` and `url` at minimum
 
-**IO & Link Field Analysis** (from `pnpm validate` warnings W120/W121/W122):
+**IO, Link & Specs Field Analysis** (from `pnpm validate` warnings W120/W121/W122/W126):
 
 - Review all advisory warnings for unknown IO types, connections, and link types
 - For each unknown value, recommend one of: add to schema, fix in data, or add as alias
 - Flag IO entries where type and connection appear swapped (heuristic: type value found in known connections, or vice versa)
 - Flag IO entries with long descriptive strings in type/connection fields (these should be concise values)
 - Verify IO categories match semantic intent: audio signals → `audio`, MIDI → `midi`, USB/Thunderbolt → `data`, CV → `cv`, expression/switches → `control`, power → `power`
+- W126: Flag any `specs` lines that restate the file's own `formats` or `platforms` arrays. These are redundant and should be removed. Note: lines describing plugin *hosting* capability (e.g., "VST3, AU plugin support" on a DAW with `formats: [standalone]`) are legitimate and should not be flagged.
 
 **Identifier & Staleness Analysis** (from automated tools):
 
