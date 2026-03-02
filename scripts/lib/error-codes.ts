@@ -50,6 +50,7 @@ export enum ValidationErrorCode {
   E301_YOUTUBE_URL_FORMAT = "E301",
   E302_UNCLOSED_CODE_BLOCK = "E302",
   E303_UNBALANCED_BACKTICKS = "E303",
+  E304_TRUNCATED_CONTENT = "E304",
 
   // Identifier errors (E4xx)
   E400_INVALID_IDENTIFIER_FORMAT = "E400",
@@ -222,6 +223,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E303_UNBALANCED_BACKTICKS]: {
     title: "Unbalanced backticks",
     anchor: "e303-unbalanced-backticks",
+  },
+  [ValidationErrorCode.E304_TRUNCATED_CONTENT]: {
+    title: "Truncated content",
+    anchor: "e304-truncated-content",
   },
 
   // Identifier errors
