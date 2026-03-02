@@ -1,5 +1,11 @@
 # catalog
 
+## 3.1.4
+
+### Patch Changes
+
+- 5c8f8f7: Fix 1,461 truncated descriptions and add E304 validation error to prevent future truncated content
+
 ## 3.1.3
 
 ### Patch Changes
