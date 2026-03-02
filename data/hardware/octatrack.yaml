@@ -2,8 +2,163 @@ id: UE60mnVkZbN6neZnTVWHw
 name: Octatrack
 manufacturer: elektron
 primaryCategory: sampler
-description: Eight-track performance sampler and sequencer designed for live
-  performance. Features time-stretching, pitch-shifting, audio mangling
-  capabilities, crossfader for DJ-style transitions, and real-time sampling from
-  external inputs. Includes scenes and parts for rapid sound variation during
-  performance.
+categories:
+  - sequencer
+  - groovebox
+url: https://www.elektron.se/products/octatrack-mkii/
+releaseDate: "2017"
+releaseDateYearOnly: true
+description: >-
+  The Octatrack MKII is an eight-track performance sampler and sequencer from
+  Elektron designed for live performance. Features time-stretching,
+  pitch-shifting, audio mangling capabilities, crossfader for DJ-style
+  transitions, and real-time sampling from external inputs. Includes scenes
+  and parts for rapid sound variation during performance.
+details: |-
+  The Octatrack MKII is Elektron's flagship performance sampler, built for
+  musicians who need deep sample manipulation and live performance
+  capabilities in a single hardware unit. Eight audio tracks and eight
+  MIDI tracks provide a complete production and performance environment.
+
+  Each audio track features a powerful sample engine with time-stretching,
+  pitch-shifting, and slice-based playback. Two independent effects per
+  track provide real-time processing including filter, delay, reverb,
+  compressor, lo-fi, phaser, flanger, chorus, and more. The crossfader
+  with assignable scenes enables DJ-style transitions between entirely
+  different parameter states.
+
+  Elektron's signature parameter locks (p-locks) allow per-step
+  automation of any parameter, while conditional trigs add probability,
+  fill patterns, and complex rhythmic variations. Three recording buffers
+  enable real-time sampling of external inputs or internal audio for
+  live looping and resampling workflows.
+
+  The Arranger mode enables song-mode sequencing of patterns for
+  complete live sets. Parts store snapshots of all eight tracks for
+  instant variation within a pattern. The Pickup Machine provides
+  Octatrack's take on a live looper with overdub and multiply functions.
+
+  The MKII revision features an updated button design, OLED screen,
+  backlit buttons, and dedicated quick-assign buttons for improved
+  ergonomics during performance.
+specs: |-
+  - 8 audio tracks with independent effects
+  - 8 MIDI tracks for external sequencing
+  - Per-track time-stretching and pitch-shifting
+  - Slice-based sample playback
+  - Two effects per audio track
+  - Crossfader with assignable scenes
+  - Parameter locks (per-step automation)
+  - Conditional trigs (probability, fills)
+  - 3 recording buffers for live sampling
+  - Pickup Machine (live looper)
+  - Arranger mode for song sequencing
+  - Parts system (4 per pattern)
+  - 64-step sequencer per track
+  - Micro-timing adjustments
+  - CompactFlash card storage
+  - OLED display (MKII)
+  - Backlit buttons (MKII)
+  - 48 kHz / 24-bit audio
+  - Sampling rate: 44.1 kHz / 16-bit (recording)
+  - Dimensions: 340 x 186 x 63 mm
+  - Weight: 2.1 kg
+io:
+  - name: Audio Input A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Input B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Input C
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Input D
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Main Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Main Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Cue Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Cue Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Left
+prices:
+  - amount: 1399
+    currency: USD
+links:
+  - type: support
+    url: https://www.elektron.se/support/octatrack-mkii/
+    title: Support & Manuals
