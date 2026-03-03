@@ -1,0 +1,182 @@
+id: qD1c7VdINwLhvOplu8DV4
+name: Maths
+manufacturer: make-noise
+primaryCategory: modular
+categories:
+  - utility
+url: https://www.makenoisemusic.com/synthesizers/maths
+releaseDate: "2013"
+releaseDateYearOnly: true
+description: >-
+  Maths is an analog computer designed for music by Make Noise. It is the
+  do-it-all analog function generator for eurorack modular synthesizers,
+  combining the functionality of envelope generators, LFOs, slew limiters,
+  attenuators, and more in a single 20 HP module.
+details: |-
+  Maths is an analog computer designed for music. Combining the classic
+  functionality of the Buchla 281 and Serge DUSG (Dual Universal Slope
+  Generator), Maths provides a wide range of functions essential for
+  creating and modifying control voltages in a modular system.
+
+  The module features two primary channels (CH 1 and CH 4) with
+  independently controllable Rise and Fall times, each with dedicated CV
+  inputs for voltage control. The central attenuverter/mixer section (CH 2
+  and CH 3) provides signal processing and mixing capabilities.
+
+  Maths excels as an envelope generator, LFO, slew limiter, oscillator,
+  lag processor, and more. Its cycle modes allow channels to self-trigger,
+  creating complex modulation sources. The OR and SUM outputs provide
+  logic and mixing functions for combining the channels.
+
+  A cornerstone of modular synthesis, Maths is often described as the
+  Swiss Army knife of eurorack modules.
+specs: |-
+  - 20 HP width
+  - 24mm depth
+  - +12V: 60mA
+  - -12V: 50mA
+  - Two primary function generator channels (CH 1, CH 4)
+  - Two attenuverter channels (CH 2, CH 3)
+  - Independent Rise and Fall controls per channel
+  - Voltage controlled Rise and Fall times
+  - Cycle mode for self-triggering (LFO, oscillator)
+  - End of Rise (EOR) gate output
+  - End of Cycle (EOC) gate output
+  - Unity output per channel
+  - OR logic output
+  - SUM output
+  - Analog circuitry throughout
+io:
+  - name: Signal Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Trigger 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Rise CV 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Fall CV 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Signal Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Signal Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Trigger 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Rise CV 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Fall CV 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Signal Input 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Unity 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Channel 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: End of Rise 1
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Channel 4 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: End of Cycle 4
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Unity 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: OR
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: SUM
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+prices:
+  - amount: 290
+    currency: USD
+links:
+  - type: support
+    url: https://www.makenoisemusic.com/content/manuals/maths-manual.pdf
+    title: Manual

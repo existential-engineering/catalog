@@ -1,0 +1,132 @@
+id: vUqM5SWZhVfrX4HrZFW6l
+name: Morphagene
+manufacturer: make-noise
+primaryCategory: sampler
+categories:
+  - granular
+  - modular
+url: https://www.makenoisemusic.com/synthesizers/morphagene
+releaseDate: "2017"
+releaseDateYearOnly: true
+description: >-
+  Morphagene is a next generation tape and microsound music machine from Make
+  Noise. It explores the world of granular micro sound through the manipulation
+  of audio recordings (reels) on micro SD card, as well as live audio input.
+details: |-
+  Morphagene is a next generation tape and microsound music machine that
+  explores granular synthesis through the manipulation of audio recordings
+  (called reels) stored on micro SD card, as well as live audio input.
+
+  The concept of Morphagene comes from the idea of the musician or composer
+  cutting up magnetic tape and reassembling it to create new compositions.
+  Morphagene goes further by allowing CV and manual control of the various
+  parameters associated with this process: Gene Size (grain length), Slide
+  (position within the reel), Organize (reel/splice selection), and Morph
+  (varispeed/pitch).
+
+  With its SOS (Sound on Sound) feature, Morphagene allows for overdubbing
+  new audio onto existing recordings, much like classic tape-based sound on
+  sound techniques. Real-time recording to micro SD card enables the capture
+  of live performances and sound design sessions.
+
+  The module operates with stereo audio input and output, and provides
+  extensive CV control over all parameters for tight integration within a
+  modular synthesizer system.
+specs: |-
+  - 20 HP width
+  - 30mm depth
+  - +12V: 75mA
+  - -12V: 35mA
+  - Micro SD card storage for reels
+  - Stereo audio input and output
+  - Real-time recording and playback
+  - Granular microsound processing
+  - Sound on Sound (SOS) overdubbing
+  - Varispeed playback with pitch control
+  - CV control over all parameters
+  - Firmware updatable via micro SD
+io:
+  - name: Audio In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Gene Size CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Slide CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Organize CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Morph CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: SOS CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Clock In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: End of Reel
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+prices:
+  - amount: 529
+    currency: USD
+links:
+  - type: support
+    url: https://www.makenoisemusic.com/content/manuals/morphagene-manual.pdf
+    title: Manual

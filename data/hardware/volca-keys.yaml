@@ -2,7 +2,89 @@ id: 54w7qUrCGc-oCo2eD9wRR
 name: Volca Keys
 manufacturer: korg
 primaryCategory: synthesizer
+categories:
+  - analog
+url: https://www.korg.com/us/products/dj/volca_keys/
+releaseDate: "2013"
+releaseDateYearOnly: true
+description: >-
+  The Volca Keys is a three-voice polyphonic analog synthesizer from Korg's
+  Volca series. It features a loop sequencer, built-in delay, and a compact
+  battery-powered form factor designed for portable music making.
+details: |-
+  The Volca Keys delivers authentic analog polyphonic synthesis in Korg's
+  ultra-compact Volca format. Three analog oscillators provide true
+  three-voice polyphony or can be stacked in unison for thick monophonic
+  leads and basses.
+
+  The simple but effective signal path includes a single oscillator per
+  voice with selectable sawtooth, square, and triangle waveforms, a
+  resonant low-pass filter, and a single envelope generator. A built-in
+  analog delay adds depth and space to the sound.
+
+  The 16-step loop sequencer with motion recording captures knob movements
+  for evolving sequences. An active step function allows real-time muting
+  and unmuting of steps for performance variation.
+
+  MIDI input allows external control from keyboards, DAWs, and other
+  controllers. The analog sync input and output enable tight
+  synchronization with other Volca units and Korg's monotribe/monotron
+  series.
+
+  Powered by six AA batteries (alkaline or Ni-MH rechargeable) with an
+  optional external DC adapter (Korg KA-350), the Volca Keys is designed
+  for portable music making anywhere.
+specs: |-
+  - 3-voice polyphonic analog synthesizer
+  - 1 VCO per voice (saw, square, triangle)
+  - Resonant low-pass filter
+  - Single EG (attack, decay/release, sustain)
+  - Built-in analog delay
+  - Voice modes: Poly, Unison, Octave, Fifth, Unison Ring Mod, Poly Ring Mod
+  - Detune control for chorus/unison thickening
+  - 16-step loop sequencer with motion recording
+  - Active step function
+  - 8 preset sequence patterns
+  - MIDI In (5-pin DIN)
+  - Sync In/Out (3.5mm)
+  - Headphone/line output (3.5mm stereo)
+  - Built-in speaker
+  - Power: 6x AA batteries (alkaline or Ni-MH) or Korg KA-350 DC adapter
+  - Dimensions: 193 x 115 x 45 mm
+  - Weight: 372g (without batteries)
+io:
+  - name: Headphone/Line Out
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Sync In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Sync Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+prices:
+  - amount: 159
+    currency: USD
 links:
-  - url: https://www.vintagesynth.com/korg/volca-keys
-    type: resource
+  - type: resource
+    url: https://www.vintagesynth.com/korg/volca-keys
     title: Vintage Synth Explorer

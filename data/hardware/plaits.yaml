@@ -1,0 +1,136 @@
+id: cWaJBBV-xWfs7BhwkLelY
+name: Plaits
+manufacturer: mutable-instruments
+primaryCategory: synthesizer
+categories:
+  - digital
+  - modular
+url: https://mutable-instruments.net/modules/plaits/
+releaseDate: "2018"
+releaseDateYearOnly: true
+description: >-
+  Plaits is a macro oscillator from Mutable Instruments featuring 16 synthesis
+  models spanning analog emulations, FM, wavetable, granular, physical modeling,
+  and noise. It replaced the popular Braids module with improved sound quality
+  and a streamlined 12 HP interface.
+details: |-
+  Plaits is a macro oscillator featuring 16 distinct synthesis models organized
+  into pairs. Each pair shares a common interface mapped to the Harmonics,
+  Timbre, and Morph knobs, allowing seamless exploration of a vast sonic
+  palette from a compact 12 HP module.
+
+  The synthesis models cover a wide range of techniques:
+  - Analog-style virtual analog oscillators with wavefolding
+  - FM synthesis with two and three operator configurations
+  - Wavetable and waveshaping synthesis
+  - Granular formant and filtered noise
+  - Particle noise and dust generator
+  - String and modal physical modeling
+  - Chord and speech synthesis
+
+  Plaits features a built-in low-pass gate and decay envelope that can be
+  triggered via the dedicated trigger input, allowing it to produce complete
+  voices without additional modules. The internal modulations accessible via
+  the FM and Morph CV inputs open up complex timbral variations.
+
+  Designed as the successor to the widely popular Braids, Plaits improves
+  on every aspect: better sound quality, lower noise floor, true stereo
+  output on some models, and a more intuitive interface.
+specs: |-
+  - 12 HP width
+  - 25mm depth
+  - +12V: 50mA
+  - -12V: 5mA
+  - 16 synthesis models
+  - Built-in low-pass gate and decay envelope
+  - Analog-style virtual analog oscillators
+  - Two and three operator FM synthesis
+  - Wavetable synthesis
+  - Granular formant synthesis
+  - Filtered noise generator
+  - String physical modeling
+  - Modal physical modeling
+  - Chord synthesis
+  - Speech synthesis
+  - Dust and particle noise
+  - Internal trigger and envelope
+  - Stereo output on select models
+  - 96kHz / 32-bit internal processing
+io:
+  - name: V/Oct
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Model
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Timbre
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: FM
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Morph
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Harmonics
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Trigger
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Level
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Aux
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+prices:
+  - amount: 249
+    currency: USD
+links:
+  - type: support
+    url: https://pichenettes.github.io/mutable-instruments-documentation/modules/plaits/
+    title: Documentation

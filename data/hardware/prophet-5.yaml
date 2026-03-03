@@ -2,7 +2,133 @@ id: nzWb9lGPzp41PEHs7_h6y
 name: Prophet 5
 manufacturer: sequential
 primaryCategory: synthesizer
+categories:
+  - analog
+url: https://www.sequential.com/product/prophet-5/
+releaseDate: "2020"
+releaseDateYearOnly: true
+description: >-
+  The Prophet 5 is Sequential's reissue of the legendary five-voice polyphonic
+  analog synthesizer originally designed by Dave Smith in 1978. The Rev4
+  edition features both Curtis and SSI filter options, 40 factory and 40 user
+  programs, and the same warm, rich analog sound that defined a generation.
+details: |-
+  The Prophet 5 Rev4 faithfully recreates the sound and experience of the
+  original Prophet-5, widely regarded as one of the most important
+  synthesizers ever made. It was the first fully programmable polyphonic
+  synthesizer, and its sound has appeared on countless recordings across
+  every genre.
+
+  Each of the five voices features two voltage-controlled oscillators
+  with sawtooth, triangle, and variable-width pulse waveforms, plus
+  oscillator sync and a white noise generator. The Rev4 edition uniquely
+  offers a choice between Curtis (CEM3340) and SSI (2140/2164) filter
+  chips, switchable per-program, providing access to both the warm
+  character of the Rev3 and the brighter, more aggressive tone of
+  earlier revisions.
+
+  Poly Mod is the Prophet 5's secret weapon — it routes Filter Envelope
+  and Oscillator B as modulation sources to Oscillator A frequency and
+  pulse width, plus filter cutoff. This creates everything from subtle
+  animation to complex FM-like timbres, metallic textures, and
+  pseudo-sync sounds.
+
+  Forty factory presets faithfully reproduce classic Prophet-5 sounds,
+  while 40 user locations store your own creations. Vintage knob-per-
+  function control and a wood-and-metal chassis complete the
+  experience.
+specs: |-
+  - 5-voice polyphonic analog synthesizer
+  - 2 VCOs per voice (saw, triangle, pulse with variable width)
+  - Oscillator sync
+  - White noise generator
+  - Resonant low-pass filter (selectable Curtis CEM or SSI)
+  - 24 dB/octave filter slope
+  - Filter envelope (ADSR)
+  - Amplifier envelope (ADSR)
+  - Poly Mod (Filter Env and Osc B to Osc A freq, PW, and filter)
+  - LFO with multiple waveforms
+  - 40 factory programs, 40 user programs
+  - Unison mode with voice detune
+  - Velocity sensitive (via MIDI)
+  - MIDI In, Out, Thru
+  - USB (for MIDI)
+  - CV/Gate outputs
+  - Audio output (mono, 1/4-inch)
+  - Headphone output (1/4-inch)
+  - Wooden end cheeks, steel chassis
+  - 5-octave keyboard
+  - Pitch and mod wheels
+  - Dimensions: 908 x 407 x 133 mm
+  - Weight: 18 kg
+io:
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Left
+  - name: Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: CV Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Filter CV Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+prices:
+  - amount: 3499
+    currency: USD
 links:
-  - url: https://www.vintagesynth.com/sequential-circuits/prophet-5
-    type: resource
+  - type: resource
+    url: https://www.vintagesynth.com/sequential-circuits/prophet-5
     title: Vintage Synth Explorer

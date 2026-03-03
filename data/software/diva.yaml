@@ -4,6 +4,9 @@ manufacturer: u-he
 primaryCategory: synthesizer
 categories:
   - plugin
+  - analog
+formats:
+  - vst3
 platforms:
   - windows
   - mac
@@ -11,7 +14,57 @@ platforms:
 identifiers:
   vst3: com.u-he.Diva.vst3
 url: https://u-he.com/products/diva/
-description: A virtual analog synthesizer plugin that captures the spirit of classic analog synthesizers, offering authentic analog sound modeling with detailed oscillators, filters, and envelopes.
+description: >-
+  Diva is a virtual analog synthesizer by u-he that models the behavior of
+  classic analog synthesizer circuits at the component level. Its oscillators,
+  filters, and envelopes can be mixed and matched from different vintage
+  architectures, delivering authentic analog sound with the flexibility of
+  software.
+details: |-
+  Diva (Dinosaur Impersonating Virtual Analogue) uses u-he's zero-delay
+  feedback filter technology and component-level circuit modeling to
+  recreate the sound of classic analog synthesizers with remarkable
+  authenticity.
+
+  The architecture is modular — oscillator, filter, and envelope sections
+  can be independently selected from models inspired by different vintage
+  synthesizers. Oscillator types include models based on the Minimoog,
+  Jupiter-8, Juno-60, MS-20, and others. Filter types similarly span
+  classic architectures including Moog ladder, Roland IR3109, Korg MS-20,
+  and more.
+
+  Each component model captures not just the frequency response but the
+  nonlinear behavior, saturation characteristics, and imperfections of
+  the original circuits. Temperature drift simulation adds subtle pitch
+  and parameter variation between voices.
+
+  The voice architecture supports up to 6 oscillators per voice (in
+  stacked modes), with hard sync, cross-modulation, and ring modulation.
+  Two LFOs, two envelopes, and a modulation matrix provide routing
+  flexibility.
+
+  A built-in effects section includes chorus, phaser, delay, and
+  plate reverb. The arpeggiator supports multiple patterns and modes.
+
+  Diva is CPU-intensive by design — the accuracy of its circuit modeling
+  comes at a computational cost that is adjustable via quality settings
+  from Draft to Divine.
+specs: |-
+  - Component-level analog circuit modeling
+  - Zero-delay feedback filters
+  - Mix-and-match oscillator/filter/envelope sections
+  - Models inspired by Minimoog, Jupiter-8, Juno-60, MS-20, and more
+  - Up to 6 oscillators per voice (stacked modes)
+  - Hard sync, cross-modulation, ring modulation
+  - Temperature drift simulation
+  - 2 LFOs with multiple waveforms
+  - 2 ADSR envelopes
+  - Modulation matrix
+  - Built-in effects (chorus, phaser, delay, plate reverb)
+  - Arpeggiator
+  - Adjustable quality (Draft to Divine)
+  - Voice stacking and unison
+  - Preset browser with categories
 videos:
   - title: "Diva Tutorial 02: Glide2"
     videoId: tkjJy53pt_w
@@ -86,7 +139,5 @@ translations:
       - url: https://dl.u-he.com/manuals/plugins/diva/Diva-guida-utente.pdf
         type: resource
         title: Guida Utente
-formats:
-  - vst3
 versions:
   - name: 1.4.5
