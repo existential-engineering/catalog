@@ -133,7 +133,7 @@ Accessory entries (cables, stands, acoustic treatment) live in `data/accessories
 
 ## Product Lineage
 
-Use `supersedes` to link major product versions (e.g., Pro-C 3 supersedes Pro-C 2). The value must be the **ID** of the older product:
+Use `supersedes` to link product generations, form factor variants, and major versions. The value must be the **ID** of the older product. This applies to different hardware generations (MKI → MKII), form factors (keyboard → rack), capability upgrades, and software versions (Pro-C 2 → Pro-C 3):
 
 ```yaml
 # pro-c-3.yaml
@@ -165,6 +165,45 @@ The relationship is **bidirectional** - the database can query both directions:
 
 - "What does this product supersede?" (older version)
 - "What supersedes this product?" (newer version)
+
+Multiple products can supersede the same predecessor, supporting branching product families:
+
+```yaml
+# machinedrum.yaml (original, id: PUpJjAZE1-cJB_tNEFtEu)
+# machinedrum-sps-1-mkii.yaml → supersedes: PUpJjAZE1-cJB_tNEFtEu
+# machinedrum-sps-1uw.yaml    → supersedes: PUpJjAZE1-cJB_tNEFtEu
+# machinedrum-sps-1uw-mkii.yaml → supersedes: VzPj6jSJdm-uovTxHzUUH
+```
+
+## Hardware Revisions (Cosmetic Only)
+
+Hardware entries support a `revisions` array, but it is **strictly for cosmetic variants** — products that are identical in hardware, capabilities, and I/O but differ only in appearance (color, finish, limited edition branding).
+
+**Use a top-level entry with `supersedes`** when ANY of these are true:
+
+1. It has a distinct model name or number (e.g., Analog Rytm MKII, SPS-1UW)
+2. It has different I/O, capabilities, or specs
+3. A user would say "I own an X" using this specific name
+4. A retailer lists it as a separate product/SKU
+
+**Use a revision** only when ALL of these are true:
+
+1. Same hardware, same capabilities, same I/O
+2. Difference is purely cosmetic (color, finish, limited edition branding)
+3. Users wouldn't search for this variant specifically
+4. A retailer lists it as a color/finish option, not a separate SKU
+
+```yaml
+# Correct: cosmetic variant as a revision
+revisions:
+  - name: Black Colorway (Special Edition)
+    slug: black-colorway
+
+# Wrong: different hardware generation as a revision
+# Instead, create a separate file with supersedes
+```
+
+Do NOT use revisions for different hardware generations, form factors, or capability changes. These should be separate top-level entries linked via `supersedes`.
 
 ## Versions
 
