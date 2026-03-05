@@ -316,8 +316,8 @@ CREATE TABLE IF NOT EXISTS hardware_versions (
 
 CREATE INDEX idx_hardware_versions_hardware ON hardware_versions(hardware_id);
 
--- Hardware Revisions
-CREATE TABLE IF NOT EXISTS hardware_revisions (
+-- Hardware Variants (cosmetic-only: colors, finishes, limited editions)
+CREATE TABLE IF NOT EXISTS hardware_variants (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     name TEXT NOT NULL,
@@ -329,41 +329,7 @@ CREATE TABLE IF NOT EXISTS hardware_revisions (
     UNIQUE(hardware_id, slug)
 );
 
-CREATE INDEX idx_hardware_revisions_hardware ON hardware_revisions(hardware_id);
-
--- Hardware Revision I/O (if different from main hardware)
-CREATE TABLE IF NOT EXISTS hardware_revision_io (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    revision_id INTEGER NOT NULL REFERENCES hardware_revisions(id) ON DELETE CASCADE,
-    name TEXT NOT NULL,
-    signal_flow TEXT NOT NULL,
-    category TEXT NOT NULL,
-    type TEXT NOT NULL,
-    connection TEXT NOT NULL,
-    connector_detail TEXT,            -- JSON array: ["TS"], ["center-negative", "9V"], etc.
-    max_connections INTEGER DEFAULT 1,
-    position TEXT,
-    column_position INTEGER,
-    row_position INTEGER,
-    description TEXT
-);
-
-CREATE INDEX idx_hardware_revision_io_revision ON hardware_revision_io(revision_id);
-
--- Hardware Revision Versions
-CREATE TABLE IF NOT EXISTS hardware_revision_versions (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    revision_id INTEGER NOT NULL REFERENCES hardware_revisions(id) ON DELETE CASCADE,
-    name TEXT NOT NULL,
-    release_date TEXT,
-    release_date_year_only INTEGER DEFAULT 0,
-    pre_release INTEGER DEFAULT 0,
-    unofficial INTEGER DEFAULT 0,
-    url TEXT,
-    description TEXT
-);
-
-CREATE INDEX idx_hardware_revision_versions_revision ON hardware_revision_versions(revision_id);
+CREATE INDEX idx_hardware_variants_hardware ON hardware_variants(hardware_id);
 
 -- Hardware Prices
 CREATE TABLE IF NOT EXISTS hardware_prices (
@@ -375,15 +341,15 @@ CREATE TABLE IF NOT EXISTS hardware_prices (
 
 CREATE INDEX idx_hardware_prices_hardware ON hardware_prices(hardware_id);
 
--- Hardware Revision Prices
-CREATE TABLE IF NOT EXISTS hardware_revision_prices (
+-- Hardware Variant Prices
+CREATE TABLE IF NOT EXISTS hardware_variant_prices (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    revision_id INTEGER NOT NULL REFERENCES hardware_revisions(id) ON DELETE CASCADE,
+    variant_id INTEGER NOT NULL REFERENCES hardware_variants(id) ON DELETE CASCADE,
     amount REAL NOT NULL,
     currency TEXT NOT NULL
 );
 
-CREATE INDEX idx_hardware_revision_prices_revision ON hardware_revision_prices(revision_id);
+CREATE INDEX idx_hardware_variant_prices_variant ON hardware_variant_prices(variant_id);
 
 -- Hardware Links
 CREATE TABLE IF NOT EXISTS hardware_links (
@@ -409,29 +375,29 @@ CREATE TABLE IF NOT EXISTS hardware_videos (
 
 CREATE INDEX idx_hardware_videos_hardware ON hardware_videos(hardware_id);
 
--- Hardware Revision Links
-CREATE TABLE IF NOT EXISTS hardware_revision_links (
+-- Hardware Variant Links
+CREATE TABLE IF NOT EXISTS hardware_variant_links (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    revision_id INTEGER NOT NULL REFERENCES hardware_revisions(id) ON DELETE CASCADE,
+    variant_id INTEGER NOT NULL REFERENCES hardware_variants(id) ON DELETE CASCADE,
     type TEXT NOT NULL,
     title TEXT,
     url TEXT,
     description TEXT
 );
 
-CREATE INDEX idx_hardware_revision_links_revision ON hardware_revision_links(revision_id);
+CREATE INDEX idx_hardware_variant_links_variant ON hardware_variant_links(variant_id);
 
--- Hardware Revision Videos
-CREATE TABLE IF NOT EXISTS hardware_revision_videos (
+-- Hardware Variant Videos
+CREATE TABLE IF NOT EXISTS hardware_variant_videos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    revision_id INTEGER NOT NULL REFERENCES hardware_revisions(id) ON DELETE CASCADE,
+    variant_id INTEGER NOT NULL REFERENCES hardware_variants(id) ON DELETE CASCADE,
     video_id TEXT NOT NULL,
     provider TEXT NOT NULL DEFAULT 'youtube',
     title TEXT,
     description TEXT
 );
 
-CREATE INDEX idx_hardware_revision_videos_revision ON hardware_revision_videos(revision_id);
+CREATE INDEX idx_hardware_variant_videos_variant ON hardware_variant_videos(variant_id);
 
 -- Accessories (Cables, Stands, Acoustic Treatment, etc.)
 CREATE TABLE IF NOT EXISTS accessories (
@@ -801,9 +767,10 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (11, 'Added supersedes_id column for product lineage tracking', 0),
     (12, 'Added slug column to hardware_revisions for stable identifiers', 0),
     (13, 'Separated video links into dedicated video tables', 1),
-    (14, 'Added connector_detail column to hardware_io and hardware_revision_io', 0),
+    (14, 'Added connector_detail column to hardware_io and hardware_variant_io', 0),
     (15, 'Added content and accessories tables with related tables, FTS, and translations', 1),
-    (16, 'Renamed website column to url across all tables', 1);
+    (16, 'Renamed website column to url across all tables', 1),
+    (17, 'Renamed hardware_revisions to hardware_variants; removed io/versions sub-tables', 1);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES

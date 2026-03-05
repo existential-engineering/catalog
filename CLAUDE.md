@@ -128,7 +128,7 @@ Advisory warning W123 fires if a `compatibleWith` slug doesn't match an existing
 
 Accessory entries (cables, stands, acoustic treatment) live in `data/accessories/` as a separate collection. Accessory `primaryCategory` values include `cable`, `power-conditioner`, `mic-stand`, `boom-arm`, `pop-filter`, `shock-mount`, `reflection-filter`, `acoustic-treatment`, `acoustic-panel`, and `windscreen`.
 
-- Accessory entries do NOT have `io` or `revisions` fields (use those for hardware only)
+- Accessory entries do NOT have `io` or `variants` fields (use those for hardware only)
 - Like hardware, accessories require: name, manufacturer, primaryCategory, description
 
 ## Product Lineage
@@ -175,9 +175,9 @@ Multiple products can supersede the same predecessor, supporting branching produ
 # machinedrum-sps-1uw-mkii.yaml → supersedes: VzPj6jSJdm-uovTxHzUUH
 ```
 
-## Hardware Revisions (Cosmetic Only)
+## Hardware Variants (Cosmetic Only)
 
-Hardware entries support a `revisions` array, but it is **strictly for cosmetic variants** — products that are identical in hardware, capabilities, and I/O but differ only in appearance (color, finish, limited edition branding).
+Hardware entries support a `variants` array, but it is **strictly for cosmetic variants** — products that are identical in hardware, capabilities, and I/O but differ only in appearance (color, finish, limited edition branding).
 
 **Use a top-level entry with `supersedes`** when ANY of these are true:
 
@@ -186,7 +186,7 @@ Hardware entries support a `revisions` array, but it is **strictly for cosmetic 
 3. A user would say "I own an X" using this specific name
 4. A retailer lists it as a separate product/SKU
 
-**Use a revision** only when ALL of these are true:
+**Use a variant** only when ALL of these are true:
 
 1. Same hardware, same capabilities, same I/O
 2. Difference is purely cosmetic (color, finish, limited edition branding)
@@ -194,16 +194,16 @@ Hardware entries support a `revisions` array, but it is **strictly for cosmetic 
 4. A retailer lists it as a color/finish option, not a separate SKU
 
 ```yaml
-# Correct: cosmetic variant as a revision
-revisions:
+# Correct: cosmetic variant
+variants:
   - name: Black Colorway (Special Edition)
     slug: black-colorway
 
-# Wrong: different hardware generation as a revision
+# Wrong: different hardware generation as a variant
 # Instead, create a separate file with supersedes
 ```
 
-Do NOT use revisions for different hardware generations, form factors, or capability changes. These should be separate top-level entries linked via `supersedes`.
+Do NOT use variants for different hardware generations, form factors, or capability changes. These should be separate top-level entries linked via `supersedes`.
 
 ## Versions
 

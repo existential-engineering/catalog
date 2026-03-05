@@ -111,9 +111,9 @@ function extractVideos(data: Record<string, unknown>): VideoEntry[] {
     }
   }
 
-  // Check revisions (hardware)
-  if (Array.isArray(data.revisions)) {
-    for (const rev of data.revisions) {
+  // Check variants (hardware)
+  if (Array.isArray(data.variants)) {
+    for (const rev of data.variants) {
       if (typeof rev === "object" && rev !== null) {
         const revData = rev as Record<string, unknown>;
         if (Array.isArray(revData.videos)) {
