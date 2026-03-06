@@ -767,7 +767,7 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (11, 'Added supersedes_id column for product lineage tracking', 0),
     (12, 'Added slug column to hardware_revisions for stable identifiers', 0),
     (13, 'Separated video links into dedicated video tables', 1),
-    (14, 'Added connector_detail column to hardware_io and hardware_variant_io', 0),
+    (14, 'Added connector_detail column to hardware_io and hardware_revision_io', 0),
     (15, 'Added content and accessories tables with related tables, FTS, and translations', 1),
     (16, 'Renamed website column to url across all tables', 1),
     (17, 'Renamed hardware_revisions to hardware_variants; removed io/versions sub-tables', 1);

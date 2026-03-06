@@ -415,7 +415,7 @@ const IOSchema = z
 
 const VariantSchema = z
   .object({
-    name: z.string(),
+    name: z.string().min(1),
     slug: z
       .string()
       .regex(
