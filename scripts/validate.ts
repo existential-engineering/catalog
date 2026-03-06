@@ -601,7 +601,14 @@ const HardwareSchema = z
   .refine(
     (data) => {
       if (!data.variants) return true;
-      const slugs = data.variants.map((r) => r.slug ?? slugify(r.name));
+      const slugs = data.variants.map((r) => {
+        if (r.slug) return r.slug;
+        try {
+          return slugify(r.name);
+        } catch {
+          return "";
+        }
+      });
       if (slugs.some((s) => !s || s.length > 50)) return false;
       return new Set(slugs).size === slugs.length;
     },
