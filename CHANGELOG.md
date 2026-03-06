@@ -1,5 +1,11 @@
 # catalog
 
+## 3.3.0
+
+### Minor Changes
+
+- 654fd92: Promote hardware revisions to top-level entries linked via supersedes. Revisions are now cosmetic-only (colorways, limited editions). 25 new hardware entries created from former revisions across Elektron, Access, Roland, Korg, Waldorf, DSI, Novation, Ensoniq, Crumar, Doepfer, and Sherman product families.
+
 ## 3.2.0
 
 ### Minor Changes
