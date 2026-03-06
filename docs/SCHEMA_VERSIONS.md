@@ -68,6 +68,24 @@ ORDER BY version;
 
 ---
 
+### Version 8
+
+**Description:** Renamed hardware_revisions to hardware_variants; removed io/versions sub-tables
+
+**Breaking:** Yes
+
+**Changes:**
+
+- Renamed `hardware_revisions` → `hardware_variants`
+- Renamed `hardware_revision_prices` → `hardware_variant_prices`
+- Renamed `hardware_revision_links` → `hardware_variant_links`
+- Renamed `hardware_revision_videos` → `hardware_variant_videos`
+- Removed `hardware_revision_io` table (variants are cosmetic-only, share parent I/O)
+- Removed `hardware_revision_versions` table (variants share parent firmware versions)
+- YAML field renamed from `revisions` to `variants`
+
+---
+
 ### Version 7
 
 **Description:** Added hardware_revisions tables for hardware variants

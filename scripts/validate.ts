@@ -413,9 +413,9 @@ const IOSchema = z
     }
   });
 
-const RevisionSchema = z
+const VariantSchema = z
   .object({
-    name: z.string(),
+    name: z.string().min(1),
     slug: z
       .string()
       .regex(
@@ -427,8 +427,6 @@ const RevisionSchema = z
     releaseDateYearOnly: z.boolean().optional(),
     url: z.url().optional(),
     description: z.string().optional(),
-    io: z.array(IOSchema).optional(),
-    versions: z.array(VersionSchema).optional(),
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
     videos: z.array(VideoLinkSchema).optional(),
@@ -588,7 +586,7 @@ const HardwareSchema = z
     specs: MarkdownSchema,
     io: z.array(IOSchema).optional(),
     versions: z.array(VersionSchema).optional(),
-    revisions: z.array(RevisionSchema).optional(),
+    variants: z.array(VariantSchema).optional(),
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
     videos: z.array(VideoLinkSchema).optional(),
@@ -602,15 +600,22 @@ const HardwareSchema = z
   )
   .refine(
     (data) => {
-      if (!data.revisions) return true;
-      const slugs = data.revisions.map((r) => r.slug ?? slugify(r.name));
+      if (!data.variants) return true;
+      const slugs = data.variants.map((r) => {
+        if (r.slug) return r.slug;
+        try {
+          return slugify(r.name);
+        } catch {
+          return "";
+        }
+      });
       if (slugs.some((s) => !s || s.length > 50)) return false;
       return new Set(slugs).size === slugs.length;
     },
     {
       message:
-        "Revision slugs must be unique, non-empty, and at most 50 characters within a hardware entry",
-      path: ["revisions"],
+        "Variant slugs must be unique, non-empty, and at most 50 characters within a hardware entry",
+      path: ["variants"],
     }
   );
 
@@ -660,7 +665,7 @@ const ContentSchema = z
     }
   );
 
-// Accessory schema: like Hardware but without io, revisions
+// Accessory schema: like Hardware but without io, variants
 const AccessorySchema = z
   .object({
     name: z.string().min(1, "Name is required"),

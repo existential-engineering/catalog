@@ -251,7 +251,7 @@ Accessory entries (cables, stands, acoustic treatment) live in \`data/accessorie
 - \`manufacturer\` - Slug reference to manufacturer
 - \`primaryCategory\` - Accessory category (e.g., \`cable\`, \`mic-stand\`, \`acoustic-panel\`)
 - \`description\` - Short description (markdown)
-- Does NOT have \`io\` or \`revisions\` fields
+- Does NOT have \`io\` or \`variants\` fields
 
 ---
 

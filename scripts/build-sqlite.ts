@@ -743,24 +743,16 @@ function buildDatabase(version: string): void {
     INSERT INTO hardware_versions (hardware_id, name, release_date, release_date_year_only, pre_release, unofficial, url, description)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
-  const insertHardwareRevision = db.prepare(`
-    INSERT INTO hardware_revisions (hardware_id, name, slug, release_date, release_date_year_only, url, description)
+  const insertHardwareVariant = db.prepare(`
+    INSERT INTO hardware_variants (hardware_id, name, slug, release_date, release_date_year_only, url, description)
     VALUES (?, ?, ?, ?, ?, ?, ?)
-  `);
-  const insertHardwareRevisionIO = db.prepare(`
-    INSERT INTO hardware_revision_io (revision_id, name, signal_flow, category, type, connection, connector_detail, max_connections, position, column_position, row_position, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `);
-  const insertHardwareRevisionVersion = db.prepare(`
-    INSERT INTO hardware_revision_versions (revision_id, name, release_date, release_date_year_only, pre_release, unofficial, url, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwarePrice = db.prepare(`
     INSERT INTO hardware_prices (hardware_id, amount, currency)
     VALUES (?, ?, ?)
   `);
-  const insertHardwareRevisionPrice = db.prepare(`
-    INSERT INTO hardware_revision_prices (revision_id, amount, currency)
+  const insertHardwareVariantPrice = db.prepare(`
+    INSERT INTO hardware_variant_prices (variant_id, amount, currency)
     VALUES (?, ?, ?)
   `);
   const insertHardwareLink = db.prepare(`
@@ -771,12 +763,12 @@ function buildDatabase(version: string): void {
     INSERT INTO hardware_videos (hardware_id, video_id, provider, title, description)
     VALUES (?, ?, ?, ?, ?)
   `);
-  const insertHardwareRevisionLink = db.prepare(`
-    INSERT INTO hardware_revision_links (revision_id, type, title, url, description)
+  const insertHardwareVariantLink = db.prepare(`
+    INSERT INTO hardware_variant_links (variant_id, type, title, url, description)
     VALUES (?, ?, ?, ?, ?)
   `);
-  const insertHardwareRevisionVideo = db.prepare(`
-    INSERT INTO hardware_revision_videos (revision_id, video_id, provider, title, description)
+  const insertHardwareVariantVideo = db.prepare(`
+    INSERT INTO hardware_variant_videos (variant_id, video_id, provider, title, description)
     VALUES (?, ?, ?, ?, ?)
   `);
   const insertHardwareFts = db.prepare(`
@@ -894,77 +886,41 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert revisions
-    if (data.revisions) {
+    // Insert variants (cosmetic-only: colors, finishes, limited editions)
+    if (data.variants) {
       const usedSlugs = new Set<string>();
-      for (const rev of data.revisions) {
-        const revSlug = rev.slug ?? slugify(rev.name);
-        if (usedSlugs.has(revSlug)) {
+      for (const variant of data.variants) {
+        const variantSlug = variant.slug ?? slugify(variant.name);
+        if (usedSlugs.has(variantSlug)) {
           throw new Error(
-            `Duplicate revision slug '${revSlug}' in ${file}. Add explicit slugs to disambiguate.`
+            `Duplicate variant slug '${variantSlug}' in ${file}. Add explicit slugs to disambiguate.`
           );
         }
-        usedSlugs.add(revSlug);
+        usedSlugs.add(variantSlug);
 
-        const result = insertHardwareRevision.run(
+        const result = insertHardwareVariant.run(
           id,
-          rev.name,
-          revSlug,
-          rev.releaseDate ?? null,
-          rev.releaseDateYearOnly ? 1 : 0,
-          rev.url ?? null,
-          rev.description ?? null
+          variant.name,
+          variantSlug,
+          variant.releaseDate ?? null,
+          variant.releaseDateYearOnly ? 1 : 0,
+          variant.url ?? null,
+          variant.description ?? null
         );
-        const revisionId = result.lastInsertRowid;
+        const variantId = result.lastInsertRowid;
 
-        // Insert revision I/O (with normalization)
-        if (rev.io) {
-          for (const io of rev.io) {
-            insertHardwareRevisionIO.run(
-              revisionId,
-              io.name,
-              normalizeIOSignalFlow(io.signalFlow),
-              io.category,
-              io.type,
-              normalizeIOConnection(io.connection),
-              io.connectorDetail ? JSON.stringify(io.connectorDetail) : null,
-              io.maxConnections ?? 1,
-              io.position ? normalizeIOPosition(io.position) : null,
-              io.columnPosition ?? null,
-              io.rowPosition ?? null,
-              io.description ?? null
-            );
+        // Insert variant prices
+        if (variant.prices) {
+          for (const price of variant.prices) {
+            insertHardwareVariantPrice.run(variantId, price.amount, price.currency);
           }
         }
 
-        // Insert revision versions
-        if (rev.versions) {
-          for (const ver of rev.versions) {
-            insertHardwareRevisionVersion.run(
-              revisionId,
-              ver.name,
-              ver.releaseDate ?? null,
-              ver.releaseDateYearOnly ? 1 : 0,
-              ver.preRelease ? 1 : 0,
-              ver.unofficial ? 1 : 0,
-              ver.url ?? null,
-              ver.description ?? null
-            );
-          }
-        }
-
-        // Insert revision prices
-        if (rev.prices) {
-          for (const price of rev.prices) {
-            insertHardwareRevisionPrice.run(revisionId, price.amount, price.currency);
-          }
-        }
-
-        // Insert revision links
-        if (rev.links) {
-          for (const link of rev.links) {
-            insertHardwareRevisionLink.run(
-              revisionId,
+        // Insert variant links
+        if (variant.links) {
+          for (const link of variant.links) {
+            insertHardwareVariantLink.run(
+              variantId,
               link.type,
               link.title ?? null,
               link.url,
@@ -973,11 +929,11 @@ function buildDatabase(version: string): void {
           }
         }
 
-        // Insert revision videos
-        if (rev.videos) {
-          for (const video of rev.videos) {
-            insertHardwareRevisionVideo.run(
-              revisionId,
+        // Insert variant videos
+        if (variant.videos) {
+          for (const video of variant.videos) {
+            insertHardwareVariantVideo.run(
+              variantId,
               video.videoId,
               video.provider ?? "youtube",
               video.title ?? null,

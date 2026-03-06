@@ -75,15 +75,13 @@ export interface IO {
   description?: string;
 }
 
-export interface Revision {
+export interface Variant {
   name: string;
   slug?: string;
   releaseDate?: string;
   releaseDateYearOnly?: boolean;
   url?: string;
   description?: string;
-  io?: IO[];
-  versions?: Version[];
   prices?: Price[];
   links?: Link[];
   videos?: VideoLink[];
@@ -177,7 +175,7 @@ export interface Hardware {
   specs?: string | string[];
   io?: IO[];
   versions?: Version[];
-  revisions?: Revision[];
+  variants?: Variant[];
   prices?: Price[];
   links?: Link[];
   videos?: VideoLink[];
