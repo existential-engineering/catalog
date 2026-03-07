@@ -1,0 +1,152 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Manufacturer",
+  "description": "A manufacturer or company in the audio catalog",
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{21}$",
+      "description": "Auto-assigned nanoid"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "parentCompany": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "description": {
+      "type": "string"
+    },
+    "searchTerms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "translations": {
+      "type": "object",
+      "description": "Translations keyed by locale code",
+      "patternProperties": {
+        "^(de|es|fr|ja|ko|pt-BR|zh)$": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "details": {
+              "type": "string"
+            },
+            "specs": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "type",
+                  "url"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "affiliate",
+                      "product",
+                      "resource",
+                      "review",
+                      "support"
+                    ],
+                    "description": "Link type. Valid values are defined in schema/link-types.yaml. To add a new type, submit a PR updating that file."
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "videos": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "videoId"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "videoId": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "provider": {
+                    "type": "string",
+                    "enum": [
+                      "youtube",
+                      "vimeo"
+                    ],
+                    "default": "youtube",
+                    "description": "Video platform. Omit for YouTube (default)."
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "io": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "originalName"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "originalName": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -52,6 +52,11 @@ jobs:
       - name: Validate translations
         run: pnpm validate:translations
 
+      - name: Check JSON schemas are up to date
+        run: |
+          pnpm generate:schemas
+          git diff --exit-code schema/json/ || (echo "::error::JSON schemas are out of date. Run 'pnpm generate:schemas' and commit the results." && exit 1)
+
       - name: Check formatting
         run: pnpm format:check
 
