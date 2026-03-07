@@ -163,25 +163,46 @@ const ioTranslationSchema = {
   },
 };
 
+const baseTranslationProperties = {
+  description: { type: "string" },
+  details: { type: "string" },
+  specs: { type: "string" },
+  url: { type: "string", format: "uri" },
+  links: { type: "array", items: linkSchema },
+  videos: { type: "array", items: videoLinkSchema },
+};
+
 const contentTranslationSchema = {
   type: "object",
   additionalProperties: false,
+  properties: baseTranslationProperties,
+};
+
+const hardwareTranslationSchema = {
+  type: "object",
+  additionalProperties: false,
   properties: {
-    description: { type: "string" },
-    details: { type: "string" },
-    specs: { type: "string" },
-    url: { type: "string", format: "uri" },
-    links: { type: "array", items: linkSchema },
-    videos: { type: "array", items: videoLinkSchema },
+    ...baseTranslationProperties,
     io: { type: "array", items: ioTranslationSchema },
   },
 };
+
+const localePattern = `^(${ctx.localeCodes.join("|")})$`;
 
 const translationsSchema = {
   type: "object",
   description: "Translations keyed by locale code",
   patternProperties: {
-    [`^(${ctx.localeCodes.join("|")})$`]: contentTranslationSchema,
+    [localePattern]: contentTranslationSchema,
+  },
+  additionalProperties: false,
+};
+
+const hardwareTranslationsSchema = {
+  type: "object",
+  description: "Translations keyed by locale code",
+  patternProperties: {
+    [localePattern]: hardwareTranslationSchema,
   },
   additionalProperties: false,
 };
@@ -353,6 +374,7 @@ const schemas: Record<string, unknown> = {
     ["name", "manufacturer"],
     {
       ...sharedFields,
+      translations: hardwareTranslationsSchema,
       io: {
         type: "array",
         items: ioSchema,
