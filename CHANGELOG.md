@@ -1,5 +1,11 @@
 # catalog
 
+## 3.3.1
+
+### Patch Changes
+
+- 637a5ae: Add JSON Schema generation and VS Code YAML validation support
+
 ## 3.3.0
 
 ### Minor Changes
