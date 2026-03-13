@@ -1,5 +1,15 @@
 # catalog
 
+## 3.4.0
+
+### Minor Changes
+
+- 2983538: Add default identifiers to 201 software entries and 6 new entries based on analytics
+
+### Patch Changes
+
+- 6536264: software(update): REAPER
+
 ## 3.3.1
 
 ### Patch Changes
