@@ -1,5 +1,11 @@
 # catalog
 
+## 3.4.1
+
+### Patch Changes
+
+- 94c63ab: add missing Waves v16.7.33 version to 148 plugin entries
+
 ## 3.4.0
 
 ### Minor Changes
