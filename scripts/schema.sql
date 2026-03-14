@@ -691,6 +691,15 @@ CREATE INDEX idx_hardware_io_translations ON hardware_io_translations(hardware_i
 -- FULL-TEXT SEARCH
 -- =============================================================================
 
+-- Manufacturer FTS index
+CREATE VIRTUAL TABLE IF NOT EXISTS manufacturers_fts USING fts5(
+    id,
+    name,
+    company_name,
+    description,
+    tokenize='porter unicode61'
+);
+
 -- Content FTS index
 CREATE VIRTUAL TABLE IF NOT EXISTS content_fts USING fts5(
     id,
@@ -770,7 +779,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (14, 'Added connector_detail column to hardware_io and hardware_revision_io', 0),
     (15, 'Added content and accessories tables with related tables, FTS, and translations', 1),
     (16, 'Renamed website column to url across all tables', 1),
-    (17, 'Renamed hardware_revisions to hardware_variants; removed io/versions sub-tables', 1);
+    (17, 'Renamed hardware_revisions to hardware_variants; removed io/versions sub-tables', 1),
+    (18, 'Added manufacturers_fts FTS5 full-text search table', 0);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES
