@@ -1,5 +1,11 @@
 # catalog
 
+## 3.4.2
+
+### Patch Changes
+
+- 9cb275b: Remove duplicate links from software, content, and hardware entries
+
 ## 3.4.1
 
 ### Patch Changes
