@@ -150,6 +150,10 @@ function buildDatabase(version: string): void {
     INSERT INTO manufacturer_translations (manufacturer_id, locale, description, url)
     VALUES (?, ?, ?, ?)
   `);
+  const insertManufacturerFts = db.prepare(`
+    INSERT INTO manufacturers_fts (id, name, company_name, description)
+    VALUES (?, ?, ?, ?)
+  `);
 
   // First pass: insert all manufacturers without parent references
   for (const file of manufacturerFiles) {
@@ -171,6 +175,10 @@ function buildDatabase(version: string): void {
       data.url ?? null,
       markdownToHtml(data.description)
     );
+
+    // Insert FTS entry (include searchTerms for synonym matching)
+    const mfrFtsDescription = [data.description ?? "", ...(data.searchTerms ?? [])].join(" ");
+    insertManufacturerFts.run(id, data.name, data.companyName ?? "", mfrFtsDescription);
 
     // Insert search terms
     if (data.searchTerms) {
@@ -414,13 +422,14 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert FTS entry (with normalized categories)
+    // Insert FTS entry (with normalized categories + searchTerms)
+    const softwareFtsDescription = [data.description ?? "", ...(data.searchTerms ?? [])].join(" ");
     insertSoftwareFts.run(
       id,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
-      data.description ?? ""
+      softwareFtsDescription
     );
 
     // Insert translations
@@ -652,13 +661,14 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert FTS entry
+    // Insert FTS entry (with searchTerms)
+    const contentFtsDescription = [data.description ?? "", ...(data.searchTerms ?? [])].join(" ");
     insertContentFts.run(
       id,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
-      data.description ?? ""
+      contentFtsDescription
     );
 
     // Insert translations
@@ -977,13 +987,14 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert FTS entry (with normalized categories)
+    // Insert FTS entry (with normalized categories + searchTerms)
+    const hardwareFtsDescription = [data.description ?? "", ...(data.searchTerms ?? [])].join(" ");
     insertHardwareFts.run(
       id,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
-      data.description ?? ""
+      hardwareFtsDescription
     );
 
     // Insert translations
@@ -1220,13 +1231,14 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert FTS entry
+    // Insert FTS entry (with searchTerms)
+    const accessoryFtsDescription = [data.description ?? "", ...(data.searchTerms ?? [])].join(" ");
     insertAccessoryFts.run(
       id,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
-      data.description ?? ""
+      accessoryFtsDescription
     );
 
     // Insert translations
