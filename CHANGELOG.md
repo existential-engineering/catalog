@@ -1,5 +1,12 @@
 # catalog
 
+## 3.5.0
+
+### Minor Changes
+
+- 5348ce0: Add Chase Bliss Billy Strings Wombtone phaser
+- a1222fb: Rename all data files (software, hardware, content, accessories) to {manufacturer}-{name} format and update compatibleWith references
+
 ## 3.4.2
 
 ### Patch Changes
