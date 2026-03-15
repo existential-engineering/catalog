@@ -1,5 +1,15 @@
 # catalog
 
+## 3.5.0
+
+### Minor Changes
+
+- bbb85fc: Add missing Valhalla DSP plugins
+- 5348ce0: Add Chase Bliss Billy Strings Wombtone phaser
+- 660a064: Add Output software: Arcade, Co-Producer, Creator, Movement, Portal, Thermal
+- a1222fb: Rename all data files (software, hardware, content, accessories) to {manufacturer}-{name} format and update compatibleWith references
+- a3f5bab: Add Softube software, hardware, and accessory entries
+
 ## 3.4.2
 
 ### Patch Changes
