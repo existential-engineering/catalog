@@ -2,7 +2,37 @@ id: GKX2U8ww_qz9vxkhcEOGs
 name: VF-11
 manufacturer: music-and-more-mam
 primaryCategory: vocoder
+categories:
+  - analog
+  - effect
+description: >-
+  The VF-11 is an 11-band analog vocoder manufactured by German company MAM (Music And
+  More). It processes two audio sources, using the spectral characteristics of an analysis
+  input to modulate the harmonic content of a synthesis input, producing classic robotic
+  vocal effects.
+details: |-
+  The VF-11 operates by separating the analysis input into 11 frequency bands spanning 50Hz to 12kHz. The harmonic spectrum of the analysis signal, typically voice or drums, generates varying control voltages across these bands, which then modulate corresponding VCA-controlled filters on the synthesis channel. This process transfers the dynamic tonal characteristics of the analysis source onto the synthesis material.
+
+  The unit includes a built-in analog VCO offering a sawtooth waveform with basic pitch control for synthesis duties. It provides mono microphone and line inputs for the analysis channel and a single mono output. Beyond vocoding, the VF-11 functions as an 11-band filterbank when used without an analysis input, allowing manual adjustment of each band's gain.
+
+  Being fully analog with no MIDI integration or preset memory, the VF-11 represents an affordable entry point for vocoder exploration. Stereo processing requires two units.
+specs: |-
+  - Polyphony: Monophonic
+  - Oscillators: 1 VCO with sawtooth waveform and pitch adjustment
+  - Vocoder bands: 11 bands at 100, 225, 330, 470, 700, 1030, 1500, 2280, 3300, 4700, 9000 Hz
+  - Filter: Non-resonant 11-band filterbank for synthesis channel
+  - VCA: 1 per band, envelope-controlled
+  - Keyboard: None
+  - Memory: None
+  - Control: No MIDI or external control
+  - Audio inputs: Mono mic and line inputs (analysis), synthesis input
+  - Audio output: Mono
+releaseDate: "2000"
+releaseDateYearOnly: true
 links:
   - url: https://www.vintagesynth.com/mam/vf-11
     type: resource
     title: Vintage Synth Explorer
+videos:
+  - videoId: t7G8ThYfC4s
+    title: MAM VF-11 Speech Demo

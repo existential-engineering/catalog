@@ -4,31 +4,36 @@ manufacturer: korg
 primaryCategory: synthesizer
 categories:
   - analog
-  - vintage
   - keyboard
+  - strings
+  - vintage
 description: >-
-  The Korg Trident is a polyphonic programmable analog synthesizer from 1980
-  featuring three independent sections for synthesizer, brass, and strings,
-  with a built-in flanger effect.
+  The Korg Trident is a polyphonic programmable analog synthesizer released in 1980,
+  featuring three independent sound sections for synthesizer, brass, and strings with
+  eight-voice polyphony. Its global self-oscillating flanger and layerable architecture
+  made it a distinctive polysynth of the early 1980s, used by artists including Rick
+  Wakeman, Joe Zawinul, and Phoenix.
 details: |-
-  The Trident's defining feature is its three-section architecture. The Synthesizer section provides two VCOs with sawtooth, square, pulse, and PWM waveforms through a self-oscillating 24dB low-pass filter. The Brass section offers a single VCO limited to sawtooth waves, while the Strings section adds another VCO with its own character. All three sections operate independently and can be layered for rich, complex sounds.
+  The Trident's defining feature is its three-section architecture. The Synthesizer section provides two VCOs with sawtooth, square, pulse, and PWM waveforms through a self-oscillating 24dB low-pass filter. The Brass section offers a single VCO limited to sawtooth waves, with filter and envelope generators that mirror the Synthesizer section, allowing it to produce both brass-like and more synthetic timbres. The Strings section adds another VCO with its own character, including a distinctive bowing effect for more organic string textures.
 
-  Eight-voice polyphony was generous for 1980, and each section has its own pair of ADSR envelopes or gate-mode options. The synthesizer section's filter includes cutoff, resonance, envelope intensity, and key tracking controls, providing deep sound-shaping capability. Three preset piano and clavi sounds round out the voicing options.
+  Eight-voice polyphony was generous for 1980, and each section has its own pair of ADSR envelopes or gate-mode options. The synthesizer section's filter includes cutoff, resonance, envelope intensity, and key tracking controls, providing deep sound-shaping capability. A Split Keyboard mode allows two sections to be played simultaneously across different ranges of the 61-key keyboard. Three preset piano and clavi sounds round out the voicing options.
 
-  A global flanger with speed, feedback, intensity, and manual controls adds movement and depth to any section's output. The flanger is capable of self-oscillation, producing distinctive metallic and resonant effects. The Strings section also features a unique bowing effect for more organic string textures.
+  A global flanger with speed, feedback, intensity, and manual controls adds movement and depth to any section's output. The flanger is capable of self-oscillation, producing distinctive metallic and resonant effects. Each section has individual mono outputs plus a mix output, and CV inputs are available for filter cutoff and trigger per section, though the Trident lacks native MIDI or CV/Gate control for note triggering.
 
-  The original Mark I version offered 16 user patch memories, while the more common Mark II expanded this to 32. CV inputs for filter cutoff and trigger, plus discrete audio outputs per section, provide connectivity for integration with other analog gear. Notable users include Rick Wakeman, Joe Zawinul, and Phoenix.
+  The original Mark I version offered 16 user patch memories plus three presets (Piano 1, Piano 2, Clavi). The Mark II, released in 1982, doubled the user memory to 32 patches and added an independent envelope generator for the filter section, making it the more sought-after version.
 specs: |-
   - Polyphony: 8 voices
   - Oscillators: Synth (2 VCOs), Brass (1 VCO), Strings (1 VCO)
-  - Waveforms: Sawtooth, square, pulse, PWM (synth section); sawtooth (brass)
-  - Filter: 24dB low-pass, self-oscillating, with cutoff, resonance, envelope, key tracking
+  - Waveforms: Sawtooth, square, pulse, PWM (synth VCO1); sawtooth only (synth VCO2 and brass)
+  - Filter: 24dB low-pass, self-oscillating, with cutoff, resonance, envelope intensity, key tracking
   - Envelopes: 2 ADSR or gate per section
-  - Effects: Global flanger with self-oscillation, string bowing effect
-  - Keyboard: 61 keys
-  - Memory: 16 patches (mkI), 32 patches (mkII), 3 presets
-  - Presets: Piano 1, Piano 2, Clavi
-  - Control: CV inputs for filter cutoff and trigger, discrete outputs per section
+  - LFO: Sine or square with speed, delay, and depth controls
+  - Effects: Global flanger with speed, feedback, intensity, manual controls and self-oscillation; string bowing effect
+  - Keyboard: 61 keys with split mode
+  - Memory: 16 user patches (mkI), 32 user patches (mkII), 3 presets (Piano 1, Piano 2, Clavi)
+  - Control: CV inputs for filter cutoff and trigger per section; discrete audio outputs per section plus mix output
+  - Dimensions: Keyboard synthesizer form factor
+  - Production: 1980 (mkI), 1982 (mkII)
 releaseDate: "1980"
 releaseDateYearOnly: true
 links:
@@ -37,5 +42,4 @@ links:
     title: Vintage Synth Explorer
 videos:
   - videoId: NV6wqWix2CY
-    provider: youtube
     title: Korg Trident Sounds and Patches Demo
