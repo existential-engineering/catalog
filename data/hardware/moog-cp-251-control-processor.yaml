@@ -1,8 +1,36 @@
 id: nL3Ny5S5cdVvsAIO7bnDi
 name: CP-251 Control Processor
 manufacturer: moog
-primaryCategory: utility
+primaryCategory: controller
+categories:
+  - modular
+  - analog
+description: >-
+  A collection of classic analog control circuits for generating, modifying, combining, and
+  distributing control voltages, designed to expand Moogerfooger and modular synthesizer setups.
+details: |-
+  The Moog CP-251 Control Processor serves as a modular interface for interconnecting voltage-controlled devices, unlocking creative possibilities unavailable through standard connections. It enables the construction of a modular analog synthesizer system with capabilities comparable to classic Moog modular instruments when paired with Moogerfooger pedals or other CV-equipped gear.
+
+  Four input channels accept control voltages, with two configurable for expression pedal sources. These inputs route to three possible destinations through input attenuators, with master gain and offset level controls shaping the output signal. Both inverting and non-inverting outputs provide flexible signal routing for complex modulation patches.
+
+  A voltage-controlled low-frequency oscillator produces triangular and square waveforms spanning 0.2 Hz to 50 Hz, suitable for modulating any voltage-controlled parameter. The lag processor shapes control signals with adjustable rates from one volt per millisecond to one volt per second, useful for creating portamento, envelope follower effects, and smoothing stepped control signals.
+
+  A sample-and-hold circuit captures and freezes control voltages for creating stepped random patterns and other dynamic effects. A white noise generator serves double duty as both an audio source and a control signal source, particularly effective when paired with the sample-and-hold for generating unpredictable modulation sequences.
+specs: |-
+  - LFO: 1 voltage-controlled (0.2 Hz - 50 Hz, triangle and square)
+  - Inputs: 4 channels (2 configurable for expression pedals)
+  - Outputs: 3 destinations, inverting and non-inverting
+  - Lag Processor: 1mV/ms to 1V/sec range
+  - Sample and Hold: Yes
+  - Noise Generator: White noise
+  - Control: CV only (no MIDI)
+  - Memory: None
+releaseDate: "2000"
+releaseDateYearOnly: true
 links:
   - url: https://www.vintagesynth.com/moog/cp-251-control-processor
     type: resource
     title: Vintage Synth Explorer
+videos:
+  - videoId: B7VuwP3D9Js
+    title: Moog CP-251 Control Processor Demo
