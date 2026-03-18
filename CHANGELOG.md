@@ -1,5 +1,11 @@
 # catalog
 
+## 3.6.0
+
+### Minor Changes
+
+- 62f8329: Add 35 Cherry Audio products
+
 ## 3.5.0
 
 ### Minor Changes
