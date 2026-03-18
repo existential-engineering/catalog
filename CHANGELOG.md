@@ -1,5 +1,11 @@
 # catalog
 
+## 3.7.0
+
+### Minor Changes
+
+- fe8443b: feat: add 4 Toontrack products (EZbass, EZdrummer 3, EZkeys 2, EZmix 3)
+
 ## 3.6.0
 
 ### Minor Changes
