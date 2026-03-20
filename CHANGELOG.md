@@ -1,5 +1,12 @@
 # catalog
 
+## 3.8.0
+
+### Minor Changes
+
+- 7f6b48f: Add 19 Elektron products: 7 hardware (Analog Four MKII, Analog Heat +FX, Digitakt II, Digitone II, Model:Cycles, Model:Samples, Octatrack MKII), 1 software (Overbridge), 5 content packs, and 6 accessories
+- 40b98a0: Add 458 Eurorack manufacturers from ModularGrid
+
 ## 3.7.0
 
 ### Minor Changes
