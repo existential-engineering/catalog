@@ -2,6 +2,11 @@ id: MphW5CXxJ_ei0PhU5B9Ir
 name: Digitone
 manufacturer: elektron
 primaryCategory: synthesizer
+categories:
+  - fm
+  - digital
+  - sequencer
+url: https://www.elektron.se/legacy
 prices:
   - amount: 899
     currency: USD
@@ -9,3 +14,99 @@ description: Eight-voice polyphonic FM synthesizer with Elektron's signature
   sequencer. Features four FM operators per voice, multimode filter, overdrive,
   chorus, delay, and reverb effects. Includes MIDI sequencing capabilities and
   Overbridge integration for use as a plugin.
+details: |-
+  The Digitone is an 8-voice polyphonic FM synthesizer combining FM synthesis with subtractive filtering in Elektron's compact desktop form factor. It features four synth tracks and four MIDI tracks, with four operators and eight algorithms per voice providing a wide range of timbres from crystalline and electric to metallic and chaotic.
+
+  The sequencer offers 64 steps per pattern with parameter locks, trig conditions, micro timing, and sound locks. Eight banks of 16 patterns per project allow extensive arrangement. Each voice includes a multimode filter, dedicated LFO, and amplitude envelope.
+
+  Effects include chorus, delay, and reverb sends plus per-voice overdrive. Overbridge integration enables use as a multi-output plugin within a DAW. The unit shares the same 215 x 176 mm desktop form factor as the Digitakt.
+specs: |-
+  - 8-voice polyphony, 4 synth tracks + 4 MIDI tracks
+  - 4 FM operators, 8 algorithms per voice
+  - Multimode filter per voice
+  - 64-step sequencer per track
+  - Parameter locks, trig conditions, micro timing
+  - Chorus, delay, and reverb send effects
+  - Per-voice overdrive
+  - Overbridge enabled for DAW integration
+  - 48 kHz, 24-bit D/A and A/D converters
+  - 128 x 64 pixel OLED display
+  - Steel casing: 215 x 176 x 63 mm
+  - 12V DC power supply
+io:
+  - name: Audio Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+releaseDate: "2018"
+releaseDateYearOnly: true
+links:
+  - type: support
+    title: Support & Downloads
+    url: https://www.elektron.se/support-downloads/digitone

@@ -2,20 +2,111 @@ id: G0ZwazP_3xxakpdb5f4yI
 name: Digitakt
 manufacturer: elektron
 primaryCategory: sampler
+categories:
+  - drum-machine
+  - digital
+  - sequencer
+url: https://www.elektron.se/legacy
 prices:
   - amount: 599
     currency: USD
-categories:
-  - drum-machine
 description: Eight-track digital drum machine and sampler with Elektron's
   signature sequencer. Features sample-based synthesis, multimode filter,
   overdrive, LFO, and amp envelope per track. Includes live sampling, MIDI
   sequencing capabilities, and Overbridge integration.
+details: |-
+  The Digitakt is an 8-track drum computer and sampler in Elektron's compact desktop form factor. It features eight audio sampling tracks and eight MIDI tracks, with 64 MB of sample RAM and 1 GB of +Drive storage for sample management.
+
+  The sequencer offers 64 steps per pattern with parameter locks, trig conditions, micro timing, and conditional locks across eight banks of patterns per project. Each track includes a multimode filter, LFO, overdrive, and amplitude envelope for detailed sound shaping.
+
+  Live sampling via stereo inputs enables capturing audio directly into projects. Overbridge integration provides multi-output plugin functionality within a DAW, and class-compliant USB audio enables direct recording to a computer. The unit measures 215 x 176 x 63 mm in a sturdy steel casing.
+specs: |-
+  - 8 audio tracks + 8 MIDI tracks
+  - 64 MB sample RAM, 1 GB +Drive storage
+  - 64-step sequencer per track
+  - Parameter locks, trig conditions, micro timing
+  - Multimode filter, LFO, overdrive per track
+  - Live sampling via stereo inputs
+  - Overbridge enabled for DAW integration
+  - Class-compliant USB audio
+  - 48 kHz, 24-bit D/A and A/D converters
+  - 128 x 64 pixel OLED display
+  - Steel casing: 215 x 176 x 63 mm
+  - 12V DC power supply
 io:
-  - name: Headphones
+  - name: Audio Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
     signalFlow: output
     category: audio
     type: headphone
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+releaseDate: "2017"
+releaseDateYearOnly: true
+links:
+  - type: support
+    title: Support & Downloads
+    url: https://www.elektron.se/support-downloads/digitakt

@@ -3,9 +3,199 @@ name: Analog Rytm MKII
 manufacturer: elektron
 supersedes: 97CVQfY5drMX581iAbbhf
 primaryCategory: drum-machine
+categories:
+  - analog
+  - sampler
+  - sequencer
+url: https://www.elektron.se/explore/analog-rytm-mkii
 description: Eight-voice analog drum machine with sampling, featuring an updated
   form factor with larger pads, individual outputs, and an OLED display.
+details: |-
+  The Analog Rytm MKII is Elektron's flagship eight-voice analog drum machine, combining a fully analog signal path with a sample playback engine in every voice. Each of the eight drum voices features a specialized analog percussion sound generator, an analog overdrive circuit, a two-pole analog multimode filter, dedicated filter and amp envelopes, an assignable LFO with fade envelope, and individual effect sends to the onboard delay and reverb processors. Master-bus processing includes an analog stereo compressor and analog stereo distortion.
+
+  The sequencer provides 12 drum tracks plus a dedicated FX track, with patterns up to 64 steps long. Each track supports individual length and time scale settings, parameter locks, trig conditions, micro timing, retrig, and a per-track Euclidean sequence generator. Sound-per-step and sample-per-step changes allow radical timbral variation within a single pattern.
+
+  Twelve large velocity- and pressure-sensitive backlit pads give tactile, expressive control over the voices. A 128x64 pixel OLED screen replaces the earlier LCD, and the aluminum enclosure houses eight individual voice outputs alongside the main stereo pair — a key upgrade over the MKI. Two balanced audio inputs and two unbalanced external inputs allow sampling directly into the machine or processing external signals through the analog effects chain.
+
+  Storage is handled by the +Drive system, holding 128 projects with 128 patterns and 128 kits each, a 4096-slot sound library, and 1 GB of sample storage. Overbridge integration and class-compliant USB audio provide tight DAW connectivity.
+specs: |-
+  - 8 analog drum voices with dedicated percussion oscillator and sample playback
+  - 12 drum tracks plus 1 FX track
+  - 12 large velocity- and pressure-sensitive backlit pads
+  - Analog overdrive and 2-pole analog multimode filter per voice
+  - Filter envelope, amp envelope, 1 assignable LFO per voice
+  - Digital delay and reverb send effects
+  - Analog stereo distortion and compressor on master bus
+  - Up to 64 steps per pattern, individual track length and scale
+  - Parameter locks, trig conditions, micro timing, retrig, Euclidean generator
+  - 128 projects, 128 patterns/kits per project, 4096-slot sound library
+  - 1 GB +Drive sample storage
+  - 128 x 64 pixel OLED display
+  - 48 kHz, 24-bit D/A and A/D converters, 110 dB digital S/N ratio
+  - Overbridge enabled, class-compliant USB audio
+  - Aluminum enclosure: 385 x 225 x 82 mm, ~2.4 kg
+  - Power: 12 VDC, 2A (PSU-3c included)
+io:
+  - name: Main Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Main Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Track 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Track 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Track 3 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Track 4 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Track 5 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Track 6 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Track 7 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Track 8 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Audio Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Audio Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: External Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: External Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Expression Input 1
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Expression Input 2
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+releaseDate: "2017"
+releaseDateYearOnly: true
 links:
-  - url: https://www.vintagesynth.com/elektron/analogrytmMKII
-    type: resource
+  - type: support
+    title: Support & Downloads
+    url: https://www.elektron.se/support-downloads/analog-rytm-mkii
+  - type: resource
     title: Vintage Synth Explorer
+    url: https://www.vintagesynth.com/elektron/analogrytmMKII

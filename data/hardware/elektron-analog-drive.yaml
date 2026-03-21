@@ -1,0 +1,77 @@
+id: 7ezNA2w1CWevhQTD_jpD2
+name: Analog Drive
+manufacturer: elektron
+primaryCategory: pedal
+categories:
+  - effect
+  - distortion
+  - analog
+url: https://www.elektron.se/legacy
+description: >-
+  Stompbox-format analog distortion unit with eight selectable distortion
+  circuits, MIDI control, and expression pedal input for real-time parameter
+  control.
+details: |-
+  The Analog Drive is a stompbox-format analog distortion unit featuring eight distinct analog distortion circuits. It provides a wide range of tonal possibilities from subtle overdrive to aggressive high-gain distortion, all processed through real analog circuitry.
+
+  Designed for use with guitars, synthesizers, and other instruments, the Analog Drive offers hands-on control over distortion parameters with dedicated knobs for drive amount, tone shaping, and output level. Each of the eight circuits delivers a unique distortion character.
+
+  The unit supports MIDI control via standard 5-pin DIN connectors for both input and output, enabling integration with MIDI-equipped setups for preset recall and parameter automation. An expression pedal input allows real-time control of Gain and Mid EQ parameters during performance.
+
+  The Analog Drive requires a 12 VDC power supply with a minimum 2A current rating, using a center-positive barrel connector. Compatible with Elektron PSU-3b and PSU-3c power supplies.
+specs: |-
+  - 8 selectable analog distortion circuits
+  - Mono audio input and output on 1/4-inch connectors
+  - MIDI In and MIDI Out on 5-pin DIN connectors
+  - Expression pedal input for Gain and Mid EQ control
+  - Power: 12 VDC, 2A minimum, center-positive barrel connector
+  - Latest firmware: Analog Drive OS 1.5 (July 2017)
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Expression Pedal Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+releaseDate: "2016"
+releaseDateYearOnly: true
+links:
+  - type: support
+    title: Support & Downloads
+    url: https://www.elektron.se/support-downloads/analog-drive
