@@ -1,5 +1,11 @@
 # catalog
 
+## 3.9.0
+
+### Minor Changes
+
+- ec9265f: Add Elektron hardware catalog (Analog Four, Analog Keys, Analog Heat, Analog Drive, Digitone Keys, Monomachine SFX-60) with IO/details/specs enrichment for existing entries, plus Celemony Capstan and Melodyne 5 editions
+
 ## 3.8.0
 
 ### Minor Changes
