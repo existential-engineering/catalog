@@ -1,5 +1,11 @@
 # catalog
 
+## 3.9.1
+
+### Patch Changes
+
+- d121281: Add version history for XLN Audio and u-he products
+
 ## 3.9.0
 
 ### Minor Changes
