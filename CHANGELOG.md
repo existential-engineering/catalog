@@ -1,5 +1,11 @@
 # catalog
 
+## 3.10.0
+
+### Minor Changes
+
+- 8d19e22: Add 92 Reason Studios Rack Extension entries including synthesizers, effects, utilities, samplers, drum machines, mixers, and romplers
+
 ## 3.9.1
 
 ### Patch Changes
