@@ -112,7 +112,7 @@ io:
 Content entries (presets, sample packs, expansions) live in `data/content/` as a separate collection. Content `primaryCategory` values include `preset`, `preset-pack`, `sample-pack`, `drum-sample-pack`, `loop-pack`, `sound-library`, `soundfont`, `impulse-response`, and `multisample`.
 
 - Content entries do NOT have `platforms`, `formats`, or `identifiers` fields
-- Use `compatibleWith` to reference host software products by slug:
+- Use `compatibleWith` to reference host software or hardware products by slug:
 
 ```yaml
 name: Zeus Presets for Serum
@@ -122,7 +122,15 @@ compatibleWith:
   - serum
 ```
 
-Advisory warning W123 fires if a `compatibleWith` slug doesn't match an existing software file. Category aliases in `schema/category-aliases.yaml` map common synonyms (e.g., `soundbank` → `preset-pack`) to canonical categories.
+```yaml
+name: Haunted Hearts
+manufacturer: elektron
+primaryCategory: preset-pack
+compatibleWith:
+  - elektron-digitone
+```
+
+Advisory warning W123 fires if a `compatibleWith` slug doesn't match an existing software or hardware file. Category aliases in `schema/category-aliases.yaml` map common synonyms (e.g., `soundbank` → `preset-pack`) to canonical categories.
 
 ## Accessory Entries
 
