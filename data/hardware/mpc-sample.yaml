@@ -1,72 +1,72 @@
 name: MPC Sample
-manufacturer: akai-professional
+manufacturer: akai
 primaryCategory: sampler
 url: https://www.akaipro.com/mpc-sample/
 description: Mpc sample by akai professional is a portable music sampler featuring intuitive controls, responsive pads, and seamless workflow for beat making, sampling, and music production on the go.
 io:
   - name: Audio Input 1
-    type: line
-    category: audio
-    position: Left
-    connection: 1/4-inch
     signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
     maxConnections: 1
+    position: Left
   - name: Audio Input 2
-    type: line
-    category: audio
-    position: Left
-    connection: 1/4-inch
     signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
     maxConnections: 1
+    position: Left
   - name: Audio Output 1
-    type: line
-    category: audio
-    position: Right
-    connection: 1/4-inch
     signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
     maxConnections: 1
+    position: Right
   - name: Audio Output 2
+    signalFlow: output
+    category: audio
     type: line
-    category: audio
-    position: Right
     connection: 1/4-inch
-    signalFlow: output
     maxConnections: 1
+    position: Right
   - name: Headphone Output
-    type: headphone
+    signalFlow: output
     category: audio
-    position: Bottom
+    type: headphone
     connection: 1/8-inch
-    signalFlow: output
     maxConnections: 2
+    position: Bottom
   - name: MIDI In
-    type: midi
+    signalFlow: input
     category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
     position: Left
-    connection: 1/8-inch
-    signalFlow: input
-    maxConnections: 1
   - name: MIDI Out
-    type: midi
+    signalFlow: output
     category: midi
-    position: Right
+    type: midi
     connection: 1/8-inch
-    signalFlow: output
     maxConnections: 1
+    position: Right
   - name: Sync Out
-    type: cv/gate
-    category: digital
-    position: Right
-    connection: 1/8-inch
     signalFlow: output
-    maxConnections: 1
-  - name: USB-C Port
-    type: usb
     category: digital
-    position: Top
-    connection: usb-c
-    signalFlow: input
+    type: cv/gate
+    connection: 1/8-inch
     maxConnections: 1
+    position: Right
+  - name: USB-C Port
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Top
 specs: |-
   - USB-c powered
   - Internal rechargeable lithium-ion battery (5 hours)
