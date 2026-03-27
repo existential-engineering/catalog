@@ -1,5 +1,11 @@
 # catalog
 
+## 3.10.1
+
+### Patch Changes
+
+- a6c1515: hardware(add): MPC Sample
+
 ## 3.10.0
 
 ### Minor Changes
