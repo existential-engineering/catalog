@@ -1007,6 +1007,7 @@ function collectWarnings(
   document: ReturnType<typeof loadYamlFileWithPositions>["document"],
   lineCounter: ReturnType<typeof loadYamlFileWithPositions>["lineCounter"],
   allSoftwareSlugs?: Set<string>,
+  allHardwareSlugs?: Set<string>,
   manufacturerUrlMap?: Map<string, string>
 ): ValidationWarning | null {
   const warnings: ValidationWarningDetail[] = [];
@@ -1039,15 +1040,17 @@ function collectWarnings(
     }
   }
 
-  // Check compatibleWith references (advisory)
-  if (Array.isArray(data.compatibleWith) && allSoftwareSlugs) {
+  // Check compatibleWith references (advisory) — checks both software and hardware slugs
+  if (Array.isArray(data.compatibleWith) && (allSoftwareSlugs || allHardwareSlugs)) {
     for (let i = 0; i < data.compatibleWith.length; i++) {
       const slug = data.compatibleWith[i];
-      if (!allSoftwareSlugs.has(slug)) {
+      const inSoftware = allSoftwareSlugs?.has(slug) ?? false;
+      const inHardware = allHardwareSlugs?.has(slug) ?? false;
+      if (!inSoftware && !inHardware) {
         const line = getLineForPath(document, lineCounter, ["compatibleWith", i]);
         warnings.push({
           code: ValidationErrorCode.W123_UNKNOWN_COMPATIBLE_WITH,
-          message: `Unknown compatibleWith reference '${slug}'. No matching software file found.`,
+          message: `Unknown compatibleWith reference '${slug}'. No matching software or hardware file found.`,
           path: `compatibleWith[${i}]`,
           line: line ?? undefined,
         });
@@ -1275,6 +1278,12 @@ function validate(): ValidationResult {
     allSoftwareSlugs.add(path.basename(file, path.extname(file)));
   }
 
+  // allHardwareSlugs used for compatibleWith validation (content can target hardware too)
+  const allHardwareSlugs = new Set<string>();
+  for (const file of hardwareFiles) {
+    allHardwareSlugs.add(path.basename(file, path.extname(file)));
+  }
+
   // Collect software IDs and supersedes relationships
   for (const file of softwareFiles) {
     const slug = path.basename(file, path.extname(file));
@@ -1373,6 +1382,7 @@ function validate(): ValidationResult {
           document,
           lineCounter,
           allSoftwareSlugs,
+          allHardwareSlugs,
           manufacturerUrlMap
         );
         if (w) warnings.push(w);
@@ -1389,7 +1399,7 @@ function validate(): ValidationResult {
       errors.push(error);
     } else {
       stats.content++;
-      // Collect advisory warnings for valid files (compatibleWith checks against software slugs)
+      // Collect advisory warnings for valid files (compatibleWith checks against software and hardware slugs)
       try {
         const { data, document, lineCounter } = loadYamlFileWithPositions(file);
         const w = collectWarnings(
@@ -1398,6 +1408,7 @@ function validate(): ValidationResult {
           document,
           lineCounter,
           allSoftwareSlugs,
+          allHardwareSlugs,
           manufacturerUrlMap
         );
         if (w) warnings.push(w);
@@ -1423,6 +1434,7 @@ function validate(): ValidationResult {
           document,
           lineCounter,
           undefined,
+          allHardwareSlugs,
           manufacturerUrlMap
         );
         if (w) warnings.push(w);
@@ -1448,6 +1460,7 @@ function validate(): ValidationResult {
           document,
           lineCounter,
           undefined,
+          allHardwareSlugs,
           manufacturerUrlMap
         );
         if (w) warnings.push(w);
