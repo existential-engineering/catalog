@@ -1,5 +1,11 @@
 # catalog
 
+## 3.10.2
+
+### Patch Changes
+
+- 6c8ff7e: Remove affiliate link type and all affiliate link entries (moved upstream to Studio app)
+
 ## 3.10.1
 
 ### Patch Changes
