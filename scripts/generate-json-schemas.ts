@@ -363,7 +363,7 @@ const schemas: Record<string, unknown> = {
       compatibleWith: {
         type: "array",
         items: { type: "string" },
-        description: "Software slugs for host products this content is compatible with",
+        description: "Software or hardware slugs for host products this content is compatible with",
       },
     }
   ),

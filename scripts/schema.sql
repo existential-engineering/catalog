@@ -192,6 +192,15 @@ CREATE TABLE IF NOT EXISTS content_compatibility (
 
 CREATE INDEX idx_content_compatibility_target ON content_compatibility(compatible_with_id);
 
+-- Content Hardware Compatibility (many-to-many, content references hardware)
+CREATE TABLE IF NOT EXISTS content_hardware_compatibility (
+    content_id TEXT NOT NULL REFERENCES content(id) ON DELETE CASCADE,
+    compatible_with_id TEXT NOT NULL REFERENCES hardware(id),
+    PRIMARY KEY (content_id, compatible_with_id)
+);
+
+CREATE INDEX idx_content_hardware_compatibility_target ON content_hardware_compatibility(compatible_with_id);
+
 -- Content Versions
 CREATE TABLE IF NOT EXISTS content_versions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -780,7 +789,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (15, 'Added content and accessories tables with related tables, FTS, and translations', 1),
     (16, 'Renamed website column to url across all tables', 1),
     (17, 'Renamed hardware_revisions to hardware_variants; removed io/versions sub-tables', 1),
-    (18, 'Added manufacturers_fts FTS5 full-text search table', 0);
+    (18, 'Added manufacturers_fts FTS5 full-text search table', 0),
+    (19, 'Added content_hardware_compatibility table for content-to-hardware references', 0);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES

@@ -229,6 +229,14 @@ function buildDatabase(version: string): void {
     if (data.id) slugToId.set(slug, data.id);
   }
 
+  // Build hardware slug -> nanoid lookup for resolving content-to-hardware compatibility
+  const hardwareSlugToId = new Map<string, string>();
+  for (const file of getYamlFiles(path.join(DATA_DIR, "hardware"))) {
+    const data = loadYamlFile<Hardware>(file);
+    const slug = path.basename(file, ".yaml");
+    if (data.id) hardwareSlugToId.set(slug, data.id);
+  }
+
   const insertSoftware = db.prepare(`
     INSERT INTO software (id, name, manufacturer_id, url, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -513,6 +521,11 @@ function buildDatabase(version: string): void {
     INSERT INTO content_compatibility (content_id, compatible_with_id)
     VALUES (?, ?)
   `);
+  const insertContentHardwareCompatibility = db.prepare(`
+    INSERT INTO content_hardware_compatibility (content_id, compatible_with_id)
+    VALUES (?, ?)
+  `);
+  const deferredContentHardwareCompat: { contentId: string; hardwareId: string }[] = [];
   const insertContentVersion = db.prepare(`
     INSERT INTO content_versions (content_id, name, release_date, release_date_year_only, pre_release, unofficial, url, description)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
@@ -600,12 +613,16 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert compatibility references (resolve slugs to software IDs)
+    // Insert compatibility references (resolve slugs to software or hardware IDs)
+    // Hardware compatibility inserts are deferred until after hardware rows exist
     if (data.compatibleWith) {
       for (const slug of data.compatibleWith) {
-        const resolvedId = slugToId.get(slug);
-        if (resolvedId) {
-          insertContentCompatibility.run(id, resolvedId);
+        const softwareId = slugToId.get(slug);
+        const hardwareId = hardwareSlugToId.get(slug);
+        if (softwareId) {
+          insertContentCompatibility.run(id, softwareId);
+        } else if (hardwareId) {
+          deferredContentHardwareCompat.push({ contentId: id, hardwareId });
         } else {
           console.warn(`  ⚠ Unknown compatibility slug "${slug}" in ${file}`);
         }
@@ -1073,6 +1090,11 @@ function buildDatabase(version: string): void {
   // Second pass: update supersedes relationships
   for (const [id, supersedesId] of hardwareSupersedes) {
     updateHardwareSupersedes.run(supersedesId, id);
+  }
+
+  // Insert deferred content-to-hardware compatibility (hardware rows now exist)
+  for (const { contentId, hardwareId } of deferredContentHardwareCompat) {
+    insertContentHardwareCompatibility.run(contentId, hardwareId);
   }
 
   // Load and insert accessories

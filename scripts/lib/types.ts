@@ -143,7 +143,7 @@ export interface Content {
   secondaryCategory?: string;
   /** ID of the content entry this supersedes */
   supersedes?: string;
-  /** Software slugs for host products this content is compatible with */
+  /** Software or hardware slugs for host products this content is compatible with */
   compatibleWith?: string[];
   searchTerms?: string[];
   description?: string;
