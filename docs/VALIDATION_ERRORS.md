@@ -262,7 +262,7 @@ The `connectorDetail` field in an IO entry contains an invalid value for the giv
 
 The `type` field in a link entry is not a valid value.
 
-**Valid types:** `affiliate`, `product`, `resource`, `review`, `support`
+**Valid types:** `product`, `resource`, `review`, `support`
 
 **Common mistakes:**
 
