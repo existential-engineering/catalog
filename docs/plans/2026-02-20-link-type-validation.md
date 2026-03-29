@@ -1,9 +1,11 @@
 # Link Type Validation Implementation Plan
 
-> **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans
-> to implement this plan task-by-task.
+> **Status: COMPLETED** — All 7 tasks implemented and merged.
+> Subsequently, `affiliate` was removed as a valid link type
+> (moved upstream to the Studio app). Valid types are now:
+> `product`, `resource`, `review`, `support`.
 
-**Goal:** Restrict catalog link types to the 5 types the Studio app
+**Goal:** Restrict catalog link types to the types the Studio app
 supports and enforce with blocking validation.
 
 **Architecture:** Change the `LinkSchema` Zod validator in

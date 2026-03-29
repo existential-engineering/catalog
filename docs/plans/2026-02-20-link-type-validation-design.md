@@ -1,6 +1,11 @@
 # Link Type Validation
 
-Restrict catalog link types to the 5 types the Studio app supports
+> **Status: COMPLETED** — Implemented and merged. Subsequently,
+> `affiliate` was removed as a valid link type (moved upstream to
+> the Studio app). Valid types are now: `product`, `resource`,
+> `review`, `support`.
+
+Restrict catalog link types to the types the Studio app supports
 and enforce with blocking validation.
 
 ## Context
