@@ -594,7 +594,7 @@ CREATE TABLE IF NOT EXISTS content_videos_localized (
 
 CREATE INDEX idx_content_videos_localized ON content_videos_localized(content_id, locale);
 
--- Localized software links (purchase, affiliate, docs per locale)
+-- Localized software links (purchase, docs per locale)
 CREATE TABLE IF NOT EXISTS software_links_localized (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,

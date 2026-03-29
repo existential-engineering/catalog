@@ -745,7 +745,6 @@ Content entries (presets, sample packs, expansions) are software entries where `
 
 ## Link Types (advisory — unknown values produce warnings)
 
-- `affiliate`
 - `product`
 - `resource`
 - `review`
