@@ -619,7 +619,11 @@ function buildDatabase(version: string): void {
       for (const slug of data.compatibleWith) {
         const softwareId = slugToId.get(slug);
         const hardwareId = hardwareSlugToId.get(slug);
-        if (softwareId) {
+        if (softwareId && hardwareId) {
+          throw new Error(
+            `Ambiguous compatibility slug "${slug}" in ${file}: exists as both software and hardware. Rename one to remove the conflict.`
+          );
+        } else if (softwareId) {
           insertContentCompatibility.run(id, softwareId);
         } else if (hardwareId) {
           deferredContentHardwareCompat.push({ contentId: id, hardwareId });
