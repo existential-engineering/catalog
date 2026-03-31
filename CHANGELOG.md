@@ -1,5 +1,11 @@
 # catalog
 
+## 3.11.0
+
+### Minor Changes
+
+- e2c39d1: Add hardware support to content compatibleWith
+
 ## 3.10.2
 
 ### Patch Changes
