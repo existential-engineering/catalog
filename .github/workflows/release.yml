@@ -52,6 +52,21 @@ jobs:
         if: steps.changesets.outputs.hasChangesets == 'false'
         run: sha256sum dist/catalog.sqlite > dist/catalog.sqlite.sha256
 
+      - name: Sign catalog with minisign
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        env:
+          CATALOG_SIGNING_KEY: ${{ secrets.CATALOG_SIGNING_KEY }}
+          CATALOG_SIGNING_KEY_PASSWORD: ${{ secrets.CATALOG_SIGNING_KEY_PASSWORD }}
+        run: |
+          cargo install minisign --locked
+          echo "$CATALOG_SIGNING_KEY" > /tmp/minisign.key
+          VERSION=$(node -p "require('./package.json').version")
+          echo "$CATALOG_SIGNING_KEY_PASSWORD" | minisign -S \
+            -s /tmp/minisign.key \
+            -m dist/catalog.sqlite \
+            -t "catalog v${VERSION}"
+          rm /tmp/minisign.key
+
       - name: Generate SBOM
         if: steps.changesets.outputs.hasChangesets == 'false'
         uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
@@ -84,4 +99,5 @@ jobs:
           files: |
             dist/catalog.sqlite
             dist/catalog.sqlite.sha256
+            dist/catalog.sqlite.minisig
             dist/catalog-sbom.spdx.json
