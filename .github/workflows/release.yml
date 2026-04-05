@@ -48,6 +48,10 @@ jobs:
         if: steps.changesets.outputs.hasChangesets == 'false'
         run: pnpm build
 
+      - name: Generate checksum
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        run: sha256sum dist/catalog.sqlite > dist/catalog.sqlite.sha256
+
       - name: Get package version
         if: steps.changesets.outputs.hasChangesets == 'false'
         id: pkg
@@ -72,3 +76,4 @@ jobs:
           generate_release_notes: true
           files: |
             dist/catalog.sqlite
+            dist/catalog.sqlite.sha256
