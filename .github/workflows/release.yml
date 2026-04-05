@@ -16,17 +16,17 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
         with:
           node-version: "24"
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v5
+        uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -36,7 +36,7 @@ jobs:
 
       - name: Create Release Pull Request or Tag
         id: changesets
-        uses: changesets/action@v1
+        uses: changesets/action@6a0a831ff30acef54f2c6aa1cbbc1096b066edaf # v1.7.0
         with:
           version: pnpm run version
           commit: "chore: version packages"
@@ -47,6 +47,17 @@ jobs:
       - name: Build database
         if: steps.changesets.outputs.hasChangesets == 'false'
         run: pnpm build
+
+      - name: Generate checksum
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        run: sha256sum dist/catalog.sqlite > dist/catalog.sqlite.sha256
+
+      - name: Generate SBOM
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
+        with:
+          artifact-name: catalog-sbom.spdx.json
+          output-file: dist/catalog-sbom.spdx.json
 
       - name: Get package version
         if: steps.changesets.outputs.hasChangesets == 'false'
@@ -65,10 +76,12 @@ jobs:
 
       - name: Create GitHub Release
         if: steps.changesets.outputs.hasChangesets == 'false' && steps.tag_check.outputs.exists == 'false'
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe # v2
         with:
           tag_name: ${{ steps.pkg.outputs.version }}
           name: Catalog ${{ steps.pkg.outputs.version }}
           generate_release_notes: true
           files: |
             dist/catalog.sqlite
+            dist/catalog.sqlite.sha256
+            dist/catalog-sbom.spdx.json
