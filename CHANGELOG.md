@@ -1,5 +1,12 @@
 # catalog
 
+## 3.11.1
+
+### Patch Changes
+
+- 10b5366: Add CI security hardening: pnpm audit, SHA-pinned GitHub Actions, SBOM generation on release, and OpenSSF Scorecard
+- f87e9af: Update devDependencies: @biomejs/biome 2.4.10, @types/node 25.5.2, typescript 6.0.2, vitest 4.1.2, yaml 2.8.3
+
 ## 3.11.0
 
 ### Minor Changes
