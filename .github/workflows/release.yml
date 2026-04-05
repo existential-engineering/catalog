@@ -52,6 +52,13 @@ jobs:
         if: steps.changesets.outputs.hasChangesets == 'false'
         run: sha256sum dist/catalog.sqlite > dist/catalog.sqlite.sha256
 
+      - name: Generate SBOM
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
+        with:
+          artifact-name: catalog-sbom.spdx.json
+          output-file: dist/catalog-sbom.spdx.json
+
       - name: Get package version
         if: steps.changesets.outputs.hasChangesets == 'false'
         id: pkg
@@ -77,3 +84,4 @@ jobs:
           files: |
             dist/catalog.sqlite
             dist/catalog.sqlite.sha256
+            dist/catalog-sbom.spdx.json
