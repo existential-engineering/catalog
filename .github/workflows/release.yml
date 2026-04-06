@@ -58,7 +58,7 @@ jobs:
           CATALOG_SIGNING_KEY: ${{ secrets.CATALOG_SIGNING_KEY }}
           CATALOG_SIGNING_KEY_PASSWORD: ${{ secrets.CATALOG_SIGNING_KEY_PASSWORD }}
         run: |
-          cargo install minisign --locked
+          cargo install minisign@0.9.0 --locked
           echo "$CATALOG_SIGNING_KEY" > /tmp/minisign.key
           VERSION=$(node -p "require('./package.json').version")
           echo "$CATALOG_SIGNING_KEY_PASSWORD" | minisign -S \
