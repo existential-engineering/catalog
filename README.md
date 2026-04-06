@@ -1,7 +1,7 @@
 # Catalog
 
-[![Validate](https://github.com/racks-fm/catalog/actions/workflows/validate.yml/badge.svg)](https://github.com/racks-fm/catalog/actions/workflows/validate.yml)
-[![Release](https://github.com/racks-fm/catalog/actions/workflows/release.yml/badge.svg)](https://github.com/racks-fm/catalog/actions/workflows/release.yml)
+[![Validate](https://github.com/existential-engineering/catalog/actions/workflows/validate.yml/badge.svg)](https://github.com/existential-engineering/catalog/actions/workflows/validate.yml)
+[![Release](https://github.com/existential-engineering/catalog/actions/workflows/release.yml/badge.svg)](https://github.com/existential-engineering/catalog/actions/workflows/release.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Data: CC0](https://img.shields.io/badge/Data-CC0%201.0-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
@@ -92,7 +92,7 @@ description: Desktop Thunderbolt audio interface with UAD processing
 
 ```bash
 # Get the latest SQLite database
-curl -L https://github.com/racks-fm/catalog/releases/latest/download/catalog.sqlite -o catalog.sqlite
+curl -L https://github.com/existential-engineering/catalog/releases/latest/download/catalog.sqlite -o catalog.sqlite
 ```
 
 ### Query Examples
