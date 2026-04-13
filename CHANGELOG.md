@@ -1,5 +1,11 @@
 # catalog
 
+## 3.12.0
+
+### Minor Changes
+
+- 54f4237: Add Kraftur saturation plugin by Soundtheory
+
 ## 3.11.1
 
 ### Patch Changes
