@@ -1,0 +1,65 @@
+id: W30W8c8DuW-WSrR91nZQK
+name: T-1
+manufacturer: torso-electronics
+primaryCategory: sequencer
+url: https://torsoelectronics.com/pages/t-1
+description: An expressive algorithmic sequencer that goes beyond traditional
+  step sequencing, using Euclidean rhythms, musical scales, and random
+  modulation to create percussive polyrhythmic sequences and melodic
+  variations.
+specs: |-
+  - 16 tracks per pattern, 16 MIDI channels with polyphony
+  - Track modes: Note, CC, FX
+  - Euclidean rhythm generation with step editing
+  - Musical scales (7 preset + 1 user-defined per track)
+  - Random modulation on every parameter
+  - 18 endless rotary encoders
+  - 23 RGB backlit silicone keypads
+  - Matte black aluminum housing
+  - 304 x 114 x 39 mm, 815g
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: USB-C
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Top
+prices:
+  - amount: 599
+    currency: EUR
