@@ -706,7 +706,8 @@ CREATE VIRTUAL TABLE IF NOT EXISTS manufacturers_fts USING fts5(
     name,
     company_name,
     description,
-    tokenize='porter unicode61'
+    search_terms,
+    tokenize='unicode61'
 );
 
 -- Content FTS index
@@ -716,7 +717,8 @@ CREATE VIRTUAL TABLE IF NOT EXISTS content_fts USING fts5(
     manufacturer_name,
     categories,
     description,
-    tokenize='porter unicode61'
+    search_terms,
+    tokenize='unicode61'
 );
 
 -- Software FTS index
@@ -728,7 +730,8 @@ CREATE VIRTUAL TABLE IF NOT EXISTS software_fts USING fts5(
     manufacturer_name,
     categories,
     description,
-    tokenize='porter unicode61'
+    search_terms,
+    tokenize='unicode61'
 );
 
 -- Hardware FTS index
@@ -740,7 +743,8 @@ CREATE VIRTUAL TABLE IF NOT EXISTS hardware_fts USING fts5(
     manufacturer_name,
     categories,
     description,
-    tokenize='porter unicode61'
+    search_terms,
+    tokenize='unicode61'
 );
 
 -- Accessories FTS index
@@ -750,7 +754,8 @@ CREATE VIRTUAL TABLE IF NOT EXISTS accessories_fts USING fts5(
     manufacturer_name,
     categories,
     description,
-    tokenize='porter unicode61'
+    search_terms,
+    tokenize='unicode61'
 );
 
 -- =============================================================================
@@ -790,7 +795,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (16, 'Renamed website column to url across all tables', 1),
     (17, 'Renamed hardware_revisions to hardware_variants; removed io/versions sub-tables', 1),
     (18, 'Added manufacturers_fts FTS5 full-text search table', 0),
-    (19, 'Added content_hardware_compatibility table for content-to-hardware references', 0);
+    (19, 'Added content_hardware_compatibility table for content-to-hardware references', 0),
+    (20, 'Added search_terms column to all FTS5 tables; changed tokenizer from porter unicode61 to unicode61', 1);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES
