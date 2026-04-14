@@ -987,11 +987,13 @@ function detectSupersedeCycle(
 // =============================================================================
 
 interface WarningContext {
+  name?: string;
   io?: Array<{ name: string; type: string; connection: string }>;
   compatibleWith?: string[];
   url?: string;
   links?: Array<{ url: string }>;
   manufacturer?: string;
+  searchTerms?: string[];
   specs?: string;
   formats?: string[];
   platforms?: string[];
@@ -1210,6 +1212,24 @@ function collectWarnings(
           });
         }
       }
+    }
+  }
+
+  // Check if entry would benefit from searchTerms (W127)
+  if (!data.searchTerms || data.searchTerms.length === 0) {
+    const name: string = data.name ?? "";
+    // Flag entries where the entire name is an acronym (e.g., "MPC", "DAW", "ADT")
+    const isAcronymOnly = /^[A-Z]{2,}$/.test(name.trim());
+    // Flag entries where name contains hyphenated model numbers (e.g., SM-7B, OB-Xa)
+    const hasModelNumber = /\b[A-Z]{2,}-\d+[A-Z]?\b/.test(name);
+    if (isAcronymOnly || hasModelNumber) {
+      const line = getLineForPath(document, lineCounter, ["name"]);
+      warnings.push({
+        code: ValidationErrorCode.W127_MISSING_SEARCH_TERMS,
+        message: `Entry '${name}' contains acronyms or model numbers — consider adding searchTerms for alternate forms.`,
+        path: "searchTerms",
+        line: line ?? undefined,
+      });
     }
   }
 

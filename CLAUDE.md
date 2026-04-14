@@ -229,6 +229,45 @@ Software, content, hardware, and accessory entries can have a `versions` array w
 - `prices` - version-specific pricing
 - `links` - version-specific links
 
+## Search Terms
+
+All entry types support an optional `searchTerms` array of strings that improve full-text search. Search terms get their own high-weight BM25 column in the FTS index, so they strongly influence ranking.
+
+**When to add searchTerms:**
+
+- Product name is an acronym or abbreviation (MPC, SM7B, OB-Xa)
+- Product is commonly known by a nickname ("Moog Grandmother" → "Grandma")
+- Model number has common variations (SM7B vs SM-7B vs "Shure SM7B")
+- Manufacturer has alternate/former names ("Arturia" → "Arturia Instruments")
+- Name alone is ambiguous or doesn't describe the product well
+
+**What to include:**
+
+- Acronyms and abbreviations: `["MPC", "Music Production Center"]`
+- Model number variations: `["SM7B", "SM-7B", "SM 7B"]`
+- Common nicknames or shorthand: `["Grandma", "Grandmother"]`
+- Former or alternate brand names: `["Mackie Designs"]`
+- Common misspellings users would search for: `["Berhinger"]`
+- Compact/no-space forms users might type: `["ProQ3", "Pro-Q3"]`
+- For content packs: the host software name if not in the entry name: `["Serum", "Xfer Serum"]`
+
+**What NOT to include:**
+
+- The product's own name (already indexed in the `name` column)
+- The manufacturer's display name (already indexed in `manufacturer_name`)
+- Category or genre terms (`DAW`, `synthesizer`, `compressor`, `drum machine`, `ambient`, `cinematic`) — these belong in `primaryCategory`/`categories`
+- Descriptions of what the product does (`saturation plugin`, `pitch correction`, `wavetable synth`)
+
+```yaml
+# Example: hardware with model number variations
+name: SM7B
+manufacturer: shure
+searchTerms:
+  - SM-7B
+  - SM 7B
+  - Shure SM7B
+```
+
 ## Video Links
 
 Videos use a dedicated `videos` array (not the `links` array):
