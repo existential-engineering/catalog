@@ -63,6 +63,7 @@ export enum ValidationErrorCode {
   W124_DUPLICATE_URL = "W124",
   W125_MANUFACTURER_URL_IN_LINKS = "W125",
   W126_SPECS_OVERLAP = "W126",
+  W127_MISSING_SEARCH_TERMS = "W127",
 }
 
 // =============================================================================
@@ -264,6 +265,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.W126_SPECS_OVERLAP]: {
     title: "Specs line overlaps with structured field",
     anchor: "w126-specs-overlap",
+  },
+  [ValidationErrorCode.W127_MISSING_SEARCH_TERMS]: {
+    title: "Entry would benefit from searchTerms",
+    anchor: "w127-missing-search-terms",
   },
 };
 
