@@ -151,8 +151,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?)
   `);
   const insertManufacturerFts = db.prepare(`
-    INSERT INTO manufacturers_fts (id, name, company_name, description)
-    VALUES (?, ?, ?, ?)
+    INSERT INTO manufacturers_fts (id, name, company_name, description, search_terms)
+    VALUES (?, ?, ?, ?, ?)
   `);
 
   // First pass: insert all manufacturers without parent references
@@ -176,9 +176,15 @@ function buildDatabase(version: string): void {
       markdownToHtml(data.description)
     );
 
-    // Insert FTS entry (include searchTerms for synonym matching)
-    const mfrFtsDescription = [data.description ?? "", ...(data.searchTerms ?? [])].join(" ");
-    insertManufacturerFts.run(id, data.name, data.companyName ?? "", mfrFtsDescription);
+    // Insert FTS entry (searchTerms in dedicated column for higher BM25 weight)
+    const mfrFtsSearchTerms = (data.searchTerms ?? []).join(" ");
+    insertManufacturerFts.run(
+      id,
+      data.name,
+      data.companyName ?? "",
+      data.description ?? "",
+      mfrFtsSearchTerms
+    );
 
     // Insert search terms
     if (data.searchTerms) {
@@ -277,8 +283,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?)
   `);
   const insertSoftwareFts = db.prepare(`
-    INSERT INTO software_fts (id, name, manufacturer_name, categories, description)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO software_fts (id, name, manufacturer_name, categories, description, search_terms)
+    VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertSoftwareTranslation = db.prepare(`
     INSERT INTO software_translations (software_id, locale, description, details, specs, url)
@@ -430,14 +436,15 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert FTS entry (with normalized categories + searchTerms)
-    const softwareFtsDescription = [data.description ?? "", ...(data.searchTerms ?? [])].join(" ");
+    // Insert FTS entry (searchTerms in dedicated column for higher BM25 weight)
+    const softwareFtsSearchTerms = (data.searchTerms ?? []).join(" ");
     insertSoftwareFts.run(
       id,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
-      softwareFtsDescription
+      data.description ?? "",
+      softwareFtsSearchTerms
     );
 
     // Insert translations
@@ -543,8 +550,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?)
   `);
   const insertContentFts = db.prepare(`
-    INSERT INTO content_fts (id, name, manufacturer_name, categories, description)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO content_fts (id, name, manufacturer_name, categories, description, search_terms)
+    VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertContentTranslation = db.prepare(`
     INSERT INTO content_translations (content_id, locale, description, details, specs, url)
@@ -682,14 +689,15 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert FTS entry (with searchTerms)
-    const contentFtsDescription = [data.description ?? "", ...(data.searchTerms ?? [])].join(" ");
+    // Insert FTS entry (searchTerms in dedicated column for higher BM25 weight)
+    const contentFtsSearchTerms = (data.searchTerms ?? []).join(" ");
     insertContentFts.run(
       id,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
-      contentFtsDescription
+      data.description ?? "",
+      contentFtsSearchTerms
     );
 
     // Insert translations
@@ -803,8 +811,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?)
   `);
   const insertHardwareFts = db.prepare(`
-    INSERT INTO hardware_fts (id, name, manufacturer_name, categories, description)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO hardware_fts (id, name, manufacturer_name, categories, description, search_terms)
+    VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareTranslation = db.prepare(`
     INSERT INTO hardware_translations (hardware_id, locale, description, details, specs, url)
@@ -1008,14 +1016,15 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert FTS entry (with normalized categories + searchTerms)
-    const hardwareFtsDescription = [data.description ?? "", ...(data.searchTerms ?? [])].join(" ");
+    // Insert FTS entry (searchTerms in dedicated column for higher BM25 weight)
+    const hardwareFtsSearchTerms = (data.searchTerms ?? []).join(" ");
     insertHardwareFts.run(
       id,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
-      hardwareFtsDescription
+      data.description ?? "",
+      hardwareFtsSearchTerms
     );
 
     // Insert translations
@@ -1138,8 +1147,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?)
   `);
   const insertAccessoryFts = db.prepare(`
-    INSERT INTO accessories_fts (id, name, manufacturer_name, categories, description)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO accessories_fts (id, name, manufacturer_name, categories, description, search_terms)
+    VALUES (?, ?, ?, ?, ?, ?)
   `);
   const insertAccessoryTranslation = db.prepare(`
     INSERT INTO accessories_translations (accessory_id, locale, description, details, specs, url)
@@ -1257,14 +1266,15 @@ function buildDatabase(version: string): void {
       }
     }
 
-    // Insert FTS entry (with searchTerms)
-    const accessoryFtsDescription = [data.description ?? "", ...(data.searchTerms ?? [])].join(" ");
+    // Insert FTS entry (searchTerms in dedicated column for higher BM25 weight)
+    const accessoryFtsSearchTerms = (data.searchTerms ?? []).join(" ");
     insertAccessoryFts.run(
       id,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
-      accessoryFtsDescription
+      data.description ?? "",
+      accessoryFtsSearchTerms
     );
 
     // Insert translations
