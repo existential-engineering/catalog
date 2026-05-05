@@ -1,5 +1,12 @@
 # catalog
 
+## 3.14.2
+
+### Patch Changes
+
+- c9717ee: Update dev dependencies and pnpm to latest patch versions (biome, changesets, @types/node, better-sqlite3, marked, nanoid, prettier, typescript, vitest, yaml, zod).
+- 10140cc: Replace `&amp;` HTML entities with literal `&` across 43 entries, and remove duplicate `{amount: 0, currency: USD}` price rows from 64 wa-production entries.
+
 ## 3.14.1
 
 ### Patch Changes
