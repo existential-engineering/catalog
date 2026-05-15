@@ -1,0 +1,13 @@
+allowBuilds:
+  better-sqlite3: true
+  esbuild: true
+
+# TODO: remove this override once vitest publishes a release whose `vite`
+# peer range starts at >=7.3.2. As of 2026-05-12, vitest@4.1.6 still
+# resolves vite@7.3.1 by default, which trips GHSA-v2wj-q39q-566r and
+# GHSA-p9ff-h696-f583 under `pnpm audit --audit-level=high` (pnpm 11 fails
+# on these; pnpm 10 silently ignored the threshold). To verify it's safe to
+# drop: comment out the override, run `pnpm install --no-frozen-lockfile`,
+# then `pnpm audit --audit-level=high` — exit 0 means remove it.
+overrides:
+  vite: ">=7.3.2"

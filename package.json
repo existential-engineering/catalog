@@ -3,12 +3,6 @@
   "version": "3.14.2",
   "description": "Open source audio software and hardware catalog",
   "type": "module",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "better-sqlite3",
-      "esbuild"
-    ]
-  },
   "scripts": {
     "typecheck": "tsc --noEmit",
     "validate": "tsx scripts/validate.ts",
@@ -55,23 +49,23 @@
   "author": "Jeffrey Louden <jeff@aureo.audio>",
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "2.4.14",
+    "@biomejs/biome": "2.4.15",
     "@changesets/cli": "2.31.0",
     "@octokit/auth-app": "8.2.0",
     "@octokit/rest": "22.0.1",
     "@types/better-sqlite3": "7.6.13",
-    "@types/node": "25.6.0",
-    "better-sqlite3": "12.9.0",
+    "@types/node": "25.8.0",
+    "better-sqlite3": "12.10.0",
     "husky": "9.1.7",
-    "lint-staged": "16.4.0",
+    "lint-staged": "17.0.4",
     "marked": "18.0.3",
     "nanoid": "5.1.11",
     "prettier": "3.8.3",
-    "tsx": "4.21.0",
+    "tsx": "4.22.0",
     "typescript": "6.0.3",
-    "vitest": "4.1.5",
-    "yaml": "2.8.4",
+    "vitest": "4.1.6",
+    "yaml": "2.9.0",
     "zod": "4.4.3"
   },
-  "packageManager": "pnpm@10.33.3+sha512.a19744364a7e248b92657a4ca5973f9354d21caf982579674b1c539f32c7420c47138ad8b1254df07aba9bc782d9b3029e3db34d5dbff974326eb74dac8ff489"
+  "packageManager": "pnpm@11.1.2+sha512.415a1cc25974731e75455c1468371be74c5aa5fb7621b50d4056d222451609f11412f23fd602e6169f1e060466641f798597e1be961a10688836a67b16569499"
 }
