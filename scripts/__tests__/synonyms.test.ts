@@ -70,7 +70,9 @@ describe("expandSearchTerms", () => {
 
   it("does not fire ableton → ableon on non-Ableton products mentioning ableton", () => {
     const out = expandSearchTerms("Some Plugin", "Acme", [], ["compatible with ableton"]);
-    expect(out).toContain("ableon");
+    // existingTerms are inserted verbatim but shouldn't seed cross-product
+    // synonym expansion — "ableon" belongs to actual Ableton products only.
+    expect(out).not.toContain("ableon");
   });
 
   it("pins the expansion shape for a representative product", () => {

@@ -88,11 +88,13 @@ export function expandSearchTerms(
   existingTerms: readonly string[] = []
 ): string[] {
   const out = new Set<string>();
-  // Word-boundary tokens, not substrings — otherwise "compressor" triggers
-  // on "composer", "ableton" on "ableon" expanding to unrelated products,
-  // etc. Split on any non-letter run so we get whole-word atoms.
+  // Word-boundary tokens from the product's IDENTITY (name + manufacturer +
+  // categories). Excludes existingTerms — author-supplied search terms are
+  // for free-text matching ("compatible with ableton" on a non-Ableton
+  // product) and shouldn't seed cross-product synonym expansion. Tokens
+  // are split on any non-letter/digit run for clean whole-word atoms.
   const words = new Set(
-    [name, manufacturer ?? "", ...categories, ...existingTerms]
+    [name, manufacturer ?? "", ...categories]
       .join(" ")
       .toLowerCase()
       .split(/[^\p{L}\d]+/u)
