@@ -10,6 +10,7 @@ import path from "node:path";
 import { marked } from "marked";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
+import { looksLikeAcronymName } from "./lib/acronym-exclusions.js";
 import { getDocsUrl, ValidationErrorCode } from "./lib/error-codes.js";
 import type {
   CategoriesSchema,
@@ -1216,17 +1217,23 @@ function collectWarnings(
   }
 
   // Check if entry would benefit from searchTerms (W127)
+  //
+  // Model-number / hyphenated names (e.g. DR-110, SM-7B) are intentionally
+  // NOT flagged here: brandVariants() in lib/synonyms.ts already produces
+  // dash-stripped and space-separated forms at build time, so the FTS index
+  // gets "dr110" / "dr 110" automatically. Asking authors to add those by
+  // hand is duplicate work.
+  //
+  // We only flag short all-caps names that look like true acronyms (MPC,
+  // ADT, AGL) — those may have meaningful expansions worth indexing that
+  // brandVariants cannot derive from the name alone.
   if (!data.searchTerms || data.searchTerms.length === 0) {
     const name: string = data.name ?? "";
-    // Flag entries where the entire name is an acronym (e.g., "MPC", "DAW", "ADT")
-    const isAcronymOnly = /^[A-Z]{2,}$/.test(name.trim());
-    // Flag entries where name contains hyphenated model numbers (e.g., SM-7B, OB-Xa)
-    const hasModelNumber = /\b[A-Z]{2,}-\d+[A-Z]?\b/.test(name);
-    if (isAcronymOnly || hasModelNumber) {
+    if (looksLikeAcronymName(name)) {
       const line = getLineForPath(document, lineCounter, ["name"]);
       warnings.push({
         code: ValidationErrorCode.W127_MISSING_SEARCH_TERMS,
-        message: `Entry '${name}' contains acronyms or model numbers — consider adding searchTerms for alternate forms.`,
+        message: `Entry '${name.trim()}' looks like an acronym — consider adding searchTerms with the expansion or other forms users might search.`,
         path: "searchTerms",
         line: line ?? undefined,
       });
