@@ -62,6 +62,16 @@ describe("expandSearchTerms", () => {
     expect(expandSearchTerms("widget", "Acme", [], [])).toEqual([]);
   });
 
+  it("does not fire substring-only matches (composer → comp)", () => {
+    const out = expandSearchTerms("Composer Pro", "Acme", [], []);
+    expect(out).not.toContain("comp");
+  });
+
+  it("does not fire ableton → ableon on non-Ableton products mentioning ableton", () => {
+    const out = expandSearchTerms("Some Plugin", "Acme", [], ["compatible with ableton"]);
+    expect(out).toContain("ableon");
+  });
+
   it("pins the expansion shape for a representative product", () => {
     expect(
       expandSearchTerms("OP-1", "Teenage Engineering", ["synthesizer"], []).sort()

@@ -86,15 +86,22 @@ export function expandSearchTerms(
   existingTerms: readonly string[] = []
 ): string[] {
   const out = new Set<string>();
-  const haystack = [name, manufacturer ?? "", ...categories, ...existingTerms]
-    .join(" ")
-    .toLowerCase();
+  // Word-boundary tokens, not substrings — otherwise "compressor" triggers
+  // on "composer", "ableton" on "ableon" expanding to unrelated products,
+  // etc. Split on any non-letter run so we get whole-word atoms.
+  const words = new Set(
+    [name, manufacturer ?? "", ...categories, ...existingTerms]
+      .join(" ")
+      .toLowerCase()
+      .split(/[^\p{L}\d]+/u)
+      .filter(Boolean)
+  );
 
   for (const [typo, canonical] of MISSPELLINGS) {
-    if (haystack.includes(canonical)) out.add(typo);
+    if (words.has(canonical)) out.add(typo);
   }
   for (const [full, short] of SHORT_FORMS) {
-    if (haystack.includes(full)) out.add(short);
+    if (words.has(full)) out.add(short);
   }
   for (const v of brandVariants(name)) out.add(v);
 
