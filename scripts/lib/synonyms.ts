@@ -58,11 +58,13 @@ export function brandVariants(name: string): string[] {
   }
   if (hasSpace) variants.add(lower.replace(/\s+/g, ""));
 
-  // Insert separator at letter→digit transitions in a single token.
-  // "ms20" → "ms 20", "op1" → "op 1". Only single-token names (no spaces).
-  if (!hasSpace && /[a-z]\d/.test(lower)) {
-    variants.add(lower.replace(/([a-z])(\d)/g, "$1 $2"));
-    variants.add(lower.replace(/([a-z])(\d)/g, "$1-$2"));
+  // Insert separator at letter→digit transitions. Run against the
+  // single-token form so "OP 1" also generates "op-1" (and "MS 20" gets
+  // "ms-20"), not just the bare space-stripped variant.
+  const lowerNoSpace = hasSpace ? lower.replace(/\s+/g, "") : lower;
+  if (/[a-z]\d/.test(lowerNoSpace)) {
+    variants.add(lowerNoSpace.replace(/([a-z])(\d)/g, "$1 $2"));
+    variants.add(lowerNoSpace.replace(/([a-z])(\d)/g, "$1-$2"));
   }
 
   variants.delete(lower);

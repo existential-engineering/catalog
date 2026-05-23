@@ -11,8 +11,9 @@ describe("brandVariants", () => {
     expect(brandVariants("MS-20")).toContain("ms 20");
   });
 
-  it("strips internal spaces", () => {
+  it("strips internal spaces and emits hyphenated digit variant", () => {
     expect(brandVariants("OP 1")).toContain("op1");
+    expect(brandVariants("OP 1")).toContain("op-1");
   });
 
   it("inserts separators at letter→digit transitions", () => {
