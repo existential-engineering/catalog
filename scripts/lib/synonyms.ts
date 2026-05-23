@@ -52,10 +52,16 @@ export function brandVariants(name: string): string[] {
 /**
  * Expand the search-term set for a single product/manufacturer.
  *
- * @param name           Product display name
- * @param manufacturer   Manufacturer name (may be null for manufacturer rows)
- * @param categories     Category names
- * @param existingTerms  YAML-declared `searchTerms` (already inserted separately)
+ * @param name                    Product display name
+ * @param manufacturer            Manufacturer name (may be null for mfr rows)
+ * @param categories              Category names (already normalized to canonical)
+ * @param existingTerms           YAML-declared `searchTerms` (inserted separately)
+ * @param inverseCategoryAliases  Optional canonical→aliases map. Lets us emit
+ *                                every known alias of a product's categories as
+ *                                a search term, so users typing any equivalent
+ *                                form (`eq`, `graphic-equalizer`, `dynamic-eq`)
+ *                                find an `equalizer` product. Build-sqlite owns
+ *                                the alias data and inverts it once at startup.
  * @returns Additional terms to insert. May be empty. Caller dedupes against
  *          the YAML set if needed.
  */
@@ -63,7 +69,8 @@ export function expandSearchTerms(
   name: string,
   manufacturer: string | null,
   categories: readonly string[],
-  existingTerms: readonly string[] = []
+  existingTerms: readonly string[] = [],
+  inverseCategoryAliases?: ReadonlyMap<string, readonly string[]>
 ): string[] {
   const out = new Set<string>();
   // Word-boundary tokens from the product's IDENTITY (name + manufacturer +
@@ -86,6 +93,19 @@ export function expandSearchTerms(
     if (words.has(full)) out.add(short);
   }
   for (const v of brandVariants(name)) out.add(v);
+
+  // Emit every known alias of each canonical category as a search term.
+  // Categories at this point are the post-normalized canonical form (e.g.
+  // YAML "saturator" was already mapped to "saturation" before getting
+  // here), so we just look up the inverse to recover the alias forms.
+  if (inverseCategoryAliases) {
+    for (const category of categories) {
+      const aliases = inverseCategoryAliases.get(category.toLowerCase());
+      if (aliases) {
+        for (const alias of aliases) out.add(alias);
+      }
+    }
+  }
 
   // Don't re-insert anything the caller already has
   const existingLower = new Set(existingTerms.map((t) => t.toLowerCase()));

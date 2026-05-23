@@ -52,6 +52,23 @@ const categoryAliasesSchema = loadYamlFile<CategoryAliasesSchema>(
 );
 const CATEGORY_ALIASES = new Map<string, string>(Object.entries(categoryAliasesSchema.aliases));
 
+/**
+ * Inverse of CATEGORY_ALIASES — canonical → all known aliases. Passed to
+ * `expandSearchTerms` so a product categorized as "equalizer" gets every
+ * alias ("eq", "graphic-equalizer", "dynamic-eq", ...) added to its search
+ * terms automatically. Zero hand-curation: this gives the alias data
+ * authors already maintain a second life as a search-recall layer.
+ */
+const INVERSE_CATEGORY_ALIASES: ReadonlyMap<string, readonly string[]> = (() => {
+  const inverse = new Map<string, string[]>();
+  for (const [alias, canonical] of CATEGORY_ALIASES) {
+    const bucket = inverse.get(canonical);
+    if (bucket) bucket.push(alias);
+    else inverse.set(canonical, [alias]);
+  }
+  return inverse;
+})();
+
 // Load approved locales
 const localesSchema = loadYamlFile<LocalesSchema>(path.join(SCHEMA_DIR, "locales.yaml"));
 const APPROVED_LOCALES = new Set(localesSchema.locales.map((l) => l.code));
@@ -180,7 +197,13 @@ function buildDatabase(version: string): void {
     // Combine YAML-declared search terms with curated synonym expansion
     const mfrAllSearchTerms = [
       ...(data.searchTerms ?? []),
-      ...expandSearchTerms(data.name, data.companyName ?? null, [], data.searchTerms ?? []),
+      ...expandSearchTerms(
+        data.name,
+        data.companyName ?? null,
+        [],
+        data.searchTerms ?? [],
+        INVERSE_CATEGORY_ALIASES
+      ),
     ];
 
     // Insert FTS entry (searchTerms in dedicated column for higher BM25 weight)
@@ -364,7 +387,8 @@ function buildDatabase(version: string): void {
         data.name,
         manufacturer?.name ?? null,
         normalizedCategories,
-        data.searchTerms ?? []
+        data.searchTerms ?? [],
+        INVERSE_CATEGORY_ALIASES
       ),
     ];
 
@@ -632,7 +656,8 @@ function buildDatabase(version: string): void {
         data.name,
         manufacturer?.name ?? null,
         normalizedCategories,
-        data.searchTerms ?? []
+        data.searchTerms ?? [],
+        INVERSE_CATEGORY_ALIASES
       ),
     ];
 
@@ -909,7 +934,8 @@ function buildDatabase(version: string): void {
         data.name,
         manufacturer?.name ?? null,
         normalizedCategories,
-        data.searchTerms ?? []
+        data.searchTerms ?? [],
+        INVERSE_CATEGORY_ALIASES
       ),
     ];
 
@@ -1245,7 +1271,8 @@ function buildDatabase(version: string): void {
         data.name,
         manufacturer?.name ?? null,
         normalizedCategories,
-        data.searchTerms ?? []
+        data.searchTerms ?? [],
+        INVERSE_CATEGORY_ALIASES
       ),
     ];
 

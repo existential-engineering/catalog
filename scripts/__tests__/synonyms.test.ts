@@ -75,6 +75,25 @@ describe("expandSearchTerms", () => {
     expect(out).not.toContain("ableon");
   });
 
+  it("emits every alias of a canonical category when an inverse map is supplied", () => {
+    const inverse = new Map<string, readonly string[]>([
+      ["equalizer", ["eq", "graphic-equalizer", "dynamic-eq"]],
+    ]);
+    const out = expandSearchTerms("Pro-Q", "FabFilter", ["equalizer"], [], inverse);
+    expect(out).toContain("graphic-equalizer");
+    expect(out).toContain("dynamic-eq");
+    // "eq" comes via SHORT_FORMS too — present either way
+    expect(out).toContain("eq");
+  });
+
+  it("does not emit category aliases when no inverse map is supplied (backwards compat)", () => {
+    const out = expandSearchTerms("Pro-Q", "FabFilter", ["equalizer"], []);
+    // Aliases like "graphic-equalizer" only come from the inverse map
+    expect(out).not.toContain("graphic-equalizer");
+    // SHORT_FORMS still fire — "eq" comes from the "equalizer" canonical
+    expect(out).toContain("eq");
+  });
+
   it("pins the expansion shape for a representative product", () => {
     expect(
       expandSearchTerms("OP-1", "Teenage Engineering", ["synthesizer"], []).sort()
