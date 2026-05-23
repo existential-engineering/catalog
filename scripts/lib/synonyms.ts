@@ -7,36 +7,14 @@
  * but populating common synonyms lets the strict FTS path return hits
  * directly, avoiding the slower fuzzy fallback.
  *
- * Pure module — no I/O. Add to the lists below and the snapshot test
- * will pin the output for visibility.
+ * Pure module — no I/O. Data lives in the sibling
+ * `synonyms-misspellings.ts` and `synonyms-abbreviations.ts` files so
+ * additions are reviewed as pure data changes; the snapshot test pins
+ * representative output for visibility.
  */
 
-/** Curated common misspellings: [typo, canonical]. */
-const MISSPELLINGS: ReadonlyArray<readonly [string, string]> = [
-  ["srum", "serum"],
-  ["serm", "serum"],
-  ["masive", "massive"],
-  ["maasive", "massive"],
-  ["piments", "pigments"],
-  ["pigmnts", "pigments"],
-  ["oporator", "operator"],
-  ["compresor", "compressor"],
-  ["reveerb", "reverb"],
-  ["abelton", "ableton"],
-  ["ableon", "ableton"],
-  ["kontact", "kontakt"],
-];
-
-/** Common abbreviations: [full, short]. */
-const SHORT_FORMS: ReadonlyArray<readonly [string, string]> = [
-  ["compressor", "comp"],
-  ["reverb", "verb"],
-  ["equalizer", "eq"],
-  ["equaliser", "eq"],
-  ["delay", "dly"],
-  ["synthesizer", "synth"],
-  ["synthesiser", "synth"],
-];
+import { SHORT_FORMS } from "./synonyms-abbreviations.js";
+import { MISSPELLINGS } from "./synonyms-misspellings.js";
 
 /**
  * Generate hyphen/space/digit-boundary variants of a product or brand name.
