@@ -63,6 +63,7 @@ function normalizeCategory(category: string): string {
 
 // Load IO position and connection aliases for normalization
 import { loadSchemaContext } from "./lib/schema-loader.js";
+import { expandSearchTerms } from "./lib/synonyms.js";
 
 const _schemaContext = loadSchemaContext();
 const IO_POSITION_ALIASES = new Map<string, string>(
@@ -176,21 +177,24 @@ function buildDatabase(version: string): void {
       markdownToHtml(data.description)
     );
 
+    // Combine YAML-declared search terms with curated synonym expansion
+    const mfrAllSearchTerms = [
+      ...(data.searchTerms ?? []),
+      ...expandSearchTerms(data.name, data.companyName ?? null, [], data.searchTerms ?? []),
+    ];
+
     // Insert FTS entry (searchTerms in dedicated column for higher BM25 weight)
-    const mfrFtsSearchTerms = (data.searchTerms ?? []).join(" ");
     insertManufacturerFts.run(
       id,
       data.name,
       data.companyName ?? "",
       data.description ?? "",
-      mfrFtsSearchTerms
+      mfrAllSearchTerms.join(" ")
     );
 
     // Insert search terms
-    if (data.searchTerms) {
-      for (const term of data.searchTerms) {
-        insertManufacturerSearchTerm.run(id, term);
-      }
+    for (const term of mfrAllSearchTerms) {
+      insertManufacturerSearchTerm.run(id, term);
     }
 
     // Insert translations
@@ -353,11 +357,20 @@ function buildDatabase(version: string): void {
       insertCategory.run(id, category);
     }
 
+    // Combine YAML-declared search terms with curated synonym expansion
+    const softwareAllSearchTerms = [
+      ...(data.searchTerms ?? []),
+      ...expandSearchTerms(
+        data.name,
+        manufacturer?.name ?? null,
+        normalizedCategories,
+        data.searchTerms ?? []
+      ),
+    ];
+
     // Insert search terms
-    if (data.searchTerms) {
-      for (const term of data.searchTerms) {
-        insertSearchTerm.run(id, term);
-      }
+    for (const term of softwareAllSearchTerms) {
+      insertSearchTerm.run(id, term);
     }
 
     // Insert formats
@@ -437,14 +450,13 @@ function buildDatabase(version: string): void {
     }
 
     // Insert FTS entry (searchTerms in dedicated column for higher BM25 weight)
-    const softwareFtsSearchTerms = (data.searchTerms ?? []).join(" ");
     insertSoftwareFts.run(
       id,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
       data.description ?? "",
-      softwareFtsSearchTerms
+      softwareAllSearchTerms.join(" ")
     );
 
     // Insert translations
@@ -613,11 +625,20 @@ function buildDatabase(version: string): void {
       insertContentCategory.run(id, category);
     }
 
+    // Combine YAML-declared search terms with curated synonym expansion
+    const contentAllSearchTerms = [
+      ...(data.searchTerms ?? []),
+      ...expandSearchTerms(
+        data.name,
+        manufacturer?.name ?? null,
+        normalizedCategories,
+        data.searchTerms ?? []
+      ),
+    ];
+
     // Insert search terms
-    if (data.searchTerms) {
-      for (const term of data.searchTerms) {
-        insertContentSearchTerm.run(id, term);
-      }
+    for (const term of contentAllSearchTerms) {
+      insertContentSearchTerm.run(id, term);
     }
 
     // Insert compatibility references (resolve slugs to software or hardware IDs)
@@ -690,14 +711,13 @@ function buildDatabase(version: string): void {
     }
 
     // Insert FTS entry (searchTerms in dedicated column for higher BM25 weight)
-    const contentFtsSearchTerms = (data.searchTerms ?? []).join(" ");
     insertContentFts.run(
       id,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
       data.description ?? "",
-      contentFtsSearchTerms
+      contentAllSearchTerms.join(" ")
     );
 
     // Insert translations
@@ -882,11 +902,20 @@ function buildDatabase(version: string): void {
       insertHardwareCategory.run(id, category);
     }
 
+    // Combine YAML-declared search terms with curated synonym expansion
+    const hardwareAllSearchTerms = [
+      ...(data.searchTerms ?? []),
+      ...expandSearchTerms(
+        data.name,
+        manufacturer?.name ?? null,
+        normalizedCategories,
+        data.searchTerms ?? []
+      ),
+    ];
+
     // Insert search terms
-    if (data.searchTerms) {
-      for (const term of data.searchTerms) {
-        insertHardwareSearchTerm.run(id, term);
-      }
+    for (const term of hardwareAllSearchTerms) {
+      insertHardwareSearchTerm.run(id, term);
     }
 
     // Insert I/O ports (with normalization)
@@ -1017,14 +1046,13 @@ function buildDatabase(version: string): void {
     }
 
     // Insert FTS entry (searchTerms in dedicated column for higher BM25 weight)
-    const hardwareFtsSearchTerms = (data.searchTerms ?? []).join(" ");
     insertHardwareFts.run(
       id,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
       data.description ?? "",
-      hardwareFtsSearchTerms
+      hardwareAllSearchTerms.join(" ")
     );
 
     // Insert translations
@@ -1210,11 +1238,20 @@ function buildDatabase(version: string): void {
       insertAccessoryCategory.run(id, category);
     }
 
+    // Combine YAML-declared search terms with curated synonym expansion
+    const accessoryAllSearchTerms = [
+      ...(data.searchTerms ?? []),
+      ...expandSearchTerms(
+        data.name,
+        manufacturer?.name ?? null,
+        normalizedCategories,
+        data.searchTerms ?? []
+      ),
+    ];
+
     // Insert search terms
-    if (data.searchTerms) {
-      for (const term of data.searchTerms) {
-        insertAccessorySearchTerm.run(id, term);
-      }
+    for (const term of accessoryAllSearchTerms) {
+      insertAccessorySearchTerm.run(id, term);
     }
 
     // Insert versions
@@ -1267,14 +1304,13 @@ function buildDatabase(version: string): void {
     }
 
     // Insert FTS entry (searchTerms in dedicated column for higher BM25 weight)
-    const accessoryFtsSearchTerms = (data.searchTerms ?? []).join(" ");
     insertAccessoryFts.run(
       id,
       data.name,
       manufacturer?.name ?? "",
       normalizedCategories.join(" "),
       data.description ?? "",
-      accessoryFtsSearchTerms
+      accessoryAllSearchTerms.join(" ")
     );
 
     // Insert translations

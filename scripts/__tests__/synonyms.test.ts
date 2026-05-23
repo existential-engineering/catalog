@@ -1,0 +1,76 @@
+import { describe, expect, it } from "vitest";
+import { brandVariants, expandSearchTerms } from "../lib/synonyms.js";
+
+describe("brandVariants", () => {
+  it("returns no variants for a single all-lower token", () => {
+    expect(brandVariants("ableton")).toEqual([]);
+  });
+
+  it("strips and replaces hyphens", () => {
+    expect(brandVariants("MS-20")).toContain("ms20");
+    expect(brandVariants("MS-20")).toContain("ms 20");
+  });
+
+  it("strips internal spaces", () => {
+    expect(brandVariants("OP 1")).toContain("op1");
+  });
+
+  it("inserts separators at letter→digit transitions", () => {
+    const v = brandVariants("op1");
+    expect(v).toContain("op 1");
+    expect(v).toContain("op-1");
+  });
+
+  it("ignores leading/trailing whitespace", () => {
+    expect(brandVariants("  ")).toEqual([]);
+  });
+});
+
+describe("expandSearchTerms", () => {
+  it("adds curated misspellings when canonical appears in haystack", () => {
+    const out = expandSearchTerms("Xfer Serum", "Xfer Records", [], []);
+    expect(out).toContain("srum");
+    expect(out).toContain("serm");
+  });
+
+  it("adds short forms for verbose category names", () => {
+    const out = expandSearchTerms("Pro-C 2", "FabFilter", ["compressor"], []);
+    expect(out).toContain("comp");
+  });
+
+  it("matches canonical from manufacturer name", () => {
+    const out = expandSearchTerms("Live 12", "Ableton", [], []);
+    expect(out).toContain("abelton");
+  });
+
+  it("adds brand variants from the product name", () => {
+    const out = expandSearchTerms("MS-20", "Korg", [], []);
+    expect(out).toContain("ms20");
+  });
+
+  it("skips terms already present in existingTerms", () => {
+    const out = expandSearchTerms("Xfer Serum", "Xfer Records", [], ["srum"]);
+    expect(out).not.toContain("srum");
+  });
+
+  it("returns only brand variants when no misspellings or short forms match", () => {
+    // "Unique Widget" → "uniquewidget" (space-stripped) is a legitimate variant.
+    expect(expandSearchTerms("Unique Widget", "Acme", [], [])).toEqual(["uniquewidget"]);
+  });
+
+  it("returns an empty array when name is a plain single token", () => {
+    expect(expandSearchTerms("widget", "Acme", [], [])).toEqual([]);
+  });
+
+  it("pins the expansion shape for a representative product", () => {
+    expect(
+      expandSearchTerms("OP-1", "Teenage Engineering", ["synthesizer"], []).sort()
+    ).toMatchInlineSnapshot(`
+      [
+        "op 1",
+        "op1",
+        "synth",
+      ]
+    `);
+  });
+});
