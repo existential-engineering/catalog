@@ -1,0 +1,104 @@
+id: _qgw6FzNXCC7hfQ-Grcj_
+name: 10MX
+manufacturer: antelope-audio
+primaryCategory: rack-mount
+categories:
+  - outboard
+url: "https://en.antelopeaudio.com/products/10mx/"
+prices:
+  - amount: 7395
+    currency: USD
+description: "10MX is the newest and the premier member of the Isochrone family.
+  It features technologies from two of Antelope's legendary products - 10M &
+  Trinity"
+details: |-
+  10MX is the newest and the premier member of the Isochrone family. It features technologies from two of Antelope's legendary products. The atomic precision of the 10M and the sophisticated jitter-management algorithm of Trinity are combined in a futuristic, 1U rack space enclosure, providing the world's most stable and musical clocking.
+
+  10MX is a fusion of proven technologies and contemporary industrial design, where no compromises are allowed and both build-quality, and performance-excellence are top priority. The new Rubidium Atomic Clock is an epiphany of more than 20 years' expertise in the digital audio world, making vividly real the clarity, depth, width and 3-dimensionality distinctive of the analog sound.
+
+  10MX is perfectly suited for recording, mixing and mastering environments. Its form factor, occupying only 1U of rack space, makes it ideal for live sound application where rack slots are precious commodity. The multiple atomic outputs allow up to 10 devices to be clocked simultaneously over BNC outputs of 10MHz. The unit can also be used as a master clock with 4 outputs, supporting the outstanding sampling rate of up to 768 kHz via BNC. Two more clocking outputs are available via AES and two via S/PDIF.
+
+  The new Rubidium Atomic Clock is equally easy manageable either from the front panel or the intuitive software control panel available for OS X and Windows, connecting via a USB port.
+specs: |-
+  - Atomic Reference: Rubidium Ultra-Stable Resonance-Controlled Master Oscillator
+  - Reference Frequency: 10 MHz
+  - Frequency Accuracy: Better than +/-5E-11 @ 25 C (+/-0.05 PPB)
+  - Clock Stability: <+/-0.02 PPM, oven controlled at 64.5 C
+  - Sample Rates: 32, 44.1, 48, 88.2, 96, 176.4, 192, 352.8, 384, 768 kHz
+  - Word Clock Input: 1 x BNC, 75 Ohms, 3Vpp, 44.1-384 kHz
+  - Word Clock Outputs: 4 x BNC, 75 Ohms, 3Vpp, 44.1-768 kHz square wave
+  - Word Clock Specs: TTL Level, 75 Ohm Output Impedance
+  - Atomic Clock Outputs: 10 x BNC Sinusoidal, 10 MHz, 75 Ohm, 1Vp typical (unloaded)
+  - USB: USB 2.0 Full-Speed, Type B (control only)
+  - Warm-Up Time: 8-10 minutes (depends on ambient temperature)
+  - Operating Temperature: 0-50 C, 32-122 F
+  - Humidity: 30-80% RH non-condensing
+  - Power Supply: AC
+  - Power Consumption: 15 W
+  - Weight: 2.8 kg / 6.17 lb
+  - 1U rack enclosure
+io:
+  - name: Word Clock In
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Out
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 4
+    position: Right
+  - name: AES/EBU Out
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 2
+    position: Right
+  - name: S/PDIF Out
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 2
+    position: Right
+  - name: Atomic Clock Out (10 MHz) Bank A
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 5
+    position: Right
+  - name: Atomic Clock Out (10 MHz) Bank B
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 5
+    position: Right
+  - name: USB Control
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: Get Started
+    url: "https://en.antelopeaudio.com/10mx-start/"
+videos:
+  - videoId: f3ru2VkCAGc
+    provider: youtube
+    title: "10M & Trinity's legacy"

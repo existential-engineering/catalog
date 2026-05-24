@@ -1,0 +1,154 @@
+id: ZE778rPob59N4sOaWv3KJ
+name: Amari
+manufacturer: antelope-audio
+primaryCategory: audio-interface
+categories:
+  - mastering
+  - headphone-amp
+  - outboard
+url: "https://en.antelopeaudio.com/products/amari/"
+prices:
+  - amount: 3395
+    currency: USD
+description: "High-end sound quality for critical listening - AMÁRI is a
+  reference-grade AD/DA converter with 24-bit, 384 kHz conversion and signature
+  Antelope clocking."
+specs: |-
+  - AD Conversion: 2x AK5778 chips, 24-bit/384 kHz, 128 dB dynamic range, 124 dB S/N, 112 dB S/(N+D)
+  - DA Conversion: 8x CS43198 chips (4 per channel), 24-bit/384 kHz PCM, 138 dB dynamic range
+  - Headphone DACs: Dual AK5578 architecture (one per channel), 128 dB dynamic range
+  - Sample rates: 32, 44.1, 48, 88.2, 96, 176.4, 192, 352.8, 384 kHz
+  - Clocking: 4th-generation 64-bit acoustically-focused oscillator technology
+  - Headphone output impedance: adjustable -4.6 to 85.3 Ohm in 17 discrete steps
+  - Headphone max output power: 1.4 W
+  - Headphone outputs: 2x Combo XLR, max 20 dBu, individual volume controls, configurable for balanced pairs
+  - Balanced XLR analog input max level: 24 dBu
+  - Unbalanced RCA analog input max level: 8.2 dBu / 6 dBv
+  - Balanced XLR analog output max level: 24 dBu
+  - TRS analog output max level: 18 dBu
+  - USB: 3.1 Gen 1 Type-B, up to 384 kHz, bi-directional
+  - AES/EBU and S/PDIF: up to 192 kHz
+  - TOSLINK: up to 96 kHz
+  - Power: DC power inlet with wall-mounted power supply
+  - Note: DSD over PCM playback currently unsupported
+io:
+  - name: Analog In L/R (Balanced XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 2
+    position: Right
+  - name: Analog In L/R (Unbalanced RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 2
+    position: Right
+  - name: Analog Out L/R (Balanced XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 2
+    position: Right
+  - name: Analog Out L/R (Balanced TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Right
+  - name: Headphone Out 1 (Combo XLR/TRS)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Headphone Out 2 (Combo XLR/TRS)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: AES/EBU In
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Out
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF In
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Out
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: TOSLINK In
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: TOSLINK Out
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: Word Clock In
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Atomic Clock In (10 MHz)
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: USB 3.1 Gen 1
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - type: support
+    title: Amari Download Section
+    url: "https://support.antelopeaudio.com/en/support/solutions/articles/420000572\
+      01-amari-download-section"
+  - type: review
+    title: Amari Reviews
+    url: "https://en.antelopeaudio.com/products/amari-reviews/"
