@@ -1,5 +1,58 @@
 # catalog
 
+## 3.17.0
+
+### Minor Changes
+
+- e99438f: Import ADAM Audio (23 hardware/accessory entries).
+
+  Adds the current ADAM Audio studio monitor lineup: A Series
+  (A4V, A44H, A7V, A77H, A8H), S Series (S2V, S3H, S3V, S5H, S5V),
+  T Series (T5V, T7V, T8V), D3V desktop monitor, H200 studio
+  headphones, subwoofers (Sub8, Sub10 MK2, Sub12, Sub15, Sub2100,
+  T10S), plus two accessories (A Series Mounting Plate, D3V Travel
+  Bag).
+
+- 88c5379: Import Ampeg (20 hardware/software entries).
+
+  Adds the current Ampeg lineup: Heritage series (50th
+  Anniversary SVT head, HSVT-CL, HSVT-810E, HSVT-810AV,
+  HSVT-410HLF), Classic heads (SVT-CL, V-4B), Pro Series
+  heads (SVT-7PRO, SVT-4PRO, SVT-3PRO), Portaflex heads
+  (PF-50T, PF-20T), Rocket Bass combos (RB-108 through
+  RB-210), the SGT-DI and SCR-DI bass pedals, and the
+  SVT Suite plugin.
+
+- 8ecd0db: Import Antelope Audio (144 hardware/software entries).
+
+  Adds Antelope Audio's full product line: audio interfaces (Discrete 8
+  Oryx, Orion Studio/32 Gen 4, Galaxy 32/64, Zen Quadro/Tour), modeling
+  microphones (Edge family, Axino), master clocks (Isochrone Trinity,
+  OCX-HD, 10MX), monitor controllers (Satori), mastering converter
+  (Amari), hi-fi gear (Zeo), and 120 Synergy Core FX plugins/bundles
+  (BAE/NEU/VEQ/Gyratec emulations, FX Bundles, Synergy Core Native).
+
+- 47d2ae2: Import Audeze (77 hardware/software/accessory entries).
+
+  Adds the full Audeze product line: 41 hardware entries (LCD planar
+  magnetic headphones, MM-series studio reference headphones, Maxwell
+  and Mobius wireless gaming headsets, iSine and CRBN in-ear monitors,
+  Deckard and The King MkII headphone amplifiers, the Filter speaker-
+  phone), 3 software entries (Reveal+ HRTF plugin, Audeze HQ for Dolby
+  Atmos Renderer, ASIO Driver for Mobius), and 33 first-party
+  accessories (replacement cables, ear pads, headbands, travel cases,
+  USB dongles).
+
+### Patch Changes
+
+- b6d26b0: Dedupe redundant category aliases on Antelope Audio software entries.
+
+  62 Antelope Audio entries from the recent import listed both the
+  canonical category and its alias in the same `categories:` array
+  (`effect` + `fx`, or `equalizer` + `eq`), producing "Duplicate category
+  ... after normalization" warnings at build time. Drop the redundant
+  alias rows; the canonical form remains.
+
 ## 3.16.0
 
 ### Minor Changes
