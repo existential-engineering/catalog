@@ -1,0 +1,86 @@
+id: 0SFcfHOxXxjcYQ6SFdAct
+name: Sub15
+manufacturer: adam-audio
+primaryCategory: subwoofer
+url: https://www.adam-audio.com/en/subwoofers/sub15/
+description: The Sub15 combines excellent transient response capability with an
+  impressive low frequency performance and is designed for larger control rooms.
+details: |-
+  The Sub15 is an extremely powerful subwoofer capable of extending the frequency range of main and midfield monitors down to 20Hz. It combines excellent transient response capability with an impressive low frequency performance to enable a genuinely musical reproduction experience, and is designed for larger control rooms.
+
+  At the heart of the Sub15 is a sturdy 15-inch aluminum woofer driven by dual magnets and a 100mm (4-inch) voice coil. The driver is powered by a 1000W RMS PWM amplifier that delivers nearly 90% efficiency. A downward-firing bass port with rounded edges minimizes port noise even at high output levels.
+
+  The Sub15 is highly flexible when it comes to connectivity. Both XLR (balanced) and RCA (unbalanced) inputs are provided, along with corresponding XLR and RCA outputs for routing a high-pass filtered signal (at 85Hz) on to satellite monitors—making the Sub15 well suited for integration into surround setups, including Dolby configurations.
+
+  Front-panel controls include adjustable volume (-60dB to +6dB), a continuously variable crossover frequency (50–150Hz), and a phase reverse switch. Maximum output reaches 120dB SPL at one meter, with THD below 1% above 60Hz.
+specs:
+  - 'Driver: 15.5" aluminum cone'
+  - 'Voice Coil: 4" (100mm) diameter'
+  - "Amplifier: PWM, 1000W RMS / 1200W Music"
+  - "Frequency Response: 20Hz – 150Hz"
+  - "THD (>60Hz): ≤1%"
+  - "Max SPL at 1m (sine wave): ≥120dB"
+  - "Crossover Range: 50–150Hz"
+  - "Satellite High-Pass Filter: 85Hz"
+  - "Volume Range: -60dB to +6dB"
+  - "Phase Reverse Switch: 0° / 180°"
+  - "Input Impedance: 10 kOhm"
+  - "Inputs: XLR (balanced) and RCA (unbalanced)"
+  - "Outputs: XLR and RCA (high-pass filtered) for satellite monitors"
+  - "Bass Port: Downward-firing with rounded edges"
+  - 'Dimensions (H × W × D): 635 × 470 × 525 mm (25" × 18.5" × 20.5")'
+  - "Weight: 52 kg (114.6 lbs)"
+  - "Warranty: 5 years (2 years standard + 3 years optional with registration)"
+io:
+  - name: Analog XLR Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog RCA Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Satellite XLR Output (high-pass filtered)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Satellite RCA Output (high-pass filtered)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+releaseDate: 2016-11-01
+links:
+  - type: resource
+    title: Buy Sub15 Subwoofer
+    url: https://shop.adam-audio.com/int/subwoofer/sub15-subwoofer
+  - type: resource
+    title: Sub15 User Manual (English / German)
+    url: https://www.adam-audio.com/content/uploads/2018/03/adam-audio-sub15-subwoofer-user-manual-en-de.pdf
+  - type: resource
+    title: Sub15 User Manual (French)
+    url: https://www.adam-audio.com/content/uploads/2016/11/adam-audio-sub15-subwoofer-user-manual-french.pdf
+  - type: resource
+    title: Sub15 Product Sheet
+    url: https://www.adam-audio.com/content/uploads/2021/03/ADAM_Audio_SUB15_Product_Sheet.pdf
+  - type: resource
+    title: A77X / Sub15 Calibration Files
+    url: https://www.adam-audio.com/content/uploads/2020/12/adam-audio-a77x-sub15-subwoofer-calibration-files.zip
