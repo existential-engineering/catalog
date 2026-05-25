@@ -1,0 +1,94 @@
+id: aW1ZDyWKzAHfy9h6_y9LU
+name: dbx 676
+manufacturer: dbx
+primaryCategory: preamp
+categories:
+  - channel-strip
+url: https://dbxpro.com/en/products/676
+description: Single-channel Class-A tube microphone preamp channel strip
+  featuring high-voltage gain (250V DC), a compressor/limiter based on the dbx
+  162SL, and a 3-band semi-parametric EQ with VU metering.
+details: |-
+  The dbx 676 is a pristine high-voltage, Class-A tube preamp that brings together military-grade build quality, vintage-inspired controls, and professional-grade signal processing in a 2U rack format. Operating the 12AU7A tube at 250V DC plate voltage, it delivers classic tube warmth and character for studio vocal and instrument recording.
+
+  The mic preamp section provides up to +55dB of gain with a front-panel 1/4" instrument input for direct recording of guitars and basses at up to +40dB gain. A 500kΩ instrument input impedance preserves the natural tone of pickups. Features include +48V phantom power, a phase invert switch, and an 80Hz high-pass filter.
+
+  The built-in compressor/limiter draws on the legendary dbx 162SL design, offering threshold from –40 to +20dBu, ratio from 1:1 to ∞:1, OverEasy or hard knee selection, manual or auto attack/release, and the dbx PeakPlus limiter. A sidechain insert allows external dynamics control.
+
+  The 3-band semi-parametric EQ provides 100Hz low shelving, sweepable mid from 100Hz to 8kHz (Q: 0.9 or 2.9), and 10kHz high shelving, each with ±15dB of gain. A vintage-style VU meter with multiple reference points rounds out a full-featured channel strip.
+specs: |-
+  - Tube Type: 12AU7A / ECC82
+  - Plate Voltage: 250V DC
+  - Mic Gain Range: –∞ to +55dB
+  - Instrument Gain Range: –∞ to +40dB
+  - Mic Input Impedance: 1.9kΩ
+  - Instrument Input Impedance: 500kΩ
+  - Max Instrument Input: +21dBu unbalanced
+  - Mic EIN: >–123dBu (150Ω source, 22Hz–22kHz)
+  - CMRR: >85dB (20Hz–3kHz), >70dB (3kHz–20kHz)
+  - Mic Frequency Response: 20Hz–50kHz (+0/–1dB at 40dB gain)
+  - Instrument Frequency Response: 30Hz–70kHz (+0/–1dB at unity gain)
+  - Mic THD+Noise: 0.25% typical at 0dBu, 1kHz, 40dB gain
+  - EQ Low Band: 100Hz shelving, ±15dB
+  - EQ Mid Band: 100Hz–8kHz sweepable, Q: 0.9 or 2.9, ±15dB
+  - EQ High Band: 10kHz shelving, ±15dB
+  - High-Pass Filter: 80Hz, 12dB/octave
+  - Compressor Threshold: –40 to +20dBu
+  - Compressor Ratio: 1:1 to ∞:1
+  - Limiter Threshold: –4 to +22dBu (off)
+  - Power Requirements: 100–240VAC, 50/60Hz, 20W
+  - Dimensions: 3.5"H × 19"W × 8"D (2U)
+  - Weight: 8.1 lbs (3.7kg)
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Preamp Insert
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Sidechain Insert
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: 676 Owner's Manual (English)
+    url: https://dbxpro.com/en-US/product_documents/676-owners-manualpdf
+  - type: resource
+    title: 676 Quickstart Guide (English)
+    url: https://dbxpro.com/en-US/product_documents/676-quickstartpdf
+  - type: support
+    title: dbx Help Center
+    url: https://help.harmanpro.com/dbx

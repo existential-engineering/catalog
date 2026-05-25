@@ -1,0 +1,96 @@
+id: hFEYgczhMbyCgh_Fi-mIZ
+name: dbx 215 Dual Channel 15-Band Equalizer
+manufacturer: dbx
+primaryCategory: equalizer
+categories:
+  - rack-mount
+  - outboard
+url: https://dbxpro.com/en/products/215
+description: The dbx 215 is a discontinued dual-channel, 15-band graphic
+  equalizer designed for sound reinforcement, featuring 2/3-octave Constant Q
+  frequency bands, switchable ±6/±12dB boost/cut, and an internal toroidal
+  transformer for quiet operation. It provides balanced XLR and TRS connectivity
+  with 108dB of dynamic range.
+details: |-
+  The 215 represents a major step forward in entry-level graphic equalizers, delivering professional-grade performance for sound reinforcement environments. Each of the dual channels offers 15 bands of 2/3-octave Constant Q equalization using 20mm faders for tactile, intuitive control.
+
+  Switchable boost/cut ranges of ±6dB or ±12dB let the engineer choose between fine-tuning accuracy and broad tonal shaping. A front-panel bypass switch enables instant A/B comparison, while 4-segment LED level metering provides clear output monitoring. The ±12dB input gain control accommodates a wide range of source levels.
+
+  An internal toroidal transformer provides clean power and effective isolation from power-line interference. Balanced inputs and outputs via both XLR and 1/4" TRS connectors ensure compatibility with professional signal chains, with a 50Hz Bessel high-pass filter available to remove low-frequency rumble.
+specs: |-
+  - Input Connectors: 1/4" TRS (female), XLR (female, pin 2 hot)
+  - Input Impedance: Balanced: 40kΩ; Unbalanced: 20kΩ
+  - Max Input Level: >+21dBu
+  - Output Connectors: 1/4" TRS (male), XLR (male, pin 2 hot)
+  - Output Impedance: Balanced: 100Ω; Unbalanced: 50Ω
+  - Max Output Level: >+21dBu (2kΩ+); >+18dBm (600Ω)
+  - Bandwidth: 20Hz–20kHz, +0.5/–1dB
+  - Frequency Response: <10Hz to >50kHz, +0.5/–3dB
+  - Dynamic Range: 108dB
+  - Signal-to-Noise Ratio: 90dB
+  - THD+Noise: <0.004%
+  - EQ Bands: 15 bands per channel, 2/3-octave Constant Q
+  - Boost/Cut Range: Switchable ±6dB or ±12dB
+  - High-Pass Filter: 50Hz, 12dB/octave Bessel
+  - Power: 12W; 100/120/230VAC, 50/60Hz
+io:
+  - name: Input L
+    signalFlow: input
+    category: audio
+    type: analog-balanced
+    connection: xlr-female
+    maxConnections: 1
+    position: Right
+  - name: Input L
+    signalFlow: input
+    category: audio
+    type: analog-balanced
+    connection: trs-female
+    maxConnections: 1
+    position: Right
+  - name: Input R
+    signalFlow: input
+    category: audio
+    type: analog-balanced
+    connection: xlr-female
+    maxConnections: 1
+    position: Right
+  - name: Input R
+    signalFlow: input
+    category: audio
+    type: analog-balanced
+    connection: trs-female
+    maxConnections: 1
+    position: Right
+  - name: Output L
+    signalFlow: output
+    category: audio
+    type: analog-balanced
+    connection: xlr-male
+    maxConnections: 1
+    position: Right
+  - name: Output L
+    signalFlow: output
+    category: audio
+    type: analog-balanced
+    connection: trs-male
+    maxConnections: 1
+    position: Right
+  - name: Output R
+    signalFlow: output
+    category: audio
+    type: analog-balanced
+    connection: xlr-male
+    maxConnections: 1
+    position: Right
+  - name: Output R
+    signalFlow: output
+    category: audio
+    type: analog-balanced
+    connection: trs-male
+    maxConnections: 1
+    position: Right
+links:
+  - type: product
+    title: dbx 215 Product Page
+    url: https://dbxpro.com/en/products/215

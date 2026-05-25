@@ -1,0 +1,103 @@
+id: EPTuf8Nl9VHGac2-u-PJi
+name: dbx 166XL Compressor/Limiter/Gate
+manufacturer: dbx
+primaryCategory: compressor
+categories:
+  - limiter
+  - gate
+  - dynamics
+  - rack-mount
+  - outboard
+url: https://dbxpro.com/en/products/166xl
+description: The dbx 166XL is a professional dual-channel
+  compressor/limiter/gate combining OverEasy® or hard-knee compression, a
+  PeakStop™ limiter, and program-adaptive expander/gates in a 1U rackmount unit.
+  It provides stereo or dual-mono operation with True RMS Power Summing™ and
+  full sidechain functionality.
+details: |-
+  The 166XL addresses the common shortcoming of budget compressor/gates by delivering musical compression and natural-sounding gating without the typical processing artifacts. Advanced program-dependent timing algorithms ensure the expander/gate responds naturally to audio material.
+
+  Separate precision LED displays for gain reduction, compression threshold, and gate threshold give the engineer clear visual feedback during operation. Stereo coupling via True RMS Power Summing™ links both channels for cohesive stereo program control, while dual-mode allows independent processing of two separate signals.
+
+  Selectable OverEasy® or hard-knee compression algorithms accommodate different sonic preferences and program material, while the PeakStop™ limiter provides a hard ceiling to protect downstream equipment. Full sidechain functionality enables frequency-selective compression and ducking applications.
+specs: |-
+  - Input Impedance: >50kΩ balanced; >25kΩ unbalanced
+  - Max Input Level: +24dBu
+  - Output Impedance: 120Ω balanced; 60Ω unbalanced
+  - Max Output Level: +21dBu
+  - Frequency Response: 20Hz–20kHz, +0/–0.5dB
+  - Noise Floor: <–90dBu
+  - THD+Noise: <0.04% (up to 40dB compression)
+  - Compression Ratio: 1:1 to Infinity:1
+  - Gate Ratio: 10:1
+  - Dynamic Range: >115dB
+  - Dimensions: 1.75" H × 19" W × 6.75" D
+  - Weight: 5.05 lb
+io:
+  - name: Input L
+    signalFlow: input
+    category: audio
+    type: analog-balanced
+    connection: xlr-female
+    maxConnections: 1
+    position: Right
+  - name: Input L
+    signalFlow: input
+    category: audio
+    type: analog-balanced
+    connection: trs-female
+    maxConnections: 1
+    position: Right
+  - name: Input R
+    signalFlow: input
+    category: audio
+    type: analog-balanced
+    connection: xlr-female
+    maxConnections: 1
+    position: Right
+  - name: Input R
+    signalFlow: input
+    category: audio
+    type: analog-balanced
+    connection: trs-female
+    maxConnections: 1
+    position: Right
+  - name: Output L
+    signalFlow: output
+    category: audio
+    type: analog-balanced
+    connection: xlr-male
+    maxConnections: 1
+    position: Right
+  - name: Output L
+    signalFlow: output
+    category: audio
+    type: analog-balanced
+    connection: trs-male
+    maxConnections: 1
+    position: Right
+  - name: Output R
+    signalFlow: output
+    category: audio
+    type: analog-balanced
+    connection: xlr-male
+    maxConnections: 1
+    position: Right
+  - name: Output R
+    signalFlow: output
+    category: audio
+    type: analog-balanced
+    connection: trs-male
+    maxConnections: 1
+    position: Right
+  - name: Sidechain Insert
+    signalFlow: bidirectional
+    category: audio
+    type: insert
+    connection: trs-female
+    maxConnections: 2
+    position: Right
+links:
+  - type: product
+    title: dbx 166XL Product Page
+    url: https://dbxpro.com/en/products/166xl

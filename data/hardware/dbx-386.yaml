@@ -1,0 +1,144 @@
+id: gr4HMZ4Dlrw3FgpXamOKv
+name: dbx 386
+manufacturer: dbx
+primaryCategory: preamp
+categories:
+  - channel-strip
+url: https://dbxpro.com/en/products/386
+description: Dual-channel vacuum tube microphone preamplifier combining tube
+  warmth with dbx Type IV® A/D conversion. Features AES/EBU and S/PDIF digital
+  outputs, word clock sync I/O, 60dB of gain, +48V phantom power, 20dB pad, and
+  selectable sample rates up to 96kHz.
+details: |-
+  The dbx 386 is a dual-channel tube microphone preamplifier that combines the warmth of vacuum tube circuitry with the proprietary dbx Type IV™ conversion system. Each channel provides a high-quality mic preamp suitable for studio recording applications.
+
+  The mic preamp offers 30dB to 60dB of gain with a floating balanced XLR input and equivalent input noise of –120dBu. A 1/4" instrument/line jack provides unbalanced input with –15dB to +15dB gain adjustment. Each channel includes a 20dB pad, +48V phantom power switch, phase reverse, and a 75Hz 12dB/octave high-cut filter.
+
+  Analog outputs are provided via XLR (balanced) and 1/4" TRS. Digital outputs include XLR for AES/EBU (110Ω) and RCA for S/PDIF (75Ω), supporting sample rates of 44.1, 48, 88.2, and 96kHz with 24-, 20-, and 16-bit wordlength selection. Dither types (TPDF, SNR2) and noise shaping options are selectable. Word clock sync I/O via BNC connectors allows external synchronization.
+
+  Segment LED metering on both analog and digital domains provides level monitoring. A separate output gain control (±15dB) adjusts the overall output level independently.
+specs: |-
+  - Mic Input Connector: Female XLR Pin 2 Hot; electronically balanced/unbalanced
+  - Mic Input Impedance: 330Ω
+  - Mic Max Input Level: –9dBu or +11dBu with 20dB pad
+  - CMRR: >40dB (typically 55dB)
+  - Equivalent Input Noise (EIN): Typically –120dBu (150Ω source, 20Hz–20kHz)
+  - Instrument/Line Input: 1/4" jack (unbalanced)
+  - Instrument/Line Max Input: +21dBu balanced or unbalanced
+  - Gain Range: Line/Instrument: –15dB to +15dB; Mic: +30dB to +60dB
+  - Output Connectors: Male XLR Pin 2 Hot and TRS 1/4"
+  - Output Type: Servo-balanced/unbalanced
+  - Output Impedance: Balanced 120Ω, unbalanced 60Ω
+  - Max Output: >+21dBu, >+20dBm (600Ω load)
+  - Digital Output Connector: XLR (AES/EBU), RCA (S/PDIF)
+  - Digital Output Impedance: 110Ω (AES/EBU), 75Ω (S/PDIF)
+  - Word Sync I/O: BNC connectors
+  - Word Sync Input Impedance: 75Ω (terminated by internal jumper)
+  - Sample Rates: 96, 88.2, 48, or 44.1kHz
+  - Wordlength Options: 24, 20, or 16-bit
+  - Dither Types: TPDF, SNR2, or none
+  - Noise Shaping: Shape 1, Shape 2, or none
+  - Output Level Control: –15dB to +15dB
+  - Phantom Power: +48V
+  - Pad: 20dB pad switch
+  - Phase Invert: Reverses XLR pins 2 and 3
+  - Low Cut Filter: 75Hz, 12dB/octave high pass
+  - Frequency Response: <10Hz to 75kHz (analog)
+  - THD+Noise: 0.35% typical at +4dBu, 1kHz, 40dB gain
+  - Interchannel Crosstalk: Typically –80dB (20Hz–20kHz)
+  - A/D Converter: dbx Type IV® A/D Conversion System
+  - Digital Output Dynamic Range: 107dB typical (A-weighted, 22kHz bandwidth)
+  - Operating Voltage: 120VAC 60Hz / 100VAC 50/60Hz (US); 230VAC 50/60Hz (EU)
+  - Power Consumption: 35W
+  - Dimensions: 1.75"H × 7.75"W × 19"D (4.5cm × 19.7cm × 48.5cm)
+  - Weight: 6.89 lbs (3.17kg)
+  - Reference Level: 0dBu = –16dFS, 0.775Vrms
+io:
+  - name: Mic Input L
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr-female
+    maxConnections: 1
+    position: Right
+  - name: Mic Input R
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr-female
+    maxConnections: 1
+    position: Right
+  - name: Instrument/Line Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: ts
+    maxConnections: 1
+    position: Right
+  - name: Instrument/Line Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: ts
+    maxConnections: 1
+    position: Right
+  - name: Analog Output L
+    signalFlow: output
+    category: audio
+    type: balanced-line
+    connection: xlr-male
+    maxConnections: 1
+    position: Right
+  - name: Analog Output L
+    signalFlow: output
+    category: audio
+    type: balanced-line
+    connection: trs
+    maxConnections: 1
+    position: Right
+  - name: Analog Output R
+    signalFlow: output
+    category: audio
+    type: balanced-line
+    connection: xlr-male
+    maxConnections: 1
+    position: Right
+  - name: Analog Output R
+    signalFlow: output
+    category: audio
+    type: balanced-line
+    connection: trs
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Digital Output
+    signalFlow: output
+    category: digital
+    type: aes-ebu
+    connection: xlr-male
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Digital Output
+    signalFlow: output
+    category: digital
+    type: spdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Sync In
+    signalFlow: input
+    category: digital
+    type: word-clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Sync Out
+    signalFlow: output
+    category: digital
+    type: word-clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+links:
+  - type: support
+    title: dbx Help Center
+    url: https://help.harmanpro.com/dbx
