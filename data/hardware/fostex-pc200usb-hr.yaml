@@ -1,0 +1,55 @@
+id: 3dFBpt-j9GjVfg-UGPtzX
+name: PC200USB-HR
+manufacturer: fostex
+primaryCategory: headphone-amp
+categories:
+  - amplifier
+url: https://www.fostex.jp/en/products/pc200usb-hr/
+description: "A personal amplifier with a built-in USB-input DAC that supports high-resolution audio. Integrates four functions: USB DAC, speaker output, headphone output, and volume control. Enables compact high-resolution PC audio systems when paired with compatible speakers like the P802-S."
+details: |-
+  Features:
+  - Built-in high-resolution DAC
+  - 15W+15W digital amplifier
+  - Large stainless steel volume knob
+  - Black metal construction for durability
+  - Headphone and speaker outputs (audio routes to headphones when both connected)
+  - Includes USB cable (1m) and speaker cable (1.5m)
+  - Compatible with Windows 7+ and Mac OS X 10.6 to macOS 10.12 Sierra using standard USB audio drivers
+
+  Accessories:
+  - USB cable (1m)
+  - Speaker cable (1.5m)
+  - AC adapter
+io:
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - type: support
+    title: User Manual (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/2016/03/PC200USB-HR_rev.pdf

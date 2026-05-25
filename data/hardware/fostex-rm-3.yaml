@@ -1,0 +1,95 @@
+id: aHegJ_K4PZJwzZpy-PCkG
+name: RM-3
+manufacturer: fostex
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+  - rack-mount
+url: https://www.fostex.jp/en/products/rm-3/
+description: 1U size stereo monitor speakers with built-in amplifier. Supports balanced/unbalanced analog input and AES/EBU digital input. Power-saving design with digital amplifier and switching power supply. 26-dot LED level meter supports VU and PEAK display.
+details: |-
+  The Fostex RM-3 is a 1U rack-mountable stereo monitor speaker system with built-in Class-D amplification, designed for compact monitoring environments such as broadcast booths, edit suites, and equipment racks. The chassis fits an EIA standard rack (rack mounting angle is removable; JIS standard racks are not supported).
+
+  Two 110 x 40 mm magnetic-shielded elliptical cone full-range drivers are powered by a Class-D amplifier rated at 10 W + 10 W maximum output. A switching power supply and standby mode (consumption 0.5 W or less) provide a power-saving design.
+
+  Inputs include a combo XLR / 6.3 mm TS phone analog connector and an XLR AES/EBU digital input supporting sampling rates from 44.1 kHz to 96 kHz, with through-out provided for each input. Front-panel controls include mute and input source selection, plus MUSIC and VOICE modes that change the playback frequency range to suit the source material.
+
+  Monitor output can be selected from STEREO, L, R, or L+R. A 26-dot LED level meter (L/R) displays VU and PEAK with four brightness levels selectable via rear-panel DIP switch. A 6.3 mm stereo headphone jack (20 mW + 20 mW into 32 Ω) automatically mutes the speakers when plugged in. Standby engages automatically after 4 hours below a set input level, or by holding the mute button for ~5 seconds.
+specs: |-
+  - Form factor: 1U rack-mount (EIA standard)
+  - Speaker unit: 110 x 40 mm cone, antimagnetic (elliptical full-range, x2)
+  - Speaker impedance: 8 ohms
+  - Sound pressure level: 84 dB/W (1m)
+  - Frequency response: 200 Hz – 20 kHz
+  - Amplifier: Class-D, maximum output 10 W + 10 W
+  - Residual noise: -50 dBV or less (DIN AUDIO)
+  - Distortion: 0.1% or less
+  - Digital input: XLR-3-31, IEC60958 (AES/EBU), 44.1 kHz – 96 kHz sampling
+  - Analog input: XLR / 6.3mm TS phone combo, +4/0 dBu (XLR), -10/-14 dBV (TS phone), input impedance 10 kΩ min
+  - Headphone output: 6.3mm stereo phone, 20 mW + 20 mW (32Ω/1kHz), 16Ω min load
+  - MUSIC / VOICE playback mode selection
+  - Monitor select: STEREO / L / R / L+R
+  - 26-dot LED level meter (L/R), VU/PEAK, 4-step brightness via rear DIP switch
+  - Standby mode: ≤0.5 W (auto after 4 hours or ~5s mute press)
+  - Dimensions: 482 (W) x 44 (H) x 284 (D) mm (including projections)
+  - Weight: approx. 3.5 kg
+  - Power: AC 100-240 V (50/60 Hz)
+  - Power consumption: 10 W (≤0.5 W standby)
+  - Complies with European RoHS Directive
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 2
+    position: Bottom
+  - name: Analog Through-Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 2
+    position: Bottom
+  - name: Digital Input (AES/EBU)
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Digital Through-Out (AES/EBU)
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Headphones
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: Owner's Manual (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/RM-3_rev_2Manual.pdf
+  - type: support
+    title: Declaration of Conformity (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/Declaration-of-Conformity_RM-3_RM-3DT_20230330.pdf
+  - type: support
+    title: Dimension Drawing (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/RM-3_OUTSIDE.pdf
+  - type: support
+    title: Dimension Drawing DXF (ZIP)
+    url: https://www.fostex.jp/cms/wp-content/uploads/RM-3_OUTSIDE.dxf_.zip

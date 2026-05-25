@@ -1,0 +1,53 @@
+id: 1K9_ag7BqTD4Wuo24J73d
+name: AP20d
+manufacturer: fostex
+primaryCategory: power-amp
+categories:
+  - amplifier
+url: https://www.fostex.jp/en/products/ap20d/
+description: Compact digital power amplifier (108 mm wide) delivering 20 W + 20 W into 4 ohm (12 W + 12 W into 8 ohm) for driving passive speakers. Provides a front-panel stereo mini input and rear-panel RCA inputs, plus a post-volume RCA pre-output for system expansion (e.g., powered subwoofer), with a selectable auto-standby function.
+details: |-
+  Series: AP Series
+
+  Features:
+  - Digital power amplifier with carefully selected acoustic parts
+  - Two input options: front stereo mini-jack (priority) and rear RCA
+  - RCA pre-out (post-volume) for connecting a powered subwoofer or additional system
+  - Auto-standby function selectable between 5 and 30 minutes via dipswitch
+  - EU RoHS directive compliant
+io:
+  - name: Stereo Mini Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: RCA Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 2
+    position: Bottom
+  - name: Pre Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 2
+    position: Bottom
+  - name: Speaker Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 4
+    position: Bottom
+links:
+  - type: support
+    title: Owner's Manual (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/2017/03/AP20d_manual.pdf
+  - type: resource
+    title: Product Images (ZIP)
+    url: https://www.fostex.jp/cms/wp-content/uploads/AP20d.zip
