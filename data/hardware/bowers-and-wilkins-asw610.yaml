@@ -1,0 +1,58 @@
+id: acGtuv71PL5JdSXNGuMgH
+name: ASW610
+manufacturer: bowers-and-wilkins
+primaryCategory: subwoofer
+url: https://www.bowerswilkins.com/en-us/product/subwoofers/asw-series/asw610/150059.html
+prices:
+  - amount: 1000
+    currency: USD
+description: Compact active closed-box subwoofer featuring a long-throw 250mm
+  (10 in) paper/aramid fiber cone driver paired with an audiophile-standard
+  amplifier, designed for both hi-fi music and home theater applications.
+details: |-
+  The Bowers & Wilkins ASW610 is a compact active subwoofer in the ASW Series, intended to extend the low-frequency response of stereo hi-fi systems and home theater installations without dominating the room.
+
+  It is built around a single 250mm (10 in) long-throw paper/aramid fiber cone driver mounted in an active closed-box enclosure. The sealed design favours tight, controlled bass response, while the long-throw motor provides the linear excursion needed for low-frequency extension from a relatively small cabinet.
+
+  The onboard amplifier drives the driver to a frequency response of 27Hz - 40/140Hz (±3dB), with adjustable bass extension via a three-position switch (-6dB at 25/30Hz options) and a variable low-pass filter (active 4th-order) for crossover tuning. A phase switch, line/speaker input level controls, and an auto-sense on/standby circuit complete the user controls.
+
+  Connectivity covers both two-channel and AV use cases: stereo RCA phono line inputs, high-level speaker binding-post inputs, and a 3.5mm 12V trigger jack for integration with AV receivers and processors. Power consumption is rated at 40W operating and 0.5W in standby.
+
+  The cabinet measures 310 x 310 x 347mm (12.2 x 12.2 x 13.66 in) and weighs 12.5kg (27.6 lb), with finish options of Matte Black or Matte White paired with Black or Grey grilles.
+specs: |-
+  - Active closed-box subwoofer system
+  - Driver: 1x 250mm (10 in) long-throw paper/aramid fiber cone
+  - Frequency response: 27Hz - 40/140Hz (±3dB, adjustable)
+  - Frequency range: -6dB at 20Hz; -6dB at 25/30Hz (adjustable)
+  - Low-pass filter: Active 4th-order, variable cut-off frequency
+  - Controls: input level (line/speaker), phase switch, bass extension (3 positions), bass roll-off alignment, auto-sense on/standby
+  - Input impedance: 33kΩ
+  - Signal-to-noise ratio: >90dB
+  - Power consumption: 40W operating / 0.5W standby
+  - Inputs: RCA phono line input, speaker-level binding posts, 3.5mm 12V trigger
+  - Dimensions (H x W x D): 310 x 310 x 347mm (12.2 x 12.2 x 13.66 in); 322mm height with feet, 338mm with spikes; 375mm depth with grille
+  - Net weight: 12.5kg (27.6 lb)
+  - Cabinet finishes: Matte Black, Matte White
+  - Grille finishes: Black, Grey
+io:
+  - name: Line input (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 2
+    position: Bottom
+  - name: Speaker-level input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: 12V trigger
+    signalFlow: input
+    category: power
+    type: line
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
