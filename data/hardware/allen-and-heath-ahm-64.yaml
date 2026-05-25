@@ -10,35 +10,18 @@ url: https://www.allen-heath.com/hardware/ahm/ahm-64/
 description: 64x64 Audio Matrix Processor. The most powerful matrix processor in
   the AHM range, scaling to large campus installations with up to 64 zones, 96
   controllers and hundreds of system I/O.
-details:
-  - AHM-64 is the largest member of the AHM family of Audio Matrix Processors,
-    with a 64x64 processing matrix, 12x12 local analogue I/O, and a built-in
-    128x128 SLink port for audio expansion. It is designed for large-scale
-    corporate, retail, hospitality, and education installations, scaling to
-    whole-campus systems with up to 64 zones and 96 IP remote controllers.
-  - Sound management processing on every input and zone includes 8-band PEQ,
-    dynamics and delay, with eight Automatic Mic Mixers, Ambient Noise
-    Compensation (ANC), priority ducking, and speaker processing (crossover,
-    delay, limiter, PEQ, all-pass filters). EQ Ganging supports relative,
-    absolute and mirrored controls.
-  - An optional Processing Expansion Module adds up to 12 channels of feedback
-    suppression (FBS) or acoustic echo cancellation (AEC) for videoconferencing
-    and challenging room acoustics.
-  - The I/O Port accepts option cards including Dante 96kHz (AES67 / DDM ready),
-    MADI, Waves and SLink, providing up to 128x128 of audio networking. Combined
-    with the built-in SLink port, AHM-64 connects to the full range of Allen &
-    Heath Everything I/O expanders (DX, GX, DT168, DT164-W) and ME Personal
-    Mixing systems.
-  - Control options include IP1, IP6 and IP8 networkable wall-mount IP remote
-    controllers (up to 64 IP1, 64 IP6 or 16 IP8), CC-7 and CC-10 Custom Control
-    touch panels, Crestron / AMX / Extron drivers, and the Custom Control app
-    and editor for BYOD touchscreen control. A networkable GPIO interface
-    supplements the 2x2 local GPIO.
-  - Configuration is done via the free AHM System Manager software for
-    Mac/Windows. Additional features include 32 user profiles, integrated stereo
-    playback, an event scheduler, NTP support, automatic firmware matching
-    across connected IP remote controllers and DX expanders, and a 12V DC backup
-    power input (unique to AHM-64 within the family).
+details: |-
+  AHM-64 is the largest member of the AHM family of Audio Matrix Processors, with a 64x64 processing matrix, 12x12 local analogue I/O, and a built-in 128x128 SLink port for audio expansion. It is designed for large-scale corporate, retail, hospitality, and education installations, scaling to whole-campus systems with up to 64 zones and 96 IP remote controllers.
+
+  Sound management processing on every input and zone includes 8-band PEQ, dynamics and delay, with eight Automatic Mic Mixers, Ambient Noise Compensation (ANC), priority ducking, and speaker processing (crossover, delay, limiter, PEQ, all-pass filters). EQ Ganging supports relative, absolute and mirrored controls.
+
+  An optional Processing Expansion Module adds up to 12 channels of feedback suppression (FBS) or acoustic echo cancellation (AEC) for videoconferencing and challenging room acoustics.
+
+  The I/O Port accepts option cards including Dante 96kHz (AES67 / DDM ready), MADI, Waves and SLink, providing up to 128x128 of audio networking. Combined with the built-in SLink port, AHM-64 connects to the full range of Allen & Heath Everything I/O expanders (DX, GX, DT168, DT164-W) and ME Personal Mixing systems.
+
+  Control options include IP1, IP6 and IP8 networkable wall-mount IP remote controllers (up to 64 IP1, 64 IP6 or 16 IP8), CC-7 and CC-10 Custom Control touch panels, Crestron / AMX / Extron drivers, and the Custom Control app and editor for BYOD touchscreen control. A networkable GPIO interface supplements the 2x2 local GPIO.
+
+  Configuration is done via the free AHM System Manager software for Mac/Windows. Additional features include 32 user profiles, integrated stereo playback, an event scheduler, NTP support, automatic firmware matching across connected IP remote controllers and DX expanders, and a 12V DC backup power input (unique to AHM-64 within the family).
 specs: |-
   - 64x64 processing matrix
   - 12x12 local analogue I/O (mic/line inputs and relay-protected line outputs on Phoenix connectors)
@@ -67,7 +50,7 @@ specs: |-
   - 12V DC backup power input
   - 1U rack-mount chassis (rear rack ear kit available)
 io:
-  - name: Local Mic/Line Inputs (1-12)
+  - name: Local Mic/Line Inputs (1-8)
     signalFlow: input
     category: audio
     type: mic
@@ -81,7 +64,7 @@ io:
     connection: phoenix
     maxConnections: 4
     position: Bottom
-  - name: Local Line Outputs (1-12, relay protected)
+  - name: Local Line Outputs (1-8, relay protected)
     signalFlow: output
     category: audio
     type: line
@@ -113,7 +96,7 @@ io:
   - name: Network Port (TCP/IP control, IP remote controllers, 3rd party integration)
     signalFlow: bidirectional
     category: digital
-    type: midi
+    type: ethernet
     connection: ethernet
     maxConnections: 1
     position: Bottom
@@ -200,8 +183,8 @@ links:
     title: Custom Control App v1.5.3 (Mac)
     url: https://www.allen-heath.com/content/uploads/2026/02/Custom-Control-App-1.5.3.dmg
   - type: resource
-    title: MIDI Control v2.30 (Windows)
+    title: MIDI Control v2.3 (Windows)
     url: https://www.allen-heath.com/content/uploads/2025/11/Allen-and-Heath-MIDI-Control-2.3-Windows.zip
   - type: resource
-    title: MIDI Control v2.30 (Mac)
+    title: MIDI Control v2.3 (Mac)
     url: https://www.allen-heath.com/content/uploads/2025/11/Allen-and-Heath-MIDI-Control-2.3-Mac.zip

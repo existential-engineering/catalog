@@ -10,31 +10,20 @@ url: https://www.allen-heath.com/hardware/dlive-series/dlive-surfaces/
 description: A dLive Surface is the most popular way to control a dLive MixRack.
   With seven models available, from the airline-friendly CTi1500 to the 36-fader
   S7000, there's a Surface for every application.
-details:
-  - Family of seven control surfaces for the dLive digital mixing system, split
-    between flagship S Class and compact C Class lines.
-  - 'S Class models: S7000 (36 faders, dual 12" touchscreens), S5000 (28 faders,
-    dual 12" touchscreens), S3000 (20 faders, single 12" touchscreen). All S
-    Class surfaces have 26 assignable SoftKeys, 6 assignable rotaries, dedicated
-    preamp/filter controls, and a hot-swappable PSU with dual-redundant option.'
-  - 'C Class models: C3500 (24 faders, dual 12" touchscreens), C2500 (20 faders,
-    single 12" touchscreen), C1500 (12 faders, single 12" touchscreen, 19" rack
-    mountable). All C Class surfaces have 19 assignable SoftKeys, 6 assignable
-    rotaries, and an integrated PSU.'
-  - 'CTi1500: re-engineered compact-touring variant of the C1500 with Titanium
-    side panels and lightweight alloy metalwork (11.5kg / 25.4lbs); 12"
-    touchscreen, 12 faders, 19 assignable SoftKeys. Can fly under 23kg / 50lbs
-    in a custom flight case with an I/O card and dust cover.'
-  - "Fully customisable layout: every input or mix can be assigned to any fader
-    bank/layer; virtual scribble strips with names and colour coding; 3 pages of
-    6 assignable rotaries per screen; bespoke 'widget' areas on touchscreens for
-    scenes, meters, RTA, FX and other custom controls."
-  - "Multi-Surface mode: connect up to 4 Surfaces to a single DM MixRack, or 2
-    Surfaces to a single CDM MixRack. Any combination of C Class and S Class
-    Surfaces can be used together for applications including parallel mixing,
-    sub-mixing, and FOH/Monitor configurations."
-  - Surfaces are the controllers for a dLive MixRack and require a separate
-    MixRack (not included) to form a complete mixing system.
+details: |-
+  Family of seven control surfaces for the dLive digital mixing system, split between flagship S Class and compact C Class lines.
+
+  S Class models: S7000 (36 faders, dual 12" touchscreens), S5000 (28 faders, dual 12" touchscreens), S3000 (20 faders, single 12" touchscreen). All S Class surfaces have 26 assignable SoftKeys, 6 assignable rotaries, dedicated preamp/filter controls, and a hot-swappable PSU with dual-redundant option.
+
+  C Class models: C3500 (24 faders, dual 12" touchscreens), C2500 (20 faders, single 12" touchscreen), C1500 (12 faders, single 12" touchscreen, 19" rack mountable). All C Class surfaces have 19 assignable SoftKeys, 6 assignable rotaries, and an integrated PSU.
+
+  CTi1500: re-engineered compact-touring variant of the C1500 with Titanium side panels and lightweight alloy metalwork (11.5kg / 25.4lbs); 12" touchscreen, 12 faders, 19 assignable SoftKeys. Can fly under 23kg / 50lbs in a custom flight case with an I/O card and dust cover.
+
+  Fully customisable layout: every input or mix can be assigned to any fader bank/layer; virtual scribble strips with names and colour coding; 3 pages of 6 assignable rotaries per screen; bespoke 'widget' areas on touchscreens for scenes, meters, RTA, FX and other custom controls.
+
+  Multi-Surface mode: connect up to 4 Surfaces to a single DM MixRack, or 2 Surfaces to a single CDM MixRack. Any combination of C Class and S Class Surfaces can be used together for applications including parallel mixing, sub-mixing, and FOH/Monitor configurations.
+
+  Surfaces are the controllers for a dLive MixRack and require a separate MixRack (not included) to form a complete mixing system.
 specs: |-
   - Models: S7000, S5000, S3000, C3500, C2500, C1500, CTi1500
   - S7000: 36 faders, 2x 12" touchscreens, 26 assignable SoftKeys, 6 assignable rotaries
@@ -90,7 +79,7 @@ io:
   - name: Network Port (S Class)
     signalFlow: bidirectional
     category: digital
-    type: midi
+    type: ethernet
     connection: ethernet
     maxConnections: 2
     position: Left
@@ -131,14 +120,14 @@ io:
     position: Left
   - name: Digital Stereo AES3 Inputs (S Class)
     signalFlow: input
-    category: audio
+    category: digital
     type: aes3
     connection: xlr
     maxConnections: 2
     position: Left
   - name: Digital Stereo AES3 Outputs (S Class)
     signalFlow: output
-    category: audio
+    category: digital
     type: aes3
     connection: xlr
     maxConnections: 3
@@ -167,7 +156,7 @@ io:
   - name: Network Port (C Class)
     signalFlow: bidirectional
     category: digital
-    type: midi
+    type: ethernet
     connection: ethernet
     maxConnections: 2
     position: Left
@@ -208,14 +197,14 @@ io:
     position: Left
   - name: Digital Stereo AES3 Input (C Class)
     signalFlow: input
-    category: audio
+    category: digital
     type: aes3
     connection: xlr
     maxConnections: 1
     position: Left
   - name: Digital Stereo AES3 Output (C Class)
     signalFlow: output
-    category: audio
+    category: digital
     type: aes3
     connection: xlr
     maxConnections: 1

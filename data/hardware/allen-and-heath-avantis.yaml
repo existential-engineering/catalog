@@ -8,43 +8,18 @@ categories:
 url: https://www.allen-heath.com/hardware/avantis/
 description: A 64-channel mixer, expandable to 96 channels. Features the XCVI
   FPGA engine, ultra-low 0.7ms latency, and dLive-class processing.
-details:
-  - Avantis is a 64 channel / 42 configurable bus mixer platform, expandable to
-    96 channel / 56 configurable bus, featuring the 96kHz XCVI FPGA engine with
-    class-leading 0.7ms latency plus add-on processing and effects from the
-    flagship dLive mixing system.
-  - The console features two 15.6" Full HD capacitive touchscreens, 24 faders
-    across 6 layers (144 strip assignments), 24 assignable SoftKeys, and the
-    Continuity UI which seamlessly connects the physical controls and
-    touchscreens for fast, intuitive workflows. Each screen features a Soft
-    Rotary tab on the right-hand side, giving instant access to assignable
-    parameters like aux sends, EQ, compressor and FX.
-  - Avantis V2.0 is the biggest update to the platform yet, expanding dPack
-    capabilities (96 channels, 56 busses, 24 Dyn8 instances), adding the DEEP
-    CompStortion emulation, and bringing the RackUltra FX Collection to
-    dPack-enabled mixers. Every Avantis console (not just dPack users) also
-    receives Smart Rotaries, expanded Shure/Sennheiser RF integration including
-    SLX-D, an extended Channel Library, and refinements like Dyn8 ganging, mute
-    override, and a diagnostic mode.
-  - "The optional dPack software upgrade scales the mixer from 64 to 96 input
-    channels and 42 to 56 mix busses, while unlocking the full DEEP processing
-    suite: boutique preamp, compressor and expander models alongside the
-    surgical precision of Dyn8 and NEQ12. The optional RackUltra FX Card
-    (factory-fitted or installed via authorised service centre, requires dPack)
-    adds 8 dedicated FX engines for premium reverbs, vocal tuning, harmonisers,
-    distortion and saturation."
-  - Two I/O Ports allow Avantis to benefit from the full range of dLive option
-    cards including Dante (64x64 and 128x128), Waves, gigaACE, MADI and more,
-    expanding system integration, FoH/monitor splits and multitrack recording.
-    The SLink port connects to the entire Allen & Heath range of Everything I/O
-    audio expander hardware, including Dante expanders DT168 and DT164-W.
-  - Avantis can be controlled using Avantis Director (free Windows/Mac offline
-    editor and online control), MixPad (iPad remote mixing), OneMix (personal
-    monitoring), 4You (personal mixing app for performers), Custom Control
-    (customisable cross-platform app), and a range of networkable PoE-compatible
-    IP remote controllers — up to 48 IP remote controllers over a standard
-    TCP/IP network. Avantis is also compatible with Harrison LiveTrax for
-    multitrack recording and virtual sound check.
+details: |-
+  Avantis is a 64 channel / 42 configurable bus mixer platform, expandable to 96 channel / 56 configurable bus, featuring the 96kHz XCVI FPGA engine with class-leading 0.7ms latency plus add-on processing and effects from the flagship dLive mixing system.
+
+  The console features two 15.6" Full HD capacitive touchscreens, 24 faders across 6 layers (144 strip assignments), 24 assignable SoftKeys, and the Continuity UI which seamlessly connects the physical controls and touchscreens for fast, intuitive workflows. Each screen features a Soft Rotary tab on the right-hand side, giving instant access to assignable parameters like aux sends, EQ, compressor and FX.
+
+  Avantis V2.0 is the biggest update to the platform yet, expanding dPack capabilities (96 channels, 56 busses, 24 Dyn8 instances), adding the DEEP CompStortion emulation, and bringing the RackUltra FX Collection to dPack-enabled mixers. Every Avantis console (not just dPack users) also receives Smart Rotaries, expanded Shure/Sennheiser RF integration including SLX-D, an extended Channel Library, and refinements like Dyn8 ganging, mute override, and a diagnostic mode.
+
+  The optional dPack software upgrade scales the mixer from 64 to 96 input channels and 42 to 56 mix busses, while unlocking the full DEEP processing suite: boutique preamp, compressor and expander models alongside the surgical precision of Dyn8 and NEQ12. The optional RackUltra FX Card (factory-fitted or installed via authorised service centre, requires dPack) adds 8 dedicated FX engines for premium reverbs, vocal tuning, harmonisers, distortion and saturation.
+
+  Two I/O Ports allow Avantis to benefit from the full range of dLive option cards including Dante (64x64 and 128x128), Waves, gigaACE, MADI and more, expanding system integration, FoH/monitor splits and multitrack recording. The SLink port connects to the entire Allen & Heath range of Everything I/O audio expander hardware, including Dante expanders DT168 and DT164-W.
+
+  Avantis can be controlled using Avantis Director (free Windows/Mac offline editor and online control), MixPad (iPad remote mixing), OneMix (personal monitoring), 4You (personal mixing app for performers), Custom Control (customisable cross-platform app), and a range of networkable PoE-compatible IP remote controllers — up to 48 IP remote controllers over a standard TCP/IP network. Avantis is also compatible with Harrison LiveTrax for multitrack recording and virtual sound check.
 specs: |-
   - 96kHz XCVI FPGA core with ultra-low latency (0.7ms)
   - 64 input channels (96 with dPack)
@@ -153,7 +128,7 @@ io:
   - name: Network Port (TCP/IP Control)
     signalFlow: bidirectional
     category: digital
-    type: midi
+    type: ethernet
     connection: ethernet
     maxConnections: 1
     position: Bottom
