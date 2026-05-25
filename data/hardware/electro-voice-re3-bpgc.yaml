@@ -1,0 +1,129 @@
+id: ASnKiv39plU1BRUGdtzLX
+name: RE3-BPGC
+manufacturer: electro-voice
+primaryCategory: microphone
+categories:
+  - cable
+  - guitar
+url: https://products.electrovoice.com/na/en/re3-bpgc/
+description: UHF wireless bodypack system pairing the RE3-BPT belt-pack
+  transmitter with the GC3 instrument cable and an RE3-RX half-rack diversity
+  receiver, intended for wireless guitar, bass, and other 1/4-inch-output
+  instrument performance.
+details: >-
+  The RE3-BPGC is the bodypack/instrument-cable configuration of Electro-Voice's
+  RE3 UHF wireless series. The set bundles the RE3-RX half-rack diversity
+  receiver, the RE3-BPT metal-bodied bodypack transmitter, and the GC3
+  instrument cable, which terminates in a 1/4-inch plug on the instrument end
+  and a TA4M-style 4-pin mini connector that mates with the transmitter's input.
+
+
+  The RE3-RX receiver provides diversity reception to minimize dropouts, with a
+  built-in frequency scan, an LCD display, and a Sync function (over IR) that
+  transfers receiver settings to the transmitter in one step. Depending on band,
+  the receiver offers up to 36 MHz of tuning bandwidth and as many as 1,440
+  selectable frequencies. Two detachable BNC antennas mount on the rear, along
+  with a balanced XLR and unbalanced 1/4-inch audio output and a DC barrel jack
+  fed from the supplied universal power supply. Rack-mount hardware ships in the
+  box.
+
+
+  The RE3-BPT bodypack transmitter has a robust metal housing, a unique magnetic
+  latch and lock for fast battery access, selectable low/high RF output power
+  (band-specific, 10/50 mW on most bands), and runs on two AA batteries. The GC3
+  cable is designed specifically for wireless guitar, bass, and similar
+  instruments with a 1/4-inch output jack, and includes a 4-pin mini-plug
+  adapter for compatibility with other EV bodypack transmitters.
+specs: >-
+  - System type: UHF wireless bodypack system with instrument cable
+
+  - Receiver: RE3-RX half-rack diversity receiver
+
+  - Transmitter: RE3-BPT metal bodypack
+
+  - Instrument cable: GC3 with 1/4-inch instrument plug
+
+  - Tuning bandwidth: Up to 36 MHz (band-specific)
+
+  - Selectable frequencies: Up to 1,440 (band-specific)
+
+  - Frequency band 5L: 488-524 MHz, 1440 frequencies, 10/50 mW (global)
+
+  - Frequency band 5H: 560-596 MHz, 1440 frequencies, 10/50 mW (global)
+
+  - Frequency band 6M: 653-663 MHz, 400 frequencies, 10/20 mW (global)
+
+  - Frequency band 8M: 823-832 / 863-865 MHz, 440 frequencies, 10 mW (Europe)
+
+  - Frequency band T: 803-806 MHz, 120 frequencies, 10/50 mW (Thailand)
+
+  - Transmitter output power: 10 mW or 50 mW selectable (band-specific)
+
+  - Diversity: True antenna diversity
+
+  - Sync: IR-based one-step transmitter setup
+
+  - Frequency scanning: Yes (receiver scans for clean channel)
+
+  - Receiver display: LCD
+
+  - Transmitter battery: 2 x AA
+
+  - Transmitter construction: Metal housing with magnetic battery latch
+
+  - Instrument cable connector: 1/4-inch plug (instrument end), 4-pin mini at
+  transmitter input
+
+  - Included: RE3-RX receiver, RE3-BPT bodypack, GC3 instrument cable, two
+  antennas, universal power supply, two AA batteries, rack-mount hardware,
+  owner's manual, documentation packet
+io:
+  - name: Balanced Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Antenna A Input
+    signalFlow: input
+    category: digital
+    type: bnc
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Antenna B Input
+    signalFlow: input
+    category: digital
+    type: bnc
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+  - name: Bodypack Instrument Input (4-pin mini)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: mini-din
+    maxConnections: 1
+    position: Top
+  - name: Instrument Cable Input (GC3)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top

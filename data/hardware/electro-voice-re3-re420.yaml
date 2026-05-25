@@ -1,0 +1,95 @@
+id: IXqzKrz8OZPttgjzw1iJx
+name: RE3-RE420
+manufacturer: electro-voice
+primaryCategory: microphone
+categories:
+  - condenser
+  - vocal
+url: https://products.electrovoice.com/na/en/re3-re420/
+description: Handheld UHF wireless system featuring the RE420 condenser cardioid
+  microphone head for vocal performance and presentations. Delivers rich,
+  detailed and full-bodied audio with a warm, clear low end, natural and open
+  midrange, and a clear, crisp, detailed high end. The bundle pairs the
+  RE420-RC3 self-biased condenser capsule (with multi-stage pop filter and
+  switchable 150 Hz high-pass filter) with the RE3-HHT metal-body handheld
+  transmitter and the RE3-RX half-rack diversity receiver. The RE3-RX offers
+  diversity reception, an LCD display, automatic frequency scanning, IR sync to
+  the transmitter and selectable output levels.
+specs: |-
+  - System:
+    - Carrier Frequency Range: 470–865 MHz (band-dependent)
+    - Tuning Bandwidth: Up to 36 MHz
+    - Frequency Response: 51 Hz–16 kHz ±2 dB (handheld transmitter)
+    - Signal To Noise: >100 dB(A)
+    - Total Harmonic Distortion: <0.6% @ 1 kHz
+  - Receiver:
+    - Model: RE3-RX
+    - Type: Diversity, half-rack
+    - Audio Outputs: 1 x balanced XLRM jack, 1 x unbalanced 1/4" TS (6.3 mm) jack
+    - Xlr Output Level: -4 dBV (Line) or -24 dBV (Mic)
+    - Ts Output Level: -10 dBV
+    - Output Impedance: 240 Ω unbalanced, 1400 Ω balanced
+    - Antenna Connector: Detachable 1/2-wave with BNC connector
+    - Antenna Booster Power: DC 12–15 V / 100 mA
+    - Power Requirements: DC 12–15 V / 500 mA
+    - Dimensions: 210 mm W x 47 mm H (with feet) x 175 mm D (incl. antenna jack) / 8.27" x 1.85" x 6.89"
+    - Net Weight: 1.23 kg (2.71 lbs)
+    - Gross Weight: 1.49 kg (3.28 lbs)
+    - Finish: Black polyurethane paint
+  - Transmitter:
+    - Model: RE3-HHT
+    - Construction: Metal body
+    - Power Source: 2 x AA batteries
+    - Features: IR sync, selectable output power
+  - Capsule:
+    - Model: RE420 (RE420-RC3 head)
+    - Element Type: Self-biased condenser
+    - Polar Pattern: Cardioid
+    - Frequency Response: 50 Hz – 20 kHz
+    - Sensitivity: 5.6 mV/Pascal (-45 dBV/Pa) at 1 kHz
+    - Max Spl: 149 dB SPL (1% THD)
+    - Self Noise: 22 dB SPL A-weighted
+    - Dynamic Range: 127 dB
+    - Signal To Noise Ratio: 72 dB
+    - Output Impedance: 200 Ω
+    - Power Requirements: 48 VDC phantom (when used as wired capsule)
+    - Electrical Connection: 3-pin XLR-type
+    - Dimensions: 7.6 in length, 1.95 in diameter, 0.96 in shank
+    - Weight: 11.5 oz
+    - Additional Features: Multi-stage pop filter; switchable high-pass filter (attenuates below 150 Hz)
+io:
+  - name: Antenna A
+    signalFlow: input
+    category: audio
+    type: rf
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Antenna B
+    signalFlow: input
+    category: audio
+    type: rf
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Balanced Audio Output (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Audio Output (1/4-inch TS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

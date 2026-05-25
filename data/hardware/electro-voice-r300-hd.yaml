@@ -1,0 +1,101 @@
+id: or_jYB9eWTjCSt2iXwpam
+name: R300-HD
+manufacturer: electro-voice
+primaryCategory: microphone
+categories:
+  - vocal
+  - dynamic
+  - cardioid
+url: https://products.electrovoice.com/na/en/r300-hd/
+description: Robust UHF wireless handheld microphone system pairing a metal
+  HT-300 handheld transmitter fitted with an Electro-Voice PL22 cardioid dynamic
+  capsule with a true-diversity half-rack receiver, offering 32 selectable
+  channels, ClearScan automatic channel detection, and EZsync one-step
+  transmitter setup for live vocal and presentation use.
+details: >-
+  The R300-HD is the handheld configuration of Electro-Voice's R300 UHF wireless
+  series. The system consists of a half-rack receiver and an HT-300 metal-bodied
+  handheld transmitter equipped with the PL22 cardioid dynamic capsule, which
+  Electro-Voice recommends for singing, speaking, and hosting applications.
+
+
+  The receiver is a synthesized PLL design with true antenna diversity to
+  mitigate dropouts, offering 32 user-selectable channels within a single
+  frequency band (C-Band 516-532 MHz or E-Band 850-865 MHz in North America).
+  ClearScan automatically scans for the cleanest available channel and EZsync
+  transfers the receiver's channel selection to the transmitter in one step via
+  an infrared link. A back-lit LCD on both transmitter and receiver displays
+  channel, frequency, mute status, and battery level.
+
+
+  The receiver provides both a balanced XLR output (20 dBV max at 40 kHz
+  deviation) and an adjustable unbalanced 1/4-inch output (8 mV to 0.755 V RMS),
+  and runs on an external 12-16 VDC supply. The transmitter is powered by two AA
+  batteries for approximately 14 hours of operation and uses an internal
+  proprietary antenna. Optional rack-mount hardware is available for fixed
+  installations.
+specs: |-
+  - System type: UHF wireless handheld microphone system
+  - Transmitter: HT-300 handheld with Electro-Voice PL22 capsule
+  - Microphone element: PL22 cardioid dynamic
+  - Polar pattern: Cardioid
+  - Receiver type: Synthesized PLL, half-rack
+  - Channels: 32 selectable
+  - Frequency bands (NA): C-Band 516-532 MHz; E-Band 850-865 MHz
+  - Modulation: +/-40 kHz deviation
+  - Diversity: True antenna diversity
+  - RF sensitivity: <1.0 uV for 12 dB SINAD
+  - Image rejection: >55 dB
+  - Squelch: Tone code plus amplitude
+  - Audio frequency response: 80 Hz - 18 kHz, +/-2 dB
+  - Balanced output level: 20 dBV max at 40 kHz deviation
+  - Unbalanced output level: Adjustable 8 mV to 0.755 V RMS
+  - Distortion: <1.0% (0.4% typical at 1 kHz, 40 kHz deviation)
+  - Signal-to-noise ratio: >100 dB A-weighted
+  - Dynamic range: >95 dB
+  - Transmitter RF power: 8 mW typical radiated
+  - Transmitter power: 2 x AA batteries
+  - Transmitter battery life: >14 hours (AA alkaline, typical)
+  - Transmitter antenna: Internal proprietary
+  - Transmitter display: Back-lit LCD (channel, frequency, mute, battery)
+  - Channel setup: ClearScan automatic + EZsync one-step sync
+  - Receiver power: 12-16 VDC, 500 mA max (external supply)
+  - Operating temperature: 5 C to 45 C
+  - Receiver dimensions (H x W x D): 43 x 206 x 210 mm (1.72 x 7.8 x 8.0 in)
+  - Handheld transmitter length: 26.7 cm (10.57 in)
+io:
+  - name: Balanced Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Antenna A Input
+    signalFlow: input
+    category: digital
+    type: bnc
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Antenna B Input
+    signalFlow: input
+    category: digital
+    type: bnc
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
