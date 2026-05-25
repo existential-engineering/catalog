@@ -5,12 +5,7 @@ primaryCategory: audio-interface
 categories:
   - headphone-amp
 url: https://www.fostex.jp/en/products/hp-a3mk2/
-description: Compact USB DAC and headphone amplifier that operates on USB bus
-  power. Converts USB audio (up to 32-bit/192 kHz) and optical S/P DIF digital
-  input to analog. Uses the ESS Technology ES9016K2M DAC chip. Provides a 6.3 mm
-  stereo headphone output with switchable HI/LO gain, RCA line outputs, and an
-  optical S/P DIF digital output. Successor to the HP-A3 with upgraded sampling
-  support from 24-bit/96 kHz to 32-bit/192 kHz.
+description: Compact USB DAC and headphone amplifier that operates on USB bus power. Converts USB audio (up to 32-bit/192 kHz) and optical S/P DIF digital input to analog. Uses the ESS Technology ES9016K2M DAC chip. Provides a 6.3 mm stereo headphone output with switchable HI/LO gain, RCA line outputs, and an optical S/P DIF digital output. Successor to the HP-A3 with upgraded sampling support from 24-bit/96 kHz to 32-bit/192 kHz.
 details: |-
   Features:
   - USB bus-powered compact USB DAC
@@ -34,43 +29,43 @@ io:
   - name: USB
     signalFlow: input
     category: digital
-    type: USB
-    connection: USB-C
+    type: usb
+    connection: usb-c
     maxConnections: 1
     position: Bottom
   - name: Optical Digital Input
     signalFlow: input
     category: digital
-    type: S/PDIF
-    connection: TOSLINK
+    type: s/pdif
+    connection: toslink
     maxConnections: 1
     position: Bottom
   - name: Headphone Output
     signalFlow: output
     category: audio
-    type: TRS
+    type: line
     connection: 1/4-inch
     maxConnections: 1
     position: Top
   - name: Line Output L
     signalFlow: output
     category: audio
-    type: RCA
-    connection: RCA
+    type: line
+    connection: rca
     maxConnections: 1
     position: Bottom
   - name: Line Output R
     signalFlow: output
     category: audio
-    type: RCA
-    connection: RCA
+    type: line
+    connection: rca
     maxConnections: 1
     position: Bottom
   - name: Optical Digital Output
     signalFlow: output
     category: digital
-    type: S/PDIF
-    connection: TOSLINK
+    type: s/pdif
+    connection: toslink
     maxConnections: 1
     position: Bottom
 links:

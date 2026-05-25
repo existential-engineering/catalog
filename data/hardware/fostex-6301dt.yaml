@@ -6,11 +6,7 @@ categories:
   - monitor
   - speaker
 url: https://www.fostex.jp/en/products/6301dt/
-description: Compact active loudspeaker with Dante audio network compatibility.
-  Part of the 6301 series used for more than 30 years in broadcast facilities
-  and small-scale loudspeaker applications. Features a rugged die-cast aluminum
-  enclosure with a 10cm cone-type full-range driver and a 20W amplifier.
-  Supports analog unbalanced input and Dante digital network input.
+description: Compact active loudspeaker with Dante audio network compatibility. Part of the 6301 series used for more than 30 years in broadcast facilities and small-scale loudspeaker applications. Features a rugged die-cast aluminum enclosure with a 10cm cone-type full-range driver and a 20W amplifier. Supports analog unbalanced input and Dante digital network input.
 details: |-
   Features:
   - Compact design for space-saving installation
@@ -32,22 +28,22 @@ io:
   - name: Analog Input
     signalFlow: input
     category: audio
-    type: TS
+    type: line
     connection: 1/4-inch
     maxConnections: 1
     position: Right
   - name: Dante Input
     signalFlow: input
     category: digital
-    type: Dante
-    connection: RJ45
+    type: dante
+    connection: ethernet
     maxConnections: 1
     position: Right
   - name: AC Power
     signalFlow: input
     category: power
-    type: AC
-    connection: IEC
+    type: power
+    connection: barrel
     maxConnections: 1
     position: Right
 links:
