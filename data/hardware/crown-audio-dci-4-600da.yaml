@@ -1,0 +1,56 @@
+id: 5HnrwizAEvpLCrnxq8iU_
+name: DCi 4|600DA
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/dci-4-600da
+description: Four-channel, 600W @ 4Ω power amplifier featuring integrated
+  Dante™/AES67 networked audio with 70V/100V support, designed for professional
+  installed sound applications.
+details: |-
+  The DCi 4|600DA is part of the DriveCore Install DA series, pairing Crown's proprietary DriveCore amplifier technology with integrated Dante™/AES67 networked audio. The 4-channel configuration delivers 600W per channel into 4Ω in a compact 2RU chassis.
+
+  Redundant, independent Dante/AES67 ports (Primary & Secondary) accept 48kHz or 96kHz audio. The amplifier supports HiQnet protocol over TCP/IP for network configuration, monitoring, and control via Audio Architect software. A programmable GPIO port enables custom control integration, and an aux port provides sleep contact closure and amp status output.
+
+  Integrated DSP at 48kHz includes 20 presets, an input router with high/medium/low priority inputs, input and output EQ, crossover, delay, LevelMAX limiter, load monitoring (pilot tone, normal, burst, continuous, sweep), channel auto-standby, and JBL speaker tunings. A universal PFC power supply and continuously variable forced-air cooling with removable air filters complete the design.
+specs: |-
+  - Output Channels: 4
+  - Output Power (4Ω, Dual Mode): 600W
+  - Output Power (Bridge Mono, 8Ω): 1200W
+  - Frequency Response (8Ω, 20Hz–20kHz): ±0.25dB
+  - Total Harmonic Distortion: 0.35% (full rated power)
+  - Damping Factor (20Hz–100Hz): >1000
+  - Load Impedance (Stereo): 2Ω–16Ω; 70Vrms, 100Vrms
+  - Load Impedance (Bridge Mono): 4Ω–16Ω; 140Vrms, 200Vrms
+  - DSP: 48kHz processing, 20 presets
+  - Networking: Dante / AES67, redundant Primary & Secondary
+  - Cooling: Continuously variable forced air, front-to-back
+  - Max Fan Noise: 45 dBA @ 1M
+  - AC Mains: 100V–240V ~ 50/60Hz (±10%)
+  - Power Connector: 15A IEC
+  - Dimensions: 483 × 89 × 362 mm (19″ × 3.5″ × 14.25″)
+  - Weight: 9.12 kg (20.1 lbs)
+io:
+  - name: Dante / AES67 Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Dante / AES67 Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: AC Mains
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom

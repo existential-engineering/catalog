@@ -1,0 +1,71 @@
+id: H-Lkt7ScNknprj_Y2mG87
+name: XLC 2500
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/xlc-2500
+description: Two-channel, 500W @ 4Ω power amplifier built on Crown DriveCore
+  technology for cinema and installed sound applications, in a lightweight 2U
+  chassis.
+details:
+  - The XLC 2500 is a compact two-channel power amplifier built on Crown's
+    DriveCore technology, delivering 500W per channel at 4Ω in a 3.5"-tall, 8.3
+    lb chassis. It is aimed at cinema installs and small-to-mid installed sound
+    applications where rack density and weight matter.
+  - DriveCore integrates the amplifier driver stage and output stage into a
+    single IC, reducing parts count and improving reliability and audio
+    fidelity. Front- and rear-panel block connectors handle balanced and
+    unbalanced inputs, stereo and bridge-mono outputs, and configuration.
+  - A 15A IEC inlet supplies mains power; the amplifier supports 2-8Ω stereo
+    loads or 4-8Ω bridge-mono loads.
+specs: |-
+  - 2 channels
+  - 500W per channel @ 4Ω
+  - Signal-to-Noise Ratio: >103 dB
+  - THD: <0.5%
+  - Damping Factor: >200 (8Ω, 10 Hz-400 Hz)
+  - Frequency Response: 20 Hz-20 kHz (0 dB @ 1W)
+  - Input Impedance: 20kΩ balanced / 10kΩ unbalanced
+  - Load Impedance: 2-8Ω stereo; 4-8Ω bridge
+  - DriveCore technology
+  - Dimensions: 19" × 3.5" × 8"
+  - Weight: 8.3 lbs (3.75 kg)
+  - Power: IEC inlet (15A)
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (15A IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom

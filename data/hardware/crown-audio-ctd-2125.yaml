@@ -1,0 +1,97 @@
+id: bhqGiEMrjCXZQ7OcZKC8k
+name: CTD-2125
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/ctd-2125
+description: Two-channel, 125W/ch. power sharing amplifier with built-in DSP and
+  Dante networking. Compact 1RU half-rack installation amplifier featuring
+  asymmetrical power sharing, WebUI configuration, and Lo-Z/Hi-Z switchable
+  outputs.
+specs: |-
+  - 2 channels
+  - All channels driven Low-Z: 125W per channel
+  - All channels driven Hi-Z: 125W per channel
+  - Single channel driven (power sharing) Low-Z: 250W
+  - Single channel driven (power sharing) Hi-Z: 250W
+  - Dante inputs and outputs
+  - Built-in DSP for room and speaker tuning
+  - Asymmetrical power sharing
+  - Web UI configuration
+  - Lo-Z/Hi-Z switchable outputs
+  - 1RU, 1/2 rack width form factor
+  - Factory JBL SpeakerTunings included
+  - Pilot tone and load monitoring
+  - Source priority switching
+  - GPIO interface
+  - HControl protocol support
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Dante Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Dante Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: GPIO
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+releaseDate: 2025-06-10
+links:
+  - type: resource
+    title: Crown User Manual - ComTech D Series
+    url: https://www.crownaudio.com/en-US/products/ctd-2125
+  - type: resource
+    title: Data Sheet - ComTech D Series
+    url: https://www.crownaudio.com/en-US/products/ctd-2125
+  - type: resource
+    title: Quick Start Guide - ComTech D Series
+    url: https://www.crownaudio.com/en-US/products/ctd-2125

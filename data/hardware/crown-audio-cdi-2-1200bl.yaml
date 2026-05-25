@@ -1,0 +1,96 @@
+id: 7bVuDTFMDSp2E6leb5yyC
+name: CDi 2|1200BL
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/cdi-2-1200bl
+description: Two-channel, 1200W per output channel professional power amplifier
+  with analog and BLU link input, designed for large installations including
+  cinemas, houses of worship, hotels, and cruise lines. Features network
+  control, high-level DSP, and supports driving high-voltage speaker loads.
+specs: |-
+  - 2 channels
+  - Dual mode @ 2Ω: 850W per channel
+  - Dual mode @ 4Ω: 1200W per channel
+  - Dual mode @ 8Ω: 1200W per channel
+  - Dual mode @ 16Ω: 600W per channel
+  - Dual mode 70Vrms: 1200W per channel
+  - Dual mode 100Vrms: 1200W per channel
+  - Bridge mono @ 4Ω: 1200W
+  - Bridge mono @ 8Ω: 2400W
+  - Bridge mono @ 16Ω: 2400W
+  - Bridge mono 140Vrms: 2400W
+  - Bridge mono 200Vrms: 2400W
+  - Sensitivity (full rated power at 8Ω): 0.7V RMS
+  - Signal-to-Noise Ratio: >104dB
+  - THD: 0.35%
+  - Damping Factor (20Hz-100Hz): >1000
+  - Frequency Response (8Ω): ±0.25dB (20Hz-20kHz)
+  - Crosstalk: >80dB
+  - Input Impedance: 20kΩ balanced, 10kΩ unbalanced
+  - BLU link networked digital audio
+  - Dimensions: 19" W × 3.5" H × 14.71" D
+  - Weight: 17.2 lbs (7.8 kg)
+  - Power: 15A IEC, 100-240V
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: BLU Link In
+    signalFlow: input
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: BLU Link Out
+    signalFlow: output
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: CDi DriveCore Series Cut Sheet
+    url: https://www.crownaudio.com/en-US/product_documents/crown_cdi_drivecore_series_cutsheet_06142017
+  - type: resource
+    title: CDi DriveCore Owner's Manual
+    url: https://www.crownaudio.com/en-US/site_elements/cdi-drivecore-owner-s-manual-english
+  - type: resource
+    title: Power Draw & Thermal Dissipation Sheet
+    url: https://www.crownaudio.com/en-US/product_documents/crown-cdi-drivecore-power-draw-and-thermal-dissipation-sheet

@@ -1,0 +1,79 @@
+id: ZJpK7LFwQeCeGjYsinpA1
+name: CDi 4000
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/cdi-4000
+description: Two-channel, 1200W @ 4Ω, 70V/140V Power Amplifier designed for
+  installed sound applications. Rugged and lightweight with versatile load
+  support including 2/4/8-ohm and 70V/140V outputs, and onboard DSP.
+specs: |-
+  - 2 channels
+  - 1200W per channel @ 4Ω (stereo)
+  - Rated for 2-, 4-, 8-ohm loads and 70V/140V outputs
+  - Sensitivity (full rated power @ 8Ω): 1.4V
+  - Signal-to-Noise Ratio: 100 dB (A-weighted)
+  - THD: < 0.5%
+  - Damping Factor (20Hz-400Hz): > 500
+  - Frequency Response: +0/-1 dB (20Hz-20kHz)
+  - Crosstalk (20Hz-1kHz): > 70 dB
+  - Input Impedance: 20kΩ balanced, 10kΩ unbalanced
+  - Switch-mode universal power supply
+  - Front-panel LCD screen
+  - Onboard DSP: crossovers, EQ, delay, limiting
+  - Up to 20 user-defined DSP presets
+  - Dimensions: 3.5" × 19" × 12.25"
+  - Weight: 22.0 lbs
+  - IEC Power Connector: 15A
+io:
+  - name: LCD Display
+    signalFlow: output
+    category: digital
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Top
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: CDi 4000 Cut Sheet
+    url: https://www.crownaudio.com/en-US/product_documents/cdi_datasheet_091415_web-dbaedead-0ed6-463d-9e64-90778432d974
+  - type: resource
+    title: CDi 4000 Owner's Manual
+    url: https://www.crownaudio.com/en-US/product_documents/139676-5_08-13_cdi_multilingual_operationpdf--3

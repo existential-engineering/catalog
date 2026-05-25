@@ -1,0 +1,70 @@
+id: _0nOJozNTy2zkEFMJwNRm
+name: XLC 2800
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/xlc-2800
+description: Two-channel, 800W @ 4Ω power amplifier built on Crown DriveCore
+  technology for compact, efficient performance in cinema and installed sound
+  applications.
+details:
+  - The XLC 2800 is a two-channel installed-sound amplifier delivering 800W per
+    channel at 4Ω in a 2RU chassis. It uses Crown DriveCore technology to
+    combine driver and output stages into a single IC, reducing parts count and
+    improving reliability while keeping weight under 11 lbs.
+  - Block-connector inputs accept balanced or unbalanced signal; outputs are
+    configurable for stereo or bridge-mono operation across 2-8Ω (stereo) or
+    4-8Ω (bridge) loads. A 15A IEC inlet supplies mains power.
+  - Designed for cinema booths and installed sound systems where 19" rack
+    mounting, low weight, and clean unattended operation are required.
+specs: |-
+  - 2 channels
+  - 800W per channel @ 4Ω
+  - Voltage Gain: 42
+  - Sensitivity: 1.4V (full rated power @ 4Ω)
+  - Signal-to-Noise Ratio: >103 dB
+  - THD: <0.5%
+  - Frequency Response: -1 dB (20 Hz - 20 kHz)
+  - Load Impedance: 2-8Ω stereo; 4-8Ω bridge
+  - DriveCore technology
+  - Dimensions: 19" × 3.5" × 10.4"
+  - Weight: 10.4 lbs (4.72 kg)
+  - Power: IEC inlet (15A)
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (15A IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom

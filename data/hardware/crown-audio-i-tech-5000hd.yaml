@@ -1,0 +1,86 @@
+id: drdNQNnRLL8W4FAFWGp-X
+name: I-Tech 5000HD
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/i-tech-5000hd
+description: Two-channel, 2500W @ 4Ω touring power amplifier featuring BSS
+  OMNIDRIVEHD DSP processing with FIR filters and LevelMAX limiters for
+  professional live sound and installed applications.
+details:
+  - The I-Tech 5000HD delivers 2500W per channel at 4Ω in a 2RU chassis, sitting
+    in the middle of Crown's flagship I-Tech HD touring amplifier family. It is
+    engineered for high-performance live sound and large-format fixed
+    installations where reliability and processing depth matter as much as raw
+    output.
+  - BSS OMNIDRIVEHD processing brings linear-phase FIR filters, crossovers,
+    parametric EQ, and LevelMAX limiters into the amplifier itself, eliminating
+    an external loudspeaker controller in many rigs. Network management is
+    handled by HiQnet System Architect over Ethernet.
+  - Analog, AES/EBU, and CobraNet inputs (configuration-dependent) feed the
+    amplifier, while a 20A IEC inlet handles power. Heavy-duty
+    binding-post-style speaker outputs support touring loads.
+specs: |-
+  - 2 channels
+  - 2500W per channel @ 4Ω
+  - Sensitivity: 1.4Vrms to 7.75Vrms
+  - THD: <0.1%
+  - Signal-to-Noise Ratio: >112dB
+  - Frequency Response: ±0.25dB
+  - BSS OMNIDRIVEHD DSP with FIR filters and LevelMAX limiters
+  - Network control via HiQnet System Architect (Ethernet)
+  - Dimensions: 89mm × 482mm × 411mm (3.5" × 19" × 16.2")
+  - Weight: 12.7kg (28 lbs)
+  - Power: 20A IEC inlet
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Digital Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Ethernet (HiQnet Network Control)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (20A IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom

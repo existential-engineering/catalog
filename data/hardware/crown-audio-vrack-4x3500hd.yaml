@@ -1,0 +1,73 @@
+id: kCEK7bfhHT5h0oAe_T_D-
+name: VRack 4x3500HD
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/vrack-4x3500hd
+description: A complete, turnkey touring amplification system built around four
+  I-Tech 3500HD amplifiers in a pre-wired rack, eliminating the time-consuming
+  process of building amp racks for live sound.
+details:
+  - VRack 4x3500HD is an all-in-one touring amplifier solution combining four
+    Crown I-Tech HD amplifiers, OMNIDRIVEHD DSP, network and AES distribution,
+    and integrated power management in a single pre-built road case. It
+    eliminates the time and labor cost of assembling amp racks for touring rigs.
+  - Crown OMNIDRIVEHD digital signal processing provides LevelMax limiters, FIR
+    filters, and full loudspeaker management across all four amplifiers. Network
+    and AES failover capability protects the audio path; monitoring software
+    provides input/output metering and gain reduction visibility for every
+    channel.
+  - Inputs accept AES, VDrive, analog, and network signal distribution, while
+    integrated power factor correction and one-amplifier-per-phase wiring make
+    the rack compatible with 120VAC, 208VAC (US) and 220-240VAC (international)
+    mains. Captive suspension points support lifting and hoisting in flown rigs.
+specs: |-
+  - Four I-Tech HD amplifiers (3500W per channel @ 4Ω each)
+  - Crown OMNIDRIVEHD DSP with LevelMax limiters and FIR filters
+  - Network and AES failover capability
+  - Input options: AES, VDrive, analog, network
+  - HiQnet Performance Manager monitoring software
+  - Power Factor Correction (PFC); one amplifier per phase
+  - Voltage: 120VAC, 208VAC (US); 220-240VAC (international)
+  - Power connectors: 5-pin CEE form and 5-pin Hubbell Twist Lock
+  - Dimensions: 22.5" × 23.5" × 31.25" (57.2 × 59.7 × 79.4 cm)
+  - Weight: 184 lbs (84.5 kg)
+  - Captive suspension for lifting/hoisting
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 8
+    position: Bottom
+  - name: AES Digital Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 4
+    position: Bottom
+  - name: Network Input (Ethernet)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: ethernet
+    maxConnections: 2
+    position: Bottom
+  - name: Speaker Outputs
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Bottom
+  - name: AC Mains Input (CEE form / Hubbell Twist Lock)
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin
+    maxConnections: 1
+    position: Bottom

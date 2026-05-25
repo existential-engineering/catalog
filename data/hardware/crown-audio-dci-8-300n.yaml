@@ -1,0 +1,203 @@
+id: 2uRSSlOw8YEW0mriFQIy9
+name: DCi 8|300N
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/dci-8-300n
+description: An eight-channel, 300W @ 4Ω networked installation power amplifier
+  with BLU link digital audio transport and 70V/100V direct drive output for
+  professional installed sound applications.
+details:
+  - The DCi 8|300N is part of Crown's DriveCore Install Network Series,
+    providing eight channels of 300W amplification at 4Ω in a single rack space.
+    Built around proprietary DriveCore technology, the amplifier delivers high
+    reliability, energy efficiency, and audio fidelity for installed sound
+    systems.
+  - The amplifier accepts both balanced analog inputs and digital inputs via
+    HARMAN's proprietary BLU-Link transport, with an automatic input router that
+    prioritizes between sources. Network monitoring and control runs over
+    standard TCP/IP using the HiQnet protocol, and programmable GPIO ports
+    support volume control, preset recall, and error reporting.
+  - Onboard DSP capabilities include LevelMAX limiters, input/output EQ,
+    crossover, delay, matrix mixer, and speaker line monitoring. The DCi 8|300N
+    integrates with Audio Architect, Crown's mobile app, Q-SYS, and AMX control
+    systems for flexible system design.
+specs: |-
+  - 8 channels
+  - Dual mode: 150W @ 2Ω, 300W @ 4Ω, 300W @ 8Ω, 150W @ 16Ω, 300W @ 70Vrms, 300W @ 100Vrms
+  - Bridge mono: 300W @ 4Ω, 600W @ 8Ω, 600W @ 16Ω, 600W @ 140Vrms, 600W @ 200Vrms
+  - Frequency Response: ±0.25dB (8Ω, 20Hz–20kHz)
+  - THD: 0.35% (full rated power, 20Hz–20kHz)
+  - Damping Factor: >1000 (20Hz–100Hz)
+  - Load Impedance (Stereo/Dual): 2Ω–16Ω; 70Vrms and 100Vrms
+  - Load Impedance (Bridge Mono): 4Ω–16Ω; 140Vrms and 200Vrms
+  - Onboard DSP: LevelMAX limiters, input/output EQ, crossover, delay, matrix mixer, speaker line monitoring
+  - BLU-Link digital audio transport
+  - HiQnet network monitoring and control (TCP/IP)
+  - Programmable GPIO ports
+  - Cooling: Continuously variable speed forced air, front-to-back airflow
+  - Maximum Fan Noise: 47 dBA SPL @ 1M
+  - AC Mains: 100V–240V ~ 50/60Hz (±10%)
+  - Power Connector: 15A IEC
+  - Dimensions: 483mm W × 89mm H × 362mm D (19" × 3.5" × 14.25")
+  - Weight: 10.66 kg (23.5 lbs)
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.5
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.6
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.7
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.8
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.6
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.7
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.8
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: BLU-Link In
+    signalFlow: input
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: BLU-Link Out
+    signalFlow: output
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Ethernet (HiQnet Control)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GPIO Port
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (15A IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: DriveCore Install Network Series Data Sheet
+    url: https://www.crownaudio.com/en-US/products/dci-8-300n
+  - type: resource
+    title: DriveCore Install Network Manual (English)
+    url: https://www.crownaudio.com/en-US/products/dci-8-300n
+  - type: resource
+    title: DriveCore Install Series Brochure
+    url: https://www.crownaudio.com/en-US/products/dci-8-300n
