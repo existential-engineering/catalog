@@ -1,0 +1,70 @@
+id: PH8RSmQFMBCPeAwJoui2T
+name: RS-N2
+manufacturer: fostex
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+url: https://www.fostex.jp/en/products/rs-n2/
+description: Reference Monitor Speaker System. A 3-way bass reflex active
+  reference monitor developed based on a thorough high-fidelity reproduction
+  concept, with a guaranteed frequency response of 50Hz to 20kHz +/-3dB.
+  Combines a 20mm pure magnesium hard dome tweeter, 130mm (1.5") HP Scorcher
+  midrange, and 300mm HP woofer with alnico magnet. Powered by a dedicated
+  Accuphase Corporation PRO-30(N)/RS-N2 specification amplifier in an active
+  speaker configuration. Made-to-order professional product not sold to general
+  consumers or retail stores.
+details: |-
+  Configuration: 3-way bass reflex active speaker system
+
+  Tweeter: 20mm pure magnesium hard dome
+
+  Midrange: 130mm (1.5") HP Scorcher (neodymium magnet, damper-less structure, repulsive magnetic circuit)
+
+  Woofer: 300mm HP woofer with alnico magnet and UDR tangential damper
+
+  Amplifier: Dedicated Accuphase PRO-30(N)/RS-N2 specification (2-way multichannel)
+
+  Accessories: Dedicated speaker cable (Neutrik speakON NL4FX-NL4FRX, 1.2m)
+
+  Availability: Made-to-order professional product; not sold to general consumers or retail stores
+io:
+  - name: Speaker Input (A ch / B ch)
+    signalFlow: input
+    category: audio
+    type: speakON
+    connection: "Neutrik speakON 4-pole NL4MPR (A ch: 1+/1-, B ch: 2+/2-)"
+    maxConnections: 1
+    position: Bottom
+  - name: Amplifier Input A ch (XLR)
+    signalFlow: input
+    category: audio
+    type: XLR
+    connection: XLR-3-31/XLR-3-32 balanced, 2 connectors
+    maxConnections: 2
+    position: Bottom
+  - name: Amplifier Input B ch (XLR)
+    signalFlow: input
+    category: audio
+    type: XLR
+    connection: XLR-3-31/XLR-3-32 balanced, 2 connectors
+    maxConnections: 2
+    position: Bottom
+  - name: Amplifier Speaker Output
+    signalFlow: output
+    category: audio
+    type: speakON
+    connection: "Neutrik speakON 4-pole NL4MP (A ch: 1+/1-, B ch: 2+/2-)"
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power (Amplifier)
+    signalFlow: input
+    category: power
+    type: AC
+    connection: 100V, 50/60Hz
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: Product Specifications (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/RS-N2_spec.pdf

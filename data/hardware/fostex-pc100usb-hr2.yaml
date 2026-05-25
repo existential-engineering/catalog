@@ -1,0 +1,62 @@
+id: pLsWfaIxatLWl3SClBRTT
+name: PC100USB-HR2
+manufacturer: fostex
+primaryCategory: headphone-amp
+categories:
+  - other
+url: https://www.fostex.jp/en/products/pc100usb-hr2/
+description: USB-powered desktop volume controller with built-in 24-bit/96 kHz
+  USB DAC and headphone amplifier. A large aluminum volume knob provides
+  at-your-fingertips level control for desktop monitoring, with RCA line outputs
+  to powered speakers and a 3.5 mm headphone output (headphone jack takes
+  priority over the line outputs when connected).
+details: |-
+  Desktop USB volume controller with an integrated DAC and headphone amplifier. The PC100USB-HR2 sits on the desk and gives the user a large aluminum volume knob for instant control over playback level from a computer.
+
+  Supports 24-bit / 96 kHz hi-resolution audio over USB and runs from USB bus power (5 V / 500 mA), so no separate power supply is required.
+
+  Uses the standard USB audio class driver on Windows and macOS (Windows 7 and later; OS X 10.6 through macOS 10.12 Sierra are listed as supported). Operation may be unstable on some Apple Silicon (M1) Macs unless connected via a USB hub.
+
+  Line-level RCA outputs feed powered speakers; a front-panel 3.5 mm headphone jack takes priority over the RCA outputs when a pair of headphones is plugged in, letting the unit double as a desktop headphone amp.
+
+  Ships with a 1 m USB 2.0 A-B cable and two 1 m RCA pin cables for immediate connection to a computer and powered speakers.
+specs: |-
+  - Supported sampling frequencies: 32, 44.1, 48, 88.2, 96 kHz
+  - Quantization bit rate: 16-bit / 24-bit
+  - Supported OS: Windows 7 or later; Mac OS X 10.6 through macOS 10.12 Sierra (USB audio class)
+  - USB connector: USB Type-B
+  - Line output: RCA pin jacks (L, R), rated +6 dBV at 0 dBFS, load impedance 10 k-ohm min
+  - Headphone output: 3.5 mm stereo mini jack, 30 mW + 30 mW into 32 ohm (THD <= 0.5%), load impedance 32 ohm min
+  - Power: USB bus power (5 V / 500 mA)
+  - Dimensions: 66 (W) x 44 (H) x 70 (D) mm (excluding feet)
+  - Weight: approx. 210 g
+  - Accessories: USB 2.0 cable (A-B, 1 m) x 1, RCA pin cable (1 m) x 2
+io:
+  - name: USB Input
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: USB Type-B (USB 2.0)
+    maxConnections: 1
+    position: Bottom
+  - name: Line Output (L/R)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: RCA (unbalanced)
+    maxConnections: 2
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 3.5 mm TRS (stereo mini)
+    maxConnections: 1
+    position: Top
+links:
+  - type: support
+    title: User Manual (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/2016/02/PC100USB-HR2_Manual.pdf
+  - type: support
+    title: Declaration of Conformity (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/Declaration-of-Conformity_PC100USB-HR2_20211001.pdf

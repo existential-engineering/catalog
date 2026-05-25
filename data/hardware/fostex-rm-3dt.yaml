@@ -1,0 +1,87 @@
+id: 6EpSWQxV2ODKWa6k59JEK
+name: RM-3DT
+manufacturer: fostex
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+  - rack-mount
+  - amplifier
+url: https://www.fostex.jp/en/products/rm-3dt/
+description: 1U rackmount stereo rack monitor with built-in 10W x 2 power
+  amplifiers and Dante audio networking. Supports balanced analog and Dante
+  digital inputs with a 26-dot LED level meter (selectable VU / VU+PEAK /
+  VU+PEAK hold / PEAK+PEAK hold modes) and four-level brightness adjustment.
+details: |-
+  The Fostex RM-3DT is a 1U rackmount stereo rack monitor with built-in 10 W + 10 W power amplifier and integrated Dante audio networking, allowing it to receive uncompressed multi-channel digital audio over standard Ethernet alongside conventional balanced analog feeds.
+
+  Either or both of the two channels extracted from the Dante network signal can be monitored, and a balanced XLR analog input with an XLR THRU output lets the unit sit inline on an existing monitor path. A front-panel 6.3 mm headphone jack provides solo listening for engineers in the rack room.
+
+  A 26-dot LED level meter is switchable between VU, VU+PEAK, VU+PEAK hold, and PEAK+PEAK hold modes with four brightness levels, and the digital amplifier and switching power supply keep heat and power draw low (10 W consumption) in a tightly packed 1U chassis.
+
+  Magnetically shielded 110 x 40 mm cone drivers (8 ohm, 84 dB/W at 1 m) cover 200 Hz to 20 kHz, suited to broadcast, fixed-installation, and studio rack monitoring rather than full-range music reference.
+specs: |-
+  - Form factor: 1U rackmount stereo monitor with built-in amplifier
+  - Speaker unit: 110 x 40 mm cone type, magnetically shielded
+  - Speaker impedance: 8 ohm
+  - Sound pressure level: 84 dB/W (1 m)
+  - Frequency response: 200 Hz to 20 kHz
+  - Power amplifier maximum output: 10 W x 2
+  - Residual noise: -50 dBV or less (DIN AUDIO)
+  - Distortion rate: 0.1% or less
+  - Dante input: RJ45 (Dante format)
+  - Analog input: XLR-3-31, balanced, +4/0 dBu rated, 10 kohm min input impedance
+  - Analog THRU output: XLR-3-32
+  - Headphone output: 6.3 mm stereo phone, 16 ohm load min, 20 mW + 20 mW (32 ohm, 1 kHz)
+  - Level meter: 26-dot LED x 2; modes VU / VU+PEAK / VU+PEAK hold / PEAK+PEAK hold; 4-level brightness; ref level +4/0 dBu
+  - Dimensions: 482 (W) x 44 (H) x 284 (D) mm (including protrusions)
+  - Weight: approx. 3.5 kg
+  - Power: AC 100-240 V, 50/60 Hz
+  - Power consumption: 10 W
+io:
+  - name: Dante Input
+    signalFlow: input
+    category: digital
+    type: network
+    connection: RJ45 (Dante)
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: XLR-3-31 (balanced, +4/0 dBu)
+    maxConnections: 1
+    position: Bottom
+  - name: Analog THRU Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: XLR-3-32 (balanced)
+    maxConnections: 1
+    position: Bottom
+  - name: Headphones
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4 inch (6.3 mm) stereo phone jack
+    maxConnections: 1
+    position: Top
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: AC 100-240 V, 50/60 Hz
+    maxConnections: 1
+    position: Bottom
+releaseDate: 2021-03-03
+links:
+  - type: support
+    title: Manual (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/RM-3DT_rev2_Manual.pdf
+  - type: support
+    title: Declaration of Conformity (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/Declaration-of-Conformity_RM-3_RM-3DT_20230330.pdf
+  - type: support
+    title: Dimension Drawing (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/RM-3DT_OM-Dimensional-Drawing.pdf

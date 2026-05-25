@@ -1,0 +1,81 @@
+id: H9Gu1dPjDfT6H6OArhukK
+name: 6301ND
+manufacturer: fostex
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+url: https://www.fostex.jp/en/products/6301nd/
+description: Compact active monitor speaker with built-in 20W Class-D amplifier,
+  AES/EBU digital input, and unbalanced analog input. Part of the 6301 series of
+  professional monitor speakers used for over 30 years in broadcast facilities
+  and small-scale loudspeaker applications. The ND variant adds AES/EBU digital
+  input with a THRU output for source distribution.
+details: |-
+  The Fostex 6301ND is a single-cabinet active monitor speaker derived from the long-running 6301 series, which has been a staple in broadcast facilities and small-scale loudspeaker applications for over 30 years.
+
+  The ND variant is purpose-built for AES/EBU digital workflows. It accepts a digital signal on an XLR-3-31 input (IEC 60958, 44.1 to 96 kHz) and provides a THRU jack with a source selector switch (L / L+R / R) so multiple 6301ND units can be daisy-chained from a single stereo AES/EBU source. A separate unbalanced 1/4" TS analog input is also provided.
+
+  A 10 cm full-range cone driver is mounted in a closed-type aluminum die-cast enclosure and driven by a built-in 20 W Class-D / PWM amplifier, producing a frequency response of 70 Hz to 15 kHz and a maximum SPL of 98 dB.
+
+  The universal AC 100-230V switching power supply makes the 6301ND suitable for international installations, with low standby consumption (under 0.5 W) and a wide operating temperature range of -10 to +50 degrees C. An optional EB-6301 wall-mount bracket is available separately.
+specs: |-
+  - Enclosure: Closed type, aluminum die-cast
+  - Driver: 10 cm cone full-range (x1)
+  - Frequency response: 70 Hz to 15 kHz
+  - Sound pressure level: 85 dB/W (1 m)
+  - Maximum SPL: 98 dB
+  - Amplifier: 20 W Class-D / PWM
+  - T.H.D.: 0.05% (1 kHz / 1 W)
+  - Residual noise: -65 dBV
+  - Analog input impedance: 10 k-ohm min
+  - Digital input impedance: 110 ohm
+  - Digital input: AES/EBU (XLR-3-31), IEC 60958, Fs 44.1 to 96 kHz
+  - Digital THRU: XLR-3-32, source select L / L+R / R
+  - Analog input: 1/4" TS (unbalanced)
+  - Power: AC 100-230 V, 50/60 Hz
+  - Power consumption: 10 W (standby <= 0.5 W)
+  - Operating temperature: -10 degrees C to +50 degrees C
+  - Operating humidity: <= 90%
+  - Dimensions: 120 (W) x 189 (H) x 120 (D) mm
+  - Weight: 2.24 kg
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4" TS (unbalanced)
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Digital Input
+    signalFlow: input
+    category: digital
+    type: aes-ebu
+    connection: XLR-3-31 (female)
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Digital THRU
+    signalFlow: output
+    category: digital
+    type: aes-ebu
+    connection: XLR-3-32 (male)
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power In
+    signalFlow: input
+    category: power
+    type: power
+    connection: IEC AC 100-230V (50/60Hz)
+    maxConnections: 1
+    position: Bottom
+releaseDate: 2015-05-11
+links:
+  - type: support
+    title: User Manual (ENG, PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/6301N_en.pdf
+  - type: support
+    title: Dimension Drawing (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/6301N_OUTSIDE_EB6301_OUTSIDE.pdf
+  - type: support
+    title: Declaration of Conformity (PDF)
+    url: https://www.fostex.jp/cms/wp-content/uploads/DeclarationofConformity_6301NB_NX_NE_ND_DT.pdf
