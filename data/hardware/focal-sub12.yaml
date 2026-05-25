@@ -1,0 +1,62 @@
+name: Sub12
+manufacturer: focal
+primaryCategory: subwoofer
+url: https://www.focal.com/products/sub12
+description: "SUB12, Professional subwoofer: Our professional monitors are
+  designed from the first stage to reproduce the sound signal without
+  alteration. These monitors will meet the needs of both large studios and small
+  listening rooms."
+specs: |-
+  - Professional studio subwoofer
+  - Driver: 13" W membrane (33 cm)
+  - Frequency response (±3 dB): 28 Hz – 400 Hz
+  - Maximum SPL (peak @ 1 m): 125 dB
+  - Amplifier: 600 W class G (BASH); 1000 W peak-to-peak
+  - Inputs: Left, Right, LFE — XLR symmetrical 10 kΩ
+  - Controls: Sub level, Lo-pass frequency, Phase, Polarity switch, Mute, 2.1 bypass (footswitch), Hi-pass frequency selection
+  - Rear-panel switches: polarity, +4 dBu / −10 dBv sensitivity, automatic standby bypass
+  - Footswitch input/output for 2.1 bypass
+  - Local supply: 100–120 V or 220–240 V
+  - Dimensions (H × W × D): 60 × 48.7 × 56.8 cm (23.6 × 19.2 × 22.4 in)
+  - Weight: 58 kg (127.8 lb)
+io:
+  - name: Left Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Right Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: LFE Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: LFE Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Footswitch Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: Product Sheet
+    url: https://dam.focal-naim.com/m/52f50066a97bea80/original/FP_Sub12_EN-pdf.pdf
+id: TVTRnpoHrRZVY3xNeJ5et
