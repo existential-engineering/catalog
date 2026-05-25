@@ -9,22 +9,12 @@ url: https://www.crownaudio.com/en-US/products/dci-4-300n
 description: A four-channel, 300W @ 4Ω networked installation power amplifier
   with BLU link digital audio transport, 70V/100V direct drive output, and EN
   54-16 compliance for life safety applications.
-details:
-  - The DCi 4|300N is part of Crown's DriveCore Install Network Series, a
-    complete line of high-performance installation amplifiers based on
-    proprietary DriveCore technology. It is engineered for challenging 21st
-    century installed sound applications, offering versatility, energy
-    efficiency, and a compact form factor.
-  - The amplifier provides both analog and digital inputs via HARMAN's
-    proprietary BLU link digital audio transport, with a priority input router
-    for automatic failover between sources. Network monitoring and control is
-    provided through the HiQnet protocol over standard TCP/IP, with programmable
-    GPIO ports for volume control, preset recall, and error reporting.
-  - Onboard DSP includes LevelMAX limiters, input/output EQ, crossover, delay,
-    matrix mixer, and speaker line monitoring with 20kHz pilot tone generation
-    for end-of-line detection. The DCi 4|300N is EN 54-16 compliant for life
-    safety and voice alarm applications, and integrates with Audio Architect
-    software, Crown's mobile app, Q-SYS, and AMX control systems.
+details: |-
+  The DCi 4|300N is part of Crown's DriveCore Install Network Series, a complete line of high-performance installation amplifiers based on proprietary DriveCore technology. It is engineered for challenging 21st century installed sound applications, offering versatility, energy efficiency, and a compact form factor.
+
+  The amplifier provides both analog and digital inputs via HARMAN's proprietary BLU link digital audio transport, with a priority input router for automatic failover between sources. Network monitoring and control is provided through the HiQnet protocol over standard TCP/IP, with programmable GPIO ports for volume control, preset recall, and error reporting.
+
+  Onboard DSP includes LevelMAX limiters, input/output EQ, crossover, delay, matrix mixer, and speaker line monitoring with 20kHz pilot tone generation for end-of-line detection. The DCi 4|300N is EN 54-16 compliant for life safety and voice alarm applications, and integrates with Audio Architect software, Crown's mobile app, Q-SYS, and AMX control systems.
 specs: |-
   - 4 channels
   - Dual mode: 150W @ 2Ω, 300W @ 4Ω, 300W @ 8Ω, 150W @ 16Ω, 300W @ 70Vrms, 300W @ 100Vrms
@@ -120,7 +110,7 @@ io:
   - name: Ethernet (HiQnet Control)
     signalFlow: bidirectional
     category: digital
-    type: usb
+    type: ethernet
     connection: ethernet
     maxConnections: 1
     position: Bottom

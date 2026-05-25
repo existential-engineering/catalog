@@ -10,21 +10,12 @@ description: A 4-channel professional power amplifier delivering 600W per output
   channel, combining analog and BLU link digital audio inputs. Part of Crown's
   CDi DriveCore series for medium-sized installations such as cinemas, houses of
   worship, bars, and lounges.
-details:
-  - The CDi 4|600BL is a 4-channel professional power amplifier delivering 600W
-    per output channel and combining analog and BLU link digital audio inputs.
-    Designed for medium-sized installations including cinemas, houses of
-    worship, bars, and lounges, it incorporates technology from Crown's flagship
-    DriveCore Install series.
-  - BLU link capability enables digital audio distribution over HARMAN's
-    256-channel digital audio bus, and network control and monitoring are
-    available via HiQnet Audio Architect software. High-level onboard DSP and a
-    front-panel interface allow direct configuration of routing, EQ, crossover,
-    delays, and limiting.
-  - The amplifier supports driving up to 100Vrms speaker loads without external
-    transformers and ships with pre-loaded JBL speaker tunings for faster
-    installs. DriveCore Technology reduces component count, improving
-    reliability and audio fidelity.
+details: |-
+  The CDi 4|600BL is a 4-channel professional power amplifier delivering 600W per output channel and combining analog and BLU link digital audio inputs. Designed for medium-sized installations including cinemas, houses of worship, bars, and lounges, it incorporates technology from Crown's flagship DriveCore Install series.
+
+  BLU link capability enables digital audio distribution over HARMAN's 256-channel digital audio bus, and network control and monitoring are available via HiQnet Audio Architect software. High-level onboard DSP and a front-panel interface allow direct configuration of routing, EQ, crossover, delays, and limiting.
+
+  The amplifier supports driving up to 100Vrms speaker loads without external transformers and ships with pre-loaded JBL speaker tunings for faster installs. DriveCore Technology reduces component count, improving reliability and audio fidelity.
 specs: |-
   - 4 channels
   - 600W per channel @ 4Ω
@@ -105,21 +96,21 @@ io:
   - name: BLU link In
     signalFlow: input
     category: digital
-    type: line
+    type: dante
     connection: ethernet
     maxConnections: 1
     position: Bottom
   - name: BLU link Out
     signalFlow: output
     category: digital
-    type: line
+    type: dante
     connection: ethernet
     maxConnections: 1
     position: Bottom
   - name: Ethernet (Network Control)
     signalFlow: bidirectional
     category: digital
-    type: usb
+    type: ethernet
     connection: ethernet
     maxConnections: 1
     position: Bottom

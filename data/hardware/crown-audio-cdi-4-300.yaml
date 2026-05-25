@@ -10,24 +10,12 @@ description: A 4-channel professional power amplifier with analog inputs,
   delivering 300W per output channel. Part of Crown's CDi DriveCore series,
   combining onboard DSP, network control, and direct 70/100Vrms drive for small
   to medium installations.
-details:
-  - The CDi DriveCore Series is an evolution in amplification, providing an
-    impressive mix of high-performance, rich feature set, and competitive cost.
-    Using technology derived from Crown's flagship Installed Sound amplifier
-    (the DriveCore Install series), the CDi 4|300 offers streamlined
-    functionality for ease-of-use across a variety of applications including
-    restaurants and retail stores.
-  - DriveCore Technology reduces component count and variability while improving
-    audio fidelity. The amplifier features network control and monitoring via
-    HiQnet Audio Architect software over TCP/IP, plus high-level onboard DSP
-    including input/output routing, input delay up to 1000ms, output delay up to
-    100ms, 8-band parametric EQ on input and output, crossover, and a LevelMAX
-    limiter.
-  - Direct Drive 70/100Vrms support enables high-impedance applications without
-    an external transformer. Pre-loaded JBL speaker tunings expedite
-    installations, the front-panel interface provides complete configuration
-    on-board, and a GPIO/AUX port handles preset recall, channel muting, fault
-    monitoring, and power control.
+details: |-
+  The CDi DriveCore Series is an evolution in amplification, providing an impressive mix of high-performance, rich feature set, and competitive cost. Using technology derived from Crown's flagship Installed Sound amplifier (the DriveCore Install series), the CDi 4|300 offers streamlined functionality for ease-of-use across a variety of applications including restaurants and retail stores.
+
+  DriveCore Technology reduces component count and variability while improving audio fidelity. The amplifier features network control and monitoring via HiQnet Audio Architect software over TCP/IP, plus high-level onboard DSP including input/output routing, input delay up to 1000ms, output delay up to 100ms, 8-band parametric EQ on input and output, crossover, and a LevelMAX limiter.
+
+  Direct Drive 70/100Vrms support enables high-impedance applications without an external transformer. Pre-loaded JBL speaker tunings expedite installations, the front-panel interface provides complete configuration on-board, and a GPIO/AUX port handles preset recall, channel muting, fault monitoring, and power control.
 specs: |-
   - 4 channels
   - 300W per channel @ 4Ω
@@ -110,7 +98,7 @@ io:
   - name: Ethernet (Network Control)
     signalFlow: bidirectional
     category: digital
-    type: usb
+    type: ethernet
     connection: ethernet
     maxConnections: 1
     position: Bottom

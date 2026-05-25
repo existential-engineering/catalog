@@ -9,25 +9,12 @@ url: https://www.crownaudio.com/en-US/products/cdi-2-300bl
 description: A 2-channel professional power amplifier delivering 300W per output
   channel, with both analog and BLU link digital audio networking. Part of
   Crown's CDi DriveCore series for small to medium installations.
-details:
-  - The CDi 2|300BL represents an evolution in amplification technology,
-    combining high-performance, rich feature set, and competitive cost. The unit
-    incorporates technology derived from Crown's flagship DriveCore Install
-    series, providing streamlined functionality for diverse applications such as
-    restaurants and retail environments.
-  - The BLU link digital audio bus carries up to 256 channels in a
-    fault-tolerant ring, enabling integration with other HARMAN BLU link
-    devices. Network control and monitoring are available via HiQnet Audio
-    Architect software over TCP/IP, complemented by a front-panel interface for
-    direct configuration and a GPIO/AUX port for preset recall, channel muting,
-    fault monitoring, and power control.
-  - DriveCore Technology eliminates hundreds of components, reducing variability
-    and increasing reliability while improving audio fidelity. The amplifier
-    supports driving up to 100Vrms speaker loads directly without a transformer,
-    and pre-loaded JBL speaker tunings expedite installation. Onboard DSP
-    includes input router, input delay (up to 1000ms), 8-band parametric EQ on
-    input and output, crossover, output delay (up to 100ms), and LevelMAX
-    limiter.
+details: |-
+  The CDi 2|300BL represents an evolution in amplification technology, combining high-performance, rich feature set, and competitive cost. The unit incorporates technology derived from Crown's flagship DriveCore Install series, providing streamlined functionality for diverse applications such as restaurants and retail environments.
+
+  The BLU link digital audio bus carries up to 256 channels in a fault-tolerant ring, enabling integration with other HARMAN BLU link devices. Network control and monitoring are available via HiQnet Audio Architect software over TCP/IP, complemented by a front-panel interface for direct configuration and a GPIO/AUX port for preset recall, channel muting, fault monitoring, and power control.
+
+  DriveCore Technology eliminates hundreds of components, reducing variability and increasing reliability while improving audio fidelity. The amplifier supports driving up to 100Vrms speaker loads directly without a transformer, and pre-loaded JBL speaker tunings expedite installation. Onboard DSP includes input router, input delay (up to 1000ms), 8-band parametric EQ on input and output, crossover, output delay (up to 100ms), and LevelMAX limiter.
 specs: |-
   - 2 channels
   - 300W per channel @ 4Ω
@@ -96,7 +83,7 @@ io:
   - name: Ethernet (Network Control)
     signalFlow: bidirectional
     category: digital
-    type: usb
+    type: ethernet
     connection: ethernet
     maxConnections: 1
     position: Bottom

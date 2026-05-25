@@ -10,24 +10,12 @@ description: A 2-channel professional power amplifier with analog inputs,
   delivering 300W per output channel. Part of Crown's CDi DriveCore series,
   combining high-performance amplification with onboard DSP and network control
   for small to medium-sized installations.
-details:
-  - The CDi DriveCore Series is an evolution in amplification, providing an
-    impressive mix of high-performance, rich feature set, and competitive cost.
-    Using technology derived from Crown's flagship Installed Sound amplifier
-    (the DriveCore Install series), the CDi 2|300 offers streamlined
-    functionality for ease-of-use in a variety of applications.
-  - DriveCore Technology eliminates hundreds of components within each
-    amplifier, reducing variability and increasing reliability while improving
-    audio fidelity through efficient design. The amplifier features network
-    control and monitoring via HiQnet Audio Architect software over TCP/IP, plus
-    high-level onboard DSP including input/output routing, delays (up to 1000ms
-    input, 100ms output), 8-band parametric EQ, crossover, and a LevelMAX
-    limiter.
-  - Direct Drive 70/100Vrms output support enables high-impedance speaker
-    applications without requiring an external transformer. Pre-loaded JBL
-    speaker tunings expedite installations, while the front-panel interface
-    provides intuitive amplifier configuration. A GPIO/AUX port handles preset
-    recall, channel muting, fault monitoring, and power control.
+details: |-
+  The CDi DriveCore Series is an evolution in amplification, providing an impressive mix of high-performance, rich feature set, and competitive cost. Using technology derived from Crown's flagship Installed Sound amplifier (the DriveCore Install series), the CDi 2|300 offers streamlined functionality for ease-of-use in a variety of applications.
+
+  DriveCore Technology eliminates hundreds of components within each amplifier, reducing variability and increasing reliability while improving audio fidelity through efficient design. The amplifier features network control and monitoring via HiQnet Audio Architect software over TCP/IP, plus high-level onboard DSP including input/output routing, delays (up to 1000ms input, 100ms output), 8-band parametric EQ, crossover, and a LevelMAX limiter.
+
+  Direct Drive 70/100Vrms output support enables high-impedance speaker applications without requiring an external transformer. Pre-loaded JBL speaker tunings expedite installations, while the front-panel interface provides intuitive amplifier configuration. A GPIO/AUX port handles preset recall, channel muting, fault monitoring, and power control.
 specs: |-
   - 2 channels
   - 300W per channel @ 4Ω
@@ -82,7 +70,7 @@ io:
   - name: Ethernet (Network Control)
     signalFlow: bidirectional
     category: digital
-    type: usb
+    type: ethernet
     connection: ethernet
     maxConnections: 1
     position: Bottom

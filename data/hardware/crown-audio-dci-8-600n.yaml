@@ -9,21 +9,12 @@ url: https://www.crownaudio.com/en-US/products/dci-8-600n
 description: An eight-channel, 600W @ 4Ω networked installation power amplifier
   with BLU link digital audio transport and 70V/100V direct drive output for
   high-performance installed sound applications.
-details:
-  - The DCi 8|600N from Crown's DriveCore Install Network Series delivers 600W
-    per channel at 4Ω across eight channels, combining high power density with
-    energy efficiency in a versatile rack-mount form factor. Proprietary
-    DriveCore technology drives reliable, high-fidelity performance for
-    challenging installed sound applications.
-  - Audio inputs are routed via a priority input router that selects between
-    balanced analog XLR inputs and HARMAN's proprietary BLU-Link digital audio
-    transport. Network monitoring and control run over standard TCP/IP using the
-    HiQnet protocol, with programmable GPIO ports for volume control, preset
-    recall, and error reporting.
-  - Onboard DSP includes LevelMAX limiters, input/output EQ, crossover, delay,
-    matrix mixer, and speaker line monitoring. The amplifier integrates with
-    Audio Architect, Q-SYS, AMX, and Crown's Powered by Crown app for flexible
-    system design and remote control.
+details: |-
+  The DCi 8|600N from Crown's DriveCore Install Network Series delivers 600W per channel at 4Ω across eight channels, combining high power density with energy efficiency in a versatile rack-mount form factor. Proprietary DriveCore technology drives reliable, high-fidelity performance for challenging installed sound applications.
+
+  Audio inputs are routed via a priority input router that selects between balanced analog XLR inputs and HARMAN's proprietary BLU-Link digital audio transport. Network monitoring and control run over standard TCP/IP using the HiQnet protocol, with programmable GPIO ports for volume control, preset recall, and error reporting.
+
+  Onboard DSP includes LevelMAX limiters, input/output EQ, crossover, delay, matrix mixer, and speaker line monitoring. The amplifier integrates with Audio Architect, Q-SYS, AMX, and Crown's Powered by Crown app for flexible system design and remote control.
 specs: |-
   - 8 channels
   - 600W per channel @ 4Ω (Dual Mode)
@@ -174,7 +165,7 @@ io:
   - name: Ethernet (HiQnet Control)
     signalFlow: bidirectional
     category: digital
-    type: usb
+    type: ethernet
     connection: ethernet
     maxConnections: 1
     position: Bottom
