@@ -1,0 +1,146 @@
+id: M1OYwa1xeSo08bnCa3nj_
+name: Control 02
+manufacturer: dynaudio
+primaryCategory: control-surface
+categories:
+  - audio-interface
+  - utility
+url: https://dynaudio.com/professional-audio/dynaudio-control/control-02
+description: "Dynaudio Control 02 builds on everything Control 01 offers – with
+  one crucial addition: eight analogue outputs for direct connection to LYD, BM
+  series"
+details: |-
+  Dynaudio Control 02 builds on everything Control 01 offers – with one crucial addition: eight analogue outputs for direct connection to LYD, BM series, or other studio monitors with analogue inputs.
+
+  Like Control 01, it's a full-featured DSP unit supporting Dante, Thunderbolt, AES3 and MADI connectivity. And thanks to its stellar expansion options, it can integrate seamlessly into any studio, from stereo mixing to immersive Dolby Atmos configurations.
+
+  Control 02 gives you all the tools to monitor, route, and fine-tune your audio in one compact and expandable unit – designed for workflows that need analogue flexibility without compromise.
+
+  Connect a Control Link for tactile running of your studio system, and you have a complete solution for the most demanding professional scenarios.
+specs: |-
+  - Chassis: 19", 1 RU
+  - Depth: 32 cm / 12.6"
+  - Width: 43.5 cm / 17.2"
+  - Weight: 2.8 kg / 6.5 lbs
+  - Networking: 2x RJ45, 1000BASE-T, Dante, AES67
+  - Thunderbolt: 2x Thunderbolt 3, 2x15 Watts PD
+  - ADAT: Toslink 2x In, 2x Out (16 channels total, configurable as S/PDIF)
+  - AES3: DB25, 8CH AES3 (16 Audio Channels)
+  - Word Clock: 2x BNC (WC In/Out)
+  - MADI: 2x BNC (MADI In/Out)
+  - Headphone: 2x TRS (Front), 18-600 Ohm
+  - Expansion: DAD Expansion Modules, 1 available slot
+  - Power: C13, 90-260 VAC (Max 120W)
+  - Power consumption (Digital section): 15W
+  - Power consumption (DAD I/O Options max): 30W
+  - Power consumption (Thunderbolt power max): 2x15W
+  - Power consumption (Mains): 120 VA max
+  - Input voltage: 90-260 VAC; 100-240 VAC Nominal, 47-63 Hz
+  - Mains fuse: 1 A, T1AH/250V (mounted in IEC connector)
+  - Safety compliance: IEC 62368-1:2020+A11 2020
+io:
+  - name: Dante / AES67 Network
+    signalFlow: bidirectional
+    category: audio
+    type: s/pdif
+    connection: ethernet
+    maxConnections: 2
+    position: Bottom
+  - name: Thunderbolt 3
+    signalFlow: bidirectional
+    category: audio
+    type: s/pdif
+    connection: thunderbolt 3
+    maxConnections: 2
+    position: Bottom
+  - name: ADAT / S/PDIF Optical Input
+    signalFlow: input
+    category: audio
+    type: s/pdif
+    connection: toslink
+    maxConnections: 2
+    position: Bottom
+  - name: ADAT / S/PDIF Optical Output
+    signalFlow: output
+    category: audio
+    type: s/pdif
+    connection: toslink
+    maxConnections: 2
+    position: Bottom
+  - name: AES3 Digital I/O (8CH)
+    signalFlow: output
+    category: audio
+    type: s/pdif
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: Word Clock Output
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: MADI Input
+    signalFlow: input
+    category: audio
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: MADI Output
+    signalFlow: output
+    category: audio
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Bottom
+  - name: AC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: Dynaudio Control Installation Guide
+    url: https://dynaudio.com/hubfs/Manuals/dynaudio_control_installation_guide_english_a4.pdf?hsLang=en
+  - type: support
+    title: Control 01/02 Firmware 1.1.1.1
+    url: https://dynaudio.com/hubfs/Software%20and%20Firmware/Control/V250501/Control_01%2c02_Firmware_1.1.1.1_all.zip?hsLang=en
+  - type: resource
+    title: DADman Control Software (Windows)
+    url: https://dynaudio.com/hubfs/Software%20and%20Firmware/Control/V250501/DADman-Windows-Install-5.8.1.6.zip?hsLang=en
+  - type: resource
+    title: DADman Control Software (macOS)
+    url: https://dynaudio.com/hubfs/Software%20and%20Firmware/Control/V250501/DADman-MAC-Install-5.8.1.6.zip?hsLang=en
+  - type: support
+    title: Thunder Core Audio drivers (Windows)
+    url: https://dynaudio.com/hubfs/Software%20and%20Firmware/Control/V250501/TB3-ASIO-driver-1.1.2.zip?hsLang=en
+  - type: support
+    title: Thunder Core Audio drivers (macOS)
+    url: https://dynaudio.com/hubfs/Software%20and%20Firmware/Control/V250501/DADTBDriver-CoreAudio-1.2.2.zip?hsLang=en
+  - type: resource
+    title: Dynaudio Control Series
+    url: https://dynaudio.com/professional-audio/dynaudio-control
+  - type: resource
+    title: Control 01
+    url: https://dynaudio.com/professional-audio/dynaudio-control/control-01
+  - type: resource
+    title: Control Link
+    url: https://dynaudio.com/professional-audio/dynaudio-control/control-link

@@ -1,0 +1,128 @@
+id: qpn2ao2OFcJV6LHAimGKV
+name: Control 01
+manufacturer: dynaudio
+primaryCategory: control-surface
+categories:
+  - audio-interface
+  - utility
+url: https://dynaudio.com/professional-audio/dynaudio-control/control-01
+description: With an almost limitless channel count there's virtually no end to
+  the possible configurations you can create for your studio.
+details: |-
+  Dynaudio Control 01 is a powerful digital audio processor designed to be the hub of any modern studio. It has all the tools and connectivity you need to get creative in everything from producing a demo in a recording and mastering studio or mobile truck, right up to putting the finishing touches to a major motion picture in a Dolby Atmos dubbing stage.
+
+  With an almost limitless channel count, using connected interfaces via optional DADlink, there's virtually no end to the possible configurations you can create for your studio. The Dante interface alone carries 256 channels of I/O built into the base unit. The Thunderbolt audio interface also has 256 inputs and 256 outputs to your computer with only two samples of latency.
+
+  As a monitor controller, Control 01 uses DAD's (Digital Audio Denmark) industry-leading DADman software. PRO|MON with SPQ gives it dominion over any format of speaker array from mono to 128 immersive channels, each with its own processing (EQ, gain and delay). Connect a Control Link for tactile running of your studio system, and you have a complete solution for the most demanding professional scenarios.
+
+  Dynaudio Control 01's platform-agnostic Thunderbolt connectivity means it can be your main audio interface — whichever system you run. With the included Dante interface, MADI connections, AES3 outputs and Thunderbolt, you can already route audio between four different formats. With the addition of DADlink and connected interfaces, you can route between a massive 984 possible channels. Control 01 has a slot for DADlink and two expansion slots that can house any of the available DAD expansion options.
+
+  The included speaker processing provides 128 channels of EQ, gain and delay to optimise your monitoring and bass-management systems. With over a thousand bands of EQ available, you can tune your room to the highest tolerances and standards. There are also two independent headphone amplifiers included on the front panel, rounding out a complete studio solution in one rack space.
+specs: |-
+  - Chassis: 19", 1 RU
+  - Depth: 32 cm / 12.6"
+  - Width: 43.5 cm / 17.2"
+  - Weight: 2.8 kg / 6.5 lbs
+  - Networking: 2x RJ45, 1000BASE-T, Dante, AES67
+  - Thunderbolt: 2x Thunderbolt 3, 2x15 Watts PD
+  - ADAT: Toslink 2x In, 2x Out (16 channels total, configurable as S/PDIF)
+  - AES3: DB25, 8CH AES3 (16 Audio Channels)
+  - Word Clock: 2x BNC (WC In/Out)
+  - MADI: 2x BNC (MADI In/Out)
+  - Headphone: 2x TRS (Front), 18-600 Ohm
+  - Expansion: DAD Expansion Modules, 2 available slots
+  - Power consumption (Digital section): 15W
+  - Power consumption (DAD I/O Options max): 30W
+  - Power consumption (Thunderbolt power max): 2x15W
+  - Power consumption (Mains): 120 VA max
+  - Input voltage: 90-260 VAC; 100-240 VAC Nominal, 47-63 Hz
+  - Mains fuse: 1 A, T1AH/250V (mounted in IEC connector)
+  - Safety compliance: IEC 62368-1:2020+A11 2020
+io:
+  - name: Dante / AES67 Network
+    signalFlow: bidirectional
+    category: audio
+    type: s/pdif
+    connection: ethernet
+    maxConnections: 2
+    position: Bottom
+  - name: Thunderbolt 3
+    signalFlow: bidirectional
+    category: audio
+    type: s/pdif
+    connection: thunderbolt 3
+    maxConnections: 2
+    position: Bottom
+  - name: ADAT / S/PDIF Optical Input
+    signalFlow: input
+    category: audio
+    type: s/pdif
+    connection: toslink
+    maxConnections: 2
+    position: Bottom
+  - name: ADAT / S/PDIF Optical Output
+    signalFlow: output
+    category: audio
+    type: s/pdif
+    connection: toslink
+    maxConnections: 2
+    position: Bottom
+  - name: AES3 Digital I/O (8CH)
+    signalFlow: output
+    category: audio
+    type: s/pdif
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: Word Clock Output
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: MADI Input
+    signalFlow: input
+    category: audio
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: MADI Output
+    signalFlow: output
+    category: audio
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Bottom
+  - name: AC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: Dynaudio Control Installation Guide
+    url: https://dynaudio.com/hubfs/Manuals/dynaudio_control_installation_guide_english_a4.pdf?hsLang=en
+  - type: resource
+    title: Dynaudio Control Series
+    url: https://dynaudio.com/professional-audio/dynaudio-control
+  - type: resource
+    title: Control Link
+    url: https://dynaudio.com/professional-audio/dynaudio-control/control-link
