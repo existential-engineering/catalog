@@ -1,0 +1,87 @@
+id: HFHkVdF7UVnSHbAHnN0Sa
+name: Red 4Pre
+manufacturer: focusrite
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+url: "https://focusrite.com/products/red-4pre"
+prices:
+  - amount: 3099.99
+    currency: USD
+description: "58x64 premium audio interface for Pro Tools | HD and Thunderbolt 2
+  workflows, featuring four Red Evolution mic pres with Air transformer
+  emulation, parallel-path summing conversion at up to 24-bit/192 kHz, dual
+  DigiLink connectivity for Pro Tools | HD, and 32x32 Dante audio-over-IP
+  networking expandable to 64 additional channels."
+details: |-
+  Focusrite's flagship Red-range interface combines four Red Evolution mic preamps (63 dB gain, -129 dBu EIN, switchable Air transformer emulation, per-channel 48V phantom, HPF, polarity invert, stereo link) with a parallel-path summing converter design (118 dB A-D / 121 dB D-A dynamic range, ≤0.0009% THD+N).
+
+  Connects to host via dual Thunderbolt 2 ports (daisy-chain capable), dual DigiLink connectors for direct Pro Tools | HD integration, and dual Ethernet ports for 32x32 Dante audio-over-IP expandable up to 64 additional channels. Total channel count: 58 inputs / 64 outputs. Includes the Red plug-in suite (Red 2 EQ, Red 3 compressor) and Softube Time & Tone bundle.
+specs: |-
+  - 58 inputs / 64 outputs total channel count
+  - Sample rates up to 24-bit / 192 kHz
+  - Frequency response: 20 Hz - 35 kHz ±0.25 dB
+  - Dynamic range A-D: 118 dB (A-weighted)
+  - Dynamic range D-A: 121 dB (A-weighted)
+  - THD+N: ≤0.0009%
+  - 4 x Red Evolution mic preamps with Air mode
+  - Mic preamp gain: 0-63 dB (1 dB increments)
+  - Mic preamp EIN: -129 dBu (A-weighted)
+  - Mic input impedance: 6 kΩ (Air off) / 2 kΩ (Air on)
+  - Instrument inputs: 1/4" TS unbalanced, 2.3 MΩ nominal impedance
+  - Dual Thunderbolt 2 ports (daisy-chain)
+  - Dual mini-DigiLink connectors for Pro Tools | HD
+  - Dual Ethernet ports for Dante (32x32, expandable to 64 channels)
+  - Includes Red plug-in suite (Red 2 EQ, Red 3 Comp) and Softube Time & Tone
+  - 3-year warranty
+io:
+  - name: Mic Inputs 1-4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 4
+    position: Left
+  - name: Line Inputs 1-4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 4
+    position: Left
+  - name: Line Inputs 5-8
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 4
+    position: Left
+  - name: Instrument Inputs
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Right
+  - name: Thunderbolt 2
+    signalFlow: bidirectional
+    category: digital
+    type: thunderbolt
+    connection: thunderbolt 2
+    maxConnections: 2
+    position: Left
+  - name: Dante Network
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 2
+    position: Left
+links:
+  - type: resource
+    title: Red Range User Guide
+    url: "https://userguides.focusrite.com/hc/en-gb/sections/18531847529874-Red-Ran\
+      ge-User-Guide"
+  - type: resource
+    title: Red Downloads
+    url: "https://downloads.focusrite.com/focusrite/red"

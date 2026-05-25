@@ -1,0 +1,105 @@
+id: qz4RkhuN8glGjM_XAyBmM
+name: Vocaster Two
+manufacturer: focusrite
+primaryCategory: audio-interface
+url: "https://focusrite.com/products/vocaster-two"
+prices:
+  - amount: 289.99
+    currency: USD
+description: "Vocaster Two is the easiest way to bring studio quality sound to
+  your podcast, let your voice be heard like never before."
+details: |-
+  The Vocaster Two is a 2-input USB-C podcasting audio interface designed for hosts and guests. It features two XLR mic inputs with 70 dB of gain, Auto Gain to set levels automatically, and an Enhance button with four voice presets to add studio polish.
+
+  Two independent headphone outputs let host and guest monitor separately, while speaker outputs feed a control room. A 3.5 mm TRRS phone input brings in calls from a phone (via cable or Bluetooth 5.0), and a 3.5 mm TRS camera output sends audio to a DSLR for vlogging.
+
+  Stereo loopback brings in two channels from the computer for music or game audio. Includes Vocaster Hub software for mixing, plus Hindenburg PRO and Acast Influencer subscriptions.
+specs: |-
+  - 2 XLR mic inputs (Host and Guest) with 70 dB gain range
+  - Phantom power (48V) switchable
+  - Auto Gain function for automatic input level setup
+  - Enhance button with 4 voice presets
+  - Mute buttons (separate Host/Guest)
+  - 2 independent headphone outputs
+  - Speaker outputs (mono/stereo capable)
+  - 3.5 mm TRRS phone input for call audio
+  - 3.5 mm TRS camera output for DSLR/vlogging
+  - Bluetooth v5.0 for wireless phone audio
+  - Stereo loopback (2 channels from computer)
+  - USB-C connection to computer
+  - USB bus powered, 900 mA minimum
+  - Compatibility: Windows (Intel/AMD/Arm64), macOS (Apple Silicon/Intel)
+  - Includes Vocaster Hub mixing software
+  - Includes Hindenburg PRO and Acast Influencer subscriptions
+  - 3-year warranty
+io:
+  - name: Host Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Guest Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Host Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Guest Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Speaker Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Phone Input (TRRS)
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Camera Output (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: USB-C
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: Downloads and Manuals
+    url: "https://downloads.focusrite.com/focusrite/vocaster/vocaster-two"
+  - type: support
+    title: Focusrite Support
+    url: "https://support.focusrite.com/hc/en-gb"

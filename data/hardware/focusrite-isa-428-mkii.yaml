@@ -1,0 +1,73 @@
+id: pbskPPjwxXZat3L6XJiCx
+name: ISA 428 MKII
+manufacturer: focusrite
+primaryCategory: preamp
+categories:
+  - rack-mount
+url: "https://focusrite.com/products/isa-428-mkii"
+prices:
+  - amount: 2529.99
+    currency: USD
+description: "Four-channel transformer-coupled microphone preamplifier in a 2U
+  rack enclosure. Incorporates four of Focusrite's renowned ISA mic pres with
+  selectable input impedance (600Ω, 1400Ω, 2400Ω, 6800Ω), front-panel instrument
+  inputs, rear-panel line inputs, switchable insert points on every channel, and
+  a variable high-pass filter."
+details: |-
+  Four-channel ISA-series transformer-coupled microphone preamp in a 2U rack enclosure. Gain ranges from 0–60 dB in 10 dB steps plus 0–20 dB continuously variable trim. Four switchable input impedance settings (600Ω, 1400Ω, 2400Ω, 6800Ω) allow tonal matching with vintage and modern microphones.
+
+  Each channel has an independent variable high-pass filter (16 Hz–420 Hz, 18 dB/octave), switchable phantom power, polarity reverse, and a rear-panel insert send for inline processing. Front-panel instrument DI inputs (>1 MΩ) make the unit suitable for tracking without an external DI. An optional 8-channel A-D converter card adds 24-bit digital output with up to 192 kHz sample rate.
+specs: |-
+  - 4 channels
+  - Mic input gain: 0–60 dB in 10 dB steps + 0–20 dB variable trim (80 dB total)
+  - Line input gain: -20 dB to +10 dB
+  - Instrument input gain: 10–40 dB continuously variable
+  - Mic input impedance: switchable 600Ω / 1400Ω / 2400Ω / 6800Ω
+  - Line input impedance: 10 kΩ
+  - Instrument input impedance: >1 MΩ
+  - Mic input EIN: -126 dB (60 dB gain)
+  - Mic input SNR: 123 dB
+  - High-pass filter: 16 Hz–420 Hz continuously variable, 18 dB/octave
+  - Power: 100–240 VAC via IEC connector
+  - Form factor: 2U rack mount
+  - Optional 8-channel A-D card available separately
+io:
+  - name: Mic Inputs
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 4
+    position: Left
+  - name: Line Inputs
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 4
+    position: Left
+  - name: Insert Sends
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 4
+    position: Left
+  - name: Line Outputs
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 4
+    position: Left
+  - name: Instrument Inputs
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 4
+    position: Right
+links:
+  - type: resource
+    title: "Downloads & Manuals"
+    url: "https://downloads.focusrite.com/focusrite/isa"

@@ -1,0 +1,75 @@
+id: M-9ghK6oJaqslIOgHeey7
+name: ISA One
+manufacturer: focusrite
+primaryCategory: preamp
+url: "https://focusrite.com/products/isa-one"
+prices:
+  - amount: 719.99
+    currency: USD
+description: "Featuring a rugged, portable all-metal enclosure, Focusrite ISA
+  One combines the classic Focusrite microphone preamp with a flexible,
+  independent DI channel."
+details: |-
+  The ISA One houses a Lundahl LL1538 input transformer based on a 40-year-old circuit design originally found in the Focusrite ISA110. It offers four switchable input impedances for microphone matching and includes an independent DI channel with Hi/Low impedance switching, dedicated gain control, an amplifier output for routing to an amp, and its own XLR output on the rear.
+
+  A dedicated insert point allows external processing to be applied between the preamp/DI and the optional A-D converter. The unit features a backlit moving-coil VU meter with variable calibration (pre- or post-insert metering) and dual six-LED peak meters. An optional 192kHz stereo A-D converter card can be added.
+specs: |-
+  - Mic input gain: 0dB to 60dB in 10dB steps + 20dB variable
+  - Mic input EIN: -126dB @ 60dB gain
+  - Four switchable mic input impedances including original ISA110 setting
+  - High-pass filter: 18dB/octave (3-pole), fixed 75Hz
+  - Lundahl LL1538 input transformer
+  - Optional 192kHz stereo A-D converter card
+  - Backlit moving-coil VU meter with variable calibration
+  - Dual six-LED peak meters
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Instrument/DI Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: DI Channel Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: External Cue Mix Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Left
+links:
+  - type: resource
+    title: ISA One User Guide
+    url: "https://userguides.focusrite.com/hc/en-gb/sections/17525669476114-ISA-One\
+      -User-Guide"
+  - type: resource
+    title: ISA Downloads
+    url: "https://downloads.focusrite.com/focusrite/isa"
