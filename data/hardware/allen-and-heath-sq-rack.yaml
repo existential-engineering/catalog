@@ -1,0 +1,174 @@
+id: JXOopb2K8b1CQxuqEWi71
+name: SQ-Rack
+manufacturer: allen-and-heath
+primaryCategory: mixer
+categories:
+  - console
+  - rack-mount
+  - remote-controlled
+url: https://www.allen-heath.com/hardware/sq/sq-rack/
+description: SQ-Rack packs the features, processing power, and expandability of
+  the award-winning SQ series into a faderless, rack mount form factor.
+details:
+  - SQ-Rack packs SQ's 96kHz XCVI core into a shallow 4U rack-mount form factor
+    with built-in I/O, powerful SLink connectivity, option cards, and
+    multichannel USB. It delivers hands-on controls and customisable screens,
+    along with remote access via SQ apps for ultimate control of your audio.
+  - Built on Allen & Heath's renowned 96kHz XCVI FPGA engine, SQ-Rack delivers
+    high-resolution audio quality, ultra-low latency of <0.7ms and variable bit
+    depths for optimised dynamic range. XCVI handles 48 input channels at 96kHz,
+    with massive mix headroom thanks to a 96-bit accumulator, and the processing
+    power to embed Allen & Heath's DEEP plugins into all 48 input channels and
+    all mixes.
+  - SQ-Rack features 16 high-quality onboard mic preamps and 3 stereo line
+    inputs. Via the integrated SLink port, up to 48 mic inputs can be added
+    through Allen & Heath's "Everything I/O" range of audio expanders. A 64×64
+    audio networking card slot supports integration into Dante and Waves
+    networks, digital FoH/Monitor splits with SQ, Avantis and dLive mixers via
+    SLink, or MADI connectivity with third-party equipment.
+  - Despite its faderless design, the SQ-Rack's faders screen provides instant
+    access to level controls, plus 8 SoftKeys and 4 Soft Rotaries — all
+    assignable with LCD displays. The SQ MixPad app for Android, iOS, Windows,
+    and macOS provides full remote mixing from anywhere in the venue, while the
+    SQ-Control app delivers simplified access for less technical users and dry
+    hire scenarios.
+  - SQ-Rack is built for live sound, installation, and IEM/monitor world use.
+    With 12 stereo mixes, ultra-low latency under 0.7ms, and powerful parametric
+    and graphic EQs on every mix, its shallow 4U form factor fits easily into
+    IEM racks. The integrated SQ-Drive enables multitrack recording to USB
+    storage, and the onboard 32×32 96kHz USB interface is ASIO and Core Audio
+    compliant for DAW integration.
+specs: |-
+  - 19" Rack Mountable (4U)
+  - 96kHz XCVI FPGA processing
+  - 48 input channels
+  - 12 stereo mixes + LR
+  - 3 stereo matrix (split to 6 mono)
+  - 8 stereo FX engines + dedicated stereo returns
+  - DEEP processing ready
+  - 16+1 built-in mic preamps
+  - 3 stereo line inputs
+  - 12 XLR line outputs
+  - 2 TRS line outputs
+  - AES output
+  - 7" capacitive touchscreen
+  - 8 assignable SoftKeys
+  - 4 assignable soft rotaries
+  - SQ-MixPad app (Android, iOS, Windows, macOS)
+  - SQ-Control app
+  - SQ4You app
+  - SLink port for remote audio / expansion
+  - 64×64 I/O port for audio networking cards (Dante, Waves, MADI, SLink)
+  - SQ-Drive direct recording to USB
+  - 32×32 96kHz USB interface (ASIO and Core Audio compliant)
+  - Ultra-low latency <0.7ms
+  - 96-bit mix accumulator
+  - HPF, gate with sidechain and filter, 4-band parametric EQ with RTA, Peak/RMS compressor on every input
+  - Parametric and 28-band graphic EQ plus compressor on every mix
+  - Advanced Automatic Mic Mixer (AMM) — two independent 24-channel mixers or combined 48-channel
+  - ME Personal Mixing System compatible (ME-1, ME-500)
+  - All-metal chassis with front or rear mounting (flush, recessed, or freestanding)
+io:
+  - name: Mic Preamps
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 8
+    position: Right
+  - name: Mic Preamps (continued)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 8
+    position: Right
+  - name: Talkback Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Stereo Line Inputs
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 6
+    position: Right
+  - name: XLR Line Outputs
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 8
+    position: Right
+  - name: XLR Line Outputs (continued)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 4
+    position: Right
+  - name: TRS Line Outputs
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Right
+  - name: AES Digital Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: SLink Port
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 1
+    position: Right
+  - name: 64x64 I/O Option Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 1
+    position: Right
+  - name: USB Audio Interface
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: SQ-Drive USB Recording
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Top
+links:
+  - type: product
+    title: SQ MADI Card
+    url: https://www.allen-heath.com/hardware/sq/sq-accessories/
+  - type: product
+    title: SQ MixPad
+    url: https://www.allen-heath.com/hardware/sq/sq-mixpad/
+  - type: product
+    title: SQ-Control
+    url: https://www.allen-heath.com/hardware/sq/sq-control/
+  - type: product
+    title: SQ4You
+    url: https://www.allen-heath.com/hardware/sq/sq4you/
+  - type: resource
+    title: Allen & Heath Resources
+    url: https://www.allen-heath.com/resources/
+  - type: product
+    title: SQ Series Overview
+    url: https://www.allen-heath.com/hardware/sq/

@@ -1,0 +1,92 @@
+id: bthvd6uM-tgpoGZ0mfjkD
+name: ME-U
+manufacturer: allen-and-heath
+primaryCategory: utility
+categories:
+  - routing
+  - rack-mount
+url: https://www.allen-heath.com/hardware/me-series/me-u/
+description: ME-U is a touring grade, 10 port PoE hub providing power and audio
+  to multiple ME-1 and/or ME-500 personal mixers.
+details:
+  - 10 Port PoE Hub. ME-U is a touring grade, 10 port PoE hub providing power
+    and audio to multiple ME-1 and/or ME-500 personal mixers.
+  - ME-U's input card allows quick and easy integration with Allen & Heath's
+    digital mixers, powering up to 10 ME Personal Mixers via PoE.
+  - Fitting a Dante or MADI option card to the ME-U allows users of other
+    digital mixer brands to feed up to 40 sources to ME-1s, or up to 16 sources
+    to ME-500s.
+  - Touring grade build quality is designed to withstand the rigours of the road
+    and includes 2u rack ears.
+  - Each port on the ME-U provides both audio and power to a ME personal mixer,
+    cutting down on cables and keeping the stage tidy.
+  - Optional Dante and MADI cards open up the ME Personal Mixing System to 3rd
+    party mixers and audio interfaces.
+  - Connect your computer to the network port for advanced configuration via a
+    browser.
+  - Scalable — the ME system can scale effortlessly from one mixer to hundreds.
+    ME-1 and ME-500 mixers connected directly to the ME-U are powered via PoE.
+    Additional ME-1 and ME-500 mixers can be daisy-chained and powered via
+    external PSU. Multiple ME-U hubs can be daisy-chained together if more than
+    10 ports are required.
+  - ME in the Studio — when fitted with the appropriate option card, the ME-U
+    can be connected to a MADI or Dante equipped audio interface for use in
+    recording studios, bringing all the benefits of the ME Personal Mixing
+    System to recording musicians and engineers.
+  - "Option cards: M-MADI supports up to 64 channels of 48 kHz audio over MADI;
+    M-DANTE supports up to 64 channels of 48 kHz audio over Dante; DMI-ME
+    enables selected DiGiCo consoles to send up to 40 channels to a ME system
+    (DMI-ME is fitted to the DiGiCo mixer and connects to ME-U's standard
+    interface card)."
+  - "Features: 10 ports with locking EtherCON connectors; each port provides
+    power + audio to an ME-1 or ME-500; link 2 hubs for more ports; touring
+    grade build quality; 2U rack or desk mounting; connected ME-1s automatically
+    pick up channel names from SQ or dLive mixers; browser-based setup of unit
+    name and IP address, and manual entry of channel names."
+io:
+  - name: ME Personal Mixer Port (PoE, locking EtherCON)
+    signalFlow: output
+    category: digital
+    type: ethernet
+    connection: ethercon
+    maxConnections: 10
+    position: Left
+  - name: Network (browser-based configuration)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: rj45
+    maxConnections: 1
+    position: Left
+  - name: Option Card Slot (M-DANTE / M-MADI / DMI-ME)
+    signalFlow: bidirectional
+    category: audio
+    type: digital
+    connection: option-card
+    maxConnections: 1
+    position: Left
+links:
+  - type: product
+    title: ME Series
+    url: https://www.allen-heath.com/hardware/me-series/
+  - type: product
+    title: ME-1
+    url: https://www.allen-heath.com/hardware/me-series/me-1/
+  - type: product
+    title: ME-500
+    url: https://www.allen-heath.com/hardware/me-series/me-500/
+  - type: product
+    title: dLive
+    url: https://www.allen-heath.com/hardware/dlive-series/
+  - type: product
+    title: Avantis
+    url: https://www.allen-heath.com/hardware/avantis/
+  - type: product
+    title: SQ / SQ+
+    url: https://www.allen-heath.com/hardware/sq/
+  - type: product
+    title: Qu
+    url: https://www.allen-heath.com/hardware/qu/
+  - type: resource
+    title: ME-U Resources (firmware, documents, specifications, downloads)
+    url: https://www.allen-heath.com/hardware/me-series/me-u/resources/

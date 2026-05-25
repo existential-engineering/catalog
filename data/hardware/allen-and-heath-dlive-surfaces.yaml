@@ -1,0 +1,235 @@
+id: K2pnDphcxKyn0o88CY2eE
+name: dLive Surfaces
+manufacturer: allen-and-heath
+primaryCategory: control-surface
+categories:
+  - console
+  - mixer
+  - remote-controlled
+url: https://www.allen-heath.com/hardware/dlive-series/dlive-surfaces/
+description: A dLive Surface is the most popular way to control a dLive MixRack.
+  With seven models available, from the airline-friendly CTi1500 to the 36-fader
+  S7000, there's a Surface for every application.
+details:
+  - Family of seven control surfaces for the dLive digital mixing system, split
+    between flagship S Class and compact C Class lines.
+  - 'S Class models: S7000 (36 faders, dual 12" touchscreens), S5000 (28 faders,
+    dual 12" touchscreens), S3000 (20 faders, single 12" touchscreen). All S
+    Class surfaces have 26 assignable SoftKeys, 6 assignable rotaries, dedicated
+    preamp/filter controls, and a hot-swappable PSU with dual-redundant option.'
+  - 'C Class models: C3500 (24 faders, dual 12" touchscreens), C2500 (20 faders,
+    single 12" touchscreen), C1500 (12 faders, single 12" touchscreen, 19" rack
+    mountable). All C Class surfaces have 19 assignable SoftKeys, 6 assignable
+    rotaries, and an integrated PSU.'
+  - 'CTi1500: re-engineered compact-touring variant of the C1500 with Titanium
+    side panels and lightweight alloy metalwork (11.5kg / 25.4lbs); 12"
+    touchscreen, 12 faders, 19 assignable SoftKeys. Can fly under 23kg / 50lbs
+    in a custom flight case with an I/O card and dust cover.'
+  - "Fully customisable layout: every input or mix can be assigned to any fader
+    bank/layer; virtual scribble strips with names and colour coding; 3 pages of
+    6 assignable rotaries per screen; bespoke 'widget' areas on touchscreens for
+    scenes, meters, RTA, FX and other custom controls."
+  - "Multi-Surface mode: connect up to 4 Surfaces to a single DM MixRack, or 2
+    Surfaces to a single CDM MixRack. Any combination of C Class and S Class
+    Surfaces can be used together for applications including parallel mixing,
+    sub-mixing, and FOH/Monitor configurations."
+  - Surfaces are the controllers for a dLive MixRack and require a separate
+    MixRack (not included) to form a complete mixing system.
+specs: |-
+  - Models: S7000, S5000, S3000, C3500, C2500, C1500, CTi1500
+  - S7000: 36 faders, 2x 12" touchscreens, 26 assignable SoftKeys, 6 assignable rotaries
+  - S5000: 28 faders, 2x 12" touchscreens, 26 assignable SoftKeys, 6 assignable rotaries
+  - S3000: 20 faders, 12" touchscreen, 26 assignable SoftKeys, 6 assignable rotaries
+  - C3500: 24 faders, 2x 12" touchscreens, 19 assignable SoftKeys, 6 assignable rotaries
+  - C2500: 20 faders, 12" touchscreen, 19 assignable SoftKeys, 6 assignable rotaries
+  - C1500: 12 faders, 12" touchscreen, 19 assignable SoftKeys, 19" rack mountable
+  - CTi1500: 12 faders, 12" touchscreen, 19 assignable SoftKeys, Titanium side panels, lightweight alloy metalwork, 11.5kg / 25.4lbs
+  - S Class - gigaACE link to MixRack (dual redundant)
+  - S Class - DX link for I/O expansion (dual redundant)
+  - S Class - 2 I/O Ports, 128ch 96kHz each
+  - S Class - 2 network ports
+  - S Class - Wordclock BNC I/O
+  - S Class - Video output
+  - S Class - 8 mic/line inputs, 8 line outputs
+  - S Class - 2 digital stereo AES3 inputs, 3 digital stereo AES3 outputs
+  - S Class - Dedicated preamp and filter controls
+  - S Class - Hot-swappable PSU (dual-redundant option)
+  - C Class - gigaACE link to MixRack
+  - C Class - DX link for I/O expansion
+  - C Class - 1 I/O Port, 128ch 96kHz
+  - C Class - 2 network ports
+  - C Class - Wordclock BNC I/O
+  - C Class - Video output
+  - C Class - 6 mic/line inputs, 6 line outputs
+  - C Class - 1 digital stereo AES3 input, 1 digital stereo AES3 output
+  - C Class - Integrated PSU
+  - Multi-Surface mode: up to 4 Surfaces per DM MixRack, or 2 per CDM MixRack
+  - 3 Year Warranty (S Class)
+io:
+  - name: gigaACE Link to MixRack (S Class, dual redundant)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 2
+    position: Left
+  - name: DX Link for I/O Expansion (S Class, dual redundant)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 2
+    position: Left
+  - name: I/O Port (S Class, 128ch 96kHz)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 2
+    position: Left
+  - name: Network Port (S Class)
+    signalFlow: bidirectional
+    category: digital
+    type: midi
+    connection: ethernet
+    maxConnections: 2
+    position: Left
+  - name: Wordclock BNC In (S Class)
+    signalFlow: input
+    category: digital
+    type: wordclock
+    connection: bnc
+    maxConnections: 1
+    position: Left
+  - name: Wordclock BNC Out (S Class)
+    signalFlow: output
+    category: digital
+    type: wordclock
+    connection: bnc
+    maxConnections: 1
+    position: Left
+  - name: Video Output (S Class)
+    signalFlow: output
+    category: digital
+    type: video
+    connection: hdmi
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Inputs (S Class)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 8
+    position: Left
+  - name: Line Outputs (S Class)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 8
+    position: Left
+  - name: Digital Stereo AES3 Inputs (S Class)
+    signalFlow: input
+    category: audio
+    type: aes3
+    connection: xlr
+    maxConnections: 2
+    position: Left
+  - name: Digital Stereo AES3 Outputs (S Class)
+    signalFlow: output
+    category: audio
+    type: aes3
+    connection: xlr
+    maxConnections: 3
+    position: Left
+  - name: gigaACE Link to MixRack (C Class)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 1
+    position: Left
+  - name: DX Link for I/O Expansion (C Class)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 1
+    position: Left
+  - name: I/O Port (C Class, 128ch 96kHz)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 1
+    position: Left
+  - name: Network Port (C Class)
+    signalFlow: bidirectional
+    category: digital
+    type: midi
+    connection: ethernet
+    maxConnections: 2
+    position: Left
+  - name: Wordclock BNC In (C Class)
+    signalFlow: input
+    category: digital
+    type: wordclock
+    connection: bnc
+    maxConnections: 1
+    position: Left
+  - name: Wordclock BNC Out (C Class)
+    signalFlow: output
+    category: digital
+    type: wordclock
+    connection: bnc
+    maxConnections: 1
+    position: Left
+  - name: Video Output (C Class)
+    signalFlow: output
+    category: digital
+    type: video
+    connection: hdmi
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Inputs (C Class)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 6
+    position: Left
+  - name: Line Outputs (C Class)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 6
+    position: Left
+  - name: Digital Stereo AES3 Input (C Class)
+    signalFlow: input
+    category: audio
+    type: aes3
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Digital Stereo AES3 Output (C Class)
+    signalFlow: output
+    category: audio
+    type: aes3
+    connection: xlr
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: dLive Downloads and Documents
+    url: https://www.allen-heath.com/hardware/dlive-series/all-models/resources
+  - type: product
+    title: dLive Series Overview
+    url: https://www.allen-heath.com/hardware/dlive-series/
+  - type: product
+    title: dLive MixRacks
+    url: https://www.allen-heath.com/hardware/dlive-series/dlive-mixracks/
+  - type: product
+    title: dLive Accessories
+    url: https://www.allen-heath.com/hardware/dlive-series/dlive-accessories/

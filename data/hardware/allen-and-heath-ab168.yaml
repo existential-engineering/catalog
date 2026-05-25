@@ -1,0 +1,92 @@
+id: rO1U7wOlE7CVTyB5T5vjT
+name: AB168
+manufacturer: allen-and-heath
+primaryCategory: audio-interface
+categories:
+  - preamp
+  - routing
+url: https://www.allen-heath.com/hardware/everything-i-o/ab168/
+description: AB168 is a 48kHz portable remote AudioRack for use with Qu, Avantis
+  and SQ mixers, and with AHM audio matrix processors.
+details:
+  - AB168 is a 48kHz portable remote AudioRack for use with Qu, Avantis and SQ
+    mixers, and with AHM audio matrix processors.
+  - 16 Mic Preamps with +60dB of gain, phantom power indicators and -20dB pad
+    for line level sources.
+  - 8 Balanced, relay protected line outputs on XLR.
+  - Expander Port for daisy-chaining 2 compatible Expanders or connection to ME
+    personal mixers.
+  - "Plug-and-Play: no configuration required, just connect to your mixer and
+    you're ready to go. Firmware updates are handled automatically by the
+    mixer."
+  - Rugged design with hard-wearing rubber bumpers allows it to be placed
+    directly on the stage floor during performances; weighs 4.8kg and features a
+    sturdy carry handle.
+  - Can be placed up to 100m away from the mixer over a single Cat5 cable to the
+    mixer or upstream Expander.
+  - Can connect directly to the ME Personal Mixing System via the Expander port,
+    giving musicians control over their own monitor mix.
+  - An optional 4U rack mounting kit is available for installation in 19-inch
+    racks.
+specs: |-
+  - 16 in / 8 out 48kHz Expander
+  - 16 Mic Preamps with +60dB gain
+  - Phantom Power indicators per channel
+  - -20dB pad for line level sources
+  - 8 Balanced, relay protected XLR line outputs
+  - Expander Port for daisy-chaining or ME Personal Mixing System
+  - Up to 100m distance from mixer over Cat5
+  - Weight: 4.8kg
+  - Compatible with Qu, Qu Classic, SQ / SQ+, Avantis and AHM
+  - Optional 4U rack mounting kit available
+io:
+  - name: Mic Preamps (+60dB gain, phantom power, -20dB pad)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 8
+    position: Right
+  - name: Line Outputs (Balanced, Relay Protected)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 8
+    position: Right
+  - name: SLink / Expander Port (to mixer)
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: etherCON
+    maxConnections: 1
+    position: Right
+  - name: Expander Port (daisy-chain or ME Personal Mixing System)
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: etherCON
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: AB168 Downloads and Documents
+    url: https://www.allen-heath.com/hardware/everything-i-o/ab168/resources/
+  - type: product
+    title: Everything I/O Overview
+    url: https://www.allen-heath.com/hardware/everything-i-o/
+  - type: product
+    title: Avantis
+    url: https://www.allen-heath.com/hardware/avantis/
+  - type: product
+    title: SQ / SQ+
+    url: https://www.allen-heath.com/hardware/sq/
+  - type: product
+    title: Qu
+    url: https://www.allen-heath.com/hardware/qu/
+  - type: product
+    title: AHM
+    url: https://www.allen-heath.com/hardware/ahm/
+  - type: product
+    title: Qu Classic
+    url: https://www.allen-heath.com/hardware/qu-classic/
