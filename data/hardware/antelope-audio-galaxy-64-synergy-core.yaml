@@ -163,12 +163,19 @@ io:
     connection: 1/4-inch
     maxConnections: 2
     position: Right
-  - name: Monitor Output L/R
+  - name: Monitor Output L
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Monitor Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: Dante Primary
     signalFlow: bidirectional

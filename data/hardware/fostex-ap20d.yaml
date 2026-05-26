@@ -23,19 +23,33 @@ io:
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: RCA Input
+  - name: RCA Input L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Pre Out
+  - name: RCA Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Pre Out L
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Pre Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: Speaker Output
     signalFlow: output

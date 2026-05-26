@@ -38,19 +38,33 @@ specs: |-
   - Power consumption: 10 W (≤0.5 W standby)
   - Complies with European RoHS Directive
 io:
-  - name: Analog Input
+  - name: Analog Input L
     signalFlow: input
     category: audio
     type: line
     connection: combo jack
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Analog Through-Out
+  - name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Through-Out L
     signalFlow: output
     category: audio
     type: line
     connection: combo jack
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Through-Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
     position: Bottom
   - name: Digital Input (AES/EBU)
     signalFlow: input

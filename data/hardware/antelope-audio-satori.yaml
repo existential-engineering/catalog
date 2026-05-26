@@ -27,12 +27,61 @@ details: |-
 
   Satori is bundled with a bus-powered remote control – R4S. The remote is specially designed for Satori, completely replicating the front panel functionality. It provides engineers with ease and ergonomics, controlling Satori directly from the mix position, allowing quick control of all sources and monitors, as well as talkback.
 io:
-  - name: Balanced XLR/TRS Analog Stereo Inputs
+  - name: Balanced XLR/TRS Analog Stereo Input 1 L
     signalFlow: input
     category: audio
     type: line
     connection: xlr
-    maxConnections: 8
+    maxConnections: 1
+    position: Right
+  - name: Balanced XLR/TRS Analog Stereo Input 1 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced XLR/TRS Analog Stereo Input 2 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced XLR/TRS Analog Stereo Input 2 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced XLR/TRS Analog Stereo Input 3 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced XLR/TRS Analog Stereo Input 3 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced XLR/TRS Analog Stereo Input 4 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced XLR/TRS Analog Stereo Input 4 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Right
   - name: D-Sub 25 Analog Connectors
     signalFlow: bidirectional
@@ -41,19 +90,47 @@ io:
     connection: 1/4-inch
     maxConnections: 8
     position: Right
-  - name: Balanced XLR/TRS Analog Stereo Outputs
+  - name: Balanced XLR/TRS Analog Stereo Output 1 L
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 4
+    maxConnections: 1
     position: Right
-  - name: Stereo Sum Output
+  - name: Balanced XLR/TRS Analog Stereo Output 1 R
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Balanced XLR/TRS Analog Stereo Output 2 L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced XLR/TRS Analog Stereo Output 2 R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Stereo Sum Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Stereo Sum Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Right
   - name: Dedicated Subwoofer LFE Output
     signalFlow: output
