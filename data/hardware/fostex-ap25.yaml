@@ -15,19 +15,33 @@ details: |-
 
   Speaker Terminals: Gold-plated screw-type, compatible with banana plugs and Y-lugs (2 channels, passive speakers)
 io:
-  - name: LINE IN
+  - name: LINE IN L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: PRE OUT
+  - name: LINE IN R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: PRE OUT L
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: PRE OUT R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: Speaker Output L
     signalFlow: output

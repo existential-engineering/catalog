@@ -25,12 +25,19 @@ specs: |-
   - Weight: 39.6 lb (17.9 kg)
   - Form factor: 3U rackmount
 io:
-  - name: 'Speaker Output (1/4")'
+  - name: 'Speaker Output A (1/4")'
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: 'Speaker Output B (1/4")'
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: Speaker Output (speakON)
     signalFlow: output

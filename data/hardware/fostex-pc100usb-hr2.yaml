@@ -33,12 +33,19 @@ io:
     connection: usb-b
     maxConnections: 1
     position: Bottom
-  - name: Line Output (L/R)
+  - name: Line Output L
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Line Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: Headphone Output
     signalFlow: output

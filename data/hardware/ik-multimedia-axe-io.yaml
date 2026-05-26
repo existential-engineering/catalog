@@ -51,30 +51,55 @@ io:
       - TS
     maxConnections: 1
     position: Top
-  - name: Mic/Line Input
+  - name: Mic/Line Input 1
     signalFlow: input
     category: audio
     type: mic
     connection: combo jack
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Monitor Output
+  - name: Mic/Line Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Bottom
+  - name: Monitor Output L
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
     connectorDetail:
       - TRS
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Line Output
+  - name: Monitor Output R
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
     connectorDetail:
       - TRS
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Line Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Bottom
+  - name: Line Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
     position: Bottom
   - name: Amp Output
     signalFlow: output
@@ -115,14 +140,23 @@ io:
     connection: usb-b
     maxConnections: 1
     position: Bottom
-  - name: External Controller Input
+  - name: External Controller Input 1
     signalFlow: input
     category: audio
     type: instrument
     connection: 1/4-inch
     connectorDetail:
       - TRS
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: External Controller Input 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
     position: Bottom
   - name: DC Power
     signalFlow: input

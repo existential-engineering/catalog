@@ -137,12 +137,19 @@ io:
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: "Main Monitor Output (TRS Balanced, DC-Coupled)"
+  - name: "Main Monitor Output L (TRS Balanced, DC-Coupled)"
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: "Main Monitor Output R (TRS Balanced, DC-Coupled)"
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Bottom
   - name: Reamp Output R-1
     signalFlow: output

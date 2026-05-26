@@ -99,12 +99,19 @@ io:
     connection: pin
     maxConnections: 8
     position: Right
-  - name: Monitor Output (Stereo)
+  - name: Monitor Output L
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Monitor Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: Thunderbolt 3 / USB 2.0
     signalFlow: bidirectional
@@ -127,12 +134,19 @@ io:
     connection: toslink
     maxConnections: 2
     position: Right
-  - name: S/PDIF I/O
-    signalFlow: bidirectional
+  - name: S/PDIF Input
+    signalFlow: input
     category: digital
     type: s/pdif
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
     position: Right
   - name: Word Clock Input
     signalFlow: input
@@ -141,12 +155,19 @@ io:
     connection: bnc
     maxConnections: 1
     position: Right
-  - name: Word Clock Outputs
+  - name: Word Clock Output 1
     signalFlow: output
     category: digital
     type: word clock
     connection: bnc
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 2
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
     position: Right
   - name: 10M Atomic Clock Input
     signalFlow: input
