@@ -4,7 +4,6 @@ manufacturer: dynaudio
 primaryCategory: subwoofer
 categories:
   - speaker
-  - studio-monitor
 url: https://dynaudio.com/professional-audio/dynaudio-acoustics-m-series/ms15
 description: The MS15 is a high powered subwoofer for use in small to
   medium-sized film and television postproduction studios.
@@ -31,6 +30,21 @@ specs: |-
   - Finish: Black textured paint
   - Amplifier recommendation: Dynaudio Acoustics DCA800 or DA40
   - Custom cabinet sizes: On request
+io:
+  - name: Speaker Terminals (+)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Terminals (-)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
 links:
   - type: resource
     title: MS15 Product Insert

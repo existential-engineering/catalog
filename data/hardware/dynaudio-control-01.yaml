@@ -42,36 +42,36 @@ io:
   - name: Dante / AES67 Network
     signalFlow: bidirectional
     category: audio
-    type: s/pdif
+    type: dante
     connection: ethernet
     maxConnections: 2
     position: Bottom
   - name: Thunderbolt 3
     signalFlow: bidirectional
     category: audio
-    type: s/pdif
+    type: thunderbolt
     connection: thunderbolt 3
     maxConnections: 2
     position: Bottom
   - name: ADAT / S/PDIF Optical Input
     signalFlow: input
     category: audio
-    type: s/pdif
+    type: adat
     connection: toslink
     maxConnections: 2
     position: Bottom
   - name: ADAT / S/PDIF Optical Output
     signalFlow: output
     category: audio
-    type: s/pdif
+    type: adat
     connection: toslink
     maxConnections: 2
     position: Bottom
   - name: AES3 Digital I/O (8CH)
-    signalFlow: output
+    signalFlow: bidirectional
     category: audio
-    type: s/pdif
-    connection: 1/4-inch
+    type: aes/ebu
+    connection: db25
     maxConnections: 1
     position: Bottom
   - name: Word Clock Input
@@ -91,14 +91,14 @@ io:
   - name: MADI Input
     signalFlow: input
     category: audio
-    type: s/pdif
+    type: madi
     connection: bnc
     maxConnections: 1
     position: Bottom
   - name: MADI Output
     signalFlow: output
     category: audio
-    type: s/pdif
+    type: madi
     connection: bnc
     maxConnections: 1
     position: Bottom

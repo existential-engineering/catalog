@@ -1,5 +1,4 @@
 id: H_VXwQFhexEGbdCI_VWu0
-supersedes: oUQlksQRfOmjRd4z3teH5
 name: M4 MkII Mini
 manufacturer: dynaudio
 primaryCategory: studio-monitor
@@ -7,8 +6,8 @@ categories:
   - monitor
   - speaker
 url: https://dynaudio.com/professional-audio/dynaudio-acoustics-m-series/m4-mkii-mini
-description: The M4 by Dynaudio Acoustics is a high quality, high-power
-  loudspeaker system for use in large music studio monitoring applications.
+description: Compact 4-way main monitor that delivers the M4 MkII's reference
+  performance in a significantly smaller cabinet footprint.
 details: |-
   The heart and soul of M4 MkII but with a compact footprint.
 
@@ -38,6 +37,21 @@ specs: |-
   - Finish: Black textured paint
   - Optional hardwood cabinet: oak, cherry, walnut, maple
   - Custom cabinet sizes: on request
+io:
+  - name: LF Speaker Binding Posts
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: MF/HF Speaker Binding Posts
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
 links:
   - type: resource
     title: Dynaudio Acoustics M-series Brochure 2025

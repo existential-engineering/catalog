@@ -44,18 +44,32 @@ specs: |-
   - Boxed weight: 12.0 kg / 26.5 lbs
 io:
   - name: Dante Network (Primary)
-    signalFlow: input
+    signalFlow: bidirectional
     category: audio
     type: dante
     connection: ethernet
     maxConnections: 1
     position: Bottom
   - name: Dante Network (Secondary)
-    signalFlow: input
+    signalFlow: bidirectional
     category: audio
     type: dante
     connection: ethernet
     maxConnections: 1
+    position: Bottom
+  - name: Analog Audio Inputs (4CH)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 4
+    position: Bottom
+  - name: Speaker Outputs (4CH)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 4
     position: Bottom
   - name: AC Power Input
     signalFlow: input

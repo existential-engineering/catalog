@@ -6,9 +6,9 @@ categories:
   - audio-interface
   - utility
 url: https://dynaudio.com/professional-audio/dynaudio-control/control-02
-description: "Dynaudio Control 02 builds on everything Control 01 offers – with
-  one crucial addition: eight analogue outputs for direct connection to LYD, BM
-  series"
+description: Dynaudio Control 02 builds on everything Control 01 offers with one
+  crucial addition — eight analogue outputs for direct connection to LYD, BM
+  series, or other studio monitors with analogue inputs.
 details: |-
   Dynaudio Control 02 builds on everything Control 01 offers – with one crucial addition: eight analogue outputs for direct connection to LYD, BM series, or other studio monitors with analogue inputs.
 
@@ -42,36 +42,43 @@ io:
   - name: Dante / AES67 Network
     signalFlow: bidirectional
     category: audio
-    type: s/pdif
+    type: dante
     connection: ethernet
     maxConnections: 2
     position: Bottom
   - name: Thunderbolt 3
     signalFlow: bidirectional
     category: audio
-    type: s/pdif
+    type: thunderbolt
     connection: thunderbolt 3
     maxConnections: 2
     position: Bottom
   - name: ADAT / S/PDIF Optical Input
     signalFlow: input
     category: audio
-    type: s/pdif
+    type: adat
     connection: toslink
     maxConnections: 2
     position: Bottom
   - name: ADAT / S/PDIF Optical Output
     signalFlow: output
     category: audio
-    type: s/pdif
+    type: adat
     connection: toslink
     maxConnections: 2
     position: Bottom
   - name: AES3 Digital I/O (8CH)
+    signalFlow: bidirectional
+    category: audio
+    type: aes/ebu
+    connection: db25
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Outputs (8CH)
     signalFlow: output
     category: audio
-    type: s/pdif
-    connection: 1/4-inch
+    type: line
+    connection: db25
     maxConnections: 1
     position: Bottom
   - name: Word Clock Input
@@ -91,14 +98,14 @@ io:
   - name: MADI Input
     signalFlow: input
     category: audio
-    type: s/pdif
+    type: madi
     connection: bnc
     maxConnections: 1
     position: Bottom
   - name: MADI Output
     signalFlow: output
     category: audio
-    type: s/pdif
+    type: madi
     connection: bnc
     maxConnections: 1
     position: Bottom

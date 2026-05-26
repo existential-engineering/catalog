@@ -106,8 +106,8 @@ io:
   - name: AES3 Multi-Channel I/O
     signalFlow: bidirectional
     category: audio
-    type: s/pdif
-    connection: 1/4-inch
+    type: aes/ebu
+    connection: db25
     maxConnections: 1
     position: Bottom
   - name: Word Clock Input
@@ -127,14 +127,14 @@ io:
   - name: MADI Input
     signalFlow: input
     category: audio
-    type: aes/ebu
+    type: madi
     connection: bnc
     maxConnections: 1
     position: Bottom
   - name: MADI Output
     signalFlow: output
     category: audio
-    type: aes/ebu
+    type: madi
     connection: bnc
     maxConnections: 1
     position: Bottom

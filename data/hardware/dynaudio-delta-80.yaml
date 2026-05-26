@@ -24,11 +24,10 @@ specs: |-
   - Number of channels: 4
   - Output power (per channel) @ 8 ohms: 1000W
   - Output power (per channel) @ 4 ohms: 2000W
-  - Output power (per channel) @ 2.7 ohms: 2200W
-  - Output power (per channel) @ 2 ohms: 2000W*
+  - Output power (per channel) @ 2.7 ohms: 2200W (highest single-ended output, 3x 8-ohm parallel drivers)
+  - Output power (per channel) @ 2 ohms: 2000W (amplifier stable, output reduced)
   - Output power (bridged) @ 8 ohms: 4000W
   - Output power (bridged) @ 4 ohms: 4000W
-  - *2.7 ohm power quoted for highest single ended output and greatest efficiency (3 x 8 ohm parallel drivers). Amplifier is stable with 2 ohm loads but output will be reduced.
   - THD @ 1kHz (1dB below max output): < 0.18%
   - THD 20Hz to 20kHz (1dB below max output): < 0.2%
   - Gain: 32dB
@@ -46,6 +45,34 @@ specs: |-
   - Double-box packaging (H x W x D): 250 x 610 x 600 mm
   - Status: Current
 io:
+  - name: Dante Network (Primary)
+    signalFlow: bidirectional
+    category: audio
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Dante Network (Secondary)
+    signalFlow: bidirectional
+    category: audio
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Audio Inputs (4CH)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 4
+    position: Bottom
+  - name: Speaker Outputs (4CH)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 4
+    position: Bottom
   - name: AC Power Input
     signalFlow: input
     category: power
