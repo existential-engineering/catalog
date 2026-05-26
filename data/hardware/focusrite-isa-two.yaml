@@ -1,0 +1,121 @@
+id: Vr74CAPyZC0ug4V3JtKxd
+name: ISA Two
+manufacturer: focusrite
+primaryCategory: preamp
+url: "https://focusrite.com/products/isa-two"
+prices:
+  - amount: 1079.99
+    currency: USD
+description: "Focusrite's ISA Two brings together a totally independent pair of
+  legendary ISA microphone preamps from the original ISA 110 module, combining
+  the best of traditional solid-state electronics with the original input
+  transformer specified by Rupert Neve — the Lundahl LL1538."
+details: |-
+  Two independent ISA mic preamps based on the original ISA 110 module, featuring the Lundahl LL1538 input transformer originally specified by Rupert Neve. Each channel offers up to 80 dB of gain (20 dB from the transformer plus up to 60 dB from the input stage), with four selectable input impedance values (including the original ISA 110 value) to match vintage or modern microphones.
+
+  Front-panel instrument DI inputs sit alongside rear-panel TRS line inputs and balanced insert points (1/4in. TRS send/receive) actuated by illuminated front-panel switches. Each channel has a variable-frequency 18 dB/octave high-pass filter (16 Hz–420 Hz) and an 8-LED peak meter calibrated to suit external A-D converters via a rear-panel pot.
+specs: |-
+  - Mic gain range: 0 dB to 60 dB in 10 dB steps, plus 0 dB to 20 dB continuously variable trim
+  - Mic EIN: -127 dB (60 dB gain, 150 Ω source)
+  - Line gain range: -20 dB to 10 dB in 10 dB steps
+  - Line input impedance: 10 kΩ
+  - Instrument gain range: 10 dB to 40 dB continuously variable
+  - Instrument input impedance: 2 MΩ
+  - High-pass filter: 18 dB per octave (3-pole), continuously variable 16 Hz to 420 Hz
+  - Four selectable mic input impedance values
+  - Lundahl LL1538 mic input transformer
+  - Up to 80 dB total mic gain
+  - 8-LED peak metering per channel
+io:
+  - name: Mic Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Insert Send 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Insert Send 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Insert Return 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Insert Return 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Instrument Input 1
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: ISA Two User Guide
+    url: "https://userguides.focusrite.com/hc/en-gb/sections/17525769611794-ISA-Two\
+      -User-Guide"
+  - type: resource
+    title: ISA Downloads
+    url: "https://downloads.focusrite.com/focusrite/isa"

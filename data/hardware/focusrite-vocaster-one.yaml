@@ -1,0 +1,83 @@
+id: Zkuxwz94Al9TBuVmPR5ew
+name: Vocaster One
+manufacturer: focusrite
+primaryCategory: audio-interface
+url: "https://focusrite.com/products/vocaster-one"
+prices:
+  - amount: 169.99
+    currency: USD
+description: "Vocaster One is the easiest way to bring studio quality sound to
+  your podcast, let your voice be heard like never before."
+details: |-
+  Vocaster One is a 1-input USB-C podcasting audio interface designed for solo content creators. It features a single XLR microphone input with up to 70dB of gain, a headphone output, mono/stereo speaker outputs, a TRRS phone connection for taking calls into the recording, and a TRS camera output for sending audio to a camera.
+
+  USB-C bus power keeps the setup portable, and an Auto Gain feature simplifies microphone level setup. Vocaster Hub mixing software is included.
+specs: |-
+  - 1 XLR microphone input with up to 70dB gain
+  - Frequency response: 20Hz–20kHz
+  - USB-C connection (USB-C to USB-A cable included)
+  - Requires 900mA USB power
+  - Compatible with Windows (Intel, AMD, Arm64) and macOS (Apple Silicon, Intel)
+  - Auto Gain for one-touch level setting
+  - 3.5mm TRRS phone input/output for call audio
+  - 3.5mm TRS camera output
+  - 3.5mm headphone output
+  - Mono or stereo speaker output
+  - Includes Vocaster Hub mixing software
+io:
+  - name: Microphone Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Speaker Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Phone Input/Output (TRRS)
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Camera Output (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: USB-C
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: Easy Start Guide
+    url: "https://customer.focusritegroup.com/en/getstarted/begin/v1"
+  - type: resource
+    title: "Downloads & Manuals"
+    url: "https://downloads.focusrite.com/focusrite/vocaster/vocaster-one"
