@@ -58,12 +58,19 @@ io:
     connection: xlr
     maxConnections: 1
     position: Left
-  - name: External Cue Mix Input
+  - name: External Cue Mix Input L
     signalFlow: input
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Left
+  - name: External Cue Mix Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Left
 links:
   - type: resource

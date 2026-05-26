@@ -37,40 +37,159 @@ specs: |-
   - Includes Hitmaker Expansion plug-in bundle
   - 3-year warranty
 io:
-  - name: Mic Inputs
+  - name: Mic Input 1
     signalFlow: input
     category: audio
     type: mic
     connection: combo jack
-    maxConnections: 8
+    maxConnections: 1
     position: Right
-  - name: Instrument Inputs
+  - name: Mic Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic Input 5
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic Input 6
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic Input 7
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic Input 8
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input 1
     signalFlow: input
     category: audio
     type: instrument
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Headphone Outputs
+  - name: Instrument Input 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output 1
     signalFlow: output
     category: audio
     type: headphone
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Line Inputs
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Input 1
     signalFlow: input
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 8
+    maxConnections: 1
     position: Left
-  - name: Monitor Outputs
+  - name: Line Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Input 5
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Input 6
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Input 7
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Input 8
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Monitor Output L
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Left
+  - name: Monitor Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Left
   - name: ADAT Input
     signalFlow: input
@@ -107,19 +226,33 @@ io:
     connection: bnc
     maxConnections: 1
     position: Left
-  - name: Thunderbolt 2
+  - name: Thunderbolt 2 Port 1
     signalFlow: bidirectional
     category: digital
     type: thunderbolt
     connection: thunderbolt 2
-    maxConnections: 2
+    maxConnections: 1
     position: Left
-  - name: Dante Network
+  - name: Thunderbolt 2 Port 2
+    signalFlow: bidirectional
+    category: digital
+    type: thunderbolt
+    connection: thunderbolt 2
+    maxConnections: 1
+    position: Left
+  - name: Dante Network Port 1
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
-    maxConnections: 2
+    maxConnections: 1
+    position: Left
+  - name: Dante Network Port 2
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
     position: Left
 links:
   - type: resource

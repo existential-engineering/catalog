@@ -32,33 +32,138 @@ specs: |-
   - 5-segment LED input metering per channel
   - 3 year warranty
 io:
-  - name: Mic/Line Input
+  - name: Mic/Line Input 1
     signalFlow: input
     category: audio
     type: mic
     connection: combo jack
-    maxConnections: 8
+    maxConnections: 1
     position: Left
-  - name: Instrument Input
+  - name: Mic/Line Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Input 5
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Input 6
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Input 7
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Input 8
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Instrument Input 1
     signalFlow: input
     category: audio
     type: instrument
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Line Output
+  - name: Instrument Input 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output 1
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 8
+    maxConnections: 1
+    position: Left
+  - name: Line Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Output 5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Output 6
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Output 7
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Output 8
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Left
   - name: ADAT Output
     signalFlow: output
     category: digital
     type: adat
     connection: toslink
-    maxConnections: 1
+    maxConnections: 8
     position: Left
   - name: Word Clock Input
     signalFlow: input
