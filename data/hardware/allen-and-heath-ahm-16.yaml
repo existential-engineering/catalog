@@ -1,0 +1,91 @@
+id: CWFqxZ1Tb7NeHyHWTEhic
+name: AHM-16
+manufacturer: allen-and-heath
+primaryCategory: routing
+categories:
+  - utility
+  - rack-mount
+  - remote-controlled
+url: https://www.allen-heath.com/hardware/ahm/ahm-16/
+description: With an unrivalled price-performance ratio, AHM-16 delivers a 16x16
+  matrix with uncompromised processing for single room applications and smaller
+  multi-room environments including bars, restaurants, shops and school halls.
+details: |-
+  With an unrivalled price-performance ratio, AHM-16 delivers a 16x16 matrix with uncompromised processing for single room applications and smaller multi-room environments including bars, restaurants, shops and school halls.
+
+  16x16 Processing Matrix with flexible routing and configurable processing on all 16 outputs.
+
+  8x8 Local Analogue I/O: 8x mic/line inputs and 8x relay protected line outputs on Phoenix connectors.
+
+  Audio Networking I/O Port with card options including Dante, MADI, Waves and SLink.
+
+  Sound Management Tools include Automatic Mic Mixer, ANC (Ambient Noise Compensation), Priority Ducking, 8-band PEQ, dynamics and delay on every input and zone, Speaker processing with x-over filter, delay, limiter, PEQ and All-Pass Filters, NTP support, and EQ Ganging (Relative, Absolute, and Mirrored Controls).
+
+  In addition to remote controllers, GPIO and 3rd party integration, AHM-16 has a front panel screen and 4x programmable SoftKeys for intuitive volume control, source select, preset recall and more.
+specs: |-
+  - 16x16 Processing Matrix
+  - 8x8 Local Analogue I/O
+  - I/O Port for Audio Networking (Up to 128x128)
+  - Dante 96kHz Option Card (AES67 and DDM Ready)
+  - SLink 128x128 Option Card for Audio Expansion
+  - 16 Configurable Processing Outputs - Mono / Stereo Zones or Speaker Processing
+  - 96kHz FPGA Core With Ultra-low Latency
+  - Front Panel Screen and Navigation
+  - 4x SoftKeys
+  - Compatible With IP1, IP6, IP8 Remote Controllers
+  - 2x2 Local GPIO Plus Networkable GPIO Interface
+  - TCP/IP Protocol for Third Party Integration
+  - Crestron, AMX and Extron Drivers
+  - Mac / Windows System Manager Software
+  - Custom Control app and Editor for BYOD
+  - 4 User Profiles
+  - Integrated Stereo Playback
+  - Event Scheduler
+io:
+  - name: Mic/Line Inputs
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: phoenix
+    maxConnections: 8
+    position: Left
+  - name: Line Outputs (Relay Protected)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: phoenix
+    maxConnections: 8
+    position: Left
+  - name: Audio Networking I/O Port (Option Card Slot)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 1
+    position: Left
+  - name: GPIO
+    signalFlow: bidirectional
+    category: digital
+    type: gpio
+    connection: phoenix
+    maxConnections: 2
+    position: Left
+links:
+  - type: resource
+    title: AHM-16 Resources
+    url: https://www.allen-heath.com/hardware/ahm/ahm-16/resources/
+  - type: product
+    title: AHM Series Overview
+    url: https://www.allen-heath.com/hardware/ahm/
+  - type: product
+    title: AHM-32
+    url: https://www.allen-heath.com/hardware/ahm/ahm-32/
+  - type: product
+    title: AHM-64
+    url: https://www.allen-heath.com/hardware/ahm/ahm-64/
+  - type: product
+    title: AHM Processing Expansion Module
+    url: https://www.allen-heath.com/hardware/ahm/processing-expansion/
+  - type: product
+    title: AHM Control Library
+    url: https://www.allen-heath.com/hardware/ahm/control-library/

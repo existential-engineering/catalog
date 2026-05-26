@@ -1,0 +1,98 @@
+id: J8GLnpOjns3gAlGfamqVt
+name: DX164-W
+manufacturer: allen-and-heath
+primaryCategory: audio-interface
+categories:
+  - preamp
+url: https://www.allen-heath.com/hardware/everything-i-o/dx164-w/
+description: The DX164-W is a wall mountable 16in / 4out 96kHz remote I/O
+  expander that adds inputs and outputs to dLive, Avantis, SQ and 96kHz Qu
+  mixers, or to AHM audio matrix processors.
+details: |-
+  16in / 4out 96kHz Expander. Wall-mountable remote I/O expander that adds inputs and outputs to dLive, Avantis, SQ and 96kHz Qu mixers, or to AHM audio matrix processors.
+
+  16 Mic Preamps — +60dB of gain, Phantom Power indicators and -20dB pad for line level sources.
+
+  4 Line Outs — Balanced, relay protected line outputs on XLR.
+
+  Redundant and Cascade Modes — Redundant mode supports dual-cable connection to compatible hardware. Cascade mode allows daisy-chaining of up to 2 DX Expanders on each DX port.
+
+  Plug-and-Play — No configuration required, just connect to your mixer and you're ready to go. Firmware updates are handled automatically by the mixer.
+
+  Wall or Floor Mount — The reversible mounting frame allows for in-wall or on-wall mounting. With custom brackets, the unit can be fitted in a standard NEMA box, or mounted in a floor pocket for stage use.
+
+  Maximum Flexibility — The DX164-W can be placed up to 100m away from the mixer for maximum flexibility of positioning. The expander connects via a single Cat5e cable to the mixer or upstream DX Expander via a secure EtherCon port. A second locking EtherCon port is provided for redundant connection to compatible hardware, or for daisy-chaining to a downstream DX Expander for additional remote I/O.
+
+  Flexible Power Options — The IEC mains power inlet can be replaced with a gland module and screw terminals for fixed installation, and a DC 12V backup input is also provided.
+io:
+  - name: Mic/Line Inputs
+    signalFlow: input
+    category: audio
+    type: mic-line
+    connection: xlr
+    maxConnections: 8
+    position: Right
+  - name: Mic/Line Inputs
+    signalFlow: input
+    category: audio
+    type: mic-line
+    connection: xlr
+    maxConnections: 8
+    position: Right
+  - name: Line Outputs
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 4
+    position: Right
+  - name: DX Port (Primary)
+    signalFlow: bidirectional
+    category: digital
+    type: dx-link
+    connection: ethercon
+    maxConnections: 1
+    position: Right
+  - name: DX Port (Redundant / Cascade)
+    signalFlow: bidirectional
+    category: digital
+    type: dx-link
+    connection: ethercon
+    maxConnections: 1
+    position: Right
+  - name: AC Mains Inlet
+    signalFlow: input
+    category: power
+    type: ac-power
+    connection: iec
+    maxConnections: 1
+    position: Left
+  - name: DC 12V Backup Input
+    signalFlow: input
+    category: power
+    type: dc-power
+    connection: dc-jack
+    maxConnections: 1
+    position: Left
+links:
+  - type: product
+    title: Everything I/O
+    url: https://www.allen-heath.com/hardware/everything-i-o/
+  - type: resource
+    title: DX164-W Resources
+    url: https://www.allen-heath.com/hardware/everything-i-o/dx164-w/resources/
+  - type: product
+    title: dLive
+    url: https://www.allen-heath.com/hardware/dlive/
+  - type: product
+    title: Avantis
+    url: https://www.allen-heath.com/hardware/avantis/
+  - type: product
+    title: SQ / SQ+
+    url: https://www.allen-heath.com/hardware/sq/
+  - type: product
+    title: Qu
+    url: https://www.allen-heath.com/hardware/qu/
+  - type: product
+    title: AHM
+    url: https://www.allen-heath.com/hardware/ahm/

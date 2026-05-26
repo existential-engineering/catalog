@@ -1,0 +1,165 @@
+id: FyX-D9ZjCS62TTPP4SvBO
+name: AHM-32
+manufacturer: allen-and-heath
+primaryCategory: routing
+categories:
+  - utility
+  - rack-mount
+  - remote-controlled
+url: https://www.allen-heath.com/hardware/ahm/ahm-32/
+description: With 32 zone outputs, echo cancelling and audio networking options,
+  AHM-32 is ideal for multi-room installations in hospitality, corporate and
+  education environments.
+details: |-
+  With 32 zone outputs, echo cancelling and audio networking options, AHM-32 is ideal for multi-room installations in hospitality, corporate and education environments.
+
+  32x32 Processing Matrix with flexible routing and configurable processing on all 32 outputs.
+
+  12x12 Local Analogue I/O: 12x mic/line inputs and 12x relay protected line outputs on Phoenix connectors.
+
+  Audio Networking I/O Port with card options including Dante, MADI, Waves and SLink.
+
+  Sound Management Tools include 4x Automatic Mic Mixers, ANC (Ambient Noise Compensation), Priority Ducking, 8-band PEQ, dynamics and delay on every input and zone, Speaker processing with x-over filter, delay, limiter, PEQ and All-Pass Filters, NTP support, and EQ Ganging (Relative, Absolute, and Mirrored Controls).
+
+  In addition to remote controllers, GPIO and 3rd party integration, AHM-32 has a front panel screen and 8x programmable SoftKeys for intuitive volume control, source select, preset recall and more.
+
+  An optional Processing Expansion Module adds multiple channels of feedback suppression (FBS) or acoustic echo cancellation (AEC) to suit videoconferencing scenarios or to suppress troublesome feedback.
+specs: |-
+  - 32x32 Processing Matrix
+  - 12x12 Local Analogue I/O
+  - I/O Port for Audio Networking (Up to 128x128)
+  - Dante 96kHz Option Card (AES67 and DDM ready)
+  - SLink 128x128 Option Card for Audio Expansion
+  - 32 Configurable Processing Outputs - Mono / Stereo Zones or Speaker Processing
+  - 96kHz FPGA Core With Ultra-low Latency
+  - Front Panel Screen and Navigation
+  - 8x SoftKeys
+  - Compatible With IP1, IP6, IP8 Remote Controllers (up to 32 IP1, 32 IP4, 8 IP8, 8 IP6)
+  - 2x2 Local GPIO Plus Networkable GPIO Interface
+  - TCP/IP Protocol for Third Party Integration
+  - Crestron, AMX and Extron Drivers
+  - Mac / Windows System Manager Software
+  - Custom Control app and Editor for BYOD
+  - 16 User Profiles
+  - Integrated Stereo Playback
+  - Event Scheduler
+  - 4x Automatic Mic Mixers (AMM)
+  - Optional Processing Expansion Module: 12-channel AEC or FBS
+io:
+  - name: Local Mic/Line Inputs (1-8)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: phoenix
+    maxConnections: 8
+    position: Left
+  - name: Local Mic/Line Inputs (9-12)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: phoenix
+    maxConnections: 4
+    position: Left
+  - name: Local Line Outputs (1-8, relay protected)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: phoenix
+    maxConnections: 8
+    position: Left
+  - name: Local Line Outputs (9-12, relay protected)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: phoenix
+    maxConnections: 4
+    position: Left
+  - name: "I/O Port (option card slot: Dante 96kHz / MADI / Waves / SLink, up to
+      128x128)"
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 1
+    position: Left
+  - name: Network Port (TCP/IP control, IP remote controllers, 3rd party integration)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Left
+  - name: Local GPIO (2x in / 2x out)
+    signalFlow: bidirectional
+    category: digital
+    type: gpio
+    connection: phoenix
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: AHM-32 Resources
+    url: https://www.allen-heath.com/hardware/ahm/ahm-32/resources/
+  - type: product
+    title: AHM Series Overview
+    url: https://www.allen-heath.com/hardware/ahm/
+  - type: product
+    title: AHM-16
+    url: https://www.allen-heath.com/hardware/ahm/ahm-16/
+  - type: product
+    title: AHM-64
+    url: https://www.allen-heath.com/hardware/ahm/ahm-64/
+  - type: product
+    title: Processing Expansion Module (AEC / FBS)
+    url: https://www.allen-heath.com/hardware/ahm/processing-expansion/
+  - type: product
+    title: AHM Control Library
+    url: https://www.allen-heath.com/hardware/ahm/control-library/
+  - type: resource
+    title: AHM Firmware & System Manager v1.61 (Windows)
+    url: https://www.allen-heath.com/content/uploads/2026/01/AHM-System-Manager-V1.61-Installer.zip
+  - type: resource
+    title: AHM Firmware & System Manager v1.61 (Mac)
+    url: https://www.allen-heath.com/content/uploads/2026/01/AHM-System-Manager-V1.61-Installer.dmg
+  - type: resource
+    title: AHM Release Notes V1.61
+    url: https://www.allen-heath.com/content/uploads/2026/01/AHM-Release-Notes-V1.61.pdf
+  - type: resource
+    title: AHM System Manager Help V1.6
+    url: https://support.allen-heath.com/hc/en-gb/articles/40182502415249-AHM-System-Manager-Help-V1-6
+  - type: resource
+    title: AHM-32 Technical Datasheet
+    url: https://www.allen-heath.com/content/uploads/2023/06/AHM-32-Tech-Datasheet.pdf
+  - type: resource
+    title: AHM-32 Weights and Dimensions
+    url: https://www.allen-heath.com/content/uploads/2023/06/WEIGHTS-DIMS-AHM-32.pdf
+  - type: resource
+    title: AHM-32 AEC Module Fitting Note
+    url: https://www.allen-heath.com/content/uploads/2025/06/AP12482-AHM-32-AEC-module-fitting-note.pdf
+  - type: resource
+    title: AHM TCP Protocol V1.5
+    url: https://www.allen-heath.com/content/uploads/2024/10/AHM-TCP-Protocol-V1.5.pdf
+  - type: resource
+    title: AHM-32 / AHM-16 Getting Started Guide
+    url: https://support.allen-heath.com/hc/en-gb/articles/40079793424273-AHM-32-AHM-16-Getting-Started-Guide
+  - type: resource
+    title: DX & GX System Guide
+    url: https://www.allen-heath.com/content/uploads/2023/05/DX-GX-System-Guide-ISS_5.pdf
+  - type: resource
+    title: Custom Control Editor v1.5.3 (Windows)
+    url: https://www.allen-heath.com/content/uploads/2026/02/Custom-Control-Editor-1.5.3-Installer.zip
+  - type: resource
+    title: Custom Control Editor v1.5.3 (Mac)
+    url: https://www.allen-heath.com/content/uploads/2026/02/Custom-Control-Editor-1.5.3.dmg
+  - type: resource
+    title: Custom Control App v1.5.3 (Windows)
+    url: https://www.allen-heath.com/content/uploads/2026/02/Custom-Control-App-1.5.3-Installer.zip
+  - type: resource
+    title: Custom Control App v1.5.3 (Mac)
+    url: https://www.allen-heath.com/content/uploads/2026/02/Custom-Control-App-1.5.3.dmg
+  - type: resource
+    title: MIDI Control v2.3 (Windows)
+    url: https://www.allen-heath.com/content/uploads/2025/11/Allen-and-Heath-MIDI-Control-2.3-Windows.zip
+  - type: resource
+    title: MIDI Control v2.3 (Mac)
+    url: https://www.allen-heath.com/content/uploads/2025/11/Allen-and-Heath-MIDI-Control-2.3-Mac.zip

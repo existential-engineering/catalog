@@ -1,0 +1,130 @@
+id: XjtTMoPhLATvjzUIgmAZX
+name: GR4
+manufacturer: allen-and-heath
+primaryCategory: mixer
+categories:
+  - rack-mount
+  - remote-controlled
+url: https://www.allen-heath.com/hardware/gr-series/gr4/
+description: GR4 is a 1U rack-mounting or desktop audio mixer, providing simple
+  yet comprehensive control of background music and paging in bars, restaurants,
+  stores and other leisure / retail environments.
+details: |-
+  GR4 is a 1U rack-mounting or desktop audio mixer, providing simple yet comprehensive control of background music and paging in bars, restaurants, stores and other leisure / retail environments.
+
+  Standout features include optional remote wall plates, a mic input on the front panel, plus a 3.5mm jack on the front for portable music sources.
+
+  Mic + Line Inputs: Four mic inputs on rear mount Phoenix connectors with MIC1 selectable to an optional front mounted XLR. Four stereo inputs on rear mount phono connectors. An additional front mounted 3.5mm jack socket overrides input 4 phono source.
+
+  Zone Outputs: Two stereo (mono selectable via internal jumper) zones on rear mount Phoenix connectors. An additional two mono zone outputs are available with mix output being selectable from internal jumpers.
+
+  Paging + Alarm: Paging and Alarm contact inputs on rear mounted Phoenix connectors allow integration with 3rd party paging stations and fire alarm systems.
+
+  Remote: Remote control can be achieved via PL-14 Remote connected to the rear mounted RJ45 or custom/3rd party analogue remotes connected to the rear mounted Phoenix connectors.
+
+  Configurable Installer Selectable Modes: Primary + Secondary Mic modes are perfect for controlling hierarchal microphone feeds such as simple paging announcements. Emergency mode is for use with 3rd party systems in emergency situations and mutes all inputs except MIC 1 on alarm contact closure. Jukebox mode provides a priority line input to the system for pre-recorded announcements or programme material such as Sports channels.
+
+  PL-14 Compatible: The PL-14 is an 'intelligent' remote controller for use with the Allen & Heath GR4 audio zone mixers, providing the non-technical operator with local control of music source selection and/or audio level. Up to two controllers may be connected, daisy-chained via standard CAT5 cables. The optional PL-5 hand held infra-red remote controller adds wireless control plus store/recall of up to 4 source/level pre-sets.
+io:
+  - name: Mic Inputs
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: phoenix
+    maxConnections: 4
+    position: Left
+  - name: Front Mic Input (MIC1 selectable)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Stereo Line Inputs
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 4
+    position: Left
+  - name: Front AUX Input (overrides Stereo Input 4)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: trs-3.5mm
+    maxConnections: 1
+    position: Right
+  - name: Stereo Zone Outputs (mono selectable via internal jumper)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: phoenix
+    maxConnections: 2
+    position: Left
+  - name: Mono Zone Outputs
+    signalFlow: output
+    category: audio
+    type: line
+    connection: phoenix
+    maxConnections: 2
+    position: Left
+  - name: Paging Contact Input
+    signalFlow: input
+    category: digital
+    type: gpio
+    connection: phoenix
+    maxConnections: 1
+    position: Left
+  - name: Alarm Contact Input
+    signalFlow: input
+    category: digital
+    type: gpio
+    connection: phoenix
+    maxConnections: 1
+    position: Left
+  - name: PL-14 Remote (CAT5, daisy-chainable)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: rj45
+    maxConnections: 1
+    position: Left
+  - name: Analogue Remote Inputs (0-10V music source and level control)
+    signalFlow: input
+    category: digital
+    type: gpio
+    connection: phoenix
+    maxConnections: 2
+    position: Left
+  - name: AC Mains Inlet (100-240V, 50/60Hz)
+    signalFlow: input
+    category: power
+    type: ac-power
+    connection: iec-c6
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: GR4 Resources (firmware, documents, specifications, downloads)
+    url: https://www.allen-heath.com/hardware/gr-series/gr4/resources/
+  - type: product
+    title: GR Series Overview
+    url: https://www.allen-heath.com/hardware/gr-series/
+  - type: resource
+    title: GR4 Technical Datasheet (PDF)
+    url: https://www.allen-heath.com/content/uploads/2023/06/GR4-Technical-Datasheet.pdf
+  - type: resource
+    title: GR4 Cut Sheet (PDF)
+    url: https://www.allen-heath.com/content/uploads/2023/06/GR4-Cut-Sheet.pdf
+  - type: resource
+    title: GR4 Flyer (PDF)
+    url: https://www.allen-heath.com/content/uploads/2023/06/GR4-Flyer.pdf
+  - type: resource
+    title: GR4 Weights and Dimensions (PDF)
+    url: https://www.allen-heath.com/content/uploads/2023/06/GR4-WEIGHTS-AND-DIMS.pdf
+  - type: resource
+    title: PL-14 User Guide (PDF, AP10709 Issue 4)
+    url: https://www.allen-heath.com/content/uploads/2023/06/PL-14-User-Guide-AP10709-Issue_4.pdf
+  - type: product
+    title: PL-14 Remote Controller
+    url: https://www.allen-heath.com/hardware/controllers/pl-14/

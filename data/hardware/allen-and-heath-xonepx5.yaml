@@ -1,0 +1,121 @@
+id: NjN-2HPJZK-b6rdhe1sZ6
+name: Xone:PX5
+manufacturer: allen-and-heath
+primaryCategory: mixer
+categories:
+  - audio-interface
+  - midi-controller
+  - filter
+url: https://www.allen-heath.com/hardware/xone-series/xonepx5/
+description: Combining the signature analogue Xone sound with class-leading
+  digital connectivity, Xone:PX5 breathes life and soul into electronic music.
+details: |-
+  Xone:PX5 is a 4+1 channel mixer, equipped with the legendary Xone filter, 3 band EQ on all channels and an intuitive layout.
+
+  The built-in FX technology offers new levels of manipulation with the Xone:Xcite FX suite of performance-focused delays, reverbs, modulators, flangers and distorters which are all assignable through flexible hands-on control.
+
+  The versatile Send/Return feature allows connection of external FX hardware with both Send/Return and Master Insert mode connections (Line or Hi-Z). Each channel has its own dedicated send control for external FX processing and can also be routed to the internal Xone:FX engine.
+
+  Connect a laptop or computer to the premium internal 20 channel 24-bit/96kHz USB2 soundcard for easy integration into digital DJ workflows, plus plug n' play connection via X:LINK to Xone:K series controllers for expanded MIDI control.
+
+  The crossfader has three switchable curve settings for blending or scratching styles and can be easily replaced or upgraded to an Innofader Pro 2 for ultimate crossfader performance.
+
+  The Xone:PX5 Soundcard supports DVS control of Native Instruments' TRAKTOR SCRATCH PRO 3 DJ software using control vinyl or CDs.
+
+  The Xone filter includes HPF, BPF, LPF, resonance control and frequency sweep, plus the option to route the Aux channel and External Return to the filter.
+
+  Integrated MIDI clock engine can send start/stop messages to external equipment via 5-pin MIDI Sync/Out and can also send/receive MIDI clock information through the USB connection.
+
+  On top of its four fully featured phono/USB/line channels, Xone:PX5 has a flexible mic/aux channel with XLR and 1/4" jack connectors and full 3 band EQ. The additional inputs allow this channel to be used as an extra stereo music source or USB Return channel.
+specs: |-
+  - 4+1 channel analogue DJ mixer
+  - 3-band isolator EQ on all channels
+  - Legendary Xone:VCF filter (HPF / BPF / LPF, resonance, frequency sweep)
+  - Built-in Xone:Xcite FX suite (delays, reverbs, modulators, flangers, distorters)
+  - 20 channel 24-bit/96kHz USB 2.0 soundcard
+  - Traktor Scratch Pro 3 DVS certified
+  - MIDI clock engine with 5-pin MIDI Sync/Out
+  - X:LINK port for Xone:K series controllers
+  - Dedicated FX send per channel
+  - Mic/Aux return and Master insert for external hardware FX & signal processing
+  - Send/Return supports Line or Hi-Z external FX (Send/Return or Master Insert mode)
+  - Hybrid FX mode combines internal and external send/return FX
+  - Crossfader with three switchable curve settings
+  - Innofader Pro 2 compatible (replaceable/upgradeable crossfader)
+  - Aux channel and External Return routable through the filter
+io:
+  - name: Phono / Line Inputs (Channels 1-4)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 8
+    position: Left
+  - name: Mic Input (Mic/Aux Channel)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Aux / Mic Input (1/4" Jack)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: trs-1-4
+    maxConnections: 2
+    position: Left
+  - name: Send (External FX, Line or Hi-Z)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: trs-1-4
+    maxConnections: 1
+    position: Left
+  - name: Return (External FX / Master Insert)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: trs-1-4
+    maxConnections: 2
+    position: Left
+  - name: USB 2.0 (20 Channel 24-bit/96kHz Soundcard)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Left
+  - name: MIDI Sync / Out (5-pin DIN)
+    signalFlow: output
+    category: digital
+    type: midi
+    connection: din-5
+    maxConnections: 1
+    position: Left
+  - name: X:LINK (Xone:K Series Controller Connection)
+    signalFlow: bidirectional
+    category: digital
+    type: midi
+    connection: rj45
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: Xone:PX5 Resources
+    url: https://www.allen-heath.com/hardware/xone-series/xonepx5/resources/
+  - type: product
+    title: Xone Series Overview
+    url: https://www.allen-heath.com/hardware/xone-series/
+  - type: product
+    title: Xone:96
+    url: https://www.allen-heath.com/hardware/xone-series/xone96/
+  - type: product
+    title: Xone:92
+    url: https://www.allen-heath.com/hardware/xone-series/xone92/
+  - type: product
+    title: Xone:43
+    url: https://www.allen-heath.com/hardware/xone-series/xone43/
+  - type: product
+    title: Xone:K2
+    url: https://www.allen-heath.com/hardware/xone-series/xonek2/
