@@ -1,0 +1,86 @@
+id: jez9IiRMb-D2-6naVP49I
+name: DSi 2.0 Series
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/dsi-2-0-series
+description: Next-generation 4-channel cinema amplifiers for JBL cinema
+  loudspeakers, building on Crown DSi Digital Screen Array technology with
+  integrated DSP from the CDi DriveCore series.
+details: |-
+  The DSi 2.0 family is a line of four-channel cinema amplifiers offered in three power tiers — SA4, MA4, and LA4 — each available in an analog model and an analog-plus-digital 'D' variant (SA4-D, MA4-D, LA4-D) that adds Dante/AES67 networked audio. All models fit a 2RU 19-inch chassis with bridgeable outputs, and a single channel can drive up to four JBL surround speakers when operating in 2Ω mode.
+
+  Each channel runs through 32-bit / 96kHz floating-point DSP with FIR filtering, eight-band parametric EQ, and LevelMAX limiting. Built-in JBL Cinema Speaker presets cover the full JBL cinema loudspeaker line, allowing quick deployment without external tuning hardware.
+
+  Crown DriveCore amplifier topology consolidates hundreds of conventional amplifier components into a single integrated chip, contributing to the compact 2RU footprint and ultra-quiet 51dBA maximum fan noise rating measured at 1m.
+
+  Networking and control are provided over Ethernet with SNMP support and a HiQ port for HARMAN Audio Architect software. D-models interface directly with Dolby Atmos cinema processors over Dante/AES67 with no additional conversion hardware required.
+specs: |-
+  - Channels: 4 (bridgeable to 2)
+  - Rated power 8Ω (SA4/MA4/LA4): 360W / 750W / 1,300W per channel
+  - Rated power 4Ω (SA4/MA4/LA4): 700W / 1,400W / 2,200W per channel
+  - Rated power 2Ω (SA4/MA4/LA4): 1,050W / 2,100W / 1,200W per channel
+  - Bridged 8Ω power (SA4/MA4/LA4): 1,300W / 2,600W / 4,000W per pair
+  - Bridged 4Ω power (SA4/MA4/LA4): 2,200W / 4,200W / 2,300W per pair
+  - DSP: 96kHz, 32-bit floating point with FIR filtering and LevelMAX limiting
+  - Parametric EQ: 8-band per channel
+  - Frequency response: ±0.5 dB, 20Hz–20kHz @ 4Ω
+  - THD: 0.35%
+  - Damping factor: >1000 (20Hz–100Hz)
+  - Input impedance: 70kΩ balanced / 35kΩ unbalanced
+  - Load impedance: 2Ω–16Ω stereo; 4Ω–16Ω bridged
+  - Networked audio (D models): Dante / AES67 over dual RJ-45
+  - Control: Ethernet, SNMP, HiQ port for HARMAN Audio Architect
+  - Dimensions: 17.21" D x 18.98" W x 3.46" H (437.2 x 482 x 88 mm), 2RU
+  - Weight: 23.15 lb (10.5 kg)
+  - Power supply: 100–220V ±10%, 50/60 Hz
+  - Fan noise: 51 dBA maximum at 1m
+io:
+  - name: Analog Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 4
+    position: Right
+  - name: Dante / AES67 Network Audio (D models)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 2
+    position: Right
+  - name: Speaker Output (barrier terminal block)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 4
+    position: Right
+  - name: Ethernet / Control (SNMP, HiQ for Audio Architect)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: GPIO / AUX
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: pin
+    maxConnections: 4
+    position: Right
+  - name: AC Mains Input (IEC C20 / 320 inlet)
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c20
+    maxConnections: 1
+    position: Right
+links:
+  - type: support
+    title: Anytime Help Center
+    url: https://help.harmanpro.com/crown

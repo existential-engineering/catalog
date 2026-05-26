@@ -1,0 +1,115 @@
+id: yzldTwD3zkdSH58g4tC3f
+name: CTD-4125
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/ctd-4125
+description: Four-channel, 125W/ch. power sharing amplifier with built-in DSP
+  and Dante networking. ComTech D Series amplifier with asymmetrical power
+  sharing enabling channels to share full 500W in any ratio, in a compact 1RU
+  half-rack form factor.
+specs: |-
+  - 4 channels
+  - All channels driven Low-Z: 125W per channel
+  - All channels driven Hi-Z: 125W per channel
+  - Single channel driven (power sharing) Low-Z: 500W maximum
+  - Single channel driven (power sharing) Hi-Z: 500W maximum
+  - Dante inputs and outputs
+  - Built-in DSP for room and speaker tuning
+  - Asymmetrical power sharing
+  - Web UI configuration
+  - Lo-Z/Hi-Z switchable outputs
+  - 1RU, 1/2 rack width form factor
+  - Factory JBL SpeakerTunings included
+  - Pilot tone and load monitoring
+  - Source priority switching
+  - GPIO interface
+  - HControl protocol support
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Dante Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Dante Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: GPIO
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+releaseDate: 2025-06-10

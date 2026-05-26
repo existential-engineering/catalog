@@ -1,0 +1,91 @@
+id: fR-S9bUdYZCuRA5j4zDt8
+name: XLi 2500
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/xli-2500
+description: Two-channel, 750W @ 4Ω power amplifier from Crown's XLi series —
+  affordable, reliable power for musicians, DJs, venues, and houses of worship.
+details: |-
+  The XLi 2500 is the top of Crown's XLi series, a two-channel power amplifier delivering 750W per channel at 4Ω. It targets working musicians, DJs, venues, and houses of worship where reliable, no-frills power is the requirement.
+
+  Inputs accept RCA or electronically balanced XLR signal with user-selectable sensitivity (0.775V or 1.4V). Outputs are provided on both Speakon and binding posts, simplifying integration with existing speaker cabling. Stereo, parallel, and bridge-mono modes are supported.
+
+  Forced-air cooling and full protection circuitry guard against shorts, no-load conditions, on/off thumps, and RF interference. Front-panel LEDs report power, signal presence, clip, and fault status.
+specs: |-
+  - 2 channels
+  - 750W per channel @ 4Ω
+  - Frequency Response: 20 Hz - 20 kHz, +0/-1 dB
+  - THD: <0.5%, 20 Hz - 20 kHz
+  - Operating modes: stereo, parallel, bridge-mono
+  - User-selectable input sensitivity (0.775V or 1.4V)
+  - Forced-air cooling
+  - Dimensions: 19" × 3.5" × 12.4"
+  - Weight: 29.7 lbs (13.5 kg)
+  - Power: IEC inlet (15A)
+io:
+  - name: Analog Input Ch.1 (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2 (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.1 (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2 (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1 (Speakon)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2 (Speakon)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1 (Binding Post)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2 (Binding Post)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (15A IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom

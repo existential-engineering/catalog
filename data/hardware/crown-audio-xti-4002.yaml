@@ -1,0 +1,89 @@
+id: abmrlOv4MS3IMc_CbJGb3
+name: XTi 4002
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/xti-4002
+description: Two-channel, 1200W @ 4Ω power amplifier from Crown's XTi 2 Series.
+  Rack-mount design with Peakx Plus limiters, enhanced subharmonic synth, and
+  HiQnet System Architect control via USB.
+details: |-
+  The XTi 2 Series represents Crown's commitment to delivering one of the most powerful and innovative amplifier families on the market. The XTi 4002 sets the standard for unmatched performance and value, delivering the goods night after night. It is recommended for portable PA applications.
+
+  Peakx Plus Limiters provide system protection with user control over threshold, attack, and release parameters. An Enhanced Subharmonic Synth section enables frequency, gain, and filter-type adjustments for system-specific low-frequency tuning. Three user-defined fan modes give the operator control over thermal management.
+
+  Integrated system monitoring surfaces AC line voltage and power-supply temperature in real time. The rear-panel USB port exposes the amplifier's DSP, presets, and monitoring to Crown's HiQnet System Architect / Band Manager software.
+specs: |-
+  - 2 channels
+  - Rated Power Output (per channel): 1600W @ 2Ω, 1200W @ 4Ω, 650W @ 8Ω
+  - Input Sensitivity: 1.4V
+  - THD: <0.5%
+  - Signal-to-Noise Ratio: 100 dB (A-weighted)
+  - Frequency Response: +0/-1 dB (1W, 20 Hz – 20 kHz)
+  - Crosstalk: >70 dB (20 Hz – 1 kHz)
+  - Peakx Plus Limiters with user-defined threshold, attack, release
+  - Enhanced Subharmonic Synth (frequency, gain, filter type)
+  - Three user-defined fan modes
+  - Dimensions: 19" W × 3.5" H × 12.25" D
+  - Weight: 18.5 lbs (8.4 kg)
+  - Shipping Weight: 21.5 lbs (9.8 kg)
+  - IEC Power Connector: 15A
+io:
+  - name: Balanced Input Ch.1 (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Balanced Input Ch.2 (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1 (Binding Posts)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2 (Binding Posts)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1 (Speakon)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2 (Speakon)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: USB Control
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom

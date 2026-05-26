@@ -1,0 +1,121 @@
+id: EXK29EzmeamtoPPqOK2Ia
+name: DCi 4|300DA
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/dci-4-300da
+description: Four-channel, 300W @ 4Ω Power Amplifier with Dante™ / AES67
+  Networked Audio, and 70V/100V. Incorporates proprietary DriveCore® technology
+  alongside a high-powered DSP with JBL speaker tunings.
+details: |-
+  The DCi 4|300DA is part of the DriveCore Install DA series, adding integrated Dante™/AES67 networked audio to Crown's proprietary DriveCore amplifier technology. Networked audio signals can be sent directly to the amplifier over standard IP networks, simplifying installation.
+
+  The amplifier provides redundant, independent Dante/AES67 ports (Primary & Secondary) and accepts 48kHz or 96kHz audio. It can also send Dante/AES67 audio from its analog inputs (pre/post processing @ 48kHz). HiQnet protocol over TCP/IP enables network configuration, monitoring, and control via Audio Architect software.
+
+  Integrated DSP at 48kHz includes LevelMAX limiters, input/output EQ, crossover, delay, matrix router, and speaker line monitoring. Input router supports high, medium, and low priority sources, with input delay up to 2 seconds and output delay up to 100ms. 20 presets, JBL speaker tunings, channel auto-standby, and load monitoring (pilot tone, normal, burst, continuous, and sweep modes) round out the feature set.
+specs: |-
+  - Output Channels: 4
+  - Output Power (4Ω, Dual Mode): 300W
+  - Output Power (Bridge Mono, 8Ω): 600W
+  - Frequency Response (8Ω, 20Hz–20kHz): ±0.25dB
+  - Total Harmonic Distortion: 0.35% (full rated power)
+  - Damping Factor (20Hz–100Hz): >1000
+  - Load Impedance (Stereo): 2Ω–16Ω; 70Vrms, 100Vrms
+  - Load Impedance (Bridge Mono): 4Ω–16Ω; 140Vrms, 200Vrms
+  - DSP: 48kHz processing, 20 presets
+  - Input Delay: up to 2 seconds
+  - Output Delay: up to 100ms
+  - Networking: Dante / AES67, redundant Primary & Secondary
+  - Cooling: Forced air, variable speed
+  - Max Fan Noise: 45 dBA SPL @ 1M
+  - AC Mains: 100V–240V ~ 50/60Hz
+  - Power Connector: 15A IEC
+  - Dimensions: 483 × 89 × 362 mm (19″ × 3.5″ × 14.25″)
+  - Weight: 9.12 kg (20.1 lbs)
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Dante / AES67 Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Dante / AES67 Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GPIO / AUX Port
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Mains
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom

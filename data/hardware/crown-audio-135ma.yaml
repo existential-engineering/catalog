@@ -1,0 +1,93 @@
+id: Q831luye4Vo9GeW6oVNG5
+name: 135MA
+manufacturer: crown-audio
+primaryCategory: amplifier
+categories:
+  - mixer
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/135ma
+description: Three-input, 35W mixer-amplifier designed for commercial audio
+  applications including paging, background music, and music-on-hold. Provides
+  both 8-ohm and constant-voltage outputs at 70V and 100V.
+specs: |-
+  - 3 input channels (each with volume control)
+  - 1 amplifier output channel
+  - 35W amplifier output
+  - 8-ohm output
+  - Constant-voltage outputs at 70V and 100V
+  - Frequency Response: 50 Hz to 20 kHz ±1 dB
+  - THD+Noise: < 0.5% at rated power at 1 kHz
+  - Signal-to-Noise Ratio (Mic): > 58 dB
+  - Signal-to-Noise Ratio (Line): > 60 dB
+  - Phantom power: 15 VDC
+  - Priority muting (VOX or external switch)
+  - Voice-activated muting capability
+  - Bass and treble controls on master output
+  - IEC Power Connector: 15A
+io:
+  - name: Mic/Line Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Mic/Line Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Mic/Line Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Music Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Music Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Telephone Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: 135MA Cut Sheet
+    url: https://www.crownaudio.com/en-US/product_documents/135ma-160ma_datasheet_final-pdf
+  - type: resource
+    title: 135MA Owner's Manual
+    url: https://www.crownaudio.com/en-US/product_documents/140497-2_08-13_135ma-160ma_operation-pdf
+  - type: resource
+    title: 135MA-160MA Data Sheet
+    url: https://www.crownaudio.com/en-US/site_elements/135ma-160ma-data-sheet

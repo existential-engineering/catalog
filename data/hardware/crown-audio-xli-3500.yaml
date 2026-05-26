@@ -1,0 +1,98 @@
+id: T0HYoOVe1xJSnuGStFcVo
+name: XLi 3500
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/xli-3500
+description: Two-channel, 1350W power amplifier from Crown's XLi Series.
+  Designed for affordable, rugged, reliable amplification for musicians, DJs,
+  entertainers, houses of worship, and clubs.
+details: |-
+  The XLi Series represents a new era in affordable, quality power amplification. All four XLi models (XLi 800, XLi 1500, XLi 2500, XLi 3500) share the same powerful, rugged, and reliable design, differing only in output power. The XLi 3500 sits at the top of the range, well-suited for musicians, DJs, entertainers, houses of worship, discos, and pubs.
+
+  Crown brings over six decades of experience in amplifier design and manufacturing to the XLi Series. The amplifier offers stereo, parallel, and bridge-mono operating modes, with user-selectable input sensitivity (0.775V or 1.4V) and balanced or unbalanced inputs to integrate with a wide range of source equipment.
+
+  Front-panel controls include a power switch, power LED, and per-channel level controls. Six LEDs report signal presence, clip, and fault for each channel. The rear panel offers XLR and RCA inputs alongside binding-post and Speakon outputs, with an IEC 15A mains connector for international voltage support.
+specs: |-
+  - 2 channels
+  - 1350W per channel @ 8Ω (stereo)
+  - Frequency Response: 20 Hz – 20 kHz, +0/-1 dB (at 1 watt)
+  - THD: <0.5%, 20 Hz – 20 kHz
+  - Intermodulation Distortion: <0.35%
+  - Slew Rate: >10V/μs
+  - Voltage Gain: 36 dB
+  - Damping Factor: >200 (8Ω, 10 Hz – 400 Hz)
+  - Signal-to-Noise Ratio (A-weighted): >100 dB
+  - Input Sensitivity: 0.775V or 1.4V (user selectable)
+  - Input Impedance: 20kΩ balanced / 10kΩ unbalanced
+  - Operating modes: stereo, parallel, bridge-mono
+  - Dimensions: 19" W × 3.5" H × 14.4" D (48.3 × 8.9 × 36.6 cm)
+  - Weight: 43 lbs (19.5 kg)
+  - AC Line Voltage: 120V~60 Hz; 220V~50/60 Hz; 230–240V~50/60 Hz
+  - IEC Power Connector: 15A
+io:
+  - name: Balanced Input Ch.1 (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Balanced Input Ch.2 (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Unbalanced Input Ch.1 (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Unbalanced Input Ch.2 (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1 (Binding Posts)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2 (Binding Posts)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1 (Speakon)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2 (Speakon)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom

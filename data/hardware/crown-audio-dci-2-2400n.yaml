@@ -1,0 +1,100 @@
+id: dLe8KKEBscFds1y2KP6Xw
+name: DCi 2|2400N
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/dci-2-2400n
+description: A two-channel, 2400W @ 4Ω high-power networked installation
+  amplifier with BLU-Link digital audio transport and 70V/100V direct drive
+  output for demanding installed sound applications.
+details: |-
+  The DCi 2|2400N is part of Crown's DriveCore Install Network Series, delivering up to 2400W per channel at 4Ω in a versatile rack-mount form factor. Engineered for challenging 21st century installed sound applications, the amplifier combines proprietary DriveCore technology with comprehensive networking and DSP for high-performance integration.
+
+  The amplifier accepts both balanced analog inputs and HARMAN's proprietary BLU-Link digital audio transport, with a priority input router for automatic failover between sources. Network monitoring and control runs over standard TCP/IP using the HiQnet protocol, with programmable GPIO ports supporting volume control, preset recall, and error reporting.
+
+  Onboard DSP capabilities include LevelMAX limiters, input/output EQ, crossover, delay, matrix mixer, and speaker line monitoring with 20kHz pilot tone support for end-of-line detection. The amplifier integrates with Audio Architect, Q-SYS, AMX, and Crown's mobile app, and is compatible with BSS Audio's EOL Box and EC-series Ethernet wall controllers.
+specs: |-
+  - 2 channels
+  - Dual mode: 2100W @ 2Ω, 2400W @ 4Ω, 1900W @ 8Ω, 950W @ 16Ω, 2100W @ 70Vrms, 2300W @ 100Vrms
+  - Bridge Mono @ 4Ω: 4200W
+  - Frequency Response: ±0.25dB (20Hz–20kHz @ 8Ω)
+  - THD: 0.35% (full rated power, 20Hz–20kHz)
+  - Damping Factor: >5000 (20Hz–100Hz)
+  - Load Impedance (Stereo/Dual): 2Ω–16Ω
+  - Load Impedance (Bridge Mono): 4Ω–16Ω
+  - Onboard DSP: LevelMAX limiters, input/output EQ, crossover, delay, matrix mixer, speaker line monitoring
+  - 20kHz pilot tone support for end-of-line detection
+  - BLU-Link digital audio transport
+  - HiQnet network monitoring and control (TCP/IP)
+  - Programmable GPIO ports
+  - Cooling: Continuously variable speed forced air (front-to-back)
+  - AC Mains: 100V–240V ~ 50/60Hz (±10%)
+  - Power Connector: 20A IEC
+  - Dimensions: 483mm W × 89mm H × 483mm D (19" × 3.5" × 19")
+  - Weight: 10.9 kg (24 lbs)
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: BLU-Link In
+    signalFlow: input
+    category: digital
+    type: blu-link
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: BLU-Link Out
+    signalFlow: output
+    category: digital
+    type: blu-link
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Ethernet (HiQnet Control)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GPIO Port
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (20A IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c20
+    maxConnections: 1
+    position: Bottom

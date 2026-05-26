@@ -1,0 +1,96 @@
+id: 4MlT5aT_NWWkxHYf8rJaF
+name: XLS 1502
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/xls-1502
+description: Two-channel, 525W @ 4Ω power amplifier from Crown's XLS DriveCore 2
+  Series. Lightweight Class D design with onboard DSP, large LCD display, and
+  selectable input sensitivity for portable PA use.
+details: |-
+  The XLS 1502 is part of Crown's next-generation XLS DriveCore 2 Series. It features a sleek new look, an LCD display that is three times larger than the previous generation, and expanded DSP with higher capabilities. The unit uses Crown's patented DriveCore technology for ultra-efficient, low-weight amplification.
+
+  The amplifier can drive 2400W at 4Ω bridged with plenty of headroom, guaranteeing a clean, undistorted signal straight to your speakers. The XLS 1502 weighs less than 11 pounds, making it an ideal choice for portable PA applications where weight and reliability are both critical.
+
+  DSP features include band-pass filtering per channel and the integrated PureBand Crossover System, plus Peakx Limiters for speaker protection. Selectable input sensitivity (1.4Vrms or 0.775Vrms) supports a wide range of source equipment, and a remote power-trigger input enables system-wide power sequencing.
+specs: |-
+  - 2 channels
+  - 525W per channel @ 4Ω
+  - 2400W bridged @ 4Ω
+  - Input Sensitivity: 1.4Vrms (selectable 0.775Vrms)
+  - Frequency Response: +0dB, -1dB
+  - Signal-to-Noise Ratio: >103dB (at 0.775Vrms, 6dB lower)
+  - THD: <0.5%
+  - Intermodulation Distortion: <0.3%
+  - Damping Factor: >200
+  - Crosstalk: 1kHz >85dB; 20kHz >55dB
+  - Onboard DSP: band-pass filter per channel, PureBand Crossover, Peakx Limiters
+  - Remote power trigger
+  - Dimensions: 19" W × 3.5" H × 7.7" D (48.3 × 8.9 × 19.6 cm)
+  - Weight: 8.6 lbs (3.9 kg)
+io:
+  - name: Balanced Input Ch.1 (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Balanced Input Ch.2 (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Balanced Input Ch.1 (1/4-inch)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Balanced Input Ch.2 (1/4-inch)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Unbalanced Input Ch.1 (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Unbalanced Input Ch.2 (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1 (Binding Posts)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2 (Binding Posts)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom

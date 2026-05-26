@@ -1,0 +1,127 @@
+id: GRk3tQxuFcoU7UychB4JE
+name: DCi 4|2400N
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/dci-4-2400n
+description: A four-channel, 2400W @ 4Ω high-power networked installation
+  amplifier with BLU link digital audio transport and 70V/100V direct drive
+  output for demanding installed sound applications.
+details: |-
+  The DCi 4|2400N is part of Crown's DriveCore Install Network Series, delivering 2400W per channel at 4Ω across four channels in a 2U rack form factor. Built on proprietary DriveCore technology, the amplifier provides high power density, energy efficiency, and reliability for challenging installed sound applications.
+
+  The amplifier accepts both balanced analog inputs and digital audio via HARMAN's proprietary BLU link transport, with automatic priority input routing. Network monitoring and control runs over standard TCP/IP using the HiQnet protocol, with programmable GPIO ports for volume control, preset recall, and error reporting.
+
+  Onboard DSP includes LevelMAX limiters, input/output EQ, crossover, delay, matrix mixer, and speaker line monitoring. The amplifier integrates with Audio Architect, Q-SYS, AMX, and Crown's mobile app for flexible system design and remote control.
+specs: |-
+  - 4 channels
+  - Dual mode: 2100W @ 2Ω, 2400W @ 4Ω, 1900W @ 8Ω, 2100W @ 70Vrms, 2300W @ 100Vrms
+  - Bridge Mono @ 4Ω: 4200W
+  - Frequency Response: ±0.25dB (8Ω, 20Hz–20kHz)
+  - THD: 0.35% (full rated power, 20Hz–20kHz)
+  - Damping Factor: >5000 (20Hz–100Hz)
+  - Load Impedance (Stereo): 2Ω–16Ω; 70Vrms/100Vrms
+  - Load Impedance (Bridge): 4Ω–16Ω; 140Vrms/200Vrms
+  - Onboard DSP: LevelMAX limiters, input/output EQ, crossover, delay, matrix mixer, speaker line monitoring
+  - BLU link digital audio transport
+  - HiQnet network monitoring and control (TCP/IP)
+  - Programmable GPIO ports
+  - Cooling: Continuously variable speed forced air
+  - AC Mains: 100V–240V, 50/60Hz (±10%)
+  - Power Connector: 32A PowerCON
+  - Dimensions: 483 × 89 × 483 mm (19" × 3.5" × 19")
+  - Weight: 13.15 kg (29.7 lbs)
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: BLU link In
+    signalFlow: input
+    category: digital
+    type: blu-link
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: BLU link Out
+    signalFlow: output
+    category: digital
+    type: blu-link
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Ethernet (HiQnet Control)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GPIO Port
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (32A PowerCON)
+    signalFlow: input
+    category: power
+    type: power
+    connection: powercon
+    maxConnections: 1
+    position: Bottom

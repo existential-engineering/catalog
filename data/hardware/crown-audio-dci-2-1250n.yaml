@@ -1,0 +1,100 @@
+id: V1fs2Tac_XdLeOrSgAEPn
+name: DCi 2|1250N
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/dci-2-1250n
+description: A two-channel, 1250W @ 4Ω networked installation power amplifier
+  with BLU link digital audio transport and 70V/100V direct drive output for
+  professional installed sound applications.
+details: |-
+  The DCi 2|1250N is part of Crown's DriveCore Install Network Series, offering two channels of 1250W amplification at 4Ω in a 2U rack form factor. Proprietary DriveCore technology delivers high reliability, energy efficiency, and audio fidelity for installed sound systems.
+
+  The amplifier accepts both balanced analog inputs (XLR) and digital audio inputs via HARMAN's proprietary BLU-Link transport, with automatic priority input routing between sources. Network monitoring and control runs over standard TCP/IP using the HiQnet protocol, and programmable GPIO ports support volume control, preset recall, and error reporting.
+
+  Onboard DSP includes LevelMAX limiters, input/output EQ, crossover, delay, matrix mixer, and speaker line monitoring. Compatible with Audio Architect software, the Powered by Crown mobile app, Q-SYS, and AMX control systems.
+specs: |-
+  - 2 channels
+  - Dual mode: 1250W @ 2Ω, 1250W @ 4Ω, 1250W @ 8Ω, 625W @ 16Ω, 1250W @ 70Vrms, 1250W @ 100Vrms
+  - Bridge mono: 2500W @ 4Ω–16Ω, 2500W @ 140Vrms–200Vrms
+  - Frequency Response: ±0.25dB (8Ω, 20Hz–20kHz)
+  - THD: 0.35% (full rated power, 20Hz–20kHz)
+  - Damping Factor: >1500 (20Hz–100Hz)
+  - Load Impedance (Stereo/Dual): 2Ω–16Ω; 70Vrms and 100Vrms
+  - Load Impedance (Bridge Mono): 4Ω–16Ω; 140Vrms and 200Vrms
+  - Onboard DSP: LevelMAX limiters, input/output EQ, crossover, delay, matrix mixer, speaker line monitoring
+  - BLU-Link digital audio transport
+  - HiQnet network monitoring and control (TCP/IP)
+  - Programmable GPIO ports
+  - Cooling: Continuously variable speed forced air (front-to-back)
+  - Maximum Fan Noise: 47 dBA SPL @ 1m
+  - AC Mains: 100V–240V ~ 50/60Hz (±10%)
+  - Power Connector: 15A IEC
+  - Dimensions: 483mm W × 89mm H × 362mm D (19" × 3.5" × 14.25")
+  - Weight: 10.66 kg (23.5 lbs)
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: BLU-Link In
+    signalFlow: input
+    category: digital
+    type: blu-link
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: BLU-Link Out
+    signalFlow: output
+    category: digital
+    type: blu-link
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Ethernet (HiQnet Control)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GPIO Port
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (15A IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom

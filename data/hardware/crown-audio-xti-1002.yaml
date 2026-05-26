@@ -1,0 +1,90 @@
+id: tUpzxakUSiQgg5m7srydn
+name: XTi 1002
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/xti-1002
+description: Two-channel, 500W @ 4Ω power amplifier from Crown's XTi 2 Series.
+  Rack-mount design with DSP, USB control via HiQnet System Architect,
+  customizable subharmonic synthesis, and advanced limiting.
+details: |-
+  The XTi 2 Series represents one of the most powerful and innovative amplifier families Crown has produced. The XTi 1002 continues to set performance and value standards, delivering consistent results night after night without requiring extensive maintenance — a workhorse aimed squarely at portable PA applications.
+
+  Key capabilities include advanced limiting protection, customizable subharmonic synthesis, and three user-defined fan control modes. Onboard system monitoring provides real-time visibility into AC line voltage and power-supply temperature. Integrated cast-aluminum handles aid portability and a secure locking power-cord clip prevents accidental disconnection.
+
+  Control and configuration flexibility is enhanced through Crown's HiQnet System Architect software, with capacity for 50 total presets (49 user-definable). The amplifier exposes a USB control port on the rear panel for software access to DSP, presets, and monitoring data.
+specs: |-
+  - 2 channels
+  - Rated Power Output (per channel): 700W @ 2Ω, 500W @ 4Ω, 275W @ 8Ω
+  - Input Sensitivity: 1.4V
+  - THD: <0.5%
+  - Signal-to-Noise Ratio: 100 dB A-weighted (below rated 1kHz @ 8Ω)
+  - Frequency Response: +0/-1 dB (20Hz–20kHz @ 1W)
+  - Crosstalk: >70 dB (20Hz–1kHz, below rated power)
+  - 50 total presets (49 user-definable)
+  - Three user-defined fan modes
+  - Real-time AC line voltage and power-supply temperature monitoring
+  - HiQnet System Architect software control via USB
+  - Dimensions: 19" W × 3.5" H × 12.25" D
+  - Weight: 18.5 lbs (8.4 kg)
+  - Shipping Weight: 21.5 lbs (9.8 kg)
+  - IEC Power Connector: 15A
+io:
+  - name: Balanced Input Ch.1 (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Balanced Input Ch.2 (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1 (Binding Posts)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2 (Binding Posts)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1 (Speakon)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2 (Speakon)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: USB Control
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom

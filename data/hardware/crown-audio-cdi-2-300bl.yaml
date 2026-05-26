@@ -1,0 +1,103 @@
+id: R8Jbay9jE0T76kzYxTalG
+name: CDi 2|300BL
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/cdi-2-300bl
+description: A 2-channel professional power amplifier delivering 300W per output
+  channel, with both analog and BLU link digital audio networking. Part of
+  Crown's CDi DriveCore series for small to medium installations.
+details: |-
+  The CDi 2|300BL represents an evolution in amplification technology, combining high-performance, rich feature set, and competitive cost. The unit incorporates technology derived from Crown's flagship DriveCore Install series, providing streamlined functionality for diverse applications such as restaurants and retail environments.
+
+  The BLU link digital audio bus carries up to 256 channels in a fault-tolerant ring, enabling integration with other HARMAN BLU link devices. Network control and monitoring are available via HiQnet Audio Architect software over TCP/IP, complemented by a front-panel interface for direct configuration and a GPIO/AUX port for preset recall, channel muting, fault monitoring, and power control.
+
+  DriveCore Technology eliminates hundreds of components, reducing variability and increasing reliability while improving audio fidelity. The amplifier supports driving up to 100Vrms speaker loads directly without a transformer, and pre-loaded JBL speaker tunings expedite installation. Onboard DSP includes input router, input delay (up to 1000ms), 8-band parametric EQ on input and output, crossover, output delay (up to 100ms), and LevelMAX limiter.
+specs: |-
+  - 2 channels
+  - 300W per channel @ 4Ω
+  - Dual mode @ 8Ω: 300W per channel
+  - Bridge mono @ 8Ω: 600W
+  - Sensitivity: 0.7V RMS (full rated power @ 8Ω)
+  - Signal-to-Noise Ratio: >104dB
+  - THD: 0.35% (full rated power, 20Hz–20kHz)
+  - Damping Factor: >1000 (20Hz–100Hz)
+  - Frequency Response: ±0.5dB (8Ω, 20Hz–20kHz)
+  - Crosstalk: >80dB (below rated power, 20Hz–1kHz)
+  - Input Impedance: 20kΩ balanced / 10kΩ unbalanced
+  - BLU link: Yes (256-channel digital audio bus, fault-tolerant)
+  - Onboard DSP: 8-band parametric EQ, crossover, LevelMAX limiter
+  - Input delay up to 1000ms, output delay up to 100ms
+  - Network control via HiQnet Audio Architect (TCP/IP)
+  - Direct Drive 70/100Vrms output (no transformer required)
+  - Pre-loaded JBL speaker tunings
+  - GPIO/AUX control port
+  - Dimensions: 19" W × 3.5" H × 12.25" D (excluding 1.3" front panel protrusion)
+  - Weight: 14.56 lbs (6.6 kg)
+  - Power: IEC 320 inlet, 100–240V AC, 50/60Hz
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: BLU link In
+    signalFlow: input
+    category: digital
+    type: blu-link
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: BLU link Out
+    signalFlow: output
+    category: digital
+    type: blu-link
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Ethernet (Network Control)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GPIO/AUX Port
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin
+    maxConnections: 1
+    position: Bottom

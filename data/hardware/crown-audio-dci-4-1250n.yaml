@@ -1,0 +1,128 @@
+id: xiaolOyeBjJcB2aRCww3H
+name: DCi 4|1250N
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/dci-4-1250n
+description: A four-channel, 1250W @ 4Ω networked installation power amplifier
+  with BLU Link digital audio transport and 70V/100V direct drive output for
+  high-power installed sound applications.
+details: |-
+  The DCi 4|1250N is part of Crown's DriveCore Install Network Series, delivering 1250W per channel at 4Ω across four channels for demanding installed sound applications. Built on proprietary DriveCore technology, the amplifier provides high reliability, energy efficiency, and a competitive feature set.
+
+  Audio sources are accepted via balanced analog inputs and HARMAN's proprietary BLU Link digital audio transport, with priority input routing for automatic failover between sources. Network monitoring and control is provided by the HiQnet protocol over TCP/IP, with programmable GPIO ports for volume control, preset recall, and error reporting.
+
+  Onboard DSP includes LevelMAX limiters, input/output EQ, crossover, delay, matrix mixer, and speaker line monitoring. The amplifier integrates with Audio Architect, Crown's mobile app, Q-SYS, and AMX control systems for flexible system design.
+specs: |-
+  - 4 channels
+  - 1250W per channel @ 4Ω (Dual Mode)
+  - Bridge Mono @ 8Ω: 2500W
+  - Frequency Response: ±0.25dB (8Ω, 20Hz–20kHz)
+  - THD: 0.35% @ full rated power
+  - Damping Factor: >1500 (20Hz–100Hz)
+  - Load Impedance (Stereo): 2Ω–16Ω
+  - Load Impedance (Bridge): 4Ω–16Ω
+  - Onboard DSP: LevelMAX limiters, input/output EQ, crossover, delay, matrix mixer, speaker line monitoring
+  - BLU Link digital audio transport
+  - HiQnet network monitoring and control (TCP/IP)
+  - Programmable GPIO ports
+  - Cooling: Variable speed forced air
+  - Maximum Fan Noise: 47 dBA SPL @ 1M
+  - AC Mains: 100V–240V ~ 50/60Hz
+  - Power Connector: 20A IEC
+  - Dimensions: 483mm W × 89mm H × 432mm D (19" × 3.5" × 17")
+  - Weight: 13.60 kg (30 lbs)
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: BLU Link In
+    signalFlow: input
+    category: digital
+    type: blu-link
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: BLU Link Out
+    signalFlow: output
+    category: digital
+    type: blu-link
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Ethernet (HiQnet Control)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GPIO Port
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input (20A IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c20
+    maxConnections: 1
+    position: Bottom

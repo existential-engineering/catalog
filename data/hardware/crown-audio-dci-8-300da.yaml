@@ -1,0 +1,179 @@
+id: ft5TtrzzO4my81RNc0oij
+name: DCi 8|300DA
+manufacturer: crown-audio
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.crownaudio.com/en-US/products/dci-8-300da
+description: Eight-channel, 300W @ 4Ω Power Amplifier with Dante™ / AES67
+  Networked Audio, and 70V/100V. EN 54-16 certified for life safety
+  applications, with integrated DriveCore® technology, high-powered DSP, and JBL
+  speaker tunings.
+details: |-
+  The DCi 8|300DA is part of the DriveCore Install DA series, integrating Dante™/AES67 networked audio with Crown's proprietary DriveCore amplifier technology. The 8-channel format delivers 300W per channel into 4Ω in a 2RU chassis, and the unit is EN 54-16 compliant for life safety voice alarm systems.
+
+  Redundant, independent Dante/AES67 ports (Primary & Secondary) accept 48kHz or 96kHz audio. The amplifier can also send Dante/AES67 audio from its analog inputs (pre/post processing @ 48kHz). HiQnet protocol over TCP/IP supports network configuration, monitoring and control via Audio Architect software.
+
+  Integrated DSP at 48kHz includes LevelMAX limiters with load monitoring (pilot tone, normal, burst, continuous, and sweep modes), input/output EQ, crossover, delay, and matrix router. The amplifier supports 20 presets, channel auto-standby, JBL speaker tunings, removable air filters, and front-panel LED indicators. A programmable GPIO aux port supports volume control, preset recall, sleep contact closure, and amp status output for integration with third-party systems.
+specs: |-
+  - Output Channels: 8
+  - Output Power (4Ω, Dual Mode): 300W
+  - Output Power (Bridge Mono, 8Ω): 600W
+  - Frequency Response (8Ω, 20Hz–20kHz): ±0.25dB
+  - Total Harmonic Distortion: 0.35% (full rated power)
+  - Damping Factor (20Hz–100Hz): >1000
+  - Load Impedance (Stereo): 2Ω–16Ω; 70Vrms, 100Vrms
+  - Load Impedance (Bridge Mono): 4Ω–16Ω; 140Vrms, 200Vrms
+  - DSP: 48kHz processing, 20 presets
+  - Input Delay: up to 2 seconds
+  - Output Delay: up to 100ms
+  - Networking: Dante / AES67, redundant Primary & Secondary
+  - Certification: EN 54-16 compliant
+  - Cooling: Continuously variable speed forced air, front-to-back
+  - Max Fan Noise: 47 dBA SPL @ 1M
+  - AC Mains: 100V–240V ~ 50/60Hz (±10%)
+  - Power Connector: 20A IEC
+  - Dimensions: 483 × 89 × 362 mm (19″ × 3.5″ × 14.25″)
+  - Weight: 10.66 kg (23.5 lbs)
+io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.5
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.6
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.7
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.8
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.6
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.7
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.8
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Dante / AES67 Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Dante / AES67 Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GPIO / AUX Port
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: AC Mains
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c20
+    maxConnections: 1
+    position: Bottom
