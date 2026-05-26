@@ -1,0 +1,172 @@
+id: Xecu7-e8iXQQU-D7eqq37
+name: Delta 80 DSP
+manufacturer: dynaudio
+primaryCategory: power-amp
+categories:
+  - amplifier
+url: https://dynaudio.com/professional-audio/dynaudio-acoustics-delta-amplifiers/delta-80-dsp
+description: "The Delta series philosophy: reliability, trust and transparent
+  amplification of your mix."
+details: |-
+  Every model uses the highest-quality power-amplifier technology so you know for a fact that what goes in, comes out exactly as intended. Only louder.
+
+  The 2U Delta 80 DSP yields a staggering 4x 2000W at 4 ohms or 2x 4000W when bridged. And it does so without breaking a sweat, while delivering low distortion and noise figures. For instance, THD is as little as <0.18% at 1kHz.
+
+  Analogue or AoIP via Dante? Delta 80 DSP handles up to four channels; it's a future-proof system that can keep up with whatever your studio throws at it. When using Dante, your audio is converted by 24-bit/96kHz DACs. And should the need for room tuning arise, you also get access to sophisticated DSP features. These span three dynamic and eight static EQ bands per input channel, and nine static EQ bands per output. Plus a suite of additional filters.
+
+  You also get wireless control via the DeltaDirect app for iPad, GPIO for remote control and monitoring and redundant back-up amp inputs. Want a stereo four-way system? Just connect to a Delta DSP amplifier with a single Cat 5 cable to eliminate the need for external processing.
+specs: |-
+  - Status: Current
+  - Segment: Pro
+  - Series: Acoustic Amplifiers
+  - Type: Amplifier
+  - Number of channels: 4
+  - Output power per channel @ 8 ohms: 1000W
+  - Output power per channel @ 4 ohms: 2000W
+  - Output power per channel @ 2.7 ohms: 2200W
+  - Output power per channel @ 2 ohms: 2000W (amplifier stable, output reduced; 2.7 ohm power quoted for highest single-ended output and greatest efficiency, 3 x 8 ohm parallel drivers)
+  - Output power bridged @ 8 ohms: 4000W
+  - Output power bridged @ 4 ohms: 4000W
+  - THD @ 1kHz (1dB below max output): < 0.18%
+  - THD 20Hz to 20kHz (1dB below max output): < 0.2%
+  - Gain: 32dB
+  - Sensitivity (for max power): 8.3dBu
+  - Frequency response: 20Hz to 20kHz (+0/-0.5dB)
+  - Power consumption (standby): < 5W
+  - Power consumption nominal @ 240V into 4 ohms: 4.1A
+  - Power consumption nominal @ 120V into 4 ohms: 8.2A
+  - Chassis: 2U rack
+  - Dimensions (HxWxD): 88 x 482 x 428 mm
+  - Single-box shipping dimensions (UK, 2 units): 230 x 580 x 560 mm
+  - Double-box shipping dimensions (outside UK, 2 units): 250 x 610 x 600 mm
+  - Weight: 10.3 kg (22.7 lbs)
+  - Boxed weight: 11.8 kg (26.0 lbs)
+  - DSP: 3 dynamic + 8 static EQ bands per input channel, 9 static EQ bands per output, plus additional filters
+  - Control: DeltaDirect app for iPad (wireless), GPIO for remote control and monitoring
+  - Redundancy: Redundant back-up amplifier inputs
+  - Network audio: Dante / AES67 (24-bit / 96kHz DACs)
+  - Inter-amp link: Single Cat 5 connection to another Delta DSP amplifier for stereo four-way systems (no external processing required)
+  - Mains input: 90-260 VAC (max 120W) via IEC C13
+io:
+  - name: Network (Dante/AES67) Port A
+    signalFlow: bidirectional
+    category: audio
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Network (Dante/AES67) Port B
+    signalFlow: bidirectional
+    category: audio
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Thunderbolt 3 Port A
+    signalFlow: bidirectional
+    category: audio
+    type: thunderbolt
+    connection: thunderbolt 3
+    maxConnections: 1
+    position: Bottom
+  - name: Thunderbolt 3 Port B
+    signalFlow: bidirectional
+    category: audio
+    type: thunderbolt
+    connection: thunderbolt 3
+    maxConnections: 1
+    position: Bottom
+  - name: ADAT/Toslink Input 1
+    signalFlow: input
+    category: audio
+    type: adat
+    connection: toslink
+    maxConnections: 1
+    position: Bottom
+  - name: ADAT/Toslink Input 2
+    signalFlow: input
+    category: audio
+    type: adat
+    connection: toslink
+    maxConnections: 1
+    position: Bottom
+  - name: ADAT/Toslink Output 1
+    signalFlow: output
+    category: audio
+    type: adat
+    connection: toslink
+    maxConnections: 1
+    position: Bottom
+  - name: ADAT/Toslink Output 2
+    signalFlow: output
+    category: audio
+    type: adat
+    connection: toslink
+    maxConnections: 1
+    position: Bottom
+  - name: AES3 Multi-Channel I/O
+    signalFlow: bidirectional
+    category: audio
+    type: aes/ebu
+    connection: db25
+    maxConnections: 1
+    position: Bottom
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: Word Clock Output
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: MADI Input
+    signalFlow: input
+    category: audio
+    type: madi
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: MADI Output
+    signalFlow: output
+    category: audio
+    type: madi
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output 1
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: AC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: Delta 80 DSP Manual (V1.04, firmware 1.30)
+    url: https://dynaudio.com/hubfs/Manuals/MC2-DELTA-80DSP-Manual-V1p04-firmware-1p30.pdf?hsLang=en
+  - type: resource
+    title: Declaration of Conformity (MC2/XTA amps, 2024)
+    url: https://dynaudio.com/hubfs/Manuals/MC2_XTA%20amps%20D%20of%20C%20WORD%202024%20(I-series%20added%20not%2034).pdf?hsLang=en
+  - type: resource
+    title: Dynaudio Acoustics Delta Amplifiers
+    url: https://dynaudio.com/professional-audio/dynaudio-acoustics-delta-amplifiers

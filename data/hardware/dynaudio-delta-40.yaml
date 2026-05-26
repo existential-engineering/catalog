@@ -1,0 +1,90 @@
+id: D3Ijwy1bTLbCqeBMx7quv
+name: Delta 40
+manufacturer: dynaudio
+primaryCategory: power-amp
+categories:
+  - amplifier
+url: https://dynaudio.com/professional-audio/dynaudio-acoustics-delta-amplifiers/delta-40
+description: "The Delta series philosophy: trust and transparent amplification of your mix."
+details: |-
+  Every model uses the highest-quality power-amplifier technology so you know for a fact that what goes in, comes out exactly as intended. Only louder.
+
+  The 2U Delta 40 yields a more-than-ample 4x 1000W of power at 4 ohms or 2x 2400W when bridged. And it does so without breaking a sweat, while delivering enviably low distortion and noise figures. For instance, THD is as little as <0.18% at 1kHz.
+
+  Analogue or AoIP via Dante? Delta 40 handles up to four channels; it's a future-proof system that can keep up with whatever your studio throws at it. When using Dante, your audio is converted by 24-bit/96kHz DACs.
+
+  You also get back-up amplifier redundancy, ensuring that your production can move ahead almost regardless of what might happen on the amp side of your studio.
+
+  Want a stereo four-way system? Just connect to a Delta DSP amplifier with a single Cat 5 cable to eliminate the need for external processing.
+specs: |-
+  - Status: Current
+  - Segment: Pro
+  - Series: Acoustic Amplifiers
+  - Type: Amplifier
+  - Number of channels: 4
+  - Output power (per channel) @ 8 ohms: 500W
+  - Output power (per channel) @ 4 ohms: 1000W
+  - Output power (per channel) @ 2.7 ohms: 1400W
+  - Output power (per channel) @ 2 ohms: 1200W (amplifier stable, output reduced)
+  - Output power (bridged) @ 8 ohms: 2000W
+  - Output power (bridged) @ 4 ohms: 2400W
+  - THD @ 1kHz (1dB below max output): < 0.18%
+  - THD 20Hz to 20kHz (1dB below max output): < 0.2%
+  - Gain: 32dB
+  - Sensitivity (for max power): 6.2dBu
+  - Frequency response: 20Hz to 20kHz (+0/-0.5dB)
+  - Power consumption (standby): < 5W
+  - Power consumption nominal @ 240V into 4 ohms: 2.9A
+  - Power consumption nominal @ 120V into 4 ohms: 6.0A
+  - Networking: 2x RJ45 (1000BASE-T, Dante, AES67)
+  - Mains inlet: C13 connector, 90-260 VAC (Max 120W)
+  - Chassis: 2U rack
+  - Dimensions (HxWxD): 88 x 482 x 428 mm
+  - Weight: 10.0 kg / 22.0 lbs
+  - Boxed weight: 12.0 kg / 26.5 lbs
+io:
+  - name: Dante Network (Primary)
+    signalFlow: bidirectional
+    category: audio
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Dante Network (Secondary)
+    signalFlow: bidirectional
+    category: audio
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Audio Inputs (4CH)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 4
+    position: Bottom
+  - name: Speaker Outputs (4CH)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 4
+    position: Bottom
+  - name: AC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: MC2 Delta (Non-DSP) Manual
+    url: https://dynaudio.com/hubfs/Manuals/MC2-DELTA_NONDSP-Manual.pdf
+  - type: resource
+    title: Declaration of Conformity (MC2/XTA amps, 2024)
+    url: https://dynaudio.com/hubfs/Manuals/MC2_XTA%20amps%20D%20of%20C%20WORD%202024%20(I-series%20added%20not%2034).pdf
+  - type: resource
+    title: Dynaudio Acoustics Delta Amplifiers
+    url: https://dynaudio.com/professional-audio/dynaudio-acoustics-delta-amplifiers
