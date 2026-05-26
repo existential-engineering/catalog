@@ -20,8 +20,8 @@ details: |-
   With a sensitivity of 88dB and a nominal 8Ω impedance (4.6Ω minimum), the 805 D4 is rated for amplifiers between 50W and 120W into 8Ω on unclipped programme. The cabinet is finished by hand and offered in Gloss Black, White, Satin Rosenut, or Satin Walnut, with Black or Grey grilles available.
 specs: |-
   - System: 2-way vented-box
-  - Drive units: 1x 25mm (1 in) Diamond dome tweeter
-  - Drive units: 1x 165mm (6.5 in) Continuum cone bass/midrange
+  - High-frequency driver: 1x 25mm (1 in) Diamond dome tweeter
+  - Bass/midrange driver: 1x 165mm (6.5 in) Continuum cone
   - Frequency range: 34Hz to 35kHz
   - Frequency response: 42Hz to 28kHz (+/-3dB from reference axis)
   - Sensitivity: 88dB (on axis at 2.83Vrms at 1m)
@@ -35,11 +35,14 @@ specs: |-
   - Weight: 15.55kg (34.3 lb)
   - Finishes: Gloss Black, White, Satin Rosenut, Satin Walnut
   - Grilles: Black, Grey
+searchTerms:
+  - B&W 805 D4
+
 io:
-  - name: Speaker Input
+  - name: Speaker Binding Posts
     signalFlow: input
     category: audio
-    type: line
-    connection: pin
+    type: speaker-level
+    connection: binding-post
     maxConnections: 1
     position: Bottom

@@ -32,6 +32,11 @@ specs: |-
   - Net weight: 8.85kg (19.5 lbs)
   - Cabinet finishes: Black, White
   - Grille finishes: Black, Grey
+searchTerms:
+  - B&W ASW608
+  - ASW-608
+  - ASW 608
+
 io:
   - name: Line In (Stereo)
     signalFlow: input
@@ -43,15 +48,15 @@ io:
   - name: Speaker In
     signalFlow: input
     category: audio
-    type: line
-    connection: pin
+    type: speaker-level
+    connection: binding-post
     maxConnections: 2
     position: Bottom
   - name: 12V Trigger In
     signalFlow: input
     category: power
     type: line
-    connection: barrel
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
 links:

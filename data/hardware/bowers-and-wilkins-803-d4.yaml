@@ -22,9 +22,9 @@ details: |-
   With a sensitivity of 90dB and a nominal 8Ω impedance (3.0Ω minimum), the 803 D4 is rated for amplifiers between 50W and 500W into 8Ω, making it suitable for a wide range of high-end home audio amplification.
 specs: |-
   - System: 3-way vented-box
-  - Drive units: 1x 25mm (1 in) Diamond dome tweeter
-  - Drive units: 1x 130mm (5 in) Continuum cone FST midrange
-  - Drive units: 2x 180mm (7 in) Aerofoil cone bass
+  - High-frequency driver: 1x 25mm (1 in) Diamond dome tweeter
+  - Midrange driver: 1x 130mm (5 in) Continuum cone FST
+  - Bass drivers: 2x 180mm (7 in) Aerofoil cone
   - Frequency range: 16Hz to 35kHz
   - Frequency response: 19Hz to 28kHz (+/-3dB from reference axis)
   - Sensitivity: 90dB (on axis at 2.83Vrms at 1m)
@@ -36,11 +36,14 @@ specs: |-
   - Depth: 511mm (20.1 in)
   - Weight: 62.15kg (137 lb)
   - Finishes: Gloss Black, White, Satin Rosenut, Satin Walnut
+searchTerms:
+  - B&W 803 D4
+
 io:
-  - name: Speaker Input
+  - name: Speaker Binding Posts
     signalFlow: input
     category: audio
-    type: line
-    connection: pin
+    type: speaker-level
+    connection: binding-post
     maxConnections: 1
     position: Bottom

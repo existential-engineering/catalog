@@ -34,6 +34,11 @@ specs: |-
   - Net weight: 12.5kg (27.6 lb)
   - Cabinet finishes: Matte Black, Matte White
   - Grille finishes: Black, Grey
+searchTerms:
+  - B&W ASW610
+  - ASW-610
+  - ASW 610
+
 io:
   - name: Line input (RCA)
     signalFlow: input
@@ -45,14 +50,14 @@ io:
   - name: Speaker-level input
     signalFlow: input
     category: audio
-    type: line
-    connection: pin
+    type: speaker-level
+    connection: binding-post
     maxConnections: 1
     position: Bottom
   - name: 12V trigger
     signalFlow: input
     category: power
     type: line
-    connection: barrel
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
