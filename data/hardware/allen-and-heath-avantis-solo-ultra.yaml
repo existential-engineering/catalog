@@ -1,0 +1,142 @@
+name: Avantis Solo Ultra
+manufacturer: allen-and-heath
+primaryCategory: mixer
+categories:
+  - console
+  - remote-controlled
+url: https://www.allen-heath.com/hardware/avantis/
+description: A compact single-screen 96-channel mixer with factory-fitted dPack
+  and RackUltra FX Card. Built on the XCVI FPGA engine with 0.7ms latency and
+  the full DEEP processing suite pre-installed.
+details: |-
+  Avantis Solo Ultra is the compact, single-screen Avantis console shipped with the dPack software upgrade and the RackUltra FX Card factory-fitted. It is a 96 channel / 56 configurable bus mixer featuring the 96kHz XCVI FPGA engine with class-leading 0.7ms latency plus the full DEEP processing suite and RackUltra FX from the flagship dLive mixing system.
+
+  The console features a single 15.6" Full HD capacitive touchscreen, 12 faders across 6 layers (72 strip assignments), 18 assignable SoftKeys, and the Continuity UI which seamlessly connects the physical controls and touchscreen for fast, intuitive workflows. The screen features a Soft Rotary tab on the right-hand side, giving instant access to assignable parameters like aux sends, EQ, compressor and FX.
+
+  With dPack pre-installed, Avantis Solo Ultra unlocks 24 Dyn8 instances, DEEP boutique preamp, compressor and expander models, NEQ12, and the full RackUltra FX Suite. The factory-fitted RackUltra FX Card adds 8 dedicated FX engines for premium reverbs, vocal tuning, harmonisers, distortion and saturation, each with PEQ and Dynamics on input and output of every slot.
+
+  Two I/O Ports allow Avantis Solo Ultra to benefit from the full range of dLive option cards including Dante (64x64 and 128x128), Waves, gigaACE, MADI and more, expanding system integration, FoH/monitor splits and multitrack recording. The SLink port connects to the entire Allen & Heath range of Everything I/O audio expander hardware, including Dante expanders DT168 and DT164-W.
+
+  Avantis Solo Ultra can be controlled using Avantis Director, MixPad (iPad), OneMix, 4You, Custom Control, and a range of networkable PoE-compatible IP remote controllers. Avantis Solo Ultra is also compatible with Harrison LiveTrax for multitrack recording and virtual sound check.
+specs: |-
+  - 96kHz XCVI FPGA core with ultra-low latency (0.7ms)
+  - 96 input channels (dPack factory-fitted)
+  - 56 configurable mix busses (dPack factory-fitted)
+  - 24 Dyn8 instances
+  - DEEP preamp, compressor and expander models
+  - NEQ12
+  - 8 RackUltra FX slots (RackUltra FX Card factory-fitted)
+  - 12 RackExtra FX slots with dedicated stereo returns
+  - AMM (Automatic Mic Mixer) up to 64 channels across 1, 2 or 4 zones
+  - 72 fader strips (12 faders, 6 layers)
+  - Single 15.6" Full HD capacitive touchscreen with gesture control
+  - 16 DCAs
+  - Continuity UI seamlessly connects physical and touchscreen controls
+  - Fully assignable layout
+  - User configurable rotary controls
+  - 18 assignable SoftKeys
+  - SLink port for connection to Remote I/O Expanders and the ME Personal Mixing System
+  - 6 analogue XLR Inputs
+  - 6 analogue XLR Outputs
+  - 1 Stereo AES In
+  - 1 Stereo AES Out
+  - 2 I/O Ports, both capable of 128x128 operation at 96kHz (optional cards including Dante, MADI, gigaACE)
+  - BNC Word Clock
+  - USB stereo playback
+  - Internal storage for stereo playback and recording
+  - Compatible with Harrison LiveTrax multitrack recording and virtual sound check
+io:
+  - name: Local Analogue XLR Inputs (1-6)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 6
+    position: Bottom
+  - name: AES Stereo Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Outputs (1-6)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 6
+    position: Bottom
+  - name: AES Stereo Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: SLink Port (Remote I/O / ME Personal Mixing)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 1
+    position: Bottom
+  - name: I/O Port 1 (Dante / MADI / gigaACE / Waves option card, 128x128 @ 96kHz)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 1
+    position: Bottom
+  - name: I/O Port 2 (Dante / MADI / gigaACE / Waves option card, 128x128 @ 96kHz)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: etherCON
+    maxConnections: 1
+    position: Bottom
+  - name: BNC Word Clock
+    signalFlow: bidirectional
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: USB Stereo Playback / Recording
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Bottom
+  - name: Network Port (TCP/IP Control)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: AC Mains Input (IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: product
+    title: Avantis V2.0 Overview
+    url: https://www.allen-heath.com/avantis-v2/
+  - type: product
+    title: Avantis dPack Upgrade
+    url: https://www.allen-heath.com/product/avantis-dpack/
+  - type: product
+    title: RackUltra FX for Avantis
+    url: https://www.allen-heath.com/hardware/avantis/rackultra-fx/
