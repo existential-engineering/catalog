@@ -33,6 +33,62 @@ specs: |-
   - Dimensions: 483 × 89 × 362 mm (19″ × 3.5″ × 14.25″)
   - Weight: 9.12 kg (20.1 lbs)
 io:
+  - name: Analog Input Ch.1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Ch.4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Output Ch.4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
   - name: Dante / AES67 Primary
     signalFlow: bidirectional
     category: digital
@@ -45,6 +101,13 @@ io:
     category: digital
     type: dante
     connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GPIO / AUX Port
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: pin
     maxConnections: 1
     position: Bottom
   - name: AC Mains
