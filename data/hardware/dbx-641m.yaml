@@ -1,0 +1,64 @@
+id: 9QBVTKMiEtoy9IeoWL-Sm
+name: dbx ZonePRO 641m
+manufacturer: dbx
+primaryCategory: routing
+categories:
+  - utility
+url: https://dbxpro.com/en/products/641m
+description: 6-input, 4-output fixed-architecture digital zone processor with
+  wizard-driven configuration, hardware mic gain control, AutoWarmth on every
+  output zone, and link bus for multi-unit duplication.
+details: |-
+  The dbx ZonePRO 641m is a fixed I/O digital zone processor built for installed commercial audio systems. Its pre-configured architecture includes input processing, a central matrix, and output processing, all accessible through the wizard-driven ZonePRO Designer software. Four balanced mic/line Euroblock inputs and two unbalanced mono-summed RCA input pairs feed the matrix, with four balanced Euroblock outputs serving individual zones.
+
+  Hardware-controlled microphone gain is adjustable per channel. Two input insert positions and one output insert position allow integration of outboard processors. AutoWarmth psychoacoustic processing is applied on every output zone, adding perceived warmth without affecting the frequency response above the bass region. A power status LED and network traffic LED are provided for quick status monitoring.
+
+  Third-party control system integration is available via RS-232 or Ethernet using ZonePRO Designer. The optional link bus enables multi-device duplication for larger zone configurations. Optional ZC series zone controllers extend local user control to wall panels.
+
+  The 641m meets UL 60065, IEC 60065, and EN 55013 safety standards in a 1U rack enclosure.
+specs: |-
+  - Inputs: 6 total: 4 balanced mic/line (Euroblock), 2 unbalanced RCA pairs (mono-summed)
+  - Outputs: 4 balanced (Euroblock)
+  - Input Impedance: >50kΩ balanced, >25kΩ unbalanced
+  - Output Impedance: 120Ω balanced, 60Ω unbalanced
+  - Max Input Level: +20dBu mic/line, +12dBu RCA
+  - Max Output Level: +20dBu
+  - Mic Preamp Gain: 30–60dB
+  - Mic Preamp EIN: <–118dBu (22Hz–22kHz, 150Ω source)
+  - Phantom Power: +15VDC
+  - CMRR: >40dB (typically >55dB at 1kHz)
+  - Overall Dynamic Range: >109dB, A-weighted
+  - THD+Noise: 0.003% at +4dBu, 1kHz
+  - Frequency Response: 20Hz–20kHz, ±0.5dB
+  - Interchannel Crosstalk: >80dB typical
+  - Propagation Delay: 0.6ms
+  - Sample Rate: 48kHz
+  - Power: 100/120/230VAC, 50/60Hz, 29W
+  - Dimensions: 1.75"H × 19"W × 7.75"D (1U)
+  - Weight: 6.05 lbs (2.74kg)
+io:
+  - name: Mic/Line Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 4
+    position: Right
+  - name: RCA Source Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 4
+    position: Right
+  - name: Zone Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 4
+    position: Right
+links:
+  - type: support
+    title: dbx Help Center
+    url: https://help.harmanpro.com/dbx

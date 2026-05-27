@@ -1,0 +1,67 @@
+id: -wv5ReF1-vSnWR98gwIr7
+name: dbx ZonePRO 640
+manufacturer: dbx
+primaryCategory: routing
+categories:
+  - utility
+url: https://dbxpro.com/en/products/640
+description: 6-input, 4-output digital zone processor for commercial audio
+  installations, featuring Advanced Feedback Suppression (AFS), AutoWarmth,
+  parametric EQ, compression, limiting, noise gating, and RS-232/wall panel
+  control.
+details: |-
+  The dbx ZonePRO 640 delivers flexible signal routing, powerful DSP processing, and multiple control interfaces for commercial audio applications. Its 6×4 matrix accommodates two balanced mic/line inputs via Euroblock and four unbalanced RCA source inputs, routing audio to four balanced output zones.
+
+  Input processing includes gain control, EIN below –118dB for the mic preamp, 15V phantom power, and advanced feedback suppression (AFS). Paging microphone processing features auto gain control, compression, limiting, noise gating, notch filtering, and de-essing. The patent-pending AutoWarmth function, co-developed with JBL, applies psychoacoustic bass enhancement per output zone.
+
+  Output processing includes parametric EQ, bandpass and crossover filters, limiting, and adjustable delay. The built-in real-time clock enables programmable scheduling. System configuration and remote control are handled via ZonePRO Designer software over RS-232 or Ethernet, with optional wall panel zone controllers (ZC series).
+
+  The 640 operates from 100/120/230VAC and meets IEC, UL, and CSA safety standards in a 1U rack enclosure.
+specs: |-
+  - Inputs: 6 total: 2 balanced mic/line (Euroblock), 4 unbalanced RCA
+  - Outputs: 4 balanced (Euroblock)
+  - Input Impedance: 50kΩ balanced, >75kΩ unbalanced
+  - Output Impedance: 120Ω balanced, 60Ω unbalanced
+  - Max Input Level: +20dBu mic/line, +12dBu RCA
+  - Max Output Level: +20dBu
+  - Mic Preamp Gain: 30–60dB
+  - Mic Preamp EIN: <–118dB
+  - Phantom Power: 15V
+  - CMRR: >40dB (typically >55dB at 1kHz)
+  - A/D Dynamic Range: >113dB (line), A-weighted
+  - D/A Dynamic Range: 112dB, A-weighted
+  - THD+Noise: 0.003% at +4dBu, 1kHz
+  - Frequency Response: 20Hz–20kHz, ±0.5dB
+  - Interchannel Crosstalk: >80dB typical
+  - Propagation Delay: 0.6ms
+  - Sample Rate: 48kHz
+  - A/D Conversion: dbx Type IV, 24-bit oversampling
+  - Power: 100/120/230VAC, 50/60Hz, 29W
+  - Dimensions: 1.75"H × 19"W × 5.75"D (1U)
+  - Weight: 6.8 lbs (3.1kg)
+io:
+  - name: Mic/Line Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 2
+    position: Right
+  - name: RCA Source Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 4
+    position: Right
+  - name: Zone Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 4
+    position: Right
+links:
+  - type: support
+    title: dbx Help Center
+    url: https://help.harmanpro.com/dbx

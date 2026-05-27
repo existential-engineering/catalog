@@ -1,0 +1,97 @@
+id: BLFBzYnOHOyrqSeou8N0O
+name: dbx 286A
+manufacturer: dbx
+supersedes: LnikeOlQkVg-5s5r6Hmas
+primaryCategory: preamp
+categories:
+  - channel-strip
+url: https://dbxpro.com/en/products/286a
+description: Single-channel microphone preamp processor combining a sonically
+  pristine mic preamp with OverEasy® compressor, frequency-tunable de-esser,
+  HF/LF enhancer, and expander/gate. Features XLR mic input with +48V phantom
+  power and balanced 1/4" TRS outputs.
+details: |-
+  The dbx 286A combines a sonically pristine mic preamp with five independent processors in a single rack unit. The microphone preamp provides +10dB to +60dB of gain with an XLR balanced input and +48VDC phantom power for condenser microphones.
+
+  The patented OverEasy® compressor offers smooth, musical compression with program-dependent attack and release. Maximum compression reaches 30dB, with threshold control spanning –40dBu to +20dBu. The frequency-tunable de-esser covers 800Hz to 10kHz and uses wideband gain reduction with program-dependent release.
+
+  The enhancer section provides HF detail with up to 15dB of shelving boost and LF detail using a bell boost at 80Hz with a complementary bell cut at 250Hz. The expander/gate covers a threshold range from OFF to +15dBu with adjustable ratio from 1.5:1 to 10:1 and depth exceeding 50dB.
+
+  An insert jack between the preamp and processing stages allows external processors to be inserted into the signal chain. Balanced/unbalanced 1/4" TRS outputs accommodate both professional and consumer equipment.
+specs: |-
+  - Mic Input Connector: XLR floating balanced, Pin 2 Hot
+  - Mic Input Impedance: 1.75kΩ
+  - Mic Preamp Gain: +10dB to +60dB
+  - Phantom Power: +48V
+  - CMRR: >40dB (typically 55dB)
+  - Mic Max Input: 0.2Vrms
+  - Line Input Connectors: 1/4" TRS floating balanced, Tip Hot
+  - Line Input Impedance: 30kΩ unbalanced, 60kΩ balanced
+  - Line Max Input: >+21dBu balanced/unbalanced
+  - Line Gain Range: –20dB to +30dB
+  - Insert Connector: 1/4" TRS (Normalled)
+  - Insert Impedance: >5kΩ (ring-return); 100Ω (tip-send)
+  - Insert Max Level: >+21dBu
+  - Insert Noise: <–84dBu unweighted (20Hz–20kHz)
+  - Insert Distortion: <0.01% THD (20Hz–20kHz, +10dBu)
+  - Output Connectors: 1/4" balanced/unbalanced TRS
+  - Output Impedance: 100Ω unbalanced, 200Ω balanced
+  - Max Output: >+21dBu; >+20dBm (600Ω load)
+  - Output Gain Adjustment: –30dB to +10dB
+  - Noise Floor: <–80dBu (typically –85dBu) unweighted
+  - Frequency Response: 20Hz–20kHz, ±0.5dB
+  - THD: <0.08% (20Hz–20kHz, +10dBu, processing OFF)
+  - Compressor Threshold: –40dBu to +20dBu
+  - Compressor Type: OverEasy®
+  - Compressor Ratio: >4:1 (beyond 20dB above threshold)
+  - Max Compression: 30dB
+  - Compressor Distortion: Typically <0.05% THD
+  - De-esser Characteristic: Wideband gain reduction
+  - De-esser Frequency: 800Hz to 10kHz high pass
+  - De-esser Release: ~1mS/dB program-dependent
+  - Enhancer HF Detail: ~15dB maximum HF boost (shelving)
+  - Enhancer LF Detail: Bell boost @ 80Hz; bell cut @ 250Hz (2:1 ratio)
+  - Expander/Gate Threshold: OFF to +15dBu
+  - Expander/Gate Ratio: 1.5:1 to 10:1 adjustable
+  - Expander/Gate Depth: >50dB
+  - Expander/Gate Attack: ~2mS program-dependent
+  - Expander/Gate Release: ~10mS/dB program-dependent
+  - Dynamic Range: Typically 105dB
+  - Power Consumption: 15W
+  - Operating Voltage: 120VAC 60Hz or 100VAC 50/60Hz (DO); 230VAC 50/60Hz (EU)
+  - Operating Temperature: 0°C to 45°C (32°F to 113°F)
+  - Dimensions: 1.75" × 5.75" × 19" (4.5cm × 14.6cm × 48.5cm)
+  - Weight: 4.68 lbs (2.13 kg)
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr-female
+    maxConnections: 1
+    position: Right
+  - name: Line Input
+    signalFlow: input
+    category: audio
+    type: balanced-line
+    connection: trs
+    maxConnections: 1
+    position: Right
+  - name: Insert
+    signalFlow: bidirectional
+    category: audio
+    type: insert
+    connection: trs
+    maxConnections: 1
+    position: Right
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: balanced-line
+    connection: trs
+    maxConnections: 1
+    position: Right
+links:
+  - type: support
+    title: dbx Help Center
+    url: https://help.harmanpro.com/dbx

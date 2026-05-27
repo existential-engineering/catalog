@@ -1,0 +1,53 @@
+id: lStVeAYG3CNDjbhDS0jKo
+name: dbx 586
+manufacturer: dbx
+primaryCategory: preamp
+categories:
+  - channel-strip
+url: https://dbxpro.com/en/products/586
+description: Dual-channel vacuum tube microphone preamplifier with XLR and 1/4"
+  I/O, 48V phantom power, high-pass filter, insert points, and limiter on each
+  channel.
+details: |-
+  The dbx 586 is a dual-channel vacuum tube microphone preamplifier designed for studio recording applications. Both channels provide mic and instrument inputs, 48V phantom power, a low-cut filter, insert points, and a limiter, giving each channel basic channel-strip functionality.
+
+  The tube-based gain path delivers the warm character associated with high-voltage vacuum tube amplification. Notched potentiometers and discrete selectors on the front panel allow precise, repeatable settings. The 586 occupies two rack units and is suitable for stereo recording or simultaneous recording of two independent sources.
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 2
+    position: Right
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Top
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 2
+    position: Right
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Right
+links:
+  - type: resource
+    title: 586 Owner's Manual (English)
+    url: https://dbxpro.com/en-US/product_documents/dbx586manualpdf
+  - type: resource
+    title: 586 Cut Sheet (English)
+    url: https://dbxpro.com/en-US/product_documents/dbx586cutsheeta2pdf
+  - type: support
+    title: dbx Help Center
+    url: https://help.harmanpro.com/dbx

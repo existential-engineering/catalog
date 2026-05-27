@@ -1,0 +1,176 @@
+id: 69_DBF-PM_y7LgtcSWU8Q
+name: ZonePRO 1260m
+manufacturer: dbx
+primaryCategory: routing
+categories:
+  - eq
+  - dynamics
+  - rack-mount
+url: https://dbxpro.com/en/products/1260m
+description: 12x6 digital zone processor with fixed I/O and pre-configured
+  architecture for installed audio systems, including configurable insert
+  processing and optional audio channel duplication via link bus.
+details: |-
+  The ZonePRO 1260m is a compact digital zone processor designed for professional installed sound applications. It provides comprehensive audio routing and processing across 12 inputs and 6 outputs, with a pre-configured signal flow architecture that includes input and output processing stages.
+
+  The device accommodates multiple input types including balanced mic/line inputs with individual gain control, unbalanced RCA pairs, and S/PDIF digital input. A central matrix router connects inputs to six independent output zones, each featuring the proprietary AutoWarmth psychoacoustic function to maintain frequency response at reduced levels.
+
+  Configurable insert points allow integration of external processing modules at strategic locations in the signal chain. The link bus enables audio duplication to additional ZonePRO devices for expanded output capacity. Comprehensive front-panel metering, an LCD display, and optional Zone Controller hardware provide intuitive system control and monitoring.
+
+  The unit operates via ZonePRO Designer configuration software (Ethernet or RS-232) and supports third-party control integration for seamless automation integration.
+specs: |-
+  - 12 Total Inputs: 6 Balanced Mic/Line, 4 Unbalanced RCA Pairs, S/PDIF
+  - 6 Total Outputs - Electronically Balanced Euroblock
+  - Mic/Line Input Impedance: >50kΩ Balanced, >25kΩ Unbalanced
+  - RCA Input Impedance: >25kΩ Unbalanced
+  - Max Input: +20dBu Mic/Line, +12dBu RCA
+  - Max Output: +20dBu
+  - Mic Preamp Gain: 30-60dB
+  - Mic Preamp EIN: <-118dBu (22Hz-22kHz, 150Ω source)
+  - Phantom Power: 15V
+  - CMRR: >40dB typical, >55dB @ 1kHz
+  - A/D Conversion: dbx Type IV System
+  - A/D Dynamic Range: >113dB A-weighted (line), >110dB unweighted
+  - D/A Dynamic Range: 112dB A-weighted, 109dB unweighted
+  - Overall Dynamic Range: >110dB A-weighted, >107dB unweighted
+  - Sample Rate: 48kHz
+  - THD+Noise: 0.003% typical at +4dBu, 1kHz
+  - Frequency Response: 20Hz-20kHz ±0.5dB
+  - Interchannel Crosstalk: >80dB typical
+  - Propagation Delay: 0.8 msec
+  - Two Configurable Input Insert Positions
+  - One Configurable Output Insert Position
+  - AutoWarmth per Output Zone
+  - Link Bus for Device Duplication
+  - Comprehensive Six-Segment Lightpipe Output Meters (-30 to +20 dBu)
+  - LCD Display with Source, Volume, Mute Status
+io:
+  - name: Mic/Line Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 5
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 6
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - name: RCA Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: RCA Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: RCA Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: RCA Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - name: Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - name: Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - name: Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - name: Output 5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - name: Output 6
+    signalFlow: output
+    category: audio
+    type: line
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: 1260m Application Guide (English)
+    url: https://dbxpro.com/en-US/product_documents/zonepro-app-guidepdf--2
+  - type: resource
+    title: 1260m Cut Sheet (English)
+    url: https://dbxpro.com/en-US/product_documents/dbxzonepro1260mdatasheetpdf
+  - type: support
+    title: Contact Technical Support
+    url: https://dbxpro.com/en-US/support

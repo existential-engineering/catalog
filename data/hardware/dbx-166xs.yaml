@@ -1,0 +1,114 @@
+id: LxaDRP2NUbNaB-v5xHzps
+name: dbx 166xs Compressor/Limiter/Gate
+manufacturer: dbx
+primaryCategory: compressor
+categories:
+  - limiter
+  - gate
+  - dynamics
+  - rack-mount
+  - outboard
+url: https://dbxpro.com/en/products/166xs
+description: The dbx 166xs is a dual-channel compressor, limiter, and gate in a
+  1U rackmount unit, featuring dbx's patented OverEasy® compression and
+  AutoDynamic™ attack/release controls. It offers stereo or dual-mono operation
+  with PeakStop® limiter protection and sidechain insert capability.
+details: |-
+  The 166xs combines compressor, limiter, and gate functionality in a single 1U rackmount unit. It features dbx's patented OverEasy® compression technology and AutoDynamic™ attack/release controls, delivering smooth, transparent dynamics control for live sound and studio applications.
+
+  The unit offers stereo or dual-mono operation modes with True RMS power summing, along with separate precision LED displays for gain reduction, compression threshold, and gate threshold monitoring. Program-adaptive expander/gates with improved timing algorithms ensure natural-sounding results across a wide range of audio material.
+
+  The PeakStop® limiter provides reliable equipment protection, while the classic dbx "Auto" mode automatically adapts attack and release times to program content. A side chain insert allows external control of the dynamics processing, enabling frequency-selective compression and other advanced techniques.
+specs: |-
+  - Input Connectors: 1/4" TRS (female), XLR (pin 2 hot)
+  - Input Impedance: >50kΩ balanced; >25kΩ unbalanced
+  - Max Input Level: >+24dBu
+  - Output Connectors: 1/4" TRS (male), XLR (pin 2 hot)
+  - Output Impedance: 120Ω balanced; 60Ω unbalanced
+  - Max Output Level: +21dBu balanced/unbalanced (2kΩ+)
+  - Frequency Response: 20Hz–20kHz, +0/–0.5dB
+  - Noise Floor: <–90dBu (22Hz–22kHz)
+  - THD+Noise: <0.04% (up to 40dB compression)
+  - Compressor Threshold: –40dBu to +20dBu
+  - Compression Ratio: 1:1 to ∞:1; 60dB max
+  - Attack Time: 3ms–340ms (program-dependent)
+  - Release Time: 200dB/sec to 3dB/sec
+  - Expander/Gate Ratio: 10:1
+  - Gate Max Depth: >60dB
+  - Limiter Threshold: 0dBu to +20dBu
+  - Dynamic Range: >115dB unweighted
+  - Power: 15W max; 100–230VAC, 50–60Hz
+  - Dimensions: 1.75" H × 19" W × 6.75" D
+  - Weight: 5.05 lb (unit); 7.20 lb (shipping)
+  - Operating Temperature: 0°C–45°C
+io:
+  - name: Input L
+    signalFlow: input
+    category: audio
+    type: analog-balanced
+    connection: xlr-female
+    maxConnections: 1
+    position: Right
+  - name: Input L
+    signalFlow: input
+    category: audio
+    type: analog-balanced
+    connection: trs-female
+    maxConnections: 1
+    position: Right
+  - name: Input R
+    signalFlow: input
+    category: audio
+    type: analog-balanced
+    connection: xlr-female
+    maxConnections: 1
+    position: Right
+  - name: Input R
+    signalFlow: input
+    category: audio
+    type: analog-balanced
+    connection: trs-female
+    maxConnections: 1
+    position: Right
+  - name: Output L
+    signalFlow: output
+    category: audio
+    type: analog-balanced
+    connection: xlr-male
+    maxConnections: 1
+    position: Right
+  - name: Output L
+    signalFlow: output
+    category: audio
+    type: analog-balanced
+    connection: trs-male
+    maxConnections: 1
+    position: Right
+  - name: Output R
+    signalFlow: output
+    category: audio
+    type: analog-balanced
+    connection: xlr-male
+    maxConnections: 1
+    position: Right
+  - name: Output R
+    signalFlow: output
+    category: audio
+    type: analog-balanced
+    connection: trs-male
+    maxConnections: 1
+    position: Right
+  - name: Sidechain Insert
+    signalFlow: bidirectional
+    category: audio
+    type: insert
+    connection: trs-female
+    maxConnections: 2
+    position: Right
+links:
+  - type: product
+    title: dbx 166xs Product Page
+    url: https://dbxpro.com/en/products/166xs
+  - type: support
+    title: dbx Support
+    url: https://help.harmanpro.com/dbx

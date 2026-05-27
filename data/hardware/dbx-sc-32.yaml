@@ -1,0 +1,63 @@
+id: 9C6mMHK__2Pha1q6nkWHK
+name: SC 32
+manufacturer: dbx
+primaryCategory: routing
+categories:
+  - utility
+url: https://dbxpro.com/en/products/sc-32
+description: 32-channel digital matrix processor for installed sound systems
+  with advanced DSP, flexible routing, and wizard-driven HiQnet System Architect
+  configuration.
+details: |-
+  The dbx SC 32 is a 32-channel I/O digital matrix processor built for professional installed sound applications. It serves as a comprehensive zone processing platform, delivering unprecedented DSP power with incredible routing flexibility through wizard-driven HiQnet System Architect configuration.
+
+  The SC 32 features a modular architecture with up to four input card slots and four output card slots, each supporting eight channels. Input cards provide mic/line switching with per-channel phantom power, while all audio connections use Phoenix/Combicon 3.5mm pitch connectors. The 2U chassis accommodates demanding multi-zone installations in commercial, hospitality, and house-of-worship environments.
+
+  Processing capabilities include Advanced Feedback Suppression (AFS), Ambient Noise Compensation (ANC), 24-level priority ducking, 4-band parametric input EQ, 6-band parametric output EQ, compressor, de-esser, automatic gain control, subharmonic synthesis, configurable crossovers, and dbx PeakStopPlus limiting. Each channel supports up to 5120 ms of delay. A High Speed Option slot accepts expansion cards such as the SC AVB Card for networked audio.
+specs: |-
+  - Audio I/O: 32 channels (configurable in banks of 8)
+  - Up to 4 input card slots (8 mic/line inputs per card)
+  - Up to 4 output card slots (8 outputs per card)
+  - Sample Rate: 48 kHz
+  - Internal Processing: 32-bit floating point
+  - Frequency Response: 20 Hz–20 kHz, ±0.50 dB
+  - Dynamic Range: 107 dB unweighted; 110 dB A-weighted
+  - Max Input Level: +22 dBu
+  - Max Output Level: +20 dBu
+  - THD+Noise: 0.0045% typical at 0 dBu, 1 kHz
+  - Input Gain Range: 0 dB nominal; up to +48 dB in 6 dB steps
+  - Input Impedance: 3.5 kΩ
+  - Output Impedance: 44 Ω
+  - GPIO: 8 control inputs; 6 logic outputs
+  - High Speed Option Slots: 1
+  - Delay: Up to 5120 ms per channel
+  - Power Consumption: 120 W
+  - Power Supply: 100–240V, 50/60 Hz
+  - Dimensions: 3.5" H x 19" W x 15" D (2U)
+  - Weight: 15.7 lbs (with all cards)
+io:
+  - name: Analog Input (modular bank)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Output (modular bank)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Ethernet Control
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+links:
+  - type: support
+    title: Technical Support
+    url: https://dbxpro.com/en-US/support

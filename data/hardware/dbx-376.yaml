@@ -1,0 +1,102 @@
+id: _CNJOlF2H_4cXUpDNrYAB
+name: dbx 376
+manufacturer: dbx
+primaryCategory: preamp
+categories:
+  - channel-strip
+url: https://dbxpro.com/en/products/376
+description: Single-channel tube channel strip with mic preamp, 3-band
+  parametric EQ, OverEasy® compressor, de-esser, and AES/EBU plus S/PDIF digital
+  outputs. Features a 200V tube plate voltage mic preamp and dbx Type IV® A/D
+  conversion.
+details: |-
+  The dbx 376 raises the standard of excellence for channel strip processors by combining vacuum tube warmth with dbx Type IV® conversion technology. The unit is designed for studio vocal and microphone recording applications.
+
+  The vacuum tube mic preamp operates at 200V plate voltage for classic tube character. A front-panel 1/4" instrument input provides direct connection for guitars and basses. Controls include +48V phantom power, phase invert, and a 75Hz low-cut switch for high-pass filtering.
+
+  The 3-band parametric EQ covers low (80Hz shelving), mid (100Hz–8kHz sweepable), and high (12kHz shelving) bands. The OverEasy® compressor offers threshold from –40dBu to +20dBu and ratio from 1:1 to ∞:1, with selectable OverEasy® or hard knee response. The de-esser sweeps from 800Hz to 10kHz.
+
+  AES/EBU (XLR) and S/PDIF (RCA) digital outputs support sample rates of 44.1, 48, 88.2, and 96kHz with 24-, 20-, and 16-bit wordlengths. Word sync BNC I/O allows external clock synchronization.
+specs: |-
+  - Mic Input: Female XLR, 330Ω impedance
+  - Mic Max Input: –9 to +11dBu
+  - Preamp Noise (EIN): –120dBu typical (150Ω source)
+  - Line/Instrument Input: 1/4" jack, +21dBu max
+  - Mic Gain Range: +30 to +60dB
+  - Line Gain Range: –15 to +15dB
+  - Analog Output Connectors: XLR and 1/4" TRS
+  - Max Analog Output: >+21dBu
+  - EQ Low Band: 80Hz shelving
+  - EQ Mid Band: 100Hz–8kHz sweepable
+  - EQ High Band: 12kHz shelving
+  - Compressor Threshold: –40 to +20dBu
+  - Compressor Ratio: 1:1 to ∞:1
+  - De-esser Frequency Range: 800Hz to 10kHz
+  - THD+N: 0.35% typical at +4dBu, 1kHz
+  - Digital Output: XLR (AES/EBU), RCA (S/PDIF)
+  - Sample Rates: 44.1, 48, 88.2, 96kHz
+  - Wordlengths: 24, 20, 16-bit
+  - Digital Output Dynamic Range: 107dB typical, A-weighted
+  - Power Consumption: 35W
+  - Operating Voltage: 120VAC 60Hz or 230VAC 50Hz
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr-female
+    maxConnections: 1
+    position: Right
+  - name: Instrument/Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: ts
+    maxConnections: 1
+    position: Right
+  - name: Insert
+    signalFlow: bidirectional
+    category: audio
+    type: insert
+    connection: trs
+    maxConnections: 1
+    position: Right
+  - name: Analog Output
+    signalFlow: output
+    category: audio
+    type: balanced-line
+    connection: xlr-male
+    maxConnections: 1
+    position: Right
+  - name: Analog Output
+    signalFlow: output
+    category: audio
+    type: balanced-line
+    connection: trs
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Digital Output
+    signalFlow: output
+    category: digital
+    type: aes-ebu
+    connection: xlr-male
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Digital Output
+    signalFlow: output
+    category: digital
+    type: spdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Word Sync
+    signalFlow: bidirectional
+    category: digital
+    type: word-clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+links:
+  - type: support
+    title: dbx Help Center
+    url: https://help.harmanpro.com/dbx

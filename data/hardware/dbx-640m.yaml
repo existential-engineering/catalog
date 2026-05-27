@@ -1,0 +1,66 @@
+id: SMBuaWTBw1Ir4FoT-zYXX
+name: dbx ZonePRO 640m
+manufacturer: dbx
+primaryCategory: routing
+categories:
+  - utility
+url: https://dbxpro.com/en/products/640m
+description: 6-input, 4-output fixed-architecture digital zone processor with
+  pre-configured input/output processing, insert points, AutoWarmth on all
+  output zones, and optional device duplication via link bus.
+details: |-
+  The dbx ZonePRO 640m is a fixed I/O digital zone processor featuring pre-configured architecture with configurable insert processing and optional duplication via a link bus. It accepts 4 balanced mic/line Euroblock inputs and 2 unbalanced RCA input pairs (mono-summed), routing audio to 4 balanced Euroblock outputs.
+
+  Per-channel hardware microphone gain adjustment is provided on the front panel, along with an LCD display and comprehensive signal metering. Two input insert positions and one output insert position allow patching of external processors. AutoWarmth psychoacoustic processing is applied per output zone.
+
+  System configuration and control use ZonePRO Designer software via Ethernet or RS-232. Optional ZC series zone controllers can be added. The link bus enables duplication of a 640m unit for expanded systems.
+
+  The 640m meets UL 60065, IEC 60065, and EN 55013 safety standards in a 1U rack enclosure.
+specs: |-
+  - Inputs: 6 total: 4 balanced mic/line (Euroblock), 2 unbalanced RCA pairs (mono-summed)
+  - Outputs: 4 balanced (Euroblock)
+  - Input Impedance: >50kΩ balanced, >25kΩ unbalanced
+  - Output Impedance: 120Ω balanced, 60Ω unbalanced
+  - Max Input Level: +20dBu mic/line, +12dBu RCA
+  - Max Output Level: +20dBu
+  - Mic Preamp Gain: 30–60dB
+  - Mic Preamp EIN: <–118dBu (22Hz–22kHz)
+  - Phantom Power: +15VDC
+  - CMRR: >40dB (typically >55dB at 1kHz)
+  - A/D Dynamic Range: >113dB (line), A-weighted
+  - D/A Dynamic Range: 112dB, A-weighted
+  - Overall Dynamic Range: >109dB, A-weighted
+  - THD+Noise: 0.003% at +4dBu, 1kHz
+  - Frequency Response: 20Hz–20kHz, ±0.5dB
+  - Interchannel Crosstalk: >80dB typical
+  - Propagation Delay: 0.6ms
+  - Sample Rate: 48kHz
+  - Power: 100/120/230VAC, 50/60Hz, 29W
+  - Dimensions: 1.75"H × 19"W × 7.75"D (1U)
+  - Weight: 6.05 lbs (2.74kg)
+io:
+  - name: Mic/Line Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 4
+    position: Right
+  - name: RCA Source Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 4
+    position: Right
+  - name: Zone Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 4
+    position: Right
+links:
+  - type: support
+    title: dbx Help Center
+    url: https://help.harmanpro.com/dbx
