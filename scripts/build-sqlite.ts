@@ -1412,10 +1412,13 @@ function buildDatabase(version: string): void {
   const stats = fs.statSync(OUTPUT_FILE);
   const sizeKB = (stats.size / 1024).toFixed(1);
 
+  const totalProducts = softwareCount + contentCount + hardwareCount + accessoryCount;
+
   console.log(`\n✅ Database built successfully!`);
   console.log(`   Output: ${OUTPUT_FILE}`);
   console.log(`   Size: ${sizeKB} KB`);
   console.log(`   Version: ${version}`);
+  console.log(`   Total products: ${totalProducts.toLocaleString()}`);
 }
 
 // =============================================================================
