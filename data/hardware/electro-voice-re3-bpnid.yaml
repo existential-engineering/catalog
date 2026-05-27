@@ -1,0 +1,119 @@
+id: D7-ojzZDOqjya7EskWeBP
+name: RE3-BPNID
+manufacturer: electro-voice
+primaryCategory: microphone
+url: https://products.electrovoice.com/na/en/re3-bpnid/
+description: UHF wireless bodypack set pairing the RE3-BPT belt-pack transmitter
+  with the RE3-RX half-rack diversity receiver, supplied without an input device
+  so users can add an Electro-Voice lavalier, headworn, or instrument input to
+  suit the application.
+details: >-
+  The RE3-BPNID is the 'no input device' configuration of Electro-Voice's RE3
+  UHF wireless series. The set bundles the RE3-RX half-rack diversity receiver
+  and the RE3-BPT metal-bodied bodypack transmitter, but ships without a
+  microphone so the user can pair the transmitter with a separately purchased EV
+  lavalier, headworn, or instrument input that terminates in a TA4F (mini-XLR
+  4-pin) connector.
+
+
+  The RE3-RX receiver provides diversity reception to minimize dropouts, with a
+  built-in frequency scan, an LCD display, and a Sync function (over IR) that
+  transfers receiver settings to the transmitter in one step. Depending on band,
+  the receiver offers up to 36 MHz of tuning bandwidth and as many as 1,440
+  selectable frequencies. Two detachable BNC antennas mount on the rear, along
+  with a balanced XLR and unbalanced 1/4-inch audio output and a DC barrel jack
+  fed from the supplied universal power supply. Rack-mount hardware ships in the
+  box.
+
+
+  The RE3-BPT bodypack transmitter has a robust metal housing, a unique magnetic
+  latch and lock for fast battery access, selectable low/high RF output power
+  (band-specific, 10/50 mW on most bands), and runs on two AA batteries. The
+  transmitter accepts any compatible TA4F-terminated input device at its
+  top-mounted mini-XLR jack.
+specs: >-
+  - System type: UHF wireless bodypack set (no input device included)
+
+  - Receiver: RE3-RX half-rack diversity receiver
+
+  - Transmitter: RE3-BPT metal bodypack
+
+  - Input device: Not included; accepts EV lavalier, headworn, or instrument
+  mics with TA4F connector
+
+  - Tuning bandwidth: Up to 36 MHz (band-specific)
+
+  - Selectable frequencies: Up to 1,440 (band-specific)
+
+  - Frequency band 5L: 488-524 MHz, 1440 frequencies, 10/50 mW (global)
+
+  - Frequency band 5H: 560-596 MHz, 1440 frequencies, 10/50 mW (global)
+
+  - Frequency band 6M: 653-663 MHz, 400 frequencies, 10/20 mW (global)
+
+  - Frequency band 8M: 823-832 / 863-865 MHz, 440 frequencies, 10 mW (Europe)
+
+  - Frequency band T: 803-806 MHz, 120 frequencies, 10/50 mW (Thailand)
+
+  - Transmitter output power: 10 mW or 50 mW selectable (band-specific)
+
+  - Diversity: True antenna diversity
+
+  - Sync: IR-based one-step transmitter setup
+
+  - Frequency scanning: Yes (receiver scans for clean channel)
+
+  - Receiver display: LCD
+
+  - Transmitter battery: 2 x AA
+
+  - Transmitter construction: Metal housing with magnetic battery latch
+
+  - Transmitter input connector: TA4F (4-pin mini-XLR)
+
+  - Included: RE3-RX receiver, RE3-BPT bodypack, two antennas, universal power
+  supply, two AA batteries, rack-mount hardware, owner's manual, documentation
+  packet, declaration of conformity
+io:
+  - name: Balanced Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Antenna A Input
+    signalFlow: input
+    category: digital
+    type: bnc
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Antenna B Input
+    signalFlow: input
+    category: digital
+    type: bnc
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+  - name: Bodypack Microphone/Instrument Input (TA4F)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: mini-din
+    maxConnections: 1
+    position: Top

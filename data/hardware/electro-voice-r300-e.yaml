@@ -1,0 +1,111 @@
+id: j-KPqoIzATHyDUJKJejhN
+name: R300-E
+manufacturer: electro-voice
+primaryCategory: microphone
+categories:
+  - headset
+  - condenser
+url: https://products.electrovoice.com/na/en/r300-e/
+description: UHF wireless headworn microphone system pairing the rugged metal
+  BP-300 bodypack transmitter with the HM3 omnidirectional double-ear-hook
+  headworn microphone. Designed for hands-free presentations, fitness
+  instruction, and stage performance where a discreet, lightweight headset is
+  needed. The half-rack receiver provides true antenna diversity reception,
+  ClearScan automatic channel selection, and EZsync one-step
+  transmitter-to-receiver synchronization.
+details: >-
+  The Electro-Voice R300-E is a UHF wireless system bundled for hands-free use,
+  comprising the BP-300 bodypack transmitter, the HM3 omnidirectional headworn
+  microphone, and the R300 half-rack diversity receiver. The HM3 is a
+  lightweight double-ear-hook headset with an omnidirectional condenser element,
+  well suited to presenters, fitness instructors, and theatrical use where
+  consistent level is needed across head movement. The BP-300 transmitter is
+  built from rugged metal, runs for approximately 14 hours on two AA alkaline
+  batteries, and uses a TA4F mini-XLR connection for the microphone cable.
+
+
+  The R300 receiver is a synthesized PLL design with true antenna diversity
+  using two flexible TNC half-wave antennas, providing 32 selectable channels
+  per band across 16 available bands and up to 8 simultaneous systems within a
+  band. ClearScan automatically finds the cleanest available channel and EZsync
+  transfers the receiver's settings to the transmitter in a single step,
+  eliminating manual channel matching. Tone-code-plus-amplitude squelch
+  suppresses interference when the transmitter is muted or out of range.
+
+
+  Audio output is provided on both a 1/4-inch unbalanced jack and a 3-pin XLR
+  balanced output, with the balanced line level adjustable from 10 to 100 mV
+  RMS, making the system easy to integrate with both consumer-style mixers and
+  professional balanced inputs. The receiver runs from a 12-16 VDC external
+  supply (500 mA max) and can sit on a desktop or be rack-mounted with optional
+  hardware. Specified audio frequency response is 80 Hz to 18 kHz (±2 dB) with
+  greater than 100 dB A-weighted signal-to-noise ratio, greater than 95 dB
+  dynamic range, and less than 1% THD (typically 0.4% at 1 kHz, 40 kHz
+  deviation). RF output power is 8 mW typical and operating temperature is 5–45
+  °C (41–113 °F).
+specs: |-
+  - System type: UHF wireless bodypack with headworn microphone
+  - Microphone: HM3 omnidirectional condenser headset (double ear hook)
+  - Transmitter: BP-300 metal bodypack
+  - Receiver: R300 half-rack, synthesized PLL, true antenna diversity
+  - Bands available: 16
+  - Channels per band: 32
+  - Simultaneous systems per band: 8
+  - RF output power: 8 mW typical
+  - RF sensitivity: <1.0 µV (12 dB SINAD)
+  - Audio frequency response: 80 Hz - 18 kHz (±2 dB)
+  - Signal-to-noise ratio: >100 dB (A-weighted)
+  - Dynamic range: >95 dB
+  - THD: <1.0% (0.4% typical @ 1 kHz, 40 kHz deviation)
+  - Squelch: Tone code plus amplitude
+  - Balanced line level output: 10-100 mV RMS (adjustable)
+  - Antennas: Flexible TNC 1/2 wave (diversity pair)
+  - Receiver power: 12-16 VDC, 500 mA max
+  - Transmitter battery: 2 x AA alkaline
+  - Transmitter battery life: ~14 hours
+  - Operating temperature: 5°-45°C (41°-113°F)
+  - Controls: On/Off, Set, Up, Down, Sync
+  - Mounting: Tabletop or rack (optional rack hardware)
+io:
+  - name: Antenna A (Diversity)
+    signalFlow: input
+    category: digital
+    type: bnc
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: Antenna B (Diversity)
+    signalFlow: input
+    category: digital
+    type: bnc
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: Balanced XLR Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Unbalanced 1/4-inch Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+  - name: Bodypack Microphone Input (TA4F)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: mini-din
+    maxConnections: 1
+    position: Top
