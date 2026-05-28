@@ -46,7 +46,8 @@ jobs:
             const tier1 = report.summary.supersededMissingCategory;
             const tier2 =
               report.summary.legacyWithoutDiscontinued +
-              report.summary.verificationDiscontinuedMissingCategory;
+              report.summary.verificationDiscontinuedMissingCategory +
+              report.summary.descriptionMentionsDiscontinued;
             const totalGaps = tier1 + tier2;
 
             const { data: issues } = await github.rest.issues.listForRepo({
@@ -94,6 +95,7 @@ jobs:
             | Tier 1 — superseded, missing \`discontinued\` category | ${tier1} |
             | Tier 2 — has \`legacy\` only | ${report.summary.legacyWithoutDiscontinued} |
             | Tier 2 — \`verification.status=discontinued\`, missing category | ${report.summary.verificationDiscontinuedMissingCategory} |
+            | Tier 2 — description/details mention discontinuation | ${report.summary.descriptionMentionsDiscontinued} |
 
             **Tier 1 is auto-tag-safe:**
 
@@ -114,6 +116,24 @@ jobs:
               |------|------|------|------|
               ${report.supersededMissingCategory.slice(0, 100).map(c => `| \`${cell(c.file)}\` | ${cell(c.manufacturer)} | ${cell(c.name)} | ${cell(c.type)} |`).join('\n')}
               ${report.supersededMissingCategory.length > 100 ? `\n*... and ${report.supersededMissingCategory.length - 100} more*` : ''}
+
+              </details>
+
+              `);
+            }
+
+            if (report.descriptionMentionsDiscontinued.length > 0) {
+              body += dedent(`### Tier 2 — Description/details mention discontinuation (${report.descriptionMentionsDiscontinued.length})
+
+              Heuristic match — review each entry before tagging.
+
+              <details>
+              <summary>Click to expand</summary>
+
+              | File | Manufacturer | Name | Type |
+              |------|------|------|------|
+              ${report.descriptionMentionsDiscontinued.slice(0, 100).map(c => `| \`${cell(c.file)}\` | ${cell(c.manufacturer)} | ${cell(c.name)} | ${cell(c.type)} |`).join('\n')}
+              ${report.descriptionMentionsDiscontinued.length > 100 ? `\n*... and ${report.descriptionMentionsDiscontinued.length - 100} more*` : ''}
 
               </details>
 

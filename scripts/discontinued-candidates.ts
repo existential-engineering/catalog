@@ -74,6 +74,7 @@ const DiscontinuedReportSchema = z.object({
     supersededMissingCategory: z.number(),
     legacyWithoutDiscontinued: z.number(),
     verificationDiscontinuedMissingCategory: z.number(),
+    descriptionMentionsDiscontinued: z.number(),
   }),
   /** Tier 1: entries on the receiving end of a `supersedes` link, missing
    *  the `discontinued` category. Auto-tag-safe. */
@@ -86,6 +87,10 @@ const DiscontinuedReportSchema = z.object({
   /** Tier 2: entries with `verification.status === "discontinued"` but
    *  missing the `discontinued` category. */
   verificationDiscontinuedMissingCategory: z.array(CandidateSchema),
+  /** Tier 2: description/details text mentions discontinuation with
+   *  high confidence, but the `discontinued` category is missing.
+   *  Heuristic — human review recommended before applying. */
+  descriptionMentionsDiscontinued: z.array(CandidateSchema),
 });
 export type DiscontinuedReport = z.infer<typeof DiscontinuedReportSchema>;
 
@@ -96,6 +101,46 @@ export type DiscontinuedReport = z.infer<typeof DiscontinuedReportSchema>;
 function hasCategory(entry: Entry, slug: string): boolean {
   if (entry.primaryCategory === slug || entry.secondaryCategory === slug) return true;
   return Array.isArray(entry.categories) && entry.categories.includes(slug);
+}
+
+// Self-referential signals: the manufacturer is talking about THIS product,
+// not about some other vintage unit it was modeled after or replaces.
+//
+// Bare phrases like "out of production" / "no longer in production" are
+// intentionally NOT in this list — they fire too often on inspiration
+// blurbs ("the original tube was long out of production"). We require
+// stronger evidence than a bare phrase floating in body text.
+const SELF_REFERENTIAL_PATTERNS = [
+  // Description (or a paragraph) opens with "Discontinued ..." — the dbx
+  // pattern. "No longer" is intentionally excluded here because it's
+  // commonly used as a discourse marker ("No longer confined to...").
+  /(?:^|[.!?]\s+|\n)\s*Discontinued\b/,
+  // "This/It is/was a legacy product / no longer available / discontinued"
+  // Captures the audeze "This is a legacy product and no longer available
+  // for sale." pattern and the dbx "This unit was discontinued in 2020."
+  /(?:^|[.!?]\s+|\n)\s*(?:This|It)\s+(?:product\s+|model\s+|item\s+|unit\s+)?(?:is|was)\b[^.!?\n]{0,80}\b(?:no longer (?:available|in production|manufactured|made|sold|produced)|discontinued)\b/i,
+  // "Discontinued in <year>" — year is specific enough to be self-ref.
+  /\bdiscontinued in (?:19|20)\d{2}\b/i,
+  // EOL / end-of-life are narrow industry terms; rarely appear in
+  // historical references.
+  /\bend[- ]of[- ]life\b/i,
+];
+
+function toText(value: string | string[] | undefined): string {
+  if (!value) return "";
+  return Array.isArray(value) ? value.join("\n") : value;
+}
+
+function mentionsDiscontinued(entry: Entry): boolean {
+  const description = toText(entry.description);
+  const details = toText(entry.details);
+
+  // Broken-schema artifact: catalog importer dumped a status into the
+  // details field (`details: |- status: discontinued`). High confidence.
+  if (/\bstatus\s*:\s*discontinued\b/i.test(details)) return true;
+
+  const haystack = `${description}\n${details}`;
+  return SELF_REFERENTIAL_PATTERNS.some((re) => re.test(haystack));
 }
 
 function toCandidate(
@@ -130,11 +175,13 @@ function generateReport(): DiscontinuedReport {
       supersededMissingCategory: 0,
       legacyWithoutDiscontinued: 0,
       verificationDiscontinuedMissingCategory: 0,
+      descriptionMentionsDiscontinued: 0,
     },
     supersededMissingCategory: [],
     supersededWithCategory: [],
     legacyWithoutDiscontinued: [],
     verificationDiscontinuedMissingCategory: [],
+    descriptionMentionsDiscontinued: [],
   };
 
   // First pass: collect every entry by id so we can resolve `supersedes`
@@ -204,6 +251,9 @@ function generateReport(): DiscontinuedReport {
           toCandidate(file, entry, type, supersessors)
         );
       }
+      if (!hasDiscontinued && mentionsDiscontinued(entry)) {
+        report.descriptionMentionsDiscontinued.push(toCandidate(file, entry, type, supersessors));
+      }
     }
   }
 
@@ -211,6 +261,7 @@ function generateReport(): DiscontinuedReport {
   report.summary.legacyWithoutDiscontinued = report.legacyWithoutDiscontinued.length;
   report.summary.verificationDiscontinuedMissingCategory =
     report.verificationDiscontinuedMissingCategory.length;
+  report.summary.descriptionMentionsDiscontinued = report.descriptionMentionsDiscontinued.length;
 
   return report;
 }
@@ -233,6 +284,9 @@ function printConsoleReport(report: DiscontinuedReport): void {
   );
   console.log(
     `  verification.status=discontinued, missing category: ${report.summary.verificationDiscontinuedMissingCategory}`
+  );
+  console.log(
+    `  Description/details mention discontinuation:       ${report.summary.descriptionMentionsDiscontinued}`
   );
   console.log();
 
@@ -271,6 +325,19 @@ function printConsoleReport(report: DiscontinuedReport): void {
     for (const candidate of report.verificationDiscontinuedMissingCategory.slice(0, 15)) {
       console.log(`  ${candidate.file}`);
       console.log(`    ${candidate.manufacturer} — ${candidate.name} (${candidate.type})`);
+    }
+    console.log();
+  }
+
+  if (report.descriptionMentionsDiscontinued.length > 0) {
+    console.log("📝 Tier 2: Description/details mention discontinuation (review before applying)");
+    console.log("─".repeat(40));
+    for (const candidate of report.descriptionMentionsDiscontinued.slice(0, 20)) {
+      console.log(`  ${candidate.file}`);
+      console.log(`    ${candidate.manufacturer} — ${candidate.name} (${candidate.type})`);
+    }
+    if (report.descriptionMentionsDiscontinued.length > 20) {
+      console.log(`  ... and ${report.descriptionMentionsDiscontinued.length - 20} more`);
     }
     console.log();
   }
