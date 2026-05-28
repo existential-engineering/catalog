@@ -1,0 +1,116 @@
+id: P7zDzoJUKSJdRpbQOdjiy
+name: "8331A SAM Studio Monitor"
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+url: https://www.genelec.com/8331a
+description: "Incredible three-way point source monitor with the footprint of a
+  compact two-way. When space and precision is of the essence, nothing even
+  comes close."
+details: |-
+  The 8331A is the smallest member of Genelec's award-winning 'The Ones' series of three-way coaxial Smart Active Monitors. Despite the compact footprint of a two-way design, it delivers true point source performance through Genelec's Minimum Diffraction Coaxial (MDC) driver technology, combining a 90 mm midrange and 19 mm tweeter into a single coincident point source, supplemented by two hidden 130x65 mm racetrack woofers acoustically concealed within the cabinet.
+
+  Class D amplification provides 72 W for the bass driver and 36 W each for the midrange and treble, delivering a short-term maximum SPL of at least 104 dB SPL and a frequency response extending from 45 Hz to 37 kHz. The free-field frequency response is accurate to within ±1.5 dB across 58 Hz - 20 kHz, supported by active crossovers at 500 Hz and 3 kHz.
+
+  The Minimum Diffraction Enclosure (MDE) is precision die-cast aluminium with rounded edges, paired with a Directivity Control Waveguide (DCW) to ensure controlled dispersion and consistent on- and off-axis response. Acoustically Concealed Woofers (ACW) keep the front baffle clean while extending bass response through a reflex port.
+
+  As a SAM (Smart Active Monitoring) product, the 8331A is fully compatible with Genelec's GLM calibration software, which uses the included measurement microphone (sold via the GLM Calibration Kit) and either the 9320A Reference Controller or the GLM network adapter to compensate for room acoustics, set levels, manage groups, and run AutoCal. Two RJ45 GLM network ports allow daisy-chaining of monitors and subwoofers.
+
+  Intelligent Signal Sensing (ISS) technology drops idle power consumption to under 0.5 W, meeting EU ErP directives. The integrated Iso-Pod stand decouples the monitor from the supporting surface, reduces unwanted vibrations, and allows angled placement. The 8331A is available in dark grey, white, black, raw aluminium, and over 120 custom RAL finishes.
+specs: |-
+  - Three-way coaxial point source design
+  - Short term maximum SPL >= 104 dB
+  - Peak SPL >= 110 dB
+  - Frequency response: 45 Hz - 37 kHz (-6 dB)
+  - Frequency response accuracy: +/- 1.5 dB (58 Hz - 20 kHz)
+  - Bass amplifier: 72 W Class D
+  - Midrange amplifier: 36 W Class D
+  - Treble amplifier: 36 W Class D
+  - Bass drivers: 2 x 130 x 65 mm racetrack (Acoustically Concealed Woofers)
+  - Midrange driver: 90 mm coaxial
+  - Treble driver: 19 mm coaxial
+  - Crossover frequencies: 500 Hz (Bass/Mid) and 3 kHz (Mid/Treble)
+  - Self-generated noise: <= 0 dB SPL @ 1 m on axis
+  - Power consumption (ISS active): <= 0.5 W
+  - Power consumption (idle): <= 4 W
+  - Power consumption (full output): 60 W
+  - Mains voltage: 100-240 VAC 50/60 Hz
+  - Dimensions: 305 x 189 x 212 mm (H x W x D) with Iso-Pod
+  - Weight: 6.7 kg (14.8 lb)
+  - Die-cast aluminium Minimum Diffraction Enclosure (MDE) with reflex port
+  - Minimum Diffraction Coaxial (MDC) driver technology
+  - Directivity Control Waveguide (DCW) technology
+  - Iso-Pod vibration decoupling stand included
+  - Intelligent Signal Sensing (ISS) auto power management
+  - GLM (Genelec Loudspeaker Manager) network calibration support
+  - Available colors: Producer Dark Grey, White, Black (Matte), Raw aluminium, 120+ RAL custom colors
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Digital AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Digital AES/EBU Output / Thru
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 1
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 2
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: Operating Manual 8331A
+    url: https://assets.ctfassets.net/4zjnzn055a4v/1JXnI0LXyEMG2k8eGyEkOI/89d6441eacf35aa0993bf352e4e95bfa/8331_operating_manual.pdf
+  - type: resource
+    title: "8331A Drawing Views (PDF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4fXNkqHg6sQA8OMi88sCy8/72d0588438491e2c8dd42ef4638bb144/8331aviews.pdf
+  - type: resource
+    title: "8331A CAD Drawing (DWG)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/3Rpltn8cvCi0wyYim2Es0g/cf53ee27d59d6ac98e33afd5ecc5a78c/8331aviews.dwg
+  - type: resource
+    title: "8331A GLL Acoustic Simulation Data"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/1TZhnFSSkA8CjZPruJhyLu/216b5128841a2e02998b0e0ad9a635f0/Genelec_8331A.gll
+  - type: resource
+    title: "8331A CF2 CAD File"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/7pRsqjwO1JPhkH8zQqCtpG/58357f5fe84204f745812148c5a10cc0/Genelec_Oy-8331A.CF2
+  - type: resource
+    title: The Ones Brochure
+    url: https://assets.ctfassets.net/4zjnzn055a4v/zylrlVc4j6oUUiE4seYsO/1686cee680bf4f208599f82986be3605/gen_theones_brochure_210x279_12pager_lowres_0.pdf
+  - type: resource
+    title: RAL Custom Colors Brochure
+    url: https://assets.ctfassets.net/4zjnzn055a4v/5d59bdHUIpMKuGP21TFPHQ/594639c2005873dbe396e70338c8f999/2025_RAL_brochure_for_web.pdf
+  - type: review
+    title: Sound on Sound 8331 Review
+    url: https://www.genelec.com/sites/default/files/media/Publications/Reviews/genelec_8331_review.pdf

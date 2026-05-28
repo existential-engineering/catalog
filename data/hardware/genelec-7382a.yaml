@@ -1,0 +1,110 @@
+id: iY12bbU4GZJRINNtrVb42
+name: "7382A SAM Studio Subwoofer"
+manufacturer: genelec
+primaryCategory: subwoofer
+categories:
+  - immersive
+url: https://www.genelec.com/7382a
+description: "With a frequency response down to 15 Hz, and a maximum SPL
+  capability in excess of 130 dB, the 7382A is Genelec's most powerful subwoofer
+  to date."
+details: |-
+  The 7382A SAM Studio Subwoofer is Genelec's most powerful subwoofer to date, combining tremendous low frequency output with exceptional clarity, precise bass articulation, and the flexible calibration and bass management of the Smart Active Monitoring (SAM) family. Designed for the most demanding professional applications, it is engineered to deliver reference-grade performance at the lowest octaves where lesser subwoofers struggle to remain composed.
+
+  With a frequency response extending down to 15 Hz and a maximum short-term SPL of 129 dB (peak ≥133 dB), the 7382A is built for recording studios, film mixing facilities, mastering suites, post-production houses, EDM playback environments, and premium home theatres where headroom, accuracy, and low distortion are non-negotiable. Three 381 mm (15 inch) cone drivers are powered by a 2500 W Class D amplifier housed in a reflex-ported enclosure, producing high SPL with very low harmonic distortion (≤1% from 30-85 Hz, 2nd harmonic) and an extremely low self-generated noise floor of ≤5 dB SPL.
+
+  As a member of the Smart Active Monitoring family, the 7382A integrates with Genelec's GLM (Genelec Loudspeaker Manager) software for configuration, calibration, and ongoing control. GLM handles bass management for stereo and immersive systems, resolves the placement compromises imposed by real-world rooms, and enables the construction of carefully phase-aligned subwoofer arrays. Daisy-chained over the GLM control network, multiple 7382A units can be combined to produce uniform low-frequency coverage across large mix and dub stages.
+
+  The 7382A's I/O is comprehensive: three balanced analog XLR inputs plus a dedicated LFE input, two analog XLR outputs, AES/EBU digital input and thru, and dual RJ45 ports for the GLM control network. Together with Intelligent Signal Sensing (ISS) power management, optimized amplifier protection circuitry, and integrated bass management, the result is a subwoofer engineered to anchor the largest immersive and multichannel systems while still translating mixes accurately at any reference level.
+specs: |-
+  - Frequency response: 15 Hz - 100 Hz (-6 dB)
+  - Maximum short-term SPL: 129 dB
+  - Maximum peak SPL: ≥133 dB
+  - Self-generated noise: ≤5 dB SPL (A-weighted at 1 m)
+  - Harmonic distortion: ≤1% (30-85 Hz, 2nd harmonic)
+  - Amplifier: 2500 W Class D (bass)
+  - Drivers: 3 x 381 mm (15 in) cone
+  - Enclosure: Reflex port
+  - Analog inputs: 3 x XLR female balanced (10 kOhm) + 1 x LFE XLR
+  - Analog outputs: 2 x XLR male
+  - Digital input: 1 x XLR AES/EBU (110 Ohm)
+  - Digital output/thru: 1 x XLR AES/EBU (110 Ohm)
+  - Control network: 2 x RJ45 (CAT5) for GLM
+  - Dimensions: H 625 x W 1400 x D 558 mm
+  - Weight: 145 kg (319.7 lb)
+  - Mains voltage: 100-120 VAC / 220-230 VAC, 50/60 Hz
+  - Power consumption (ISS active): 13 W
+  - Power consumption (idle): 22 W
+  - Power consumption (full output): 1500 W
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 3
+    position: Bottom
+  - name: LFE Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 2
+    position: Bottom
+  - name: AES/EBU Digital Input
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Digital Output/Thru
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Control Network
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 2
+    position: Bottom
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: "7382A Operating Manual"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/32dV7XQf9uSmGaOwesG2W8/23921c40000b2b5141a7d9e5a6efd233/7382_operating_manual_8p.pdf
+  - type: resource
+    title: "7382A Operating Manual (Chinese)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/1LQUVGN865RfGgFE0DNXcI/a233cad0cf302a879bdd1687481cff85/7382A_Operating_Manual__Chinese_.pdf
+  - type: resource
+    title: "7382A Brochure"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2LUqycbJDWgEAgi8aSYM0k/345b7e4cf9d31a9b412ccc3a057890c3/7382_brochure_0.pdf
+  - type: resource
+    title: "7382A Line Drawings (PDF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/5elAksGaKhvCjHlUeHqwrY/95f2a67ac4797a33bc02deebeb13b340/7382a_Line_Drawings.pdf
+  - type: resource
+    title: "7382A Line Drawings (DWG)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/S5OScUz9WC6QWMqqYkuMo/d6bafec91694f9be2d3013e556d7c3ba/7382a_views.dwg
+  - type: resource
+    title: "7382A Line Drawings (DXF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/3HEnXlSDRxTt1VNhLVY69h/40344ab7454a015e3e9be8bd6f0053ee/7382a_Line_Drawings__dxf_.dxf
+  - type: resource
+    title: Immersive Solutions Guide
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4dG9V4oK3gUEsqXodIqRaJ/02ee79e6e3fd962e0d40ab14b86c8320/Genelec_Immersive_Solutions_Guide_-_2021.pdf

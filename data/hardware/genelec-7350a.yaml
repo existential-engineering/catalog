@@ -1,0 +1,180 @@
+id: A9jqHt1P2X69WITbQ094m
+name: "7350A SAM Studio Subwoofer"
+manufacturer: genelec
+primaryCategory: subwoofer
+url: https://www.genelec.com/7350a
+description: "For powerful, intelligent low frequency performance in a compact
+  package, the 7350A Smart Active subwoofer simply can't be beaten."
+details: |-
+  The 7350A is a compact Smart Active Monitoring (SAM) subwoofer designed to extend the low-frequency performance of Genelec's smaller SAM monitors such as the 8320A and 8330A. It delivers clean, precise bass reproduction while increasing total system headroom through flexible bass management, freeing the main monitors to concentrate on mid and high frequencies for a more articulate, lower-distortion result across the full range.
+
+  At its core sits a 205 mm magnetically shielded bass driver loaded into a Laminar Spiral Enclosure (LSE), Genelec's reflex-port design that minimises port turbulence and compression at high output. Driven by a 150 W Class D amplifier, the 7350A reaches a short-term maximum SPL of at least 104 dB at 1 metre half-space, with frequency response extending down to 25 Hz (±3 dB) and 22 Hz at -6 dB, while keeping harmonic distortion below 4% across the critical 30 - 85 Hz region.
+
+  Connectivity is built around six balanced XLR analog inputs plus a dedicated LFE input, five XLR analog outputs to feed satellite monitors, and a full AES/EBU digital input and output pair. Two RJ45 GLM network ports enable daisy-chaining of the subwoofer with up to dozens of SAM monitors and additional subs, supporting stereo, surround, and immersive multichannel configurations from a single calibrated system.
+
+  As a SAM product, the 7350A integrates with Genelec's GLM calibration software. GLM analyses the listening room with the supplied measurement microphone and automatically adjusts level, frequency response, distance delay, and crossover phase between the subwoofer and the main monitors. The result is a seamlessly blended monitoring chain whose mixes translate reliably to other playback environments.
+
+  Intelligent Signal Sensing (ISS) circuitry drops idle power consumption below 0.5 W to meet EU ErP requirements, and active protection circuitry safeguards the driver and amplifier under sustained heavy use. The compact 410 x 350 x 319 mm cabinet weighs 19 kg, allowing the 7350A to be placed unobtrusively beneath a desk or in tightly packed control rooms without sacrificing reference-grade low-end performance.
+specs: |-
+  - Frequency response: 25 Hz - 150 Hz (±3 dB)
+  - Low cutoff -6 dB: 22 Hz
+  - High cutoff -6 dB: 160 Hz
+  - Short term max SPL: ≥104 dB (half-space @ 1 m, 30-85 Hz)
+  - Self-generated noise: ≤5 dB SPL (A-weighted, half-space @ 1 m)
+  - Harmonic distortion: ≤4% (2nd harmonic, 30-85 Hz)
+  - Bass amplifier: 150 W Class D
+  - Bass driver: 205 mm cone, magnetically shielded
+  - Enclosure type: Reflex port (Laminar Spiral Enclosure)
+  - Analog inputs: 6 x XLR female (10 kOhm balanced) + 1 x LFE XLR female
+  - Analog outputs: 5 x XLR male
+  - Digital input: 1 x AES/EBU XLR female
+  - Digital output: 1 x AES/EBU XLR male
+  - Control: 2 x RJ45 CAT5 GLM network ports
+  - Power consumption (ISS active): ≤0.5 W
+  - Power consumption (idle): ≤8.5 W
+  - Power consumption (full output): 150 W
+  - Mains voltage: 100, 120, 220, 230 VAC 50/60 Hz (region-specific)
+  - Dimensions: 410 x 350 x 319 mm (16.14 x 13.78 x 12.56 in) (H x W x D)
+  - Weight: 19 kg (41.9 lb)
+  - Smart Active Monitoring (SAM) with GLM calibration support
+  - Intelligent Signal Sensing (ISS) auto power management
+  - Active crossovers and bass management system
+io:
+  - name: Analog Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input 5
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input 6
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: LFE Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Digital AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Digital AES/EBU Output
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 1
+    signalFlow: bidirectional
+    category: digital
+    type: midi
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 2
+    signalFlow: bidirectional
+    category: digital
+    type: midi
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: "8320A SAM Studio Monitor"
+    url: https://www.genelec.com/8320a
+  - type: resource
+    title: "8330A SAM Studio Monitor"
+    url: https://www.genelec.com/8330a
+  - type: resource
+    title: "8331A SAM Studio Monitor"
+    url: https://www.genelec.com/8331a
+  - type: resource
+    title: "7360A SAM Studio Subwoofer"
+    url: https://www.genelec.com/7360a
+  - type: resource
+    title: GLM Calibration Kit
+    url: https://www.genelec.com/glm-kit
+  - type: resource
+    title: "9301B AES/EBU Multichannel Interface"
+    url: https://www.genelec.com/9301b

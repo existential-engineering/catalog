@@ -1,0 +1,115 @@
+id: jeyGk5YxopSbt5eNqZADO
+name: "4420A Smart IP Installation Speaker"
+manufacturer: genelec
+primaryCategory: speaker
+url: https://www.genelec.com/4420a
+description: "The 4420A packs the power and flexibility of Smart IP technology
+  into an ultra-compact enclosure, bringing clarity, intelligibility and uniform
+  room coverage to the tightest of spaces."
+details: |-
+  The 4420A is the most compact member of Genelec's Smart IP family of installation loudspeakers, packing Smart IP technology into a die-cast aluminium enclosure measuring just 226 x 151 x 142 mm. Designed for bringing clarity, intelligibility and uniform room coverage to the tightest of spaces, it pairs class-leading sound quality with the single cable convenience of Power over Ethernet for an installation experience that radically simplifies cabling, rigging and commissioning.
+
+  Combining a 105 mm cone woofer and a 19 mm metal dome tweeter driven by two 50 W Class D amplifiers, the 4420A delivers a frequency response of 62 Hz to 20 kHz (+/-1.5 dB) and a short-term maximum SPL of >=100 dB, with low-frequency extension reaching down to 55 Hz at the -6 dB point. The result is a huge sound from a tiny footprint, suitable for AV, hospitality, corporate, public space and education applications.
+
+  PoE/PoE+ provides power, control and audio over a single Ethernet cable. The 4420A is fully compatible with both Dante and open streaming standards such as AES67, allowing it to drop into existing IP audio networks without proprietary lock-in. Maximum continuous power draw at full output is 25.5 W, while Intelligent Signal Sensing (ISS) reduces idle consumption to <=4 W to meet ErP efficiency requirements.
+
+  As part of the Smart IP family, the 4420A integrates tightly with Genelec's Smart IP Manager software, which provides device discovery, room EQ tools, system organisation and status monitoring across an almost unlimited number of rooms, zones, loudspeakers and audio channels. A public API command set then allows the speaker to be integrated into house automation systems for everyday use.
+
+  The 4420A is supplied with a simple bracket, mounting screw set and 3-position terminal block for the analog audio input. Standard finishes are black, white and raw aluminium, and the speaker is also available in over 120 custom RAL colour options to blend into any architectural environment.
+specs: |-
+  - Frequency response: 62 Hz - 20 kHz (+/-1.5 dB)
+  - Low cutoff -6 dB: 55 Hz
+  - High cutoff -6 dB: 39 kHz
+  - Peak SPL: >=104 dB
+  - Short term maximum SPL: >=100 dB
+  - Long term maximum SPL: >=93 dB
+  - Self-generated noise: <=5 dB (A-weighted)
+  - Harmonic distortion 50-200 Hz: <=2%
+  - Harmonic distortion >200 Hz: <=0.5%
+  - High frequency latency: 2.2 ms
+  - Bass amplifier: 50 W Class D
+  - Treble amplifier: 50 W Class D
+  - Woofer: 105 mm cone driver
+  - Tweeter: 19 mm metal dome
+  - Crossover frequency: 3000 Hz (Bass/Treble)
+  - Analog audio input: 10 kOhm balanced (Euroblock 3-position terminal block)
+  - Network: RJ45 (PoE+/PoE power and AES67/Dante audio)
+  - Power: PoE+/PoE
+  - Power consumption (ISS active): <=4 W
+  - Power consumption (idle): <=5 W
+  - Power consumption (full output): 25.5 W
+  - Dimensions: 226 x 151 x 142 mm (H x W x D)
+  - Weight: 3.1 kg (6.8 lb)
+  - Enclosure: Die-cast aluminium with reflex port
+  - Available finishes: Black, White, Raw aluminium, 120+ RAL custom colors
+io:
+  - name: Analog Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Network / Audio (PoE+, AES67/Dante)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: PoE+ Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: "4420A Operating Manual"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2drDUvvV00SVPomLlfvbIo/76789221bfb2ae92c2a85b6eafe9b593/4420A_Operating_Manual.pdf
+  - type: resource
+    title: "4420 Quick Setup Guide"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2Ivezrrla3nwWuESbYe8Kb/b1722a270d2d8aaad68fe25425a57bc9/4420_-_Quick_Setup_Guide.pdf
+  - type: resource
+    title: Smart IP Manager Operating Manual
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4jOXdqf3g9JqceShLb5fXX/249153e85507eec48f8855f9f6af2946/Genelec_Smart_IP_Manager_Operating_Manual.pdf
+  - type: resource
+    title: "4420A Line Drawings (PDF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/7jDbxZGeyGX6aNdu2zjpXl/5cb2326d52da884ae46ff5044a48aaab/4420A_views.pdf
+  - type: resource
+    title: "4420A Line Drawings (DWG)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/GPP7oVLDbkxUaiAiQ4LYc/f74f7b16fb8022de94b916442c68dbeb/4420A_views.dwg
+  - type: resource
+    title: "4420A Simulation File Use (PDF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/vcFsieY7zth7aTnP7aFT1/db4ae4a79a9eb12feba3676ba2e74a4e/NOTE-4420a-simulation-file-use.pdf
+  - type: resource
+    title: "4420 BIM Object (RFA)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2WafcqpunsEKznwOaIPUrr/9ffc1ff5c0bb9febc3a36518c13cb95b/Genelec_4420.rfa
+  - type: resource
+    title: "4420 BIM Object (SKP)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/7wxkK18toYvV56YJlhnHwp/ebc62946374337c12ab89e5efa8b9372/Genelec_4420.skp
+  - type: resource
+    title: "4420 BIM Object (DWG)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/1Vepu6NZYGDHaBpVqLR5h1/db2c6d938b60abe2195dc9b6c98b5704/Genelec_4420.dwg
+  - type: resource
+    title: "4420 BIM Object (DXF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/5W2Ub5wCmrFk3tSmFuFzsk/abcf4fc4f14a1c09c66f4be7f0e55b79/Genelec_4420.dxf
+  - type: resource
+    title: "4420 BIM Object (IFC)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4PFtj1BLBueBx9sPVLpGgT/8736b15084ee3869ab89f1f6051e53a8/Genelec_4420.ifc
+  - type: resource
+    title: "4420 BIM Object (PCP)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4IGKaHzu2r4SbU9Vr5NIRc/87228070d7bfa4cea440bc7c1260ae0b/Genelec_4420.pcp
+  - type: resource
+    title: Smart IP Brochure (2025)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/sUWMz5pkxr5i1YGWSaevT/22a196e38179cc8a70b66610bb2faa20/2025_Smart_IP_brochure_BBAGE205-E_A4_WEB.pdf
+  - type: resource
+    title: Smart IP FAQ (2024)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/645EyeQhfGzdryNZYU8RhT/9d52f1bca96747f8efb8b74a27e1ab60/2024_Genelec_Smart_IP_FAQ.pdf
+  - type: resource
+    title: RAL Custom Colors Brochure
+    url: https://assets.ctfassets.net/4zjnzn055a4v/5d59bdHUIpMKuGP21TFPHQ/594639c2005873dbe396e70338c8f999/2025_RAL_brochure_for_web.pdf
+  - type: review
+    title: Inavate EMEA - Genelec 4420 Smart IP Review
+    url: https://assets.ctfassets.net/4zjnzn055a4v/5qQvtNj4leaxxtfeJzXCqV/87b1d5dce8f518f87c80f30477fac662/Inavate_EMEA_-_Genelec_4420_Review.pdf

@@ -1,0 +1,95 @@
+id: 2CTeixrdU-AjY3BDb0Uu7
+name: "8320A"
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+url: https://www.genelec.com/8320a
+description: "Compact enough to fit into the tightest of spaces - yet
+  intelligent enough to adapt to your recording environment - the 8320A is your
+  entry point into the world of Smart Active Monitoring."
+details: |-
+  The 8320A is Genelec's entry point into the Smart Active Monitoring (SAM) family, designed to bring intelligent, room-adaptive monitoring to compact installations and tight studio spaces. Its die-cast recycled aluminium enclosure houses a 105 mm bass driver and 19 mm metal dome tweeter, each driven by a 50 W Class D amplifier, producing transparent and truthful reproduction across a 66 Hz - 20 kHz (±1.5 dB) range.
+
+  Despite its small footprint, the 8320A delivers a peak SPL of ≥107 dB and a wide, uncoloured sweet spot, giving engineers a stable reference for mix decisions. The curved Minimum Diffraction Enclosure (MDE) and integrated Directivity Control Waveguide (DCW) work together to provide precise, detailed performance both on and off axis, while a rear reflex port extends low-frequency response from the compact cabinet.
+
+  As a SAM monitor, the 8320A integrates closely with Genelec's GLM software via two RJ45 network ports, allowing the AutoCal 2 algorithm to measure the room and apply compensation for detrimental acoustic influences. The system supports configurations from mono through stereo to immersive multichannel, with up to 60 dB of level alignment and around 200 ms of delay alignment available per monitor.
+
+  The 8320A includes Genelec's Intelligent Signal Sensing (ISS) circuitry, dropping consumption below 0.5 W in sleep, alongside the Iso-Pod stand for decoupling and tilt adjustment, and versatile mounting options for installation flexibility. Time equalization above 400 Hz keeps input-to-output delay constant for predictable behaviour in calibrated systems.
+specs: |-
+  - Frequency response: 66 Hz - 20 kHz (±1.5 dB)
+  - Low cutoff -6 dB: 55 Hz
+  - High cutoff -6 dB: 23 kHz
+  - Peak SPL: ≥107 dB
+  - Short term max SPL: ≥100 dB
+  - Long term max SPL: ≥94 dB
+  - Self-generated noise: ≤5 dB SPL (A-weighted)
+  - Harmonic distortion 50–200 Hz: ≤3%
+  - Harmonic distortion >200 Hz: ≤0.5%
+  - Group delay (Extended Phase Linearity OFF): 2.8 ms
+  - Bass driver: 105 mm cone
+  - Treble driver: 19 mm metal dome
+  - Bass amplifier: 50 W Class D
+  - Treble amplifier: 50 W Class D
+  - Enclosure: Die cast aluminium, reflex port
+  - Signal input: 1 x XLR (female, balanced, 10 kOhm)
+  - Control: 2 x RJ45 (CAT5) GLM network connectors
+  - Power consumption (sleep, ISS): <0.5 W
+  - Power consumption (idle): ≤3 W
+  - Power consumption (full output): 50 W
+  - Mains: 100-240 VAC, 50/60 Hz
+  - Height: 230 mm (242 mm with Iso-Pod)
+  - Width: 151 mm
+  - Depth: 142 mm
+  - Weight: 3.2 kg (7.1 lb)
+io:
+  - name: Analog In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Network In
+    signalFlow: input
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Network Thru
+    signalFlow: output
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Mains
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: Operating Manual 8320A
+    url: https://assets.ctfassets.net/4zjnzn055a4v/W5GSJrmlY26mIkaw0m6sW/5123b5adead53fbb0774b9b04479ffca/8320_and_8330_opman_c.pdf
+  - type: resource
+    title: Brochure 8320A
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2fPKyKnMNmUuiM4K6S0mGc/997fe2850756db2b4d2dd88f0e139d15/genelec_sam_brochure_2014_web.pdf
+  - type: resource
+    title: Line Drawings (PDF)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2e8FczggMEKaUu2y22gKs2/80a1bb283f05bbc067ad9e924677c249/8320a_views_0.pdf
+  - type: resource
+    title: Line Drawings (DWG)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4IWqIND11uOg2esYoUGoiI/1cbe2e959d53b9ef6be392d17fd73594/8320a_views.dwg
+  - type: resource
+    title: Simulation File (EASE3)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/grQQGlDegw6lTnk63aJbz/253d213e0db33bb31f28d5f1cecea383/genelec-8020b_ease3.zip
+  - type: resource
+    title: Simulation File (EASE4)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/7D7VCH4LboHL2suzh8m2lf/fd1b2dd95bc47b89bf1d2f37ceab3a51/genelec-8020b_ease4.zip
+  - type: resource
+    title: Simulation File (CLF)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/5ETc2yl7C1crUkSiTyLtxH/cacae536908e9d9c32e15c3bffd0e9fc/genelec_oy-8020.cf2.zip

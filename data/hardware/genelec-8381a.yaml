@@ -1,0 +1,176 @@
+id: WgrzcVCV4TcZINTdVa-HS
+name: "8381A SAM Adaptive Point Source Main Monitor"
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+  - immersive
+url: https://www.genelec.com/8381a
+description: "Our 8381A empowers engineers and creators to perceive every sonic
+  detail, offering true-to-life sound level and dynamics – with the full
+  flexibility of free-standing monitor placement and advanced room adaption."
+details: |-
+  The 8381A is Genelec's flagship SAM Adaptive Point Source Main Monitor, a free-standing, three-way main monitoring loudspeaker engineered to deliver reference-grade performance at sound levels and dynamics that previously required custom soffit-mounted main monitors. It produces a short-term maximum SPL of 126 dB with a frequency response extending from 20 Hz to 35 kHz (-6 dB), accurate to within ±1.5 dB, and is housed in a two-piece MDF enclosure measuring 1458 x 500 x 694 mm and weighing 140 kg.
+
+  Acoustic performance comes from a point-source driver array combining a 25 mm coaxial tweeter and 127 mm coaxial midrange, supplemented by four 127 mm midrange drivers in a Quad Midrange System (QMS) configuration, plus a 381 mm front-firing woofer and two additional 381 mm bass drivers. Crossover points are precisely tuned at 50-100 Hz, 150-250 Hz, 500 Hz and 1800 Hz, with all amplification handled by Class D modules delivering up to 2 x 5926 W of full-range power across the system.
+
+  As a Smart Active Monitoring (SAM) product, the 8381A integrates with Genelec Loudspeaker Manager (GLM) software, allowing automatic room calibration, individual driver alignment, level matching and group management. Four RJ45 GLM network ports support deep system integration including stereo, multichannel and immersive configurations, and the monitor ships with a complimentary on-site SonicAdvisor calibration session plus a remote consultation in the first year of ownership.
+
+  Connectivity is comprehensive: two balanced XLR analog inputs and two analog outputs, two AES/EBU inputs and two AES/EBU output/thru ports, and four RJ45 control connectors for GLM networking. The amplifier section is housed in a separate RAM-81 unit (11 kg per amplifier) connected to the monitor cabinet, allowing the amplification to be remoted away from the listening position.
+
+  The 8381A is available in standard Black (8381AM) and White (8381AW) finishes. Intelligent Signal Sensing (ISS) keeps idle consumption to ≤1.2 W in standby and ≤140 W at idle, while full output draws 2200 W. Self-generated noise stays below 20 dB(A). The monitor has been recognized with a 2024 TEC Award and a 2024 Sound on Sound Award.
+specs: |-
+  - Three-way point source main monitor with Quad Midrange System (QMS)
+  - Short term maximum SPL: 126 dB
+  - Peak SPL: >= 129 dB
+  - Long term maximum SPL: >= 121 dB
+  - Frequency response: 20 Hz - 35 kHz (-6 dB)
+  - Frequency response accuracy: +/- 1.5 dB
+  - Amplifier power: 2 x 5926 W full range (Class D)
+  - Bass drivers: 2 x 381 mm (low woofer + front woofer)
+  - Midrange drivers: 4 x 127 mm (Quad Midrange System)
+  - Coaxial midrange: 127 mm
+  - Coaxial tweeter: 25 mm
+  - Crossover points: 50-100 Hz, 150-250 Hz, 500 Hz, 1800 Hz
+  - Self-generated noise: < 20 dB(A)
+  - Power consumption (ISS active): <= 1.2 W
+  - Power consumption (idle): <= 140 W
+  - Power consumption (full output): 2200 W
+  - Mains voltage: 100-240 VAC 50/60 Hz
+  - Dimensions: 1458 x 500 x 694 mm (H x W x D)
+  - Weight: 140 kg (308.6 lb)
+  - Enclosure material: MDF
+  - External RAM-81 amplifier unit: 11 kg (24.3 lb) each
+  - Minimum Diffraction Coaxial (MDC) driver technology
+  - Directivity Control Waveguide (DCW) technology
+  - Intelligent Signal Sensing (ISS) auto power management
+  - GLM (Genelec Loudspeaker Manager) network calibration support
+  - Available colors: Black (8381AM), White (8381AW)
+io:
+  - name: Analog Input A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output A
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output B
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Input A
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Input B
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Output / Thru A
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Output / Thru B
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 1
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 2
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 3
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 4
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: "8381A Operating Manual"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/3Qz0YaBS9ZImcREJpvzUaB/3cb6200045e452d8fc6f029aad9fcd87/8381A_Operating_Manual.pdf
+  - type: resource
+    title: Genelec 8381A Brochure
+    url: https://assets.ctfassets.net/4zjnzn055a4v/5anHfgwt8apDH23eiSVnYQ/76ac95fbb52dfa46edf6ad450778cdaf/Genelec_8381A_Brochure.pdf
+  - type: resource
+    title: Genelec 8381A Brochure (Chinese)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/RsGGKPiRqTjIjbnMR2QKo/dee550343049f6da618b1b85c442ff0c/Genelec_8381A_brochure-__1023.pdf
+  - type: resource
+    title: Genelec Immersive Solutions Guide
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4dG9V4oK3gUEsqXodIqRaJ/02ee79e6e3fd962e0d40ab14b86c8320/Genelec_Immersive_Solutions_Guide_-_2021.pdf
+  - type: resource
+    title: "8381A Line Drawing (PDF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2X6xpS4IYPdHRVcXUQFgF2/3e6392507680e564b38079b50572e248/8381A_Line_Drawing__pdf_.pdf
+  - type: resource
+    title: "8381A Line Drawing (DWG)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/5RANIpkJp71lIYG6kAoqgv/8ce241a55a76940f1ac286a6cc20496a/8381A_Line_Drawing__dwg_.dwg
+  - type: resource
+    title: RAM81 Line Drawing (PDF)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/5undStLPGZkQ7eNLzdZf8I/df19904ebb29054591c7b92669cd8921/RAM81_Line_Drawing__pdf_.pdf
+  - type: resource
+    title: RAM81 Line Drawing (DWG)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/6nGKMm3BXiqzbTTyDuhIAY/d9b1c6a6f0e6b93f27667b618aa7c389/RAM81_Line_Drawing__dwg_.dwg
+videos:
+  - videoId: FkDhNGJWHvw
+    provider: youtube
+    title: "Genelec 8381A | Launch and overview"
+  - videoId: TEtIhHGwdgk
+    provider: youtube
+    title: "Introducing The Main Ones | 8381A"
+  - videoId: pF7YyV8o5hU
+    provider: youtube
+    title: Genelec UNIO Explained

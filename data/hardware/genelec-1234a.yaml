@@ -1,0 +1,92 @@
+id: d2RjMO5qRdO4J6240PqaB
+name: "1234A SAM Studio Monitor"
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+url: https://www.genelec.com/1234a
+description: "Built to exceed expectations at the highest levels, the 1234A
+  smart active studio monitor is the trusted choice of professionals, with a
+  feature set to match."
+details: |-
+  The Genelec 1234A is a Smart Active Monitor (SAM) designed as a primary reference solution for the world's most demanding recording studios, post-production facilities, and mastering suites. It is engineered to deliver exceptional accuracy and reliability at very high sound pressure levels, with the long-term consistency expected of a flagship main monitor.
+
+  Its three-way active design pairs dual 305 mm bass drivers with a 125 mm midrange and a 25 mm metal-dome tweeter, driven by an external RAM-XL amplifier unit delivering 2 x 750 W (bass), 400 W (mid), and 250 W (treble) of Class D power. This combination produces a frequency response of 29 Hz - 21 kHz (-6 dB) and short-term maximum output of 125 dB SPL, with peak output exceeding 130 dB.
+
+  The Directivity Control Waveguide (DCW) shapes off-axis behavior so the room is excited as evenly as possible, broadening the usable listening area and improving translation between rooms. The MDF enclosure uses a reflex port for extended low-frequency reach without compromising the time-domain behavior of the system.
+
+  As a SAM monitor, the 1234A is fully integrated with Genelec Loudspeaker Manager (GLM) software. Connected over the GLM control network via RJ45, the monitor can be calibrated to the acoustic environment, with automatic adjustments for room response, level, distance delay, and group delay - including Genelec's optional Extended Phase Linearity processing for the lowest possible group delay.
+
+  Practical touches reinforce its role as a working main monitor: Intelligent Signal Sensing (ISS) standby reduces idle consumption, both analog (XLR) and AES/EBU digital inputs are accepted with a digital thru output for daisy-chaining, and the unit is supplied with an individually calibrated amplifier, Speakon cables, and full GLM-ready networking out of the box.
+specs: |-
+  - Frequency Response: 29 Hz - 21 kHz (-6 dB); 34 Hz - 20 kHz (±2 dB)
+  - Short Term Max Spl: ≥125 dB
+  - Peak Spl: ≥130 dB
+  - Long Term Max Spl: ≥120 dB
+  - Self Generated Noise: ≤0 dB SPL (A-weighted at 2m)
+  - Harmonic Distortion: 50-200 Hz ≤3%; >200 Hz ≤0.5%
+  - Group Delay: 5.2 ms (Extended Phase Linearity OFF)
+  - Bass Amplifier: 2 × 750 W Class D
+  - Midrange Amplifier: 400 W Class D
+  - Treble Amplifier: 250 W Class D
+  - Bass Drivers: 2 × Ø305 mm cone
+  - Midrange Driver: Ø125 mm cone
+  - Treble Driver: Ø25 mm metal dome
+  - Height: 700 mm
+  - Width: 890 mm
+  - Depth: 383 mm
+  - Weight: 73 kg (160.9 lb)
+  - Enclosure Material: MDF
+  - Enclosure Type: Reflex port
+  - Mains Voltage: 100-120 VAC / 220-230 VAC, 50/60 Hz
+  - Idle Power Consumption: ≤40 W
+  - Full Output Power Consumption: 2500 W
+  - Iss Active Power Consumption: ≤6 W
+  - Analog Input Impedance: 10 kOhm balanced
+  - Digital Input Impedance: 110 Ohm AES/EBU
+  - Amplifier Unit: RAM-XL (individually calibrated)
+  - Product Code: 1234APM
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Digital Input
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Digital Output/Thru
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Control Network In
+    signalFlow: bidirectional
+    category: digital
+    type: "aes/ebu"
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Control Network Out
+    signalFlow: bidirectional
+    category: digital
+    type: "aes/ebu"
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom

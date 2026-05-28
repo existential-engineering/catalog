@@ -1,0 +1,131 @@
+id: dgBnomFV87nWrjnx_69EZ
+name: "1238AC SAM Studio Monitor"
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+url: https://www.genelec.com/1238ac
+description: "Shaped by decades of engineering expertise and armed with the
+  power of Smart Active Monitoring technology, the 1238AC is a centre channel
+  monitor designed for the most demanding applications."
+details: |-
+  The 1238AC is a large three-way Smart Active Monitoring (SAM) main studio monitor, engineered as the dedicated centre-channel companion to the 1238A. It is designed for the most demanding multi-channel and immersive monitoring applications, where extremely uncoloured and precise on- and off-axis response is required even at high SPLs and longer listening distances typical of large control rooms, dubbing stages, and mastering suites.
+
+  Mechanically the 1238AC supports both horizontal and vertical orientations, giving system integrators flexibility when fitting the monitor into film, broadcast, or immersive music rooms. The Directivity Control Waveguide (DCW) and carefully tuned crossovers produce a wide, stable sweet spot with controlled directivity, so engineers can move freely around the console and still make accurate, reliable mix decisions without the imaging shifting between seats.
+
+  The driver complement pairs two 250 mm (10 in) bass cones with a 125 mm (5 in) midrange cone and a 25 mm (1 in) metal-dome tweeter, mounted in an MDF reflex-ported enclosure. Total amplification is 950 W, split between a 500 W Class D bass amplifier, a 250 W Class D midrange amplifier, and a 200 W Class AB treble amplifier. The system reaches a peak SPL of at least 124 dB while maintaining a frequency response of 35 Hz to 20 kHz (±2 dB).
+
+  Amplification, DSP, and connectivity live in a separate RAM-L 3U rack-mounted amplifier unit, each individually calibrated to its paired monitor at the Genelec factory. The RAM-L provides one balanced XLR analog input, an AES/EBU digital input with a thru output, and two RJ45 GLM network ports for daisy-chaining the monitor into a larger SAM system. Speaker-level connections to the cabinet are made via two 4-pole Speakon cables (10 m supplied).
+
+  As part of the SAM family, the 1238AC integrates with Genelec's GLM calibration software, which uses the measurement microphone to analyse the listening environment and automatically compensates for detrimental room influences — adjusting level, distance delay, and frequency response so the monitor performs optimally in its specific room. Intelligent Signal Sensing (ISS) keeps idle power consumption below 0.5 W to meet EU ErP requirements without sacrificing always-on responsiveness.
+specs: |-
+  - Frequency response: 35 Hz - 20 kHz (±2 dB)
+  - Low cutoff -6 dB: 30 Hz
+  - High cutoff -6 dB: 22 kHz
+  - Peak SPL: ≥124 dB
+  - Short term max SPL: ≥121 dB
+  - Long term max SPL: ≥116 dB
+  - Self-generated noise: ≤10 dB SPL (A-weighted)
+  - Harmonic distortion: ≤1% (50-200 Hz), ≤0.5% (>200 Hz)
+  - Group delay (Extended Phase Linearity OFF): 5.1 ms
+  - Bass driver: 2 x 250 mm (10 in) cone
+  - Midrange driver: 125 mm (5 in) cone
+  - Treble driver: 25 mm (1 in) metal dome
+  - Bass amplifier: 500 W Class D
+  - Midrange amplifier: 250 W Class D
+  - Treble amplifier: 200 W Class AB
+  - Total amplifier power: 950 W
+  - Analog input: 1 x XLR female (balanced, 10 kOhm)
+  - Digital input: 1 x AES/EBU XLR female (110 Ohm)
+  - Digital output/thru: 1 x AES/EBU XLR male (110 Ohm)
+  - Control: 2 x RJ45 CAT5 GLM network ports
+  - Power consumption (ISS active): ≤0.5 W
+  - Power consumption (idle): ≤25 W
+  - Power consumption (full output): 750 W
+  - Mains voltage: 100-240 VAC 50/60 Hz
+  - Enclosure material: MDF
+  - Enclosure type: Reflex port
+  - Monitor dimensions: 350 x 950 x 453 mm (H x W x D)
+  - Monitor weight: 60 kg (132.3 lb)
+  - RAM-L amplifier unit: 132 x 483 x 252 mm (3U rack), 6 kg (13.2 lb)
+  - Horizontal or vertical orientation supported
+  - Smart Active Monitoring (SAM) with GLM calibration support
+  - Intelligent Signal Sensing (ISS) auto power management
+  - Directivity Control Waveguide (DCW)
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Digital AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Digital AES/EBU Output/Thru
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 1
+    signalFlow: bidirectional
+    category: digital
+    type: midi
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 2
+    signalFlow: bidirectional
+    category: digital
+    type: midi
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: "1238AC Operating Manual"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/3bUKl8cK6Q6YyM6ceooKWw/f569e3497059c30df1eebf5a8654177e/1238ac_op-man_0.pdf
+  - type: resource
+    title: "1238AC Operating Manual (Chinese)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/3LkWvGdnieTxzUauldeyXc/fdd839b3e1bc75eb58db6d15771762aa/1238AC_Operating_Manual__Chinese_.pdf
+  - type: resource
+    title: "1238AC Line Drawings (PDF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2iskf46Iy0UQCiYUOm2AOw/a07e24d22914242c2286842d19766177/1238ac_views.pdf
+  - type: resource
+    title: RAM-L Line Drawings (PDF)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/1cpgrWAnCIU8maSWgEuQy6/8e0977980bb5e20363c28951c4425ae4/ram_l_views_8_2014.pdf
+  - type: resource
+    title: SAM Series Full Line Catalogue
+    url: https://assets.ctfassets.net/4zjnzn055a4v/xd0RmOyjysCNLGhQb0lKJ/70ef78fb45891df02746b4632b053013/SAM_Series_Full_Line_Catalogue_2021.pdf
+  - type: resource
+    title: Genelec Immersive Solutions Guide
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4dG9V4oK3gUEsqXodIqRaJ/02ee79e6e3fd962e0d40ab14b86c8320/Genelec_Immersive_Solutions_Guide_-_2021.pdf
+  - type: resource
+    title: "1237A SAM Studio Monitor"
+    url: https://www.genelec.com/1237a
+  - type: resource
+    title: "1238A SAM Studio Monitor"
+    url: https://www.genelec.com/1238a
+  - type: resource
+    title: "1238DF SAM Studio Monitor"
+    url: https://www.genelec.com/1238df
+  - type: resource
+    title: "7380A SAM Studio Subwoofer"
+    url: https://www.genelec.com/7380a
+  - type: resource
+    title: GLM Calibration Kit
+    url: https://www.genelec.com/glm-kit

@@ -1,0 +1,75 @@
+id: TXStOWfytF0xAH2NeAjpw
+name: "8341A"
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+url: https://www.genelec.com/8341a
+description: "High headroom three-way with unbelievable imaging. The 8341A is
+  the point source monitor with the perfect blend of size and performance."
+details: |-
+  configuration: Three-way coaxial point source
+
+  enclosure: Die-cast aluminum (MDE), reflex port
+
+  drivers: {"bass": "2x 170 x 90 mm racetrack", "midrange": "90 mm coaxial", "treble": "19 mm coaxial metal dome"}
+
+  amplifiers: {"bass": "250 W Class D", "midrange": "150 W Class D", "treble": "150 W Class D"}
+
+  crossovers: 500 Hz (Bass/Mid), 3000 Hz (Mid/Treble)
+
+  calibration: GLM (Genelec Loudspeaker Manager) compatible — SAM (Smart Active Monitoring)
+specs: |-
+  - Frequency Response Minus6D B: 38 Hz – 37 kHz
+  - Frequency Response Plus Minus1_5D B: 45 Hz – 20 kHz
+  - Peak Spl: ≥118 dB
+  - Short Term Max Spl: ≥110 dB
+  - Long Term Max Spl: ≥101 dB
+  - Harmonic Distortion: ≤2% (50–100 Hz), ≤0.5% (>100 Hz)
+  - Group Delay Eploff: 3.3 ms
+  - Group Delay Eplon: 7.0 ms
+  - Height With Iso Pod: 370 mm
+  - Height: 351 mm
+  - Width: 237 mm
+  - Depth: 243 mm
+  - Weight: 9.8 kg (21.6 lb)
+  - Power Consumption Iss: ≤0.5 W
+  - Power Consumption Idle: ≤16 W
+  - Power Consumption Full Output: 250 W
+  - Mains: 100–240 VAC, 50/60 Hz
+io:
+  - name: Analog In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU In
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Thru
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Network In
+    signalFlow: input
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Network Thru
+    signalFlow: output
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom

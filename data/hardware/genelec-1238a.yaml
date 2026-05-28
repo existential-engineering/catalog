@@ -1,0 +1,133 @@
+id: YO9TvXCnMdCmWzgb9nJYQ
+name: "1238A SAM Studio Monitor"
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+url: https://www.genelec.com/1238a
+description: "Our largest three-way midfield design, the 1238A adapts to your
+  acoustic space to deliver high-SPL reference precision."
+details: |-
+  The 1238A is the largest three-way midfield Smart Active Monitor in Genelec's main monitoring lineup, designed as a reference for studios that need high-SPL accuracy at longer listening distances. Its three-way driver array couples a 385 mm bass cone with a 125 mm midrange cone and a 25 mm metal-dome tweeter mounted in a Directivity Control Waveguide (DCW), delivering a frequency response of 35 Hz to 20 kHz within plus or minus 2.5 dB and a peak SPL of at least 124 dB at 1 m.
+
+  Power is supplied by the outboard RAM-L amplifier module, combining 500 W of Class D for the bass, 250 W of Class D for the midrange, and 200 W of Class AB for the treble. Decoupling the amplifier from the cabinet keeps mechanical noise and heat away from the enclosure and allows flush-mount installations where the electronics live in a separate equipment rack. Protection circuitry guards against driver damage during overload conditions while still preserving headroom for transient material.
+
+  Connectivity covers analog and digital signal paths. A balanced 10 kOhm XLR female input handles analog, while a pair of 110 Ohm AES/EBU XLR connectors provide a digital input and a thru/output for daisy-chaining across a monitor array. Two RJ45 GLM network ports carry the calibration and control bus, and the universal 100-240 VAC supply makes the monitor deployable worldwide without rewiring.
+
+  As a SAM (Smart Active Monitoring) product, the 1238A integrates with the GLM software (used with the 9320A Reference Controller or GLM Calibration Kit, sold separately) to measure the listening environment, compensate for room-induced acoustic anomalies, and align level, delay, and routing across a calibrated monitoring system. This makes the model a fit for mastering, scoring stages, immersive mix rooms, broadcast control rooms, and post-production suites where neutral high-SPL reference is required.
+
+  Intelligent Signal Sensing (ISS) brings standby draw down to no more than 0.5 W, while idle is no more than 25 W and full output is 750 W. The MDF reflex-port enclosure measures 810 x 480 x 420 mm and weighs 57 kg (125.7 lb). Each unit ships with a 1.8 m mains cable, a 5 m RJ45 cable, a front plate, two rack-mount ears for the RAM-L, and the operating manual. The product is covered by a 2-year warranty extendable to 5 years through free MyGenelec registration.
+specs: |-
+  - Three-way Smart Active Monitor (SAM)
+  - Peak SPL >= 124 dB at 1 m
+  - Short term maximum SPL >= 121 dB
+  - Long term maximum SPL >= 116 dB
+  - Frequency response: 35 Hz - 20 kHz (+/- 2.5 dB)
+  - Low cutoff (-6 dB): 30 Hz
+  - High cutoff (-6 dB): 22 kHz
+  - Self-generated noise: <= 10 dB SPL (A-weighted) at 1 m
+  - Bass driver: 385 mm cone
+  - Midrange driver: 125 mm cone
+  - Treble driver: 25 mm metal dome with DCW waveguide
+  - Bass amplifier: 500 W Class D
+  - Midrange amplifier: 250 W Class D
+  - Treble amplifier: 200 W Class AB
+  - Harmonic distortion (50-200 Hz): <= 1%
+  - Harmonic distortion (>200 Hz): <= 0.5%
+  - Group delay (Extended Phase Linearity OFF): 5.1 ms
+  - Analog input: XLR female, 10 kOhm balanced
+  - Digital input: AES/EBU XLR female, 110 Ohm
+  - Digital output/thru: AES/EBU XLR male, 110 Ohm
+  - GLM network: 2 x RJ45 (CAT5)
+  - Mains voltage: 100-240 VAC 50/60 Hz
+  - Power consumption (ISS active): <= 0.5 W
+  - Power consumption (idle): <= 25 W
+  - Power consumption (full output): 750 W
+  - Dimensions (H x W x D): 810 x 480 x 420 mm
+  - Weight: 57 kg (125.7 lb)
+  - Enclosure: MDF, reflex port
+  - Outboard RAM-L amplifier module (rack-mountable)
+  - Intelligent Signal Sensing (ISS) auto power management
+  - GLM (Genelec Loudspeaker Manager) network calibration support
+  - Includes mains cable (1.8 m), RJ45 cable (5 m), front plate, 2 rack-mount ears, operating manual
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Digital AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Digital AES/EBU Output / Thru
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 1
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 2
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: "1237A / 1238A Operating Manual (English)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4J6G6Z2Y7Cksuoc0Sswq40/32080d2c45e1de8780d2ac6562a80314/genelec_1237a-1238a_opman.pdf
+  - type: resource
+    title: "1238A Operating Manual (Chinese)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2znXYFPYRF3hVzPyyiMWLM/c620143aa93e41915807bc04a744a88f/1238A_Operating_Manual__Chinese_.pdf
+  - type: resource
+    title: SAM 1237A / 1238A Datasheet (Chinese)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/epcoH6aVygusUewCysEe2/e3af70b9e700cee96adec91f51580981/sam_1237a_1238a_chn.pdf
+  - type: resource
+    title: "1238A Drawing Views (PDF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4sqtYTrtQcCcakqeM4as4e/dbd857cb6eb5cb5c1448fe75d05670e2/1238aviews.pdf
+  - type: resource
+    title: "1238A CAD Drawing (DWG)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/3Kgj37wO1aYkuwY2qy8GkI/3c58e8a5c9da3176b0d96ce37548223c/1238aviews.dwg
+  - type: resource
+    title: RAM-L Amplifier Drawing Views (PDF)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/1cpgrWAnCIU8maSWgEuQy6/8e0977980bb5e20363c28951c4425ae4/ram_l_views_8_2014.pdf
+  - type: resource
+    title: RAM-L Amplifier CAD Drawing (DWG)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/5dQsfxmx7aWgoOmGmkgKqa/e0997e7ed04308f2321c73aaae99afdf/ram_l_views_8_2014.dwg
+  - type: resource
+    title: "1238A GLL Acoustic Simulation File"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/1LADsOzY1JjIOF4gUnQYkA/70f6c381f740441d16d81adc2dab6a34/Genelec_1238A.gll
+  - type: resource
+    title: "1238A CLF Acoustic Simulation File"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2UtcT1TZiSLq6u7JcScKIv/4cb0437ad63385e822c75cfbdfbc5d71/Genelec_Oy-1238A.CF2
+  - type: resource
+    title: SAM Series Full Line Catalogue (2021)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/xd0RmOyjysCNLGhQb0lKJ/70ef78fb45891df02746b4632b053013/SAM_Series_Full_Line_Catalogue_2021.pdf
+  - type: resource
+    title: Genelec Immersive Solutions Guide (2021)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4dG9V4oK3gUEsqXodIqRaJ/02ee79e6e3fd962e0d40ab14b86c8320/Genelec_Immersive_Solutions_Guide_-_2021.pdf
+  - type: resource
+    title: Genelec Monitors In-Room Performance
+    url: https://assets.ctfassets.net/4zjnzn055a4v/12qJYpLlyeGCGsacAEkCge/54ca8a1983cd38fe5cb8fa02d26f3c9f/genelec_monitors_in-room_performance.pdf
