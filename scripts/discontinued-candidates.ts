@@ -138,9 +138,12 @@ function generateReport(): DiscontinuedReport {
   };
 
   // First pass: collect every entry by id so we can resolve `supersedes`
-  // targets, and build a reverse-index of supersession references.
+  // targets, and build a reverse-index of supersession references. Skip
+  // self-loops and prune 2-cycles after the index is built; both are data
+  // errors that would otherwise produce bogus tier-1 candidates.
   const entriesById = new Map<string, { file: string; entry: Entry; type: EntryType }>();
   const supersededBy = new Map<string, string[]>();
+  const supersedesOf = new Map<string, string>();
 
   for (const type of ENTRY_TYPES) {
     const files = getYamlFiles(path.join(DATA_DIR, type));
@@ -151,11 +154,24 @@ function generateReport(): DiscontinuedReport {
       if (entry.id) {
         entriesById.set(entry.id, { file, entry, type });
       }
-      if (entry.supersedes && entry.id) {
+      if (entry.supersedes && entry.id && entry.supersedes !== entry.id) {
         const list = supersededBy.get(entry.supersedes) ?? [];
         list.push(entry.id);
         supersededBy.set(entry.supersedes, list);
+        supersedesOf.set(entry.id, entry.supersedes);
       }
+    }
+  }
+
+  // Prune 2-cycles (A.supersedes === B && B.supersedes === A). Neither
+  // direction is unambiguously "the current product" so we skip both
+  // ends from the auto-tag path.
+  for (const [targetId, sourceIds] of supersededBy.entries()) {
+    const filtered = sourceIds.filter((sourceId) => supersedesOf.get(targetId) !== sourceId);
+    if (filtered.length === 0) {
+      supersededBy.delete(targetId);
+    } else {
+      supersededBy.set(targetId, filtered);
     }
   }
 

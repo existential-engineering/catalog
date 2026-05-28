@@ -41,17 +41,31 @@ function hasCategory(entry: Entry, slug: string): boolean {
 function findTier1Candidates(): Array<{ file: string; entry: Entry; supersededBy: string[] }> {
   const entriesById = new Map<string, { file: string; entry: Entry }>();
   const supersededBy = new Map<string, string[]>();
+  const supersedesOf = new Map<string, string>();
 
   for (const type of ENTRY_TYPES) {
     const files = getYamlFiles(path.join(DATA_DIR, type));
     for (const file of files) {
       const entry = loadYamlFile<Entry>(file);
       if (entry.id) entriesById.set(entry.id, { file, entry });
-      if (entry.supersedes && entry.id) {
+      // Skip self-loops; they'd auto-tag the entry as its own successor.
+      if (entry.supersedes && entry.id && entry.supersedes !== entry.id) {
         const list = supersededBy.get(entry.supersedes) ?? [];
         list.push(entry.id);
         supersededBy.set(entry.supersedes, list);
+        supersedesOf.set(entry.id, entry.supersedes);
       }
+    }
+  }
+
+  // Prune 2-cycles (A.supersedes === B && B.supersedes === A): ambiguous,
+  // skip both directions from the auto-tag path.
+  for (const [targetId, sourceIds] of supersededBy.entries()) {
+    const filtered = sourceIds.filter((sourceId) => supersedesOf.get(targetId) !== sourceId);
+    if (filtered.length === 0) {
+      supersededBy.delete(targetId);
+    } else {
+      supersededBy.set(targetId, filtered);
     }
   }
 
