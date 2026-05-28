@@ -1,5 +1,178 @@
 # catalog
 
+## 3.18.0
+
+### Minor Changes
+
+- 236dfd0: Add `discontinued:report` and `discontinued:apply` scripts plus a
+  monthly CI check that surfaces and auto-tags catalog entries on the
+  receiving end of a `supersedes` link but missing the `discontinued`
+  category.
+- 4904bf8: Import Allen & Heath (38 hardware entries).
+
+  Covers current consoles (SQ, Qu, CQ, Avantis, dLive),
+  audio matrix (AHM), powered/installed-sound mixers (XB,
+  GR), wall controllers (IP, CC), personal monitoring
+  (ME), MixWizard4 analogue, Xone DJ mixers/controller,
+  and Everything I/O stage boxes (AB, DX, DT).
+
+- 1e09af6: Import Blackstar Amplification (44 hardware/accessory entries).
+
+  Adds the full Blackstar Amps product range: valve, solid-state and
+  digital guitar/bass combos and heads (HT MKIII, Series One MKII,
+  St. James 100, TV-10, Debut, ID:CORE V4, ID:X, Silverline, Unity,
+  Unity Elite, Acoustic:Core, Sonnet, etc.), signature amps (Doug
+  Aldrich DA100, Carmen Vandenberg CV10/CV30, Toby Lee, JJN 50, Marco
+  Mendoza Debut Bass), Dept. 10 valve pedals + AMPED amp-in-a-pedal
+  range, LT analogue pedals, FLY mini amps, Beam Mini / Beam Solo,
+  Polar audio interfaces, Live Logic MIDI controller, Carry-on travel
+  guitar and assorted accessories.
+
+- 5d62691: Import Bowers & Wilkins (45 hardware/accessory entries).
+
+  Adds the current Bowers & Wilkins product line: 800/700/600 Series
+  loudspeakers (including Signature variants and HTM centres), DB and
+  ASW Series subwoofers, Px7/Px8 over-ear headphones, Pi8 wireless
+  earbuds (including McLaren editions), Formation Bar soundbar, M-1
+  satellite speaker, and matching FS-series stands plus the Zeppelin
+  wall bracket.
+
+- 3757ede: Import Charvel (103 hardware entries).
+
+  Bulk import of the Charvel electric guitar and bass lineup,
+  including Pro-Mod, Pro-Mod Plus, MJ, USA Select, Super Stock,
+  Standard Series, and Artist Signature models across San Dimas
+  Style 1/2, So-Cal Style 1/2, DK24/DK22, and San Dimas Bass
+  families. Adds 99 electric guitars and 4 bass guitars with
+  auto-selected hero/detail imagery.
+
+- 85ba216: Import Crown Audio (72 hardware/accessory entries).
+
+  Adds Crown's complete current amplifier lineup including the CDi
+  DriveCore Series (analog and BLU link), CDi legacy, DCi DriveCore
+  Install (analog/DA/Network), I-Tech HD touring amps, VRack tour
+  racks, XLi/XLS/XTi portable amps, XLC cinema amps, CT/CTD
+  DriveCore commercial amps, 135MA/160MA mixer-amplifiers, and
+  the DSi 2.0 cinema series. Also adds the XFMR-4 step-up
+  transformer and EOL Box line terminator accessories.
+
+- 73893c7: Import Danelectro (23 hardware entries).
+
+  Reissues of the 1959, 1964, 1966 and 1967 vintage shorthorn and
+  single-cutaway shapes (59X, 59XT, 64XT, 66T, 67, 59 Divine,
+  59M NOS+ Metalflake), plus the Dan-O sub-line (Dan O. Cool,
+  Dan O. Mano), the Fifty Niner family (incl. 12-string and
+  short-scale bass), the Doubleneck, Red Hot Longhorn bass, and
+  the Honeytone mini amp. Pedals include the 3699 Fuzz,
+  Spring King Junior, Nichols 1966, and the "Peace, Love & Fuzz"
+  book.
+
+- 727aa1f: Import dbx (205 hardware entries).
+
+  Bulk import of the dbx Professional Audio catalog (Harman). Covers the
+  full product family: 160-series compressors, 166/266 dynamics
+  processors, 30-series and iEQ graphic equalizers, 223/234 crossovers,
+  286 channel-strip preamps, AFS feedback suppressors, DriveRack
+  loudspeaker management, ZonePRO matrix processors, Personal Monitor
+  controllers, 500-series modular processors, and assorted DI boxes,
+  cable testers, and vintage 1bx/3bx/4bx range expanders. Many entries
+  are discontinued but documented on dbxpro.com.
+
+- 6a620d5: Import Denon DJ (16 hardware/software entries).
+
+  Adds the PRIME standalone family (PRIME 4+, PRIME 4, PRIME 2, PRIME GO+,
+  PRIME GO), SC LIVE controllers (SC LIVE 4, SC LIVE 2), SC media players
+  (SC6000, SC6000M, SC5000, SC5000M), LC6000 expansion controller, X1850
+  and X1800 club mixers, VL12 turntable, and the Engine DJ Desktop
+  software.
+
+- faa9544: Import DPA Microphones (66 hardware entries).
+
+  Includes pencil mics (2006/2011/2012/2015/4006/4011/4015/4018/4041/4090),
+  shotguns (2017/4017/4097g), handheld vocal mics (2028/4018v/4018vl),
+  lavaliers (2061/4060/4080/4660/6060), headsets & earsets (4066/4088/
+  4166/4188/4266/4288/4466/4488/4560/6066), goosenecks (4011f/4011g/
+  4018d/4018f/4018g/4060d/4097/4098/4098f/4098g), instrument mics (4055/
+  4099), the 5100 immersive surround mic, and the kit lineup (3506a/
+  3511a/3532/4060imk/4060lmk/4060smk/4071eng/4071fmk/4097ink/4099kit/
+  5006-11a/5006a/5015a/ddk4002/din4099/dlk4002/dls4000/dpk2015/dpk4011/
+  dpk4099/drk4001/dsk4001).
+
+- d0fd39f: Import DW Drums (231 hardware/accessory entries).
+
+  Adds the full DW Drums lineup: Collector's, Performance, and
+  Design Series shells; signature DW ICON and Specialty snare
+  drums; all bass drum pedals (2000-9000 + MFG series) and
+  hi-hat stands; cymbal and tom stands; thrones; hardware
+  packs; and the MFG chain/direct-drive flagship pedals.
+
+- 9674bcb: Import Dynaudio (38 hardware/accessory entries).
+
+  Adds the full Dynaudio professional audio lineup: LYD nearfield
+  monitors, Core mid-/main-monitor series with subs, Classic BM
+  range, the Dynaudio Acoustics M-Series (M1-M4 MkII passive mains,
+  MF15/MF30 flush-mount, MS15/MS18 subs, plus C3 MkII centre),
+  Delta amplifiers (20/40/40 DSP/80/80 DSP), and the Control 01/02
+  monitor controllers with the Control Link module. The SF1
+  monitor stand is filed as an accessory.
+
+- c3c1b55: Import Electro-Voice (117 hardware entries).
+
+  Adds the full Electro-Voice professional audio line: RE series broadcast
+  microphones (RE20, RE320, RE27N/D, RE420, RE520, RE920); ND series
+  performance microphones (ND44/46/66/68/76/76S/86/96); PL series drum and
+  vocal mics (PL-24/24S/33/35/37/44/80a/80c); RE3 wireless systems and
+  components; PolarChoice install mics; ZLX G2, EKX, ELX, ELX200, ETX,
+  Everse, Evolve, EVIVA, SX, TX, ZX portable and install loudspeaker
+  families; and EV's line-array, install column, and stage-monitor
+  products.
+
+- fc161bf: Import ESP (55 hardware/accessory entries).
+
+  Adds 50 ESP-branded electric guitars and basses (ESP Original Series,
+  E-II, LTD, USA Custom Shop, plus Alexi Laiho, Gary Holt, and other
+  signature models) and 5 accessories (form-fit cases and starter packs).
+
+- 4d453f0: Import EVH (110 hardware/accessory entries).
+
+  Eddie Van Halen's signature brand of guitars and amplifiers
+  (owned by Fender). Catalog adds 79 hardware entries — the
+  Wolfgang and 5150 Series electric guitars, SA-126 semi-hollows,
+  Striped Series tribute models (Frankenstein, Bumblebee,
+  Eruption), 5150III and 5150 Iconic Series amp heads, combos,
+  and cabinets — plus 31 accessories (pickups, footswitches,
+  tubes, cables, straps, picks, cases).
+
+- 264d2ba: Import Focal (20 pro audio hardware entries).
+
+  Adds the complete Focal Professional monitoring lineup: Alpha Evo
+  nearfields (50/65/80/Twin), Shape Flax monitors (40/50/65/Twin),
+  ST6 Beryllium range (Solo6, Twin6, Trio6, Trio11 Be), Utopia Main
+  mastering monitors (112/212), studio subwoofers (Sub One, Sub12,
+  Sub6), and the Professional headphone line (Clear Mg, Lensys,
+  Listen).
+
+- a1e1b9c: Import Focusrite (25 hardware/software entries).
+
+  Adds the Scarlett 4th Gen audio interface family (Solo, 2i2, 4i4,
+  16i16, 18i16, 18i20, Anniversary, Solo Studio, 2i2 Studio),
+  the Vocaster One/Two podcasting interfaces, Clarett+ 2Pre/4Pre/8Pre,
+  the ISA One/Two/428 MKII preamps, Red 4Pre/8Pre Thunderbolt
+  interfaces, Scarlett OctoPre, and Focusrite software (Focusrite
+  Control 2, Hitmaker Expansion, Red Plug-in Suite, RedNet Control,
+  Focusrite x Sonnox Soften).
+
+- ed9d3d8: Import Fostex (57 hardware/accessory entries).
+
+  Added Fostex's current product line: studio monitors (PM, NF, 6301,
+  RM, GS, P802 series), TH/RP premium headphones, T50/T60 planar
+  magnetic headphones, HP-A3mk2 USB DAC, AP-series personal amps,
+  PC volume controllers, and headphone cable/earpad accessories.
+
+### Patch Changes
+
+- f7039f3: Split aggregated IO ports into per-jack entries across 23 hardware entries (adam-audio, ampeg, antelope-audio, elektron, fostex, ik-multimedia, neural-dsp) to correct maxConnections semantics.
+
 ## 3.17.0
 
 ### Minor Changes
