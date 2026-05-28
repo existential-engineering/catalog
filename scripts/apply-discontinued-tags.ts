@@ -102,9 +102,18 @@ function parseArgs(): { apply: boolean; limit: number | null } {
   const apply = args.includes("--apply");
   const limitIdx = args.indexOf("--limit");
   let limit: number | null = null;
-  if (limitIdx !== -1 && args[limitIdx + 1]) {
-    const parsed = Number(args[limitIdx + 1]);
-    if (!Number.isNaN(parsed) && parsed > 0) limit = parsed;
+  if (limitIdx !== -1) {
+    const raw = args[limitIdx + 1];
+    if (raw === undefined) {
+      console.error("Error: --limit requires a positive integer (e.g., --limit 25)");
+      process.exit(1);
+    }
+    const parsed = Number(raw);
+    if (!Number.isFinite(parsed) || parsed <= 0 || !Number.isInteger(parsed)) {
+      console.error(`Error: --limit value "${raw}" must be a positive integer`);
+      process.exit(1);
+    }
+    limit = parsed;
   }
   return { apply, limit };
 }
