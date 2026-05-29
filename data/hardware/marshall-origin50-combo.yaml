@@ -1,0 +1,97 @@
+id: Y_Nqp_3FVR7N0xaVU2YhQ
+name: Origin 50 Combo
+manufacturer: marshall
+primaryCategory: guitar-amplifier
+categories:
+  - amplifier
+url: https://www.marshall.com/us/en/product/origin50-combo
+description: A 50W valve combo amplifier from Marshall's Origin series, built
+  around a single 12" Celestion G12N-60 Midnight 60 speaker. The Origin 50C
+  pairs ECC83 preamp valves with EL34 power valves for a classic British rock
+  voice and uses Marshall's Powerstem switching to step the amp down from 50W to
+  10W or 5W without altering its sonic character, making cranked tones usable at
+  lower volumes. The single-channel layout offers Gain, Bass, Middle, Treble and
+  Volume controls, a Tilt control that blends between Normal and Bright inputs,
+  and a footswitchable Gain Boost. Rear-panel features include an effects loop,
+  an emulated DI line output for silent recording, multiple speaker outputs with
+  selectable impedance, and a 2-way footswitch jack for gain boost and FX loop
+  on/off.
+details: |-
+  Origin50C
+
+  Origin
+
+  Valve
+
+  Combo
+
+  1 (single channel with footswitchable Gain Boost)
+specs: |-
+  - Output Wattage: 50W (switchable to 10W or 5W via Powerstem)
+  - Channels: 1
+  - Controls: GAIN, BASS, MIDDLE, TREBLE, TILT, VOLUME, BOOST (footswitchable), PRESENCE, POWER, STANDBY
+  - Equalisation: Bass, Middle, Treble, Presence, Tilt
+  - Inputs: 1 x 1/4" jack instrument input
+  - Outputs: 3 x 1/4" jack speaker outputs (selectable 16Ω / 8Ω / 4Ω load); 1 x 1/4" emulated line output (DI)
+  - Effects Loop: Yes (series, footswitchable on/off)
+  - Footswitch: 2-way footswitch jack (Gain Boost and FX Loop on/off)
+  - Preamp Valves: 3 x ECC83
+  - Power Amp Valves: 2 x EL34
+  - Speaker Config: 1 x 12"
+  - Speaker Model: Celestion G12N-60 Midnight 60 (60W)
+  - Power Reduction: Powerstem switching: 50W / 10W / 5W
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Effects Loop Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Effects Loop Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Emulated Line Output (DI)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Footswitch (Gain Boost / FX Loop on/off)
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Speaker Output 1 (16Ω)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Speaker Output 2 (8Ω)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Speaker Output 3 (4Ω)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Mains Input (IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1

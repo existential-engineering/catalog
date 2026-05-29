@@ -1,0 +1,76 @@
+id: rvykHyrqhMaAobncaWt_m
+name: DSL5 Combo
+manufacturer: marshall
+primaryCategory: guitar-amplifier
+categories:
+  - amplifier
+url: https://www.marshall.com/us/en/product/dsl5-combo
+prices:
+  - amount: 559.99
+    currency: USD
+description: The DSL5 Combo is an all-valve 5W guitar amplifier from Marshall's
+  DSL (Dual Super Lead) range, designed for home studio use and portable band
+  practice. It features two switchable gain channels — classic gain and ultra
+  gain — that cover everything from ultra-clean tones to powerful distortion,
+  plus a power reduction switch that drops the output from 5W down to 0.5W for
+  lower-volume playing without sacrificing valve character. Sound is delivered
+  through a single 10" Celestion Ten-30 speaker that provides authentic British
+  tone with strong mids, highs, and bass. A series effects loop allows external
+  pedals and processors to be patched in after the preamp.
+details: |-
+  DSL5
+
+  DSL
+
+  Valve
+
+  Combo
+
+  Two (Classic Gain and Ultra Gain)
+
+  Footswitchable
+specs: |-
+  - Output Wattage: 5W (switchable to 0.5W)
+  - Power Reduction: 5W / 0.5W switch
+  - Channels: Two gain channels (Classic Gain, Ultra Gain)
+  - Effects Loop: Yes
+  - Speaker Config: 1 x 10"
+  - Speaker Model: Celestion Ten-30
+  - Construction: All-valve
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Effects Loop Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Effects Loop Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Footswitch
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Speaker Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+  - name: Mains Input (IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
