@@ -1,0 +1,105 @@
+id: IdLlEEwSDgy0u2fkPUOf3
+name: HUB4
+manufacturer: midas
+primaryCategory: rack-mount
+categories:
+  - in-ear-monitors
+url: "https://www.midasconsoles.com/en/products/0609-AAK"
+description: Personal Monitoring with DP48. Midas HUB4 is the multi-tool in your
+  stage rack providing analogue and digital outputs for various applications.
+  HUB4 can supply up to four DP48 personal monitor mixers with PoE (Power over
+  Ethernet) and 48 channels of 24-bit / 48 kHz audio. HUB4 also collects 48
+  channels of upstream audio and forwards this audio to the FOH console, either
+  from stage boxes connected to the AES50-B (THRU) Port or 8 return channels
+  from each of Ports 1-4. HUB4 features 16 balanced line-level outputs that can
+  carry the 8 stereo mixes from the connected DP48 mixers for connections in the
+  side rack, and also features a designated StageConnect port on the rear panel.
+details: |-
+  Cascading Hubs for Large Setups: HUB4 can easily be daisy-chained to make additional DP48 ports available, all the way up to symphonic orchestra applications. Digital stage boxes such as the Midas DL16 or DL32 can be connected to the HUB4's AES50-B (THRU) Port; the console can pass downstream signals to their respective stage outputs while also receiving 48 channels upstream from the stage inputs via HUB4. Analogue Outputs for IEM Transmitters: 16 balanced line-level outputs can carry the 8 stereo mixes from the connected DP48 mixers for connections in the side rack, or be used as spare outputs receiving signals directly from the FOH console (e.g., for talkback or side fill). Support from Midas M32 Series Consoles: HUB4 can convey control messages from M32 FOH consoles to DP48 personal mixers, as well as remote control messages between DP48 units; M32 control information (channel assignments, names, colors) is transmitted via AES50. Midas DL8 PoE Powered Stage Boxes: HUB4 interfaces with the Midas DL8 stage box via a single CAT5E STP cable, directly powering up to 4 stage boxes via PoE (IEEE802.3at per port). Remote Control Forwarding Through HUB4: HUB4 ensures that personal mixers are enumerated and that the Master (the DP48 connected to Port 1 of the first HUB4 in a daisy-chain) can control the respective Slaves. StageConnect: 32 channels of uncompressed PCM audio in various I/O configurations, 24-bit at 48 kHz, below 0.5 ms of latency; 110 Ohm DMX cable required for optimum performance and long runs. EtherCON CAT5E-STP for AES50 Remote Connections: rugged industry-standard EtherCon connectors; a good quality CAT5E STP cable such as Klark Teknik NCAT5E-50 allows for remote operation. Controls & Connectivity: HUB4's large backlit front panel buttons show when a device is connected to the corresponding AES50 port and indicate whether the upstream signals are being sent to the desired outputs.
+specs: |-
+  - AES50 sync master / thru: 2 x RJ45
+  - AES50 remote outputs: 4 x RJ45
+  - Remote power: PoE (IEEE802.3at)
+  - USB: Type B
+  - StageConnect: 1 x XLR, male
+  - Analogue outputs: 4 x XLR, balanced; 12 x 1/4" TRS, balanced
+  - Power indicator: 1 x blue LED (button)
+  - AES50-A indicator: 1 x green LED; 1 x button LED, green/white
+  - StageConnect indicator: 1 x green / white (button); 1 x green LED (port active)
+  - Ports 1-4 indicators: 4 x button LED, green/white
+  - TO AES50-A indicator: 2 x green LED
+  - AES50-A / B status: 2 x green LED (good connection); 2 x red LED (error)
+  - AES50 audio channels: 48
+  - AES50 sample rate: 44.1 / 48 kHz
+  - AES50 sample word length: 24 bit
+  - AES50 clock synchronization: AES50 Sync Master
+  - AES50 latency: min. 70 µs per node
+  - AES50 cable: shielded CAT 5e
+  - AES50 cable length: max. 100 m (330 ft)
+  - StageConnect audio channels in / out: 16 / 16
+  - StageConnect phantom power: +12 V DC / 18 W
+  - StageConnect latency: < 0.1 ms
+  - StageConnect cable: XLR balanced, mic or DMX cable
+  - StageConnect cable length: max. 40 m (132 ft) with DMX; typ. 20 m with microphone cable
+  - Power supply: Switch mode, autorange, 100-240 V~ 50/60 Hz
+  - Power consumption: 180 W
+  - Mains connection: Standard IEC receptacle
+  - Dimensions (H x W x D): 50 x 482 x 291 mm (1.97 x 18.98 x 11.46")
+  - Weight: 8.72 lbs / 3.96 kg
+io:
+  - name: AES50 Sync Master / Thru (AES50-A / AES50-B)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 2
+    position: Right
+  - name: AES50 Remote Outputs (Ports 1-4)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 4
+    position: Right
+  - name: USB (Type B)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: StageConnect
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue Outputs (XLR, balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 4
+    position: Right
+  - name: 'Analogue Outputs (1/4" TRS, balanced)'
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 12
+    position: Right
+  - name: Mains Inlet (IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+images:
+  - "https://cdn-media.empowertribe.com/ada6afe556db40d981de9296c368b0d5/Image_\
+    MI_0609-AAK_HUB4_Left_XL.png"
+  - "https://cdn-media.empowertribe.com/b1647f8b97d846fcbead2718814145f9/Image_\
+    MI_0609-AAK_HUB4_Right_XL.png"
+  - "https://cdn-media.empowertribe.com/3303ab0d4ac542fea1e7e3f76cd1e79d/Image_\
+    MI_0609-AAK_HUB4_Top-Front_XL.png"
