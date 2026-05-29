@@ -1,0 +1,70 @@
+id: R9WvDAOt4v6f4-CUTKqHx
+name: Absolute Headphone Amplifier
+manufacturer: manley
+primaryCategory: headphone-amp
+categories:
+  - preamp
+  - analog
+  - mastering
+url: https://www.manley.com/products/hi-fi/hifi-preamps/absolute
+prices:
+  - amount: 5499
+    currency: USD
+description: The Manley Absolute Headphone Amplifier features switchable triode
+  topology, MANLEY IRON® transformers, and variable feedback. Hand-built in
+  California.
+details: |-
+  The Manley Absolute headphone amp represents the culmination of over thirty years of vacuum tube design, engineered to deliver uncompromising performance for critical listening. This all-tube amplifier provides comprehensive control over sonic detail, allowing precise optimization for any headphone. Combining exceptional audio performance with a unique industrial design, the Absolute serves as both, a professional reference tool and a statement piece.
+
+  The Absolute offers selectable output tube configurations: Single-Ended topology emphasizing even-order harmonic content for rich, warm tonality, and Push-Pull topology delivering higher output power with controlled odd-order harmonics for dynamic precision. A continuously variable feedback control adjusts damping factor and transient response from tight, controlled bass to relaxed, open presentation, providing unprecedented command over the amplifier's sonic signature.
+
+  Custom hand-wound Manley IRON® output transformers feature a three-position impedance selector for optimal matching with any headphone. Selectable settings accommodate Low (12-50 Ohm), Mid (50-200 Ohm), and High (200-600 Ohm) impedance loads, ensuring maximum power transfer and exceptional transient accuracy across all driver types. Proper impedance matching delivers superior damping and dynamics regardless of headphone design.
+
+  The volume is controlled by a precision Stepped Relay Ladder Attenuator, which operates in highly accurate 0.5 dB steps. The primary benefit is absolute channel matching, regardless of the volume level, which is critical for maintaining a stable and accurate stereo image in headphone listening. Unlike continuous potentiometers, the relay attenuator ensures that volume changes are sonically transparent and provides perfect, repeatable settings that are easily controlled via the front thumb wheel or the RF remote.
+
+  The Absolute Headphone Amplifier provides three types of outputs from its custom-wound transformers: a standard 1/4” TRS stereo jack (unbalanced), a 4-pin XLR balanced stereo output for high-end balanced headphones, and a pair of RCA jacks for use as a line-level preamplifier output. This robust selection ensures compatibility with virtually all headphone and stereo systems.
+specs: |-
+  - All-tube output stage with switchable Single-Ended and Push-Pull topologies
+  - Custom hand-wound Manley IRON® output transformers
+  - Three-position output impedance selector: Low (12–50 Ω), Mid (50–200 Ω), High (200–600 Ω)
+  - Precision stepped relay ladder attenuator (0.5 dB per step)
+  - Continuously variable negative feedback control (0 dB MIN to 10 dB MAX)
+  - Defeatable Baxandall bass and treble shelving EQ
+  - Center-detented, bypassable balance control
+  - RF remote control
+  - Tubes: 2 × 12AX7, 4 × 6AQ5A (EL90)
+  - Topology: Switchable Push-Pull or Single-Ended
+  - Output Impedance: Switchable (Low, Mid, High)
+  - Max Output Power: 1 W into 12 Ω
+  - Max Input Level: +20 dBu (7.7 VAC RMS)
+  - Push-Pull THD+N: 0.16% typical
+  - Hand-built in California
+io:
+  - name: Headphone Output (Unbalanced)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output (Balanced)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line-Level Preamp Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line-Level Preamp Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
