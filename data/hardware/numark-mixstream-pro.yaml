@@ -1,0 +1,132 @@
+id: 4umvpfBPgXy4uO1gVB8ag
+name: Mixstream Pro
+manufacturer: numark
+primaryCategory: control-surface
+categories:
+  - midi-controller
+url: https://www.numark.com/product/mixstream-pro
+description: Standalone DJ controller with built-in WiFi for streaming music
+  services, 7" multi-gesture touchscreen, and built-in monitor speakers.
+details: |-
+  The Mixstream Pro standalone DJ controller is fully optimized and suited for the present and future of DJing, setting new standards in connectivity and music access.
+
+  It is the first standalone DJ controller with built-in monitor speakers, a 7" high-definition multi-gesture touchscreen, and the Engine DJ embedded operating system that enables laptop-free performances. Built-in WiFi provides direct access to streaming music services including TIDAL, Beatport LINK, Beatsource LINK, SoundCloud Go+, and Dropbox.
+
+  Performance features include Smart Scratch with 6" capacitive-touch scratch wheels, 8 dual-layer Performance Pads with 4 modes (Cue, Saved Loop, Auto Loop, Roll), 4 built-in effects (Echo, Flanger, Delay, Phaser), 3-band EQ on each deck, large Filter knobs, and Pitch Bend buttons with selectable ranges (4%, 8%, 10%, 20%, 50%, 100%).
+
+  Built-in Engine Lighting control supports Philips Hue and DMX lighting, with SoundSwitch desktop software available for advanced lighting pre-analysis.
+specs: |-
+  - 7" high-definition multi-gesture touchscreen
+  - Built-in WiFi for streaming services
+  - Engine DJ embedded operating system
+  - Built-in monitor speakers
+  - 6" capacitive-touch scratch wheels with Smart Scratch
+  - 8 dual-layer Performance Pads (Cue, Saved Loop, Auto Loop, Roll)
+  - 4 built-in effects (Echo, Flanger, Delay, Phaser)
+  - 3-band EQ on each deck
+  - Large Filter knobs
+  - Pitch Bend ranges: 4%, 8%, 10%, 20%, 50%, 100%
+  - Built-in Engine Lighting control (Philips Hue, DMX)
+  - Streaming: TIDAL, Beatport LINK, Beatsource LINK, SoundCloud Go+, Dropbox
+  - Main outputs frequency response: 20 Hz - 20 kHz +/- 1 dB
+  - Dynamic range: > 114 dB (A-weighted)
+  - Signal-to-noise ratio: > 94 dB (A-weighted)
+  - Headroom: > 16 dB
+  - Channel separation: < -110 dB (1 kHz, unity)
+  - T.H.D. Line: < 0.01% (1 kHz, unity)
+  - T.H.D. Microphone: < 0.05% (1 kHz, unity)
+  - Headphone output: < 30 mW
+  - Microphone input: -40 dBu (unity) / -60 dBu (minimum)
+  - Master balanced output: +20 dBu max / +4 dBu unity
+  - Master unbalanced output: +16 dBu max / 0 dBu unity
+  - Supported media: SD, SDHC, SDXC, USB mass-storage
+  - File systems: exFAT (recommended), FAT32
+  - Audio formats: AAC/M4A, AIF/AIFF (44.1-192 kHz, 16-32-bit), ALAC, FLAC, MP3 (32-320 kbps), MP4, Ogg Vorbis, WAV (44.1-192 kHz, 16-32-bit)
+  - Power: 12.0 V @ 3.0 A, DC center positive
+  - Dimensions: 22.3" W x 11.2" D x 2.9" H (566 x 284 x 74 mm)
+  - Weight: 8.11 lbs. (3.68 kg)
+io:
+  - name: Main Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Main Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Main Output L (Unbalanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Main Output R (Unbalanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output (1/4")
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output (1/8")
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Microphone Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: USB Port 1 (USB Drive)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Top
+  - name: USB Port 2 (USB Drive)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Top
+  - name: USB Port (to Computer)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Bottom
+  - name: SD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Top
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom

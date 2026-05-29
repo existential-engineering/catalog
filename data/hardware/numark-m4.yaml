@@ -1,0 +1,112 @@
+id: bsFgh2IazjuewQixeSTJ8
+name: M4
+manufacturer: numark
+primaryCategory: mixer
+url: https://www.numark.com/product/m4
+description: Three-channel tabletop DJ mixer with replaceable crossfader, mic
+  input with EQ, and six total inputs for phono and line devices.
+details: |-
+  The Numark M4 is a three-channel tabletop mixer designed for any DJ who needs maximum flexibility. It features a replaceable crossfader with reverse and slope controls, allowing DJs to dial in their preferred feel and easily swap the fader when worn.
+
+  The mixer offers six total inputs: two switchable phono/line RCA inputs plus four dedicated line RCA inputs, accommodating turntables, CD players, and other line-level sources. A 1/4-inch microphone input with dedicated EQ provides flexibility for announcements and vocal performances.
+
+  Each channel includes a steep three-band EQ with rotary kills, a six-segment LED display for signal monitoring, and a toggle for master and PFL metering. Master and Record outputs along with a 1/4-inch stereo headphone output round out the connectivity.
+io:
+  - name: Phono/Line Input 1 L
+    signalFlow: input
+    category: audio
+    type: phono
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Phono/Line Input 1 R
+    signalFlow: input
+    category: audio
+    type: phono
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Phono/Line Input 2 L
+    signalFlow: input
+    category: audio
+    type: phono
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Phono/Line Input 2 R
+    signalFlow: input
+    category: audio
+    type: phono
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Line Input 3 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Line Input 3 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Line Input 4 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Line Input 4 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Microphone Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Master Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Master Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Record Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Record Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top

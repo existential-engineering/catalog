@@ -1,0 +1,63 @@
+id: ixdSF-D1tGMAJ-5w6ddlU
+name: TT250USB
+manufacturer: numark
+primaryCategory: turntable
+categories:
+  - discontinued
+url: https://www.numark.com/product/tt250usb
+description: Professional DJ direct-drive turntable with quartz-controlled
+  motor, S-shaped tonearm, and USB output for digitizing vinyl.
+specs: |-
+  - Quartz-controlled direct-drive motor
+  - Starting torque: 2.0 kgf-cm; constant torque: 1.2 kgf-cm
+  - Starting time: < 0.7 seconds
+  - Die-cast aluminum platter, 332mm diameter, 740g
+  - Wow & flutter: < 0.09%
+  - S-shaped tonearm with 4-bearing construction
+  - Tonearm effective length: 230mm; offset angle 22°
+  - Tonearm height range: 0.0–6.0mm
+  - Counterweight: 115g with 0.0–3.0g scale
+  - Damped cueing lever
+  - Pre-mounted magnetic cartridge and headshell
+  - Selectable speeds: 33 1/3 and 45 RPM
+  - Pitch range: ±10% with pitch fader and pitch-bend controls
+  - Target light
+  - Adjustable height support feet
+  - USB output for analog-to-digital conversion
+  - Stereo line-out RCA cable (attached)
+  - 1/8-inch remote start input for compatible mixers
+  - Selectable voltage: 115V or 230V
+  - Power consumption: 15W
+  - Dimensions (W x H x D): 450 x 152 x 352 mm
+  - Weight: 16.5 lbs (7.5 kg)
+  - Includes EZ Vinyl & Tape Converter software download card
+  - Includes USB cable
+io:
+  - name: Stereo Line Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Stereo Line Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: USB Output
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Bottom
+  - name: Remote Start Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom

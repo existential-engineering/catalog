@@ -1,0 +1,106 @@
+id: RGZIw_OcsXbx3x3ez1bdn
+name: CDMix USB
+manufacturer: numark
+primaryCategory: mixer
+url: https://www.numark.com/product/cdmix-usb
+description: Dual CD/USB media player with a built-in two-channel mixer, dual EQ
+  bands, onboard effects, and balanced XLR outputs for self-contained DJ
+  performance.
+details: |-
+  The Numark CDMix USB is a fully self-contained DJ system that combines dual CD/USB media players with an integrated two-channel mixer. It plays music from CDs, CD-Rs, MP3 CDs, USB flash drives, or an RCA auxiliary input, and includes a digital two-channel mixer with dual EQ bands and a bright, illuminated display for media switching. Built-in effects support smooth transitions, while the rubberized jog/shuttle wheels enable pitch bending and scratching.
+
+  Housed in a solid steel chassis, CDMix USB is built for professional use in clubs, mobile DJ rigs, and similar environments. A backlit LCD provides high visibility in low- or no-light venues and displays track details such as BPM, total time, and ID3 tag. The unit can connect to a PA system via balanced XLR or unbalanced RCA outputs.
+
+  CDMix USB automatically detects BPM and includes a Tap Tempo control for manual beat alignment. Users can monitor and control features such as master tempo, program playlist, reloop, and pitch range. An auxiliary RCA input plus XLR and 1/4-inch mic inputs handle additional sources, including connecting a phone for guest requests.
+io:
+  - name: Microphone Input 1 (XLR)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Microphone Input 2 (1/4-inch)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Aux Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: USB Port (Deck A)
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Top
+  - name: USB Port (Deck B)
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Top
+  - name: Master Output L (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Master Output R (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Master Output L (RCA)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Master Output R (RCA)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output (1/8-inch)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - type: support
+    title: Optimizing Your Computer For Audio Performance
+    url: https://support.numark.com/en/support/solutions/articles/69000814121-optimizing-your-computer-for-audio-performance
+  - type: support
+    title: Knowledge Base Articles
+    url: https://support.numark.com/en/support/solution

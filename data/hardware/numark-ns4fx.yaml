@@ -1,0 +1,135 @@
+id: S9uVkABYNpkQQqjKV5PTh
+name: NS4FX
+manufacturer: numark
+primaryCategory: midi-controller
+categories:
+  - control-surface
+url: https://www.numark.com/product/ns4fx
+description: With full audio control over 4 DJ software decks, toggle FX, and
+  professional inputs and outputs, the NS4FX is a feature-packed 4-channel DJ
+  controller that unleashes the full creative mixing potential of event, club,
+  and livestreaming DJs.
+details: |-
+  With full audio control over 4 independent channels, DJs can mix tracks, samples, loops, and more from up to 4 DJ software decks at once. The 4 channels of the NS4FX each feature dedicated premium-quality volume faders, 3-band EQ with full kill, and large high pass/low pass Filter knobs. Crossfader assignment switches on the front panel allow each channel to be assigned to side A or side B of the crossfader, or can be set to bypass the crossfader altogether. This ultimate flexibility is perfect for crafting artistic mixes on a livestream, creating exciting build-ups in the club, or preparing multiple songs in advance at events.
+
+  The NS4FX boasts an impressive array of connectivity options, making it the perfect solution for mobile and event DJs as well as club jocks and livestreaming mixmasters. The balanced XLR main outputs deliver high-quality 24-bit audio, ensuring that event guests are always treated to an incredible, immersive dancefloor experience. The additional RCA booth output with dedicated control is perfect for sending audio to a personal monitor speaker or to an additional zone or area of larger sound systems.
+
+  For events or gigs that call for more than one microphone for MCing or formal events, the NS4FX features 2 independent 1/4" microphone inputs with dedicated volume and tone controls. The Mic 1 input can be easily switched to an Auxiliary option to allow audio from a smartphone or external media device to be played through the RCA inputs on the back of the controller. Livestreamers will appreciate that the microphone audio is combined with the main music mix when output over USB, making it easy to stream online with a smart phone or computer without the need for an additional sound card or audio device.
+
+  The NS4FX is packed with all the pro DJ features needed for exceptional performances. The high-quality, touch-sensitive jog wheels are expertly calibrated for precision mixing and scratching. The center of the wheels features a vibrant LED display that shows track position, bpm, pitch range, and time. The Layer button on each deck allows each side to toggle control quickly between multiple decks, making it easy to layer and mix up to 4 tracks at the same time. The long pitch sliders on each deck with selectable range offer ultra-precise control over tempo when mixing, and the Pitch Bend buttons allow for fine adjustments for perfectly aligned mixes. The 16 Performance Pads offer limitless mixing possibilities with selectable pad modes including Cue, Auto Loop, Fader Cuts, and Sampler (additional pad modes can be unlocked by upgrading to Serato DJ Pro).
+
+  A dedicated loop section with multipliers on each deck grants quick access and control over seamless loops to extend mixes or craft custom transitions. To add additional flavor and creativity, the interactive FX section features 6 quick-launch software effects that are triggered by using the sturdy and fun paddle toggle switches. The FX area also provides full hardware control over the wet/dry mix and beat division to help DJs craft artistic and expressive performances.
+
+  The NS4FX ships with Serato DJ Lite software allowing DJs to start mixing with up to 4 channels right away. Since the NS4FX is fully mapped and ready for Serato DJ Pro, DJs can upgrade to a full-featured 4-channel mixing experience whenever they'd like. The NS4FX is also compatible with other leading DJ software programs like Virtual DJ and algorridim djay Pro AI.
+specs: |-
+  - 4 channel DJ controller with dedicated volume faders
+  - Large Filter knob on each channel
+  - 6" capacitive-touch jog wheels with multicolor display
+  - Layer buttons on each hardware deck to control up to 4 software decks
+  - FX section with 6 selection buttons, parameter controls and 2 toggle switches
+  - Dedicated loop sections with multiplier controls
+  - Crossfader assignment switches on each channel
+  - 8 performance pads on each deck with pad mode selection buttons
+  - Long pitch faders with pitch bend buttons
+  - Dedicated Sync, Cue/Stop, and Play/Pause buttons
+  - 3-band EQ on each deck
+  - High-quality 24-bit audio
+  - Balanced XLR Main output
+  - RCA Booth output
+  - Front 1/4" microphone input with volume and tone controls
+  - Additional rear 1/4" microphone input with controls (switchable to Aux with RCA inputs)
+  - 1/4" and 1/8" headphone output jacks
+  - Serato DJ Pro upgrade ready
+  - Audio quality: 44.1 kHz, 24-bit
+  - Power: via power adapter, DC 12 V, 2.0 A
+  - Dimensions (W x D x H): 23.5" x 10.8" x 2.4" (59.7 x 27.4 x 6.1 cm)
+  - Weight: 6.6 lbs (3.0 kg)
+io:
+  - name: Main Output (L)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Main Output (R)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Booth Output (L)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Booth Output (R)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux Input (L)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Aux Input (R)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Microphone Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Microphone Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Bottom
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: User Guide
+    url: https://www.numark.com/images/product_downloads/NS4_FX_-_User_Guide_-_v1.3.pdf
