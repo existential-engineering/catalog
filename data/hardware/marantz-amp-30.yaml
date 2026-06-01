@@ -1,0 +1,69 @@
+id: ovm_tb5sNS15wmwQqU73o
+name: AMP 30
+manufacturer: marantz
+primaryCategory: power-amp
+url: https://www.marantz.com/en-us/product/power-amplifiers/amp-30/301051.html
+description: A slimline 6-channel Class D power amplifier delivering 200 watts
+  per channel, designed to pair with an AV preamplifier for immersive home
+  theater systems. Features Marantz's exclusive HDAM technology and selectable
+  Bi-Amp/BTL output modes, hand-crafted in Shirakawa, Japan.
+details: |-
+  The Marantz AMP 30 is a remarkably powerful, slimline 6-channel power amplifier engineered to pair with an AV preamplifier for an outstanding home theater system. It delivers a thrilling movie experience with immersive spaciousness, extraordinary detail, and lifelike dynamics.
+
+  The AMP 30 combines Marantz's exclusive HDAM (Hyper Dynamic Amplifier Module) circuitry with high-efficiency Class D switching output stages to deliver 200 watts per channel into 8 ohms, or 400 watts per channel in BTL (bridge-tied load) mode. Each channel accepts either balanced XLR or unbalanced RCA input via a per-channel selector switch, feeding SPKT-1+ speaker binding posts.
+
+  Selectable output modes (Bi-Amp, BTL) allow flexible system configurations, and additional AMP 30 units can be combined to support larger speaker arrangements. A signature front-panel level meter and premium industrial design complete the package, hand-assembled in Shirakawa, Japan, and backed by a 5-year limited warranty in the US/Canada.
+specs: |-
+  - 6 channels of amplification
+  - 200W per channel (8 ohms, 1 kHz)
+  - 400W per channel (4 ohms, 1 kHz, BTL mode)
+  - Class D amplification
+  - Exclusive HDAM technology
+  - Selectable output modes: Bi-Amp, BTL
+  - Per-channel balanced XLR or unbalanced RCA input selector
+  - SPKT-1+ speaker binding posts (6)
+  - Front-panel level meter display
+  - Auto power off
+  - DC trigger input and output
+  - RS232 control, IR flasher in, Marantz Remote Bus
+  - Power consumption: 300W (70W ECO on) / 0.2W standby
+  - Dimensions: 17.4" x 17.4" x 4.4"
+  - Weight: 22.0 lbs
+  - Hand-crafted in Shirakawa, Japan
+  - 5-year limited warranty (US/Canada)
+io:
+  - name: Channel Input (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 6
+    position: Right
+  - name: Channel Input (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 6
+    position: Right
+  - name: DC Trigger In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: DC Trigger Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: AC Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
