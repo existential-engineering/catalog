@@ -1,0 +1,169 @@
+name: Dataset Audit
+
+on:
+  schedule:
+    # Run monthly on the 3rd at midnight UTC (staleness runs the 1st,
+    # discontinued the 2nd — stagger to avoid colliding issue updates).
+    - cron: "0 0 3 * *"
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: "24"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate dataset audit
+        id: audit
+        run: |
+          pnpm dataset:audit --json > audit.json
+
+      - name: Create or update dataset audit issue
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        with:
+          script: |
+            const fs = require('fs');
+            const audit = JSON.parse(fs.readFileSync('audit.json', 'utf-8'));
+            const dedent = (str) => str.replace(/^[ \t]+/gm, '');
+            const cell = (s) => String(s).replace(/\|/g, '\\|');
+
+            const title = '🔎 Dataset Audit';
+            const byCheck = audit.summary.byCheck;
+            // Actionable = needs a data fix. Orphan manufacturers and thin
+            // descriptions are informational and large; they don't gate the
+            // issue open/closed (otherwise it would never close).
+            const actionable = byCheck.duplicateName + byCheck.brokenCompatible;
+
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'dataset-audit'
+            });
+            const existingIssue = issues.find(i => i.title === title);
+
+            // Nothing actionable — close any existing issue and bail.
+            if (actionable === 0) {
+              console.log('Dataset audit found no actionable cross-entry issues');
+              if (existingIssue) {
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: existingIssue.number,
+                  state: 'closed',
+                  state_reason: 'completed'
+                });
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: existingIssue.number,
+                  body: `✅ No actionable cross-entry issues as of ${audit.generatedAt}.`
+                });
+              }
+              return;
+            }
+
+            const dupes = audit.findings.filter(f => f.check === 'duplicate-name');
+            const broken = audit.findings.filter(f => f.check === 'broken-compatible');
+
+            const coverageRows = Object.entries(audit.coverage).map(([name, c]) => {
+              const p = (n) => c.total ? `${Math.round((n / c.total) * 100)}%` : '—';
+              return `| ${name} | ${c.total} | ${p(c.withDescription)} | ${p(c.withUrl)} | ${p(c.withPrices)} | ${p(c.withVerification)} |`;
+            }).join('\n');
+
+            let body = dedent(`## Dataset Audit
+
+            Generated: ${audit.generatedAt}
+
+            Whole-dataset cross-entry checks (Tier 1). For an LLM review of the
+            ambiguous subset, run \`/dataset-review\` locally.
+
+            ### Summary
+
+            | Check | Count | Action |
+            |-------|-------|--------|
+            | Duplicate-name groups | ${byCheck.duplicateName} | Merge, fold into \`variants\`, or disambiguate |
+            | Broken \`compatibleWith\` | ${byCheck.brokenCompatible} | Fix the slug or remove the reference |
+            | Orphan manufacturers | ${byCheck.orphanManufacturer} | Informational — manufacturers with no products |
+            | Thin descriptions | ${byCheck.thinDescription} | Informational — descriptions under 40 chars |
+            | Flagged for LLM review | ${audit.summary.flagged} | \`/dataset-review\` |
+
+            ### Coverage
+
+            | Collection | Entries | Description | URL | Price | Verification |
+            |------------|---------|-------------|-----|-------|--------------|
+            ${coverageRows}
+
+            `);
+
+            if (dupes.length > 0) {
+              body += dedent(`### Duplicate-name groups (${dupes.length})
+
+              Same manufacturer + collection + normalized name. Review each: true duplicate (merge), cosmetic variant (fold into \`variants\`), or distinct product (disambiguate).
+
+              <details>
+              <summary>Click to expand</summary>
+
+              | Collection | Name | Files |
+              |------|------|------|
+              ${dupes.slice(0, 100).map(f => `| ${cell(f.collection)} | ${cell(f.name)} | ${f.files.map(x => `\`${cell(x)}\``).join(' + ')} |`).join('\n')}
+              ${dupes.length > 100 ? `\n*... and ${dupes.length - 100} more*` : ''}
+
+              </details>
+
+              `);
+            }
+
+            if (broken.length > 0) {
+              body += dedent(`### Broken \`compatibleWith\` references (${broken.length})
+
+              <details>
+              <summary>Click to expand</summary>
+
+              | File | Detail |
+              |------|------|
+              ${broken.slice(0, 100).map(f => `| \`${cell(f.files[0])}\` | ${cell(f.detail)} |`).join('\n')}
+              ${broken.length > 100 ? `\n*... and ${broken.length - 100} more*` : ''}
+
+              </details>
+
+              `);
+            }
+
+            body += dedent(`---
+            *Automatically generated by the monthly dataset audit workflow.*
+            `);
+
+            if (existingIssue) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssue.number,
+                body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['dataset-audit']
+              });
+            }
