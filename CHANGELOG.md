@@ -1,5 +1,50 @@
 # catalog
 
+## 3.19.0
+
+### Minor Changes
+
+- a1908b5: Import Ibanez (20 effect pedal entries).
+
+  First-pass import covers the electronics category: the Tube
+  Screamer family (TS808, TS9, TS9B, TS9DX, TS-Mini, TS808HW v2),
+  the MINI series of analog modulation/effects and the BIG MINI
+  chromatic tuner (AD, BIG, BT, CS, FL, PH, SM, TR), the LD303
+  Echo Shifter, the PT-EQ / PT-GATE / PT-PRE Tone-Lok rack pedals,
+  the TWP10 tube preamp, and the WH10v3 wah. Guitars, basses,
+  hollow bodies, acoustic guitars, and accessories are out of
+  scope for this pass and will need separate imports.
+
+- 2bffb7e: Import Ludwig (50 hardware/accessories entries).
+
+  Covers Ludwig's full current lineup: 11 acoustic drum kits
+  (Stainless Steel, Legacy Mahogany / Maple, Classic Maple,
+  Classic Oak, NeuSonic, Vistalite, Element Evolution,
+  Breakbeats by Questlove, Accent, Pocket Kit), 19 snare drums
+  (Black Beauty, Supraphonic, Acrolite, Copper / Bronze /
+  Chrome-Over-Brass / Hammered Brass / Raw Brass Phonic,
+  Universal metal & wood, Jazz Fest, Legacy, Classic Maple,
+  Supralite, Slotted Coliseum, Carl Palmer / Nate Smith /
+  Jon Theodore signatures, Super Series), 3 electronic
+  instruments (Verse, Edge, Total Percussion Pad), and the
+  Classic / Gig / Atlas Standard / Atlas Pro hardware lines
+  with associated Atlas accessories, Speed King / Speed
+  Flyer pedals, Pro Touring Bags, and the Thrones series.
+
+- 2bffb7e: Import Marantz (33 hi-fi audio entries).
+
+  Covers the Marantz US hi-fi lineup: CINEMA Series AV receivers
+  (30/40/50/60/70s), AV processors (AV 10/20/30) and power
+  amplifiers (AMP 10/20/30), the MODEL Series integrated amps
+  (10/30/40n/50/60n/M1/M4/Stereo 70s), CD/SACD players (CD6007,
+  CD 60, CD 50n, SACD 10, SACD 30n), the Link 10n streaming
+  preamp, the TT-15S1 turntable, the M-CR612 and NR1510 network
+  receivers, the Horizon and Grand Horizon wireless speakers,
+  the MM8077 (archive/discontinued) power amp, plus two Horizon
+  accessories (tripod, wall mount). The co-branded Bowers &
+  Wilkins 600/700 Series speakers sold on the Marantz storefront
+  are intentionally excluded — those belong under the B&W brand.
+
 ## 3.18.0
 
 ### Minor Changes
