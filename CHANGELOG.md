@@ -1,5 +1,45 @@
 # catalog
 
+## 3.21.0
+
+### Minor Changes
+
+- 8b04bc9: Import Grado Labs (61 hardware/accessory entries).
+
+  Imports Grado Labs' full product catalog: 18 headphones spanning the
+  Prestige (SR60x–SR325x), Reference (RS1, RS2x), Statement (GS1000,
+  GS3000, HP100 SE, Hemp Classic), Signature (S550, S750, S950) and
+  wireless (GW100x) lines; 13 phono cartridges across the Lineage
+  (Epoch4, Aeon4, Statement4), Timbre (Reference4, Master4, Sonata4,
+  Platinum4, Opus4), Prestige (Gold4, Red4, Green4) and Specialty
+  (DJ200i, ME+ Mono) series; plus replacement styluses, cables,
+  cushions, cases, stands and a storage box.
+
+- 3ae8ecc: Import Midas (48 hardware/accessory entries).
+
+  Adds the Midas product line: PRO Series HD96 control centres
+  (IP/TP variants), HD96-AIR, HD96-FB16; M32 LIVE/M32R LIVE/M32C
+  digital consoles; MR12/MR18 rack mixers; analogue DM12/DM16
+  mixers; DL Series stage boxes (DL8/16/32/151/152/153/154/155/
+  231/251/431); DN48xx StageConnect interfaces; AS 80 / AS88 /
+  COBALT HyperMAC hardware; HUB4 and HUB4 PRO personal-monitor
+  hubs; DP48 + DP48MB; NEUTRON DSP rack; LEGEND L6 / L10
+  500-series chassis; 500-series modules (Compressor Limiter
+  522 V2, Parametric Equaliser 512 V2, Microphone Preamplifier
+  502 / 502 V2); XL4-2 vacuum-tube preamp; and PRO Series
+  spare parts and road cases.
+
+- f515f49: Import Music Man (33 hardware entries).
+
+  Adds 33 Ernie Ball Music Man electric guitars and basses, spanning
+  the current StingRay, DarkRay, and Bongo bass families; the Axis,
+  Majesty, JP15, Mariposa, Sabre, and StingRay guitar families;
+  artist signature models (Tim Commerford, Pino Palladino, John
+  Myung, Mike Herrera, Jason Richardson, Rabea Massaad, Ryan "Fluff"
+  Bruce, Stephen Egerton, Dustin Kensrue); and 10 archived/
+  discontinued models (Cutlass Bass, Caprice Bass, Cliff Williams
+  Icon, Silhouette Bass, St. Vincent HH, Valentine Tremolo, et al.).
+
 ## 3.20.0
 
 ### Minor Changes
