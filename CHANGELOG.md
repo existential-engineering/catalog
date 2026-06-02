@@ -1,5 +1,43 @@
 # catalog
 
+## 3.20.0
+
+### Minor Changes
+
+- cd216f5: Import Lexicon (90 entries).
+
+  Bulk import of the Lexicon catalog (Harman). Covers the full product
+  family: 224/480L/960L studio reverbs, PCM-series effects processors
+  (PCM41/42/60/70/80/81/90/91/92/96 and surround variants), M-series and
+  MX/MPX multi-effects, LXP reverbs, the i-O / Omega / Lambda / Alpha
+  audio interfaces, LARC/MRC/MPX-R1 controllers, and the PCM/LXP/MPX
+  Native reverb plug-in bundles. Includes current immersive/install
+  products (BOB-32, QLI-32, PCM96 family) alongside many discontinued
+  legacy units documented on lexiconpro.com.
+
+- 8a767fa: Import Manley Laboratories (36 hardware entries).
+
+  Adds the full Manley Labs lineup: tube hi-fi amplifiers (Mahi,
+  Stingray II, Neo-Classic 250/500/300B SE-PP, Snapper), hi-fi
+  preamps (Absolute, Jumbo Shrimp, Neo-Classic 300B RC, Oasis,
+  Steelhead RC), and pro-audio outboard (CORE, VOXBOX, ELOP+,
+  NU MU, SLAM!, Variable Mu, Massive Passive EQ, Stereo Pultec EQ,
+  Backbone, FORCE, Reference Cardioid/Gold/Silver tube mics).
+  Includes mastering variants of Variable Mu, SLAM!, and Massive
+  Passive EQ, plus the Langevin sub-brand DVC channel strip and
+  legacy entries (Skipjack, HP-112, Langevin ELOP/Mini-Massive/
+  Pultec, Mid Frequency EQ, Tannoy ML10, Pultec EQP-1A) tagged
+  discontinued.
+
+### Patch Changes
+
+- 5e34174: Add layered whole-dataset review tooling: a deterministic `pnpm dataset:audit`
+  cross-entry check (duplicate names, broken `compatibleWith`, orphan
+  manufacturers, thin descriptions, coverage metrics), a `/dataset-review`
+  command for LLM review of the flagged subset, a monthly `dataset-audit`
+  workflow that opens a tracking issue, and a sampled mode for `/data-review`
+  on large bulk-import diffs.
+
 ## 3.19.0
 
 ### Minor Changes
