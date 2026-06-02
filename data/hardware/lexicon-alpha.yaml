@@ -1,0 +1,78 @@
+id: Cy-nW0IEZ64j-kqmKjgRf
+name: Alpha
+manufacturer: lexicon
+primaryCategory: audio-interface
+categories:
+  - mixer
+  - discontinued
+  - legacy
+url: https://lexiconpro.com/en-US/products/alpha
+description: 2x2x2 Desktop Recording Studio. Compact USB-powered I/O mixer that
+  turns a PC or Mac into a 24-bit recording studio.
+specs: |-
+  - 2x2x2 desktop recording interface (dual-input, 2-bus, 2-output)
+  - 24-bit recording
+  - USB bus-powered (no external power supply required)
+  - Balanced XLR mic input
+  - High-impedance instrument input on front panel for guitar/bass
+  - Two balanced TRS line inputs with RF filtering
+  - Two balanced TRS line outputs with RF filtering
+  - Headphone output with level control
+  - Bundled with Steinberg Cubase LE 5 and Lexicon Pantheon VST reverb
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right

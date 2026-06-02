@@ -1,0 +1,96 @@
+id: eXlskCmBhBvJbj0y7dOqC
+name: I-ONIX U22
+manufacturer: lexicon
+primaryCategory: audio-interface
+categories:
+  - discontinued
+  - legacy
+url: https://lexiconpro.com/en-US/products/i-onix-u22
+description: Lexicon I-ONIX U22 — 2x2 USB 2.0 desktop recording studio interface
+  with two mic preamps, instrument input, MIDI I/O and 24-bit/96 kHz conversion.
+  Discontinued legacy product.
+specs: |-
+  - 2 x 2 USB 2.0 desktop audio interface
+  - Two XLR microphone inputs with +48V phantom power, up to +58 dB gain
+  - 1/4" TRS balanced line input and 1/4" TS instrument input (1 MΩ)
+  - Stereo 1/4" TRS line outputs and 1/4" stereo headphone output (350 mW @ 50Ω)
+  - MIDI In and MIDI Out on 5-pin DIN
+  - 24-bit A/D and D/A conversion at 44.1, 48, 88.2, and 96 kHz
+  - 108 dB A-weighted dynamic range (A/D) / 110 dB A-weighted (D/A)
+  - USB 2.0 connection to host; powered via 9 VAC 12 W external adapter
+io:
+  - name: Mic Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: USB 2.0
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+versions:
+  - name: I-ONIX U22 Driver v2.9.13 (Windows)
+    releaseDate: 2016-08
+  - name: Lexicon I-ONIX Driver v2.0.8 (macOS)
+    releaseDate: 2016-08

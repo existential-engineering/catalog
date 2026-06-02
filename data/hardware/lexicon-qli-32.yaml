@@ -1,0 +1,79 @@
+id: bktQqd31c5XWGC9IT00zX
+name: QLI-32
+manufacturer: lexicon
+primaryCategory: immersive
+categories:
+  - surround
+  - spatial
+  - rack-mount
+  - outboard
+url: https://lexiconpro.com/en-US/products/qli-32
+description: 32-channel QuantumLogic Immersion Processor that upmixes stereo,
+  5.1, and 7.1 cinema sources to up to 32 discrete output channels over BLU
+  link.
+specs: |-
+  - 32 discrete output channels via BLU link
+  - Upmixes stereo, 5.1, and 7.1 cinema sources to immersive playback
+  - Compatible with existing cinema processor systems
+  - Flexible height channel placement
+  - GPI control capability
+  - Web-based control interface
+  - 1/3-octave graphic EQ per output channel
+  - Parametric EQ on low-frequency extension output
+  - Signal-to-noise ratio: 110 dB (20 Hz-20 kHz)
+  - Power supply: 100-240 VAC, 50/60 Hz
+  - Dimensions: 1.67" H x 19" W x 10.5" D
+  - 3-year warranty
+io:
+  - name: Analog Inputs 1-8
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - name: AES Inputs 1-8
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: rj-45
+    maxConnections: 8
+    position: Right
+  - name: BLU link Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: BLU link Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Ethernet (Control)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+versions:
+  - name: Firmware v1.0.26
+    releaseDate: 2016-09
+releaseDate: 2015-04-22
+links:
+  - type: resource
+    title: QLI-32 Owner's Manual (Rev H)
+    url: https://lexiconpro.com/en-US/product_documents/qli32_manual_revh-pdf
+  - type: resource
+    title: QLI-32 Data Sheet
+    url: https://lexiconpro.com/en-US/product_documents/qli_datasheet_web_052915-pdf
+  - type: resource
+    title: QuantumLogic Immersion Quick Reference Guide
+    url: https://lexiconpro.com/en-US/product_documents/quantumlogicimmersion_qrg_web_042215-pdf
+  - type: resource
+    title: QLI-32 Firmware v1.0.26
+    url: https://lexiconpro.com/en-US/softwares/qli-32-firmware-v1-0-26-qli-32

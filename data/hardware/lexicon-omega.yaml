@@ -1,0 +1,129 @@
+id: _IJR1nvhNSG-QAhWzG40d
+name: Omega
+manufacturer: lexicon
+primaryCategory: audio-interface
+categories:
+  - discontinued
+  - legacy
+url: https://lexiconpro.com/en-US/products/omega
+description: 8x4x2 USB desktop recording studio with dbx Silver Series mic
+  preamps, instrument input, S/PDIF and MIDI I/O, bundled with Cubase LE 5 and
+  the Pantheon VST reverb.
+specs: |-
+  - 8x4x2 desktop recording studio (8 inputs, 4 record buses, 2 main outputs)
+  - Two dbx Silver Series mic preamps with +48V phantom power
+  - 4 TRS line inputs accepting up to +22 dBu
+  - 1 high-impedance (Hi-Z) instrument input
+  - Stereo S/PDIF digital inputs
+  - Fully opto-isolated MIDI input and output
+  - TRS insert points per channel
+  - Channel peak indicators and assignable bargraph meter
+  - 24-bit converters
+  - USB connectivity to host computer
+  - Power: 9 VAC 1300 mA (PS0913B adapter)
+io:
+  - name: Mic Input 1 (XLR)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic Input 2 (XLR)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Hi-Z Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Main Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Main Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: S/PDIF In
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: S/PDIF Out
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Bottom
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
