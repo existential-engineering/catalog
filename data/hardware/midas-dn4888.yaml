@@ -1,0 +1,64 @@
+id: mwpFltWpOOQo5e_eh5TVa
+name: DN4888
+manufacturer: midas
+primaryCategory: rack-mount
+categories:
+  - audio-interface
+url: "https://www.midasconsoles.com/en/products/0606-ADD"
+description: The DN4888 is a StageConnect I/O interface that provides 8 balanced
+  line-level analogue inputs and 8 balanced line-level analogue outputs for
+  connecting additional equipment to a monitor or FOH console. Part of the
+  DN48XX Series, it connects to other StageConnect devices via a single XLR
+  cable for multi-channel audio transmission, supporting up to 32 channels of
+  uncompressed PCM audio at 24-bit / 48 kHz with latency below 0.05 ms. The
+  device can be powered via DC input or receive up to 18 W of power through the
+  StageConnect cable from the master device. Designed for use with the Behringer
+  WING mixing console and compatible with the broader StageConnect ecosystem,
+  including Ultranet devices for legacy product integration.
+details: |-
+  Part of the DN48XX Series. StageConnect is a new interface standard from Music Tribe that carries multi-channel audio over a single standard XLR cable, introduced with the Behringer WING mixing console. The DN4888 is daisy-chainable with other DN48XX Series devices and supports automatic channel negotiation. Compatible with Ultranet technology for legacy product integration.
+specs: |-
+  - Analogue Inputs: 8 balanced line-level
+  - Analogue Outputs: 8 balanced line-level
+  - Audio Resolution: 24-bit / 48 kHz
+  - Latency: Below 0.05 ms
+  - StageConnect Bandwidth: Up to 32 channels of uncompressed PCM audio
+  - StageConnect Power: Up to 18 W available via StageConnect cable
+  - Power Options: DC input or StageConnect bus power
+  - Cable Requirement: 110 Ohm DMX cable recommended for long runs
+io:
+  - name: Analogue Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 8
+    position: Right
+  - name: Analogue Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 8
+    position: Right
+  - name: StageConnect
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+images:
+  - "https://cdn-media.empowertribe.com/daafd559fcf747b8b49ce00729cc654f/Image_\
+    MI_0606-ADD_DN4888_Top-Front_XL.png"
+  - "https://cdn-media.empowertribe.com/b4a78eeda1a145398fa9e618dc757826/Image_\
+    MI_0606-ADD_DN4888_Left_XL.png"
+  - "https://cdn-media.empowertribe.com/39a7ef224fcb4651afc95fba757b9413/Image_\
+    MI_0606-ADD_DN4888_Right_XL.png"

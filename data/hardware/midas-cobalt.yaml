@@ -1,0 +1,72 @@
+id: wO2Xyr-t-kqoWLTIAuzw2
+name: COBALT
+manufacturer: midas
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+url: "https://www.midasconsoles.com/en/products/0606-ADY"
+description: COBALT allows you to connect your computer to any HyperMAC audio
+  network for high-channel count recording and playback with zero compromise.
+  The perfect companion to any Midas digital console or HyperMAC-equipped
+  device, COBALT brings studio-grade power and seamless connectivity to your
+  live setup. With a single locking USB-C connection, COBALT delivers effortless
+  compatibility with Apple Macs - no adapters, no hassle. Initial release
+  supports macOS only due to ongoing stability work with ASIO drivers, with full
+  cross-platform functionality remaining a priority. Up to 192 bidirectional
+  channels at 48 or 96 kHz via Dual Redundant HyperMAC In/Outs ensure
+  ultra-reliable performance in demanding live environments. Onboard LED status
+  indicators keep signal integrity visible at a glance. Built into a tough blue
+  brushed aluminum chassis, COBALT is compact, portable, and road-tested for the
+  rigors of touring and live sound.
+details: |-
+  Compact USB-C HyperMAC network adapter for connecting a Mac to any Midas HyperMAC-equipped console or device. Provides up to 192 bidirectional channels at 48/96 kHz over dual redundant HyperMAC ports on industry-standard RJ45. Bus-powered, locking USB-C, brushed aluminum touring-grade chassis.
+specs: |-
+  - USB: 1 x USB3, type C
+  - Snake 1/2: 2 x industry standard RJ45
+  - Supported sample rates: 48 / 96 kHz, switchable
+  - Bit depth: 24-bit
+  - Maximum channel count: Up to 192 bidirectional channels
+  - Power supply: Bus-power via USB connection
+  - Dimensions (H x W x D): 45.78 x 141.24 x 83.82 mm (1.8 x 5.56 x 3.3 in)
+  - Weight: 343.5 g (12.12 oz)
+  - Platform support: macOS at launch; Windows planned
+  - Chassis: Brushed aluminum (blue)
+  - Indicators: Onboard LED status indicators
+io:
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - name: Snake 1 (HyperMAC In/Out)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Left
+  - name: Snake 2 (HyperMAC In/Out, Redundant)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: Report PoPs ESTC 241125003
+    url: "https://cdn-media.empowertribe.com/5339cbb8251d4b5c8f2ea0345d3161ef/MI_06\
+      %20%20%20%20%20%2006-ADY_Report-PoPs-ESTC-241125003_2025-01-06_Rev.0.pdf"
+  - type: resource
+    title: Report REACH ESTC 241125002
+    url: "https://cdn-media.empowertribe.com/bf4a807c1e514c4eba06d0cbd3a99ef8/MI_06\
+      %20%20%20%20%20%2006-ADY_Report_REACH-ESTC-241125002_2025-01-06_Rev.0.pdf"
+images:
+  - "https://cdn-media.empowertribe.com/0ea1f6183d17443c9a775d6c16fcfe6b/Image_\
+    MI_0606-ADY_COBALT_Top-Front_XL.png"
+  - "https://cdn-media.empowertribe.com/8a6bf35d62374014bed33a374e5c961f/Image_\
+    MI_0606-ADY_COBALT_Left_XL.png"
+  - "https://cdn-media.empowertribe.com/ac783bc83bc241ee88717d4bf697a52b/Image_\
+    MI_0606-ADY_COBALT_Other1_XL.png"
