@@ -2,6 +2,13 @@
 
 Thank you for helping build the most comprehensive open database of audio software!
 
+> **Authoritative field reference:** This guide is a quick start. For the
+> complete field rules and entry-type requirements, see
+> [`CLAUDE.md`](./CLAUDE.md), and for the exact valid values (categories,
+> formats, platforms, IO enums, currencies, locales) see `schema/*.yaml` and the
+> generated `schema/CONTEXT.md`. When this guide and the schema disagree, the
+> schema wins — and please open a PR to fix the guide.
+
 ## Ways to Contribute
 
 ### 1. Add Missing Software
@@ -39,18 +46,17 @@ url: https://xferrecords.com
 ```yaml
 # data/software/serum.yaml
 name: Serum
-manufacturer: xfer-records    # Must match a manufacturer slug
-type: plugin
+manufacturer: xfer-records # Must match a manufacturer slug
+primaryCategory: synthesizer # Must NOT be repeated in `categories`
 categories:
-  - synthesizer
   - wavetable
 formats:
   - au
   - vst3
   - aax
 platforms:
-  - darwin
-  - win32
+  - mac
+  - windows
 identifiers:
   au: com.xferrecords.Serum
   vst3: com.xferrecords.Serum.vst3
@@ -102,18 +108,29 @@ Use categories from `schema/categories.yaml`. Common ones:
 
 ### Formats
 
-- `au` — Audio Unit (macOS)
-- `vst` — VST2
+The full list lives in `schema/formats.yaml`:
+
+- `au` — Audio Unit (macOS/iOS)
+- `vst` — Generic VST (use when the version is unknown)
+- `vst2` — Explicit VST2
 - `vst3` — VST3
-- `aax` — Avid Audio eXtension (Pro Tools)
+- `aax` — Avid Audio eXtension (current Pro Tools)
+- `rtas` — Real-Time AudioSuite (legacy Pro Tools)
+- `tdm` — Time Division Multiplexing (legacy Pro Tools HD)
 - `clap` — CLever Audio Plug-in
+- `lv2` — Linux VST (LADSPA v2)
+- `rack-extension` — Reason Studios Rack Extension
 - `standalone` — Standalone application
 
 ### Platforms
 
-- `darwin` — macOS
-- `win32` — Windows
+The full list lives in `schema/platforms.yaml`:
+
+- `mac` — macOS
+- `windows` — Windows
 - `linux` — Linux
+- `ios` — iOS (AUv3)
+- `android` — Android
 
 ## Finding Bundle Identifiers
 
@@ -131,7 +148,9 @@ mdls -name kMDItemCFBundleIdentifier /Library/Audio/Plug-Ins/VST3/Serum.vst3
 
 ### Windows
 
-VST3 plugins use the same identifier scheme but are stored differently. Check the plugin's Info.plist or manifest.
+VST3 plugins use the same reverse-domain identifier scheme across platforms.
+Windows has no simple `mdls` equivalent — consult the plugin's documentation or
+its bundle metadata to find the identifier.
 
 ## Code of Conduct
 
