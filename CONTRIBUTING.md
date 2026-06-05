@@ -118,7 +118,7 @@ The full list lives in `schema/formats.yaml`:
 - `rtas` — Real-Time AudioSuite (legacy Pro Tools)
 - `tdm` — Time Division Multiplexing (legacy Pro Tools HD)
 - `clap` — CLever Audio Plug-in
-- `lv2` — Linux VST (LADSPA v2)
+- `lv2` — LV2 plugin format (cross-platform, common on Linux)
 - `rack-extension` — Reason Studios Rack Extension
 - `standalone` — Standalone application
 
