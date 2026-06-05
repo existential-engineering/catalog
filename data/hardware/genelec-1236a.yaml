@@ -1,0 +1,128 @@
+id: b6cuoSeRf2HUz9_xX39fn
+name: "1236A"
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+url: https://www.genelec.com/1236a
+description: "The flagship of our range. The intelligence of the 1236A is
+  seamlessly integrated into the finest example of acoustic engineering yet
+  produced in more than 40 years of Genelec history."
+details: |-
+  The 1236A is the flagship Smart Active Monitor (SAM) in Genelec's range, conceived as a true main monitor for the largest and most demanding control rooms. The system pairs a bespoke five-way active loudspeaker enclosure with a dedicated, individually calibrated RAM-XL rack-mount amplifier unit, separating the analogue and digital electronics from the cabinet so the acoustic design and the power stage can each be optimised without compromise.
+
+  Acoustically, the 1236A combines two 458 mm long-throw bass drivers, two 125 mm midrange cones, and a 25 mm compression driver loaded into a large directivity-controlled waveguide. The result is a peak SPL in excess of 136 dB at 2 m on music programme material, with frequency response extending from 21 Hz to 20 kHz (±2 dB) and -6 dB points at 17.5 Hz and 26 kHz. Harmonic distortion is held to ≤0.5 % through the critical midband, and self-generated noise sits at ≤5 dB SPL at 2 m, giving an unusually wide dynamic window for full-range mixing, mastering, and immersive monitoring.
+
+  Power is delivered by the matched RAM-XL amplifier, which houses two 1000 W Class D amplifiers for the bass section, two 400 W Class D amplifiers for the midrange, and a 250 W Class D amplifier for the treble, alongside the loudspeaker manager DSP, analogue and AES/EBU inputs, and the GLM control network. Each amplifier is calibrated to its specific cabinet at the factory, and the monitor and amplifier ship as a matched pair.
+
+  As a SAM system, the 1236A integrates tightly with Genelec's GLM (Genelec Loudspeaker Manager) calibration software. GLM measures the listening room with a reference microphone and intelligently tailors each monitor's frequency response, level, and time-of-flight delay so that multiple 1236As - or 1236As combined with smaller SAM monitors and subwoofers - can be aligned into accurate stereo, surround, and immersive arrays in large control rooms.
+
+  Mechanically, the 1236A is built around a heavily braced MDF reflex enclosure with rounded edges to minimise diffraction. It is a soffit- or free-standing installation product, weighing 182 kg with overall dimensions of 1180 × 960 × 650 mm, and the separate RAM-XL amplifier mounts into a standard 19" rack (483 × 132 × 286 mm). The complete system ships as the 1236APM package with the calibrated amplifier, mains cable, GLM RJ45 cables, and the Speakon loudspeaker cables required to connect the cabinet to the rack.
+specs: |-
+  - Frequency response: 21 Hz - 20 kHz (±2 dB)
+  - Frequency response (-6 dB): 17.5 Hz - 26 kHz
+  - Peak SPL: ≥136 dB (2 m, music material)
+  - Short-term max SPL: ≥130 dB (1 m, on-axis, 100 Hz - 3 kHz average)
+  - Long-term max SPL: ≥125 dB (RMS, IEC weighted)
+  - Self-generated noise: ≤5 dB SPL (2 m, on-axis, A-weighted)
+  - Harmonic distortion 50-100 Hz: ≤1%
+  - Harmonic distortion 100 Hz - 3 kHz: ≤0.5%
+  - Harmonic distortion >3 kHz: ≤3%
+  - Group delay: 5.2 ms (Extended Phase Linearity OFF)
+  - Bass driver: 2 x 458 mm cone
+  - Midrange driver: 2 x 125 mm cone
+  - Treble driver: 25 mm compression driver (50 mm into 25 mm throat)
+  - Bass amplifier: 2 x 1000 W Class D
+  - Midrange amplifier: 2 x 400 W Class D
+  - Treble amplifier: 250 W Class D
+  - Enclosure: MDF, reflex port
+  - Analog input: 1 x XLR female, balanced, 10 kOhm
+  - Digital input: 1 x XLR AES/EBU, 110 Ohm
+  - Digital output: 1 x XLR AES/EBU thru, 110 Ohm
+  - Control: 2 x RJ45 CAT5 (GLM network)
+  - Mains: 100-120 VAC / 220-230 VAC, 50/60 Hz
+  - Power consumption (full output): 2400 W
+  - Power consumption (idle): ≤40 W
+  - Power consumption (ISS active): ≤6 W
+  - Height: 1180 mm
+  - Width: 960 mm
+  - Depth: 650 mm
+  - Weight: 182 kg (401.2 lb)
+  - RAM-XL amplifier dimensions: 483 x 132 x 286 mm (W x H x D)
+io:
+  - name: Analog In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU In
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Thru
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Network In
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Network Out
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Mains
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: Operating Manual 1236A
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2GDGuAmr0IeiUEQsUUG06u/876abe86ac8c10fcdf945366a3c15391/1236a_operating_manual_0.pdf
+  - type: resource
+    title: "1236A Operating Manual (Chinese)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/3K6Eoc1kpcEvMpqzHCzxFv/542abff8d5a10b6b96c2faa281c8a347/1236A_Operating_Manual__Chinese_.pdf
+  - type: resource
+    title: SAM Series Full Line Catalogue 2021
+    url: https://assets.ctfassets.net/4zjnzn055a4v/xd0RmOyjysCNLGhQb0lKJ/70ef78fb45891df02746b4632b053013/SAM_Series_Full_Line_Catalogue_2021.pdf
+  - type: resource
+    title: In-Room Product Performance
+    url: https://assets.ctfassets.net/4zjnzn055a4v/12qJYpLlyeGCGsacAEkCge/54ca8a1983cd38fe5cb8fa02d26f3c9f/genelec_monitors_in-room_performance.pdf
+  - type: resource
+    title: Immersive Solutions Guide 2021
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4dG9V4oK3gUEsqXodIqRaJ/02ee79e6e3fd962e0d40ab14b86c8320/Genelec_Immersive_Solutions_Guide_-_2021.pdf
+  - type: resource
+    title: "1236A Line Drawings (PDF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4jpYhNz7jyy68sMaWOOw44/d6fe30a3b481ca0be6e3289c9ca1dfd6/1236aviews_0.pdf
+  - type: resource
+    title: "1236A Line Drawings (DWG)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/6aTVTukSqICUWsOQ4KCoGY/14007e0afec3e1877952f4bde6bd3e94/1236aviews.dwg
+  - type: resource
+    title: RAM-XL Amplifier Line Drawings (PDF)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/Gu7UhJKtGwSksy4qw6us6/c6de6e48014f2fc6f179b46d9fe9edc8/ram_xl_views.pdf
+  - type: resource
+    title: RAM-XL Amplifier Line Drawings (DWG)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/20aT4UC4Rmo0Ck2mEUy6Y2/7cc99c054eda7c10488cfa914517e89a/ram_xl_views.dwg
+  - type: resource
+    title: "1236A GLL Simulation File"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/6iJGtGzSzAz8lmKnaCbsF9/efeeec82466f1c7b8dd50471de11f075/Genelec_1236A.gll
+  - type: resource
+    title: "1236A CLF Simulation File"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/6IEnT2vhPH4e7ijvV7EUjv/1139309a29640253801a605e5a7d02d6/Genelec_Oy-1236A.CF2

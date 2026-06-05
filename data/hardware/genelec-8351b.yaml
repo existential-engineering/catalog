@@ -1,0 +1,97 @@
+id: 2-JVAVvkamHYR_m5O0Vm0
+name: "8351B SAM Studio Monitor"
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+url: https://www.genelec.com/8351b
+description: "A revolution in three-way monitor design, the 8351B boasts a
+  unique look, compact size and a performance that has to be heard to be
+  believed."
+details: |-
+  The 8351B is a three-way active coaxial studio monitor from Genelec's "The Ones" range, housed in a die-cast aluminium Minimum Diffraction Enclosure with a reflex port. It pairs two 218 × 101 mm obround bass cones with a coaxial mid/treble assembly using a 130 mm midrange and a 25 mm metal-dome tweeter, so that the entire front baffle acts as an acoustic waveguide for a stable point-source response.
+
+  The driver complement is powered by dedicated Class D amplifiers — 250 W for the bass, 150 W for the midrange, and 150 W for the treble — delivering a peak SPL of 118 dB while reproducing 32 Hz to 43 kHz (-6 dB) with ±1.5 dB accuracy from 38 Hz to 20 kHz.
+
+  As a Smart Active Monitoring (SAM) product, the 8351B integrates with Genelec Loudspeaker Manager (GLM) software for automatic room calibration, level, delay, and EQ management across stereo, surround, and immersive monitoring configurations.
+specs: |-
+  - Short Term Max SPL: 113 dB
+  - Peak SPL: 118 dB
+  - Frequency Response: 32 Hz - 43 kHz (-6 dB)
+  - Accuracy: ± 1.5 dB (38 Hz - 20 kHz)
+  - Amplifier Power: 250W Bass + 150W Midrange + 150W Treble (Class D)
+  - Harmonic Distortion: 50-100 Hz <=2%; >100 Hz <=0.5%
+  - Dimensions: H 454 x W 287 x D 278 mm (with Iso-Pod)
+  - Weight: 14.3 kg (31.5 lb)
+  - Mains Voltage: 100-240 VAC 50/60Hz
+  - Power Consumption ISS Active: <=1W
+  - Power Consumption Idle: <=16W
+  - Power Consumption Full: 200W
+io:
+  - name: Analog In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU In
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Out (Thru)
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Control Network In
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Control Network Out
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: Operating manual (PDF)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2ZKpxBBNLpZPVKPCZ2KjPY/f5d3efb3d781953364443286ab27d0a0/8351B_operating_manual_rev_b.pdf
+  - type: resource
+    title: Dimensional views (PDF)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/6c5OgkeEOpYghQ2TwZMi6r/b1b5ec8768fc1867b97442f7fef3075d/8351Bviews.pdf
+  - type: resource
+    title: The Ones brochure (PDF)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/79DCxaMj6NTbajy2y7KrAP/5b30dece1efcec0d11ce7b899b1b8a62/genelec_the_ones_brochure_2019_web_0.pdf
+  - type: resource
+    title: SAM Series Full Line Catalogue 2021 (PDF)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/xd0RmOyjysCNLGhQb0lKJ/70ef78fb45891df02746b4632b053013/SAM_Series_Full_Line_Catalogue_2021.pdf
+  - type: resource
+    title: "2025 RAL brochure (PDF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/5d59bdHUIpMKuGP21TFPHQ/594639c2005873dbe396e70338c8f999/2025_RAL_brochure_for_web.pdf
+  - type: resource
+    title: GLM Software
+    url: https://www.genelec.com/glm
+  - type: resource
+    title: Design tools
+    url: https://www.genelec.com/design-tools
+videos:
+  - videoId: YQgFl7H2g34
+    provider: youtube

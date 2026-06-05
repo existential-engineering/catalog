@@ -1,0 +1,116 @@
+id: mEEZuWrSc6IRbzPOg9XPb
+name: F Two Active Subwoofer
+manufacturer: genelec
+primaryCategory: subwoofer
+url: https://www.genelec.com/f-two
+description: "The F Two compact subwoofer is designed to complement G Series
+  speakers up to and including the G Four, offering extended, controlled low
+  frequency performance and award-winning aesthetic design."
+details: |-
+  The Genelec F Two is a compact active subwoofer engineered as the natural low-frequency partner to the G Series home loudspeakers, extending performance down to 27 Hz while preserving the company's signature precision and award-winning industrial design. With a die-cast aluminium enclosure and a 205 mm cone driver, it is sized to integrate discreetly into living spaces yet delivers a short-term maximum SPL of at least 103 dB, comfortably supporting models up to and including the G Four.
+
+  Internally, a 150 W Class D amplifier drives the bass cone through onboard bass management and room response controls that let the user tailor the system to the acoustics of the listening space. By taking responsibility for the lowest octaves, the F Two frees the main speakers to operate higher in their range with reduced distortion and improved dynamic headroom, producing a more balanced overall presentation regardless of program material.
+
+  Connectivity is unusually broad for a home subwoofer: alongside three RCA analogue inputs (left, right and a dedicated LFE channel) the unit accepts Toslink optical and coaxial S/PDIF digital sources, with automatic input detection routing whichever signal is active. Two XLR analogue outputs and a set of RCA outputs (including a Link Out) make the F Two a practical hub for routing audio onward to active main speakers or to a second subwoofer in a stereo pair.
+
+  User control is equally flexible. A wireless volume remote sets the playback level for the entire system, the F Two can learn commands from an existing IR remote so a single handset can drive television, source and subwoofer together, and an optional wired volume controller is supported for installations where a fixed control surface is preferred. Intelligent Signal Sensing further drops idle consumption to no more than 0.5 W when no audio is detected.
+
+  Available in matte white or matte black finishes, the F Two carries Genelec's environmentally driven approach to construction - recyclable die-cast aluminium, lead-free electronics and low-power standby - into a subwoofer that is intended to live in the room rather than be hidden from it, complementing the visual language of the G Series while extending its musical reach.
+specs: |-
+  - Short Term Max SPL: ≥103 dB
+  - Frequency Response: 27 Hz - 85 Hz (-6 dB)
+  - Self Generated Noise: ≤15 dB SPL (A-weighted)
+  - Bass Driver Type: Cone
+  - Bass Driver Diameter: Ø205 mm
+  - Bass Amplifier: 150 W Class D
+  - Height: 300 mm
+  - Width: 362 mm
+  - Depth: 362 mm
+  - Weight: 8.5 kg (18.7 lb)
+  - Enclosure Material: Die cast aluminium
+  - ISS Active Power Consumption: ≤0.5 W
+  - Idle Power Consumption: ≤12 W
+  - Full Output Power Consumption: 120 W
+  - Mains Voltage: 100, 120, 220, 230 VAC 50/60 Hz
+  - Analog Inputs: 3 × RCA (L, R, LFE)
+  - Digital Inputs: 1 × Toslink S/PDIF, 1 × RCA S/PDIF (coaxial, 75 Ohm)
+  - Analog Outputs: 2 × XLR (10 kOhm), 3 × RCA (L, R, Link Out)
+  - Remote Control: Wireless volume control, IR learning, optional wired volume control
+io:
+  - name: Analog Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: LFE Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: S/PDIF Optical Input (Toslink)
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+  - name: S/PDIF Coaxial Input
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Output Left (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Output Right (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Output Left (RCA)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Output Right (RCA)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Link Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom

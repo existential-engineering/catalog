@@ -1,0 +1,83 @@
+id: SNZXwSe3TM4779YlqL45d
+name: "3440A Smart IP Active Subwoofer"
+manufacturer: genelec
+primaryCategory: subwoofer
+url: https://www.genelec.com/3440a
+description: "A truly pioneering solution, the compact 3440A PoE-powered
+  subwoofer enhances Genelec's versatile Smart IP family of installation
+  loudspeakers, offering the convenience of networked audio with the benefits of
+  single-cable connectivity. And by redefining the reference for low-frequency
+  output using PoE power, the subwoofer pushes installation audio quality to new
+  greater heights of performance."
+details: |-
+  The 3440A is a compact PoE-powered active subwoofer that extends Genelec's Smart IP installation loudspeaker family into the low-frequency domain, delivering networked audio and power over a single standard CAT cable. Aimed at AV integrators building permanent installations such as conference rooms, retail spaces, hospitality venues and corporate environments, it complements the 4410A, 4420A, 4430A, 4435A and 4436A Smart IP speakers as the dedicated subwoofer in fully IP-driven systems.
+
+  At the heart of the cabinet sits a 165 mm bass driver powered by a 70 W Class D amplifier, achieving a frequency response of 35 Hz to 120 Hz (-6 dB) with ±2.5 dB accuracy. Using Genelec's patented power storage technology, the 3440A delivers an impressive 106 dB short-term SPL and at least 101 dB long-term SPL on PoE+ power, while self-generated noise remains at or below 5 dB (A-weighted) — performance levels that previously required conventional mains power.
+
+  Connectivity is built around a single RJ45 port that simultaneously carries IEEE 802.3at PoE+ (or 802.3af PoE) power and uncompressed low-latency Dante / AES67 audio streams, with sub-microsecond synchronisation between Smart IP devices. A Euroblock 10 kOhm balanced analog input is provided as a backup or alternative source, and an internal DSP with active crossover handles bass management, room equalisation, delay and level alignment, all configurable through the Genelec Smart IP Manager software.
+
+  Smart IP Manager discovers devices, calibrates rooms and zones, and exposes a public API command set for integration into house automation systems via ready-made drivers. The 3440A's settings are stored in internal speaker memory for instant recall, making it well suited to multi-room and multi-zone deployments where configurations must remain stable over years of daily operation.
+
+  Physically the 3440A is a 475 x 475 x 220 mm enclosure weighing 14.5 kg, available in black (3440AP) and white (3440AW) finishes with 120 RAL custom color options and a RAW aluminum finish. The cabinet can be installed freestanding upright, laid on its side, or mounted on a wall or ceiling using the optional 3440-400B mount, giving installers flexibility while preserving the Smart IP family's sustainable single-cable approach to low-power, high-quality installation audio.
+specs: |-
+  - Frequency response: 35 Hz - 120 Hz (-6 dB)
+  - Accuracy of frequency response: ±2.5 dB (35 Hz - 120 Hz)
+  - Short-term peak SPL: ≥106 dB
+  - Long-term max SPL: ≥101 dB
+  - Self-generated noise: ≤5 dB SPL (A-weighted)
+  - Bass amplifier: 70 W Class D
+  - Bass driver: 165 mm cone
+  - Network input: 1 x RJ45 Ethernet (PoE+ / PoE) carrying AES67 / Dante audio
+  - Analog input: 1 x Euroblock, 10 kOhm balanced
+  - Power: IEEE 802.3at PoE+ (30 W, recommended) or IEEE 802.3af PoE (15 W)
+  - DSP features: active crossover, bass management, room EQ, delay and level alignment
+  - Control: Genelec Smart IP Manager software via IP network, public API for house automation
+  - Audio streaming: uncompressed low-latency Dante / AES67 with sub-microsecond synchronisation
+  - Dimensions: 475 x 475 x 220 mm (H x W x D)
+  - Weight: 14.5 kg (32.0 lb)
+  - Finishes: black (3440AP) or white (3440AW), 120 RAL custom colors, RAW aluminum option
+  - Mounting: freestanding upright, on side, or wall/ceiling via optional 3440-400B accessory
+io:
+  - name: AES67 / Dante Network Input
+    signalFlow: input
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: PoE+ Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: "4410A Smart IP Installation Speaker"
+    url: https://www.genelec.com/4410a
+  - type: resource
+    title: "4420A Smart IP Installation Speaker"
+    url: https://www.genelec.com/4420a
+  - type: resource
+    title: "4430A Smart IP Installation Speaker"
+    url: https://www.genelec.com/4430a
+  - type: resource
+    title: "4435A Smart IP Installation Speaker"
+    url: https://www.genelec.com/4435a
+  - type: resource
+    title: "4436A Smart IP Installation Speaker"
+    url: https://www.genelec.com/4436a
+  - type: resource
+    title: Smart IP Manager Software
+    url: https://www.genelec.com/smart-ip-manager
+  - type: resource
+    title: "3440-400B Wall and Ceiling Mount"
+    url: https://www.genelec.com/3440-400b-wall-and-ceiling-mount-for-smart-ip-3440a

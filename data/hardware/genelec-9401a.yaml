@@ -1,0 +1,69 @@
+id: vzOEmkmlk7xaLfK1YOExR
+name: "9401A"
+manufacturer: genelec
+primaryCategory: other
+url: https://www.genelec.com/9401a
+description: "For audio professionals using Audio-over-IP (AoIP) connectivity,
+  the Genelec 9401A System Management Device enables the smooth integration of
+  Smart Active Monitors and Subwoofers (SAM™) into SAM system layouts, from
+  stereo to immersive, using ST2110, AES67 and Ravenna streams as the source –
+  while offering full support for room adaption from our powerful Genelec
+  Loudspeaker Manager (GLM™) software."
+details: |-
+  The Genelec 9401A is a 1U rack-mountable System Management Device that brings Audio-over-IP networking into the Smart Active Monitoring (SAM) ecosystem. It accepts ST2110, AES67 and Ravenna streams from a broadcast or production network and translates them into 16 channels of AES/EBU digital audio for distribution to Genelec SAM monitors and subwoofers, allowing a single device to drive layouts from stereo through immersive formats such as 9.1.6.
+
+  At the heart of the 9401A is an AES59-2012 (TASCAM analog) pinout DB25 connector that carries the 16 channels of AES/EBU output, supplemented by a dedicated subwoofer output and flexible auxiliary stereo monitoring routing. Multiple 9401A units can be combined to scale channel counts up to large immersive configurations like 22.2, making it equally well suited to high-end music studios, post production rooms and broadcast facilities.
+
+  Because the 9401A speaks fluently with GLM, the existing Genelec Loudspeaker Manager workflow remains intact: AutoCal room measurement, level and delay alignment, and per-monitor calibration all flow through the device to the connected SAM monitors. This means engineers gain AoIP transport without giving up the precise room adaptation that defines the SAM platform.
+
+  The 9401A is fully part of the Genelec UNIO Platform, bridging in-room loudspeaker monitoring with personal headphone monitoring at matched accuracy so that mixes translate between the two domains. Compatibility extends across the entire current SAM range (with the sole exception of the 8320A), so the device slots into established Genelec setups as well as new installations.
+
+  Mechanically and electrically the unit is built for permanent installation: a 1U rack enclosure, universal mains input (100–240 VAC) on an IEC inlet, 12 W typical power consumption, and an Intelligent Signal Sensing (ISS) power-saving mode that drops idle draw below 4.5 W. The 9401A ships with the mains cable and a CAT cable for the GLM network so it is ready to be racked, patched and brought online out of the box.
+specs: |-
+  - Supported sampling rates: 44.1–192 kHz
+  - Bit resolution: 16, 24 or 32-bit per sample
+  - Output sampling rate follows input sample rate
+  - AES output: DB25 connector with AES59-2012 pinout
+  - AoIP transport: ST2110, AES67, Ravenna
+  - AES/EBU output channels: 16
+  - Dedicated subwoofer output
+  - Auxiliary stereo monitoring output
+  - GLM network connection via RJ45
+  - Power input: Universal mains 100–240 VAC via IEC connector
+  - Power consumption (normal): 12 W
+  - Power consumption (ISS power-saving): < 4.5 W
+  - Form factor: 1U rack-mountable enclosure
+  - In the box: mains cable, one RJ45 CAT cable for GLM network
+io:
+  - name: AoIP Network
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Network
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Out (16 ch)
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+  - name: Mains
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: Operating Manual 9401A
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4WrZF8Cj3oXnPBmtGgtzqN/3296c96e7a043674dbf79d21a7f5340d/Genelec_9401A_Operating_Manual.pdf

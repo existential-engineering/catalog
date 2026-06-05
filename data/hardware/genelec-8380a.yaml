@@ -1,0 +1,94 @@
+id: lf-b69__Al3Vb_yCcOGvs
+name: "8380A SAM Main Monitor"
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+url: https://www.genelec.com/8380a
+description: "__Engineered for the Truth – Uniting Power, Performance and
+  Precision__With its pinpoint-precise coaxial driver, powerful 15-inch woofer
+  and high SPL capability, the 8380A delivers exceptionally accurate imaging and
+  neutral sound reproduction for professional studios and demanding
+  high-fidelity listening environments."
+details: |-
+  The 8380A is Genelec's three-way, large-format SAM (Smart Active Monitoring) main monitor, engineered to bring coaxial-grade imaging and full-range, high-SPL reproduction to professional studios, mastering rooms, broadcast suites, and demanding high-fidelity listening environments. It combines a 15-inch woofer with a coaxial midrange/treble assembly so that the entire audible spectrum radiates from a single point source, delivering time-aligned, level-calibrated playback over an unusually wide sweet spot.
+
+  At the heart of the cabinet sits Genelec's Minimum Diffraction Coaxial (MDC) driver: a 125 mm midrange dome with a concentric 25 mm dome tweeter, surrounded by a directivity-controlled waveguide that is integral to the cabinet's curved front baffle. The 380 mm bass driver, mounted below the coaxial unit, is loaded by a reflex port and crossed over at 470 Hz to the midrange, with the mid/treble crossover at 2,500 Hz. Total amplification reaches 750 W, split between a 500 W Class D bass amplifier, 250 W Class D midrange amplifier, and 200 W Class AB treble amplifier - sufficient for short-term peak SPL of at least 124 dB at 1 m.
+
+  The 8380A is part of the Smart Active Monitoring family and integrates with GLM (Genelec Loudspeaker Manager) for automated room calibration, level alignment, and delay compensation across stereo, multichannel and immersive systems. Two RJ45 connectors carry the GLM control network, while audio is presented on three XLRs: one balanced analog input, one AES/EBU digital input, and one AES/EBU thru output for daisy-chaining additional monitors. Excellent directivity and phase matching with the rest of the SAM range, and compatibility with the wider UNIO Ecosystem, mean the 8380A can sit alongside existing Genelec systems without timbral or imaging mismatch.
+
+  The cabinet's external dimensions and mounting pattern intentionally match earlier 1038A and 1238A main monitors, making the 8380A a drop-in upgrade for legacy soffit-mounted installations - including configurations where the amplifier electronics are mounted remotely. The monitor can be deployed vertically or horizontally with consistent on-axis and off-axis response, and the minimum recommended listening distance is 1.3 metres (4.25 ft).
+
+  As with all Genelec products, the 8380A is built in Iisalmi, Finland to the company's sustainability standards, with Intelligent Signal Sensing (ISS) standby drawing under 0.5 W of mains power, repairability designed in for a multi-decade service life, and a finish offering in matte black or matte white.
+specs: |-
+  - Frequency response: 38 Hz - 20 kHz (±1.5 dB)
+  - Frequency response (-6 dB): 29 Hz - 43 kHz
+  - Peak SPL: ≥124 dB
+  - Short-term max SPL: ≥122 dB @ 1 m
+  - Long-term max SPL: ≥115 dB @ 1 m
+  - Self-generated noise: ≤0 dB SPL (A-weighted)
+  - Harmonic distortion (50 Hz): ≤0.5%
+  - Harmonic distortion (50-200 Hz): ≤1%
+  - Harmonic distortion (>200 Hz): ≤0.5%
+  - Bass/Mid crossover: 470 Hz
+  - Mid/Treble crossover: 2500 Hz
+  - Bass driver: 380 mm (15") cone
+  - Midrange driver: 125 mm (4 7/8") coaxial
+  - Treble driver: 25 mm (1") coaxial dome
+  - Bass amplifier: 500 W Class D
+  - Midrange amplifier: 250 W Class D
+  - Treble amplifier: 200 W Class AB
+  - Total amplifier power: 750 W
+  - Analog input: 1 x XLR female, balanced, 10 kΩ
+  - Digital input: 1 x XLR female AES/EBU, 110 Ω
+  - Digital output: 1 x XLR male AES/EBU thru, 110 Ω
+  - GLM control network: 2 x RJ45 (CAT5)
+  - Mains voltage: 100-240 VAC, 50/60 Hz
+  - Power consumption (ISS active): ≤0.5 W
+  - Power consumption (idle): ≤21 W
+  - Enclosure material: MDF
+  - Enclosure type: Reflex port
+  - Height: 810 mm (31 7/8")
+  - Width: 480 mm (18 7/8")
+  - Depth: 420 mm (16 1/2")
+  - Weight: 54 kg (119.0 lb)
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Output (Thru)
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Network
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 2
+    position: Bottom
+  - name: Mains
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: "8380A Operating Manual (PDF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4m3lpEnGsdFgORnRt6M1wz/7324bc876760d97e951b9a4349a58cc0/8380A_Operating_Manual.pdf

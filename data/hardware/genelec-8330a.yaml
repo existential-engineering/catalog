@@ -1,0 +1,124 @@
+id: ebRo7YBWSIkJQWFVQ59tV
+name: "8330A SAM Studio Monitor"
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+url: https://www.genelec.com/8330a
+prices:
+  - amount: 780
+    currency: EUR
+description: "Combining precision, adaptability and a small footprint, the 8330A
+  offers colour-free performance and powerful room compensation features."
+details: |-
+  The 8330A is a two-way active Smart Active Monitor in Genelec's compact 8000-series lineup, sized for project studios, broadcast suites, and post-production rooms where space is tight but neutral monitoring is non-negotiable. With a 130 mm bass driver and 19 mm metal-dome tweeter, each driven by a dedicated 50 W Class D amplifier, the 8330A delivers a short-term maximum SPL of 104 dB and a peak SPL of at least 110 dB per pair at one metre.
+
+  The free-field frequency response runs from 45 Hz to 23 kHz at -6 dB, with an accuracy of +/- 1.5 dB across 58 Hz to 20 kHz. Harmonic distortion stays at or below 0.5% above 100 Hz, and self-generated noise is held to 5 dB SPL on-axis. The cabinet is a die-cast aluminium Minimum Diffraction Enclosure (MDE) paired with a Directivity Control Waveguide (DCW), reflex-loaded for extended low-frequency reach in a 299 x 189 x 178 mm chassis weighing 5.1 kg.
+
+  Genelec positions the 8330A as 'the professional's choice', offering a little more SPL and LF extension than the smaller 8320A while keeping the same wide, uncoloured sweet spot. The included Iso-Pod stand decouples the monitor from the supporting surface and supports angled placement to align the acoustic axis with the listener.
+
+  As a SAM (Smart Active Monitoring) product, the 8330A integrates closely with Genelec's GLM (Genelec Loudspeaker Manager) software for room calibration, level matching, and group management from mono through immersive layouts. GLM compensates for detrimental room influences, making the 8330A well-suited to challenging acoustic spaces. Calibration requires GLM software together with either the 9320A SAM Reference Controller or the GLM Calibration Kit (sold separately).
+
+  Connectivity comprises a balanced XLR analog input (10 kOhm), an AES/EBU digital input and a thru output on XLR, and two RJ45 CAT5 GLM network ports for daisy-chaining monitors and subwoofers under GLM control. Intelligent Signal Sensing (ISS) drops idle consumption below 0.5 W to meet EU ErP directives. The 8330A is available in Dark Grey, White, Black, and RAW finishes, ships with a 5 m RJ45 cable and operating manual, and carries a 2-year warranty extendable to 5 years via MyGenelec registration.
+specs: |-
+  - Two-way active studio monitor
+  - Short term maximum SPL: 104 dB (on axis at 1 m, 100 Hz - 3 kHz)
+  - Peak SPL: >= 110 dB (per pair at 1 m with music material)
+  - Long-term SPL: >= 96 dB RMS (IEC-weighted at 1 m)
+  - Frequency response: 45 Hz - 23 kHz (-6 dB)
+  - Frequency response accuracy: +/- 1.5 dB (58 Hz - 20 kHz)
+  - Self-generated noise: <= 5 dB SPL (A-weighted, on axis free field at 1 m)
+  - Harmonic distortion: <= 2% (50 Hz - 100 Hz), <= 0.5% (> 100 Hz)
+  - Group delay: 2.9 ms (Extended Phase Linearity OFF)
+  - Bass driver: 130 mm cone
+  - Treble driver: 19 mm metal dome
+  - Bass amplifier: 50 W Class D
+  - Treble amplifier: 50 W Class D
+  - Enclosure: Die-cast aluminium Minimum Diffraction Enclosure (MDE), reflex port
+  - Directivity Control Waveguide (DCW) technology
+  - Iso-Pod vibration decoupling stand included
+  - Intelligent Signal Sensing (ISS) auto power management
+  - GLM (Genelec Loudspeaker Manager) network calibration support
+  - Dimensions: 299 x 189 x 178 mm (H x W x D) with Iso-Pod; 285 mm height without
+  - Weight: 5.1 kg (11.2 lb)
+  - Mains voltage: 100-240 VAC, 50/60 Hz
+  - Power consumption (ISS active): <= 0.5 W
+  - Power consumption (idle): <= 3 W
+  - Power consumption (full output): 50 W
+  - Analog input: 1 x XLR female, balanced, 10 kOhm
+  - Digital input: 1 x XLR female (AES/EBU)
+  - Digital output: 1 x XLR male (AES/EBU thru)
+  - Control: 2 x RJ45 (CAT5) for GLM network
+  - Available colors: Dark Grey, White, Black, RAW
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Digital Input
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Digital Output
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 1
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 2
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: "8330A Operating Manual (English)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/W5GSJrmlY26mIkaw0m6sW/5123b5adead53fbb0774b9b04479ffca/8320_and_8330_opman_c.pdf
+  - type: resource
+    title: "8320 & 8330 Operating Manual (Chinese)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/1lDsmrkdk1QJ6dRnymEvFl/12dea127ff66a0d4efb6cde7f073554e/8320_and_8330_opman-_________-____________.pdf
+  - type: resource
+    title: "8330A Drawing Views (PDF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2jXvV7G8iwQOekEss8ycKU/14f746cc5074382a1826481b6da45b35/8330a_views_0.pdf
+  - type: resource
+    title: SAM Series Full Line Catalogue
+    url: https://assets.ctfassets.net/4zjnzn055a4v/xd0RmOyjysCNLGhQb0lKJ/70ef78fb45891df02746b4632b053013/SAM_Series_Full_Line_Catalogue_2021.pdf
+  - type: resource
+    title: Genelec SAM Brochure
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2fPKyKnMNmUuiM4K6S0mGc/997fe2850756db2b4d2dd88f0e139d15/genelec_sam_brochure_2014_web.pdf
+  - type: resource
+    title: Genelec Immersive Solutions Guide
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4dG9V4oK3gUEsqXodIqRaJ/02ee79e6e3fd962e0d40ab14b86c8320/Genelec_Immersive_Solutions_Guide_-_2021.pdf
+  - type: resource
+    title: In-Room Product Performance Guide
+    url: https://assets.ctfassets.net/4zjnzn055a4v/12qJYpLlyeGCGsacAEkCge/54ca8a1983cd38fe5cb8fa02d26f3c9f/genelec_monitors_in-room_performance.pdf
+  - type: resource
+    title: Home Studio Audio Monitoring Guide (English)
+    url: https://assets.ctfassets.net/4zjnzn055a4v/1LUoquMW6muwz8JaIq88d9/cbc68c782de8493cb98900f499d68c1c/Genelec_Home_Studio_Audio_Monitoring_Guide.pdf
+  - type: resource
+    title: Home Studio Audio Monitoring Guide (German)
+    url: https://downloads.ctfassets.net/4zjnzn055a4v/7i0E25JRooZznaU2pnslGS/cfb26560b6311024c35c101f8c791166/Home_Studio_Audio_Monitoring_Guide__German_version_.pdf

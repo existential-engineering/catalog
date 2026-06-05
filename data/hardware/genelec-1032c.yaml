@@ -1,0 +1,120 @@
+id: VZ1FmJi85jgObDSyn0t5O
+name: "1032C SAM Studio Monitor"
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+url: https://www.genelec.com/1032c
+description: "The 1032C is a high-SPL nearfield monitor that fuses the
+  much-loved soffit-mountable styling of the iconic 1000 series with our latest
+  Smart Active Monitoring technology."
+details: |-
+  The 1032C is a high-SPL nearfield Smart Active Monitor that pairs the soffit-mountable styling of Genelec's iconic 1000 series with the latest Smart Active Monitoring technology. Building on the foundation of the earlier 1032A and 1032B revisions, it retains the same acoustic character that made the lineage a mainstay of pro studios while bringing the platform forward with digital connectivity, a universal power supply, and Class D amplification.
+
+  Drive comes from a 250 mm magnetically shielded bass cone and a 25 mm magnetically shielded metal-dome tweeter, powered respectively by 250 W and 150 W Class D amplifiers for a combined 400 W output stage. The monitor delivers a short-term maximum SPL of at least 114 dB and a peak SPL of at least 124 dB, with a frequency response of 40 Hz - 20 kHz (+/- 2.5 dB) and low cutoff extending to 33 Hz at -6 dB.
+
+  Connectivity covers both analog and digital workflows. A balanced 10 kOhm XLR female input handles analog signal, while a pair of 110 Ohm AES/EBU XLR connectors provide digital input and thru/output for daisy-chaining. Two RJ45 ports carry the GLM network for control and calibration, and the universal 100-240 VAC supply allows worldwide deployment without rewiring.
+
+  As part of the SAM family, the 1032C integrates with Genelec's GLM software (used with a 9320A Reference Controller or GLM Calibration Kit, sold separately) to measure the room, compensate for acoustic anomalies, manage level and routing, and align multiple monitors into a calibrated system. This makes the 1032C suitable for high-end music production, mastering, post-production, broadcast, and game audio rooms where neutral reference is critical.
+
+  Power management is handled by Intelligent Signal Sensing (ISS), which drops idle draw below 1 W. The MDF enclosure measures 495 x 320 x 290 mm and weighs 17 kg (37.5 lb). The product ships with a 1.8 m mains cable, a 5 m RJ45 cable, and the operating manual, and is covered by a 2-year warranty extendable to 5 years through free product registration.
+specs: |-
+  - Two-way Smart Active Monitor (SAM)
+  - Short term maximum SPL >= 114 dB
+  - Peak SPL >= 124 dB
+  - Long term maximum SPL >= 104 dB
+  - Frequency response: 40 Hz - 20 kHz (+/- 2.5 dB)
+  - Low cutoff (-6 dB): 33 Hz
+  - High cutoff (-6 dB): 23 kHz
+  - Self-generated noise: <= 5 dB SPL (A-weighted)
+  - Bass driver: 250 mm cone, magnetically shielded
+  - Treble driver: 25 mm metal dome, magnetically shielded
+  - Bass amplifier: 250 W Class D
+  - Treble amplifier: 150 W Class D
+  - Total amplifier power: 400 W
+  - Harmonic distortion (50-100 Hz): <= 1%
+  - Harmonic distortion (>100 Hz): <= 0.5%
+  - Group delay (Extended Phase Linearity OFF): 3.2 ms
+  - Analog input: XLR female, 10 kOhm balanced
+  - Digital input: AES/EBU XLR female, 110 Ohm
+  - Digital output/thru: AES/EBU XLR male, 110 Ohm
+  - GLM network: 2 x RJ45 (CAT5)
+  - Mains voltage: 100-240 VAC 50/60 Hz
+  - Power consumption (ISS active): <= 1 W
+  - Power consumption (idle): <= 11 W
+  - Power consumption (full output): 200 W
+  - Dimensions (H x W x D): 495 x 320 x 290 mm
+  - Weight: 17 kg (37.5 lb)
+  - Enclosure: MDF
+  - Intelligent Signal Sensing (ISS) auto power management
+  - GLM (Genelec Loudspeaker Manager) network calibration support
+  - Includes mains cable (1.8 m), RJ45 cable (5 m), operating manual
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Digital AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Digital AES/EBU Output / Thru
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 1
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: GLM Network 2
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: "1032C Operating Manual"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/7MBtBt6ANyA0GQGK0sY8wY/fb7660178dd7a1f0ece3fe1059b4bc6a/1032C_Operating_Manual.pdf
+  - type: resource
+    title: "1032C Drawing Views (PDF)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4EzxSeO9LWw2agAemg46Ky/4bac8beecff680f141c3991edd7f37b6/1032cviews.pdf
+  - type: resource
+    title: "1032C CAD Drawing (DWG)"
+    url: https://assets.ctfassets.net/4zjnzn055a4v/2JUSejwR5egqgC0IgYUacY/bb1182fb595af8756974f79e40233866/1032cviews.dwg
+  - type: resource
+    title: Genelec Immersive Solutions Guide
+    url: https://assets.ctfassets.net/4zjnzn055a4v/4dG9V4oK3gUEsqXodIqRaJ/02ee79e6e3fd962e0d40ab14b86c8320/Genelec_Immersive_Solutions_Guide_-_2021.pdf
+  - type: review
+    title: delamar Magazin Review (German)
+    url: https://www.delamar.de/test/genelec-1032cpm/
+  - type: review
+    title: Bonedo Magazin Review (German)
+    url: https://www.bonedo.de/artikel/genelec-1032c-test/
+  - type: review
+    title: fairaudio Review (German)
+    url: https://www.fairaudio.de/test/genelec-1032-c-aktiv-lautsprecher-test/
+  - type: review
+    title: AudioVideo.fi Review (Finnish)
+    url: https://audiovideo.fi/testi/genelec-1032c-aktiivikaiuttimet-ja-7380a-aktiivisubwoofer-testissa/

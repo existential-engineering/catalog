@@ -1,0 +1,102 @@
+id: lzsemoXwKEb5w0X9ESavw
+name: S360A SAM Studio Monitor
+manufacturer: genelec
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - immersive
+url: https://www.genelec.com/s360a
+description: "The S360A delivers high SPL monitoring without compromising on
+  predictability, speech intelligibility or sound quality."
+details: |-
+  The S360A is a high-SPL three-way active studio monitor designed by Genelec for demanding film, post-production and music production environments. It fuses true main-monitor performance with a relatively compact enclosure, making it equally well suited to free-standing, in-wall and on-wall installations. The fusion of high output capability with neutral reproduction allows the S360A to serve as a primary monitor in rooms where listening distances exceed ten metres (33 feet), where smaller monitors would run out of headroom long before the program material does.
+
+  At the heart of the S360A sits a 250 mm bass driver paired with a 44 mm compression treble driver loaded into a 25 mm throat, the latter coupled to Genelec's Directivity Control Waveguide (DCW) technology to produce a controlled, even dispersion across the listening area. The two drivers are powered by dedicated Class D amplifiers rated at 250 W for the bass and 100 W for the treble, delivering a short-term maximum SPL of 118 dB and peak SPL of at least 128 dB at one metre. The MDF reflex-ported enclosure extends low-frequency reach down to 39 Hz (±2 dB), with a useful response to 36 Hz at -6 dB, and a top end reaching 22 kHz.
+
+  Combined with a Genelec subwoofer such as the 7370A or 7380A, the S360A becomes a credible solution for EDM production and Dolby film mixing at reference levels. The wide, even directivity provided by DCW makes the monitor predictable across multiple listening positions, which is critical when working on immersive formats such as Dolby Atmos, where consistent timbre across all channels is essential. The S360A is part of Genelec's Smart Active Monitoring (SAM) family and integrates with GLM software, allowing room compensation, level alignment and time-of-flight delay to be applied across mono, stereo and immersive configurations.
+
+  Sonically, the S360A focuses on intelligibility and accuracy. Harmonic distortion is held to ≤1% from 50 to 100 Hz, ≤0.5% from 100 Hz to 5 kHz and ≤1.5% above 5 kHz, while self-generated noise is kept to ≤10 dB SPL (A-weighted). The cabinet measures 530 × 360 × 360 mm with the Iso-Pod isolator fitted and weighs 30 kg (66.1 lb). A universal mains supply (100–240 VAC, 50/60 Hz) and Genelec's Intelligent Signal Sensing (ISS) standby mode keep idle power consumption at ≤11 W, dropping below 1 W when ISS is active.
+
+  On the connection panel, the S360A offers balanced XLR analog input, XLR AES/EBU digital input and a thru output for daisy-chaining digital signal, and two RJ45 GLM control network ports that allow the monitor to be addressed and calibrated as part of a larger SAM system. Available in black (S360AM) and white (S360AW) finishes, with a full range of dedicated stands, brackets and ceiling mounts (the S360-415B floor stand, S360-408B stand plate, S360-444B wall mount, S360-465B ceiling mount, S360-450B side-side and S360-424B top-bottom brackets), the S360A is designed to drop into any professional installation, from a single mastering room to a full immersive control room.
+specs: |-
+  - SPL - Peak: ≥128 dB
+  - SPL - Short Term Max: ≥118 dB
+  - SPL - Long Term Max: ≥112 dB
+  - Frequency Response (±2 dB): 39 Hz - 19 kHz
+  - Frequency Response (-6 dB): 36 Hz - 22 kHz
+  - Self-Generated Noise: ≤10 dB SPL (A-weighted)
+  - Amplifier Power - Bass: 250 W (Class D)
+  - Amplifier Power - Treble: 100 W (Class D)
+  - Bass Driver Type: Cone
+  - Bass Driver Diameter: 250 mm
+  - Treble Driver Type: Compression (44 mm into 25 mm throat)
+  - Treble Driver Diameter: 25 mm
+  - Enclosure Material: MDF
+  - Enclosure Type: Reflex port
+  - Harmonic Distortion (50-100 Hz): ≤1%
+  - Harmonic Distortion (100 Hz-5 kHz): ≤0.5%
+  - Harmonic Distortion (>5 kHz): ≤1.5%
+  - Group Delay (Extended Phase Linearity OFF): 5.2 ms
+  - Dimensions (H × W × D with Iso-Pod): 530 × 360 × 360 mm
+  - Weight: 30 kg (66.1 lb)
+  - Mains Voltage: 100-240 VAC 50/60 Hz
+  - Power Consumption - ISS Active: ≤1 W
+  - Power Consumption - Idle: ≤11 W
+  - Power Consumption - Full Output: 230 W
+  - Analog Input: 1 × XLR balanced, 10 kΩ
+  - AES/EBU Digital Input: 1 × XLR, 110 Ω
+  - AES/EBU Digital Output/Thru: 1 × XLR, 110 Ω
+  - Control Network: 2 × RJ45 CAT5 (GLM Network)
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Digital Input
+    signalFlow: input
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES/EBU Digital Output/Thru
+    signalFlow: output
+    category: digital
+    type: "aes/ebu"
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Control Network In
+    signalFlow: bidirectional
+    category: digital
+    type: "aes/ebu"
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: GLM Control Network Thru
+    signalFlow: bidirectional
+    category: digital
+    type: "aes/ebu"
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: GLM Loudspeaker Manager
+    url: https://www.genelec.com/glm
+  - type: resource
+    title: Genelec UNIO
+    url: https://www.genelec.com/UNIO
+videos:
+  - videoId: 3r5kL5vwVmw
+    provider: youtube
