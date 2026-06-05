@@ -246,7 +246,7 @@ async function checkUrl(
   let result: UrlCheckResult;
 
   try {
-    const response = await fetch(url, {
+    let response = await fetch(url, {
       method: "HEAD",
       redirect: "follow",
       signal: AbortSignal.timeout(10000),
@@ -254,6 +254,20 @@ async function checkUrl(
         "User-Agent": "Aureo-Catalog-Validator/1.0",
       },
     });
+
+    // Some servers block HEAD requests with an auth/automation status but
+    // serve the page fine over GET. Retry with GET so these aren't reported
+    // as false positives.
+    if ([401, 403, 405].includes(response.status)) {
+      response = await fetch(url, {
+        method: "GET",
+        redirect: "follow",
+        signal: AbortSignal.timeout(10000),
+        headers: {
+          "User-Agent": "Aureo-Catalog-Validator/1.0",
+        },
+      });
+    }
 
     const redirected = response.url !== url;
 
