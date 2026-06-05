@@ -720,6 +720,7 @@ Content entries (presets, sample packs, expansions) are software entries where `
 - `xlr`
 - `combo jack`
 - `5-pin din`
+- `7-pin din`
 - `mini-din`
 - `rca`
 - `usb-a`

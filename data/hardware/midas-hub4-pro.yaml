@@ -1,0 +1,154 @@
+id: bhLsr_9Pl4HYvZ1rMcmrX
+name: HUB4 PRO
+manufacturer: midas
+primaryCategory: rack-mount
+url: "https://www.midasconsoles.com/en/products/0609-AAO"
+description: The HUB4 PRO is the essential multi-tool in any stage rack,
+  providing analogue and digital outputs for various applications and offering
+  reliable performance for seamless integration into diverse audio setups. The
+  HUB4 PRO allows a more streamlined and customisable monitoring experience,
+  with front panel buttons and 16 balanced analogue outputs for sending 4x2
+  personal stereo mixes from DP48 to IEM transmitters in the side rack. It also
+  allows collecting audio from 4 of the brand-new Midas DL8 Stage Box, which can
+  be connected and powered from ports 1-4. Ensuring reliable connections is key
+  for the transmission of multiple channels in any setting, the HUB4 PRO
+  features industry-standard RJ45 AES50 network ports and remote operation via
+  shielded CAT5e cables. With a versatile and adaptive power supply, the HUB4
+  PRO can be used globally, and it has a rugged 1U chassis making it extremely
+  durable for travel.
+details: |-
+  Personal Monitoring with DP48: HUB4 PRO can supply up to four DP48 personal monitor mixers with PoE (Power over Ethernet) and 48 channels of 24-bit/48 kHz audio or 2x 24 channels at 96 kHz. HUB4 PRO also collects 48 channels of upstream audio and forwards this audio to the FOH console, either from stage boxes connected to the AES50-B (THRU) Port or 8 return channels from each of Ports 1-4.
+
+  Analog Outputs for IEM Transmitters: HUB4 PRO features 16 balanced line-level outputs that can carry the 8 stereo mixes from the connected DP48 mixers for connections in the side rack. There is no need to run additional lines from personal mixers to the transmitters, reducing setup time and reliability considerably. Alternatively, these analogue outputs can also be used as spare outputs on stage receiving signals directly from the FOH consoles, e.g. for providing talkback or side fill outputs.
+
+  Cascading Hubs for Large Setups: To meet the challenges of large monitoring setups, HUB4 PRO can easily be daisy-chained to make additional DP48 ports available, all the way up to symphonic orchestra applications. On the other hand, HUB4 PRO can also address situations where you want to connect additional I/O via the same AES50 link to the mixing console. To help build out this AES50 console link, digital stage boxes such as the Midas DL16 or DL32 can be connected to the HUB4's AES50 (THRU) Port. The console can pass downstream signals to their respective stage outputs, while also receiving 48 channels upstream from the stage inputs via HUB4 PRO.
+
+  StageConnect Interface: The innovative StageConnect interface yields additional flexibility for routing signals in, out, and through the HUB4 PRO. With just one standard XLR cable you can expand the total I/O capacity by 32 channels of lowest latency, impeccable 24-Bit audio.
+
+  Support from Midas M32 and Heritage D Series Consoles: HUB4 PRO can convey control messages from M32 FOH consoles to DP48 personal mixers, as well as remote control messages between DP48 units. This control information includes assignments, names and colors of channels, which are transmitted via AES50 for easy configuration of personal mixers.
+
+  Midas DL8 PoE Powered Stage Boxes: HUB4 PRO easily interfaces with the new Midas DL8 stage box. The DL8 stage box can be connected to one of HUB4 PRO Ports 1-4 using only a simple CAT5E STP cable. This cable connection from HUB4 PRO can directly power up to 4 stage boxes via PoE support – IEEE802.3at per port – allowing for shorter analogue lines on stage.
+specs: |-
+  - AES50: 2 x RJ-45
+  - Hubs: 4 x RJ-45
+  - StageCONNECT: 1 x 3 pin XLRM
+  - Outputs 1: 2 x 6.35 mm TRS jack 2 x 3 pin XLRM
+  - Outputs 2: 2 x 6.35 mm TRS jack 2 x 3 pin XLRM
+  - Outputs 3: 4 x 6.35 mm TRS jack
+  - Outputs 4: 4 x 6.35 mm TRS jack
+  - Output Impedance: 100 Ω
+  - Maximum output level: +21.5 dBu
+  - Buttons: Port 1 – 4 to AES50 In; StageCONNECT to AES50 In / Update; Port 1 to Outputs 1 / 48 kHz; Port 2 to Outputs 2 / 96 kHz x 2; Port 3 to Outputs 3 / 96 kHz x 1; Port 4 to Outputs 4; Power on/off
+  - Sample Rate: 24-bit / 48 kHz or 24-bit / 96 kHz
+  - Channel Capacity: 48 channels at 24-bit/48 kHz or 2x 24 channels at 96 kHz
+  - PoE: IEEE 802.3at per port (Ports 1-4)
+  - Cabling: Shielded CAT5e (CAT5e STP)
+  - Chassis: Rugged 1U rack-mount
+io:
+  - name: AES50
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 2
+    position: Right
+  - name: Hubs (Ports 1-4)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 4
+    position: Right
+  - name: StageCONNECT
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Outputs 1 (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Right
+  - name: Outputs 1 (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 2
+    position: Right
+  - name: Outputs 2 (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Right
+  - name: Outputs 2 (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 2
+    position: Right
+  - name: Outputs 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 4
+    position: Right
+  - name: Outputs 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 4
+    position: Right
+links:
+  - type: resource
+    title: Quick Start Guide
+    url: "https://cdn-media.empowertribe.com/49ea41a551cb4ae6a899f207de9c1555/QSG_M\
+      %20%20%20%20%20%20I_0609-AAO_HUB4%20PRO_WW.pdf"
+  - type: resource
+    title: Quick Start Guide, All Languages
+    url: "https://cdn-media.empowertribe.com/942dd081af674aceb9de3b78d9bbdd2f/QSG_M\
+      %20%20%20%20%20%20I_0609-AAO_HUB4%20PRO_WW.pdf"
+  - type: resource
+    title: Routing Diagram
+    url: "https://cdn-media.empowertribe.com/d513cecbb4c04ea880a4ae33b5ab65fd/HUB4_\
+      %20%20%20%20%20%20Routing_Diagram.pdf"
+  - type: resource
+    title: Release Notes (Firmware 2.6)
+    url: "https://cdn-media.empowertribe.com/1eb36a906564449b9ecac59bcf91ca7d/HUB4_\
+      %20%20%20%20%20%20Firmware_2.6.pdf"
+  - type: resource
+    title: CAD Drawings
+    url: "https://cdn-media.empowertribe.com/81a5f5f50c6746cda7dffdd558d87470/HUB4.\
+      %20%20%20%20%20%20dwg"
+  - type: resource
+    title: Revit Drawings
+    url: "https://cdn-media.empowertribe.com/9584be87522e4e12bb48aff1d633f132/Hub4.\
+      %20%20%20%20%20%20rfa"
+  - type: resource
+    title: StageConnect Configurator (Windows)
+    url: "https://cdn-media.empowertribe.com/364e1264258547cb81637cfee85a156f/SCCal\
+      %20%20%20%20%20%20culator_setup.exe"
+  - type: resource
+    title: StageConnect Configurator (Mac)
+    url: "https://cdn-media.empowertribe.com/36194a4d92c9475c8440a2cb2c07da4c/SCCal\
+      %20%20%20%20%20%20culator.dmg"
+  - type: resource
+    title: StageConnect Configurator (LINUX)
+    url: "https://cdn-media.empowertribe.com/0a4aadaeecc249448f27e303e00b0bca/SCCal\
+      %20%20%20%20%20%20culator.appimage"
+images:
+  - "https://cdn-media.empowertribe.com/e34d3e83569c47c58c109bd044183686/Image_\
+    MI_0609-AAO_HUB4-PRO_Right_XL.png"
+  - "https://cdn-media.empowertribe.com/bf02bf9dd40b48fd8b4c98d8fb61aef3/Image_\
+    MI_0609-AAO_HUB4-PRO_Top-Front_XL.png"
+  - "https://cdn-media.empowertribe.com/e3d1ed6ced6d4fb89c113ab429e520fb/Image_\
+    MI_0609-AAO_HUB4-PRO_Left_XL.png"

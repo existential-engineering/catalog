@@ -1,0 +1,107 @@
+id: zSFAi9iC8cp0z2cia9COs
+name: I-O 22
+manufacturer: lexicon
+primaryCategory: audio-interface
+categories:
+  - discontinued
+  - legacy
+url: https://lexiconpro.com/en-US/products/i-o-22
+description: 2x2 USB 2.0 Desktop Recording Studio with dbx 60V high-voltage mic
+  preamps and bundled Pantheon II reverb plug-in.
+details: |-
+  The Lexicon I-O 22 is a compact 2x2 USB 2.0 desktop recording interface designed for DAW-based production. It captures audio at up to 24-bit / 96kHz resolution and includes newly designed dbx 60V high-voltage, ultra-low-noise mic preamps along with performance-driven A/D and D/A converters for clean signal capture.
+
+  The front panel offers two locking combi-jack mic/line inputs with switchable +48V phantom power, plus a dedicated side-panel hi-Z instrument input for guitars and basses. Monitoring is handled via two balanced 1/4-inch TRS line outputs and a 1/4-inch headphone output with its own volume control. MIDI In and Out round out the I/O for working with external controllers and synths.
+
+  The interface ships with the Pantheon II VST/AU reverb plug-in, which delivers six legendary Lexicon reverbs (Hall, Plate, Chamber, Room, Tremolo, and Ambience). A bundle of third-party software is also included for getting started: Cubase LE, EzDrummer Lite, and XILS3 SE.
+
+  The I-O 22 is compatible with Pro Tools 10-12 and any major DAW on macOS and Windows. Lexicon has since discontinued the product; legacy drivers remain available on the support page.
+specs: |-
+  - 2 in / 2 out USB 2.0 audio interface
+  - 24-bit / 44.1-96 kHz resolution
+  - Two dbx 60V high-voltage ultra-low-noise mic preamps
+  - Two locking combi-jack mic/line inputs with +48V phantom power
+  - Side-panel hi-Z instrument input
+  - Two balanced 1/4-inch TRS line outputs
+  - 1/4-inch headphone output with dedicated volume control
+  - MIDI In and Out
+  - Bundled Pantheon II VST/AU reverb plug-in (6 Lexicon reverbs)
+  - Bundled Cubase LE, EzDrummer Lite, XILS3 SE software
+io:
+  - name: Mic/Line Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input (Hi-Z)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Left
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Left
+versions:
+  - name: Mac driver 3.3.11
+  - name: Windows driver 2.9.77
+links:
+  - type: resource
+    title: Discontinued Products
+    url: https://lexiconpro.com/en-US/discontinued_products

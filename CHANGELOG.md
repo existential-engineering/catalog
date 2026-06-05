@@ -1,5 +1,128 @@
 # catalog
 
+## 3.21.0
+
+### Minor Changes
+
+- 8b04bc9: Import Grado Labs (61 hardware/accessory entries).
+
+  Imports Grado Labs' full product catalog: 18 headphones spanning the
+  Prestige (SR60x–SR325x), Reference (RS1, RS2x), Statement (GS1000,
+  GS3000, HP100 SE, Hemp Classic), Signature (S550, S750, S950) and
+  wireless (GW100x) lines; 13 phono cartridges across the Lineage
+  (Epoch4, Aeon4, Statement4), Timbre (Reference4, Master4, Sonata4,
+  Platinum4, Opus4), Prestige (Gold4, Red4, Green4) and Specialty
+  (DJ200i, ME+ Mono) series; plus replacement styluses, cables,
+  cushions, cases, stands and a storage box.
+
+- 3ae8ecc: Import Midas (48 hardware/accessory entries).
+
+  Adds the Midas product line: PRO Series HD96 control centres
+  (IP/TP variants), HD96-AIR, HD96-FB16; M32 LIVE/M32R LIVE/M32C
+  digital consoles; MR12/MR18 rack mixers; analogue DM12/DM16
+  mixers; DL Series stage boxes (DL8/16/32/151/152/153/154/155/
+  231/251/431); DN48xx StageConnect interfaces; AS 80 / AS88 /
+  COBALT HyperMAC hardware; HUB4 and HUB4 PRO personal-monitor
+  hubs; DP48 + DP48MB; NEUTRON DSP rack; LEGEND L6 / L10
+  500-series chassis; 500-series modules (Compressor Limiter
+  522 V2, Parametric Equaliser 512 V2, Microphone Preamplifier
+  502 / 502 V2); XL4-2 vacuum-tube preamp; and PRO Series
+  spare parts and road cases.
+
+- f515f49: Import Music Man (33 hardware entries).
+
+  Adds 33 Ernie Ball Music Man electric guitars and basses, spanning
+  the current StingRay, DarkRay, and Bongo bass families; the Axis,
+  Majesty, JP15, Mariposa, Sabre, and StingRay guitar families;
+  artist signature models (Tim Commerford, Pino Palladino, John
+  Myung, Mike Herrera, Jason Richardson, Rabea Massaad, Ryan "Fluff"
+  Bruce, Stephen Egerton, Dustin Kensrue); and 10 archived/
+  discontinued models (Cutlass Bass, Caprice Bass, Cliff Williams
+  Icon, Silhouette Bass, St. Vincent HH, Valentine Tremolo, et al.).
+
+## 3.20.0
+
+### Minor Changes
+
+- cd216f5: Import Lexicon (90 entries).
+
+  Bulk import of the Lexicon catalog (Harman). Covers the full product
+  family: 224/480L/960L studio reverbs, PCM-series effects processors
+  (PCM41/42/60/70/80/81/90/91/92/96 and surround variants), M-series and
+  MX/MPX multi-effects, LXP reverbs, the i-O / Omega / Lambda / Alpha
+  audio interfaces, LARC/MRC/MPX-R1 controllers, and the PCM/LXP/MPX
+  Native reverb plug-in bundles. Includes current immersive/install
+  products (BOB-32, QLI-32, PCM96 family) alongside many discontinued
+  legacy units documented on lexiconpro.com.
+
+- 8a767fa: Import Manley Laboratories (36 hardware entries).
+
+  Adds the full Manley Labs lineup: tube hi-fi amplifiers (Mahi,
+  Stingray II, Neo-Classic 250/500/300B SE-PP, Snapper), hi-fi
+  preamps (Absolute, Jumbo Shrimp, Neo-Classic 300B RC, Oasis,
+  Steelhead RC), and pro-audio outboard (CORE, VOXBOX, ELOP+,
+  NU MU, SLAM!, Variable Mu, Massive Passive EQ, Stereo Pultec EQ,
+  Backbone, FORCE, Reference Cardioid/Gold/Silver tube mics).
+  Includes mastering variants of Variable Mu, SLAM!, and Massive
+  Passive EQ, plus the Langevin sub-brand DVC channel strip and
+  legacy entries (Skipjack, HP-112, Langevin ELOP/Mini-Massive/
+  Pultec, Mid Frequency EQ, Tannoy ML10, Pultec EQP-1A) tagged
+  discontinued.
+
+### Patch Changes
+
+- 5e34174: Add layered whole-dataset review tooling: a deterministic `pnpm dataset:audit`
+  cross-entry check (duplicate names, broken `compatibleWith`, orphan
+  manufacturers, thin descriptions, coverage metrics), a `/dataset-review`
+  command for LLM review of the flagged subset, a monthly `dataset-audit`
+  workflow that opens a tracking issue, and a sampled mode for `/data-review`
+  on large bulk-import diffs.
+
+## 3.19.0
+
+### Minor Changes
+
+- a1908b5: Import Ibanez (20 effect pedal entries).
+
+  First-pass import covers the electronics category: the Tube
+  Screamer family (TS808, TS9, TS9B, TS9DX, TS-Mini, TS808HW v2),
+  the MINI series of analog modulation/effects and the BIG MINI
+  chromatic tuner (AD, BIG, BT, CS, FL, PH, SM, TR), the LD303
+  Echo Shifter, the PT-EQ / PT-GATE / PT-PRE Tone-Lok rack pedals,
+  the TWP10 tube preamp, and the WH10v3 wah. Guitars, basses,
+  hollow bodies, acoustic guitars, and accessories are out of
+  scope for this pass and will need separate imports.
+
+- 2bffb7e: Import Ludwig (50 hardware/accessories entries).
+
+  Covers Ludwig's full current lineup: 11 acoustic drum kits
+  (Stainless Steel, Legacy Mahogany / Maple, Classic Maple,
+  Classic Oak, NeuSonic, Vistalite, Element Evolution,
+  Breakbeats by Questlove, Accent, Pocket Kit), 19 snare drums
+  (Black Beauty, Supraphonic, Acrolite, Copper / Bronze /
+  Chrome-Over-Brass / Hammered Brass / Raw Brass Phonic,
+  Universal metal & wood, Jazz Fest, Legacy, Classic Maple,
+  Supralite, Slotted Coliseum, Carl Palmer / Nate Smith /
+  Jon Theodore signatures, Super Series), 3 electronic
+  instruments (Verse, Edge, Total Percussion Pad), and the
+  Classic / Gig / Atlas Standard / Atlas Pro hardware lines
+  with associated Atlas accessories, Speed King / Speed
+  Flyer pedals, Pro Touring Bags, and the Thrones series.
+
+- 2bffb7e: Import Marantz (33 hi-fi audio entries).
+
+  Covers the Marantz US hi-fi lineup: CINEMA Series AV receivers
+  (30/40/50/60/70s), AV processors (AV 10/20/30) and power
+  amplifiers (AMP 10/20/30), the MODEL Series integrated amps
+  (10/30/40n/50/60n/M1/M4/Stereo 70s), CD/SACD players (CD6007,
+  CD 60, CD 50n, SACD 10, SACD 30n), the Link 10n streaming
+  preamp, the TT-15S1 turntable, the M-CR612 and NR1510 network
+  receivers, the Horizon and Grand Horizon wireless speakers,
+  the MM8077 (archive/discontinued) power amp, plus two Horizon
+  accessories (tripod, wall mount). The co-branded Bowers &
+  Wilkins 600/700 Series speakers sold on the Marantz storefront
+  are intentionally excluded — those belong under the B&W brand.
+
 ## 3.18.0
 
 ### Minor Changes

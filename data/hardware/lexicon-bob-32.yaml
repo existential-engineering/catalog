@@ -1,0 +1,71 @@
+id: vMyqhKgi6ldVO5UrEO_Of
+name: BOB-32
+manufacturer: lexicon
+primaryCategory: immersive
+categories:
+  - surround
+  - spatial
+  - rack-mount
+  - outboard
+  - utility
+url: https://lexiconpro.com/en-US/products/bob-32
+description: Converts up to 32 channels of the BLU link digital audio bus to
+  analog audio. Ideal for use with Lexicon's QuantumLogic Immersion processor
+  (QLI-32).
+specs: |-
+  - 32 analog audio outputs via 4 DB-25F connectors
+  - DIP switches for channel range selection
+  - Supports 256 channels at 48 kHz or 128 channels at 96 kHz on the BLU link bus
+  - Front panel LED indicators
+  - Single rack space chassis
+  - Maximum output level: +19 dBu
+  - Frequency response: 20 Hz - 20 kHz (+0.5 dB / -1 dB)
+  - THD: < 0.01%
+  - Dynamic range: 108 dB typical
+  - D/A latency: 0.58 ms @ 48 kHz, 0.29 ms @ 96 kHz
+  - Dimensions: 1.75" H x 19" W x 7.75" D
+  - Weight: 5.13 lbs
+  - 3-year warranty
+io:
+  - name: Analog Outputs 1-8
+    signalFlow: output
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - name: Analog Outputs 9-16
+    signalFlow: output
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - name: Analog Outputs 17-24
+    signalFlow: output
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - name: Analog Outputs 25-32
+    signalFlow: output
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - name: BLU link Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: BLU link Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right

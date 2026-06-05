@@ -31,7 +31,29 @@ Run these validation scripts to gather automated analysis:
 
 Parse the JSON output from these tools to incorporate into the agent analysis below. For `pnpm build`, capture all lines starting with `⚠` — these are build warnings that should be reported as findings. Duplicate category warnings are BLOCKING (they indicate redundant categories that should be deduplicated). Unknown compatibility slug warnings are INFO (they reference products not yet in the database). For URL validation, note that 403 (anti-crawl) and 405 (anti-bot) responses are expected and should be excluded from findings. Focus on: 404s, 5xx errors, fetch failures (dead domains), and cross-domain redirects to spam/parking sites.
 
+### Phase 1c: Choose review depth (exhaustive vs. sampled)
+
+Count the changed product entries from the `git diff main...HEAD --stat` (added + modified files under `data/`).
+
+- **≤ 40 changed entries → exhaustive mode.** Proceed to Phase 2 as written: every agent reads every changed file in
+  full.
+- **> 40 changed entries (bulk import) → sampled mode.** Reading every entry with 4 Opus agents does not scale, and the
+  deterministic checks already cover all of them. Instead:
+  1. The automated checks in Phase 1b (`pnpm validate`, `pnpm build`, `pnpm validate-urls`) STILL run over **all**
+     changed files — deterministic coverage is never sampled. Report every error/warning they surface.
+  2. Run `pnpm dataset:audit --json` and keep any `flagged[]` finding whose file is in this diff — these are the
+     cross-entry issues (duplicate names, thin descriptions) the import introduced.
+  3. The Phase 2 agents read, in full, only: (a) a **representative sample** of ~25–40 changed entries (spread across
+     manufacturers and collections, not the first N alphabetically), plus (b) **every** changed entry flagged in step 2.
+  4. In the output, state explicitly how many entries were changed, how many were deep-read, and how they were sampled.
+     Never imply the whole import was hand-reviewed when it was sampled — call out the coverage honestly.
+
+The goal: full deterministic coverage on every entry, bounded LLM cost on large imports. For a true whole-dataset sweep
+(not a diff), use `/dataset-review` instead.
+
 ### Phase 2: Parallel Deep Analysis (use 4 Opus agents concurrently)
+
+In sampled mode, the agents below operate on the sampled + flagged subset from Phase 1c rather than the full diff.
 
 Launch these agents in parallel, each performing deep analysis with extended thinking:
 

@@ -1,0 +1,243 @@
+id: oDiz-fLV7jmaSHOB93Fp4
+name: Neutron
+manufacturer: midas
+primaryCategory: rack-mount
+categories:
+  - other
+url: "https://www.midasconsoles.com/en/products/0603-ABF"
+description: "High-performance audio system engine at the centre of the Midas
+  PRO X live mixing system, the result of a three-year R&D program. Delivers 168
+  simultaneous input channels and 99 time-aligned, phase-coherent output mix
+  buses operating at 96 kHz with 40-bit floating-point processing and 62.5 µs
+  latency. State-of-the-art DSP and FPGA technology in a MIMD architecture
+  provides more than 100 Gigaflops of real-time audio processing, supporting up
+  to 24 simultaneous multi-channel effects and up to 36 graphic equalizers.
+  Klark Teknik HyperMAC (AES50-compliant) and AES50 digital audio networking
+  provide 288 inputs and 294 outputs at 96 kHz over Gigabit Ethernet, with dual
+  redundant HyperMAC snake connection to the PRO X Control Centre on optical
+  fibre (up to 500 m on 50/125 µm multimode) or copper CAT5/5E (up to 100 m).
+  N+1 redundancy across four DSP cards (three required for operation) and three
+  removable, interchangeable power supplies. Compatible with all Midas digital
+  I/O units and any AES50-equipped device. Rugged 7U steel rackmount enclosure
+  with a future-proof expansion card slot. Designed for theatres, concert
+  touring, broadcast and festivals."
+details: |-
+  Audio system engine for the Midas PRO X live mixing system. State-of-the-art DSP and FPGA technology in MIMD architecture delivering more than 100 Gigaflops of real-time processing at 40-bit floating-point precision and 96 kHz sample rate, with 62.5 µs latency. 168 input channels and 99 time-aligned, phase-coherent output mix buses; up to 24 simultaneous multi-channel effects and up to 36 graphic equalizers. Klark Teknik HyperMAC (AES50-compliant) provides a dual redundant snake to the PRO X Control Centre - 192 bidirectional channels over optical fibre (up to 500 m on 50/125 µm multimode) or copper CAT5/5E (up to 100 m Gigabit Ethernet), with CRC error detection and a dedicated 200 Mbit/s auxiliary data channel for control. Eight AES50 system connectors (24 channels each, RJ45 XLR) connect Midas digital I/O units and any other AES50-equipped devices. N+1 redundancy from four DSP cards (three required for operation) and three removable, interchangeable power supplies. Rear panel input, output, and power connections. Rugged 7U steel rackmount enclosure with a future-proof expansion card slot. Suitable for theatres, concert touring, broadcast and festivals.
+specs: |-
+  - Input Channels: 168 simultaneous input channels
+  - Output Mix Buses: 99 time-aligned and phase-coherent output mix buses
+  - Network Channel Capability: 288 inputs and 294 outputs at 96 kHz sampling rate
+  - Sample Rate: 96 kHz
+  - Processing Precision: 40-bit floating point
+  - DSP Power: More than 100 Gigaflops of real-time audio processing
+  - Architecture: MIMD (Multiple Instruction, Multiple Data) DSP and FPGA technology
+  - DSP Cards: 4 standard, N+1 redundant (3 required for full operation)
+  - Latency: 62.5 µs at 96 kHz sampling rate
+  - Simultaneous Effects: Up to 24 multi-channel effects
+  - Graphic Equalizers: Up to 36
+  - HyperMAC Snake: Dual redundant, 192 channels bidirectional digital audio
+  - HyperMAC Optical Fibre Distance: Up to 500 m on 50/125 µm multimode
+  - HyperMAC Copper Distance: Up to 100 m over CAT5/5E (Gigabit Ethernet)
+  - HyperMAC Auxiliary Data Channel: 200 Mbit/s dedicated for control data
+  - AES50 System Connectors: 8 x AES50 (24 channels bidirectional digital audio) on RJ45 XLR
+  - Snake connector (fibre): HyperMac (192 channels of bi-directional digital audio) on optical XLR
+  - Duplicate snake connector (fibre): HyperMac (192 channels of bi-directional digital audio) on optical XLR
+  - Snake connector (copper): HyperMac (192 channels of bi-directional digital audio) on RJ45 XLR
+  - Duplicate snake connector (copper): HyperMac (192 channels of bi-directional digital audio) on RJ45 XLR
+  - Control Expansion: 2 x RJ45 XLR
+  - Ethernet Tunnel: RJ45 XLR
+  - Word Clock IN connector: BNC
+  - Word Clock OUT connector: BNC
+  - AES3 Sync IN connector: 3-pin XLR
+  - AES3 Sync OUT connector: 3-pin XLR
+  - Power Supplies: Three removable, interchangeable PSUs with N+1 redundancy
+  - AC Requirements: 100 V to 240 V, 50 Hz to 60 Hz
+  - Power Consumption (2 PSUs): 0.54 A, 124.2 W / 1.10 A, 126.5 W
+  - Power Consumption (3 PSUs): 0.69 A, 158.7 W / 1.15 A, 132.25 W
+  - Operating Temperature Range: +5 °C to +40 °C
+  - Storage Temperature Range: -20 °C to +60 °C
+  - Dimensions: 7 U high, 425 mm deep
+  - Net Weight: 25.5 kg
+  - Shipping Weight: approx. 30 kg
+io:
+  - name: Snake connector (fibre)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Duplicate snake connector (fibre)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Snake connector (copper)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Duplicate snake connector (copper)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: AES50 System Connector 1
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: AES50 System Connector 2
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: AES50 System Connector 3
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: AES50 System Connector 4
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: AES50 System Connector 5
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: AES50 System Connector 6
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: AES50 System Connector 7
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: AES50 System Connector 8
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Control Expansion 1
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Control Expansion 2
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Ethernet Tunnel
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Word Clock IN
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock OUT
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: AES3 Sync IN
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES3 Sync OUT
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: Quick Start Guide (WW)
+    url: "https://cdn-media.empowertribe.com/9e542aa7d5ac48fab0597589e0a988b1/NEUTR\
+      %20%20%20%20%20%20ON_QSG_WW.pdf"
+  - type: resource
+    title: Quick Start Guide (JP)
+    url: "https://cdn-media.empowertribe.com/7a70af845f344261a7c8bc324b21c441/NEUTR\
+      %20%20%20%20%20%20ON_QSG_JP.pdf"
+  - type: resource
+    title: Quick Start Guide (CN)
+    url: "https://cdn-media.empowertribe.com/664b9bc9f2f14fefb2baab3fe063d708/NEUTR\
+      %20%20%20%20%20%20ON_QSG_CN.pdf"
+  - type: resource
+    title: Quick Start Guide BE 0718-AAB (WW)
+    url: "https://cdn-media.empowertribe.com/43cff278a33d460b9c8931466b9b4b84/QSG_B\
+      %20%20%20%20%20%20E_0718-AAB_NEUTRON_WW.pdf"
+  - type: resource
+    title: Quick Start Guide BE 0718-AAB (JP)
+    url: "https://cdn-media.empowertribe.com/8995dc1df2ae4af697f342f0b03025d8/QSG_B\
+      %20%20%20%20%20%20E_0718-AAB_NEUTRON_JP.pdf"
+  - type: resource
+    title: Quick Start Guide MI P0AKR (WW)
+    url: "https://cdn-media.empowertribe.com/c9b5a21a5ba84ee28a05b2a07556c825/QSG_M\
+      %20%20%20%20%20%20I_P0AKR_NEUTRON_QSG_WW.pdf"
+  - type: resource
+    title: Quick Start Guide MI P0AKR (JP)
+    url: "https://cdn-media.empowertribe.com/cf7e36bea3ad4d6e93e75643a746c07b/QSG_M\
+      %20%20%20%20%20%20I_P0AKR_NEUTRON_QSG_JP.pdf"
+  - type: resource
+    title: Quick Start Guide MI P0AKR (CN)
+    url: "https://cdn-media.empowertribe.com/9b671808f84240d8859cb09d99360b59/QSG_M\
+      %20%20%20%20%20%20I_P0AKR_NEUTRON_QSG_CN.pdf"
+  - type: resource
+    title: Release Notes - Firmware Update v2.0.3 (2022-12-15)
+    url: "https://cdn-media.empowertribe.com/e2d495a409af4026a4009dad8f3caa5f/Relea\
+      %20%20%20%20%20%20se-Notes_BE_0718-AAB_NEUTRON-Firmware-Update_v2-0-3_2022-12-15_Rev-1.pdf"
+  - type: resource
+    title: PRO X Control Centre TP/IP Firmware G3.4.6 rel-9
+    url: "https://cdn-media.empowertribe.com/26906118a5854921bca44b8bc463fd18/PRO-X\
+      %20%20%20%20%20%20-CC_TP-IP_Firmware_G3.4.6_rel-9.pdf"
+images:
+  - "https://cdn-media.empowertribe.com/6f14327d43df4327aea6dfee6e8d0a0a/Image_\
+    MI_0603-ABF_NEUTRON_Rear_XL.png"
+  - "https://cdn-media.empowertribe.com/37fa8f0efdcc4e689e42d10414edc602/Image_\
+    MI_0603-ABF_NEUTRON_Left_XL.png"
+  - "https://cdn-media.empowertribe.com/09e70abf99a24f979d6f98739f477c0e/Image_\
+    MI_0603-ABF_NEUTRON_Right_XL.png"

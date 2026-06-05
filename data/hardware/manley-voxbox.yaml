@@ -1,0 +1,95 @@
+id: jy1aJp9k_svVkSrfr-qud
+name: VOXBOX
+manufacturer: manley
+primaryCategory: channel-strip
+categories:
+  - preamp
+  - compressor
+  - limiter
+  - equalizer
+  - analog
+  - outboard
+  - rack-mount
+  - vocal
+url: https://www.manley.com/products/pro-audio/channel-strips/voxbox
+prices:
+  - amount: 5499
+    currency: USD
+description: The VOXBOX® combines tube mic preamp, ELOP compression, 33-band
+  peak-dip EQ, and de-esser. All-tube Class A circuitry with MANLEY IRON®
+  transformers.
+details: |-
+  Signal Flow: Mic/Line/Instrument Input -> Tube Mic Preamp -> ELOP Opto Compressor -> Insert Point -> Pultec-style Passive EQ -> De-Esser/Limiter -> Output
+  Tubes:
+  - 12AX7
+  - 12BH7
+  - 6414/5965
+  Features:
+  - Deluxe All-Tube Recording Channel
+  - Combines mic pre, passive EQ, de-esser, dual compression
+  - Inductor-based Pultec-style equalization with Class A tube-circuitry
+  - ELOP-style opto compression
+  - MANLEY IRON transformers
+  - Insert point between sections for patching external processors
+  - Front-panel instrument input
+specs: |-
+  - Frequency Response: 20 Hz - 60 kHz
+  - Dynamic Range: 113 dB (preamp)
+  - THD+N: <0.3% (preamp & EQ)
+  - Signal To Noise: >110 dB
+  - Max Output: +31 dBv
+  - Input Impedance: MIC: 2000 Ohms; LINE: 4000 Ohms; INST: 100k Ohms
+  - Dimensions: 19" x 5.25" x 10" (3U)
+  - Weight: 14.5 lbs
+  - Power: 31 watts; Universal 90-254 VAC
+  - Form Factor: 3U rack-mount
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Preamp Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: EQ Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Insert Send/Return
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
