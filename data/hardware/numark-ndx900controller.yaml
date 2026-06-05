@@ -1,0 +1,44 @@
+id: 7HRvhJntEMxQGYqNIElFm
+name: NDX900 Controller
+manufacturer: numark
+primaryCategory: midi-controller
+categories:
+  - control-surface
+  - audio-interface
+  - discontinued
+url: https://www.numark.com/product/ndx900controller
+description: Professional software controller with built-in audio interface,
+  capable of mixing music from CDs, MP3 CDs, USB flash drives, software, and
+  external sources on one unit.
+details: |-
+  The NDX900 Controller is capable of mixing music from virtually any digital source including a computer, CDs, MP3 CDs, or even USB flash drives. It has a layout familiar to DJs everywhere with a large, seven-inch touch-sensitive illuminated platter, smooth front-loading CD drive, top-facing USB port, and powerful remixing, effects control, scratching, looping, and sampling capabilities in a chassis with a solid, professional feel.
+
+  NDX900's Beat-synced DSP effects include chop, echo, filter, flanger, pan, and phaser with full control of the effects blend via a wet/dry fader.
+
+  The built-in USB audio interface works plug-and-play, allowing NDX900 to integrate with virtually any computer and control virtually any DJ software without external drivers or sound cards. With two NDX900 Controllers and a mixer of choice, users have a complete digital DJ rig. NDX900 is compatible with virtually any MIDI-compatible DJ software.
+
+  Additional features include automatic BPM analysis with Tap Tempo, pitch adjustment at ±6, 12, 25, and 100%, Key Lock for independent BPM/pitch manipulation, seamless looping, an internal sampler with overlay and reverse, multiple cue point memory, Numark's Anti-Shock skip protection, adjustable start/stop-time controls, fader start, and a large backlit display showing BPM, ID3 tags, and effect status.
+io:
+  - name: Stereo RCA Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Stereo RCA Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Top
+versions:
+  - name: "3.1"
