@@ -1,5 +1,103 @@
 # catalog
 
+## 3.22.0
+
+### Minor Changes
+
+- 8e508ec: Import Genelec (54 hardware entries).
+
+  Imports Genelec's studio monitor and subwoofer lineup
+  spanning The Ones (8331A/8341A/8351B/8361A), the SAM 8000
+  series, 7000-series subwoofers, the new 8380A/8381A/W371A,
+  1234A/1235A/1236A/1237A/1238A main monitors, the 4000-series
+  Smart IP installation loudspeakers (4410A-4436A, 3440A), the
+  G Series and 6040R home audio products, and the 9320A
+  Reference Controller, 9401A System Management Device and
+  GLM Calibration Kit accessories.
+
+- 033d7b8: Import Gretsch (198 hardware entries).
+
+  Bulk import of the Gretsch guitar lineup across acoustic,
+  folk-and-bluegrass (resonators + ukuleles), hollow-body,
+  center-block, solid-body, and bass categories. Covers
+  Players Edition, Vintage Select, Custom Shop, Streamliner,
+  Electromatic, and artist signature lines (Brian Setzer,
+  Stephen Stills, George Harrison, Malcolm Young, Tom Petersson,
+  Richard Fortus, Eddie Cochran, Duane Eddy, Billy Duffy,
+  Reverend Horton Heat, Bo Diddley, Nigel Hendroff, Patrick
+  Stump, Steve Wariner, Michael Guy Chislett, Rich Robinson,
+  Martin Gore, Jack Antonoff, Nick 13, Orville Peck, John
+  Gourley, Chris Rocha, Tim Armstrong, Stephen Stills),
+  with auto-selected hero/detail imagery.
+
+- b13fbe6: Import Mackie (144 hardware/software/accessory entries).
+
+  Adds the Mackie professional audio catalog spanning mixers (VLZ4, Onyx,
+  ProFX, DL, Mix), loudspeakers (DRM, SRM, SRT, Thump, DLM, C series),
+  studio monitors (HR, MR, CR, Big Knob), headphones (MC series), in-ear
+  monitors (MP series), microphones (EM series), audio tools (HM, MDB,
+  M48), amplifiers (MX), live streaming hardware (DLZ, MainStream), and
+  the Master Fader / Matrix control software.
+
+- ad5fa61: Import Marshall (94 hardware entries).
+
+  Adds Marshall guitar amplifiers (JCM800, JCM900, JTM45,
+  JVM, DSL, Studio, Origin, MG, Code, Silver Jubilee, AS50D,
+  MS micro stacks), speaker cabinets (1960 series, MX, Origin,
+  Studio, 2536, 2551), pedals (Vintage Reissue Bluesbreaker,
+  Drivemaster, Guv'nor, Shredmaster + Overdrive series), and
+  the Marshall x Synergy preamp modules.
+
+- 7b431d0: Import Martin (81 acoustic guitar, ukulele, and bass entries).
+
+  Covers the Martin lineup across the Standard, Modern Deluxe,
+  Authentic, 15, 16/17 and Custom Shop series, plus tenor /
+  concert / soprano ukuleles. A few discontinued models are
+  tagged based on Martin's explicit retired-product copy.
+
+- 5a83ca3: Import Neumann (43 hardware entries).
+
+  Microphones (28): U 87 Ai, U 67 Set, U 89 i, U 47 fet i, TLM 102, TLM
+  103, TLM 107, TLM 170 R, TLM 193, TLM 49 Set, TLM 67, KMS 104, KMS 105,
+  KM 184 / KM 185 (Series 180), KMR 81 i, KMR 82 i, KU 100, USM 69 i,
+  BCM 104, BCM 705, M 49 V, M 50 V, M 147 Tube, M 149 Tube, M 150 Tube,
+  KK capsules (KK 104/105/120/131/133/143/145/184/204/205). Studio
+  monitors (3): KH 120 II, KH 150, KH 150 AES67. Headphones (4): NDH 20,
+  NDH 20 Black Edition, NDH 30, NDH 30 Black Edition. Audio interface
+  (1): MT 48.
+
+- 7946a36: Import Numark (100 hardware/accessory entries).
+
+  Adds the full Numark DJ-gear catalog: 84 hardware entries covering
+  DJ controllers (Mixtrack, Mixstream, NS, NV, NDX, N4 lines), turntables
+  (PT01, TT250), standalone mixers (M-series, NS6, NS7 generations),
+  headphones (HF, Red Wave), wireless microphones, monitors (N-Wave),
+  and cartridges (CC1, CS1, GrooveTool); plus 16 accessory entries for
+  cases, stands, and the Dashboard / Production Hub power-conditioner.
+  48 legacy/discontinued items tagged via the discontinuation heuristic.
+
+- c5ef26a: Import Pioneer DJ (451 hardware/software/accessory entries).
+
+  Headless catalog import. Spans Pioneer's full DJ product
+  lineup: CDJ multi-players, DJM mixers, DDJ controllers,
+  XDJ all-in-one systems, HDJ headphones, DM/VM/XPRS
+  monitors and PA, PLX turntables, RMX/EFX effectors, the
+  Toraiz production trio (SP-16, AS-1, Squid), and ~166
+  accessories (cases, cables, replacement parts).
+
+  Roughly 60% of entries are tagged `discontinued` —
+  detected via Pioneer's per-region `archived` status in
+  the page's Next.js data payload.
+
+  IO data on hardware entries is intentionally minimal:
+  Pioneer hosts detailed port lists only in linked PDFs,
+  which the import pass does not parse. Spec PDF URLs are
+  captured in `links[]` for later enrichment.
+
+### Patch Changes
+
+- 722ee5f: Fix grado-labs cartridge descriptions and headphone spec labels
+
 ## 3.21.0
 
 ### Minor Changes
