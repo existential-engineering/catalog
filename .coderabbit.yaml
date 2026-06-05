@@ -26,6 +26,24 @@ reviews:
         - Hardware `io` entries must use field order: name, signalFlow, category, type, connection, maxConnections, position
         - Hardware `io` entries should include `maxConnections` field
 
+        Semantic correctness (validation passes these; only a reviewer catches them — see CLAUDE.md):
+        - `maxConnections` must NOT aggregate multiple physical jacks. Default is 1.
+          A stereo pair is TWO ports (L and R), each `maxConnections: 1` — never one
+          port with `2`. "Line Outputs 1-8" must be eight entries, not one entry with
+          `maxConnections: 8`. Use `> 1` ONLY for a single connector that inherently
+          carries multiple discrete channels (ADAT toslink = 8, DB25 = 8, MADI = 64).
+          Flag any `maxConnections > 1` on 1/4-inch, 1/8-inch, xlr, combo jack, rca,
+          5-pin din, usb, or thunderbolt.
+        - `versions` is release history ONLY (firmware/software point releases). It must
+          NOT enumerate parallel SKUs, form factors, or model variants sold concurrently.
+        - Cosmetic-only differences (color/finish, identical I/O and capabilities) belong
+          in the hardware `variants` array, NOT in `versions`.
+        - Genuine generational succession (MKI → MKII, Pro-C 2 → Pro-C 3) uses
+          `supersedes` (the older product's ID). Sibling SKUs sold side by side get NO
+          `supersedes` relationship.
+        - Distinct concurrent SKUs (different I/O or capabilities) must each be their own
+          top-level entry — never a nested `versions` entry.
+
         Check for potential duplicates:
         - Flag if product name is very similar to an existing entry
         - Flag if url matches another entry in the same collection
