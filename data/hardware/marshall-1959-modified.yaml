@@ -36,6 +36,20 @@ specs: |-
   - Color: Black
   - Country Of Origin: Designed and engineered in UK. Made in UK.
 io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Speaker Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
   - name: Speaker Output
     signalFlow: output
     category: audio
@@ -49,6 +63,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
+    position: Top
 videos:
   - videoId: VuGNoQGMWRs
     provider: youtube
