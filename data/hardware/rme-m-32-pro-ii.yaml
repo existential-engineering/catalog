@@ -1,0 +1,138 @@
+id: J9sqlTR-QsEuae7fypEYE
+name: M-32 AD Pro II
+manufacturer: rme
+primaryCategory: rack-mount
+categories:
+  - digital
+  - hybrid
+url: https://rme-audio.de/m-32-pro-2.html
+description: High-end 32-Channel 192 kHz AD or DA Converter with MADI and AVB.
+  The M-32 Pro II series is designed to meet the demanding requirements of
+  professional studios, immersive sound installations, live sound systems, and
+  industrial applications that need a reliable solution for analog conversion
+  with high-end network audio processing. These converters are available with
+  either 32 analog inputs or outputs, and either with Dante or AVB for a choice
+  of four different models. Boasting up to 32 channels, fully equipped MADI I/Os
+  (coaxial & optical via optional SFP module), improved specs with extremely low
+  THD values, intelligent channel routing and innovative usability, the M-32 Pro
+  II Series represents the state-of-the-art in audio performance.
+details: |-
+  Available as M-32 AD Pro II (32 analog inputs) or M-32 DA Pro II (32 analog outputs). Features 19-inch enclosure 1 unit height, large tri-color backlit channel indicators with Peak/RMS metering, magnetic cover with customizable channel labels, SyncCheck and ICC (detects when a clock source is not in sync and falls back to other available signals), MADI Auto-Input seamless redundancy, 2-inch display with control knob for full device control, 15 preset storage (firmware upgrade persistent), lock (optional code) and dark mode, internal single channel routing of up to 288x256 (M-32 AD Pro II) / 256x288 (M-32 DA Pro II) channels (32 x Analog, 64 x MADI Opt, 64 x MADI Coax, and 128 x AVB), and remote control via HTTP, JSON, IEEE 1722.1 ATDECC, MIDI over MADI and optional MIDI. A sibling model M-32 Pro II-D uses Dante instead of AVB. SteadyClock FS and DC-coupled outputs (DA model).
+specs: |-
+  - 32 x Analog In/Out (25-pin D-sub, up to +24 dBu)
+  - 2 x MADI I/O (via optional optical SFP and coaxial BNC, up to 128 Ch.)
+  - 2 x RJ45 1 GigE AVB, four streams with 4/8/12/16 Ch. each (optional)
+  - MIDI I/O for legacy MIDI Remote
+  - Word Clock I/O (BNC)
+  - USB 2.0 (for remote control)
+  - 2 x monitored fully redundant internal PSUs
+  - 32-channel AD converter, fully symmetrical design, 120 dBA
+  - 19" enclosure 1 unit height
+  - Large, tri-color backlit channel indicators with Peak/RMS metering
+  - Magnetic cover with customizable channel labels
+  - SyncCheck and ICC - detects when a clock source is not in sync and falls back to other available signals
+  - MADI Auto-Input - seamless redundancy
+  - 2" display with control knob for full device control
+  - 15 Preset storage, firmware upgrade persistent
+  - Lock (optional code) and dark mode
+  - Internal single channel routing of up to 288x256 (M-32 AD Pro II) / 256x288 (M-32 DA Pro II) channels
+  - Remote control via HTTP, JSON, IEEE 1722.1 ATDECC, MIDI over MADI and optional MIDI
+  - M-32 Pro II AD Line In 1-32: Resolution 24 bit
+  - AD Input level switchable per channel +24 dBu, +19 dBu, +13 dBu @ 0 dBFS
+  - AD Inputs AC coupled, fully symmetrical signal path (servo-balanced)
+  - AD Input Impedance 9.5 kOhm
+  - AD SNR @ +24 dBu, 44.1 kHz: 117.0 dB RMS unweighted, 120.7 dBA
+  - AD SNR @ +19 dBu: 116.3 dB RMS unweighted, 119.9 dBA
+  - AD SNR @ +13 dBu: 114.7 dB RMS unweighted, 118.3 dBA
+  - AD Frequency response @ 44.1 kHz, -0.1 dB: 5 Hz - 20.5 kHz
+  - AD THD @ -1 dBFS: < -111 dB, < 0.00029%
+  - AD THD+N @ -1 dBFS: < -108 dB, < 0.00039 %
+  - AD Channel separation: > 110 dB
+  - M-32 Pro II DA Line Out 1-32: Resolution 24 bit
+  - DA Output level switchable per channel +24 dBu, +19 dBu, +13 dBu @ 0 dBFS
+  - DA Outputs DC coupled, fully symmetrical signal path ("truly balanced")
+  - DA Output impedance: 200 Ohm balanced, 100 Ohm unbalanced
+  - DA SNR @ 13 dBu: 116.0 dB RMS unweighted, 119.0 dB(A)
+  - DA SNR @ 19 dBu: 116.3 dB RMS unweighted, 119.3 dB(A)
+  - DA SNR @ 24 dBu: 116.5 dB RMS unweighted, 119.8 dB(A)
+  - DA Frequency response @ 44.1 kHz, -0.1 dB: 0 Hz - 22 kHz
+  - DA THD @ -1 dBFS: < -113 dB, < 0.00022 %
+  - DA THD+N @ -1 dBFS: < -111 dB, < 0.00028 %
+  - DA Channel separation: > 110 dB
+io:
+  - name: 32 x Analog I/O (25-pin D-sub, up to +24 dBu)
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: MADI Coaxial I/O (up to 64 Ch.)
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical I/O via optional SFP module (up to 64 Ch.)
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: built-in
+    maxConnections: 64
+    position: Right
+  - name: 2 x Gigabit Ethernet AVB (RJ45, 802.3 compliant, four streams with
+      4/8/12/16 Ch. each)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Word Clock I/O
+    signalFlow: bidirectional
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: MIDI I/O (for legacy MIDI Remote)
+    signalFlow: bidirectional
+    category: digital
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: USB 2.0 (for firmware & remote control)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: 2 x Monitored fully redundant internal PSU (IEC mains)
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+versions:
+  - name: M-32 AD Pro II (32 analog inputs, AVB)
+  - name: M-32 DA Pro II (32 analog outputs, AVB)
+  - name: M-32 AD Pro II-D (32 analog inputs, Dante)
+  - name: M-32 DA Pro II-D (32 analog outputs, Dante)
+links:
+  - type: resource
+    title: M-32 Channel Template (PDF)
+    url: https://rme-audio.de/files/downloads/Media-Material/M-32 CHANNEL
+      TEMPLATEc.pdf
+  - type: resource
+    title: M-32 Pro Labels (PDF)
+    url: https://rme-audio.de/files/downloads/Media-Material/M-32-PRO-LABELS.pdf
+  - type: resource
+    title: Downloads (drivers, firmware, manuals)
+    url: https://rme-audio.de/downloads.html
+  - type: resource
+    title: "Sibling: M-32 Pro II-D (Dante variant)"
+    url: https://rme-audio.de/m-32-pro-2-d.html

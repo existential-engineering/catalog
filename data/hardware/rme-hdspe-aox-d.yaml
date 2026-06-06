@@ -1,0 +1,118 @@
+id: XvglgpIhL5ao7hEFjbUu-
+name: HDSPe AoX-D
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://rme-audio.de/hdspe-aox-d.html
+description: 512-channel PCI Express x4 audio interface card with dual Gigabit
+  Ethernet Dante network ports, AES3, MIDI, headphone output, and internal
+  expansion headers for up to four optional MADI ports.
+details: |-
+  The RME HDSPe AoX-D is a single-slot PCI Express x4 audio interface card that combines dual Gigabit Ethernet Dante network ports with AES3, MIDI, and headphone connectivity, plus internal expansion headers for up to four optional MADI ports. It sends and receives up to 512 channels of network audio across two separate RJ45 connectors and is designed to work either built into DAWs and audio processors or installed in a Thunderbolt expansion chassis.
+
+  Dante connectivity is provided on the two RJ45 ports, with network audio channels partially replaceable by MADI signals through up to two optional AoX-MADI expansion boards. With the expansion boards fitted, the card can carry four MADI inputs, four MADI outputs (256 channels) and 256 network audio channels per direction simultaneously in a single interface on macOS and Windows.
+
+  AES3 stereo digital I/O at up to 192 kHz and 16-channel high-speed MIDI I/O are provided via a breakout cable, with a 1/4 inch stereo headphone jack mounted on the card bracket for direct monitoring of any signal reaching the card from the computer, the network, or the optional MADI inputs.
+
+  TotalMix FX provides a 256 x 256 channel mixer with 46-bit internal resolution for latency-free submixes and full routing flexibility. The card is also compatible with the optional ARC USB remote controller and can be controlled remotely via TotalMix Remote.
+
+  Two optional expansion boards are available: AoX-MADI-EXT-BNC fits 4 x BNC connectors for coaxial MADI, while AoX-MADI-EXT-SFP fits 2 x MADI SFP module slots (multi-mode SFP modules included, single-mode optional) plus a Word Clock BNC connector. Either expansion variant provides MADI I/O at 128/64/32 channels at 48/96/192 kHz.
+specs: |-
+  - 512 channels 48 kHz/24 bit record/playback
+  - 256 channels 96 kHz/24 bit record/playback
+  - 128 channels 192 kHz/24 bit record/playback
+  - TotalMix 256 x 256 channel mixer with 46 bit internal resolution for latency-free submixes
+  - 1 x MIDI I/O, 16 channels high-speed MIDI
+  - 1 x AES-3 I/O, 2 channels at up to 192 kHz
+  - Optional expansion boards for MADI and Word Clock I/O
+  - 2 x Gigabit Ethernet (802.3 compliant)
+  - 1 x AES/EBU I/O
+  - 1 x Phones Output
+  - 1 x MIDI I/O
+  - TotalMix FX
+  - ARC USB compatible
+  - PCI Express x4, single-slot
+  - Compatible with Thunderbolt expansion chassis
+  - HDSPe AoX Expansion Board Coaxial Version: 4x BNC connectors
+  - HDSPe AoX Expansion Board Optical Version: 2x MADI SFP module slots and Word Clock BNC connector (SFP Multi Mode modules included, SFP Single Mode module optional)
+  - MADI I/O via expansion: 128/64/32 channels at 48/96/192 kHz sampling rate
+io:
+  - name: Dante Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Dante Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: AES/EBU I/O
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: built-in
+    maxConnections: 2
+    position: Right
+  - name: Phones
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MIDI I/O
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: built-in
+    maxConnections: 16
+    position: Right
+  - name: MADI Expansion Header A
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: pin
+    maxConnections: 64
+    position: Top
+  - name: MADI Expansion Header B
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: pin
+    maxConnections: 64
+    position: Top
+versions:
+  - name: HDSPe AoX-D
+links:
+  - type: resource
+    title: Online documentation
+    url: https://docs.rme-audio.com/
+  - type: resource
+    title: macOS HDSPe AoX Driver & Firmware Package (Driver 1.01 / Settings 1.30 /
+      Firmware 1.4.0-67)
+    url: https://rme-audio.de/downloads/260421_HDSPeAoX_Driver_and_Firmware_MAC.zip
+  - type: resource
+    title: Windows HDSPe AoX Driver & Firmware Package (Driver 1.2.4 / Firmware
+      1.4.0-67)
+    url: https://rme-audio.de/downloads/260421_HDSPeAoX_Driver_and_Firmware_WIN.zip
+  - type: resource
+    title: TotalMix Remote (macOS) v1.43
+    url: https://rme-audio.de/downloads/tmfx_mac_remote.zip
+  - type: resource
+    title: TotalMix Remote (Windows) v1.43
+    url: https://rme-audio.de/downloads/tmfx_win_remote.zip
+  - type: resource
+    title: DigiCheck NG (macOS) v0.93
+    url: https://www.rme-audio.de/downloads/digicheck_ng_mac_093.zip
+  - type: resource
+    title: DigiCheck NG (Windows) v0.93
+    url: https://www.rme-audio.de/downloads/digicheck_ng_win_093.zip
+  - type: resource
+    title: Product Images
+    url: https://www.rme-usa.com/downloads.html?file=files/downloads/Media-Material/RME_HDPSe-AOX_Images.zip

@@ -1,0 +1,108 @@
+id: N7ry6DJkKJDxypv7VPGzZ
+name: HDSPe RayDAT
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://rme-audio.de/hdspe-raydat.html
+description: 72-channel PCI Express internal audio card with 4 ADAT optical I/O,
+  1 AES/EBU I/O, 1 SPDIF coaxial I/O and 2 MIDI I/O. Up to 36 inputs and 36
+  outputs simultaneously, sample rates up to 192 kHz (via S/MUX4 on ADAT). The
+  PCIe successor to the HDSP 9652, RayDAT is positioned as a multi-channel,
+  multi-format, multi-task tool for recording through mastering.
+details: |-
+  The RME HDSPe RayDAT is a PCI Express internal audio interface card offering 4 ADAT optical I/O, 1 AES/EBU I/O and 1 SPDIF I/O, for a total of 36 inputs and 36 outputs available simultaneously (72 channels). It is positioned by RME as 'a multi-channel, multi-format and multi-task tool in stunning professional quality, the ideal solution from recording up to the final mastering.'
+
+  RayDAT is the newly developed PCI Express version of the HDSP 9652. The 4 ADAT optical ports each carry up to 8 channels at 24-bit/48 kHz, or 8 channels at 24-bit/96 kHz with S/MUX2, with full 192 kHz operation supported via S/MUX4. The AES/EBU and SPDIF I/O are accessed via an included digital breakout cable (BO968), and the two MIDI I/O ports are accessed via a dedicated MIDI breakout cable, providing 32 high-speed MIDI channels.
+
+  Clocking and routing are handled by RME's TotalMix mixer (2592 channels, 42-bit internal resolution) with sample frequencies of 32, 44.1, 48, 64, 88.2, 96, 176.4 and 192 kHz internally, and 28 kHz to 200 kHz externally. Jitter is below 1 ns in all clock modes. An optional Word Clock Module adds a word clock input and two word clock outputs on BNC connectors, and an optional TCO Time Code Option adds LTC I/O, video sync input and additional word clock I/O.
+specs: |-
+  - 72-channel PCI Express internal audio interface card
+  - 4 x ADAT optical I/O (TOSLINK)
+  - 1 x AES/EBU I/O (via digital breakout cable BO968)
+  - 1 x SPDIF coaxial I/O (RCA, via digital breakout cable BO968)
+  - 2 x MIDI I/O via breakout cable (32 channels high-speed)
+  - Up to 36 inputs and 36 outputs simultaneously
+  - 16 channels of 24-bit/96 kHz audio per ADAT optical port (S/MUX2)
+  - ADAT supports 192 kHz operation via S/MUX4
+  - Sample frequencies (internal): 32, 44.1, 48, 64, 88.2, 96, 176.4, 192 kHz
+  - Sample frequencies (external): 28 kHz to 200 kHz
+  - Jitter: < 1 ns in all clock modes
+  - TotalMix: 2592-channel mixer with 42-bit internal resolution
+  - Buffer sizes / latencies: 0.7 ms, 1.5 ms, 3 ms, 6 ms, 12 ms, 23 ms, 46 ms, 93 ms
+  - Compatible with optional Word Clock Module (word clock input and 2 outputs on BNC)
+  - Compatible with optional TCO Time Code Option (word clock I/O, video sync input, LTC I/O)
+  - Includes digital breakout cable (BO968) for AES/EBU and SPDIF and MIDI breakout cable
+  - Firmware: 18/207 (standard driver), 20/210 (DriverKit version)
+  - Windows 10/11 x64 driver: v4.62
+  - macOS 11+ driver: v4.25
+io:
+  - name: ADAT I/O 1 (optical)
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: ADAT I/O 2 (optical)
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: ADAT I/O 3 (optical)
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: ADAT I/O 4 (optical)
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: AES/EBU I/O (via digital breakout cable BO968)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: SPDIF I/O (coaxial, via digital breakout cable BO968)
+    signalFlow: bidirectional
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: MIDI I/O 1 (via MIDI breakout cable)
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI I/O 2 (via MIDI breakout cable)
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: PCI Express (host)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+versions:
+  - name: HDSPe RayDAT
+links:
+  - type: resource
+    title: HDSPe RayDAT Manual v2.0 (10/2020)
+    url: https://www.rme-audio.de/downloads/raydat_e.pdf

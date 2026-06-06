@@ -1,0 +1,247 @@
+id: EraUQa6nhDORi0tdTtH-W
+name: MADIface XT II
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - preamp
+  - digital
+url: https://rme-audio.de/madiface-xt-2.html
+description: 394-channel 192 kHz Triple MADI USB 3.0 audio interface with two
+  mic/line preamps, two balanced XLR line outputs, stereo headphone output,
+  AES/EBU, word clock, MIDI over MADI, ARC USB remote port, SteadyClock FS and
+  TotalMix FX.
+details: |-
+  The RME MADIface XT II is a 394-channel 192 kHz USB 3.0 audio interface that succeeds the original MADIface XT, the world's first USB 3.0 audio interface. It packs three MADI ports (two optical, one coaxial), two mic/line preamps, two balanced XLR line outputs, a stereo headphone output, AES/EBU, word clock and MIDI over MADI into a compact half-width 1U rack-mountable housing.
+
+  Compared with the predecessor, the XT II updates both the digital and analog circuitry. AD performance is rated at 116 dB SNR (AES17) / 118.5 dBA, DA dynamic range at 113.5 dB (AES17) / 116 dBA, with THD below -110 dB and THD+N below -104 dB. The XLR line outputs are switchable to +24, +19, +13 or +4 dBu, and the headphone output reaches +19 dBu at 1 Ohm impedance.
+
+  MADI I/O follows AES10-1991 with 56/64-channel modes, S/MUX for 96 kHz and S/MUX4 for 192 kHz, giving up to 192 channels of MADI plus the analog and AES/EBU I/O. Optical MADI uses FDDI duplex SC connectors compatible with 62.5/125 and 50/125 fiber. Sample rates from 28 kHz to 200 kHz are supported, and RME's SteadyClock FS femto clocking keeps intrinsic jitter to a minimum with >50 dB jitter suppression above 315 Hz.
+
+  Connectivity to the host is provided via a single USB 3.0 port (RME proprietary connector) with Class Compliant mode delivering all 394 channels simultaneously. The previous mini-DIN remote port is replaced by a dedicated ARC USB port for direct connection of the optional Advanced Remote Control. TotalMix FX with Room EQ, DigiCheck NG and the full RME driver stack for macOS and Windows are included.
+specs: |-
+  - 394-channel 192 kHz Triple MADI USB 3.0 audio interface
+  - 2 x MADI optical I/O (FDDI duplex SC, 62.5/125 and 50/125 compatible)
+  - 1 x MADI coaxial I/O (BNC, 75 Ohm, AES10-1991)
+  - MADI 56/64 channel modes, S/MUX (96 kHz), S/MUX4 (192 kHz)
+  - 2 x XLR Mic/Line inputs (electronically balanced, 3.3 kOhm)
+  - 2 x 6.3 mm TRS line inputs (balanced/unbalanced, 6.6/3.3 kOhm)
+  - Input gain range: 75 dB
+  - Max input @ Gain 0 dB: +18 dBu (XLR), +24 dBu (TRS)
+  - 2 x XLR balanced line outputs, switchable +24, +19, +13, +4 dBu
+  - 1 x 6.3 mm TRS stereo headphone output, unbalanced, +7 dBu @ 0 dBFS, +19 dBu @ 1 Ohm
+  - 1 x AES/EBU I/O on XLR, transformer-balanced, galvanically isolated, IEC 60958 compatible
+  - 1 x Word Clock I/O (BNC) with auto double/quad speed detection
+  - MIDI I/O via breakout cable and MIDI over MADI invisible transmission
+  - 1 x USB 3.0 (RME proprietary connector)
+  - 1 x ARC USB port for Advanced Remote Control (replaces previous mini-DIN remote)
+  - Class Compliant mode supports all 394 channels simultaneously
+  - Sample rates: 28 kHz to 200 kHz
+  - AD SNR: 116 dB (AES17), 118.5 dBA
+  - DA dynamic range: 113.5 dB (AES17), 116 dBA
+  - THD: < -110 dB (< 0.00032%)
+  - THD+N: < -104 dB (< 0.00063%)
+  - Frequency response @ 192 kHz: 2 Hz - 89 kHz (-1 dB)
+  - SteadyClock FS femto clocking
+  - TotalMix FX DSP mixer with Room EQ
+  - Dimensions: 265 x 44 x 159 mm (with rack ears); 215 x 44 x 130 mm (body only)
+  - Weight: 1.03 kg (2.2 lbs)
+  - Power: external PSU, 100-240 V AC, 2 A, 24 W; typical consumption 9 W
+  - Operating temperature: +5 to +50 degrees Celsius
+io:
+  - name: Mic/Line Input 1 (XLR)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 2 (XLR)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Input 1 (TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Input 2 (TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output 1 (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Output 2 (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output (TRS)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MADI Optical Input 1 (SC)
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical Output 1 (SC)
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical Input 2 (SC)
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical Output 2 (SC)
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Coaxial Input (BNC)
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: MADI Coaxial Output (BNC)
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: AES/EBU Input (XLR)
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Output (XLR)
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Input (BNC)
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output (BNC)
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: USB 3.0 (Host)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: ARC USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+versions:
+  - name: MADIface XT II
+links:
+  - type: resource
+    title: MADIface XT II Manual (English)
+    url: https://www.rme-audio.de/downloads/madiface_xt2_e.pdf
+  - type: resource
+    title: macOS 10.12-10.15 USB Driver v3.224
+    url: https://rme-audio.de/downloads/driver_usb_mac_3224.zip
+  - type: resource
+    title: macOS 11+ Kernel Extension Driver v3.39
+    url: https://rme-audio.de/downloads/driver_usb_mac_339.zip
+  - type: resource
+    title: macOS 11+ DriverKit Driver v4.30
+    url: https://rme-audio.de/downloads/driver_usbdk_mac_430.zip
+  - type: resource
+    title: Windows 10/11 (x64/Arm64) Driver v1.0.17
+    url: https://www.rme-audio.de/downloads/driver_madiface_win_1017.zip
+  - type: resource
+    title: Windows Legacy Driver v0.9845
+    url: https://rme-audio.de/downloads/driver_madiface_win_09845.zip
+  - type: resource
+    title: macOS Flash Update Tool
+    url: https://rme-audio.de/downloads/fut_madiface_mac.zip
+  - type: resource
+    title: Windows Flash Update Tool
+    url: https://rme-audio.de/downloads/fut_madiface_win.zip
+  - type: resource
+    title: TotalMix FX for macOS v2.03/1.991
+    url: https://rme-audio.de/downloads/tmfx_203_1991_mac.zip
+  - type: resource
+    title: TotalMix FX for Windows v2.03/1.991
+    url: https://rme-audio.de/downloads/tmfx_203_1991_win.zip
+  - type: resource
+    title: TotalMix FX for macOS v1.99
+    url: https://rme-audio.de/downloads/tmfx_mac_199.zip
+  - type: resource
+    title: TotalMix FX for Windows x64 v1.99
+    url: https://rme-audio.de/downloads/tmfx_winx64_199.zip
+  - type: resource
+    title: TotalMix FX for Windows x86 v1.99
+    url: https://rme-audio.de/downloads/tmfx_win32_199.zip
+  - type: resource
+    title: TotalMix FX for Windows Arm64 v1.99
+    url: https://rme-audio.de/downloads/tmfx_win_arm64_199.zip
+  - type: resource
+    title: TotalMix Remote for macOS
+    url: https://rme-audio.de/downloads/tmfx_mac_remote.zip
+  - type: resource
+    title: TotalMix Remote for Windows
+    url: https://rme-audio.de/downloads/tmfx_win_remote.zip
+  - type: resource
+    title: DigiCheck NG for macOS v0.93
+    url: https://www.rme-audio.de/downloads/digicheck_ng_mac_093.zip
+  - type: resource
+    title: DigiCheck NG for Windows v0.93
+    url: https://www.rme-audio.de/downloads/digicheck_ng_win_093.zip
+  - type: resource
+    title: DigiCheck for macOS
+    url: https://rme-audio.de/downloads/dc_073_mac.zip
+  - type: resource
+    title: DigiCheck for Windows
+    url: https://rme-audio.de/downloads/dc_596_win.zip

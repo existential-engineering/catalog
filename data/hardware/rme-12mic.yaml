@@ -1,0 +1,233 @@
+id: rx4CdKEEm92bXrz1kVzrz
+name: 12Mic
+manufacturer: rme
+primaryCategory: preamp
+categories:
+  - rack-mount
+  - remote-controlled
+  - digital
+url: https://rme-audio.de/12mic.html
+description: 12-channel digitally controlled microphone preamplifier with AVB &
+  MADI connectivity, featuring SteadyClock FS, a 268x282 routing matrix and 75
+  dB gain range.
+details: |-
+  The 12Mic is a 12-channel digitally controlled microphone preamplifier built into a 1U 19-inch rack chassis. It combines high-grade analog input stages with extensive digital connectivity, including AVB networking and MADI, making it suitable for studio, live, and broadcast environments.
+
+  All 12 inputs accept balanced XLR microphone or line signals, while the first four channels offer XLR/TRS combo jacks with switchable high-impedance (Hi-Z) for connecting instruments directly. Each channel features 75 dB of gain in 1 dB steps, switchable phantom power, and high-resolution AD conversion driven by RME's SteadyClock FS jitter-suppression technology.
+
+  Digital outputs include MADI on both coaxial BNC and an SFP cage for optical MADI, plus three ADAT optical ports and dual AVB-capable Gigabit Ethernet ports with redundancy support. An internal 268x282 routing matrix lets any input be sent to any output, making the 12Mic a flexible standalone preamp, format converter, or network audio source.
+
+  The unit is controlled via a 1.54-inch full-color display with an encoder knob, or remotely via HTTP/JSON web interface, IEEE 1722.1 ATDECC, and MIDI over MADI. A headphone output on the front panel offers local monitoring of any matrix source.
+
+  An internal universal mains power supply (100-240V AC) and an additional 12V DC input enable redundant powering for mission-critical applications. The 12Mic earned the AES Milan Best of Show Award for its combination of audio quality, networking flexibility, and remote control capabilities.
+specs: |-
+  - 12 digitally controlled microphone preamplifiers with 75 dB gain range in 1 dB steps
+  - 4 front-channels with XLR/TRS combo jacks and switchable Hi-Z for instruments
+  - Switchable 48V phantom power per channel
+  - SteadyClock FS ultra-low jitter clocking
+  - Internal 268x282 channel routing matrix
+  - MADI coaxial I/O (BNC) up to 64 channels at 48 kHz
+  - MADI Optical via SFP module (optional)
+  - 3 ADAT optical outputs (TOSLINK)
+  - Dual Gigabit Ethernet with AVB / Milan support and redundancy
+  - Word Clock In/Out on BNC, 75 Ohm
+  - 1/4-inch headphone output for local monitoring
+  - USB 2.0 port for firmware updates and remote control
+  - 1.54-inch full-color display with encoder knob
+  - Remote control via HTTP/JSON, IEEE 1722.1 ATDECC, MIDI over MADI
+  - Supports sample rates up to 192 kHz at 24-bit
+  - Frequency response 8 Hz - 20.8 kHz at 44.1 kHz; 3 Hz - 43.7 kHz at 192 kHz
+  - Signal-to-noise ratio > 117 dB RMS unweighted
+  - EIN (30 dB gain, 150 Ohm): -123 dB RMS
+  - THD < -110 dB at 30 dB gain
+  - Max input level +18 dBu at 0 dB gain
+  - Internal universal 100-240V AC PSU (~30W)
+  - Optional redundant 12V 2.5A DC external power input
+  - 1U 19-inch rack chassis, 440 x 44 x 243 mm
+  - Weight 2.8 kg (6.2 lbs)
+io:
+  - name: Mic/Line/Instrument Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line/Instrument Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line/Instrument Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line/Instrument Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 5
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 6
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 7
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 8
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 9
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 10
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 11
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 12
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Phones
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: MADI Coaxial I/O
+    signalFlow: bidirectional
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical (SFP)
+    signalFlow: bidirectional
+    category: digital
+    type: line
+    connection: built-in
+    maxConnections: 64
+    position: Right
+  - name: ADAT Out 1
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: ADAT Out 2
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: ADAT Out 3
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: Word Clock In
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Out
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: AVB Network Port 1
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: AVB Network Port 2
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: USB 2.0 (Remote/Updates)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: DC Power (12V)
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: SteadyClock FS
+    url: https://rme-audio.de/steadyclock-fs.html
+  - type: resource
+    title: RME MADI Technology
+    url: https://rme-audio.de/rme-madi-technology.html
+  - type: product
+    title: SFP Module
+    url: https://rme-audio.de/sfp-module.html

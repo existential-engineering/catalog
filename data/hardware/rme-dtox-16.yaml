@@ -1,0 +1,63 @@
+id: -lnGDvpQ8eetqGoAFhdxo
+name: DTOX-16
+manufacturer: rme
+primaryCategory: patch-bay
+categories:
+  - rack-mount
+url: https://rme-audio.de/dtox-16.html
+description: Universal Analog Breakout Box. The RME DTOX-16 breakout boxes are
+  the perfect rack solutions for interconnecting analog multichannel XLRs with
+  the common D-sub 25 connector format.
+details: |-
+  The RME DTOX-16 breakout boxes are the perfect rack solutions for interconnecting analog multichannel XLRs with the common D-sub 25 connector format. Three different versions are available.
+
+  DTOX-16 I — 16 x XLR Input to 2 x D-sub. DTOX-16 I connects 16 XLR inputs to two D-sub 25-pin connectors (channels 1-8 and channels 9-16). The breakout panel supports all interfaces using analog 25-pin D-sub inputs as well as the following RME interfaces: M-32 AD, M-16 AD, M-32 Pro AD, M-32 Pro DA.
+
+  DTOX-16 O — 16 x XLR Output to 2 x D-sub. DTOX-16 O connects 16 XLR outputs to two D-sub 25-pin connectors (channels 1-8 and channels 9-16). The breakout panel supports all interfaces using an analog 25-pin D-sub output as well as the following RME interfaces: M-32 DA, M-16 DA, M-32 Pro AD, M-32 Pro DA.
+
+  DTOX-16 I/O — 8 x XLR Input to D-sub and 8 x XLR Output to D-sub. DTOX-16 I/O connects 8 XLR inputs to a D-sub 25-pin connector and 8 XLR outputs to another D-sub 25-pin connector. The breakout panel supports all interfaces using an analog 25-pin D-sub I/O as well as the following RME interfaces: ADI-8 QS, ADI-8 DS Mk III, M-32 AD, M-32 DA, M-16 AD, M-16 DA, M-32 Pro AD, M-32 Pro DA.
+specs: |-
+  - Universal XLR to D-SUB analog breakout panel
+  - Three versions: DTOX-16 I (16 XLR in), DTOX-16 O (16 XLR out), DTOX-16 I/O (8 XLR in + 8 XLR out)
+  - D-sub 25-pin connector format (8 channels per DB25)
+  - Passive (no power required)
+io:
+  - name: XLR Inputs 1-8
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 8
+    position: Right
+  - name: XLR Outputs 1-8
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 8
+    position: Right
+  - name: D-sub 25 (Inputs)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Left
+  - name: D-sub 25 (Outputs)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Left
+versions:
+  - name: DTOX-16 I
+  - name: DTOX-16 O
+  - name: DTOX-16 I/O
+links:
+  - type: resource
+    title: DTOX-32
+    url: https://rme-audio.de/dtox-32.html
+  - type: resource
+    title: Expansion Boards
+    url: https://rme-audio.de/expansion-boards.html

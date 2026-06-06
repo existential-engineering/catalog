@@ -1,0 +1,171 @@
+id: lmkGfJp5C1Sun0gLLdXZ8
+name: M-1620 Pro
+manufacturer: rme
+primaryCategory: rack-mount
+categories:
+  - digital
+  - audio-interface
+url: https://rme-audio.de/m-1620-pro.html
+description: 16 channel A/D, 20 channel D/A converter with ADAT, Milan and MADI.
+  The M-1620 Pro converts analog line-level signals (switchable up to +24 dBu
+  per channel) to and from MADI, ADAT, and Milan network technology. A front
+  panel combining LED level meters with display and two separate headphone
+  outputs sits within a single-height 19-inch rack device. Includes dual network
+  and dual MADI connections with redundancy, full stand-alone capability, and
+  Milan certification supporting up to 128 channels at 48 kHz (96 @ 96 kHz, 64 @
+  192 kHz).
+details: |-
+  The M-1620 Pro converts analog line-level signals (switchable up to +24 dBu per channel) to and from MADI, ADAT, and Milan network technology.
+
+  A front panel combining LED level meters with display and two separate headphone outputs sits within a single-height 19-inch rack device.
+
+  Includes dual network and dual MADI connections with redundancy, full stand-alone capability, and Milan certification supporting up to 128 channels at 48 kHz (96 @ 96 kHz, 64 @ 192 kHz).
+
+  Features SteadyClock FS reference-class digital clocking with jitter reduction, an integrated routing matrix, web-interface remote control, and monitored DC input alongside an internal AC power supply.
+specs: |-
+  - Channel count: 16 channel A/D, 20 channel D/A
+  - Analog Inputs: 16 line-level, fully symmetrical servo-balanced AC-coupled
+  - Input level switchable per channel: +24 dBu, +19 dBu, +13 dBu @ 0 dBFS
+  - Input impedance: 9.5 kOhm
+  - Input SNR @ +24 dBu, 44.1 kHz: 117.0 dB RMS unweighted, 120.7 dBA
+  - Input SNR @ +19 dBu: 116.3 dB RMS unweighted, 119.9 dBA
+  - Input SNR @ +13 dBu: 114.7 dB RMS unweighted, 118.3 dBA
+  - Input frequency response @ 44.1 kHz (-0.1 dB): 5 Hz – 20.5 kHz
+  - Input THD @ -1 dBFS: < -111 dB (< 0.00029%)
+  - Input THD+N @ -1 dBFS: < -108 dB (< 0.00039%)
+  - Input channel separation: > 110 dB
+  - Analog Outputs: 16 line-level, DC-coupled fully symmetrical
+  - Output level switchable per channel: +24 dBu, +19 dBu, +13 dBu @ 0 dBFS
+  - Output impedance: 200 Ohm balanced, 100 Ohm unbalanced
+  - Output SNR @ +13 dBu: 119.2 dB RMS unweighted
+  - Output SNR @ +19 dBu: 119.7 dB RMS unweighted
+  - Output SNR @ +24 dBu: 119.9 dB RMS unweighted
+  - Output frequency response @ 44.1 kHz (-0.1 dB): 0 Hz – 20.3 kHz (Sharp Filter, default)
+  - Output frequency response @ 96 kHz (-0.1 dB): 0 Hz – 30 kHz (Slow Filter) / 0 Hz – 44.1 kHz (Sharp Filter)
+  - Output frequency response @ 192 kHz (-0.1 dB): 0 Hz – 60.5 kHz (Slow Filter) / 0 Hz – 85 kHz (Sharp Filter)
+  - Output THD @ +19 dBu: < -120 dB (< 0.0001%)
+  - Output THD+N @ +19 dBu: < -113 dB (< 0.0002%)
+  - Output channel separation: > 110 dB
+  - Headphone outputs: 2 (Phones 1/2 and 3/4), 6.3 mm TRS stereo (unbalanced) or mono (balanced) jack
+  - Headphone max output level: +4 dBu / +19 dBu (+10 dBu / +25 dBu balanced)
+  - Headphone output level switchable separately for each connector
+  - Headphone SNR @ +19 dBu: > 109 dB RMS unweighted, > 111 dBA
+  - Headphone frequency response @ 44.1 kHz (-0.1 dB): 0 Hz – 20.0 kHz (Sharp Filter, default)
+  - Headphone frequency response @ 96 kHz (-0.1 dB): 0 Hz – 20.0 kHz (Slow Filter) / 0 Hz – 44.3 kHz (Sharp Filter)
+  - Headphone frequency response @ 192 kHz (-0.1 dB): 0 Hz – 43 kHz (Slow Filter) / 0 Hz – 85 kHz (Sharp Filter)
+  - Headphone THD+N @ +4 dBu, 32 Ohm load: < -100 dB (< 0.001%)
+  - Headphone THD+N @ +19 dBu, 100 Ohm load: < -100 dB (< 0.001%)
+  - Resolution: 24-bit
+  - Digital I/O: 4× ADAT, 1× MADI coaxial (BNC), 1× MADI optical SFP (optional), 1× Word Clock
+  - Network: 2× Gigabit Ethernet (Milan certified, redundant)
+  - Milan channel capacity: up to 128 channels @ 48 kHz, 96 @ 96 kHz, 64 @ 192 kHz
+  - Clock: SteadyClock FS
+  - Integrated routing matrix
+  - Web-interface remote control
+  - Standalone operation with direct front-panel control
+  - Form factor: 1U 19-inch rack
+  - Power: Internal AC supply plus monitored redundant DC input
+io:
+  - name: Analog Line Inputs 1-16 (DB25)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 16
+    position: Right
+  - name: Analog Line Outputs 1-16 (DB25)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 16
+    position: Right
+  - name: Phones 1/2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Phones 3/4
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: ADAT I/O
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: MADI Coaxial I/O
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical SFP (optional)
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: built-in
+    maxConnections: 64
+    position: Right
+  - name: Milan / Gigabit Ethernet (Primary)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Milan / Gigabit Ethernet (Secondary, Redundant)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Word Clock I/O
+    signalFlow: bidirectional
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: USB (firmware & remote control)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: AC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Redundant DC Power Input (optional)
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+versions:
+  - name: M-1620 Pro
+links:
+  - type: resource
+    title: Firmware 3.0.7
+    url: https://rme-audio.de/downloads/M-1620_Pro_3_0_7.zip
+  - type: resource
+    title: Manual / Documentation
+    url: https://docs.rme-audio.com/
+  - type: resource
+    title: Product Images (ZIP)
+    url: https://www.rme-usa.com/downloads.html?file=files/downloads/Media-Material/RME_M-1620-Pro_Images.zip

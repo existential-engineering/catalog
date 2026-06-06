@@ -1,0 +1,100 @@
+id: qCZplkyjTKC2CAljY5wCz
+name: Digiface AVB
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://rme-audio.de/digiface-avb.html
+description: 256-channel 192 kHz USB audio interface using AVB (Audio Video
+  Bridging) for network audio transport, with an additional headphone output for
+  high-quality monitoring.
+details: |-
+  RME's Digiface AVB showcases AVB as an open IEEE protocol for transferring up to 256 channels of audio between PC and audio networks. The compact USB bus-powered interface adds a dedicated headphone output for high-quality monitoring of any channel from the network.
+
+  The Digiface AVB supports 128 audio channels record and playback at 48 kHz / 24-bit, 64 channels at 96 kHz, and 32 channels at 192 kHz with quad speed support. Channels are organized in configurable streams of 2 to 32 channels, and up to 16 AVB audio streams can be transported simultaneously over the Gigabit Ethernet AVB connection.
+
+  TotalMix FX provides comprehensive routing and monitoring with a real-time digital mixer supporting unlimited mixing and routing operations, a dedicated control room section with talkback, fader groups, mute groups, and remote controllability via Mackie Control or OSC. The Digiface AVB does not include DSP-based effects such as EQ or reverb.
+
+  An included AVDECC controller handles AVB device discovery and stream management, while TotalMix Remote enables iOS, PC, and Mac remote control of the mixer via IP. DigiCheck is also included for metering, testing, measuring, and analyzing digital audio streams.
+
+  The unit is housed in a compact 112 x 26 x 83 mm chassis weighing 300 g, is bus-powered over USB (typical 300 mA / 1.5 W), and supports internal, AVB, and Word Clock as clock sources across sample rates from 44.1 kHz to 192 kHz.
+specs: |-
+  - 256-channel 192 kHz USB audio interface
+  - 128 channels record/playback at 48 kHz / 24-bit
+  - 64 channels at 96 kHz, 32 channels at 192 kHz (quad speed)
+  - Configurable streams of 2 to 32 channels; up to 16 AVB audio streams
+  - Gigabit Ethernet (RJ45), 100 Mbit/s and 1 Gbit/s, Auto MDI-X, AVDECC-based control
+  - Word Clock In: BNC, 10 kOhm impedance, switchable 75 Ohm termination, auto double/quad speed detection
+  - Word Clock Out: BNC, max 5 Vss (4.0 Vss with 75 Ohm termination), 10 Ohm internal impedance
+  - Phones Output (33/34): 6.3 mm TRS jack (unbalanced), 2 Ohm output impedance
+  - Phones output level: +9.5 dBu at 0 dBFS into 1 kOhm load; 50 mW max power @ 0.1% THD
+  - Dynamic range: 110 dB RMS (113 dBA); THD @ -1 dBFS: -96 dB; channel separation: >100 dB
+  - Frequency response: 0 Hz - 20.8 kHz @ 44.1 kHz; 0 Hz - 45 kHz @ 96 kHz; 0 Hz - 89 kHz @ 192 kHz
+  - Clock sources: Internal, AVB, Word Clock
+  - Sample rates: 44.1 kHz to 192 kHz
+  - USB bus powered: 300 mA typical at 5 V, 400 mA max
+  - Power consumption: 1.5 W typical, 2 W maximum
+  - Dimensions: 112 x 26 x 83 mm; weight 300 g
+  - Operating temperature: +5 to +50 degrees Celsius
+  - Humidity: <75%, non-condensing
+  - Includes TotalMix FX, AVDECC Controller, TotalMix Remote, DigiCheck
+  - Real-time digital mixer with unlimited mixing/routing, control room section, talkback, fader/mute groups
+  - Remote control via Mackie Control or OSC
+  - Does not support DSP-based effects (EQ, reverb)
+io:
+  - name: USB 3.0 (to host)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: AVB Network (Gigabit Ethernet)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Word Clock In
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Out
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Phones Output (33/34)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+versions:
+  - name: Digiface AVB
+links:
+  - type: resource
+    title: Digiface AVB Manual (v1.41)
+    url: https://www.rme-audio.de/downloads/dface_avb_e.pdf
+  - type: resource
+    title: RME AVB Series Brochure
+    url: https://www.rme-usa.com/downloads.html?file=files/downloads/Media-Material/RME_AVB_Series_Brochure-14p-Web_20.09.pdf
+  - type: resource
+    title: Downloads
+    url: https://rme-audio.de/downloads.html
+  - type: support
+    title: Knowledge Base
+    url: https://rme-audio.de/knowledge-base.html
+  - type: support
+    title: Forum
+    url: https://forum.rme-audio.de/
+videos:
+  - provider: youtube
+    videoId: 9GR4nmvejfo
