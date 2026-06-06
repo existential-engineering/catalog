@@ -1,0 +1,69 @@
+id: DtzFrA-xkaF1YMJfUlVDR
+name: Shelford 5053 Transformer Gain Mic Pre + Inductor EQ
+manufacturer: rupert-neve-designs
+primaryCategory: channel-strip
+categories:
+  - preamp
+  - equalizer
+  - outboard
+url: https://rupertneve.com/products/5053
+description: Shelford Series 1-slot Penthouse module for the Rupert Neve Designs
+  5088 console, pairing a transformer-coupled, fully class-A microphone
+  preamplifier with a 3-band inductor EQ. The mic pre uses a custom RND input
+  transformer to deliver the first 15 dB of gain, with a 12-position rotary gain
+  switch, sweepable 20-250 Hz high-pass filter, and the Silk Red/Blue circuit
+  with continuously variable Texture for tunable harmonic content.
+details: |-
+  The 5053 is a 1-slot Shelford Series Penthouse module designed for the 5088 console. It pairs a direct-coupled transformer-gain mic preamp with the same 3-band inductor EQ found in the Shelford Channel, plus the Silk Red/Blue / variable Texture output stage.
+
+  The mic preamp section features a custom Rupert Neve-designed input transformer providing the first 15 dB of gain, fully class-A amplifiers, mic/line input selection, +48V phantom power, polarity reverse, a sweepable 20-250 Hz / 12 dB-per-octave high-pass filter, a 12-position rotary mic gain switch (6 dB steps), and a ±6 dB input trim. An 8-segment LED meter monitors output level.
+
+  The 3-band inductor EQ uses custom-wound inductors (not off-the-shelf parts) chosen for musical harmonic content versus capacitor-based designs. The Low band offers ±15 dB at 35/60/100/220 Hz with peak/shelf modes. The Mid band offers ±15 dB at 200 Hz / 350 Hz / 700 Hz / 1.5 kHz / 3 kHz / 6 kHz with a Mid Hi-Q option. The High band offers ±15 dB at 8 kHz or 16 kHz with peak/shelf modes.
+
+  The output stage drives a custom RND output transformer through the Silk circuit, which toggles between Off, Red (emphasizes high/high-mid harmonics), and Blue (emphasizes low/low-mid harmonics). A continuously variable Texture control sweeps the saturation depth, generating up to roughly 4-5% THD (predominantly 2nd order) at maximum. Interchangeable with sibling Shelford Penthouse modules (5051, 5052) in the 5088 console.
+specs: |-
+  - Mic Input Impedance: 2200 ohms
+  - Mic Frequency Response (+30 dB gain, +4 dBu out, 150 ohm source): ±0.2 dB below 5 Hz to 50 kHz
+  - Mic Noise (22 Hz-22 kHz): -101 dBu at unity gain; -94 dBu at 30 dB gain; -61 dBu at 66 dB gain
+  - Mic EIN (22 Hz-22 kHz, unweighted, 30 dB gain): -124 dBu
+  - Mic Max Input Level: +24 dBu at 1 kHz
+  - Mic THD+N (1 kHz, +4 dBu out, 30 dB gain): 0.002% typical
+  - Line Input Impedance: 10 kOhm
+  - Line Frequency Response: ±0.1 dB, 16 Hz-34 kHz
+  - Line Max Input Level @ 1 kHz: +26.3 dBu
+  - EQ Low band: ±15 dB, selectable 35/60/100/220 Hz, peak/shelf
+  - EQ Mid band: ±15 dB, selectable 200 Hz / 350 Hz / 700 Hz / 1.5 kHz / 3 kHz / 6 kHz, Mid Hi-Q option
+  - EQ High band: ±15 dB, selectable 8 kHz / 16 kHz, peak/shelf
+  - Power: ±24 V (same as 5051 and 5052 Penthouse modules)
+  - Dimensions: 1.75" W x 8.75" D x 9.4" H
+  - Weight: 3.5 lb (1.6 kg)
+  - Made in USA
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: 5053 Recall Sheet (PDF)
+    url: https://www.rupertnevedesigns.com/s/5053-recall_RND.pdf
+  - type: support
+    title: Rupert Neve Designs Manuals
+    url: https://www.rupertnevedesigns.com/support#manuals

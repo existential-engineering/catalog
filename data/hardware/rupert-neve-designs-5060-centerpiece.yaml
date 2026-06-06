@@ -1,0 +1,214 @@
+id: cAMqJGIbrUkiMRS7CQMUI
+name: 5060 Centerpiece
+manufacturer: rupert-neve-designs
+primaryCategory: summing-mixer
+categories:
+  - monitor
+  - control-surface
+  - outboard
+url: https://rupertneve.com/products/5060-centerpiece
+description: The 5060 Centerpiece is a 24x2 desktop analog summing mixer and
+  monitor controller. It combines class-A circuitry, custom transformers, and
+  the Silk Red/Blue harmonic texture controls from the flagship 5088 console
+  with a comprehensive monitoring section, DAW transport controls, and a
+  built-in talkback system — providing a tactile analog hub for in-the-box
+  mixing workflows.
+details: |-
+  The 5060 Centerpiece pairs a Rupert Neve-designed 24×2 mix bus with a full-featured monitor and DAW control surface in a desktop chassis. Eight stereo fader channels (1-8) provide 100mm faders, mutes, and insert sends/returns, while channels 9-24 use rotary level controls for 16 additional stereo summing inputs.
+
+  The transformer-coupled, class-A stereo mix bus carries Rupert Neve's signature tone, and a master insert lets you patch a stereo compressor or EQ into the mix path. Variable Silk Red and Blue circuitry adds harmonic saturation — Red emphasizes sparkle in the highs and high-mids, Blue adds weight to lows and low-mids — giving each channel a tunable amount of vintage character.
+
+  The center section includes three switchable speaker outputs (MON 1/2/3), three external monitor source inputs, a precision 21-step stereo monitor attenuator, a reference-grade class-A headphone amplifier, and RMS VU meters with peak LEDs. A built-in talkback mic with level control and assignment to insert sends 1-2 and 3-4 simplifies tracking workflows.
+
+  Standard DAW transport controls (play, stop, record, rewind, fast-forward, loop, jog/shuttle, marker drop) communicate with the host via MIDI or USB, letting the 5060 act as the tactile center of an in-the-box studio.
+specs: |-
+  - Configuration: 24 x 2 stereo summing mixer / monitor controller
+  - Channels 1-8: 100mm faders, mute, insert send/return, Silk Red & Blue
+  - Channels 9-24: rotary level controls, Silk Red & Blue
+  - Mix bus: class-A, transformer-coupled, with stereo master insert
+  - Monitor outputs: 3 stereo pairs (MON 1, 2, 3) with 21-step stereo attenuator
+  - External monitor inputs: 3 stereo pairs
+  - Headphone amp: class-A, dedicated level control
+  - Talkback: built-in mic, level control, direct out, assignable to insert sends 1-2 & 3-4
+  - DAW control: transport + jog/shuttle via MIDI or USB
+  - Metering: RMS VU with peak LEDs
+  - Max input level (Ch 1-8, fader @ 0dB): >+26 dBu
+  - Max output level: >+27 dBu
+  - THD+N (Ch 1-8 @ 2 kHz, unity): 0.003%
+  - Frequency response: 10 Hz to 120 kHz, ±0.25 dB
+  - Power: 110W max, 100-240VAC, 50/60Hz
+  - Dimensions: 18.5"W × 12.5"D × 5.75"H
+  - Weight: 22 lbs (10 kg)
+io:
+  - name: Channels 1-8 Inputs (DB25)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Bottom
+  - name: Channels 9-16 Inputs (DB25)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Bottom
+  - name: Channels 17-24 Inputs (DB25)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Bottom
+  - name: Channel 1-8 Insert Sends (DB25)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Bottom
+  - name: Channel 1-8 Insert Returns (DB25)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Bottom
+  - name: Stereo Mix Bus Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Stereo Mix Bus Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Master Insert Send L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Master Insert Send R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Master Insert Return L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Master Insert Return R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Monitor 1 Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Monitor 1 Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Monitor 2 Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Monitor 2 Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Monitor 3 Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Monitor 3 Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: External Monitor Input 1 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: External Monitor Input 1 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: 5060 Centerpiece User Manual
+    url: https://rupertneve.com/s/775-000195060-Manual_RevD.pdf
+  - type: resource
+    title: 5060 Recall Sheet
+    url: https://rupertneve.com/s/5060-recall_RND.pdf
+videos:
+  - provider: youtube
+    videoId: FmYvoGsRXA8
+    title: The Summing Family

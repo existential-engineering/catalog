@@ -1,0 +1,91 @@
+id: mIW8y8Y8uKPw89WBT-eHH
+name: RNDI-S
+manufacturer: rupert-neve-designs
+primaryCategory: di-box
+categories:
+  - outboard
+url: https://rupertneve.com/products/rndi-s
+description: Stereo Active Transformer Direct Interface featuring custom Rupert
+  Neve-designed output transformers and class-A, discrete FET input stages. An
+  expanded two-channel direct interface designed to deliver powerful, vibrant
+  direct sound for stereo and mono sources including instruments, pre-recorded
+  material, and consumer devices. Powered by dual 48V phantom power with rugged
+  steel frame built for touring.
+details: |-
+  The RNDI-S is a two-channel active DI box built around custom Rupert Neve-designed output transformers and class-A discrete FET input stages. It expands the single-channel RNDI's transformer-coupled tone to stereo applications — submixes, keyboards, drum machines, consumer playback — while still handling per-channel instrument sources with the same rich character.
+
+  Each channel offers a high-impedance 1/4-inch instrument input and a parallel 1/4-inch thru jack. A front-panel 3.5mm stereo input feeds both channels for consumer-device sources (Tip = Ch 1, Ring = Ch 2), and an Input Select switch chooses between the 1/4-inch and 3.5mm sources.
+
+  The transformer-balanced XLR outputs present an impedance below 40 Ohm to drive long cable runs cleanly. Dual +48V phantom power is supplied through the XLRs, with front-panel LEDs indicating phantom status. Per-channel ground lift switches isolate XLR Pin 1 from circuit ground when needed.
+
+  A rugged steel frame and conservative power budget make the RNDI-S equally at home on stage, in the studio, or in broadcast.
+specs: |-
+  - Noise (22 Hz - 22 kHz, unweighted): better than -110 dBV
+  - Input impedance (1/4-inch): 2.2 MOhm
+  - Input impedance (3.5mm): 95 kOhm
+  - Output impedance: less than 40 Ohm
+  - Frequency response: ±0.25 dB (28 Hz - 60 kHz); ±1 dB (14 Hz - 90 kHz)
+  - Maximum input level: +20.5 dBu (8.2 V RMS) typical
+  - Maximum output level: +11.5 dBu typical
+  - THD+N @ 1 kHz, +20 dBu: 0.25% typical
+  - Power: 4.5 mA per channel @ +48 VDC
+  - Dimensions: 5" W x 7" D x 1.75" H
+  - Weight: 2.5 lbs (1.1 kg)
+io:
+  - name: Channel 1 Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 2 Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 1 Thru
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 2 Thru
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Stereo Aux Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 1 Mic Output
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Mic Output
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: RNDI-S User Manual (Rev B)
+    url: https://rupertneve.com/s/RNDI-S-Manual_Rev-B.pdf
+videos:
+  - provider: youtube
+    videoId: CTgWjE7GJVI
+    title: RNDI-S Quick Start Guide

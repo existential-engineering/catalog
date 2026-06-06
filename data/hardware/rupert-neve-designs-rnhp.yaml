@@ -1,0 +1,93 @@
+id: p8MQuia4XqiF7-bBmRYkF
+name: RNHP Precision Headphone Amplifier
+manufacturer: rupert-neve-designs
+primaryCategory: headphone-amp
+categories:
+  - outboard
+url: https://rupertneve.com/products/rnhp
+description: A dedicated 24V reference-quality headphone amplifier designed to
+  deliver high-power amplification with minimal sonic compromise. Three
+  specially calibrated inputs (XLR/TRS combo, RCA, 3.5mm) feed a direct-coupled
+  amplifier with near-zero output impedance, housed in a rugged VESA-mountable
+  steel chassis.
+details: |-
+  The RNHP is a precision reference headphone amplifier derived from the headphone circuit of the 5060 Centerpiece Desktop Mixer. It is designed for tracking, mixing and critical listening with minimal sonic coloration.
+
+  Three inputs are individually calibrated: a balanced XLR/TRS combo jack for professional +4 dBu signals, RCA jacks for -10 dBV consumer sources, and a 3.5 mm stereo jack for mobile devices. A precision damped stereo potentiometer sets the output level into the front-panel 1/4-inch headphone jack.
+
+  The direct-coupled output stage presents a near-zero source impedance, allowing it to drive headphones from 16 to 600 ohms with consistent frequency response and damping. The steel clamshell chassis is VESA 100 compatible for mounting under or behind a desk.
+specs: |-
+  - Maximum input level (XLR): +22.8 dBu @ 1 kHz
+  - Maximum input level (RCA): +14.7 dBu @ 1 kHz
+  - Maximum input level (3.5mm): +3.3 dBu @ 1 kHz
+  - Output power: 300 mW RMS into 44 ohm
+  - Output power: 230 mW RMS into 16 ohm
+  - Output power: 175 mW RMS into 150 ohm
+  - Output impedance: 0.08 ohm @ 1 kHz
+  - Frequency response: 10 Hz - 120 kHz, ±0.2 dB
+  - Headphone impedance range: 16 - 600 ohm
+  - Power: 24 VDC @ 0.25 A minimum (6 W supplied adapter)
+  - Dimensions: 6.5" W x 4.6" D x 1.9" H (16.5 x 11.7 x 4.8 cm)
+  - Weight: 2 lb (0.9 kg)
+  - VESA 100 compatible mounting
+io:
+  - name: Input A Left (XLR/TRS combo)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
+    position: Bottom
+  - name: Input A Right (XLR/TRS combo)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
+    position: Bottom
+  - name: Input B Left (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Input B Right (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Input C (3.5mm stereo)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: User Manual (PDF)
+    url: https://images.squarespace-cdn.com/static/5fe7b6498dc8ae15a0364652/775-00024RNHP-Manual_RevB.pdf
+  - type: review
+    title: Darko.Audio Review
+    url: https://darko.audio/2018/05/arresting-simplicity-from-the-rupert-neve-rnhp/
+videos:
+  - provider: youtube
+    videoId: 4F1r_t1nnqU
+    title: RNHP Quick Start Video

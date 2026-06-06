@@ -1,0 +1,94 @@
+id: 6ZngcUptB9fGaj7vh0xUH
+name: Shelford Dual Mic Pre
+manufacturer: rupert-neve-designs
+primaryCategory: preamp
+categories:
+  - outboard
+  - rack-mount
+url: https://rupertneve.com/products/shelford-dual-mic-pre
+description: Two channels of Rupert Neve's Shelford preamplifier in a 1RU
+  rackmount chassis. Built around a custom direct-coupled input transformer that
+  delivers the first 15 dB of gain, with selectable Silk Red/Blue and
+  continuously variable Texture for harmonic shaping, plus dual
+  transformer-coupled outputs (Main at +26 dBu and -6 dB) for either pristine
+  headroom or saturated tone without clipping converters.
+details: |-
+  The Shelford Dual Mic Pre packs two channels of Rupert Neve's flagship Shelford preamp into a single rack space. The input stage uses a custom-designed direct-coupled step-up transformer that provides the first 15 dB of gain, drawing on the lineage of vintage Neve modules (1073, 1064, 2254) while extending their performance with modern refinements.
+
+  Each channel offers Silk Red and Silk Blue modes paired with a continuously variable Texture control, allowing the engineer to dial in up to roughly 10x more harmonic color than the classic modules. Silk Red emphasizes high and high-mid harmonics for vocals, snare, strings, and piano; Silk Blue emphasizes low and low-mid harmonics for drums, bass, heavy guitars, and synths.
+
+  The dual output topology provides a Main XLR output capable of +26 dBu for pristine high-headroom signal, alongside a -6 dB XLR output that lets you push the output transformer into saturation without clipping downstream converters. Both outputs are active simultaneously and independently.
+
+  Additional controls include 12-position rotary mic gain (0-66 dB in 6 dB steps), ±6 dB trim, polarity reverse, 48 V phantom, a 12 dB/octave variable high-pass filter (20-250 Hz) with side-chain routing, RMS-calibrated VU meters per channel, and a ground-lift switch.
+specs: |-
+  - Input impedance: 2.2 kOhm
+  - Maximum input level (1 kHz): +24.9 dBu
+  - Main output maximum (1 kHz): +26.7 dBu
+  - -6 dB output maximum (1 kHz): +20.7 dBu
+  - Frequency response (±0.25 dB): 20 Hz - 20 kHz
+  - THD+N @ 0 dBu, 1 kHz: < 0.0025%
+  - THD+N @ +20 dBu, 1 kHz: < 0.008%
+  - Noise (Main, 0 dB gain): -102 dBu
+  - Noise (Main, +66 dB gain): -61 dBu
+  - EIN (+66 dB gain): -127 dBu (Main) / -133 dBu (-6 dB output)
+  - Mic gain range: 0-66 dB in 6 dB steps
+  - Trim range: ±6 dB
+  - High-pass filter: 12 dB/octave, variable 20-250 Hz
+  - Phantom power: 48 V
+  - Power input: Universal IEC, 100-240 VAC
+  - Dimensions: 19" W x 9.25" D x 1.75" H (1RU)
+  - Weight: 9 lbs (4.1 kg)
+io:
+  - name: Channel 1 Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 1 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 1 -6dB Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 -6dB Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: User Manual
+    url: https://rupertneve.com/s/775-000425025_Manual_RevA3.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://rupertneve.com/s/5025-recall_RND.pdf
+videos:
+  - provider: youtube
+    videoId: fSph2xd-1oA
+    title: Silk & Texture Explained

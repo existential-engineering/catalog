@@ -1,0 +1,92 @@
+id: GhcAq5iO8LwfTuZRuZvHZ
+name: 5045 Primary Source Enhancer
+manufacturer: rupert-neve-designs
+primaryCategory: utility
+categories:
+  - outboard
+  - rack-mount
+url: https://rupertneve.com/products/5045
+description: A 2-channel 1U rackmount feedback reduction device that naturally
+  reduces feedback in live sound environments without compromising signal
+  integrity, capable of increasing microphone level by up to 20dB before
+  feedback occurs. 100% analog design with custom transformers and no digital
+  processing or filtering.
+details: |-
+  The 5045 Primary Source Enhancer is a feedback reduction device engineered to naturally reduce feedback in live sound environments without compromising signal integrity. The unit can increase microphone level by up to 20dB before feedback occurs.
+
+  Featuring a 100% analog design with custom transformers and all-analog circuitry, the 5045 uses no filtering or digital processing. Its minimal, intuitive control layout is suitable for rapid on-the-fly adjustments.
+
+  The 5045 offers two detection modes: RMS (slower, averaged response) and Peak (faster transient detection), along with six selectable time constant settings (A-F) controlling attenuation speed, from 50ms to 3 seconds in RMS mode.
+
+  This 1U rackmount unit houses two independent channels, making it a full sibling to the 500-series 545 Primary Source Enhancer.
+specs: |-
+  - Maximum Input/Output: +25 dBu
+  - THD+N: Better than 0.002% (1 kHz, +20 dBu output)
+  - Noise (bypassed): Better than -100 dBu
+  - Noise (engaged): Better than -95 dBu
+  - Frequency Response: 20 Hz to 150 kHz (-3 dB points)
+  - Threshold: -20 dBu to +10 dBu (continuously variable)
+  - Depth: 0 dB to -20 dB (continuously variable)
+  - Time Constants (RMS Mode): A=50ms, B=100ms, C=200ms, D=750ms, E=1.5s, F=3s
+  - Time Constants (Peak Mode): Attack 20ms (fixed), Release 20ms (A) to 30s (F)
+  - Dimensions: 19"W x 6"D x 1.75"H (1RU)
+  - Weight: 6.5 lbs
+  - Power: 12V DC, 1 Amp
+  - Channels: 2
+io:
+  - name: Channel 1 Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 1 Mic Output
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Mic Output
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Sidechain Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Link
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: User Manual
+    url: https://www.rupertnevedesigns.com/s/775-000095045-Manual_RevC2.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://www.rupertnevedesigns.com/s/5045-recall_RND.pdf
