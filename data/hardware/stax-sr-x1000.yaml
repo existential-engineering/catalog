@@ -1,0 +1,64 @@
+id: qtq3n0cQyl4H5hiF6HUSJ
+name: SRS-X1000
+manufacturer: stax
+primaryCategory: headphones
+categories:
+  - headphone-amp
+  - amplifier
+description: A premium electrostatic earspeaker bundle pairing the SR-X1
+  earspeaker with the compact SRM-270S driver unit, designed for flexible
+  desktop and bedside listening with enhanced heat dissipation and low-noise
+  amplification.
+details: |-
+  The SRS-X1000 is a set that combines SR-X1 with SRM-270S, the newly developed compact driver unit. SRM-270S features high-grade RCA pin jacks, a 3mm-thick front aluminum panel, and an extruded aluminum case which is larger to achieve more effective heat dissipation. The design of the previous model (SRM-252S) is updated for SRS-X1000. The latest low-noise FET is selected for First Stage of the amplifier, and a brushed-up emitter follower circuit is installed in Output Stage. The latest design know-how that comes from recent driver development is utilized for a compact enclosure. PARALLEL OUT terminals are installed for input, allowing easy combination with your current system. The SRS-X1000, which enables more flexible installation, is an all-around set that is recommended not only for music but also for watching movies on your desktop or bedside.
+specs: |-
+  - SR-X1 Type: Push-pull electrostatic sound element, open-air type enclosure
+  - SR-X1 Sound element shape: Middle round shape
+  - SR-X1 Frequency response: 7 – 41,000 Hz
+  - SR-X1 Electrostatic capacitance: 110 pF
+  - SR-X1 Impedance: 145 kΩ
+  - SR-X1 Sound pressure sensitivity: 101 dB
+  - SR-X1 Bias voltage: DC 580 V
+  - SR-X1 Cable: Parallel 6-strand OFC, low-capacity wide cable, 2.5 m
+  - SR-X1 Ear pad: Genuine sheep leather (skin touching portion), artificial leather (surrounding portion)
+  - SR-X1 Weight: 234 g (ear speaker)
+  - SRM-270S Frequency response: DC – 35,000 Hz
+  - SRM-270S Gain: 58 dB
+  - SRM-270S Harmonic distortion: 0.01% or less (1 kHz / 100 Vrms output)
+  - SRM-270S Input impedance: 25 kΩ
+  - SRM-270S Maximum output voltage: 280 Vrms (1 kHz)
+  - SRM-270S Bias voltage: DC 580 V
+  - SRM-270S Input terminal: RCA x 1
+  - SRM-270S Output: RCA parallel output x 1
+  - SRM-270S Power consumption: DC 12 V / 500 mA
+  - SRM-270S Dimensions: 132 (W) x 38 (H) x 153 (D) mm
+  - SRM-270S Weight: 540 g
+io:
+  - name: RCA Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: RCA Parallel Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: STAX Pro Bias Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

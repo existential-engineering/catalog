@@ -1,0 +1,83 @@
+id: -8TR-_Uks10fGdz5OjygW
+name: SRM-T8000
+manufacturer: stax
+primaryCategory: headphone-amp
+categories:
+  - amplifier
+description: A premium tube-based headphone amplifier featuring low-noise E88CC
+  dual triode tubes and a hybrid design with class-A semiconductor output stage.
+  It delivers exceptional sound quality with balanced XLR inputs, multiple input
+  options, and compatibility with all STAX PRO-bias earspeakers.
+details: |-
+  Low-noise, well-established E88CC dual triode tube adopted for high sound quality. The noise level is extremely low and, by just that much, the particle of low-level sound usually buried in noise comes up to the surface. It seems as if the glass which superficially looks transparent has been cleaned anew. The whole circuit forms a hybrid one using class-A semiconductor output stage with large current emitter follower. The result is very low noise, live and smooth musical sound as well as excellent spatial description.
+
+  - Balanced inputs realizing true tone quality of balanced transmission.
+  - Coupling capacitor-free configuration from input to output.
+  - The newly developed large-sized aluminum insulator combined with new vibration-proof material and high frictional coefficient (grip power) has been employed. The friction power is so high that you almost need not hold the unit when inserting the plug of your earspeaker.
+  - Compatible with all STAX PRO-bias earspeakers with 5-pin plug.
+  - Four pairs of inputs are equipped. (Notes: LINE4 is an optional circuit board slot for future purpose. As for now, release is not yet determined.)
+  - LINE1, LINE2 or LINE3 inputs of the SRM-T8000 can bypass the incorporated volume controller, enabling it to connect to source equipments with volume controller or to an external attenuator. That is, the unit can be used as an exclusive power amplifier with no volume controller.
+  - LINE1 is equipped with PARALLEL OUT bypassing input signals.
+specs: |-
+  - Frequency response: 0.4 Hz – 115 kHz (with one earspeaker)
+  - Gain: 60 dB (x1000)
+  - Harmonic distortion: 0.01% at 1 kHz
+  - Input terminals: LINE1/LINE2 (RCA), LINE3 (XLR), LINE4 (optional)
+  - Rated input level: 100 mV (at 100 V output)
+  - Input impedance: 50 kΩ (RCA) / 50 kΩ x 2 (XLR)
+  - Maximum output voltage: 470 Vrms (1330 V p-p)
+  - Mains voltage: AC 120 V / AC 220 V / AC 230 V / AC 240 V, 50/60 Hz
+  - Power consumption: 95 W
+  - Operating temperature: 0 to 35 °C (less than 90% humidity, non-condensing)
+  - Dimensions: 320 (W) x 103 (H) x 395 (D) mm
+  - Weight: 7.3 kg
+io:
+  - name: LINE1 (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: LINE1 PARALLEL OUT (RCA)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: LINE2 (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: LINE3 (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: PRO-bias output (front, socket 1)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - name: PRO-bias output (front, socket 2)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - name: AC mains inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom

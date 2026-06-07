@@ -1,0 +1,93 @@
+id: GxoQ0BrlWgmq_8ZMBUGOm
+name: SRM-500T
+manufacturer: stax
+primaryCategory: headphone-amp
+categories:
+  - amplifier
+description: A middle-level vacuum tube output driver unit featuring a hybrid
+  FET input and vacuum tube output design. It employs custom low-noise dual FETs
+  in the first stage and 6FQ7/6CG7 vacuum tubes in the output stage, delivering
+  clear, transparent sound with warm tonal characteristics and improved power
+  efficiency over previous models.
+details: |-
+  Successor model of the SRM-006tS. STAX custom-made low-noise DUAL FET is installed on First Stage and the vacuum tube 6FQ7/6CG7 is installed on Output Stage. In addition to the conventional power transformer for the high voltage circuit, a newly designed power transformer with low-voltage winding improves power efficiency and sound quality. The new chassis is more rigid than the conventional model, with a hybrid structure using a lot of non-magnetic aluminum to reduce environmental noise. RCA and XLR inputs are switchable; a custom concentric dual volume knob and RCA PARALLEL OUT are included. The complete DC amplifier configuration omits coupling condensers from the signal path, preserving the clear, transparent vacuum-tube sound with warm wide texture and a brushed-up low-mid range. Recommended for use with the advanced lambda series (SR-L300 / SR-L500 MK2 / SR-L700 MK2).
+specs: |-
+  - Type: FET input + vacuum tube output hybrid DC amplification driver unit
+  - Vacuum tube: 6FQ7/6CG7
+  - Frequency response: DC – 90 kHz (with one SR-009S)
+  - Gain: 60 dB
+  - Harmonic distortion: 0.01% or less (1 kHz / 100 Vrms output)
+  - Input impedance: 50 kΩ (RCA), 50 kΩ x 2 (XLR)
+  - Maximum output voltage: 300 Vrms (1 kHz)
+  - Bias voltage: DC 580 V
+  - Operating temperature: 0 to 35 °C
+  - Operating humidity: less than 90% (non-condensing)
+  - Input terminals: RCA x 1, XLR x 1
+  - Output: RCA parallel output terminal
+  - Power consumption: 38 W
+  - Dimensions: 195 (W) x 102 (H) x 376 (D) mm
+  - Weight: 3.4 kg
+io:
+  - name: XLR Balanced Input (L)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: XLR Balanced Input (R)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: RCA Input (L)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: RCA Input (R)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: RCA Parallel Output (L)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: RCA Parallel Output (R)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Pro Bias Output Socket 1
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - name: Pro Bias Output Socket 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - name: AC Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom
