@@ -1,0 +1,140 @@
+id: wQaxmIJQn_PCC7c-_JwTo
+name: Shelford Channel
+manufacturer: rupert-neve-designs
+primaryCategory: channel-strip
+categories:
+  - preamp
+  - equalizer
+  - compressor
+  - dynamics
+  - outboard
+  - rack-mount
+  - saturation
+url: https://rupertneve.com/products/shelford-channel
+description: A class-A, transformer-gain channel strip combining a microphone
+  preamplifier, three-band inductor EQ, diode bridge compressor, and variable
+  Silk/Texture harmonic saturation circuitry. Evolved from Rupert Neve's classic
+  console modules (1073, 1064, 2254), it pairs a custom transformer-gain mic pre
+  with a modernized inductor EQ and the diode bridge compressor topology in a
+  single 1RU rackmount unit.
+details: |-
+  The Shelford Channel represents the culmination of Mr. Rupert Neve's 50+ years of console design experience, combining a transformer-gain class-A mic preamplifier, three-band inductor EQ, diode bridge compressor, variable Silk harmonic saturation, and a custom output transformer in a single 1RU unit.
+
+  Featuring the first new transformer-gain microphone preamplifier from Rupert Neve in more than 40 years, the Shelford Channel's direct-coupled mic pre uses a custom input transformer to provide gain in a fully class-A signal path. A three-band inductor EQ section delivers the character of vintage console EQs: the low band is inspired by the 1064, with selectable shelf or peak response; the midrange band is based on the 1073, with proportional Q response; and the high band combines inductor and capacitor-based topologies with switchable shelf or peak corner at 8kHz or 16kHz. A continuously variable 12dB/octave high-pass filter sweepable from 20Hz to 250Hz precedes the EQ section.
+
+  The diode bridge compressor section is based on the classic 2254 topology with modern refinements: lower noise floor, expanded time constants, full-wave sidechain detection, and broader threshold and ratio ranges. A Blend control provides parallel compression, and the compressor can be linked between two units for stereo operation.
+
+  The variable Silk circuit drives the custom output transformer to introduce musical harmonic saturation: Silk Red emphasizes high and high-mid harmonics; Silk Blue emphasizes low and low-mid harmonics. The Texture knob continuously varies the depth of the saturation effect. The primary Line Out is delivered via a custom output transformer, with a secondary -6dB Out providing an attenuated tap from the same transformer for additional headroom downstream.
+specs: |-
+  - Form factor: 1RU rackmount
+  - Dimensions: 19" W x 10.25" D x 1.75" H (48.3 x 26 x 4.5 cm)
+  - Weight: 9.5 lbs (4.3 kg)
+  - Power: 100-240VAC, 50/60Hz, 35W max
+  - Mic preamp input impedance: 2200 ohm
+  - Mic preamp max input level: +21.5 dBu (150Hz-22kHz), +8 dBu (20Hz-22kHz)
+  - Mic preamp equivalent input noise: -121.37 dBu
+  - Mic preamp frequency response: 17Hz-45kHz ±0.25dB
+  - DI max input level: +8 dBu (20Hz-120kHz)
+  - Line input max level: +30.5 dBu (20Hz-30kHz)
+  - Line out max level: +26 dBu (16Hz-20kHz)
+  - Mic gain: 12-position rotary, 6dB steps
+  - Trim: ±6dB (31-detent)
+  - 48V phantom power, polarity invert, ground lift
+  - High-pass filter: 20Hz-250Hz continuously variable, 12dB/octave
+  - EQ low band: ±15dB, 4-position frequency, switchable shelf/peak
+  - EQ mid band: ±15dB, 6-position frequency, switchable narrow Q
+  - EQ high band: ±15dB, switchable shelf/peak corner at 8kHz or 16kHz
+  - Compressor ratio: 1.5:1 to 8:1 (6-position)
+  - Compressor timing: 6-position rotary (Fast, MF, Med, MS, Slow, Auto) plus Fast attack mode
+  - Compressor features: sidechain insert, HPF-to-sidechain, pre/post EQ, stereo link, parallel Blend
+  - VU meter switchable between output level and gain reduction
+  - Silk modes: Red (high-mid harmonics) and Blue (low-mid harmonics) with continuously variable Texture
+  - Made in USA
+io:
+  - name: DI
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Thru
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Mic In
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Line In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: -6dB Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Side Chain Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Side Chain Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Link A
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Link B
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: User Guide
+    url: https://rnd2021.squarespace.com/s/Shelford-Channel-User-Guide-web.pdf
+  - type: support
+    title: Manual (Rev C4)
+    url: https://rnd2021.squarespace.com/s/775-000275035-Manual_RevC4.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://rnd2021.squarespace.com/s/Shelford_Channel-recall_RND.pdf
+videos:
+  - provider: youtube
+    videoId: 5E7cBNM2zQw
+    title: Shelford Channel Origin Story
+  - provider: youtube
+    videoId: fSph2xd-1oA
+    title: Silk & Texture Explained

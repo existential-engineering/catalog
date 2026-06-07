@@ -1,0 +1,57 @@
+id: JBAu0Q_o6AAJbefr2AcHL
+name: RNDI-M
+manufacturer: rupert-neve-designs
+primaryCategory: di-box
+categories:
+  - outboard
+url: https://rupertneve.com/products/rndi-m
+description: Compact, pedalboard-friendly active transformer direct interface
+  that brings the tone and clarity of the original RNDI to a single-channel,
+  stompbox-sized format. Built around a custom Rupert Neve Designs transformer
+  and a discrete Class-A FET input stage in a rugged solid-steel chassis, with a
+  2.2 Megohm high-impedance input, ground lift switch, and passive 1/4" THRU
+  output. Operates from 48V phantom power.
+details: |-
+  The RNDI-M brings the celebrated single-channel RNDI sound — custom Rupert Neve-designed output transformer and class-A discrete FET input stage — into a compact pedal-style enclosure that fits cleanly on a pedalboard or a tight stage rig.
+
+  A 2.2 MOhm high-impedance 1/4" input accepts instrument-level signals from guitar, bass, keys, and synths. A passive 1/4" THRU output feeds an amp or tuner without coloration while the transformer-balanced XLR output drives long cable runs back to FOH or the recording console.
+
+  A ground lift switch isolates XLR Pin 1 to eliminate hum from ground loops. The unit is powered entirely by standard +48V phantom power from the downstream preamp or stage box — no separate power supply required.
+specs: |-
+  - Input Impedance: 2.2 MOhm
+  - Output Impedance: less than 40 Ohm
+  - Max Input Level: +20.5 dBu (8.2 V RMS)
+  - Max Output Level: +11.5 dBu typical
+  - Frequency Response: ±0.25 dB (28 Hz to 60 kHz); ±1 dB (14 Hz to 90 kHz)
+  - THD+N at 1 kHz, +20 dBu: 0.25% typical (2nd/3rd harmonic)
+  - THD+N at 1 kHz, -20 dBu: 0.015% typical
+  - Noise: better than -110 dBV (22 Hz to 22 kHz, unweighted)
+  - Power: 4.5 mA at +48 VDC phantom
+  - Dimensions: 3.25" W x 4.3" D x 1.6" H
+  - Weight: 1 lb (0.45 kg)
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Thru
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Mic Output
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+videos:
+  - provider: youtube
+    videoId: AyxSpQRkglI
+    title: RNDI Family

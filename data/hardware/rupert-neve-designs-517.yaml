@@ -1,0 +1,86 @@
+id: gHbcKiZS6bLRmm9rbSz5B
+name: "517"
+manufacturer: rupert-neve-designs
+primaryCategory: preamp
+categories:
+  - di-box
+  - compressor
+  - dynamics
+  - outboard
+  - rack-mount
+url: https://rupertneve.com/products/517
+description: A unified 500-series module combining a world-class microphone
+  preamp, one-knob opto compressor, and instrument DI input. Features a 12-way
+  precision gain switch, Vari-phase alignment, Silk saturation with blend
+  controls, and a custom output transformer.
+details: |-
+  The Rupert Neve Designs 517 is a single-slot 500-series module that unifies three essential front-end tools: a world-class microphone preamplifier, an opto-coupler compressor, and an instrument-level direct injection (DI) input. The mic preamp offers up to 66 dB of gain in precise 6 dB steps via a 12-way switch, while the instrument input provides up to 30 dB of continuously variable gain through a high-impedance front-panel TRS jack.
+
+  A dedicated Vari-phase control allows engineers to align the phase relationship between the microphone and DI signals — particularly useful when tracking bass, guitar, or kick drum with both a mic and a direct feed. A Blend control mixes the two sources within the module, eliminating the need for an external summing stage.
+
+  The compressor section uses a light-dependent resistor (LDR) opto design with a single threshold control, automatic makeup gain, and a fixed 2:1 ratio. Two switchable attack/release time constants (Fast: 5 ms / 50 ms; Slow: 250 ms / 500 ms) provide flexibility for transient control or smoother program-dependent compression.
+
+  Rupert Neve Designs' signature Silk circuit, with custom output transformer, adds harmonic saturation that can be dialed in to taste — bringing presence and warmth reminiscent of vintage transformer-coupled designs. Additional features include +48V phantom power, polarity inversion, an 80 Hz Bessel high-pass filter, and a passive instrument through-output for re-amping or signal splitting.
+
+  Designed for the 500-series format, the 517 packs the functionality of three discrete units into a single slot, making it a versatile choice for tracking vocals, bass, guitar, and acoustic instruments in any modern hybrid studio.
+specs: |-
+  - Mic frequency response: -0.1 dB @ 10 Hz; -1 dB @ 120 kHz
+  - DI frequency response: -0.1 dB @ 10 Hz; -1 dB @ 120 kHz
+  - Mic noise @ unity gain: better than -100 dBu
+  - Mic noise @ 66 dB gain: better than -60.5 dBu
+  - Equivalent input noise: better than -125 dBu
+  - Mic input impedance: 10,000 Ohm
+  - Instrument input impedance: 1.6 MOhm (3.3 MOhm balanced)
+  - Maximum output level: +23 dBu (20 Hz - 40 kHz)
+  - Mic gain range: unity to +66 dB in 6 dB steps (12-way switch)
+  - DI gain range: unity to +30 dB continuous
+  - THD+N @ 1 kHz, +20 dBu output: better than 0.001%
+  - Compressor threshold: -20 dBu to +10 dBu (continuously variable)
+  - Compressor ratio: fixed 2:1
+  - Compressor attack/release (Fast): 5 ms / 50 ms
+  - Compressor attack/release (Slow): 250 ms / 500 ms
+  - High-pass filter: 80 Hz, 12 dB/octave Bessel
+  - Phantom power: +48V DC ±1% (from 500-series rack)
+  - Power requirements: 110-125 mA @ ±16V
+  - Dimensions: 1.5" W × 5.9" D × 5.25" H
+  - Weight: 1.5 lbs (0.7 kg)
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Instrument Through
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+links:
+  - type: support
+    title: User Manual
+    url: https://rupertneve.com/s/775-00007517-Manual_RevD4.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://rupertneve.com/s/517-recall_RND.pdf
+videos:
+  - provider: youtube
+    videoId: MPNoGbRqu1g
+    title: 517 Quick Start

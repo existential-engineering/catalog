@@ -1,0 +1,147 @@
+id: RFLd-WhgKDIWy7kPRit4-
+name: RMP-D8 8-Channel Dante Mic Preamp + Converter
+manufacturer: rupert-neve-designs
+primaryCategory: preamp
+categories:
+  - audio-interface
+  - outboard
+  - rack-mount
+url: https://rupertneve.com/products/rmp-d8
+description: Network-integrated 8-channel microphone preamplifier featuring
+  class-A mic preamps with custom Rupert Neve transformers and mastering-grade
+  24-bit/192kHz Dante converters for professional live sound and studio
+  applications.
+details: |-
+  The RMP-D8 brings classic Rupert Neve Designs studio microphone preamplifier characteristics to Dante-networked environments. It features eight fully-realized class-A microphone preamplifiers, each feeding custom audio transformers based on Rupert Neve's proprietary designs.
+
+  The device includes mastering-grade 24-bit/192kHz converters with precision-controlled internal clocking and enhanced jitter reduction, eliminating weak links in the audio path. Built with redundant power supplies and a reinforced steel chassis for RF shielding, it is designed for demanding touring environments.
+
+  The unit integrates fully with Dante audio networking standards, is DDM (Dante Domain Manager) Ready, and provides both local control via a large OLED display with metering and remote control via dedicated Mac and PC applications. Each channel offers 0-60 dB of gain in 1 dB steps, switchable +48V phantom power, polarity invert, -10 dB pad, and a high-pass filter.
+specs: |-
+  - Noise (150Ω balanced source, AES output, 22Hz-22kHz unweighted, +60dB gain): -91 dBFS
+  - Unity Gain Noise: -110 dBFS
+  - Frequency Response (0dBu unity gain, 96kHz): 30Hz-45kHz ±0.2dB; 10Hz -3dB
+  - Input Impedance: 5.5kΩ
+  - Gain Range: 0-60dB in 1dB steps
+  - High-Pass Filter: -3dB @ 80Hz, 12dB/Octave slope
+  - Pad: -10dB
+  - Dynamic Range: 110dB
+  - Maximum Input Level: +25.5dBu
+  - Conversion: 24-bit / 192kHz
+  - Dimensions: 19"W × 12.25"D × 3.5"H (2RU)
+  - Weight: 13.5 lbs (6.1kg)
+  - Power: IEC Standard 3-pin 18AWG latching type
+  - Chassis: Reinforced steel, 2RU rack mount
+io:
+  - name: Channel 1 Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 3 Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 4 Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 5 Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 6 Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 7 Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 8 Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES Output Pair 1-2
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES Output Pair 3-4
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES Output Pair 5-6
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES Output Pair 7-8
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Dante Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - name: Dante Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: Firmware Update Procedure
+    url: https://rupertneve.com/s/RMP-D8-FW-Update-Procedure.pdf
+  - type: support
+    title: Network Configuration Guide
+    url: https://rupertneve.com/s/RMP-D8_Network_Guide-APRIL2021.pdf
+videos:
+  - provider: youtube
+    videoId: 7cu-R2RYZUo
+    title: Origin Story
+  - provider: youtube
+    videoId: fGC_xMNfbSA
+    title: Quick Start Video

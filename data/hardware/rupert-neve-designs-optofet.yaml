@@ -1,0 +1,64 @@
+id: MmZMlU4Vxd1NYOFXVFfOo
+name: OptoFET Dual Stage Compressor
+manufacturer: rupert-neve-designs
+primaryCategory: compressor
+categories:
+  - dynamics
+  - outboard
+  - rack-mount
+  - mastering
+url: https://rupertneve.com/products/optofet
+description: A versatile mono analog compressor and wave shaper combining a
+  newly-designed FET compression circuit with an optimized optical compression
+  circuit in a single 1U rack space. Offers transparent vocal smoothing through
+  extreme envelope shaping with harmonic texture, and can operate in Dual-Stage
+  (FET and OPTO in series) or Dual-Band (split at 50Hz-500Hz crossover) modes.
+details: |-
+  The OptoFET is a 1U mono dual-stage analog compressor pairing a newly-designed FET compression circuit with an optimized optical compression circuit. It operates in two primary modes: Dual-Stage, with the FET and OPTO compressors arranged in series for layered dynamic control, and Dual-Band, where each compressor is assigned to a low- or high-frequency band split by a 50Hz-500Hz crossover.
+
+  The FET section provides attack from 100 microseconds to 50ms, release from 50ms to 3 seconds, ratios of 4:1 or 8:1, threshold from +20dBu to -15dBu, up to +20dB of make-up gain, a parallel blend control, a 125Hz side-chain high-pass filter, and a GRIT mode wave shaper that introduces harmonic distortion.
+
+  The OPTO section offers attack from 5ms to 50ms, release from 50ms to 3 seconds, ratios of 2:1 or 5:1, threshold from +20dBu to -10dBu, +20dB make-up gain, parallel blend, a 125Hz side-chain high-pass filter, and a BLOOM mode for low-order harmonic enhancement.
+
+  Global controls include a FLIP button to reverse compressor order, X-OVER IN to engage the crossover, input and output trims of ±12dB, an illuminated bypass-all, 8-segment LED gain-reduction metering for each compressor, and an 8-segment output level meter. 31-detent potentiometers are used throughout for recall accuracy. A custom output transformer drives the balanced XLR output.
+specs: |-
+  - Input impedance: 10 kOhm
+  - Output impedance: 40 Ohm
+  - Maximum input level @ 1kHz: +24 dBu
+  - Maximum output level @ 1kHz: +24 dBu
+  - Noise floor (22 Hz - 22 kHz, bypassed): -96 dBu
+  - Frequency response: 6 Hz to 70 kHz ±0.1 dB
+  - THD+N @ 1 kHz: 0.002% at 0 dBu, 0.0006% at +20 dBu
+  - FET compressor: attack 100 us to 50 ms, release 50 ms to 1.5 s, ratios 4:1 / 8:1
+  - OPTO compressor: attack 5 ms to 50 ms, release 50 ms to 1.5 s, ratios 2:1 / 5:1
+  - Side-chain HPF: 125 Hz (per section)
+  - Crossover: 50 Hz - 500 Hz
+  - Power: IEC 100-240 VAC, 70 W max
+  - Dimensions: 19" W x 8.25" D x 1.75" H (48.3 x 21 x 4.5 cm)
+  - Weight: 8 lbs (3.6 kg)
+  - Format: 1U rack
+io:
+  - name: Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: User Guide
+    url: https://rupertneve.com/s/OptoFET-User-Guide.pdf
+  - type: support
+    title: Manual (Rev A2)
+    url: https://rupertneve.com/s/775-000525046-Manual_RevA2.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://rupertneve.com/s/OptoFET-recall_RND.pdf
