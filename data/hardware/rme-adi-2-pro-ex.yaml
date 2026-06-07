@@ -30,26 +30,47 @@ specs: |-
   - Display: High-resolution IPS display with 5-band parametric EQ, 30-band spectral analyzer
   - Trigger Out: 12 V switching signal via 3.5 mm mono jack
 io:
-  - name: Analog Input L/R
+  - name: Analog Input L
     signalFlow: input
     category: audio
     type: line
     connection: combo jack
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Balanced Output L/R (XLR)
+  - name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output L (XLR)
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Unbalanced Output L/R (TRS)
+  - name: Balanced Output R (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L (TRS)
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: Phones Output 1 (1/4-inch)
     signalFlow: output

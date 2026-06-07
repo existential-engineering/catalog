@@ -48,33 +48,61 @@ specs: |-
   - Bus: PCI Express (PCIe) internal card
   - Driver support: macOS 11+ (Kernel Extension), macOS 12+ (DriverKit), Windows 10/11 x64/ARM64, legacy Windows WDM/ASIO
 io:
-  - name: Analog Line Input (Stereo, RCA)
+  - name: Analog Line Input L (RCA)
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Analog Line Output (Stereo, RCA)
+  - name: Analog Line Input R (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Output L (RCA)
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Analog Line Input (Stereo, XLR, optional)
+  - name: Analog Line Output R (RCA)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Input L (XLR, optional)
     signalFlow: input
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Analog Line Output (Stereo, XLR, optional)
+  - name: Analog Line Input R (XLR, optional)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Output L (XLR, optional)
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Output R (XLR, optional)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Right
   - name: Headphone Output
     signalFlow: output
@@ -146,12 +174,19 @@ io:
     connection: bnc
     maxConnections: 1
     position: Right
-  - name: Word Clock Output (optional WCM module)
+  - name: Word Clock Output 1 (optional WCM module)
     signalFlow: output
     category: digital
     type: word clock
     connection: bnc
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 2 (optional WCM module)
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
     position: Right
 versions:
   - name: HDSPe AIO Pro

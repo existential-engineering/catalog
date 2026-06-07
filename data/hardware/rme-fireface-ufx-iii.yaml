@@ -189,47 +189,187 @@ specs: |-
   - DC-coupled outputs
   - AutoSet
 io:
-  - name: Mic/Inst/Line In 9-12 (XLR/TRS combo, front)
+  - name: Mic/Inst/Line In 9 (XLR/TRS combo, front)
     signalFlow: input
     category: audio
     type: mic
     connection: combo jack
-    maxConnections: 4
+    maxConnections: 1
     position: Left
-  - name: Line In 1-8 (6.3 mm TRS, electronically balanced, rear)
+  - name: Mic/Inst/Line In 10 (XLR/TRS combo, front)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Mic/Inst/Line In 11 (XLR/TRS combo, front)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Mic/Inst/Line In 12 (XLR/TRS combo, front)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Line In 1 (6.3 mm TRS, electronically balanced, rear)
     signalFlow: input
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 8
+    maxConnections: 1
     position: Right
-  - name: Line Out 3-8 (6.3 mm TRS, servo-balanced, rear)
+  - name: Line In 2 (6.3 mm TRS, electronically balanced, rear)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line In 3 (6.3 mm TRS, electronically balanced, rear)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line In 4 (6.3 mm TRS, electronically balanced, rear)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line In 5 (6.3 mm TRS, electronically balanced, rear)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line In 6 (6.3 mm TRS, electronically balanced, rear)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line In 7 (6.3 mm TRS, electronically balanced, rear)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line In 8 (6.3 mm TRS, electronically balanced, rear)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Out 3 (6.3 mm TRS, servo-balanced, rear)
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 6
+    maxConnections: 1
     position: Right
-  - name: Monitor Out 1-2 (XLR, balanced, rear)
+  - name: Line Out 4 (6.3 mm TRS, servo-balanced, rear)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Out 5 (6.3 mm TRS, servo-balanced, rear)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Out 6 (6.3 mm TRS, servo-balanced, rear)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Out 7 (6.3 mm TRS, servo-balanced, rear)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Out 8 (6.3 mm TRS, servo-balanced, rear)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Monitor Out 1 (XLR, balanced, rear)
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Phones Out 9/10 and 11/12 (6.3 mm TRS, unbalanced, front)
+  - name: Monitor Out 2 (XLR, balanced, rear)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Phones Out 9/10 (6.3 mm TRS, unbalanced, front)
     signalFlow: output
     category: audio
     type: headphone
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
     position: Left
-  - name: MIDI I/O (2 x 5-pin DIN)
-    signalFlow: bidirectional
+  - name: Phones Out 11/12 (6.3 mm TRS, unbalanced, front)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: MIDI In 1 (5-pin DIN)
+    signalFlow: input
     category: midi
     type: midi
     connection: 5-pin din
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: MIDI In 2 (5-pin DIN)
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out 1 (5-pin DIN)
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out 2 (5-pin DIN)
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
     position: Right
   - name: MADI Optical I/O (FDDI duplex SC connector, up to 64 channels)
     signalFlow: bidirectional
@@ -241,7 +381,7 @@ io:
   - name: MADI Coaxial I/O (BNC, 75 Ohm, up to 64 channels)
     signalFlow: bidirectional
     category: digital
-    type: word clock
+    type: madi
     connection: bnc
     maxConnections: 64
     position: Right

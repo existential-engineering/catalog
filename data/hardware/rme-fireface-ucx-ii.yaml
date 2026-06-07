@@ -160,19 +160,33 @@ specs: |-
   - Class Compliant mode (driver-less on Windows/macOS/Linux/iOS)
   - Bundled software: TotalMix FX, TotalMix Remote, DIGICheck
 io:
-  - name: Microphone In 1-2 (front, XLR, electronically balanced)
+  - name: Microphone In 1 (front, XLR, electronically balanced)
     signalFlow: input
     category: audio
     type: mic
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Left
-  - name: Line/Instrument In 3-4 (front, 6.3 mm TRS/TS, switchable)
+  - name: Microphone In 2 (front, XLR, electronically balanced)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line/Instrument In 3 (front, 6.3 mm TRS/TS, switchable)
     signalFlow: input
     category: audio
     type: instrument
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Left
+  - name: Line/Instrument In 4 (front, 6.3 mm TRS/TS, switchable)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
     position: Left
   - name: Phones 7-8 (front, 6.3 mm TRS stereo, unbalanced)
     signalFlow: output
@@ -181,19 +195,75 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Left
-  - name: Line In 5-8 (rear, 6.3 mm TRS, electronically balanced)
+  - name: Line In 5 (rear, 6.3 mm TRS, electronically balanced)
     signalFlow: input
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 4
+    maxConnections: 1
     position: Right
-  - name: Line Out 1-6 (rear, 6.3 mm TRS, servo-balanced)
+  - name: Line In 6 (rear, 6.3 mm TRS, electronically balanced)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line In 7 (rear, 6.3 mm TRS, electronically balanced)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line In 8 (rear, 6.3 mm TRS, electronically balanced)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Out 1 (rear, 6.3 mm TRS, servo-balanced)
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 6
+    maxConnections: 1
+    position: Right
+  - name: Line Out 2 (rear, 6.3 mm TRS, servo-balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Out 3 (rear, 6.3 mm TRS, servo-balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Out 4 (rear, 6.3 mm TRS, servo-balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Out 5 (rear, 6.3 mm TRS, servo-balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Out 6 (rear, 6.3 mm TRS, servo-balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: AES/EBU I/O (rear, XLR, transformer-balanced)
     signalFlow: bidirectional

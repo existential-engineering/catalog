@@ -107,26 +107,47 @@ specs: |-
   - Class Compliant Mode (iOS compatible)
   - DC-coupled outputs
 io:
-  - name: Mic/Line In 1-2 (XLR, electronically balanced)
+  - name: Mic/Line In 1 (XLR, electronically balanced)
     signalFlow: input
     category: audio
     type: mic
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Line/Instrument In 3-4 (6.3 mm TS jack, unbalanced)
+  - name: Mic/Line In 2 (XLR, electronically balanced)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line/Instrument In 3 (6.3 mm TS jack, unbalanced)
     signalFlow: input
     category: audio
     type: instrument
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Line Out 1-2 (XLR balanced)
+  - name: Line/Instrument In 4 (6.3 mm TS jack, unbalanced)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Out 1 (XLR balanced)
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Line Out 2 (XLR balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Right
   - name: Phones 3/4 (6.3 mm TRS, unbalanced)
     signalFlow: output
