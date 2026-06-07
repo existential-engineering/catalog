@@ -1,0 +1,52 @@
+id: MWK2IFj-fCj9HdJ-GEV38
+name: KEF Bot
+manufacturer: kef
+primaryCategory: speaker
+url: https://us.kef.com/products/kef-bot
+prices:
+  - amount: 9999.99
+    currency: USD
+description: |-
+  An AI-powered wireless HiFi speaker on wheels featuring 360-degree audio
+  via Uni-Q Technology and Uni-Core Force Cancelling Drivers. Responds to
+  voice commands and automatically handles vinyl record playback.
+specs: |-
+  - Drive units: 19mm aluminium dome tweeter, 4x 115mm magnesium/aluminium cone woofers (Uni-Q array)
+  - Frequency range (-6dB): 35Hz–47kHz
+  - Frequency response (±3dB): 28Hz–28kHz
+  - Max SPL at 1m: 102dB
+  - Amplification: 100W (LF), 30W (HF)
+  - Wireless: IEEE 802.11a/b/g/n/ac dual-band 2.4GHz/5GHz
+  - Streaming: Up to 384kHz/24-bit (network)
+  - Dimensions: 610 x 406 x 305 mm
+  - Weight: 86 kg
+  - Power: 100–240VAC 50/60Hz
+io:
+  - name: HDMI ARC Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: hdmi
+    maxConnections: 1
+    position: Bottom
+  - name: Optical Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Bottom
+  - name: Aux Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Ethernet
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
