@@ -32,28 +32,56 @@ specs: |-
   - Dimensions: 320 (W) x 103 (H) x 395 (D) mm
   - Weight: 7.3 kg
 io:
-  - name: LINE1 (RCA)
+  - name: LINE1 L (RCA)
     signalFlow: input
     category: audio
     type: line
     connection: rca
     maxConnections: 1
     position: Bottom
-  - name: LINE1 PARALLEL OUT (RCA)
+  - name: LINE1 R (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: LINE1 PARALLEL OUT L (RCA)
     signalFlow: output
     category: audio
     type: line
     connection: rca
     maxConnections: 1
     position: Bottom
-  - name: LINE2 (RCA)
+  - name: LINE1 PARALLEL OUT R (RCA)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: LINE2 L (RCA)
     signalFlow: input
     category: audio
     type: line
     connection: rca
     maxConnections: 1
     position: Bottom
-  - name: LINE3 (XLR)
+  - name: LINE2 R (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: LINE3 L (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: LINE3 R (XLR)
     signalFlow: input
     category: audio
     type: line
