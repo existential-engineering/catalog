@@ -1,5 +1,132 @@
 # catalog
 
+## 3.23.0
+
+### Minor Changes
+
+- 340cef1: Import HiFiMAN (38 hardware entries).
+
+  Covers headphones, in-ear monitors, headphone amplifiers, and DACs
+  from HiFiMAN. Product families include: SUSVARA, HE1000, ANANDA,
+  ARYA, SUNDARA, SVANAR, RE2000, EF-series DAC/amps, and electrostatic
+  systems (SHANGRI-LA, Jade II, Mini Shangri-La). Also includes newer
+  2024–2025 releases: ISVARNA, GOLDENWAVE GA-10, HE1000 Unveiled,
+  Susvara Unveiled, ANANDA UNVEILED, and EDITION XV.
+
+- 282c904: Import KEF (117 hardware/accessory entries).
+
+  Products span KEF's full range: flagship Blade and Reference
+  series floorstanding speakers; LS50 Meta, LS60 Wireless,
+  LSX 2, LSX 2 LT wireless speakers; Q Meta and R Meta series;
+  KC62, KC92, Kube and T2 subwoofers; Mu3, Mu7, Muo headphones;
+  XIO Soundbar; CI in-ceiling/in-wall series (100–3160); Kasa500
+  amplifier; KW1/KW2 wireless subwoofer adapter; and 23
+  accessories (floor stands, grilles, cables, spike kits,
+  stacking kits).
+
+- 2c8326a: Import Klipsch (62 hardware entries).
+
+  Covers the full current product range: Reference series
+  floorstanders, bookshelves, and center channels (R and RP lines);
+  subwoofers (R-101SW through RP-1600SW); Flexus soundbar and
+  surround ecosystem (Core 100/200/300, Sub 100/200, Surr 100/200);
+  Heritage Collection (Klipschorn AK7, La Scala AL6, Cornwall IV,
+  Forte IV, Heresy IV, Jubilee, Rebellion); powered speakers (The
+  Fives II, Sevens II, Nines II, R-40PM, R-50PM, The One Plus,
+  The Three Plus); party speakers (Nashville, Detroit, Austin, Vegas,
+  Miami, New York); true wireless earphones (T5 II Sport, T5 II ANC,
+  S1); Heritage Active Crossover; and the limited-edition Klipsch x
+  Ojas KO-R2.
+
+- d3be7b4: Import PRS Guitars (111 hardware entries).
+
+  Adds the current PRS lineup: electric guitars (Core, S2, SE
+  series — Custom 24 family, McCarty 594 family, Silver Sky, NF
+  53, Mark Tremonti, Mark Holcomb, Myles Kennedy, Santana Retro,
+  Fiore, Studio, Standard, Modern Eagle V), acoustic guitars
+  (SE A-series and P/T series), amplifiers (HDRX heads + cabs,
+  Archon heads/combos/cabs, Sonzera, MT, DG, DGT), and three
+  pedals (Horsemeat overdrive, Mary Cries optical compressor,
+  Wind Through The Trees dual analog flanger).
+
+- 54e4dbc: Import Rane (13 hardware entries).
+
+  Adds 13 Rane DJ products: mixers (Seventy, Seventy A-Trak,
+  Seventy-Two, Seventy-Two MKII, MP2015), motorized controllers
+  (One, One MKII, Four, Performer, System One), motorized
+  turntable controllers (Twelve, Twelve MKII), and the SL4
+  USB DVS audio interface. Generational supersedes edges set
+  for One MKII, Twelve MKII, and Seventy-Two MKII.
+
+- 64d1ccb: Import Rickenbacker (20 hardware entries).
+
+  Includes the full current Series 300, 600, 4000, Vintage and W
+  series: Models 330, 330/12, 330W, 330/12W, 360, 360/12, 360W,
+  360/12W, 1993Plus, 620, 660, 660/12, 4003, 4003S, 4003W, 4003SW,
+  350V63 Liverpool, 4005V, 325C64 and 360/12C63. Hardware-only
+  import — all electric guitars and bass guitars.
+
+- 0d8c473: Import RME (39 hardware/accessory entries).
+
+  Adds RME's current product lineup: 12Mic preamps, ADI-2 series
+  converters, Babyface Pro FS, Digiface family (AES/AVB/Dante/
+  Ravenna/USB), Fireface 802/UCX/UFX series, HDSPe PCI Express
+  cards (AES/AIO Pro/AoX/MADI/RayDAT), M-1620 Pro and M-32 Pro
+  II series converters, MADIface USB/XT II, Micstasy and OctaMic
+  II preamps, plus ARC USB control surface, DPS-2 and LNI-2 DC
+  power supplies, and Time Code Option expansion board.
+
+- 79675d4: Import Rupert Neve Designs (35 hardware entries).
+
+  Adds the current Rupert Neve Designs product line: the 5088 console; the
+  Shelford Series (Channel, Dual Mic Pre, Compressor, 5051/5052/5053
+  Penthouse modules, plus the 5022 dual mic pre); the 500 Series modules
+  (511, 517, 535, 542, 543, 545, 551); the Portico II 5024 Quad Mic Pre,
+  5045 PSE, 5017 Mobile Pre, and 5211 Dual Mic Pre; the 5057 Orbit, 5059
+  Satellite, and 5060 Centerpiece summing mixers; the Master Bus Family
+  (MBP, MBT, MBC); the RNDI family (RNDI, RNDI-S, RNDI-M, RNDI-8); the
+  RNHP headphone amp; the RMP-D8 Dante preamp; the Newton Channel; the
+  OptoFET; and the R6 / R10 500 Series chassis.
+
+- 08e6e03: Import Soundcraft (187 hardware/software entries).
+
+  Spans the full Soundcraft product history: current digital console
+  families (Vi Series, Si Series, Si Performer/Expression, Ui Series,
+  Notepad Series), current analog mixers (GB, EFX, EPM, LX7ii, FX16ii),
+  plus legacy/discontinued products (Series 200/400/600/800/2400/etc.,
+  Spirit series, Signature series, Venue, Vienna, Ghost, K-Series amps,
+  and broadcast B100/B400/B800). Includes three companion iPad apps
+  (ViSi Remote, ViSi Listen, Audio Calc Toolkit) and accessories.
+
+- cebfc94: Import Stax (19 hardware/accessory entries).
+
+  Adds the current STAX International electrostatic earspeaker lineup:
+  SR-X9000 (flagship), SR-009S, SR-009D (revived), SR-007S, SR-L700MK2,
+  SR-L500 MK2, SR-X1, SR-003 MK2 in-ear, plus the SRS-X1000 bundle.
+  Includes the driver/headphone-amp range: SRM-T8000 (hybrid flagship),
+  SRM-700T (tube) / SRM-700S (FET) / SRM-500T (tube) / SRM-400S (FET),
+  SRM-D10 II portable, and SRM-D50 desktop with DAC. The
+  expansion modules UIM-1 (USB DAC) and PIM-MC1 (MC phono, for SRM-T8000). The
+  CES-A1 ear-tip kit ships as the accessory entry.
+
+- 14be1e4: Import Tama (134 hardware entries).
+
+  Drum kits (Club-JAM, Cocktail-JAM, Imperialstar, Stagestar,
+  STAR, Starclassic, Superstar Classic), snare drums
+  (Metalworks, SLP, Star Reserve, Starphonic, Woodworks, plus
+  signature models from Charlie Benante, Mike Portnoy, John
+  Tempesta, Peter Erskine, Simon Phillips, Lars Ulrich), and
+  hardware (Iron Cobra and Speed Cobra pedals, hi-hat stands,
+  cymbal stands, snare stands, drum thrones).
+
+### Patch Changes
+
+- 713483b: Dataset review cleanup: merge two true duplicates (Waves EMI TG12345 and REDD
+  Consoles), expand 34 thin descriptions (HOFA, Universal Audio, Pioneer DJ) from
+  existing entry details, disambiguate eight byte-identical names (DW Drums
+  acrylic/wood and snare depths, Ludwig kit/snare), and add searchTerms plus a
+  supersedes lineage link for several "+" models.
+
 ## 3.22.0
 
 ### Minor Changes
