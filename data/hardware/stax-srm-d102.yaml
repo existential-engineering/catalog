@@ -1,0 +1,56 @@
+id: zMhuccUA3_Ifky93XqPjh
+name: SRM-D10 II
+manufacturer: stax
+primaryCategory: headphone-amp
+categories:
+  - amplifier
+  - audio-interface
+description: A portable battery-powered electrostatic headphone amplifier with
+  built-in USB-C DAC supporting high-resolution audio up to DSD256 and PCM 384
+  kHz / 32-bit. It provides DC 580 V bias for compatibility with all STAX
+  PRO-type earspeakers and offers dual digital and analog inputs.
+specs: |-
+  - Frequency response: 20 Hz – 40 kHz (+0 dB, -3 dB)
+  - Rated input level: 230 mV (100 V output)
+  - Maximum input level: 10 V (minimum volume in analog input)
+  - Gain: 53 dB (450 times)
+  - Harmonic distortion: 0.025% / 1 kHz – 10 kHz
+  - Input impedance: 10 kΩ (analog input)
+  - Maximum output voltage: 200 Vr.m.s. / 100 Hz – 10 kHz
+  - Bias voltage: DC 580 V
+  - Supply voltage: DC 5 V / 9 V / 12 V / 15 V
+  - Battery operating time: 4.5 hours (analog input) / 3.5 hours (digital input)
+  - Power consumption: 6.4 W (USB input) / 5 W (analog input)
+  - Recommended operating temperature: 0 – 35 °C, <90% RH (no condensation)
+  - Signal input: USB-C digital input, 3.5 mm analog input
+  - Dimensions: 75 (W) x 32 (H) x 141 (D) mm
+  - Net weight: 475 g
+io:
+  - name: USB-C Digital Input
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - name: 3.5mm Analog Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+  - name: Pro Bias Earspeaker Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left

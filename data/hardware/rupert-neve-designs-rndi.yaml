@@ -1,0 +1,64 @@
+id: KHMcF-ksMBiXlsCeDHRDE
+name: RNDI
+manufacturer: rupert-neve-designs
+primaryCategory: di-box
+categories:
+  - outboard
+url: https://rupertneve.com/products/rndi
+description: Active transformer direct interface (DI) box with a custom Rupert
+  Neve-designed output transformer and class-A discrete FET input stage,
+  designed to deliver a powerful, vibrant direct sound that captures the full
+  harmonic depth of basses, guitars, acoustic instruments, and pre-recorded
+  material.
+details: |-
+  The RNDI is a single-channel active direct interface built around a custom Rupert Neve-designed output transformer paired with a class-A, discrete FET input stage. The transformer provides exceptional isolation from the source while introducing musical harmonics, and the FET front-end is powered by standard +48V phantom power supplied through the XLR output.
+
+  A front-panel mode switch selects between Instrument and Speaker input levels, allowing the RNDI to handle anything from a passive bass or guitar to a fully driven speaker output. A parallel 1/4" THRU jack passes the input signal on to an amplifier (Instrument mode) or speaker (Speaker mode). A Ground Lift switch isolates XLR Pin 1 from circuit ground to eliminate ground loops, and a front-panel LED indicates the presence of 48V phantom power.
+
+  According to the design team, the RNDI consistently stood out as the DI they wanted to play through — combining transformer isolation, harmonic richness, and the headroom needed for both instrument- and speaker-level sources.
+specs: |-
+  - Noise (22 Hz - 22 kHz, un-weighted): better than -110 dBV
+  - Input impedance (Instrument mode): 2.2 MOhm
+  - Input impedance (Speaker mode): 200 kOhm
+  - Output impedance: less than 40 Ohm
+  - Frequency response: ±0.25 dB from 28 Hz - 60 kHz; ±1 dB from 14 Hz - 90 kHz
+  - Maximum input level (Instrument): +20.5 dBu (8.2 V RMS) typical
+  - Maximum input level (Speaker): +41 dBu (87 V RMS) typical
+  - Maximum output level: +11.5 dBu typical
+  - THD+N @ 1 kHz, +20 dBu: 0.25% typical (2nd and 3rd harmonic)
+  - Power: 4.5 mA per channel @ +48 V DC phantom
+  - Dimensions: 4" W x 6.25" D x 1.75" H (10.2 x 15.9 x 4.5 cm)
+  - Weight: 1 lb (0.45 kg)
+io:
+  - name: Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Thru
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Mic Output
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+links:
+  - type: support
+    title: RNDI User Manual (Rev B)
+    url: https://rupertneve.com/s/RNDI-Manual_Rev-B.pdf
+videos:
+  - provider: youtube
+    videoId: AyxSpQRkglI
+    title: RNDI Origin Story
+  - provider: youtube
+    videoId: J1XfeFy9uJY
+    title: RNDI Quick Start

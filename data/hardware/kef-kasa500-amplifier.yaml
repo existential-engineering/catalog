@@ -1,0 +1,73 @@
+id: MkD-0TRG_NNeN7G1Idg80
+name: KASA500 Subwoofer Amplifier
+manufacturer: kef
+primaryCategory: amplifier
+categories:
+  - power-amp
+url: https://us.kef.com/products/kasa500-amplifier
+prices:
+  - amount: 1499.99
+    currency: USD
+description: |-
+  Powerful Class-D dual 250W-per-channel subwoofer amplifier with DSP
+  control, optimized for KEF Ci subwoofers. Features selectable stereo RCA
+  line level, mono LFE RCA, and stereo speaker-level inputs with
+  DSP-configurable pass-through and optional high-pass filters.
+specs: |-
+  - Amplifier Power: 2 × 250W @ 4Ω; Bridge: 1 × 500W @ 8Ω
+  - Amplifier Class: Class-D
+  - Crossover Frequency: 40–140Hz adjustable or software bypass
+  - Trigger Input: 8–14V DC
+  - Dimensions: 88 × 432 × 304mm (standard); 2 EIA rack spaces
+  - Weight: 4kg
+  - Compatible: KEF Ci subwoofers (Ci3160RLb-THX, Ci250RRb-THX, Ci200QSb-THX, Ci200TRb, Ci4100QLb)
+io:
+  - name: Line Level Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line Level Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: LFE Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Speaker Level Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Speaker Level Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: 12V Trigger Input
+    signalFlow: input
+    category: digital
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: USB Firmware Update
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right

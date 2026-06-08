@@ -1,0 +1,169 @@
+id: vxKg-2LrMF5gpYPGNgfMX
+name: MADIface USB
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://rme-audio.de/madiface-usb.html
+description: 128-channel mobile MADI USB 2.0 audio interface providing dual MADI
+  I/O (optical and coaxial), word clock input, AES input over BNC, and
+  bus-powered operation with TotalMix FX integration.
+details: |-
+  The RME MADIface USB is a compact, bus-powered USB 2.0 MADI audio interface that delivers up to 128 channels of input and output to a host computer when both MADI ports are active. It is positioned as a fully mobile MADI front-end suitable for recording, mixing, format-conversion, signal repeating, and routing within MADI-based infrastructures, without requiring any external power supply.
+
+  Each of the two MADI ports provides 64 channels per direction at 1FS sample rates (44.1/48 kHz). MADI is delivered simultaneously over optical (fiber) and coaxial (BNC) connectors, and the device supports the full MADI sample-rate range up to 192 kHz with corresponding channel reductions, including 96k Frame compatibility and variable Sync/DDS operation.
+
+  The interface integrates RME's 2048-channel TotalMix FX mixer with 48-bit internal resolution, providing latency-free submixes, complete routing, and ASIO Direct Monitoring. Dedicated operating modes include 64-channel and 128-channel mixes, a seamless Redundancy Mode that fails over between the two MADI inputs, a straight routing mode that bypasses the mixer, and full stand-alone format-converter / repeater operation.
+
+  Additional I/O includes a Word Clock input on BNC, an AES input over BNC, MIDI over MADI via virtual MIDI ports, and an ARC USB connector for the optional Advanced Remote Control. SteadyClock keeps internal jitter under 1 ns and the PLL continues to operate cleanly with up to 100 ns of input jitter. The unit is bus-powered, ships with TotalMix FX, DIGICheck and the full RME USB driver stack for macOS and Windows.
+specs: |-
+  - 128-channel mobile MADI USB 2.0 audio interface
+  - USB 2.0, bus-powered (no external power supply required)
+  - 2 x MADI I/O, optical and coaxial (BNC)
+  - 64 channels for recording and playback per MADI port
+  - Up to 128 channels input and output when both MADI I/Os operate simultaneously
+  - 1 x Word Clock In (BNC)
+  - 1 x AES In over BNC
+  - 1 x MIDI input and output via virtual MIDI port (MIDI over MADI)
+  - 1 x ARC USB connector for Advanced Remote Control
+  - Supported sample rates: 44.1, 48, 88.2, 96, 176.4, 192 kHz, variable (Sync/DDS)
+  - 96k Frame compatible
+  - Internal jitter and at all inputs: < 1 ns
+  - PLL operates even at 100 ns jitter
+  - 2048-channel TotalMix FX mixer with 48-bit internal resolution
+  - Latency-free submixes and ASIO Direct Monitoring
+  - Operating modes: 64-Channel Mix, 128-Channel Mix, Redundancy Mode, Straight routing (TotalMix disabled)
+  - Stand-alone operation as MADI format converter / repeater
+  - Seamless Redundancy Operation between both MADI inputs
+  - Includes TotalMix FX, DIGICheck and RME USB drivers
+io:
+  - name: MADI Optical Input
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical Output
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Coaxial Input
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: MADI Coaxial Output
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: AES Input (BNC)
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: ARC USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: USB 2.0 (Host)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+versions:
+  - name: MADIface USB
+links:
+  - type: resource
+    title: MADIface USB Manual
+    url: https://www.rme-audio.de/downloads/madiface_usb_e.pdf
+  - type: resource
+    title: macOS 10.12-10.15 USB Driver v3.224
+    url: https://rme-audio.de/downloads/driver_usb_mac_3224.zip
+  - type: resource
+    title: macOS 11+ Kernel Extension Driver v3.39
+    url: https://rme-audio.de/downloads/driver_usb_mac_339.zip
+  - type: resource
+    title: macOS 11+ DriverKit Driver v4.30
+    url: https://rme-audio.de/downloads/driver_usbdk_mac_430.zip
+  - type: resource
+    title: Windows 10/11 (x64/Arm) Driver v1.0.17
+    url: https://rme-audio.de/downloads/driver_madiface_win_1017.zip
+  - type: resource
+    title: Windows 8+ Driver v0.9845
+    url: https://rme-audio.de/downloads/driver_madiface_win_09845.zip
+  - type: resource
+    title: Windows 7 Driver v0.9827
+    url: https://rme-audio.de/downloads/driver_madiface_win_09827.zip
+  - type: resource
+    title: macOS Flash Update Tool
+    url: https://rme-audio.de/downloads/fut_madiface_mac.zip
+  - type: resource
+    title: Windows Flash Update Tool
+    url: https://rme-audio.de/downloads/fut_madiface_win.zip
+  - type: resource
+    title: TotalMix FX for macOS v2.03/1.991
+    url: https://rme-audio.de/downloads/tmfx_203_1991_mac.zip
+  - type: resource
+    title: TotalMix FX for Windows v2.03/1.991
+    url: https://rme-audio.de/downloads/tmfx_203_1991_win.zip
+  - type: resource
+    title: TotalMix FX for macOS v1.99
+    url: https://rme-audio.de/downloads/tmfx_mac_199.zip
+  - type: resource
+    title: TotalMix FX for Windows x64 v1.99
+    url: https://rme-audio.de/downloads/tmfx_winx64_199.zip
+  - type: resource
+    title: TotalMix FX for Windows x86 v1.99
+    url: https://rme-audio.de/downloads/tmfx_win32_199.zip
+  - type: resource
+    title: TotalMix FX for Windows Arm64 v1.99
+    url: https://rme-audio.de/downloads/tmfx_win_arm64_199.zip
+  - type: resource
+    title: TotalMix Remote for macOS
+    url: https://rme-audio.de/downloads/tmfx_mac_remote.zip
+  - type: resource
+    title: TotalMix Remote for Windows
+    url: https://rme-audio.de/downloads/tmfx_win_remote.zip
+  - type: resource
+    title: DigiCheck NG for macOS v0.93
+    url: https://www.rme-audio.de/downloads/digicheck_ng_mac_093.zip
+  - type: resource
+    title: DigiCheck NG for Windows v0.93
+    url: https://www.rme-audio.de/downloads/digicheck_ng_win_093.zip
+  - type: resource
+    title: DigiCheck for macOS
+    url: https://rme-audio.de/downloads/dc_073_mac.zip
+  - type: resource
+    title: DigiCheck for Windows
+    url: https://rme-audio.de/downloads/dc_596_win.zip
+  - type: resource
+    title: DigiCheck Legacy
+    url: https://rme-audio.de/downloads/dc_453.zip
+videos:
+  - provider: youtube
+    videoId: 9GR4nmvejfo
+  - provider: youtube
+    videoId: v7DNRdAUZAA

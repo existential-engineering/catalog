@@ -1,0 +1,210 @@
+id: GuZaSHgBgiGwwc4QfdQvR
+name: 12Mic-D
+manufacturer: rme
+primaryCategory: preamp
+categories:
+  - rack-mount
+  - digital
+url: https://rme-audio.de/12mic-dante.html
+description: 12-channel digitally controlled microphone preamplifier with Dante,
+  ADAT & MADI. Twelve microphone and line level inputs with studio-quality
+  conversion, remote-controllable gains, and integrated MADI and Dante
+  connectivity.
+details: |-
+  The RME 12Mic-D is a 12-channel digitally controlled microphone preamplifier with integrated Dante, ADAT, and MADI connectivity. Designed for professional studio and live applications, it brings together twelve high-quality preamps with remote-controllable gains and no-compromise digital conversion in a single 19-inch rack-mount enclosure.
+
+  All twelve channels feature 24-bit conversion with up to 75 dB of gain in 1 dB steps on XLR and 42 dB on TRS, with THD+N better than -104 dB at 30 dB gain and an unweighted signal-to-noise ratio above 117 dB. The first four inputs accept both XLR and TRS connections with switchable Hi-Z, making the unit equally at home with microphones, line sources, and instruments.
+
+  Network audio is handled by dual redundant Dante RJ45 ports supporting up to 64 channels at 48 kHz, with single, double, and quad-speed operation up to 192 kHz. A coaxial BNC MADI port is fitted as standard, and an optional optical SFP module can be added for fiber connectivity. Three TOSLINK ADAT outputs and a 75-ohm word clock BNC I/O round out the digital connectivity.
+
+  Operation is via a 1.54-inch color display with a control knob and four buttons, supplemented by USB-based remote control via the RME Connector software for deep configuration. A built-in headphone output on a 6.3 mm TRS jack provides easy monitoring of any internal source, and an optional redundant 12 V DC PSU input supports mission-critical installations.
+
+  The 12Mic-D complements the existing 12Mic, which is sonically identical but uses AVB instead of Dante. Housed in a 1U chassis (440 x 44 x 243 mm, 2.8 kg) with a 30 W internal universal PSU, the 12Mic-D is engineered for fixed installs, broadcast trucks, recording studios, and touring rigs that have standardized on Dante.
+specs: |-
+  - Channels: 12 mic/line inputs
+  - Resolution: 24-bit
+  - Gain Range (XLR): 75 dB in 1 dB steps
+  - Gain Range (TRS): 42 dB
+  - THD+N @ 30 dB gain: < -104 dB
+  - SNR: > 117 dB RMS unweighted, > 120 dB(A)
+  - EIN (150 Ohm): 123 dB RMS unweighted
+  - Dante: 2x RJ45, up to 64 channels, 48/96/192 kHz
+  - MADI: Coaxial BNC standard, optional optical SFP; 56/64 ch + 96k frame
+  - ADAT: 3x TOSLINK outputs, S/MUX4 support
+  - Word Clock: 75 Ohm BNC I/O
+  - Headphone Output: 6.3 mm TRS stereo/mono
+  - USB: USB 2.0 (control/firmware)
+  - Dimensions: 440 x 44 x 243 mm (19" 1RU)
+  - Weight: 2.8 kg
+  - Power: 30 W internal PSU (100-240 V AC); 20 W typical consumption
+  - Redundant Power: Optional 12 V DC 2.5 A input
+io:
+  - name: Mic/Line Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 5
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 6
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 7
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 8
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 9
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 10
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 11
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 12
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Dante Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Left
+  - name: Dante Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Left
+  - name: MADI Coaxial
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Left
+  - name: ADAT Output 1
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Left
+  - name: ADAT Output 2
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Left
+  - name: ADAT Output 3
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Left
+  - name: Word Clock I/O
+    signalFlow: bidirectional
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Left
+  - name: Phones
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: USB Control
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Left
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Left
+versions:
+  - name: 12Mic-D
+links:
+  - type: resource
+    title: Downloads
+    url: https://rme-audio.de/downloads.html
+  - type: resource
+    title: Manuals
+    url: https://docs.rme-audio.com
+  - type: resource
+    title: SFP Module
+    url: https://rme-audio.de/sfp-module.html
+  - type: resource
+    title: Preamps Category
+    url: https://rme-audio.de/preamps.html

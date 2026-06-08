@@ -1,0 +1,222 @@
+id: nKeYpYTVSkX2mKokjugNF
+name: Digiface AES
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - digital
+  - hybrid
+url: https://rme-audio.de/digiface-aes.html
+description: Professional, bus-powered 14 input / 16 output channel USB 2.0
+  interface with 2 Mic/Line universal analog input channels and 4 analog output
+  channels (2 XLR, one TRS phones) complementing its digital I/O section. 192
+  kHz Digital USB Interface with AES/SPDIF/ADAT/Analog I/O.
+details: |-
+  The RME Digiface AES is a professional, bus-powered 14 input and 16 output channel USB 2.0 interface that combines comprehensive digital I/O with high-quality analog I/O in a compact half-rack chassis. With AES/EBU, SPDIF (coaxial), and ADAT optical I/O, it provides flexible connectivity to virtually any digital audio source or destination at sample rates up to 192 kHz.
+
+  On the analog side, the Digiface AES features 2 Mic/Line universal analog input channels with XLR and TRS jack inputs and a 75 dB gain range, alongside 4 analog output channels: 2 balanced XLR line outputs with switchable reference levels (+19 / +13 / +4 dBu) and a stereo 6.3 mm TRS headphone output with two power modes. This makes it suitable both as a primary recording interface and as a flexible monitoring solution.
+
+  The digital section includes 1 x AES/EBU I/O on XLR (transformer-balanced, galvanically isolated, AES3-1992), 1 x SPDIF coaxial I/O on RCA (IEC 60958), 2 x ADAT optical inputs and 1 x ADAT optical output (S/MUX and S/MUX4 supported for 96/192 kHz operation). A sample rate converter (SRC) on the AES, SPDIF coaxial, or SPDIF optical input provides up to 139 dB dynamic range and seamless format conversion between digital sources.
+
+  Clocking is handled by RME's SteadyClock FS technology, with internal AES, SPDIF, and ADAT clock sources, a digital Bitclock PLL for trouble-free varispeed ADAT operation, and over 50 dB of jitter suppression above 1 kHz. The Digiface AES supports sample rates from 28 kHz up to 200 kHz and includes a galvanically isolated, optocoupled MIDI I/O via breakout cable with high-speed transfer and separate 128-byte FIFOs.
+
+  Connection to the host computer is via USB 2.0 with bus power or optional external supply (~3 W typical), making the unit fully mobile. The device is class-compliant for iPad/iOS use and ships with RME's TotalMix FX mixing/routing software and ARC USB compatibility. The aluminum chassis measures 215 x 44 x 130 mm and weighs 880 g (1.94 lbs).
+specs: |-
+  - 14 input / 16 output channel USB 2.0 audio interface
+  - Bus-powered (USB) or external power supply (~3 W typical)
+  - Supported sample rates: 28 kHz up to 200 kHz (192 kHz max nominal)
+  - 2 x Mic/Line analog inputs on XLR with 75 dB gain range and PAD
+  - 2 x TRS line inputs (alternative to XLR), 6.3 mm jack, electronically balanced
+  - Mic/Line input EIN: -129 dBu A-weighted (60 dB gain, 150 Ohm)
+  - Mic/Line input SNR: 113 dB RMS unweighted, 115 dBA
+  - Mic/Line input frequency response @ 192 kHz: 5 Hz - 88 kHz (-1 dB)
+  - Mic/Line input THD: < -110 dB; THD+N: < -106 dB
+  - TRS input max level @ 0 dB gain: +24 dBu
+  - 2 x XLR line outputs, electronically balanced, switchable +19 / +13 / +4 dBu
+  - Line output DR @ +19 dBu: 120 dB (AES17), 123 dBA
+  - Line output THD: < -110 dB; THD+N: -110 dB
+  - 1 x stereo headphone output (6.3 mm TRS, unbalanced), output levels +13 dBu (High) / +7 dBu (Low)
+  - Headphone SNR @ High: 120 dB (AES17), 122 dBA
+  - Headphone max power per channel @ 32 Ohm, 0.1 % THD: 160 mW
+  - 1 x AES/EBU I/O on XLR, transformer-balanced, galvanically isolated, AES3-1992
+  - 1 x SPDIF coaxial I/O on RCA, IEC 60958, accepts Consumer and Professional formats
+  - 2 x ADAT optical inputs and 1 x ADAT optical output (TOSLINK)
+  - ADAT supports 8 channels @ 48 kHz, 4 channels @ 96 kHz (S/MUX), 2 channels @ 192 kHz (S/MUX4)
+  - Sample rate converter (SRC) on AES / SPDIF coaxial / SPDIF optical: up to 192 kHz
+  - SRC dynamic range: 139 dB (AES17), 142 dBA; THD+N: -139 dB
+  - 1 x MIDI I/O via breakout cable with 2 x 5-pin DIN jacks, galvanically isolated, optocoupled
+  - MIDI hi-speed mode: jitter and response time typically below 1 ms
+  - Clock sources: Internal, AES, SPDIF, ADAT; jitter suppression > 50 dB above 1 kHz
+  - Digital Bitclock PLL for trouble-free varispeed ADAT operation
+  - USB 2.0 bus power, class-compliant operation supported
+  - Power consumption: 3 W typical (250 mA @ 12 V external)
+  - Dimensions (W x H x D): 215 x 44 x 130 mm (8.46" x 1.73" x 5.1")
+  - Weight: 880 g (1.94 lbs)
+  - Operating temperature: +5 to +50 C (41 to 122 F), < 75 % relative humidity non-condensing
+io:
+  - name: Mic/Line Input 1 (XLR)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 2 (XLR)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: TRS Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: TRS Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output 1 (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Output 2 (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Phones Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: SPDIF Coaxial Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: SPDIF Coaxial Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: ADAT Optical Input 1
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: ADAT Optical Input 2
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: ADAT Optical Output
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: MIDI I/O (via breakout cable)
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: USB 2.0
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+versions:
+  - name: Digiface AES
+links:
+  - type: resource
+    title: Digiface AES Manual v1.2a (06/2023)
+    url: https://www.rme-audio.de/downloads/dface_aes_e.pdf
+  - type: resource
+    title: macOS 10.12-10.15 USB Driver v3.224
+    url: https://www.rme-audio.de/downloads/driver_usb_mac_3224.zip
+  - type: resource
+    title: macOS 11+ Kernel Extension Driver v3.39
+    url: https://www.rme-audio.de/downloads/driver_usb_mac_339.zip
+  - type: resource
+    title: macOS 11+ DriverKit Driver v4.30
+    url: https://www.rme-audio.de/downloads/driver_usbdk_mac_430.zip
+  - type: resource
+    title: Windows 10/11 (x64/Arm) Driver v1.0.17
+    url: https://www.rme-audio.de/downloads/driver_madiface_win_1017.zip
+  - type: resource
+    title: Windows 8+ Driver v0.9845
+    url: https://www.rme-audio.de/downloads/driver_madiface_win_09845.zip
+  - type: resource
+    title: Windows 7 Driver v0.9827
+    url: https://www.rme-audio.de/downloads/driver_madiface_win_09827.zip
+  - type: resource
+    title: macOS Flash Update Tool
+    url: https://www.rme-audio.de/downloads/fut_madiface_mac.zip
+  - type: resource
+    title: Windows Flash Update Tool
+    url: https://www.rme-audio.de/downloads/fut_madiface_win.zip
+  - type: resource
+    title: TotalMix FX for macOS v2.03/1.991
+    url: https://www.rme-audio.de/downloads/tmfx_203_1991_mac.zip
+  - type: resource
+    title: TotalMix FX for Windows v2.03/1.991
+    url: https://www.rme-audio.de/downloads/tmfx_203_1991_win.zip
+  - type: resource
+    title: TotalMix Remote for macOS v1.43
+    url: https://www.rme-audio.de/downloads/tmfx_mac_remote.zip
+  - type: resource
+    title: TotalMix Remote for Windows v1.43
+    url: https://www.rme-audio.de/downloads/tmfx_win_remote.zip
+  - type: resource
+    title: DigiCheck NG for macOS v0.93
+    url: https://www.rme-audio.de/downloads/digicheck_ng_mac_093.zip
+  - type: resource
+    title: DigiCheck NG for Windows v0.93
+    url: https://www.rme-audio.de/downloads/digicheck_ng_win_093.zip

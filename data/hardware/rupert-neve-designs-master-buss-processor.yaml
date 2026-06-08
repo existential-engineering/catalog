@@ -1,0 +1,90 @@
+id: R46ILexAHnL64APeBvtpe
+name: Portico II Master Buss Processor
+manufacturer: rupert-neve-designs
+primaryCategory: mastering
+categories:
+  - compressor
+  - limiter
+  - dynamics
+  - saturation
+  - outboard
+  - rack-mount
+url: https://rupertneve.com/products/master-buss-processor
+description: A 2U creative dynamics, tone, and stereo field control tool for
+  2-channel mixing and mastering. Based on high-voltage, discrete, class-A
+  signal paths from the 5088 Mixer, it combines VCA compression, adaptive
+  release limiting, and M-S stereo field editing with harmonic saturation via
+  the Silk & Texture circuit.
+details: |-
+  The Portico II Master Buss Processor (MBP) is a 2U mastering-grade processor that combines a VCA compressor, single-knob limiter, stereo field editor, and Silk harmonic saturation in a single high-voltage class-A signal path derived from the 5088 console.
+
+  The compressor section offers feed-forward (transparent/modern) and feed-back (smooth/vintage) detection modes, switchable Peak (~0.1 ms attack) and RMS detection, parallel compression via a Blend control, a 125 Hz side-chain high-pass filter, and dual-mono or stereo-link operation.
+
+  A single-knob Limiter uses Adaptive Release Technology to provide transparent, musical limiting and acts as a final maximizer. The Stereo Field Editor (SFE) offers Width and Depth controls with independent LF, LM, HM, and HF bandpass filters and can be routed through the compressor for M-S compression workflows.
+
+  The Silk & Texture circuit adds harmonic enhancement: Silk Red emphasizes highs and high-mids (vocals, snare, strings, piano), while Silk Blue emphasizes lows and low-mids (drums, bass, heavy guitars, synths), with an adjustable Texture knob sweeping the saturation depth. Metering includes a 16-segment LED Gain Reduction meter and a 16-segment LED Output meter calibrated to +25 dBu, with mastering-grade 31-detent pots throughout. Made in the USA.
+specs: |-
+  - Frequency Response: 5 Hz to 100 kHz, ±0.5 dB typical (Compressor & SFE bypassed)
+  - Max Output Level: +25 dBu typical (20 Hz - 40 kHz, unloaded)
+  - THD+N @ 1 kHz, +20 dBu: <0.003% typical
+  - Compressor Threshold: -30 dBu to +20 dBu
+  - Compressor Ratio: 1.1:1 to 40:1
+  - Compressor Blend: 0% to 100%
+  - Make-Up Gain: 0 dB to +20 dB
+  - Compressor Attack: 20 ms to 80 ms
+  - Compressor Release: 100 ms to 3.0 s
+  - Power Consumption: 85 W max
+  - Power Supply: internal universal, 100-240V AC, 3-pin IEC
+  - Dimensions: 19" W x 12.25" D x 3.5" H (2RU)
+  - Weight: 15.5 lbs (7 kg)
+  - Made in USA
+io:
+  - name: Analog Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Sidechain Insert L
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Sidechain Insert R
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: User Manual
+    url: https://rupertneve.com/s/775-00008PIIMB-Manual_RevL-2.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://rupertneve.com/s/P2MB-recall_RND.pdf

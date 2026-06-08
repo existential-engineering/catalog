@@ -1,0 +1,77 @@
+id: iR1lWtXqBCK7D3GRWaykJ
+name: Newton Channel
+manufacturer: rupert-neve-designs
+primaryCategory: channel-strip
+categories:
+  - preamp
+  - equalizer
+  - compressor
+  - dynamics
+  - saturation
+  - outboard
+  - rack-mount
+url: https://rupertneve.com/products/newton-channel
+description: A 1RU channel strip from Rupert Neve Designs combining a microphone
+  preamplifier, parametric equalizer, VCA compressor, and variable Silk harmonic
+  saturation circuit. Named after Rupert Neve's birthplace (Newton Abbot,
+  England), it delivers classic RND sonic character in an accessible format
+  suited for project studios, commercial facilities, and live sound
+  applications.
+details: |-
+  The Newton Channel brings Rupert Neve Designs' signature tone into a more accessible 1RU channel strip. It pairs a transformer-coupled mic preamplifier with a parametric EQ, a VCA compressor, variable Silk harmonic saturation, and twin transformer-coupled outputs.
+
+  The mic preamp offers 72 dB of gain in 6 dB steps via a 12-position switch plus ±6 dB fine trim, with an electronically balanced input, a variable 12 dB/octave high-pass filter (20 Hz - 250 Hz), and switchable +48 V phantom power.
+
+  The EQ section provides a ±12 dB low-frequency shelf (60 Hz or 150 Hz), a ±12 dB parametric mid-band (220 Hz - 7 kHz), and a ±12 dB high-frequency shelf (8 kHz or 16 kHz), all using 31-detent recall-friendly potentiometers with independent EQ bypass.
+
+  The VCA compressor features a threshold from +20 dBu to -30 dBu, a fixed 20 ms attack, variable 50 - 500 ms release, -6 dB to +20 dB make-up gain, a 2:1 soft-knee ratio, and pre/post-EQ routing. The Silk circuit drives custom output transformers with Red mode (enhanced 2nd/3rd order harmonics in highs and high-mids) and Blue mode (enhanced harmonics in lows and low-mids), with a Texture control sweeping the saturation depth from 0 to 100%. 8-segment LED bargraphs display both gain reduction and output level.
+specs: |-
+  - Input impedance: 8,900 Ohms
+  - Maximum input level: +23.6 dBu
+  - Maximum output level @ 1 kHz: +23.6 dBu
+  - Frequency response: <10 Hz to 30 kHz (±0.1 dB), <5 Hz to 70 kHz (±0.25 dB)
+  - Line out noise (unity gain, unweighted): -102 dBu
+  - -6 dB out noise (unity gain): -107 dBu
+  - EIN @ +30 dB gain: -125 dBu
+  - THD+N: 0.0013% @ 0 dBu/1 kHz; 0.0007% @ +20 dBu/1 kHz
+  - THD+N with EQ engaged @ 0 dBu: 0.003%
+  - THD+N with compressor @ 0 dBu: 0.005%
+  - Power: IEC 100-240 VAC, 50/60 Hz, 35 W max
+  - Dimensions: 19" W × 8.25" D × 1.75" H (1RU)
+  - Weight: 7.5 lbs
+io:
+  - name: Mic/Line Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Bottom
+  - name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: -6dB Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Sidechain/Link
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+videos:
+  - provider: youtube
+    videoId: avedQpufnvQ
+    title: Meet the Newton
+  - provider: youtube
+    videoId: fSph2xd-1oA
+    title: Silk Circuit Explanation

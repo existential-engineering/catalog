@@ -1,0 +1,228 @@
+id: wj1YicjiN0Uyoobgt-FEq
+name: DMC-842
+manufacturer: rme
+primaryCategory: preamp
+categories:
+  - rack-mount
+  - digital
+  - remote-controlled
+url: https://rme-audio.de/dmc-842.html
+description: 8-channel AES42 interface and controller for digital microphones,
+  converting their signals to ADAT, AES/EBU, analog and optional MADI formats,
+  with per-channel sample rate conversion, MIDI/MADI remote control and
+  SteadyClock technology.
+details: |-
+  The DMC-842 is an 8-channel AES42 interface and controller for digital microphones. It accepts AES42 signals on all eight XLR inputs (also fully compatible with AES3 / AES/EBU), supplies digital phantom power, and converts the streams to ADAT, AES/EBU and balanced analog outputs simultaneously. Optional MADI I/O is available via the I64 MADI Card.
+
+  The unit supports AES42 in both Mode 1 (asynchronous) and Mode 2 (synchronized) operation. Eight individually switchable high-end sample rate converters give flexible clocking options on each channel, and per-channel digital phantom power, M/S de-/encoding, and a 63 dB gain range (Mode 1) cover the typical digital microphone control workflow.
+
+  Front-panel monitoring is via 13-LED level meters per channel, with intelligent clock control, SyncCheck and SteadyClock for jitter-resistant operation. The DMC-842 can be remote-configured over MIDI or, with the optional MADI card, over MADI.
+specs: |-
+  - Inputs: 8 x XLR (AES42, AES3 compatible), 1 x D-sub (AES sync)
+  - Outputs digital: 4 x AES/EBU via 25-pin D-sub, 2 x ADAT optical, optional MADI
+  - Outputs analog: 8 x XLR, balanced, up to +24 dBu
+  - SNR DA: 116 dB RMS unweighted, 119 dB(A)
+  - THD DA: < -104 dB (< 0.00063%)
+  - THD+N DA: < -100 dB (< 0.001%)
+  - Crosstalk DA: < 110 dB
+  - Output level @ 0 dBFS: +24 dBu, +19 dBu, +13 dBu
+  - Frequency response DA, -0.5 dB: 5 Hz - 22 kHz (sf 48 kHz); < 5 Hz - 34 kHz (sf 96 kHz)
+  - Frequency response DA, -1 dB: < 5 Hz - 50 kHz (sf 192 kHz)
+  - Sync sources: Internal, AES, word, Option (MADI)
+  - Sample frequencies: 44.1 kHz, 48 kHz, 88.2 kHz, 96 kHz, 176.4 kHz, 192 kHz, variable (external clocks)
+  - Sample rate range: MADI 32-192 kHz; word clock 27-200 kHz; AES 28-200 kHz
+  - Jitter: typical < 1 ns for internal, word clock, AES and MADI input
+  - Jitter suppression: > 30 dB (2.4 kHz)
+  - Jitter sensitivity: error-free at 100 ns
+  - Gain range per channel: 63 dB (Mode 1 asynchronous)
+  - Digital phantom power switchable per input
+  - 8 individually switchable high-end sample rate converters (24-bit)
+  - M/S de-/encoding per channel pair
+  - 13 LEDs per channel for level metering
+  - MIDI control; remote configurable via MIDI or optional MADI
+  - Intelligent clock control, SyncCheck, SteadyClock
+  - Power supply: internal switching mode, 100V-240V AC, 60 W
+  - Dimensions: 483 x 88 x 200 mm (W x H x D)
+  - Warranty: 2 years
+io:
+  - name: AES42 / AES3 Input 1
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES42 / AES3 Input 2
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES42 / AES3 Input 3
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES42 / AES3 Input 4
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES42 / AES3 Input 5
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES42 / AES3 Input 6
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES42 / AES3 Input 7
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES42 / AES3 Input 8
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES Sync I/O
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: AES/EBU Output (D-sub)
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 6
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 7
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 8
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: ADAT Optical Output 1
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: ADAT Optical Output 2
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: Word Clock Output
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: DMC-842 Manual (English, v1.1)
+    url: https://www.rme-audio.de/downloads/dmc842_e.pdf
+  - type: resource
+    title: DMC-842 Remote Control Software (Windows, v1.14)
+    url: https://rme-audio.de/downloads/dmc_control.zip
+  - type: resource
+    title: Product Images (PNG)
+    url: https://www.rme-usa.com/downloads.html?file=files/downloads/Media-Material/RME_DMC-842_Images_Web_PNG.zip
+  - type: product
+    title: I64 MADI Card (optional MADI expansion)
+    url: https://rme-audio.de/expansion-boards.html

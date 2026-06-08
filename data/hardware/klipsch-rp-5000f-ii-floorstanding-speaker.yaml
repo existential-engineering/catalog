@@ -1,0 +1,40 @@
+id: WxMxeKyVnIQBw8F9P66Bi
+name: RP-5000F II
+manufacturer: klipsch
+primaryCategory: speaker
+url: https://www.klipsch.com/products/rp-5000f-ii-floorstanding-speaker
+description: The Klipsch Reference Premiere RP-5000F II floorstanding speakers
+  deliver power, detail, and emotion to your home theater with easy Dolby Atmos
+  integration.
+details: |-
+  The RP-5000F II is part of Klipsch's Reference Premiere II series, built around a 90°×90° silicone composite hybrid Tractrix horn that focuses high-frequency waves toward the listening area for increased detail and a larger soundstage. The proprietary Tractrix geometry provides efficient transfer of high-frequency energy, and the phase plug with compression-molded silicone face ensures smooth frequency response.
+
+  The dual 5.25" Cerametallic woofers are exceptionally rigid and lightweight, minimizing distortion and maximizing efficiency. New aluminum shorting (Faraday) rings reduce distortion and increase power handling, while the new motor structure improves transient response with greater speed and accuracy.
+
+  A vented tweeter housing reduces standing waves and unwanted harmonics, and the exclusive Linear Travel Suspension (LTS) on the 1" titanium diaphragm tweeter minimizes distortion for detailed high-frequency performance. Rear-firing Tractrix ports with custom-designed inner flares reduce air turbulence for cleaner, more powerful bass.
+
+  The cabinet uses MDF with additional internal bracing and a divided-chamber design to minimize resonances and vibration. Cast aluminum feet decouple the speaker from the floor for tighter low frequencies.
+
+  Dual aluminum binding posts support bi-wiring and bi-amping, with refined Dolby Atmos passthrough connections on the rear panel for easy elevation speaker integration.
+io:
+  - name: Main Binding Posts (Bi-wire High)
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Bottom
+  - name: Main Binding Posts (Bi-wire Low)
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Bottom
+  - name: Dolby Atmos Passthrough Output
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Bottom

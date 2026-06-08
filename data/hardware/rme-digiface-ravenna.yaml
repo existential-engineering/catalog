@@ -1,0 +1,178 @@
+id: xa-29yDjYz_0ntvm6aspE
+name: Digiface Ravenna
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://rme-audio.de/digiface-ravenna.html
+description: Portable 256-channel 192 kHz USB 3.0 audio interface bringing
+  RAVENNA networking to Mac and Windows. Combines a RAVENNA module developed by
+  DirectOut with RME's MADI I/O, TotalMix FX, and a high-quality phones output
+  in a lightweight enclosure.
+details: |-
+  The Digiface Ravenna is a lightweight, portable USB 3.0 audio interface that brings RAVENNA networked audio to Mac and Windows hosts. Based on the proven Digiface Dante and equipped with a RAVENNA module developed by DirectOut, it pairs RME's mature driver stack and TotalMix FX with a full RAVENNA implementation including AES67, ST 2110-30/31, and ST 2022-7 redundant streaming.
+
+  On the network side, the interface offers four Gigabit Ethernet ports and supports up to 128 channels at single speed, 64 channels at double speed, and 32 channels at quad speed, with sample rates from 44.1 kHz to 192 kHz. Up to 32 streams can be configured via the included RAVENNA web server, globcon control, or NMOS IS-04/IS-05.
+
+  The two BNC sockets that normally serve as word clock I/O are switchable to coaxial MADI I/O, providing up to 64 channels of MADI alongside the 64 RAVENNA channels for a combined 128 channels over USB 3.0. The MADI ports accept 56- and 64-channel modes plus 96k Frame, with S/MUX4 enabling up to 16 channels at 192 kHz.
+
+  Without a USB host attached, the Digiface Ravenna doubles as a mobile 64-channel RAVENNA-to-MADI converter, making it equally useful as a portable interface and as a fixed-install format converter. The included 6.3 mm TRS phones output offers a quick listen to any audio channel and can also serve as a line-level stereo mixdown output.
+
+  TotalMix FX provides unlimited routing and mixing across all inputs and playback channels, with a dedicated Control Room section featuring Talkback, Main/Phones, fader groups, mute groups, and Mackie/OSC remote control. TotalMix Remote extends control to iOS, PC, or Mac over IP. The Digiface Series does not support DSP-based effects such as EQ or reverb.
+specs: |-
+  - 256-channel 192 kHz USB 3.0 audio interface
+  - Gigabit Ethernet: RJ45, 100 Mbit/s and 1 Gbit/s, Auto MDI-X
+  - RAVENNA module supports RAVENNA, AES67, ST 2110-30/-31, ST 2022-7
+  - Network Layer 3 with Switched and Redundancy (ST 2022-7) modes
+  - 32 streams maximum
+  - 128 channels Single Speed, 64 channels Double Speed, 32 channels Quad Speed
+  - Clock sources: PTP, Internal
+  - Sample rates: 44.1, 48, 88.2, 96, 176.4, 192 kHz, +/-12.5%
+  - Channel-based routing matrix
+  - Configuration via Browser GUI, globcon control, NMOS IS-04 / IS-05
+  - MADI Input: Coaxial via BNC, 75 Ohm, per AES10-1991
+  - MADI Input: High-sensitivity input stage (< 0.2 Vpp)
+  - MADI Input: Accepts 56- and 64-channel mode plus 96k Frame
+  - MADI Input Standard: up to 64 channels 24-bit 48 kHz
+  - MADI Input S/MUX: up to 32 channels 24-bit 96 kHz
+  - MADI Input S/MUX4: up to 16 channels 24-bit 192 kHz
+  - MADI Input Lock range: 25 kHz – 54 kHz
+  - MADI Output: Coaxial via BNC, 75 Ohm, per AES10-1991
+  - MADI Output voltage: 400 mVpp
+  - MADI Output cable length: up to 50 m
+  - MADI Output generates 56- and 64-channel mode plus 96k Frame
+  - Phones Dynamic range (DR): 110 dB RMS unweighted, 113 dBA
+  - Phones Frequency response @ 44.1 kHz, -0.5 dB: 0 Hz – 20.8 kHz
+  - Phones Frequency response @ 96 kHz, -0.5 dB: 0 Hz – 45 kHz
+  - Phones Frequency response @ 192 kHz, -1 dB: 0 Hz – 89 kHz
+  - Phones THD @ -1 dBFS: -96 dB, 0.0016%
+  - Phones THD+N @ -1 dBFS: -95 dB, 0.0017%
+  - Phones Channel separation: > 100 dB
+  - Phones Output: 6.3 mm TRS jack, unbalanced
+  - Phones Output impedance: 2 Ohm
+  - Phones Output level at 0 dBFS, 1 kOhm load: +9.5 dBu
+  - Phones Max power @ 0.1% THD: 50 mW
+  - Word Clock In: BNC, not terminated (10 kOhm), switchable internal 75 Ohm termination
+  - Word Clock In: Automatic Double/Quad Speed detection and conversion to Single Speed
+  - Word Clock Out: BNC, max level 5 Vss, 4.0 Vss with 75 Ohm termination, internal impedance 10 Ohm
+  - Digital clocks: Internal, RAVENNA (PTP), word, MADI
+  - Supported sample rates: 44.1 kHz up to 192 kHz
+  - DC-coupled Phones outputs
+  - Compatible with ARC USB advanced remote control
+io:
+  - name: USB 3.0
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Gigabit Ethernet 1 (RAVENNA)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Gigabit Ethernet 2 (RAVENNA)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Gigabit Ethernet 3 (RAVENNA)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Gigabit Ethernet 4 (RAVENNA)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: MADI Input (Coaxial)
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: MADI Output (Coaxial)
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: Word Clock In
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Out
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Phones Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: Digiface Ravenna Manual (PDF)
+    url: https://www.rme-audio.de/downloads/dface_ravenna_e.pdf
+  - type: resource
+    title: USB Driver macOS 10.12–10.15 (v3.224)
+    url: https://rme-audio.de/downloads/driver_usb_mac_3224.zip
+  - type: resource
+    title: USB Driver macOS 11+ Kernel Extension (v3.39)
+    url: https://rme-audio.de/downloads/driver_usb_mac_339.zip
+  - type: resource
+    title: USB Driver macOS DriverKit (v4.30)
+    url: https://rme-audio.de/downloads/driver_usbdk_mac_430.zip
+  - type: resource
+    title: MADIface Windows 7 Driver (v0.9827)
+    url: https://rme-audio.de/downloads/driver_madiface_win_09827.zip
+  - type: resource
+    title: MADIface Windows 8+ Driver (v0.9845)
+    url: https://rme-audio.de/downloads/driver_madiface_win_09845.zip
+  - type: resource
+    title: RAV2 Module Firmware (hw 0.36 sw 1.20)
+    url: https://rme-audio.de/downloads/rav2_hw_0_36_sw_1_20.zip
+  - type: resource
+    title: MADIface Firmware Update Tool (macOS)
+    url: https://rme-audio.de/downloads/fut_madiface_mac.zip
+  - type: resource
+    title: MADIface Firmware Update Tool (Windows)
+    url: https://rme-audio.de/downloads/fut_madiface_win.zip
+  - type: resource
+    title: TotalMix FX 2.03 (macOS)
+    url: https://rme-audio.de/downloads/tmfx_203_1991_mac.zip
+  - type: resource
+    title: TotalMix FX 2.03 (Windows x64)
+    url: https://rme-audio.de/downloads/tmfx_203_1991_win.zip
+  - type: resource
+    title: TotalMix Remote (macOS)
+    url: https://rme-audio.de/downloads/tmfx_mac_remote.zip
+  - type: resource
+    title: TotalMix Remote (Windows)
+    url: https://rme-audio.de/downloads/tmfx_win_remote.zip
+  - type: resource
+    title: DigiCheck NG (macOS)
+    url: https://www.rme-audio.de/downloads/digicheck_ng_mac_093.zip
+  - type: resource
+    title: Product Images Pack
+    url: https://www.rme-usa.com/downloads.html?file=files/downloads/Media-Material/RME_Digiface-Ravenna_Images.zip

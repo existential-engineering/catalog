@@ -1,0 +1,88 @@
+id: GylxPx_DDBf1KgSWuaGPY
+name: Master Bus Converter
+manufacturer: rupert-neve-designs
+primaryCategory: mastering
+categories:
+  - limiter
+  - dynamics
+  - saturation
+  - outboard
+  - rack-mount
+url: https://rupertneve.com/products/master-bus-converter
+description: Dual-path mastering-grade 24-bit/192kHz A-D converter and analog
+  limiter. Features a transformerless Class-A signal path or a custom interstage
+  transformer path with variable Red/Blue Silk harmonic coloration, paired with
+  a compound active release limiter offering a sweepable sidechain high-pass
+  filter and up to 20 dB of clean Class-A line gain. Designed for tracking,
+  mixing, mastering, and live applications.
+details: |-
+  The Master Bus Converter (MBC) combines a high-precision PCM A-D converter with a discrete analog limiter and dual selectable signal paths in a single 1U mastering tool. The transformerless Class-A path provides transparent capture, while the transformer path adds custom Rupert Neve interstage transformer character with variable Red and Blue Silk for tunable harmonic coloration.
+
+  The compound active release limiter is dual-mono capable and features a sweepable high-pass sidechain filter for musical or transparent safety limiting, with up to 20 dB of clean Class-A line gain ahead of conversion. A high-precision internal clock minimizes jitter and phase noise, with word clock input and output for integration as master or slave in a larger system.
+
+  Four selectable reference level standards (-14, -16, -18, -20 dBFS) and ultra-precise 22-segment input metering plus 8-segment gain reduction metering with peak hold options support mastering-grade workflows. Simultaneous AES, S/PDIF, and TOSLINK digital outputs make the MBC an ideal hub for any digital chain.
+specs: |-
+  - Resolution: 24-bit / up to 192 kHz PCM conversion
+  - Signal paths: transformerless Class-A or custom interstage transformer with variable Red/Blue Silk
+  - Limiter: compound active release, dual-mono capable
+  - Sidechain HPF: sweepable
+  - Gain: up to 20 dB Class-A line gain
+  - Reference levels: -14, -16, -18, -20 dBFS (selectable)
+  - Metering: 22-segment input meters, 8-segment gain reduction meters with selectable 1s/3s peak hold
+  - Digital outputs: simultaneous AES3, S/PDIF (coaxial), and TOSLINK
+  - Word clock: input and output (BNC), master clock capable
+  - Format: 1U rackmount
+io:
+  - name: Analog Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES3 Digital Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: S/PDIF Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: TOSLINK Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Bottom
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+  - name: Word Clock Output
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Bottom
+videos:
+  - provider: youtube
+    videoId: 45uEmQR2JT4
+    title: Master Bus Converter Overview

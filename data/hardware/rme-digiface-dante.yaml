@@ -1,0 +1,167 @@
+id: Rdja7LLO2XC_nzTEVrm4p
+name: Digiface Dante
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://rme-audio.de/digiface-dante.html
+description: 256-channel 192 kHz USB 3.0 audio interface combining Dante network
+  connectivity with MADI I/O, TotalMix FX, and stand-alone Dante/MADI converter
+  operation in a lightweight, portable enclosure.
+details: |-
+  The RME Digiface Dante is a lightweight, portable 256-channel 192 kHz USB 3.0 audio interface that brings Dante network audio into the RME ecosystem alongside MADI I/O, TotalMix FX, and the company's signature low-latency drivers. It functions as a USB 3.0 from/to Dante interface with external, fully mobile operation, and also runs stand-alone as a 64-channel Dante/MADI converter without a host computer.
+
+  Dante connectivity is provided by the largest module available, supporting 64 channels of send and receive over the network. Two banks of redundant primary/secondary RJ45 ports are fitted, with built-in switch functionality between them, plus support for network redundancy and AES67 compatibility for interoperability with other audio-over-IP systems.
+
+  MADI is implemented on coaxial BNC for both input and output (AES10-1991 compliant), accepting 56/64-channel mode and 96k Frame, with S/MUX and S/MUX4 reducing channel count for 96 kHz and 192 kHz operation respectively. Word clock in and out on BNC with switchable 75 Ohm termination and automatic Double/Quad Speed detection complete the digital I/O alongside Internal, Dante, Word, and MADI clock sources.
+
+  On the host side, the Digiface Dante uses RME's matured MADIface Series driver for Windows and macOS, delivering low-latency performance and the full TotalMix FX routing and mixing environment with independent submixes. A high-quality phones output with DC-coupled capability provides monitoring directly from the unit.
+
+  The interface can be powered via USB bus power for mobile use or by an external power supply for fixed installations, and supports remote control via TotalMix Remote over the network. It joins RME's wider family of Digiface interfaces, which includes the Digiface USB, Digiface AES, Digiface AVB, and Digiface Ravenna.
+specs: |-
+  - 256-channel 192 kHz USB 3.0 audio interface
+  - Sample rates: 44.1 kHz up to 192 kHz
+  - Supported clocks: Internal, Dante, Word, MADI
+  - Dante: 4 x Gigabit Ethernet RJ45 (802.3 compliant), two redundant banks with switch functionality
+  - Dante: up to 64 channels send/receive, AES67 compatible
+  - Network: 100 Mbit/s and 1 Gbit/s capable, Auto MDI-X (straight and crossover cables)
+  - MADI Input: Coaxial BNC, 75 Ohm, AES10-1991 compliant
+  - MADI Input: High-sensitivity input stage (< 0.2 Vpp)
+  - MADI Input: 56/64 channel mode plus 96k Frame
+  - MADI Input: up to 64 channels 24-bit 48 kHz (Standard)
+  - MADI Input: up to 32 channels 24-bit 96 kHz (S/MUX)
+  - MADI Input: up to 16 channels 24-bit 192 kHz (S/MUX4)
+  - MADI Input lock range: 25 kHz – 54 kHz
+  - MADI Output: Coaxial BNC, 75 Ohm, AES10-1991 compliant
+  - MADI Output voltage: 400 mVpp
+  - MADI Output cable length: up to 50 m
+  - MADI Output: up to 64 channels 24-bit 48 kHz (Standard)
+  - MADI Output: up to 32 channels 24-bit 96 kHz (S/MUX/96k Frame)
+  - MADI Output: up to 16 channels 24-bit 192 kHz (S/MUX4)
+  - Word Clock In: BNC, not terminated (10 kOhm), switchable internal 75 Ohm termination
+  - Word Clock In: Automatic Double/Quad Speed detection and conversion
+  - Word Clock Out: BNC, max level 5 Vss (4.0 Vss with 75 Ohm termination), 10 Ohm internal impedance
+  - Phones output: analog stereo, DC-coupled capable
+  - USB 3.0 host connection
+  - Stand-alone 64-channel Dante/MADI converter operation (no USB host required)
+  - Powered via USB bus power or external power supply
+  - Network-based remote control via TotalMix Remote
+io:
+  - name: Dante Primary A
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Dante Secondary A
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Dante Primary B
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Dante Secondary B
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: MADI Coaxial Input
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Left
+  - name: MADI Coaxial Output
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Left
+  - name: Word Clock In
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Left
+  - name: Word Clock Out
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Left
+  - name: Phones
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: USB 3.0
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Left
+versions:
+  - name: Digiface Dante
+links:
+  - type: resource
+    title: Digiface Dante Manual v2.1
+    url: https://www.rme-audio.de/downloads/dface_dante_e.pdf
+  - type: resource
+    title: macOS 11+ DriverKit v4.30
+    url: https://rme-audio.de/downloads/driver_usbdk_mac_430.zip
+  - type: resource
+    title: macOS 11+ Kernel Extension v3.39
+    url: https://rme-audio.de/downloads/driver_usb_mac_339.zip
+  - type: resource
+    title: macOS 10.12–10.15 driver v3.224
+    url: https://rme-audio.de/downloads/driver_usb_mac_3224.zip
+  - type: resource
+    title: Windows 10/11 Network Driver v0.9908
+    url: https://rme-audio.de/downloads/driver_win_net_09908_09908114.zip
+  - type: resource
+    title: Windows USB Driver v0.9845
+    url: https://rme-audio.de/downloads/driver_madiface_win_09845.zip
+  - type: resource
+    title: Windows 7 USB Driver v0.9827
+    url: https://rme-audio.de/downloads/driver_madiface_win_09827.zip
+  - type: resource
+    title: macOS Flash Update Tool
+    url: https://rme-audio.de/downloads/fut_madiface_mac.zip
+  - type: resource
+    title: Windows Flash Update Tool
+    url: https://rme-audio.de/downloads/fut_madiface_win.zip
+  - type: resource
+    title: Windows Network Flash Update Tool
+    url: https://rme-audio.de/downloads/fut_madifacenet_win.zip
+  - type: resource
+    title: TotalMix FX v2.03/1.991 (macOS)
+    url: https://rme-audio.de/downloads/tmfx_203_1991_mac.zip
+  - type: resource
+    title: TotalMix FX v2.03/1.991 (Windows)
+    url: https://rme-audio.de/downloads/tmfx_203_1991_win.zip
+  - type: resource
+    title: TotalMix Remote (macOS)
+    url: https://rme-audio.de/downloads/tmfx_mac_remote.zip
+  - type: resource
+    title: DigiCheck NG (macOS)
+    url: https://rme-audio.de/downloads/dc_073_mac.zip
+  - type: resource
+    title: DigiCheck NG (Windows)
+    url: https://rme-audio.de/downloads/dc_596_win.zip
