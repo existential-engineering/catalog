@@ -1,0 +1,143 @@
+id: MoRKqz1lhVrk0Y4Yr3OvU
+name: HDSPe AoX-M
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://rme-audio.de/hdspe-aox.html
+description: 512-channel PCI Express card combining dual Milan-compliant AVB
+  network ports with headphone output, AES3, MIDI, and internal expansion
+  headers for up to four MADI ports.
+details: |-
+  The HDSPe AoX-M is a 512-channel PCI Express card that combines dual network ports with headphone output, AES3, MIDI, and internal expansion headers for up to four MADI ports. It transmits and receives up to 512 channels of audio and provides numerous mixing and routing capabilities.
+
+  Channel capacity scales with sample rate: 512 channels at 48 kHz / 24 bit, 256 channels at 96 kHz / 24 bit, and 128 channels at 192 kHz / 24 bit. Up to 128 channels are available in Milan-compliant 8-channel AVB stream format.
+
+  TotalMix FX provides a 256 x 256 channel mixer with 46-bit internal resolution. SyncAlign guarantees sample-accurate alignment, SyncCheck verifies synchronization, and DIGICheck offers DSP-based level metering and analysis.
+
+  The card is a single-slot PCIe x4 card that can be installed in external Thunderbolt enclosures or internal DAW/processor systems. Optional expansion boards (AoX-MADI-EXT-BNC, AoX-MADI-EXT-SFP) add up to four MADI ports via coaxial BNC or optical SFP.
+specs: |-
+  - 512-channel PCI Express x4 card
+  - 512 channels at 48 kHz / 24 bit
+  - 256 channels at 96 kHz / 24 bit
+  - 128 channels at 192 kHz / 24 bit
+  - 128 channels in Milan-compliant 8-channel AVB stream format
+  - TotalMix FX: 256 x 256 channel mixer with 46-bit internal resolution
+  - SyncAlign sample alignment guarantee
+  - SyncCheck synchronization testing
+  - DIGICheck DSP level metering
+  - 2x Gigabit Ethernet (RJ45), 802.3 compliant, Milan/AVB network audio
+  - 1x AES/EBU I/O, 2 channels up to 192 kHz
+  - 1x Headphone output (1/4-inch stereo)
+  - 1x MIDI I/O, 16 channels high-speed
+  - Up to 4x MADI expansion ports via optional expansion boards (coaxial BNC or optical SFP)
+  - Single-slot PCIe x4 form factor
+  - Compatible with external Thunderbolt enclosures and internal DAW/processor systems
+io:
+  - name: PCI Express x4 (to host)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+  - name: Gigabit Ethernet 1 (Milan/AVB)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Gigabit Ethernet 2 (Milan/AVB)
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: AES/EBU I/O
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: MIDI I/O
+    signalFlow: bidirectional
+    category: digital
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MADI Expansion Header 1 (optional, via AoX-MADI-EXT-BNC or
+      AoX-MADI-EXT-SFP)
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 1
+    position: Top
+  - name: MADI Expansion Header 2 (optional, via AoX-MADI-EXT-BNC or
+      AoX-MADI-EXT-SFP)
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 1
+    position: Top
+  - name: MADI Expansion Header 3 (optional, via AoX-MADI-EXT-BNC or
+      AoX-MADI-EXT-SFP)
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 1
+    position: Top
+  - name: MADI Expansion Header 4 (optional, via AoX-MADI-EXT-BNC or
+      AoX-MADI-EXT-SFP)
+    signalFlow: bidirectional
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 1
+    position: Top
+versions:
+  - name: HDSPe AoX-M
+links:
+  - type: resource
+    title: HDSPe AoX Driver and Firmware (macOS, 2026-04-21)
+    url: https://rme-audio.de/downloads/260421_HDSPeAoX_Driver_and_Firmware_MAC.zip
+  - type: resource
+    title: HDSPe AoX Driver and Firmware (Windows, 2026-04-21)
+    url: https://rme-audio.de/downloads/260421_HDSPeAoX_Driver_and_Firmware_WIN.zip
+  - type: resource
+    title: TotalMix Remote (macOS)
+    url: https://rme-audio.de/downloads/tmfx_mac_remote.zip
+  - type: resource
+    title: TotalMix Remote (Windows)
+    url: https://rme-audio.de/downloads/tmfx_win_remote.zip
+  - type: resource
+    title: DigiCheck NG v0.93 (macOS)
+    url: https://www.rme-audio.de/downloads/digicheck_ng_mac_093.zip
+  - type: resource
+    title: DigiCheck NG v0.93 (Windows)
+    url: https://www.rme-audio.de/downloads/digicheck_ng_win_093.zip
+  - type: resource
+    title: HDSPe AoX-M Manual (v1.0, 11/2025)
+    url: https://docs.rme-audio.com/
+  - type: resource
+    title: HDSPe AoX Product Images
+    url: https://www.rme-usa.com/downloads.html?file=files/downloads/Media-Material/RME_HDPSe-AOX_Images.zip
+  - type: resource
+    title: Downloads
+    url: https://rme-audio.de/downloads.html
+  - type: product
+    title: HDSPe AoX-D (Dante variant)
+    url: https://rme-audio.de/hdspe-aox-d.html

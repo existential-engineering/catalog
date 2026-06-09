@@ -1,0 +1,24 @@
+id: Y7JRLIWqjmCGgOqN2sZ3E
+name: UIM-1
+manufacturer: stax
+primaryCategory: audio-interface
+description: A USB DAC optional board that installs into the LINE 4 slot of the
+  SRM-T8000 amplifier, featuring dual ESS9038Q2M chips in monaural mode with
+  separate left and right channel circuits, independent power supplies for low
+  noise, and support for high-resolution PCM and DSD audio.
+specs: |-
+  - PCM bit rates: 16-bit, 24-bit, 32-bit
+  - PCM sampling frequencies: 44.1 kHz, 48 kHz, 88.2 kHz, 96 kHz, 176.4 kHz, 192 kHz, 352.8 kHz, 384 kHz
+  - DSD native support: 2.8 MHz, 5.6 MHz, 11.2 MHz, 22.5 MHz
+  - DSD DoP support: 2.8 MHz, 5.6 MHz, 11.2 MHz
+  - DAC chip: ESS9038Q2M (one per channel)
+  - Installation: Plugs into LINE 4 slot on SRM-T8000 rear panel
+io:
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+releaseDate: 2025-06-19

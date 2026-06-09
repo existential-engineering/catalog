@@ -1,0 +1,118 @@
+id: GHYHX7yJsoMA83XUSM1X7
+name: HDSPe AES
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://rme-audio.de/hdspe-aes.html
+description: 32-Channel AES/EBU PCI Express Card. Short-length, professional
+  PCIe internal audio card with 8 AES/EBU inputs and 8 AES/EBU outputs (16
+  channels each via standard digital breakout cable with Tascam pinout), word
+  clock I/O, and 2 MIDI I/O via expansion board breakout. Designed for
+  broadcast, TV, theater, stage/PA and professional studio use.
+details: |-
+  The RME HDSPe AES is a short-length PCI Express internal audio card providing 16 inputs and 16 outputs of AES/EBU digital audio (32 channels total) at sample rates up to 192 kHz. With 8 AES/EBU input pairs and 8 AES/EBU output pairs accessed via standard digital breakout cables with Tascam pinout, plus word clock I/O and 2 MIDI I/O via an internal expansion board, it is designed for professional broadcast, TV, theater, stage/PA and studio applications.
+
+  The mainboard provides a 25-pin D-sub connector carrying the first 4 AES inputs and 4 AES outputs, plus BNC word clock I/O on the PCIe bracket. An included expansion board breaks out AES channels 9 through 16 along with the two MIDI I/O ports on 5-pin DIN connectors. Native support for Double Wire and Quad Wire transfer enables direct format conversion for high sample-rate workflows, and up to 3 HDSPe cards can be combined in a single system.
+
+  Clocking is handled by RME's SteadyClock technology for jitter suppression and clock regeneration, with internal jitter below 1 ns on both internal and all inputs. The Word Clock input includes RME's automatic Signal Adaptation Circuit (functional from 1.2 Vpp) with jumper-selectable termination, while the BNC word clock output is low-impedance at 4 Vpp into 75 Ohms. An optional HDSP TCO module adds LTC, video sync input, and additional word clock I/O.
+
+  The card runs RME's TotalMix FX mixer, a 512-channel hardware DSP mixer with 42-bit internal resolution, 8 independent stereo submixes, 48 hardware-computed Peak/RMS level meters, and full MIDI control. Zero Latency Monitoring is supported via ASIO Direct Monitoring, and settings are stored on-card so they persist across system restarts. The bundled DIGICheck measurement and analysis software provides comprehensive signal monitoring, and an optional DTOX-32 breakout box converts the D-sub I/O to XLR connectors.
+specs: |-
+  - 32-channel AES/EBU PCI Express audio interface card (short-length)
+  - 1-Lane PCI Express Endpoint, v1.1; line speed 2.5 Gbps
+  - Transfer rate up to 500 MB/s (250 MB/s bidirectional)
+  - 8 x AES/EBU inputs (16 channels total) via 25-pin D-sub with Tascam pinout
+  - 8 x AES/EBU outputs (16 channels total) via 25-pin D-sub with Tascam pinout
+  - Mainboard 25-pin D-sub: 4 AES inputs + 4 AES outputs (channels 1-8)
+  - Expansion board: AES channels 9-16 plus 2 MIDI I/O on 5-pin DIN
+  - Native support for Double Wire and Quad Wire transfer with direct format conversion
+  - Sample rates: 32 kHz to 192 kHz; variable via sync / word clock
+  - AES sample rate range: 28 kHz to 204 kHz
+  - Word clock sample rate range: 28 kHz to 204 kHz
+  - Jitter: < 1 ns (internal and all inputs)
+  - SteadyClock jitter suppression and clock regeneration
+  - Word Clock Input: BNC with automatic Signal Adaptation Circuit (from 1.2 Vpp), jumper termination
+  - Word Clock Output: BNC, low-impedance, 4 Vpp into 75 Ohms
+  - 2 x MIDI I/O via expansion board breakout (4 x 5-pin DIN connectors)
+  - TotalMix FX: 512-channel hardware mixer with 42-bit internal resolution
+  - 8 independent stereo submixes within TotalMix
+  - 48 hardware-computed Peak/RMS level meters
+  - Zero Latency Monitoring via ASIO Direct Monitoring
+  - MIDI-controllable hardware mixer
+  - Settings stored on-card (persistent across restarts)
+  - Up to 3 HDSPe cards supported in any combination
+  - Compatible with optional HDSP TCO module for LTC and video synchronization
+  - Bundled software: TotalMix FX, DIGICheck, Settings utility
+  - Windows 10/11 driver (Intel x64, ARM 64-bit): v4.62
+  - macOS 11+ driver: Kernel Extension v4.25 or DriverKit v1.15
+io:
+  - name: AES/EBU I/O (D-sub, channels 1-8)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: AES/EBU I/O (expansion board, channels 9-16)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: MIDI Input 1 (via expansion board breakout)
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Output 1 (via expansion board breakout)
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Input 2 (via expansion board breakout)
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Output 2 (via expansion board breakout)
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: PCI Express (host)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+versions:
+  - name: HDSPe AES
+links:
+  - type: resource
+    title: HDSPe AES Manual v2.1 (06/2021)
+    url: https://www.rme-audio.de/downloads/hdspeaes_e.pdf

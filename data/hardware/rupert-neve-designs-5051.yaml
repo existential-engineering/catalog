@@ -1,0 +1,78 @@
+id: SqOpmuD69_yfkllvT-sE4
+name: Shelford 5051 Inductor EQ / Compressor
+manufacturer: rupert-neve-designs
+primaryCategory: equalizer
+categories:
+  - compressor
+  - dynamics
+  - channel-strip
+  - outboard
+url: https://rupertneve.com/products/5051
+description: A 1-slot Shelford Series module pairing a three-band inductor
+  equalizer with a VCA compressor. Designed for the 5088 console's penthouse, it
+  combines custom-wound inductors and audio transformers with a fully discrete
+  class-A signal path to deliver classic Neve tone alongside modern flexibility.
+details: |-
+  The Shelford 5051 is a single-slot Shelford Series module that mounts in the 5088 console's penthouse section, combining a three-band inductor EQ with a VCA-based compressor.
+
+  The EQ section uses custom-wound inductors that saturate to produce musical harmonics, distinguishing it from typical capacitor-based parametric designs. Low and High bands offer Peak/Shelf selection, the Mid band is a parametric with Hi-Q option, and an 18 dB/octave HPF (60 Hz or 120 Hz) rounds out the tonal shaping.
+
+  The VCA compressor offers continuously variable threshold, ratio, attack, release and make-up gain, with selectable Feed-Forward/Feed-Back topology and RMS/Peak detection. A 250 Hz side-chain HPF prevents low-frequency content from triggering excessive gain reduction. An EQ Pre/Post switch reorders the EQ relative to the compressor, and a Link function ties two 5051 modules together for stereo operation.
+
+  Dual 8-segment LED meters display gain reduction and output level. The unit accepts line-level input via a Line Select switch (Line 1 / Line 2) and is powered by ±24V rails from an external 25-way 2U rack-mount supply. Made in the USA.
+specs: |-
+  - EQ Low Band: 30, 60, 100, 220 Hz; ±15 dB; Peak/Shelf selectable
+  - EQ Mid Band: 200, 350, 700, 1.5k, 3k, 6 kHz; ±15 dB; Hi-Q selectable
+  - EQ High Band: 8, 16 kHz; ±15 dB; Peak/Shelf selectable
+  - HPF: 18 dB/octave; 60 Hz or 120 Hz corner
+  - EQ Noise: better than -92 dBu
+  - EQ Max Input/Output: +24.5 dBu (20 Hz-20 kHz)
+  - EQ THD+N @ 1 kHz: better than 0.007%
+  - Compressor: VCA topology; Feed-Forward/Feed-Back, RMS/Peak selectable
+  - Compressor Threshold: -30 dBu to +20 dBu (continuously variable)
+  - Compressor Ratio: 1.1:1 to 40:1 (continuously variable)
+  - Compressor Attack: 5 ms to 75 ms
+  - Compressor Release: 100 ms to 2.5 s
+  - Make-up Gain: -6 dB to +20 dB
+  - Side-chain HPF: 250 Hz
+  - Main Line Input frequency response: -3 dB @ 2.5 Hz, -3 dB @ 125 kHz
+  - Power: ±24V rails from external 25-way 2U rack-mount supply
+  - Dimensions: 1.75" W x 8.75" D x 9.4" H (4.5 x 22.2 x 23.9 cm)
+  - Weight: 3.5 lbs (1.6 kg)
+  - Made in USA
+io:
+  - name: Line 1 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Line 2 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Link
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: User Manual (Rev E)
+    url: https://www.rupertneve.com/s/775-000145051-Manual_RevE.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://www.rupertneve.com/s/5051-recall_RND.pdf

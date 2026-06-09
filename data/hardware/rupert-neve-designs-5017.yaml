@@ -1,0 +1,89 @@
+id: -HRB2xVVaD8xYIH8UbahX
+name: Portico 5017 Mobile Pre
+manufacturer: rupert-neve-designs
+primaryCategory: preamp
+categories:
+  - di-box
+  - compressor
+  - dynamics
+  - outboard
+url: https://rupertneve.com/products/5017
+description: The Portico 5017 is a rugged, portable two-channel unit combining a
+  world-class transformer-coupled microphone preamp, a high-impedance instrument
+  DI, and a 2:1 compressor in a single chassis. Vari-phase, Silk, and DI/mic
+  blending controls make it a versatile tool for studio recording, location
+  work, and live performance.
+details: |-
+  Comprised of a rugged, portable chassis with world-class preamp, compressor and DI circuits as well as two channel operation, Vari-phase, Silk and DI/mic blending capabilities, the Portico 5017 is an innovative and powerful tool for recording or live performance.
+
+  The mic channel offers up to 66 dB of gain via a 12-way precision rotary switch, switchable +48 V phantom power, polarity invert, an 80 Hz / 12 dB-per-octave Bessel high-pass filter, and the Silk harmonic enhancement circuit derived from Rupert Neve's classic transformer designs.
+
+  The instrument channel features a high-impedance Hi-Z DI with continuously variable 0-30 dB gain, an instrument Thru output for routing to an amplifier, and a Blend control that mixes the DI and mic signals for simultaneous direct and mic'd capture of a single source. A Vari-phase control continuously rotates the phase of the mic input to align it with the DI signal.
+
+  A built-in 2:1 compressor with auto make-up gain can be internally jumpered to the mic or DI/Blend channel, with selectable Fast (40 ms attack / 40 ms release) or Slow (100 ms attack / 350 ms release) time constants.
+specs: |-
+  - Mic gain: 12-way precision rotary switch, Line 0 then Mic 0-66 dB in 6 dB steps
+  - Instrument gain: continuously variable 0 dB to 30 dB
+  - Phantom power: +48 V DC ±1%
+  - High-pass filter: 80 Hz, 12 dB/octave Bessel
+  - Compressor ratio: 2:1 (fixed), auto make-up gain
+  - Compressor threshold: continuously variable -20 dBu to +10 dBu
+  - Frequency response: -0.2 dB at 10 Hz, -3 dB at 160 kHz
+  - Maximum output level: +23 dBu, 20 Hz to 40 kHz
+  - THD+N at 1 kHz, +20 dBu output: better than 0.001%
+  - Noise (22 Hz - 22 kHz, 150 Ohm source) at unity gain: better than -100 dBu
+  - Equivalent input noise: better than -128 dBu
+  - Power: 12 VDC optimal (9-15 VDC acceptable), 1.0 A typical at 12 VDC, 12 W typical
+  - Dimensions: 6.5" W x 7.5" D x 2" H (16.5 x 19.1 x 5.1 cm)
+  - Weight: 3 lbs (1.4 kg)
+  - Made in the USA
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Instrument Thru
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Mic Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: DI/Blend Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: support
+    title: User Manual (PDF)
+    url: https://rupertneve.com/s/775-000015017-Manual_RevB-hya8.pdf
+  - type: resource
+    title: Recall Sheet (PDF)
+    url: https://rupertneve.com/s/5017-recall_RND.pdf

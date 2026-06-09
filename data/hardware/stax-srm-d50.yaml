@@ -1,0 +1,80 @@
+id: HUYmgWJ44_jk-DkVokNaT
+name: SRM-D50
+manufacturer: stax
+primaryCategory: headphone-amp
+categories:
+  - amplifier
+  - audio-interface
+description: A dedicated electrostatic earspeaker amplifier with an integrated
+  high-performance DAC that supports multiple digital and analog audio sources,
+  featuring DSD 5.6 MHz and PCM 384 kHz compatibility, a VU meter for signal
+  monitoring, and premium construction with an R-core transformer and
+  non-magnetic aluminum cover.
+specs: |-
+  - Frequency response: DC – 40 kHz (0, -3 dB)
+  - Rated input level: 130 mVr.m.s.
+  - Maximum input level: 30 V (RCA at minimum volume)
+  - Maximum output voltage: 400 Vr.m.s. (1130 Vp-p)
+  - Gain: 59 dB
+  - Harmonic distortion: 0.025% or less / 1 kHz – 10 kHz (SR-L series)
+  - Input impedance: 20 kΩ (RCA)
+  - Bias voltage: DC 580 V
+  - Mains voltage: AC 100 – 240 V 50/60 Hz
+  - Power consumption: 35 W
+  - Operating temperature: 0 to 35 °C (less than 90% humidity, non-condensing)
+  - Dimensions: 192 (W) x 67 (H) x 268 (D) mm
+  - Weight: 4.5 kg
+  - Digital input: USB Type B x 1, TOS x 1, COAX x 1
+  - Analog input: RCA x 1
+  - Maximum DSD support: 5.6 MHz
+  - Maximum PCM support: 384 kHz
+io:
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Bottom
+  - name: Optical (TOS)
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Bottom
+  - name: Coaxial (COAX)
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Line In L (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Line In R (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: AC Mains Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom
+  - name: Pro Bias Earspeaker Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top

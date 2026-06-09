@@ -1,0 +1,259 @@
+id: isjgyMhV6w5oYJg16tqVo
+name: HDSPe AIO Pro
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://rme-audio.de/hdspe-aio-pro.html
+description: 30-channel 192 kHz PCI Express audio interface card with analog
+  stereo I/O (XLR/RCA via breakout), ADAT, SPDIF coaxial, AES/EBU, MIDI, and a
+  high-power headphone output. Successor to the HDSPe AIO, with reworked
+  AK5572/AK4490 converters and SteadyClock FS.
+details: |-
+  The RME HDSPe AIO Pro is a 30-channel 192 kHz PCI Express audio interface card aimed at professional studio and broadcast use. It is positioned as the successor to the long-running HDSPe AIO, retaining the same broad I/O philosophy (one stereo analog pair plus a range of digital formats on a single PCIe slot) while completely reworking the analog signal path and clocking around the AK5572 ADC and AK4490 DAC reference designs derived from the ADI-2 Pro.
+
+  Analog I/O is a single balanced stereo input and a single balanced stereo output, broken out from D-Sub connectors to either RCA (standard breakout) or XLR (optional XLR breakout). Input sensitivity is switchable between +24, +19, +13 and +4 dBu, with output reference levels switchable per channel pair (+24/+19/+13/+4 dBu on XLR, +19/+13/+4/-2 dBu on RCA). A dedicated stereo headphone output is provided on a 6.3 mm TRS jack (with an optional locking Neutrik TRS variant); RME specifies up to 730 mW per channel at 0.1% THD into 32 Ohm, allowing the card to drive demanding headphones directly.
+
+  Digital I/O covers all three major two-channel formats plus optical multichannel: 1 x ADAT optical input/output (8 channels at 48 kHz, 4 at 96 kHz S/MUX, 2 at 192 kHz S/MUX4), 1 x SPDIF coaxial input/output on RCA, and 1 x AES/EBU input/output on XLR (transformer-balanced and galvanically isolated). A 5-pin DIN MIDI I/O with galvanic isolation, 128-byte FIFOs, and a hi-speed mode (<1 ms jitter and response time) is provided directly on the bracket. An optional Word Clock Module (WCM) adds a BNC word clock input and two BNC word clock outputs (with LTC support).
+
+  Clocking is handled by RME's SteadyClock FS, providing >50 dB jitter suppression at 2.4 kHz and a PLL designed to maintain zero dropouts even at incoming jitter above 100 ns. Supported sample rates run from 28 kHz to 200 kHz across the analog and digital paths. Selectable clock sources include Internal, ADAT In, SPDIF In, Sync In, and the optional Word Clock In/LTC. The card ships with the full TotalMix FX mixer (760 channels, 42-bit internal resolution) for low-latency monitoring, routing, and onboard DSP processing.
+
+  Driver support covers macOS 11+ (kernel extension) and macOS 12+ (DriverKit), Windows 10/11 x64/ARM64, and legacy Windows WDM/ASIO builds, with companion TotalMix FX, TotalMix Remote, and DigiCheck NG software. The HDSPe AIO Pro targets installed studio rigs and broadcast workstations where a single PCIe slot must carry one analog stereo pair, a high-power headphone monitor, ADAT expansion, and AES/SPDIF format conversion with sample-accurate clocking.
+specs: |-
+  - 30-channel 192 kHz PCI Express audio interface card
+  - 24-bit resolution; sample rates 28 kHz to 200 kHz
+  - AK5572 ADC and AK4490 DAC reference processors (derived from ADI-2 Pro)
+  - TotalMix FX mixer: 760 channels, 42-bit internal resolution
+  - SteadyClock FS: >50 dB jitter suppression at 2.4 kHz
+  - PLL ensures zero dropouts at incoming jitter >100 ns
+  - Frequency response @ 192 kHz (-1 dB): 2 Hz to 92 kHz
+  - SNR: 117-120 dBA at various input/output reference levels
+  - THD measurements: -114 dB to -97 dB depending on configuration
+  - Analog input sensitivity switchable: +24 / +19 / +13 / +4 dBu
+  - Analog output reference (XLR): +24 / +19 / +13 / +4 dBu
+  - Analog output reference (RCA): +19 / +13 / +4 / -2 dBu
+  - Input impedance: 18 kOhm (RCA); 36 kOhm balanced / 18 kOhm unbalanced (XLR)
+  - Output impedance: 75 Ohm @ +19/+13 dBu; 80 Ohm @ +4/-2 dBu
+  - Headphone output: 6.3 mm TRS jack, stereo, unbalanced (optional Neutrik locking TRS with XLR breakout)
+  - Headphone max power: 730 mW per channel @ 0.1% THD, 32 Ohm load
+  - 1 x ADAT optical I/O: 8 channels @ 48 kHz, 4 channels @ 96 kHz (S/MUX), 2 channels @ 192 kHz (S/MUX4)
+  - 1 x SPDIF coaxial I/O on RCA: Single Wire, 28 kHz to 200 kHz
+  - 1 x AES/EBU I/O on XLR: transformer-balanced, galvanically isolated
+  - Digital input lock range (AES/EBU, SPDIF): 28 kHz to 200 kHz
+  - Digital input lock range (ADAT): 31.5 kHz to 50 kHz
+  - High-sensitivity digital input stages (<0.3 Vss)
+  - 1 x MIDI I/O on 5-pin DIN, galvanically isolated, 128-byte FIFOs, hi-speed mode <1 ms jitter/response
+  - Clock sources: Internal, ADAT In, SPDIF In, Sync In, optional Word Clock In / LTC
+  - Optional Word Clock Module (WCM): 1 x BNC word clock input, 2 x BNC word clock outputs
+  - Bus: PCI Express (PCIe) internal card
+  - Driver support: macOS 11+ (Kernel Extension), macOS 12+ (DriverKit), Windows 10/11 x64/ARM64, legacy Windows WDM/ASIO
+io:
+  - name: Analog Line Input L (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Input R (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Output L (RCA)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Output R (RCA)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Input L (XLR, optional)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Input R (XLR, optional)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Output L (XLR, optional)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Output R (XLR, optional)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: ADAT Optical Input
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: ADAT Optical Output
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: SPDIF Coaxial Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: SPDIF Coaxial Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: MIDI Input
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Output
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Input (optional WCM module)
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 1 (optional WCM module)
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 2 (optional WCM module)
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+versions:
+  - name: HDSPe AIO Pro
+links:
+  - type: resource
+    title: HDSPe AIO Pro Manual (v1.0, 10/2020)
+    url: https://www.rme-audio.de/downloads/hdspeaiopro_e.pdf
+  - type: resource
+    title: Word Clock Module (WCM) Manual
+    url: https://archiv.rme-audio.de/download/9632wcm_e.pdf
+  - type: resource
+    title: macOS 11+ Kernel Extension Driver v4.25
+    url: https://rme-audio.de/downloads/driver_hdspe_mac_425.zip
+  - type: resource
+    title: Windows 10/11 x64/ARM64 Driver v4.62
+    url: https://rme-audio.de/downloads/driver_hdsp_win_462.zip
+  - type: resource
+    title: Windows WDM/ASIO Driver v4.50
+    url: https://rme-audio.de/downloads/driver_hdsp_win_450.zip
+  - type: resource
+    title: Windows Driver v4.36
+    url: https://rme-audio.de/downloads/driver_hdsp_win_436.zip
+  - type: resource
+    title: HDSPe x86 Driver v2.72
+    url: https://rme-audio.de/downloads/hdspe_x86_272.zip
+  - type: resource
+    title: HDSPe x86 Driver v4.17
+    url: https://rme-audio.de/downloads/hdspe_x86_417.zip
+  - type: resource
+    title: macOS Flash Update Tool
+    url: https://rme-audio.de/downloads/fut_mac_dspe.zip
+  - type: resource
+    title: Windows Flash Update Tool
+    url: https://rme-audio.de/downloads/fut_wdm_dspe.zip
+  - type: resource
+    title: TotalMix FX for macOS v2.03/1.991
+    url: https://rme-audio.de/downloads/tmfx_203_1991_mac.zip
+  - type: resource
+    title: TotalMix FX for Windows v2.03/1.991
+    url: https://rme-audio.de/downloads/tmfx_203_1991_win.zip
+  - type: resource
+    title: TotalMix FX for macOS v1.99
+    url: https://rme-audio.de/downloads/tmfx_mac_199.zip
+  - type: resource
+    title: TotalMix FX for Windows x64 v1.99
+    url: https://rme-audio.de/downloads/tmfx_winx64_199.zip
+  - type: resource
+    title: TotalMix FX for Windows x86 v1.99
+    url: https://rme-audio.de/downloads/tmfx_win32_199.zip
+  - type: resource
+    title: TotalMix FX for Windows Arm64 v1.99
+    url: https://rme-audio.de/downloads/tmfx_win_arm64_199.zip
+  - type: resource
+    title: TotalMix Remote for macOS
+    url: https://rme-audio.de/downloads/tmfx_mac_remote.zip
+  - type: resource
+    title: TotalMix Remote for Windows
+    url: https://rme-audio.de/downloads/tmfx_win_remote.zip
+  - type: resource
+    title: DigiCheck NG for macOS v0.93
+    url: https://www.rme-audio.de/downloads/digicheck_ng_mac_093.zip
+  - type: resource
+    title: DigiCheck NG for Windows v0.93
+    url: https://www.rme-audio.de/downloads/digicheck_ng_win_093.zip
+  - type: resource
+    title: DigiCheck for Windows
+    url: https://rme-audio.de/downloads/dc_596_win.zip
+  - type: resource
+    title: Product Images ZIP
+    url: https://www.rme-usa.com/downloads.html?file=files/downloads/Media-Material/RME_HDSPe_AIOpro_Images.zip

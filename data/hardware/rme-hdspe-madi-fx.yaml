@@ -1,0 +1,163 @@
+id: PTdNJdya-oSKNSHYZWvV_
+name: HDSPe MADI FX
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://rme-audio.de/hdspe-madi-fx.html
+description: 390-channel triple MADI PCI Express card with three MADI I/Os (two
+  optical, one coaxial), AES/EBU I/O, analog stereo monitoring output, word
+  clock I/O, and four MIDI I/Os, built on a new modular Hammerfall Pro Audio
+  Core with ultra-low latencies down to 32 samples and a 4096-channel TotalMix
+  FX engine.
+details: |-
+  The RME HDSPe MADI FX is a 390-channel triple MADI PCI Express card positioned as a new milestone in audio interface card design. It carries three independent MADI I/Os (two optical on SC multi-mode and one coaxial on 75 Ohm BNC), an AES/EBU I/O, a dedicated analog stereo monitoring output, a word clock I/O, and four MIDI I/Os (one external via breakout cable plus three internal virtual ports for embedding MIDI inside MADI streams).
+
+  The card is built around a newly developed modular Hammerfall Pro Audio Core that supports ultra-low latencies down to 32 samples. Channel capacity scales with sample rate: 192 inputs and 192 outputs at 44.1/48 kHz, 96/96 at 96 kHz, and 48/48 at 192 kHz, with the MADI ports operating from 32 kHz to 96 kHz and the word clock port from 27 kHz to 200 kHz. SteadyClock provides active jitter suppression for sub-1 ns internal and input jitter, and clocking is handled by RME's automatic and intelligent master/slave logic with sync sources of MADI coaxial, MADI optical, AES/EBU, word clock, and internal.
+
+  The analog monitoring output delivers 110 dB RMS unweighted (113 dBA) signal-to-noise at 44.1 kHz, greater than 100 dB channel separation, 75 Ohm output impedance, and +13 dBu at 0 dBFS into a 6.3 mm TRS jack. The word clock output drives 4 Vpp into 75 Ohms with short-circuit protection.
+
+  TotalMix FX provides a 4096-channel mixer with a 192 kHz RMS effects engine including EQ, Reverb, Dynamics, and Delay, plus a Room EQ with 9-band PEQ, Volume Calibration, and Crossfeed. Matrix routing is optimized for MADI applications, and Seamless Redundancy Operation (SRO) enables failsafe recording across MADI ports. DIGICheck is included as a professional metering and analysis toolbox with EBU R128, and MIDI over MADI enables remote control across long distances.
+
+  The card is offered as a 1-lane PCI Express endpoint (revision 1.1, 2.5 Gbps line speed, up to 500 MB/s transfer rate). An optional OPTO-X expansion board replaces the coaxial MADI I/O with an additional optical MADI I/O, yielding three optical MADI I/Os in total.
+specs: |-
+  - 390-channel triple MADI PCI Express card
+  - 1-Lane PCI Express Endpoint device (revision 1.1)
+  - PCIe line speed: 2.5 Gbps
+  - Up to 500 MB/s transfer rate
+  - Supported sample rates: 44.1, 48, 88.2, 96, 176.4, 192 kHz, variable (Sync/word clock)
+  - MADI sample rate range: 32 kHz - 96 kHz
+  - Word clock range: 27 kHz - 200 kHz
+  - Channel capacity at 44.1/48 kHz: 192 inputs / 192 outputs
+  - Channel capacity at 96 kHz: 96 inputs / 96 outputs
+  - Channel capacity at 192 kHz: 48 inputs / 48 outputs
+  - Jitter: < 1 ns (internal and all inputs)
+  - Phones signal-to-noise: 110 dB RMS unweighted, 113 dBA @ 44.1 kHz
+  - Channel separation: > 100 dB
+  - Phones output impedance: 75 Ohm
+  - Phones output level at 0 dBFS: +13 dBu
+  - Word clock output: 4 Vpp into 75 Ohms, short-circuit-proof
+  - Automatic and intelligent master/slave clock control
+  - Sync sources: MADI coaxial, MADI optical, AES/EBU, word clock, internal
+  - 2 x MADI optical I/O (SC industry standard, multi-mode)
+  - 1 x MADI coaxial I/O on 75 Ohm BNC
+  - 1 x AES/EBU I/O
+  - 1 x Word Clock I/O on BNC, switchable termination
+  - 4 x MIDI I/O (1 external via breakout cable, 3 internal virtual ports)
+  - 1 x Phones Output (6.3 mm TRS stereo monitor)
+  - SteadyClock active jitter suppression
+  - TotalMix FX: 4096-channel mixer with EQ, Reverb, Dynamics, and Delay
+  - 192 kHz RMS effects engine
+  - Room EQ with 9-band PEQ, Volume Calibration, Crossfeed
+  - Matrix routing for MADI applications
+  - Seamless Redundancy Operation (SRO) for failsafe recording
+  - Hide setups functionality for channel management
+  - DIGICheck professional metering and analysis toolbox with EBU R128
+  - MIDI over MADI for remote control across distances
+  - Automatic channel deactivation for unused channels
+  - Ultra-low latencies down to 32 samples
+io:
+  - name: MADI Optical Input 1
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical Output 1
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical Input 2
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical Output 2
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Coaxial Input
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: MADI Coaxial Output
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: MIDI Input
+    signalFlow: input
+    category: digital
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Output
+    signalFlow: output
+    category: digital
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: Phones Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: PCI Express x1
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+versions:
+  - name: HDSPe MADI FX
+links:
+  - type: resource
+    title: HDSPe MADI FX Manual (v2.1, 02/2026)
+    url: https://www.rme-audio.de/downloads/hdspemadifx_e.pdf

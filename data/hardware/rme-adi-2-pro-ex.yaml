@@ -1,0 +1,155 @@
+id: gIXDXfnzuoLYa9tJv96y1
+name: ADI-2 Pro EX
+manufacturer: rme
+primaryCategory: audio-interface
+categories:
+  - headphone-amp
+  - digital
+url: https://rme-audio.de/converter/adi-2-pro-ex.html
+description: Ultra-Fidelity PCM/DSD 768 kHz AD/DA Converter with dual Extreme
+  Power headphone outputs, multi-format digital I/O, and Class Compliant USB-C.
+details: |-
+  The ADI-2 Pro EX represents the next evolution of RME's all-in-one reference converter concept. Building on the proven design of the ADI-2 Pro FS R Black Edition, the new ADI-2 Pro EX offers professional users the famous, comprehensive functionality of the previous reference converter, but now updated with a redesigned chassis, enhanced output performance, and further comprehensive hardware protection.
+
+  Like the ADI-2 Pro, the ADI-2 Pro EX combines several devices in one: a high-end studio-quality AD/DA converter, a dual headphone amplifier, a multi-format converter (AES, SPDIF, ADAT) with monitoring features, a DSD recording and playback converter as well as an AD/DA frontend for audio measurements with up to 768 kHz sample frequency. The unit is equipped with the AK5574 ADC and the AK4493 DAC.
+
+  The ADI-2 Pro EX includes two servo-balanced analog inputs on combo XLR / TRS jacks, two separate balanced and unbalanced outputs on XLR and TRS, two stereo Extreme Power headphone outputs on the front, an optical SPDIF I/O that also understands ADAT, and coaxial SPDIF (RCA) and AES I/O (XLR) via an included breakout cable. The USB-C port is fully Class Compliant (UAC 2) for connection with compatible iOS devices, and is also used for firmware updates.
+
+  RME further improved the Extreme Power headphone output stage to ensure the full performance of its premium DAC is available at the headphone outputs, including with demanding low-impedance headphones. For balanced headphone operation, RME created its proprietary Advanced Balanced mode, which provides a direct balanced signal path from the DAC to the headphones, improving overall audio performance through enhanced signal quality and optimized frequency response.
+
+  As a computer interface the ADI-2 Pro EX offers a stereo (2 in / 2 out) and a multichannel mode (6 in / 8 out). Compatibility with macOS comes right out of the box. Under Windows the ADI-2 Pro EX uses RME's MADIface series driver, for full WDM and ASIO compatibility. The new Trigger Out socket provides a 12 V switching signal via 3.5 mm mono jack plug, which can be used to switch power amps with Trigger In on and off together with the ADI-2 Pro EX.
+specs: |-
+  - ADC: AK5574
+  - DAC: AK4493
+  - Max Sample Rate (PCM): 768 kHz
+  - DSD Support: DSD256 / 11.2 MHz (record and Direct DSD playback)
+  - Clock: SteadyClock FS
+  - Computer Modes: Stereo (2 in / 2 out) or Multichannel (6 in / 8 out)
+  - USB: USB-C, UAC 2 Class Compliant, lockable
+  - Power: External switched lockable PSU (NT-RME-13 included)
+  - Display: High-resolution IPS display with 5-band parametric EQ, 30-band spectral analyzer
+  - Trigger Out: 12 V switching signal via 3.5 mm mono jack
+io:
+  - name: Analog Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output L (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output R (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Phones Output 1 (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Phones Output 2 (3.5mm)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Optical SPDIF / ADAT In
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: Optical SPDIF / ADAT Out
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: Coaxial SPDIF I/O (via breakout)
+    signalFlow: bidirectional
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU I/O (via breakout)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: USB-C (Class Compliant)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - name: Trigger Out (12V)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+versions:
+  - name: ADI-2 Pro EX
+links:
+  - type: resource
+    title: Product Images (ZIP)
+    url: https://www.rme-usa.com/downloads.html?file=files/downloads/Media-Material/RME_ADI-2-Pro-EX_Images.zip
+  - type: resource
+    title: DigiCheck NG (macOS)
+    url: https://www.rme-audio.de/downloads/digicheck_ng_mac_093.zip
+  - type: resource
+    title: DigiCheck NG (Windows)
+    url: https://www.rme-audio.de/downloads/digicheck_ng_win_093.zip
+  - type: resource
+    title: Downloads
+    url: https://rme-audio.de/downloads.html
+  - type: resource
+    title: MRC Remote Control
+    url: https://rme-audio.de/mrc.html
