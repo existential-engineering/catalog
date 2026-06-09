@@ -1,0 +1,92 @@
+id: 85Faj07VkNTWQdvk5Bmxa
+name: Portacapture X6
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/portacapture_x6
+description: 6-channel 32-bit float portable audio field recorder with 2.4-inch
+  color touchscreen and app-like preset operation. Records up to 6 simultaneous
+  tracks (4 inputs plus stereo mix) at up to 96kHz with dual A/D converters,
+  built-in switchable stereo microphones, and two XLR/TRS combo inputs with
+  phantom power. Doubles as a driverless 6-in/2-out USB-C audio interface.
+  Recording presets cover podcasting, music, voice, field recording, ASMR, and
+  more.
+details: |-
+  Portable 6-track 32-bit float field recorder with 2.4-inch color touchscreen. Two XLR/TRS combo inputs (switchable 24V/48V phantom; XLR mic max +2 dBu, line max +24 dBu). 3.5mm EXT/Mic input with plug-in power. Switchable built-in stereo mics (A-B/X-Y). USB-C: driverless 6-in/2-out audio interface (24-bit, 96kHz). Seven preset recording apps: Podcast, Music, Voice, Field, Manual, PocketStudio, ASMR. Onboard DSP: compressor, limiter, EQ, reverb. Optional AK-BT1 Bluetooth adapter for Portacapture Control app and Atomos timecode sync. Powered by 4× AA batteries (5.5–22 hours), USB bus power, or optional PS-P520U AC adapter.
+specs: |-
+  - - Built-in mics: switchable A-B/X-Y; max SPL 125dB
+  - XLR/TRS combo inputs: 2×; +48V/+24V phantom; mic max +2 dBu, EIN; line max +24 dBu nominal +4 dBu
+  - EXT/Mic: 3.5mm, plug-in power; max 0dBV; impedance ≥10kΩ (PIP off) / 1.8kΩ (on)
+  - Line out: 3.5mm; nominal -14dBV, max +6dBV; impedance 210Ω
+  - Headphone: 3.5mm; 45mW+45mW (32Ω)
+  - USB-C: USB 2.0 Hi-Speed; 6-in/2-out 24-bit up to 96kHz
+  - Recording media: microSD/SDHC/SDXC up to 512GB (Class 10+)
+  - Formats: WAV/BWF 44.1/48/96kHz 16/24/32-bit float; MP3
+  - Dynamic range: ≥112dB; freq response: 20Hz–20kHz ±0.3dB (48kHz)
+  - Power: 4× AA batteries (5.5–22h) or USB bus power; consumption: 7.5W max
+  - Dimensions: 75(W) x 174.3(H) x 37.2(D) mm; weight: 365g (with batteries)
+io:
+  - name: Built-in Stereo Microphone L
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Top
+  - name: Built-in Stereo Microphone R
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Top
+  - name: XLR/TRS Combo Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: XLR/TRS Combo Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: EXT/Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: USB-C Audio / Data
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: microSD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Right

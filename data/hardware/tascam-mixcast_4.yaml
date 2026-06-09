@@ -1,0 +1,146 @@
+id: bxUAr5To4r04r2rCtJTAR
+name: Mixcast 4
+manufacturer: tascam
+primaryCategory: mixer
+categories:
+  - digital
+url: https://tascam.com/us/product/mixcast_4
+description: All-in-one podcast mixer, recorder, USB audio interface, and
+  streamer supporting up to 7 people. Features 4 XLR/TRS combo mic inputs with
+  auto-mix, 4 independent headphone outputs, 14-track multitrack recording to SD
+  card, a 5-inch color touchscreen, customizable sound pads with real-time
+  effects, Bluetooth audio, and USB-C connectivity as a 14-in/2-out USB audio
+  interface.
+details: |-
+  Podcast-focused mixer/recorder for up to 7 participants. 4 XLR/TRS combo inputs with auto-mix, EQ, compressor, and de-esser per channel. 4 independent 1/4" headphone outputs each with individual mix. Balanced stereo line in (L/R) plus TRRS smartphone jack for caller audio with mix-minus feedback loop. Monitor outputs (L/R balanced TRS). 5-inch color touchscreen with per-channel control. Sound pads: up to 12 customizable clips with real-time effects. 14-track SD card recording (WAV 48kHz/24-bit). USB-C: 14-in/2-out USB Audio Class 2.0. Bluetooth A2DP (SBC/AAC, ~10m) for wireless phone audio. Talkback function. Compatible with TASCAM Podcast Editor software. Powered via DC barrel adapter (PS-P1220E NUT) or USB-C.
+specs: |-
+  - - Mic inputs: 4× XLR/TRS combo; EIN ≤−125dBu; gain range 66.5dB; 2.1kΩ; max +10dBu
+  - Line In: 1/4" TRS balanced L/R; max +24dBu; TRRS 3.5mm max +8dBV
+  - Monitor Out: 1/4" TRS balanced L/R; max +20dBu
+  - Headphone: 4× 1/4"; 45mW+45mW @ 16–600Ω
+  - USB-C: USB 2.0 Hi-Speed, Audio Class 2.0; 14-in/2-out; 48kHz 24-bit
+  - Bluetooth: Class 2, A2DP, SBC/AAC (~10m)
+  - Recording: WAV (BWF) 48kHz 24-bit; SD/SDHC/SDXC up to 512GB
+  - S/N: 101dB; THD: 0.003%; freq response: 20Hz–20kHz ±0.3dB
+  - Power: DC 12V 12.5W max (barrel) or USB-C
+  - Dimensions: 374.8(W) × 56.5(H) × 263.6(D) mm; weight: 2.55kg
+io:
+  - name: Mic/Line Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Line In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Smartphone In (TRRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Smartphone Out (TRRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output 1
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output 3
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output 4
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Monitor Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Monitor Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: USB-C Audio / Power
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - name: SD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

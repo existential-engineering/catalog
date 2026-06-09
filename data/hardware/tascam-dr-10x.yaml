@@ -1,0 +1,53 @@
+id: r3OZ3cuEh1Om7DyLmuboU
+name: DR-10X
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/dr-10x
+description: Compact plug-on field recorder that attaches directly to handheld
+  XLR microphones via a locking XLR connector, eliminating additional cables.
+  Records 24-bit/48kHz WAV/BWF mono audio with a dual recording backup track at
+  lower levels. Designed for news gathering, interviews, and broadcast capture,
+  with automatic gain control, limiter, low-cut filter, and automatic file
+  closing to protect recordings on battery depletion. Supports microSD/SDHC
+  cards up to 32GB.
+details: |-
+  Plug-on XLR recorder. Locking XLR-3-31 input (impedance ≥10kΩ) with LOW/MID/HIGH gain settings. Dual recording function simultaneously records a backup track at a lower level. Sliding record switch with hold to prevent accidental stops. Automatic file closing protects recordings on battery depletion. Built-in clock for BWF time-stamped files. Records 44.1 or 48kHz, 16 or 24-bit WAV (BWF) or MP3 (128/192kbps). USB Micro-B for mass storage and bus power. Single AAA battery (~10 hours on alkaline).
+specs: |-
+  - - XLR input: XLR-3-31 locking, impedance ≥10kΩ; gain LOW/MID/HIGH
+  - Headphone: 3.5mm stereo mini (dual mono)
+  - USB: Micro-B, USB 2.0 High Speed, mass storage class
+  - Recording media: microSD/SDHC up to 32GB
+  - Formats: WAV/BWF 44.1/48kHz 16/24-bit; MP3 128/192kbps
+  - Power: 1× AAA battery (~10h alkaline) or USB bus power
+  - Dimensions: 52(W) x 94.4(H) x 28(D) mm; weight: 68.3g (with battery)
+io:
+  - name: XLR Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: USB Data / Bus Power
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: microSD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Left

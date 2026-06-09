@@ -1,0 +1,270 @@
+id: J-1M3w7Sik4MekNZxxeJd
+name: Model 16
+manufacturer: tascam
+primaryCategory: mixer
+categories:
+  - analog
+  - digital
+  - midi
+url: https://tascam.com/us/product/model_16
+description: 16-channel live recording mixer and USB audio interface with 10
+  Ultra HDDA mic preamps and +48V phantom power. Features 16-track multitrack
+  recording to SD card at up to 48kHz/24-bit, 16-in/14-out USB 2.0 audio
+  interface, built-in Bluetooth 5.0 for wireless audio streaming, 1-knob
+  compressors and 3-band sweepable EQ on channels 1–8, 16 editable
+  multi-effects, and a 4-band master EQ. Designed for small-format live
+  performance, rehearsal recording, and studio production.
+details: |-
+  16-channel analog mixing console with integrated 16-track multitrack recorder and 16-in/14-out USB audio interface. Channels 1–8: Ultra HDDA mic preamps (+48V phantom, gain 0–50dB), 1-knob compressors, 3-band sweepable EQ (mid 100Hz–8kHz), 100Hz low-cut filter; CH1–2 add dedicated 1MΩ instrument direct inputs and insert points. Stereo pairs CH9/10 and CH11/12: XLR/TRS combo jacks (mic or line). CH13/14: RCA unbalanced stereo pair. CH15/16: 1/8" stereo mini jack (also receives Bluetooth audio). Multitrack recorder: 16 tracks (14 channels + stereo mix) to SD/SDHC/SDXC at 44.1/48kHz, 16/24-bit WAV. Outputs: Main XLR L/R, Sub/Monitor/FX/Control Room each balanced TRS L/R pair, single 1/4" headphone (80mW+80mW, 32Ω). 16 editable multi-effects. DAW control via HUI/MCU. Footswitch input for RC-1F (punch-in/out, effect bypass).
+specs: |-
+  - - Mic inputs: CH1–8 XLR/TRS combo; gain 0–50dB; EIN -127 dBu; +48V phantom; CH9/10, 11/12 XLR/TRS combo
+  - Inst inputs: CH1–2 TS 1MΩ; line inputs CH1–8 TRS +22dBu max, 22kΩ
+  - RCA input: unbalanced; 1/8" stereo input: unbalanced
+  - Insert CH1–2: TRS; send max +18dBu, 100Ω; return max +18dBu, 10kΩ
+  - Main out: XLR balanced +22dBu max, 100Ω; Sub/Monitor/FX/CR: TRS +16dBu, 100Ω
+  - Headphone: 1/4"; 80mW+80mW @ 32Ω
+  - USB: Type-B, 2.0 High-Speed, Audio Class 2.0; 16-in/14-out 44.1/48kHz 16/24-bit
+  - Bluetooth: v5.0 Class 2, A2DP/AVRCP, SBC/AAC
+  - Recording: WAV (BWF) 16/24-bit 44.1/48kHz; SD/SDHC/SDXC up to 512GB
+  - S/N: -100dBu (MAIN OUT); THD: ≤0.004%; EIN: -127dBu
+  - Power: AC 100–240V 50/60Hz 40W
+  - Dimensions: 430(W) × 112.9(H) × 463(D) mm; weight: 7.0kg
+io:
+  - name: Mic/Line Input CH1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input CH2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input CH3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input CH4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input CH5
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input CH6
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input CH7
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input CH8
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input CH9/10 L
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input CH9/10 R
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input CH11/12 L
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input CH11/12 R
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Instrument Input CH1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Instrument Input CH2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Insert CH1
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Insert CH2
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: RCA Input L (CH13)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: RCA Input R (CH14)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Stereo Input (CH15/16)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Main Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Main Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Sub Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Sub Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Monitor Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Monitor Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: FX Send Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: FX Send Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Control Room Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Control Room Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: USB Audio Interface
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: SD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Left
+  - name: Footswitch
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right

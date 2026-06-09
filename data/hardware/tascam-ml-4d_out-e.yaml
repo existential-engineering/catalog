@@ -1,0 +1,84 @@
+id: YWT-rs2ywu77Ssr4OlLt7
+name: ML-4D/OUT-E
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - digital
+url: https://tascam.com/us/product/ml-4d_out-e
+description: Compact half-rack Dante analog output interface that converts
+  4-channel Dante network audio to four balanced analog line outputs via
+  Euroblock connectors. Features a built-in 4-in/4-out DSP matrix mixer with
+  ducking, ambient noise compensation, 10-band EQ, high/low-pass filters, delay,
+  and limiter. Supports up to 50 scene presets and is powered via Power over
+  Ethernet (PoE Class 0) or an optional external AC adapter. Designed for
+  professional installation and contractor audio systems.
+details: |-
+  Half-rack Dante analog output converter (214×44.45×136.1mm, 863g). Receives 4 Dante channels and outputs them as 4 balanced analog line signals via Euroblock (3.81mm pitch) connectors. Built-in 4-in/4-out DSP matrix mixer includes 10-band parametric EQ, high/low-pass filters, variable delay, limiter, ducking, and ambient noise compensation per output. GPI remote control via dedicated Euroblock header (10V/CONTROL/GND). Up to 50 scene presets. Dante daisy-chain supported across two RJ-45 Gigabit Ethernet ports. Controlled via TASCAM DCP CONNECT or TASCAM EZ CONNECT. Primary power via PoE Class 0; optional PS-P1220E DC adapter as fallback.
+specs: |-
+  - - Dante: 2× RJ-45 Gigabit Ethernet (1000BASE-T, Cat5e STP+), primary + secondary/daisy-chain; 4-in/4-out channels
+  - Analog outputs: 4× Euroblock 3.81mm pitch, balanced; nominal +4 dBu; max +15 to +24 dBu (switchable); output impedance ≤200Ω
+  - GPI control: Euroblock 3.81mm pitch (10V/CONTROL/GND)
+  - Sample rates: 44.1/48/88.2/96kHz; bit depth: 16/24-bit
+  - Freq response: ±0.5dB, 20Hz–20kHz (44.1/48kHz); 20Hz–40kHz (88.2/96kHz)
+  - THD+N: 0.002%; S/N: 108dB; crosstalk: 100dB; dynamic range: 108dB
+  - Power: PoE Class 0 (primary) or optional PS-P1220E DC adapter; consumption: 4W
+  - Dimensions: 214(W) x 44.45(H) x 136.1(D) mm; weight: 863g
+  - Operating temperature: 0–40°C
+io:
+  - name: Dante Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Dante Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Analog Line Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Analog Line Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: GPI Control
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

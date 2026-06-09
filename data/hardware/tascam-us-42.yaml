@@ -1,0 +1,102 @@
+id: ClmUiSc8af4TvwWwL0bUs
+name: MiNiSTUDIO CREATOR US-42
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/us-42
+description: Portable podcast station and USB audio interface for personal
+  broadcasting. Features 2 HDDA mic preamps with +48V phantom, a built-in
+  omnidirectional condenser microphone, 3 velocity-sensitive sound pads, DSP
+  effects (EQ, compressor, reverb), ducking function, and BROADCAST/CREATOR mode
+  switching. Supports 24-bit/96kHz and is iOS-compatible via Lightning-USB
+  camera adapter.
+details: |-
+  Tabletop podcast/broadcast interface with CREATOR and BROADCAST modes. 2 XLR/TRS combo inputs with HDDA preamps (+48V phantom, gain range 45dB, 2.4kΩ). Built-in omnidirectional condenser mic. 3 velocity-sensitive self-lighting PON trigger pads for custom sound clips. DSP: EQ, compressor, reverb per channel. Ducking: automatically reduces playback during mic input. USB DELAY up to 500ms for A/V sync. Loopback function for streaming. Direct monitoring (mono/stereo/off). iOS compatible via Apple Lightning-USB camera adapter (5V power via separate Micro-B). Compatible with Windows (ASIO 2.0/WDM) and Mac (Core Audio). USB bus-powered from computer.
+specs: |-
+  - - Mic inputs: 2× XLR/TRS combo; +48V phantom; gain range 45dB; 2.4kΩ; S/N ≥100dB; THD ≤0.005%
+  - Line out: RCA L/R; −10dBV nominal, +6dBV max; 200Ω
+  - Headphone: 1/4" and 3.5mm; 15mW+15mW
+  - USB: Type-B, USB 2.0 Hi-Speed, Audio Class 2.0
+  - Sample rates: 44.1/48/88.2/96kHz; 16/24-bit
+  - Freq response: 20Hz–20kHz ±1dB (44.1/48kHz); 20Hz–40kHz ±1dB (88.2/96kHz)
+  - Power: USB bus (computer) or DC 5V 700mA Micro-B (iOS); 1.5W
+  - Dimensions: 200(W) × 40(H) × 130(D) mm; weight: 500g
+io:
+  - name: Built-in Mic
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Headset Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Aux Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output (3.5mm)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: USB (Computer)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: DC Power In (iOS)
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,119 @@
+id: IjcQsPj5RaM19Zi2VIXbe
+name: Studio Bridge
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - analog
+  - digital
+  - midi
+url: https://tascam.com/us/product/studio_bridge
+description: 24-track multitrack recorder and 24-in/24-out USB audio interface
+  designed to bridge analog mixing consoles to DAW-based workflows. Connects via
+  three pairs of DB25 balanced analog connectors (TASCAM pin assignment),
+  records to SDXC card at up to 24-bit/48kHz, and provides USB Audio Class 2.0
+  interface capability. Supports DAW transport control via HUI/MCU protocol over
+  USB MIDI, includes MIDI DIN IN/OUT, a click output, headphone/local monitor
+  output, and a dual footswitch jack.
+details: |-
+  Rack-mountable (1U with optional AK-RMSTBG kit). 24-track SD card recorder: WAV/BWF at 44.1/48kHz, 16/24-bit, up to 512GB SDXC (Class 10+). 24-channel USB Audio Class 2.0 interface (USB 2.0 High-Speed). DB25 I/O follows TASCAM standard pin assignment; max level +24dBu, nominal +4dBu. DAW transport control via HUI/MCU over USB MIDI. MIDI DIN IN/OUT with USB MIDI. MTC output and MIDI clock with Song Position Pointer. Built-in metronome. Headphone output (80mW+80mW @ 32Ω). Dedicated Settings Panel app with Meter Bridge. DAW compatibility: Pro Tools, Logic Pro, Digital Performer, Cubase, Ableton Live, Cakewalk, Studio One, REAPER, Cubasis 3.3. OS support: Windows 10/11, macOS Ventura+, iOS/iPadOS 16+.
+specs: |-
+  - - Analog I/O: 24 in / 24 out via 6× DB25 (TASCAM pin assignment); balanced; +24dBu max, +4dBu nominal; 10kΩ+ input, 200Ω output
+  - USB: Type-B, USB 2.0 High-Speed, Audio Class 2.0; 24-in/24-out; 44.1/48kHz 24-bit
+  - Recording: WAV (BWF), 44.1/48kHz, 16/24-bit, 24 tracks; SDXC up to 512GB Class 10
+  - MIDI: DIN 5-pin IN + OUT; HUI/MCU DAW control over USB
+  - Headphone: 6.3mm stereo; 80mW+80mW @ 32Ω
+  - Freq response: 20Hz–20kHz (+0.3/−0.7dB); dynamic range ≥100dB; THD+N ≤0.003%; crosstalk ≤−100dB
+  - Power: AC 100–240V 50/60Hz 20W
+  - Dimensions: 446.5(W) × 114.6(H) × 269.5(D) mm; weight: 4.5kg
+io:
+  - name: Analog Inputs 1–8
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Inputs 9–16
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Inputs 17–24
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Outputs 1–8
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Outputs 9–16
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Outputs 17–24
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: USB Audio / Control
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Click Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone / Local Monitor
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Footswitch
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right

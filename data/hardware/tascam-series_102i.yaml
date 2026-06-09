@@ -1,0 +1,104 @@
+id: cnh1Eg1-rI5PLTmTcnFUd
+name: Series 102i
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+  - midi
+url: https://tascam.com/us/product/series_102i
+description: 10-in/2-out USB audio/MIDI interface with angled tabletop design.
+  Features two XLR/TRS combo inputs with Ultra HDDA preamps (EIN −129dBu),
+  optical S/MUX expansion for up to 8 additional input channels, dual headphone
+  outputs, built-in DSP effects (reverb, compressor, 4-band EQ), and
+  24-bit/192kHz resolution. Compatible with Windows, Mac, and iOS.
+details: |-
+  Angled tabletop desktop USB interface. Combo inputs 1–2: Ultra HDDA preamps (EIN −129dBu, switchable mic/line/instrument, +48V phantom, gain 0–57dB). Optical input: TOSLINK, supports ADAT (8ch at 44.1/48kHz) or S/MUX (4ch at 88.2/96kHz, 2ch at 176.4/192kHz). Line outputs 1–2: 1/4" TRS balanced. Dual 1/4" headphone outputs with independent volume. Built-in DSP: reverb, compressor, 4-band EQ, zero-latency direct monitoring. TASCAM Control software for matrix mixing. USB 2.0 Hi-Speed Type-B. MIDI DIN 5-pin In/Out. DC 12V powered.
+specs: |-
+  - - Combo inputs: XLR/TRS; EIN ≤−129dBu; +48V phantom; gain 0–57dB; mic 1.5kΩ, line 10kΩ, instrument 1MΩ+
+  - Line out: 1/4" TRS balanced; 230Ω
+  - Headphone: 1/4"; 18mW+18mW @ 32Ω (83Ω source)
+  - Optical: TOSLINK ADAT 8ch / S/MUX 44.1–192kHz
+  - USB: Type-B, USB 2.0 Hi-Speed
+  - MIDI: 5-pin DIN IN + OUT
+  - Sample rates: 44.1/48/88.2/96/176.4/192kHz; 16/24-bit
+  - Freq response: 20Hz–20kHz ±0.4dB; THD 0.0016% (mic); S/N 109dB
+  - Power: DC 12V, 7.2W (barrel)
+  - Dimensions: 186(W) × 65(H) × 160(D) mm; weight: 1.1kg
+io:
+  - name: Combo Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Combo Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line Out 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Out 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output 1
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Optical In (S/MUX)
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 8
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

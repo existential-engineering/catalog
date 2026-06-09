@@ -1,0 +1,104 @@
+id: Ll-a7Z566B7CVXd1l-apm
+name: ML-32D
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - digital
+url: https://tascam.com/us/product/ml-32d
+description: 1U rackmount 32-channel Dante analog interface that bridges
+  balanced analog audio and Dante networked audio. Accepts and outputs 32
+  channels of balanced analog audio via four D-Sub 25-pin connectors
+  (AES59-2012) while simultaneously converting to and from up to 32 channels of
+  Dante audio. Features dual Dante ports for redundant network topologies,
+  selectable reference levels, and per-channel signal and overload indicators.
+  Designed for large-scale installations and flagship Dante I/O expansion.
+details: |-
+  1U rackmount 32-channel analog/Dante converter. 32 balanced analog inputs via 4× DB25 (AES59-2012, 8ch each) on the rear. 32 balanced analog outputs via 4× DB25 (AES59-2012, 8ch each) on the rear. Dual redundant Dante Gigabit Ethernet ports (primary + secondary). Reference level user-selectable via front panel: +15/+18/+20/+22/+24 dBu maximum. Per-channel signal and overload LED indicators on front panel. Compatible with Dante Controller software. Works with TASCAM BO-16DX/IN and BO-16DX/OUT breakout adapters for XLR fan-out.
+specs: |-
+  - - Analog inputs: 32 channels via 4× D-Sub 25-pin female (AES59-2012, 8 ch each); balanced; max level +15/+18/+20/+22/+24 dBu (switchable); nominal +4 or +6 dBu
+  - Analog outputs: 32 channels via 4× D-Sub 25-pin female (AES59-2012, 8 ch each); balanced; max level +15/+18/+20/+22/+24 dBu (switchable)
+  - Dante: 2× RJ-45 Gigabit Ethernet (1000BASE-T), primary + secondary redundant; 32-in/32-out at 44.1/48kHz; 16-in/16-out at 88.2/96kHz
+  - Bit depth: 24-bit; sample rates: 44.1/48/88.2/96kHz
+  - Frequency response: 20Hz–20kHz +0.1/–0.5dB; THD+N ≤0.001%; S/N ≥113dB; crosstalk ≥115dB
+  - Power: 100–240V AC, 50/60Hz; consumption: 22W
+  - Dimensions: 483(W) x 45(H) x 303.8(D) mm; weight: 3.5 kg
+  - Operating temperature: 0–40°C
+io:
+  - name: Analog Input A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Input B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Input C
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Input D
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Output A
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Output B
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Output C
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Output D
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Dante Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Dante Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,62 @@
+id: _1q2sM_3YOqkFoE3bYhwd
+name: DR-07X
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/dr-07x
+description: Compact 2-channel portable stereo field recorder with switchable
+  A-B and X-Y microphone configurations and USB audio interface capability.
+  Features built-in unidirectional condenser microphones rated to 125dB SPL,
+  records WAV/BWF at up to 96kHz/24-bit and MP3 to microSD, and functions as a
+  driverless USB audio interface. Includes chromatic tuner, six reverb presets,
+  variable speed playback, and up to 17.5 hours of battery life from two AA
+  batteries.
+details: |-
+  Handheld portable stereo recorder with adjustable microphone configuration. Built-in unidirectional condenser stereo mics with switchable A-B (wide stereo) and X-Y (focused stereo) positions. Max SPL: 125dB. Records to microSD/microSDHC/microSDXC (up to 128GB) as WAV/BWF (44.1/48/96kHz, 16/24-bit) or MP3 (32–320kbps). Functions as driverless USB audio interface (Micro-B, USB 2.0, 44.1/48kHz). External 3.5mm jack: unbalanced, plug-in power supported; nominal -20dBV, max -4dBV, impedance ≥18kΩ (PIP off) / ≥2kΩ (PIP on). Headphone: nominal -14dBV line, max 20mW+20mW (32Ω). Built-in features: chromatic tuner (C1–B6), 6 reverb presets, low-cut filter (40/80/120Hz), 2-second pre-record, peak reduction, limiter, speed control (0.5–2.0x), overdub. 128×64 LCD. 1/4-inch tripod mount. Powered by 2× AA batteries (~17.5 hours) or USB bus power.
+specs: |-
+  - - Built-in mics: switchable A-B/X-Y unidirectional condenser; max SPL 125dB
+  - External input: 3.5mm stereo mini jack, plug-in power; nominal -20dBV, max -4dBV; impedance ≥18kΩ
+  - Headphone output: 3.5mm stereo mini jack; nominal -14dBV; max 20mW+20mW (32Ω)
+  - USB: Micro-B, USB 2.0 High Speed (mass storage + audio); audio: 44.1/48kHz
+  - Recording media: microSD/microSDHC/microSDXC up to 128GB
+  - Formats: WAV/BWF 44.1/48/96kHz 16/24-bit; MP3 32–320kbps
+  - S/N: ≥94dB; THD: ≤0.01%; freq response: 20Hz–20kHz +0/–1dB (44.1/48kHz)
+  - Power: 2× AA batteries (~17.5h) or USB bus power; consumption: 1.7W max
+  - Dimensions: 68(W) x 158(H) x 26(D) mm; weight: 127g
+io:
+  - name: Built-in Stereo Microphones
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 2
+    position: Top
+  - name: External Mic/Line Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone/Line Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: USB Audio / Data
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Bottom
+  - name: microSD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Right

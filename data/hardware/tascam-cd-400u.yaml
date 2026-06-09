@@ -1,0 +1,127 @@
+id: sN8A0BZ1ZRyT6SMhQzIyJ
+name: CD-400U
+manufacturer: tascam
+primaryCategory: rack-mount
+categories:
+  - digital
+url: https://tascam.com/us/product/cd-400u
+description: 1U rack-mount media player supporting playback from CD, SD card,
+  USB flash drive, Bluetooth, and a built-in FM/AM tuner with 20 presets each.
+  Offers dual analog outputs — balanced XLR and unbalanced RCA — alongside a
+  front-panel headphone output and AUX input for portable devices. RS-232C
+  serial control and a wireless remote make it well-suited for fixed
+  installation environments.
+details: |-
+  1U rack-mount multi-source player for broadcast, installed sound, and commercial playback. Plays CD/CD-R/CD-RW, SD/SDHC cards (up to 32GB), and USB flash drives (up to 64GB) supporting CD-DA, MP3, WAV, AAC, and WMA. Bluetooth 4.2 (A2DP/AVRCP, SBC/AAC/aptX) for wireless streaming. Built-in FM tuner (87.5–108.0MHz, F-type connector) and AM tuner (522–1,629kHz, 2-pin terminal) with 20 presets each and dedicated tuner RCA output pair. Dual simultaneous main outputs: balanced XLR (+4dBu) and unbalanced RCA (-10dBV). RS-232C (D-sub 9-pin) for third-party control. Audio dubbing to SD/USB, Incremental Play, Power On Play, panel lock. Includes RC-CD400 wireless remote, FM/AM antennas, rack-mount screws.
+specs: |-
+  - - Playback: CD, CD-R, CD-RW; SD/SDHC 512MB–32GB; USB flash 512MB–64GB
+  - Formats: CD-DA (44.1kHz/16-bit), MP3 (32–320kbps), WMA, WAV (44.1k/48kHz 16-bit), AAC
+  - Bluetooth: v4.2, Class 2, A2DP/AVRCP, SBC/AAC/aptX, ~10m range
+  - FM: 87.5–108.0MHz (F-type); AM: 522–1,629kHz (2-pin); 20 presets each
+  - Balanced output (XLR): +4dBu nominal, +20dBu max, 100Ω
+  - Unbalanced output (RCA): -10dBV nominal, +6dBV max, 200Ω
+  - Tuner output (RCA): -10dBV nominal, +6dBV max
+  - Headphone: 1/4-inch, 20mW+20mW at 32Ω
+  - AUX input: 1/8-inch, -20dBV nominal, 10kΩ
+  - Frequency response: 20Hz–20kHz ±1dB; THD+N: 0.005% or less; S/N: 95dB or more
+  - Power: AC 100–240V 50/60Hz, 10W; operating temperature: 5–35°C
+  - Dimensions: 482.6(W) x 45(H) x 300.5(D) mm; weight: 3.3 kg
+io:
+  - name: AUX Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: SD Card Slot
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Left
+  - name: USB Type-A (Media)
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Tuner Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Tuner Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: FM Antenna
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: AM Antenna
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: RS-232C Control
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: d-sub-9
+    maxConnections: 1
+    position: Right
+  - name: AC Power In
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right

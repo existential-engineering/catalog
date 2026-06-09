@@ -1,0 +1,152 @@
+id: 6O1qnH--gIjRACHWzCAvo
+name: DP-24SD
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/dp-24sd
+description: 24-track digital Portastudio with simultaneous 8-track recording to
+  SD/SDHC media. Features 8 XLR/TRS combo inputs with +48V phantom power, 3-band
+  EQ, onboard dynamics and guitar effects, 19 track faders plus master fader,
+  chromatic tuner, metronome, and USB mass-storage connectivity. Input H doubles
+  as a Hi-Z guitar input.
+details: |-
+  24-track playback with 8-track simultaneous recording to SD/SDHC. All 8 XLR/TRS combo inputs support phantom power (grouped A–D and E–H). Input H switchable to Hi-Z guitar mode (1MΩ). 3-band EQ per input. Onboard effects: dynamics (Limiter, Compressor, Noise Suppressor, Exciter), guitar (Amp Simulator, Reverb, Compressor, Chorus, Flanger, Phaser), mixdown (Reverb, Delay, Stereo Chorus), mastering (Multi-band Compressor, EQ, Dither, Normalize). 19 track faders plus master. Virtual tracks (8 per track), auto punch in/out, undo/redo, bounce, chromatic tuner, metronome, full-color LCD. USB Mini-B for file transfer (mass storage only, not audio interface). RC-3F footswitch compatible via 2.5mm TRS remote jack.
+specs: |-
+  - - Inputs A–H: XLR/TRS combo; XLR: 2.4kΩ, −14dBu nominal, +2dBu max; TRS: 22kΩ+, +4dBu nominal, +20dBu max; +48V phantom
+  - Stereo Out: RCA; 200Ω; −10dBV nominal, +6dBV max
+  - Monitor Out: 1/4" TRS; 200Ω; −2dBu nominal, +14dBu max
+  - Effect Sends: 1/4" TS; 200Ω; −10dBV nominal, +6dBV max
+  - Headphone: 1/4"; 70mW+70mW @ 32Ω; THD+N ≤0.1%
+  - USB: Mini-B, USB 2.0 High Speed, mass storage
+  - Recording: WAV 16/24-bit 44.1/48kHz; SD 512MB–2GB / SDHC 4–32GB
+  - Freq response: 20Hz–20kHz ±1dB; S/N ≥90dB; THD ≤0.01%
+  - Power: AC adapter (PS-1220E); 12W
+  - Dimensions: 514(W) × 100.4(H) × 336.9(D) mm; weight: 6.2kg
+io:
+  - name: Input A
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Input B
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Input C
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Input D
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Input E
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Input F
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Input G
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Input H (Mic/Guitar)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Stereo Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Stereo Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Monitor Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Effect Send 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Effect Send 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Footswitch / Remote
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: SD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Top
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right

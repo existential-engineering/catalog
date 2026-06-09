@@ -1,0 +1,104 @@
+id: V1k67VlxOPzms98MPfpa8
+name: DA-6400
+manufacturer: tascam
+primaryCategory: rack-mount
+categories:
+  - digital
+url: https://tascam.com/us/product/da-6400
+description: Compact 64-channel digital multitrack recorder designed for live
+  and broadcast applications. Records 64 channels at 48kHz/24-bit or 32 channels
+  at 96kHz/24-bit PCM to 2.5-inch SSD in BWF (.wav) format. Features SMPTE LTC
+  timecode sync, cascade support for up to 128-channel operation, and two
+  expansion slots for optional I/O interface cards.
+details: |-
+  The DA-6400 is a 1U 64-channel digital multitrack recorder designed for live sound, broadcast, and recording applications. It records up to 64 channels at 44.1/48kHz (16/24-bit) or 32 channels at 88.2/96kHz to an included 240GB 2.5-inch SATA SSD in BWF format.
+
+  Two expansion slots support optional I/O interface cards including IF-MA64/EX (64-ch MADI optical/BNC), IF-MA64/BN (64-ch MADI coaxial), IF-DA64 (64-ch Dante), IF-AE16 (16-ch AES/EBU via DB25), IF-AN16/OUT (16-ch analog output), and IF-ST2110 (SMPTE ST2110-30/AES67).
+
+  SMPTE LTC timecode sync supports all standard frame rates. Two units can be cascaded for up to 128-channel operation. Remote control is available via iPad and computer over Ethernet (FTP server/client, P2 protocol via RS-422). The DA-6400dp variant adds a second redundant AC power inlet.
+specs: |-
+  - - Recording channels: 64 at 44.1/48kHz; 32 at 88.2/96kHz
+  - Bit depth: 16/24-bit
+  - File format: BWF (.wav)
+  - Media: 2.5-inch SATA SSD (240GB included)
+  - Recording time: 7h12m at 48kHz/24-bit/64ch
+  - Expansion slots: 2 (for optional I/O cards)
+  - Timecode: SMPTE 12M-1999, all standard frame rates
+  - Oscillator: TCXO ±1ppm
+  - Ethernet: 100BASE-TX / 1000BASE-T
+  - Headphone output: 45mW+45mW minimum
+  - Display: Color LCD 320×120
+  - Rack size: 1U; Power: 21W (with card), AC 100–240V
+  - Dimensions: 482.6(W) x 44.7(H) x 304.8(D) mm; Weight: 3.9 kg
+  - Operating temp: 0–40°C
+io:
+  - name: Timecode In
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Timecode Out
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock / Video In
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock / Video Out
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Ethernet
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: RS-422 Serial
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Parallel Control
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: AC Power In
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right

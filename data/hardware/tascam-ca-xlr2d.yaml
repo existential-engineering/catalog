@@ -1,0 +1,61 @@
+id: pXjXTJ5OaZDX37mEDwrv7
+name: CA-XLR2d
+manufacturer: tascam
+primaryCategory: preamp
+categories:
+  - analog
+  - digital
+url: https://tascam.com/us/product/ca-xlr2d
+description: Professional XLR microphone adapter developed with Canon, FUJIFILM,
+  and Nikon for mirrorless and DSLR cameras. Transmits digital audio directly
+  via camera accessory shoe, eliminating analog signal degradation. Features two
+  XLR/TRS combo inputs with HDDA preamps, +48V phantom power, a 1/8-inch stereo
+  input for lavalier mics, headphone monitoring, and 48/96kHz up to 24-bit
+  recording synchronized with camera settings.
+details: |-
+  Camera-mount XLR adapter available in four variants: CA-XLR2d-C (Canon), CA-XLR2d-F (FUJIFILM), CA-XLR2d-N (Nikon), and CA-XLR2d-AN (universal analog). Camera-specific variants transmit digital audio via accessory shoe; universal analog variant uses a battery box for cameras with analog audio input. Each includes a brand-specific accessory shoe adapter (CA-AK1-C/F/N). Input 1/2: XLR/TRS combo, switchable MIC (2kΩ, max +6dBu, +48V phantom) / LINE (10kΩ, max +24dBu, +4dBu rated); gain range 66dB. Input 3: 3.5mm stereo mini with plug-in power (2.7V). Output/headphone: shared 3.5mm jack (camera output 0.29Vrms fixed; headphone mode 0.5Vrms max, 16–250Ω). Features: Auto Level, Low Cut Filter, Limiter, +48V phantom, 1+2 LINK, cold shoe mount on top for accessories. Sampling: 48/96kHz, 16/24-bit synchronized with camera.
+specs: |-
+  - - Input 1/2: XLR/TRS combo; MIC: 2kΩ, +6dBu max, 66dB gain, +48V phantom; LINE: 10kΩ, +24dBu max
+  - Input 3: 3.5mm stereo; 2kΩ; +6dBV max; plug-in power 2.7V
+  - Output: 3.5mm; camera mode 0.29Vrms fixed; headphone 0.5Vrms max (16–250Ω)
+  - EIN: ≤−120dBu (A-weighted); dynamic range ≥95dB
+  - Freq response: 20Hz–20kHz ±1.0dB (48kHz); 20Hz–40kHz ±1.0dB (96kHz)
+  - Audio: 48/96kHz, 16/24-bit
+  - Power: 2× AA batteries (~4h with phantom) or camera accessory shoe; 2.0W max
+  - Dimensions: 88.2(W) × 119.1(H) × 110.0(D) mm; weight: 331–357g
+io:
+  - name: Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Input 3 (Lavalier/Stereo)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Output (to Camera)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom

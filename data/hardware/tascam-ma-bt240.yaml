@@ -1,0 +1,118 @@
+id: 6NG5ujlotVWkrSpxvxzQV
+name: MA-BT240
+manufacturer: tascam
+primaryCategory: amplifier
+categories:
+  - mixer
+url: https://tascam.com/us/product/ma-bt240
+description: Mixing amplifier with extended Bluetooth designed for smaller
+  commercial spaces including restaurants, retail stores, institutions, and
+  waiting rooms. Combines high and low-impedance amplification with microphone
+  input, line-level inputs, and built-in Bluetooth 5.1 wireless audio streaming
+  in a compact half-rack 1U design.
+details: |-
+  Class D amplifier with dual impedance support (low-impedance 4Ω/8Ω at 120W x2ch, high-impedance 70V/100V at 240W x1ch). Built-in Bluetooth 5.1 (Class 2) with A2DP profile supporting SBC and AAC codecs, ~10m range, RP-SMA antenna. Switchable ducking/paging function on mic input. 2-band EQ and high-pass filter on output. Mono/stereo output switching. External volume controller support via Euroblock 3.81mm 3-pin. Front panel MIC/LINE combo input also available via Euroblock on rear. Half-rack 1U form factor. Includes Bluetooth antenna, Euroblock plugs, cable band kit, and rubber feet.
+specs: |-
+  - - Power output: 120W x2ch at 4Ω, 120W x2ch at 8Ω, 240W x1ch at 70V/100V
+  - Frequency response: 20Hz–20kHz ±2dB
+  - THD: 0.05% or less at 1kHz
+  - S/N ratio: 92dB or more
+  - Crosstalk: 70dB or more
+  - MIC input max: -30dBu; LINE input max: +20dBu, nominal +4dBu; input impedance: 2kΩ (mic) / 10kΩ (line)
+  - LINE IN 1/2: max +6.0dBV, nominal -10.0dBV, impedance 10kΩ
+  - LINE OUT: max +6.0dBV, nominal -10dBV, impedance 200Ω
+  - Power consumption: 58W rated, 18W idle
+  - Dimensions: 214(W) x 44(H) x 298(D) mm; Weight: 2.5 kg
+  - Operating temp: 0–40°C, humidity 5–85% non-condensing
+io:
+  - name: MIC/LINE In (Combo)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: MIC/LINE In (Euroblock)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Line In 1 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line In 1 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line In 2 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line In 2 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Speaker Out (High-Impedance)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Speaker Out (Low-Impedance)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Bluetooth
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Left
+  - name: Volume Remote
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: AC Power In
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right

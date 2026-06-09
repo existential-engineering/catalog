@@ -1,0 +1,84 @@
+id: zcIha6VJLfC_uOo89zT4M
+name: FR-AV2
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/fr-av2
+description: Compact 32-bit float 2-channel field recorder and timecode
+  generator with Ultra HDDA preamps (EIN -127 dBu). Features dual XLR/TRS combo
+  inputs with phantom power, SMPTE LTC timecode generation and sync, HDMI
+  ARC-style cascade support, built-in mixer, and USB-C audio interface
+  (2-in/2-out). Records WAV/BWF to microSDXC at up to 192kHz. Designed for
+  videographers and AV production requiring precise timecode sync with cameras
+  and Atomos devices.
+details: |-
+  Compact camera-mount field recorder (99×80.4×40.3mm, 267g). Dual XLR/TRS combo inputs with Ultra HDDA preamps (EIN -127 dBu, dynamic range ≥132 dB); switchable +24V/+48V phantom. 3.5mm Camera/EXT input with plug-in power (+2.5V/+5.0V) for wireless receivers. TC IN via 3.5mm (SMPTE ST 12-1 LTC). TC OUT shared with Camera/Line output jack. USB-C: 2-in/2-out audio interface (USB 2.0, 24/32-bit float, 48/96kHz). Built-in mixer with low-cut, compressor, limiter, noise gate. Records WAV/BWF (48/96/192kHz) with BEXT/iXML metadata. Optional AK-BT2 Bluetooth adapter for wireless monitoring. Powered by 3× AA batteries (~15 hours) or USB bus power.
+specs: |-
+  - - Mic inputs: 2× XLR/TRS combo; EIN ≤-127 dBu; dynamic range ≥132dB; max +4 dBu; +24V/+48V phantom
+  - Camera/EXT: 3.5mm, plug-in power; max +1dBV nominal -19dBV; impedance ≥6kΩ
+  - TC IN: 3.5mm; 0.5–5.0Vp-p; impedance ≥10kΩ
+  - Camera/Line out: 3.5mm; max +6dBV nominal -10dBV; impedance 210Ω
+  - Headphone: 3.5mm; 50mW+50mW (32Ω)
+  - USB-C: USB 2.0 Hi-Speed; 2-in/2-out 24/32-bit float 48/96kHz
+  - Recording media: microSD/SDHC/SDXC up to 512GB
+  - Formats: WAV/BWF 48/96/192kHz 24/32-bit float; MP3
+  - Power: 3× AA batteries (~15h lithium) or USB bus power; consumption: 3.8W max
+  - Dimensions: 99(W) x 80.4(H) x 40.3(D) mm; weight: 267g (with batteries)
+io:
+  - name: Mic/Line Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Camera/EXT Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: TC Input
+    signalFlow: input
+    category: digital
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Camera/Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: USB-C Audio / Data
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - name: microSD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Bottom

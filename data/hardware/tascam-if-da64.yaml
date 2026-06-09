@@ -1,0 +1,42 @@
+id: ifvnBlIrD9CkF79Ob9kdc
+name: IF-DA64
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - digital
+url: https://tascam.com/us/product/if-da64
+description: 64-In/64-Out Dante Interface Card — an optional expansion card for
+  TASCAM's expansion slot system, enabling high-channel-count Dante networking
+  with primary and secondary redundancy ports. Supports up to 64x64 channels at
+  44.1/48 kHz or 32x32 channels at 88.2/96 kHz.
+details: |-
+  The IF-DA64 is a 64-In/64-Out Dante expansion card for TASCAM's expansion slot system, compatible with the Sonicview 24XP, Sonicview 16XP, DA-6400, and DA-6400dp.
+
+  It provides primary and secondary Dante network ports (1000BASE-T Ethernet) for full redundancy, supporting up to 64x64 channels at 44.1/48 kHz or 32x32 channels at 88.2/96 kHz.
+
+  The card supports SMPTE ST 2110-30 when used with Dante Domain Manager v1.1 or later, enabling broadcast-grade timing and transport.
+specs: |-
+  - - Channels (44.1/48kHz): 64 In / 64 Out
+  - Channels (88.2/96kHz): 32 In / 32 Out
+  - Sampling rates: 44.1kHz, 48kHz, 88.2kHz, 96kHz
+  - Network protocol: Dante (1000BASE-T, IEEE 802.3ab)
+  - Cable requirement: Category 5e or faster
+  - Dante firmware: V1.2.0
+  - Dimensions: 107(W) x 34(H) x 156.8(D) mm
+  - Weight: 139g
+io:
+  - name: Dante Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Left
+  - name: Dante Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Left

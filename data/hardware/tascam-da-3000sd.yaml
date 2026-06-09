@@ -1,0 +1,191 @@
+id: pP6i3klnJRHDOYyRnHE6p
+name: DA-3000SD
+manufacturer: tascam
+primaryCategory: rack-mount
+categories:
+  - digital
+  - outboard
+url: https://tascam.com/us/product/da-3000sd
+description: 2-channel DSD/PCM master recorder and AD/DA converter featuring
+  BurrBrown PCM1795 converters (one per channel), recording up to 192kHz PCM and
+  5.6MHz DSD. 1U rack-mountable with fanless design, high-precision TCXO
+  oscillator (±1ppm), and support for cascading up to 16 tracks with eight
+  units.
+details: |-
+  The DA-3000SD is a 1U rack-mount 2-channel DSD/PCM master recorder and AD/DA converter. BurrBrown PCM1795 converters (one per channel) provide high-quality conversion for recording and playback.
+
+  PCM recording is supported up to 192kHz at 16/24-bit. DSD recording reaches 5.6MHz (DSD128). Formats supported: BWF/WAV for PCM, and DSDIFF/DSF for DSD. Media: SD/SDHC/SDXC cards up to 512GB and USB flash drives.
+
+  The fanless design ensures silent operation. A high-precision TCXO oscillator (±1ppm) provides accurate clocking. Auto file save every 25 seconds prevents data loss. Up to 8 units can be cascaded for 16-track DSD multitrack recording.
+
+  A standalone AD/DA converter mode is available without recording. Inputs include balanced XLR, unbalanced RCA, AES/EBU, S/PDIF, and SDIF-3 DSD (BNC). The included RC-10 wireless remote provides transport control.
+specs: |-
+  - - Recording formats: PCM up to 192kHz/24-bit; DSD at 2.8/5.6MHz
+  - File formats: BWF/WAV (PCM), DSDIFF/DSF (DSD)
+  - Media: SD/SDHC/SDXC (up to 512GB), USB flash drive
+  - Converters: BurrBrown PCM1795 (per channel)
+  - Clock: TCXO ±1ppm
+  - Analog XLR input: +4dBu nominal (+24dBu max), 10kΩ+
+  - Analog RCA input: -10dBV nominal (+6dBV max), 22kΩ+
+  - Analog XLR output: +4dBu nominal (+24dBu max), 100Ω or less
+  - Analog RCA output: -10dBV nominal (+6dBV max), 200Ω or less
+  - Headphone output: 45mW+45mW @ 32Ω
+  - Word sync: BNC, 5V TTL, 75Ω
+  - Rack size: 1U; Power: 24W, AC 120V/230V
+  - Dimensions: 483(W) x 45(H) x 305(D) mm; Weight: 4.1 kg
+  - Operating temp: 0–40°C
+io:
+  - name: Analog Balanced Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Balanced Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Unbalanced Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Unbalanced Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Unbalanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Unbalanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Digital Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Digital Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Digital Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Digital Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: SDIF-3 DSD Input L
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: SDIF-3 DSD Input R
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: SDIF-3 DSD Output L
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: SDIF-3 DSD Output R
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Sync In
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Sync Out
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Sync Thru
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: USB (Media/Copy)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Left
+  - name: USB (Remote Control)
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right

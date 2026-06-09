@@ -1,0 +1,74 @@
+id: nONFQ9Kv-ciIG3VjzPdIw
+name: RX-BT10
+manufacturer: tascam
+primaryCategory: utility
+categories:
+  - analog
+url: https://tascam.com/us/product/rx-bt10
+description: Compact Bluetooth 5.1 (Class 1) stereo receiver designed for
+  professional installation environments such as hotels, classrooms, retail
+  spaces, and large venues. Accepts wireless audio via A2DP (SBC/AAC) and
+  outputs balanced XLR and unbalanced RCA stereo signals. Features a front-panel
+  extendable antenna, Euroblock remote pairing terminal, and switchable
+  mono/stereo output configuration.
+details: |-
+  Professional-grade Bluetooth 5.1 Class 1 stereo receiver for permanent installation. Supports A2DP and AVRCP profiles with SBC and AAC codecs, approximately 100m unobstructed wireless range. Front-panel extendable antenna. Euroblock terminal for remote pairing button, enabling installations where the unit is rack-mounted or not easily accessible. Each unit can be assigned a unique Bluetooth ID to avoid pairing conflicts in multi-unit deployments. Output switchable between stereo and mono. Rugged metal enclosure with included mounting bracket kit for rack or surface installation.
+specs: |-
+  - - Bluetooth: v5.1, Class 1, ~100m range; profiles: A2DP, AVRCP; codecs: SBC, AAC
+  - Balanced Line Output (XLR): nominal -2dBu, max +14dBu, output impedance ≤200Ω
+  - Unbalanced Line Output (RCA): nominal -10dBV, max +6dBV, output impedance ≤100Ω
+  - Frequency response: 20Hz–20kHz, +0.5/–1dB
+  - THD+N: ≤0.04% (1kHz, max output); SNR: ≥90dB; Channel separation: ≥100dB
+  - Power: AC 100–240V via PS-M1524 adapter (DC 15V/2.4A); consumption: 1.7W
+  - Dimensions: 171(W) x 45(H) x 73(D) mm; Weight: 530g
+  - Operating temp: 0–40°C; humidity: 5–85% non-condensing
+io:
+  - name: Bluetooth
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Left
+  - name: Remote Pairing (Euroblock)
+    signalFlow: input
+    category: digital
+    type: midi
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Line Output L (Balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Output R (Balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Output L (Unbalanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line Output R (Unbalanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

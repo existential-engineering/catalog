@@ -1,0 +1,113 @@
+id: VKfUoauQNGpHmtOD18Jlc
+name: FR-AV4
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/fr-av4
+description: 32-bit float 4-channel portable field recorder with Ultra HDDA mic
+  preamps (EIN -127 dBu), built-in mixer, timecode generator, and HDMI 2.1
+  pass-through supporting 4K/60Hz and 8K/30Hz. Records six tracks (four channels
+  plus stereo mix) to SDXC cards at up to 192kHz. Features onboard EQ, low-cut
+  filter, limiter, noise gate, Auto Mix with gain-sharing, Ambisonics support,
+  and a USB-C audio interface (6-in/2-out). Compatible with Atomos, Blackmagic,
+  Canon, Sony, and other camera brands via HDMI cascade.
+details: |-
+  Portable 4-channel field recorder in aluminum chassis with 1.9-inch color touchscreen and jog wheel. Four XLR/TRS combo inputs with Ultra HDDA mic preamps (EIN -127 dBu, dynamic range ≥133 dB). HDMI 2.1 cascade for multi-unit linking. 3.5mm TC I/O for timecode sync with cameras and Atomos devices. 6-in/2-out USB-C audio interface (USB 2.0, 24-bit/32-bit float, 48/96kHz). Camera screw mount for rig integration. Optional AK-BT2 Bluetooth adapter for TASCAM RECORDER CONNECT app. Input/output delay up to 300ms. Powered by 4× AA batteries, USB bus power, or optional PS-P520U AC adapter.
+specs: |-
+  - - Mic inputs: 4× XLR/TRS combo; EIN ≤-127 dBu; dynamic range ≥133dB; THD+N ≤0.01%; +48V phantom
+  - Camera/EXT input: 3.5mm mini jack
+  - Line output: 3.5mm mini jack
+  - Headphone: 3.5mm mini jack
+  - TC In/Out: 3.5mm mini jack
+  - HDMI: Type-A v2.1; pass-through 4K/60Hz and 8K/30Hz
+  - USB-C: USB 2.0 High Speed; 6-in/2-out audio 24/32-bit float 48/96kHz + mass storage
+  - Recording media: SD/SDHC/SDXC up to 512GB
+  - Formats: WAV/BWF 48/96/192kHz 24/32-bit float; MP3
+  - Power: 4× AA batteries (~9h stereo no phantom) or USB bus power; consumption: 5.4W max
+  - Dimensions: 184(W) x 42(H) x 130(D) mm; weight: 756g (with batteries)
+io:
+  - name: Mic/Line Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Camera/EXT Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: TC In
+    signalFlow: input
+    category: digital
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: TC Out
+    signalFlow: output
+    category: digital
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: HDMI Input
+    signalFlow: input
+    category: digital
+    type: hdmi
+    connection: hdmi
+    maxConnections: 1
+    position: Right
+  - name: HDMI Output
+    signalFlow: output
+    category: digital
+    type: hdmi
+    connection: hdmi
+    maxConnections: 1
+    position: Right
+  - name: USB-C Audio / Data
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom

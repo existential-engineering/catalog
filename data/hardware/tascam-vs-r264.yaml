@@ -1,0 +1,99 @@
+id: R2XCtRMGb91Y0mGvtZlWU
+name: VS-R264
+manufacturer: tascam
+primaryCategory: rack-mount
+categories:
+  - digital
+url: https://tascam.com/us/product/vs-r264
+description: Compact half-rack HD video streamer functioning simultaneously as a
+  Full HD (1920×1080p) H.264 encoder, decoder, and SD recorder without requiring
+  an external computer. Supports RTMP, RTSP, and HLS streaming protocols with up
+  to 8 simultaneous streams including 3 simultaneous RTMP streams for simulcast
+  and backup. Powered by PoE+ Class 4 over its Gigabit Ethernet port for
+  simplified installation.
+details: |-
+  Half-rack 1U form-factor H.264 video streaming encoder/decoder/recorder for fixed AV-over-IP installations. Operates standalone without a host computer; simultaneously records to internal storage (17GB), SD card, or USB drive while encoding up to 8 concurrent streams (3 RTMP simulcast). Accepts HDMI input up to 4K (2160p) and outputs decoded HD video over HDMI v2.0. Balanced Euroblock (3.81mm) and unbalanced 3.5mm audio I/O for embedding/de-embedding. Powered by PoE+ Class 4 over Gigabit Ethernet (optional DC barrel adapter available). Web-based management and TASCAM DISCOVERY app for remote configuration. Automatic FTP backup support.
+specs: |-
+  - - Form factor: half-rack 1U; dimensions: 214(W) x 44.5(H) x 136.1(D) mm; weight: 850g
+  - Video input: HDMI v1.4a Type A, up to 2160p/1080p/720p/576p/480p
+  - Video output: HDMI v2.0 Type A
+  - Video codec: H.264 long-GOP, up to 30Mbps; encodes down to 320×180p
+  - Streaming protocols: RTMP, RTSP, HLS; simultaneous streams: up to 8 (3 RTMP simulcast)
+  - Audio I/O: balanced Euroblock 3.81mm (in/out) + unbalanced 3.5mm stereo (in/out)
+  - Audio codec: AAC, 64k–512kbps at 32/44.1/48kHz
+  - Network: RJ-45 Gigabit 1000BASE-T with PoE+ Class 4 (Cat 5e STP or better)
+  - Storage: internal 17GB, SD/SDHC card slot (front), USB Type-A 2.0/3.0
+  - Recording formats: MPEG2-TS, MPEG4
+  - Power: PoE+ Class 4 (primary) or DC barrel (optional PS-P1220E); consumption: 12.2W
+  - Operating temperature: 0–40°C
+io:
+  - name: HDMI Input
+    signalFlow: input
+    category: digital
+    type: hdmi
+    connection: hdmi
+    maxConnections: 1
+    position: Right
+  - name: HDMI Output
+    signalFlow: output
+    category: digital
+    type: hdmi
+    connection: hdmi
+    maxConnections: 1
+    position: Right
+  - name: Balanced Audio Input (Euroblock)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Balanced Audio Output (Euroblock)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Ethernet / PoE+
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: USB Type-A
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right
+  - name: SD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Left
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
