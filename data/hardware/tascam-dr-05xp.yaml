@@ -1,0 +1,62 @@
+id: aFXGuRauj8ZJJqOW54QfP
+name: DR-05XP
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/dr-05xp
+description: Compact 2-channel 32-bit float portable stereo recorder and USB-C
+  audio interface designed for podcasting and field recording. Features built-in
+  omnidirectional condenser microphones rated to 125dB SPL, automatic level
+  management via 32-bit float recording, and support for microSDXC cards up to
+  512GB. Doubles as a driverless 2-in/2-out USB-C audio interface and runs up to
+  17.5 hours on two AA batteries. Podcast-oriented bundle variant of the DR-05X
+  with USB-C connectivity.
+details: |-
+  Handheld portable stereo recorder with 32-bit float recording and USB-C. Built-in omnidirectional condenser stereo mics rated to 125dB SPL. 32-bit float recording eliminates clipping and manual gain adjustment. Records to microSD/microSDHC/microSDXC (up to 512GB) as WAV/BWF (44.1/48/96kHz, 16/24/32-bit float) or MP3. Functions as driverless 2-in/2-out USB-C audio interface (USB 2.0, 44.1/48kHz). External 3.5mm mini jack supports mic with plug-in power. Built-in features: auto record, overdubbing, chromatic tuner, reverb effects, low-cut filter, LCD display, 1/4-inch tripod mount. Battery life: up to 17.5 hours (2× AA alkaline). USB bus power (5V/0.5A) also supported.
+specs: |-
+  - - Built-in mics: omnidirectional condenser, max SPL 125dB
+  - External input: 3.5mm stereo mini jack, plug-in power; nominal -20dBV, max -4dBV
+  - Headphone output: 3.5mm stereo mini jack; nominal -14dBV, max +2dBV
+  - USB: USB-C, USB 2.0 High Speed (mass storage + audio); audio: 2-in/2-out, 24-bit, 44.1/48kHz
+  - Recording media: microSD/microSDHC/microSDXC up to 512GB
+  - Formats: WAV/BWF 44.1/48/96kHz 16/24/32-bit float; MP3 32–320kbps
+  - Freq response: 20Hz–20kHz +0/–1dB (44.1/48kHz); THD+N: ≤0.01%
+  - Power: 2× AA batteries (~17.5h) or USB bus power (5V/0.5A); consumption: 1.7W max
+  - Dimensions: 60.5(W) x 142.3(H) x 27(D) mm; weight: 174g (with batteries)
+io:
+  - name: Built-in Stereo Microphones
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 2
+    position: Top
+  - name: External Mic/Line Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone/Line Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: USB-C Audio / Data
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: microSD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Right

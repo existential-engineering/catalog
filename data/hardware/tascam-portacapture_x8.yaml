@@ -1,0 +1,120 @@
+id: yTbxGZwWyMFbU-PRYdvrG
+name: Portacapture X8
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/portacapture_x8
+description: 8-channel 32-bit float portable audio field recorder with 3.5-inch
+  color touchscreen and Launcher app system. Features four XLR/TRS combo inputs
+  with individual 48V phantom power, two 3.5mm inputs with plug-in power, and
+  detachable large-diaphragm stereo condenser microphones configurable in A-B or
+  X-Y patterns. Records up to 8 simultaneous tracks (6 inputs plus stereo mix)
+  and doubles as a driverless USB 2.0 audio interface (8-in/2-out). Supports
+  wireless remote control via optional Bluetooth adapter.
+details: |-
+  Portable 8-track 32-bit float field recorder with 3.5-inch touchscreen. Inputs 1–2: 3.5mm mini-jack with plug-in power (lavalier/binaural mics). Inputs 3–6: XLR/TRS combo with individual switchable 48V phantom power. Detachable large-diaphragm stereo condenser mics (14.6mm capsules) in A-B or X-Y. Camera EXT IN for audio return monitoring. USB-C: driverless 8-in/2-out audio interface (USB 2.0). Seven recording apps: Manual, Voice, Podcast, Music, Field, PocketStudio, ASMR. DSP: low-cut filter, compressor, limiter, EQ, noise gate. Optional AK-BT1 Bluetooth for Portacapture Control app and Atomos TC sync. Powered by 4× AA batteries (~11–18 hours), USB bus power, or optional PS-P520U AC adapter.
+specs: |-
+  - - Built-in mics: detachable large-diaphragm condenser (14.6mm), A-B/X-Y
+  - EXT inputs 1–2: 3.5mm, plug-in power; impedance ≥2.2kΩ
+  - XLR/TRS combos 3–6: +48V phantom each; mic max +2 dBu, EIN ≤-126 dBu; line max +24 dBu
+  - EXT IN (camera): 3.5mm, line
+  - Line out, headphone: 3.5mm; headphone 45mW+45mW (32Ω)
+  - USB-C: USB 2.0 Hi-Speed; 8-in/2-out audio + mass storage
+  - Recording media: microSD/SDHC/SDXC up to 512GB
+  - Formats: WAV/BWF 44.1/48/96/192kHz 16/24/32-bit float; MP3
+  - Dynamic range: ≥113dB; THD+N: ≤0.008%; EIN: ≤-126 dBu
+  - Power: 4× AA batteries (~11h alkaline) or USB bus power; consumption: 7.5W max
+  - Dimensions: 83(W) x 205.6(H) x 41.5(D) mm; weight: 472g (with batteries)
+io:
+  - name: Built-in Mic L
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Top
+  - name: Built-in Mic R
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Top
+  - name: EXT Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: EXT Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: XLR/TRS Combo Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: XLR/TRS Combo Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: XLR/TRS Combo Input 5
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: XLR/TRS Combo Input 6
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: EXT IN
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: USB-C Audio / Data
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: microSD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Right

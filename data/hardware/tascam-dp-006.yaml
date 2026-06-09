@@ -1,0 +1,82 @@
+id: Srq_azvhgSmVV8tq_AU-b
+name: DP-006
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/dp-006
+description: Portable battery-powered 6-track Digital Pocketstudio for capturing
+  song ideas and demos. Records up to 6 tracks at 16-bit/44.1kHz with built-in
+  stereo omnidirectional condenser microphones, two 1/4-inch external inputs
+  (Input A switchable to Hi-Z guitar mode), SD/SDHC card storage, and WAV file
+  import/export via USB. Includes chromatic tuner, metronome, bounce, and track
+  editing.
+details: |-
+  Pocket-sized 6-track multitrack recorder. Records 2 simultaneous mono tracks plus 2 mono/stereo switchable tracks. Input A supports Hi-Z instruments (guitar/bass) in GUITAR mode (1MΩ input impedance); Input B is line/mic only. Both 1/4" TS inputs are unbalanced (nominal −10dBV, max +6dBV). Line output nominal −16dBV. Headphone: 15mW+15mW (32Ω). SD/SDHC up to 32GB. USB Mini-B for file transfer (mass storage, not audio interface). Optional PS-P520 AC adapter available. Track editing: UNDO/REDO, Clone, Clean Out, Silence, Cut, Open, Bounce. Chromatic tuner and metronome included. Tripod mount screw hole.
+specs: |-
+  - - Recording: WAV 16-bit/44.1kHz; SD/SDHC 512MB–32GB
+  - Input impedance: 10kΩ+ (LINE), 1MΩ (GUITAR)
+  - Nominal input: −10dBV; max input: +6dBV
+  - Line out: nominal −16dBV, max 0dBV
+  - Headphone: 15mW+15mW @ 32Ω; THD+N <0.1%
+  - USB: Mini-B, USB 2.0 High Speed mass storage
+  - Freq response: 20Hz–20kHz (+1/−3dB); S/N >81dB; THD <0.05%
+  - Power: 4× AA batteries (8–9.5h) or optional PS-P520 AC adapter; 1W max
+  - Dimensions: 155(W) × 41.5(H) × 107(D) mm; weight: 360g
+io:
+  - name: Built-in Mic L
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Top
+  - name: Built-in Mic R
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Top
+  - name: Input A (Line/Guitar)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Input B (Line)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: SD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,62 @@
+id: f83XsGvlBadxTK94ApsUC
+name: DR-07XP
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/dr-07xp
+description: 2-channel 32-bit float handheld recorder with USB-C audio interface
+  and adjustable stereo condenser microphones. Supports WAV (16/24/32-bit float)
+  and MP3 recording at up to 96kHz, microSDXC cards up to 512GB, and
+  approximately 17.5 hours of battery life from 2 AA batteries. Includes
+  built-in chromatic tuner, reverb, overdubbing, four low-cut filter levels, and
+  Auto Tone output for DSLR integration. Podcast bundle variant of the DR-07X
+  with 32-bit float recording and USB-C connectivity.
+details: |-
+  Adjustable stereo condenser mics with A/B and X/Y configurations, rated to 125dB SPL. 32-bit float recording eliminates manual gain setting. External 3.5mm jack: plug-in power supported; nominal -20dBV, max -4dBV; impedance 18kΩ (PIP off) / 2kΩ (PIP on). Headphone: nominal -14dBV, max +2dBV (10kΩ) / 20mW+20mW (32Ω). USB-C: 2-in/2-out audio interface (24-bit, 44.1/48kHz) + mass storage. Four low-cut filter levels (40/80/120/220Hz). Built-in chromatic tuner, reverb, overdub, Auto Tone output for DSLR sync. 1/4-inch tripod mount. Powered by 2× AA batteries (~17.5 hours) or USB bus power.
+specs: |-
+  - - Built-in mics: adjustable A/B and X/Y unidirectional condenser; max SPL 125dB
+  - External input: 3.5mm stereo mini jack, plug-in power; nominal -20dBV, max -4dBV
+  - Headphone/line out: 3.5mm stereo mini jack; nominal -14dBV; max 20mW+20mW (32Ω)
+  - USB-C: USB 2.0 High Speed (mass storage + audio); audio: 24-bit, 44.1/48kHz, 2-in/2-out
+  - Recording media: microSD/SDHC/SDXC up to 512GB
+  - Formats: WAV/BWF 44.1/48/96kHz 16/24/32-bit float; MP3 32–320kbps
+  - THD+N: ≤0.01%; freq response: 20Hz–20kHz +0/–1dB (44.1/48kHz)
+  - Power: 2× AA batteries (~17.5h) or USB bus power; consumption: 1.7W max
+  - Dimensions: 68(W) x 159.6(H) x 27(D) mm closed; weight: 184g (with batteries)
+io:
+  - name: Built-in Stereo Mics
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 2
+    position: Top
+  - name: External Mic/Line Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone/Line Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: USB-C Audio / Data
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: microSD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Right

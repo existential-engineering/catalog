@@ -1,0 +1,84 @@
+id: ZuZnSYpHun9XgJ0wxGcfl
+name: MM-4D/IN-E
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - digital
+url: https://tascam.com/us/product/mm-4d_in-e
+description: Compact half-rack 4-channel mic/line to Dante converter for
+  professional installation. Accepts four balanced Euroblock mic/line inputs
+  with +48V phantom power and converts them to Dante network audio with
+  4-channel output. Features a built-in 8-in/4-out DSP matrix mixer with
+  compressor, 4-band parametric EQ, ducking, auto-level, and up to 50 scene
+  presets. Powered via PoE Class 0 or optional external adapter. European
+  Euroblock variant.
+details: |-
+  Half-rack Dante mic/line input converter (214×44.45×136.1mm, 885g) with Euroblock connectors for European markets. Four Euroblock (3.81mm pitch) mic/line inputs with +48V phantom power, adjustable gain -70 to +26 dBu, and EIN -125 dBu. Built-in 8-in/4-out DSP matrix combines 4 local inputs + 4 Dante receive channels. Per-input DSP: compressor, 4-band parametric EQ, ducking, ambient noise compensation, auto-level. GPI external control via Euroblock header (LED open-collector output + switch input). Dante daisy-chain via dual RJ-45. Controlled via DCP CONNECT or EZ CONNECT. Primary power via PoE Class 0; optional PS-P1220E DC adapter.
+specs: |-
+  - - Analog inputs: 4× Euroblock 3.81mm pitch, balanced mic/line; range -70 to +26 dBu; impedance ≥2kΩ; +48V phantom; EIN -125 dBu (150Ω)
+  - Dante: 2× RJ-45 Gigabit Ethernet (1000BASE-T, Cat5e STP+); 4-in/4-out channels
+  - GPI control: Euroblock 3.81mm pitch (LED open-collector output + switch input)
+  - Sample rates: 44.1/48/88.2/96kHz; bit depth: 16/24-bit
+  - Freq response: ±0.5dB, 20Hz–20kHz (44.1/48kHz)
+  - THD+N: 0.003%; S/N: 108dB; crosstalk: 100dB; dynamic range: 108dB
+  - Power: PoE Class 0 (primary) or optional PS-P1220E DC adapter; consumption: 7.5W
+  - Dimensions: 214(W) x 44.45(H) x 136.1(D) mm; weight: 885g
+  - Operating temperature: 0–40°C
+io:
+  - name: Mic/Line Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Dante Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: Dante Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - name: External Control (LED/Switch)
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

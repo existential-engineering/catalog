@@ -1,0 +1,182 @@
+id: cqQpgX36j9NdL6KSghAX9
+name: Series 8p Dyna
+manufacturer: tascam
+primaryCategory: preamp
+categories:
+  - rack-mount
+  - analog
+  - digital
+url: https://tascam.com/us/product/series_8p_dyna
+description: 8-channel mic preamp and analog-to-digital converter with
+  integrated single-knob analog compressor per channel. Features TASCAM HDIA
+  preamps (EIN −127dBu), per-channel switchable +48V phantom, dual TOSLINK S/MUX
+  optical outputs for up to 8 channels at 96kHz, a DB25 analog output, and Word
+  Clock I/O. 1U rack-mount.
+details: |-
+  1U rack-mount 8-channel mic preamp with ADC. HDIA preamps: EIN −127dBu, gain range 52dB, +48V phantom per channel. CH1–2 on front panel with XLR/TRS combo (switchable mic/line/instrument, Hi-Z 1MΩ). CH3–8 on rear panel XLR. Per-channel single-knob analog compressor with true bypass. Dual analog outputs: individual 1/4" TRS balanced (all 8 channels) + DB25 AES59 (all 8 channels). Dual TOSLINK optical outputs supporting ADAT (8ch at 44.1/48/88.2/96kHz) or S/MUX (4ch at 176.4/192kHz) each. Word Clock BNC I/O (IN/OUT/THRU switchable). No USB audio interface — analog outputs feed external converter or recorder.
+specs: |-
+  - - Mic inputs: EIN ≤−127dBu; gain 0–52dB; max +10dBu; 2.3kΩ; +48V phantom per ch
+  - Instrument inputs CH1–2: 1MΩ; max +24dBu
+  - Line inputs: 10kΩ; max +24dBu
+  - Analog out: 1/4" TRS balanced (8 individual) + DB25 AES59 (8 ch)
+  - Optical: 2× TOSLINK ADAT 8ch / S/MUX 4ch; 44.1–192kHz
+  - Word Clock: BNC In + Out/Thru; 75Ω switchable
+  - Sample rates: 44.1/48/88.2/96/176.4/192kHz; 24-bit
+  - Dynamic range: 116dB; THD: 0.0007%; freq response: 20Hz–40kHz ±0.5dB
+  - Power: DC 12V (PS-P1230); 16W
+  - Dimensions: 482(W) × 44.8(H) × 228.8(D) mm; weight: 2.6kg
+io:
+  - name: Mic/Line/Inst Input Ch 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line/Inst Input Ch 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic/Line Input Ch 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input Ch 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input Ch 5
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input Ch 6
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input Ch 7
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Input Ch 8
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output 5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output 6
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output 7
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output 8
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Analog Output 1–8 (D-Sub)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Optical Output 1 (S/MUX)
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 8
+    position: Right
+  - name: Optical Output 2 (S/MUX)
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 8
+    position: Right
+  - name: Word Clock In
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Out/Thru
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

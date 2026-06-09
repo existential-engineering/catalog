@@ -1,0 +1,53 @@
+id: SHYhydSTfvhkPFo1kRzDQ
+name: DR-10L Pro
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/dr-10l_pro
+description: Ultra-compact 32-bit float wearable field recorder with included
+  TM-10L lavalier microphone. Designed for AV creators, wedding videography, and
+  event capture, offering dual ADC 32-bit float recording to eliminate
+  gain-staging, LTC jam sync timecode, optional Bluetooth control via the AK-BT1
+  adapter, and microSDXC support up to 512GB. Runs up to 24.5 hours on two AAA
+  batteries.
+details: |-
+  32-bit float body-pack recorder with dual ADC converters. Includes TM-10L lavalier microphone (1.6m cable). 3.5mm TRS mic input with screw-lock mechanism. LTC jam sync timecode + wireless timecode sync with Atomos products via optional AK-BT1 Bluetooth adapter. TASCAM RECORDER CONNECT app controls up to 5 units wirelessly (iOS/Android). High-precision TCXO clock (0.5ppm). OLED display. Automatic file save every ~20 seconds. Low-cut filter: 40/80/120/220Hz. iZotope RX Elements included.
+specs: |-
+  - - Mic input: 3.5mm TRS screw-lock; max input -11dBV; gain 7.5–38dB; impedance ≥2kΩ
+  - Headphone: 3.5mm stereo mini (dual mono); 10mW+10mW into 32Ω; impedance 16–400Ω
+  - USB-C: USB 2.0 mass storage class
+  - Recording media: microSD/SDHC/SDXC up to 512GB
+  - Formats: WAV/BWF 44.1/48kHz 16/24/32-bit float; MP3 128/192kbps
+  - Freq response: 20Hz–20kHz +0/–1dB; dynamic range: ≥105dB; THD+N: 0.01%
+  - Power: 2× AAA batteries (~24.5h lithium) or USB bus power; consumption: 0.3W max
+  - Dimensions: 53(W) x 50.7(H) x 21.4(D) mm; weight: 65g (with batteries)
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: USB-C Data / Bus Power
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: microSD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Right

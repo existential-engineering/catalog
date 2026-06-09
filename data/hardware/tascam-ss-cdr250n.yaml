@@ -1,0 +1,164 @@
+id: iKgPYn_mkLQ1DGKJWbJSM
+name: SS-CDR250N
+manufacturer: tascam
+primaryCategory: rack-mount
+categories:
+  - digital
+url: https://tascam.com/us/product/ss-cdr250n
+description: Professional 2-channel CD/SD/USB recorder and player with
+  integrated network capabilities for installation audio applications. Supports
+  high-resolution recording up to 96kHz/24-bit across dual SD card slots, USB,
+  and CD-R/RW media, with mirror and relay recording modes for redundancy.
+  Network features include an FTP client for automated file transfer and an
+  Event List scheduler for unattended recording and playback operations.
+details: |-
+  1U rack-mount professional CD/SD/USB recorder and player for fixed installation. Records WAV up to 96kHz/24-bit and MP3 to dual SD card slots (up to 128GB SDXC each), USB flash drives, and CD-R/RW discs. Dual SD slots support mirror recording for redundancy or relay recording for continuous extended capture. Network connectivity (100BASE-TX) enables FTP client for automatic file transfer, SNTP time sync, and remote control via iOS/Android apps. Event List scheduler supports fully unattended timed operation. Optional IF-DA2 Dante expansion card available. Onboard processing: compressor, limiter, auto-level, ducking, pitch/key control, 5-band EQ. Balanced XLR inputs support +48V phantom power.
+specs: |-
+  - - Media: SD/SDHC/SDXC up to 128GB ×2, USB flash up to 128GB, CD-R/RW
+  - Formats: WAV 44.1k/48k/96kHz 16/24-bit; MP3 44.1k/48kHz 64–320kbps; CD-DA
+  - Analog balanced input (XLR): +4dBu nominal, mic level min -70dBu, +48V phantom
+  - Analog unbalanced input (RCA): -10dBV nominal, +6dBV max
+  - Analog balanced output (XLR): +4dBu nominal, +15 to +24dBu max
+  - Analog unbalanced output (RCA): -10dBV nominal, +6dBV max
+  - Digital I/O: AES/EBU (XLR, 110Ω), S/PDIF (RCA)
+  - Headphone: 1/4-inch stereo, 45mW+45mW at 32Ω
+  - Frequency response: 20Hz–20kHz ±0.5dB; THD: 0.002% or less
+  - S/N ratio: 106dB or more; Dynamic range: 106dB or more
+  - Network: 10/100BASE-T Ethernet (FTP client, SNTP)
+  - Control: RS-232C (D-sub 9-pin), parallel (D-sub 25-pin), 2.5mm TRS remote
+  - Power: AC 100–240V 50/60Hz, 22W
+  - Dimensions: 482.6(W) x 45(H) x 300.5(D) mm; Weight: 3.2 kg
+io:
+  - name: Analog Balanced Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Balanced Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Unbalanced Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Unbalanced Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Unbalanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Unbalanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Digital Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Digital Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Digital Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Digital Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: USB (Media)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Left
+  - name: Remote Control Jack
+    signalFlow: input
+    category: digital
+    type: expression
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: RS-232C Serial
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: d-sub-9
+    maxConnections: 1
+    position: Right
+  - name: Parallel Control
+    signalFlow: bidirectional
+    category: digital
+    type: midi
+    connection: pin
+    maxConnections: 1
+    position: Right
+  - name: Ethernet (LAN)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: AC Power In
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right

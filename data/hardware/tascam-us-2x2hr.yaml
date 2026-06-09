@@ -1,0 +1,82 @@
+id: K7BhA2eMPjo0KpUSKOm_F
+name: US-2x2HR
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - analog
+  - digital
+  - midi
+url: https://tascam.com/us/product/us-2x2hr
+description: Compact 2-in/2-out USB audio/MIDI interface with Ultra HDDA mic
+  preamps (EIN −128dBu), +48V phantom power, 24-bit/192kHz resolution,
+  zero-latency direct monitoring, loopback, and MIDI DIN I/O. Bus-powered via
+  USB-C with a dye-cast aluminum chassis. Compatible with iPad and iOS.
+details: |-
+  Compact angled tabletop USB interface. XLR/TRS combo inputs 1–2: Ultra HDDA preamps (EIN −128dBu, gain range 56dB, switchable +48V phantom, instrument Hi-Z support). Line outputs 1–2: balanced TRS. Zero-latency direct monitoring (mono/stereo). Loopback. MIDI DIN 5-pin IN/OUT. USB-C bus-powered (optional PS-P520E AC adapter). iOS/iPad compatible. Bundled: Cubase LE, Cubasis LE 3, IK Multimedia SampleTank SE. Dye-cast aluminum chassis.
+specs: |-
+  - - Combo inputs: XLR/TRS; EIN ≤−128dBu; gain 56dB; max +9dBu; 2.2kΩ; +48V phantom
+  - Line outputs: 1/4" TRS; nom +4dBu; max +20dBu; 210Ω
+  - Headphone: 1/4"; 16–250Ω
+  - MIDI: 5-pin DIN IN + OUT
+  - USB: Type-C, USB 2.0 Hi-Speed; 2-in/2-out
+  - Sample rates: 44.1/48/88.2/96/176.4/192kHz; 24-bit
+  - Freq response: 20Hz–20kHz +0/−0.4dB; THD+N 0.0013%; S/N 110dB; crosstalk ≥95dB
+  - Power: USB bus-powered (1.75W) or optional PS-P520E AC adapter
+  - Dimensions: 186(W) × 65(H) × 160(D) mm; weight: 1.1kg
+io:
+  - name: Combo Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Combo Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right

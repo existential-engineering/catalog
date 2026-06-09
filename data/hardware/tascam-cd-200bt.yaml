@@ -1,0 +1,77 @@
+id: 5DvpickIzs_sbXD-_2ojR
+name: CD-200BT
+manufacturer: tascam
+primaryCategory: rack-mount
+categories:
+  - digital
+url: https://tascam.com/us/product/cd-200bt
+description: Professional 2U rack-mount CD player with integrated Bluetooth
+  receiver supporting aptX, AAC, and SBC codecs. Plays CD, CD-R, CD-RW, and
+  CD-ROM discs and supports WAV, MP3, and MP2 audio formats. A 10-second
+  shockproof memory prevents skipping, and the unit pairs with up to eight
+  Bluetooth transmitters for wireless audio streaming.
+details: |-
+  2U EIA rack-mount professional CD player with built-in Bluetooth receiver. Supports CD-DA, WAV, MP3, and MP2 from CD/CD-ROM/CD-R/CD-RW (12cm and 8cm discs). Front-panel 3.5mm stereo aux input for portable devices. Bluetooth v3.0 with aptX/AAC/SBC codecs; pairs with up to 8 Bluetooth transmitters. 10-second shockproof memory. Playback modes: continuous, shuffle, program, single; all-track or single-track repeat. Pitch control ±14%. Unbalanced RCA stereo outputs plus coaxial and optical S/PDIF. Includes RC-CD200BT wireless remote.
+specs: |-
+  - - Playback media: CD, CD-ROM, CD-R, CD-RW (12cm/8cm)
+  - Supported formats: CD-DA, WAV, MP3, MP2
+  - Bluetooth: v3.0, aptX/AAC/SBC, pairs up to 8 devices
+  - Shockproof memory: 10 seconds; pitch control: ±14%
+  - Analog output: RCA unbalanced stereo pair
+  - Digital output: coaxial RCA S/PDIF (IEC60958-3), optical TOS S/PDIF
+  - Aux input: 3.5mm stereo mini-jack (front)
+  - Headphone: 1/4-inch stereo, 20mW+20mW at 32Ω
+  - Frequency response: 20Hz–20kHz ±1dB; S/N ratio: 90dB or more
+  - Dynamic range: 90dB or more; THD: 0.01% or less; Channel separation: 90dB or more
+  - Power: AC 120V 60Hz, 8W; operating temperature: 5–35°C
+  - Dimensions: 481(W) x 94.5(H) x 298(D) mm; weight: 4.5 kg; rack: 2U
+io:
+  - name: Aux Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Digital Output Coaxial
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Digital Output Optical
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: AC Power In
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right

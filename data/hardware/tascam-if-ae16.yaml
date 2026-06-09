@@ -1,0 +1,63 @@
+id: 3KFiiWrF1i_9CdTW_SWlB
+name: IF-AE16
+manufacturer: tascam
+primaryCategory: other
+categories:
+  - rack-mount
+  - digital
+url: https://tascam.com/us/product/if-ae16
+description: 16-In/16-Out AES/EBU expansion card for TASCAM's expansion slot
+  system. Features a built-in sampling rate converter per input pair supporting
+  32kHz–192kHz, with two D-sub 25-pin connectors conforming to AES59-2012
+  standard. Compatible with TASCAM Sonicview 24XP, Sonicview 16XP, DA-6400, and
+  DA-6400dp.
+details: |-
+  The IF-AE16 is a 16-In/16-Out AES/EBU expansion card for TASCAM's expansion slot system, compatible with the Sonicview 24XP, Sonicview 16XP, DA-6400, and DA-6400dp.
+
+  The card features two D-Sub 25-pin connectors conforming to the AES59-2012 standard. Each connector handles 8 channels, providing a total of 16 inputs and 16 outputs.
+
+  A built-in sampling rate converter is included per input pair, supporting input signals from 32kHz to 192kHz while operating at native sample rates of 44.1kHz, 48kHz, 88.2kHz, or 96kHz. The converter can be enabled or disabled per pair.
+
+  Output format is AES3-2003/IEC60958-4 (AES/EBU). Input supports both AES/EBU and S/PDIF (IEC60958-3, data format detection only).
+specs: |-
+  - - Channels (44.1/48kHz): 16 In/16 Out at 24-bit
+  - Channels (88.2/96kHz): 16 In/16 Out at 24-bit
+  - Connectors: 2x D-Sub 25-pin (Ch 1-8 and Ch 9-16, AES59-2012)
+  - Built-in SRC per input pair: 32kHz–192kHz range
+  - Output format: AES3-2003/IEC60958-4 (AES/EBU)
+  - Input formats: AES/EBU, S/PDIF (data format only)
+  - Dimensions: 107(W) x 40(H) x 161.5(D) mm
+  - Weight: 222g
+io:
+  - name: AES/EBU Output Ch 1-8
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: AES/EBU Output Ch 9-16
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: AES/EBU Input Ch 1-8
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: AES/EBU Input Ch 9-16
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: pin
+    maxConnections: 8
+    position: Right
+links:
+  - type: support
+    title: Downloads
+    url: https://tascam.com/us/product/if-ae16/downloads

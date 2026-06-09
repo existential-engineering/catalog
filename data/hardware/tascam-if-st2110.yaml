@@ -1,0 +1,54 @@
+id: wfvIieplvZYrvf6fYs8fH
+name: IF-ST2110
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - digital
+url: https://tascam.com/us/product/if-st2110
+description: An optional 64-in/64-out SMPTE ST2110 expansion card designed for
+  TASCAM broadcast consoles and recorders. Compliant with ST2110-30/31 and AES67
+  standards, it supports ST2022-7 redundancy and NMOS IS-04/05 for IP studio,
+  remote production, and OB vehicle workflows.
+details: |-
+  The IF-ST2110 is a 64-in/64-out SMPTE ST2110 expansion card for TASCAM's expansion slot system, compatible with the Sonicview 24XP, Sonicview 16XP, DA-6400, and DA-6400dp.
+
+  The card is compliant with SMPTE ST 2110-30/31 and AES67, and supports ST2022-7 redundancy for reliable IP audio distribution. NMOS IS-04/05 (with DNS-SD and mDNS) allows integration into modern IP studio workflows.
+
+  Two media ports (1000BASE-T) carry primary and redundant SMPTE ST 2110 audio streams, while a dedicated control port handles NMOS, WebUI configuration, and management traffic.
+
+  Supported formats include AES67 (L16/L24) and AM824 (Legacy/AES3). Configurable buffer time ranges from 250 microseconds to 32 milliseconds, with packet times of 1 ms or 125 microseconds.
+specs: |-
+  - - Channels (48kHz): 64 In / 64 Out
+  - Channels (96kHz): 32 In / 32 Out
+  - Sampling rates: 48kHz, 96kHz
+  - Bit depth: 16-bit, 24-bit, 32-bit integer
+  - Network standard: 1000BASE-T (IEEE 802.3ab)
+  - Standards: SMPTE ST 2110-30/31, AES67, ST2022-7, NMOS IS-04/05
+  - PTP: IEEE 1588-2008, SMPTE ST 2059-2
+  - Buffer time: 250 μs to 32 ms
+  - Dimensions: 107(W) x 34(H) x 156.8(D) mm
+  - Weight: 211g
+  - Operating temperature: 0–40°C
+io:
+  - name: PORT 1 (Media)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Left
+  - name: PORT 2 (Media Redundancy)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Left
+  - name: CONTROL
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Left

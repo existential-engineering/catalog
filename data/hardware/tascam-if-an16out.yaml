@@ -1,0 +1,49 @@
+id: Xq6iPO9YUtHgUt8QZ9KiL
+name: IF-AN16/OUT
+manufacturer: tascam
+primaryCategory: other
+categories:
+  - rack-mount
+url: https://tascam.com/us/product/if-an16out
+description: 16-channel analog output expansion card for TASCAM's expansion slot
+  system. Provides two D-sub 25-pin balanced connectors (8 channels each) with
+  per-channel output attenuation of 0 to -14 dB in 0.5 dB increments. Compatible
+  with Sonicview 24XP, Sonicview 16XP, DA-6400, and DA-6400dp.
+details: |-
+  The IF-AN16/OUT is a 16-channel analog output expansion card for TASCAM's expansion slot system, compatible with the Sonicview 24XP, Sonicview 16XP, DA-6400, and DA-6400dp.
+
+  The card provides 16 balanced analog outputs via two D-Sub 25-pin connectors (8 channels each), supporting sample rates up to 96kHz at 24-bit resolution.
+
+  Each channel includes independent output attenuation from 0 to -14 dB in 0.5 dB increments. Nominal output level is +4 dBu or +6 dBu, with maximum output level configurable between +15 and +24 dBu depending on the host device.
+
+  THD+N is 0.001% or less, S/N ratio is 110 dB or higher, and crosstalk is 110 dB or higher at 1 kHz.
+specs: |-
+  - - Channels: 16 outputs at 44.1/48/88.2/96kHz, 16-bit/24-bit
+  - Connectors: 2x D-Sub 25-pin (Ch 1-8 and Ch 9-16)
+  - Output attenuation: 0 to -14 dB (0.5 dB increments)
+  - Nominal output level: +4 dBu, +6 dBu
+  - Max output level: +15 to +24 dBu (device-dependent)
+  - Output impedance: 200Ω or lower
+  - Min load impedance: 2kΩ
+  - Frequency response: +0.1 dB / -0.5 dB (20 Hz–20 kHz)
+  - THD+N: 0.001% or less (0 dBFS, 1 kHz)
+  - S/N ratio: 110 dB or higher
+  - Dynamic range: 110 dB or higher
+  - Crosstalk: 110 dB or higher
+  - Dimensions: 107(W) x 40(H) x 161.5(D) mm
+  - Weight: 240g
+io:
+  - name: Analog Output Ch 1-8
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right
+  - name: Analog Output Ch 9-16
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Right

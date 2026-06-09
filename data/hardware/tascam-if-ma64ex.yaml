@@ -1,0 +1,63 @@
+id: 9NRn6BdbJMId66oaWfLff
+name: IF-MA64/EX
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - digital
+url: https://tascam.com/us/product/if-ma64ex
+description: 64-In/64-Out MADI Interface Expansion Card with optical input and
+  output. An optional expansion card for TASCAM's expansion slot system, adding
+  professional MADI connectivity to compatible devices including the Sonicview
+  24XP, Sonicview 16XP, DA-6400, and DA-6400dp.
+details: |-
+  The IF-MA64/EX is a 64-In/64-Out MADI expansion card for TASCAM's expansion slot system, compatible with the Sonicview 24XP, Sonicview 16XP, DA-6400, and DA-6400dp.
+
+  The card provides both coaxial (BNC, 75Ω) and optical (FDDI duplex SC, 62.5μm or 50μm multi-mode fiber) MADI I/O, conforming to the AES10-2008 standard.
+
+  At 44.1/48kHz, it supports 64-in/64-out (56 channels in 48k frame mode). At 88.2/96kHz, it supports 32-in/32-out (28/32 channels depending on frame mode). A coaxial MADI thru port is also included for daisy-chaining.
+specs: |-
+  - - Channels (44.1/48kHz): 64 In / 64 Out (56 ch in 48k frame mode)
+  - Channels (88.2/96kHz): 32 In / 32 Out
+  - MADI format: AES10-2008
+  - Coaxial: BNC, 75Ω
+  - Optical: FDDI duplex SC (62.5μm or 50μm multi-mode)
+  - Includes MADI Coaxial Thru port
+  - Dimensions: 107(W) x 34(H) x 164.4(D) mm
+  - Weight: 166g
+io:
+  - name: MADI Coaxial Input
+    signalFlow: input
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical Input
+    signalFlow: input
+    category: digital
+    type: madi
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Coaxial Output
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical Output
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Coaxial Thru
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 64
+    position: Right

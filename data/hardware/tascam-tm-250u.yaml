@@ -1,0 +1,39 @@
+id: ngcqWwP4K68PyncvmoONX
+name: TM-250U
+manufacturer: tascam
+primaryCategory: microphone
+categories:
+  - digital
+url: https://tascam.com/us/product/tm-250u
+description: USB condenser microphone for podcasting, conferencing, and computer
+  recording. Plug-and-play via USB-C (UAC 1.0) with no driver required. Features
+  a super-cardioid polar pattern, 16-bit/48kHz capture, built-in headphone
+  output for low-latency direct monitoring, plus on-device gain, volume, and
+  mute controls. Compatible with Windows, macOS, iOS, Android, and Chrome OS.
+details: |-
+  Super-cardioid USB condenser microphone (UAC 1.0). On-device controls: gain knob, headphone volume knob, mic-mute button. Bus-powered (5V/193mA via USB-C). Supports 44.1kHz and 48kHz sampling. Includes 2m USB-C to USB-A cable, mic holder (5/8" thread), and desktop stand.
+specs: |-
+  - - Element: condenser; polar pattern: super-cardioid
+  - Freq response: 20Hz–20kHz; sensitivity: −32dB (0dB=1V/Pa @ 1kHz)
+  - Max SPL: 130dB @ 1% THD
+  - ADC: THD+N 0.01%; S/N 89dB; dynamic range 89dB
+  - Headphone DAC: THD+N 0.005%; S/N 96dB; dynamic range 93dB
+  - USB: Type-C, UAC 1.0; 44.1/48kHz 16-bit
+  - Headphone: 3.5mm stereo
+  - Power: USB bus 5V 193mA
+  - Dimensions: 65mm × 203.4mm; weight: 439g
+io:
+  - name: USB-C (Audio)
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom

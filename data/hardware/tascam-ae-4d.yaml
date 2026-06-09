@@ -1,0 +1,68 @@
+id: mDyuVZdaurHtOXIVAMkAo
+name: AE-4D
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - digital
+url: https://tascam.com/us/product/ae-4d
+description: Compact half-rack Dante converter that bridges AES/EBU digital
+  audio and Dante networked audio, supporting 4 channels in each direction.
+  Includes an embedded DSP mixer with up to 50 scene presets and supports Power
+  over Ethernet (PoE), making it suitable for smaller installations and
+  distributed AV systems. AES/EBU inputs include integrated sampling rate
+  conversion supporting source signals from 32 to 192kHz.
+details: |-
+  Half-rack AES/EBU-to-Dante converter for integrating legacy digital audio equipment into Dante networked audio environments. Provides 4 channels of AES/EBU I/O (2 input XLR + 2 output XLR cables, each carrying 2 channels) and 4-in/4-out Dante channels. Built-in DSP mixer with up to 50 scene presets. Runs on Power over Ethernet (PoE Class 0), eliminating separate power supply in most installations. Supports Dante daisy-chain topology and Gigabit Ethernet (1000BASE-T). AES/EBU inputs include integrated SRC supporting 32–192kHz sources. Control via TASCAM DCP CONNECT or TASCAM EZ CONNECT.
+specs: |-
+  - - AES/EBU inputs: 4 channels via 2× XLR (110Ω), 32–192kHz with integrated SRC
+  - AES/EBU outputs: 4 channels via 2× XLR (110Ω), 44.1/48/88.2/96kHz
+  - Dante: 4-in/4-out, RJ-45 Gigabit Ethernet (1000BASE-T)
+  - Bit depth: 16/24-bit; sample rates: 44.1/48kHz (4-ch), 88.2/96kHz (2-ch)
+  - Power: PoE Class 0 (primary) or TASCAM PS-P1220E AC adapter (optional, barrel)
+  - Power consumption: 3W
+  - Dimensions: 214(W) x 44.45(H) x 136.1(D) mm; weight: 795g
+  - Operating temperature: 0–40°C; requires Cat 5e STP or higher
+io:
+  - name: AES/EBU Input Ch 1-2
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Input Ch 3-4
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Output Ch 1-2
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Output Ch 3-4
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Dante Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,126 @@
+id: hUyVzd5V9cJAf44gXf-ZX
+name: MZ-123BT
+manufacturer: tascam
+primaryCategory: mixer
+categories:
+  - rack-mount
+url: https://tascam.com/us/product/mz-123bt
+description: 3-channel 1U rackmount multi-zone mixer with Bluetooth 4.2 (A2DP,
+  SBC/AAC/aptX). Designed for commercial installation in retail, restaurants,
+  bars, and hotels. Features three discrete zone outputs with independent volume
+  control, dual microphone inputs with talkover functionality, front-panel
+  XLR/TRS combo mic input, Bluetooth pairing controls, and headphone monitoring.
+  Includes 3-band EQ and high-pass filter on rear panel.
+details: |-
+  1U rackmount multizone installation mixer. Bluetooth 4.2 Class 2, A2DP profile, SBC/AAC/Qualcomm aptX codecs, SCMS-T content protection, ~10m range, RP-SMA antenna. Front panel: XLR/TRS combo mic input, 3.5mm AUX input, 6.3mm headphone output, Bluetooth pairing controls. Rear panel: 2x Euroblock balanced mic inputs (+48V phantom switchable per channel), 2x RCA stereo line input pairs, 3x Euroblock balanced zone outputs (mono/stereo switchable), 3-band EQ, high-pass filter, talkover with adjustable threshold and release time. Includes power cord, 8 Euroblock plugs, cable band kit, rackmount screws, Bluetooth antenna.
+specs: |-
+  - - Dimensions: 483(W) x 46.5(H) x 274.8(D) mm; Weight: 3.0 kg
+  - Power: AC 100–240V 50/60Hz, 25W
+  - Operating temperature: 0–40°C
+  - MIC front combo: rated -26dBu (HIGH) / -2dBu (LOW), gain 39dB, impedance 2.4kΩ
+  - MIC 1-2 Euroblock: rated -26dBu (PAD OFF) / -2dBu (PAD ON), gain 39dB, +48V phantom
+  - Line inputs 1-2 (RCA): nominal -10dBV, max +6dBV, gain -16 to +16dB, impedance ≥10kΩ
+  - AUX input (3.5mm): nominal -20dBV, max -4dBV, impedance ≥10kΩ
+  - Zone outputs (Euroblock balanced): rated +4dBu, max +24dBu, impedance 200Ω
+  - Headphone output: max ≥80mW+80mW at 32Ω; THD+N ≤0.1%
+  - Frequency response (LINE→OUT): 20Hz–20kHz ±0.5dB
+  - THD: ≤0.01% (MIC rear/LINE); S/N ratio: ≥90dB; Crosstalk: ≥80dB; EIN: ≤-125dBu
+io:
+  - name: MIC Input (Combo)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: AUX Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: MIC Input 1 (Euroblock)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: MIC Input 2 (Euroblock)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Line Input 1 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line Input 1 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line Input 2 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line Input 2 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Zone Output 1 (Euroblock)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Zone Output 2 (Euroblock)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Zone Output 3 (Euroblock)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Bluetooth
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: AC Power In
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right

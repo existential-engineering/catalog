@@ -1,0 +1,115 @@
+id: vhLVgXX45X8c7Jyz3AeTO
+name: US-42B MiNiSTUDIO CREATOR
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - analog
+  - digital
+url: https://tascam.com/us/product/us-42b
+description: USB audio interface and podcast mixer designed for streaming and
+  content creation. Features a built-in condenser microphone, two XLR/TRS combo
+  inputs with Ultra-HDDA preamps, instrument inputs, 3.5mm headset support,
+  loopback, and dedicated iOS connectivity via USB Micro-B.
+details: |-
+  Desktop USB audio interface for streaming and content creation. Built-in condenser mic for quick recording. Two XLR/TRS combo inputs with Ultra-HDDA preamps (+48V phantom). Two front-panel instrument 1/4" inputs. 3.5mm TRRS headset jack (mic in + headphone out). Aux in via 3.5mm. Stereo RCA outputs. 1/4" headphone output. USB-B for computer connection; dedicated USB Micro-B for iOS bus power. Loopback function for mixing computer audio. Voice effect and sound pad functions.
+specs: |-
+  - - Combo inputs: XLR/TRS; Ultra-HDDA preamps; +48V phantom
+  - Instrument inputs: 2× 1/4"; front panel
+  - Headset: 3.5mm TRRS; mic in + headphone out
+  - Aux in: 3.5mm stereo
+  - RCA outputs: stereo L/R
+  - Headphone: 1/4"
+  - USB: Type-B (computer); Micro-B (iOS power)
+  - Sample rates: 44.1/48/88.2/96kHz; 24-bit
+io:
+  - name: Built-in Mic
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Top
+  - name: Combo Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Combo Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Instrument Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Instrument Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Headset Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Aux Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: RCA Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: RCA Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headset Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: iOS Power / Data
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b
+    maxConnections: 1
+    position: Right

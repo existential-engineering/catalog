@@ -1,0 +1,68 @@
+id: _IM5YIMGPfZlZcurM2ZX3
+name: DR-40XP
+manufacturer: tascam
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://tascam.com/us/product/dr-40xp
+description: 4-channel 32-bit float portable field recorder with adjustable
+  built-in stereo condenser microphones (A-B or X-Y), two XLR/TRS combo inputs
+  with phantom power, and USB-C audio interface. Delivers clip-free audio up to
+  125dB SPL with ultra-low-noise HDDA mic preamps (EIN -126 dBu) and
+  approximately 18 hours of battery life. Podcast bundle variant of the DR-40X
+  with USB-C connectivity and 32-bit float recording.
+details: |-
+  4-track 32-bit float portable recorder. Adjustable built-in unidirectional condenser mics (A-B/X-Y, max 125dB SPL, EIN -126 dBu). Two XLR/TRS combo inputs with +24V or +48V phantom power; mic range -82 to +7 dBu (2.4kΩ); line +4 dBu nominal, +24 dBu max (10kΩ). USB-C: 2-in/2-out audio interface (24-bit, 44.1/48kHz, USB 2.0). Records WAV/BWF and MP3 to microSDXC up to 512GB. Reverb, chromatic tuner, overdub, overwrite. Compatible with Windows, macOS, iOS, iPadOS. Powered by 3× AA batteries (~18 hours alkaline) or USB-C bus power (5V/0.5A).
+specs: |-
+  - - Built-in mics: adjustable A-B/X-Y unidirectional condenser; max SPL 125dB; EIN ≤-126 dBu
+  - Combo inputs: XLR/TRS (2×), +24V/+48V phantom; mic -82 to +7 dBu; line +4/+24 dBu nominal/max
+  - Headphone/line out: 3.5mm stereo mini jack; nominal -20dBV (10kΩ)
+  - USB-C: USB 2.0 High Speed; 2-in/2-out audio 24-bit 44.1/48kHz + mass storage
+  - Recording media: microSD/SDHC/SDXC up to 512GB
+  - Formats: WAV/BWF 44.1/48/96kHz 16/24/32-bit float; MP3
+  - THD+N: ≤0.008%; dynamic range: ≥112dB
+  - Power: 3× AA batteries (~18h alkaline) or USB-C 5V/0.5A; consumption: 1.7W max
+  - Dimensions: 70(W) x 155(H) x 35(D) mm closed; weight: 282g (with batteries)
+io:
+  - name: Built-in Stereo Microphones
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 2
+    position: Top
+  - name: XLR/TRS Combo Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: XLR/TRS Combo Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone/Line Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: USB-C Audio / Data
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: microSD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Left

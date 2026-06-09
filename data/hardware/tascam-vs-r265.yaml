@@ -1,0 +1,110 @@
+id: tkWWiuMJwJz59zb5_H7xH
+name: VS-R265
+manufacturer: tascam
+primaryCategory: rack-mount
+categories:
+  - digital
+url: https://tascam.com/us/product/vs-r265
+description: Standalone half-rack 4K video streamer that simultaneously encodes,
+  decodes, streams, and records without an external computer. Supports H.264 and
+  H.265 (HEVC) up to 3840×2160p and outputs up to eight simultaneous streams via
+  RTMP/RTMPS, RTSP, HLS, RTP/UDP, and multicast. Recording is available to
+  internal 17GB storage, USB drives, or SD/SDHC cards in MPEG2-TS or MP4 format.
+details: |-
+  Half-rack 1U standalone 4K video streamer for simultaneous encode, decode, stream, and record. Handles H.264 and H.265 (HEVC) video up to 3840×2160p at 500kbps–30Mbps, with AAC audio at 64–512kbps. Up to 8 simultaneous output streams: 3× RTMP/RTMPS, 1× RTSP, 1× HLS, 2× RTP/UDP unicast, 1× multicast. Local recording to 17GB internal storage, USB drives, or SD/SDHC cards in MPEG2-TS or MP4. Managed via web GUI, TASCAM DISCOVERY app, or RESTful API v2. Powered by PoE+ Class 4 through Ethernet port; optional DC adapter available.
+specs: |-
+  - - Video codec: H.264, H.265 (HEVC); max resolution: 3840×2160p; bitrate: 500kbps–30Mbps
+  - Simultaneous streams: 8 (3× RTMP/RTMPS, 1× RTSP, 1× HLS, 2× RTP/UDP unicast, 1× multicast)
+  - Audio codec: AAC, 64–512kbps at 32/44.1/48kHz
+  - Balanced audio: Euroblock 3.81mm pitch, nominal +4dBu, max +20dBu
+  - Unbalanced audio: 3.5mm stereo mini jack, nominal -10dBV, max +6dBV
+  - Recording: internal 17GB, USB 2.0/3.0, SD/SDHC; formats: MPEG2-TS, MP4
+  - Network: Gigabit Ethernet 1000BASE-T (RJ-45), PoE+ Class 4
+  - Power: PoE+ Class 4 (primary) or DC barrel (optional); consumption: 12.2W
+  - Dimensions: 214(W) x 44.5(H) x 136.1(D) mm; weight: 850g
+  - Operating temperature: 0–40°C
+io:
+  - name: HDMI Input
+    signalFlow: input
+    category: digital
+    type: hdmi
+    connection: hdmi
+    maxConnections: 1
+    position: Right
+  - name: HDMI Output
+    signalFlow: output
+    category: digital
+    type: hdmi
+    connection: hdmi
+    maxConnections: 1
+    position: Right
+  - name: Balanced Audio Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Balanced Audio Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Balanced Audio Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Balanced Audio Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Ethernet / PoE+
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: USB Type-A (Storage)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Left
+  - name: SD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Left
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

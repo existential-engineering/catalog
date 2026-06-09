@@ -1,0 +1,93 @@
+id: pEUAE9L0ZZceQ4aTTyRG4
+name: TA-1VP
+manufacturer: tascam
+primaryCategory: multi-effect
+categories:
+  - rack-mount
+  - digital
+  - midi
+url: https://tascam.com/us/product/ta-1vp
+description: 1U rack-mount vocal processor co-developed with Antares Audio
+  Technologies, combining a mic preamp with real-time pitch correction
+  (Auto-Tune Evo), Antares Microphone Modeling, analog tube modeling,
+  compression, de-essing, and 2-band parametric EQ. Features MIDI I/O for DAW
+  integration and a footswitch input for hands-free control. Designed for live
+  sound, studio, and broadcast applications.
+details: |-
+  1U rack vocal processor. Mic input: XLR balanced, 2.2kΩ, max +9.5dBu, +48V phantom. Line input: 1/4" TRS balanced, 10kΩ, max +24dBu. Main and double-track outputs: 1/4" TRS balanced, 100Ω, max +20dBu. S/PDIF RCA digital output. DIN 5-pin MIDI in/out. 1/4" TS footswitch input (up to 8 functions). Processing chain: Antares Microphone Modeling, tube modeling, 2-band parametric EQ, compressor (variable-knee, −36 to 0dB threshold, 1:1–99:1 ratio), downward-expanding gate, de-esser (2.9–20kHz highpass), Auto-Tune Evo chromatic/diatonic pitch correction, automatic doubletracking. RS-232C, parallel port, and RJ-45 Ethernet control ports also present (omitted from IO — no matching schema types). Freq response 20Hz–20kHz ±0.5dB, dynamic range ≥120dB, THD ≤0.008%, S/N ≥98dB. AC 100–240V, 4W.
+specs: |-
+  - - Mic input: XLR; 2.2kΩ; max +9.5dBu; phantom power
+  - Line input: 1/4" TRS balanced; 10kΩ; max +24dBu
+  - Main output: 1/4" TRS balanced; 100Ω; max +20dBu
+  - Double track output: 1/4" TRS balanced; 100Ω; max +20dBu
+  - S/PDIF: RCA; 75Ω
+  - MIDI: 5-pin DIN IN + OUT
+  - Footswitch: 1/4" TS; up to 8 functions
+  - Freq response: 20Hz–20kHz ±0.5dB
+  - Dynamic range: ≥120dB; THD: ≤0.008%; S/N: ≥98dB
+  - Power: AC 100–240V; 4W
+  - Dimensions: 482.6 × 44 × 128.1 mm (1U); weight: 2.0kg
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Double Track Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Output
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Footswitch Input
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right

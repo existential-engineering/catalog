@@ -1,0 +1,169 @@
+id: L1hd0Vp3TgA5oy5XRn1os
+name: BD-MP4K
+manufacturer: tascam
+primaryCategory: rack-mount
+categories:
+  - digital
+url: https://tascam.com/us/product/bd-mp4k
+description: Professional-grade 4K UHD Blu-ray player in a 1U rackmount form
+  factor, designed for installation in theaters, educational facilities, and
+  commercial venues. Supports 4K Ultra HD BD, standard Blu-ray, DVD, and CD
+  playback, as well as file playback from SD cards, USB 3.0 drives, and
+  networked Samba/NAS servers. External control is available via Gigabit
+  Ethernet or RS-232C, with panel lock, IR remote lock, and power-on play for
+  unattended operation.
+details: |-
+  1U rackmount 4K UHD Blu-ray player for commercial installation. Plays 4K Ultra HD BD, BD25, BD50, DVD, and CD formats, plus media files from SD cards (up to 512GB), USB 3.0 drives (up to 2TB, exFAT), and networked Samba/NAS servers. Dual HDMI outputs: HDMI 2.0 for video+audio, HDMI 1.4 for audio only (only one active simultaneously). Full 7.1-channel RCA surround outputs. Gigabit Ethernet (10/100/1000BASE-T) and RS-232C (D-sub 9-pin) for system control. Panel lock, IR lock, tray lock for unattended operation. Power-on play and seamless A-B repeat. Includes rackmount kit and IR remote (RC-BDMP4K).
+specs: |-
+  - - Form factor: 1U rackmount; dimensions: 482.6(W) x 44.0(H) x 280.7(D) mm; weight: 2.78 kg
+  - Power: AC 100–240V 50/60Hz, 30W; operating temperature: 5–35°C
+  - Disc formats: 4K Ultra HD BD, BD25/50, BD-ROM/R/RE, DVD-ROM/R/RW/+R/+RW, CD-DA, CD-R/RW
+  - Video file formats: ASF, MPG, AVI, 3GP, DAT, MKV, MOV, M2TS, OGM, TP, TS, MP4, WMV
+  - Audio file formats: WAV, MP3, WMA, AAC, FLAC, APE
+  - Video output resolutions: 480i/576i, 480p/576p, 720p, 1080i, 1080p, 2160p
+  - Balanced XLR output: +4dBu nominal, 200Ω or lower
+  - Unbalanced RCA output: -10dBV nominal, 210Ω or lower
+  - Frequency response: 20Hz–20kHz ±0.5dB; THD: 0.03% or less; S/N ratio: 96dB or higher
+  - Network: RJ-45, 10/100/1000BASE-T; RS-232C: D-sub 9-pin
+  - SD: up to 512GB; USB 3.0: up to 2TB
+io:
+  - name: HDMI 2.0 Output
+    signalFlow: output
+    category: digital
+    type: hdmi
+    connection: hdmi
+    maxConnections: 1
+    position: Right
+  - name: HDMI 1.4 Audio Output
+    signalFlow: output
+    category: digital
+    type: hdmi
+    connection: hdmi
+    maxConnections: 1
+    position: Right
+  - name: Balanced XLR Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced XLR Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced RCA Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced RCA Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: 7.1 Surround Out FL
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: 7.1 Surround Out FR
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: 7.1 Surround Out C
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: 7.1 Surround Out SW
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: 7.1 Surround Out SL
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: 7.1 Surround Out SR
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: 7.1 Surround Out BL
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: 7.1 Surround Out BR
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Digital Coaxial Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: SD Card Slot
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: built-in
+    maxConnections: 1
+    position: Left
+  - name: USB 3.0 Type-A
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right
+  - name: RS-232C Control
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: d-sub-9
+    maxConnections: 1
+    position: Right
+  - name: Ethernet (Control)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: AC Power In
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,70 @@
+id: GnK8RJ_56etIs98iow4ew
+name: 202MKVII
+manufacturer: tascam
+primaryCategory: rack-mount
+categories:
+  - other
+url: https://tascam.com/us/product/202mkvii
+description: Professional-grade dual cassette deck with USB digital output,
+  supporting recording, playback, dubbing, and archiving. Features pitch
+  control, Dolby B noise reduction, parallel recording to both decks, and a 3U
+  rack-mount design.
+details: |-
+  The 202MKVII is a professional dual cassette deck in a 3U rack-mount form factor. It supports Type I (Normal) and Type II (Chrome) tape for recording and playback, and Type IV (Metal) for playback only.
+
+  Both decks can record simultaneously in parallel, and audio can be dubbed between them at 1:1 or 2x speed. Deck 1 features ±12% pitch control for speed adjustment.
+
+  Dolby B equivalent noise reduction is included. A USB 2.0 output enables digital archiving of tape content at sample rates from 8kHz to 48kHz (8/16-bit). The included RC-1331 wireless remote allows transport control from a distance.
+specs: |-
+  - - Tape types: Type I (record/play), Type II (record/play), Type IV (playback only)
+  - Track system: 4-track, 2-channel stereo
+  - Tape speed: 4.8 cm/sec
+  - Wow & flutter: 0.25% W.RMS
+  - Frequency response: 30–15kHz ±4dB (Type II), 30–13kHz (Type I)
+  - S/N ratio: 59dB A-weighted
+  - Fast winding time: approx. 120 sec (C-60 tape)
+  - Noise reduction: Dolby B equivalent
+  - Pitch control: ±12% (Deck 1 only)
+  - Analog line input: -9dBu nominal, +20dBu max, 33kΩ impedance
+  - Analog line output: -4.5dBu nominal, 1kΩ impedance
+  - Mic input: -66dBu max, 3kΩ+ impedance
+  - Headphone output: 15mW+15mW @ 32Ω
+  - USB: 2.0 Full Speed, 8k–48kHz, 8/16-bit
+  - Rack size: 3U; Power consumption: 14W
+  - Dimensions: 482(W) x 138.3(H) x 285.8(D) mm; Weight: 5.4 kg
+io:
+  - name: Line In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Mic In
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Headphone Out
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: USB Out
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
