@@ -1,0 +1,40 @@
+id: lqJpz0D2Y9ucpx8qTQvo-
+name: VQNET 85DF
+manufacturer: tannoy
+primaryCategory: speaker
+url: https://www.tannoy.com/en/products/0312-aqr
+description: The VQNET 85DF is a 2-way down-firing powered mid/high loudspeaker
+  with integrated Class D amplification (600W primary channel), DSP, and VNET
+  network control for system diagnostics and monitoring.
+details: |-
+  The VQNET 85DF is a 2-way down-firing powered mid/high loudspeaker with integrated Class D amplification (600W primary channel), DSP, and VNET network control for system diagnostics and monitoring. Designed to integrate with VQ full range and VQNET MB loudspeakers. Coverage pattern 80° x 50°. Second amplifier channel output (800W via NL4) can drive a passive companion speaker. Dual Concentric driver behind a single PSW (Point Source Waveguide) horn. Weather-resistant enclosure option with stainless steel hardware available.
+specs: |-
+  - type: 2-Way Down-Firing Powered Mid/High
+  - amplifierTopology: Dual-channel Class D
+  - powerHandling: 600 W (primary channel)
+  - amplifierOutput: 800 W (secondary NL4 output)
+  - coveragePattern: 80° x 50°
+  - lfDrivers: 2x 12" dual
+  - networking: VNET (proprietary DSP platform)
+io:
+  - name: Input Panel
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Amplifier Output (NL4)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Right
+  - name: VNET Network
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right

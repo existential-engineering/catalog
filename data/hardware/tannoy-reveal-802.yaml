@@ -1,0 +1,58 @@
+id: lehV8nr4d3IOsfuWX9Kyj
+name: REVEAL 802
+manufacturer: tannoy
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+url: https://www.tannoy.com/en/products/0316-abc
+description: The Tannoy REVEAL 802 is a 140W bi-amplified 8" studio reference
+  monitor featuring a tuned front-firing bass port, custom woofer/tweeter
+  drivers, and active crossover filters designed by Dr. Paul Mills.
+details: |-
+  The Tannoy REVEAL 802 is a 140W bi-amplified 8" studio reference monitor featuring a tuned front-firing bass port, custom woofer/tweeter drivers, and active crossover filters designed by Dr. Paul Mills. It delivers an ultra-wide sweet spot with XLR and 1/4" inputs plus an Aux Link for mobile device connectivity.
+specs: |-
+  - frequency_response: 42 Hz - 43 kHz
+  - max_spl: 114 dB
+  - power_output_total: 100 W
+  - power_lf_mid: 75 W
+  - power_hf: 25 W
+  - thd: 0.4%
+  - input_balanced: XLR, 20 kΩ
+  - input_unbalanced: 1/4" Jack, 10 kΩ
+  - input_aux_link: Mini Jack, 10 kΩ
+  - output_aux_link: Mini Jack
+  - hf_eq_settings: -1.5 dB HF Cut / Neutral / +1.5 dB HF Boost
+  - crossover_frequency: 1.8 kHz
+  - low_frequency_alignment: Optimized Front Port
+  - dimensions_inches: 15.4 x 10.0 x 11.8 (H x W x D)
+  - dimensions_mm: 390 x 254 x 300 (H x W x D)
+io:
+  - name: Balanced XLR Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced 1/4" TS Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Aux Link Input (1/8" stereo)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Aux Link Output (Monitor Link)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
