@@ -1,0 +1,82 @@
+id: AJPkCsEGoGzGu0thatYQP
+name: PROFILER Player
+manufacturer: kemper
+primaryCategory: amp-sim
+categories:
+  - guitar-amplifier
+  - modeling
+  - multi-effect
+  - pedal
+url: https://www.kemper-amps.com/shop/profiler-player.html
+description: The PROFILER Player is the most compact model in the Kemper
+  Profiler lineup — a floor/pedalboard form-factor amp profiler offering the
+  complete Kemper sound in an extremely portable package.
+specs: |-
+  - Dimensions: H 6.8 cm (2.68 in) × W 14.5 cm (5.71 in) × D 16.6 cm (6.53 in)
+  - Weight: 1.11 kg (2.45 lbs)
+  - Up to 16 audio processing blocks (expandable to 20 via software upgrade)
+  - INPUT: 1/4-inch TS unbalanced, 127 dB dynamic range, 1 megohm impedance
+  - MAIN OUTPUT: XLR balanced
+  - MONITOR OUTPUT L/R: 1/4-inch TRS balanced, +4 dBu
+  - HEADPHONE: 1/4-inch TRS stereo, 330 mW @ 32 ohms, 220 mW @ 600 ohms
+  - PEDAL INPUT: 1/4-inch TRS, switch or expression pedal (10 kΩ–100 kΩ)
+  - USB audio: 8 channels, 44.1 kHz, USB 2.0
+  - Wi-Fi: 2.4 GHz, WPA2 PSK
+  - Bluetooth: Audio Playback
+  - USB MIDI supported
+  - Line Voltage: 100–230 V AC, max. 0.5 A, 50–60 Hz
+  - Operating Temperature: 5° to 45° C
+io:
+  - name: INPUT
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: MAIN OUTPUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: MONITOR OUTPUT L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: MONITOR OUTPUT R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: HEADPHONE
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: PEDAL INPUT
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: Technical Specifications
+    url: https://www.kemper-amps.com/profiler/technical-specifications
