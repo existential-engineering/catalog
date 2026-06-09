@@ -1,0 +1,48 @@
+id: 1lhwVUgnut8xpUNoQjQNE
+name: VSX 8.2BP
+manufacturer: tannoy
+primaryCategory: subwoofer
+categories:
+  - speaker
+url: https://www.tannoy.com/en/products/0312-anw
+description: The VSX 8.2BP is a compact dual 8" 1,600-Watt passive band pass
+  subwoofer for speech and music sound reinforcement in fixed, portable, and
+  touring audio systems.
+details: |-
+  The VSX 8.2BP is a compact dual 8" 1,600-Watt passive band pass subwoofer for speech and music sound reinforcement in fixed, portable, and touring audio systems. A dual ported band pass system with twin 8" low frequency drivers providing extended low frequency response below 40 Hz. The low distortion band pass design reinforces bass musical instrument frequencies with steep cut-off slopes for effective acoustic transition when used with full-range loudspeakers.
+specs: |-
+  - type: Passive band pass subwoofer
+  - drivers: 2x 8" low frequency drivers
+  - powerHandlingContinuous: 400 W
+  - powerHandlingPeak: 1600 W
+  - impedance: 8 Ohms
+  - frequencyResponse: Below 40 Hz
+io:
+  - name: speakON NL4 Input
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Right
+  - name: speakON NL4 Link
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Right
+  - name: Barrier Strip Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
+  - name: Barrier Strip Link
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Right
