@@ -1,0 +1,57 @@
+id: uUmJjiRc_VfWVgl3UkeEl
+name: Control 2P (Stereo Pair)
+manufacturer: jbl-professional
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+url: https://jblpro.com/en-US/products/c2ps
+description: >-
+  Compact powered stereo monitor pair designed for professional recording, video
+  production, AV presentations, and electronic musical instrument monitoring,
+  featuring 35 watts per channel and multiple balanced and unbalanced input
+  options.
+details: |-
+  The JBL Control 2P is a compact powered studio monitor sold as a stereo pair (C2PS), designed to meet the demands of professional recording studios, video production facilities, AV presentation environments, and electronic musical instrument monitoring. Each enclosure houses a 135mm (5.25") low-frequency driver paired with a 19mm (0.75") polycarbonate dome tweeter, crossed over at 4.2 kHz.
+
+  The integrated amplifier delivers 35 watts per channel, achieving a maximum SPL of 115 dB at one meter for the pair. An internal peak limiter and overload protection circuit safeguard the drivers during high-level program material. The wide 120° x 120° coverage pattern makes the monitors well suited for near-field desktop or wall-mounted placement.
+
+  Connectivity is comprehensive: a Neutrik combo XLR/TRS input accepts balanced +4 dBu signals, RCA inputs accommodate consumer-level 0 dBu sources, and a front-facing 3.5mm headphone jack provides convenient private monitoring. A side-mounted volume knob controls both channels simultaneously, and a high-frequency adjustment control allows response contouring to suit the acoustic environment.
+
+  The polypropylene structural foam enclosure is magnetically shielded, making the monitors safe to position near CRT displays and other magnetically sensitive equipment. Included snap-on pedestals optimize desktop placement angle, and an optional MTC-2P mounting kit enables wall or ceiling installation.
+specs: |-
+  - LF driver: 135mm (5.25")
+  - HF driver: 19mm (0.75") polycarbonate dome tweeter
+  - Amplifier power: 35 watts per channel
+  - Maximum SPL (1m): 115 dB per pair
+  - Crossover frequency: 4.2 kHz
+  - Frequency range: 80 Hz – 20 kHz
+  - Frequency response (±3 dB): 100 Hz – 18 kHz
+  - Coverage angle: 120° H × 120° V
+  - Input sensitivity: +4 dBu (XLR/TRS), 0 dBu (RCA)
+  - Internal peak limiter and overload protection
+  - Magnetically shielded transducers
+  - Dimensions (each): 235 × 159 × 143 mm (9.3 × 6.3 × 5.6 in)
+  - Weight (each): 4.8 kg (10 lbs)
+io:
+  - name: "XLR/TRS Combo Input"
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: "RCA Input"
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: "Headphone Output"
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
