@@ -1,5 +1,76 @@
 # catalog
 
+## 3.26.0
+
+### Minor Changes
+
+- d8923b0: Import Jackson Guitars (77 hardware entries).
+
+  Products span the full Jackson lineup: American Series (Rhoads,
+  Soloist, Virtuoso), Concept Series limited editions, JS Series
+  entry-level electrics and basses, Pro Series signatures (Misha
+  Mansoor, Marty Friedman, Jeff Loomis, Gus G., Dave Davidson,
+  Corey Beaulieu, Wes Borland, Josh Smith, Phil Demmel, Rob
+  Caggiano, Mark Heylmun, Chris Broderick), Pro Plus Series, Pro
+  Origins 1985 San Dimas, X Series Soloist, and USA Signature
+  Misha Mansoor Baritone Surfcaster. Includes 9 bass guitar
+  entries (JS Concert Bass, Kelly Bird Bass lines).
+
+- 437bfd1: Import JBL Professional (19 hardware entries).
+
+  Studio monitors: 104BT, 305P MkII, 306P MkII, 308P MkII,
+  705P, 708P, LSR310S, M2 Master Reference Monitor, Control
+  2P Master, Control 2P (Stereo Pair). Subwoofers: SUB18.
+  PA systems: IRX ONE, PRX ONE, VTX A12, VTX B28. Installed:
+  Control 1 Pro, Control HST. Commercial AV: Pro SoundBar
+  PSB-1, Pro SoundBar PSB-2.
+
+- 852f7f9: Import Kemper (11 hardware/software entries).
+
+  The Kemper PROFILER line — Head, PowerHead, Rack, PowerRack, Stage,
+  and Player — are the flagship hardware amp profilers. Also included:
+  Kabinet (1×12 speaker cabinet), Kone NEO (replacement speaker
+  driver), Power Kabinet (active cabinet), PROFILER Remote (foot
+  controller), and Rig Manager (free companion software for Mac,
+  Windows, iOS, and Android).
+
+- a94dbaa: Import Soundcraft addendum — 6 additional entries + data quality fixes.
+
+  Adds 6 hardware entries missing from the initial import (AES/EBU
+  Interface, K1, K2, M Series, Si Option Cards, Vi Option Cards), removes
+  3 duplicate accessories-directory entries and 3 double-prefixed filenames,
+  and fixes 17 description/details fields that contained truncated text,
+  marketing taglines, or placeholder content.
+
+- 3de7e8f: Import Tannoy (50 hardware entries).
+
+  Full Tannoy professional audio lineup covering the VX passive
+  PA series, VXP/VXP active PA, VSX subwoofers, VQ/VQNET line
+  arrays, GOLD/REVEAL studio monitors, Super Gold monitors, and
+  Prestige/Legacy/Platinum HiFi loudspeakers.
+
+- 5663b16: Import Taylor Guitars (61 hardware entries) and TASCAM
+  (84 hardware/accessory entries).
+
+  Taylor import covers the full acoustic catalog: 100–900 Series
+  Grand Auditorium and Grand Orchestra models, Academy, GS Mini,
+  Baby Taylor, Builder's Edition, Koa Series, Nylon Series,
+  12-string variants, and the T5z hybrid hollowbody line (Classic
+  and Pro). TASCAM import includes professional recorders, mixers,
+  CD/BD players, clock generators, audio interfaces, and
+  accessories.
+
+- 5dc221d: Import TC Electronic (113 entries: 110 hardware, 3 accessories).
+
+  TC Electronic is a Danish manufacturer of guitar effects pedals, bass
+  amplifiers, studio equipment, and rack processors. This import covers
+  their full active and discontinued catalog including the TonePrint
+  pedal series (Flashback, Hall of Fame, HyperGravity, Polytune), bass
+  heads (BH250/550/800, BAM200), studio monitoring controllers (Clarity
+  M), the Plethora X series multi-effects, DT desktop plugin controllers
+  (TC2290-DT, TC8210-DT), and isolated pedalboard power supplies
+  (Protein Bar, Protein 10). Nine products are tagged as discontinued.
+
 ## 3.25.0
 
 ### Minor Changes
