@@ -1,0 +1,60 @@
+id: KHL4fbuFhSXqvmdT8_zoC
+name: PROFILER Remote
+manufacturer: kemper
+primaryCategory: control-surface
+categories:
+  - midi-controller
+url: https://www.kemper-amps.com/shop/profiler-remote-b.html
+description: The quintessential foot controller for your PROFILER. Connects via
+  a single RJ45 cable with no additional power cable required, featuring 13
+  dedicated buttons for accessing all effects with color-coded LED indicators.
+specs: |-
+  - Dimensions: H 7.5 cm (2.95 in) × W 42 cm (16.53 in) × D 18 cm (7.09 in)
+  - Weight: 2.9 kg (6.39 lbs)
+  - 13 dedicated footswitch buttons with color-coded LEDs
+  - 4 expression/switch pedal inputs (1/4-inch TRS)
+  - Pedal impedance: 10 kΩ min, 100 kΩ max
+  - Network RJ45 connection to PROFILER (control + power, no separate power supply)
+  - Rugged stage-ready housing
+  - Large illuminated display
+  - Supports Performance Mode and effects locking
+io:
+  - name: PEDAL 1
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: PEDAL 2
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: PEDAL 3
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: PEDAL 4
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: NETWORK (to PROFILER)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 1
+    position: Top
+links:
+  - type: resource
+    title: Technical Specifications
+    url: https://www.kemper-amps.com/profiler/technical-specifications

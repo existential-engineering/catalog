@@ -1,0 +1,186 @@
+id: NMwoGcpuJ4OHBCtgGY4NO
+name: PROFILER Head
+manufacturer: kemper
+primaryCategory: amp-sim
+categories:
+  - guitar-amplifier
+  - modeling
+  - multi-effect
+  - digital
+url: https://www.kemper-amps.com/shop/profiler-head-b.html
+prices:
+  - amount: 1498
+    currency: USD
+description: The all-in-one solution for playing live, at home or in the studio
+  – now in its second generation.
+specs: |-
+  - Dimensions: H 21.7 cm (8.54 in) × W 37.8 cm (14.88 in) × D 17.3 cm (6.81 in)
+  - Weight: 5.32 kg (11.73 lbs)
+  - Front INPUT: 1/4-inch TS unbalanced, dynamic range 127 dB, impedance 1 megohm
+  - ALTERNATIVE INPUT: 1/4-inch TRS balanced with ground lift, dynamic range 111 dB, impedance 825 kohms
+  - RETURN: XLR balanced, 1/4-inch balanced with ground lift, dynamic range ≥105 dB, impedance 825 kohms
+  - MAIN OUTPUT L and R: XLR balanced + 1/4-inch TS unbalanced with ground lift, output level: XLR +4 dBu, TS +4 dBu
+  - MONITOR OUTPUT: 1/4-inch TS unbalanced with ground lift, output level: +4 dBu
+  - DIRECT OUTPUT/SEND: 1/4-inch TS unbalanced with ground lift, output level: +4 dBu, dynamic range >108 dB
+  - HEADPHONE Output: 1/4-inch TRS stereo, 32–600 ohms, 330 mW @ 32 ohms, 220 mW @ 600 ohms
+  - S/PDIF Input/Output: 44.1/48/88.2/96 kHz (24-bit), master and slave, RCA connectors
+  - USB audio: 8 channels (MK 2) or 4 channels (MK 1) with Windows/macOS at 44.1 kHz
+  - USB: USB 2.0 (FS) device, USB-A and USB-B connectors
+  - SWITCH/PEDAL: two 1/4-inch TRS, each for mono/stereo switch or expression pedal (10 kohm min, 100 kohm max)
+  - MIDI IN/OUT/THRU: 5-pin DIN connectors
+  - Network: RJ45 connector (for PROFILER Remote connection)
+  - Line Voltage: 90–275 V AC, max. 0.5 A
+  - Frequency: 50 Hz to 60 Hz, single phase
+  - Operating Temperature: 5° to 45° C (41° to 113° F)
+io:
+  - name: INPUT
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: ALTERNATIVE INPUT
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: RETURN (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: RETURN (1/4-inch)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MAIN OUTPUT L (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: MAIN OUTPUT R (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: MAIN OUTPUT L (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MAIN OUTPUT R (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MONITOR OUTPUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: DIRECT OUTPUT/SEND
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: HEADPHONE
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: S/PDIF
+    signalFlow: bidirectional
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: USB-B
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: USB-A
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right
+  - name: MIDI IN
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI OUT
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI THRU
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: SWITCH/PEDAL 1
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: SWITCH/PEDAL 2
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: NETWORK (Remote)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: AC POWER
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: Technical Specifications
+    url: https://www.kemper-amps.com/profiler/technical-specifications
