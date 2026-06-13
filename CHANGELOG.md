@@ -1,5 +1,22 @@
 # catalog
 
+## 3.27.0
+
+### Minor Changes
+
+- 70464be: Merge update for AudioMulch (1 software entry).
+
+  Adds version history (14 releases, 2.0.0–2.2.5, 2009–2016) and
+  4 Vimeo demo videos. No new entries; no discontinuations.
+
+- cc56140: Import Seymour Duncan (13 hardware entries).
+
+  Adds the eight Seymour Duncan effects pedals (805, Diamondhead,
+  Forza, Palladium, Pickup Booster Mini, Polaron, Studio Bass,
+  Vapor Trail Deluxe) and the five PowerStage solid-state pedal
+  amps (100 Stereo, 170, 200, 700, 700 Bass). Manufacturer
+  already existed; this is the first product import for the brand.
+
 ## 3.26.0
 
 ### Minor Changes
