@@ -72,6 +72,10 @@ jobs:
             -s /tmp/minisign.key \
             -m dist/catalog.sqlite \
             -t "catalog v${VERSION}"
+          echo "$CATALOG_SIGNING_KEY_PASSWORD" | minisign -S \
+            -s /tmp/minisign.key \
+            -m dist/catalog-index.json \
+            -t "catalog-index v${VERSION}"
           rm /tmp/minisign.key
 
       - name: Generate SBOM
@@ -110,3 +114,4 @@ jobs:
             dist/catalog-sbom.spdx.json
             dist/catalog-index.json
             dist/catalog-index.json.sha256
+            dist/catalog-index.json.minisig

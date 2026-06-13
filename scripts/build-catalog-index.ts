@@ -236,17 +236,22 @@ function build(): void {
     (a, b) => a.manufacturerName.localeCompare(b.manufacturerName) || a.name.localeCompare(b.name)
   );
 
+  // Only brands with at least one product are emitted, so the count must come
+  // from the emitted list — not manufacturers.size (every manufacturer file,
+  // including the ~3k with no products yet) — to stay consistent.
+  const emittedManufacturers = buildManufacturers(manufacturers, products);
+
   const index: CatalogIndex = {
     version: packageJson.version,
     generated: new Date().toISOString(),
     counts: {
-      manufacturers: manufacturers.size,
+      manufacturers: emittedManufacturers.length,
       software: software.products.length,
       hardware: hardware.products.length,
       accessories: accessories.products.length,
     },
     categories: buildCategories(products),
-    manufacturers: buildManufacturers(manufacturers, products),
+    manufacturers: emittedManufacturers,
     products,
   };
 
