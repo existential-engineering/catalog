@@ -48,9 +48,15 @@ jobs:
         if: steps.changesets.outputs.hasChangesets == 'false'
         run: pnpm build
 
+      - name: Build web index
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        run: pnpm build:index
+
       - name: Generate checksum
         if: steps.changesets.outputs.hasChangesets == 'false'
-        run: sha256sum dist/catalog.sqlite > dist/catalog.sqlite.sha256
+        run: |
+          sha256sum dist/catalog.sqlite > dist/catalog.sqlite.sha256
+          sha256sum dist/catalog-index.json > dist/catalog-index.json.sha256
 
       - name: Sign catalog with minisign
         if: steps.changesets.outputs.hasChangesets == 'false'
@@ -102,3 +108,5 @@ jobs:
             dist/catalog.sqlite.sha256
             dist/catalog.sqlite.minisig
             dist/catalog-sbom.spdx.json
+            dist/catalog-index.json
+            dist/catalog-index.json.sha256
