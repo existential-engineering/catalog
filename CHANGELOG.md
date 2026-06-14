@@ -1,5 +1,26 @@
 # catalog
 
+## 3.28.0
+
+### Minor Changes
+
+- ee2ed6e: Merge aberrant-dsp (7 updated software entries).
+
+  Added user manual links (Lair, ShapeShifter, SketchCassette II, Tectonic),
+  demo download links (Digitalis), version data (Cataclysm v1.1, Tectonic v1.1),
+  and release year for Lofi Oddity (2023). All structural fields (formats,
+  platforms, url, prices) match — this merge surfaces category and prose
+  conflicts for human review.
+
+- 9dba47f: Emit a lean `catalog-index.json` web index alongside the SQLite build.
+
+  Adds `scripts/build-catalog-index.ts` (run via `pnpm build:index`),
+  which mirrors the SQLite source-of-truth loading to produce a
+  slim JSON summary of categories, brands, and products for
+  machine-readable / web consumption. The release workflow builds
+  and checksums the index and attaches it to the GitHub Release
+  next to `catalog.sqlite`.
+
 ## 3.27.0
 
 ### Minor Changes
