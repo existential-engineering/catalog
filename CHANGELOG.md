@@ -1,5 +1,11 @@
 # catalog
 
+## 3.28.1
+
+### Patch Changes
+
+- c98f75b: Add "Aureo" to the cSpell dictionary
+
 ## 3.28.0
 
 ### Minor Changes
