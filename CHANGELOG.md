@@ -1,5 +1,30 @@
 # catalog
 
+## 3.29.0
+
+### Minor Changes
+
+- 9ae6e0d: catalog-import-merge: accentize (new=2 discontinued=3 updated=0)
+
+  Added Content Creator bundle (DialogueEnhance + DeRoom, $94.40) and
+  dxLevel (free LUFS leveling plugin). Marked dxRevive Pro, DeRoom Pro,
+  and Chameleon Surround as discontinued — their URLs redirect to the
+  base products (dxRevive, DeRoom, Chameleon).
+
+- c496097: catalog-import-merge: acoustica (new=1 discontinued=0 updated=4)
+
+  Added Spin It Again (vinyl/cassette digitizer for Windows). Refreshed
+  existing entries: Home Studio gained a YouTube video; Recording Studio
+  gained a release year; Pianissimo gained its $19 price.
+
+- ed5c6ec: Merge refresh for ADPTR Audio (5 software entries).
+
+  Adds images, videos, version history, and release dates to Hype,
+  Metric AB, Sculpt, Streamliner, and Utopia. All 5 products remain
+  active on the manufacturer site. No new or discontinued entries.
+
+- a9c48f5: Merge refresh DDMF: 26 entries updated with specs enrichment.
+
 ## 3.28.1
 
 ### Patch Changes
