@@ -38,4 +38,10 @@ yarn.lock
 # Internal plans (local-only, not published)
 docs/plans/
 
+# /catalog-import-merge writes PR bodies to data/{slug}/merge-pr-body.md
+# (passed to `gh pr create --body-file`). Transient workflow artifacts —
+# kept on disk for re-running gh pr create on failure or for debugging
+# the generated body, but never catalog content.
+data/*/merge-pr-body.md
+
 
