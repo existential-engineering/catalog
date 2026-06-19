@@ -3,13 +3,14 @@ name: Multiplicity
 manufacturer: dmg-audio
 primaryCategory: dynamics
 categories:
-  - compressor
-  - multiband
-  - mastering
-  - equalizer
   - plugin
+  - compressor
+  - eq
+  - mastering
+  - multi-effect
+  - analyzer
 formats:
-  - vst
+  - vst2
   - vst3
   - au
   - aax
@@ -18,23 +19,29 @@ platforms:
   - windows
 url: https://dmgaudio.com/multiplicity
 prices:
-  - amount: 232.16
+  - amount: 231.49
     currency: USD
-description: "Multiband mastering processor combining multiband compression,
-  expansion, gating, and dynamic EQ with 8 bands of crossover and dual-stage
-  dynamic handling that separates transients from dynamics."
+description: "Multiplicity is a multiband dynamic processor offering
+  compression, expansion, gating, and dynamic EQ across 8 bands with
+  dual-stage dynamic handling that separates transients and dynamics for
+  precise mastering control."
 details: |-
-  2023-10-30
-
-  8 bands of crossover and dynamic EQ
-  Dual-stage dynamic handling with separate transient/dynamics processing
-  Dual-timing release to eliminate pumping
-  Bit-transparent linear phase crossover
-  Extensive graphing and spectrum analysis
-  MS/LR linkage options
-  3-band sidechain EQ per band
-  ITU-1770 autogain functionality
-  8 A/B banks with full undo/redo
-specs: |-
-  - windows: Vista, Windows 7, 8, 10
-  - mac: OS 10.7+, Intel or Apple Silicon
+  Multiplicity delivers multiband compression, expansion, gating, and dynamic EQ across 8 bands of crossover processing. Dual-stage dynamic handling separates transients and dynamics independently, with a dual-timing release mechanism to eliminate pumping. A bit-transparent linear phase crossover divides the spectrum, with ratios above and below threshold plus independent floor and ceiling controls per band. Full MS/LR linkage, per-band sidechain targeting, per-band adjustable lookahead, a 3-band sidechain EQ per band, and an external sidechain input offer comprehensive signal routing. ITU-1770-based autogain, configurable oversampling, a built-in spectrum analyzer, 8 A/B preset banks, full undo/redo, Mac Retina support, and a freely resizable UI round out the feature set.
+specs:
+  - "8 bands of crossover and dynamic EQ"
+  - "Dual-stage dynamic handling: separate transient and dynamic processing"
+  - "Dual-timing release mechanism"
+  - "Bit-transparent linear phase crossover"
+  - "Ratios above and below threshold with independent floor and ceiling"
+  - "Full MS/LR linkage and sidechain targeting"
+  - "Per-band adjustable lookahead"
+  - "3-band sidechain EQ per band"
+  - "External sidechain input"
+  - "ITU-1770 based autogain"
+  - "Configurable oversampling"
+  - "Spectrum analyzer"
+  - "8 A/B preset banks"
+  - "Windows: Vista / 7 / 8 / 10, 32-bit and 64-bit"
+  - "Mac: macOS 10.7 or newer, Intel and Apple Silicon"
+images:
+  - https://dmgaudio.com/images/products/multiplicity.png
