@@ -5,7 +5,7 @@
 | new          | 0                                                              |
 | updated      | 14 applied (16 candidates; 2 had no schema-valid safe-adds)    |
 | discontinued | 0                                                              |
-| unchanged    | 0                                                              |
+| unchanged    | 2                                                              |
 
 > `aom-invisible-limiter` and `aom-tranquilizr` had no schema-valid
 > safe-adds to apply. The extracted `type` and `images` fields are not
