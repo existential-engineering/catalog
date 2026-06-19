@@ -38,4 +38,14 @@ yarn.lock
 # Internal plans (local-only, not published)
 docs/plans/
 
+# data/ holds only the five canonical collections; ignore any stray/scratch dir
+# (e.g. merge-pr-body.md from the catalog-import-merge workflow). Re-include the
+# canonical collections; data/ itself is not excluded, so this whitelist works.
+/data/*/
+!/data/manufacturers/
+!/data/software/
+!/data/content/
+!/data/hardware/
+!/data/accessories/
+
 
