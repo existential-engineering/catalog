@@ -55,7 +55,7 @@ auto-applied.
 
 For per-field conflict details (existing vs extracted values), see:
 
-```
+```text
 scripts/catalog-import/data/ddmf/merge-plan.json
 ```
 
@@ -63,7 +63,7 @@ Apply resolutions by hand (`Edit` the YAML) before merging this PR.
 
 ### Files modified
 
-```
+```text
 data/software/ddmf-6144.yaml           — specs added
 data/software/ddmf-bridgewize.yaml     — specs added
 data/software/ddmf-chorddetector.yaml  — specs added
@@ -94,14 +94,14 @@ data/software/ddmf-virtualaudiostream.yaml — categories + prices + specs added
 
 ### Files NOT modified (skipped)
 
-```
+```text
 data/software/ddmf-iieq.yaml     — extraction returned object-format specs/details (invalid)
 data/software/ddmf-transport.yaml — extraction returned object-format specs/details (invalid)
 ```
 
 These two require manual enrichment. The extracted envelope files are at:
 
-```
+```text
 scripts/catalog-import/data/ddmf/extracted/ddmf-iieq.json
 scripts/catalog-import/data/ddmf/extracted/ddmf-transport.json
 ```
