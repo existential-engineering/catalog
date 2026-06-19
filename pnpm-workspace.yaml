@@ -2,12 +2,18 @@ allowBuilds:
   better-sqlite3: true
   esbuild: true
 
-# TODO: remove this override once vitest publishes a release whose `vite`
-# peer range starts at >=7.3.2. As of 2026-05-12, vitest@4.1.6 still
-# resolves vite@7.3.1 by default, which trips GHSA-v2wj-q39q-566r and
-# GHSA-p9ff-h696-f583 under `pnpm audit --audit-level=high` (pnpm 11 fails
-# on these; pnpm 10 silently ignored the threshold). To verify it's safe to
-# drop: comment out the override, run `pnpm install --no-frozen-lockfile`,
-# then `pnpm audit --audit-level=high` — exit 0 means remove it.
+# Security overrides for transitive dependencies. To verify any of these is
+# safe to drop: comment it out, run `pnpm install --no-frozen-lockfile`, then
+# `pnpm audit` — if the corresponding advisory no longer appears, remove it.
+#
+# - vite >=8.0.16: vitest still resolves vite@8.0.13 by default, which trips
+#   GHSA-fx2h-pf6j-xcff (server.fs.deny bypass) and GHSA-v6wh-96g9-6wx3
+#   (launch-editor NTLMv2 disclosure). Patched in vite 8.0.16.
+# - esbuild >=0.28.1: vite/tsx pull esbuild@0.28.0, vulnerable to
+#   GHSA-g7r4-m6w7-qqqr (arbitrary file read via dev server). Patched in 0.28.1.
+# - js-yaml >=4.1.2: @changesets/* pull js-yaml<=4.1.1, vulnerable to
+#   GHSA-h67p-54hq-rp68 (quadratic-complexity DoS in merge keys). Patched in 4.1.2.
 overrides:
-  vite: ">=7.3.2"
+  vite: ">=8.0.16 <9"
+  esbuild: ">=0.28.1"
+  js-yaml: ">=4.1.2"
