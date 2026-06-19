@@ -6,6 +6,8 @@ categories:
   - virtual-instrument
   - plugin
   - spectral
+  - hybrid
+  - electronic
 formats:
   - vst2
   - vst3
@@ -20,28 +22,39 @@ description: "Thorn is a software synthesizer that was designed to be easy to
   modules, light on the CPU, Thorn is ready to be put at the heart of your mix,
   in any genre of modern electronic music production."
 details: |-
-  64-bit
+  Thorn offers 3 oscillators that utilize spectral synthesis method. This gives you control
+  over all harmonics involved into the generation process of your sound. The oscillator
+  provides sets of spectral and real-time effects to shape harmonics further. FM, RM, PWM,
+  and Hard Sync are implemented as well.
 
-  3 spectral synthesis oscillators with 16-frame spectrum tables
+  Sound sources are organized as spectrum tables of 16 frames with ability to edit and morph
+  harmonics. The spectral synthesis gives ability to post-process all the generated harmonics
+  with a special filter to colorize the output.
 
-  2 multi-mode analog modeled filters with saturation stages
+  Two multi-mode, analog modeled filters with sensitive saturation stages are available to
+  charge your sounds and make them shine through the mix. There are 9 high quality effects,
+  3x ADSR envelopes, 3x LFOs, and 2x multistage envelopes at your service in Thorn.
 
-  9 high quality effects
+  A 16-step flexible arpeggiator with MIDI output is available to generate rhythmic sequences,
+  along with a grid-based Glitch sequencer for creative sound design.
 
-  3x ADSR envelopes, 3x LFOs, 2x multistage envelopes
-
-  16-step flexible arpeggiator with MIDI output
-
-  Grid-based Glitch sequencer for stuttering effects
-
-  FM synthesis
-  RM synthesis
-  PWM
-  Hard Sync
-  Spectral synthesis
-  Harmonic editing and morphing
+  Thorn is exclusively distributed by Plugin Alliance. A demo version is available to try
+  before purchase.
 specs: |-
   - Modern processor with SSE3 support
-  - Windows Vista or higher
-  - OSX 10.9.X or higher
-  - VST 2.4 or VST 3 or AU or AAX compatible host software
+  - 64-bit only
+links:
+  - type: resource
+    title: Download, Demo or Buy at Plugin Alliance
+    url: https://www.plugin-alliance.com/en/products/ds_thorn.html
+  - type: resource
+    title: User Manual
+    url: https://dmitrysches.com/files/download/Thorn_User_Manual.pdf
+  - type: resource
+    title: Changelog
+    url: https://dmitrysches.com/thorn-changelog
+  - type: resource
+    title: Additional Presets
+    url: https://dmitrysches.com/sounds/sounds-thorn
+versions:
+  - name: "1.3.1"
