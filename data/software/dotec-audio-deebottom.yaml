@@ -1,9 +1,11 @@
 id: CWHwfvD3jg9EnmI9thnyY
 name: DeeBottom
 manufacturer: dotec-audio
-primaryCategory: equalizer
+primaryCategory: dynamics
 categories:
-  - effect
+  - eq
+  - enhancer
+  - mastering
 formats:
   - vst2
   - vst3
@@ -14,14 +16,32 @@ platforms:
   - windows
 url: https://dotec-audio.com/deebottom.html
 prices:
-  - amount: 0
+  - amount: 50
     currency: USD
-description: "Bass enhancement plugin that brings out rich low frequencies and
-  achieves optimal bass balance in any environment. Features Bottom slider for
-  automatic bass balance adjustment and Warm slider for enhanced low-bass
-  playback."
-details: |-
-  2026-01-13
-specs: |-
-  - systemRequirements: macOS 10.12 or later (64-bit), Windows 64-bit
-  - bitDepth: 64-bit
+    type: standard
+  - amount: 40
+    currency: USD
+    type: coupon_discount
+    note: $10 USD off with coupon code
+  - amount: 35
+    currency: USD
+    type: serial_key_discount
+    note: $15 USD off with existing serial key
+  - amount: 35
+    currency: USD
+    type: bulk_discount
+    note: $15 USD off on second purchase
+description: DeeBottom is a bass booster plugin that brings out rich low frequencies and achieves optimal bass balance in any environment. It solves problems like thin audio quality and insufficient impact due to lack of bass, taking mastering to the next level.
+details:
+  - DeeBottom is a bass booster plugin from DOTEC-AUDIO that automatically brings out rich low frequencies to achieve optimal bass balance in any listening environment. The Bottom slider intelligently adjusts bass balance according to high frequencies and amplification levels, providing a more substantial and impactful sound.
+  - The Warm slider delivers a rich acoustic experience even on devices with weak bass reproduction, such as smartphones and laptops. This makes DeeBottom especially useful for content creators who need their audio to translate well across different playback devices and platforms, including social media content.
+  - DeeBottom features a simple and intuitive interface that is easy to use while offering flexible bass control compatible with various audio sources. The plugin is designed to solve common mastering challenges such as thin audio quality and insufficient low-end impact.
+  - The plugin is available as a free demo with a 1-second silence inserted every 30 seconds. A full serial key license can be purchased for $50 USD, with discounts available via coupon code ($10 off), existing serial key ($15 off), or bulk purchase ($15 off on second purchase). Registration requires an internet connection.
+  - DeeBottom has been tested with a wide range of DAWs including Ableton Live, Cubase, Logic Pro X, ProTools, Studio One, FL Studio, Reason, BITWIG Studio, GarageBand, Audacity, OBS Studio, and many more. Both Windows (VST2/VST3/AAX, 64-bit) and macOS (VST2/VST3/AU/AAX, 64-bit, OS 10.12 or later) are supported.
+versions:
+  - name: 1.0.1
+    releaseDate: 2026-01-13
+    description: Graphics performance has been improved.
+  - name: 1.0.0
+    releaseDate: 2025-03-27
+    description: First release.

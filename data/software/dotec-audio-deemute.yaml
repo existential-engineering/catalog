@@ -1,10 +1,11 @@
 id: Z0kWAfG7KgBB8TnmDfmog
 name: DeeMute
 manufacturer: dotec-audio
-primaryCategory: utility
+primaryCategory: gate
 categories:
+  - dynamics
+  - midi
   - creative
-  - effect
 formats:
   - vst2
   - vst3
@@ -13,15 +14,33 @@ formats:
 platforms:
   - mac
   - windows
+  - ios
 url: https://dotec-audio.com/deemute.html
 prices:
   - amount: 0
     currency: USD
-description: "MIDI-triggered audio mute/invert effect plugin that can mute or
-  invert audio triggered by MIDI notes. Supports stutter effects, ducking, and
-  gating with flip button and adjustable attack/release."
-details: |-
-  2026-01-13
-specs: |-
-  - systemRequirements: macOS 10.12 or later (64-bit), Windows 64-bit
-  - bitDepth: 64-bit
+    type: free
+    note: Free demo available; paid version also includes demo functionality
+description: DeeMute can mute (or invert) audio triggered by MIDI notes. It can use it for a wide range of applications other than stutter and ducking!
+details:
+  - DeeMute is a MIDI-triggered audio muting and inversion plug-in from Dotec-Audio. When a MIDI note is received, the plug-in mutes or inverts the audio signal passing through it, enabling a wide variety of creative and corrective applications beyond the standard stutter and ducking effects.
+  - The FLIP button reverses the mute operation — when activated, the audio passes through normally until a MIDI note is received, at which point it is muted or inverted. This makes it easy to create stutter gate effects that are active only during MIDI triggers rather than in between them.
+  - Adjustable Attack and Release parameters allow DeeMute to function as a ducker, smoothing the mute transitions for more musical, sidechain-style results. Together with the FLIP mode, the attack and release controls cover use cases from sharp rhythmic gates to gentle automated volume ducking.
+  - An on-board LEVEL control lets users set the output level of the wet signal, and DeeMute has been tested across a broad range of DAW hosts including Ableton Live, Logic Pro X, Cubase, FL Studio, Pro Tools, Studio One, Reason, Digital Performer, GarageBand, OBS Studio, and more.
+  - On macOS, DeeMute is available as VST2, VST3, AU, and AAX (64-bit, OS 10.12 or later). On Windows, VST2, VST3, and AAX are provided (64-bit). An iOS/iPad version is also available. All Dotec-Audio plug-ins include a free demonstration mode within the paid version.
+versions:
+  - name: 1.2.1
+    releaseDate: 2026-01-13
+    description: Graphics performance improved
+  - name: 1.2.0
+    releaseDate: 2025-06-13
+    description: Trigger accuracy enhanced to 1-sample unit
+  - name: 1.1.0
+    releaseDate: 2024-09-21
+    description: Stability improvements and notification function added
+  - name: 1.0.1
+    releaseDate: 2022-08-04
+    description: FLIP button state fix; LEVEL midpoint adjustment
+  - name: 1.0.0
+    releaseDate: 2022-08-03
+    description: Initial release

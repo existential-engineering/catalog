@@ -4,6 +4,7 @@ manufacturer: dotec-audio
 primaryCategory: compressor
 categories:
   - dynamics
+  - effect
 formats:
   - vst2
   - vst3
@@ -14,13 +15,71 @@ platforms:
   - windows
 url: https://dotec-audio.com/deefat.html
 prices:
-  - amount: 0
+  - amount: 50
     currency: USD
-description: "Auto compressor plugin designed to deliver fat sounds with minimal
-  controls. Only one slider controls the compressor, with a bass enhancer button
-  for adjusting enhancement levels."
+    type: standard
+description: DeeFat is a VST2, VST3, AU, and AAX auto compressor plug-in that uses a single slider to achieve full, fat-sounding compression. It is designed for simplicity and speed, making it suitable for live performance use.
 details: |-
-  2026-01-13
+  DeeFat is an auto compressor plug-in developed by Dotec-Audio that distills compression down to a single control. The core concept is that one slider governs the entire compression process to produce what the developer describes as "FAT sounds" — a full, enhanced audio character without requiring manual adjustment of attack, release, ratio, or threshold parameters.
+
+  The plug-in is designed to run efficiently and respond gracefully under load, making it practical for live performance situations where low latency and reliable processing are priorities. Its simplified interface removes the need for compression expertise, allowing users to apply effective dynamics processing quickly.
+
+  Version 2.5.0, released in November 2017, added a BASS ENHANCER button that lets users adjust the level of low-frequency enhancement applied alongside the compression. This provides a secondary shaping tool while keeping the overall interface minimal.
+
+  DeeFat supports Apple Silicon natively across all formats (VST, VST3, AU, and AAX on Mac). The Windows build supports 64-bit DAW hosts, and the Mac build requires macOS 10.12 or later. A demo version is available that introduces one second of silence every 30 seconds; a serial key is required to activate the full version.
+
+  The plug-in has been tested with a wide range of DAWs including Ableton Live, Cubase, Logic Pro X, Pro Tools, Studio One, FL Studio, Reason, GarageBand, Audacity, Bitwig Studio, and OBS Studio.
 specs: |-
-  - systemRequirements: macOS 10.12 or later (64-bit), Windows 64-bit, Apple Silicon supported
-  - bitDepth: 64-bit
+  - Formats: VST2, VST3, AU, AAX
+  - Windows: 64-bit only
+  - macOS: 64-bit only, OS 10.12 or later
+  - Apple Silicon support for all formats (VST, VST3, AU, AAX)
+  - Single-slider auto compressor interface
+  - BASS ENHANCER button with adjustable enhancement level
+  - Demo version available (1 second silence every 30 seconds)
+  - Serial key registration requires internet connection
+  - Latest version: 2.5.6 (April 21, 2026)
+versions:
+  - name: 2.5.6
+    releaseDate: 2026-04-21
+    description: Fixed graphics bug.
+  - name: 2.5.5
+    releaseDate: 2026-01-13
+    description: Graphics performance has been improved.
+  - name: 2.5.4
+    releaseDate: 2022-06-18
+    description: Apple Silicon support for AAX on Mac.
+  - name: 2.5.3
+    releaseDate: 2021-01-05
+    description: Apple Silicon support for VST/VST3/AU; fixed automation bug.
+  - name: 2.5.2
+    releaseDate: 2020-07-03
+    description: Improved graphics processing on Mac Retina models.
+  - name: 2.5.1
+    releaseDate: 2020-06-23
+    description: Improved graphics processing up to 300% on Mac.
+  - name: 2.5.0
+    releaseDate: 2017-11-22
+    description: Added BASS ENHANCER button for changing enhance level.
+  - name: 2.0.0
+    releaseDate: 2017-06-07
+    description: Released AAX version; mid-range improved; fixed automation bug.
+  - name: 1.0.5
+    releaseDate: 2016-06-19
+    description: Bug fixes.
+  - name: 1.0.4
+    releaseDate: 2016-05-16
+    description: Bug fixes.
+  - name: 1.0.3
+    releaseDate: 2016-05-02
+    description: Sound quality improved.
+  - name: 1.0.2
+    releaseDate: 2016-04-25
+    description: Bug fixes; startup performance improved.
+  - name: 1.0.1
+    releaseDate: 2016-04-23
+    description: Screen drawing optimization.
+  - name: 1.0.0
+    releaseDate: 2016-04-16
+    description: First release.
+releaseDate: 2016-04-16
