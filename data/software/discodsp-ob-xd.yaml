@@ -1,17 +1,18 @@
 id: v6dvficPPFur5ky5Y3AY6
 name: OB-Xd
 manufacturer: discodsp
-type: software
 primaryCategory: synthesizer
 categories:
   - virtual-instrument
-  - analog
   - plugin
   - standalone
+  - analog
+  - subtractive
+  - emulation
 formats:
-  - vst2
-  - vst3
   - au
+  - vst
+  - vst3
   - aax
   - lv2
   - standalone
@@ -22,12 +23,9 @@ platforms:
   - ios
 url: https://www.discodsp.com/obxd/
 prices:
-  - amount: 99.0
+  - amount: 99
     currency: USD
-description: "Oberheim OB-X inspired synthesizer capturing the legendary sound
-  with polyphonic unison mode stacking up to 16 voices per note, advanced preset
-  search, bi-directional MIDI control, analog mode simulation with per-voice
-  component tolerances, and multi-mode resonant filter with self-oscillation."
+description: Emulation of the Oberheim OB-X with dual independent LFOs, full MPE support with multi-destination Y-axis routing, polyphonic unison up to 16 voices per note, multimode self-oscillating filter, Analog Mode with per-voice component tolerances, MTS-ESP micro-tuning, searchable preset browser, SIMD audio engine, and up to 4x oversampling.
 details: |-
   Dual oscillators with cross-modulation and pulse width modulation
 
@@ -42,11 +40,15 @@ specs: |-
   - windows: Windows 10+, Intel/AMD with AVX2, 8 GB RAM
   - mac: macOS 10.14+, Apple Silicon native or Intel, 8 GB RAM
   - linux: Debian 10+, Intel/AMD with AVX2, 8 GB RAM
-images:
-  - https://www.discodsp.com/img/obxd3_3d_hq.webp
-  - https://www.discodsp.com/img/obxd3_blue_3d.webp
-  - https://www.discodsp.com/img/obxd3.jpg
-  - https://www.discodsp.com/img/obxd3_blue.jpg
+versions:
+  - name: "3.22"
+links:
+  - type: resource
+    title: User Manual
+    url: https://www.discodsp.com/pdf/obxd.pdf
+  - type: resource
+    title: Release Notes
+    url: https://www.discodsp.net/news/obxd.html
 videos:
   - videoId: 2I0WTbNoAEA
     provider: youtube
@@ -57,5 +59,9 @@ videos:
   - videoId: GWrcWjQEsg0
     provider: youtube
     title: OB-Xd Sound Banks
-versions:
-  - name: "3.22"
+type: software
+images:
+  - https://www.discodsp.com/img/obxd3_3d_hq.webp
+  - https://www.discodsp.com/img/obxd3_blue_3d.webp
+  - https://www.discodsp.com/img/obxd3.jpg
+  - https://www.discodsp.com/img/obxd3_blue.jpg

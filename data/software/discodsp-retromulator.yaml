@@ -1,31 +1,28 @@
 id: 6FGlja1mrEaIksWngDiNc
 name: Retromulator
 manufacturer: discodsp
-type: software
-primaryCategory: virtual-instrument
+primaryCategory: emulation
 categories:
-  - synthesizer
-  - sampler
+  - virtual-instrument
   - plugin
   - standalone
+  - rompler
+  - digital
 formats:
-  - vst3
   - au
+  - vst3
   - aax
   - standalone
 platforms:
   - mac
   - windows
   - linux
+  - ios
 url: https://www.discodsp.com/retromulator/
 prices:
-  - amount: 29.0
+  - amount: 29
     currency: USD
-description: "Multi-core retro hardware emulation plugin bringing legendary
-  synthesizer, sampler, and keyboard cores back to life through authentic
-  low-level emulation. Emulates Access Virus A/B/C/TI, Waldorf microQ and
-  Microwave XT, Nord Lead 2X, Roland JP-8000, Yamaha DX7, Akai S1000, Wurlitzer
-  200A, and Yamaha OPL3."
+description: Executes eleven hardware cores at chip level, running original ROM firmware on cycle-accurate emulators. Rather than approximating sounds, it loads actual firmware and sample data from original hardware. Includes emulations of the Yamaha DX7, Roland JP-8000, Access Virus A/B/C/TI, Clavia Nord Lead 2X, Waldorf microQ, Waldorf Microwave XT, Wurlitzer 200A, Yamaha OPL3, Commodore 64 SID, and Akai S1000.
 details: |-
   Access Virus A, B & C
   Access Virus TI
@@ -45,6 +42,18 @@ specs: |-
   - windows: Windows 10+, Intel/AMD with AVX2, 8 GB RAM
   - mac: macOS 10.14+, Apple Silicon or Intel, 8 GB RAM
   - linux: Debian 10+, Intel/AMD with AVX2, 8 GB RAM
+versions:
+  - name: "1.4"
+links:
+  - type: resource
+    title: Source Code
+    url: https://github.com/reales/retromulator
+videos:
+  - videoId: 7wYLONtzc5Q
+    provider: youtube
+  - videoId: dYndUS3H4qk
+    provider: youtube
+type: software
 images:
   - https://www.discodsp.com/img/retromulator.webp
   - https://www.discodsp.com/img/flat/tn_retromulator.webp
