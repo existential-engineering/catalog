@@ -37,8 +37,8 @@ export function brandVariants(name: string): string[] {
   if (!lower) return [];
 
   // hyphen, period, straight + curly apostrophe, ampersand, slash
-  const SEP = /[-.'’&/]/;
-  const SEP_G = /[-.'’&/]/g;
+  const SEP = /[.'’&/-]/;
+  const SEP_G = /[.'’&/-]/g;
 
   // Seed with the raw name plus an ampersand→"and" rewrite, so "Bang & Olufsen"
   // also produces "bang and olufsen" alongside the stripped/spaced forms. The
