@@ -13,7 +13,14 @@ allowBuilds:
 #   GHSA-g7r4-m6w7-qqqr (arbitrary file read via dev server). Patched in 0.28.1.
 # - js-yaml >=4.1.2: @changesets/* pull js-yaml<=4.1.1, vulnerable to
 #   GHSA-h67p-54hq-rp68 (quadratic-complexity DoS in merge keys). Patched in 4.1.2.
+# - read-yaml-file >=2.1.0 <3: @manypkg/get-packages (via changesets) pins
+#   read-yaml-file@1.1.0, which calls yaml.safeLoad — removed in js-yaml 4. The
+#   js-yaml override above forces it onto js-yaml 4, so `changeset version`
+#   crashes ("safeLoad is removed") and the Release workflow never opens the
+#   version PR. 2.1.0 uses yaml.load with the same default/.sync API; 3.x is
+#   ESM-only and breaks @manypkg's CommonJS require.
 overrides:
   vite: ">=8.0.16 <9"
   esbuild: ">=0.28.1"
   js-yaml: ">=4.1.2"
+  read-yaml-file: ">=2.1.0 <3"
