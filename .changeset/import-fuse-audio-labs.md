@@ -1,5 +1,5 @@
 ---
-"@existential-engineering/catalog": minor
+"catalog": minor
 ---
 
 catalog-import-merge: fuse-audio-labs (new=1 discontinued=0 updated=0)
