@@ -25,6 +25,27 @@ describe("brandVariants", () => {
   it("ignores leading/trailing whitespace", () => {
     expect(brandVariants("  ")).toEqual([]);
   });
+
+  it("strips periods so dotted abbreviations are searchable", () => {
+    expect(brandVariants("A.O.M.")).toContain("aom");
+  });
+
+  it("strips and spaces slashes", () => {
+    const v = brandVariants("Mesa/Boogie");
+    expect(v).toContain("mesaboogie");
+    expect(v).toContain("mesa boogie");
+  });
+
+  it("expands ampersands to 'and' plus stripped/spaced forms", () => {
+    const v = brandVariants("Bang & Olufsen");
+    expect(v).toContain("bang and olufsen");
+    expect(v).toContain("bang olufsen");
+  });
+
+  it("strips apostrophes (straight and curly)", () => {
+    expect(brandVariants("D'Addario")).toContain("daddario");
+    expect(brandVariants("D’Addario")).toContain("daddario");
+  });
 });
 
 describe("expandSearchTerms", () => {

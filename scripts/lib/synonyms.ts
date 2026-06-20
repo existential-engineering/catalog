@@ -17,36 +17,64 @@ import { SHORT_FORMS } from "./synonyms-abbreviations.js";
 import { MISSPELLINGS } from "./synonyms-misspellings.js";
 
 /**
- * Generate hyphen/space/digit-boundary variants of a product or brand name.
- * "MS-20"  → ["ms20", "ms 20"]
- * "OP 1"   → ["op1", "op-1"]
- * "ableton live" → [] (no transformable structure)
+ * Generate punctuation/space/digit-boundary variants of a product or brand name.
+ * "MS-20"          → ["ms20", "ms 20"]
+ * "OP 1"           → ["op1", "op-1"]
+ * "A.O.M."         → ["aom", "a o m"]
+ * "Mesa/Boogie"    → ["mesaboogie", "mesa boogie"]
+ * "Bang & Olufsen" → ["bang and olufsen", "bang olufsen", "bangolufsen", …]
+ * "D'Addario"      → ["daddario", "d addario"]
+ * "ableton live"   → ["abletonlive"]
+ *
+ * Separators (hyphen, period, straight/curly apostrophe, ampersand, slash) each
+ * yield a removed form ("a.o.m." → "aom") and a spaced form ("mesa/boogie" →
+ * "mesa boogie"), so FTS prefix matching works whether the user types the
+ * punctuation or omits it. Ampersands additionally seed an "and" rewrite.
  */
 export function brandVariants(name: string): string[] {
   const variants = new Set<string>();
   const lower = name.toLowerCase().trim();
   if (!lower) return [];
 
-  const hasHyphen = lower.includes("-");
-  const hasSpace = /\s/.test(lower);
+  // hyphen, period, straight + curly apostrophe, ampersand, slash
+  const SEP = /[.'’&/-]/;
+  const SEP_G = /[.'’&/-]/g;
 
-  if (hasHyphen) {
-    variants.add(lower.replace(/-/g, ""));
-    variants.add(lower.replace(/-/g, " "));
-  }
-  if (hasSpace) variants.add(lower.replace(/\s+/g, ""));
-
-  // Insert separator at letter→digit transitions. Run against the
-  // single-token form so "OP 1" also generates "op-1" (and "MS 20" gets
-  // "ms-20"), not just the bare space-stripped variant.
-  const lowerNoSpace = hasSpace ? lower.replace(/\s+/g, "") : lower;
-  if (/[a-z]\d/.test(lowerNoSpace)) {
-    variants.add(lowerNoSpace.replace(/([a-z])(\d)/g, "$1 $2"));
-    variants.add(lowerNoSpace.replace(/([a-z])(\d)/g, "$1-$2"));
+  // Seed with the raw name plus an ampersand→"and" rewrite, so "Bang & Olufsen"
+  // also produces "bang and olufsen" alongside the stripped/spaced forms. The
+  // rewrite is added as a variant directly (its spaced form is otherwise lost,
+  // since seeds only contribute their transformations).
+  const seeds = new Set<string>([lower]);
+  if (lower.includes("&")) {
+    const andForm = lower.replace(/&/g, " and ");
+    seeds.add(andForm);
+    variants.add(andForm);
   }
 
-  variants.delete(lower);
-  return [...variants];
+  for (const seed of seeds) {
+    if (SEP.test(seed)) {
+      variants.add(seed.replace(SEP_G, "")); // "a.o.m." → "aom"
+      variants.add(seed.replace(SEP_G, " ")); // "mesa/boogie" → "mesa boogie"
+    }
+    if (/\s/.test(seed)) variants.add(seed.replace(/\s+/g, ""));
+
+    // Insert separator at letter→digit transitions. Run against the
+    // single-token form so "OP 1" also generates "op-1" (and "MS 20" gets
+    // "ms-20"), not just the bare space-stripped variant.
+    const noSpace = seed.replace(/\s+/g, "");
+    if (/[a-z]\d/.test(noSpace)) {
+      variants.add(noSpace.replace(/([a-z])(\d)/g, "$1 $2"));
+      variants.add(noSpace.replace(/([a-z])(\d)/g, "$1-$2"));
+    }
+  }
+
+  // Normalize whitespace and drop empties / the unchanged original.
+  const cleaned = new Set<string>();
+  for (const v of variants) {
+    const c = v.replace(/\s+/g, " ").trim();
+    if (c && c !== lower) cleaned.add(c);
+  }
+  return [...cleaned];
 }
 
 /**
