@@ -10,6 +10,9 @@ concurrency:
   group: assign-ids-${{ github.head_ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   assign-ids:
     if: github.event.pull_request.head.repo.fork == false
