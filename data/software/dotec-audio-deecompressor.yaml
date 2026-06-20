@@ -14,16 +14,41 @@ platforms:
   - windows
 url: https://dotec-audio.com/deecompressor.html
 prices:
-  - amount: 0
+  - amount: 120
     currency: USD
-description: "Flagship compressor plugin with newly developed algorithm offering
-  higher quality, powerful, and comfortable compression. Features zero latency,
-  attack/release from 0ms, ratio up to 0.5:1, HPF/LPF filters, M/S mode, auto
-  release, built-in limiter, and sidechain support."
-details: |-
-  2026-01-13
-specs: |-
-  - systemRequirements: macOS 10.12 or later (64-bit), Windows 64-bit
-  - bitDepth: 64-bit
-  - doublePrecision: True
-  - latency: Zero latency
+    type: standard
+  - amount: 110
+    currency: USD
+    type: upgrade
+    note: DeeComp owners with coupon — $10 off
+  - amount: 105
+    currency: USD
+    type: upgrade
+    note: DeeComp owners with serial key — $15 off
+  - amount: 105
+    currency: USD
+    type: bundle
+    note: Second purchase bulk discount — $15 off
+description: DeeCompressor is a flagship compressor plug-in featuring newly developed algorithms for high-quality, powerful, and comfortable compression. It offers zero-latency operation, ratios from 0.5:1 to infinity, M/S mode, HPF/LPF filters, auto release, side-chaining, and a built-in limiter.
+details:
+  - DeeCompressor is Dotec-Audio's flagship compressor plug-in, built on newly developed algorithms designed to deliver high-quality, powerful, and comfortable compression. It supports zero-latency operation with attack and release times starting at 0ms, giving producers precise transient control without introducing any processing delay.
+  - The plug-in supports ratios as low as 0.5:1, allowing for upward compression effects in addition to conventional downward compression. A wide knee range and auto release function give users flexible dynamic shaping suitable for anything from subtle glue compression to heavy limiting.
+  - DeeCompressor includes M/S (Mid/Side) mode with channel link adjustment, enabling independent or linked processing of the mid and side signals for stereo mastering and bus compression workflows. Built-in HPF and LPF sidechain filters allow frequency-selective compression triggering.
+  - A built-in limiter provides an additional safeguard against clipping at the output stage. The plug-in operates at 64-bit double precision internally, ensuring high-fidelity processing throughout the signal chain.
+  - A free demo is available for download; the demo inserts one second of silence every 30 seconds until activated with a purchased serial key. Existing DeeComp users qualify for an upgrade discount, and a bulk discount applies on second purchases.
+versions:
+  - name: 1.0.4
+    releaseDate: 2026-01-13
+    description: Graphics performance improved
+  - name: 1.0.3
+    releaseDate: 2025-09-06
+    description: Added protection against abnormal value input
+  - name: 1.0.2
+    releaseDate: 2022-08-30
+    description: Fixed memory leak bug
+  - name: 1.0.1
+    releaseDate: 2022-06-18
+    description: Apple Silicon support for AAX Mac
+  - name: 1.0.0
+    releaseDate: 2022-04-15
+    description: First release

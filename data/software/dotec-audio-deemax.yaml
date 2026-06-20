@@ -3,7 +3,10 @@ name: DeeMax
 manufacturer: dotec-audio
 primaryCategory: limiter
 categories:
+  - plugin
   - mastering
+  - dynamics
+  - saturation
 formats:
   - vst2
   - vst3
@@ -14,14 +17,48 @@ platforms:
   - windows
 url: https://dotec-audio.com/deemax.html
 prices:
-  - amount: 0
+  - amount: 50
     currency: USD
-description: "Single-slider maximizer plugin that easily adds loudness without
-  disturbing the taste. Features fat saturation, real-time excessive saturation
-  correction (SAFE Switch), punchy sound enhancement (TURBO Switch), and
-  constant-volume monitoring."
+    type: one-time
+description: DeeMax is a VST2, VST3, AU, and AAX maximizer plug-in that adds loudness with a single slider control. It features fat saturation, a TURBO switch for punchier sound, a SAFE switch for real-time saturation monitoring, and a MONITOR switch for constant-volume evaluation. Low CPU usage makes it suitable for live performance.
 details: |-
-  2026-01-13
+  DeeMax is a maximizer plug-in developed by Dotec-Audio that aims to add loudness without disturbing the character of a mix. Its defining design philosophy is simplicity: a single slider controls the entire loudness process, making it accessible for producers at any skill level.
+
+  The plug-in produces fat saturation as the slider is increased, adding harmonic richness alongside volume gain. The TURBO switch engages a mode that delivers a more punchy, aggressive sound character for material that benefits from a harder transient response.
+
+  The SAFE switch monitors the signal in real time and guards against excessive saturation, helping users avoid over-processing. Paired with the MONITOR switch, which locks the output to a constant volume for fair A/B comparison, DeeMax provides basic but effective quality-control tools around its core loudness function.
+
+  DeeMax is optimised for low CPU consumption, making it viable for use in live performance contexts as well as studio mixing and mastering. The plug-in has been tested for compatibility with more than 20 DAWs, including Ableton Live, Cubase, Logic Pro X, Pro Tools, Studio One, FL Studio, and Reason.
+
+  DeeMax was originally released in November 2015 and has been updated through January 2026. Sound design was by Franck Shigetora, UI design by IZMOJUKI and FUKUDAKOGYO, developed by Dotec-Audio.
 specs: |-
-  - systemRequirements: macOS 10.12 or later (64-bit), Windows 64-bit
-  - bitDepth: 64-bit
+  - Formats: VST2, VST3, AU, AAX
+  - Windows: 64-bit
+  - macOS: 64-bit, OS 10.12 or later
+  - Single-slider loudness control
+  - TURBO switch for punchier sound
+  - SAFE switch for real-time saturation monitoring
+  - MONITOR switch for constant-volume A/B evaluation
+  - Fat saturation on high slider settings
+  - Low CPU usage suitable for live performance
+  - Latest version: 2.6.6 (January 13, 2026)
+versions:
+  - name: 2.6.6
+    releaseDate: 2026-01-13
+    description: Graphics performance improvements
+  - name: 2.6.5
+    releaseDate: 2022-06-18
+    description: Apple Silicon AAX support
+  - name: 2.6.4
+    releaseDate: 2021-01-05
+    description: Apple Silicon VST/VST3/AU support
+  - name: 2.6.3
+    releaseDate: 2020-07-03
+    description: Mac Retina display optimization
+  - name: 2.6.0
+    releaseDate: 2019-01-18
+    description: Added MONITOR switch and display unit options
+  - name: 1.0.0
+    releaseDate: 2015-11-13
+    description: Initial release
+releaseDate: 2015-11-13

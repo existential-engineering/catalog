@@ -1,9 +1,10 @@
 id: OsjY12gqzofkQFJJgx4mE
 name: DeeTrimX
 manufacturer: dotec-audio
-primaryCategory: dynamics
+primaryCategory: utility
 categories:
-  - utility
+  - dynamics
+  - mastering
 formats:
   - vst2
   - vst3
@@ -14,15 +15,39 @@ platforms:
   - windows
 url: https://dotec-audio.com/deetrimx.html
 prices:
-  - amount: 0
+  - amount: 50
     currency: USD
-description: "Advanced auto leveler plugin that automatically adjusts input
-  volume to a target level while preserving musicality and inflection. Features
-  sidechain input for accent matching, noise floor and breath exclusion, and
-  zero-latency operation."
+    type: one-time
+description: DeeTrimX is an automatic volume leveling plugin for VST2, VST3, AU, and AAX formats. The follow-up to the popular DeeTrim, it offers automatic adjustment with much higher sound quality while preserving musicality and the natural inflection of audio dynamics. Features zero latency operation and sidechain support.
 details: |-
-  2026-01-13
+  DeeTrimX is an automatic volume leveling plugin developed by Dotec-Audio as the follow-up to the highly popular DeeTrim. It delivers automatic adjustment with much higher sound quality, responding more closely to natural hand operation while maintaining the musicality and inflection of the source material.
+
+  The plugin adjusts incoming audio to a user-defined target level automatically and in real time with zero latency, making it suitable for both studio post-production and live performance scenarios. A strength control allows the user to dial in how aggressively the leveling responds, balancing transparency against correction speed.
+
+  DeeTrimX includes noise floor and breath level exclusion, preventing quiet background sounds from triggering unwanted gain changes. A sidechain input is also available, enabling accent adjustments driven by a separate audio source for more creative or complex leveling setups.
+
+  The plugin has been tested with more than 30 DAW hosts, including Ableton Live, Cubase, Logic Pro X, Pro Tools, Studio One, FL Studio, and OBS Studio, ensuring broad compatibility across professional and content-creation workflows.
+
+  DeeTrimX was first released in May 2023 and has been updated through January 2026. It is developed by Dotec-Audio.
 specs: |-
-  - systemRequirements: macOS 10.12 or later (64-bit), Windows 64-bit
-  - bitDepth: 64-bit
-  - latency: Zero latency
+  - Formats: VST2, VST3, AU, AAX
+  - Windows: 64-bit
+  - macOS: 64-bit, OS 10.12 or later
+  - Zero latency operation
+  - Automatic volume adjustment to target level
+  - Noise floor and breath level exclusion
+  - Adjustable automation strength
+  - Sidechain input for accent adjustment
+  - Tested with 30+ DAW hosts
+  - Latest version: 1.1.1
+versions:
+  - name: 1.1.1
+    releaseDate: 2026-01-13
+    description: Graphics performance improvements
+  - name: 1.1.0
+    releaseDate: 2023-05-30
+    description: Sound quality improvements; response closer to natural hand operation
+  - name: 1.0.0
+    releaseDate: 2023-05-12
+    description: Initial release
+releaseDate: 2023-05-12

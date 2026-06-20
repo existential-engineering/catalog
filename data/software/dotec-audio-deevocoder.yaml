@@ -1,9 +1,13 @@
 id: L4Sw90Li3YJArpJYCbIhU
 name: DeeVocoder
 manufacturer: dotec-audio
-primaryCategory: creative
+primaryCategory: vocoder
 categories:
   - effect
+  - fx
+  - creative
+  - modulation
+  - pitch
 formats:
   - vst2
   - vst3
@@ -14,15 +18,30 @@ platforms:
   - windows
 url: https://dotec-audio.com/deevocoder.html
 prices:
+  - amount: 50
+    currency: USD
+    type: full
   - amount: 0
     currency: USD
-description: "Fat analog sound filter bank vocoder with stereo processing and
-  zero latency. Features 8/16/32 band switchable configuration, LOW/MID/HIGH
-  fader-based band balance adjustment, formant shift for voice gender
-  modification, and sidechain input."
-details: |-
-  2026-01-13
-specs: |-
-  - systemRequirements: macOS 10.12 or later (64-bit), Windows 64-bit
-  - bitDepth: 64-bit
-  - latency: Zero latency
+    type: demo
+    note: Free demo with 1-second silence every 30 seconds
+description: A fat analog sound filter bank vocoder plugin with 8/16/32 band switching, zero latency, formant shift, and sidechain input for expressive voice processing in music production.
+details:
+  - DeeVocoder is a filter bank type stereo vocoder plugin from DOTEC-AUDIO, designed to deliver a fat analog sound character. Unlike FFT-based vocoders, it uses a true filter bank architecture for zero-latency processing, making it suitable for live performance and real-time tracking scenarios.
+  - The plugin features switchable band resolution with 8, 16, or 32 bands, allowing users to balance between a smoother, more characterful analog tone (fewer bands) and higher definition voice intelligibility (more bands). LOW, MID, and HIGH faders provide direct control over the spectral balance across the vocoded signal.
+  - A formant shift control enables voice gender modification by shifting the resonant characteristics of the filter bank up or down, useful for creative character transformation or natural-sounding pitch correction on vocal material.
+  - DeeVocoder supports sidechain input, allowing any instrument or audio source to act as the carrier signal for the vocoder — not just the built-in synthesizer. This enables classic robotic vocal effects as well as more experimental timbral combinations. The plugin has been tested with over 27 DAW hosts including Ableton Live, Cubase, Logic Pro X, FL Studio, Pro Tools, Studio One, Reason, BITWIG STUDIO, Digital Performer, and GarageBand.
+  - The plugin is available as a free demo with one second of silence inserted every 30 seconds. The full license is priced at $50 USD, with coupon and serial key discounts available for existing DOTEC-AUDIO customers.
+versions:
+  - name: 1.0.3
+    releaseDate: 2026-01-13
+    description: Graphics performance improved
+  - name: 1.0.2
+    releaseDate: 2022-06-18
+    description: Apple Silicon AAX support added
+  - name: 1.0.1
+    releaseDate: 2021-01-05
+    description: Apple Silicon VST/VST3/AU support; VST3 automation fix
+  - name: 1.0.0
+    releaseDate: 2020-10-18
+    description: Initial release

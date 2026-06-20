@@ -1,0 +1,47 @@
+id: YhIVO9S5BHfJU4JWGm2_K
+name: DeeRAM
+manufacturer: dotec-audio
+primaryCategory: utility
+formats:
+  - vst2
+  - vst3
+  - au
+  - aax
+platforms:
+  - mac
+  - windows
+url: https://dotec-audio.com/deeram.html
+description: DeeRAM is a utility plug-in for delay resolution and comparison
+  during mastering, enabling temporary RAM-based recording and playback of audio
+  within the effects rack for A/B comparison without DAW involvement.
+details: |-
+  DeeRAM (Direct Memory Recorder) is a mastering utility plug-in designed to address a common workflow problem: comparing audio settings when latency-causing plugins are active in the signal chain. The plugin records audio directly to RAM, allowing playback of the captured signal independently of the DAW transport.
+
+  The plug-in provides four recording banks (A through D) that can each store a captured audio segment. This enables side-by-side A/B (or A/B/C/D) comparison between different mastering settings, reference tracks, or processing configurations without needing to render or export audio.
+
+  DeeRAM supports sidechain input, allowing audio to be recorded from alternate buses rather than only the main signal path. This adds flexibility for comparing parallel processing chains or external reference material.
+
+  All recorded audio is stored in RAM only and is automatically deleted when the plug-in is removed from the session or when the DAW is closed. There is no disk-based persistence, keeping the workflow lightweight and session-contained.
+
+  The product is noted as no longer available for purchase, though the developer's site indicates free demo downloads for both Windows and macOS remain accessible. The final release (v1.0.2) added Apple Silicon AAX support.
+specs: |-
+  - Four recording banks (A, B, C, D) for storing and comparing audio segments
+  - RAM-based storage — recordings are automatically deleted when the plugin is removed or the DAW is closed
+  - Sidechain input support for recording from alternate buses
+  - A/B comparison functionality for evaluating mastering settings and reference tracks
+  - Addresses latency-compensation issues caused by plugin accumulation in the signal chain
+  - Windows: VST2, VST3, AAX (32-bit and 64-bit)
+  - macOS: VST2, VST3, AU, AAX (64-bit only, macOS 10.12 or later)
+  - Apple Silicon AAX support added in v1.0.2
+versions:
+  - name: 1.0.2
+    releaseDate: 2022-06-18
+    description: Apple Silicon AAX support added
+  - name: 1.0.1
+    releaseDate: 2021-04-20
+    description: UI improvements for power on/off clarity
+  - name: 1.0.0
+    releaseDate: 2021-04-16
+    description: Initial release
+releaseDate: 2021-04-16
+discontinued: true

@@ -4,6 +4,7 @@ manufacturer: dotec-audio
 primaryCategory: limiter
 categories:
   - mastering
+  - dynamics
 formats:
   - vst2
   - vst3
@@ -14,14 +15,52 @@ platforms:
   - windows
 url: https://dotec-audio.com/deepopmax.html
 prices:
-  - amount: 0
+  - amount: 50
     currency: USD
-description: "Maximizer plugin optimized for CD and digital distribution,
-  designed for modern pop music mastering conscious of low-volume playback
-  devices. Features main throttle control, WARMTH function, and MONITOR function
-  for constant-level effect checking."
+    type: one-time
+description: DeePopMax is a maximizer plug-in optimized for CD and digital distribution that automatically adjusts the loudness balance of each frequency range to create a catchy sound with amazing quality.
 details: |-
-  2026-01-13
+  DeePopMax is a maximizer plug-in by Dotec-Audio designed specifically for pop music mastering targeting CD and digital distribution. Its core algorithm automatically adjusts the loudness balance across frequency ranges to produce a catchy, polished result suited to playback on smartphones and computers.
+
+  The plug-in's main control lets users adjust the overall loudness balance and sound pressure in a single operation. As loudness increases, the spectral balance is managed internally so that the result remains musical rather than harsh or fatiguing.
+
+  The WARMTH function adds warmth to the signal during the loudness increase process, helping to counteract the thinning effect that can occur at high levels. This makes the output feel fuller and more natural even at mastering-level gain reduction.
+
+  The MONITOR function allows users to check the effect of the plug-in at a constant output level, enabling accurate A/B comparison between the processed and bypassed signal without the bias introduced by level differences.
+
+  DeePopMax ships as VST2, VST3, AU, and AAX for Windows and macOS (64-bit, OS 10.12 or later) and has been verified against more than 20 DAW hosts including Ableton Live, Cubase, Logic Pro X, Pro Tools, Studio One, and FL Studio. The plug-in was first released in February 2020 and has been updated through January 2026.
 specs: |-
-  - systemRequirements: macOS 10.12 or later (64-bit), Windows 64-bit
-  - bitDepth: 64-bit
+  - Formats: VST2, VST3, AU, AAX
+  - Windows: 64-bit
+  - macOS: 64-bit, OS 10.12 or later
+  - Main loudness balance control
+  - WARMTH function for warmth during loudness increase
+  - MONITOR function for constant-level A/B evaluation
+  - Optimized for pop music, CD, and digital distribution
+  - Latest version: 1.0.7 (January 13, 2026)
+versions:
+  - name: 1.0.7
+    releaseDate: 2026-01-13
+    description: Graphics performance improvements
+  - name: 1.0.6
+    releaseDate: 2022-09-06
+    description: Fixed authentication save bug
+  - name: 1.0.5
+    releaseDate: 2022-08-30
+    description: Fixed a bug that caused memory leaks
+  - name: 1.0.4
+    releaseDate: 2022-06-18
+    description: Apple Silicon support for AAX on Mac (other formats already supported)
+  - name: 1.0.3
+    releaseDate: 2021-01-05
+    description: Apple Silicon support for VST, VST3, and AU on Mac; fixed VST3 automation bug in Cubase
+  - name: 1.0.2
+    releaseDate: 2020-07-03
+    description: Improved graphics processing on Mac Retina models
+  - name: 1.0.1
+    releaseDate: 2020-06-23
+    description: Improved graphics processing by up to 300% on Mac
+  - name: 1.0.0
+    releaseDate: 2020-02-26
+    description: Initial release
+releaseDate: 2020-02-26

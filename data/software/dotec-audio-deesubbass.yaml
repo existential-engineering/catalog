@@ -1,9 +1,10 @@
 id: L80mCXrUxU45KMChhDX20
 name: DeeSubBass
 manufacturer: dotec-audio
-primaryCategory: creative
+primaryCategory: effect
 categories:
-  - effect
+  - enhancer
+  - saturation
 formats:
   - vst2
   - vst3
@@ -14,15 +15,50 @@ platforms:
   - windows
 url: https://dotec-audio.com/deesubbass.html
 prices:
-  - amount: 0
+  - amount: 50
     currency: USD
-description: "Sub-bass generator for modern music production. Automatically
-  generates sub-bass by selecting a song key, with adjustable level, drive for
-  overtones, and high-pass filter for crossover adjustment. Features 64-bit
-  double precision oscillator."
-details: |-
-  2026-01-13
-specs: |-
-  - systemRequirements: macOS 10.12 or later (64-bit), Windows 64-bit
-  - bitDepth: 64-bit
-  - doublePrecision: True
+    type: standard
+  - amount: 40
+    currency: USD
+    type: coupon_discount
+    note: $10 USD off with coupon code
+  - amount: 35
+    currency: USD
+    type: serial_key_discount
+    note: $15 USD off with existing serial key
+  - amount: 35
+    currency: USD
+    type: bulk_discount
+    note: $15 USD off on second purchase
+description: DeeSubBass is a breathtaking sub-bass generator for modern music. Simply select the key of your song and the plugin automatically generates a powerful, complementary sub-bass, adding depth and impact to any production.
+details:
+  - DeeSubBass is a sub-bass generator plugin from DOTEC-AUDIO designed to add powerful low-frequency depth to modern music productions. By simply selecting the key of your song, the plugin automatically generates a complementary sub-bass signal tuned to fit the track, eliminating complex manual synthesis setup.
+  - The Drive control applies harmonic saturation via overdrive, adding warmth and fatness to the generated sub-bass. A high-pass filter allows crossover adjustment between the generated sub-bass and the original audio signal, giving producers precise control over how the sub-bass integrates with existing low-end content.
+  - DeeSubBass uses 64-bit double-precision oscillator calculations to ensure a clean, accurate sub-bass signal even at extreme low frequencies. The interface features a retro-inspired visual design influenced by 1980s anime aesthetics, in keeping with DOTEC-AUDIO's signature style.
+  - The plugin is available as a free demo with a 1-second silence inserted every 30 seconds. A full serial key license can be purchased for $50 USD, with discounts available via coupon code ($10 off), existing serial key ($15 off), or bulk purchase ($15 off on a second purchase). Registration requires an internet connection.
+  - DeeSubBass has been tested with a wide range of DAWs including Ableton Live, Cubase, Logic Pro X, FL Studio, Pro Tools, Studio One, Reason, BITWIG Studio, Digital Performer, and more (20+ hosts). Both Windows (VST2/VST3/AAX, 64-bit) and macOS (VST2/VST3/AU/AAX, 64-bit, OS 10.12 or later, including Apple Silicon) are supported.
+versions:
+  - name: 1.0.7
+    releaseDate: 2026-01-13
+    description: Graphics performance has been improved.
+  - name: 1.0.6
+    releaseDate: 2022-06-18
+    description: Apple Silicon support added for AAX on Mac.
+  - name: 1.0.5
+    releaseDate: 2021-01-05
+    description: Apple Silicon support for VST/VST3/AU; automation fixes.
+  - name: 1.0.4
+    releaseDate: 2020-07-03
+    description: Mac Retina graphics enhancement.
+  - name: 1.0.3
+    releaseDate: 2020-06-23
+    description: Mac graphics processing improved 300%.
+  - name: 1.0.2
+    releaseDate: 2020-02-10
+    description: Filter redesigned for improved sound.
+  - name: 1.0.1
+    releaseDate: 2019-11-08
+    description: AU MIDI Controlled Effect support added.
+  - name: 1.0.0
+    releaseDate: 2019-10-18
+    description: Initial release.

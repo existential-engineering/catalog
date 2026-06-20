@@ -1,9 +1,13 @@
 id: ST3SmoVH4ukLp3kSAs8VO
 name: DeeWider
 manufacturer: dotec-audio
-primaryCategory: effect
+primaryCategory: stereo-widener
 categories:
-  - utility
+  - stereo
+  - mid-side
+  - spatial
+  - effect
+  - fx
 formats:
   - vst2
   - vst3
@@ -14,13 +18,55 @@ platforms:
   - windows
 url: https://dotec-audio.com/deewider.html
 prices:
-  - amount: 0
+  - amount: 25
     currency: USD
-description: "Stereo widener plugin using LCR separation technology. Features
-  single-slider stereo image control, bass color adjustment, true side sound
-  extraction, and DUO button for converting mono sources to pseudo-stereo."
-details: |-
-  2026-01-13
+    type: one-time
+description: DeeWider is a stereo imager plug-in that widens the sound transparently using LCR separation technology, with adjustable bass coloring and a DUO button for mono-to-stereo conversion.
+details:
+  - DeeWider is a stereo imaging plug-in that widens audio transparently using unique LCR (Left, Center, Right) separation technology. By extracting the true side signal through LCR separation, it expands the stereo field without introducing the phase artifacts common in traditional stereo wideners.
+  - A single slider controls the amount of stereo widening, making it fast to use on any track or bus. An adjustable bass coloring control lets users tailor the low-end character of the widened signal, and a DUO button converts mono sources into pseudo-stereo, giving the plug-in additional utility on center-panned or recorded-mono material.
+  - DeeWider is compatible with all major DAW hosts on macOS and Windows. Tested hosts include Ableton Live, Cubase, Logic Pro X, Pro Tools, Studio One, FL Studio, Reason, Bitwig Studio, Digital Performer, OBS Studio, and more — 19 hosts in total.
+  - On macOS the plug-in runs as VST2, VST3, AU, and AAX (64-bit, macOS 10.12 or later). On Windows it runs as VST2, VST3, and AAX (64-bit). Download sizes are approximately 10 MB for Windows and 18 MB for macOS. A free demo is available with a 1-second silence inserted every 30 seconds.
+  - DeeWider is developed and distributed by DOTEC-AUDIO, cyber rock.LLC, and fmfmsoft Corp. Registration requires an internet connection.
 specs: |-
-  - systemRequirements: macOS 10.12 or later (64-bit), Windows 64-bit
-  - bitDepth: 64-bit
+  - Single slider stereo width control
+  - Adjustable bass color parameter
+  - DUO button for mono-to-stereo conversion
+  - LCR separation technology for transparent widening
+  - 64-bit only
+  - macOS 10.12 (Sierra) or later; Apple Silicon native
+  - Windows 64-bit
+  - Formats: VST2, VST3, AU (macOS only), AAX
+  - Installer size: ~10 MB (Windows), ~18 MB (macOS)
+versions:
+  - name: 2.0.5
+    releaseDate: 2026-01-13
+    description: Graphics performance improved
+  - name: 2.0.4
+    releaseDate: 2022-06-18
+    description: Apple Silicon support for AAX on Mac
+  - name: 2.0.3
+    releaseDate: 2021-01-05
+    description: Apple Silicon support for VST/VST3/AU; VST3 automation fix
+  - name: 2.0.2
+    releaseDate: 2020-07-03
+    description: Graphics processing enhanced for Mac Retina
+  - name: 2.0.1
+    releaseDate: 2020-06-23
+    description: Graphics processing improved 300% on Mac
+  - name: 2.0.0
+    releaseDate: 2018-05-25
+    description: LCR separation technology introduced; DUO button added
+  - name: 1.5.2
+    releaseDate: 2018-04-12
+    description: Color button value loading fix
+  - name: 1.5.1
+    releaseDate: 2018-04-08
+    description: PDC reporting bug fix
+  - name: 1.5.0
+    releaseDate: 2018-03-08
+    description: PDC bypass fix; acoustic instrument specialization
+  - name: 1.0.0
+    releaseDate: 2018-03-02
+    description: Initial release
+releaseDate: 2018-03-02

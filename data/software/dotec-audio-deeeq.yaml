@@ -2,6 +2,10 @@ id: tli7XghoyH2A4h1T4R7KJ
 name: DeeEQ
 manufacturer: dotec-audio
 primaryCategory: equalizer
+categories:
+  - plugin
+  - eq
+  - filter
 formats:
   - vst2
   - vst3
@@ -12,13 +16,60 @@ platforms:
   - windows
 url: https://dotec-audio.com/deeeq.html
 prices:
-  - amount: 0
+  - amount: 50
     currency: USD
-description: "Professional two-slider equalizer plugin for quick EQ adjustment.
-  Vertical adjustment cuts/boosts levels while horizontal adjustment emphasizes
-  bass or treble frequencies using a semi-automatic approach."
+    type: standard
+description: DeeEQ is a semi-automatic equalizer VST2, VST3, AU, and AAX plug-in that lets you achieve the best equalization with only two sliders. A vertical slider controls cut and boost while a horizontal slider emphasizes bass or treble, making intuitive EQ adjustments accessible to any skill level.
 details: |-
-  2026-01-13
+  DeeEQ is a semi-automatic equalizer plug-in by Dotec-Audio designed around radical simplicity. Its entire interface is built on just two sliders, allowing users to dial in equalization by feel rather than requiring deep technical knowledge of frequency curves or filter types.
+
+  The vertical slider controls the amount of cut or boost applied to the signal. Moving it upward boosts the chosen frequency region while moving it downward cuts it. The horizontal slider shifts the spectral emphasis between bass and treble, letting users sculpt the low-end or high-end character of a sound in a single gesture.
+
+  Because the equalization curve is computed semi-automatically from these two controls, DeeEQ abstracts away the complexity of traditional parametric or graphic EQs. This makes it particularly useful as a quick tone-shaping tool inside busy sessions where speed matters more than surgical precision.
+
+  The plug-in supports a broad range of professional DAWs including Ableton Live, Cubase, Logic Pro X, Pro Tools, Studio One, FL Studio, Reason, Bitwig Studio, and OBS Studio, among others. A demo version is available that introduces one second of silence every thirty seconds; a purchased serial key removes this limitation.
+
+  DeeEQ was initially released in October 2016 and has received steady maintenance updates through January 2026, including Apple Silicon support, AAX format availability, and graphics performance improvements.
 specs: |-
-  - systemRequirements: macOS 10.12 or later (64-bit), Windows 64-bit, Apple Silicon supported
-  - bitDepth: 64-bit
+  - Formats: VST2, VST3, AU, AAX
+  - macOS: 64-bit, OS 10.12 or later
+  - Windows: 64-bit
+  - Two-slider interface: vertical for cut/boost, horizontal for bass/treble emphasis
+  - Semi-automatic EQ curve computation
+  - Demo version: 1 second of silence every 30 seconds
+  - Latest version: 1.1.0 (January 13, 2026)
+versions:
+  - name: 1.1.0
+    releaseDate: 2026-01-13
+    description: Graphics performance improved
+  - name: 1.0.9
+    releaseDate: 2024-10-26
+    description: Bug fix in filtering process
+  - name: 1.0.8
+    releaseDate: 2024-06-18
+    description: Filter functionality corrected across DAWs
+  - name: 1.0.7
+    releaseDate: 2022-06-18
+    description: Apple Silicon AAX support added
+  - name: 1.0.6
+    releaseDate: 2021-01-05
+    description: Apple Silicon VST/VST3/AU support, VST3 automation fix
+  - name: 1.0.5
+    releaseDate: 2020-07-03
+    description: Mac Retina graphics optimization
+  - name: 1.0.4
+    releaseDate: 2020-06-23
+    description: 300% Mac graphics performance improvement
+  - name: 1.0.3
+    releaseDate: 2017-06-07
+    description: AAX release, macOS 10.7+ support; automation bug fix (May 24, 2017)
+  - name: 1.0.2
+    releaseDate: 2016-11-28
+    description: System-specific bug fix
+  - name: 1.0.1
+    releaseDate: 2016-11-11
+    description: Status save persistence issue resolved
+  - name: 1.0.0
+    releaseDate: 2016-10-18
+    description: Initial release
+releaseDate: 2016-10-18

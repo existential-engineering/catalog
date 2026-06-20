@@ -1,7 +1,9 @@
 id: v5r_Zcg37_FxVbYws1ZVI
 name: DeeSideIn
 manufacturer: dotec-audio
-primaryCategory: utility
+primaryCategory: routing
+categories:
+  - utility
 formats:
   - vst2
   - vst3
@@ -14,11 +16,34 @@ url: https://dotec-audio.com/deesidein.html
 prices:
   - amount: 0
     currency: USD
-description: "Free plugin that can insert and mix sound at any point. Useful for
-  merging harmonies and drums, splitting sound to other audio tracks, and
-  inserting/mixing sound after plugin effects."
-details: |-
-  2026-01-13
-specs: |-
-  - systemRequirements: macOS 10.12 or later (64-bit), Windows 64-bit
-  - bitDepth: 64-bit
+    type: free
+    note: Free download; no paid tier listed
+description: A free utility plug-in that enables inserting and mixing sound at any point within a signal chain, useful for merging harmonies/drums or splitting sound to separate tracks.
+details:
+  - DeeSideIn is a free routing utility plug-in from Dotec-Audio that allows inserting and mixing audio at any point within a DAW signal chain. Its primary use cases include merging harmonies or drum sounds from an external send into a target track, and splitting audio off to a separate track for parallel processing.
+  - The plug-in makes it possible to apply effects that come after it in the signal chain to a sidechain signal, effectively letting users route audio into positions in the chain where it would otherwise be inaccessible. This opens up creative routing configurations that many DAWs do not natively support.
+  - DeeSideIn has been tested with over 19 DAW hosts including Cubase, Logic Pro X, Ableton Live, Pro Tools, Studio One, FL Studio, Reason, Digital Performer, GarageBand, OBS Studio, and others. Apple Silicon is fully supported across all provided formats.
+  - On macOS, the plug-in is provided as VST2, VST3, AU, and AAX (64-bit, OS 10.12 or later). On Windows, VST2, VST3, and AAX are available (64-bit). The download is approximately 9 MB on Windows and 16 MB on macOS.
+  - "DeeSideIn is available at no cost. Credits: sound design by Franck Shigetora; UI design by IZMOJUKI and FUKUDAKOGYO; distributed by cyber rock.LLC and fmfmsoft Corp."
+versions:
+  - name: 1.1.1
+    releaseDate: 2026-01-13
+    description: Graphics performance improved
+  - name: 1.1.0
+    releaseDate: 2024-09-21
+    description: Stability improvements and notification function added
+  - name: 1.0.4
+    releaseDate: 2022-06-18
+    description: Apple Silicon AAX support for Mac added
+  - name: 1.0.3
+    releaseDate: 2021-01-05
+    description: Apple Silicon VST/VST3/AU support added; automation fixes
+  - name: 1.0.2
+    releaseDate: 2020-07-03
+    description: Mac Retina graphics optimization
+  - name: 1.0.1
+    releaseDate: 2020-06-23
+    description: Mac graphics processing improved 300%
+  - name: 1.0.0
+    releaseDate: 2019-12-05
+    description: Initial release
