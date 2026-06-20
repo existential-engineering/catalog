@@ -1,5 +1,43 @@
 # catalog
 
+## 3.31.0
+
+### Minor Changes
+
+- b97b1fa: Merge-refresh DMG Audio (15 of 16 existing software entries updated).
+
+  DMG Audio is a UK-based developer of professional audio plugins
+  covering EQ, dynamics, de-essing, pitch-shifting, metering, and
+  stereo processing — known for deep feature sets and high-quality
+  processing algorithms.
+
+  Updated entries received: expanded categories arrays (8 products),
+  added format entries vst2/vst3 (EQuality, EQuilibrium, Limitless,
+  Multiplicity), added full specs bullet lists (EQuality, EQuilibrium,
+  Essence, Limitless, Multiplicity, PitchFunk, Dualism), and expanded
+  details prose for EQuick and all Track\* products. DMG-Audio-Compassion
+  was unchanged (no safe-add fields identified).
+
+- c6b3c24: Merge-reconcile Drumforge (76 updated entries).
+
+  Applied 121 safe-add field updates across 76 existing Drumforge
+  entries covering drum samplers, drum replacers, MIDI groove packs,
+  one-shot sample libraries, and mixing plugins. Includes
+  primaryCategory canonicalization (drum-sample-pack → sample-pack,
+  bundle → suite), prices for newly-priced items, and descriptions
+  for previously empty fields. One discontinued entry confirmed.
+
+### Patch Changes
+
+- a7482a6: Make punctuated brand names searchable by their unpunctuated forms.
+
+  `brandVariants()` now generates search-term variants for periods,
+  ampersands, apostrophes, and slashes, so the FTS index matches names
+  like "A.O.M." when a user types "aom", "Mesa/Boogie" for "mesaboogie"
+  / "mesa boogie", "D'Addario" for "daddario", and "Bang & Olufsen" for
+  "bang and olufsen" / "bang olufsen". Mirrors the existing hyphen/space
+  handling; ampersands additionally seed an "and" rewrite.
+
 ## 3.30.0
 
 ### Minor Changes
