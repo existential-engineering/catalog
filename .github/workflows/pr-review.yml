@@ -6,6 +6,9 @@ on:
     paths:
       - "data/**"
 
+permissions:
+  contents: read
+
 jobs:
   review:
     name: Review PR
