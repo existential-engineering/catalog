@@ -1,5 +1,98 @@
 # catalog
 
+## 3.30.0
+
+### Minor Changes
+
+- ed8b265: Merge-refresh Algorithmix (3 new entries + enrichment of 11 existing).
+
+  Algorithmix is a German audio DSP company known for high-end spectral
+  audio restoration, mastering EQs, and noise reduction tools (primarily
+  Windows, late 1990s–2000s era). New entries: AlgoRec (WAV recorder
+  with lossless compression), AlgoTest (free soundcard noise analyzer),
+  Easy Tools (restoration plug-in suite for vinyl/tape cleanup).
+  Existing entries enriched with version numbers (reNOVAtor, easyreNOVAtor)
+  and full details/specs (Sound Laundry).
+
+- 81efb1d: Merge aly-james-lab (8 updated software entries).
+
+  Added product images (3 per entry), YouTube playlists (8), manufacturer
+  manual links (ClapTrap 2, FMDrive, Super PSG, VProm 3, VSDSX), version
+  history (all 8 entries), and release years (6 entries). Structural field
+  conflicts (url www/non-www, categories ordering, prose descriptions) surfaced
+  in PR for human review. Notable: Super PSG pricing conflict (€20 vs €15)
+  requires manual verification on the product page.
+
+- 2544616: catalog-import-merge: aom (new=0 discontinued=0 updated=14)
+
+  Added releaseDate, videos, and links to 14 existing AOM Factory entries.
+  Conflicts (description, specs, prices, categories, primaryCategory)
+  surfaced in PR body for human review.
+
+- e23753c: catalog-import-merge: audiosourcere (new=0 discontinued=0 updated=5)
+
+  Added images, videos, and version history to all five AudioSourceRE
+  entries (DeMIX Pro, DeMIX Essentials, DRUMLESS, RePAN, VOXLESS). DeMIX
+  Pro and Essentials now reflect version 6.0. Conflicts on description,
+  details, specs, and select categories are surfaced in the PR for human
+  review.
+
+- 7a2545b: catalog-import-merge: black-salt-audio (new=1 discontinued=0 updated=15)
+
+  Added Instinct EQ (four-band EQ with Surgery notch module, $59). Refreshed
+  all 15 existing entries with images and videos. BSA Delays also gained
+  specs and a version entry (1.1.1).
+
+- 1a5d82f: catalog-import-merge: cytomic (new=0 discontinued=0 updated=2)
+
+  Added images to The Drop and The Glue. The Scream images require
+  human review (only a third-party KVR source was found; official
+  Cytomic CDN is CAPTCHA-gated). Categories, description, details,
+  and specs conflicts surfaced in PR for reviewer to resolve.
+
+- b4880c0: Merge refresh discoDSP: 1 new entry (Phantom), 12 entries enriched
+  with images, videos, versions, and type field.
+- 50093d3: catalog-import-merge: dmitry-sches-audio-software (new=1 discontinued=0 updated=3)
+
+  Added Factory Expansions for Tantra (free preset pack, content type). Refreshed
+  existing entries: Diversion gained expanded categories (granular, fm, subtractive,
+  hybrid, electronic), prose details, trimmed specs, links, and version history;
+  Tantra gained primaryCategory upgrade to multi-effect, expanded categories, prose
+  details, trimmed specs, links, and version history; Thorn gained two new category
+  tags (hybrid, electronic), prose details, 64-bit spec, links, and version history.
+
+- 3c3b66c: catalog-import-merge: dotec-audio (new=5 discontinued=0 updated=32)
+
+  Adds 5 discontinued legacy products (DeeComp, DeeGraphComp, DeeRAM, DeeTP,
+  DeeTrim) and enriches 32 existing entries with descriptions, details, specs,
+  formats, platforms, prices, versions, and URLs extracted from dotec-audio.com.
+
+- 6117ac9: catalog-import-merge: drumforge (new=13 discontinued=1 updated=63)
+- d9f0590: catalog-import-merge: fuse-audio-labs (new=1 discontinued=0 updated=0)
+
+  Adds Tube Lab, a vintage channel strip combining tube preamp (5 models),
+  Baxandall EQ, and optical leveler. Note: price field omitted — FastSpring
+  product pages are not accessible headlessly; resolve manually before merging.
+
+### Patch Changes
+
+- 1395f12: merge(auburn-sounds): add images and versions (safe-add fields)
+
+  Added CDN image URLs and current version numbers to 7 active Auburn
+  Sounds products (Couture 1.10, Graillon 3.2, Renegate 1.6,
+  Panagement 2.8, Inner Pitch 2.1, Lens 1.4, Selene 1.1). Added
+  version 1.0 to 3 GFM legacy products (Distort, Koch, Psypan).
+
+  Conflicts (primaryCategory, categories, description, details, specs,
+  prices, formats for all 10 entries) require human review — see PR
+  body for full conflict list.
+
+- b47091a: catalog-import-merge: audiaire (new=0 discontinued=0 updated=1)
+
+  Zone gained version 1.2.
+
+- 60f2563: catalog-import-merge: future-audio-workshop — refresh 4 software entries (Circle², Notes, SubLab XL, SubLab): updated prices, enriched descriptions/details/specs, added categories, updated Notes URL and formats.
+
 ## 3.29.0
 
 ### Minor Changes
