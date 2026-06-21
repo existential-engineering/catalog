@@ -12,6 +12,7 @@ formats:
   - vst3
   - au
   - aax
+  - rack-extension
 platforms:
   - mac
   - windows
@@ -20,36 +21,44 @@ url: https://www.inphonik.com/products/rx1200-12bit-sampler-instrument/
 prices:
   - amount: 29
     currency: USD
-description: "Plugin sampler instrument based on the E-mu SP-1200, emulating the
-  characteristic gritty 12-bit digital sound of the landmark 1987 hardware
-  sampler. Features 32 sample slots across 4 banks of 8 pads, SSM2044 low-pass
-  filter emulation, 8 assignable outputs, chromatic play mode, and a
-  non-destructive visual sample editor. Includes 900+ factory samples in 50
-  presets."
+description: Plugin sampler instrument based on the E-mu SP-1200, emulating the characteristic gritty 12-bit digital sound of the landmark 1987 hardware sampler. Features 32 sample slots across 4 banks of 8 pads, SSM2044 low-pass filter emulation, 8 assignable outputs, chromatic play mode, and a non-destructive visual sample editor. Includes 900+ factory samples in 50 presets.
 details: |-
-  12-bit, 26.041 kHz sample rate
+  12-bit / 26.041 kHz sound processing (authentic SP-1200 spec)
 
-  4 banks of 8 pads
+  4 banks of 8 pads (32 sample slots)
 
-  900+ samples in 50 presets
+  900+ factory samples in 50 presets
 
-  Ambient Collection
-  Drum & Bass Collection
+  8 assignable outputs
 
-  ~300 MB
+  ~300 MB disk space
 
   64-bit
 specs: |-
-  - filter: SSM2044 4-pole resonant low-pass (switchable)
-  - outputs: 8 assignable outputs
-  - sampleLength: Unrestricted
-  - playback: Stereo and mono
-  - Tune/decay/mix controls
-  - Panning knobs in Mix mode
+  - 12-bit / 26.041 kHz audio processing
+  - 32 sample slots (4 banks × 8 pads)
+  - 8 assignable outputs
+  - SSM2044 4-pole resonant low-pass filter emulation
+  - Input amp stage modeling
+  - Non-destructive sample editor with fade in/out markers
   - Chromatic play mode
-  - Non-destructive visual sample editor
-  - Fade in/out markers
-  - Speed feature for lo-fi pitch shifting
+  - Stereo and mono sample playback with panning
+  - Unrestricted sample length
+  - 900+ factory samples across 50 presets
+  - Built-in collections download service (Ambient, Drum & Bass)
+  - ~300 MB disk space required
+  - 64-bit only
   - windows: Windows 10+, 64-bit
   - mac: macOS 10.11+, Intel & Apple Silicon
   - linux: 64-bit, VST2/VST3 only
+versions:
+  - name: 1.1.0
+    description: Added fade in/out markers and visual play heads in sample editor, right-click context menu on pads for copy/duplicate, built-in collections download service, new Ambient collection, improved missing sample handling, and numerous bug fixes.
+  - name: 1.0.2
+    description: Added option to enable/disable keyboard shortcuts globally; fixed preset name display, audio jitter with large buffer settings, and sample editor display issue.
+  - name: 1.0.1
+    description: First public release.
+videos:
+  - videoId: YxZfJoqynV8
+    provider: youtube
+    title: RX1200 demo songs

@@ -1,44 +1,49 @@
 id: DyCB7JGYNJNprLbQait2f
 name: RYMCast Genesis VGM Player
 manufacturer: inphonik
-primaryCategory: utility
+primaryCategory: standalone
 categories:
   - digital
 formats:
   - standalone
 platforms:
-  - mac
   - windows
+  - mac
   - linux
 url: https://www.inphonik.com/products/rymcast-genesis-vgm-player/
 prices:
   - amount: 0
     currency: USD
-description: "Highly accurate cross-platform VGM player for Sega
-  Genesis/Megadrive video game music files. Features cycle-accurate YM2612
-  emulation with ladder effect and filtering, individual channel scopes with
-  per-channel mute and solo, VGM stream speed adjustment, audio export to
-  WAV/AIFF/FLAC in stereo or multi-track, and instrument patch extractor
-  supporting .repatch and Deflemask .dmp formats."
+description: RYMCast is a highly accurate and genuinely sounding cross-platform VGM player for Sega Genesis/Megadrive video game music files, built on the same audio engine as the RYM2612 Iconic FM Synthesizer.
 details: |-
-  {'windowsX64': '1.0.6', 'windowsX86': '1.0.6', 'mac': '1.0.7', 'linux': '1.0.6'}
+  Cycle-accurate YM2612 emulation with Ladder Effect and filtering
 
-  WAV
-  AIFF
-  FLAC
+  Per-channel scope, mute/solo
 
-  Stereo
-  Multi-track
+  Audio export: WAV, AIFF, FLAC (stereo or multi-track)
 
-  .repatch
-  Deflemask .dmp
+  Instrument patch extractor (.repatch, Deflemask .dmp)
+
+  VGM stream speed adjustment
 specs: |-
-  - emulation: Cycle-accurate YM2612 with Ladder Effect and filtering
-  - Individual channel scopes
-  - Per-channel mute/solo
+  - Cycle-accurate YM2612 FM chip emulation
+  - Ladder Effect and output filtering
+  - Per-channel scope visualization
+  - Per-channel mute and solo
   - VGM stream speed adjustment
   - Sequencer-like pause
-  - Instrument patch extractor
+  - Audio export: WAV, AIFF, FLAC
+  - Stereo and multi-track export
+  - Patch extractor: .repatch and .dmp formats
   - windows: x64 and x86
-  - mac: x86/64
+  - mac: x86/64, macOS 10.8+
   - linux: x64
+versions:
+  - name: 1.0.6
+    description: Main window maximization disabled; fixed CH3 Special Mode keyOn/keyOff behavior; YM2612 registers now reset when needed; macOS support from 10.8 and above.
+  - name: 1.0.5
+    description: Addressed a regression affecting certain VGM files.
+  - name: 1.0.4
+    description: Added Windows executable icon, default LFO settings for .repatch files, keyboard shortcuts (F1-F10) for mute/solo, VGM streaming command support, audio export cancellation, time bar cursor dragging, macOS drag-and-drop VGM support, graphical glitch and memory leak fixes.
+  - name: 1.0.3
+    description: Initial public beta release.
