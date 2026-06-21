@@ -1,17 +1,16 @@
 id: Ec4jbr40ynzSh06_Crqgp
 name: Vertigo
 manufacturer: discodsp
-type: software
 primaryCategory: synthesizer
 categories:
   - virtual-instrument
-  - digital
   - plugin
   - standalone
+  - additive
 formats:
+  - au
   - vst
   - vst3
-  - au
   - aax
   - standalone
 platforms:
@@ -20,12 +19,9 @@ platforms:
   - linux
 url: https://www.discodsp.com/vertigo/
 prices:
-  - amount: 149.0
+  - amount: 149
     currency: USD
-description: "Professional additive synthesizer featuring 512 Euler-generated
-  oscillators with -120dB signal-to-noise ratio. Transforms audio and images
-  into harmonic content via FFT resynthesis with dual morphable layers,
-  256-breakpoint envelopes, and comprehensive sound design tools."
+description: Additive wave re-synthesizer with 512 Euler-generated oscillators per voice (-120 dB noise floor). Resynthesizes audio and image files through FFT analysis with dual morphable A/B states and 256-breakpoint envelopes per partial.
 details: |-
   Up to 512 per voice (Euler-generated)
 
@@ -42,6 +38,23 @@ specs: |-
   - windows: Windows 10+, Intel/AMD with AVX2, 8 GB RAM
   - mac: macOS 10.14+, Apple Silicon or Intel, 8 GB RAM
   - linux: Debian 10+, Intel/AMD with AVX2, 8 GB RAM
+versions:
+  - name: "5.3"
+links:
+  - type: resource
+    title: User Manual
+    url: https://www.discodsp.com/pdf/vertigo.pdf
+videos:
+  - videoId: 8cizD6rLPaw
+    provider: youtube
+    title: Vertigo 5
+  - videoId: q_oN13J2HAo
+    provider: youtube
+    title: Quick Overview
+  - videoId: RFyjrznM3tw
+    provider: youtube
+    title: Preset Playthrough
+type: software
 images:
   - https://www.discodsp.com/img/vertigo5_3d.webp
   - https://www.discodsp.com/img/vertigo5.webp
@@ -54,15 +67,3 @@ images:
   - https://www.discodsp.com/img/vertigo_effects.jpg
   - https://www.discodsp.com/img/vertigo_gui.jpg
   - https://www.discodsp.com/img/vertigo_performance.jpg
-videos:
-  - videoId: 8cizD6rLPaw
-    provider: youtube
-    title: Vertigo 5
-  - videoId: q_oN13J2HAo
-    provider: youtube
-    title: Vertigo Quick Overview
-  - videoId: RFyjrznM3tw
-    provider: youtube
-    title: Vertigo Preset Playthrough
-versions:
-  - name: "5.3"

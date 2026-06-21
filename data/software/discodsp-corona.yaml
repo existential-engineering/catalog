@@ -1,20 +1,20 @@
 id: FppkqqJRRFwSoq92um1Vk
 name: Corona
 manufacturer: discodsp
-type: software
 primaryCategory: synthesizer
 categories:
   - virtual-instrument
-  - analog
-  - wavetable
-  - hybrid
   - plugin
+  - wavetable
+  - analog
+  - hybrid
+  - subtractive
   - standalone
 formats:
-  - aax
   - au
   - vst
   - vst3
+  - aax
   - standalone
 platforms:
   - mac
@@ -22,28 +22,69 @@ platforms:
   - linux
 url: https://www.discodsp.com/corona/
 prices:
-  - amount: 149.0
+  - amount: 149
     currency: USD
-description: "VA and Wave synthesizer blending Virtual Analog and Wave Synthesis
-  with three VA/WAVE oscillators, Roland JP8080 modeled Super 7 unison, 16
-  oscillator combine modes, 32-step arpeggiator, and dual zero-delay feedback
-  filters."
+description: Virtual analog and wave synthesizer with 3 VA/WAVE oscillators, Roland JP8080 SuperSaw unison, 16 oscillator combine modes, 32-step arpeggiator, dual zero-delay filters, and comprehensive modulation matrix.
 details: |-
-  3 VA/WAVE oscillators with 16 combine modes
+  Corona is a hybrid synthesizer combining virtual analog and wavetable synthesis engines. It features three VA/WAVE oscillators with 16 combine modes including additive, subtractive, multiplicative, sync, ring modulation, phase modulation, and bitwise AND/OR/XOR operations.
 
-  14 filter types (2-pole and 4-pole) with zero-delay feedback
+  The synthesizer includes a Super 7 unison mode modeled on the Roland JP-8080, dual zero-delay feedback (ZDF) filters with 14 filter types available in 2-pole and 4-pole versions. Filter shapes include tanh, poly, asym1/2/3, hardlimit, polywrap, asymwrap, quantize, and asymquantize, with bipolar drive, keytracking, and pre/post volume envelope routing.
 
-  4 LFOs, 3 ADSR envelopes, 8-destination modulation matrix
+  Modulation capabilities include 4 LFOs, 3 ADSR envelopes, and an 8-destination modulation matrix with 30 modulation presets. A 32-step arpeggiator is also included for rhythmic pattern generation.
 
-  Distortion, chorus, reverb, delay
-
-  300+ MB waveform library
-
-  Synth1 (.sy1) and Roland JP-8000/8080 SysEx
+  Corona supports custom SF2 and WAV oscillator import and ships with a 300+ MB wave expansion library containing hardware waveforms sampled from Minimoog, Prophet 5, Moog, Korg, Roland, Buchla, and ARP synthesizers. It also supports Synth1 and JP-8000/8080 preset import.
 specs: |-
-  - windows: Windows 10+, Intel AVX2 (Haswell 2013+) or AMD Ryzen, 8 GB RAM
-  - mac: macOS 10.14+, Apple Silicon native or Intel (MacBook Pro Late 2013+), 8 GB RAM
-  - linux: Debian 10+, Intel/AMD AVX2, 8 GB RAM
+  - Three VA/WAVE hybrid oscillators with 16 combine modes
+  - Super 7 unison mode modeled on Roland JP-8080
+  - Dual zero-delay feedback (ZDF) filters with 14 types in 2-pole and 4-pole versions
+  - 4 LFOs and 3 ADSR envelopes
+  - 8-destination modulation matrix with 30 modulation presets
+  - 32-step arpeggiator
+  - Custom SF2/WAV oscillator import
+  - 300+ MB wave expansion library with hardware waveforms
+  - Synth1 and JP-8000/8080 preset import
+  - Windows 10+ (AVX2), macOS 10.14+ (Apple Silicon & Intel), Linux Debian 10+ (AVX2)
+  - Minimum 8 GB RAM
+versions:
+  - name: "6.8"
+    releaseDate: 2026-04-11
+  - name: "6.7"
+    releaseDate: 2026-01-20
+  - name: "6.6"
+    releaseDate: 2026-01-06
+  - name: "6.5"
+    releaseDate: 2025-08-18
+  - name: "6.4"
+    releaseDate: 2025-03-29
+  - name: "6.3"
+    releaseDate: 2025-02-01
+  - name: "6.2"
+    releaseDate: 2024-02-12
+  - name: "6.1"
+    releaseDate: 2023-08-24
+  - name: "6.0"
+    releaseDate: 2023-08-07
+  - name: "5.1"
+    releaseDate: 2015-08-05
+  - name: "5.0"
+    releaseDate: 2015-03-10
+  - name: "1.0"
+    releaseDate: 2011-07-25
+releaseDate: 2011-07-25
+links:
+  - type: resource
+    title: Release Notes
+    url: https://www.discodsp.net/news/corona.html
+videos:
+  - videoId: Tbxt_iOVFI4
+    provider: youtube
+  - videoId: DyKtYL68bBw
+    provider: youtube
+  - videoId: uqqJJREfgsU
+    provider: youtube
+  - videoId: WiBkI0aIscM
+    provider: youtube
+type: software
 images:
   - https://www.discodsp.com/img/corona.jpg
   - https://www.discodsp.com/img/corona_3d.webp
@@ -56,42 +97,3 @@ images:
   - https://www.discodsp.com/img/details_corona_unison.webp
   - https://www.discodsp.com/img/details_corona_waveforms.webp
   - https://www.discodsp.com/img/details_corona_envelope.webp
-videos:
-  - videoId: Tbxt_iOVFI4
-    provider: youtube
-    title: "Corona: What's New"
-  - videoId: DyKtYL68bBw
-    provider: youtube
-    title: Corona Playlist
-  - videoId: uqqJJREfgsU
-    provider: youtube
-    title: Corona In Depth
-  - videoId: WiBkI0aIscM
-    provider: youtube
-    title: Sound Banks
-releaseDate: "2011-07-25"
-versions:
-  - name: "6.8"
-    date: "2026-04-11"
-  - name: "6.7"
-    date: "2026-01-20"
-  - name: "6.6"
-    date: "2026-01-06"
-  - name: "6.5"
-    date: "2025-08-18"
-  - name: "6.4"
-    date: "2025-03-29"
-  - name: "6.3"
-    date: "2025-02-01"
-  - name: "6.2"
-    date: "2024-02-12"
-  - name: "6.1"
-    date: "2023-08-24"
-  - name: "6.0"
-    date: "2023-08-07"
-  - name: "5.1"
-    date: "2015-08-05"
-  - name: "5.0"
-    date: "2015-03-10"
-  - name: "1.0"
-    date: "2011-07-25"

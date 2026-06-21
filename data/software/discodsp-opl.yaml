@@ -1,18 +1,18 @@
 id: wJ6FoqHlKPJIJtMY2fUYi
 name: OPL
 manufacturer: discodsp
-type: software
 primaryCategory: synthesizer
 categories:
   - virtual-instrument
-  - fm
-  - digital
   - plugin
   - standalone
+  - fm
+  - emulation
+  - digital
 formats:
+  - au
   - vst
   - vst3
-  - au
   - aax
   - standalone
 platforms:
@@ -22,12 +22,9 @@ platforms:
   - ios
 url: https://www.discodsp.com/opl/
 prices:
-  - amount: 49.0
+  - amount: 49
     currency: USD
-description: "Yamaha OPL2 chip emulator recreating the iconic FM synthesis sound
-  of 80s and 90s video game soundtracks with 16x oversampling for alias-free
-  sound, FM and additive synthesis, unique percussion mode, and SBI file import
-  support."
+description: discoDSP OPL emulates the Yamaha OPL2 (1985) — the FM chip behind AdLib and Sound Blaster game soundtracks of the late 80s and early 90s. Two-operator FM with eight waveforms per operator, OPL2 percussion mode, and partial OPL3 features. 16x oversampling, 2000+ presets, SBI import.
 details: |-
   FM and additive synthesis emulation
 
@@ -46,17 +43,19 @@ specs: |-
   - windows: Windows 10+, Intel/AMD with AVX2, 8 GB RAM
   - mac: macOS 10.14+, Apple Silicon native or Intel, 8 GB RAM
   - linux: Debian 10+, Intel/AMD with AVX2, 8 GB RAM
-images:
-  - https://www.discodsp.com/img/opl.webp
+versions:
+  - name: "2.7"
+links:
+  - type: resource
+    title: User Manual
+    url: https://www.discodsp.com/pdf/opl.pdf
 videos:
-  - videoId: RV-NdC9Ad7o
-    provider: youtube
-    title: OPL Playlist
   - videoId: ZGwhKVFMCqM
     provider: youtube
     title: Tyrian Remix
   - videoId: yU0CWQ66Z28
     provider: youtube
-    title: OPL Demo
-versions:
-  - name: "2.7"
+    title: Demo 1
+type: software
+images:
+  - https://www.discodsp.com/img/opl.webp

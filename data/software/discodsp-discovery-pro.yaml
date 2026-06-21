@@ -1,20 +1,19 @@
 id: NSTZJGf2UFjLSaNqYKP5c
 name: Discovery Pro
 manufacturer: discodsp
-type: software
 primaryCategory: synthesizer
 categories:
   - virtual-instrument
-  - sampler
-  - analog
-  - fm
-  - hybrid
   - plugin
   - standalone
+  - analog
+  - wavetable
+  - subtractive
+  - hybrid
 formats:
+  - au
   - vst
   - vst3
-  - au
   - aax
   - standalone
 platforms:
@@ -23,13 +22,9 @@ platforms:
   - linux
 url: https://www.discodsp.com/discoverypro/
 prices:
-  - amount: 199.0
+  - amount: 199
     currency: USD
-description: "Ultimate virtual analog synthesizer and sampler with capabilities
-  spanning sound synthesis, sampling, and creative modulation across four
-  independent layers. Features 128-voice polyphony, 16 filter types, and
-  multiple synthesis engines including analog modeled, WAVE, PADSynth
-  re-synthesis, and Deep FM."
+description: A Nord Lead-style virtual analog synthesizer with four layers, twelve oscillators, and sixteen filter types including Nord Lead Zero Delay Feedback, Moog Ladder, and Oberheim SEM. Features 128-voice polyphony, PADsynth re-synthesis, wavetable engine with SFZ/WAV/SoundFont support, and full Nord Lead SysEx compatibility.
 details: |-
   12 total (includes Super 7 JP-8080 supersaw algorithm)
 
@@ -50,12 +45,31 @@ specs: |-
   - windows: Windows 10+, Intel/AMD with AVX2, 8 GB RAM
   - mac: macOS 10.15+, Apple Silicon native or Intel, 8 GB RAM
   - linux: Debian 10+, Intel/AMD with AVX2, 8 GB RAM
-images:
-  - https://www.discodsp.com/img/discoverypro_3d.webp
-  - https://www.discodsp.com/img/discoverypro_3d_shadow.webp
-  - https://www.discodsp.com/img/discovery8_nordic.webp
-  - https://www.discodsp.com/img/discovery8_shadow.webp
-  - https://www.discodsp.com/img/discoverypro.jpg
+versions:
+  - name: "8.21"
+  - name: "8.20"
+  - name: 8.19.0
+  - name: "8.18"
+  - name: "8.17"
+  - name: "8.16"
+  - name: "8.15"
+  - name: "8.14"
+  - name: "8.13"
+  - name: "8.12"
+  - name: "8.11"
+  - name: "8.10"
+  - name: 8.9.0
+  - name: 8.8.0
+  - name: 8.7.0
+  - name: 8.6.0
+  - name: 8.5.1
+  - name: "8.5"
+  - name: 8.4.4
+  - name: "8.4"
+  - name: "8.3"
+  - name: "8.2"
+  - name: "8.1"
+  - name: "8.0"
 videos:
   - videoId: P8QMYpe_tSc
     provider: youtube
@@ -66,28 +80,10 @@ videos:
   - videoId: TDuxLuGh0eU
     provider: youtube
     title: Discovery Pro tutorial / overview
-versions:
-  - name: "8.21"
-  - name: "8.20"
-  - name: "8.19.0"
-  - name: "8.18"
-  - name: "8.17"
-  - name: "8.16"
-  - name: "8.15"
-  - name: "8.14"
-  - name: "8.13"
-  - name: "8.12"
-  - name: "8.11"
-  - name: "8.10"
-  - name: "8.9.0"
-  - name: "8.8.0"
-  - name: "8.7.0"
-  - name: "8.6.0"
-  - name: "8.5.1"
-  - name: "8.5"
-  - name: "8.4.4"
-  - name: "8.4"
-  - name: "8.3"
-  - name: "8.2"
-  - name: "8.1"
-  - name: "8.0"
+type: software
+images:
+  - https://www.discodsp.com/img/discoverypro_3d.webp
+  - https://www.discodsp.com/img/discoverypro_3d_shadow.webp
+  - https://www.discodsp.com/img/discovery8_nordic.webp
+  - https://www.discodsp.com/img/discovery8_shadow.webp
+  - https://www.discodsp.com/img/discoverypro.jpg
