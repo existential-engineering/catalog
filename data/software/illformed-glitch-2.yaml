@@ -7,7 +7,7 @@ categories:
   - creative
   - glitch
 formats:
-  - vst
+  - vst2
   - au
 platforms:
   - mac
@@ -15,27 +15,48 @@ platforms:
   - linux
 url: https://illformed.com/glitch/
 prices:
-  - amount: 70.0
+  - amount: 70
     currency: USD
-description: "Audio effect plugin featuring a multi-lane sequencer that can play
-  multiple effects simultaneously, with the ability to trigger unique scenes
-  from every note on your keyboard. Designed to slice, dice, chop, screw, twist,
-  turn and mangle sounds into radical new forms. Each program consists of 128
-  scenes triggered via MIDI notes, each with its own unique sequencer pattern,
-  timing, and effect settings. Includes randomize and mutate functions at almost
-  every level for unexpected, chaotic and inspiring results."
+description: Audio effect plugin featuring a multi-lane sequencer that can play multiple effects simultaneously, with the ability to trigger unique scenes from every note on your keyboard. Designed to slice, dice, chop, screw, twist, turn and mangle sounds into radical new forms. Each program consists of 128 scenes triggered via MIDI notes, each with its own unique sequencer pattern, timing, and effect settings. Includes randomize and mutate functions at almost every level for unexpected, chaotic and inspiring results.
 details: |-
-  Multi-lane sequencer allows many effects to be played simultaneously
+  Multi-lane sequencer allows many effects to be played simultaneously, to create interesting layered sounds.
 
-  128 scenes per program, triggered via MIDI notes, each with unique sequencer pattern, timing, and effect settings
+  128 scenes per program, triggered via MIDI notes, each with unique sequencer pattern, timing, and effect settings, allowing you to create tons of unique variations for every moment in your song.
 
-  Includes Shuffler, Tape Stop, Reverser, Gater, Stretcher, and more tempo-synced effects with filter, mix, pan and volume controls on each module
+  Includes Shuffler, Tape Stop, Reverser, Gater, Stretcher, and more tempo-synced effects with filter, mix, pan and volume controls on each module.
 
-  Randomize and Mutate functions at almost every level
+  Randomize and Mutate functions at almost every level — mutate a single effect for slight parameter variations, or instantly Randomize everything for unexpected, chaotic and inspiring results.
 
-  Intuitive pattern editor with drag and drop - draw, erase, resize, split and join blocks
+  Intuitive pattern editor with drag and drop — draw, erase, resize, split and join blocks with ease.
 specs: |-
   - windows: Windows 7 or higher, VST 2.4 host, 1024x768 resolution, CPU with SSE2
   - mac: OS X 10.11 or higher, VST 2.4 or AU host, 1024x768 resolution, Intel CPU with SSE2 or Apple Silicon
   - linux: Ubuntu 16 or higher, VST 2.4 host, 1024x768 resolution, CPU with SSE2, real-time kernel recommended
   - notSupported: Pro Tools AAX/RTAS is not supported
+images:
+  - https://images.aureo.audio/products/software/Q6uvHdkEqU7W-FAP5CBpf/1.webp
+versions:
+  - name: 2.1.4
+    description: Fixed bug with external displays on some Apple Native Silicon Macs.
+  - name: 2.1.3
+    description: Added Apple Native Silicon support. Fixed MacOS Monterey and Ventura compatibility.
+  - name: 2.1.2
+    description: Fixed MacOS Catalina and Big Sur compatibility.
+  - name: 2.1.1
+    description: Fixed MacOS Mojave compatibility.
+  - name: 2.1.0
+    description: Added Shuffler effect, extra Tape Stop playback modes, extended Tape Stop and Reverser ranges, Gater volume step sequencer, Stretcher grain size jitter, effect reordering, effect solo, gate/latch scene trigger modes, loop on/off switch, scene lock during live playback, native bank/program format, random program name generator, and new preset banks.
+  - name: 2.0.2
+    description: Fixed parameters not updating when changing scenes, transport repositioning sync issue, and 32-bit VST GUI in Live 8 on Mac. Added vertical block movement in sequencer.
+  - name: 2.0.1
+    description: Fixed program recall in AU version, GUI display in Ableton Live on Mac, parameter reset on scene initialization, and tool tip display on Linux.
+  - name: 2.0.0
+    description: Initial release.
+links:
+  - type: resource
+    url: https://illformed.com/downloads/glitch_2_1_4/Glitch2_User_Guide.pdf
+    title: User Guide
+videos:
+  - videoId: _zLL3Z2Kl0Q
+    provider: youtube
+    title: Glitch 2 Demo
