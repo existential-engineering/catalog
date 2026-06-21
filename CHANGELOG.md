@@ -1,5 +1,31 @@
 # catalog
 
+## 3.32.0
+
+### Minor Changes
+
+- 8b8c0c7: Merge-refresh Dear Reality (discontinued=2, enrichment of 11 existing).
+
+  Dear Reality is a German spatial audio company now operating under
+  Sennheiser. All 11 software entries enriched with formats, platforms,
+  prices, descriptions, details, and specs sourced from the Sennheiser
+  product page. dearVR MIX-SE and dearVR UNITY marked discontinued per
+  manufacturer deprecation notices. dearVR MUSIC noted as no longer
+  actively maintained, still available to existing owners via Plugin
+  Alliance.
+
+- 4022a14: Remove bundle entries and strip purchase links.
+
+  Removed 13 Drumforge bundle entries (7 software, 6 content). A bundle
+  is a commercial SKU, not a discrete installable product — what exists
+  on disk and syncs is the individual plugins/packs, which remain as
+  their own entries.
+
+  Stripped purchase/buy/store links from the `links` arrays across the
+  catalog (186 links in 174 files). The canonical `url` already points
+  users to the product, so retailer/cart links were redundant.
+  App-store / play-store download links were preserved.
+
 ## 3.31.0
 
 ### Minor Changes
