@@ -9,34 +9,44 @@ formats:
   - vst3
   - au
   - aax
+  - rack-extension
 platforms:
-  - mac
   - windows
+  - mac
   - linux
   - ios
 url: https://www.inphonik.com/products/pcm2612-retro-decimator-unit/
 prices:
   - amount: 0
     currency: USD
-description: "Free bitcrusher effect plugin inspired by the Sega Genesis sound
-  chip's PCM playback feature, derived from the RYM2612 synthesizer emulation.
-  Features 32-step scalable 8-bit decimation, dry/wet control, switchable output
-  filtering with Legacy mode modeling Sega Genesis Model 1 circuitry, and GUI
-  scaling options."
+description: A bitcrusher effect plug-in inspired by the PCM playback feature of the RYM2612 Iconic FM Synthesizer, inphonik's tribute emulation of the Sega Genesis sound chip. Delivers 8-bit decimation in a simple, compact, DRM-free effect unit available free of charge.
 details: |-
-  32-step scalable 8-bit
+  8-bit decimation derived from the Sega Genesis YM2612 FM chip's PCM playback
 
-  1x, 1.5x, 2x
+  Free of charge with no DRM
 
-  Vertical box or horizontal rack
+  Vertical box and horizontal rack GUI form factors
+
+  1x, 1.5x, 2x GUI scaling
 
   64-bit
 specs: |-
-  - Decimation (32 steps)
-  - Dry/Wet level
-  - Stereo/Mono switch
-  - Output filtering (Legacy/Crystal Clear)
+  - 32-step scalable 8-bit decimation
+  - Dry/Wet level control
+  - Stereo/Mono switching
+  - Output filtering: Legacy (Sega Genesis Model 1 circuit) and Crystal Clear modes
+  - GUI scaling: 1x, 1.5x, 2x
+  - Dual GUI form factors: vertical box and horizontal rack
+  - Native Apple Silicon (ARM) support on macOS
+  - Native Linux VST support
+  - AUv3 and IAA on iOS
+  - DRM-free
   - windows: Vista+, 64-bit
   - mac: macOS 10.7+, Intel & Apple Silicon
   - linux: 64-bit, VST
   - ios: iOS 11+, AUv3/IAA
+versions:
+  - name: 1.0.1
+    description: Fixed Windows GUI appearing black on some display settings; fixed broken Linux product archive.
+  - name: 1.0.0
+    description: First public release.
