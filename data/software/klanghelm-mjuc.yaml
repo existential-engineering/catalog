@@ -7,9 +7,9 @@ categories:
   - saturation
   - plugin
 formats:
+  - au
   - vst
   - vst3
-  - au
   - aax
 platforms:
   - mac
@@ -18,21 +18,22 @@ url: https://klanghelm.com/contents/products/MJUC
 prices:
   - amount: 24
     currency: EUR
-description: "Variable-tube compressor plugin featuring three distinct tube
-  compression models representing different eras. Mk1 (1950s variable-mu, four
-  compression stages, natural thick compression), Mk2 (1960s inspired, four
-  ratios, density switch, interstage transformer), and Mk3 (modern hi-fi, dual
-  variable-mu stages with feedforward and feedback for punchy compression).
-  Includes TIMBRE and DRIVE controls for saturation and transformer load
-  characteristics."
+description: Variable-tube compressor plugin featuring three distinct tube compression models representing different eras. Mk1 (1950s variable-mu, four compression stages, natural thick compression), Mk2 (1960s inspired, four ratios, density switch, interstage transformer), and Mk3 (modern hi-fi, dual variable-mu stages with feedforward and feedback for punchy compression). Includes TIMBRE and DRIVE controls for saturation and transformer load characteristics.
 details: |-
-  Three models: Mk1 (1950s), Mk2 (1960s), Mk3 (modern)
-  Mk1: Four compression stages, natural thick compression with minimal distortion
-  Mk2: Four ratios, density switch, interstage transformer options
-  Mk3: Dual variable-mu stages (feedforward and feedback), punchy and attack-accentuating
-  TIMBRE and DRIVE knobs for saturation and transformer load adjustment
-  Variable-Mu compression topology
+  MJUC is the most effortful Klanghelm plugin to date, the result of almost two years of extensive research and development into variable-mu tube compression. To capture the diversity of this compression topology, three different models were built, each representing a different era in the history of tube compression. Each model has its own dedicated signal path and dedicated control set.
+
+  The TIMBRE and DRIVE knobs are shared across all models. DRIVE controls the load of the input and output transformers as well as the saturation of the tube gain stages, while TIMBRE extends MJUC's use as a tone shaper beyond pure compression.
+
+  Model Mk1 is based on very early variable-mu designs from the 1950s. Its extremely high control voltage eliminates the audible "thumping" common in other variable-mu designs at high gain reduction and fast timing constants. With four variable-mu stages in a simple signal path, it produces a very natural compression character with very little distortion — the most colored of MJUC's three models.
+
+  Model Mk2 is built upon the more complex designs of the 175 and 176 from the early 1960s — the all-tube predecessors of the classic 1176 FET compressor. It offers four ratios, a density switch that enables a second variable-mu stage, and an optional interstage transformer that reduces noise and distortion. Compared to Mk1, Mk2 is less subtle with enhanced harmonics and a more forward-sounding character.
+
+  Model Mk3 is Klanghelm's modern interpretation of variable-mu compression — the least colored and most hi-fi-sounding model. Its circuitry is entirely differential, making it very quiet and almost distortion-free. The compression is performed by two different variable-mu stages working against each other — one feedforward, one feedback — resulting in attack-accentuating, punchy compression closer in character to a British bus compressor than a classic 670.
 specs: |-
-  - windows: Windows 10 or higher (64-bit)
-  - mac: macOS 10.13 or higher (Intel and Apple Silicon)
-  - aaxRequirement: ProTools 11 or higher
+  - Three compression models: Mk1 (1950s), Mk2 (1960s), Mk3 (modern)
+  - Mk1: Four variable-mu stages, simple signal path, natural compression with minimal distortion
+  - Mk2: Four selectable ratios, density switch for dual-stage operation, optional interstage transformer
+  - Mk3: Fully differential circuitry, feedforward/feedback dual variable-mu stage design
+  - DRIVE knob controls transformer load and tube stage saturation
+  - TIMBRE knob for tone shaping across all models
+  - Compatible with Pro Tools 11 or higher
