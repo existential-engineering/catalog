@@ -1,11 +1,11 @@
 id: Z84ivT8iewR--UbmrA6Uc
 name: MTS-ESP Suite
 manufacturer: oddsound
-primaryCategory: tuner
+primaryCategory: midi-effect
 categories:
-  - midi-effect
   - utility
   - plugin
+  - midi
 formats:
   - vst
   - vst3
@@ -16,29 +16,97 @@ platforms:
   - windows
 url: https://oddsound.com/mtsespsuite.php
 prices:
-  - amount: 106.13
+  - amount: 106.09
     currency: USD
-description: "A comprehensive system for dynamic microtuning in a DAW
-  environment. Import, compare and edit tuning files, create tuning systems
-  algorithmically, automate tuning changes, visualize and compare tuning
-  systems, and convert compositions between tuning systems. Includes MTS-ESP
-  Master and MTS-ESP MIDI Client plugins."
-details: |-
-  Import and export .scl, .kbm and .tun tuning and mapping files
-  Create new tuning systems, manually and algorithmically
-  Control the tuning of your whole studio from within a single plugin
-  Retune any plugin or MIDI device with either MTS-ESP, MPE, MTS SysEx or MIDI pitch bend
-  Automate tuning changes across all plugins and MIDI devices
-  Visualize and compare tuning systems
-  Convert compositions from one tuning system to another
-  Create subset scales by analysing MIDI to only include used notes
-  Use a Novation Launchpad as a microtonal keyboard and chord player
-  Create tunings by ear and tune instruments with the built in synth
-  Zero-latency, low CPU use
-  Simple, ergonomic resizable interface
-  Mac Retina and Windows HiDPI support
-  Free, completely functional 30-day demo
+description: A New Dimension In Composition — a plugin suite that equips composers with tools to control microtuning across their whole studio, enabling alternative tuning systems beyond standard 12-tone equal temperament.
+details:
+  - Until recently most music software only allowed working with the same 12 notes, equally divided over an octave. Whilst microtuning additions have broadened this considerably, it can still be cumbersome to get all plugins and external synths in tune — the MTS-ESP Suite solves this.
+  - The MTS-ESP Suite equips composers with tools to get everything tuned quickly and accurately, as well as presenting entirely new compositional methods. Change notes or chords whilst they're being played, transpose all instruments at once or morph into an entirely different tuning system.
+  - The suite provides the computer musician with an intuitive toolset for rapidly composing and finessing microtonal pieces. Existing MIDI compositions can be easily converted to a different tuning system and given an entirely different emotional context.
+  - The product includes the MTS-ESP Master plugin for studio-wide tuning control and a MIDI Client plugin for retuning plugins and MIDI devices via MTS-ESP, MPE, MTS SysEx or MIDI pitch bend. A free, fully functional 30-day demo is available.
 specs: |-
-  - windows: Vista / Windows 7 / Windows 8 / Windows 10 / Windows 11, 32 bit or 64 bit, a host that supports VST, VST3 or AAX plug-ins
-  - mac: macOS 10.9 or newer, 64 bit only, a host that supports VST, VST3, AU or AAX plug-ins, Intel or ARM Mac
-  - latestVersion: 1.17
+  - Import and export .scl, .kbm and .tun tuning and mapping files
+  - Create new tuning systems, manually and algorithmically
+  - Control the tuning of your whole studio from within a single plugin
+  - Retune any plugin or MIDI device with either MTS-ESP, MPE, MTS SysEx or MIDI pitch bend
+  - Automate tuning changes across all plugins and MIDI devices
+  - Visualize and compare tuning systems
+  - Convert compositions from one tuning system to another
+  - Create subset scales by analysing MIDI to only include used notes
+  - Use a Novation Launchpad as a microtonal keyboard and chord player
+  - Create tunings by ear and tune instruments with the built in synth
+  - Zero-latency, low CPU use
+  - Simple, ergonomic resizable interface
+  - Mac Retina and Windows HiDPI support
+  - Free, completely functional 30-day demo
+  - Windows: Vista / 7 / 8 / 10 / 11, 32-bit or 64-bit, VST / VST3 / AAX host required
+  - Mac: macOS 10.9 or newer, 64-bit only, Intel or ARM, VST / VST3 / AU / AAX host required
+versions:
+  - name: "1.17"
+    date: 2025-11-11
+    notes: Fixed potential issue with MIDI output of MIDI Client. Fixed drag and mousewheel issue with Wheel Bend Range in MIDI Client.
+  - name: "1.16"
+    date: 2025-09-11
+    notes: Fixed timing of MIDI events sent by MIDI Client AU version. Fixed potential crash in MIDI Client.
+  - name: "1.15"
+    date: 2025-09-04
+    notes: Added Root macro. Snap to Ratio improvements. Multiple crash fixes for Mac, Windows, Max/MSP, Logic, and Reaper.
+  - name: "1.14"
+    date: 2023-10-29
+    notes: Allow tonic to be assigned to switch macro. AAX support for Apple Silicon. Various fixes.
+  - name: "1.13"
+    date: 2023-01-02
+    notes: Fix scale select MIDI learn menu items. Added option for scale macros to keep value on switching active scale.
+  - name: "1.12"
+    date: 2022-11-16
+    notes: Fix VST3 bundle structure on Windows. Various scale list and table ordering fixes.
+  - name: "1.11"
+    date: 2022-10-31
+    notes: Migrate to VST3 bundle structure. Multiple fixes for Logic, Reaper, and MIDI Client.
+  - name: "1.10"
+    date: 2022-01-17
+    notes: Add support for Launchpad Mk2, Mini Mk1 and Mini Mk2. Various fixes.
+  - name: "1.09"
+    date: 2021-11-28
+    notes: Improvements to Tuning Table step dragging onto Macro Settings. Macro copy, save and recall fixes.
+  - name: "1.08"
+    date: 2021-11-09
+    notes: Multiple fixes for .scl import, MIDI CC, tuning table, and MIDI Client device support.
+  - name: "1.07"
+    date: 2021-08-18
+    notes: Fix broken mapping with .scl import. Fix crash when deleting macros.
+  - name: "1.06"
+    date: 2021-08-05
+    notes: New Reference Frequency Step macro type. MPE improvements in MIDI Client.
+  - name: "1.05"
+    date: 2021-06-22
+    notes: Snap To Ratio macro improvements. New Transpose macro Modulate mode. Various MIDI Client fixes.
+  - name: "1.04"
+    date: 2021-05-07
+    notes: IPC support for MTS-ESP. New Transpose macro modes. Multiple MIDI Client and stability fixes.
+  - name: "1.03"
+    date: 2021-04-11
+    notes: Relocate MTS-ESP library to Common Files on Windows. Fix VST3 parameter recall in Bitwig.
+  - name: "1.02"
+    date: 2021-04-07
+    notes: Improve MIDI Client M4L device loading. Add Sevish Tuning Pack. Fix MTS-ESP note filter.
+  - name: "1.01"
+    date: 2021-03-30
+    notes: Fix missing presets in MIDI Client.
+links:
+  - type: resource
+    url: https://oddsound.com/dl/ODDSound_MTS_ESP_Suite_Master_Manual.pdf
+    title: MTS-ESP Suite Manual
+  - type: resource
+    url: https://oddsound.com/dl/ODDSound_MTS_ESP_Suite_MIDI_Client_Manual.pdf
+    title: MIDI Client Manual
+  - type: support
+    url: https://oddsound.com/support.php
+    title: FAQs / Support
+  - type: resource
+    url: https://oddsound.com/devs.php
+    title: Developer Information
+videos:
+  - videoId: QCyJbTL4Z14
+    provider: youtube
+    title: MTS-ESP Suite
