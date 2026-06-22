@@ -1,24 +1,46 @@
 id: E4CRUhHiAbVUHQXaz37lf
 name: M7 Link
 manufacturer: liquidsonics
-primaryCategory: utility
+primaryCategory: plugin
 categories:
   - reverb
-  - plugin
 formats:
-  - aax
-  - vst
+  - vst2
   - vst3
   - au
+  - aax
 platforms:
   - mac
   - windows
 url: https://www.liquidsonics.com/software/m7-link/
 prices:
-  - amount: 0
+  - amount: 199
     currency: USD
-description: MIDI DAW integration for the Bricasti M7 hardware reverb unit.
+description: MIDI DAW integration for your Bricasti M7 hardware reverb unit - AAX, AU, VST
 details: |-
-  DAW plugin providing MIDI integration for the Bricasti M7 hardware reverb unit. Control your M7 directly from your DAW session. 14-day free trial available. 64-bit Universal Binary with Apple Silicon and Intel support. iLok required.
+  M7 Link is a MIDI DAW integration controller plugin for the Bricasti M7 hardware reverb unit, enabling full program recall, parameter control, and M7 system management across major DAWs via industry-standard MIDI protocol.
+
+  The plugin supports full M7 patch save and recall to user presets, live automation capabilities, and system settings control including brightness and I/O configuration. Multi-unit support allows users to create instances for multiple hardware units within the same session.
+
+  M7 Link requires a compatible MIDI device and a Bricasti M7 or M7M hardware unit. Licensing is handled via iLok Cloud, iLok 2/3 dongle, or local iLok activation, with iLok License Manager v5 or later required. The plugin occupies approximately 50 MB of disk space.
+
+  A 14-day free trial is available for both macOS and Windows. macOS support covers 10.13 or later on Intel and Apple Silicon (native and Rosetta). Windows support covers Windows 7 or later on Intel and AMD processors.
 specs: |-
-  64-bit VST2, VST3, AU and AAX. macOS Universal Binary (Apple Silicon and Intel x64). Intel, AMD or Apple Silicon processor (native and Rosetta).
+  - Supported OS: macOS 10.13+, Windows 7+
+  - Architecture: 64-bit only (Intel, Apple Silicon native and Rosetta on Mac; Intel and AMD on Windows)
+  - Plugin formats: VST 2.4, VST 3, Audio Unit (AUv2), AAX Native (Pro Tools 12.5.1+)
+  - Licensing: iLok Cloud, iLok 2/3 dongle, or local iLok activation; iLok License Manager v5+
+  - Disk space: ~50 MB
+  - Hardware requirement: Bricasti M7 or M7M hardware unit
+  - MIDI device required for integration
+versions:
+  - name: 1.2.8
+    description: Current release
+  - name: 1.2.7
+    description: Tempo sync updates when stopped; M3/M4 compatibility
+  - name: 1.2.5
+    description: AMD Zen 5 Windows compatibility
+  - name: 1.2.4
+    description: Framework update; macOS 10.13 minimum
+  - name: 1.2.3
+    description: Cubase lock-up fix; GarageBand compatibility; macOS Sonoma support
