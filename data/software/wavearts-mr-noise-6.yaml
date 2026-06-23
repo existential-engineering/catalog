@@ -1,7 +1,7 @@
 id: RuS-NK3aCHBrRwo_T1Eck
 name: MR Noise 6
 manufacturer: wavearts
-primaryCategory: utility
+primaryCategory: noise-reduction
 categories:
   - effect
   - plugin
@@ -14,11 +14,59 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/mr-noise-6
-description: "Broadband noise reduction processor that distinguishes itself by
-  being both great sounding and easy to use. Features auto-learning noise
-  profile, Auto Dynamics mode for minimizing artifacts, and comprehensive
-  frequency response display."
+description: MR Noise 6 is a stellar-sounding broadband noise reduction plugin that works in the frequency domain, automatically learning the noise spectrum for fast, transparent noise removal with low latency suitable for live applications.
 details: |-
-  Frequency spectrum based noise reduction. Low latency (under 20 msec) for live use. Fast noise floor learning time (down to 50 msec). Auto dynamics mode keeps transients sharp. Monitor feature to hear removed noise. Comprehensive display of input, output and noise floor spectrums. Manually editable noise floor. Parameters editable as function of frequency. Latency compensation. Up to 192 kHz sampling rate. Mono or stereo.
+  MR Noise 6 offers frequency spectrum-based noise reduction that automatically learns the noise floor, enabling effective reduction without manual setup required in most cases. The plugin operates with extremely low latency (under 20 milliseconds), making it suitable for live processing as well as post-production work.
+
+  The noise floor learning algorithm works in as little as 50 milliseconds, allowing quick setup even on short noise samples. Auto Dynamics mode intelligently preserves sharp transients while still reducing steady-state noise, helping maintain the natural feel of the audio.
+
+  A Monitor feature lets users audibly isolate the removed noise signal, making it easy to verify that only unwanted noise is being attenuated rather than musical content. The frequency response display shows input, output, and noise floor spectra simultaneously for complete visual feedback.
+
+  Manual noise floor editing is supported for cases where automatic learning needs refinement, and parameters can be adjusted on a per-frequency basis for surgical control. The plugin supports up to 192 kHz sample rates and operates in both mono and stereo configurations.
+
+  On macOS, formats available are AU, VST3, and AAX. On Windows, VST2, VST3, and AAX are provided. Apple Silicon is natively supported on macOS 10.13 (High Sierra) and higher. Windows 7/8/10/11 are supported with both 32-bit and 64-bit hosts.
 specs: |-
-  Mac: AU, VST3, AAX. macOS 10.13+, Apple Silicon native, 64-bit only. Windows: VST2, VST3, AAX. Windows 7/8/10/11, 32-bit and 64-bit. iLok supported but not required.
+  - Frequency spectrum-based broadband noise reduction
+  - Automatic noise floor learning in as little as 50 ms
+  - Ultra-low latency under 20 ms — suitable for live use
+  - Auto Dynamics mode preserves sharp transients
+  - Monitor mode to audibly isolate removed noise
+  - Frequency response display: input, output, and noise floor spectra
+  - Manual noise floor editing with per-frequency parameter control
+  - Supports up to 192 kHz sample rates
+  - Mono and stereo operation
+  - Latency compensation compatible with supported hosts
+  - iLok licensing supported (optional)
+  - macOS: AU, VST3, AAX; requires 10.13+; Apple Silicon native; 64-bit hosts only
+  - Windows: VST2, VST3, AAX; supports Windows 7/8/10/11; 32-bit and 64-bit hosts
+versions:
+  - name: "6.09"
+    releaseDate: 2023-10-26
+    description: Fix crash in Logic on Apple Silicon when registering from expiration window. macOS installers now remove previously installed AAX plug-ins before installation. Internal updates to Juce 7.0.6, Pace Eden 5.8.1, Xcode 14.1, AAX SDK 2.5.1. macOS requirement raised to 10.13.
+  - name: "6.08"
+    releaseDate: 2023-05-30
+    description: Added unregister option to delete licenses and return authorization to server. Implemented Pro Tools Ctrl+Command click support for automation shortcuts. Provided VST2 installation option for Windows.
+  - name: "6.07"
+    releaseDate: 2023-03-16
+    description: License popups now appear after UI is drawn, resolving plugin freezing issues. Parameter text entry now supports Tab and Shift-Tab navigation.
+  - name: "6.06"
+    releaseDate: 2022-12-29
+    description: Fixed issue where control clicking triggered text entry focus.
+  - name: "6.05"
+    releaseDate: 2022-11-07
+    description: Added iLok licensing and AAX format support for Apple Silicon. Bypass parameter replaced Enable parameter in automation. Multiple internal framework updates and bug fixes.
+  - name: "6.04"
+    releaseDate: 2022-09-27
+    description: Fixed latency reporting.
+  - name: "6.03"
+    releaseDate: 2021-05-26
+    description: Resolved Adobe Premiere Pro export crash in VST3 format. Cleaned up generic UIs and removed duplicate unit displays.
+  - name: "6.02"
+    releaseDate: 2021-04-22
+    description: Added M1 support with universal binaries. GUI scaling now applies to dialogs and AAX format.
+  - name: "6.01"
+    releaseDate: 2020-12-15
+    description: Added UI scaling for AU and VST3 formats. Introduced new preferences dialog.
+  - name: "6.00"
+    releaseDate: 2020-09-25
+    description: Initial v6 release with macOS Catalina support, VST3 support, notarized installers, Wave Arts licensing for AAX, user preset manager, and dark theme.

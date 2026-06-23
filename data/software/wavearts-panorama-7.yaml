@@ -1,7 +1,7 @@
 id: 9XC1vv08O8e17x5Ed5ZY8
 name: Panorama 7
 manufacturer: wavearts
-primaryCategory: utility
+primaryCategory: spatial
 categories:
   - effect
   - plugin
@@ -14,11 +14,57 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/panorama-7
-description: "Advanced virtual acoustics plugin delivering lifelike 3D auditory
-  experiences for both headphone and loudspeaker playback. Uses HRTF-based
-  binaural synthesis and acoustic environment modeling to replicate 3D sound
-  propagation within physical spaces."
+description: An advanced virtual acoustics plugin utilizing HRTF-based binaural synthesis and acoustic environment modeling. It replicates 3D sound propagation within physical spaces for both headphone and loudspeaker playback.
 details: |-
-  HRIR-based binaural synthesis. Early room reflection modeling. Late diffuse reverberation. Doppler pitch effect. Distance modeling. Position sequencer for automating trajectories and auto-pan effects. Crosstalk canceling for loudspeaker playback. Support for SOFA format HRIRs. Conventional stereo panning mode. Binaural to loudspeaker conversion.
+  Panorama 7 is billed as the definitive 3D spatializer, using head-related impulse response (HRIR) binaural synthesis to place audio sources anywhere in a 3D space around the listener.
+
+  The plugin models complete acoustic environments including early room reflections and late diffuse reverberation, simulating how sound propagates within physical spaces.
+
+  A position sequencer enables trajectory automation and beat-synced movement effects, while Doppler pitch shifting and distance modeling add further realism to moving sources.
+
+  For loudspeaker playback, Panorama 7 includes a crosstalk canceling mode that converts binaural output for stereo speakers. SOFA format HRIR and user-supplied HRIR files are supported for custom head measurements.
+
+  The dark-theme UI features an expandable panning area spanning -100 to +100 feet, zoom controls, and multiple view options. A fully functional 30-day demo is available. The plugin is also included in the Power Suite 7 bundle.
 specs: |-
-  Mac: AU, VST3, AAX. macOS 10.13+, Apple Silicon native, 64-bit only. Windows: VST2, VST3, AAX. Windows 7/8/10/11, 64-bit only. iLok supported but not required.
+  - HRIR binaural synthesis
+  - Early room reflection and late diffuse reverberation modeling
+  - SOFA format HRIR support
+  - User-supplied HRIR support
+  - Position sequencer for trajectory automation and beat-synced effects
+  - Doppler pitch effect and distance modeling
+  - Crosstalk canceling for loudspeaker playback
+  - Stereo panning and binaural-to-loudspeaker conversion
+  - Dark theme UI with expandable panning area (-100 to +100 feet)
+  - Zoom controls and multiple view options
+  - Mac: AU, VST3, AAX (64-bit hosts, macOS 10.13+, Apple Silicon native)
+  - Windows: VST2, VST3, AAX (64-bit hosts, Windows 7/8/10/11)
+  - Pro Tools 11+ required for AAX format
+  - 30-day fully functional demo available
+versions:
+  - name: "7.09"
+    releaseDate: 2025-08-20
+    description: Added corner resize control; fixed discrete parameter automation in Logic (AU format)
+  - name: "7.08"
+    releaseDate: 2025-01-03
+    description: Text entry editing fix for polar mode coordinates
+  - name: "7.07"
+    releaseDate: 2024-12-10
+    description: High DPI display support, new HRIR options, improved filter updates
+  - name: "7.06"
+    releaseDate: 2023-11-01
+    description: Logic crash fix and width parameter automation correction
+  - name: "7.05"
+    releaseDate: 2023-08-10
+    description: Added help tips information bar and enabled Doppler in factory presets
+  - name: "7.04"
+    releaseDate: 2023-06-09
+    description: User preset saving fix and expanded UI scaling options
+  - name: "7.03"
+    releaseDate: 2023-06-06
+    description: License popup timing fix for macOS Ventura compatibility
+  - name: "7.02"
+    releaseDate: 2023-02-09
+    description: Resolved output gain text focus issue during control usage
+  - name: "7.01"
+    releaseDate: 2022-12-06
+    description: Initial release
