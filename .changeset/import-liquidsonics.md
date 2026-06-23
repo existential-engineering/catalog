@@ -1,5 +1,5 @@
 ---
-"catalog": minor
+"catalog": patch
 ---
 
 Merge update for LiquidSonics (12 products enriched): added pricing, version
