@@ -7,7 +7,7 @@ categories:
   - plugin
   - emulation
 formats:
-  - vst
+  - vst2
   - vst3
   - au
   - aax
@@ -20,6 +20,39 @@ url: https://tal-software.com/products/tal-chorus-lx
 prices:
   - amount: 0
     currency: USD
-description: TAL-Chorus-LX is a vintage chorus effect that emulates the Juno 60 chorus.
+description: TAL-Chorus-LX is a vintage chorus effect plugin that emulates the iconic Juno 60 chorus. Available as a free download for Windows, macOS, and Linux.
+details: |-
+  TAL-Chorus-LX is a faithful emulation of the Roland Juno 60 chorus effect, recreating the lush, warm chorus sound that defined the iconic synthesizer. The plugin captures the characteristic depth and movement of the original hardware circuit.
+
+  The plugin is available for free and supports all major plugin formats including VST, VST3, AU, AAX, and CLAP, making it compatible with virtually any DAW on Windows, macOS, and Linux.
+
+  Linux support is provided via 64-bit VST2 and VST3 formats for Ubuntu 18 or similar distributions. macOS users benefit from Universal Binary 2 support with native Intel and Apple Silicon (M1, M2, M3) compatibility.
+
+  The plugin has been used in professional productions, including the guitars on 'Am I Wrong' by Nico & Vinz, demonstrating its real-world utility and authentic character. A demo mode is available with a rising white noise sound every minute as the only restriction.
 specs: |-
-  - systemRequirements: Windows 7+ (64-bit), macOS 10.9+ (Universal Binary 2), Pro Tools 10.3.6+ (64-bit), Linux Ubuntu 18+ (64-bit)
+  - Emulates the Roland Juno 60 chorus circuit
+  - Formats: VST, VST3, AU, AAX, CLAP
+  - Windows 7 or higher (64-bit host)
+  - macOS 10.9 or higher, Universal Binary 2 with native Intel and Apple Silicon support (M1, M2, M3)
+  - Pro Tools 10.3.6 or higher for AAX (64-bit)
+  - Linux 64-bit / Ubuntu 18 or similar (VST2 & VST3 only)
+  - Demo restriction: rising white noise every minute
+versions:
+  - name: 1.6.3
+    releaseDate: 2023-06-28
+    notes: Smooth volume and dry/wet param changes; minor fixes.
+  - name: 1.6.2
+    releaseDate: 2023-01-12
+    notes: AAX native M1 support; base framework updated to JUCE 7; minor fixes.
+  - name: 1.6.1
+    releaseDate: 2022-05-22
+    notes: Backward compatibility mode added for volume compatible with version >= 1.3.1.
+  - name: 1.6.0
+    releaseDate: 2021-04-10
+    notes: Vector UI; core updated.
+  - name: 1.5.0
+    notes: Native Apple M1 support; DC offset removed; VST3 installer for Windows; Linux VST3 support.
+videos:
+  - videoId: bg1sT4ILG0w
+    provider: youtube
+    title: Am I Wrong by Nico & Vinz (TAL-Chorus-LX used on guitars)
