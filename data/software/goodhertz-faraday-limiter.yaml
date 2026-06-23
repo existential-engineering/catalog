@@ -16,20 +16,31 @@ platforms:
   - windows
 url: https://goodhertz.com/faraday-lim
 prices:
-  - amount: 79.0
+  - amount: 79
     currency: USD
-description: "Peak limiter plugin featuring analog-modeled transformer sound
-  with coloration and warmth controls. Designed as a tone-sculpting dynamics
-  tool with Color and Warmth controls for timbral shaping, advanced stereo
-  linking (variable L/R or M/S), adjustable compression ratios (2:1, 4:1, 8:1,
-  20:1), and gain reduction history meter."
+description: Peak limiter plugin featuring analog-modeled transformer sound with coloration and warmth controls. Designed as a tone-sculpting dynamics tool with Color and Warmth controls for timbral shaping, advanced stereo linking (variable L/R or M/S), adjustable compression ratios (2:1, 4:1, 8:1, 20:1), and gain reduction history meter.
 details: |-
-  1 page
+  Faraday Limiter is a peak limiter from Goodhertz featuring analog-modeled input and output transformers that impart color and warmth to audio material. The plugin is designed to bring the character of classic hardware limiters to the digital domain, combining peak limiting with transformer-style saturation.
 
-  Analog-modeled input/output transformers
-  Color and Warmth controls for timbral shaping
-  Advanced stereo linking (variable L/R or M/S)
-  Adjustable compression ratio: 2:1, 4:1, 8:1, 20:1
-  Gain reduction history meter
+  The plugin offers a Color control for timbral shaping and a Warmth control for tape-like saturation characteristics. Advanced stereo linking options allow variable L/R or M/S linking for precise control over how the stereo field is handled during limiting.
+
+  Faraday Limiter supports adjustable ratio settings of 2:1, 4:1, 8:1, and 20:1, making it suitable for both gentle bus limiting and more aggressive peak control. A gain reduction history meter provides visual feedback on limiting activity.
+
+  The plugin uses double-precision floating-point processing to prevent internal clipping, and includes an HQ Mode for higher precision processing at the cost of approximately 50ms additional latency and 2–4x CPU usage. MIDI Learn is available for parameter mapping, and automation is handled smoothly without digital artifacts.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
+  - Analog-modeled input/output transformers
+  - Color and Warmth controls for timbral shaping
+  - Advanced stereo linking: variable L/R or M/S
+  - Adjustable ratio: 2:1, 4:1, 8:1, 20:1
+  - Gain reduction history meter
+  - Double-precision floating-point processing
+  - HQ Mode (~50ms additional latency, 2–4x CPU usage)
+  - GPU acceleration support
+  - MIDI Learn for parameter mapping
+  - Smooth automation without zipper noise
+  - Channel configurations: Mono→Mono, Mono→Stereo, Stereo→Stereo
+  - 64-bit only
+  - Mac: AU, VST, VST3, AAX (macOS 10.13+)
+  - Windows: VST, VST3, AAX (Windows 10+)
+versions:
+  - name: "3.13"

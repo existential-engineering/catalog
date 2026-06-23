@@ -17,25 +17,28 @@ platforms:
   - windows
 url: https://goodhertz.com/tupe
 prices:
-  - amount: 129.0
+  - amount: 129
     currency: USD
-description: "Combined vacuum tube amplification and magnetic tape recording
-  modeling plugin delivering analog character from subtle harmonic enhancement
-  to intense distortion. Features 9 tube circuit models (5751, 6L6, EL34,
-  12AX7), 4 analog tape models (2 Track, C90), opto-style compressor/limiter,
-  1960s-style ladder filter with self-oscillating resonance, Tiltshift
-  equalizer, level-compensated input drive, and HQ Mode."
+description: Tupe combines vacuum tube amplification and magnetic tape recording modeling in a single plugin. It features 9 tube circuit models, 6 analog tape models, an opto-style compressor/limiter, and a 1960s-style ladder filter.
 details: |-
-  2 pages
+  Tupe is an audio plugin by Goodhertz that merges the sonic character of vacuum tube amplification with magnetic tape recording simulation — its name being a portmanteau of 'tube' and 'tape.' The plugin offers 9 selectable tube circuit models based on classic vacuum tube types (5751, 6L6, EL34, and 12AX7) across multiple bias settings, giving users a broad range of harmonic coloration from subtle warmth to heavier saturation.
 
-  9 tube circuit models: 5751 (Lo/Med/Hi), 6L6 (Lo/Med/Hi), EL34 (Lo/Hi), 12AX7
-  4 analog tape models: 2 Track (Hi/Lo), C90 (Hi/Lo)
-  Opto-style compressor/limiter
-  1960s-style ladder filter with self-oscillating resonance
-  Tiltshift equalizer built in
-  Level-compensated input drive
-  HQ Mode
-  Novel emphasis section for targeted saturation
-  Bias controls for tube and tape harmonic shaping
+  On the tape side, Tupe provides 6 analog tape models spanning two-track hi/lo, C90 hi/lo, and FE90 hi/lo configurations. These models introduce the characteristic frequency response, compression, and harmonic distortion associated with each tape formulation.
+
+  The plugin also includes an opto-style compressor/limiter with a dedicated SAT mode, and a 1960s-inspired ladder filter with independent slope and resonance controls — capable of self-oscillation — complemented by a Tiltshift equalizer and a novel emphasis section that applies the filter to the pre-saturation signal.
+
+  Processing is performed in double-precision floating-point. An optional HQ Mode is available for higher-quality output at the cost of approximately 50 ms of additional latency and 2–4x higher CPU usage.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
+  - 9 tube circuit models: 5751 Lo/Med/Hi, 6L6 Lo/Med/Hi, EL34 Lo/Hi, 12AX7
+  - 6 analog tape models: 2 Track Hi/Lo, C90 Hi/Lo, FE90 Hi/Lo
+  - Opto-style compressor/limiter with SAT mode
+  - 1960s-style ladder filter with independent slope and resonance
+  - Novel emphasis section (applies filter to pre-saturation signal)
+  - Tiltshift equalizer
+  - Double-precision floating-point processing
+  - HQ Mode: ~50ms latency, 2-4x higher CPU usage
+  - Channel support: Mono->Mono, Mono->Stereo, Stereo->Stereo
+  - Mac: OS X >= 10.13, 64-bit AU / VST / VST3 / AAX
+  - Windows: Windows >= 10, 64-bit VST / VST3 / AAX
+versions:
+  - name: "3.13"

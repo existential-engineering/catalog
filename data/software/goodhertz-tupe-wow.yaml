@@ -19,21 +19,27 @@ url: https://goodhertz.com/tupe-wow
 prices:
   - amount: 0
     currency: USD
-description: "Combined plugin merging Tupe (tube and tape emulation) and Wow
-  Control (wow and flutter effects) into a single processor. Replicates analog
-  signal chains using tube and tape machine emulation with wow and flutter.
-  Includes tube ripple section for adding grit from tube power supply ripple,
-  tape speed adjustment controls, oscilloscope visualization, and new FE90 and
-  C90 Toy cassette tape models."
+description: Tupe Wow combines tube and tape emulation with wow and flutter effects, merging Goodhertz's Tupe and Wow Control plugins into a single processor. It features 8 tube modes, 8 tape machine models, an optical compressor, and a ladder filter in one CPU-efficient plugin.
 details: |-
-  3.10 (beta)
+  Tupe Wow is a combination plugin that merges the functionality of two Goodhertz plugins — Tupe and Wow Control — into a single, CPU-efficient processor. It brings together tube saturation modeling, tape machine emulation, wow and flutter pitch modulation, and additional signal shaping tools under one interface.
 
-  Combined Tupe + Wow Control in single plugin
-  Tube ripple section for power supply grit
-  FE90 and C90 Toy cassette tape models
-  Tape Mode selection linking wow & flutter to tape machines
-  Tape speed adjustment controls
-  Oscilloscope visualization of pitch modulation
-  Improved CPU efficiency especially in HQ Mode
+  The plugin includes 8 tube modes (based on tube types such as 5751, 6L6, EL34, and 12AX7 variants) and 8 tape machine models ranging from professional 8-track reel-to-reel machines down to a C90 toy cassette. Wow and flutter behavior is linked to the selected tape mode, providing contextually appropriate pitch modulation characteristics.
+
+  Additional processing tools include an optical compressor with COMP and LIMIT modes, a ladder filter with independent slope and resonance controls, an emphasis filter for shaping the frequency content fed into the saturation stage, and a tube ripple section for extra harmonic coloration. An oscilloscope view provides real-time visualization of the pitch modulation.
+
+  The plugin is free for owners of both Tupe and Wow Control, and is currently in beta.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
+  - Formats: AU 64-bit (Mac), VST 64-bit, VST3 64-bit, AAX 64-bit
+  - macOS 10.13 or later, Windows 10 or later
+  - Channel configs: Mono->Mono, Mono->Stereo, Stereo->Stereo
+  - 8 tube saturation modes (5751, 6L6, EL34, 12AX7 variants)
+  - 8 tape machine models including reel-to-reel and C90 toy cassette
+  - Optical compressor with COMP and LIMIT modes
+  - Ladder filter with independent slope and resonance
+  - Emphasis filter for pre-saturation frequency shaping
+  - Tube ripple section for harmonic coloration
+  - Wow and flutter linked to tape mode selection
+  - HQ Mode (~50ms latency) for higher-precision processing
+  - Full parameter automation without artifacts
+versions:
+  - name: 3.14.0 Beta 2

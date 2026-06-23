@@ -17,26 +17,30 @@ platforms:
   - windows
 url: https://goodhertz.com/vcme
 prices:
-  - amount: 199.0
+  - amount: 199
     currency: USD
-description: "Vulf Compressor Mastering Edition -- a mastering-focused
-  compression plugin building on the original Vulf Compressor algorithm.
-  Features classic compression controls (ratio, threshold, makeup gain,
-  sidechain HPF), Release Style control with opto/FET/hybrid characteristics,
-  Soft Clip section with four saturation modes (Chino, Rodovre, Detroit,
-  Melbourn), Sidechain Tilt for spectral frequency control, and M/S and surround
-  stereo linking support."
+description: Vulf Compressor, Mastering Edition (VCME) is a mastering-focused compressor plugin built on Goodhertz's acclaimed Vulf Compressor algorithm, offering expanded controls for bus processing and mastering applications with four saturation modes and surround support up to 9.1.6.
+details: |-
+  VCME is a mastering and bus compressor built on the same algorithm as Goodhertz's Vulf Compressor, which has appeared on recordings ranging from lofi beat tapes to Hollywood film scores. Where the original Vulf Compressor features a minimal three-control design, VCME expands the feature set with additional controls suited for precision mastering and bus processing work.
+
+  The plugin includes classic compression controls — ratio, threshold, makeup gain, and a sidechain high-pass filter — alongside a Release 'Style' selector that lets users choose between opto, FET, or hybrid release characteristics to shape the dynamic response.
+
+  A highlight of VCME is its Soft Clip section, which offers four distinct saturation modes: Chino ('Hifi, classic tube sound'), Rødovre ('Round, tube-y, smooth'), Detroit ('Grungy, warm, notes of Jamerson'), and Melbourn ('Punchy, British, transformer saturation'). The Soft Clip section is also available as a separate plugin called VCME Soft Clip.
+
+  VCME also features a Sidechain Tilt control, which applies a linear spectral tilt to the sidechain signal for frequency-dependent compression behavior. Stereo, M/S, and extensive surround linking modes are supported, covering configurations from mono through 9.1.6 Atmos.
+specs: |-
+  - Plugin formats: AU 64-bit, VST 64-bit, VST3 64-bit, AAX 64-bit
+  - macOS 10.13 or higher (64-bit host required)
+  - Windows 10 or higher (64-bit host required)
+  - Channel configurations: Mono through 9.1.6 surround
+  - HQ Mode: higher precision algorithm with ~50ms added latency and 2-4x CPU
+  - Full parameter automation without clicks or pops
+  - Sidechain Tilt: linear spectral tilt on sidechain
+  - Release Style: opto, FET, or hybrid
+  - Soft Clip modes: Chino, Rodøvre, Detroit, Melbourn
+  - M/S and surround linking support
+  - Includes VCME Soft Clip plugin
+versions:
+  - name: "3.13"
 searchTerms:
   - Vulf Compressor Mastering Edition
-details: |-
-  3 pages
-
-  Classic compression controls: ratio, threshold, makeup gain, sidechain HPF
-  Release Style: opto, FET, or hybrid characteristics
-  Soft Clip with 4 saturation modes: Chino, Rodovre, Detroit, Melbourn
-  Sidechain Tilt for spectral frequency control
-  M/S and surround stereo linking
-  Transparent frequency response
-  VCME Soft Clip plugin included free
-specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+

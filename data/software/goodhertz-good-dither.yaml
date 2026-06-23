@@ -1,7 +1,7 @@
 id: n88JS_TA0a2QPgAsloUAF
 name: Good Dither
 manufacturer: goodhertz
-primaryCategory: utility
+primaryCategory: dither
 categories:
   - plugin
 formats:
@@ -14,17 +14,29 @@ platforms:
   - windows
 url: https://goodhertz.com/good-dither
 prices:
-  - amount: 29.0
+  - amount: 29
     currency: USD
-description: "Dither plugin with smooth, perceptually optimized noise shaping
-  designed to prevent distortion and quantization error when reducing bit depth.
-  Features automatic Optimal mode that adjusts dither and noise shaping for any
-  bit depth/sample rate combination, multiple dither modes (High, Optimal, Low),
-  and auto blanking when input is silent."
+description: Good Dither is a dither plugin featuring smooth, perceptually optimized noise shaping designed for reducing bit depth in audio production, with auto-blanking when input is silent.
 details: |-
-  Automatic Optimal mode for any bit depth/sample rate
-  Multiple dither modes: High, Optimal, Low
-  Auto blanking when input is silent
-  6 dB perceived noise reduction with 16 dB highest peaks in Optimal mode
+  Good Dither by Goodhertz is a professional dither plugin built around perceptually optimized noise shaping. It offers three dither modes — Optimal, High, and Low — and a range of noise shaping options to best suit any bit depth and sample rate combination.
+
+  The plugin features adjustable bit depth settings from 8 to 32 bits with a Pass Thru option, along with dither amount and noise shaping controls. A visual noise shaping curve is displayed in the sidebar for real-time feedback, and a bit scope meter shows up to 32-bit utilization.
+
+  Auto blanking is enabled by default, automatically disabling dithering after 500ms of silence to prevent unnecessary noise during silent passages. This feature operates seamlessly across all sample rates.
+
+  All Goodhertz plugins support smooth, click-free automation — any parameter, including on/off switches, can be automated without digital artifacts. Good Dither supports mono and stereo channel configurations and requires a 64-bit host on macOS 10.13 or later, or Windows 10 or later.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
+  - Bit depth options: 8, 12, 16, 20, 24, 32 Bit, or Pass Thru
+  - Dither amount: None, Low, Optimal (default), High
+  - Noise shaping: Optimal, None, Low, Medium, High
+  - Auto blanking: On/Off (default On) — disables dithering after 500ms silence
+  - Bit scope meter displaying up to 32-bit utilization
+  - Noise shaping curve visualization
+  - Smooth, click-free parameter automation
+  - Plugin settings transferable via URL encoding
+  - GPU acceleration option available
+  - Channel support: Mono and Stereo
+  - 64-bit plugin formats only
+  - Requires macOS 10.13+ or Windows 10+
+versions:
+  - name: "3.13"

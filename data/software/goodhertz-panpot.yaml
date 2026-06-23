@@ -16,20 +16,22 @@ platforms:
   - windows
 url: https://goodhertz.com/panpot
 prices:
-  - amount: 49.0
+  - amount: 49
     currency: USD
-description: "Stereo panning plugin offering four distinct panning modes: Level
-  (refined classic level pan with multiple pan law options), Delay (small time
-  delays modeling human hearing for immersive stereo), Spectral (changes timbre
-  by focusing higher frequencies toward pan direction), and Phase (constant
-  phase shifts to expand sound field). Used by Chris Fogel for mixing
-  Christopher Nolan's Tenet."
+description: Panpot brings four different modes of panning in a single plugin that will transform the way you think about stereo, expanding beyond traditional level-based panning with delay, spectral, and phase-based spatial audio cues.
 details: |-
-  1 page
+  Panpot is a multi-mode stereo panning plugin from Goodhertz that goes far beyond the standard level pan found in every DAW. It offers four distinct panning algorithms, each addressing a different perceptual cue the human auditory system uses to localize sound in space.
 
-  Level panning with multiple pan law options
-  Delay panning using small time delays modeling human hearing
-  Spectral panning mimicking natural head shadowing
-  Phase panning for expanded sound field without level changes
+  The Level mode refines the classic volume-based pan with multiple pan law options for natural-sounding results across different playback systems. The Delay mode uses inter-aural timing differences — modeling how sound reaches each ear at slightly different times — to create convincing depth and width without tonal changes.
+
+  The Spectral mode simulates the head-shadow effect, where higher frequencies are attenuated on the ear farther from a sound source, altering the timbre in a frequency-dependent way as the pan position changes. The Phase mode creates phase shifts between the two channels to position audio in the stereo field without altering level balance.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
+  - Four panning modes: Level, Delay, Spectral, and Phase
+  - Multiple pan law options for Level mode
+  - Delay mode max ~0.7ms at 1x multiplier
+  - Supports mono->stereo and stereo->stereo
+  - All controls fully automateable
+  - macOS 10.13+ (AU, VST, VST3, AAX 64-bit)
+  - Windows 10+ (VST, VST3, AAX 64-bit)
+versions:
+  - name: "3.13"
