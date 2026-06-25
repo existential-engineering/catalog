@@ -1,7 +1,7 @@
 id: 7R2r-ayL4pVliUadO26__
 name: TAL-EQ
 manufacturer: togu-audio-line
-primaryCategory: effect
+primaryCategory: equalizer
 categories:
   - plugin
 formats:
@@ -15,11 +15,35 @@ platforms:
   - windows
   - linux
 url: https://tal-software.com/products/tal-eq
-description: "TAL-EQ is a versatile graphical equalizer designed for great
-  sound, a fast workflow, and effortless usability. Features always zero latency
-  with no oversampling, analog frequency response and phase behavior, per-band
-  frequency range up to 30 kHz, robust TPT filter core, dynamic EQ with variable
-  attack/release, clean transparent sound without distortion, multiple stereo
-  editing modes (Stereo, L/R, Mid, Side), A/B comparison, and customizable UI."
+prices:
+  - amount: 49
+    currency: USD
+description: TAL-EQ is a versatile graphical equalizer designed for great sound and a fast workflow, featuring analog frequency response and phase behavior, zero latency operation, dynamic band processing, and MIDI learn for all band parameters.
+details: |-
+  TAL-EQ is a versatile graphical equalizer designed for great sound and a fast workflow. The frequency display shows frequency content and all changes in real time, supporting band frequencies up to 30 kHz.
+
+  The plugin always runs with zero latency without oversampling and emulates the frequency response and phase behavior of analog equalizers, with no cramping near the Nyquist frequency. The topology-preserving TPT filter core remains stable even with fast dynamic changes.
+
+  Shelf and bell filters support dynamic processing — the EQ band gain is controlled by the input level of the affected frequency range, achieving more transparent mixes with frequency-specific compression. Most filters support slopes from 12dB up to 96dB per octave.
+
+  All band parameters support full DAW automation and MIDI Learn including band selection. Undo/redo and A/B comparison are included. Double-click to create a new EQ band; hold SHIFT while creating to enable dynamics immediately.
 specs: |-
-  - systemRequirements: Windows 10+ (64-bit), macOS 10.11+ (Universal Binary 2), Pro Tools 10.3.6+ (64-bit), Linux Ubuntu 18+ (64-bit)
+  - Zero latency, no oversampling
+  - Analog frequency response and phase behavior (no Nyquist cramping)
+  - Per-band frequency range up to 30 kHz
+  - Robust TPT filter core stable under modulation
+  - Dynamic processing on shelf and bell filters
+  - Slopes from 12dB to 96dB per octave
+  - Full DAW automation and MIDI Learn for all band parameters
+  - A/B comparison and undo/redo
+  - Windows 10 or higher (64-bit host)
+  - macOS 10.11 or higher, Universal Binary 2 (Intel + Apple Silicon)
+  - Pro Tools 10.3.6 or higher for AAX (64-bit)
+  - Linux 64-bit / Ubuntu 20.04 or similar
+videos:
+  - videoId: gla-DVfZJY8
+    provider: youtube
+    title: TAL EQ - filter analysis
+  - videoId: i2xQ3ftgHtw
+    provider: youtube
+    title: TAL EQ
