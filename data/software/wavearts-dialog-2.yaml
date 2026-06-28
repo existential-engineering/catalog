@@ -1,7 +1,7 @@
 id: LrZRVzi0b6PEiF4pbo0Pr
 name: Dialog 2
 manufacturer: wavearts
-primaryCategory: channel-strip
+primaryCategory: vocal-processor
 categories:
   - effect
   - equalizer
@@ -15,10 +15,57 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/dialog-2
-description: "All-in-one plug-in for post production of speech and voice,
-  combining brickwall filters, de-hum, de-buzz, broadband noise reduction,
-  de-ploding, de-essing, 10-band equalization, compression, and limiting."
+description: Dialog 2 is a post-production plugin designed for speech and voice processing, combining multiple tools to clean up, adjust, and enhance voice recordings for voiceover, film/TV, and broadcast applications.
 details: |-
-  10-band EQ section with 11 different filter types and 64-bit processing. Low and high pass brickwall filters with various rolloff slopes. Hum and buzz removal. Broadband noise reduction. De-plode function for plosive or wind rumble attenuation. De-ess function for sibilant attenuation. Compressor. Peak limiter. Comprehensive metering. Master preset manager and preset manager per section. Latency compensation. Fully automatable. Up to 192K support. Mono or stereo.
+  Dialog 2 provides a comprehensive suite of voice processing tools in a single plugin, including a 10-band parametric EQ with 11 filter types and 64-bit processing, plus low/high pass brickwall filters with variable rolloff slopes. Noise and interference removal tools include broadband noise reduction via the MR Noise algorithm, hum and buzz removal with notch filtering for 50/60 Hz harmonics, and a De-plode function for controlling plosives and wind rumble. Dynamics processing includes a vintage-style compressor (TrackPlug Vintage), a De-ess function for sibilant management, and a peak limiter — all fully automatable within the host DAW. Dialog 2 supports up to 192 kHz sample rates, operates in both mono and stereo, and includes comprehensive metering with latency compensation built in. The plugin is available in AU, VST3, and AAX formats on macOS (with Apple Silicon native support), and VST2, VST3, and AAX on Windows, supporting both 32-bit and 64-bit hosts on Windows.
 specs: |-
-  Mac: AU, VST3, AAX. macOS 10.13+, Apple Silicon native, 64-bit only. Windows: VST2, VST3, AAX. Windows 7/8/10/11, 32-bit and 64-bit. iLok supported but not required.
+  - 10-band parametric EQ with 11 filter types
+  - 64-bit internal processing
+  - Low/high pass brickwall filters with variable rolloff slopes
+  - Hum and buzz removal (notch filtering for 50/60 Hz harmonics)
+  - MR Noise broadband noise reduction algorithm
+  - De-plode function for plosive/wind rumble control
+  - De-ess function for sibilant management
+  - TrackPlug Vintage compressor
+  - Peak limiter
+  - Comprehensive metering and latency compensation
+  - Fully automatable parameters
+  - Up to 192 kHz sample rate support
+  - Mono and stereo operation
+  - macOS: AU, VST3, AAX; requires macOS 10.13+ (High Sierra); Apple Silicon native
+  - Windows: VST2, VST3, AAX; requires Windows 7/8/10/11; 32-bit and 64-bit hosts supported
+  - AAX requires Pro Tools 11+ (Mac) or Pro Tools 10.3.5+ (Windows)
+versions:
+  - name: "2.11"
+    releaseDate: 2024-04-23
+    description: Resolved text entry duplication on Windows; enhanced automation recording for text edits; adjusted EQ plot display for lower sampling rates.
+  - name: "2.10"
+    releaseDate: 2023-10-26
+    description: Fixed crash in Logic on Apple Silicon during registration; updated macOS installers and internal frameworks; raised macOS minimum to 10.13.
+  - name: "2.09"
+    releaseDate: 2023-05-30
+    description: Added unregister functionality for license management; enhanced Pro Tools automation shortcuts; provided VST2 installation option on Windows.
+  - name: "2.08"
+    releaseDate: 2023-03-16
+    description: Improved license popup timing to prevent UI freezing; added tab navigation support for parameter text fields.
+  - name: "2.07"
+    releaseDate: 2022-12-29
+    description: Modified keyboard focus behavior for text entry fields; removed automatic tab advancement between parameters.
+  - name: "2.06"
+    releaseDate: 2022-11-07
+    description: Enabled iLok and AAX support on Apple Silicon; updated internal frameworks and developer tools.
+  - name: "2.05"
+    releaseDate: 2021-05-26
+    description: Fixed VST3 export crash in Adobe Premiere Pro; cleaned up generic UI displays.
+  - name: "2.04"
+    releaseDate: 2021-04-22
+    description: Added Apple M1 universal binary support; implemented GUI scaling across formats.
+  - name: "2.03"
+    releaseDate: 2020-12-15
+    description: Introduced UI scaling option; added new preferences interface.
+  - name: "2.02"
+    releaseDate: 2020-08-13
+    description: Fixed denoise functionality and display issues.
+  - name: "2.01"
+    releaseDate: 2020-08-04
+    description: Initial release of Dialog 2.
