@@ -7,28 +7,43 @@ categories:
   - loudness
   - mastering
 formats:
+  - aax
   - au
   - vst
-  - aax
 platforms:
   - mac
   - windows
 url: https://www.meterplugs.com/kmeter
-description: "Fully-compliant K-System metering plugin for professional mixing
-  and mastering. Supports all three K-System scales (K-12, K-14, K-20) along
-  with ITU BS.1770 stereo loudness metering, true-peak metering with up to 4x
-  upsampling, and AES-17 RMS metering. Includes pink noise generation for
-  monitor calibration."
+description: A fully-compliant K-System metering plugin that encourages greater use of dynamic range in mixing and mastering. Supports K-12, K-14, and K-20 scales along with ITU BS.1770 loudness metering and true-peak detection.
 details: |-
-  K-System support with three scales (K-12, K-14, K-20)
-  ITU BS.1770 stereo loudness metering
-  True-peak metering with up to 4x upsampling
-  AES-17 RMS metering
-  Pink noise generation for monitor calibration
-  Numeric average and peak displays
-  Clip indicators
-  Peak hold/release functionality
-  Collapsible interface
+  K-Meter is a K-System metering plugin inspired by the work of Bob Katz, mastering engineer and Grammy award winner. The K-System shifts focus away from peak level maximization and toward loudness metering and dynamic range, with three scales — K-12 (broadcast/radio), K-14 (mainstream pop/rock/country), and K-20 (film/classical/high-fidelity) — each providing an increasing amount of dynamic range headroom.
+
+  K-Meter supports loudness metering using ITU BS.1770 (stereo only), an international standard for measuring perceived loudness that accounts for the ear's sensitivity to different frequencies. This allows users to take accurate loudness measurements at a fraction of the cost of dedicated loudness meters.
+
+  True-peak metering upsamples audio up to four times before detecting peaks, enabling highly accurate inter-sample peak detection that catches clipping other peak meters miss. AES-17 RMS metering is also included for standard level compliance.
+
+  A built-in pink noise generator allows users to calibrate studio monitors by outputting pink noise through each channel, which can be measured with a third-party SPL meter to ensure proper listening levels — making mixing and mastering by ear more consistent and effective.
+
+  The interface features numeric average and peak displays, clip indicators, configurable peak hold and release, and a collapsible layout for use in tight plugin chains.
 specs: |-
-  - mac: macOS 10.7 or later (64-bit Intel or Apple Silicon)
-  - windows: Windows XP SP3 or later (32/64-bit)
+  - Full K-System support (K-12, K-14, K-20 scales)
+  - ITU BS.1770 stereo loudness metering
+  - True-peak metering with up to 4x upsampling
+  - AES-17 RMS metering
+  - Pink noise generation for monitor calibration
+  - Numeric average and peak displays
+  - Clip indicators
+  - Peak hold/release
+  - Collapsible interface
+  - macOS 10.7 or later (64-bit Intel or Apple Silicon)
+  - Windows XP SP3 or later (32/64-bit)
+videos:
+  - videoId: GnREPzUfUgU
+    provider: youtube
+    title: K-System Intro
+  - videoId: 7WigF9IDdcQ
+    provider: youtube
+    title: K-Metering Mixing Tips with James Wiltshire (The Freemasons)
+  - videoId: dcKDMBuGodU
+    provider: youtube
+    title: The Loudness War
