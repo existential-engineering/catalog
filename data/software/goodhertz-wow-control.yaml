@@ -17,20 +17,25 @@ platforms:
   - windows
 url: https://goodhertz.com/wow-ctrl
 prices:
-  - amount: 95.0
+  - amount: 95
     currency: USD
-description: "Analog tape and playback device modulation plugin that accurately
-  captures the essence of three tape machines spanning three decades. Features
-  high-quality wow and flutter effects with HQ Mode, pitch range with expressive
-  shape controls, controllable speeds with beat-syncing, three analog tape modes
-  (15 IPS, 7.5 IPS, Cassette), magnetic tape coloration and saturation, and an
-  advanced randomization section."
+description: Analog tape and playback device modulation plugin that accurately captures the essence of three tape machines spanning three decades. Features high-quality wow and flutter effects with HQ Mode, pitch range with expressive shape controls, controllable speeds with beat-syncing, three analog tape modes (15 IPS, 7.5 IPS, Cassette), magnetic tape coloration and saturation, and an advanced randomization section.
 details: |-
-  HQ Mode for enhanced analog-like sound
-  Three analog tape modes: 15 IPS, 7.5 IPS, Cassette
-  Pitch range with expressive shape controls
-  Controllable speeds, beat-syncing, phase, and stereo phase
-  Magnetic tape coloration and saturation modeling
-  Advanced randomization section
+  Wow Control is a plugin by Goodhertz focused on recreating the characteristic pitch and timing instabilities of analog tape machines and other vintage playback devices. It models the wow and flutter of three decades of tape machines, capturing their unique sonic signatures including noise, wobble, and harmonic coloration.
+
+  The plugin features an Analog Tape section with three distinct modes: 15 IPS (high-speed professional tape), 7.5 IPS (mid-speed tape), and Cassette, each modeling the specific characteristics of those formats. Magnetic tape coloration and saturation modeling add authentic analog warmth to the processing.
+
+  Wow Control offers extensive modulation controls including pitch range, expressive shape controls, beat-syncing, phase and stereo phase controls. An advanced randomization section allows for complex and evolving modulations, making the plugin capable of everything from subtle vintage warmth to extreme creative effects.
+
+  The plugin uses double-precision floating-point processing to prevent internal clipping, and supports mono-to-mono, mono-to-stereo, and stereo-to-stereo channel configurations. An HQ Mode is available that uses a higher precision algorithm with improved spectral resolution.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
+  - Mac: OS X 10.13 or higher (Audio Unit, VST, VST3, AAX 64-bit)
+  - Windows: Windows 10 or higher (VST, VST3, AAX 64-bit)
+  - Channel support: Mono->Mono, Mono->Stereo, Stereo->Stereo
+  - Double-precision floating-point processing
+  - HQ Mode: ~50ms latency, 2-4x CPU increase, improved spectral resolution
+  - Analog Tape modes: 15 IPS, 7.5 IPS, Cassette
+  - Beat-syncing and stereo phase controls
+  - Advanced randomization section
+versions:
+  - name: "3.13"

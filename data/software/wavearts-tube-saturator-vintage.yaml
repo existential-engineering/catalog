@@ -1,7 +1,7 @@
 id: B6jWa2Op3U-lsAwEbRVGD
 name: Tube Saturator Vintage
 manufacturer: wavearts
-primaryCategory: effect
+primaryCategory: saturation
 categories:
   - plugin
 formats:
@@ -16,10 +16,52 @@ url: https://wavearts.com/products/plugins/tube-saturator-vintage
 prices:
   - amount: 0
     currency: USD
-description: "Free reissue of the original Tube Saturator using state-of-the-art
-  circuit simulation technology to faithfully reproduce the sound of a dual
-  triode preamp. CPU intensive due to real-time circuit simulation."
+description: A free reissue of the original Tube Saturator that uses 64-bit circuit simulation technology to faithfully reproduce the sound of a dual triode preamp. Simulates a basic circuit with a three-band EQ feeding two 12AX7 triode preamp stages for adding analog warmth or distortion to recordings.
 details: |-
-  Accurate tube preamp simulator using 64-bit circuit simulation technology. Two common cathode 12AX7 preamp stages. Baxandall 3-band EQ. Drive control for distortion adjustment. EQ bypass. FAT mode for increased punch. Analog style metering. No latency. Up to 192 kHz sampling rate. Mono or stereo.
+  - 64-bit circuit simulation technology faithfully reproduces the sound of a dual triode preamp circuit, providing authentic analog warmth and harmonic saturation.
+  - Simulates two common cathode 12AX7 triode preamp stages preceded by a Baxandall 3-band EQ with bypass option for tonal shaping before saturation.
+  - Drive control allows adjustment of distortion amount; FAT mode increases punch for more aggressive saturation characteristics.
+  - Zero latency operation with support for sample rates up to 192 kHz (CPU dependent), suitable for both tracking and mixing workflows.
+  - Supports mono or stereo processing with analog-style metering; Apple Silicon natively supported; GUI scaling and dark theme options available.
 specs: |-
-  Mac: AU, VST2, VST3, AAX. macOS 10.13+, Apple Silicon native, 64-bit only. Windows: VST2, VST3, AAX. Windows 7/8/10/11. Requires registration with serial number.
+  - Formats (macOS): AU, VST2, VST3, AAX
+  - Formats (Windows): VST2, VST3, AAX
+  - Platform: macOS 10.13 (High Sierra) and higher; Apple Silicon native
+  - Platform: Windows 7, 8, 10, 11
+  - Host requirement: 64-bit DAW only
+  - Pro Tools AAX (Mac): Pro Tools 11+
+  - Pro Tools AAX (Windows): Pro Tools 10.3.5+
+  - Latency: Zero latency
+  - Maximum sample rate: 192 kHz (CPU dependent)
+  - Processing: Mono or stereo
+  - Tube stages: Two common cathode 12AX7 triode preamp stages
+  - EQ: Baxandall 3-band with bypass
+  - Licensing: Free, requires registration
+versions:
+  - name: "1.11"
+    releaseDate: 2025-01-21
+    description: Fixed issue causing default layout to be mono
+  - name: "1.10"
+    releaseDate: 2023-10-26
+    description: Resolved crash in Logic on Apple Silicon; macOS installers now remove previously installed AAX plug before installation; internal framework updates (Juce 7.0.6, AAX SDK 2.5.1); macOS requirement updated to 10.13
+  - name: "1.09"
+    releaseDate: 2023-06-06
+    description: Added option to obtain free serial in registration dialog; Tools menu now includes Unregister option
+  - name: "1.08"
+    releaseDate: 2023-03-16
+    description: License popups delayed until UI rendering completes; parameter text entry supports tab navigation
+  - name: "1.07"
+    releaseDate: 2022-11-07
+    description: Added iLok licensing support on Apple Silicon; enabled AAX on Apple Silicon; multiple internal framework updates
+  - name: "1.06"
+    releaseDate: 2022-09-08
+    description: "Apple M1 support with universal binaries for AU and VST3; GUI scaling and dark theme options; user preset manager; breaking change: incompatible with earlier Pro Tools sessions"
+  - name: "1.05"
+    releaseDate: 2017-09-21
+    description: Miscellaneous updates supporting universal license
+  - name: "1.04"
+    releaseDate: 2017-07-24
+    description: Updated Apple certificate
+  - name: "1.03"
+    releaseDate: 2017-06-19
+    description: Initial release

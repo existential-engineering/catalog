@@ -7,9 +7,9 @@ categories:
   - dynamics
   - plugin
 formats:
+  - au
   - vst
   - vst3
-  - au
   - aax
 platforms:
   - mac
@@ -18,30 +18,38 @@ url: https://klanghelm.com/contents/products/DC8C
 prices:
   - amount: 23
     currency: EUR
-description: "Advanced, flexible compressor plugin designed for clean, smooth
-  compression with minimal artifacts. Features four operational modes (Normal,
-  Clean, Smash, Limit), zero-latency brick-wall limiting, selectable
-  attack/release curves, side-chain filtering, two saturation models,
-  feedback-mix topology morphing, parallel compression, up to 8x oversampling,
-  and an Easy Mode with four preset compression styles."
+description: DC8C is an advanced, highly flexible compressor plugin designed for clean, smooth, and open compression. It supports a wide range of styles from invisible mastering compression to creative sound design with optional saturation, opto-style emulation, and zero-latency brick-wall limiting.
 details: |-
-  Four operational modes: Normal, Clean, Smash, Limit
-  Zero-latency brick-wall limiting
-  Selectable attack/release curves and compression curves
-  Side-chain filtering with high-pass, low-pass, and tilt controls
-  Two saturation models with flexible signal chain placement
-  GR-smoothing and hold controls
-  Pre-attack control for transient shaping
-  Feedback-Mix control for topology morphing between feedback/feedforward
-  Parallel and peak/RMS compression modes
-  External side-chain support
-  Easy Mode with four preset compression styles
-  Up to 8x oversampling
-  VU and peak metering
-  Automatic gain compensation (AGC)
-  GUI resizing
-  Comprehensive preset browser
+  DC8C is one of the most flexible compressors available. While supporting many different compression styles, its general character is described as clear, smooth, open, and distinct. The main design goal was achieving very clean compression action without unwanted artifacts or distortion, making it suitable for demanding mastering sessions where coloration must be avoided.
+
+  The plugin features four operational modes: NORMAL for standard compression, CLEAN for 100% clean compression with no intermodulation, no distortion, and no aliasing, SMASH for ultrafast compression characteristics approaching clipper territory, and LIMIT for use as a zero-latency brick-wall limiter.
+
+  DC8C offers a unique Feedback-Mix-Control that allows morphing between Feedback and Feedforward compression topologies by controlling how much of the output is fed back into the detector. Combined with a detector network and gain reduction smoothing, it can emulate opto-style compression through the GR-smoothing control.
+
+  An optional saturation stage with two models can be placed freely in the signal chain: pre-compression, post-compression, or side-chain only. Up to 8x oversampling is available, and a side-chain filter provides high-pass, low-pass, and tilt controls to shape the detector frequency response.
+
+  An Easy Mode offers four distinct preset compression styles for quick use, while the full Expert mode exposes controls for parallel compression, peak and RMS detection, external side-chaining, negative ratios, pre-attack, hold, and program-dependency customization for both attack and release. A comprehensive preset browser, VU and peak metering, AGC, and GUI resizing are also included.
 specs: |-
-  - windows: Windows 10 or higher (64-bit)
-  - mac: macOS 10.13 or higher (Intel and Apple Silicon)
-  - aaxRequirement: ProTools 11 or higher
+  - Four operational modes: NORMAL, CLEAN, SMASH, LIMIT
+  - Zero latency brick-wall limiting capability
+  - Up to 8x oversampling
+  - Unique Feedback-Mix-Control for topology morphing
+  - Two selectable attack curves and two release curves
+  - Three different compression curves selectable
+  - GR-smoothing control for opto-style compression emulation
+  - Pre-attack control to delay attack and shape transients
+  - Hold control for heavy pumping compression effects
+  - Side-chain filter with high-pass, low-pass, and tilt controls
+  - Optional saturation stage (two models) placeable pre, post, or side-chain only
+  - Optional soft-clipper at output
+  - Parallel compression support
+  - Peak and RMS compression modes
+  - External side-chain support
+  - Negative ratios possible
+  - True zero attack (0.0 ms)
+  - AGC (automatic gain compensation)
+  - Easy Mode with 4 preset compression styles
+  - GUI resizing
+  - AAX Native requires Pro Tools 11 or higher
+versions:
+  - name: DC8C 3

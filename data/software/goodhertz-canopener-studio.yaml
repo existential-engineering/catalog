@@ -16,22 +16,24 @@ platforms:
   - windows
 url: https://goodhertz.com/canopener-studio
 prices:
-  - amount: 79.0
+  - amount: 79
     currency: USD
-description: "Headphone crossfeed processor that uses a crossfeed algorithm to
-  make headphones behave more like loudspeakers. Includes a Baxandall treble and
-  bass equalizer, monitoring features (Mono, Flip L/R, Polarity, Dim, Balance,
-  Compensation), Soft Start to avoid loud transients, Safe Gain to prevent
-  clipping, and mastering-grade dithering."
+description: CanOpener Studio is a headphone listening processor that uses crossfeed technology to make headphones behave more like loudspeakers, enabling better mix translation and more accurate monitoring.
 details: |-
-  1 page
+  CanOpener Studio is Goodhertz's headphone monitoring processor, designed to solve the fundamental problem of mixing on headphones: the unnatural stereo image that comes from each ear receiving only its own channel. Using a proven crossfeed algorithm, it makes headphones behave more like loudspeakers in a treated room — without room simulation or 3D spatialization gimmicks.
 
-  Crossfeed processing for headphone mixing
-  Baxandall treble and bass EQ
-  Monitoring: Mono, Flip L/R, Polarity, Dim, Balance, Compensation
-  Soft Start to avoid loud transients
-  Safe Gain to prevent clipping
-  Mastering-grade dithering
+  The plugin includes a Baxandall treble and bass equalizer for tonal shaping, plus utility controls including Mono, Flip L/R, Polarity, and Dim. Soft Start gently initiates playback to protect ears, while Safe Gain prevents clipping at the output stage.
+
+  CanOpener Studio processes audio at 64-bit double-precision floating-point, ensuring no internal clipping. An optional HQ Mode is available for higher-quality processing at the cost of approximately 50ms latency and 2–4x increased CPU usage. GPU acceleration is supported with automatic fallback to reduced mode.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
-  - processingBitDepth: 64-bit
+  - 64-bit double-precision floating-point processing
+  - HQ Mode: ~50ms latency, 2–4x CPU increase
+  - GPU acceleration with automatic fallback
+  - Stereo in / stereo out
+  - Artifact-free automation across all parameters
+  - macOS 10.13 or later required
+  - Windows 10 or later required
+  - 64-bit DAW required
+  - AU, VST, VST3, AAX (Mac); VST, VST3, AAX (Windows)
+versions:
+  - name: "3.13"

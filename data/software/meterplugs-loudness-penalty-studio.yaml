@@ -13,20 +13,43 @@ platforms:
   - mac
   - windows
 url: https://www.meterplugs.com/loudness-penalty-studio
-description: "Standalone desktop application for comprehensive loudness
-  visualization and preview across streaming platforms including YouTube,
-  Spotify, TIDAL, Deezer, and Apple Music. Supports batch analysis of large file
-  groups, custom reference playlists, album vs track mode comparison, and PDF
-  report export."
+description: A standalone desktop application providing comprehensive loudness visualization and preview capabilities for online streaming platforms, allowing users to assess how music will play back across different streaming services before uploading.
 details: |-
-  Intuitive Loudness View visualization
-  Batch analysis of large file groups
-  Build and save custom reference playlists
-  Compare Album and Track Mode loudness matching
-  Optimize results for multiple streaming services
-  Short-term loudness profile analysis
-  Export PDF loudness reports
-  Patent pending (US Provisional Patent Application No. 63/567,059)
+  Loudness Penalty Studio is a standalone desktop application designed to help producers and mastering engineers understand how their music will be affected by the loudness normalization applied by streaming platforms such as YouTube, Spotify, TIDAL, Deezer, and Apple Music.
+
+  The application features a unique Loudness View visualization that allows users to analyze entire albums or playlists at a glance, providing real-time loudness matching preview so engineers can hear exactly how their tracks will sound after normalization before uploading.
+
+  Version 1.5 introduced significant new features including a short-term loudness profile graph, PDF loudness report export, multiple comparison modes, and LRA (Loudness Range) table support, alongside improved processing speed.
+
+  Loudness Penalty Studio supports batch file analysis and includes Album vs. Track Mode comparison functionality, enabling mastering engineers to make informed decisions about overall album loudness targets and individual track levels.
 specs: |-
-  - mac: macOS 10.11 or later (64-bit Intel or Apple Silicon)
-  - windows: Windows 7 or later (64-bit only)
+  - macOS 10.11 or later (64-bit Intel or Apple Silicon)
+  - Windows 7 or later (64-bit only)
+  - Standalone application (not a plugin)
+  - Supports YouTube, Spotify, TIDAL, Deezer, and Apple Music normalization simulation
+  - Batch file analysis
+  - PDF loudness report export
+  - Short-term loudness profile graph
+  - Album vs. Track Mode comparison
+  - Custom reference playlist creation
+  - Patent Pending (US Provisional Patent Application No. 63/567,059)
+versions:
+  - name: 1.5.1
+    releaseDate: 2026-01-22
+    description: Fixed integrated loudness and LRA accuracy at 96 kHz
+  - name: 1.5.0
+    releaseDate: 2026-01-14
+    description: Added loudness report, new matching modes, LRA table support, short-term graph, improved processing speed
+  - name: 1.0.3
+    releaseDate: 2025-02-22
+    description: Improved handling of large audio files
+  - name: 1.0.2
+    releaseDate: 2024-09-04
+    description: Fixed bug where adding a new track by drag and drop didn't flag the project as having unsaved changes
+  - name: 1.0.1
+    releaseDate: 2024-03-29
+    description: Fixed playback controls, loudness matching in album mode, tooltip positioning, and loudness line displays
+  - name: 1.0.0
+    releaseDate: 2024-03-22
+    description: Initial software release
+releaseDate: 2024-03-22
