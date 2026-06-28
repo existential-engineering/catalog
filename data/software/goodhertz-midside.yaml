@@ -16,21 +16,28 @@ platforms:
   - windows
 url: https://goodhertz.com/midside
 prices:
-  - amount: 95.0
+  - amount: 95
     currency: USD
-description: "Mid/side audio processing plugin for expressive stereo imaging.
-  Features mid/side gain control with high-resolution faders, stereo width
-  manipulation through multiple modes (Width, Natural, Shuffler A/B/C, M/S
-  Blend), independent mid and side tilt EQ processing, M/S encoding/decoding,
-  M/S panning, and Mono Below feature to control bass stereo width below a
-  specified frequency."
+description: Midside is a professional M/S stereo imaging plugin by Goodhertz, designed after years of research on spatial audio and psychoacoustics. It offers expressive stereo width control with mid/side gain faders, tilt EQ, panning, encoding/decoding, and a dedicated Mono Below section for bass stereo management.
 details: |-
-  Mid/side gain control with high-resolution faders
-  Multiple stereo width modes: Width, Natural, Shuffler A/B/C, M/S Blend
-  Independent mid and side tilt EQ
-  M/S encoding/decoding and mute/solo
-  M/S panning
-  Mono Below feature for bass stereo width control
-  Built-in metering
+  Midside provides high-resolution M/S gain faders alongside mid and side tilt EQ controls, enabling precise stereo shaping without introducing unwanted artifacts. The plugin supports multiple stereo width modes including Width, Natural, Shuffler A, Shuffler B, Shuffler C, and M/S Blend, giving engineers flexible tools for everything from subtle widening to radical mid/side manipulation.
+
+  A built-in goniometer (vectorscope) and real-time tilt frequency response display provide continuous visual feedback, while M/S mute and solo functions help isolate and diagnose stereo content during mixing and mastering sessions.
+
+  The Mono Below section lets users control bass stereo content independently, with adjustable strength and bass makeup processing — an especially useful tool for maintaining low-end mono compatibility on stereo mixes.
+
+  All processing uses double-precision floating-point arithmetic with no internal clipping, and the plugin features click-free automation on every parameter including on/off switches.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
+  - Stereo in / stereo out only
+  - Double-precision floating-point processing
+  - Stereo width modes: Width, Natural, Shuffler A, Shuffler B, Shuffler C, M/S Blend
+  - Mid & side tilt EQ controls
+  - High-resolution M/S gain faders
+  - M/S mute & solo
+  - M/S panning, encoding & decoding
+  - Mono Below section with adjustable strength and bass makeup
+  - Real-time goniometer (vectorscope) display
+  - macOS 10.13+ (AU, VST, VST3, AAX 64-bit)
+  - Windows 10+ (VST, VST3, AAX 64-bit)
+versions:
+  - name: "3.13"

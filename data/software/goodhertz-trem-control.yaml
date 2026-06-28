@@ -8,7 +8,7 @@ categories:
   - plugin
 formats:
   - au
-  - vst
+  - vst2
   - vst3
   - aax
 platforms:
@@ -16,21 +16,29 @@ platforms:
   - windows
 url: https://goodhertz.com/trem-ctrl
 prices:
-  - amount: 49.0
+  - amount: 49
     currency: USD
-description: "Classic tremolo plugin combining the immediacy of hardware with
-  the detail of digital. Features 9 tremolo modes including Normal and Harmonic
-  variants, a tube summing amplifier with 0-200% intensity, rate from 0 Hz to
-  640 Hz with tempo sync and tap tempo, continuous waveform shape variation, and
-  advanced phase offset and swing controls."
+description: Trem Control is a classic tremolo plugin for the 21st century, combining the immediacy of hardware with the detail of digital. It captures subtle human qualities and dramatic sound transformations through a wide range of tremolo modes and waveform shaping controls.
 details: |-
-  1 page
+  Trem Control offers rate control in both free-running hertz mode and tempo-synced BPM mode, with speeds ranging from 0 Hz to 640 Hz and tap tempo functionality for live use.
 
-  9 tremolo modes including Normal and Harmonic variants
-  Tube summing amplifier (0-200% intensity)
-  Rate: 0 Hz to 640 Hz with tempo sync and tap tempo
-  Continuous waveform shape variation (sine, triangle, square)
-  Variable symmetry and bias controls
-  Phase offset, stereo phase, and swing parameters
+  The Shape section provides continuously variable waveform morphing between sine, triangle, and square waves, with additional symmetry and bias controls and click-free transitions between shapes.
+
+  The Vibe section includes 9 tremolo modes — including Normal, Harmonic, and Deep Harmonic — along with a tube summing amplifier simulation offering 0–200% saturation for warm, driven character.
+
+  Advanced controls include phase offset, stereo phase manipulation, and a swing parameter for rhythmic variation. All parameters support artifact-free automation including on/off switches.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
+  - Rate range: 0 Hz to 640 Hz
+  - Tempo sync with musical rate controls and tap tempo
+  - Continuously variable waveform shapes: sine, triangle, square
+  - Variable symmetry and bias controls
+  - 9 tremolo modes including Normal, Harmonic, and Deep Harmonic
+  - Tube summing amplifier simulation: 0-200% saturation
+  - Phase offset and stereo phase manipulation
+  - Swing parameter for rhythmic variation
+  - Supported I/O: Mono->Mono, Mono->Stereo, Stereo->Stereo
+  - HQ Mode: ~50ms latency, 2-4x CPU usage
+  - macOS 10.13+ (AU, VST, VST3, AAX 64-bit)
+  - Windows 10+ (VST, VST3, AAX 64-bit)
+versions:
+  - name: "3.13"
