@@ -8,19 +8,50 @@ categories:
 formats:
   - vst2
   - vst3
-  - aax
   - au
+  - aax
 platforms:
   - mac
   - windows
 url: https://www.threebodytech.com/en/products/cenozoixcompressor
 prices:
-  - amount: 0
+  - amount: 109
     currency: USD
-description: "Definitive all-terrain compressor delivering unparalleled sound
-  quality and innovative dynamic controls with 24 compressor styles spanning
-  vintage and modern models."
+description: Cenozoix is the definitive all-terrain compressor plugin delivering unparalleled sound quality and adaptability with 24 vintage & modern compressor styles. Engineered for the future, Cenozoix is poised to redefine the landscape of compressor plugins.
 details: |-
-  24 compressor styles (12 vintage + 12 modern). ADAA and adaptive oversampling for aliasing suppression. Customizable harmonic distortion with drive controls. Transient shaping (Clamp, De-Click, Punch/Pump). Smart adaptive release (Sensitive and Tight parameters). Flexible sidechain with 8-band parametric EQ. 14-day free trial with Plugin Alliance account.
+  Features 12 vintage and 12 modern compressor style simulations with 24 freely matchable harmonic distortion styles. Employs Anti-Derivative Anti-Aliasing (ADAA) applied to rectifiers for aliasing suppression and Adaptive Oversampling Interpolation for envelope detection. Includes adjustable Clamp for recompressing leaked transients and De-Click for transforming clicking transients into overdrive. Offers an 8-band parametric side chain EQ powered by Kirchhoff-EQ technology with multiple stereo and mid/side modes. Supports switchable oversampling up to 16x, lookahead, A/B switching, 50+ presets, and full GUI theme customization with resizable interface.
 specs: |-
-  macOS 11 or later. Windows 10 or later. Intel or AMD CPU with SSE 4.1 or Apple Silicon. 2GB RAM. 300MB disk space. 64-bit only. Requires Plugin Alliance account.
+  - 24 compressor styles: 12 vintage (Brit VCA, Dist. VCA, Black FET, Diode-Bridge, Virtual Mu, Vintage Tube, etc.) + 12 modern (Clean, Tight, Vocal, Pluck, Hard, Bus, etc.)
+  - Switchable oversampling: 2x, 4x, 8x, 16x
+  - Default latency: 4 sample points (~0.1ms at 44100 Hz)
+  - Latency at 16x oversampling: 271 sample points (~6.1ms at 44100 Hz)
+  - 8-band parametric side chain EQ (powered by Kirchhoff-EQ)
+  - Stereo modes: Left/Right, Mid/Side, Mid Only, Side Only, Mid→Side, Side→Mid
+  - Peak/RMS blending, feed-forward/feedback mixing
+  - Odd/Even harmonic adjustment
+  - Lookahead, Hold, Knee, Range, Makeup & Auto Makeup parameters
+  - System requirements: Intel/AMD CPU with SSE 4.1 or Apple Silicon, macOS 11 / Windows 10, 2GB RAM, 300MB disk
+  - Native Apple Silicon support, Retina display support, high-DPI support on Windows
+versions:
+  - name: 1.1.2
+    releaseDate: 2026-03-25
+    description: Fixed crash on Apple Silicon with Linear Phase mode; fixed crash on mono tracks in Studio One/Digital Performer; fixed Notch filter abnormal noise; fixed dialog cutoff issues with non-100% GUI scale.
+  - name: 1.1.1
+    releaseDate: 2024-10-24
+    description: Fixed dialog display and preset naming bugs; added parameter panel for SideChain EQ band selection; added status indicators for sidechain mode/EQ; expanded waveform display dB options; added background image support in themes.
+  - name: 1.1.0
+    releaseDate: 2024-04-19
+    description: Implemented Drive modeling with 24 style variations; implemented Post-Makeup Dry Mix; implemented compact mode.
+  - name: 1.0.1
+    releaseDate: 2024-02-21
+    description: Fixed oversampling DSP initialization; fixed latency compensation phase issues; fixed Logic Pro undo functionality; fixed Hold parameter display; improved oversampling IR kernel.
+  - name: 1.0.0
+    releaseDate: 2024-02-06
+    description: Initial release.
+videos:
+  - videoId: 9DWKdjecoZg
+    provider: youtube
+    title: Cenozoix Compressor - The new era of dynamic controls
+  - videoId: mYFpoziL5FE
+    provider: youtube
+    title: Cenozoix Compressor Demo
