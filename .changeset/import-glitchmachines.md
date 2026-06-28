@@ -1,5 +1,5 @@
 ---
-"@existential-engineering/catalog": patch
+"catalog": patch
 ---
 
 catalog-import-merge: glitchmachines
