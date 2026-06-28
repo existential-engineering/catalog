@@ -1,5 +1,246 @@
 # catalog
 
+## 3.34.0
+
+### Minor Changes
+
+- c359ed2: catalog-import-merge: hofa-plugins — added 8 IR-pack content entries, enriched 28 software entries with specs, links, videos, and prices.
+- 52dfb8c: catalog-import-merge: ignite-amps
+
+  Merged ignite-amps catalog:
+  - Added 3 hardware entries (CS-1, PT Wah, Tube Griller)
+  - Updated 11 existing software entries with descriptions
+    and details from current website
+  - Removed stale free price from Emissary (now via STL Tones)
+
+- c3fc67d: Merge-refresh inphonik (5 software entries updated).
+
+  Updates descriptions, details, specs, and version history for
+  PCM2612 Retro Decimator Unit, RX1200, RX950, RYM2612, and
+  RYMCast. Adds rack-extension format to plugin entries.
+
+- d0876f6: Merge-import Jam Origin (7 software entries updated).
+
+  Updated descriptions, details, and specs across all seven entries.
+  Fixed dead URLs for Guitar Mods (GuitarMods→GM) and MIDI Guitar 3 for
+  Logic (MG3Logic→MG3forLogic). Added prices, versions, and links to
+  MIDI Guitar 3. Added specs to Guitar Mods and MIDI Guitar 2.
+
+- dea5ef2: catalog-import-merge: kazrog (new=3 discontinued=0 updated=10)
+- acda7a0: Merge-import Korneff Audio (1 new, 12 updated entries).
+
+  Adds Power Grid Disruptor (glitch/distortion/stutter effect, $99.99,
+  VST3/AU/AAX/LV2, Mac/Windows/Linux). Updates 12 existing software
+  entries with details, specs, images, videos, versions, and prices:
+  Amplified Instrument Processor, Chocolate Milk, Echoleffe Tape Delay,
+  El Juan Limiter, Micro Digital Reverberator, Pawn Shop Comp 2.1,
+  Puff Puff mixPass, Pumpkin Spice Latte, Shure Level-Loc,
+  SITRAL Klangfilter W295, Talkback Limiter, The Wow Thing.
+
+- 192e71e: catalog-import-merge: landr — added 2 new instruments (Strata, Horizon); enriched all 20 existing LANDR plugin entries with updated descriptions, specs, videos, and more-specific primaryCategories.
+- 9b0a2df: Merge refresh Lindell Audio (15 software plugins updated).
+
+  Updated all 15 existing entries with current Plugin Alliance data:
+  formats (vst→vst2, rtas added for 500-series), URLs migrated
+  to new Shopify store paths, prices updated from $0 to current
+  retail pricing, and version history added to 14 entries.
+
+- 63f74b8: Merge import: Louder Than Liftoff (28 hardware + 2 software updated).
+
+  Adds 28 new hardware entries: the Silver Bullet mk2, Chroma/ChromaPlus/Chroma X
+  channel strips, 1-Track tape emulation module, Chop Shop 500 Series EQ, and
+  all current Colour Modules (Hitmaker 4000, Implode, Mass Drivr, MN-50 Smash
+  Compressor, Pentode Mk2, Pulse, Rogue-Tec Air, Royal Blue, Super Filter Mk1/Mk2,
+  TAPE•C) plus Mojo Modules (Fairi-Mu, Hitmaker Comp, LA-76, TAPE•79).
+
+  Also includes the Mister Focus hardware family (Comp, EQ, RGB, Stage II),
+  discrete op amp modules (Rogue Five, Rogue Six), and the discontinued
+  Silver Bullet mk1 (drBill's Stereo Tone-Amp).
+
+  The two existing software plugins (Chop Shop EQ Plugin, Silver Bullet mk2 Plugin)
+  were updated with current pricing (now paid via Plugin Alliance).
+
+- 716431f: Refresh Massey Plugins catalog entries (3 updated).
+
+  Updates CT5 compressor description and adds hard-knee Limit mode
+  detail; refreshes De:Esser description copy; extends TD5 tape delay
+  with noise floor and dither specs from the manufacturer site.
+
+- 29daf1a: Merge refresh for MeterPlugs (6 entries).
+
+  Enriches all 6 existing entries with description, details, and specs from
+  the current manufacturer website. Key changes:
+
+  - Dynameter 2: adds vst3 format (confirmed from support page), enriches
+    content
+  - K-Meter: adds videos (3 YouTube), enriches description/details/specs
+  - LCAST: primaryCategory updated metering → loudness; enriches content
+  - Loudness Penalty: enriches content for Loudness Penalty 2 release;
+    name conflict (v1 → v2) flagged for human review in PR
+  - Loudness Penalty Studio: adds full version history (v1.0.0–v1.5.1),
+    releaseDate, enriches content
+  - Perception AB: enriches description/details/specs
+
+- 1a4101b: Merge refresh for Nembrini Audio (2 new, 1 discontinued, 59 updated).
+
+  New entries: Acoustic Voice Pro Guitar Preamplifier (acoustic amp-sim),
+  Bass Resonance (Little Labs Voice of God 500 Series emulation).
+  Discontinued: Acoustic Voice Guitar Preamp (superseded by the Pro
+  version). Updated 59 existing entries with descriptions, details,
+  specs, videos, prices, and platform/format data.
+
+- 62f6135: catalog-import-merge: newfangled-audio — added 7 new software entries (Articulate,
+  Fixate Midrange, Invigorate, Obliterate, Punctuate, Recirculate, Saturate) and
+  enriched 4 existing entries (Elevate, Equivocate, Generate, Pendulate) with updated
+  descriptions, specs, prices, and formats.
+- 3edd9b4: Merge refresh OddSound (3 updated entries).
+
+  Enriches MTS-ESP Mini, MTS-ESP Suite, and MR Editor with
+  descriptions, details, specs, version history, links, and
+  updated category/primaryCategory classifications.
+
+- 379ef37: Merge-refresh Polyverse Music (8 software entries).
+
+  Updates prices, descriptions, details, specs, and videos for
+  all 8 plugins: Comet, Filterverse, Filtron, Gatekeeper, I Wish,
+  Manipulator, Supermodal, and Wider. Refines primaryCategory for
+  Gatekeeper (stutter → gate), I Wish (glitch → pitch-shifter),
+  and Wider (effect → stereo-widener).
+
+- 379ef37: Merge-refresh PSP Audioware (56 software entries).
+
+  Updates formats, prices, descriptions, details, specs, versions, videos,
+  and releaseDate across 55 existing plugins. Adds 1 new entry: Levelizer
+  (dynamics/auto-fader, $69).
+
+  Refines primaryCategory for 11 entries where existing values were missing
+  or broad. Skipped 2 bundle entries (MixPack2, StereoPack) — still for sale
+  but not standalone catalog entries.
+
+- 822b80a: Merge-refresh Relab Development (12 software entries).
+
+  Updates descriptions, details, specs, versions, prices, formats,
+  primaryCategory, and videos across all 12 existing plugins.
+
+  Adds primaryCategory where missing: compressor (Relab 176),
+  multiband (Maselec MLA-4), stereo-widener (Sonsig ACE),
+  saturation (Color Drive).
+
+  4 conflicts deferred for human review: name changes on VSR REV6000
+  and Color Drive, description rewrites on Q82 Natural Resonance Reverb
+  and VSR REV6000 (see PR body).
+
+- d5b62ca: catalog-import-merge: sir-audio-tools — added SIR2 (discontinued convolution
+  reverb), enriched 6 existing entries with descriptions, specs, prices, links,
+  versions, and videos.
+- ab8ebae: catalog-import-merge: sonarworks (new=3 discontinued=0 updated=3)
+
+  New entries: SoundID (mobile app), SoundID Reference Measurement
+  Microphone (hardware), SoundID Virtual Monitoring (base tier).
+
+  Updated entries: SoundID Reference (prices, specs, versions),
+  SoundID Virtual Monitoring PRO (formats enriched, primaryCategory
+  binaural, description/details/specs added), SoundID VoiceAI
+  (description/details/specs/price added).
+
+- 62c32b3: Merge-refresh Sonuscore catalog entries (3 new, 95 updated).
+
+  New products: LUX Orchestral Strings Elements (free), LUX Orchestral
+  Strings Essentials, and TRANSFORCE transient shaper. Updates enrich
+  existing 95 entries with descriptions, specs, prices, videos, and
+  platform data from the current Sonuscore shop. The full Origins series,
+  The Orchestra family, The Pulse, The Score, and Wavelet Audio titles
+  are included. Nine bundle SKUs were excluded from the safe-add pass.
+
+- b49b711: Merge-refresh synchro-arts (5 products updated, 1 discontinued).
+
+  Updates descriptions, details, specs, and prices across all five
+  active Synchro Arts products (RePitch Elements, RePitch Standard,
+  Revoice Pro 5, VocAlign Pro, VocAlign Standard). Adds product
+  images and support links. Marks Vocal Production Bundle as
+  discontinued (it is a bundle SKU, not a discrete installable
+  product — flagged for removal in PR).
+
+- f3e1461: Merge import Three-Body Technology (3 new, 18 updated).
+
+  Three new software entries: Sapphire Drive (saturation),
+  Transi-Q (EQ), and UNMASK (psychoacoustic dynamic EQ).
+  Eighteen existing entries enriched with specs, details,
+  videos, and versions via safe-add pass. Deep Vintage
+  (12-plugin bundle) excluded from enrichment — flagged
+  for removal review.
+
+- 579edd5: Merge-refresh Togu Audio Line and Newfangled Audio.
+
+  **Togu Audio Line** (16→26 software entries): adds 10 new entries:
+  TAL-BassLine, TAL-BitCrusher, TAL-J-8X, TAL-Dub, TAL-Dub-2, TAL-Dub-3,
+  TAL-Elek7ro, TAL-Reverb-2, TAL-Reverb-3, TAL-U-No-62. TAL-J-8X is a new
+  $69 Roland JX-8P emulation; the other 9 are legacy free plugins now
+  catalogued for completeness. Updates 16 existing entries with
+  descriptions, specs, system requirements, formats, versions, and videos.
+  Auto-resolved 21 fields via default-trust heuristic. 1 conflict pending
+  human review: TAL-Dub-X description (extracted is a 2-sentence
+  truncation of the existing — keep existing).
+
+  **Newfangled Audio** (7 new entries, 4 updated): adds Articulate,
+  FixateMidrange, Invigorate, Obliterate, Punctuate, Recirculate, and
+  Saturate. Updates Elevate, Equivocate, Generate, and Pendulate with
+  expanded descriptions, specs, and version history.
+
+- bca2c55: Merge-refresh zplane (7 software entries).
+
+  Updates descriptions, details, specs, videos, links, and versions for
+  all 7 entries: deCoda, élastiqueAAX, ELASTIQUE PITCH, PEEL STEMS,
+  PEEL, reTune, and TONIC. Refines primaryCategory for deCoda
+  (utility → analyzer), élastiqueAAX (utility → time-stretching),
+  PEEL (utility → source-separation), PEEL STEMS
+  (utility → stem-separator), reTune (pitch → pitch-shifter).
+
+### Patch Changes
+
+- 443e947: catalog-import-merge: getgood-drums — updated 54 existing entries with descriptions,
+  specs, images, primaryCategory, and formats from current product pages on ggd.co
+- 6916793: catalog-import-merge: glitchmachines
+
+  Updated 22 existing entries (9 software, 13 content):
+  - Added prices (corrected from $0 to $39 for content packs, $49–$69 for paid plugins)
+  - Added/refreshed descriptions and details across all entries
+  - Added specs to 9 software entries
+  - Fixed Skein primaryCategory: creative → fm
+  - Corrected macOS version naming in 5 specs blocks
+
+- bbc4415: catalog-import-merge: illformed — update Glitch 2 (versions, videos, links, image)
+- b77b289: catalog-import-merge: klanghelm refresh (10 updated)
+
+  Refreshed all 10 existing klanghelm software entries with richer
+  content from current product pages. No new products, no discontinued.
+
+  Products updated: DC1A, DC8C, IVGI, MJUC jr., MJUC, SDRR,
+  TENS jr., TENS, VUMT deluxe, VUMT.
+
+  Fields added across entries: primaryCategory corrections (VUMT
+  `meter`→`metering`, TENS/TENS jr. `effect`→`spring`), vst format
+  ordering normalized, details and specs blocks enriched, versions
+  added for freeware products.
+
+- 54833f4: Merge update for LiquidSonics (12 products enriched): added pricing, version
+  histories, descriptions, specs, and videos across the full product line.
+- a46e8b6: catalog-import-merge: mixed-in-key — updated 12 existing entries with enriched
+  descriptions, details, specs, versions, and videos from current product pages;
+  3 name conflicts flagged for human review (Human Plugins, Mashup, Satellite Plugins)
+- 9528f2e: catalog-import-merge: sonnox — 1 new product (Oxford SuprEsser DS, AAX DSP
+  variant for Avid VENUE/S6L), 14 existing entries updated with descriptions,
+  specs, prices, videos, and links from current product pages on sonnox.com
+- 98416d3: catalog-import-merge: stl-tones — added 6 new entries (3 AmpHub bass/guitar
+  models, 3 ControlHub/ToneHub expansion packs), applied descriptions and prices
+  to 138 existing entries, marked 1 discontinued (Will Yip ToneHub)
+- c62a5b6: catalog-import-merge: wavearts — enriched 14 existing software entries with updated
+  descriptions, details, specs, and prices from current product pages. No new products,
+  none discontinued.
+- 3a80077: Normalize polyverse-music specs blocks to the `- ` list format and drop the
+  redundant platform restatement (W126), and add the `ios` platform to Wider.
+- 7baee5c: Remove inline links (URLs, `www.` domains, bare domain mentions, and email addresses) embedded in `description`/`details`/`specs` prose across 22 entries. These auto-linked at build time (GFM autolinks) and duplicated the dedicated `url`/`links` fields; the prose now reads cleanly with the links removed.
+
 ## 3.33.0
 
 ### Minor Changes
