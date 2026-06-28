@@ -1,29 +1,49 @@
 id: -Fik1PHtAYsvpQTLBoNM3
 name: SpectrumAnalyzer
 manufacturer: sir-audio-tools
-primaryCategory: utility
+primaryCategory: analyzer
 categories:
   - plugin
 formats:
+  - au
   - vst
   - vst3
-  - au
   - aax
 platforms:
   - mac
   - windows
 url: https://siraudiotools.com/Spectrum-Analyzer.php
 prices:
-  - amount: 0
+  - amount: 39
     currency: USD
-  - amount: 0
-    currency: EUR
-description: "State-of-the-art spectrum analyzer plugin with both FFT and
-  analog-style bandpass filter modes. Features auxiliary send system for viewing
-  multiple tracks simultaneously, sidechain support, peak and RMS metering,
-  stereo correlation meter, customizable interface with adjustable colors, and
-  spectral smoothing algorithms. Available in free and full versions."
+description: SpectrumAnalyzer is a state-of-the-art spectrum analyzer plugin, which offers a lot of opportunities to display the spectral content of your audio material and helps you create a better mix this way. SpectrumAnalyzer offers a mode based on bandpass filters, and not only FFT like many others, allowing a much better oversight of the frequency balance of a mix.
 details: |-
-  Free version available with limited features. Full version adds up to 32 bands/octave (vs 4), 4 slots (vs 2), and preset saving. Requires Windows 7 or newer, Mac OS 10.9 or newer. 20 MB hard disk space.
+  SpectrumAnalyzer is developed by SIR Audio Tools and comes in two editions: a free version and a full paid version. The free version provides core spectrum analysis functionality, while the full version unlocks additional features such as up to 32 bands per octave and up to 4 simultaneous analysis slots.
+
+  The plugin offers two distinct analysis modes: a traditional FFT-based analyzer and a bandpass filter-based mode. The bandpass filter mode provides a different perspective on frequency balance that more closely resembles analog analyzer behavior, giving users a more intuitive view of the spectral content of a mix.
+
+  SpectrumAnalyzer includes intelligent peak detection, snapshot and freeze functionality, a stereo correlation meter, a VU-meter, and mid/side signal detection. The auxiliary send capability allows multiple instances to share data, enabling multi-track spectrum viewing within a single plugin window.
+
+  The display is highly customizable, with adjustable colors, smoothing algorithms, and visual parameters. The plugin supports 64-bit operation on both Windows and macOS, with native Apple Silicon support on Mac.
 specs: |-
-  Plugin formats: VST, VST3, AudioUnit, AAX. Analog style bandpass analyzer. FFT analyzer. Internal auxiliary send system. Sidechain support. Peak & RMS meter. Stereo correlation meter. Resizable and scalable interface. Spectral smoothing (average/max). Mid/Side signal detection.
+  - Mac OS 10.13 or newer; Windows 11 or newer
+  - 64-bit Intel (Windows and Mac), Apple Silicon native, 32-bit Windows
+  - 200 MB hard disk space, 8 GB RAM
+  - Audio Unit, VST, VST3, AAX (Pro Tools 11+)
+  - Dual analysis engines: FFT and bandpass filter modes
+  - Up to 32 bands/octave (full version)
+  - Up to 4 analysis slots (full version)
+  - Stereo correlation meter and VU-meter
+  - Mid/side signal detection
+  - Auxiliary send for multi-track viewing
+  - Intelligent peak detection
+  - Snapshot/freeze functionality
+  - No dongle required
+versions:
+  - name: 1.0.177
+  - name: 1.0.176
+
+links:
+  - type: resource
+    url: https://siraudiotools.com/Spectrum-Analyzer-Manual.php
+    title: Manual
