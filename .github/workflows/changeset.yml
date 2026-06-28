@@ -30,23 +30,22 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # Always: validate every pending changeset's frontmatter package name.
-      # `changeset status` exits non-zero on a name that isn't in the workspace
-      # (e.g. "@existential/catalog"), which otherwise makes the Release
-      # workflow's `changeset version` abort and silently block all releases.
-      - name: Validate changeset package names
-        run: pnpm changeset status
-
-      # Data PRs only: require a changeset to be present (and valid). With
-      # --since, `changeset status` exits 1 when the workspace package changed
-      # but no changeset was added — catching import PRs that forgot one.
-      # Chore/dependency PRs (no data/*.yaml changes) are not required to add
-      # a changeset, so this does not burden renovate or docs-only PRs.
-      - name: Require a changeset when catalog data changes
+      # Catalog data PRs must ship a valid changeset. `changeset status
+      # --since=origin/main` scopes the check to the changeset(s) THIS PR adds
+      # and fails (non-zero exit) when either:
+      #   * the changeset names a package that isn't in the workspace
+      #     (e.g. "@existential/catalog") — the same error that aborts the
+      #     Release workflow's `changeset version` and silently blocks every
+      #     release; or
+      #   * data changed but no changeset was added at all.
+      # Chore/dependency PRs (no data/*.yaml change) are skipped, so this never
+      # burdens renovate or docs-only PRs. `origin/main` is available because
+      # the checkout above uses fetch-depth: 0.
+      - name: Verify changeset for data changes
         run: |
           if git diff --name-only origin/main...HEAD | grep -qE '^data/.*\.yaml$'; then
-            echo "Data files changed — verifying a changeset is present and valid."
+            echo "Data files changed — validating this PR's changeset."
             pnpm changeset status --since=origin/main
           else
-            echo "No data/*.yaml changes in this PR — changeset not required."
+            echo "No data/*.yaml changes in this PR — changeset check skipped."
           fi
