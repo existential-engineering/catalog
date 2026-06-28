@@ -1,10 +1,11 @@
 id: uWik-FxTj-WzDW0d4PZR5
 name: MTS-ESP Mini
 manufacturer: oddsound
-primaryCategory: tuner
+primaryCategory: midi-effect
 categories:
   - utility
   - plugin
+  - midi
 formats:
   - vst
   - vst3
@@ -17,22 +18,73 @@ url: https://oddsound.com/mtsespmini.php
 prices:
   - amount: 0
     currency: USD
-description: "A free plugin for DAW global microtuning. Loads .scl, .kbm or .tun
-  files and retunes all connected MTS-ESP client plugins. Supports MIDI Tuning
-  Standard (MTS) SysEx messages. Includes a basic sine/saw synth for auditioning
-  tuning."
+description: A free DAW plugin that loads .scl, .kbm or .tun files and retunes all connected MTS-ESP client plugins, enabling global microtuning across your entire session.
 details: |-
-  Import .scl, .kbm and .tun tuning and mapping files
-  Support for multi-channel mapping using Anamark TUN .msf or multi-channel .kbm formats
-  Support for all MTS SysEx formats, either loading from file or sending in via DAW
-  Automatically update tuning of MTS-ESP aware plugins
-  Includes basic sine/saw synth for auditioning tuning and acting as a pitch reference
-  Stores and recalls tuning in a DAW session
-  Bypass button to return to 12 TET instantly
-  Tiny CPU use
-  Simple, ergonomic interface
-  Mac Retina and Windows HiDPI support
+  MTS-ESP Mini is a free microtuning master plugin that acts as the global tuning source for any MTS-ESP compatible instruments in your DAW session. It loads industry-standard tuning files in .scl (Scala), .kbm (keyboard mapping), .tun, and Anamark TUN .msf formats, then broadcasts the tuning to all connected client plugins in real time.
+
+  The plugin includes a built-in sine/saw synthesizer for auditioning tuning systems directly within the plugin, allowing composers and sound designers to hear their chosen scale or temperament without needing a separate instrument.
+
+  MTS-ESP Mini supports multi-channel mapping, enabling different tunings to be applied across MIDI channels. It also supports MIDI Tuning Standard (MTS) SysEx messages for compatibility with hardware and software that implements the MTS protocol.
+
+  A bypass function is included for instant switching back to standard 12-tone equal temperament (12-TET), and all session state — including loaded tuning files and settings — is stored and recalled with the project. The plugin is designed for minimal CPU overhead and supports Retina/HiDPI displays on both Mac and Windows.
 specs: |-
-  - windows: Vista / Windows 7 / Windows 8 / Windows 10 / Windows 11, 32 bit or 64 bit, a host that supports VST, VST3 or AAX plug-ins
-  - mac: macOS 10.9 or newer, 64 bit only, a host that supports VST, VST3, AU or AAX plug-ins, Intel or ARM Mac
-  - latestVersion: 1.13
+  - Supported tuning file formats: .scl (Scala), .kbm (keyboard mapping), .tun, Anamark TUN .msf
+  - Multi-channel KBM mapping support
+  - MIDI Tuning Standard (MTS) SysEx transmit and receive
+  - Built-in sine/saw synthesizer for tuning audition
+  - Bypass function for instant 12-TET return
+  - Session state storage and recall
+  - Minimal CPU overhead
+  - Retina/HiDPI display support (Mac and Windows)
+  - Windows: Vista through Windows 11, 32-bit and 64-bit
+  - macOS: 10.9 and later, 64-bit only, Intel and Apple Silicon (ARM)
+versions:
+  - name: "1.13"
+    releaseDate: 2026-02-09
+    notes: Multi-channel KBM file loading fix
+  - name: "1.12"
+    releaseDate: 2025-09-05
+    notes: Logic/Intel Mac crash fixes, Kushview Element UI fix
+  - name: "1.11"
+    releaseDate: 2023-10-29
+    notes: Apple Silicon AAX support
+  - name: "1.10"
+    releaseDate: 2022-11-16
+    notes: VST3 Windows bundle structure fix
+  - name: "1.09"
+    releaseDate: 2022-10-31
+    notes: Logic slot movement and Reaper UI fixes
+  - name: "1.08"
+    releaseDate: 2021-12-15
+    notes: Multi-channel support, MTS SysEx disable option
+  - name: "1.07"
+    releaseDate: 2021-11-09
+    notes: MTS SysEx, internal synth, multi-channel .kbm support
+  - name: "1.06"
+    releaseDate: 2021-08-18
+    notes: .scl mapping fix, 12-TET reset
+  - name: "1.05"
+    releaseDate: 2021-08-05
+    notes: Linear .kbm file support
+  - name: "1.04"
+    releaseDate: 2021-06-22
+    notes: Bypass automation fix
+  - name: "1.03"
+    releaseDate: 2021-05-07
+    notes: IPC support added
+  - name: "1.02"
+    releaseDate: 2021-04-11
+    notes: Windows library relocation
+  - name: "1.01"
+    releaseDate: 2021-04-02
+    notes: Connection info persistence fix
+links:
+  - type: resource
+    url: https://oddsound.com/dl/ODDSound_MTS_ESP_Mini_Manual.pdf
+    title: MTS-ESP Mini Manual
+  - type: resource
+    url: https://oddsound.com/usingmtsesp.php
+    title: Using MTS-ESP
+  - type: support
+    url: https://oddsound.com/support.php
+    title: Support
