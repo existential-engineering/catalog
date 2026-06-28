@@ -765,6 +765,32 @@ function validateFile(
 
     const data = rawData as DataWithOptionalFields;
 
+    // Reject the non-schema `images` field. Product images are served from
+    // R2 by id convention and are never stored in catalog data; the field
+    // is not part of any collection schema. Checked on the raw object before
+    // Zod (which silently strips unknown keys) so the leak is caught in CI.
+    if (rawData && typeof rawData === "object" && "images" in rawData) {
+      const message =
+        "`images` is not a catalog field. Product images live in R2 (keyed " +
+        "by id), not in YAML. Remove the `images` block.";
+      const line = getLineForPath(document, lineCounter, ["images"]);
+      const errorCode = ValidationErrorCode.E199_VALIDATION_ERROR;
+
+      return {
+        file: path.relative(process.cwd(), filePath),
+        errors: [`images: ${message}`],
+        details: [
+          {
+            code: errorCode,
+            message,
+            path: "images",
+            line: line ?? undefined,
+            docsUrl: getDocsUrl(errorCode),
+          },
+        ],
+      };
+    }
+
     // Validate against Zod schema
     const result = schema.safeParse(rawData);
 
