@@ -2,7 +2,7 @@
 "catalog": patch
 ---
 
-Merge 42 duplicate manufacturer stubs into their canonical entries.
+Merge 44 duplicate manufacturer stubs into their canonical entries.
 
 Each pair was the same company split across two slugs (spelling, spacing,
 accent, or typo variants — e.g. `ohmforce`/`ohm-force`,
