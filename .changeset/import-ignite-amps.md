@@ -1,5 +1,5 @@
 ---
-"@existential/catalog": minor
+"catalog": minor
 ---
 
 catalog-import-merge: ignite-amps

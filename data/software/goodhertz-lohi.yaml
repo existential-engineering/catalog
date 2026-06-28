@@ -1,13 +1,13 @@
 id: MLHWInjbkMsb9c51C_3b7
 name: Lohi
 manufacturer: goodhertz
-primaryCategory: effect
+primaryCategory: filter
 categories:
   - creative
   - plugin
 formats:
   - au
-  - vst
+  - vst2
   - vst3
   - aax
 platforms:
@@ -15,21 +15,27 @@ platforms:
   - windows
 url: https://goodhertz.com/lohi
 prices:
-  - amount: 49.0
+  - amount: 49
     currency: USD
-description: "Filter plugin designed specifically for sweeps and real-time
-  control. Features analog-style LO, HI, and BP filter types with variable slope
-  up to 96 dB/Oct, independently controlled resonance, built-in limiter and
-  analog saturator, and a mix knob. All parameters can be automated without
-  artifacts, clicks, or pops."
+description: Filter plugin designed specifically for sweeps and real-time control. Features analog-style LO, HI, and BP filter types with variable slope up to 96 dB/Oct, independently controlled resonance, built-in limiter and analog saturator, and a mix knob. All parameters can be automated without artifacts, clicks, or pops.
 details: |-
-  1 page
+  Lohi is a filter plugin specifically designed for sweeps and realtime control. Whether you're a music producer, DJ, sound designer, or mix engineer, Lohi provides a simple filter that handles automation and realtime changes without artifacts.
 
-  Analog-style LO, HI, and BP filter types
-  Variable filter slope up to 96 dB/Oct
-  Independently controlled resonance
-  Built-in limiter and analog saturator
-  Mix knob for filter section
-  Artifact-free, click-free automation
+  Although many filtering plugins exist, Lohi was built to do what producers actually want: sweepable frequency, variable slope, and independently controlled resonance. It also includes a killer analog-modeled limiter/saturator for character and a mix knob for the filter section.
+
+  All parameters are designed to be happily controlled without artifacts, clicks, or pops — filter type, saturation, mix — all can be freely automated in realtime.
+
+  Lohi supports multiple channel configurations including mono-to-mono, mono-to-stereo, and stereo-to-stereo. An HQ Mode enables internal oversampling for improved high-frequency resolution, at 2–4x higher CPU usage depending on sample rate.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
+  - Filter types: Low-pass (LO), High-pass (HI), Band-pass (BP)
+  - Variable filter slope up to 96 dB/Oct
+  - Independently controlled resonance
+  - Built-in limiter and analog saturator
+  - Mix knob for filter section
+  - Filter Glide Time range: 10ms to 2500ms
+  - HQ Mode with 2–4x internal oversampling
+  - Supported channel configs: 1-in/1-out, 1-in/2-out, 2-in/2-out
+  - Mac: AU 64-bit, VST 64-bit, VST3 64-bit, AAX 64-bit (macOS >= 10.9)
+  - Windows: VST 64-bit, VST3 64-bit, AAX 64-bit (Windows >= 7)
+versions:
+  - name: "3.13"

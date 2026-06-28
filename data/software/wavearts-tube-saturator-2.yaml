@@ -1,7 +1,7 @@
 id: gSN4dGiJinvHPtaOb8c7q
 name: Tube Saturator 2
 manufacturer: wavearts
-primaryCategory: effect
+primaryCategory: saturation
 categories:
   - plugin
 formats:
@@ -13,10 +13,60 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/tube-saturator-2
-description: "Super accurate circuit simulation of a tube pre-amp with analog
-  EQ, using pre-computed solution tables for efficiency. Can be overdriven
-  gently for warming effects or cranked for fat distortion."
+description: An authentic tube preamp simulator with analog EQ that delivers warming effects at gentle settings or fat distortion when driven hard. Uses circuit simulation technology to mathematically model analog circuits, running approximately 7x faster than its predecessor with improved accuracy.
 details: |-
-  Accurate tube preamp simulator using circuit simulation technology. Two common cathode preamp stages. 12AX7 and 12AU7 tube models. Drive control for distortion adjustment. Baxandall 3-band analog EQ. Saturation and EQ bypass switches. High quality 2X oversampling mode. Wet/dry mix control. Analog style metering. No latency. Up to 192 kHz sampling rate. Mono or stereo.
+  Tube Saturator 2 uses circuit simulation technology to accurately model analog circuits, specifically two cathode preamp stages. The simulator runs approximately 7x faster than its predecessor while maintaining or improving accuracy.
+
+  Users can select between 12AX7 and 12AU7 tube models to shape the character of saturation. A Baxandall 3-band analog EQ is included and can be switched pre or post saturation for flexible tone shaping.
+
+  The plugin supports mono and stereo operation, zero latency processing, and sample rates up to 192 kHz. A high-quality 2x oversampling mode is available for reduced aliasing, and a wet/dry mix control allows parallel processing.
+
+  A noise gate was added in version 2.18 to suppress low-level limit cycle oscillation, and the plugin features infinite undo with shift-click redo. iLok licensing is supported but not required — Wave Arts' own online activation is the default.
 specs: |-
-  Mac: AU, VST3, AAX. macOS 10.13+, Apple Silicon native, 64-bit only. Windows: VST2, VST3, AAX. Windows 7/8/10/11, 32-bit and 64-bit. iLok supported but not required.
+  - Two cathode preamp stages with circuit simulation
+  - Tube models: 12AX7 and 12AU7
+  - Baxandall 3-band analog EQ (pre/post saturation switching)
+  - Drive control for adjustable saturation/distortion
+  - Wet/dry mix control
+  - Zero latency operation
+  - High-quality 2x oversampling mode
+  - Sample rate support up to 192 kHz
+  - Mono and stereo operation
+  - Analog-style metering
+  - Noise gate (added v2.18) to suppress limit cycle oscillation
+  - Infinite undo (shift-click for redo)
+  - UI scaling support
+  - macOS: AU, VST3, AAX (64-bit); Apple Silicon native
+  - Windows: VST2, VST3, AAX (32-bit and 64-bit)
+  - macOS 10.13 (High Sierra) or higher required
+  - Windows 7/8/10/11 supported
+  - AAX: Pro Tools 11+ (Mac), Pro Tools 10.3.5+ (Windows)
+  - iLok supported but not required
+versions:
+  - name: "2.18"
+    releaseDate: 2025-06-10
+    description: Noise gate added to suppress low level limit cycle oscillation; internal update to v7 codebase; UI scaling; infinite undo (shift-click for redo); slower meter ballistics
+  - name: "2.17"
+    releaseDate: 2023-10-26
+    description: Fixed crash in Logic on Apple Silicon during registration; macOS installers now delete previously installed AAX plug before install; internal framework updates; macOS requirement now 10.13
+  - name: "2.16"
+    releaseDate: 2023-03-16
+    description: License popups appear after UI is drawn to prevent plug-in freezing; parameter text entry supports tab/shift-tab navigation
+  - name: "2.15"
+    releaseDate: 2023-02-08
+    description: "Breaking change: Windows-only VST3 identifier updated for cross-platform compatibility; Windows projects using VST3 2.13-2.14 will not load after upgrade"
+  - name: "2.14"
+    releaseDate: 2022-11-07
+    description: iLok licensing support on Apple Silicon; AAX format support on Apple Silicon; bypass parameter replaces Enable in automation; internal framework updates
+  - name: "2.13"
+    releaseDate: 2021-07-20
+    description: UI scaling feature; Apple M1 support with universal binaries; dropped 32-bit and VST2 on Mac; dark theme in menus and dialogs
+  - name: "2.12"
+    releaseDate: 2017-07-24
+    description: Updated Apple certificates for Mac plug-in and installer
+  - name: "2.11"
+    releaseDate: 2017-04-19
+    description: AAX no longer requires Pace/iLok licensing; fixed UI knob display bugs with multiple instances; parameter code rewritten to eliminate clicks; improved demo expiration messaging
+  - name: "2.10"
+    releaseDate: 2016-06-14
+    description: Complete code rewrite using JUCE framework; Wave Arts online activation licensing introduced; VST3 format support added; new preset and preferences managers; DC-offset filtering in saturation section

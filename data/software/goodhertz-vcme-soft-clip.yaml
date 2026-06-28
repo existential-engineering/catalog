@@ -16,21 +16,26 @@ platforms:
   - windows
 url: https://goodhertz.com/vcme-soft-clip
 prices:
-  - amount: 99.0
+  - amount: 99
     currency: USD
-description: "Standalone saturator/limiter plugin extracted from VCME. Part
-  limiter, part saturator designed to enhance mix presence while maintaining
-  dynamics. Combines an analog-inspired saturation module modeling tubes,
-  transformers, and transistors with a digital-inspired limiter module that
-  separates transient and steady-state material. Features Saturation Emphasis
-  section for harmonic shaping and external sidechain support."
+description: VCME Soft Clip is the standalone Soft Clip section extracted from Goodhertz's VCME compressor — part limiter, part saturator — combining analog-modeled saturation with a transient/steady-state-separating limiter to add presence and polish while preserving natural dynamics.
 details: |-
-  2 pages
+  VCME Soft Clip is a focused plugin that isolates the Soft Clip section from Goodhertz's flagship VCME compressor, adding a dedicated Saturation Emphasis section for deeper harmonic sculpting. It offers lower latency and lower CPU usage than the full VCME, making it practical for use on individual tracks as well as mix buses and mastering chains.
 
-  Analog-inspired saturation module (tubes, transformers, transistors)
-  Digital-inspired limiter separating transient and steady-state material
-  Saturation Emphasis section for harmonic shaping
-  External sidechain support
-  Lower latency and CPU usage than full VCME
+  The saturation module models analog processing chains — tubes, transformers, and transistors — through four distinct character modes: Chino (hi-fi, classic tube), Rødovre (round, smooth), Detroit (grungy, warm, bass-forward), and Melbourn (punchy, British transformer character). Drive, Slew, and Mix controls give fine-grained command over how much and how fast the saturation responds.
+
+  The limiter module draws inspiration from soft-clipping A-to-D converters, separating transient and steady-state material to achieve punchier, more controlled results without squashing transients. A brickwall mode is available alongside a follow-mix option.
+
+  The Saturation Emphasis section provides an advanced internal or external sidechain filter — with tilt, low/high shelf, resonance, and blend controls — allowing precise shaping of which frequencies drive the saturation and by how much.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
+  - macOS 10.13 or later (AU, VST, VST3, AAX 64-bit)
+  - Windows 10 or later (VST, VST3, AAX 64-bit)
+  - Saturation modes: Chino, Rodøvre, Detroit, Melbourn
+  - Saturation Emphasis section with internal/external sidechain filter
+  - Limiter with transient/steady-state separation; brickwall and follow-mix modes
+  - HQ Mode: ~50ms added latency, 2-4x CPU increase
+  - Supports mono through 9.1.6 surround channel configurations
+  - External sidechain support
+  - Lower latency and lower CPU than full VCME
+versions:
+  - name: "3.13"

@@ -16,22 +16,27 @@ platforms:
   - windows
 url: https://goodhertz.com/tiltshift
 prices:
-  - amount: 29.0
+  - amount: 29
     currency: USD
-description: "Tilt EQ plugin using a novel equalization algorithm with extremely
-  gentle slopes (usually less than 1 dB per octave) to dramatically alter audio
-  tone while preserving phase, frequency, and transient response. Features tilt
-  frequency spectrum adjustment, independent high/low cut filters (6-48 dB/Oct),
-  perceptual loudness lock technology, and a listen function for auditioning
-  filtered content. CPU-friendly enough for every channel."
+description: Tiltshift is a specialized EQ plugin from Goodhertz featuring a novel tilt algorithm designed for transparent tone-shaping using extremely gentle slopes, with perceptual loudness lock technology to preserve phase, frequency, and transient response.
 details: |-
-  1 page
+  Tiltshift is an EQ and tone-shaping plugin built around a proprietary tilt algorithm that applies extremely gentle slopes — usually less than 1 dB per octave — to alter the overall tonal character of audio with minimal signal degradation. Unlike conventional EQs, the tilt approach preserves transient response and avoids the phase artifacts typically associated with more aggressive filtering.
 
-  Novel tilt EQ algorithm with gentle slopes (<1 dB/octave)
-  Variable range tilt frequency adjustment
-  Independent high/low cut filters (6-48 dB/Oct)
-  Perceptual loudness lock technology
-  Listen function for auditioning filtered content
-  CPU-friendly for use on every channel
+  The plugin includes a perceptual loudness lock feature that compensates for level changes introduced by the tilt, making A/B comparisons easier and preventing mix decisions driven by volume rather than tone.
+
+  Independent high-cut and low-cut filters with variable slopes ranging from 6 to 48 dB per octave allow for more surgical shaping when needed, each with independent resonance control. A Listen function lets users audition the filtered content in isolation.
+
+  All parameters are fully automatable without digital artifacts, and double-precision floating-point processing ensures no internal clipping. An optional HQ Mode provides a higher-quality algorithm at the cost of 2–4x additional CPU usage.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
+  - Tilt algorithm with variable frequency range
+  - Perceptual loudness lock technology
+  - Independent high/low cut filters with variable slopes (6-48 dB/Oct)
+  - Independent resonance control per filter
+  - Listen function for filter auditioning
+  - Double-precision floating-point processing
+  - Optional HQ Mode (2-4x CPU usage)
+  - Channel configurations: Mono->Mono, Mono->Stereo, Stereo->Stereo
+  - macOS 10.13+ (AU, VST, VST3, AAX 64-bit)
+  - Windows 10+ (VST, VST3, AAX 64-bit)
+versions:
+  - name: "3.13"
