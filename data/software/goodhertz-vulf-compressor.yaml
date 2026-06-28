@@ -15,18 +15,27 @@ platforms:
   - windows
 url: https://goodhertz.com/vulf-comp
 prices:
-  - amount: 149.0
+  - amount: 149
     currency: USD
-description: "Compression plugin developed in collaboration with Vulfpeck's Jack
-  Stratton, based on a compression algorithm originating from the Boss SP-303
-  sampler. Delivers distinctive, vintage-influenced beastly compression suited
-  for drums, vocals, keys, and various instruments. Used on recordings by Dua
-  Lipa, BTS, HAIM, and Rex Orange County."
+description: A compression plugin based on a radically unique algorithm originally engineered for the Boss SP-303 sampler, delivering distinctive character-driven compression with vintage-inspired qualities. Used on recordings by Dua Lipa, BTS, HAIM, and Rex Orange County.
 details: |-
-  1 page
+  The Vulf Compressor is built around a radically weird compression algorithm originally engineered by an unknown Japanese DSP engineer circa 2000 for the Boss SP-303 sampler. Goodhertz reverse-engineered and extended this algorithm into a full-featured plugin that delivers the kind of character-driven compression rarely found in modern tools.
 
-  Boss SP-303-inspired compression algorithm
-  Presets including classic hip-hop sampler styles
-  Versatile for drums, vocals, keys, and more
+  Beyond compression, the plugin includes Wow & Flutter controls that add vinyl-style pitch modulation, and a Lo-Fi section with noise, crunch, and bit-depth reduction options. These can be applied subtly or pushed hard to achieve heavily processed sounds.
+
+  The plugin supports mono, mono-to-stereo, and stereo channel configurations. An HQ Mode is available that activates higher-quality processing at the cost of approximately 50ms of latency.
+
+  On Mac, Vulf Compressor runs as an Audio Unit, VST, VST3, or AAX plugin on OS X 10.13 or later. On Windows, it supports VST, VST3, and AAX on Windows 10 or later.
 specs: |-
-  - systemRequirements: 64-bit DAW, macOS 10.13+ or Windows 10+
+  - Mac: Audio Unit 64-bit, VST 64-bit, VST3 64-bit, AAX 64-bit (OS X 10.13+)
+  - Windows: VST 64-bit, VST3 64-bit, AAX 64-bit (Windows 10+)
+  - Channel configurations: Mono->Mono, Mono->Stereo, Stereo->Stereo
+  - Compression Amount control
+  - Wow & Flutter Amount with mix, phase, and speed controls
+  - Lo-Fi Amount with noise, crunch, and type controls
+  - Master Mix for parallel processing
+  - Sidechain: listen, external, and tilt options
+  - HQ Mode with ~50ms latency
+  - Stereo link control for compression
+versions:
+  - name: "3.13"

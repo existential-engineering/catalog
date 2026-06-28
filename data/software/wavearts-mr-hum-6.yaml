@@ -1,7 +1,7 @@
 id: F84leoKeYGoHSnxXX20ZP
 name: MR Hum 6
 manufacturer: wavearts
-primaryCategory: utility
+primaryCategory: de-hum
 categories:
   - effect
   - plugin
@@ -14,10 +14,55 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/mr-hum-6
-description: "Combines hum removal, buzz removal, brickwall filtering, and high
-  resolution spectrum analysis into one plug-in for cleaning up recordings with
-  hum or buzz contamination."
+description: MR Hum 6 is a precise hum and buzz removal plugin combining hum removal, buzz removal, brickwall filtering, and high-resolution spectrum analysis for cleaning recordings with electrical interference.
 details: |-
-  Hum removal using 1 to 10 harmonic notch filters. Buzz removal. Hum and buzz frequencies adjustable from 20 to 200 Hz. Adjustable notch widths. Brickwall filtering for rumble and hiss removal. High resolution spectrum analysis display (pre or post processing). Monitor feature to hear removed signal. No latency. Up to 192 kHz sampling rate. Mono or stereo.
+  MR Hum 6 removes electrical hum and buzz from recordings using up to ten harmonic notch filters. The fundamental frequency is adjustable from 20 to 200 Hz to target any hum source, and notch widths are variable to match the characteristics of the interference.
+
+  A separate Buzz removal processor addresses irregular or broadband buzz that harmonic filtering alone may not resolve. Brickwall filtering removes subsonic rumble and high-frequency hiss at the signal extremes, providing a complete interference-cleaning toolset in a single plugin.
+
+  A high-resolution spectrum analyzer displays the signal before and after processing simultaneously, making it straightforward to verify that hum artifacts have been attenuated without affecting the wanted audio. A Monitor function lets users listen to the removed signal in isolation to confirm the plugin is targeting only the unwanted components.
+
+  MR Hum 6 operates with zero latency, making it suitable for live applications as well as post-production. It supports sample rates up to 192 kHz and processes both mono and stereo audio.
+
+  On macOS, formats available are AU, VST3, and AAX. On Windows, VST2, VST3, and AAX are provided. Apple Silicon is natively supported on macOS 10.13 (High Sierra) and higher. Windows 7/8/10/11 are supported with both 32-bit and 64-bit hosts.
 specs: |-
-  Mac: AU, VST3, AAX. macOS 10.13+, Apple Silicon native, 64-bit only. Windows: VST2, VST3, AAX. Windows 7/8/10/11, 32-bit and 64-bit. iLok supported but not required.
+  - Hum removal with 1–10 harmonic notch filters
+  - Adjustable fundamental frequency: 20–200 Hz
+  - Variable notch widths
+  - Dedicated buzz removal processor
+  - Brickwall filtering for rumble and hiss
+  - High-resolution spectrum analyzer (pre/post processing display)
+  - Monitor mode to isolate and audition removed signal
+  - Zero latency operation
+  - Supports up to 192 kHz sample rates
+  - Mono and stereo processing
+  - macOS: AU, VST3, AAX; requires 10.13+; Apple Silicon native; 64-bit hosts only
+  - Windows: VST2, VST3, AAX; supports Windows 7/8/10/11; 32-bit and 64-bit hosts
+versions:
+  - name: "6.09"
+    releaseDate: 2023-10-26
+    description: Fix crash in Logic on Apple Silicon when registering from expiration window. macOS installers now remove previously installed AAX plug-ins before installation. Internal updates to Juce 7.0.6, Pace Eden 5.8.1, Xcode 14.1, AAX SDK 2.5.1. macOS requirement raised to 10.13.
+  - name: "6.07"
+    releaseDate: 2023-03-16
+    description: License popups now appear after UI is drawn, resolving plugin freezing issues. Parameter text entry now supports Tab and Shift-Tab navigation.
+  - name: "6.06"
+    releaseDate: 2022-12-29
+    description: Fixed issue where control clicking triggered unintended text entry focus. Text entry now requires deliberate click; Tab and Escape exit the field.
+  - name: "6.05"
+    releaseDate: 2022-11-07
+    description: Added iLok licensing and AAX format support for Apple Silicon. Bypass parameter replaced Enable parameter in automation. Parameter text entry boundaries corrected.
+  - name: "6.04"
+    releaseDate: 2022-09-27
+    description: Fixed latency reporting.
+  - name: "6.03"
+    releaseDate: 2021-05-26
+    description: Resolved Adobe Premiere Pro export crash in VST3 format. Streamlined generic user interfaces.
+  - name: "6.02"
+    releaseDate: 2021-04-22
+    description: Added M1 support with universal binaries. GUI scaling implemented for all formats.
+  - name: "6.01"
+    releaseDate: 2020-12-15
+    description: Added UI scaling for AU and VST3 formats. Introduced new preferences dialog.
+  - name: "6.00"
+    releaseDate: 2020-09-25
+    description: Initial v6 release with macOS Catalina support, VST3 support, notarized installers, Wave Arts licensing for AAX, user preset manager, and dark theme.

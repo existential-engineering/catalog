@@ -6,26 +6,50 @@ categories:
   - effect
   - plugin
 formats:
+  - au
   - vst
   - vst3
-  - au
   - aax
 platforms:
   - mac
   - windows
 url: https://siraudiotools.com/StandardEQ.php
 prices:
-  - amount: 0
+  - amount: 59
     currency: USD
-  - amount: 0
-    currency: EUR
-description: "High-precision equalization plugin with various filter
-  characteristics and a high-definition spectrum analyzer. Every filter can work
-  in left/right/mid/side mode or process channels individually. Features
-  intelligent peak detection for identifying resonant frequencies, oversampling
-  for symmetric behavior and natural phase response, link gain/Q option, and
-  multi-channel support for up to 8 channels."
+description: StandardEQ is a high-precision equalization plug-in offering various filter characteristics and a high-definition spectrum analyzer. It supports left/right/mid/side processing modes with up to 50 filters per instance.
 details: |-
-  Requires Windows 7 or newer, Mac OS 10.9 or newer. 30 MB hard disk space. Resizable and scalable interface with adjustable display range and colors. Preset manager and A/B compare switch.
+  StandardEQ is a high-quality equalizer plug-in built around 24 filter types based on Butterworth, Legendre, and Bessel characteristics. Up to 50 filters can be used per instance, giving engineers precise control over complex equalization tasks.
+
+  The plug-in features a dual-engine spectrum analyzer that combines FFT analysis with an analog-style IIR analyzer. Intelligent peak detection assists in identifying resonant frequencies quickly, and mid/side stereo analysis is supported.
+
+  Oversampling is available to improve precision and maintain a natural phase response. The interface is fully resizable and scalable, and includes a preset manager with A/B comparison for workflow efficiency.
+
+  Multi-channel awareness supports up to 8 channels, and individual channel processing is available alongside linked left/right or mid/side modes.
 specs: |-
-  Plugin formats: VST, VST3, AudioUnit, AAX. Various filter characteristics. Left/Right/Mid/Side mode per filter. Multi-channel aware (up to 8 channels). Intelligent peak detection. Oversampling for symmetric behavior. Link gain/Q (proportional/inverse). High-definition spectrum analyzer. Preset manager. A/B compare switch.
+  - 24 filter types (Butterworth, Legendre, Bessel characteristics)
+  - Up to 50 filters per instance
+  - Dual-engine spectrum analyzer: FFT + analog-style IIR
+  - Left/right, mid/side, and individual channel processing modes
+  - Intelligent peak detection for resonant frequency identification
+  - Oversampling support
+  - Multi-channel awareness (up to 8 channels)
+  - Resizable and scalable interface
+  - Preset manager with A/B comparison
+  - 64-bit Intel (Windows + Mac), Apple Silicon native, 32-bit Windows
+  - 200 MB disk space, 8 GB RAM; macOS 10.13+; Windows 11+
+versions:
+  - name: 1.6.043
+  - name: 1.5.001
+    description: Apple Silicon native support; VST3 added
+  - name: 1.4.005
+    description: New Jet Black skin; analyzer enhancements
+  - name: 1.3.014
+    description: Analog-style band-filter analyzer; mid/side stereo analysis
+  - name: 1.2.025
+    description: AAX support added
+
+links:
+  - type: resource
+    url: https://siraudiotools.com/StandardEQ_manual.php
+    title: Manual
