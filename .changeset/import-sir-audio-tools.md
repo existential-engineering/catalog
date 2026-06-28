@@ -1,5 +1,5 @@
 ---
-"@existential/catalog": minor
+"catalog": minor
 ---
 
 catalog-import-merge: sir-audio-tools — added SIR2 (discontinued convolution
