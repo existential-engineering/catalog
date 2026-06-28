@@ -1,26 +1,74 @@
 id: zvfgdG5ruCTDtZlds7QUs
 name: Reverberate 3
 manufacturer: liquidsonics
-primaryCategory: convolution
+primaryCategory: reverb
 categories:
-  - reverb
   - plugin
   - effect
 formats:
-  - aax
-  - vst
-  - vst3
   - au
+  - vst2
+  - vst3
+  - aax
 platforms:
   - mac
   - windows
 url: https://www.liquidsonics.com/software/reverberate-3/
 prices:
-  - amount: 0
+  - amount: 99
     currency: USD
-description: "Modulated true-stereo convolution reverb bringing IR captures to
-  life, supporting Lexicon, AMS, Bricasti and more reverb legends."
+description: Modulated True-Stereo Convolution Reverb bringing your IR captures to life; use Lexicon, AMS, Bricasti and more reverb legends to life.
 details: |-
-  Modulated true-stereo convolution reverb with Fusion-IR technology. Brings impulse response captures from Lexicon, AMS, Bricasti and other reverb legends to life. All DSP rearchitected to support Apple Silicon. 64-bit VST, VST 3, AU and AAX. iLok required.
+  Reverberate 3 is a dual-engine modulated true-stereo convolution reverb plugin developed by LiquidSonics. It processes captured impulse responses from legendary studio hardware reverbs through the proprietary Fusion-IR technology, enabling creative modulation and editing capabilities that go far beyond traditional static convolution.
+
+  The plugin features independent early/late reverb adjustment, late pre-delay manipulation without phase disruption, and Re-Decay controls that let users scale reverb times from 0.25x to 1.75x the original duration. Split modulation separates pitch and non-pitching modulation for early and late reverb components independently.
+
+  Each reverb engine includes a full effects chain: double-oversampled EQ with LFO modulation, linear-interpolation chorus, stereo delay with modulation, a ducker with sidechain support, Sheen EQ for synthetic high-frequency enhancement, stereo widener, and an ADSHR envelope with shape control.
+
+  Reverberate 3 ships with several Fusion-IR expansion packs including FS-24x, FS-48, FS-91, Bricasti M7 (44.1 kHz and 96 kHz), and FS-1 (44.1 kHz and 96 kHz). It supports WAV, AIFF, and FLAC impulse response files.
+
+  Licensing is handled via iLok License Manager and supports iLok 2/3 hardware dongle, machine activation, or iLok Cloud. A 14-day fully featured trial is available.
 specs: |-
-  64-bit VST, VST 3, AU and AAX. Intel or Apple Silicon processors (native and Rosetta 2 supported).
+  - Dual convolution reverb engines with Fusion-IR technology
+  - True-stereo and simulated true-stereo modes
+  - Split modulation: separate early/late pitch and non-pitching modulation
+  - Re-Decay: scale reverb times 0.25x–1.75x
+  - IR format support: WAV, AIFF, FLAC
+  - Effects chain per engine: EQ, chorus, stereo delay, ducker, Sheen EQ, stereo widener, ADSHR envelope
+  - Zero latency mode or configurable 8192-sample delay
+  - Dispersion modeling for plate reverb simulation
+  - Synthetic early reflections and tail generation
+  - MIDI tempo sync
+  - Scalable high-resolution UI
+  - 64-bit only; Intel and Apple Silicon native (M1–M4)
+  - macOS 10.13+ and Windows 7+ supported
+  - iLok License Manager required (dongle, machine, or Cloud)
+  - Formats: VST 2.4, VST 3, AU/AUv2, AAX Native
+versions:
+  - name: 3.4.6
+    description: Fixed VST hosting compatibility in Pro Tools; graphics optimization
+  - name: 3.4.5
+    description: Rosetta crash fix
+  - name: 3.4.4
+    description: Tempo sync updates; Apple M3/M4 optimization
+  - name: 3.4.3
+    description: M4 processor compatibility
+  - name: 3.4.2
+    description: AMD Zen 5 workaround; cross-platform session compatibility
+  - name: 3.2.2
+    releaseDate: 2022-03
+    description: Apple Silicon native support
+  - name: 3.2.0
+    releaseDate: 2021-09
+    description: Contouring tab with re-decay and multi-band reverb time
+  - name: 3.1.0
+    releaseDate: 2020-11
+    description: Dispersion simulation added
+  - name: 3.0.0
+    releaseDate: 2020-10
+    description: Initial release
+releaseDate: "2020"
+videos:
+  - videoId: "466321839"
+    provider: vimeo
+    title: Reverberate 3 Demo
