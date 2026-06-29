@@ -13,3 +13,7 @@ products were repointed to the canonical slug, and several manufacturer URLs
 were corrected to their real homepages. Known distinct-company name
 collisions (e.g. Jackson guitars vs Jackson Audio, Martin guitars vs Martin
 Audio, Pulsar Audio vs Pulsar Modular) were deliberately left untouched.
+
+Also backfilled official homepage URLs for four distinct (non-merged)
+stubs that had none: `mod-sound`, `arc` (Analogue Research), `jmk-audio`,
+and `jmk-music-pedals`.
