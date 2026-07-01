@@ -18,7 +18,14 @@ allowBuilds:
 #   js-yaml override above forces it onto js-yaml 4, so `changeset version`
 #   crashes ("safeLoad is removed") and the Release workflow never opens the
 #   version PR. 2.1.0 uses yaml.load with the same default/.sync API; 3.x is
-#   ESM-only and breaks @manypkg's CommonJS require.
+#   ESM-only ("readYamlFile__default is not a function") because @changesets/cli
+#   still pins the CommonJS @manypkg/get-packages@1.x. When @changesets/cli ships
+#   a stable 3.x on the ESM @manypkg/get-packages@3.x, read-yaml-file 3 loads
+#   fine and this override (and likely js-yaml) can be dropped. The Changeset CI
+#   workflow's "Verify release tooling can load the workspace" step exercises
+#   this exact path on every PR, so leave read-yaml-file un-ignored in renovate:
+#   a fixing upgrade turns that check green on its own; a breaking one blocks the
+#   PR instead of the release.
 overrides:
   vite: ">=8.0.16 <9"
   esbuild: ">=0.28.1"
