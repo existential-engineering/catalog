@@ -53,3 +53,21 @@ jobs:
           else
             echo "No data/*.yaml changes in this PR — changeset check skipped."
           fi
+
+      # Dependency PRs (e.g. renovate) skip the data changeset check above, so a
+      # dependency bump that breaks the *release* tooling passes CI green and only
+      # explodes later in the Release workflow's `changeset version` — silently
+      # blocking every release. This step closes that gap: `changeset status`
+      # runs @manypkg/get-packages, which reads pnpm-workspace.yaml via
+      # read-yaml-file — the exact path that crashes when read-yaml-file is
+      # upgraded to an ESM-only major while @changesets/cli still pins the CJS
+      # @manypkg/get-packages@1.x (see the read-yaml-file override note in
+      # pnpm-workspace.yaml). `--since=HEAD` means "no packages changed", so the
+      # check only exercises the load path and never demands a changeset here.
+      #   * Healthy → exit 0.
+      #   * Release-breaking dep combo → non-zero, blocking the merge instead of
+      #     the release. When a future @changesets/cli (3.x, ESM manypkg) makes
+      #     read-yaml-file v3 loadable, this goes green on its own — so the
+      #     override can stay un-ignored by renovate and this is the oracle.
+      - name: Verify release tooling can load the workspace
+        run: pnpm changeset status --since=HEAD
