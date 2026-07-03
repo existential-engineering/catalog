@@ -1,0 +1,109 @@
+name: DB 751
+manufacturer: aguilar
+primaryCategory: bass-amplifier
+categories:
+  - amplifier
+  - rack-mount
+url: https://aguilaramp.com/products/db751
+description: The DB 751 combines the legendary tube-driven tone of the DB 750
+  with greater EQ control, delivering 975 watts at 2 ohms and 750 watts at 4
+  ohms for the headroom to play any size venue.
+details: |-
+  The DB 751 is a hybrid bass amplifier head that combines tube-driven tone with
+  powerful MOSFET output. Building on the legacy of the legendary DB 750, the
+  DB 751 introduces enhanced EQ control while retaining the warmth and character
+  that made the DB 750 famous. Three 12AX7 preamp tubes drive the signal through
+  a passive tone stack with an active midrange section before feeding into 12
+  complementary lateral MOSFETs in the power section.
+
+  The amplifier delivers 975 watts at 2 ohms, 750 watts at 4 ohms, and 400 watts
+  at 8 ohms, providing substantial headroom for any venue size. The EQ section
+  features bass, mid, and treble controls with wide boost/cut ranges, plus Deep
+  and Bright switches for broadband frequency adjustments. The mid control operates
+  at 750Hz with ±12dB of cut/boost, while bass targets 40Hz and treble targets 4kHz.
+
+  The DI output uses a Jensen transformer for premium balanced signal quality, and
+  is switchable between pre- and post-EQ signal paths. The effects loop features a
+  push/pull send that toggles between line and instrument level operation, plus a
+  return that can be configured for parallel or series routing.
+
+  Protection circuits include self-diagnostic fault detection and thermal overload
+  protection. Whisper fans with thermal speed control keep the unit quiet during
+  low-demand operation. The unit occupies 3 rack spaces with detachable rack ears
+  and weighs 42 lbs.
+specs: |-
+  - Power Output: 975W @ 2Ω, 750W @ 4Ω, 400W @ 8Ω
+  - Preamp: Three 12AX7 tubes
+  - Power Section: 12 complementary lateral MOSFETs
+  - EQ: Passive tone stack with active midrange
+  - Bass EQ: ±12dB @ 40Hz
+  - Mid EQ: ±12dB @ 750Hz
+  - Treble EQ: +12dB/−7dB @ 4kHz
+  - Deep switch: Broadband low frequency boost
+  - Bright switch: Broadband high frequency boost
+  - DI Output: Jensen transformer, balanced XLR, pre/post EQ switchable
+  - Effects Loop Send: Push/pull line/instrument level switch
+  - Effects Loop Return: Parallel/series configurable
+  - Tuner Output: Unbalanced 1/4-inch
+  - Input: Single 1/4-inch with active/passive switch
+  - Speaker Outputs: Two Neutrik Speakons
+  - Protection: Self-diagnostic circuits, thermal overload protection
+  - Cooling: Whisper fans with thermal speed control
+  - Rack Size: 3U with detachable ears
+  - Dimensions: 17"W × 14"D × 5.25"H
+  - Weight: 42 lbs
+  - Warranty: Three-year limited to original owner
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Speaker Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: speakon
+    maxConnections: 1
+    position: Left
+  - name: Speaker Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: speakon
+    maxConnections: 1
+    position: Left
+  - name: DI Output (Jensen XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Tuner Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Effects Loop Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Effects Loop Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+prices:
+  - amount: 3499.99
+    currency: USD
+id: kpciWU_rDEF-alRpDKmti

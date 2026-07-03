@@ -1,0 +1,78 @@
+name: AG Preamp
+manufacturer: aguilar
+primaryCategory: pedal
+categories:
+  - preamp
+url: https://aguilaramp.com/products/ag-preamp-pedal
+description: A compact analog bass preamp and direct box designed for both stage
+  and studio use. Delivers the classic Aguilar sound in pedal format with a
+  4-band EQ system, foot-switchable broadband Deep and Bright boosts, a
+  studio-quality XLR balanced DI output, and an integrated headphone amplifier
+  with aux input. Runs on 18-volt operation for extended headroom.
+details: |-
+  4-band EQ: Bass (±17 dB @ 40 Hz), Low Mid (±15 dB @ 300 Hz), High Mid
+  (±14 dB @ 800 Hz), Treble (±14 dB @ 4 kHz).
+
+  Foot-switchable broadband Deep and Bright boosts cycle through three modes.
+  Studio-quality XLR balanced DI output with pre/post EQ switching and ground
+  lift for noise-free direct recording. DI output level: 14 dBu nominal.
+
+  Integrated headphone amplifier with mix control and 1/8-inch aux input for
+  practicing with backing tracks. 18-volt operation provides extended headroom
+  and dynamic range.
+
+  Power supply not included. Backed by Aguilar's three-year limited warranty.
+specs: |-
+  - Power: 18V DC (not included)
+  - EQ Bass: ±17 dB @ 40 Hz
+  - EQ Low Mid: ±15 dB @ 300 Hz
+  - EQ High Mid: ±14 dB @ 800 Hz
+  - EQ Treble: ±14 dB @ 4 kHz
+  - DI Output Level: 14 dBu nominal
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Aux Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top
+  - name: Instrument Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: XLR DI Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+prices:
+  - amount: 299.99
+    currency: USD
+id: neOzyklEgk95j81xI5awK
