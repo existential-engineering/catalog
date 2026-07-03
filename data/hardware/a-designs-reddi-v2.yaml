@@ -1,0 +1,110 @@
+id: YTkHXPgYEGGTOB6ro7Sg3
+name: REDDI V2 Dual-Channel All-Tube Direct Box
+manufacturer: a-designs
+primaryCategory: di-box
+categories:
+  - preamp
+  - rack-mount
+  - outboard
+url: https://adesignsaudio.com/reddi-v2-tube-di-box
+description: A dual-channel, all-tube direct box featuring custom-wound CineMag
+  transformers in a 2RU rack chassis, combining two independent REDDI channels
+  inspired by the Ampeg B-15 circuit for bass, stereo keyboards, and
+  synthesizers.
+details: |-
+  The REDDI V2 is a dual-channel, all-tube direct box handmade in the USA,
+  designed for bass guitars, stereo keyboards, synthesizers, and acoustic
+  instruments. Each channel uses a 6N1P tube-driven amplifier stage in a
+  zero-feedback loop topology, inheriting the circuit philosophy inspired by
+  the classic Ampeg B-15 bass amplifier.
+
+  Both channels feature custom-wound CineMag transformers, delivering a wide
+  frequency response from 20Hz to 60kHz. The transformer-coupled outputs
+  prevent phase shift across the audio band, contributing to the unit's
+  transparent and musical character.
+
+  The REDDI V2 occupies 2RU of rack space and provides front-panel Neutrik
+  combo XLR/1/4" inputs on each channel with a 0–16dB level control. Balanced
+  XLR outputs and 1/4" thru-pass jacks allow the signal to be split
+  simultaneously to a recording chain and a stage amplifier.
+
+  With an input impedance of 1MΩ and a maximum output level of +22dBu, the
+  unit handles high-output instruments and synthesizers without overloading.
+  Each channel includes a ground lift toggle switch to eliminate hum caused
+  by ground loops in live and studio settings.
+specs: |-
+  - Frequency Response: 20Hz–60kHz
+  - Input Impedance: 1MΩ
+  - Output Impedance: 600Ω
+  - Gain Range: 0–16dB
+  - Maximum Output Level: +22dBu
+  - Noise (EIN): -126dB
+  - THD Distortion: <0.08% @ 1kHz
+  - Power: 100/120/230VAC, 42W
+  - Dimensions: 19" W × 3.5" H × 10.5" D (2RU)
+  - Weight: 13 lbs
+  - Tube: 6N1P per channel
+  - Transformers: Custom-wound CineMag (per channel)
+  - Handmade in USA
+  - 1-year warranty
+io:
+  - name: Input Ch 1
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Input Ch 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Output Ch 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output Ch 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Thru Ch 1
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Thru Ch 2
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - type: support
+    title: User Manual (PDF)
+    url: https://adesignsaudio.com/docs/Reddi-Manual-201307.pdf
+videos:
+  - videoId: lCiMIBgun24
+    title: REDDI Intro by Peter Montessi
+  - videoId: HB7v1tFGgpA
+    title: REDDI Review
+  - videoId: NzzDSQKanKY
+    title: Fuse and Voltage Change

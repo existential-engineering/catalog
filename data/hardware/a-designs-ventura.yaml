@@ -1,0 +1,99 @@
+id: QQ4LydZT9XvqMfxfExALT
+name: Ventura Microphone Preamp, EQ and D.I. Box
+manufacturer: a-designs
+primaryCategory: preamp
+categories:
+  - equalizer
+  - di-box
+  - channel-strip
+  - rack-mount
+  - analog
+  - outboard
+  - discontinued
+url: https://adesignsaudio.com/ventura-preamp-eq-di
+description: A three-in-one 1U combination unit featuring an independent
+  microphone preamp with Jensen input transformer, 3-band parametric EQ inspired
+  by the Quad Eight design, and instrument preamp/D.I., with separate access
+  inputs and outputs for each section. No longer in production.
+details: |-
+  The Ventura is a versatile three-in-one design offering separate access
+  inputs and outputs to the Microphone Preamp, Instrument Preamp/D.I., and
+  Parametric Equalizer. This allows each section to be used independently
+  or in combination.
+
+  The microphone preamp features a Jensen microphone input transformer and
+  Cinemag transformer balanced outputs, with silver contact toggle switches
+  throughout for reliability and signal integrity.
+
+  The parametric equalizer section is a 3-band design inspired by the Quad
+  Eight style, offering 33 selectable frequencies spanning 50Hz to 15kHz,
+  along with high and low pass filters at 9kHz and 150Hz knees respectively.
+
+  An insert point between the preamp and equalizer allows external processors
+  to be integrated into the signal path. The instrument input features a
+  20M ohm impedance for transparent DI capture.
+
+  The Ventura is no longer in production. A-Designs recommends the Pacifica
+  Preamp as an alternative.
+specs: |-
+  - Frequency Response: >20Hz to 20kHz
+  - Gain Range (Mic): -62dBV to +30dBV
+  - Gain Range (Instrument): 70dB
+  - Input Impedance (Mic): 1.4k ohm
+  - Input Impedance (Instrument): 20M ohm
+  - Input Impedance (Insert): 15k ohm
+  - Noise: >89dBm
+  - Distortion: <0.01%
+  - EQ: 3-band parametric, 33 frequencies, 50Hz–15kHz
+  - High pass filter knee: 150Hz
+  - Low pass filter knee: 9kHz
+  - Dimensions: 19" W × 1.75" H × 10" D (1U)
+  - Weight: 14 lbs
+  - Jensen microphone input transformer
+  - Cinemag transformer balanced outputs
+  - Silver contact toggle switches
+  - Insert point between preamp and EQ
+  - Made in the USA
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Insert Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Direct/Mult Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: Signal Flow Chart (PDF)
+    url: https://adesignsaudio.com/docs/VenturaFlow6-16-16.pdf
+  - type: support
+    title: Owner's Manual (PDF)
+    url: https://adesignsaudio.com/docs/Ventura-Manual-201307.pdf
