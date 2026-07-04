@@ -107,6 +107,16 @@ io:
 
 **Semantic distinction:** `type` describes the signal characteristic (line, instrument, headphone, midi, usb, expression). `connection` describes the physical connector (1/4-inch, xlr, usb-c, 5-pin din). Don't swap them.
 
+**Passive speakers use `speaker-level`, not `line`.** Passive-loudspeaker inputs
+(speakON, binding-post, banana, euroblock, barrier/spring terminals) carry
+amplified signals — set `type: speaker-level`. `line` is for low-voltage
+preamp/mixer outputs; a powered speaker input is never `line`.
+
+**Required presence (blocks CI):** every hardware `io` entry must include
+`maxConnections` (default `1`) and, except on played instruments
+(guitars/basses), `position`. Every product entry must include `primaryCategory`.
+These are enforced by `pnpm validate`, not just review.
+
 ## Content Entries
 
 Content entries (presets, sample packs, expansions) live in `data/content/` as a separate collection. Content `primaryCategory` values include `preset`, `preset-pack`, `sample-pack`, `drum-sample-pack`, `loop-pack`, `sound-library`, `soundfont`, `impulse-response`, and `multisample`.
