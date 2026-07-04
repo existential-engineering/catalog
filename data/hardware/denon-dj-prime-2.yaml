@@ -58,33 +58,61 @@ io:
     connection: combo jack
     maxConnections: 1
     position: Bottom
-  - name: Line Input
+  - name: Line Input L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Master Output (XLR)
+  - name: Line Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Master Output (XLR) L
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Master Output (RCA)
+  - name: Master Output (XLR) R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Master Output (RCA) L
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Booth Output
+  - name: Master Output (RCA) R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Booth Output L
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Booth Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Bottom
   - name: Headphone Output (1/4")
     signalFlow: output

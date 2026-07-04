@@ -37,12 +37,26 @@ specs: |-
   - Power consumption (idle): 22 W
   - Power consumption (full output): 1500 W
 io:
-  - name: Analog Input
+  - name: Analog Input 1
     signalFlow: input
     category: audio
     type: line
     connection: xlr
-    maxConnections: 3
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Bottom
   - name: LFE Input
     signalFlow: input
@@ -51,12 +65,19 @@ io:
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: Analog Output
+  - name: Analog Output 1
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Analog Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Bottom
   - name: AES/EBU Digital Input
     signalFlow: input

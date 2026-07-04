@@ -35,12 +35,19 @@ specs: |-
   - Recommended power level: >250mW
   - Weight: 540g
 io:
-  - name: Headphone Cable Input
+  - name: Headphone Cable Input (Left)
     signalFlow: input
     category: audio
     type: headphone
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Cable Input (Right)
+    signalFlow: input
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
     position: Bottom
 links:
   - type: support

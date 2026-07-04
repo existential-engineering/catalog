@@ -23,19 +23,33 @@ specs: |-
   - powerConsumption: 55W (operating), 0.3W (standby)
   - supportedFormats: MP3, WMA, AAC, FLAC (up to 192kHz/24-bit), ALAC, WAV, AIFF, DSD (2.8/5.6 MHz)
 io:
-  - name: Analog Audio In
+  - name: Analog Audio In L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Analog Audio Out
+  - name: Analog Audio In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Audio Out L
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Analog Audio Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Right
   - name: Digital Optical In 1
     signalFlow: input

@@ -44,12 +44,61 @@ specs: |-
   - Innofader Pro 2 compatible (replaceable/upgradeable crossfader)
   - Aux channel and External Return routable through the filter
 io:
-  - name: Phono / Line Inputs (Channels 1-4)
+  - name: Phono / Line Input Channel 1 L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 8
+    maxConnections: 1
+    position: Left
+  - name: Phono / Line Input Channel 1 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Phono / Line Input Channel 2 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Phono / Line Input Channel 2 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Phono / Line Input Channel 3 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Phono / Line Input Channel 3 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Phono / Line Input Channel 4 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Phono / Line Input Channel 4 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Left
   - name: Mic Input (Mic/Aux Channel)
     signalFlow: input
@@ -58,12 +107,19 @@ io:
     connection: xlr
     maxConnections: 1
     position: Left
-  - name: Aux / Mic Input (1/4" Jack)
+  - name: Aux / Mic Input (1/4" Jack) L
     signalFlow: input
     category: audio
     type: line
     connection: trs-1-4
-    maxConnections: 2
+    maxConnections: 1
+    position: Left
+  - name: Aux / Mic Input (1/4" Jack) R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: trs-1-4
+    maxConnections: 1
     position: Left
   - name: Send (External FX, Line or Hi-Z)
     signalFlow: output
@@ -72,12 +128,19 @@ io:
     connection: trs-1-4
     maxConnections: 1
     position: Left
-  - name: Return (External FX / Master Insert)
+  - name: Return (External FX / Master Insert) L
     signalFlow: input
     category: audio
     type: line
     connection: trs-1-4
-    maxConnections: 2
+    maxConnections: 1
+    position: Left
+  - name: Return (External FX / Master Insert) R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: trs-1-4
+    maxConnections: 1
     position: Left
   - name: USB 2.0 (20 Channel 24-bit/96kHz Soundcard)
     signalFlow: bidirectional

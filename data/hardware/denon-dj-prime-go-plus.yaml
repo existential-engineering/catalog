@@ -43,33 +43,61 @@ io:
     connection: combo jack
     maxConnections: 1
     position: Right
-  - name: Aux Input (L/R)
+  - name: Aux Input (L)
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Master Output (XLR Balanced)
+  - name: Aux Input (R)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Master Output (XLR Balanced) L
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Master Output (RCA Unbalanced)
+  - name: Master Output (XLR Balanced) R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Master Output (RCA Unbalanced) L
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Booth Output (Balanced)
+  - name: Master Output (RCA Unbalanced) R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Booth Output (Balanced) L
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Booth Output (Balanced) R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: Headphone Output (1/4")
     signalFlow: output

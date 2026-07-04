@@ -35,10 +35,17 @@ specs: |-
   - Weight: 23g/pair
   - Cable: Premium OCC braided cable (1.2m)
 io:
-  - name: Headphone Cable Input
+  - name: Headphone Cable Input (Left)
     signalFlow: input
     category: audio
     type: headphone
     connection: 1/8-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Cable Input (Right)
+    signalFlow: input
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
     position: Bottom

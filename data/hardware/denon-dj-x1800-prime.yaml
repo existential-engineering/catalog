@@ -63,33 +63,61 @@ specs: |-
   - Dimensions (inches): 12.2" x 17.5" x 4.3"
   - Weight: 15.43 lbs / 7.00 kg (without USB/power cable)
 io:
-  - name: Line/Phono Input 1
+  - name: Line/Phono Input 1 L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Line/Phono Input 2
+  - name: Line/Phono Input 1 R
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Line/Phono Input 3
+  - name: Line/Phono Input 2 L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Line/Phono Input 4
+  - name: Line/Phono Input 2 R
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Line/Phono Input 3 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Line/Phono Input 3 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Line/Phono Input 4 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Line/Phono Input 4 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: Mic 1 Input (XLR+1/4")
     signalFlow: input
@@ -154,26 +182,47 @@ io:
     connection: rca
     maxConnections: 1
     position: Bottom
-  - name: Master Output (XLR Balanced)
+  - name: Master Output L (XLR Balanced)
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Master Output (RCA Unbalanced)
+  - name: Master Output R (XLR Balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Master Output L (RCA Unbalanced)
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Record Output
+  - name: Master Output R (RCA Unbalanced)
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Record Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Record Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: Booth Output L
     signalFlow: output

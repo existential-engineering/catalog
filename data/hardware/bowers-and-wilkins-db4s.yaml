@@ -38,26 +38,47 @@ searchTerms:
   - DB 4S
 
 io:
-  - name: XLR In (Balanced)
+  - name: XLR In (Balanced) L
     signalFlow: input
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: RCA In (Unbalanced)
+  - name: XLR In (Balanced) R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: RCA In (Unbalanced) L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: 3.5mm In
+  - name: RCA In (Unbalanced) R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: 3.5mm In L
     signalFlow: input
     category: audio
     type: line
     connection: 1/8-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: 3.5mm In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
     position: Bottom
   - name: 12V Trigger In
     signalFlow: input

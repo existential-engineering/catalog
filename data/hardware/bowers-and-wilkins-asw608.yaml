@@ -38,12 +38,19 @@ searchTerms:
   - ASW 608
 
 io:
-  - name: Line In (Stereo)
+  - name: Line In (L)
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Line In (R)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: Speaker In
     signalFlow: input

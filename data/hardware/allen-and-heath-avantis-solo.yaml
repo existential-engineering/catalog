@@ -45,12 +45,47 @@ specs: |-
   - Optional dPack upgrade: 96 channels, 56 busses, 24 Dyn8 instances, DEEP Compressors, NEQ12, RackUltra FX Suite (requires RackUltra FX Card)
   - Optional RackUltra FX Card: 8 RackUltra FX slots, PEQ and Dynamics on input and output of each slot, 8 stereo sends and returns
 io:
-  - name: Local Analogue XLR Inputs (1-6)
+  - name: Local Analogue XLR Input 1
     signalFlow: input
     category: audio
     type: mic
     connection: xlr
-    maxConnections: 6
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 5
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 6
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
     position: Bottom
   - name: AES Stereo Input
     signalFlow: input
@@ -59,12 +94,47 @@ io:
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: Local Analogue XLR Outputs (1-6)
+  - name: Local Analogue XLR Output 1
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 6
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 6
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Bottom
   - name: AES Stereo Output
     signalFlow: output

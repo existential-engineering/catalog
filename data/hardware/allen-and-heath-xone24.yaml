@@ -45,12 +45,19 @@ details:
     switch; tactile illuminated switches with backlight; latching/non-latching
     Cue modes; RGB chromatic channel meters."
 io:
-  - name: Channel Phono/Line Inputs
+  - name: Channel 1 Phono/Line Input
     signalFlow: input
     category: audio
     type: line-phono
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Left
+  - name: Channel 2 Phono/Line Input
+    signalFlow: input
+    category: audio
+    type: line-phono
+    connection: rca
+    maxConnections: 1
     position: Left
   - name: Master Insert Send
     signalFlow: output

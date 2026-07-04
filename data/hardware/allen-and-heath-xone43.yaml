@@ -28,12 +28,33 @@ details: |-
 
   Features: 4 channels with phono/line inputs; Xone:VCF filters; 3-band isolator EQ; external FX loop with dry/wet control per channel; XLR mic input with 2-band EQ; independent XLR Master, and RCA Booth and Record outputs; touring grade build quality; Innofader compatible.
 io:
-  - name: Channel Phono/Line Inputs
+  - name: Channel 1 Phono/Line Input
     signalFlow: input
     category: audio
     type: line-phono
     connection: rca
-    maxConnections: 4
+    maxConnections: 1
+    position: Left
+  - name: Channel 2 Phono/Line Input
+    signalFlow: input
+    category: audio
+    type: line-phono
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Channel 3 Phono/Line Input
+    signalFlow: input
+    category: audio
+    type: line-phono
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Channel 4 Phono/Line Input
+    signalFlow: input
+    category: audio
+    type: line-phono
+    connection: rca
+    maxConnections: 1
     position: Left
   - name: Mic Input
     signalFlow: input
@@ -42,40 +63,75 @@ io:
     connection: xlr
     maxConnections: 1
     position: Right
-  - name: Main Mix Output
+  - name: Main Mix Output L
     signalFlow: output
     category: audio
     type: main
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Left
-  - name: Booth Output
+  - name: Main Mix Output R
+    signalFlow: output
+    category: audio
+    type: main
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Booth Output L
     signalFlow: output
     category: audio
     type: booth
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Left
-  - name: Record Output
+  - name: Booth Output R
+    signalFlow: output
+    category: audio
+    type: booth
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Record Output L
     signalFlow: output
     category: audio
     type: record
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Left
-  - name: X:FX Send
+  - name: Record Output R
+    signalFlow: output
+    category: audio
+    type: record
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: X:FX Send L
     signalFlow: output
     category: audio
     type: fx-send
     connection: trs
-    maxConnections: 2
+    maxConnections: 1
     position: Left
-  - name: X:FX Return
+  - name: X:FX Send R
+    signalFlow: output
+    category: audio
+    type: fx-send
+    connection: trs
+    maxConnections: 1
+    position: Left
+  - name: X:FX Return L
     signalFlow: input
     category: audio
     type: fx-return
     connection: trs
-    maxConnections: 2
+    maxConnections: 1
+    position: Left
+  - name: X:FX Return R
+    signalFlow: input
+    category: audio
+    type: fx-return
+    connection: trs
+    maxConnections: 1
     position: Left
   - name: Headphones Output (1/4")
     signalFlow: output
