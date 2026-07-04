@@ -25,6 +25,7 @@ reviews:
         - Do NOT use `|` for block scalars; always use `|-` (strips trailing newlines)
         - Hardware `io` entries must use field order: name, signalFlow, category, type, connection, maxConnections, position
         - Hardware `io` entries should include `maxConnections` field
+        - `url` and `links[].url` must be trimmed with no raw whitespace — percent-encode literal spaces as `%20`
 
         Semantic correctness (validation passes these; only a reviewer catches them — see CLAUDE.md):
         - `maxConnections` must NOT aggregate multiple physical jacks. Default is 1.
@@ -34,6 +35,10 @@ reviews:
           carries multiple discrete channels (ADAT toslink = 8, DB25 = 8, MADI = 64).
           Flag any `maxConnections > 1` on 1/4-inch, 1/8-inch, xlr, combo jack, rca,
           5-pin din, usb, or thunderbolt.
+        - Passive-loudspeaker inputs (speakON, binding-post, banana, euroblock,
+          barrier/spring terminals) carry amplified signals — use `type: speaker-level`,
+          NOT `type: line`. Line-level is for preamp/mixer outputs; a powered speaker
+          input is speaker-level.
         - `versions` is release history ONLY (firmware/software point releases). It must
           NOT enumerate parallel SKUs, form factors, or model variants sold concurrently.
         - Cosmetic-only differences (color/finish, identical I/O and capabilities) belong

@@ -63,6 +63,11 @@ jobs:
           pnpm generate:schemas
           git diff --exit-code schema/json/ || (echo "::error::JSON schemas are out of date. Run 'pnpm generate:schemas' and commit the results." && exit 1)
 
+      - name: Check CONTEXT.md is up to date
+        run: |
+          pnpm generate:context
+          git diff --exit-code schema/CONTEXT.md || (echo "::error::schema/CONTEXT.md is out of date. Run 'pnpm generate:context' and commit the result." && exit 1)
+
       - name: Check formatting
         run: pnpm format:check
 

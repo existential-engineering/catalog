@@ -84,58 +84,68 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: MIDI In
     signalFlow: input
     category: midi
     type: midi
     connection: 5-pin din
+    maxConnections: 1
     position: Left
   - name: MIDI Out
     signalFlow: output
     category: midi
     type: midi
     connection: 5-pin din
+    maxConnections: 1
     position: Right
   - name: USB
     signalFlow: input
     category: digital
     type: usb
     connection: usb-b
+    maxConnections: 1
     position: Top
   - name: Analog Clock In
     signalFlow: input
     category: digital
     type: word clock
     connection: 1/4-inch
+    maxConnections: 1
     position: Left
   - name: Analog Clock Out
     signalFlow: output
     category: digital
     type: word clock
     connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: Expression Pedal Input 1
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/4-inch
+    maxConnections: 1
     position: Left
   - name: Expression Pedal Input 2
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/4-inch
+    maxConnections: 1
     position: Left
   - name: Sustain Pedal Input
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/4-inch
+    maxConnections: 1
     position: Left
   - name: Power
     signalFlow: input
     category: power
     type: power
     connection: barrel
+    maxConnections: 1
     position: Top
