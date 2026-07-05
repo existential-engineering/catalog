@@ -142,19 +142,33 @@ io:
     connection: combo jack
     maxConnections: 1
     position: Bottom
-  - name: Channel 5/6 Stereo Line
+  - name: Channel 5 Stereo Line
     signalFlow: input
     category: audio
     type: line
     connection: combo jack
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Channel 7/8 Stereo Line
+  - name: Channel 6 Stereo Line
     signalFlow: input
     category: audio
     type: line
     connection: combo jack
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 7 Stereo Line
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 8 Stereo Line
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
     position: Bottom
   - name: Hi-Z Instrument
     signalFlow: input
@@ -163,12 +177,19 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Bottom
-  - name: RCA Stereo Input
+  - name: RCA Stereo Input L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: RCA Stereo Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: 3.5 mm Stereo Input
     signalFlow: input

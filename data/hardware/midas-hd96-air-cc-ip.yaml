@@ -101,19 +101,117 @@ specs: |-
   - Bluetooth compatibility: Supports GAP, SDN, PAN, SPP, IAP, HFP 1.5, GATT, ATTR, IAP, A2DP, ACRP
   - Bluetooth maximum communication range: 30 m typical
 io:
-  - name: Analogue / AES3 in (switchable)
+  - name: Analogue / AES3 in (switchable) 1
     signalFlow: input
     category: audio
     type: line
     connection: xlr
-    maxConnections: 8
+    maxConnections: 1
     position: Right
-  - name: Analogue / AES3 out (switchable)
+  - name: Analogue / AES3 in (switchable) 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 in (switchable) 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 in (switchable) 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 in (switchable) 5
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 in (switchable) 6
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 in (switchable) 7
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 in (switchable) 8
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 out (switchable) 1
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 8
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 out (switchable) 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 out (switchable) 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 out (switchable) 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 out (switchable) 5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 out (switchable) 6
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 out (switchable) 7
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analogue / AES3 out (switchable) 8
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Right
   - name: AES50
     signalFlow: bidirectional
@@ -164,12 +262,61 @@ io:
     connection: ethernet
     maxConnections: 2
     position: Right
-  - name: USB 3.0 (type A, 5 V / 900 mA)
+  - name: USB 3.0 (type A, 5 V / 900 mA) 1
     signalFlow: bidirectional
     category: digital
     type: usb
     connection: usb-a
-    maxConnections: 8
+    maxConnections: 1
+    position: Right
+  - name: USB 3.0 (type A, 5 V / 900 mA) 2
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right
+  - name: USB 3.0 (type A, 5 V / 900 mA) 3
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right
+  - name: USB 3.0 (type A, 5 V / 900 mA) 4
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right
+  - name: USB 3.0 (type A, 5 V / 900 mA) 5
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right
+  - name: USB 3.0 (type A, 5 V / 900 mA) 6
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right
+  - name: USB 3.0 (type A, 5 V / 900 mA) 7
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right
+  - name: USB 3.0 (type A, 5 V / 900 mA) 8
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
     position: Right
   - name: USB service (micro-USB)
     signalFlow: bidirectional
@@ -192,12 +339,19 @@ io:
     connection: built-in
     maxConnections: 2
     position: Right
-  - name: MIDI in / out
-    signalFlow: bidirectional
+  - name: MIDI in
+    signalFlow: input
     category: midi
     type: midi
     connection: 5-pin din
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: MIDI out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
     position: Right
   - name: Lamp (4-pin, 12 VDC / 150 mA max)
     signalFlow: output

@@ -40,12 +40,19 @@ searchTerms:
   - ASW 610
 
 io:
-  - name: Line input (RCA)
+  - name: Line input (RCA) L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Line input (RCA) R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: Speaker-level input
     signalFlow: input

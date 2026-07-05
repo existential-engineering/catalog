@@ -68,19 +68,33 @@ io:
     connection: combo jack
     maxConnections: 1
     position: Bottom
-  - name: Stereo Line Input (L/R)
+  - name: Stereo Line Input (L)
     signalFlow: input
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Stereo Line Input (RCA)
+  - name: Stereo Line Input (R)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Stereo Line Input (RCA L)
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Stereo Line Input (RCA R)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: AES/EBU Digital Input
     signalFlow: input

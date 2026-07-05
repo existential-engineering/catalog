@@ -25,26 +25,47 @@ specs: |-
   - Dimensions (W x D x H): 28.3" x 15.9" x 3.9"
   - Weight: 12.8 lbs.
 io:
-  - name: Main Output (XLR)
+  - name: Main Output (XLR) L
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Main Output (RCA)
+  - name: Main Output (XLR) R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Main Output (RCA) L
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Booth Output
+  - name: Main Output (RCA) R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Booth Output L
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Booth Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: Headphone Output (1/4")
     signalFlow: output
@@ -74,19 +95,33 @@ io:
     connection: combo jack
     maxConnections: 1
     position: Right
-  - name: Aux Input (RCA)
+  - name: Aux Input (RCA) L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: USB Media Ports
+  - name: Aux Input (RCA) R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: USB Media Port 1
     signalFlow: input
     category: digital
     type: usb
     connection: usb-a
-    maxConnections: 2
+    maxConnections: 1
+    position: Top
+  - name: USB Media Port 2
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
     position: Top
   - name: USB Port (to computer)
     signalFlow: bidirectional

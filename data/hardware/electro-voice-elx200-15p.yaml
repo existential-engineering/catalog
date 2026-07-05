@@ -73,12 +73,19 @@ specs: |-
   - suspension: 3 M10 threaded mounting points
   - colorOptions: Black or White
 io:
-  - name: Input 1
+  - name: Input 1 L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Input 1 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: Input 2
     signalFlow: input

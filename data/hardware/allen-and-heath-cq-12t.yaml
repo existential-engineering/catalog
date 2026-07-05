@@ -28,40 +28,145 @@ details: |-
 
   Integrated Automatic Mic Mixer (AMM) instantly reduces background noise and improves clarity for speech applications. AMM is available on all input channels, making it perfect for conferences, podcasts, debates and small-scale theatre productions.
 io:
-  - name: Mic/Line Input (XLR)
+  - name: Mic/Line Input 1 (XLR)
     signalFlow: input
     category: audio
     type: mic
     connection: xlr
-    maxConnections: 5
+    maxConnections: 1
     position: Top
-  - name: Mic/Line Combi Input
+  - name: Mic/Line Input 2 (XLR)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input 3 (XLR)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input 4 (XLR)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Input 5 (XLR)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Combi Input 1
     signalFlow: input
     category: audio
     type: mic
     connection: combo jack
-    maxConnections: 5
+    maxConnections: 1
     position: Top
-  - name: Stereo Line Input
+  - name: Mic/Line Combi Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Combi Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Combi Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Top
+  - name: Mic/Line Combi Input 5
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Top
+  - name: Stereo Line Input L
     signalFlow: input
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
     position: Top
-  - name: Main Mix Output (XLR)
+  - name: Stereo Line Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Main Mix Output L (XLR)
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Top
-  - name: Monitor Output (TRS)
+  - name: Main Mix Output R (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Monitor Output 1 (TRS)
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 6
+    maxConnections: 1
+    position: Top
+  - name: Monitor Output 2 (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Monitor Output 3 (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Monitor Output 4 (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Monitor Output 5 (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Monitor Output 6 (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Top
   - name: Assignable Headphone Output
     signalFlow: output

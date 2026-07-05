@@ -46,19 +46,33 @@ specs: |-
   - Supported File Systems: exFAT, FAT32
   - Supported Audio Formats: AAC/M4A, AIF/AIFF, ALAC, FLAC, MP3, MP4, Ogg Vorbis, WAV
 io:
-  - name: Master Output 1
+  - name: Master Output 1 L
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Master Output 2
+  - name: Master Output 1 R
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Master Output 2 L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Master Output 2 R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: Digital Output 1
     signalFlow: output

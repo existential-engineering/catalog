@@ -13,33 +13,61 @@ details: |-
 
   The tube-based gain path delivers the warm character associated with high-voltage vacuum tube amplification. Notched potentiometers and discrete selectors on the front panel allow precise, repeatable settings. The 586 occupies two rack units and is suitable for stereo recording or simultaneous recording of two independent sources.
 io:
-  - name: Mic Input
+  - name: Mic Input 1
     signalFlow: input
     category: audio
     type: mic
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Instrument Input
+  - name: Mic Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input 1
     signalFlow: input
     category: audio
     type: instrument
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
     position: Top
-  - name: Line Output
+  - name: Instrument Input 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Line Output (XLR) 1
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Line Output
+  - name: Line Output (XLR) 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Output (1/4") 1
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Line Output (1/4") 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Right
 links:
   - type: resource

@@ -46,12 +46,19 @@ io:
     connection: ethernet
     maxConnections: 2
     position: Bottom
-  - name: Thunderbolt 3
+  - name: Thunderbolt 3 Port 1
     signalFlow: bidirectional
     category: audio
     type: thunderbolt
     connection: thunderbolt 3
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Thunderbolt 3 Port 2
+    signalFlow: bidirectional
+    category: audio
+    type: thunderbolt
+    connection: thunderbolt 3
+    maxConnections: 1
     position: Bottom
   - name: ADAT / S/PDIF Optical Input
     signalFlow: input
@@ -109,12 +116,19 @@ io:
     connection: bnc
     maxConnections: 1
     position: Bottom
-  - name: Headphone Output
+  - name: Headphone Output 1
     signalFlow: output
     category: audio
     type: headphone
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
     position: Bottom
   - name: AC Power Input
     signalFlow: input

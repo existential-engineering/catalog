@@ -47,12 +47,19 @@ io:
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: Stereo Inputs
+  - name: Stereo Input L
     signalFlow: input
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Stereo Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Bottom
   - name: Slave Output
     signalFlow: output
@@ -61,12 +68,19 @@ io:
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: SAT Outputs
+  - name: SAT Output L
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: SAT Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Bottom
 links:
   - type: support

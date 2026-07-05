@@ -33,19 +33,33 @@ specs: |-
   - Dimensions (W x D x H): 26.7" x 15.4" x 3.9"
   - Weight: 10.1 lbs
 io:
-  - name: Master Out (Balanced)
+  - name: Master Out (Balanced) L
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: Master Out (Unbalanced)
+  - name: Master Out (Balanced) R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Master Out (Unbalanced) L
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Master Out (Unbalanced) R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Right
   - name: Headphones (1/4")
     signalFlow: output
@@ -68,12 +82,19 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - name: USB (Media)
+  - name: USB (Media) 1
     signalFlow: bidirectional
     category: digital
     type: usb
     connection: usb-a
-    maxConnections: 2
+    maxConnections: 1
+    position: Top
+  - name: USB (Media) 2
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
     position: Top
   - name: USB (Computer)
     signalFlow: bidirectional

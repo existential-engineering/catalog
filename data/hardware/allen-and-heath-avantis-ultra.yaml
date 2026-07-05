@@ -47,19 +47,89 @@ specs: |-
   - Internal storage for stereo playback and recording
   - Compatible with Harrison LiveTrax multitrack recording and virtual sound check
 io:
-  - name: Local Analogue XLR Inputs (1-8)
+  - name: Local Analogue XLR Input 1
     signalFlow: input
     category: audio
     type: mic
     connection: xlr
-    maxConnections: 8
+    maxConnections: 1
     position: Bottom
-  - name: Local Analogue XLR Inputs (9-12)
+  - name: Local Analogue XLR Input 2
     signalFlow: input
     category: audio
     type: mic
     connection: xlr
-    maxConnections: 4
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 5
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 6
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 7
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 8
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 9
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 10
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 11
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Input 12
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
     position: Bottom
   - name: AES Stereo Input
     signalFlow: input
@@ -68,26 +138,103 @@ io:
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: Local Analogue XLR Outputs (1-8)
+  - name: Local Analogue XLR Output 1
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 8
+    maxConnections: 1
     position: Bottom
-  - name: Local Analogue XLR Outputs (9-12)
+  - name: Local Analogue XLR Output 2
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 4
+    maxConnections: 1
     position: Bottom
-  - name: AES Stereo Outputs (1-2)
+  - name: Local Analogue XLR Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 6
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 7
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 8
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 9
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 10
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 11
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Local Analogue XLR Output 12
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: AES Stereo Output 1
     signalFlow: output
     category: digital
     type: aes/ebu
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: AES Stereo Output 2
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
     position: Bottom
   - name: SLink Port (Remote I/O / ME Personal Mixing)
     signalFlow: bidirectional

@@ -39,12 +39,19 @@ specs: |-
   - Cables: 8ft cable with mic (1/8 inch TRRS) and braided LCD cable without mic (1/4 inch TRS)
   - SKU: 100-GX-1020-01
 io:
-  - name: Headphone Cable Input
+  - name: Headphone Cable Input (Left)
     signalFlow: input
     category: audio
     type: headphone
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Cable Input (Right)
+    signalFlow: input
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
     position: Bottom
   - name: Headset Cable Input (with Mic)
     signalFlow: bidirectional

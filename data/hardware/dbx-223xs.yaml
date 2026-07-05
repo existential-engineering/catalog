@@ -48,12 +48,19 @@ io:
     connection: xlr
     maxConnections: 1
     position: Right
-  - name: Low Output
+  - name: Low Output L
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Low Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Right
   - name: Mid Output
     signalFlow: output
@@ -62,12 +69,19 @@ io:
     connection: xlr
     maxConnections: 1
     position: Right
-  - name: High Output
+  - name: High Output L
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: High Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Right
 links:
   - type: support

@@ -37,26 +37,47 @@ searchTerms:
   - DB 2D
 
 io:
-  - name: XLR Input
+  - name: XLR Input L
     signalFlow: input
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: RCA Input
+  - name: XLR Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: RCA Input L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: 3.5mm Input
+  - name: RCA Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: 3.5mm Input 1
     signalFlow: input
     category: audio
     type: line
     connection: 1/8-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: 3.5mm Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
     position: Bottom
   - name: 12V Trigger
     signalFlow: input

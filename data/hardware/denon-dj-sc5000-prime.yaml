@@ -69,19 +69,33 @@ specs: |-
   - Dimensions (mm): 320 x 419 x 135 (W x D x H)
   - Weight: 8.79 lbs / 4 kg (without USB and power cable)
 io:
-  - name: RCA Output Pair 1 (Layer A, Analog Line Out, L/R)
+  - name: RCA Output Pair 1 (Layer A, Analog Line Out) L
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: RCA Output Pair 2 (Layer B, Analog Line Out, L/R)
+  - name: RCA Output Pair 1 (Layer A, Analog Line Out) R
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: RCA Output Pair 2 (Layer B, Analog Line Out) L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: RCA Output Pair 2 (Layer B, Analog Line Out) R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: Coaxial Digital Output (Layer A, S/PDIF, 24-bit/96 kHz)
     signalFlow: output
@@ -104,12 +118,19 @@ io:
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
-  - name: USB Type-A (Rear, USB 3.0, 900 mA)
+  - name: USB Type-A 1 (Rear, USB 3.0, 900 mA)
     signalFlow: input
     category: digital
     type: usb
     connection: usb-a
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: USB Type-A 2 (Rear, USB 3.0, 900 mA)
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
     position: Bottom
   - name: USB Type-A (Front, USB 2.0, 500 mA)
     signalFlow: input

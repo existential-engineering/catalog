@@ -37,19 +37,33 @@ specs: |-
   - Supported File Systems: exFAT, FAT32
   - Supported Audio Formats: AAC/M4A, AIF/AIFF, ALAC, FLAC, MP3, MP4, Ogg Vorbis, WAV (up to 192 kHz, 32-bit)
 io:
-  - name: Layer A Analog Output
+  - name: Layer A Analog Output L
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Layer B Analog Output
+  - name: Layer A Analog Output R
     signalFlow: output
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Layer B Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Layer B Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Bottom
   - name: Layer A Digital Output
     signalFlow: output

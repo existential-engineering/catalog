@@ -268,19 +268,33 @@ io:
     connection: bnc
     maxConnections: 1
     position: Right
-  - name: MIDI In 1-2 (5-pin DIN)
+  - name: MIDI In 1 (5-pin DIN)
     signalFlow: input
     category: midi
     type: midi
     connection: 5-pin din
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: MIDI Out 1-2 (5-pin DIN)
+  - name: MIDI In 2 (5-pin DIN)
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out 1 (5-pin DIN)
     signalFlow: output
     category: midi
     type: midi
     connection: 5-pin din
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out 2 (5-pin DIN)
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
     position: Right
   - name: USB 2.0 (Type B, rear)
     signalFlow: bidirectional

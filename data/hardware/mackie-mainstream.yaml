@@ -67,12 +67,19 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - name: Monitor Out
+  - name: Monitor Out L
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Monitor Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Bottom
   - name: HDMI Input
     signalFlow: input
@@ -88,12 +95,19 @@ io:
     connection: pin
     maxConnections: 1
     position: Bottom
-  - name: USB-C Hub
+  - name: USB-C Hub 1
     signalFlow: input
     category: digital
     type: usb
     connection: usb-c
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: USB-C Hub 2
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
     position: Bottom
   - name: USB-C Interface
     signalFlow: bidirectional
