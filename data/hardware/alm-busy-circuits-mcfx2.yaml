@@ -1,0 +1,138 @@
+id: H8LAMYVPZvwJcdExdhJfi
+name: MCFx2
+manufacturer: alm-busy-circuits
+primaryCategory: filter
+categories:
+  - analog
+  - modular
+url: https://busycircuits.com/products/alm030
+prices:
+  - amount: 220
+    currency: GBP
+description: >-
+  The MCFx2 is a 14HP dual state variable filter featuring two identical analog
+  3-pole filter cores, each providing Low Pass, High Pass, and Band Pass or
+  Notch outputs with direct and CV control over cutoff frequency and resonance.
+  A Feed switch routes the left filter's output into the right filter in series,
+  while a Link switch parallels the cutoff controls for stereo or synchronized
+  dual-filter operation.
+details: |-
+  The MCFx2 (ALM030) is a 14HP dual state variable filter that doubles the classic MCF filter topology into a standalone module. Each of the two filter cores is a 3-pole design with an 18dB/oct slope, simultaneously providing Low Pass, High Pass, and Band Pass or Notch outputs.
+
+  The Feed switch internally routes the output of Filter A into the input of Filter B in series — enabling cascaded 6-pole slopes or complex spectral shaping. The Link switch parallels the left cutoff control to drive both filter cores simultaneously.
+
+  Both filters self-oscillate at high resonance settings, allowing each filter to function as a sine-wave VCO when patched via its 1V/Oct input. The Audio In of Filter B is normalized to Filter A's input when Feed is disabled.
+specs: |-
+  - Width: 14HP
+  - Depth: 32mm
+  - Power: +12V 85mA / -12V 85mA
+  - Filter Type: State variable, 3-pole (18dB/oct)
+  - Outputs per filter: Low Pass, High Pass, Band Pass or Notch (jumper selectable)
+  - Cutoff CV: Attenuverting input per filter
+  - Resonance CV: Attenuating input per filter
+  - V/Oct Input: 1V/Oct per filter
+  - Feed Switch: Routes Filter A output to Filter B input in series
+  - Link Switch: Parallels left cutoff control to both filter cores
+  - Self-oscillation: Yes
+  - Reverse power protection
+  - Made in England
+  - 2-year warranty
+io:
+  - name: Audio In A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: V/Oct A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Freq CV A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Res CV A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: High A
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: BP/Notch A
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Low A
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio In B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: V/Oct B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Freq CV B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Res CV B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: High B
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: BP/Notch B
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Low B
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

@@ -1,0 +1,158 @@
+id: Y-UZ1Q5iIc9vQgJOem6gK
+name: MEGA-TANG
+manufacturer: alm-busy-circuits
+primaryCategory: mixer
+categories:
+  - modular
+  - utility
+url: https://busycircuits.com/products/alm033
+prices:
+  - amount: 240
+    currency: GBP
+description: >-
+  The MEGA-TANG is a 16HP four-channel linear VCA and stereo mixer designed for
+  live Eurorack performance, offering per-channel control over level, effect
+  send, pan, and soft-mute with LED indicators. It provides a stereo mix output,
+  individual channel outputs for cueing, a mono effect send with stereo return,
+  and an expansion port for the MT-EX1 and MT-EX2 expanders.
+details: |-
+  The MEGA-TANG (ALM033) is a 16HP four-channel linear VCA and stereo mixer that evolved from ALM's Tangle Quartet, adding a stereo mix bus, effect routing, manual panning, and performance-oriented muting in a single module. Each of the four channels uses a 2164 VCA IC for clean, low-noise, bleed-free operation.
+
+  Per-channel controls include a level knob (which doubles as a VCA attenuator when a Level CV is patched), a send knob for routing pre-level signal to the mono effects send bus, and a pan knob for stereo placement in the main mix. Soft-close latching mute buttons with LED indicators allow silent muting during live performance.
+
+  Individual channel outputs tap the VCA signal post-level but pre-send, pan, and mute. A mono effects send and stereo effects return enable integration of external reverb, delay, or other processors. An expansion port connects to MT-EX1 and MT-EX2 expanders.
+specs: |-
+  - Width: 16HP
+  - Depth: 32mm
+  - Power: +12V 125mA / -12V 125mA
+  - VCA Core: 2164 VCA ICs
+  - Signal Level: Euro level throughout (DC-coupled except effects return)
+  - Channels: 4 linear VCAs with per-channel level, send, pan, mute
+  - Effects: Mono send + stereo return
+  - Individual Outputs: 4
+  - Stereo Mix Output: L + R
+  - Level CV Inputs: 4
+  - Expansion Port: Rear connector for MT-EX1 and MT-EX2
+  - Reverse polarity protection
+  - Made in the UK
+  - 2-year warranty
+io:
+  - name: In 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Level CV 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Level CV 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Level CV 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Level CV 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Return L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Return R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Individual Out 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Individual Out 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Individual Out 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Individual Out 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

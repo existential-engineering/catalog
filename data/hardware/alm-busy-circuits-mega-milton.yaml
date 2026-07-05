@@ -1,0 +1,183 @@
+id: z3Q8k1xmpsBj4GW37qAC3
+name: MEGA MILTON
+manufacturer: alm-busy-circuits
+primaryCategory: utility
+categories:
+  - mixer
+  - analog
+  - modular
+url: https://busycircuits.com/products/alm037
+prices:
+  - amount: 160
+    currency: GBP
+description: >-
+  The MEGA MILTON is a compact 8HP Eurorack utility module offering a
+  smorgasbord of all-analog utilities including a stereo line input converter, a
+  four-input summing mixer, a gated slew limiter, a sample and hold with white
+  noise, and a buffered multiple. All sections are normalized together to
+  support common patching workflows such as random CV generation and smooth
+  random voltage sources.
+details: |-
+  The MEGA MILTON (ALM037) is an 8HP all-analog multi-utility Eurorack module that consolidates five essential building blocks into a single compact package.
+
+  The Line Level Input section converts stereo line-level signals (from phones, computers, or other consumer audio gear) up to Eurorack level with a fixed +12dB of gain, splitting the stereo signal into two separate mono outputs.
+
+  The Mixer section is a four-input DC-coupled summing mixer. Three of the inputs have a fixed -6dB attenuation, while the fourth input has a dedicated attenuator knob. When a cable is inserted into the fourth input's separate output jack, that channel is disconnected from the main mix, turning the attenuator into a standalone precision attenuator.
+
+  The Gated Slew section smooths an incoming signal at a rate set by the Slew knob. A gate signal patched to the Enable input toggles the slew on and off dynamically. The Sample & Hold section samples any input voltage on receipt of a trigger. An onboard analog white noise generator (~12Vpp) is normalized to the S&H signal input. The Buffered Multiple takes a single input and distributes it to three outputs with LED polarity indicators.
+specs: |-
+  - Format: Eurorack
+  - Width: 8HP
+  - Depth: 32mm
+  - Power: +12V 70mA / -12V 70mA
+  - Reverse power protection: Yes
+  - Line input gain: Fixed +12dB
+  - Mixer inputs: 4 (3 × fixed -6dB, 1 × variable with attenuator)
+  - Mixer coupling: DC (audio and CV compatible)
+  - Slew: Gated, rate controlled via knob
+  - S&H droop rate: Well below 1mV/sec
+  - Noise output level: ~12Vpp analog white noise
+  - Mult outputs: 3 (buffered, low offset)
+  - Made in England
+  - Warranty: 2 years
+io:
+  - name: Line In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: L Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: R Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix In 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix In 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix In 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Atten In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Atten Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Slew In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Slew Enable
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Slew Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: S&H Trig
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: S&H In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: S&H Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Noise Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mult In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mult Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mult Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mult Out 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

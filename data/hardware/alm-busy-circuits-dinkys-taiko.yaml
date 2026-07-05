@@ -1,0 +1,114 @@
+id: Xy3PiJ2jZC6PCqgtKI8hh
+name: "Dinky's Taiko"
+manufacturer: alm-busy-circuits
+primaryCategory: drum-machine
+categories:
+  - digital
+  - wavetable
+  - modular
+  - discontinued
+url: https://busycircuits.com/products/alm005
+description: >-
+  Dinky's Taiko is a compact 12-bit digital drum voice for Eurorack combining a
+  digital noise generator and a 24-waveform wavetable oscillator through an
+  analog tilt EQ output stage, with full voltage control over nearly all
+  parameters. Trigger, accent, and choke inputs provide expressive rhythmic
+  control over every hit.
+details: |-
+  Dinky's Taiko produces a drum hit each time a trigger signal (~+3V rising edge) is applied to the Trigger input. The voice is built from three parallel sections. The Noise section generates 12-bit digital noise with a Spectrum knob controlling the frequency character and a Release knob setting the exponential decay time of the noise envelope. The Oscillator section features a wavetable oscillator with 24 waveforms spanning sines with increasing overtones through squares, saws, blips, crunchy noise, and vocal tract shapes; Start Freq and End Freq set the pitch sweep range on each hit, Speed controls how fast the frequency travels from start to end, and a separate Release envelope controls oscillator decay independently of the noise.
+
+  The Output section blends the two sound sources via a Mix crossfade control and applies a tilt EQ that emphasizes either high or low frequencies on the final output. All parameter knobs act as offsets — incoming CV is summed with the knob position rather than attenuated. All input values are latched at the moment the trigger fires, so adjusting knobs mid-hit has no effect; the Accent and Choke inputs are the only exceptions that act in real time.
+
+  The Accent input further emphasizes the hit sound when triggered simultaneously with or shortly after the main trigger. The Choke input immediately cuts any playing hit in its presence, enabling open/closed hi-hat style articulation. Dinky's Taiko has been discontinued and succeeded by the Tyso Daiko (ALM031).
+specs: |-
+  - Width: 12HP
+  - Depth: 32mm (including power header)
+  - Power: +12V 80mA / -12V 80mA
+  - Sound engine: 12-bit digital
+  - Noise section: digital noise generator, Spectrum (frequency) + Release CV
+  - Oscillator section: 24-waveform wavetable, Start Freq + End Freq + Speed + Release + Wave CVs
+  - Output section: tilt EQ, noise/oscillator Mix crossfade
+  - Trigger inputs: Trigger, Accent (Acc), Choke
+  - CV inputs: Spectrum, Noise Release, Osc Start Freq, Osc End Freq, Osc Speed, Osc Release, Wave
+  - Output level: up to ±10V (oscillator-only mode)
+  - Reverse polarity protection
+  - Skiff friendly
+  - Designed and made in the UK
+io:
+  - name: Trigger
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Acc
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Choke
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Spectrum CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Release CV (Noise)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Start Freq CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: End Freq CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Speed CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Release CV (Osc)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Wave CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

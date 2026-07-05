@@ -1,0 +1,66 @@
+id: oTU-JSgj8g7qizPky1txY
+name: O/A/x2
+manufacturer: alm-busy-circuits
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+  - gain
+  - modulation
+url: https://busycircuits.com/products/alm010
+prices:
+  - amount: 80
+    currency: GBP
+description: >-
+  O/A/x2 is a dual-channel attenuverter with per-channel bipolar voltage offset
+  and LED signal monitoring, designed for fine-grained editing of control
+  signals such as LFOs. It can attenuate, invert, and add DC offset to both CV
+  and audio signals, and a jumper setting enables mixer functionality between
+  the two channels.
+details: |-
+  O/A/x2 is a compact dual-channel utility module centred on attenuversion — the ability to both attenuate and invert (phase-flip) an incoming signal via a single bipolar knob per channel. Each channel also provides a bipolar voltage offset control (±8V DC), allowing the output signal to be shifted up or down in DC level independently of its amplitude. An LED per channel indicates both polarity and approximate level of the output signal at a glance.
+
+  The primary design intent is control-signal editing: a single LFO or envelope can be transformed into a fully independent modulation source by adjusting its depth, phase, and centre point with no additional modules required. The module is equally useful for audio, providing attenuation and inversion in a minimal footprint. A rear-panel jumper enables a mixer mode in which the output of channel 1 is summed with the processed signal of channel 2.
+
+  At 4HP and 32mm deep the O/A/x2 is among the most space-efficient dual attenuverters in the Eurorack ecosystem. Inputs and outputs handle both audio-rate and CV signals. A VCV Rack software emulation replicating identical functionality is also available from ALM.
+specs: |-
+  - Size: 4HP
+  - Depth: 32mm
+  - Power: +12V 50mA / -12V 50mA
+  - Channels: 2 × independent attenuverter
+  - Attenuation range: bipolar (inversion to full gain)
+  - DC offset range: ±8V per channel
+  - LED monitoring: yes, per channel (polarity + level)
+  - Mixer mode: via rear jumper
+  - Reverse polarity protection: yes
+  - Warranty: 2 years
+  - Manufactured in the UK
+io:
+  - name: Ch 1 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 1 Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 2 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 2 Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

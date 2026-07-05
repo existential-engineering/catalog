@@ -1,0 +1,107 @@
+id: b0x1oT8rkOA0_-b0Q8L_e
+name: S.B.G-PRO
+manufacturer: alm-busy-circuits
+primaryCategory: utility
+categories:
+  - mixer
+  - modular
+  - stereo
+  - routing
+url: https://busycircuits.com/products/alm041
+prices:
+  - amount: 250
+    currency: GBP
+description: >-
+  The S.B.G-PRO is a versatile Eurorack utility module for integrating modular
+  systems with professional audio equipment via full-size 6.35mm balanced stereo
+  jacks with level matching and clipping indication. It provides manual and
+  voltage-controlled equal power crossfading between dry and wet (returned)
+  signals, with an expression input and included floating ring cable for safe CV
+  control of external gear.
+details: |-
+  The S.B.G-PRO builds upon ALM's original S.B.G module by adding full-size stereo balanced jack connections via 6.35mm Neutrik jacks, supporting mono, stereo, balanced, and unbalanced audio. It is designed to bridge the gap between modular Eurorack systems and professional audio equipment such as rack effects processors, 500 Series modules, studio mixers, and guitar pedals.
+
+  The core feature is an equal power crossfader that blends between the dry modular signal and the wet processed signal returned from external gear. This crossfade can be controlled manually via a panel knob or via CV for dynamic, patch-controlled wet/dry automation. The expression input—accessible via the included floating ring cable—allows CV signals to safely control expression-pedal inputs on external devices without risk of damage.
+specs: |-
+  - Width: 10HP
+  - Depth: 32mm
+  - +12V current draw: 60mA
+  - -12V current draw: 55mA
+  - External connections: 6.35mm balanced/unbalanced jacks (send/return, expression)
+  - Modular connections: 3.5mm jacks (CV in, audio in/out)
+  - Wet/dry crossfade: equal power, manual and CV-controlled
+  - Return amplification: up to 32dB
+  - Clipping indicator included
+  - Includes floating ring cable
+  - Made in England
+io:
+  - name: Send L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Send R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Return L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Return R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Expression
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

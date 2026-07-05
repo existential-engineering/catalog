@@ -1,0 +1,92 @@
+id: eOeTpRTnYvoysjy8U_5xR
+name: "Beast's Chalkboard"
+manufacturer: alm-busy-circuits
+primaryCategory: utility
+categories:
+  - modular
+  - routing
+url: https://busycircuits.com/products/alm002
+prices:
+  - amount: 130
+    currency: GBP
+description: >-
+  A dual-channel stepped voltage source and buffered multiple for Eurorack,
+  functioning primarily as a precision dual octave switcher for VCOs across a
+  ±2V (5-octave) range. Also serves as a voltage adder, buffered mult, and VCO
+  calibration tool.
+details: |-
+  The Beast's Chalkboard is a dual-channel precision buffered voltage source and adder for Eurorack, designed primarily as an octave switcher for VCOs. Each channel provides a stepped voltage spanning -2V to +2V in 1V increments (five octave positions), controlled by a dedicated rotary switch, which can be summed with an incoming CV to transpose a pitch source by the selected number of octaves.
+
+  The two channels are internally normalized — the top channel's input is normalized to the bottom — allowing a single CV source to be simultaneously transposed by two independent offsets and distributed to multiple VCOs. With its buffered outputs and through outputs per channel, it can also serve as a 1-to-6 or dual 1-to-3 precision buffered multiple, making it useful for distributing a single CV to many destinations with no voltage drop.
+
+  Additional use cases include creating FM ratios between oscillators, distributing quantized pitch CV across multiple voices, and assisting in VCO calibration by providing known precise voltage steps. The module is exceptionally shallow at 22mm and fully skiff friendly. A refurbished option is available at £90.
+specs: |-
+  - Width: 6HP
+  - Depth: 22mm
+  - Power: +12V 25mA / -12V 25mA
+  - Voltage range: -2V to +2V (1V steps, 5 octaves)
+  - 2 channels, each with buffered outputs and through output
+  - Channels can be chained for up to 9-octave range
+  - Top input normalized to bottom channel
+  - 1→6 or dual 1→3 buffered mult configuration
+  - Precision buffered CV distribution
+  - Skiff friendly
+  - Made in the UK
+  - 2-year warranty
+io:
+  - name: Ch 1 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 1 Out A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 1 Out B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 1 Thru
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 2 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 2 Out A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 2 Out B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 2 Thru
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

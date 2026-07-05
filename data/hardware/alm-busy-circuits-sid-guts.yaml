@@ -1,0 +1,101 @@
+id: Q8ZJ8U4jhZm5dLHB0BWL0
+name: SID GUTS
+manufacturer: alm-busy-circuits
+primaryCategory: synthesizer
+categories:
+  - wavetable
+  - filter
+  - analog
+  - modular
+url: https://busycircuits.com/products/alm003
+prices:
+  - amount: 290
+    currency: GBP
+description: >-
+  SID GUTS brings the legendary MOS Technology 6581/8580 Sound Interface Device
+  chip from the Commodore 64 into the Eurorack modular format, providing a
+  single SID voice with full voltage control. The module preserves the
+  authentic, characteristically noisy sound of the original chip with no attempt
+  to clean or sanitize the output.
+details: |-
+  The SID GUTS is built around a real MOS Technology 6581 or 8580 SID chip — the same sound generator used in the Commodore 64 — socketed on the rear of the module and user-swappable. It exposes a single SID voice comprising a primary wavetable oscillator (pulse, sawtooth, triangle, or noise waveforms selectable by button or 0–5V CV), a 12dB/octave multimode analog filter switchable between low pass, band pass, high pass, and notch modes with voltage-controlled cutoff and resonance, and a separate modulation oscillator capable of ring modulation or hard sync against the main oscillator.
+
+  All core parameters are voltage controllable at modular signal levels. The 1V/oct input on the primary oscillator responds to 0–5V for a 5-octave range (expandable to 8 octaves via the tuning offset). An external audio input routes signals through the SID's onboard filter — a feature unavailable when using the SwinSID emulator chip. All panel settings are stored in non-volatile memory.
+
+  As vintage technology, the SID chip is inherently noisy and its filter behavior varies between individual chips. Vintage 6581/8580 chips draw up to 200mA and run hot, requiring the supplied heat sinks and good case ventilation; the modern SwinSID emulator chip is recommended as a lower-power, lower-heat alternative.
+specs: |-
+  - Width: 12HP
+  - Depth: 30–40mm (with heat sinks installed)
+  - Power: +/-12V, ~50–200mA (up to 200mA with 6581/8580 SID chip installed)
+  - Chip compatibility: MOS 6581, MOS 8580, SwinSID
+  - Oscillator waveforms: Pulse, Triangle, Sawtooth, Noise
+  - Filter modes: Low Pass, Band Pass, High Pass, Notch (12dB/octave)
+  - V/Oct range: 0–5V (5 octaves direct; 8 octaves with offset)
+  - CV inputs: V/Oct, Filter Cutoff, Filter Resonance, Wave Shape, PWM, Mod Osc V/Oct, Mod Osc Type
+  - External audio input (not available with SwinSID)
+  - Non-volatile settings storage
+  - Designed and built in England
+io:
+  - name: V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Resonance CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Shape CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: PWM CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mod Osc V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mod Osc Type CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ext In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

@@ -1,0 +1,155 @@
+id: 7F6wla2fwGfo-UXE8zr1m
+name: "Akemie's Castle"
+manufacturer: alm-busy-circuits
+primaryCategory: synthesizer
+categories:
+  - digital
+  - fm
+  - modular
+url: https://busycircuits.com/products/alm011
+prices:
+  - amount: 510
+    currency: GBP
+description: >-
+  Akemie's Castle is a dual voltage controlled oscillator featuring authentic
+  4-operator digital FM synthesis using new-old-stock Yamaha YMF262 (OPL3) ICs.
+  Each of the 4 operators offers independent waveform selection, frequency
+  multiplier, and level control via panel and voltage control, with 6 selectable
+  algorithms, independent feedback per VCO, chord mode on Oscillator A (up to 5
+  voices), and voltage-controlled inversion.
+details: |-
+  Akemie's Castle is built around a vintage new-old-stock Yamaha YMF262 (OPL3) FM synthesis chip — the same technology found in the Yamaha DX100, DX21, and TX81Z synthesisers, as well as early gaming machines and home computers. By exposing all operator parameters to both voltage and direct panel control, it brings the visceral character of hardware FM into the Eurorack modular environment.
+
+  The module operates as a dual VCO (Oscillator A and Oscillator B). Four FM operators can be assigned and routed across both oscillators via one of 6 selectable algorithms, ranging from simple 2-operator serial (FM) or parallel (additive) combinations per VCO to complex 4-operator configurations. Each operator independently controls waveform (8 options: sine, half-sine, abs sine, pulse sine, alternating sine, camel sine, square, and logarithmic sawtooth), frequency multiplier (1–15), and amplitude level (0–63), all patchable via CV with attenuation.
+
+  Oscillator A features a unique chord mode that voices up to 5 simultaneous pitches derived from the base V/Oct input, as well as a voltage-controlled inversion input. Each VCO has an independent feedback control that causes the initial operator to self-modulate. Output frequency range spans approximately 0.05 Hz to just over 6 kHz.
+specs: |-
+  - Width: 38HP
+  - Depth: 32mm (including power header)
+  - Power: +12V 120mA / -12V 60mA
+  - FM chip: Yamaha YMF262 (OPL3), new-old-stock
+  - Operators: 4
+  - Algorithms: 6
+  - Waveforms per operator: 8
+  - Feedback range: 0–7 (per VCO)
+  - Frequency multiplier range: 1–15 per operator
+  - Operator level range: 0–63
+  - V/Oct input range: approx. 0–10V
+  - CV input range (standard): 0–5V
+  - Output frequency range: approx. 0.05 Hz to >6 kHz
+  - Chord mode: up to 5 voices (Oscillator A only)
+  - Warranty: 2 years
+  - Manufactured in the UK
+io:
+  - name: V/Oct A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: V/Oct B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Fb A (Feedback A)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Fb B (Feedback B)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Inv (Inversion)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Chord
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Op 1 Mult CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Op 1 Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Op 2 Mult CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Op 2 Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Op 3 Mult CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Op 3 Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Op 4 Mult CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Op 4 Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: A Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: B Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

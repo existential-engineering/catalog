@@ -1,0 +1,77 @@
+id: cTfeF6kc7BnTrJvL7m8F3
+name: S.B.G
+manufacturer: alm-busy-circuits
+primaryCategory: utility
+categories:
+  - routing
+  - modular
+url: https://busycircuits.com/products/alm006
+prices:
+  - amount: 100
+    currency: GBP
+description: >-
+  A compact Eurorack utility module designed to interface guitar effects pedals
+  with modular synthesizer systems, providing signal level matching through
+  attenuation and amplification. Features a manual wet/dry crossfade control and
+  CV regulation for safe use with pedal expression inputs.
+details: |-
+  The S.B.G (Send Bus Get) is ALM Busy Circuits' original effects pedal adapter for Eurorack, bridging the impedance and level gap between modular synthesizer signals and standard guitar effects pedals. The module attenuates the hot modular signal down to pedal-friendly levels on the send side, and then amplifies the returning signal by approximately 3dB to 34dB back up to modular level, with a built-in clipping indicator to prevent unwanted distortion.
+
+  A key feature is the manual wet/dry crossfade control, allowing the user to blend between the dry modular signal and the processed pedal return without needing an external mixer. The module also conditions and regulates outgoing CV signals to safe voltage levels suitable for use with pedal expression inputs, and ships with a floating ring cable designed for safe expression connectivity.
+
+  The S.B.G was later superseded by the S.B.G-PRO, which added stereo capabilities and additional routing options. The original S.B.G remains a popular utility for simple mono pedal integration in compact skiff-friendly builds. A refurbished option is also available at £80.
+specs: |-
+  - Width: 4HP
+  - Depth: 32mm
+  - Power: +12V 30mA / -12V 30mA
+  - External connections: 1/4-inch TS jacks (send/return/expression)
+  - Eurorack connections: 3.5mm jacks (signal in/out, CV in)
+  - Gain range on return: ~3dB to 34dB
+  - Clipping indicator LED
+  - Includes floating ring cable
+  - Skiff friendly
+  - Made in the UK
+  - 2-year warranty
+io:
+  - name: IN
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Expression Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

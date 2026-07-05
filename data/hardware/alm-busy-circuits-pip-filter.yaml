@@ -1,0 +1,77 @@
+id: z9z1Tm_h1dF-QQlvgYwG9
+name: Pip Filter
+manufacturer: alm-busy-circuits
+primaryCategory: filter
+categories:
+  - modular
+  - analog
+url: https://busycircuits.com/products/alm039
+prices:
+  - amount: 110
+    currency: GBP
+description: >-
+  The Pip Filter is a compact 4HP voltage controlled 2-pole low-pass filter with
+  resonance, a pingable trigger input, and a built-in VCA. It combines filtering
+  and amplitude control in a minimal Eurorack footprint, capable of
+  self-oscillation for use as a sine wave oscillator.
+details: |-
+  The Pip Filter is ALM Busy Circuits' compact analog filter module occupying just 4HP. It features a 2-pole (12dB/octave) low-pass topology with manually adjustable resonance that reaches into self-oscillation, enabling it to function as a basic sine wave oscillator.
+
+  A dedicated trigger input allows the filter to be 'pinged', exciting the resonant circuit to produce percussive plucked or bell-like sounds without an external envelope generator.
+
+  The integrated VCA is normalled open (full volume when no CV is patched), effectively combining two fundamental synthesis blocks into a single 4HP module.
+specs: |-
+  - Width: 4HP
+  - Depth: 32mm
+  - Power: +12V 25mA / -12V 25mA
+  - Filter type: 2-pole (12dB/octave) low-pass
+  - Resonance: Manual control, reaches self-oscillation
+  - CV inputs: Dual (one with attenuverter)
+  - Built-in VCA: Yes (normalled open)
+  - Trigger input: Yes (pingable)
+  - Reverse power protection: Yes
+  - Warranty: 2 years
+  - Made in England
+io:
+  - name: Audio In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: VCA CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

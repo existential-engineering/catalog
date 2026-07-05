@@ -1,0 +1,101 @@
+id: HQNp-oxw-WOz9pcT5oX9K
+name: mmMidi
+manufacturer: alm-busy-circuits
+primaryCategory: midi
+categories:
+  - utility
+  - modular
+url: https://busycircuits.com/products/alm023
+prices:
+  - amount: 170
+    currency: GBP
+description: >-
+  The mmMidi is a compact 4HP MIDI-to-CV interface for Eurorack synthesizers
+  that translates two independent channels of MIDI note, velocity, and gate
+  information into corresponding control voltage signals. It supports both
+  classic MIDI DIN and driverless USB-C MIDI connectivity, and also converts
+  MIDI Clock to analog x24 clock and Run outputs for DIN Sync.
+details: |-
+  The mmMidi (ALM023) is a minimal, skiff-friendly 4HP MIDI interface that converts two independent MIDI channels into per-channel CV note (V/Oct, 0–8V, 12-bit calibrated), velocity CV, and gate (+5V) outputs. MIDI Clock is simultaneously converted to an x24 analog pulse clock and a Run gate output for DIN Sync compatibility.
+
+  Connectivity is handled via a 5-pin MIDI DIN input (TRS Type-B adapter included) and a USB-C port that operates as a class-compliant driverless USB MIDI device — compatible with computers, tablets, and phones without any driver installation.
+
+  The optional mmT expander (3HP) adds a third MIDI channel with 8 key-mapped gate/trigger outputs, which is particularly useful for driving drum or sample modules. Firmware updates are performed by drag-and-drop over USB.
+specs: |-
+  - Width: 4HP
+  - Depth: 38mm
+  - Power: +12V 50mA / -12V 0mA
+  - CV Resolution: 12-bit, factory calibrated
+  - CV Output Range: 0–8V
+  - Gate Level: +5V
+  - MIDI Connectivity: 5-pin DIN (TRS Type-B adapter included) + USB-C (class compliant)
+  - Channels: 2 independent MIDI-to-CV channels
+  - Clock Output: x24 analog clock + Run gate (DIN Sync compatible)
+  - Optional Expander: mmT (3HP, 8 key-mapped gate outputs)
+  - Reverse power protection
+  - Made in England
+  - 2-year warranty
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - name: Clock x24
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Run
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: V/Oct Ch1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: V/Oct Ch2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Velocity Ch1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Velocity Ch2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Ch1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Ch2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

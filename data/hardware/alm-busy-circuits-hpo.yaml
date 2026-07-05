@@ -1,0 +1,56 @@
+id: 7s2dANn55k3Un8ae90P15
+name: HPO
+manufacturer: alm-busy-circuits
+primaryCategory: utility
+categories:
+  - modular
+  - gain
+url: https://busycircuits.com/products/alm019
+prices:
+  - amount: 65
+    currency: GBP
+description: >-
+  A super-slim 2HP stereo headphone driver module for Eurorack, providing
+  low-noise private monitoring with a volume control and the ability to fold a
+  mono input into a stereo headphone signal. Designed for compact skiff builds
+  where discreet listening is needed.
+details: |-
+  The HPO (Headphone Output) is ALM Busy Circuits' no-frills stereo headphone amplifier module designed to fit into the smallest possible Eurorack footprint at just 2HP. It accepts one or two mono inputs and drives a standard 3.5mm stereo headphone jack with enough power for comfortable personal monitoring during live performance or studio work.
+
+  When a single mono source is connected, the HPO automatically doubles the signal into both channels, providing a centred stereo image in headphones. When two separate inputs are provided, it drives left and right channels independently for true stereo monitoring. A single volume knob controls the output level for the headphone driver.
+
+  At just 38mm deep, the HPO is explicitly designed to be skiff friendly, making it ideal for compact travel cases or performance systems where a dedicated headphone output is needed without sacrificing significant rack space.
+specs: |-
+  - Width: 2HP
+  - Depth: 38mm
+  - Power: +12V 5mA / -12V 5mA
+  - 2× 3.5mm audio inputs (L/Mono + R)
+  - 1× 3.5mm stereo headphone output
+  - Volume control knob
+  - Mono-to-stereo fold capability
+  - Low noise design
+  - Skiff friendly
+  - Made in the UK
+  - 2-year warranty
+io:
+  - name: Left / Mono In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Right In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Out
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

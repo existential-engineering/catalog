@@ -1,0 +1,69 @@
+id: clEcHSiFq6R4jdtO6mDHp
+name: Pip LFO
+manufacturer: alm-busy-circuits
+primaryCategory: modular
+categories:
+  - analog
+url: https://busycircuits.com/products/alm048
+prices:
+  - amount: 110
+    currency: GBP
+description: >-
+  A compact 4HP all analogue low frequency oscillator with a wide frequency
+  range, voltage control, numerous outputs, reset input and a VCO mode.
+details: |-
+  The Pip LFO is a compact 4HP all-analogue low frequency oscillator designed for Eurorack modular synthesis systems. It provides a wide frequency range suitable for both slow modulation duties and audio-rate operation.
+
+  The module offers manual LFO speed control alongside a voltage control input, allowing the rate to be modulated by other modules in the system. Multiple waveform outputs are available simultaneously, including square, triangle, sawtooth, and sine waveforms.
+
+  A VCO mode switches the module into audio-range frequencies, with V/Oct tracking across approximately 5 octaves, enabling it to function as a simple audio oscillator. A reset input allows the waveform cycle to be reset on demand, and in VCO mode this input doubles as a hard sync input.
+specs: |-
+  - 4HP width
+  - 32mm depth
+  - +12V: 40mA, -12V: 20mA
+  - VCO mode with ~5 octave V/Oct tracking
+  - Simultaneous square, triangle, saw, and sine outputs
+  - CV rate control and reset input
+io:
+  - name: CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Reset
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Square Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Triangle Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Saw Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sine Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

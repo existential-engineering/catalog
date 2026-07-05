@@ -1,0 +1,98 @@
+id: 036Is4Wdb7FTI0K0ObGfn
+name: MFD
+manufacturer: alm-busy-circuits
+primaryCategory: mixer
+categories:
+  - modular
+  - utility
+url: https://busycircuits.com/products/alm044
+prices:
+  - amount: 145
+    currency: GBP
+description: >-
+  The MFD is a 2-channel stereo crossfader for live DJ-style mixing in Eurorack,
+  mixing two mono or stereo inputs to a single stereo output via direct or
+  voltage control with cue monitoring, equal power crossfading, and DC coupling
+  for use as a stereo VCA.
+details: |-
+  The MFD is a compact 6HP Eurorack stereo crossfader designed for live DJ-style mixing and jamming. It mixes two mono or stereo input channels (A and B) to a single stereo main output via a front-panel fader or external CV control.
+
+  Each channel's left input is normalised to the right, so single mono signals automatically feed both sides of the stereo field without a cable in the right input. Equal power crossfading ensures consistent perceived volume across the full fader travel.
+
+  A cue output mirrors the channel not currently heard at the main output, enabling pre-mix preview monitoring. The X Fade CV input accepts -5V to +5V and the front-panel fader acts as an offset.
+
+  The MFD is DC coupled throughout, making it equally suitable as a stereo VCA or a CV crossfader for control signal routing. Very low noise and crosstalk specs make it suitable for demanding live situations.
+specs: |-
+  - 6HP width, 32mm depth
+  - +12V: 70mA, -12V: 70mA
+  - 2-channel stereo crossfader (Channels A and B)
+  - Left input normalised to Right for mono signals
+  - Equal power crossfading
+  - X Fade CV input: -5V to +5V
+  - Cue output for pre-mix monitoring
+  - DC coupled throughout
+  - 2-year warranty
+io:
+  - name: In A Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In A Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In B Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In B Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Main Out Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Main Out Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Cue Out Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Cue Out Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: X Fade CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

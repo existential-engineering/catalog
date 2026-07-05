@@ -1,0 +1,80 @@
+id: M5Vi810BFWjt6wDzSxvxy
+name: MUM M8
+manufacturer: alm-busy-circuits
+primaryCategory: filter
+categories:
+  - analog
+  - modular
+url: https://busycircuits.com/products/alm018
+prices:
+  - amount: 190
+    currency: GBP
+description: >-
+  The MUM M8 is an 8HP Eurorack low-pass filter inspired by the filter circuit
+  of the Akai S950 12-bit sampler, extended with resonance, voltage control,
+  clipped saturation, and a dedicated VCA. Its 6th-order Butterworth
+  switched-capacitor design delivers the S950's characteristic smooth,
+  vacuum-like tone while self-oscillating resonance adds acidic, wasp-like
+  character at the extreme end.
+details: |-
+  The MUM M8 is a collaboration between ALM Busy Circuits and electronic music artist Mumdance (Jack Adams). It is based on the filter circuit of the Akai S950 12-bit sampler — a 6th-order Butterworth switched-capacitor filter that produces an exceptionally smooth, low-distortion low-pass characteristic with a distinctive vacuum-tube-like quality.
+
+  The filter accepts two audio inputs, the second of which features a dedicated VCA and level control. Cutoff frequency is governed by two CV inputs each equipped with attenuversion, plus a manual control. A third CV input addresses resonance independently.
+
+  At high resonance settings the filter self-oscillates, producing pitched tones with an aggressive, acidic character — a deliberate homage to the acid-house and hardcore bass sounds the S950 helped define.
+specs: |-
+  - Format: Eurorack, 8HP
+  - Depth: 32mm
+  - Power: +12V 40mA / -12V 40mA
+  - Filter type: Low-pass, 6th-order Butterworth switched capacitor
+  - Audio inputs: 2 (one with VCA and level control)
+  - Cutoff CV inputs: 2 (each with attenuversion)
+  - Resonance CV input: 1 (with attenuation)
+  - Features: Overdrive/saturation, self-oscillating resonance, dedicated VCA
+  - Minimum cutoff: Adjustable via rear trimmers
+  - Reverse polarity protection
+  - Made in the UK
+  - Warranty: 2 years
+io:
+  - name: Audio In 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio In 2 (VCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Cutoff CV 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Cutoff CV 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Resonance CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
