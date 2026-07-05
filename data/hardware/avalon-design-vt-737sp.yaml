@@ -1,0 +1,106 @@
+id: 2agnfyxsB9H8rXK5DHZhU
+name: VT-737SP
+manufacturer: avalon-design
+primaryCategory: channel-strip
+categories:
+  - preamp
+  - compressor
+  - equalizer
+  - outboard
+  - rack-mount
+url: https://www.avalondesign.com/vt-737-sp
+description: The Avalon VT-737SP is a 2U vacuum tube channel strip combining a
+  Class A discrete tube preamplifier, opto-compressor, and 4-band sweep
+  equalizer with VU metering, accepting microphone, instrument DI, and balanced
+  line inputs. Handcrafted in the USA.
+details: |-
+  The VT-737SP preamplifier section offers three input selections — microphone (with
+  +48V phantom power), front-panel instrument DI, and balanced line input — all
+  passing through a Class A discrete design using dual vacuum tube triodes. Microphone
+  gain ranges from 0 dB to +58 dB, with a high gain switch, passive variable high-pass
+  filter with relay bypass, and phase reverse relay available on all inputs.
+
+  The opto-compressor uses twin Class A vacuum tube triodes for gain matching, driving
+  an optical passive attenuator. Controls include threshold, ratio, attack, and release,
+  plus a spectral control with de-ess capability via dual sweep mid EQ. Stereo linking
+  is available via a rear panel cable, and the compressor section features a sealed
+  silver relay bypass.
+
+  The four-band equalizer is a 100% discrete Class A high-voltage transistor design
+  with variable and switched frequency options. It can be switched pre or post
+  compressor and also features a sealed silver relay bypass. Treble and bass bands
+  offer ±20–24 dB of gain, while mid bands provide ±16 dB.
+
+  The unit is powered by a discrete internal power supply with a toroidal transformer
+  and includes a soft-start tube life extender. The vacuum tubes — four Sovtek 6922
+  dual triodes — are rated for a minimum of 5,000 hours of operation. Large control
+  knobs with conductive plastic potentiometers and VU metering complete the design.
+
+  The VT-737SP is handcrafted in the USA, delivering a maximum output level of +30 dB
+  balanced into 600 Ω and an output noise floor of −92 dB (22 Hz–22 kHz).
+specs: |-
+  - Tubes: 4× dual triode (Sovtek 6922)
+  - Mic input gain: 0 dB to +58 dB
+  - Instrument input gain: 0 dB to +30 dB
+  - Line input gain: −27 dB to +28 dB
+  - Max output level: +30 dB balanced, 600 Ω
+  - Output noise: −92 dB nominal (22 Hz–22 kHz)
+  - Mic input noise: −116 dB EIN (22 Hz–22 kHz)
+  - THD+IMD: 0.5% nominal below clipping
+  - Frequency response: 10 Hz–40 kHz ±0.2 dB
+  - Compressor threshold: −30 dB to +20 dB
+  - Compression ratio: 1:1 to 20:1
+  - Attack time: 2 ms to 200 ms
+  - Release time: 100 ms to 5 seconds
+  - EQ ranges: Treble/Bass ±20–24 dB; Mid ±16 dB
+  - Power consumption: 75W maximum
+  - AC power: 100–240V, 50–60 Hz selectable
+  - Dimensions: 19″ × 12″ × 3.5″ (482 × 305 × 89 mm)
+  - Weight: 22 lbs (10 kg)
+  - Rack size: 2U
+io:
+  - name: Microphone Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: VT-737SP Manual
+    url: https://www.avalondesign.com/s/737_Manual.pdf
+  - type: resource
+    title: VT-737SP Tear Sheet
+    url: https://www.avalondesign.com/s/737_Tearsheet-kf56.pdf
+  - type: resource
+    title: VT-737SP Quick Setup Sheet
+    url: https://www.avalondesign.com/s/737setup-belr.pdf
