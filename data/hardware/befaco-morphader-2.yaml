@@ -1,0 +1,147 @@
+id: ytJesBVAQdJaCXEvrudNt
+name: Morphader
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+url: https://www.befaco.org/morphader-2/
+description: Morphader is a 12HP performative Eurorack tool with four
+  independent voltage-controlled crossfaders, each fading between two signal
+  sources (A and B) under CV control. A per-channel Audio/CV switch selects
+  logarithmic or linear response curves, and a master fader with up to 15
+  seconds of lag governs all channels simultaneously. Channel outputs are
+  normalled in cascade so a single output cable summons a blend of all four.
+details: |-
+  Morphader provides four independent voltage-controlled crossfaders in a single 12HP module. Each channel fades between two input signals (A and B) under control of a dedicated CV input, with an attenuator on each input pair to scale incoming levels. This makes it equally useful as a performance mixer, a morph controller for complex patches, or a CV-shapeable routing hub.
+
+  Each crossfader channel has a dedicated Audio/CV response switch that optimizes the fader curve for audio signals (logarithmic, perceptually linear loudness) or CV signals (linear voltage response). This dual-mode operation means the module works equally well mixing audio sources or morphing between control voltages and modulation sources without gain artifacts.
+
+  The master fader controls all four channels simultaneously, allowing a single gesture to fade the entire mix. A lag (slew) control on the master fader adds up to 15 seconds of slew to master movements, enabling smooth, slow morphs between states — useful for ambient textures, slow automation, or generative patching.
+
+  Normalization is a key design feature: each channel's output is normalled into the next, so when individual output jacks are unpatched the signals cascade and sum. This means a single cable at the last output produces a mix of all four crossfaders, reducing the need for a separate mixer and enabling complex blend-and-sum patches with minimal cables.
+
+  Per-channel LED indicators monitor signal level at each crossfader output, giving visual feedback during performance without needing a scope. The module is manufactured in Barcelona with an aluminium heat-treated front panel.
+io:
+  - name: Channel 1 Input A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 1 Input B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 1 CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Input A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Input B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 3 Input A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 3 Input B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 3 CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 3 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 4 Input A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 4 Input B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 4 CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 4 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.befaco.org/docs/Morphader/Morphader_User-Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/Morphader/Morphader_SMD_Presoldered_%20Kit_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://www.befaco.org/docs/Morphader/Morphader_V1.pdf
+    type: resource
+    title: Schematic

@@ -1,0 +1,55 @@
+id: zGnBsX2T6ZwMNSALSI8J2
+name: MEX
+manufacturer: befaco
+primaryCategory: modular
+categories:
+  - digital
+  - utility
+url: https://www.befaco.org/mex/
+description: "MEX is a gate expander for the Muxlicer sequencer. It adds a new
+  line of gates to Muxlicer's sequence, where each step can be independently set
+  to one of three modes: off, output the same number of gates as Muxlicer, or
+  send just one gate. Multiple MEX units can be daisy-chained together to create
+  entire sets of different gate patterns running in parallel."
+details: |-
+  MEX is a Eurorack gate expander module designed to extend the capabilities of Befaco's Muxlicer sequencer. It adds an independent 8-step gate sequence that runs in sync with the Muxlicer, giving users a parallel layer of rhythmic gates with per-step control.
+
+  Each of the eight steps offers three selectable modes of operation: the step can be silenced entirely, it can mirror the gate output of the Muxlicer at that step position, or it can output a single gate regardless of the Muxlicer's gate multiplier setting. This per-step flexibility lets users sculpt complex rhythmic patterns against the base Muxlicer sequence.
+
+  One of MEX's most practical features is its daisy-chain capability. Multiple MEX units can be chained together, each adding another independent gate lane to the Muxlicer rig. This allows users to build multi-voice rhythmic systems from a compact, low-cost foundation.
+
+  MEX draws its power directly from the Muxlicer via a dedicated connector, eliminating the need for a separate Eurorack power cable. This keeps the module slim at just 4 HP wide and 25mm deep, making it easy to situate alongside the Muxlicer in a tight rack.
+
+  The module is available in three formats: a factory-assembled module, a full DIY kit, and a PCB + panel set for builders who source their own components. All formats are designed, kitted, and assembled in Barcelona.
+io:
+  - name: Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Daisy-Chain In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Daisy-Chain Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.befaco.org/docs/MEX/MEX_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/MEX/MEX_v1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/MEX/Mex_V1_Schematic.pdf
+    type: resource
+    title: Schematic

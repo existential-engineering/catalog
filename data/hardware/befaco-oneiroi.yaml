@@ -1,0 +1,136 @@
+id: ah3fLn_ZIJhi9rBahHtBw
+name: Oneiroi
+manufacturer: befaco
+primaryCategory: modular
+categories:
+  - digital
+  - effect
+  - filter
+  - sampler
+url: https://www.befaco.org/oneiroi/
+description: Oneiroi is a 30HP experimental full-stereo synthesizer voice by
+  Befaco for ambient pads, drones, and cinematic sound design. It combines three
+  oscillators (Sine, Wavetable/Supersaw, and a 5-second stereo Looper), a
+  multimode filter, resonator, delay, and reverb in one module. A built-in
+  randomizer generates instant patches at three intensity levels, and the looper
+  supports Sound On Sound layering from external input or the module's own
+  output.
+details: |-
+  The Oneiroi is Befaco's most ambitious synthesizer voice, designed as a complete self-contained instrument within the Eurorack format. At its heart are three sound generators: a pure Sine Wave Oscillator, a Wavetable/Supersaw engine capable of rich harmonic stacking, and a 5-second stereo Looper that doubles as a wavetable source — blurring the line between sample playback and synthesis. All three oscillators share a single V/OCT input for unified pitch tracking.
+
+  The effects section is extensive for a module of this size. A multimode filter offers low-pass, band-pass, high-pass, and comb filter modes. Beyond the filter, the signal passes through a 3-band resonator, a 2-tap echo/delay, and a lush reverb — each with dedicated macro controls and CV inputs with attenuators. Eight short-throw faders govern oscillator volumes (exponential response) and effects send amounts (constant-power response), making mix adjustments intuitive and performance-ready.
+
+  The Looper records up to 5 seconds of stereo audio, and its buffer is shared with the Wavetable oscillator — anything you record instantly becomes playable wavetable content. It supports Sound On Sound layering, and can capture either the stereo external input or the module's own output for self-patching possibilities. A Sync input accepts external clock signals from 30 to 300 BPM for tempo-locked looping and effect timing.
+
+  The Randomizer targets four categories of parameters simultaneously at three intensity levels, includes undo/redo, and is ideal for live performance and quick patch exploration. Eight CV inputs (four with attenuators, four dynamically assignable) support deep modulation routing. Most knobs implement catch behavior to prevent value jumps when recalling patches.
+
+  Oneiroi is available as a factory-assembled unit and as a DIY kit, with all manufacturing carried out in Befaco's Barcelona workshop. A VCV Rack premium plugin is also available.
+io:
+  - name: V/OCT
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Sync
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Ext In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Ext In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV 3
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV 5
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV 6
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV 7
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV 8
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Oneiroi/Oneiroi_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Oneiroi/Oneiroi_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://github.com/Befaco/Oneiroi/releases
+    type: resource
+    title: Firmware (GitHub)

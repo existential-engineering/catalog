@@ -1,0 +1,104 @@
+id: s5uMqFcM6xBQtlAOZyZAz
+name: Output Bus
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+  - audio
+url: https://www.befaco.org/output-bus/
+description: Output Bus is an 8HP Befaco + DivKid collaboration that serves as a
+  professional final-stage output module for Eurorack. It features six stereo
+  TRS inputs with summing-style mixing, soft clip limiting, an LED VU-meter,
+  impedance-balanced +4dBu main outputs available on both 1/8-inch and 1/4-inch
+  jacks, and dual headphone outputs with a 300mW amplifier.
+details: |-
+  Output Bus is a professional-grade output module designed by DivKid and Befaco to serve as the definitive last link in any Eurorack modular system. Inspired by the philosophy of studio mixing consoles, it brings summing-style mixing architecture to the modular world.
+
+  The module features six stereo inputs via 3.5mm TRS minijack, with the sixth input offering a switchable line/synth level selector to accommodate signals from both modular-level sources and external line-level equipment such as effects processors, mixers, or outboard gear.
+
+  A soft clipping circuit is built into the main output stage, providing gentle limiting that prevents harsh distortion when the mix runs hot. The LED VU-meter gives real-time visual feedback on output levels. The main output is impedance-balanced at +4dBu line level, available on both 3.5mm minijack and 6.5mm jack connectors for maximum compatibility with professional audio equipment.
+
+  Headphone monitoring is provided via both 3.5mm and 6.5mm headphone outputs, driven by a 300mW amplifier rated at 200Ω impedance — capable of driving a wide variety of headphones with adequate volume for silent practice or in-ear monitoring during live performance.
+
+  Available as both a fully assembled module and a DIY kit. Manufactured in Barcelona.
+io:
+  - name: Stereo Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: trs
+    maxConnections: 1
+    position: Left
+  - name: Stereo Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: trs
+    maxConnections: 1
+    position: Left
+  - name: Stereo Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: trs
+    maxConnections: 1
+    position: Left
+  - name: Stereo Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: trs
+    maxConnections: 1
+    position: Left
+  - name: Stereo Input 5
+    signalFlow: input
+    category: audio
+    type: line
+    connection: trs
+    maxConnections: 1
+    position: Left
+  - name: Stereo Input 6 (Line/Synth)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: trs
+    maxConnections: 1
+    position: Left
+  - name: Main Out (Minijack)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: trs
+    maxConnections: 1
+    position: Right
+  - name: Main Out (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Out (Minijack)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: trs
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Out (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.befaco.org/docs/Output_Bus/Output_Bus_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/Output_Bus/Output_Bus_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://www.befaco.org/docs/Output_Bus/Output_Bus_THT_schematic.pdf
+    type: resource
+    title: Schematic

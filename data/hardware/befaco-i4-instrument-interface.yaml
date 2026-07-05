@@ -1,0 +1,73 @@
+id: f1_FrgBr6T_0jFhFMVB_p
+name: I4 Instrument Interface
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+url: https://www.befaco.org/i4-instrument-interface/
+description: Eurorack pre-amp capable of bringing any type of audio signal to
+  modular levels. Accommodates microphones (with +48V phantom power),
+  instrument, and line signals with minimal distortion. Includes a trigger/gate
+  extractor and an envelope follower with adjustable attack and decay.
+details: |-
+  The I4 Instrument Interface is a Eurorack pre-amp module designed to bring any type of audio signal up to modular levels. It accepts microphone, instrument, and line-level signals through a Neutrik combo input connector, making it a versatile front-end for a Eurorack system.
+
+  The module includes a phantom power selector providing +48V for condenser microphones, as well as an input impedance selector to match different source types. Separate level controls for audio and envelope outputs allow precise signal management.
+
+  An onboard envelope follower with adjustable attack and decay converts the amplitude of the incoming audio into a control voltage, suitable for driving VCAs, filters, or other modulation targets. A gate and trigger extractor with threshold control derives rhythmic gate and trigger signals from the audio input.
+
+  The module is available both as a fully assembled unit and as a DIY kit. It is designed and assembled in Barcelona, Spain, featuring an aluminium heat-treated front panel.
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Microphone Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Envelope Output
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Gate Output
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Trigger Output
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+links:
+  - url: https://befaco.org/docs/Instrument_Interface/I4_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/Instrument_Interface/I4_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Instrument_Interface/I4_Schematic.pdf
+    type: resource
+    title: Schematic

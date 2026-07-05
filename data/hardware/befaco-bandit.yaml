@@ -1,0 +1,162 @@
+id: xZMkK5So1RsEgqnWELAyV
+name: Bandit
+manufacturer: befaco
+primaryCategory: filter
+categories:
+  - eq
+  - modular
+  - analog
+url: https://www.befaco.org/bandit/
+description: Bandit is a fun combination of band-pass filters, VCAs, and routing
+  options. A spectral processing playground.
+details: |-
+  Bandit is a spectral processing playground from Befaco combining band-pass filters, VCAs, and flexible routing options in an 8 HP Eurorack module.
+
+  It serves multiple functions including voltage-controlled equalizer/isolator, spectral crossover, multiband VCA, four-band spectral mixer, and spectral external FX insert point.
+
+  Bandit allows you to cut or emphasize different frequency bands of a signal, acting as a voltage-controlled equalizer or isolator. It can split a sound into four different frequency bands for external processing and optionally insert them back into the mix.
+
+  With individual band inputs, you can mix four different signals with predefined tone placement. Four different envelopes can modulate volume per band to create varied sounds from a single source, and LFOs or audio-rate modulation can create evolving timbres.
+
+  Designed, kitted, and assembled in Barcelona, Bandit is available both as a fully assembled module and as a DIY kit.
+io:
+  - name: Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Band 1 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Band 2 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Band 3 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Band 4 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Band 1 CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Band 2 CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Band 3 CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Band 4 CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Band 1 Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Band 2 Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Band 3 Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Band 4 Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Band 1 Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Band 2 Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Band 3 Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Band 4 Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Mix Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.befaco.org/docs/Bandit/Bandit_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/Bandit/Bandit_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://www.befaco.org/docs/Bandit/Bandit_PCB_THT_V1.pdf
+    type: resource
+    title: Schematic
+videos:
+  - provider: youtube
+    videoId: hnxcexPcSFs
+    title: Befaco - BANDIT

@@ -1,0 +1,112 @@
+id: qFLqrfbciNLZagXGRNXXd
+name: VC ADSR
+manufacturer: befaco
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+url: https://www.befaco.org/vc-adsr/
+description: The Befaco VC ADSR is a voltage-controlled ADSR envelope generator
+  built around a dual-transistor current mirror circuit for smooth, musical
+  response. Each stage (Attack, Decay, Sustain, Release) is voltage controllable
+  via dedicated CV inputs, and the module provides gate outputs for every stage
+  of the envelope. A curve control lets users sweep continuously between linear
+  and logarithmic/exponential response shapes.
+details: |-
+  The VC ADSR is Befaco's redesign of the classic ADSR envelope generator, engineered to be smaller, more powerful, and more user-friendly than its predecessor. At the heart of the circuit is a dual-transistor 'current mirror' — a voltage-controlled integrator topology — paired with switching logic that ensures clean stage transitions and consistent behavior across a wide range of tempos and playing styles.
+
+  Every stage of the envelope is independently voltage controllable. Dedicated CV inputs for Attack, Decay, Sustain, and Release allow external modulation sources — LFOs, sequencers, other envelopes — to animate the shape of the envelope in real time. A manual knob accompanies each CV input, so the module is equally useful in fully manual or deeply modulated contexts.
+
+  One of the standout features is the per-stage gate output. Each of the four ADSR stages emits a gate signal for the duration of that stage, enabling complex rhythmic and modulation applications: triggering percussion on the attack, advancing a sequencer on the release, or side-chaining effects to a specific portion of the envelope.
+
+  The curve control adds a further dimension, allowing the user to sweep the response character of the envelope from linear through to logarithmic/exponential. This single control dramatically changes how punchy or soft the envelope feels, making the VC ADSR suitable for everything from percussive plucks to slow, evolving pads.
+
+  The module ships in both fully assembled and DIY kit configurations, consistent with Befaco's open-source philosophy. It is designed, assembled, and kitted in Barcelona, and features an aluminium heat-treated front panel at a compact 8HP width.
+io:
+  - name: Gate In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Attack CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Decay CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Sustain CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Release CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Curve CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Envelope Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Attack Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Decay Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Sustain Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Release Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/ADSR/ADSR_V2_0_3_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/ADSR/ADSR_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/ADSR/ADSR_V2_0_3_Schematic.pdf
+    type: resource
+    title: Schematic

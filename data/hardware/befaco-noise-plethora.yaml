@@ -1,0 +1,121 @@
+id: pEqqliHv6YRmlbTxAuWu-
+name: Noise Plethora
+manufacturer: befaco
+primaryCategory: modular
+categories:
+  - digital
+  - filter
+  - effect
+url: https://www.befaco.org/noise-plethora/
+description: The Noise Plethora is a 14HP multitimbral noise module combining
+  three digital sound generators with three analog multimode filters. Two
+  algorithm-based channels (A and B) offer dozens of selectable noise textures
+  with dual CV-controlled X/Y parameters and filter CV, while channel C provides
+  simultaneous white noise, gritty granular noise, and filtered noise outputs.
+  Open-source Teensy firmware enables ongoing expansion of the algorithm
+  library.
+details: |-
+  The Noise Plethora is a Eurorack noise synthesis module combining three independent digital sound generators with three analog multimode filters in a compact 14HP package. It is designed to make noise musical and intuitive to play, offering simultaneous access to multiple distinct noise flavors.
+
+  Channels A and B each host a bank of digital noise algorithms selectable via a dedicated knob. Each algorithm exposes two parameters — X and Y — controllable by both manual knobs and dedicated CV inputs. This gives players real-time voltage control over the character of each noise generator, enabling dynamic shifts between textures, timbres, and behaviors. Each of these channels feeds into an OTA-based analog 12dB multimode filter with its own cutoff CV input, allowing the noise to be shaped and sculpted through filtering.
+
+  Channel C is a simpler but complementary noise voice. It generates both white noise and a gritty, voltage-controlled granular noise, and routes those signals through a steeper 24dB multimode filter for more aggressive tonal shaping. This channel provides three dedicated outputs: raw white noise, gritty noise, and the filtered noise output — offering five simultaneously accessible noise signals across the module.
+
+  The analog filtering section is OTA-based (operational transconductance amplifier), giving the filters a warm, organic character that complements the digital noise sources. The combination of digital flexibility with analog filter character is central to the module's design philosophy.
+
+  The module runs open-source firmware developed with Teensy, and source code is publicly available on GitHub. It is designed and assembled in Barcelona by Befaco and is available both as a fully assembled module and as a DIY kit.
+io:
+  - name: Channel A X CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel A Y CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel A Filter CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel A Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel B X CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel B Y CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel B Filter CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel B Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel C Gritty CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel C White Noise Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel C Gritty Noise Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel C Filtered Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.befaco.org/docs/Noise_Plethora/Noise_Plethora.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/Noise_Plethora/Noise_Plethora_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://www.befaco.org/docs/Noise_Plethora/Noise_Plethora_V1_THT_sch.pdf
+    type: resource
+    title: Schematic

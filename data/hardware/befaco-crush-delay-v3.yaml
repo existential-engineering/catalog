@@ -1,0 +1,85 @@
+id: dfUj1B5Bh9PFG-dzWUuF7
+name: Crush Delay V3
+manufacturer: befaco
+primaryCategory: delay
+categories:
+  - digital
+  - modular
+  - effect
+  - bit-crusher
+  - glitch
+url: https://www.befaco.org/crush-delay-v3/
+description: Crush Delay is a special Echo-Delay unit based on the PT2399 IC,
+  which is able to deliver clean delay and dirty repeats.
+details: |-
+  Crush Delay V3 is a special Echo-Delay unit based on the PT2399 IC, which is able to offer 400ms of clean delay and up to 2 seconds of dirty repetitions, having a special talent to generate noisy-glitch textures. This third version comes with redesigned VCA circuits, wider range for clean delay, and reduced depth to make it skiff friendly.
+
+  The module has two inputs (In and Return) that go to the Delay circuit through a dedicated VCA for each one. The main difference between both inputs is the signal fed into In is going to the Dry/Wet circuit also, not only to the Delay, allowing you to control the balance between the original and the processed signal present at the main output (Out).
+
+  The signal is processed by the Delay circuit, which is affected by the Crush section. It degrades the signal at slow rates in different ways, depending on the position of the three Crush switches or by the presence of gate signals at the Crush inputs.
+
+  After being processed, the signal is routed to three different paths. The first one goes into Dry/Wet, where it is mixed with the original input signal (In) before going to the main output (Out). The second one is returned to the Delay circuit through another VCA (Feedback), controlling the number of repetitions of the wet signal. Finally, the last one goes directly to the Send output.
+io:
+  - name: In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Crush 1 Gate
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Crush 2 Gate
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Crush 3 Gate
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Crush_Delay/Crush_Delay_V3_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/Crush_Delay/Crush_Delay_V3_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Crush_Delay/Crush_Delay_V3_Schematic.pdf
+    type: resource
+    title: Schematic
+videos:
+  - provider: youtube
+    videoId: TIgod2e1sE8
+    title: Crush Delay V3

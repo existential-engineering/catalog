@@ -1,0 +1,103 @@
+id: Stc3ZXF9xFAlVN8YejQwM
+name: Chopping Kinky
+manufacturer: befaco
+primaryCategory: modular
+categories:
+  - analog
+  - utility
+url: https://www.befaco.org/chopping-kinky/
+description: Chopping kinky is a voltage controllable dual channel wavefolder.
+  As a unique feature, it has a chop out that will choose between both channels.
+details: |-
+  Chopping Kinky is a voltage controllable, dual channel wavefolder for Eurorack modular synthesizers. Each of the module's two channels has a unique wave folding profile, adding harmonic content to input signals through saturation and folding effects.
+
+  At each input, there are two CV inputs for controlling the level of waveshaping, including one that passes through an attenuverter. This allows expressive, real-time modulation of the wavefolder's character from external CV sources.
+
+  As a unique feature, the module includes a 'chop out' that switches between both channels using a zero-cross detector or an external gate signal. This makes it possible to rapidly alternate between the two distinct wavefolder circuits for complex timbral effects.
+
+  Chopping Kinky is DC coupled, allowing it to be used for both CV and audio duties. It is designed and assembled in Barcelona and is available both as a fully assembled module and as a DIY kit.
+io:
+  - name: Channel A Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel A CV 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel A CV 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel A Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel B Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B CV 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B CV 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Chop Gate Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Chop Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Chopping_Kinky/Chopping%20Kinky_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/Chopping_Kinky/Chopping%20Kinky_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Chopping_Kinky/Chopping_Kinky_V1_Schematic.pdf
+    type: resource
+    title: Schematic
+videos:
+  - provider: youtube
+    videoId: ZeLoPTApLlw
+    title: Chopping Kinky

@@ -1,0 +1,70 @@
+id: 844YBeveCTrvTdg4Yo1mh
+name: 1U OUT
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - mixer
+url: https://www.befaco.org/1u-out/
+description: Out is a 1U stereo output module designed to convert audio signals
+  from your modular to line levels. Intellijel case's fully compatible.
+details: |-
+  1U OUT is a stereo output module in Intellijel 1U format that converts Eurorack modular audio signals to line levels. It is designed and assembled in Barcelona by Befaco and is fully compatible with Befaco 7U cases as well as Intellijel 7U and Palette cases.
+
+  The module features a high-quality headphone amplifier for direct monitoring, allowing users to listen to their modular output through headphones without additional equipment.
+
+  A dedicated CUE input with source selector enables auxiliary monitoring, making it possible to route separate signals to the headphone output for pre-mix monitoring or A/B comparison.
+
+  The module is available both as a fully assembled unit and as a DIY kit. A Pulp Logic panel format is also available upon request for users with Pulp Logic-format 1U rows.
+io:
+  - name: Left In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Right In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CUE In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Left Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Right Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Out
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://befaco.org/docs/Out/1U_Out_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://befaco.org/docs/Out/1U_Out_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Out/1U_Ouput_V3_Schematic.pdf
+    type: resource
+    title: Schematic (v3)

@@ -1,0 +1,50 @@
+id: 9swIzvJIGMCafkspz5P0B
+name: Phono Amp
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - audio
+  - modular
+url: https://www.befaco.org/phono-amp/
+description: The Befaco Phono Amp is a hi-fi phono preamplifier in 12HP 1U
+  Intellijel format that bridges vinyl culture with Eurorack modular synthesis.
+  It features selectable RIAA and LINE inputs to accommodate moving magnet
+  cartridges and line-level sources, with top-mounted RCA connectors and a
+  ground binding post for turntables that require grounding.
+details: |-
+  The Befaco Phono Amp brings vinyl playback directly into the Eurorack ecosystem by providing a proper phono preamplification stage in a compact 1U Intellijel tile format. Designed and assembled in Barcelona, the module targets DJs and musicians who want to incorporate turntable-based performance techniques into their modular setups, as well as listeners who want to route album playback through their modular rigs.
+
+  The module supports both RIAA-equalized inputs (for standard turntable phono outputs) and LINE-level inputs, selectable via a switch on the front panel. RIAA equalization compensates for the pre-emphasis applied during record cutting to recover a flat frequency response, making the Phono Amp compatible with all moving magnet (MM) cartridge types commonly found in DJ and audiophile turntables.
+
+  A dedicated ground binding post accommodates turntables that require a separate ground connection to eliminate hum — a standard feature on most DJ and audiophile decks. The RCA input connectors are positioned on the top of the module rather than the front panel, keeping the front face clean and reducing cable clutter in dense rack configurations.
+
+  The module is available both as a fully assembled unit and as a DIY soldering kit. Power consumption is 52mA on both the +12V and -12V rails.
+io:
+  - name: Phono/Line Left Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - name: Phono/Line Right Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - name: Ground
+    signalFlow: input
+    category: audio
+    type: ground
+    connection: binding-post
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://befaco.org/docs/Phono_Amp/Phono_Amp_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Phono_Amp/1U_Phono_Amp_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions

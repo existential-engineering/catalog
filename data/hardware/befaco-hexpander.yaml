@@ -1,0 +1,159 @@
+id: 31weYopE0wEBk53LZ6cY2
+name: Hexpander
+manufacturer: befaco
+primaryCategory: mixer
+categories:
+  - modular
+  - utility
+  - routing
+url: https://www.befaco.org/hexpander/
+description: Hexpander adds great functionality to Hexmix module. Featuring
+  three aux sends with stereo returns, individual outputs for each channel,
+  complete PFL system and balanced output. Hexpander is designed to be placed on
+  top of Hexmix, expanding Eurorack concept to 6U, allowing every channel to be
+  aligned as in traditional tabletop mixers.
+details: |-
+  Hexpander is an expansion module designed to complement the Befaco Hexmix mixer, mounting on top to form a 6U format that mirrors the ergonomics of traditional tabletop mixers within a Eurorack system.
+
+  The module provides three auxiliary sends each with stereo returns and individual per-channel controls, enabling flexible external effects routing. Both Pre and Post Fader/EQ outputs are available, giving engineers the choice of signal tap point for sends.
+
+  Return inputs feature selectable Line/Modular level switching, making Hexpander compatible with both standard studio outboard gear and Eurorack-level signal sources. A full monitor section with per-channel PFL (Pre-Fader Listen) allows each channel to be individually cued for headphone monitoring.
+
+  Individual Post-EQ outputs per channel enable the Hexpander to serve as a channel-splitting utility, sending processed signals to additional destinations. The master section includes a headphone amplifier and balanced line outputs for connecting to professional studio equipment.
+io:
+  - name: Aux Send 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux Send 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux Send 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux Return 1L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux Return 1R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux Return 2L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux Return 2R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux Return 3L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux Return 3R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel Direct Out 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel Direct Out 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel Direct Out 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel Direct Out 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel Direct Out 5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel Direct Out 6
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Headphones
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Hexpander/Hex_Mix_System_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Hexpander/Hexpander_V1_THT_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual (THT)
+  - url: https://befaco.org/docs/Hexpander/Hexpander_V1_Schematic.pdf
+    type: resource
+    title: Schematic

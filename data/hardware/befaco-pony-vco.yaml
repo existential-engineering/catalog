@@ -1,0 +1,102 @@
+id: oB9Q5IgpT9ZUGTtBqT2yL
+name: Pony VCO
+manufacturer: befaco
+primaryCategory: synthesizer
+categories:
+  - modular
+  - analog
+url: https://www.befaco.org/pony-vco/
+description: The Befaco Pony VCO is a fully analog thru-zero wavefolding VCO/LFO
+  in a compact 4HP Eurorack format. It features through-zero frequency
+  modulation (TZFM), a built-in wavefolder for harmonic timbre shaping,
+  pulsewidth modulation, hard sync, and an integrated VCA — all powered by Sound
+  Semiconductors IC technology. A range selector enables LFO operation, and the
+  module is also available in a 1U Intellijel-format variant.
+details: |-
+  The Pony VCO is Befaco's compact analog oscillator, packing an impressive feature set into just 4HP of Eurorack space. At its core it is a through-zero capable VCO, meaning it can accept bipolar frequency modulation without the pitch artifacts common to standard linear FM — essential for classic FM synthesis timbres and complex modulation patches.
+
+  The integrated wavefolder adds harmonic richness to any waveform passing through it, controlled by the Timbre knob and its associated CV input. Rather than simple clipping or saturation, the wavefolder folds the waveform back on itself as amplitude increases, generating upper harmonics in a musically useful and continuously variable way. This makes the Pony VCO especially well-suited for evolving, complex textures from a minimal patch.
+
+  Pulsewidth modulation is available on the square/pulse output, enabling classic PWM sweeping sounds when modulated with an LFO or envelope. Hard sync allows the oscillator to lock to an external signal, resetting its phase each cycle to produce characteristic sync-swept timbres. The built-in VCA means the module can self-contain amplitude control without needing an external VCA in the signal chain.
+
+  The range selector switch enables the oscillator to run as an LFO for modulation duties, extending the module's utility far beyond pitched audio. Octave and waveform selectors are panel-accessible. The module is built around Sound Semiconductors ICs for stable tracking and musicality, and is designed and assembled in Barcelona. It is also available in a 1U Intellijel-format variant (24HP) for skiff builders.
+io:
+  - name: V/Oct
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: FM Lin
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: FM Exp
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: PWM
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Timbre
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Sync
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: VCA CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Sub Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.befaco.org/docs/Pony/Pony_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/Pony/Pony_VCO_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://www.befaco.org/docs/Pony/Pony_calibration.pdf
+    type: resource
+    title: Calibration Guide
+  - url: https://www.befaco.org/docs/Pony/Pony_VCO_PCB_SMD.pdf
+    type: resource
+    title: Schematic (PCB SMD)
+  - url: https://www.befaco.org/docs/Pony/Pony_VCO_V1_1U_Mod_Guide.pdf
+    type: resource
+    title: 1U Modification Guide

@@ -1,0 +1,162 @@
+id: bq-zLiEiyWCJzBpoMPIoR
+name: MIDI Thing V2
+manufacturer: befaco
+primaryCategory: midi
+categories:
+  - modular
+  - utility
+  - digital
+url: https://www.befaco.org/midi-thing-v2/
+description: MIDI Thing V2 is a flexible MIDI to CV converter for Eurorack,
+  enabling polyphonic note handling, envelope and LFO generation, and conversion
+  of all available MIDI messages into control voltage. A major upgrade from the
+  original MIDI Thing, it adds a built-in screen for easy configuration, 12
+  assignable ports, TRS type A MIDI IN and OUT, USB Host and Device
+  connectivity, MIDI merge output, a web-based configuration tool, and a VCV
+  Rack bridge counterpart.
+details: |-
+  MIDI Thing V2 is Befaco's second-generation MIDI to CV converter for Eurorack, representing a major leap over the original. It accepts MIDI input via TRS type A (1/8-inch) jacks and USB (both Host and Device modes), converting MIDI messages into control voltages and gate signals for use with analog and digital Eurorack modules.
+
+  The module features 12 fully configurable ports that can be assigned to a wide range of functions: pitch CV for polyphonic voices, gate outputs, velocity, aftertouch, mod wheel, clock, LFO generation, envelope generation, and arbitrary MIDI CC values. This flexibility allows the module to serve as the hub of a MIDI-driven Eurorack system.
+
+  A small built-in screen with intuitive menu navigation allows on-module configuration without needing a computer. For deeper configuration, Befaco provides a web-based editor (Web Editor v1.2) that connects over USB and offers a visual interface for assigning all 12 ports.
+
+  The MIDI OUT jack supports MIDI merge, allowing the module to pass incoming MIDI through to additional devices or modules downstream. A VCV Rack bridge plugin is available for seamless integration with the software modular environment, bridging virtual and hardware instruments.
+
+  Designed, kitted, and assembled in Barcelona, MIDI Thing V2 is available both as a fully assembled module and as a DIY kit. It draws minimal current from the Eurorack rails (+12V: 30mA, -12V: 5mA), with the +5V draw varying based on USB host devices connected (up to 120mA).
+io:
+  - name: TRS MIDI IN
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: TRS MIDI OUT
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: USB Host
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: usb-a
+    maxConnections: 1
+    position: Top
+  - name: USB Device
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: usb-c
+    maxConnections: 1
+    position: Top
+  - name: CV/Gate Port 1
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Gate Port 2
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Gate Port 3
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Gate Port 4
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Gate Port 5
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Gate Port 6
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Gate Port 7
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Gate Port 8
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Gate Port 9
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Gate Port 10
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Gate Port 11
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV/Gate Port 12
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Midi_thing_V2/Midi%20Thing%20V2_User_Manual_v1.2.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/Midi_thing_V2/Midi_Thing_V2_Quick_start_guide_A4.pdf
+    type: resource
+    title: Quick Start Guide
+  - url: https://befaco.org/docs/Midi_thing_V2/Midi_Thing_V2_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://befaco.org/configmidithing2
+    type: resource
+    title: Web Configuration Editor
+  - url: https://github.com/Befaco/MIDIThing2/releases
+    type: resource
+    title: Firmware (GitHub)
+  - url: https://library.vcvrack.com/Befaco/MidiThingV2
+    type: resource
+    title: VCV Rack Bridge
+videos:
+  - provider: youtube
+    videoId: kBGkiE-BOMQ
+    title: MIDI Thing V2 - Web Editor

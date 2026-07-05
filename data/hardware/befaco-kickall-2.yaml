@@ -1,0 +1,79 @@
+id: ZyBNVQLlih8RGYcOFrEf1
+name: Kickall
+manufacturer: befaco
+primaryCategory: modular
+categories:
+  - synthesizer
+  - analog
+url: https://www.befaco.org/kickall-2/
+description: Kickall is a 6HP compact synth voice that features everything
+  needed to make a big fat kick. The module has been designed with a kick
+  synthesis patch in mind.
+details: |-
+  Kickall is a 6HP compact synth voice engineered for kick drum synthesis. It features a stable VCO with accurate V/Oct tracking across eight octaves, a CV-controllable sine-to-square waveshaper, dual VCAs, and separate envelopes for pitch modulation and volume.
+
+  The audio path consists of a sinewave oscillator that passes through a square waveshaper and two VCAs. The first VCA handles the volume envelope, while the second VCA is dedicated to general volume control. Thanks to its CV input, it is possible to apply accents or affect the dynamics of notes. Feeding this input with audio generates a basic AM operation, expanding the sonic range of the module.
+
+  In the control path, Kickall has two envelope circuits to modulate the first VCA and the oscillator's pitch. Both envelopes are fired simultaneously either manually via the front panel button or via the dedicated trigger input.
+
+  Through its Tune input, Kickall tracks eight octaves with high accuracy. You can plug a sequencer or CV source to create patterns outside the typical kick range, or feed it with an audio signal for frequency modulation effects.
+
+  Kickall is available as a fully assembled module or as a DIY kit. The front panel is aluminium with heat treatment, and both assembly and completed modules are produced in Barcelona.
+io:
+  - name: Tune
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Waveshaper CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Decay CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Volume CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://befaco.org/docs/Kickall/Kickall_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Kickall/Kickall_V1C_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/Kickall/Kickall_V1C_Schematic.pdf
+    type: resource
+    title: Schematic
+videos:
+  - provider: youtube
+    videoId: KQIl07UQMK0
+    title: Befaco Kickall - a monsterous kick drum, drone machine, Eurorack synth
+      voice and more!

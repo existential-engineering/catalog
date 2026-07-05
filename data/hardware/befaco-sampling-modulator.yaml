@@ -1,0 +1,86 @@
+id: T6JQrMR3TNmbEDrp4sqFV
+name: Sampling Modulator
+manufacturer: befaco
+primaryCategory: sampler
+categories:
+  - sequencer
+  - utility
+  - modular
+url: https://www.befaco.org/sampling-modulator/
+description: The Befaco Sampling Modulator is a versatile 8HP Eurorack module
+  that sits at the intersection of a VCO, Sample & Hold, and 8-step trigger
+  sequencer. It offers sequencer-clocked sample & hold, analog downsampling
+  effects at audio rates up to 200 kHz with CV, and a temperature-compensated
+  ramp core VCO with over four octaves of tracking. The module is capable of
+  producing metallic textures, 8-bit lo-fi sounds, polyrhythmic CV sequences,
+  and pitch-stable melodic output.
+details: |-
+  The Befaco Sampling Modulator is an 8HP Eurorack module that defies easy categorization, functioning simultaneously as a Sample & Hold, a trigger sequencer, an analog downsampler, a waveshaper, and a VCO. Designed and assembled in Barcelona, the module is available both as a fully assembled unit and as a DIY kit, following Befaco's tradition of open-hardware Eurorack instruments.
+
+  At its core, the Sampling Modulator excels at sequencer-clocked sample & hold operation. An incoming audio or CV signal is sampled at the rate defined by an external clock, and each of the module's 8 sequencer steps can independently hold or pass through the signal. This produces quantized, stepped outputs that follow polyrhythmic patterns, making it an expressive tool for melodic sequencing and random voltage generation.
+
+  The analog downsampling mode captures the clock input at audio rates — internally up to 25 kHz, and up to 200 kHz when modulated by an external CV source. Running an audio signal through the sampler at reduced clock rates introduces aliasing artifacts and lo-fi textures reminiscent of early digital samplers and 8-bit hardware. At higher rates these effects become metallic or ring-modulator-like, providing a wide timbral palette from subtle grit to harsh digital destruction.
+
+  The module's VCO mode uses a temperature-compensated ramp core that tracks V/Oct input with more than four octaves of stable pitch response. The trigger outputs can be patched back into the audio path to function as a pulse oscillator, enabling self-patching configurations that blur the boundary between sequencing, synthesis, and sampling. The CLOCK input doubles as a positive-going hard sync input, allowing rhythmic locking and timbral variations through sync-based waveform resetting.
+
+  The Sampling Modulator ships with a heat-treated aluminum front panel and a 40mm depth (including the power connector), making it compatible with most Eurorack cases. Comprehensive documentation is provided including a user manual, assembly guide, and schematic, and the module's open-hardware design makes it accessible to builders and modifiers alike.
+io:
+  - name: IN
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CLOCK
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: HOLD
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: V/Oct
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: TRIG OUT
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://befaco.org/docs/Sampling_Modulator/Sampling_Modulator_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Sampling_Modulator/Sampling_Modulator_V1_6_1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/Sampling_Modulator/Sampling_Modulator_V1_6_1_Schematic.pdf
+    type: resource
+    title: Schematic

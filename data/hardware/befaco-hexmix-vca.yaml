@@ -1,0 +1,158 @@
+id: i4WgHKFVHWz7NMtj2Fo2c
+name: Hexmix VCA
+manufacturer: befaco
+primaryCategory: modular
+categories:
+  - analog
+  - mixer
+  - utility
+url: https://www.befaco.org/hexmix-vca/
+description: Hexmix VCA is a compact six channel VCA with a unique response
+  curve range from logarithmic to linear and to exponential using a pot. All
+  outputs are routed to output six to act as a mixer, with a normalization of
+  each one to remove each channel from the Mix.
+details: |-
+  The Hexmix VCA is a 6-channel voltage-controlled amplifier module designed for Eurorack modular synthesis systems. Each channel features an adjustable response curve that spans from logarithmic to linear to exponential, selectable via a single potentiometer per channel.
+
+  All six channel outputs are normalized together into output six, allowing the module to function as a VCA-equipped mixer. Individual channels can be broken out of the mix by patching into their dedicated output jacks, which removes them from the summed output.
+
+  The module features normalized inputs that default to 10 volts when no CV signal is present, enabling it to be used as a straightforward level-controlled mixer without requiring a separate CV source. Each channel also has a dedicated level potentiometer for manual control.
+
+  Hexmix VCA is part of Befaco's Hexmix ecosystem and can be connected to other Hexmix VCA units via an expander connection, allowing for larger mixing configurations. The front panel is made from heat-treated aluminum and the module is manufactured in Barcelona.
+io:
+  - name: Audio Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Input 5
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Input 6
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV Input 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV Input 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV Input 3
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV Input 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV Input 5
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV Input 6
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Channel Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Channel Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Channel Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Channel Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Channel Output 5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Mix Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://befaco.org/docs/Hex_VCA/Hex_VCA_V4_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/Hex_VCA/Hex_Mix_VCA_V4_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Hex_VCA/Hex_VCA_V4_Schematic.pdf
+    type: resource
+    title: Schematic

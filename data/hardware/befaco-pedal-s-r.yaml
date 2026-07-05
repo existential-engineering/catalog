@@ -1,0 +1,90 @@
+id: mZENkqbXttDl-F2LaKCBw
+name: Pedal S/R
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - audio
+  - effect
+  - modular
+url: https://www.befaco.org/pedal-s-r/
+description: The Befaco Pedal S/R is a 10HP 1U Intellijel tile providing a
+  stereo send/return insert loop for integrating guitar pedals and external
+  effects into a modular system. Its Send section attenuates Eurorack-level
+  signals (10Vpp) down to line or instrument levels suitable for stompboxes,
+  while the Return section amplifies the pedal output back to modular level. A
+  Hi-Z impedance switch accommodates pedals that expect a high-impedance guitar
+  signal.
+details: |-
+  The Befaco Pedal S/R bridges the wide voltage swings of Eurorack audio (±5V, 10Vpp) with the much lower signal levels expected by guitar pedals and stompboxes. Without attenuation, running a modular output directly into a pedal input causes severe clipping; without amplification on the return path, the recovered signal is too quiet to be useful in the modular context.
+
+  The Sends section provides two channels of buffered attenuation, bringing the hot Eurorack output down to a level compatible with standard guitar pedal inputs. The module supports both stereo and mono operation. The 1/4-inch send jacks use a standard TS (tip-sleeve) format familiar to any guitar player.
+
+  The Returns section mirrors the Sends with two channels of gain that bring the pedal's output back up to Eurorack levels. A dedicated Returns volume knob gives hands-on control over the wet signal level. The 1/4-inch return jacks use TS connectors.
+
+  A Hi-Z impedance switch on the Send side presents high input impedance at the send output, emulating the impedance of a passive electric guitar pickup. This unlocks the full intended behavior of impedance-sensitive pedals such as fuzz circuits, vintage overdrives, and wah pedals.
+
+  Compatible with Befaco 7U Case, Intellijel 7U, and Palette cases. Available as assembled module or DIY kit. Designed and assembled in Barcelona.
+io:
+  - name: Audio In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Send L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Send R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Return L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Return R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.befaco.org/docs/Pedal_S-R/Pedal_SR_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Pedal_S-R/1U_Pedal_SR_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions

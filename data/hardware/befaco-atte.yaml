@@ -1,0 +1,85 @@
+id: 2nbfVox0fembpi1UMIFbs
+name: Atte
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+url: https://www.befaco.org/atte/
+description: Quad Attenuator/Inverter, Splitter, and Offset Generator
+details: |-
+  The Atte is a versatile quad utility module consisting of four identical unity gain amplifiers. Each amplifier can multiply an incoming signal by values ranging from 0 to 1 for attenuation, or from 0 to -1 for inverting attenuation, giving it dual attenuator/inverter functionality.
+
+  The input of each channel is normalled to the input of the next channel, enabling the module to function as a signal splitter — route one source to multiple destinations simply by leaving subsequent inputs unpatched. This cascaded input topology makes signal distribution intuitive and flexible.
+
+  The first channel is normalled to 10V internally, meaning the module can also serve as an offset generator when no input is connected. Turning the knob then outputs a scalable positive or negative DC offset voltage.
+
+  Each channel features an inversion switch and a set of four LED indicators that display output level and polarity at a glance. A precise zero point is guaranteed at the left side of each potentiometer, ensuring clean muting and no bleed.
+
+  Available as a fully assembled module or as a DIY kit, the Atte is designed, kitted, and assembled in Barcelona. It occupies only 4 HP of rack space.
+io:
+  - name: Channel 1 Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 1 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 2 Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 2 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 3 Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 3 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 4 Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 4 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://www.befaco.org/docs/ATTE/ATTE_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/ATTE/ATTE_V3_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://www.befaco.org/docs/ATTE/Atte_V3_PCB_THT.pdf
+    type: resource
+    title: Schematic

@@ -1,0 +1,76 @@
+id: abAol7xs3fLxE2n2XzPbV
+name: IROI
+manufacturer: befaco
+primaryCategory: effect
+categories:
+  - digital
+  - modular
+  - reverb
+  - delay
+url: https://www.befaco.org/iroi/
+description: Iroi is a compact, stereo effects powerhouse designed to turn any
+  external signal into a deep, evolving soundscape.
+details: |-
+  IROI is a compact, 18 HP stereo effects powerhouse from Befaco designed to turn any external signal into a deep, evolving soundscape. It is a focused derivation of Befaco's Oneiroi module, inheriting its sophisticated processing chain while adding a new mapping structure optimized for live performance and patch integration.
+
+  The signal chain combines a stereo multimode filter (low-pass, high-pass, band-pass, and comb), a digital VCA, a 3-band resonator designed to add physical presence and harmonic depth, a 2-tap echo/delay, and an experimental reverb with macro controls for size, filtering, and direction. The filter and VCA act as a movable block that can be placed at any point in the signal chain.
+
+  The Advanced Mapping System allows CV control and randomization of virtually all parameters. Holding the MAP button while turning any knob maps that parameter to an external CV or internal modulation source. Internal modulation sources include an LFO with seven selectable waveforms and an envelope follower that lets incoming audio modulate itself.
+
+  The reverb section features a Spacetime control that transitions smoothly from short to long to inverted reverb, enabling blooming, hauntingly beautiful atmospheric textures. The delay section offers 2-tap echo suitable for rhythmic or textural processing, with external sync support for clock-locked tempo.
+
+  A powerful randomizer with four different targets and undo/redo functionality allows instant sonic exploration. The module is available both fully assembled and as a DIY kit, and is designed and assembled in Barcelona.
+io:
+  - name: In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Sync
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://www.befaco.org/docs/Iroi/IROI%20Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/Iroi/Iroi_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+videos:
+  - provider: youtube
+    videoId: e46DR19NJec
+    title: Atmospheric FX Processing in Eurorack // IROI from BEFACO

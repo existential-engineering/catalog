@@ -1,0 +1,78 @@
+id: YVjLZR6gcnIiuPIDlQZrJ
+name: Spring Reverb
+manufacturer: befaco
+primaryCategory: effect
+categories:
+  - analog
+  - modular
+url: https://www.befaco.org/spring-reverb/
+description: The Befaco Spring Reverb is an analog Eurorack module that routes
+  audio through a physical spring reverb tank with voltage-controlled signal
+  mixing. It features two CV-controlled audio inputs with distinct routing paths
+  — In 1 feeds the dry mix while In 2 feeds directly into the tank — plus
+  independent Mix and Wet outputs for flexible integration. A built-in VU-meter
+  monitors the wet output level, and a high-pass filter on the tank input allows
+  tonal shaping of the reverb signal.
+details: |-
+  The Befaco Spring Reverb brings the warm, organic texture of physical spring reverb into the Eurorack format. Unlike digital emulations, this module uses an actual spring reverb tank, delivering the characteristic splashy, resonant character prized in dub, ambient, and experimental electronic music. The fully analog signal path ensures zero digital latency and a distinctly tactile sonic quality.
+
+  The module offers two audio inputs with fundamentally different routing behaviors. In 1 is summed into the dry signal path, meaning it contributes to the Mix output alongside the wet reverb signal. In 2 feeds exclusively into the reverb tank, making it ideal for sending signals you want fully drenched in reverb without affecting the dry mix. Both inputs are voltage-controlled via CV, enabling dynamic, automation-friendly mix changes over time.
+
+  A high-pass filter is placed at the tank's input, allowing the user to remove low-frequency content before it enters the reverb circuit. This prevents the characteristic low-end muddiness and unwanted resonance that spring tanks can produce when driven with bass-heavy signals, keeping the reverb tight and musical even on full-range sources.
+
+  The module provides two discrete outputs: a Wet output carrying only the reverb tank signal, and a Mix output combining the dry and wet paths. This dual-output design gives users maximum routing flexibility — the Wet output can feed a separate effects chain or mixer channel, while the Mix output handles the blended result. A VU-meter on the panel gives visual feedback of the wet output level, helping dial in appropriate drive levels into the tank.
+
+  Built in Barcelona with an aluminum heat-treated front panel, the Spring Reverb is available both as a fully assembled module and as a DIY kit with accompanying assembly manual and schematic. At 8HP wide and 40mm deep, it is compact enough to fit into dense Eurorack systems without sacrificing panel clarity.
+io:
+  - name: In 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: In 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Mix
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Wet
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://befaco.org/docs/Spring_Reverb/Spring_Reverb_V3_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://befaco.org/docs/Spring_Reverb/Spring_Reverb_V3_Schematic.pdf
+    type: resource
+    title: Schematic
+  - url: https://befaco.org/docs/Spring_Reverb/Reverb_Tank.pdf
+    type: resource
+    title: Reverb Tank Info

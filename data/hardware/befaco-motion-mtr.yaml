@@ -1,0 +1,77 @@
+id: h0e7FSpBgRxw_8CkULLqd
+name: Motion MTR
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+url: https://www.befaco.org/motion_mtr/
+description: Motion MTR is a 6HP three-channel CV and audio attenuverter, mixer,
+  and VU meter developed in collaboration between Befaco and Robin Vincent of
+  Molten Music Technology. Each channel provides an attenuverting knob and an
+  LED strip for real-time signal visualization of both positive and negative
+  excursions. Inputs are normalled to 10V for use as a manual voltage source,
+  and channels 1 and 2 outputs sum into a third output for convenient mixing.
+details: |-
+  The Motion MTR is a compact 6HP Eurorack utility module that combines attenuversion, signal visualization, and mixing into a single, versatile tool. Developed as a collaboration between Befaco and Robin Vincent of Molten Music Technology, it is designed to handle both CV and audio signals across three independent channels, each featuring a knob for attenuation and a LED meter strip for real-time visual feedback.
+
+  Each of the three channels can be used as an attenuverter — turning the knob past center inverts the signal — making it suitable for scaling and flipping CVs for modulation routing. The LED visualization displays both the positive and negative excursion of the signal, giving instant insight into CV behavior without needing an oscilloscope. In audio mode, the LEDs function as a VU meter.
+
+  The inputs of all three channels are normalled to 10V, meaning that with nothing patched in, each output will produce a variable DC voltage set by its knob. This turns Motion MTR into a three-channel manual voltage source — useful for static offsets, biasing, or tuning.
+
+  Channels 1 and 2 have their outputs summed into the Output 3 jack, enabling a simple two-into-one mixer configuration. This makes Motion MTR useful as a final mixing stage, a send-return utility, or a modulation combiner — adding considerable flexibility beyond simple attenuation.
+
+  The module is available both as a fully assembled unit and as a DIY kit. It features an aluminium heat-treated front panel and is designed and assembled in Barcelona.
+io:
+  - name: Channel 1 Input
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Input
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 3 Input
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 1 Output
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Output
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Output 3 (Mix of Ch1+Ch2)
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.befaco.org/docs/Motion_MTR/mmm-manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://moltenmusictechnology.com/molten-motion-meter-diy-build-guide
+    type: resource
+    title: Assembly Manual
+  - url: https://www.befaco.org/docs/Motion_MTR/Motion_MTR_V1_Schematic.pdf
+    type: resource
+    title: Schematic
