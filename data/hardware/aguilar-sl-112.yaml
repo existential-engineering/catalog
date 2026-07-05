@@ -42,11 +42,25 @@ specs: |-
   - Depth: 18"
   - Weight: 25 lbs (11.34 kg)
 io:
-  - name: Speaker Input
+  - name: Speaker Input 1
     signalFlow: input
     category: audio
     type: line
     connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Speaker Input (speakON)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: speakon
     maxConnections: 1
     position: Bottom
 prices:
