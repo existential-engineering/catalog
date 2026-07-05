@@ -36,20 +36,34 @@ specs: |-
   - Standby Mode: Auto after 30 minutes of inactivity
   - Footswitch: Supported
 io:
-  - name: Stereo Input
+  - name: Left Input
     signalFlow: input
     category: audio
     type: line
     connection: combo jack
-    maxConnections: 2
+    maxConnections: 1
     position: Left
-  - name: Thru Output to Monitors
+  - name: Right Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Left Thru Output to Monitors
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Left
+  - name: Right Thru Output to Monitors
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
   - name: Footswitch
     signalFlow: input
     category: audio
