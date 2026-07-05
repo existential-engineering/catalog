@@ -1,0 +1,124 @@
+name: Kastle Drum
+manufacturer: bastl-instruments
+primaryCategory: drum-machine
+categories:
+  - semi-modular
+  - sequencer
+  - percussion
+  - discontinued
+url: https://bastl-instruments.com/instruments/kastle-drum
+description: A pocket-sized patchable mini modular synthesizer specializing in
+  algorithmic industrial glitchy drum synthesis, featuring 8 drum synthesis
+  styles with a unique dynamic acceleration charged envelope.
+details: |-
+  The Kastle Drum is a pocket-sized patchable mini modular synthesizer specializing in algorithmic industrial glitchy drum synthesis. Eight drum synthesis styles are selectable via the DRUM control, each shaped by a unique dynamic acceleration charged envelope. Decay time is separately controllable with a CV input.
+
+  A voltage-controllable clock generator produces square (CLK) and triangle (LFO) wave outputs. A stepped voltage generator offers random, 8-step, and 16-step loop modes, with its output accessible as a patch point. The PITCH control has an offset knob and CV input with an attenuator.
+
+  Two protected CV I/O ports can be routed to any patch point and are the recommended connection points for interfacing with external gear (using I/O 1 as clock input for sync). The main audio output can drive headphones directly without a volume control.
+
+  Open-source design with firmware and schematics on GitHub. Originally released Fall 2016; v1.5 introduced significant improvements. Powered by 5V Micro USB (power only, no data) or 3x AA batteries (switchable). Dimensions: 70 × 60 × 50 mm.
+io:
+  - name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Noise Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Step Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Pitch CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Decay CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Drum Style CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV I/O 1
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV I/O 2
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: USB Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b-micro
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-kastle-drum-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://github.com/bastl-instruments/kastle
+    title: GitHub (Open Source)
+    type: resource
+  - url: https://bastl-instruments.com/support/helpline/drum
+    title: FAQ / Helpline
+    type: support
+videos:
+  - provider: youtube
+    videoId: 12swhHgedlU
+  - provider: youtube
+    videoId: 7wbIcTOrMVA
+  - provider: youtube
+    videoId: FbIQYxTNjRs
+  - provider: youtube
+    videoId: CriF3kbH_Y4
+  - provider: youtube
+    videoId: -JSQEBd96bI
+  - provider: youtube
+    videoId: BMyQED2_Y3Y
+  - provider: youtube
+    videoId: SPafPJZlBeY
+id: jpcx9CyhYAt7V1AtFsUlB

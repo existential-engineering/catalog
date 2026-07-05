@@ -1,0 +1,80 @@
+name: Kastle v1.5
+manufacturer: bastl-instruments
+primaryCategory: synthesizer
+categories:
+  - digital
+  - semi-modular
+  - discontinued
+url: https://bastl-instruments.com/instruments/kastle
+description: A pocket-sized semi-modular synthesizer powered by dual ATtiny 85
+  microcontrollers, featuring a complex oscillator with six synthesis modes, a
+  voltage-controllable LFO, and a stepped waveform generator. Open-source and
+  reprogrammable via Arduino.
+details: |-
+  The Kastle v1.5 is a pocket-sized semi-modular synthesizer powered by two ATtiny 85 microcontrollers reprogrammable via Arduino. Its complex oscillator offers six synthesis modes split between main (phase modulation, noise, track & hold modulation) and secondary (phase distortion, tonal noise, formant synthesis) variants.
+
+  A voltage-controllable LFO provides triangle and square wave outputs with a reset input. A stepped voltage generator offers random, 8-step, and 16-step modes for melodic sequencing and modulation. CV-controllable parameters include pitch, timbre, and waveshape.
+
+  Two dual-purpose CV I/O ports enable patching with other modular gear. Audio output is via a headphone connector. 10 patch pin cables included. Powered by 5V Micro USB or 3x AA batteries. Open-source hardware (CC-BY-SA license) with schematics and firmware on GitHub.
+
+  Dimensions: 70 × 60 × 50 mm. Succeeded by the Kastle 2 series (Alchemist, Wave Bard, FX Wizard).
+io:
+  - name: CV I/O 1
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: pin
+    maxConnections: 1
+    position: Top
+  - name: CV I/O 2
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: pin
+    maxConnections: 1
+    position: Top
+  - name: Headphone Out
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: USB Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b-micro
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-kastle-v1.5.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://github.com/bastl-instruments/kastle
+    title: GitHub (Open Source)
+    type: resource
+  - url: https://www.soundonsound.com/reviews/bastl-instruments-kastle
+    title: Sound On Sound Review
+    type: review
+  - url: https://bastl-instruments.com/support/helpline/kastle
+    title: Support / Helpline
+    type: support
+videos:
+  - provider: youtube
+    videoId: Y3yMThjRUKs
+  - provider: youtube
+    videoId: cDWffb5D5Io
+  - provider: youtube
+    videoId: Qiv9HFPigro
+  - provider: youtube
+    videoId: JyrNW6nNJwc
+  - provider: youtube
+    videoId: dd73-O07Zo0
+  - provider: youtube
+    videoId: AQA1_00s2xg
+  - provider: youtube
+    videoId: 1XstRs4dyIY
+  - provider: youtube
+    videoId: 3aRvb0InOwc
+id: i8wfxzecO9xZ-NaNhlLXh

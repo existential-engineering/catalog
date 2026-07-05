@@ -1,0 +1,95 @@
+name: Cinnamon
+manufacturer: bastl-instruments
+primaryCategory: filter
+url: https://bastl-instruments.com/eurorack/modules/cinnamon
+description: "A 5HP voltage-controlled state variable filter with a unique
+  character. Voltage-controlled cutoff with CV attenuator and a separate V/OCT
+  input. Audio input with gain control and a drive switch for overdrive. Two
+  character switches alter the resonance response and self-oscillation
+  waveforms. Three simultaneous outputs: lowpass (12dB/oct), bandpass (6dB/oct),
+  and highpass (12dB/oct). Self-oscillates at maximum resonance. Available with
+  aluminum or oak wood panel. Hand-assembled in Brno, Czech Republic."
+details: |-
+  Cinnamon is a voltage-controlled state variable filter offering a uniquely characterful sound. The cutoff frequency is controlled by a dedicated knob and a CV input with its own attenuator, while a separate V/OCT input allows precise pitch-tracking without attenuation.
+
+  The audio input includes a gain knob, and a drive switch engages input overdrive for added harmonic content. Two character switches modify the resonance response and shape the waveforms the filter produces when self-oscillating — giving a wide range of tonal options from clean and surgical to saturated and unpredictable.
+
+  All three filter modes are simultaneously available as separate outputs: lowpass (12dB/oct, 2-pole), bandpass (6dB/oct, 1-pole), and highpass (12dB/oct, 2-pole). When resonance is pushed to maximum the filter enters self-oscillation, producing phase-shifted sine waves at each output simultaneously.
+
+  Hand-assembled in Brno, Czech Republic. Available with either an aluminum panel or an oak wood panel with custom knobs. The 16-pin power connector includes PTC fuse and reverse-polarity diode protection.
+io:
+  - name: Audio In
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LP Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: BP Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: HP Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/content/files/manual-cinnamon-web-v1.4.pdf
+    title: User Manual v1.4
+    type: resource
+  - url: https://bastl-instruments.com/content/files/manual-cinnamon-web-v1.2.pdf
+    title: User Manual v1.2
+    type: resource
+  - url: https://bastl-instruments.com/files/nihon-cinnamon-manual.pdf
+    title: User Manual v1.2 (JP)
+    type: resource
+  - url: https://bastl-instruments.com/files/cinnamon-1.2-assembly-guide.pdf
+    title: Assembly Guide v1.2
+    type: resource
+  - url: https://bastl-instruments.com/files/cinnamon-1.2-schematics.pdf
+    title: Schematics v1.2
+    type: resource
+videos:
+  - provider: youtube
+    videoId: eYBNfQvNT4c
+  - provider: youtube
+    videoId: dkaZpC1LLto
+  - provider: youtube
+    videoId: Zj7_s8HMywg
+  - provider: youtube
+    videoId: kKBZbhA0RN8
+id: _OYYAkKI86e4ze5ih3JcT

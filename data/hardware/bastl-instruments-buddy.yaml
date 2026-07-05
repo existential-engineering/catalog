@@ -1,0 +1,94 @@
+name: Buddy
+manufacturer: bastl-instruments
+primaryCategory: mixer
+categories:
+  - utility
+url: https://bastl-instruments.com/eurorack/modules/buddy
+description: A 5HP Eurorack stereo mixer with preamp optimized for hybrid
+  setups. Channels A and B are DC-coupled Eurorack-level inputs (×2/+6dB).
+  Channels C and D are AC-coupled line-level inputs (×10/+20dB) accepting stereo
+  TRS or dual mono. All four channels sum to a stereo output with soft Zener
+  clipping. Chainable via back-panel jumpers.
+details: |-
+  Buddy is a compact 5HP stereo mixer with preamp designed for hybrid studio setups where both Eurorack-level and line-level signals need to coexist in the same mix.
+
+  Channels A and B are optimized for Eurorack signals: DC coupled, 100kΩ input impedance, ×2/+6dB gain. Each channel has two mono inputs (left normalized to right). Channels C and D target line-level sources such as drum machines and synthesizers: AC coupled, 10kΩ input impedance, ×10/+20dB gain, each accepting a stereo TRS or dual mono TS 3.5mm jack. Solder jumpers on C and D allow DC coupling conversion.
+
+  All four channels sum to a stereo output with 1kΩ output impedance and soft Zener clipping at 10Vpp on the mixdown stage. NE5532 op-amps provide low-noise performance. Back-panel jumpers allow chaining multiple units for expanded mixing.
+io:
+  - name: Channel A Left Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel A Right Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B Left Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B Right Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel C Input (Stereo TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel D Input (Stereo TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Left Output
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Right Output
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-buddy-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/nihon-buddy-manual.pdf
+    title: User Manual (JP)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: i8iO-bUAU1Q
+  - provider: youtube
+    videoId: VTMJKJh_QJc
+id: l39RNIvK7-iYVi61iW9oH

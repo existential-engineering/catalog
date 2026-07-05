@@ -1,0 +1,96 @@
+name: CIAO!!
+manufacturer: bastl-instruments
+primaryCategory: audio-interface
+categories:
+  - utility
+url: https://bastl-instruments.com/eurorack/modules/ciaoii
+description: A 5HP performance-oriented output module built with high-quality,
+  low-noise components. Converts modular-level signals to line level across two
+  stereo channels. Channel A has balanced 1/4-inch jack outputs; Channel B has a
+  3.5mm stereo jack output. A dedicated headphone amplifier (8–250Ω) with
+  channel-select switch enables monitoring of either channel. Each channel has a
+  level control with signal and clip LEDs. A MIX switch blends Channel B into
+  Channel A. Back-panel jumper customizes normalization.
+details: |-
+  CIAO!! is a 5HP compact output module designed for live performance and studio use, bridging modular-level signals and line-level equipment with high-quality, low-noise components.
+
+  Channel A outputs through balanced 6.3mm (1/4-inch) jacks, making it suitable for professional audio interfaces and mixers. Channel B outputs through a 3.5mm stereo jack. Both channels have dedicated level controls with LED indicators for signal presence and clipping detection.
+
+  A headphone amplifier supports impedances from 8 to 250Ω with a channel-select switch to monitor either Channel A or Channel B. A MIX switch allows blending Channel B's signal into Channel A's output. Normalization behavior can be customized via a back-panel jumper.
+
+  The 10-pin power connector includes PTC fuse and diode protection.
+io:
+  - name: Channel A Left Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel A Right Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B Left Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B Right Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel A Left Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel A Right Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/content/files/manual-ciaoii-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/nihon-ciaoii-manual.pdf
+    title: User Manual (JP)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: B4w0qjMv30g
+id: t9FtKLidtnEC32d5paNlV

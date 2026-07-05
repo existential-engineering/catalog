@@ -1,0 +1,92 @@
+name: Knit Rider
+manufacturer: bastl-instruments
+primaryCategory: sequencer
+categories:
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/knit-rider
+description: "Six-voice trigger/gate sequencer for Eurorack with a hierarchical
+  step editing architecture: 4 bars per pattern, 16 steps per bar, 4 sub-steps
+  per step — 256 steps per pattern total, with 64 patterns available. Each voice
+  is independently configurable as trigger or gate mode. Features real-time step
+  editing with bar navigation, tap-based sequence recording with quantization,
+  individual voice muting, a jump function for step repetition, active step
+  control for per-voice step counts, copy/paste/clear, and undo. Accepts
+  external clock input with selectable ratio and supports tap tempo. MicroSD
+  card storage is rear-accessible."
+details: "16 HP width, 35mm depth (skiff-friendly). Power draw: <35mA at +12V.
+  10-pin power connector with PTC fuse and diode protection. MicroSD card slot
+  on rear panel for pattern storage. 64 patterns total. Each of the 6 voices
+  outputs 5V logic level and is individually configurable as trigger or gate
+  mode."
+io:
+  - name: Voice 1
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Voice 2
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Voice 3
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Voice 4
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Voice 5
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Voice 6
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-knit-rider-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/knit-rider-1.5-update.pdf
+    title: v1.5 Update Overview
+    type: resource
+videos:
+  - provider: youtube
+    videoId: czH42bwletg
+  - provider: youtube
+    videoId: uGfSHxZmytk
+  - provider: youtube
+    videoId: zYW6BexmnmE
+id: nkBqI4eTzIamJjyQ4ekG3

@@ -1,0 +1,75 @@
+name: microGranny 2
+manufacturer: bastl-instruments
+primaryCategory: sampler
+categories:
+  - granular
+  - digital
+  - lo-fi
+  - discontinued
+url: https://bastl-instruments.com/instruments/microgranny
+description: Our monophonic granular sampler packs grand lo-fi sound into a
+  small body. The 2nd generation of Bastl's instant classic reads wav samples
+  from a microSD card and applies granular algorithms to them.
+details: |-
+  The microGranny 2 is a monophonic granular sampler that reads WAV samples from a microSD card and applies granular algorithms for lo-fi sound manipulation. It supports 6 samples per preset with adjustable start, end, sample rate (tuned or free-run), bit crush, and amplitude envelope (attack/release).
+
+  Granular parameters include grain size and shift speed (positive or negative). 60 presets are organized across 10 banks (6 per bank) and stored as .txt files on the microSD card. An 8-bit/22050 Hz recorder captures audio via line input or the onboard microphone.
+
+  MIDI input responds to note, CC, and clock messages — enabling loop and grain synchronization, MIDI side chain envelope restart, and full parameter control via CC. Arduino-based and fully open source.
+
+  Powered by 9V battery, 9V center-positive DC supply, or side pins. Dimensions: 140 × 75 × 55 mm. Succeeded by the microGranny Monolith.
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: MIDI Input
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+versions:
+  - name: "2.5"
+    description: New sample bank; MIDI velocity fixes; added store instant loop;
+      improved grain controls; stability improvements
+  - name: "2.4"
+    description: Fixed MIDI clock absence bug; fixed MIDI grain reverse; removed
+      MIDI side chain
+  - name: "2.3"
+    description: Major stability improvement; MIDI implementation improvements;
+      display flicker fixes
+links:
+  - url: https://bastl-instruments.com/files/manual-microgranny-2.pdf
+    title: User Manual
+    type: resource
+  - url: https://github.com/bastl-instruments/microGranny2
+    title: Source Code (GitHub)
+    type: resource
+  - url: https://www.soundonsound.com/reviews/bastl-instruments-microgranny-2
+    title: Sound On Sound Review
+    type: review
+videos:
+  - provider: youtube
+    videoId: 8hOkFjVMYMk
+  - provider: youtube
+    videoId: 8X0URbZn9hQ
+id: wA1hPJNrjhDOll8KCrxFu

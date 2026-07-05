@@ -1,0 +1,123 @@
+name: Dynamo
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/dynamo
+description: Combines envelope follower, comparator, and voltage-controlled
+  switch. Two passively-connected envelope follower inputs with inverted,
+  non-inverted, and full-wave rectifier outputs. Compressor CV output with LED.
+  Selectable release time (Short/Mid/Long). Comparator with threshold control
+  and CV input. Bi-directional non-buffered voltage-controlled switch.
+details: 5HP, 35mm depth. +12V <30mA, -12V <35mA. 10-pin, PTC fuse. Comparator
+  Out→VCS Gate In normalized. Comparator In from EF Out normalized.
+io:
+  - name: Envelope Follower In 1
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Envelope Follower In 2
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Envelope Follower Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Inverted EF Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Full-Wave Rectifier Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Compressor CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: THR-EF Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Comparator In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Comparator Threshold CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Comparator Out
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: VCS Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: VCS A
+    signalFlow: bidirectional
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: VCS B
+    signalFlow: bidirectional
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-dynamo-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/dynamo-1.1-schematics.pdf
+    title: Schematics
+    type: resource
+videos:
+  - provider: youtube
+    videoId: moVuvGI-bIQ
+id: J1eN5mtQSPuIsdyYCQKko

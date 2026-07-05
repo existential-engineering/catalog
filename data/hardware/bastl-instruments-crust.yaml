@@ -1,0 +1,123 @@
+name: CRUST
+manufacturer: bastl-instruments
+primaryCategory: drum
+categories:
+  - percussion
+url: https://bastl-instruments.com/eurorack/modules/crust
+description: "An 8HP drum voice and sound design tool built on the Bastl Pizza
+  platform with two layers: a noise source (white, clap, bit, metallic modes
+  with LP/HP filter) and a dual oscillator tone generator (FM, FM2, dual, ring
+  modulation). Crossfader with envelope control blends the layers. Pitch
+  envelope, FM envelope, and transient shaping. Clip/distortion section: soft
+  clipping with bass boost or hard clipping. Per-input sample-and-hold on all CV
+  inputs. Assignable CTRL knob with CV, V/OCT with calibration. Firmware updates
+  via micro USB."
+details: |-
+  CRUST is an 8HP Eurorack drum voice and sound design tool built on the Bastl Pizza platform. It features two independent layers: a noise source and a dual oscillator tone generator.
+
+  The noise layer provides four modes — white, clap, bit, and metallic — each with its own character, and an integrated lowpass/highpass filter. The tone layer offers four oscillator configurations: FM, FM2, dual oscillator, and ring modulation, all with V/OCT pitch tracking and calibration.
+
+  A crossfader blends the two layers with dedicated envelope control over the crossfade position. The pitch envelope and FM envelope add punchy transient character. All audio passes through a clip/distortion section switchable between soft clipping (with bass boost) for warmth and hard clipping for aggressive tones.
+
+  Every CV input features per-input sample-and-hold for stepped modulation from any source. The assignable CTRL knob maps to a user-selected parameter with dedicated CV input. Velocity input doubles as an external envelope input when no trigger is connected. Preset storage and firmware updates via micro USB. Open-source DIY resources on GitHub.
+io:
+  - name: V/OCT
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Velocity
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Layer CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ENV CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Timbre CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CTRL CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ENV
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/content/files/manual-crust-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/content/files/manual-crust-web-fr.pdf
+    title: User Manual (FR)
+    type: resource
+  - url: https://bastl-instruments.com/files/nihon-crust-manual.pdf
+    title: User Manual (JP)
+    type: resource
+  - url: https://bastl-instruments.com/content/files/bastl-crust-cookbook.pdf
+    title: CRUST Cookbook
+    type: resource
+  - url: https://github.com/bastl-instruments/pizza
+    title: GitHub (DIY Resources)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: qLZPvVS9Wjc
+  - provider: youtube
+    videoId: qpOCb8RCTeo
+  - provider: youtube
+    videoId: 1fAuktlOdtE
+  - provider: youtube
+    videoId: afQyN1_W4rA
+  - provider: youtube
+    videoId: ljvRnoo_E-E
+  - provider: youtube
+    videoId: 8EptFWOAAk8
+id: gblSZpArTAsz0_2qy7np9

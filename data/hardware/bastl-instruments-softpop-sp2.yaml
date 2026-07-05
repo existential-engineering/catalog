@@ -1,0 +1,108 @@
+name: Softpop SP2
+manufacturer: bastl-instruments
+primaryCategory: synthesizer
+categories:
+  - analog
+  - semi-modular
+  - subtractive
+  - sequencer
+url: https://bastl-instruments.com/instruments/softpop2
+prices:
+  - amount: 507
+    currency: EUR
+description: A radical subtractive synthesizer combining modular analog
+  circuitry with unconventional digital sequencing control, developed through a
+  decade-long collaboration between Casper Electronics and Bastl Instruments.
+details: |-
+  Softpop SP2 is a radical subtractive synthesizer combining modular analog circuitry with unconventional digital sequencing control. Developed through a decade-long collaboration between Casper Electronics (Peter Edwards) and Bastl Instruments (Václav Peloušek), it was inspired by the Benjolin synthesizer by Rob Hordijk.
+
+  The instrument excels at basslines, chord progressions, distorted beats, and textural effects. It functions as both a standalone synthesizer and external audio processor with built-in filter, VCA, and overdrive stages. A 37-point patchbay provides extensive modular routing possibilities.
+
+  The 8-step pattern sequencer offers 8 banks of 8 patterns (saved on-demand), 8 quantization scales, 8 playback modes, and 8 performance effects including ratchets, arpeggios, and noise. Per-step gate envelopes and portamento provide detailed sequence control.
+
+  Built-in utilities include an XY crossfader, 4-way multiple, sample & hold random modulation, and an envelope follower. The unit is Eurorack-compatible via a 16-pin protected connector (requires 5V busboard) and powered by 5V Micro USB. Dimensions: 173 × 112 × 41 mm.
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Analog Sync Input
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock Output
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI Input
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: USB Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b-micro
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+videos:
+  - provider: youtube
+    videoId: 18xDKN0P5Tw
+    title: Softpop SP2 Introduction
+  - provider: youtube
+    videoId: CcMQO9jvsxU
+    title: Documentary with Peter Edwards (Casper Electronics)
+  - provider: youtube
+    videoId: iGky7Z9wfA0
+    title: Full Tutorial Playlist
+  - provider: youtube
+    videoId: se4v2AHknic
+    title: Firmware Update Guide
+id: GJoNl6LRri14nD77f-gvW

@@ -1,0 +1,135 @@
+name: CV Trinity
+manufacturer: bastl-instruments
+primaryCategory: modulation
+categories:
+  - sequencer
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/cv-trinity
+description: "Six-channel modulation module. Each channel supports three modes:
+  Automation (32-step sequencer), LFO (with waveshaping, audio-rate capable), or
+  ADSR envelope generator. Variable step counts, independent clocking, LFO sync,
+  ADSR with linear/exponential modes and looping. Compatible with CV Trinity
+  Expander for reset/re-trigger inputs. Requires +5V bus."
+details: 14HP, 35mm depth. +12V <5mA, -12V <5mA, +5V <35mA. 16-pin connector.
+  Requires +5V bus board. CV inputs 0-5V or 0-10V selectable via jumpers.
+io:
+  - name: CV In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In 5
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In 6
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Out 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Out 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Out 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Out 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Select Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://github.com/bastl-instruments/
+    title: GitHub
+    type: resource
+videos:
+  - provider: youtube
+    videoId: oelyFA1ieNM
+id: K5in7g5S8kj9R8ZVRGOIi

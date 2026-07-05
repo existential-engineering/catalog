@@ -1,0 +1,85 @@
+name: Clutch
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/clutch
+description: Quad attenuator and volume pedal to CV interface. Functions as a
+  four-channel passive attenuator while also enabling foot pedal control of your
+  modular synthesizer via volume or expression pedal inputs. Channel A can act
+  as a voltage source with a maximum 9V output. Stereo jack inputs accept volume
+  or expression pedals to generate CV; mono jack cables work for standard
+  attenuation.
+details: 5HP, 35mm depth. +12V <25mA. 10-pin power connector with PTC fuse and
+  diode protection. Inputs accept stereo plugs for volume/expression pedal CV
+  generation or mono plugs for standard attenuation. Channel A can act as a
+  voltage source (max 9V).
+io:
+  - name: Channel A Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel A Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel C Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel C Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel D Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel D Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-clutch-web.pdf
+    title: User Manual (PDF)
+    type: resource
+id: VYImpLyDDEb7Ki8O0vYSR

@@ -1,0 +1,234 @@
+name: Citadel Alchemist
+manufacturer: bastl-instruments
+primaryCategory: synthesizer
+categories:
+  - hybrid
+  - semi-modular
+  - sequencer
+url: https://bastl-instruments.com/eurorack/modules/citadel-alchemist
+description: A 16HP patchable Eurorack hybrid-synthesis instrument reimagining
+  the Kastle 2 Alchemist desktop device. Five synthesis modes (FILTER, FM,
+  HYPERSINE, SUPERSAW, GLITCHNOISE), four oscillators, FM with feedback, ring
+  modulation, stereo filter, and dual FX (delay + chorus/flanger/distortion).
+  Macro controls TIMBRE, ENV, and PITCH SLIDE. Integrated pattern generator with
+  user-programmable rhythms via web editor. TRS MIDI + USB-C. Open-source.
+details: |-
+  Citadel Alchemist is a 16HP patchable Eurorack hybrid-synthesis instrument — a full Eurorack reimagining of the Bastl Kastle 2 Alchemist desktop synth. Five synthesis modes — FILTER, FM, HYPERSINE, SUPERSAW, and GLITCHNOISE — each with custom-tuned dual FX (stereo delay left, chorus/flanger/distortion right). Four oscillators with FM and feedback, raw waveform mixing, ring modulation, track and hold, stereo noise, stereo filter, and a transient shaper.
+
+  Three macro controls: TIMBRE (main timbral sweep, refined by RATIO), ENV (synthesis contour and sequencing, enables mode morphing), and PITCH SLIDE (pitch envelope and portamento). Pitch range spans ±3 octaves.
+
+  The integrated tempo-synced pattern generator outputs GATE and CV and supports user-defined polyrhythmic patterns via the Alchemist Laboratory web app. Tap tempo, clock division, and multiplication supported. MIDI via TRS input (clock, notes, CCs, pitch bend) and USB-C rear panel (USB MIDI in/out, firmware updates). Headphone output drives up to 250Ω. Audio at 44kHz/16-bit. Open-source firmware; blank reverse panel for custom labeling.
+io:
+  - name: Audio L In
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio R In
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Note
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Play
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Pitch Mod
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Timbre Mod
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Env Mod
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mode
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO Reset
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clk In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: C In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: G In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI In (TRS)
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sync In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio L Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio R Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Out
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clk Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Env Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO Tri Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO Pulse Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sync Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: USB-C (MIDI/Firmware)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/media/manual-citadel-alchemist-quickstart-print.pdf
+    title: Quickstart Guide
+    type: resource
+  - url: https://bastl-instruments.com/media/manual-citadel-alchemist-web.pdf
+    title: Complete Manual
+    type: resource
+  - url: https://bastl-instruments.com/media/kastle2-alchemist-fw-release-notes_v1.6.pdf
+    title: Firmware v1.6 Release Notes
+    type: resource
+  - url: https://apps.bastl-instruments.com/alchemist-laboratory/
+    title: Alchemist Laboratory (Web Editor)
+    type: resource
+  - url: https://github.com/bastl-instruments/citadel
+    title: GitHub (Open Source)
+    type: resource
+  - url: https://bastl-instruments.com/support/helpline/citadel
+    title: FAQ / Support
+    type: support
+videos:
+  - provider: youtube
+    videoId: wkVELYd0Xg8
+  - provider: youtube
+    videoId: Q--LZdA7-7k
+  - provider: youtube
+    videoId: L1zVJWkZuyE
+  - provider: youtube
+    videoId: ELcZ_uJgfUs
+  - provider: youtube
+    videoId: vXfKTewDXoM
+id: JRarYERoQLofJ4fhssxDN

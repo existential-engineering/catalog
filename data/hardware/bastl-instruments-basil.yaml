@@ -1,0 +1,111 @@
+name: BASIL
+manufacturer: bastl-instruments
+primaryCategory: delay
+categories:
+  - reverb
+  - stereo
+url: https://bastl-instruments.com/eurorack/modules/basil
+description: A flexible 8HP stereo space delay module built on the Bastl Pizza
+  platform. Combines clean digital delay and lo-fi processing with a Space
+  section for chorus, flanger, vibrato, pitch shifting, reverb, and stereo
+  widening. Includes a Freeze function for micro-looping, an assignable CTRL
+  knob with CV input, and firmware updates via micro USB. Free VCV Rack plugin
+  available.
+details: |-
+  BASIL is a flexible stereo space delay module built on the Bastl Pizza platform. It delivers clean digital delay alongside lo-fi processing options toggled via an anti-aliasing filter switch.
+
+  The Space section adds chorus, flanger, vibrato, pitch shifting, reverb, and stereo widening — making BASIL capable of much more than conventional delay. A Freeze function enables micro-looping of audio material.
+
+  The assignable CTRL knob and CV input allow real-time modulation of any parameter. Stereo inputs are normalized (Left to Right), and ping-pong mode effectively doubles delay time in mono use. V/OCT input tracks delay time for musical pitch-matched effects. Named among 'Best of Superbooth 2023'.
+io:
+  - name: Audio In L
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio In R
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out L
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out R
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: V/OCT Delay
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sync
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CTRL CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Feedback CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-basil-delay-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/nihon-basil-manual.pdf
+    title: User Manual (JP)
+    type: resource
+  - url: https://bastl-instruments.com/files/basil-fw-release-notes_v1.pdf
+    title: Firmware Release Notes
+    type: resource
+  - url: https://github.com/bastl-instruments/pizza
+    title: GitHub (DIY Resources)
+    type: resource
+  - url: https://bastl-instruments.com/support/helpline/basil
+    title: FAQ / Support
+    type: support
+videos:
+  - provider: youtube
+    videoId: YU-HGqQeWUc
+  - provider: youtube
+    videoId: oXPaBPAREic
+  - provider: youtube
+    videoId: bpWA-RLmOCM
+  - provider: youtube
+    videoId: hX43rT-nTJg
+  - provider: youtube
+    videoId: DmEMFXYOe7U
+id: 7tzWjn3NRjTKFADFz0_Hs

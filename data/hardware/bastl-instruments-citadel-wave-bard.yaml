@@ -1,0 +1,231 @@
+name: Citadel Wave Bard
+manufacturer: bastl-instruments
+primaryCategory: sampler
+categories:
+  - stereo
+  - sequencer
+  - effects
+url: https://bastl-instruments.com/eurorack/modules/citadel-wave-bard
+description: An experimental 16HP stereo sample player Eurorack module
+  reimagining the Kastle 2 Wave Bard. Stores 89 seconds mono / 44 seconds stereo
+  at 44kHz/16-bit with 8 samples per bank and up to 32 banks via web editor.
+  Features user samples via web loader, pitch control (±2 octaves, quantized
+  scales), built-in LFO, tempo generator with tap tempo, user-programmable
+  rhythm patterns, resonant filter, stereo delay/chorus, TRS MIDI, and USB-C.
+  Reversible panel (Wave Bard / FX Wizard).
+details: |-
+  The Citadel Wave Bard is an experimental stereo sample player designed for live performance and modular exploration. It stores up to 8 samples per bank (adjustable 3–32 via web editor), with 6 factory banks and up to 32 via the editor. Total storage: 89 seconds mono / 44 seconds stereo at 44kHz/16-bit. User samples uploaded via the Wave Bard Sample Loader web app.
+
+  Pitch control spans ±2 octaves with selectable quantized scales and user-defined scales via the web app. FREE In accepts continuous pitch CV; NOTE In receives quantized pitch CV.
+
+  The built-in LFO outputs triangle and pulse waveforms and syncs to internal clock or external triggers. A tempo generator with tap tempo and user-programmable rhythm patterns — via the web editor — drives pattern CV and gate outputs, enabling sequencer use within a larger modular setup.
+
+  Effects include stereo delay, chorus/flanger, and a resonant filter switchable between lowpass and highpass. Stereo DC-coupled inputs process external audio through the effects engine. Reversible panel: Wave Bard / FX Wizard. MIDI via TRS and USB-C. Open-source firmware on GitHub.
+io:
+  - name: FREE In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: NOTE In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CLK In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: RESET In
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: TRIG In
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: SAMPLE MOD
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: BANK In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LENGTH MOD
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO MOD
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO RESET
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: L In
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: R In
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: SYNC In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI In (TRS)
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CLK Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ENV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO TRI Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO PULSE Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: L Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: R Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Out
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: SYNC Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: USB-C (MIDI/Firmware)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/content/files/manual-citadel-wavebard-quickstart-print.pdf
+    title: Quickstart Guide
+    type: resource
+  - url: https://bastl-instruments.com/content/files/manual-citadel-wave-bard-web.pdf
+    title: Complete Manual
+    type: resource
+  - url: https://bastl-instruments.com/content/files/kastle2-wavebard-fw-release-notes_v1.6.pdf
+    title: Firmware Release Notes v1.6
+    type: resource
+  - url: https://apps.bastl-instruments.com/wave-bard-sample-loader/
+    title: Wave Bard Sample Loader Web App
+    type: resource
+  - url: https://github.com/bastl-instruments/citadel
+    title: GitHub (Open Source)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: yf3LLBh8bc8
+  - provider: youtube
+    videoId: CNywjB9gx_c
+  - provider: youtube
+    videoId: JuR5apnF-DM
+  - provider: youtube
+    videoId: q-Ldbfjg06M
+  - provider: youtube
+    videoId: 3ern3dA-WOI
+  - provider: youtube
+    videoId: N5UKBk3Tb_g
+  - provider: youtube
+    videoId: gi3t5fUVnBY
+id: dXwwZTejcwLpr6FHdPN2S

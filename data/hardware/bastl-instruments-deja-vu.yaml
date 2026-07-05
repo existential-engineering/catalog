@@ -1,0 +1,88 @@
+name: Déjà vu
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - mixer
+url: https://bastl-instruments.com/eurorack/modules/deja-vu
+description: A 4HP voltage utility module for attenuation, attenuversion, signal
+  boosting, crossfading, and mixing. Two independent channels (A and B) each
+  have a FADER input, ADD input, and output with LED polarity indication. When
+  OUT A is unpatched it cascades into channel B, enabling 4-channel mixing.
+  Three fader modes (Attenuvertor, Attenuator, Crossfader) and switchable
+  1×/2×/10× gain make it useful as a pre-amplifier and stereo line-to-Eurorack
+  booster.
+details: |-
+  Déjà vu is a 4HP voltage utility module that adds fader control to a modular system. It handles voltage processing, attenuation, attenuversion, signal boosting, crossfading, and mixing.
+
+  Two independent channels (A and B) each provide a FADER input (scaled by fader position and mode), an ADD input (summed directly without fader influence), and an output with green/red LED polarity indication. If the channel A output is unpatched, it cascades into channel B, turning the module into a 4-channel mixer when all four inputs are used.
+
+  Three fader modes: Attenuvertor (bipolar, −1× to +1×), Attenuator (unipolar, 0 to +1×), and Crossfader (blends FADER A and ADD A). Gain is switchable to 1×, 2×, or 10× — with a 5× option via back jumper — enabling use as a pre-amplifier and stereo line-level to Eurorack booster.
+
+  Back jumpers allow chaining multiple units for expanded mixing. Power connector is PTC fuse and diode protected.
+io:
+  - name: FADER A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADD A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FADER B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADD B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-deja-vu-web.pdf
+    title: User Manual
+    type: resource
+  - url: https://bastl-instruments.com/files/deja-vu-cookbook.pdf
+    title: Déjà vu Cookbook
+    type: resource
+videos:
+  - provider: youtube
+    videoId: mbJc_mgHI8k
+  - provider: youtube
+    videoId: DUpJfD1BQS0
+  - provider: youtube
+    videoId: o-DoSAPYbOg
+  - provider: youtube
+    videoId: n4ZiKXgMEJg
+id: BeoTx-ZbxrWyQRAiua9ks

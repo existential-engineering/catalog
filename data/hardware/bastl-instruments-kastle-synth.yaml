@@ -1,0 +1,62 @@
+name: Kastle Synth
+manufacturer: bastl-instruments
+primaryCategory: synthesizer
+categories:
+  - modular
+  - lo-fi
+  - discontinued
+url: https://bastl-instruments.com/instruments/kastle/kastle-synth
+description: A pocket-sized lo-fi mini modular synthesizer with headphone
+  output. Powered by two ATtiny85 chips (reprogrammable via Arduino), it offers
+  a complex oscillator with three synthesis modes, a voltage-controllable LFO,
+  and a stepped waveform generator with 8 random or looping step patterns.
+details: |-
+  The Kastle Synth is the original Kastle (v1.0–1.4), a pocket-sized lo-fi mini modular synthesizer running on two ATtiny85 chips reprogrammable via Arduino. It features a complex oscillator with three synthesis modes: phase distortion, phase modulation/FM, and track & hold.
+
+  A voltage-controllable LFO provides triangle and square wave outputs with a reset input. A stepped waveform generator offers 8 random or looping step patterns for melodic sequencing and modulation.
+
+  The device features two dual-purpose CV I/O patch ports that can function as either inputs or outputs depending on patch routing. Audio output is via a headphone connector. Powered by 3x AA batteries or Micro USB. Open-source hardware with schematics and firmware on GitHub.
+
+  Dimensions: 70 × 60 × 50 mm. Includes 10 patch cables and user manual.
+io:
+  - name: CV I/O 1
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: pin
+    maxConnections: 1
+    position: Top
+  - name: CV I/O 2
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: pin
+    maxConnections: 1
+    position: Top
+  - name: Headphone Out
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: pin
+    maxConnections: 1
+    position: Top
+  - name: USB Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b-micro
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-kastle-web.pdf
+    title: User Manual
+    type: resource
+  - url: https://github.com/bastl-instruments/
+    title: GitHub (Open Source)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: F6oV6-shZpI
+  - provider: youtube
+    videoId: k3b9iSbeeoo
+id: cvQn9bp3jeMecCR5KqNvJ

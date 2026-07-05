@@ -1,0 +1,71 @@
+name: Popcorn
+manufacturer: bastl-instruments
+primaryCategory: sequencer
+categories:
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/popcorn
+description: Compact, musical sequencer/quantizer/arpeggiator. Embraces the idea
+  of making a selection of 8 notes that can be browsed in many different ways.
+  Features CV output with selectable range (1, 2, or 5 octaves), multiple
+  quantizer modes (chromatic, diatonic, pentatonic, blues scales, and chord
+  modes), gate output with adjustable gate time, dual trigger inputs for step
+  navigation, slide functionality, and expandability via Popcorn CV Exp and
+  Popcorn Gate Exp modules.
+details: "Width: 10 HP. Depth: 35mm. Power: +12V <65mA, -12V <5mA. 10-pin power
+  connector with PTC fuse and diode protection. Firmware v1.1 available for
+  units manufactured before May 2018."
+io:
+  - name: CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger A
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger B
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Reset
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-popcorn-web.pdf
+    title: User Manual (EN)
+    type: resource
+id: 24UjdwR8uP1-zgm_3mUxh

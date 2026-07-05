@@ -1,0 +1,47 @@
+name: microGranny Monolith
+manufacturer: bastl-instruments
+primaryCategory: sampler
+categories:
+  - granular
+  - digital
+  - lo-fi
+  - discontinued
+url: https://bastl-instruments.com/instruments/microgranny-monolith
+description: A lo-fi granular sampling instrument designed for hands-on sound
+  manipulation, featuring a black PCB case with improved tactile controls. Load
+  samples via microSD card or record live through a built-in microphone or line
+  input.
+details: |-
+  The microGranny Monolith is a lo-fi granular sampling instrument and a redesigned edition of the original microGranny, featuring a black PCB case and improved tactile controls. It is monophonic and holds 6 playable samples with 60 preset slots across 10 banks.
+
+  Samples are loaded via microSD card (mono WAV files, 22050 Hz, 8-bit or 16-bit, two-letter filenames) or recorded live at 8-bit/22050 Hz through the built-in microphone or line input. Granular controls include grain size and shift speed parameters.
+
+  MIDI input supports note, CC, and clock sync. Arduino-based and open-source — hackable with custom firmware. Includes a pre-installed sample pack by Bogdan Raczynski. Available user manuals in English and Japanese.
+
+  Dimensions: 141 × 76 × 45 mm. Powered by 9V battery or center-positive 9V DC supply.
+io:
+  - name: Audio In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+videos:
+  - provider: youtube
+    videoId: tDSY2bQHvNI
+id: lyXgzeXAaXNaugBqFTrs4

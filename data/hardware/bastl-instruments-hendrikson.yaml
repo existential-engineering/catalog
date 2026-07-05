@@ -1,0 +1,52 @@
+name: Hendrikson
+manufacturer: bastl-instruments
+primaryCategory: amplifier
+categories:
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/hendrikson
+description: Guitar/instrument amplifier and interface for external effects
+  processors with CV-controllable crossfader between output signal and return
+  from effects chain. Buffered output level control with clipping LEDs, input
+  gain adjustment with modular level indication (5V peak-to-peak). 6.3mm Neutrik
+  connectors.
+details: 5HP, 45mm depth. +12V <40mA, -12V <35mA. 10-pin, PTC fuse. 1/4-inch
+  Neutrik jacks.
+io:
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: MIX CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-hendrikson-web.pdf
+    title: User Manual (EN)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: wAk4dcA1_wE
+  - provider: youtube
+    videoId: W0lGBzW6IEs
+id: 8RyJnWBHzF0c5DwLOz14C

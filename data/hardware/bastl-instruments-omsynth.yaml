@@ -1,0 +1,70 @@
+name: OMSynth
+manufacturer: bastl-instruments
+primaryCategory: synthesizer
+categories:
+  - discontinued
+url: https://bastl-instruments.com/instruments/omsynth
+description: A circuit development and performance interface designed to help
+  you quickly build audiovisual instruments from scratch and experiment with
+  them live. Developed in collaboration with Casper Electronics, featuring a
+  breadboard workspace, built-in speaker, mixer, and onboard sensors.
+details: |-
+  The OMSynth is a circuit development and performance interface designed to help you quickly build audiovisual instruments from scratch and experiment with them live. Developed by Casper Electronics in collaboration with Bastl Instruments, it targets those with some circuit-building experience, though beginners are welcome with additional self-study.
+
+  The OMSynth features a 3-channel audio mixer with weighted inputs (×1, ×1, ×10), an amplified speaker with volume control, a dual mono headphone output, and 2 stereo I/O jacks for external connections. Regulated 5V and unregulated power sockets are available on-board, with 200mA over-current protection.
+
+  Interaction and sensing are provided by 5 modular 100kΩ potentiometers with 1kΩ buffer protection, 1 pushbutton with integrated on/off switch, 3 touch sensors on the OMS logo, a tri-color LED with discrete channel drivers, and a light sensor functioning as a basic vactrol. Two full-size breadboards and a laser-engraved base plate with carrying handle allow for rapid circuit prototyping. An expansion section supports custom satellite boards.
+
+  Discontinued. Assembly documentation including guide, BOM, schematics, and board diagrams remains available.
+io:
+  - name: Stereo I/O 1
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stereo I/O 2
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/omsynth-3.2-assembly-guide-2.pdf
+    title: Assembly Guide v3.2 (update)
+    type: resource
+  - url: https://bastl-instruments.com/files/omsynth-3.2-assembly-guide.pdf
+    title: Assembly Guide v3.2
+    type: resource
+  - url: https://bastl-instruments.com/files/omsynth-3.1-schematics.pdf
+    title: Schematics v3.1
+    type: resource
+  - url: https://bastl-instruments.com/files/omsynth-3.1-board.pdf
+    title: Board Diagram v3.1
+    type: resource
+videos:
+  - provider: youtube
+    videoId: pRqn34d1VhU
+  - provider: youtube
+    videoId: FaoJaLmZaL4
+  - provider: youtube
+    videoId: t7JYOIYqMEY
+  - provider: youtube
+    videoId: ECSYLTB_sbw
+id: IRsx1lUlZnPPfUTEWi7QD

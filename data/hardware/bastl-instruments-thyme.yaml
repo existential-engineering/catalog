@@ -1,0 +1,120 @@
+name: Thyme
+manufacturer: bastl-instruments
+primaryCategory: multi-effect
+categories:
+  - delay
+  - reverb
+  - tape
+  - sequencer
+  - discontinued
+url: https://bastl-instruments.com/instruments/thyme
+description: A sequenceable digital tape machine and audio effects processor
+  featuring modulation sources called Robots. Explore time-based effects
+  including delay, phaser, reverb, chorus, pitch shifter, multi-tap delay, tape
+  delay, tremolo, vibrato, and compressor in stereo. Each of the 9 parameters
+  has a dedicated Robot modulation source, and a 32-step sequencer with 4
+  patterns allows for dynamic parameter automation.
+details: |-
+  Thyme is a sequenceable digital tape machine and audio effects processor by Bastl Instruments. At its core, Thyme simulates a tape-based signal path with continuously variable tape speed and delay time, enabling a wide range of time-based effects: delay, phaser, reverb, chorus, pitch shifter, multi-tap delay, tape delay, tremolo, vibrato, and compressor — all in stereo.
+
+  The device features 9 parameters — Tape Speed, Delay Coarse, Delay Fine, Feedback, Filter, Spacing, Levels, Dry/Wet Mix, and Volume — each with a dedicated modulation source called a Robot. Robots can be set to oscillate, randomize, or follow sequences, providing dynamic, evolving textures without external modulation.
+
+  A 32-step sequencer with 4 patterns allows parameter values to be recorded and played back step-by-step. Up to 64 presets are organized across 8 banks. The Freeze button captures and loops the current tape buffer, while Tap Tempo lets users sync delay time by feel.
+
+  The analog audio input supports switchable stereo/mono operation with up to +20dB of gain. A stereo headphone output with independent volume control makes Thyme suitable for monitoring and performance use.
+
+  External control is available via MIDI In/Out (5-pin DIN), analog clock input (0–5V), volt-per-octave CV input (controls Tape Speed/Delay), and a footswitch jack. Discontinued and succeeded by the Thyme+.
+io:
+  - name: Audio Input L/R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Bottom
+  - name: Audio Output L/R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Footswitch
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+versions:
+  - name: 1.1.1
+    description: Fixed audio turning off on some units until restart
+  - name: 1.1.0
+    description: Added triplet quantization, expanded robot speed range, MIDI
+      start/stop customization; fixed filter transition artifacts
+  - name: 1.0.2
+    description: Fixed crashes with SYNC, delay jumping to zero, and robot freeze issues
+  - name: "1.0"
+    description: Initial firmware release
+links:
+  - url: https://bastl-instruments.github.io/thyme/manual.html
+    title: Complete Manual (HTML)
+    type: resource
+  - url: https://bastl-instruments.com/files/manual-thyme-web.pdf
+    title: Complete Manual (PDF)
+    type: resource
+  - url: https://bastl-instruments.com/files/manual-thyme-short.pdf
+    title: Quick Start Manual (PDF)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: iALSGzOP4Oc
+  - provider: youtube
+    videoId: pa0YODdrJrg
+  - provider: youtube
+    videoId: ZEL0u2dTAt0
+  - provider: youtube
+    videoId: UtNZTsvHQso
+id: YFOmLbeCKyp4UpO1YAJKk
