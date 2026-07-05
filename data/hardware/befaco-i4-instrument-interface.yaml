@@ -19,18 +19,11 @@ details: |-
 
   The module is available both as a fully assembled unit and as a DIY kit. It is designed and assembled in Barcelona, Spain, featuring an aluminium heat-treated front panel.
 io:
-  - name: Instrument Input
+  - name: Combo Input (Mic/Instrument/Line)
     signalFlow: input
     category: audio
     type: line
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Left
-  - name: Microphone Input
-    signalFlow: input
-    category: audio
-    type: line
-    connection: xlr
+    connection: combo jack
     maxConnections: 1
     position: Left
   - name: Audio Output
@@ -42,7 +35,7 @@ io:
     position: Left
   - name: Envelope Output
     signalFlow: output
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
