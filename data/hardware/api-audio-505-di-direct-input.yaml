@@ -1,0 +1,53 @@
+id: cYtOiHfcLAdpuFp6iSjIS
+name: 505-DI Direct Input
+manufacturer: api-audio
+primaryCategory: di-box
+categories:
+  - preamp
+  - rack-mount
+url: https://apiaudio.com/product/505-di-direct-input/
+description: 500 Series DI module for guitars, basses, and keyboards. Features
+  55 dB gain, Hi-Z front input, switchable 100K/400K load, passive two-band EQ
+  (150 Hz / 8 kHz), BRIGHT switch, 20 dB pad, and transformer-coupled balanced
+  output via API 2520/2510 op-amps.
+details: 500 Series DI module with front-panel Hi-Z instrument input and passive
+  thru output. Passive two-band EQ with low-frequency shelving at 150 Hz and
+  high-frequency shelving at 8 kHz. BRIGHT switch for additional presence.
+  10-segment LED VU meter, peak output LED, 20 dB pad, switchable 100K/400K load
+  impedance.
+specs: |-
+  - Format: 500 Series
+  - Gain: 55 dB
+  - Input impedance: >380K Ohms (unbalanced)
+  - Output impedance: 75 Ohms (transformer-coupled, balanced)
+  - Clipping level: +30 dBu
+  - Frequency response: 30–20 kHz (0, -0.4 dB)
+  - Noise: 98 dB below +10 dBm
+  - THD: 0.01% (+4 dBu @ 2 kHz)
+  - Power: ±16V DC, 130 mA max
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Instrument Thru
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Module Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: User Manual
+    url: https://apiaudio.com/docs/manuals/505-DI_user_2021-07-27.pdf

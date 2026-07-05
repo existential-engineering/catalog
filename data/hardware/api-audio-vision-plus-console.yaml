@@ -1,0 +1,63 @@
+id: a3ulrDI4rtpUZk6v4MZiW
+name: Vision+ Console
+manufacturer: api-audio
+primaryCategory: console
+url: https://apiaudio.com/product/vision-plus-console/
+description: Updated iteration of API's Vision inline console with dual
+  touch-screen automation, integrated DAW control via HUI/MCU,
+  stereo/LCR/surround panning per channel, two 100 mm motorized faders per
+  channel, and optional 200/500-series module bays. Available in 32–96 channels.
+details: "32/48/64/80/96-channel large-format inline analog console. Each
+  channel: two 100 mm motorized faders (inline architecture),
+  stereo/LCR/surround panning, HP filter on both signal paths. Dual touch-screen
+  automation control modules. Self-contained Final Touch Automation System.
+  Upgraded fader drive with touch calibration. Alt-Line Input option doubles
+  line inputs during mixdown. Options bucket pre-wired for 200-series and/or
+  500-series modules. Optional 2500+C Bus Compressor integration. HUI/MCU DAW
+  control protocol."
+specs: |-
+  - Frame sizes: 32, 48, 64, 80, or 96 channels
+  - Faders: two 100 mm motorized per channel (inline)
+  - Automation: Final Touch (self-contained, dual touch-screen)
+  - DAW control: HUI/MCU protocol
+  - Panning: stereo/LCR/surround per channel
+  - HP filter: on both signal paths
+io:
+  - name: Mic Input (Per Channel)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line Input (Per Channel)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Alt-Line Input (Per Channel)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mix Bus Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: User Manual
+    url: https://apiaudio.com/wp-content/uploads/2026/04/Vision_user_2025-07-13.pdf
+  - type: resource
+    title: Control Room Block Diagram
+    url: https://apiaudio.com/wp-content/uploads/2026/04/Vision-Control-Room-Block-2025-07-11.pdf
+  - type: resource
+    title: Final Touch Automation Manual
+    url: https://apiaudio.com/wp-content/uploads/2026/02/FTA_user_2026-01-18.pdf

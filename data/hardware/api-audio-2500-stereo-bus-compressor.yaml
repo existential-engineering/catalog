@@ -1,0 +1,65 @@
+id: QtG54nAM3aSgH9ExMi7qW
+name: 2500+ Stereo Bus Compressor
+manufacturer: api-audio
+primaryCategory: compressor
+categories:
+  - dynamics
+  - outboard
+  - rack-mount
+url: https://apiaudio.com/product/2500-stereo-bus-compressor/
+description: Dual-channel stereo bus compressor featuring the proprietary
+  THRUST® circuit for punchy bottom-end compression. Selectable Old (feedback,
+  API 525-derived) or New (feed-forward) modes, Mix/Blend control for parallel
+  compression, and auto-makeup gain.
+details: "THRUST® circuit delivers punchy bottom-end compression. Selectable
+  compression modes: Old feedback-style (derived from API 525) or New
+  feed-forward design. Mix/Blend control with three settings: OFF (compressed
+  only), X-Cross (crossfade), and Parallel (blend compressed into uncompressed).
+  Auto-makeup gain maintains constant output levels. Dual VU meters monitor
+  input, output, and gain reduction. Can operate as a stereo compressor or two
+  independent channels. 1U 19-inch rackmount. Five-year warranty."
+specs: |-
+  - Input impedance: 60K Ohms (balanced)
+  - Output impedance: 75 Ohms (transformer-coupled, balanced)
+  - Maximum output: +32 dBu
+  - Frequency response: ±0.5 dB, 20 Hz–50 kHz
+  - Signal-to-noise ratio: 120 dB
+  - Power: 28.8 W
+  - Dimensions: 19" W × 1.75" H × 10.5" D
+  - Weight: 9.4 lb
+io:
+  - name: Left Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Right Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Left Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Right Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Side Chain Insert
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left

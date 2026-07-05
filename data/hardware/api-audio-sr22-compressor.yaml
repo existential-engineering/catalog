@@ -1,0 +1,95 @@
+id: r8GaA2Rc1_lnoiIUwKXRH
+name: SR22 Compressor
+manufacturer: api-audio
+primaryCategory: compressor
+categories:
+  - dynamics
+  - rack-mount
+url: https://apiaudio.com/product/sr22-compressor/
+description: 2-channel 2U rackmount compressor based on the ATI Paragon console
+  compressor circuit, featuring the patented THRUST® circuit, Hard/Soft knee
+  switching, stereo link with true RMS power summing, and adaptive
+  attack/release times.
+details: "2-channel 2U rack compressor. Per-channel controls: variable Threshold
+  (−40 to +15 dBu), Ratio (1:1 to 10:1), Makeup Gain (0 to +20 dB), Hard/Soft
+  Knee, switchable metering (output level or gain reduction). THRUST® sidechain
+  filter (Flat/THRUST switchable). Stereo link with true RMS power summing.
+  Adaptive attack (10–40 ms) and release (30–400 ms). Classic analog VU meters
+  with peak LED. 12W power consumption. Weight: 12 lb."
+specs: |-
+  - Input impedance: 15 kΩ (balanced)
+  - Bandwidth: ±0.5 dB (20 Hz–50 kHz)
+  - THD+N @ 1 kHz, +4 dBu: <0.005%
+  - Max level: +19 dBu
+  - S/N ratio: −88 dBu (comp in), −92 dBu (bypass), −106 dB
+  - Crosstalk: <84 dB @ 20 kHz
+  - Threshold: −40 to +15 dBu
+  - Ratio: 1:1 to 10:1
+  - Makeup gain: 0 to +20 dB
+  - Attack: 10–40 ms (adaptive)
+  - Release: 30–400 ms (adaptive)
+  - Power: 12 W
+  - Rack format: 2U EIA 19"
+  - Dimensions: 19" × 3.5" × 10" D
+  - Weight: 12 lb
+io:
+  - name: Input L (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Input R (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Input L (1/4")
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Input R (1/4")
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Output L (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output R (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output L (1/4")
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Output R (1/4")
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: User Manual
+    url: https://apiaudio.com/docs/manuals/SR22_user_2022-08-25.pdf

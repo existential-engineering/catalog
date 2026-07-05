@@ -1,0 +1,48 @@
+id: lRdiZNKhSUCUuKxBb0GMQ
+name: 212L Mic Pre
+manufacturer: api-audio
+primaryCategory: preamp
+categories:
+  - rack-mount
+url: https://apiaudio.com/product/212l-mic-pre/
+description: Classic API design in 200-Series format, tracing lineage to API's
+  legendary 2488 series consoles. Delivers high frequency articulation with
+  detail alongside big sounding, warm bottom end. All-discrete circuit design
+  with transformer-coupled inputs and outputs.
+details: 200 Series module with API 2520 op-amp, all-discrete circuit design,
+  and transformer-coupled inputs and outputs. Features wide-range gain control,
+  20 dB pad, 48V phantom power, and 5-segment LED VU meter. Traces its lineage
+  to API's legendary 2488 series consoles.
+specs: |-
+  - Format: 200 Series
+  - Op-Amp: API 2520
+  - Input impedance: 1,500 Ohms
+  - Output impedance: 85 Ohms (transformer-coupled)
+  - Maximum input: +2 dBu (no pad); +18 dBu (with pad)
+  - Gain: 55 dB max
+  - Clipping level: +28 dBu
+  - Frequency response: 0, -0.3 dB, 30–20 kHz
+  - Noise floor: -102 dBu unweighted; -125 dBu A-weighted
+  - THD+N: 0.02% at +4 dB
+  - Power: ±16V DC, 40mA max
+  - Dimensions: 1.25" × 2.65" × 6.5" deep
+  - Weight: 0.55 lb
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: Recall Sheet
+    url: https://apiaudio.com/docs/files/setup212l.pdf
