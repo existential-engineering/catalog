@@ -1,0 +1,76 @@
+id: r6veFeZbSeGtEpgFTNbRv
+name: CLA-100
+manufacturer: avantone-pro
+primaryCategory: amplifier
+categories:
+  - power-amp
+url: https://avantonepro.com/en/products/cla-100
+description: 1U rack-mount Class A/B studio reference power amplifier with 100W
+  per channel into 8Ω, convection cooling (fanless), oversized toroidal
+  transformer, and Stereo/Bridged Mono operation modes.
+details: |-
+  The CLA-100 is a 100W RMS per channel Class A/B studio reference amplifier
+  in a 1U rack chassis. Powered by an oversized toroidal transformer and
+  populated with high-quality Japanese filter caps, it uses a classic
+  complement of power MOSFETs for a detailed high end.
+
+  With razor flat response of ±0.25dB from 20Hz to 30kHz at full rated power,
+  the CLA-100 delivers sonic quality equivalent to amplifiers costing several
+  times as much. Convection cooling eliminates fan noise, making it suitable
+  for control room installation in the same room as the monitors.
+
+  In Bridged Mono mode, the CLA-100 delivers 245W into 8Ω.
+specs: |-
+  - Amplifier Class: Class A/B
+  - Output Power: 100W into 8Ω per channel
+  - Output Power (Bridged Mono): 245W into 8Ω
+  - Frequency Response: 20Hz–30kHz ±0.25dB
+  - THD+N (1kHz, rated power): <1%
+  - Input Impedance: 20kΩ
+  - Cooling: Convection (fanless)
+  - Rack Height: 1U
+  - Dimensions: 19" W × 10.25" D × 1.75" H
+  - Weight: 14.8 lbs (6.7 kg)
+io:
+  - name: Channel A Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Channel B Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Channel A Speaker Output
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: banana
+    maxConnections: 1
+    position: Left
+  - name: Channel B Speaker Output
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: banana
+    maxConnections: 1
+    position: Left
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Left
+links:
+  - url: https://avantone.imgix.net/131f2a95-97e9-4c80-a7dc-07a4017a90dd/Avantone-CLA-100-OwnersManual.pdf
+    type: resource
+    title: "Owner's Manual"
+prices:
+  - amount: 499
+    currency: USD

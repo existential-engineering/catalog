@@ -1,0 +1,129 @@
+id: AqFiGMPtv1iCtFHIZgk7M
+name: CLA-400
+manufacturer: avantone-pro
+primaryCategory: amplifier
+categories:
+  - power-amp
+url: https://avantonepro.com/en/products/cla-400
+description: 3U rack-mount Class A/B studio reference power amplifier with 360W
+  per channel into 8Ω, toroidal transformer linear power supply, convection
+  cooling (fanless), and Stereo/Parallel/Bridged Mono operation modes.
+details: |-
+  The Avantone Pro CLA-400 Studio Reference Amplifier is a classically designed
+  Class A/B amplifier designed in the traditional studio style, with generous
+  VU meters, high quality Japanese components, and a toroidal transformer
+  linear power supply. In a 3U rack mount chassis, this amplifier delivers over
+  360 watts per channel into an 8 ohm load.
+
+  The CLA-400 is convection cooled with no fan, so it can be used in the same
+  room as the monitors. It supports Stereo, Parallel, and Bridged Mono
+  operation modes. Protection circuits include thermal shutdown, DC voltage
+  protection, and ZSP short-circuit protection.
+
+  The rear panel features balanced XLR and TRS/TS phone plug inputs with
+  pass-through link outputs, Speakon and binding post speaker outputs, a ground
+  lift switch, and an IEC320 AC mains inlet with voltage selector.
+specs: |-
+  - Amplifier Class: Class A/B
+  - 8Ω Stereo Power (1kHz): 360W
+  - 4Ω Stereo Power (1kHz): 540W
+  - 8Ω Bridged Power (1kHz): 760W
+  - Frequency Response: 20Hz–20kHz ±0.5dB
+  - Total Harmonic Distortion (1kHz): <0.1%
+  - Signal-to-Noise Ratio (A-weighted): >103dB
+  - Input Impedance (Balanced): 20kΩ
+  - Input Impedance (Unbalanced): 10kΩ
+  - Input Sensitivity (1kHz): 0.775V (0 dBU)
+  - Damping Factor (100Hz, 8Ω): 250
+  - Crosstalk: -70dB
+  - Cooling: Convection (fanless)
+  - Operating Modes: Stereo, Parallel, Bridged Mono
+  - Rack Height: 3U
+  - Dimensions: 483mm W × 133mm H × 487mm D
+  - Weight: 22.2 kg (49 lbs)
+  - Warranty: 5 years
+io:
+  - name: Channel A Input (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Channel A Input (TRS/TS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Channel B Input (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Channel B Input (TRS/TS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Channel A Link Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Channel B Link Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Channel A Speaker Output (Speakon)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Left
+  - name: Channel A Speaker Output (Binding Post)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: banana
+    maxConnections: 1
+    position: Left
+  - name: Channel B Speaker Output (Speakon)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Left
+  - name: Channel B Speaker Output (Binding Post)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: banana
+    maxConnections: 1
+    position: Left
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Left
+links:
+  - url: https://avantone.imgix.net/bae1e407-55b9-4bd9-b624-5d0a07d852e6/Avantone-CLA-400-OwnersManual.pdf
+    type: resource
+    title: "Owner's Manual"
+prices:
+  - amount: 1199
+    currency: USD

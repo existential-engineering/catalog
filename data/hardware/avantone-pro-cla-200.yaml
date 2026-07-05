@@ -1,0 +1,128 @@
+id: EaRnX77Mrr0xITJcTZGmF
+name: CLA-200
+manufacturer: avantone-pro
+primaryCategory: amplifier
+categories:
+  - power-amp
+url: https://avantonepro.com/en/products/cla-200
+description: 2U rack-mount Class A/B studio reference power amplifier with 200W
+  per channel into 8Ω, toroidal transformer linear power supply, convection
+  cooling (fanless), Speakon and binding post outputs, and
+  Stereo/Parallel/Bridged Mono operation modes.
+details: |-
+  The Avantone Pro CLA-200 Studio Reference Amplifier is a classically designed
+  Class A/B amplifier built in the traditional studio style, with generous watt
+  meters, high quality Japanese components, and a toroidal transformer linear
+  power supply. In a 2U rack mount chassis, it delivers over 200 watts per
+  channel into an 8 ohm load.
+
+  The CLA-200 is convection cooled with no fan, so it can be used in the same
+  room as the monitors. It was designed to be paired with large format studio
+  monitors, but is suitable for any demanding speaker load. Very low distortion,
+  steady performance under harsh conditions, and an open and transparent sound
+  make this an obvious choice for discerning studios.
+
+  Supports Stereo, Parallel, and Bridged Mono (500W into 8Ω) operation modes.
+  The rear panel features balanced XLR/TRS combo inputs with link outputs,
+  Speakon and binding post speaker outputs, a ground lift switch, and an
+  IEC320 mains inlet with 115V/230V voltage selector.
+specs: |-
+  - Amplifier Class: Class A/B
+  - Output Power (8Ω Stereo, 1kHz): 200W
+  - Output Power (4Ω Stereo, 1kHz): 300W
+  - Output Power (8Ω Bridged, 1kHz): 500W
+  - Frequency Response: 20Hz–20kHz ±0.5dB
+  - Total Harmonic Distortion (1kHz): <0.1%
+  - Signal-to-Noise Ratio (A-weighted): >103dB
+  - Input Impedance (Balanced): 20kΩ
+  - Input Impedance (Unbalanced): 10kΩ
+  - Input Sensitivity (1kHz): 0.775V (0 dBU)
+  - Damping Factor (100Hz, 8Ω): 250
+  - Crosstalk: -70dB
+  - Cooling: Convection (fanless)
+  - Power Supply: Toroidal transformer linear
+  - AC Mains: 115V/230V selectable
+  - Rack Height: 2U
+  - Dimensions: 270mm W × 89mm H × 385mm D
+  - Weight: 20 kg (44 lbs)
+io:
+  - name: Channel A Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Channel B Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Channel A Link Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Channel B Link Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Channel A Speaker Output (Speakon)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Left
+  - name: Channel B Speaker Output (Speakon)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Left
+  - name: Channel A Speaker Output (Binding Post)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: banana
+    maxConnections: 1
+    position: Left
+  - name: Channel B Speaker Output (Binding Post)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: banana
+    maxConnections: 1
+    position: Left
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Left
+videos:
+  - videoId: OYcuqEZR6us
+    title: Avantone Pro CLA-200 200W Class A/B Power Amplifier Demo
+  - videoId: KTEw-1RgG-E
+    title: Chris Lord-Alge on the CLA-200 Studio Reference Amplifier
+  - videoId: iHdKMjE_ACI
+    title: Avantone Pro CLA-10A and CLA-200 Overview
+links:
+  - url: https://avantone.imgix.net/1720fc6c-aefe-4fca-ba2b-51b0da954b82/Avantone-CLA-200-OwnersManual.pdf
+    type: resource
+    title: "Owner's Manual"
+  - url: https://avantone.imgix.net/3d138536-88c4-4b5b-b746-d1d5a0c987fd/CLA-10A_CLA-200_Recording_Sept2019_All.pdf
+    type: review
+    title: Recording Magazine Review (September 2019)
+prices:
+  - amount: 799
+    currency: USD
