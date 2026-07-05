@@ -1,0 +1,67 @@
+id: F-N0T01bJN09XiNaLVqEX
+name: 1073MPF
+manufacturer: bae-audio
+primaryCategory: preamp
+categories:
+  - rack-mount
+  - analog
+  - vintage
+url: https://www.baeaudio.com/index.php/products/1073mpf
+prices:
+  - amount: 1720.00
+    currency: USD
+description: High-pass filter version of the 1073MP microphone preamplifier,
+  featuring Class A transformer-coupled design with the characteristic sound of
+  the 1073 equalizer — harmonically rich low end, resonant highs, and focused
+  mids.
+details: |-
+  The BAE 1073MPF is a rackmount microphone preamplifier that adds an inductor-based high-pass filter to the classic 1073MP design. It delivers the same harmonically rich, transformer-coupled Class A sound associated with the original Neve 1073 equalizer, with a focused midrange and resonant high end.
+
+  The unit features a selectable high-pass filter with four frequency settings (50Hz, 80Hz, 160Hz, and 300Hz), allowing engineers to roll off low-end rumble or room noise before it enters the signal chain. An input impedance selector offers 1200 or 300 ohms for the mic input, enabling tonal shaping at the source.
+
+  The 1073MPF is available in single or dual channel configurations housed in a standard 19-inch 1U rack chassis. It includes both phantom power and phase reverse functions, each with illuminated buttons. A high-impedance front-panel DI accommodates guitars, basses, and synthesizers.
+
+  Power is provided by a regulated linear power supply capable of supporting up to four channels. The unit is hand-wired using modular construction, consistent with BAE's approach to replicating vintage Neve circuit topology and build quality.
+specs: |-
+  - Frequency Response: 10Hz to -3dB @ 55kHz
+  - Gain: 0–71 dB
+  - Max Output: +27.4 dBu @ 600Ω
+  - Equivalent Input Noise: -110 dBu (unweighted 300kHz)
+  - CMRR: 100dB min @ 60Hz
+  - Input Impedance (Mic): ≈1200 / 300 ohms (selectable)
+  - Input Impedance (Line): 10k ohms
+  - Input Impedance (DI): ≈150k ohms
+  - Output Impedance: 65 ohms
+  - High-Pass Filter Frequencies: 50Hz, 80Hz, 160Hz, 300Hz
+  - Power: 115/230 VAC, 30W
+  - Dimensions: 19"W × 1.75"H × 9"D
+  - Weight: Single 8 lbs / Dual 10 lbs
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: DI Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
