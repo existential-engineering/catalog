@@ -63,6 +63,14 @@ const ALL_VALID_CATEGORY_INPUTS = new Set([
 const VALID_FORMATS = new Set(formatsSchema.formats);
 const VALID_PLATFORMS = new Set(platformsSchema.platforms);
 
+// Played instruments (guitars, basses, etc.) expose a single output jack with no
+// meaningful panel position, so they are exempt from the io `position` requirement
+// below — requiring it would force invented Top/Bottom/Left/Right data.
+const categoryGroupsSchema = loadYamlFile<{ groups: Record<string, string[]> }>(
+  path.join(SCHEMA_DIR, "category-groups.yaml")
+);
+const POSITION_EXEMPT_CATEGORIES = new Set(categoryGroupsSchema.groups.Instruments ?? []);
+
 // Helper to check if a category is valid (canonical or alias)
 function isValidCategory(cat: string): boolean {
   return ALL_VALID_CATEGORY_INPUTS.has(cat);
@@ -368,7 +376,7 @@ const IOSchema = z
     type: z.string(),
     connection: z.string(),
     connectorDetail: z.array(z.string()).optional(),
-    maxConnections: z.number().optional(),
+    maxConnections: z.number(),
     position: z
       .string()
       .optional()
@@ -532,7 +540,7 @@ const SoftwareSchema = z
     url: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
-    primaryCategory: createCategoryValidator().optional(),
+    primaryCategory: createCategoryValidator(),
     secondaryCategory: createCategoryValidator().optional(),
     supersedes: z.string().optional(),
     searchTerms: z.array(z.string()).optional(),
@@ -578,7 +586,7 @@ const HardwareSchema = z
     url: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
-    primaryCategory: createCategoryValidator().optional(),
+    primaryCategory: createCategoryValidator(),
     secondaryCategory: createCategoryValidator().optional(),
     supersedes: z.string().optional(),
     searchTerms: z.array(z.string()).optional(),
@@ -591,6 +599,23 @@ const HardwareSchema = z
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
     videos: z.array(VideoLinkSchema).optional(),
+  })
+  .check((ctx) => {
+    // Every io entry needs a `position`, except on played instruments
+    // (guitars, basses, etc.) whose single output jack has no panel position.
+    const data = ctx.value;
+    if (!data.io || data.io.length === 0) return;
+    if (data.primaryCategory && POSITION_EXEMPT_CATEGORIES.has(data.primaryCategory)) return;
+    data.io.forEach((port, i) => {
+      if (!port.position) {
+        ctx.issues.push({
+          code: "custom",
+          message: `io entry '${port.name ?? i}' is missing required 'position' (${formatValidOptions(VALID_IO_POSITIONS)}).`,
+          path: ["io", i, "position"],
+          input: port,
+        });
+      }
+    });
   })
   .refine(
     (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
@@ -646,7 +671,7 @@ const ContentSchema = z
     url: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
-    primaryCategory: createCategoryValidator().optional(),
+    primaryCategory: createCategoryValidator(),
     secondaryCategory: createCategoryValidator().optional(),
     supersedes: z.string().optional(),
     searchTerms: z.array(z.string()).optional(),
@@ -691,7 +716,7 @@ const AccessorySchema = z
     url: z.url().optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
-    primaryCategory: createCategoryValidator().optional(),
+    primaryCategory: createCategoryValidator(),
     secondaryCategory: createCategoryValidator().optional(),
     supersedes: z.string().optional(),
     searchTerms: z.array(z.string()).optional(),

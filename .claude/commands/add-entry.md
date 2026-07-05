@@ -89,6 +89,9 @@ Create the YAML file(s) in the appropriate `data/` subdirectory.
 - `specs` must use block scalar `|-` with `"- "` prefixed list items (NOT YAML arrays)
 - `description` uses flow scalar format (Prettier auto-wraps long lines)
 - Hardware `io` entries use field order: name, signalFlow, category, type, connection, maxConnections, position
+- Passive-loudspeaker inputs (speakON, binding-post, banana, euroblock, barrier/spring
+  terminals) use `type: speaker-level`, NOT `line` — they carry amplified signals
+- `url` / `links[].url` must be trimmed with no raw whitespace (percent-encode spaces as `%20`)
 
 After writing the file(s):
 
