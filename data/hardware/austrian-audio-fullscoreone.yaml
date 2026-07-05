@@ -1,0 +1,79 @@
+id: 5XQMmw-sWEcFl2lvITHhf
+name: Full Score one
+manufacturer: austrian-audio
+primaryCategory: headphone-amp
+url: https://austrian.audio/product/fullscoreone/
+prices:
+  - amount: 1699
+    currency: USD
+  - amount: 1299
+    currency: GBP
+  - amount: 1499
+    currency: EUR
+description: The Full Score one is Austrian Audio's reference-grade headphone
+  amplifier designed for audiophiles and audio professionals. Fully discrete and
+  built from premium components, it delivers stunning transients and ultra-low
+  distortion through proprietary True Transient Technology (TTT), revealing
+  every detail with clarity and control. The circuit is a wide-band, fully
+  symmetrical voltage feedback design with a triple emitter follower output
+  stage biased in class B, a high-speed complementary push-pull gain stage, and
+  a cascoded parallel differential input stage. Handles headphone loads from 10Ω
+  through 600Ω. Designed and assembled in Austria.
+details: |-
+  The Full Score one employs proprietary True Transient Technology (TTT) in a fully discrete circuit: wide-band symmetrical voltage feedback design with a triple emitter follower output stage (class B), high-speed complementary push-pull gain stage, and cascoded parallel differential input stage. XLR and RCA inputs are wired in parallel — always active simultaneously. Output stage includes two 6.35mm (1/4-inch) jacks and one 4-pin XLR balanced output. Supports 10Ω–600Ω headphone impedances. Max output 9 Vrms at 0.01% THD. Designed and assembled in Austria with up to 5-year warranty.
+specs: |-
+  - Inputs: 2x XLR balanced, 2x RCA (parallel)
+  - Outputs: 2x 6.35 mm (1/4-inch), 1x XLR 4-pin balanced
+  - Input Impedance: 100 kΩ
+  - Load Range: 10 Ω – 600 Ω
+  - THD+N (at 1 kHz): 0.0005% at 10 Ω, 1.0W
+  - Max Output Voltage: 9 Vrms (19 dBV) at 0.01% THD
+  - Self-Noise: 136 dB(A) / 1.5 µVrms(A)
+  - Power Bandwidth: 5 Hz – 2 MHz
+  - Max Slew Rate: 200 V/µs
+  - Rise Time: 0.25 µs (TTT on)
+  - Dimensions: 220 × 265 × 65 mm
+  - Weight: 2.8 kg
+io:
+  - name: XLR Balanced Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 2
+    position: Left
+  - name: RCA Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 2
+    position: Left
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 2
+    position: Right
+  - name: Balanced Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: xlr
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: Quick Start Guide
+    url: https://austrian.audio/download/full-score-one-quick-start-guide/
+  - type: resource
+    title: Manual (English)
+    url: https://austrian.audio/download/full-score-one-manual-en/
+  - type: resource
+    title: Technical Essay by Paul Weinreich
+    url: https://austrian.audio/download/behind-the-full-score-one-technical-essay-by-paul-weinreich/
+videos:
+  - provider: youtube
+    videoId: ROLaz-cv50I
+    title: Austrian Audio Full Score one | The assembly
