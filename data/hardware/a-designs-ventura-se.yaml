@@ -57,30 +57,35 @@ io:
     category: audio
     type: mic
     connection: xlr
+    maxConnections: 1
     position: Right
   - name: Instrument Input
     signalFlow: input
     category: audio
     type: instrument
     connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: EQ / Insert Return Input
     signalFlow: input
     category: audio
     type: line
     connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: Balanced XLR Output
     signalFlow: output
     category: audio
     type: line
     connection: xlr
+    maxConnections: 1
     position: Right
   - name: Instrument Direct Output
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
+    maxConnections: 1
     position: Right
 links:
   - type: support
