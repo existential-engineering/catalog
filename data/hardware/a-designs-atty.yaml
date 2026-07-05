@@ -1,0 +1,66 @@
+id: S9dJGCFVvdfvq5kEqDq2F
+name: ATTY Stereo Attenuator
+manufacturer: a-designs
+primaryCategory: utility
+categories:
+  - outboard
+url: https://adesignsaudio.com/atty-stereo-attenuator
+description: A transparent passive stereo line-level attenuator with a single
+  stereo level control knob, a dedicated Mute/Panic button, balanced combo jack
+  inputs, and balanced XLR outputs. Handmade in the USA.
+details: |-
+  The ATTY is a 100% passive stereo line-level attenuator designed to provide
+  gain control and flexibility without introducing noise, distortion, or tonal
+  coloration into the signal path.
+
+  A single knob controls both output channels simultaneously, and a dedicated
+  Mute/Panic button allows instant signal cutoff — useful for live sound,
+  broadcast, and studio monitoring applications.
+
+  Common uses include preventing converter clipping from high-output preamps,
+  controlling the level of powered monitor speakers, maintaining optimal preamp
+  gain staging, and balancing line-level equipment in the signal chain.
+
+  The ATTY is built in a rugged metal enclosure and is handmade in the USA,
+  backed by a 1-year full warranty.
+specs: |-
+  - 100% passive design — no active amplification
+  - Inputs: Two balanced Neutrik XLR/TRS combo jacks
+  - Outputs: Two balanced XLR outputs
+  - Signal type: Line-level balanced
+  - Single stereo level control knob
+  - Dedicated Mute/Panic button
+  - Dimensions: 4-1/2" W × 1-1/2" H × 3" D
+  - Weight: 0.7 lbs
+  - Rugged metal enclosure
+  - Handmade in the USA
+  - 1-year full warranty
+io:
+  - name: Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: combo jack
+    maxConnections: 1
+    position: Left
+  - name: Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right

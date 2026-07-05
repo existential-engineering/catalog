@@ -1,0 +1,99 @@
+id: 1Kq3pUMq2MJoMlixveP5C
+name: Ventura SE
+manufacturer: a-designs
+primaryCategory: preamp
+categories:
+  - equalizer
+  - di-box
+  - channel-strip
+  - rack-mount
+  - analog
+  - outboard
+  - discontinued
+url: https://adesignsaudio.com/ventura-se-preamp-eq-di
+description: A 1RU rackmount unit combining an independent microphone preamp
+  with Jensen input transformer and Cinemag balanced outputs, instrument
+  preamp/DI, and a modified Quad Eight-style 3-band parametric EQ with three
+  discrete signal paths and flexible insert routing. No longer in production.
+details: |-
+  The Ventura SE is a three-in-one 1RU rackmount unit from A-Designs Audio,
+  combining an independent microphone preamplifier, an instrument
+  preamplifier/DI, and a modified Quad Eight-style 3-band parametric EQ. The
+  mic preamp features a Jensen input transformer and delivers up to 72dB of
+  gain with extremely low noise (-120dBm) and minimal distortion (0.01%). The
+  instrument input presents a very high impedance of 20 megohms and includes
+  a high/low gain switch.
+
+  The 3-band parametric EQ covers 33 selectable frequencies across the
+  50Hz–15kHz range and includes fixed high-pass (150Hz) and low-pass (9kHz)
+  filters. Insert points between sections allow flexible routing and external
+  effects patching. All outputs are transformer-balanced via Cinemag
+  transformers.
+
+  The unit is housed in a 1RU steel chassis, made in the USA, and is no longer
+  in production.
+specs: |-
+  - Format: 1RU rackmount
+  - Dimensions: 19" × 1.75" × 10"
+  - Weight: 14–16.5 lbs
+  - Mic gain: up to 72dB
+  - Mic input impedance: 1.4kΩ
+  - Mic input transformer: Jensen
+  - Instrument input impedance: 20MΩ nominal
+  - Output impedance: 600Ω nominal (balanced XLR)
+  - Output transformer: Cinemag
+  - Noise: -120dBm
+  - THD: 0.01%
+  - Frequency response: 20Hz–20kHz
+  - EQ: Modified Quad Eight-style 3-band parametric, 33 frequencies,
+    50Hz–15kHz
+  - High-pass filter: 150Hz (fixed)
+  - Low-pass filter: 9kHz (fixed)
+  - Power: 120/230 VAC, 23W
+  - Country of origin: USA
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: EQ / Insert Return Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Balanced XLR Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Instrument Direct Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+links:
+  - type: support
+    title: User Manual (PDF)
+    url: https://adesignsaudio.com/docs/Ventura_SE_owners_manual.pdf
+  - type: resource
+    title: Recall Sheet (PDF)
+    url: https://adesignsaudio.com/docs/Ventura_SE_Recall_Sheet.pdf
+  - type: resource
+    title: Signal Flow Chart (PDF)
+    url: https://adesignsaudio.com/docs/VenturaFlowSE.pdf

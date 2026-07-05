@@ -1,0 +1,98 @@
+id: mUgzQu6H2JQVkLvqSYoz6
+name: MP-2A Stereo Tube Microphone Preamplifier
+manufacturer: a-designs
+primaryCategory: preamp
+categories:
+  - outboard
+  - rack-mount
+  - vintage
+url: https://adesignsaudio.com/mp2a-tube-mic-preamp
+description: A dual-channel, all-tube microphone preamplifier with discrete
+  circuitry, point-to-point wiring, EF86 and 6N1P tubes, and custom Cinemag
+  transformers, suitable for virtually any microphone or instrument source.
+details: |-
+  The MP-2A is a dual-channel, all-tube microphone preamplifier built with a
+  fully discrete signal path — no integrated circuits. It uses EF86 input tubes
+  and 6N1P output tubes, with Cinemag input and custom-wound Cinemag output
+  transformers throughout.
+
+  Each channel features four selectable tone signatures via Tone switches, up
+  to 60dB of gain, a -20dB pad switch, polarity reversal, and switchable 48V
+  phantom power. True VU metering is provided for both channels.
+
+  The unit also functions as a high-impedance instrument preamp/DI box via
+  front-panel 1/4-inch inputs (>100k ohm impedance), making it versatile for
+  guitars, basses, and other instruments in addition to microphones.
+
+  Build quality is hand-crafted in the USA with point-to-point wiring, Audience
+  capacitors, a toroidal power transformer, and a custom-milled faceplate in a
+  solid vented metal 2U rack chassis. Ships with a 1-year full warranty.
+specs: |-
+  - Frequency Response: 20Hz–60kHz
+  - THD Distortion: >0.08% @ 1kHz
+  - Noise (EIN): -128dBu
+  - Input Impedance: 1.4k ohm (mic); >100k ohm minimum (instrument)
+  - Output Impedance: 600 ohm (switchable to 10k ohm)
+  - Maximum Output Level: +22dBu
+  - Gain: Up to 60dB
+  - Phantom Power: +48V switchable per channel
+  - Power Requirements: 100/120/230 VAC, 42W
+  - Dimensions: 19" W x 3.5" H x 10" D (2U)
+  - Weight: 18 lbs
+  - Rack Size: 2U
+  - Tubes: EF86 (input), 6N1P (output)
+  - Transformers: Cinemag input; custom-wound Cinemag output
+io:
+  - name: Mic Input Ch 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic Input Ch 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input Ch 1
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Instrument Input Ch 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Output Ch 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output Ch 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - type: support
+    title: Owner's Manual (PDF)
+    url: https://www.adesignsaudio.com/docs/MP-2A-Manual-201307.pdf

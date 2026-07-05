@@ -1,0 +1,66 @@
+id: g5XPthub-J3DSGHtYmns-
+name: EM-Gold Preamp
+manufacturer: a-designs
+primaryCategory: preamp
+categories:
+  - analog
+  - rack-mount
+  - outboard
+  - discontinued
+url: https://adesignsaudio.com/em-gold-preamp
+description: A 500-series transformer-coupled mic preamp and DI that combines
+  the steel output transformer of the EM-Silver with the proprietary
+  nickel/steel input transformer of the EM-Red, delivering a dark,
+  low-mid-forward character ideal for fattening thin sources. No longer in
+  production.
+details: |-
+  The EM-Gold is part of A-Designs Audio's 500-series EM family, a line of
+  transformer I/O mic preamp/direct interface modules each voiced with a
+  distinct sonic character via custom-wound transformers. The Gold occupies a
+  unique position in the lineup by hybridizing two other modules: it uses the
+  steel output transformer from the EM-Silver (which imparts deep, low-end
+  weight) paired with the proprietary nickel/steel input transformer from the
+  EM-Red (which contributes forward, present mids).
+
+  The result is a preamp with a darker, more rolled-off high end than the
+  EM-Red, a robust low end, and a smooth yet upfront midrange that can tame
+  harsh sources while still pushing them forward in the mix. The front-panel
+  DI sits prior to the input transformer, so instruments benefit from the same
+  transformer coloration as mic sources.
+
+  All EM-series units are physically compatible with any API or VPR Alliance
+  500-series mounting device. The EM-Gold is no longer in production.
+specs: |-
+  - Format: 500-series (API/VPR Alliance compatible)
+  - Gain range: up to ~62 dB
+  - Phantom power: +48V (switchable, red LED indicator)
+  - Pad: -20 dB
+  - Phase/polarity reversal switch
+  - Front-panel 1/4" instrument DI input (pre-transformer)
+  - Input transformer: proprietary A-Designs nickel/steel (EM-Red type)
+  - Output transformer: proprietary A-Designs steel (EM-Silver type)
+  - Sonic character: dark, low-mid forward; rolled-off highs
+  - Ideal sources: floor toms, heavy guitars, vocals, bass, drum machines
+  - Construction: cast aluminum gain knob, thumb screws
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: 500-Series Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom

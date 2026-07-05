@@ -1,0 +1,88 @@
+id: aAITG4SWc9Jqncy8ixmNQ
+name: KGB-II
+manufacturer: a-designs
+primaryCategory: preamp
+categories:
+  - di-box
+  - outboard
+  - discontinued
+url: https://adesignsaudio.com/kgb-2-kgb1ft-line-preamps
+description: A dual-channel instrument preamplifier with two independent preamp
+  channels in one box, featuring CineMag output transformers and discrete custom
+  operational amplifiers, designed for stereo keyboards, dual instruments, and
+  stereo guitar effects pedals. No longer in production.
+details: |-
+  The KGB-II is a dual channel device with two independent instrument
+  pre-amplifiers in one box. This gives it great flexibility in many
+  applications like stereo output keyboards, two different instruments at one
+  time, and stereo guitar effects pedals. By cascading one channel into the
+  other, it gives an even wider range of options.
+
+  A-Designs Audio no longer produces the KGB Series Instrument
+  Pre-Amplifiers.
+
+  Both channels feature CineMag output transformers and discrete custom
+  designed operational amplifiers. Inputs use Switchcraft 1/4" phone jacks,
+  and outputs use gold Neutrik XLR connectors. An all-metal chassis and blue
+  LED indicator round out the build.
+
+  The KGB-II is designed to allow guitarists, bassists, and keyboard players
+  to connect directly to a mixing console or recording interface without the
+  need for a separate DI box or microphone preamp.
+specs: |-
+  - Dual channel instrument preamplifier
+  - Signal-to-Noise Ratio: Better than 90dB (shorted input)
+  - Output: Transformer balanced +4dBu @ 600 ohms
+  - Power: 20–24VAC rated, external supply
+  - Low Gain: 70dB
+  - High Gain: 90dB
+  - Sensitivity: Lower than 0.09mV @ 2kHz
+  - CineMag output transformers
+  - Discrete custom designed operational amplifiers
+  - Switchcraft 1/4" phone jacks (input and thru per channel)
+  - Gold Neutrik XLR balanced output connectors
+  - All-metal chassis
+  - Blue LED power indicator
+io:
+  - name: Instrument Input Ch 1
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Instrument Thru Ch 1
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Balanced Output Ch 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Instrument Input Ch 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Instrument Thru Ch 2
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output Ch 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right

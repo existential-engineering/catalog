@@ -1,0 +1,66 @@
+id: T8q6jmu8Yw0XGvF-CQniz
+name: EM-Silver 500 Series Preamp/DI
+manufacturer: a-designs
+primaryCategory: preamp
+categories:
+  - analog
+  - rack-mount
+  - outboard
+  - discontinued
+url: https://adesignsaudio.com/em-silver-preamp
+description: A 500-series transformer I/O microphone preamp and DI with
+  custom-wound steel input and output transformers that deliver the darkest
+  tonal character in the EM module lineup — ideal for ribbon microphones, bass
+  guitar, and keyboards. No longer in production.
+details: |-
+  The A-Designs Audio EM-Silver is a single-slot 500-series microphone preamp
+  and direct interface featuring custom-wound steel input and output
+  transformers, giving it the darkest tonal character in the EM module lineup.
+  The steel transformer design was chosen to emulate early broadcast and
+  recording-era gear, where steel transformers paired with ribbon microphones
+  produced the legendary ‘voice of god’ sound.
+
+  The EM-Silver provides up to 65 dB of gain and is particularly well-suited
+  for ribbon microphones, bass guitar, keyboards, and kick drum — any source
+  where you want to reduce top-end brightness or add vintage warmth. It is
+  notably smooth even under heavy EQ.
+
+  Controls include a stepped gain knob (cast aluminum), -20 dB pad, polarity
+  reversal, and 48V phantom power with a red LED indicator. A front-panel
+  1/4-inch DI input handles instruments directly. The module is hand-built in
+  the USA and uses thumb screws for easy lunchbox installation and removal.
+  No longer in production.
+specs: |-
+  - Format: 500-series (single-slot, 1.6" wide)
+  - Transformer I/O: Custom-wound steel input and output transformers
+  - Maximum Gain: 65 dB
+  - Pad: -20 dB
+  - Phantom Power: +48V (red LED indicator)
+  - Polarity Reversal: Yes
+  - DI Input: Front-panel 1/4-inch instrument input
+  - Controls: Stepped cast-aluminum gain knob, pad switch, phase switch,
+    phantom power switch
+  - Installation: Thumb screws
+  - Build: Hand-built in the USA
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: 500-Series Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom

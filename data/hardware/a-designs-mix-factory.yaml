@@ -1,0 +1,85 @@
+id: bPp28s9egGArcu3Nwch0s
+name: Mix Factory
+manufacturer: a-designs
+primaryCategory: summing-mixer
+categories:
+  - rack-mount
+  - analog
+  - discontinued
+url: https://adesignsaudio.com/mix-factory-analog-summer
+description: A 16-channel hybrid analog summing unit with per-channel gain, pan,
+  and mute controls, two D-sub input connectors, stereo XLR output, insert
+  points per 8-channel group, and selectable Cinemag output transformer tonal
+  coloring. No longer in production.
+details: |-
+  The Mix Factory is a 16-channel analog summing unit developed by Tony
+  Shepperd and designed by Paul Wolff of A-Designs Audio. It delivers analog
+  warmth with enhanced stereo depth and imaging that goes beyond standard
+  in-the-box mixing.
+
+  Inputs are provided via two D-sub connectors, each carrying eight channels,
+  organized into two groups (channels 1–8 and channels 9–16). Each channel
+  features a continuous gain knob, a pan control with center detent, and a
+  mute button with a dual-color LED indicator (red when muted, green when
+  signal is passing).
+
+  Each 8-channel group has its own insert point, and a master insert covers
+  all 16 channels simultaneously. Three mute buttons per insert allow flexible
+  signal routing and processing options during mixing sessions.
+
+  A front-panel pushbutton toggles between a clean mode (bypassing the output
+  transformer) and a tonal mode that engages custom Cinemag output transformers
+  for added harmonic character. The unit is linkable, supporting configurations
+  of 64 or more channels when multiple units are chained together.
+
+  The Mix Factory is no longer in production and has been designated a Legacy
+  Product by A-Designs Audio.
+specs: |-
+  - 16 input channels via 2 D-sub connectors (8 channels per connector)
+  - Stereo XLR output
+  - Per-channel continuous gain knob
+  - Per-channel pan control with center detent
+  - Per-channel mute button with dual-color LED (red = muted, green = signal)
+  - Insert points per 8-channel group (channels 1–8 and 9–16)
+  - Master insert for all 16 channels
+  - 3 mute buttons per insert
+  - Pushbutton toggle: clean mode (transformer bypass) vs. tonal mode
+    (Cinemag output transformers)
+  - Linkable design — supports 64+ channels
+  - External switchable power supply (120v/230v)
+io:
+  - name: D-Sub Input Bank A (Ch 1–8)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: D-sub
+    maxConnections: 8
+    position: Right
+  - name: D-Sub Input Bank B (Ch 9–16)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: D-sub
+    maxConnections: 8
+    position: Right
+  - name: Stereo Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Stereo Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+links:
+  - type: support
+    title: Owner's Manual (PDF)
+    url: https://adesignsaudio.com/docs/mix-factory-a-designs-v3.pdf
+  - type: resource
+    title: Recall Sheet (PDF)
+    url: https://adesignsaudio.com/docs/Mix-Factory-Recall-Sheet.pdf
