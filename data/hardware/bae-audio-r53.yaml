@@ -25,17 +25,45 @@ specs: |-
   - Wiring: Shielded wires on individual connectors (no PCBs)
   - Linking: Channel strip link option
 io:
-  - name: XLR Input
+  - name: Channel 1 XLR Input
     signalFlow: input
     category: audio
     type: line
     connection: xlr
-    maxConnections: 3
+    maxConnections: 1
     position: Right
-  - name: XLR Output
+  - name: Channel 1 XLR Output
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 3
+    maxConnections: 1
+    position: Right
+  - name: Channel 2 XLR Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Channel 2 XLR Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Channel 3 XLR Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Channel 3 XLR Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Right
