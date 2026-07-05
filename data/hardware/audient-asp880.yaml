@@ -24,34 +24,40 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    maxConnections: 1
     position: Left
   - name: ADAT Optical Input
     signalFlow: input
     category: digital
     type: adat
     connection: toslink
+    maxConnections: 8
     position: Left
   - name: D-Sub Input
     signalFlow: input
     category: audio
     type: line
     connection: edac
+    maxConnections: 8
     position: Left
   - name: D-Sub Output
     signalFlow: output
     category: audio
     type: line
     connection: edac
+    maxConnections: 8
     position: Right
   - name: XLR Mic Input
     signalFlow: input
     category: audio
     type: mic
     connection: xlr
+    maxConnections: 1
     position: Left
   - name: Power PSU
     signalFlow: input
     category: power
     type: power
     connection: barrel
+    maxConnections: 1
     position: Top

@@ -1,1 +1,8 @@
 pnpm validate && pnpm exec lint-staged
+
+# Keep schema/CONTEXT.md in sync when any schema/*.yaml is staged, so the
+# generated doc never drifts from its source (mirrors the CI freshness gate).
+if git diff --cached --name-only | grep -q '^schema/.*\.yaml$'; then
+  pnpm generate:context || exit 1
+  git add schema/CONTEXT.md
+fi
