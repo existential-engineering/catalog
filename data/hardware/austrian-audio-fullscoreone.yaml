@@ -35,26 +35,47 @@ specs: |-
   - Dimensions: 220 × 265 × 65 mm
   - Weight: 2.8 kg
 io:
-  - name: XLR Balanced Input
+  - name: XLR Balanced Input Left
     signalFlow: input
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Left
-  - name: RCA Input
+  - name: XLR Balanced Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: RCA Input Left
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 2
+    maxConnections: 1
     position: Left
-  - name: Headphone Output
+  - name: RCA Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output 1
     signalFlow: output
     category: audio
     type: headphone
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
     position: Right
   - name: Balanced Headphone Output
     signalFlow: output
