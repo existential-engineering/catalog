@@ -1,0 +1,65 @@
+id: A3G81h7ECP9YhiBmWbhWo
+name: TCS-II Channel Strip
+manufacturer: api-audio
+primaryCategory: channel-strip
+categories:
+  - preamp
+  - compressor
+  - eq
+  - rack-mount
+url: https://apiaudio.com/product/tcs-ii/
+description: 1U rackmount channel strip combining the 512c Mic Pre, 550A EQ,
+  527A Compressor with THRUST®, and 325 Line Driver in a single unit with dual
+  10-segment LED VU meters and complete rear-panel patching.
+details: |-
+  Integrates four API modules: 512c Mic Pre (14–68 dB gain), 550A 3-band
+  EQ with switchable frequencies, 527A Compressor with THRUST® circuit, and 325
+  Line Driver. Dual 10-segment LED VU displays. Complete rear-panel patching.
+  Output mute switch. 1U rackmount. 5-year warranty.
+specs: |-
+  - Frequency response: ±0.2 dB (20 Hz–20 kHz)
+  - Output clipping: +30 dBu
+  - MIC max input: +17 dBu
+  - LINE max input: +36 dBu
+  - INST max input: +17 dBu
+  - Output nominal: +4 dBu
+  - Power: 16 W
+  - Dimensions: 19" × 1.7" × 11.5" (H×W×D)
+  - Depth with cables: 13.5" from rack
+  - Weight: 10 lb 10 oz
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: User Manual
+    url: https://apiaudio.com/docs/manuals/TCS-II_user_2023-03-19.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://apiaudio.com/docs/files/TCS-II_recall-sheet.pdf

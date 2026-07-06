@@ -1,0 +1,76 @@
+id: ff9WyMw3NUe0evOQeX4-G
+name: 5500 Dual Equalizer
+manufacturer: api-audio
+primaryCategory: eq
+categories:
+  - rack-mount
+url: https://apiaudio.com/product/5500-dual-equalizer/
+description: 1U rackmount dual-channel 550-style EQ with four bands per channel,
+  range multipliers (×1/×0.5/×0.25), peak/shelf switching on outer bands, true
+  hardwire bypass per channel, and front-panel 1/4" TRS inputs that interrupt
+  the XLR signal path.
+details: |-
+  1U rackmount 550-style dual equalizer. Four EQ bands per channel (LO,
+  LO-MID, HI-MID, HI) with selectable frequency centers. Boost/cut steps: ±2, 4,
+  6, 9, 12 dB. Range multipliers (×1, ×0.5, ×0.25) extend boost/cut range.
+  Peak/shelf switches on HI and LO bands. True hardwire bypass per channel. Rear
+  XLR I/O; front-panel 1/4" TRS inputs interrupt XLR signal when engaged. 10
+  lbs.
+specs: |-
+  - Input impedance: 20 kΩ
+  - Max input/output: +32 dBu
+  - Frequency response: ±1 dB (20 Hz–30 kHz)
+  - S/N ratio: −105 dB
+  - EQ bands: 4 per channel (LO, LO-MID, HI-MID, HI)
+  - Boost/cut steps: ±2, 4, 6, 9, 12 dB
+  - Range multipliers: ×1, ×0.5, ×0.25
+  - Form factor: 1U rack-mount
+  - Dimensions: 19″ W × 1.75″ H × 11.25″ D
+  - Weight: 10 lb
+io:
+  - name: Input Ch 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Input Ch 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output Ch 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output Ch 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Front Input Ch 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Front Input Ch 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: User Manual
+    url: https://apiaudio.com/docs/manuals/5500_user_2024-01-17.pdf

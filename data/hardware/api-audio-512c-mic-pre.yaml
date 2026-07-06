@@ -1,0 +1,68 @@
+id: gfI9t63IOUAwHdHSbaBAE
+name: 512c Mic Pre
+manufacturer: api-audio
+primaryCategory: preamp
+categories:
+  - rack-mount
+url: https://apiaudio.com/product/512c-mic-pre/
+description: Classic API microphone preamp in 500-series format, delivering the
+  distinct API sound with up to 65 dB of mic gain via a fully discrete 2520
+  op-amp circuit.
+details: |-
+  500-series mic/line/instrument preamp. Fully discrete circuit with API
+  2520 op-amp, hand-assembled. Features switchable 20 dB pad (applies to all
+  input types), 48V phantom power, polarity switch, and LED VU meter.
+  Front-panel XLR mic input and 1/4-inch Hi-Z instrument input; rear edge
+  connector carries rack-sourced mic signal (defeatable). Five-year warranty.
+specs: |-
+  - Mic gain: 34–65 dB (14–45 dB w/pad)
+  - Hi-Z gain: 14–45 dB (−6–25 dB w/pad)
+  - Max input (mic): +8 dBu
+  - Max input (Hi-Z): +36 dBu
+  - Input impedance (mic): 1,500 Ω
+  - Input impedance (Hi-Z): 400 kΩ (20 kΩ w/pad)
+  - Output impedance: <75 Ω (transformer balanced)
+  - Clipping level: +30 dBu
+  - Frequency response: +0, −0.3 dB (30–20 kHz)
+  - EIN (mic): −129 dBu
+  - EIN (unbalanced): −125 dBu
+  - THD: <0.05% @ +4 dBu; <0.1% @ +28 dBu
+  - Power: ±12/18V DC @ 40 mA
+  - Dimensions: 1.5″ H × 5.25″ W × 7″ D
+  - Weight: 1.41 lb
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Hi-Z Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Module Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+  - name: Module Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: User Manual
+    url: https://apiaudio.com/docs/manuals/512c_user_2019-05-26.pdf
+  - type: resource
+    title: Setup / Recall Sheet
+    url: https://apiaudio.com/docs/files/setup512c.pdf

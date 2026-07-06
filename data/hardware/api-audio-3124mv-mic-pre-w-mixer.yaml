@@ -1,0 +1,232 @@
+id: 1BQiqu-CPrrX7BftZTC7I
+name: 3124MV Mic Pre w/ Mixer
+manufacturer: api-audio
+primaryCategory: preamp
+categories:
+  - mixer
+  - rack-mount
+url: https://apiaudio.com/product/3124mv-mic-pre-w-mixer/
+description: 4-channel rack-mount mic preamp with integrated stereo mixer. Each
+  channel features API 2520 op-amp and AP2516 input transformer, 48V phantom
+  power, 20 dB pad, polarity switch, stereo panning, post-fader aux send, and
+  per-channel insert points. Includes master stereo mix outputs (balanced XLR +
+  unbalanced 1/4"), aux return, and VU metering.
+details: |-
+  1U 4-channel mic preamp with integrated stereo mixer. Four front-panel
+  unbalanced 1/4" line inputs and one front Hi-Z input (all switchable). Four
+  front and rear XLR mic inputs (switched). Per-channel 20 dB pad, polarity
+  switch, 48V phantom, stereo panner with level, post-fader aux send. Rear
+  insert points per channel. Balanced XLR and unbalanced 1/4" stereo mix
+  outputs. API 2520 op-amps and AP2516 input transformers throughout.
+specs: |-
+  - Channels: 4
+  - Gain (mic): 10–65 dB
+  - Gain (unbalanced): 14–50 dB
+  - Mic input impedance: 1,500 Ω
+  - Hi-Z input impedance: 470 kΩ
+  - Output impedance: <75 Ω (transformer balanced)
+  - Frequency response: 10 Hz–20 kHz (+0/−5 dB)
+  - EIN (mic): -129 dBu
+  - EIN (unbalanced): -125 dBu
+  - THD (+4 dBu): 0.03%
+  - THD (+22 dBu): 0.09%
+  - Power: 19.2 W
+  - Dimensions: 19" W × 1.75" H × 10.5" D
+  - Weight: 11.54 lb
+io:
+  - name: Mic Input Front Ch 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic Input Front Ch 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic Input Front Ch 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic Input Front Ch 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Unbalanced Input Ch 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Unbalanced Input Ch 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Unbalanced Input Ch 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Unbalanced Input Ch 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Hi-Z Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Mic Input Rear Ch 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic Input Rear Ch 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic Input Rear Ch 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic Input Rear Ch 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Insert Ch 1
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Insert Ch 2
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Insert Ch 3
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Insert Ch 4
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Channel Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Channel Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Channel Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Channel Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Stereo Mix Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Stereo Mix Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Stereo Mix Output L (Unbalanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Stereo Mix Output R (Unbalanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Aux Return L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Aux Return R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: User Manual
+    url: https://apiaudio.com/wp-content/uploads/2025/03/3124MV_user_2025-03-03.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://service.apiaudio.com/documents/3124MV_Recall-Chart.pdf

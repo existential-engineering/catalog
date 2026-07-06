@@ -1,0 +1,157 @@
+id: I_JvBDWS71j8wJLFVhfsP
+name: AXS Console
+manufacturer: api-audio
+primaryCategory: console
+supersedes: 100Ba9GV-EVkELPlQDT_I
+url: https://apiaudio.com/product/legacy-axs-console/
+description: Large-format analog recording console with 32–80 expandable
+  channels, full-complement 200-series and 500-series modules per channel, 24
+  main buses, 5.1 surround monitoring, on-board patchbay, 2500C stereo bus
+  compressor, and optional Final Touch Automation.
+details: |-
+  32–80 channel analog console (expandable in 16-channel increments).
+  Each 1.5-inch-wide channel includes 200-series modules (212 Mic Pre, 225
+  Compressor, 235 Noise Gate, 215 HP/LP Filter, 205 DI) plus 500-series EQ slots
+  (550A 3-band + 560 graphic). Dual-fader: 100 mm motorized main + 45 mm
+  secondary. 24 main buses, 12 aux sends, 3 stereo buses, 6 stereo echo returns
+  (automated faders). 2500C Stereo Bus Compressor standard. 5.1 surround
+  monitoring. On-board patchbay (32/48-ch); remote patchbay for 64+ ch. Optional
+  Final Touch Automation (self-contained, 7.5" touchscreen, motorized faders,
+  unlimited mix restore, DAW control via unity-gain bypass). 5-year warranty.
+specs: |-
+  - Channel configurations: 32–80 (expandable in 16-ch increments)
+  - Channel width: 1.5"
+  - Main fader: 100 mm motorized
+  - Secondary fader: 45 mm
+  - Main buses: 24
+  - Aux sends: 12
+  - Stereo buses: 3
+  - Echo returns: 6 (automated faders)
+  - 200-series modules: 212, 225, 235, 215, 205
+  - 500-series EQ slots: 550A + 560
+  - Monitor: 5.1 surround
+  - Patchbay: on-board (32/48-ch), remote (64+ ch)
+  - Warranty: 5 years
+io:
+  - name: Mic Input (Per Channel)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line Input (Per Channel)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Direct Input (Per Channel)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: 500-Series Slot (Per Channel)
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+  - name: 200-Series Slot (Per Channel)
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+  - name: Stereo Bus Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Stereo Bus Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Monitor Output L (5.1)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Monitor Output R (5.1)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Monitor Output C (5.1)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Monitor Output LFE (5.1)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Monitor Output Ls (5.1)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Monitor Output Rs (5.1)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Echo Return (Per Pair)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Patchbay Insert Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Patchbay Insert Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: Operator's Manual
+    url: https://apiaudio.com/docs/files/AXS_user_2020-01-09.pdf
+  - type: resource
+    title: Final Touch Automation Manual
+    url: https://apiaudio.com/wp-content/uploads/2026/02/FTA_user_2026-01-18.pdf
+  - type: resource
+    title: Block Diagram
+    url: https://apiaudio.com/wp-content/uploads/2024/09/AXS_block-diagram_18-11-27.pdf

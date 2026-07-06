@@ -1,0 +1,47 @@
+id: mu4VQa8Y-N5yezxySvZY_
+name: 6 Slot High Current Lunchbox
+manufacturer: api-audio
+primaryCategory: rack-mount
+url: https://apiaudio.com/product/6-slot-high-current-lunchbox/
+description: Portable 6-slot 500-series lunchbox with internal 250 mA/slot power
+  supply, +48V phantom power bussed to all slots, DB-25 audio I/O for all slots,
+  and XLR breakout for channels 7–8. Rack-ears available separately.
+details: |-
+  6-slot 500-series portable rack accepting API standard 5.25″ × 1.5″
+  modules. Internal PSU (100–250V switchable, 47–63 Hz), 250 mA per slot. +48V
+  phantom power bussed to pin 15 of all slots. Power rail LED indication. Rugged
+  steel chassis with rubber feet and carrying handle. Rack ears sold separately
+  for 19″ rack mounting. Compatible with 512c, 525, 527, 550A, 550B, 560
+  modules.
+specs: |-
+  - Slots: 6 (API 500 Series format)
+  - Current per slot: 250 mA
+  - Power supply: Internal, 100–250V switchable, 47–63 Hz
+  - Phantom power: +48V internal (bussed to pin 15)
+  - Audio I/O: DB-25 (all 6 slots); XLR (channels 7–8)
+io:
+  - name: Audio I/O (All Slots)
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Left
+  - name: Channel 7 I/O
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Channel 8 I/O
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: Block Diagram
+    url: https://apiaudio.com/docs/files/LB-6slot_block_2021-04-30.pdf

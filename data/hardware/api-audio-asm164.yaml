@@ -1,0 +1,107 @@
+id: 2sTWYe-8_KLJI0I-Smz6Q
+name: ASM164 Summing Mixer
+manufacturer: api-audio
+primaryCategory: mixer
+categories:
+  - rack-mount
+url: https://apiaudio.com/product/asm164/
+description: 16-channel analog summing mixer based on THE BOX console's summing
+  section, with API 2510/2520 op-amps, dual stereo program buses (Mix-A and
+  Mix-B), per-channel insert points, and external 30W PSU.
+details: |-
+  1U 16-channel analog summing mixer. 16 balanced inputs via two DB-25
+  connectors (8 channels each). External input L/R via XLR. Two stereo program
+  buses: Mix-A and Mix-B (each with XLR L/R outputs). Per-channel insert
+  send/return (TRS 1/4"). 31-step detented level controls, 4-segment LED channel
+  meters, VU output meters. API 2510 input op-amps, API 2520 output op-amps,
+  transformer-coupled output. External 30W PSU.
+specs: |-
+  - Input impedance: 30 kΩ (balanced)
+  - Max input level: +25 dBu
+  - Max output level: +25 dBu
+  - Frequency response: ±0.5 dB (20 Hz–40 kHz)
+  - THD+N @ +4 dBu, 1 kHz: <0.02%
+  - S/N ratio: −112 dBr
+  - Output impedance: 75 Ω (transformer coupled, balanced)
+  - Power: 30W external PSU
+io:
+  - name: Channel Inputs 1–8
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Left
+  - name: Channel Inputs 9–16
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Left
+  - name: External Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: External Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mix-A Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mix-A Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mix-B Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mix-B Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Insert Send (Per Channel)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Insert Return (Per Channel)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+links:
+  - type: resource
+    title: User Manual
+    url: https://apiaudio.com/wp-content/uploads/2025/01/ASM164_user_2024-07-17.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://apiaudio.com/wp-content/uploads/2025/01/ASM164_recall.pdf
+  - type: resource
+    title: Block Diagram
+    url: https://apiaudio.com/wp-content/uploads/2025/01/ASM164_block_2024-06-07.pdf

@@ -1,0 +1,42 @@
+id: BvVhN3-n-4MgbO0B7YODM
+name: 565 Filter Bank
+manufacturer: api-audio
+primaryCategory: filter
+categories:
+  - eq
+  - rack-mount
+url: https://apiaudio.com/product/565-filter-bank/
+description: 500-series three-stage filter module based on the API 215 console
+  filter. Combines a sweepable high-pass shelf (20 Hz–400 Hz), sweepable
+  low-pass shelf (500 Hz–20 kHz), and active twin-T notch filter (20 Hz–20 kHz,
+  variable Q 0.95–15.3).
+details: |-
+  500-series filter module based on API's 215 console filter design. HP
+  shelf: 20 Hz–400 Hz, −12 or −18 dB/oct slope. LP shelf: 500 Hz–20 kHz, −6 or
+  −12 dB/oct slope. Notch: active twin-T, 20 Hz–20 kHz across 3 selectable
+  ranges, variable Q 0.95–15.3, >40 dB cut at minimum Q. API 2520/2510 op-amps
+  with discrete transistor buffers. Transformer-coupled balanced output.
+specs: |-
+  - Input impedance: >20 kΩ (balanced)
+  - Output impedance: 75 Ω (transformer coupled, balanced)
+  - Max output: +28 dBu
+  - Frequency response: +0.2/−0.4 dB (20 Hz–20 kHz)
+  - THD+N: 0.02% @ +4 dBu / 2 kHz
+  - Power: ±16V DC @ 100 mA max
+  - Connector: 15-position 0.156″ edge connector
+  - Dimensions: 1.5″ × 5.25″ × 6.75″ D
+io:
+  - name: Module Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+  - name: Module Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Bottom

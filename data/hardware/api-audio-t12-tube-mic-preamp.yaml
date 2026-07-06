@@ -1,0 +1,97 @@
+id: GFL2Pf9y1Pl_YqahQ80pL
+name: T12 Tube Mic Preamp
+manufacturer: api-audio
+primaryCategory: preamp
+categories:
+  - rack-mount
+url: https://apiaudio.com/product/t12-tube-mic-preamp/
+description: 2-channel all-tube Class-A microphone preamplifier with API's
+  proprietary AP2516 input transformer and custom output transformer, featuring
+  12AT7WC and 12BH7 vacuum tubes, variable input impedance, 48V phantom power,
+  and analog VU meters.
+details: |-
+  2-channel 2U tube mic preamp. Per-channel: API AP2516 transformer
+  input, custom API output transformer, 12AT7WC + 12BH7 dual-triode vacuum
+  tubes, variable mic input impedance (500–2500 Ω), 48V phantom power, −20 dB
+  pad, 11-step detented gain control, low-cut filter (3 fixed frequencies),
+  11-step detented output trim (0.5 dB steps), LED peak indicator, analog VU
+  meter. Instrument (Hi-Z) input via front-panel 1/4". Dual XLR and TRS outputs
+  per channel. 5-year warranty.
+specs: |-
+  - Mic input impedance: 500–2500 Ω (variable)
+  - Instrument input impedance: 500 kΩ
+  - Output impedance: 75 Ω
+  - Gain range: 0 to +70 dB
+  - Max output level: +24 dBu
+  - S/N ratio: 98 dB
+  - Frequency response: 20 Hz–30 kHz (+0/−1 dB)
+  - Power: 40 W
+  - Dimensions: 19" × 3.5" × 12" D
+  - Weight: 14 lb
+io:
+  - name: Mic Input Ch 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic Input Ch 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Instrument Input Ch 1
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Instrument Input Ch 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Output Ch 1 (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output Ch 2 (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output Ch 1 (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Output Ch 2 (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: User Manual
+    url: https://apiaudio.com/docs/manuals/T12_user_2021-04-26.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://apiaudio.com/docs/files/T12_setup.pdf
+  - type: resource
+    title: Block Diagram
+    url: https://apiaudio.com/docs/files/T12_block_2021-04-26.pdf

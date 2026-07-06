@@ -1,0 +1,202 @@
+id: gWRt_Jdbj7U-zI4HcgW42
+name: MC531 Monitor Controller
+manufacturer: api-audio
+primaryCategory: outboard
+url: https://apiaudio.com/product/mc531-monitor-controller/
+description: Standalone desktop monitor controller derived from API's analog
+  console center section, with 3 balanced analog inputs, AES3 and USB digital
+  inputs, Bluetooth, 3 stereo balanced outputs, 2 headphone outputs, mono
+  subwoofer output, talkback mic, and 18-segment stereo LED metering.
+details: |-
+  5 stereo source inputs: ST-1/2/3 via balanced 1/4-inch TRS (30 kΩ, API
+  2510 op-amps); ST-4 via AES3 XLR or USB Type-B; ST-5 via Bluetooth or 3.5mm
+  aux. 3 stereo balanced outputs (control room + 2 alternate) with independent
+  trim. Mono subwoofer output with adjustable gain. 2 headphone outputs.
+  Built-in talkback electret mic. Mute, Mono, DIM controls. 18-segment stereo
+  LED metering. 16W power consumption. Desktop (not rack-mount).
+specs: |-
+  - Max input level: +28 dBu
+  - Max output level: +28 dBu
+  - Frequency response: ±0.5 dB (20 Hz–50 kHz)
+  - S/N ratio: 115 dB
+  - Input impedance (analog): 30 kΩ
+  - Output impedance: 75 Ω
+  - Power: 16 W
+  - Dimensions: 11.0" × 12.75" × 4.0"
+  - Weight: 8.5 lb
+io:
+  - name: ST-1 Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: ST-1 Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: ST-2 Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: ST-2 Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: ST-3 Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: ST-3 Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: ST-4 AES3 Input L
+    signalFlow: input
+    category: digital
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: ST-4 AES3 Input R
+    signalFlow: input
+    category: digital
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: ST-4 USB Input
+    signalFlow: input
+    category: digital
+    type: line
+    connection: usb-b
+    maxConnections: 1
+    position: Left
+  - name: ST-5 Aux Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: ST-5 Aux Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: ST-5 Bluetooth
+    signalFlow: input
+    category: audio
+    type: line
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+  - name: Control Room Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Control Room Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Alt Output 1 L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Alt Output 1 R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Alt Output 2 L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Alt Output 2 R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Subwoofer Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Meter Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Meter Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Talkback Mic (Built-in)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+links:
+  - type: resource
+    title: User Manual
+    url: https://apiaudio.com/docs/manuals/MC531_user_2022-06-22.pdf
+  - type: resource
+    title: Block Diagram
+    url: https://apiaudio.com/docs/files/MC531_block_2022-01-24.pdf

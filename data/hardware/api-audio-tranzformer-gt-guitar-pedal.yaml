@@ -1,0 +1,55 @@
+id: lMOPjwdztYYfF6UaB-iY0
+name: TranZformer GT
+manufacturer: api-audio
+primaryCategory: compressor
+categories:
+  - eq
+  - pedal
+  - discontinued
+url: https://apiaudio.com/product/tranzformer-gt-guitar-pedal/
+description: Discontinued guitar effects pedal combining API's 525 feedback-type
+  compressor with a guitar-optimized 3-band EQ, each independently switchable.
+  Features discrete API circuit design, hardwire bypass, ground lift, phase
+  reversal, and 18V external PSU.
+details: |-
+  Integrates API 525 feedback-type compressor (2:1 to 20:1 ratio, <5 ms
+  attack, 100 ms average release) and a 3-band EQ (200 Hz and 1500 Hz peaking, 5
+  kHz shelving, ±15/16 dB). +30 dB input gain. Hardwire bypass, ground lift,
+  phase reversal. +18VDC @ 650 mA external PSU.
+specs: |-
+  - Input impedance: ~500 kΩ
+  - Max input: +13 dBu
+  - Hi-Z output impedance: 7.5 kΩ
+  - Balanced output impedance: <75 Ω
+  - Max output: +21 dBu (Hi-Z) / +27 dBu (balanced)
+  - Compressor ratio: 2:1 to 20:1
+  - Compressor attack: <5 ms
+  - Compressor release: 100 ms average
+  - EQ bands: 200 Hz + 1500 Hz (peaking), 5 kHz (shelving)
+  - EQ range: ±15 dB (±16 dB shelving)
+  - Input gain: +30 dB
+  - Power: +18VDC @ 650 mA
+  - Dimensions: 8" × 5.5" × 4"
+  - Weight: 4 lb
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Hi-Z Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Balanced Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right

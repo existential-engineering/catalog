@@ -1,0 +1,99 @@
+id: M5MLZNJ2Qq2vt2EiMxFHJ
+name: T25 Tube Compressor
+manufacturer: api-audio
+primaryCategory: compressor
+categories:
+  - dynamics
+  - rack-mount
+url: https://apiaudio.com/product/t25-tube-compressor/
+description: 2-channel 2U FET feedback-style compressor/limiter with a Class-A
+  tube output stage, 12AT7WC and 12BH7 vacuum tubes, custom API output
+  transformer, patented THRUST® circuit, D-S de-essing, stereo link, and analog
+  VU meters.
+details: |-
+  2-channel 2U compressor/limiter. FET gain reduction, Class-A tube
+  output stage (12AT7WC + 12BH7). Custom API output transformer. THRUST®
+  sidechain filter, D-S de-essing. Stereo link. 11-step attack (20 µs–0.8 ms)
+  and release (50 ms–1.2 s) switches. 4 fixed ratios (2:1, 4:1, 8:1, 20:1).
+  31-step threshold and output gain controls. Relay bypass. 10-segment LED gain
+  reduction meter + peak LED. Analog VU output meters. 2U 19" rack. 45 W power.
+specs: |-
+  - Input impedance: 20 kΩ
+  - Output impedance: 75 Ω (600 Ω load compatible)
+  - Max output level: +24 dBu
+  - Frequency response: 20 Hz–40 kHz (+0/−1 dB)
+  - Compression ratios: 2:1, 4:1, 8:1, 20:1
+  - Attack: 20 µs–0.8 ms (11 steps)
+  - Release: 50 ms–1.2 s (11 steps)
+  - Total gain: +40 dB
+  - S/N ratio: 90 dB
+  - Power: 45 W
+  - Dimensions: 19" × 3.5" × 12" D
+  - Weight: 14 lb (17 lb shipped)
+io:
+  - name: Input L (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Input R (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Input L (1/4")
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Input R (1/4")
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Output L (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output R (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output L (1/4")
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Output R (1/4")
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: User Manual
+    url: https://apiaudio.com/docs/manuals/T25_user_2021-04-26.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://apiaudio.com/docs/files/T25_setup.pdf
+  - type: resource
+    title: Block Diagram
+    url: https://apiaudio.com/docs/files/T25_block_2021-04-26.pdf

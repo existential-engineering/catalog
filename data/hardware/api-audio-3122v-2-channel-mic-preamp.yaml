@@ -1,0 +1,93 @@
+id: OBi9-kb1wOK59yh00xME_
+name: 3122V 2-Channel Mic Preamp
+manufacturer: api-audio
+primaryCategory: preamp
+categories:
+  - rack-mount
+url: https://apiaudio.com/product/3122v-2-channel-mic-preamp/
+description: 2-channel rack-mount mic preamp with API 2520 op-amps and AP2516
+  input transformer. Features switchable front/rear XLR inputs, front-panel Hi-Z
+  instrument inputs, variable output with 3:1 transformer tap, high-pass filter,
+  and analog VU meters with peak LED.
+details: |-
+  1U 2-channel rack-mount mic preamp with API's signature 2520 op-amp and
+  AP2516 input transformer. Each channel features switchable front/rear XLR mic
+  inputs, front Hi-Z instrument input, 20 dB pad, polarity switch, fixed
+  high-pass filter, and 3:1 output transformer tap for variable impedance
+  loading. Analog VU meter and peak LED per channel.
+specs: |-
+  - Channels: 2
+  - Mic gain: 14–68 dB
+  - Hi-Z gain: -6 to +48 dB
+  - Mic input impedance: 1,500 Ω
+  - Hi-Z input impedance: 470 kΩ (unbalanced)
+  - Output impedance: <75 Ω (transformer balanced)
+  - Frequency response: ±0.5 dB, 20 Hz–40 kHz
+  - S/N ratio: -128 dB (mic); -106 dB (Hi-Z)
+  - Power: 8 W
+  - Dimensions: 19" W × 1.75" H × 11" D
+  - Weight: 9 lb
+io:
+  - name: Mic Input Front Ch 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic Input Front Ch 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Instrument Input Ch 1
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Instrument Input Ch 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Mic Input Rear Ch 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic Input Rear Ch 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Output Ch 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Output Ch 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: User Manual
+    url: https://apiaudio.com/wp-content/uploads/2025/03/3122V_user_2025-03-03.pdf
+  - type: resource
+    title: Recall Sheet
+    url: https://service.apiaudio.com/documents/3122V_recall-chart.pdf
