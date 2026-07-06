@@ -1,0 +1,98 @@
+id: m3qt00EDlSjopBWIL6rkX
+name: MFX Pedal
+manufacturer: alm-busy-circuits
+primaryCategory: multi-effect
+categories:
+  - pedal
+  - digital
+url: https://busycircuits.com/products/alm-sb001
+prices:
+  - amount: 320
+    currency: GBP
+description: >-
+  The ‘MFX Pedal’ brings all the effects and functionality of our popular
+  Eurorack MFX module to both guitars and synths in standalone form with 18
+  different fully featured effects programs and additional MIDI, Knob and
+  Expression pedal control, tap tempo, an optional analogue gain stage and true
+  relay (or DSP) based bypass. Inspired by our favourite classic hardware
+  effects processors, the MFX incorporates DSP effect technologies from the dawn
+  of digital effects in the 70s to the present day.
+details: |-
+  The MFX Pedal is a standalone version of ALM Busy Circuits' Eurorack MFX effects processor, repackaged in a rugged black anodised aluminium stompbox enclosure for use with guitars, synths, mixers and DAWless setups. It offers 18 fully-featured stereo effect programs spanning delays and echoes (Digi-PCM, Tape-Tech, Crumbular, Ursa Minor Echoverb), reverbs (Pocket PL8, Almicon, Quaidra, Yetti, Slinky), dynamics and distortion (TY-50 Dynamics, TH-30 Distortion, Bit Corrupter), and modulation and specialty engines (Panner, Ring & Frequency Modulator, Ensembles, Phaser, Resonator), plus a utilities program.
+
+  Signal handling is fully stereo through Neutrik jacks. A footswitch handles bypass, tap tempo and triggering, with a choice of true relay-based or DSP-based bypass and an optional analogue gain stage. Any effect parameter can be modulated or controlled via the assignable expression pedal input, front-panel knobs, or MIDI CC, while the DIN MIDI input also provides MIDI beat clock synchronisation.
+
+  Processing runs at 16-bit / 44.1kHz with 32-bit floating point DSP on an ARM CPU. Presets are stored per program and preserved across power cycles, and a front USB-C port enables drag-and-drop firmware updates.
+specs: |-
+  - Effect programs: 18 full-featured stereo programs plus utilities
+  - Audio processing: 16-bit / 44.1kHz stereo, 32-bit floating point DSP
+  - DSP: ARM CPU-based
+  - Audio I/O: Stereo in / stereo out, Neutrik jacks
+  - Input impedance: 1 MOhm / Output impedance: 1 KOhm
+  - Max input level: +8 dBu (approx. 2 Vrms / 5 Vpp)
+  - MIDI: DIN MIDI input (beat clock sync and MIDI CC control)
+  - Expression pedal input, assignable to any effect parameter
+  - Footswitch: bypass, tap tempo and triggering
+  - Bypass: true relay-based or DSP-based (selectable)
+  - Optional analogue gain stage
+  - Firmware update: USB-C drag-and-drop
+  - Enclosure: black anodised aluminium, 125 x 65 x 70 mm
+  - Power: 9V DC, centre negative, 100mA draw (200mA+ supply recommended); not supplied
+  - Warranty: 2 years
+io:
+  - name: Audio In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - name: Expression In
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: USB-C
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Top
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

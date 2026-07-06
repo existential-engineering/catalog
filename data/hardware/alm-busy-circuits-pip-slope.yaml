@@ -1,0 +1,80 @@
+id: WOLuX1ErY9yhUA6MIS90e
+name: Pip Slope
+manufacturer: alm-busy-circuits
+primaryCategory: utility
+categories:
+  - analog
+  - modular
+url: https://busycircuits.com/products/alm028
+prices:
+  - amount: 110
+    currency: GBP
+description: >-
+  The Pip Slope (rev II) is a compact 4HP envelope and function generator
+  supporting Attack/Decay and Attack/Sustain/Decay envelope types with
+  voltage-controllable times and morphable shapes between exponential, linear,
+  and logarithmic curves. It includes multiple loop modes and an End of Cycle
+  trigger output for clocking and burst effects.
+details: |-
+  The Pip Slope rev II is ALM Busy Circuits' compact 4HP envelope generator and function generator. It supports both AD (Attack/Decay) and ASD (Attack/Sustain/Decay) envelope types, with direct knob control and voltage control over both attack and decay times. Envelope times span approximately 1ms up to 7 minutes per stage.
+
+  A morphing shape control allows continuous blending between exponential, linear, and logarithmic envelope curves. The module supports three loop modes: infinite repetition for LFO-style cycling, decreasing amplitude for 'bouncing ball' effects, and decreasing time for echo-decay style patterns.
+
+  The End of Cycle trigger output fires at the conclusion of each envelope cycle, enabling the Pip Slope to clock sequencers or create burst patterns. A VCV Rack software emulation with identical behaviour is also available.
+specs: |-
+  - Width: 4HP
+  - Depth: 38mm
+  - Power: +12V 30mA / -12V 10mA
+  - Envelope types: AD, ASD
+  - Attack/Decay range: ~1ms to 7 minutes per stage
+  - Envelope shapes: Exponential, linear, logarithmic (morphable)
+  - Max output level: Switchable 5V or 8V
+  - Loop modes: 3 (infinite, decreasing amplitude, decreasing time)
+  - End of Cycle trigger output: Yes
+  - Reverse polarity protection: Yes
+  - Warranty: 2 years
+  - Made in the UK
+  - VCV Rack emulation: Available
+io:
+  - name: Trigger In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Attack CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Decay CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Envelope Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: End of Cycle Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

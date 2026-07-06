@@ -1,0 +1,126 @@
+id: ScB-44O-FEVuwFW5IgtDK
+name: "Akemie's Taiko"
+manufacturer: alm-busy-circuits
+primaryCategory: drum-machine
+categories:
+  - synthesizer
+  - digital
+  - fm
+  - modular
+url: https://busycircuits.com/products/alm015
+prices:
+  - amount: 280
+    currency: GBP
+description: >-
+  Akemie's Taiko is a complete FM synthesis-based drum voice built around a
+  new-old-stock Yamaha YMF262 (OPL3) IC, providing CV and direct control over
+  algorithm, operator release envelopes, frequency ratios, waveforms, and
+  feedback. It tracks 1V/octave for melodic use and features trigger, accent,
+  and choke inputs for expressive rhythmic performance.
+details: |-
+  Akemie's Taiko is an FM synthesis drum voice centred on a vintage new-old-stock Yamaha YMF262 (OPL3) chip, inspired by the FM-based Simmons SDE drum module. Unlike a sample-based drum module, Taiko generates every sound from scratch through operator-level FM, giving it a distinctive digital-analogue character and an enormous palette of percussive and tonal textures.
+
+  All input and control values are snapshotted at the moment a trigger is received, so the controls do not affect a playing voice mid-hit (the choke input is the exception). The voice tracks 1V/octave across approximately 5 octaves, allowing it to function as a pitched melodic voice as well as a drum sound source. Frequency ramping (Speed + Freq End controls) allows the base frequency to sweep from a start to an end pitch during the envelope, enabling siren-like glides.
+
+  The six algorithms range from simple 2-operator (serial FM or parallel mix) to complex 4-operator configurations, with Release 1 and Release 2 controls independently setting the decay of operator pairs. The module includes an LED level indicator on the output jack and is pre-calibrated at the factory with a rear-panel trimmer for fine V/Oct calibration.
+specs: |-
+  - Width: 18HP
+  - Depth: 32mm (including power header)
+  - Power: +12V 70mA / -12V 30mA
+  - FM chip: Yamaha YMF262 (OPL3), new-old-stock
+  - Operators: 2 or 4 (algorithm dependent)
+  - Algorithms: 6
+  - Waveform combinations: approx. 64
+  - Feedback range: 0–7
+  - Release envelope steps: 16 discrete steps (few 10s of ms to many minutes)
+  - V/Oct tracking: 1V/octave, approx. 5 octaves
+  - Standard CV input range: 0–5V
+  - Trigger threshold: approx. +3V rising edge
+  - Audio output: single mono jack with LED level indicator
+  - Warranty: 2 years
+  - Manufactured in the UK
+io:
+  - name: V/Oct (Freq Start)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: V/Oct (Freq End)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Speed CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Algo CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Release 1 CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Release 2 CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Waves CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Fb CV (Feedback)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Acc (Accent)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Choke
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

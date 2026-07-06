@@ -1,0 +1,52 @@
+id: OlczNFBjtHjujilRCK5yl
+name: PPEXP2
+manufacturer: alm-busy-circuits
+primaryCategory: utility
+categories:
+  - modular
+url: https://busycircuits.com/products/alm034-ex2
+prices:
+  - amount: 90
+    currency: GBP
+description: >-
+  PPEXP2 is an expander module for Pamela’s PRO Workout that offers additional
+  outputs. Extend Pam as a master to clock external gear with super solid
+  dedicated MIDI & Din Sync clock outputs.
+details: |-
+  The PPEXP2 is a compact 2HP output expander for ALM Busy Circuits' Pamela's PRO Workout, offering a simpler set of dedicated clock and sync outputs than the larger PPEXP1. It lets Pamela's PRO act as a master clock for external gear, keeping Pamela's own outputs free for sequencing and modulation duties.
+
+  It provides a buffered x24 Clock output and a Run output (together forming a Din Sync signal that can, for example, sync a second Pamela's), plus a TRS MIDI clock output that is switchable between Type A and Type B via a switch on the rear. MIDI and Din Sync adapter cables are available for connecting to 5-pin DIN connectors. The module connects directly to and is powered by the 'MIDI-EX' expander header on the rear of Pamela's PRO Workout, supports only one output expander at a time (alongside a CV input expander), and works only with Pamela's PRO Workout.
+specs: |-
+  - Format: Eurorack, 2HP
+  - Depth: 32mm
+  - Power: +12V 40mA / -12V 0mA
+  - Buffered x24 Clock output
+  - Run output (Din Sync with Clock)
+  - TRS MIDI clock output (Type A / Type B selectable via rear switch)
+  - MIDI and Din Sync adapter cables available for 5-pin DIN
+  - Connects to and powered by the PRO Workout 'MIDI-EX' expander header
+  - Only one output expander at a time (compatible with a CV input expander)
+  - Works only with Pamela's PRO Workout
+  - Warranty: 2 years
+io:
+  - name: Clock Out (x24)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Run Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

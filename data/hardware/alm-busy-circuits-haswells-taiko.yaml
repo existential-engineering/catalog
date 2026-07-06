@@ -1,0 +1,118 @@
+id: h5fXYySBaUJduawa2O8jJ
+name: "Haswell's Taiko"
+manufacturer: alm-busy-circuits
+primaryCategory: drum-machine
+categories:
+  - digital
+  - wavetable
+  - modular
+  - noise
+  - discontinued
+url: https://busycircuits.com/products/alm013
+description: >-
+  Haswell's Taiko is a limited-edition collaboration between ALM Busy Circuits
+  and noise artist Russell Haswell, reimagining the Dinky's Taiko with 30 custom
+  hand-drawn waveforms and a harsher, darker sonic character. Restricted to 100
+  individually numbered units, it shares the same 12-bit digital drum voice
+  architecture — digital noise plus wavetable oscillator through analog tilt EQ
+  — with Haswell's bespoke wavetable bank replacing the standard 24 waveforms.
+details: |-
+  Haswell's Taiko is built on the same hardware platform as the Dinky's Taiko (ALM005) but with a completely custom wavetable bank of 30 waveforms hand-drawn by Russell Haswell, tuned for harsher, more industrial and noise-oriented timbres. The drum architecture is identical: a 12-bit digital noise generator with Spectrum and Release controls, a wavetable oscillator with Start Freq, End Freq, Speed, Release, and Wave controls, and an analog output stage with tilt EQ and noise/oscillator Mix crossfade.
+
+  All control parameters are voltage controllable as offsets added to the knob position, and all values are snapshotted at trigger time. The module fires on a ~+3V rising edge trigger; Accent emphasizes the hit and Choke cuts it immediately, enabling rhythmic gating and hi-hat-style articulation.
+
+  The special edition features an inverted matte black panel with white graphics distinguishing it visually from the standard Dinky's Taiko. Only 100 units were produced, each individually numbered. The module is long since sold out with no planned reissue; the Tyso Daiko (ALM031) is the current successor in ALM's drum voice lineup.
+specs: |-
+  - Width: 12HP
+  - Depth: 32mm
+  - Power: +12V 80mA / -12V 80mA
+  - Sound engine: 12-bit digital
+  - Wavetable: 30 custom waveforms hand-drawn by Russell Haswell
+  - Noise section: digital noise generator, Spectrum (frequency) + Release CV
+  - Oscillator section: wavetable, Start Freq + End Freq + Speed + Release + Wave CVs
+  - Output section: tilt EQ, noise/oscillator Mix crossfade
+  - Trigger inputs: Trigger, Accent (Acc), Choke
+  - CV inputs: Spectrum, Noise Release, Osc Start Freq, Osc End Freq, Osc Speed, Osc Release, Wave
+  - Reverse polarity protection
+  - Skiff friendly
+  - Limited edition: 100 individually numbered units
+  - Inverted matte black panel with white graphics
+  - Designed and made in the UK
+io:
+  - name: Trigger
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Acc
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Choke
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Spectrum CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Release CV (Noise)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Start Freq CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: End Freq CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Speed CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Release CV (Osc)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Wave CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

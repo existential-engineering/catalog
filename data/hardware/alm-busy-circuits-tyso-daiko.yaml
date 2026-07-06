@@ -1,0 +1,106 @@
+id: Vp3dzOfgMhmyHWtbsGEEw
+name: Tyso Daiko
+manufacturer: alm-busy-circuits
+supersedes: Xy3PiJ2jZC6PCqgtKI8hh
+primaryCategory: drum-machine
+categories:
+  - digital
+  - wavetable
+  - filter
+  - modular
+url: https://busycircuits.com/products/alm031
+prices:
+  - amount: 280
+    currency: GBP
+description: >-
+  Tyso Daiko is a dual 12-bit digital wavetable drum voice module for Eurorack,
+  offering twin independently triggered voices that share pitch and envelope
+  parameters but diverge in their output paths — one through a
+  voltage-controlled analog tilt EQ, the other through a digital wavefolder.
+  Full CV control over all parameters enables expressive, dynamically evolving
+  percussion synthesis from punchy kicks to complex noise textures.
+details: |-
+  Tyso Daiko (ALM031) is a dual-voice 12-bit digital drum synthesizer module from ALM Busy Circuits, designed for deep percussive sound design within a Eurorack system. Both voices share a common wavetable oscillator engine capable of morphing across 11 waveforms, a frequency-swept oscillator design with 1V/Oct pitch tracking, self-FM, and independent attack and release envelopes.
+
+  Despite sharing the synthesis core, the two voices diverge entirely in their output signal paths. Voice A is routed through a fully analog voltage-controlled tilt EQ — warm, organic, and ideal for kick drums, toms, and tuned percussion. Voice B passes through a digital wavefolder, progressively adding harmonic complexity from clean tones all the way to dense noise — suited for snares, hi-hats, metallic transients, or abstract textures.
+
+  The module features dedicated trigger inputs for each voice, a shared accent input with independent accent response per voice, and a choke input that mutes Voice 1 on receipt of a gate — useful for open/closed hi-hat relationships. An external mix input feeds into the tilt EQ path, allowing Tyso Daiko to serve as an EQ for external audio signals.
+
+  Tyso Daiko succeeds the original Dinky (ALM005) with an expanded feature set. A VCV Rack software emulation is also available.
+specs: |-
+  - Format: Eurorack
+  - Width: 14HP
+  - Depth: 32mm
+  - Power: +12V 70mA / -12V 35mA
+  - Voices: 2 × 12-bit digital wavetable drum voices
+  - Wavetables: 11 morphable waves per voice
+  - Pitch: 1V/Oct tracking, frequency-swept oscillator, self-FM
+  - Envelopes: Attack + Release per voice
+  - Voice A Output Path: Voltage-controlled analog tilt EQ
+  - Voice B Output Path: Digital wavefolder
+  - Trigger Inputs: 2 × independent
+  - Accent Input: 1 (shared, independent response per voice)
+  - Choke Input: 1 (mutes Voice 1)
+  - V/Oct Input: 1
+  - External Mix Input: 1 (routes into tilt EQ path)
+  - Audio Outputs: 2 × independent
+  - Reverse power protection
+  - Made in England
+  - VCV Rack version available
+io:
+  - name: TRIG 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: TRIG 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ACCENT
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CHOKE
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: V/OCT
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: EXT IN
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT A (EQ)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT B (FOLD)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

@@ -1,0 +1,125 @@
+id: JFazih2deoTiHLxbZKPxo
+name: Sid Guts Deluxe
+manufacturer: alm-busy-circuits
+supersedes: Q8ZJ8U4jhZm5dLHB0BWL0
+primaryCategory: synthesizer
+categories:
+  - wavetable
+  - filter
+  - analog
+  - modular
+url: https://busycircuits.com/products/alm012
+prices:
+  - amount: 290
+    currency: GBP
+description: >-
+  Sid Guts Deluxe is an expanded Eurorack SID voice module that improves on the
+  original SID GUTS with wider 8-octave frequency tracking, attenuverters on all
+  CV inputs, voltage-controlled filter type selection, and a unique chord mode
+  that uses all three available SID oscillators to produce up to 3-voice chords
+  with selectable voicings and inversion.
+details: |-
+  The Sid Guts Deluxe expands on the original SID GUTS with several meaningful additions while retaining the same core architecture: a real MOS Technology SID chip (6581, 8580, or SwinSID) socketed on the rear, a primary wavetable oscillator, a 12dB/octave multimode analog filter, and a second modulation oscillator with ring mod and sync. The primary oscillator now tracks a full 8-octave range (0–8V) with separate coarse and fine frequency offset knobs replacing the single-knob approach of the original.
+
+  The headline addition is voltage-controlled chord mode, which deploys all three available SID oscillators to produce up to 3-voice chords. Ten chord types are available — Fifth, Major, Minor, Suspended, Augmented, Diminished, 1 Octave, 2 Octave, and two Detuned modes — selectable by a front-panel knob or 0–5V CV input. A separate Inversion CV input progressively inverts chord voicings. All CV inputs now feature attenuverters rather than simple attenuators, and the filter type (LP/BP/HP/Notch) is additionally voltage controllable via a dedicated Type input.
+
+  SID chip caveats from the original carry over: vintage chips are noisy, run hot, draw up to 200mA, and exhibit chip-to-chip variability in filter behavior and resonance. The SwinSID emulator is recommended for general use. An actual SID chip is not included with the module.
+specs: |-
+  - Width: 19HP
+  - Depth: 38mm (slightly more with SID chip installed)
+  - Power: +/-12V, ~50–200mA (up to 200mA with 6581/8580 SID chip installed)
+  - Chip compatibility: MOS 6581, MOS 8580, SwinSID (not included)
+  - Oscillator V/Oct range: 0–8V (8 octaves)
+  - Filter modes: Low Pass, Band Pass, High Pass, Notch (12dB/octave)
+  - Chord types: Fifth, Major, Minor, Suspended, Augmented, Diminished, 1 Oct, 2 Oct, Detuned x2
+  - CV inputs: V/Oct, Filter Cutoff, Filter Type, Resonance, Wave Shape, PWM, Chord, Chord Inversion, Mod Osc V/Oct, Mod Osc Type
+  - Attenuverters on all CV inputs
+  - External audio input (not available with SwinSID)
+  - Non-volatile settings storage
+  - Single PCB surface-mount construction
+  - Designed and built in England
+io:
+  - name: V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Type CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Resonance CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Shape CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: PWM CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Chord CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Chord Inv CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mod Osc V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mod Osc Type CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ext In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

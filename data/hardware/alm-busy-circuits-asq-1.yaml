@@ -1,0 +1,117 @@
+id: py-uznp5iG0voQM18dREW
+name: ASQ-1
+manufacturer: alm-busy-circuits
+primaryCategory: sequencer
+categories:
+  - modular
+url: https://busycircuits.com/products/alm035
+prices:
+  - amount: 310
+    currency: GBP
+description: >-
+  The ASQ-1 is a multi-mode Eurorack sequencer that simultaneously sequences two
+  CV/gate and four trigger patterns, plus performs clock-synced quantisation of
+  an external CV signal, with SH-101 style step-time note entry and drum machine
+  pattern editing via mechanical keys.
+details: |-
+  The ASQ-1 is a 32HP Eurorack sequencer combining two melodic CV/gate sequencers, four trigger pattern sequencers, and a dedicated clock-synced CV quantiser in a single module.
+
+  Note entry follows the classic SH-101 step-time approach via satisfying mechanical computer-style keys, while drum pattern editing uses a drum machine style interface on the same keys. The two melodic sequencers and four trigger patterns can run at independent lengths for complex polyrhythmic structures.
+
+  An external CV quantiser input accepts any pitch CV signal and outputs it snapped to a selected scale, clock-synced for rhythmically cohesive results. Patterns save automatically and persist across power cycles. Din Sync support (toggleable at boot) enables integration with legacy Roland equipment.
+specs: |-
+  - 32HP width, 32mm depth
+  - +12V: 50mA, -12V: 10mA
+  - 2x CV/Gate sequencers (SH-101 step-time entry)
+  - 4x trigger pattern sequencers (drum machine style)
+  - 1x clock-synced CV quantiser
+  - Independent poly-rhythmical sequence lengths
+  - Din Sync support (toggleable at boot)
+  - CV/gate overdub mode
+  - USB-C for firmware updates and data backup
+  - Reverse power protection
+io:
+  - name: Sequencer 1 CV
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sequencer 1 Gate
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sequencer 2 CV
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sequencer 2 Gate
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Quantiser In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Quantiser Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Reset
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

@@ -1,0 +1,121 @@
+id: D0vbsU7rxV1YXeDc5LKrF
+name: "Pamela's Workout"
+manufacturer: alm-busy-circuits
+primaryCategory: sequencer
+categories:
+  - modular
+  - utility
+  - discontinued
+url: https://busycircuits.com/products/alm001
+description: >-
+  The original Pamela's Workout is a compact programmable master clock source
+  for Eurorack, providing 8 independent trigger outputs each with extensive
+  per-channel clock division and multiplication, plus voltage control of BPM,
+  start/stop, and reset. Discontinued, succeeded by Pamela's PRO Workout.
+details: |-
+  Pamela's Workout is ALM Busy Circuits' original programmable clock source and modulation hub for Eurorack, widely credited with popularising the concept of a flexible multi-output clock module in the format. Its 8 independent trigger outputs each feature 32 clock divisors and multipliers spanning /512 to ×48, including triplets and odd/even subdivisions, enabling complex polyrhythmic patterns from a single master tempo.
+
+  Per-channel parameters include adjustable pulse width, random skip probability, and individual delay/offset, giving each output a highly personalised rhythmic character. The master BPM (range 25–300) can be set manually or controlled via CV, and the module accepts an external clock input for sync at 24 to 1 PQN. DIN Sync input and output are also available via a simple adaptor, enabling integration with vintage Roland-style gear.
+
+  Five non-volatile preset banks allow saving and recalling complete configurations, and the firmware is user-upgradeable. Pamela's Workout was discontinued and replaced by Pamela's PRO Workout (ALM034), which added LFO waveform outputs, Euclidean rhythms, and a more advanced UI, but the original remains beloved for its simplicity and compact 8HP footprint.
+specs: |-
+  - Width: 8HP
+  - Depth: 22mm
+  - Power: +12V 80mA / -12V 80mA
+  - 8 independent trigger outputs
+  - BPM range: 25–300
+  - Clock divisors/multipliers: /512 to ×48 (inc. triplets, odds, evens)
+  - Per-channel: pulse width, random skip, delay/offset
+  - External clock sync: 24 to 1 PQN
+  - DIN Sync input and output (via adaptor)
+  - CV control: BPM, start/stop, reset
+  - 5 non-volatile preset banks
+  - Firmware upgradeable
+  - Skiff friendly
+  - Made in the UK
+  - Discontinued — succeeded by Pamela's PRO Workout (ALM034)
+io:
+  - name: Clock In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV BPM
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Run / Stop
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Reset
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 7
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

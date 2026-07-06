@@ -1,0 +1,106 @@
+id: 2mqX-GwDZeA1pEcgSAU7L
+name: FMco
+manufacturer: alm-busy-circuits
+primaryCategory: synthesizer
+categories:
+  - fm
+  - digital
+  - modular
+url: https://busycircuits.com/products/alm045
+prices:
+  - amount: 239
+    currency: GBP
+description: >-
+  The FMco is a compact 2-operator FM synthesis VCO and full synth voice in 8HP,
+  featuring ALM's own original FM DSP engine inspired by the Akemie modules but
+  optimised for immediate, modern use. It combines manual and CV control over FM
+  Index, Ratio, and operator waveform selection with a built-in decay envelope,
+  CV-controlled four-voice chord generation, an encoder-based tuning system, and
+  stereo-widened outputs.
+details: |-
+  The FMco packs a full 2-operator FM synthesizer voice into just 8HP. Its FM DSP engine is ALM's own original implementation, sharing heritage with the Akemie's Castle and Akemie's Taiko modules but retuned for immediate hands-on use.
+
+  FM Index (modulation depth) and operator waveform selection each have their own CV input. A trigger input fires the built-in decay envelope, which is internally normalled to both the Index level and the output VCA — making the FMco a fully self-contained voice requiring only a trigger and a pitch CV.
+
+  The chord mode selects from a 16-entry list via knob or CV, with a separate Inv CV input. Stereo-widened Left and Right outputs deliver the final voice signal. Firmware updates are applied via USB-C drag-and-drop.
+specs: |-
+  - Format: Eurorack, 8HP
+  - Depth: 32mm
+  - Power: +12V 65mA / -12V 25mA
+  - Engine: 2-operator FM DSP (ALM original)
+  - Operator waveforms: 8
+  - FM Index: Manual knob + CV with attenuverter
+  - Ratio: Manual knob + CV; lockable to integer multiples
+  - Chord voices: Up to 4, 16 chord types selectable
+  - Chord inversion: CV-controlled
+  - Envelope: Built-in decay, normalled to Index and output VCA
+  - Pitch input: V/Oct
+  - Outputs: Stereo-widened L + R
+  - Firmware updates: USB-C drag-and-drop
+  - Reverse power protection: Yes
+  - Warranty: 2 years
+  - Made in England
+io:
+  - name: V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Chord CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Wave CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Index CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Inv CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ratio CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

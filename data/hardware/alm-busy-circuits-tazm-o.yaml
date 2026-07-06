@@ -1,0 +1,124 @@
+id: Vqpe_HkKzHXV8LzldQtDn
+name: TAZM-O
+manufacturer: alm-busy-circuits
+primaryCategory: synthesizer
+categories:
+  - analog
+  - modular
+url: https://busycircuits.com/products/alm036
+prices:
+  - amount: 315
+    currency: GBP
+description: >-
+  An analog triangle core oscillator with through-zero frequency modulation,
+  continuous wave/pulse width shape morphing, dual SH-101 style sub-octave
+  outputs, built-in output VCA, and voltage-controlled octave transposition in a
+  12HP Eurorack format.
+details: |-
+  The TAZM-O is an analog triangle core oscillator featuring through-zero frequency modulation (TZFM) with a continuous morphing wave and pulse width shape control. The oscillator produces classic waveforms while offering extended sound design capabilities through its TZFM, morphing, and built-in VCA.
+
+  Two SH-101 style sub-octave outputs provide -1 and -2 octave square wave signals, adding instant bass weight to any patch. The built-in output VCA allows the main audio output level to be voltage-controlled, enabling the module to function as a complete voice section without additional modules.
+
+  Voltage-controlled octave transposition allows instant register shifts under CV control. A hard sync input enables classic sync timbres. An LFO mode extends the frequency range for modulation duties.
+specs: |-
+  - 12HP width, 38mm depth
+  - +12V: 70mA, -12V: 60mA
+  - Triangle core with through-zero FM
+  - Morphing wave/pulse width shape control (manual + CV)
+  - Built-in output VCA
+  - Voltage-controlled octave transposition
+  - Dual SH-101 style sub-octave outputs (-1 and -2 Oct)
+  - Hard sync input
+  - LFO mode
+io:
+  - name: V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FM
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FM Index CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Morph CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Oct CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sync
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: VCA CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sin/Tri
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Saw
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Square
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sub-1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sub-2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

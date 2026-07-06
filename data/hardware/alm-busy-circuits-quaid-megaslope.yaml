@@ -1,0 +1,170 @@
+id: 60E6shYyP8u9K1Tub_dQt
+name: Quaid Megaslope
+manufacturer: alm-busy-circuits
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+url: https://busycircuits.com/products/alm020
+prices:
+  - amount: 230
+    currency: GBP
+description: >-
+  The Quaid Megaslope is a five-stage function generator and modulator from ALM
+  Busy Circuits, operating in three modes: a multistage CZ/Juno-style complex
+  envelope, a super-flexible LFO, or a step sequencer with per-step programmable
+  slew and slides. Each stage features independent destination level, rate/time,
+  and variable slope controls with per-stage voltage control of both level and
+  rate.
+details: |-
+  The Quaid Megaslope is ALM Busy Circuits' five-stage function generator and modulator, offering three distinct operational modes in a single 19HP Eurorack module. In envelope mode it produces CZ- or Juno-style complex multistage envelopes; in LFO mode it generates continuously looping modulation shapes; and in step sequencer mode it acts as a voltage sequencer with per-step programmable slew rates.
+
+  The core architecture chains five independent stages, each with its own destination level, rate or time, and variable slope. Every stage exposes both its level and rate to voltage control via dedicated CV inputs, allowing deeply modulated, evolving shapes.
+
+  The module provides two simultaneous main outputs — unipolar and bipolar — and a trigger pulse is emitted at the completion of each individual stage as well as at the end of a full cycle. With stage times ranging from approximately 1ms to 3 minutes, the Quaid Megaslope covers everything from percussive transients to glacial ambient swells.
+specs: |-
+  - Format: Eurorack
+  - Width: 19HP
+  - Depth: 32mm
+  - Power: +12V 70mA / -12V 35mA
+  - Stages: 5
+  - Stage time range: ~1ms to 3 minutes
+  - Modes: Complex envelope, LFO, step sequencer with slew
+  - CV control: Per-stage level and rate
+  - Outputs: Unipolar CV, bipolar CV, per-stage trigger (×5), cycle-end trigger
+  - Reverse polarity protection: Yes
+  - Made in the UK
+io:
+  - name: Gate/Trigger In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 1 Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 2 Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 3 Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 4 Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 5 Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 1 Rate CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 2 Rate CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 3 Rate CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 4 Rate CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 5 Rate CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Unipolar Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Bipolar Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 1 Trig Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 2 Trig Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 3 Trig Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 4 Trig Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stage 5 Trig Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Cycle End Trig
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

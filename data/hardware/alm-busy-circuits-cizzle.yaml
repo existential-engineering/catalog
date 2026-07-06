@@ -1,0 +1,124 @@
+id: ZBPspZuWFuYZAavaEmIOK
+name: CIZZLE
+manufacturer: alm-busy-circuits
+primaryCategory: synthesizer
+categories:
+  - digital
+  - modular
+  - stereo
+url: https://busycircuits.com/products/alm042
+prices:
+  - amount: 290
+    currency: GBP
+description: >-
+  The CIZZLE is a dual digital phase distortion VCO inspired by the classic
+  Casio CZ series synthesizers, bringing CZ-style PD synthesis into Eurorack
+  with primary and secondary oscillator layering, detuning, morphable
+  algorithms, resonance wave generation, ring modulation, and noise modes. Each
+  voice features a built-in VCA, CV-controllable chord mode with up to 8-voice
+  generation, and outputs can be independent or mixed with stereo widening.
+details: |-
+  The CIZZLE is a dual digital phase distortion VCO drawing inspiration from the classic Casio CZ series synthesizers. At its core, it features two oscillators — Oscillator A and Oscillator B — each capable of independent operation or layered together for the rich, complex tones characteristic of CZ synthesis.
+
+  Oscillator A is the primary voice and uses phase distortion synthesis with 9 morphable PD algorithms CV-controlled via the PD Algorithm input. The Shape control adjusts the amount of phase distortion from a pure sine wave to full timbral complexity, with direct knob control and a dedicated CV input with an attenuverter.
+
+  Oscillator B is the secondary voice and produces the classic CZ resonance waveform, providing pseudo-resonant filter-like tonal sweeps. It operates in three modes: REZ (pure resonance sweep), RING (ring modulation with Oscillator A), and NOISE (digital noise blended into the resonant waveform). Both oscillators include dedicated digital VCAs with level knobs and CV inputs. A chord mode allows each oscillator to generate up to 4-voice chords simultaneously (8 voices total), with chord type and inversion both CV-controllable. A VCV Rack emulation running identical core firmware is available.
+specs: |-
+  - Format: Eurorack
+  - Width: 16HP
+  - Depth: 32mm
+  - Power: +12V 65mA / -12V 25mA
+  - Oscillators: 2 (digital phase distortion)
+  - PD Algorithms: 9 (Oscillator A)
+  - Oscillator B Modes: REZ, RING, NOISE
+  - Chord Voices: Up to 4 per oscillator (8 total)
+  - Outputs: Dual independent or stereo mixed with widening
+  - Built-in VCAs: Yes (one per oscillator)
+  - Reverse power protection: Yes
+  - Warranty: 2 years
+  - Made in England
+io:
+  - name: OSC A V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OSC B V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OSC A Shape CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OSC B Shape CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OSC A PD Algorithm CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OSC A Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OSC B Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Chord CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Chord Inv CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OSC B Mode Trigger
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OSC A Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OSC B Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
