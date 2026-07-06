@@ -1,5 +1,169 @@
 # catalog
 
+## 3.35.0
+
+### Minor Changes
+
+- b467a1f: Import A-Designs Audio (18 hardware entries).
+
+  Covers the full current and discontinued lineup: REDDI, REDDI V2,
+  Pacifica, MP-2A, P1 Preamp (500-Series), NAIL compressor, ATTY
+  attenuator, EM-EQ2, Hammer 2, HM2EQ, Ventura, Ventura SE, KGB-II,
+  Mix Factory, EM-PEQ, EM-Silver, EM-Gold, and 503HR rack chassis.
+
+- 4e13ed5: Import AEA Ribbon Mics (17 hardware entries).
+
+  Adds the full current product line from AEA Ribbon Mics
+  (Pasadena, CA): passive ribbon mics (R44C, R84, R88mk2, R92,
+  NUVO N8, N13, NUVO N22, N28), active ribbon mics (KU4, KU5A),
+  tube/solid-state preamps (TRP3, TRP500, RPQ3, RPQ500, RPQ503),
+  stereo DI (TDI Duo), and compressor (1029).
+
+- fe214f7: Import Aguilar Amplification (31 hardware/software entries).
+
+  Covers the full current product lineup: AG Series and Tone Hammer Series
+  amp heads, Tone Hammer 210 Combo, DB and SL speaker cabinet lines,
+  the complete pedal lineup (chorusaurus, filter twin, octamizer, fuzzistor,
+  AG preamp, TLC compressor, agro, grape phaser, tone hammer preamp, storm
+  king, DB 316, octamizer DLX, TLC compressor EQ DLX), and the Aguilar
+  Plugin Suite (VST3/AU/AAX).
+
+- ebf2303: Import Amphion (33 entries).
+
+  Amphion is a Finnish manufacturer of passive loudspeakers and power
+  amplifiers. This import covers the full product line: passive studio
+  monitors (One12, One15, One18, One18X, Two15, Two18, Two18X), the
+  active One25A, home/hi-fi speakers (Argon and Helium series),
+  subwoofers (BaseTwo25, FlexBase25), power amplifiers (Amp400, Amp700),
+  and accessories (cables, color grids, mounting hardware, spare parts).
+
+- 2da4b50: Import API Audio (61 hardware/software entries).
+
+  API: Automated Processes, Inc. — professional recording hardware spanning
+  500-series modules (512V, 550A, 525, 527, 560, 562, 565 etc.), 200-series
+  console modules, standalone rack gear (SR22, SR24, T12, T25, TCS-II),
+  large-format analog consoles (Vision, AXS, 2448, 1608), the ASM164
+  summing mixer, the MC531 monitor controller, and TranZformer guitar/bass
+  pedals. Includes both active and discontinued products.
+
+- eadf3bc: Import Artiphon (4 hardware/software entries).
+
+  Artiphon made expressive smart instruments including the Instrument 1
+  (a multi-mode guitar/violin/piano/drum controller), Orba 3 (a palm-sized
+  synth, looper, and MIDI controller), and Chorda (a smart stringed
+  instrument). Also includes Artiphon Connect, their macOS/Windows companion
+  app. All entries marked discontinued following the company's shutdown.
+
+- c330128: Import Austrian Audio (72 products).
+
+  Austrian Audio is a Vienna-based manufacturer founded by former AKG
+  engineers. Product families include the OC-series large-diaphragm
+  condensers (OC818, OC18, OC16, OC7), the CC8/CC8 SC small-diaphragm
+  condensers, the OD-series dynamic handhelds (OD303, OD505, OC707),
+  the Hi-X headphone line (Hi-X15 through Hi-X65, plus the Composer
+  and Arranger open-back flagships), the Full Score One headphone amp,
+  the MiCreator Studio USB mic system, and the free PolarDesigner plugin.
+  Accessories cover cables (HXC, MCC, TCC families), windscreens, shock
+  mounts, ear cushions, mic clips, and pouches.
+
+- 0080bfc: Import Avalon Design (4 hardware / 1 accessory entries).
+
+  Avalon Design is a California-based manufacturer of high-end Pure Class A
+  analog studio equipment. This import covers the VT-737SP tube channel strip,
+  U5 instrument DI preamp, V5 single-channel mic preamp/DI/re-amp,
+  V55 dual-channel mic preamp/DI/re-amp, and B2-T external AC power supply.
+
+- aa048ad: Import Avantone Pro (32 hardware entries).
+
+  Avantone Pro makes professional studio monitors, microphones,
+  and headphones. Major product families include the CLA series
+  (active/passive monitors and reference amplifiers), the CV-12
+  and BV-1 ribbon/tube condenser microphones, the CK and CDMK
+  drum mic kits, and the Mixcube reference monitors. Also
+  includes the Planar the II open-back headphones, MixPhones
+  MP-1, and accessories (PS-1 pop filter, SSM shockmount, PK1
+  drum rim mount).
+
+- 3119004: Import BAE Audio (35 hardware / 1 accessory entries).
+
+  BAE Audio is a California-based manufacturer of hand-wired, Neve-style
+  analog recording equipment. This import covers the 1073-family preamps and
+  preamp/EQs (1073, 1073MP, 1073MPF, 1073MPL, 1073D, 1073DMP, 1073-Dual-DMP),
+  the 1023/1084/1032 modules, mic pre/EQ modules (1066D, 1066DL, 1028), the
+  1272 and 312A preamps, the 500-series line (500C, 10DCF, 8CM, 73EQL,
+  1073-module), rack chassis and 500-series racks, DI boxes (DLB, 3LB, PDI,
+  PDIS), the RoyalTone and Hot Fuzz pedals, power supplies, and related
+  accessories.
+
+- 41c17b1: Import Bastl Instruments (68 entries: 67 hardware, 1 software).
+
+  Bastl Instruments is a Czech modular synthesizer and experimental
+  instrument maker. This import covers their full Eurorack module line
+  — including the Thyme delay, Ikarie filter, Cinnamon oscillator,
+  Waver wavefolder, and Citadel series — plus the Kastle mini-synth
+  family, Microgranny granular sampler, and Outsidify iOS app.
+  Discontinued modules are included with the `discontinued` category.
+
+- 6353cd2: Import Befaco (58 hardware / 15 accessory entries).
+
+  Befaco is a Barcelona-based manufacturer of Eurorack modular synthesizer
+  modules, DIY kits, and accessories. This import covers the current module
+  lineup — oscillators (Pony VCO, Even VCO, Octaves VCO), filters (Pony VCF),
+  function generators (Rampage 2, Slew), mixers (Hexmix, Mixer V2, STMix),
+  sequencing and utility modules (Muxlicer 2, Morphader 2, Percall, Sampling
+  Modulator), effects (Crush Delay V3, Spring Reverb, Noise Plethora, Oneiroi),
+  MIDI interfaces (MIDI Thing V2, VCMC 2), 1U tiles, power solutions, cases,
+  and the accessory range (patch cables, Knurlies, Bananuts, bus boards, and
+  cleaning/maintenance items).
+
+- 3d91b07: Import ALM Busy Circuits (84 products).
+
+  UK Eurorack modular synthesizer manufacturer known for Pamela's
+  PRO Workout, Squid Salmple, and MFX modules. Includes 55 hardware
+  modules, 9 iOS/desktop software plugins (MFX series, Pam Sync,
+  MUM M8 DSP), and 20 accessories (cases, bus boards, cables).
+
+### Patch Changes
+
+- c9acacc: Apply CodeRabbit data-quality fixes to Aguilar entries (follow-up to the already-merged aguilar import).
+
+  - AG 700: speaker output connector `1/4-inch` → `speakon`; aux input `1/4-inch` → `1/8-inch` (per official manual).
+  - Tone Hammer 500: speaker output `1/4-inch`/`line` → `speakon`/`speaker-level`.
+  - SL 110/112/210/212/410x: add the missing second 1/4-inch input and Neutrik speakON input (each cabinet has 1× speakON + 2× 1/4-inch).
+  - SL 115: add the missing speakON input.
+  - TLC Compressor EQ DLX: add `supersedes` link to TLC Bass Compressor (product lineage).
+  - Aguilar Plugin Suite: add `standalone` to `formats` (the suite runs standalone).
+
+- fe214f7: Enforce recurring import rules in CI and refresh the schema doc.
+
+  Regenerate `schema/CONTEXT.md` (previously stale, blocked by orphan
+  category mappings) so `speaker-level`, `speakon`, `binding-post`,
+  `euroblock`, `spring-terminal` and other IO enums are visible to the
+  importer; add a CI freshness gate + pre-commit hook so it can't drift.
+
+  Harden `pnpm validate`: hardware `io` entries now require
+  `maxConnections` and (except on played instruments) `position`, and
+  every product entry requires `primaryCategory`. Backfill the handful of
+  existing stragglers. Add the passive-speaker `speaker-level` rule and a
+  URL-whitespace rule to the schema docs and CodeRabbit path instructions.
+
+- 1a0f022: Fix category and compatibility warnings on existing entries.
+
+  Remove the redundant `fx` alias (normalizes to `effect`, causing a duplicate)
+  from eight entries — six Dotec-Audio plugins, Newfangled Audio Obliterate, and
+  the HOFA Special FX IR pack — and correct GetGood Drums Modern & Massive's
+  `compatibleWith` to the real `native-instruments-kontakt` slug (was the
+  non-existent `kontakt-player` / `kontakt`).
+
+- 5f4b027: Split aggregated hardware `io` entries into individual ports.
+
+  Where a single `io` entry collapsed multiple physical jacks into an
+  inflated `maxConnections` (e.g. `xlr, maxConnections: 8`), split it into
+  one entry per physical connector, each `maxConnections: 1`, preserving
+  signal type, connection, and position. Covers 109 files (308 entries →
+  individual ports). Heterogeneous, single-stereo-jack, and ambiguous
+  cases were left unchanged for manual review.
+
 ## 3.34.2
 
 ### Patch Changes
