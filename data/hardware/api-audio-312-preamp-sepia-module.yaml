@@ -8,7 +8,8 @@ url: https://apiaudio.com/product/312-preamp-sepia-module/
 description: API 312 microphone preamplifier circuitry integrated with Karno's
   SEPIA digital control platform, enabling real-time automation and preset
   recall. Exclusive to the SEPIA L6 rackmount system.
-details: Combines the classic 312 analog topology (proprietary API transformer)
+details: |-
+  Combines the classic 312 analog topology (proprietary API transformer)
   with Karno's SEPIA digital control layer for automated gain recall and preset
   management. Requires the Karno SEPIA L6 rackmount system. Gain selectable from
   +34.5 to +68 dB.
@@ -25,10 +26,17 @@ specs: |-
   - Dimensions: 1.6" × 2.6" × 5" deep
   - Weight: 1.2 lb
 io:
-  - name: Audio I/O
-    signalFlow: bidirectional
+  - name: Mic Input
+    signalFlow: input
     category: audio
     type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+  - name: Preamp Output
+    signalFlow: output
+    category: audio
+    type: line
     connection: built-in
     maxConnections: 1
     position: Bottom

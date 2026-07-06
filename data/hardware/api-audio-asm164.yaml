@@ -8,12 +8,13 @@ url: https://apiaudio.com/product/asm164/
 description: 16-channel analog summing mixer based on THE BOX console's summing
   section, with API 2510/2520 op-amps, dual stereo program buses (Mix-A and
   Mix-B), per-channel insert points, and external 30W PSU.
-details: '1U 16-channel analog summing mixer. 16 balanced inputs via two DB-25
+details: |-
+  1U 16-channel analog summing mixer. 16 balanced inputs via two DB-25
   connectors (8 channels each). External input L/R via XLR. Two stereo program
   buses: Mix-A and Mix-B (each with XLR L/R outputs). Per-channel insert
   send/return (TRS 1/4"). 31-step detented level controls, 4-segment LED channel
   meters, VU output meters. API 2510 input op-amps, API 2520 output op-amps,
-  transformer-coupled output. External 30W PSU.'
+  transformer-coupled output. External 30W PSU.
 specs: |-
   - Input impedance: 30 kΩ (balanced)
   - Max input level: +25 dBu
@@ -29,14 +30,14 @@ io:
     category: audio
     type: line
     connection: db25
-    maxConnections: 1
+    maxConnections: 8
     position: Left
   - name: Channel Inputs 9–16
     signalFlow: input
     category: audio
     type: line
     connection: db25
-    maxConnections: 1
+    maxConnections: 8
     position: Left
   - name: External Input L
     signalFlow: input

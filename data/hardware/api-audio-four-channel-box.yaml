@@ -13,7 +13,8 @@ description: Small-format recording and mixing console built on API's
   integral 550A EQ, ch 3–4 have a 500-series module slot; two 527 compressors;
   16-input summing bus; full monitor section with two stereo speaker systems;
   cue and talkback.
-details: 4 input channels with mic/instrument/line preamps and high-pass
+details: |-
+  4 input channels with mic/instrument/line preamps and high-pass
   filters. Channels 1–2 have integral 550A 3-band discrete EQ. Channels 3–4 have
   a 500-series module slot. Two 527 compressors assignable to input channels or
   stereo program bus with stereo link. 16 summing inputs (expandable to 20
@@ -105,21 +106,21 @@ io:
     category: audio
     type: line
     connection: db25
-    maxConnections: 1
+    maxConnections: 4
     position: Right
   - name: Summing Inputs 1–8
     signalFlow: input
     category: audio
     type: line
     connection: db25
-    maxConnections: 1
+    maxConnections: 8
     position: Left
   - name: Summing Inputs 9–16
     signalFlow: input
     category: audio
     type: line
     connection: db25
-    maxConnections: 1
+    maxConnections: 8
     position: Left
   - name: Summing Insert Send (Ch 1–16)
     signalFlow: output
@@ -196,14 +197,14 @@ io:
     category: audio
     type: line
     connection: db25
-    maxConnections: 1
+    maxConnections: 4
     position: Right
   - name: 2-Track Inputs 1–4
     signalFlow: input
     category: audio
     type: line
     connection: db25
-    maxConnections: 1
+    maxConnections: 4
     position: Left
   - name: Main Monitor Output L
     signalFlow: output

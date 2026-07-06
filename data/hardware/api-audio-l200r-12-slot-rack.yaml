@@ -6,7 +6,8 @@ url: https://apiaudio.com/product/l200r-12-slot-rack/
 description: 2U 12-slot rackmount chassis for API 200-series (L200) modules,
   with XLR audio I/O and TT jacks for sidechain/aux/mic. Requires external
   L200PS tri-polar power supply (sold separately).
-details: 19″ 2U chassis for API 200-series modules (205L DI, 212L Mic Pre, 215L
+details: |-
+  19″ 2U chassis for API 200-series modules (205L DI, 212L Mic Pre, 215L
   Filter, 225L Compressor, 235L Noise Gate). 12 slots. XLR I/O wired PIN 2 hot.
   TT jacks for sidechain, auxiliary outputs, and mic inputs. External L200PS
   tri-polar (+16V/−16V/+48V) power supply required — NOT included. Front panel
@@ -18,12 +19,19 @@ specs: |-
   - Power: External L200PS required (100–250V, 50/60 Hz AC)
   - Audio I/O: XLR (PIN 2 hot) + TT jacks
 io:
-  - name: Audio I/O
-    signalFlow: bidirectional
+  - name: Audio Inputs (All Slots)
+    signalFlow: input
     category: audio
     type: line
     connection: xlr
-    maxConnections: 1
+    maxConnections: 12
+    position: Left
+  - name: Audio Outputs (All Slots)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 12
     position: Left
   - name: Sidechain / Aux / Mic
     signalFlow: bidirectional
