@@ -26,19 +26,33 @@ details: |-
 
   External control is available via MIDI In/Out (5-pin DIN), analog clock input (0–5V), volt-per-octave CV input (controls Tape Speed/Delay), and a footswitch jack. Discontinued and succeeded by the Thyme+.
 io:
-  - name: Audio Input L/R
+  - name: Audio Input L
     signalFlow: input
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
     position: Bottom
-  - name: Audio Output L/R
+  - name: Audio Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Audio Output L
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Bottom
+  - name: Audio Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
     position: Bottom
   - name: Headphone Output
     signalFlow: output

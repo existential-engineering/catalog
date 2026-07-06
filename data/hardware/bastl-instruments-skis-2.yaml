@@ -12,11 +12,8 @@ description: Dual voltage controlled decay envelope module with integrated dual
   from 8ms to 3 seconds, LED envelope indication, normalized triggers and
   outputs between channels, and solder jumpers for gate/release mode and
   tambourine bend customization.
-details: "5HP width, 24mm depth (skiff-friendly). Power: +12V 40mA, -12V 35mA.
-  PTC fuse and diode protection on 10-pin connector. Solder jumpers for
-  gate/release mode switching and tambourine bend option. Triggers and outputs
-  are normalized between channels. ENV OUT is normalized to VCA CV IN on each
-  channel."
+details: |-
+  5HP width, 24mm depth (skiff-friendly). Power: +12V 40mA, -12V 35mA. PTC fuse and diode protection on 10-pin connector. Solder jumpers for gate/release mode switching and tambourine bend option. Triggers and outputs are normalized between channels. ENV OUT is normalized to VCA CV IN on each channel.
 io:
   - name: TRIG 1
     signalFlow: input
@@ -85,9 +82,12 @@ links:
   - url: https://bastl-instruments.com/files/manual-skis-ii-web.pdf
     title: User Manual (EN)
     type: resource
-  - url: https://bastl-instruments.com/files/nihon-skis2-manual.pdf
-    title: User Manual (JA)
-    type: resource
 videos:
   - provider: youtube
     videoId: sWXtssaK54I
+translations:
+  ja:
+    links:
+      - url: https://bastl-instruments.com/files/nihon-skis2-manual.pdf
+        title: User Manual
+        type: resource
