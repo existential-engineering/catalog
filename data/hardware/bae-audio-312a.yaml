@@ -1,0 +1,56 @@
+id: 5Px17Q0e_6XKuW1Y2mue_
+name: 312A
+manufacturer: bae-audio
+primaryCategory: preamp
+categories:
+  - analog
+  - outboard
+  - rack-mount
+url: https://www.baeaudio.com/index.php/products/312a
+description: The 312A is a versatile microphone preamplifier engineered for
+  speed and clarity, featuring a design without capacitors in the audio path to
+  preserve transient response. It is particularly favored for drum recording due
+  to its punchy character. Built with BAE 2015 opamps and Jensen input and
+  output transformers, the 312A delivers exceptional transparency and
+  musicality. A high-impedance DI input accommodates instruments directly, while
+  front-panel phantom power switches and gold-contact switches ensure durability
+  and ease of use.
+specs: |-
+  - Frequency Response: 5Hz to 75kHz (-3dB)
+  - Mic Input Impedance: ≈1400 ohms
+  - Line Input Impedance: 10k ohms
+  - DI Input Impedance: ≈250k ohms
+  - Output Impedance: 75 ohms
+  - CMRR: 110dB min @ 60Hz
+  - Max Output: +27.1 dBu @ 600Ω
+  - Gain Range: 10 to 66 dB
+  - Equivalent Input Noise: -120 dBu (unweighted, 300kHz BW)
+  - Power (Rackmount): 115/230 VAC, 27W
+  - Power (Module): 40mA/rail
+  - Rackmount Dimensions: 19"W × 1.75"H × 9"D
+  - Rackmount Weight (single): 7 lbs
+  - Rackmount Weight (dual): 8 lbs
+  - Module Dimensions: 1.5"W × 5.5"H × 6"D
+  - Module Weight: 1 lb
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: DI Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right

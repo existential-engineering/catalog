@@ -1,0 +1,71 @@
+id: yjhvt6MB_nbiZ1WYWGTwq
+name: PDIS
+manufacturer: bae-audio
+primaryCategory: di-box
+categories:
+  - utility
+  - analog
+  - outboard
+url: https://www.baeaudio.com/index.php/products/pdis
+prices:
+  - amount: 260.00
+    currency: USD
+description: The BAE Audio PDIS is a passive stereo direct injection box with
+  OEP/Carnhill transformers and hand-wired construction. It supports stereo or
+  simultaneous dual mono operation with dual ground lift switches and Neutrik
+  connectors throughout.
+details: |-
+  The BAE Audio PDIS is a passive DI box that carries on BAE's tradition of hand-wired, high-quality audio gear. It features OEP/Carnhill transformers for transparent signal conversion from instrument-level to balanced mic-level signals.
+
+  The PDIS can be used in stereo applications or as two independent mono channels simultaneously. Dual ground lift switches help eliminate hum and noise caused by ground loops. The unit is housed in a solid steel chassis and uses Neutrik connectors throughout.
+specs: |-
+  - Inputs: Dual 1/4" TS instrument
+  - Outputs: Dual XLR balanced
+  - Through Outputs: Dual 1/4" parallel
+  - Dual ground lift switches
+  - Transformers: OEP/Carnhill
+  - Operation: Stereo or dual mono
+  - Chassis: Solid steel
+io:
+  - name: Instrument Input (L)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Instrument Input (R)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Through Output (L)
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Through Output (R)
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: XLR Output (L)
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: XLR Output (R)
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right

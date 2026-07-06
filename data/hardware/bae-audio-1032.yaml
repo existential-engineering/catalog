@@ -1,0 +1,66 @@
+id: 8cxVq1qtgUvG6l-vewhvl
+name: "1032"
+manufacturer: bae-audio
+primaryCategory: preamp
+categories:
+  - equalizer
+  - outboard
+  - rack-mount
+  - channel-strip
+url: https://www.baeaudio.com/index.php/products/1032
+prices:
+  - amount: 4285.00
+    currency: USD
+description: The BAE 1032 is a Class A transformer-coupled 4-band
+  microphone/line preamplifier with equalizer, inspired by the classic 1081 EQ
+  frequencies combined with the 1073 preamp design. Hand-wired with all-discrete
+  construction using modular cards for serviceability.
+details: |-
+  The 1032 is a 4-band mic/line preamp with equalizer offering an 80dB Class A microphone preamplifier with HI-LO selectable input impedance. The circuit is transformer-coupled and fully discrete, hand-wired in the tradition of classic British console channels.
+
+  The equalizer section features four bands: high-frequency shelving (±16dB at 10, 12, 16, 20, or 24kHz), low-frequency shelving (±16dB at 35Hz, 60Hz, 110Hz, or 220Hz), upper-mid peaking (±18dB across 10 frequencies from 1.5kHz to 8.2kHz), and lower-mid peaking (±18dB across 10 frequencies from 220Hz to 1.2kHz). An 18dB/octave passive inductor high-pass filter is selectable at 50Hz, 80Hz, 160Hz, or 300Hz.
+
+  The mid-band frequencies are inductor-based, inspired by the 1081 equalizer, with overlapping high-mid and low-mid ranges allowing flexible correction across the midrange spectrum. Extended high-frequency shelving reaches up to 24kHz, beyond the range of many classic designs.
+
+  Swiss-made Elma® rotary switches are used throughout for precise and reliable frequency selection. The unit is available in a 19″ 1RU rackmount format or as a module for API 500-series compatible racks, with optional black faceplate and 24V power supply.
+specs: |-
+  - 80dB Class A microphone preamplifier
+  - HI-LO selectable input impedance (balanced/floating)
+  - Output impedance: less than 75 Ohms
+  - Maximum output: +26dBm (600Ω), +32dBu (10kΩ)
+  - THD: <0.025% @ 1kHz; <0.05% @ 100Hz
+  - Noise: <-100dBm
+  - Frequency response: 20Hz to 20kHz
+  - Mic input impedance HI: 1200 Ohm minimum
+  - Mic input impedance LO: 300 Ohm
+  - Line input impedance: 10kΩ bridging (transformer balanced/floating)
+  - High frequency EQ: ±16dB shelving at 10, 12, 16, 20, or 24kHz
+  - Low frequency EQ: ±16dB shelving at 35Hz, 60Hz, 110Hz, or 220Hz
+  - Upper mid EQ: ±18dB peaking at 1.5kHz–8.2kHz (10 frequencies, inductor-based)
+  - Lower mid EQ: ±18dB peaking at 220Hz–1.2kHz (10 frequencies, inductor-based)
+  - High-pass filter: 18dB/octave at 50Hz, 80Hz, 160Hz, or 300Hz (inductor-based)
+  - Power: 110mA @ 24VDC
+  - Swiss-made Elma® rotary switches
+  - Hand-wired all-discrete construction with modular cards
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left

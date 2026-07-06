@@ -1,0 +1,48 @@
+id: vXqZXylagoo3QQxJ3g8ER
+name: PDI
+manufacturer: bae-audio
+primaryCategory: di-box
+categories:
+  - analog
+  - outboard
+url: https://www.baeaudio.com/index.php/products/pdi
+prices:
+  - amount: 155.00
+    currency: USD
+description: The BAE Audio PDI is a passive direct injection box featuring
+  hand-wired construction and an OEP/Carnhill transformer. It converts
+  instrument-level signals to balanced mic-level XLR output with a ground lift
+  switch and a parallel through output.
+details: |-
+  The BAE Audio PDI is a hand-wired direct injection box built with the same attention to quality as BAE's celebrated preamps and channel strips.
+
+  It features a high-quality OEP/Carnhill transformer for accurate signal conversion, Neutrik connectors throughout, and a solid steel chassis. The ground lift switch eliminates hum caused by ground loops, and the parallel through output allows the source instrument to simultaneously feed an amplifier.
+specs: |-
+  - Input: 1/4" instrument jack (Neutrik)
+  - Output: XLR balanced (Neutrik)
+  - Through Output: 1/4" parallel
+  - Transformer: OEP/Carnhill
+  - Ground Lift: switch
+  - Chassis: Solid steel
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Through Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: XLR Output
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right

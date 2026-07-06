@@ -1,0 +1,72 @@
+id: oBKK42BfDhfIJp_PU1DBE
+name: 1073MP
+manufacturer: bae-audio
+primaryCategory: preamp
+categories:
+  - analog
+  - rack-mount
+url: https://www.baeaudio.com/index.php/products/1073mp
+prices:
+  - amount: 1370.00
+    currency: USD
+description: The 1073MP is a Class A, transformer-coupled microphone
+  preamplifier available in single and dual-channel 19" 1U rackmount
+  configurations, delivering the characteristic sound of the 1073 with
+  harmonically rich low end, slight resonant highs, and maintained focused mids.
+details: |-
+  The 1073MP is a Class A, transformer-coupled microphone preamplifier built in a 19″ 1U rackmount chassis, available in single and dual-channel configurations. It faithfully recreates the classic 1073 sound with the same modular design and hand-wiring as BAE's standard construction.
+
+  The unit features Carnhill transformer-coupled mic inputs with switchable impedances (1200 or 300 ohms), providing flexibility for different microphone types. Line-level XLR inputs add extra versatility, and a high-impedance DI input accommodates guitars and synthesizers directly.
+
+  Front panel controls include illuminated phase reverse and phantom power buttons. The regulated linear power supply included with PSU configurations can power up to four channels, offering a cost-effective path to multi-channel setups.
+
+  A unique Steve Stevens Mod is available for stereo/dual units, blending both channels into a single output to combine different microphone types — such as a ribbon and dynamic — into one analog output without stacking multiple tracks in the DAW.
+specs: |-
+  - Frequency Response: 10Hz to -3dB at 55kHz
+  - Mic Input Impedance: ≈1200/300 ohms (switchable)
+  - Line Input Impedance: 10k ohms
+  - DI Input Impedance: ≈150k ohms
+  - Output Impedance: 65 ohms
+  - CMRR: 100dB min @ 60Hz
+  - Max Output Level: +27.4 dBu @ 600Ω
+  - Gain: 0 to 71 dB
+  - Equivalent Input Noise: -110 dBu (unweighted, 300kHz bandwidth)
+  - Power Requirements: 115/230 VAC, 30W
+  - Weight: Single: 8 lbs (3.63 kg); Dual: 10 lbs (4.54 kg)
+  - Dimensions: 19"W × 1.75"H × 9"D
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: DI Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+videos:
+  - videoId: N5-P83i2Phc
+    provider: youtube
+    title: BAE 1073MP
+  - videoId: 33Miofjcy4k
+    provider: youtube
+    title: BAE 1073MP Demo

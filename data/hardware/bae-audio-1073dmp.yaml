@@ -1,0 +1,86 @@
+id: Ql_HBMBqNBvK06UnRqbe5
+name: 1073DMP
+manufacturer: bae-audio
+primaryCategory: preamp
+categories:
+  - di-box
+  - analog
+  - outboard
+url: https://www.baeaudio.com/index.php/products/1073dmp
+prices:
+  - amount: 1370.00
+    currency: USD
+description: The 1073DMP (Desktop Mic Pre) is the first portable 1073 microphone
+  preamplifier, featuring the same preamp circuit and Carnhill (St Ives)
+  transformers as the 1073 and 1084 models. It includes the 'Bootsy Collins' mod
+  with an OEP Carnhill DI transformer, making it the first 1073 direct box.
+details: |-
+  The BAE 1073DMP (Desktop Mic Pre) is the first portable version of the legendary 1073 microphone preamplifier. It uses the same preamp circuit and Carnhill (St Ives) transformers found in BAE's 1073 and 1084 rack modules, delivering the classic Neve-style sound in a self-contained desktop unit with built-in power supply.
+
+  The 1073DMP includes the 'Bootsy Collins' mod as standard, incorporating an OEP Carnhill DI transformer that makes it the first 1073-style unit to offer a true direct box input. The DI section features two DI thru connectors for flexible signal routing in live and studio situations.
+
+  The unit is built in the classic BAE hand-wired modular tradition with a solid steel chassis, offering a gain range of 0 to 71 dB, 48V phantom power, and phase reverse capability. Its built-in PSU enables use without an external power supply or rack frame, making it ideal for desktop recording, location sessions, and live performance.
+
+  Frequency response extends from 10Hz to -3dB at 55kHz, with a mic pre input impedance of approximately 1200 ohms and DI input impedance of approximately 150k ohms. Maximum output level is +27.4 dBu at 600Ω, with equivalent input noise of -110 dBu (unweighted 300kHz bandwidth).
+specs: |-
+  - Frequency Response: 10Hz to -3dB at 55kHz
+  - Mic Pre Input Impedance: ≅1200 ohms
+  - DI Input Impedance: ≅150k ohms
+  - Output Impedance: 65 ohms
+  - CMRR: 100dB min @ 60Hz
+  - Max Output Level: +27.4 dBu @ 600Ω
+  - Gain Range: 0 to 71 dB
+  - Equivalent Input Noise: -110 dBu (unweighted 300kHz bandwidth)
+  - Power Requirements: 115/230 VAC, 28W
+  - Weight: 7.3 lbs / 3.31 kg
+  - Dimensions: 5.3"W × 4"L × 11"D
+  - Built-in PSU (no external power supply or rack required)
+  - 48V phantom power
+  - Phase reverse
+  - Carnhill (St Ives) transformers
+  - Hand-wired modular construction
+  - Solid steel chassis
+  - Two DI thru connectors
+io:
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: DI Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: DI Thru 1
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: DI Thru 2
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right

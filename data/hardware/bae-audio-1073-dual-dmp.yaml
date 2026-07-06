@@ -1,0 +1,107 @@
+id: AroeYbCR4rVu9WhQNK9L1
+name: 1073 Dual DMP
+manufacturer: bae-audio
+primaryCategory: preamp
+categories:
+  - analog
+  - outboard
+url: https://www.baeaudio.com/index.php/products/1073-dual-dmp
+prices:
+  - amount: 2595.00
+    currency: USD
+description: The first portable dual 1073 microphone preamplifier featuring the
+  same preamps and Carnhill (St Ives) transformers as the 1073 and 1084 models.
+  It includes a built-in power supply for portability and a hand-wired modular
+  design across two channels.
+details: |-
+  The 1073 Dual DMP (Dual Desktop Mic Pre) is BAE Audio's first portable two-channel microphone preamplifier built around the legendary 1073 circuit. It uses the same hand-wired, class-A discrete design and Carnhill (St Ives) transformers found in BAE's 1073 and 1084 rack modules, delivering the same sonic character in a self-contained desktop unit.
+
+  The unit features a built-in power supply accepting 115/230 VAC, making it fully portable without requiring an external rack power supply. Each channel provides switchable 48V phantom power and phase reverse, along with a front-panel DI input with DI through for re-amping or splitting the direct signal.
+
+  Channel one includes the optional 'Bootsy Collins' modification, which adds an OEP Carnhill DI transformer to the instrument input path for additional tonal coloring. The chassis is solid steel construction with a modular hand-wired layout for serviceability.
+
+  The 1073 Dual DMP delivers up to 71 dB of gain with an equivalent input noise of -110 dBu (unweighted, 300 kHz bandwidth), making it suitable for ribbon microphones and other low-output sources. Output impedance is 65 ohms with a maximum output level of +27.4 dBu into 600 ohms.
+specs: |-
+  - Frequency Response: 10 Hz to -3 dB at 55 kHz
+  - Mic Pre Input Impedance: ≅1200 ohms
+  - DI Input Impedance: ≅150k ohms
+  - Output Impedance: 65 ohms
+  - CMRR: 100 dB min @ 60 Hz
+  - Max Output Level: +27.4 dBu @ 600Ω
+  - Gain Range: 0 to 71 dB
+  - Equivalent Input Noise: -110 dBu (Unweighted, 300 kHz Bandwidth)
+  - Power Requirements: 115/230 VAC, 28W
+  - Two channels
+  - 48V phantom power per channel
+  - Phase reverse per channel
+  - Hand-wired modular design
+  - Carnhill (St Ives) transformers
+  - Solid steel chassis
+io:
+  - name: Mic Input (Ch 1)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Mic Input (Ch 2)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: DI Input (Ch 1)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: DI Input (Ch 2)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: DI Through (Ch 1)
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: DI Through (Ch 2)
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Output (Ch 1)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Output (Ch 2)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - type: support
+    title: 1073 Product Manual
+    url: https://www.baeaudio.com/pdf/resources/BAE%201073%20Product%20Manual.pdf
