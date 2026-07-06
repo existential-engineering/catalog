@@ -1,0 +1,72 @@
+id: txEoGIpWYCbuHXaSuwa4Q
+name: InAmp
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - analog
+  - modular
+url: https://www.befaco.org/inamp/
+description: InAmp is a dual preamp module in a compact 4 HP Eurorack format. It
+  accepts both 6.3mm (1/4-inch) jack and 3.5mm minijack inputs simultaneously,
+  amplifying signals up to 20x to bring domestic line levels and guitar pickups
+  up to Eurorack modular levels.
+details: |-
+  InAmp is a dual instrumentation preamplifier module designed for Eurorack modular synthesizers, built in just 4 HP of panel space. It solves a common interfacing problem: bringing external audio sources such as guitars, basses, and line-level devices up to the hot signal levels expected by modular synthesizers.
+
+  Each of the two channels accepts both a 6.3mm (1/4-inch) TRS jack and a 3.5mm minijack simultaneously, providing flexible connectivity without requiring adapters. The dual-input design means a standard guitar cable or studio line output can be plugged directly into the front panel.
+
+  The amplification stage can boost signals up to 20x, making it suitable for passive guitar pickups, consumer line levels, and other low-level sources that would otherwise be too quiet to drive Eurorack modules effectively. A gain knob per channel allows precise control over the amplification amount.
+
+  The module runs on standard Eurorack ±12V power, drawing only 21mA from the +12V rail and 10mA from the -12V rail — a modest power budget for what it provides. At 30mm depth (including power connector), it fits comfortably in most cases.
+
+  Designed and assembled in Barcelona, InAmp is available both as a fully assembled module and as a DIY kit, continuing Befaco's tradition of making their designs accessible to builders.
+io:
+  - name: Input A (1/4-inch)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Input A (1/8-inch)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Input B (1/4-inch)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Input B (1/8-inch)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Output A
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Output B
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://befaco.org/docs/INamp/INamp_V1_4_Assembly_Guide.pdf
+    type: resource
+    title: Assembly Guide
+  - url: https://befaco.org/docs/INamp/INamp_V1_4_Schematic.pdf
+    type: resource
+    title: Schematic

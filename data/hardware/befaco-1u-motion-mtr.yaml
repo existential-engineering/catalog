@@ -1,0 +1,85 @@
+id: p5gUqRmnguKs88PUyr_6H
+name: 1U Motion MTR
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - mixer
+  - analog
+  - modular
+url: https://www.befaco.org/1u-motion-mtr/
+description: Motion MTR allow you to mix, attenuate and invert signals while
+  having clear visual feedback of their levels. Each channel can function as an
+  audio level control with VU meter, a CV attenuator with voltage meter, or a CV
+  inverter with voltage meter.
+details: |-
+  The 1U Motion MTR is a four-channel signal mixer and attenuator with real-time visual feedback. Each of its four channels can independently function as an audio level control with VU meter, a CV attenuator with voltage meter, or a CV inverter with voltage meter, making it a versatile utility module for any Eurorack system.
+
+  Each input is normalled to 10V, allowing each channel to be used as a fixed voltage source even without a patch cable connected. This makes the module useful for generating offset voltages or bias signals on the fly.
+
+  The outputs of channels 1, 2, and 3 are summed into Out 4, enabling use as a three-into-one mixer. Combined with attenuation and inversion per channel, the module can serve as an attenuverter with offset, a VU meter, a passive mixer, or any combination of these functions.
+
+  The module is designed for the 1U Intellijel format and features an aluminium, heat-treated front panel. It was designed in collaboration with Robin Vincent (concept) and is manufactured in Barcelona by Befaco.
+io:
+  - name: IN 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: OUT 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: IN 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: OUT 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: IN 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: OUT 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: IN 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: OUT 4 (summed 1-3)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.befaco.org/docs/Motion_MTR/mmm-manual-3u1u-pg1.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Motion_MTR/1U_Motion_MTR_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual

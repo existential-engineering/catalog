@@ -1,0 +1,101 @@
+id: DHHRqvuz1BrCAMOp5ovV1
+name: BF-22 VCF
+manufacturer: befaco
+primaryCategory: filter
+categories:
+  - analog
+  - modular
+url: https://www.befaco.org/bf-22/
+description: The BF-22 VCF is a dual Hi/Low-pass filter inspired by the
+  Sallen-Key filter from the early MS-20.
+details: |-
+  The BF-22 VCF is a dual Hi/Low-pass filter inspired by the Sallen-Key filter from the early MS-20. It features a dual-channel Sallen-Key architecture offering both high-pass and low-pass operation.
+
+  The module delivers the characteristic dirty screams associated with early MS-20 designs. This filter intentionally inherits the MS-20's noise floor.
+
+  Each channel provides two CV inputs, with the first CV input featuring a dedicated attenuverter for precise modulation control. Resonance is also CV-controllable, enabling expressive timbral shaping.
+
+  A Link switch allows the first channel to be routed into the second channel, expanding the module's filtering possibilities.
+
+  The module is available as a fully assembled unit or as a DIY kit. It is designed and assembled in Barcelona, Spain.
+io:
+  - name: Audio Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV Input 1 (Ch 1)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV Input 2 (Ch 1)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Resonance CV (Ch 1)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: CV Input 1 (Ch 2)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: CV Input 2 (Ch 2)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Resonance CV (Ch 2)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://befaco.org/docs/BF-22/BF_22_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/BF-22/BF_22_V3_3_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/BF-22/BF_22_V3_3_Schematic.pdf
+    type: resource
+    title: Schematic

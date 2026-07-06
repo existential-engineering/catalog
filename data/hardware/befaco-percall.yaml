@@ -1,0 +1,163 @@
+id: V-IbQTTTkcdUD2QpDieLr
+name: Percall
+manufacturer: befaco
+primaryCategory: modular
+categories:
+  - utility
+  - drum-machine
+  - analog
+url: https://www.befaco.org/percall/
+description: Percall is a 12HP percussive envelope and VCA module that shapes
+  four audio sources into percussive hits using four voltage-controlled
+  amplifiers with dedicated decay envelopes. Each channel features a
+  CV-controllable decay time and per-channel volume, with a normalized mix
+  output for building percussion submixes. A global Strength input adds dynamic
+  control across all channels simultaneously, and choke controls link channel
+  pairs for realistic hi-hat behavior.
+details: |-
+  Percall is a four-channel percussive envelope and VCA module designed to bring drum-machine-style shaping to Eurorack modular systems. Each of the four channels combines a voltage-controlled amplifier with a dedicated decay envelope, allowing any audio source to be transformed into a tight, punchy percussive hit. The decay time on each channel is voltage-controllable, giving external sequencers or LFOs real-time influence over the articulation of each hit.
+
+  Normalization makes common percussion setups easy: audio input 1 is normalled to input 2, and audio input 3 is normalled to input 4. A single oscillator or noise source can feed two channels simultaneously without patching, enabling configurations like a single source serving both open and closed hi-hat voices differentiated only by decay time.
+
+  Choke controls bind channel pairs (1–2 and 3–4), so triggering one channel cuts off the other — directly replicating the behavior of a closed hi-hat choking an open hi-hat. This fundamental drumming characteristic works without external logic modules.
+
+  A global Strength input scales the response across all four channels at once, adding dynamic expression to the full mix. Individual envelope outputs on each channel allow the internal decay envelopes to be used as modulation sources elsewhere in the patch. A normalized mix output sums all four channels into a single percussion submix, ready to feed directly into a mixer or effects chain.
+
+  Manufactured in Barcelona by Befaco with an aluminum heat-treated front panel. Available as a fully built module or a DIY kit.
+io:
+  - name: Audio In 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio In 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio In 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio In 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Decay CV 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Decay CV 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Decay CV 3
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Decay CV 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Strength
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Envelope Out 1
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Envelope Out 2
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Envelope Out 3
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Envelope Out 4
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Mix Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Ch 1 Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Ch 2 Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Ch 3 Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Ch 4 Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: http://befaco.org/docs/Percall/Percall_V1_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Percall/Percall_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/Percall/Percall_V1_Schematic.pdf
+    type: resource
+    title: Schematic

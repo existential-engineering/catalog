@@ -1,0 +1,147 @@
+id: nzEpFPeTJ7zevh7qpfRtc
+name: Lich
+manufacturer: befaco
+primaryCategory: digital
+categories:
+  - modular
+  - effect
+  - utility
+url: https://www.befaco.org/lich/
+description: Lich is a programmable multi-function Eurorack module built on the
+  Rebel Technology OWL platform, developed in collaboration between Befaco and
+  Rebel Technology. It allows musicians and developers to run custom patches
+  written in Pure Data, Max Gen, or Faust directly in hardware, effectively
+  turning a single module into a reprogrammable multi-effect or utility
+  processor.
+details: |-
+  The Befaco Lich is a programmable multi-function Eurorack module built on the Rebel Technology OWL platform, created through a collaboration between Befaco and Rebel Technology. It revives the OWL hardware concept with a modern iteration, giving users the ability to load and run patches written in Pure Data, Max Gen, or Faust — three widely-used visual and textual programming environments for audio and signal processing.
+
+  Lich features stereo audio input and output running at 48 kHz and 24-bit resolution, making it well-suited for high-quality audio processing patches. The four CV controls each combine a physical potentiometer with an attenuated CV input jack, mirroring the classic OWL module design. This gives four independent parameter axes that can be driven manually or by external modulation sources simultaneously.
+
+  Beyond audio processing, Lich expands the OWL concept with two CV outputs and a gate output, enabling patches to generate control signals and trigger events for the rest of a modular system. Two gate inputs with corresponding physical buttons allow patches to respond to both external triggers and manual interaction directly on the panel.
+
+  Patch selection and status are displayed via an onboard OLED or LED display, allowing users to browse and load patches without a computer. Both a USB device port (for connecting to a computer for patch management) and a USB host port (for connecting USB MIDI controllers or other USB peripherals) are included, reflecting the OWL platform's deep USB MIDI integration.
+
+  The module is available as a fully assembled unit or as a DIY kit, consistent with Befaco's commitment to the DIY Eurorack community. It is designed, kitted, and assembled in Barcelona, and is compatible with the broader Rebel Technology OWL patch ecosystem, giving access to a large community library of patches across many categories including effects, utilities, sequencers, and synthesis algorithms.
+io:
+  - name: Audio In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV In 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV In 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV In 3
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV In 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV Out 1
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: CV Out 2
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Gate In 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Gate In 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: USB Host
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: usb-a
+    maxConnections: 1
+    position: Bottom
+  - name: USB Device
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Lich/Lich_v1_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Lich/Lich_v1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/Lich/Lich_V1_sch.pdf
+    type: resource
+    title: Schematic
+  - url: https://www.rebeltech.org/patch-library/patches/tags/Lich
+    type: resource
+    title: Patch Library (Rebel Technology)
+  - url: https://pingdynasty.github.io/OwlWebControl/firmware.html
+    type: resource
+    title: Firmware Updater (OWL Web Control)

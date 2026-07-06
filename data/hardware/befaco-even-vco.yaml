@@ -1,0 +1,96 @@
+id: SzesGkFjxZSH2tog6ShbP
+name: Even VCO
+manufacturer: befaco
+primaryCategory: synthesizer
+categories:
+  - modular
+  - analog
+url: https://www.befaco.org/even-vco/
+description: The EVEN VCO is a voltage-controlled oscillator that offers
+  stability and high precision tuning over 10 octaves.
+details: |-
+  The EVEN VCO is a voltage-controlled oscillator that offers stability and high precision tuning over 10 octaves. A redesigned temperature compensation circuit maintains the oscillator stable against voltage and temperature drops.
+
+  The module features five waveform outputs — Triangle, Ramp, Sine, PWM, and Even — along with a 10-position octave selector and 1 cent precision tracking across the full octave range.
+
+  Control inputs include two V/Oct inputs, a Linear FM input, a PWM CV input, and a Hard Sync input, making it highly versatile for complex patch configurations.
+
+  The Even VCO is available both as a fully assembled module and as a DIY kit, and is designed, prepared, and assembled in Barcelona.
+io:
+  - name: V/Oct 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: V/Oct 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Linear FM
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: PWM CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Hard Sync
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Triangle
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Ramp
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Sine
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: PWM
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Even
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Even_VCO/Even_VCO_V0_3_3_Assemby_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/Even_VCO/Even_VCO_V0_3_3_Schematic.pdf
+    type: resource
+    title: Schematic

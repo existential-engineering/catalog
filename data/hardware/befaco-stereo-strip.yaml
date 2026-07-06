@@ -1,0 +1,78 @@
+id: lP9r32ydTPWFQK2HUslhW
+name: Stereo Strip
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+  - audio
+  - effect
+  - filter
+url: https://www.befaco.org/stereo-strip/
+description: The Befaco Stereo Strip is a 6HP Eurorack channel strip module
+  designed in collaboration with Ben Wilson (DivKid), bringing studio mixing
+  desk concepts into modular synthesis. It combines a 3-band EQ,
+  voltage-controlled panning, stereo VCA level control, and a 3-way performance
+  muting system into a compact format. A soft clipping limiter provides both
+  protective limiting and intentional distortion, with switchable line-level
+  adjustment for interfacing with external gear.
+details: |-
+  The Befaco Stereo Strip is a 6HP Eurorack channel strip module developed in collaboration with content creator and synthesist Ben Wilson, known as DivKid. It distills the core functions of a studio mixing console channel strip — EQ, panning, level control, and muting — into a compact and highly versatile Eurorack format, making it suitable for both mixing duties within a patch and as a performance tool.
+
+  At its core, the Stereo Strip features a 3-band equalizer that allows tone-shaping of the stereo signal passing through it. The panning section can be operated manually via a dedicated knob or controlled via an external CV signal, enabling automated or modulation-driven stereo placement. The integrated VCA provides level control that similarly accepts both manual adjustment and CV input, allowing dynamic, patch-controlled volume automation.
+
+  The module includes a 3-way muting switch offering on, off, and momentary modes, giving performers hands-on, expressive control over signal gating during live performance. A soft clipping limiter is built in, which serves double duty: at moderate settings it prevents harsh digital-style clipping and tames loud signals, while when pushed more aggressively it introduces musical distortion and harmonic saturation into the signal path.
+
+  A line-level input/output adjustment switch makes the Stereo Strip compatible with both Eurorack-level signals and standard line-level equipment, simplifying integration with external mixers, audio interfaces, or studio outboard gear. The module is available both fully assembled and as a DIY kit, designed and manufactured in Barcelona.
+io:
+  - name: IN L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: IN R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: OUT L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: OUT R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: PAN CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: LEVEL CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/stereo_strip/Stereo_Strip_manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/stereo_strip/Stereo_Strip_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://www.befaco.org/docs/stereo_strip/Stereo_Strip_V1_1_Schematic.pdf
+    type: resource
+    title: Schematic

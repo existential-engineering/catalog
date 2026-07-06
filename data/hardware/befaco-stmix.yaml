@@ -1,0 +1,119 @@
+id: r1ZDNLzdL-1JWOh5KLrsA
+name: STMix
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+  - audio
+url: https://www.befaco.org/stmix/
+description: The Befaco STMix is a compact 6HP 4-channel stereo mixer designed
+  for Eurorack modular systems. Each of the four channels features stereo inputs
+  with individual volume controls, while an auxiliary input enables chaining
+  multiple STMix units or adding a fifth signal source. The module integrates
+  seamlessly with Befaco's Hexmix system via a rear connector, and includes
+  level meter LEDs for visual monitoring.
+details: |-
+  The STMix is Befaco's compact stereo mixing solution for the Eurorack format, occupying just 6HP of panel space. Despite its small footprint, it accommodates four full stereo channels, each with its own level control, making it an efficient choice for mixing multiple stereo or dual-mono signal sources within a patch.
+
+  A dedicated auxiliary input routes signal directly to the mix output, bypassing the per-channel volume controls. This design choice makes the auxiliary input particularly useful for chaining multiple STMix units together in a larger mixing system, or for inserting an additional fifth input source without consuming one of the main channel slots.
+
+  The module features level meter LEDs that provide quick visual feedback on the output level, helping users set appropriate gain staging without needing a separate metering utility. The front panel is machined from heat-treated aluminum and assembled in Barcelona.
+
+  On the rear of the module, a connector allows integration with Befaco's Hexmix system — a larger mixing ecosystem that includes modules like the HexmixVCA and Bypass. This rear bus connection enables the STMix to function as a satellite mixer feeding into the Hexmix master section.
+
+  With very low power consumption (+12V: 8mA, -12V: 10mA) and a shallow 20mm depth including the power connector, the STMix is well-suited for dense or portable Eurorack systems where space and power budget are at a premium.
+io:
+  - name: Ch 1 Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Ch 1 Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Ch 2 Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Ch 2 Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Ch 3 Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Ch 3 Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Ch 4 Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Ch 4 Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Aux Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Aux Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Mix Out Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Mix Out Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://befaco.org/docs/StMix/StMix_V2_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://befaco.org/docs/StMix/StMix_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/StMix/StMix_V2_Schematic.pdf
+    type: resource
+    title: Schematic

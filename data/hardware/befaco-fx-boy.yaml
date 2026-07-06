@@ -1,0 +1,64 @@
+id: M_wImbE9Q3Uv6Knpq8vOf
+name: FX Boy
+manufacturer: befaco
+primaryCategory: effect
+categories:
+  - analog
+  - digital
+  - modular
+url: https://www.befaco.org/fx-boy/
+description: A Multi FX module based on game carts! FX Boy is a multi-FX module
+  designed in collaboration with several talented manufacturers. It is an effect
+  unit with CV control over the parameters and dry/wet control, with a built-in
+  CV controllable four-band EQ. Each effect is physically hosted in a
+  hot-swappable game cartridge designed by a different manufacturer.
+details: |-
+  FX Boy is a collaborative Eurorack multi-effects module from Befaco that uses hot-swappable game-cartridge-style effect cards, each created by a different manufacturer. The base module provides CV control over all effect parameters and dry/wet mix, plus a built-in four-band EQ that can be routed pre or post effect and is itself CV controllable.
+
+  Each cartridge plugs in and out while the module is running (hot-swap), with a selector switch for two different flavour modes per cartridge. The open cartridge specification means users and third parties can design and build their own effects cartridges.
+
+  The launch cartridge lineup spans analog and digital processing: TRASH (Befaco) is a harmonic distortion combining clipping and folding; FLANGER (Feedback Modules) offers classic LFO flanger or delay with feedback; ANALOG WAVEFOLDER (Making Sound Machines) adds West Coast harmonics; AVMA (Tesseract Modular) is a bipolar VCA with wavefolder and frequency reducer; MICRO PHASER (Instruō) uses three cascaded all-pass filters with built-in LFO; ESKUARA (Touell Skouarn) is a feedback fuzz/overdrive; and FX GIRL (XOR) is a digital dual-effect combining delay and granularizer.
+
+  The module is 12 HP wide, 35mm deep, and draws +12V: 125mA and -12V: 100mA from the rack power (plus additional draw from whichever cartridge is inserted). It features an aluminium front panel and is designed and assembled in Barcelona by Befaco.
+io:
+  - name: Audio In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Dry/Wet CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Parameter CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.befaco.org/docs/FX_Boy/FX%20Boy_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/FX_Boy/FXBoy_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://www.befaco.org/docs/FX_Boy/FxBoy_V1_Schematic.pdf
+    type: resource
+    title: Schematic
+  - url: https://www.befaco.org/docs/FX_Boy/Cartridge%20Desing%20Toolbox.zip
+    type: resource
+    title: Cartridge Design Toolbox

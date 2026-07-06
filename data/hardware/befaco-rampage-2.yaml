@@ -1,0 +1,202 @@
+id: a1tFZp18fI-1vlgvO8vWM
+name: Rampage
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+  - filter
+url: https://www.befaco.org/rampage-2/
+description: The Rampage is Befaco's interpretation of the classic Serge/Buchla
+  ramp generator — a dual, patch-programmable function generator built around
+  two voltage-controlled integrators. Each channel processes incoming CV or
+  audio signals by limiting the rate of voltage change, enabling envelope
+  generation, portamento, LFO, and audio-rate oscillation. Analog logic outputs
+  (MIN, MAX, B>A comparator) and slope detector gates make the two channels
+  deeply interactive and cross-patchable.
+details: |-
+  The Rampage is Befaco's unique take on the Serge/Buchla ramp generator concept, housing two independent voltage-controlled integrators in a single 18HP Eurorack module. An integrator (also called a lag processor or slew limiter) limits the rate at which a voltage can change over time. Feed it a square wave and it outputs a ramp; feed it a gate and it generates an Attack-Decay envelope. The Rampage takes this core idea and surrounds it with rich functionality for combining and cross-modulating the two channels.
+
+  Each channel (A and B) has its own main signal input (IN), trigger input (TRIGG), and manual trigger button. Independent RISE and FALL slider controls set the attack and decay times, each of which can also be voltage-controlled via dedicated CV inputs. An EXP. CV input acts inversely — higher voltage means shorter time — making it ideal for controlling frequency when the module is used as a filter or oscillator. A three-position RANGE switch selects between high (audio rate), medium (envelope rate), and low (LFO rate) operating speeds. A SHAPE control continuously blends the integrator's response between logarithmic, linear, and exponential curves.
+
+  A CYCLE switch per channel toggles between one-shot mode (envelope generation — stops when the falling ramp reaches 0V) and cycle mode (continuous oscillation — re-triggers automatically at 0V). A CYCLE gate input can remotely flip this switch. Each channel produces its main ramp output (OUT A / OUT B), a RISING gate (high whenever the output is rising), a FALLING gate (high during the fall), and an End-Of-Cycle (EOC) trigger pulse fired each time the generator reaches 0V.
+
+  At the center of the panel sits the analog logic section. A BALANCE crossfader weights the A and B signals feeding the logic outputs. The MIN output (analog AND) tracks whichever channel is lower at any moment; the MAX output (analog OR) tracks whichever is higher. The B>A comparator output fires a 10V gate whenever channel B's amplitude exceeds channel A's. Together these outputs enable complex polyrhythmic gate generation, waveshaping, and envelope following without any additional modules.
+
+  The module supports over 20 documented patch configurations including ADSR envelope generation, portamento, VCO and LFO generation, low-pass filtering, envelope following, trigger burst generation, and comparator-based distortion mixing. Available as assembled or DIY kit, designed and manufactured in Barcelona.
+io:
+  - name: IN A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: TRIGG A
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: IN B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: TRIGG B
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: RISE CV A
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: FALL CV A
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: EXP. CV A
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CYCLE A
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: RISING A
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: FALLING A
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: EOC A
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: OUT A
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: B>A
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: MIN
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: MAX
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: OUT B
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: RISE CV B
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: FALL CV B
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: EXP. CV B
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CYCLE B
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: RISING B
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: FALLING B
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: EOC B
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Rampage/Rampage_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/Rampage/Rampage_V1_4_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://www.befaco.org/docs/Rampage/Rampage_V1_4_Sch.pdf
+    type: resource
+    title: Schematic
+videos:
+  - provider: youtube
+    videoId: _T-ARZFXUXA
+    title: Befaco Rampage Patch Ideas Demo

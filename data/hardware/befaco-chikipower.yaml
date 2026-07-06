@@ -1,0 +1,50 @@
+id: smet8PlEZPy077qENfcNS
+name: ChikiPower
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+url: https://www.befaco.org/chikipower/
+description: Tiny standalone USB-C desktop Eurorack power supply up to 400mA of
+  current per rail with over-voltage and short-circuit protection.
+details: |-
+  ChikiPower is a USB-C standalone Eurorack power supply designed to complement any DIY bench. ChikiPower can provide up to 400mA per rail with a 20W USB charger, making it perfect for driving small setups.
+
+  Besides its tiny desktop format, ChikiPower is a super reliable power supply offering over-voltage and short-circuit protection, keeping your devices safe.
+
+  ChikiPower accepts a range of USB power sources: USB 3.0/3.1 delivers 4.5W, USB BC 1.2 delivers 7.5W, USB Type C 1.2 delivers 15W, and standard USB chargers can deliver up to 20W.
+
+  The unit provides three Eurorack power sockets and ships with a high-quality USB-C cable included. Its compact measurements of 54x52x20mm make it well-suited for small desktop or travel rigs.
+io:
+  - name: USB-C Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-c
+    maxConnections: 1
+    position: Left
+  - name: Eurorack Power Output 1
+    signalFlow: output
+    category: power
+    type: power
+    connection: pin
+    maxConnections: 1
+    position: Right
+  - name: Eurorack Power Output 2
+    signalFlow: output
+    category: power
+    type: power
+    connection: pin
+    maxConnections: 1
+    position: Right
+  - name: Eurorack Power Output 3
+    signalFlow: output
+    category: power
+    type: power
+    connection: pin
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.befaco.org/docs/ChikiPower/Chiki_Power_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions

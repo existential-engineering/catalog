@@ -1,0 +1,95 @@
+id: 0NMhkRDa4Q1jJwmKvHFcy
+name: Molten Bypass
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - effect
+  - modular
+url: https://www.befaco.org/molten-bypass/
+description: Molten Bypass is a 4HP stereo Eurorack effects loop module
+  developed with Robin Vincent of Molten Music Technology. A gate input with
+  selectable Gate/Latch behavior triggers hard or soft bypass of an external
+  effects unit — soft mode preserves reverb tails and delay repeats, hard mode
+  cuts cleanly. A return gain knob and manual LAUNCH button round out the
+  feature set.
+details: |-
+  Molten Bypass is a compact 4HP stereo Eurorack module designed to integrate external hardware effects processors into a modular signal chain with precise gate control. Developed in collaboration with Robin Vincent of Molten Music Technology, the module addresses a common need in live and studio setups: cleanly switching a stereo signal path in and out of an external effects unit on demand.
+
+  The signal flow sends a stereo pair (L/R) from the main inputs through to the TO FX outputs, which patch to the input of an external effects unit. The effected signal returns via the FROM FX inputs and is routed to the stereo OUT jacks. When bypass is engaged, the module routes the dry signal directly to the outputs, bypassing the external unit entirely.
+
+  Two bypass modes address different use cases. Hard bypass cuts the effects return abruptly — ideal for drives, compressors, or any processor where a clean cut is desired. Soft bypass fades the return signal gently, preserving reverb tails, delay repeats, and other time-based effects that would otherwise click or cut off unnaturally.
+
+  Gate control is handled via a dedicated GATE input jack. A Gate/Latch toggle switch changes the behavior: in Gate mode, the bypass is active only while a gate signal is held high; in Latch mode, a trigger pulse toggles the bypass state on and off. The large LAUNCH button provides manual control independent of gate signals, making it equally useful without a sequencer or gate source.
+
+  An FX GAIN knob calibrated at 0dB allows trimming of the return signal level, compensating for level mismatches between the modular system and the external hardware effects unit.
+io:
+  - name: In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: To FX L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: To FX R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: From FX L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: From FX R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Bypass/molten-bypass-manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Bypass/BYPASS_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual

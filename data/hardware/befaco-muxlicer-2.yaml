@@ -1,0 +1,207 @@
+id: Xr8jLzFsIolsStQI5GLut
+name: Muxlicer
+manufacturer: befaco
+primaryCategory: sequencer
+categories:
+  - utility
+  - modular
+url: https://www.befaco.org/muxlicer-2/
+description: The Muxlicer is a 16HP Eurorack sequential signal processor
+  combining a Digital Step Controller, Gate Generator, and 8-position reversible
+  Analog Switch (Mux/DeMux). It routes signals from one input to eight outputs
+  or vice versa, generates CV and gate sequences, and slices audio signals
+  rhythmically with per-step voltage control. An external ADDRESS input enables
+  voltage-controlled position selection, and an EOC output fires at the end of
+  each cycle.
+details: |-
+  The Muxlicer is a Swiss-army-knife sequential signal processor from Befaco that packs three tightly integrated functional blocks into 16HP. The Digital Step Controller drives an eight-step sequence at a rate set by the SPEED knob and clock division/multiplication ratio, producing both a CV ramp and a binary address that steers the analog switch. An internal clock is always available, but the module also accepts and outputs a clock signal so it can lock to or drive the rest of a patch.
+
+  The Gate Generator produces an eight-channel gate sequence, with each step capable of generating a gate pulse. These independent gate outputs allow complex rhythmic patterns to be produced without any additional modules. The CV output per step can be used to retrigger envelopes, step through sequences, or modulate any CV-accepting destination in the system.
+
+  The Analog Switch (Mux/DeMux) is the heart of the module — a reversible eight-position multiplexer that routes signals from one Common I/O to up to eight Mux I/O jacks or vice versa. Direction is determined by signal flow: patching a source into Common and destinations into the Mux I/Os routes one-to-many; reversing that sends many-to-one. The All In jack normalizes a signal into all eight Mux I/Os simultaneously, enabling audio slicing and step-volume control via the ADDRESS input.
+
+  The ADDRESS input overrides the internal step counter with an external CV, enabling voltage-controlled selection of any of the eight switch positions — turning the module into a VC router or sample-and-hold multiplexer. A RUN input starts and stops the sequencer. The EOC (End of Cycle) output fires at the end of each complete sequence, useful for chaining sequencers or triggering events on the last step.
+
+  Designed, assembled, and kitted in Barcelona, the Muxlicer is available as both a fully assembled module and a DIY kit. It is the companion module for the MEX gate expander.
+io:
+  - name: Clock In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Run
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Address
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV/Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate 1
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate 2
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate 3
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate 4
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate 5
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate 6
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate 7
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate 8
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: All In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Common
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Mux I/O 1
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Mux I/O 2
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Mux I/O 3
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Mux I/O 4
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Mux I/O 5
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Mux I/O 6
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Mux I/O 7
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Mux I/O 8
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: EOC (End of Cycle)
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Muxlicer/Muxlicer_User%20Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Muxlicer/Muxlicer_v1_3_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/Muxlicer/Muxlicer_V1_3_Schematic.pdf
+    type: resource
+    title: Schematic
+  - url: https://github.com/Befaco/muxlicer
+    type: resource
+    title: Firmware (GitHub)

@@ -1,0 +1,98 @@
+id: h8AuQAfVOSLNx9Y807Gxf
+name: Burst
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+url: https://www.befaco.org/burst-2/
+description: Burst is a trigger processor and generator, designed to add an
+  organic chain of events to your modular setup.
+details: |-
+  Burst is a trigger processor and generator for Eurorack modular synthesizers, designed to add an organic chain of events to a modular setup. It can be seen as a 'Trigger Activated Trigger Burst' — each time it is activated, either manually or with an external trigger, a given amount of triggers are generated with control over Time Division, Distribution, Quantity, and Probability.
+
+  With Burst synced to your tempo, you can create all kinds of ratcheting effects and multiplications leading to doubles, triplets, quintuplets, and true polyrhythms for your modular system.
+
+  With very short time windows, Burst can help synthesize fast repeating transients for 'hand-clap like' sounds or modern drum hits.
+
+  Working in Cycle Mode, Burst is also an excellent master clock with tap tempo functionality, and is able to achieve non-linear distributed clocks. The module supports up to 32 triggers per burst.
+io:
+  - name: Trig
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Clock
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Quantity CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Distribution CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Time Division CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Probability CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Burst Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Tempo
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: End of Cycle
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://befaco.org/docs/Burst/Burst_V3_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/Burst/Burst_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Burst/Burst_V3_Schematic.pdf
+    type: resource
+    title: Schematic
+  - url: https://github.com/Befaco/burst
+    type: resource
+    title: Firmware (GitHub)
+videos:
+  - provider: youtube
+    videoId: KMNqizaTN1o
+    title: Befaco - Burst (more than a basic burst!)

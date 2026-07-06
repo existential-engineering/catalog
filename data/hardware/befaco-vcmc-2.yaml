@@ -1,0 +1,182 @@
+id: GjR867uIz8AQiAK_oA_v8
+name: VCMC
+manufacturer: befaco
+primaryCategory: midi
+categories:
+  - utility
+  - modular
+url: https://www.befaco.org/vcmc-2/
+description: The VCMC (Voltage Controlled MIDI Controller) is a fully editable
+  Eurorack MIDI controller featuring eight faders and eight push buttons, each
+  with associated CV or gate inputs for automation via external signals. All
+  controls are independently mappable to any MIDI message type — CC, Notes,
+  Program Change, Clock, Start/Stop, and NRPN — and output via DIN-5 or USB as a
+  class-compliant MIDI device. Configurations are saved internally and can be
+  managed via Sysex or the Befaco online web editor.
+details: |-
+  The VCMC from Befaco is a versatile voltage-controlled MIDI controller designed to bridge the world of Eurorack CV/gate signals and MIDI-capable instruments, DAWs, and hardware. At its core are eight faders and eight push buttons, each paired with dedicated CV and gate inputs, allowing external modular signals to automate and control any parameter in real time.
+
+  With 10 CV inputs and 8 gate inputs, the VCMC offers a comprehensive interface for converting analog signals into MIDI data. Each control channel is independently configurable — users can map faders, buttons, and their associated CV/gate inputs to any MIDI message type, including Control Change (CC), Notes, Program Change, Clock, Start/Stop/Continue transport commands, and NRPN (Non-Registered Parameter Numbers) for fine-grained control of synths that support 14-bit resolution.
+
+  The module supports both DIN-5 MIDI output and class-compliant USB MIDI, making it immediately compatible with any computer, iOS device, or MIDI hardware without additional drivers. Multiple voltage input ranges are supported (0–10V, -5 to +5V, 0–5V), giving flexibility for different CV sources across modular formats. An onboard OLED display provides visual feedback and menu navigation for on-module configuration.
+
+  Configurations are stored in four internal save slots and can be backed up and transferred via Sysex. The dedicated Befaco Web Editor (accessible via Chrome-based browsers with Web MIDI support) provides a streamlined graphical interface for programming banks, mapping controls, setting CC numbers, NRPN values, note numbers, and defining custom port names. A firmware update path is provided via the open-source GitHub repository.
+
+  The VCMC is available as a fully assembled module, as a DIY kit for enthusiasts who prefer to build their own, and as a standalone mod kit with a 3D-printed case for use outside a Eurorack system. The front panel is constructed from heat-treated aluminium and the module is designed and assembled in Barcelona.
+io:
+  - name: CV 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 3
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 5
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 6
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 7
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 8
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux CV 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Aux CV 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate 3
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate 5
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate 6
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate 7
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate 8
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin DIN
+    maxConnections: 1
+    position: Bottom
+  - name: USB MIDI
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: USB
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/VCMC/VCMC_V1.4.1_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/VCMC/VCMC_V1_1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions
+  - url: https://befaco.org/docs/VCMC/VCMC_V1_1_Schematic.pdf
+    type: resource
+    title: Schematic
+  - url: https://github.com/Befaco/VCMC
+    type: resource
+    title: Firmware (GitHub)
+  - url: https://www.befaco.org/VCMCconfig
+    type: resource
+    title: Web Editor

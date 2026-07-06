@@ -1,0 +1,90 @@
+id: Vgqp5lazcTEIZxJ6XFn7y
+name: Hexmix
+manufacturer: befaco
+primaryCategory: mixer
+categories:
+  - analog
+  - modular
+url: https://www.befaco.org/hexmix/
+description: Hexmix is a six-channel performance mixer specially designed for
+  Eurorack, it has six channels with three-band EQ, mute, pan and EQ sections on
+  the master.
+details: |-
+  Hexmix System is a six channel performance mixer specially designed for Eurorack. The system has two separate modules: the core mixer (Hexmix) and the Hexpander expander that adds three auxiliary sends per channel, PFL, individual outputs, and balanced output.
+
+  The mixer draws strong inspiration from classical DJ mixers, providing sharp EQs for enhanced performance. Each of the six channels features a three-band EQ with sharp 12dB cuts designed for aggressive frequency shaping in the style of classic DJ mixers. Vactrol-based mutes provide clickless operation with a natural decay rather than a sharp cut. Switches have both latch and momentary positions for performative unmuting.
+
+  Inputs for every channel are located at the left side of the Hexmix. Each jack is normalized to a VCA Expander connection on the back, so a Hexmix VCA will route each VCA output to each channel input automatically; plugging a jack into any input disconnects the VCA signal. Gain is set to unity, so the module acts as an attenuator of the input signal.
+
+  The master section includes its own softer EQ (6dB) and volume control over the final mix. A rear switch selects between line and modular (synth) output levels, useful when combined with the Hexpander for simultaneous modular-level and line-level balanced outputs. The system is designed to be placed in 6U rather than the traditional 3U Eurorack paradigm, with all per-channel controls arranged vertically like a conventional tabletop mixing deck.
+io:
+  - name: Channel 1 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Channel 2 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Channel 3 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Channel 4 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Channel 5 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Channel 6 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Master Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Master Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Hexmix/Hex_Mix_System_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Hexmix/Hexmix_V1_THT_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions (THT)
+  - url: https://www.befaco.org/docs/Hexmix/Hexmix_V1_Schematic.pdf
+    type: resource
+    title: Schematic
+videos:
+  - provider: youtube
+    videoId: oUivgt50iYw
+    title: Hexmix Demo

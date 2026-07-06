@@ -1,0 +1,83 @@
+id: O7MxyDFoKkyOfkpT76pQc
+name: Pony VCF
+manufacturer: befaco
+primaryCategory: filter
+categories:
+  - modular
+  - analog
+  - utility
+url: https://www.befaco.org/pony-vcf/
+description: The Pony VCF is a space-conscious 6HP Eurorack module combining a
+  four-pole 24 dB/octave lowpass filter, a voltage-controlled amplifier, and a
+  three-channel mixer in a single compact unit. Built around the SSI2144
+  FATKEYS™ chip using Dave Rossum's improved ladder topology, it offers
+  temperature-compensated frequency and resonance controls with compensated
+  volume-versus-resonance behavior. Two cutoff CV inputs, a voltage-controlled Q
+  input, and a two-segment peak meter round out its feature set.
+details: |-
+  The Pony VCF is Befaco's compact take on the classic transistor ladder filter, packing VCF, VCA, and mixer functionality into just 6HP of Eurorack space. It is built around the SSI2144 FATKEYS™ chip, which implements Dave Rossum's improved ladder topology designed to retain the warmth and character of vintage transistor filters while minimizing the distortions and tuning inconsistencies associated with discrete designs.
+
+  At its core, the module features a four-pole, 24 dB/octave lowpass filter with temperature-compensated controls for both cutoff frequency and resonance (Q). The compensation circuitry ensures stable, predictable behavior across a wide range of operating conditions — a practical advantage in live performance and studio settings alike. The resonance control is also compensated for volume, meaning the output level remains relatively consistent as resonance is increased, avoiding the volume drop common in many classic designs.
+
+  The three-channel mixer section normalizes the output of channel three back to the mixer input, enabling internal feedback routing for more complex timbral possibilities. Each channel feeds into the filter, and the two-segment peak meter gives a quick visual reference for signal levels at the filter input.
+
+  Modulation is well-covered: two cutoff CV inputs are provided, with CV1 switchable between routing to cutoff alone or to both cutoff and the internal VCA simultaneously — effectively allowing a single envelope or LFO to control both filter sweep and amplitude in one patch cable. A dedicated voltage-controlled Q input rounds out the CV capabilities, enabling dynamic resonance modulation.
+
+  Available as both a fully assembled module and a DIY kit (with a slightly deeper 35mm profile due to through-hole components), the Pony VCF is manufactured in Barcelona and is suitable for both new builders and experienced Eurorack users seeking a feature-rich filter in a minimal footprint.
+io:
+  - name: IN 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: IN 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: IN 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: CV2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Q CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.befaco.org/docs/Pony_VCF/Pony_VCF_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/Pony_VCF/Pony_VCF_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions

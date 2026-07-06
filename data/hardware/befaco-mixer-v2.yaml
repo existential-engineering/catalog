@@ -1,0 +1,74 @@
+id: 0jCWkRv-j_s2tiNAWjlg1
+name: Mixer V2
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+  - audio
+url: https://www.befaco.org/mixer-v2/
+description: The Befaco Mixer V2 is a compact 4HP DC-coupled Eurorack module
+  that sums up to four audio or CV sources into a single output with independent
+  manual level control per channel. It can operate as a single four-channel
+  mixer or split into two independent two-channel mixers via the dedicated 1+2
+  output, which breaks normalling from channels 3 and 4 when patched.
+details: |-
+  The Befaco Mixer V2 is a utilitarian audio and CV mixer for Eurorack modular synthesizers. It occupies just 4HP of rack space while providing four independent input channels, each with its own level knob, making it an essential utility module for signal management in any modular setup.
+
+  The module uses a dual summing topology that enables flexible routing. When only the Master output is used, all four channels are summed together. However, if a cable is inserted into the 1+2 output jack, channels 1 and 2 are split off into their own separate mix, leaving channels 3 and 4 summing into the Master output. This normalling behavior allows the module to double as two independent two-channel mixers without any additional switching.
+
+  Because the module is DC coupled, it handles both audio-rate signals and low-frequency or static control voltages equally well. This means it can be used to mix audio sources, attenuate and blend CV modulation signals, create offset voltages, or combine gate signals — all within the same 4HP footprint.
+
+  LED signal indicators on each channel pair provide visual feedback about signal presence and level. The module is available both as a fully assembled unit and as a DIY kit, consistent with Befaco's philosophy of supporting the maker community.
+io:
+  - name: Channel 1 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Channel 2 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Channel 3 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Channel 4 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: 1+2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Master Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+links:
+  - url: https://www.befaco.org/docs/Mixer/Mixer_V3_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/Mixer/Mixer_V3_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://www.befaco.org/docs/Mixer/Mixer_V3.pdf
+    type: resource
+    title: Schematic

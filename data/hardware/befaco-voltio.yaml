@@ -1,0 +1,56 @@
+id: 6fVvPEy4lz20jyiASEH5y
+name: Voltio
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+url: https://www.befaco.org/voltio/
+description: Voltio is an accurate voltage source and precision adder that
+  bridges musicianship with electronics lab functionality. It generates voltages
+  for all 12-tone equal temperament notes across a ten-octave range using an
+  intuitive two-knob interface. The module includes a Precision Adder input for
+  summing external voltages with its output, and front panel banana connectors
+  for use with standard multimeter probes.
+details: |-
+  Voltio is Befaco's precision voltage source and adder designed for the Eurorack format. It generates voltages corresponding to all notes in the 12-tone equal temperament scale across a full ten-octave range, making it equally at home in a music studio or an electronics lab. The two-knob interface keeps operation simple and direct.
+
+  In musical contexts, Voltio excels at adjusting oscillator tuning in precise, known intervals and transposing sequences or melodic phrases sourced from sequencers and arpeggiators. Its output tracks the 1V/oct standard, ensuring compatibility with virtually any pitch-responsive module in a Eurorack system.
+
+  The Precision Adder input allows external voltages to be summed with Voltio's internally generated voltage, enabling offset and transposition operations without additional utility modules. This makes it a versatile calibration and patching aid during both performance and maintenance scenarios.
+
+  Uniquely, Voltio features front panel banana connectors in addition to standard 3.5mm jacks, allowing standard multimeter probes to connect directly to the module for hands-free calibration of oscillators and filters. This dual-connector approach makes it genuinely useful as a lab instrument during DIY builds and analog gear servicing.
+
+  The module is designed, kitted, and assembled in Barcelona by Befaco, and is available both as a fully assembled unit and as a DIY kit.
+io:
+  - name: Precision Adder In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Banana Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Voltio/Voltio_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://befaco.org/docs/Voltio/Voltio_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Voltio/Voltio_V1_schematic.pdf
+    type: resource
+    title: Schematic

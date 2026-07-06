@@ -1,0 +1,63 @@
+id: lYHjmu1M1yN-CTcvrPQHM
+name: Slew
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+url: https://www.befaco.org/slew/
+description: Slew is a voltage-controlled lag processor and slope detector from
+  Befaco designed to transform stepped CV signals into smooth, fluid
+  transitions. It features independent rise and fall time controls with an
+  assignable CV input, three selectable speed ranges, and a slope detector that
+  generates gate signals whenever the output is rising or falling. The module
+  can also convert gate signals into Attack-Sustain-Release (ASR) envelopes,
+  making it equally useful for pitch portamento, envelope generation, and signal
+  smoothing.
+details: |-
+  The Befaco Slew is a compact 4HP voltage-controlled lag processor built for the Eurorack format. At its core it smooths abrupt voltage steps into gradual slopes — an essential tool for adding portamento to melodic lines, taming harsh CV edges, or sculpting envelope shapes from gate signals. Rise and fall times are independently set via a fader-based interface that allows intuitive one-handed control, with a shape control that enables time-compensated portamento for a more musical response across the full input range.
+
+  A dedicated CV input can be assigned to modulate either the rise time, the fall time, or both simultaneously, enabling expressive real-time or automated control over the slew rate. Three selectable speed ranges extend the module's utility from very slow glacial movement to fast, transient-shaping response, covering portamento, LFO smoothing, and envelope duties in a single module.
+
+  The onboard slope detector is a standout feature: it generates a gate signal at its output whenever the voltage at the main output is actively rising or falling. This effectively turns the Slew into an edge detector, allowing it to trigger downstream events in sync with movement rather than fixed timing. Combined with its ability to convert an incoming gate into a full ASR (Attack-Sustain-Release) envelope — using rise time as attack and fall time as release — the module punches well above its 4HP footprint.
+
+  Designed and assembled in Barcelona, the Slew is available both as a fully assembled module and as a DIY kit through Befaco's shop, consistent with Befaco's long-standing commitment to open-source, builder-friendly hardware.
+io:
+  - name: IN
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: SLOPE
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.befaco.org/docs/Slew/Slew_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://www.befaco.org/docs/Slew/SLEW_User_manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/Slew/slew_1_2.pdf
+    type: resource
+    title: Schematic

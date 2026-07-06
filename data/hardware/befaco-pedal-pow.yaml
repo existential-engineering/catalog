@@ -1,0 +1,43 @@
+id: 3u6xkFawRpbRpy81n_7Lv
+name: Pedal Pow
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+url: https://www.befaco.org/pedal-pow/
+description: The Pedal Pow is a 6HP 1U Intellijel-format dual isolated power
+  supply that powers guitar pedals and stompboxes directly from a Eurorack case.
+  Each of its two isolated outputs delivers up to 500mA at center-negative
+  polarity, matching the standard requirement of most effects pedals. Galvanic
+  isolation between outputs prevents ground loops from transferring between
+  pedals or back into the modular signal chain.
+details: |-
+  The Befaco Pedal Pow solves a common live-performance and studio problem: integrating guitar pedals into a Eurorack-based rig without requiring a separate pedalboard power supply. By mounting this compact 1U module in any Intellijel-format row, you can draw power directly from the Eurorack case and route it to up to two stompboxes via standard center-negative DC jacks.
+
+  Each of the two outputs is galvanically isolated from the other and from the Eurorack power bus, which prevents ground loops and noise from transferring between pedals or back into the modular signal chain. Both outputs are rated at 500mA — sufficient for the vast majority of analog and digital effects pedals.
+
+  The module draws from both the +12V and -12V rails of the Eurorack power supply. Approximately 0.8mA is consumed from the +12V rail for every 1mA of pedal current delivered. Powering two pedals at full 500mA draw requires roughly 400mA of available headroom on the host case's +12V rail — worth checking before installation.
+
+  Constructed with an aluminum heat-treated front panel, the Pedal Pow occupies 6HP and extends 30mm behind the panel. It is available both as a pre-assembled unit and as a through-hole DIY kit.
+io:
+  - name: DC Output 1
+    signalFlow: output
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+  - name: DC Output 2
+    signalFlow: output
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Pedal_POW/Pedal_Pow_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://befaco.org/docs/Pedal_POW/1U_Pedal_Pow_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Instructions

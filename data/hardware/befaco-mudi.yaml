@@ -1,0 +1,87 @@
+id: lUbgFzd9Y2oRYPa5WGue-
+name: MuDi
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - digital
+  - modular
+url: https://www.befaco.org/mudi/
+description: MuDi is a 2HP active Eurorack clock multiple, conditioner, and
+  divider. The first three outputs deliver conditioned 10V copies of the input
+  clock, while outputs 4–7 provide clock divisions at 1/2, 1/4, 1/8, and 1/16.
+  Its active topology allows hot-patching without disrupting tempo, unlike
+  passive multiples.
+details: |-
+  MuDi (Multiple Divider) is a 2HP utility module from Befaco that combines clock buffering, signal conditioning, and clock division in an extremely compact form. It is an essential utility for any Eurorack system that relies on synchronized clock sources, solving the common problem of distributing a single clock signal to multiple destinations without signal degradation or tempo glitches during hot-patching.
+
+  The module accepts a clock signal via a TRS jack input, with the clock carried on the tip and a reset signal on the ring. It accepts pulse signals greater than 2V and can handle audio-rate square waves, making it flexible for both standard gate/clock signals and more experimental audio-rate patching.
+
+  Outputs 1 through 3 are buffered, conditioned copies of the input clock, all scaled to a consistent 10V level regardless of the input voltage. This normalization ensures that downstream modules receive a clean, strong signal. The active buffering prevents loading effects that plague passive multiples, and critically allows cables to be swapped in and out without causing the clock tempo to drop or stutter.
+
+  Outputs 4 through 7 are dedicated clock division outputs, providing divisions of 1/2, 1/4, 1/8, and 1/16 of the input clock frequency. These divisions enable easy creation of rhythmic subdivisions and polyrhythmic patterns from a single master clock source, useful for driving sequencers, envelopes, and other time-dependent modules at different tempos.
+
+  Designed and assembled in Barcelona, MuDi is available both as a fully assembled module and as a DIY kit.
+io:
+  - name: Clock / Reset Input
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: trs
+    maxConnections: 1
+    position: Left
+  - name: Output 1 (Conditioned Clock)
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Output 2 (Conditioned Clock)
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Output 3 (Conditioned Clock)
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Output 4 (Clock ÷2)
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Output 5 (Clock ÷4)
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Output 6 (Clock ÷8)
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Output 7 (Clock ÷16)
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+links:
+  - url: https://www.befaco.org/docs/MuDi/MuDi_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/MuDi/MuDi_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual

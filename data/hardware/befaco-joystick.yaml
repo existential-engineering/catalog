@@ -1,0 +1,74 @@
+id: F2LS6RLQdGknz-gAjEfI5
+name: Joystick
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+url: https://www.befaco.org/joystick/
+description: The Befaco Joystick is a compact attenuverting joystick controller
+  for Eurorack that generates and processes two control voltages using only one
+  hand. An arcade-style joystick outputs independent CV on X and Y axes with
+  Range and Offset controls to keep voltages within desired parameters. Two push
+  buttons generate manual gates, and the module can also attenuate incoming CV
+  signals on both axes simultaneously.
+details: |-
+  The Befaco Joystick is a 12 HP Eurorack controller module built around an arcade-style two-axis joystick. Moving the stick generates independent control voltages on the X and Y axes, making it a highly expressive and intuitive performance tool for modular synthesizers.
+
+  Beyond raw joystick CV generation, the module can operate as a dual attenuverter. When signals are patched into the X and Y inputs, the joystick position controls attenuation and inversion of those incoming voltages, giving the performer live, hands-on control over CV depth and polarity simultaneously on two channels.
+
+  Each axis has dedicated Range and Offset controls. Range sets the maximum excursion of the output voltage, while Offset shifts the center point, allowing precise calibration of the voltage window and making it easy to stay within the useful range of any destination module.
+
+  Two push buttons sit at the top of the panel and produce manual gate signals on their respective outputs. These gates can trigger envelopes, advance sequencers, or serve any role that requires a momentary high signal, adding rhythmic and performance dimensions beyond the joystick axes.
+
+  The module is manufactured in Barcelona and is available both as a fully assembled unit and as a DIY kit. At 35mm depth and drawing only 25mA on +12V and 10mA on -12V, it is power-efficient and fits comfortably in most cases.
+io:
+  - name: X In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Y In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: X Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Y Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate A
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate B
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://befaco.org/docs/Joystick/Joystick_V1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://befaco.org/docs/Joystick/Joystick_V1_Schematic.pdf
+    type: resource
+    title: Schematic

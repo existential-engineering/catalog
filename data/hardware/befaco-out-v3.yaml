@@ -1,0 +1,71 @@
+id: SngZOXuyRkGa22Fu_Jpbj
+name: Out V3
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - audio
+  - modular
+url: https://www.befaco.org/out-v3/
+description: The Out V3 is a 4HP Eurorack master output module with balanced
+  1/4-inch TRS stereo outputs, a dedicated headphone amplifier, and an
+  independent Cue Input for pre-listen monitoring. Automatic mono-to-stereo
+  summing activates when only the left input is connected, and LED signal
+  indicators provide visual level feedback per channel.
+details: |-
+  The Befaco Out V3 is a master output module designed to serve as the final stage in a Eurorack modular system. Occupying just 4HP of rack space, it offers professional-grade balanced outputs, a headphone amplifier, and a flexible Cue monitoring section — features typically found in larger output modules.
+
+  The module accepts stereo input via two 1/4-inch TRS jacks (Left and Right). When only the Left input is connected, the signal is automatically summed and routed to both output channels, providing convenient mono-to-stereo operation without any manual switching. Both main outputs are balanced TRS, making them suitable for connecting directly to studio mixers, audio interfaces, or balanced PA systems.
+
+  The Cue Input is an independent monitoring path that feeds the headphone output, allowing performers to pre-listen to any signal in the patch without disturbing the main mix. The headphone output routing is selectable between the main stereo mix and the Cue Input.
+
+  LED signal monitoring is provided for each input, giving instant visual feedback of signal presence and level. The module is offered as a fully assembled unit or as a through-hole DIY kit.
+io:
+  - name: Left Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Right Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Cue Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Main Out L (Balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Main Out R (Balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.befaco.org/docs/Out/Out_V3_1_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://befaco.org/docs/Out/Output_V3_Schematic.pdf
+    type: resource
+    title: Schematic

@@ -1,0 +1,84 @@
+id: mXEs9Sfc-Fy9EXKZ8L5IB
+name: A*B+C
+manufacturer: befaco
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+url: https://www.befaco.org/axbc/
+description: Voltage-Controlled Voltage Processor
+details: |-
+  The A*B+C is a voltage-controlled voltage processor for Eurorack modular synthesizers that performs multiplication, addition, and attenuation. It provides a simple way to create complex signal interactions and timbres using fundamental arithmetic operations on voltage signals.
+
+  The module contains two identical independent channels. Each channel takes two input signals — A and B — multiplies them together, then adds a third signal C to the result, producing the output A×B+C. Input B is normalled to +5V so the channel acts as a linear VCA when only A and C are patched, and input C is also normalled to +5V providing a DC offset by default.
+
+  In the audio domain, the module enables ring modulation (audio × CV), linear VCA operation, signal mixing, gain amplification (multiplying two audio signals), phase inversion, and attenuation. In the CV domain it supports voltage-controlled attenuation, CV mixing, inversion, and DC voltage generation.
+
+  The module is fully DC coupled, making it equally suited for audio-rate and control-voltage processing. Each channel features signal LED indicators for visual monitoring of output levels. The compact 6HP format houses both channels in a shallow 25mm depth.
+io:
+  - name: A (Ch 1)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: B (Ch 1)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: C (Ch 1)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Output (Ch 1)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: A (Ch 2)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: B (Ch 2)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: C (Ch 2)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Output (Ch 2)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.befaco.org/docs/AB+C/A_B+C_V4_User_Manual.pdf
+    type: resource
+    title: User Manual
+  - url: https://www.befaco.org/docs/AB+C/A_B+C_V4_Assembly_Manual.pdf
+    type: resource
+    title: Assembly Manual
+  - url: https://www.befaco.org/docs/AB+C/AB+C_V2_1_Schematic.pdf
+    type: resource
+    title: Schematic
