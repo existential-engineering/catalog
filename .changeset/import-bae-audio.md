@@ -2,7 +2,7 @@
 "catalog": minor
 ---
 
-Import BAE Audio (32 hardware / 1 accessory entries).
+Import BAE Audio (35 hardware / 1 accessory entries).
 
 BAE Audio is a California-based manufacturer of hand-wired, Neve-style
 analog recording equipment. This import covers the 1073-family preamps and
