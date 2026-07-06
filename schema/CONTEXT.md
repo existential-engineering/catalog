@@ -814,6 +814,7 @@ Accessory entries (cables, stands, acoustic treatment) live in `data/accessories
 - `1/8-inch`
 - `2.5mm`
 - `xlr`
+- `mini-xlr`
 - `combo jack`
 - `5-pin din`
 - `7-pin din`
