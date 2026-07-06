@@ -1,0 +1,67 @@
+id: DMq8nijz_UYFsaxyt77_J
+name: Amp700
+manufacturer: amphion
+primaryCategory: power-amp
+categories:
+  - rack-mount
+  - amplifier
+url: https://amphion.fi/products/amp700/
+description: Amp700 power amplifier delivers rock-solid control and highly
+  resolving low-distortion power to get maximum performance from your monitors.
+details: |-
+  The Amp700 is a stereo power amplifier designed by Amphion to deliver rock-solid control and tight, fast, highly resolving low-distortion power to passive studio monitors.
+
+  It features a proprietary in-house designed buffer stage that complements Class-D amplifier technology, ensuring maximum performance from connected monitors.
+
+  The Amp700 is compatible with all Amphion passive monitors as well as other passive monitor brands, making it a versatile choice for studio environments.
+
+  The unit is housed in a 19" 2U rack-mountable aluminum chassis and assembled in Finland, with universal mains input supporting 100–240V at 50–60Hz.
+
+  Speaker connections are made via 3-way binding posts supporting banana plugs, bare wire, or spade connectors, while inputs use Neutrik XLR connectors.
+specs: |-
+  - Power Output: 2x 700W @ 4Ω
+  - Power Output: 2x 350W @ 8Ω
+  - Dynamic Range: 117 dB
+  - Inputs: 2x Neutrik XLR
+  - Speaker Connectors: 3-way binding posts (banana, bare wire, spades)
+  - Mains: Universal 100–240V, 50–60Hz
+  - Casing: 19" rack-mountable (2U) aluminum
+  - Dimensions: 88 x 483 x 300 mm (3.46" x 19" x 11.8")
+  - Weight: 5 kg (11 lbs)
+  - Assembled in Finland
+io:
+  - name: XLR Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: XLR Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output L
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output R
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Right
+  - name: Mains Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
