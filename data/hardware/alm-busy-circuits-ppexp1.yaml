@@ -12,3 +12,85 @@ description: >-
   PPEXP1 is an expander module for Pamela’s PRO Workout that offers additional
   outputs. Extend Pam as a master to clock external gear with super
   solid dedicated MIDI & Din Sync clock outputs.
+details: |-
+  The PPEXP1 is the PRO-version 4HP expander for ALM Busy Circuits' Pamela's PRO Workout, offering additional dedicated clock, sync and gate outputs. It lets Pamela's PRO act as a rock-solid master clock for external gear via a dedicated MIDI clock output and a Din Sync-capable clock, freeing up Pamela's own outputs for more complex sequencing or modulation duties.
+
+  The front panel carries nine patch points: five clocked gate outputs, plus Run, Stop and Clock outputs, and a 3.5mm MIDI output whose type is selectable via a switch on the rear. It connects directly to and is powered by the 'MIDI-EX' expander header on the rear of Pamela's PRO Workout. Only one output expander is supported at a time, though it can be used alongside an AXON-1 CV input expander. PPEXP1 and PPEXP2 work only with Pamela's PRO Workout, not earlier Pamela's modules.
+specs: |-
+  - Format: Eurorack, 4HP
+  - Depth: 32mm
+  - Power: +12V 40mA / -12V 0mA
+  - 9 front-panel patch points
+  - 5× clocked gate outputs
+  - Run output
+  - Stop output
+  - Clock output
+  - 3.5mm MIDI output (type selectable via rear switch)
+  - Connects to and powered by the PRO Workout 'MIDI-EX' expander header
+  - Only one output expander at a time (compatible with AXON-1 CV input expander)
+  - Works only with Pamela's PRO Workout
+  - Warranty: 2 years
+io:
+  - name: Gate Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Run Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Stop Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

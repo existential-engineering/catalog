@@ -12,3 +12,61 @@ description: >-
   Pexp-1 is an expander module for Pamela’s NEW Workout offering additional
   dedicated fixed clocked outputs. Extend Pam as a master to clock external gear
   with a super solid MIDI & Din Sync dedicated clock outputs.
+details: |-
+  The Pexp-1 is a 4HP expander for ALM Busy Circuits' Pamela's NEW Workout clocked modulation source. It adds four extra buffered fixed gate outputs at clock multiplications and divisions of x1, x2, x4 and ÷4, freeing up Pamela's own assignable outputs for more exotic modulation duties.
+
+  It also carries dedicated DIN-socketed MIDI Clock and Din Sync outputs, letting Pamela's act as a rock-solid master clock for external hardware and DAWs. The module connects to and is powered by the expander header on the rear of Pamela's NEW Workout; only a single expander is supported at any time, and these expanders do not work with the newer Pamela's PRO Workout.
+specs: |-
+  - Format: Eurorack, 4HP
+  - Depth: 38mm
+  - Power: +12V 25mA / -12V 0mA
+  - 4× buffered fixed gate outputs (x1, x2, x4, ÷4)
+  - Dedicated DIN MIDI Clock output
+  - Dedicated DIN Din Sync output
+  - Connects to and powered by Pamela's NEW Workout expander header
+  - Only one expander supported at a time
+  - Not compatible with Pamela's PRO Workout
+  - Warranty: 2 years
+io:
+  - name: Gate Out x1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out x2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out x4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out /4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI Clock Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - name: Din Sync Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top

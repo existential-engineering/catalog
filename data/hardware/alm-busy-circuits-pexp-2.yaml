@@ -12,3 +12,40 @@ description: >-
   Pexp-2 is an expander module for Pamela’s NEW Workout offering additional
   dedicated fixed clocked outputs. Use extra fixed jack clocked gate outputs to
   free up Pamela outputs for more exotic modulation duties.
+details: |-
+  The Pexp-2 is a compact 2HP expander for ALM Busy Circuits' Pamela's NEW Workout. It provides dedicated fixed clock outputs on standard 3.5mm jacks so that Pamela's can drive external gear as a master clock while keeping its own assignable outputs free for more exotic modulation duties.
+
+  The module carries three jack outputs: a switchable 3.5mm MIDI Clock output, a buffered x24 clock output, and a Run output. The MIDI Clock jack can be reconfigured via a rear connector to match different manufacturer wiring standards. It connects to and is powered by the expander header on the rear of Pamela's NEW Workout, supports only a single expander at a time, and is not compatible with the newer Pamela's PRO Workout.
+specs: |-
+  - Format: Eurorack, 2HP
+  - Depth: 38mm
+  - Power: +12V 15mA / -12V 0mA
+  - 3.5mm jack MIDI Clock output (switchable wiring standard)
+  - Buffered x24 clock output
+  - Run output
+  - Connects to and powered by Pamela's NEW Workout expander header
+  - Only one expander supported at a time
+  - Not compatible with Pamela's PRO Workout
+  - Warranty: 2 years
+io:
+  - name: MIDI Clock Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock Out (x24)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Run Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
