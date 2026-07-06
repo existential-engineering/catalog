@@ -1,0 +1,70 @@
+id: 22QduthSPAQrgxyT1E3_V
+name: Knit Rider EXP
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - sequencer
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/knit-rider-exp
+description: Expander module that adds clock OUT and reset IN/OUT connections to
+  the Knit Rider sequencer. The clock output pulses each time a step on the Knit
+  Rider changes (1 step equals 4 substeps). The reset socket functions as an
+  output in master mode and an input in slave mode. Also includes a 3-way
+  passive multiple with clock inverter (inversion threshold at 2.5V). Powered by
+  the Knit Rider module via ribbon cable.
+details: "2HP Eurorack expander for the Knit Rider sequencer. Powered by the
+  Knit Rider module via ribbon cable; combined current draw +12V: <40 mA. Clock
+  inverter inversion threshold at 2.5V."
+io:
+  - name: Clock Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Reset
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Multiple 1
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Multiple 2
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Multiple 3
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-expander-knit-rider-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/knit-rider-expander-1.1-assembly-guide.pdf
+    title: Assembly Guide v1.1
+    type: resource
+  - url: https://bastl-instruments.com/files/knit-rider-expander-schematic.pdf
+    title: Schematics
+    type: resource

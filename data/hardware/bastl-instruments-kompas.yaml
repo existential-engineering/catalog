@@ -1,0 +1,96 @@
+id: _6d2AL1x9hEIOAUgIJBeS
+name: Kompas
+manufacturer: bastl-instruments
+primaryCategory: sequencer
+url: https://bastl-instruments.com/eurorack/modules/kompas
+description: A 5HP three-coordinate probabilistic pattern navigator that
+  generates evolving looping trigger patterns. Each coordinate travels through a
+  32-step probability field at its own pace, and three linear faders steer
+  direction of travel. Three independent trigger outputs produce distinct
+  rhythmic characters. Clock and reset inputs, three CV inputs for coordinate
+  modulation. Arduino-reprogrammable, open-source, skiff-friendly.
+details: |-
+  Kompas is a 5HP probabilistic trigger generator that navigates a three-dimensional probability space to produce evolving rhythmic patterns. Each of the three coordinates independently traverses a 32-step generator at its own pace, with the user steering direction via three linear potentiometers. Patterns are freshly generated as coordinates move — not filtered from a fixed sequence.
+
+  A global clock input, reset input, and three 0–5V CV inputs allow real-time coordinate modulation. Three 5V trigger outputs deliver the generated patterns. Trigger pulse length is selectable at boot: 2ms, 5ms, or 10ms. Maximum clock rate is 60Hz (3600 BPM).
+
+  Runs on an ATMEGA328P microcontroller, Arduino-programmable via 6-pin FTDI header. Open-source schematics and firmware. Free VCV Rack plugin available. Ships with a printed fanzine. Available assembled or as a DIY kit.
+io:
+  - name: Clock
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Reset
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 1
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 2
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 3
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/content/files/manual-kompas-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/nihon-kompas-manual.pdf
+    title: User Manual (JP)
+    type: resource
+  - url: https://bastl-instruments.com/content/files/kompas-v1.2-assembly-guide.pdf
+    title: Assembly Guide
+    type: resource
+videos:
+  - provider: youtube
+    videoId: PA6eJ4vhJkc
+  - provider: youtube
+    videoId: qk3uTIG0Fw8

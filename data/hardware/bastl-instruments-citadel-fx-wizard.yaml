@@ -1,0 +1,226 @@
+id: epnpIQvc41-04ewt0Shw9
+name: Citadel FX Wizard
+manufacturer: bastl-instruments
+primaryCategory: multi-effect
+categories:
+  - delay
+  - stereo
+  - midi
+url: https://bastl-instruments.com/eurorack/modules/citadel-fx-wizard
+description: "A 16HP stereo multi-effects Eurorack module with MIDI, reimagining
+  the Kastle 2 FX Wizard desktop device. Nine stereo effect modes across three
+  families: Delay FX (stereo delay up to 1.15s, flanger, freezer), Amplitude FX
+  (autopanner, crusher, slicer), and Pitch-Shifting FX (pitcher, replayer,
+  shifter). Extensive CV modulation matrix, TRS MIDI input, USB-C for USB MIDI
+  and firmware updates. Reversible panel (FX Wizard / Wave Bard). Open-source."
+details: |-
+  The Citadel FX Wizard is a 16HP stereo multi-effects module designed for deep sound exploration and live performance. It processes stereo audio at 44kHz/16-bit and offers nine distinct effect modes across three families: Delay FX (stereo delay up to 1.15s, flanger, freezer), Amplitude FX (autopanner, crusher, slicer), and Pitch-Shifting FX (pitcher, replayer, shifter).
+
+  The module features a reversible panel — one side operates as the FX Wizard, the other as the Wave Bard — making it a dual-purpose module. This design originates from the Kastle 2 desktop device, reimagined in Eurorack format.
+
+  Extensive CV modulation matrix with LFO mod, FX mode selection, feedback, amount, trigger, note, and clock inputs. CV outputs include an envelope follower, LFO waveforms (triangle and pulse), clock, and general CV. MIDI via TRS input and USB-C (USB MIDI in/out and firmware updates). The FX Wizard Chamber web app allows customization of rhythm patterns. Headphone output: 2Vpp, 250Ω capable. Open-source firmware on GitHub.
+io:
+  - name: Audio In L
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio In R
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out L
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out R
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Out
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Free In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Note In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Reset In
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: C In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: G In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO Mod In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FX Mode In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Feedback In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Amount In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO Reset In
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig In
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Env Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO Triangle Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO Pulse Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI In (TRS)
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: USB-C (MIDI/Firmware)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/content/files/manual-citadel-fxwizard-quickstart-print.pdf
+    title: Quickstart Guide
+    type: resource
+  - url: https://bastl-instruments.com/content/files/manual-citadel-fx-wizard-web.pdf
+    title: Complete Manual
+    type: resource
+  - url: https://bastl-instruments.com/content/files/kastle2-fx-wizard-1.6.zip
+    title: Firmware v1.6
+    type: resource
+  - url: https://github.com/bastl-instruments/citadel
+    title: GitHub (Open Source)
+    type: resource
+  - url: https://apps.bastl-instruments.com/fx-wizard-chamber/
+    title: FX Wizard Chamber Web App
+    type: resource
+videos:
+  - provider: youtube
+    videoId: yf3LLBh8bc8
+  - provider: youtube
+    videoId: CNywjB9gx_c
+  - provider: youtube
+    videoId: JuR5apnF-DM
+  - provider: youtube
+    videoId: TNTwaXxXB2c
+  - provider: youtube
+    videoId: 3ern3dA-WOI
+  - provider: youtube
+    videoId: gi3t5fUVnBY

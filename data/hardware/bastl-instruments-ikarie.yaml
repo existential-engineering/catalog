@@ -1,0 +1,144 @@
+id: aXUcl_u_zViotHv1MAM26
+name: Ikarie
+manufacturer: bastl-instruments
+primaryCategory: filter
+categories:
+  - stereo
+url: https://bastl-instruments.com/eurorack/modules/ikarie
+description: An 8HP stereo or dual peak filter module with a unique
+  lowpass/highpass transition control. Two parallel 12dB/oct state variable
+  filter cores can be operated in stereo sync, set apart for stereo effects, or
+  chained to form a 24dB filter. The Beyond output delivers the spectral
+  difference of the two cores (twin peak / formant effect). Integrated envelope
+  follower with three selectable decay settings, output stereo VCA with CV
+  pan/detune control, input gain up to 5x, V/OCT with front-panel scaling
+  trimmer. Collaboration between Václav Pelousek and Peter Edwards
+  (Casperelectronics). Named after the 1963 Czech sci-fi film Ikarie XB-1.
+details: |-
+  Ikarie is a stereo or dual peak filter module developed through collaboration between Václav Pelousek of Bastl Instruments and Peter Edwards of Casperelectronics. The module features two parallel 12dB/oct state variable filter cores that can be operated in stereo sync, set apart for unique stereo effects, or chained for a 24dB filter.
+
+  A unique lowpass/highpass transition control allows continuous switching between filter modes with a single knob. Voltage-controlled resonance with a well-balanced circuit enables everything from subtle filtering to piercing, throaty resonance. The envelope follower with three selectable decay settings captures input dynamics for internal modulation.
+
+  The Beyond output delivers the spectral difference between the two filter cores, effectively creating a twin peak filter configuration ideal for formant-type and alien soundscapes. An output stereo VCA with CV control over panning (or filter detuning) adds further shaping capability. Input gain supports up to 5x amplification for optional overdrive. V/OCT input with front-panel accessible scaling trimmer enables pitch tracking.
+
+  Named after the 1963 Czech sci-fi film Ikarie XB-1, which pioneered electronic sound design in cinema.
+io:
+  - name: In L
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In R
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out L
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out R
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Beyond
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Mod
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Pan/Detune
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Resonance
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-ikarie-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/content/files/manual-ikarie-web-it.pdf
+    title: User Manual (IT)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: uID4uDLewDo
+  - provider: youtube
+    videoId: SbGH75hZVcE
+  - provider: youtube
+    videoId: gM_KGu7FgKY
+  - provider: youtube
+    videoId: VK-ktIZJsgE
+  - provider: youtube
+    videoId: 0VfNJGy-yYI
+  - provider: youtube
+    videoId: ekhV8u4jDnc
+  - provider: youtube
+    videoId: xzBD9LHIOj0
+  - provider: youtube
+    videoId: LLztGdDDQRs
+  - provider: youtube
+    videoId: t5VwuDOPewI
+  - provider: youtube
+    videoId: ONq9YxMmMdw
+  - provider: youtube
+    videoId: rYiiQWmtlHg
+  - provider: youtube
+    videoId: tHbE3Txn0vA
+  - provider: youtube
+    videoId: JQ6bZeARkFU
+  - provider: youtube
+    videoId: VkVU07dkm0w
+  - provider: youtube
+    videoId: hMz2_ig5n8A
+translations:
+  ja:
+    links:
+      - url: https://bastl-instruments.com/files/nihon-ikarie-manual.pdf
+        title: User Manual
+        type: resource
+  fr:
+    links:
+      - url: https://bastl-instruments.com/files/manual-ikarie-web-fr.pdf
+        title: User Manual
+        type: resource

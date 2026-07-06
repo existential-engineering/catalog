@@ -1,0 +1,157 @@
+id: rCSbJ-Vm2mQ4U5XJp79xZ
+name: Aikido
+manufacturer: bastl-instruments
+primaryCategory: amplifier
+categories:
+  - mixer
+url: https://bastl-instruments.com/eurorack/modules/aikido
+description: An 11HP quad VCA mixer with cascading submix architecture,
+  clickless muting, and two integrated envelope follower types. Four channels
+  each have audio in, CV input with attenuverter, mute switch with LED, and
+  individual output. Level faders with +6dB boost. A sidechain envelope follower
+  (three response curves) tracks an external signal and can modulate all four
+  VCAs simultaneously. A spectral follower switches between treble, mid, and
+  bass focus, outputting CV. Daisy-chainable. DC-coupled channel I/O; AC-coupled
+  mix output.
+details: |-
+  Aikido is an 11HP quad VCA mixer built around a cascading submix architecture. Each of the four channels has its own audio input, CV input with attenuverter, clickless mute switch with LED, and individual VCA output. Channels can cascade so each output feeds into the next channel's mix path, enabling flexible submix routing without extra patch cables. Channel inputs and individual outputs are DC coupled; the main mix output is AC coupled.
+
+  Two integrated envelope follower types add dynamic control. The sidechain follower tracks a signal patched to the dedicated sidechain input (normalized to Channel A when unpatched), with three selectable response curves for fast, medium, or slow attack/release. The spectral follower analyzes frequency content and switches between treble, mid, and bass focus, outputting CV for frequency-reactive mixing.
+
+  Level faders provide up to +6dB of boost above unity. Daisy-chainable via back-panel connectors for expanded mixing setups.
+io:
+  - name: Channel A Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel A CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel A Output
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B Output
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel C Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel C CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel C Output
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel D Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel D CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel D Output
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix Output
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sidechain Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Spectral Follower Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-aikido-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/manual-aikido-web-fr.pdf
+    title: User Manual (FR)
+    type: resource
+  - url: https://bastl-instruments.com/files/nihon-aikido-manual.pdf
+    title: User Manual (JP)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: qcFMIrTVhIc
+  - provider: youtube
+    videoId: 3vtbv2RqZzw
+  - provider: youtube
+    videoId: -W0dWjIS1_k
+  - provider: youtube
+    videoId: udNM8JdsyjE
+  - provider: youtube
+    videoId: 1orR4Ts1ebU
+  - provider: youtube
+    videoId: wahCRhxQGx8

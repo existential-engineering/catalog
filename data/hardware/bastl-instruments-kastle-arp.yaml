@@ -1,0 +1,92 @@
+id: Sf8T9e4S90fWHvbhkZrso
+name: Kastle ARP
+manufacturer: bastl-instruments
+primaryCategory: synthesizer
+categories:
+  - analog
+  - semi-modular
+  - arpeggiator
+  - sequencer
+  - discontinued
+url: https://bastl-instruments.com/instruments/kastle-arp
+description: A unique modular melody generator based on a quantized sine wave
+  oscillator with a digital waveshaper. A melodic take on the beloved Kastle
+  glitchbox, featuring an 8-octave NOTE knob, Timbre XOR waveshaper,
+  CV-controllable decay envelope, and a stepped voltage generator.
+details: |-
+  The Kastle ARP is a unique modular melody generator built around a quantized sine wave oscillator with a digital waveshaper. It is a melodic evolution of the original Kastle glitchbox, designed for generating melodies and arpeggios with a patchable, modular workflow.
+
+  Key features include an 8-octave NOTE knob for pitch selection, a Timbre XOR waveshaper for timbral variation, a CV-controllable decay envelope, and a CHORD CV input that switches between 3 different chord voicings. A dedicated BASS output provides a complementary lower voice. The voltage-controllable clock generator produces both square and triangle wave outputs.
+
+  A stepped voltage generator with random, 8-step, and 16-step modes enables melodic sequencing and modulation. All signals are accessible via the top patch header, compatible with standard Kastle patch cables. Open-source design; schematics and firmware available on GitHub.
+
+  Powered via 5V Micro USB or 3x AA batteries (batteries not included). Dimensions: 70 × 60 × 50 mm.
+io:
+  - name: Note CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: pin
+    maxConnections: 1
+    position: Top
+  - name: Chord CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: pin
+    maxConnections: 1
+    position: Top
+  - name: I/O CV 1
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: pin
+    maxConnections: 1
+    position: Top
+  - name: I/O CV 2
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: pin
+    maxConnections: 1
+    position: Top
+  - name: Bass Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: pin
+    maxConnections: 1
+    position: Top
+  - name: Main Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Top
+  - name: Clock Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: pin
+    maxConnections: 1
+    position: Top
+  - name: USB Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b-micro
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-kastle-arp.pdf
+    title: User Manual
+    type: resource
+  - url: https://github.com/bastl-instruments/kastle
+    title: GitHub (Open Source)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: Qxb1zNuFSnc
+  - provider: youtube
+    videoId: 4LasC3SzqlE

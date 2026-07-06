@@ -1,0 +1,58 @@
+id: 2ilZXuACb7N_UAQmswo8C
+name: DC Motor
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/dc-motor
+description: Dual-channel bipolar DC motor driver module. CV inputs control
+  speed and direction of each motor channel, with attenuators, a speed offset
+  knob, and a directional offset knob per channel. Optical isolation between the
+  CV and motor circuitry eliminates ground connections between the two systems.
+details: |-
+  6HP, 50mm depth. Requires +5V bus. Peak motor current: 1A; constant: 600mA. PTC fuse and diode-protected 16-pin power connector. Optically isolated motor and CV circuitry.
+io:
+  - name: CV 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Motor Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+  - name: Motor Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-dc-motor-web.pdf
+    title: User Manual (PDF)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: fYOFduyUhAs
+  - provider: youtube
+    videoId: 53J1hEXsovg

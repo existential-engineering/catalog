@@ -1,0 +1,62 @@
+id: Bre5wSWEchV3xNQ7jNG_L
+name: 60Knobs
+manufacturer: bastl-instruments
+primaryCategory: midi-controller
+categories:
+  - discontinued
+url: https://bastl-instruments.com/instruments/60knobs
+description: An advanced MIDI controller with 60 independently customizable
+  potentiometers, designed for use with the Sonic Potion LXR drum machine but
+  compatible with any MIDI equipment. Supports standard CC, NRPN, and Yamaha DX7
+  SysEx protocols. Arduino-based and available as a DIY kit.
+details: |-
+  60Knobs is an advanced MIDI controller featuring 60 independently customizable potentiometers. Explicitly designed for the Sonic Potion LXR drum machine, it can control any MIDI-compatible equipment.
+
+  The controller supports standard Control Change (CC), NRPN, and Yamaha DX7 SysEx protocols. A MIDI DUMP button reads out the current value state of all knobs. 5 user-customizable presets allow quick switching between configurations, with LED indication for setting changes.
+
+  Arduino-based with an FTDI connector for firmware flashing. Laser-cut enclosure vectors are available in the GitHub repository. DIY kit only — requires assembly.
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-60-knobs.pdf
+    title: User Manual
+    type: resource
+  - url: https://bastl-instruments.com/files/60-knobs-assembly-guide.pdf
+    title: Assembly Guide
+    type: resource
+  - url: https://bastl-instruments.com/files/60-knobs-1.1-schematic.pdf
+    title: Schematics v1.1
+    type: resource
+  - url: https://github.com/bastl-instruments/60Knobs
+    title: GitHub (Enclosure Vectors & Code)
+    type: resource
+  - url: https://github.com/bastl-instruments/60Knobs-Editor/releases
+    title: 60Knobs Editor Software
+    type: resource
+videos:
+  - provider: youtube
+    videoId: ze55_bVF4M8
+  - provider: youtube
+    videoId: Tug16C2oC8M
+  - provider: youtube
+    videoId: CuOata8LKV4

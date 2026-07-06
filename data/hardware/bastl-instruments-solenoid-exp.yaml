@@ -1,0 +1,57 @@
+id: SUHqW9ntflvLtQKlT3XgG
+name: Solenoid Expander
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - percussion
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/solenoid-exp
+description: Expansion module for the Bastl Instruments Solenoid module, adding
+  4 independent CV inputs (0–5V) that individually control the output pulse
+  width on each solenoid channel. Requires the primary Solenoid module to
+  function.
+details: |-
+  2HP. Power drawn from the Solenoid module via ribbon; combined draw +5V <35mA. 4 independent CV inputs (0–5V) for per-channel velocity/pulse width control.
+io:
+  - name: CV 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-expander-solenoid-web.pdf
+    title: User Manual (PDF)
+    type: resource
+  - url: https://bastl-instruments.com/files/solenoid-expander-1.0-assembly-guide.pdf
+    title: Assembly Guide (PDF)
+    type: resource

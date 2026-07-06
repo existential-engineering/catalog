@@ -1,0 +1,80 @@
+id: zLSW3bOq__eYXluoDMMvt
+name: Servo
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/servo
+description: Two-channel Eurorack module designed to drive hobby 5V servo motors
+  from CV signals. Each channel features optically isolated CV and motor
+  circuitry, a trigger/gate input, a CV input with attenuator, and an onboard 5V
+  regulator to power the motors. External motor power (9–15V, positive polarity)
+  is required.
+details: |-
+  5HP, 50mm depth. +12V <5mA, -12V <5mA, +5V <35mA. Requires external motor power (9–15V, positive polarity). PTC fuse and diode protection on 16-pin power connector. CV and motor circuitry optically isolated.
+io:
+  - name: Trigger/Gate In 1
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger/Gate In 2
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Servo Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: proprietary
+    maxConnections: 1
+    position: Top
+  - name: Servo Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: proprietary
+    maxConnections: 1
+    position: Top
+  - name: External Motor Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-servo-web.pdf
+    title: User Manual (PDF)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: fYOFduyUhAs
+  - provider: youtube
+    videoId: 53J1hEXsovg

@@ -1,0 +1,66 @@
+id: 7Ewxp1pUWqvm-cm3PDuoV
+name: Sense
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/sense
+description: Analog sensor calibration module that converts physical and
+  environmental inputs into control voltage and gate outputs. Accommodates
+  variable resistance sensors (light-dependent resistors, contact sensors) as
+  well as voltage-output sensors (pulse sensors, accelerometers, piezo
+  elements), with built-in pre-amplification, gain control with clipping
+  indicator, adjustable voltage offset (positive/negative), AC/DC coupling
+  options, and a threshold control for gate generation.
+details: |-
+  5HP, 50mm depth. +12V <35mA, -12V <25mA. PTC fuse and diode-protected 16-pin power connector. Sensor input uses a pin-header patchbay.
+io:
+  - name: Sensor Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: proprietary
+    maxConnections: 1
+    position: Top
+  - name: CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV Out (Inverted)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate Out
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Gate Out (Inverted)
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-sense-web.pdf
+    title: User Manual (PDF)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: eFX4WeXa21k

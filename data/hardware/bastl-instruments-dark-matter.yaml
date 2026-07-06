@@ -1,0 +1,117 @@
+id: 4l94_cwJ6m9grn4UkmTFx
+name: Dark Matter
+manufacturer: bastl-instruments
+primaryCategory: effect
+categories:
+  - distortion
+url: https://bastl-instruments.com/eurorack/modules/dark-matter
+description: A 13HP voltage-controlled audio feedback module and high-energy
+  sound processor inspired by no-input mixer techniques. Features an input VCA
+  with gain and soft clipping, hyper drive switch, 2-band voltage-controlled EQ
+  (bass and treble with overdrive), and an envelope follower (0–5V, normalized
+  to feedback and crossfader CVs). External feedback loop via FBK OUT/FBK IN
+  jacks, output phase switch, and FBK VCA switch with high-frequency warning
+  LED. Voltage-controlled crossfader blends input and feedback path. Creates
+  self-generating feedback loops, complex evolving textures, and signal ducking.
+details: |-
+  Dark Matter is a voltage-controlled audio feedback module that channels the raw, untamed power of audio feedback into a Eurorack system. Inspired by no-input mixer techniques, it provides extensive voltage control over every stage of the feedback chain.
+
+  The DRIVE section features an input VCA with adjustable gain and soft clipping, plus a hyper drive switch for extra harmonic saturation. The TONE section provides a 2-band EQ with voltage-controlled bass and treble boost that can push into overdrive, with separate CV inputs per band.
+
+  The DYNAMICS section generates an envelope follower from the input signal, outputting 0–5V normalized to the FBK CV and X-FADE CV inputs. A low/high decay time switch and a pre/post-drive input switch allow further shaping, with an LED envelope monitor.
+
+  The FEEDBACK section provides voltage-controlled feedback with an external feedback loop via FBK OUT and FBK IN jacks, enabling insertion of other modules into the feedback path. An output phase switch and FBK VCA in/out switch with a high-frequency warning LED prevent runaway oscillation.
+
+  The CROSSFADER section provides voltage-controlled crossfade between the input signal and the feedback path, with the envelope follower normalized to the crossfader CV input for self-modulating behavior.
+io:
+  - name: IN
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Drive CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Bass CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Treble CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ENV OUT
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FBK OUT
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FBK IN
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FBK CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: X-FADE CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-dark-matter.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/nihon-dark-matter-manual.pdf
+    title: User Manual (JP)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: j91CCn0eMgU
+  - provider: youtube
+    videoId: QFo1U3auyJY
+  - provider: youtube
+    videoId: 1IbrE3pOK6M

@@ -1,0 +1,93 @@
+id: u2FIC3jCVWyK5_01i_ia7
+name: SKIS II
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/skis-2
+description: Dual voltage controlled decay envelope module with integrated dual
+  VCA. Each channel processes an input signal through an adjustable exponential
+  decay envelope triggered by a gate or trigger signal, with normalized ENV OUT
+  to VCA CV IN for streamlined percussive sound design. Features decay times
+  from 8ms to 3 seconds, LED envelope indication, normalized triggers and
+  outputs between channels, and solder jumpers for gate/release mode and
+  tambourine bend customization.
+details: |-
+  5HP width, 24mm depth (skiff-friendly). Power: +12V 40mA, -12V 35mA. PTC fuse and diode protection on 10-pin connector. Solder jumpers for gate/release mode switching and tambourine bend option. Triggers and outputs are normalized between channels. ENV OUT is normalized to VCA CV IN on each channel.
+io:
+  - name: TRIG 1
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: DECAY CV 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: IN 1
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT 1
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: TRIG 2
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: DECAY CV 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: IN 2
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT 2
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-skis-ii-web.pdf
+    title: User Manual (EN)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: sWXtssaK54I
+translations:
+  ja:
+    links:
+      - url: https://bastl-instruments.com/files/nihon-skis2-manual.pdf
+        title: User Manual
+        type: resource

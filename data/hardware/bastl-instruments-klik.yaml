@@ -1,0 +1,63 @@
+id: 8eNs6MD_CpGs2vfHrdy3u
+name: Klik
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - discontinued
+url: https://bastl-instruments.com/instruments/klik
+description: A compact synchronization device that converts audio line-level
+  signals into modular clock, trigger, and gate pulses. Bridges computers and
+  hardware synthesizers by transforming standard audio outputs into 0–5V signals
+  compatible with modular and semi-modular synthesizers. Compatible with Ableton
+  Live and Bitwig Studio.
+details: |-
+  Klik is a compact synchronization device that converts audio line-level signals into modular clock, trigger, and gate signals. It bridges the gap between computers and hardware synthesizers by transforming standard audio outputs into the 0–5V pulse signals used by modular and semi-modular synthesizers.
+
+  The device accepts a stereo TRS 3.5mm line-level input from a computer headphone output or audio interface. It produces two mono 3.5mm outputs — clock and reset — carrying 0 or 5V trigger/gate signals. A manual button on the reset channel allows hands-on gate triggering.
+
+  Klik features overvoltage and polarity protection on all jacks, per-channel LED indication, and bonus bitcrushing audio effect capability. Available as a fully assembled unit or PCB-only kit.
+io:
+  - name: Stereo Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock Output
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Reset Output
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: USB Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b-mini
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-klik-web.pdf
+    title: User Manual
+    type: resource
+  - url: https://bastl-instruments.com/files/klik-ableton.zip
+    title: Ableton Project with Sync Samples
+    type: resource
+  - url: https://bastl-instruments.com/files/klik-1.0-assembly-guide.pdf
+    title: Assembly Guide v1.0
+    type: resource
+  - url: https://bastl-instruments.com/files/klik-1.0-schematics.pdf
+    title: Schematics v1.0
+    type: resource
+videos:
+  - provider: youtube
+    videoId: ZrqteX4ME7U

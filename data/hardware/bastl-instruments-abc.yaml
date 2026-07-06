@@ -1,0 +1,103 @@
+id: rCjr4PkWmti7nKeTGRz5E
+name: ABC
+manufacturer: bastl-instruments
+primaryCategory: mixer
+categories:
+  - utility
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/abc
+description: Simple six-channel signal mixer designed for audio signals that can
+  be modified to mix control voltage (CV) signals instead. Features flexible
+  routing with normalization options — three solder jumpers enable normalization
+  of A→D, B→E, and C→F pairings, and the A+B+C output mix feeds into D+E+F when
+  that output is unused. Suitable for mono, stereo, or CV mixing applications.
+details: |-
+  AC-coupled inputs convertible to DC coupling via solder jumpers for CV mixing. Three jumpers enable normalization of A→D, B→E, C→F pairings. When the D+E+F output is unused, the A+B+C mix cascades into it. DIY kit was available but is now discontinued. Power connector is 10-pin with PTC fuse and diode protection.
+io:
+  - name: A
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: B
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: C
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: D
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: E
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: F
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: A+B+C
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: D+E+F
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-abc-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/nihon-abc-manual.pdf
+    title: User Manual (JA)
+    type: resource
+  - url: https://bastl-instruments.com/files/abc-1.1-assembly-guide.pdf
+    title: Assembly Guide v1.1
+    type: resource
+  - url: https://bastl-instruments.com/files/abc-1.0-assembly-guide.pdf
+    title: Assembly Guide v1.0
+    type: resource
+  - url: https://bastl-instruments.com/files/abc-1.1-schematics.pdf
+    title: Schematics v1.1
+    type: resource
+  - url: https://bastl-instruments.com/files/abc-1.1-board.pdf
+    title: Board Diagram v1.1
+    type: resource
+videos:
+  - provider: youtube
+    videoId: -u20hBRWjRU
+  - provider: youtube
+    videoId: k1FcjLb9Bqs

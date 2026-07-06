@@ -1,0 +1,47 @@
+id: auXnwlXrjXVBfxnUIkmnd
+name: Trinity
+manufacturer: bastl-instruments
+primaryCategory: synthesizer
+categories:
+  - groovebox
+  - sequencer
+  - discontinued
+url: https://bastl-instruments.com/instruments/trinity
+description: A universal musical instrument and modular groovebox built on the
+  Atmega 328 microcontroller. Swappable software modules let it function as a
+  synthesizer, drum machine, polyphonic synth, FM synth, sequencer, or MIDI
+  controller. Multiple units can be chained together sharing power, audio, and
+  MIDI. Open-source, DIY, hackable, and repairable.
+details: |-
+  Trinity is a universal musical instrument and modular groovebox built around the Atmega 328 microcontroller (Arduino Uno compatible bootloader). Swappable software modules let it function as nearly any digital instrument: SQNCR (sequencer), DRUM (drum synthesizer), POLY (polyphonic synthesizer), MONO FM (FM synthesizer), XOR (MIDI sound module), and MIDI Bastl (connectivity module).
+
+  Audio is generated via the Mozzi library in HI-FI mode at 16,385 Hz sampling rate with 14-bit double PWM. Multiple Trinity units can be chained together, sharing power, audio (passive mixer), and MIDI communication through integrated chain connectors on the back panel.
+
+  Expansion breakout headers support CV, gate, sensor, and button interfacing. Reprogrammable via standard FTDI USB breakout. User memory stores presets and patterns. Open-source hardware and software under Creative Commons licenses. Available as assembled unit or DIY soldering kit.
+io:
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI Input
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+videos:
+  - provider: youtube
+    videoId: ZWmlL29L0aY
+  - provider: youtube
+    videoId: 1kgIlWzXioY

@@ -1,0 +1,106 @@
+id: 6Q59gEXreUfBr-VRW1fnO
+name: Pizza
+manufacturer: bastl-instruments
+primaryCategory: synthesizer
+categories:
+  - digital
+  - fm
+url: https://bastl-instruments.com/eurorack/modules/pizza
+description: A compact 8HP digital oscillator with powerful wave shaping applied
+  to FM synthesis. Features three internal oscillators (Main, Octave, Ratio),
+  phase modulation via external input, wave folding with two distinct flavors,
+  and ring modulation. Assignable CTRL knob and CV, V/OCT with auto-calibration,
+  optional built-in quantization, and firmware updates via micro USB. Free VCV
+  Rack plugin available.
+details: |-
+  Pizza is a compact digital oscillator built around powerful wave shaping and FM synthesis techniques. At its core are three internal oscillators: a Main Oscillator, an Octave Oscillator, and a Ratio Oscillator.
+
+  The Main Oscillator supports phase modulation via the EXT input, wave folding with two distinct folding flavors, and ring modulation. Its output passes through an onboard waveshaper before reaching Main Out.
+
+  The Octave Oscillator runs at a fixed octave relationship to the main pitch with its own OSC Out jack and independent waveshaper. The Ratio Oscillator enables advanced FM synthesis with user-adjustable frequency ratios for classic and inharmonic tones.
+
+  An assignable CTRL knob and CV input map to a wide range of internal parameters. V/OCT includes automatic calibration and optional built-in quantization for in-tune playing without external utilities. Firmware updateable via micro USB. Free VCV Rack plugin available.
+io:
+  - name: V/OCT
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV (Assignable)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: EXT (Phase Mod)
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sync
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Main Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Pulse Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OSC Out (Octave)
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-pizza-oscillator-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/pizza-fw-release-notes_v1.12.pdf
+    title: Firmware Release Notes v1.12
+    type: resource
+  - url: https://github.com/bastl-instruments/pizza
+    title: GitHub (DIY Resources)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: AcWlPVmVQFU
+  - provider: youtube
+    videoId: 7Sk2x_Ho_tM
+  - provider: youtube
+    videoId: KYpQrXmqkIk
+  - provider: youtube
+    videoId: _fvuGeA3xWA
+  - provider: youtube
+    videoId: MYf7F92K398
+translations:
+  ja:
+    links:
+      - url: https://bastl-instruments.com/files/nihon-pizza-manual.pdf
+        title: User Manual
+        type: resource

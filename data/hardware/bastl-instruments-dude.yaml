@@ -1,0 +1,90 @@
+id: ZJV6Lp_pZcJ8Ta1hMYxn0
+name: Dude
+manufacturer: bastl-instruments
+primaryCategory: mixer
+categories:
+  - discontinued
+url: https://bastl-instruments.com/instruments/dude
+description: The Dude is a portable, battery-operated 5-channel monophonic audio
+  mixer designed for mobile music-making. Each channel features up to +20dB gain
+  and a dedicated mute button. It supports dual mono output for headphone
+  driving and can function as a feedback tone generator by routing output back
+  to input through passive EQ circuits.
+details: |-
+  The Dude is a compact, portable 5-channel monophonic audio mixer from Bastl Instruments, designed for musicians who need a simple, battery-powered mixing solution on the go.
+
+  Each of the five channels features an individual gain control offering up to +20dB (10× amplification) and a dedicated mute button, allowing quick silencing of individual channels. The dual mono output is capable of driving headphones directly.
+
+  A unique feature of the Dude is its ability to act as a feedback tone generator: routing the output back into an input through passive EQ circuits creates feedback loops useful for experimental sound design.
+
+  Power is supplied by 4× AA batteries for portable use, or via an external 9–12VDC adapter. Dimensions: 75 × 70 × 45 mm. Also available as a DIY kit with PCB, assembly guide, and schematics.
+io:
+  - name: Channel 1 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 2 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 3 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 4 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 5 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Output L
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Output R
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://bastl-instruments.com/files/manual-dude.pdf
+    title: User Manual
+    type: resource
+  - url: https://bastl-instruments.com/content/files/dude-1.2c-assembly-guide.pdf
+    title: Assembly Guide v1.2
+    type: resource
+  - url: https://bastl-instruments.com/content/files/dude-1.2-schematics.pdf
+    title: Schematics v1.2
+    type: resource
+videos:
+  - provider: youtube
+    videoId: e0egbPlKrfA

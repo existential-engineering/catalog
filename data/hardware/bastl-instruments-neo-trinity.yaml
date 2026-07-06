@@ -1,0 +1,127 @@
+id: yu4ZOXCUYYtBwq-0iBGWB
+name: Neo Trinity
+manufacturer: bastl-instruments
+primaryCategory: modulation
+url: https://bastl-instruments.com/eurorack/modules/neo-trinity
+description: A 6-channel compact modulation hub for Eurorack. Each independent
+  channel operates as an LFO, envelope generator, or CV knob recorder with
+  automatable parameters and recordable trigger sequences. Features
+  unipolar/bipolar output modes, an algorithmic trigger fill generator with 6
+  algorithms, 6 preset banks, clock sync (35–420 BPM), and USB-C firmware
+  updates.
+details: |-
+  Neo Trinity is a performance-focused modulation platform offering gestural control with substantial musical complexity. Each of its six independent channels can be configured as an LFO, envelope generator, or CV knob recorder, with automatable RATE knobs and recordable trigger sequences of 2 to 64 steps per channel.
+
+  LFO mode offers five shapes (saw, triangle/sine, ramp, pulse, smooth random) with a range from 260 seconds to 180 Hz. Envelope mode provides four shapes (decay, attack, variable, pulse) with a range of 1 ms to 8 seconds, supporting retrigable, non-retrigable, and slew limiter modes. CV mode includes 8 selectable quantization scales, a 2V or 5V range switch, and optional smoothing.
+
+  The META In jack is assignable to any or all channels. Channels E and F have dedicated individual CV inputs, configurable per channel as rate modulation, bipolar VCA, trigger input, or sample-and-hold. An algorithmic trigger fill generator with 6 algorithms and 6 preset banks enable deep performance-time control. Clock sync: internal or external, 35–420 BPM. Firmware updateable via USB-C.
+io:
+  - name: Channel A Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel C Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel D Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel E Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel F Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CLK Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CLK In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: META In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel E CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel F CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/content/files/neo-trinity-quickstart-guide-v1.1.1.pdf
+    title: Quickstart Guide
+    type: resource
+  - url: https://bastl-instruments.com/content/files/manual-neo-trinity-web-v1.1.1.pdf
+    title: Complete Manual
+    type: resource
+  - url: https://bastl-instruments.com/content/files/neo-trinity-fw-release-notes_v1.1.pdf
+    title: Firmware Release Notes
+    type: resource
+videos:
+  - provider: youtube
+    videoId: mVoWeqtaqd4
+  - provider: youtube
+    videoId: EbCYWI0jJns
+  - provider: youtube
+    videoId: tk-o5jR_Fzw
+  - provider: youtube
+    videoId: JxYj5k4OLm4
+  - provider: youtube
+    videoId: BTUIPjWjruU
+  - provider: youtube
+    videoId: uzfR3WKoUNU
+  - provider: youtube
+    videoId: sxWpW4JzFAA

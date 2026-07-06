@@ -1,0 +1,120 @@
+id: AQdKxwfbA-7De6sWMvAox
+name: Midilooper
+manufacturer: bastl-instruments
+primaryCategory: looper
+categories:
+  - midi
+  - sequencer
+url: https://bastl-instruments.com/instruments/midilooper
+description: An experimental MIDI looper that records and loops MIDI control
+  information — notes, dynamics, and parameters — similarly to how audio loopers
+  process sound.
+details: |-
+  The Midilooper is an experimental MIDI looper that records and loops MIDI control information — notes, dynamics, and parameters — in a manner similar to how audio loopers process sound. It features 3 independent voices, each assignable to a different MIDI channel, with overdub and overwrite recording modes.
+
+  Real-time processing functions include quantize, velocity lock, shuffle, humanize, transpose, octave transpose, and time stretch. The device supports odd loop lengths, mute/clear/erase functions, pedal control, undo/redo, and aftertouch recording.
+
+  Clock synchronization can be achieved via MIDI clock, analog clock input, tap tempo, or free-running mode. CV inputs allow external control of transpose, velocity, and re-trigger functions. USB MIDI support was added in firmware v1.1.0.
+
+  Powered by 5V Micro USB. Dimensions: 125 × 80 × 35 mm.
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: MIDI Out 1
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: MIDI Out 2
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Clock In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Reset In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: CV In (Transpose)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: CV In (Velocity)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: CV In (Re-trigger)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Metronome Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: USB Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b-micro
+    maxConnections: 1
+    position: Bottom
+versions:
+  - name: 1.1.0
+    releaseDate: 2021-04
+    description: Added USB MIDI, undo/redo, channel aftertouch recording
+  - name: 1.0.1
+    releaseDate: 2020-09
+  - name: 1.0.0
+    releaseDate: 2020-07
+links:
+  - url: https://bastl-instruments.com/content/files/manual-midilooper-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.github.io/midilooper/
+    title: Firmware
+    type: resource
+videos:
+  - provider: youtube
+    videoId: 0T7fvLK68e0
+  - provider: youtube
+    videoId: 6LOxde7K_5o
+  - provider: youtube
+    videoId: QeTc8qD809k
+  - provider: youtube
+    videoId: 296doODTRco
+  - provider: youtube
+    videoId: CYpvtQnWuGU
+  - provider: youtube
+    videoId: ATgFIBBvKx8
+  - provider: youtube
+    videoId: GDeqJovlJ7I

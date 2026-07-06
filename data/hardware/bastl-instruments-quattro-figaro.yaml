@@ -1,0 +1,179 @@
+id: kmAj40pOVtmim3L1SBobB
+name: Quattro Figaro
+manufacturer: bastl-instruments
+primaryCategory: amplifier
+categories:
+  - mixer
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/quattro-figaro
+description: Four-channel voltage-controlled amplifier with individual CV
+  inverters per channel and mixed output combinations. Each channel provides
+  signal input, signal output, CV input with attenuator knob, and an inverted CV
+  output. Enables signal amplification with gain linear to the control voltage,
+  plus panning and crossfading capabilities through internal routing via
+  connector switches. Mixed outputs include sum and inverted-sum combinations
+  across channel pairs. Maximum gain slightly above 2x with non-linear CV
+  response above 6 volts.
+details: |-
+  10HP, 35mm depth (skiff-friendly). +12V <40mA, -12V <35mA. 16-pin power connector with PTC fuse and diode protection. Maximum gain slightly above 2x. CV response non-linear above 6V.
+io:
+  - name: Signal In A
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Inverted CV Out A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Signal Out A
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Signal In B
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Inverted CV Out B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Signal Out B
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Signal In C
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In C
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Inverted CV Out C
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Signal Out C
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Signal In D
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In D
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Inverted CV Out D
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Signal Out D
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix Out -(A+C)
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix Out -(B+D)
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix Out A+B+C+D
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix Out -(A+B+C+D)
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-quattro-figaro-web.pdf
+    title: User Manual (PDF)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: juEsYRXzk-Y
+  - provider: youtube
+    videoId: vCLhbplKkNg
+  - provider: youtube
+    videoId: otwenOfEt-c
+  - provider: youtube
+    videoId: pSdR1yixuJY

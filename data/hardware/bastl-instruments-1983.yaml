@@ -1,0 +1,180 @@
+id: jTLiWDmNqAwqRvv9nh5y3
+name: "1983"
+manufacturer: bastl-instruments
+primaryCategory: midi
+categories:
+  - utility
+url: https://bastl-instruments.com/eurorack/modules/1983
+description: "A polyphonic MIDI to CV interface with creative voice allocation
+  and automatic tuning via oscillator feedback. Four channels of CV and gate
+  output with six layout modes: 4-voice polyphony, 3+1 voice, velocity,
+  quantizer, 8 gates, and 8 CC channels. Each channel has a LISTEN input for
+  automatic tuning calibration. TRANSPOSE and PORTAMENTO CV inputs, WINDOW and
+  UPDATE jacks for creative note allocation. Full MIDI support: Note On/Off, CC,
+  Velocity, Pitch Bend, Clock, Aftertouch. Microtuning (µTune) for per-semitone
+  scale editing within an octave."
+details: |-
+  The 1983 is a polyphonic MIDI to CV interface designed for Eurorack systems, offering creative voice allocation and automatic tuning capabilities.
+
+  The module provides four independent CV and gate output channels, configurable across multiple layout modes: 4-voice polyphony, 3+1 voice (fourth channel handles velocity or other data), velocity-as-CV modes, quantizer mode, 8 gates mode, and 8 CC channels mode.
+
+  Automatic tuning is a standout feature — each channel has a dedicated LISTEN input that accepts audio from the connected oscillator. The module listens to the oscillator pitch and adjusts the CV to keep it perfectly in tune, removing the need for manual calibration.
+
+  The WINDOW and UPDATE jacks provide hands-on control over the voice allocation algorithm, allowing performers to shape how incoming MIDI notes are distributed across the four voices in real time.
+
+  Microtuning (µTune) allows per-semitone scale editing within an octave, making the module suitable for alternative tuning systems and microtonal work. Full MIDI response includes Note On/Off, CC, Velocity, Pitch Bend, MIDI Clock, and Aftertouch.
+io:
+  - name: CV 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate 1
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate 2
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate 3
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate 4
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Listen 1
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Listen 2
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Listen 3
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Listen 4
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Transpose
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Portamento
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Window
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Update
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-1983-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/nihon-1983-manual.pdf
+    title: User Manual (JP)
+    type: resource
+  - url: https://bastl-instruments.com/content/files/1983-fw-release-notes-rev.d.pdf
+    title: Firmware Release Notes Rev D
+    type: resource
+  - url: https://github.com/bastl-instruments/sysex-playback/releases/tag/v1.0.0
+    title: SysEx Playback Tool
+    type: resource
+videos:
+  - provider: youtube
+    videoId: V5-AVuSVKq8
+  - provider: youtube
+    videoId: qZFmyD_p_e4
+  - provider: youtube
+    videoId: hY9TGwxX83U
+  - provider: youtube
+    videoId: FpyNEnTe07w
+  - provider: youtube
+    videoId: 3dZhCbWUIBw
+  - provider: youtube
+    videoId: retqID_EKRg
+  - provider: youtube
+    videoId: RQxYywblDoM

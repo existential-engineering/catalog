@@ -1,0 +1,89 @@
+id: fm0uyXTwu86j_YQR7nUH0
+name: Tromsø
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - synthesizer
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/tromso
+description: "Compact 5HP utility combining VCO, Comparator, and Sample & Hold
+  with internal normalization, functioning as a voltage controllable analog
+  downsampler. Inspired by the 1994 Distortotron machine. VCO triangle wave with
+  high (15Hz–45kHz) and low (50s–50Hz) range, tracks ~5 octaves at 1V/oct. Mode
+  switch: Sample & Hold vs Track & Hold."
+details: |-
+  5HP, 45mm depth. +12V <35mA, -12V <35mA. VCO triangle wave, high/low range.
+io:
+  - name: FM
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: VCO Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Threshold CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Comparator In
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Comparator Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: S&H In
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: S&H Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-tromso-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/tromso-1.0-schematics.pdf
+    title: Schematics
+    type: resource
+videos:
+  - provider: youtube
+    videoId: 1ZVC1XAfcGk

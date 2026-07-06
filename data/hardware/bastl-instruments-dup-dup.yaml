@@ -1,0 +1,115 @@
+id: W5I98amEtLsyMPmPH2-qk
+name: Dup Dup
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/dup-dup
+description: Dual voltage-controlled footswitch module with two independent
+  channels. Each channel routes Signal In to FX Send and selects Signal Out
+  between FX Return and Signal In based on switch state — enabling signal
+  processor bypass, signal switching, or gate generation. Gate input inverts
+  current switch state per channel. Supports both momentary and latch switch
+  modes per channel. Footswitch inputs include LED indication for passive
+  footswitches.
+details: |-
+  5HP, 35mm depth. +12V <30mA, -12V <5mA. 10-pin power connector with PTC fuse and diode protection. Footswitch jacks accept standard stompbox footswitches.
+io:
+  - name: Ch 1 Signal In
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 1 FX Send
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 1 FX Return
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 1 Signal Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 1 Gate
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 1 Footswitch
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: proprietary
+    maxConnections: 1
+    position: Top
+  - name: Ch 2 Signal In
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 2 FX Send
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 2 FX Return
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 2 Signal Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 2 Gate
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ch 2 Footswitch
+    signalFlow: input
+    category: audio
+    type: trigger
+    connection: proprietary
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-dupdup-web.pdf
+    title: User Manual (PDF)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: GSVgyLRqwSg

@@ -1,0 +1,88 @@
+id: 8WzTIIOGsPc-BQJ894QG7
+name: Kong
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/kong
+description: Dedicated dual-channel interface between drumpad performance and
+  Eurorack modular synthesis. Fully analog core that converts drumpad signals
+  into trigger and velocity CV outputs, with a low-drift sample-and-hold circuit
+  for velocity generation. Dual audio outputs function as a modular pre-amp
+  suitable for piezo pickups.
+details: 5HP, 55mm depth. +12V <50mA, -12V <60mA. 10-pin power connector with
+  PTC fuse and diode protection. 2 channels with individual gain controls.
+  Trigger output with LED indication per channel.
+io:
+  - name: Audio In 1
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio In 2
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out 1
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out 2
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 1
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger Out 2
+    signalFlow: output
+    category: audio
+    type: trigger
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Velocity CV Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Velocity CV Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-kong-web.pdf
+    title: User Manual (PDF)
+    type: resource
+videos:
+  - provider: youtube
+    videoId: lhfT1Zk8Ln8
+  - provider: youtube
+    videoId: iI3QsN9Cx8o

@@ -1,0 +1,79 @@
+id: -9_hrFtQx9iYNXpcw4-KG
+name: bitRanger
+manufacturer: bastl-instruments
+primaryCategory: synthesizer
+categories:
+  - semi-modular
+  - lo-fi
+  - discontinued
+url: https://bastl-instruments.com/instruments/bitranger
+description: A patchable analog logic computer that sculpts sonic worlds ranging
+  from data noise to melodic arpeggios. Functions as both a handheld standalone
+  synthesizer and studio instrument with extensive CV control, synchronization
+  with drum machines and sequencers, and use as an algorithmic pattern
+  generator. Designed by Peter Edwards (Casper Electronics).
+details: |-
+  The bitRanger is a handheld patchable analog logic computer designed by Peter Edwards (Casper Electronics) and produced by Bastl Instruments. It functions as both a portable standalone synthesizer and a studio instrument capable of sculpting sonic worlds ranging from data noise to melodic arpeggios.
+
+  At its core, the bitRanger features an LFO clock oscillator and a VCO with HFO sync, along with four operational modes selectable via switches. The device includes Divider Bits and Adventure Bits sections, MUX 1 and MUX 2 input sections, and a BYTE CV (R2R DAC) section for bit-to-CV conversion.
+
+  With 118 jumper cable patch points on its internal patchbay, the bitRanger offers extensive patching possibilities. It can be synchronized with drum machines and sequencers via its clock I/O, controlled via CV, and used as an algorithmic pattern generator. A stereophonic headphone output and built-in speaker with volume control allow for immediate monitoring.
+
+  Powered by a 9V battery (minimum 20 hours) or a 9V DC center-positive supply. Optional expansion modules: SYNAPSIS (4×4 pushbutton matrix) and BITBOARD (breadboard add-on). Discontinued.
+io:
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-bit-ranger-web.pdf
+    title: User Manual
+    type: resource
+  - url: https://bastl-instruments.com/files/bit-ranger-press-release.pdf
+    title: Press Release
+    type: resource
+videos:
+  - provider: youtube
+    videoId: QrAFuzg67dM
+  - provider: youtube
+    videoId: 6TSJW2z51lo
+  - provider: youtube
+    videoId: ifP4Pj0rECY

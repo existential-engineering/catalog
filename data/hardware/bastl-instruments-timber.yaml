@@ -1,0 +1,98 @@
+id: rcIF6ej5NI06yQDSbhq-c
+name: Timber
+manufacturer: bastl-instruments
+primaryCategory: distortion
+url: https://bastl-instruments.com/eurorack/modules/timber
+description: "A 7HP flexible wave shaping module combining two distinct
+  circuits: the Wave Driver (I), an overdrive circuit with one folding stage and
+  SOFT/MID/HARD drive switch, and the Wave Folder (II), a 4-stage Serge-design
+  wave folder. A voltage-controlled crossfader blends between both circuits'
+  outputs. A SYMMETRY control with CV input adds a voltage offset before
+  processing for asymmetric wave folding. FBK CV input controls internal
+  feedback routing. Handmade in Brno, Czech Republic."
+details: |-
+  Timber is a flexible wave shaping module that produces rich timbres by adding harmonics to simple waveforms (triangles and sinewaves) or any other signal.
+
+  The Wave Driver (circuit I) is an overdrive circuit with one folding stage. The SHAPE knob controls input amplification. The DRIVE switch selects between SOFT, MID, and HARD overdrive modes. The SYMMETRY knob and CV input add a voltage offset to the signal before processing, enabling asymmetric wave folding.
+
+  The Wave Folder (circuit II) is a 4-stage wave folder based on the Serge design. FOLD switches configure the number of active folding stages. A mode switch selects whether the Wave Folder processes the raw input or the Wave Driver output.
+
+  The X-FADE section provides voltage-controlled crossfading between the Wave Driver and Wave Folder outputs. The X-FADE knob is a bipolar attenuator for the X-FADE CV input. The FBK CV input controls internal feedback routing for additional timbral complexity.
+
+  Handmade in Brno, Czech Republic. Open-source schematics and assembly guide available.
+io:
+  - name: Input
+    signalFlow: input
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Symmetry CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: X-Fade CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FBK CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Wave Driver Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Wave Folder Out
+    signalFlow: output
+    category: audio
+    type: audio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-timber-web.pdf
+    title: User Manual (EN)
+    type: resource
+  - url: https://bastl-instruments.com/files/nihon-timber-manual.pdf
+    title: User Manual (JP)
+    type: resource
+  - url: https://bastl-instruments.com/content/files/timber-1-1-assembly-guide.pdf
+    title: Assembly Guide v1.1
+    type: resource
+  - url: https://bastl-instruments.com/content/files/timber-1.1-tht-schematics.pdf
+    title: Schematics v1.1
+    type: resource
+videos:
+  - provider: youtube
+    videoId: 2Z1bLulN7VY
+  - provider: youtube
+    videoId: Y4KIJsHyvvY
+  - provider: youtube
+    videoId: bwaDiAXUoHs
+  - provider: youtube
+    videoId: RtQ52wM9m9o
+  - provider: youtube
+    videoId: ZvEs295WFcw
+  - provider: youtube
+    videoId: ZXv34bNIoz4
