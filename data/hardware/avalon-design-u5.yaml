@@ -1,0 +1,103 @@
+id: SmA9ARfykfjUuIKearO7f
+name: U5
+manufacturer: avalon-design
+primaryCategory: di-box
+categories:
+  - preamp
+  - outboard
+url: https://www.avalondesign.com/u5product
+description: The Avalon U5 is a pure Class A, 100% discrete instrument
+  preamplifier and DI box featuring a passive six-position tone selector,
+  variable gain preamp, dual balanced XLR outputs, and a headphone monitor
+  output, accommodating electric and acoustic guitars, bass, keyboards, and 400W
+  speaker-level sources.
+details: |-
+  The U5 is Avalon Design's flagship instrument preamplifier and DI box, built on a
+  100% discrete, high-voltage Class A circuit topology. Introduced in 1995, it has
+  become a studio standard, appearing on countless commercial recordings and live
+  performances across genres.
+
+  At the heart of the U5 is a unique passive six-position tone bank selector that
+  shapes the instrument signal before it enters the variable gain preamp stage. Each
+  tone position provides distinct passive filter characteristics, allowing engineers
+  to tailor the sound of guitars, basses, and keyboards directly at the source without
+  the coloration of active circuitry.
+
+  The preamp offers switched gain in 3 dB steps up to +30 dB, feeding dual electronically
+  balanced XLR outputs (pin 2 hot) that can drive both microphone-level and line-level
+  inputs on consoles and interfaces. A high-cut filter switch at −3 dB at 8 kHz helps
+  eliminate high-frequency noise from digital sources or bright instruments.
+
+  Additional features include an active-to-thru selector with ground isolation to
+  eliminate hum and ground loops, a front-panel LED signal indicator, and a headphone
+  monitor output (0.5W into 600 Ω). A rear speaker/high-level input accepts signals
+  up to 400W via binding posts. Available in Silver, Black, and Gold finishes. Optional
+  rack mount kits (RM-1 single, RM-2 dual) are available.
+specs: |-
+  - Circuit topology: 100% discrete, high-voltage Class A
+  - Input impedance: 3,000,000 Ω unbalanced
+  - Max input level: +24 dBu unbalanced; 400W speaker input
+  - Max output level: +30 dBu DC coupled, balanced 600 Ω
+  - Gain range: switched 3 dB steps, max +30 dB
+  - Noise: −100 dBu at minimum gain
+  - Distortion: 0.1% THD/IMD at +10 dB
+  - Frequency response: 5 Hz to 100 kHz (±0.5 dB)
+  - Frequency response −3 dB: 1 Hz to 500 kHz
+  - High-cut filter: −3 dB at 8 kHz
+  - Headphone output: 0.5W into 600 Ω
+  - Dimensions: 8.5 × 3.5 × 12 in (216 × 88 × 305 mm)
+  - Weight: 12 lbs (5.4 kg)
+  - AC voltage: 115V / 230V switchable
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Speaker/High-Level Input
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mic/Line Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: U5 Manual
+    url: https://www.avalondesign.com/s/U5-Manual_web.pdf
+  - type: resource
+    title: U5 Tear Sheet
+    url: https://www.avalondesign.com/s/U5_Tearsheet.pdf
+  - type: resource
+    title: U5 Speaker Input Setup Guide
+    url: https://www.avalondesign.com/s/U5-Speaker-In.pdf

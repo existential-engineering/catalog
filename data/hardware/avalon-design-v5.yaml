@@ -1,0 +1,121 @@
+id: hRDYXwcl3rYR75PbDxTdM
+name: V5
+manufacturer: avalon-design
+primaryCategory: preamp
+categories:
+  - di-box
+  - rack-mount
+url: https://www.avalondesign.com/v55-1
+description: The Avalon V5 is a dual mono, Pure Class A discrete microphone
+  preamplifier, DI, and re-amp unit with a 10-position passive TONE-BANK,
+  transformer-coupled inputs with selectable impedance, a built-in headphone
+  monitor amp, and professional VU metering.
+details: |-
+  The V5 is Avalon Design's dual mono, Pure Class A, 100% discrete microphone
+  preamplifier, DI, and re-amp unit. It features a high-quality transformer input
+  with selectable dual microphone impedance loading — high-Z at 6,700 Ω or low-Z
+  at 1,760 Ω — accommodating ribbon, dynamic, and condenser microphones with optimal
+  signal capture.
+
+  At its core is the 10-position passive TONE-BANK, a unique passive network that
+  shapes harmonic content and tonal character without active coloration. All signal
+  routing is handled via sealed silver relays for transparent switching and long-term
+  reliability.
+
+  The unit provides three input paths: XLR balanced line input, XLR balanced mic
+  input, and a 1/4″ high-impedance instrument/DI input (10 MΩ). Outputs include a
+  balanced main XLR output, an isolated transformer output for re-amping or isolated
+  sends, a buffered thru output, and a dedicated headphone monitoring amp.
+
+  The front panel features a professional VU meter with dual LED peak indicators,
+  a variable passive high-pass filter, polarity reverse on all outputs, and regulated
+  48V phantom power. Power is supplied by an internal toroidal transformer with dual
+  voltage support (115/230V).
+
+  Optional rack mount kits (RM-1 for single, RM-2 for dual units) are available
+  separately, making the V5 suitable for both desktop and rack-mounted studio
+  environments.
+specs: |-
+  - Frequency response: 5 Hz–50 kHz (±0.5 dB)
+  - Noise floor: −100 dBu at minimum gain
+  - Headroom: +30 dB
+  - Maximum output: +30 dBu balanced, +12 dBu isolated
+  - THD/IMD: <0.5%
+  - Phantom power: regulated 48V
+  - Line input impedance: 6,000 Ω balanced
+  - Line input gain: −3 dB to +36 dB
+  - Instrument input impedance: 10 MΩ unbalanced
+  - Instrument input gain: +2 dB to +42 dB
+  - Mic input impedance (high-Z): 6,700 Ω; gain +20 dB to +60 dB
+  - Mic input impedance (low-Z): 1,760 Ω; gain +26 dB to +66 dB
+  - Dimensions: 8.5 × 3.5 × 12 in (216 × 89 × 305 mm)
+  - Weight: 12 lbs (5.4 kg)
+  - Power: 35W max, internal toroidal, 115/230V selectable
+  - Rack space: 2U (with optional rack kit)
+io:
+  - name: Microphone Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Instrument/DI Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Isolated Transformer Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Buffered Thru Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: V5 Manual
+    url: https://www.avalondesign.com/s/V5_Manual.pdf
+  - type: resource
+    title: V5 Tear Sheet
+    url: https://www.avalondesign.com/s/V5_Tearsheet.pdf
+  - type: resource
+    title: V5 Comparison Chart
+    url: https://www.avalondesign.com/s/V5_ComparisonChart.pdf
