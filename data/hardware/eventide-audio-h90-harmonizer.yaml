@@ -7,9 +7,10 @@ description: A next-generation multi-effects powerhouse with 74 algorithms and
   comprehensive I/O, designed for guitar, bass, synths, and more, offering
   flexible routing and extensive sound possibilities.
 io:
-  # All jacks are on the rear (Top) edge. Inputs and Outputs are arranged in
-  # 2x2 grids (columns left-to-right, rows top-to-bottom); the remaining jacks
-  # form a single row to their right. See the H90 Quick Reference Guide.
+  # Most jacks are on the rear (Top) edge: Inputs and Outputs in 2x2 grids
+  # (columns left-to-right, rows top-to-bottom), then Exp/Ctl, USB-C, and Power
+  # in a single row to their right. The MIDI In and Out/Thru jacks are on the
+  # Left side of the pedal. See the H90 Quick Reference Guide.
   # Audio jacks are 1/4-inch TS; each in/out can be toggled between instrument
   # and line level in the H90 software (the rear-panel "Line Lvl" LEDs indicate
   # the current setting). `type` records the typical default; the toggle is noted
@@ -162,8 +163,8 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
-    columnPosition: 8
+    position: Left
+    columnPosition: 1
     rowPosition: 1
   - name: MIDI Out/Thru
     signalFlow: output
@@ -171,8 +172,8 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
-    columnPosition: 9
+    position: Left
+    columnPosition: 2
     rowPosition: 1
 specs: |-
   - 74 professional algorithms
