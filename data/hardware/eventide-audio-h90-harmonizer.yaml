@@ -7,41 +7,157 @@ description: A next-generation multi-effects powerhouse with 74 algorithms and
   comprehensive I/O, designed for guitar, bass, synths, and more, offering
   flexible routing and extensive sound possibilities.
 io:
-  - name: Expression Input 1
+  # All jacks are on the rear (Top) edge. Inputs and Outputs are arranged in
+  # 2x2 grids (columns left-to-right, rows top-to-bottom); the remaining jacks
+  # form a single row to their right. See the H90 Quick Reference Guide.
+  - name: Input 1
     signalFlow: input
     category: audio
-    type: cv/gate
+    type: instrument
     connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: Bottom
-  - name: Expression Input 2
+    position: Top
+    columnPosition: 1
+    rowPosition: 1
+  - name: Input 2
     signalFlow: input
     category: audio
-    type: cv/gate
+    type: instrument
     connection: 1/4-inch
+    connectorDetail:
+      - TS
     maxConnections: 1
-    position: Bottom
-  - name: MIDI in
+    position: Top
+    columnPosition: 1
+    rowPosition: 2
+  - name: Input 3 (Insert Return / Dual Path 2)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+    columnPosition: 2
+    rowPosition: 1
+  - name: Input 4 (Insert Return / Dual Path 2)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+    columnPosition: 2
+    rowPosition: 2
+  - name: Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+    columnPosition: 3
+    rowPosition: 1
+  - name: Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+    columnPosition: 3
+    rowPosition: 2
+  - name: Output 3 (Insert Send / Dual Path 2)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+    columnPosition: 4
+    rowPosition: 1
+  - name: Output 4 (Insert Send / Dual Path 2)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Top
+    columnPosition: 4
+    rowPosition: 2
+  - name: Exp/Ctl 1
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Top
+    columnPosition: 5
+    rowPosition: 1
+  - name: Exp/Ctl 2
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Top
+    columnPosition: 5
+    rowPosition: 2
+  - name: USB-C
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Top
+    columnPosition: 6
+    rowPosition: 1
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    connectorDetail:
+      - center-positive
+    maxConnections: 1
+    position: Top
+    columnPosition: 7
+    rowPosition: 1
+  - name: MIDI In
     signalFlow: input
     category: midi
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Bottom
-  - name: USB Control
-    signalFlow: input
-    category: digital
-    type: usb
-    connection: usb-c
+    position: Top
+    columnPosition: 8
+    rowPosition: 1
+  - name: MIDI Out/Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
     maxConnections: 1
-    position: Bottom
-  - name: Power Input
-    signalFlow: input
-    category: power
-    type: power
-    connection: barrel
-    maxConnections: 1
-    position: Bottom
+    position: Top
+    columnPosition: 9
+    rowPosition: 1
 specs: |-
   - 74 professional algorithms
   - Dual algorithm design

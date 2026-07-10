@@ -117,6 +117,20 @@ preamp/mixer outputs; a powered speaker input is never `line`.
 (guitars/basses), `position`. Every product entry must include `primaryCategory`.
 These are enforced by `pnpm validate`, not just review.
 
+**Port ordering (optional):** `columnPosition` and `rowPosition` place a port
+within its `position` edge so the setup graph can render the layout. Both are
+1-based, numbered independently per edge, and go right after `position`:
+`columnPosition` is left-to-right (column 1 = leftmost, viewing that face
+head-on); `rowPosition` is top-to-bottom (row 1 = topmost). Stacked ports share a
+`columnPosition` and differ by `rowPosition`; a single-row edge uses
+`rowPosition: 1`. This is visual info from photos/manuals — assign it with
+`pnpm enrich-io <slug>`, not during bulk import.
+
+One `io` entry per **physical** jack (`maxConnections: 1`). Do not collapse an L/R
+pair into one stereo entry with `maxConnections: 2`, and do not split one jack in
+two — bulk imports get this wrong. E.g. the Eventide H90 has 14 discrete jacks
+(Inputs 1–4, Outputs 1–4, Exp/Ctl 1–2, MIDI In, MIDI Out/Thru, USB-C, Power).
+
 ## Content Entries
 
 Content entries (presets, sample packs, expansions) live in `data/content/` as a separate collection. Content `primaryCategory` values include `preset`, `preset-pack`, `sample-pack`, `drum-sample-pack`, `loop-pack`, `sound-library`, `soundfont`, `impulse-response`, and `multisample`.
