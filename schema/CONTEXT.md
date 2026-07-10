@@ -789,7 +789,7 @@ Accessory entries (cables, stands, acoustic treatment) live in `data/accessories
 accurately. Both are optional 1-based integers; numbering is independent per edge.
 
 - `columnPosition`: left-to-right order, viewing that face head-on. Column 1 = leftmost.
-- `rowPosition`: top-to-bottom (front-to-back) order. Row 1 = topmost / nearest the front.
+- `rowPosition`: top-to-bottom order, viewing that face head-on. Row 1 = topmost.
 - Ports stacked vertically share a `columnPosition` and differ by `rowPosition`.
   A single-row edge uses `rowPosition: 1` on every port.
 - Place `columnPosition`/`rowPosition` immediately after `position`.

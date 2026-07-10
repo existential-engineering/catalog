@@ -11,8 +11,8 @@
  * Conventions (also documented in schema/CONTEXT.md):
  *   - columnPosition: 1-based left-to-right order of ports on a given `position`
  *     edge, viewing that face head-on. Column 1 = leftmost.
- *   - rowPosition: 1-based top-to-bottom (front-to-back) order on that edge.
- *     Row 1 = topmost / nearest the front. Single-row edges use rowPosition 1.
+ *   - rowPosition: 1-based top-to-bottom order, viewing that face head-on.
+ *     Row 1 = topmost. Single-row edges use rowPosition 1.
  *   - Numbering is independent per `position` edge.
  *
  * Usage:
@@ -32,6 +32,7 @@ import path from "node:path";
 import { stdin as input, stdout as output } from "node:process";
 import readline from "node:readline/promises";
 import { isMap, isSeq, type Pair, parseDocument, type Scalar, type YAMLMap } from "yaml";
+import { SLUG_PATTERN } from "./lib/schema-loader.js";
 import { DATA_DIR } from "./lib/utils.js";
 
 interface IOPortView {
@@ -141,6 +142,13 @@ async function main(): Promise<void> {
   }
 
   const slug = slugArg.replace(/\.ya?ml$/, "");
+  if (!SLUG_PATTERN.test(slug)) {
+    console.error(
+      `Invalid slug '${slug}'. Slugs are lowercase letters, numbers, and hyphens ` +
+        "(no path separators)."
+    );
+    process.exit(1);
+  }
   const file = path.join(DATA_DIR, "hardware", `${slug}.yaml`);
   if (!fs.existsSync(file)) {
     console.error(`No hardware entry found at data/hardware/${slug}.yaml`);
