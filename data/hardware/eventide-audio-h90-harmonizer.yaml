@@ -10,6 +10,10 @@ io:
   # All jacks are on the rear (Top) edge. Inputs and Outputs are arranged in
   # 2x2 grids (columns left-to-right, rows top-to-bottom); the remaining jacks
   # form a single row to their right. See the H90 Quick Reference Guide.
+  # Audio jacks are 1/4-inch TS; each in/out can be toggled between instrument
+  # and line level in the H90 software (the rear-panel "Line Lvl" LEDs indicate
+  # the current setting). `type` records the typical default; the toggle is noted
+  # in each port's description.
   - name: Input 1
     signalFlow: input
     category: audio
@@ -21,6 +25,7 @@ io:
     position: Top
     columnPosition: 1
     rowPosition: 1
+    description: Instrument or line level, switchable in software.
   - name: Input 2
     signalFlow: input
     category: audio
@@ -32,10 +37,11 @@ io:
     position: Top
     columnPosition: 1
     rowPosition: 2
+    description: Instrument or line level, switchable in software.
   - name: Input 3 (Insert Return / Dual Path 2)
     signalFlow: input
     category: audio
-    type: line
+    type: instrument
     connection: 1/4-inch
     connectorDetail:
       - TS
@@ -43,10 +49,12 @@ io:
     position: Top
     columnPosition: 2
     rowPosition: 1
+    description: Insert return or Dual Path 2 input. Instrument or line level,
+      switchable in software.
   - name: Input 4 (Insert Return / Dual Path 2)
     signalFlow: input
     category: audio
-    type: line
+    type: instrument
     connection: 1/4-inch
     connectorDetail:
       - TS
@@ -54,6 +62,8 @@ io:
     position: Top
     columnPosition: 2
     rowPosition: 2
+    description: Insert return or Dual Path 2 input. Instrument or line level,
+      switchable in software.
   - name: Output 1
     signalFlow: output
     category: audio
@@ -65,6 +75,7 @@ io:
     position: Top
     columnPosition: 3
     rowPosition: 1
+    description: Instrument or line level, switchable in software.
   - name: Output 2
     signalFlow: output
     category: audio
@@ -76,6 +87,7 @@ io:
     position: Top
     columnPosition: 3
     rowPosition: 2
+    description: Instrument or line level, switchable in software.
   - name: Output 3 (Insert Send / Dual Path 2)
     signalFlow: output
     category: audio
@@ -87,6 +99,8 @@ io:
     position: Top
     columnPosition: 4
     rowPosition: 1
+    description: Insert send or Dual Path 2 output. Instrument or line level,
+      switchable in software.
   - name: Output 4 (Insert Send / Dual Path 2)
     signalFlow: output
     category: audio
@@ -98,6 +112,8 @@ io:
     position: Top
     columnPosition: 4
     rowPosition: 2
+    description: Insert send or Dual Path 2 output. Instrument or line level,
+      switchable in software.
   - name: Exp/Ctl 1
     signalFlow: input
     category: audio
