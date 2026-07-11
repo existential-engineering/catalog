@@ -273,7 +273,7 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   },
   [ValidationErrorCode.W128_IO_COMBINE_CANDIDATE]: {
     title: "IO entry may combine multiple physical jacks",
-    anchor: "w128-io-combine-candidate",
+    anchor: "w128-io-entry-may-combine-multiple-physical-jacks",
   },
 };
 
