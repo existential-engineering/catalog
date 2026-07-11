@@ -64,7 +64,6 @@ export enum ValidationErrorCode {
   W125_MANUFACTURER_URL_IN_LINKS = "W125",
   W126_SPECS_OVERLAP = "W126",
   W127_MISSING_SEARCH_TERMS = "W127",
-  W128_IO_COMBINE_CANDIDATE = "W128",
 }
 
 // =============================================================================
@@ -270,10 +269,6 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.W127_MISSING_SEARCH_TERMS]: {
     title: "Entry would benefit from searchTerms",
     anchor: "w127-missing-search-terms",
-  },
-  [ValidationErrorCode.W128_IO_COMBINE_CANDIDATE]: {
-    title: "IO entry may combine multiple physical jacks",
-    anchor: "w128-io-combine-candidate",
   },
 };
 

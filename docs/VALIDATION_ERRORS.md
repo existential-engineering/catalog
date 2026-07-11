@@ -498,16 +498,6 @@ The `connection` field in an IO entry is not in the known connections list.
 
 ---
 
-### W128: IO Entry May Combine Multiple Physical Jacks
-
-An IO entry sets `maxConnections` greater than 1 on a single-jack connection type (e.g., `1/4-inch`, `xlr`, `rca`, `5-pin din`). These connectors carry one physical link each, so a value above 1 usually means several jacks were collapsed into one entry during import.
-
-**Fix:** Model each physical jack as its own `io` entry with `maxConnections: 1` (see the Eventide H90 for an example). If the entry really is an intentional aggregate for a connector that carries multiple links (e.g., a D-sub snake), use the correct `connection` type instead. Names containing words like "all", "slots", or "bank" are treated as aggregates and not flagged.
-
-**Triage tip:** Run `pnpm io-quality` to see the full I/O data-quality worklist (combine candidates, collapsed-pair names, missing I/O, and column/row coverage gaps).
-
----
-
 ## Getting Help
 
 If you encounter an error not listed here, or need clarification:

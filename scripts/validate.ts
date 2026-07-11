@@ -12,7 +12,6 @@ import { parse as parseYaml } from "yaml";
 import { z } from "zod";
 import { looksLikeAcronymName } from "./lib/acronym-exclusions.js";
 import { getDocsUrl, ValidationErrorCode } from "./lib/error-codes.js";
-import { isIoCombineCandidate } from "./lib/io-heuristics.js";
 import type {
   CategoriesSchema,
   CategoryAliasesSchema,
@@ -1041,7 +1040,7 @@ function detectSupersedeCycle(
 
 interface WarningContext {
   name?: string;
-  io?: Array<{ name: string; type: string; connection: string; maxConnections?: number }>;
+  io?: Array<{ name: string; type: string; connection: string }>;
   compatibleWith?: string[];
   url?: string;
   links?: Array<{ url: string }>;
@@ -1089,19 +1088,6 @@ function collectWarnings(
           code: ValidationErrorCode.W121_UNKNOWN_IO_CONNECTION,
           message: `Unknown IO connection '${io.connection}' on '${io.name}'. Consider adding to schema/io-connections.yaml if valid.`,
           path: `io[${i}].connection`,
-          line: line ?? undefined,
-        });
-      }
-
-      // A single-jack connection carries one physical link; maxConnections>1
-      // usually means several jacks were collapsed into one entry (aggregates
-      // like "All Slots" are excluded).
-      if (isIoCombineCandidate(io)) {
-        const line = getLineForPath(document, lineCounter, ["io", i, "maxConnections"]);
-        warnings.push({
-          code: ValidationErrorCode.W128_IO_COMBINE_CANDIDATE,
-          message: `IO '${io.name}' sets maxConnections ${io.maxConnections} on a single-jack connection ('${io.connection}'). If this is several physical jacks, give each its own io entry with maxConnections: 1.`,
-          path: `io[${i}].maxConnections`,
           line: line ?? undefined,
         });
       }
