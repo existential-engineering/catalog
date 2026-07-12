@@ -1,0 +1,82 @@
+id: axpZe0vvYG4jdTq2ISl8R
+name: Stereo Passive Equalizer
+manufacturer: bettermaker
+primaryCategory: equalizer
+categories:
+  - mastering
+  - outboard
+  - rack-mount
+  - analog
+url: https://www.bettermaker.com/spe
+prices:
+  - amount: 1999
+    currency: EUR
+details: |-
+  The Bettermaker Stereo Passive Equalizer (SPE) is a professional mastering-grade equalizer that combines a fully analog audio signal path with digitally controlled parameters and USB connectivity. It is designed for demanding studio and mastering applications where sonic integrity and repeatability are both essential.
+
+  The SPE features a passive EQ topology with an extended hi-boost section, including dedicated air bands at 20 kHz and 28 kHz, along with an adjustable output level of +/- 8 dB to compensate for passive network insertion loss. A 24 dB/oct high-pass digital filter is also included.
+
+  Digital control enables up to 32 programmable snapshots accessible via DAW automation, delivering instant and precise recall of all settings. The unit connects to Mac and PC via USB and operates as a HID device, managed through a dedicated companion plugin that also provides an FFT analyzer with filter curve approximation.
+
+  Technical performance is characterized by a maximum input level of +24 dBu (balanced), maximum output of +27 dBu (balanced), a frequency response of 7 Hz to 30 kHz, 101 dB dynamic range, and THD+N of 0.009%. The unit occupies 2U of rack space with 140 mm depth and consumes 15 W in operation.
+specs: |-
+  - 100% analog signal path with digitally controlled parameters
+  - Stereo passive equalizer with extended hi-boost section
+  - Air bands at 20 kHz and 28 kHz
+  - Adjustable output level: +/- 8 dB
+  - Up to 32 programmable snapshots via DAW automation
+  - USB connectivity with dedicated plugin for Mac/PC (HID device)
+  - FFT analyzer with filter curve approximation
+  - 24 dB/oct high-pass digital filter
+  - Input level (max): +24 dBu (balanced, 48 kΩ input impedance)
+  - Output level (max): +27 dBu (balanced, 50 Ω + 50 Ω output impedance)
+  - Frequency response: 7 Hz – 30 kHz
+  - Dynamic range: 101 dB
+  - THD+N: 0.009%
+  - Height: 2U (140 mm depth)
+  - Power consumption: 15 W (2 W standby)
+  - Control resolution: 101 steps (most parameters), 34 steps (Hi Cut)
+  - U.S. Patent No. 10,693,428 B2
+io:
+  - name: Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.bettermaker.com/_files/ugd/53367c_7a416ffb7b8f459ab3f5d634f932815c.pdf
+    type: resource
+    title: Manual (PDF)
+  - url: https://www.bettermaker.com/downloads
+    type: resource
+    title: Plugins & Updates
