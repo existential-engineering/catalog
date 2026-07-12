@@ -1,0 +1,176 @@
+id: Sv4noVHjXM5onWA-6cU5_
+name: HPA4 Headphone / Line Amplifier
+manufacturer: benchmark
+primaryCategory: headphone-amp
+categories:
+  - preamp
+  - rack-mount
+url: https://benchmarkmedia.com/products/hpa4
+prices:
+  - amount: 3499
+    currency: USD
+description: The HPA4 combines a flagship headphone amplifier with a
+  fully-balanced line preamplifier, featuring the Benchmark-exclusive THX-888
+  headphone amplifier with patented feed-forward error correction technology.
+details: |-
+  The Benchmark HPA4 is a combined headphone amplifier and fully-balanced line preamplifier designed for audiophile and professional use. At its core is the Benchmark-exclusive THX-888 headphone amplifier module, delivering measured distortion levels below -125 dB (0.00006% THD) and a signal-to-noise ratio exceeding 135 dB A-weighted.
+
+  The HPA4 employs Benchmark's patented feed-forward error correction technology, which reduces total harmonic distortion by an additional 30 to 40 dB beyond what conventional negative feedback achieves. A relay-controlled 256-step volume attenuator using 48 relays provides precise, channel-matched attenuation in 0.5 dB increments, with independent controls for headphone and line outputs.
+
+  Headphone outputs are provided via both a 1/4-inch TRS jack and a 4-pin XLR connector, with near-zero output impedance and the ability to deliver up to 6 watts into 16-ohm loads and 11.5 Vrms into 300-ohm loads. This makes it suitable for driving a wide range of headphones from low-impedance planars to high-impedance dynamics.
+
+  Four analog inputs are available on the rear panel: two balanced XLR stereo pairs and two unbalanced RCA stereo pairs. Balanced XLR and unbalanced RCA line outputs are provided alongside an XLR mono sum output. Two bidirectional 12V trigger ports enable system integration with compatible components. The HPA4 is available in silver or black finishes, with standard or rackmount faceplate configurations and optional remote control.
+specs: |-
+  - THX-888 headphone amplifier module
+  - THD < -125 dB (0.00006%) on headphone and line outputs
+  - SNR > 131 dB unweighted, > 135 dB A-weighted (headphone output)
+  - SNR > 135 dB unweighted, > 137 dB A-weighted (balanced line output)
+  - Frequency response: 0.003 dB @ 10 Hz, -0.001 dB @ 20 kHz
+  - Bandwidth: 0.1 Hz to 500 kHz (-3 dB)
+  - Maximum headphone output: 6W into 16Ω; 11.5 Vrms into 300Ω; 1.5A peak current
+  - Headphone output impedance: ~0 Ohms
+  - 256-step relay-controlled volume attenuator, 0.5 dB increments
+  - Independent relay-switched volume controls for headphone and line outputs
+  - Patented feed-forward error correction (30-40 dB additional distortion reduction)
+  - 4 analog inputs: 2x balanced XLR stereo, 2x unbalanced RCA stereo
+  - Balanced XLR and unbalanced RCA line outputs plus XLR mono sum output
+  - Headphone outputs: 1/4-inch TRS and 4-pin XLR
+  - Two bidirectional 12V trigger I/O ports
+  - Color touch-screen display showing attenuation in dB
+  - IR remote sensor on front panel; optional remote control
+  - Dimensions: 8.65" W x 3.88" H x 8.33" D (with feet)
+  - Weight: 8.0 lbs
+  - Power consumption: 18W typical, 35W maximum, 0.33W standby
+  - Auto-ranging power supply (50-60 Hz)
+  - Available in silver or black; standard or rackmount faceplate
+io:
+  - name: Headphone Output (TRS)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output (4-pin XLR)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Analog Input 1 L (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input 1 R (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input 2 L (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input 2 R (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input 3 L (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Input 3 R (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Input 4 L (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Input 4 R (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line Output L (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Output R (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Mono Sum Output (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Line Output L (RCA)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Line Output R (RCA)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: 12V Trigger I/O 1
+    signalFlow: bidirectional
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: 12V Trigger I/O 2
+    signalFlow: bidirectional
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: AC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://benchmarkmedia.com/blogs/faq
+    type: resource
+    title: FAQ

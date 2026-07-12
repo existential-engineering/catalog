@@ -1,0 +1,173 @@
+id: A0fJBMhBHRZDHd_vJyIxL
+name: DAC3 L
+manufacturer: benchmark
+primaryCategory: outboard
+categories:
+  - rack-mount
+url: https://benchmarkmedia.com/products/benchmark-dac3-l-digital-to-analog-audio-converter
+description: The DAC3 L is a professional-grade digital-to-analog converter
+  built around the ESS ES9028PRO converter chip, delivering 128 dB SNR and THD+N
+  of -113 dB. It removes the headphone amplifier found in the DAC3 HGC while
+  retaining identical sonic performance, dual XLR balanced outputs, dual RCA
+  unbalanced output pairs, and five digital inputs.
+details: |-
+  The Benchmark DAC3 L is a half-rack, 1U digital-to-analog converter designed for studio monitoring and high-fidelity playback. It is built around the ESS ES9028PRO DAC chip and features Benchmark's UltraLock3 jitter-immune clock system, which accepts asynchronous digital signals from any source and re-clocks them with an ultra-low-jitter master oscillator.
+
+  The DAC3 L differs from the DAC3 HGC by omitting the built-in headphone amplifier, making it a streamlined converter stage intended to pair with a dedicated headphone amp or preamplifier such as the HPA4 or LA4. The sonic performance — SNR, THD+N, frequency response, and crosstalk — is identical to the HGC model.
+
+  Analog outputs include a pair of gold-pin Neutrik XLR balanced connectors and two pairs of RCA unbalanced outputs, all driven simultaneously. The balanced outputs can be configured for studio (+24 dBu at 0 dBFS) or hi-fi (+4 dBu) calibration using internal DIP switches, with optional passive 10 dB and 20 dB attenuators. The RCA outputs are fixed at +8.2 dBu (2 Vrms) at 0 dBFS.
+
+  Two stereo analog pass-through inputs (RCA pairs A1 and A2) allow the DAC3 L to also serve as a passive analog switcher when no digital source is selected. A bidirectional 12V trigger port enables system automation.
+
+  The unit ships in silver or black finish and is optionally bundled with Benchmark's Generation 4 infrared remote control. Dimensions are 9.5" W × 1.725" H × 9.33" D; weight 3 lbs; power 100-240V AC, 12W typical.
+specs: |-
+  - SNR (A-weighted): 128 dB
+  - THD+N (1 kHz, 0 dBFS): -113 dB (0.00022%)
+  - Frequency response: +0 dB / -0.015 dB (20 Hz – 20 kHz)
+  - Crosstalk: -137 dB @ 20 Hz
+  - Digital inputs: 1x USB, 2x TOSLINK optical, 2x RCA coaxial S/PDIF
+  - Supported sample rates: 44.1, 48, 88.2, 96, 176.4, 192 kHz; DSD64/DSD128 via DoP
+  - Maximum word length: 24 bits
+  - Balanced XLR output impedance: 60 Ohms (attenuator off)
+  - Balanced XLR output level: +24 dBu @ 0 dBFS (attenuator off); passive -10 dB and -20 dB options
+  - Unbalanced RCA output impedance: 30 Ohms
+  - Unbalanced RCA output level: +8.2 dBu (2 Vrms) @ 0 dBFS
+  - Analog pass-through inputs: 2x stereo RCA pairs (A1, A2)
+  - 12V trigger: bidirectional, 1/8-inch TRS
+  - Linear-phase reconstruction filters
+  - UltraLock3 jitter-immune clock system
+  - Dimensions: 9.5" W × 1.725" H × 9.33" D
+  - Weight: 3 lbs (unit only)
+  - Power: 100-240V AC, 50-60 Hz; 12W typical, 13W max
+  - Available in silver or black; optional Generation 4 IR remote
+io:
+  - name: USB Input
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Optical Input 1
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: Optical Input 2
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: Coaxial Input 1
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Coaxial Input 2
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Input A1 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Input A1 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Input A2 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Input A2 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output 1 L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output 1 R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output 2 L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output 2 R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: 12V Trigger
+    signalFlow: bidirectional
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn.shopify.com/s/files/1/0321/7609/files/DAC3_Series_Manual_Rev_F.pdf?v=1713539067
+    type: resource
+    title: DAC3 L & DAC3 HGC Manual (PDF)
+  - url: https://cdn.shopify.com/s/files/1/0321/7609/files/DAC2_and_DAC3_Windows_Driver_Installation.pdf?68
+    type: resource
+    title: USB Driver Installation Instructions (DAC2 and DAC3, PDF)
+  - url: https://benchmarkmedia.com/blogs/application_notes/dac3-introducing-the-new-es9028pro-converter
+    type: resource
+    title: "Application Note: A Look Inside the ES9028PRO Converter Chip and the New
+      DAC3"

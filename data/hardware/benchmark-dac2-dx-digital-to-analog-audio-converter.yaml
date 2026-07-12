@@ -1,0 +1,162 @@
+id: gS00nti05ElE1rtlsSb-y
+name: DAC2 DX
+manufacturer: benchmark
+primaryCategory: outboard
+categories:
+  - rack-mount
+  - headphone-amp
+  - discontinued
+url: https://benchmarkmedia.com/products/benchmark-dac2-dx-digital-to-analog-audio-converter
+description: The DAC2 DX is Benchmark's 2-channel D/A converter featuring lower
+  noise, lower distortion, and improved accuracy compared to the DAC1. It
+  supports native DSD conversion (DoP 1.1), an asynchronous USB Audio interface,
+  and is designed to directly drive power amplifiers and powered speakers.
+details: |-
+  The DAC2 DX is Benchmark Media Systems' flagship 2-channel D/A converter, designed for both professional studio and high-fidelity home audio applications. It delivers lower noise, lower distortion, and improved accuracy compared to the legendary DAC1, with performance that exceeds the measurement limits of state-of-the-art test equipment.
+
+  The unit accepts six switchable digital inputs: one USB (supporting USB Audio 2.0 and 1.1 at up to 192 kHz), two optical (up to 96 kHz), one XLR AES/EBU (transformer-coupled, up to 210 kHz), and two coaxial S/PDIF (up to 210 kHz). Native DSD via DoP 1.1 is automatically detected on USB, coaxial, and XLR inputs, with seamless switching between DSD and PCM conversion.
+
+  Benchmark's UltraLock2 jitter attenuation system is applied to all inputs, achieving jitter-induced sidebands below -144 dB. Balanced XLR outputs feature gold-pin Neutrik connectors and an adjustable low-impedance passive attenuator, allowing direct connection to power amplifiers or powered monitors without a preamplifier. Four unbalanced RCA outputs and two front-panel headphone outputs (via the HPA2 amplifier circuit) round out the analog output section.
+
+  The DAC2 DX is optimized for professional users who do not require analog inputs, making it well suited as a sound-card replacement, standalone headphone amplifier for digital sources, or USB-to-S/PDIF transfer device. The half-rack, 1U form factor can be rack-mounted and runs on universal 100–240V AC power.
+
+  The DAC2 DX has been officially discontinued and is no longer available from Benchmark Media Systems.
+specs: |-
+  - SNR A-Weighted: 126 dB (0 dBFS = +24 dBu)
+  - SNR Unweighted: 123 dB
+  - THD+N at 1 kHz, 0 dBFS: -109 dBFS / 0.00035%
+  - Frequency response at 96 kHz: +0 / -0.04 dB (20 Hz to 20 kHz)
+  - Crosstalk: -116 dB at 20 kHz, -130 dB at 1 kHz
+  - Jitter-induced sidebands: < -144 dB (10 kHz, 0 dBFS, 12.75 UI jitter)
+  - Jitter attenuation: Benchmark UltraLock2 on all inputs
+  - 6 digital inputs: 1× USB, 2× Optical, 1× AES/EBU XLR, 2× Coaxial S/PDIF
+  - Supports PCM up to 192 kHz / 24-bit and native DSD via DoP 1.1
+  - USB: 44.1, 48, 88.2, 96, 176.4, 192 kHz; Coaxial/XLR: 28–210 kHz; Optical: 28–96 kHz
+  - 2× Balanced XLR outputs: up to +30 dBu clip, 60 Ω output impedance
+  - 4× Unbalanced RCA outputs: up to +13.5 dBu clip, 30 Ω output impedance
+  - 2× Headphone outputs (HPA2): < 0.11 Ω output impedance, 250 mA max current
+  - Headphone THD+N: -106 dB / 0.0005% into 30 Ω at +18 dBu
+  - Group delay at 44.1 kHz: 1.36 ms; at 192 kHz: 0.47 ms
+  - Inter-channel differential phase: ±0.25 degrees at 20 kHz
+  - Form factor: half-rack wide, 1U high (9.5″ W × 1.725″ H × 9.33″ D)
+  - AC power: 100–240V, 50/60 Hz; max 15 W
+  - Weight: 3 lb (unit only)
+io:
+  - name: USB Audio
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Optical 1
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: Optical 2
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Coaxial S/PDIF 1
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Coaxial S/PDIF 2
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L (main)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R (main)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L (secondary)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R (secondary)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output 1
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn.shopify.com/s/files/1/0321/7609/files/DAC2_DX_Manual_Rev_B.pdf
+    type: resource
+    title: DAC2 DX Manual (PDF)
+  - url: https://benchmarkmedia.com/pages/dac2-drivers
+    type: resource
+    title: DAC2 Drivers
+  - url: https://benchmarkmedia.com/blogs/application_notes/tagged/dac2
+    type: resource
+    title: DAC2 Application Notes
+  - url: https://benchmarkmedia.com/blogs/reviews/tagged/dac2
+    type: review
+    title: DAC2 Reviews

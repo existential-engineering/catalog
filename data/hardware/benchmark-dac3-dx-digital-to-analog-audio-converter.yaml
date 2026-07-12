@@ -1,0 +1,175 @@
+id: Xd_T0R8bjJVIKZhaL7oaZ
+name: DAC3 DX
+manufacturer: benchmark
+primaryCategory: outboard
+categories:
+  - rack-mount
+  - headphone-amp
+  - discontinued
+url: https://benchmarkmedia.com/products/benchmark-dac3-dx-digital-to-analog-audio-converter
+description: The DAC3 DX is a professional-grade 2-channel digital-to-analog
+  converter designed for studio monitoring and high-fidelity audio playback,
+  featuring native DSD64 and PCM conversion with Benchmark's UltraLock3 jitter
+  attenuation system. It offers dual stereo output buses, a zero-ohm HPA2
+  headphone amplifier, and supports asynchronous USB Audio 2.0 alongside
+  AES/EBU, coaxial, and optical digital inputs.
+details: |-
+  The Benchmark DAC3 DX is a professional 2-channel digital-to-analog converter occupying a half-rack-wide, 1U form factor. It is designed for studio monitoring environments where pristine conversion quality is paramount, and does not include analog inputs, making it a dedicated DAC with headphone amplification.
+
+  At its core, the DAC3 DX uses Benchmark's 3:1 parallel conversion architecture paired with active 2nd and 3rd harmonic compensation to achieve vanishingly low distortion figures. The UltraLock3 jitter attenuation system eliminates jitter artifacts from all digital inputs, with maximum jitter-induced sidebands below -144 dB. A high-headroom 32-bit DSP provides 3.5 dB of headroom above 0 dBFS.
+
+  Digital inputs include USB Audio 2.0/1.1 (asynchronous), two optical TOSLINK ports, two coaxial RCA ports, and one transformer-coupled XLR AES/EBU port. DSD64 is supported via DoP 1.1 on compatible inputs.
+
+  Two independent output buses are provided: balanced XLR outputs using Neutrik gold-pin connectors with an output clip point of +29 dBu, and four unbalanced RCA outputs (two main bus, two auxiliary). The HPA2 headphone amplifier section drives two independent 1/4-inch TRS outputs with output impedance below 0.11 ohms and up to 250 mA per channel.
+
+  The unit is designed, assembled, and tested in the USA. It accepts universal mains voltage (100-240V AC) and consumes 12W typically. The DAC3 DX has been officially discontinued by Benchmark Media Systems.
+specs: |-
+  - SNR (A-Weighted, 0 dBFS): 127 dB
+  - THD+N (1 kHz at 0 dBFS): -111 dBFS / 0.00028%
+  - Frequency Response (20 Hz – 20 kHz): ±0.005 dB
+  - Crosstalk (1 kHz): -120 dB
+  - Maximum Jitter-Induced Sidebands: < -144 dB
+  - Balanced XLR output clip point: +29 dBu
+  - Balanced XLR output impedance: 60 Ω (attenuator off)
+  - Factory preset balanced output: +24 dBu at 0 dBFS
+  - Unbalanced RCA output clip point: +13.5 dBu
+  - Unbalanced RCA output impedance: 30 Ω
+  - Headphone output impedance: < 0.11 Ω
+  - Headphone maximum current: 250 mA per channel
+  - Headphone THD+N: -100 dB into 30 Ω
+  - USB input sample rates: 44.1–192 kHz
+  - Optical TOSLINK input sample rates: 28–96 kHz
+  - Coaxial RCA input sample rates: 28–210 kHz
+  - AES/EBU XLR input sample rates: 28–210 kHz
+  - Maximum input word length: 24 bits
+  - DSD support: DSD64 via DoP 1.1
+  - Architecture: 3:1 parallel conversion with active harmonic compensation
+  - DSP: 32-bit with 3.5 dB headroom above 0 dBFS
+  - Form factor: ½ rack wide, 1 RU
+  - Dimensions: 9.5" W × 1.725" H × 9.33" D (with connectors)
+  - Weight: 3 lbs
+  - Power: 100–240V AC, 50–60 Hz; < 0.5W idle / 12W typical / 15W max
+  - Country of manufacture: USA
+io:
+  - name: USB Audio Input
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Optical Input 1
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: Optical Input 2
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: Coaxial Input 1
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Coaxial Input 2
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L (main)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R (main)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L (aux)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R (aux)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output 1
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: 12V Trigger
+    signalFlow: bidirectional
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn.shopify.com/s/files/1/0321/7609/files/DAC3_DX_Manual_1.0.pdf
+    type: resource
+    title: DAC3 DX Manual (PDF)
+  - url: https://benchmarkmedia.com/pages/dac2-drivers
+    type: resource
+    title: DAC2/DAC3 USB Drivers (Windows)
+  - url: https://benchmarkmedia.com/blogs/reviews/tagged/dac3
+    type: review
+    title: DAC3 Reviews
