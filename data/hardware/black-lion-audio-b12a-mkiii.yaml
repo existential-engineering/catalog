@@ -1,0 +1,67 @@
+id: u4k6g_tOcSMq8KciDTJ2w
+name: B12A mkIII
+manufacturer: black-lion-audio
+primaryCategory: preamp
+categories:
+  - rack-mount
+url: https://blacklionaudio.com/en/products/b12a-mkiii
+prices:
+  - amount: 399
+    currency: USD
+description: Single-channel American-style mic/DI preamp with Cinemag transformers
+details: The B12A mkIII is the most portable API 312A-style American preamp
+  around, delivering 70dB of clean gain via Cinemag transformers on both input
+  and output stages. It excels on drum mics, acoustic instruments, and
+  low-output ribbon mics thanks to its low noise floor. A quick transient
+  response preserves the attack of percussive and staccato sources without
+  rounding. When driven, it adds subtle upper-midrange color and bite. The front
+  panel Hi-Z DI input handles direct recording of guitars, basses, and synths.
+  Stepped input gain allows for perfect recall. Features 48V phantom power,
+  phase inversion, and -18dB pad.
+specs: |-
+  - Preamp Type: Solid State
+  - Number of Channels: 1
+  - Transformers: Cinemag (input and output)
+  - Phantom Power: Yes (48V)
+  - Pad: -18dB
+  - Polarity Switch: Yes
+  - Gain: 70dB
+  - Analog Inputs: 1 x XLR (mic/line), 1 x 1/4" TS (Hi-Z/DI, front panel)
+  - Analog Outputs: 1 x 1/4" TRS
+  - Form factor: Half-rack (1U)
+  - Power Source: 24V AC adapter (included)
+  - Dimensions: 9.5" W x 1.75" H x 6.5" D
+  - Weight: 3.2 lbs.
+io:
+  - name: XLR Input
+    signalFlow: input
+    category: audio
+    type: XLR
+    connection: XLR
+    maxConnections: 1
+    position: Left
+  - name: TS 1/4"
+    signalFlow: input
+    category: audio
+    type: TS
+    connection: TS 1/4"
+    maxConnections: 1
+    position: Left
+  - name: TRS 1/4"
+    signalFlow: output
+    category: audio
+    type: TRS
+    connection: TRS 1/4"
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: AC Adapter
+    connection: AC Power
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://blacklionaudio.com/en/downloads/b12a-mkiii-product-brochure
+    type: resource
+    title: B12A mkIII Product Brochure

@@ -1,0 +1,66 @@
+id: plxd7GwEPLDuGD_oS84zr
+name: PBR 8-500
+manufacturer: black-lion-audio
+primaryCategory: patch-bay
+categories:
+  - rack-mount
+url: https://blacklionaudio.com/en/products/pbr-8-500
+prices:
+  - amount: 899
+    currency: USD
+description: 8-slot 500-series rack and PSU with built-in TT/Bantam patchbay
+details: An 8-slot 500-series rack and power supply featuring a patented fully
+  balanced TT/Bantam patchbay that enables unlimited routing options for your
+  500-series hardware without requiring module re-racking. Fits eight 500-series
+  slots into a 3U rack-mountable enclosure with per-channel power regulation.
+  Includes inputs and outputs for every slot plus two Mults for parallel
+  processing, front-panel stereo linking via button press, and internal jumpers
+  for custom linking configurations.
+specs: |-
+  - Slots: 8
+  - Form Factor: 3U rack-mountable
+  - Patchbay Type: Fully balanced TT/Bantam
+  - Power per slot: 400mA per rail (max)
+  - Total power: 1.6A per rail (1.8A non-continuous)
+  - Mults: 2 (single input, dual outputs each)
+  - Stereo Linking: Front-panel button + internal jumpers
+io:
+  - name: TT/Bantam slot inputs
+    signalFlow: input
+    category: audio
+    type: TT
+    connection: TT/Bantam slot inputs
+    maxConnections: 8
+    position: Left
+  - name: TT/Bantam slot outputs
+    signalFlow: output
+    category: audio
+    type: TT
+    connection: TT/Bantam slot outputs
+    maxConnections: 8
+    position: Right
+  - name: TT/Bantam Mult inputs
+    signalFlow: input
+    category: audio
+    type: TT
+    connection: TT/Bantam Mult inputs
+    maxConnections: 2
+    position: Left
+  - name: TT/Bantam Mult outputs
+    signalFlow: output
+    category: audio
+    type: TT
+    connection: TT/Bantam Mult outputs
+    maxConnections: 4
+    position: Right
+  - name: IEC AC power
+    signalFlow: input
+    category: power
+    type: IEC
+    connection: IEC AC power
+    maxConnections: 1
+    position: Bottom
+videos:
+  - provider: youtube
+    videoId: Nrku1m0wJvY
+    title: PBR 8-500 Overview
