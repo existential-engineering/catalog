@@ -143,7 +143,14 @@ function slugOf(file: string): string {
 
 /** Collapse a display name to a comparable key (lowercase, alphanumerics only). */
 function normalizeName(name: string): string {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, "");
+  return (
+    name
+      .toLowerCase()
+      // A trailing "+" marks a distinct SKU (ProFX10v3 vs ProFX10v3+, Prime 4
+      // vs Prime 4+), so preserve it as a "plus" token instead of stripping it.
+      .replace(/\+/g, "plus")
+      .replace(/[^a-z0-9]+/g, "")
+  );
 }
 
 function descriptionText(entry: Product): string {
