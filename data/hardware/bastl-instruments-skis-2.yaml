@@ -18,7 +18,7 @@ io:
   - name: TRIG 1
     signalFlow: input
     category: audio
-    type: trigger
+    type: "cv/gate"
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -32,21 +32,21 @@ io:
   - name: IN 1
     signalFlow: input
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: OUT 1
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: TRIG 2
     signalFlow: input
     category: audio
-    type: trigger
+    type: "cv/gate"
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -60,14 +60,14 @@ io:
   - name: IN 2
     signalFlow: input
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: OUT 2
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top

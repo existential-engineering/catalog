@@ -23,14 +23,14 @@ io:
   - name: Audio L In
     signalFlow: input
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Audio R In
     signalFlow: input
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -79,14 +79,14 @@ io:
   - name: Trigger
     signalFlow: input
     category: audio
-    type: trigger
+    type: "cv/gate"
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: LFO Reset
     signalFlow: input
     category: audio
-    type: trigger
+    type: "cv/gate"
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -128,14 +128,14 @@ io:
   - name: Audio L Out
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Audio R Out
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top

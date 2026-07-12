@@ -37,6 +37,7 @@ export enum ValidationErrorCode {
   E114_INVALID_CURRENCY = "E114",
   E115_INVALID_CONNECTOR_DETAIL = "E115",
   E116_INVALID_LINK_TYPE = "E116",
+  E117_INVALID_IO_TYPE = "E117",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
@@ -186,6 +187,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E116_INVALID_LINK_TYPE]: {
     title: "Invalid link type",
     anchor: "e116-invalid-link-type",
+  },
+  [ValidationErrorCode.E117_INVALID_IO_TYPE]: {
+    title: "Invalid IO type",
+    anchor: "e117-invalid-io-type",
   },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",
