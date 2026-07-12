@@ -142,8 +142,17 @@ function slugOf(file: string): string {
 }
 
 /** Collapse a display name to a comparable key (lowercase, alphanumerics only). */
-function normalizeName(name: string): string {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, "");
+export function normalizeName(name: string): string {
+  return (
+    name
+      .toLowerCase()
+      // A "+" marks a distinct SKU, so preserve it as a "plus" token instead of
+      // stripping it. This covers both a trailing "+" (ProFX10v3 vs ProFX10v3+,
+      // Prime 4 vs Prime 4+) and an internal "+" that precedes more of the name
+      // (Vision+ Console vs Vision Console, SPS-1UW+ MKII vs SPS-1UW MKII).
+      .replace(/\+/g, "plus")
+      .replace(/[^a-z0-9]+/g, "")
+  );
 }
 
 function descriptionText(entry: Product): string {
