@@ -1,0 +1,73 @@
+id: TA2fVpqvDN81lEr3R3-uQ
+name: Vincent
+manufacturer: benson-amps
+primaryCategory: guitar-amplifier
+categories:
+  - amplifier
+url: https://www.bensonamps.com/guitar-amplifiers/vincent
+prices:
+  - amount: 3699
+    currency: USD
+description: The Vincent is our first channel-switching offering with a twist.
+  Instead of a conventional tube preamp creating compression and distortion in
+  the dirt channel, we installed the Vinny 1 Watt circuit (complete with output
+  transformer and dummy load) into the dirt channel for real power tube
+  distortion in the preamp.
+details: |-
+  Point-to-point construction on terminal strips (no circuit, eyelet or turret
+  board). Custom Soursound transformers including wax-potted output transformer.
+  Jupiter Yellow Tone Capacitors. Baltic birch head cabinet.
+
+  Dirt channel uses the Vinny 1 Watt circuit with output transformer and dummy load
+  for real power tube distortion at any volume. Fits Benson 1x12 cabinet, vertical
+  2x12, and horizontal 2x12 cabinet. Handmade in Portland, OR.
+specs: |-
+  - Tubes: 2x EL34, 1x 6L6, 1x EL84, 3x JJ 12AX7
+  - Power: 35 watts
+  - Speaker outputs: 1x 8 ohm, 1x 16 ohm
+  - Channels: foot-switchable clean/dirt channels
+  - Effects loop: pedal-level FX loop
+  - Dimensions (head): 18.5"W x 8"H x 8"D, 23 lbs
+io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: FX Loop Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: FX Loop Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output 8 Ohm
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output 16 Ohm
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Footswitch
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,43 @@
+id: g8CUorwjORJcYSLwXsKKu
+name: Preamp Pedal
+manufacturer: benson-amps
+primaryCategory: preamp
+categories:
+  - pedal
+  - overdrive
+  - boost
+url: https://www.bensonamps.com/guitarpedals/preamp
+prices:
+  - amount: 249
+    currency: USD
+description: FET-based Chimera preamp circuit in pedal form.
+details: |-
+  The Preamp Pedal puts the Benson Chimera preamp circuit into a compact enclosure.
+  FET-based design with Gain, Volume, Treble, and Bass controls. Runs on 9VDC at
+  50mA.
+specs: |-
+  - Power: 9VDC, 50mA (center-negative)
+  - Circuit: FET-based (Chimera circuit)
+  - Controls: Gain, Volume, Treble, Bass
+io:
+  - name: Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top
