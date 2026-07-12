@@ -46,9 +46,19 @@ Prefer primary sources; marketing/retailer copy is a cross-check only.
 
 1. **Manufacturer manual / quick-reference guide (best source).** From the
    product `url`, find the vendor's downloads/support page and locate the User
-   Manual or Quick Reference Guide **PDF**. Download it to the scratchpad with
-   `curl -sL` and open it with the Read tool — the panel/connections diagrams are
-   the ground truth for the jack set AND their physical layout.
+   Manual or Quick Reference Guide **PDF**. Download it to an explicit scratchpad
+   file and open that with the Read tool — the panel/connections diagrams are the
+   ground truth for the jack set AND their physical layout:
+
+   ```bash
+   curl --fail --show-error --location \
+     -o "$SCRATCHPAD/<slug>-manual.pdf" "<manual-url>"
+   ```
+
+   Use `--fail` so an HTTP error stops here instead of silently saving an error
+   page that Read would then open as a bogus "PDF". Confirm it really is a PDF
+   (`file <path>`) before reading. If the download fails, find another source —
+   never fall back to guessing the layout from memory.
    - **Check every panel, not just the rear.** Manuals have separate Front / Rear
      / Side / Top panel sections. Missing inputs almost always mean a panel was
      overlooked (e.g. the Apollo Twin X's Hi-Z and headphone jacks are on the

@@ -61,15 +61,6 @@ io:
     columnPosition: 2
     rowPosition: 1
     description: Front panel.
-  - name: Thunderbolt 3
-    signalFlow: bidirectional
-    category: digital
-    type: thunderbolt
-    connection: thunderbolt 3
-    maxConnections: 1
-    position: Top
-    columnPosition: 1
-    rowPosition: 1
   - name: Optical Input
     signalFlow: input
     category: digital
@@ -78,8 +69,17 @@ io:
     maxConnections: 1
     position: Top
     columnPosition: 1
-    rowPosition: 2
+    rowPosition: 1
     description: Optical TOSLINK carrying ADAT or S/PDIF, switchable in software.
+  - name: Thunderbolt 3
+    signalFlow: bidirectional
+    category: digital
+    type: thunderbolt
+    connection: thunderbolt 3
+    maxConnections: 1
+    position: Top
+    columnPosition: 2
+    rowPosition: 1
   - name: Power Supply Input
     signalFlow: input
     category: power
@@ -90,7 +90,7 @@ io:
     maxConnections: 1
     position: Top
     columnPosition: 2
-    rowPosition: 1
+    rowPosition: 2
     description: 12VDC locking barrel connector; the unit is not bus-powered.
   - name: Line Output 3
     signalFlow: output
