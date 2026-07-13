@@ -848,6 +848,7 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `usb-a`
 - `usb-b`
 - `usb-b-micro`
+- `usb-b-mini`
 - `usb-c`
 - `thunderbolt 1`
 - `thunderbolt 2`
