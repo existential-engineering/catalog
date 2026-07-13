@@ -23,7 +23,9 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 
+import { getCanonicalIOConnection } from "./lib/schema-loader.js";
 import type {
   Accessory,
   CategoryAliasesSchema,
@@ -150,8 +152,11 @@ function isDiscontinued(verification: { status?: string } | undefined): boolean 
  * count. A Scarlett 4i4's two identical mic inputs become one row with
  * `count: 2` rather than two near-duplicate objects carrying names and panel
  * coordinates that no web consumer reads.
+ *
+ * Connections are resolved to their canonical form (same alias map as
+ * build-sqlite.ts) so alias variants of the same connector land in one group.
  */
-function summarizeIo(io: IO[] | undefined): IndexIoGroup[] | undefined {
+export function summarizeIo(io: IO[] | undefined): IndexIoGroup[] | undefined {
   if (!io?.length) return undefined;
 
   const groups = new Map<string, IndexIoGroup>();
@@ -160,7 +165,7 @@ function summarizeIo(io: IO[] | undefined): IndexIoGroup[] | undefined {
     // can't be matched on, so drop it rather than emit an unusable group.
     if (!port.type || !port.signalFlow) continue;
 
-    const connection = port.connection || undefined;
+    const connection = port.connection ? getCanonicalIOConnection(port.connection) : undefined;
     const key = JSON.stringify([port.signalFlow, port.type, connection]);
 
     const existing = groups.get(key);
@@ -323,4 +328,7 @@ function build(): void {
   );
 }
 
-build();
+// Run only when executed as a script (pnpm build:index), not when imported by tests.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  build();
+}
