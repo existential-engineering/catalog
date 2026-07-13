@@ -288,7 +288,8 @@ receiver's BNC ports are `type: rf` (an antenna) with `connection: bnc` — not
 
 **Common mistakes:**
 
-- `bnc`, `xlr`, `trs` -> connectors, not signals. Put them in `connection` and give `type` the actual signal (`rf`, `line`, `mic`)
+- `bnc`, `xlr` -> connectors, not signals. Put them in `connection` and give `type` the actual signal (`rf`, `line`, `mic`)
+- `trs` -> also a connector, and not a valid `connection` value either — use `connection: 1/4-inch` (or `1/8-inch`) and name the signal in `type`
 - `spdif` -> use `s/pdif`
 - `aes3`, `aes-ebu` -> use `aes/ebu`
 - `wordclock`, `word-clock` -> use `word clock`
