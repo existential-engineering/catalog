@@ -192,7 +192,9 @@ const publicLookup: LookupFunction = (hostname, options, callback) => {
  * IPv4 — several catalog vendors publish broken AAAA records that make
  * undici's fetch fail with ECONNREFUSED where IPv4 works fine.
  */
-function requestOnce(url: string): Promise<{ status: number; location?: string }> {
+function requestOnce(
+  url: string
+): Promise<{ status: number; location?: string; bodySample: string }> {
   return new Promise((resolve, reject) => {
     const parsed = new URL(url);
     const lib = parsed.protocol === "http:" ? http : https;
@@ -209,14 +211,32 @@ function requestOnce(url: string): Promise<{ status: number; location?: string }
         },
       },
       (response) => {
-        response.resume();
-        resolve({ status: response.statusCode ?? 0, location: response.headers.location });
+        let bodySample = "";
+        response.on("data", (chunk: Buffer) => {
+          if (bodySample.length < 4096) bodySample += chunk.toString("utf-8");
+          else response.resume();
+        });
+        response.on("end", () =>
+          resolve({
+            status: response.statusCode ?? 0,
+            location: response.headers.location,
+            bodySample,
+          })
+        );
+        response.on("error", reject);
       }
     );
     request.on("timeout", () => request.destroy(new Error("timeout")));
     request.on("error", reject);
   });
 }
+
+/**
+ * Parked/for-sale domains often serve HTTP 200 with a JS bounce to a
+ * parking lander, invisible to status-code checks (wnpsounds-eng.net).
+ */
+const PARKING_SIGNATURES =
+  /window\.location\.href="\/lander"|sedoparking\.com|parkingcrew\.net|hugedomains\.com|domain (is )?for sale|buy this domain|dan\.com\/buy-domain|sav\.com\/domain/i;
 
 interface CheckResult {
   ok: boolean;
@@ -285,6 +305,9 @@ async function checkUrl(url: string, name: string): Promise<CheckResult> {
     }
     if (!redirectStillThisProduct(url, current, name)) {
       return { ok: false, detail: `redirected to different path ${current}`, finalUrl: current };
+    }
+    if (PARKING_SIGNATURES.test(response.bodySample)) {
+      return { ok: false, detail: "parked-domain lander page", finalUrl: current };
     }
     return { ok: true, detail: `HTTP ${response.status}`, finalUrl: current };
   }
