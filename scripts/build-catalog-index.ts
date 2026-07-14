@@ -8,19 +8,29 @@
  * This intentionally mirrors the source-of-truth loading in build-sqlite.ts
  * (same directories, same slug = filename, same category-alias normalization,
  * same manufacturer slug -> name resolution) so consumers stay consistent
- * with catalog.sqlite. It deliberately OMITS the heavy long-form fields
- * (details / specs / io / videos / links).
+ * with catalog.sqlite. It deliberately OMITS the heavy long-form prose fields
+ * (details / specs / videos / links).
+ *
+ * `io` is included, but *grouped* rather than verbatim: the per-port `name`,
+ * `position`, and column/row coordinates matter only to the Studio setup
+ * editor, so carrying them here would multiply the artifact size for no
+ * consumer. Grouping collapses identical ports into a count while preserving
+ * the type/connection/flow triple, which is what makes the data queryable
+ * ("4+ mic inputs", "has ADAT", "MIDI over 5-pin DIN").
  *
  * Run with: pnpm build:index
  */
 
 import fs from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 
+import { getCanonicalIOConnection } from "./lib/schema-loader.js";
 import type {
   Accessory,
   CategoryAliasesSchema,
   Hardware,
+  IO,
   Manufacturer,
   Software,
 } from "./lib/types.js";
@@ -37,6 +47,18 @@ interface IndexPrice {
   currency: string;
 }
 
+/** Identical ports collapsed into a single row with a count. */
+interface IndexIoGroup {
+  /** Signal type, e.g. "mic", "adat", "midi". See schema/io-types.yaml. */
+  type: string;
+  /** Physical connector, e.g. "combo jack", "5-pin din". Omitted if unknown. */
+  connection?: string;
+  /** "input" | "output" | "bidirectional". */
+  flow: string;
+  /** Number of identical ports on the device. */
+  count: number;
+}
+
 interface IndexProduct {
   id: string;
   slug: string;
@@ -48,9 +70,14 @@ interface IndexProduct {
   categories: string[];
   description?: string;
   platforms?: string[];
+  /** Plugin formats, software only: vst3, au, clap, aax… */
+  formats?: string[];
   price?: IndexPrice;
   image?: string;
   url?: string;
+  releaseDate?: string;
+  /** Hardware only. Grouped, not verbatim — see the file header. */
+  io?: IndexIoGroup[];
   discontinued?: boolean;
 }
 
@@ -120,6 +147,38 @@ function isDiscontinued(verification: { status?: string } | undefined): boolean 
   return verification?.status === "discontinued";
 }
 
+/**
+ * Collapse a device's port list into `{type, connection, flow}` groups with a
+ * count. A Scarlett 4i4's two identical mic inputs become one row with
+ * `count: 2` rather than two near-duplicate objects carrying names and panel
+ * coordinates that no web consumer reads.
+ *
+ * Connections are resolved to their canonical form (same alias map as
+ * build-sqlite.ts) so alias variants of the same connector land in one group.
+ */
+export function summarizeIo(io: IO[] | undefined): IndexIoGroup[] | undefined {
+  if (!io?.length) return undefined;
+
+  const groups = new Map<string, IndexIoGroup>();
+  for (const port of io) {
+    // type and signalFlow are what make a port queryable; a row missing either
+    // can't be matched on, so drop it rather than emit an unusable group.
+    if (!port.type || !port.signalFlow) continue;
+
+    const connection = port.connection ? getCanonicalIOConnection(port.connection) : undefined;
+    const key = JSON.stringify([port.signalFlow, port.type, connection]);
+
+    const existing = groups.get(key);
+    if (existing) {
+      existing.count += 1;
+    } else {
+      groups.set(key, { type: port.type, connection, flow: port.signalFlow, count: 1 });
+    }
+  }
+
+  return groups.size > 0 ? [...groups.values()] : undefined;
+}
+
 // =============================================================================
 // BUILD
 // =============================================================================
@@ -165,9 +224,12 @@ function loadCollection(
       categories,
       description: data.description,
       platforms: data.platforms?.length ? data.platforms : undefined,
+      formats: data.formats?.length ? data.formats : undefined,
       price: firstPrice(data.prices),
       image: data.images?.[0],
       url: data.url,
+      releaseDate: data.releaseDate,
+      io: summarizeIo(data.io),
       discontinued: isDiscontinued(data.verification) || undefined,
     });
   }
@@ -266,4 +328,7 @@ function build(): void {
   );
 }
 
-build();
+// Run only when executed as a script (pnpm build:index), not when imported by tests.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  build();
+}
