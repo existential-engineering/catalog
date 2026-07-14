@@ -52,6 +52,12 @@ interface Promotion {
   newUrl: string;
   /** URL as it appears in the promoted `links` entry (pre-cleanup). */
   rawLinkUrl: string;
+  /**
+   * True when the candidate was discovered in this file's links array, so
+   * removing that entry must succeed. Mapping-mode URLs come from external
+   * research and usually have no links entry to remove.
+   */
+  linkRemovalExpected: boolean;
 }
 
 interface ResearchItem {
@@ -77,9 +83,19 @@ function squash(text: string): string {
 function titleMatchesName(name: string, title: string | undefined): boolean {
   if (!title) return false;
   const a = squash(name);
-  const b = squash(title);
-  if (a.length < 4 || b.length < 4) return a === b;
-  return a.includes(b) || b.includes(a);
+  // Vendor decoration after a delimiter doesn't disqualify a title
+  // ("Big FrEQ - Empirical Labs"): try each delimited segment too.
+  const candidates = [title, ...title.split(/\s+[-–—|·»]\s+/)];
+  return candidates.some((candidate) => {
+    const b = squash(candidate);
+    if (a.length < 4 || b.length < 4) return a === b;
+    if (a === b) return true;
+    // Containment counts only with near-complete overlap; otherwise a
+    // dependency title like "EZdrummer" matches every "... for EZdrummer
+    // ..." pack name, and vice versa.
+    const [short, long] = a.length < b.length ? [a, b] : [b, a];
+    return long.includes(short) && short.length >= long.length * 0.6;
+  });
 }
 
 /** Strip tracking artifacts (utm queries, KVR referral path segments). */
@@ -282,7 +298,7 @@ function redirectStillThisProduct(original: string, final: string, name: string)
 async function checkUrl(url: string, name: string): Promise<CheckResult> {
   let current = url;
   for (let hop = 0; hop < MAX_REDIRECTS; hop++) {
-    let response: { status: number; location?: string };
+    let response: { status: number; location?: string; bodySample: string };
     try {
       response = await requestOnce(current);
     } catch (error) {
@@ -392,6 +408,12 @@ function removeLinkEntry(content: string, url: string): string {
 
 function applyPromotion(content: string, promotion: Promotion): string {
   let result = removeLinkEntry(content, promotion.rawLinkUrl);
+  if (promotion.linkRemovalExpected && result === content) {
+    // The candidate came from this file's links array, so failing to find
+    // it means the YAML layout defeated the text edit — bail rather than
+    // leave a duplicate of the new canonical url behind.
+    throw new Error(`promoted link entry not found in ${promotion.file}`);
+  }
   result = result.replace(/^url: .*$/m, () => `url: ${promotion.newUrl}`);
   const parsed = parseYaml(result);
   if (parsed.url !== promotion.newUrl) {
@@ -435,6 +457,7 @@ async function main(): Promise<void> {
         oldUrl: doc.url,
         newUrl: cleanUrl(item.url),
         rawLinkUrl: item.url,
+        linkRemovalExpected: false,
       });
     }
   } else {
@@ -461,6 +484,7 @@ async function main(): Promise<void> {
             oldUrl: doc.url,
             newUrl: cleanUrl(candidate.url),
             rawLinkUrl: candidate.url,
+            linkRemovalExpected: true,
           });
         } else {
           researchPool.push({
