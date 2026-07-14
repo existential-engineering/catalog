@@ -41,14 +41,19 @@ connections:
   - bnc
   - firewire 400
   - ethernet
+  - ethercon # locking Neutrik ethernet (e.g. SLink/gigaACE/Dante ports)
+  - hdmi
   - lightning
   - aes/ebu
 
   # Multi-pin connectors
   - 2-pin
+  - db9 # 9-pin D-sub (RS-232C serial control)
   - db25
   - dt12 37-pin
   - edac
+  - idc # ribbon/box header (e.g. Eurorack bus power)
+  - pin-header # bare 0.1" pins (hobby-servo outputs, sensor patchbays)
   - speakon
 
   # Speaker terminals
@@ -58,6 +63,7 @@ connections:
 
   # Power connectors
   - barrel
+  - iec-c6
   - iec-c14
   - iec-c20
   - powercon
@@ -67,4 +73,5 @@ connections:
 
   # Misc
   - built-in
+  - card-slot # empty option-card bay (fitted cards present their own connectors)
   - pin

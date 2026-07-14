@@ -54,35 +54,35 @@ io:
     signalFlow: input
     category: audio
     type: mic
-    connection: phoenix
+    connection: euroblock
     maxConnections: 8
     position: Bottom
   - name: Local Mic/Line Inputs (9-12)
     signalFlow: input
     category: audio
     type: mic
-    connection: phoenix
+    connection: euroblock
     maxConnections: 4
     position: Bottom
   - name: Local Line Outputs (1-8, relay protected)
     signalFlow: output
     category: audio
     type: line
-    connection: phoenix
+    connection: euroblock
     maxConnections: 8
     position: Bottom
   - name: Local Line Outputs (9-12, relay protected)
     signalFlow: output
     category: audio
     type: line
-    connection: phoenix
+    connection: euroblock
     maxConnections: 4
     position: Bottom
   - name: SLink Port (128x128 audio expansion / DT168 / DT164-W / ME Personal Mixing)
     signalFlow: bidirectional
     category: digital
     type: dante
-    connection: etherCON
+    connection: ethercon
     maxConnections: 1
     position: Bottom
   - name: "I/O Port (option card slot: Dante 96kHz / MADI / Waves / gigaACE, up to
@@ -90,7 +90,7 @@ io:
     signalFlow: bidirectional
     category: digital
     type: dante
-    connection: etherCON
+    connection: ethercon
     maxConnections: 1
     position: Bottom
   - name: Network Port (TCP/IP control, IP remote controllers, 3rd party integration)
@@ -104,21 +104,21 @@ io:
     signalFlow: bidirectional
     category: digital
     type: gpio
-    connection: phoenix
+    connection: euroblock
     maxConnections: 1
     position: Bottom
   - name: AC Mains Input (IEC)
     signalFlow: input
     category: power
     type: power
-    connection: iec
+    connection: iec-c14
     maxConnections: 1
     position: Bottom
   - name: DC Backup Power Input (12V)
     signalFlow: input
     category: power
     type: power
-    connection: phoenix
+    connection: euroblock
     maxConnections: 1
     position: Bottom
 links:
