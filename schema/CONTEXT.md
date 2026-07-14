@@ -805,6 +805,7 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `headphone`
 - `phono`
 - `speaker-level`
+- `insert`
 - `midi`
 - `s/pdif`
 - `adat`
@@ -821,7 +822,16 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `snake`
 - `expression`
 - `cv/gate`
+- `clock`
+- `gpio`
+- `rf`
+- `bluetooth`
+- `wifi`
+- `hdmi`
+- `video`
 - `power`
+- `ground`
+- `proprietary`
 
 ### IO Connections (advisory — unknown values produce warnings)
 
@@ -838,6 +848,7 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `usb-a`
 - `usb-b`
 - `usb-b-micro`
+- `usb-b-mini`
 - `usb-c`
 - `thunderbolt 1`
 - `thunderbolt 2`

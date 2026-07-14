@@ -28,11 +28,11 @@ A required field is missing from the entry.
 
 **Required fields by type:**
 
-| Entry Type   | Required Fields                | Recommended Fields                              |
-| ------------ | ------------------------------ | ----------------------------------------------- |
-| Manufacturer | `slug`, `name`                 | `url`                                           |
-| Software     | `slug`, `name`, `manufacturer` | `primaryCategory`, `platforms`, `identifiers`   |
-| Hardware     | `slug`, `name`, `manufacturer` | `primaryCategory`, `description`                |
+| Entry Type   | Required Fields                | Recommended Fields                            |
+| ------------ | ------------------------------ | --------------------------------------------- |
+| Manufacturer | `slug`, `name`                 | `url`                                         |
+| Software     | `slug`, `name`, `manufacturer` | `primaryCategory`, `platforms`, `identifiers` |
+| Hardware     | `slug`, `name`, `manufacturer` | `primaryCategory`, `description`              |
 
 **Fix:** Add the missing field to your YAML file.
 
@@ -73,10 +73,10 @@ The slug doesn't match the required pattern.
 
 ```yaml
 # Wrong
-slug: Serum          # uppercase
-slug: -serum         # leading hyphen
-slug: serum-         # trailing hyphen
-slug: serum--x       # double hyphen
+slug: Serum # uppercase
+slug: -serum # leading hyphen
+slug: serum- # trailing hyphen
+slug: serum--x # double hyphen
 
 # Correct
 slug: serum
@@ -96,8 +96,8 @@ A URL field is malformed.
 
 ```yaml
 # Wrong
-url: xferrecords.com           # missing protocol
-url: htp://xferrecords.com     # typo in protocol
+url: xferrecords.com # missing protocol
+url: htp://xferrecords.com # typo in protocol
 
 # Correct
 url: https://xferrecords.com
@@ -217,6 +217,7 @@ The `category` field in an IO entry has an invalid value.
 **Valid values:** `audio`, `midi`, `digital`, `data`, `control`, `power`, `cv`
 
 **Common mistakes:**
+
 - `instrument` → use `audio`
 - `headphone` → use `audio`
 - `usb` → use `data`
@@ -273,6 +274,32 @@ The `type` field in a link entry is not a valid value.
 - `versions` -> use `product`
 
 **Fix:** Use one of the valid link types listed above.
+
+---
+
+### E117: Invalid IO Type
+
+The `type` field in an IO entry is not in `schema/io-types.yaml`.
+
+`type` is **what the signal is**. `connection` is **the physical connector**.
+Putting a connector name in `type` is the most common mistake here: a wireless
+receiver's BNC ports are `type: rf` (an antenna) with `connection: bnc` — not
+`type: bnc`.
+
+**Common mistakes:**
+
+- `bnc`, `xlr` -> connectors, not signals. Put them in `connection` and give `type` the actual signal (`rf`, `line`, `mic`)
+- `trs` -> also a connector, and not a valid `connection` value either — use `connection: 1/4-inch` (or `1/8-inch`) and name the signal in `type`
+- `spdif` -> use `s/pdif`
+- `aes3`, `aes-ebu` -> use `aes/ebu`
+- `wordclock`, `word-clock` -> use `word clock`
+- `audio`, `analog`, `digital`, `other` -> too vague to query. Name the signal (`line`, `mic`, `cv/gate`)
+- `mic/line`, `mic-line` -> a combo input is `mic`; the `connection` carries `combo jack`
+
+**Fix:** Use a value from `schema/io-types.yaml`. If a signal type is genuinely
+missing, add it there. Do **not** alias it in a consumer and do not fall back to a
+vague value — the vocabulary is a small closed enum on purpose, and an alias makes
+the wrong value canonical forever.
 
 ---
 
@@ -353,7 +380,7 @@ io:
 translations:
   de:
     io:
-      - originalName: Headphones Out  # Wrong - doesn't match "Headphone Out"
+      - originalName: Headphones Out # Wrong - doesn't match "Headphone Out"
         name: Kopfhörerausgang
 ```
 
@@ -438,12 +465,12 @@ A plugin identifier doesn't match the expected format.
 
 **Expected formats:**
 
-| Format | Pattern            | Example                            |
-| ------ | ------------------ | ---------------------------------- |
-| `au`   | Reverse domain     | `com.xferrecords.Serum`            |
-| `vst3` | Reverse domain     | `com.native-instruments.Massive`   |
-| `aax`  | 4-letter PACE code | `XfRc`                             |
-| `clap` | Reverse domain     | `com.u-he.Diva`                    |
+| Format | Pattern            | Example                          |
+| ------ | ------------------ | -------------------------------- |
+| `au`   | Reverse domain     | `com.xferrecords.Serum`          |
+| `vst3` | Reverse domain     | `com.native-instruments.Massive` |
+| `aax`  | 4-letter PACE code | `XfRc`                           |
+| `clap` | Reverse domain     | `com.u-he.Diva`                  |
 
 **Fix:** Update the identifier to match the expected format for that plugin type.
 

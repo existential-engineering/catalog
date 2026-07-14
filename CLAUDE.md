@@ -48,8 +48,8 @@ Note: Slugs are derived from filenames, not stored in the YAML files.
 **`manufacturer`** must be a slug reference (the manufacturer's filename without `.yaml`), not the display name:
 
 ```yaml
-manufacturer: hologram-electronics  # correct (slug)
-manufacturer: Hologram Electronics   # wrong (display name)
+manufacturer: hologram-electronics # correct (slug)
+manufacturer: Hologram Electronics # wrong (display name)
 ```
 
 **`description`** uses flow scalar format (Prettier auto-wraps long lines):
@@ -95,15 +95,21 @@ io:
 
 **IO field validation** uses a two-tier system:
 
-- **Strict (errors, blocks CI):** `signalFlow`, `category`, `position`, `price.currency`
+- **Strict (errors, blocks CI):** `signalFlow`, `category`, `type`, `position`, `price.currency`
   - `signalFlow`: input, output, bidirectional
   - `category`: audio, midi, digital, power
+  - `type`: closed vocabulary in `schema/io-types.yaml` — unknown values fail with E117
   - `position`: Top, Bottom, Left, Right
   - `currency`: ISO 4217 codes (USD, EUR, GBP, etc.) — see `schema/currencies.yaml`
-- **Advisory (warnings, non-blocking):** `type`, `connection`, `link.type`
-  - Known values listed in `schema/io-types.yaml`, `schema/io-connections.yaml`, `schema/link-types.yaml`
+- **Advisory (warnings, non-blocking):** `connection`, `link.type`
+  - Known values listed in `schema/io-connections.yaml`, `schema/link-types.yaml`
   - Unknown values produce warnings in `pnpm validate` output
   - Add new values to schema files via PR when they're confirmed valid
+
+**The vocabularies are meant to grow.** Enforcement catches mistakes (connectors
+in `type`, vague values); it must not force-fit genuinely new signals or
+connectors onto near-miss values. When an import surfaces a legitimate new value
+(verify via manual/photos), add it to the schema vocabulary in the same PR.
 
 **Semantic distinction:** `type` describes the signal characteristic (line, instrument, headphone, midi, usb, expression). `connection` describes the physical connector (1/4-inch, xlr, usb-c, 5-pin din). Don't swap them.
 
@@ -171,7 +177,7 @@ Use `supersedes` to link product generations, form factor variants, and major ve
 # pro-c-3.yaml
 name: Pro-C 3
 manufacturer: fabfilter
-supersedes: 7QMeWge0fOrmQz_oVLCKk  # ID of Pro-C 2
+supersedes: 7QMeWge0fOrmQz_oVLCKk # ID of Pro-C 2
 identifiers:
   au: com.fabfilter.Pro-C.AU.3
 ```
@@ -182,7 +188,7 @@ To find the ID of a product you want to reference, open its YAML file and look f
 
 ```yaml
 # Example from pro-c-2.yaml
-id: 7QMeWge0fOrmQz_oVLCKk  # ← Use this value for supersedes
+id: 7QMeWge0fOrmQz_oVLCKk # ← Use this value for supersedes
 name: Pro-C 2
 manufacturer: fabfilter
 ```
