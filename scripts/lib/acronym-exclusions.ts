@@ -28,28 +28,53 @@
  */
 const ACRONYM_FALSE_POSITIVES: ReadonlySet<string> = new Set([
   // Common English words used as stylized product names
-  "amp",
-  "art",
-  "map",
-  "one",
   "ahead",
+  "aim",
+  "amp",
+  "arp", // musician shorthand for arpeggiator (Homegrown Sounds ARP)
+  "art",
+  "atom",
   "atone",
   "base",
+  "basil",
   "bold",
+  "crust",
+  "fame",
   "fire",
   "hype",
   "iron",
   "lion",
+  "lofi", // "lo-fi" (JST LOFI)
+  "map",
   "mood",
+  "one",
   "peel",
+  "polar",
   "silo",
+  "sine",
   "tails",
   "tens",
+  "tom", // tom drum (Sequential TOM)
   "tonic",
   "triad",
+  // Foreign / borrowed words used as product names
+  "aum", // Sanskrit syllable (Kymatica AUM)
+  "ciao", // Italian greeting (Bastl CIAO!)
+  "mahi", // mahi-mahi fish (Manley Mahi)
+  "zhega", // Bulgarian for "scorching heat" (Antelope ZHEGA)
   // Personal names / stylized brand names
+  "abc", // Bastl ABC — named for its A–F channel letters
+  "crbn", // Audeze CRBN — vowel-less "carbon"
+  "iroi", // Befaco IROI — tail of "Oneiroi"
+  "ivgi", // Klanghelm coinage
+  "lcast", // MeterPlugs L(oudness)+CAST portmanteau
   "lisa",
+  "midiq", // WA Production MIDI+Q portmanteau, pronounced "midi-cue"
   "miya",
+  "mjuc", // Klanghelm coinage
+  "taip", // Baby Audio phonetic respelling of "tape"
+  "xo", // XLN Audio brand styling
+  "xs", // Future Retro pun on "excess"
 ]);
 
 /**
