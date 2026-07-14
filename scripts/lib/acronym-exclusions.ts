@@ -78,12 +78,41 @@ const ACRONYM_FALSE_POSITIVES: ReadonlySet<string> = new Set([
 ]);
 
 /**
+ * True acronym / letter-name products that have been researched (manufacturer
+ * pages, manuals, period reviews) with no documented expansion or alternate
+ * form worth indexing — the name and manufacturer columns already cover them
+ * in full-text search. Suppressed so W127 doesn't re-prompt the same dead-end
+ * research. Remove an entry here if a real expansion or nickname surfaces.
+ */
+const RESEARCHED_NO_EXPANSION: ReadonlySet<string> = new Set([
+  "adm", // Avantone Pro ADM snare mic
+  "afeq", // Inferior Sound AFEQ
+  "bcg", // Code Audio BCG
+  "djs", // Pioneer DJS software
+  "dmx", // Oberheim DMX
+  "dsr", // Black Salt Audio DSR
+  "dsx", // Oberheim DSX
+  "dx", // Oberheim DX
+  "iieq", // DDMF IIEQ
+  "mfd", // ALM Busy Circuits MFD
+  "mfx", // ALM Busy Circuits MFX
+  "nv", // Numark NV
+  "src", // Antelope Audio SRC
+  "stvc", // Waldorf STVC
+  "vfx", // Ensoniq VFX
+  "vumt", // Klanghelm VUMT
+]);
+
+/**
  * True if an entry name should trigger the W127_MISSING_SEARCH_TERMS warning:
- * short (2-5 chars), entirely uppercase letters, and not on the false-positive list.
+ * short (2-5 chars), entirely uppercase letters, and not on the false-positive
+ * or researched-no-expansion lists.
  */
 export function looksLikeAcronymName(name: string): boolean {
   const trimmed = name.trim();
   if (!/^[A-Z]{2,5}$/.test(trimmed)) return false;
-  if (ACRONYM_FALSE_POSITIVES.has(trimmed.toLowerCase())) return false;
+  const lower = trimmed.toLowerCase();
+  if (ACRONYM_FALSE_POSITIVES.has(lower)) return false;
+  if (RESEARCHED_NO_EXPANSION.has(lower)) return false;
   return true;
 }
