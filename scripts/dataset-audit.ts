@@ -30,6 +30,11 @@
  *                          software/hardware entries; content is checked here.)
  *   3. orphan-manufacturer — a manufacturer referenced by zero products.
  *   4. thin-description  — description present but suspiciously short.
+ *   5. aggregator-url    — canonical `url` points at an aggregator
+ *                          (KVR, ModularGrid, ...) instead of an official
+ *                          page. Fix via scripts/promote-canonical-urls.ts
+ *                          or manual research; acceptable only when no
+ *                          official page exists.
  *
  * Findings with `needsLlmReview: true` are collected into `flagged`, the
  * seam handed to Tier 2. Deterministic findings (broken refs, orphans) are
@@ -43,6 +48,7 @@
 
 import path from "node:path";
 import { z } from "zod";
+import { isAggregatorUrl, isManufacturerOwnDomain, urlHost } from "./lib/aggregator-domains.js";
 import type { Accessory, Content, Hardware, Manufacturer, Software } from "./lib/types.js";
 import { DATA_DIR, getYamlFiles, loadYamlFile } from "./lib/utils.js";
 
@@ -69,6 +75,7 @@ const CheckSchema = z.enum([
   "broken-compatible",
   "orphan-manufacturer",
   "thin-description",
+  "aggregator-url",
 ]);
 
 const SeveritySchema = z.enum(["blocking", "warning", "info"]);
@@ -110,6 +117,7 @@ const DatasetAuditSchema = z.object({
       brokenCompatible: z.number(),
       orphanManufacturer: z.number(),
       thinDescription: z.number(),
+      aggregatorUrl: z.number(),
     }),
     flagged: z.number(),
   }),
@@ -314,6 +322,48 @@ function checkThinDescriptions(products: LoadedProduct[]): Finding[] {
   return findings;
 }
 
+/**
+ * Canonical `url` pointing at an aggregator/marketplace instead of an
+ * official page. Deterministic to detect; fixing needs the promote
+ * script or manual research, so these are not Tier-2 flagged. Skipped
+ * when the aggregator domain is the manufacturer's own (best-service).
+ */
+function checkAggregatorUrls(dataset: Dataset): Finding[] {
+  const findings: Finding[] = [];
+  const flag = (
+    collection: string,
+    name: string,
+    manufacturer: string | undefined,
+    file: string,
+    url: string
+  ): void => {
+    findings.push({
+      check: "aggregator-url",
+      severity: "info",
+      needsLlmReview: false,
+      collection,
+      name,
+      manufacturer,
+      files: [relPath(file)],
+      detail:
+        `Canonical url points at aggregator ${urlHost(url)} — promote an official page ` +
+        "(scripts/promote-canonical-urls.ts) or confirm none exists.",
+    });
+  };
+  for (const p of dataset.products) {
+    const url = (p.entry as { url?: string }).url;
+    if (!url || !isAggregatorUrl(url)) continue;
+    if (p.entry.manufacturer && isManufacturerOwnDomain(p.entry.manufacturer, url)) continue;
+    flag(p.type, p.entry.name, p.entry.manufacturer, p.file, url);
+  }
+  for (const m of dataset.manufacturers) {
+    const url = m.entry.url;
+    if (!url || !isAggregatorUrl(url) || isManufacturerOwnDomain(m.slug, url)) continue;
+    flag("manufacturers", m.entry.name, undefined, m.file, url);
+  }
+  return findings;
+}
+
 function computeCoverage(
   products: LoadedProduct[]
 ): Record<string, z.infer<typeof CoverageSchema>> {
@@ -356,6 +406,7 @@ function generateAudit(fast: boolean): DatasetAudit {
     ...checkBrokenCompatible(dataset.products, dataset.hostSlugs),
     ...checkOrphanManufacturers(dataset),
     ...(fast ? [] : checkThinDescriptions(dataset.products)),
+    ...checkAggregatorUrls(dataset),
   ];
 
   // The Tier-2 seam: only ambiguous findings, highest severity first, capped.
@@ -369,6 +420,7 @@ function generateAudit(fast: boolean): DatasetAudit {
     brokenCompatible: findings.filter((f) => f.check === "broken-compatible").length,
     orphanManufacturer: findings.filter((f) => f.check === "orphan-manufacturer").length,
     thinDescription: findings.filter((f) => f.check === "thin-description").length,
+    aggregatorUrl: findings.filter((f) => f.check === "aggregator-url").length,
   };
 
   return {
@@ -405,6 +457,7 @@ function printConsoleReport(audit: DatasetAudit): void {
   console.log(`  Broken compatibleWith:  ${audit.summary.byCheck.brokenCompatible}`);
   console.log(`  Orphan manufacturers:   ${audit.summary.byCheck.orphanManufacturer}`);
   console.log(`  Thin descriptions:      ${audit.summary.byCheck.thinDescription}`);
+  console.log(`  Aggregator urls:        ${audit.summary.byCheck.aggregatorUrl}`);
   console.log(`  Flagged for LLM review: ${audit.summary.flagged}`);
   console.log();
 
@@ -424,6 +477,7 @@ function printConsoleReport(audit: DatasetAudit): void {
     { title: "🔗 Broken compatibleWith references", check: "broken-compatible", limit: 30 },
     { title: "🏷  Orphan manufacturers", check: "orphan-manufacturer", limit: 20 },
     { title: "📝 Thin descriptions", check: "thin-description", limit: 20 },
+    { title: "🔀 Aggregator canonical urls", check: "aggregator-url", limit: 20 },
   ];
 
   for (const { title, check, limit } of groups) {
