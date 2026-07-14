@@ -15,10 +15,31 @@ specs: |-
   - Mono 4 Ohm / Mono 16 Ohm / Stereo 8 Ohm (L/R)
   - Matched pairing for the Silverline Deluxe Head
 io:
-  - name: Speaker Input (Mono 4 Ohm / 16 Ohm or Stereo 8 Ohm L/R)
+  - name: Speaker Input Mono 4 Ohm
     signalFlow: input
     category: audio
-    type: line
+    type: speaker-level
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Speaker Input Mono 16 Ohm
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Speaker Input Stereo Left 8 Ohm
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Speaker Input Stereo Right 8 Ohm
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
     position: Right

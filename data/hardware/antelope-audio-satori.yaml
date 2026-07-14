@@ -83,12 +83,19 @@ io:
     connection: xlr
     maxConnections: 1
     position: Right
-  - name: D-Sub 25 Analog Connectors
-    signalFlow: bidirectional
+  - name: D-Sub 25 Analog Input (8 channels, Stereo Inputs 5-8)
+    signalFlow: input
     category: audio
     type: line
-    connection: 1/4-inch
-    maxConnections: 8
+    connection: db25
+    maxConnections: 1
+    position: Right
+  - name: D-Sub 25 Analog Thru Output (8 channels, mirrors Stereo Inputs 5-8)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 1
     position: Right
   - name: Balanced XLR/TRS Analog Stereo Output 1 L
     signalFlow: output
