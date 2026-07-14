@@ -37,22 +37,29 @@ io:
     signalFlow: output
     category: audio
     type: headphone
-    connection: trs-1-4
+    connection: 1/4-inch
     maxConnections: 1
     position: Right
   - name: Headphone Out (3.5mm mini-jack)
     signalFlow: output
     category: audio
     type: headphone
-    connection: trs-3-5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Right
-  - name: Network (ME audio + control, PoE)
-    signalFlow: bidirectional
+  - name: Link In (ME audio + control, PoE)
+    signalFlow: input
     category: digital
     type: ethernet
-    connection: rj45
-    maxConnections: 2
+    connection: ethercon
+    maxConnections: 1
+    position: Left
+  - name: Link Out (daisy-chain to next mixer)
+    signalFlow: output
+    category: digital
+    type: ethernet
+    connection: ethercon
+    maxConnections: 1
     position: Left
 links:
   - type: product

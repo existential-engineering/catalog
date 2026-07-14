@@ -59,12 +59,26 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - name: Speaker Output (1 x 16 Ohm, 1 x 8 Ohm, 2 x 16 Ohm)
+  - name: Speaker Output (1x16 Ohm)
     signalFlow: output
     category: audio
-    type: line
+    type: speaker-level
     connection: 1/4-inch
-    maxConnections: 3
+    maxConnections: 1
+    position: Top
+  - name: Speaker Output 1 (1x8 Ohm or 2x16 Ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Speaker Output 2 (1x8 Ohm or 2x16 Ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
     position: Top
   - name: Footswitch Jack
     signalFlow: input

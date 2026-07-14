@@ -30,7 +30,7 @@ io:
     signalFlow: input
     category: audio
     type: mic
-    connection: phoenix
+    connection: euroblock
     maxConnections: 4
     position: Left
   - name: Front Mic Input (MIC1 selectable)
@@ -40,60 +40,109 @@ io:
     connection: xlr
     maxConnections: 1
     position: Right
-  - name: Stereo Line Inputs
+  - name: Stereo Line Input 1 L
     signalFlow: input
     category: audio
     type: line
     connection: rca
-    maxConnections: 4
+    maxConnections: 1
+    position: Left
+  - name: Stereo Line Input 1 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Stereo Line Input 2 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Stereo Line Input 2 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Stereo Line Input 3 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Stereo Line Input 3 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Stereo Line Input 4 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: Stereo Line Input 4 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
     position: Left
   - name: Front AUX Input (overrides Stereo Input 4)
     signalFlow: input
     category: audio
     type: line
-    connection: trs-3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Right
   - name: Stereo Zone Outputs (mono selectable via internal jumper)
     signalFlow: output
     category: audio
     type: line
-    connection: phoenix
+    connection: euroblock
     maxConnections: 2
     position: Left
   - name: Mono Zone Outputs
     signalFlow: output
     category: audio
     type: line
-    connection: phoenix
+    connection: euroblock
     maxConnections: 2
     position: Left
   - name: Paging Contact Input
     signalFlow: input
     category: digital
     type: gpio
-    connection: phoenix
+    connection: euroblock
     maxConnections: 1
     position: Left
   - name: Alarm Contact Input
     signalFlow: input
     category: digital
     type: gpio
-    connection: phoenix
+    connection: euroblock
     maxConnections: 1
     position: Left
   - name: PL-14 Remote (CAT5, daisy-chainable)
     signalFlow: bidirectional
     category: digital
     type: ethernet
-    connection: rj45
+    connection: ethernet
     maxConnections: 1
     position: Left
   - name: Analogue Remote Inputs (0-10V music source and level control)
     signalFlow: input
     category: digital
     type: gpio
-    connection: phoenix
+    connection: euroblock
     maxConnections: 2
     position: Left
   - name: AC Mains Inlet (100-240V, 50/60Hz)
