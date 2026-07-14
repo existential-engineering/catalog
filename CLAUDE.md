@@ -43,6 +43,15 @@ Optional fields: categories (array), url, description
 
 Note: Slugs are derived from filenames, not stored in the YAML files.
 
+**`url`** must be the maker's own official page (product page preferred,
+homepage acceptable). Never point it at an aggregator or marketplace —
+KVR, ModularGrid, Plugin Boutique, Best Service, etc. (list in
+`scripts/lib/aggregator-domains.ts`) — unless the maker has no official
+page anywhere (dead vendor, KVR-only freeware). Aggregator pages belong
+in `links` at most. `pnpm dataset:audit` flags violations
+(aggregator-url); `scripts/promote-canonical-urls.ts` fixes the ones
+that already carry an official link.
+
 ## Field Formatting Conventions
 
 **`manufacturer`** must be a slug reference (the manufacturer's filename without `.yaml`), not the display name:
