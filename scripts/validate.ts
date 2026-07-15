@@ -504,6 +504,7 @@ const ManufacturerSchema = z.object({
   name: z.string().min(1, "Name is required"),
   companyName: z.string().optional(),
   parentCompany: z.string().optional(),
+  defunct: z.boolean().optional(),
   url: z.url().optional(),
   description: MarkdownSchema,
   searchTerms: z.array(z.string()).optional(),

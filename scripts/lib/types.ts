@@ -96,6 +96,14 @@ export interface Manufacturer {
   name: string;
   companyName?: string;
   parentCompany?: string;
+  /**
+   * True when the company no longer exists AND nothing it made is still
+   * produced under this brand. Products of defunct manufacturers are
+   * auto-tagged `discontinued` by `apply-discontinued-tags.ts`. Do not
+   * set for revived brands (Oberheim, Crumar) or brands that may gain
+   * current products under the same slug.
+   */
+  defunct?: boolean;
   url?: string;
   description?: string;
   searchTerms?: string[];

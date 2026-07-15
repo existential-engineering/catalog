@@ -1,0 +1,89 @@
+id: MnI6URb-lx5YDZfwqy4Ix
+name: Gravitas
+manufacturer: chase-bliss
+primaryCategory: tremolo
+categories:
+  - pedal
+  - effect
+  - modulation
+  - analog
+  - discontinued
+description: Harmonic and/or standard tremolo, pure analog warmth. This tremolo
+  pedal features an all-analog signal path that can do any variety or shape of
+  standard volume modulation, harmonic tremolo (inspired by vintage Brownface)
+  or both simultaneously for a truly unique and beautiful tremolo sound that
+  sits just perfectly in a mix.
+details: |-
+  Gravitas is an analog tremolo pedal with an all-analog signal path that can produce any variety or shape of standard volume modulation, harmonic tremolo (inspired by vintage Brownface) or both simultaneously. The first thing the guitar hits in the signal path is a transparent, discrete class A clean boost circuit, followed by buffering and tone shaping with Analog Devices AD823 op-amps. Every knob and switch is connected to a digital brain while the guitar signal stays 100% analog the entire time and never gets digitally processed, opening up effects and features never before offered in analog stompboxes.
+
+  The Drive (Ramp) knob is the gain control of a very clean, transparent boost (18V operation is advised for more headroom) and also sets the ramp time for parameter ramping. Volume, Tone, Rate, Depth, and Sway knobs shape the effect; the Tone circuit is also the basis of the harmonic tremolo, achieved by modulating between high and low pass filters. Depth, Sway, and the left and right wave shape toggles comprise the ModuShape engine, with sine, triangle, or square shapes selectable for each half of the modulation wave.
+
+  With the Mode dip switch engaged, the upper toggle becomes an S-B-H switch: S for standard tremolo, H for harmonic tremolo, and B for both simultaneously. Otherwise it selects tap divisions of 1-2-4, or 3-6-8 via a rear dip switch. The Tap stomp sets tempo (always honoring the last two stomps), the Bypass stomp is true bypass via a relay with an optional momentary mode, and the lower toggle recalls two savable preset slots.
+
+  Sixteen rear dip switches let the Volume, Tone, Rate, Depth, and Sway parameters be ramped individually or simultaneously — with rise or fall, bounce (back-and-forth modulation), and sweep-range options — or controlled by an expression pedal or CV. Plugging into the EXP/CV jack automatically switches the pedal from ramping to expression/CV control, and with no parameters selected the jack controls the waveform directly for an analog whammy-type effect.
+
+  Connections are a 1/4-inch mono input and output, a 1/4-inch TRS Tap/MIDI jack that works as a tap tempo input or output and interfaces with an Empress Effects Midibox for MIDI control, and a 1/4-inch TRS EXP/CV jack (tip to wiper, or 0-5V CV on tip). The pedal consumes about 20mA and runs on an alkaline 9V battery or a standard 2.1mm 9V-18V DC center negative adapter. Input impedance is 1M and output impedance is less than 1k.
+specs: |-
+  - 100% analog signal path with digital control
+  - Standard tremolo, harmonic tremolo (vintage Brownface-inspired), or both simultaneously
+  - Discrete class A clean boost input stage
+  - Analog Devices AD823 op-amps for buffering and tone shaping
+  - ModuShape wave shaping: sine, triangle, or square for each half of the modulation wave
+  - Drive (Ramp) knob controls boost gain and ramp time
+  - Volume, Tone, Rate, Depth, and Sway controls
+  - Tap tempo with 1/2/4 or 3/6/8 divisions
+  - 2 preset slots
+  - Ramping or expression/CV control of Volume, Tone, Rate, Depth, and Sway via 16 dip switches
+  - Direct waveform control via expression/CV for analog whammy-type effect
+  - MIDI via Tap/MIDI jack with Empress Effects Midibox
+  - True bypass via relay, with momentary bypass option
+  - Input impedance 1M, output impedance less than 1k
+  - Power: ~20mA, 9V battery or 2.1mm 9V-18V DC center negative adapter
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Tap/MIDI
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Exp/CV
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top
+releaseDate: "2015"
+releaseDateYearOnly: true
+links:
+  - type: resource
+    title: Gravitas Manual
+    url: https://www.chasebliss.com/s/Gravitas_Manual_Pedal_Chase-Bliss.pdf
+  - type: resource
+    title: Gravitas MIDI Manual (archived)
+    url: https://web.archive.org/web/20170706134234/http://chaseblissaudio.com/wp-content/uploads/2016/08/CBA_GravitasMidiSheet-Web.pdf
+videos:
+  - videoId: pRoWi-p25EQ
+    title: Chase Bliss - Gravitas

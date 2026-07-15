@@ -319,6 +319,11 @@ const schemas: Record<string, unknown> = {
       name: sharedFields.name,
       companyName: { type: "string" },
       parentCompany: { type: "string" },
+      defunct: {
+        type: "boolean",
+        description:
+          "True when the company no longer exists and nothing it made is still produced under this brand. Products of defunct manufacturers are auto-tagged discontinued.",
+      },
       url: sharedFields.url,
       description: { type: "string" },
       searchTerms: sharedFields.searchTerms,
