@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS manufacturers (
     name TEXT NOT NULL,               -- Display name
     company_name TEXT,                -- Official company name (if different)
     parent_company_id TEXT REFERENCES manufacturers(id), -- Parent company ID
+    defunct INTEGER NOT NULL DEFAULT 0, -- 1 when the company is gone and nothing is still produced under the brand
     url TEXT,                         -- Company URL
     description TEXT,                 -- Description
     created_at TEXT DEFAULT (datetime('now')),

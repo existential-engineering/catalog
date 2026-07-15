@@ -43,6 +43,32 @@ Optional fields: categories (array), url, description
 
 Note: Slugs are derived from filenames, not stored in the YAML files.
 
+**Manufacturer `defunct: true`** marks a company that no longer exists AND has
+nothing still produced under its brand. Products of defunct manufacturers are
+auto-tagged with the `discontinued` category. Never set it for revived brands
+(Oberheim, Crumar, EDP) or brands whose catalog may gain current products
+under the same slug (Dave Smith Instruments carries the still-produced OB-6).
+
+## Discontinued Products
+
+The `discontinued` category is the canonical marker for out-of-production
+products (the Studio app also derives it from `supersedes` at runtime).
+Tooling:
+
+- `pnpm discontinued:report` — surfaces candidates by signal tier. Tier 1
+  (auto-safe): superseded entries, defunct-manufacturer products. Tier 2
+  (review required): vintagesynth.com-linked entries, entries released 20+
+  years ago, description mentions.
+- `pnpm discontinued:apply --apply` — tags superseded entries;
+  `--signal defunct` tags defunct-manufacturer products; `--files <list.txt>`
+  tags a human-reviewed list curated from the report's review tiers.
+
+**Never auto-tag by age or VSE link alone.** Production lifetimes are
+category-dependent (SM58: 1966–present; Boss DS-1: 1978–present; Doepfer
+A-100: 1995–present), and Vintage Synth Explorer also covers current gear
+(microKorg, Volcas, Prophet-5 reissue). Review those buckets, then apply
+with `--files`.
+
 **`url`** must be the maker's own official page (product page preferred,
 homepage acceptable). Never point it at an aggregator or marketplace —
 KVR, ModularGrid, Plugin Boutique, Best Service, etc. (list in

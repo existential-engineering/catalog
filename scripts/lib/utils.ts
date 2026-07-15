@@ -165,6 +165,22 @@ export function getYamlFiles(dir: string): string[] {
     .map((f) => path.join(dir, f));
 }
 
+/**
+ * Slugs of manufacturers marked `defunct: true` in their YAML.
+ * Products of these manufacturers are treated as discontinued by the
+ * discontinued-candidates report and apply tooling.
+ */
+export function loadDefunctManufacturers(): Set<string> {
+  const defunct = new Set<string>();
+  for (const file of getYamlFiles(path.join(DATA_DIR, "manufacturers"))) {
+    const manufacturer = loadYamlFile<{ defunct?: boolean }>(file);
+    if (manufacturer?.defunct === true) {
+      defunct.add(path.basename(file, ".yaml"));
+    }
+  }
+  return defunct;
+}
+
 // =============================================================================
 // STRING HELPERS
 // =============================================================================

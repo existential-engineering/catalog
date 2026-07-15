@@ -154,8 +154,8 @@ function buildDatabase(version: string): void {
   const manufacturerIds = new Map<string, string>(); // slug -> id mapping
 
   const insertManufacturer = db.prepare(`
-    INSERT INTO manufacturers (id, name, company_name, url, description)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO manufacturers (id, name, company_name, defunct, url, description)
+    VALUES (?, ?, ?, ?, ?, ?)
   `);
   const updateManufacturerParent = db.prepare(`
     UPDATE manufacturers SET parent_company_id = ? WHERE id = ?
@@ -190,6 +190,7 @@ function buildDatabase(version: string): void {
       id,
       data.name,
       data.companyName ?? null,
+      data.defunct === true ? 1 : 0,
       data.url ?? null,
       markdownToHtml(data.description)
     );
