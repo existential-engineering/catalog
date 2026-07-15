@@ -1,0 +1,90 @@
+id: FXictL7-GmnKyiJbj8Sfk
+name: Tonal Recall
+manufacturer: chase-bliss
+primaryCategory: delay
+categories:
+  - pedal
+  - effect
+  - analog
+  - echo
+  - modulation
+  - discontinued
+description: Built around a pair of re-issued versions of the legendary MN3005
+  bucket-brigade delay chips, Tonal Recall puts unmistakable analog delay
+  character and velvety tape-like modulation front and center while adding
+  modern amenities such as tap tempo, optional bypass with trails, expression
+  control over any parameter, and savable presets.
+details: |-
+  Forget everything you know about analog delay, this one's different. Built around a pair of re-issued versions of the legendary MN3005 bucket-brigade delay chips, the unmistakable analog character of this delay is front and center along with its velvety tape-like modulation. Tonal Recall expands upon the classic vintage sounds associated with analog delays of yesteryear while bringing modern amenities such as tap tempo, optional bypass with trails, expression control over any parameter, and the ability to save presets. Every knob and switch is connected to a little digital brain while the guitar signal stays 100% analog the entire time and never gets digitally processed.
+
+  Six knobs shape the sound: Tone (Ramp), Mix, Rate, Time, Regen, and Depth. The Tone knob is a low-pass filter for the repeats — from slightly brighter than an average analog delay fully clockwise to black-out murk fully counter-clockwise — and, thanks to the digital control, it doubles as a ramp control that can modulate or ramp-and-hold any of the five other parameters individually or simultaneously via dip switches. Delay time reaches a maximum of 550ms, over-ridable by the tap tempo switch, with a note division toggle controlling tap divisions.
+
+  The S/L/B toggle selects how many Xvive MN3005 delay chips the delayed signal passes through: S for short (1 chip, 20ms to 275ms), L for long (2 chips, 40ms to 550ms), and B for both, which creates a blurry, reverb-like wash. A wave shape toggle picks triangle, sine, or square for the pitch modulation on the repeats, with Rate and Depth setting the LFO speed and intensity. Holding the Tap/Hold stomp sends the pedal into self-oscillating "runaway" regeneration mode.
+
+  Two onboard preset slots are recalled with the lower toggle, saving every knob, toggle, and dip switch position. Sixteen dip switches on the back assign Mix, Rate, Time, Regen, and Depth to ramping or expression/CV control and configure Bounce, Trails, momentary-to-bypass, tap control, tap division, and sweep behavior. Bypass is true bypass via a relay, or a buffered bypass with trails selectable by dip switch.
+
+  For connectivity, the Tap/MIDI TRS jack works as a tap tempo input or output with a regular 1/4-inch cable, or interfaces the pedal with an Empress Effects Midibox for MIDI control. The Exp/CV TRS jack accepts an expression pedal (parameter-selectable via dip switch, tip to wiper) or 0-5V control voltage on the tip. The pedal consumes roughly 150mA and requires a standard 2.1mm 9V DC center-negative adapter rated 200mA or more; input impedance is 1M and output impedance is less than 5k.
+specs: |-
+  - 100% analog signal path with digital control
+  - 2x re-issued (Xvive) MN3005 bucket-brigade delay chips
+  - Delay time: 20ms to 550ms max
+  - S/L/B chip toggle: Short (1 chip, 20-275ms), Long (2 chips, 40-550ms), Both (blurry, reverb-like wash)
+  - Tap tempo with selectable note divisions
+  - Tap/Hold stomp for self-oscillating "runaway" regeneration
+  - Pitch modulation on repeats with triangle, sine, or square wave shapes
+  - Tone (Ramp) knob: low-pass filter doubling as ramp control for Mix, Rate, Time, Regen, and Depth
+  - 2 onboard preset slots
+  - 16 rear dip switches (ramp/expression assignment, Bounce, Trails, momentary-to-bypass, tap control, tap division, sweep)
+  - True bypass (relay) or buffered bypass with trails
+  - Expression pedal or 0-5V CV control over any parameter
+  - MIDI via Tap/MIDI TRS jack with Empress Effects Midibox
+  - Input impedance 1M, output impedance less than 5k
+  - Power: 9V DC center negative, 2.1mm barrel, ~150mA (200mA supply or more required)
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Tap/MIDI
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Exp/CV
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top
+releaseDate: "2016"
+releaseDateYearOnly: true
+links:
+  - type: resource
+    title: Tonal Recall Manual
+    url: https://www.chasebliss.com/s/Tonal-Recall_Manual_Pedal_Chase-Bliss.pdf
+  - type: resource
+    title: Tonal Recall MIDI Manual (archived)
+    url: https://web.archive.org/web/20191213050020/https://chaseblissaudio.com/wp-content/uploads/2018/01/CBA_TonalRecallMidiSheet-Web.pdf
+videos:
+  - videoId: uaXau9wpy9U
+    title: Chase Bliss - Tonal Recall (pt.2)
