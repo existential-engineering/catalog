@@ -1,5 +1,32 @@
 # catalog
 
+## 3.41.0
+
+### Minor Changes
+
+- 7e34ce7: Import Benson Amps (26 hardware entries).
+
+  Handmade boutique amp builder from Portland, OR. Adds their full
+  lineup: 12 guitar amplifiers (Monarch Reverb Plus and Bellringer
+  in head and 1x12 combo configurations, Redland Reverb in 15W/35W
+  head and combo configurations, Vincent, Nathan Junior, Vinny
+  Reverb, Babylon), 1 bass head (B700), the Tall Bird Plus
+  reverb/tremolo unit, 4 speaker cabinets, and 8 guitar pedals
+  (424 MKII, Germanium Boost, Preamp Pedal, Germanium Preamp,
+  Delay, Störkn B0kš, Deep Sea Diver Fuzz-Echo, Florist).
+
+  Note: product images were not auto-selected because the source site
+  uses Squarespace JavaScript rendering; source-page image references
+  are available for manual upload.
+
+- 69e4644: Import Brauner Microphones (14 hardware entries).
+
+  Tube and FET condenser microphones from this Berlin-based German
+  manufacturer, including the flagship VM1 tube series, the phantom-
+  powered Phantom and Phanthera families, the Valvet and Valvet X
+  cardioid tube mics, and the pure cardioid variants of the VM1
+  and VMX.
+
 ## 3.40.0
 
 ### Minor Changes
