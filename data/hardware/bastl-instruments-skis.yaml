@@ -1,0 +1,81 @@
+id: qQA0WuHOyiyYblrrbioQP
+name: Skis
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/skis
+description: >-
+  Skis is a discontinued 5HP dual decay envelope and VCA Eurorack module,
+  predecessor to Skis II. Each of the two independent channels (A and B)
+  generates a decay envelope with adjustable timing and routes it through a
+  voltage-controlled amplifier. A CRUNCH switch activates a lo-fi MOSFET VCA
+  circuit. A jumper selects between decay and release modes; an optional output
+  filter can also be toggled.
+details: |-
+  5HP width, 35mm depth. Power: +12V <30mA, -12V <20mA. 10-pin power connector.
+  Predecessor to Skis II.
+io:
+  - name: Trigger A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Out A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Signal In A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Signal Out A
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CV Out B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Signal In B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Signal Out B
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

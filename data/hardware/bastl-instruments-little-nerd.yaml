@@ -1,0 +1,85 @@
+id: IONteBZPLNtlkK5_hXIVI
+name: Little Nerd
+manufacturer: bastl-instruments
+primaryCategory: sequencer
+categories:
+  - utility
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/little-nerd
+description: >-
+  Little Nerd is a discontinued compact 6HP clock, trigger, and gate processor
+  for Eurorack with two inputs and five programmable outputs. Seven selectable
+  modes include Delayed Divider, Trigger to Gate/Flop Divider, Multiplier,
+  Trigger Repeater, Euclidean Sequencer, Clock Oscillator, and
+  Probability/Groove. Arduino-compatible via FTDI connector for custom firmware.
+details: |-
+  6HP width, 50mm depth. Power: +5V 30mA (from Eurorack bus board).
+  Arduino-compatible firmware via FTDI.
+io:
+  - name: Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Output A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Output B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Output C
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Output D
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Output E
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FTDI
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-little-nerd-web.pdf
+    title: User Manual
+    type: resource
