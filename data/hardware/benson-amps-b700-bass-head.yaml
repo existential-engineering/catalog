@@ -17,9 +17,9 @@ details: |-
 
   Handmade in Portland, OR.
 specs: |-
-  - Power: 700 watts (Class D)
+  - Power: 700 watts (Class D) into 2.6 ohms, approximately 175 watts into 8 ohms
   - Preamp: tube-driven with custom Soursound nickel DI transformer
-  - Speaker outputs: 4 ohm, 8 ohm
+  - Speaker outputs: 2 x 1/4-inch jacks and 1 speakon
   - XLR DI output with ground lift
 io:
   - name: Instrument Input
@@ -36,7 +36,21 @@ io:
     connection: xlr
     maxConnections: 1
     position: Right
-  - name: Speaker Output
+  - name: Speaker Output 1
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output 2
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Speakon Speaker Output
     signalFlow: output
     category: audio
     type: speaker-level

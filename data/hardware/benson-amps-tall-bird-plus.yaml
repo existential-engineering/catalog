@@ -22,6 +22,7 @@ specs: |-
   - Tubes: 3x 12AX7, 1x EL84
   - Effects: spring reverb, tremolo
   - Inputs/outputs: 1/4-inch instrument
+  - Power: AC mains, 120V (USA), 100V (Japan), or 240V (International)
 io:
   - name: Input
     signalFlow: input
@@ -37,3 +38,10 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Left
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
