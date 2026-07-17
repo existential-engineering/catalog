@@ -29,13 +29,27 @@ specs: |-
   - Variable or Calibrated output level selection via rear-panel switch
   - Half-width 1 RU chassis (two units mountable side-by-side)
   - International power supply supporting all voltages
-  - AES/EBU digital input
+  - Three switch-selectable digital inputs: AES/EBU (XLR), coaxial (BNC), optical (Toslink)
 io:
   - name: AES/EBU Digital Input
     signalFlow: input
     category: digital
     type: aes/ebu
     connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Coaxial Digital Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Optical Digital Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
     maxConnections: 1
     position: Right
   - name: Balanced Output L

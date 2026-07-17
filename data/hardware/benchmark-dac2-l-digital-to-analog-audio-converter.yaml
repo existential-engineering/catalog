@@ -4,6 +4,7 @@ manufacturer: benchmark
 primaryCategory: outboard
 categories:
   - rack-mount
+  - preamp
   - discontinued
 url: https://benchmarkmedia.com/products/benchmark-dac2-l-digital-to-analog-audio-converter
 description: The DAC2 L is a second-generation 2-channel digital-to-analog
@@ -74,6 +75,20 @@ io:
     connection: rca
     maxConnections: 1
     position: Right
+  - name: Analog Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
   - name: Balanced Output L
     signalFlow: output
     category: audio
@@ -114,6 +129,13 @@ io:
     category: audio
     type: line
     connection: rca
+    maxConnections: 1
+    position: Right
+  - name: 12V Trigger
+    signalFlow: bidirectional
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
     maxConnections: 1
     position: Right
   - name: AC Power
