@@ -1,0 +1,67 @@
+id: fZYP4J5TZShD7DboXTd8t
+name: B173 mkII
+manufacturer: black-lion-audio
+primaryCategory: preamp
+categories:
+  - rack-mount
+url: https://blacklionaudio.com/en/products/b173-mkii
+prices:
+  - amount: 449
+    currency: USD
+description: Single-channel British-style mic/DI preamp with Cinemag transformer
+details: The B173 mkII delivers the muscular lows, assertive mids, and glossy
+  highs characteristic of a vintage '73 (Neve 1073-style) preamp in a
+  budget-friendly half-rack unit. It leverages Cinemag transformers on both the
+  input and output stages to deliver 70dB of gain with a low noise floor. The
+  front-mounted Hi-Z DI input adds a harmonically rich tone to guitars,
+  keyboards, and synthesizers. Stepped input gain and variable output
+  attenuation allow precise control over transformer saturation. Low-noise
+  headroom makes it ideal for ribbon mics on quiet sources.
+specs: |-
+  - Preamp Type: Solid State
+  - Number of Channels: 1
+  - Phantom Power: Yes (48V)
+  - Polarity Switch: Yes
+  - Gain: 70dB
+  - Analog Inputs: 1 x XLR (mic/line), 1 x 1/4" TS (Hi-Z/DI, front panel)
+  - Analog Outputs: 1 x 1/4" TRS
+  - Form factor: Half-rack (1U)
+  - Power Source: 24V AC adapter (included)
+  - Dimensions: 9.5" W x 1.75" H x 6.5" D
+  - Weight: 3.2 lbs.
+io:
+  - name: XLR Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: TS 1/4"
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: TRS 1/4"
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: AC Power
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://blacklionaudio.com/en/downloads/b173-mkii-owners-manual
+    type: resource
+    title: B173 mkII Owner's Manual
+  - url: https://blacklionaudio.com/en/downloads/b12a-mkiii-and-b173-mkii-product-brochure
+    type: resource
+    title: B12A mkIII and B173 mkII Product Brochure
