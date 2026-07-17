@@ -1,0 +1,46 @@
+name: BMB6 AES/EBU
+manufacturer: burl-audio
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - digital
+url: "https://www.burlaudio.com/products/motherboards/bmb6"
+description: "AES/EBU motherboard exclusively for the B16 Mothership, providing
+  8 channels of AES/EBU I/O via DSUB25 connector for easy interfacing with any
+  AES/EBU device at all sample rates."
+specs: |-
+  - 8 channels AES/EBU I/O via DSUB25 (Tascam format)
+  - 1 BNC word clock input
+  - 2 BNC word clock outputs
+  - 8-channel IO at all sample rates
+  - Designed exclusively for B16 Mothership (not compatible with B80)
+io:
+  - name: AES/EBU I/O
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 1
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 2
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+id: UBOI1BZnxygHuzWV8r81t

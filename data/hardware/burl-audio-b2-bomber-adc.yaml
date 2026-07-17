@@ -1,0 +1,106 @@
+name: B2 Bomber ADC
+manufacturer: burl-audio
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - outboard
+url: "https://www.burlaudio.com/products/b2-bomber-adc"
+description: "2-channel, 24-bit analog-to-digital converter featuring a
+  proprietary BX1 transformer input, discrete class-A zero-feedback signal path,
+  120 dB dynamic range, and support for sample rates from 44.1 kHz to 192 kHz."
+details: |-
+  The B2 Bomber ADC is a 2-channel analog-to-digital converter built around the proprietary BURL Audio BX1 transformer input and an all-discrete class-A, zero-feedback, zero-capacitor signal path. By using this hybrid circuit, BURL Audio achieves dynamic and tonal balance that addresses the blurriness, graininess, and lack of depth often associated with digital recordings.
+
+  The B2 Bomber is not just for tracking. Mixdown and mastering were central to its layout and design. With 30-segment peak amplitude and RMS metering, the B2 shows exactly how hot your signal is running. An audiophile-quality 6-position attenuator on the front allows easy adjustment of input headroom.
+
+  Digital outputs include 2 AES, S/PDIF, and Toslink. A BNC word clock input with two outputs provides an extremely low-jitter clock source.
+specs: |-
+  - 44.1 kHz to 192 kHz, 24-bit, 2-channel ADC
+  - Proprietary BURL Audio BX1 transformer input
+  - All class-A, discrete transistors signal path — zero feedback, zero caps
+  - Audiophile quality 6-position attenuator
+  - High definition metering with simultaneous RMS and peak indication
+  - 2 AES, S/PDIF and Toslink digital outputs
+  - BNC word clock input with two BNC word clock outputs
+  - Frequency response at 48 kHz: 12 Hz to 22 kHz, +/- 0.1 dB
+  - Frequency response at 96 kHz: 15 Hz to 46 kHz, +/- 0.1 dB
+  - Frequency response at 192 kHz: 18 Hz to 94 kHz, +/- 0.1 dB
+  - 120 dB Dynamic Range (A-weighted), 117 dB (unweighted)
+  - -100 dB THD+N (+4 dBU = -18 dBFS)
+  - Made in USA
+io:
+  - name: Analog Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES Output 1
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES Output 2
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Toslink Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 1
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 2
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+links:
+  - type: resource
+    title: "B2 Bomber Manual"
+    url: "https://www.burlaudio.com/wp-content/uploads/2025/01/B2ADC_DAC-QSG-rev-M-\
+      250106.pdf"
+  - type: resource
+    title: "B2 Bomber Video Manuals"
+    url: "https://burlaudio.com/b2-bomber-adcdac-video-manuals"
+  - type: review
+    title: "Tape Op Review: B2 Bomber ADC & DAC"
+    url: "http://tapeop.com/reviews/gear/79/b2-bomber-adc-dac/"
+id: qNpZpxNTipfggXh8Y4NMh

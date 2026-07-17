@@ -1,0 +1,55 @@
+name: BMB2 MADI
+manufacturer: burl-audio
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - digital
+url: "https://www.burlaudio.com/products/motherboards/bmb2"
+description: "MADI motherboard for the B80 and B16 Mothership, featuring two
+  optical MADI ports for use with ASIO or Core Audio PCIe MADI cards, supporting
+  64-channel IO at 44.1 kHz through 96 kHz and 32-channel IO at 176.4 kHz and
+  192 kHz."
+specs: |-
+  - 2 optical MADI ports
+  - 64-channel IO at 44.1 kHz, 48 kHz, 88.2 kHz, 96 kHz
+  - 32-channel IO at 176.4 kHz, 192 kHz
+  - 2 BNC word clock outputs
+  - 1 BNC word clock input
+  - Compatible with B80 and B16 Mothership
+io:
+  - name: MADI Optical Port 1
+    signalFlow: bidirectional
+    category: digital
+    type: madi
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: MADI Optical Port 2
+    signalFlow: bidirectional
+    category: digital
+    type: madi
+    connection: toslink
+    maxConnections: 64
+    position: Right
+  - name: Word Clock Output 1
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 2
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+id: _O9IVC_ZF0TfT0H4x_2c1
