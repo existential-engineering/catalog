@@ -8,7 +8,8 @@ url: https://www.bensonamps.com/guitar-amplifiers/nathanjunior
 prices:
   - amount: 1999
     currency: USD
-description: 5 Watt combo with spring reverb.
+description: 5-watt combo with spring reverb, 10" Celestion Greenback, and
+  point-to-point construction.
 details: |-
   Point-to-point construction on terminal strips (no circuit, eyelet or turret
   board). Mallory 150 capacitors. Baltic Birch speaker cabinet. 10" Celestion
@@ -24,10 +25,17 @@ specs: |-
   - Speaker: 10" Celestion Greenback
   - Dimensions: 15.75"W x 15.25"H x 8.75"D, 24 lbs
 io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
   - name: Speaker Output
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
