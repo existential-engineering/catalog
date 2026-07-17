@@ -43,13 +43,48 @@ Optional fields: categories (array), url, description
 
 Note: Slugs are derived from filenames, not stored in the YAML files.
 
+**Manufacturer `defunct: true`** marks a company that no longer exists AND has
+nothing still produced under its brand. Products of defunct manufacturers are
+auto-tagged with the `discontinued` category. Never set it for revived brands
+(Oberheim, Crumar, EDP) or brands whose catalog may gain current products
+under the same slug (Dave Smith Instruments carries the still-produced OB-6).
+
+## Discontinued Products
+
+The `discontinued` category is the canonical marker for out-of-production
+products (the Studio app also derives it from `supersedes` at runtime).
+Tooling:
+
+- `pnpm discontinued:report` — surfaces candidates by signal tier. Tier 1
+  (auto-safe): superseded entries, defunct-manufacturer products. Tier 2
+  (review required): vintagesynth.com-linked entries, entries released 20+
+  years ago, description mentions.
+- `pnpm discontinued:apply --apply` — tags superseded entries;
+  `--signal defunct` tags defunct-manufacturer products; `--files <list.txt>`
+  tags a human-reviewed list curated from the report's review tiers.
+
+**Never auto-tag by age or VSE link alone.** Production lifetimes are
+category-dependent (SM58: 1966–present; Boss DS-1: 1978–present; Doepfer
+A-100: 1995–present), and Vintage Synth Explorer also covers current gear
+(microKorg, Volcas, Prophet-5 reissue). Review those buckets, then apply
+with `--files`.
+
+**`url`** must be the maker's own official page (product page preferred,
+homepage acceptable). Never point it at an aggregator or marketplace —
+KVR, ModularGrid, Plugin Boutique, Best Service, etc. (list in
+`scripts/lib/aggregator-domains.ts`) — unless the maker has no official
+page anywhere (dead vendor, KVR-only freeware). Aggregator pages belong
+in `links` at most. `pnpm dataset:audit` flags violations
+(aggregator-url); `scripts/promote-canonical-urls.ts` fixes the ones
+that already carry an official link.
+
 ## Field Formatting Conventions
 
 **`manufacturer`** must be a slug reference (the manufacturer's filename without `.yaml`), not the display name:
 
 ```yaml
-manufacturer: hologram-electronics  # correct (slug)
-manufacturer: Hologram Electronics   # wrong (display name)
+manufacturer: hologram-electronics # correct (slug)
+manufacturer: Hologram Electronics # wrong (display name)
 ```
 
 **`description`** uses flow scalar format (Prettier auto-wraps long lines):
@@ -95,15 +130,21 @@ io:
 
 **IO field validation** uses a two-tier system:
 
-- **Strict (errors, blocks CI):** `signalFlow`, `category`, `position`, `price.currency`
+- **Strict (errors, blocks CI):** `signalFlow`, `category`, `type`, `position`, `price.currency`
   - `signalFlow`: input, output, bidirectional
   - `category`: audio, midi, digital, power
+  - `type`: closed vocabulary in `schema/io-types.yaml` — unknown values fail with E117
   - `position`: Top, Bottom, Left, Right
   - `currency`: ISO 4217 codes (USD, EUR, GBP, etc.) — see `schema/currencies.yaml`
-- **Advisory (warnings, non-blocking):** `type`, `connection`, `link.type`
-  - Known values listed in `schema/io-types.yaml`, `schema/io-connections.yaml`, `schema/link-types.yaml`
+- **Advisory (warnings, non-blocking):** `connection`, `link.type`
+  - Known values listed in `schema/io-connections.yaml`, `schema/link-types.yaml`
   - Unknown values produce warnings in `pnpm validate` output
   - Add new values to schema files via PR when they're confirmed valid
+
+**The vocabularies are meant to grow.** Enforcement catches mistakes (connectors
+in `type`, vague values); it must not force-fit genuinely new signals or
+connectors onto near-miss values. When an import surfaces a legitimate new value
+(verify via manual/photos), add it to the schema vocabulary in the same PR.
 
 **Semantic distinction:** `type` describes the signal characteristic (line, instrument, headphone, midi, usb, expression). `connection` describes the physical connector (1/4-inch, xlr, usb-c, 5-pin din). Don't swap them.
 
@@ -171,7 +212,7 @@ Use `supersedes` to link product generations, form factor variants, and major ve
 # pro-c-3.yaml
 name: Pro-C 3
 manufacturer: fabfilter
-supersedes: 7QMeWge0fOrmQz_oVLCKk  # ID of Pro-C 2
+supersedes: 7QMeWge0fOrmQz_oVLCKk # ID of Pro-C 2
 identifiers:
   au: com.fabfilter.Pro-C.AU.3
 ```
@@ -182,7 +223,7 @@ To find the ID of a product you want to reference, open its YAML file and look f
 
 ```yaml
 # Example from pro-c-2.yaml
-id: 7QMeWge0fOrmQz_oVLCKk  # ← Use this value for supersedes
+id: 7QMeWge0fOrmQz_oVLCKk # ← Use this value for supersedes
 name: Pro-C 2
 manufacturer: fabfilter
 ```

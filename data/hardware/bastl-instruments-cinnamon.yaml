@@ -22,7 +22,7 @@ io:
   - name: Audio In
     signalFlow: input
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -43,21 +43,21 @@ io:
   - name: LP Out
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: BP Out
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: HP Out
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -65,7 +65,7 @@ io:
     signalFlow: input
     category: power
     type: power
-    connection: proprietary
+    connection: idc
     maxConnections: 1
     position: Bottom
 links:

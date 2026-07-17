@@ -18,28 +18,28 @@ io:
   - name: Ch 1 Signal In
     signalFlow: input
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Ch 1 FX Send
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Ch 1 FX Return
     signalFlow: input
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Ch 1 Signal Out
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -53,35 +53,35 @@ io:
   - name: Ch 1 Footswitch
     signalFlow: input
     category: audio
-    type: trigger
-    connection: proprietary
+    type: "cv/gate"
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Ch 2 Signal In
     signalFlow: input
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Ch 2 FX Send
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Ch 2 FX Return
     signalFlow: input
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Ch 2 Signal Out
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -95,15 +95,15 @@ io:
   - name: Ch 2 Footswitch
     signalFlow: input
     category: audio
-    type: trigger
-    connection: proprietary
+    type: "cv/gate"
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Eurorack Bus Power
     signalFlow: input
     category: power
     type: power
-    connection: proprietary
+    connection: idc
     maxConnections: 1
     position: Bottom
 links:

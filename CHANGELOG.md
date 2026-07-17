@@ -1,5 +1,84 @@
 # catalog
 
+## 3.39.2
+
+### Patch Changes
+
+- 3a1abe6: Replace 7 YouTube playlist IDs stored as videoIds with real video IDs.
+
+  All Aly James Lab software entries (Elastic Bender, FMDrive, OB-Xtreme,
+  Super PSG, SY-4X Syncussion, VProm, VSDSX) stored 34-char `PL…` playlist
+  IDs in `videoId`, which no embed player accepts and whose thumbnails 404.
+  Each is replaced with the first video of that playlist plus its real
+  title, resolved from YouTube and verified via oEmbed.
+
+## 3.39.1
+
+### Patch Changes
+
+- ef826bc: Canonicalize IO connection values and expand the connection vocabulary. Adds `ethercon`, `hdmi`, `db9`, `idc`, `pin-header`, `card-slot`, and `iec-c6` to `schema/io-connections.yaml`, and normalizes ~300 near-miss connection values across 100+ hardware files (`trs`/`ts`/`trs-male`/`trs-female` → `1/4-inch`, `xlr-male`/`xlr-female` → `xlr`, `phoenix` → `euroblock`, `rj45` → `ethernet`, `etherCON` → `ethercon`, `d-sub-9` → `db9`, Eurorack bus power `proprietary` → `idc`, plus casing/singleton fixes), resolving the W121 warning backlog. Also splits the ME-1/ME-500 collapsed Network entries into their physical Link In / Link Out EtherCON ports and corrects the KEF Reference 8b passive inputs to `type: speaker-level`.
+- ef826bc: Fix W128 collapsed-jack IO entries across 11 hardware files: split multi-jack entries into one entry per physical jack (A&H GR4 stereo RCA inputs, Antelope Satori DB25 in/thru, Blackstar cab inputs and TV-10 speaker outputs, RME UFX III AES/EBU in/out, dbx 166XL/XS per-channel sidechain inserts) and correct Midas DL155 AES3 XLR entries to maxConnections 1 (each XLR carries 2 channels on one jack). Blackstar passive-cab/speaker entries also corrected from `line` to `speaker-level`, and the Satori entry from `1/4-inch` to `db25`.
+- 3e1dffa: Replace aggregator canonical `url`s (KVR, ModularGrid, Plugin Boutique,
+  Best Service, ...) with the makers' own official pages across product and
+  manufacturer entries, verified live. Entries whose maker is confirmed gone
+  keep their aggregator link as the only remaining page. Adds
+  `scripts/promote-canonical-urls.ts` (link promotion + researched-mapping
+  apply, with live URL verification) and an `aggregator-url` check to
+  `pnpm dataset:audit` so new imports can't silently reintroduce these.
+- b8055bc: Import 11 Chase Bliss products and complete the discontinued lineage.
+
+  - New entries: Gravitas, Condor, Ayahuasca, Generation Loss, Bliss Factory,
+    Tonal Recall, Tonal Recall RKM, Brothers, Warped Vinyl (MKI), Faves, and
+    Big Time (current, ships August 2026) — sourced from official manuals and
+    archived chasebliss.com/chaseblissaudio.com product pages.
+  - Tag 8 existing Chase Bliss entries `discontinued` per the manufacturer's
+    discontinued section (Habit, Preamp MKII, Thermae, Condor HiFi, Dark World,
+    Warped Vinyl HiFi, Spectre, Wombtone MKII).
+  - Wire `supersedes`: Condor HiFi → Condor, Generation Loss MKII → Generation
+    Loss, Warped Vinyl MkII → Warped Vinyl. Tonal Recall RKM deliberately left
+    unwired (sold concurrently with the original).
+  - Add Brothers AM Monochrome Edition as a cosmetic variant.
+
+- bb32901: Data cleanup: remove links[] entries that duplicate the main `url` (or an earlier link) across 68 files, drop the nakst-apricot link that duplicated the manufacturer homepage, and remove specs lines that restate the structured formats/platforms fields in 19 files. Clears all W124/W126 validation warnings.
+- 957d455: Resolve the W127 acronym backlog: add researched searchTerms (verified expansions like Pentatone Equalizer, Rupert Neve Direct Interface, Constant Loudness Monitor System, plus documented spacing/model variants) to 41 acronym-named entries, add 24 stylized non-acronym names (BASIL, CIAO, CRBN, MJUC, TAIP, ZHEGA, …) to the W127 false-positive exclusion list, and add a researched-no-expansion suppression list for 16 letter-name products (Oberheim DMX/DSX/DX, Ensoniq VFX, Waldorf STVC, …) whose names have no documented expansion to index.
+- b8055bc: Mark 712 out-of-production products with the `discontinued` category and add
+  a `defunct` manufacturer flag.
+
+  - New optional manufacturer field `defunct: true` (company gone, nothing
+    still produced under the brand); set on 13 manufacturers (E-mu, Ensoniq,
+    ARP, Siel, Quasimidi, Elka, Technosaurus, Gleeman, Chamberlin, EML, PPG,
+    Steiner-Parker, Future Retro). Products of defunct manufacturers are
+    tier-1 auto-tag candidates. The flag ships in the SQLite build as a new
+    `manufacturers.defunct` column (INTEGER, default 0) so downstream apps
+    can render manufacturer status.
+  - `discontinued:report` gains three signals: defunct-manufacturer (tier 1),
+    vintagesynth.com-linked (review tier — VSE also covers current gear), and
+    released-20+-years-ago (review tier — age is never auto-safe: SM58, DS-1,
+    A-100 are evergreen).
+  - `discontinued:apply` gains `--signal defunct` and `--files <list.txt>` for
+    applying human-reviewed lists.
+  - Tagged: 112 defunct-manufacturer products plus 600 reviewed
+    vintagesynth-linked entries (55 VSE-linked products verified still in
+    production or uncertain were deliberately left untagged).
+
+## 3.39.0
+
+### Minor Changes
+
+- 5c6b735: Standardize `io[].type` across the catalog and enforce the vocabulary. Widen
+  `schema/io-types.yaml` with 10 real port types that were missing (`rf`, `hdmi`,
+  `gpio`, `insert`, `clock`, `bluetooth`, `wifi`, `video`, `ground`,
+  `proprietary`), canonicalize 371 ports across 78 hardware entries, and promote
+  unknown types from an advisory warning to a hard validation error (E117).
+- 6ce285f: Add `io`, `formats`, and `releaseDate` to `catalog-index.json`. Ports are
+  grouped (`{type, connection, flow, count}`) rather than emitted verbatim, and
+  I/O type spelling variants (`spdif`, `wordclock`, `aes3`) are folded into their
+  canonical forms so the data is queryable.
+
+### Patch Changes
+
+- 13a9cbe: IO vocabulary follow-ups from the #539 review: correct Bastl Klik clock output to `type: clock`, correct Mackie DLM12 channel inputs to `mic`/`instrument`, add `usb-b-mini` to the connection vocabulary (Bastl Klik, Artiphon INSTRUMENT 1), canonicalize Xone:43 connections (`trs` → `1/4-inch`, `minijack` → `1/8-inch`), and update CLAUDE.md/CONTEXT.md/VALIDATION_ERRORS.md to reflect enforced IO types (E117) and the expand-the-vocabulary policy.
+
 ## 3.38.0
 
 ### Minor Changes

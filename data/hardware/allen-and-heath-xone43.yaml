@@ -31,28 +31,28 @@ io:
   - name: Channel 1 Phono/Line Input
     signalFlow: input
     category: audio
-    type: line-phono
+    type: phono
     connection: rca
     maxConnections: 1
     position: Left
   - name: Channel 2 Phono/Line Input
     signalFlow: input
     category: audio
-    type: line-phono
+    type: phono
     connection: rca
     maxConnections: 1
     position: Left
   - name: Channel 3 Phono/Line Input
     signalFlow: input
     category: audio
-    type: line-phono
+    type: phono
     connection: rca
     maxConnections: 1
     position: Left
   - name: Channel 4 Phono/Line Input
     signalFlow: input
     category: audio
-    type: line-phono
+    type: phono
     connection: rca
     maxConnections: 1
     position: Left
@@ -66,85 +66,85 @@ io:
   - name: Main Mix Output L
     signalFlow: output
     category: audio
-    type: main
+    type: line
     connection: xlr
     maxConnections: 1
     position: Left
   - name: Main Mix Output R
     signalFlow: output
     category: audio
-    type: main
+    type: line
     connection: xlr
     maxConnections: 1
     position: Left
   - name: Booth Output L
     signalFlow: output
     category: audio
-    type: booth
+    type: line
     connection: rca
     maxConnections: 1
     position: Left
   - name: Booth Output R
     signalFlow: output
     category: audio
-    type: booth
+    type: line
     connection: rca
     maxConnections: 1
     position: Left
   - name: Record Output L
     signalFlow: output
     category: audio
-    type: record
+    type: line
     connection: rca
     maxConnections: 1
     position: Left
   - name: Record Output R
     signalFlow: output
     category: audio
-    type: record
+    type: line
     connection: rca
     maxConnections: 1
     position: Left
   - name: X:FX Send L
     signalFlow: output
     category: audio
-    type: fx-send
-    connection: trs
+    type: line
+    connection: 1/4-inch
     maxConnections: 1
     position: Left
   - name: X:FX Send R
     signalFlow: output
     category: audio
-    type: fx-send
-    connection: trs
+    type: line
+    connection: 1/4-inch
     maxConnections: 1
     position: Left
   - name: X:FX Return L
     signalFlow: input
     category: audio
-    type: fx-return
-    connection: trs
+    type: line
+    connection: 1/4-inch
     maxConnections: 1
     position: Left
   - name: X:FX Return R
     signalFlow: input
     category: audio
-    type: fx-return
-    connection: trs
+    type: line
+    connection: 1/4-inch
     maxConnections: 1
     position: Left
   - name: Headphones Output (1/4")
     signalFlow: output
     category: audio
     type: headphone
-    connection: trs
+    connection: 1/4-inch
     maxConnections: 1
     position: Right
   - name: Headphones Output (3.5mm)
     signalFlow: output
     category: audio
     type: headphone
-    connection: minijack
+    connection: 1/8-inch
     maxConnections: 1
     position: Right
 links:

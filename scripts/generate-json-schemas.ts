@@ -109,8 +109,9 @@ const ioSchema = {
     },
     type: {
       type: "string",
+      enum: ctx.ioTypes,
       description:
-        "Signal type (e.g., line, instrument, mic, headphone, usb). Describes what kind of signal, not the physical connector. Known values are in schema/io-types.yaml — unknown values produce warnings.",
+        "Signal type (e.g., line, instrument, mic, headphone, usb). Describes what kind of signal, NOT the physical connector — that belongs in `connection`. Defined in schema/io-types.yaml; add missing values there rather than inventing one here.",
     },
     connection: {
       type: "string",
@@ -318,6 +319,11 @@ const schemas: Record<string, unknown> = {
       name: sharedFields.name,
       companyName: { type: "string" },
       parentCompany: { type: "string" },
+      defunct: {
+        type: "boolean",
+        description:
+          "True when the company no longer exists and nothing it made is still produced under this brand. Products of defunct manufacturers are auto-tagged discontinued.",
+      },
       url: sharedFields.url,
       description: { type: "string" },
       searchTerms: sharedFields.searchTerms,

@@ -1,8 +1,14 @@
-# Known IO port types (advisory - warning if not matched, does not block CI)
+# Known IO port types (ENFORCED - `pnpm validate` fails on unknown values, E117)
 #
 # The `type` field describes the signal characteristic or function of an IO port.
-# Add new values here as they appear in data. Unknown values generate warnings
-# in `pnpm validate` and are surfaced during data review.
+# The physical connector belongs in `connection` (see io-connections.yaml) — do
+# not put a connector name here. `bnc` was once used as a type on wireless
+# receivers whose ports are, in fact, RF antenna inputs; that is why this list
+# is now enforced rather than advisory.
+#
+# This vocabulary is a small closed enum, deliberately. If a value is missing,
+# ADD IT HERE rather than aliasing it at read time in a consumer: an alias map
+# makes the wrong value canonical forever and hides the mistake from review.
 types:
   # Audio signal types
   - line
@@ -11,6 +17,7 @@ types:
   - headphone
   - phono
   - speaker-level
+  - insert # send/return insert point; the direction is in signalFlow
 
   # MIDI types
   - midi
@@ -20,7 +27,7 @@ types:
   - adat
   - aes/ebu
   - madi
-  - word clock
+  - word clock # digital clock distribution, typically over BNC
   - dante
   - hiqnet
   - blu-link
@@ -37,6 +44,21 @@ types:
   # Control types
   - expression
   - cv/gate
+  - clock # modular sync/clock pulse, distinct from `word clock`
+  - gpio
+
+  # Wireless types
+  - rf # antenna input/output on wireless receivers and transmitters
+  - bluetooth
+  - wifi
+
+  # Video types
+  - hdmi
+  - video
 
   # Power types
   - power
+  - ground # chassis/turntable grounding post, not a signal path
+
+  # Vendor-specific
+  - proprietary # SLink, DX link, option-card slots, and similar closed links

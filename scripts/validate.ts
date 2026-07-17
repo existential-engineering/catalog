@@ -155,6 +155,9 @@ function getErrorCodeFromZodIssue(issue: {
   if (message.includes("invalid io position")) {
     return ValidationErrorCode.E113_INVALID_IO_POSITION;
   }
+  if (message.includes("invalid io type")) {
+    return ValidationErrorCode.E117_INVALID_IO_TYPE;
+  }
 
   // Connector detail errors
   if (message.includes("connectordetail")) {
@@ -374,7 +377,19 @@ const IOSchema = z
         ctx.issues.push({ code: "custom", message, input: ctx.value });
       }
     }),
-    type: z.string(),
+    type: z.string().check((ctx) => {
+      if (!KNOWN_IO_TYPES.has(ctx.value)) {
+        const suggestion = findClosestMatch(ctx.value, KNOWN_IO_TYPES);
+        let message = `Invalid IO type '${ctx.value}'.`;
+        if (suggestion) {
+          message += ` Did you mean '${suggestion}'?`;
+        }
+        message += ` Valid values: ${formatValidOptions(KNOWN_IO_TYPES)}`;
+        message += ` (If this is a real signal type, add it to schema/io-types.yaml.`;
+        message += ` If it names a physical connector, it belongs in \`connection\`.)`;
+        ctx.issues.push({ code: "custom", message, input: ctx.value });
+      }
+    }),
     connection: z.string(),
     connectorDetail: z.array(z.string()).optional(),
     maxConnections: z.number(),
@@ -489,6 +504,7 @@ const ManufacturerSchema = z.object({
   name: z.string().min(1, "Name is required"),
   companyName: z.string().optional(),
   parentCompany: z.string().optional(),
+  defunct: z.boolean().optional(),
   url: z.url().optional(),
   description: MarkdownSchema,
   searchTerms: z.array(z.string()).optional(),
@@ -1068,20 +1084,11 @@ function collectWarnings(
   const warnings: ValidationWarningDetail[] = [];
   const relativeFile = path.relative(process.cwd(), filePath);
 
-  // Check IO types and connections (advisory)
+  // io.type is not checked here: it is a hard error (E117) via the Zod IOSchema,
+  // so an unknown value fails validation outright. io.connection remains advisory.
   if (Array.isArray(data.io)) {
     for (let i = 0; i < data.io.length; i++) {
       const io = data.io[i];
-
-      if (io.type && !KNOWN_IO_TYPES.has(io.type)) {
-        const line = getLineForPath(document, lineCounter, ["io", i, "type"]);
-        warnings.push({
-          code: ValidationErrorCode.W120_UNKNOWN_IO_TYPE,
-          message: `Unknown IO type '${io.type}' on '${io.name}'. Consider adding to schema/io-types.yaml if valid.`,
-          path: `io[${i}].type`,
-          line: line ?? undefined,
-        });
-      }
 
       if (io.connection && !KNOWN_IO_CONNECTIONS.has(io.connection)) {
         const line = getLineForPath(document, lineCounter, ["io", i, "connection"]);

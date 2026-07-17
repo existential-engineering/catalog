@@ -19,10 +19,24 @@ specs: |-
   - Weight: 49kg
   - Dimensions: 755 x 761 x 356 mm
 io:
-  - name: Speaker Input (Mono 8Ω / Stereo 2x16Ω)
+  - name: Speaker Input Mono 8 Ohm
     signalFlow: input
     category: audio
-    type: line
+    type: speaker-level
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Speaker Input Stereo Left 16 Ohm
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Speaker Input Stereo Right 16 Ohm
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
     position: Right

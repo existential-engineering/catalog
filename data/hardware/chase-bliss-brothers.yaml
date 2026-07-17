@@ -1,0 +1,90 @@
+id: u-13OyDQGy8JABHrd6O9t
+name: Brothers
+manufacturer: chase-bliss
+primaryCategory: overdrive
+categories:
+  - pedal
+  - effect
+  - boost
+  - distortion
+  - fuzz
+  - analog
+  - discontinued
+description: Boost. Drive. Fuzz. Any way you want. Designed in collaboration
+  with Resonant Electronic, Brothers is built upon two independent JFET / IC
+  analog channels comprising a total of six unique boost, drive, or fuzz
+  circuits in one small enclosure.
+details: |-
+  Brothers is an analog gainstage pedal designed in collaboration with Resonant Electronic Design. It is built upon two independent JFET / IC analog channels comprising a total of six unique boost, drive, or fuzz circuits in one small enclosure. The circuits in channel A (JFET) were designed in collaboration with Resonant Electronic Design, while the circuits in channel B (IC) were designed by Chase Bliss Audio.
+
+  The pedal can be routed in thirty-three distinct ways, including mixing the channels in parallel or changing the order of the effects. A PARA | A >> B | B >> A toggle sets the channels in parallel or cascades one channel in series into the other, while the Mix/Stack knob controls either the parallel blend between the two channels or, in series modes, how hard the first channel hits the second.
+
+  As with every Chase Bliss pedal, you can save everything and recall presets instantly, on-the-fly either on the pedal or with MIDI. Every knob and switch is connected to a little digital brain while your guitar signal stays 100% analog the entire time and never gets digitally processed. Two onboard preset slots are recalled via the lower toggle, and the EXT(A)/MIDI TRS jack accepts a momentary external switch for channel A or interfaces the pedal with a Chase Bliss Midibox for MIDI control.
+
+  Sixteen DIP switches on the back of the pedal assign expression / CV control to any combination of the Master, Mix/Stack, Gain A, Tone A, Gain B, and Tone B parameters, set rise or fall sweep direction, enable momentary engage/bypass behavior for each channel, and select between relay-based true bypass and buffered bypass. The EXP/CV jack accepts an expression pedal or 0-5V control voltage on the tip.
+
+  The pedal consumes ~60mA and should be operated with a standard 2.1mm 9V DC center negative adapter with current supply capabilities of 100mA or more. Input impedance is 1M, and output impedance is 10k.
+specs: |-
+  - Two independent analog channels: JFET (channel A) and IC (channel B)
+  - Six unique boost, drive, or fuzz circuits (three per channel)
+  - Thirty-three distinct routing options: parallel mix or series stacking (A >> B / B >> A)
+  - 100% analog signal path with digital control
+  - 2 onboard preset slots, instant recall on the pedal or via MIDI
+  - MIDI via EXT(A)/MIDI TRS jack (Chase Bliss Midibox)
+  - Expression / CV control (0-5V CV on tip) assignable to any parameter
+  - 16 DIP switches (expression assignment, rise/fall sweep, momentary bypass, bypass mode)
+  - True bypass (relay) or buffered bypass (DIP switch selectable)
+  - Input impedance 1M, output impedance 10k
+  - Mono input and output
+  - Power: 9V DC center negative, 2.1mm, ~60mA draw (100mA+ supply recommended)
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: EXT(A)/MIDI
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: EXP/CV
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+releaseDate: "2017-03-20"
+links:
+  - type: resource
+    title: Brothers Manual
+    url: https://www.chasebliss.com/s/Brothers_Manual_Pedal_Chase-Bliss.pdf
+  - type: resource
+    title: Brothers MIDI Manual
+    url: https://www.chasebliss.com/s/Brothers_MIDI-Manual_Pedal_Chase-Bliss.pdf
+videos:
+  - videoId: X7jn_hEd-FI
+    title: Brothers Overview
+  - videoId: v-1I4v6PvvA
+    title: Brothers Mini-Doc
+  - videoId: rhYYOD5VI4M
+    title: How To Connect Faves With Condor And Brothers
