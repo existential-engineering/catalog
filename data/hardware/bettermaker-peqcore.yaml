@@ -39,6 +39,34 @@ specs: |-
   - 1U rackmount form factor
   - Companion plugin: macOS 10.13+ (native M1 support), Windows 8+
 io:
+  - name: Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
   - name: USB
     signalFlow: bidirectional
     category: digital
