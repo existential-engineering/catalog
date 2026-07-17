@@ -1,0 +1,119 @@
+id: I5wDk_ozzrBB7wN25Bsxv
+name: M20 Preamplifier
+manufacturer: bricasti-design
+primaryCategory: preamp
+categories:
+  - outboard
+  - rack-mount
+url: https://bricasti.com/en/consumer/m20.php
+description: The Bricasti M20 is a dual-mono, fully differential preamplifier
+  featuring a proprietary all-discrete R2R resistor ladder attenuator, three
+  independent Class A linear power supplies, and three separately buffered
+  analog outputs. Handcrafted in Massachusetts, USA.
+specs: |-
+  - Dual-mono, fully differential design
+  - All-discrete R2R resistor ladder attenuator
+  - Three independent Class A linear power supplies
+  - Three separately buffered analog outputs (2 balanced XLR, 1 unbalanced RCA)
+  - Two balanced XLR inputs, one unbalanced RCA input
+  - Trigger output: 1/8-inch TRS
+  - Handcrafted in Massachusetts, USA
+io:
+  - name: Balanced Input 1 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Input 1 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Input 2 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Input 2 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output 1 L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output 1 R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output 2 L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output 2 R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Trigger Output
+    signalFlow: output
+    category: digital
+    type: gpio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/manuals/M20_Preamp.pdf
+    type: resource
+    title: M20 Manual (PDF)
+  - url: https://bricasti.com/en/consumer/m20_specs.php
+    type: product
+    title: Technical Specifications

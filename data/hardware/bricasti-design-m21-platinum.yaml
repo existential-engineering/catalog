@@ -1,0 +1,112 @@
+id: TdWnBa4HycNXBGVbOarWT
+name: M21 Platinum
+manufacturer: bricasti-design
+primaryCategory: outboard
+categories:
+  - rack-mount
+url: https://bricasti.com/en/consumer/m21_platinum.php
+description: The Bricasti M21 Platinum is the M21 DAC with the MDx Network
+  Processor Board factory-installed, adding streaming and network playback
+  without requiring a separate upgrade. All three D/A conversion paths
+  (delta-sigma, ladder, and direct DSD) remain, along with Ethernet
+  connectivity. Handcrafted in Massachusetts, USA.
+specs: |-
+  - Three simultaneous D/A conversion paths: delta-sigma, R2R ladder, direct DSD
+  - MDx Network Processor Board factory-installed
+  - USB: up to 32-bit / 384kHz PCM, DSD64/128/256
+  - AES/EBU, S/PDIF (BNC and RCA): up to 24-bit / 192kHz
+  - Toslink: up to 24-bit / 96kHz
+  - I²S (HDMI connector): up to DSD256
+  - Balanced analog output: 4VRMS (XLR)
+  - Unbalanced analog output: 2VRMS (RCA)
+  - Output impedance: 100Ω (balanced), 50Ω (unbalanced)
+  - THD+N: <0.001%
+  - SNR: >118dB
+  - Power consumption: 55W
+  - Chassis: 2U rack-mount, 19-inch
+  - Handcrafted in Massachusetts, USA
+io:
+  - name: AES/EBU
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF BNC
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF RCA
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Toslink
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: I²S (HDMI)
+    signalFlow: input
+    category: digital
+    type: proprietary
+    connection: hdmi
+    maxConnections: 1
+    position: Right
+  - name: Ethernet
+    signalFlow: input
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/en/consumer/m21_platinum_specs.php
+    type: product
+    title: Technical Specifications
+  - url: https://bricasti.com/manuals/M21_manual.pdf
+    type: resource
+    title: M21 Manual (PDF)

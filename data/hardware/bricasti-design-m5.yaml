@@ -1,0 +1,71 @@
+id: OlkRQaX3Z7DFVZJUo5-S8
+name: M5 Network Player
+manufacturer: bricasti-design
+primaryCategory: outboard
+categories:
+  - rack-mount
+url: https://bricasti.com/en/consumer/m5.php
+description: The Bricasti M5 is a dedicated network media renderer that connects
+  via wired Ethernet to deliver lossless audio to digital-to-analog converters,
+  supporting DLNA and Roon Ready protocols with PCM up to 192kHz and DSD.
+specs: |-
+  - Network streaming: DLNA, Roon Ready
+  - PCM support: up to 192kHz
+  - DSD support: native
+  - Digital outputs: XLR AES/EBU, RCA S/PDIF, BNC S/PDIF, USB-A
+  - Ethernet input for network connectivity
+  - Trigger in/out via barrel connector
+io:
+  - name: Ethernet Input
+    signalFlow: input
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Left
+  - name: AES/EBU Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: S/PDIF Output (RCA)
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - name: S/PDIF Output (BNC)
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Left
+  - name: USB Output
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Left
+  - name: Trigger Input
+    signalFlow: input
+    category: digital
+    type: gpio
+    connection: barrel
+    maxConnections: 1
+    position: Left
+  - name: Trigger Output
+    signalFlow: output
+    category: digital
+    type: gpio
+    connection: barrel
+    maxConnections: 1
+    position: Left
+links:
+  - url: https://bricasti.com/images/M5/M5_user_guide.pdf
+    type: resource
+    title: User Guide (PDF)

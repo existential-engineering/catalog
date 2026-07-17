@@ -1,0 +1,60 @@
+id: 2set8HdRSOk5izm_EN_8Z
+name: M32 Platinum
+manufacturer: bricasti-design
+primaryCategory: power-amp
+categories:
+  - amplifier
+url: https://bricasti.com/en/consumer/m32.php
+description: The Bricasti M32 Platinum is a flagship monoblock power amplifier
+  delivering 250W into 8 ohms with a fully differential topology featuring
+  increased current delivery over the standard M32. Designed for demanding
+  speaker loads with balanced XLR and unbalanced RCA inputs and a trigger input.
+  Handcrafted in Massachusetts, USA.
+specs: |-
+  - Power output: 250W into 8Ω, 500W into 4Ω, 1000W into 2Ω (current limited)
+  - THD+N: <0.005% (20Hz–20kHz, full rated power)
+  - Frequency response: 10Hz–150kHz, ±0.5dB
+  - Signal-to-noise ratio: >95dB at full rated power
+  - Topology: fully differential, bipolar
+  - Increased current delivery over M32 Classic
+  - Balanced input impedance: 200kΩ
+  - Unbalanced input impedance: 100kΩ
+  - Mains voltage: 100, 120, 220, 230, 240 VAC at 50–60Hz (factory-set)
+  - Power consumption: 60W standby, 2W idle
+  - Weight: 120 lbs (shipping: 140 lbs)
+  - Finish: anodized aluminum
+  - Monoblock configuration
+  - Handcrafted in Massachusetts, USA
+io:
+  - name: Balanced Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Trigger Input
+    signalFlow: input
+    category: digital
+    type: gpio
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/en/consumer/m32_specs.php
+    type: product
+    title: Technical Specifications

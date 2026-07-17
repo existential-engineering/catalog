@@ -1,0 +1,97 @@
+id: ZoZIuOVzCfeLKfSRQEGbC
+name: M11 R2R D/A Converter
+manufacturer: bricasti-design
+primaryCategory: outboard
+categories:
+  - rack-mount
+url: https://bricasti.com/en/consumer/m11.php
+description: The Bricasti M11 is a resistor ladder (R2R) D/A converter
+  concentrating ladder D/A technology from the flagship M21, featuring the MDx
+  digital platform with native signal processing and a fully differential output
+  design, supporting PCM up to 384kHz and DSD via USB.
+specs: |-
+  - D/A conversion: 20-bit ladder type (R2R)
+  - Digital inputs AES/S/PDIF: 44.1kHz to 192kHz
+  - Digital inputs USB: 44.1kHz to 384kHz PCM, DSD 64/128/256fs Native or DoP
+  - Optional Ethernet network player: 44.1–384kHz PCM, DSD 64x/128x
+  - Jitter: 8 psec @ 48kHz / 6 psec @ 96kHz
+  - Output impedance: 40 ohm
+  - Frequency response: 10Hz–20kHz +0dB / -0.2dB at 44.1kHz
+  - Dynamic range: >120dB A-weighted
+  - THD+N: 0.0020% @ 0dBFS / 1kHz
+  - Output level: +8 to +22 dBm adjustable, or +13.5 dBm fixed
+  - Dimensions: 17" x 12" x 2"
+  - Weight: 15 lbs
+  - Power: 28W (6W standby), 100/120/220/240 VAC, 50–60Hz
+  - Handcrafted in Massachusetts, USA
+io:
+  - name: AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF BNC
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF RCA
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Optical Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: USB Input
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Balanced Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/en/consumer/m11_specs.php
+    type: product
+    title: Technical Specifications
+  - url: https://bricasti.com/manuals/M11_user_guide.pdf
+    type: resource
+    title: User Guide (PDF)

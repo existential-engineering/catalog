@@ -1,0 +1,79 @@
+id: ATWqkGHlLX9mrY9SBzhPy
+name: M15 Pro
+manufacturer: bricasti-design
+primaryCategory: power-amp
+categories:
+  - amplifier
+url: https://bricasti.com/en/pro/m15pro.php
+description: The Bricasti M15 Pro is the professional-grade variant of the M15
+  stereo amplifier, optimized for studio monitoring applications. Its fully
+  differential, balanced architecture delivers 125W per channel into 8 ohms with
+  balanced XLR and unbalanced RCA inputs. Handcrafted in the USA.
+specs: |-
+  - Power output: 125W into 8Ω, 250W into 4Ω, 500W into 2Ω
+  - THD+N: <0.005% (20Hz–20kHz, full rated power)
+  - Signal-to-noise ratio: >85dB at full rated power
+  - Frequency response: 10Hz–150kHz, ±0.5dB
+  - Topology: fully differential, balanced
+  - Balanced input impedance: 200kΩ
+  - Unbalanced input impedance: 100kΩ
+  - Input trim: 0dB, -6dB, -12dB, -18dB
+  - Mains voltage: 100, 120, 220, 230, 240 VAC at 50–60Hz (factory-set)
+  - Power consumption: 60W standby, 2W idle
+  - Weight: 90 lbs (shipping: 110 lbs)
+  - Warranty: 5-year limited
+  - Handcrafted in the USA
+io:
+  - name: Balanced Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Trigger Input
+    signalFlow: input
+    category: digital
+    type: gpio
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output L
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output R
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/manuals/M15_power_amp.pdf
+    type: resource
+    title: Owner's Manual (PDF)

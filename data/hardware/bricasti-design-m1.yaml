@@ -1,0 +1,92 @@
+id: -TjNYxBOAcOALZLbfkkuJ
+name: M1 Stereo D/A
+manufacturer: bricasti-design
+primaryCategory: outboard
+categories:
+  - rack-mount
+url: https://bricasti.com/en/consumer/m1.php
+description: The Bricasti M1 is a dual mono digital-to-analog converter
+  featuring two completely isolated channels, each with its own dedicated linear
+  power supply, D/A converter, DDS clocking, and analog circuitry, supporting
+  DSD64/128/256 and PCM up to 352.8kHz.
+specs: |-
+  - Digital inputs: XLR AES/EBU, BNC S/PDIF, RCA S/PDIF, Toslink, USB 2.0
+  - USB sample rates: PCM up to 352.8kHz; DSD64, DSD128, DSD256
+  - Fully differential analog output design
+  - Balanced XLR analog outputs
+  - Unbalanced RCA analog outputs
+  - Dual independent linear power supplies
+  - Proprietary filter technology (no SRC)
+  - Stillpoints isolation feet
+  - Handcrafted in the USA
+io:
+  - name: AES/EBU
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF BNC
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF RCA
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Toslink
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Balanced Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/en/consumer/m1_specs.php
+    type: product
+    title: Technical Specifications
+  - url: https://bricasti.com/images/product_downloads/M1_User_Guide_MDx_1.11.pdf
+    type: resource
+    title: User Guide (PDF)

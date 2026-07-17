@@ -1,0 +1,106 @@
+id: niuG67cvwtXaFhgTLH_J6
+name: M12 Source Controller
+manufacturer: bricasti-design
+primaryCategory: outboard
+categories:
+  - rack-mount
+  - preamp
+url: https://bricasti.com/en/consumer/m12.php
+description: The Bricasti M12 is a dual mono source controller and D/A converter
+  that consolidates digital and analog signal processing with network streaming
+  capabilities and a pure dual mono analog signal path. Handcrafted in
+  Massachusetts, USA.
+specs: |-
+  - Digital inputs: XLR AES/EBU, BNC S/PDIF, RCA S/PDIF, Toslink optical, USB 2.0, Ethernet
+  - Network streaming via DLNA
+  - Volume control: 90dB range in 1dB steps
+  - Balanced XLR analog outputs
+  - Unbalanced RCA analog outputs
+  - Trigger output: 1/8-inch TRS
+  - Dual mono architecture
+  - Handcrafted in Massachusetts, USA
+io:
+  - name: AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF BNC
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF RCA
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Optical Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: USB Input
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Ethernet Input
+    signalFlow: input
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Balanced Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Trigger Output
+    signalFlow: output
+    category: digital
+    type: gpio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/en/consumer/m12_specs.php
+    type: product
+    title: Technical Specifications
+  - url: https://bricasti.com/en/manuals/M12_user_guide_2_23.pdf
+    type: resource
+    title: User Guide (PDF)
