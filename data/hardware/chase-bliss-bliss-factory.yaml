@@ -1,0 +1,80 @@
+id: lIjhB5hnY_axo6nNVuooq
+name: Bliss Factory
+manufacturer: chase-bliss
+primaryCategory: fuzz
+categories:
+  - pedal
+  - effect
+  - analog
+  - discontinued
+description: The very famous five-knob, two germanium transistor fuzz made in
+  collaboration with ZVEX — in short, a souped-up Fuzz Factory with digital
+  control and a resonant low pass filter.
+details: |-
+  Bliss Factory is a collaboration between Chase Bliss Audio and ZVEX: a five-knob, two germanium transistor fuzz — a souped-up Fuzz Factory with digital control and a resonant low pass filter. The five fuzz knobs are controls for various operating levels and biases, shaping a personalized fuzz. Like all Chase Bliss Audio pedals, every setting can be stored in presets, ramped, or controlled via expression pedal; every knob and switch is connected to a little digital brain while the guitar signal stays 100% analog and never gets digitally processed.
+
+  VOLUME sets the output level, DRIVE increases distortion and adjusts feedback pitch and tonal thickness, STAB ranges from classic fuzz to soft, squishy fuzz and self-oscillation, and COMP adds attack character or suddenly pinches the tone. The added LPF knob sets the cutoff of a low pass filter, with a three-position toggle selecting a one-pole gentle filter, a two-pole resonant filter, or a two-pole filter with enough resonance to self-oscillate. The FAT toggle (NORM, FAT, FATTER) increases sub frequencies and changes the nature of the self-oscillation pitches, letting the pedal oscillate at much lower registers with thunder broom synth qualities that lend themselves particularly well to bass guitar.
+
+  The GATE (RAMP) knob controls the gate to eliminate squeals, hiss, and buzz, or — when dip switches assign parameters to ramping — sets the ramp time. Rear dip switches let VOLUME, DRIVE, STAB, COMP, and LPF modulate (bounce) or ramp-and-hold (rise or fall), individually or simultaneously, and enable expression or CV control of the same parameters. The AUX FUNC toggle assigns the AUX footswitch to max out STAB, jump between LPF settings, or close the GATE, with polarity set by the AUXPOL dip switch.
+
+  A preset toggle recalls two onboard preset slots alongside a live mode, saved by holding the footswitches. The EXP/CV jack is a 1/4-inch TRS input for an expression pedal or 0-5V control voltage, and the MIDI/AUX 1/4-inch TRS jack interfaces with a Chase Bliss Midibox for MIDI control or acts as a secondary momentary switch for the AUX function. The pedal consumes about 50mA and runs on a standard 2.1mm 9V DC center negative adapter rated 100mA or more; input impedance varies with fuzz settings and output impedance is less than 1k.
+specs: |-
+  - Two germanium transistor fuzz based on the ZVEX Fuzz Factory
+  - 100% analog signal path with digital control
+  - Volume, Gate (Ramp), Comp, Drive, Stab, and LPF knobs
+  - Three-position LPF toggle: one-pole, two-pole resonant, or two-pole self-oscillating
+  - FAT toggle (NORM, FAT, FATTER) for sub frequency content
+  - AUX FUNC toggle assigns STAB, LPF, or GATE to the AUX footswitch
+  - 2 presets plus live mode
+  - Ramping and modulation of Volume, Drive, Stab, Comp, and LPF via rear dip switches
+  - Expression pedal or 0-5V CV control
+  - MIDI via Chase Bliss Midibox
+  - Momentary or latching bypass and AUX footswitches
+  - Input impedance varies with fuzz settings; output impedance less than 1k
+  - Power: 9V DC center negative, 2.1mm, ~50mA (100mA supply or more)
+  - Example presets created by Andy Othling
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: MIDI/AUX
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: EXP/CV
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top
+searchTerms:
+  - ZVEX Bliss Factory
+links:
+  - type: resource
+    title: Bliss Factory Manual
+    url: https://www.chasebliss.com/s/Bliss-Factory_Manual_Chase-Bliss.pdf
+  - type: resource
+    title: Bliss Factory MIDI Manual
+    url: https://www.chasebliss.com/s/Bliss-Factory_MIDI-Manual_Chase-Bliss.pdf

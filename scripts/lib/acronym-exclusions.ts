@@ -28,37 +28,91 @@
  */
 const ACRONYM_FALSE_POSITIVES: ReadonlySet<string> = new Set([
   // Common English words used as stylized product names
-  "amp",
-  "art",
-  "map",
-  "one",
   "ahead",
+  "aim",
+  "amp",
+  "arp", // musician shorthand for arpeggiator (Homegrown Sounds ARP)
+  "art",
+  "atom",
   "atone",
   "base",
+  "basil",
   "bold",
+  "crust",
+  "fame",
   "fire",
   "hype",
   "iron",
   "lion",
+  "lofi", // "lo-fi" (JST LOFI)
+  "map",
   "mood",
+  "one",
   "peel",
+  "polar",
   "silo",
+  "sine",
   "tails",
   "tens",
+  "tom", // tom drum (Sequential TOM)
   "tonic",
   "triad",
+  // Foreign / borrowed words used as product names
+  "aum", // Sanskrit syllable (Kymatica AUM)
+  "ciao", // Italian greeting (Bastl CIAO!)
+  "mahi", // mahi-mahi fish (Manley Mahi)
+  "zhega", // Bulgarian for "scorching heat" (Antelope ZHEGA)
   // Personal names / stylized brand names
+  "abc", // Bastl ABC — named for its A–F channel letters
+  "crbn", // Audeze CRBN — vowel-less "carbon"
+  "iroi", // Befaco IROI — tail of "Oneiroi"
+  "ivgi", // Klanghelm coinage
+  "lcast", // MeterPlugs L(oudness)+CAST portmanteau
   "lisa",
+  "midiq", // WA Production MIDI+Q portmanteau, pronounced "midi-cue"
   "miya",
+  "mjuc", // Klanghelm coinage
+  "taip", // Baby Audio phonetic respelling of "tape"
+  "xo", // XLN Audio brand styling
+  "xs", // Future Retro pun on "excess"
+]);
+
+/**
+ * True acronym / letter-name products that have been researched (manufacturer
+ * pages, manuals, period reviews) with no documented expansion or alternate
+ * form worth indexing — the name and manufacturer columns already cover them
+ * in full-text search. Suppressed so W127 doesn't re-prompt the same dead-end
+ * research. Remove an entry here if a real expansion or nickname surfaces.
+ */
+const RESEARCHED_NO_EXPANSION: ReadonlySet<string> = new Set([
+  "adm", // Avantone Pro ADM snare mic
+  "afeq", // Inferior Sound AFEQ
+  "bcg", // Code Audio BCG
+  "djs", // Pioneer DJS software
+  "dmx", // Oberheim DMX
+  "dsr", // Black Salt Audio DSR
+  "dsx", // Oberheim DSX
+  "dx", // Oberheim DX
+  "iieq", // DDMF IIEQ
+  "mfd", // ALM Busy Circuits MFD
+  "mfx", // ALM Busy Circuits MFX
+  "nv", // Numark NV
+  "src", // Antelope Audio SRC
+  "stvc", // Waldorf STVC
+  "vfx", // Ensoniq VFX
+  "vumt", // Klanghelm VUMT
 ]);
 
 /**
  * True if an entry name should trigger the W127_MISSING_SEARCH_TERMS warning:
- * short (2-5 chars), entirely uppercase letters, and not on the false-positive list.
+ * short (2-5 chars), entirely uppercase letters, and not on the false-positive
+ * or researched-no-expansion lists.
  */
 export function looksLikeAcronymName(name: string): boolean {
   const trimmed = name.trim();
   if (!/^[A-Z]{2,5}$/.test(trimmed)) return false;
-  if (ACRONYM_FALSE_POSITIVES.has(trimmed.toLowerCase())) return false;
+  const lower = trimmed.toLowerCase();
+  if (ACRONYM_FALSE_POSITIVES.has(lower)) return false;
+  if (RESEARCHED_NO_EXPANSION.has(lower)) return false;
   return true;
 }

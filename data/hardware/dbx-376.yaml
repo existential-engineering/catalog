@@ -44,55 +44,55 @@ io:
     signalFlow: input
     category: audio
     type: mic
-    connection: xlr-female
+    connection: xlr
     maxConnections: 1
     position: Right
   - name: Instrument/Line Input
     signalFlow: input
     category: audio
     type: line
-    connection: ts
+    connection: 1/4-inch
     maxConnections: 1
     position: Right
   - name: Insert
     signalFlow: bidirectional
     category: audio
     type: insert
-    connection: trs
+    connection: 1/4-inch
     maxConnections: 1
     position: Right
   - name: Analog Output
     signalFlow: output
     category: audio
-    type: balanced-line
-    connection: xlr-male
+    type: line
+    connection: xlr
     maxConnections: 1
     position: Right
   - name: Analog Output
     signalFlow: output
     category: audio
-    type: balanced-line
-    connection: trs
+    type: line
+    connection: 1/4-inch
     maxConnections: 1
     position: Right
   - name: AES/EBU Digital Output
     signalFlow: output
     category: digital
-    type: aes-ebu
-    connection: xlr-male
+    type: "aes/ebu"
+    connection: xlr
     maxConnections: 1
     position: Right
   - name: S/PDIF Digital Output
     signalFlow: output
     category: digital
-    type: spdif
+    type: "s/pdif"
     connection: rca
     maxConnections: 1
     position: Right
   - name: Word Sync
     signalFlow: bidirectional
     category: digital
-    type: word-clock
+    type: word clock
     connection: bnc
     maxConnections: 1
     position: Right

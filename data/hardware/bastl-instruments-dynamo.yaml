@@ -16,14 +16,14 @@ io:
   - name: Envelope Follower In 1
     signalFlow: input
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Envelope Follower In 2
     signalFlow: input
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -79,7 +79,7 @@ io:
   - name: Comparator Out
     signalFlow: output
     category: audio
-    type: trigger
+    type: "cv/gate"
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -93,14 +93,14 @@ io:
   - name: VCS A
     signalFlow: bidirectional
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: VCS B
     signalFlow: bidirectional
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -108,7 +108,7 @@ io:
     signalFlow: input
     category: power
     type: power
-    connection: proprietary
+    connection: idc
     maxConnections: 1
     position: Bottom
 links:

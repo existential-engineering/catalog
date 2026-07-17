@@ -1,0 +1,58 @@
+id: TaO3YyGqVJ8GTTlR-UJda
+name: Faves
+manufacturer: chase-bliss
+primaryCategory: midi-controller
+categories:
+  - pedal
+  - midi
+  - discontinued
+description: Faves is a dead simple MIDI controller that allows the user to
+  access six presets as well as "live" mode on-the-fly for any of the Chase
+  Bliss pedals.
+details: |-
+  Faves is a compact preset switcher for Chase Bliss pedals that provides on-the-fly access to six saved presets plus "live" mode. It needs no MIDI cables — it connects to a Chase Bliss pedal's TAP/MIDI jack with a standard 1/4-inch TRS cable — and runs from a standard guitar-pedal power supply (9V, center-negative, minimum 20mA). It will not hold a 9V battery.
+
+  To keep things small and simple, the controller has a single multi-function footswitch: tapping the switch moves through the three presets in each bank, while pressing and holding moves through the three banks. Each bank holds two saved presets (odd and even) plus live mode, for six presets in total.
+
+  Two LEDs show the current state — the bank LED on the left and the preset LED on the right. For presets, off is live mode, red is the odd-numbered preset, and green is the even-numbered preset; the bank LED behaves the same way for banks one through three. The two toggle switches give instant access to a specific bank or preset, and the preset toggle also sets the tap behavior: flipped right, taps toggle between live and the odd preset; flipped left, between live and the even preset.
+
+  Saving presets in slots 3–6 works the same as recalling them, except both stomp switches on the connected pedal are held down to save rather than recall, confirmed by the familiar blinking of the pedal's preset LED.
+
+  Faves also works with Meris, Strymon, and other third-party MIDI-over-TRS pedals: an internal jumper set to TIP and a standard TS patch cable are all that is required. It sends MIDI Program Change messages — Bank 1: PC0, PC1, PC2; Bank 2: PC0, PC3, PC4; Bank 3: PC0, PC5, PC6 (note that Meris pedals bypass when receiving PC#0).
+specs: |-
+  - Access to six presets plus live mode
+  - Three banks, each with two saved presets (odd and even) plus live mode
+  - Single multi-function footswitch: tap to change preset, press and hold to change bank
+  - Bank and Preset toggle switches for instant direct access
+  - Preset toggle sets tap behavior (live/odd or live/even)
+  - Connects with a standard 1/4-inch TRS cable — no MIDI cables required
+  - Sends MIDI Program Change messages (PC0–PC6)
+  - Internal jumper (TIP setting) enables use with Meris, Strymon, and other pedals via a TS patch cable
+  - Power: 9V DC, center-negative, minimum 20mA (does not hold a 9V battery)
+  - Made in the USA
+io:
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+releaseDate: "2017"
+releaseDateYearOnly: true
+links:
+  - type: resource
+    title: Faves Manual
+    url: https://www.chasebliss.com/s/Faves_Manual_Chase-Bliss.pdf
+videos:
+  - videoId: rhYYOD5VI4M
+    title: How To Connect Faves With Condor And Brothers
+  - videoId: N1CN-6cw8mU
+    title: Faves Overview

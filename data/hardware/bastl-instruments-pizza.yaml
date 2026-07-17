@@ -38,35 +38,35 @@ io:
   - name: EXT (Phase Mod)
     signalFlow: input
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Sync
     signalFlow: input
     category: audio
-    type: trigger
+    type: "cv/gate"
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Main Out
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: Pulse Out
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: OSC Out (Octave)
     signalFlow: output
     category: audio
-    type: audio
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -74,7 +74,7 @@ io:
     signalFlow: input
     category: power
     type: power
-    connection: proprietary
+    connection: idc
     maxConnections: 1
     position: Bottom
 links:

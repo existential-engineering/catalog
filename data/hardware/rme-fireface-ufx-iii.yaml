@@ -385,12 +385,19 @@ io:
     connection: bnc
     maxConnections: 64
     position: Right
-  - name: AES/EBU I/O (XLR, transformer-balanced, galvanically isolated)
-    signalFlow: bidirectional
+  - name: AES/EBU Input (XLR, transformer-balanced, galvanically isolated)
+    signalFlow: input
     category: digital
     type: aes/ebu
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Output (XLR, transformer-balanced, galvanically isolated)
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
     position: Right
   - name: ADAT Optical I/O 1 (TOSLINK)
     signalFlow: bidirectional

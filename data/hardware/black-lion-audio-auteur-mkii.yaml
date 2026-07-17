@@ -1,0 +1,69 @@
+id: sTv-DBmvDN0jNrZ3x9uQ0
+name: Auteur mkII
+manufacturer: black-lion-audio
+primaryCategory: preamp
+categories:
+  - rack-mount
+url: https://blacklionaudio.com/en/products/auteur-mkii
+description: 2-Channel Auteur Mic/Line preamp with Edcor transformers
+details: The Auteur mkII is the second-generation Auteur with lush preamps that
+  capture every detail of your signal. It offers ultra-fast input stages, 65dB
+  gain, a frequency response wider than its predecessor's, and lower
+  noise/distortion levels. Both channels feature 48V switchable phantom power,
+  phase switching, and a -10dBu pad option. The Auteur mkII has XLR in and TRS
+  out on each channel, wrapped in a 1U half-rack housing with Edcor
+  transformers. It bridges the gap between clean, transparent preamps and those
+  with lots of color and bite.
+specs: |-
+  - Preamp Type: Solid State
+  - Number of Channels: 2
+  - Phantom Power: Yes (48V, switchable per channel)
+  - Pads: -10dB
+  - Analog Inputs: 2 x XLR
+  - Analog Outputs: 2 x 1/4" TRS
+  - Gain: 65dB
+  - Frequency Response: 10Hz-30kHz
+  - Form factor: Half-rack (1U)
+  - Power Source: 24V AC, 500mA power supply
+  - Dimensions: 6.5" W x 1.75" H x 9.5" D
+  - Weight: 6 lbs.
+io:
+  - name: XLR Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: XLR Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: TRS 1/4"
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: TRS 1/4"
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: AC Power
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://blacklionaudio.com/en/downloads/auteur-mkii-owners-manual
+    type: resource
+    title: Auteur mkII Owner's Manual

@@ -48,29 +48,29 @@ io:
   - name: Channel 1 Phono/Line Input
     signalFlow: input
     category: audio
-    type: line-phono
+    type: phono
     connection: rca
     maxConnections: 1
     position: Left
   - name: Channel 2 Phono/Line Input
     signalFlow: input
     category: audio
-    type: line-phono
+    type: phono
     connection: rca
     maxConnections: 1
     position: Left
   - name: Master Insert Send
     signalFlow: output
     category: audio
-    type: insert-send
-    connection: trs
+    type: insert
+    connection: 1/4-inch
     maxConnections: 1
     position: Left
   - name: Master Insert Return
     signalFlow: input
     category: audio
-    type: insert-return
-    connection: trs
+    type: insert
+    connection: 1/4-inch
     maxConnections: 1
     position: Left
 links:

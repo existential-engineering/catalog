@@ -1,0 +1,101 @@
+id: AMIJRfYxFFqwCiFgfs8hI
+name: Darthlimiter
+manufacturer: bettermaker
+primaryCategory: limiter
+categories:
+  - outboard
+  - rack-mount
+  - mastering
+  - dynamics
+  - analog
+  - legacy
+  - discontinued
+url: https://www.bettermaker.com/darthlimiter
+description: A limited edition analog mastering limiter produced in a run of
+  200 units, combining a 100% analog signal path with a variable mix of
+  limiting and clipping, two saturation modules, and USB control for DAW
+  automation and preset recall.
+details: |-
+  The Bettermaker Darthlimiter is an exclusive limited edition mastering limiter produced to celebrate the 1000th unit manufactured by Bettermaker. Only 200 pieces were made, and the unit is now sold out. It features a 100% analog signal path built around Burr-Brown OPA1656 op-amps, with a linear power supply and relay-based signal routing designed to keep the audio path as clean as possible.
+
+  The Darthlimiter combines limiting and clipping in a variable mix, with two saturation modules offering odd and even harmonic coloration. Frequency-dependent saturation with an internal EQ allows for precise tonal shaping during the limiting process. Both intelligent and manual release modes are available, giving engineers flexibility in how the unit responds to transients.
+
+  Digital integration is handled via USB, which functions as an HID device for DAW automation and preset recall. The front panel features a large capacitive touchscreen with improved contrast, and firmware is upgradeable via USB. Two high-speed 32-bit microcontrollers handle the digital control layer, one controlling the VCA limiter and the other managing the user interface, presets, audio measurement, and USB connectivity, while the audio path stays fully analog.
+
+  The metering section is comprehensive: VU, PPM, RMS, and Peak meters with peak hold; LUFS measurements including Short-term, Integral, and Loudness Range; K-metering; a 30-band FFT analyzer; and a goniometer with correlation meter. Dual measurement points allow monitoring at both the limiter output and the plugin stage.
+
+  The Darthlimiter was a TEC (Technical Excellence & Creativity) Awards Finalist and is covered by U.S. Patent No. 10,693,428 B2 for its system and method of controlling an analog device via software.
+specs: |-
+  - Maximum Input Level: +21.5 dBu (balanced)
+  - Maximum Output Level: +23 dBu (THD < 0.1%)
+  - Operating Level: +4 dBu
+  - Maximum Gain Reduction: 20 dB
+  - Attack Time: 0.1–250 ms
+  - Release Time: 0.01–1.3 s + intelligent release
+  - Input Impedance: 48 kΩ (differential, balanced)
+  - Output Impedance: 50Ω + 50Ω (electronically balanced)
+  - Frequency Response: 5 Hz to 30 kHz; ±0.1 dB
+  - Dynamic Range: 107 dB @ +21 dBu, 20 kHz BW
+  - THD+N: <0.03%, +4 dBu, unity gain, 20 kHz BW
+  - CMRR: Max 80 dB @ 3 kHz; Min 55 dB @ 50 Hz
+  - Crosstalk: Min -90 dB @ 1 kHz; Max -57 dB @ 30 Hz
+  - Power Consumption: Maximum 30W (630 mA slow-blow fuse)
+  - Enclosure: 2U; 230 mm deep
+  - Shipping Weight: 5.5 kg
+  - 100% analog signal path with Burr-Brown OPA1656 op-amps
+  - Linear power supply
+  - Relay-based signal routing
+  - Two saturation modules (odd and even harmonics)
+  - Frequency-dependent saturation with internal EQ
+  - Intelligent and manual release modes
+  - Variable mix between limiting and clipping
+  - 30-band FFT analyzer
+  - Goniometer and correlation meter
+  - LUFS measurement (Short-term, Integral, Loudness Range)
+  - K-metering
+  - DAW automation and preset recall via USB (HID)
+  - Firmware upgradeable via USB
+  - Capacitive touchscreen interface
+  - Limited edition: 200 units produced
+  - TEC Awards Finalist
+  - U.S. Patent No. 10,693,428 B2
+io:
+  - name: Analog Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.bettermaker.com/downloads
+    type: resource
+    title: Downloads (Manual, Press Pack, Plugins)
