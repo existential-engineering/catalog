@@ -1,0 +1,98 @@
+id: 9uKcM4nfzh0b6bsiMWL9x
+name: ADC1 USB
+supersedes: LAnHM_zDw8WyzYY9scGny
+manufacturer: benchmark
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - discontinued
+url: https://benchmarkmedia.com/products/benchmark-adc1-usb-audio-converter
+description: A 2-channel 192-kHz 24-bit analog-to-digital audio converter
+  featuring jitter-immune UltraLock™ clock technology and precision analog
+  circuitry. Designed to deliver reference-quality conversion in real-world
+  conditions while maintaining musical engagement and detail.
+details: |-
+  The Benchmark ADC1 USB is a 2-channel analog-to-digital audio converter capable of operating at up to 192 kHz at 24-bit resolution. It is built around Benchmark's UltraLock™ clock system, which provides jitter immunity by automatically recognizing and locking to AES/EBU, S/PDIF, Word Clock, or Super Clock sources.
+
+  The analog front-end features low-noise, low-distortion circuitry with a 45 dB gain range, enabling it to accept a wide variety of input signal levels. Nine-segment dual-range digital LED meters with inter-sample peak detection are included for accurate monitoring.
+
+  The ADC1 USB provides five simultaneous digital outputs operable at three independent sample rates: an XLR AES/EBU output, two coaxial S/PDIF outputs (one configurable for 16-bit dithered output), an optical output supporting both AES and ADAT formats (including SMUX2 and SMUX4), and a USB output via Benchmark's AdvancedUSB™ interface enabling driverless operation at up to 96 kHz/24-bit.
+
+  The unit ships in a 1/2-wide 1 RU chassis available in black rackmount or silver finish; two units fit side-by-side in an optional rackmount tray. It is designed, assembled, and tested in the USA.
+specs: |-
+  - SNR (A-weighted): 121 dB
+  - THD+N (1 kHz, -1 dBFS): -102 dBFS / 0.00089%
+  - Frequency response (192 kHz): 2 Hz to 94 kHz
+  - Frequency response (±0.01 dB): 20 Hz to 20 kHz
+  - Resolution: 24-bit up to 192 kHz
+  - 2-channel analog-to-digital conversion
+  - UltraLock™ jitter-immune clock system
+  - AdvancedUSB™ driverless operation up to 96 kHz/24-bit
+  - Five simultaneous digital outputs at three independent sample rates
+  - Optical output supports AES, ADAT, SMUX2, and SMUX4 formats
+  - S/PDIF coaxial output configurable for 16-bit dithered output
+  - 45 dB analog gain range
+  - Nine-segment dual-range digital LED meters with inter-sample peak detection
+  - 1/2-wide 1 RU chassis; two units fit in optional rack tray
+  - Designed, assembled, and tested in the USA
+io:
+  - name: Analog Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Digital Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Coaxial Output 1
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Coaxial Output 2
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Optical Digital Output
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: USB
+    signalFlow: output
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn.shopify.com/s/files/1/0321/7609/files/ADC1_USB_Manual_Rev_C.pdf
+    type: resource
+    title: ADC1 USB Manual (Rev C)

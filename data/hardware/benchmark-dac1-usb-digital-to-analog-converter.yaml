@@ -1,0 +1,90 @@
+id: KX22W7MLr3hWrjGrbaAAS
+name: DAC1 USB
+manufacturer: benchmark
+primaryCategory: outboard
+categories:
+  - rack-mount
+  - headphone-amp
+  - discontinued
+url: https://benchmarkmedia.com/products/benchmark-dac1-usb-digital-to-analog-converter
+description: The DAC1 USB is a reference-quality 2-channel digital-to-analog
+  converter featuring USB audio input, Benchmark's proprietary UltraLock™
+  clock-recovery system, and an integrated HPA2™ headphone amplifier. It has
+  been discontinued and replaced by the DAC2 Series.
+details: |-
+  The Benchmark DAC1 USB is a reference-quality two-channel digital-to-analog converter designed for professional and audiophile use. It has been discontinued and replaced by the DAC2 Series, though refurbished units remain available directly from Benchmark.
+
+  The unit features Benchmark's proprietary UltraLock™ clock-recovery system, which eliminates jitter from incoming digital signals regardless of source quality. This allows the DAC1 USB to deliver consistent low-jitter performance from USB, AES/EBU, and S/PDIF inputs.
+
+  USB audio is handled via a USB 1.1 audio interface that is plug-and-play compatible with both Windows and Mac operating systems — no drivers required. USB input supports up to 96 kHz sample rates, while the AES/EBU input supports up to 192 kHz at 24-bit.
+
+  An integrated HPA2™ headphone amplifier delivers less than 0.0003% THD+N under full load, driving two front-panel 1/4-inch headphone outputs simultaneously. The DAC1 USB is available in Silver, Black, and Black Rackmount finishes.
+specs: |-
+  - Supported sample rates: up to 96 kHz via USB, up to 192 kHz via AES/EBU
+  - Bit depth: 24-bit
+  - Clock system: UltraLock™ proprietary jitter-attenuation
+  - Headphone amplifier: HPA2™, THD+N < 0.0003% under full load
+  - Two front-panel 1/4-inch headphone outputs
+  - USB Audio 1.1 — plug-and-play, no drivers required (Windows & Mac)
+  - Available in Silver, Black, and Black Rackmount finishes
+io:
+  - name: USB Audio
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Digital Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Coaxial Digital Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Optical Digital Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output 1
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+links:
+  - url: http://cdn.shopify.com/s/files/1/0321/7609/files/dac1-usb_spec_sheet_0.pdf
+    type: resource
+    title: DAC1 USB Specification Sheet

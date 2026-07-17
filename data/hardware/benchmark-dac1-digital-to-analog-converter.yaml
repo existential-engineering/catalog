@@ -1,0 +1,100 @@
+id: 0yLgeT3oAFScM2ipMDvuY
+name: DAC1
+manufacturer: benchmark
+primaryCategory: outboard
+categories:
+  - rack-mount
+  - headphone-amp
+  - discontinued
+url: https://benchmarkmedia.com/products/benchmark-dac1-digital-to-analog-converter
+description: The DAC1 is a reference-quality, 2-channel 192-kHz 24-bit audio
+  digital-to-analog converter featuring Benchmark's proprietary UltraLock™
+  clock-recovery system for jitter-immune conversion and an integrated HPA2™
+  headphone amplifier.
+details: |-
+  The Benchmark DAC1 is a reference-quality, 2-channel 192-kHz 24-bit digital-to-analog converter designed for studio mastering rooms and critical listening environments. It features the proprietary UltraLock™ clock-recovery system, which completely isolates the conversion clock from the incoming digital signal's clock, rendering it immune to jitter-induced artifacts regardless of the source.
+
+  The integrated HPA2™ headphone amplifier is a high-current design capable of driving two headphones simultaneously via dual front-panel 1/4" jacks, delivering less than 0.0003% THD+N under full load.
+
+  Analog outputs include balanced XLR connectors equipped with exclusive low-impedance passive output attenuators, adjustable in 10 dB steps, and unbalanced RCA outputs. Output levels can be set to Variable mode or Calibrated mode via rear-panel switch.
+
+  The DAC1 is housed in a half-width 1 RU chassis, allowing two units to be rack-mounted side-by-side. It has been discontinued and replaced by the DAC2 Series.
+specs: |-
+  - 2-channel, 24-bit, 192 kHz digital-to-analog conversion
+  - UltraLock™ clock-recovery system — jitter-immune conversion clock
+  - HPA2™ headphone amplifier: THD+N less than 0.0003% under full load
+  - Dual front-panel 1/4" headphone jacks with simultaneous dual-headphone support
+  - Balanced XLR analog outputs with low-impedance passive attenuators in 10 dB steps
+  - Unbalanced RCA analog outputs
+  - Variable or Calibrated output level selection via rear-panel switch
+  - Half-width 1 RU chassis (two units mountable side-by-side)
+  - International power supply supporting all voltages
+  - Three switch-selectable digital inputs: AES/EBU (XLR), coaxial (BNC), optical (Toslink)
+io:
+  - name: AES/EBU Digital Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Coaxial Digital Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Optical Digital Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output 1
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+links:
+  - url: https://cdn.shopify.com/s/files/1/0321/7609/files/DAC1_-_Manual_-_Rev_O.pdf?1244
+    type: resource
+    title: DAC1 Manual (Rev O)

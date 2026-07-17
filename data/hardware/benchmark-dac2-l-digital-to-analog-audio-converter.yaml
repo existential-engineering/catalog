@@ -1,0 +1,154 @@
+id: K0nIjMAieTAs1VdBxt3KF
+name: DAC2 L
+manufacturer: benchmark
+primaryCategory: outboard
+categories:
+  - rack-mount
+  - preamp
+  - discontinued
+url: https://benchmarkmedia.com/products/benchmark-dac2-l-digital-to-analog-audio-converter
+description: The DAC2 L is a second-generation 2-channel digital-to-analog
+  converter from Benchmark Media Systems, offering reference-quality conversion
+  with lower noise and distortion than its predecessor, the DAC1. It shares the
+  same features and performance as the DAC2 HGC but omits the headphone
+  amplifier.
+details: |-
+  The Benchmark DAC2 L is a second-generation 2-channel digital-to-analog converter designed as a reference-quality component for professional and audiophile applications. It delivers measurably lower noise and distortion than its predecessor the DAC1, with a signal-to-noise ratio of 126 dB (A-weighted) and THD+N of -109 dBFS at 1 kHz. The DAC2 L shares the full feature set and performance of the DAC2 HGC but omits the headphone amplifier.
+
+  At the heart of the DAC2 L is Benchmark's proprietary UltraLock2 jitter attenuation system, which eliminates jitter from all digital inputs including USB, optical, and coaxial sources. The unit accepts five digital inputs — one asynchronous USB Audio 2.0/1.1 port and four S/PDIF inputs (two optical Toslink and two coaxial RCA) — supporting sample rates from 44.1 kHz up to 192 kHz, as well as native DSD via USB in Audio 2.0 mode.
+
+  Analog outputs include two balanced XLR outputs and four unbalanced RCA outputs (two stereo pairs). A passive low-impedance Hybrid Gain Control (HGC) attenuator system provides volume control with 3.5 dB of excess DSP headroom, enabling direct connection to power amplifiers without a separate preamplifier.
+
+  Additional features include a polarity inversion switch, home theater bypass, bit-transparent digital pass-through, bi-directional 12V trigger, and front-panel LEDs displaying sample rate and word length.
+specs: |-
+  - SNR (A-Weighted): 126 dB
+  - THD+N @ 1 kHz (0 dBFS): -109 dBFS (0.00035%)
+  - Frequency Response: +0 dB / -0.04 dB (20 Hz – 20 kHz)
+  - Maximum Balanced Output Level: +30 dBu (XLR, attenuator off)
+  - Maximum Unbalanced Output Level: +18 dBu (RCA)
+  - Balanced Output Impedance: 60 Ohms nominal
+  - Unbalanced Output Impedance: 30 Ohms nominal
+  - Digital Inputs: 5 total — 1x USB, 2x optical Toslink (S/PDIF), 2x coaxial RCA (S/PDIF)
+  - Supported Sample Rates: 44.1 – 192 kHz (USB); 28 – 210 kHz (coaxial)
+  - USB Audio: Asynchronous USB Audio 2.0 and 1.1
+  - DSD Support: Native DSD via USB Audio 2.0 mode
+  - UltraLock2 jitter attenuation system
+  - DSP Headroom: 3.5 dB excess headroom
+  - Volume Control: Passive low-impedance HGC attenuator
+  - Polarity switch, home theater bypass, digital pass-through, 12V trigger, remote compatible
+  - Dimensions: 9.5" W × 1.725" H × 9.33" D
+  - Weight: 3 lbs
+  - Power: 100–240V AC, 50–60 Hz; 12W typical
+io:
+  - name: USB Audio Input
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Optical Input 1
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: Optical Input 2
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: Coaxial Input 1
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Coaxial Input 2
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L (Pair 1)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R (Pair 1)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L (Pair 2)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R (Pair 2)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: 12V Trigger
+    signalFlow: bidirectional
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: AC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn.shopify.com/s/files/1/0321/7609/files/DAC2_Series_Manual_Rev_G_2.2.pdf
+    type: resource
+    title: DAC2 Series Manual
+  - url: https://benchmarkmedia.com/blogs/reviews/tagged/dac2
+    type: review
+    title: DAC2 Reviews

@@ -1,0 +1,89 @@
+id: LAnHM_zDw8WyzYY9scGny
+name: ADC1 Analog to Digital Audio Converter
+manufacturer: benchmark
+primaryCategory: audio-interface
+categories:
+  - outboard
+  - rack-mount
+  - discontinued
+url: https://benchmarkmedia.com/products/benchmark-adc1-analog-to-digital-audio-converter
+description: A 2-channel, 192-kHz, 24-bit analog-to-digital converter featuring
+  jitter-immune UltraLock™ clock technology and precision analog circuitry.
+  Designed for studio and professional applications with reference-quality
+  conversion in real-world conditions.
+details: |-
+  The Benchmark ADC1 is a 2-channel, 192-kHz, 24-bit analog-to-digital converter built for professional studio use. It features the proprietary UltraLock™ jitter-immune clock system, which automatically recognizes and locks to AES/EBU, S/PDIF, Word Clock, or Super Clock sources, enabling clean synchronization in complex digital environments.
+
+  The ADC1 offers a wide gain range of 45dB with precise channel matching, allowing it to accommodate a broad range of input signal levels. Nine-segment dual-range digital LED meters with upsampled inter-sample peak detection provide accurate monitoring of signal levels during conversion.
+
+  Digital outputs are flexible and simultaneous, supporting multi-format recording across AES/EBU (XLR), two coaxial S/PDIF outputs (one with an optional dithered 16-bit mode), and one optical output that supports both AES and ADAT formats including SMUX2 and SMUX4 at high sample rates.
+
+  Measured performance includes an A-weighted SNR of 121 dB, unweighted SNR of 119 dB, and THD+N of -102 dBFS (0.00089%) at 1 kHz. Frequency response is ±0.01 dB from 20 Hz to 20 kHz, with usable response extending from 2 Hz to 94 kHz (-3 dB).
+specs: |-
+  - 2-channel, 192 kHz, 24-bit analog-to-digital conversion
+  - UltraLock™ jitter-immune clock with automatic AES/EBU, S/PDIF, Word Clock, and Super Clock recognition
+  - SNR (A-weighted): 121 dB
+  - SNR (unweighted): 119 dB
+  - THD+N @ 1 kHz, -1 dBFS: -102 dBFS (0.00089%)
+  - Frequency response: ±0.01 dB, 20 Hz to 20 kHz
+  - Max response: 2 Hz to 94 kHz (-3 dB)
+  - Wide 45 dB gain range with precise channel matching
+  - Nine-segment dual-range digital LED meters with inter-sample peak detection
+  - Simultaneous AES/EBU (XLR), dual coaxial S/PDIF, and optical (AES/ADAT) digital outputs
+  - Optical output supports SMUX2 and SMUX4 at high sample rates
+  - 1/2-width, 1 RU rackmount chassis
+  - Compatible with Benchmark Rack-Mount Coupler for dual installation
+io:
+  - name: Analog Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AES/EBU Digital Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Coaxial Output 1
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Coaxial Output 2
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Optical Output
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Right
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn.shopify.com/s/files/1/0321/7609/files/ADC1_Manual_Rev_D.pdf?1239
+    type: resource
+    title: ADC1 Owner's Manual (Rev D)

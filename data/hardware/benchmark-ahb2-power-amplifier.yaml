@@ -1,0 +1,117 @@
+id: wN6ZhKyQQYc4t0RsyvZK2
+name: AHB2 Power Amplifier
+manufacturer: benchmark
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://benchmarkmedia.com/products/benchmark-ahb2-power-amplifier
+prices:
+  - amount: 3499
+    currency: USD
+description: A high-performance power amplifier featuring patented feed-forward
+  error correction and THX-AAA technology, delivering performance that
+  approaches the limits of the latest high-resolution audio formats with a
+  dynamic range of 132 dB.
+details: |-
+  The Benchmark AHB2 is a two-channel power amplifier that employs patented feed-forward error correction and THX-AAA (Achromatic Audio Amplifier) technology. Operating in a Class-AB configuration with Class-H tracking rails, the AHB2 achieves an exceptionally low noise floor and vanishingly low distortion.
+
+  The amplifier delivers 100W per channel into 8 ohms in stereo mode, scaling up to 190W per channel into 4 ohms, at THD+N below 0.0003%. In bridged-mono configuration, it produces 380W into 8 ohms. The dynamic range measures 132 dB A-weighted in stereo and 135 dB in mono operation.
+
+  The rear panel features two balanced XLR inputs with a three-position sensitivity switch (Low: 22 dBu, Mid: 14.2 dBu, High: 8.2 dBu) and three SpeakON NL2/NL4 twist-lock speaker outputs alongside binding posts. Two bidirectional 12V trigger ports allow integration with home theater automation systems.
+
+  Protection circuits continuously monitor for distortion, short-circuit, over-current, over-temperature, and SOA conditions. Fast-acting tweeter protection activates when THD exceeds 2%. The AHB2 is available in silver or black finish, in both standard and rackmount faceplate configurations.
+specs: |-
+  - Power output: 100W/ch into 8Ω stereo, 130W/ch into 6Ω, 190W/ch into 4Ω, 380W into 8Ω bridged mono
+  - THD+N: < -118 dB (< 0.00013%) at 1 kHz
+  - THD: < -119 dB (< 0.00011%) stereo; < -120 dB (< 0.00010%) mono
+  - SNR: 132 dB A-weighted stereo; 135 dB mono
+  - Output noise: -103 dBV (-101 dBu), 7.1 µVrms stereo
+  - Frequency response: 0.1 Hz to 200 kHz (+0/-3 dB)
+  - Input sensitivity switch: Low 22 dBu / Mid 14.2 dBu / High 8.2 dBu
+  - Input impedance: 50 kΩ normal mode, 1 MΩ common mode
+  - Damping factor: 350 at 20 Hz (8Ω); 254 at 1 kHz (8Ω)
+  - Maximum output current: 29A peak per channel
+  - Power consumption: 20W idle, < 0.5W standby
+  - AC input: Auto-ranging 100-120V or 220-240V, ±10%, 8A, 50-60 Hz
+  - Rack size: 2U
+  - Technology: THX-AAA (Achromatic Audio Amplifier), Class-AB with Class-H tracking rails
+  - Available finishes: Silver, Black
+io:
+  - name: Audio Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Audio Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output L
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output R
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output Bridged Mono
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Right
+  - name: Speaker Binding Posts L
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Right
+  - name: Speaker Binding Posts R
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Right
+  - name: 12V Trigger 1
+    signalFlow: bidirectional
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: 12V Trigger 2
+    signalFlow: bidirectional
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: AC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://benchmarkmedia.com/blogs/application_notes/tagged/ahb2
+    type: resource
+    title: AHB2 Application Notes
+  - url: https://benchmarkmedia.com/blogs/reviews/tagged/ahb2
+    type: review
+    title: AHB2 Reviews
