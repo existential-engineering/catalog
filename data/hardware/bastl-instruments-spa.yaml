@@ -1,0 +1,61 @@
+id: FRWQvLoSNwJHROEfAYmm1
+name: SPA
+manufacturer: bastl-instruments
+primaryCategory: utility
+categories:
+  - granular
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/spa
+description: SPA is a discontinued Eurorack expander for the Bastl Instruments grandPA granular sampler, adding CV inputs for grain size, shift speed, start/end or attack/release, and crush on both channels A and B, plus a clock input to trigger grain shifts. Requires connection to grandPA via rear ribbon cable.
+details: |-
+  5HP width, 50mm depth. Power: +12V <25mA. Expander for grandPA module.
+io:
+  - name: CV Grain Size
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Shift Speed
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Start/End or Attack/Release
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Crush
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Grain Sync
+    signalFlow: input
+    category: digital
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: grandPA Expander Bus
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

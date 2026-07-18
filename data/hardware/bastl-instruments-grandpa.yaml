@@ -1,0 +1,58 @@
+id: r_TqFK1-_VGjp3nMh2hUV
+name: grandPA
+manufacturer: bastl-instruments
+primaryCategory: sampler
+categories:
+  - granular
+  - discontinued
+url: https://bastl-instruments.com/eurorack/modules/grandpa
+description: grandPA is a discontinued dual granular sampler Eurorack module inspired by microGranny, featuring two independent sample channels with trigger inputs, a shared assignable CV input, and a 12-bit audio output. It reads from a front-accessible microSD card and allows per-channel adjustment of sample rate, crush, grain size, shift speed, attack, release, start, and end position.
+details: |-
+  5HP width, 35mm depth. Power: +12V 50mA. SPA expander available for
+  additional CV control.
+io:
+  - name: Trigger 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trigger 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://bastl-instruments.com/files/manual-grandpa-web.pdf
+    title: User Manual
+    type: resource
+translations:
+  zh:
+    links:
+      - url: https://bastl-instruments.com/files/manual-grandpa-chinese.pdf
+        title: User Manual
+        type: resource
