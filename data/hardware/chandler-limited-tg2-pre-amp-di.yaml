@@ -19,26 +19,47 @@ description: The Chandler Limited TG2 Pre Amp/DI is a recreation of the rare EMI
 details: |-
   2-channel microphone preamplifier and DI. Recreation of the EMI TG12428 preamp used in EMI/Abbey Road consoles. Features discrete transformer balanced amplifiers. Gain switchable from +5 to +75 dB in 5 dB steps. Continuous output control. Input impedance switchable between 1200Ω and 300Ω. 2×1 output summing switchable. Phase 0/180° switchable. Phantom power +48V switchable. DI input 100kΩ impedance. Custom wound transformers. Requires external PSU-1 power supply (sold separately). Optional Stepped Output (Stereo) configuration available.
 io:
-  - name: Mic Input
+  - name: Mic Input Ch 1
     signalFlow: input
     category: audio
     type: mic
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
     position: Right
-  - name: DI Input
+  - name: Mic Input Ch 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: DI Input Ch 1
     signalFlow: input
     category: audio
     type: instrument
     connection: 1/4-inch
-    maxConnections: 2
+    maxConnections: 1
     position: Left
-  - name: Line Output
+  - name: DI Input Ch 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Line Output Ch 1
     signalFlow: output
     category: audio
     type: line
     connection: xlr
-    maxConnections: 2
+    maxConnections: 1
+    position: Right
+  - name: Line Output Ch 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
     position: Right
 links:
   - url: https://chandlerlimited.com/wp-content/uploads/2012/10/TG2-Pre-Amp-DI-Manual.pdf
