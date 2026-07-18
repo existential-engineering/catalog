@@ -1,0 +1,76 @@
+id: -3UIFWLPnmMHt9DdRVHpv
+name: Conflict of Interest
+manufacturer: fairfield-circuitry
+primaryCategory: utility
+categories:
+  - effect
+  - analog
+url: https://fairfieldcircuitry.com/products/conflict-of-interest
+prices:
+  - amount: 310
+    currency: CAD
+description: A versatile CV source that passes audio through unaltered while
+  generating a 0–7V control voltage from the dynamics of your instrument,
+  functioning as an envelope follower, envelope generator, LFO, and slew
+  limiter.
+details: |-
+  Conflict of Interest lets the audio signal pass through unaltered while extracting
+  a 0–7V CV envelope from it. Compatible with both 1/8" and 1/4"
+  expression/CV inputs on other pedals.
+
+  Controls include LEVEL (CV output level), SENS (input sensitivity), ATTACK (rise
+  time), RELEASE (fall time), a +/- polarity toggle, and a three-position MODE
+  switch (1 = gated loop, 2 = one-shot, 3 = continuous loop). A GATE I. input
+  accepts external triggers. An internal Gate/CV jumper enables slew-limiting of
+  incoming CV signals. Thru bypass keeps the audio chain intact.
+specs: |-
+  - CV output range: 0 to 7V
+  - Gate threshold: ~1V
+  - Power supply: 9 to 9.6 VDC center-negative
+  - Current draw: 10 mA at 9.6 VDC
+  - Thru bypass
+  - Enclosure dimensions: 4.7" x 3.8" x 1.9"
+  - Made in Hull, Québec
+io:
+  - name: IN
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: THRU
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: ENV O. (1/4")
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: ENV O. (1/8")
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: GATE I.
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

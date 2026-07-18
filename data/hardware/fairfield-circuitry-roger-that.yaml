@@ -1,0 +1,69 @@
+id: EBjVKWOy-GdQvmpt5Nthw
+name: Roger That
+manufacturer: fairfield-circuitry
+primaryCategory: distortion
+categories:
+  - noise
+  - lo-fi
+  - analog
+url: https://fairfieldcircuitry.com/products/roger-that
+prices:
+  - amount: 455
+    currency: CAD
+description: Roger That is an FM modulator/demodulator pedal inspired by radio
+  signal degradation, producing familiar yet unexpected noise, distortion
+  artifacts, and signal decoherence via a simplified FM mod/demod scheme.
+details: |-
+  Roger That mimics loss of FM radio signal through a simplified FM
+  modulator/demodulator scheme. The TUNE parameter sweeps a wide variety of sounds
+  from subtle artifacts to extreme textures, noise, and distortion. SHIFT affects
+  the accuracy of tracking the incoming modulated signal, sometimes functioning as
+  a filter. DRIVE controls input level from clean to extremely non-linear.
+
+  The WET and DRY controls independently set wet and dry signal levels. A voice
+  filter applies an approximate 300 Hz–3 kHz bandpass to the wet signal, mimicking
+  telephone/radio quality. A RANGE switch shifts the entire palette of TUNE
+  parameter possibilities. CV input on the TUNE parameter via 1/8" jack allows
+  external control. The wet signal path is intentionally out of phase for special
+  WET/DRY interaction.
+specs: |-
+  - True bypass
+  - Dimensions: 4.7" x 3.8" x 1.9"
+  - Input impedance: 1 MΩ
+  - Output impedance: 1 kΩ
+  - Power supply: 9–9.6 VDC centre-negative
+  - Current draw: 30 mA @ 9.6 VDC
+  - FET pre-amp
+  - CV input on TUNE (1/8" jack)
+  - FM/AM radio quality reducer
+  - No battery connection
+  - Made in Hull, Québec
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: CV Input (TUNE)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

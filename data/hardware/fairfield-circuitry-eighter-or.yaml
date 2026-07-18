@@ -1,0 +1,40 @@
+id: y-B4cIQqXaZMIv42Dlq4W
+name: Either/Or
+manufacturer: fairfield-circuitry
+primaryCategory: utility
+url: https://fairfieldcircuitry.com/products/eighter-or
+prices:
+  - amount: 105
+    currency: CAD
+description: A passive expression preset switch that toggles a 50k potentiometer
+  on or off, most useful for switching between two expression input settings
+  such as two different tremolo speeds or delay times.
+details: |-
+  Either/Or toggles a 50k potentiometer in or out of an expression circuit with a
+  single footswitch. It has two modes selectable via a side switch: Momentary
+  (active only while pressed) or Latching (toggles state on each press). Passive,
+  no power required.
+
+  1/8" jacks on the left (M) and right (L) panels connect into the expression signal path.
+  The compact 2.7" x 4.4" enclosure matches the PB & J form factor.
+specs: |-
+  - Uses a 50k potentiometer
+  - Passive, no power required
+  - Momentary or latching footswitch modes
+  - Enclosure dimensions: 2.7" x 4.4"
+  - Made in Hull, Québec
+io:
+  - name: M (Momentary)
+    signalFlow: bidirectional
+    category: audio
+    type: expression
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: L (Latching)
+    signalFlow: bidirectional
+    category: audio
+    type: expression
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right

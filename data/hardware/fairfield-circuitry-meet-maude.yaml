@@ -1,0 +1,68 @@
+id: 49N5HeIagEMrrQoM9cs_N
+name: Meet Maude
+manufacturer: fairfield-circuitry
+primaryCategory: delay
+categories:
+  - modulation
+  - effect
+  - analog
+url: https://fairfieldcircuitry.com/products/meet-maude
+prices:
+  - amount: 480
+    currency: CAD
+description: Meet Maude is an analogue delay pedal that imparts a dark,
+  tape-like quality with a discrete JFET compressor, dynamic output filter, and
+  full CV capabilities for controlling delay time and feedback.
+details: |-
+  Meet Maude is an analogue delay offering a rich, tape-like character. A discrete
+  JFET feedback compressor at the input stage evens out dynamics before the BBD
+  delay stage. The TONE control accentuates high or low frequencies of the delay
+  signal, while FEED controls how much of the output is reapplied at the input.
+
+  A random delay time modulation adds authentic tape reel feel. A voltage-controlled
+  low-pass filter at the output gates noise and darkens each successive repeat. Full
+  CV capabilities via a 1/4" stereo jack allow control of delay time and/or feedback
+  from external sources including expression pedals. The CV jack is programmable via
+  internal micro-switches for multiple configurations.
+specs: |-
+  - True bypass
+  - Dimensions: 4.7" x 3.8"
+  - Input impedance: 1 MΩ
+  - Output impedance: 1 kΩ
+  - Power supply: 9–9.6 VDC centre-negative
+  - Current draw: 60 mA
+  - Delay time: 50–500 ms
+  - 1/4" mono input/output jacks
+  - 1/4" stereo CV jack
+  - 2.1mm DC connector
+  - No battery connection
+  - Made in Hull, Québec
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top
