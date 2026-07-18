@@ -1,5 +1,65 @@
 # catalog
 
+## 3.41.0
+
+### Minor Changes
+
+- 7e34ce7: Import Benson Amps (26 hardware entries).
+
+  Handmade boutique amp builder from Portland, OR. Adds their full
+  lineup: 12 guitar amplifiers (Monarch Reverb Plus and Bellringer
+  in head and 1x12 combo configurations, Redland Reverb in 15W/35W
+  head and combo configurations, Vincent, Nathan Junior, Vinny
+  Reverb, Babylon), 1 bass head (B700), the Tall Bird Plus
+  reverb/tremolo unit, 4 speaker cabinets, and 8 guitar pedals
+  (424 MKII, Germanium Boost, Preamp Pedal, Germanium Preamp,
+  Delay, Störkn B0kš, Deep Sea Diver Fuzz-Echo, Florist).
+
+  Note: product images were not auto-selected because the source site
+  uses Squarespace JavaScript rendering; source-page image references
+  are available for manual upload.
+
+- 69e4644: Import Brauner Microphones (14 hardware entries).
+
+  Tube and FET condenser microphones from this Berlin-based German
+  manufacturer, including the flagship VM1 tube series, the phantom-
+  powered Phantom and Phanthera families, the Valvet and Valvet X
+  cardioid tube mics, and the pure cardioid variants of the VM1
+  and VMX.
+
+## 3.40.0
+
+### Minor Changes
+
+- 229b1c9: Import Benchmark Media Systems (20 hardware, 24 accessory entries).
+
+  Covers the full active and historical lineup: AHB2 power amplifier,
+  HPA4 headphone amp, LA4 line amplifier, DAC1/DAC2/DAC3 families
+  (including discontinued HDR, PRE, USB, DX, D, L, HGC, B variants),
+  ADC1/ADC1 USB/ADC16 analog-to-digital converters, PRE420 microphone
+  preamplifier, SMS1 studio monitor, and 24 accessories including
+  cables, connectors, rack hardware, and remote control.
+
+- 9b943ef: Import Bettermaker (18 hardware/software entries).
+
+  Adds 15 hardware entries covering the full Bettermaker rack
+  hardware lineup: mastering limiters (original and 2.0),
+  mastering equalizers (including the 50-unit Millennium Edition),
+  mastering compressor, bus compressor, PEQ_Core parametric EQ,
+  SPE/VSPE stereo processors, 500-series modules (EQ502P, EQ542,
+  C502V), 232P MK II mastering EQ, and Auratone A2-30 amplifier.
+  Adds 3 software entries: BM60 reverb plugin, Bus Compressor DSP,
+  and EQ232D parametric equalizer plugin.
+
+- 97b8190: Import Black Lion Audio (66 hardware/accessory entries).
+
+  Covers the full product line: Auteur preamp series (mkIII, 8DAT, DT,
+  Quad, Quad2); B-series compressors (B12A, B172A, B173); Revolution
+  audio interfaces and clocks; PBR patchbay line (TRS, TT, XLR, XSplit8);
+  Micro Clock series; Bluey and Seventeen compressors; MIDI Eight; and
+  25 PG-series power conditioners/accessories (PG-1, PG-2, PG-P,
+  PG-X, PG-XLM) with regional variants.
+
 ## 3.39.2
 
 ### Patch Changes
