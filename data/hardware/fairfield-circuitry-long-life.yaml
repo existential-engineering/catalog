@@ -49,18 +49,25 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Left
-  - name: Expression / CV Frequency Input
+  - name: EXP
     signalFlow: input
     category: audio
     type: expression
     connection: 1/4-inch
     maxConnections: 1
     position: Right
-  - name: CV Resonance Input
+  - name: Q
     signalFlow: input
     category: audio
     type: cv/gate
-    connection: 1/4-inch
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: F
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
     maxConnections: 1
     position: Right
   - name: Power Input
