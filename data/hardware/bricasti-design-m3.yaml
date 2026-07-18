@@ -1,0 +1,85 @@
+id: 6WMNBcPtVtiVXLGPTtFbq
+name: M3
+manufacturer: bricasti-design
+primaryCategory: outboard
+categories:
+  - rack-mount
+url: https://bricasti.com/en/consumer/m3.php
+description: The Bricasti M3 is a high-performance stereo D/A converter
+  featuring dual fully differential conversion channels with separate PCM and
+  native DSD support, precision DDS clocking, dual independent linear power
+  supplies, and an optional Roon Ready network player.
+specs: |-
+  - Digital inputs: XLR AES/EBU, RCA S/PDIF, Toslink optical, USB 2.0, Ethernet (optional)
+  - Fully differential dual channel conversion
+  - Separate PCM and native DSD conversion paths
+  - Precision DDS clocking
+  - Dual independent linear power supplies
+  - Balanced XLR analog outputs
+  - Unbalanced RCA analog outputs
+  - Roon Ready (via optional network player)
+  - Handcrafted in Massachusetts, USA
+io:
+  - name: AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Optical Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: USB Input
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Balanced Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/images/product_downloads/M3_Manual_8_22.pdf
+    type: resource
+    title: M3 Manual (PDF)
+  - url: https://bricasti.com/en/consumer/m3_specs.php
+    type: product
+    title: Technical Specifications

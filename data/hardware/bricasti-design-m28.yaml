@@ -1,0 +1,61 @@
+id: IiYuEnRWLW5w3gIHtxwBN
+name: M28
+manufacturer: bricasti-design
+primaryCategory: power-amp
+categories:
+  - amplifier
+url: https://bricasti.com/en/consumer/m28.php
+description: The Bricasti M28 is a high-performance monoblock power amplifier
+  with a fully differential, bipolar circuit topology in a milled aluminum
+  chassis. Delivers 200W into 8 ohms with balanced XLR and unbalanced RCA inputs
+  plus a stepped input trim. Handcrafted in the USA.
+specs: |-
+  - Power output: 200W into 8Ω, 400W into 4Ω, 800W into 2Ω
+  - THD+N: <0.005% (20Hz–20kHz, full rated power)
+  - Frequency response: 10Hz–150kHz, ±0.5dB
+  - Signal-to-noise ratio: >95dB at full rated
+  - Balanced input impedance: 200kΩ
+  - Unbalanced input impedance: 100kΩ
+  - Input trim: 0dB, -6dB, -12dB, -18dB
+  - Power consumption: 60W standby, 2W idle
+  - Mains voltage: 100, 120, 220, 230, 240 VAC, 50–60Hz
+  - Weight: 85 lbs (shipping: 100 lbs)
+  - Finish: anodized aluminum
+  - Topology: fully differential, bipolar
+  - Monoblock configuration
+io:
+  - name: Balanced Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Trigger Input
+    signalFlow: input
+    category: digital
+    type: gpio
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Speaker Output
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/en/consumer/m28_specs.php
+    type: product
+    title: Technical Specifications
+  - url: https://bricasti.com/images/m28/m28_power_amp.pdf
+    type: resource
+    title: Owner's Manual (PDF)

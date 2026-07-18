@@ -1,0 +1,108 @@
+id: Braefh_Jd1c6mQ6bJAe73
+name: M12 Platinum
+manufacturer: bricasti-design
+primaryCategory: outboard
+categories:
+  - rack-mount
+  - preamp
+url: https://bricasti.com/en/consumer/m12_platinum.php
+description: The Bricasti M12 Platinum is the M12 Source Controller with the MDx
+  Network Processor Board factory-installed, combining DAC, preamplifier,
+  headphone amplifier, and network streamer functions. Balanced XLR and
+  unbalanced RCA outputs, Ethernet connectivity, and a trigger output are
+  included. Handcrafted in Massachusetts, USA.
+specs: |-
+  - MDx Network Processor Board factory-installed
+  - Functions: DAC, preamplifier, headphone amplifier, network streamer
+  - USB: up to 32-bit / 384kHz PCM, DSD64/128/256
+  - AES/EBU, S/PDIF (BNC and RCA): up to 24-bit / 192kHz
+  - Toslink: up to 24-bit / 96kHz
+  - Balanced analog output: 4VRMS (XLR)
+  - Unbalanced analog output: 2VRMS (RCA)
+  - Output impedance: 100Ω (balanced), 50Ω (unbalanced)
+  - THD+N: <0.001%
+  - SNR: >118dB
+  - Chassis: 2U rack-mount, 19-inch
+  - Handcrafted in Massachusetts, USA
+io:
+  - name: AES/EBU
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF BNC
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF RCA
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Toslink
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Ethernet
+    signalFlow: input
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Trigger Output
+    signalFlow: output
+    category: digital
+    type: gpio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/en/consumer/m12_platinum_specs.php
+    type: product
+    title: Technical Specifications

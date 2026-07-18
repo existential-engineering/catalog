@@ -1,0 +1,59 @@
+id: hj0afms3mb_dfcr9a37vE
+name: M19 Reference Disk Player
+manufacturer: bricasti-design
+primaryCategory: outboard
+categories:
+  - rack-mount
+url: https://bricasti.com/en/consumer/m19.php
+description: The Bricasti M19 is an SACD/CD transport designed around simplicity
+  and uncompromising performance, intentionally omitting upsampling, DACs, and
+  digital inputs. Features dual independent linear power supplies with
+  medical-grade toroidal transformers and a milled aluminum chassis. Handcrafted
+  in Massachusetts, USA.
+specs: |-
+  - SACD and CD transport (no upsampling, no DAC, no digital inputs)
+  - Digital outputs: XLR AES/EBU, RCA S/PDIF, BNC S/PDIF, I2S via Ethernet connector
+  - Dual independent linear power supplies with medical-grade toroidal transformers
+  - Milled aluminum chassis
+  - Trigger input: TRS 1/4-inch (5V on ring)
+  - Handcrafted in Massachusetts, USA
+io:
+  - name: AES/EBU Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: I2S Output
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Trigger Input
+    signalFlow: input
+    category: digital
+    type: gpio
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/images/product_downloads/M19_manual.pdf
+    type: resource
+    title: M19 Manual (PDF)

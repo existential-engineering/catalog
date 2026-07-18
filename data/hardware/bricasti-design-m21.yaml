@@ -1,0 +1,129 @@
+id: 8yMHEnAJ-QQL9jV9J1F1Y
+name: M21
+manufacturer: bricasti-design
+primaryCategory: outboard
+categories:
+  - rack-mount
+url: https://bricasti.com/en/consumer/m21.php
+description: The Bricasti M21 is a reference D/A converter with three
+  independent user-selectable conversion paths (delta-sigma, ladder DAC, and
+  DSD). Supports USB, AES/EBU, S/PDIF, Toslink, and wired Ethernet streaming.
+  Handcrafted in Massachusetts, USA.
+details: |-
+  The Bricasti Design M21 is a reference-grade digital-to-analog converter
+  built around three fully independent conversion paths. Users can select
+  between a 24-bit delta sigma converter with 8x oversampling, a 20-bit ladder
+  DAC, and a true 1-bit DSD path, enabling direct comparison of different
+  conversion philosophies within a single chassis.
+
+  Digital inputs cover the full range of professional and consumer
+  connectivity: AES/EBU via XLR, S/PDIF via both BNC and RCA, Toslink optical
+  up to 96 kHz, and USB 2.0 supporting PCM up to 384 kHz and DSD 64/128/256fs
+  natively and via DoP. An Ethernet port enables wired network streaming as a
+  DLNA media renderer.
+
+  The fully differential analog output stage presents balanced XLR outputs at
+  40 ohm impedance with a maximum level of +16.5 dBm (5.2V RMS), alongside
+  unbalanced RCA outputs delivering +6 dBm (1.2V RMS). A precision analog
+  attenuator provides 90 dB of gain control in 1 dB steps, with a hard-wire
+  bypass option.
+specs: |-
+  - Digital inputs: XLR AES/EBU, BNC S/PDIF, RCA S/PDIF, Toslink optical (44.1–96kHz), USB 2.0 (44.1–384kHz, DSD 64/128/256fs)
+  - Ethernet streaming: 44.1–384kHz PCM, DSD 128 native, DLNA media renderer
+  - D/A conversion paths: 24-bit delta sigma (8x oversampling), 20-bit ladder DAC, 1-bit DSD
+  - Balanced output: XLR pin 2 hot, 40 ohm, +16.5 dBm (5.2V RMS)
+  - Volume control: 90dB range in 1dB steps
+  - Unbalanced output: RCA, 40 ohm, +6 dBm (1.2V RMS)
+  - Jitter: 8 psec @ 48kHz / 6 psec @ 96kHz
+  - Dynamic range: >120dB A-weighted
+  - THD+N @ 1kHz: 0.0008% @ 0dBFS / 0.0004% @ -30dBFS
+  - Frequency response @ 44.1kHz: 10Hz–20kHz +0dB / -0.2dB
+  - Dimensions: 17" x 12" x 4.5"
+  - Weight: 15 lbs
+  - Power: 28W (6W standby), 100/120/220/240 VAC, 50–60Hz
+  - Handcrafted in Massachusetts, USA
+io:
+  - name: AES/EBU
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF BNC
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF RCA
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Toslink
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Ethernet
+    signalFlow: input
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Trigger Output
+    signalFlow: output
+    category: digital
+    type: gpio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/en/consumer/m21_specs.php
+    type: product
+    title: Technical Specifications
+  - url: https://bricasti.com/manuals/M21_manual.pdf
+    type: resource
+    title: M21 User Manual (PDF)

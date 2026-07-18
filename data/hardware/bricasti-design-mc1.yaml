@@ -1,0 +1,120 @@
+id: Z_qYqllGNtDTT9JUmllGT
+name: MC1
+manufacturer: bricasti-design
+primaryCategory: outboard
+categories:
+  - rack-mount
+url: https://bricasti.com/en/pro/mc1.php
+description: The Bricasti Design MC1 is a fully-differential stereo reference
+  D/A converter featuring two completely isolated channels, each with its own
+  dedicated linear power supply, D/A converter, DDS clocking, and analog
+  circuitry. Handcrafted in Massachusetts, USA.
+details: |-
+  The MC1 digital to analog converter is a fully-differential stereo reference
+  D/A designed for critical audio applications. Years in development and
+  refinement, the MC1 recreates audio waveforms with exacting precision with a
+  goal to carefully preserve harmonic integrity. This means instrumentation and
+  human voices sound life-like, transparent and maintain their intended recorded
+  character.
+
+  The MC1 has two completely isolated channels, each with its own dedicated
+  linear power supply, D/A converter, DDS clocking, and analog circuitry. This
+  design ensures that analog crosstalk is virtually nonexistent, that the
+  necessary power requirements for each channel are well met and isolated from
+  each other, and the digital processing is isolated with its own power supply.
+
+  With the twin DAC design, the dynamic range for each channel is optimized by
+  using the stereo ADI 1955 D/A converter in a mono configuration. The MC1 also
+  includes Bricasti's proprietary filter technology, critical to achieving
+  optimum results in a modern reference D/A.
+
+  All Bricasti products are crafted in the old world tradition, in a classic
+  brick mill building in Massachusetts, USA by a team of individuals dedicated
+  to excellence.
+specs: |-
+  - Digital inputs: XLR AES/EBU 24-bit Single Wire, RCA S/PDIF, Optical Toslink (44.1–96kHz), USB 2, RJ45 Ethernet (optional)
+  - AES/S/PDIF sample rates: 44.1kHz to 192kHz, DSD 64fs as DoP
+  - USB sample rates: 44.1kHz to 384kHz, DSD 64fs/128fs as DoP
+  - Ethernet sample rates: 44.1kHz to 384kHz, DSD 64fs/128fs as DoP
+  - Jitter: 8 psec @ 48kHz / 6 psec @ 96kHz
+  - D/A conversion: PCM 24-bit delta sigma 8x oversampling
+  - Output impedance: 40 ohm
+  - Max output level (balanced): +22 dBm
+  - Min output level (balanced): +8 dBm
+  - Output level (unbalanced): +8 dBm (2V RMS)
+  - Frequency response @ 44.1kHz: 10Hz–20kHz +0dB / -0.2dB
+  - Dynamic range: >120 dB A-weighted
+  - THD+N @ 1kHz: 0.0006% @ 0dBFS / 0.0004% @ -30dBFS
+  - Finish: anodized aluminum
+  - Dimensions: 17" x 12" x 4.5"
+  - Weight: 15 lbs
+  - Mains voltage: 100, 120, 220, 240 VAC, 50–60Hz (factory-set)
+  - Power consumption: 20W
+io:
+  - name: AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Optical Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: USB Input
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Trigger Input
+    signalFlow: input
+    category: digital
+    type: gpio
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Balanced Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/images/mc1/MC1_user_guide.pdf
+    type: resource
+    title: MC1 User Guide (PDF)

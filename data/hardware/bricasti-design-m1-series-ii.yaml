@@ -1,0 +1,126 @@
+id: aLE8FF-1Y4YTA0pcGPvg7
+name: M1 Series II
+manufacturer: bricasti-design
+primaryCategory: outboard
+categories:
+  - rack-mount
+url: https://bricasti.com/en/consumer/m1s2.php
+description: The Bricasti Design M1 Series II is a high-performance D/A
+  converter featuring the MDx processor platform with fully differential analog
+  output design, supporting PCM up to 384kHz and DSD up to 256fs via USB. Milled
+  from solid aluminum with point-to-point wiring and Stillpoints isolation.
+  Handcrafted in the USA.
+details: |-
+  The Bricasti Design M1 Series II is a reference-grade digital-to-analog
+  converter built on the latest MDx processor technology with advanced clocking
+  algorithms. The design uses higher current twin linear power supplies with
+  larger performance capacitors for improved dynamic performance.
+
+  The handcrafted chassis is milled from solid aluminum with point-to-point
+  wiring and Stillpoints isolation integrated directly into the chassis.
+  Bricasti's proprietary filter technology preserves the native signal without
+  sample rate conversion.
+
+  Digital inputs span the full range of professional connectivity: AES/EBU, BNC
+  and RCA S/PDIF, Toslink optical, and USB 2.0 supporting PCM up to 384kHz and
+  DSD 64fs/128fs/256fs natively or via DoP. An optional network player adds
+  DLNA streaming capability.
+
+  The fully differential analog output stage delivers balanced XLR outputs at
+  +16.5 dBm full scale and unbalanced RCA at +6 dBm. Compatible streaming
+  applications include JPlay, Audirvana, Roon, and JRiver.
+specs: |-
+  - Digital inputs: XLR AES/EBU (up to 192kHz), BNC S/PDIF (up to 192kHz), RCA S/PDIF (up to 192kHz), Toslink optical (44.1–96kHz), USB 2 (up to 384kHz PCM, DSD 64/128/256fs)
+  - Optional Ethernet network player: 44.1–384kHz PCM, DSD 64x/128x Native and DoP
+  - Dynamic range: >120dB A-weighted
+  - Frequency response: 10Hz–20kHz +0dB / -0.2dB at 44.1kHz
+  - Jitter: 8 psec @ 48kHz / 6 psec @ 96kHz
+  - THD+N: 0.0006% @ 0dBFS (balanced), 0.0008% @ 0dBFS (unbalanced)
+  - Output impedance: 40 ohm
+  - Balanced output level: +16.5 dBm (5.2V RMS) full scale, +22 dBm maximum
+  - Unbalanced output level: +6 dBm (1.2V RMS) full scale
+  - Trigger output: 1/8-inch TRS
+  - Dimensions: 17" x 12" x 4.5"
+  - Weight: 15 lbs
+  - Power consumption: 28W (6W standby)
+  - Power input: 100, 120, 220, 240 VAC, 50–60Hz
+  - Finish: anodized aluminum with nickel plating, brass knobs and buttons
+  - Handcrafted in the USA
+io:
+  - name: AES/EBU Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF BNC
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF RCA
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Optical Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: USB Input
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Balanced Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Balanced Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Unbalanced Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Trigger Output
+    signalFlow: output
+    category: digital
+    type: gpio
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://bricasti.com/en/consumer/m1s2_specs.php
+    type: product
+    title: Technical Specifications
+  - url: https://bricasti.com/images/product_downloads/M1_M1_Series_2_user_guide.pdf
+    type: resource
+    title: User Guide (PDF)
