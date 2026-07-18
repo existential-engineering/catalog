@@ -1,0 +1,32 @@
+id: -5Cb63gOSY7eaaBM3LK-W
+name: SFX Tap
+manufacturer: catalinbread
+primaryCategory: utility
+url: https://catalinbread.com/products/sfx-tap
+prices:
+  - amount: 65
+    currency: USD
+description: The SFX Tap is a tap tempo controller footswitch designed to expand
+  the capabilities of the Catalinbread Soft Focus DLX pedal. It connects to the
+  DLX's EXP/TAP jack via TRS cable, or to other pedals' tap tempo inputs via a
+  standard TS cable. The device draws power from the Soft Focus DLX and requires
+  no external power supply.
+details: |-
+  The SFX Tap connects to the Soft Focus DLX via the DLX jack (TRS cable) and to other pedals via the TAP jack (TS cable). It uses a normally-open switch configuration for maximum device compatibility.
+
+  Note: Program 6 on the Soft Focus DLX hijacks the expression jack for volume swell effects, making tap tempo incompatible with that preset. The device draws power directly from the Soft Focus DLX — no external power supply required.
+io:
+  - name: DLX
+    signalFlow: output
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: TAP
+    signalFlow: output
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right

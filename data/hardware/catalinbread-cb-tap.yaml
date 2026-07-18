@@ -1,0 +1,36 @@
+id: Vzuv77pShr6I9ZOTg2WfF
+name: CB Tap
+manufacturer: catalinbread
+primaryCategory: utility
+url: https://catalinbread.com/products/cb-tap
+prices:
+  - amount: 65
+    currency: USD
+description: An external tap tempo mechanism designed primarily for the Belle
+  Epoch Deluxe pedal, also compatible with other tap-tempo-equipped pedals
+  (excluding Boss models and non-normally-open tap designs). Includes a
+  Catalinbread-branded 6-inch 1/4" TRS patch cable and an LED indicator that
+  follows tempo when used with the Deluxe.
+details: |-
+  The CB Tap is an external tap tempo mechanism from Catalinbread, designed primarily to add tap functionality to the Belle Epoch Deluxe delay pedal.
+
+  It connects via a Catalinbread-branded 6-inch 1/4" TRS patch cable and features two inputs: a DLX input for the Belle Epoch Deluxe and a Tap input for other compatible pedals.
+
+  An LED indicator on the unit follows tempo when connected to a Deluxe-series pedal, providing visual feedback. The CB Tap sets a delay time that can then be multiplied into uniform subdivisions via the Echo Delay knob.
+
+  Compatible with non-Boss, normally-open tap tempo pedals. Both inputs can be used simultaneously. Note that it operates within the Belle Epoch Deluxe's delay range and will not tap slower than 800ms.
+io:
+  - name: DLX
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Tap
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
