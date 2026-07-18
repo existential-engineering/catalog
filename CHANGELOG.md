@@ -1,5 +1,139 @@
 # catalog
 
+## 3.42.0
+
+### Minor Changes
+
+- 984910b: Import Alvarez (4 hardware entries).
+
+  Adds baritone acoustic guitars and acoustic bass from the Alvarez
+  Artist Series: ABT60 (current and 2017 archived models), ABT60ce
+  8-String (with Shadowburst variant), and AB60ce acoustic bass.
+  All entries feature solid Sitka Spruce tops and FST2 bracing.
+
+- 51a2155: Import Amphion Amp400.8 (1 hardware entry).
+
+  The Amp400.8 is an 8-channel rack-mount power amplifier with Class-D
+  amplification and a proprietary buffer stage, designed as a sonic match
+  for Amphion and other passive studio monitors.
+
+- b41ea97: Import Bastl Instruments (19 products).
+
+  Seven discontinued Eurorack hardware modules: grandPA granular sampler,
+  SPA expander, Noise Square noise/square generator, LOL mute utility,
+  Little Nerd clock/trigger processor, Multiple passive splitter, and
+  the original Skis envelope+VCA (predecessor to Skis II).
+
+  Eight accessories: Juice Bus busboard, Rumburack Case, Marton Case,
+  Long Skiff, Marton Skiff, and three full Eurorack systems (Rumburack
+  2.0, BOB, BOBEK).
+
+  Four VCV Rack software plugins (free): VCV Basil delay, VCV Crust
+  drum voice, VCV Pizza synthesizer, VCV Kompas sequencer.
+
+- fd9126c: Import Benson Amps (26 hardware entries).
+
+  Handmade boutique amp builder from Portland, OR. Adds their full
+  lineup: 12 guitar amplifiers (Monarch Reverb Plus and Bellringer
+  in head and 1x12 combo configurations, Redland Reverb in 15W/35W
+  head and combo configurations, Vincent, Nathan Junior, Vinny
+  Reverb, Babylon), 1 bass head (B700), the Tall Bird Plus
+  reverb/tremolo unit, 4 speaker cabinets, and 8 guitar pedals
+  (424 MKII, Germanium Boost, Preamp Pedal, Germanium Preamp,
+  Delay, Störkn B0kš, Deep Sea Diver Fuzz-Echo, Florist).
+
+  Note: product images were not auto-selected because the source site
+  uses Squarespace JavaScript rendering; source-page image references
+  are available for manual upload.
+
+- 0fc0955: Import Bricasti Design (25 entries: 24 hardware, 1 accessory).
+
+  Covers the full current product lineup: M7/M7M reverbs, M3/M1/M1S2/M11/M11S2/M21
+  DACs, MC1 Reference DAC, M12 Source Controller, M5 Network Player, M19 CD transport,
+  M10 Remote Console, M15/M15 Pro/M25 stereo amps, M20 preamp, M28/M30/M32 monoblocks,
+  Platinum series (M21/M1S2/M12 Platinum, M32 Platinum), and the MDx network
+  processor board accessory.
+
+- 595d83a: Import Burl Audio (25 hardware entries).
+
+  Includes the B80 and B16 Mothership modular chassis systems with their
+  full range of daughter cards (BAD8, BAD16, BAD4M, BDA4, BDA4M, BDA8,
+  BDA12, BDA16, BAES4, BCLK, B4 Mic Pre, B22 ORCA) and swappable
+  motherboards (BMB1 DigiLink, BMB2 MADI, BMB3 Dante, BMB4 SoundGrid,
+  BMB6 AES/EBU). Also includes the standalone B2 Bomber ADC/DAC,
+  B26 ORCA monitor controller, B32 Vancouver summing mixer, B1 Mic Pres,
+  and the announced BC5000 Bigfoot compressor.
+
+- c8eb450: Import Caroline Guitar Company (15 hardware entries).
+
+  Fifteen pedals covering current and legacy lineup: Kilobyte-2000 tap
+  delay flagship, Wave Cannon Zero distortion, Arigato phaser, Somersault
+  chorus/vibrato, Météore reverb, Parabola tremolo, Shigeharu IC Fuzz +
+  Octave, CROM fuzz/distortion, Hawaiian Pizza fuzz, The Blues overdrive,
+  Aaron Graves Overdrive, Wave Cannon MKII, plus three legacy products
+  (Kilobyte, Megabyte, Icarus V2).
+
+- 2e6a2f9: Import Catalinbread (64 hardware entries).
+
+  Full product lineup of the Portland, Oregon guitar effects pedal maker.
+  Covers overdrives (Dirty Little Secret series, RAH, Sabbra Cadabra, WIIO,
+  Formula amp-sims), delays (Belle Epoch series, Echorec), reverbs (Talisman,
+  Soft Focus series, Sinkhole), fuzzes (Fuzzrite series, Katzenkonig, Giygas),
+  and modulation (Callisto, Wake, Zero Point Flanger). Also includes Proto Club
+  limited releases and Legacy Series reissues.
+
+- 7f1a215: Import Chandler Limited (31 hardware entries).
+
+  Covers the full current product line including EMI Abbey Road
+  Series gear (TG12345 Curve Bender, REDD.47 Mic Amp, REDD
+  Microphone, TG1 Limiter, Zener Limiter, RS124/RS660),
+  500-series modules (TG12345 MKIV EQ, TG2-500 Pre Amp, Little
+  Devil family, TG Opto Compressor, Germ 500 MKII Pre Amp),
+  rack-mount preamps/compressors/EQs (TG2 Pre Amp/DI, Germanium
+  Pre Amp/DI, TG12411 Channel), microphones (TG Microphone, TG
+  Microphone Type L, REDD Microphone), guitar amp and pedals (GAV
+  19T, Germanium Drive, Little Devil Colored Boost), and the
+  pre-announced REDD Mixing System console. Also includes four
+  discontinued models (LTD-1, LTD-2, Germanium Tone Control,
+  Germanium Compressor).
+
+- f74ae04: Import Coles Electroacoustics (30 hardware/accessory entries).
+
+  Adds an imported subset of Coles Electroacoustics products, a British
+  manufacturer with BBC broadcast heritage. Includes 6 ribbon microphones
+  and 1 microphone with unknown transducer type (4030L, 4038, 4050, 4104,
+  4115, 4155, FIST), 4 speaker drive units (CE2000, CE 3000, CE-4001,
+  CE 5000), and 19 microphone accessories (cases, shock mounts, stand
+  adaptors, connectors, and broadcast accessories).
+
+- 58335bd: Import Collings Guitars (103 hardware entries).
+
+  Products span the full Collings lineup: acoustic guitars (0, 00, 000, OM,
+  dreadnought, slope-shoulder dreadnought, jumbo, parlor, classical, and
+  Hill Country series), electric guitars (CL, 290, 360, 470, 620, 71, I-35,
+  SoCo, Eastside, Ladybird, and archtop AT series), and mandolins (MT,
+  MT2, MF, and MF5 families in F-style and A-style configurations).
+
+- 461e088: Import Fairfield Circuitry (19 hardware/accessory entries).
+
+  Covers the full current lineup of effects, utility, and accessory
+  products from the Hull, Quebec maker: overdrive (Barbershop,
+  Modèle B), fuzz (900, Unpleasant Surprise), modulation (Shallow
+  Water), delay (Meet Maude), ring modulator (Randy's Revenge),
+  filter/EQ (Long Life), distortion (20% More), reverb (Placeholder),
+  compressor (Accountant), FM degradation (Roger That), feedback loop
+  (Hors d'Oeuvre?), CV sag (Board Member), envelope follower (Conflict
+  of Interest), plus four utility/accessory products (Either/Or, Less
+  & Less, PB & J, Split!).
+
+- 3562225: Import JHS Pedals (149 hardware entries).
+
+  Complete production and vintage lineup from Kansas City-based effects
+  manufacturer: 3 Series budget line, Colour Box preamps, Morning Glory
+  overdrive, Emperor chorus/vibrato, Panther delay, Kodiak tremolo,
+  Muffuletta fuzz, Bonsai OD, and 40+ discontinued boutique designs.
+  Includes 500-series variants and utility pedals.
+
 ## 3.41.0
 
 ### Minor Changes
