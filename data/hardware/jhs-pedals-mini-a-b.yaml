@@ -1,0 +1,57 @@
+id: cb-YyL_h_eOMJosC064Rd
+name: JHS Pedals Mini A/B
+manufacturer: jhs-pedals
+primaryCategory: utility
+categories:
+  - pedal
+  - routing
+url: https://jhspedals.info/products/mini-a-b
+prices:
+  - amount: 65
+    currency: USD
+description: Compact passive A/B switching pedal for routing between two
+  instruments, two amps, or isolating a tuner, with an LED indicator and
+  optional power-free operation.
+details: |-
+  There are two types of players, those that utilize an A/B box like our Mini A/B here, and those that don't know what they're missing. Add one to your pedalboard, and you'll find the Mini A/B is full of indispensable benefits on the gig, in the studio, or even at home. At its core, the simple footswitch design selects between a pair of 1/4" jacks on the left side of the unit.
+
+  - Instantly swap between two instruments
+  - Perfect for switching tones on dual-amplifier rigs
+  - Isolate your tuner from the signal chain, while achieving silent onstage tuning
+  - Leave output unplugged for a convenient mute function
+
+  Like its name suggests, the Mini A/B is a bite-sized wonder. We can achieve that because of its passive design, which also means it won't cause any tonal loss. However, we did choose to include a bright LED indicator, letting you know which jack is selected. Don't need that light? Just unplug the power cable. The Mini A/B will still work just fine.
+
+  - Small size is ideal for saving pedalboard space
+  - LED indicator tells you which 1/4" you have selected
+  - Can run perfectly without power
+  - Built rugged
+io:
+  - name: Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Output A
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Output B
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Power (optional, for LED)
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

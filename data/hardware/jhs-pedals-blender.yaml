@@ -1,0 +1,55 @@
+id: wn59K1HwxsifkP8bj26VI
+name: Blender
+manufacturer: jhs-pedals
+primaryCategory: utility
+categories:
+  - pedal
+  - routing
+  - discontinued
+url: https://jhspedals.info/products/blender
+description: A buffered parallel effects loop that blends your dry signal with
+  any effect or chain of effects using a single knob, also usable as a tuner
+  output or preset effects loop.
+details: |-
+  Take any effect or chain of effect (even your whole board) and run them through the send and return of the Blender. As you turn the knob, you blend in your original clean tone with the effected signal. Simple and effective!
+
+  This can also be used as a tuner out or simple effects loop to activate a string of multiple pedals for a preset tone. Note that this is a buffered circuit and not just a simple passive looper like many out there.
+
+  VERSION HISTORY:
+  Most Blenders were a sparkle orange color. Very early builds had no icon. Was later changed to Red Texture color shortly before discontinuing this unit.
+io:
+  - name: Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Send
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Return
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

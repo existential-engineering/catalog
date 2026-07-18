@@ -1,0 +1,54 @@
+id: 9rAqHrEWMKFxq3eDJLO65
+name: Alpine
+manufacturer: jhs-pedals
+primaryCategory: reverb
+categories:
+  - pedal
+  - effect
+  - discontinued
+url: https://jhspedals.info/products/alpine
+prices:
+  - amount: 0
+    currency: USD
+description: A versatile reverb pedal with Reverb, Highs, Depth, and Length
+  controls plus a Shift footswitch for two on-the-fly preset sounds and a TRS
+  EFX loop for inserting effects into the reverb signal.
+details: |-
+  In a world full of reverb pedals we are proud to offer up a highly tweak-able, versatile, inspiring and cost effective solution for any situation your gig might throw at you. The heart of the Alpine's design is the idea that you can have a reverb pedal that is straight forward, easy to use, but also extremely powerful in its functions all while still very approachable without requiring a degree in computer engineering to dial in a great sound.
+
+  The Alpine features two footswitches. The left footswitch turns the pedal On/Off and the right footswitch is the 'Shift' footswitch. The 'Reverb' control is essentially a wet/dry mix knob. The 'Highs' control functions like a high-pass filter. The 'Depth' control adjusts the size or space of the reverb. The 'Length' control adjusts the tails/decay time of the overall reverb.
+
+  The 'Shift' knob allows two settings on the fly. When you engage the 'shift' footswitch you also engage the 'Shift' knob that is a second 'Reverb' control.
+
+  The Alpine has two top-mounted 1/4" Input/Output jacks. On the left side a TRS EFX Loop jack allows you to insert any pedal or effect unit within the reverb signal itself.
+
+  The Alpine uses high quality buffered bypass that allows for 'Trails' — the reverb signal gradually trails off when turning the pedal off. Special thanks to Jim Coleman of Sky Pedals — the Cloud 9 lives on in the Alpine.
+io:
+  - name: Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: EFX Loop
+    signalFlow: bidirectional
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

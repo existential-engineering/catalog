@@ -1,0 +1,56 @@
+id: 1NEjUCIFpqJzzotEu44Xz
+name: Colour Box 500
+manufacturer: jhs-pedals
+primaryCategory: preamp
+categories:
+  - eq
+  - di-box
+  - saturation
+  - discontinued
+url: https://jhspedals.info/products/colour-box-500
+prices:
+  - amount: 0
+    currency: USD
+description: A 500-series lunchbox preamplifier and EQ inspired by Neve BA283
+  gain stages, with DI, mic, and line inputs, Carnhill transformers, and a
+  seven-band EQ capable of everything from pristine clean to destructive
+  saturation.
+details: |-
+  In 2013 we released the Colour Box, a guitar pedal that pushed the boundaries of what a pedal could do. The natural progression was to take what made the Colour Box great and make it even greater by using a 500-series format that would essentially let us redesign it from the ground up. The circuit is inspired by several legendary pieces of gear, with the heart being two cascaded Neve BA283 stages as found in the Neve 1073 preamps. The output stage borrows its origins in the fashion of class A discrete op amp design much like the Neve 1272. The EQ is a combination of several styles, ideas, and classics. Top-shelf components include matched Carnhill transformers and audio grade components.
+
+  The Input Section features three input paths: DI (front instrument jack), Mic, and Line Level (back of the lunchbox), with a -20dB pad toggle and +48V phantom power toggle, a Carnhill VTB9046 input transformer, and switchable input impedance.
+
+  The Gain Stages use two discrete stages in series with separate gain (step) and volume (pre volume) controls. The step control sets overall gain at 18dB, 23dB, 28dB, 32dB, or 37dB. Combined, the stages offer over 60dB of clean gain.
+
+  The EQ Section features seven controls: Treble (fixed peaking), Air Band (+26dB boost at 50kHz), Mid and Mid Shift (swept), Bass with Bass Shift and Bass Q (fully parametric), and a variable High Pass Filter (50-150Hz).
+
+  The Output Section features the final class A discrete Neve 1272-style stage with a Carnhill VTB2514 transformer, master volume control, and polarity (phase) switch.
+io:
+  - name: DI Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
