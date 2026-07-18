@@ -1,0 +1,63 @@
+id: cPzlOAFGHIscFMoB5eMLE
+name: Shallow Water
+manufacturer: fairfield-circuitry
+primaryCategory: modulation
+categories:
+  - chorus
+  - vibrato
+  - flanger
+  - effect
+  - analog
+url: https://fairfieldcircuitry.com/products/shallow-water
+prices:
+  - amount: 455
+    currency: CAD
+description: Shallow Water is a K-Field Modulator that randomly modulates a
+  short bucket brigade delay time to create non-cyclical vibrato, chorus, and
+  flanger-type effects favouring old tape flavours.
+details: |-
+  Shallow Water generates a non-cyclical pitch modulation effect using a
+  pseudo-random generator whose output resembles stepped random voltages at random
+  time intervals. A BBD (bucket brigade device) delays the signal by a few dozen
+  milliseconds; the random modulation controls this delay time for pitch variation.
+
+  The RATE control sets the range of time intervals between fluctuations. DAMP
+  affects the slope of the modulating signal from sharp and abrupt to slow and
+  sluggish. DEPTH adjusts the intensity of modulation. MIX balances dry and wet
+  for chorus-type sounds or vibrato (full wet). Internal BOOST/PAD jumpers allow
+  input level matching for guitar pickups or line-level sources.
+specs: |-
+  - True bypass
+  - Dimensions: 4.7" x 3.8"
+  - Input impedance: 1 MΩ
+  - Output impedance: 2 kΩ
+  - Power supply: 9–9.6 VDC centre-negative
+  - Current draw: 40 mA max
+  - 1/4" mono input/output jacks
+  - 2.1mm DC connector
+  - Internal BOOST/PAD jumpers for input level matching
+  - Internal LPG adjust trimpot
+  - No battery connection
+  - Made in Hull, Québec
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

@@ -1,0 +1,79 @@
+id: zBxrblNvfHAO1orAjUHBk
+name: Placeholder
+manufacturer: fairfield-circuitry
+primaryCategory: reverb
+categories:
+  - effect
+  - analog
+url: https://fairfieldcircuitry.com/products/placeholder
+prices:
+  - amount: 620
+    currency: CAD
+description: An analogue implementation of a digital reverb algorithm using
+  bucket brigade devices and a Householder-reflection feedback matrix, creating
+  spaces that are both familiar and unusual.
+details: |-
+  Placeholder uses three independent analogue BBD delay-lines arranged in a
+  Householder-reflection feedback matrix where every delay line feeds back only to
+  every other delay line. This allows quick echo density from only three delay-lines.
+
+  The all-analogue signal path covers large bingo halls, bathrooms, spring-like
+  flavours, plate semblances, unrealistically small rooms, and near-flanging. A
+  microcontroller handles delay clocks and modulation (cyclical, random, or both)
+  while the audio path remains fully analogue. The INSERT jack provides an FX loop
+  on the main feedback path. Two front-panel CV inputs (D for decay, S for size)
+  accept modular-level signals.
+specs: |-
+  - Delay range: 12 to 160 milliseconds
+  - Input impedance: 1 MΩ (100 kΩ with -6 dB pad jumper)
+  - Output impedance: 1 kΩ
+  - True bypass
+  - Power supply: 9 to 9.6 VDC center-negative
+  - Current draw: ~80 mA at 9.6 VDC
+  - Enclosure dimensions: 4.7" x 3.8" x 1.9"
+  - CV inputs: D (decay, ±5V useful range), S (size, 0-5V useful range)
+  - INSERT: TRS, tip = send, ring = return
+  - Made in Hull, Québec
+io:
+  - name: IN
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: INSERT
+    signalFlow: bidirectional
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: D - Decay CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: S - Size CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

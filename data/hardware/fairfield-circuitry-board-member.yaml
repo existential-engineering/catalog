@@ -1,0 +1,61 @@
+id: zFcHUubf0MDXB6snYMvBy
+name: Board Member
+manufacturer: fairfield-circuitry
+primaryCategory: utility
+categories:
+  - analog
+url: https://fairfieldcircuitry.com/products/board-member
+prices:
+  - amount: 210
+    currency: CAD
+description: A CV/expression-controlled voltage sag device that uses one pedal's
+  power supply to deliberately under-volt another, creating unexpected fuzz
+  tones, chirps, and weird decays in analog circuits.
+details: |-
+  Board Member sits between your power supply and a target pedal, controlling its
+  supply voltage with CV or expression. The SAG knob sets the base output voltage
+  (fully clockwise = full power, counter-clockwise = near zero). The CV knob is an
+  attenuverter for the incoming CV/expression signal.
+
+  A 1/8" CV input accepts bipolar signals; the EXP jack accepts TRS expression
+  pedals or positive-only CV. DC In accepts standard 9VDC (or up to 18V for sagging
+  18V pedals) and DC Out feeds the controlled pedal. Ships with a 28cm EBS flat
+  DC-DC cable. Works best with simple analog circuits using true bypass switching;
+  digital and microcontroller-based pedals are not compatible.
+specs: |-
+  - Enclosure dimensions: 3.6" x 1.5"
+  - CV input range: ±5V normal, ±8V max
+  - EXP input range: 0 to 5V normal, 0 to 8V max
+  - Power supply: 9 to 18 VDC center-negative
+  - Current draw: 10 mA at 9.6 VDC
+  - Ships with 28cm EBS flat DC-DC cable
+  - Made in Hull, Québec
+io:
+  - name: CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: EXP
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: DC In
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top
+  - name: DC Out
+    signalFlow: output
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

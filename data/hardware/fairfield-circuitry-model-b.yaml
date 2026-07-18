@@ -1,0 +1,59 @@
+id: vNm5Jr2fvCkm1WxWiWbBI
+name: Modèle B
+manufacturer: fairfield-circuitry
+primaryCategory: overdrive
+categories:
+  - effect
+  - analog
+url: https://fairfieldcircuitry.com/products/model-b
+prices:
+  - amount: 265
+    currency: CAD
+description: The Modèle B is a stripped-down, always-on version of the
+  Barbershop Overdrive in a tiny enclosure, with no bypass switch and two tone
+  options selectable via internal jumper.
+details: |-
+  The Modèle B is a minimalistic version of the popular Barbershop Overdrive —
+  always on, never off, without a bypass switch or indicator light. Handmade from
+  JFETs matched to specs, it delivers the same JFET overdrive character as the
+  Barbershop.
+
+  The SAG control reduces voltage to the amplifiers for additional saturation
+  character. A plastic shorting jumper on a 3-pin header inside the enclosure
+  selects between two tone options: no high-frequency cut (classic Barbershop sound)
+  or a subtle low-pass filter to tame brightness. The DRIVE and VOLUME controls set
+  interstage gain and output level respectively.
+specs: |-
+  - Always-on (no bypass switch)
+  - Dimensions: 3.6" x 1.5"
+  - Input impedance: 1 MΩ
+  - Output impedance: <5 kΩ
+  - Power supply: 9–9.6 VDC centre-negative (up to 18 VDC with tonal change)
+  - Current draw: 5 mA
+  - 1/4" mono input/output jacks
+  - 2.1mm DC connector
+  - Internal jumper for tone selection (flat/wide or high-frequency cut)
+  - No battery connection
+  - Made in Hull, Québec
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

@@ -1,0 +1,72 @@
+id: QZZ0eMKozunKoMlGFSM7q
+name: Long Life
+manufacturer: fairfield-circuitry
+primaryCategory: filter
+categories:
+  - equalizer
+  - effect
+  - analog
+url: https://fairfieldcircuitry.com/products/long-life
+prices:
+  - amount: 455
+    currency: CAD
+description: Long Life is a state-variable filter combining tilt and notch/boost
+  equalization around a 2nd-order (-12 dB/octave) core, functioning as a
+  one-band parametric equalizer with CV inputs and expression pedal control.
+details: |-
+  Long Life is a versatile state-variable filter combining tilt EQ with parametric
+  notch/boost equalization around a 2nd-order state-variable core. It offers
+  shelving filter response from low-pass to high-pass, with fully variable Q going
+  well into self-oscillation.
+
+  CV inputs for both resonance (Q) and frequency (F) provide V/octave scaling for
+  synthesizer integration, allowing the pedal to function as a VCF and VCO in a
+  modular context. An expression pedal input controls the center frequency for
+  wah-type effects. Soft clip zener circuitry adds grit. Caution should be
+  exercised at high-Q settings as strong oscillations will occur.
+specs: |-
+  - 2nd-order (-12 dB/octave) state-variable filter
+  - Shelving filter: low-pass to high-pass
+  - CV input for resonance (Q)
+  - CV input for frequency (F)
+  - V/octave scaling synthesizer interface
+  - Expression pedal input for center frequency
+  - Soft clip zener
+  - Power supply: 9 VDC centre-negative
+  - Made in Hull, Québec
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Expression / CV Frequency Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: CV Resonance Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

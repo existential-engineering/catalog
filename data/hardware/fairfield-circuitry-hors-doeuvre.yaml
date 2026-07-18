@@ -1,0 +1,68 @@
+id: e1s5Ywskrv610i5wyof6K
+name: Hors d'Oeuvre?
+manufacturer: fairfield-circuitry
+primaryCategory: utility
+categories:
+  - effect
+  - analog
+url: https://fairfieldcircuitry.com/products/hors-doeuvre
+prices:
+  - amount: 310
+    currency: CAD
+description: The Hors d'Oeuvre? is an active feedback loop pedal that enables
+  bipolar feedback routing of external signal processing devices and mixing of
+  input and effect return signals.
+details: |-
+  The Hors d'Oeuvre? is an active feedback loop device that provides different
+  opportunities to create and listen to: bipolar feedback of any combination of
+  sound processing devices, and signal difference of input and return signals.
+  It enables routing of external effects (reverb, fuzz, phaser, and more) into a
+  feedback loop with independent WET and DRY signal mixing.
+
+  The FEED control sets the feedback amount; caution should be exercised with FEED
+  settings above minimum as strong oscillations will occur. The SEND/RETURN effects
+  loop connects external processing devices that are brought into the feedback path.
+  It is intentionally designed as an introduction to feedback-based sound design.
+specs: |-
+  - Active feedback loop
+  - SEND/RETURN effects loop
+  - Independent WET/DRY mix
+  - FEED (feedback) control
+  - Power supply: 9 VDC centre-negative
+  - Made in Hull, Québec
+io:
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Effects Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Effects Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top
