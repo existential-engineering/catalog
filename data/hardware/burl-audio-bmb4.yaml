@@ -1,0 +1,50 @@
+id: Mf-Jtv-O4fKR4R4mka91G
+name: BMB4 SoundGrid
+manufacturer: burl-audio
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - digital
+url: "https://www.burlaudio.com/products/motherboards/bmb4"
+description: "SoundGrid motherboard for the B80 and B16 Mothership, featuring
+  one Ethernet port for 64-channel Waves SoundGrid audio-over-Ethernet
+  connectivity, providing extremely low-latency audio processing over 1 Gbps
+  Ethernet."
+specs: |-
+  - 1 SoundGrid Ethernet port
+  - 64-channel IO at 44.1 kHz, 48 kHz, 88.2 kHz, 96 kHz
+  - 1 Gbps Ethernet network
+  - Waves SoundGrid audio-over-Ethernet technology
+  - Real-time audio processing on Intel-based SoundGrid servers
+  - 2 BNC word clock outputs
+  - 1 BNC word clock input
+  - Compatible with B80 and B16 Mothership
+io:
+  - name: SoundGrid Ethernet
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Out 1
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Out 2
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock In
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right

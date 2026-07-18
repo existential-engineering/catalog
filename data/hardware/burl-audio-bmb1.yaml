@@ -1,0 +1,55 @@
+id: 6jkiaPEqszahkLbHMy5dh
+name: BMB1 DigiLink
+manufacturer: burl-audio
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - digital
+url: "https://www.burlaudio.com/products/motherboards/bmb1"
+description: "DigiLink motherboard for the B80 and B16 Mothership, featuring two
+  primary DigiLink connectors for direct hookup to Avid Pro Tools at 64-channel
+  IO across all sample rates."
+details: |-
+  The BMB1 comes with two DigiLink connectors for direct hookup to Avid Pro Tools. BURL AUDIO does away with the expansion port, making both primary ports. That means you can play 64 ADC or DAC channels straight out of Pro Tools with one unit. With 6 BAD8s and 4 BDA8s a 48x32 IO can be achieved. With 2 BAD8s and 8 BDA8s a 16x64 IO can be achieved. With the configurability of the Mothership the IO possibilities are limitless.
+specs: |-
+  - 2 DigiLink ports (both primary — no expansion port)
+  - 64-channel IO at all sample rates
+  - 2 BNC word clock outputs
+  - 1 BNC word clock input
+  - Compatible with B80 and B16 Mothership
+io:
+  - name: DigiLink Port 1
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: digilink
+    maxConnections: 1
+    position: Right
+  - name: DigiLink Port 2
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: digilink
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 1
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 2
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right

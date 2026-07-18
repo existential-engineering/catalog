@@ -1,0 +1,58 @@
+id: cbEiVJkf4qk7E_pmyIlUp
+name: BMB3 Dante
+manufacturer: burl-audio
+primaryCategory: audio-interface
+categories:
+  - rack-mount
+  - digital
+url: "https://www.burlaudio.com/products/motherboards/bmb3"
+description: "Dante motherboard for the B80 and B16 Mothership, featuring two
+  Ethernet ports for use with Dante-enabled DAWs and devices, supporting
+  64-channel IO at 44.1 kHz through 96 kHz and 32-channel IO at 176.4 kHz and
+  192 kHz."
+details: |-
+  The BMB3 features two Ethernet ports for use with Dante-enabled DAWs and any Dante-enabled device, such as a digital mixing console. With two Dante ports, 64in/64out at 44.1 k, 48 k, 88.2 k, 96 k, and 32in/32out at 176.4 k and 192 k are supported. With 6 BAD8s and 4 BDA8s a 48x32 IO can be achieved. With 2 BAD8s and 8 BDA8s a 16x64 IO can be achieved. With the configurability of the Mothership the IO possibilities are limitless.
+specs: |-
+  - 2 Dante Ethernet ports (sold standard with one port, second available)
+  - 64-channel IO at 44.1 kHz, 48 kHz, 88.2 kHz, 96 kHz
+  - 32-channel IO at 176.4 kHz, 192 kHz
+  - 2 BNC word clock outputs
+  - 1 BNC word clock input
+  - Compatible with B80 and B16 Mothership
+  - Supports Dante-enabled DAWs and digital mixing consoles
+io:
+  - name: Dante Ethernet Port 1
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Dante Ethernet Port 2
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 1
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Output 2
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
