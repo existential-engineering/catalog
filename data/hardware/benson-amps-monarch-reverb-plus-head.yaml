@@ -35,6 +35,13 @@ specs: |-
   - Dovetailed pine cabinet
   - Dimensions: 21"W x 11"H x 8.5"D, 21 lbs
 io:
+  - name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
   - name: Speaker Output 8 Ohm
     signalFlow: output
     category: audio
@@ -46,6 +53,13 @@ io:
     signalFlow: output
     category: audio
     type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Footswitch
+    signalFlow: input
+    category: audio
+    type: expression
     connection: 1/4-inch
     maxConnections: 1
     position: Right
