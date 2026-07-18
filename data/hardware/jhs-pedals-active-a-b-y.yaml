@@ -1,0 +1,56 @@
+id: Aw0fw7fgxFZ79GrngwYn9
+name: Active A/B/Y
+manufacturer: jhs-pedals
+primaryCategory: utility
+categories:
+  - pedal
+  - routing
+  - di-box
+url: https://jhspedals.info/products/active-a-b-y
+prices:
+  - amount: 130
+    currency: USD
+description: The JHS Pedals Active A/B/Y is a professional routing switcher with
+  an active buffer, transformer isolation to prevent hum loops, polarity
+  inversion switch, and an XLR DI output for sending signal directly to a mixing
+  board.
+details: |-
+  The Active A/B/Y is a professional routing tool for guitarists and bassists. Use it to send your signal to Output A, Output B, or both simultaneously (Y mode). A high-quality active buffer preserves your tone across long cable runs.
+
+  Transformer isolation on Output B eliminates hum loops caused by ground differences between amplifiers. A polarity inversion switch on Output B helps phase-align two amps for maximum impact. The XLR DI output can send your signal directly to a mixing board, recording interface, or PA system.
+io:
+  - name: Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Output A
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Output B
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: DI Output
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

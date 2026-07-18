@@ -1,0 +1,78 @@
+id: 6iOxWICzD7FTquXW1u2Ps
+name: Switchback
+manufacturer: jhs-pedals
+primaryCategory: routing
+categories:
+  - pedal
+  - utility
+  - looper
+url: https://jhspedals.info/products/switchback
+prices:
+  - amount: 120
+    currency: USD
+description: The JHS Pedals Switchback is a true bypass A/B effects loop
+  switcher with two selectable send/return loops and Red Remote compatibility,
+  functioning as an A/B box, looper, or amp input switcher.
+details: |-
+  The JHS Pedals Switchback is a small unassuming box with a massive feature set. It began its life as a device that we designed just for ourselves to test and compare pedals in the JHS workshop but we soon realized that it was extremely useful for everyone's guitar rig on stage or in the studio.
+
+  The Switchback has one input, one output and two separate selectable effects loops (Send/Return), plus an A/B toggle that is controllable by our Red Remote switching system. The foot-switch is 100% true bypass, so when it's off, it's not affecting your signal in any way.
+
+  Applications:
+  1. AN A/B TRUE BYPASS LOOPER: Place a pedal or chain of pedals in the first loop and place a different pedal or chain of pedals in the second loop. The toggle/red remote will allow you to quickly switch between those two loops.
+  2. A SIMPLE TRUE BYPASS LOOPER: Place your pedal or chain of pedals in the first loop. The toggle/Red Remote will now toggle between the loop with your effects and the clean bypass signal.
+  3. AN A/B BOX: Simply use Send 1 and Send 2 to go to two different amps or any other application where you need two switchable outputs.
+  4. AN AMP INPUT SWITCHER: Use Send 1 to channel one and Send 2 to channel two to channel switch on any amp with multiple inputs.
+  5. AN EFFECTS LOOP A/B: Plug your amp's effects loop Send into the input and the amp's return into the output, then toggle between the two loops.
+
+  Because of the red remote function you can place the Switchback and any effects in its loops completely out of sight under your pedal board or in a rack while only having the small 2"x2" Red Remote accessible.
+io:
+  - name: Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Send 1
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Return 1
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Send 2
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Return 2
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

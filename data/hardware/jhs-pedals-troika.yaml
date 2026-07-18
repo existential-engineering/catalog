@@ -1,0 +1,71 @@
+id: rvi_PfGwKVWwPLv1BYrtT
+name: Troika
+manufacturer: jhs-pedals
+primaryCategory: delay
+categories:
+  - pedal
+  - effect
+  - preamp
+  - di-box
+url: https://jhspedals.info/products/troika
+prices:
+  - amount: 349
+    currency: USD
+description: The Troika is a studio-grade delay pedal co-designed by JHS Pedals
+  and Third Man Hardware featuring a Lundahl transformer mic preamp with +20dB
+  to +80dB gain, XLR and 1/4-inch I/O, and 80ms to 1 second delay time.
+details: |-
+  The Troika Delay comes to you from the thundering minds of JHS Pedals and Third Man Hardware like a chariot over the Russian tundra. This is a multi-purpose, studio-grade delay device like you've never seen before. Jack White loves using delay pedals on his voice, but the process can cause lots of problems, including noise, volume drops, and loss of clarity. When Jack brought this idea to Josh, we immediately gave it the same care and attention we gave to the Colour Box and the Pulp N Peel. The Troika is more than a pedal. It's a pro-audio studio device designed to work with microphones, guitars, or any instrument you want to use.
+
+  Trifecta of Special Features:
+  1. Microphone preamp with adjustable gain control from +20dB to +80dB
+  2. Passes +48V of phantom power (does not provide phantom power)
+  3. 80ms to 1 second delay time with internally selectable trails
+
+  Controls:
+  - Repeats: adjusts feedback amount (down=less, up=more)
+  - Volume: adjusts delay signal level (down=less, up=more)
+  - Distance: adjusts delay time from 80ms to 1 second (down=least, up=most)
+  - Mic Gain: preamp gain on right side, clockwise from +20dB to +80dB
+
+  Internal Dip Switches:
+  - MIC/INST: selects between balanced XLR microphone input (routed through Lundahl transformer preamp) or 1/4" unbalanced instrument input (routed through JFET op-amp buffer)
+  - TRAILS/NO TRAILS: selects whether repeats trail on bypass or stop immediately
+
+  Designed with faders like a small mixing console for real-time live control. Sold exclusively at Third Man Hardware.
+io:
+  - name: Mic/Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - name: Echo Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Dry/Wet Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Balanced XLR Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top

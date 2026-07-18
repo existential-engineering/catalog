@@ -1,0 +1,87 @@
+id: yN2ypjHwKe_9EJAFEJvFh
+name: NOTADÜMBLË V2
+manufacturer: jhs-pedals
+primaryCategory: overdrive
+categories:
+  - pedal
+  - preamp
+  - boost
+url: https://jhspedals.info/products/notadumble-v2
+prices:
+  - amount: 119
+    currency: USD
+description: A two-channel DIY pedal kit with independent footswitches,
+  combining a Dumble-inspired overdrive channel and a clean boost/preamp channel
+  with a TRS effects loop, order toggle, and external Presence knob.
+details: |-
+  We're proud to present the NOTADÜMBLË V2 — the two-channel DIY Dumble kit pedal you asked us to build. The V1 accidentally had the wrong boost circuit. The V2 fixes that and gives several more new features. We added a second footswitch, an effects loop, an order toggle, and moved the Presence trim pot to the face of the pedal. Every change here came from your suggestions!
+
+  WHY V2 EXISTS
+
+  In 2019, Josh left a John Mayer rehearsal in Los Angeles with two extremely rare Dumble units in his backpack to reverse engineer. The first was the A Box Later, a device Howard Dumble built sometime in the 1980s as a buffer preamp boost with a built-in effects loop. John has used it in several situations over the years. We cloned it, named it the Box It Later, and that pedal has lived on versions of Mayer's pedalboards since 2021.
+
+  The second unit was the Dumble BBC-1, a far more obscure preamp boost. We cloned that one too and made John a private copy called the Basic Boost. At the time Josh assumed he was simply cloning a JFET booster that Howard threw together. He didn't know that years later he would discover that Dumble's BBC-1 was itself a near-part-for-part clone of a Barcus Berry acoustic preamp from the 1970s. The legendary Dumble FET sound — the one inside $200,000 to $400,000 amplifiers — is a clone of a piezo preamp.
+
+  The NOTADÜMBLË V1 was always supposed to use the Box It Later circuit as its clean channel. The one John actually uses. Two weeks after launch, while prepping a Short Circuit episode about modding the kit, we discovered we had used the BBC-1 instead. The two units look similar. They sound similar. They were both built by Howard, both clean boosts, both reverse engineered for John in 2019. Cliff Smith, our head of R&D at the time, did most of that reverse engineering. His notebooks were the documentation. Cliff passed away a few months after we shipped John's replicas, and when the NOTADÜMBLË kit was greenlit years later, the wrong schematic was the one that got pulled.
+
+  This is the V2. It does what the V1 was always supposed to do. Plus everything you asked us to add. It is unquestionably better than the V1. Consider it the Deluxe Edition!
+
+  WHAT'S NEW
+  - The correct clean circuit. The Box It Later (A Box Later clone) is in. The BBC-1 is out.
+  - Two independent footswitches. V1 had a slider switch to choose between channels. Both channels are now independently footswitchable.
+  - TRS effects loop on the clean channel. Just like the original A Box Later has. Use a TRS-to-TS/TS Y-cable to insert one pedal, two pedals, or your whole board into the clean circuit. No cable inserted = loop bypassed automatically.
+  - Order toggle. A front slide switch chooses which channel runs first in series when both are active. Drive → Clean is a lead lift. Clean → Drive turns the boost into a distortion driver.
+  - External Presence knob. The dirt side Presence trim pot lived inside V1. We moved it to the face of the pedal.
+
+  THE OVERDRIVE CHANNEL
+  The dirt side captures the sustaining violin Dumble tone heard on Larry Carlton records, Eric Johnson's lead voicing, Carlos Santana, Robben Ford, Robert Randolph and any Joe Bonamassa solos where the amp is doing the dirty work.
+
+  CONTROLS
+
+  OVERDRIVE CHANNEL — Left Footswitch
+  Volume – Controls the overall volume of the overdrive channel.
+  Drive – Controls the amount of overdrive.
+  EQ – Adjustable low-pass filter. Left cuts more high frequencies, right cuts less.
+  Presence – Controls the upper-mid range and treble frequencies in the gain stage.
+
+  CLEAN CHANNEL — Right Footswitch
+  Output – Controls the output volume of the clean channel for the effects loop send.
+  Input – Controls the volume of the incoming signal on the effects loop return. Not a standard gain control — changes impedance, which affects tone and feel.
+
+  ADDITIONAL
+  Effects Loop Jack – Use a TRS-to-TS (tip) / TS (ring) Y-cable to insert an effect into the clean channel loop. Tip is send, ring is return. No cable inserted = loop bypassed automatically.
+  Order Switch – Front slide switch. Selects which channel is first in series when both sides are on.
+
+  JACKS
+  Input – 1/4" jack on the top right side of the pedal.
+  Output – 1/4" jack on the top left side of the pedal.
+  Effects Loop – 1/4" TRS jack.
+io:
+  - name: Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top
+  - name: Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
