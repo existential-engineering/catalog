@@ -1,0 +1,48 @@
+id: P0YOpKG49RvlG7lDM2W0D
+name: Titan²
+manufacturer: crane-song
+primaryCategory: compressor
+categories:
+  - limiter
+  - dynamics
+  - rack-mount
+  - beta
+url: http://cranesong.com/titan_2.html
+description: A rack-mount stereo hardware compressor and limiter with plug-in
+  control over Ethernet, shown here as an early first look while the companion
+  software is still being developed.
+details: |-
+  Titan² is a stereo hardware compressor/limiter from Crane Song, presented on this page as "a first look" while accompanying plug-in-control software is still being developed. Its linked overview document repeatedly compares its behavior to Crane Song's earlier Titan compressor, positioning it as that unit's successor.
+
+  The rack unit's front panel has Ceiling, Threshold, Attack, Release, Shape and Gain knobs alongside Setup and Setup Values controls used to select and adjust the color functions VCA Color, Parallel, Dynamic Color and Filter, with separate CH1/CH2 bypass switches and a built-in color touchscreen showing live gain-reduction and level metering.
+
+  The compressor and limiter sections can each be configured independently as separate per-channel controls, stereo-linked, or dual-mono, and the touchscreen stores up to nine local presets plus a working memory that can be loaded, stored, or sent to the plug-in.
+
+  Color-shaping features beyond the original Titan include Dynamic Color (adds third-harmonic coloration while compressing), an AIR/FAT/BOTH frequency-dependent audio path, a VCA HF brightness control, an STC-8 harmonic-distortion filter, adjustable knee shape, a parallel-mix blend, and a side-chain filter that reduces gain reduction triggered by deep low frequencies.
+
+  Hardware settings are mirrored and automated by a companion plug-in that communicates with the unit over Ethernet; the linked overview document notes the plug-in is planned for AAX and VST formats.
+specs: |-
+  - Independent compressor and limiter sections, each switchable between per-channel, stereo-linked, or dual-mono operation
+  - Front-panel controls: Ceiling, Threshold, Attack, Release, Shape, Gain, Setup, Setup Values, VCA Color, Parallel, Dynamic Color, Filter
+  - Built-in color touchscreen display with live level and gain-reduction metering
+  - 9 local memory presets plus a working memory, with touch load/store/send-to-plug-in controls
+  - STC-8 harmonic-distortion filter coloration
+  - Adjustable compression knee shape
+  - Parallel (mix) blend control
+  - Dynamic Color: adds third-harmonic coloration and emphasizes transients during compression
+  - AIR / FAT / BOTH frequency-dependent audio path modes
+  - VCA HF brightness control
+  - Side-chain filter to reduce gain reduction triggered by deep low frequencies
+  - Plug-in control and parameter automation over Ethernet; plug-in planned for AAX and VST formats
+io:
+  - name: Ethernet (plug-in control)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+links:
+  - url: http://cranesong.com/TITAN_SQUARED.pdf
+    type: resource
+    title: More Information (PDF overview)

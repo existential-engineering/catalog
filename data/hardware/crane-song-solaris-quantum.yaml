@@ -1,0 +1,100 @@
+id: M0S_th6MNmjqwQ9Es50HH
+name: Solaris Quantum
+manufacturer: crane-song
+primaryCategory: audio-interface
+categories:
+  - headphone-amp
+url: http://cranesong.com/SOLARIS_QUANTUM.html
+description: The Solaris Quantum is Crane Song's 5th-generation Quantum DAC
+  design, a two-channel D/A converter accepting AES, S/PDIF, optical, and USB
+  digital sources at sample rates up to 192kHz. It offers a stepped-attenuator
+  main output, a fixed-level balanced secondary output, and a dedicated
+  headphone amplifier.
+details: |-
+  The Solaris Quantum is Crane Song's 5th-generation Quantum DAC design, accepting AES, S/PDIF, optical, and USB digital inputs at sample rates up to 192kHz.
+
+  The main output uses discrete output amplifiers with a stepped attenuator, reaching a maximum of +24dBu. A secondary balanced output provides a fixed maximum of +18dBu. A dedicated headphone amplifier has its own stepped attenuator. A mute function cuts the main outputs, and the unit powers up muted. A front-panel LCD function display shows source, gain, and sample rate, along with level meters.
+
+  The Quantum DAC uses 32-bit converters and ASRC for jitter reduction, upsampling to 211kHz. Its reference clock measures under 1 picosecond with a proprietary reconstruction filter for accurate time-domain response; clock jitter measured from 10Hz to 20kHz is typically 0.045pS.
+specs: |-
+  - Digital inputs: AES, S/PDIF, Optical, USB
+  - Sample rates up to 192kHz
+  - Main output: discrete output amplifiers with stepped attenuator, max +24dBu
+  - Secondary balanced output: fixed max +18dBu
+  - Dedicated headphone amplifier with its own stepped attenuator
+  - Mute function cuts main outputs; powers up muted
+  - LCD function display: source, gain, sample rate, and level meters
+  - 5th-generation Quantum DAC design
+  - 32-bit converters with ASRC jitter reduction, upsampling to 211kHz
+  - Reference clock jitter typically 0.045pS (10Hz-20kHz)
+io:
+  - name: AES Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: S/PDIF Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Optical Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - name: USB Input
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Main Output (Left)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Main Output (Right)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Secondary Output (Left)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Secondary Output (Right)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: http://cranesong.com/solaris_manual_version_1_2.pdf
+    type: resource
+    title: Manual
+  - url: http://cranesong.com/CraneSongUSBDriver-1.0.zip
+    type: resource
+    title: Windows USB Driver
