@@ -1,0 +1,116 @@
+id: f_LzJHQmFEdwqoYYxKI9M
+name: COMPRESSOR
+manufacturer: dangerous-music
+primaryCategory: compressor
+categories:
+  - outboard
+  - rack-mount
+  - analog
+  - dynamics
+url: https://www.dangerousmusic.com/product/compressor
+description: When we set out to design The Dangerous COMPRESSOR, we spent over
+  two years figuring out how to achieve modern levels of limiting and
+  compression while avoiding the deadening effects of today's ultra-limited
+  productions.
+details: |-
+  The dangerous compressor was designed to be simple, transparent and powerful. Built to the exacting standards of the mastering community, it has also proven indispensable for tracking and mixing. Tame a vocal, tighten a snare, crush a sampled loop or gently smooth a track.
+
+  The Dangerous COMPRESSOR delivers crystal clear compression that allows you to easily alter and control dynamics without drastically changing the original sound. Like all Dangerous gear, the low end is big and powerful, the mids maintain texture and detail, and the top-end is open and deeply engaging, even during very active gain reduction.
+
+  The COMPRESSOR utilizes two totally independent RMS detectors with a circuit that governs how the left and right channels work together in stereo, delivering crystal clear and rock solid stereo imaging. Each channel can also be used as an independent mono compressor, or the two channels can be cascaded for ultra-transparent compression with peak limiting.
+
+  Engaging SmartDyn turns on the COMPRESSOR's unique dual-slope detector circuits, allowing control of fast transient peaks without causing average volume levels to drop.
+
+  Two instantly bypassable audiophile-grade side-chain EQs feed the detector circuit: Bass Cut and Sibilance Boost (using the BAX EQ's ultra-linear high-end shelf).
+specs: |-
+  - Frequency Response: +/-0.25dB from 15Hz to 80kHz
+  - Maximum level: > +27dBu
+  - Noise floor: < -93dBu band limited from 22Hz-22kHz
+  - THD+N: < 0.005%
+  - IMD: < 0.007%
+  - Crosstalk rejection: > 115dB @1kHz
+  - Input Impedance: 20K Ohms
+  - Output Impedance: 50 Ohms
+  - Side Chain Filters: Bass cut 6dB/octave, -3dB at 60Hz; Sibilance boost corner frequency 1kHz with +2dB at 5kHz shelving
+  - Stepped ratio settings from 1:1 to 20:1
+  - Auto Attack/Release setting
+  - Hard wire bypass engage switch
+  - Hand assembled in the USA
+io:
+  - name: Left Channel Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Left Channel Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Right Channel Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: Right Channel Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: External Sidechain Return L
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: External Sidechain Return R
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - name: External Sidechain Send L
+    signalFlow: output
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: External Sidechain Send R
+    signalFlow: output
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: AC IN
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.dangerousmusic.com/s/compressor-manual-v7.pdf
+    type: resource
+    title: COMPRESSOR Manual
+  - url: https://www.dangerousmusic.com/s/compressor-onesheet.pdf
+    type: resource
+    title: COMPRESSOR One-Sheet
+videos:
+  - provider: youtube
+    videoId: jRV5Ec_Cvyg
+    title: Maintain Transients AND Stereo Image with Dangerous Music COMPRESSOR
+  - provider: youtube
+    videoId: 9av9NHJY_Q8
+    title: Why the Dangerous Music COMPRESSOR Belongs on EVERY Mix
