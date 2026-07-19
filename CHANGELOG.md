@@ -1,5 +1,23 @@
 # catalog
 
+## 3.44.0
+
+### Minor Changes
+
+- c2d3c81: Import 1010 Music (30 hardware/accessory entries).
+
+  Covers the current desktop and Eurorack lineup (Bento, Blackbox 2,
+  Bluebox, Tangerine, the Nanobox line, Bitbox mk2/Micro and their Black
+  Edition variants), the archived first-generation modules (Blackbox,
+  Bitbox, Fxbox, Synthbox, Toolbox, Waverazor, MX4, Euroshield), and
+  cables/faceplates/spare parts accessories.
+
+- 199e5b2: Import 1V/Oct (3 hardware entries).
+
+  Eurorack modular synthesizer manufacturer. Includes The Centre
+  (polyphonic modular-in-modular synth voice), Twins (quad FX
+  processor), and Taipo (MIDI extender module).
+
 ## 3.43.0
 
 ### Minor Changes
