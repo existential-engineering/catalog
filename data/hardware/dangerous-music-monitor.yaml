@@ -156,6 +156,20 @@ io:
     connection: xlr
     maxConnections: 1
     position: Right
+  - name: A-MTR Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: D-MTR Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
   - name: Remote / Expansion
     signalFlow: bidirectional
     category: digital
@@ -163,8 +177,15 @@ io:
     connection: db25
     maxConnections: 1
     position: Right
-  - name: Chassis / Audio Ground
-    signalFlow: input
+  - name: Chassis Ground
+    signalFlow: bidirectional
+    category: power
+    type: ground
+    connection: banana
+    maxConnections: 1
+    position: Right
+  - name: Audio Ground
+    signalFlow: bidirectional
     category: power
     type: ground
     connection: banana

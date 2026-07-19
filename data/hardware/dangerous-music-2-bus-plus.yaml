@@ -164,6 +164,20 @@ io:
     connection: db25
     maxConnections: 8
     position: Right
+  - name: Expansion Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Expansion Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
   - name: Main Output L
     signalFlow: output
     category: audio
@@ -192,18 +206,32 @@ io:
     connection: xlr
     maxConnections: 1
     position: Right
-  - name: External Insert L
-    signalFlow: bidirectional
+  - name: External Insert Send L
+    signalFlow: output
     category: audio
     type: insert
-    connection: 1/4-inch
+    connection: xlr
     maxConnections: 1
     position: Right
-  - name: External Insert R
-    signalFlow: bidirectional
+  - name: External Insert Send R
+    signalFlow: output
     category: audio
     type: insert
-    connection: 1/4-inch
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: External Insert Return L
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: External Insert Return R
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: xlr
     maxConnections: 1
     position: Right
 links:

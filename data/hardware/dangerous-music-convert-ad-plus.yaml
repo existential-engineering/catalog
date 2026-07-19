@@ -116,10 +116,17 @@ io:
     maxConnections: 1
     position: Right
   - name: USB
-    signalFlow: bidirectional
+    signalFlow: output
     category: digital
     type: usb
     connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Power (IEC)
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
     maxConnections: 1
     position: Right
 links:

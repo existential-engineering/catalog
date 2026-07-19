@@ -80,6 +80,20 @@ io:
     connection: xlr
     maxConnections: 1
     position: Bottom
+  - name: TB Remote
+    signalFlow: input
+    category: audio
+    type: proprietary
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: DIM CMND
+    signalFlow: output
+    category: audio
+    type: proprietary
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
   - name: Slate Out
     signalFlow: output
     category: audio
@@ -108,7 +122,14 @@ io:
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: Phones
+  - name: Phones 1
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Phones 2
     signalFlow: output
     category: audio
     type: headphone
