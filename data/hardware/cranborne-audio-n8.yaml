@@ -1,0 +1,81 @@
+id: h33bG3OuqKhN4XSrY-UB0
+name: N8
+manufacturer: cranborne-audio
+primaryCategory: patch-bay
+categories:
+  - routing
+url: https://www.cranborne-audio.com/n8
+description: C.A.S.T. Distribution Hub and Audio Over Cat 5 System
+details: |-
+  N8 is a C.A.S.T. Distribution Hub and Audio Over Cat 5 System that turns standard shielded network cable into a way to route professional analogue audio around a studio or stage. Using Cranborne Audio's proprietary C.A.S.T. technology, N8 converts Cat 5e, Cat 6, or Cat 7 cable into 4-channel balanced audio snakes, letting engineers relocate inputs and outputs up to 100m (330ft) from the source.
+
+  The hub exposes 8 balanced inputs and 8 balanced outputs on DB25 connectors wired to the Tascam standard, alongside four C.A.S.T. ports (A, B, C, and D) on RJ45, each carrying two dedicated input and two dedicated output paths. This makes N8 a central distribution point for connecting up to four C.A.S.T.-enabled devices, such as the N22 breakout box, N22H headphone amp/breakout box, or Camden EC1/EC2 preamps, over long cable runs.
+
+  N8 is completely passive, requiring no external power, and its fully-balanced audio paths support 48V phantom power for condenser microphones and DI boxes across the C.A.S.T. connection. The unit ships in a ruggedised metal enclosure and can be rack-mounted with the optional Half Rack Kit (OBDRK001).
+
+  Cable quality affects performance: N8 is compatible with any shielded Cat 5e, Cat 6, or Cat 7 cable up to 100m/330ft, though Cranborne recommends Cat 6 or Cat 7 for improved crosstalk performance. N8 is also included as part of the C.A.S.T. Intro Bundle alongside the N22H, N22, a 19-inch rackmount kit, two 10m Cat 6e cables, a power supply, and other accessories.
+specs: |-
+  - 8 inputs and 8 outputs over DB25 (Tascam wiring)
+  - C.A.S.T. IN A, B, C, and D ports on RJ45 with 2 dedicated input and output paths each
+  - Compatible with any shielded Cat 5e/Cat 6/Cat 7 cable up to 100m/330ft
+  - Improved crosstalk performance with high-performance Cat 6 and Cat 7 (recommended)
+  - Completely passive operation, no external power required
+  - Fully-balanced, high-quality audio paths
+  - Ruggedised metal enclosure
+  - Full support for 48V phantom power
+  - Rack-mountable with optional Half Rack Kit (OBDRK001)
+io:
+  - name: Line Input 1-8 (DB25)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Bottom
+  - name: Line Output 1-8 (DB25)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 8
+    position: Bottom
+  - name: C.A.S.T. A
+    signalFlow: bidirectional
+    category: audio
+    type: proprietary
+    connection: ethernet
+    maxConnections: 4
+    position: Bottom
+  - name: C.A.S.T. B
+    signalFlow: bidirectional
+    category: audio
+    type: proprietary
+    connection: ethernet
+    maxConnections: 4
+    position: Bottom
+  - name: C.A.S.T. C
+    signalFlow: bidirectional
+    category: audio
+    type: proprietary
+    connection: ethernet
+    maxConnections: 4
+    position: Bottom
+  - name: C.A.S.T. D
+    signalFlow: bidirectional
+    category: audio
+    type: proprietary
+    connection: ethernet
+    maxConnections: 4
+    position: Bottom
+links:
+  - url: https://www.cranborne-audio.com/hubfs/N8_Quick_Start_Guide_050522.pdf?hsLang=en
+    type: resource
+    title: Quick Start Guide
+  - url: https://www.cranborne-audio.com/tech_support
+    type: support
+    title: Technical Support
+videos:
+  - videoId: s-TAKqgoroQ
+    provider: youtube
+    title: "N8 | Studio Cabling System | Audio Over Cat 5 System | C.A.S.T.
+      Distribution Hub | Product Overview"

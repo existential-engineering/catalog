@@ -1,0 +1,117 @@
+id: qNV8EungKVHzmyC3-zocr
+name: N22H
+manufacturer: cranborne-audio
+primaryCategory: headphone-amp
+categories:
+  - patch-bay
+  - routing
+url: https://www.cranborne-audio.com/n22h
+description: N22H is a reference-grade headphone amplifier, Cat5 snake, and
+  C.A.S.T. breakout box - the headphone-amp-equipped "H" variant of Cranborne
+  Audio's N22.
+details: |-
+  N22H is a reference-grade headphone amplifier, Cat5 snake, and C.A.S.T. breakout box - the headphone-amp-equipped 'H' variant of Cranborne Audio's N22. It pairs two balanced combi jack inputs with two balanced XLR and 1/4-inch line outputs, plus a 1/4-inch headphone output driven by a reference-quality headphone amplifier circuit rated at THD+N <0.0009% at +6dBu.
+
+  Like N22, it repurposes shielded Cat5e/Cat6/Cat7 cable as a low-cost multicore, transporting balanced analogue audio (and up to 4 lines of 48V phantom power) over distances up to 100m (330ft) between N22H and other C.A.S.T.-enabled Cranborne gear such as 500R8 and 500ADAT, via its C.A.S.T. IN (RRTT) and C.A.S.T. OUT (TTRR) ports.
+
+  The headphone amplifier offers switchable High and Low Power modes. In High Power mode it delivers up to 950mW into 100 ohm loads (252mW @ 600Ω, 502mW @ 300Ω, 470mW @ 32Ω) with a dynamic range of 116.5dB A-weighted; Low Power mode trades output level for battery life, with THD as low as 0.0002% at +6dBu and 112.9dB dynamic range.
+
+  N22H runs from an internal 9V battery (roughly 2 hours in High Power mode, 9.5 hours in Low Power mode) or the included 9V DC power supply, and is also compatible with third-party 9V guitar-pedal supplies. It ships in a ruggedized metal enclosure with a mic stand thread mount, non-slip rubber feet, and cable-tie holes for use on stage as well as in the studio.
+specs: |-
+  - Two balanced combi jack inputs
+  - Two balanced XLR and 1/4" jack line outputs
+  - 1/4" headphone output with reference-quality headphone amplifier (THD+N: <0.0009% @ +6dBu)
+  - Switchable High and Low Power headphone amp modes
+  - Output Wattage (High Power): 252mW @ 600Ω, 502mW @ 300Ω, 950mW @ 100Ω, 470mW @ 32Ω
+  - Dynamic Range: 116.5dB A-weighted (High Power), 112.9dB A-weighted (Low Power)
+  - Frequency Response: -0.5dB, <1.2Hz to >200kHz
+  - 9V battery compartment: ~2h (High Power) / ~9h 30m (Low Power)
+  - 9V DC power inlet (centre negative), compatible with 3rd-party 9V guitar pedal supplies
+  - C.A.S.T. IN (RRTT) and OUT (TTRR) ports for Cat5e/Cat6/Cat7 snake connectivity up to 100m (330ft)
+  - Ruggedized metal enclosure with mic stand thread mount, non-slip rubber feet, and cable-tie holes
+  - Dimensions: 150 x 46 x 120mm (5.9 x 2.2 x 4.7in); Weight: 0.91kg (2lb)
+io:
+  - name: Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Bottom
+  - name: Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Bottom
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: XLR Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: XLR Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: 1/4" Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: 1/4" Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: C.A.S.T. IN
+    signalFlow: bidirectional
+    category: audio
+    type: proprietary
+    connection: ethernet
+    maxConnections: 4
+    position: Bottom
+  - name: C.A.S.T. OUT
+    signalFlow: bidirectional
+    category: audio
+    type: proprietary
+    connection: ethernet
+    maxConnections: 4
+    position: Bottom
+  - name: 9V DC Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.cranborne-audio.com/hubfs/N22H/N22H_Quick_Start_Guide_040321.pdf?hsLang=en
+    type: resource
+    title: Quick Start Guide
+  - url: https://www.cranborne-audio.com/hubfs/N22H/User_Manuals/N22H_User_Manual_240521.pdf?hsLang=en
+    type: resource
+    title: User Manual
+  - url: https://www.cranborne-audio.com/tech_support
+    type: support
+    title: Technical Support
+videos:
+  - videoId: DxLWCaoPEJE
+    provider: youtube
+    title: "Expandable Via C.A.S.T. - Rewire your studio using Cat 5"
