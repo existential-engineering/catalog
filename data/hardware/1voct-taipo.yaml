@@ -1,0 +1,40 @@
+id: p6kMqclLm4B827rp97ID-
+name: Taipo
+manufacturer: 1voct
+primaryCategory: midi
+categories:
+  - utility
+url: https://1voct.com/product/taipo/
+prices:
+  - amount: 39
+    currency: USD
+description: A MIDI extender module for The Centre and Twins, adding MIDI I/O
+  and USB-C connectivity to a 1V/Oct Eurorack system.
+specs: |-
+  - MIDI In/Out for The Centre and Twins
+  - USB-C for MIDI and Firmware Updates
+  - Built-in MIDI Thru
+  - MIDI Clock Sync
+  - MIDI Note Transposition
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: USB-C (MIDI / Firmware Update)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Top
