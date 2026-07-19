@@ -147,7 +147,9 @@ function main(): void {
         junk.push(`${entry.manufacturer} ${entry.software_name}: ${version}`);
         continue;
       }
-      if (existingNames.some((n) => n === version || coercedEqual(n, version))) {
+      const isDupe = (names: string[]) =>
+        names.some((n) => n === version || coercedEqual(n, version));
+      if (isDupe(existingNames) || isDupe(toAdd)) {
         skippedExisting++;
         continue;
       }
