@@ -1,5 +1,30 @@
 # catalog
 
+## 3.45.0
+
+### Minor Changes
+
+- e430a3b: Add telemetry-reported software versions (112 versions, 110 entries).
+
+  Backfills versions that Studio's catalog sync reported as installed
+  but missing (`catalog_version_not_found`, March–July exports).
+  Dominated by the Waves 16.x line (94 entries), plus Antares (10),
+  FabFilter (5), Kontakt, Bitwig Studio, UA Ravel, sonible truelevel,
+  and IK Multimedia. Adds the reusable
+  `scripts/add-telemetry-versions.ts` used to apply them.
+
+### Patch Changes
+
+- 765c43a: Fold the JHS Colour Box 10 into the Colour Box V2 as a cosmetic variant.
+
+  The "Colour Box 10" is the 10th Anniversary Edition of the Colour Box V2 —
+  identical circuit, controls, and I/O in a limited navy-blue finish — so it
+  fails the separate-entry test and becomes a `variants` entry on the V2
+  (resolving the open consolidation note from the jhs-pedals import, #571).
+  Adds `searchTerms` ("Colour Box 10", "Color Box") so the anniversary name
+  still ranks in search, and carries over the one demo video unique to the
+  removed entry.
+
 ## 3.44.0
 
 ### Minor Changes
