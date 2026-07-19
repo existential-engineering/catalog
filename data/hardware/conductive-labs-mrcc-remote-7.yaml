@@ -1,0 +1,81 @@
+id: -4tope5GEeEY1Nrbry2YH
+name: MRCC Remote 7
+manufacturer: conductive-labs
+primaryCategory: midi
+categories:
+  - routing
+url: https://conductivelabs.com/product/mrcc-remote-7/
+prices:
+  - amount: 54
+    currency: USD
+description: An MRCC expansion that extends five routable MIDI outputs up to 50
+  feet away over a single shielded Ethernet cable.
+details: |-
+  The MRCC Remote 7 extends an MRCC's MIDI outputs to a second location up to 50 feet away, replacing a bundle of individual MIDI cables with a single shielded Ethernet run (a 10-meter/32-foot cable is included). It adds five routable 5-pin DIN MIDI outputs plus two shared 3.5mm TRS MIDI jacks (one Type A, one Type B).
+
+  Only one Remote 7 can connect per MRCC unit, and its outputs can be configured in the MRCC Settings menu as either a copy of MRCC outputs 1-5 or as independent Remote outputs 1-5.
+specs: |-
+  - Adds 5 routable 5-pin DIN MIDI outputs
+  - 2 shared 3.5mm TRS MIDI jacks (1 Type A, 1 Type B)
+  - Connects via shielded Ethernet cable (10-meter/32-foot cable included)
+  - Only one Remote 7 per MRCC
+  - Outputs configurable as a copy of MRCC 1-5 or independent Remote 1-5
+  - Recommended CAT6a or better shielded Ethernet cable; max 6-foot TRS cable to avoid voltage degradation on shared outputs
+  - Weight: 0.256 lbs
+io:
+  - name: MIDI Output 1
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Output 2
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Output 3
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Output 4
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Output 5
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Output TRS A
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: MIDI Output TRS B
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: MRCC Link
+    signalFlow: input
+    category: digital
+    type: proprietary
+    connection: ethercon
+    maxConnections: 1
+    position: Left

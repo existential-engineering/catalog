@@ -1,0 +1,83 @@
+id: ND6_tqaStB32roKolAV90
+name: MRCC XpandR 4x1
+manufacturer: conductive-labs
+primaryCategory: midi
+categories:
+  - routing
+url: https://conductivelabs.com/mrcc/mrcc-xpandr-4x1/
+prices:
+  - amount: 79
+    currency: USD
+description: A DIN expander for MRCC that also functions as a stand-alone,
+  class-compliant USB MIDI interface and merger.
+details: |-
+  The XpandR 4x1 adds DIN and TRS MIDI connectivity to an MRCC, plugging into one of its USB host ports; up to four XpandRs can be attached to a single MRCC. Its anodized aluminum enclosure houses a class-compliant USB MIDI interface that also runs as a stand-alone, USB-powered MIDI merger with PCs, Macs, and tablets.
+
+  Dual-color (blue/red) LEDs indicate power, mode, and MIDI activity.
+specs: |-
+  - Adds 4 DIN inputs plus a shared 3.5mm TRS Type A input option
+  - 1 DIN output with a shared TRS Type A thru output
+  - 4 USB MIDI virtual inputs and 1 virtual output
+  - Dual-color (blue/red) LED indicators for power, mode, and MIDI activity
+  - Up to 4 XpandRs attachable to one MRCC via USB host ports
+  - Stand-alone USB-powered MIDI merger mode
+  - Class-compliant USB MIDI interface for PC, Mac, and tablets
+  - USB 2.0, 5V DC, 40mA via Type B connector; 6-foot USB cable included
+  - Anodized aluminum enclosure with silk-screened interface
+io:
+  - name: MIDI Input 1
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - name: MIDI Input 2
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - name: MIDI Input 3
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - name: MIDI Input 4
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - name: MIDI Input TRS
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: MIDI Output
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Thru TRS
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: USB Device
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
