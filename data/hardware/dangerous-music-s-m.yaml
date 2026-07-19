@@ -1,0 +1,98 @@
+id: 6dHM35ODntyM0wVagO2KV
+name: S&M
+manufacturer: dangerous-music
+primaryCategory: mid-side
+categories:
+  - stereo-widener
+  - outboard
+  - rack-mount
+supersedes: J8qRj3tOuOn7pf-hs_abP
+url: https://www.dangerousmusic.com/product/s-m
+description: The revered mid-side or analog sum and difference processor that
+  fueled a creative revolution.
+details: |-
+  The Dangerous Music S&M mid-side processing matrix separates any stereo track into a center (Sum) and side (Minus) matrix, giving engineers unprecedented control over the entire stereo field. Insert a favorite outboard EQ, compressor, limiter, or de-esser into the loop, split the stereo signal into Mid and Sides, and process each independently.
+
+  S&M stands for "Sum and Minus," a play on the Mid-Side (M/S) recording technique invented in the 1930s by Blumlein and revived in the 1990s by Chris Muth for modern rock and pop recording and mastering. Mastering engineers use it to fix overly wide or narrow stereo fields, alter vocal levels without a remix, or de-ess aggressive cymbals while leaving the center of the mix untouched.
+
+  A true hardwire bypass Engage button removes the Mid-Side matrix circuitry entirely from the signal path when disengaged, and a stepped Width control in 1/2 dB increments provides precise, repeatable control over stereo width, with 12 o'clock as the normal/neutral position. The signal path is 100% analog, assembled by hand.
+specs: |-
+  - Frequency Response: Flat within 0.1dB from 1Hz-100kHz
+  - THD + Noise: <0.002%
+  - IMD60 4:1: <0.002%
+  - Sum and Minus channel separation: -78dB
+  - Width control accuracy: 0.02dBu
+  - Dynamic Range: 108dB
+  - Nominal operating level: +4dBu
+  - Maximum Input Level: +23dBu
+  - Width control: Stepped attenuator, 1/2 dB increments
+  - Bypass: True hardwire bypass via Engage button
+  - Made in USA
+io:
+  - name: Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Send Sum
+    signalFlow: output
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Send Minus
+    signalFlow: output
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Return Sum
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Return Minus
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.dangerousmusic.com/s/SM-Limited-Edition-Manual-LR.pdf
+    type: resource
+    title: S&M Manual (PDF)

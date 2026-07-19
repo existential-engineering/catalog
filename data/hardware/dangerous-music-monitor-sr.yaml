@@ -1,0 +1,127 @@
+id: wiTIQCixubaqF-U8MgYYE
+name: Monitor SR
+manufacturer: dangerous-music
+primaryCategory: monitor
+categories:
+  - control-surface
+  - remote-controlled
+  - rack-mount
+url: https://www.dangerousmusic.com/product/monitor-sr
+description: For tracking, mixing and mastering that won't color your sound.
+  With the SR expansion unit, you can turn the award-winning ST into a versatile
+  surround monitoring system.
+details: |-
+  With the SR expansion unit, you can turn the award-winning MONITOR-ST into a versatile surround monitoring system. Need to work in 5.1, 7.1, 10.2? Just include as many SR units as needed.
+
+  Designed by Chris Muth, the MONITOR-ST/SR system handles all input sources and speaker routing with crystal clarity and massive headroom, all switching handled by relays so audio signals are delivered unadulterated.
+
+  When used together, the ST unit routes the front L-R speakers while the SR unit handles the remaining inputs and speaker outputs, with the remote managing both units as a unified system. There is also a dedicated port for sending the selected input source to a surround metering array.
+specs: |-
+  - Gain Tracking Accuracy: better than 0.05dB for 6 channels
+  - THD+N: 0.002%
+  - IMD: 0.003%
+  - Frequency Response: 1Hz-100kHz -0.1 dB
+  - Crosstalk Rejection: >95dB
+  - Nominal Input Level: +4dBu or -10dBV
+  - Crossover: -3dB @57Hz 18dB/Octave modified Butterworth/Chebyshev
+  - Dynamic range: 110dB
+  - Maximum level: +25dBu
+io:
+  - name: Input 1 (6CH Surround)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Bottom
+  - name: Input 2 (6CH Surround)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Bottom
+  - name: Input 3 (6CH Surround)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Bottom
+  - name: Input 4 (6CH Surround)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Bottom
+  - name: Speaker 1 Output (6CH Surround)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Bottom
+  - name: Speaker 2 Output (6CH Surround)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Bottom
+  - name: Speaker 3 / Sub Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Bottom
+  - name: Meter Feed Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Bottom
+  - name: To Monitor ST
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: db25
+    maxConnections: 1
+    position: Bottom
+  - name: From Monitor ST
+    signalFlow: input
+    category: digital
+    type: proprietary
+    connection: db25
+    maxConnections: 1
+    position: Bottom
+  - name: Remote In
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: ethercon
+    maxConnections: 1
+    position: Bottom
+  - name: Remote Thru
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: ethercon
+    maxConnections: 1
+    position: Bottom
+  - name: DC In
+    signalFlow: input
+    category: power
+    type: power
+    connection: 7-pin din
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.dangerousmusic.com/s/MONITOR-ST-SR-Manual-0322.pdf
+    type: resource
+    title: ST/SR Manual (PDF)
+videos:
+  - videoId: CX3zjv4FSp4
+    provider: youtube

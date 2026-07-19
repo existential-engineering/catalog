@@ -1,0 +1,106 @@
+id: J8qRj3tOuOn7pf-hs_abP
+name: Sum-Minus
+manufacturer: dangerous-music
+primaryCategory: mid-side
+categories:
+  - outboard
+  - rack-mount
+  - discontinued
+url: https://www.dangerousmusic.com/product/sum-minus
+description: The secret weapon is analog sum and difference processing and the
+  Dangerous Music S&M delivers its power to any engineer looking for an edge.
+details: |-
+  For years engineers have wondered what secret process allowed certain big-name mastering houses to deliver better, louder, and more refined sounding tracks. The secret weapon is analog sum and difference processing: the Sum-Minus separates any stereo track into a center and side matrix, giving previously unattainable control over the entire stereo field.
+
+  By inserting an EQ, compressor, limiter, or de-esser into the Sum and Minus send/return loops, engineers can independently process the center and side signals. Mastering engineers can save seemingly unsalvageable tracks by altering vocal levels or fixing overly wide or narrow stereo fields.
+
+  The front panel has two controls: an Engage switch that toggles between normal stereo mode (bypassing the matrix circuitry) and Sum-Minus mode, and a stepped Width control with precise 1/2dB steps to the difference channel, ranging from -3 to +3.
+
+  Assembled by hand with a 100% analog signal path, the Sum-Minus (S&M) is built for mixing and mastering engineers who need repeatable, surgical control over stereo width and imaging.
+specs: |-
+  - Nominal operating level: +4dBu
+  - THD+Noise: 0.003%
+  - IMD (60Hz, 4kHz, 4:1): 0.004%
+  - Maximum level: +22dBu
+  - Dynamic range: >114dB
+  - Sum/Minus channel separation: >78dB
+  - Minus channel level accuracy: 0.02dB
+  - 100% analog signal path
+  - Insert loop (Sum & Minus send/return) for analog outboard processing
+  - Stepped Width control, -3 to +3 in 1/2dB steps
+  - Engage switch toggles Stereo (bypass) / Sum-Minus matrix mode
+io:
+  - name: Left Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Right Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Sum Send
+    signalFlow: output
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Minus Send
+    signalFlow: output
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Sum Return
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Minus Return
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: DC In
+    signalFlow: input
+    category: power
+    type: power
+    connection: 7-pin din
+    maxConnections: 1
+    position: Right
+  - name: Left Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Right Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.dangerousmusic.com/s/sm-manual10.pdf
+    type: resource
+    title: S&M Manual (PDF)
+videos:
+  - videoId: XATqx57mrlo
+    provider: youtube
+    title: The Dangerous Music S&M Origin Story
+  - videoId: ixJxAXPLjbs
+    provider: youtube
+    title: How to Use Dangerous Music S&M on Vocals

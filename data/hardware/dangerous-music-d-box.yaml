@@ -1,0 +1,158 @@
+id: Dm7TnX4mJhC1jBqUjD9eZ
+name: D-Box
+manufacturer: dangerous-music
+primaryCategory: monitor
+categories:
+  - summing-mixer
+  - headphone-amp
+  - routing
+  - rack-mount
+  - discontinued
+url: https://www.dangerousmusic.com/product/d-box
+description: The D-BOX is a transparent, audiophile-grade monitor controller for
+  tracking, mixing and mastering with eight channels of Dangerous Music's
+  award-winning analog summing.
+details: |-
+  The D-BOX is a transparent, audiophile-grade monitor controller for tracking, mixing and mastering with eight channels of Dangerous Music's award-winning analog summing at an unbelievable price point. The D-BOX handles input source monitoring, speaker switching, cue, talkback, headphone and mixing needs in just one rack space, with reference-grade D/A conversion, switchable analog inputs, two 20w/channel headphone amps, and a built-in talkback mic.
+
+  As the centerpiece of a studio, the D-BOX handles all routing elegantly: a main stereo analog input, two digital inputs (both monitored through the same reference D/A), and two speaker outputs, handling both professional (+4dBu) and commercial (-10dBV) input levels.
+
+  The award-winning active analog summing provides increased headroom and sonic space. Digital subgroups are sent out via the DAW interface's D/A converters to the D-BOX's eight analog summing inputs. Channel count can be expanded with a 2-BUS LT or 2-BUS+.
+specs: |-
+  - Summing Section frequency response: 1Hz-100kHz (±0.1dB)
+  - Summing Section THD+N: <0.003%
+  - Summing Section crosstalk: <-97dB
+  - Monitor Section frequency response: 1Hz-100kHz (±0.1dB)
+  - Monitor Section THD+N: <0.002%
+  - D/A converter locks to AES or S/PDIF signals, 32kHz-100kHz
+  - D/A converter THD+N: 0.005%
+  - Input impedance: 25kOhm balanced
+  - Output impedance: 50Ohm balanced
+  - Power consumption: 25W
+  - Two independent 20-watt/channel headphone amplifiers
+  - 8 channels of analog summing via rear DB25 (Tascam wiring standard)
+  - Hand-built in the USA
+io:
+  - name: Talkback Remote
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Analog Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Summing Input (8-Channel DB25)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: DAW Digital Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: CD Digital Input
+    signalFlow: input
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Sum Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Sum Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Main Speaker Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Main Speaker Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Alt Speaker Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Alt Speaker Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output 1
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - name: Talkback Mic (Built-in)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: built-in
+    maxConnections: 1
+    position: Bottom
+releaseDate: "2006"
+links:
+  - url: https://www.dangerousmusic.com/s/d-box-manual-v14.pdf
+    type: resource
+    title: D-BOX Manual
+  - url: https://www.dangerousmusic.com/s/d-box-front-panel-pdf.pdf
+    type: resource
+    title: D-BOX Front Panel Drawings (PDF)
+videos:
+  - videoId: 8yOWQ01r1y8
+    provider: youtube
