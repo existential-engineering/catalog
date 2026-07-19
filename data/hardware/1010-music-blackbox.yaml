@@ -1,0 +1,185 @@
+id: TUCugv_C5xCd5g0mkLj_4
+name: Blackbox
+manufacturer: 1010-music
+primaryCategory: sampler
+categories:
+  - groovebox
+  - discontinued
+url: https://1010music.com/product/blackbox
+prices:
+  - type: regular
+    amount: 649
+    currency: USD
+description: Take music creation beyond your computer with blackbox, a
+  next-generation sampling studio with intuitive touchscreen control. Record
+  hours of audio and loops from your synths, drum machines, and other tabletop
+  studio devices. Arrange sequences using built-in synchronization and slicing,
+  then structure your sequences to create complete songs. Perform your
+  compositions live and trigger one-shot samples on the fly.
+details: |-
+  Blackbox (marketed as the "Compact Sampling Studio") is the original model in 1010 Music's Blackbox line: a touchscreen-controlled sampling workstation for recording, editing, resampling, and sequencing samples from synths, drum machines, and other tabletop gear without a computer. It captures long-form audio and loops to microSD, arranges sequences with built-in synchronization and slicing, and structures full songs, and it can trigger one-shots live from its touchscreen interface.
+
+  The unit ships with 16-note shared-pool polyphony (user-defined per pad), 16 samples/sequences/song-sections per preset, a granular synthesis mode, a 4-band global EQ, and built-in delay/reverb effects. USB MIDI (Device-in, Type-A host port) and TRS MIDI/analog clock I/O let it synchronize with other gear, and firmware 3.1.2 (the latest listed version) added multisample mapping across up to 576 samples with filename-based root-note and velocity assignment plus embedded loop-point loading.
+
+  This original Blackbox has been superseded in 1010 Music's current lineup by Blackbox 2 (https://1010music.com/product/blackbox-2, extracted separately in this same import batch): the manufacturer's site files this product under its Archives category and lists it as out of stock, though the page's own text does not explicitly state it was discontinued or replaced.
+specs: |-
+  - 16 note polyphony, shared pool, user-defined per pad
+  - 16 samples, 16 sequences, and 16 song sections per preset
+  - Supports 1 and 2 channel WAV files, 16/24/32-bit, any sample rate (48kHz preferred)
+  - Max sample size 4 GB, streamed from microSD card
+  - 24-bit ADC and DAC
+  - 1 stereo audio input and 3 stereo audio outputs, plus stereo headphone output (all 3.5mm/1/8-inch TRS, Eurorack level +/-5V)
+  - USB MIDI Device In (USB-A host) and TRS MIDI In can trigger samples, notes, and sequences, modulate sound, and trigger recording
+  - TRS Clock In and Out, TRS MIDI Out, and USB MIDI In/Out for synchronizing with additional instruments
+  - Analog Clock In and Out supports 1, 2, 4, 8, 12, or 24 PPQ
+  - USB powered, runs off a USB power block or wall adapter (3 international adapters included)
+  - 4-band global EQ
+  - Granular mode for sound synthesis
+  - Delay and reverb effects
+  - Internal LFO for modulation
+  - Multi-sample mapping of up to 576 samples across key ranges (firmware 3.1.2+)
+  - Latest firmware: 3.1.2
+  - Product dimensions: 5.5 x 5 x 1.25 in (14 x 13 x 3 cm); WooCommerce package dimensions: 10.5 x 3 x 7 in
+  - Weight: 2 lbs
+io:
+  - name: USB Power (Type-B)
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b
+    maxConnections: 1
+    position: Top
+  - name: USB MIDI Device Port (Type-A)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Top
+  - name: Clock In
+    signalFlow: input
+    category: digital
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock Out
+    signalFlow: output
+    category: digital
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Output 1 L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Output 1 R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Output 2 L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Output 2 R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Output 3 L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Output 3 R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output L
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output R
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: microSD Card Slot
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: card-slot
+    maxConnections: 1
+    position: Top
+versions:
+  - name: Firmware 3.1.2
+    notes: Adds multisample import using filename to set root note and velocity,
+      576-sample pool (up from 80), loop points embedded in multisample sets,
+      sleep mode, and recording/quantization refinements.
+links:
+  - url: https://1010music.com/wp-content/uploads/2023/05/Blackbox-User-Manual-3.0-2023-05-04a.pdf
+    type: resource
+    title: Blackbox 3.0 User Manual (PDF)
+  - url: https://1010music.com/wp-content/uploads/2024/02/BLACKBOX312.zip
+    type: resource
+    title: Firmware Download (v3.1.2)
+  - url: https://forum.1010music.com/forum/products/blackbox/learning-material
+    type: resource
+    title: Blackbox Learning Material / Support
+videos:
+  - provider: youtube
+    videoId: EHsoBQfYtx0
+    title: Blackbox - compact sampling studio
+  - provider: youtube
+    videoId: tXa5u2SfoFo
+    title: 1010Music Blackbox Overview Synthplex 2019

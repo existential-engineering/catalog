@@ -1,0 +1,97 @@
+id: wWoda2z_cV0xM2GfV1wPu
+name: euroshield 1 – Teensy Development Board
+manufacturer: 1010-music
+primaryCategory: modular
+categories:
+  - utility
+  - discontinued
+url: https://1010music.com/product/euroshield1
+prices:
+  - amount: 89.95
+    currency: USD
+description: euroshield 1 is a bare Eurorack module board that turns a Teensy
+  3.x development board into a programmable Eurorack synthesizer module, with
+  two audio/CV inputs, two audio/CV outputs, and MIDI I/O via 3.5mm jacks. It
+  requires a separately-purchased Teensy board and is programmed with
+  Arduino/Teensyduino; this original euroshield has been discontinued.
+details: |-
+  Euroshield turns a user-supplied Teensy development board into a Eurorack synthesizer module: plug a Teensy into the on-board socket (no soldering required), connect Eurorack power via the included ribbon cable, and patch in standard Eurorack-level audio, CV, and MIDI signals. Users write their own DSP code in Arduino/Teensyduino (using PJRC's open-source audio library) to define what the module does; 10 demo sketches are included covering filtering, reverb, and VCO examples. Two knobs, one pushbutton, and four LEDs on the board are available for the user's code to read and drive.
+
+  Not included: the Teensy development board itself (versions 3.0-3.6 supported, 3.2 recommended, sold separately by PJRC), a USB A to micro-B cable, and a Eurorack case with approximately 8 HP of free space.
+specs: |-
+  - Package: 6 x 4 x 0.875 in, 0.12 lbs
+  - Requires a separately-purchased Teensy board (v3.0-3.6, v3.2 recommended)
+  - Programmed via Arduino + Teensyduino development tools (open source)
+  - Two audio/CV inputs, two audio/CV outputs (Eurorack -5V to +5V, DC-coupled)
+  - MIDI In and MIDI Out via 3.5mm TRS minijacks
+  - Two knobs, one pushbutton, four LEDs
+  - 10 demo sketches included (filtering, reverb, VCO)
+  - Eurorack power via ribbon cable
+  - Requires ~8 HP of Eurorack case space per manufacturer
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio/CV In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio/CV In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - name: Audio/CV Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio/CV Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: Teensy Development Board Header
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Left
+links:
+  - url: https://forum.1010music.com/forums
+    type: resource
+    title: 1010music Support Forum
+  - url: https://www.pjrc.com/teensy/td_download.html
+    type: resource
+    title: Teensyduino development tools (download)
+  - url: https://www.arduino.cc/
+    type: resource
+    title: Arduino development tools
