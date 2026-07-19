@@ -1,0 +1,85 @@
+id: MNG9ZqAIwrutZXChWP5P_
+name: Cellz
+manufacturer: cre8audio
+primaryCategory: pad-controller
+categories:
+  - sequencer
+  - modular
+url: https://www.cre8audio.com/cellz
+prices:
+  - amount: 149.99
+    currency: USD
+description: Cellz is a dual unipolar control voltage generator where each of
+  the 16 touch sensitive pads can be fed two 12-bit values (semi-tone quantized
+  or free scale), ranging from 0V to 10V.
+details: |-
+  Cellz is a dual unipolar control voltage generator where each of the 16 touch sensitive pads can be fed two 12-bit values (semi-tone quantized or free scale), ranging from 0V to 10V. It's a funky module that can be used as a controller or a sequencer.
+specs: |-
+  - Width = 12hp
+  - Depth = 30mm
+  - 2.5mA power draw when running +12V rail
+  - 27mA power draw when running +5V rail
+  - 1.5mA power draw when running -12V
+  - 0-10V voltage range output 1
+  - 0-10V voltage range output 2
+io:
+  - name: Gate Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://www.cre8audio.com/firmware-and-software
+    type: resource
+    title: Firmware updates, manuals and more
+videos:
+  - provider: youtube
+    videoId: cHBjHFwkOrU
+    title: Cellz video manual and (mis)information
+  - provider: youtube
+    videoId: 9inl9320BpQ
+    title: Cyclin' Cellz with Chipz

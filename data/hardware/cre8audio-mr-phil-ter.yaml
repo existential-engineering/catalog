@@ -1,0 +1,102 @@
+id: oVedEentso1Q0hHRBIo4s
+name: Mr. Phil Ter
+manufacturer: cre8audio
+primaryCategory: filter
+categories:
+  - modular
+url: https://www.cre8audio.com/mrphilter
+prices:
+  - amount: 149.99
+    currency: USD
+description: Mr. Phil Ter is a Eurorack module that combines an envelope
+  generator, VCA, and a transistor ladder filter in a compact footprint.
+details: |-
+  Mr. Phil Ter, or Phil as it's affectionately called, is a module that does a whole bunch of analog and digital stuff, in not a lot of HP.
+
+  Phil's digital bits are solely comprised of the envelope generator. The analog bits, developed in partnership with Pittsburgh Modular Synthesizers, are comprised of a voltage controlled amplifier circuit (VCA) as well as an old-school transistor ladder filter.
+
+  Pair Mr. Phil Ter up with any oscillator or crank up its own filter section's resonance and self-oscillate. It's just what's needed to complete (or not) any synthesizer voice.
+specs: |-
+  - Width: 12 HP
+  - Depth: 26mm
+  - Envelope voltage range: 0-10V
+  - Gate trigger threshold voltage: +5V
+  - Attack, Release, and Decay times: 0-10s (slow), 0-5s (fast)
+  - VCA: standard voltage-controlled amplifier circuit
+  - Filter: classic low-pass transistor ladder filter design, self-oscillates when resonance is cranked
+  - Power draw: 33mA (+12V rail), 22mA (+5V rail), 36mA (-12V rail)
+io:
+  - name: Filter Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Frequency CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Amp Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Amp Amplitude CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Amp Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Envelope Gate Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Envelope Slow Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Envelope Fast Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://www.cre8audio.com/s/Mr-Phil-User-Filter-Tuning.pdf
+    type: resource
+    title: Mr. Phil Ter Filter Tuning Procedure (PDF)
+videos:
+  - provider: youtube
+    videoId: E6FVYgCGcUA
+    title: Mr. Phil Ter introduction, feature overview, and noise
+  - provider: youtube
+    videoId: 15ZvxLZYrOU
+    title: Cre8Audio Mr. Phil Ter - Eurorack Filter, VCA and Envelope module review

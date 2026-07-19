@@ -1,0 +1,102 @@
+id: 5mf8OLQA8VqAU4T2mRx9K
+name: Chipz
+manufacturer: cre8audio
+primaryCategory: modular
+categories:
+  - chiptune
+url: https://www.cre8audio.com/chipz
+prices:
+  - amount: 149.99
+    currency: USD
+description: 2x Oscillators + 2x LFOs, a Eurorack chip-tune inspired oscillator module.
+details: |-
+  2x Oscillators + 2x LFOs. We started with the idea that Chipz would be a chiptune-style oscillator module that takes you to an alternate universe in which your old console isn't for playing video games but is a module in your eurorack compatible system.
+specs: |-
+  - Width: 12HP
+  - Depth: 30mm
+  - Chip1 waveforms: sine, triangle, saw, square, noise
+  - Chip2 waveforms: sine, triangle, saw, square, noise
+  - LFO waveforms: sine, triangle, saw, square, noise
+  - Power draw: 35mA @ +12V rail
+  - Power draw: 30mA @ +5V rail
+  - Power draw: 19mA @ -12V rail
+  - LFO Output 1 voltage range: 0-5V
+  - LFO Output 2 voltage range: 0-5.8V
+  - Chip1 Out frequency range: 91Hz - 1.47kHz
+  - Chip2 Out frequency range: 91Hz - 1.47kHz
+  - Oscillator input voltage range: 0-10V
+io:
+  - name: Chip1 Tune
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Chip1 Filter
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Chip1 Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Chip2 Tune
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Chip2 Width
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Chip2 Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO Reset
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://www.cre8audio.com/firmware-and-software
+    type: resource
+    title: Firmware updates, manuals and more
+videos:
+  - provider: youtube
+    videoId: U-ECR0YlxzU
+    title: Chipz video manual and other (mis)information
+  - provider: youtube
+    videoId: 9inl9320BpQ
+    title: Cyclin' Cellz with Chipz

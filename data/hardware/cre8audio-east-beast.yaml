@@ -1,0 +1,204 @@
+id: r-TXFTegN28V7rcdB8NqA
+name: East Beast
+manufacturer: cre8audio
+primaryCategory: semi-modular
+categories:
+  - synthesizer
+  - analog
+  - sequencer
+  - arpeggiator
+  - subtractive
+url: https://www.cre8audio.com/eastbeast
+prices:
+  - amount: 249.99
+    currency: USD
+description: Designed and developed in partnership with Pittsburgh Modular
+  Synthesizers, East Beast is a powerful analog, monophonic full voice
+  synthesizer with many unique sound-shaping tools and deep performance
+  capabilities.
+details: |-
+  East Beast's oscillator, designed in partnership with Pittsburgh Modular Synthesizers, is part of their 5th generation of analog oscillators stemming from 10 years of continued analog oscillator development. Its circuitry is not a clone or based on any outside designs, is made with 100% modern components, and stays stable while giving it a rich, unique sound.
+
+  To further sculpt sounds, East Beast includes an envelope generator and LFO. The custom envelope circuit creates a snappy, percussive attack for expressive performance, while the dual-range LFO opens up a wide range of LFO and audio-rate modulation possibilities.
+
+  East Beast has 9 different patchable modules (oscillator, filter, envelope, VCA, LFO, multi-mod tool, sequencer, MIDI to CV converter, and button keyboard) with 18 Eurorack compatible patch points to plug into itself and other gear, allowing components to be used as separate modules or the internal patching to be rerouted entirely.
+
+  East Beast has MIDI in and MIDI thru so multiple MIDI devices can be chained together, or a MIDI controller can be plugged in for playing and sequencing.
+
+  East Beast includes a built-in tap tempo clock, arpeggiator, and 32-step sequencer with generative sequencing mode, with opportunities to inject randomness into the patch. It can be used standalone in its included case or removed and used as a Eurorack format module.
+specs: |-
+  - East coast style subtractive monophonic synthesizer
+  - Controllable via MIDI, CV, and integrated button keyboard
+  - Fully patchable - 9 individual modules (Oscillator, filter, envelope, VCA, LFO, multi-mod tool, sequencer, MIDI to CV converter, and button keyboard)
+  - 32 step sequencer with up to 13 presets
+  - Generative sequencing mode
+  - Clock-synced arpeggiator
+  - Step sequencer can be manipulated and transposed via MIDI and the integrated button keyboard
+  - Pittsburgh Modular Synthesizer developed 100% analog oscillator
+  - Oscillator waveforms: sine, triangle, saw, square, and pitched noise (combinable)
+  - Oscillator includes pulse-width modulation (PWM) and frequency modulation (FM)
+  - Variable state, multi-mode PGH "No-Dead-Spots" filter (lowpass, bandpass, highpass, modes can be combined)
+  - Analog envelope generator
+  - Integrated VCA
+  - Dual-range analog LFO with triangle wave output
+  - Digital multi-mod tool - modulation control via CV, random generator, and extra LFO and envelope generator
+  - Internal clock with tap tempo, can be clocked via external source
+  - Built-in clock divider
+  - Can be used standalone in its included case or removed and used as a Eurorack format module
+  - Eurorack width when used as a module: 40hp
+  - Eurorack depth when used as a module: 25mm
+  - Power consumption: 213mA (+12V rail), 151mA (-12V rail)
+  - Oscillator input voltage range: 0-10V
+  - Included in box: 1x East Beast, wall-wart power supply, 5x Nazca Noodles patch cables, 1x 3.5mm to 5-pin (Type A) MIDI DIN pigtail
+io:
+  - name: Osc. Pitch In Jack
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Osc. FM In Jack
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Osc. Pulse Width In Jack
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Mod In Jack
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Audio In Jack
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI In Jack
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock In Jack
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Envelope In Jack
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: VCA Audio In Jack
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: VCA Mod In Jack
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI Out Jack
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock Out Jack
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI Pitch Out Jack
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI Gate Out Jack
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Multi-Tool Out Jack
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Main Output Jack
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Envelope Out Jack
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Out Jack
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Osc. Out Jack
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: LFO Out Jack
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://www.cre8audio.com/s/East-Beast-Manual-v15.pdf
+    type: resource
+    title: East Beast User's Guide
+videos:
+  - provider: youtube
+    videoId: zX6OwWv59Yw
+    title: Cre8audio East Beast synthesizer review
+  - provider: youtube
+    videoId: fsv3VnK-5Sw
+    title: The Most Compelling Semi-Modular Mono Synth
