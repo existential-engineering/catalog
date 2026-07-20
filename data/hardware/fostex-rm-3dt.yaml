@@ -8,7 +8,10 @@ categories:
   - rack-mount
   - amplifier
 url: https://www.fostex.jp/en/products/rm-3dt/
-description: 1U rackmount stereo rack monitor with built-in 10W x 2 power amplifiers and Dante audio networking. Supports balanced analog and Dante digital inputs with a 26-dot LED level meter (selectable VU / VU+PEAK / VU+PEAK hold / PEAK+PEAK hold modes) and four-level brightness adjustment.
+description: 1U rackmount stereo rack monitor with built-in 10W x 2 power
+  amplifiers and Dante audio networking. Supports balanced analog and Dante
+  digital inputs with a 26-dot LED level meter (selectable VU / VU+PEAK /
+  VU+PEAK hold / PEAK+PEAK hold modes) and four-level brightness adjustment.
 details: |-
   The Fostex RM-3DT is a 1U rackmount stereo rack monitor with built-in 10 W + 10 W power amplifier and integrated Dante audio networking, allowing it to receive uncompressed multi-channel digital audio over standard Ethernet alongside conventional balanced analog feeds.
 
@@ -36,35 +39,40 @@ specs: |-
   - Power: AC 100-240 V, 50/60 Hz
   - Power consumption: 10 W
 io:
-  - name: Dante Input
+  - key: 0y16NPKC
+    name: Dante Input
     signalFlow: input
     category: digital
     type: dante
     connection: ethernet
     maxConnections: 1
     position: Bottom
-  - name: Analog Input
+  - key: NHLqQw1M
+    name: Analog Input
     signalFlow: input
     category: audio
     type: line
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: Analog THRU Output
+  - key: ANBolZkX
+    name: Analog THRU Output
     signalFlow: output
     category: audio
     type: line
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: Headphones
+  - key: h1qYd8km
+    name: Headphones
     signalFlow: output
     category: audio
     type: headphone
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - name: AC Power
+  - key: uAwRo8mQ
+    name: AC Power
     signalFlow: input
     category: power
     type: power
