@@ -1,0 +1,125 @@
+id: u1sdPN11UAby-g9pD2ZSh
+name: Jellysquasher
+manufacturer: intellijel
+primaryCategory: compressor
+categories:
+  - modular
+  - analog
+  - dynamics
+  - discontinued
+url: https://intellijel.com/shop/eurorack/jellysquasher/
+description: Forget clean and sterile. This proudly analog compressor is here to
+  color and transform your audio in special ways.
+details: |-
+  Jellysquasher is an analog mono compressor and tone shaper made to dynamically fit within the eurorack world. Everything from the discrete RMS detector to the proprietary tube and tape emulator circuits to the honking big transformer on the back of the module is there to add some special analog sauce to your mix.
+
+  Three carefully designed analog circuits impose specific character on the output signal: TUBE adds non-linear distortion providing second order harmonics; TAPE adds symmetrical distortion providing both even and odd harmonics; XFRM modifies the transformer feedback circuit, giving a boost to low bass content. All three COLOR circuits can be engaged in any combination and react differently based on the input DRIVE level and MAKEUP GAIN.
+
+  It has a 100% analog signal path and SIDECHAIN feedforward compressor with a unique log-based RMS detector. The output is routed through a specially selected Edcor transformer with highly desirable saturation qualities.
+
+  The SIDECHAIN is routed through a voltage controllable SVF filter with LP, BP and HP modes (a PCB trimmer adjusts Q), and this filter can be used independently of the rest of the module. An external SIDECHAIN input allows triggering of the compressor with external sources, and LINK IN/OUT allows two Jellysquashers to be chained together for stereo operation.
+
+  There is full CV control of SIDECHAIN VCF cutoff, THRESHOLD, RATIO, ATTACK time, RELEASE time, and MAKEUP GAIN. A Wet/Dry MIX control allows 'New York' style parallel compression, and an LED bar graph with selectable display modes shows signal level in VU or gain reduction in dB.
+specs: |-
+  - Max input: +17dBV
+  - Input impedance: 68k ohms
+  - Output impedance: 100 ohms
+  - Frequency response: 5Hz to 30kHz
+  - Range of gain reduction: over 50dB
+  - Threshold: -40dBV to +17dBV
+  - Ratio: 1.3:1 to infinity
+  - Attack: 200us to 200ms
+  - Release: 50ms to 5sec
+  - Makeup gain: 48dB
+  - Width: 18HP
+  - Depth: 42mm
+  - Power: 134mA @ +12V, 120mA @ -12V
+io:
+  - name: Cutoff CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Threshold CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ratio CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Attack CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Release CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Makeup CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Side Chain In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Link In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Link Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: VCF Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/jellysquasher_manual_2018.09.13.pdf
+    type: resource
+    title: Jellysquasher Manual (2018.09.13)

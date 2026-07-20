@@ -1,0 +1,62 @@
+id: KI3Q6X-ToWgzf7JDO6oEH
+name: Duatt 1U
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+url: https://intellijel.com/shop/eurorack/1u/duatt-1u/
+prices:
+  - amount: 65
+    currency: USD
+description: Half a Quadratt (and a little bit more) A super compact Dual
+  Attenuator, Inverter, Attenuverter, Multiplier, Mixer and DC Voltage Source.
+  The little brother of the mighty Quadratt 1U module with added gain multiplier
+  switch and half the size.
+details: |-
+  Duatt is a dual-channel active/buffered attenuverter and summing mixer. Each channel has a knob, which can function as a unipolar attenuator or a bipolar attenuverter, depending on the setting of its corresponding two-position polarity switch. It's a versatile and super handy utility module that will find its way into almost any patch you make!
+
+  Each input is normalled to a built-in +5V DC voltage source. With nothing plugged into the jacks, each knob controls a voltage range of 0 to +5V or -5 to +5V depending on the position of the channel polarity switch.
+
+  Channel A's output is normalled into the output of channel B for mixing duties, and channel A has a 2x voltage multiplier switch, allowing you to double the voltage sent into Channel A.
+specs: |-
+  - Width: 14HP
+  - Depth: 22mm
+  - Power consumption: 12mA @ +12V, 10mA @ -12V
+  - Two modes per channel: Unipolar Attenuator or Bipolar Attenuverter
+  - Voltage doubler (2x) switch on Channel A
+  - Precision +5V DC source normalled to inputs
+  - Skiff / Palette friendly
+io:
+  - name: Channel A In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel A Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel B Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/duatt-1u_manual_2021.07.27.pdf
+    type: resource
+    title: Manual (2021.07.27)

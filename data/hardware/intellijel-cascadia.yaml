@@ -1,0 +1,155 @@
+id: rD2BvXUbCFM1V66IAiVlI
+name: Cascadia
+manufacturer: intellijel
+primaryCategory: synthesizer
+categories:
+  - semi-modular
+  - analog
+url: https://intellijel.com/shop/desktop/cascadia/
+prices:
+  - amount: 1799
+    currency: USD
+description: Cascadia is a massive semi-modular analog synthesizer in a small
+  case with the footprint of a laptop, mixing classic East and West Coast
+  synthesis blocks with 101 patch points, MIDI in/out/thru/USB, and
+  Eurorack-compatible signal levels.
+details: |-
+  Meet Cascadia: A massive semi-modular system in a small case with the footprint of a laptop. Cascadia has MIDI in/out/thru/USB, Eurorack compatible signal levels and pro-level audio I/O to interface with the rest of your studio or get your studio started.
+
+  Modern Analog Architecture: Cascadia is packed with a mix of classic East and West Coast synthesizer blocks. Normalized connections let you get straight to the sounds inside. Or, let your imagination run wild and patch any of the modules together however you choose.
+
+  Expansive Utilities Sections: Cascadia also features a whole host of utilities for getting the most out of your patches, including sample and hold, slew/envelope follower, attenuverter/mixer, triple triangle LFO, triple buffered multiple, precision adder, signal inverter, bi-polar to unity level shifter, ring modulator, and a VCA B/LPF (LPG) combination.
+
+  The Outside World — MIDI, Pedal and Audio I/O: Cascadia is equipped with a ton of I/O to get it connected to the rest of your gear, including balanced 1/4" audio in/out, headphone out, pedal FX send/return, MIDI DIN in/out/thru, USB-MIDI, and a MIDI>CV interface with MPE support (added in v1.4) and Dual Mono mode (added in v1.3).
+
+  Cascadia comes ready to play: The normalization behind the panel allows for a ton of exploration without ever adding a patch cable. Includes 14 assorted patch cables, USB-A to USB-C cable, and an international power supply.
+specs: |-
+  - 101 patch points, 34 sliders, 16 knobs, 28 switches, 5 push buttons, and 36 LEDs
+  - Two Precision Analog VCOs: VCO A is thru-zero FM-ready with dedicated Index VCA, Sub Oscillator, PWM, and Soft/hard sync; VCO B is a combo VCO/LFO with 4 simultaneous outputs
+  - Six Channel Waveform Mixer with two patchable (normalled) inputs, noise generator, and optional asymmetric soft clipping
+  - Cascaded 4-Pole Multimode Filter: 8 modes (LP1, LP2, LP4, BP2, BP4, HP4, NT2, Phazor), additional dedicated LP4/HP4 outputs
+  - West Coast-style parallel Wavefolder Circuit, normalled into the VCA auxiliary input in parallel with the filter
+  - Dual Digital Envelopes: ENV A (ADSR/AHDSR), ENV B (AR/ASR/Cycling AR with Entropic Sequence Generator, added v1.3)
+  - VCA A: linear VCA with auxiliary input; Global Output Mixer with overdrive and bypassable asymmetric soft clipping
+  - Utility Row: sample and hold, slew/envelope follower, attenuverter/mixer, triple triangle LFO, triple buffered multiple, precision adder, signal inverter, bi-polar>unity level shifter, expression level control, ring modulator, VCA B/LPF (LPG)
+  - Height: 66mm (from rubber foot to top of knobs)
+  - Width: 348mm (including wood end cheeks)
+  - Depth: 246mm (front to rear jacks)
+  - Power: 15V DC/1.0 A (minimum), center-pin-positive
+io:
+  - name: Headphone Out
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Balanced Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Balanced Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Pedal FX Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Pedal FX Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Expression Out
+    signalFlow: output
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - name: USB-MIDI
+    signalFlow: bidirectional
+    category: midi
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: Pitch CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Velocity CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Eurorack Main Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/cascadia_manual_v1.4_2026.04.13.pdf
+    type: resource
+    title: Manual (v1.4 / 2026.04.13)
+  - url: https://intellijel.com/downloads/manuals/cascadia_patch_sheet.pdf
+    type: resource
+    title: Patch Sheet
+  - url: https://intellijel.github.io/firmware/
+    type: resource
+    title: Firmware Web Updater
+  - url: https://www.baratatronix.com/
+    type: resource
+    title: 3rd Party Patch Examples (baratatronix.com)
+variants:
+  - name: Dark Grey
+    slug: dark-grey
+  - name: White Fog
+    slug: white-fog

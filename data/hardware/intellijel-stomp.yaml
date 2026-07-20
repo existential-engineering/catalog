@@ -1,0 +1,75 @@
+id: oC7iDx8h2N-4rEPTmekEz
+name: Stomp
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+url: https://intellijel.com/shop/eurorack/stomp/
+prices:
+  - amount: 199
+    currency: USD
+description: Put Your Pedal to the Metal. Expand your palette of possibilities
+  by fully integrating your favourite guitar and bass fx pedals into the world
+  of Eurorack modular.
+details: |-
+  Intellijel’s Stomp removes the barrier between Eurorack and stompboxes. It provides the modular synthesist with a portal to stompbox nirvana, and the guitarist with a wormhole to the sonic manipulations of Eurorack modules.
+
+  Stomp enables the modular synthesist to interact with the impressive assortment of delays, choruses, flangers, phasers, fuzz boxes, tremolos, wah-wahs, amp simulators, compressors, and pitch shifter pedals available to guitarists. If your effects pedal is adorned with an expression pedal input, Stomp supports that too, and even features a built-in LFO to modulate your pedal’s expression input. You can also patch any modulation source from your modular system into the expression control jack to override the built-in LFO.
+
+  Conversely, guitarists can plug their guitar directly into Stomp’s RETURN jack, giving them access to the myriad filters, ring mods, wavefolders and the near-infinite CV modulation delights inherent in Eurorack.
+
+  Signals arriving at Stomp’s RETURN jack pass through a Class A triode emulator, allowing for some tube-like overdrive at high gain setting. SEND output is normalled to RETURN input so even without 1/4" cables you can route Eurorack signals through the FET stage for coloring. Stomp is more than just a simple level shifter, it’s also an impedance converter, which provides proper drive and loading for any FX pedals or instruments connected.
+
+  Separate gain controls on both the SEND and RETURN allow the level of audio sent to the FX pedals, as well as audio coming back into the modular, to be adjusted independently, optimizing signal-to-noise ratio or achieving pleasingly overdriven tones.
+specs: |-
+  - Width: 8HP
+  - Depth: 35mm
+  - Power: 47mA @ +12V, 13mA @ -12V
+  - Robust Neutrik 1/4" TS connectors for SEND/RETURN, TRS for the Expression interface
+  - Supports both Instrument and Line levels via a front panel switch
+  - Separate gain controls on SEND and RETURN
+  - Return signal can be phase inverted
+  - Low SEND output impedance for driving long cables
+  - All inputs protected for minimum RF interference
+  - Expression Pedal Output converts analog CV sources (or internal LFO) into a stompbox-compatible expression signal
+io:
+  - name: SEND
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: RETURN
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Expression Pedal Output
+    signalFlow: output
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Expression CV In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/stomp_manual_v1.0_2023.08.20.pdf
+    type: resource
+    title: Manual (v1.0 / 2023.08.20)
+  - url: https://modulargrid.net/e/intellijel-stomp
+    type: resource
+    title: ModularGrid
+videos:
+  - provider: youtube
+    videoId: iNNcR0q43cU
+    title: Intellijel Stomp - Eurorack Effects Pedal & Instrument Interface

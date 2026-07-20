@@ -1,0 +1,111 @@
+id: H8DBi4zVIBipWvltUjxen
+name: µMIDI 1U
+manufacturer: intellijel
+primaryCategory: midi
+categories:
+  - modular
+  - digital
+  - utility
+  - discontinued
+url: https://intellijel.com/shop/legacy/umidi-1u/
+description: All the essentials to control and sync your rack to your computer,
+  iPhone/iPad, or hardware MIDI device. No menu diving or configuration scripts,
+  just two buttons.
+details: |-
+  The µMIDI 1U provides all the essentials to control and sync your Eurorack modular from your computer, iPhone/iPad, or hardware MIDI device with a minimum of fuss. No menu diving or configuration scripts, just two buttons. The connectivity, features, and compact size allow the integration of your modular system with the rest of your studio while not taking up too much space in your case.
+
+  The clock section to the left features a dedicated 16th note clock output ideal for synchronizing a Eurorack sequencer like the Metropolis. A second clock output with selectable divisions can be used when different sync events are needed. The run and reset outputs can reset your Eurorack sequencers in tandem with any external sequencer or DAW.
+
+  The right half of the µMIDI 1U gives you everything you need (like pitch, gate, trigger, velocity, mod wheel and assignable CC) to control a single voice synth via MIDI.
+
+  This module connects via ribbon cable to the µMIDI JACKS 1U module or to the MIDI I/O jacks on the back of the 7U performance cases.
+specs: |-
+  - Width: 22HP (Intellijel 1U format)
+  - Depth: 25mm
+  - Current draw: 47mA @ +12V, 3mA @ -12V
+  - High speed ARM processor for low latency and jitter
+  - Two clock outputs, one with selectable divisions
+  - Sequencer sync via run and reset outputs
+  - Precision 0-10V note pitch output with pitch bend and portamento CC support
+  - Gate and trigger outputs for envelope triggering
+  - Mod wheel and continuous controller outputs for additional modulation
+  - Firmware updates and configuration over USB (firmware v1.15 with configuration utility)
+  - Connects via ribbon cable to the µMIDI JACKS 1U module or the MIDI I/O jacks of 7U performance cases
+io:
+  - name: 1/16th Clock Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CLK Out (Selectable Division)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Run Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Reset Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Pitch Out (1V/Oct)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Vel Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mod Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CC Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/umidi_manual_2018.09.13.pdf
+    type: resource
+    title: Manual (3U version)
+  - url: https://www.modulargrid.net/e/intellijel-µmidi-1u
+    type: resource
+    title: ModularGrid

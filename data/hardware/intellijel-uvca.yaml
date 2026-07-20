@@ -1,0 +1,69 @@
+id: LvlT8-Txgu3exZI3Av0Cb
+name: µVCA
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/uvca/
+description: Dual log/lin VCA in 6HP with continuously adjustable curve response
+  from linear to exponential.
+details: |-
+  The µVCA is a dual log/lin VCA in 6HP, adapted from a design by David G. Dixon.
+
+  Each of the two channels offers a continuously adjustable curve response from linear to exponential, a dedicated CV attenuator, and an LED for monitoring the CV signal. A gain trimmer makes it possible to get positive gain out of the module.
+
+  The panel provides per-channel bias controls and CV amount knobs, with each channel's CV input, signal input and signal output on 3.5mm jacks along the bottom of the module.
+specs: |-
+  - Width: 6HP
+  - Max depth: 35mm
+  - Power: 36mA @ +12V, 35mA @ -12V
+  - Continuously adjustable curve response from linear to exponential
+  - Gain trimmer (positive gain possible)
+  - Dedicated CV attenuators
+  - LEDs for monitoring CV signal
+  - Adapted from a design by David G. Dixon
+io:
+  - name: CV A
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV B
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

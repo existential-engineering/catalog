@@ -1,0 +1,119 @@
+id: 56XOHam-1RYUA9HTfqQGZ
+name: Dr. Octature II
+manufacturer: intellijel
+primaryCategory: filter
+categories:
+  - modular
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/dr-octature-ii/
+description: 4-pole low pass filter and octature sine wave VCO/LFO.
+details: |-
+  Just like the original Dr. Octature, the basis of the module is a 4-pole LPF inspired by the classic 'cascaded OTA' design, but realized instead with superior-quality 2164 VCAs. The sound is very reminiscent of classic Roland filters such as the one found on the SH-101 or Jupiter-6.
+
+  The 'octature' refers to the 8 distinct, phase separated outputs (every 45 degrees, or two sets of four 180-degree shifted outputs). Each pair has a different slope: 6dB, 12dB, 18dB and 24dB.
+
+  This filter was designed by David Dixon with a special resonance distribution mode called 'QUAD' that results in an especially fat and warm LPF sound that is consistently balanced with respect to the resonance on all 8 outputs.
+
+  When self oscillating this filter becomes an excellent clean sine wave VCO capable of tracking over several octaves (sine VCO range 17Hz to 22kHz). It can also operate in LFO mode (0.017Hz to 300Hz) where the phase shifted outputs become extremely useful for creative modulation. Use it to make your Planar spin in circles for example!
+
+  New in this version is an input soft clipping circuit to help warm up and boost sounds before filtering them.
+specs: |-
+  - 4-pole LPF inspired by the classic cascaded OTA design, realized with 2164 VCAs
+  - 8 distinct phase separated outputs every 45 degrees; pairs at 6dB, 12dB, 18dB, 24dB slopes
+  - QUAD resonance distribution mode (designed by David Dixon)
+  - Self-oscillation yields a 1V/Oct tracking sine VCO (17Hz to 22kHz)
+  - Sine LFO range: 0.017Hz to 300Hz
+  - Input soft clipping circuit (new in this version)
+  - Width: 14hp
+  - Max Depth: 38mm
+  - Power: 72mA @ +12V, 72mA @ -12V
+io:
+  - name: Signal In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FM 1 Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FM 2 Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Q CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Out 45° (1-pole)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Out 90° (2-pole)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Out 135° (3-pole)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Out 180° (4-pole)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Out 225° (1-pole)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Out 270° (2-pole)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Out 315° (3-pole)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Filter Out 360° (4-pole)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/dr-octature-ii_manual.pdf
+    type: resource
+    title: Dr. Octature II Illustrated Supplemental Manual

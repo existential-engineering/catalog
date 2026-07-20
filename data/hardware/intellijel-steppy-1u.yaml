@@ -1,0 +1,75 @@
+id: bMo9Hdz4tHqgxIi-DVzG5
+name: Steppy 1U
+manufacturer: intellijel
+primaryCategory: sequencer
+categories:
+  - modular
+  - digital
+url: https://intellijel.com/shop/eurorack/1u/steppy-1u/
+prices:
+  - amount: 199
+    currency: USD
+description: Prepared for Performance You don't want to go in blind, but you
+  also don't just want to hit play. Use track mutes, per-track probability,
+  delay, clock divisions and sequence length to add even more variations to your
+  track.
+details: |-
+  Steppy is a 4-track programmable gate sequencer with eight internal memory slots, external clocking, numerous tweakable parameters, and a performance-first design aesthetic.
+
+  Each track has its own length (1 to 64 steps), gate length, clock divider, swing setting, delay setting, and probability control, plus the ability to be rotated forward or backward by a number of steps.
+
+  Tracks can be programmed by entering active steps on the grid or tapped in live as the sequence is moving, and can be selected and modified in real time as the sequence plays.
+
+  Tracks can be individually muted and unmuted, and a special performance mode (called “Loopy”) enables you to touch any two gate steps and instantly create a performance that loops between those steps.
+
+  Track patterns can be cleared without clearing playback parameters, and all track patterns (along with their individual playback and performance parameters) can be saved as a preset to one of eight internal memory slots.
+specs: |-
+  - Width: 28HP
+  - Depth: 29mm
+  - Power: 15mA @ +12V, <1mA @ -12V
+io:
+  - name: Clock In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate Out 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/steppy-1u_manual_1.2_2020.10.26.pdf
+    type: resource
+    title: Manual (PDF)
+  - url: https://intellijel.github.io/firmware/
+    type: resource
+    title: Firmware Web Updater
+  - url: https://modulargrid.net/e/intellijel-steppy-1u
+    type: resource
+    title: ModularGrid

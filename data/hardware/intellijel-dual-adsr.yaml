@@ -1,0 +1,119 @@
+id: 4rlSRi6bR75I3smogcmda
+name: Dual ADSR
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/dual-adsr/
+description: Snappy, classically analog envelopes with visually intuitive
+  controls. Add trigger buttons, cycling and a variety of control voltage
+  outputs—then double it—now you've got the Dual ADSR.
+details: |-
+  The Dual ADSR contains two ADSR (Attack Decay Sustain Release) envelope generators modelled after those found on many classic synthesizers. The envelope gates are normalled so they can be triggered from the same gate source or independently, and cycle switches allow the envelopes to be used as unipolar LFOs.
+
+  Each envelope has a gate button (normalled to the GATE input, useful for testing or manual triggering), a CYCLE switch that restarts the attack phase at the end of decay, an EOD (end of decay) indicator LED, and a three-position RATE switch selecting FAST, MED, or SLOW timing ranges.
+
+  Attack, Decay, Sustain, and Release are each set with a slider. Sustain ranges 0V to 5V; the RATE switch sets the maximum length of the other stage sliders.
+
+  Inputs and outputs per envelope are GATE, RETRIG (resets the envelope to 0 and restarts the attack phase if received while gate is high), and LEVEL (0-5V CV over overall envelope level via a built-in linear VCA, normalled to 5V). Outputs are the primary OUTPUT (0 to 5V), an INVERTED OUTPUT (0 to -5V), and an EOD gate output.
+
+  For ADSR 2, the GATE input is normalled to the input of ADSR 1, so a single gate signal at ADSR 1 can trigger both envelopes when nothing is patched into ADSR 2's GATE.
+specs: |-
+  - Two independent, classically analog ADSR envelope generators
+  - Cycle switch lets each envelope free-run as a unipolar LFO
+  - Three-position RATE switch: FAST (~1s max stage), MED (~10s), SLOW (~1 min)
+  - Envelope output range: 0 to 5V; inverted output: 0 to -5V
+  - Width: 14 HP
+  - Maximum depth: 38mm
+  - Current draw: 60mA @ +12V, 49mA @ -12V
+io:
+  - name: ADSR 1 Gate
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADSR 1 Retrig
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADSR 1 Level
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADSR 1 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADSR 1 Inverted Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADSR 1 EOD
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADSR 2 Gate
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADSR 2 Retrig
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADSR 2 Level
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADSR 2 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADSR 2 Inverted Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: ADSR 2 EOD
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/dual-adsr_manual_2021.08.04.pdf
+    type: resource
+    title: Manual (2021.08.04)

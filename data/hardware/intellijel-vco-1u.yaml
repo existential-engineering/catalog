@@ -1,0 +1,73 @@
+id: yqBHyDF0utGBgqYPy5ufx
+name: VCO 1U
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+url: https://intellijel.com/shop/eurorack/1u/vco-1u/
+prices:
+  - amount: 149
+    currency: USD
+description: A triangle core, Syncable, Multi-Waveform Analog Oscillator & LFO
+  in an extremely compact form factor.
+details: |-
+  An analog oscillator and LFO with pure waveforms and precise tracking in a compact package. Perfect as a utility modulation source but equally capable to be used as a primary sound source. Patch it up and let it rip!
+specs: |-
+  - Width: 14HP
+  - Depth: 37.5mm
+  - Current Draw: 19mA @ +12V, 16mA @ -12V
+  - Four simultaneous pure waveforms: Sine, Triangle, Square and Sawtooth
+  - Pitch input for 1V/Oct tracking and FM
+  - SYNC input for Hard Sync — has a comparator so a variety of waveforms can be used as triggers
+  - Switch to select VCO (audio) or LFO range of operation
+  - Three position Octave switch to jump pitch up or down by two octaves
+  - PITCH knob has three octave range in VCO mode (extended to seven with the octave switch) and seven octave range in LFO mode (extended to 11 with the octave switch)
+  - Bicolor LED indicates the state of the triangle core rate
+io:
+  - name: Pitch
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sync
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sine Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Triangle Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sawtooth Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Square Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/vco-1u_manual_2021.07.18.pdf
+    type: resource
+    title: Manual (2021.07.18)

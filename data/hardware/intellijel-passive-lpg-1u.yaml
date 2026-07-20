@@ -1,0 +1,57 @@
+id: VBI029KcSEPBimsfguUi_
+name: Passive LPG 1U
+manufacturer: intellijel
+primaryCategory: filter
+categories:
+  - modular
+  - analog
+url: https://intellijel.com/shop/eurorack/1u/passive-lpg-1u/
+prices:
+  - amount: 39
+    currency: USD
+description: Natural dynamics with the magic of vactrols Drop this module (or a
+  few of them) into your 1U row, patch in some sound sources, and then ping them
+  with gates and CV to get some instantly pleasing results. So simple and fun!
+details: |-
+  In general, low pass gates (LPGs) control the amplitude and timbre of a signal by opening and closing a low pass filter. When the gate is closed, no frequencies are allowed to pass through (and no output is heard). As the gate begins to open, the lowest frequencies pass through to the output. As the gate opens further, the output grows louder and its high frequency content increases.
+
+  Traditional Low Pass Gates use vactrols to control the opening and closing of the filter. Encased within a vactrol is both a light source and a light detector. Applying a control voltage to the vactrol lights its internal LED, the brightness of which is measured by its detector. What makes vactrols particularly unique (and well-suited to musical applications) is their non-linear response to voltage, in particular the way in which the internal LED slowly dims (rather than shutting off instantly) when the control voltage is removed. This sonic coupling of timbre and volume, along with the circuit's natural decay, makes the low pass gate particularly adept at producing tones associated with struck objects, like hand drums or marimbas. Indeed, low pass gates are the main ingredient of the so-called "Buchla Bongo" sound.
+
+  The Intellijel Passive Low Pass Gate 1U is a simple, DC-coupled, vactrol based, 1-pole passive low pass gate, which is controlled by an external CV input. Without positive control voltage, the gate is completely closed and none of the LPG's input signal is passed through to the output. Increasing amounts of positive CV open the gate, making the output signal both louder and brighter. At +5V, the gate is fully open and the input signal is passed through to the output.
+
+  Because this is a passive circuit (no power is applied to it), its sonic characteristics are somewhat dependent upon the audio signal you feed into it, making it a very natural and organic way to shape a signal's volume and tone.
+specs: |-
+  - Width: 6HP
+  - Depth: 19mm
+  - Power: Passive (no external power required)
+  - 1-pole, DC-coupled, vactrol-based passive low pass gate
+  - Controlled by an external CV input
+io:
+  - name: Audio In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Audio Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/passive-lpg-1u_manual_2021.07.27.pdf
+    type: resource
+    title: Manual (2021.07.27)
+  - url: https://modulargrid.net/e/intellijel-passive-lpg-1u
+    type: resource
+    title: ModularGrid

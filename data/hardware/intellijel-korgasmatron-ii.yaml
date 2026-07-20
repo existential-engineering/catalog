@@ -1,0 +1,118 @@
+id: XRESzmQ154Pc78xzPMcvI
+name: Korgasmatron II
+manufacturer: intellijel
+primaryCategory: filter
+categories:
+  - modular
+  - analog
+  - discontinued
+supersedes: uP5mu5oC4EY51teMNS4FY
+url: https://intellijel.com/shop/legacy/korgasmatron-ii/
+description: Dual VCF/VCO and Xfade
+details: |-
+  The Korgasmatron II builds on the original Korgasmatron with a completely independent six-mode filter on each side, selected via a rotary switch, plus a new overdrive feature that soft- or hard-clips the output signal as the input amp is driven past 12 o'clock (with a standard 10Vpp input). The crossfade circuit was redesigned to match the µFade module, with independent CV attenuation.
+
+  Each filter offers six modes: 2-pole low-pass, 1-pole low-pass, 1-pole band-pass, 2-pole high-pass, 1-pole high-pass, and 1-pole band-reject. Both filters track 1V/octave over three to four octaves, making them usable as a dual VCO, and a switch configures serial or parallel routing between the two sides.
+
+  A distinctive feature is the auxiliary input on each filter, which accepts a second signal with its own independently selectable filter type, for example running filter A's main input in low-pass while an auxiliary signal passes through in band-pass mode, with both signals summed at the same output. This is useful for complex layering as well as creative feedback patching between the two filters' inputs and outputs.
+
+  The companion Korgasmatron II Expander module adds CV control over each filter's Q (resonance) and additional auxiliary inputs.
+specs: |-
+  - Width: 20HP (skiff friendly)
+  - Max Depth: 38mm
+  - Current Draw: 98mA @ +12V, 88mA @ -12V
+  - Six filter modes per side: 2-pole LP, 1-pole LP, 1-pole BP, 2-pole HP, 1-pole HP, 1-pole band-reject
+  - Independent output soft/hard overdrive clipping per filter
+  - Dual 1V/Oct tracking over 3-4 octaves (usable as dual VCO)
+  - Switchable serial/parallel filter routing
+  - Auxiliary filter-type input per side, independent of the main filter mode
+io:
+  - name: FM1 A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FM2 A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FM2 B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FM1 B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: XFADE
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: IN A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: 1V/Oct A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: 1V/Oct B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: IN B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIX
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+releaseDate: "2013"
+links:
+  - url: https://intellijel.com/downloads/manuals/korgasmatron-ii_illustrated_supplement.pdf
+    type: resource
+    title: Korgasmatron II Illustrated Supplement (PDF)

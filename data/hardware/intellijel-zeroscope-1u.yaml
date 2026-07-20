@@ -1,0 +1,70 @@
+id: wI8dSsPLDoddlMArYIVOq
+name: Zeroscope 1U
+manufacturer: intellijel
+primaryCategory: analyzer
+categories:
+  - modular
+  - digital
+  - tuner
+  - meter
+url: https://intellijel.com/shop/eurorack/1u/zeroscope-1u/
+prices:
+  - amount: 139
+    currency: USD
+description: Show them you're a mad scientist Sometimes your ears are not enough
+  and you really need to see the sounds and control voltages you are generating.
+  Zeroscope's two channel design lets you display and compare both control
+  voltages and audio. It's a good old fashioned sci-fi light show!
+details: |-
+  The Zeroscope 1U is an adaptation of the excellent 3U Zeroscope by VPME.DE.
+
+  Three Modes Packed Into 1U: Scope — standard graphical display, with time displayed on the X-axis and voltage displayed on the Y-axis. X-Y — alternate graphical display with CH 1 driving the X-axis and CH 2 driving the Y-axis. Tune — alphanumerical tuning display, configurable to show either Hz values or note names.
+
+  The Scope displays have adjustable display offset for each channel and an adjustable trigger threshold, while the tuner has options for reference pitch and average update speed.
+
+  Ins & Outs: the inputs are DC coupled and accept signals between -10V and +10V. The signal on the input is normalled to the output below, allowing you to monitor or tune a signal without a mult or re-patching.
+specs: |-
+  - Width: 16HP
+  - Depth: 26mm
+  - Power: 8mA @ +12V
+  - Timebase: 10us – 10s per division
+  - Voltage range: 0.5V – 10V per division
+io:
+  - name: CH 1 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CH 1 Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CH 2 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CH 2 Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/zeroscope-1u_manual_2020.10.26.pdf
+    type: resource
+    title: Manual (2020.10.26)
+  - url: https://intellijel.github.io/firmware/
+    type: resource
+    title: Firmware Web Updater (1.6)
+  - url: https://modulargrid.net/e/intellijel-zeroscope-1u
+    type: resource
+    title: ModularGrid

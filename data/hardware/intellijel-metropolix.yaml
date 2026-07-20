@@ -1,0 +1,111 @@
+id: 1ZacXKtDR5YcUEoA3sl9o
+name: Metropolix
+manufacturer: intellijel
+primaryCategory: sequencer
+categories:
+  - modular
+  - digital
+url: https://intellijel.com/shop/eurorack/metropolix/
+prices:
+  - amount: 579
+    currency: USD
+description: The Intellijel Metropolix is a unique and powerful multitrack
+  Eurorack musical sequencer. With an abundance of hands-on, tactile controls
+  and a wealth of modulation possibilities (both internal and external) you can
+  quickly and easily create infectiously musical sequences that are never
+  boring.
+details: |-
+  Metropolix is an interactive sequencer optimized for live performance, jamming, and improvisation, with configurable, hands-on control of all the most essential performance parameters. Sequences transform and mutate with just the twist of a knob, a flick of a switch, a nudge of a slider, or an injection of CV.
+
+  Two tracks (TRK 1 and TRK 2) are variants of a main pitch/gate sequencer, programmed via the PITCH sliders, PULSE COUNT and GATE TYPE switches. Each track interprets the main sequence in a variety of ways, creating complementary variations that enable counterpoint, polyrhythms, and all manner of sonic movement.
+
+  Each track has its own playback order, sequence length, clock division, swing amount, slide time, and gate length, plus multiple lanes of per-stage playback parameters including gate override, pitch override, ratchet count, probability of playback, accumulating transposition, and a dedicated CV lane.
+
+  Eight separate modulation lanes are accessed via the MOD button, each with 8 stages of modulation values and its own playback order, length, and clock division, routable to one of Metropolix's two assignable outputs or to dozens of internal destinations for sophisticated self-modulation.
+
+  Metropolix stores up to 64 preset configurations (in 8 banks of 8 presets), and all live settings are stored on the module, ensuring it always powers up exactly as it was left, even without saving to a preset.
+specs: |-
+  - Width: 34HP
+  - Depth: 25mm
+  - Power: 95mA @ +12V, 10mA @ -12V
+  - Two tracks with independent order, length, clock division, swing, slide, and gate length
+  - Eight modulation lanes, each with 8 stages
+  - Three AUX inputs and two assignable CTRL knobs
+  - 100 user-defined scales
+  - 64 total recall presets (8 banks of 8) with preset chaining
+  - Loopy performance-looping mode
+  - USB MIDI clock sync and MIDI output (rear connection; requires optional USB Extender or Metropolix Backpack for front-panel access)
+io:
+  - name: Track 1 Pitch Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Track 1 Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Track 2 Pitch Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Track 2 Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Assignable Out A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Assignable Out B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: AUX In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: AUX In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: AUX In 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/metropolix_manual_v1.6_2025.09.24.pdf
+    type: resource
+    title: Manual (v1.6 / 2025.09.24)
+  - url: https://intellijel.github.io/firmware/
+    type: resource
+    title: Firmware Web Updater (1.6.1.0)
+  - url: https://modulargrid.net/e/intellijel-metropolix
+    type: resource
+    title: ModularGrid

@@ -1,0 +1,138 @@
+id: nLi-IncA9BOL-TrKqjiaa
+name: Atlantix
+manufacturer: intellijel
+primaryCategory: synthesizer
+categories:
+  - modular
+  - analog
+  - subtractive
+supersedes: 0LeT1HcizoPfEZjeLDG-b
+url: https://intellijel.com/shop/eurorack/atlantix/
+prices:
+  - amount: 699
+    currency: USD
+description: The Atlantix is a complete analog synth voice. It's
+  quick to dial in huge bass or lead sounds, and easy to push it into new sonic
+  territory. Dual VCOs, Multimode VCF, VCA with Drive, and an ADSR envelope; all
+  of the building blocks needed to expand or start making sound in your rack.
+  With 32 patch points and a selection of routing switches, you can remix these
+  blocks into something all your own.
+details: |-
+  The Atlantix is the highly-anticipated successor to the Intellijel Atlantis, which was originally inspired by the classic Roland SH-101. The Atlantix is an analog, complete subtractive synthesizer voice condensed into a single 42HP module, providing all the fundamental building blocks needed to make sounds in Eurorack: VCOs, VCF, VCA, S&H, Noise, and an Envelope.
+
+  The Atlantix uses two triangle core voltage controlled oscillators (VCO). The primary VCO (VCO A) is capable of thru-zero frequency modulation and has a dedicated amplifier for controlling FM depth (FM INDEX). The modulation oscillator (VCO B) can be used as either an LFO or VCO, and also has a bonus 'spike' waveform output similar to the Buchla Easel. In the mixer section, you can adjust the balance of the primary oscillator's waveforms, sub-oscillator noise, and two auxiliary inputs that are normalled to additional VCO A or VCO B waveforms, or can be used to patch in external signals.
+
+  The filter section (VCF) is a discrete cascaded 4-pole multimode filter with lowpass, bandpass, highpass, and phaser (multi-notch) modes. It can self-oscillate, producing a clean sine wave that tracks 1V/Oct. The VCF has three frequency modulation sources, two of which are normalled to the external pitch and envelope with switches for polarity.
+
+  The envelope section is an analog ADSR with three timing ranges (slow, medium, fast), gated externally or via a manual gate button. It is routed through a VCA usable for level or velocity control. The analog Sample and Hold circuit is normalled to the white noise source and can be clocked by VCO B, an external clock source, or via the gate input.
+
+  An optional Atlx expander adds 16 additional jacks, including dedicated waveform outputs for both oscillators, filter outputs, and a ring modulator.
+specs: |-
+  - Width: 42HP
+  - Depth: 25mm
+  - Power: 140mA @ +12V, 138mA @ -12V
+  - Cascaded 4-Pole multimode filter: LP2, BP2, LP4, BP4, HP4, Phaser modes
+  - Two Triangle Core VCOs (VCO A: thru-zero FM, INDEX, PWM, Hard/Soft Sync; VCO B: Linear FM, LFO/VCO switch, Hard Sync)
+  - Suboscillator with three modes spanning two octaves
+  - White and Pink noise sources
+  - Six-channel mixer (VCO A waveforms, Sub, Noise, two Aux inputs)
+  - Analog ADSR envelope with three time ranges
+  - Patchable Sample and Hold modulation source
+  - Asymmetric and symmetric output distortion modes
+  - 20 Sliders, 4 Knobs, 27 toggles, 2 Rotary switches
+  - 32 jacks (16 additional with optional Atlx expander)
+io:
+  - name: 1V/Oct In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux 1 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux 2 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: VCF FM 1 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: VCF FM 2 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: VCF FM 3 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Level/Velocity In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mod X Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mod Y Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Main Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/atlantix_manual_2024.09.12.pdf
+    type: resource
+    title: Manual (2024.09.12)
+  - url: https://intellijel.com/downloads/manuals/atlantix_patch_sheet.pdf
+    type: resource
+    title: Patch Sheet
+  - url: https://modulargrid.net/e/intellijel-atlantix
+    type: resource
+    title: ModularGrid
