@@ -13,6 +13,7 @@ import { z } from "zod";
 import { looksLikeAcronymName } from "./lib/acronym-exclusions.js";
 import { getDocsUrl, ValidationErrorCode } from "./lib/error-codes.js";
 import { isIoCombineCandidate } from "./lib/io-heuristics.js";
+import { findDuplicateIoKeys, IO_KEY_PATTERN } from "./lib/io-keys.js";
 import type {
   CategoriesSchema,
   CategoryAliasesSchema,
@@ -354,6 +355,13 @@ const VersionSchema = z
 
 const IOSchema = z
   .object({
+    // Stable per-port key (assigned by pnpm assign-ids). Optional until the
+    // backfill completes, then flipped to required (AUREO-705). Immutable
+    // once assigned: Studio setup edges reference ports by this key.
+    key: z
+      .string()
+      .regex(IO_KEY_PATTERN, "IO key must be exactly 8 alphanumeric characters")
+      .optional(),
     name: z.string(),
     signalFlow: z.string().check((ctx) => {
       if (!VALID_IO_SIGNAL_FLOWS.has(ctx.value)) {
@@ -633,6 +641,20 @@ const HardwareSchema = z
         });
       }
     });
+  })
+  .check((ctx) => {
+    // IO keys must be unique within the entry (they identify ports for
+    // Studio setup edges — see io-keys.ts).
+    const io = ctx.value.io;
+    if (!io || io.length === 0) return;
+    for (const dup of findDuplicateIoKeys(io)) {
+      ctx.issues.push({
+        code: "custom",
+        message: `duplicate io key '${dup}' — io keys must be unique within an entry.`,
+        path: ["io"],
+        input: dup,
+      });
+    }
   })
   .refine(
     (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),

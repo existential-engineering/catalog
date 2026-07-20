@@ -10,6 +10,8 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
+import { findIoKeyViolations } from "./lib/io-keys.js";
+import type { IO } from "./lib/types.js";
 
 const baseRef = process.argv[2] ?? "origin/main";
 
@@ -44,19 +46,24 @@ function checkIdImmutability(): void {
     const baseContent = getBaseFileContent(file);
     if (!baseContent) continue;
 
-    const baseData = parseYaml(baseContent) as { id?: unknown };
-    if (baseData.id === undefined) continue;
+    const baseData = parseYaml(baseContent) as { id?: unknown; io?: IO[] };
 
     const currentPath = path.resolve(file);
     if (!fs.existsSync(currentPath)) continue;
 
     const currentContent = fs.readFileSync(currentPath, "utf-8");
-    const currentData = parseYaml(currentContent) as { id?: unknown };
+    const currentData = parseYaml(currentContent) as { id?: unknown; io?: IO[] };
 
-    if (currentData.id !== baseData.id) {
+    if (baseData.id !== undefined && currentData.id !== baseData.id) {
       errors.push(
         `${file}: ID was changed from '${baseData.id}' to '${currentData.id}'. IDs are immutable once assigned.`
       );
+    }
+
+    if (Array.isArray(baseData.io) && Array.isArray(currentData.io)) {
+      for (const violation of findIoKeyViolations(baseData.io, currentData.io)) {
+        errors.push(`${file}: ${violation}`);
+      }
     }
   }
 
