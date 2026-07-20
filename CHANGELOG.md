@@ -1,5 +1,58 @@
 # catalog
 
+## 3.46.0
+
+### Minor Changes
+
+- b0d3b14: Import Dangerous Music (23 hardware entries).
+
+  Analog summing mixers (2-BUS family), monitor controllers
+  (MONITOR/MONITOR-ST/MONITOR-SR/SOURCE), converters (CONVERT
+  series), the BAX EQ/BAX500 shelving equalizers, COMPRESSOR,
+  LIAISON patchbay, MASTER transfer console, and the S&M
+  (Sum-Minus) mid-side matrix.
+
+- 07e430e: Clean scraped junk out of product names and remove standalone bundle entries.
+
+  Renamed ~310 entries: stripped page-title marketing taglines ("nanobox |
+  tangerine – Compact Streaming Sampler" → "Nanobox Tangerine"), trademark
+  symbols (™/®/©), HTML entities, and manufacturer-name prefixes ("dbx 286s"
+  → "286s") — the manufacturer is stored and indexed separately, so the
+  prefix duplicated data. Reattributed seven Sonuscore storefront listings
+  to their actual developers (Wavelet Audio, Soundiron) and added
+  searchTerms where names became bare acronyms (DDP, DJDI, DRMR, EX) or
+  lost a commonly searched compound form (EHX by JHS Big Muff 2, BAE 8CR).
+
+  Removed 86 standalone bundle/suite entries (HoRNet, Antelope Audio,
+  Arturia V Collection, Soundtoys 5, Softube collections, Lexicon PCM
+  bundles, and more) whose member products exist individually — a bundle is
+  a commercial SKU, not a discrete product. Integrated products that only
+  carry "Suite"/"Bundle" in the name (Waldorf Edition 2, PSP MixPack2,
+  Ampeg-style single packages) were kept.
+
+- 07e430e: Add name-hygiene validation and bundle-entry auditing.
+
+  `pnpm validate` now hard-fails on mechanical name junk (E118: trademark
+  symbols, HTML entities, stray leading/trailing separators, doubled
+  spaces) and warns when a name starts with the manufacturer's display
+  name (W129) or contains a tagline-style en/em-dash or pipe separator
+  (W130, with a reviewed exclusion list for official stylings).
+  `pnpm dataset:audit` gains two Tier-2 review checks: name-tagline
+  (plain-hyphen suffixes that may be scraped taglines) and bundle-entry
+  (suite/bundle categories or bundle-ish software names, with an
+  allowlist for integrated products). Conventions documented in CLAUDE.md
+  and docs/VALIDATION_ERRORS.md.
+
+- 07e430e: Remove Bluetooth and Wi-Fi from hardware io sections.
+
+  Wireless capabilities are not physical ports, so they don't belong in
+  the io graph. Removed the Bluetooth io entry from 31 hardware files and
+  the Wi-Fi entry from the KEF XiO, and dropped `bluetooth` and `wifi`
+  from the io type vocabulary so future imports fail validation instead
+  of reintroducing them. Wireless capabilities remain documented in
+  description/details/specs. Also corrected the Midas MR18's Ethernet and
+  ULTRANET ports, which were mislabeled as `dante`.
+
 ## 3.45.0
 
 ### Minor Changes
