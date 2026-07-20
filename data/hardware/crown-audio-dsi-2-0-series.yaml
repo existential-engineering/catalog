@@ -38,42 +38,48 @@ specs: |-
   - Power supply: 100–220V ±10%, 50/60 Hz
   - Fan noise: 51 dBA maximum at 1m
 io:
-  - name: Analog Audio Input
+  - key: 4zHIVRIC
+    name: Analog Audio Input
     signalFlow: input
     category: audio
     type: line
     connection: pin
     maxConnections: 4
     position: Right
-  - name: Dante / AES67 Network Audio (D models)
+  - key: tqyCNP6L
+    name: Dante / AES67 Network Audio (D models)
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
     maxConnections: 2
     position: Right
-  - name: Speaker Output (barrier terminal block)
+  - key: uJRrhy4R
+    name: Speaker Output (barrier terminal block)
     signalFlow: output
     category: audio
     type: line
     connection: pin
     maxConnections: 4
     position: Right
-  - name: Ethernet / Control (SNMP, HiQ for Audio Architect)
+  - key: ZkYTOY7d
+    name: Ethernet / Control (SNMP, HiQ for Audio Architect)
     signalFlow: bidirectional
     category: digital
     type: ethernet
     connection: ethernet
     maxConnections: 1
     position: Right
-  - name: GPIO / AUX
+  - key: X6v36ZkS
+    name: GPIO / AUX
     signalFlow: bidirectional
     category: digital
     type: line
     connection: pin
     maxConnections: 4
     position: Right
-  - name: AC Mains Input (IEC C20 / 320 inlet)
+  - key: LDb2A2By
+    name: AC Mains Input (IEC C20 / 320 inlet)
     signalFlow: input
     category: power
     type: power

@@ -46,35 +46,40 @@ specs: |-
   - 4x Automatic Mic Mixers (AMM)
   - Optional Processing Expansion Module: 12-channel AEC or FBS
 io:
-  - name: Local Mic/Line Inputs (1-8)
+  - key: fIlOZTCn
+    name: Local Mic/Line Inputs (1-8)
     signalFlow: input
     category: audio
     type: mic
     connection: euroblock
     maxConnections: 8
     position: Left
-  - name: Local Mic/Line Inputs (9-12)
+  - key: oyw9OazO
+    name: Local Mic/Line Inputs (9-12)
     signalFlow: input
     category: audio
     type: mic
     connection: euroblock
     maxConnections: 4
     position: Left
-  - name: Local Line Outputs (1-8, relay protected)
+  - key: H6TToMkv
+    name: Local Line Outputs (1-8, relay protected)
     signalFlow: output
     category: audio
     type: line
     connection: euroblock
     maxConnections: 8
     position: Left
-  - name: Local Line Outputs (9-12, relay protected)
+  - key: 7ngCnMF4
+    name: Local Line Outputs (9-12, relay protected)
     signalFlow: output
     category: audio
     type: line
     connection: euroblock
     maxConnections: 4
     position: Left
-  - name: "I/O Port (option card slot: Dante 96kHz / MADI / Waves / SLink, up to
+  - key: BGXcqnMs
+    name: "I/O Port (option card slot: Dante 96kHz / MADI / Waves / SLink, up to
       128x128)"
     signalFlow: bidirectional
     category: digital
@@ -82,14 +87,16 @@ io:
     connection: ethercon
     maxConnections: 1
     position: Left
-  - name: Network Port (TCP/IP control, IP remote controllers, 3rd party integration)
+  - key: bCNJqwW0
+    name: Network Port (TCP/IP control, IP remote controllers, 3rd party integration)
     signalFlow: bidirectional
     category: digital
     type: ethernet
     connection: ethernet
     maxConnections: 1
     position: Left
-  - name: Local GPIO (2x in / 2x out)
+  - key: 1WiSeH9L
+    name: Local GPIO (2x in / 2x out)
     signalFlow: bidirectional
     category: digital
     type: gpio

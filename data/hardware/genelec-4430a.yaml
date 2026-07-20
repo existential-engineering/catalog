@@ -46,14 +46,16 @@ specs: |-
   - Idle Power Consumption: ≤5 W
   - Full Output Power Consumption: 25.5 W
 io:
-  - name: AES67/Dante Network Audio + PoE
+  - key: f0cdMATL
+    name: AES67/Dante Network Audio + PoE
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
     maxConnections: 1
     position: Bottom
-  - name: Analog Input
+  - key: VxAUEnWQ
+    name: Analog Input
     signalFlow: input
     category: audio
     type: line

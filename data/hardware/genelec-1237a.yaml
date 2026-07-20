@@ -48,42 +48,48 @@ specs: |-
   - Digital output / thru (AES/EBU): XLR male, 110 Ohm
   - Control network: 2 x RJ45 (CAT5) for GLM
 io:
-  - name: Analog In
+  - key: fYCImwmD
+    name: Analog In
     signalFlow: input
     category: audio
     type: line
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: Digital In (AES/EBU)
+  - key: rPKFBIaI
+    name: Digital In (AES/EBU)
     signalFlow: input
     category: digital
     type: "aes/ebu"
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: Digital Out / Thru (AES/EBU)
+  - key: FMOajgMu
+    name: Digital Out / Thru (AES/EBU)
     signalFlow: output
     category: digital
     type: "aes/ebu"
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: GLM Control Network In
+  - key: GmRUuCa9
+    name: GLM Control Network In
     signalFlow: bidirectional
     category: digital
     type: "aes/ebu"
     connection: ethernet
     maxConnections: 1
     position: Bottom
-  - name: GLM Control Network Out
+  - key: icurUzfw
+    name: GLM Control Network Out
     signalFlow: bidirectional
     category: digital
     type: "aes/ebu"
     connection: ethernet
     maxConnections: 1
     position: Bottom
-  - name: Mains Power
+  - key: dbfr9zdS
+    name: Mains Power
     signalFlow: input
     category: power
     type: power
