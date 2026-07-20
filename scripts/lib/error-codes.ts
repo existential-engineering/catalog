@@ -38,6 +38,7 @@ export enum ValidationErrorCode {
   E115_INVALID_CONNECTOR_DETAIL = "E115",
   E116_INVALID_LINK_TYPE = "E116",
   E117_INVALID_IO_TYPE = "E117",
+  E118_NAME_ARTIFACT = "E118",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
@@ -66,6 +67,8 @@ export enum ValidationErrorCode {
   W126_SPECS_OVERLAP = "W126",
   W127_MISSING_SEARCH_TERMS = "W127",
   W128_IO_COMBINE_CANDIDATE = "W128",
+  W129_MANUFACTURER_IN_NAME = "W129",
+  W130_NAME_TAGLINE = "W130",
 }
 
 // =============================================================================
@@ -192,6 +195,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     title: "Invalid IO type",
     anchor: "e117-invalid-io-type",
   },
+  [ValidationErrorCode.E118_NAME_ARTIFACT]: {
+    title: "Name contains scrape artifacts",
+    anchor: "e118-name-contains-scrape-artifacts",
+  },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",
     anchor: "e199-validation-error",
@@ -279,6 +286,14 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.W128_IO_COMBINE_CANDIDATE]: {
     title: "IO entry may combine multiple physical jacks",
     anchor: "w128-io-entry-may-combine-multiple-physical-jacks",
+  },
+  [ValidationErrorCode.W129_MANUFACTURER_IN_NAME]: {
+    title: "Manufacturer name duplicated in product name",
+    anchor: "w129-manufacturer-name-duplicated-in-product-name",
+  },
+  [ValidationErrorCode.W130_NAME_TAGLINE]: {
+    title: "Name contains a tagline-style separator",
+    anchor: "w130-name-contains-a-tagline-style-separator",
   },
 };
 

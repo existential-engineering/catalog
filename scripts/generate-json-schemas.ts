@@ -95,6 +95,12 @@ const ioSchema = {
   required: ["name", "signalFlow", "category", "type", "connection"],
   additionalProperties: false,
   properties: {
+    key: {
+      type: "string",
+      pattern: "^[0-9a-zA-Z]{8}$",
+      description:
+        "Stable per-port identifier (8 alphanumeric chars, unique within the entry). Auto-assigned by CI; immutable once assigned.",
+    },
     name: { type: "string" },
     signalFlow: {
       type: "string",
