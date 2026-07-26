@@ -1,0 +1,88 @@
+id: 2NBUaKa1EYcP1aNZByILJ
+name: Stereo Mixer 1U
+manufacturer: intellijel
+primaryCategory: mixer
+categories:
+  - modular
+  - analog
+url: https://intellijel.com/shop/eurorack/1u/stereo-mixer-1u/
+prices:
+  - amount: 69
+    currency: USD
+description: The Stereo Mixer 1U provides a convenient way to combine your mono
+  and stereo sources into a single stereo mix. There is level control over the
+  first two channels and, using a rear connector, you can chain multiple Stereo
+  Mixer 1U's together into a hidden 3rd stereo channel without using up channels
+  on the front panel. The chain i/o connectors are fully compatible with the
+  Mixup connectors so you are able to mix 1U and 3U mix chains together as
+  needed.
+details: |-
+  The Stereo Mixer 1U is a versatile, expandable audio mixer for the Intellijel 1U format. It has two pairs of front panel inputs, each with its own level control, and a mixed output pair. For each input pair, the left channel is normalled to the right channel, for mono operation.
+
+  Using 3-pin Link connectors on the back panel, you can chain multiple Stereo Mixer 1U's together in series, giving you the ability to mix together even more inputs, or to create sub-mixes for routing audio around larger systems. The same connectors can patch Intellijel's Mixup and XY IO 1U modules into these back-panel chains, and can connect directly to the ¼” audio jacks on an Intellijel Palette Case, a 7U case with 2nd-generation Audio Jacks Board, an Outs module, or a v2 Headphones 1U.
+
+  Stereo Mixer 1U is designed specifically for audio (not CV mixing); it's AC-coupled and uses audio-grade, logarithmic attenuators for a smooth, even response across the entire volume range.
+specs: |-
+  - Width: 16HP
+  - Depth: 25mm
+  - Power: 17mA @ +12V, 23mA @ -12V
+  - AC-coupled, audio-grade logarithmic attenuators
+  - Each input pair: left channel normalled to right for mono operation
+  - 3-pin Link connectors on rear for chaining multiple units; compatible with Mixup connectors
+io:
+  - name: 1L In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: 1R In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: 2L In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: 2R In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix L Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix R Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Chain Link
+    signalFlow: bidirectional
+    category: audio
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://intellijel.com/downloads/manuals/stereo-mixer-1u_manual_2024.10.15.pdf
+    type: resource
+    title: Manual (2024.10.15)
+  - url: https://modulargrid.net/e/intellijel-stereo-mixer-1u
+    type: resource
+    title: ModularGrid

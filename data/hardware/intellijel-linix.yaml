@@ -1,0 +1,161 @@
+id: OyOoJdTi7EPK837xs6Xt0
+name: Linix
+manufacturer: intellijel
+primaryCategory: mixer
+categories:
+  - modular
+  - analog
+  - utility
+  - discontinued
+url: https://intellijel.com/shop/eurorack/linix/
+description: Whether you're working with CV or Audio signals, VCAs are
+  infinitely useful. We've packed six linear VCAs into a single module.
+details: |-
+  Linix is a hex linear VCA and 5:1 voltage controlled mixer. Whether you're working with CV or audio signals, VCAs are infinitely useful: envelope a couple of oscillators on two channels and use another pair to dial in the modulation on your filters.
+
+  Linix contains six high quality 2164 based linear VCA circuits with CV attenuation and BIAS control for each channel.
+
+  The first five channels normal to a summing amp that feeds the input of a sixth channel. This allows you to have voltage control of the master sum. Patching into an individual output channel breaks that channel from the master sum. If the direct output is used for each channel then the sixth channel becomes an additional independent VCA as well.
+
+  Each channel has an LED to monitor incoming CV activity. The SUM output has an additional set of LEDs to monitor the bipolar state of the final sum, and a clip LED to monitor the absolute max signal level.
+
+  There is a 12 pin header on the back to connect the Linix channel direct outputs to the inputs of a Mutamix.
+specs: |-
+  - Six 2164-based linear VCA circuits with CV attenuation and BIAS control per channel
+  - First five channels normal to a summing amp feeding channel six (voltage controlled master sum)
+  - Per-channel LED CV monitoring; SUM output bipolar LEDs and clip LED
+  - 12-pin header on the back to connect channel direct outputs to a Mutamix
+  - Width: 16HP
+  - Depth: 28mm
+  - Power: 88mA @ +12V, 84mA @ -12V
+io:
+  - name: CV 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV 5
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Sum
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In 5
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In Sum
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sum Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/linix_manual_2018.09.13.pdf
+    type: resource
+    title: Linix Manual (2018.09.13)

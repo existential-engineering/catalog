@@ -1,0 +1,86 @@
+id: xbvmJILbPZx78MCf9m8kB
+name: µMod II
+manufacturer: intellijel
+primaryCategory: ring-modulator
+categories:
+  - modular
+  - analog
+  - utility
+  - discontinued
+supersedes: NAm4eVXJwlHJj3C5wuyIr
+url: https://intellijel.com/shop/legacy/umod-ii/
+description: Ring Modulator / Analog Logic. A versatile ring modulator (four
+  quadrant multiplier) based on the original µMod, with four analog logic
+  outputs added for even further CV and audio mangling.
+details: |-
+  The µMod II is a versatile ring modulator (four quadrant multiplier) based on the original µMod designed by David G. Dixon. Four analog logic outputs have been added to the module for even further CV and audio mangling.
+
+  The module takes two signals, called X and Y, and produces a series of output signals derived from the sources using a variety of analog methods. Alongside the dual-linear-VCA-based ring modulator output, the analog logic section provides SUM (X plus Y), DIFF (Y minus X), MIN (the analog equivalent of a digital AND) and MAX (the analog equivalent of a digital OR) outputs, well suited to creating complex CV from basic waveforms or new forms of audio.
+
+  Polarity switches rectify the X (carrier) and Y (modulator) inputs, passing the full waveform, only its positive half, or only its negative half, and each channel has its own attenuator. The QUADRANT control shifts the multiplication into positive or negative quadrants; changing it while ring modulating adds the signal frequencies back into the sum-and-difference frequencies, adding richness to the classic ringmod sound and allowing many variations of bell tones, chimes and mallet-type timbres.
+
+  It can also be used as a linear VCA, is great for waveshaping (especially with two synced audio sources), and excels at CV mangling using combinations of the attenuators, rectifier switches and logic outputs.
+specs: |-
+  - Width: 6hp
+  - Max depth: 35mm
+  - Current draw: 41mA @ +12V, 41mA @ -12V
+  - Dual linear VCA based ring modulator
+  - Four analog logic outputs: SUM, DIFF, MIN (analog AND), MAX (analog OR)
+  - Polarity (rectifier) switches for X (carrier) and Y (modulator) inputs
+  - Attenuators for X and Y inputs
+  - QUADRANT control shifts multiplication into positive or negative quadrants
+  - Can be used as a linear VCA
+io:
+  - name: X In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Y In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Ring Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sum Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Diff Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Max Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Min Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/umod-ii_manual.pdf
+    type: resource
+    title: Manual

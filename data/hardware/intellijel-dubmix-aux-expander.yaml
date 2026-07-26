@@ -1,0 +1,128 @@
+id: Fkqc_5tlzejzGKz3ooM1p
+name: Dubmix Aux Expander
+manufacturer: intellijel
+primaryCategory: mixer
+categories:
+  - modular
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/dubmix-aux-expander/
+description: The Dubmix Aux Expander adds two additional auxiliary busses with
+  full voltage control over levels.
+details: |-
+  The Dubmix Aux expander extends the auxiliary send capabilities of the Dubmix with two additional busses, AUX B and AUX C.
+
+  Each of the 4 channel strips gains an AUX B and an AUX C knob controlling the level of that channel's post-fader signal mixed into the respective send, plus matching AUX B and AUX C CV inputs (summed with the knob position) for voltage control over each channel's send.
+
+  On the expander's master section, AUX B RETURN L+R and AUX C RETURN L+R knobs and audio inputs mix return signals back into the Dubmix's L and R busses (if nothing is patched into the R return jack, the L return signal is sent there). AUX B MASTER and AUX C MASTER knobs set the overall send levels to the AUX B SEND and AUX C SEND outputs, and clip LEDs indicate when either master send is clipping.
+
+  The Aux Expander connects to the main Dubmix module via a ribbon cable and requires a Dubmix to function; it can be used at the same time as the Dubmix Mini Expander.
+specs: |-
+  - Adds two additional auxiliary busses (AUX B and AUX C) with full voltage control over levels
+  - Per-channel AUX B and AUX C sends with CV control (channels 1-4)
+  - Clip LEDs indicate when Aux B or Aux C master sends are clipping
+  - Connects to the main Dubmix via ribbon cable; usable simultaneously with the Mini Expander
+  - Requires Dubmix module
+io:
+  - name: Channel 1 Aux B CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 1 Aux C CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 2 Aux B CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 2 Aux C CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 3 Aux B CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 3 Aux C CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 4 Aux B CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Channel 4 Aux C CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux B Return L
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux B Return R
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux B Send
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux C Return L
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux C Return R
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Aux C Send
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/dubmix_manual.pdf
+    type: resource
+    title: Manual (Dubmix, includes Aux Expander)

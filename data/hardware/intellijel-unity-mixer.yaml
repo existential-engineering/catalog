@@ -1,0 +1,91 @@
+id: _zvNGL5M7f_H2bIxVKz-E
+name: Unity Mixer
+manufacturer: intellijel
+primaryCategory: mixer
+categories:
+  - modular
+  - analog
+url: https://intellijel.com/shop/eurorack/unity-mixer/
+prices:
+  - amount: 75
+    currency: USD
+description: Quick and Clean When you use more sources than your signal path
+  will allow, you'll wish you had a mixer. Mix up to six sources into one or two
+  channels, CV or Audio. It doesn't get much more compact than this.
+details: |-
+  Two common problems that are encountered in many eurorack systems are that signals need to be blended together and a lack of case space. The Unity Mixer can help solve the first problem while simplifying the second with its skinny 2HP size. It features two sections where three input signals can be summed into one output, and the top is normalled to the bottom allowing the mixing of six signals into one.
+
+  NOTE: Version 2 of the Unity Mixer has two sets of jumpers on the main pcb. These allow the top and bottom sum to be set to -6dB attenuation instead of unity gain. This creates more headroom when summing higher amplitude sources like raw VCO signals.
+specs: |-
+  - Width: 2HP
+  - Depth: 29mm
+  - Power: 11mA @ +12V, 11mA @ -12V
+  - Output of top mixer is normalled to the bottom mixer to give a 6:1 mix
+  - Buffered inputs and outputs
+  - Outputs are phase correct, so there is no inversion of the output signal
+  - The input signals are neither boosted nor attenuated (unity mixing); their resultant sum is the output
+  - Version 2 has jumpers for -6dB attenuation mode on top and bottom summing
+io:
+  - name: Top Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Top Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Top Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Top Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Bottom Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Bottom Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Bottom Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Bottom Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://intellijel.com/downloads/manuals/unity-mixer_manual_2020.04.15.pdf
+    type: resource
+    title: Manual (2020.04.15)
+  - url: https://modulargrid.net/e/intellijel-unity-mixer
+    type: resource
+    title: ModularGrid

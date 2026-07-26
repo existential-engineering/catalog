@@ -1,0 +1,44 @@
+id: f3D0WCSF1zQ_BRNBFgEtU
+name: µStep ModuleModule
+manufacturer: intellijel
+primaryCategory: sequencer
+categories:
+  - modular
+  - digital
+  - discontinued
+url: https://intellijel.com/shop/legacy/ustep-modulemodule/
+description: A banana-jack variant of the µStep dual 8/16-step trigger/gate
+  sequencer, built on a wide horizontal panel.
+details: |-
+  The µStep ModuleModule is a variant of Intellijel's µStep dual trigger/gate sequencer built on a wide horizontal panel with banana jacks instead of the standard 4HP Eurorack format.
+
+  It carries the same control set as the Eurorack µStep: eight step buttons with dual red/green LEDs, relative and absolute timing modes, memory store and recall, and 8x2/16x1 sequence configurations, alongside clock and reset inputs and A/B sequence outputs on banana jacks.
+io:
+  - name: Clk In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Top
+  - name: Rst In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Top
+  - name: Out A
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Top
+  - name: Out B
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Top

@@ -1,0 +1,113 @@
+id: uP5mu5oC4EY51teMNS4FY
+name: Korgasmatron I (Corgasmatron)
+manufacturer: intellijel
+primaryCategory: filter
+categories:
+  - modular
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/korgasmatron-i-corgasmatron/
+description: Dual Multimode Filter and Crossfader in 16HP
+details: |-
+  The Corgasmatron (now referred to by Intellijel as Korgasmatron I) pairs two independent multimode filters with a built-in crossfader on a 16HP panel. The original circuit was designed by analog guru David G. Dixon after studying the classic Korg MS-20 filter; his design is built around SSM2164 (Cool Audio) VCA chips and, while capable of similar results, is an entirely new and modern circuit rather than a clone.
+
+  Each filter offers low-pass, high-pass, and notch (band-reject) modes with a unique resonant (Q) drive control. A switch links the two filters for parallel or serial routing via normals to input B, breakable by inserting a cable at input B, and both filters track 1V/octave, self-oscillating easily enough to be used as a dual sine VCO whose shape can be colored with the resonance controls.
+
+  The built-in crossfader allows voltage-controlled crossfading between the two filters, with switches for unipolar/bipolar CV response and fade direction. Rear-panel jumpers select 'modern' or 'vintage' resonant modes (different feedback diode paths), and a rear expansion header on filter B adds VC control of resonance via an inserted VCA.
+
+  Beyond traditional filter and VCO applications, the Corgasmatron can create formant sounds, work in stereo, and produce FM percussion, among other creative uses.
+specs: |-
+  - Width: 16HP (two PCBs in parallel, skiff friendly)
+  - Max Depth: 31mm
+  - Current Draw: +12V @ 70mA, -12V @ 67mA
+  - Filter modes: 1-pole high-pass, 1-pole notch (band-reject), 2-pole low-pass
+  - OTA/VCA component: Cool Audio SSM2164
+  - Dual 1V/Oct filter tracking, self-oscillating (usable as dual sine VCO)
+  - Rear jumpers select modern/vintage resonance feedback diode modes
+  - Rear expansion header for filter B: VC control of Q via inserted VCA
+io:
+  - name: FM1 A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FM2 A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FM2 B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FM1 B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: XFADE
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: IN A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: 1V/Oct A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: 1V/Oct B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: IN B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIX
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OUT B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+releaseDate: "2011"

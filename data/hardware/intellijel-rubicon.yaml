@@ -1,0 +1,147 @@
+id: 2sz4RQnX2_dLTUAHQXUvj
+name: Rubicon
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/rubicon/
+description: The Rubicon is an analogue triangle core VCO that is capable of
+  through zero frequency modulation.
+details: |-
+  Not long after David Dixon finished the Dixie design he began working on a totally novel approach to implementing TZFM, thru-zero frequency modulation. After almost a year of experimenting and many PCB revisions later we are pleased to present what is surely David’s masterpiece as far as analog VCO design is concerned.
+
+  The Rubicon features a triangle core with switchable linear and (for the first time in any module) exponential TZFM, a linear index VCA for dynamic control of TZFM depth, and a symmetry control (full clockwise is normal, full counter-clockwise gives reversed waveforms, centered the VCO is at 0 Hz) with CV.
+
+  It provides 12 primary waveform types: sine, sigmoid, double sigmoid, triangle, saw, double saw, zigzag, square, pulse (center modulated), pulse (edge modulated) and double pulse, plus a suboctave circuit (similar to the one found on the Roland SH-101) with -1 and -2 octaves — the suboctave output is affected by FM just like the main signals.
+
+  Soft sync (aka reversing sync) with attenuator, hard sync with selectable reset direction, and pulse-width modulation and exponential FM with dedicated attenuators round out the feature set. At 18HP it is skiff friendly.
+specs: |-
+  - Width: 18HP
+  - Max Depth: 38mm
+  - Power: 107mA @ +12V, 95mA @ -12V
+  - Wide frequency range — hi range (VCO): 1 Hz to 24 kHz; lo range (LFO): 0.01 Hz (100 seconds) to 240 Hz
+  - Precise tracking within 0.1% over 8 octaves
+  - Expected input: 5V peak to peak
+  - 11 primary waveform types: sine, sigmoid, double sigmoid, triangle, saw, double saw, zigzag, square, pulse (center modulated), pulse (edge modulated), double pulse
+  - Suboctave circuit (similar to the Roland SH-101) with -1 and -2 octaves
+  - Switchable linear and exponential TZFM with linear index VCA for dynamic control of TZFM depth
+  - Soft sync (reversing) with attenuator; hard sync with selectable reset direction
+io:
+  - name: 1V/Oct In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Index In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: TZFM In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sym In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Soft Sync In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Hard Sync In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: PWM In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Exp FM In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sine Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Triangle Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Saw Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Double Saw Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Zig-Zag Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Square Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Pulse Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sub Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/rubicon_manual.pdf
+    type: resource
+    title: Manual

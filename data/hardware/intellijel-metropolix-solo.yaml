@@ -1,0 +1,163 @@
+id: VQDb2LtPguHslnLiRkCdc
+name: Metropolix Solo
+manufacturer: intellijel
+primaryCategory: sequencer
+categories:
+  - midi
+  - digital
+url: https://intellijel.com/shop/desktop/metropolix-solo/
+prices:
+  - amount: 699
+    currency: USD
+description: The Metropolix Solo is a unique and powerful desktop multitrack
+  MIDI and CV musical sequencer. With an abundance of hands-on, tactile controls
+  and a wealth of internal and external modulation possibilities, you can
+  quickly and easily create infectious sequences. Even the simplest melody can
+  be brought to life with seemingly endless options to create variations or
+  real-time manipulations. In the studio or in a live performance, the
+  Metropolix is sure to become a staple source of fresh ideas and killer riffs
+  in your creative process. Eurorack Module →
+details: |-
+  CV and MIDI Sequencing on your desktop: We've set Metropolix free from the rack, in a small desktop case, allowing you to interface with your DAW or other hardware music machines without needing a full eurorack system.
+
+  Two Tracks, Interconnected: Two tracks (TRK 1 and TRK 2) are variants of a main pitch/gate sequencer, programmed via the PITCH sliders, PULSE COUNT and GATE TYPE switches. Each track interprets the main sequence in a variety of ways, creating complementary variations for counterpoint, polyrhythms, and sonic movement.
+
+  Eight Modulation Lanes: Eight separate modulation lanes are accessed via the MOD button. Each MOD lane has 8 stages of modulation values and its own playback ORDER, LENgth, and clock DIVision, routable to Metropolix's two assignable outputs, MIDI CC, and dozens of internal destinations.
+
+  Three AUX Inputs and Two CTRL Knobs: A trio of AUX inputs allows for external modulation of user-assignable sequencer parameters, while two assignable CTRL knobs give direct access to frequently-adjusted parameters. Dedicated Pitch/Gate outputs exist for both Track 1 and Track 2, plus two user-assignable outputs (A and B).
+
+  64 Total Recall Presets & Preset Chaining: Metropolix stores up to 64 preset configurations (8 banks of 8 presets), with all live settings stored on the module so it always powers up exactly as you left it. Presets can be chained for hands-free performance.
+specs: |-
+  - Internal Metropolix Eurorack module: 34HP
+  - Desktop enclosure Height: 66mm (from rubber foot to top of knobs)
+  - Desktop enclosure Width: 175mm
+  - Desktop enclosure Depth: 140mm (front to rear jacks)
+  - Power: 15V DC/0.4 A (minimum), center-pin-positive
+  - 100 user-defined scales with modulatable root note
+  - 64 total recall presets (8 banks of 8), with preset chaining
+  - Loopy performance-looping mode
+  - USB MIDI, Serial MIDI (TRS or DIN with adaptors), and CV/Gate usable simultaneously
+io:
+  - name: CV Output A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CV Output B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: X CV Modulation In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Y CV Modulation In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Z CV Modulation In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CLK Sync / Reset In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CLK Sync Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Track 1 Pitch Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Track 1 Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Track 2 Pitch Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Track 2 Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: MIDI TRS In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI TRS Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI TRS Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: MIDI USB-C
+    signalFlow: bidirectional
+    category: midi
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - name: Power In
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://intellijel.com/downloads/manuals/metropolix_manual_v1.6_2025.09.24.pdf
+    type: resource
+    title: Manual (v1.6 / 2025.09.24)
+  - url: https://intellijel.github.io/firmware/
+    type: resource
+    title: Firmware Web Updater
+videos:
+  - provider: youtube
+    videoId: -QJE-lbNgW0
+    title: Intellijel Metropolix Solo - Desktop Sequencer with MIDI

@@ -1,0 +1,144 @@
+id: 7Q0ufc-NOzXjwmxMpEKO4
+name: Mutagen
+manufacturer: intellijel
+primaryCategory: mixer
+categories:
+  - modular
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/mutagen/
+description: 6x3 Performance Mixer in 12HP. Six DC-coupled inputs (accepting
+  audio and CV) feed three bus outputs A, B and C, with per-channel attenuator,
+  bus select, mute button and CV mute control.
+details: |-
+  The Mutagen is a 6x3 performance mixer in 12HP with very low noise and crosstalk between channels. It uses high quality Analog Devices switch ICs for the mute circuit and has six DC-coupled inputs that accept both audio and CV, feeding three bus outputs (A, B and C) with master volume control on buses A and C.
+
+  Each channel has an attenuator control, a slide switch to select bus output A, B or C, a mute button to manually mute/unmute the track, and a CTL jack for external control of mute. Muting control can be either by trigger pulse (toggles the mute on/off) or gated (mute active while the gate signal is high), selectable via a jumper on the rear of the PCB. The external mute signal can be any signal, not just a square wave, but must have some kind of positive rising edge.
+
+  The module comes with a 12-pin ribbon cable and a header for connecting to the Intellijel HexVCA. This normals the six HexVCA outputs to the inputs of the Mutagen.
+
+  Example uses include performance mixing and jamming (quickly mute/unmute and mix different audio parts and CV sources), experimental sequencing (feed CV pitch values, gate/clock sources and audio to the different channels and control the muting buses via gate sequencers, LFOs and other CV sources for algorithmic compositions), and mixes with FX routing (subgroup selected audio channels to one bus output, route that bus to an FX chain, and return it to a different channel of the Mutagen set to a different bus output).
+specs: |-
+  - Width: 12HP
+  - Max depth: 39mm
+  - Current draw: 47mA @ +12V, 10mA @ -12V
+  - Very low noise and crosstalk between channels
+  - High quality Analog Devices switch ICs for mute circuit
+  - 6 DC-coupled inputs (accept audio and CV)
+  - 3 bus outputs A, B and C, with master volume control on A and C
+  - Per channel: attenuator, bus select switch (A/B/C), mute button, CTL jack for external mute control
+  - Mute control mode (trigger toggle or gated) selectable via rear PCB jumper
+  - Includes 12-pin ribbon cable and header for normalling the six HexVCA outputs to the Mutagen inputs
+io:
+  - name: Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Input 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Input 5
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Input 6
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CTL 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CTL 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CTL 3
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CTL 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CTL 5
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CTL 6
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Bus Out A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Bus Out B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Bus Out C
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: HexVCA Header
+    signalFlow: input
+    category: audio
+    type: proprietary
+    connection: pin-header
+    maxConnections: 6
+    position: Top

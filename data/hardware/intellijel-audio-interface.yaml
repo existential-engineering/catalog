@@ -1,0 +1,85 @@
+id: EwwHp8Xzo3v3Kbp9iGQKL
+name: Audio Interface
+manufacturer: intellijel
+primaryCategory: audio-interface
+categories:
+  - modular
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/audio-interface/
+description: Dual line level to modular and modular to line level interface.
+details: |-
+  The Audio Interface is a dual line level to modular and modular to line level interface. It provides two balanced TRS 1/4″ to Euro modular level input chains and two Euro modular level signal to balanced TRS 1/4″ output chains, with a true RMS VU meter with dBu scale.
+
+  The module is split between L and R sides. On either side there is a distinct INPUT path and an OUTPUT path. The input path takes a TRS 1/4″ line level signal and converts it to a modular level signal, output via mini jacks. On this path you can switch whether your source is -10dBV or +4dBu and apply +/-12dB of gain.
+
+  For the OUTPUT path you can take your modular level signal (i.e. from a VCO in your Euro system) and patch it into one of the two inner mini jacks, and the resultant signal comes out of the balanced TRS 1/4″ jacks marked BAL OUT L and BAL OUT R. Output level can be set to -10dBV, +4dBu or Euro (modular) levels with an additional switchable +/-6dB boost.
+
+  Line inputs and outputs use high quality THATCorp balanced line receivers/drivers. A switch at the top allows monitoring of either the input or output signals on the meters. The module is 10hp and skiff friendly.
+specs: |-
+  - 2 x balanced TRS 1/4″ to Euro modular level input chain
+  - 2 x Euro modular level signals to balanced TRS 1/4″ output chain
+  - True RMS VU meter with dBu scale
+  - THATCorp balanced line receivers/drivers
+  - Input chain level selectable between -10dBV and +4dBu, with +/-12dB adjustable gain
+  - Output level selectable -10dBV, +4dBu or Euro (modular) levels, with switchable +/-6dB boost
+  - Switch to monitor input or output signals
+  - Width: 10hp, skiff friendly
+  - Power: 73mA @ +12V, 35mA @ -12V
+io:
+  - name: Line In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Line In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Modular Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Modular Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Modular In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Modular In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Bal Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Bal Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top

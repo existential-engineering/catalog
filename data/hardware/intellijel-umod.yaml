@@ -1,0 +1,63 @@
+id: NAm4eVXJwlHJj3C5wuyIr
+name: µMod
+manufacturer: intellijel
+primaryCategory: ring-modulator
+categories:
+  - modular
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/umod/
+description: Four quadrant multiplying modulator (aka ring mod) in 4HP. A
+  versatile and highly useful ring modulator designed by David G. Dixon.
+details: |-
+  The µMod is a four quadrant multiplying modulator (aka ring mod) in 4HP, designed by David G. Dixon. It has dedicated AC and DC inputs for its X and Y signals (all four can be used at the same time), attenuators for the X and Y input groups, and polarity switches for the X and Y inputs (positive, negative or both).
+
+  A unique 'Q' (quadrant) control allows you to shift the multiplication into positive or negative quadrants, with very low leakage from the X input when Q is centered. Changing the Q value while ring modulating adds the signal frequencies back into the sum-and-difference frequencies, which adds richness to the classic ringmod sound and allows for many variations of bell tones, chimes and mallet-type timbres.
+
+  Beyond ring modulation it can be used as a linear VCA, is great for waveshaping (especially two synced audio sources), and is excellent for CV mangling using the DC inputs and rectifier switches. Connecting CV sources to the AC inputs results in interesting lag effects.
+specs: |-
+  - Width: 4HP
+  - Max depth: 39mm
+  - Current draw: 21mA @ +12V, 23mA @ -12V
+  - Dedicated AC and DC inputs for X and Y (all four usable simultaneously)
+  - Attenuators for X and Y input groups
+  - Polarity switches for X and Y inputs (positive, negative or both)
+  - 'Q' (quadrant) control shifts multiplication into positive or negative quadrants
+  - Very low leakage from X input when Q is centered
+  - Can be used as a linear VCA
+io:
+  - name: X AC In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: X DC In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Y AC In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Y DC In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

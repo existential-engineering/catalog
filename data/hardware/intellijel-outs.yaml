@@ -1,0 +1,75 @@
+id: s6WaKxqK5eghwQaE6zQEH
+name: Outs
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+  - headphone-amp
+url: https://intellijel.com/shop/eurorack/outs/
+prices:
+  - amount: 149
+    currency: USD
+description: Get out of my rack, and into my.... ? Record everything. You never
+  know when you're going to hit that groove and when you do you'll be glad you
+  captured it. Eurorack signals are really hot — tame them down to line level
+  for your mixer, amp, or recorder. Monitor your patch through the low noise
+  headphone amp.
+details: |-
+  Outs enables your modular system to output both professional and prosumer compliant audio, sending it to external amplifiers, mixers, recording devices, or DAW interfaces. Using the L+R Level knob, it scales modular-level voltages down to the level required to drive external gear at either the +4dBu balanced professional line-level standard or the -10 dbV unbalanced standard.
+
+  Headphone monitoring is also provided via a low noise built-in headphone amp with its own independent level control, capable of driving a wide range of impedances, from studio grade headphones to portable style earbuds.
+
+  To use Outs, simply connect the final output of your patch to the ⅛" inputs. The built-in activity LEDs light up to indicate the presence and intensity of the input signal. The left input is normalled to the right, so you can create a stereo signal from a mono source. If you have an Intellijel Mixup, you can remove a jumper from its rear panel and connect it to the Outs module using the 3-pin link cable included with the Mixup.
+specs: |-
+  - Width: 6HP
+  - Depth: 34.5mm
+  - Power: 37mA @ +12V, 29mA @ -12V
+  - No onboard firmware
+  - Two channel, +4dBu balanced line level outputs on TRS 1/4" Neutrik jacks (compatible with -10dBV unbalanced gear)
+  - Headphone amp capable of driving high impedance headphones via 1/4" stereo Neutrik jack
+  - 3-pin link connector on the back for connecting a Mixup module directly to Outs
+io:
+  - name: L Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: R Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: L Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: R Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/outs_manual_2021.08.04.pdf
+    type: resource
+    title: Manual (2021.08.04)
+videos:
+  - provider: youtube
+    videoId: Nwv1ckDlJpU
+    title: Introduction to Outs

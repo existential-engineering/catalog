@@ -1,0 +1,83 @@
+id: hK6_wMzs6wynmbrSYbWmH
+name: Noise Tools 1U
+manufacturer: intellijel
+primaryCategory: noise
+categories:
+  - modular
+  - utility
+  - analog
+url: https://intellijel.com/shop/eurorack/1u/noise-tools-1u/
+prices:
+  - amount: 99
+    currency: USD
+description: CV Toolbox. Add some chaos to your order. At its core Noise Tools
+  generates pulses and a noise signal, these provide the normalled signals for a
+  sample/track and hold circuit and a slew circuit. Patch in your own signal to
+  break the normals, we're sure you have some ideas.
+details: |-
+  Though many consider noise to be an undesirable and unwanted nuisance, synthesists know its value as a source of breathy nuance, crackling sizzle, chaotic roars and subtle silkiness. When applied effectively, it can add that touch of the unexpected and the random, which brings a patch to life.
+
+  Noise Tools provides this essential dose of randomness in three blocks. First is a Pulse output, switchable between a steady clock or a random flurry of gates. Second is a sample and hold circuit. Third is a slew limiter. The blocks feed each other from left to right, but feature inputs to break this normalling, providing a useful balance of functionality and flexibility.
+specs: |-
+  - Width: 22HP
+  - Depth: 29mm
+  - Power: 30mA @ +12V, 30mA @ -12V
+  - Clock and Random pulse source with adjustable rate
+  - Analog pink and white noise source with very accurate spectrum
+  - Analog sample/track and hold with very low voltage droop
+  - Analog slew with adjustable slew rate
+io:
+  - name: Pulse
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Pink
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: White
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Sample In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Hold
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Slew
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+releaseDate: "2017-01-30"
+links:
+  - url: https://intellijel.com/downloads/manuals/noise-tools-1u_manual_2021.08.04.pdf
+    type: resource
+    title: Manual (2021.08.04)

@@ -1,0 +1,62 @@
+id: GNSMI6JAi64s_Np-5B5Fk
+name: µStep
+manufacturer: intellijel
+primaryCategory: sequencer
+categories:
+  - modular
+  - digital
+  - discontinued
+url: https://intellijel.com/shop/legacy/ustep/
+description: Dual 8step/16step trigger/gate sequencer in 4HP.
+details: |-
+  The µStep is a dual 8-step/16-step trigger/gate sequencer in 4HP. Each of its two sequences has a separate sequence length (1-8 steps long each) and separate gate lengths, with separate sequence outputs and dedicated LEDs showing gate logic status.
+
+  Patterns can be stored and recalled from 8 memory locations, and 8 levels of shuffle are available. The module offers relative and absolute timing modes, and its gate range extends from 500µs to 30 minutes, making it capable of audio-rate sequences. It is also compatible with the STG Time Buffer (DINSYNC system).
+
+  Intellijel suggested using the module for beat/trigger sequencing (great for polyrhythms), control of ADSR/ASR envelopes, clock dividing, swing clock duties, and converting gates to triggers.
+specs: |-
+  - Width: 4HP
+  - Max depth: 62mm (V1) / 51mm (V2)
+  - Power: 29mA @ +12V, 0mA @ -12V
+  - Two sequences with separate lengths (1-8 steps each) and separate gate lengths
+  - Store/recall patterns (8 locations)
+  - 8 levels of shuffle
+  - Relative and absolute timing modes
+  - Gate range from 500µs to 30 minutes (capable of audio-rate sequences)
+  - Compatible with STG Time Buffer (DINSYNC system)
+io:
+  - name: Clk In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Rst In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out A
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out B
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/ustep_manual_v2.0.pdf
+    type: resource
+    title: µStep Legacy Manual (v2.0)
+  - url: https://intellijel.com/downloads/manuals/ustep_manual_v1.0.pdf
+    type: resource
+    title: µStep Legacy Manual (v1.0)

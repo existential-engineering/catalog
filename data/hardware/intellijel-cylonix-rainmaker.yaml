@@ -1,0 +1,164 @@
+id: 73-2f76uoA1ItZ7RFcsHu
+name: Rainmaker
+manufacturer: intellijel
+primaryCategory: delay
+categories:
+  - modular
+  - digital
+  - reverb
+url: https://intellijel.com/shop/eurorack/cylonix-rainmaker/
+prices:
+  - amount: 639
+    currency: USD
+description: Make It Rain... Or Shine Cylonix and Intellijel are at it again
+  with a combination rhythm and comb delay module. The Rhythm Delay allows
+  individual control of any or all 16 taps—set timing, level, pan, filter type,
+  cutoff and Q on each tap. The Comb Delay opens up further possibilities for
+  complex comb filtering, along with resonator or reverb effects. Bring some
+  light showers or something more torrential to your rack.
+details: |-
+  Rainmaker is a deluge of a delay module made up of two main sections: Rhythm and Comb. In the Rhythm Delay section, exhaustive control of all 16 taps is at your fingertips. You can set levels, panning, filter type, cutoff and Q for each tap, and make many adjustments to their timing and behaviour. The Comb section opens up further possibilities for complex comb filtering, along with resonator or reverb effects.
+
+  The Stereo Rhythm Delay has 16 taps, each with its own resonant 2nd-order filter and granular pitch shifter. The filters have independently adjustable resonance and cutoff frequency, and can be set to lowpass, bandpass, highpass or bypass operation, and are also capable of self-oscillation, enabling modal synthesis techniques. The granular pitch shifters have a range of 15 semitones up or 16 semitones down, and tap delay times can range from 0.1 millisecond up to a maximum of 20 seconds.
+
+  The Stereo Comb Resonator section has 64 time-delayed taps which are summed together, producing a deep comb filter or resonating effect. At large comb sizes (long time delays) a multiple echo effect is produced. High feedback levels, with short comb sizes, produce “Karplus-Strong” types of plucked string sounds. The relative timing of the 64 taps is set according to one of 16 different preset patterns, which provide different resonator timbres or echo rhythms.
+
+  Rainmaker has extensive voltage control capabilities. Direct voltage control is available for the delay feedback level and tone, the global pitch shift for all delay taps, the comb resonator size, and comb feedback level. There are two assignable modulation inputs, which can be assigned to different parameters in each preset. A trigger input with assignable functionality can trigger built-in types of noise bursts, freeze the delay buffer, reverse the delay, randomize parameters, mute taps, and much more.
+specs: |-
+  - Width: 36HP
+  - Depth: 44mm
+  - Power: 270mA @ +12V, 24mA @ -12V
+  - 96KHz, 24-bit (32-bit internal) signal processing
+  - 16-Tap Rhythm Delay section with comprehensive control of each tap
+  - Comb Delay section with up to 64 taps controlled by preset patterns, slopes, and filters
+  - Delay CLK IN, Comb CLK IN, CLK OUT and clock dividers for synchronization with other modules
+  - Most parameters controllable by external CV, either directly or through two auxiliary modulation inputs (MOD A, MOD B)
+  - Audio-rate randomization of all parameters, or selectable subsets of parameters
+  - 128 preset slots with online preset librarian via Laser Mammoth and USB connectivity
+io:
+  - name: In L
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: In R
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Delay Feedback CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Pitch Shift CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Feedback Tone CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Delay Clk In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Comb Feedback CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Comb Size CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: 1V/Oct In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Comb Clk In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mod A CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mod B CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out L
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out R
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clk Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/cylonix-rainmaker_manual_v1.09-143.pdf
+    type: resource
+    title: Manual
+  - url: https://intellijel.com/downloads/manuals/cylonix-rainmaker_FCC-CE_Compliance.pdf
+    type: resource
+    title: FCC CE Compliance
+videos:
+  - provider: youtube
+    videoId: yoY8CwunHsY
+    title: The most extreme delay effect in the world!
+  - provider: youtube
+    videoId: MAlC0hIDDW0
+    title: "Rainmaker: Eye of the Chaos Storm"

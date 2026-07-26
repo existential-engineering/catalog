@@ -1,0 +1,134 @@
+id: rxwfV5u2gc3KyihCjZWtr
+name: µMIDI
+manufacturer: intellijel
+primaryCategory: midi
+categories:
+  - modular
+  - digital
+url: https://intellijel.com/shop/eurorack/umidi/
+prices:
+  - amount: 229
+    currency: USD
+description: Mission Control All the essentials to control and sync your
+  Eurorack modular from your computer, iPhone/iPad, or hardware MIDI device. No
+  menu diving or configuration scripts, just two buttons. Get crazy with
+  external modulation and sequencers, or just sync your rack's clock from the
+  rest of your MIDI bus.
+details: |-
+  The µMIDI provides all the essentials to control and sync your Eurorack modular from your computer, iPhone/iPad, or hardware MIDI device with a minimum of fuss. No menu diving or configuration scripts, just two buttons. The connectivity, features, and compact size allows the integration of your modular system with the rest of your studio while not taking up too much space in your case.
+
+  The upper clock section features a dedicated 16th note clock output ideal for synchronizing a Eurorack sequencer like the Metropolis. A second clock output with selectable divisions can be used when different sync events are needed. The run and reset outputs can be used to reset your Eurorack sequencers in tandem with any external sequencer or DAW.
+
+  The lower half of the µMIDI gives you everything you need to control a single-voice synth via MIDI. Just connect either a USB or DIN MIDI cable to the module, LEARN a channel, and start playing.
+
+  As of firmware revision 1.11 the µMIDI supports configuration of some internal parameters via a browser-based configuration utility. Currently the utility is only compatible with Google Chrome.
+specs: |-
+  - Width: 6HP
+  - Depth: 40mm
+  - Power: 47mA @ +12V, 3mA @ -12V
+  - High speed ARM processor for low latency & jitter
+  - DIN or USB MIDI input
+  - Two clock outputs, one with selectable divisions
+  - Sequencer sync via run and reset outputs
+  - Precision 0-10V note pitch output with pitch bend & portamento CC support
+  - Gate and trigger outputs for envelope triggering
+  - Mod wheel and continuous controller outputs for additional modulation
+  - Firmware updates and configuration over USB
+io:
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Top
+  - name: 1/16th
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Clock
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Run
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Reset
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Pitch
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mod
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Velocity
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: CC
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Gate
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/umidi_manual_2018.09.13.pdf
+    type: resource
+    title: Manual (2018.09.13)
+  - url: https://intellijel.github.io/firmware/
+    type: resource
+    title: Firmware Web Updater
+  - url: https://intellijel.com/utilities/%C2%B5MIDI/
+    type: resource
+    title: Configuration Utility
+  - url: https://www.modulargrid.net/e/intellijel-µmidi
+    type: resource
+    title: ModularGrid

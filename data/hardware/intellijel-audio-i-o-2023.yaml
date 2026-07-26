@@ -1,0 +1,110 @@
+id: jqU76qo4BCNFSxjYrw0Mh
+name: Audio I/O (2023)
+manufacturer: intellijel
+primaryCategory: audio-interface
+categories:
+  - modular
+  - analog
+url: https://intellijel.com/shop/eurorack/audio-i-o-2023/
+prices:
+  - amount: 259
+    currency: USD
+description: Better Together Dual Balanced ins and outs for the studio or the
+  road. Interface your rack with the balanced line level world; send and return
+  to pedals or desktop FX units; patch in and out of your DAW, external synths,
+  drum machines and other line-level instruments.
+details: |-
+  Audio I/O (2023 edition) allows you to effectively interface your Eurorack modular system to the balanced line-level world (+4 dBu). You can send and return to rack mount/desktop fx units, patch to external line-level instruments like synths and drum machines, interface to a DAW and much more.
+
+  The 2023 edition moves the TRS jacks to the top of the panel.
+
+  The rear-mounted 3-pin CHAIN IN connector allows you to sum (in parallel) other audio sources to go from Eurorack level to the BAL LINE OUTPUTS. This could be from modules like the Mixup 3U, Xfade 1U, Stereo Mix 1U, and XY I/O 1U. You could also use this to connect with the 3-pin headers on the Palette and 7U cases audio i/o boards.
+
+  The rear-mounted 3-pin CHAIN OUT connector allows you to directly connect the level-shifted BAL LINE IN to the inputs of other compatible devices such as the Mixup 3U, Outs 3U, Stereo Mix 1U, XY IO 1U, and Headphones v2 1U. You could also connect to the TRS jacks of the Palette and 7U cases audio i/o boards.
+specs: |-
+  - Width: 10HP
+  - Depth: 39mm
+  - Power: 75mA @ +12V, 70mA @ -12V
+  - 2 x Balanced TRS 1/4″ to Eurorack modular level input paths
+  - 2 x Eurorack modular level signals to Balanced TRS 1/4″ output paths
+  - 4 x six-stage analog LED VU meter to monitor all inputs and outputs simultaneously
+  - Input path has up to 20 dB of gain, allowing low-level consumer signals to be boosted
+  - Output path steps a nominal Eurorack level (10 Vpp) down to +4 dBu with up to +6 dB gain
+  - 3-pin CHAIN IN connector
+  - 3-pin CHAIN OUT connector
+io:
+  - name: Line In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Line In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Euro Out L
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Euro Out R
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Euro In L
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Euro In R
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Line Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Line Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - name: Chain In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - name: Chain Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+releaseDate: "2023"
+links:
+  - url: https://intellijel.com/downloads/manuals/audio-i-o-2023_manual_2023.04.10.pdf
+    type: resource
+    title: Manual

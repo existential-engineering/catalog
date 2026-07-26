@@ -1,0 +1,135 @@
+id: NkEJqqp0EeVhv34LC7ovC
+name: Quadra Expander
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/quadra-expander/
+description: Take your Quadra a step further, allowing you to modulate your
+  shapes with other shapes or with themselves. Triggers fire as the cycles
+  complete, attach shapes to each other for never ending evolutions.
+details: |-
+  The Quadra Expander adds voltage control to the function generators of the Quadra, as well as several additional outputs. This greatly expands the possibilities of the Quadra and is especially useful in the creation of evolving, self-modulating patches.
+
+  It provides four end of cycle (EOC) pulse outputs corresponding to the four function generators. Each EOC output sends a high gate signal when its function generator has completed its decay phase, with an associated LED indicating end of cycle.
+
+  Voltage control with attenuation of attack and decay is available for all four functions. Each Attack CV input is normalled to the corresponding Decay CV input, allowing both to be controlled together or separately via CV.
+
+  Two analog OR (aka peak circuit) logic outputs are normalled to the two pairs of functions (1+2 and 3+4) with attenuators, and special quadrature modes are available for envelope pairs 1+2 and 3+4: when engaged, function 1's end of attack triggers function generator 2 (and likewise 3 triggers 4).
+
+  The expander connects to the Quadra via four ribbon cables and does not itself need to be powered separately. It is 12HP and skiff friendly.
+specs: |-
+  - Width: 12HP
+  - Depth: 38mm
+  - Current draw: 28mA @ +12V, 32mA @ -12V (per 2019 listing; the earlier product page listed the same figures with rails swapped)
+  - 4 end-of-cycle (EOC) pulse outputs corresponding to the 4 function generators
+  - Voltage control (with attenuators) of attack and decay for all four envelopes; Attack CV normalled to Decay CV per channel
+  - 2 analog OR (peak circuit) logic outputs normalled to envelope pairs 1+2 and 3+4, with attenuators
+  - Special quadrature modes for envelope pairs 1+2 and 3+4
+  - Connects to the Quadra via 4 ribbon cables (no separate power connection required)
+  - Skiff friendly
+io:
+  - name: EOC Out 1
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: EOC Out 2
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: EOC Out 3
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: EOC Out 4
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Attack CV In 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Attack CV In 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Attack CV In 3
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Attack CV In 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Decay CV In 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Decay CV In 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Decay CV In 3
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Decay CV In 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OR 1+2 Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: OR 3+4 Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/quadra_manual_2018.09.13.pdf
+    type: resource
+    title: Quadra & Expander Manual (2018.09.13)

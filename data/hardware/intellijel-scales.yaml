@@ -1,0 +1,92 @@
+id: qEBwIpg8jtcirbLuvctzQ
+name: Scales
+manufacturer: intellijel
+primaryCategory: sequencer
+categories:
+  - modular
+  - digital
+  - scale-helper
+url: https://intellijel.com/shop/eurorack/scales/
+prices:
+  - amount: 289
+    currency: USD
+description: Make Anything Musical Your modular system is all about generating
+  complex, fluid and dynamic variations in voltage. It's a glorious thing —
+  until that sousaphonist joins the band and demands you play notes conforming
+  to an actual musical scale. Enter the appropriately named Scales module, which
+  quantizes those feral voltages into musical pitches. Use the second output in
+  conjunction with the Shift and Interval features to generate harmonies and
+  counterpoint, or simply to quantize a second input voltage. Scales can even
+  record, play back and store 35 different sequences as long as 128-steps each.
+  Experience the magic of turning chaos into harmony.
+details: |-
+  Scales is an 8hp dual-channel note quantizer and step sequencer. Fundamentally, it takes an input voltage, quantizes it to notes in a user-defined scale, and sends that quantized voltage to an output, where you can use it as a melodic pitch source for oscillators or any other module that expects to see discrete note values at its input.
+
+  Scales goes far beyond the fundamental, allowing you unprecedented control of the pitches and intervals hiding inside your control voltages; turn LFO's into arpeggiators; random voltages into harmonic counterpoint; and unquantized external CV sequencers into chromatically tuned note sequencers.
+
+  Quantization can be locked to an incoming trigger. There are a number of trigger output options as well, ranging from no triggering (good for pitch shifting drones); through triggers that sync with either of the two outputs (or both); to a trigger or gate transmitted in sync with one sent to the module's TRIG input.
+
+  Scales features two independent outputs, enabling you to create shifted harmonic intervals within your chosen scale using only a single pitch input. Using the SHIFT input you can modulate changes on OUT A and/or OUT B. You can also use the shift input to switch between scales or to change the root of any existing scale pattern or split Scales into two quantizers — each conforming to a common scale, but fed entirely different voltage sources.
+
+  Scales also features a 128-step SH-101 style step sequencer (complete with storage for up to 35 fully programmable patterns) — allowing you to feed OUT B with sequenced notes and rhythm patterns, while OUT A continues to function as a standard pitch quantizer for external voltages. You can even sync the sequencer to quantizer events on OUT A.
+specs: |-
+  - Width: 8HP
+  - Depth: 39mm
+  - Power: 35mA @ +12V, 5mA @ -12V
+  - Firmware: v1.01 (Web Updater)
+  - SHIFT/PITCH inputs and A/B outputs operate in a -10v to +10v range with 1v/oct scaling
+  - 1-octave keyboard for selecting scale notes in real time, with LED buttons for visual feedback
+  - Save and recall up to 35 different scales/sequences arranged in 5 banks of 7 scales each; 35 factory scale patterns included
+  - 128-step SH-101 style step sequencer
+  - High resolution precision DAC, low-latency ARM processor, adjustable trigger delay, input filtering to eliminate jitter/glitches
+  - USB port on back for firmware updates
+io:
+  - name: Pitch In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Shift In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Out B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: USB (Firmware Update)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://intellijel.com/downloads/manuals/scales_manual_1.01_2021.05.11.pdf
+    type: resource
+    title: Manual (1.01 / 2021.05.11)
+  - url: https://intellijel.github.io/firmware/
+    type: resource
+    title: Firmware Web Updater (1.01)

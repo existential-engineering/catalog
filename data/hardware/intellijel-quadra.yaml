@@ -1,0 +1,95 @@
+id: 7_gh47zf_Ow5HLgWsUIym
+name: Quadra
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/quadra/
+description: "Control voltages can be thought of in terms of shapes: vertically
+  you change intensity and horizontally you play with time. Quadra offer four
+  channels, each one linear or exponential, triggered or cycling, held or
+  release."
+details: |-
+  Quadra is a quad function / envelope generator. Control voltages can be thought of in terms of shapes: vertically you change intensity and horizontally you play with time. When you modify both, you create waves, ramps, slopes and curves. Quadra offers four channels, each one linear or exponential, triggered or cycling, held or released.
+
+  Quadra packs four versatile function generators into one 12HP module. Each function generator has three selectable modes: AD (attack-decay, an envelope that ignores the incoming gate time and is simply triggered), AHR/ASR (which continues to sustain while the input gate is high, similar to an ADSR) and Cycle (the AD envelope loops, acting like a unipolar LFO).
+
+  The curve of each channel can be changed from linear to exponential, and the attack/decay controls have a wide time range from under 0.5ms to well over 30 seconds. Function generation is all analog with discrete logic, for totally smooth and continuous waveforms.
+
+  Each of the four channels has a TRIG input to launch the function generator and an ENV output delivering the function as a unipolar 0-8V control signal, with an LED showing each generator's amplitude.
+
+  The optional Quadra Expander provides voltage control over each channel's attack and decay times, as well as logical OR combinations, end-of-cycle outputs, and a special quadrature mode. Quadra is 12HP and skiff friendly.
+specs: |-
+  - Width: 12HP
+  - Max depth: 38mm
+  - Current draw: 98mA @ +12V, 53mA @ -12V
+  - 4 function generators, each with 3 modes: AD (attack-decay), AHR/ASR (attack-hold-release) and Cycle (looping AD)
+  - Linear or exponential curve selectable per channel
+  - Wide time range for attack/decay controls: <0.5ms to well over 30s
+  - All analog and discrete logic function generation (totally smooth and continuous waveforms)
+  - ENV outputs are unipolar 0-8V control signals
+  - Expandable via the Quadra Expander (voltage control of attack/decay, EOC outputs, OR logic, quadrature modes)
+  - Skiff friendly
+io:
+  - name: Trig In 1
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig In 2
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig In 3
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Trig In 4
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Env Out 1
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Env Out 2
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Env Out 3
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Env Out 4
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/quadra_manual_2018.09.13.pdf
+    type: resource
+    title: Quadra & Expander Manual (2018.09.13)

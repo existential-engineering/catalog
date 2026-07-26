@@ -1,0 +1,119 @@
+id: C_SePkCks99mqztWRPRc1
+name: FlipFlop
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - digital
+  - discontinued
+url: https://intellijel.com/shop/legacy/flipflop/
+description: CMOS jk and d flip-flop in 4hp
+details: |-
+  The FlipFlop module comprises two independent CMOS flip-flops. On the top half is a JK flip-flop and on the bottom is a D flip-flop. Through normalling, both flip-flops are configured to act as toggle flip-flops (each clock pulse causes the Q output to toggle), where the output of the JK flip-flop feeds into the clock input of the D flip-flop.
+
+  In this default configuration, the module acts as a 2:1 and 4:1 clock divider. Feeding a clock source into the JK CLK input produces a 2:1 clock division at the top Q output; since this 2:1 signal feeds the second flip-flop below it (also configured to toggle on clock pulses), the bottom Q output is a 4:1 division of the original clock signal. Because this is a discrete CMOS device, it can accept extremely fast clock pulses, so feeding a square wave from a VCO produces square waves one and two octaves below at the respective Q outputs.
+
+  The JK section provides a manual trigger button (normalled to the CLK input) plus J, K, Set, and Reset inputs alongside Q and Q Bar outputs. The D section provides its own Clock, Set, Reset, and D inputs with matching Q and Q Bar outputs.
+specs: |-
+  - Width: 4HP
+  - Max Depth: 64.5mm
+  - Current Draw: 14mA @ +12V, 0mA @ -12V
+  - Input signal: square/pulse wave, ideally 0-5V (max 10V, min 0V)
+  - Output: 0-8V buffered logic, max current draw 15mA
+  - Two independent CMOS flip-flops (JK and D type) in one 4HP module
+io:
+  - name: JK Clock Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: J Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: K Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: JK Set Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: JK Reset Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: JK Q Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: JK Q Bar Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: D Clock Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: D Set Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: D Reset Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: D Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: D Q Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: D Q Bar Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/flipflop_manual.pdf
+    type: resource
+    title: FlipFlop Manual (PDF)

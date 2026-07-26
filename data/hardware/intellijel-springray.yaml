@@ -1,0 +1,119 @@
+id: _z7Gf2xxuBpCKLaveaorE
+name: Springray
+manufacturer: intellijel
+primaryCategory: spring
+categories:
+  - modular
+  - analog
+  - reverb
+  - discontinued
+url: https://intellijel.com/shop/legacy/springray/
+description: There are many excellent digital reverbs available these days but
+  there is still nothing quite like the timeless and magical character of a true
+  spring reverb.
+details: |-
+  There are many excellent digital reverbs available these days but there is still nothing quite like the timeless and magical character of a true spring reverb. At Intellijel we have a huge love for true analog devices and it has always been important for us to explore as many of these fundamental analog building blocks of synthesis as possible.
+
+  In the development of this module we were blown away by how much there is to explore. Each tank has a totally different set of characteristics and there were many unexpected surprises when feeding it a wide variety of sound sources. One of the most interesting results was how a slow attack saw waveform from a Dixie almost sounds like a realistic cello!
+
+  You can connect up to 3 different tanks at the same time to the Springray. Tanks A and B have back RCA connections, while you can connect tank C in the front RCAs, and a TANK switch selects the active tank bus. External processors can be inserted into the feedback path via the SEND/RETURN normalled jacks — extremely interesting results when patched through modulated BP filters etc. At least one connected tank is required to use the Springray.
+specs: |-
+  - Width: 10HP
+  - Max Depth: 42mm
+  - Power: 34mA @ +12V, 44mA @ -12V
+  - PRE tank and POST tank Ambler Tilt EQ
+  - VC Feedback with limiter in feedback path to prevent high gain feedback from clipping the output (uses THATcorp RMS and VCA ICs)
+  - Selector switch to choose up to three different connected tanks (one on the front and two on the back)
+  - VC Mix of the wet/dry balance (uses a full linear VCA xfade circuit)
+  - Drive input with large gain (can overdrive the tank inputs)
+  - External processors can be inserted into the feedback path via the SEND/RETURN normalled inputs
+  - Three different sizes of Accutronic tanks available (Small 150 Ohm 1.75-2.5 sec decay; Medium 190 Ohm 1.75-3.0 sec; Large 190 Ohm 1.75-3.0 sec)
+io:
+  - name: In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: FB CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Mix CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Tank C Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - name: Tank C Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - name: Tank A Send (rear)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Tank A Return (rear)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Tank B Send (rear)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - name: Tank B Return (rear)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://intellijel.com/downloads/manuals/springray_illustrated_supplement.pdf
+    type: resource
+    title: Illustrated Supplement
