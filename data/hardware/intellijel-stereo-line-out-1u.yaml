@@ -11,7 +11,7 @@ prices:
     currency: USD
 description: Mono/Stereo audio from your Modular to Stereo Balanced Line Level Outputs.
 details: |-
-  Use the Stereo Line Out 1U system to send audio from your modular synth into power amplifiers, mixers, audio interfaces, DAWs, and other such audio gear. The system works with both balanced +4 dBu professional audio products and with -10dbV unbalanced gear.
+  Use the Stereo Line Out 1U system to send audio from your modular synth into power amplifiers, mixers, audio interfaces, DAWs, and other such audio gear. The system works with both balanced +4 dBu professional audio products and with -10 dBV unbalanced gear.
 
   The system comprises two components: the Stereo Line Out 1U module itself, which accepts the modular-level stereo signal via its own front-panel L/R input jacks, and either a Stereo Line Out Jacks 1U module or a case with built-in ¼” audio jacks (such as Intellijel’s Palette or 7U Performance Cases with a 2nd-generation Audio Jacks board) to provide the physical balanced ¼” TRS line-level output jacks.
 specs: |-
@@ -22,14 +22,14 @@ io:
   - name: L In
     signalFlow: input
     category: audio
-    type: cv/gate
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
   - name: R In
     signalFlow: input
     category: audio
-    type: cv/gate
+    type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top

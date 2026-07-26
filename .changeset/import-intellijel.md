@@ -2,7 +2,7 @@
 "catalog": minor
 ---
 
-Import Intellijel (169 hardware/accessory entries).
+Import Intellijel (168 hardware/accessory entries).
 
 Eurorack modules, cases, power systems, and accessories:
 Metropolix, Cascadia, Atlantix, Rubicon², Planar², Shapeshifter,
