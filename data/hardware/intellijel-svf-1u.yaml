@@ -27,42 +27,48 @@ specs: |-
   - FM CV input with attenuverter
   - Self-oscillates to generate low-distortion sine waves from 2Hz to 20kHz at max Q
 io:
-  - name: In
+  - key: H4OLZWIR
+    name: In
     signalFlow: input
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: Pitch
-    signalFlow: input
-    category: audio
-    type: cv/gate
-    connection: 1/8-inch
-    maxConnections: 1
-    position: Top
-  - name: FM
+  - key: jJsf7pLG
+    name: Pitch
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: BP/N Out
+  - key: SmDKjQdu
+    name: FM
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: jE73WLzJ
+    name: BP/N Out
     signalFlow: output
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: LP Out
+  - key: uSZM3Sr4
+    name: LP Out
     signalFlow: output
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: HP Out
+  - key: nckQccGz
+    name: HP Out
     signalFlow: output
     category: audio
     type: line
