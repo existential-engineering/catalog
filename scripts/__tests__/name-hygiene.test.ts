@@ -6,13 +6,12 @@ import {
 } from "../lib/name-hygiene.js";
 
 describe("findNameArtifacts", () => {
-  it.each([
-    "5150® Iconic Series 80W Head",
-    "ROGUE SIX™ Discrete Op Amp",
-    "d:facto™ 4018V",
-  ])("flags trademark symbols in %j", (name) => {
-    expect(findNameArtifacts(name)).toHaveLength(1);
-  });
+  it.each(["5150® Iconic Series 80W Head", "ROGUE SIX™ Discrete Op Amp", "d:facto™ 4018V"])(
+    "flags trademark symbols in %j",
+    (name) => {
+      expect(findNameArtifacts(name)).toHaveLength(1);
+    }
+  );
 
   it("flags HTML entities", () => {
     expect(findNameArtifacts("Automated Dynamics &#038; Balance Bundle")).toHaveLength(1);
@@ -32,16 +31,12 @@ describe("findNameArtifacts", () => {
     expect(findNameArtifacts("5150  Series Deluxe QM")).toHaveLength(1);
   });
 
-  it.each([
-    "286s",
-    "I-O 82",
-    "Pro-C 3",
-    "CDi 4|600",
-    "DriveRack PA+",
-    "Mini A/B",
-  ])("accepts clean name %j", (name) => {
-    expect(findNameArtifacts(name)).toHaveLength(0);
-  });
+  it.each(["286s", "I-O 82", "Pro-C 3", "CDi 4|600", "DriveRack PA+", "Mini A/B"])(
+    "accepts clean name %j",
+    (name) => {
+      expect(findNameArtifacts(name)).toHaveLength(0);
+    }
+  );
 });
 
 describe("manufacturerNameIsPrefix", () => {
