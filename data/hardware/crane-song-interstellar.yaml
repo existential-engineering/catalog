@@ -1,0 +1,166 @@
+id: 1uILWri1kIi7qLIOzLygE
+name: Interstellar
+manufacturer: crane-song
+primaryCategory: audio-interface
+categories:
+  - outboard
+url: http://cranesong.com/INTERSTELLAR.html
+description: Interstellar is a stereo A/D converter built around Crane Song's
+  Quantum sub-picosecond clocking technology, with onboard DSP emulation for
+  triode and pentode tubes, tape saturation, switchable 16/24-bit dithering, and
+  word clock outputs that let it serve as a system master clock. It also
+  functions as a bidirectional USB audio interface, with AES, S/PDIF, and
+  optical digital outputs active simultaneously with the USB connection.
+details: |-
+  Interstellar is a stereo A/D converter using Crane Song's Quantum, sub-picosecond clocking technology. Included in Interstellar is DSP emulation for triode and pentode tubes, tape emulation, dithering to 24 or 16 bits, and word clock outputs. The word clock outputs allow Interstellar to function as a master clock for the rest of a studio's digital gear.
+
+  When used as a USB interface, there is a dedicated SPDIF output that can be used to connect to an external DAC, making Interstellar a bidirectional USB interface. In USB mode the connected computer sets the sample rate, and therefore the sample rate of the word clock outputs. The AES, SPDIF, and optical outputs are active and can be used at the same time as the USB connection. The level of the DSP functions is set by front panel controls.
+
+  When the USB connection is not in use, the clock rate is set by the front panel Sample Rate control, adjustable from 44.1 kHz to 192 kHz. A 5-position Function switch selects between USB off/DSP off, USB off/DSP on, a Setup mode for dither and filter selection, and USB on with DSP off or on.
+
+  The Triode, Pentode, and Tape controls apply harmonic processing in series (Triode into Pentode into Tape). Internally the harmonic process runs at 32-bit, and the dither is a proprietary Crane Song analog-generated source rather than a digital dither algorithm.
+specs: |-
+  - Sample rates from 44.1 kHz to 192 kHz
+  - 32-bit internal DSP processing
+  - Proprietary Crane Song analog-generated dither, switchable between 16-bit and 24-bit
+  - Two selectable ADC filter modes (time-domain optimized and frequency optimized), available at 44.1 kHz and 48 kHz
+  - 5-position front panel Function switch: USB off/DSP off, USB off/DSP on, Setup (dither/filter), USB on/DSP off, USB on/DSP on
+  - DSP emulation for Triode, Pentode, and Tape processing, in series
+  - Measured master clock jitter of 0.54 pS RMS (1 Hz-100 kHz)
+  - Power consumption approximately 25W; internal fuse rated for 100-120V or 220-230V operation
+io:
+  - key: OKVKe1I9
+    name: Analog Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: ddCze6Ac
+    name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 4tLHUANO
+    name: AES Output
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: ObFaSGZF
+    name: Optical Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - key: Ade56s10
+    name: SPDIF Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: RkHxuaPl
+    name: SPDIF to DAC Output
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: 5n5iFecr
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: r8qaPBC4
+    name: Word Clock Output 1
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: yZrQcVSt
+    name: Word Clock Output 2
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: VzUblZ9Y
+    name: Word Clock Output 3
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: Dh8RhnWH
+    name: Word Clock Output 4
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: LxGYjJQr
+    name: Word Clock Output 5
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: dbMivY5Q
+    name: Word Clock Output 6
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: p35aGO80
+    name: Word Clock Output 7
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: tkBQ82Al
+    name: Word Clock Output 8
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: wjaLWq7U
+    name: Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - url: http://cranesong.com/INTERSTELLAR_MANUAL.pdf
+    type: resource
+    title: Manual
+  - url: http://cranesong.com/Cranesong_Interstellar_2.9.96.5.zip
+    type: resource
+    title: Windows Driver
