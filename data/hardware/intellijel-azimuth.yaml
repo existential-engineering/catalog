@@ -1,0 +1,103 @@
+id: AXowxgQ3E9RmmwQSYYFjk
+name: Azimuth
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - panning
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/azimuth/
+description: Panner/Stereo Balance/Cross Fader/Dual VCA in 8HP.
+details: |-
+  The Azimuth is a Panner/Stereo Balance/Cross Fader/Dual VCA in 8HP. It uses high quality THATCorp VCA chips and implements panning using a unique constant power panning circuit, the most accurate method for controlling sound placement in a stereo image. The VCA gain has a high dynamic range, with 0-5V giving approximately -80dB to +3dB.
+
+  The module's mode is determined via jack normalizing/patching and a mode switch. As a Panner, with audio connected to the Left Input, panning control steers the signal to the Left or Right output using constant power panning. In Stereo Balance mode, with a stereo audio source plugged into the Left and Right inputs, panning controls the balance between these two sources. In Crossfading mode, with two audio sources patched into the Left and Right inputs respectively, the panning controls act as crossfade controls, with the resultant signal routed to the Left Output.
+
+  As VCAs, with the Pan control centered and the VCA gain knobs fully CCW, the module becomes a dual exponential VCA. There are separate L and R VCA CV controls plus a 'both' control for using a single CV source to control the VCAs in stereo.
+
+  There are separate inputs for bipolar and unipolar control of the Panning/XFading, a jumper on the PCB to select the bipolar voltage range (+/-2.5V or +/-5V), and a dedicated attenuator for the bipolar pan CV source. A unique Vactrol-based Stereo Width circuit varies the perceived stereo width from mono to stereo and slightly beyond using negative cross bleed, with a bypass switch to disable the Width circuit.
+specs: |-
+  - High quality THATCorp VCA chips
+  - Constant power panning circuit
+  - High dynamic range VCA gain: 0-5V gives approximately -80dB to +3dB
+  - Separate inputs for bipolar and unipolar control of Panning/XFading
+  - PCB jumper to select bipolar voltage range: +/-2.5V or +/-5V
+  - Vactrol-based Stereo Width circuit with bypass switch
+  - Dedicated attenuator for the bipolar pan CV source
+  - Width: 8hp
+  - Max Depth: 39.5mm
+  - Power: 55mA @ +12V, 32mA @ -12V
+io:
+  - key: A4SPkNCv
+    name: In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bv8HFL0O
+    name: In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: G59jxPlV
+    name: Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 50S1J0wv
+    name: Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 7IOkHcjJ
+    name: Pan CV (Bipolar)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5SS8YN3j
+    name: Pan CV (Unipolar)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rea24N5R
+    name: VCA CV L
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: L1t29rEi
+    name: VCA CV R
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fZFo7HOk
+    name: VCA CV Both
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

@@ -296,6 +296,7 @@ CREATE TABLE IF NOT EXISTS hardware_search_terms (
 CREATE TABLE IF NOT EXISTS hardware_io (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    port_key TEXT,                    -- stable per-port key from YAML io[].key (unique per hardware)
     name TEXT NOT NULL,
     signal_flow TEXT NOT NULL,        -- input, output
     category TEXT NOT NULL,           -- audio, digital, midi, power
@@ -310,6 +311,7 @@ CREATE TABLE IF NOT EXISTS hardware_io (
 );
 
 CREATE INDEX idx_hardware_io_hardware ON hardware_io(hardware_id);
+CREATE UNIQUE INDEX idx_hardware_io_port_key ON hardware_io(hardware_id, port_key);
 
 -- Hardware Versions (Firmware)
 CREATE TABLE IF NOT EXISTS hardware_versions (
@@ -797,7 +799,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (17, 'Renamed hardware_revisions to hardware_variants; removed io/versions sub-tables', 1),
     (18, 'Added manufacturers_fts FTS5 full-text search table', 0),
     (19, 'Added content_hardware_compatibility table for content-to-hardware references', 0),
-    (20, 'Added search_terms column to all FTS5 tables; changed tokenizer from porter unicode61 to unicode61', 1);
+    (20, 'Added search_terms column to all FTS5 tables; changed tokenizer from porter unicode61 to unicode61', 1),
+    (21, 'Added stable port_key column to hardware_io', 0);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES

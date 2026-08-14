@@ -1,0 +1,110 @@
+id: 2YOvq45JzR3p9-2mp6EUv
+name: MIDI 1U
+manufacturer: intellijel
+primaryCategory: midi
+categories:
+  - modular
+  - digital
+url: https://intellijel.com/shop/eurorack/1u/midi-1u/
+prices:
+  - amount: 199
+    currency: USD
+description: The MIDI 1U system provides all the essentials to control and sync
+  your Eurorack modular from your computer, mobile, or hardware MIDI device with
+  a minimum of fuss. Several of the module's most important features can be
+  changed using the two front panel buttons, with full configuration
+  capabilities offered via the Intellijel Config app, which is available for
+  both Mac and Windows. The connectivity, feature set, expandability, and
+  compact size make the MIDI 1U system ideal for integrating your modular gear
+  with the rest of your rig.
+details: |-
+  Intellijel's MIDI 1U system comprises several elements, which work together to provide flexible, programmable MIDI-to-CV conversion to your Eurorack modules. The system comprises two mandatory components, and one optional component.
+
+  MIDI 1U module: this 14HP 1U module receives MIDI from an attached, external MIDI input connector (7U case, Palette case, or MIDI IN Jacks 1U module), and extracts (by default) Pitch, Velocity, Mod, CC, Gate, Trig, Clock and Reset messages, sending the proportional voltages to individual 3.5mm jacks for patching. If desired, the CC and MOD jacks may be configured to respond to either Channel Aftertouch or High Resolution CC, and the Reset jacks can be configured as a Run jack instead. Additionally, MIDI 1U features an alternate Dual Mode, which maintains the Clock & Reset functionality, but uses the other six jacks to transmit Pitch, Velocity and Gate messages derived from two separate MIDI channels.
+
+  MIDI input connector: the MIDI 1U module does not have its own MIDI input jack. This enables you to use the MIDI/USB inputs built-in to your Intellijel 7U Performance Case or Palette Case. If you don't own one of these cases, you can purchase the MIDI IN Jacks 1U module to connect an external MIDI device.
+
+  CVx 1U module: this optional 14HP 1U module connects to the MIDI 1U module and adds an additional eight 3.5mm CV outputs. These outputs are fully programmable using the Intellijel Config app, and greatly expand MIDI 1U's ability to control your entire Eurorack system.
+specs: |-
+  - Width: 14HP
+  - Depth: 32mm
+  - Power: 34mA @ +12V, 2mA @ -12V
+  - 8 assignable 3.5mm CV/gate output jacks
+  - Two front-panel configuration buttons
+  - Full configuration via Intellijel Config app (Mac/Windows)
+io:
+  - key: Q6pcTlum
+    name: Pitch
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5vkYSouO
+    name: Mod
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XX6SxqaB
+    name: Gate
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: z626g2MV
+    name: Clock
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 4BQh7EGA
+    name: Velocity
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ARQCu6jz
+    name: CC
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Bil5d2w3
+    name: Trig
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 1yamJGlB
+    name: Reset
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+releaseDate: "2020-10-11"
+links:
+  - url: https://intellijel.com/downloads/manuals/midi-1u_manual_v1.2_2026.01.06.pdf
+    type: resource
+    title: Manual (v1.2, 2026.01.06)
+  - url: https://intellijel.com/downloads/manuals/midi-1u_manual_v1.1_2021.06.07.pdf
+    type: resource
+    title: Manual (v1.1, 2021.06.07)
+  - url: https://intellijel.github.io/firmware/
+    type: resource
+    title: Firmware Web Updater

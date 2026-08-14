@@ -1,0 +1,102 @@
+id: rSjGIGI1TGws7MyEHjPSu
+name: Skalman
+manufacturer: phase-fiasco
+primaryCategory: utility
+categories:
+  - modular
+  - digital
+url: https://www.erikssonjonas.com/skalman
+description: A compact 8HP clock processor built on the Electrosmith Daisy Seed
+  and programmed in C++ for precision timing and stability. It provides four
+  independent clock channels, each capable of division or multiplication, making
+  it a versatile tool for rhythmic modulation in Eurorack systems.
+details: |-
+  The Skalman is a compact 8HP clock processor built on the Electrosmith Daisy Seed and programmed in C++ for precision timing and stability. It provides four independent clock channels, each capable of division or multiplication, making it a versatile tool for rhythmic modulation in Eurorack systems.
+
+  The module operates in two modes. In Internal Clock mode, you dial in a tempo directly with the Tempo knob. In External Clock mode, you feed an incoming gate signal via Clock In for synchronization with other modules.
+
+  Each of the four outputs can be set to a specific division or multiplication relative to the clock: /4, /3, /2, 1x, 2x, 3x, 4x. Channel parameters are adjusted via dedicated control knobs or externally modulated with CV inputs, enabling both precise configuration and dynamic performance control.
+
+  The Skalman is designed as a straightforward, reliable clock utility that adapts easily to both sequencing and performance setups, giving you flexible rhythmic structures with minimal patching complexity.
+specs: |-
+  - 8HP width, 31mm depth
+  - Power consumption: +12V=58mA, -12V=60mA, +5V=0mA
+  - Four independent clock outputs (gate signals)
+  - Selectable divisions and multiplications: /4, /3, /2, 1x, 2x, 3x, 4x
+  - Internal or external clock operation
+  - CV control per channel for modulation of division/multiplication
+  - Built on the Electrosmith Daisy Seed, programmed in C++
+  - Streamlined interface and low-latency DSP design
+io:
+  - key: zSH3RN2R
+    name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: dc5LYXpw
+    name: CV In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: EdajjZoq
+    name: CV In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: OG1qg91U
+    name: CV In 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: tSqvZkdq
+    name: CV In 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 9kGfdXEO
+    name: Clock Out 1
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: Ks7oJSBt
+    name: Clock Out 2
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: qHjXKK6A
+    name: Clock Out 3
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: IOJWtRoq
+    name: Clock Out 4
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right

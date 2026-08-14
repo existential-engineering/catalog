@@ -1,0 +1,98 @@
+id: FCNvkLq67HozdBeuyndyh
+name: Metropolis
+manufacturer: intellijel
+primaryCategory: sequencer
+categories:
+  - modular
+  - digital
+  - discontinued
+url: https://intellijel.com/shop/eurorack/metropolis/
+description: When you're crafting melodies and patterns, nothing beats the
+  immediacy of dedicated controls. Metropolis patterns are built in stages not
+  just steps.
+details: |-
+  The Metropolis is a unique and powerful musical sequencer inspired by the Ryk M-185 (a Roland System 100m format sequencer), but with many additional enhancements and functions.
+
+  The Metropolis comprises eight 'STAGES,' each with its own assignable gate mode, pulse count and pitch value. Each stage can also have a special slide or skip function activated. The slide functionality is a constant time portamento very similar to the Roland TB303 (unlike most synths/sequencers that use constant rate portamento) which produces a very musical and interesting result.
+
+  In addition to the base sequencer settings set with the sliders and switches there is a full menu of controls and auxiliary modifiers that allows the user to control and manipulate the sequence in many powerful ways including: sequencer direction modes; pitch quantization and scale manipulators; clock dividers; shuffle; and much more.
+
+  It offers 10 sequencer modes (Forward, Forward-fixed, Reverse, Reverse-fixed, PingPong, PingPong-Fixed, Random, Random-fixed, Brownian, Brownian-fixed), internal quantizing in any key with a choice of 30 different scales, shortcut keys and ratcheting, and two assignable AUX inputs which can control gate length, transpose, key shift, root shift, sequence length, step division and octave offset.
+
+  It can act as a master clock with tap tempo or slave to an external clock, with a SYNC output to slave other sequencers via RESET, and SAVE/LOAD of panel settings to EEPROM. All the core original RYK M185 functions are there too, and it is skiff friendly.
+specs: |-
+  - 8 stages, each with assignable gate mode, pulse count and pitch value
+  - 10 sequencer modes: Forward, Forward-fixed, Reverse, Reverse-fixed, PingPong, PingPong-Fixed, Random, Random-fixed, Brownian, Brownian-fixed
+  - Internal quantizing in any key, 30 different scales
+  - Shortcut keys and ratcheting
+  - Two assignable AUX inputs: gate length, transpose, key shift, root shift, sequence length, step division, octave offset
+  - TB-303 style slide (constant time portamento) with adjustable time
+  - Shuffle and stage skipping
+  - Master clock with tap tempo or slave to external clock
+  - SYNC output to slave other sequencers via RESET
+  - SAVE/LOAD panel settings to EEPROM
+  - Firmware: 1.36 (Mac/Win updater)
+  - Width: 34HP
+  - Depth: 45mm
+  - Power: 195mA @ +12V, 8mA @ -12V
+io:
+  - key: jFILLtB4
+    name: Aux A In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: uzDvpGox
+    name: Aux B In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: IT9EZLbE
+    name: Reset In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: aALmXSiJ
+    name: Clk In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: C07rWg1s
+    name: Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: kxX5UpoF
+    name: Pitch Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KpMfl6gb
+    name: Sync Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/metropolis_manual_1.30_2020.05.12.pdf
+    type: resource
+    title: Metropolis Manual (1.30 / 2020.05.12)

@@ -1,0 +1,114 @@
+id: Ce5hvbxIBIseeXQZBaGIq
+name: Mind Meld
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/mind-meld/
+description: Add-on module for the Livewire Vulcan LFO in 8HP. The Mind Meld is
+  an expansion module for the Livewire Vulcan dual LFO, providing switched
+  waveform source selection of the Vulcan's logic circuits and reset control for
+  both LFOs.
+details: |-
+  The Mind Meld is an expansion module for the Livewire Vulcan dual LFO. It provides switched waveform source selection of the Vulcan's logic circuits: MAX, MIN, SUM and DIFF. Additionally, each of these normalled inputs can be broken and an external signal can be injected via the input jacks.
+
+  Per the manual, the module performs three primary tasks: it replaces the rear jumpers used for selecting waveforms on the Vulcan with 3-position switches, allows external input to the logic circuits, and adds reset control to each LFO. The outputs of the MAX, MIN, SUM and DIFF circuits remain on the Vulcan itself.
+
+  There are also two jacks for pulse inputs to reset the Vulcan's dual LFOs. Jack A is normalled to Jack B so that both LFOs can be reset at the same time, or you can break the normal and supply a separate reset signal to LFO B. The reset circuit is positive edge triggered and will hold the Vulcan LFO in reset while the signal is high.
+
+  Note: to add reset functionality to the Vulcan you are required to solder two wires to the Vulcan PCB, which may void the Vulcan's warranty. If you do not want to take the risk you can choose not to implement this functionality.
+specs: |-
+  - Width: 8HP
+  - Max depth: 29mm
+  - Current draw: 2mA @ +12V, 3mA @ -12V
+  - Switched waveform source selection for the Vulcan's MAX, MIN, SUM and DIFF logic circuits (replaces the Vulcan's rear jumpers with 3-position switches)
+  - Normalled external-signal input jacks for each side (LFO A / LFO B) of the four logic circuits
+  - Two reset pulse inputs (A normalled to B), positive edge triggered
+  - Adding reset functionality requires soldering two wires to the Vulcan PCB
+io:
+  - key: WJ9elX2Q
+    name: MAX In A
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3EbqslDU
+    name: MAX In B
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tzEMlMZB
+    name: MIN In A
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: q4b6O8Fx
+    name: MIN In B
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gMbmVYJe
+    name: SUM In A
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AZ1v5ZDs
+    name: SUM In B
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vE6cFCod
+    name: DIFF In A
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: OOdDPffJ
+    name: DIFF In B
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5kmz3EyM
+    name: Reset A
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: WRePkzK5
+    name: Reset B
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/mind-meld_manual.pdf
+    type: resource
+    title: Mind Meld Manual

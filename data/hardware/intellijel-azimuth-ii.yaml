@@ -1,0 +1,88 @@
+id: M0WmU9cQ9AZrL2OaS-FZX
+name: Azimuth II
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - panning
+  - analog
+  - discontinued
+supersedes: AXowxgQ3E9RmmwQSYYFjk
+url: https://intellijel.com/shop/legacy/azimuth-ii/
+description: Dual VCA / pan / balance / xfade / stereo enhance.
+details: |-
+  The Azimuth is back! The Azimuth II is a completely new circuit jam packed with 12 VCAs to perform three core and independent functions: linear input VCAs + Constant Voltage panning/fading + super stereo processing. External signals are first processed by the input VCAs, they are then fed to the panning circuit and then processed by the stereo enhancement section.
+
+  The stereo linear input VCAs have independent CV controls and attenuators, and the inputs are DC coupled. A switch changes the direction of panning/fading.
+
+  The WIDTH control determines the functionality of the Panning knob. Full CCW is MONO width, where the Panning knob acts as a linear xfade control between the left and right source signals. The middle setting is normal STEREO operation: a mono signal in the left input can be panned between L/R and a stereo source can be balanced. Full CW is the super stereo mode, which employs a special trick to create the aural illusion of an extra wide stereo image. There is full CV control of the width amount with an attenuator.
+
+  A 6-pin header on the PCB normals the stereo outputs to the stereo inputs of the µJack via ribbon cable.
+specs: |-
+  - 12 VCAs performing three independent functions: linear input VCAs, constant voltage panning/fading, super stereo processing
+  - Stereo linear input VCAs with independent CV controls and attenuators
+  - WIDTH control: mono/xfade (full CCW), normal stereo (middle), super stereo (full CW)
+  - Full CV control of width amount with attenuator
+  - Switch for changing the direction of panning/fading
+  - DC coupled inputs
+  - 6-pin header to normal the stereo outputs to the µJack stereo inputs via ribbon cable
+  - Width: 10hp
+  - Max Depth: skiff friendly
+  - Power: 93mA @ +12V, 80mA @ -12V
+io:
+  - key: 0UFa4BY8
+    name: In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3XND2MVH
+    name: In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0NTonsVA
+    name: VCA CV L
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zUj1YGgS
+    name: VCA CV R
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Xb8HtU5K
+    name: Width CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ylnrCcxG
+    name: Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 7x80h2na
+    name: Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

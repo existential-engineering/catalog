@@ -1,0 +1,99 @@
+id: EDsZfvhYREJKzd-jA0ub5
+name: Tangrams
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+url: https://intellijel.com/shop/eurorack/tangrams/
+prices:
+  - amount: 239
+    currency: USD
+description: Get In Shape. Tangrams, like our Dual ADSR before it, is a dual
+  analog core-envelope inspired by the Roland SH-101 / System 100m design with
+  several enhancements.
+details: |-
+  Tangrams, like Intellijel's Dual ADSR before it, is a dual analog core-envelope inspired by the Roland SH-101 / System 100m design with several enhancements. Taking further inspiration from trapezoidal function generators like the one on the EMS Synthi, a voltage-controlled pulser circuit links the triggering of two envelopes, allowing for delayed one-shots, cycling organic envelopes, and more.
+
+  Two VCAs are included for level control of each envelope, or alternatively, direct injection of the signal to be enveloped, freeing up other VCAs elsewhere in the system.
+
+  The Pulser can be thought of as a way to set both a gate ON time (T1) and an OFF time (T2), allowing a cycling ADSR with a gate time different from the interval between gates, or a sequence where ADSR2 is triggered by a delayed amount of time after ADSR1 (cyclically or as a single shot). Panel switches route or disable the pulse sources for even more complex combinations.
+
+  The module offers three timing ranges (FAST: ~5 seconds, MED: ~35 seconds, SLOW: ~1 minute attack/decay times), a Retrig input for re-triggering an envelope while its source gate is held high, and manual GATE buttons for each envelope.
+
+  The Pulser itself supports individually controllable T1 and T2 stage lengths with CV control over both, can run as one-shot (SINGLE) or repeating (CYCLE), and its PULSE output can be switched to select P1 or P2 as the source. A START trigger input starts or restarts the Pulser sequence.
+specs: |-
+  - Width: 14HP
+  - Depth: 35mm
+  - Power: 66mA @ +12V, 49mA @ -12V
+  - Dual analog ADSR envelopes with digital gate
+  - Pulser for trapezoid shapes (T1/T2 stage lengths, CV control)
+  - Two VCAs for level control or direct signal injection
+  - Three timing ranges: FAST (~5s), MED (~35s), SLOW (~1min) attack/decay
+  - Retrig input for envelope re-triggering
+  - Pulser SINGLE (one-shot) or CYCLE (repeating) modes
+  - PULSE output switchable between P1/P2 source
+io:
+  - key: m5MxzD2c
+    name: Retrig In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: I8U0z3Ra
+    name: VCA Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gN32B7OJ
+    name: VCA Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: QbGl1Sw9
+    name: T1 CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: z6fDZEiJ
+    name: T2 CV
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Dowq1NFf
+    name: Start Trigger In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: MnQzQY28
+    name: Pulse Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/tangrams_manual_2026.01.05.pdf
+    type: resource
+    title: Manual (2026.01.05)
+  - url: https://modulargrid.net/e/intellijel-tangrams
+    type: resource
+    title: ModularGrid

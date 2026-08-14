@@ -30,48 +30,57 @@ specs: |-
   - Power Consumption (Idle): ≤40 W
   - Power Consumption (Full Output): 600 W
 io:
-  - name: Analog In
+  - key: x9noOBv3
+    name: Analog In
     signalFlow: input
     category: audio
     type: line
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: Analog Out
+  - key: Kx4dMSI6
+    name: Analog Out
     signalFlow: output
     category: audio
     type: line
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: AES/EBU Digital In
+  - key: 3N78MPyV
+    name: AES/EBU Digital In
     signalFlow: input
     category: digital
     type: "aes/ebu"
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: AES/EBU Digital Out/Thru
+  - key: o5WVVyHg
+    name: AES/EBU Digital Out/Thru
     signalFlow: output
     category: digital
     type: "aes/ebu"
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: Control Network 1
+  - key: RuBevxGP
+    name: Control Network 1
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
     maxConnections: 1
     position: Bottom
-  - name: Control Network 2
+  - key: rzTgGlJv
+    name: Control Network 2
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
     maxConnections: 1
     position: Bottom
+prices:
+  - amount: 8555
+    currency: USD
 links:
   - type: resource
     title: W371A Operating Manual

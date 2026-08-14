@@ -821,8 +821,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?)
   `);
   const insertHardwareIO = db.prepare(`
-    INSERT INTO hardware_io (hardware_id, name, signal_flow, category, type, connection, connector_detail, max_connections, position, column_position, row_position, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware_io (hardware_id, port_key, name, signal_flow, category, type, connection, connector_detail, max_connections, position, column_position, row_position, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareVersion = db.prepare(`
     INSERT INTO hardware_versions (hardware_id, name, release_date, release_date_year_only, pre_release, unofficial, url, description)
@@ -950,6 +950,7 @@ function buildDatabase(version: string): void {
       for (const io of data.io) {
         insertHardwareIO.run(
           id,
+          io.key ?? null,
           io.name,
           normalizeIOSignalFlow(io.signalFlow),
           io.category,

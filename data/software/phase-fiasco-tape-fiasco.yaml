@@ -1,0 +1,77 @@
+id: ZQLQFYeB_O5H9GSjt9Yvc
+name: Tape Fiasco
+manufacturer: phase-fiasco
+primaryCategory: multi-effect
+categories:
+  - effect
+  - creative
+  - granular
+  - time-stretch
+  - tape
+  - stutter
+  - glitch
+  - slice
+  - lo-fi
+  - plugin
+formats:
+  - vst3
+  - au
+platforms:
+  - mac
+  - windows
+url: https://www.erikssonjonas.com/tapefiasco
+prices:
+  - amount: 0
+    currency: USD
+description: "Tape Fiasco is a creative audio effect plugin that combines three
+  distinct time-based effects: Stretch (granular time-stretching), Varispeed
+  (tape-style speed manipulation), and Stutter (rhythmic slicing and
+  repetition)."
+details: |-
+  Tape Fiasco is a creative audio effect plugin that combines three distinct time-based effects: Stretch (granular time-stretching), Varispeed (tape-style speed manipulation), and Stutter (rhythmic slicing and repetition). Each effect can be used independently or in combination, with configurable signal routing between them.
+
+  The plugin is designed for real-time performance and sound design, offering tempo-synced operation, envelope follower modulation, and extensive parameter control for each effect section.
+
+  The Stretch effect is a granular time-stretching processor that captures audio into a buffer and plays it back using overlapping grains, allowing independent control of playback speed and pitch. Speed governs how quickly the read position advances through the grain buffer (0% freezes playback, 50% is half speed, 100% is normal), Tempo sets how often new audio is captured into the buffer, and Grain controls the grain generation rate. Spread pans alternating grains left and right, Scatter randomizes grain read positions for glitchy fragmented textures, Reverse plays individual grains backwards, and Freeze holds the current buffer indefinitely.
+
+  The Stutter effect captures audio slices and repeats them rhythmically, with extensive control over timing, pitch manipulation, filtering, and probability-based variation. Rate selects a note division in Sync mode or a 10-500ms slice length in Free mode, Capture sets how often a new slice is taken, and Pitch Ramp applies a cumulative pitch change per repeat. Gate applies a volume envelope per repeat with Linear, Log, or Exp curves, Pattern applies rhythmic variation (Even, Dotted, Triplet, Swing, Ramp Up, Ramp Down), and Probability and Retrigger introduce randomized gaps and mid-cycle recaptures. A multimode filter offers LP/HP, Formant (parallel bandpass), and Comb modes with two secondary controls that remap per mode.
+
+  The Varispeed effect emulates tape machine speed manipulation, including wow/flutter modulation, tape stop effects, scratch control, and analog-style saturation and compression. Speed ranges from stopped tape at 0% to normal at 100%, Wow/Flutter uses dual LFOs at different rates for vintage warble, Scratch acts as a real-time DJ-style pitch bend that returns smoothly to center, and Stop simulates a tape machine slowing to a halt with a spin-up on release. Distortion offers Heat (warm tape saturation with soft-knee compression character) or Bitcrush (digital bit reduction), plus a compression stage and Forward, Fwd-Rev, or Reverse play directions.
+
+  All three sections share an envelope follower with per-section Amount and Target controls, letting input level modulate parameters such as Speed, Tempo, Pitch, Grain, Spread, Scatter, Rate, Capture, Gate, Pan, Smooth, Filter, Wow/Flutter, Scratch, Saturation, Compression, and Mix.
+specs: |-
+  - Three combinable effect sections: Stretch, Stutter, Varispeed
+  - Configurable signal routing between effect sections
+  - Granular time-stretching with independent speed and pitch control
+  - Stretch grain controls: Grain rate, Spread (stereo grain panning), Scatter (randomized read position), Reverse grains, Freeze buffer
+  - Stutter rate in tempo-synced note divisions or free mode (10-500ms slices)
+  - Stutter gate curves: Linear, Log, Exp
+  - Stutter patterns: Even, Dotted, Triplet, Swing, Ramp Up, Ramp Down
+  - Stutter filter modes: LP/HP, Formant (parallel bandpass), Comb
+  - Probability and Retrigger controls for randomized stutter variation
+  - Cumulative Pitch Ramp per stutter repeat
+  - Varispeed wow/flutter using dual LFOs at different rates
+  - DJ-style Scratch pitch bend (-100% to +100%) with auto-return to center
+  - Tape Stop effect with spin-up on release
+  - Distortion types: Heat (tape saturation) and Bitcrush
+  - Dynamic range compression on the varispeed output
+  - Play direction: Forward, Fwd-Rev, Reverse
+  - Envelope follower modulation with selectable target per section
+  - Tempo-synced operation with host
+  - Per-section dry/wet Mix controls
+versions:
+  - name: 1.4.9
+    description: Varispeed Wow/Flutter fixed.
+  - name: 1.4.8
+    description: Safe always on, impossible to get negative rate vs capture ratios.
+      UX improvements.
+  - name: 1.4.1
+    description: Grains now play correctly in reverse (Stretch). Small UI
+      consistency issues fixed.
+  - name: 1.3.9
+    description: Mac Intel support. Less clicking. Fixed noise when changing Stretch
+      pitch. Removed clicking around filter -/+ 0%. Limiter on filters. Brighter
+      UI.
+videos:
+  - videoId: -pcCOnbLFS4
+    provider: youtube

@@ -1,0 +1,73 @@
+id: lsmTHbitYfiYSd9pQ92xZ
+name: µJack
+manufacturer: intellijel
+primaryCategory: headphone-amp
+categories:
+  - modular
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/eurorack/ujack/
+description: Get it out of your Rack Record everything. You never know when
+  you're going to hit that groove and when you do you'll be glad you captured
+  it. Eurorack signals are really hot, tame them down to line level for your
+  mixer, amp, or recorder. Monitor your patch through the low noise headphone
+  amp.
+details: |-
+  A handy module for monitoring your system with headphones and connecting to line level amplifiers or recording devices. The headphone amp is low noise and capable of driving high impedance studio headphones.
+specs: |-
+  - Width: 6HP
+  - Depth: 24mm
+  - Power: 17mA @ +12V, 17mA @ -12V
+  - Low noise headphone amp capable of driving high impedance headphones via 1/4" stereo Neutrik jack
+  - L and R +4dBv unbalanced line level outputs on 1/4" Neutrik TS jacks
+  - Switch for mono/stereo monitoring
+  - Left input normalled to Right input
+  - Individual level attenuators and global stereo headphone gain control
+io:
+  - key: 8q6yNB2h
+    name: L In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5tztoPfE
+    name: R In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: up1l2BRF
+    name: L Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: KQu4lYS5
+    name: R Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: S1GNwqc5
+    name: Headphone Out
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/ujack_manual_2018.09.13.pdf
+    type: resource
+    title: Manual (2018.09.13)
+  - url: https://www.modulargrid.net/e/intellijel-μjack
+    type: resource
+    title: ModularGrid
