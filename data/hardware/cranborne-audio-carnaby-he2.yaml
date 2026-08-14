@@ -15,7 +15,7 @@ description: Carnaby HE2 is a 2U 19-inch rack stereo 3-band parametric EQ, an
 details: |-
   Carnaby HE2 is a 2U 19-inch rack stereo 3-band parametric EQ, an evolution of the Carnaby 500. Each of its two channels runs through a unique HarmonicEQ circuit that adds harmonic saturation as the bands are driven, with the dynamic response increasing saturation and harmonics the harder the signal is pushed.
 
-  The 3-band design pairs parametric LO and HI shelving bands (plus or minus 10dB cut/boost) with a parametric peaking MID band (plus or minus 10dB cut/boost, fixed Q), each independently bypassable. LED indicators show saturation levels for the LO, MID, and HI bands, and plus or minus 20dB input/output level controls are provided per band.
+  The 3-band design pairs parametric LO and HI shelving bands (plus or minus 10dB cut/boost) with a parametric peaking MID band (plus or minus 10dB cut/boost, fixed Q), each independently bypassable. LED indicators show saturation levels for the LO, MID, and HI bands, and plus or minus 20dB input and output level controls are provided per channel.
 
   Beyond straightforward stereo operation, Carnaby HE2 offers Dual Mono and Mid/Side modes, bypassable Hi and Lo cut filters per channel, and a bypassable balanced 1/4-inch TRS insert per channel (positioned post M/S encoding and pre M/S decoding). True-bypass IN/OUT switching and stepped front-panel controls support precise recall of settings.
 
@@ -26,7 +26,7 @@ specs: |-
   - Parametric LO and HI shelving bands, plus or minus 10dB cut/boost
   - Parametric peaking MID band, plus or minus 10dB cut/boost, fixed Q
   - LED indicators for LO, MID, and HI saturation levels
-  - Plus or minus 20dB input/output level controls per band
+  - Plus or minus 20dB input and output level controls per channel (1dB steps)
   - Stereo, Dual Mono, and Mid/Side operation modes
   - Bypassable Hi and Lo Cut filters per channel
   - Bypassable balanced 1/4-inch TRS insert per channel (post M/S encode, pre M/S decode)
@@ -44,6 +44,34 @@ specs: |-
   - Dimensions: 48.3 cm W x 8.9 cm H x 23.6 cm D, 6 kg
   - Carnaby HE2 Control software: VST3, AU, AAX plugin formats
 io:
+  - name: Channel 1 XLR Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Channel 1 Jack Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Channel 2 XLR Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Channel 2 Jack Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - name: Channel 1 Insert Send
     signalFlow: output
     category: audio
@@ -72,11 +100,53 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Right
+  - name: Channel 1 XLR Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Channel 1 Jack Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Channel 2 XLR Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - name: Channel 2 Jack Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - name: Network (NET) Port
     signalFlow: bidirectional
     category: digital
     type: ethernet
     connection: ethernet
+    maxConnections: 1
+    position: Right
+  - name: USB Port
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - name: Mains Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
     maxConnections: 1
     position: Right
 links:
