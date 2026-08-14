@@ -2,6 +2,22 @@ allowBuilds:
   better-sqlite3: true
   esbuild: true
 
+minimumReleaseAgeExclude:
+  - '@changesets/apply-release-plan@8.0.0'
+  - '@changesets/assemble-release-plan@7.0.0'
+  - '@changesets/changelog-git@1.0.0'
+  - '@changesets/cli@3.0.0'
+  - '@changesets/config@4.0.0'
+  - '@changesets/errors@1.0.0'
+  - '@changesets/get-dependents-graph@3.0.0'
+  - '@changesets/git@4.0.0'
+  - '@changesets/parse@1.0.0'
+  - '@changesets/pre@3.0.0'
+  - '@changesets/read@1.0.0'
+  - '@changesets/should-skip-package@1.0.0'
+  - '@changesets/types@7.0.0'
+  - '@changesets/write@1.0.0'
+
 # Security overrides for transitive dependencies. To verify any of these is
 # safe to drop: comment it out, run `pnpm install --no-frozen-lockfile`, then
 # `pnpm audit` — if the corresponding advisory no longer appears, remove it.
@@ -11,23 +27,23 @@ allowBuilds:
 #   (launch-editor NTLMv2 disclosure). Patched in vite 8.0.16.
 # - esbuild >=0.28.1: vite/tsx pull esbuild@0.28.0, vulnerable to
 #   GHSA-g7r4-m6w7-qqqr (arbitrary file read via dev server). Patched in 0.28.1.
-# - js-yaml >=4.1.2: @changesets/* pull js-yaml<=4.1.1, vulnerable to
-#   GHSA-h67p-54hq-rp68 (quadratic-complexity DoS in merge keys). Patched in 4.1.2.
-# - read-yaml-file >=2.1.0 <3: @manypkg/get-packages (via changesets) pins
-#   read-yaml-file@1.1.0, which calls yaml.safeLoad — removed in js-yaml 4. The
-#   js-yaml override above forces it onto js-yaml 4, so `changeset version`
-#   crashes ("safeLoad is removed") and the Release workflow never opens the
-#   version PR. 2.1.0 uses yaml.load with the same default/.sync API; 3.x is
-#   ESM-only ("readYamlFile__default is not a function") because @changesets/cli
-#   still pins the CommonJS @manypkg/get-packages@1.x. When @changesets/cli ships
-#   a stable 3.x on the ESM @manypkg/get-packages@3.x, read-yaml-file 3 loads
-#   fine and this override (and likely js-yaml) can be dropped. The Changeset CI
-#   workflow's "Verify release tooling can load the workspace" step exercises
-#   this exact path on every PR, so leave read-yaml-file un-ignored in renovate:
-#   a fixing upgrade turns that check green on its own; a breaking one blocks the
-#   PR instead of the release.
+#
+# No override is needed for postcss or nanoid. They reached this repo through
+# vitest > vite and went stale only because the lockfile had not been
+# re-resolved since 2026-07-17, not because any parent range excluded the
+# patched version. A clean resolve floats vite to 8.2.1, which carries
+# postcss 8.5.26 and nanoid 3.3.18. Note that deleting pnpm-lock.yaml is not
+# enough on its own: pnpm reuses what is already in node_modules, so a genuine
+# re-resolve needs both removed.
+#
+# The js-yaml and read-yaml-file overrides that used to live here are gone.
+# They existed only because @changesets/cli 2.x pinned the CommonJS
+# @manypkg/get-packages@1.x, which read pnpm-workspace.yaml through
+# read-yaml-file. @changesets/cli 3.0.0 moved to @manypkg/get-packages@3.x
+# (@manypkg/tools + @manypkg/find-root), so neither package is in the tree at
+# all now. Do not re-add them without checking `pnpm why` first. The Changeset
+# CI workflow's "Verify release tooling can load the workspace" step still
+# guards the load path if a future bump drags the chain back in.
 overrides:
   vite: ">=8.0.16 <9"
   esbuild: ">=0.28.1"
-  js-yaml: ">=4.1.2"
-  read-yaml-file: ">=2.1.0 <3"

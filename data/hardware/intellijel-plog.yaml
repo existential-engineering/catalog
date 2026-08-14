@@ -1,0 +1,159 @@
+id: Ok8vtSDvGOLN4evcevc79
+name: Plog
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - digital
+  - discontinued
+url: https://intellijel.com/shop/eurorack/plog/
+description: Derive complex rhythmic sequences from basic sparse sources like a
+  gate sequence or random source. Add CV from an envelope, LFO, or controller to
+  modulate the logic types for even more complex results.
+details: |-
+  Plog was primarily designed as an interesting tool to be used with sequencers. You can derive complex rhythmic sequences from basic sparse sources (e.g. from a simple gate sequence and clock); by adding CV control of the logic types via some kind of CV source like a triggered envelope, LFO or sequencer you produce even more complex results.
+
+  Plog can also be used in many other creative applications including making interesting timbres and for self generating patches.
+
+  The Plog module comprises two programmable logic sections where you can select between one of six boolean logic types (AND, OR, NOR, XOR, NAND, XNOR) which derive their results from three inputs. There is also a Toggle flipflop and Data flipflop block. All four sections are linked together via specially planned normals.
+
+  The dual 3-input logic blocks allow for 2-input and 1-input logic modes via normalling. There is bipolar voltage control of the logic types for section A and B with dedicated attenuators. The Toggle flipflop has a dedicated pushbutton for manual triggering of toggle state; holding the trigger button enters tap tempo mode. The Toggle section can function as a clock divider, performing half and quarter divisions.
+
+  You can save or load the logic section as a preset for easy recall of patches, and the module can be run at audio rates in order to generate interesting digital sounds.
+specs: |-
+  - Dual 3-input logic blocks with six boolean logic types: AND, OR, NOR, XOR, NAND, XNOR
+  - Normalling allows 2-input and 1-input logic modes
+  - Bipolar voltage control of logic types for sections A and B with dedicated attenuators
+  - Toggle flipflop with pushbutton; hold for tap tempo mode
+  - Toggle section functions as a clock divider (half and quarter divisions)
+  - Save/load logic section as a preset
+  - Can run at audio rates to generate digital sounds
+  - Logic inputs expect 0-5V signals with negative and over-voltage protection
+  - Width: 8HP
+  - Depth: 29mm
+  - Power: 55mA @ +12V, 11mA @ -12V
+io:
+  - key: UNg6jp7C
+    name: Type A CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hrqozsRP
+    name: Type B CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 83RCVaYW
+    name: X In (Logic A)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0QSwzkGo
+    name: Y In (Logic A)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: REROywlS
+    name: Z In (Logic A)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: A6PDgGcZ
+    name: X In (Logic B)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2aPc4PFf
+    name: Y In (Logic B)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VrFMqUAw
+    name: Z In (Logic B)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8mo0epK9
+    name: Out A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Bvy6heGz
+    name: Out B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: IPRACTfa
+    name: Toggle In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: xTSKXpZ4
+    name: Out T
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: HJ2N0oX6
+    name: Clk In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 7TFbNnlY
+    name: Data In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BxOPg94v
+    name: Out D
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/plog_manual.pdf
+    type: resource
+    title: Plog Manual

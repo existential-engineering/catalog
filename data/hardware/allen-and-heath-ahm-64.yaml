@@ -50,42 +50,48 @@ specs: |-
   - 12V DC backup power input
   - 1U rack-mount chassis (rear rack ear kit available)
 io:
-  - name: Local Mic/Line Inputs (1-8)
+  - key: Fmy0Mjeg
+    name: Local Mic/Line Inputs (1-8)
     signalFlow: input
     category: audio
     type: mic
     connection: euroblock
     maxConnections: 8
     position: Bottom
-  - name: Local Mic/Line Inputs (9-12)
+  - key: pYweEzkJ
+    name: Local Mic/Line Inputs (9-12)
     signalFlow: input
     category: audio
     type: mic
     connection: euroblock
     maxConnections: 4
     position: Bottom
-  - name: Local Line Outputs (1-8, relay protected)
+  - key: JeJLnsxs
+    name: Local Line Outputs (1-8, relay protected)
     signalFlow: output
     category: audio
     type: line
     connection: euroblock
     maxConnections: 8
     position: Bottom
-  - name: Local Line Outputs (9-12, relay protected)
+  - key: WGWmbZih
+    name: Local Line Outputs (9-12, relay protected)
     signalFlow: output
     category: audio
     type: line
     connection: euroblock
     maxConnections: 4
     position: Bottom
-  - name: SLink Port (128x128 audio expansion / DT168 / DT164-W / ME Personal Mixing)
+  - key: b5Xnh3ry
+    name: SLink Port (128x128 audio expansion / DT168 / DT164-W / ME Personal Mixing)
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethercon
     maxConnections: 1
     position: Bottom
-  - name: "I/O Port (option card slot: Dante 96kHz / MADI / Waves / gigaACE, up to
+  - key: 7N354hai
+    name: "I/O Port (option card slot: Dante 96kHz / MADI / Waves / gigaACE, up to
       128x128)"
     signalFlow: bidirectional
     category: digital
@@ -93,34 +99,41 @@ io:
     connection: ethercon
     maxConnections: 1
     position: Bottom
-  - name: Network Port (TCP/IP control, IP remote controllers, 3rd party integration)
+  - key: o1gxWe5i
+    name: Network Port (TCP/IP control, IP remote controllers, 3rd party integration)
     signalFlow: bidirectional
     category: digital
     type: ethernet
     connection: ethernet
     maxConnections: 1
     position: Bottom
-  - name: Local GPIO (2x in / 2x out)
+  - key: q3LC2n8U
+    name: Local GPIO (2x in / 2x out)
     signalFlow: bidirectional
     category: digital
     type: gpio
     connection: euroblock
     maxConnections: 1
     position: Bottom
-  - name: AC Mains Input (IEC)
+  - key: w6f9kzLu
+    name: AC Mains Input (IEC)
     signalFlow: input
     category: power
     type: power
     connection: iec-c14
     maxConnections: 1
     position: Bottom
-  - name: DC Backup Power Input (12V)
+  - key: hvD2Fc91
+    name: DC Backup Power Input (12V)
     signalFlow: input
     category: power
     type: power
     connection: euroblock
     maxConnections: 1
     position: Bottom
+prices:
+  - amount: 3999
+    currency: USD
 links:
   - type: product
     title: AHM Series

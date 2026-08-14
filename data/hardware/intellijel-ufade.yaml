@@ -1,0 +1,58 @@
+id: 9RGXB7nA_AJuHzstg7PH8
+name: µFade
+manufacturer: intellijel
+primaryCategory: mixer
+categories:
+  - modular
+  - analog
+  - utility
+  - discontinued
+url: https://intellijel.com/shop/legacy/ufade/
+description: Linear crossfader in 4HP. A DC-coupled linear crossfader with
+  external CV control of the fade position and a switch to change the direction
+  of the crossfade.
+details: |-
+  The µFade is a DC-coupled linear crossfader in 4HP. Because it is DC-coupled it can crossfade between CV sources as well as audio signals.
+
+  An external CV input controls the fade position. Special circuitry limits the range of incoming CV so that the crossfade boundaries are not exceeded when summing external CV with the offset position, and a switch changes the direction of the crossfade.
+specs: |-
+  - Width: 4HP
+  - Max depth: 29mm
+  - Current draw: 35mA @ +12V, 27mA @ -12V
+  - DC-coupled linear crossfader
+  - External CV control of fade position
+  - Limiting circuitry keeps summed CV plus offset within the crossfade boundaries
+  - Switch to change direction of the crossfade
+io:
+  - key: ZNodu9Iq
+    name: Crossfade In A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: uvjLGDWw
+    name: Crossfade In B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FXIr14bF
+    name: Fade Position CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GhEPv0DR
+    name: Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

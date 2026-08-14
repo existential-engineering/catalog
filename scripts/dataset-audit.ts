@@ -76,6 +76,8 @@ const CheckSchema = z.enum([
   "orphan-manufacturer",
   "thin-description",
   "aggregator-url",
+  "name-tagline",
+  "bundle-entry",
 ]);
 
 const SeveritySchema = z.enum(["blocking", "warning", "info"]);
@@ -118,6 +120,8 @@ const DatasetAuditSchema = z.object({
       orphanManufacturer: z.number(),
       thinDescription: z.number(),
       aggregatorUrl: z.number(),
+      nameTagline: z.number(),
+      bundleEntry: z.number(),
     }),
     flagged: z.number(),
   }),
@@ -364,6 +368,82 @@ function checkAggregatorUrls(dataset: Dataset): Finding[] {
   return findings;
 }
 
+/**
+ * Plain-hyphen name suffixes are too common in real product names to be a
+ * validation warning (en/em-dash and pipe forms are — W130), but a long,
+ * digit-free suffix is often a scraped marketing tagline
+ * ("Iron Cobra 200 Hi-Hat Stand - Single Braced Legs" is legit;
+ * "Dream Sequence - Programmable Pedal Sequencer" is not). Ambiguous by
+ * construction, so every hit goes to Tier-2 LLM review.
+ */
+function checkNameTaglines(products: LoadedProduct[]): Finding[] {
+  const findings: Finding[] = [];
+  for (const p of products) {
+    const name = p.entry.name ?? "";
+    const match = name.match(/\s-\s(.+)$/);
+    if (!match) continue;
+    const suffix = match[1];
+    // Short or number-bearing suffixes are usually variant/spec qualifiers.
+    if (/\d/.test(suffix) || suffix.trim().split(/\s+/).length < 3) continue;
+    findings.push({
+      check: "name-tagline",
+      severity: "info",
+      needsLlmReview: true,
+      collection: p.type,
+      name,
+      manufacturer: p.entry.manufacturer,
+      files: [relPath(p.file)],
+      detail: `Name suffix "- ${suffix}" may be a marketing tagline — verify against the official product name.`,
+    });
+  }
+  return findings;
+}
+
+/**
+ * Standalone bundle/suite entries are not accepted: a bundle is a commercial
+ * SKU, not a discrete product — import the member products instead.
+ * Integrated products that merely carry "Suite"/"Bundle" in the name (sold
+ * only as one unit, members not available separately) are allowlisted here
+ * after human review.
+ */
+const BUNDLE_ALLOWLIST = new Set<string>([
+  "aguilar-plugin-suite", // single product; members not sold separately
+  "apogee-fx-bundle", // members not yet cataloged — replace with members, then delete
+  "focusrite-red-plugin-suite", // one plugin package (Red 2 EQ + Red 3 compressor)
+  "lexicon-lxp-native-reverb-plug-in-bundle", // LXP plugins only sold as the bundle
+  "plugin-alliance-waldorf-edition-2", // members only available in the edition
+  "psp-audioware-mixpack2", // Mix* processors only sold as the pack
+  "soundtoys-effect-rack", // a single multi-effect plugin
+  "waves-cla-effects", // a single signature-series plugin
+]);
+
+function checkBundleEntries(products: LoadedProduct[]): Finding[] {
+  const findings: Finding[] = [];
+  for (const p of products) {
+    if (BUNDLE_ALLOWLIST.has(p.slug)) continue;
+    const primary = (p.entry as { primaryCategory?: string }).primaryCategory ?? "";
+    const byCategory = primary === "suite" || primary === "bundle";
+    const byName = p.type === "software" && /\b(bundle|suite)\b/i.test(p.entry.name ?? "");
+    if (!byCategory && !byName) continue;
+    findings.push({
+      check: "bundle-entry",
+      severity: "warning",
+      needsLlmReview: true,
+      collection: p.type,
+      name: p.entry.name,
+      manufacturer: p.entry.manufacturer,
+      files: [relPath(p.file)],
+      detail:
+        (byCategory
+          ? `primaryCategory '${primary}' marks this as a bundle/suite. `
+          : "Name suggests a bundle/suite. ") +
+        "Standalone bundle entries are not accepted — import the member products and delete this, " +
+        "or allowlist it in scripts/dataset-audit.ts if it is an integrated product.",
+    });
+  }
+  return findings;
+}
+
 function computeCoverage(
   products: LoadedProduct[]
 ): Record<string, z.infer<typeof CoverageSchema>> {
@@ -407,6 +487,8 @@ function generateAudit(fast: boolean): DatasetAudit {
     ...checkOrphanManufacturers(dataset),
     ...(fast ? [] : checkThinDescriptions(dataset.products)),
     ...checkAggregatorUrls(dataset),
+    ...checkNameTaglines(dataset.products),
+    ...checkBundleEntries(dataset.products),
   ];
 
   // The Tier-2 seam: only ambiguous findings, highest severity first, capped.
@@ -421,6 +503,8 @@ function generateAudit(fast: boolean): DatasetAudit {
     orphanManufacturer: findings.filter((f) => f.check === "orphan-manufacturer").length,
     thinDescription: findings.filter((f) => f.check === "thin-description").length,
     aggregatorUrl: findings.filter((f) => f.check === "aggregator-url").length,
+    nameTagline: findings.filter((f) => f.check === "name-tagline").length,
+    bundleEntry: findings.filter((f) => f.check === "bundle-entry").length,
   };
 
   return {
@@ -458,6 +542,8 @@ function printConsoleReport(audit: DatasetAudit): void {
   console.log(`  Orphan manufacturers:   ${audit.summary.byCheck.orphanManufacturer}`);
   console.log(`  Thin descriptions:      ${audit.summary.byCheck.thinDescription}`);
   console.log(`  Aggregator urls:        ${audit.summary.byCheck.aggregatorUrl}`);
+  console.log(`  Name taglines:          ${audit.summary.byCheck.nameTagline}`);
+  console.log(`  Bundle entries:         ${audit.summary.byCheck.bundleEntry}`);
   console.log(`  Flagged for LLM review: ${audit.summary.flagged}`);
   console.log();
 
@@ -478,6 +564,8 @@ function printConsoleReport(audit: DatasetAudit): void {
     { title: "🏷  Orphan manufacturers", check: "orphan-manufacturer", limit: 20 },
     { title: "📝 Thin descriptions", check: "thin-description", limit: 20 },
     { title: "🔀 Aggregator canonical urls", check: "aggregator-url", limit: 20 },
+    { title: "✂️  Possible name taglines", check: "name-tagline", limit: 20 },
+    { title: "📦 Bundle entries", check: "bundle-entry", limit: 20 },
   ];
 
   for (const { title, check, limit } of groups) {
