@@ -19,7 +19,7 @@ details: |-
 
   Seven chord buttons follow the current scale automatically, and the Pattern and Rhythm editors ship with 20 built-in patterns and rhythms plus 20 user-saveable slots each. An 8-slot modulation matrix routes LFOs, pitch bend, velocity, CC, and aftertouch, while the Chord Sequencer arranges progressions up to 6 steps across 3 sections. A built-in MIDI controller adds mixer, pan, and filter control via configurable CC knobs.
 
-  Rev2 hardware adds a soft-power button, a powder-coated black faceplate with a red base, and a faster microcontroller. Release 3 firmware (June 2025) added a Euclidean rhythm algorithm and expanded global patch storage from 8 to 20 slots.
+  Current Rev2 hardware has a soft-power button, a powder-coated black faceplate with a red base, and a faster microcontroller. Release 3 firmware (June 2025) added a Euclidean rhythm algorithm and expanded global patch storage from 8 to 20 slots.
 specs: |-
   - Four independent parts: PAD (polyphonic chord player), two Motifs (sequenced arpeggiators), Drone
   - Up to 8 synths addressable across four MIDI tracks
@@ -35,7 +35,7 @@ specs: |-
   - 1.8" color LCD screen (128x160)
   - 8 rotary encoders with switches, 7 chord buttons, 4 play/pause buttons, panic button
   - Dimensions: 9" W x 6.3" L x 2.8" H
-  - USB powered, 5V DC (Rev2: 140mA, Original: 90mA), no external supply required
+  - USB powered, 5V DC (140mA), no external supply required
   - 6-foot USB A-to-B cable included
 io:
   - key: zxjGHwqz
@@ -81,7 +81,7 @@ io:
   - key: 1j0DwjaH
     name: Clock Output
     signalFlow: output
-    category: midi
+    category: audio
     type: clock
     connection: 1/8-inch
     maxConnections: 1
@@ -89,18 +89,15 @@ io:
   - key: uHsTfLEP
     name: Clock Input
     signalFlow: input
-    category: midi
+    category: audio
     type: clock
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
 versions:
-  - name: Rev2 Release 3
+  - name: Release 3
     releaseDate: "2025-06"
     description: Adds Euclidean Rhythm Algorithm; expands Global Patch slots from 8 to 20.
-  - name: Rev2
-    description: Adds soft-power button, powder-coated black faceplate with red
-      base, faster microcontroller.
 links:
   - url: https://conductivelabs.com/download/
     type: resource
