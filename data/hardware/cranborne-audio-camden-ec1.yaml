@@ -1,0 +1,176 @@
+id: OZzcnxy5ggXXoRiE77QCg
+name: Camden EC1
+manufacturer: cranborne-audio
+primaryCategory: preamp
+categories:
+  - headphone-amp
+  - outboard
+  - saturation
+url: https://www.cranborne-audio.com/camdenec1
+description: Camden EC1 combines award winning preamp technology with a
+  reference-grade headphone amplifier to elevate your audio interface's
+  front-end to a professional level.
+details: |-
+  Camden EC1 is a desktop preamp, signal processor, and headphone amplifier housed in a half-rack chassis, combining the award-winning 'Camden' discrete mic/line/hi-Z preamp topology with 'Mojo' analogue saturation circuitry and a reference-grade headphone amplifier.
+
+  The preamp offers up to 68dB of gain with switchable Mic, Line, and Hi-Z input modes, 48V phantom power with a bicolour status LED, and an 80Hz high-pass filter. 'Mojo' saturation has two selectable styles, Thump and Cream, that can be dialed in or bypassed entirely.
+
+  The reference-grade headphone amplifier runs an independent Aux mix, blending the Camden preamp signal, a rear analogue Aux Input, a front-panel EXT IN source, and incoming C.A.S.T. signal for monitoring.
+
+  Camden EC1 outputs its preamp signal on both balanced XLR and impedance-balanced 1/4" jacks (with a -10dB pad), plus a buffered Link output for splitting the input signal to downstream gear such as guitar amplifiers. A C.A.S.T. port allows direct connection to other Cranborne Audio devices such as the 500R8 and 500ADAT over standard Cat 5e/6/7 cable.
+specs: |-
+  - EIN: <-129.5dBu (150 Ohm source, unweighted); <-135.5dBu (inputs common, unweighted)
+  - Frequency Response (Preamp): ±0.7dB (<1 Hz to >1000 kHz, 35dB gain)
+  - Phase Shift: <2.75° (20Hz-20kHz, 40dB gain); <6° (20Hz-20kHz, Max Gain)
+  - THD+N (Preamp): <0.00025% (1kHz, 35dB gain, +24dBu out)
+  - Intermodulation Distortion: <0.0006% (50Hz and 7kHz, 35dB gain, +20dBu out)
+  - Input Impedance: Mic 8.9kOhms (48v Off) / 5.4kOhms (48v On); Line 24.3kOhms; Hi-Z 1.5MOhm (unbalanced) / 3MOhm (balanced)
+  - Max Input Level: Mic +17.6dBu; Line +26.5dBu; Hi-Z +24dBu
+  - Gain Range: Mic 8-68dB; Line 0-60dB; Hi-Z 3-63dB
+  - Max Output Level: Balanced XLR +27.5dBu; Impedance Balanced 1/4" +21.5dBu
+  - Hi-Pass Filter: 80Hz, -3dB, 12dB/Oct
+  - CMRR: >70dB typical, >85dB at 35dB gain, 10-20kHz
+  - Slew Rate: 20V/µS (35dB gain, +25dBu out)
+  - Headphone Amp Frequency Response: ±1dB (<1Hz to >70kHz)
+  - Headphone Amp THD: <0.0006% @ +20dBu, 1kHz, 300 Ohm load
+  - Headphone Amp THD+N: <0.00085% @ +20dBu, 1kHz, 300 Ohm load
+  - Headphone Output Impedance: 0.33 Ohms
+  - Headphone Output Wattage: 250mW x2 @ 600Ω; 650mW x2 @ 220Ω; 1.21W x2 @ 100Ω; 500mW x2 @ 32Ω
+  - Headphone Dynamic Range: 114.5dB A-weighted (20Hz-20kHz, 300 Ohm load)
+  - Headphone Noise Floor: -93.5dBu A-weighted (20Hz-20kHz, 300 Ohm load)
+  - AC Requirements: 100V-240V AC, 50-60Hz
+  - Total Power Consumption: 30W
+  - Operating Temperature: +1 to 35°C
+  - Storage Temperature: -20 to 50°C
+  - Dimensions: 220mm W x 44.45mm H (1U) x 240mm D
+  - Weight: 1.8kg
+io:
+  - key: EYAY0VSU
+    name: Preamp Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: iwTSuano
+    name: Link Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: STG5qLfr
+    name: Preamp Output (Impedance Balanced)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: BXXZu6lr
+    name: Preamp Output (Balanced XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: g8Ea2GGO
+    name: C.A.S.T. Output
+    signalFlow: bidirectional
+    category: audio
+    type: proprietary
+    connection: ethernet
+    maxConnections: 4
+    position: Left
+  - key: 43MTGtwB
+    name: Aux Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: NbNALwvg
+    name: Aux Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: xJCHsTBA
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Left
+  - key: kUAX0JXc
+    name: Hi-Z/Line Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: oa5jR3nV
+    name: EXT IN Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: VjulynYY
+    name: Aux Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://www.cranborne-audio.com/hubfs/User_Manuals/Camden%20EC1/Camden_EC1_Quick_Start_Guide_071020.pdf?hsLang=en
+    type: resource
+    title: Camden EC1 Quickstart Guide
+  - url: https://www.cranborne-audio.com/hubfs/CamdenEC1_User_Manual_v1.pdf?hsLang=en
+    type: resource
+    title: Camden EC1 User Manual
+  - url: https://www.soundonsound.com/reviews/cranborne-audio-camden-ec1
+    type: review
+    title: Sound on Sound Review
+  - url: https://audiomediainternational.com/2021/01/22/review-cranbourne-audio-ec1-preamplifier/
+    type: review
+    title: Audio Media International Review
+  - url: https://www.mixonline.com/technology/reviews/review-cranborne-audio-ec1
+    type: review
+    title: Mix Magazine Review
+videos:
+  - videoId: Fc12lAcur50
+    provider: youtube
+    title: This Is Camden EC1
+  - videoId: r75PhPWhPhY
+    provider: youtube
+    title: "Upgrade Your Interface | Camden EC1"
+  - videoId: VGSeAcHHW2o
+    provider: youtube
+    title: "Advanced Recording with C.A.S.T. | Camden EC1"
+  - videoId: r5f8uPbNzF4
+    provider: youtube
+    title: Lo Knows Tech Camden EC1 Review
+  - videoId: cXKAD26nA8c
+    provider: youtube
+    title: "Camden EC1 and EC2 Overview | Sweetwater"
+  - videoId: LaiBGPyE5d4
+    provider: youtube
+    title: Booth Junkie Camden EC1 Review
+  - videoId: 90g1J28i4aI
+    provider: youtube
+    title: Sean Daniels Camden EC1 Review
+  - videoId: DmgD74k5FMs
+    provider: youtube
+    title: "Jolly Legend | Camden EC1 Review"

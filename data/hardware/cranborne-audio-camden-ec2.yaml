@@ -1,0 +1,191 @@
+id: FZeNEW0IRqzT8e_9VMju3
+name: Camden EC2
+manufacturer: cranborne-audio
+primaryCategory: preamp
+categories:
+  - headphone-amp
+  - saturation
+  - rack-mount
+url: https://www.cranborne-audio.com/camdenec2
+description: Camden EC2 is a Two channel 19", 1U preamp featuring award-winning
+  Camden preamps, Mojo analogue saturation circuits, and dual reference-quality
+  headphone amplifiers with discrete line mixers.
+details: |-
+  Camden EC2 is a 19", 1U rackmount two-channel preamp and dual headphone mixer from Cranborne Audio, described in its manual as an evolution of the multi award-winning Camden 500 preamp topology packed into a complete studio front-end with added local monitoring and cable management via C.A.S.T.
+
+  Each preamp channel offers mic, line, and Hi-Z input types selected via a 3-way Input Type switch, a 12-position stepped Gain control (8-68.5dB in mic mode), an 80Hz high-pass filter, polarity invert, and 48V phantom power. The rear XLR input carries mic/line signals, while a front-panel 1/4" jack accepts line or Hi-Z instrument sources and takes priority over the rear input when connected. A buffered rear Link Output sends a dry, unaffected copy of the front-panel instrument signal to an amp, pedal, or another preamp for reamping.
+
+  Each channel also includes Cranborne's Mojo analogue saturation circuit, switchable between two styles (Thump and Cream) via a dedicated control that bypasses fully when turned off.
+
+  Camden EC2 carries two independent, reference-grade headphone amplifier sections derived from Cranborne's 500R8, each with its own Ch1/Ch2 preamp level controls, a stereo pan switch, an Aux In/C.A.S.T. level blend control, and a 1/4" TRS headphone output, allowing two engineers to build separate monitor mixes from the same preamps.
+
+  Beyond standard XLR and 1/4" jack I/O, Camden EC2 supports Cranborne's C.A.S.T. system, which transports balanced analogue audio (plus 48V phantom power) over standard shielded Cat5e/6/7 cabling for distances up to 100m, letting it integrate with other C.A.S.T.-enabled gear such as the N22, N22H, 500R8, and 500ADAT.
+specs: |-
+  - EIN: <-129.5dBu (150Ohm source, unweighted)
+  - THD+N: <0.00025% (1kHz, 35dB gain, +24dBu out)
+  - Frequency Response: +/-0.7dB (<1Hz to >1000kHz, min gain)
+  - Mic gain range: 8 to 68.5dB in 5.5dB steps (12-position switch)
+  - Line/Hi-Z gain range: 0 to 60.5dB in 5.5dB steps
+  - Max input level: Mic +17.6dBu, Line +26.5dBu, Hi-Z +24dBu
+  - Max output level: Balanced XLR +27.5dBu, Impedance Balanced 1/4" Jack +21.5dBu
+  - HPF: 80Hz, -3dB, 12dB/octave
+  - Headphone output: up to 500mW @ 32 Ohm, 114.5dB dynamic range (A-weighted, AES17)
+  - Mojo analogue saturation circuit with selectable Thump and Cream styles
+  - Dual independent reference-grade headphone amplifiers with discrete line mixers
+  - C.A.S.T. connectivity over shielded Cat5e/6/7 cable, up to 100m, carries analogue audio and 48V phantom power
+  - External power supply: 24V, 1.25A DC (30W)
+  - Dimensions: 481mm (W) x 44.45mm (H) x 240mm (D), 19" 1U rackmount
+  - Weight: 2.8kg
+io:
+  - key: WSuPUVfz
+    name: Channel 1 Mic/Line Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - key: uue70A2u
+    name: Channel 2 Mic/Line Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - key: nWcwkF3u
+    name: Channel 1 Hi-Z/Line Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: G3PIzrPA
+    name: Channel 2 Hi-Z/Line Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: SknJL4Sp
+    name: Channel 1 Link Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 6TrgLbIA
+    name: Channel 2 Link Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 5W6S1W6N
+    name: Channel 1 Output (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - key: zQr5NgxR
+    name: Channel 1 Output (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 1vxRTrq5
+    name: Channel 2 Output (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - key: PwduO6VY
+    name: Channel 2 Output (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: zntBpEVY
+    name: Aux Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: BAb9iCiH
+    name: Aux Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: cTEvQn52
+    name: Aux 1 Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: L6t1DsqQ
+    name: Aux 2 Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: qL7Ukffq
+    name: C.A.S.T. Input
+    signalFlow: bidirectional
+    category: audio
+    type: proprietary
+    connection: ethernet
+    maxConnections: 2
+    position: Bottom
+  - key: NYmF5vuw
+    name: C.A.S.T. Output
+    signalFlow: bidirectional
+    category: audio
+    type: proprietary
+    connection: ethernet
+    maxConnections: 2
+    position: Bottom
+  - key: 5iAlmjkH
+    name: Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.cranborne-audio.com/hubfs/CamdenEC2_Photography/CamdenEC2_Quick_Start_Guide_9720.pdf
+    type: resource
+    title: Quick Start Guide (PDF)
+  - url: https://www.cranborne-audio.com/hubfs/User_Manuals/Camden%20EC2/CamdenEC2_User_Manual_240621.pdf
+    type: resource
+    title: User Manual (PDF)
+  - url: https://www.soundonsound.com/reviews/cranborne-audio-camden-ec2
+    type: review
+    title: Sound On Sound review
+  - url: https://tapeop.com/reviews/gear/142/camden-ec2-preamp/
+    type: review
+    title: Tape Op review
+videos:
+  - videoId: m4va0qXd12M
+    provider: youtube
