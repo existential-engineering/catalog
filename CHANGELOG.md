@@ -1,5 +1,59 @@
 # catalog
 
+## 3.50.0
+
+### Minor Changes
+
+- 205a1cd: Import Conductive Labs (5 hardware entries).
+
+  Adds The NDLR (MIDI interval sequencer/groovebox), MRCC (modular
+  MIDI Router Control Center), the discontinued MRCC 880, and two
+  MRCC expansions: XpandR 4x1 and Remote 7.
+
+- fce031d: Import Cordoba (93 hardware entries).
+
+  Classical/flamenco nylon-string guitars (Protege, Iberia, Luthier,
+  Luthier Select, Master, Fusion, Stage, Mini lines) and ukuleles
+  (15/20/24/25/35 series). Includes Cordoba x Abasi Concepts signature
+  7-strings and 5 cosmetic colorway families folded into `variants`.
+
+- a30954a: Import Crane Song (17 hardware/software entries).
+
+  Hardware: Avocet IIA monitor controller, Egret summing mixer, Falcon
+  and STC-8 tube compressors, Flamingo and Syren mic preamps, HEDD
+  Quantum and Interstellar/Solaris Quantum converters, Ibis and Insigna
+  equalizers, Spider preamp mixer, Titan² compressor, and Trakker
+  compressor-limiter. Software: the Phoenix and Phoenix II tape-emulation
+  plug-in suites and the Peacock vinyl-emulation plug-in.
+
+- a0c3fe0: Import Cre8audio (17 hardware/accessory entries).
+
+  Adds cre8audio's Eurorack/semi-modular lineup: Assembler
+  mixer, Boom Chick drum machine, East Beast and West Pest
+  synths, Programm sequencer, NiftyKEYZ and NiftyCASE, plus
+  standalone modules (Capt'n Big-O, Chipz, Mr. Phil Ter,
+  Cellz, Function Junction) and accessories (Nazca Noodles
+  cables, Box 'o' Cables, NiftyCASE PSU, BigEARS, bag).
+
+- 5c80ca0: Import Critter & Guitari (8 hardware/accessory entries).
+
+  Adds the Organelle S2 synthesizer and 7 accessory/spare-part
+  entries (replacement mic, microSD card, power adapter,
+  replacement keypad, MIDI cables, USB WiFi adapter).
+
+- 1b0b34c: Import Phase Fiasco (8 entries: 4 software, 4 hardware).
+
+  Jonas Eriksson's Phase Fiasco brand: the Tape Fiasco 2, Tape
+  Fiasco, Annulus, and Modular Fiasco plugins, plus the Meteor
+  Shower, [i], 240 DL, and Skalman eurorack modules.
+
+### Patch Changes
+
+- 7908b02: Retire the inert monthly staleness-check workflow. The fields it
+  reported on (verification.lastVerified, prices[].asOf) are populated
+  in zero entries, so every run filed the same meaningless issue.
+  Freshness detection now happens in the racks repo (AUREO-890).
+
 ## 3.49.0
 
 ### Minor Changes
