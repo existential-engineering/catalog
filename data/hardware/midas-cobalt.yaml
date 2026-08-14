@@ -33,27 +33,33 @@ specs: |-
   - Chassis: Brushed aluminum (blue)
   - Indicators: Onboard LED status indicators
 io:
-  - name: USB
+  - key: XWJ3N8Yf
+    name: USB
     signalFlow: bidirectional
     category: digital
     type: usb
     connection: usb-c
     maxConnections: 1
     position: Right
-  - name: Snake 1 (HyperMAC In/Out)
+  - key: DX74NGil
+    name: Snake 1 (HyperMAC In/Out)
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
     maxConnections: 1
     position: Left
-  - name: Snake 2 (HyperMAC In/Out, Redundant)
+  - key: 8eMaJDbE
+    name: Snake 2 (HyperMAC In/Out, Redundant)
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
     maxConnections: 1
     position: Left
+prices:
+  - amount: 633
+    currency: GBP
 links:
   - type: resource
     title: Report PoPs ESTC 241125003

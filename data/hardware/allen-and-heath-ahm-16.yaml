@@ -42,34 +42,41 @@ specs: |-
   - Integrated Stereo Playback
   - Event Scheduler
 io:
-  - name: Mic/Line Inputs
+  - key: fnY7WjzN
+    name: Mic/Line Inputs
     signalFlow: input
     category: audio
     type: mic
     connection: euroblock
     maxConnections: 8
     position: Left
-  - name: Line Outputs (Relay Protected)
+  - key: 2HxdzYHx
+    name: Line Outputs (Relay Protected)
     signalFlow: output
     category: audio
     type: line
     connection: euroblock
     maxConnections: 8
     position: Left
-  - name: Audio Networking I/O Port (Option Card Slot)
+  - key: 4vXecwVC
+    name: Audio Networking I/O Port (Option Card Slot)
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethercon
     maxConnections: 1
     position: Left
-  - name: GPIO
+  - key: VqStpwtc
+    name: GPIO
     signalFlow: bidirectional
     category: digital
     type: gpio
     connection: euroblock
     maxConnections: 2
     position: Left
+prices:
+  - amount: 1499
+    currency: USD
 links:
   - type: resource
     title: AHM-16 Resources

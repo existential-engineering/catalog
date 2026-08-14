@@ -1,0 +1,41 @@
+id: OUl8prV-GFX39JD1nLgzz
+name: USB Power 1U
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+url: https://intellijel.com/shop/eurorack/1u/usb-power-1u/
+prices:
+  - amount: 17
+    currency: USD
+description: More Power To You Convenient USB power source for your handy
+  peripherals. Whether it's an LED Light or a small desktop synth, this jack
+  provides 1A of power from an Intellijel power supply to an attached USB
+  device.
+details: |-
+  This tiny module connects (via the supplied two-pin cable) to the +5V bus on the Intellijel TPS series busboard, bringing a handy USB A connector to the 1U row in your Intellijel case, and giving you 1 amp of USB juice, which is suitable for powering many external musical devices, lamps, fans, etc.
+
+  NOTE: This module is not compatible with iPhones and their ilk.
+specs: |-
+  - Width: 4HP
+  - Depth: 18mm
+  - Power: 1A max @ 5V
+  - Provides 1A of power for USB peripherals via USB A connection
+  - Uses a 2-pin header so it does not take up a regular module header
+io:
+  - key: Ns1QEjAm
+    name: USB Power Out
+    signalFlow: output
+    category: power
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Top
+  - key: 2c1nUG5I
+    name: Power In (+5V bus)
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

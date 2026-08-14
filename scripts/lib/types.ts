@@ -62,6 +62,12 @@ export interface VideoLink {
 }
 
 export interface IO {
+  /**
+   * Stable per-port identifier (8 alphanumeric chars, unique within the
+   * entry). Studio setup edges reference ports by this key, so it is
+   * immutable once assigned (enforced by check-id-immutability).
+   */
+  key?: string;
   name: string;
   signalFlow: string;
   category: string;

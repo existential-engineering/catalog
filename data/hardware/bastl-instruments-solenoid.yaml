@@ -16,63 +16,72 @@ description: Quad trigger-to-solenoid motor driver module for Eurorack. Drives 4
 details: |-
   5HP, 50mm depth. +5V <30mA (+12V: 0mA, -12V: 0mA). PTC fuse and diode-protected 16-pin power connector. Shared pulse width knob for all four channels. Requires external power supply for solenoid motors.
 io:
-  - name: Trigger In 1
+  - key: 0vSvj2XO
+    name: Trigger In 1
     signalFlow: input
     category: audio
     type: "cv/gate"
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: Trigger In 2
+  - key: hQlbOhE7
+    name: Trigger In 2
     signalFlow: input
     category: audio
     type: "cv/gate"
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: Trigger In 3
+  - key: ceiq9Qod
+    name: Trigger In 3
     signalFlow: input
     category: audio
     type: "cv/gate"
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: Trigger In 4
+  - key: hNZS9NV8
+    name: Trigger In 4
     signalFlow: input
     category: audio
     type: "cv/gate"
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: Solenoid Out 1
+  - key: sBxKefYW
+    name: Solenoid Out 1
     signalFlow: output
     category: audio
     type: cv/gate
     connection: barrel
     maxConnections: 1
     position: Top
-  - name: Solenoid Out 2
+  - key: O1UBWi03
+    name: Solenoid Out 2
     signalFlow: output
     category: audio
     type: cv/gate
     connection: barrel
     maxConnections: 1
     position: Top
-  - name: Solenoid Out 3
+  - key: 8BlXKqon
+    name: Solenoid Out 3
     signalFlow: output
     category: audio
     type: cv/gate
     connection: barrel
     maxConnections: 1
     position: Top
-  - name: Solenoid Out 4
+  - key: LlJzEdnf
+    name: Solenoid Out 4
     signalFlow: output
     category: audio
     type: cv/gate
     connection: barrel
     maxConnections: 1
     position: Top
-  - name: Eurorack Bus Power
+  - key: 8KiCa9CG
+    name: Eurorack Bus Power
     signalFlow: input
     category: power
     type: power

@@ -80,6 +80,24 @@ that already carry an official link.
 
 ## Field Formatting Conventions
 
+**`name`** is the product name only — the manufacturer is stored and indexed
+separately, and display/search compose the two:
+
+- Never prepend the manufacturer: `name: SM7B`, not `Shure SM7B`; `name: 286s`
+  under `manufacturer: dbx`, not `dbx 286s` (W129 warns)
+- No marketing taglines or category descriptors from scraped page titles:
+  `Nanobox Tangerine`, not `nanobox | tangerine – Compact Streaming Sampler`
+  (W130 warns on en/em-dash and pipe separators; `pnpm dataset:audit` reviews
+  plain-hyphen suffixes)
+- No trademark symbols (™ ® ©), HTML entities (`&#038;`), or stray
+  leading/trailing separators — these hard-fail validation (E118)
+- Keep the maker's official casing (`mk2`, `d:facto`, `MONTAGE`)
+- Products sold through a storefront (Sonuscore, marketplaces) are attributed
+  to the actual developer in `manufacturer` — never leave the store's brand
+  piped into the name (`Groth | Wavelet Audio` → `name: Groth`,
+  `manufacturer: wavelet-audio`)
+- Acronym-only names should add `searchTerms` with the expansion (W127)
+
 **`manufacturer`** must be a slug reference (the manufacturer's filename without `.yaml`), not the display name:
 
 ```yaml
@@ -148,6 +166,12 @@ connectors onto near-miss values. When an import surfaces a legitimate new value
 
 **Semantic distinction:** `type` describes the signal characteristic (line, instrument, headphone, midi, usb, expression). `connection` describes the physical connector (1/4-inch, xlr, usb-c, 5-pin din). Don't swap them.
 
+**No Bluetooth or Wi-Fi io entries.** Wireless capabilities are not physical
+ports — the app doesn't support them in the setup graph. Mention them in
+`description`/`details`/`specs` only; `bluetooth` and `wifi` are intentionally
+absent from the io type vocabulary, so such entries fail validation (E117).
+(`rf` antenna jacks on wireless mic systems are real ports and stay.)
+
 **Passive speakers use `speaker-level`, not `line`.** Passive-loudspeaker inputs
 (speakON, binding-post, banana, euroblock, barrier/spring terminals) carry
 amplified signals — set `type: speaker-level`. `line` is for low-voltage
@@ -203,6 +227,17 @@ Accessory entries (cables, stands, acoustic treatment) live in `data/accessories
 
 - Accessory entries do NOT have `io` or `variants` fields (use those for hardware only)
 - Like hardware, accessories require: name, manufacturer, primaryCategory, description
+
+## Bundles
+
+Do NOT create standalone entries for bundles, suites, or
+"complete/starter/ultimate" collections that aggregate products sold
+separately (V Collection, Soundtoys 5 class). A bundle is a commercial SKU,
+not a discrete product — import the member products instead. Integrated
+products that merely carry "Suite"/"Bundle" in the name (sold only as one
+unit, e.g. Waldorf Edition 2, PSP MixPack2) are fine; allowlist them in
+`BUNDLE_ALLOWLIST` in `scripts/dataset-audit.ts`. `pnpm dataset:audit`
+flags suspects (bundle-entry) for `/dataset-review`.
 
 ## Product Lineage
 

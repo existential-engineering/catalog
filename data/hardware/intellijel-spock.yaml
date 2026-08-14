@@ -1,0 +1,142 @@
+id: JNEiHk5BjvILnak23YVci
+name: Spock
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - digital
+  - discontinued
+url: https://intellijel.com/shop/legacy/spock/
+description: CMOS boolean logic device in 4HP. Dual two input CMOS logic device
+  with AND, OR and XOR outputs, plus a dual logic inverter.
+details: |-
+  The Spock module comprises two sets of CMOS based dual input logic gates with the following functions: AND, OR, XOR and NOT. The top and bottom half of the module are identical but can be combined together with patch cables to realise more complex logic functions.
+
+  At low speeds this module can be used for creating gates/triggers based on logical combinations of pulse inputs. Since this is a discrete CMOS device it can operate at audio rates — feeding audio signals into the inputs will result in very interesting pulse based audio signals.
+
+  All outputs are buffered, and each gate’s state is indicated by a dedicated LED. The NOT input is a separate input (not connected to the X and Y inputs) for the logic inverter; with nothing patched the inverter output sits at a constant logic high and can be used as a positive voltage source.
+specs: |-
+  - Width: 4HP
+  - Max Depth: 67.5mm
+  - Power: 12mA @ +12V, 0mA @ -12V
+  - Dual two input CMOS logic device with AND, OR and XOR outputs
+  - Dual logic inverter
+  - All outputs buffered (0-8V)
+  - Inputs: square or pulse waves ideally 0-5V (2V or greater reads as logic high); max voltage 10V
+io:
+  - key: skjvk7yC
+    name: X In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GtzcHy0i
+    name: Y In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XffnpAJY
+    name: AND Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Z1jiXltv
+    name: OR Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GhINICwG
+    name: XOR Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fUtJ8vtw
+    name: NOT In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 9qawA0O0
+    name: NOT Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: shMdIi5a
+    name: X In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zKBJFpbA
+    name: Y In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZsPFvV2e
+    name: AND Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 4ydkKytU
+    name: OR Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5gdmEINm
+    name: XOR Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KWyWaIQ9
+    name: NOT In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CcMikUz2
+    name: NOT Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://web.archive.org/web/20131102102056/http://intellijel.com/manuals/Spock%20manual%20v1.0.pdf
+    type: resource
+    title: Manual v1.0 (archived)

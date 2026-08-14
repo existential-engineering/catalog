@@ -1,0 +1,174 @@
+id: mB90M1-Njcr1Vme4_yR4r
+name: Shapeshifter
+manufacturer: intellijel
+primaryCategory: synthesizer
+categories:
+  - modular
+  - digital
+  - wavetable
+  - fm
+url: https://intellijel.com/shop/eurorack/cylonix-shapeshifter/
+prices:
+  - amount: 529
+    currency: USD
+description: Cylonix and Intellijel have collaborated to bring you a complex
+  digital wavetable oscillator with an extensive FM synthesis engine. 1024
+  Waveforms, LFO Toggles for both oscillators, deep internal FM, preset
+  sequencing and morphing, built-in delay, 64 band vocoder, analog wavefolder,
+  chord mode, eight sync types, percussion mode, TZFM and so much more. You're
+  in for years of exploration.
+details: |-
+  Cylonix and Intellijel have collaborated to bring you a sophisticated and deeply complex digital wavetable oscillator with a refined FM synthesis engine. At the core of this module is a powerful FPGA board that has been pushed to the absolute max of its capabilities and crammed full of features.
+
+  Each VCO can select from 128 banks of wavetables, each with 8 individual 512-sample waveforms for a total of 1024 waves. The choice of waveform within the currently selected bank is under voltage control, with smooth interpolation between the waveforms within a bank, allowing a very wide range of different possible waveshapes.
+
+  Oscillator 1 can be operated in a CHORD mode, which runs 8 copies of the oscillator in parallel with adjustable detuning, leading to very fat, rich waveforms, with 64 user selectable chords. The oscillators have extensive modulation capabilities including audio rate (98KHz) Frequency and Phase Modulation (FM and PM) via external sources. Nonlinear combination processes allow the outputs of the two oscillators to interact to generate complex timbres and sonic textures.
+
+  Shapeshifter also includes analog wave folder circuitry to add analog warmth and metallic rasps to the digital oscillator output, and external signals can also be patched in and folded. The module includes a sophisticated preset mode for storing up to 100 panel presets, letting users step through or sequence settings, or morph between the current panel settings and a preset for a powerful real-time performance tool.
+specs: |-
+  - Width: 26HP
+  - Depth: 44mm
+  - Power: 195mA @ +12V, 50mA @ -12V
+  - 128 wavetable banks x 8 waveforms (1024 total waves)
+  - Preset sequencing and morphing across 100 panel presets
+  - Extremely high resolution TZFM (through-zero frequency modulation)
+  - Delay based resonator and 64-band vocoder mode
+  - Analog wavefolder circuitry
+  - Eight sync modes: HARD, SOFT, REV, HOLD, BUMP, 2=1, 1=2, 1-SHOT
+  - Detuneable 8-note chord mode with 64 selectable chords
+io:
+  - key: Ldx4rCWy
+    name: Ratio CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BU9MrmnW
+    name: IFM CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JPZNwF5L
+    name: FM 1 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: yuCWOvV0
+    name: Fold CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: a8VAvXNO
+    name: Mod A In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wKXreAWb
+    name: Shape 1 CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Ry9RykIs
+    name: Shape 2 CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: EZ0JgkdV
+    name: Mod B In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: B3FSghgp
+    name: Pitch 1 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: DDRwnAP0
+    name: Pitch 2 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: r82zuTdL
+    name: Sync In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fwe5kD1g
+    name: Fold In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nlS5sJeS
+    name: Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: k59Pwwiy
+    name: Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: doUHbqUS
+    name: Pulse Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: eRLjDZAz
+    name: Fold Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/cylonix-shapeshifter_manual_2.03_2020.03.10.pdf
+    type: resource
+    title: Manual
+  - url: https://intellijel.com/downloads/manuals/cylonix-shapeshifter_FCC-CE_Compliance.pdf
+    type: resource
+    title: FCC CE Compliance

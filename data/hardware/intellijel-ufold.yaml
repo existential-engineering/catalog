@@ -1,0 +1,67 @@
+id: bizVzI18Uy3jcu4xNFGmN
+name: µFold
+manufacturer: intellijel
+primaryCategory: distortion
+categories:
+  - modular
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/ufold/
+description: "Traditional subtractive synthesis starts with a complex waveform
+  and then filters it down. A wavefolder allows for the opposite: start with
+  simple waveforms and then fold it over itself to create extremely rich and
+  complex timbres."
+details: |-
+  Wavefolding is a technique for reshaping waveforms that (as its name implies) actually folds a wave's peaks back toward center whenever those peaks exceed a certain threshold. Unlike a typical distortion circuit that simply clips any waveform that exceeds some threshold (resulting in increasingly harsh and uniform timbres), wavefolding creates all manner of complex waveshapes with rich, subtle, intertwined harmonics. The addition of CV over the folding parameters yields a shifting, otherworldly sweep of sonic texture that is both musical and unique.
+
+  The µFold is a collaborative design with David G. Dixon. Intellijel looked closely at some of the most loved timbre shaping circuits in classic synth modules, analyzing not just their electrical implementations but also how they sounded and how efficiently they operated. µFold is an amalgamation of that knowledge and research, designed to produce a wide range of timbres while utilizing a versatile and intuitive set of controls.
+
+  The FOLDS control (with CV input and dedicated attenuator) sets how much the input waveform is folded, while the thru-zero SYMMETRY control (with bipolar CV input and dedicated attenuator) biases folding toward the positive or negative peaks. A STAGES switch selects 2, 4 or 6 stages of folding, and the inputs are DC-coupled so CV can be folded as well as audio.
+
+  Combining a µFold with one of the Intellijel Dixie and Rubicon oscillators enables the extremely rich palette of sounds normally associated with complex oscillators, but with far greater flexibility and sonic depth.
+specs: |-
+  - Width: 6HP
+  - Depth: 29mm
+  - Current draw: 28mA @ +12V, 27mA @ -12V
+  - FOLDS control with CV input and dedicated attenuator
+  - Thru-zero SYMMETRY control with bipolar CV input and dedicated attenuator
+  - STAGES switch to select 2, 4 or 6 stages of folding
+  - Rear trimmer to set the maximum drive amount
+  - DC-coupled input accepts audio or CV for folding
+io:
+  - key: KWKSB605
+    name: In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 46VyAxal
+    name: Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wey19FY9
+    name: Folds CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: sssPQxBh
+    name: Sym CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://www.modulargrid.net/e/intellijel-ufold
+    type: resource
+    title: ModularGrid

@@ -28,48 +28,57 @@ specs: |-
   - Power Consumption Idle: <=16W
   - Power Consumption Full: 200W
 io:
-  - name: Analog In
+  - key: FUd8Hxhj
+    name: Analog In
     signalFlow: input
     category: audio
     type: line
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: AES/EBU In
+  - key: 3p0v6Hk7
+    name: AES/EBU In
     signalFlow: input
     category: digital
     type: "aes/ebu"
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: AES/EBU Out (Thru)
+  - key: U2Ncaxfn
+    name: AES/EBU Out (Thru)
     signalFlow: output
     category: digital
     type: "aes/ebu"
     connection: xlr
     maxConnections: 1
     position: Bottom
-  - name: GLM Control Network In
+  - key: jPyKutBQ
+    name: GLM Control Network In
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
     maxConnections: 1
     position: Bottom
-  - name: GLM Control Network Out
+  - key: ai7kd2rg
+    name: GLM Control Network Out
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
     maxConnections: 1
     position: Bottom
-  - name: Mains Power
+  - key: UK0XIeAY
+    name: Mains Power
     signalFlow: input
     category: power
     type: power
     connection: barrel
     maxConnections: 1
     position: Bottom
+prices:
+  - amount: 3177
+    currency: GBP
 links:
   - type: resource
     title: Operating manual (PDF)
