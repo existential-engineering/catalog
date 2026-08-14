@@ -49,8 +49,9 @@ types:
 
   # Wireless types
   - rf # antenna input/output on wireless receivers and transmitters
-  - bluetooth
-  - wifi
+  # NOTE: `bluetooth` and `wifi` are intentionally not valid io types. They are
+  # capabilities, not physical ports — mention them in description/specs
+  # instead. (`rf` stays: antenna jacks are real physical ports.)
 
   # Video types
   - hdmi

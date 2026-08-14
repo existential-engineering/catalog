@@ -1,0 +1,116 @@
+id: ksOBLAtvunFjn1JTxbu60
+name: Dixie II
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+  - discontinued
+supersedes: Nwh8QwHhGrq-_hYBhxDvi
+url: https://intellijel.com/shop/eurorack/dixie-2/
+description: Triangle Core VCO/LFO.
+details: |-
+  The Dixie II is a triangle core VCO/LFO. It has all the great qualities and features of the original Dixie but has been made a bit wider (6 hp instead of 4 hp) for better spacing and is now skiff friendly. The panel knobs are bolted on and the jacks have more space between them.
+
+  This makes a perfect modulation source to pair with the Rubicon. Add a µFold, µVCA and µFade and you have all the ingredients for a powerful and highly flexible complex timbre generator.
+
+  The triangle core is superior for musical FM sounds. In VCO mode the range is 1 Hz to 24 kHz; in LFO mode the range is 0.01 Hz (100 seconds) to 240 Hz, with precise tracking within 0.1% over 8 octaves.
+
+  It offers 6 waveforms: triangle, sine, sawtooth, pulse (with PWM), square (50% duty cycle), and a unique 'zigzag' waveform. There is reversing sync (which can be made into soft sync with an external VCA or attenuator) and a jumper on the PCB to select center- or edge-triggered PWM.
+specs: |-
+  - Triangle core (superior for musical FM sounds)
+  - VCO mode range: 1 Hz to 24 kHz
+  - LFO mode range: 0.01 Hz (100 seconds) to 240 Hz
+  - Precise tracking within 0.1% over 8 octaves
+  - 6 waveforms: triangle, sine, sawtooth, pulse (with PWM), square (50% duty cycle), zigzag
+  - Reversing sync (soft sync possible with external VCA or attenuator)
+  - Jumper on PCB to select center- or edge-triggered PWM
+  - PWM input range +/-5V; pulse width 50% with nothing connected
+  - Width: 6 hp
+  - Max Depth: 40 mm
+  - Power: 42mA @ +12V, 37mA @ -12V
+io:
+  - key: zeJ1txQD
+    name: 1V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: DtL7gA7v
+    name: Lin FM
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: r6uUVOfx
+    name: Sync
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vi21Zads
+    name: PWM
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Lf00e8dj
+    name: Triangle Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: RN9SdqTR
+    name: Sine Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AO0rgIOD
+    name: Saw Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JBatO5eq
+    name: Zig-Zag Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: xms1RMks
+    name: Square Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: RhMeqCRj
+    name: Pulse Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/dixie-2_manual_2018.09.13.pdf
+    type: resource
+    title: Dixie II Manual (2018.09.13)

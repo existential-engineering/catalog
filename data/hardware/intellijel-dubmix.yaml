@@ -1,0 +1,195 @@
+id: uWt34bbU7zs6WprwPMwN9
+name: Dubmix
+manufacturer: intellijel
+primaryCategory: mixer
+categories:
+  - modular
+  - analog
+  - discontinued
+url: https://intellijel.com/shop/legacy/dubmix/
+description: The Dubmix series of modules provides a complete expandable
+  CV-controlled mixing system for your modular. A Dubmix can also be connected
+  via a ribbon cable to an audio out module such as the µJack for convenient
+  interfacing with other equipment.
+details: |-
+  Dubmix is a quad-input stereo VC (voltage-controlled) mixer and the core module of the Dubmix series, to which the Aux Expander and Mini Expander attach via ribbon cable. Each core Dubmix module can be expanded with one Aux Expander and one Mini Expander, and multiple Dubmix units can be chained via ribbon cables to mix their L and R busses together.
+
+  The master section has a MASTER knob controlling the final L/R output level, L/MUTE and R/AUX A switches that toggle what the meter displays, an AUX A SEND knob, and AUX A RETURN L/R knobs controlling how much of the aux return is mixed back into the L and R busses. Master inputs and outputs are MASTER CV (controls overall output level, summed with the MASTER knob), AUX A CV (controls the AUX A send level), stereo AUX A RETURN L+R audio inputs (if nothing is connected to the R return, the L signal is sent there), plus L and R audio outputs, an AUX A mix output, and a MUTE output providing a post-fader mix of all muted channels.
+
+  Each of the 4 channel strips has a Mute button, an AUX A knob (level of that channel sent to the AUX A bus, pre- or post-fader depending on the POST/PRE switch), a PAN knob, and an IN fader (full clockwise gives 6dB of gain with soft saturation). Per-channel inputs/outputs are a PAN CV input (+/-5V voltage control over panning), a modular-level audio IN, and an AUX A CV input (voltage control over the channel's aux send, summed with the AUX A knob).
+
+  The Dubmix core module measures 28 HP wide with a maximum depth of 47mm, drawing 280mA on +12V and 275mA on -12V.
+specs: |-
+  - Quad-input stereo VC (voltage-controlled) mixer
+  - 4 channel strips, each with pan, aux send, and post/pre-fader switch
+  - Channel input gain up to 6dB with soft saturation
+  - Expandable via ribbon cable with one Aux Expander and one Mini Expander
+  - Multiple Dubmix units can be chained via ribbon cable to combine L/R busses
+  - Width: 28 HP
+  - Maximum depth: 47mm
+  - Current draw: 280mA @ +12V, 275mA @ -12V
+io:
+  - key: nvTjGe78
+    name: Master CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ifycr7pw
+    name: Aux A CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KIJ9bOV0
+    name: Aux A Return L
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0lrlEiOK
+    name: Aux A Return R
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Qus7iYDN
+    name: L Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vQeXuKsY
+    name: R Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: EjldGAsY
+    name: Aux A Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 87n3nR4Y
+    name: Mute Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CuaTDWXy
+    name: Channel 1 Pan CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: dJZZiSoR
+    name: Channel 1 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2vAFHqMf
+    name: Channel 1 Aux A CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XLUbSZ8X
+    name: Channel 2 Pan CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 73fMtuxZ
+    name: Channel 2 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 4QiOVCyw
+    name: Channel 2 Aux A CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: WwPwsdch
+    name: Channel 3 Pan CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: EsywUbsl
+    name: Channel 3 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2AbsDunh
+    name: Channel 3 Aux A CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: pNUlYGNz
+    name: Channel 4 Pan CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: duWuLR0M
+    name: Channel 4 In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: DLesyuoN
+    name: Channel 4 Aux A CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/dubmix_manual.pdf
+    type: resource
+    title: Manual

@@ -303,6 +303,21 @@ the wrong value canonical forever.
 
 ---
 
+### E118: Name Contains Scrape Artifacts
+
+The `name` field carries mechanical junk left over from scraping a vendor
+page. There is no legitimate case for any of these:
+
+- **Trademark/legal symbols** (`™`, `®`, `©`, `℠`) — `5150® Iconic® Series` → `5150 Iconic Series`
+- **HTML entities** (`&#038;`, `&amp;`) — decode them to the real character
+- **Leading/trailing separators or whitespace** — `SE-DJ5000 —` → `SE-DJ5000`
+- **Consecutive spaces** — usually left behind after removing a symbol
+
+**Fix:** Clean the name in place. The rest of the title (taglines, brand
+prefixes) is covered by the advisory warnings W129/W130.
+
+---
+
 ### E199: Validation Error
 
 A generic validation error that doesn't fall into a more specific category.
@@ -532,6 +547,26 @@ An IO entry sets `maxConnections` greater than 1 on a single-jack connection typ
 **Fix:** Model each physical jack as its own `io` entry with `maxConnections: 1` (see the Eventide H90 for an example). If the entry really is an intentional aggregate for a connector that carries multiple links (e.g., a D-sub snake), use the correct `connection` type instead. Names containing words like "all", "slots", or "bank" are treated as aggregates and not flagged.
 
 **Triage tip:** Run `pnpm io-quality` to see the full I/O data-quality worklist (combine candidates, collapsed-pair names, missing I/O, and column/row coverage gaps).
+
+---
+
+### W129: Manufacturer Name Duplicated in Product Name
+
+The `name` field starts with the manufacturer's display name. The manufacturer is stored in its own field and indexed separately (`manufacturer_name` in FTS), so repeating it in `name` duplicates data: `dbx 286s` under manufacturer `dbx` should be `286s`.
+
+Not flagged: self-titled host-compatibility names where stripping the brand leaves a fragment (`Ampl4 for Positive Grid Bias`), and manufacturer names shorter than 3 characters.
+
+**Fix:** Drop the manufacturer prefix from `name`. If users commonly search the compound form, it still works — search composes the manufacturer and product name. Do NOT add the manufacturer display name to `searchTerms` (it is already indexed).
+
+---
+
+### W130: Name Contains a Tagline-Style Separator
+
+The `name` contains an en/em dash or pipe with surrounding spaces — the signature of a scraped page-title tagline (`Toolbox – Sequencer and Function Generator`) or a storefront brand suffix (`Groth | Wavelet Audio`).
+
+Plain hyphens are not flagged (`AmpHub - Mizar Dist Plus Model` is a real product name), and pipes without spaces are real model numbers (Crown `CDi 4|600`).
+
+**Fix:** Keep only the product name; move descriptive text to `description`. If a product sold through a storefront carries the real developer's brand as a suffix, set `manufacturer` to that developer instead. If the separator is part of the official product name (Spitfire's `Alex Epton — Entropy`), add the slug to `TAGLINE_EXCLUSIONS` in `scripts/lib/name-hygiene.ts`.
 
 ---
 

@@ -6,53 +6,64 @@ categories:
   - granular
   - discontinued
 url: https://bastl-instruments.com/eurorack/modules/spa
-description: SPA is a discontinued Eurorack expander for the Bastl Instruments grandPA granular sampler, adding CV inputs for grain size, shift speed, start/end or attack/release, and crush on both channels A and B, plus a clock input to trigger grain shifts. Requires connection to grandPA via rear ribbon cable.
+description: SPA is a discontinued Eurorack expander for the Bastl Instruments
+  grandPA granular sampler, adding CV inputs for grain size, shift speed,
+  start/end or attack/release, and crush on both channels A and B, plus a clock
+  input to trigger grain shifts. Requires connection to grandPA via rear ribbon
+  cable.
 details: |-
   5HP width, 50mm depth. Power: +12V <25mA. Expander for grandPA module.
 io:
-  - name: CV Grain Size
+  - key: kQFRbGQt
+    name: CV Grain Size
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: CV Shift Speed
+  - key: P3Jv6w0y
+    name: CV Shift Speed
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: CV Start/End or Attack/Release
+  - key: zz5Pc1W0
+    name: CV Start/End or Attack/Release
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: CV Crush
+  - key: XtQ8PJxl
+    name: CV Crush
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: Grain Sync
+  - key: BcfK90JD
+    name: Grain Sync
     signalFlow: input
     category: digital
     type: clock
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - name: grandPA Expander Bus
+  - key: 5rOqSfXw
+    name: grandPA Expander Bus
     signalFlow: bidirectional
     category: digital
     type: proprietary
     connection: pin-header
     maxConnections: 1
     position: Bottom
-  - name: Eurorack Bus Power
+  - key: 94ukQhCV
+    name: Eurorack Bus Power
     signalFlow: input
     category: power
     type: power

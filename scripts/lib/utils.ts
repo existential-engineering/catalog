@@ -159,10 +159,15 @@ export function parseErrorPath(pathStr: string): (string | number)[] {
  */
 export function getYamlFiles(dir: string): string[] {
   if (!fs.existsSync(dir)) return [];
-  return fs
-    .readdirSync(dir)
-    .filter((f) => f.endsWith(".yaml") || f.endsWith(".yml"))
-    .map((f) => path.join(dir, f));
+  return (
+    fs
+      .readdirSync(dir)
+      .filter((f) => f.endsWith(".yaml") || f.endsWith(".yml"))
+      // Sorted so the SQLite build is deterministic: readdir order is
+      // filesystem-dependent, and insertion order feeds autoincrement ids.
+      .sort()
+      .map((f) => path.join(dir, f))
+  );
 }
 
 /**

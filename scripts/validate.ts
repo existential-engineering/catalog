@@ -13,6 +13,13 @@ import { z } from "zod";
 import { looksLikeAcronymName } from "./lib/acronym-exclusions.js";
 import { getDocsUrl, ValidationErrorCode } from "./lib/error-codes.js";
 import { isIoCombineCandidate } from "./lib/io-heuristics.js";
+import { findDuplicateIoKeys, IO_KEY_PATTERN } from "./lib/io-keys.js";
+import {
+  findNameArtifacts,
+  hasTaglineSeparator,
+  manufacturerNameIsPrefix,
+  TAGLINE_EXCLUSIONS,
+} from "./lib/name-hygiene.js";
 import type {
   CategoriesSchema,
   CategoryAliasesSchema,
@@ -122,6 +129,11 @@ function getErrorCodeFromZodIssue(issue: {
 }): ValidationErrorCode {
   const path = issue.path.join(".");
   const message = issue.message.toLowerCase();
+
+  // Name hygiene errors
+  if (message.includes("name artifact")) {
+    return ValidationErrorCode.E118_NAME_ARTIFACT;
+  }
 
   // URL errors
   if (message.includes("url") || message.includes("invalid url")) {
@@ -354,6 +366,13 @@ const VersionSchema = z
 
 const IOSchema = z
   .object({
+    // Stable per-port key (assigned by pnpm assign-ids). Optional until the
+    // backfill completes, then flipped to required (AUREO-705). Immutable
+    // once assigned: Studio setup edges reference ports by this key.
+    key: z
+      .string()
+      .regex(IO_KEY_PATTERN, "IO key must be exactly 8 alphanumeric characters")
+      .optional(),
     name: z.string(),
     signalFlow: z.string().check((ctx) => {
       if (!VALID_IO_SIGNAL_FLOWS.has(ctx.value)) {
@@ -496,12 +515,29 @@ const createPlatformArrayValidator = () =>
       }
     });
 
+// Helper for name validation (E118): scraped junk in names hard-fails.
+// Advisory name style (manufacturer prefix, taglines) is W129/W130 in
+// collectWarnings, since those need the manufacturer map / human judgment.
+const createNameValidator = () =>
+  z
+    .string()
+    .min(1, "Name is required")
+    .check((ctx) => {
+      for (const problem of findNameArtifacts(ctx.value)) {
+        ctx.issues.push({
+          code: "custom",
+          message: `Name artifact: name ${problem}`,
+          input: ctx.value,
+        });
+      }
+    });
+
 // =============================================================================
 // COLLECTION ZOD SCHEMAS
 // =============================================================================
 
 const ManufacturerSchema = z.object({
-  name: z.string().min(1, "Name is required"),
+  name: createNameValidator(),
   companyName: z.string().optional(),
   parentCompany: z.string().optional(),
   defunct: z.boolean().optional(),
@@ -512,7 +548,7 @@ const ManufacturerSchema = z.object({
 
 const SoftwareSchema = z
   .object({
-    name: z.string().min(1, "Name is required"),
+    name: createNameValidator(),
     manufacturer: z.string().min(1, "Manufacturer reference is required"),
     categories: z
       .array(z.string())
@@ -579,7 +615,7 @@ const SoftwareSchema = z
 
 const HardwareSchema = z
   .object({
-    name: z.string().min(1, "Name is required"),
+    name: createNameValidator(),
     manufacturer: z.string().min(1, "Manufacturer reference is required"),
     categories: z
       .array(z.string())
@@ -634,6 +670,20 @@ const HardwareSchema = z
       }
     });
   })
+  .check((ctx) => {
+    // IO keys must be unique within the entry (they identify ports for
+    // Studio setup edges — see io-keys.ts).
+    const io = ctx.value.io;
+    if (!io || io.length === 0) return;
+    for (const dup of findDuplicateIoKeys(io)) {
+      ctx.issues.push({
+        code: "custom",
+        message: `duplicate io key '${dup}' — io keys must be unique within an entry.`,
+        path: ["io"],
+        input: dup,
+      });
+    }
+  })
   .refine(
     (data) => !data.releaseDateYearOnly || (!!data.releaseDate && /^\d{4}$/.test(data.releaseDate)),
     {
@@ -665,7 +715,7 @@ const HardwareSchema = z
 // Content schema: like Software but without formats, platforms, identifiers
 const ContentSchema = z
   .object({
-    name: z.string().min(1, "Name is required"),
+    name: createNameValidator(),
     manufacturer: z.string().min(1, "Manufacturer reference is required"),
     categories: z
       .array(z.string())
@@ -711,7 +761,7 @@ const ContentSchema = z
 // Accessory schema: like Hardware but without io, variants
 const AccessorySchema = z
   .object({
-    name: z.string().min(1, "Name is required"),
+    name: createNameValidator(),
     manufacturer: z.string().min(1, "Manufacturer reference is required"),
     categories: z
       .array(z.string())
@@ -1079,7 +1129,8 @@ function collectWarnings(
   lineCounter: ReturnType<typeof loadYamlFileWithPositions>["lineCounter"],
   allSoftwareSlugs?: Set<string>,
   allHardwareSlugs?: Set<string>,
-  manufacturerUrlMap?: Map<string, string>
+  manufacturerUrlMap?: Map<string, string>,
+  manufacturerNameMap?: Map<string, string>
 ): ValidationWarning | null {
   const warnings: ValidationWarningDetail[] = [];
   const relativeFile = path.relative(process.cwd(), filePath);
@@ -1312,6 +1363,39 @@ function collectWarnings(
     }
   }
 
+  // W129: manufacturer display name duplicated at the start of the product
+  // name. The manufacturer is stored/indexed separately, so "dbx 286s"
+  // under manufacturer dbx should just be "286s".
+  if (data.name && data.manufacturer && manufacturerNameMap) {
+    const mfrName = manufacturerNameMap.get(data.manufacturer);
+    if (mfrName && manufacturerNameIsPrefix(data.name, mfrName)) {
+      const line = getLineForPath(document, lineCounter, ["name"]);
+      warnings.push({
+        code: ValidationErrorCode.W129_MANUFACTURER_IN_NAME,
+        message: `Name '${data.name}' starts with the manufacturer name '${mfrName}' — drop the prefix; display and search compose the two.`,
+        path: "name",
+        line: line ?? undefined,
+      });
+    }
+  }
+
+  // W130: en/em dash or pipe with surrounding spaces — usually a scraped
+  // marketing tagline ("Toolbox – Sequencer and Function Generator") or a
+  // storefront brand suffix ("Groth | Wavelet Audio"). Officially-styled
+  // exceptions live in TAGLINE_EXCLUSIONS.
+  if (data.name && hasTaglineSeparator(data.name)) {
+    const slug = path.basename(relativeFile, path.extname(relativeFile));
+    if (!TAGLINE_EXCLUSIONS.has(slug)) {
+      const line = getLineForPath(document, lineCounter, ["name"]);
+      warnings.push({
+        code: ValidationErrorCode.W130_NAME_TAGLINE,
+        message: `Name '${data.name}' contains a tagline-style separator — keep only the product name (or add the slug to TAGLINE_EXCLUSIONS in scripts/lib/name-hygiene.ts if the separator is official).`,
+        path: "name",
+        line: line ?? undefined,
+      });
+    }
+  }
+
   return warnings.length > 0 ? { file: relativeFile, warnings } : null;
 }
 
@@ -1359,13 +1443,15 @@ function validate(): ValidationResult {
   const accessorySupersedesMap = new Map<string, string>(); // id -> supersedes_id
 
   const manufacturerUrlMap = new Map<string, string>();
+  const manufacturerNameMap = new Map<string, string>();
   for (const file of manufacturerFiles) {
     const slug = path.basename(file, path.extname(file));
     allManufacturers.add(slug);
     try {
       const content = fs.readFileSync(file, "utf-8");
-      const mfrData = parseYaml(content) as { url?: string };
+      const mfrData = parseYaml(content) as { url?: string; name?: string };
       if (mfrData.url) manufacturerUrlMap.set(slug, mfrData.url);
+      if (mfrData.name) manufacturerNameMap.set(slug, mfrData.name);
     } catch {
       // Ignore parse errors - they're caught later
     }
@@ -1482,7 +1568,8 @@ function validate(): ValidationResult {
           lineCounter,
           allSoftwareSlugs,
           allHardwareSlugs,
-          manufacturerUrlMap
+          manufacturerUrlMap,
+          manufacturerNameMap
         );
         if (w) warnings.push(w);
       } catch {
@@ -1508,7 +1595,8 @@ function validate(): ValidationResult {
           lineCounter,
           allSoftwareSlugs,
           allHardwareSlugs,
-          manufacturerUrlMap
+          manufacturerUrlMap,
+          manufacturerNameMap
         );
         if (w) warnings.push(w);
       } catch {

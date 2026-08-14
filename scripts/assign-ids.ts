@@ -15,6 +15,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { nanoid } from "nanoid";
 import { parseDocument } from "yaml";
+import { assignIoKeys } from "./lib/io-keys.js";
 import type { Collection } from "./lib/types.js";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
@@ -75,7 +76,7 @@ function assignIds(): void {
     "hardware",
     "accessories",
   ];
-  const stats = { assigned: 0, skipped: 0 };
+  const stats = { assigned: 0, skipped: 0, ioKeys: 0 };
 
   for (const collection of collections) {
     const files = getYamlFiles(path.join(DATA_DIR, collection));
@@ -85,40 +86,56 @@ function assignIds(): void {
       const doc = parseDocument(content);
       const data = doc.toJSON() as Record<string, unknown>;
 
-      // Skip if already has a valid id
+      let changed = false;
+
       if (typeof data.id === "string" && data.id.length > 0) {
         stats.skipped++;
-        continue;
+      } else {
+        // Assign a unique nanoid
+        const newId = generateUniqueId(existingIds);
+
+        // Add id at the beginning of the document
+        doc.set("id", newId);
+
+        // Reorder to put id first
+        const items = doc.contents as { items?: { key: { value: string } }[] };
+        if (items?.items) {
+          const idIndex = items.items.findIndex((item) => item.key?.value === "id");
+          if (idIndex > 0) {
+            const [idItem] = items.items.splice(idIndex, 1);
+            items.items.unshift(idItem);
+          }
+        }
+
+        console.log(`  ✓ ${collection}/${path.basename(file)}: assigned id ${newId}`);
+        stats.assigned++;
+        changed = true;
       }
 
-      // Assign a unique nanoid
-      const newId = generateUniqueId(existingIds);
-
-      // Add id at the beginning of the document
-      doc.set("id", newId);
-
-      // Reorder to put id first
-      const items = doc.contents as { items?: { key: { value: string } }[] };
-      if (items?.items) {
-        const idIndex = items.items.findIndex((item) => item.key?.value === "id");
-        if (idIndex > 0) {
-          const [idItem] = items.items.splice(idIndex, 1);
-          items.items.unshift(idItem);
+      // Hardware ports get stable per-port keys (AUREO-702)
+      if (collection === "hardware") {
+        const keysAssigned = assignIoKeys(doc);
+        if (keysAssigned > 0) {
+          console.log(
+            `  ✓ ${collection}/${path.basename(file)}: assigned ${keysAssigned} io key(s)`
+          );
+          stats.ioKeys += keysAssigned;
+          changed = true;
         }
       }
 
-      // Write back
-      fs.writeFileSync(file, doc.toString());
-      console.log(`  ✓ ${collection}/${path.basename(file)}: assigned id ${newId}`);
-      stats.assigned++;
+      if (changed) {
+        fs.writeFileSync(file, doc.toString());
+      }
     }
   }
 
   console.log(`\n✅ ID assignment complete!`);
   console.log(`   Assigned: ${stats.assigned}`);
   console.log(`   Already had ID: ${stats.skipped}`);
+  console.log(`   IO keys assigned: ${stats.ioKeys}`);
 
-  if (stats.assigned > 0) {
+  if (stats.assigned > 0 || stats.ioKeys > 0) {
     console.log(`\nNext steps:`);
     console.log(`  1. Run 'pnpm format' to normalize YAML formatting`);
     console.log(`  2. Commit the changes`);

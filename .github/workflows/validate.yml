@@ -7,12 +7,24 @@ on:
       - "data/**"
       - "schema/**"
       - "scripts/**"
+      # Dependency manifests trigger the audit job below. Without these a
+      # renovate PR gets no Validate run at all, so a bump that breaks tsx,
+      # vitest or better-sqlite3 only surfaces on the next data PR.
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - ".github/workflows/validate.yml"
+  # Keep these paths in sync with the push trigger above.
   pull_request:
     branches: [main]
     paths:
       - "data/**"
       - "schema/**"
       - "scripts/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - ".github/workflows/validate.yml"
 
 permissions:
   contents: read
@@ -25,7 +37,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
 
@@ -39,9 +51,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-
-      - name: Audit dependencies
-        run: pnpm audit --audit-level=high
 
       - name: Lint
         run: pnpm lint
@@ -77,3 +86,32 @@ jobs:
 
       - name: Build database (test)
         run: pnpm build 0
+
+  # Kept out of the validate job on purpose. `pnpm audit` goes red when an
+  # advisory is published upstream, with no change to this repo. As the first
+  # step of a single job it skipped every data check behind it, so the Validate
+  # check was red on every open PR regardless of content (AUREO-781). Running it
+  # as its own job means a fresh advisory blocks dependency hygiene without ever
+  # masking whether the catalog data itself is valid.
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: "24"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Audit dependencies
+        run: pnpm audit --audit-level=high
