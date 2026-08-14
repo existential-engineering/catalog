@@ -1,0 +1,226 @@
+id: BfHhsDG-L6YlMqzUgO3WA
+name: West Pest
+manufacturer: cre8audio
+primaryCategory: semi-modular
+categories:
+  - synthesizer
+  - modular-synthesizer
+  - analog
+  - sequencer
+  - arpeggiator
+url: https://www.cre8audio.com/westpest
+prices:
+  - amount: 349.99
+    currency: USD
+description: Designed and developed in partnership with Pittsburgh Modular
+  Synthesizers, West Pest is a powerful west coast style/influenced analog,
+  monophonic full voice synthesizer with many unique sound-shaping tools and
+  deep performance capabilities.
+details: |-
+  West Coast style is typically characterized by additive derived, rich and complex sounds. Often more traditional user interface elements are replaced by the abstract and experimental.
+
+  West Pest's oscillator, designed in partnership with Pittsburgh Modular Synthesizers, stems from 10 years of continuous development of analog oscillator research.
+
+  A wave folder shapes sounds differently than a filter. Instead of removing harmonics, the wave folder increases the harmonic content of the oscillator by folding the wave in on itself to create sonically rich waveforms.
+
+  The Dynamics Controller is a fascinating invention from the folks at Pittsburgh Modular Synthesizers. It combines the functionality of an envelope generator, VCA, and a low pass filter. When a note is triggered, the Dynamics Controller opens with a sharp, percussive attack. Once the note is released, the Dynamics Controller adds a magical, voltage controllable, ringing decay as the amplitude drops and harmonics are rolled off.
+
+  West Pest provides access to 8 different modules (Oscillator, wave contour, dynamics controller, LFO, multi-mod tool, MIDI to CV converter, sequencer, and button keyboard) worth of functionality with 18 Eurorack compatible patch points to plug into itself and your other gear.
+specs: |-
+  - West Coast style monophonic synthesizer with additive elements
+  - Controllable via MIDI, CV, and integrated button keyboard
+  - Fully patchable with 18 Eurorack-compatible patch points across 8 internal modules
+  - 32-step sequencer with up to 13 storable presets
+  - Generative sequencing mode
+  - Clock-synced arpeggiator
+  - Step sequencer can be transposed and manipulated via MIDI or the button keyboard
+  - 100% analog oscillator developed with Pittsburgh Modular Synthesizers
+  - Oscillator waveforms: sine, triangle, saw (combinable), with linear FM
+  - Pittsburgh Modular wave folder/shaper circuit
+  - PGH Dynamics Controller: hybrid envelope generator, VCA, and lowpass gate with voltage-controllable release
+  - Dual-range analog LFO with square and triangle outputs (High: 2Hz-500Hz, Low: 41 seconds-5Hz)
+  - Digital multi-mod tool with CV modulation control, random generator, extra LFO, and envelope generator
+  - Internal clock with tap tempo, external clock sync, and built-in clock divider
+  - Removable 40HP Eurorack module (25mm depth) or usable standalone in included case
+  - Eurorack power draw: 250mA at +12V, 190mA at -12V
+  - Oscillator input voltage range: 0-10V
+io:
+  - key: N7OeHaon
+    name: Oscillator Pitch In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: MYO6h0zJ
+    name: Oscillator Sync In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vvxjlLIk
+    name: Oscillator FM In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GrS5DPWi
+    name: Waveform Contour Fold In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rsj0XnOW
+    name: Waveform Contour Fold Mod In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BCp13cMa
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5f6BpLkp
+    name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: YD1E0y4S
+    name: Dynamics In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0Z0dnZ0H
+    name: Dynamics Mod In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6bAXl5eb
+    name: Dynamics Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BJwag0A5
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Wii2NKUe
+    name: Clock Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: WDdvlOQs
+    name: MIDI Pitch Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: n9Bmlohg
+    name: MIDI Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 4H9Auopk
+    name: Multi-Tool Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: b8Qgp09Z
+    name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 7AgIorPX
+    name: Waveform Contour Fold Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: TGimulIe
+    name: Oscillator Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 42yY8tZe
+    name: LFO Square Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: aFz6ny4Z
+    name: LFO Triangle Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: DIQhOjM1
+    name: Eurorack Power Header
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.cre8audio.com/s/West-Pest-Manual-v1_2.pdf
+    type: resource
+    title: West Pest User Guide / Manual (PDF)
+videos:
+  - provider: youtube
+    videoId: wrR4jJ9Mi2A
+  - provider: youtube
+    videoId: rwNeMVXCB70
+  - provider: youtube
+    videoId: flV7IdC22Ts
