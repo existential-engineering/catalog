@@ -1,5 +1,109 @@
 # catalog
 
+## 3.49.0
+
+### Minor Changes
+
+- a2887f8: Import Intellijel (168 hardware/accessory entries).
+
+  Eurorack modules, cases, power systems, and accessories:
+  Metropolix, Cascadia, Atlantix, Rubicon², Planar², Shapeshifter,
+  Rainmaker, plus the 1U tile line, 4U/7U performance cases,
+  TPS power supplies, and the recovered legacy line (Metropolis,
+  Rubicon, Dixie, µMod, µScale, µStep, Spock, Plog) with
+  supersedes edges wired between generations.
+
+## 3.48.1
+
+### Patch Changes
+
+- f795592: Backfill prices for 1,271 hardware entries that were missing them. Befaco
+  modules (50) sourced from the official Befaco store; ~1,221 other entries
+  across ~90 manufacturers researched from manufacturer webstores and major
+  retailers (Sweetwater, Thomann, B&H, Andertons). Prices are bare
+  `amount + currency`. Discontinued products and entries with no confidently
+  findable price were left unpriced. Hardware price coverage rises from 36% to
+  58%.
+
+## 3.48.0
+
+### Minor Changes
+
+- 1896b74: Remove April Fools gag plugins and clean up joke-framed copy.
+
+  Deleted two Joey Sturgis Tones novelty entries that are gags rather than
+  usable tools: JST Black Box (a plugin that "doesn't actually do anything" by
+  design) and JST Impossible Fader (a fader deliberately engineered to ignore
+  input). Both were real downloads but function as jokes, not production gear.
+
+  Kept the Deathcore Soundboard — a genuinely functional sample instrument (16
+  triggerable vocal phrases) — but rewrote its description/details/specs to drop
+  the "THIS PLUGIN STARTED AS AN APRIL FOOLS' JOKE" framing and gag "Known
+  Issues", and corrected its platforms (VST3/AU/AAX plugin, no Linux build).
+
+  The JHS Voice Tech fake was already removed in #595.
+
+## 3.47.0
+
+### Minor Changes
+
+- cde6a99: Import Dirtywave (3 products): the M8 Tracker Model:02 and the discontinued
+  original M8 Tracker (superseded by Model:02), plus the DW01 Synthdrums preset
+  pack. Adds the Dirtywave manufacturer.
+
+## 3.46.0
+
+### Minor Changes
+
+- b0d3b14: Import Dangerous Music (23 hardware entries).
+
+  Analog summing mixers (2-BUS family), monitor controllers
+  (MONITOR/MONITOR-ST/MONITOR-SR/SOURCE), converters (CONVERT
+  series), the BAX EQ/BAX500 shelving equalizers, COMPRESSOR,
+  LIAISON patchbay, MASTER transfer console, and the S&M
+  (Sum-Minus) mid-side matrix.
+
+- 07e430e: Clean scraped junk out of product names and remove standalone bundle entries.
+
+  Renamed ~310 entries: stripped page-title marketing taglines ("nanobox |
+  tangerine – Compact Streaming Sampler" → "Nanobox Tangerine"), trademark
+  symbols (™/®/©), HTML entities, and manufacturer-name prefixes ("dbx 286s"
+  → "286s") — the manufacturer is stored and indexed separately, so the
+  prefix duplicated data. Reattributed seven Sonuscore storefront listings
+  to their actual developers (Wavelet Audio, Soundiron) and added
+  searchTerms where names became bare acronyms (DDP, DJDI, DRMR, EX) or
+  lost a commonly searched compound form (EHX by JHS Big Muff 2, BAE 8CR).
+
+  Removed 86 standalone bundle/suite entries (HoRNet, Antelope Audio,
+  Arturia V Collection, Soundtoys 5, Softube collections, Lexicon PCM
+  bundles, and more) whose member products exist individually — a bundle is
+  a commercial SKU, not a discrete product. Integrated products that only
+  carry "Suite"/"Bundle" in the name (Waldorf Edition 2, PSP MixPack2,
+  Ampeg-style single packages) were kept.
+
+- 07e430e: Add name-hygiene validation and bundle-entry auditing.
+
+  `pnpm validate` now hard-fails on mechanical name junk (E118: trademark
+  symbols, HTML entities, stray leading/trailing separators, doubled
+  spaces) and warns when a name starts with the manufacturer's display
+  name (W129) or contains a tagline-style en/em-dash or pipe separator
+  (W130, with a reviewed exclusion list for official stylings).
+  `pnpm dataset:audit` gains two Tier-2 review checks: name-tagline
+  (plain-hyphen suffixes that may be scraped taglines) and bundle-entry
+  (suite/bundle categories or bundle-ish software names, with an
+  allowlist for integrated products). Conventions documented in CLAUDE.md
+  and docs/VALIDATION_ERRORS.md.
+
+- 07e430e: Remove Bluetooth and Wi-Fi from hardware io sections.
+
+  Wireless capabilities are not physical ports, so they don't belong in
+  the io graph. Removed the Bluetooth io entry from 31 hardware files and
+  the Wi-Fi entry from the KEF XiO, and dropped `bluetooth` and `wifi`
+  from the io type vocabulary so future imports fail validation instead
+  of reintroducing them. Wireless capabilities remain documented in
+  description/details/specs. Also corrected the Midas MR18's Ethernet and
+  ULTRANET ports, which were mislabeled as `dante`.
+
 ## 3.45.0
 
 ### Minor Changes

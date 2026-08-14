@@ -1,0 +1,97 @@
+id: ndFh4AWKS25OJayGn-dt6
+name: Amps
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - analog
+url: https://intellijel.com/shop/eurorack/amps/
+prices:
+  - amount: 149
+    currency: USD
+description: "Get Amped Amps contains two precision linear VCAs that have been
+  carefully designed to offer a wealth of flexibility and additional
+  functionality. The front panel controls and signal normals allow these two
+  VCAs to also be configured to function as: line level boosters, crossfaders,
+  ring modulators, mixers, and much more. They can also be chained together by
+  way of an included cable to form larger, more complex systems."
+details: |-
+  Amps features cascaded CV inputs and cascaded mix outputs allowing it to be used in a number of versatile configurations. A boost switch enables you to amplify each VCA’s input by either +6dB or +20dB — ideal for boosting low amplitude signals or pleasingly overdriving audio. The addition of a phase inversion switch for the second channel allows Amps to function as a ring modulator. The CV normalization, which can also be inverted and offset, also allows for VC-Crossfader functionality.
+
+  Manual LEVEL slider per VCA, convenient when using the module as a mixer or for biasing the signal for CV (such as when modulating the VCA with a bipolar LFO). Dedicated CV attenuators with dual color LEDs for monitoring bipolar CV signals, and a linear response curve.
+
+  Input and CV normalling of VCA A to VCA B allows a single source to feed and/or control both VCAs, and output normalling of VCA A to VCA B allows both VCAs to feed a single output. All inputs and outputs are DC coupled.
+
+  4-pin link connectors on the rear panel allow multiple Amps modules to be chained together to create a 4-channel mixer, 6-channel mixer, etc.
+specs: |-
+  - Width: 6HP
+  - Depth: 36mm (42mm with 4 pin cable attached)
+  - Power: 40mA @ +12V, 46mA @ -12V
+  - Boost switch: +6dB or +20dB per VCA
+  - Phase Invert switch on VCA B for ring modulation
+  - CV Invert switch on both VCAs for crossfading
+  - All inputs and outputs DC coupled
+io:
+  - key: YpEBMqJa
+    name: VCA A CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Hh1Yz6xd
+    name: VCA A In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nvntn4cX
+    name: VCA A Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: T5TitJGh
+    name: VCA B CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tcYL76v1
+    name: VCA B In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: NG0CptPD
+    name: VCA B Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Ycemnfiv
+    name: Link
+    signalFlow: bidirectional
+    category: audio
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://intellijel.com/downloads/manuals/amps_manual_2026.02.09.pdf
+    type: resource
+    title: Manual (2026.02.09)
+  - url: https://modulargrid.net/e/intellijel-amps
+    type: resource
+    title: ModularGrid

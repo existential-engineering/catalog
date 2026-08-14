@@ -38,49 +38,56 @@ specs: |-
   - HDSPe AoX Expansion Board Optical Version: 2x MADI SFP module slots and Word Clock BNC connector (SFP Multi Mode modules included, SFP Single Mode module optional)
   - MADI I/O via expansion: 128/64/32 channels at 48/96/192 kHz sampling rate
 io:
-  - name: Dante Primary
+  - key: LmDwd4Er
+    name: Dante Primary
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
     maxConnections: 64
     position: Right
-  - name: Dante Secondary
+  - key: VbUVi8t7
+    name: Dante Secondary
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
     maxConnections: 64
     position: Right
-  - name: AES/EBU I/O
+  - key: mCKvucmi
+    name: AES/EBU I/O
     signalFlow: bidirectional
     category: digital
     type: aes/ebu
     connection: built-in
     maxConnections: 2
     position: Right
-  - name: Phones
+  - key: lVD44wLB
+    name: Phones
     signalFlow: output
     category: audio
     type: headphone
     connection: 1/4-inch
     maxConnections: 1
     position: Right
-  - name: MIDI I/O
+  - key: ZV4IuHtI
+    name: MIDI I/O
     signalFlow: bidirectional
     category: midi
     type: midi
     connection: built-in
     maxConnections: 16
     position: Right
-  - name: MADI Expansion Header A
+  - key: XAoxXRs4
+    name: MADI Expansion Header A
     signalFlow: bidirectional
     category: digital
     type: adat
     connection: pin
     maxConnections: 64
     position: Top
-  - name: MADI Expansion Header B
+  - key: 4t4T6Imn
+    name: MADI Expansion Header B
     signalFlow: bidirectional
     category: digital
     type: adat
@@ -89,6 +96,9 @@ io:
     position: Top
 versions:
   - name: HDSPe AoX-D
+prices:
+  - amount: 1999
+    currency: USD
 links:
   - type: resource
     title: Online documentation

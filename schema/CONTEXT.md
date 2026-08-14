@@ -825,8 +825,6 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `clock`
 - `gpio`
 - `rf`
-- `bluetooth`
-- `wifi`
 - `hdmi`
 - `video`
 - `power`

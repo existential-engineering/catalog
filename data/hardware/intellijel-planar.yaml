@@ -1,0 +1,159 @@
+id: 4dFEB3Hm_Rce1JmDFWmya
+name: Planar
+manufacturer: intellijel
+primaryCategory: mixer
+categories:
+  - modular
+  - analog
+  - panning
+  - discontinued
+url: https://intellijel.com/shop/legacy/planar/
+description: Planar vector joystick / quad panner. Put up to four sources into
+  inputs A, B, C and D and use the joystick to create a vector mix, or plug one
+  source into input A and steer it to outputs A, B, C and D.
+details: |-
+  This has to be one of the most fun modules we have ever played with! With just a few audio and CV sources and some inter-dependencies (i.e. using the joystick CV to simultaneously modify the signals being processed by the VCAs) you quickly get highly complex sounds that you can easily control and play with.
+
+  Vector mixing: put up to four sources into inputs A, B, C and D and then use the joystick to create the vector mix. Positioning the joystick in any corner will isolate that particular source; putting the joystick in the center will create an even blend of all four sources. The resulting mix is taken from the MIX output. Quad panning: plug one source into input A and steer it to outputs A, B, C and D. You can also do stereo panning by just using a pair of outputs.
+
+  The SENSE gate output is a slew detector, meaning the gate is only active while you are moving the joystick, which is excellent for driving envelopes/VCAs so the output mix is only heard while the joystick is in motion. A pushbutton manually triggers a second gate output. The joystick produces either unipolar (0-5V) or bipolar (-5V to +5V) switchable CV outputs.
+
+  The module accepts X and Y axis CV inputs. By using out-of-phase LFO sources (such as outputs from the Dr. Octature) you can create really interesting swirling/circular patterns. This input is also very useful when coordinated with a CV recorder: you can record the modulation from the X and Y outputs, turn the joystick off (via the switch at top left) and play the modulation back into the X and Y inputs to recreate a complex quad panning or vector mixing jam.
+
+  The module is reversible: it ships with a second faceplate designed to be mounted upside down (so the joystick is at the bottom), with jumpers on the back of the module to coordinate the reversed orientation of the joystick. This is to facilitate use in a skiff.
+specs: |-
+  - Width: 14HP
+  - Max depth: 38mm
+  - Current draw: 103mA @ +12V, 95mA @ -12V
+  - Minimum joystick height: 27mm
+  - Vector mixing of up to four sources with MIX output
+  - Quad panning of one source to four outputs (or stereo panning using a pair of outputs)
+  - Joystick CV outputs switchable between unipolar (0-5V) and bipolar (-5V to +5V)
+  - SENSE gate output (slew detector, active while the joystick is moving) plus pushbutton manual gate output
+  - X and Y axis CV inputs for external control / CV-recorder playback; joystick on/off switch
+  - Ships with a second faceplate and rear jumpers for reversed (joystick-down) mounting in skiffs
+io:
+  - key: DE3ffeL5
+    name: In A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: V4SWhvEI
+    name: In B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tPkfwSLV
+    name: In C
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ml6Yn4yv
+    name: In D
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: RtvNmxkg
+    name: Mix Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: SSDHi6xA
+    name: Out A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 7WK2rqU5
+    name: Out B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: QjquBsdU
+    name: Out C
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: aZRpk5h7
+    name: Out D
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: MpZXIhQ7
+    name: X CV In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gqzbl0UK
+    name: Y CV In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: YUusmZFb
+    name: X CV Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fEQMtYxU
+    name: Y CV Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: PrXRqVxD
+    name: Sense Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XAE0tHJf
+    name: Manual Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+videos:
+  - provider: youtube
+    videoId: y25BwF0ikUs
+    title: Planar demo 1

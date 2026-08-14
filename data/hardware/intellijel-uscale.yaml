@@ -1,0 +1,67 @@
+id: jHlqrxBL7hRkUqY5Kx4gb
+name: µScale
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - digital
+  - discontinued
+url: https://intellijel.com/shop/legacy/uscale/
+description: CV quantizer and musical interval generator in 4HP. A highly
+  versatile and very musical device for creating interesting, beautiful and
+  harmonious musical riffs from just about any analog CV sources.
+details: |-
+  The µScale is a CV quantizer and musical interval generator in 4HP: a highly versatile and very musical device for creating interesting, beautiful and harmonious musical riffs from just about any analog CV sources.
+
+  Twelve buttons with matching dual-color LEDs select scale notes in real time and give visual feedback of quantizing. The module processes 0-10V (as 1V/oct) on the In input and accepts 0-10V or ±5V on the Shift input (jumper selectable) for a shift range of ±12 semitones or ±12 scale degrees. Shift has user-selectable destinations (note A, B, A+B or the scale root) and user-selectable modes for where shifting occurs: before scaling, in scale (diatonic) or post scale (key shifting).
+
+  The two 0-10V outputs (A and B) have 1V/oct scaling. Output B is a user-selectable interval based on the root note on output A; the interval can be chromatic (fixed semitones) or diatonic (within the current scale, based on scale degrees) and can be a bipolar value of ±12. A menu allows shifting the scale root manually, and a special scale-shift mode lets the Shift input select scales from the current bank, so 12 scales can be selected by CV.
+
+  The module can store 12 scales in 12 banks for a total of 144 different user scales and ships with 5 banks preloaded (erasable and reprogrammable by the user). Precision trimmers on the PCB allow fine tuning and scaling of the two outputs.
+specs: |-
+  - Width: 4HP
+  - Max depth: 62mm (V1) / 51mm (V2)
+  - Power: 60mA @ +12V, 7mA @ -12V
+  - Pitch input processes 0-10V as 1V/oct
+  - Shift input accepts 0-10V or ±5V (jumper selectable), range ±12 semitones or ±12 scale degrees
+  - Two 0-10V outputs (A and B) with 1V/oct scaling
+  - Output B interval can be chromatic or diatonic, bipolar ±12
+  - Stores 12 scales in 12 banks (144 user scales), ships with 5 preloaded banks
+  - Precision trimmers on PCB for fine tuning and scaling the outputs
+io:
+  - key: OIbQ5zsR
+    name: In (1V/Oct)
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: cY5IBFRj
+    name: Shift In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bp7LevvS
+    name: Out A
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: xxDS4hP5
+    name: Out B
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/uscale_manual.pdf
+    type: resource
+    title: µScale Legacy Manual

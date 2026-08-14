@@ -1,0 +1,97 @@
+id: 6cIELC6FPtmIT8UYhiorX
+name: Buff Mult
+manufacturer: intellijel
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+  - routing
+url: https://intellijel.com/shop/eurorack/buff-mult/
+prices:
+  - amount: 65
+    currency: USD
+description: Multiply one audio/CV signal into six perfect copies or two signals
+  into two sets of three. Multiply your sequencer out to multiple oscillators
+  and send a third copy to your favorite modulation input.
+details: |-
+  Turn one audio or CV signal into six copies, or two signals into two sets of three. This is very useful when setting up all kinds of patches where you want to send a signal source to multiple destinations simultaneously.
+
+  Buff Mult is a dual 1 x 3 buffered signal multiplier, divided into two sections, upper and lower. Each section is its own 1 IN x 3 OUT buffered multiplier. Plug an audio or CV signal into the top section's input jack and Buff Mult sends a buffered duplicate of that signal out the other three jacks in the group. Similarly, a signal patched into the bottom section's input jack is duplicated at the other three jacks in that group.
+
+  The output of the top section is normalled to the input of the bottom section, so if nothing is plugged into the bottom section's input, the top section's input is duplicated across all 6 outputs, making Buff Mult act as a single 1 x 6 buffered signal multiplier. Unlike a passive mult, which merely splits the incoming signal (much like a Y-cable), Buff Mult's active buffered design makes electrical copies of the input voltage, isolating the outputs from the input and from each other.
+specs: |-
+  - Width: 2HP
+  - Depth: 39mm
+  - Power: 4mA @ +12V, 17mA @ -12V
+  - Top section normalled to bottom section, so one signal can be duplicated six times, or two separate signals can each be multiplied three times
+  - Active buffered design ensures voltage accuracy is maintained from input to all outputs, and that outputs are electronically isolated from faults or shorts
+  - Slim 2HP footprint
+io:
+  - key: FGCQywsc
+    name: Top Section Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Y2W3gJaR
+    name: Top Section Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UNM57sGU
+    name: Top Section Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: TX4K3ROB
+    name: Top Section Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rkeAsmRE
+    name: Bottom Section Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: GevGpac8
+    name: Bottom Section Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 87zbIIqH
+    name: Bottom Section Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: y0PWICTC
+    name: Bottom Section Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://intellijel.com/downloads/manuals/buff-mult_manual_2018.09.13.pdf
+    type: resource
+    title: Manual
