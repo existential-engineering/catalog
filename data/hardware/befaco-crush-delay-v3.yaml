@@ -20,55 +20,65 @@ details: |-
 
   After being processed, the signal is routed to three different paths. The first one goes into Dry/Wet, where it is mixed with the original input signal (In) before going to the main output (Out). The second one is returned to the Delay circuit through another VCA (Feedback), controlling the number of repetitions of the wet signal. Finally, the last one goes directly to the Send output.
 io:
-  - name: In
+  - key: 58vsd1pm
+    name: In
     signalFlow: input
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
-  - name: Return
+  - key: co3XHWLe
+    name: Return
     signalFlow: input
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
-  - name: Out
+  - key: BsG30ok1
+    name: Out
     signalFlow: output
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
-  - name: Send
+  - key: aJ5lpot5
+    name: Send
     signalFlow: output
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
-  - name: Crush 1 Gate
+  - key: ktYwprg5
+    name: Crush 1 Gate
     signalFlow: input
     category: digital
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
-  - name: Crush 2 Gate
+  - key: fiI6UUGU
+    name: Crush 2 Gate
     signalFlow: input
     category: digital
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
-  - name: Crush 3 Gate
+  - key: ez0ot3vz
+    name: Crush 3 Gate
     signalFlow: input
     category: digital
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
+prices:
+  - amount: 266.2
+    currency: EUR
 links:
   - url: https://befaco.org/docs/Crush_Delay/Crush_Delay_V3_Assembly_Manual.pdf
     type: resource

@@ -1,0 +1,85 @@
+id: 51cxq06TV20xDaScI_AS8
+name: Meteor Shower
+manufacturer: phase-fiasco
+primaryCategory: sequencer
+categories:
+  - modular
+url: https://www.erikssonjonas.com/meteorshower
+description: An 8-step Eurorack sequencer designed for tactile creativity and
+  flexible performance, extendable up to 64 steps with adjustable step length
+  and gate count.
+details: |-
+  This 8-step Eurorack sequencer is designed for tactile creativity and flexible performance. Whether you're building hypnotic basslines or generative melodies, it offers a balance of intuitive control and deep modulation capabilities. Extendable up to 64 steps with adjustable length and gate count, it's a sequencing brain that grows with your ideas.
+
+  Pitch spans three octaves, with a random mode for endless generative melodies. Step length and gate count are set per step, allowing slow, stretched or rapid-fire sequences, and slew is adjustable per step from 0ms (snappy) to a full step duration (glide heaven).
+
+  Touch control handles step triggering: when the sequence is stopped a touch triggers the step manually, and when it is running a touch jumps to that step. Transport covers forward, backward, random and stop. Tempo runs from 40 to 320 BPM, and a time scale control multiplies or divides global speed at .25x, .5x, 1x, 2x or 4x. Quantization options are chromatic, major, major pentatonic, minor and minor pentatonic.
+
+  Patching is via clock, run and reset inputs, plus clock, gate and 1V/OCT outputs. The module is built on the Daisy platform in C++, and occupies 42HP with a 30mm depth.
+
+  Control chaos, or let it loose. From precise grooves to happy accidents, Meteor Shower brings expressive control to the modular world. Whether you're sequencing melodies, modulations, or trigger patterns, its blend of touch, timing, and tonality makes it a powerful creative tool in any rack.
+specs: |-
+  - 42HP width, 30mm depth
+  - Power consumption: +12V=58mA, -12V=60mA, +5V=0mA
+  - 8-step sequencer, expandable up to 64 steps
+  - Variable step counts and step lengths
+  - Pitch across 3 octaves with random mode
+  - Step length and gate count set per step
+  - Slew per step, adjustable from 0ms to full step duration
+  - Touch control: trigger step when stopped, jump to step when running
+  - Transport: forward / backward / random / stop
+  - Tempo range 40-320 BPM
+  - Time scale multipliers: .25x / .5x / 1x / 2x / 4x
+  - Quantization: chromatic, major, major pentatonic, minor, minor pentatonic
+  - Inputs: clock, run, reset
+  - Outputs: clock, gate, 1V/OCT
+  - Built on the Daisy platform (C++)
+io:
+  - key: nuKUcahF
+    name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: aJ9NaI7E
+    name: Run
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: hjOSfXdJ
+    name: Reset
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: iEFFojOK
+    name: Clock Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: jbfOsJFn
+    name: Gate
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: UEEfiUJH
+    name: 1V/Oct
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right

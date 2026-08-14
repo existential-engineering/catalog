@@ -37,56 +37,64 @@ specs: |-
   - Seamless Redundancy Operation between both MADI inputs
   - Includes TotalMix FX, DIGICheck and RME USB drivers
 io:
-  - name: MADI Optical Input
+  - key: B7b8mp7p
+    name: MADI Optical Input
     signalFlow: input
     category: digital
     type: adat
     connection: toslink
     maxConnections: 64
     position: Right
-  - name: MADI Optical Output
+  - key: jkGERXa4
+    name: MADI Optical Output
     signalFlow: output
     category: digital
     type: adat
     connection: toslink
     maxConnections: 64
     position: Right
-  - name: MADI Coaxial Input
+  - key: 0pPwiJKi
+    name: MADI Coaxial Input
     signalFlow: input
     category: digital
     type: adat
     connection: bnc
     maxConnections: 64
     position: Right
-  - name: MADI Coaxial Output
+  - key: l6x9QQGU
+    name: MADI Coaxial Output
     signalFlow: output
     category: digital
     type: adat
     connection: bnc
     maxConnections: 64
     position: Right
-  - name: Word Clock Input
+  - key: XTyx2aCn
+    name: Word Clock Input
     signalFlow: input
     category: digital
     type: word clock
     connection: bnc
     maxConnections: 1
     position: Right
-  - name: AES Input (BNC)
+  - key: cm04zekk
+    name: AES Input (BNC)
     signalFlow: input
     category: digital
     type: aes/ebu
     connection: bnc
     maxConnections: 1
     position: Right
-  - name: ARC USB
+  - key: z96UPCPV
+    name: ARC USB
     signalFlow: input
     category: digital
     type: usb
     connection: usb-b
     maxConnections: 1
     position: Right
-  - name: USB 2.0 (Host)
+  - key: agrDfBPA
+    name: USB 2.0 (Host)
     signalFlow: bidirectional
     category: digital
     type: usb
@@ -95,6 +103,9 @@ io:
     position: Right
 versions:
   - name: MADIface USB
+prices:
+  - amount: 999
+    currency: USD
 links:
   - type: resource
     title: MADIface USB Manual

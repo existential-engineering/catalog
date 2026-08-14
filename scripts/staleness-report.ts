@@ -8,6 +8,12 @@
  * - Prices that may be outdated
  * - Potentially discontinued products
  *
+ * PARKED (AUREO-890): the fields this reads (verification.lastVerified,
+ * prices[].asOf) are populated in zero entries, so the monthly workflow
+ * that ran this was retired. Revive only after a verification-metadata
+ * backfill effort exists. Freshness detection now happens in the racks
+ * repo's catalog-freshness workflow (sitemap diff + submissions Worker).
+ *
  * Usage:
  *   pnpm staleness-report             # Console output
  *   pnpm staleness-report --json      # JSON output

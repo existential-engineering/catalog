@@ -1,0 +1,73 @@
+id: IVG14nq01fG-pN8gjhikO
+name: µScale II
+manufacturer: intellijel
+primaryCategory: modular
+categories:
+  - utility
+  - digital
+  - discontinued
+supersedes: jHlqrxBL7hRkUqY5Kx4gb
+url: https://intellijel.com/shop/legacy/uscale-2/
+description: Your modular system is capable of generating complex, fluid and
+  interesting voltages. Use the µScale to transform these voltages into musical
+  pitches to control your oscillators and other sound sources.
+details: |-
+  The µScale II is an intelligent quantizer and interval generator: a highly versatile and very musical device for creating interesting, beautiful and harmonious musical riffs from just about any analog CV source.
+
+  Twelve buttons with matching dual-color LEDs are used for selecting scale notes in real time and provide visual feedback of quantizing. The module processes 0-10V (as 1V/oct) on the In input, and accepts 0-10V or ±5V on the Shift input (jumper selectable) for a shift range of ±12 semitones or ±12 scale degrees. Shift has user-selectable destinations (note A, B, A+B or the scale root) and user-selectable modes for where shifting occurs: before scaling, in scale (diatonic) or post scale (key shifting).
+
+  The two 0-10V outputs (A and B) have 1V/oct scaling. Output B is a user-selectable interval based on the root note on output A; this interval can be chromatic (fixed semitones) or diatonic (within the current scale, based on scale degrees) and can be a bipolar value of ±12. A menu allows shifting the scale root manually, and a special scale-shift mode lets the Shift input select scales from the current bank, so 12 scales can be selected by CV.
+
+  The module can store 12 scales in 12 banks for a total of 144 different user scales, and ships with 5 banks preloaded with scales that can be erased and reprogrammed. Compared with the original µScale it adds a skiff-friendly depth, a uni/bipolar CV switch on the panel, and a 16-bit super-low-INL-error TI DAC that translates to ±0.0005V accuracy for pitch CV. Precision trimmers on the PCB allow fine tuning and scaling of the two outputs.
+specs: |-
+  - Width: 6HP
+  - Max depth: 51mm (skiff friendly)
+  - Power: 60mA @ +12V, 7mA @ -12V
+  - Pitch input processes 0-10V as 1V/oct
+  - Shift input accepts 0-10V or ±5V (jumper selectable), range ±12 semitones or ±12 scale degrees
+  - Two 0-10V outputs (A and B) with 1V/oct scaling
+  - Output B interval can be chromatic or diatonic, bipolar ±12
+  - Stores 12 scales in 12 banks (144 user scales), ships with 5 preloaded banks
+  - 16-bit low-INL-error TI DAC, ±0.0005V pitch CV accuracy
+  - Uni/bipolar CV switch on panel
+  - Precision trimmers on PCB for fine tuning and scaling the outputs
+io:
+  - key: 8WGG4Bip
+    name: 1V/Oct In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Oy7iwpix
+    name: Shift In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zqj4alIx
+    name: Out A
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: eVgrJAV9
+    name: Out B
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://intellijel.com/downloads/manuals/uscale-2_manual_2018.09.13.pdf
+    type: resource
+    title: µScale Legacy Manual (2018.09.13)
+videos:
+  - provider: youtube
+    videoId: 1TiSHhu6a8A
