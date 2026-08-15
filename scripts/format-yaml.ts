@@ -4,7 +4,12 @@
  * Moves `id` field to the top of each YAML file, then runs Prettier.
  * Replaces plain `prettier --write` for YAML formatting.
  *
- * Usage: tsx scripts/format-yaml.ts
+ * Usage:
+ *   tsx scripts/format-yaml.ts                      # whole catalog
+ *   tsx scripts/format-yaml.ts data/hardware/a.yaml # just these files
+ *
+ * Formatting has no cross-file dependency, so scoping it to the files an
+ * import touched turns a whole-catalog pass into an instant one.
  */
 
 import { execSync } from "node:child_process";
@@ -54,14 +59,35 @@ function moveIdToTop(filePath: string): boolean {
   return true;
 }
 
-let reordered = 0;
-
-for (const collection of COLLECTIONS) {
-  const files = getYamlFiles(path.join(DATA_DIR, collection));
-  for (const file of files) {
-    if (moveIdToTop(file)) {
-      reordered++;
+/**
+ * Files to format: the paths given on the command line, or every
+ * collection when none are. Formatting is per-file with no cross-file
+ * dependency, so scoping it to the handful of files an import touched
+ * turns a whole-catalog pass into an instant one.
+ */
+function filesToFormat(): { files: string[]; scoped: boolean } {
+  const args = process.argv.slice(2).filter((arg) => !arg.startsWith("-"));
+  if (args.length > 0) {
+    const resolved = args.map((arg) => path.resolve(process.cwd(), arg));
+    const missing = resolved.filter((file) => !fs.existsSync(file));
+    if (missing.length > 0) {
+      console.error(`No such file(s):\n${missing.map((f) => `  ${f}`).join("\n")}`);
+      process.exit(1);
     }
+    return { files: resolved, scoped: true };
+  }
+  return {
+    files: COLLECTIONS.flatMap((collection) => getYamlFiles(path.join(DATA_DIR, collection))),
+    scoped: false,
+  };
+}
+
+const { files, scoped } = filesToFormat();
+
+let reordered = 0;
+for (const file of files) {
+  if (moveIdToTop(file)) {
+    reordered++;
   }
 }
 
@@ -69,9 +95,13 @@ if (reordered > 0) {
   console.log(`Moved id to top in ${reordered} files`);
 }
 
-// Run Prettier on all YAML files
-console.log("Running Prettier...");
-execSync('prettier --write "data/**/*.yaml"', {
+console.log(scoped ? `Running Prettier on ${files.length} file(s)...` : "Running Prettier...");
+// Prettier is given explicit paths when scoped so it never walks the
+// whole data tree; the glob stays the default for a full run.
+const targets = scoped
+  ? files.map((file) => JSON.stringify(path.relative(REPO_ROOT, file))).join(" ")
+  : '"data/**/*.yaml"';
+execSync(`prettier --write ${targets}`, {
   cwd: REPO_ROOT,
   stdio: "inherit",
 });

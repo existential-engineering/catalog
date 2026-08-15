@@ -1942,8 +1942,105 @@ function writeConsoleOutput(result: ValidationResult): void {
 }
 
 // =============================================================================
+// SCOPED VALIDATION (--files)
+// =============================================================================
+
+const COLLECTION_SCHEMAS: Record<string, z.ZodType> = {
+  manufacturers: ManufacturerSchema,
+  software: SoftwareSchema,
+  content: ContentSchema,
+  hardware: HardwareSchema,
+  accessories: AccessorySchema,
+};
+
+/**
+ * Validate only the named files, for the edit-fix loop during an import.
+ *
+ * This is a pre-flight, not a replacement for the full run. Per-file rules
+ * (schema shape, enums, io, name hygiene) are identical, and manufacturer
+ * references still resolve because manufacturer slugs come from filenames
+ * rather than file contents. What it cannot see is anything cross-file:
+ * duplicate IDs, supersedes targets, and supersedes cycles. The full
+ * `pnpm validate` still runs in the pre-commit hook and in CI, so nothing
+ * reaches main unchecked.
+ */
+function validateScoped(paths: string[]): number {
+  const allManufacturers = new Set(
+    getYamlFiles(path.join(DATA_DIR, "manufacturers")).map((file) =>
+      path.basename(file, path.extname(file))
+    )
+  );
+
+  const errors: ValidationError[] = [];
+  let checked = 0;
+
+  for (const given of paths) {
+    const file = path.resolve(process.cwd(), given);
+    if (!fs.existsSync(file)) {
+      console.error(`❌ No such file: ${given}`);
+      return 1;
+    }
+    const collection = path.basename(path.dirname(file));
+    const schema = COLLECTION_SCHEMAS[collection];
+    if (!schema) {
+      console.error(
+        `❌ ${given} is not inside a known collection ` +
+          `(${Object.keys(COLLECTION_SCHEMAS).join(", ")}).`
+      );
+      return 1;
+    }
+    // No validSupersedesIds: the id set is a cross-file fact this mode
+    // deliberately does not build, and validateFile skips the check.
+    const error = validateFile(file, schema, allManufacturers);
+    if (error) errors.push(error);
+    checked += 1;
+  }
+
+  // Deliberately not writeConsoleOutput: its Stats block reports whole-catalog
+  // counts, which would read as an empty catalog here.
+  console.log(`\n📋 Scoped validation — ${checked} file(s)\n`);
+  console.log("─".repeat(70));
+  if (errors.length === 0) {
+    console.log("✅ No errors in the checked files.\n");
+  } else {
+    console.log("❌ Validation failed!\n");
+    for (const error of errors) {
+      console.log(`\n📄 ${error.file}`);
+      if (error.details && error.details.length > 0) {
+        for (const detail of error.details) {
+          const lineInfo = detail.line ? `:${detail.line}` : "";
+          console.log(`   ${detail.code ?? ""}${lineInfo}: ${detail.message}`);
+          console.log(`         Path: ${detail.path}`);
+          if (detail.docsUrl) console.log(`         Docs: ${detail.docsUrl}`);
+        }
+      } else {
+        for (const msg of error.errors) console.log(`   ⚠️  ${msg}`);
+      }
+    }
+    console.log();
+  }
+  console.log("─".repeat(70));
+  console.log(
+    "Cross-file checks (duplicate IDs, supersedes targets and cycles) are skipped.\n" +
+      "Run 'pnpm validate' before committing."
+  );
+  console.log();
+  return errors.length === 0 ? 0 : 1;
+}
+
+// =============================================================================
 // MAIN
 // =============================================================================
+
+const filesFlagIndex = process.argv.indexOf("--files");
+if (filesFlagIndex !== -1) {
+  const scopedPaths = process.argv.slice(filesFlagIndex + 1).filter((arg) => !arg.startsWith("-"));
+  if (scopedPaths.length === 0) {
+    console.error("❌ --files needs at least one path.");
+    process.exit(1);
+  }
+  process.exit(validateScoped(scopedPaths));
+}
 
 const result = validate();
 const idResult = validateIds();
