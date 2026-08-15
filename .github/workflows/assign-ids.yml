@@ -32,19 +32,41 @@ jobs:
       # degrades to the old behaviour rather than failing outright. Set the
       # ASSIGN_IDS_APP_ID variable and ASSIGN_IDS_APP_PRIVATE_KEY secret to
       # activate it; see .github/README.md.
+      #
+      # Both halves have to be present or create-github-app-token hard-fails,
+      # which would defeat that fallback. Secrets are not readable in `if:`, so
+      # the key is checked here instead — this step exposes only a boolean and
+      # keeps the PEM in step-scoped env.
+      - name: Check app credentials
+        id: app-creds
+        if: vars.ASSIGN_IDS_APP_ID != ''
+        env:
+          APP_PRIVATE_KEY: ${{ secrets.ASSIGN_IDS_APP_PRIVATE_KEY }}
+        run: |
+          if [ -n "$APP_PRIVATE_KEY" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Mint app token
         id: app-token
-        if: vars.ASSIGN_IDS_APP_ID != ''
+        if: steps.app-creds.outputs.configured == 'true'
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
           app-id: ${{ vars.ASSIGN_IDS_APP_ID }}
           private-key: ${{ secrets.ASSIGN_IDS_APP_PRIVATE_KEY }}
+          permission-contents: write
 
+      # persist-credentials: false — nothing in .git/config for `pnpm install`
+      # (which runs PR-controlled lifecycle scripts) to read. The push step
+      # re-authenticates for itself.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+          persist-credentials: false
 
       - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
 
@@ -62,10 +84,20 @@ jobs:
       - name: Format YAML files
         run: pnpm format
 
+      # Git hooks are PR-controlled (`pnpm install` ran the repo's `prepare`
+      # script, which installs husky's hooksPath), so disable them for the
+      # bot's git operations and keep the token out of the commit step's
+      # environment entirely — only the push step ever sees it.
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --staged --quiet || git commit -m "chore: assign IDs to new entries"
-          git push
+          git diff --staged --quiet || git -c core.hooksPath=/dev/null commit -m "chore: assign IDs to new entries"
+
+      - name: Push changes
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+        run: |
+          gh auth setup-git
+          git -c core.hooksPath=/dev/null push

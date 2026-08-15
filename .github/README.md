@@ -18,7 +18,7 @@ Either way the outcome is the same and easy to miss: `validate` and `audit` are
 **required** status checks on `main` (ruleset `11289515`), and neither reports
 on the commit `assign-ids` just pushed. A run stuck in `action_required` does
 not show up in `gh pr checks` output at all, so the PR does not go red. It
-quietly shows *fewer* checks than it should, every check it does show is green,
+quietly shows _fewer_ checks than it should, every check it does show is green,
 and the PR is unmergeable with nothing obviously wrong.
 
 Pushing under an App identity makes the resulting `synchronize` event look like
@@ -46,7 +46,12 @@ exactly as before rather than failing outright.
 
 ### Verifying it worked
 
-Open a catalog PR that adds an entry with no `id:` and let `assign-ids` commit.
+Open a PR **from a branch in `existential-engineering/catalog` itself** that
+adds an entry with no `id:`, and let `assign-ids` commit. The job is gated on
+`head.repo.fork == false`, so a PR from a fork never runs it — there is no bot
+commit and nothing to verify. (Fork PRs still need their IDs assigned some
+other way; that is a separate gap, not a broken App.)
+
 Then confirm the required checks ran on the **bot's** commit, not just yours:
 
 ```bash
@@ -54,11 +59,30 @@ gh pr checks <PR> --repo existential-engineering/catalog --json name,bucket \
   --jq '[.[]|"\(.name)=\(.bucket)"]|join(" ")'
 ```
 
-`validate=pass` and `audit=pass` must both be present. If they are missing, the
-App is not wired up and the run is waiting for approval:
+`validate=pass` and `audit=pass` must both be present. Their absence is a
+symptom, not a diagnosis — they are also missing while a run is still going,
+and on fork PRs. Look at the runs themselves before concluding anything:
 
 ```bash
 gh run list --repo existential-engineering/catalog --branch <branch> \
-  --json databaseId,conclusion,headSha \
-  --jq '.[]|select(.conclusion=="action_required")|.databaseId'
+  --json databaseId,workflowName,event,status,conclusion,headSha \
+  --jq '.[]|"\(.workflowName)\t\(.event)\t\(.status)/\(.conclusion)\t\(.headSha[0:7])\t\(.databaseId)"'
 ```
+
+Read it in this order:
+
+1. **No `Assign IDs` run at all** — the path filter never fired: the diff
+   touched no `data/**/*.yaml`, so no run was created. (A fork PR looks
+   different — the run exists, but its `assign-ids` job shows as skipped by
+   the fork gate.) Nothing to say about the App yet.
+2. **`Assign IDs` ran but pushed nothing** — nothing needed assigning: every
+   entry already had an `id:` and every hardware `io` entry already had its
+   key. Re-test with an entry missing one of those.
+3. **`Assign IDs` pushed, but `validate`/`audit` have no run on that new
+   `headSha`** — this is the GITHUB_TOKEN recursion guard: the App is not
+   wired up.
+4. **`validate`/`audit` runs exist on that `headSha` with
+   `conclusion=action_required`** — they are waiting for manual approval,
+   also a sign the push was not made under the App identity.
+5. **`status=queued`/`in_progress`/`waiting`/`pending`** — just still
+   running. Wait and re-check.
