@@ -84,13 +84,20 @@ jobs:
       - name: Format YAML files
         run: pnpm format
 
+      # Git hooks are PR-controlled (`pnpm install` ran the repo's `prepare`
+      # script, which installs husky's hooksPath), so disable them for the
+      # bot's git operations and keep the token out of the commit step's
+      # environment entirely — only the push step ever sees it.
       - name: Commit changes
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --staged --quiet || git commit -m "chore: assign IDs to new entries"
+          git diff --staged --quiet || git -c core.hooksPath=/dev/null commit -m "chore: assign IDs to new entries"
+
+      - name: Push changes
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+        run: |
           gh auth setup-git
-          git push
+          git -c core.hooksPath=/dev/null push

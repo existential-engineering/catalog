@@ -18,7 +18,7 @@ Either way the outcome is the same and easy to miss: `validate` and `audit` are
 **required** status checks on `main` (ruleset `11289515`), and neither reports
 on the commit `assign-ids` just pushed. A run stuck in `action_required` does
 not show up in `gh pr checks` output at all, so the PR does not go red. It
-quietly shows *fewer* checks than it should, every check it does show is green,
+quietly shows _fewer_ checks than it should, every check it does show is green,
 and the PR is unmergeable with nothing obviously wrong.
 
 Pushing under an App identity makes the resulting `synchronize` event look like
@@ -71,14 +71,18 @@ gh run list --repo existential-engineering/catalog --branch <branch> \
 
 Read it in this order:
 
-1. **No `Assign IDs` run at all** — the job never fired. Fork PR, or the diff
-   touched no `data/**/*.yaml`. Nothing to say about the App yet.
-2. **`Assign IDs` ran but pushed nothing** — every entry already had an `id:`.
-   Re-test with an entry that has none.
+1. **No `Assign IDs` run at all** — the path filter never fired: the diff
+   touched no `data/**/*.yaml`, so no run was created. (A fork PR looks
+   different — the run exists, but its `assign-ids` job shows as skipped by
+   the fork gate.) Nothing to say about the App yet.
+2. **`Assign IDs` ran but pushed nothing** — nothing needed assigning: every
+   entry already had an `id:` and every hardware `io` entry already had its
+   key. Re-test with an entry missing one of those.
 3. **`Assign IDs` pushed, but `validate`/`audit` have no run on that new
    `headSha`** — this is the GITHUB_TOKEN recursion guard: the App is not
    wired up.
 4. **`validate`/`audit` runs exist on that `headSha` with
-   `status=action_required`** — they are waiting for manual approval, also a
-   sign the push was not made under the App identity.
-5. **`status=in_progress`/`queued`** — just still running. Wait and re-check.
+   `conclusion=action_required`** — they are waiting for manual approval,
+   also a sign the push was not made under the App identity.
+5. **`status=queued`/`in_progress`/`waiting`/`pending`** — just still
+   running. Wait and re-check.
