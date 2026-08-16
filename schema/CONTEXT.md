@@ -834,11 +834,13 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 ### IO Connections (advisory — unknown values produce warnings)
 
 - `1/4-inch`
+- `tt`
 - `1/8-inch`
 - `2.5mm`
 - `xlr`
 - `mini-xlr`
 - `combo jack`
+- `4-pin din`
 - `5-pin din`
 - `7-pin din`
 - `mini-din`
@@ -859,8 +861,10 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `hdmi`
 - `lightning`
 - `aes/ebu`
+- `digilink`
 - `2-pin`
 - `db9`
+- `db15`
 - `db25`
 - `dt12 37-pin`
 - `edac`

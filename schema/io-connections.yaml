@@ -7,6 +7,9 @@ connections:
   # Quarter-inch jacks
   - 1/4-inch
 
+  # Bantam / TT jacks (patchbays)
+  - tt
+
   # Eighth-inch / 3.5mm jacks
   - 1/8-inch
 
@@ -19,6 +22,7 @@ connections:
   - combo jack
 
   # DIN connectors
+  - 4-pin din # external analogue PSU (e.g. Black Lion Auteur Quad)
   - 5-pin din
   - 7-pin din # powered MIDI (e.g. remote foot controllers)
   - mini-din
@@ -45,10 +49,12 @@ connections:
   - hdmi
   - lightning
   - aes/ebu
+  - digilink # Avid DigiLink (Pro Tools HD/HDX interface ports)
 
   # Multi-pin connectors
   - 2-pin
   - db9 # 9-pin D-sub (RS-232C serial control)
+  - db15 # 15-pin D-sub (e.g. Crane Song STC-8 side chain insert)
   - db25
   - dt12 37-pin
   - edac

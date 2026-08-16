@@ -1107,6 +1107,7 @@ function detectSupersedeCycle(
 
 interface WarningContext {
   name?: string;
+  primaryCategory?: string;
   io?: Array<{ name: string; type: string; connection: string; maxConnections?: number }>;
   compatibleWith?: string[];
   url?: string;
@@ -1154,7 +1155,7 @@ function collectWarnings(
       // A single-jack connection carries one physical link; maxConnections>1
       // usually means several jacks were collapsed into one entry (aggregates
       // like "All Slots" are excluded).
-      if (isIoCombineCandidate(io)) {
+      if (isIoCombineCandidate(io, { primaryCategory: data.primaryCategory })) {
         const line = getLineForPath(document, lineCounter, ["io", i, "maxConnections"]);
         warnings.push({
           code: ValidationErrorCode.W128_IO_COMBINE_CANDIDATE,

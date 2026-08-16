@@ -196,6 +196,11 @@ pair into one stereo entry with `maxConnections: 2`, and do not split one jack i
 two — bulk imports get this wrong. E.g. the Eventide H90 has 14 discrete jacks
 (Inputs 1–4, Outputs 1–4, Exp/Ctl 1–2, MIDI In, MIDI Out/Thru, USB-C, Power).
 
+**Patchbays are the exception.** A `patch-bay` entry models each row as one `io`
+entry with `maxConnections` set to the point count (a 48-point TRS row, not 48
+entries), so W128 skips that category. TT/Bantam patch points use
+`connection: tt`.
+
 ## Content Entries
 
 Content entries (presets, sample packs, expansions) live in `data/content/` as a separate collection. Content `primaryCategory` values include `preset`, `preset-pack`, `sample-pack`, `drum-sample-pack`, `loop-pack`, `sound-library`, `soundfont`, `impulse-response`, and `multisample`.

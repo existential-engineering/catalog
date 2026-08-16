@@ -97,7 +97,9 @@ function analyze(filePath: string, data: Hardware, positionExempt: Set<string>):
   const category = data.primaryCategory ?? "";
   const exempt = positionExempt.has(category);
 
-  const combineCandidates = io.filter(isIoCombineCandidate).length;
+  const combineCandidates = io.filter((p) =>
+    isIoCombineCandidate(p, { primaryCategory: category })
+  ).length;
   const collapsedNames = io.filter((p) => p.name && COLLAPSED_PAIR_NAME.test(p.name)).length;
 
   const positions = io.map((p) => p.position).filter(Boolean);
