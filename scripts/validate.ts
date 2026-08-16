@@ -1980,6 +1980,13 @@ function validateScoped(paths: string[]): number {
       console.error(`❌ No such file: ${given}`);
       return 1;
     }
+    // JSON is valid YAML, so without this a stray .json inside a collection
+    // directory would parse, validate and exit 0 — reporting success for a
+    // file the catalog never reads.
+    if (!/\.ya?ml$/.test(file)) {
+      console.error(`❌ Not YAML (this mode only validates .yaml/.yml): ${given}`);
+      return 1;
+    }
     const collection = path.basename(path.dirname(file));
     const schema = COLLECTION_SCHEMAS[collection];
     if (!schema) {

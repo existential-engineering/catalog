@@ -12,7 +12,7 @@
  * import touched turns a whole-catalog pass into an instant one.
  */
 
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { parseDocument } from "yaml";
@@ -108,11 +108,12 @@ if (reordered > 0) {
 
 console.log(scoped ? `Running Prettier on ${files.length} file(s)...` : "Running Prettier...");
 // Prettier is given explicit paths when scoped so it never walks the
-// whole data tree; the glob stays the default for a full run.
-const targets = scoped
-  ? files.map((file) => JSON.stringify(path.relative(REPO_ROOT, file))).join(" ")
-  : '"data/**/*.yaml"';
-execSync(`prettier --write ${targets}`, {
+// whole data tree; the glob stays the default for a full run. These are
+// passed as argv rather than interpolated into a command string: the
+// scoped paths come from argv, and with no shell in between there is no
+// quoting to get wrong. Prettier expands the glob itself.
+const targets = scoped ? files.map((file) => path.relative(REPO_ROOT, file)) : ["data/**/*.yaml"];
+execFileSync("prettier", ["--write", ...targets], {
   cwd: REPO_ROOT,
   stdio: "inherit",
 });
