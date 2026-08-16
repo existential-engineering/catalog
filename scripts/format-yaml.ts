@@ -74,6 +74,17 @@ function filesToFormat(): { files: string[]; scoped: boolean } {
       console.error(`No such file(s):\n${missing.map((f) => `  ${f}`).join("\n")}`);
       process.exit(1);
     }
+    // Only YAML: moveIdToTop parses every file it is handed, so a stray
+    // .md or .json argument would crash inside the YAML document parser
+    // rather than report anything useful. The unscoped path cannot hit
+    // this because getYamlFiles() already filters by extension.
+    const notYaml = resolved.filter((file) => !/\.ya?ml$/.test(file));
+    if (notYaml.length > 0) {
+      console.error(
+        `Not YAML (this script only formats .yaml/.yml):\n${notYaml.map((f) => `  ${f}`).join("\n")}`
+      );
+      process.exit(1);
+    }
     return { files: resolved, scoped: true };
   }
   return {
