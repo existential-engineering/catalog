@@ -1,5 +1,34 @@
 # catalog
 
+## 3.51.0
+
+### Minor Changes
+
+- 39b17bc: Import AC noises (4 hardware entries).
+
+  Italian boutique effect pedals: CONTINUA (stereo dynamic sampler and
+  multi-effect), RICORDA (stereo granular reverb with freeze and loop),
+  URLA (CMOS fuzz into an MS-20 style dual resonant filter), and AMA V.2
+  (oscillating spring reverb into a bit crusher). RICORDA and AMA V.2
+  carry their Limited RETRO Series finish as a cosmetic variant rather
+  than a separate entry. Merchandise listings were excluded.
+
+- 3068b2a: Import Cranborne Audio (12 hardware, 2 accessory entries).
+
+  500-series preamps, EQs, and compressors (Camden 500, Carnaby 500,
+  Brick Lane 500) alongside their standalone rack evolutions (Camden
+  EC1/EC2, Carnaby HE2, Brick Lane MC4), audio interfaces (500R8,
+  500ADAT), and C.A.S.T. breakout/distribution gear (N22, N22H, N8).
+  Includes a half-rack mounting kit and a cosmetic blanking-plate
+  accessory.
+
+### Patch Changes
+
+- d9b9084: Fix Tape Fiasco 2 description: it was carried over from Tape Fiasco 1
+  (three engines) — rewritten to match the actual v2 feature set of four
+  time-based engines (Stretch, Varispeed, Stutter, BendIt), consistent
+  with the entry's details text.
+
 ## 3.50.0
 
 ### Minor Changes
