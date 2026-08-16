@@ -23,6 +23,20 @@ describe("looksLikeAcronymName", () => {
     }
   );
 
+  it.each(["MIXER", "OR", "URLA", "BOB", "BOBEK", "CROM", "LOL"])(
+    "skips stylized or borrowed name '%s' (exclusion list)",
+    (name) => {
+      expect(looksLikeAcronymName(name)).toBe(false);
+    }
+  );
+
+  it.each(["VMA", "VMX", "BCLK", "SFT", "MQ", "MF", "MT"])(
+    "skips researched letter-name '%s' with no published expansion",
+    (name) => {
+      expect(looksLikeAcronymName(name)).toBe(false);
+    }
+  );
+
   it.each(["DR-110", "SM-7B", "OB-Xa", "CS-80 V4", "Pro-Q 3"])(
     "skips model number '%s' (brandVariants handles these at build time)",
     (name) => {
