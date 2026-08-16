@@ -46,8 +46,10 @@ const ACRONYM_FALSE_POSITIVES: ReadonlySet<string> = new Set([
   "lion",
   "lofi", // "lo-fi" (JST LOFI)
   "map",
+  "mixer", // Dangerous Music MIXER, an 8x2 summing mixer
   "mood",
   "one",
+  "or", // logic OR gate (Intellijel OR)
   "peel",
   "polar",
   "silo",
@@ -61,9 +63,14 @@ const ACRONYM_FALSE_POSITIVES: ReadonlySet<string> = new Set([
   "aum", // Sanskrit syllable (Kymatica AUM)
   "ciao", // Italian greeting (Bastl CIAO!)
   "mahi", // mahi-mahi fish (Manley Mahi)
+  "urla", // Italian for "scream" (AC Noises URLA)
   "zhega", // Bulgarian for "scorching heat" (Antelope ZHEGA)
   // Personal names / stylized brand names
   "abc", // Bastl ABC — named for its A–F channel letters
+  "bob", // Czech cartoon rabbit (Bastl's Bob a Bobek systems)
+  "bobek", // sibling of Bastl's Bob, same cartoon pair
+  "crom", // Conan the Barbarian's deity (Caroline CROM, with Sword/Mountain knobs)
+  "lol", // Bastl styles it "Lol", not an initialism
   "crbn", // Audeze CRBN — vowel-less "carbon"
   "iroi", // Befaco IROI — tail of "Oneiroi"
   "ivgi", // Klanghelm coinage
@@ -87,6 +94,7 @@ const ACRONYM_FALSE_POSITIVES: ReadonlySet<string> = new Set([
 const RESEARCHED_NO_EXPANSION: ReadonlySet<string> = new Set([
   "adm", // Avantone Pro ADM snare mic
   "afeq", // Inferior Sound AFEQ
+  "bclk", // Burl Audio clock daughter card, "B" series part number
   "bcg", // Code Audio BCG
   "djs", // Pioneer DJS software
   "dmx", // Oberheim DMX
@@ -94,12 +102,18 @@ const RESEARCHED_NO_EXPANSION: ReadonlySet<string> = new Set([
   "dsx", // Oberheim DSX
   "dx", // Oberheim DX
   "iieq", // DDMF IIEQ
+  "mf", // Collings mandolin, M + F-style body; no expansion published
   "mfd", // ALM Busy Circuits MFD
   "mfx", // ALM Busy Circuits MFX
+  "mq", // Dangerous Music MQ
+  "mt", // Collings mandolin, sibling of the MF; no expansion published
   "nv", // Numark NV
+  "sft", // Catalinbread SFT, Ampeg-inspired overdrive
   "src", // Antelope Audio SRC
   "stvc", // Waldorf STVC
   "vfx", // Ensoniq VFX
+  "vma", // Brauner VM-family tube mic
+  "vmx", // Brauner VM-family tube mic
   "vumt", // Klanghelm VUMT
 ]);
 

@@ -27,13 +27,23 @@ specs: |-
   - Form Factor: 1U rack-mount
 io:
   - key: JiTSSPdM
-    name: TT/Bantam front panel (2 rows of 48)
+    name: TT/Bantam front panel — top row
     signalFlow: bidirectional
     category: audio
     type: line
-    connection: TT/Bantam front panel (2 rows of 48)
-    maxConnections: 96
+    connection: tt
+    maxConnections: 48
     position: Top
+    rowPosition: 1
+  - key: LKkqOXrb
+    name: TT/Bantam front panel — bottom row
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: tt
+    maxConnections: 48
+    position: Top
+    rowPosition: 2
   - key: n42WskyA
     name: DB25 rear panel
     signalFlow: bidirectional

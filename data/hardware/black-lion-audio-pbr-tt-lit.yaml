@@ -28,13 +28,23 @@ specs: |-
   - Connectivity: USB (keyboard input and firmware updates)
 io:
   - key: 7x5bmMlr
-    name: TT (Bantam) — front panel
+    name: TT (Bantam) — front panel, top row
     signalFlow: bidirectional
     category: audio
     type: line
-    connection: TT (Bantam) — front panel
-    maxConnections: 96
+    connection: tt
+    maxConnections: 48
     position: Top
+    rowPosition: 1
+  - key: Ke2xKnlo
+    name: TT (Bantam) — front panel, bottom row
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: tt
+    maxConnections: 48
+    position: Top
+    rowPosition: 2
   - key: A52iMuHs
     name: DB25 — rear panel
     signalFlow: bidirectional

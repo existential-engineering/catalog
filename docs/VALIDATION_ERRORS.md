@@ -546,6 +546,10 @@ An IO entry sets `maxConnections` greater than 1 on a single-jack connection typ
 
 **Fix:** Model each physical jack as its own `io` entry with `maxConnections: 1` (see the Eventide H90 for an example). If the entry really is an intentional aggregate for a connector that carries multiple links (e.g., a D-sub snake), use the correct `connection` type instead. Names containing words like "all", "slots", or "bank" are treated as aggregates and not flagged.
 
+Not flagged: entries whose `primaryCategory` is `patch-bay`. A patchbay row is a
+run of identical points that users patch into as one group, so a 48-point row
+stays a single `io` entry rather than 48 near-identical ones.
+
 **Triage tip:** Run `pnpm io-quality` to see the full I/O data-quality worklist (combine candidates, collapsed-pair names, missing I/O, and column/row coverage gaps).
 
 ---
