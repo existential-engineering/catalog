@@ -129,7 +129,17 @@ const ioSchema = {
     position: {
       type: "string",
       enum: ctx.ioPositions,
-      description: "Physical position on the device. Defined in schema/io-positions.yaml.",
+      // Not listed in `required`: the rule is conditional on the entry's
+      // primaryCategory, which JSON Schema cannot express here without
+      // duplicating the Instruments category group. `pnpm validate`
+      // enforces it (E199), so a file that omits position passes this
+      // schema and still fails validation — say so rather than let an
+      // editor or an external contributor read it as optional.
+      description:
+        "Physical position on the device. Defined in schema/io-positions.yaml. " +
+        "Required on every io entry except on played instruments (the Instruments " +
+        "category group in schema/category-groups.yaml), whose single output jack " +
+        "has no panel position. Enforced by pnpm validate as E199, not by this schema.",
     },
     columnPosition: { type: "number" },
     rowPosition: { type: "number" },

@@ -152,6 +152,15 @@ pnpm install
 # Validate all YAML files
 pnpm validate
 
+# Validate only the files you touched: a fast pre-flight while editing.
+# It skips cross-file checks (duplicate IDs, supersedes targets and
+# cycles), so run the full `pnpm validate` above before committing.
+pnpm validate --files data/hardware/some-entry.yaml
+
+# Format all YAML files, or only the ones you touched
+pnpm format
+pnpm format data/hardware/some-entry.yaml
+
 # Build SQLite database locally
 pnpm build
 
