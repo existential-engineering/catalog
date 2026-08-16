@@ -2394,7 +2394,7 @@
               "Left",
               "Right"
             ],
-            "description": "Physical position on the device. Defined in schema/io-positions.yaml."
+            "description": "Physical position on the device. Defined in schema/io-positions.yaml. Required on every io entry except on played instruments (the Instruments category group in schema/category-groups.yaml), whose single output jack has no panel position. Enforced by pnpm validate as E199, not by this schema."
           },
           "columnPosition": {
             "type": "number"
