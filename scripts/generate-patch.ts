@@ -5,7 +5,7 @@
  * Run with: pnpm patch [from-version] [to-version]
  */
 
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
@@ -39,7 +39,7 @@ function buildManufacturerIdMap(): Map<string, string> {
 /** Get the nanoid of a deleted entry by reading it from git history */
 function getDeletedEntryId(since: string, filePath: string): string | null {
   try {
-    const content = execSync(`git show ${since}:${filePath}`, {
+    const content = execFileSync("git", ["show", `${since}:${filePath}`], {
       encoding: "utf-8",
       stdio: ["pipe", "pipe", "pipe"],
     });
@@ -56,7 +56,7 @@ function getDeletedEntryId(since: string, filePath: string): string | null {
 
 function getLatestTag(): string | null {
   try {
-    return execSync("git describe --tags --abbrev=0", {
+    return execFileSync("git", ["describe", "--tags", "--abbrev=0"], {
       encoding: "utf-8",
       stdio: ["pipe", "pipe", "pipe"],
     }).trim();
@@ -70,7 +70,7 @@ function getChangedFiles(since: string): Change[] {
 
   try {
     // Get list of changed files
-    const output = execSync(`git diff --name-status ${since} HEAD -- data/`, {
+    const output = execFileSync("git", ["diff", "--name-status", since, "HEAD", "--", "data/"], {
       encoding: "utf-8",
     });
 
