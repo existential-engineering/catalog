@@ -31,7 +31,7 @@ jobs:
       # Falls back to GITHUB_TOKEN when the App is not configured, so the job
       # degrades to the old behaviour rather than failing outright. Set the
       # ASSIGN_IDS_APP_ID variable and ASSIGN_IDS_APP_PRIVATE_KEY secret to
-      # activate it; see .github/README.md.
+      # activate it; see .github/CI_NOTES.md.
       #
       # Both halves have to be present or create-github-app-token hard-fails,
       # which would defeat that fallback. Secrets are not readable in `if:`, so

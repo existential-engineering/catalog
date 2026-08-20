@@ -63,8 +63,9 @@ curl -LO https://github.com/existential-engineering/catalog/releases/latest/down
 sha256sum -c catalog.sqlite.sha256
 ```
 
-Each release also includes a `catalog.sqlite.minisig` signature and a
-`catalog-sbom.spdx.json` SBOM.
+Each release also includes a `catalog.sqlite.minisig` signature, a
+`catalog-sbom.spdx.json` SBOM, and a `catalog.intoto.jsonl` build-provenance
+attestation.
 
 ### Query it
 

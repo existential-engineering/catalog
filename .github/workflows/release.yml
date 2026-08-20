@@ -16,6 +16,9 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      # For build-provenance attestation of release artifacts
+      id-token: write
+      attestations: write
 
     steps:
       - name: Checkout
@@ -87,6 +90,26 @@ jobs:
           artifact-name: catalog-sbom.spdx.json
           output-file: dist/catalog-sbom.spdx.json
 
+      # Sigstore build provenance for the release artifacts (SLSA). The
+      # bundle is also attached to the release as catalog.intoto.jsonl so
+      # consumers (and OpenSSF Scorecard) can verify it offline. Best-effort:
+      # a bookkeeping step must never be able to break a release.
+      - name: Attest build provenance
+        if: steps.changesets.outputs['has-changesets'] == 'false'
+        id: attest
+        continue-on-error: true
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4
+        with:
+          subject-path: |
+            dist/catalog.sqlite
+            dist/catalog-index.json
+
+      - name: Stage provenance bundle for release
+        if: steps.changesets.outputs['has-changesets'] == 'false' && steps.attest.outcome == 'success'
+        env:
+          BUNDLE_PATH: ${{ steps.attest.outputs.bundle-path }}
+        run: cp "$BUNDLE_PATH" dist/catalog.intoto.jsonl
+
       - name: Get package version
         if: steps.changesets.outputs['has-changesets'] == 'false'
         id: pkg
@@ -113,6 +136,7 @@ jobs:
             dist/catalog.sqlite
             dist/catalog.sqlite.sha256
             dist/catalog.sqlite.minisig
+            dist/catalog.intoto.jsonl
             dist/catalog-sbom.spdx.json
             dist/catalog-index.json
             dist/catalog-index.json.sha256
