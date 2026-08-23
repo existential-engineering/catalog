@@ -143,8 +143,42 @@ function firstPrice(
   return p ? { amount: p.amount, currency: p.currency } : undefined;
 }
 
-function isDiscontinued(verification: { status?: string } | undefined): boolean {
-  return verification?.status === "discontinued";
+/**
+ * The canonical out-of-production marker (see CLAUDE.md). Held here rather
+ * than inlined so the two halves of the signal read as one rule.
+ */
+const DISCONTINUED_CATEGORY = "discontinued";
+
+/**
+ * File-local half of the discontinued signal: the `discontinued` category, or
+ * a hand-set `verification.status`. Categories must already be alias-normalized.
+ *
+ * `verification.status` alone is nowhere near enough — 3 of 11,042 entries
+ * carry a verification block at all, while 1,764 carry the category — so an
+ * index built on it left every web consumer showing no discontinued products.
+ * The other half of the union (superseded entries) needs every collection
+ * loaded first: see `markSuperseded`. Together these are the same two signals
+ * Studio unions at runtime in `discontinuedIdsStore`.
+ */
+export function hasDiscontinuedSignal(
+  categories: (string | undefined)[],
+  verification: { status?: string } | undefined
+): boolean {
+  return (
+    verification?.status === DISCONTINUED_CATEGORY || categories.includes(DISCONTINUED_CATEGORY)
+  );
+}
+
+/**
+ * Superseded half: a product some other entry declares it `supersedes` is by
+ * definition the older generation. Mutates in place, after all collections are
+ * loaded, because `supersedes` points at an id that may live in a collection
+ * this pass has not read yet.
+ */
+export function markSuperseded(products: IndexProduct[], supersededIds: ReadonlySet<string>): void {
+  for (const product of products) {
+    if (supersededIds.has(product.id)) product.discontinued = true;
+  }
 }
 
 /**
@@ -194,6 +228,8 @@ function loadManufacturers(): Map<string, Manufacturer> {
 
 interface CollectionResult {
   products: IndexProduct[];
+  /** Ids this collection's entries declare they supersede — see markSuperseded. */
+  supersededIds: Set<string>;
 }
 
 function loadCollection(
@@ -202,11 +238,13 @@ function loadCollection(
   manufacturers: Map<string, Manufacturer>
 ): CollectionResult {
   const products: IndexProduct[] = [];
+  const supersededIds = new Set<string>();
 
   for (const file of getYamlFiles(path.join(DATA_DIR, dir))) {
     const data = loadYamlFile<WithImages<Software & Hardware & Accessory>>(file);
     const slug = path.basename(file, path.extname(file));
     const manufacturer = manufacturers.get(data.manufacturer);
+    if (data.supersedes) supersededIds.add(data.supersedes);
 
     const categories = (data.categories ?? []).map(normalizeCategory);
     const primaryCategory = data.primaryCategory
@@ -230,11 +268,12 @@ function loadCollection(
       url: data.url,
       releaseDate: data.releaseDate,
       io: summarizeIo(data.io),
-      discontinued: isDiscontinued(data.verification) || undefined,
+      discontinued:
+        hasDiscontinuedSignal([primaryCategory, ...categories], data.verification) || undefined,
     });
   }
 
-  return { products };
+  return { products, supersededIds };
 }
 
 function buildCategories(products: IndexProduct[]): IndexCategory[] {
@@ -296,6 +335,15 @@ function build(): void {
 
   const products = [...software.products, ...hardware.products, ...accessories.products].sort(
     (a, b) => a.manufacturerName.localeCompare(b.manufacturerName) || a.name.localeCompare(b.name)
+  );
+
+  // Second pass: `supersedes` points at an id, so the older entry can only be
+  // flagged once every collection is loaded. Pooled across all three even
+  // though supersedes is same-collection by validation rule — ids are unique,
+  // so pooling costs nothing and cannot mis-flag.
+  markSuperseded(
+    products,
+    new Set([...software.supersededIds, ...hardware.supersededIds, ...accessories.supersededIds])
   );
 
   // Only brands with at least one product are emitted, so the count must come

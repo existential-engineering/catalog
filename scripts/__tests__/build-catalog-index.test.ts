@@ -7,7 +7,7 @@ vi.mock("../lib/schema-loader.js", () => ({
     ({ "quarter-inch": "1/4-inch" })[connection] ?? connection,
 }));
 
-import { summarizeIo } from "../build-catalog-index.js";
+import { hasDiscontinuedSignal, markSuperseded, summarizeIo } from "../build-catalog-index.js";
 import type { IO } from "../lib/types.js";
 
 function port(overrides: Partial<IO>): IO {
@@ -71,5 +71,45 @@ describe("summarizeIo", () => {
     expect(summarizeIo(mixed)).toEqual([
       { type: "midi", connection: "5-pin din", flow: "input", count: 1 },
     ]);
+  });
+});
+
+describe("hasDiscontinuedSignal", () => {
+  it("flags the canonical discontinued category", () => {
+    expect(hasDiscontinuedSignal(["synthesizer", "discontinued"], undefined)).toBe(true);
+  });
+
+  it("flags a hand-set verification status", () => {
+    expect(hasDiscontinuedSignal(["synthesizer"], { status: "discontinued" })).toBe(true);
+  });
+
+  it("leaves current products unflagged", () => {
+    expect(hasDiscontinuedSignal(["synthesizer"], undefined)).toBe(false);
+    expect(hasDiscontinuedSignal([], { status: "verified" })).toBe(false);
+    expect(hasDiscontinuedSignal([undefined], undefined)).toBe(false);
+  });
+});
+
+describe("markSuperseded", () => {
+  function product(id: string, discontinued?: true) {
+    return { id, discontinued } as Parameters<typeof markSuperseded>[0][number];
+  }
+
+  it("flags a product another entry supersedes", () => {
+    const products = [product("old"), product("new")];
+    markSuperseded(products, new Set(["old"]));
+    expect(products.map((p) => p.discontinued)).toEqual([true, undefined]);
+  });
+
+  it("leaves an already-flagged product flagged", () => {
+    const products = [product("old", true)];
+    markSuperseded(products, new Set());
+    expect(products[0].discontinued).toBe(true);
+  });
+
+  it("never sets the flag to false, so the field stays omitted for live products", () => {
+    const products = [product("live")];
+    markSuperseded(products, new Set());
+    expect(products[0]).not.toHaveProperty("discontinued", false);
   });
 });
