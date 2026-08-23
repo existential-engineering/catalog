@@ -16,9 +16,7 @@ url: https://alyjameslab.com/alyjameslabvprom.html
 prices:
   - amount: 56
     currency: EUR
-description: Vintage EPROM-based drum machine emulator faithfully recreating the
-  internal circuitry, DAC, and analog filtering of a legendary early-1980s drum
-  computer with built-in WAV resampler and EPROM burner.
+description: Vintage EPROM-based drum machine emulator faithfully recreating the internal circuitry, DAC, and analog filtering of a legendary early-1980s drum computer with built-in WAV resampler and EPROM burner.
 details: |-
   VProm 3.0 is a drum machine plugin that emulates the internal circuitry and
   filtering of a legendary early-1980s drum machine. It faithfully recreates
@@ -41,29 +39,39 @@ details: |-
   visualization. Maximum EPROM size is 64K (approximately 2.5 seconds at 27kHz)
   with muLaw 8-bit compression providing 12-bit quality.
 specs: |-
-  - Real-time DAC and EPROM sound processing emulation
-  - Built-in WAV resampler and EPROM burner for custom samples
-  - Real-time muLaw DAC curve control for transient shaping
-  - 48 PPQN internal clock with adjustable clock drift (1-40ms)
-  - 14 drum voices including Ext2 voice
-  - CEM filters and VCA envelope control per voice card
-  - Multi-output routing (Single Mix, Multi Post-Mixer, Multi Pre-Mixer)
-  - Enhanced oversampling (X16 ALL mode)
-  - Advanced EPROM management panel with waveform visualization
-  - .VPromKit format for custom drum kit configurations
+  - Formerly named VLinn (renamed to VProm at the request of the Linn Electronics trademark holder)
+  - Compatibility: Windows 10+ (64-bit VST3 host); macOS 10.14+ (64-bit VST3 or Audio-Unit host), Universal 2 binary for native Intel and Apple Silicon. No AAX; can be hosted in Pro Tools via a VST/AU wrapper such as DDMF Metaplugin or Blue Cat's PatchWork. VST2 and 32-bit support removed as of v3.0.
   - Maximum EPROM size: 64K (~2.5 seconds at 27kHz)
-  - muLaw 8-bit (12-bit quality) compression
-  - Universal 2 binary (native Apple Silicon M1/M2+ support)
-  - Backward compatible with VProm v2.0 presets
+  - Resampling rate: ~27 kHz emulated R2R ADC
+  - Compression: µLaw 8-bit (12-bit quality)
+  - Internal clock: 48 PPQN with adjustable clock drift (1-40ms)
+  - 14 drum voices
+  - Skins: LM1, DMX, Linndrum
+  - Backward compatible with VPROM v2.0 presets
 versions:
   - name: 3.0.2
+    releaseDate: 2026-05-24
+    description: Fixed-point 32.32 EPROM read pointer math, MIDI custom map corrections, AU offline render fix, restored macOS Mojave compatibility, hi-hat and CEM envelope tweaks, mixer taper fix, oversampler DC fix, updated library kits.
   - name: 3.0.1
+    releaseDate: 2025-03-17
+    description: MIDI map learning fix, crash fix for minimum-size EPROMs, inverted default Claps/Rimshot MIDI map, new Open Library button, new Closed Hat Accent parameter.
   - name: 3.0.0
+    releaseDate: 2025-02-23
+    description: Major release adding native Mac VST3/AU (Universal 2) support, built-in WAV resampler and EPROM burner, custom EPROM manager, real-time µLaw DAC curve control, enhanced mixer routing, revamped GUI/skins, 48 PPQN clock with drift, expanded voice cards, new EPROM Kit format. Removed VST2 and 32-bit support.
   - name: 2.0.4
+    description: Color update closer to original LM-1 hardware, linear/log mixer volume taper option, hi-hat curve/timing update, fixed NoDelay Snare Extra voice EPROM, new Choke feature, optional x16 oversampling, CPU optimizations.
   - name: 2.0.3
+    releaseDate: 2015-08-13
+    description: Renamed from VLINN to VPROM, with corresponding graphic changes.
   - name: 2.0.2
+    releaseDate: 2015-06-14
+    description: Fixed occasional crash on MIDI panel, VLINN-midiccs.ini recreated if missing.
   - name: 2.0.1
+    releaseDate: 2015-06-12
+    description: Fixed occasional crash on MIDI panel.
   - name: 2.0.0
+    releaseDate: 2015-05-24
+    description: Initial release.
 releaseDate: "2025"
 links:
   - type: resource
