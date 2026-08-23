@@ -71,15 +71,54 @@ export function loadUrlCache(): UrlCache {
 
   try {
     const content = fs.readFileSync(CACHE_FILE, "utf-8");
-    const cache = JSON.parse(content) as UrlCache;
+    const parsed: unknown = JSON.parse(content);
 
     // Validate cache version
-    if (cache.version !== 1) {
+    if (!isPlainObject(parsed) || parsed.version !== 1) {
       console.warn("URL cache version mismatch, creating new cache");
       return createEmptyCache();
     }
 
-    return cache;
+    // A correct version is not proof of a correct shape: a truncated or
+    // hand-edited file can carry `version: 1` with no `entries`, which
+    // used to reach every consumer as a TypeError on first lookup.
+    if (!isPlainObject(parsed.entries)) {
+      console.warn("URL cache is missing its entries map, creating new cache");
+      return createEmptyCache();
+    }
+
+    // Drop only the malformed entries. Discarding the whole file over one
+    // bad row would re-check every URL in the dataset, which is the cost
+    // this cache exists to avoid.
+    //
+    // Null-prototype, because the keys come from a file: assigning a
+    // "__proto__" key onto a normal object swaps that object's prototype
+    // instead of storing a row, so the entry vanishes and the map
+    // silently inherits whatever the file supplied.
+    const entries: Record<string, UrlCacheEntry> = Object.create(null);
+    let dropped = 0;
+    for (const [url, entry] of Object.entries(parsed.entries)) {
+      // The key is the lookup identity and `entry.url` is what consumers
+      // report, so a row filed under a different URL than it names would
+      // report the wrong URL as broken.
+      if (isUrlCacheEntry(entry) && entry.url === url) {
+        entries[url] = entry;
+      } else {
+        dropped++;
+      }
+    }
+    if (dropped > 0) {
+      console.warn(
+        `URL cache: dropped ${dropped} malformed ${dropped === 1 ? "entry" : "entries"}`
+      );
+    }
+
+    return {
+      version: 1,
+      entries,
+      lastUpdated:
+        typeof parsed.lastUpdated === "string" ? parsed.lastUpdated : new Date().toISOString(),
+    };
   } catch {
     console.warn("Failed to load URL cache, creating new cache");
     return createEmptyCache();
@@ -106,9 +145,75 @@ export function saveUrlCache(cache: UrlCache): void {
 function createEmptyCache(): UrlCache {
   return {
     version: 1,
-    entries: {},
+    entries: Object.create(null),
     lastUpdated: new Date().toISOString(),
   };
+}
+
+// =============================================================================
+// EXPIRY
+// =============================================================================
+
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+/**
+ * Age of an entry in days, or `Infinity` when its timestamp cannot be
+ * trusted.
+ *
+ * Both untrustworthy cases resolve to "expired" deliberately. An
+ * unparsable `lastChecked` yields `NaN`, and every comparison against
+ * `NaN` is false, so the entry read as permanently fresh: never served
+ * from a recheck, never pruned, and immortal in the stats. A timestamp
+ * in the future (a skewed clock on whichever machine last wrote the
+ * shared cache file) is immortal the same way, just more slowly.
+ *
+ * Expiring is the safe direction for a cache. The only cost is one
+ * redundant HTTP check, which rewrites `lastChecked` with a local clock
+ * and heals the entry; the alternative is pinning a wrong result with
+ * nothing able to clear it.
+ */
+export function entryAgeDays(lastChecked: string, now: Date = new Date()): number {
+  const checked = new Date(lastChecked).getTime();
+  if (!Number.isFinite(checked)) return Number.POSITIVE_INFINITY;
+
+  const days = (now.getTime() - checked) / (1000 * 60 * 60 * 24);
+  if (!Number.isFinite(days) || days < 0) return Number.POSITIVE_INFINITY;
+
+  return days;
+}
+
+/**
+ * True when an entry has outlived its TTL, or carries a timestamp or TTL
+ * we cannot trust.
+ *
+ * The TTL needs the same guard the timestamp got, for the same reason:
+ * `age > undefined` is false, so an entry carrying no `ttlDays` read as
+ * permanently fresh exactly the way a NaN age did.
+ */
+export function isExpired(entry: UrlCacheEntry, now: Date = new Date()): boolean {
+  if (!isPlainObject(entry)) return true;
+  const { ttlDays } = entry;
+  if (typeof ttlDays !== "number" || !Number.isFinite(ttlDays)) return true;
+  return entryAgeDays(entry.lastChecked, now) > ttlDays;
+}
+
+/**
+ * A cache file is hand-editable and outlives any single run, so an entry
+ * can be any shape by the time it is read back. Anything that would
+ * reach the expiry maths as `undefined` or `null` is rejected at the
+ * boundary, rather than defended against at each of the four consumers.
+ */
+export function isUrlCacheEntry(value: unknown): value is UrlCacheEntry {
+  return (
+    isPlainObject(value) &&
+    typeof value.url === "string" &&
+    typeof value.lastChecked === "string" &&
+    (typeof value.status === "number" || value.status === "error") &&
+    typeof value.ttlDays === "number" &&
+    Number.isFinite(value.ttlDays)
+  );
 }
 
 // =============================================================================
@@ -119,17 +224,15 @@ function createEmptyCache(): UrlCache {
  * Get a cached URL entry if it exists and is not expired
  */
 export function getCachedUrl(cache: UrlCache, url: string): UrlCacheEntry | null {
-  const entry = cache.entries[url];
+  // `entries` comes from JSON.parse, so a plain member lookup walks
+  // Object.prototype: a url of "constructor" or "toString" would resolve
+  // to a prototype member and be handed back as a cache entry.
+  const entry = Object.hasOwn(cache.entries, url) ? cache.entries[url] : undefined;
   if (!entry) {
     return null;
   }
 
-  // Check if entry has expired
-  const lastChecked = new Date(entry.lastChecked);
-  const now = new Date();
-  const daysSinceCheck = (now.getTime() - lastChecked.getTime()) / (1000 * 60 * 60 * 24);
-
-  if (daysSinceCheck > entry.ttlDays) {
+  if (isExpired(entry)) {
     return null; // Expired
   }
 
@@ -191,10 +294,7 @@ export function pruneExpiredEntries(cache: UrlCache): number {
   let removed = 0;
 
   for (const [url, entry] of Object.entries(cache.entries)) {
-    const lastChecked = new Date(entry.lastChecked);
-    const daysSinceCheck = (now.getTime() - lastChecked.getTime()) / (1000 * 60 * 60 * 24);
-
-    if (daysSinceCheck > entry.ttlDays) {
+    if (isExpired(entry, now)) {
       delete cache.entries[url];
       removed++;
     }
@@ -220,10 +320,7 @@ export function getCacheStats(cache: UrlCache): {
   let expiredCount = 0;
 
   for (const entry of Object.values(cache.entries)) {
-    const lastChecked = new Date(entry.lastChecked);
-    const daysSinceCheck = (now.getTime() - lastChecked.getTime()) / (1000 * 60 * 60 * 24);
-
-    if (daysSinceCheck > entry.ttlDays) {
+    if (isExpired(entry, now)) {
       expiredCount++;
       continue;
     }
@@ -263,11 +360,8 @@ export function getBrokenUrls(cache: UrlCache): UrlCacheEntry[] {
   const broken: UrlCacheEntry[] = [];
 
   for (const entry of Object.values(cache.entries)) {
-    const lastChecked = new Date(entry.lastChecked);
-    const daysSinceCheck = (now.getTime() - lastChecked.getTime()) / (1000 * 60 * 60 * 24);
-
     // Skip expired entries
-    if (daysSinceCheck > entry.ttlDays) {
+    if (isExpired(entry, now)) {
       continue;
     }
 
