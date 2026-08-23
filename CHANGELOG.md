@@ -1,5 +1,19 @@
 # catalog
 
+## 3.51.2
+
+### Patch Changes
+
+- 7419a46: Flag discontinued products in the web index
+
+  The index derived `discontinued` from `verification.status`, which only 3
+  of 11,042 entries carry, so web consumers saw 3 discontinued products
+  where the dataset marks 1,770. That signal is retained and unioned with
+  the two Studio already uses: the canonical `discontinued` category and
+  entries another product supersedes.
+
+- 27c6cdd: catalog-import-merge: aberrant-dsp — add current version numbers to 4 plugins (Digitalis, Lair, ShapeShifter, SketchCassette II)
+
 ## 3.51.1
 
 ### Patch Changes
