@@ -5,6 +5,7 @@ import {
   getCachedUrl,
   getCacheStats,
   isExpired,
+  isUrlCacheEntry,
   pruneExpiredEntries,
   setCachedUrl,
   shouldRecheck,
@@ -226,5 +227,56 @@ describe("getBrokenUrls", () => {
   it("skips entries with untrustworthy timestamps", () => {
     const cache = cacheOf(entry({ status: 404, lastChecked: "not-a-date" }));
     expect(getBrokenUrls(cache)).toEqual([]);
+  });
+});
+
+describe("malformed entries", () => {
+  it("treats a missing ttlDays as expired, not as permanently fresh", () => {
+    // Same immortality bug as a NaN age, reached through the other
+    // operand: `age > undefined` is false for every age.
+    const noTtl = { url: "u", lastChecked: ago(0), status: 404 } as unknown as UrlCacheEntry;
+    expect(isExpired(noTtl, NOW)).toBe(true);
+    expect(isExpired({ ...noTtl, lastChecked: ago(9999) } as UrlCacheEntry, NOW)).toBe(true);
+  });
+
+  it("treats a non-numeric or non-finite ttlDays as expired", () => {
+    const base = { url: "u", lastChecked: ago(0), status: 404 };
+    expect(isExpired({ ...base, ttlDays: "7" } as unknown as UrlCacheEntry, NOW)).toBe(true);
+    expect(isExpired({ ...base, ttlDays: Number.NaN } as UrlCacheEntry, NOW)).toBe(true);
+  });
+
+  it("treats a null entry as expired instead of throwing", () => {
+    expect(isExpired(null as unknown as UrlCacheEntry, NOW)).toBe(true);
+  });
+
+  it("does not throw when maintenance walks a null entry", () => {
+    const cache = {
+      version: 1,
+      entries: { "https://a.test": null as unknown as UrlCacheEntry },
+      lastUpdated: NOW.toISOString(),
+    } as UrlCache;
+    expect(() => pruneExpiredEntries(cache)).not.toThrow();
+    expect(() => getCacheStats(cache)).not.toThrow();
+    expect(() => getBrokenUrls(cache)).not.toThrow();
+  });
+});
+
+describe("isUrlCacheEntry", () => {
+  it("accepts a well-formed entry with either status shape", () => {
+    expect(isUrlCacheEntry(entry())).toBe(true);
+    expect(isUrlCacheEntry(entry({ status: "error", ttlDays: 0.25 }))).toBe(true);
+  });
+
+  it.each([
+    ["null", null],
+    ["an array", []],
+    ["a string", "nope"],
+    ["a missing url", { lastChecked: ago(0), status: 200, ttlDays: 7 }],
+    ["a missing lastChecked", { url: "u", status: 200, ttlDays: 7 }],
+    ["a missing ttlDays", { url: "u", lastChecked: ago(0), status: 200 }],
+    ["a non-finite ttlDays", { url: "u", lastChecked: ago(0), status: 200, ttlDays: Number.NaN }],
+    ["an unknown status", { url: "u", lastChecked: ago(0), status: "weird", ttlDays: 7 }],
+  ])("rejects %s", (_label, value) => {
+    expect(isUrlCacheEntry(value)).toBe(false);
   });
 });

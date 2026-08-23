@@ -87,7 +87,30 @@ export function loadUrlCache(): UrlCache {
       return createEmptyCache();
     }
 
-    return parsed as unknown as UrlCache;
+    // Drop only the malformed entries. Discarding the whole file over one
+    // bad row would re-check every URL in the dataset, which is the cost
+    // this cache exists to avoid.
+    const entries: Record<string, UrlCacheEntry> = {};
+    let dropped = 0;
+    for (const [url, entry] of Object.entries(parsed.entries)) {
+      if (isUrlCacheEntry(entry)) {
+        entries[url] = entry;
+      } else {
+        dropped++;
+      }
+    }
+    if (dropped > 0) {
+      console.warn(
+        `URL cache: dropped ${dropped} malformed ${dropped === 1 ? "entry" : "entries"}`
+      );
+    }
+
+    return {
+      version: 1,
+      entries,
+      lastUpdated:
+        typeof parsed.lastUpdated === "string" ? parsed.lastUpdated : new Date().toISOString(),
+    };
   } catch {
     console.warn("Failed to load URL cache, creating new cache");
     return createEmptyCache();
@@ -153,9 +176,36 @@ export function entryAgeDays(lastChecked: string, now: Date = new Date()): numbe
   return days;
 }
 
-/** True when an entry has outlived its TTL, or carries a timestamp we cannot trust. */
+/**
+ * True when an entry has outlived its TTL, or carries a timestamp or TTL
+ * we cannot trust.
+ *
+ * The TTL needs the same guard the timestamp got, for the same reason:
+ * `age > undefined` is false, so an entry carrying no `ttlDays` read as
+ * permanently fresh exactly the way a NaN age did.
+ */
 export function isExpired(entry: UrlCacheEntry, now: Date = new Date()): boolean {
-  return entryAgeDays(entry.lastChecked, now) > entry.ttlDays;
+  if (!isPlainObject(entry)) return true;
+  const { ttlDays } = entry;
+  if (typeof ttlDays !== "number" || !Number.isFinite(ttlDays)) return true;
+  return entryAgeDays(entry.lastChecked, now) > ttlDays;
+}
+
+/**
+ * A cache file is hand-editable and outlives any single run, so an entry
+ * can be any shape by the time it is read back. Anything that would
+ * reach the expiry maths as `undefined` or `null` is rejected at the
+ * boundary, rather than defended against at each of the four consumers.
+ */
+export function isUrlCacheEntry(value: unknown): value is UrlCacheEntry {
+  return (
+    isPlainObject(value) &&
+    typeof value.url === "string" &&
+    typeof value.lastChecked === "string" &&
+    (typeof value.status === "number" || value.status === "error") &&
+    typeof value.ttlDays === "number" &&
+    Number.isFinite(value.ttlDays)
+  );
 }
 
 // =============================================================================
