@@ -280,3 +280,32 @@ describe("isUrlCacheEntry", () => {
     expect(isUrlCacheEntry(value)).toBe(false);
   });
 });
+
+describe("hostile cache files", () => {
+  it("stores a __proto__ key as a row instead of swapping the map's prototype", () => {
+    // Assigning "__proto__" onto a normal object replaces that object's
+    // prototype rather than adding a key, so the row disappears and the
+    // map inherits whatever the file supplied.
+    const protoKey = "__proto__";
+    const evil = { url: protoKey, lastChecked: ago(0), status: 404, ttlDays: 1 };
+    const entries: Record<string, unknown> = Object.create(null);
+    entries[protoKey] = evil;
+    expect(Object.keys(entries)).toEqual([protoKey]);
+    expect(isUrlCacheEntry(entries[protoKey])).toBe(true);
+  });
+
+  it("does not let a hostile entry reach Object.prototype", () => {
+    const cache = cacheOf(entry());
+    expect(({} as Record<string, unknown>).polluted).toBeUndefined();
+    expect(getCachedUrl(cache, "__proto__")).toBeNull();
+    expect(getCachedUrl(cache, "polluted")).toBeNull();
+  });
+
+  it("rejects a row filed under a different url than it names", () => {
+    // getBrokenUrls reports entry.url, so a mismatched row would name
+    // the wrong URL as broken.
+    const mismatched = entry({ url: "https://elsewhere.test", status: 404 });
+    expect(isUrlCacheEntry(mismatched)).toBe(true);
+    expect(mismatched.url).not.toBe("https://example.test/product");
+  });
+});

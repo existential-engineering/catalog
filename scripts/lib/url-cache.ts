@@ -90,10 +90,18 @@ export function loadUrlCache(): UrlCache {
     // Drop only the malformed entries. Discarding the whole file over one
     // bad row would re-check every URL in the dataset, which is the cost
     // this cache exists to avoid.
-    const entries: Record<string, UrlCacheEntry> = {};
+    //
+    // Null-prototype, because the keys come from a file: assigning a
+    // "__proto__" key onto a normal object swaps that object's prototype
+    // instead of storing a row, so the entry vanishes and the map
+    // silently inherits whatever the file supplied.
+    const entries: Record<string, UrlCacheEntry> = Object.create(null);
     let dropped = 0;
     for (const [url, entry] of Object.entries(parsed.entries)) {
-      if (isUrlCacheEntry(entry)) {
+      // The key is the lookup identity and `entry.url` is what consumers
+      // report, so a row filed under a different URL than it names would
+      // report the wrong URL as broken.
+      if (isUrlCacheEntry(entry) && entry.url === url) {
         entries[url] = entry;
       } else {
         dropped++;
@@ -137,7 +145,7 @@ export function saveUrlCache(cache: UrlCache): void {
 function createEmptyCache(): UrlCache {
   return {
     version: 1,
-    entries: {},
+    entries: Object.create(null),
     lastUpdated: new Date().toISOString(),
   };
 }
