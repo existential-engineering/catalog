@@ -2,5 +2,5 @@
 "catalog": minor
 ---
 
-catalog-import-merge: chase-bliss — add Bad Mood, refresh 14 existing
-entries with current copy/specs/images/videos, mark exp discontinued
+catalog-import-merge: chase-bliss. Adds Bad Mood, refreshes 14 existing
+entries with current copy/specs/images/videos, marks exp discontinued
