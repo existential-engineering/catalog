@@ -16,9 +16,7 @@ url: https://alyjameslab.com/alyjameslabclaptrap.html
 prices:
   - amount: 30
     currency: EUR
-description: Stereo analog and digital Simmons ClapTrap extended emulation
-  recreating the iconic 1980s clap machine with dual circuit models (Digital MK3
-  and Analog MK1/2) and humanizer functionality.
+description: Stereo analog and digital Simmons ClapTrap extended emulation recreating the iconic 1980s clap machine with dual circuit models (Digital MK3 and Analog MK1/2) and humanizer functionality.
 details: |-
   ClapTrap 2.0 is a stereo plugin that recreates the iconic 1980s Simmons
   ClapTrap clap machine. It emulates both the digital MK3 version and the newly
@@ -40,26 +38,35 @@ details: |-
   Universal 2 binary providing native Apple Silicon support for M1/M2+
   processors.
 specs: |-
-  - Dual circuit models (Digital MK3 and Analog MK1/2)
-  - True stereo capability with internal dual operation
-  - Multi-output routing
-  - Modeled SVF noise filter topology
-  - Digital clap tone EPROM swapping
-  - Analog circuit parameter tweaking (pulse shape, humanizer modulation)
-  - Trigger thump and filter noise bleed emulation
-  - Trigger delay option (up to 100ms)
-  - Global circuit saturation control
-  - VST3 MIDI 2.0 support
-  - Universal 2 binary (native Apple Silicon support)
+  - Circuit MODELS: Digital MK3 or the freshly emulated Analog MK1/2 model
+  - Multi Outputs routing capability
+  - Single or Dual operation
+  - Settings and preset browser pages
+  - Modelled SVF Noise Filter topology
+  - Option to switch from original hardware noise SVF filter to a custom fixed gain peak filter
+  - Digital Clap Tone EPROM swapping
+  - Analog Clap Ensemble circuit bending: Pulses shape, Humanizer mod amount, reversed key-tracking
+  - Trigger thump and Filter noise bleed emulation
+  - Option to delay incoming trigger (max 100ms) on one unit
+  - True stereo capability by running 2 modelled ClapTrap internally or 4 in DUAL mode
+  - Option to enable global circuit saturation (also reduces dynamic range)
+  - Most parameters respond to automation
+  - Improved VST3 MIDI support (MIDI 2.0, Ableton Live External Instrument rack inputs detection)
+  - Windows: Windows 10 or higher, 64-bit VST3 compatible host
+  - macOS: macOS 10.14 or higher (64-bit), VST3 or Audio-Unit compatible host, Universal 2 binary (native Intel and Apple Silicon)
 versions:
   - name: 2.0.1
-    releaseDate: "2024-06-16"
+    releaseDate: 2024-06-16
+    description: "Fix: rare MIDI timing issue on Mac AU (audio-unit). Fix: few GUI display glitches."
   - name: 2.0.0
-    releaseDate: "2023-10-14"
+    releaseDate: 2023-10-14
+    description: Introduced Mac VST3 and native Silicon (M1/M2) Universal 2 builds, signed Mac installers, Circuit MODE (Digital MK3 or Analog MK1/2), GUI trigger button, improved GUI, multi-output routing, single or dual operation, preset browser, improved noise filter topology, EPROM tone swapping, analog circuit bending options, trigger thump and filter noise bleed emulation, trigger delay option, true stereo on analog ensemble pulses, global circuit saturation option, automation fixes, and improved VST3 MIDI support.
   - name: 1.0.2
-    releaseDate: "2021-01-25"
+    releaseDate: 2021-01-25
+    description: Fixed wrong status on MIDI Map after a Map Reset, better Direct-X graphics support, new keyboard control mode, fixed control voltage limits in key control mode, Catalina/Big Sur fix, Auval fix, automation and preset system fix, and Apple signing/notarization.
   - name: "1.0"
-    releaseDate: "2019-04-19"
+    releaseDate: 2019-04-19
+    description: Initial release. CLAP voice closely based on the iconic Simmons Digital ClapTrap from 1982 with additional controls, modulation capabilities and stereo widening. Two emulated voices running with EPROM clock and filter offsets.
 releaseDate: "2019"
 links:
   - type: resource

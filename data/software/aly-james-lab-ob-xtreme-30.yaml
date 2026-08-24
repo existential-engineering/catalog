@@ -16,9 +16,7 @@ url: https://alyjameslab.com/obxtreme.html
 prices:
   - amount: 51
     currency: EUR
-description: 8-voice virtual analog synthesizer based on the Oberheim OB-X and
-  OB-Xa, recreating the subtle imperfections and harmonic distortion of vintage
-  analog hardware.
+description: 8-voice virtual analog synthesizer based on the Oberheim OB-X and OB-Xa, recreating the subtle imperfections and harmonic distortion of vintage analog hardware.
 details: |-
   OB-Xtreme is a digital emulation of classic Oberheim analog synthesizers,
   combining 8 mono synths to create a massive, authentic analog sound with
@@ -42,29 +40,33 @@ details: |-
   selectable 4 or 8-voice polyphony, enhanced modulation routing, 2-pole
   high-pass output with filter bleed, and envelope scope visualization.
 specs: |-
-  - 8-voice polyphonic, unison mono, or true mono synthesis
-  - Configurable voice clones (2, 4, or 8)
-  - Oscillators: SAW, PULSE, TRI, SAW+PULSE with +1 octave harmonic
-  - 2-pole SVF filter (OB-X based) and 4-pole CEM3320 (Moog-like resonance)
-  - High-pass and band-pass filter outputs
-  - Xtreme Factor: OTA-induced distortion emulation (PRE and POST circuits)
-  - 7 voltage offset macro sliders for global parameter control
-  - Up to 16x oversampling
-  - Multiple LFOs with phase reverse and keytracking inversion
-  - Per-voice pan control with stereo widening presets (Wide, Spread, Ping Pong)
-  - Velocity modulation of filter/amplitude envelope decay
-  - Built-in categorized preset browser
-  - Keyboard Scaling (KBS) with configurable voltage tracking
-  - Envelope scope visualization
-  - Universal 2 binary (native Apple Silicon support)
+  - Polyphony: 4 or 8 voice selectable, mono/poly unison modes (2, 4, or 8 clones)
+  - Oscillator shapes: SAW, PULSE, TRI, SAW+PULSE
+  - Filter modes: 2-pole SVF, 4-pole CEM3320, high-pass, band-pass
+  - Oversampling: up to x16
+  - Universal 2 binary (Intel x64 / ARM native on Mac)
+  - Windows: Windows 10 or higher, 64-bit VST3 host
+  - macOS: macOS 10.14 or higher, 64-bit VST3 or Audio Unit host, Universal 2 (Intel/ARM)
 versions:
-  - name: 3.0.0
-  - name: 2.0.2
-  - name: 2.0.1
-  - name: 2.0.0
-  - name: "1.1"
-  - name: "1.0"
-releaseDate: "2014"
+  - name: v3.0.0
+    releaseDate: 2024-11-18
+    description: Mac VST3 and native Silicon support, remade GUI, selectable polyphony, new envelope visualization, KBS feature, expanded modulation options
+  - name: v2.0.2
+    releaseDate: 2022-11-19
+    description: GUI OSC tuning fixes, CPU reduction
+  - name: v2.0.1
+    releaseDate: 2022-09-29
+    description: Added v2 factory presets, LFO2 modes and routing, semitone tuning, preset navigation
+  - name: v2.0.0
+    releaseDate: 2022-07-16
+    description: Cross-platform rewrite with Windows VST3 and Mac AU support
+  - name: v1.1
+    releaseDate: 2014-10-05
+    description: Small bug fix
+  - name: v1.0
+    releaseDate: 2014-10-01
+    description: Initial release
+releaseDate: 2014-10-01
 videos:
   - videoId: iYRXbRf4rII
     title: OB-Xtreme 3.0 Mac & PC VST3 AU short preview

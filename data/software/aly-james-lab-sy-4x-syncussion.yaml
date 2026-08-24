@@ -17,9 +17,7 @@ url: https://alyjameslab.com/alyjameslabsy4x.html
 prices:
   - amount: 51
     currency: EUR
-description: Software recreation of the Pearl Syncussion SY-1 drum synthesizer
-  from the late 1970s, featuring four independent modules with CMOS-based
-  oscillator modeling and 60+ musical scales.
+description: Software recreation of the Pearl Syncussion SY-1 drum synthesizer from the late 1970s, featuring four independent modules with CMOS-based oscillator modeling and 60+ musical scales.
 details: |-
   SY-4X Virtual Syncussion is a software recreation of the legendary Pearl
   Syncussion SY-1 drum synthesizer from the late 1970s, offering four
@@ -44,25 +42,20 @@ details: |-
   up to 16x oversampling. It supports Windows 10+ (VST3) and macOS 10.14+ (VST3
   and AU) with Universal 2 binary for native Apple Silicon support.
 specs: |-
-  - 4 independent Syncussion modules (8-voice drum kit capability)
-  - CMOS-based oscillators with authentic circuit modeling
-  - 2-pole spreading VCF with adjustable pole separation
-  - 8 preset synthesis modes (A-H) with trigger-controlled mode scanning
-  - CMOS circuit defect control for enhanced harmonics
-  - Berserk Mode with optional distortion (pre or post-filter)
-  - Keyboard Mode with pitch scaling to 60+ musical scales
-  - LFO with square/triangle waveforms
-  - Sample & Hold circuit
-  - Multiple output routing
-  - Up to 16x oversampling
-  - Dual envelope generators (SWEEP and dynamic)
-  - Cross-modulation capabilities
-  - Universal 2 binary (native Apple Silicon support)
+  - Oscillators: Voltage-controlled with TRI core and CMOS 4069 hex inverters, 8 preset oscillator modes (A-H)
+  - Filter: Modeled 2-pole spreading voltage-controlled state-variable filter using 4069 inverters
+  - Amplifier: Transistor pair-diff opamp VCA
+  - Four independent Syncussion modules in one plugin
+  - Dual envelope generators, LFO with square and triangle waveforms, Sample & Hold circuit, optional Berserk Mode with distortion, Drum Kit and Keyboard modes, up to 60 optional pitch scaling rules, trigger-controlled mode scanning, multi-output routing, up to X16 oversampling, MIDI 2.0 support
+  - Windows: Windows 10 and higher (64-bit), 64-bit VST3 compatible host
+  - macOS: Mac OS 10.14 and higher (64-bit), 64-bit VST3 or Audio-Unit compatible host, Universal 2 binary (native Apple Silicon and Intel)
 versions:
   - name: 1.0.2
-    releaseDate: "2024-09-13"
+    releaseDate: 2024-09-13
+    description: Fixes to MIDI parameter assignments, envelope calculations, Mode D pitch modulation; added copy/paste channel settings, VCF Poles 1:1 Ratio, LFO Trigger Reset, EG Fast Attack, Decay Sense, and other tweaks.
   - name: 1.0.1
-    releaseDate: "2024-08-11"
+    releaseDate: 2024-08-11
+    description: Initial release.
 videos:
   - videoId: sVqn3xe_ZcI
     title: SY-4X Syncussion Extended VST Plug-in

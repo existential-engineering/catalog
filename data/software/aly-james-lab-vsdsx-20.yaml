@@ -17,9 +17,7 @@ url: https://alyjameslab.com/alyjameslabvsdsx.html
 prices:
   - amount: 51
     currency: EUR
-description: Virtual recreation of the Simmons SDS-V/SDS5 analog drum
-  synthesizer from the 1980s, offering authentic analog oscillator modeling with
-  SSM2044 filter emulation and extended features.
+description: Virtual recreation of the Simmons SDS-V/SDS5 analog drum synthesizer from the 1980s, offering authentic analog oscillator modeling with SSM2044 filter emulation and extended features.
 details: |-
   VSDSX (Virtual Simmons Drum System Extended) is a software recreation of the
   legendary Simmons SDS-V/SDS5 drum synthesizer from the 1980s, famously used by
@@ -40,24 +38,29 @@ details: |-
   Universal 2 binary providing native Apple Silicon support. Full preset and
   bank save/load functionality with parameter automation support is included.
 specs: |-
-  - Analog oscillator modeling with harmonic emulation and clipping behavior
-  - SSM2044 filter emulation with resonance and VCF control
-  - Pitch bending (up/down) with optional SDS7 LFO FM modulation
-  - Separate multi-outputs for each voice/module
-  - Velocity sensitivity control across multiple parameters
-  - External EPROM data loading (up to 64KB)
-  - Digital ClapTrap module emulation
-  - MIDI mapping with custom assignment capability
-  - Full preset/bank save/load functionality
-  - GUI rack system displaying 4 modules simultaneously
-  - Universal 2 binary (native Apple Silicon support)
+  - Voices: 10+ modules -- Bass Drum, Toms (incl. Tom Bass), Snare, Hi-Hat, Cymbal, PROM/PROM2 (EPROM-based), ClapTrap
+  - Modeling: Analog modeled oscillator, SSM2044 filter emulation, pitch bending, SDS7 LFO FM modulation, MIDI velocity/trigger sensitivity, custom EPROM loading (1K-64K .bin, U255 companded or Linear PCM), separate multi-outputs, MIDI mapping, parameter automation
+  - Architecture: 64-bit only
+  - Mac build: Universal 2 (native Intel x86-64 and Apple Silicon ARM64)
 versions:
   - name: 2.3.1
+    releaseDate: 2024-06-16
+    description: Fixed rare MIDI timing issue on Mac AU, HH/CYMB body filter fix, Presonus preset DSP fix, noise filter sweep corrections, GUI CPU and glitch fixes.
   - name: 2.3.0
+    releaseDate: 2023-06-30
+    description: Mac VST3 and native Apple Silicon (Universal 2) support, signed Mac installers, new TOM Bass and PROM 2 modules, GUI overhaul, LEGACY/SIMMONS circuit modes.
   - name: 2.0.2
+    releaseDate: 2021-01-25
+    description: MIDI Map status fix, Direct-X graphics support, Hihat velocity fix, GUI fixes, Mac Catalina/Big Sur fix, Apple notarization.
   - name: "2.0"
+    releaseDate: 2019-04-19
+    description: Cross-platform release (Windows VST2/VST3, Mac AU), 64-bit build, updated GUI, refined Hi-Hat/Cymbal modules, MIDI mapping, new ClapTrap voice.
   - name: "1.1"
+    releaseDate: 2017-07-01
+    description: Fixed audio click on re-triggering long decaying voice; added default bank presets.
   - name: "1.0"
+    releaseDate: 2014-06-30
+    description: Initial release.
 releaseDate: "2014"
 links:
   - type: resource
