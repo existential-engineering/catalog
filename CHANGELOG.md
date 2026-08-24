@@ -1,5 +1,19 @@
 # catalog
 
+## 3.52.0
+
+### Minor Changes
+
+- c34f50a: catalog-import-merge: algorithmix — add Sound Laundry compact edition, refresh version numbers on 6 existing products
+- 3b58592: catalog-import-merge: chase-bliss. Adds Bad Mood, refreshes 14 existing
+  entries with current copy/specs/images/videos, marks exp discontinued
+
+### Patch Changes
+
+- 9d9dd88: Add the four rear panel io ports to the IK Multimedia iLoud MTM MKII, which had none and so could not be wired into a setup
+- daa7781: catalog-import-merge: accentize — refresh 11 existing entries with current pricing, descriptions and specs
+- c654b17: catalog-import-merge: aly-james-lab, refresh specs and versions for all 8 existing entries from the current manufacturer site
+
 ## 3.51.2
 
 ### Patch Changes
