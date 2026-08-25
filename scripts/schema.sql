@@ -283,6 +283,18 @@ CREATE TABLE IF NOT EXISTS hardware_categories (
 
 CREATE INDEX idx_hardware_categories_category ON hardware_categories(category);
 
+-- Capabilities: what a product DOES (schema/capabilities.yaml). Kept separate
+-- from hardware_categories because that axis mixes lifecycle, form factor and
+-- technology with function, which makes a shared row there meaningless as
+-- evidence that two products overlap. Same shape so the two stay comparable.
+CREATE TABLE IF NOT EXISTS hardware_capabilities (
+    hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+    capability TEXT NOT NULL,
+    PRIMARY KEY (hardware_id, capability)
+);
+
+CREATE INDEX idx_hardware_capabilities_capability ON hardware_capabilities(capability);
+
 -- Hardware Search Terms
 CREATE TABLE IF NOT EXISTS hardware_search_terms (
     hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,

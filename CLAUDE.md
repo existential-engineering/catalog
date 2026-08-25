@@ -201,6 +201,56 @@ entry with `maxConnections` set to the point count (a 48-point TRS row, not 48
 entries), so W128 skips that category. TT/Bantam patch points use
 `connection: tt`.
 
+## Capabilities
+
+`capabilities` records **what a product does** — the audio processing
+operations it performs — as a closed vocabulary in `schema/capabilities.yaml`.
+It is a hardware-only field today, populated for the `multi-effect` corpus;
+`pnpm capability-coverage` reports which categories have been assessed.
+
+```yaml
+primaryCategory: multi-effect
+categories:
+  - pedal
+  - effect
+capabilities:
+  - looper
+  - reverb
+  - delay
+  - pitch-shift
+```
+
+**Why it is not just more `categories`.** `categories` mixes at least five
+axes: function (`reverb`), lifecycle (`discontinued`, 26% of hardware), form
+factor (`rack-mount`, `pedal`), technology (`analog`, `digital`) and era
+(`vintage`). That serves faceted browsing, which is what it was built for, and
+it cannot answer whether two products overlap — two entries sharing
+`discontinued` have told you nothing. Because every value in `capabilities` is
+the same kind of claim, two entries' lists are comparable as sets, which
+`primaryCategory` structurally cannot be: every member of a category is
+equidistant from every other.
+
+- **One dimension only.** If a value describes what a product **is** rather
+  than what it **does**, it belongs in `categories`. The guard test
+  `scripts/__tests__/capabilities.test.ts` fails if the vocabulary picks up a
+  value from a non-functional category group, so this rule reports its own
+  violations rather than relying on being read.
+- **Describe the operation, not the algorithm's name.** A "Shimmer" mode is
+  `reverb` + `pitch-shift`; "Auto-Tune Evo" is `pitch-correction`; "Neural
+  Capture" is `amp-modeling`.
+- **No aliases, unlike `categories`.** Invalid values hard-fail with E119 and
+  duplicates with E205. A synonym would reintroduce the ambiguity the field
+  exists to remove, and a near-miss value breaks comparability while leaving
+  the entry looking populated.
+- **Omit rather than guess.** An absent `capabilities` means "not yet
+  assessed", which the coverage report can say out loud; an empty or
+  speculative list is indistinguishable from a verified one. Never write
+  `capabilities: []`.
+- **The vocabulary is meant to grow**, same as `io-types.yaml`. It was derived
+  from the effects corpus, so synthesis, recording and playback operations are
+  not in it yet. When an entry performs an operation with no value, add it in
+  the same PR.
+
 ## Content Entries
 
 Content entries (presets, sample packs, expansions) live in `data/content/` as a separate collection. Content `primaryCategory` values include `preset`, `preset-pack`, `sample-pack`, `drum-sample-pack`, `loop-pack`, `sound-library`, `soundfont`, `impulse-response`, and `multisample`.
