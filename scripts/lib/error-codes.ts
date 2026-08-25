@@ -39,11 +39,13 @@ export enum ValidationErrorCode {
   E116_INVALID_LINK_TYPE = "E116",
   E117_INVALID_IO_TYPE = "E117",
   E118_NAME_ARTIFACT = "E118",
+  E119_INVALID_CAPABILITY = "E119",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
   E200_MANUFACTURER_NOT_FOUND = "E200",
   E202_DUPLICATE_CATEGORY = "E202",
+  E205_DUPLICATE_CAPABILITY = "E205",
   E203_PARENT_COMPANY_NOT_FOUND = "E203",
   E204_IO_TRANSLATION_MISMATCH = "E204",
 
@@ -199,6 +201,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     title: "Name contains scrape artifacts",
     anchor: "e118-name-contains-scrape-artifacts",
   },
+  [ValidationErrorCode.E119_INVALID_CAPABILITY]: {
+    title: "Invalid capability",
+    anchor: "e119-invalid-capability",
+  },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",
     anchor: "e199-validation-error",
@@ -220,6 +226,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E204_IO_TRANSLATION_MISMATCH]: {
     title: "I/O translation mismatch",
     anchor: "e204-io-translation-mismatch",
+  },
+  [ValidationErrorCode.E205_DUPLICATE_CAPABILITY]: {
+    title: "Duplicate capability",
+    anchor: "e205-duplicate-capability",
   },
 
   // Content errors

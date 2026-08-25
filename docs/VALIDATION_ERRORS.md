@@ -318,6 +318,45 @@ prefixes) is covered by the advisory warnings W129/W130.
 
 ---
 
+### E119: Invalid Capability
+
+A value in `capabilities` is not in `schema/capabilities.yaml`.
+
+`capabilities` answers one question: **what audio processing operation does
+this product perform?** It is deliberately a different axis from `categories`,
+which also carries lifecycle (`discontinued`), form factor (`rack-mount`,
+`pedal`), technology (`analog`, `digital`) and era (`vintage`). That mixing is
+fine for browsing and useless for comparison — two entries sharing
+`discontinued` have told you nothing about whether they overlap.
+
+**Common mistakes:**
+
+- `rack-mount`, `pedal`, `outboard`, `modular` -> form factor. These belong in `categories`
+- `discontinued`, `legacy`, `vintage` -> lifecycle and era. `categories`
+- `analog`, `digital` -> how it is built, not what it does. `categories`
+- `guitar`, `vocal` -> what it is used on. `categories`
+- `multi-effect` -> not an operation. List the operations it performs
+- `shimmer`, `auto-tune`, `neural capture` -> product or algorithm names.
+  Describe the operation: `reverb` + `pitch-shift`, `pitch-correction`,
+  `amp-modeling`
+
+**Fix:** Use a value from `schema/capabilities.yaml`. If a product genuinely
+performs an operation the vocabulary lacks, add it there in the same PR (the
+same convention `io-types.yaml` follows). There are no aliases on this field
+by design: a synonym would reintroduce exactly the ambiguity that makes
+`categories` uncomparable.
+
+Omit the field entirely rather than guessing. An absent `capabilities` means
+"not yet assessed", which `pnpm capability-coverage` reports as such; a
+speculative list is indistinguishable from a verified one.
+
+This code also covers `capabilities: []`, which fails with "capabilities must
+not be empty". An empty array is not the same claim as an absent field: it says
+the product performs no audio operation at all, which is never what an author
+means. Delete the key instead.
+
+---
+
 ### E199: Validation Error
 
 A generic validation error that doesn't fall into a more specific category.
@@ -400,6 +439,31 @@ translations:
 ```
 
 **Fix:** Ensure `originalName` exactly matches a port name in the base `io` array.
+
+---
+
+### E205: Duplicate Capability
+
+The same value appears twice in a `capabilities` array.
+
+**Example:**
+
+```yaml
+# Wrong - reverb listed twice
+capabilities:
+  - reverb
+  - delay
+  - reverb
+
+# Correct
+capabilities:
+  - reverb
+  - delay
+```
+
+**Fix:** Remove the duplicate. Capability lists are compared as sets, so a
+repeat carries no extra meaning and inflates the list length used in
+similarity scoring.
 
 ---
 
