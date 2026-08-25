@@ -1,5 +1,11 @@
 # catalog
 
+## 3.52.1
+
+### Patch Changes
+
+- 938986b: Record Bad Mood's two colourways, Ink Edition and Xtreme Red
+
 ## 3.52.0
 
 ### Minor Changes
