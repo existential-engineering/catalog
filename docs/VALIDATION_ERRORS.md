@@ -350,6 +350,11 @@ Omit the field entirely rather than guessing. An absent `capabilities` means
 "not yet assessed", which `pnpm capability-coverage` reports as such; a
 speculative list is indistinguishable from a verified one.
 
+This code also covers `capabilities: []`, which fails with "capabilities must
+not be empty". An empty array is not the same claim as an absent field: it says
+the product performs no audio operation at all, which is never what an author
+means. Delete the key instead.
+
 ---
 
 ### E199: Validation Error

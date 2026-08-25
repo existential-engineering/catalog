@@ -205,7 +205,8 @@ entries), so W128 skips that category. TT/Bantam patch points use
 
 `capabilities` records **what a product does** — the audio processing
 operations it performs — as a closed vocabulary in `schema/capabilities.yaml`.
-It is a hardware-only field today, populated for the `multi-effect` corpus;
+It is a hardware-only field today, populated across the Effects category group
+(hand-authored for `multi-effect`, derived elsewhere);
 `pnpm capability-coverage` reports which categories have been assessed.
 
 ```yaml

@@ -96,33 +96,39 @@ function isValidCategory(cat: string): boolean {
 // value of the field is that two entries' lists are comparable, and a typo or a
 // near-miss synonym silently breaks comparability while looking populated.
 function createCapabilitiesValidator() {
-  return z
-    .array(z.string())
-    .optional()
-    .check((ctx) => {
-      if (!ctx.value) return;
-      for (const cap of ctx.value) {
-        if (VALID_CAPABILITIES.has(cap)) continue;
-        const suggestion = findClosestMatch(cap, VALID_CAPABILITIES);
-        let message = `Invalid capability '${cap}'.`;
-        if (suggestion) {
-          message += ` Did you mean '${suggestion}'?`;
+  return (
+    z
+      .array(z.string())
+      // Omission means "not yet assessed" and is fine. An empty array is a
+      // different claim — that the product performs no audio operation at all —
+      // and is always wrong for an entry someone bothered to add the key to.
+      .min(1, "capabilities must not be empty; omit the field when not yet assessed")
+      .optional()
+      .check((ctx) => {
+        if (!ctx.value) return;
+        for (const cap of ctx.value) {
+          if (VALID_CAPABILITIES.has(cap)) continue;
+          const suggestion = findClosestMatch(cap, VALID_CAPABILITIES);
+          let message = `Invalid capability '${cap}'.`;
+          if (suggestion) {
+            message += ` Did you mean '${suggestion}'?`;
+          }
+          message += " Valid values are in schema/capabilities.yaml.";
+          ctx.issues.push({ code: "custom", message, input: cap });
         }
-        message += " Valid values are in schema/capabilities.yaml.";
-        ctx.issues.push({ code: "custom", message, input: cap });
-      }
-      const seen = new Set<string>();
-      for (const cap of ctx.value) {
-        if (seen.has(cap)) {
-          ctx.issues.push({
-            code: "custom",
-            message: `duplicate capability '${cap}'.`,
-            input: cap,
-          });
+        const seen = new Set<string>();
+        for (const cap of ctx.value) {
+          if (seen.has(cap)) {
+            ctx.issues.push({
+              code: "custom",
+              message: `duplicate capability '${cap}'.`,
+              input: cap,
+            });
+          }
+          seen.add(cap);
         }
-        seen.add(cap);
-      }
-    });
+      })
+  );
 }
 
 // =============================================================================
@@ -186,7 +192,9 @@ function getErrorCodeFromZodIssue(issue: {
 
   // Capability errors
   if (path.includes("capabilities")) {
-    if (message.includes("invalid capability")) {
+    // An empty array shares E119's docs section, which is where the
+    // omit-versus-empty rule is written down.
+    if (message.includes("invalid capability") || message.includes("must not be empty")) {
       return ValidationErrorCode.E119_INVALID_CAPABILITY;
     }
     if (message.includes("duplicate capability")) {
