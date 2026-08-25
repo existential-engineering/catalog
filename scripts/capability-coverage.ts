@@ -41,6 +41,12 @@ interface Entry {
   capabilities: Set<string>;
 }
 
+/**
+ * Read every hardware entry, normalising `capabilities` to a Set. An absent
+ * field becomes an empty Set, which callers must read as "not yet assessed"
+ * rather than "performs nothing" — the whole reason the coverage half of this
+ * report exists.
+ */
 function loadHardware(): Entry[] {
   return getYamlFiles(path.join(DATA_DIR, "hardware")).map((file) => {
     const data = loadYamlFile<Hardware>(file);
@@ -67,6 +73,12 @@ function jaccard(a: Set<string>, b: Set<string>): number {
   return shared / (a.size + b.size - shared);
 }
 
+/**
+ * Print assessed-versus-total per primary category, then name the largest
+ * categories with no coverage at all. Rollout is per category, so a consumer
+ * needs to know which half of the catalog it is looking at before trusting an
+ * empty capability set to mean anything.
+ */
 function reportCoverage(entries: Entry[]): void {
   const byCategory = new Map<string, { total: number; assessed: number }>();
   for (const entry of entries) {
@@ -111,6 +123,13 @@ function reportCoverage(entries: Entry[]): void {
   );
 }
 
+/**
+ * Rank every other assessed entry against one product by capability overlap.
+ * This is the query `primaryCategory` cannot answer at all: within a bucket
+ * every member is equidistant from every other, so a category match can say
+ * "related" but never "how related". Prints the shared capabilities per row so
+ * a score can be checked rather than taken on trust.
+ */
 function reportNeighbours(entries: Entry[], slug: string, limit: number): void {
   const target = entries.find((e) => e.slug === slug);
   if (!target) {
@@ -152,6 +171,7 @@ function reportNeighbours(entries: Entry[], slug: string, limit: number): void {
   );
 }
 
+/** Parse argv and dispatch to the coverage report or the neighbour report. */
 function main(): void {
   const args = process.argv.slice(2);
   const neighbourIndex = args.indexOf("--neighbours");

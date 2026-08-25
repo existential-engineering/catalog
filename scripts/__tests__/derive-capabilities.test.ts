@@ -9,16 +9,21 @@ const groups = loadYamlFile<{ groups: Record<string, string[]> }>(
   path.join(SCHEMA_DIR, "category-groups.yaml")
 ).groups;
 
-/** Same list the vocabulary guard uses — see capabilities.test.ts. */
-const NON_FUNCTIONAL_GROUPS = [
-  "Hardware",
-  "Genre & Style",
-  "Instruments",
-  "Accessories",
-  "Content & Assets",
-  "Software Types",
-  "Other",
-];
+/** Same derivation the vocabulary guard uses — see capabilities.test.ts. */
+/**
+ * Groups whose values may legitimately appear on the functional axis. Stated
+ * this way round, and subtracted from the file, so a group ADDED to
+ * category-groups.yaml is covered from the day it lands rather than whenever
+ * someone remembers to extend a hard-coded list.
+ *
+ * Effects is the obvious one. Synthesis & Instruments and Utility & Tools are
+ * here because the vocabulary legitimately shares `granular`, `sampler`,
+ * `looper`, `tape`, `sequencer` and friends with them: those name operations
+ * even though the group they sit in mostly does not.
+ */
+const FUNCTIONAL_GROUPS = ["Effects", "Synthesis & Instruments", "Utility & Tools"];
+
+const NON_FUNCTIONAL_GROUPS = Object.keys(groups).filter((g) => !FUNCTIONAL_GROUPS.includes(g));
 
 describe("CATEGORY_CAPABILITIES", () => {
   it("produces only values in the capability vocabulary", () => {
@@ -47,8 +52,12 @@ describe("CATEGORY_CAPABILITIES", () => {
   // capabilities field exists to prevent, arriving through the back door.
   it("never maps from a non-functional category group", () => {
     const offenders: string[] = [];
+    for (const group of FUNCTIONAL_GROUPS) {
+      expect(groups[group], `category-groups.yaml is missing group '${group}'`).toBeDefined();
+    }
+    expect(NON_FUNCTIONAL_GROUPS.length).toBeGreaterThan(0);
     for (const group of NON_FUNCTIONAL_GROUPS) {
-      for (const value of groups[group] ?? []) {
+      for (const value of groups[group]) {
         if (CATEGORY_CAPABILITIES[value]) offenders.push(`${value} (${group})`);
       }
     }

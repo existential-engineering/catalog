@@ -12,20 +12,21 @@ const groups = loadYamlFile<{ groups: Record<string, string[]> }>(
  * these in with function, which is precisely what makes a shared category
  * useless as evidence that two products overlap — two entries both tagged
  * `discontinued` or `rack-mount` have nothing in common functionally.
- *
- * Effects, Synthesis & Instruments and Utility & Tools are deliberately absent
- * from this list: they hold the function words (`reverb`, `granular`,
- * `looper`) that legitimately appear on both axes.
  */
-const NON_FUNCTIONAL_GROUPS = [
-  "Hardware", // form factor: rack-mount, pedal, outboard, console
-  "Genre & Style", // ambient, vintage, cinematic
-  "Instruments", // what it is, not what it does
-  "Accessories",
-  "Content & Assets",
-  "Software Types",
-  "Other", // lifecycle: discontinued, legacy, beta
-];
+/**
+ * Groups whose values may legitimately appear on the functional axis. Stated
+ * this way round, and subtracted from the file, so a group ADDED to
+ * category-groups.yaml is covered from the day it lands rather than whenever
+ * someone remembers to extend a hard-coded list.
+ *
+ * Effects is the obvious one. Synthesis & Instruments and Utility & Tools are
+ * here because the vocabulary legitimately shares `granular`, `sampler`,
+ * `looper`, `tape`, `sequencer` and friends with them: those name operations
+ * even though the group they sit in mostly does not.
+ */
+const FUNCTIONAL_GROUPS = ["Effects", "Synthesis & Instruments", "Utility & Tools"];
+
+const NON_FUNCTIONAL_GROUPS = Object.keys(groups).filter((g) => !FUNCTIONAL_GROUPS.includes(g));
 
 describe("capabilities vocabulary", () => {
   it("is non-empty and free of duplicates", () => {
@@ -49,11 +50,16 @@ describe("capabilities vocabulary", () => {
   // only reason this field exists.
   it("shares no value with a non-functional category group", () => {
     const capabilities = getCapabilitiesSet();
+    // A renamed group would silently drop out of both lists, so assert the
+    // functional names still resolve rather than letting the subtraction pass
+    // vacuously.
+    for (const group of FUNCTIONAL_GROUPS) {
+      expect(groups[group], `category-groups.yaml is missing group '${group}'`).toBeDefined();
+    }
+    expect(NON_FUNCTIONAL_GROUPS.length).toBeGreaterThan(0);
     const offenders: string[] = [];
     for (const group of NON_FUNCTIONAL_GROUPS) {
-      const values = groups[group];
-      expect(values, `category-groups.yaml is missing group '${group}'`).toBeDefined();
-      for (const value of values ?? []) {
+      for (const value of groups[group]) {
         if (capabilities.has(value)) offenders.push(`${value} (${group})`);
       }
     }

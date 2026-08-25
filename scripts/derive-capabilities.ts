@@ -175,6 +175,11 @@ interface Change {
   capabilities: string[];
 }
 
+/**
+ * Project the functional subset out of one entry's `primaryCategory` and
+ * `categories` through CATEGORY_CAPABILITIES. Returns a floor, not a survey:
+ * only what the entry already declares, deduplicated.
+ */
 function derive(data: Hardware): string[] {
   const sources = [data.primaryCategory, ...(data.categories ?? [])].filter(
     (value): value is string => Boolean(value)
@@ -210,6 +215,12 @@ function insertCapabilities(source: string, capabilities: string[]): string {
   return lines.join("\n");
 }
 
+/**
+ * List categories appearing on effects entries that the table declines to map,
+ * commonest first. Most are expected (form factor, lifecycle, family names),
+ * so this is a review aid rather than a defect list: it is how a genuinely
+ * missing operation gets noticed instead of silently going underived.
+ */
 function reportUnmapped(): void {
   const counts = new Map<string, number>();
   for (const file of getYamlFiles(path.join(DATA_DIR, "hardware"))) {
@@ -229,6 +240,10 @@ function reportUnmapped(): void {
   console.log("");
 }
 
+/**
+ * Validate the mapping table against the vocabulary, then report or apply.
+ * Dry run by default because the apply path rewrites hundreds of files.
+ */
 function main(): void {
   const apply = process.argv.includes("--apply");
   if (process.argv.includes("--unmapped")) {
