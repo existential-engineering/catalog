@@ -325,6 +325,7 @@ Pattern: `^[a-z0-9][a-z0-9-]*[a-z0-9]$|^[a-z0-9]$`
 - `speaker`
 - `subwoofer`
 - `power-amp`
+- `speaker-management`
 - `rack-mount`
 - `outboard`
 - `console`
