@@ -248,9 +248,10 @@ equidistant from every other.
   speculative list is indistinguishable from a verified one. Never write
   `capabilities: []`.
 - **The vocabulary is meant to grow**, same as `io-types.yaml`. It was derived
-  from the effects corpus, so synthesis, recording and playback operations are
-  not in it yet. When an entry performs an operation with no value, add it in
-  the same PR.
+  from the effects corpus, so its coverage of synthesis, recording and playback
+  operations is incomplete: `sampling`, `looper`, `granular` and `sequencing`
+  are in, the operations around them mostly are not. When an entry performs an
+  operation with no value, add it in the same PR.
 
 **Two provenances, and the difference matters.** A hand-authored list is read
 out of the entry's own prose and can name operations the categories never
