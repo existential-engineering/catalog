@@ -11,37 +11,37 @@ url: https://www.chasebliss.com/big-time
 prices:
   - amount: 999
     currency: USD
-description: Big Time is a hybrid echo that revisits the mixed-up circuitry found in rackmount delays from the early 80s. It blends the best of analog and digital, combining a stereo analog preamp and feedback-loop limiter with a digital delay core for modulation, echoes, ambience and loops.
+description: Big Time is a hybrid echo that revisits the mixed-up circuitry
+  found in rackmount delays from the early 80s, blending a stereo analog preamp
+  and feedback-loop limiter with a digital delay core for modulation, echoes,
+  ambience and loops.
 details: |-
-  Big Time is a hybrid analog/digital echo pedal made by Chase Bliss in collaboration with Electronic Audio Experiments (EAE). It replicates the signal flow of rackmount delays from the early 1980s, an era when analog circuitry was used to prop up the shortcomings of crude early digital delay chips, and pushes that hybrid relationship further than those original units ever could.
+  Big Time is a hybrid analog/digital echo pedal made by Chase Bliss in collaboration with Electronic Audio Experiments (EAE) and John Snyder, revisiting the mixed-up circuitry found in rackmount delays from the early 1980s where analog engineering was used to prop up crude early digital delay chips.
 
-  The pedal has two sources of analog coloration: a stereo analog preamp at the input stage, controlled by the COLOR fader, and an analog limiter inside the delay's feedback loop, controlled by FEEDBACK. As repeats collide with the limiter they take on progressively more analog character, and a STATE button selects which of four limiter behaviors is in play: Digital (no limiter, clean digital feedback), Compressed (clean compression and sag), Saturated (distortion and deterioration, the pedal's default character), and a fourth, misbiased state for starved, mangled textures. Each state has its own TEXTURE alt-control.
+  It has two separate sources of analog coloration: a stereo analog preamp at the input stage (controlled by COLOR, which also intensifies the limiter's effect), and a stereo analog limiter within the delay's feedback loop (controlled by FEEDBACK, which increases the number of repeats and also intensifies the limiter over time). A STATE button governs the limiter's behavior, and TIME (a clock control shaped by MODE and SCALE), CLUSTER (additional delay taps and diffusion), a TILT EQ (with CROSSOVER alt control), and WET round out the fader/control set.
 
-  A MODE button sets both the delay range and footswitch behavior across four ranges: Mod (3-46 ms) for modulation and doubling, Short (46-736 ms) for slapback through multi-tap delay, Long (736 ms-12.2 s) for ambient and compositional use, and Loop, a variable-length phrase looper. TIME is a clock control whose behavior is shaped by MODE (range) and SCALE (smooth versus tuned-step movement across Chromatic, Oct+4+5, or Octave intervals), and MOTION layers Sine, Square, or envelope-controlled movement on top, with DEPTH and RATE alt controls. A CLUSTER fader gradually blends in additional synced or scattered delay taps and diffusion, and VOICING plus a TILT EQ with adjustable crossover shape the pedal's base tone.
+  Big Time is a true stereo device usable in mono, stereo, or mono-in/stereo-out (MISO) configurations, with selectable balanced or unbalanced TRS I/O. It stores 10 internal presets and 127 more via MIDI, and nearly every parameter can be controlled over MIDI, including syncing to or outputting MIDI clock. A dedicated EXP jack accepts an expression pedal or 0-5V CV to control any combination of faders, and an AUX jack accepts a normally-open momentary footswitch for remote preset recall and performance gestures such as preset up/down, 0.5x, buffer clear, tap/record, and bypass/stop.
 
-  Big Time is a true stereo device usable in mono, stereo, or mono-in/stereo-out configurations, with selectable ultra-low-noise balanced or unbalanced TRS I/O. It stores ten internal presets (127 more via MIDI), and nearly every parameter can be controlled over MIDI, including sync to or output of MIDI clock. A dedicated EXP jack accepts an expression pedal or 0-5V CV to control any combination of faders, and an AUX jack accepts a normally-open momentary footswitch for remote preset recall and performance gestures. The pedal offers analog dry-through and true bypass with an optional trails mode, and runs on 9V DC center-negative power at up to 1A.
+  The pedal offers an analog dry-through path and true bypass, and runs on 9V DC center-negative power at up to 1A (400mA nominal, with the higher current needed for startup surges and large fader movements). It ships with the pedal, a current-doubler power cable, a 9V DC power supply, and a printed Field Guide.
 specs: |-
   - Hybrid analog/digital echo with stereo analog preamp and analog feedback-loop limiter
   - 32-bit, 48kHz A/D conversion
-  - True stereo I/O: mono, stereo, or mono-in/stereo-out operation
-  - Selectable TRS balanced or unbalanced I/O
+  - True stereo I/O: mono, stereo, or mono-in/stereo-out (MISO) operation
+  - Selectable balanced or unbalanced TRS I/O
   - Input impedance: 1M ohm (single-ended), 20k ohm (balanced, common-mode)
   - Output impedance: 50 ohms
-  - Four delay ranges: Mod (3-46 ms), Short (46-736 ms), Long (736 ms-12.2 s), Loop (variable length)
-  - Four limiter states: Digital, Compressed, Saturated, and misbiased, each with a TEXTURE control
-  - Motion modulation: Sine, Square, and envelope-controlled types with Depth and Rate
-  - Scales: Chromatic, Oct+4+5, Octave
-  - Cluster fader for multi-tap echoes and diffusion
+  - Noise (RMS, 20Hz-20kHz, A-weighted): Dry path -100dBV, Delay path -94dBV
+  - Preamp gain (nominal): 0dB to +20dB, or +12dB to +32dB in +12dB mode
   - 10 internal presets, 127 via MIDI
-  - MIDI In (Clock, PC, CC)
-  - CV control (0-5V) and expression pedal control of any or all faders
+  - MIDI In (Clock, PC, CC), MIDI Out/Thru
+  - CV control (0-5V) and expression pedal control of any or all faders via EXP jack
   - AUX jack for external normally-open momentary footswitch
-  - Analog dry thru; true bypass with optional trails mode
+  - Analog dry thru; true bypass
   - Made in collaboration with Electronic Audio Experiments
   - Power: 9V DC center negative, ~1A (400mA nominal, 1A required for startup surge)
   - Dimensions: 5.75" x 6.5" x 2.5"
 io:
-  - key: 3Uj5KFng
+  - key: I64s1CHH
     name: Input L/Mono
     signalFlow: input
     category: audio
@@ -49,7 +49,7 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: 0qQbANEu
+  - key: 3IjLil6B
     name: Input R
     signalFlow: input
     category: audio
@@ -57,7 +57,7 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: 3WPsvOkF
+  - key: BMrJ3tmX
     name: Output L
     signalFlow: output
     category: audio
@@ -65,7 +65,7 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: MgwTBHfh
+  - key: rxwrtebD
     name: Output R
     signalFlow: output
     category: audio
@@ -73,7 +73,7 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: 2iyqbN3P
+  - key: 4K21jlks
     name: MIDI In
     signalFlow: input
     category: midi
@@ -81,23 +81,23 @@ io:
     connection: 5-pin din
     maxConnections: 1
     position: Top
-  - key: cqVDM0jm
-    name: MIDI Out
+  - key: Tm5n2VGq
+    name: MIDI Out/Thru
     signalFlow: output
     category: midi
     type: midi
     connection: 5-pin din
     maxConnections: 1
     position: Top
-  - key: 09NWUS6K
-    name: Aux Footswitch
+  - key: RfDd6P2w
+    name: AUX
     signalFlow: input
     category: digital
     type: gpio
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: BCSFh95Q
+  - key: Ysy4TTBC
     name: EXP/CV
     signalFlow: input
     category: audio
@@ -105,7 +105,7 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: utEdH5tl
+  - key: fDdcteRm
     name: Power
     signalFlow: input
     category: power
@@ -121,11 +121,11 @@ links:
 videos:
   - videoId: UWOeE6HQMLI
     provider: youtube
-    title: Big Time - Analog/Digital Delay
-  - videoId: vYclV_Obd-k
-    provider: youtube
-    title: The Quest for Big Time
+    title: Big Time Intro
   - videoId: QY389WFTXgY
     provider: youtube
-    title: Big Time - Walkthrough
+    title: Big Time Walkthrough
+  - videoId: vYclV_Obd-k
+    provider: youtube
+    title: Big Time Mini Doc
 releaseDateYearOnly: true
