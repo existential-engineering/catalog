@@ -1,6 +1,6 @@
 {
   "name": "catalog",
-  "version": "3.52.1",
+  "version": "3.53.0",
   "description": "Open source audio software and hardware catalog",
   "type": "module",
   "scripts": {
@@ -28,6 +28,8 @@
     "discontinued:apply": "tsx scripts/apply-discontinued-tags.ts",
     "identifier-coverage": "tsx scripts/identifier-coverage.ts",
     "io-quality": "tsx scripts/io-quality.ts",
+    "capability-coverage": "tsx scripts/capability-coverage.ts",
+    "derive-capabilities": "tsx scripts/derive-capabilities.ts",
     "benchmark": "tsx scripts/benchmark.ts",
     "lint": "biome check scripts/ vitest.config.ts",
     "lint:fix": "biome check --write scripts/ vitest.config.ts",

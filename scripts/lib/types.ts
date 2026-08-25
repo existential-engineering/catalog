@@ -176,6 +176,14 @@ export interface Hardware {
   name: string;
   manufacturer: string;
   categories?: string[];
+  /**
+   * Audio processing operations this product performs. A single-dimension
+   * axis, deliberately separate from `categories` (which mixes lifecycle,
+   * form factor, technology and era alongside function). Values are the
+   * closed vocabulary in schema/capabilities.yaml. Omitted when not yet
+   * assessed — an absent field means unknown, not "does nothing".
+   */
+  capabilities?: string[];
   url?: string;
   releaseDate?: string;
   releaseDateYearOnly?: boolean;

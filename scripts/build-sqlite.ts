@@ -816,6 +816,10 @@ function buildDatabase(version: string): void {
     INSERT INTO hardware_categories (hardware_id, category)
     VALUES (?, ?)
   `);
+  const insertHardwareCapability = db.prepare(`
+    INSERT INTO hardware_capabilities (hardware_id, capability)
+    VALUES (?, ?)
+  `);
   const insertHardwareSearchTerm = db.prepare(`
     INSERT INTO hardware_search_terms (hardware_id, term)
     VALUES (?, ?)
@@ -926,6 +930,14 @@ function buildDatabase(version: string): void {
       }
       seenHwCategories.add(category);
       insertHardwareCategory.run(id, category);
+    }
+
+    // Insert capabilities (closed vocabulary, no aliases to normalize)
+    const seenHwCapabilities = new Set<string>();
+    for (const capability of data.capabilities ?? []) {
+      if (seenHwCapabilities.has(capability)) continue;
+      seenHwCapabilities.add(capability);
+      insertHardwareCapability.run(id, capability);
     }
 
     // Combine YAML-declared search terms with curated synonym expansion

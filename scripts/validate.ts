@@ -68,6 +68,14 @@ const ALL_VALID_CATEGORY_INPUTS = new Set([
   ...Object.keys(categoryAliasesSchema.aliases),
 ]);
 
+// Capabilities — a strict, single-dimension vocabulary (what a product DOES).
+// No aliases: unlike categories, this axis has no accumulated synonym history
+// to absorb, and adding one would reopen the ambiguity the field exists to avoid.
+const capabilitiesSchema = loadYamlFile<{ capabilities: string[] }>(
+  path.join(SCHEMA_DIR, "capabilities.yaml")
+);
+const VALID_CAPABILITIES = new Set(capabilitiesSchema.capabilities);
+
 const VALID_FORMATS = new Set(formatsSchema.formats);
 const VALID_PLATFORMS = new Set(platformsSchema.platforms);
 
@@ -82,6 +90,45 @@ const POSITION_EXEMPT_CATEGORIES = new Set(categoryGroupsSchema.groups.Instrumen
 // Helper to check if a category is valid (canonical or alias)
 function isValidCategory(cat: string): boolean {
   return ALL_VALID_CATEGORY_INPUTS.has(cat);
+}
+
+// Capabilities are validated strictly (E119) rather than advisorily. The whole
+// value of the field is that two entries' lists are comparable, and a typo or a
+// near-miss synonym silently breaks comparability while looking populated.
+function createCapabilitiesValidator() {
+  return (
+    z
+      .array(z.string())
+      // Omission means "not yet assessed" and is fine. An empty array is a
+      // different claim — that the product performs no audio operation at all —
+      // and is always wrong for an entry someone bothered to add the key to.
+      .min(1, "capabilities must not be empty; omit the field when not yet assessed")
+      .optional()
+      .check((ctx) => {
+        if (!ctx.value) return;
+        for (const cap of ctx.value) {
+          if (VALID_CAPABILITIES.has(cap)) continue;
+          const suggestion = findClosestMatch(cap, VALID_CAPABILITIES);
+          let message = `Invalid capability '${cap}'.`;
+          if (suggestion) {
+            message += ` Did you mean '${suggestion}'?`;
+          }
+          message += " Valid values are in schema/capabilities.yaml.";
+          ctx.issues.push({ code: "custom", message, input: cap });
+        }
+        const seen = new Set<string>();
+        for (const cap of ctx.value) {
+          if (seen.has(cap)) {
+            ctx.issues.push({
+              code: "custom",
+              message: `duplicate capability '${cap}'.`,
+              input: cap,
+            });
+          }
+          seen.add(cap);
+        }
+      })
+  );
 }
 
 // =============================================================================
@@ -141,6 +188,18 @@ function getErrorCodeFromZodIssue(issue: {
       return ValidationErrorCode.E301_YOUTUBE_URL_FORMAT;
     }
     return ValidationErrorCode.E103_INVALID_URL_FORMAT;
+  }
+
+  // Capability errors
+  if (path.includes("capabilities")) {
+    // An empty array shares E119's docs section, which is where the
+    // omit-versus-empty rule is written down.
+    if (message.includes("invalid capability") || message.includes("must not be empty")) {
+      return ValidationErrorCode.E119_INVALID_CAPABILITY;
+    }
+    if (message.includes("duplicate capability")) {
+      return ValidationErrorCode.E205_DUPLICATE_CAPABILITY;
+    }
   }
 
   // Category errors
@@ -643,6 +702,7 @@ const HardwareSchema = z
     secondaryCategory: createCategoryValidator().optional(),
     supersedes: z.string().optional(),
     searchTerms: z.array(z.string()).optional(),
+    capabilities: createCapabilitiesValidator(),
     description: MarkdownSchema,
     details: MarkdownSchema,
     specs: MarkdownSchema,
