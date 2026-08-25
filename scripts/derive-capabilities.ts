@@ -41,6 +41,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import { getCapabilitiesSet } from "./lib/schema-loader.js";
 import type { Hardware } from "./lib/types.js";
 import { DATA_DIR, getYamlFiles, loadYamlFile, SCHEMA_DIR } from "./lib/utils.js";
@@ -64,7 +65,7 @@ import { DATA_DIR, getYamlFiles, loadYamlFile, SCHEMA_DIR } from "./lib/utils.js
  * which `pnpm capability-coverage` reports honestly, until someone reads the
  * prose. Run `--unmapped` to audit this list against the data.
  */
-const CATEGORY_CAPABILITIES: Record<string, string[]> = {
+export const CATEGORY_CAPABILITIES: Record<string, string[]> = {
   // Dynamics
   compressor: ["compression"],
   limiter: ["limiting"],
@@ -139,8 +140,10 @@ const CATEGORY_CAPABILITIES: Record<string, string[]> = {
   harmonizer: ["harmonizer"],
   autotune: ["pitch-correction"],
 
-  // Stereo field
-  stereo: ["stereo-widening"],
+  // Stereo field. A bare `stereo` category is deliberately NOT mapped: on the
+  // entries carrying it, it means the unit has a stereo signal path (a stereo
+  // filter, a stereo delay), not that it widens the stereo field. Only the
+  // unambiguous spellings map.
   "stereo-widener": ["stereo-widening"],
   "mid-side": ["stereo-widening"],
   panning: ["auto-pan"],
@@ -303,4 +306,9 @@ function main(): void {
   console.log(`\n   ✅ Wrote ${changes.length} files.\n`);
 }
 
-main();
+// Only run when invoked directly. The guard test imports CATEGORY_CAPABILITIES
+// from this module, and without this an import would execute the script —
+// writing 697 files if the importing process happened to carry --apply.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}
