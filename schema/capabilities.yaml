@@ -1,0 +1,123 @@
+# Canonical list of capabilities
+#
+# A capability answers ONE question: what audio processing operation does
+# this product perform? It is deliberately a different axis from
+# `categories`, which mixes lifecycle (`discontinued`), form factor
+# (`rack-mount`, `pedal`), technology (`analog`, `digital`), era
+# (`vintage`), and instrument association (`guitar`, `keyboard`) alongside
+# function. That mixing is fine for faceted browsing, which is what
+# `categories` was built for, and useless for asking whether two products
+# do the same thing — two entries sharing `discontinued` have told you
+# nothing about their overlap.
+#
+# Because every value here is the same kind of claim, capability sets are
+# comparable: the intersection of two products' capabilities is a
+# meaningful measure where a shared category is not.
+#
+# RULES
+#
+# - One dimension only. If a proposed value describes what a product IS
+#   rather than what it DOES, it belongs in categories.yaml instead.
+#   `rack-mount`, `discontinued`, `analog`, `boutique` are not
+#   capabilities.
+# - Describe the operation, not the algorithm's marketing name. A "Shimmer"
+#   mode is `reverb` + `pitch-shift`; "Auto-Tune Evo" is
+#   `pitch-correction`; "Neural Capture" is `amp-modeling`.
+# - Only list what the product actually performs on audio. A unit that
+#   merely syncs to MIDI clock does not get `sequencing`; one with an
+#   onboard step sequencer does.
+# - Omit the field entirely rather than guessing. An absent `capabilities`
+#   means "not yet assessed", which is honest; an empty or speculative
+#   list is not. Coverage is reported by `pnpm capability-coverage`.
+# - The vocabulary is meant to grow. When an entry performs an operation
+#   with no value here, add it in the same PR as the entry (same
+#   convention as io-types.yaml).
+#
+# Scope note: this vocabulary was derived from the `multi-effect` hardware
+# corpus and covers effects and signal processing. Values for synthesis,
+# recording, and playback operations will be needed as coverage extends to
+# other categories.
+
+capabilities:
+  # ===========================================================================
+  # TIME & SPACE
+  # ===========================================================================
+  - reverb
+  - delay # includes echo, tape echo, multi-tap
+  - looper # record and replay a phrase under player control
+  - freeze # sustain the current buffer indefinitely
+  - granular
+  - reverse
+
+  # ===========================================================================
+  # MODULATION
+  # ===========================================================================
+  - chorus
+  - flanger
+  - phaser
+  - tremolo # amplitude modulation
+  - vibrato # pitch modulation
+  - rotary # Leslie/rotary-speaker emulation
+  - ring-modulation
+  - frequency-shift
+  - auto-pan
+
+  # ===========================================================================
+  # PITCH
+  # ===========================================================================
+  - pitch-shift
+  - harmonizer # pitch-shifted voices in a musical interval
+  - octave
+  - detune
+  - pitch-correction
+
+  # ===========================================================================
+  # GAIN & SATURATION
+  # ===========================================================================
+  - overdrive
+  - distortion
+  - fuzz
+  - saturation # tape, tube, transformer colouring
+  - boost # clean level lift, no intended clipping
+  - bit-crush # bit-depth or sample-rate reduction
+  - amp-modeling
+  - cabinet-simulation # includes impulse-response loading
+
+  # ===========================================================================
+  # DYNAMICS
+  # ===========================================================================
+  - compression
+  - limiting
+  - gating
+  - expansion
+  - de-essing
+  - transient-shaping
+  - auto-gain # AGC, levelling
+
+  # ===========================================================================
+  # SPECTRAL & FILTERING
+  # ===========================================================================
+  - equalization
+  - filter # resonant/multimode filtering as a played effect
+  - wah
+  - vocoder
+  - crossover # split into frequency bands for separate amplification
+  - feedback-suppression
+  - noise-reduction
+  - subharmonic-synthesis
+  - stereo-widening
+  - spatialization # surround, binaural, immersive panning
+  - harmonic-enhancement # exciters and enhancers, added harmonics rather than clipping
+
+  # ===========================================================================
+  # SAMPLING & RHYTHM
+  # ===========================================================================
+  - sampling # capture audio for later triggered playback
+  - sequencing # onboard step sequencer or pattern generator
+  - beat-slicing # gating, stuttering, or slicing to a tempo grid
+
+  # ===========================================================================
+  # MODELING & UTILITY
+  # ===========================================================================
+  - mic-modeling
+  - alignment-delay # time-align drivers or zones, not a musical effect

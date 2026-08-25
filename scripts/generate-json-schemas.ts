@@ -396,6 +396,14 @@ const schemas: Record<string, unknown> = {
     ["name", "manufacturer"],
     {
       ...sharedFields,
+      capabilities: {
+        type: "array",
+        items: { type: "string", enum: ctx.capabilities },
+        minItems: 1,
+        uniqueItems: true,
+        description:
+          "Audio processing operations this product performs (reverb, compression, amp-modeling...). A single-dimension axis, separate from 'categories', which also carries lifecycle, form factor and technology. Valid values are in schema/capabilities.yaml; there are no aliases. Omit the field when not yet assessed rather than guessing.",
+      },
       translations: hardwareTranslationsSchema,
       io: {
         type: "array",

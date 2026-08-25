@@ -21,6 +21,8 @@ export interface LocaleInfo {
 export interface SchemaContext {
   /** All canonical category values */
   categories: string[];
+  /** All canonical capability values (strict) */
+  capabilities: string[];
   /** Map of alias -> canonical category */
   categoryAliases: Record<string, string>;
   /** All valid formats (au, vst3, etc.) */
@@ -59,6 +61,10 @@ export interface SchemaContext {
 
 interface CategoriesYaml {
   categories: string[];
+}
+
+interface CapabilitiesYaml {
+  capabilities: string[];
 }
 
 interface CategoryAliasesYaml {
@@ -132,6 +138,10 @@ export function loadSchemaContext(): SchemaContext {
 
   const categoriesData = loadYamlFile<CategoriesYaml>(path.join(SCHEMA_DIR, "categories.yaml"));
 
+  const capabilitiesData = loadYamlFile<CapabilitiesYaml>(
+    path.join(SCHEMA_DIR, "capabilities.yaml")
+  );
+
   const aliasesData = loadYamlFile<CategoryAliasesYaml>(
     path.join(SCHEMA_DIR, "category-aliases.yaml")
   );
@@ -169,6 +179,7 @@ export function loadSchemaContext(): SchemaContext {
 
   cachedContext = {
     categories: categoriesData.categories,
+    capabilities: capabilitiesData.capabilities,
     categoryAliases: aliasesData.aliases,
     formats: formatsData.formats,
     platforms: platformsData.platforms,
@@ -221,6 +232,14 @@ export function getCanonicalCategory(category: string): string {
     return category;
   }
   return context.categoryAliases[category] ?? category;
+}
+
+/**
+ * Check if a capability is valid (strict — no aliases)
+ */
+export function isValidCapability(capability: string): boolean {
+  const context = loadSchemaContext();
+  return context.capabilities.includes(capability);
 }
 
 /**
@@ -394,6 +413,14 @@ export function getAllValidCategoriesSet(): Set<string> {
     all.add(alias);
   }
   return all;
+}
+
+/**
+ * Get all valid capabilities as a Set (for quick lookup)
+ */
+export function getCapabilitiesSet(): Set<string> {
+  const context = loadSchemaContext();
+  return new Set(context.capabilities);
 }
 
 /**

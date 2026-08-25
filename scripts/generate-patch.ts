@@ -232,6 +232,7 @@ function generateHardwareSQL(
     if (change.type === "modified") {
       // Delete existing related data first
       sql.push(`DELETE FROM hardware_categories WHERE hardware_id = ${escapeSQL(data.id)};`);
+      sql.push(`DELETE FROM hardware_capabilities WHERE hardware_id = ${escapeSQL(data.id)};`);
       sql.push(`DELETE FROM hardware_fts WHERE id = ${escapeSQL(data.id)};`);
       sql.push(
         `UPDATE hardware SET name = ${escapeSQL(data.name)}, manufacturer_id = ${escapeSQL(mfgId)}, url = ${escapeSQL(data.url)}, description = ${escapeSQL(data.description)}, release_date = ${escapeSQL(data.releaseDate)}, primary_category = ${escapeSQL(data.primaryCategory)}, secondary_category = ${escapeSQL(data.secondaryCategory)}, details = ${escapeSQL(normalizeMarkdown(data.details))}, specs = ${escapeSQL(normalizeMarkdown(data.specs))}, updated_at = datetime('now') WHERE id = ${escapeSQL(data.id)};`
@@ -249,6 +250,17 @@ function generateHardwareSQL(
           `INSERT INTO hardware_categories (hardware_id, category) VALUES (${escapeSQL(data.id)}, ${escapeSQL(category)});`
         );
       }
+    }
+
+    // Insert capabilities. A full `pnpm build` writes these, so omitting them
+    // here would let a patched database drift from a rebuilt one. Deduplicated
+    // because this path reads YAML without running validation, and
+    // hardware_capabilities is keyed on (hardware_id, capability), so a
+    // repeated value would abort the patch on a constraint violation.
+    for (const capability of new Set(data.capabilities ?? [])) {
+      sql.push(
+        `INSERT INTO hardware_capabilities (hardware_id, capability) VALUES (${escapeSQL(data.id)}, ${escapeSQL(capability)});`
+      );
     }
 
     // Insert FTS
