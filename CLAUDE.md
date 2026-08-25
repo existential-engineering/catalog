@@ -251,6 +251,19 @@ equidistant from every other.
   not in it yet. When an entry performs an operation with no value, add it in
   the same PR.
 
+**Two provenances, and the difference matters.** A hand-authored list is read
+out of the entry's own prose and can name operations the categories never
+admitted. A derived list, written by `pnpm derive-capabilities`, projects the
+functional subset out of `categories`/`primaryCategory` through a table of
+definitional mappings — it adds no information the file did not already carry,
+and is a floor rather than a survey. The derivation never overwrites an
+existing list, because a hand-authored one is strictly better. Run
+`pnpm derive-capabilities --unmapped` to audit which categories the table
+deliberately declines to map: family names (`dynamics`, `modulation`),
+topologies (`multiband`), composites (`preamp`, `channel-strip`) and the
+non-functional axes. Mapping any of those would be guessing, and a guessed
+capability is indistinguishable from a verified one once written.
+
 ## Content Entries
 
 Content entries (presets, sample packs, expansions) live in `data/content/` as a separate collection. Content `primaryCategory` values include `preset`, `preset-pack`, `sample-pack`, `drum-sample-pack`, `loop-pack`, `sound-library`, `soundfont`, `impulse-response`, and `multisample`.
