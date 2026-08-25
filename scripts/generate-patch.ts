@@ -253,8 +253,11 @@ function generateHardwareSQL(
     }
 
     // Insert capabilities. A full `pnpm build` writes these, so omitting them
-    // here would let a patched database drift from a rebuilt one.
-    for (const capability of data.capabilities ?? []) {
+    // here would let a patched database drift from a rebuilt one. Deduplicated
+    // because this path reads YAML without running validation, and
+    // hardware_capabilities is keyed on (hardware_id, capability), so a
+    // repeated value would abort the patch on a constraint violation.
+    for (const capability of new Set(data.capabilities ?? [])) {
       sql.push(
         `INSERT INTO hardware_capabilities (hardware_id, capability) VALUES (${escapeSQL(data.id)}, ${escapeSQL(capability)});`
       );

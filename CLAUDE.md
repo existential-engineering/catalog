@@ -251,7 +251,11 @@ equidistant from every other.
   from the effects corpus, so its coverage of synthesis, recording and playback
   operations is incomplete: `sampling`, `looper`, `granular` and `sequencing`
   are in, the operations around them mostly are not. When an entry performs an
-  operation with no value, add it in the same PR.
+  operation the vocabulary has no value for, add the value to
+  `schema/capabilities.yaml` in the same PR as the entry, and to
+  `CATEGORY_CAPABILITIES` in `scripts/derive-capabilities.ts` if a category
+  implies it by definition. Writing the value on an entry alone fails
+  validation with E119.
 
 **Two provenances, and the difference matters.** A hand-authored list is read
 out of the entry's own prose and can name operations the categories never
