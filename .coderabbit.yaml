@@ -1,15 +1,6 @@
 language: en-US
 
 reviews:
-  # TEMPORARY, REMOVED IN THE NEXT COMMIT. CodeRabbit's review of 8433ced
-  # failed because the head moved to 851c88c5 mid-run, so the fixes it asked
-  # for have never had a completed pass. At 792 files a re-request is skipped
-  # outright (300-file cap), and the cap is counted after path_filters, so
-  # this is the only way to get the ~7 changed code files looked at.
-  # Must not survive: without it every catalog import PR loses the
-  # data/**/*.yaml path_instructions below.
-  path_filters:
-    - "!data/**"
   request_changes_workflow: false
   high_level_summary: true
   poem: false
