@@ -11,31 +11,35 @@ url: https://www.chasebliss.com/cxm-1978
 prices:
   - amount: 899
     currency: USD
-description: CXM 1978 is a reverb effects pedal from Chase Bliss. It allows you to explore the charm of late 70's imperfections or our hifi and lofi reimaginings.
+description: CXM 1978 is a reverb effects pedal from Chase Bliss. It allows you
+  to explore the charm of late 70's imperfections or hifi and lofi reimaginings.
 details: |-
-  1978 was a big moment for reverb. It was the dawn of sprawl, the first time reverbs were capable of massive trails and infinite decay. The CXM 1978 reaches back to that moment, allowing you to explore the charm of those late 70's imperfections, or hifi and lofi reimaginings. The reverb is highly interactive and physical, built from a moving, evolving network of digital reflections, with each space having its own behavior and response, just like true reverb.
+  1978 was a big moment for reverb: the dawn of sprawl, the first time reverbs were capable of massive trails and infinite decay. CXM 1978 reaches back to that moment, letting players explore the charm of those late-70s imperfections alongside hifi and lofi reimaginings. The reverb is highly interactive and physical, built from a moving, evolving network of digital reflections, with each space having its own behavior and response, just like a true acoustic space.
 
-  The CXM 1978 takes a unique approach to decay, linking it to EQ just like natural acoustic reverb. The BASS, MIDS, and TREBLE faders combine with a CROSS control that acts as a frequency splitter, letting you set independent decay times for the low and high frequencies. Three reverb Types are available: Room, Hall, and Plate.
+  CXM 1978 ties decay to EQ rather than a simple decay knob, mirroring how natural acoustic reverb behaves. The BASS, MIDS, and TREBLE faders combine with a CROSS control that acts as a frequency splitter (0Hz-1700Hz), letting the player set independent decay times above and below the crossover point. Three reverb Types are available: Room, Hall, and Plate.
 
-  The CLOCK button sets the fidelity and pre-delay range: HIFI mode runs at 48kHz/32-bit with a low noise floor, STANDARD mode emulates 1978's own hardware at 24kHz/16-bit, and LOFI mode drops to a variable 48kHz-2.4kHz/16-bit for degraded digital textures. TANK MOD adds LOW, MED, or HIGH amounts of modulation to the reverb tank, and DIFFUSION shapes the smearing of the initial attack.
+  The CLOCK button sets fidelity and the range of the PRE-DLY control: HIFI runs at 48kHz/32-bit with a low noise floor and 42ms max pre-delay, STANDARD emulates 1978-era hardware at 24kHz/16-bit with 168ms max pre-delay, and LOFI drops to a variable 48kHz-2.4kHz/16-bit for degraded digital textures with up to a 1.7 second max pre-delay. TANK MOD adds Low, Med, or High amounts of modulation to the reverb tank, and DIFFUSION shapes the smearing of the initial attack, with hidden behaviors at each setting.
 
-  The CXM 1978 is built around Chase Bliss's motorized Automatone faders, which move automatically to reflect preset changes and respond visually to expression, CV, and MIDI control. It stores 30 internal presets across three banks, and supports MIDI Program Change and Control Change, CV, expression pedal control, and AUX expansion via a Meris Preset Switch for extra footswitch functions.
+  CXM 1978 is built around Chase Bliss's motorized Automatone faders, which move automatically to reflect preset changes and respond visually to expression, CV, and MIDI control. It stores 30 internal presets across three banks, accessible from the footswitches alone or via MIDI Program Change. It supports MIDI Control Change for every parameter, 0-5V CV and expression pedal control over the faders, and AUX expansion via a Meris Preset Switch for extra footswitch functions (preset recall, heel/toe recall, and reverb buffer manipulation).
 
   Developed in collaboration with Meris.
 specs: |-
   - Reverb types: Room, Plate, Hall
-  - Crossover decay: independent BASS/MIDS decay split by the CROSS control
+  - Crossover decay: independent BASS/MIDS/TREBLE decay split by the CROSS control (0Hz-1700Hz)
   - Tank Mod: Low, Med, High modulation depth
-  - Diffusion control with hidden sparse mode
-  - Clock/fidelity modes: HIFI (48kHz, 32-bit), Standard (24kHz, 16-bit), LOFI (48-2.4kHz variable, 16-bit)
-  - Stereo I/O, switchable balanced or unbalanced
+  - Diffusion control with hidden sparse/regeneration modes
+  - Clock/fidelity modes: HiFi (48kHz, 32-bit, 42ms max pre-delay), Standard (24kHz, 16-bit, 168ms max pre-delay), LoFi (48-2.4kHz variable, 16-bit, up to 1.7s max pre-delay)
   - 30 internal presets across 3 banks
-  - MIDI Program Change and Control Change support, MIDI In and Thru
-  - CV control and expression pedal control
-  - AUX switch compatible (Meris Preset Switch)
+  - MIDI Program Change and Control Change support (MIDI In and Thru, default channel 2)
+  - CV control (0-5V) and expression pedal control over faders
+  - AUX switch compatible (Meris Preset Switch, Preset and Performance modes)
   - Buffered bypass with analog dry thru
+  - Switchable balanced or unbalanced stereo I/O
   - Motorized Automatone faders
-  - Power: 9V Center Negative, ~500 mA
+  - Signal-to-noise ratio: -108 dB
+  - Headroom: 9.5V peak-to-peak
+  - Dimensions: 5.75" x 6.5" x 2.5"
+  - Power: 9V center negative, ~500 mA
 io:
   - key: PO47ZaTB
     name: Audio Input L
@@ -69,19 +73,35 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: LnxaWTyC
-    name: Expression
+  - key: KVqtsoLI
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - key: XSTw1X1N
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - key: cThjQLVu
+    name: EXP/CV
     signalFlow: input
     category: audio
     type: expression
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: VjTfzykz
-    name: MIDI
+  - key: FDH7S9XC
+    name: Aux
     signalFlow: input
-    category: midi
-    type: midi
+    category: digital
+    type: gpio
     connection: 1/4-inch
     maxConnections: 1
     position: Top
@@ -96,7 +116,5 @@ io:
 videos:
   - videoId: HMLNYOzkRkE
     provider: youtube
-    title: CXM 1978 Demo
   - videoId: GeJNxOFcCKk
     provider: youtube
-    title: "CXM 1978: A Visit to Meris"

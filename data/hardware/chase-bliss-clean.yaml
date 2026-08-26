@@ -13,39 +13,40 @@ url: https://www.chasebliss.com/clean
 prices:
   - amount: 399
     currency: USD
-description: Clean, the Creative Compressor by Chase Bliss, developed slowly and through a variety of experiments, Clean explores the wild side of compression and brings the interactivity of distortion circuits to a clean signal.
+description: Clean is Chase Bliss Audio's Creative Compressor, an all-analog,
+  true-stereo pedal built to bring the interactive, exploratory energy of
+  distortion circuits to compression. It uses two stages of 100% analog
+  compression along with physical modeling, a dynamic EQ, and emphasis
+  filtering.
 details: |-
-  Clean began its life as a question: can clean be as fun as dirty? Developed slowly and through a variety of experiments, it brings the joyful, exploratory energy of distortion circuits to compression, rewarding playing dynamics and creating a more interactive, lively version of your instrument that moves and shifts as you play.
+  Clean started as a question: can clean be as fun as dirty? Distortion circuits are always bursting with character and interesting details that react to the way you play, so Chase Bliss set out to find whether that same touch-sensitive, exploratory energy could exist in a compressor. The result is a "creative compressor" where playing dynamics are rewarded, creating a more interactive and lively version of the input instrument that moves and shifts as you play, with everything from tube-like sag to drifting equalization to softening swells.
 
-  Clean is a studio-grade compressor you can turn on its head and push beyond the expected. It was built to bring the touch sensitivity of an overdrive and the unwieldy response of a fuzz to a clean performer, offering tube-like sag, a dynamic EQ that responds to your playing, physical modeling for organic instability, and two softer swell modes.
+  Clean is an original, VCA-based circuit that is not modeled on any existing compressor. It runs an all-analog signal path with two-stage compression, true stereo processing, physical modeling that adds the organic fluctuations of a wobbling spring, feedforward blending, an adaptive envelope follower, a dynamic EQ, cassette-style emphasis filtering for noise reduction, a noise gate, external sidechain input, and a dry blend control.
 
-  As an instrument enhancer, Clean creates a more lively and interactive version of your instrument while keeping its core character intact. As a parallel-punch compressor, the Dry blend and sidechain input make it bass- and drum-friendly, syncing in time or adding bite with Dusty mode. As an end-of-chain glue, true stereo I/O gives independent response on each channel for a polished, animated stereo mix in mixing or live performance.
+  The pedal is designed to work in three broad roles: as an always-on instrument enhancer that keeps the core character of the input while adding life and interactivity, as a parallel-punch compressor for drums and bass with sidechain pumping and a "Dusty" overdrive mode built from an intentionally overdriven limiter, and as an end-of-chain glue compressor for polishing and animating a full mix in true stereo.
 
-  Each stereo channel houses both a compressor and a limiter for two stages of natural, musical compression. Adaptive attack and release adjust to your playing, a sidechain input syncs with external instruments, emphasis filters give cassette-style noise reduction, and a noise gate removes hum and unwanted noise.
-
-  Clean is extremely flexible via dip switches: the limiter can become an overdrive, the compression can become modulation, or the input can gate between notes, all customizable at once. It supports MIDI (Program Change, CC), CV control, and Expression control, with 2 internal presets plus 122 via MIDI, and internal modulation (ramping) of any or all knobs.
+  Sixteen dip switches (two banks of eight, labeled CONTROL and CUSTOMIZE) unlock deeper behaviors: MISO turns a mono input into a stereo output, SPREAD engages independent stereo motion for the EQ, compressor, and swells, LATCH changes the footswitches from momentary to latching, SIDECHAIN routes the compressor's detection to the external sidechain jack, NOISE GATE mutes the input when not playing, MOTION modulates the amount of compression being applied, SWELL AUX changes the AUX footswitch to a manual swell trigger, and DUSTY transforms the limiter into a crumbly overdrive. A separate CONTROL bank of switches assigns any combination of knobs to ramping (a one-time movement on power-up) or bouncing (continuous modulation), and the same knobs can also be driven externally over CV or expression.
 specs: |-
-  - 100% analog signal path
-  - True stereo I/O
-  - Two stages of compression per channel (compressor + limiter)
-  - Adaptive attack and release
-  - Sidechain input for external syncing
-  - Dusty mode for bite and grit
-  - Emphasis filters for cassette-style noise reduction
-  - Noise gate for removing hum
-  - Dynamic EQ responsive to playing dynamics
-  - Physical modeling for organic instability
-  - Two swell modes (Dynamic Swell and Manual)
-  - MISO dip switch (mono in to stereo out)
-  - SPREAD dip switch (stereo image widening)
-  - 2 internal presets, 122 via MIDI
-  - Internal modulation (ramping)
-  - MIDI control (Program Change, CC)
-  - CV control (0-5V)
-  - Expression control input
-  - Momentary or latching bypass
+  - 100% analog, VCA-based, true stereo signal path
+  - Two stages of analog compression per channel (compressor and limiter)
+  - Physical modeling for tube-like sag and organic instability
+  - Dynamic EQ that responds to playing dynamics
+  - Cassette-style emphasis/de-emphasis noise reduction filtering
+  - Adaptive envelope follower (attack/release adapts to playing dynamics)
+  - Feedforward blending and adjustable dry blend
+  - External sidechain input for syncing compression to another audio source
+  - Noise gate to remove hum introduced by compression
+  - "Dusty" mode turns the limiter into a distinct crumbly overdrive
+  - Two swell modes: Dynamic Swell and Manual Swell, with adjustable swell in/out speed
+  - Internal modulation (ramping and bouncing) of any combination of knobs
+  - 16 dip switches (2 banks of 8) for customization and control routing
+  - 2 internal presets, 122 more via MIDI
+  - MIDI (Program Change, Control Change) via Chase Bliss MIDIbox and the EXP/CV jack
+  - CV and expression control (CV range 0-5V)
+  - Momentary or latching bypass and AUX footswitches
   - True bypass
-  - 9V DC center negative power, ~300mA
+  - Mono or stereo in/out, with MISO for mono-in-stereo-out operation
+  - Power: 9V DC center negative, ~300mA
 io:
   - key: DRdig6u5
     name: Input L/Mono
@@ -112,9 +113,9 @@ io:
     maxConnections: 1
     position: Top
 videos:
-  - videoId: 8BZrJdIQa1w
-    provider: youtube
-    title: Clean Mini-Doc
   - videoId: RGYd3DBkbGM
     provider: youtube
-    title: Clean Intro Video
+    title: Clean Intro
+  - videoId: 8BZrJdIQa1w
+    provider: youtube
+    title: The Story of Clean
