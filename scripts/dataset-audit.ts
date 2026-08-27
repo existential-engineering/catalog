@@ -78,6 +78,7 @@ const CheckSchema = z.enum([
   "aggregator-url",
   "name-tagline",
   "bundle-entry",
+  "suspect-pin",
 ]);
 
 const SeveritySchema = z.enum(["blocking", "warning", "info"]);
@@ -122,6 +123,7 @@ const DatasetAuditSchema = z.object({
       aggregatorUrl: z.number(),
       nameTagline: z.number(),
       bundleEntry: z.number(),
+      suspectPin: z.number(),
     }),
     flagged: z.number(),
   }),
@@ -444,6 +446,43 @@ function checkBundleEntries(products: LoadedProduct[]): Finding[] {
   return findings;
 }
 
+/**
+ * `connection: pin` is a bulk-import dumping ground that means at least four
+ * different physical things in the data: RCA "pin jacks" (Japanese-manual
+ * phrasing on line/phono ports), bare terminal strips on install amps
+ * (euroblock/barrier), speaker binding posts, and genuine phono-cartridge
+ * pins — only the last is correctly `pin`. Since the connector decides what
+ * the setup graph lets a user plug in, every remaining instance needs a
+ * human/LLM look: reclassify to the real connector, or keep `pin` for
+ * cartridge pins. One finding per product, not per port.
+ */
+function checkSuspectPins(products: LoadedProduct[]): Finding[] {
+  const findings: Finding[] = [];
+  for (const p of products) {
+    const io = (p.entry as { io?: { name?: string; connection?: string }[] }).io;
+    if (!io) continue;
+    const pins = io.filter((port) => port.connection === "pin");
+    if (pins.length === 0) continue;
+    findings.push({
+      check: "suspect-pin",
+      severity: "info",
+      needsLlmReview: true,
+      collection: p.type,
+      name: p.entry.name,
+      manufacturer: p.entry.manufacturer,
+      files: [relPath(p.file)],
+      detail:
+        `${pins.length} io port(s) use connection 'pin' (${pins
+          .map((port) => port.name ?? "?")
+          .slice(0, 4)
+          .join(", ")}${pins.length > 4 ? ", …" : ""}). ` +
+        "Reclassify to the real connector (rca, euroblock, binding-post, …) from the manual/photos, " +
+        "or keep 'pin' only for genuine phono-cartridge pins.",
+    });
+  }
+  return findings;
+}
+
 function computeCoverage(
   products: LoadedProduct[]
 ): Record<string, z.infer<typeof CoverageSchema>> {
@@ -489,6 +528,7 @@ function generateAudit(fast: boolean): DatasetAudit {
     ...checkAggregatorUrls(dataset),
     ...checkNameTaglines(dataset.products),
     ...checkBundleEntries(dataset.products),
+    ...checkSuspectPins(dataset.products),
   ];
 
   // The Tier-2 seam: only ambiguous findings, highest severity first, capped.
@@ -505,6 +545,7 @@ function generateAudit(fast: boolean): DatasetAudit {
     aggregatorUrl: findings.filter((f) => f.check === "aggregator-url").length,
     nameTagline: findings.filter((f) => f.check === "name-tagline").length,
     bundleEntry: findings.filter((f) => f.check === "bundle-entry").length,
+    suspectPin: findings.filter((f) => f.check === "suspect-pin").length,
   };
 
   return {
@@ -544,6 +585,7 @@ function printConsoleReport(audit: DatasetAudit): void {
   console.log(`  Aggregator urls:        ${audit.summary.byCheck.aggregatorUrl}`);
   console.log(`  Name taglines:          ${audit.summary.byCheck.nameTagline}`);
   console.log(`  Bundle entries:         ${audit.summary.byCheck.bundleEntry}`);
+  console.log(`  Suspect pin connectors: ${audit.summary.byCheck.suspectPin}`);
   console.log(`  Flagged for LLM review: ${audit.summary.flagged}`);
   console.log();
 
@@ -566,6 +608,7 @@ function printConsoleReport(audit: DatasetAudit): void {
     { title: "🔀 Aggregator canonical urls", check: "aggregator-url", limit: 20 },
     { title: "✂️  Possible name taglines", check: "name-tagline", limit: 20 },
     { title: "📦 Bundle entries", check: "bundle-entry", limit: 20 },
+    { title: "📌 Suspect pin connectors", check: "suspect-pin", limit: 20 },
   ];
 
   for (const { title, check, limit } of groups) {
