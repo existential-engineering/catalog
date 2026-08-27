@@ -68,4 +68,4 @@ export function isIoCombineCandidate(io: IoLike, owner?: IoOwner): boolean {
  * in microphone names.
  */
 export const STORAGE_MEDIA_SLOT =
-  /\b(?:micro\s*)?sd(?:hc|xc)?[\s-]*card|\bmemory\s*(?:card|stick)|compact[\s-]*flash|\bcf[\s-]*card|smart[\s-]*media|\bxd[\s-]*(?:picture[\s-]*)?card/i;
+  /\b(?:micro\s*)?sd(?:hc|xc)?[\s-]*(?:card|slot)|\bmemory\s*(?:card|stick)|compact[\s-]*flash|\bcf[\s-]*(?:card|slot)|smart[\s-]*media|\bxd[\s-]*(?:picture[\s-]*)?(?:card|slot)/i;

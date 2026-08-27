@@ -51,6 +51,12 @@ describe("STORAGE_MEDIA_SLOT", () => {
     "SDHC Card Slot",
     "CompactFlash Slot",
     "Memory Stick Slot",
+    // Slot-only spellings: the media token alone marks these as storage.
+    "SD Slot",
+    "microSD Slot",
+    "SDXC Slot",
+    "xD Slot",
+    "CF Slot",
   ];
   for (const name of storage) {
     it(`matches storage slot '${name}'`, () => {

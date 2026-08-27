@@ -216,8 +216,10 @@ function getErrorCodeFromZodIssue(issue: {
     }
   }
 
-  // IO field errors
-  if (message.includes("storage media slot")) {
+  // IO field errors. E120 is raised only by the io name check, so it is
+  // keyed to the name path: a connectorDetail VALUE that happens to contain
+  // the phrase must still classify as E115, not E120.
+  if (path.endsWith(".name") && message.includes("storage media slot")) {
     return ValidationErrorCode.E120_STORAGE_MEDIA_SLOT;
   }
   if (message.includes("invalid io signal flow")) {
