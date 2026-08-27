@@ -357,6 +357,25 @@ means. Delete the key instead.
 
 ---
 
+### E120: Storage Media Slot as IO
+
+An io entry's name identifies a storage media slot (SD, microSD, SDHC/SDXC,
+CompactFlash, Memory Stick, SmartMedia, xD).
+
+Storage slots hold media, not cables, so the setup graph can do nothing with
+them: no cable ever runs from a card slot to another device. This is the same
+reasoning that keeps `bluetooth` and `wifi` out of the io type vocabulary.
+Mention the slot in `description`, `details`, or `specs` instead.
+
+Deliberately narrow: option and expansion card bays (Dante/MADI option cards,
+console expansion slots) accept cards that present their own connectors, so
+"Option Card Slot" and similar names stay legal, as do `connection: card-slot`
+entries for those bays.
+
+**Fix:** Delete the io entry and note the slot in the entry's prose fields.
+
+---
+
 ### E199: Validation Error
 
 A generic validation error that doesn't fall into a more specific category.

@@ -40,6 +40,7 @@ export enum ValidationErrorCode {
   E117_INVALID_IO_TYPE = "E117",
   E118_NAME_ARTIFACT = "E118",
   E119_INVALID_CAPABILITY = "E119",
+  E120_STORAGE_MEDIA_SLOT = "E120",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
@@ -204,6 +205,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E119_INVALID_CAPABILITY]: {
     title: "Invalid capability",
     anchor: "e119-invalid-capability",
+  },
+  [ValidationErrorCode.E120_STORAGE_MEDIA_SLOT]: {
+    title: "Storage media slot as IO",
+    anchor: "e120-storage-media-slot-as-io",
   },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",

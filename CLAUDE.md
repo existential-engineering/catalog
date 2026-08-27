@@ -172,6 +172,14 @@ ports — the app doesn't support them in the setup graph. Mention them in
 absent from the io type vocabulary, so such entries fail validation (E117).
 (`rf` antenna jacks on wireless mic systems are real ports and stay.)
 
+**No storage media slot io entries.** SD, microSD, CompactFlash, Memory Stick
+and kin hold media, not cables, so the setup graph can do nothing with them —
+the same reasoning as Bluetooth/Wi-Fi. An io entry whose name identifies a
+storage slot fails validation (E120). Mention the slot in
+`description`/`details`/`specs` instead. Option and expansion card bays
+(Dante/MADI option cards) accept cards that present real connectors, so those
+stay legal with `connection: card-slot`.
+
 **Passive speakers use `speaker-level`, not `line`.** Passive-loudspeaker inputs
 (speakON, binding-post, banana, euroblock, barrier/spring terminals) carry
 amplified signals — set `type: speaker-level`. `line` is for low-voltage
