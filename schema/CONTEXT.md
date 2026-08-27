@@ -884,6 +884,8 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `built-in`
 - `card-slot`
 - `pin`
+- `mmcx`
+- `apple-30-pin`
 
 **Aliases:**
 

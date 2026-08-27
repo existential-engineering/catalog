@@ -477,7 +477,7 @@ function checkSuspectPins(products: LoadedProduct[]): Finding[] {
           .slice(0, 4)
           .join(", ")}${pins.length > 4 ? ", …" : ""}). ` +
         "Reclassify to the real connector (rca, euroblock, binding-post, …) from the manual/photos, " +
-        "or keep 'pin' only for genuine phono-cartridge pins.",
+        "or keep 'pin' only for genuine pin contacts (phono-cartridge pins, 500-series card edges).",
     });
   }
   return findings;
