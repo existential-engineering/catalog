@@ -46,6 +46,7 @@ connections:
   - firewire 400
   - ethernet
   - ethercon # locking Neutrik ethernet (e.g. SLink/gigaACE/Dante ports)
+  - rj11 # 6-position modular jack (e.g. Crown DCi GPIO control ports)
   - hdmi
   - lightning
   - aes/ebu
@@ -66,6 +67,7 @@ connections:
   - binding-post
   - banana
   - spring-terminal
+  - barrier-strip # screw-terminal strip with barriers (covered amp outputs, e.g. Crown CDi)
 
   # Power connectors
   - barrel
@@ -73,6 +75,7 @@ connections:
   - iec-c14
   - iec-c20
   - powercon
+  - twist-lock # locking mains inlet (NEMA/Hubbell twist-lock, CEE form)
 
   # Terminal block / phoenix style connectors
   - euroblock
@@ -80,4 +83,6 @@ connections:
   # Misc
   - built-in
   - card-slot # empty option-card bay (fitted cards present their own connectors)
-  - pin
+  - pin # bare pins or card-edge contacts (phono cartridges, 500-series modules)
+  - mmcx # IEM earphone cable connector
+  - apple-30-pin # legacy iPod/iPad dock connector

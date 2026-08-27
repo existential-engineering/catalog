@@ -80,7 +80,11 @@ describe("CATEGORY_CAPABILITIES", () => {
  * valid category — only the entries show the mismatch.
  */
 describe("declared capabilities agree with declared categories", () => {
-  it("every populated entry covers its categories' implied capabilities", () => {
+  // Loads and parses every hardware YAML file, so it scales with the corpus:
+  // the sweep sat at ~4s against the 5s default when the corpus tipped it over.
+  it("every populated entry covers its categories' implied capabilities", {
+    timeout: 30_000,
+  }, () => {
     const violations: string[] = [];
     for (const file of getYamlFiles(path.join(DATA_DIR, "hardware"))) {
       const data = loadYamlFile<Hardware>(file);

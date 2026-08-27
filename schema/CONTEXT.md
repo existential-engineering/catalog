@@ -859,6 +859,7 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `firewire 400`
 - `ethernet`
 - `ethercon`
+- `rj11`
 - `hdmi`
 - `lightning`
 - `aes/ebu`
@@ -875,15 +876,19 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `binding-post`
 - `banana`
 - `spring-terminal`
+- `barrier-strip`
 - `barrel`
 - `iec-c6`
 - `iec-c14`
 - `iec-c20`
 - `powercon`
+- `twist-lock`
 - `euroblock`
 - `built-in`
 - `card-slot`
 - `pin`
+- `mmcx`
+- `apple-30-pin`
 
 **Aliases:**
 

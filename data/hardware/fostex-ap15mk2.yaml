@@ -52,12 +52,20 @@ io:
     maxConnections: 1
     position: Bottom
   - key: HTmrJssR
-    name: Speaker Output
+    name: Speaker Output L
     signalFlow: output
     category: audio
-    type: line
-    connection: pin
-    maxConnections: 2
+    type: speaker-level
+    connection: spring-terminal
+    maxConnections: 1
+    position: Bottom
+  - key: Hp7hEpki
+    name: Speaker Output R
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: spring-terminal
+    maxConnections: 1
     position: Bottom
   - key: hNpoQPYM
     name: DC Power
