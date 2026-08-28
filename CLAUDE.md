@@ -55,6 +55,38 @@ cohort working:
 - Use Prettier for YAML formatting
 - Data follows strict schemas defined in `scripts/lib/types.ts`
 
+### Incremental Patches
+
+`pnpm patch` emits SQL that brings a released `catalog.sqlite` up to HEAD. It
+reads the rows out of a freshly built database rather than encoding the YAML a
+second time, and that is the whole point of its shape.
+
+- **Never hand-write a table's INSERT into `generate-patch.ts`.** It used to,
+  and covered sixteen of the sixty-odd tables `build-sqlite.ts` writes: I/O,
+  prices, links, versions and variants were left stale on a patched database,
+  markdown reached HTML columns unrendered, and category aliases went in
+  unnormalized. The table graph is reflected from the built schema, so a new
+  child table or column is carried for free. Adding a hand-written block
+  reintroduces the drift.
+- **A collection owns its child tables by name prefix.** `content_compatibility`
+  references both `content` and `software`, but only `content` owns it. A new
+  child table has to carry its collection's prefix and a foreign key reaching
+  the root, or reflection fails loudly rather than skipping it.
+- **A rewritten entry's root row is upserted, never deleted.** Another entry's
+  `supersedes_id` can point at it, and dropping the row trips that key even
+  though it is about to come straight back.
+- **A nested row resolves its parent by natural key.** `hardware_variants.id`
+  is assigned per build, so the target database has its own numbering and
+  carrying the build's ids across would attach prices to the wrong variant.
+- **The version stamp is written only when every change resolved.** A patch
+  that skips a change and still stamps leaves a database claiming content it
+  does not have, which is what makes the other failures hard to diagnose after
+  the fact.
+
+A patch only rewrites entries whose YAML changed, so renaming a manufacturer
+leaves the denormalized `manufacturer_name` stale in the FTS rows of its
+unchanged products. Ship a full database when manufacturer names move.
+
 ## Data Entry Format
 
 Manufacturers require: name, url
