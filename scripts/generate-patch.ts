@@ -68,6 +68,7 @@ const FTS_SHADOW_SUFFIX = /_(data|idx|content|docsize|config)$/;
 // SQL HELPERS
 // =============================================================================
 
+/** Quote a table or column name so a reserved word or odd character is safe. */
 function quoteIdent(name: string): string {
   return `"${name.replace(/"/g, '""')}"`;
 }
@@ -81,6 +82,7 @@ function sqlLiteral(value: unknown): string {
   return escapeSQL(String(value));
 }
 
+/** One INSERT over an explicit column list, so column order never matters. */
 function insertRow(table: string, columns: string[], values: string[]): string {
   return (
     `INSERT INTO ${quoteIdent(table)} (${columns.map(quoteIdent).join(", ")}) ` +
@@ -96,6 +98,7 @@ interface ColumnInfo {
   name: string;
   pk: number;
   type: string;
+  notnull: number;
 }
 
 export interface ChildTable {
@@ -127,13 +130,72 @@ export interface CollectionSchema {
   naturalKeys: Map<string, string[]>;
 }
 
-/** True for an id SQLite assigns, which must be left out of an INSERT. */
-function isAssignedPk(column: ColumnInfo, createSql: string): boolean {
-  if (column.pk !== 1 || column.type.toUpperCase() !== "INTEGER") return false;
-  // A composite primary key or a TEXT id is real data and has to be written.
-  return new RegExp(`\\b${column.name}\\s+INTEGER\\s+PRIMARY\\s+KEY`, "i").test(createSql);
+/**
+ * The column SQLite assigns itself, which must be left out of an INSERT.
+ *
+ * A rowid alias is structurally an INTEGER PRIMARY KEY that is the table's
+ * only primary-key column, on a table with a rowid. Everything else is real
+ * data: `hardware_categories` keys on (hardware_id, category) and `hardware`
+ * on a TEXT nanoid, and both have to be written. Read from `table_info`
+ * rather than matched in the CREATE statement, where a quoted column name or
+ * a table-level `PRIMARY KEY (id)` reads as neither.
+ */
+function assignedPkColumn(columns: ColumnInfo[], createSql: string): string | null {
+  if (/\bWITHOUT\s+ROWID\b/i.test(createSql)) return null;
+  const key = columns.filter((c) => c.pk > 0);
+  if (key.length !== 1 || key[0].type.toUpperCase() !== "INTEGER") return null;
+  return key[0].name;
 }
 
+/**
+ * Columns that identify a row in `child.parent` without using its assigned id.
+ *
+ * Two properties matter and neither is free. The choice has to be
+ * deterministic, because `PRAGMA index_list` does not promise an order and a
+ * parent with two unique indexes would otherwise emit different lookup SQL
+ * from run to run. And every key column has to be NOT NULL, because a NULL is
+ * copied into the lookup as `"col" = NULL`, which matches nothing, so the
+ * child would insert a null foreign key or fail outright.
+ */
+function naturalKeyFor(
+  db: Database.Database,
+  root: string,
+  child: ChildTable,
+  parentColumns: ColumnInfo[]
+): string[] {
+  const nullable = new Set(parentColumns.filter((c) => c.notnull === 0).map((c) => c.name));
+  const indexes = (
+    db.prepare(`PRAGMA index_list(${quoteIdent(child.parent)})`).all() as {
+      name: string;
+      unique: number;
+      origin: string;
+    }[]
+  )
+    // The primary-key index is the assigned id this exists to avoid.
+    .filter((i) => i.unique === 1 && i.origin !== "pk")
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  for (const index of indexes) {
+    const cols = (
+      db.prepare(`PRAGMA index_info(${quoteIdent(index.name)})`).all() as { name: string }[]
+    ).map((c) => c.name);
+    if (cols.length > 0 && !cols.some((c) => nullable.has(c))) return cols;
+  }
+
+  throw new Error(
+    `Cannot patch ${root}: ${child.name} references ${child.parent} by assigned id, ` +
+      `but ${child.parent} has no unique index over NOT NULL columns to resolve it by.`
+  );
+}
+
+/**
+ * Describe one collection's tables by reading the built database.
+ *
+ * Everything the statements need comes from here: which tables the collection
+ * owns, which column links each to its parent, how deep each sits, what
+ * columns it writes, and how a nested row finds its parent. Reflecting it is
+ * what keeps a new child table or column working without touching this file.
+ */
 export function reflectCollection(
   db: Database.Database,
   category: Change["category"]
@@ -153,10 +215,9 @@ export function reflectCollection(
     db.prepare(`PRAGMA table_info(${quoteIdent(table)})`).all() as ColumnInfo[];
 
   const writableColumns = (table: string): string[] => {
-    const sql = createSql.get(table) ?? "";
-    return columnsOf(table)
-      .filter((c) => !isAssignedPk(c, sql))
-      .map((c) => c.name);
+    const columns = columnsOf(table);
+    const assigned = assignedPkColumn(columns, createSql.get(table) ?? "");
+    return columns.filter((c) => c.name !== assigned).map((c) => c.name);
   };
 
   const owned = objects
@@ -208,32 +269,39 @@ export function reflectCollection(
     );
   }
 
+  // The walk above finds a table at any depth, but the statements only resolve
+  // one level of nesting: a depth-3 child would be looked up through its
+  // depth-2 parent's assigned integer key compared against the root's text id,
+  // which matches nothing, so its rows would be silently left out of the patch.
+  // Fail here instead. Resolving the full chain is the fix if the schema ever
+  // grows one, and nothing in it does today.
+  const tooDeep = children.filter((c) => c.depth > 2);
+  if (tooDeep.length > 0) {
+    throw new Error(
+      `Cannot patch ${root}: ${tooDeep.map((c) => c.name).join(", ")} ` +
+        `${tooDeep.length === 1 ? "is" : "are"} nested more than two levels deep, ` +
+        `which the statement generator cannot resolve. Extend linkToRoot to walk ` +
+        `the whole parent chain before adding it.`
+    );
+  }
+
   // A child keyed on something other than the root's text id needs its parent
   // resolved at apply time.
   const naturalKeys = new Map<string, string[]>();
   for (const child of children) {
     if (child.parent === root || naturalKeys.has(child.parent)) continue;
-    const indexes = db.prepare(`PRAGMA index_list(${quoteIdent(child.parent)})`).all() as {
-      name: string;
-      unique: number;
-    }[];
-    const unique = indexes.find((i) => i.unique === 1);
-    if (!unique) {
-      throw new Error(
-        `Cannot patch ${root}: ${child.name} references ${child.parent} by assigned id, ` +
-          `but ${child.parent} has no unique index to resolve it by.`
-      );
-    }
-    const cols = (
-      db.prepare(`PRAGMA index_info(${quoteIdent(unique.name)})`).all() as { name: string }[]
-    ).map((c) => c.name);
-    naturalKeys.set(child.parent, cols);
+    naturalKeys.set(child.parent, naturalKeyFor(db, root, child, columnsOf(child.parent)));
   }
 
   return { root, rootColumns: writableColumns(root), fts, children, naturalKeys };
 }
 
-/** The column on `parent` that links it back toward the collection root. */
+/**
+ * The column on `parent` that links it back toward the collection root.
+ *
+ * Correct for a parent that is the root or a direct child of it, which
+ * `reflectCollection` enforces by refusing anything deeper.
+ */
 function linkToRoot(schema: CollectionSchema, parent: string): string {
   return schema.children.find((c) => c.name === parent)?.fkColumn ?? `${schema.root}_id`;
 }
@@ -242,6 +310,7 @@ function linkToRoot(schema: CollectionSchema, parent: string): string {
 // GIT HELPERS
 // =============================================================================
 
+/** The most recent release tag, used as the default patch base. */
 function getLatestTag(): string | null {
   try {
     return execFileSync("git", ["describe", "--tags", "--abbrev=0"], {
@@ -266,6 +335,12 @@ function getDeletedEntryId(since: string, filePath: string): string | null {
   }
 }
 
+/**
+ * Entry files added, modified or deleted since `since`, one Change each.
+ *
+ * Paths outside the five collections, and non-YAML files, are skipped rather
+ * than guessed at: they carry no entry for a patch to rewrite.
+ */
 function getChangedFiles(since: string): Change[] {
   const changes: Change[] = [];
   const output = execFileSync("git", ["diff", "--name-status", since, "HEAD", "--", "data/"], {
@@ -420,6 +495,7 @@ export function insertStatements(
 // MAIN
 // =============================================================================
 
+/** An on-disk entry's nanoid, or null when the file is missing or unparsable. */
 function readEntryId(category: Change["category"], slug: string): string | null {
   try {
     const file = path.join(DATA_DIR, category, `${slug}.yaml`);
@@ -429,6 +505,14 @@ function readEntryId(category: Change["category"], slug: string): string | null 
   }
 }
 
+/**
+ * Write the SQL that brings a database at `fromTag` up to HEAD.
+ *
+ * Collections are emitted manufacturers-first so a product's foreign key
+ * lands after the row it points at. Nothing is written at all unless every
+ * change resolved, because a patch that stamps a version while dropping a
+ * change leaves a database claiming content it does not have.
+ */
 function generatePatch(fromTag: string, toVersion: string, dbPath: string): void {
   const changes = getChangedFiles(fromTag);
 
@@ -536,6 +620,7 @@ function generatePatch(fromTag: string, toVersion: string, dbPath: string): void
 // CLI
 // =============================================================================
 
+/** Parse the CLI arguments, build the database unless told not to, patch. */
 function main(): void {
   const argv = process.argv.slice(2);
   const dbFlag = argv.indexOf("--db");

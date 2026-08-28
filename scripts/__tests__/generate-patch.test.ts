@@ -101,6 +101,86 @@ describe("reflectCollection", () => {
     expect(content.children.map((c) => c.name)).toContain("content_hardware_compatibility");
   });
 
+  it("omits an assigned id declared with a quoted column name", () => {
+    // The previous check matched the CREATE statement textually, so a quoted
+    // or table-level primary key read as real data and the build's own id was
+    // written into the target database.
+    const quoted = emptyDatabase();
+    quoted.exec(`CREATE TABLE hardware_quoted (
+      "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+      hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+      note TEXT
+    )`);
+    const child = reflectCollection(quoted, "hardware").children.find(
+      (c) => c.name === "hardware_quoted"
+    )!;
+    expect(child.columns).toEqual(["hardware_id", "note"]);
+  });
+
+  it("keeps an id the table owns rather than one SQLite assigns", () => {
+    const withoutRowid = emptyDatabase();
+    withoutRowid.exec(`CREATE TABLE hardware_keyed (
+      id INTEGER PRIMARY KEY,
+      hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE
+    ) WITHOUT ROWID`);
+    const child = reflectCollection(withoutRowid, "hardware").children.find(
+      (c) => c.name === "hardware_keyed"
+    )!;
+    // No rowid to alias, so the id is data the patch has to carry.
+    expect(child.columns).toContain("id");
+  });
+
+  it("picks the same natural key whichever order the indexes come back in", () => {
+    const many = emptyDatabase();
+    many.exec(`CREATE TABLE hardware_zones (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+      slug TEXT NOT NULL,
+      code TEXT NOT NULL
+    )`);
+    many.exec(`CREATE UNIQUE INDEX zz_hardware_zones_code ON hardware_zones(hardware_id, code)`);
+    many.exec(`CREATE UNIQUE INDEX aa_hardware_zones_slug ON hardware_zones(hardware_id, slug)`);
+    many.exec(`CREATE TABLE hardware_zone_notes (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      zone_id INTEGER NOT NULL REFERENCES hardware_zones(id) ON DELETE CASCADE,
+      note TEXT
+    )`);
+    // Sorted by index name, so the choice does not depend on PRAGMA ordering.
+    expect(reflectCollection(many, "hardware").naturalKeys.get("hardware_zones")).toEqual([
+      "hardware_id",
+      "slug",
+    ]);
+  });
+
+  it("refuses a natural key whose columns can be null", () => {
+    // A null is copied into the lookup as `"col" = NULL`, which matches
+    // nothing, so the child would insert a null foreign key or fail outright.
+    const nullable = emptyDatabase();
+    nullable.exec(`CREATE TABLE hardware_zones (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
+      slug TEXT,
+      UNIQUE(hardware_id, slug)
+    )`);
+    nullable.exec(`CREATE TABLE hardware_zone_notes (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      zone_id INTEGER NOT NULL REFERENCES hardware_zones(id) ON DELETE CASCADE
+    )`);
+    expect(() => reflectCollection(nullable, "hardware")).toThrow(/NOT NULL columns/);
+  });
+
+  it("refuses a table nested more than two levels deep", () => {
+    // The statements resolve one level of nesting, so a depth-3 child would be
+    // looked up through an integer key compared against the root's text id and
+    // silently left out of the patch.
+    const deep = emptyDatabase();
+    deep.exec(`CREATE TABLE hardware_variant_parts (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      variant_link_id INTEGER NOT NULL REFERENCES hardware_variant_links(id) ON DELETE CASCADE
+    )`);
+    expect(() => reflectCollection(deep, "hardware")).toThrow(/two levels deep/);
+  });
+
   it("picks up the collection's full-text table without its shadow tables", () => {
     expect(schema.fts?.name).toBe("hardware_fts");
     expect(schema.children.map((c) => c.name)).not.toContain("hardware_fts_data");
