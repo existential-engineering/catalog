@@ -12,7 +12,7 @@ import { parse as parseYaml } from "yaml";
 import { z } from "zod";
 import { looksLikeAcronymName } from "./lib/acronym-exclusions.js";
 import { getDocsUrl, ValidationErrorCode } from "./lib/error-codes.js";
-import { isIoCombineCandidate } from "./lib/io-heuristics.js";
+import { isIoCombineCandidate, STORAGE_MEDIA_SLOT } from "./lib/io-heuristics.js";
 import { findDuplicateIoKeys, IO_KEY_PATTERN } from "./lib/io-keys.js";
 import {
   findNameArtifacts,
@@ -216,7 +216,12 @@ function getErrorCodeFromZodIssue(issue: {
     }
   }
 
-  // IO field errors
+  // IO field errors. E120 is raised only by the io name check, so it is
+  // keyed to the name path: a connectorDetail VALUE that happens to contain
+  // the phrase must still classify as E115, not E120.
+  if (path.endsWith(".name") && message.includes("storage media slot")) {
+    return ValidationErrorCode.E120_STORAGE_MEDIA_SLOT;
+  }
   if (message.includes("invalid io signal flow")) {
     return ValidationErrorCode.E111_INVALID_IO_SIGNAL_FLOW;
   }
@@ -432,7 +437,20 @@ const IOSchema = z
       .string()
       .regex(IO_KEY_PATTERN, "IO key must be exactly 8 alphanumeric characters")
       .optional(),
-    name: z.string(),
+    name: z.string().check((ctx) => {
+      if (STORAGE_MEDIA_SLOT.test(ctx.value)) {
+        ctx.issues.push({
+          code: "custom",
+          message:
+            `Storage media slot '${ctx.value}' is not a connectable port. ` +
+            `Memory card slots hold media, not cables, so the setup graph cannot ` +
+            `use them (same reasoning as Bluetooth/Wi-Fi). Mention the slot in ` +
+            `description/details/specs instead. Option and expansion card bays ` +
+            `that accept I/O cards stay legal.`,
+          input: ctx.value,
+        });
+      }
+    }),
     signalFlow: z.string().check((ctx) => {
       if (!VALID_IO_SIGNAL_FLOWS.has(ctx.value)) {
         const suggestion = findClosestMatch(ctx.value, VALID_IO_SIGNAL_FLOWS);

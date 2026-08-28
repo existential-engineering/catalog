@@ -54,3 +54,18 @@ export function isIoCombineCandidate(io: IoLike, owner?: IoOwner): boolean {
   if (owner?.primaryCategory && AGGREGATE_CATEGORIES.has(owner.primaryCategory)) return false;
   return true;
 }
+
+/**
+ * Storage-media slots (SD, microSD, CompactFlash, Memory Stick and kin) are
+ * not connectable ports: they hold media, not cables, so the setup graph can
+ * do nothing with them — the same reasoning that keeps Bluetooth and Wi-Fi
+ * out of the io type vocabulary. Validation hard-fails an io entry whose
+ * name matches (E120); the slot belongs in description/details/specs.
+ *
+ * Deliberately narrow: option and expansion card bays (Dante/MADI option
+ * cards, 500-series style bays) accept cards that PRESENT connectors, so
+ * "Option Card Slot" and friends must not match, and neither may "cardioid"
+ * in microphone names.
+ */
+export const STORAGE_MEDIA_SLOT =
+  /\b(?:micro\s*)?sd(?:hc|xc)?[\s-]*(?:card|slot)|\bmemory\s*(?:card|stick)|compact[\s-]*flash|\bcf[\s-]*(?:card|slot)|smart[\s-]*media|\bxd[\s-]*(?:picture[\s-]*)?(?:card|slot)/i;

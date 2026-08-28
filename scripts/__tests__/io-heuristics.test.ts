@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isIoCombineCandidate } from "../lib/io-heuristics.js";
+import { isIoCombineCandidate, STORAGE_MEDIA_SLOT } from "../lib/io-heuristics.js";
 
 describe("isIoCombineCandidate", () => {
   it("flags several single jacks collapsed into one entry", () => {
@@ -40,4 +40,46 @@ describe("isIoCombineCandidate", () => {
       )
     ).toBe(true);
   });
+});
+
+describe("STORAGE_MEDIA_SLOT", () => {
+  const storage = [
+    "SD Card Slot",
+    "microSD Card Slot",
+    "Micro SD Card - Flashed",
+    "SD Card",
+    "SDHC Card Slot",
+    "CompactFlash Slot",
+    "Memory Stick Slot",
+    // Slot-only spellings: the media token alone marks these as storage.
+    "SD Slot",
+    "microSD Slot",
+    "SDXC Slot",
+    "xD Slot",
+    "CF Slot",
+  ];
+  for (const name of storage) {
+    it(`matches storage slot '${name}'`, () => {
+      expect(STORAGE_MEDIA_SLOT.test(name)).toBe(true);
+    });
+  }
+
+  // Option bays present real connectors, mic names contain "cardioid", and
+  // "Soundcard"/"DSD" must not trip the sd stem.
+  const legal = [
+    "Option Card Slot",
+    "64x64 I/O Option Card Slot",
+    "Expansion Card Slot (DN32-USB/ADAT/MADI/DANTE)",
+    "Thunderbolt 3 Option Card",
+    "UAD-2 PCIe Accelerator Cards",
+    "USB 2.0 (20 Channel 24-bit/96kHz Soundcard)",
+    "4011 Cardioid Microphone",
+    "Detachable Hypercardioid Boom Microphone Input",
+    "DSD Card",
+  ];
+  for (const name of legal) {
+    it(`leaves '${name}' alone`, () => {
+      expect(STORAGE_MEDIA_SLOT.test(name)).toBe(false);
+    });
+  }
 });
