@@ -100,10 +100,27 @@ function normalizeIOConnection(connection: string): string {
   return IO_CONNECTION_ALIASES.get(connection) ?? connection;
 }
 
-// Normalize bidirectional signal flow to input for studio compatibility
+// Normalize bidirectional signal flow to input for studio compatibility.
+// Dual-column migration: `signal_flow` keeps this flattened value because
+// pre-peer Studio builds read it raw and cannot classify `bidirectional`,
+// while `signal_flow_raw` carries the YAML value verbatim for builds that
+// can. Old apps select `signal_flow` by name and never see the new column,
+// so this stays until pre-peer builds are extinct. Never flatten the raw
+// column, and never drop this one without bumping CATALOG_SCHEMA_VERSION.
 function normalizeIOSignalFlow(signalFlow: string): string {
   return signalFlow === "bidirectional" ? "input" : signalFlow;
 }
+
+// Reader-compatibility version, stored in catalog_meta as `schema_version`
+// and enforced by Studio's downloader: an app refuses to activate a catalog
+// whose schema_version exceeds what it supports, keeping its current
+// catalog instead. Absent (catalogs built before this constant) means 1.
+// Bump ONLY for a change that breaks an existing reader (removing or
+// renaming a column, changing the meaning of stored values). Additive
+// columns and tables never bump it: old readers select by name and cannot
+// see them, and bumping would needlessly freeze catalog updates for every
+// older app.
+const CATALOG_SCHEMA_VERSION = "1";
 
 // Read version from package.json
 const packageJson = JSON.parse(
@@ -825,8 +842,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?)
   `);
   const insertHardwareIO = db.prepare(`
-    INSERT INTO hardware_io (hardware_id, port_key, name, signal_flow, category, type, connection, connector_detail, max_connections, position, column_position, row_position, description)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware_io (hardware_id, port_key, name, signal_flow, signal_flow_raw, category, type, connection, connector_detail, max_connections, position, column_position, row_position, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwareVersion = db.prepare(`
     INSERT INTO hardware_versions (hardware_id, name, release_date, release_date_year_only, pre_release, unofficial, url, description)
@@ -965,6 +982,7 @@ function buildDatabase(version: string): void {
           io.key ?? null,
           io.name,
           normalizeIOSignalFlow(io.signalFlow),
+          io.signalFlow,
           io.category,
           io.type,
           normalizeIOConnection(io.connection),
@@ -1415,6 +1433,7 @@ function buildDatabase(version: string): void {
   `);
   updateMeta.run("version", version);
   updateMeta.run("updated_at", new Date().toISOString());
+  updateMeta.run("schema_version", CATALOG_SCHEMA_VERSION);
 
   // Optimize database
   db.exec("VACUUM");

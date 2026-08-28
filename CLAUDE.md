@@ -17,6 +17,30 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 - `pnpm format` - Format YAML files with Prettier
 - `pnpm format:check` - Check formatting
 
+## Catalog Schema Compatibility
+
+Studio downloads whatever `catalog.sqlite` is newest, on its own schedule,
+so app and catalog versions are decoupled forever. Two rules keep every
+cohort working:
+
+- **Schema changes are additive.** Old Studio builds select columns by
+  name, so a new column or table is invisible to them. Never remove,
+  rename, or change the meaning of an existing column while any shipped
+  Studio build still reads it. `signal_flow` vs `signal_flow_raw` is the
+  standing example: `signal_flow` keeps the `bidirectional -> input`
+  flattening because pre-peer builds read it raw, while `signal_flow_raw`
+  carries the YAML value verbatim for builds that understand it.
+- **`schema_version` in `catalog_meta` is the reader-compatibility
+  number** (`CATALOG_SCHEMA_VERSION` in `scripts/build-sqlite.ts`).
+  Studio refuses to activate a catalog whose `schema_version` exceeds
+  what it supports, keeping its current catalog instead, so bumping it
+  freezes catalog updates for every older app until its users update.
+  Bump ONLY for a genuinely breaking change, in lockstep with raising
+  `MAX_SUPPORTED_CATALOG_SCHEMA` in the racks repo
+  (`apps/studio/src-tauri/src/data/mod.rs`), and only after the builds
+  that cannot read the new schema are considered abandonable. Additive
+  changes never bump it.
+
 ## Project Structure
 
 - `data/` - YAML source files (manufacturers, software, content, hardware, accessories)
