@@ -22,18 +22,47 @@ prices:
     currency: GBP
 description: THE UNIVERSAL EQ — EQuality is designed to be the perfect EQ for every track of your session, delivering sound quality comparable to high-end console or rack gear with all the features and functionality that digital brings.
 details: |-
-  EQuality features 6 parametric bands (2 shelf/bells, 4 bell/notches) with a Q range of 0.1–50 and ±36dB gain range, plus 2 fully parametric high/low-pass filters at 6–48dB/octave slopes. It offers Linear, Analogue, and Minimum phase modes, as well as M/S (mid-side) processing for precise stereo control. A proprietary Digital+ mode provides enhanced processing quality beyond the standard prototypes. Three UI modes (full, graph, and knobs) accommodate different workflows, complemented by a high-resolution spectrum analyser with configurable readout. The plugin includes 8 A/B comparison banks, full preset management, undo/redo, autolisten mode, and configurable VU metering with K-metering support.
+  EQuality has been designed to be the perfect EQ to let your mixdowns shine, with something for every track of your session, aiming to sound at least as good as any high-end console or rack gear while bringing all the features and functionality that digital brings.
+
+  EQuality is not a model of a specific piece of hardware; it aims to be a great replacement for all your EQs, sounding as good as an EQ can sound from the bottom up, with prototypes as close to consistent analogue shapes as can be achieved digitally without spending extra CPU, and a Digital+ mode for when extra CPU is worth spending.
+
+  The plugin offers 6 bands (2 shelf/bell, 4 bell/notch) with a +/-36dB range and Q from 0.1 to 50, plus two fully parametric high and low-pass filters with slopes from 6 to 36dB/oct and their own Q range, alongside Linear, Analogue and Minimum phase modes for master and special channels.
+
+  M/S processing lets users process Mid, Side or the Stereo image, and the interface offers three UI modes (full, graph, knobs), a big antialiased graph, a hi-res spectrum analyser, configurable VU metering with K-metering support, 8 banks of A/B, full preset management with undo/redo, and an autolisten mode for quickly finding and adjusting frequencies.
 specs: |-
-  - 6 bands: 2 shelf/bells, 4 bell/notches; Q 0.1–50, ±36dB gain
-  - 2 fully parametric filters (high-pass and low-pass): 6/12/18/24/30/36/42/48 dB/oct, sweepable resonance
-  - Linear, Analogue, and Minimum phase modes
-  - Digital+ mode for enhanced processing quality
-  - M/S (Mid/Side) processing mode
-  - High-resolution spectrum analyser with tilt, smooth, and colour preferences
-  - 8 A/B comparison banks
-  - Three UI modes: full, graph, and knobs
-  - Configurable VU metering with K-metering and variable ballistics
-  - Autolisten mode for rapid frequency identification
-  - Full preset management with undo/redo
+  - Very low CPU usage for every track of your mix
+  - Generates super-high-quality prototypes with clear undistorted top
+  - Digital+ mode
+  - Linear/Analogue/Minimum phase modes for master and special channels
+  - 6 bands, 2 shelf/bells, 4 bell/notches, Q 0.1 to 50, +/-36dB range
+  - 2 fully parametric filters (high and low-pass), 6/12/18/24/30/36dB/oct, Q 0.1 to 20
+  - Three UI modes: full, graph and knobs
+  - M/S processing modes
+  - Adjustable gain-Q interaction for musical usage
+  - Big, clear, antialiased graph
+  - Hi-res spectrum analyser with range and frequency shift controls
   - Control linking for all EQ parameters
-  - Adjustable gain-Q interaction
+  - Configurable VU, supporting K-metering and variable ballistics
+  - 8 banks of A/B
+  - Full preset management system with undo/redo
+  - Autolisten mode for quick finding/adjustment of frequencies
+  - Clip LED
+versions:
+  - name: "1.43"
+    releaseDate: 2023-10-30
+    description: Fix incorrect latency on re-opening a project in Studio One. Fix latency reporting in VST3.
+  - name: "1.42"
+    releaseDate: 2023-04-03
+    description: AAX Apple Silicon support.
+  - name: "1.41"
+    releaseDate: 2022-11-09
+    description: Fix Digital+ mode causing silence when selected. Fix VST3 bundle structure for architecture on Windows.
+  - name: "1.40"
+    releaseDate: 2022-11-03
+    description: Fix potential crash when editing parameters. Fix gain jumps when using Digital+ mode. Fix incorrect latency on re-opening a project in Ableton Live.
+  - name: "1.39"
+    releaseDate: 2022-03-28
+    description: Remove 32 bit AAX support on Mac. Improve parameter automation response at start of item if inserted as a Take FX in Reaper.
+  - name: "1.38"
+    releaseDate: 2021-06-22
+    description: Fix VST2 window resizing in Cubase/Nuendo. Fix potential incorrect parameter recall with VST3 in Bitwig.
