@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-catalog-import-merge: dotec-audio — add DeeMultiWider, refresh DeeVocalTools version history
+catalog-import-merge: dotec-audio adds DeeMultiWider and refreshes DeeVocalTools version history
