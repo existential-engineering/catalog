@@ -310,7 +310,8 @@ CREATE TABLE IF NOT EXISTS hardware_io (
     hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     port_key TEXT,                    -- stable per-port key from YAML io[].key (unique per hardware)
     name TEXT NOT NULL,
-    signal_flow TEXT NOT NULL,        -- input, output
+    signal_flow TEXT NOT NULL,        -- input, output (bidirectional flattened to input for pre-peer Studio builds)
+    signal_flow_raw TEXT,             -- unflattened YAML value (input, output, bidirectional); newer Studio reads this first
     category TEXT NOT NULL,           -- audio, digital, midi, power
     type TEXT NOT NULL,
     connection TEXT NOT NULL,
