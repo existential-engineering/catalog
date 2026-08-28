@@ -1,5 +1,32 @@
 # catalog
 
+## 3.54.0
+
+### Minor Changes
+
+- 1564d44: Add hardware_io.signal_flow_raw carrying the unflattened
+  YAML signal flow, and stamp schema_version into catalog_meta
+  for Studio's reader-compatibility gate. Additive only, the
+  flattened signal_flow column is unchanged.
+- e452187: catalog-import-merge: black-salt-audio — add BSA Mix Bus, refresh copy/pricing/URLs across the 16 existing entries
+
+### Patch Changes
+
+- b5f34b1: catalog-import-merge: audiomulch — fix dead product URL (site dropped /products, now points to the What is AudioMulch page)
+- c29f00f: catalog-import-merge: chase-bliss — refresh 15 existing hardware/accessory
+  entries (descriptions, details, specs, I/O, videos, manuals, and a
+  Lost + Found URL update) from the current chasebliss.com product pages.
+  No new or newly-discontinued entries in this pass.
+- 9e6c92b: Reclassify 70 mislabeled `connection: pin` ports to their real connectors (binding-post, db25, hdmi, pin-header, 1/8-inch, xlr) and add a `suspect-pin` dataset-audit check that flags the remaining pin ports for review (AUREO-1043).
+- 33d883c: Reclassify 495 remaining `connection: pin` ports to their real connectors (euroblock, db25, speakon, binding-post, spring-terminal, 1/8-inch, mini-xlr, idc, card-slot, db9, xlr, mmcx, apple-30-pin), fix speaker-level typing on the reclassified speaker paths, and keep genuine pin contacts (phono cartridges, 500-series card edges). Adds `mmcx`, `apple-30-pin`, `barrier-strip`, `rj11`, and `twist-lock` to the connector vocabulary, corrects Crown CDi/XLC/DSi barrier-strip outputs, DCi RJ-11 GPIO ports, vRack twist-lock mains inlets, and I-Tech HD Speakon/binding-post outputs, and splits aggregated multi-socket entries (Antelope/RME DB25 pairs, Fostex L/R speaker terminals, Mackie MMCX earpieces) into one entry per physical connector (AUREO-1043).
+- cc61483: Repoint dead manual links on 7 Pioneer DJ effector entries. The
+  `downloads.support.alphatheta.com/manuals/dj-effectors/` tree no longer
+  exists, so every link under it 404s; AlphaTheta moved manual content into
+  support articles. EFX-1000 keeps its "Specifications" title against a
+  dedicated specifications article; the other six point at the instruction
+  manual and are retitled, since the per-page anchor no longer exists.
+- 084af2c: Remove storage media card slots (SD, microSD) from hardware io, 44 entries across 44 files. Card slots hold media, not cables, so the setup graph cannot use them, the same reasoning as Bluetooth and Wi-Fi. New validation error E120 blocks reintroducing them by name while leaving option and expansion card bays legal.
+
 ## 3.53.0
 
 ### Minor Changes
