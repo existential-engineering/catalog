@@ -1,5 +1,32 @@
 # catalog
 
+## 3.55.0
+
+### Minor Changes
+
+- b0483af: catalog-import-merge: d16-group adds 4 Lush 2 sound expansions and Plasticlicks, and enriches 19 existing plugin entries
+
+  Added Aurora, Lure, Pulse, Ripple (Lush 2 preset packs) and Plasticlicks
+  (drum sample collection) as new content entries. Enriched all 19 existing
+  D16 plugin entries with details, specs and version history that were
+  previously missing. Pulsatec's primaryCategory is now equalizer, the
+  canonical category for the analog passive EQ its own product page
+  describes. PunchBox's name stays flagged for human review (PunchBox vs
+  PunchBox 2, reflecting the manufacturer's in-place product refresh).
+
+- 85edfd9: catalog-import-merge: discodsp adds TDminator and refreshes versions/prices/descriptions across 9 existing entries
+- 94551ae: catalog-import-merge: dotec-audio adds DeeMultiWider and refreshes DeeVocalTools version history
+
+### Patch Changes
+
+- a766b4e: catalog-import-merge: audiosourcere refreshes descriptions, details, specs, and video links for all 5 entries from current site content
+- 7348f35: catalog-import-merge: ddmf, fill in missing descriptions for the free
+  IIEQ and Transport plugins, and record Tube Preamp's current version.
+- e958d6b: catalog-import-merge: dmg-audio refreshes all 16 existing plugin entries (prices, descriptions, specs, versions, formats)
+- 40aec2a: catalog-import-merge: dmitry-sches-audio-software refreshes descriptions,
+  details, specs, and version history for Diversion, Tantra, Thorn, and
+  their free preset packs from the current manufacturer site.
+
 ## 3.54.0
 
 ### Minor Changes
