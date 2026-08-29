@@ -1,5 +1,28 @@
 # catalog
 
+## 3.56.0
+
+### Minor Changes
+
+- 17f7e31: catalog-import-merge: future-audio-workshop, 26 new packs and a 4-entry refresh
+
+  Adds 26 Circle², SubLab, SubLab XL and Notes patch and sample packs as
+  content entries with images, and refreshes the four existing software
+  entries (Circle², Notes, SubLab, SubLab XL) with current formats,
+  details, specs and videos. Corrects SubLab's price from a previously
+  captured sale price to its regular price.
+
+### Patch Changes
+
+- 0bfdd75: catalog-import-merge: drumforge, refreshed 63 existing entries
+
+  Refreshes descriptions, details, specs and videos across 15 software
+  and 48 content entries, adds `compatibleWith` host references to 11
+  groove and sample packs, and adds the `standalone` format to the
+  David Bendeth sampler. Strips OS-requirement, supported-DAW and
+  license boilerplate from specs. No new entries, no deletions, and
+  every existing ID is preserved.
+
 ## 3.55.0
 
 ### Minor Changes
