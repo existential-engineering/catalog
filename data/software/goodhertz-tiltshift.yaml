@@ -18,25 +18,32 @@ url: https://goodhertz.com/tiltshift
 prices:
   - amount: 29
     currency: USD
-description: Tiltshift is a specialized EQ plugin from Goodhertz featuring a novel tilt algorithm designed for transparent tone-shaping using extremely gentle slopes, with perceptual loudness lock technology to preserve phase, frequency, and transient response.
+description: Tiltshift is a specialized EQ plugin from Goodhertz featuring a
+  novel tilt algorithm designed for transparent tone-shaping using extremely
+  gentle slopes, with perceptual loudness lock technology to preserve phase,
+  frequency, and transient response.
 details: |-
-  Tiltshift is an EQ and tone-shaping plugin built around a proprietary tilt algorithm that applies extremely gentle slopes — usually less than 1 dB per octave — to alter the overall tonal character of audio with minimal signal degradation. Unlike conventional EQs, the tilt approach preserves transient response and avoids the phase artifacts typically associated with more aggressive filtering.
+  Tiltshift is a new type of EQ plugin that does more with less. More than any other equalizer, Tiltshift is able to dramatically alter the tone and timbre of your audio, going from mellow warmth to crystal clear with a single, loudness-matched slider, while sticking to the first rule of mastering: do no harm.
 
-  The plugin includes a perceptual loudness lock feature that compensates for level changes introduced by the tilt, making A/B comparisons easier and preventing mix decisions driven by volume rather than tone.
+  Although tilt EQ's have been around since the 1980's, Tiltshift's algorithm is a completely new & different approach to tilting and shifting the frequency spectrum. By using extremely gentle slopes (usually less than 1 dB per octave), Tiltshift is able to preserve the relative phase, frequency, and transient response of the audio much better than a traditional EQ can, allowing you to find the right global frequency curve before focusing on specifics.
 
-  Independent high-cut and low-cut filters with variable slopes ranging from 6 to 48 dB per octave allow for more surgical shaping when needed, each with independent resonance control. A Listen function lets users audition the filtered content in isolation.
+  Tiltshift's perceptual loudness lock technology keeps the loudness matched for any setting. This makes Tiltshift ideal for automating spectral shifts in a mix or master without having to compensate for unnatural gain changes.
 
-  All parameters are fully automatable without digital artifacts, and double-precision floating-point processing ensures no internal clipping. An optional HQ Mode provides a higher-quality algorithm at the cost of 2–4x additional CPU usage.
+  The guiding principle of EQ plugins often seems to be: more is more. More bands, more peaks, more valleys, more parameters to learn, and more metering to focus on. While Goodhertz appreciate a full-fledged multiband EQ when it's needed, oftentimes they're not the best tool for the job. "More is more" also means more complication, more signal mangling, more phase distortion, CPU-usage, and less productive mixing or mastering, less musicality and creativity. So what if there was less in an EQ?
+
+  Tiltshift has 1 page of advanced controls, and the plugin interface is available in English, Español, Português, Français, Italiano, Arabic, Korean, Japanese, and Chinese (Simplified & Traditional).
 specs: |-
-  - Tilt algorithm with variable frequency range
-  - Perceptual loudness lock technology
-  - Independent high/low cut filters with variable slopes (6-48 dB/Oct)
-  - Independent resonance control per filter
-  - Listen function for filter auditioning
-  - Double-precision floating-point processing
-  - Optional HQ Mode (2-4x CPU usage)
-  - Channel configurations: Mono->Mono, Mono->Stereo, Stereo->Stereo
-  - macOS 10.13+ (AU, VST, VST3, AAX 64-bit)
-  - Windows 10+ (VST, VST3, AAX 64-bit)
+  - Incredible sounding tilt algorithm
+  - Variable tilt frequency range
+  - "Perceptual loudness lock" for perfectly matched loudness
+  - Completely automatable
+  - CPU-friendly enough to be used on every channel
+  - Independent high/low cut filters
+  - Totally variable filter slope (from 6 to 48 dB/Oct & anything in-between)
+  - Independently controlled resonance
+  - "Listen" function to audition what you're filtering out
+  - Fully sweepable
+  - 64-bit only, requires a 64-bit DAW and macOS 10.13+ or Windows 10+
+  - Native support for Apple silicon computers (v3.7.0+) and Apple silicon native Pro Tools (v3.8.0+)
 versions:
   - name: "3.13"

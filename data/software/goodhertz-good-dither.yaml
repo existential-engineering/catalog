@@ -16,27 +16,29 @@ url: https://goodhertz.com/good-dither
 prices:
   - amount: 29
     currency: USD
-description: Good Dither is a dither plugin featuring smooth, perceptually optimized noise shaping designed for reducing bit depth in audio production, with auto-blanking when input is silent.
+description: Good Dither is a dither plugin featuring smooth, perceptually
+  optimized noise shaping designed for reducing bit depth in audio production,
+  with auto-blanking when input is silent.
 details: |-
-  Good Dither by Goodhertz is a professional dither plugin built around perceptually optimized noise shaping. It offers three dither modes — Optimal, High, and Low — and a range of noise shaping options to best suit any bit depth and sample rate combination.
+  Good Dither is a very good dither that's very easy to work with. Set it on "Optimal," and it will optimize the dither and noise shaping for any combination of bit depth and sample rate.
 
-  The plugin features adjustable bit depth settings from 8 to 32 bits with a Pass Thru option, along with dither amount and noise shaping controls. A visual noise shaping curve is displayed in the sidebar for real-time feedback, and a bit scope meter shows up to 32-bit utilization.
+  Every time you reduce the audio bit depth you should dither to prevent distortion and quantization error. 24 bit to 16 bit, 32 bit to 24 bit, any time you reduce the word length.
 
-  Auto blanking is enabled by default, automatically disabling dithering after 500ms of silence to prevent unnecessary noise during silent passages. This feature operates seamlessly across all sample rates.
+  There are a lot of very bad dither algorithms in use: ones with nasty, overly aggressive noise shaping curves that can do more harm than good. Good Dither's noise shaping increases resolution while staying smooth and natural-sounding and avoiding extreme high-frequency peaks.
 
-  All Goodhertz plugins support smooth, click-free automation — any parameter, including on/off switches, can be automated without digital artifacts. Good Dither supports mono and stereo channel configurations and requires a 64-bit host on macOS 10.13 or later, or Windows 10 or later.
+  Dither adds noise to audio signals in order to prevent distortion that otherwise would occur. The noise shaping of the dither affects the frequency spectrum of that noise. Generally, the goal of a noise shaping algorithm is to move noise energy away from areas that the human ear is very sensitive to and to push it to places that we're not as sensitive (very high or very low frequencies). The tradeoff is that aggressive noise shaping adds higher peaks in the dither signal, so the best dithers strike a good balance between noise reduction and avoiding excessive peaks.
+
+  Goodhertz positions Good Dither as the first plugin in their "Good" series of inexpensive utility plugins, and it is also available for licensing into third-party apps.
 specs: |-
-  - Bit depth options: 8, 12, 16, 20, 24, 32 Bit, or Pass Thru
-  - Dither amount: None, Low, Optimal (default), High
-  - Noise shaping: Optimal, None, Low, Medium, High
-  - Auto blanking: On/Off (default On) — disables dithering after 500ms silence
-  - Bit scope meter displaying up to 32-bit utilization
-  - Noise shaping curve visualization
-  - Smooth, click-free parameter automation
-  - Plugin settings transferable via URL encoding
-  - GPU acceleration option available
-  - Channel support: Mono and Stereo
-  - 64-bit plugin formats only
-  - Requires macOS 10.13+ or Windows 10+
+  - Smooth, perceptually optimized noise shaping
+  - Designed for all sample rates
+  - Auto blanking when input is silent
+  - Simple controls
+  - "Optimal" mode auto-selects dither and noise shaping for any combination of bit depth and sample rate
+  - Goodhertz "Optimal": 6 dB perceived noise reduction, 16 dB highest peak relative to flat dither
+  - Goodhertz "High": 8 dB perceived noise reduction, 24 dB highest peak
+  - Goodhertz "Low": 4.5 dB perceived noise reduction, 10 dB highest peak
+  - 64-bit only; requires a 64-bit DAW
+  - macOS 10.13 or later, Windows 10 or later
 versions:
   - name: "3.13"

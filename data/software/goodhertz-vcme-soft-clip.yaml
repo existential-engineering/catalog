@@ -18,24 +18,30 @@ url: https://goodhertz.com/vcme-soft-clip
 prices:
   - amount: 99
     currency: USD
-description: VCME Soft Clip is the standalone Soft Clip section extracted from Goodhertz's VCME compressor — part limiter, part saturator — combining analog-modeled saturation with a transient/steady-state-separating limiter to add presence and polish while preserving natural dynamics.
+description: VCME Soft Clip is the standalone Soft Clip section extracted from
+  Goodhertz's VCME compressor — part limiter, part saturator — combining
+  analog-modeled saturation with a transient/steady-state-separating limiter to
+  add presence and polish while preserving natural dynamics.
 details: |-
-  VCME Soft Clip is a focused plugin that isolates the Soft Clip section from Goodhertz's flagship VCME compressor, adding a dedicated Saturation Emphasis section for deeper harmonic sculpting. It offers lower latency and lower CPU usage than the full VCME, making it practical for use on individual tracks as well as mix buses and mastering chains.
+  During the development of Vulf Compressor Mastering Edition, Goodhertz often found themselves wanting to use VCME's Soft Clipper by itself, or in a different position than the compressor. The Soft Clip was just too good to play second fiddle in VCME, so it got its own plugin: VCME Soft Clip.
 
-  The saturation module models analog processing chains — tubes, transformers, and transistors — through four distinct character modes: Chino (hi-fi, classic tube), Rødovre (round, smooth), Detroit (grungy, warm, bass-forward), and Melbourn (punchy, British transformer character). Drive, Slew, and Mix controls give fine-grained command over how much and how fast the saturation responds.
+  VCME Soft Clip is identical to the Soft Clip section in VCME, but it adds a powerful Saturation Emphasis section for enhanced sculpting and harmonic shaping. Because it is running alone, it also has lower latency and lower CPU usage than the full version of VCME.
 
-  The limiter module draws inspiration from soft-clipping A-to-D converters, separating transient and steady-state material to achieve punchier, more controlled results without squashing transients. A brickwall mode is available alongside a follow-mix option.
+  In addition to the Emphasis filter, VCME Soft Clip supports external sidechaining, allowing you to saturate an input signal based on the dynamics of another signal, a very interesting and unusual effect. VCME Soft Clip is included as a free add-on with any purchase of VCME, and is also available as a standalone purchase.
 
-  The Saturation Emphasis section provides an advanced internal or external sidechain filter — with tilt, low/high shelf, resonance, and blend controls — allowing precise shaping of which frequencies drive the saturation and by how much.
+  VCME Soft Clip was created by examining and deconstructing several world-class analog mastering chains. Each of these chains featured different analog hardware, different A-to-D conversion, and different clipping and saturation characteristics. The Soft Clip Saturation module captures the analog part of the chain: tubes, transformers, transistors, etc. all color the signal with subtle saturation, harmonics, and when pushed hard enough, full-on analog clipping and distortion.
+
+  The Soft Clip Limiter module captures the digital part: inspired by soft clipping A-to-D converters, it builds on this legacy but with a fundamentally new approach, separating transient and steady-state material to achieve punchier results with less distortion artifacts. Part limiter, part saturator, it is perfect for increasing loudness and presence while preserving a track's natural character and dynamics.
 specs: |-
-  - macOS 10.13 or later (AU, VST, VST3, AAX 64-bit)
-  - Windows 10 or later (VST, VST3, AAX 64-bit)
-  - Saturation modes: Chino, Rodøvre, Detroit, Melbourn
-  - Saturation Emphasis section with internal/external sidechain filter
-  - Limiter with transient/steady-state separation; brickwall and follow-mix modes
-  - HQ Mode: ~50ms added latency, 2-4x CPU increase
-  - Supports mono through 9.1.6 surround channel configurations
-  - External sidechain support
-  - Lower latency and lower CPU than full VCME
+  - Identical to the Soft Clip section in VCME, available as its own plugin
+  - Saturation Emphasis section for enhanced sculpting and harmonic shaping
+  - Saturation module modeling the analog part of a mastering chain (tubes, transformers, transistors)
+  - Limiter module inspired by soft clipping A-to-D converters, separating transient and steady-state material
+  - External sidechain support for saturating one signal based on the dynamics of another
+  - Lower latency and lower CPU usage than the full version of VCME
+  - 2 pages of advanced controls
+  - HQ Mode for a higher precision algorithm with better spectral resolution (adds approximately 50 ms latency)
+  - 64-bit only; requires a 64-bit DAW and macOS 10.13+ or Windows 10+
+  - Localized in English, Spanish, Portuguese, French, Italian, Korean, Japanese, and Chinese (Simplified and Traditional)
 versions:
   - name: "3.13"
