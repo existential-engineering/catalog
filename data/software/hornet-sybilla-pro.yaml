@@ -5,16 +5,58 @@ primaryCategory: de-esser
 categories:
   - plugin
 formats:
-  - vst3
-  - vst
   - au
+  - vst2
+  - vst3
   - aax
 platforms:
-  - windows
   - mac
+  - windows
   - ios
 url: https://www.hornetplugins.com/plugins/hornet-sybilla-pro/
-description: "The HoRNet Sybilla Pro it&#039;s an multi filter de esser plugin
-  that allows you complete and precise control on the de essing process"
+prices:
+  - amount: 21.99
+    currency: EUR
+description: The HoRNet Sybilla Pro it's an multi filter de esser plugin that allows you complete and precise control on the de essing process
 details: |-
-  Sybilla Pro 1.2.0 is available, this update is free for owners of the plugin and includes: Added Apple Silicon M1 support Fixed GUI being too small on windows with hi dpi monitors Removed 32bit support
+  Sybilla Pro is not your typical de-esser plugin. Instead of relying on a single narrow band or simple high-frequency detection, it offers a unique approach with eight independent, tunable filters, giving you surgical control over sibilant frequencies. This design allows you to isolate and reduce sibilance more intelligently and effectively than traditional solutions.
+
+  Unlike most de-essers that rely on static frequency bands, Sybilla Pro analyzes the signal across multiple bands. Each of the eight filters can be individually tuned in terms of center frequency and gain, with a fixed bandwidth of 1kHz. You can choose to enable or disable each filter independently, which gives you complete control over the sidechain input that drives the compression stage. This means you can zero in on exactly where the sibilance lives in the vocal (or any other source) and exclude the rest from the detection process.
+
+  Sybilla Pro functions as a wideband de-esser, meaning it compresses the entire signal when sibilance is detected, rather than applying frequency-selective gain reduction. What makes this approach powerful is how the plugin handles the sidechain input: the sum of the active filters is used to detect sibilant energy. When the combined energy of these filters crosses the threshold, compression is triggered. This allows the plugin to track dynamic changes in sibilance across the frequency spectrum, ensuring that it doesn't miss anything, even if the problem frequencies shift over time.
+
+  One of the standout features of Sybilla Pro is its relative threshold system. Traditional de-essers use a fixed threshold, which often fails in quieter passages, allowing sibilance to sneak through when the overall signal is too low to cross the threshold. Sybilla Pro works differently. Instead of comparing the filtered signal to a static level, it compares it to the unfiltered, full-range signal, and uses the difference as the key input for the compressor. This means de-essing remains consistent, even during soft vocal phrases, giving a much more transparent and natural-sounding result.
+
+  Beyond the detection and filtering system, Sybilla Pro also gives you two distinct compression modes: VCA and OPTO. The VCA mode is more aggressive, with a hard knee and fast, punchy response, ideal for precise and quick control. The OPTO mode is more relaxed, with a soft knee and smoother transitions, making it perfect for more musical or subtle de-essing. In both modes, you can manually adjust the attack and release times to match your preferences and the needs of your mix.
+
+  At the core of the plugin is the filter bank, where you can fine-tune each filter by setting its frequency and gain. Each band remains fixed in bandwidth for consistency and clarity, and if you need to dive deeper into the processing, you can use the "key listen" feature to monitor the output of each filter individually, or the sum of the entire filter bank.
+specs: |-
+  - Intelligent relative threshold
+  - Eight filters for sibilance detection
+  - Adjustable frequency and level for each filter
+  - Switch to turn on and off each filter
+  - Key listen for the entire filter bank and each of the filters
+  - Meters for each filter
+  - Instantaneous gain reduction meter with peak hold
+  - Two different compression modes (VCA and OPTO)
+  - Attack and release setting for the compressor stage
+  - Dry/wet knob
+  - Fixed filter bandwidth of 1kHz
+  - macOS (10.11 and later) and Windows (7 and later) support
+  - Apple Silicon native support (except for AAX)
+  - 64bit only both on Mac and Windows
+  - Audio Units, VST2.4, VST3 and AAX format
+  - No copy protection
+versions:
+  - name: 1.2.0
+  - name: 1.1.0
+videos:
+  - videoId: 6KgT6gyQQBU
+    provider: youtube
+    title: HoRNet Sybilla Pro overview
+  - videoId: dgwvlUjCYgI
+    provider: youtube
+    title: Hornet Sybilla Pro 1.1.0 - disabling soloed band
+  - videoId: YTBzeAJy9MQ
+    provider: youtube
+    title: HoRNet updates Sybilla Pro to v1.2.0 - Apple Silicon M1 support

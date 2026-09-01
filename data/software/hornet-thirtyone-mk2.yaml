@@ -5,16 +5,71 @@ primaryCategory: equalizer
 categories:
   - plugin
 formats:
-  - vst3
-  - vst
   - au
+  - vst2
+  - vst3
   - aax
 platforms:
-  - windows
   - mac
+  - windows
   - ios
 url: https://www.hornetplugins.com/plugins/hornet-thirtyone-mk2/
-description: "ThirtyOne MK2 is a plugin that includes a spectrum analyzer and a
-  graphic equalizer, both have the standard 31 one third octave bands"
+prices:
+  - amount: 20.99
+    currency: EUR
+description: ThirtyOne MK2 is a plugin that includes a spectrum analyzer and a graphic equalizer, both have the standard 31 one third octave bands
 details: |-
-  ThirtyOne MK2 2.1.2 is available, this update of our graphic equalizer is free for owners of the plugin and includes: Fixed crash when saving/loading presets Fixed silent export in FL Studio and other DAWs Fixed compatibility issues with Audacity The update is free for owners of the plugin and can be downloaded using HoRNet DoIn
+  ThirtyOne MK2 is a powerful plugin that includes both a spectrum analyzer and a graphic equalizer, with each feature utilizing the standard 31 one-third octave bands. This combination of tools is a fundamental component of any professional live sound setup, often appearing in the final stage of the master bus in many audio mixers. Given its importance in live sound environments, HoRNet meticulously recreated the behavior and response time of a well-known Italian analog spectrum analyzer.
+
+  The graphic equalizer within the ThirtyOne MK2 plugin draws inspiration from analog units, offering a familiar feel that audio engineers and musicians alike will appreciate. By utilizing the characteristics of classic analog devices, it aims to deliver a sense of continuity in the master chain, allowing you to feel at home with this tool just as you would with traditional hardware units.
+
+  One of the standout features is its attention to the smooth LED lighting behavior. In the original hardware units the LEDs were driven by a smoothly increasing current flow, and that effect is replicated accurately in this plugin. Each column of twelve LEDs represents a frequency range, and the behavior of these LEDs is controlled by a 20dB/octave filter, exactly like the one found in the analog counterpart. The response speed of the analyzer can be adjusted with options for 0.25, 1, or 4 seconds, allowing a more precise view of both fast peaks and average frequency levels. Each LED in the bar can represent a value of 1, 2, or 3 dBs, with a 6dB/LED option for a more sensitive display, and a maximum peak hold LED is available for each frequency band.
+
+  Directly beneath the spectrum analyzer sit the 31 sliders, which shape the output and fix specific resonance issues. Each slider controls a 1/3 octave second-order filter, allowing adjustments in the range of -15 to +15 dB, and values can also be typed directly into the box below the sliders for precise control.
+
+  One of the most innovative features of the ThirtyOne MK2 is its Auto EQ functionality. When enabled, Auto EQ automatically adjusts the gain for each EQ band based on the spectrum analyzer output, tuning the equalizer toward a balanced and harmonically rich sound. Three distinct Auto EQ algorithms are offered: Average, Median, and Lucky. The first two are based on mathematical models, while the Lucky algorithm was kept simply because it sounds good. Because Auto EQ is deeply integrated with the analyzer, the analysis speed directly affects how the algorithm adjusts the equalization: 0.25s tracks fast frequency spikes, while 4s focuses on average frequency content.
+
+  To fine-tune the output of the Auto EQ, a compensation curve applies an offset to the levels computed by the algorithm, and a custom compensation curve can be exported and loaded into other projects with the load and save buttons. The EQ Amount knob scales the entire EQ curve, adjusting every gain computed by the Auto EQ algorithm by a fixed value so the ratio between frequency bands is maintained while the overall level increases or decreases.
+specs: |-
+  - 31, one third octave, spectrum analyzer bands
+  - Spectrum analyzer carefully crafted to give you the feeling of analog hardware units
+  - Three different integration times for the analyzer
+  - Four scale ranges for the analyzer
+  - Peak hold display
+  - Display both the L+R (mid) component or the L-R (side) component of the audio spectrum
+  - 31, one third octave, equalizer
+  - Each band of the equalizer can be bypassed
+  - Each band of the equalizer can be put in solo mode
+  - Each band of the equalizer can be disabled for the AutoEQ
+  - Each band gain adjustable from -15 to +15 dBs
+  - “Auto EQ” automatically balances frequency content
+  - Three different algorithms for AutoEQ
+  - AutoEQ can work both in continuous or fixed mode
+  - Each of the two modules can be disabled to save CPU
+  - AutoEQ amount knob to scale the effect impact
+  - Custom compensation EQ profile for the AutoEQ algorithm
+  - Compensation curve can be saved and loaded
+  - Preset save and load
+  - Bypass button for the equalizer
+  - GUI is scalable and hardware accelerated
+  - macOS (>=10.11, Metal required) and Windows (Windows 7 and later, OpenGL 2.1 required) support
+  - Apple Silicon native support
+  - 64-bit plugin for Mac and Windows
+  - Audio Units, VST2.4, VST3 and AAX format
+  - No copy protection
+versions:
+  - name: 2.1.2
+  - name: 2.1.0
+videos:
+  - videoId: sm_0Nwk7ojM
+    provider: youtube
+    title: HoRNet ThirtyOne MK2 overview
+  - videoId: b97L7vyj2oE
+    provider: youtube
+    title: 2 in 1 EQ Plugin | HoRNet ThirtyOne MK2 Overview
+  - videoId: j_Jdpo8Fwcw
+    provider: youtube
+    title: HoRNet Plugins updates ThirtyOne MK2 to v2.1.0
+  - videoId: 2jBhE5v5Klc
+    provider: youtube
+    title: ThirtyOne Mk2 by HoRNet (No Talking)

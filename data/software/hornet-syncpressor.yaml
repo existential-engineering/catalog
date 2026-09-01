@@ -5,16 +5,51 @@ primaryCategory: compressor
 categories:
   - plugin
 formats:
-  - vst3
   - au
+  - vst
+  - vst3
   - aax
 platforms:
-  - windows
   - mac
+  - windows
   - ios
 url: https://www.hornetplugins.com/plugins/hornet-syncpressor/
-description: "SyncPressor is a bus compressor designed for the master bus that
-  syncs with your track&#039;s tempo and always set the right attack and
-  release"
+prices:
+  - amount: 39.99
+    currency: EUR
+description: SyncPressor is a bus compressor designed for the master bus that syncs with your track's tempo and always set the right attack and release.
 details: |-
-  HoRNet SyncPressor 1.0.1 is out, the update of our tempo synched bus compressor includes: Fixed tempo detection with sample rates higher than 44100 Fixed external side chain affecting only left channel in Pro Tools when unlink was activated Fixed wrong report of oversampling latency Added new presets The update can be downloaded from your user area
+  HoRNet SyncPressor is a dynamics processor developed specifically for master bus compression, designed in collaboration with Italian mixing engineer Antonio Porcelli. Built to deliver the essential glue that brings mixes together, SyncPressor offers a level of transparency and musical responsiveness that makes it suited for final mix processing.
+
+  What sets SyncPressor apart from typical compressors is its tempo-synchronized design. Unlike traditional compressors where users adjust attack and release manually through fixed knobs, SyncPressor bases its time constants on the tempo of the track, so compression moves in sync with the music. Rather than offering static attack and release parameters, it features two dropdown menus where users can select musical time divisions such as 1/8, 1/16 or 1/4 notes, calculated against the plugin's internal tempo engine. That internal tempo can be synchronized to the DAW, set manually, or auto-detected directly from the incoming audio.
+
+  While designed for the master bus, SyncPressor is not limited to stereo summing and performs equally well on individual tracks, offering variable knee control, RMS or peak detection, feedback processing and external sidechain support. A high pass filter is available on both internal and external sidechain paths, helping to eliminate low-frequency content from triggering unnecessary compression.
+
+  A key feature geared toward mastering and stereo processing is the ability to unlink the left and right channels in the detector circuit. When this mode is active, SyncPressor behaves like a dual mono compressor, applying gain reduction independently to each channel, which can enhance stereo width. A dry/wet mix control allows parallel compression inside the plugin, and a tempo multiplier control doubles or halves the attack and release times for quick experimentation.
+
+  The plugin features a fully hardware-accelerated graphical interface using OpenGL on Windows and Metal on macOS, offloading graphics processing from the CPU and reserving more power for real-time audio computation. It ships with bus compressor presets from Italian engineers Antonio Porcelli, Davide Linzi, Nicola Fantozzi and Simone Squillario, and has no copy protection.
+specs: |-
+  - Clean digital compression
+  - Attack and release synced to track tempo
+  - Tempo sync to DAW, manual or automatic detection from audio input
+  - Variable compression knee
+  - Internal or external sidechain
+  - RMS mode for the sidechain
+  - High pass filter up to 1000Hz for the sidechain
+  - Feedback or feedforward modes
+  - Dual mono mode for wider stereo image
+  - Up to 16x oversampling
+  - Dry/wet mix knob for parallel compression
+  - Presets designed by Antonio Porcelli
+  - Hardware accelerated GUI
+  - Apple Silicon native support (except for AAX)
+  - Mac OS X (10.11 and later with Metal support) and Windows (7 and later) support
+  - 64-bit plugins for macOS and Windows
+  - Audio Units, VST, VST3 and AAX format
+  - No copy protection
+versions:
+  - name: 1.0.1
+videos:
+  - videoId: xwXtOt8UbzI
+    provider: youtube
+    title: HoRNet SyncPressor overview

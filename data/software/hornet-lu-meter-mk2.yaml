@@ -5,15 +5,55 @@ primaryCategory: meter
 categories:
   - plugin
 formats:
-  - vst3
   - au
+  - vst
+  - vst3
   - aax
 platforms:
-  - windows
   - mac
+  - windows
   - ios
 url: https://www.hornetplugins.com/plugins/hornet-lu-meter-mk2/
-description: "HoRNet LU Meter MK2 is an LUFS meter with auto gain and grouping
-  functions. The new resizable GUI hides a smart tool for your mixes"
+prices:
+  - amount: 5.99
+    currency: EUR
+description: HoRNet LU Meter MK2 is an LUFS meter with auto gain and grouping functions. The new resizable GUI hides a smart tool for your mixes
 details: |-
-  LU Meter MK2 2.1.1 is available, this update is free for owners of the lufs meter plugin and includes: Fixed issue with Logic Pro 10.7 when auto button is enabled Fixed group name not updating correctly in some DAWs
+  The HoRNet LU Meter MK2 is a professional-grade digital loudness meter designed to take your mixing and mastering workflow to the next level. Featuring advanced auto gain staging and grouping functions, this plugin ensures your audio levels are consistent, accurate, and perfectly tailored to modern loudness standards. Its redesigned and resizable GUI offers an intuitive user experience, concealing a powerful tool beneath its simplicity.
+
+  At the heart of the LU Meter MK2 is its use of Loudness Units (LU), a measurement system based on human perception of sound. Unlike traditional meters, which may struggle to provide accurate readings across different frequencies, the LUFS-based approach ensures that sounds of varying frequencies but identical levels are measured accurately. This allows you to make better-informed mixing decisions and achieve a balanced and polished sound.
+
+  The plugin provides three essential loudness measurements: momentary, short-term, and integrated loudness, all adhering to the widely recognized EBU R128 standard. A standout feature is its ability to apply the “auto gain” concept: by dynamically adjusting the gain, the plugin keeps your signal within the chosen LU level, either following the EBU standard (which sums all channels into a single reading) or operating in a non-standard mode where channels are measured separately.
+
+  One challenge with loudness-based metering is the risk of peaks occasionally exceeding 0 dBFS when auto gain is applied. To address this, the LU Meter MK2 incorporates a peak protection system that automatically adjusts the gain whenever peaks rise above your chosen safety level. By default the plugin is calibrated to -18 LUFS, a common reference point for gain staging, but the reference level is fully adjustable for streaming targets such as Spotify (-14 LUFS) or broadcast compliance (-23 LUFS).
+
+  The LU Meter MK2 can send parameters across multiple plugin instances, letting you copy and synchronize settings such as Gain, Reference Level, Max Peak, Target LUFS, Mode and EBU compliance, either within the same group (for example your drum bus) or across every instance in the session. Right-clicking a control enables “Send to group” or “Send to all”, with a green dot indicating a group-shared control and an orange dot one sent to all instances.
+specs: |-
+  - LUFS meter with momentary, short term and integrated readings
+  - LU peak hold
+  - RED blink clipping indicator
+  - Reference level settable from -60 to 0 LUFS
+  - Input gain from -30dB to +30dB
+  - Bar color freely selectable
+  - Stereo automatic gain adjustment with 6 different settings
+  - Auto gain with momentary or integrated method
+  - Peak protection (no peak can exceed the set limit)
+  - Auto Gain and meter setting can be set to whole group or to every instance at once
+  - Eight different assignable groups
+  - Stereo display
+  - Every instance can be named
+  - Groups names freely editable
+  - Every instance of the plugin can display the value of every other named instance
+  - Standard compliance mode with EBU R128 momentary, short term or integrated
+  - Hardware accelerated GUI
+  - Apple Silicon native support
+  - Mac OS X (10.11 and later) and Windows (7 and later) support
+  - 64-bit plugins for macOS and Windows
+  - Audio Units, VST, VST3 and AAX format
+  - No copy protection
+versions:
+  - name: 2.1.2
+videos:
+  - videoId: tKtodTO95kA
+    provider: youtube
+    title: HoRNet LU Meter MK2 overview

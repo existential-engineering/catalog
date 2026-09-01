@@ -5,16 +5,49 @@ primaryCategory: meter
 categories:
   - plugin
 formats:
-  - vst3
-  - vst
   - au
+  - vst2
+  - vst3
   - aax
 platforms:
-  - windows
   - mac
+  - windows
   - ios
 url: https://www.hornetplugins.com/plugins/hornet-elm128-mk2/
-description: "HoRNet ELM128 MK2 is an EBU R128-compliant LUFS meter plugin with
-  5 LUFS meters: momentary, short-term, integrated, dynamic range, true peak."
+prices:
+  - amount: 14.99
+    currency: EUR
+description: "HoRNet ELM128 MK2 is an EBU R128-compliant LUFS meter plugin with 5 LUFS meters: momentary, short-term, integrated, dynamic range, true peak."
 details: |-
-  ELM128 MK2 2.2.2 is available, this update is free for owners of our LUFs meter plugin and includes: Fixed scale not being kept when window was closed and re opened Fixed volume ramp even if normalization is turned off Added Apple Silicon support to AAX
+  The HoRNet ELM128 MK2 is a sophisticated LUFS meter plugin designed specifically to meet the requirements of the EBU R128 loudness standard. This advanced audio metering tool provides a comprehensive solution for analyzing and controlling the loudness of audio signals in real-time. Its primary purpose is to ensure consistent perceived loudness across different audio programs, a key requirement in the broadcasting and media production industries.
+
+  At its core, the plugin offers five distinct loudness measurements: Momentary, Short-Term, Integrated, Loudness Range, and True Peak. These five metering modes allow users to monitor every aspect of their audio's loudness profile with great precision. Whether you're mixing for television, film, radio, or streaming platforms, the ELM128 MK2 gives you the tools to make sure your audio complies with modern loudness standards.
+
+  One of the major strengths of this plugin is its flexibility. The ELM128 MK2 supports a wide range of channel configurations, including mono, stereo, and 5.1 surround sound. This makes it suitable for a broad spectrum of audio applications, from simple podcast editing to complex surround sound film mixing. In addition to its metering capabilities, the plugin features a history graph, which visually displays loudness trends over time. This graph can show data from up to 12 hours in the past, giving sound engineers the ability to track long sessions and make informed decisions based on historical loudness behavior.
+
+  The plugin's design is rooted in the principles of broadcasting. In professional broadcast environments, it is essential to minimize loudness jumps between different segments of audio, such as TV programs, commercials, or live broadcasts. The HoRNet ELM128 MK2 was created to tackle exactly this problem. It includes a real-time normalization function, which can automatically adjust the gain of the incoming signal so that it does not exceed a predefined loudness reference level. Users can choose which loudness measurement to use as the reference, Momentary, Short-Term, or Integrated, in accordance with the EBU R128 guidelines.
+
+  The unit of measurement used by the plugin is LUFS (Loudness Units Full Scale), a metric adopted by the audio industry for measuring loudness in a way that aligns with human hearing. While a LUFS is numerically similar to a decibel (dB), the two differ because LUFS calculations include a pre-emphasis filter. This filter compensates for the non-linear sensitivity of the human ear, ensuring that loudness measurements reflect how we actually perceive audio.
+specs: |-
+  - EBU R128 compliance
+  - Mono, stereo and 5.1 support
+  - Momentary, Short Term, Integrated loudness metering
+  - Loudness range display
+  - True Peak display
+  - True Peak meters
+  - History chart with selectable time and dB range
+  - Realtime normalization to the reference level using any of the available loudness measure
+  - Resizable interface
+  - Load and Save custom presets
+  - Apple Silicon native support
+  - Mac OS X (10.11 and later, Metal capable graphics card required) and Windows (Vista and later, OpenGL 2.1 required) support
+  - 64-bit only on both on Mac and Windows
+  - Audio Units VST2.4, VST3 and AAX format
+  - True Peak metering uses 4x oversampling when the sample rate is below 192kHz to detect inter-sample peaks
+  - No copy protection
+versions:
+  - name: 2.2.2
+videos:
+  - videoId: 9okkI6E9Jk4
+    provider: youtube
+    title: HoRNet ELM128 MK2 overview

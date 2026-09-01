@@ -5,15 +5,55 @@ primaryCategory: analyzer
 categories:
   - plugin
 formats:
-  - vst3
   - au
+  - vst
+  - vst3
   - aax
+  - standalone
 platforms:
-  - windows
   - mac
+  - windows
   - ios
 url: https://www.hornetplugins.com/plugins/hornet-songkey-mk4/
-description: "HoRNet SongKey is a tool designed as a chord, tempo and key finder
-  for any song or audio stream. It works as an app or plugin"
+prices:
+  - amount: 13.99
+    currency: EUR
+description: HoRNet SongKey is a tool designed as a chord, tempo and key finder for any song or audio stream. It works as an app or plugin.
 details: |-
-  SongKey MK4, chords, tempo and key finder, version 4.0.3 is available, this update is free for owners of the plugin and includes: Fixed macOS app not requesting permission to use audio input Added audio passthrough to stand alone app in mac and windows Slightly reduced CPU load
+  HoRNet SongKey MK4 is the latest iteration of our advanced chord, key, and tempo recognition tool. Version 4 of SongKey goes beyond simple key detection by offering the capability to recognize not only the key of the song but also the chord being played and the song's tempo. This versatile plugin has been designed to accommodate a variety of music production workflows, offering a powerful solution for musicians, producers, DJs, and sound designers.
+
+  One of the standout features of SongKey MK4 is its ability to process MIDI input, allowing users to detect the chords and key of MIDI tracks. This makes it possible to analyze MIDI compositions, extract key information, and edit the track as needed. Additionally, SongKey MK4 comes equipped with MIDI output functionality. This means that the recognized chords can be sent as MIDI data, enabling users to record and edit the detected chords directly.
+
+  SongKey MK4 offers significant improvements in both speed and precision. The key finder is now faster and more accurate, and the chord detection has also been enhanced. The BPM finder has been upgraded to provide more reliable tempo detection. The upgraded chromagram is a visual representation of the intensity of each note played in the song, taking into account a broader octave range, and it feeds into an artificial intelligence unit trained to detect a wide range of chords, including sevenths, fifths, and suspended chords.
+
+  SongKey MK4's key detection engine builds upon the chromagram and integrates an additional AI unit based on a statistical chord progression model. This model analyzes the sequence of chords and determines the key of the song in real-time. Unlike earlier versions, which required a reset when changing keys in a song, SongKey MK4 can continuously track the key as it changes throughout the song. It also functions offline within your DAW, with no internet connection needed.
+
+  SongKey MK4 also comes as a standalone app for both macOS and Windows, which can be fed with audio from other apps or a live recording. The standalone app generates MIDI clock from the detected tempo, allowing you to synchronize your DAW or any other MIDI-compatible sequencer with the live sound.
+specs: |-
+  - Artificial Intelligence driven key identification that follow key changes
+  - Realtime audio and MIDI chord detection
+  - Confidence display for each found key
+  - Key and Chord chromagram that shows each note level
+  - Key and Chord piano roll view to see which notes are active
+  - Sample mode for short sounds analysis
+  - Realtime tempo detection
+  - MIDI output of detected chords
+  - Stand alone App for both Mac and Windows
+  - MIDI clock output (in the stand alone App)
+  - Sharp and Flat notation
+  - Resizable vector GUI
+  - Hardware accelerated GUI
+  - Apple Silicon native support
+  - macOS (10.11 and later) and Windows (7 and later, OpenGL 2.1 required) support
+  - 64-bit only plugins for macOS and Windows
+  - Audio Units, VST, VST3 and AAX format
+  - No copy protection
+versions:
+  - name: 4.0.3
+videos:
+  - videoId: j3VLnUg7cmw
+    provider: youtube
+    title: HoRNet SongKey MK4 overview
+  - videoId: yXO-stoJXGc
+    provider: youtube
+    title: HoRNet releases SongKey MK4 - key chord and tempo detection tool

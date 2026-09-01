@@ -1,19 +1,68 @@
 id: L__pdyQ_57W-T8931m7rU
 name: MultiFreqs
 manufacturer: hornet
-primaryCategory: meter
+primaryCategory: analyzer
 categories:
   - plugin
 formats:
-  - vst3
   - au
+  - vst
+  - vst3
   - aax
 platforms:
-  - windows
   - mac
+  - windows
   - ios
 url: https://www.hornetplugins.com/plugins/hornet-multifreqs/
-description: "HoRNet MultiFreqs spectrum analyzer that provides two different
-  kind of visualisation of the audio spectrum for up to 28 tracks together."
+prices:
+  - amount: 14.99
+    currency: EUR
+description: HoRNet MultiFreqs spectrum analyzer that provides two different kind of visualisation of the audio spectrum for up to 28 tracks together.
 details: |-
-  MultiFreqs 1.1.5 is available, this update is free for owners of our spectrum analyzer: Finally fixed various issues with Logic on Apple Silicon
+  HoRNet MultiFreqs is a highly versatile spectrum analyzer plugin designed to provide detailed visual feedback of your audio spectrum across multiple tracks. It is an essential tool for mixing and mastering, as it helps identify problematic frequencies and enables you to achieve a clearer, more separated mix. Whether you are working with a few tracks or a full session, MultiFreqs allows you to visualize and monitor the frequency content of up to 28 tracks simultaneously.
+
+  The first visualization type is the "analog" view, inspired by the traditional analog hardware spectrum analyzers still found in many professional recording studios. It offers a smooth and organic display of the frequency spectrum, providing a more natural, flowing representation that is useful when you need an intuitive way of seeing the frequency content of a track. The second visualization type, the "digital" view, is a modern take on the typical FFT-based spectrum analyzer, giving a more precise, detailed and high-resolution representation that makes it easier to spot sharp peaks or unwanted resonances.
+
+  The plugin lets you select which tracks to display, and in VST3 and AAX formats it reads the track names directly from the host, so you can tell which track belongs to which instrument. A "conflict" button helps find frequency collisions between multiple tracks, isolating the frequencies common across all enabled tracks so you can spot where a kick drum and bass fight for the low end, or where snare and vocals compete in the midrange.
+
+  MultiFreqs can also display both the mid (sum) and side (difference) components of a stereo signal, which helps isolate the center and outer parts of the stereo field when checking for stereo width or phase problems between the centre and the sides of the stereo image.
+
+  The GUI is fully resizable with hardware accelerated drawing, so the display stays crisp and responsive on any monitor size. Despite its features, the plugin uses very little CPU, and when the GUI is closed it consumes almost no CPU resources, so an instance can be left on every track of a large session.
+specs: |-
+  - Two different spectrum views, analog and digital
+  - Selectable dBs range
+  - Three different integration times
+  - Peaks and average display and reset
+  - Mid/Side mode (display sum of stereo channels or difference)
+  - Up to 28 different tracks can be shown at once
+  - "Conflict" mode to display overlapping spectrum between tracks
+  - Instances get the track name automatically (available in VST3 and AAX formats)
+  - Analyzer color freely selectable for every instance
+  - Preset save and load
+  - Resizable vector GUI
+  - Hardware accelerated GUI
+  - Apple Silicon native support
+  - Mac OS X (10.13 and later) and Windows (7 and later) support
+  - 64-bit plugins for macOS and Windows
+  - Audio Units, VST, VST3 and AAX format
+  - No copy protection
+versions:
+  - name: 1.1.5
+  - name: 1.1.4
+  - name: 1.1.0
+videos:
+  - videoId: eSxqcIGzXgs
+    provider: youtube
+    title: HoRNet MultiFreqs overview
+  - videoId: W-KOsGz2b2w
+    provider: youtube
+    title: HoRNet Plugins releases MultiFreqs - Multi Track Spectrum Analyzer
+  - videoId: XF7ptf_NsQQ
+    provider: youtube
+    title: MultiFreqs Spectrum Analyzer provides two different visualisations of the audio spectrum
+  - videoId: vlGGUD3oUFI
+    provider: youtube
+    title: HoRNet updates MultiFreqs to v1.1.0
+  - videoId: sS-g3CnJf5U
+    provider: youtube
+    title: HoRNet updates MultiFreqs to v1.1.4

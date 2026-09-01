@@ -5,16 +5,47 @@ primaryCategory: transient-shaper
 categories:
   - plugin
 formats:
-  - vst3
-  - vst
   - au
+  - vst2
+  - vst3
   - aax
 platforms:
-  - windows
   - mac
+  - windows
   - ios
 url: https://www.hornetplugins.com/plugins/hornet-spikes/
-description: "HoRNet Spikes is a transient shaper with intelligent auto
-  settings, offering one-knob control and full manual tweakability."
+prices:
+  - amount: 12.99
+    currency: EUR
+description: HoRNet Spikes is a transient shaper with intelligent auto settings, offering one-knob control and full manual tweakability.
 details: |-
-  HoRNet Spikes 1.1.0 is available, this update is free for owners of our transient shaper / processor plugin and includes: Added Apple Silicon native support
+  HoRNet Spikes is a powerful and versatile transient shaper/processor designed to give audio engineers, producers, and musicians precise control over the dynamics of their sound. Its standout feature is its intelligent automatic settings, which allow users to manipulate the transients of an audio signal using just one knob. This streamlined approach makes it incredibly easy to enhance or tame peaks in your mix, without diving into a sea of parameters. However, for those who prefer more detailed customization, all settings remain fully accessible and can be fine-tuned with ease.
+
+  When dealing with audio processing, one of the most common challenges is balancing the peaks and the body of a sound. Traditional compressors require the user to set a fixed threshold, which demands careful monitoring of the input level to achieve the desired result. In contrast, HoRNet Spikes uses a relative threshold, which automatically adjusts based on the input signal. This approach eliminates the need for constant attention to levels, making it faster and more intuitive to use.
+
+  What sets HoRNet Spikes apart is its ability to respond to fast transients, such as those created by a snare drum, acoustic guitar, or any percussive instrument, even faster than the peaks themselves. This is achieved by using an envelope follower system that compares two different envelopes, one with a fast attack and another with a slow attack. The difference between these two envelopes indicates the presence and strength of transients. This difference signal is then fed into a gain stage, which dynamically adjusts the volume of the signal according to the “spike level” you set.
+
+  At the heart of the plugin lies its transient detection algorithm. Users who desire more control will find several parameters for customization: you can adjust both the peak length and the release time, which determine how quickly or slowly the plugin reacts to dynamic changes in the audio signal. One particularly helpful feature is the auto-release mode, which is synchronized to the tempo of your project, keeping the processing transparent and in time with the groove. A high-pass filter with a 12dB/oct slope sits before the transient detector, reducing the impact of low-frequency content such as the sub-bass of a kick drum, so the plugin focuses on transient energy in the mid and high frequencies.
+
+  The central control is the “spikes level” knob, which adjusts the amount of gain applied to detected transients. Turning it up gives audio a crisper, punchier quality, turning it down results in a smoother, more consistent sound. Since this affects output volume, the plugin includes an auto-output gain compensation option. A real-time gain meter displays how much gain is being added or reduced, and gain limit sliders let you set upper and lower bounds for the gain range to avoid over-processing.
+specs: |-
+  - Relative threshold gain manipulation
+  - Adjustable amount of gain applied
+  - Adjustable output level
+  - Auto output level
+  - Upper and lower gain limiting
+  - High pass filter on the detector
+  - Adjustable detector attack and release
+  - Auto release time based on song tempo
+  - Gain meter
+  - Input and output peak meters
+  - Mac OS X (>=10.7) and Windows support
+  - 64-bit compatibility both on Mac and Windows
+  - Audio Units, VST2.4, VST3 and AAX format
+  - Apple Silicon native support
+versions:
+  - name: 1.1.0
+videos:
+  - videoId: MXEGtWmNMew
+    provider: youtube
+    title: Overview HoRNet Spikes, transient designer

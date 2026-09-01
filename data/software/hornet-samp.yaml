@@ -1,25 +1,75 @@
 id: ybwuJmDHBSJ5k1_uYVOs7
 name: SAMP
 manufacturer: hornet
-primaryCategory: compressor
+primaryCategory: channel-strip
 categories:
   - plugin
   - equalizer
   - limiter
   - mastering
 formats:
-  - vst3
-  - vst
   - au
+  - vst
+  - vst3
   - aax
 platforms:
-  - windows
   - mac
+  - windows
   - ios
 url: https://www.hornetplugins.com/plugins/hornet-samp/
-description: "Shape the Sound of Your Dolby Atmos Mixes with SAMP Audio Plugin.
-  A Single Control Point for Mastering Your Mixes."
+prices:
+  - amount: 59.99
+    currency: EUR
+description: Shape the Sound of Your Dolby Atmos Mixes with SAMP Audio Plugin. A Single Control Point for Mastering Your Mixes.
 details: |-
-  HoRNet SAMP: The Virtual Master Bus for Dolby Atmos Mixing HoRNet SAMP is an innovative plugin created to solve a unique problem in Dolby Atmos mixing : the lack of a traditional master bus. Developed by the Italian engineer Antonio Porcelli , SAMP offers a solution by providing a virtual master bus that integrates smoothly into the workflow of Atmos mixing . Unified Processing Chain SAMP combines four crucial master bus processors into a single plugin. These processors work together to provide a seamless mixing experience, allowing for a professional-level Atmos mix. The included processors are: Equalizer : Based on HoRNet’s TotalEQ , the equalizer offers up to six bands of parametric EQ , enabling precise tonal shaping. Compressor : Utilizing HoRNet’s innovative SyncPressor technology, the compressor provides effective dynamic range control , ensuring that the mix maintains clarity without unwanted fluctuations in volume. Clipper and Limiter : Taken from the renowned Magnus MK2 , the
+  HoRNet SAMP is a plugin created to solve a unique problem in Dolby Atmos mixing: the lack of a traditional master bus. Developed by the Italian engineer Antonio Porcelli, SAMP offers a solution by providing a virtual master bus that integrates smoothly into the workflow of Atmos mixing.
+
+  SAMP combines four master bus processors into a single plugin. The equalizer is based on HoRNet's TotalEQ and offers up to six bands of parametric EQ, the compressor uses HoRNet's SyncPressor technology for dynamic range control, and the clipper and limiter are taken from Magnus MK2 to manage peak levels and prevent unwanted clipping. All of these processors are interconnected, so adjustments made to one instance are reflected across the others, allowing changes to be made globally across multiple tracks at once.
+
+  The order of the processors within the plugin can be fully customized, allowing users to rearrange them to match their preferred signal flow. The plugin also supports sidechain inputs, which enables dynamic interaction between multiple instances of SAMP for cohesive and controlled mixes in complex Dolby Atmos productions.
+
+  SAMP supports up to 160 individual instances, each with its own peak meter, and the interface displays all active instances for an overview of the entire session. It reads track names directly from the DAW, and track names can be displayed when hovering over a level indicator, which helps avoid confusion in large projects. Attack and release times of the compressor and limiter modules can be synced to the DAW tempo.
+
+  To maintain audio quality, SAMP employs intelligent oversampling up to 4x, reducing aliasing artifacts. The resizable, vector-based GUI is hardware-accelerated and includes native Apple Silicon support. The plugin works on macOS (10.11 and later) and Windows (7 and later, OpenGL 2.1 required), is 64-bit only, and is available in Audio Units, VST, VST3 and AAX formats.
+specs: |-
+  - Equalizer based on TotalEQ with up to 6 different bands
+  - Compressor based on SyncPressor
+  - Clipper and Limiter based on Magnus MK2
+  - Input and output gain slider
+  - Attack and release times can be synced to DAW tempo
+  - Module order freely selectable
+  - Interprocess communication between plugins
+  - Up to 160 different plugin instances supported
+  - Track name read directly from DAW (except for VST)
+  - Input meter display for each instance
+  - Compressor and limiter side chain selectable
+  - Bypass button for each module and global bypass button
+  - Online help
+  - Intelligent oversampling up to 4x
+  - Resizable vector GUI
+  - Hardware accelerated GUI
+  - Apple Silicon native support
+  - macOS (10.11 and later) and Windows (7 and later, OpenGL 2.1 required) support
+  - 64-bit only plugins for macOS and Windows
+  - Audio Units, VST, VST3 and AAX format
+versions:
+  - name: 1.3.0
+  - name: 1.2.0
+videos:
+  - videoId: lD1XXUNR7sg
+    provider: youtube
+    title: HoRNet Samp overview
+  - videoId: JgvNWysH67o
+    provider: youtube
+    title: "HoRNet SAMP: the missing Dolby Atmos master bus"
+  - videoId: Ehb__d73jFI
+    provider: youtube
+    title: "End of Year Updates: HoRNet SAMP, NovoNotes 3DX, and Nuendo ADM Export"
+  - videoId: v_A96-jo3X4
+    provider: youtube
+    title: HoRNet releases SAMP - Virtual Master Bus for Dolby Atmos
+  - videoId: rGnbpdnB31w
+    provider: youtube
+    title: HoRNet updates SAMP to v1.2.0
 searchTerms:
   - Spatial Audio Master Processor

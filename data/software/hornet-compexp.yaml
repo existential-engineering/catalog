@@ -5,16 +5,47 @@ primaryCategory: compressor
 categories:
   - plugin
 formats:
-  - vst3
-  - vst
   - au
+  - vst2
+  - vst3
   - aax
 platforms:
-  - windows
   - mac
+  - windows
   - ios
 url: https://www.hornetplugins.com/plugins/hornet-compexp/
-description: "HoRNet CompExp is a compressor expander inspired by a compander
-  chip designed for noise reduction in telephone lines and electronics"
+prices:
+  - amount: 0
+    currency: EUR
+description: HoRNet CompExp is a compressor expander inspired by a compander chip designed for noise reduction in telephone lines and electronics
 details: |-
-  Nice compression and expansion
+  HoRNet CompExp is a compressor/expander plugin that brings a fresh perspective to dynamic processing by emulating a special kind of compander chip originally developed for use in telephone lines. While its primary purpose was noise reduction in long-distance analog communication, this vintage circuit offers surprisingly musical behavior when applied to audio production.
+
+  At the heart of CompExp is the emulation of a compander chip widely used in electronics to reduce noise in low-fidelity systems like telecommunications, cassette players and consumer audio devices. A compander (short for compressor/expander) works by compressing the dynamic range of audio before transmission and expanding it again upon reception, lowering the noise floor introduced by analog systems. HoRNet implemented that vintage design with high accuracy, staying true to its original fixed-threshold behavior and unique gain curve, then found that using either the compressor or expander stage independently yields musical and unexpected results.
+
+  Unlike typical compressors or expanders where the threshold can be adjusted manually, CompExp uses a fixed threshold internally set at -18dBFS, mimicking the behavior of the original hardware chip. The core parameter is the Amount knob: with Amount greater than 1 in compressor mode the signal is compressed above the threshold and boosted below it, giving dynamic leveling and a controlled, smooth output. Switched to expander, the gain moves in the opposite direction, boosting above the threshold and reducing below it to widen the dynamic range and emphasize transients and quiet details.
+
+  Because it uses a non-traditional fixed-threshold model, CompExp creates a more natural response curve that does not rely on typical attack/release envelope shaping, reacting to the signal's energy in a way that is more instantaneous and level-dependent for cleaner processing and fewer artifacts. It is suggested for drum overheads, bass tracks, vocals, and synths and pads. Internal gain compensation automatically adjusts the output to remain near a target level of -18dB RMS, so average output level stays balanced however far the Amount knob is pushed.
+
+  The internal model was originally implemented as part of the HoRNet HDD1, where it served as a noise-reduction circuit in the feedback path of the delay processor, keeping the delay tail clean and intelligible across multiple feedback loops. Its success in that context led to a dedicated plugin built around the technology, presented in the clean, compact interface HoRNet uses across its range, focused on the Amount setting and mode selection.
+specs: |-
+  - Compression and expansion
+  - Fixed ratio and gain compensation
+  - Attack and release times
+  - Fixed threshold internally set at -18dBFS
+  - Internal gain compensation targeting -18dB RMS output
+  - Mac OS X (>=10.7) and Windows support
+  - 64-bit compatibility both on Mac and Windows
+  - Audio Units, VST2.4, VST3 and AAX format
+  - Apple Silicon not supported yet
+  - No copy protection
+videos:
+  - videoId: iXq1RBRCoKg
+    provider: youtube
+    title: HoRNet Compexp, compressor/expander
+  - videoId: F2hdWz_-mvY
+    provider: youtube
+    title: Hornet FREE Plugins explained | CompExp & Harmonics
+  - videoId: 90FrzmtYuog
+    provider: youtube
+    title: FREE CompExp by HoRNet Plugins

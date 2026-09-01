@@ -11,14 +11,39 @@ formats:
   - au
   - aax
 platforms:
-  - windows
   - mac
+  - windows
   - ios
 url: https://www.hornetplugins.com/plugins/hornet-zeroloud/
 prices:
   - amount: 24.99
     currency: EUR
-description: "ZeroLoud is an intelligent maximizer that automatically hits your
-  target LUFS. No more guessing, let ZeroLoud calculate gain and limiting."
+description: ZeroLoud is an intelligent maximizer that automatically hits your target LUFS. No more guessing, let ZeroLoud calculate gain and limiting.
 details: |-
-  EVER SPENT HOURS TWEAKING A LIMITER JUST TO HIT THE RIGHT LOUDNESS? You know that sinking feeling: your mix sounds incredible, but when you insert a maximizer to hit streaming loudness standards, everything falls apart. Too much gain and it&#8217;s crushed and distorted. Too little and it&#8217;s too quiet. You&#8217;re stuck riding that impossible line between &#8220;loud enough&#8221; and &#8220;destroyed.&#8221; The uncomfortable truth? Traditional limiters and maximizers force you to guess. You set threshold by ear, estimate makeup gain, pray the release time doesn&#8217;t pump, and hope you land somewhere near -14 LUFS for Spotify or -9 LUFS for club play. Meanwhile, every track has different dynamics, and you&#8217;re manually recalibrating every single time like you&#8217;re defusing a bomb. That&#8217;s exactly why we created ZeroLoud. After 15 years of plugin development, we understood something fundamental: the fastest way to achieve target loudness is to let the maximizer an
+  Traditional limiters and maximizers force you to guess: you set threshold by ear, estimate makeup gain, hope the release time doesn't pump, and hope you land somewhere near -14 LUFS for Spotify or -9 LUFS for club play. Every track has different dynamics, so the recalibration starts again on every session.
+
+  ZeroLoud is an intelligent maximizer that analyzes your track, calculates the gain and limiting curve, and delivers your exact target LUFS, whether that is -14 for streaming, -9 for CD, or anything in between. Target loudness can be set anywhere from -30 to -5 LUFS and the plugin works out the gain and limiting parameters needed to reach that level.
+
+  It runs through a 4-step guided workflow: Learning (the plugin records 10 seconds of your loudest audio section), Target Selection (you choose the desired LUFS level), Analysis (ZeroLoud calculates the optimal gain and limiting curve offline), and Application (press Apply and the plugin processes in real time). The workflow is identical whether you are processing a vocal, a drum bus, or a full master.
+
+  After analysis, two precision controls stay available: TRIM adjusts input level by ±6 dB without re-running the analysis, and CEILING sets the maximum True Peak output level from -6.0 to 0.0 dB, useful for setting -1.0 dB TP for streaming safety. Complete LUFS metering shows Momentary (400 ms), Short-term (3 s) and Integrated readings simultaneously, so no external metering plugin is needed.
+
+  Automatic 2x oversampling engages for sample rates below 88.2 kHz to keep limiting transparent and free of aliasing, and the interface uses GPU-accelerated, scalable graphics. Version 1.0.1 added correct VST3 loading in Cubase, Nuendo and Reason, lower CPU usage during long sessions, an end to crackling or distortion during playback, and a fix for interface loading in Logic Pro.
+specs: |-
+  - Target loudness range: -30 to -5 LUFS
+  - True peak ceiling: -6.0 to 0.0 dB (adjustable)
+  - TRIM control: ±6 dB post-analysis adjustment
+  - LUFS metering: Momentary (400 ms), Short-term (3 s), Integrated
+  - Analysis method: offline processing on a 10-second buffer
+  - Oversampling: automatic 2x for sample rates below 88.2 kHz
+  - Supported formats: VST3, Audio Units (AU), AAX
+  - macOS 10.13 (High Sierra) or later, Apple Silicon native
+  - Windows 10 or Windows 11
+  - Interface: GPU-accelerated, scalable graphics
+  - No copy protection, watermarked with the buyer's email
+versions:
+  - name: 1.0.1
+videos:
+  - videoId: IMf9WPGJITY
+    provider: youtube
+    title: "EASY Mastering: Set Target LUFS & Done | HoRNet ZeroLoud"
