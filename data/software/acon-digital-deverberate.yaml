@@ -1,74 +1,65 @@
 id: mwRmjn8sy0t2J4i45Ji4j
 name: DeVerberate
 manufacturer: acon-digital
-primaryCategory: reverb
+primaryCategory: de-reverb
 categories:
   - restoration
   - effect
+formats:
+  - vst
+  - vst3
+  - aax
+  - au
 platforms:
   - mac
   - windows
 url: https://acondigital.com/products/deverberate
-description: DeVerberate is a reverb reduction plug-in that can attenuate or
-  boost the reverberation that is already present in recorded material.
-details: |-
-  The reverb reduction algorithm from version 2 is included for music and other
-  audio sources. Both algorithms split the incoming audio into an estimation of
-  the direct sound and the reverberated sound which can then be recombined
-  freely.
-
-  Additionally, a unique early reflections filter that works in conjunction with
-  the reverb suppression algorithms is included. The early reflections filter
-  uses sophisticated statistical methods to estimate the so called impulse
-  response of the early reflections, which is then used to cancel out the effect
-  of the early reflections.
-
-  Acon digital deverberate 3 is available as VST, vst3 or AAX for both windows
-  and mac or as AU plug-ins for mac. There are 32 and 64-bit versions for
-  windows. The mac version is 64-bit and runs natively on both arm (such as
-  apple m1) and intel processors.
-
-  This plug-in accords a tremendous degree of control over the amount of
-  perceived ambience heard in any audio clip. It is entirely possible to remove
-  offending "room" noise from less-than-optimal vocal tracks. This plug-in makes
-  it easy to edit a live club or large hall recording and bring "focus" to the
-  music whilst greatly lessening unwanted, "boomy" reverberation.
-specs: |-
-  - Deep learning algorithm for automatic reverb reduction
-  - Neural network trained on thousands of high-quality voice recordings
-  - Reverb reduction algorithm from version 2 for music and other audio sources
-  - Early reflections filter with zero latency
-  - Direct sound and reverberated sound estimation and recombination
-  - VST plugin format
-  - VST3 plugin format
-  - AAX plugin format
-  - AU plugin format for mac
-  - 32-bit and 64-bit versions for Windows
-  - 64-bit mac version
-  - Native arm64 support (apple m1)
-  - Native intel processor support
-  - 1536 samples latency at 44.1 kHz for reverb tail suppression
-  - Windows 10/8/7 compatibility
-  - macOS/os x 10.9 or later compatibility
-  - Intel core i3 or amd multi-core processor minimum
-  - Intel core i5 or faster recommended
-  - 1 GB RAM minimum (4 GB or more recommended)
-  - 1 GB free hd space
-  - 1366 x 768 display resolution minimum (1920 x 1080 or higher recommended)
-  - Compatible with Pro Tools 10.3.5 or higher (Windows)
-  - Compatible with Pro Tools 11 or higher (mac)
-  - Compatible with final cut pro
-  - Compatible with adobe premiere pro
-  - Compatible with adobe audition
-  - Compatible with logic
-  - Compatible with ocenaudio
-  - Compatible with amadeus pro
-  - Compatible with Ableton live
-  - Compatible with Cubase
 prices:
-  - amount: 99
-    currency: USD
+  - currency: USD
+    amount: 99
+  - currency: EUR
+    amount: 99
+  - currency: GBP
+    amount: 79
+description: Acon Digital DeVerberate is plug-in that can attenuate or boost the reverberation that is already present in recorded material. DeVerberate is available for PC and Macintosh and supports the VST, VST3, AAX and AU plug-in formats. Both 32 bit and 64 bit versions are available.
+details: |-
+  DeVerberate 3 uses deep learning to automatically remove unwanted reverb from dialogue recordings, no manual tuning required. Trained on thousands of high-quality voice recordings across a wide range of acoustic spaces, its AI separates dialogue from reverb with remarkable precision, rescuing recordings with excessive room sound and eliminating the need for costly reshoots or ADR.
+
+  For music and other sources, DeVerberate 3 retains the proven algorithm from version 2, splitting audio into direct and reverberated components that can be freely recombined. A unique Early Reflections Filter adds a further layer of control, using sophisticated statistical modeling to estimate and cancel out early reflections for cleaner, more precise results.
+
+  Fully automatic reverb reduction, driven by deep learning, analyzes your dialogue and removes unwanted room sound instantly, no manual settings to dial in. Just drop it on your track and let the AI do the work, turning boomy, reverberant recordings into clean, broadcast-ready dialogue in seconds.
+
+  For material outside dialogue, take direct control over the reverb itself. Adjust the level and decay time of the original reverberation to shape the sound exactly how you want it, whether you're taming a boomy room or sculpting a mix with precision.
+
+  Early reflections are often the hardest part of a room's sound to remove, and the most noticeable when they're not. This filter uses sophisticated statistical modeling to isolate and cancel them out, delivering a cleaner, more natural result that works alongside either reverb reduction mode.
+specs: |-
+  - Fully automatic dialogue reverb reduction based on deep learning
+  - Manual mode for music and other signal types with adjustments of the original reverberation's level and decay times
+  - Separate adjustments of the direct sound and the reverberation levels
+  - Early reflections filter
+  - Frequency spectrum representation of the input signal, output signal and estimated reverberation
+  - Frequency emphasis filter for the reduction level
+  - High and low shelving filters with variable slopes (-3 to -96 dB / octave)
+  - High and low peak filters with adjustable bandwidth (0.1 to 3.0 octaves)
+  - Graphical representation of frequency response with editing through handles in the curve
+  - EUCON and full Pro Tools HW controller support
+  - Native 32 bit and 64 bit versions are available
+  - Mac version runs natively on ARM64 and Intel
+  - Supports sampling rates up to 96 kHz
+  - Windows 10 / 11, Intel Core i3 or AMD multi-core processor (Intel Core i5 or faster recommended)
+  - macOS / OS X 10.13 or later
+  - 1 GB RAM (4 GB or more recommended), 1 GB free HD space
+  - 1366 x 768 display resolution (1920 x 1080 or higher recommended)
+  - Requires a host compatible with VST, VST3, AU or AAX (Pro Tools 2018 or later)
+versions:
+  - name: 3.0.4
+  - name: 2.1.2
+  - name: 1.6.0
 links:
   - type: resource
     url: https://acondigital.com/docs/DeVerberate2_en.pdf
     title: DeVerberate 2 User Manual
+videos:
+  - provider: youtube
+    videoId: HWKcuEA32cI
+    title: Introduction to DeVerberate 3
