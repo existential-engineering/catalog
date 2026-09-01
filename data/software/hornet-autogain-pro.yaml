@@ -5,15 +5,56 @@ primaryCategory: gain
 categories:
   - plugin
 formats:
-  - vst3
-  - vst
   - au
+  - vst2
+  - vst3
   - aax
 platforms:
-  - windows
   - mac
-  - ios
+  - windows
 url: https://www.hornetplugins.com/plugins/hornet-autogain-pro/
-description: The HoRNet AutoGain Pro is an advanced volume automation and leveling utility
+prices:
+  - amount: 21.99
+    currency: EUR
+description: The HoRNet AutoGain Pro is an advanced volume automation and leveling utility.
 details: |-
-  AutoGain Pro 1.3.2 is available, this update is free for owners of the plugin and includes: Added native support for AAX plugin format with Apple Silicon Processors
+  HoRNet AutoGain Pro is the evolution of one of our best-selling plugins, the original HoRNet AutoGain. It takes the same powerful and efficient DSP algorithm at its core and enhances it with advanced features like internal reference selection, peak detection, reversed gain processing, and customizable gain limits. While keeping all the fast and effective capabilities of the original, AutoGain Pro offers significantly more flexibility and precision for those who need deeper control over volume automation and dynamic leveling.
+
+  The heart of AutoGain Pro lies in its adaptive behavior. The plugin works by listening to your audio signal and attempting to keep it dynamically balanced with a reference signal. This reference can be either external, fed from another track or sidechain, or internal, allowing the plugin to respond to its own input. This makes it flexible in different contexts: from ducking effects and leveling dialogue against background music, to creating tight parallel compression-like dynamics or automating vocals for constant perceived loudness.
+
+  Unlike the standard version, AutoGain Pro introduces a series of pro-level enhancements. One of the most powerful is the ability to define minimum and maximum gain limits, restricting how much the plugin boosts or reduces the signal so the automated gain riding remains natural and within bounds. Another key feature is reverse gain processing, which allows the plugin to operate like a ducker, reducing gain when the reference becomes louder. Peak detection adds another layer of analysis beyond RMS-style behavior, reacting faster and more precisely to transients.
+
+  AutoGain Pro features an integrated gain display, offering a real-time oscilloscope-style view of both the input and reference signals as well as the gain adjustments being applied. Two floating meters show peak levels right next to the input and output gain controls, giving constant visual monitoring of the signal path.
+
+  Where the original AutoGain offered a streamlined speed control, AutoGain Pro gives full control over attack and release times for both the main and reference signals independently. A Classic Mode button greys out many of the advanced parameters and restores the internal behaviors of the original version, linking the release controls for both main and reference signals so they act like the original plugin's speed knob.
+specs: |-
+  - Internal and external reference
+  - Gate from -60dB to 0dB for main signal when using internal reference
+  - Independent attack and release for reference and main signals
+  - High pass and low pass filters on the reference input
+  - Reference gain adjustable from -30dB to +30dB
+  - Peak or RMS processing
+  - Reverse gain operation
+  - “Classic” mode works like the original AutoGain
+  - Can write and read automation
+  - Independent adjustment of minimum and maximum gain range
+  - Relative gain range adjustment
+  - Graphical gain adjustment and reference signal display
+  - Apple Silicon native support
+  - Mac OS X (>=10.11) and Windows (7 and later) support
+  - 64bit only on both Mac and Windows
+  - Audio Units, VST2.4, VST3 and AAX format
+  - No copy protection
+versions:
+  - name: 1.3.2
+  - name: 1.3.0
+videos:
+  - videoId: CoSYhmaSef8
+    provider: youtube
+    title: Tutorial AutoGain Pro with Logic Pro X
+  - videoId: Kaa_Keugxhc
+    provider: youtube
+    title: Hornet autogain pro
+  - videoId: HxRUTS-Ea-M
+    provider: youtube
+    title: HoRNet updates AutoGain Pro to v1.3.0
