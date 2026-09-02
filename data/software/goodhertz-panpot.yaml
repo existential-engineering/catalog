@@ -18,20 +18,32 @@ url: https://goodhertz.com/panpot
 prices:
   - amount: 49
     currency: USD
-description: Panpot brings four different modes of panning in a single plugin that will transform the way you think about stereo, expanding beyond traditional level-based panning with delay, spectral, and phase-based spatial audio cues.
+description: Panpot brings four different modes of panning in a single plugin
+  that will transform the way you think about stereo, expanding beyond
+  traditional level-based panning with delay, spectral, and phase-based spatial
+  audio cues.
 details: |-
-  Panpot is a multi-mode stereo panning plugin from Goodhertz that goes far beyond the standard level pan found in every DAW. It offers four distinct panning algorithms, each addressing a different perceptual cue the human auditory system uses to localize sound in space.
+  Panpot brings together four different modes of panning in a single plugin that will transform the way you think about stereo.
 
-  The Level mode refines the classic volume-based pan with multiple pan law options for natural-sounding results across different playback systems. The Delay mode uses inter-aural timing differences — modeling how sound reaches each ear at slightly different times — to create convincing depth and width without tonal changes.
+  There are a few different auditory cues that enable humans to hear spatially, that is, to identify the size, location, and distance of a sound in space. These cues fall into four main categories: Level Differences (ILD), Time Differences (ITD), Spectral Cues, and Distance Effects. The traditional audio level panner, the one found on almost every audio console since the 1970's, gives an engineer control of only one of these cues: level differences. Level panning works well enough for some things, but it often falls short, forcing us to rely on other tools (like delays, reverbs, stereo widening, EQ) to achieve more depth and definition in the stereo field.
 
-  The Spectral mode simulates the head-shadow effect, where higher frequencies are attenuated on the ear farther from a sound source, altering the timbre in a frequency-dependent way as the pan position changes. The Phase mode creates phase shifts between the two channels to position audio in the stereo field without altering level balance.
+  You can think of level panning as panning in black & white; while you can convey some sense of light and dark, you don't have access to the same depth, nuance, and range that you would if you were working in color. Panpot gives you the full color spectrum for stereo audio cues. You can choose to use it however you like: for realistic, hyper-realistic, or totally unrealistic spatial effects. Panpot gives you four different panning “colors,” but we don't tell you what to paint.
+
+  Panpot is not a “3D Audio” panner. While Panpot can produce some very “3D” sounding effects, it does not do things that rely on individualized HRTF's, like elevation and front/back placement. Instead, Goodhertz focused on cues that translate well on a number of stereo systems: speakers, headphones, laptops, and so on, expanding the expressiveness of panning without focusing exclusively on mimicking reality.
+
+  The name is a contraction of “Panoramic Potentiometer.” Panpot has 1 page of advanced controls, documented in the plugin manual.
 specs: |-
-  - Four panning modes: Level, Delay, Spectral, and Phase
-  - Multiple pan law options for Level mode
-  - Delay mode max ~0.7ms at 1x multiplier
-  - Supports mono->stereo and stereo->stereo
-  - All controls fully automateable
-  - macOS 10.13+ (AU, VST, VST3, AAX 64-bit)
-  - Windows 10+ (VST, VST3, AAX 64-bit)
+  - Level panning: a refined version of the classic level pan, with superior automatability and several pan law options
+  - Delay panning: creates a strong sense of sidedness without altering the stereo level balance, using small time delays that closely model human hearing delays (at 1x)
+  - Spectral panning: changes the timbre of the stereo image, focusing higher frequency sounds toward the pan direction, mimicking natural head shadowing
+  - Phase panning: creates a constant phase shift between the left and right channels to declutter the mono image and expand the sound field
+  - 1 page of advanced controls
+  - Interface available in English, Spanish, Portuguese, French, Italian, Arabic, Korean, Japanese, Simplified Chinese and Traditional Chinese
+  - Light Mode and Dark Mode interface options
+  - 64-bit only
 versions:
   - name: "3.13"
+videos:
+  - videoId: 2pSdHLPdohA
+    provider: youtube
+    title: Panpot Demo (Version 2)

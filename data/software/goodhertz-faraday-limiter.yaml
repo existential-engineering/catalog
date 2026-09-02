@@ -18,29 +18,29 @@ url: https://goodhertz.com/faraday-lim
 prices:
   - amount: 79
     currency: USD
-description: Peak limiter plugin featuring analog-modeled transformer sound with coloration and warmth controls. Designed as a tone-sculpting dynamics tool with Color and Warmth controls for timbral shaping, advanced stereo linking (variable L/R or M/S), adjustable compression ratios (2:1, 4:1, 8:1, 20:1), and gain reduction history meter.
+description: Peak limiter plugin featuring analog-modeled transformer sound with
+  coloration and warmth controls. Designed as a tone-sculpting dynamics tool
+  with Color and Warmth controls for timbral shaping, advanced stereo linking
+  (variable L/R or M/S), adjustable compression ratios (2:1, 4:1, 8:1, 20:1),
+  and gain reduction history meter.
 details: |-
-  Faraday Limiter is a peak limiter from Goodhertz featuring analog-modeled input and output transformers that impart color and warmth to audio material. The plugin is designed to bring the character of classic hardware limiters to the digital domain, combining peak limiting with transformer-style saturation.
+  Faraday Limiter is the sound of iron: colorful dynamics with warm, tape-like saturations.
 
-  The plugin offers a Color control for timbral shaping and a Warmth control for tape-like saturation characteristics. Advanced stereo linking options allow variable L/R or M/S linking for precise control over how the stereo field is handled during limiting.
+  Most modern digital limiters are designed to be sonically neutral, with maximum transparency and minimal coloration. In other words, they're created to do one job (limit a signal's level) without changing the overall sound too much or imparting any specific sonic signature. Inevitably, though, digital peak limiters do have a sound of their own — especially when pushed hard — and, when exposed, that sound can be truly awful: harsh, brittle high end; squashed transients; & thin or mangled low end. Rather than build another "transparent" brickwall limiter, we thought we'd make something different: something dynamic, colorful, and inspiring; something you could use for more than just pure loudness.
 
-  Faraday Limiter supports adjustable ratio settings of 2:1, 4:1, 8:1, and 20:1, making it suitable for both gentle bus limiting and more aggressive peak control. A gain reduction history meter provides visual feedback on limiting activity.
-
-  The plugin uses double-precision floating-point processing to prevent internal clipping, and includes an HQ Mode for higher precision processing at the cost of approximately 50ms additional latency and 2–4x CPU usage. MIDI Learn is available for parameter mapping, and automation is handled smoothly without digital artifacts.
+  Named after the inventor of the electrical transformer, Faraday Limiter's analog-modeled input/output transformers are responsible for its beefy, harmonically-rich sound. The limiter circuit is smooth yet lively — it can pump faster and further than any limiter we've ever heard while retaining its characteristic punch and warmth. Faraday Limiter sounds great on buses, individual instruments, vocals, dialog, etc. and allows for a level of timbral shaping and tonal coloration that can't be achieved with any other dynamics processor.
 specs: |-
-  - Analog-modeled input/output transformers
-  - Color and Warmth controls for timbral shaping
-  - Advanced stereo linking: variable L/R or M/S
-  - Adjustable ratio: 2:1, 4:1, 8:1, 20:1
+  - Big, analog-modeled transformer sound
+  - "Color" and "Warmth" controls for extended timbral shaping
+  - Advanced stereo linking: variable L/R or M/S linking
+  - Adjustable ratio: [2:1, 4:1, 8:1, 20:1]
   - Gain reduction history meter
-  - Double-precision floating-point processing
-  - HQ Mode (~50ms additional latency, 2–4x CPU usage)
-  - GPU acceleration support
-  - MIDI Learn for parameter mapping
-  - Smooth automation without zipper noise
-  - Channel configurations: Mono→Mono, Mono→Stereo, Stereo→Stereo
-  - 64-bit only
-  - Mac: AU, VST, VST3, AAX (macOS 10.13+)
-  - Windows: VST, VST3, AAX (Windows 10+)
+  - 1 page of advanced controls
+  - HQ Mode uses a higher precision algorithm at the expense of added latency (~50 ms) and higher CPU usage
+  - 64-bit only; requires a 64-bit DAW and macOS 10.13+ or Windows 10+
 versions:
   - name: "3.13"
+videos:
+  - videoId: C3pIG643xuM
+    provider: youtube
+    title: '"Cars Two" (Trem Ctrl → Vulf Compressor → Faraday Limiter)'

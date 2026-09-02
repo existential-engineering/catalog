@@ -17,25 +17,57 @@ url: https://goodhertz.com/vulf-comp
 prices:
   - amount: 149
     currency: USD
-description: A compression plugin based on a radically unique algorithm originally engineered for the Boss SP-303 sampler, delivering distinctive character-driven compression with vintage-inspired qualities. Used on recordings by Dua Lipa, BTS, HAIM, and Rex Orange County.
+description: A compression plugin based on a radically unique algorithm
+  originally engineered for the Boss SP-303 sampler, delivering distinctive
+  character-driven compression with vintage-inspired qualities. Used on
+  recordings by Dua Lipa, BTS, HAIM, and Rex Orange County.
 details: |-
-  The Vulf Compressor is built around a radically weird compression algorithm originally engineered by an unknown Japanese DSP engineer circa 2000 for the Boss SP-303 sampler. Goodhertz reverse-engineered and extended this algorithm into a full-featured plugin that delivers the kind of character-driven compression rarely found in modern tools.
+  Sometime around the turn of the century, an unknown Japanese DSP engineer engineered a radically weird compression algorithm for the Boss SP-303 Dr. Sample Sampler.
 
-  Beyond compression, the plugin includes Wow & Flutter controls that add vinyl-style pitch modulation, and a Lo-Fi section with noise, crunch, and bit-depth reduction options. These can be applied subtly or pushed hard to achieve heavily processed sounds.
+  Years passed, and this “Vinyl Sim” compression languished in obscurity, a dark art known only to practitioners of instrumental beatmaking, producers like J Dilla and Madlib.
 
-  The plugin supports mono, mono-to-stereo, and stereo channel configurations. An HQ Mode is available that activates higher-quality processing at the cost of approximately 50ms of latency.
+  But then Vulfpeck’s Jack Stratton read about the compression algorithm on a forum and enlisted two friends, Devin Kerr and Rob Stenson (co-founders of Goodhertz), to bring that algorithm to life in a digital form.
 
-  On Mac, Vulf Compressor runs as an Audio Unit, VST, VST3, or AAX plugin on OS X 10.13 or later. On Windows, it supports VST, VST3, and AAX on Windows 10 or later.
+  But Devin did more than just bring it to life — he expanded the algorithm, fine-tuned the sound, perfected its oddity. And now that compression is the Vulf Compressor.
+
+  Vulf Compressor has 1 page of advanced controls, and a mastering edition of the plugin is available separately as VCME.
 specs: |-
-  - Mac: Audio Unit 64-bit, VST 64-bit, VST3 64-bit, AAX 64-bit (OS X 10.13+)
-  - Windows: VST 64-bit, VST3 64-bit, AAX 64-bit (Windows 10+)
-  - Channel configurations: Mono->Mono, Mono->Stereo, Stereo->Stereo
-  - Compression Amount control
-  - Wow & Flutter Amount with mix, phase, and speed controls
-  - Lo-Fi Amount with noise, crunch, and type controls
-  - Master Mix for parallel processing
-  - Sidechain: listen, external, and tilt options
-  - HQ Mode with ~50ms latency
-  - Stereo link control for compression
+  - Main controls: Input Gain, Compression Amount, Wow/Flutter Amount, Lo-Fi Amount, Output Gain, Master Mix, Master On/Off
+  - Advanced compression controls: Attack Time Constant, Release Time Constant, Stereo Link
+  - Wow & Flutter section: Mix, Phase, Speed (33.3 / 45 / 78 RPM)
+  - Lo-Fi section: Noise Gain, Crunch, Type (Analog, 1990s Digital, 1980s Digital)
+  - Sidechain: Listen, External sidechain input, Tilt
+  - Additional controls: Digital Ref Level, Reset Meters, HQ Mode, Pre/Post-process Gain
+  - Double-precision floating-point processing with no internal clipping
+  - HQ Mode adds roughly 50ms latency and 2-4x CPU usage
+  - Mono and stereo channel configurations
+  - Smooth automation without artifacts
+  - Mac: 64-bit Audio Unit, VST, VST3 or AAX host, macOS 10.13 or later
+  - Windows: 64-bit VST, VST3 or AAX host, Windows 10 or later
 versions:
   - name: "3.13"
+videos:
+  - videoId: Pv_DkI1S4vA
+    provider: youtube
+    title: Rex Orange County - 2008
+  - videoId: s2GS8DUDfPM
+    provider: youtube
+    title: HAIM - I've Been Down
+  - videoId: oygrmJFKYZY
+    provider: youtube
+    title: Dua Lipa - Don’t Start Now
+  - videoId: 7C2z4GqqS5E
+    provider: youtube
+    title: BTS - FAKE LOVE
+  - videoId: kruASSL78m8
+    provider: youtube
+    title: "Holy Trinities: Tambourine"
+  - videoId: W8qGxsKNfnk
+    provider: youtube
+    title: A Brief History of Vulf Compressor
+  - videoId: C3pIG643xuM
+    provider: youtube
+    title: “Cars Two” (Trem Ctrl → Vulf Compressor → Faraday Limiter)
+  - videoId: Y6D9WvwMNr8
+    provider: youtube
+    title: Vulf Compressor Demo 001

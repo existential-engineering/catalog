@@ -19,27 +19,33 @@ url: https://goodhertz.com/tupe-wow
 prices:
   - amount: 0
     currency: USD
-description: Tupe Wow combines tube and tape emulation with wow and flutter effects, merging Goodhertz's Tupe and Wow Control plugins into a single processor. It features 8 tube modes, 8 tape machine models, an optical compressor, and a ladder filter in one CPU-efficient plugin.
+description: Tupe Wow combines tube and tape emulation with wow and flutter
+  effects, merging Goodhertz's Tupe and Wow Control plugins into a single
+  processor. It features 8 tube modes, 8 tape machine models, an optical
+  compressor, and a ladder filter in one CPU-efficient plugin.
 details: |-
-  Tupe Wow is a combination plugin that merges the functionality of two Goodhertz plugins — Tupe and Wow Control — into a single, CPU-efficient processor. It brings together tube saturation modeling, tape machine emulation, wow and flutter pitch modulation, and additional signal shaping tools under one interface.
+  Tupe Wow is a mashup of two of our most popular plugins: Tupe — and — Wow Control.
 
-  The plugin includes 8 tube modes (based on tube types such as 5751, 6L6, EL34, and 12AX7 variants) and 8 tape machine models ranging from professional 8-track reel-to-reel machines down to a C90 toy cassette. Wow and flutter behavior is linked to the selected tape mode, providing contextually appropriate pitch modulation characteristics.
+  Tupe = Tube + Tape. Wow Control = Wow & Flutter (…and a lot of controls).
 
-  Additional processing tools include an optical compressor with COMP and LIMIT modes, a ladder filter with independent slope and resonance controls, an emphasis filter for shaping the frequency content fed into the saturation stage, and a tube ripple section for extra harmonic coloration. An oscilloscope view provides real-time visualization of the pitch modulation.
+  On its own, Tupe is a deep plugin that can replicate entire analog signal chains of tubes & tape machines (both real and imagined). It does, however, lack one pretty significant thing that most tape machines have: — you guessed it! — wow & flutter.
 
-  The plugin is free for owners of both Tupe and Wow Control, and is currently in beta.
+  Our original thinking was: well, we already make a great wow & flutter plugin (Wow Control), so if you want wow, just use that! But we kept getting requests to combine them and somehow offer the functionality of Wow Control inside Tupe. Eventually, we came to realize that there would be some big benefits to combining the two, and after using Tupe Wow for a few minutes, it became clear that we needed to release this plugin.
+
+  Tupe Wow = Tube + Tape + Wow & Flutter + More!
 specs: |-
-  - Formats: AU 64-bit (Mac), VST 64-bit, VST3 64-bit, AAX 64-bit
-  - macOS 10.13 or later, Windows 10 or later
-  - Channel configs: Mono->Mono, Mono->Stereo, Stereo->Stereo
-  - 8 tube saturation modes (5751, 6L6, EL34, 12AX7 variants)
-  - 8 tape machine models including reel-to-reel and C90 toy cassette
-  - Optical compressor with COMP and LIMIT modes
-  - Ladder filter with independent slope and resonance
-  - Emphasis filter for pre-saturation frequency shaping
-  - Tube ripple section for harmonic coloration
-  - Wow and flutter linked to tape mode selection
-  - HQ Mode (~50ms latency) for higher-precision processing
-  - Full parameter automation without artifacts
+  - New 8 Track Reel-to-Reel Tapes (coming to Tupe eventually)
+  - New C90 Toy Cassette Tape (coming to Tupe eventually)
+  - New Tape Speed Adjustment and Tape Wow Speed Adjustment controls can change both wow & flutter speed and the tape's response for endless tonal variations
+  - New Tube Ripple section for adding extra grit and grime caused by tube power supply ripple
+  - New presets
+  - Wow & flutter are linked to the Tape Mode selection, enabling accurate, full-machine reproduction with one click
+  - More CPU efficient (especially in HQ Mode) by intelligently sharing CPU resources between the Tupe & Wow Control algorithms
+  - Includes a large oscilloscope view of exactly what's happening with the pitch modulation
+  - 3 pages of advanced controls
+  - Supported channel configurations: mono in / mono out, mono in / stereo out, stereo in / stereo out
+  - System requirements: Mac OS X ≥ 10.13 with an Audio Unit 64-bit, VST 64-bit, VST3 64-bit or AAX 64-bit host
+  - System requirements: Windows ≥ 10 with a VST 64-bit, VST3 64-bit or AAX 64-bit host
 versions:
-  - name: 3.14.0 Beta 2
+  - name: "3.14"
+    preRelease: true
