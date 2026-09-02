@@ -5,35 +5,60 @@ primaryCategory: restoration
 categories:
   - plugin
   - effect
+formats:
+  - vst
+  - vst3
+  - au
+  - aax
 platforms:
   - mac
   - windows
 url: https://acondigital.com/products/restoration-suite/
-description: Restoration Suite 2 — a giant leap in audio quality restoration
-  suite 2 is a suite of four cutting edge plug-in for audio restoration and
-details: |-
-  Restoration Suite 2 is a suite of four cutting edge plug-in for audio restoration and noise reduction: denoise 2, declick 2, dehum 2, and declip 2.
-
-  Denoise 2 introduces the novel dynamic noise profiles that help reducing noise that varies randomly over time, such as wind noise or rustle from lavalier microphones. The noise suppression algorithm estimates the most suitable noise threshold curve for the noisy input signal using the measured statistics.
-
-  Denoise 2, declick 2 and dehum 2 now support mid/side (m/s) processing, which can reduce unwanted fluctuations in the stereo image. The core algorithm in declick 2 received major improvements and now better preserves transients and can be pushed to higher click and crackle sensitivities without introducing artifacts.
-
-  Dehum 2 has a new automatic fine-tune button that triggers automatic estimation of the hum noise frequency. Declip 2 was improved in terms of audio quality and now offers even more impressive reconstruction of clipped signal peaks.
-
-  Acon digital restoration suite 2 is available as VST, vst3 or AAX for both windows and mac or as AU plug-ins for mac. All the plug-ins in the suite now support surround and immersive audio formats up to 7.1.6 channels.
-specs: |-
-  - 32-bit and 64-bit versions for Windows
-  - 64-bit for mac
-  - Surround and immersive audio formats up to 7.1.6 channels
-  - Mid/side (m/s) processing
-  - Dynamic noise profiles
-  - Automatic hum frequency detection
-  - Denoise 2
-  - Declick 2
-  - Dehum 2
-  - Declip 2
 prices:
-  - amount: 279
-    currency: USD
+  - currency: USD
+    amount: 99
+  - currency: EUR
+    amount: 99
+  - currency: GBP
+    amount: 79
+description: Acon Digital Restoration Suite is a collection of four plug-ins for professional grade audio restoration. Restoration Suite is available for PC and Macintosh and supports the VST, VST3, AAX and AU plug-in formats. Both 32 bit and 64 bit versions are available.
+details: |-
+  Restore your recordings to their original clarity with the Restoration Suite, four professional-grade plug-ins that remove noise, distortion and unwanted artifacts without harming the sound you want to keep. Intuitive controls and powerful algorithms make professional results achievable without years of audio engineering experience.
+
+  DeNoise 2 is designed to reduce noise such as hiss, wind noise, buzz and camera noise. The noise can be reduced automatically in the adaptive mode or after measuring the characteristics of the noise in the noise profile mode. New in version 2 are dynamic noise profiles that capture the dynamic properties of the noise, so that noise fluctuating over time, such as wind noise or rustle from lavalier microphones, can be effectively reduced. Where earlier versions merely captured a static noise print with time-constant noise levels, the dynamic noise profiles capture statistics from the noise, and the suppression algorithm estimates the most suitable noise threshold curve for the noisy input signal from those statistics.
+
+  DeHum 2 targets hum and buzz typically introduced by poorly grounded electrical equipment, but also other tonal noise sources like electrical motor noise. The hum detection algorithm has been improved in version 2 and there is a new Scan button that automatically fine tunes the fundamental hum frequency. Version 2 also introduced support for Mid/Side processing, which can reduce unwanted fluctuations in the stereo image.
+
+  DeClick 2 is designed to remove impulsive noise such as clicks, crackle and thumps. These distortions are frequently encountered on LP and 78 RPM records, but also occur in digital recordings due to drop-outs or distorted data packets. Its thump reduction also works effectively on vocal recordings with unwanted plosives, and the version 2 algorithm is less prone to reducing attacks and transients in the wanted signal.
+
+  DeClip 2 handles distorted recordings, clipped audio and peak overloads. Leveraging advanced algorithms, it accurately reconstructs the missing waveform, with separately adjustable upper and lower threshold values and level histograms for setting them visually. Typical uses for the suite include cleaning up hiss, hum or buzz on instrument and vocal takes, restoring vinyl, cassette or archival tape transfers, and repairing clipped or overloaded recordings without re-recording the source.
+specs: |-
+  - Available as VST, VST3 or AAX plug-ins on PC (Windows)
+  - Available as VST, VST3, AAX or AU plug-ins on Apple Macintosh (OS X)
+  - Windows version available as native 32 bit or 64 bit; Mac version is 64 bit and runs natively on ARM64 and Intel
+  - Supports sampling rates up to 192 kHz
+  - Supports surround and immersive multi-channel audio up to 7.1.6 channels
+  - DeNoise 2: reduces noise in adaptive mode or based on noise analysis, with dynamic noise profiles for noise that changes rapidly over time
+  - DeNoise 2: transient detection keeps transients untouched, effective temporal smoothing reduces musical noise artifacts
+  - DeNoise 2: frequency emphasis filter with high and low shelving filters (-3 to -96 dB/octave) and peak filters (0.1 to 3.0 octaves)
+  - DeNoise 2: Solo Noise mode to audition the removed signal
+  - DeHum 2: sinusoidal re-synthesis algorithm or conventional notch filter mode
+  - DeHum 2: adaptive mode for hum with a fluctuating fundamental frequency, automatic fine-tune button scans the fundamental
+  - DeHum 2: removes up to 96 harmonics, with an option to target only odd harmonics
+  - DeHum 2: high resolution spectrum analysis with visual indication of fundamental and harmonics, plus Solo Hum mode
+  - DeClick 2: separate detection and restoration of clicks, crackle, thumps and plosives
+  - DeClick 2: accurate detection of click start time and duration, CPU efficient algorithm, visual curve meters for removal rates
+  - DeClick 2: residual signal mode to audition the removed signal
+  - DeClip 2: reconstructs peaks distorted by analog or digital clipping
+  - DeClip 2: separately adjustable upper and lower threshold values with optional threshold lock for symmetrical clipping
+  - DeClip 2: input and output level histograms with draggable threshold handles
+  - Optional M/S processing in DeNoise 2, DeHum 2 and DeClick 2
+  - Windows requirements: Windows 10/11, Intel Core i3 or AMD multi-core processor, 1 GB RAM, 1 GB free HD space, 1366 x 768 display
+  - macOS requirements: OS X 10.13 or later, 1 GB RAM, 1 GB free HD space
+versions:
+  - name: 2.1.27
+  - name: 1.8.1
 videos:
-  - videoId: 0-7iUkfcf8s
+  - provider: youtube
+    videoId: 0-7iUkfcf8s
+    title: Restoration Suite Walkthrough
