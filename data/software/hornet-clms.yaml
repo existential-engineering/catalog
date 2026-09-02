@@ -5,17 +5,44 @@ primaryCategory: loudness
 categories:
   - plugin
 formats:
-  - vst3
   - au
+  - vst
+  - vst3
   - aax
 platforms:
-  - windows
   - mac
-  - ios
+  - windows
 url: https://www.hornetplugins.com/plugins/hornet-clms/
-description: "HoRNet CLMS are two plugins designed to let you monitor and tweak
-  your effects while keeping perceived loudness constant"
+prices:
+  - amount: 10.99
+    currency: EUR
+description: HoRNet CLMS are two plugins designed to let you monitor and tweak your effects while keeping perceived loudness constant
 details: |-
-  CLMS 1.1.0 is available, this update is free and includes Added Apple Silicon compatibility Added support for hi dpi monitors in windows Removed 32bit support Download the update logging into your account
+  HoRNet CLMS is designed to solve the “loudness deception” issue allowing for a constant perceived loudness mixing experience. As is widely known the human ear perceive each frequency differently at different loudness levels, this effect may lead to misjudgement while taking decision in mastering and mixing.
+
+  When using any effect like an equaliser or a compressor the level of the affected signal may change significantly and this variance may let you take wrong mixing decisions. HoRNet CLMS takes the loudness factor out of the equation simply keeping the loudness level constant during monitoring.
+
+  CLMS is based around the concept of LU (Loudness Units) and it’s actually two different plugins, one is called HoRNetCLMS_Send (used to “read” the LU level of the track before processing) and the other one, called HoRNetCLMS_Receive that is usually set as the las plugin of the master chain and has the duty to apply the necessary gain to keep everything at the sender’s level.
+
+  CLMS inner working is quite easy, the HoRNetCLMS_Send reads the LU level of the track and stores it in a common memory area, then HoRNetCLMS_Receive reads that area, compute the differences between its input LU level and the one recorded by HoRNetCLMS_Send, and applies the necessary gain to keep the output level at the same LU amount of the one recorded by HoRNetCLMS_Send. You can put as many HoRNetCLMS_Send as your mixing or mastering session needs, the plugin provides a button that “enables” the communication between the sender and the receiver, this channel is mutually exclusive, only one sender can talk to the receiver at time.
+
+  On the HoRNetCLMS_Receive we have also put a cool LUFS normalisation utility, you can choose the target level for normalisation clicking on its text box, then click the “analyze” button to let the plugin record the average LU level of the the track, once finished, enable the “normalize” button and let it change the gain to make the track as loud as you want.
+specs: |-
+  - Continuous monitoring of perceived loudness
+  - As many HoRNetCLMS_Send as you desire
+  - Real time loudness adjustment
+  - Loudness display on both sender and receiver
+  - Loudness normalization to the requested level
+  - macOS (10.11 and later) and Windows (vista and later) support
+  - 64-bit only both on Mac and Windows
+  - Apple Silicon M1 native
+  - Audio Units, VST, VST3 and AAX format
+  - No copy protection
+versions:
+  - name: 1.1.0
+videos:
+  - videoId: rWrLAURuCC0
+    provider: youtube
+    title: Video Overview
 searchTerms:
   - Constant Loudness Monitor System

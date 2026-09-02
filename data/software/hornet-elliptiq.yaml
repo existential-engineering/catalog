@@ -5,17 +5,38 @@ primaryCategory: equalizer
 categories:
   - plugin
 formats:
-  - vst3
-  - vst
   - au
+  - vst2
+  - vst3
   - aax
 platforms:
-  - windows
   - mac
-  - ios
+  - windows
 url: https://www.hornetplugins.com/plugins/hornet-elliptiq/
-description: "ElliptiQ is a special kind of eq called &quot;elliptical
-  equalizer&quot; designed to only work on the stereo image of the low
-  frequencies and avoid phase issues"
+prices:
+  - amount: 7.99
+    currency: EUR
+description: ElliptiQ is a special kind of eq called "elliptical equalizer" designed to only work on the stereo image of the low frequencies and avoid phase issues
 details: |-
-  HoRNet ElliptiQ 1.1.0 is available, this update is free for owners of the plugin and includes: Added Apple Silicon native support
+  HoRNet ElliptiQ is a powerful elliptical equalizer, a specialized tool that has its origins in the era of vinyl cutting. This plugin is designed to address specific challenges that arise during the mastering of vinyl records, particularly with stereo bass frequencies that could cause the needle to jump out of the groove. With the resurgence of vinyl records, an equalizer like this has become essential for not only fixing phase issues but also enhancing the overall impact and presence of bass frequencies in modern music production.
+
+  In traditional vinyl mastering, bass frequencies can pose a significant problem if they are out of phase between the left and right channels. When the stereo difference in the bass frequencies is too wide or when they are in anti-phase, the cutting needle might skip, damaging the vinyl and causing distortion. To prevent this, an elliptical equalizer works by reducing the stereo width of low frequencies, specifically targeting the difference between the two channels. This ensures that the bass remains tightly centered and avoids the phase cancellation that can lead to needle jumping.
+
+  The plugin operates by processing the stereo signal in a Mid/Side configuration. The stereo signal is first converted into Mid/Side components, extracting the difference between the left and right channels. The Side part, which contains the stereo information, is then filtered using a low-shelf filter. This allows you to reduce the stereo width of the low frequencies, leaving the Mid portion intact. After filtering, the plugin reconstructs the stereo output, resulting in a track with more focused and centered bass frequencies.
+
+  HoRNet ElliptiQ allows you to filter out low frequencies up to 2000Hz, meaning it can impact both the deep bass and the midrange frequencies. The plugin offers a Butterworth style low shelf filter, which can be adjusted with three different slopes: 12 dB/octave, 24 dB/octave, and 48 dB/octave. The gentler slopes allow for a more subtle reduction of stereo width, while the steeper slopes provide a more aggressive approach to cutting out stereo information.
+
+  The Auto Width function continuously monitors the Mid/Side information and automatically adjusts the stereo width of the bass when the side signal is too high. A correlation meter divided into seven key frequencies lets you monitor the phase relationship between the left and right channels across different sections of the frequency spectrum, so potential phase cancellation can be spotted before it becomes a problem in the mix or during mastering.
+specs: |-
+  - Elliptic eq from 20 to 2000 Hz
+  - Three different slopes: 12, 24, 48 dB/octave
+  - Stereo wideness for low frequency from 100% to mono
+  - Automatic stereo wideness setting
+  - Correlation meter with 7 frequency bands
+  - macOS (10.13 and later) and Windows support
+  - 64-bit compatibility both on Mac and Windows
+  - Audio Units, VST2.4, VST3, AAX format
+  - Apple Silicon native support
+  - No copy protection
+versions:
+  - name: 1.1.0

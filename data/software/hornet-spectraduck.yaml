@@ -1,0 +1,65 @@
+id: YrSbBp4KXBAds0Si2E_Rb
+name: SpectraDuck
+manufacturer: hornet
+primaryCategory: dynamics
+categories:
+  - plugin
+  - effect
+  - compressor
+  - spectral
+  - spectral-processor
+  - mid-side
+formats:
+  - vst3
+  - au
+  - aax
+platforms:
+  - mac
+  - windows
+url: https://www.hornetplugins.com/plugins/hornet-spectraduck/
+prices:
+  - amount: 29.99
+    currency: EUR
+description: Spectral sidechain ducker that listens to your sidechain input in
+  the frequency domain and only ducks the frequencies where your trigger is
+  loud.
+details: |-
+  SpectraDuck is a sidechain ducker that looks at the spectrum, not just the loudness. When a kick hits at 60 Hz, SpectraDuck pulls down only around 60 Hz on the channel being ducked, and the rest of the signal passes through untouched. The result is ducking that follows the natural masking of the signal: where there is conflict it cuts, and where there is not it leaves things alone. There are no crossovers, no fixed bands and no phase issues between bands.
+
+  The plugin detects the spectral profile of the sidechain and works out automatically where the conflict lives, so no crossover, ratio or threshold setup is required. Three controls cover most use cases: Amount sets how hard the ducker pushes as a percentage (0% inactive, 100% full strength, default 100%), Range sets the maximum number of decibels it can cut at any moment (default 24 dB), and Sharpness sets how surgical the cut is, with high values following the sidechain spectrum exactly and low values spreading the cut over neighbouring frequencies for a more musical result (default 30%).
+
+  A real-time spectral display draws the input signal's spectrum in cyan, the post-ducking spectrum in yellow and the gain-reduction curve in magenta, so the ducking is visible at every moment. An HP/LP detector filter tells SpectraDuck which frequencies to listen to in the sidechain, for example 35 Hz to 220 Hz for a kick or 180 Hz to 5.5 kHz for a voice. Auto Time estimates Attack and Release from the sidechain content, giving a dry kick short times and a sustained voice longer ones, and is on by default. Lookahead adds a short buffer so the ducking anticipates transients for click-free operation on percussive sources, and is off by default.
+
+  MS Mode offers Linked (both channels ducked equally), Mid Only (only the mono centre ducked) and Side Only (only the stereo sides, for removing wide pads around a centred lead). Listen Mode offers Off for normal output, Sidechain to hear what the detector is listening to and verify the HP/LP settings, and Delta to hear only what is being cut.
+
+  Typical applications include kick versus bass (SpectraDuck on the bass bus with the kick as sidechain), vocal versus music bed (on the music bus with the vocal as sidechain), drum bus glue where only the low-mids conflicting with the kick are ducked, and podcast or voiceover work where background music ducks only in the frequencies where the voice lives. The maker is explicit about the limits: it does not replace a full multiband compressor for surgical fixed-band dynamic processing, and with no sidechain connected the plugin runs in passthrough by design.
+specs: |-
+  - FFT-based real-time spectral analysis, with no EQ bands and no fixed crossovers
+  - Amount control: how hard the ducker pushes, 0% to 100% (default 100%)
+  - Range control: maximum gain reduction at any moment (default 24 dB)
+  - Sharpness control: how surgical the cut is (default 30%)
+  - Real-time spectral display: input spectrum (cyan), post-ducking spectrum (yellow), gain-reduction curve (magenta), L/R output meters and gain-reduction meter
+  - HP/LP detector filter to restrict the sidechain frequency range
+  - Auto Time: automatically estimates Attack and Release from the sidechain content (on by default)
+  - Lookahead for click-free handling of percussive transients (off by default)
+  - MS Mode: Linked, Mid Only or Side Only
+  - Listen Mode: Off, Sidechain or Delta
+  - SC indicator shows sidechain active/inactive status; works with all DAW sidechain routing
+  - Latency approximately 5 ms, DAW-compensated via PDC
+  - 64-bit only
+  - macOS 10.15 or later, Intel and Apple Silicon native (M1, M2, M3, M4), no Rosetta required
+  - Windows 10 or later (64-bit)
+  - Instant download, no dongle required, lifetime free updates
+versions:
+  - name: 1.0.1
+links:
+  - url: https://www.hornetplugins.com/demo/
+    type: resource
+    title: Free demo
+  - url: https://www.hornetplugins.com/support/
+    type: resource
+    title: Support
+videos:
+  - provider: youtube
+    videoId: J1O1H7T24QM
+    title: Spectral sidechain ducking that only ducks where it counts
