@@ -8,6 +8,7 @@ categories:
   - glitch
 formats:
   - vst2
+  - vst3
   - au
 platforms:
   - mac
@@ -15,7 +16,7 @@ platforms:
   - linux
 url: https://illformed.com/glitch/
 prices:
-  - amount: 70
+  - amount: 0
     currency: USD
 description: Audio effect plugin featuring a multi-lane sequencer that can play multiple effects simultaneously, with the ability to trigger unique scenes from every note on your keyboard. Designed to slice, dice, chop, screw, twist, turn and mangle sounds into radical new forms. Each program consists of 128 scenes triggered via MIDI notes, each with its own unique sequencer pattern, timing, and effect settings. Includes randomize and mutate functions at almost every level for unexpected, chaotic and inspiring results.
 details: |-
@@ -28,12 +29,16 @@ details: |-
   Randomize and Mutate functions at almost every level — mutate a single effect for slight parameter variations, or instantly Randomize everything for unexpected, chaotic and inspiring results.
 
   Intuitive pattern editor with drag and drop — draw, erase, resize, split and join blocks with ease.
+
+  As of version 2.1.5 Glitch 2 is free to download and use, released in memory of its creator Kieran Foster (illformed / dblue / MaDHaTTeR, 1979 to 2026). The same release added VST3 builds for Windows, macOS and Linux.
 specs: |-
-  - windows: Windows 7 or higher, VST 2.4 host, 1024x768 resolution, CPU with SSE2
-  - mac: OS X 10.11 or higher, VST 2.4 or AU host, 1024x768 resolution, Intel CPU with SSE2 or Apple Silicon
-  - linux: Ubuntu 16 or higher, VST 2.4 host, 1024x768 resolution, CPU with SSE2, real-time kernel recommended
+  - windows: Windows 7 or higher, VST2 or VST3 host, 1024x768 resolution, CPU with SSE2
+  - mac: OS X 10.11 or higher, VST2, VST3 or AU host, 1024x768 resolution, Intel CPU with SSE2 or Apple Silicon
+  - linux: Ubuntu 18 or higher, VST2 or VST3 host, 1024x768 resolution, CPU with SSE2, real-time kernel recommended
   - notSupported: Pro Tools AAX/RTAS is not supported
 versions:
+  - name: 2.1.5
+    description: Glitch 2 is now free in memory of Kieran. Added VST3 versions for all platforms.
   - name: 2.1.4
     description: Fixed bug with external displays on some Apple Native Silicon Macs.
   - name: 2.1.3
@@ -52,7 +57,7 @@ versions:
     description: Initial release.
 links:
   - type: resource
-    url: https://illformed.com/downloads/glitch_2_1_4/Glitch2_User_Guide.pdf
+    url: https://illformed.com/downloads/Glitch2_User_Guide.pdf
     title: User Guide
 videos:
   - videoId: _zLL3Z2Kl0Q
