@@ -112,6 +112,20 @@ function rewriteCategoryList(doc: Document, aliases: Record<string, string>): st
   return changes;
 }
 
+/**
+ * The line width `Document.toString()` folds a plain scalar at. A value
+ * longer than this is written over several source lines whatever it holds,
+ * so "multi-line" has to be judged on width as well as on newlines: a folded
+ * single paragraph carries no newline at all, which is how 127 wrapped
+ * `details` survived the first whole-catalog pass (catalog#718).
+ */
+const FOLD_WIDTH = 80;
+
+/** A prose value that serialises over more than one source line. */
+function spansLines(value: string): boolean {
+  return value.includes("\n") || value.length > FOLD_WIDTH;
+}
+
 /** `details` and `specs`: YAML arrays become one block scalar, and a multi-line plain scalar becomes `|-`. */
 function normalizeProseField(doc: Document, key: "details" | "specs"): string[] {
   const node = doc.get(key, true);
@@ -132,9 +146,8 @@ function normalizeProseField(doc: Document, key: "details" | "specs"): string[] 
     return [`${key}: list -> block scalar`];
   }
   if (isScalar(node) && typeof node.value === "string") {
-    const multiLine = node.value.includes("\n");
     const isBlock = node.type === Scalar.BLOCK_LITERAL || node.type === Scalar.BLOCK_FOLDED;
-    if (multiLine && !isBlock) {
+    if (!isBlock && spansLines(node.value)) {
       doc.set(key, blockScalar(node.value));
       return [`${key}: plain scalar -> block scalar`];
     }
