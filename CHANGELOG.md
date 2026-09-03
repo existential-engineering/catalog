@@ -1,5 +1,206 @@
 # catalog
 
+## 3.57.0
+
+### Minor Changes
+
+- c86d0b1: catalog-import-merge: acon-digital adds 6 new plug-ins (Remix, Remix:Drums,
+  DeBleed:Drums, Extract:Dialogue 2, Multiply, Verberate Basic), refreshes
+  7 existing entries and marks AudioLiquid Converter discontinued.
+- dbace44: catalog-import-merge: adam-audio adds S Control and refreshes all 23
+  existing entries with current details, specs, videos and cosmetic
+  variants. Existing curated I/O left untouched.
+- 717935c: catalog-import-merge: audioblast adds 50 new entries (11 software, 39 content) and refreshes Abx3
+
+  Adds Audioblast's full current roster: the plugin line (AcidBox, Blast
+  Delay, BreadSlicer Pro, DistoBlast, Drum Blaster, Instalooper3,
+  Minilooper, Mininn Drum, Mininn Drum 2, Multi FX Blaster, Rave
+  Generator 3) plus 39 preset banks, sample packs and add-ons for ABX3
+  and Rave Generator 3.
+
+  The existing Abx3 entry gains formats, prices, specs, releaseDate,
+  videos and a refreshed description. Bundle SKUs were excluded per the
+  catalog's no-bundles rule.
+
+- 491c5c0: Import Darkglass Electronics (50 hardware/software/accessory entries).
+
+  Bass amplifier heads, combos and cabinets (Alpha·Omega and Microtubes
+  lines), overdrive/distortion/compressor pedals, the Anagram multi-effects
+  unit, footswitch and carrying-bag accessories, and the free Darkglass
+  Suite companion app.
+
+- 8cd57cb: Import Death By Audio (30 hardware/accessory entries).
+
+  Death By Audio is a Brooklyn-based boutique effects pedal maker.
+  Adds their core lineup of fuzz, distortion, delay, reverb, and
+  modulation pedals (Fuzz War, Apocalypse, Echo Dream 2, Rooms,
+  Total Sonic Annihilation 2, Time Shadows II, and others), plus a
+  handful of accessories (Raw Power supply, patch cables, mic-stand
+  mounting hardware, and a gig bag).
+
+- f552ae8: Import Empress Effects (37 hardware/accessory entries).
+
+  Adds the full current pedal lineup (compressors, drives, distortions,
+  delays, modulation, EQ, reverb, buffers, the ZOIA modular platform and
+  ZOIA Euroburo eurorack module) plus MIDI/power accessories. Four
+  limited-edition cosmetic variants (Heavy Menace Limited Edition,
+  ParaEq MKII Deluxe Black, 10th Anniversary Tremolo, ZOIA 10K) are
+  folded into their base entries' `variants` arrays. Five supersedes
+  edges link discontinued predecessors to their successors.
+
+- 3bf6f3b: Import HEDD (43 hardware/accessory entries)
+
+  Adds HEDD's studio monitor and headphone lineup: the TYPE 05/07/20/30
+  MK2 and A-CORE monitors, Tower Mains, BASS 08/12 subwoofers, and the
+  HEDDphone / HEDDphone TWO / TWO GT / D1 headphones, plus their
+  official cables, earpads, and adapters. Also adds the IsoAcoustics V120
+  mounting brackets and HEDD's own M05/M07/M20/M30 mount bundles used to
+  pair HEDD monitors with the V120 isolation system.
+
+  Four Atmos bundle/consultation listings (Bespoke, Bold, Dream, Light)
+  were intentionally excluded: they package existing monitor/subwoofer
+  SKUs rather than being standalone products.
+
+- b8a5f35: catalog-import-merge: hofa-plugins, 3 new entries and 36 refreshed
+
+  Adds SYSTEM ThirdPartyPluginLoader plus two 4U freeware utilities
+  (Meter, Fader & MS-Pan and Goniometer & Korrelator) that were absent
+  from the sitemap and reachable only from the freeware page. Refreshes
+  descriptions, details, specs, prices, videos and links across the 28
+  existing software and 8 content entries, filling 17 entries that
+  previously carried no description at all. No discontinuations.
+
+- 9e8b94c: catalog-import-merge: hornet, 3 new entries and 85 refreshed
+
+  Adds Spaces MK2, SpectraDuck and ZeroWidth. Refreshes descriptions,
+  details, specs, prices, formats and videos across the existing 85
+  HoRNet plugin entries, replacing changelog fragments and one-line
+  taglines with multi-paragraph prose and adding specs throughout. Marks
+  the original Spaces as discontinued. Its product page now redirects to
+  Spaces MK2.
+
+- 42d593a: Import Joranalogue Audio Design (28 catalog entries: 27 hardware modules and 1 accessory).
+
+  Belgian Eurorack modular manufacturer. Adds 27 modules spanning
+  slew limiters, filters, oscillators, sequencers, mixers and utility
+  modules (Contour 1, Filter 8, Generate 3, Step 8, Morph 4, and more),
+  plus the Patch cable line as an accessory entry.
+
+- ee5183a: Import JZ Microphones (16 hardware/accessory entries).
+
+  Nine condenser and hybrid ribbon/condenser studio microphones (The
+  Amethyst, BB29 Signature Series, Black Hole BH1s/BH2, MU-1 Hybrid,
+  Vintage 11/12/47/67), plus seven accessories (shock mounts, pop
+  filter, wooden storage cases).
+
+- df42de7: Import Lowden (41 hardware entries).
+
+  Irish acoustic guitar maker: the Original Series, 35 and 50 Series
+  tonewood lines, Jazz Series (S/WL body shapes with LR Baggs
+  electronics), the GL-10 and GL-J solid/semi-hollow electrics, and
+  signature models built with Alex De Grassi, Paul Brady, Pierre
+  Bensusan, Richard Thompson, and Thomas Leeb.
+
+- cc047b3: Import LR Baggs (30 hardware entries).
+
+  Acoustic pickup and amplification specialist: the AEG-1 acoustic-electric
+  guitar, the Anthem/Element/HiFi/M1/M80/LB6 pickup and blend-mic systems,
+  the Align Series pedalboard (Active DI, Chorus, Delay, EQ, Reverb,
+  Session), and the Para/Session/Venue/Stadium/Voiceprint DI preamps.
+
+- 3be85d5: Import Mr. Black (59 hardware entries).
+
+  Boutique guitar-effects pedals from Mr. Black (Portland, Oregon):
+  reverbs (BloodMoon, SuperMoon, Ambience), delays (Echo Repeater,
+  TapeX-2, TrancePortal), modulation (Vintage Ensemble, Analog Chorus &
+  Vibrato Deluxe, ThunderClaw, GilaMondo), and the "Black LTD." limited
+  production run of 21 additional circuits.
+
+- baadf0d: feat(catalog): import pedaltrain (63 hardware/accessory entries)
+
+  Adds Pedaltrain's pedalboard lineup (Classic, Metro, Novo, XD, JR MAX,
+  Terra 42), Deluxe MX soft cases, BTC-X tour cases, mounting hardware,
+  and three guitar effect pedals (Daylight Overdrive, Nightlight
+  Distortion, SUPERFUN! Awesome Overdrive).
+
+- a8ea170: Import Sonicware (19 hardware/accessory entries).
+
+  LIVEN series synths and grooveboxes (8bit warps, Ambient Ø,
+  BASS&BEATS, Evoke, Lofi-12, MEGA SYNTHESIS, Texture Lab, XFM),
+  ELZ_1 play, deconstruct MINIMAL, Lofi-12 XT (standard and retro
+  color), and SmplTrek, plus carrying cases, the LIVEN/deconstruct
+  PSU, deconstruct knob caps, and a TRS-to-MIDI adapter.
+
+- da07c7b: Import Source Audio (29 hardware/accessory entries).
+
+  Adds the full Source Audio pedal lineup (Ventris, Nemesis, C4 Synth,
+  Collider, Encounter, Ultrawave/Ultrawave Bass, and the rest of the
+  One Series and Soundblox 2 effects) plus the Neuro Hub, cables, and
+  control accessories that make up their ecosystem.
+
+- 4ad02a3: Import Walrus Audio (74 hardware/accessory entries).
+
+  Effects pedals (compressors, fuzzes, overdrives, reverbs, delays,
+  modulation) plus the Canvas line of pedalboard accessories (power
+  supplies, DI/reamp boxes, cables). Includes the MAKO Series and MAKO
+  Series MKII lineups as separate entries, and 27 cosmetic finish
+  editions (Craftsman/Platinum/Onyx/Obsidian/Harvest/Black Friday
+  Floral) folded into their base product's `variants` array rather
+  than imported as standalone entries.
+
+### Patch Changes
+
+- 874d964: catalog-import-merge: getgood-drums, refresh product details on 53 entries
+
+  Replaces one-line placeholder details with the current vendor prose for
+  all 24 GetGood Drums software entries and 29 content entries. No products
+  added, removed, or discontinued; names, descriptions, categories, formats,
+  prices and URLs are unchanged.
+
+- 08f1eb7: catalog-import-merge: gforce, refresh product details on 59 entries
+
+  Adds current vendor prose to 59 GForce Software entries, adds specs to 40
+  entries that had none, and follows the vendor's URL rename for The Streetly
+  Tapes Vol 2, 3 and 4. Corrects three prices that had been captured at a sale
+  value. No products added, removed, or discontinued.
+
+- 8fb3f18: catalog-import-merge: gg-audio, refresh Blue3 and Spin
+
+  Replaces scraped label fragments with real product prose on both entries,
+  adds full specs and demo videos to Blue3, and corrects its price, which was
+  recorded as zero against a listed 49 USD. No products added or removed.
+
+- 16a39b0: catalog-import-merge: glitchmachines, refreshed 22 existing entries
+
+  Refreshes details, specs and descriptions across 9 software and 13
+  content entries, adds version history to 9 plugins, formats to 5, and
+  `compatibleWith` host references to 3 sample packs. No new products and
+  no discontinuations.
+
+- 512be92: catalog-import-merge: goodhertz, refreshed 21 existing entries
+
+  Refreshes details and specs across all 21 software entries, adds
+  video references to 11, version history to 6, plugin formats to 2, and
+  corrects the primary category on CanOpener Studio and LA-210. No new
+  products and no discontinuations.
+
+- 04891a4: catalog-import-merge: hitnmix, refreshed 6 existing entries
+
+  Refreshes details and specs across all six RipX entries, adds pricing
+  and plugin formats to RipX DAW PRO, video references to two, and a
+  primary category to RipX. No new products and no discontinuations.
+
+- a3b0bf7: catalog-import-merge: ignite-amps, refreshed 11 existing entries
+
+  Adds details and specs to the 11 free Ignite Amps plugin entries, which
+  previously carried a description and little else. No new products and no
+  discontinuations: the site's roster matches the catalog exactly. The three
+  hardware pedals are deliberately untouched, their only presence on the
+  site being a photo portfolio with no specs.
+
+- 55f06af: catalog-import-merge: illformed, refreshed 1 existing entry (Glitch 2 now free, VST3 added)
+- 6f88adf: catalog-import-merge: inphonik, refreshed 4 existing entries (added user manual links)
+
 ## 3.56.0
 
 ### Minor Changes
