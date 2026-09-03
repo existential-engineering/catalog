@@ -1,39 +1,42 @@
-id: a6QZ4yNK95eCmDWDctOSd
+id: qr36WeXrZcXi3kXmkAfes
 name: Satellite
 manufacturer: rossum-electro-music
 primaryCategory: sequencer
 categories:
   - modular
+  - utility
 url: https://www.rossum-electro.com/products/satellite
-description: SATELLITE is available now from Rossum Electro-Music dealers worldwide.
+description: A compact standalone CV generator that can be loaded with presets
+  and preset sequences from a Control Forge or another Satellite, functioning
+  independently once transferred.
 details: |-
-  SATELLITE is available now from Rossum Electro-Music dealers worldwide. Satellite is a compact 12HP module that can be loaded with all (or a subset) of the presets and preset sequences from a Rossum Electro-Music Control Forge or other Satellite and then function as a completely stand-alone CV generator. Once the presets and preset sequences are transferred from the other module (via a patch cord connection), Satellite no longer requires any connection to the module. With one or more Satellites , you can take advantage of all of your Control Forge presets and sequences in multiple cabinets or even different systems. Multiple Satellites can be programmed from the same Control Forge and synced together via their Gate inputs to create complex polyphonic sequences and modulation contours. In addition to direct connection with a Control Forge or other Satellite , presets and preset sequences can also be loaded via audio file archives that have been saved from a Control Forge or Satellite . And since those files can be posted online and downloaded, it’s a great way to share and exchange presets. Satellite QuickStart Guide (PDF) Satellite Manual (PDF)
+  Satellite is a compact 12HP module that can be loaded with all (or a subset) of the presets and preset sequences from a Rossum Electro-Music Control Forge or other Satellite and then function as a completely stand-alone CV generator. Once the presets and preset sequences are transferred from the other module (via a patch cord connection), Satellite no longer requires any connection to the module. With one or more Satellites , you can take advantage of all of your Control Forge presets and sequences in multiple cabinets or even different systems. Multiple Satellites can be programmed from the same Control Forge and synced together via their Gate inputs to create complex polyphonic sequences and modulation contours. In addition to direct connection with a Control Forge or other Satellite , presets and preset sequences can also be loaded via audio file archives that have been saved from a Control Forge or Satellite . And since those files can be posted online and downloaded, it’s a great way to share and exchange presets. Satellite QuickStart Guide (PDF) Satellite Manual (PDF)
 io:
-  - key: TFTHHfpC
+  - key: T5zBcYFU
     name: Gate/Trig
     signalFlow: input
-    category: audio
+    category: midi
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - key: 92shrSlT
+  - key: jM5EavRE
     name: Logic
     signalFlow: input
-    category: audio
+    category: midi
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - key: RDN2rQDi
+  - key: BgNBrHr0
     name: CV 1-4
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/8-inch
-    maxConnections: 4
+    maxConnections: 1
     position: Top
-  - key: GOKh2xyd
+  - key: sTo5WHFK
     name: Time Scale CV
     signalFlow: input
     category: audio
@@ -41,35 +44,35 @@ io:
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - key: AY4BTku2
+  - key: i0zNHZMY
     name: Preset Seq Dec/Inc/Reset
     signalFlow: input
-    category: audio
+    category: midi
     type: cv/gate
     connection: 1/8-inch
-    maxConnections: 3
+    maxConnections: 1
     position: Top
-  - key: 52kFX0GZ
-    name: + Output / Inverted Output
+  - key: KIRndqwW
+    name: + Output
     signalFlow: output
     category: audio
-    type: cv/gate
+    type: line
     connection: 1/8-inch
-    maxConnections: 2
+    maxConnections: 1
     position: Top
-  - key: Hdz9uuTq
+  - key: uH60GWgS
+    name: "- Output"
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wRixNVkJ
     name: Trigger 1 & 2
     signalFlow: output
-    category: audio
+    category: midi
     type: cv/gate
     connection: 1/8-inch
-    maxConnections: 2
-    position: Top
-  - key: UnobDAyS
-    name: Power
-    signalFlow: input
-    category: power
-    type: power
-    connection: pin-header
     maxConnections: 1
-    position: Bottom
+    position: Top

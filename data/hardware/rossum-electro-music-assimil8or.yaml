@@ -1,14 +1,16 @@
-id: A-SNsotej54HP0lpqDHma
+id: JilfEvxJZtbMyLKdhPoKy
 name: Assimil8or
 manufacturer: rossum-electro-music
 primaryCategory: sampler
 categories:
   - modular
-  - semi-modular
+  - physical-modeling
 url: https://www.rossum-electro.com/products/assimil8or
-description: ASSIMIL8OR is available now from Rossum Electro-Music dealers worldwide.
+description: An eight-channel multi-timbral phase-modulation sampler for
+  Eurorack with 24-bit A/D and D/A conversion. Each channel offers independent
+  CV control of pitch, bit depth, aliasing, and sample manipulation.
 details: |-
-  ASSIMIL8OR is available now from Rossum Electro-Music dealers worldwide. Designed to provide a powerful, flexible sampling engine for modular synthesis, the ASSIMIL8OR Multi-Timbral Phase Modulation Sampler module is the latest incarnation of Dave Rossum’s decades-long pioneering of affordable professional sampling technology. ASSIMIL8OR provides eight independent channels of sampling with sound quality that can range from extremely hi-fi to low fi, all with extensive real-time CV control. Key ASSIMIL8OR features include:
+  Designed to provide a powerful, flexible sampling engine for modular synthesis, the ASSIMIL8OR Multi-Timbral Phase Modulation Sampler module is the latest incarnation of Dave Rossum’s decades-long pioneering of affordable professional sampling technology. ASSIMIL8OR provides eight independent channels of sampling with sound quality that can range from extremely hi-fi to low fi, all with extensive real-time CV control.
 specs: |-
   - Eight-channel multi-timbral operation. Each channel will be available from its own independent output as well as appearing in the stereo mix output.
   - Superb 24-bit A/D and D/A conversion.
@@ -26,59 +28,59 @@ specs: |-
   - A front panel accessible SD card for sample and preset storage.
   - And a lot more…
 io:
-  - key: ZLp6X7N1
+  - key: OUsqeM5z
     name: Sample L/R
     signalFlow: input
     category: audio
     type: line
     connection: 1/8-inch
-    maxConnections: 2
+    maxConnections: 1
     position: Top
-  - key: rNlI1uC0
+  - key: jEpTO9qg
     name: Gate/Trigger 1-8
     signalFlow: input
-    category: audio
+    category: midi
     type: cv/gate
     connection: 1/8-inch
-    maxConnections: 8
+    maxConnections: 1
     position: Top
-  - key: jvAWC4QB
+  - key: O95kBKsD
     name: CV A 1-8
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/8-inch
-    maxConnections: 8
+    maxConnections: 1
     position: Top
-  - key: fbOdWcM9
+  - key: eL5YGft4
     name: CV B & C 1-8
     signalFlow: input
     category: audio
     type: cv/gate
     connection: 1/8-inch
-    maxConnections: 16
+    maxConnections: 1
     position: Top
-  - key: QGZ14biy
-    name: Mix L/R Output
+  - key: jlU1WMkU
+    name: Mix L/R
     signalFlow: output
     category: audio
     type: line
     connection: 1/8-inch
-    maxConnections: 2
+    maxConnections: 1
     position: Top
-  - key: Msps6yC0
+  - key: MaAX7dvh
     name: Individual Outputs 1-8
     signalFlow: output
     category: audio
     type: line
     connection: 1/8-inch
-    maxConnections: 8
+    maxConnections: 1
     position: Top
-  - key: hYfYUvah
+  - key: qHXyCld4
     name: Power
     signalFlow: input
     category: power
     type: power
     connection: pin-header
-    maxConnections: 1
+    maxConnections: 16
     position: Bottom
