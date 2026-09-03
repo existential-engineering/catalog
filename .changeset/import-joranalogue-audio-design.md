@@ -2,7 +2,7 @@
 "catalog": minor
 ---
 
-Import Joranalogue Audio Design (28 hardware/software entries).
+Import Joranalogue Audio Design (28 catalog entries: 27 hardware modules and 1 accessory).
 
 Belgian Eurorack modular manufacturer. Adds 27 modules spanning
 slew limiters, filters, oscillators, sequencers, mixers and utility
