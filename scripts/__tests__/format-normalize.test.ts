@@ -102,6 +102,16 @@ describe("normalizeDocument", () => {
     expect(out).toBe("name: Foo\ndetails: |-\n  First.\n\n  Second.\n");
   });
 
+  it("promotes a plain details scalar folded over several source lines", () => {
+    const yaml =
+      "name: Foo\ndetails: A single paragraph long enough that the writer folds it\n  over more than one source line, with no newline in the value.\n";
+    const { changes, out } = run(yaml);
+    expect(changes).toEqual(["details: plain scalar -> block scalar"]);
+    expect(out).toBe(
+      "name: Foo\ndetails: |-\n  A single paragraph long enough that the writer folds it over more than one source line, with no newline in the value.\n"
+    );
+  });
+
   it("strips the kept newline of a `|` block so it serialises as `|-`", () => {
     const { changes, out } = run("name: Foo\ndetails: |\n  Text.\n");
     expect(changes).toEqual(["details: trailing newline stripped"]);
