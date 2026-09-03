@@ -33,6 +33,47 @@ export interface UntermedGroup {
  * where two carry the same term. A single price per currency never needs
  * a term, so it is never reported.
  */
+/** A prices array and the path it sits at in the entry. */
+export interface PriceArray {
+  path: (string | number)[];
+  prices: PriceLike[];
+}
+
+/** The subset of an entry that can carry price arrays. */
+export interface PricedEntry {
+  prices?: unknown;
+  versions?: unknown;
+  variants?: unknown;
+}
+
+/**
+ * Every prices array the schemas accept, with its path: the entry's own,
+ * then one per version and per variant. W131 reads all of them, so an
+ * ambiguous pair inside a version is reported like one at the top level.
+ */
+export function collectPriceArrays(entry: PricedEntry): PriceArray[] {
+  const out: PriceArray[] = [];
+  if (Array.isArray(entry.prices)) out.push({ path: ["prices"], prices: entry.prices });
+  for (const key of ["versions", "variants"] as const) {
+    const list = entry[key];
+    if (!Array.isArray(list)) continue;
+    for (const [index, item] of list.entries()) {
+      const prices = (item as { prices?: unknown } | null)?.prices;
+      if (Array.isArray(prices)) out.push({ path: [key, index, "prices"], prices });
+    }
+  }
+  return out;
+}
+
+/** `versions[1].prices[0]` for a path, the shape the other warnings use. */
+export function formatPricePath(path: readonly (string | number)[]): string {
+  return path.reduce<string>(
+    (acc, segment) =>
+      typeof segment === "number" ? `${acc}[${segment}]` : acc ? `${acc}.${segment}` : segment,
+    ""
+  );
+}
+
 export function findUntermedGroups(prices: readonly PriceLike[]): UntermedGroup[] {
   const byCurrency = new Map<string, number[]>();
   prices.forEach((price, index) => {

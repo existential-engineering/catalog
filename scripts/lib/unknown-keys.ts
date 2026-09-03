@@ -50,10 +50,12 @@ interface ZodDef {
   getter?: () => z.ZodType;
 }
 
+/** The Zod 4 internal definition of a schema, the shape this walker reads. */
 function defOf(schema: z.ZodType): ZodDef {
   return (schema as unknown as { _zod: { def: ZodDef } })._zod.def;
 }
 
+/** True for a plain object value (not null, not an array). */
 function isPlainObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
@@ -82,6 +84,7 @@ function containerKind(schema: z.ZodType): "object" | "array" | null {
   }
 }
 
+/** Recurse through schema and value together, recording keys the schema lacks. */
 function walk(
   schema: z.ZodType,
   value: unknown,

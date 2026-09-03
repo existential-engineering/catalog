@@ -280,8 +280,9 @@ rest. Write new ones here first, then mirror them in `.coderabbit.yaml`.
 
 - **Every powered hardware entry has a power input.** A DC barrel, an IEC
   inlet, a USB power port or phantom power from a host each count. A unit
-  with none of those says so in an io entry note or in `specs`
-  (`battery-only`, `bus-powered via USB-C`). A missing power input was the
+  with none of those says so in `specs` (`battery-only`, `bus-powered via
+USB-C`). Not in an io entry: the io shape has no note field, so a note
+  there is stripped like any other unknown key. A missing power input was the
   single most repeated finding (Sonicware, Darkglass, Empress, Benson,
   Joranalogue).
 - **One entry per physical connector.** A name carrying `L/R`, `1-4` or
@@ -641,8 +642,10 @@ translations:
 `translations.<locale>`.** "Manual (Deutsch)", "Manuel (français)", a title
 written in Japanese: move the link or video to `translations.<locale>.links`
 or `.videos` with the localized title, for every locale in
-`schema/locales.yaml`. A locale that is not in that file stays a general link
-with a locale-neutral title. `pnpm validate:translations` checks the block.
+`schema/locales.yaml`. A locale that is not in that file stays where it is,
+a link in `links` or a video in `videos`, with a locale-neutral title. A
+video never moves to `links`: the two shapes differ and the schema rejects
+a video there. `pnpm validate:translations` checks the block.
 
 **Adding a new locale:**
 

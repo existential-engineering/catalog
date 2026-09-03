@@ -20,7 +20,12 @@ import {
   manufacturerNameIsPrefix,
   TAGLINE_EXCLUSIONS,
 } from "./lib/name-hygiene.js";
-import { findUntermedGroups, PRICE_TERMS } from "./lib/price-terms.js";
+import {
+  collectPriceArrays,
+  findUntermedGroups,
+  formatPricePath,
+  PRICE_TERMS,
+} from "./lib/price-terms.js";
 import type {
   CategoriesSchema,
   CategoryAliasesSchema,
@@ -1233,6 +1238,8 @@ interface WarningContext {
   formats?: string[];
   platforms?: string[];
   prices?: Array<{ currency?: string; term?: string }>;
+  versions?: Array<{ prices?: Array<{ currency?: string; term?: string }> }>;
+  variants?: Array<{ prices?: Array<{ currency?: string; term?: string }> }>;
 }
 
 /**
@@ -1271,10 +1278,10 @@ function collectWarnings(
   // W131: several prices in one currency that carry no `term` cannot be
   // told apart (a perpetual licence beside a monthly plan). One price per
   // currency never needs a term.
-  if (Array.isArray(data.prices)) {
-    for (const group of findUntermedGroups(data.prices)) {
+  for (const { path, prices } of collectPriceArrays(data)) {
+    for (const group of findUntermedGroups(prices)) {
       const first = group.untermed[0] ?? group.repeated[0] ?? 0;
-      const line = getLineForPath(document, lineCounter, ["prices", first]);
+      const line = getLineForPath(document, lineCounter, [...path, first]);
       const reason =
         group.untermed.length > 0
           ? `${group.untermed.length} of them carry no term`
@@ -1282,7 +1289,7 @@ function collectWarnings(
       warnings.push({
         code: ValidationErrorCode.W131_PRICE_TERM_MISSING,
         message: `Several ${group.currency} prices and ${reason}. Set term (${PRICE_TERMS.join(", ")}) on each, or keep one price per currency.`,
-        path: `prices[${first}]`,
+        path: formatPricePath([...path, first]),
         line: line ?? undefined,
       });
     }

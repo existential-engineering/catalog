@@ -58,6 +58,22 @@ describe("normalizeDocument", () => {
     expect(out).toBe("name: Foo\nprimaryCategory: equalizer\ncategories:\n  - effect\n");
   });
 
+  it("drops a secondaryCategory equal to primaryCategory, also after alias rewriting", () => {
+    const { changes, out } = run("primaryCategory: effect\nsecondaryCategory: fx\n");
+    expect(changes).toEqual([
+      "secondaryCategory: fx -> effect",
+      "secondaryCategory: dropped, equal to primaryCategory",
+    ]);
+    expect(out).toBe("primaryCategory: effect\n");
+  });
+
+  it("reports no change when a categories list holds something other than scalars", () => {
+    const yaml = "primaryCategory: pedal\ncategories:\n  - fx\n  - [ nested ]\n";
+    const { changes, out } = run(yaml);
+    expect(changes).toEqual([]);
+    expect(out).toBe(yaml);
+  });
+
   it("removes the categories list when nothing survives", () => {
     const { out } = run("name: Foo\nprimaryCategory: pedal\ncategories:\n  - pedal\n");
     expect(out).toBe("name: Foo\nprimaryCategory: pedal\n");

@@ -40,16 +40,22 @@ export interface NormalizeOptions {
   aliases: Record<string, string>;
 }
 
+/** The string value of a scalar node, or null for anything else. */
 function scalarString(node: unknown): string | null {
   return isScalar(node) && typeof node.value === "string" ? node.value : null;
 }
 
+/** A `|-` block literal scalar, trailing newlines stripped so it stays `|-`. */
 function blockScalar(value: string): Scalar {
   const scalar = new Scalar(value.replace(/\n+$/, ""));
   scalar.type = Scalar.BLOCK_LITERAL;
   return scalar;
 }
 
+/**
+ * Canonicalise `primaryCategory` and `secondaryCategory`, then drop a
+ * secondary that equals the primary once both are canonical.
+ */
 function rewriteCategoryScalars(doc: Document, aliases: Record<string, string>): string[] {
   const changes: string[] = [];
   for (const key of CATEGORY_KEYS) {
@@ -59,9 +65,20 @@ function rewriteCategoryScalars(doc: Document, aliases: Record<string, string>):
     doc.set(key, aliases[value]);
     changes.push(`${key}: ${value} -> ${aliases[value]}`);
   }
+  const primary = scalarString(doc.get("primaryCategory", true));
+  const secondary = scalarString(doc.get("secondaryCategory", true));
+  if (primary !== null && primary === secondary) {
+    doc.delete("secondaryCategory");
+    changes.push("secondaryCategory: dropped, equal to primaryCategory");
+  }
   return changes;
 }
 
+/**
+ * Canonicalise the `categories` list, dropping the primary and duplicates.
+ * A list holding anything but plain scalars is left alone and reports no
+ * change, so the caller never logs a rewrite that did not happen.
+ */
 function rewriteCategoryList(doc: Document, aliases: Record<string, string>): string[] {
   const changes: string[] = [];
   const node = doc.get("categories", true);
@@ -71,7 +88,7 @@ function rewriteCategoryList(doc: Document, aliases: Record<string, string>): st
   const kept: string[] = [];
   for (const item of node.items) {
     const raw = scalarString(item);
-    if (raw === null) return changes;
+    if (raw === null) return [];
     const canonical = raw in aliases ? (aliases[raw] as string) : raw;
     if (canonical !== raw) changes.push(`categories: ${raw} -> ${canonical}`);
     if (canonical === primary) {
@@ -129,6 +146,7 @@ function normalizeProseField(doc: Document, key: "details" | "specs"): string[] 
   return [];
 }
 
+/** Put each io entry's fields in `IO_FIELD_ORDER`, unknown fields after the known set. */
 function orderIoFields(doc: Document): string[] {
   const node = doc.get("io", true);
   if (!isSeq(node)) return [];
