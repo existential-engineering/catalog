@@ -895,15 +895,15 @@ const AccessorySchema = z
 // =============================================================================
 
 /**
- * `--strict-unknown-keys` turns W132 into E121. Zod strips a key it does
- * not declare, so without this an import can ship `prices[].type`,
- * `versions[].notes` or a top-level `discontinued: true` and never hear of
- * it (catalog#689). The import lanes pass the flag on their own changed
- * files. The whole-catalog run stays advisory until the 337 files on
- * `main` that predate the check are backfilled, at which point the flag
- * becomes the default.
+ * A key the schema does not declare is the hard error E121 on every run.
+ * Zod strips such a key, so before AUREO-1079 an import could ship
+ * `prices[].type`, `versions[].notes` or a top-level `discontinued: true`
+ * and never hear of it (catalog#689). The check shipped as the advisory
+ * W132, with `--strict-unknown-keys` opting into E121, while 337 files on
+ * `main` predated it; catalog#716 backfilled those and strict is now the
+ * only mode. The flag is still accepted, and ignored, because the import
+ * lanes in racks probe this file for it and pass it on their changed files.
  */
-const STRICT_UNKNOWN_KEYS = process.argv.includes("--strict-unknown-keys");
 
 interface DataWithOptionalFields {
   manufacturer?: string;
@@ -981,26 +981,24 @@ function validateFile(
       };
     }
 
-    if (STRICT_UNKNOWN_KEYS) {
-      const unknown = collectUnknownKeys(schema, rawData);
-      if (unknown.length > 0) {
-        const errorCode = ValidationErrorCode.E121_UNKNOWN_KEY;
-        const details: ValidationErrorDetail[] = unknown.map((finding) => {
-          const line = getLineForPath(document, lineCounter, [...finding.parent, finding.key]);
-          return {
-            code: errorCode,
-            message: `Key '${finding.key}' is not in the schema and would be silently dropped. Remove it or add it to the schema.`,
-            path: formatUnknownKeyPath(finding),
-            line: line ?? undefined,
-            docsUrl: getDocsUrl(errorCode),
-          };
-        });
+    const unknown = collectUnknownKeys(schema, rawData);
+    if (unknown.length > 0) {
+      const errorCode = ValidationErrorCode.E121_UNKNOWN_KEY;
+      const details: ValidationErrorDetail[] = unknown.map((finding) => {
+        const line = getLineForPath(document, lineCounter, [...finding.parent, finding.key]);
         return {
-          file: path.relative(process.cwd(), filePath),
-          errors: details.map((d) => `${d.path}${d.line ? `:${d.line}` : ""}: ${d.message}`),
-          details,
+          code: errorCode,
+          message: `Key '${finding.key}' is not in the schema and would be silently dropped. Remove it or add it to the schema.`,
+          path: formatUnknownKeyPath(finding),
+          line: line ?? undefined,
+          docsUrl: getDocsUrl(errorCode),
         };
-      }
+      });
+      return {
+        file: path.relative(process.cwd(), filePath),
+        errors: details.map((d) => `${d.path}${d.line ? `:${d.line}` : ""}: ${d.message}`),
+        details,
+      };
     }
 
     // Validate against Zod schema
@@ -1254,26 +1252,10 @@ function collectWarnings(
   allSoftwareSlugs?: Set<string>,
   allHardwareSlugs?: Set<string>,
   manufacturerUrlMap?: Map<string, string>,
-  manufacturerNameMap?: Map<string, string>,
-  schema?: z.ZodType
+  manufacturerNameMap?: Map<string, string>
 ): ValidationWarning | null {
   const warnings: ValidationWarningDetail[] = [];
   const relativeFile = path.relative(process.cwd(), filePath);
-
-  // W132: a key the schema does not declare. Zod strips it, so the entry
-  // validates and builds while the value never reaches the database.
-  // `--strict-unknown-keys` reports the same finding as E121 instead.
-  if (schema && !STRICT_UNKNOWN_KEYS) {
-    for (const finding of collectUnknownKeys(schema, data)) {
-      const line = getLineForPath(document, lineCounter, [...finding.parent, finding.key]);
-      warnings.push({
-        code: ValidationErrorCode.W132_UNKNOWN_KEY,
-        message: `Key '${finding.key}' is not in the schema and is silently dropped. Remove it or add it to the schema.`,
-        path: formatUnknownKeyPath(finding),
-        line: line ?? undefined,
-      });
-    }
-  }
 
   // W131: several prices in one currency that carry no `term` cannot be
   // told apart (a perpetual licence beside a monthly plan). One price per
@@ -1729,8 +1711,7 @@ function validate(): ValidationResult {
           allSoftwareSlugs,
           allHardwareSlugs,
           manufacturerUrlMap,
-          manufacturerNameMap,
-          SoftwareSchema
+          manufacturerNameMap
         );
         if (w) warnings.push(w);
       } catch {
@@ -1757,8 +1738,7 @@ function validate(): ValidationResult {
           allSoftwareSlugs,
           allHardwareSlugs,
           manufacturerUrlMap,
-          manufacturerNameMap,
-          ContentSchema
+          manufacturerNameMap
         );
         if (w) warnings.push(w);
       } catch {
@@ -1785,8 +1765,7 @@ function validate(): ValidationResult {
           undefined,
           allHardwareSlugs,
           manufacturerUrlMap,
-          undefined,
-          HardwareSchema
+          undefined
         );
         if (w) warnings.push(w);
       } catch {
@@ -1813,8 +1792,7 @@ function validate(): ValidationResult {
           undefined,
           allHardwareSlugs,
           manufacturerUrlMap,
-          undefined,
-          AccessorySchema
+          undefined
         );
         if (w) warnings.push(w);
       } catch {

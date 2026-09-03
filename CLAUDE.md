@@ -401,11 +401,14 @@ Zod strips every key a schema does not declare, so an entry carrying
 is the structural cause of catalog#689, where ten entries marked with the
 flag stayed live in Studio.
 
-`pnpm validate` warns on every such key (W132, at any depth). The import
-lanes run `pnpm validate --files <changed> --strict-unknown-keys`, which
-turns the same finding into E121, so a new entry cannot ship one. The
-whole-catalog run stays advisory until the 337 files on `main` that predate
-the check are backfilled, after which strict becomes the default. A field
+`pnpm validate` rejects every such key (E121, at any depth), so an entry
+carrying one cannot merge. The check shipped as the advisory W132 while 337
+files on `main` predated it; catalog#716 backfilled those and strict has
+been the only mode since. `--strict-unknown-keys` is still accepted and
+changes nothing, because the racks import lanes probe this repo for the
+flag and pass it on their changed files. A top-level `images` block is
+the one key reported as E199 instead, checked on the raw object before
+any schema runs, because product images live in R2 keyed by id. A field
 that is genuinely new data goes into the schema in the same PR.
 
 ## Content Entries

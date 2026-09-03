@@ -77,9 +77,11 @@ reviews:
           yearly, rent-to-own). Never suggest dropping a real price to remove a
           duplicate. One price per currency needs no term.
         - Any key outside the schema (`prices[].type`, `versions[].notes`, top-level
-          `note`, top-level `discontinued`) is silently dropped by validation. Flag it
-          and name the schema field that holds the value (`discontinued` is a
-          category, a price term is `term`, a version note is `description`).
+          `note`, top-level `discontinued`) fails validation (E121, or E199 for a
+          top-level `images` block, which is rejected before any schema runs). When
+          one appears in a diff, name the schema field that holds the value
+          (`discontinued` is a category, a price term is `term`, a version note is
+          `description`).
         - `platforms: [ios]` only when the page names iOS, iPadOS, AUv3, iPad or
           iPhone or links to the App Store.
 
