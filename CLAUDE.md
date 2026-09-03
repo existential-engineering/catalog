@@ -406,8 +406,10 @@ carrying one cannot merge. The check shipped as the advisory W132 while 337
 files on `main` predated it; catalog#716 backfilled those and strict has
 been the only mode since. `--strict-unknown-keys` is still accepted and
 changes nothing, because the racks import lanes probe this repo for the
-flag and pass it on their changed files. A field that is genuinely new
-data goes into the schema in the same PR.
+flag and pass it on their changed files. A top-level `images` block is
+the one key reported as E199 instead, checked on the raw object before
+any schema runs, because product images live in R2 keyed by id. A field
+that is genuinely new data goes into the schema in the same PR.
 
 ## Content Entries
 

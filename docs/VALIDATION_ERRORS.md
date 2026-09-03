@@ -386,7 +386,10 @@ the value never reached the database. `prices[].type`, `versions[].notes`, a
 top-level `note` and the `discontinued: true` flag behind catalog#689 all arrived
 this way. The check began as the advisory W132 while 337 entries on `main` predated
 it; those were backfilled in catalog#716 and it has been a hard error on every run
-since. `--strict-unknown-keys` is still accepted and changes nothing.
+since. `--strict-unknown-keys` is still accepted and changes nothing. One key is
+caught earlier and reported differently: a top-level `images` block is E199, because
+product images live in R2 keyed by id and the block is rejected on the raw object
+before any schema runs.
 
 **Fix:** Remove the key, or move the value where the schema keeps it (`discontinued`
 is a category, a price term is `term`, a version note is `description`). If the
