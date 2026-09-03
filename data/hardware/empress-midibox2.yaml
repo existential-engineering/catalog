@@ -1,0 +1,87 @@
+id: -Abj2ZDUeYfQEqOPrASQH
+name: Midibox2
+manufacturer: empress
+primaryCategory: midi
+categories:
+  - utility
+  - discontinued
+supersedes: oNKb8K5zcoH-tOXp-18i0
+url: https://empresseffects.com/products/midibox2
+prices:
+  - amount: 79
+    currency: USD
+description: "The successor to the Midibox: a MIDI-to-control-port converter
+  that controls Empress pedals equipped with a control port over MIDI. Adds
+  MIDI-out relaying and LED feedback on top of the original's four control-port
+  outputs."
+details: |-
+  The Midibox2 connects Empress pedals equipped with a control port to MIDI, converting a standard 5-pin MIDI signal into control-port outputs on 1/4" jacks so up to four Empress pedals can be controlled simultaneously with ordinary guitar patch cables.
+
+  As the newer revision of the Midibox, it adds two features. An internal DIP switch can be set to accept MIDI-out messages from a pedal's control port and relay them to the other control ports and to the MIDI thru/out connector. LED feedback lights up to show when and where MIDI messages are being sent. It runs on a standard 9V DC supply in a die-cast aluminum enclosure.
+specs: |-
+  - Converts 5-pin MIDI to Empress control-port outputs (1/4" jacks)
+  - 4 control-port outputs (control up to 4 pedals at once)
+  - MIDI out: internal DIP switch relays control-port MIDI to the other ports and the MIDI thru/out connector
+  - LED feedback showing MIDI message activity
+  - Power: 9V DC, 2.1mm barrel connector (negative tip)
+  - Power consumption: ~30mA
+  - Enclosure: die-cast aluminum
+  - Dimensions: 4.5" L x 2.5" W x 1.25" H
+  - Weight: 0.5 lb
+io:
+  - key: OwxmHRrC
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - key: uZCzCast
+    name: MIDI Thru/Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - key: pOGpNE7f
+    name: Control Port Output 1
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 7OJL9744
+    name: Control Port Output 2
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Wj9xOBRk
+    name: Control Port Output 3
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 6j7hOLX0
+    name: Control Port Output 4
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Q0RtsQz7
+    name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Top
