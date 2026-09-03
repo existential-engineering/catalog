@@ -1,0 +1,189 @@
+id: ozND1IwuLJKNS_NwqQRMe
+name: Walk 4
+manufacturer: joranalogue-audio-design
+primaryCategory: sequencer
+categories:
+  - modular
+  - analog
+  - noise
+  - utility
+url: https://joranalogue.com/products/walk-4
+description: "Walk 4 combines four analogue accumulators with a clock generator, four white noise sources and an auto reset system to create a 10 HP voltage stepping juggernaut."
+details: |-
+  A ‘battery for CV’, an analogue accumulator is a circuit which stores a voltage, and then charges or discharges it in discrete steps according to a trigger signal. Walk 4 combines four such accumulators with a clock generator, four white noise sources and an auto reset system to create a 10 HP voltage stepping juggernaut.
+
+  The accumulators are principally used to create staircase waveforms. At each trigger, the stored voltage changes by a certain amount. This value can be set directly through an input, by the module’s shared parameters trend, volatility and constrain, or any combination thereof.
+
+  Trend provides a fixed value input to all accumulators, while constrain prevents them from straying too far away from the baseline. Volatility brings the noise generators into play, adding an element of chance at every trigger. This elevates Walk 4 from not just a quad arpeggiator or subharmonics generator, but also a fourfold random walk CV or coloured noise source.
+
+  With full voltage control and independent value and trigger inputs for each accumulator, there’s always more stochastic patching to explore ahead. And if you need a reliable master clock source with a huge range, 1 volt per octave tracking and external reset—that’s covered, too.
+
+  Like a sample-and-hold with a master’s degree, Walk 4 brings a welcome touch of vintage analogue computing to any Eurorack system.
+specs: |-
+  - 4 high-precision analogue voltage accumulators.
+  - Integrated wide-range clock trigger generator with 1 volt per octave tracking.
+  - Trend parameter for simultaneous modulation of all accumulator values.
+  - 4 white noise generators add adjustable volatility.
+  - Constrain provides counteracting force, preventing voltages from accumulating too quickly.
+  - Automatic and trigger-driven reset functions.
+  - Add input adds a continuous external signal to all accumulator outputs.
+  - Impedance-compensated outputs with dual-colour vari-wave LEDs.
+  - Trim potentiometers accessible from the front panel.
+  - Precision-milled 2 mm anodised aluminium front panel with high-resolution, non-erasable graphics.
+  - Bullet-proof design: polarised power header and MOSFET protection circuit.
+  - Includes 16-to-10-pin Eurorack power ribbon cable.
+  - Premium mounting hardware: black screws, black nylon washers and matching hex key.
+  - High-quality components and assembly; designed and made in Belgium.
+io:
+  - key: E1CRwep4
+    name: Accumulator 1 Value Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: lUI5eki2
+    name: Accumulator 1 Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 9VxV7w7L
+    name: Accumulator 1 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: s0oCzGri
+    name: Accumulator 2 Value Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: FMX7SVhj
+    name: Accumulator 2 Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: WGky15z9
+    name: Accumulator 2 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: y2Hc87wy
+    name: Accumulator 3 Value Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: NFzFko4b
+    name: Accumulator 3 Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: GhhKskRP
+    name: Accumulator 3 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: nFFUvt0X
+    name: Accumulator 4 Value Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: LQofq6AQ
+    name: Accumulator 4 Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: itRPxLvn
+    name: Accumulator 4 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: v2uVqY76
+    name: Trend CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: EGsRwxLm
+    name: Volatility CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: KMs60AF0
+    name: Constrain CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: cxI4PMWh
+    name: Add Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: bg66Ptam
+    name: Clock CV Input (1V/oct)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: uiNu6P6C
+    name: Reset Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: xG39Jo6H
+    name: Clock Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
