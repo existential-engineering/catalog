@@ -7,18 +7,20 @@
  * Usage:
  *   tsx scripts/format-yaml.ts                      # whole catalog
  *   tsx scripts/format-yaml.ts data/hardware/a.yaml # just these files
- *   tsx scripts/format-yaml.ts --normalize          # whole catalog, shape rules too
  *
  * Formatting has no cross-file dependency, so scoping it to the files an
  * import touched turns a whole-catalog pass into an instant one.
  *
- * Scoped runs also normalise entry shape (lib/format-normalize.ts): alias
+ * Every run also normalises entry shape (lib/format-normalize.ts): alias
  * categories become canonical, a secondary category equal to the primary
  * is dropped, `details` and `specs` become `|-` block scalars, and io
- * fields take their documented order. The unscoped run does not, because
- * `assign-ids.yml` runs it on every PR sync and 708 entries on `main`
- * still carry aliases: a whole-catalog rewrite is a deliberate
- * `--normalize` pass in a PR of its own, never a side effect of a sync.
+ * fields take their documented order. Until catalog#720 that was scoped
+ * to explicit paths, because `assign-ids.yml` runs the unscoped form on
+ * every PR sync and 708 entries on `main` still carried aliases, so the
+ * whole-catalog rewrite had to be a deliberate pass in a PR of its own
+ * (#718, #720). Nothing is left to rewrite, so the sync run now keeps the
+ * tree in shape and a `--normalize` flag is accepted only for muscle
+ * memory: it changes nothing.
  */
 
 import { execFileSync } from "node:child_process";
@@ -99,10 +101,9 @@ function filesToFormat(): { files: string[]; scoped: boolean } {
 }
 
 const { files, scoped } = filesToFormat();
-const normalize = scoped || process.argv.includes("--normalize");
-const aliases = normalize
-  ? loadYamlFile<CategoryAliasesSchema>(path.join(SCHEMA_DIR, "category-aliases.yaml")).aliases
-  : {};
+const { aliases } = loadYamlFile<CategoryAliasesSchema>(
+  path.join(SCHEMA_DIR, "category-aliases.yaml")
+);
 
 let reordered = 0;
 let normalized = 0;
@@ -113,7 +114,7 @@ for (const file of files) {
   // Manufacturer entries carry none of the normalised fields, and the
   // alias map is for product categories, so they are left to the id hoist.
   const changes =
-    normalize && path.basename(path.dirname(file)) !== "manufacturers"
+    path.basename(path.dirname(file)) !== "manufacturers"
       ? normalizeDocument(doc, { aliases })
       : [];
   if (movedId) reordered++;

@@ -1,6 +1,6 @@
 /**
- * Shape normalisation for one catalog entry, applied by `pnpm format` on
- * the files it is given explicitly.
+ * Shape normalisation for one catalog entry, applied by every `pnpm format`
+ * run, scoped to explicit paths or over the whole tree.
  *
  * `pnpm format` used to hoist `id` and run Prettier and nothing else, so
  * every shape rule the reviewer checks by eye (alias categories, a
@@ -9,11 +9,12 @@
  * reached the PR and came back as a CodeRabbit finding. Those were 38 of
  * the 384 inline findings across 75 import PRs.
  *
- * Deliberately scoped. `assign-ids.yml` runs an unscoped `pnpm format` on
- * every PR sync, and 708 files on `main` carry alias categories, so an
- * unscoped normalisation would rewrite those on the first PR after it
- * landed. The unscoped run keeps its old behaviour, and the whole-catalog
- * pass is a separate, deliberate `--normalize` run recorded in its own PR.
+ * It was scoped to explicit paths at first, because `assign-ids.yml` runs
+ * an unscoped `pnpm format` on every PR sync and 708 files on `main`
+ * carried alias categories, so an unscoped normalisation would have
+ * rewritten those under the first PR after it landed. catalog#718 and
+ * #720 made that rewrite deliberately, in PRs of their own, and with
+ * nothing left to rewrite the sync run now applies these rules too.
  */
 
 import { type Document, isMap, isScalar, isSeq, type Pair, Scalar, YAMLSeq } from "yaml";
