@@ -9,10 +9,10 @@ categories:
 url: https://sonicware.jp/products/liven-lofi-12
 description: LIVEN Lofi-12 is a lo-fi sampling groovebox with a 12-bit sampler
   mode and 4-track sequencer for easy lo-fi and chill beat making. It offers
-  chromatic sample playback, resampling and chopping, 11 track effects, 9 master
+  chromatic sample playback, resampling and chopping, 12 track effects, 9 master
   reverbs, and a "laid-back" knob for drunk-beat swing.
 details: |-
-  LIVEN Lofi-12 is a lo-fi sampling groovebox with a 4-track sequencer for easy lo-fi and chill music creation. Its retro sampling engine offers a 12-bit sampler mode, and you can easily play samples chromatically across the keyboard. A powerful 4-track sequencer adds parameter and sound locking, a laid-back knob creates drunk beats, and each track carries 11 types of effects alongside 9 types of master reverb.
+  LIVEN Lofi-12 is a lo-fi sampling groovebox with a 4-track sequencer for easy lo-fi and chill music creation. Its retro sampling engine offers a 12-bit sampler mode, and you can easily play samples chromatically across the keyboard. A powerful 4-track sequencer adds parameter and sound locking, a laid-back knob creates drunk beats, and each track carries 12 types of effects alongside 9 types of master reverb.
 
   This product does not include an AC adapter. If you need one, please select the "With PSU" option.
 specs: |-
@@ -21,7 +21,7 @@ specs: |-
   - Various sample editing features
   - Resampling and Chopping
   - Maximum polyphony: 10 voices
-  - 11 Track effects: Chorus, Flanger, Tremolo, Delay, Distortion, Bit Crusher, Low Pass Filter, High Pass Filter, Isolator, Tilt EQ, Compressor
+  - 12 Track effects: Chorus, Flanger, Tremolo, Delay, Distortion, Bit Crusher, Low Pass Filter, High Pass Filter, Isolator, Tilt EQ, Compressor, S.Maximizer
   - 9 Master effects: Hall Reverb, Room Reverb, Arena Reverb, Plate Reverb, Tunnel Reverb, Infinity Reverb, Cassette Tape Simulator, Vinyl Simulator, Remix performance effect
   - 128 sample memory slots (16 x 8 banks)
   - Sequencer: 4 tracks, up to 64 steps, 64 patterns, Swing
@@ -36,7 +36,7 @@ io:
     signalFlow: input
     category: midi
     type: midi
-    connection: 1/8-inch
+    connection: 5-pin din
     maxConnections: 1
     position: Top
   - key: U9v3UwYf
@@ -44,7 +44,7 @@ io:
     signalFlow: output
     category: midi
     type: midi
-    connection: 1/8-inch
+    connection: 5-pin din
     maxConnections: 1
     position: Top
   - key: pKzxDZy4
@@ -85,5 +85,13 @@ io:
     category: audio
     type: headphone
     connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Mp4T3HM5
+    name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
     maxConnections: 1
     position: Top
