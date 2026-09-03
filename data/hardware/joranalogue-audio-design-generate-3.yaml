@@ -21,3 +21,133 @@ details: |-
   While the amplitudes can be adjusted manually, each timbral channel supports through-zero amplitude modulation, also known as balanced or ring modulation. When audio-frequency modulation signals are applied, the harmonics become ‘split’, enriching the spectrum.
 
   In addition to all the usual analogue synthesis techniques, the extensive set of modulation options makes Generate 3 especially suited for exploring multiphonic synthesis: a monophonic source creating a complex timbre, much like throat singing, yet by electronic means.
+specs: |-
+  - High-stability precision analogue triangle-core VC(LF)O with fine and coarse tuning.
+  - Waveform outputs: core (triangle), fundamental (sine), even (saw), odd and full (mix of timbral channels).
+  - 1 volt/octave pitch tracking over the full audio range.
+  - Exponential frequency modulation with polariser knob.
+  - Through-zero linear frequency modulation with symmetry/modulation polariser knob, and AC-coupling and bias switches.
+  - Through-zero phase modulation with 900° of shift range.
+  - Through-zero amplitude modulation of three timbral channels: fundamental, even and odd harmonics.
+  - Two simultaneous oscillator synchronisation types: reset (hard sync) and flip (soft sync).
+  - LF mode for LFO use. Ultra-wide total frequency range: 2.8 mHz (6 minutes) to 27 kHz, a range of nearly 10,000,000:1!
+  - Impedance-compensated outputs with dual-colour LEDs.
+  - Trim potentiometer accessible from the front panel.
+  - Precision-milled 2 mm anodised aluminium front panel with high-resolution, non-erasable graphics.
+  - Bullet-proof design: polarised power header and MOSFET protection circuit.
+  - Includes 16-to-10-pin Eurorack power ribbon cable.
+  - Premium mounting hardware: black screws, black nylon washers and matching hex key.
+  - High-quality components and assembly; designed and made in Belgium.
+io:
+  - key: cNvfNEni
+    name: Volt Per Octave FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ddRjMXYc
+    name: Exponential FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: iZvqToqH
+    name: Reset Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: FLl6jTtJ
+    name: Flip Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: EfyLkd6R
+    name: Through-Zero FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: QAnWlh5i
+    name: Phase Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 1WMj0vhU
+    name: Fundamental Level Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Z7fhVE3c
+    name: Even Level Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 9u6gTPBH
+    name: Odd Level Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Q2Lu7Bmo
+    name: Core Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: v1Urknrc
+    name: Full Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: kRu6nNfj
+    name: Fundamental Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: asJQ65j2
+    name: Even Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: kw5xYZyX
+    name: Odd Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
