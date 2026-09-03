@@ -74,7 +74,6 @@ export enum ValidationErrorCode {
   W129_MANUFACTURER_IN_NAME = "W129",
   W130_NAME_TAGLINE = "W130",
   W131_PRICE_TERM_MISSING = "W131",
-  W132_UNKNOWN_KEY = "W132",
 }
 
 // =============================================================================
@@ -320,10 +319,6 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.W131_PRICE_TERM_MISSING]: {
     title: "Several prices in one currency without a term",
     anchor: "w131-several-prices-in-one-currency-without-a-term",
-  },
-  [ValidationErrorCode.W132_UNKNOWN_KEY]: {
-    title: "Key not in the schema",
-    anchor: "w132-key-not-in-the-schema",
   },
 };
 

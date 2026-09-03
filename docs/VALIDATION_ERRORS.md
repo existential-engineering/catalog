@@ -378,15 +378,15 @@ entries for those bays.
 
 ### E121: Key Not in the Schema
 
-`pnpm validate --strict-unknown-keys` found a key no collection schema declares, at
-the top level or inside `prices`, `versions`, `variants`, `io`, `links` or `videos`.
-Without the flag the same finding is the advisory W132.
+`pnpm validate` found a key no collection schema declares, at the top level or
+inside `prices`, `versions`, `variants`, `io`, `links` or `videos`.
 
 Zod strips a key it does not declare, so the entry validated, built and shipped while
 the value never reached the database. `prices[].type`, `versions[].notes`, a
 top-level `note` and the `discontinued: true` flag behind catalog#689 all arrived
-this way. The import lanes run with the flag on their own changed files, so a new
-entry cannot ship one.
+this way. The check began as the advisory W132 while 337 entries on `main` predated
+it; those were backfilled in catalog#716 and it has been a hard error on every run
+since. `--strict-unknown-keys` is still accepted and changes nothing.
 
 **Fix:** Remove the key, or move the value where the schema keeps it (`discontinued`
 is a category, a price term is `term`, a version note is `description`). If the
@@ -684,17 +684,6 @@ drop prices to satisfy it.
 
 **Fix:** Set `term` on each price (`perpetual`, `monthly`, `yearly`, `rent-to-own`),
 or keep one price per currency. One price per currency never needs a term.
-
----
-
-### W132: Key Not in the Schema
-
-A key no collection schema declares, at any depth. Zod strips it silently, so the
-value validates and builds while never reaching the database. The same finding is the
-error E121 under `pnpm validate --strict-unknown-keys`, which the import lanes run on
-their changed files.
-
-**Fix:** See E121.
 
 
 ---
