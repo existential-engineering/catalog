@@ -1,0 +1,84 @@
+id: 8AMF2MVa6JUA6LwXirtsH
+name: Assimil8or
+manufacturer: rossum-electro-music
+primaryCategory: sampler
+categories:
+  - modular
+  - semi-modular
+url: https://www.rossum-electro.com/products/assimil8or
+description: ASSIMIL8OR is available now from Rossum Electro-Music dealers worldwide.
+details: |-
+  ASSIMIL8OR is available now from Rossum Electro-Music dealers worldwide. Designed to provide a powerful, flexible sampling engine for modular synthesis, the ASSIMIL8OR Multi-Timbral Phase Modulation Sampler module is the latest incarnation of Dave Rossum’s decades-long pioneering of affordable professional sampling technology. ASSIMIL8OR provides eight independent channels of sampling with sound quality that can range from extremely hi-fi to low fi, all with extensive real-time CV control. Key ASSIMIL8OR features include:
+specs: |-
+  - Eight-channel multi-timbral operation. Each channel will be available from its own independent output as well as appearing in the stereo mix output.
+  - Superb 24-bit A/D and D/A conversion.
+  - Mono or stereo sampling. Channels can be configured as eight mono voices, four stereo voices, or any combination. (Well, any combination that adds up to eight).
+  - The ability to assign up to 8 samples to each channel and select between them in real time via CV.
+  - DC coupling through the signal path for sampling of control voltages.
+  - Unique timbral capabilities with the ability to phase modulate samples by external analog signals or by other samples (a first, we believe).
+  - Variable sample fidelity with independently selectable sample rate and bit depth.
+  - Real-time CV control of bit depth.
+  - Real-time CV control of aliasing (from virtually none to lots).
+  - Extensive sample manipulation and looping capabilities.
+  - Sample scrubbing under CV control.
+  - One-shot or gated sample playback with variable attack and release times.
+  - Gate/trigger inputs and CV inputs for each sample that can be assigned independently for each channel to virtually any sample parameter. Examples include:Pitch Level Bit Depth Phase Modulation Pan Scrub Sample Start Sample Length Loop Start Loop Length Release Time
+  - A front panel accessible SD card for sample and preset storage.
+  - And a lot more…
+io:
+  - key: CtuQRzvz
+    name: Sample L/R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 2
+    position: Top
+  - key: 9wuUQKPg
+    name: Gate/Trigger 1-8
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 8
+    position: Top
+  - key: wPYgBctM
+    name: CV A 1-8
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 8
+    position: Top
+  - key: AeMA5pBp
+    name: CV B & C 1-8
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 16
+    position: Top
+  - key: L6NmX5ro
+    name: Mix L/R Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 2
+    position: Top
+  - key: ue03VDKA
+    name: Individual Outputs 1-8
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 8
+    position: Top
+  - key: nk1ohhVf
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
