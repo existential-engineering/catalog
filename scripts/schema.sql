@@ -116,7 +116,10 @@ CREATE TABLE IF NOT EXISTS software_prices (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
     amount REAL NOT NULL,
-    currency TEXT NOT NULL
+    currency TEXT NOT NULL,
+    -- Optional licence term (perpetual, monthly, yearly, rent-to-own).
+    -- Additive: older Studio builds select by name and never see it.
+    term TEXT
 );
 
 CREATE INDEX idx_software_prices_software ON software_prices(software_id);
@@ -222,7 +225,10 @@ CREATE TABLE IF NOT EXISTS content_prices (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     content_id TEXT NOT NULL REFERENCES content(id) ON DELETE CASCADE,
     amount REAL NOT NULL,
-    currency TEXT NOT NULL
+    currency TEXT NOT NULL,
+    -- Optional licence term (perpetual, monthly, yearly, rent-to-own).
+    -- Additive: older Studio builds select by name and never see it.
+    term TEXT
 );
 
 CREATE INDEX idx_content_prices_content ON content_prices(content_id);
@@ -361,7 +367,10 @@ CREATE TABLE IF NOT EXISTS hardware_prices (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
     amount REAL NOT NULL,
-    currency TEXT NOT NULL
+    currency TEXT NOT NULL,
+    -- Optional licence term (perpetual, monthly, yearly, rent-to-own).
+    -- Additive: older Studio builds select by name and never see it.
+    term TEXT
 );
 
 CREATE INDEX idx_hardware_prices_hardware ON hardware_prices(hardware_id);
@@ -371,7 +380,10 @@ CREATE TABLE IF NOT EXISTS hardware_variant_prices (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     variant_id INTEGER NOT NULL REFERENCES hardware_variants(id) ON DELETE CASCADE,
     amount REAL NOT NULL,
-    currency TEXT NOT NULL
+    currency TEXT NOT NULL,
+    -- Optional licence term (perpetual, monthly, yearly, rent-to-own).
+    -- Additive: older Studio builds select by name and never see it.
+    term TEXT
 );
 
 CREATE INDEX idx_hardware_variant_prices_variant ON hardware_variant_prices(variant_id);
@@ -483,7 +495,10 @@ CREATE TABLE IF NOT EXISTS accessories_prices (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     accessory_id TEXT NOT NULL REFERENCES accessories(id) ON DELETE CASCADE,
     amount REAL NOT NULL,
-    currency TEXT NOT NULL
+    currency TEXT NOT NULL,
+    -- Optional licence term (perpetual, monthly, yearly, rent-to-own).
+    -- Additive: older Studio builds select by name and never see it.
+    term TEXT
 );
 
 CREATE INDEX idx_accessories_prices_accessory ON accessories_prices(accessory_id);
@@ -813,7 +828,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (18, 'Added manufacturers_fts FTS5 full-text search table', 0),
     (19, 'Added content_hardware_compatibility table for content-to-hardware references', 0),
     (20, 'Added search_terms column to all FTS5 tables; changed tokenizer from porter unicode61 to unicode61', 1),
-    (21, 'Added stable port_key column to hardware_io', 0);
+    (21, 'Added stable port_key column to hardware_io', 0),
+    (22, 'Added optional term column to every prices table', 0);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES

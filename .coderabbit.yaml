@@ -55,11 +55,51 @@ reviews:
         - Flag if the same product might exist under a different slug/name
         - Software products should NOT be in manufacturers/ (they belong in software/)
 
+        I/O modelling conventions (CLAUDE.md "I/O Modelling Conventions", enforced
+        mechanically by the racks io-lint before the PR opens, so flag only what it
+        cannot see):
+        - Every powered hardware entry carries a power input entry (barrel, IEC, USB
+          power, phantom from a host) or says battery-only or bus-powered in `specs`.
+          The io shape has no note field, so never ask for one there.
+        - MIDI on a DIN socket is `connection: 5-pin din` (7-pin where documented).
+          MIDI on a minijack or 1/4-inch keeps that connection with `type: midi`.
+        - Footswitch and expression jacks: `category: audio`, `type: expression`.
+        - USB host ports and network ports are `signalFlow: bidirectional`. Amplifier
+          speaker outputs are `type: speaker-level`, one entry per jack, impedance in
+          the name.
+        - Rear-panel jacks are `position: Right` on pedals, desktop and rack gear.
+          500-series modules use `Bottom`. Eurorack uses `Top` or `Bottom` per panel.
+          Do not ask for `Right` on a 500-series module.
+        - Option-card or optional-module connectors are not baseline `io`.
+
+        Prices and unknown keys:
+        - Several prices in one currency each carry `term` (perpetual, monthly,
+          yearly, rent-to-own). Never suggest dropping a real price to remove a
+          duplicate. One price per currency needs no term.
+        - Any key outside the schema (`prices[].type`, `versions[].notes`, top-level
+          `note`, top-level `discontinued`) is silently dropped by validation. Flag it
+          and name the schema field that holds the value (`discontinued` is a
+          category, a price term is `term`, a version note is `description`).
+        - `platforms: [ios]` only when the page names iOS, iPadOS, AUv3, iPad or
+          iPhone or links to the App Store.
+
+        `supersedes` on import PRs: the importer resolves it after assign-ids behind
+        a confidence gate and lists every link in the PR body. Do not ask the PR to
+        hand-wire a link the resolver left out. An ambiguous or absent predecessor
+        goes to the monthly discontinued report instead.
+
+        Findings that are wrong on sight (do not raise them): `details`, `specs`,
+        `platforms` and `videos[].title` are optional. `trs` is not a connection
+        value, the schema models the jack size. `rj45` is spelled `ethernet`.
+        `variants[].slug` is valid. `position` is required on every io entry except
+        played instruments. `Bottom` is the 500-series convention.
+
         Translations and locale-specific content:
         - Links with locale indicators in titles (e.g., "User Manual (Spanish)") should use translations section instead
         - If a link title contains a language name in parentheses, it should be moved to translations.<locale>.links
         - Supported locales are defined in schema/locales.yaml (de, es, fr, ja, ko, pt-BR, zh)
-        - For unsupported locales, either add the locale to schema/locales.yaml or keep as a general link
+        - For unsupported locales, either add the locale to schema/locales.yaml or keep the item where it is (a link in links, a video in videos) with a locale-neutral title
+        - A non-English video title, or a language name in a video title, moves the video to translations.<locale>.videos the same way. A video never moves to links, the schema rejects it there
 
     - path: "schema/**/*.yaml"
       instructions: |

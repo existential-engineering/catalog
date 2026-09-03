@@ -376,6 +376,24 @@ entries for those bays.
 
 ---
 
+### E121: Key Not in the Schema
+
+`pnpm validate --strict-unknown-keys` found a key no collection schema declares, at
+the top level or inside `prices`, `versions`, `variants`, `io`, `links` or `videos`.
+Without the flag the same finding is the advisory W132.
+
+Zod strips a key it does not declare, so the entry validated, built and shipped while
+the value never reached the database. `prices[].type`, `versions[].notes`, a
+top-level `note` and the `discontinued: true` flag behind catalog#689 all arrived
+this way. The import lanes run with the flag on their own changed files, so a new
+entry cannot ship one.
+
+**Fix:** Remove the key, or move the value where the schema keeps it (`discontinued`
+is a category, a price term is `term`, a version note is `description`). If the
+value is genuinely new data, add it to the schema in the same PR.
+
+---
+
 ### E199: Validation Error
 
 A generic validation error that doesn't fall into a more specific category.
@@ -654,6 +672,30 @@ The `name` contains an en/em dash or pipe with surrounding spaces — the signat
 Plain hyphens are not flagged (`AmpHub - Mizar Dist Plus Model` is a real product name), and pipes without spaces are real model numbers (Crown `CDi 4|600`).
 
 **Fix:** Keep only the product name; move descriptive text to `description`. If a product sold through a storefront carries the real developer's brand as a suffix, set `manufacturer` to that developer instead. If the separator is part of the official product name (Spitfire's `Alex Epton — Entropy`), add the slug to `TAGLINE_EXCLUSIONS` in `scripts/lib/name-hygiene.ts`.
+
+---
+
+### W131: Several Prices in One Currency Without a Term
+
+The entry carries two or more `prices` in the same currency and at least one of them
+has no `term`, or two share a term. A reader cannot tell a perpetual licence from a
+monthly plan, and an importer that met this as a duplicate-price finding used to
+drop prices to satisfy it.
+
+**Fix:** Set `term` on each price (`perpetual`, `monthly`, `yearly`, `rent-to-own`),
+or keep one price per currency. One price per currency never needs a term.
+
+---
+
+### W132: Key Not in the Schema
+
+A key no collection schema declares, at any depth. Zod strips it silently, so the
+value validates and builds while never reaching the database. The same finding is the
+error E121 under `pnpm validate --strict-unknown-keys`, which the import lanes run on
+their changed files.
+
+**Fix:** See E121.
+
 
 ---
 
