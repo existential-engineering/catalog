@@ -2,7 +2,7 @@
 "catalog": patch
 ---
 
-catalog-import-merge: kazrog — refreshed 12 plugin entries with current specs, system requirements and pricing
+catalog-import-merge: kazrog, refreshed 12 plugin entries with current specs, system requirements and pricing
 
 Reconciled all 13 existing Kazrog entries against the live
 kazrog.com storefront. No products were added or discontinued:
