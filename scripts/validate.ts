@@ -20,6 +20,7 @@ import {
   manufacturerNameIsPrefix,
   TAGLINE_EXCLUSIONS,
 } from "./lib/name-hygiene.js";
+import { findUntermedGroups, PRICE_TERMS } from "./lib/price-terms.js";
 import type {
   CategoriesSchema,
   CategoryAliasesSchema,
@@ -32,6 +33,7 @@ import type {
   ValidationWarning,
   ValidationWarningDetail,
 } from "./lib/types.js";
+import { collectUnknownKeys, formatUnknownKeyPath } from "./lib/unknown-keys.js";
 import {
   DATA_DIR,
   findClosestMatch,
@@ -377,6 +379,8 @@ const PriceSchema = z.object({
   asOf: z.iso.date().optional(),
   /** Source of price (e.g., "official-website", "retailer") */
   source: z.string().optional(),
+  /** What the amount buys when one currency carries several prices (W131). */
+  term: z.enum(PRICE_TERMS).optional(),
 });
 
 const VideoLinkSchema = z.object({
@@ -885,6 +889,17 @@ const AccessorySchema = z
 // VALIDATION FUNCTIONS
 // =============================================================================
 
+/**
+ * `--strict-unknown-keys` turns W132 into E121. Zod strips a key it does
+ * not declare, so without this an import can ship `prices[].type`,
+ * `versions[].notes` or a top-level `discontinued: true` and never hear of
+ * it (catalog#689). The import lanes pass the flag on their own changed
+ * files. The whole-catalog run stays advisory until the 337 files on
+ * `main` that predate the check are backfilled, at which point the flag
+ * becomes the default.
+ */
+const STRICT_UNKNOWN_KEYS = process.argv.includes("--strict-unknown-keys");
+
 interface DataWithOptionalFields {
   manufacturer?: string;
   primaryCategory?: string;
@@ -959,6 +974,28 @@ function validateFile(
           },
         ],
       };
+    }
+
+    if (STRICT_UNKNOWN_KEYS) {
+      const unknown = collectUnknownKeys(schema, rawData);
+      if (unknown.length > 0) {
+        const errorCode = ValidationErrorCode.E121_UNKNOWN_KEY;
+        const details: ValidationErrorDetail[] = unknown.map((finding) => {
+          const line = getLineForPath(document, lineCounter, [...finding.parent, finding.key]);
+          return {
+            code: errorCode,
+            message: `Key '${finding.key}' is not in the schema and would be silently dropped. Remove it or add it to the schema.`,
+            path: formatUnknownKeyPath(finding),
+            line: line ?? undefined,
+            docsUrl: getDocsUrl(errorCode),
+          };
+        });
+        return {
+          file: path.relative(process.cwd(), filePath),
+          errors: details.map((d) => `${d.path}${d.line ? `:${d.line}` : ""}: ${d.message}`),
+          details,
+        };
+      }
     }
 
     // Validate against Zod schema
@@ -1195,6 +1232,7 @@ interface WarningContext {
   specs?: string;
   formats?: string[];
   platforms?: string[];
+  prices?: Array<{ currency?: string; term?: string }>;
 }
 
 /**
@@ -1209,10 +1247,46 @@ function collectWarnings(
   allSoftwareSlugs?: Set<string>,
   allHardwareSlugs?: Set<string>,
   manufacturerUrlMap?: Map<string, string>,
-  manufacturerNameMap?: Map<string, string>
+  manufacturerNameMap?: Map<string, string>,
+  schema?: z.ZodType
 ): ValidationWarning | null {
   const warnings: ValidationWarningDetail[] = [];
   const relativeFile = path.relative(process.cwd(), filePath);
+
+  // W132: a key the schema does not declare. Zod strips it, so the entry
+  // validates and builds while the value never reaches the database.
+  // `--strict-unknown-keys` reports the same finding as E121 instead.
+  if (schema && !STRICT_UNKNOWN_KEYS) {
+    for (const finding of collectUnknownKeys(schema, data)) {
+      const line = getLineForPath(document, lineCounter, [...finding.parent, finding.key]);
+      warnings.push({
+        code: ValidationErrorCode.W132_UNKNOWN_KEY,
+        message: `Key '${finding.key}' is not in the schema and is silently dropped. Remove it or add it to the schema.`,
+        path: formatUnknownKeyPath(finding),
+        line: line ?? undefined,
+      });
+    }
+  }
+
+  // W131: several prices in one currency that carry no `term` cannot be
+  // told apart (a perpetual licence beside a monthly plan). One price per
+  // currency never needs a term.
+  if (Array.isArray(data.prices)) {
+    for (const group of findUntermedGroups(data.prices)) {
+      const first = group.untermed[0] ?? group.repeated[0] ?? 0;
+      const line = getLineForPath(document, lineCounter, ["prices", first]);
+      const reason =
+        group.untermed.length > 0
+          ? `${group.untermed.length} of them carry no term`
+          : "two of them share a term";
+      warnings.push({
+        code: ValidationErrorCode.W131_PRICE_TERM_MISSING,
+        message: `Several ${group.currency} prices and ${reason}. Set term (${PRICE_TERMS.join(", ")}) on each, or keep one price per currency.`,
+        path: `prices[${first}]`,
+        line: line ?? undefined,
+      });
+    }
+  }
 
   // io.type is not checked here: it is a hard error (E117) via the Zod IOSchema,
   // so an unknown value fails validation outright. io.connection remains advisory.
@@ -1648,7 +1722,8 @@ function validate(): ValidationResult {
           allSoftwareSlugs,
           allHardwareSlugs,
           manufacturerUrlMap,
-          manufacturerNameMap
+          manufacturerNameMap,
+          SoftwareSchema
         );
         if (w) warnings.push(w);
       } catch {
@@ -1675,7 +1750,8 @@ function validate(): ValidationResult {
           allSoftwareSlugs,
           allHardwareSlugs,
           manufacturerUrlMap,
-          manufacturerNameMap
+          manufacturerNameMap,
+          ContentSchema
         );
         if (w) warnings.push(w);
       } catch {
@@ -1701,7 +1777,9 @@ function validate(): ValidationResult {
           lineCounter,
           undefined,
           allHardwareSlugs,
-          manufacturerUrlMap
+          manufacturerUrlMap,
+          undefined,
+          HardwareSchema
         );
         if (w) warnings.push(w);
       } catch {
@@ -1727,7 +1805,9 @@ function validate(): ValidationResult {
           lineCounter,
           undefined,
           allHardwareSlugs,
-          manufacturerUrlMap
+          manufacturerUrlMap,
+          undefined,
+          AccessorySchema
         );
         if (w) warnings.push(w);
       } catch {
