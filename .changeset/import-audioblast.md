@@ -2,7 +2,7 @@
 "catalog": minor
 ---
 
-catalog-import-merge: audioblast — 50 new entries (11 software, 39 content), Abx3 refreshed
+catalog-import-merge: audioblast adds 50 new entries (11 software, 39 content) and refreshes Abx3
 
 Adds Audioblast's full current roster: the plugin line (AcidBox, Blast
 Delay, BreadSlicer Pro, DistoBlast, Drum Blaster, Instalooper3,
