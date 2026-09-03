@@ -19,7 +19,9 @@ url: https://oddsound.com/mreditor.php
 prices:
   - amount: 46.41
     currency: USD
-description: MR Editor unlocks the power of the Ensoniq MR synth engine, enabling sound creation and editing for Ensoniq MR series synthesizers (MR Rack, MR61, MR76, ZR76) on modern computers via plugin or standalone.
+description: MR Editor unlocks the power of the Ensoniq MR synth engine,
+  enabling sound creation and editing for Ensoniq MR series synthesizers (MR
+  Rack, MR61, MR76, ZR76) on modern computers via plugin or standalone.
 details: |-
   MR Editor is a plugin and standalone application that enables editing and sound creation for the Ensoniq MR series synthesizers from the mid-1990s, including the MR Rack, MR61, MR76, and ZR76. It connects to the hardware via MIDI and provides a modern, resizable interface with Retina/HiDPI support.
 
@@ -44,32 +46,46 @@ specs: |-
   - macOS: 10.9+ (64-bit only, Intel or ARM)
 versions:
   - name: "1.09"
-    date: 2025-09-26
-    notes: Fix standalone version crashing on older versions of macOS. Restore window position on re-opening standalone version on Windows.
+    releaseDate: 2025-09-26
+    description: Fix standalone version crashing on older versions of macOS. Restore
+      window position on re-opening standalone version on Windows.
   - name: "1.08"
-    date: 2025-09-02
-    notes: Fix port list scroll constantly resetting in standalone MIDI port setup window. Warn user if trying to overwrite ROM. Warn user if MIDI input port is already in use on Windows. Fix param values not getting reported to host after loading session with VST3 versions in Reaper. Fix potential crash on closing window immediately after using mouse wheel. Fix crash on closing plug-in window in Logic running on an Intel Mac. Fix UI crash when running in Kushview Element on Mac. Fix crash on Windows if querying non-existent value from registry. Fix incorrect sound showing after selecting from menu for a drum key. Fix incorrect param change messages sent to hardware for drum keys C2 and above. Ensure modelID and deviceID are set correctly when sending SysEx dumps loaded from disk. Ensure deviceID is always set to 0 in SysEx dumps saved to disk. Fix some factory sound names.
+    releaseDate: 2025-09-02
+    description: Fix port list scroll constantly resetting in standalone MIDI port
+      setup window. Warn user if trying to overwrite ROM. Warn user if MIDI
+      input port is already in use on Windows. Fix param values not getting
+      reported to host after loading session with VST3 versions in Reaper. Fix
+      potential crash on closing window immediately after using mouse wheel. Fix
+      crash on closing plug-in window in Logic running on an Intel Mac. Fix UI
+      crash when running in Kushview Element on Mac. Fix crash on Windows if
+      querying non-existent value from registry. Fix incorrect sound showing
+      after selecting from menu for a drum key. Fix incorrect param change
+      messages sent to hardware for drum keys C2 and above. Ensure modelID and
+      deviceID are set correctly when sending SysEx dumps loaded from disk.
+      Ensure deviceID is always set to 0 in SysEx dumps saved to disk. Fix some
+      factory sound names.
   - name: "1.07"
-    date: 2023-10-29
-    notes: Add check marks to wave menu to show current selection. More robust handling of MIDI ports on Windows. AAX support for Apple Silicon.
+    releaseDate: 2023-10-29
+    description: Add check marks to wave menu to show current selection. More robust
+      handling of MIDI ports on Windows. AAX support for Apple Silicon.
   - name: "1.06"
-    date: 2022-11-16
-    notes: Fix VST3 bundle structure for architecture on Windows.
+    releaseDate: 2022-11-16
+    description: Fix VST3 bundle structure for architecture on Windows.
   - name: "1.05"
-    date: 2022-11-01
-    notes: Fix param linking via common MIDI channel if MR MIDI Mapping enabled.
+    releaseDate: 2022-11-01
+    description: Fix param linking via common MIDI channel if MR MIDI Mapping enabled.
   - name: "1.04"
-    date: 2022-10-07
-    notes: Multiple MIDI and UI handling fixes.
+    releaseDate: 2022-10-07
+    description: Multiple MIDI and UI handling fixes.
   - name: "1.03"
-    date: 2022-02-07
-    notes: Fix handshaking issue with non-HOST SysEx port settings.
+    releaseDate: 2022-02-07
+    description: Fix handshaking issue with non-HOST SysEx port settings.
   - name: "1.02"
-    date: 2021-12-16
-    notes: Large SysEx message and installer fixes.
+    releaseDate: 2021-12-16
+    description: Large SysEx message and installer fixes.
   - name: "1.01"
-    date: 2021-11-09
-    notes: Bank manager .sbk support and AAX pagetable fixes.
+    releaseDate: 2021-11-09
+    description: Bank manager .sbk support and AAX pagetable fixes.
 links:
   - type: resource
     url: https://oddsound.com/dl/ODDSound_MR_Editor_Manual.pdf
