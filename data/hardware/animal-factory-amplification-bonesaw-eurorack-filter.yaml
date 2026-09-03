@@ -1,0 +1,85 @@
+id: 5i3xBWQFOLyZ-tLKpOd6P
+name: Bonesaw State-Variable Filter
+manufacturer: animal-factory-amplification
+primaryCategory: filter
+categories:
+  - modular
+  - equalizer
+url: https://animalfactoryamps.com/products/bonesaw-eurorack-filter
+description: A Eurorack state-variable filter module with independent lowpass,
+  bandpass and highpass outputs, CV control over cutoff, FM and resonance, plus
+  a pre-filter drive circuit.
+details: |-
+  Your sound is the patient. This module operates on it with the precision of a drunk 18th century barber surgeon. It has individual lowpass, bandpass and highpass outputs, CV control over cutoff, FM amount and resonance. A pre-filter drive beefs up your signal, making sure that your output signals sing, moan and shriek during the procedure. Use it as an oscillator - crank the resonance all the way for a great self-oscillation and then mess with the FM for weirder waveforms. To add extra rasp to this bonesaw, you can dial in extremely precise amounts of FM, either from an external source or internally from the bandpass path. Last but not least - using the provided internal cable, the Bonesaw VCF integrates internally with the Vivisect attenuverting mixer module to create a very useful 3-band EQ/pole-mixing filter.
+specs: |-
+  - 6db SVF Filter
+  - Input drive circuit
+  - Independent outputs for LP/BP/HP
+  - FM Feedback input with phase control for added ugliness
+  - CV controls for frequency, FM, and resonance
+  - Vivisect integration for 3-band EQ mixing
+io:
+  - key: ZSdupMLX
+    name: Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: aqPvB1R6
+    name: Lowpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: x9eLSeDi
+    name: Bandpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: o2ULD8BS
+    name: Highpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: GSAzTmWn
+    name: Frequency CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: NBchXpE4
+    name: FM CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: bijX5SwG
+    name: Resonance CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: fMjYceap
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
