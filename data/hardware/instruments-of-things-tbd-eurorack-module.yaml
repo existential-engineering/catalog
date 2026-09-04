@@ -1,0 +1,152 @@
+id: JSxC_oFWcfxktreifo6le
+name: TBD Eurorack Module
+manufacturer: instruments-of-things
+primaryCategory: modular
+categories:
+  - effect
+  - synthesizer
+url: https://instrumentsofthings.com/products/tbd
+prices:
+  - amount: 249
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A generic multifunctional DSP Eurorack module offering more than 50
+  synthesizer and effect plugins, with support for implementing custom DSP
+  algorithms as an open source project. It features stereo audio I/O, CV inputs,
+  trigger inputs and a WiFi-based web interface for configuration.
+details: |-
+  A generic multifunctional DSP module with more than 50 different synthesizer and effect plugins. Additionally, TBD enables the implementation of self-made DSP algorithms. The TBD is an open source project by IOT-Maker. → GITHUB PROJECT
+
+  Plugin Examples:
+
+  About:
+
+  The TBD (i.e. to be determined [by you!]) Eurorack module aims to be a community driven project to provide a flexible platform for easy implementation of your own or to port existing DSP algorithms to Eurorack. TBD comes with a big selection of ready-to-use plugins, which also can be used as a base for your own plugin development. It offers a web-based user interface for plugin and system configuration accessible through the modules WiFi (wireless computer network). TBD has two audio outputs and inputs. So you can either use two mono plugins simultaneously or one stereo plugin. Key Features:
+
+  Software:
+
+  Hardware:
+
+  instruments of things · TBD Plugins
+
+  Plugins:
+
+  VctrSyn, SpaceFX, Formantor, Bjorklund, Karpuskl, APCpp, Retroactor, Rompler (sample playback), WTOsc (custom wavetable), Claude (ported MI granular audio processor), BBeats, CStrip, CStripM, EveryTrim, MISVF, TBD03, PolyPad, TBDings (ported MI resonator), TBDaits (Ported MI Macro Oscillator), TBDeeps (ported MI Wavetable Oscillator), DustLoop, Dust, SubSynth, Sine Source, Simple VCA, SDelay, Plate Reverb, Pink Noise, MiVerb, MiVerb2, MiPShift, MiEnsemble, MiChorus, HiHat1, G-Verb, Freeverb, FBDlyLine, EChorus, Progen Reverb, CDelay, Talkbox (Vocoder), MSxxNoise (MS20 filter and Stone Phaser), Antique (Old Record / Tape Effect), Subbotnik (Huge Modulations)
+
+  Plugin Architecture /
+  Firmware Development:
+
+  The entire firmware is based on C++. To create own plugins, one can simply inherit from the class ctagSoundProcessor.hpp and implement the required Process(const ProcessData &) function (similar to VST). The Process() callback function is executed with the ProcessData structure containing the buffers for audio, cv and trigger. Plugin parameters have to be defined in a JSON file, which is used for automatic UI rendering in the web app. The firmware comes with factory plugins, such as a simple VCA, which can be used as a template for own plugin development. The firmware can be built using the Espressif Internet of Things Development Framework . Compiled binaries can be uploaded to the module either using a micro USB cable or through the web user interface (over-the-air update). No additional hardware is needed for developing your own firmware. Simulator:
+
+  To speed up the plugin development, TBD comes with a simulator to execute TBD plugins on Mac OS, Windows and Linux. At its core, it uses RTAudio for the audio engine. For evaluation either a wav file can be used as input or real-time audio from your sound card. More information can be found in the official GitHub repository. About IOT-Maker:
+
+  Instruments of Things has roots in the Makerspace of Creative Technologies (CTAG) at Kiel University of Applied Sciences. From there the first technical concepts and prototypes were conceived. Today we have our own laboratory and workshop, but are still strongly networked with CTAG and the people at the university to collaborate with open source projects like the TBD module. This DIY context is the background in which IOT-Maker was created. Tutorial Playlist by CTAG:
+
+  Note:
+
+  Instruments of Things provides the TBD hardware only and does not provide software support! The module comes pre-flashed with the open source TBD binaries. You can use our forum or Github to exchange information about the project or for further development. Interested? Much more demos available on our Instagram and other social media channels.
+specs: |-
+  - TBD ings (ported MI resonator)
+  - TBD aits (Ported MI Macro Oscillator)
+  - TBD eeps (ported MI Wavetable Oscillator)
+  - TBD 03
+  - PolyPad
+  - Dust and old record / tape effects
+  - Reverbs
+  - Delays
+  - Sampler
+  - ...
+  - Over 50 factory plugins based on other open source projects
+  - Web app for plugin configuration and presets based on REST
+  - Mappable plugin parameters to hardware UI elements and CV inputs
+  - Flexible plugin architecture based on C++
+  - Automatic UI rendering based on JSON plugin descriptor structure
+  - WiFi (802.11b/g/n)
+  - Stereo audio I/O (16 bit / 44.1 kHz, 1ms latency / buffer size)
+  - 2x 12 bit CV inputs (configurable -5…5V or 0…5V) at 1.3kHz sample rate*
+  - 2x trigger inputs (0…5V)
+  - 2x trigger buttons
+  - 2x CV potentiometers (configurable bi- or unipolar)
+  - Input audio gain for each channel
+io:
+  - key: Djta7JJC
+    name: Audio Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: aZWH3ydw
+    name: Audio Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 5CKn9gKO
+    name: Audio Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 8wEH17vA
+    name: Audio Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: f2mLbJu3
+    name: CV Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: xmKbriz7
+    name: CV Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: a6aAg4ST
+    name: Trigger Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 0M2mKAFz
+    name: Trigger Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: w4warxGM
+    name: Micro USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b-micro
+    maxConnections: 1
+    position: Bottom
+  - key: Vcwy2Au0
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
