@@ -1,0 +1,110 @@
+id: cBHunEJGBDZnuvsgjeMJJ
+name: Dual VCF
+manufacturer: hampshire-electronics
+primaryCategory: filter
+categories:
+  - analog
+  - modular
+  - discontinued
+url: https://hampshireelectronics.co.uk/products/dual-vcf-aggro-ms-20-style-lp-hp-bp-notch-dual-voltage-controlled-filter-for-eurorack
+prices:
+  - amount: 75
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: The Dual VCF is a 100% analogue Eurorack dual voltage controlled
+  filter with independent state-variable low pass and high pass sections that
+  can also combine to form band pass and notch filters, inspired by the classic
+  MS-20 filter.
+details: |-
+  The Hampshire Electronics Dual VCF in 10HP is a brand new, 100% analogue dual voltage controlled filter in the Eurorack format. Designed and made in England. Dual VCF Manual: Download Dual VCF Manual PDF
+
+  The VCF features two completely independent filters, a high pass (6db) and low pass (12db) which can be used as two completely independent low and high pass filters or in conjunction to create highly configurable band pass and notch filters with complete control over the 'Q' width and the filter cut-off. The filters are of the state-variable style, inspired by the classic filters on the MS-20 synth of the late 1970s. This filter style is rightly regarded as a classic. The LP section self-oscillates at high resonance settings and can also be used as a sine-wave voltage-controlled oscillator (VCO). The key details of the VCF are:
+
+  All Hampshire Electronics modules come with power cable and screws.
+specs: |-
+  - 10HP Wide Eurorack module with thin profile (20mm deep from faceplate)
+  - 100% analogue circuitry
+  - Aluminium faceplate in black, white and gold
+  - Provides independent LP and HP filters and combined BP and Notch filters
+  - The LP section self-oscillates, enabling usage as a sine-wave VCO
+  - Filter cut-off CV inputs for both HP and LP filters with attenuator pots
+  - Tracking CV inputs for both HP and LP filters with 1v/Oct tracking
+  - Internal routing of LP filter output to HP filter input
+  - Dedicated band-pass and notch filter outputs
+  - Diode protected power input
+  - 28ma @ +12v
+  - 28ma @ -12v
+io:
+  - key: RfDqPtd1
+    name: LP Cutoff CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: jp2zjGHv
+    name: HP Cutoff CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: hz63O91Y
+    name: LP Tracking CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 1YmFuDYu
+    name: HP Tracking CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 60FaCTkc
+    name: LP Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: rf1OyMYe
+    name: HP Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: cRkRaQJ8
+    name: Band Pass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: HHLIQvP7
+    name: Notch Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: urdj3Blg
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
