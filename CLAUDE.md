@@ -154,6 +154,12 @@ separately, and display/search compose the two:
   `manufacturer: wavelet-audio`)
 - Acronym-only names should add `searchTerms` with the expansion (W127)
 
+**`platforms: [ios]` only when the source says so.** iOS is a legal
+platform value and it was wrong on 81 of 85 HoRNet entries in one import.
+Set it only when the page names iOS, iPadOS, AUv3, iPad or iPhone, or links
+to the App Store. A desktop plugin page that says nothing about mobile gets
+no `ios`.
+
 **`manufacturer`** must be a slug reference (the manufacturer's filename without `.yaml`), not the display name:
 
 ```yaml
@@ -265,6 +271,45 @@ entry with `maxConnections` set to the point count (a 48-point TRS row, not 48
 entries), so W128 skips that category. TT/Bantam patch points use
 `connection: tt`.
 
+## I/O Modelling Conventions
+
+These are the rules review kept restating on import PRs (about 110 of the
+384 inline findings over 75 imports were I/O). The importers enforce the
+mechanical ones (`io-lint` in the racks repo) and the reviewer checks the
+rest. Write new ones here first, then mirror them in `.coderabbit.yaml`.
+
+- **Every powered hardware entry has a power input.** A DC barrel, an IEC
+  inlet, a USB power port or phantom power from a host each count. A unit
+  with none of those says so in `specs` (`battery-only`, `bus-powered via
+USB-C`). Not in an io entry: the io shape has no note field, so a note
+  there is stripped like any other unknown key. A missing power input was the
+  single most repeated finding (Sonicware, Darkglass, Empress, Benson,
+  Joranalogue).
+- **One entry per physical connector.** A name carrying `L/R`, `1-4` or
+  `1/2` is a split candidate. `maxConnections` above 1 on 1/4-inch,
+  1/8-inch, xlr, combo jack, rca, 5-pin din, usb or thunderbolt is a
+  defect. A combo jack is one entry with `connection: combo jack`. A stereo
+  TRS jack is one entry.
+- **MIDI on a DIN socket is `connection: 5-pin din`** (`7-pin din` where the
+  maker documents it). MIDI on a minijack or 1/4-inch jack keeps the jack as
+  its connection with `type: midi`.
+- **Footswitch and expression jacks** are `category: audio`,
+  `type: expression`, with `connection` per the jack. This matches the
+  existing Benson entries that review confirmed.
+- **USB host ports and network ports are `signalFlow: bidirectional`.**
+- **Speaker outputs on amplifiers are `type: speaker-level`**, one entry per
+  jack, with the impedance in the name (`Speaker Output 8 ohm`).
+- **Rear-panel jacks are `position: Right` on pedals, desktop units and rack
+  gear.** 500-series modules use `Bottom`. Eurorack modules use `Top` or
+  `Bottom` per the panel. This rule existed nowhere before, which is how a
+  review learning that every rear jack is `Right` came to misfire on
+  500-series gear.
+- **Option-card and optional-module connectors are not baseline `io`.** The
+  card bay itself is (`connection: card-slot`). What a card would add is not.
+- **`type` and `connection` never swap.** A connector name in `type` is a
+  hard error (E117), not an advisory warning, so an import that meets it
+  must fix the value rather than keep it and note it.
+
 ## Capabilities
 
 `capabilities` records **what a product does** — the audio processing
@@ -333,6 +378,38 @@ deliberately declines to map: family names (`dynamics`, `modulation`),
 topologies (`multiband`), composites (`preamp`, `channel-strip`) and the
 non-functional axes. Mapping any of those would be guessing, and a guessed
 capability is indistinguishable from a verified one once written.
+
+## Prices
+
+A `prices` entry is `amount`, `currency`, optional `asOf` and `source`, and
+optional `term`. Set `term` (`perpetual`, `monthly`, `yearly`,
+`rent-to-own`) whenever one currency carries more than one price, so a
+perpetual licence and a monthly plan can sit side by side without a reader
+guessing which is which. One price per currency needs no term. `pnpm
+validate` warns (W131) on same-currency prices that carry none, and never
+errors, because 74 entries predate the field. Never drop a real price to
+silence a duplicate-price review finding: add the term instead.
+
+`prices[].type`, `prices[].note`, `prices[].label` and similar keys are not
+schema and are silently dropped (see Unknown Keys).
+
+## Unknown Keys
+
+Zod strips every key a schema does not declare, so an entry carrying
+`prices[].type`, `versions[].notes`, a top-level `note` or a top-level
+`discontinued: true` validates, builds and ships with the value gone. That
+is the structural cause of catalog#689, where ten entries marked with the
+flag stayed live in Studio.
+
+`pnpm validate` rejects every such key (E121, at any depth), so an entry
+carrying one cannot merge. The check shipped as the advisory W132 while 337
+files on `main` predated it; catalog#716 backfilled those and strict has
+been the only mode since. `--strict-unknown-keys` is still accepted and
+changes nothing, because the racks import lanes probe this repo for the
+flag and pass it on their changed files. A top-level `images` block is
+the one key reported as E199 instead, checked on the raw object before
+any schema runs, because product images live in R2 keyed by id. A field
+that is genuinely new data goes into the schema in the same PR.
 
 ## Content Entries
 
@@ -404,6 +481,18 @@ manufacturer: fabfilter
 - IDs are 21-character nanoid strings (alphanumeric with `-` and `_`)
 - IDs are auto-assigned by CI when you run `pnpm assign-ids` for new entries
 - Every product entry must have an `id` field
+
+**Importers resolve `supersedes` after IDs are assigned, behind a
+confidence gate.** Both import shapes run a resolution step once
+`pnpm assign-ids` has given the new entry an ID: a name carrying a
+generation token (MKII, MK2, Mk3, V2, II, III, Plus) or prose reading
+"replaces the X" is matched to a same-manufacturer entry whose name is the
+token-free form, and `supersedes` is set only when exactly one candidate
+matches. Every link lands in a PR-body table so a reviewer sees each pair.
+A candidate that is ambiguous, or a predecessor that is not in the catalog,
+stays unlinked and is left to the monthly `discontinued:report`. Do not ask
+an import to hand-wire a link its resolver declined: the decline is the
+signal that a person has to look.
 
 The referenced ID must exist in the same collection (software, content, hardware, or accessories). Validation will fail if the ID is not found or if a cycle is detected in the supersedes chain.
 
@@ -552,6 +641,15 @@ translations:
 
 **Important:** Locale-specific links (e.g., "User Manual (Spanish)") should NOT go in the main `links` array. Instead, move them to `translations.<locale>.links` with a localized title. Supported locales are in `schema/locales.yaml`.
 
+**A language name in a link or video title means the item belongs under
+`translations.<locale>`.** "Manual (Deutsch)", "Manuel (français)", a title
+written in Japanese: move the link or video to `translations.<locale>.links`
+or `.videos` with the localized title, for every locale in
+`schema/locales.yaml`. A locale that is not in that file stays where it is,
+a link in `links` or a video in `videos`, with a locale-neutral title. A
+video never moves to `links`: the two shapes differ and the schema rejects
+a video there. `pnpm validate:translations` checks the block.
+
 **Adding a new locale:**
 
 1. Add locale to `schema/locales.yaml`
@@ -568,3 +666,19 @@ translations:
         name: Kopfhörerausgang
         description: Hochwertiger Kopfhörerverstärker
 ```
+
+## Known False Findings
+
+Review findings that the resolver skips on sight with the standard reply,
+because each cost a cycle to re-prove on an import PR:
+
+- `details`, `specs`, `platforms` and `videos[].title` are optional. An
+  entry without them is not incomplete.
+- `trs` is not a `connection` value. The schema models the physical size
+  (`1/4-inch`, `1/8-inch`) and a stereo jack is one entry.
+- `rj45` is spelled `ethernet` (`ethercon` for the locking Neutrik shell).
+- `variants[].slug` is a valid field.
+- `position` is required on every io entry except on played instruments.
+- `Bottom` is the 500-series convention, not a mistake.
+- `maxConnections: 1` on a single jack is correct even when the unit has
+  several of that jack. Each jack is its own entry.

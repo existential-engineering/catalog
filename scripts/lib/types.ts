@@ -2,6 +2,8 @@
  * Shared type definitions for the catalog
  */
 
+import type { PriceTerm } from "./price-terms.js";
+
 // =============================================================================
 // SHARED NESTED TYPES
 // =============================================================================
@@ -22,6 +24,13 @@ export interface Version {
 export interface Price {
   amount: number;
   currency: string;
+  /**
+   * What the amount buys, when the maker sells the same product under
+   * several terms in one currency (a perpetual licence beside a monthly
+   * plan). Optional: one price per currency needs no term. Vocabulary in
+   * scripts/lib/price-terms.ts.
+   */
+  term?: PriceTerm;
   /** ISO date when price was last verified */
   asOf?: string;
   /** Source of price (e.g., "official-website", "retailer") */

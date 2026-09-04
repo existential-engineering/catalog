@@ -20,6 +20,12 @@ import {
   manufacturerNameIsPrefix,
   TAGLINE_EXCLUSIONS,
 } from "./lib/name-hygiene.js";
+import {
+  collectPriceArrays,
+  findUntermedGroups,
+  formatPricePath,
+  PRICE_TERMS,
+} from "./lib/price-terms.js";
 import type {
   CategoriesSchema,
   CategoryAliasesSchema,
@@ -32,6 +38,7 @@ import type {
   ValidationWarning,
   ValidationWarningDetail,
 } from "./lib/types.js";
+import { collectUnknownKeys, formatUnknownKeyPath } from "./lib/unknown-keys.js";
 import {
   DATA_DIR,
   findClosestMatch,
@@ -377,6 +384,8 @@ const PriceSchema = z.object({
   asOf: z.iso.date().optional(),
   /** Source of price (e.g., "official-website", "retailer") */
   source: z.string().optional(),
+  /** What the amount buys when one currency carries several prices (W131). */
+  term: z.enum(PRICE_TERMS).optional(),
 });
 
 const VideoLinkSchema = z.object({
@@ -885,6 +894,17 @@ const AccessorySchema = z
 // VALIDATION FUNCTIONS
 // =============================================================================
 
+/**
+ * A key the schema does not declare is the hard error E121 on every run.
+ * Zod strips such a key, so before AUREO-1079 an import could ship
+ * `prices[].type`, `versions[].notes` or a top-level `discontinued: true`
+ * and never hear of it (catalog#689). The check shipped as the advisory
+ * W132, with `--strict-unknown-keys` opting into E121, while 337 files on
+ * `main` predated it; catalog#716 backfilled those and strict is now the
+ * only mode. The flag is still accepted, and ignored, because the import
+ * lanes in racks probe this file for it and pass it on their changed files.
+ */
+
 interface DataWithOptionalFields {
   manufacturer?: string;
   primaryCategory?: string;
@@ -958,6 +978,26 @@ function validateFile(
             docsUrl: getDocsUrl(errorCode),
           },
         ],
+      };
+    }
+
+    const unknown = collectUnknownKeys(schema, rawData);
+    if (unknown.length > 0) {
+      const errorCode = ValidationErrorCode.E121_UNKNOWN_KEY;
+      const details: ValidationErrorDetail[] = unknown.map((finding) => {
+        const line = getLineForPath(document, lineCounter, [...finding.parent, finding.key]);
+        return {
+          code: errorCode,
+          message: `Key '${finding.key}' is not in the schema and would be silently dropped. Remove it or add it to the schema.`,
+          path: formatUnknownKeyPath(finding),
+          line: line ?? undefined,
+          docsUrl: getDocsUrl(errorCode),
+        };
+      });
+      return {
+        file: path.relative(process.cwd(), filePath),
+        errors: details.map((d) => `${d.path}${d.line ? `:${d.line}` : ""}: ${d.message}`),
+        details,
       };
     }
 
@@ -1195,6 +1235,9 @@ interface WarningContext {
   specs?: string;
   formats?: string[];
   platforms?: string[];
+  prices?: Array<{ currency?: string; term?: string }>;
+  versions?: Array<{ prices?: Array<{ currency?: string; term?: string }> }>;
+  variants?: Array<{ prices?: Array<{ currency?: string; term?: string }> }>;
 }
 
 /**
@@ -1213,6 +1256,26 @@ function collectWarnings(
 ): ValidationWarning | null {
   const warnings: ValidationWarningDetail[] = [];
   const relativeFile = path.relative(process.cwd(), filePath);
+
+  // W131: several prices in one currency that carry no `term` cannot be
+  // told apart (a perpetual licence beside a monthly plan). One price per
+  // currency never needs a term.
+  for (const { path, prices } of collectPriceArrays(data)) {
+    for (const group of findUntermedGroups(prices)) {
+      const first = group.untermed[0] ?? group.repeated[0] ?? 0;
+      const line = getLineForPath(document, lineCounter, [...path, first]);
+      const reason =
+        group.untermed.length > 0
+          ? `${group.untermed.length} of them carry no term`
+          : "two of them share a term";
+      warnings.push({
+        code: ValidationErrorCode.W131_PRICE_TERM_MISSING,
+        message: `Several ${group.currency} prices and ${reason}. Set term (${PRICE_TERMS.join(", ")}) on each, or keep one price per currency.`,
+        path: formatPricePath([...path, first]),
+        line: line ?? undefined,
+      });
+    }
+  }
 
   // io.type is not checked here: it is a hard error (E117) via the Zod IOSchema,
   // so an unknown value fails validation outright. io.connection remains advisory.
@@ -1701,7 +1764,8 @@ function validate(): ValidationResult {
           lineCounter,
           undefined,
           allHardwareSlugs,
-          manufacturerUrlMap
+          manufacturerUrlMap,
+          undefined
         );
         if (w) warnings.push(w);
       } catch {
@@ -1727,7 +1791,8 @@ function validate(): ValidationResult {
           lineCounter,
           undefined,
           allHardwareSlugs,
-          manufacturerUrlMap
+          manufacturerUrlMap,
+          undefined
         );
         if (w) warnings.push(w);
       } catch {

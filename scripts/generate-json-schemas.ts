@@ -9,6 +9,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { PRICE_TERMS } from "./lib/price-terms.js";
 import { loadSchemaContext } from "./lib/schema-loader.js";
 
 const OUTPUT_DIR = path.resolve(import.meta.dirname, "../schema/json");
@@ -35,6 +36,12 @@ const priceSchema = {
     },
     asOf: { type: "string", format: "date", description: "ISO date when price was last verified" },
     source: { type: "string", description: 'Source of price (e.g., "official-website")' },
+    term: {
+      type: "string",
+      enum: [...PRICE_TERMS],
+      description:
+        "What the amount buys when one currency carries several prices (perpetual, monthly, yearly, rent-to-own).",
+    },
   },
 };
 

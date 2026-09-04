@@ -4,30 +4,92 @@ manufacturer: audio-modeling
 primaryCategory: reverb
 categories:
   - effect
+formats:
+  - standalone
+  - au
+  - vst
+  - vst3
+  - aax
 platforms:
-  - windows
   - mac
-  - ios
-url: https://audiomodeling.com/audio-effects/ambiente/
-description: Ambiente is Audio Modeling's revolutionary room simulator, allowing
-  you to place any instrument or recorded track into a shared, realistic
-  acoustic space.
+  - windows
+url: https://audiomodeling.com/products/ambiente
+prices:
+  - amount: 149
+    currency: USD
+description: Ambiente is a room simulator that adds depth, space, and acoustic realism to your sound.
 details: |-
-  Ambiente is Audio Modeling's revolutionary room simulator, allowing you to
-  place any instrument or recorded track into a shared, realistic acoustic
-  space.
+  Ambiente is Audio Modeling's room simulator designed to place every instrument in the same acoustic environment, not just SWAM, but any sound source. Available as a standalone app and plugin, Ambiente brings virtual instruments and recorded tracks together inside a shared, realistic space, allowing precise positioning and natural interaction between sources. With centralized control across multiple instances, it ensures seamless integration and cohesive, organic mixes with true acoustic realism.
 
-  Use ambiente as a standalone app or plugin, positioning and shaping each sound
-  source with precision to create cohesive, natural-sounding mixes that bring
-  all your elements together in one immersive environment.
+  Ambiente brings an advanced level of realism to your productions, allowing you to place any instrument, whether virtual or recorded, into the same virtual room. This Room Simulator goes beyond standard reverb or convolution by calculating the geometric reflections of sound waves, so every source interacts naturally with the environment.
 
-  Ambiente by audio modeling is a virtual effect audio plugin and a mobile audio
-  app and a software application for macos, windows and ios.
+  With Ambiente, you can record real instruments such as solo strings or other acoustic performers in compact spaces like a home studio, then blend them seamlessly with your virtual instruments, including SWAM instruments, inside the same simulated acoustic space. Control room size, choose absorption materials, and adjust microphone positioning to fine-tune the sonic environment. Whether you want the intimacy of a tight studio room or the openness of a large reverberant hall, Ambiente makes it easy to create a cohesive soundscape.
+
+  Its real strength is the way multiple instances communicate inside your DAW. You can manage instruments and audio tracks from one centralized interface, making strings, vocals, guitars, and any other source feel as if they were recorded together, even when they were captured in different places with different tools.
+
+  The interface offers three views: Room View for intuitive drag-and-drop instrument placement, Tech View for precision placement in complex setups, and List View for parametric control and accessibility. Like all SWAM instruments, Ambiente is navigable by the native accessibility frameworks on macOS, Windows and iOS, offering an inclusive music-making experience for blind and visually impaired musicians.
 specs: |-
-  - 64-bit
-  - NKS (Native Instruments komplete kontrol) - VST3 only
-  - Apple silicon architecture supported natively
-  - Windows 10
-  - Windows 11
-  - macOS 10.13 (high sierra)
-  - macOS 15 (sequoia)
+  - Room simulator computing geometric reflections of sound waves, going beyond conventional reverb or convolution workflows
+  - Works as both a standalone app and a plugin for all major DAWs
+  - Up to 3 customizable rooms plus a Close Mic Room
+  - Centralized control of all instances in a session from one interface
+  - Cross-instrument communication: SWAM and non-SWAM instruments interact in the same space
+  - Control of room dimensions, absorption materials and microphone placement
+  - Three interface views: Room, Tech and List modes
+  - Accessible via native accessibility frameworks for blind and visually impaired users
+  - macOS 10.13 - 26: Standalone, AU, VST, VST3, AAX - 64bit
+  - Windows 10, Windows 11: Standalone, VST, VST3, AAX - 64bit
+  - NKS (Native Instruments Komplete Kontrol) support via VST3 only
+  - Apple Silicon supported natively
+  - Installation occupancy: from 52 MB to 180 MB on macOS, from 36 MB to 84 MB on Windows, depending on the number of plugin formats installed
+  - RAM occupancy: about 52 MB for each instrument instance
+  - Requires at least a 1.6 GHz Core 2 Duo CPU for running a single plugin instance
+  - 15 days trial available
+versions:
+  - name: 1.4.1
+    releaseDate: 2026-05-14
+    description: Fixed wrong positioning when dragging and releasing a source in Ambiente.
+  - name: 1.4.0
+    releaseDate: 2026-04-28
+    description: Performance optimizations, new rooms, new Ambience Amount parameter, and support for sample rates above 48 kHz.
+  - name: 1.3.0
+    releaseDate: 2025-12-16
+    description: Added Core Assistant, a background service that centralizes licensing, activation, and communication.
+  - name: 1.2.2
+    releaseDate: 2025-10-21
+    description: Minor improvements and optimizations.
+  - name: 1.2.1
+    releaseDate: 2025-09-29
+    description: Fixed sample rate detection on iOS 26 and improved stability.
+  - name: 1.2.0
+    releaseDate: 2025-09-16
+    description: "Moved instrument data to new folder: /AMData."
+  - name: 1.1.5
+    releaseDate: 2025-07-01
+    description: Fixed VST2 plug-ins not working in some DAWs when both VST2 and VST3 are installed.
+  - name: 1.1.4
+    releaseDate: 2025-05-14
+    description: Resolved compatibility issues with OSC messages in Pro Tools.
+  - name: 1.1.3
+    releaseDate: 2025-04-24
+    description: Resolved loading issue when using Ambiente in AUM.
+  - name: 1.1.2
+    releaseDate: 2025-04-16
+    description: Multiple fixes, including the Close Mic Room advanced button causing DAW crashes.
+  - name: 1.1.1
+    releaseDate: 2025-03-04
+    description: Improved performance and overall stability, especially when multiple instances are loaded.
+  - name: 1.1.0
+    releaseDate: 2025-02-13
+    description: Introduction of Notification Center, a new notification center to provide alerts and warnings.
+  - name: 1.0.1
+    releaseDate: 2024-11-14
+    description: Multiple fixes addressing configuration resets and preset sorting.
+  - name: 1.0.0
+    releaseDate: 2024-11-05
+    description: First release.
+releaseDate: 2024-11-05
+videos:
+  - videoId: D8JNBMFGgQE
+    provider: youtube
+    title: Ambiente
