@@ -15,26 +15,6 @@ description: A wireless MIDI controller system using wearable motion sensors
   that send 3D movement data via Bluetooth to a receiver hub, which outputs MIDI
   Note, Control Change and Pitch Bend signals. It includes an editor for Ableton
   Live and a smartphone app with sound presets.
-details: |-
-  Includes:
-
-  Links:
-  Quick start guide , latest firmware , manual , support
-
-  SOMI-1 MIDI Controller
-  Key Features:
-
-  Sensors:
-
-  Receiver Hub:
-
-  MIDI:
-
-  Editor:
-
-  SOMI-1 smartphone app:
-
-  For more information visit our landing page .
 specs: |-
   - 2× SOMI-1 Motion Sensor
   - 2× SOMI-1 Wristband
@@ -70,7 +50,7 @@ specs: |-
   - Editor to use SOMI-1 in combination with external MIDI compatible apps
 io:
   - key: T62G2Bva
-    name: USB-C
+    name: USB-C MIDI Host
     signalFlow: bidirectional
     category: digital
     type: usb
@@ -82,6 +62,13 @@ io:
     signalFlow: output
     category: midi
     type: midi
-    connection: 1/4-inch
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - name: USB-C MIDI Device Port (MIDI and Power)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
     maxConnections: 1
     position: Right
