@@ -1,5 +1,5 @@
 id: jsHZRJMRv58pRKG-iLviQ
-name: MasterSounds SL-1200MK2 Pair
+name: SL-1200MK2 Pair in Classic Silver
 manufacturer: mastersounds
 primaryCategory: turntable
 url: https://mastersounds.co.uk/products/mastersounds-sl-1200mk2-silver-pair
@@ -14,11 +14,24 @@ description: A modified and upgraded Technics SL turntable pair, hand-built with
 details: |-
   The MasterSounds SL is a modified and upgraded Technics SL turntable, hand-built to high specifications, including a total chassis overhaul, newly upgraded tonearm, cartridge, and tonearm mount, proudly bearing the MasterSounds logo. It's our tribute to the iconic Technics design.
 io:
-  - key: NmOD55KW
-    name: Phono Output
+  - name: Phono Output L
     signalFlow: output
     category: audio
     type: phono
     connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Phono Output R
+    signalFlow: output
+    category: audio
+    type: phono
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: AC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
     maxConnections: 1
     position: Right

@@ -1,5 +1,5 @@
 id: TPHZScyxxiQyS2BKjlTpw
-name: MasterSounds SL-1200MK2
+name: SL-1200MK2 Single in Classic Silver
 manufacturer: mastersounds
 primaryCategory: turntable
 url: https://mastersounds.co.uk/products/mastersounds-sl-1200mk2-silver-single
@@ -21,11 +21,24 @@ specs: |-
   - Chassis: All MasterSounds SLs are built upon a refinished chassis, which is carefully stripped and repainted in our own trademark Grey, Black and Silver finishes, built to match our range of DJ Mixers and Audio Accessories. It is then screenprinted with MasterSounds logo detail.
   - Shipping: We ship all of our MasterSounds SLs in our sturdy double-walled SL Boxes, which are designed for secure international shipping.
 io:
-  - key: GJIQNiF8
-    name: Phono Output
+  - name: Phono Output L
     signalFlow: output
     category: audio
     type: phono
     connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Phono Output R
+    signalFlow: output
+    category: audio
+    type: phono
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: AC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
     maxConnections: 1
     position: Right

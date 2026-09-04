@@ -1,5 +1,5 @@
 id: mSiVlaBL_0QmR7lPK6EOt
-name: MasterSounds SL-1210MK2
+name: SL-1210MK2 Single in Textured Black
 manufacturer: mastersounds
 primaryCategory: turntable
 url: https://mastersounds.co.uk/products/mastersounds-sl-1210mk2-grey-single-copy
@@ -14,11 +14,24 @@ description: A modified and upgraded Technics SL turntable, hand-built with a
 details: |-
   The MasterSounds SL is a modified and upgraded Technics SL turntable, hand-built to high specifications, including a total chassis overhaul, newly upgraded tonearm, cartridge, and tonearm mount, proudly bearing the MasterSounds logo. It's our tribute to the iconic Technics design.
 io:
-  - key: J7Iod299
-    name: Phono Output
+  - name: Phono Output L
     signalFlow: output
     category: audio
     type: phono
     connection: rca
+    maxConnections: 1
+    position: Right
+  - name: Phono Output R
+    signalFlow: output
+    category: audio
+    type: phono
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - name: AC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: built-in
     maxConnections: 1
     position: Right
