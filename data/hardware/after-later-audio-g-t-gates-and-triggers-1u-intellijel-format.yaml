@@ -1,0 +1,84 @@
+id: sRAw13vyoxbMlOo7iGc1a
+name: G&T - Gates and Triggers 1U Intellijel Format
+manufacturer: after-later-audio
+primaryCategory: utility
+categories:
+  - modular
+  - midi-effect
+url: http://www.afterlateraudio.com/products/gt-gates-and-triggers-1u-intellijel-format
+prices:
+  - amount: 84
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A utility module that converts gate signals into triggers and
+  trigger signals into gates, with LED indicators for input and output states.
+details: |-
+  Take your gates and generate triggers and take your triggers and generate a gate. Gate to Trigger section
+  Takes a gate signal and give a trigger output on both the rise and fall of that gate. The IN LED will illuminate while the gate input is high. Trigger to Gate section
+  Takes a trig signal to start a gate signal and is normalized from the fall output in the Gate to Trig section. The gate length knob controls the gate length. The fall output will generate a trigger at the end of the gate. The OUT LED will illuminate while the gate output is high.
+io:
+  - key: FozHF34P
+    name: 12V
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: bW3YLlEk
+    name: -12V
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: pSpr2BIX
+    name: Gate Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: UgO98OoQ
+    name: Rise Trigger Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: OPNZSXlw
+    name: Fall Trigger Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: L6Eh4fuy
+    name: Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: iuc62hez
+    name: Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: fN9aFeWM
+    name: Fall Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

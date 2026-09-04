@@ -1,0 +1,109 @@
+id: 0bswgFSBfujpLi7e8PMjp
+name: ENVy
+manufacturer: after-later-audio
+primaryCategory: modulation
+categories:
+  - modular
+  - synthesizer
+url: http://www.afterlateraudio.com/products/envy
+prices:
+  - amount: 99
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: An ADSR-style envelope generator based on the CEM3310 chipset found
+  in classic synthesizers, adding end-of-attack and end-of-release delayed
+  triggers in a compact 6HP module.
+details: |-
+  ADSR Style Envelope Generator
+
+  An ADSR style envelope generator based on the CEM3310 chipset, found in many classic synthesizers (Pro One, Prophet 5, MemoryMoog). We have added a small twist, end of attack and end of release delayed triggers. The module offers this rich set of features packed into 6HP.
+specs: |-
+  - Attack, Decay, Sustain, and Release controls with CV inputs for each.
+  - Threshold controls the required gate level to trigger the envelope
+  - Time range is configurable via jumper on back (shortest attack is 0.5ms and longest is 750ms)
+  - End of attack delayed trigger
+  - End of release delayed trigger
+  - Length of the gate signal controls the length of the sustain phase
+  - Retrig the attack while the gate is still high and after sustain has ended
+io:
+  - key: K9xhR7xl
+    name: 12V
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: 4htHrq42
+    name: -12V
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: FSbbp4Td
+    name: Attack CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: KNwholDM
+    name: Decay CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: wc2m7hG6
+    name: Sustain CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: ugpWO34s
+    name: Release CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 645gUYzU
+    name: Gate Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: AiO1sgkt
+    name: End of Attack Trigger Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 1opsHzUZ
+    name: End of Release Trigger Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: yCy1MpV2
+    name: Envelope Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

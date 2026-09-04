@@ -1,0 +1,218 @@
+id: f_J3vRRSXFjSCZLaFVyO-
+name: QARV
+manufacturer: after-later-audio
+primaryCategory: modulation
+categories:
+  - modular
+  - gain
+url: http://www.afterlateraudio.com/products/qarv
+prices:
+  - amount: 224
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: QARV is a four-channel Eurorack module combining function
+  generators, oscillators, slew limiters, envelopes, and VCAs, usable as a
+  standalone synth voice, modulation source, or a four-channel envelope
+  generator with mixer.
+details: |-
+  QARV - Quad Attack, Release, & VCA
+
+  Four channels of function generator, oscillator, slew limiter, envelope, and VCAs. This module brings the ultimate in flexibility as it can be used as a standalone synth voice, a massive amount of modulation, or a four channel envelope generator w/ mixer. We believe this makes QARV a great first module and a great addition to the largest of systems. All four channels have the following features:
+
+  Channels 1 & 4
+
+  Channels 2 & 3:
+
+  Patch Guide by Robots Are Red - Patch Guide
+specs: |-
+  - Uni-polar oscillator mode
+  - Attack and release time control via potentiometer and via input jack
+  - Shape control that controls shape for both attack and release
+  - Output attenuverter
+  - VCAs that normal to each subsequent channel (CH1 -> CH2, etc.). So you can get a mix of all four channels out of the CH4 VCA output (unless you patch a VCA output from an earlier channel)
+  - Voltage source (CH1 - 5V & CH4 - 10V)
+  - CH1 & CH4 can be switched between IN (slew mode) and TRIG (envelope) mode
+  - RISE and FALL gates. You can use our G&T module to turn these gates into triggers.
+  - Cycle times 50sec - 1kHz (0.5ms)
+  - Bi-polar oscillator mode
+  - Dedicated IN and TRIG jacks (helpful for adding offset to a triggered ENV)
+  - BOTH input jack to simplify patching both the attack and release (also inverts the input to give more standard pitch tracking of higher voltage equals higher pitch)
+  - Cycle times 200sec - 1kHz (0.5ms)
+io:
+  - key: ZN0cziCp
+    name: Channel 1 In/Slew Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: lBy49Xsx
+    name: Channel 1 Trig In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: VD5Ia5Gn
+    name: Channel 1 Attack CV In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: qCvZIwPf
+    name: Channel 1 Release CV In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 8u9rQ3gH
+    name: Channel 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 0rik1JsL
+    name: Channel 1 Rise Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: z0inSE97
+    name: Channel 1 Fall Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: ayTO4qEF
+    name: Channel 2 In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: hIACrbyM
+    name: Channel 2 Trig In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: A0MApfIH
+    name: Channel 2 Both In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: WtnXSTtB
+    name: Channel 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 9LbLvms3
+    name: Channel 3 In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: i7Jq412n
+    name: Channel 3 Trig In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: RGoIVkro
+    name: Channel 3 Both In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: a2Jjvgid
+    name: Channel 3 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: siBpJuC2
+    name: Channel 4 In/Slew Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: qnD2lREh
+    name: Channel 4 Trig In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 9Wiiuyet
+    name: Channel 4 Attack CV In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 8WSt5qeq
+    name: Channel 4 Release CV In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Z5g7jnoL
+    name: Channel 4 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: oF8fCW90
+    name: Channel 4 Rise Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: DGH8R7wE
+    name: Channel 4 Fall Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom

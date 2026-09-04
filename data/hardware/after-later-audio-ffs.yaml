@@ -1,0 +1,64 @@
+id: sqCqepTZnf6y4cSBMF9Ct
+name: FFS
+manufacturer: after-later-audio
+primaryCategory: fuzz
+categories:
+  - modular
+  - distortion
+url: http://www.afterlateraudio.com/products/ffs
+prices:
+  - amount: 95
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack module with two fuzz channels based on the fuzz face
+  circuit and a built-in pickup simulator for interfacing Eurorack signals as
+  guitar-like input.
+details: |-
+  Two fuzz channels based on the fuzz face circuit with a built-in pickup simulator. Tips - Experiment with the pickup simulator and buffered signal. Use the PS.Level to keep the signal low, borderline on cutting out. You find lots of joy in the gnarly section by keeping this level at the edge.
+specs: |-
+  - Gnarly is a 7 knob beast that will destroy whatever you throw at it. It has many dead zones in the pots that will adjust based on the position of other pots. It's all about finding the sweet spots and living on those fine edges. The transistor pairs on this section are replaceable.
+  - Oomph is a 5 knob bass friendly take on the fuzz face and compliments the upper harmonics of the Gnarly section.
+  - Pickup simulator - Fuzz circuits offer unique sound when paired with the inductance of the pickup coils in a guitar. This why it is often suggested to have fuzz pedals as your first in a pedal chain. So we've built-in a coil to simulate your eurorack signal being emitted by a guitar pickup. We've also included a pickup simulator output so you can use it to interface with other fuzz instruments (pedals, modules, etc.).
+  - As an added oddness - you can also input your guitar into the pickup sim output (just don't plug anything into the normal input). This will still get you Eurorack level output. Please don't input Eurorack levels into the pickup sim output.
+io:
+  - key: y2DxhB3h
+    name: 12V
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: ul3E0Azk
+    name: -12V
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: xzDJxt6O
+    name: Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 3jjTOG6z
+    name: Pickup Simulator Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Z5aip3cq
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

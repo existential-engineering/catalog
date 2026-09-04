@@ -1,0 +1,76 @@
+id: STEdukpviLZ_EtCVX72ij
+name: G&T - Gates and Triggers
+manufacturer: after-later-audio
+primaryCategory: utility
+categories:
+  - modular
+  - midi-effect
+url: http://www.afterlateraudio.com/products/gt-gates-and-triggers
+prices:
+  - amount: 84
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A utility module that converts gate signals into triggers and
+  trigger signals into gates, with LED indicators for input and output states.
+details: |-
+  Take your gates and generate triggers and take your triggers and generate a gate. Gate to Trigger section
+  Takes a gate signal and give a trigger output on both the rise and fall of that gate. The IN LED will illuminate while the gate input is high. Trigger to Gate section
+  Takes a trig signal to start a gate signal and is normalized from the fall output in the Gate to Trig section. The gate length knob controls the gate length. The fall output will generate a trigger at the end of the gate. The OUT LED will illuminate while the gate output is high.
+io:
+  - key: vZB1fdgw
+    name: 12V
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: g7MjSRaL
+    name: -12V
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: GzwvqKsI
+    name: Gate In
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 1IoMhjW4
+    name: Trig Out (Gate to Trig)
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Lpxat1vi
+    name: Trig In (Trig to Gate)
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: e2F0rQwR
+    name: Gate Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: OSBM8CKO
+    name: Fall Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

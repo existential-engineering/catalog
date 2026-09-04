@@ -1,0 +1,34 @@
+id: n0lXyI959Q4MZatc77CZe
+name: Warp Drive
+manufacturer: after-later-audio
+primaryCategory: utility
+categories:
+  - routing
+url: http://www.afterlateraudio.com/products/warp-drive
+prices:
+  - amount: 100
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack power supply providing 1.25A on both the +12V and -12V
+  rails, with a 5V rail that draws from the +12V rail. Includes a 12-position
+  flying bus cable and wall power supply.
+details: |-
+  Rack power bringing 1.25A (1250mA) on both the +12V and -12V rails. There is a 5V rail, but it pulls from the +12V rail, up to 750mA. So only use the +5V rail if you have to. Comes with 12-position flying bus cable and wall power supply. The wall power supply is the same unit as we use on our cases, so there's plenty of headroom and you don't have to worry about memorizing which amperage is for which. This should be roughly enough for 1 rows of modules in a 104hp case. If you need power for 2 rows, check out The Force module.
+io:
+  - key: yLkcoprF
+    name: Bus Board Output
+    signalFlow: output
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 12
+    position: Right
+  - key: p8FVIiuj
+    name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

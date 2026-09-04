@@ -1,0 +1,73 @@
+id: 1cezxa-7JbCh0uL1Xb1bP
+name: TILT
+manufacturer: after-later-audio
+primaryCategory: envelope-filter
+categories:
+  - modulation
+  - synthesizer
+url: http://www.afterlateraudio.com/products/tilt
+prices:
+  - amount: 139
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A function generator and ADSR envelope generator based on the
+  classic Serge Slope Generator, capable of working as a slew limiter, envelope
+  generator, LFO, or audio-rate oscillator with separate exponential/logarithmic
+  controls for rise and fall.
+details: |-
+  Function Generator and ADSR Envelope Generator
+
+  This is the After Later Audio take on the classic Slope Generator module first introduced by Serge back in the 1970s. The module is really a jack of all trades as it can be a slew limiter, envelope generator, oscillator (both LFO and audio rate), and function generator. This stays true to the original design by offering both a unipolar and bipolar output while adding separate controls for exp/log for both rise and fall and a gate/sustain function to get full ADSR envelopes. The rise output is high during the rising portion of the cycle and fall output is high during the falling portion of the cycle. Use the IN input to get standard slew limiter functionality. Use the GATE input to trigger an ADSR envelope and then use the sustain control to control the level of the sustain. Rise will control the attack and fall controls both the decay and release times. You can also use the GATE input while using a cycle mode and this will adjust the 0V level to the sustain level. This gets some great effects with audio rate frequencies on the on the rise/fall controls. There are two rate modes controllable by a jumper on the back. The module is set to AUDIO mode at the factory. • LFO mode – 10min/cycle to 115hz
+  • AUDIO mode – 75s/cycle to 1.2kHz
+
+  T I L T M A N U A L
+io:
+  - key: 60aSpQ3f
+    name: Signal Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: gcOUapKz
+    name: Gate Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: q9z6txa1
+    name: Rise Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: rDtD0fob
+    name: Fall Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: T4ScPOLH
+    name: Unipolar Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: esoxR2RH
+    name: Bipolar Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

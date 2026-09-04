@@ -1,0 +1,39 @@
+id: d4VWya9U1Y_DJStj8ta8a
+name: Light Rail (pair)
+manufacturer: after-later-audio
+primaryCategory: modular
+categories:
+  - utility
+  - routing
+url: http://www.afterlateraudio.com/products/light-rail-pair
+prices:
+  - amount: 99
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A pair of modules connected by a CAT7s cable that transmit 8
+  channels of audio or modulation over ethernet between two cases, with optional
+  buffering on up to four channels per side.
+details: |-
+  8 channels of audio or modulation over ethernet. There are two modules and a 3' CAT7s cable to connect them together. There are 8 total channels that are unbuffered and bi-directional. The primary usage is to connect two cases or just send a bundle of signals from one part of your larger case to another. You also get the option of buffering up to four channels on each side. This gives you a local copy of the signal and sends buffered copy to the other module, saving you from having to use a MULT to keep a local copy.
+specs: |-
+  - When one side of the Light Rail is in buffered mode, you cannot send signals from the opposite side on those 4 buffered channels (the other 4 channels can still be used in bi-directional mode)
+  - If you are after a different longer/shorter cable, you will get the best performance with CAT7s as it offers the shielding, which is used for the ground.
+  - While the cross channel bleed is minimal, you will notice some very minor cross talk between the channels.
+io:
+  - key: 0tpLhSMf
+    name: Ethernet
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Bottom
+  - key: cAn9PBGb
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

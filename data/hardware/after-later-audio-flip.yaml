@@ -1,0 +1,75 @@
+id: vcJKPVJ_i8AbysbW9fnut
+name: Flip
+manufacturer: after-later-audio
+primaryCategory: utility
+categories:
+  - modular
+  - midi-effect
+url: http://www.afterlateraudio.com/products/flip
+prices:
+  - amount: 89
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A 1U Intellijel format module based on the Mutable Instruments
+  Branches that routes incoming gate or trigger signals to one of two outputs
+  based on a probability coin flip.
+details: |-
+  Flip is a 1U Intellijel format module based on the Mutable Instruments Branches. It will take the incoming gate/trigger and route it to one of the two outputs based on a coin flip. You can control the probability of the coin flip with the knob and CV input. CH1 input normalled to CH2 input. The button toggles modes to a latch mode which will always keep one of the outputs high.
+io:
+  - key: 3zd83rXU
+    name: 12V
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: 0AuZJPYj
+    name: -12V
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: QwpBAmQc
+    name: CH1 Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: WqlBuGVX
+    name: CH2 Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: VHH3Bqyg
+    name: Probability CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 00PfVi2e
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: vcoyq9s0
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

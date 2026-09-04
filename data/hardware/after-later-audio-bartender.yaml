@@ -1,0 +1,78 @@
+id: QoQyccfe3XCkzLsTPj9Xn
+name: Bartender
+manufacturer: after-later-audio
+primaryCategory: mixer
+categories:
+  - modular
+  - semi-modular
+  - utility
+url: http://www.afterlateraudio.com/products/bartender
+prices:
+  - amount: 360
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack mixer module with four stereo channels, two stereo aux
+  sends, and two stereo returns, featuring a built-in cueing system and
+  expandability with other mixer modules.
+details: |-
+  Starting April 2025 all units shipped are version 2. Version 2 adds the following
+
+  Core Features
+
+  Bartender is the centerpiece of the mixer system. Four stereo channels, with two stereo aux send and two stereo returns. Each channel can be used in a mono mode where both channels are mixed. If you want to do eight channels of mono, you can put the channels in stereo mode (I know it feels backwards) and then use the pan control to control the crossfade between each channel, and then take the mono output. There is a built in cueing system so you can monitor channels in your headphones and control the blend with the main output. You can expand a Bartender with both a Barback and/or another Bartender. When connecting two Bartenders, the main level control on the 'expander' Bartender acts as a group control. Mixer section
+
+  Each channel has the following:
+
+  Mains Section
+
+  Cue Section
+
+  Expandable
+
+  Manual - Link
+
+  Demos
+
+  SynthDad
+
+  Robots Are Red
+
+  Braintree
+specs: |-
+  - Fixes for minor audio bleed and crosstalk between channels
+  - Adds expansion headers for SENDS, EQ, Main Insert, Direct Outs
+  - All of the new expanders should be available in late May 2025
+  - Version 2 units can still connect with Version 1 units, but the Version 1 units will not gain the features of the new expanders.
+  - Stereo or mono - Each channel can be treated as a stereo channel or a mono channel with two summed inputs.
+  - CV inputs for both panning and level control
+  - Two send buses - You can route each channel to one of two send buses. Each send bus is stereo. You can choose if you want the send to come before or after the level/panning controls.
+  - Mute - The mute has both latching mute (up) and a momentary mute (down). The mute uses a capacitor to slow the turn off and on of the mute action. So it is mostly click-less, but you may find an occasional pop.
+  - Cue bus - You can route each channel to the cue bus.
+  - Two stereo sends outputs
+  - Two stereo returns - which can also be used to directly insert into the main mix.
+  - Main stereo outputs - level controlled with the slider and stereo VU meter.
+  - Main mono output - summed output of the main L&R. If you are after an 8ch mono mix, you can use each channel in stereo mode, use the level control to control the level and then pan control to control the levels of the two channels.
+  - 1/4" Headphone jack along with level control
+  - Fader control to listen to the main mix, cue mix, or an adjustable mix of the two.
+  - Bartenders can be cascaded to create 8ch, 12ch, or 16ch mixer. The main level is what is sent the main level control can act as a group control.
+  - Barbacks can be added to add 2ch to your mix. Barbacks can also be cascaded enabling up to a 16ch mixer configuration.
+  - Send-VCA can be added for CV control of the level of the send.
+  - DVCA, Cast Iron, Mingles, and USB-2CH can all be connected with Dupont cables (aka female to female breadboard cables) via pin headers on the back of the modules. Connecting the in and out pins will send/receive the audio into the next module.
+io:
+  - key: aYNNgtAD
+    name: Headphone Out
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: iGfIyHqn
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

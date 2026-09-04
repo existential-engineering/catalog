@@ -1,0 +1,69 @@
+id: A6g4JZm8wDc4_46pFAwSz
+name: Brooks
+manufacturer: after-later-audio
+primaryCategory: synthesizer
+categories:
+  - modular
+  - fm
+  - analog
+url: http://www.afterlateraudio.com/products/brooks
+prices:
+  - amount: 119
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A compact 4hp thru-zero FM Eurorack oscillator designed as a
+  secondary or tertiary oscillator, featuring switchable tuning ranges and both
+  hard sync and soft sync (time reverse).
+details: |-
+  This is the smallest oscillator in our COCO system . Brooks
+
+  Brooks is a 4hp thru zero oscillator. It still packs in a lot of features but will work better in most cases as the 2nd and/or 3rd oscillator in the system. Key features:
+
+  The chip used for the core of this module is the SSI2130, which has a tendency to lock up on startup when the power rails come up asymmetrically, which is most common in Intellijel power supplies. I did my best to fix this but there may still be instances where the unit locks up on startup. If you end up in this state, just flip the LFO/VCO switch to get it behaving. Thanks to Neil Johnson at Sound Semiconductor for being so helpful in creating this.
+specs: |-
+  - Thru zero FM oscillator
+  - Tuning switch enables ranges of 0V, 3V, and 6V
+  - Tuning knob offers 4 octave range, when coupled with the switch you get a full 10 octaves.
+  - Both hard sync and time reverse (soft sync)
+io:
+  - key: w6li3hFx
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: Cf8D6EYf
+    name: V/OCT Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 8rYrs45P
+    name: FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: TVF5O1YF
+    name: Sync Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: KqlnKbNp
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
