@@ -122,7 +122,9 @@ function main(): void {
   const args = process.argv.slice(2);
   const tierIndex = args.indexOf("--tier");
   const tierArg = tierIndex !== -1 ? args[tierIndex + 1] : undefined;
-  if (tierArg && tierArg !== "auto" && tierArg !== "review") {
+  // `--tier` with no value must fail rather than silently widening to both
+  // tiers, which is the opposite of what the flag was reached for.
+  if (tierIndex !== -1 && tierArg !== "auto" && tierArg !== "review") {
     console.error("\n❌ --tier takes 'auto' or 'review'.\n");
     process.exitCode = 1;
     return;

@@ -69,9 +69,23 @@ export function parsePairs(source: string): Pair[] {
 export function appendCapabilities(source: string, additions: string[]): string {
   const lines = source.split("\n");
   const start = lines.indexOf("capabilities:");
-  if (start === -1) throw new Error("entry has no capabilities block");
+  // A flow-style list (`capabilities: [reverb]`) or a sequence at column 0
+  // both load fine and would both be mis-edited by the block insert below, so
+  // they are refused by name rather than silently written wrong. Every entry
+  // in the corpus is block style with two-space indent, which is what
+  // `pnpm format` produces; a file that is not says so.
+  if (start === -1) {
+    throw new Error(
+      lines.some((line) => line.startsWith("capabilities:"))
+        ? "capabilities is not a two-space block sequence; run pnpm format first"
+        : "entry has no capabilities block"
+    );
+  }
   let end = start + 1;
   while (end < lines.length && lines[end].startsWith("  - ")) end += 1;
+  if (end === start + 1) {
+    throw new Error("capabilities block has no two-space list items");
+  }
   lines.splice(end, 0, ...additions.map((capability) => `  - ${capability}`));
   return lines.join("\n");
 }
@@ -142,11 +156,31 @@ function main(): void {
     console.log("\n   Re-run with --apply to write.\n");
     return;
   }
+  // Stage every rewrite before writing any of them. Insertion can still throw
+  // on a shape `appendCapabilities` declines, and a loop that wrote as it went
+  // would leave the run half-applied — which is exactly the state a reviewer
+  // cannot re-run from, since the pair list gives no clue which lines landed.
+  const staged: Array<[string, string]> = [];
+  const failures: string[] = [];
   for (const [slug, list] of additions) {
     const file = filesBySlug.get(slug) as string;
-    fs.writeFileSync(file, appendCapabilities(fs.readFileSync(file, "utf-8"), list), "utf-8");
+    try {
+      staged.push([file, appendCapabilities(fs.readFileSync(file, "utf-8"), list)]);
+    } catch (error) {
+      failures.push(`${slug}: ${error instanceof Error ? error.message : String(error)}`);
+    }
   }
-  console.log(`\n   ✅ Wrote ${additions.size} files.\n`);
+  if (failures.length > 0) {
+    console.error(
+      `\n❌ ${failures.length} entry/entries could not be rewritten. Nothing written.\n`
+    );
+    for (const failure of failures) console.error(`   ${failure}`);
+    console.error("");
+    process.exitCode = 1;
+    return;
+  }
+  for (const [file, contents] of staged) fs.writeFileSync(file, contents, "utf-8");
+  console.log(`\n   ✅ Wrote ${staged.length} files.\n`);
 }
 
 // Only run when invoked directly. The guard test imports parsePairs from this

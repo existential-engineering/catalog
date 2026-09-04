@@ -60,8 +60,6 @@ elektron-analog-heat	fuzz
 eventide-audio-h90-harmonizer	freeze
 eventide-audio-h90-harmonizer	granular
 eventide-audio-h90-harmonizer	pitch-correction
-fairfield-circuitry-long-life	wah
-fairfield-circuitry-placeholder	flanger
 hologram-electronics-chroma-console	reverse
 hologram-electronics-chroma-console	phaser
 hologram-electronics-chroma-console	pitch-shift
@@ -98,7 +96,6 @@ roland-vp-550	harmonizer
 roland-vp-770	vibrato
 roland-vp-770	harmonizer
 roland-vp-770	pitch-correction
-roland-vp-770	sequencing
 rupert-neve-designs-optofet	harmonic-enhancement
 seymour-duncan-polaron	wah
 strymon-big-sky-reverb	freeze
@@ -110,7 +107,6 @@ tc-electronic-m100	phaser
 tc-electronic-m100	pitch-shift
 tc-electronic-pipeline-tap-tremolo	sequencing
 tc-electronic-plethora-x1-neo	vibrato
-tc-electronic-thunderstorm-flanger	chorus
 waldorf-d-pole	bit-crush
 waldorf-stvc	freeze
 waldorf-stvc	chorus
@@ -179,3 +175,33 @@ walrus-audio-mako-series-mkii-d1-high-fidelity-delay	granular
 walrus-audio-qi-etherealizer	granular
 joranalogue-audio-design-enhance-2	spatialization
 source-audio-lunar	flanger
+
+# Overturned in review (catalog#739). Each was accepted above and is wrong; the
+# entries have been corrected and the probes changed where a pattern could
+# catch the class:
+#   fairfield-circuitry-long-life      wah        — "wah-type effects" is a
+#     simile; `-type` joined `-style`/`-like` in the simile guard.
+#   fairfield-circuitry-placeholder    flanger    — "near-flanging" is the same
+#     class as the "quasi-chorus" this pass already rejected.
+#   tc-electronic-thunderstorm-flanger chorus     — a flanger's own "lush
+#     chorusing". Fourth false positive for the chorus probe, which moved to
+#     the review tier as a result.
+#   roland-vp-770                      sequencing — its "phrase-loop sequencer"
+#     is a looper by the vocabulary's own definition. Replaced with `looper`.
+#
+# Accepted from review, beyond the probe list:
+roland-vp-770	looper
+catalinbread-bitters	ring-modulation
+catalinbread-soft-focus-reverb	octave
+deathbyaudio-apocalypse	equalization
+deathbyaudio-bass-war	filter
+#
+# Declined, because each needs product documentation the entry does not carry
+# and rests on a pre-existing category this pass did not introduce:
+#   deathbyaudio-crossover-fuzz   -distortion  (declared categories: distortion)
+#   walrus-audio-385-overdrive-mkii -distortion (declared categories: distortion)
+#   joranalogue-audio-design-collide-4 -pitch-shift (categories: pitch-shifter)
+#   deathbyaudio-amp-crash        +gating      (no gate in the entry's prose)
+# animal-factory-...-bonesaw       -equalization was accepted: the entry itself
+#   says the 3-band EQ needs the separate Vivisect module, so the `equalizer`
+#   category went with it.

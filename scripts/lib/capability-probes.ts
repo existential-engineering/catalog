@@ -66,7 +66,7 @@ const NEGATIONS_BEFORE =
 
 /** Denials that follow the token, as a spec table writes them. */
 const NEGATIONS_AFTER =
-  /^[\w/ -]{0,24}?\s*(?::|--|—)\s*(?:none|n\/a|not (?:included|available|supported))\b|^\s*(?:none|n\/a)\b|^\s+drivers?\b|^[- ]?(?:style|like|ish|esque)\b/i;
+  /^[\w/ -]{0,24}?\s*(?::|--|—)\s*(?:none|n\/a|not (?:included|available|supported))\b|^\s*(?:none|n\/a)\b|^\s+drivers?\b|^[- ]?(?:style|like|ish|esque|type)\b/i;
 
 /** Characters of context tested on each side of a match. */
 const NEGATION_WINDOW = 120;
@@ -108,7 +108,12 @@ export const PROBES: Probe[] = [
   },
 
   // Modulation
-  { capability: "chorus", tier: "auto", pattern: /\bchorus(?:es|ing)?\b/i },
+  // Demoted from `auto` after four false positives in one corpus pass: a
+  // sibling pedal (Caroline Arigato, JHS Artificial Blonde), a homonym (the
+  // Roland VP-550's "Mixed Chorus" is a choir voice) and a flanger's own
+  // "lush chorusing" (TC Thunderstorm). None is separable by pattern, which is
+  // what the review tier is for.
+  { capability: "chorus", tier: "review", pattern: /\bchorus(?:es|ing)?\b/i },
   { capability: "flanger", tier: "auto", pattern: /\bflanger\b|\bflanging\b/i },
   { capability: "phaser", tier: "auto", pattern: /\bphasers?\b|\bphase shifter\b/i },
   // "pair perfectly with the tremolo and reverb on his amps" is the amp\u2019s.
@@ -138,7 +143,7 @@ export const PROBES: Probe[] = [
   {
     capability: "octave",
     tier: "review",
-    pattern: /\boctave (?:up|down|divider|doubler)\b|\boctaver\b/i,
+    pattern: /\boctave[- ](?:up|down|divider|doubler)\b|\boctaver\b/i,
   },
   // A "CV pan/detune control" is a parameter on a voice.
   { capability: "detune", tier: "review", pattern: /\bdetun(?:e|ed|ing)\b/i },
@@ -195,8 +200,11 @@ export const PROBES: Probe[] = [
   {
     capability: "auto-gain",
     tier: "auto",
-    pattern: /\bautomatic gain control\b|\bauto[- ]gain\b|\bAGC\b/,
+    // `AGC` keeps its own case-sensitive alternative: lowercased, "agc" turns
+    // up inside unrelated words far more often than it names the operation.
+    pattern: /\bautomatic gain control\b|\bauto[- ]gain\b/i,
   },
+  { capability: "auto-gain", tier: "auto", pattern: /\bAGC\b/ },
 
   // Spectral & filtering
   {

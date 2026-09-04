@@ -84,6 +84,30 @@ describe("capability probes", () => {
       // strymon-big-sky-reverb
       expect(caps("Press-and-hold infinite sustain and freeze functions")).toContain("freeze");
     });
+
+    it("does not read a '-type' comparison as the operation", () => {
+      // fairfield-circuitry-long-life: "the center frequency for wah-type
+      // effects" is a filter described by what it can imitate. Found by review
+      // after `-style` and `-like` were already guarded and `-type` was not.
+      expect(
+        caps("An expression pedal controls the center frequency for wah-type effects")
+      ).not.toContain("wah");
+    });
+
+    // A flanger's "lush chorusing" is its own character, not a chorus engine,
+    // and no pattern separates the two. That is why `chorus` is review tier
+    // rather than auto: the reviewer decides, and on
+    // tc-electronic-thunderstorm-flanger the answer was no.
+    it("leaves a flanger's own chorusing to the reviewer", () => {
+      const hits = probeProse("tape-like sweeps and lush chorusing to a flanger frenzy", NONE);
+      expect(hits.find((h) => h.capability === "chorus")?.tier).toBe("review");
+    });
+  });
+
+  it("matches a hyphenated octave effect", () => {
+    // catalinbread-soft-focus-reverb writes "octave-up effects"; a
+    // space-only pattern missed it.
+    expect(caps("one with chorus modulation, one with octave-up effects")).toContain("octave");
   });
 
   it("matches plural effect names", () => {
