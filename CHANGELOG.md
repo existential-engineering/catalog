@@ -1,5 +1,156 @@
 # catalog
 
+## 3.58.0
+
+### Minor Changes
+
+- cf677a7: Import Animal Factory Amplification (14 hardware/software entries).
+- b8af251: catalog-import-merge: joey-sturgis-tones — add 32 sample, impulse-response
+  and plugin entries; all 61 existing entries re-verified and unchanged.
+
+  Adds 30 content entries (Conquer All IR volumes I–V, the ANVIL and JTW v30
+  IR packs, Make Believe, the Riff Vault loop packs, and the Blood Series,
+  Departure Drums, Truth Custom, Shoulder City, Cymbalism and Kaoss sample
+  packs) plus 2 software entries (Black Box, Impossible Fader).
+
+  Bundle SKUs were deliberately excluded. Every pre-existing entry matched a
+  live product URL, so nothing was marked discontinued.
+
+- bd60937: Import Rossum Electro-Music (22 hardware/software entries).
+
+### Patch Changes
+
+- 4505ebf: Validator warns on unknown keys (W132) and untermed same-currency prices (W131), prices gain an optional term, scoped format normalises entry shape.
+
+  `pnpm validate --strict-unknown-keys` turns W132 into E121 for the import
+  lanes. `pnpm format <files>` now rewrites alias categories, drops a
+  secondary category equal to the primary, coerces details and specs to
+  block scalars and orders io fields. The unscoped run is unchanged. The
+  sqlite build carries an additive `term` column on every prices table.
+  CLAUDE.md gains the I/O modelling conventions, the price term, unknown
+  key and ios rules, the import supersedes policy and the known false
+  findings list, mirrored in .coderabbit.yaml (AUREO-1076).
+
+- 4ee935a: An unknown key is now a validation error (E121) on every `pnpm validate` run, not a warning.
+
+  W132 and its opt-in flag existed only while 337 entries on `main`
+  predated the check. Those were backfilled in catalog#716, so strict is
+  the only mode and the W132 code is retired. `--strict-unknown-keys` is
+  still accepted and ignored, because the racks import lanes probe for
+  it and pass it on their changed files (AUREO-1079).
+
+- 5d10a93: Backfill the 465 unknown keys across 337 entries so `pnpm validate` reports no W132 on main.
+
+  Every key Zod was silently stripping now lives where the schema keeps
+  it or is gone: `versions[].notes` and `changes` become `description`,
+  `versions[].date` becomes `releaseDate`, `links[].label` becomes
+  `title`, `prices[].type` one-time and perpetual become `term: perpetual`,
+  a top-level `discontinued: true` becomes the `discontinued` category,
+  and the Grado S550 cable terminations become `variants`. Dropped with
+  no home: `platforms` on 219 STL content entries, a `type: software`
+  marker on 13 discoDSP entries, price notes, labels and regions, and 32
+  conditional discount, demo, intro and bundle price rows that were never
+  a term (AUREO-1079).
+
+- 188979b: `pnpm format` now turns a `details` or `specs` plain scalar that wraps over several lines into a `|-` block scalar, not only one that carries a paragraph break.
+
+  The rule tested the value for a newline, and a folded plain scalar has
+  none because YAML folds the line breaks to spaces, so 127 wrapped
+  `details` on `main` came through the first `--normalize` pass
+  untouched. A value wider than the writer's 80-column fold now counts
+  as multi-line too. A single short line is still left as it is
+  (AUREO-1080).
+
+- aecaa3c: Second shape pass: 126 entries whose `details` or `specs` wrapped over several lines as a plain scalar now carry a `|-` block scalar.
+
+  These are the entries the first `pnpm format --normalize` pass left
+  behind because a folded plain scalar carries no newline in its value.
+  With that rule corrected, the pass is a no-op on `main`, and every
+  scoped `pnpm format <file>` in an import PR changes shape only for
+  what the PR itself introduced (AUREO-1080).
+
+- 8f2c09f: One-time shape normalisation of 803 entries: 708 alias categories rewritten to their canonical name, 290 duplicate categories dropped, 94 details arrays turned into block scalars.
+
+  The pass `pnpm format --normalize` has run on every entry once, so
+  from here every scoped `pnpm format <file>` in an import PR is a no-op
+  on shape and the unscoped run can stop skipping it. No entry gains or
+  loses information: an alias and its canonical category are the same
+  category to the build, a category that repeats the primary was already
+  implied, and a `details` array and its block-scalar form render the
+  same paragraphs (AUREO-1080).
+
+- 2aaa0c5: `pnpm format` normalises entry shape on every run, scoped or not, so the `assign-ids` sync keeps the tree in shape.
+
+  The scoping existed only while 708 entries on `main` still carried
+  alias categories, and #718 and #720 rewrote those. `--normalize` is
+  still accepted and changes nothing (AUREO-1080).
+
+- 493c105: Prices on 61 entries that carried several amounts in one currency now say what each amount is: 48 gain a `term` (perpetual, monthly or yearly) and 77 sale, upgrade, free-tier and bundle rows are removed.
+
+  Every maker's page was read for this pass. Subscriptions keep their
+  monthly and yearly rows with a term each (Output Arcade and Co-Producer,
+  Serato DJ Pro, Slate Transient Shaper, the A.O.M. Total Bundle), one-off
+  licences keep the list price as `perpetual`, and an intro price, a
+  loyalty discount, a free edition beside a paid one, an upgrade fee or a
+  higher edition sold as a bundle goes. Sonuscore Percussion carried only
+  two sale prices and now lists the Series edition at 299 USD. AudioMulch
+  is untouched because its site could not be reached. Distinct hardware
+  models that shared one entry (CDMK sizes, iLoud Precision models,
+  Majesty string counts) keep the base model's price, with the rest
+  recorded in AUREO-1084 for entries of their own (AUREO-1081).
+
+- 3b56f45: The schema version history now documents every migration through version 22, including the optional price `term` column, so a consumer can see the four breaking changes it previously omitted.
+
+  `docs/SCHEMA_VERSIONS.md` is the compatibility contract consumers are
+  told to read, and nothing in the repo referenced it, so it drifted. It
+  stopped at "Version 10 (Current)" while `scripts/schema.sql` had reached
+  22, hiding versions 13, 15, 16 and 17 as breaking, and hiding the `term`
+  column of catalog#715. It had also mislabelled the v17
+  `hardware_revisions` rename as a second "Version 8". Versions 11 through
+  22 are backfilled from the `schema_migrations` rows, the mislabelled
+  entry is corrected, and a guard test diffs the doc against those rows so
+  the next migration cannot land without its entry (AUREO-1081).
+
+- 703baf4: catalog-import-merge: acon-digital refreshes 12 existing entries with current product data
+
+  Updates descriptions, details, specs, formats, platforms, versions and
+  images across the full Acon Digital plugin line from the manufacturer's
+  current product pages. No new entries and no retirements.
+
+- 8bfa29a: catalog-import-merge: adam-audio refreshes all 24 existing entries with current product data
+
+  Updates descriptions, details, specs, images, links and videos across the
+  A, S and T series, the subwoofer line, the H200 headphones, S Control and
+  the two accessories. No new entries and no retirements. Proposed `io`
+  changes are listed in the pull request for review rather than applied.
+
+- 177c82d: catalog-import-merge: audio-modeling refreshes the Ambiente entry with current product data
+
+  Updates the canonical URL to the maker's current /products/ path and adds
+  description, details, specs, formats, platforms, prices, links, videos and
+  version history. No new entries and no retirements.
+
+- ab6e3b7: catalog-import-merge: jam-origin, refreshed all 7 entries from the current jam.live product pages
+
+  Updates descriptions, details, specs, formats, platforms, prices and
+  version history for MIDI Guitar 3, MIDI Guitar 3 Hex, MIDI Guitar 3 for
+  Logic, MIDI Bass 3, MIDI Cello 3, Guitar Mods and MIDI Guitar 2. No
+  entries were added or retired.
+
+- 2b69662: catalog-import-merge: kazrog, refreshed 12 plugin entries with current specs, system requirements and pricing
+
+  Reconciled all 13 existing Kazrog entries against the live
+  kazrog.com storefront. No products were added or discontinued:
+  every catalog entry is still on sale.
+
+  - 36 safe-add fields applied across 12 entries (details, specs,
+    descriptions, formats, prices).
+  - KClip 3's price corrected to its current regular price.
+  - KClip Zero regained the platform requirements its product page
+    no longer lists, sourced from the Kazrog Plugin Manager page.
+  - Avalon EQ Bundle left untouched pending a human decision on its
+    pre-existing bundle-entry flag.
+
 ## 3.57.0
 
 ### Minor Changes
