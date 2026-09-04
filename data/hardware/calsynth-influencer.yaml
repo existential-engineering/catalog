@@ -38,7 +38,7 @@ io:
     name: WAVE OUT
     signalFlow: output
     category: audio
-    type: line
+    type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
@@ -62,7 +62,7 @@ io:
     name: FALL OUT
     signalFlow: output
     category: audio
-    type: line
+    type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
@@ -70,7 +70,7 @@ io:
     name: FALL OUT INV
     signalFlow: output
     category: audio
-    type: line
+    type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
@@ -78,7 +78,7 @@ io:
     name: SP OUT
     signalFlow: output
     category: audio
-    type: line
+    type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
@@ -168,5 +168,12 @@ io:
     category: audio
     type: line
     connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
     maxConnections: 1
     position: Bottom
