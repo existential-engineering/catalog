@@ -1,0 +1,181 @@
+# Reviewed capability gaps — accepted tier-1 findings from `pnpm capability-gaps`.
+# Each line was checked against the excerpt the report printed.
+#
+# Rejected, and why they cannot be caught by a probe:
+#   caroline-guitar-company-arigato  chorus     — names the sibling Somersault pedal
+#   jhs-pedals-artificial-blonde     chorus     — names the sibling Emperor Chorus/Vibrato
+#   roland-vp-550                    chorus     — "Mixed Chorus" is a choir voice, not the effect
+#   dangerous-music-sum-minus        de-essing  — outboard gear you patch into its loops
+#   dbx-160a                         de-essing  — needs an external EQ in the detector path
+#   origin-effects-deluxe55          fuzz       — a tonal description of its overdrive
+
+ac-noises-ricorda	freeze
+antelope-audio-a4-1b	de-essing
+api-audio-t25-tube-compressor	de-essing
+bae-audio-hot-fuzz	fuzz
+bae-audio-royaltone	fuzz
+bastl-instruments-basil	freeze
+bastl-instruments-basil	chorus
+bastl-instruments-basil	flanger
+bastl-instruments-basil	vibrato
+bastl-instruments-basil	pitch-shift
+bastl-instruments-basil	stereo-widening
+bastl-instruments-thyme-plus	freeze
+bettermaker-c502v	expansion
+bettermaker-vspe	harmonic-enhancement
+boss-vt-1-voice-transformer	pitch-shift
+burl-audio-bc5000-bigfoot	de-essing
+caroline-guitar-company-arigato	wah
+catalinbread-adineko	vibrato
+catalinbread-belle-epoch-deluxe	harmonic-enhancement
+catalinbread-bitters	chorus
+catalinbread-bitters	phaser
+catalinbread-bitters	vibrato
+catalinbread-callisto-mkii	vibrato
+catalinbread-cb-paint-reverb	reverse
+catalinbread-soft-focus-reverb	chorus
+catalinbread-wake-chorus-octaver	vibrato
+chase-bliss-reverse-mode-c	reverse
+chase-bliss-reverse-mode-c	chorus
+chase-bliss-reverse-mode-c	vibrato
+chase-bliss-reverse-mode-c	frequency-shift
+chase-bliss-reverse-mode-c	sequencing
+chase-bliss-thermae	sequencing
+chase-bliss-wombtone-mkii	vibrato
+dbx-1066	expansion
+dbx-166xl	expansion
+dbx-166xs	expansion
+dbx-266xs	expansion
+dbx-902	de-essing
+dbx-afs2	feedback-suppression
+dbx-afs224	feedback-suppression
+dbx-f900	feedback-suppression
+dbx-f900a	feedback-suppression
+dbx-ieq15	feedback-suppression
+dbx-ieq31	feedback-suppression
+electronic-music-studios-vocoder-2000	freeze
+elektron-analog-heat-fx	fuzz
+elektron-analog-heat-mkii	fuzz
+elektron-analog-heat	fuzz
+eventide-audio-h90-harmonizer	freeze
+eventide-audio-h90-harmonizer	granular
+eventide-audio-h90-harmonizer	pitch-correction
+fairfield-circuitry-long-life	wah
+fairfield-circuitry-placeholder	flanger
+hologram-electronics-chroma-console	reverse
+hologram-electronics-chroma-console	phaser
+hologram-electronics-chroma-console	pitch-shift
+hologram-electronics-chroma-console	fuzz
+ik-multimedia-amplitube-x-drive	fuzz
+ik-multimedia-x-space	cabinet-simulation
+ik-multimedia-x-time	cabinet-simulation
+intellijel-cylonix-rainmaker	freeze
+intellijel-cylonix-rainmaker	pitch-shift
+intellijel-polaris	phaser
+intellijel-sealegs	freeze
+intellijel-swells	freeze
+jhs-pedals-3-series-oil-can-delay	vibrato
+jhs-pedals-flight-delay	chorus
+jhs-pedals-flight-delay	vibrato
+korg-dvp-1	chorus
+korg-kaoss-pad-kp1	phaser
+korg-vc-10-vocoder	vibrato
+lexicon-mx300	chorus
+lexicon-mx300	flanger
+lexicon-mx300	phaser
+lexicon-mx300	vibrato
+lexicon-mx400	de-essing
+lexicon-pcm96-surround-digital	chorus
+lexicon-pcm96-surround	chorus
+oberheim-echoplex-digital-pro	pitch-shift
+origin-effects-magma57-amp-vibrato-drive	chorus
+phase-fiasco-240-dl	harmonic-enhancement
+red-sound-darkstar	auto-pan
+red-sound-elevata	chorus
+roland-svc-350-vocoder	chorus
+roland-svc-350-vocoder	vibrato
+roland-vp-550	harmonizer
+roland-vp-770	vibrato
+roland-vp-770	harmonizer
+roland-vp-770	pitch-correction
+roland-vp-770	sequencing
+rupert-neve-designs-optofet	harmonic-enhancement
+seymour-duncan-polaron	wah
+strymon-big-sky-reverb	freeze
+tc-electronic-combo-deluxe-65-preamp	amp-modeling
+tc-electronic-combo-deluxe-65-preamp	cabinet-simulation
+tc-electronic-hall-of-fame-2-reverb	pitch-shift
+tc-electronic-m100	flanger
+tc-electronic-m100	phaser
+tc-electronic-m100	pitch-shift
+tc-electronic-pipeline-tap-tremolo	sequencing
+tc-electronic-plethora-x1-neo	vibrato
+tc-electronic-thunderstorm-flanger	chorus
+waldorf-d-pole	bit-crush
+waldorf-stvc	freeze
+waldorf-stvc	chorus
+waldorf-stvc	phaser
+
+# Tier-2 findings accepted by hand, with the sentence that decided each.
+# H90: "four new granular effects that create blooming reverse delays,
+#       rhythmic glitchy stutters, and morphing textures"
+eventide-audio-h90-harmonizer	reverse
+eventide-audio-h90-harmonizer	beat-slicing
+
+# Second pass, after `pnpm derive-capabilities` made 143 more entries
+# assessable and so probeable. Rejected here, none catchable by a probe:
+#   animal-factory-...-dirty-mirror   chorus     — "quasi-chorus phasey"
+#   deathbyaudio-thee-treble-overload chorus     — what you feed INTO it
+#   deathbyaudio-thee-treble-overload fuzz       — names sibling Thee Fuzz Warr
+#   deathbyaudio-disturbance          freeze     — freezes the LFO, not a buffer
+#   joranalogue-...-filter-8          freeze     — holds output voltages (CV)
+#   deathbyaudio-fuzz-war             wah        — a tone control "parked-wah"
+#   deathbyaudio-fuzz-war             freq-shift — a tone control "acts as" one
+#   walrus-audio-kangra-filter-fuzz   wah        — a quote about NOT sounding wah
+#   source-audio-l-a-lady             fuzz       — heritage of an overdrive
+#   deathbyaudio-evil-filter          subharm.   — filter self-oscillation
+#   joranalogue-audio-design-fold-6   harm-enh.  — a wavefolder is clipping
+deathbyaudio-rooms	chorus
+source-audio-lunar	chorus
+walrus-audio-lillian-multi-stage-analog-phaser	chorus
+walrus-audio-meraki-stereo-analog-dual-delay	chorus
+walrus-audio-qi-etherealizer	chorus
+animal-factory-amplification-dirty-mirror	vibrato
+deathbyaudio-rooms	vibrato
+empress-phaser	vibrato
+walrus-audio-meraki-stereo-analog-dual-delay	vibrato
+walrus-audio-polychrome-analog-flanger	vibrato
+walrus-audio-slo-multi-texture-reverb	vibrato
+walrus-audio-sloer-stereo-ambient-reverb	vibrato
+walrus-audio-slotva-multi-texture-reverb	vibrato
+deathbyaudio-rooms	freeze
+source-audio-collider	freeze
+source-audio-nemesis	freeze
+walrus-audio-qi-etherealizer	freeze
+empress-phaser	wah
+empress-vintage-modified-superdelay	reverse
+source-audio-encounter	reverse
+source-audio-nemesis	reverse
+walrus-audio-descent-reverb-octave-machine	reverse
+walrus-audio-melee-wall-of-noise	reverse
+walrus-audio-qi-etherealizer	reverse
+deathbyaudio-robot	fuzz
+deathbyaudio-time-shadows	fuzz
+animal-factory-amplification-animal-8-coma-reactor-preorder	pitch-shift
+source-audio-encounter	pitch-shift
+source-audio-nemesis	pitch-shift
+joranalogue-audio-design-collide-4	frequency-shift
+deathbyaudio-robot	bit-crush
+walrus-audio-fundamental-series-ambient	bit-crush
+deathbyaudio-robot	sequencing
+rossum-electro-music-morpheus	sequencing
+empress-echosystem	cabinet-simulation
+empress-reverb	cabinet-simulation
+joranalogue-audio-design-filter-8	phaser
+source-audio-spectrum	phaser
+walrus-audio-mako-series-d1-high-fidelity-delay	stereo-widening
+walrus-audio-sloer-stereo-ambient-reverb	stereo-widening
+walrus-audio-mako-series-mkii-d1-high-fidelity-delay	granular
+walrus-audio-qi-etherealizer	granular
+joranalogue-audio-design-enhance-2	spatialization
+source-audio-lunar	flanger
