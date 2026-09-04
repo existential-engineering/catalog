@@ -1,0 +1,97 @@
+id: JNSImvpJhppKVvcsCGzHZ
+name: Sample & Hold
+manufacturer: guru-gara-synth
+primaryCategory: modular
+categories:
+  - sequencer
+  - noise
+url: https://www.gurugarasynth.com/products/sample-hold-s-h-random-module-white-noise-pcb-front-panel-eurorack
+prices:
+  - amount: 15.99
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A classic DIY Eurorack modulation utility that samples an incoming
+  signal on each clock pulse and holds that value, generating stepped control
+  voltages. It includes a built-in white noise generator internally routed to
+  the input, plus a buffered noise output and Depth control.
+details: |-
+  Sample and Hold
+
+  The Sample and Hold Eurorack PCB and Front Panel Kit is a classic DIY modulation utility designed to generate stepped and staircase-style control voltages. By sampling an incoming signal at regular intervals and holding that value until the next clock event, the module introduces controlled randomness and rhythmic modulation into Eurorack patches. Key Features
+
+  Sampling & Modulation
+
+  The Sample and Hold circuit captures the voltage present at its input whenever a clock signal is received, holding that value until the next clock pulse. This creates a stepped output ideal for:
+
+  The clock input defines the sampling rate, allowing anything from slow, evolving changes to fast, rhythmic modulation. Noise & Signal Routing
+
+  A built-in white noise generator is internally routed to the input via a switched jack. When no external signal is connected, the module automatically samples the internal noise source, producing random voltages. The white noise signal is also available at a buffered noise output, allowing it to be used elsewhere in your patch while still feeding the Sample and Hold circuit. Output Control
+
+  The Depth potentiometer controls the range of the output voltage, making it easy to tailor the modulation intensity for different destinations. The sampled voltage is available at the S&H output for routing to oscillators, filters, VCAs, or other modulation targets. DIY Build & Front Panel
+
+  This beginner-level Eurorack DIY kit is easy to assemble and suitable for first-time builders. The circuit is based on a J112 transistor, providing reliable and musical performance. The front panel is constructed from durable PCB material and hand screen printed, ensuring a consistent look with other Guru Gara Synth modules. Technical Specifications
+
+  Skiff Friendly Module
+
+  View Document
+
+  Compatible items such as knobs, potentiometers, jack sockets, and other build components can also be found in the Synth Parts category.
+specs: |-
+  - Eurorack PCB and front panel kit
+  - Classic Sample and Hold (S&H) circuit
+  - Generates stepped control voltages
+  - Built-in white noise generator with switched input routing
+  - Depth control to set output voltage range
+  - Buffered white noise output for external patching
+  - Beginner-friendly DIY build
+  - Front panel made from PCB material, screen printed by hand
+  - Random pitch modulation
+  - Filter cutoff variation
+  - Amplitude modulation
+  - Clocked modulation patterns
+  - Format: Eurorack
+  - Width: 6HP
+  - Depth: 25 mm
+  - Circuit Core: J112 transistor-based S&H
+io:
+  - key: 72PtY1gd
+    name: Signal Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: ths4DYh1
+    name: Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: EE9FaHPt
+    name: S&H Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 0T679FFc
+    name: Noise Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: kAUkrjys
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,100 @@
+id: dtJW5ieYiYkSPgCiXxd9f
+name: 3360 Dual VCA
+manufacturer: guru-gara-synth
+primaryCategory: synthesizer
+categories:
+  - modular
+  - analog
+url: https://www.gurugarasynth.com/products/3360-dual-vca-voltage-controlled-amplifier-eurorack-pcb-front-panel
+prices:
+  - amount: 15.99
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack PCB and front panel DIY kit for a dual
+  voltage-controlled amplifier based on the CEM3360/AS3360 chip, with two
+  independent VCA channels.
+details: |-
+  3360 Dual VCA
+
+  The 3360 Dual VCA Eurorack PCB and Front Panel Kit is a compact DIY voltage-controlled amplifier module built around the classic CEM3360 or AS3360 VCA chip. It provides two high-quality, independent VCAs making it an essential utility for shaping dynamics in Eurorack systems. Key Features
+
+  VCA Operation & Control
+
+  Each channel operates as a high-quality voltage-controlled amplifier, allowing precise control over audio levels using envelopes, LFOs, or other modulation sources. This makes the module ideal for:
+
+  The internal CV normalisation allows both VCAs to be controlled by a single CV source without additional patching, while still supporting fully independent control when needed. DIY Build & Front Panel
+
+  This intermediate-level Eurorack DIY kit is suitable for builders with prior soldering experience. The circuit is straightforward and reliable, making it a solid choice for those looking to add essential VCAs to their system. The front panel is constructed from durable PCB material and hand screen printed, ensuring visual consistency with other Guru Gara Synth modules. Important Build Note (Errata for V4.3)
+
+  The two 2V Zener diodes used for CV input protection are shown with incorrect orientation in the PCB silkscreen/documentation. When assembling the module, install both Zener diodes in the opposite orientation to the markings on the PCB. This ensures the CV input clamp works correctly and protects the 3360 VCA control input. Technical Specifications
+
+  Skiff Friendly Module
+
+  Compatible items such as knobs, potentiometers, jack sockets, and other build components can also be found in the Synth Parts category.
+specs: |-
+  - Eurorack PCB and front panel kit
+  - Based on the CEM3360 / AS3360 dual VCA IC
+  - Two independent VCAs
+  - Separate audio inputs and outputs for each channel
+  - Dedicated CV input per channel
+  - CV normalisation: CV input 1 is internally routed to channel 2 when CV input 2 is left unpatched (stereo VCA)
+  - Compact 6HP format
+  - Front panel made from PCB material, screen printed by hand
+  - Amplitude shaping
+  - Dynamic modulation
+  - Audio gating
+  - General signal control
+  - Format: Eurorack
+  - Width: 6HP
+  - Depth: 25mm
+  - VCA Core: CEM3360 / AS3360
+io:
+  - key: hMBlKpEo
+    name: Audio Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Bj9jUPbR
+    name: Audio Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: BshbH48m
+    name: Audio Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 4ffVkKKF
+    name: Audio Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: S2tlaZoT
+    name: CV Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Y0yklCih
+    name: CV Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

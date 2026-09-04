@@ -1,0 +1,140 @@
+id: RwmgRrWVyA1roTeA6Po9Q
+name: Riot ST VCF
+manufacturer: guru-gara-synth
+primaryCategory: filter
+categories:
+  - modular
+  - stereo
+url: https://www.gurugarasynth.com/products/riot-st-vcf-full-kit
+prices:
+  - amount: 99.99
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A DIY stereo analog low-pass filter for Eurorack with CV control
+  over Frequency, Resonance, and Stereo Space, plus a signature Stereo Space
+  fader for expressive stereo movement. The left input is internally linked to
+  the right, allowing mono signals to be processed in stereo.
+details: |-
+  The Riot ST VCF Eurorack Full Kit is a DIY stereo analog low-pass filter (VCF) designed for Eurorack modular systems. This kit delivers a warm, rich analog sound and features a striking black, white, and gold PCB front panel design that stands out in any rack. All SMD components are factory pre-soldered, leaving only through-hole parts for you to assemble. The module offers stereo inputs and outputs, CV control over Frequency, Resonance, and Stereo Space, plus the signature Stereo Space fader and CV input for expressive stereo movement and modulation. The left input is internally connected to the right input,, so a mono signal can be processed in stereo - creating wide, dynamic sound using the Stereo Space function. Key Features
+
+  What's in the Kit
+
+  Build Difficulty & Calibration
+
+  This is an easy and beginner-friendly build since all SMD components are pre-soldered. However, the calibration process is a bit more advanced, and having tools such as an oscilloscope can be helpful for precise adjustment. Calibration
+
+  Input Level Adjustment
+
+  Frequency Resolution Adjustment
+
+  Fine Tuning Frequency
+
+  Technical Specification
+
+  Skiff Friendly Module
+
+  Videos
+
+  All stereo movement in the videos is achieved by modulating the filter's stereo space via CV, or by manually moving the fader to create and control the cutoff frequency offset between the left and right channels.
+specs: |-
+  - Stereo analog low-pass filter (VCF)
+  - Eurorack format
+  - Stereo inputs and outputs
+  - CV control over Frequency, Resonance, and Stereo Space
+  - Signature Stereo Space fader with CV input
+  - Pre-soldered SMD components for easy assembly
+  - Beginner-friendly DIY build
+  - PCB with SMD parts pre-soldered
+  - Front Panel
+  - 7 × Jack sockets
+  - 2 × 100K trimmers
+  - 2 × 500R trimmers
+  - 3 × 100K plastic shaft potentiometers
+  - 1 × Metal shaft potentiometer
+  - 1 × 100K fader
+  - 2 × LEDs
+  - 1 × Fader cap
+  - 1 × Knob
+  - 4 × Mounting screws
+  - 1 × 10-pin (2x5) IDC socket
+  - 1 × Eurorack ribbon power cable
+  - Set the Frequency control fully clockwise, Resonance fully counterclockwise, and place the Stereo Space fader in the center position.
+  - Connect a sound source - for example, a square wave from a VCO — to the left input. Turn the L In LVL Trim all the way down, then slowly increase it until you see an 8V peak-to-peak square wave on the output. 8Vpp gives enough headroom for resonance.
+  - Repeat the same procedure for the right channel by adjusting the R In LVL Trim.
+  - Set Resonance fully counterclockwise, and the Stereo Space fader in the center position.
+  - Connect a square wave from a VCO to the left input. Adjust the L Freq. Trim to spread the filter sweep evenly across the Frequency potentiometer's range — initially, the sweep may be limited to a small section of the control.
+  - Repeat the process for the R Freq. Trim.
+  - Once both channels track properly, perform a fine-tuning adjustment: Insert a jack into the Stereo Space CV input and leave the other end unconnected. This disables the fader, putting the module into mono mode.
+  - Now connect both the left and right outputs to a two-channel oscilloscope, overlap the waveforms, and check for any differences at various cutoff frequencies.
+  - Adjust only one trimmer (for example, the R Freq. Trim) to align the right channel's response with the left channel for a perfectly matched mono behaviour.
+  - Size: 12HP
+  - Depth: 25mm
+  - Power Consumption : - +12V: 70mA
+  - -12V: 80mA
+  - +5V: 0mA
+io:
+  - key: tHyv61sD
+    name: Left Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: X4Ul8zzB
+    name: Right Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: yhOdDGU0
+    name: Left Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: k7jdMICJ
+    name: Right Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: PtPI8EIp
+    name: Frequency CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: q3aAZIyg
+    name: Resonance CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: VaWhbW35
+    name: Stereo Space CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: bwfv2gT7
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

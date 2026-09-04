@@ -1,0 +1,95 @@
+id: agh4_Vp1-kBnmJBxmDrWt
+name: Dual Side Chain VCA
+manufacturer: guru-gara-synth
+primaryCategory: effect
+categories:
+  - modular
+  - dynamics
+url: https://www.gurugarasynth.com/products/dual-side-chain-vca-eurorack
+prices:
+  - amount: 21.49
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A dual gain-reduction VCA Eurorack module where incoming CV or
+  audio reduces the signal gain rather than increasing it, designed for
+  sidechain-style ducking effects with adjustable attack and decay.
+details: |-
+  Sidechain VCA (Gain-Reduction VCA)
+
+  The Sidechain VCA Eurorack PCB and Front Panel Kit is a dual voltage-controlled amplifier designed around a gain-reduction topology, operating in the opposite way of a traditional VCA. Instead of increasing level with control voltage, incoming CV or audio reduces the gain, making it ideal for sidechain-style dynamics commonly used in electronic music. Key Features
+
+  Gain Reduction & Sidechain Behaviour
+
+  This VCA is designed to emulate classic sidechain-style ducking techniques, where the level of one signal is reduced in response to another. An external audio signal—such as a kick drum—can be used to generate an internal control voltage, automatically reducing the gain of the main signal when the sidechain input is active. Alternatively, a control voltage or envelope can be patched into the CV input to shape gain reduction over time, allowing rhythmic pumping effects, subtle dynamic control, or creative modulation beyond traditional VCA behavior. Controls & Response
+
+  Attack and decay controls shape how quickly the gain reduction responds and recovers, while the audio level control adjusts the depth of gain reduction when using the sidechain audio input. This allows precise tuning of the dynamic response for both subtle movement and pronounced rhythmic effects. DIY Build & Front Panel
+
+  This DIY Eurorack VCA PCB and front panel kit is intended for intermediate builders. The front panel is made from durable PCB material and screen printed by hand, giving the finished module a distinctive and cohesive appearance within your modular system. Technical Specifications
+
+  Skiff friendly Module
+
+  Compatible items such as knobs, potentiometers, jack sockets, and other build components can also be found in the Synth Parts category. Videos
+specs: |-
+  - Eurorack PCB and front panel kit
+  - Dual gain-reduction VCA design
+  - Based on the 3360 VCA chip
+  - Control voltage reduces gain rather than increases it
+  - Audio input for sidechain-style gain reduction
+  - CV input for envelope-shaped gain reduction
+  - Adjustable attack and decay
+  - Audio level control to set gain-reduction depth
+  - 12HP Eurorack format
+  - Format: Eurorack
+  - Width: 12HP
+  - Depth: 25 mm
+  - VCA Core: 3360 VCA (dual)
+io:
+  - key: MkNiHCzE
+    name: Audio Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Jb9yOi2O
+    name: Audio Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: U3g9eLKn
+    name: CV Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: rX9V6Ejl
+    name: CV Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: OpP79uUF
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: w4yJ73ei
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

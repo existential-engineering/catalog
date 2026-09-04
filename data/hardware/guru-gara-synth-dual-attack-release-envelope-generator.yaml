@@ -1,0 +1,103 @@
+id: wEyxs71dtaTf0qXEk89Ox
+name: Dual Attack / Release Envelope Generator
+manufacturer: guru-gara-synth
+primaryCategory: modular
+categories:
+  - semi-modular
+  - effect
+url: https://www.gurugarasynth.com/products/dual-attack-release-envelope-generator-eurorack-pcb-front-panel-kit
+prices:
+  - amount: 19.99
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A DIY Eurorack PCB and front panel kit providing two independent
+  envelope generators that shape the rising and falling edges of gate or trigger
+  signals. It includes gate-to-trigger conversion and switched jack routing to
+  trigger both envelopes from a single source.
+details: |-
+  Dual Attack / Release Envelope Generator
+
+  The Dual Attack / Release Envelope Generator Eurorack PCB and Front Panel Kit is a flexible DIY envelope module designed to shape the rising and falling edges of incoming gate or trigger signals. It provides two independent A/R envelope generators, making it ideal for shaping VCAs, filters, and modulation destinations in Eurorack systems. Key Features
+
+  Envelope Modes & Behavior
+
+  Each envelope generator offers two response styles:
+
+  Attack and release times are defined by electrolytic capacitors, allowing builders to easily customize envelope response to suit their patching style. Timing Control & Customization
+
+  Envelope timing is controlled by four capacitors:
+
+  Recommended starting values:
+
+  Using larger capacitor values will result in slower envelope segments, while smaller values produce faster response times. Experimentation is encouraged for custom envelope shapes. Gate & Trigger Routing
+
+  A built-in gate-to-trigger converter enables short envelope generation, particularly useful when working with sequencers that lack adjustable gate length. Switched jack connections link:
+
+  This allows a single gate or trigger source to activate both envelope generators. Inserting a jack overrides the internal routing, providing full flexibility when using separate control sources. DIY Build & Front Panel
+
+  This intermediate-level Eurorack DIY kit is intended for builders with some soldering experience. The front panel is made from durable PCB material and hand screen printed, maintaining consistency with other Guru Gara Synth modules. Build note: Use B100K potentiometers for the Attack controls (labeled 10K on the PCB). Technical Specifications
+
+  Skiff Friendly Module
+
+  Compatible components such as potentiometers, jack sockets, knobs, and other build parts can be found in the Synth Parts category.
+specs: |-
+  - Eurorack PCB and front panel kit
+  - Two independent Attack / Release envelope generators
+  - Selectable Fast / Short and Slow / Long envelope behavior
+  - Adjustable attack and release times via capacitor selection
+  - Gate-to-trigger conversion for short envelope generation
+  - Switched jack routing allows single signal to trigger both envelopes
+  - Front panel made from PCB material, screen printed by hand
+  - Fast / Short – ideal for percussive sounds, plucks, and rapid modulation
+  - Slow / Long – suitable for sustained tones and gradual envelope shaping
+  - C1 & C3 – Attack timing
+  - C2 & C4 – Release timing
+  - C1 and C3: 1µF (faster attack)
+  - C2 and C4: 22µF (slower release)
+  - Trigger Out → Gate 1 Input
+  - Gate 1 Input → Gate 2 Input
+  - Format: Eurorack
+  - Width: 10HP
+  - Depth: 25mm
+io:
+  - key: 7rQTYHqE
+    name: Gate 1 Input
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: FcZ5rTmy
+    name: Gate 2 Input
+    signalFlow: input
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: MDv2uhmZ
+    name: Trigger Out
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 8wtOVeHK
+    name: Envelope 1 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: gv8ospdD
+    name: Envelope 2 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

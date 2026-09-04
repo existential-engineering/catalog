@@ -1,0 +1,92 @@
+id: LNoRKgPWbRUpHNXq0XQJk
+name: Drum Maker
+manufacturer: guru-gara-synth
+primaryCategory: drum-machine
+categories:
+  - modular
+  - percussion
+url: https://www.gurugarasynth.com/products/drum-maker-pcb-and-front-panel
+prices:
+  - amount: 22.99
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A 12HP Eurorack PCB and front panel kit that transforms an external
+  VCO into a drum sound generator through pitch slide, filtering, and amplitude
+  shaping.
+details: |-
+  Drum Maker (VCO-Based Drum Generator)
+
+  The Drum Maker Eurorack PCB and Front Panel Kit is a DIY drum synthesis module designed to transform an external VCO into a flexible drum sound generator. By shaping pitch, filtering, and amplitude, Drum Maker allows you to create everything from deep bass drums and punchy kick sounds to tom-like percussive elements. Key Features
+
+  Drum Synthesis & Sound Shaping
+
+  Drum Maker generates percussive sounds by applying a pitch slide to an external VCO, followed by filtering and amplitude shaping. The integrated low-pass filter includes adjustable cutoff and envelope amount, allowing precise control over tonal character, while the VCA shapes the final amplitude with its own attack and decay controls. While sine waves are commonly used for bass drum synthesis, using square or other waveforms opens up harmonically rich and more aggressive drum textures. Integration & Patching
+
+  To use Drum Maker within a Eurorack system:
+
+  For more dynamic performance, additional CV sources can be used to externally modulate the Tune and Cutoff parameters. Due to the nature of the design, the module may capture the VCO waveform at slightly different phases, subtly affecting transient behavior. Connecting the VCO's Sync input can help minimize this effect for more consistent results. DIY Build & Notes
+
+  This DIY Eurorack Drum Maker PCB and front panel kit is intended for intermediate to advanced builders. The front panel is made from durable PCB material and screen printed by hand, matching the aesthetic of other Guru Gara Synth modules. Correction (PCB version 1.7):
+
+  Technical Specifications
+
+  Skiff Friendly Module
+
+  Compatible items such as knobs, potentiometers, jack sockets, and other build components can also be found in the Synth Parts category. Video Demo
+specs: |-
+  - Eurorack PCB and front panel kit
+  - Converts an external VCO into a drum voice
+  - On-board filter and VCA for tone and amplitude shaping
+  - Dedicated attack and decay controls for filter and VCA
+  - Pitch slide generation for classic drum synthesis techniques
+  - External CV control over Tune and Cutoff
+  - 12HP Eurorack format
+  - Connect your VCO's 1V/Oct and Sync inputs to the module's CV outputs
+  - Route the VCO's audio output to VCO In
+  - Trigger the module using a gate signal patched into Gate In
+  - R39 should be 100K (PCB silkscreen incorrectly shows 100; documentation is correct)
+  - Format : Eurorack
+  - Width: 12HP
+  - Depth: 25mm
+io:
+  - key: yLAFIMW7
+    name: VCO In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: EHdsjeSq
+    name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: HJ7rhpi5
+    name: 1V/Oct Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 4h6iZfdT
+    name: Sync Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: SQ3NPaN8
+    name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

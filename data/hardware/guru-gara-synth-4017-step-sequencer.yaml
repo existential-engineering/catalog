@@ -1,0 +1,82 @@
+id: ZAE9MjEmYDFDfuB4X2lmb
+name: 4017 Step Sequencer
+manufacturer: guru-gara-synth
+primaryCategory: sequencer
+categories:
+  - modular
+url: https://www.gurugarasynth.com/products/4017-step-sequencer-eurorack-pcb-front-panel
+prices:
+  - amount: 22.99
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack PCB and front panel DIY kit for an 8-step CV and gate
+  sequencer based on the 4017 IC, with individual CV pots and gate switches per
+  step.
+details: |-
+  4017 Sequencer
+
+  The 4017 Sequencer Eurorack PCB and Front Panel Kit is a DIY 8-step CV and gate sequencer designed for Eurorack modular systems. Built around the classic 4017 integrated circuit, this sequencer offers hands-on control and flexible step manipulation for creating rhythmic and melodic patterns. Key Features
+
+  Sequencing & Control
+
+  This 4017-based sequencer allows deep hands-on interaction with your sequences. Each of the eight steps features an individual CV potentiometer for voltage control and a gate switch for rhythmic articulation. The rotary switch enables on-the-fly sequence length changes and instant resets at any step, making it easy to experiment with evolving patterns. For advanced timing control, the reset CV input allows precise manipulation of sequence length and rhythm, while the internal 555-based clock provides stable timing. The sequencer can synchronize to external clocks or act as a master clock using the clock out output. DIY Build & Front Panel
+
+  This DIY Eurorack sequencer PCB and front panel kit is intended for intermediate to advanced builders. Due to the densely populated PCB and wiring requirements, careful assembly and soldering experience are required. The front panel is made from durable PCB material and screen printed by hand, reflecting the attention to detail and craftsmanship of Guru Gara Synth modules. Technical Specifications
+
+  Compatible items such as knobs, potentiometers, jack sockets, and other build components can also be found in the Synth Parts category. Video Demo
+specs: |-
+  - Eurorack PCB and front panel kit
+  - 8-step CV and gate sequencer
+  - Based on the classic 4017 IC
+  - Dedicated CV potentiometer and gate switch for each step
+  - Rotary step selector for instant reset at any step
+  - Reset CV input for precise sequence control
+  - Internal clock based on a 555 timer IC
+  - External clock input and clock output for synchronization
+  - 12HP Eurorack format
+  - Format: Eurorack
+  - Width: 13HP
+  - Steps: 8
+  - Core ICs: 4017 (sequencer), 555 (clock)
+io:
+  - key: OCgdMkm3
+    name: Reset CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: WAYAu9CT
+    name: Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: HfvW806P
+    name: Clock Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: pGLjuFcy
+    name: CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: vHR9yPAX
+    name: Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
