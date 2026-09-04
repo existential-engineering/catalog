@@ -22,7 +22,197 @@ ORDER BY version;
 
 ## Version History
 
-### Version 10 (Current)
+### Version 22 (Current)
+
+**Description:** Added optional term column to every prices table
+
+**Breaking:** No
+
+**Changes:**
+
+- Added nullable `term` column to `software_prices`, `content_prices`,
+  `hardware_prices`, `hardware_variant_prices` and `accessories_prices`
+- Values are `perpetual`, `monthly`, `yearly` or `rent-to-own`, and `NULL`
+  where the YAML entry declares no term
+- Distinguishes several prices in one currency (a perpetual licence from a
+  monthly plan), which the price shape previously could not express
+- Additive: a reader that selects columns by name never sees it
+
+---
+
+### Version 21
+
+**Description:** Added stable port_key column to hardware_io
+
+**Breaking:** No
+
+**Changes:**
+
+- Added `port_key` column to `hardware_io`, carrying the YAML `io[].key`
+- Unique per hardware entry (`idx_hardware_io_port_key`)
+- Stable across rebuilds, so a consumer can reference a port by key
+
+---
+
+### Version 20
+
+**Description:** Added search_terms column to all FTS5 tables; changed tokenizer from porter unicode61 to unicode61
+
+**Breaking:** Yes
+
+**Changes:**
+
+- Added `search_terms` column to every FTS5 table
+- Changed tokenizer from `porter unicode61` to `unicode61`
+
+**Consumer Action Required:**
+
+- Full database re-download required
+- Re-check any query that relied on porter stemming
+
+---
+
+### Version 19
+
+**Description:** Added content_hardware_compatibility table for content-to-hardware references
+
+**Breaking:** No
+
+**Changes:**
+
+- Added `content_hardware_compatibility` table
+  (`content_id`, `compatible_with_id`)
+
+---
+
+### Version 18
+
+**Description:** Added manufacturers_fts FTS5 full-text search table
+
+**Breaking:** No
+
+**Changes:**
+
+- Added `manufacturers_fts` virtual table for manufacturer full-text search
+
+---
+
+### Version 17
+
+**Description:** Renamed hardware_revisions to hardware_variants; removed io/versions sub-tables
+
+**Breaking:** Yes
+
+**Changes:**
+
+- Renamed `hardware_revisions` → `hardware_variants`
+- Renamed `hardware_revision_prices` → `hardware_variant_prices`
+- Renamed `hardware_revision_links` → `hardware_variant_links`
+- Renamed `hardware_revision_videos` → `hardware_variant_videos`
+- Removed `hardware_revision_io` table (variants are cosmetic-only, share parent I/O)
+- Removed `hardware_revision_versions` table (variants share parent firmware versions)
+- YAML field renamed from `revisions` to `variants`
+
+**Consumer Action Required:**
+
+- Full database re-download required
+- Update any query naming a `hardware_revision*` table
+
+---
+
+### Version 16
+
+**Description:** Renamed website column to url across all tables
+
+**Breaking:** Yes
+
+**Changes:**
+
+- Renamed the `website` column to `url` on every table carrying one
+
+**Consumer Action Required:**
+
+- Full database re-download required
+- Update any query selecting `website`
+
+---
+
+### Version 15
+
+**Description:** Added content and accessories tables with related tables, FTS, and translations
+
+**Breaking:** Yes
+
+**Changes:**
+
+- Added `content` and `accessories` tables with their categories, prices,
+  links, videos, versions and search-term tables
+- Added `content_fts` and `accessories_fts` full-text search tables
+- Added translation tables for both collections
+
+**Consumer Action Required:**
+
+- Full database re-download required
+
+---
+
+### Version 14
+
+**Description:** Added connector_detail column to hardware_io and hardware_revision_io
+
+**Breaking:** No
+
+**Changes:**
+
+- Added `connector_detail` column, a JSON array
+  (e.g. `["TS"]`, `["center-negative", "9V"]`)
+
+---
+
+### Version 13
+
+**Description:** Separated video links into dedicated video tables
+
+**Breaking:** Yes
+
+**Changes:**
+
+- Moved video links out of the links tables into dedicated video tables
+
+**Consumer Action Required:**
+
+- Full database re-download required
+- Read videos from the video tables rather than filtering links
+
+---
+
+### Version 12
+
+**Description:** Added slug column to hardware_revisions for stable identifiers
+
+**Breaking:** No
+
+**Changes:**
+
+- Added `slug` column to `hardware_revisions` (now `hardware_variants`),
+  unique per hardware entry
+
+---
+
+### Version 11
+
+**Description:** Added supersedes_id column for product lineage tracking
+
+**Breaking:** No
+
+**Changes:**
+
+- Added `supersedes_id` column to `software`, `content` and `hardware`,
+  referencing the entry a product replaces
+
+---
+
+### Version 10
 
 **Description:** Added schema_migrations table for version tracking
 
@@ -65,24 +255,6 @@ ORDER BY version;
 
 - Added `hardware_io_translations` table for localized I/O port names
 - Uses merge semantics with `original_name` to match ports
-
----
-
-### Version 8
-
-**Description:** Renamed hardware_revisions to hardware_variants; removed io/versions sub-tables
-
-**Breaking:** Yes
-
-**Changes:**
-
-- Renamed `hardware_revisions` → `hardware_variants`
-- Renamed `hardware_revision_prices` → `hardware_variant_prices`
-- Renamed `hardware_revision_links` → `hardware_variant_links`
-- Renamed `hardware_revision_videos` → `hardware_variant_videos`
-- Removed `hardware_revision_io` table (variants are cosmetic-only, share parent I/O)
-- Removed `hardware_revision_versions` table (variants share parent firmware versions)
-- YAML field renamed from `revisions` to `variants`
 
 ---
 
