@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import MasterSounds (106 hardware/software entries).
+Import MasterSounds (34 hardware and accessory entries).
