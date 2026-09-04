@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Fieldtone (3 hardware/software entries).
+Import Fieldtone (3 hardware entries).
