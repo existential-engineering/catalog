@@ -21,19 +21,95 @@ details: |-
 
   Doupples is a stereo multimode filter in 8hp that is based on the sound of the beloved Ripples filter. With 2 separate audio paths, each with cv control and attenuvertors, it opens up a host of creative possibilities. The two channels share a resonance and v/oct cutoff control, and when at high resonance, Doupples can act as a v/oct sine wave generator.
 io:
-  - key: s4dDneZo
-    name: CV
-    signalFlow: input
-    category: audio
-    type: cv/gate
-    connection: 1/8-inch
-    maxConnections: 1
-    position: Top
   - key: zAPJGFQb
     name: Power
     signalFlow: input
     category: power
     type: power
     connection: idc
+    maxConnections: 1
+    position: Bottom
+  - name: RES
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: FREQ
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: BP Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: BP Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: IN L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: FM L
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: LP2 Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: LP2 Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: IN R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: FM R
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: LP4 Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: LP4 Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom

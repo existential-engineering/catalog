@@ -28,7 +28,7 @@ specs: |-
   - 2-year Calsynth warranty
 io:
   - key: wG4r1Uqd
-    name: LOWPASS 2-POLE OUT
+    name: HP Out
     signalFlow: output
     category: audio
     type: line
@@ -36,7 +36,7 @@ io:
     maxConnections: 1
     position: Bottom
   - key: ZQ7lhv89
-    name: BANDPASS 2-POLE OUT
+    name: BP Out
     signalFlow: output
     category: audio
     type: line
@@ -44,7 +44,7 @@ io:
     maxConnections: 1
     position: Bottom
   - key: Xr6TELfs
-    name: LOWPASS 4-POLE OUT
+    name: LP Out
     signalFlow: output
     category: audio
     type: line
@@ -57,5 +57,47 @@ io:
     category: power
     type: power
     connection: idc
+    maxConnections: 1
+    position: Bottom
+  - name: IN 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: FM
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: RESO
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: IN 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: V/OCT
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: LEVEL (LP)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
