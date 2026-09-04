@@ -87,7 +87,7 @@ io:
     position: Top
   - key: Plp9WxZ7
     name: Direct Output 1
-    signalFlow: output
+    signalFlow: bidirectional
     category: audio
     type: line
     connection: 1/8-inch
@@ -95,7 +95,7 @@ io:
     position: Bottom
   - key: PWYLqLNg
     name: Direct Output 2
-    signalFlow: output
+    signalFlow: bidirectional
     category: audio
     type: line
     connection: 1/8-inch
@@ -103,7 +103,7 @@ io:
     position: Bottom
   - key: iTiBHVdK
     name: Direct Output 3
-    signalFlow: output
+    signalFlow: bidirectional
     category: audio
     type: line
     connection: 1/8-inch
@@ -111,7 +111,7 @@ io:
     position: Bottom
   - key: 9TXcqaRK
     name: Direct Output 4
-    signalFlow: output
+    signalFlow: bidirectional
     category: audio
     type: line
     connection: 1/8-inch
@@ -119,7 +119,7 @@ io:
     position: Bottom
   - key: Nxrnc7Jv
     name: Direct Output 5
-    signalFlow: output
+    signalFlow: bidirectional
     category: audio
     type: line
     connection: 1/8-inch
@@ -127,7 +127,7 @@ io:
     position: Bottom
   - key: tY13eUjA
     name: Direct Output 6
-    signalFlow: output
+    signalFlow: bidirectional
     category: audio
     type: line
     connection: 1/8-inch
@@ -135,7 +135,7 @@ io:
     position: Bottom
   - key: kO0jKtQM
     name: Direct Output 7
-    signalFlow: output
+    signalFlow: bidirectional
     category: audio
     type: line
     connection: 1/8-inch
@@ -143,7 +143,7 @@ io:
     position: Bottom
   - key: dkLfSC9t
     name: Direct Output 8
-    signalFlow: output
+    signalFlow: bidirectional
     category: audio
     type: line
     connection: 1/8-inch
@@ -155,5 +155,12 @@ io:
     category: audio
     type: line
     connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
     maxConnections: 1
     position: Bottom
