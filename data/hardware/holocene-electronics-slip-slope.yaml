@@ -1,0 +1,92 @@
+id: 9uoANrTxly8vdiJOwlvpj
+name: SLIP & SLOPE
+manufacturer: holocene-electronics
+primaryCategory: envelope-filter
+categories:
+  - utility
+  - modulation
+url: http://www.holocene-electronics.net/products/slip-slope
+prices:
+  - amount: 110
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A voltage controlled Attack Release/Attack Sustain Release envelope
+  generator and slew rate limiter with a gate delay function, featuring rise and
+  fall time control, tune CV for looping envelopes, and an end-of-cycle output.
+details: |-
+  AR/ASR Envelope Generator & Slew Limiter and Gate Delay Module
+
+  **A Voltage Controlled Attack Release/ Attack Sustain Release Envelope Generator and Slew rate limiter. **
+
+  • Gate In: Triggers the envelope cycle. • Slew In: Transform SLIP&SLOPE into a slew rate limiter by connecting a stepped voltage for glides and slides. tip connecting a audio signal to Slew creates a filter or wave shaper type behavior. • AR/ASR Switch: ASR mode adds sustain via normalizing the gate to the slew input. • Loop Switch: loops the envelope by normalizing the EOC to the Trig input
+
+  • Rise/Fall Sliders: Control attack and release time. • Rise & Fall Inputs: Modulate rise/fall with external voltages. • Tune CV: tune the looping envelope! (More voltage = higher frequency)
+
+  • Curve Knob:
+  CCW = exponential / CW = logarithmic. • Output: Envelope or Slewed signal. • EOC (End of Cycle): Outputs trigger when envelope completes. *By design, This envelope generator does not retrigger before finishing a cycle. Useful for introducing variations to rhythms. QUICKGUIDE :)
+io:
+  - key: jncowzlS
+    name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: q4QU5FUP
+    name: Slew In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: RJJunkBy
+    name: Rise Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: enAnJWFS
+    name: Fall Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Nllq75h9
+    name: Tune CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: s8fegqch
+    name: Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: fx3Bnbce
+    name: EOC Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: YpQqEII1
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
