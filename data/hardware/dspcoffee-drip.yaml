@@ -1,0 +1,121 @@
+id: UISUj34BGYj2bz9JbRDcJ
+name: DRIP
+manufacturer: dspcoffee
+primaryCategory: modular
+categories:
+  - filter
+  - synthesizer
+url: https://dsp.coffee/products/drip-stereo-multimode-filter
+prices:
+  - amount: 250
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: DRIP is an 8hp stereo multimode filter Eurorack module based on the
+  Mutable Instruments Ripples V1 filter section, offering separate 12dB/oct,
+  24dB/oct and bandpass outputs for each channel.
+details: |-
+  Mutable Instruments' Ripples filter sounds lovely, and then After Later Audio combined two in their Popple module. DRIP / Popple is an 8hp multimode stereo filter based on the Mutable Instruments Ripples V1 filter section. Features:
+
+  References:
+
+  https://afterlateraudio.com/products/popple-presale
+
+  https://github.com/AfterLaterAudio/Eurorack/tree/master/Popple
+
+  https://github.com/pichenettes/eurorack/tree/master/ripples/hardware_design
+specs: |-
+  - Stereo inputs.
+  - Separate 12db/oct, 24db/oct, and bandpass outputs for both channels.
+  - Attenuverters to dial in exactly how much modulation each channel receives.
+  - FM inputs to modulate L & R separately.
+  - Self oscillation at high resonances.
+io:
+  - key: nBd9I6Fo
+    name: Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: msPTYMsQ
+    name: Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 21QfeUUn
+    name: 12dB Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: rHaOFbua
+    name: 12dB Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 2rIZPm3x
+    name: 24dB Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: hbKXyxPt
+    name: 24dB Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: TRzZq3oC
+    name: Bandpass Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: CPgNxzoz
+    name: Bandpass Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: tnnQxZ7F
+    name: FM Input L
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: EOnT4blv
+    name: FM Input R
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: cTQtKJa3
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
