@@ -12,6 +12,102 @@ description: A Eurorack module offering four channels of attenuverters with
 details: |-
   In production and shipping with a 5 day lead time! What joy is modular synthesis if you can't perform anaesthesia-free surgical operations on living, screaming electrical signals? The Vivisect is designed for just that. Simple but deep, this module gives you four channels of attenuverters with independent outputs, an offset that can be switched in and out of the summed signal and a completely independent white noise out. Jumpers on the back allow you to normalize any or all of the other three inputs to Input 1. IMPORTANT: Please note that while you can definitely use Vivisect to process/attenuate/mix/mult audio signals, it was not designed with that in mind. This module operates on the principle of phase-cancellation - the faster or more complex the signal, the harder it will be to get a perfect zero output in the center position - some signal will tend to bleed through. For DC and most CV signals, you should be able to achieve a dead zero in the center position.
 io:
+  - key: XXoO6xqS
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: FHRneQ96
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: qzhIYcgr
+    name: Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: zAYK5HJE
+    name: Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: agl2I3h8
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 2tpPpM19
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: QIP0nNjI
+    name: Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ZRai4xqk
+    name: Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: jmNud89c
+    name: Offset Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 7p6xPROH
+    name: Mix Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: QloJXAmu
+    name: Inverted Mix Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: NlxUC5es
+    name: Noise Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
   - key: BPCIj5Gh
     name: Eurorack Power
     signalFlow: input
