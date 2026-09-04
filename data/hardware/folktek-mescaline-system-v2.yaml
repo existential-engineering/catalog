@@ -1,0 +1,123 @@
+id: wRu7aD7Dh7XVdYYlo6Vo7
+name: Mescaline System V2
+manufacturer: folktek
+primaryCategory: synthesizer
+categories:
+  - sequencer
+  - drum-machine
+  - modular
+  - semi-modular
+url: https://folktek.com/products/mescaline-system-2
+description: Mescaline is a modular synthesizer system composed of three
+  Eurorack-compatible boards - Channel (a polyphonic touch synth with
+  reverb/delay effects), Motion (dual sequencers) and Mental (a versatile
+  drum/drone synth and audio processor) - housed in a dedicated frame.
+details: |-
+  Let's start by saying that Mescaline is one of the finest times you'll have. It might seem intimidating at first but ultimately once you dive in, you realize there was nothing to fear and it's only here to help open you to extreme possibilities. It's capable of creating entire compositions and the possibilities are vast. - Each of these boards are eurorack compatible and can be installed in a eurorack system individually or all together. Each has its own eurorack power plug on the back. Each module is 44HP. - Each of these boards is capable of being powered on a standard 12v adapter. Each has a 2.1mm jack on the back. - When used together, all power can be jumped to power all three boards off the same 12v power source or Eurorack power source. CHANNEL
+
+  A 10 note polyphonic synthesizer with a sweet, warm sound and a huge custom designed reverb which also has an audio input and can be used to process external sound. Channel becomes a powerful effects processor with some very nice DSP designs we've been working on for the past year. - A touch-based synth which provides a sweet sounding 10 key oscillation based 10 filtered and reshaped analog square wave oscillators, each with a decay on the amp. - Each key is tuned individually and can be tuned to specific notes on the back via tuning trim pots so you can create intervals or pitch arrangements as you like. - Master pitch control (with control voltage) lets you change the tuning of all notes simultaneously. - 10 note polyphony and all notes can be triggered. - Synthesis passes through any of 4 selectable custom DSP effects - reverb which is huge and near infinite, notated tight delay, pitch shifter delay and palindrome reverse delay. Each effect has mix, two controls over effect changes and a low pass filter or damping. - 3.5mm jacks represent audio in, audio out (x2 = right and left), CV in. - Jumpable headers for all functions as well as power. MOTION
+
+  Motion is made up of two sequencers with simple but fully-capable function and some added function that other things don't/can't perform that help Mental to really shine. Both sequencers have clock division to break the rhythm but perhaps most important is how the trigger sequencer works - using opto-couplers (switches) to trigger parts within Mental to create sounds, textures and rhythms that voltage sources simply can't. It does this by directly connecting multiple parts within Mental. The CV does a great job of synching Channel. Motion also has sine modulation (vactrol or CV), gate triggers, resets for the sequencers to determine sequence length, and can got into chaotic territory but jumping voltages into the clock inputs. - 8 part CV Sequencer
+  - 8 part trigger sequencer with multi-add functionality
+  - 5 part clock division for each sequencer
+  - vactrol-based sine modulation
+  - 3.5mm jacks represent clock in, cv sequencer clock out, cv sequencer cv out, modulation out, trigger sequencer clock out. - Jumpable headers for all functions as well as power. MENTAL
+
+  Capable of so many things. It's an incredibly unique drum synth that will create odd and beautiful beats for days. It's a Drone synth that's generates some incredibly rich drone with multi-oscillation and in-circuit filtering. It's an audio processor that can take any incoming audio and chop it into place, filter it, distort it and screw it in ways that nothing else does. - Based on the root synthesis of other Folktek instruments Materia, Mentalis and Matter. - 17 input points to control synthesis and filtering via the sequencer trigger or cv points as well as the clock division points. - Removable breadboard to allow for development and experimentation. - 4 patchable pots to attenuate signals and gain more control *and/or* create direct patches to create drone scapes or use Mental as an audio processor. - Volume control
+  - 3.5mm jacks represent audio out and two vacant with representative headers to input voltage or audio signals from external modules or audio sources. - Send Mental to the input of Channel to add reverb to the signal. - Jumpable headers for all functions as well as power. FRAME
+
+  This strong frame is a design which simplifies putting Mescaline together. Designed by Arius Blaze and manufactured by a metal shop in Portland, Oregon. Powder coated black and easily assembled with included nuts and bolts. INCLUDED
+
+  Printed Manual: complete details of how to get going. A PDF version is here . An entire system gets all of the parts and bits and pieces and nuts and bolts to make it all work; the 3 modules, the frame, plenty of dupont patch cables, a small pack of components like resistors and capacitors, 12v power adapter (wall wart) and the nicely printed manual. CHANGES
+
+  There will be several changes from the prototypes shown on this page and they will be implemented by the time we ship:
+  - Added a header for effect selection. - Added a vactrol to channel for triggering. - There will be add and subtract buttons added for both sequencers. - Mental will have it's primary patchbay expanded by two rows for ease of use. Other changes to version 2 are listed above.
+io:
+  - key: eXfxX8Hx
+    name: Channel Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: rcYfXBFu
+    name: Channel Left Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: SEPtBZv5
+    name: Channel Right Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: xBjzVoQW
+    name: Channel CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: JmfOIfUp
+    name: Motion Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: RMGgPCvR
+    name: Motion CV Sequencer Clock Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 1ZND6bKr
+    name: Motion CV Sequencer CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Ir4pXbbg
+    name: Motion Modulation Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 5pMTpnfd
+    name: Motion Trigger Sequencer Clock Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 0Prw2rsC
+    name: Mental Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Oa5dUpMe
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

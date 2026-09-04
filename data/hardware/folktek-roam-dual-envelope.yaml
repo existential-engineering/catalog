@@ -1,0 +1,152 @@
+id: 0pInh0FEQSEcwj4mK9ttq
+name: Roam - Dual Envelope
+manufacturer: folktek
+primaryCategory: utility
+categories:
+  - modular
+url: https://folktek.com/products/roam
+description: A dual attack/release envelope module with touch-based selection of
+  speeds that double as clock multiplication and division, with re-triggering
+  possible at any point in the cycle.
+details: |-
+  Roam is a dual envelope that packs quite a bit into a small space. It has touch-based selection of of four A/R speeds from x ms to x ms but this also doubles as clock multiplication and division; 2x, 1x, 1/2, 1/3 (with a jumper on the back for those who prefer 1/4). While the clock input triggers the a/r, there's also a trigger jack which makes it incredibly easy to get into more complex rhythms. Re-triggering can happen at any point in the cycle of the envelope; not just at the release. This is incredibly useful if you're working with sequences. CV x2: CV out, clock in, trigger in, attack control (attenuable), release control (attenuable), end of cycle, inverted CV out. What makes this module unique: triggerable A/R is not new but as far as we know there are no modules (including Maths) that allow you to trigger at any point in the cycle. Roam will trigger on the rise as well and not just the fall of the cycle. Additionally by adding our clock multiplication/division, if one sends audio to the envelope, the envelope will be synched to the audio oscillator for added musicality. CONTROL (X2)
+
+  - Attack and release (both with CV)
+  - Touch-based switching for looping
+  - Touch-based selection for a/r length/clock multiplication and division
+
+  INS AND OUTS (X2)
+
+  - CV over attack and release
+  - Clock input
+  - Trigger input
+  - Envelope out, inverted envelope out, end of cycle
+
+  SPECS
+
+  - Includes mounting hardware and power connection in a beautiful Folktek box. + 12v = xma
+  -12v = xma
+  +5v = xma
+  Width = 16HP
+  1" depth (skiff friendly)
+io:
+  - key: wfKIlCx9
+    name: Section 1 Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: uyeJ4XFb
+    name: Section 1 Trigger In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 8EB3egjI
+    name: Section 1 Attack CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 0ytPS4y6
+    name: Section 1 Release CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: IIiK8JqY
+    name: Section 1 Envelope Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Kb1M6T5O
+    name: Section 1 Inverted Envelope Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: IWbcvB7G
+    name: Section 1 End of Cycle
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 8tgiLGTq
+    name: Section 2 Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: fG7zkoN0
+    name: Section 2 Trigger In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: XuNriMTo
+    name: Section 2 Attack CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: TAjxzKNs
+    name: Section 2 Release CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Z3QQ4ISx
+    name: Section 2 Envelope Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: HPyHwJNu
+    name: Section 2 Inverted Envelope Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: IUxueeBc
+    name: Section 2 End of Cycle
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: pfGDn3n1
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

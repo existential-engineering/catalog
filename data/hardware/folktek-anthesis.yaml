@@ -1,0 +1,137 @@
+id: z6e3c7kiI2x7IuqoZvDwn
+name: Anthesis
+manufacturer: folktek
+primaryCategory: synthesizer
+categories:
+  - analog
+  - modular
+  - noise
+url: https://folktek.com/products/anthesis
+description: Anthesis is a Eurorack analog voice generator with dual paired
+  oscillators, a sub oscillator, noise source, modulation and four A/R envelopes
+  for creating rich, complex tones and duophonic sounds.
+details: |-
+  Oscillators
+
+  Dual analog oscillators paired with one another. The main frequency control covers both oscillators and osc 2 pitch control detunes high or low and then shifts to 5ths or 7ths of osc 1 for instant musicality. There's also an octave control to switch octaves up or down. When you jack in to oscillator 2 it becomes independent of oscillator 1 so Anthesis can become distinctly duophonic. Oscillator shape also covers both oscillators simultaneously and smoothly fades from square to saw to triangle to sine waveforms on a single control (with added cv) and there's a switch to determine which direction the control or a/r travels. Add to that a sine-based sub oscillator
+  Noise: Level and shape control using bandpass filtering. Modulation
+
+  With speed control over the final vca mix of all events with selectable shape; square, triangle, sine. Envelopes
+
+  Four of them (A/R), all with adjustable attack and release, all triggered simultaneously and with a looping function. Selection of four timing options from x ms to x ms. These four envelopes control: 1. oscillator level 2. oscillator shape 3. noise level 4. modulation over final vca. The envelopes can also be bypassed. Switches
+
+  Six of them all touch-based. 1. trigger 2. loop 3. a/r speed 4. shape direction 5. modulation shape 6. a/r bypass
+
+  Controls
+
+  Osc frequency, fine frequency, osc shape, osc 1/2 octave, osc 2 level, osc2 pitch, Sub osc level, FM, modulation level, modulation speed, noise level, noise shape, independent Attack and Release controls for osc 1/2 level, osc shape, modulation, noise. CV
+
+  All attenuable. osc frequency, osc2 frequency, osc2 level, osc shape, sub osc level, sync, octave, noise level, noise shape, modulation level, modulation speed. Inputs/Outputs: Every waveform (square, saw, triangle, sine), oscillator 2 and a mix of all events, sync, FM. As a complete voice there's nothing quite like the Anthesis. It creates a deep, rich development of sound with enormous possibility. CONTROL
+
+  - A/R envelope controls for each: osc 1, shape, noise, modulation
+  - controls for osc frequency, shape, osc 2 frequency, osc 2 level, sub osc, FM, noise level, noise shape, modulation level, modulation speed, octave switching all with CV
+  - fine frequency control
+  - touch-based switching over: A/R speed, shape direction, A/R bypass, Trigger, Modulation shape, A/R Looping
+
+  INS AND OUTS
+
+  - CV over: osc 1 1v/oct, osc 2 1/v/oct, osc 2 level, osc shape, sub osc level, noise level, noise shape, modulation level, octave switching
+  - audio outputs for all waveforms (sine triangle, saw, square), osc 2, mix
+  - sync and FM inputs
+
+  SPECS
+
+  - Includes printed manual, mounting hardware and power connection in a beautiful Folktek box. + 12v = xma
+  -12v = xma
+  +5v = xma
+  width = 30HP
+  1.5" depth
+io:
+  - key: wgg44heK
+    name: Oscillator 1 1V/oct CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: u50GTwFi
+    name: Oscillator 2 1V/oct CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 1HEmhE8J
+    name: Square Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: xlr5Q6Kf
+    name: Saw Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: tGmMXkh3
+    name: Triangle Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 02L7wy6J
+    name: Sine Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: k2ef3xKE
+    name: Oscillator 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: LzR6JnFv
+    name: Mix Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: XNmkTGO1
+    name: Sync Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: ETb5MTVD
+    name: FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: ynnqO2oe
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
