@@ -1,0 +1,53 @@
+id: ClP6Vl4Vq4UqDuRevA0Z7
+name: WC:EX - Warp Core Expander
+manufacturer: infrasonic-audio
+primaryCategory: modular
+categories:
+  - synthesizer
+  - effect
+url: https://www.infrasonicaudio.com/products/warp-core-expander
+prices:
+  - amount: 80
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: WC:EX is a 4hp expander for Warp Core that adds a controllable ADSR
+  envelope generator and internal digital VCA, converting the oscillator into a
+  full stereo voice. It requires Warp Core to function.
+details: |-
+  DISCONTINUED
+
+  WC:EX is a 4hp expander for Warp Core which converts the oscillator into a full stereo voice by adding a controllable ADSR (shared decay/release) Envelope Generator and internal digital VCA. This module requires Warp Core - it cannot function independently. With nothing patched into GATE, Warp Core's outputs behave as they normally would, i.e. always outputting a signal. With a patch cable inserted into GATE, both of Warp Core's outputs are internally amplitude-modulated by an envelope generated in response to incoming gates at the GATE input. In other words, with just a pitch CV and gate input signal, you can directly play individual notes out of Warp Core – in Stereo! The envelope signal is also internally normalled to the WARP A and WARP B CV inputs on Warp Core for fast and easy timbral modulation. And the ENV output makes the envelope CV signal available to patch out to other things. There is also a dedicated VCA CV input which overrides the envelope as the CV source for the internal VCA, so you can use whatever 0-5V signal you want to modulate the amplitude of Warp Core's outputs. When using the VCA CV input, the GATE input and ENV output are still fully functional as an independent envelope generator and the internal normalling of the ENV to WARP A and WARP B CV inputs remains active. VIDEOS
+io:
+  - key: Ddjw2qtJ
+    name: GATE Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: FxRnosx8
+    name: VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: bfdcKMM7
+    name: ENV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: fR8h5My1
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
