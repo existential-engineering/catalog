@@ -41,25 +41,17 @@ specs: |-
   - Cycle times 200sec - 1kHz (0.5ms)
 io:
   - key: ZN0cziCp
-    name: Channel 1 In/Slew Input
+    name: Channel 1 In/Trig Input
     signalFlow: input
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - key: lBy49Xsx
-    name: Channel 1 Trig In
-    signalFlow: input
-    category: digital
-    type: cv/gate
-    connection: 1/8-inch
-    maxConnections: 1
-    position: Top
   - key: VD5Ia5Gn
     name: Channel 1 Attack CV In
     signalFlow: input
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -67,7 +59,7 @@ io:
   - key: qCvZIwPf
     name: Channel 1 Release CV In
     signalFlow: input
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -83,7 +75,7 @@ io:
   - key: 0rik1JsL
     name: Channel 1 Rise Gate Out
     signalFlow: output
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -91,7 +83,7 @@ io:
   - key: z0inSE97
     name: Channel 1 Fall Gate Out
     signalFlow: output
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -107,7 +99,7 @@ io:
   - key: hIACrbyM
     name: Channel 2 Trig In
     signalFlow: input
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -115,7 +107,7 @@ io:
   - key: A0MApfIH
     name: Channel 2 Both In
     signalFlow: input
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -139,7 +131,7 @@ io:
   - key: i7Jq412n
     name: Channel 3 Trig In
     signalFlow: input
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -147,7 +139,7 @@ io:
   - key: RGoIVkro
     name: Channel 3 Both In
     signalFlow: input
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -161,25 +153,17 @@ io:
     maxConnections: 1
     position: Bottom
   - key: siBpJuC2
-    name: Channel 4 In/Slew Input
+    name: Channel 4 In/Trig Input
     signalFlow: input
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - key: qnD2lREh
-    name: Channel 4 Trig In
-    signalFlow: input
-    category: digital
-    type: cv/gate
-    connection: 1/8-inch
-    maxConnections: 1
-    position: Top
   - key: 9Wiiuyet
     name: Channel 4 Attack CV In
     signalFlow: input
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -187,7 +171,7 @@ io:
   - key: 8WSt5qeq
     name: Channel 4 Release CV In
     signalFlow: input
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -203,7 +187,7 @@ io:
   - key: oF8fCW90
     name: Channel 4 Rise Gate Out
     signalFlow: output
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -211,8 +195,99 @@ io:
   - key: DGH8R7wE
     name: Channel 4 Fall Gate Out
     signalFlow: output
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 1 VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 1 VCA Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Attack CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 Release CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 2 VCA Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 3 Attack CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 3 Release CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 3 VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 3 VCA Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 4 VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Channel 4 VCA Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
     maxConnections: 1
     position: Bottom

@@ -24,7 +24,7 @@ io:
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: ydk1xaho
     name: Input R
     signalFlow: input
@@ -32,7 +32,7 @@ io:
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: pAVgXyaG
     name: Output L
     signalFlow: output
@@ -52,16 +52,65 @@ io:
   - key: G0ZCDJGf
     name: Freeze/Gate In
     signalFlow: input
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: VwNiPIf1
     name: Eurorack Bus Power
     signalFlow: input
     category: power
     type: power
     connection: idc
+    maxConnections: 1
+    position: Bottom
+  - name: V/Oct Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Blend CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Texture CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Density CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Position CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: Size CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom

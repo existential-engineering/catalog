@@ -27,7 +27,7 @@ io:
   - key: 7RyHyCBK
     name: Reset In
     signalFlow: input
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -35,23 +35,23 @@ io:
   - key: 2maLdq6D
     name: X CV In
     signalFlow: input
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: yTsxb8vJ
     name: Y CV In
     signalFlow: input
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: 3wFes2IL
     name: BD Out
     signalFlow: output
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -59,7 +59,7 @@ io:
   - key: A4amx7WB
     name: SD Out
     signalFlow: output
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -67,7 +67,7 @@ io:
   - key: ksPucplO
     name: HH Out
     signalFlow: output
-    category: digital
+    category: audio
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
@@ -78,5 +78,54 @@ io:
     category: power
     type: power
     connection: idc
+    maxConnections: 1
+    position: Bottom
+  - name: Chaos CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CH1 Fill CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CH2 Fill CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: CH3 Fill CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: ACC1 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: ACC2 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - name: ACC3 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom

@@ -39,7 +39,7 @@ io:
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: uUbyTPqq
     name: BPF Output
     signalFlow: output
@@ -47,7 +47,7 @@ io:
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: YYc54AoU
     name: HPF Output
     signalFlow: output
@@ -55,7 +55,7 @@ io:
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: 6YYgzBHB
     name: Resonance CV Input
     signalFlow: input
@@ -63,4 +63,18 @@ io:
     type: cv/gate
     connection: 1/8-inch
     maxConnections: 1
-    position: Bottom
+    position: Top
+  - name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - name: Freq CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
