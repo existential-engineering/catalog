@@ -1,0 +1,126 @@
+id: bJITRgmK2TnY5102RU0tQ
+name: Tryfelo
+manufacturer: calsynth
+primaryCategory: modulation
+categories:
+  - modular
+url: https://calsynth.com/products/tryfelo-diy-populated-pcb-panel-set
+prices:
+  - amount: 59
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A triple re-settable LFO module with a built-in clock divider,
+  offering synchronized triangle/square waveforms and rhythmic reset capability
+  for Eurorack systems.
+details: |-
+  TRIPLE LFO W/CLOCK DIVIDER 8HP
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP.
+
+  Introducing a Triple Re-Settable LFO with Clock Divider – a powerhouse of precision and versatility. With three synchronized LFOs at your command, you're not just shaping sound, you're sculpting time itself. Perfectly in sync, precisely re-settable, and elegantly compact, this module elevates your modular experience to a new level of control and creativity. Tryfelo has three LFOs that can be reset by a single clock/trigger signal. Each LFO produces either a triangle or a square wave selectable via switch. In the mid position of the switch the LFO is deactivated. You may change the LFO´s rate with the help of a dedicated potentiometer. There are also CV attenuators per LFO available. Three bipolar LEDs are indicating the current state of the voltages. The LFO rate available increases from LFO 1 to LFO 3. LFO 1 will produce fast oscillating waves, whereas LFO 3 will provide very slowly changing control voltages. LFO speeds may be changed individually by choosing different capacitor values during assembly. Each LFO is internally connected to a clock divider that will reset the LFO cycle in connection to an incoming trigger/clock and even holds the LFO value when the clock divider pulse is high. During a hold phase there are still slow voltage movements on low LFO rates to keep a pause interesting. This way you can connect the LFOs to a rhythmical context and create pauses in a very musical way. The clock divider needs a trigger or clock signal at the CLK input, that will be converted into a pulse to create these pauses/holds mentioned above. The length of the pulse depends on the speed of the clock. Slower clocks or clock divisions will create longer pulses. The incoming trigger/clock signal will be divided by 2 or 4 for LFO 1, by 4 or 8 for LFO 2 and by 8 or 16 for LFO 3 selectable via switch. The LFO reset may also be deactivated by setting the dedicated switches to the mid position. Each divided signal may also be taken from the individual clock outputs for further external processing. The RST input will accept any trigger/pulse/clock signal and resets the clock division for all LFOs. VARI accepts any control voltage and produces rhythmical variations of the clock divisions. These variations are not purely random, but will generate alternative trigger patterns in connection to the incoming clock/trigger signal
+io:
+  - key: 1Xsp7Aqb
+    name: Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: aiXum8m5
+    name: Reset Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: kiMOjeSp
+    name: Vari Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 7UmOcVed
+    name: LFO 1 CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: wUtx3S2i
+    name: LFO 2 CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: DZMNWckX
+    name: LFO 3 CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: FTyJrqpP
+    name: LFO 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 1gjKwaz3
+    name: LFO 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: AE7jq2vG
+    name: LFO 3 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Cqe56VlD
+    name: Clock Div Output 1
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 9GstPEkQ
+    name: Clock Div Output 2
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: OJW9e9KV
+    name: Clock Div Output 3
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: P9Nf5HHC
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Top

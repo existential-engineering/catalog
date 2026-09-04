@@ -1,0 +1,90 @@
+id: 8-jzsGRhxIJ1aAzYu7U8l
+name: CION
+manufacturer: calsynth
+primaryCategory: modular
+categories:
+  - filter
+  - distortion
+url: https://calsynth.com/products/cion-diy
+prices:
+  - amount: 65
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: CION is a versatile CV function generator module that can act as an
+  AD/ASD envelope, basic filter, distortion effect, slew limiter, or waveshaping
+  oscillator.
+details: |-
+  6HP CV Function Generator
+
+  Photos show prebuilt Calsynth unit - the populated PCB/Panel set does not include knobs, pots, sliders, LEDS, headers or jacks. These need to be purchased separately
+
+  CION is something of a jack-of-all-trades. It can be a CV AD or ASD envelope, a basic filter, a distortion effect, a slew limiter or even a voltage controlled oscillator with waveshape. The function generator offers an ATTACK and a DECAY potentiometer, which represent the attack and decay times, the positive or negative slew time or the rising and falling edges of an oscillation, depending on the application. There is a CV input for ATTACK and DECAY. The rise and fall times are individually voltage controllable, but they can also be controlled together via the AD input. A shape knob lets you change the CV curve from exponential to logarithmic. The time range per cycle can be as fast as 3ms and last for up to 20 minutes depending on the position of the RANGE switch. The TRIG socket is used to start the envelope via CV. This can also be done by the press of a push-button. Connect any signal (CV or audio). to be processed to the INPUT jack. Insert a gate signal to add a sustain stage to the AD envelope
+
+  If no external signal is available to trigger the envelope, the function generator can be set to loop mode by the CYCLE switch. When the
+  switch is active, the envelope starts again from the beginning as soon as it reaches the end of a cycle. The CYCLE CV input activates or deactivates the cycle functionality depending on the switch position. An End-Of-Cycle signal is available at the EOC socket.
+io:
+  - key: I4hZiZF0
+    name: TRIG
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 8xcWYoNb
+    name: INPUT
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: X4v8SyQA
+    name: ATTACK CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: Vn5wcGhL
+    name: DECAY CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 5YtfDCp5
+    name: AD CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: mLyxDE4K
+    name: CYCLE CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: R0gMHDTK
+    name: EOC
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: xw61DOdX
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

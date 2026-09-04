@@ -1,0 +1,103 @@
+id: PIOygT86rijNKUxhi1ik3
+name: Trommelmaschine
+manufacturer: calsynth
+primaryCategory: drum-machine
+categories:
+  - modular
+  - synthesizer
+url: https://calsynth.com/products/trommelmaschine-diy-populated-pcb-panel-set
+prices:
+  - amount: 119
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A three-voice hybrid digital and analog Eurorack drum module
+  combining a digital drum voice, an analog drum voice, and a noise generator
+  with individual and summed outputs.
+details: |-
+  3 VOICE HYBRID DRUM SYNTH 18HP
+
+  QUICK START GUIDE (opens in new window)
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP. ST-LINK OR EQUIVALENT NEEDED FOR PROGRAMMING THE FIRMWARE. TROMMELMASCHINE is the German name for "drum machine", and it perfectly sums up the essence of such a machine: a versatile three-voice digital and analog drum module that can be used to create a range of kick drums and various percussion sounds. This drum module features a DIGITAL DRUM VOICE (D) with PITCH and TONE control that has three modes (with latest firmware V2): KICK, SNARE and PERC. Press and hold the MODE switch for one second to switch between the KICK and PERC modes. When in KICK mode, press the button briefly to switch to SNARE mode. In KICK mode the sliders are MOD1 = DECAY, MOD2 = TRANSIENT, MOD3 = PITCH ENV and in PERC mode MOD1 = COLOR, MOD2 = DECAY and MOD3 = FM AMT. In SNARE mode the sliders are MOD1 = DECAY, MOD2 = SNAPPYNESS, MOD3 = TONE. PITCH and MOD can be changed manually or via CV with dedicated attenuators. If nothing is connected to the CV inputs, the MOD CV attenuators change the response curve of the MOD sliders. Turn them to the right to get a linear response and to the left to get a logarithmic response. This facilitates precise adjustment of the slider positions. The ANALOG DRUM (A) voice has DECAY, DRIVE and PENV (pitch envelope) sliders, plus PITCH and LENGTH (pitch envelope length) potentiometers. These can also be controlled via CV. The PITCH CV input tracks 1V/OCT and can be used to play notes. The EMPH input lets you emphasize the signal. This jack can be used as an input to control the internal VCA, e.g. to feed it with an ADSR. The third voice is a NOISE GENERATOR (N) with COLOR control and DECAY slider. The decay of the noise can also be controlled via CV. All voices have individual trigger inputs (D. TRIG is normalized to the other trigger inputs) and individual outputs and are also summed using an internal mixer at the MAIN output. The volume of each channel can be changed with the volume pots. Loudness LEDs indicate when a voice is close to clipping.
+io:
+  - key: ktnhsAk0
+    name: Digital Trigger
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: nWKXPJkV
+    name: Analog Trigger
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 2eYZYDLS
+    name: Noise Trigger
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: a8njTzDX
+    name: Digital Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 0ytFfqQJ
+    name: Analog Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Br5lDtMt
+    name: Noise Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: IvRCUBeY
+    name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 9FQf4u4n
+    name: Pitch CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Vved3wMt
+    name: Emph
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: mFAFcr7p
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Top
