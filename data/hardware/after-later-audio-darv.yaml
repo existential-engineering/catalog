@@ -39,16 +39,7 @@ specs: |-
   - BOTH input jack to simplify patching both the attack and release (also inverts the input to give more standard pitch tracking of higher voltage equals higher pitch)
   - Cycle times 200sec - 1kHz (0.5ms)
 io:
-  - key: fgTw3Bmd
-    name: 12V
-    signalFlow: input
-    category: power
-    type: power
-    connection: idc
-    maxConnections: 1
-    position: Bottom
-  - key: 2Xow1SK9
-    name: -12V
+  - name: Eurorack Bus Power
     signalFlow: input
     category: power
     type: power

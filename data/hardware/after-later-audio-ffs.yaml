@@ -25,16 +25,7 @@ specs: |-
   - Pickup simulator - Fuzz circuits offer unique sound when paired with the inductance of the pickup coils in a guitar. This why it is often suggested to have fuzz pedals as your first in a pedal chain. So we've built-in a coil to simulate your eurorack signal being emitted by a guitar pickup. We've also included a pickup simulator output so you can use it to interface with other fuzz instruments (pedals, modules, etc.).
   - As an added oddness - you can also input your guitar into the pickup sim output (just don't plug anything into the normal input). This will still get you Eurorack level output. Please don't input Eurorack levels into the pickup sim output.
 io:
-  - key: y2DxhB3h
-    name: 12V
-    signalFlow: input
-    category: power
-    type: power
-    connection: idc
-    maxConnections: 1
-    position: Bottom
-  - key: ul3E0Azk
-    name: -12V
+  - name: Eurorack Bus Power
     signalFlow: input
     category: power
     type: power

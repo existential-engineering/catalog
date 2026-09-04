@@ -18,16 +18,7 @@ details: |-
   Takes a gate signal and give a trigger output on both the rise and fall of that gate. The IN LED will illuminate while the gate input is high. Trigger to Gate section
   Takes a trig signal to start a gate signal and is normalized from the fall output in the Gate to Trig section. The gate length knob controls the gate length. The fall output will generate a trigger at the end of the gate. The OUT LED will illuminate while the gate output is high.
 io:
-  - key: vZB1fdgw
-    name: 12V
-    signalFlow: input
-    category: power
-    type: power
-    connection: idc
-    maxConnections: 1
-    position: Bottom
-  - key: g7MjSRaL
-    name: -12V
+  - name: Eurorack Bus Power
     signalFlow: input
     category: power
     type: power
