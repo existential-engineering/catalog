@@ -1,0 +1,50 @@
+id: FYlQm5pZF2FiOr9494GaE
+name: Half Wave Rectifier
+manufacturer: herzlich-labs
+primaryCategory: utility
+categories:
+  - modular
+  - effect
+url: https://www.herzlichlabs.com/products/half-wave-rectifier-0hp-herzlich-65768-no-enclosure-1u
+prices:
+  - amount: 299
+    currency: DKK
+    asOf: 2026-09-04
+    source: official-website
+description: A passive Eurorack module that splits a bipolar waveform into its
+  positive and negative halves, or combines two waveforms into a new bipolar
+  waveform. It accepts both audio and CV signals.
+details: |-
+  Tear things apart - and put them back together
+
+  Waveforms. Everybody's got them - but have you also laid awake at night, wondering why we cannot simply snip them in half? I did, and after a month of sleepless nights, I found myself carving a marble slab with a circuit diagram that would finally grant me peace. The marble slab was a kitchen counter, but that is entirely beside the point, because it wasn't my kitchen counter. The point is, put a waveform in the Bipolar input and you can extract the positive and negative halves from the other two jacks. Put two different waveforms in the positive and negative jacks, and you get a new, monstrous waveform at the Bipolar output. Finally, the sawsine is yours to wield. Available in 1U, or, for those who like to take their waveform rectification on the go, enclosed in a box with pleasantly rounded corners and brass threads, to ensure you can install and uninstall over and over again (I have no idea why you would want to do this, but you can, and I think that's a good thing).
+specs: |-
+  - Accepts both audio and CV - clipped audio rate waveforms get nice harmonics
+  - Get only the positive or negative half of a waveform - useful for modulations
+  - Join two different waveforms to get a brand new waveform
+  - Passive design: no external power required
+io:
+  - key: BQH0i68p
+    name: Bipolar Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: xmkWRntk
+    name: Positive Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: FZRSo4ZG
+    name: Negative Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

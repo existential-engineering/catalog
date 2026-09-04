@@ -1,0 +1,70 @@
+id: IfzIdy7F0xbLS6p-pQPLI
+name: Altered States
+manufacturer: herzlich-labs
+primaryCategory: sequencer
+categories:
+  - modular
+  - utility
+url: https://www.herzlichlabs.com/products/altered-states-manual-gate-generator-3hp-latching-and-momentary-flip-flop-gates-and-triggers
+prices:
+  - amount: 599
+    currency: DKK
+    asOf: 2026-09-04
+    source: official-website
+description: A 3hp manual gate and trigger generator Eurorack module with
+  latching and momentary buttons, each producing gate and trigger outputs.
+details: |-
+  Push button, receive gate and trigger signal. Okay, that's an oversimplification, but not by much. Altered States is a manual gate and trigger generator that allows you to generate gates and triggers, manually, by hand. The gates and triggers are not hand made, of course, those are made electronically by the circuit within, but you're in control of how and when they happen thanks to the buttons. Operation is simple: the top button is latching, the lower button is momentary. Each button has three outputs: one which generates a gate when the button is depressed, one which generates a gate when the button is not depressed, and one that generates a trigger in response to the former. Use it to flip/flop between patches, trigger events coincident with turning something on or off, temporarily mute (or unmute) CV or audio, generate your own trigger patterns, the possibilities are limited only by your own creativity. All that, and in just 3hp - create syncopations, tap your way into rhythms, trigger events, flip/flop, trigger logic modules, and all of it by hand, giving you new creative options during performance. Did you know? During development, the module was called Pusher in reference to the Nicholas Winding Refn trilogy which takes place here, on Amager, where Herzlich Labs modules are hand-built in a torchlit cave on a saber-tooth tiger pelt, using hot rocks for a soldering iron. It's really desperate here, please buy my stuff so I can afford a nicer torchlit cave, please.
+specs: |-
+  - Generates independent 5v gates in both button states (high and low)
+  - Generates a trigger upon button presses
+  - LEDs visually indicate the current state of any given output
+io:
+  - key: MKZ3fDci
+    name: Latching Gate High Output
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: aIcbEPeF
+    name: Latching Gate Low Output
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: OS1lUJ6Z
+    name: Latching Trigger Output
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: IyvD53xq
+    name: Momentary Gate High Output
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 5RLeG2vd
+    name: Momentary Gate Low Output
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: uNOyN4yz
+    name: Momentary Trigger Output
+    signalFlow: output
+    category: digital
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom

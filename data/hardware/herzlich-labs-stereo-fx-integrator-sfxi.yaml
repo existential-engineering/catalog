@@ -1,0 +1,89 @@
+id: __Xgh-dgVN9toqGayhX-u
+name: Stereo FX Integrator / SFXI
+manufacturer: herzlich-labs
+primaryCategory: utility
+categories:
+  - preamp
+  - modular
+url: https://www.herzlichlabs.com/products/herzlich-sfxi-stereo-fx-adapter-for-13764
+prices:
+  - amount: 1299
+    currency: DKK
+    asOf: 2026-09-04
+    source: official-website
+description: A 4hp Eurorack module that converts stereo signals between Eurorack
+  and instrument/line level, allowing integration with external pedals and rack
+  effects, and amplifying piezos or electric guitars back up to Eurorack level.
+details: |-
+  Don't fry your beloved pedals and rack effects! You've been up all night in a bidding war on eBay to win a prized 80s rack effect unit - you can't wait to add some serious cheese to your tracks, and the sound of gated reverbs ring in your ears. Your heart pounds, and your pulse rises to crescendo as you win the auction! But there is one problem: your Eurorack system runs way too hot to simply plug straight into your stereo FX units. Your heart sinks, until you realize the solution is simple: the SFXI. This is the upgraded 2025 version of the SFXI, which expands on my original idea: a module that makes it totally straightforward to integrate equipment with different level expectations in a way that won't make anything fry. Operation is easy: plug your Eurorack level signal into the top row, attenuate it to the level where your outboard equipment won't spontaneously erupt in flames - high-performance output op-amps ensure that things run smoothly. The Return section can be used alone to amplify external instruments, like piezos and electric guitars, it can be used with Eurorack levels to create some exciting overdrive, but most importantly, the JFET input op-amps will amplify your line or instrument level device back up to Eurorack level with the least amount of fuss. The scientists have been working overtime to produce this unit, and were fed extra rations of maize and millet gruel just to bring you this circuit. Every SFXI sold will grant the poor souls at Herzlich Labs another serving of maize and millet gruel. Please think of the poor scientists at Herzlich Labs.
+specs: |-
+  - Attenuate and amplify signal levels between Eurorack and line/instrument level in stereo
+  - Super low noise, crosstalk and distortion performance thanks to souped-up Burr-Brown op-amps
+  - High-grade dual JFET input amplifiers gives you the sweet, clean gain you crave
+  - Enough gain to amplify electric guitars and piezos directly, and enough drive to work with even the most finicky vintage stompboxes
+  - Also makes for a sweet stereo overdrive effect in a pinch
+io:
+  - key: FA2DTsEY
+    name: Eurorack Send Left
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 96LbjMQj
+    name: Eurorack Send Right
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: av6rZFGg
+    name: Eurorack Return Left
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: rvr6Idgz
+    name: Eurorack Return Right
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: CxlEaoOU
+    name: Instrument Send Left
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: Sq9XFlUL
+    name: Instrument Send Right
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: ujN9bTF6
+    name: Instrument Return Left
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: 82nH6bNw
+    name: Instrument Return Right
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top

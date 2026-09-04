@@ -1,0 +1,99 @@
+id: d_EjaSn54IBRc-ODFK1bf
+name: Solist
+manufacturer: herzlich-labs
+primaryCategory: mixer
+categories:
+  - modular
+  - utility
+url: https://www.herzlichlabs.com/products/solist-12hp-performance-mixer-and-mute-controller-with-vactrol-powered-soft-mute-and-solo-function
+prices:
+  - amount: 1999
+    currency: DKK
+    asOf: 2026-09-04
+    source: official-website
+description: A 12hp performance mixer and mute controller with four channels of
+  soft vactrol muting controlled by mechanical switches, plus solo switches that
+  override the mute state, designed in collaboration with Bries.
+details: |-
+  Solist is not your average performance mixer and mute combination - far from it. Designed in collaboration with Bries, Solist contains four channels of soft vactrol muting, controlled by tactile and pleasantly clicky mechanical switches. Solist will help make your performances shine - but most importantly, the red solo switches allow you to override the current state of the mute switches, allowing for creative transitions between solo and mute states during your performance. While the audio circuit is fully analog, it is also entirely isolated from the digital circuit that controls the mutes. Running on a fast and reliable Raspberry Pi RP2040, you get all the benefits of digital control without the downsides of digital audio processing. Best of all, the mechanical state of the switches determine the state of the module, so even if you power cycle, you will return to your previous state. The analog mixer section can be used simultaneously with the individual outputs of the Solist, so for those who already have a mixer solution, the buffered individual outputs will bypass the mixer entirely. You may of course also use both simultaneously for exciting parallel processing opportunities. Solist brings a whole new aspect of muting and soloing to your Eurorack performances, and with soft opening and closing vactrols, you'll never have to worry about clicks, truncated transients or actuation noise. Be sure to check out @bries_from_earth as he demos the capabilities of the Solist on his YouTube channel.
+io:
+  - key: fi13QMLA
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: M7KpjBPY
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: gkZo3ww4
+    name: Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 4XxuVArm
+    name: Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: uY8AxLXx
+    name: Individual Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: VNspwgQX
+    name: Individual Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: gIz3n5uA
+    name: Individual Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: QN264vIn
+    name: Individual Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: DqDnvcai
+    name: Mix Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: f5PnqKFr
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
