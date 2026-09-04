@@ -316,8 +316,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertSoftwarePrice = db.prepare(`
-    INSERT INTO software_prices (software_id, amount, currency)
-    VALUES (?, ?, ?)
+    INSERT INTO software_prices (software_id, amount, currency, term)
+    VALUES (?, ?, ?, ?)
   `);
   const insertSoftwareLink = db.prepare(`
     INSERT INTO software_links (software_id, type, title, url, description)
@@ -461,7 +461,7 @@ function buildDatabase(version: string): void {
     // Insert prices
     if (data.prices) {
       for (const price of data.prices) {
-        insertSoftwarePrice.run(id, price.amount, price.currency);
+        insertSoftwarePrice.run(id, price.amount, price.currency, price.term ?? null);
       }
     }
 
@@ -592,8 +592,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertContentPrice = db.prepare(`
-    INSERT INTO content_prices (content_id, amount, currency)
-    VALUES (?, ?, ?)
+    INSERT INTO content_prices (content_id, amount, currency, term)
+    VALUES (?, ?, ?, ?)
   `);
   const insertContentLink = db.prepare(`
     INSERT INTO content_links (content_id, type, title, url, description)
@@ -723,7 +723,7 @@ function buildDatabase(version: string): void {
     // Insert prices
     if (data.prices) {
       for (const price of data.prices) {
-        insertContentPrice.run(id, price.amount, price.currency);
+        insertContentPrice.run(id, price.amount, price.currency, price.term ?? null);
       }
     }
 
@@ -854,12 +854,12 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?, ?, ?)
   `);
   const insertHardwarePrice = db.prepare(`
-    INSERT INTO hardware_prices (hardware_id, amount, currency)
-    VALUES (?, ?, ?)
+    INSERT INTO hardware_prices (hardware_id, amount, currency, term)
+    VALUES (?, ?, ?, ?)
   `);
   const insertHardwareVariantPrice = db.prepare(`
-    INSERT INTO hardware_variant_prices (variant_id, amount, currency)
-    VALUES (?, ?, ?)
+    INSERT INTO hardware_variant_prices (variant_id, amount, currency, term)
+    VALUES (?, ?, ?, ?)
   `);
   const insertHardwareLink = db.prepare(`
     INSERT INTO hardware_links (hardware_id, type, title, url, description)
@@ -1038,7 +1038,12 @@ function buildDatabase(version: string): void {
         // Insert variant prices
         if (variant.prices) {
           for (const price of variant.prices) {
-            insertHardwareVariantPrice.run(variantId, price.amount, price.currency);
+            insertHardwareVariantPrice.run(
+              variantId,
+              price.amount,
+              price.currency,
+              price.term ?? null
+            );
           }
         }
 
@@ -1073,7 +1078,7 @@ function buildDatabase(version: string): void {
     // Insert prices
     if (data.prices) {
       for (const price of data.prices) {
-        insertHardwarePrice.run(id, price.amount, price.currency);
+        insertHardwarePrice.run(id, price.amount, price.currency, price.term ?? null);
       }
     }
 
@@ -1221,8 +1226,8 @@ function buildDatabase(version: string): void {
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertAccessoryPrice = db.prepare(`
-    INSERT INTO accessories_prices (accessory_id, amount, currency)
-    VALUES (?, ?, ?)
+    INSERT INTO accessories_prices (accessory_id, amount, currency, term)
+    VALUES (?, ?, ?, ?)
   `);
   const insertAccessoryLink = db.prepare(`
     INSERT INTO accessories_links (accessory_id, type, title, url, description)
@@ -1332,7 +1337,7 @@ function buildDatabase(version: string): void {
     // Insert prices
     if (data.prices) {
       for (const price of data.prices) {
-        insertAccessoryPrice.run(id, price.amount, price.currency);
+        insertAccessoryPrice.run(id, price.amount, price.currency, price.term ?? null);
       }
     }
 

@@ -41,6 +41,7 @@ export enum ValidationErrorCode {
   E118_NAME_ARTIFACT = "E118",
   E119_INVALID_CAPABILITY = "E119",
   E120_STORAGE_MEDIA_SLOT = "E120",
+  E121_UNKNOWN_KEY = "E121",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
@@ -72,6 +73,7 @@ export enum ValidationErrorCode {
   W128_IO_COMBINE_CANDIDATE = "W128",
   W129_MANUFACTURER_IN_NAME = "W129",
   W130_NAME_TAGLINE = "W130",
+  W131_PRICE_TERM_MISSING = "W131",
 }
 
 // =============================================================================
@@ -210,6 +212,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     title: "Storage media slot as IO",
     anchor: "e120-storage-media-slot-as-io",
   },
+  [ValidationErrorCode.E121_UNKNOWN_KEY]: {
+    title: "Key not in the schema",
+    anchor: "e121-key-not-in-the-schema",
+  },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",
     anchor: "e199-validation-error",
@@ -309,6 +315,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.W130_NAME_TAGLINE]: {
     title: "Name contains a tagline-style separator",
     anchor: "w130-name-contains-a-tagline-style-separator",
+  },
+  [ValidationErrorCode.W131_PRICE_TERM_MISSING]: {
+    title: "Several prices in one currency without a term",
+    anchor: "w131-several-prices-in-one-currency-without-a-term",
   },
 };
 

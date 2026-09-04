@@ -1969,6 +1969,16 @@
                 "source": {
                   "type": "string",
                   "description": "Source of price (e.g., \"official-website\")"
+                },
+                "term": {
+                  "type": "string",
+                  "enum": [
+                    "perpetual",
+                    "monthly",
+                    "yearly",
+                    "rent-to-own"
+                  ],
+                  "description": "What the amount buys when one currency carries several prices (perpetual, monthly, yearly, rent-to-own)."
                 }
               }
             }
@@ -2091,6 +2101,16 @@
           "source": {
             "type": "string",
             "description": "Source of price (e.g., \"official-website\")"
+          },
+          "term": {
+            "type": "string",
+            "enum": [
+              "perpetual",
+              "monthly",
+              "yearly",
+              "rent-to-own"
+            ],
+            "description": "What the amount buys when one currency carries several prices (perpetual, monthly, yearly, rent-to-own)."
           }
         }
       }
