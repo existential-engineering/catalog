@@ -28,16 +28,15 @@ details: |-
 
   Great care has been taken to provide a user interface that is straight forward to use. Band parameters can be adjusted using handles directly in the graphical representation of the frequency response, including bandwidths and filter slopes. A flexible real-time analyzer lets you monitor every aspect of the processing. You can easily switch between full, mid, side, left or right channel processing for each band and Equalize automatically routes the audio signal internally to ensure the best results and lowest possible latency.
 
-  Version 2 adds two new filter types, tilt and bandpass, for a total of eight. The frequency range of the equalizer curve can be altered by dragging the edges of the frequency axis or moved by clicking and dragging the center, making it possible to zoom in on specific frequency ranges. A new preferences page offers user settings such as analyzer resolution and user interface language, and an optional piano keyboard display above the frequency axis lets band frequencies be matched to a tone by clicking a key.
+  Version 2 adds two new filter types, tilt and bandpass, bringing the total to eight. The frequency range of the equalizer curve can be altered by dragging the edges of the frequency axis or moved by clicking and dragging the center, making it possible to zoom in on specific frequency ranges for more precise control. A new preferences page offers user settings such as analyzer resolution and user interface language, and an optional piano keyboard display above the frequency axis lets band frequencies be set to match a tone's frequency by clicking a key.
 
   Acon Digital Equalize 2 is available as VST, VST3 or AAX for both Windows and Mac or as AU plug-ins for Mac. There are 32 and 64 bit versions for Windows. The Mac version is 64 bit and runs natively on both ARM (such as Apple M1) and Intel processors.
 specs: |-
   - Up to twelve equalizer bands
   - Eight different band filter types (low cut, low shelf, peak, tilt, bandpass, notch, high shelf and high cut)
   - Band frequency, gain, bandwidth, resonance and filter slope is freely adjustable for each band
-  - Freely adjustable filter slopes in the range 3 to 120 dB per octave
-  - Three different filter modes: minimum phase, linear phase or the novel mixed phase
-  - Adjustable latency and pre-ringing time in mixed phase mode (5 to 120 ms)
+  - Three different filter modes, minimum phase, linear phase or the novel mixed phase
+  - Adjustable latency and pre-ringing time in mixed phase mode
   - Zero latency in minimum phase mode
   - Channel mode (mid, side, left, right or full processing) can be set independently for each band
   - Multiple selection of bands
@@ -46,23 +45,34 @@ specs: |-
   - Optional automatic make-up gain
   - Optional gain to bandwidth linking
   - Two spectrum analyzers that can analyze the input or output signal from the mid, side, left or right channel
-  - Spectrum analyzer with adjustable frequency tilt
   - Graphical visualization of the equalizer frequency response
-  - Optional piano keyboard display above the frequency axis
-  - Adjustable frequency range in the equalizer curve editor
-  - EUCON and full Pro Tools HW controller support
   - Preset manager and a large number of factory presets
   - Save, load and categorize user presets
-  - Native 32 bit or 64 bit versions of all plug-ins are available
+  - Continuously adjustable filter slopes in the range 3 to 120 dB per octave
+  - Adjustable frequency range in the equalizer curve editor
+  - Optional piano keyboard display
+  - EUCON and full Pro Tools HW controller support
+  - Spectrum analyzer with adjustable frequency tilt
+  - Native 32 bit or 64 bit versions of all plug-ins are available for Windows. The Mac version is 64 bit.
   - Supports sampling rates up to 96 kHz
   - Supports multi-channel formats such as 5.1 and 7.1 surround
-  - Windows 10 / 11, Intel Core i3 or AMD multi-core processor, 1 GB RAM, 1 GB free HD space
-  - macOS: OS X 10.13 or later, runs natively on ARM64 and Intel
-  - Supported hosts include Logic Pro, Pro Tools, Ableton Live, Cubase, Nuendo, Studio One, Reaper, FL Studio, Luna, Adobe Audition, Adobe Premiere, DaVinci Resolve, Reason and Media Composer
+  - Windows: Windows 10 / 11, Intel Core i3 or AMD multi-core processor, 1 GB RAM, 1 GB free HD space
+  - macOS: OS X 10.13 or later, runs natively on ARM64 and Intel, 1 GB RAM, 1 GB free HD space
+  - Requires a host compatible with VST, VST3 or AAX (Pro Tools 2018 or later); AU on Mac
 versions:
   - name: 2.2.2
+    url: https://acondigital.com/products/equalize
+    description: Acon Digital Equalize 2.x
   - name: 1.2.2
+    url: https://acondigital.com/products/equalize
+    description: Acon Digital Equalize 1.x
 videos:
-  - provider: youtube
-    videoId: vjWNKvPaRgg
+  - videoId: vjWNKvPaRgg
+    provider: youtube
     title: Equalize Filters & LR/MS
+  - videoId: 7-9KcqgH4-A
+    provider: youtube
+    title: Show & Tell Review at Pro Tools Expert
+  - videoId: qlubZG4zwVM
+    provider: youtube
+    title: MixCoach - Acon Digital Equalize Review
