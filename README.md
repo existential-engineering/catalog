@@ -173,6 +173,20 @@ io:
     position: Bottom
 ```
 
+Eurorack modules also carry `hp`, their panel width in HP, taken from the
+maker's page and never guessed (see
+[CONTRIBUTING.md](CONTRIBUTING.md#panel-width-hp-on-modular-entries)):
+
+```yaml
+# data/hardware/make-noise-maths.yaml
+name: Maths
+manufacturer: make-noise
+primaryCategory: modular
+categories:
+  - utility
+hp: 20
+```
+
 Don't add an `id` field yourself — CI assigns a unique ID to new entries
 automatically. Valid categories, formats, platforms, and I/O vocabularies live
 in [`schema/`](schema/).
