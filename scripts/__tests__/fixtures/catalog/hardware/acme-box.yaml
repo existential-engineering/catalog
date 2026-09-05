@@ -1,0 +1,62 @@
+id: HW0000000000000000box
+name: Acme Box
+manufacturer: acme-audio
+primaryCategory: pedal
+categories:
+  - effect
+  - fx
+capabilities:
+  - reverb
+  - delay
+searchTerms:
+  - The Box
+url: https://acme.example/box
+description: A pedal.
+io:
+  - key: in000001
+    name: Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    connectorDetail:
+      - TS
+    maxConnections: 1
+    position: Right
+    columnPosition: 1
+    rowPosition: 1
+  - key: usb00001
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Top
+variants:
+  - name: Black
+    prices:
+      - amount: 219
+        currency: USD
+  - name: Silver Edition
+    slug: silver
+    links:
+      - url: https://acme.example/box/silver
+        type: product
+prices:
+  - amount: 199
+    currency: USD
+links:
+  - url: https://acme.example/box/manual
+    type: resource
+videos:
+  - videoId: box789
+translations:
+  de:
+    specs: |-
+      - Zwei Buchsen
+    io:
+      - originalName: Input
+        name: Eingang
+      - originalName: Nope
+        name: Fehlt
