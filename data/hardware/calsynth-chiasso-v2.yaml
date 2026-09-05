@@ -1,0 +1,71 @@
+id: 7EtZQpfKjlcRkAJwbc3Hw
+name: CHIASSO V2
+manufacturer: calsynth
+primaryCategory: drum-machine
+categories:
+  - synthesizer
+  - modular
+url: https://calsynth.com/products/chiasso-diy-populated-pcb-panel-set
+prices:
+  - amount: 69
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: CHIASSO V2 is an analog FM drum synth oscillator module with two
+  crossfadeable square/triangle oscillators, individual decay envelopes, noise,
+  and two LFOs for frequency modulation.
+details: |-
+  analog fm drum synth / 14 HP
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP.
+
+  CHIASSO V2 stands as an exceptional oscillator, perfect for generating dynamic Techno sounds that consistently captivate through each knob adjustment. In its V2 iteration, it retains the same exceptional sound foundation found in V1. However, V2 introduces innovative enhancements like CV decay inputs and an added noise source for oscillator A, promising even more sonic possibilities. The module has two oscillators that can generate square or triangular waveforms that you can seamlessly crossfade with the WAVE potentiometers. Each oscillator has its own CV decay envelope, a pitch potentiometer and can be triggered with a trigger signal patched to the left TRIG input as well as individually via the left and right TRIG inputs. A fade potentiometer offers the possibility to manually fade between both oscillators to adjust the mix. Noise can be added to the left oscillator A to make it a little dirtier. There are PITCH CV inputs with attenuators for each voice which, although they don´t track exactly 1 V/OCT, are very useful for changing the mood of each signal to create very organic and moving sounds. The audio output of each side is normalised to the PITCH CV input of the opposite side. The left side is connected after the VCA and the right side before the VCA to achieve different types of cross-modulations and to apply modulation according to incoming trigger signals. In addition, the module has two individual LFOs with square or triangular waveforms that can be fed to the oscillators for further frequency modulation synthesis. Both LFOs have an attenuator to adjust the strength of the modulation and a RATE potentiometer to change the speed of the LFO cycle. The signals of the two oscillators are mixed and output at the OUT socket.
+io:
+  - key: YpFblioK
+    name: Trig Left
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ILmNI24r
+    name: Trig Right
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 6J4leOYq
+    name: Pitch CV Left
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Vwdk0z7s
+    name: Pitch CV Right
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: lJgIhRDc
+    name: OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: A6z2ghv7
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
