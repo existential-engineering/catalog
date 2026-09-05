@@ -3,7 +3,9 @@ import { describe, expect, it } from "vitest";
 import {
   checkCvGateCategory,
   checkExpressionTypedCv,
+  checkModularMissingHp,
   computeHintCoverage,
+  computeHpCoverage,
   type LoadedProduct,
   normalizeName,
 } from "../dataset-audit.js";
@@ -129,5 +131,51 @@ describe("checkExpressionTypedCv", () => {
         ]),
       ])
     ).toEqual([]);
+  });
+});
+
+/** A hardware product as the audit loads it, with only the fields the hp checks read. */
+function modularEntry(slug: string, entry: Record<string, unknown>): LoadedProduct {
+  return {
+    type: "hardware",
+    slug,
+    file: path.join(DATA_DIR, "hardware", `${slug}.yaml`),
+    entry: { name: slug, manufacturer: "acme", ...entry } as unknown as Hardware,
+  };
+}
+
+describe("checkModularMissingHp", () => {
+  it("flags a modular entry without hp, by primary or secondary category", () => {
+    const findings = checkModularMissingHp([
+      modularEntry("maths", { primaryCategory: "modular" }),
+      modularEntry("plaits", { primaryCategory: "synthesizer", categories: ["modular"] }),
+      modularEntry("veils", { primaryCategory: "modular", hp: 10 }),
+      modularEntry("sm7b", { primaryCategory: "microphone" }),
+      { ...modularEntry("plugin", { primaryCategory: "modular" }), type: "software" },
+    ]);
+    expect(findings.map((f) => f.files)).toEqual([
+      ["hardware/maths.yaml"],
+      ["hardware/plaits.yaml"],
+    ]);
+    expect(findings[0]).toMatchObject({
+      check: "modular-missing-hp",
+      severity: "info",
+      needsLlmReview: false,
+      collection: "hardware",
+    });
+    expect(findings[0].detail).toContain("never guess");
+  });
+});
+
+describe("computeHpCoverage", () => {
+  it("counts modular hardware entries and those carrying hp", () => {
+    expect(
+      computeHpCoverage([
+        modularEntry("maths", { primaryCategory: "modular", hp: 20 }),
+        modularEntry("plaits", { primaryCategory: "synthesizer", categories: ["modular"] }),
+        modularEntry("sm7b", { primaryCategory: "microphone", hp: 4 }),
+        { type: "software", entry: { name: "Plugin", manufacturer: "m" } },
+      ])
+    ).toEqual({ modular: 2, withHp: 1 });
   });
 });

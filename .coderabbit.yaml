@@ -123,6 +123,21 @@ reviews:
           `CATEGORY_CAPABILITIES` in `scripts/derive-capabilities.ts` only when a
           category implies it by definition.
 
+        HP (CLAUDE.md "HP") — `hp` is the panel width in Eurorack HP, a positive
+        integer checked by validation (E101), so review only what it cannot see:
+        - `hp` belongs on entries filed under `modular` only. A pedal, rack unit or
+          desktop synth carrying it is wrong, whatever the value.
+        - A value must be sourced: the maker page or manual, the entry's own prose,
+          or ModularGrid when the maker states none. Flag an `hp` the PR names no
+          source for, and an `hp` that contradicts a width the entry's own
+          `description`/`details`/`specs` state.
+        - A case, keyboard case, busboard or non-Eurorack system filed under
+          `modular` has no single panel width: never ask for `hp` on one, and flag
+          an `hp` that is a case's row capacity ("104HP per row", "gives you 84hp").
+        - Never suggest a guessed or rounded value, and never `hp: 0`. An absent
+          field means unsourced, which `pnpm dataset:audit` reports
+          (modular-missing-hp).
+
         `supersedes` on import PRs: the importer resolves it after assign-ids behind
         a confidence gate and lists every link in the PR body. Do not ask the PR to
         hand-wire a link the resolver left out. An ambiguous or absent predecessor

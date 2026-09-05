@@ -260,6 +260,13 @@ export function getErrorCodeFromZodIssue(issue: {
     return ValidationErrorCode.E122_IO_HINT_NOT_POSITIVE_INTEGER;
   }
 
+  // A hardware `hp` that is not a positive integer is a wrong-typed field,
+  // whichever check produced the issue (a string fails Zod's number check,
+  // a float or zero fails the integer check with a custom message).
+  if (path === "hp") {
+    return ValidationErrorCode.E101_INVALID_FIELD_TYPE;
+  }
+
   // Connector detail errors
   if (message.includes("connectordetail")) {
     return ValidationErrorCode.E115_INVALID_CONNECTOR_DETAIL;
@@ -469,6 +476,24 @@ const createHintValidator = (field: "columnPosition" | "rowPosition") =>
       ctx.issues.push({
         code: "custom",
         message: `io hint ${field} must be a positive integer (1-based), got ${ctx.value}.`,
+        input: ctx.value,
+      });
+    });
+
+/**
+ * Eurorack panel width in HP: a positive integer or absent. Half-HP does not
+ * exist in the standard and a zero-width module is not a module, so a float,
+ * zero or negative here is a mistake (E101) rather than a value to round.
+ */
+const createHpValidator = () =>
+  z
+    .number()
+    .optional()
+    .check((ctx) => {
+      if (ctx.value === undefined || isPositiveInteger(ctx.value)) return;
+      ctx.issues.push({
+        code: "custom",
+        message: `hp must be a positive integer (Eurorack HP units), got ${ctx.value}.`,
         input: ctx.value,
       });
     });
@@ -769,6 +794,7 @@ const HardwareSchema = z
     supersedes: z.string().optional(),
     searchTerms: z.array(z.string()).optional(),
     capabilities: createCapabilitiesValidator(),
+    hp: createHpValidator(),
     description: MarkdownSchema,
     details: MarkdownSchema,
     specs: MarkdownSchema,

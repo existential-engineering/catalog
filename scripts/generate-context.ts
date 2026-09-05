@@ -241,6 +241,7 @@ Content entries (presets, sample packs, expansions) live in \`data/content/\` as
 - \`manufacturer\` - Slug reference to manufacturer
 - \`primaryCategory\` - Main category (from list above)
 - \`description\` - Short description (markdown)
+- \`hp\` - Optional panel width in Eurorack HP (positive integer); modular entries only, never guessed
 
 ### Accessories
 Accessory entries (cables, stands, acoustic treatment) live in \`data/accessories/\` as a separate collection.

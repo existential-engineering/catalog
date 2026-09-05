@@ -869,8 +869,8 @@ function populateDatabase(db: Database.Database, dataDir: string, version: strin
   let hardwareCount = 0;
 
   const insertHardware = db.prepare(`
-    INSERT INTO hardware (id, name, manufacturer_id, url, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO hardware (id, name, manufacturer_id, url, release_date, release_date_year_only, primary_category, secondary_category, description, details, specs, hp)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const updateHardwareSupersedes = db.prepare(`
     UPDATE hardware SET supersedes_id = ? WHERE id = ?
@@ -976,7 +976,8 @@ function populateDatabase(db: Database.Database, dataDir: string, version: strin
       normalizedSecondaryCategory,
       markdownToHtml(data.description),
       markdownToHtml(normalizeMarkdown(data.details)),
-      markdownToHtml(normalizeMarkdown(data.specs))
+      markdownToHtml(normalizeMarkdown(data.specs)),
+      data.hp ?? null
     );
 
     // Store supersedes for later update

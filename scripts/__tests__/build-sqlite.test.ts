@@ -226,6 +226,11 @@ describe("buildDatabase", () => {
     });
   });
 
+  it("carries hp on the hardware row and leaves it null where the entry has none", () => {
+    expect(db.prepare("SELECT hp FROM hardware WHERE id = ?").get(ids.box2)).toEqual({ hp: 8 });
+    expect(db.prepare("SELECT hp FROM hardware WHERE id = ?").get(ids.box)).toEqual({ hp: null });
+  });
+
   it("writes release dates, formats, platforms, versions, prices, links and videos", () => {
     expect(
       db

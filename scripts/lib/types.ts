@@ -193,6 +193,13 @@ export interface Hardware {
    * assessed — an absent field means unknown, not "does nothing".
    */
   capabilities?: string[];
+  /**
+   * Panel width in Eurorack horizontal pitch units (1 HP = 5.08 mm), as a
+   * positive integer. Set only on `modular` entries, and only from a source
+   * (maker page, manual, or the entry's own prose); an absent value means
+   * unknown, never zero.
+   */
+  hp?: number;
   url?: string;
   releaseDate?: string;
   releaseDateYearOnly?: boolean;

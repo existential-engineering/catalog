@@ -18,6 +18,8 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 - `pnpm capability-coverage` - Report which categories carry `capabilities`
 - `pnpm capability-gaps` - Report operations an entry's prose names but its
   `capabilities` omits
+- `pnpm hp:backfill` - Fill `hp` on modular entries from their own prose and
+  a reviewed list (`--review <tsv>`, `--apply`)
 - `pnpm format:check` - Check formatting
 
 ## Catalog Schema Compatibility
@@ -447,6 +449,41 @@ deliberately declines to map: family names (`dynamics`, `modulation`),
 topologies (`multiband`), composites (`preamp`, `channel-strip`) and the
 non-functional axes. Mapping any of those would be guessing, and a guessed
 capability is indistinguishable from a verified one once written.
+
+## HP
+
+`hp` is a hardware entry's panel width in Eurorack horizontal pitch units
+(1 HP = 5.08 mm), the one number Studio's faceplate node needs to draw a
+module at scale. It is additive in the database (`hardware.hp`, nullable,
+schema migration 23, no `schema_version` bump).
+
+```yaml
+primaryCategory: modular
+categories:
+  - utility
+hp: 20
+```
+
+- **Integer HP only.** `hp: 12` validates; `hp: "12HP"`, `hp: 12.5`, `hp: 0`
+  and a negative value fail with E101. Half-HP does not exist in the
+  standard, and the unit never goes in the value.
+- **Modular entries only.** Set it on entries filed under `modular` (as
+  `primaryCategory` or in `categories`). A pedal or rack unit has no HP; the
+  racks `io-lint` flags `hp` on a non-modular entry.
+- **Never guessed.** A value comes from the maker's page or manual, from the
+  entry's own prose ("12HP", "Width: 8 HP"), or from ModularGrid when the
+  maker states none. An entry with no source stays without `hp`, and
+  `pnpm dataset:audit` lists it (`modular-missing-hp`) and reports coverage
+  (`modular N of M entries carry hp`). A case, busboard or non-Eurorack
+  system filed under `modular` has no single panel width and stays without
+  `hp` on purpose; a case's row capacity ("104HP per row") is not a width.
+- **The backfill is reproducible.** `pnpm hp:backfill` reads every modular
+  entry's `name`/`description`/`details`/`specs`, applies a width the prose
+  states exactly once, and reports the rest as ambiguous or unsourced with
+  the url to read. Widths read off a page go in a `slug<TAB>hp<TAB>source`
+  review list, entries with no width to give in `slug<TAB>skip<TAB>reason`
+  lines, both committed under `docs/reviews/` so the next pass does not
+  re-litigate them (`docs/reviews/2026-09-hp-backfill.tsv` is the first).
 
 ## Prices
 
