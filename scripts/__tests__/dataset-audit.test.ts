@@ -1,5 +1,13 @@
+import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { normalizeName } from "../dataset-audit.js";
+import {
+  checkCvGateCategory,
+  checkExpressionTypedCv,
+  type LoadedProduct,
+  normalizeName,
+} from "../dataset-audit.js";
+import type { Hardware } from "../lib/types.js";
+import { DATA_DIR } from "../lib/utils.js";
 
 describe("normalizeName", () => {
   it("strips spaces, case, and internal punctuation", () => {
@@ -23,5 +31,76 @@ describe("normalizeName", () => {
     expect(normalizeName("Vision+ Console")).toBe("visionplusconsole");
     expect(normalizeName("Vision Console")).toBe("visionconsole");
     expect(normalizeName("Vision+ Console")).not.toBe(normalizeName("Vision Console"));
+  });
+});
+
+type AuditPort = { name: string; type: string; category: string };
+
+function hardware(slug: string, io: AuditPort[]): LoadedProduct {
+  return {
+    type: "hardware",
+    slug,
+    file: path.join(DATA_DIR, "hardware", `${slug}.yaml`),
+    entry: {
+      name: slug,
+      manufacturer: "acme",
+      primaryCategory: "modular",
+      io,
+    } as unknown as Hardware,
+  };
+}
+
+describe("checkCvGateCategory", () => {
+  it("flags cv/gate and clock jacks filed outside audio, once per product", () => {
+    const findings = checkCvGateCategory([
+      hardware("toolbox", [
+        { name: "Clock In", type: "clock", category: "digital" },
+        { name: "CV 1", type: "cv/gate", category: "midi" },
+        { name: "Out", type: "line", category: "audio" },
+      ]),
+    ]);
+    expect(findings).toHaveLength(1);
+    expect(findings[0].check).toBe("cv-gate-category");
+    expect(findings[0].needsLlmReview).toBe(false);
+    expect(findings[0].files).toEqual(["hardware/toolbox.yaml"]);
+    expect(findings[0].detail).toContain("2 cv/gate or clock port(s)");
+    expect(findings[0].detail).toContain("digital, midi");
+  });
+
+  it("leaves audio cv/gate and digital word clock alone", () => {
+    expect(
+      checkCvGateCategory([
+        hardware("maths", [
+          { name: "CV In", type: "cv/gate", category: "audio" },
+          { name: "Word Clock In", type: "word clock", category: "digital" },
+        ]),
+      ])
+    ).toEqual([]);
+  });
+});
+
+describe("checkExpressionTypedCv", () => {
+  it("flags expression and pedal jacks typed cv/gate for review", () => {
+    const findings = checkExpressionTypedCv([
+      hardware("big-sky", [
+        { name: "Expression Pedal", type: "cv/gate", category: "audio" },
+        { name: "Sustain Pedal Input", type: "cv/gate", category: "audio" },
+      ]),
+    ]);
+    expect(findings).toHaveLength(1);
+    expect(findings[0].check).toBe("expression-typed-cv");
+    expect(findings[0].needsLlmReview).toBe(true);
+    expect(findings[0].detail).toContain("Expression Pedal, Sustain Pedal Input");
+  });
+
+  it("ignores jacks already typed expression and cv jacks named for something else", () => {
+    expect(
+      checkExpressionTypedCv([
+        hardware("dark-world", [
+          { name: "Expression", type: "expression", category: "audio" },
+          { name: "CV In", type: "cv/gate", category: "audio" },
+        ]),
+      ])
+    ).toEqual([]);
   });
 });

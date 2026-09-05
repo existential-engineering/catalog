@@ -298,7 +298,19 @@ USB-C`). Not in an io entry: the io shape has no note field, so a note
   its connection with `type: midi`.
 - **Footswitch and expression jacks** are `category: audio`,
   `type: expression`, with `connection` per the jack. This matches the
-  existing Benson entries that review confirmed.
+  existing Benson entries that review confirmed. A jack named for an
+  expression or sustain pedal but typed `cv/gate` is the same mistake from
+  the other side: Strymon and Fender entries typed them that way while
+  Chase Bliss typed them `expression`, and the setup graph now draws the
+  two as different shapes. `pnpm dataset:audit` lists them
+  (`expression-typed-cv`).
+- **CV, gate and clock jacks are `category: audio`.** They carry analog
+  control voltages and pulses whatever the connector; `word clock` is the
+  digital exception and stays `digital`. The catalog filed 461 cv/gate
+  jacks under `digital` before this was written, which is why Studio
+  resolves CV colour by type before category (AUREO-1099) and why
+  `pnpm dataset:audit` reports the split (`cv-gate-category`) rather than
+  `pnpm validate` failing on it.
 - **USB host ports and network ports are `signalFlow: bidirectional`.**
 - **Speaker outputs on amplifiers are `type: speaker-level`**, one entry per
   jack, with the impedance in the name (`Speaker Output 8 ohm`).
