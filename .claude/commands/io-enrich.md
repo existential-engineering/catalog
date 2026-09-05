@@ -87,9 +87,15 @@ For every physical jack, in the manual's own left-to-right / top-to-bottom order
   maxConnections, position, columnPosition, rowPosition, description.
 
 Assign `columnPosition`/`rowPosition` only for edges whose layout you can
-actually see. Grids (e.g. stacked in/out pairs) share a column and differ by
-row; a single row uses `rowPosition: 1`. If you can't see an edge's layout,
-set `position` and leave column/row off rather than guessing.
+actually see, and then for **every** port on that edge: `pnpm validate` fails a
+partly hinted edge (E125) because Studio back-fills the unhinted ports
+row-major. Both fields go together on each port (E123), as 1-based integers
+(E122), one port per cell (E124). Grids (e.g. stacked in/out pairs) share a
+column and differ by row; a single row uses `rowPosition: 1` and a single
+column (a patchbay's rows) uses `columnPosition: 1`. A jack that sits alone on
+the lower row of a two-row edge (the H90's USB-C and power jacks) gets
+`rowPosition: 2`, not 1. If you can't see an edge's layout, set `position` and
+leave column/row off the whole edge rather than guessing.
 
 ## Phase 4 — Verify (do not skip)
 

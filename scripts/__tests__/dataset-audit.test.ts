@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   checkCvGateCategory,
   checkExpressionTypedCv,
+  computeHintCoverage,
   type LoadedProduct,
   normalizeName,
 } from "../dataset-audit.js";
@@ -31,6 +32,31 @@ describe("normalizeName", () => {
     expect(normalizeName("Vision+ Console")).toBe("visionplusconsole");
     expect(normalizeName("Vision Console")).toBe("visionconsole");
     expect(normalizeName("Vision+ Console")).not.toBe(normalizeName("Vision Console"));
+  });
+});
+
+type Product = Parameters<typeof computeHintCoverage>[0][number]["entry"];
+
+describe("computeHintCoverage", () => {
+  const hinted = [{ position: "Top", columnPosition: 1, rowPosition: 1 }];
+  const bare = [{ position: "Top" }];
+  const hw = (entry: Record<string, unknown>) => ({
+    type: "hardware" as const,
+    entry: { manufacturer: "m", ...entry } as Product,
+  });
+
+  it("counts hinted entries per collection and for modular on its own", () => {
+    const result = computeHintCoverage([
+      hw({ name: "Pedal", primaryCategory: "pedal", io: hinted }),
+      hw({ name: "Module", primaryCategory: "modular", io: bare }),
+      hw({ name: "Module 2", primaryCategory: "synthesizer", categories: ["modular"], io: hinted }),
+      hw({ name: "No io", primaryCategory: "microphone" }),
+      { type: "software", entry: { name: "Plugin", manufacturer: "m" } },
+    ]);
+    expect(result.byCollection.hardware).toEqual({ entries: 4, withIo: 3, withHints: 2 });
+    expect(result.byCollection.software).toEqual({ entries: 1, withIo: 0, withHints: 0 });
+    expect(result.byCollection.content).toEqual({ entries: 0, withIo: 0, withHints: 0 });
+    expect(result.modular).toEqual({ entries: 2, withIo: 2, withHints: 1 });
   });
 });
 

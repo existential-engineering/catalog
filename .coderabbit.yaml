@@ -73,6 +73,12 @@ reviews:
           500-series modules use `Bottom`. Eurorack uses `Top` or `Bottom` per panel.
           Do not ask for `Right` on a 500-series module.
         - Option-card or optional-module connectors are not baseline `io`.
+        - `rowPosition` and `columnPosition` are validated for shape (E122 to
+          E125: positive integers, set as a pair, one port per cell, every port
+          of a hinted edge hinted). Review what validation cannot see: a hint
+          must match a photo or manual the PR names, and an import PR must not
+          add or change one at all, since hints come only from `pnpm enrich-io`
+          or `/io-enrich`.
 
         Prices and unknown keys:
         - Several prices in one currency each carry `term` (perpetual, monthly,

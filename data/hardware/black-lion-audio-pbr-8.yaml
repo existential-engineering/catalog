@@ -15,21 +15,37 @@ specs: |-
   - Total Power: 1.6A per rail (1.8A non-continuous)
   - Patchbay Type: Fully balanced TT/Bantam (front panel)
 io:
+  # Front-panel TT/Bantam patchbay, three rows top to bottom on the product
+  # photo: Outputs 1-8, Inputs 1-8, then Mult 1 and Mult 2 (one input and two
+  # outputs each). One entry per row, stacked in a single column.
   - key: 5w0qWpV7
-    name: TT/Bantam front patchbay — top row
+    name: TT/Bantam front patchbay — Outputs row
     signalFlow: bidirectional
     category: audio
     type: line
     connection: tt
     maxConnections: 8
     position: Top
+    columnPosition: 1
     rowPosition: 1
   - key: 4VjRf667
-    name: TT/Bantam front patchbay — bottom row
+    name: TT/Bantam front patchbay — Inputs row
     signalFlow: bidirectional
     category: audio
     type: line
     connection: tt
     maxConnections: 8
     position: Top
+    columnPosition: 1
     rowPosition: 2
+  - key: NnGfielM
+    name: TT/Bantam front patchbay — Mult row
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: tt
+    maxConnections: 6
+    position: Top
+    columnPosition: 1
+    rowPosition: 3
+    description: Mult 1 and Mult 2, each one input and two outputs.

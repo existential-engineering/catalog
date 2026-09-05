@@ -54,6 +54,7 @@
 import path from "node:path";
 import { z } from "zod";
 import { isAggregatorUrl, isManufacturerOwnDomain, urlHost } from "./lib/aggregator-domains.js";
+import { countHintCoverage, emptyHintCoverage, type HintCoverage } from "./lib/io-hints.js";
 import type { Accessory, Content, Hardware, Manufacturer, Software } from "./lib/types.js";
 import { DATA_DIR, getYamlFiles, loadYamlFile } from "./lib/utils.js";
 
@@ -116,6 +117,13 @@ const CoverageSchema = z.object({
   withVerification: z.number(),
 });
 
+/** Layout hint coverage for one group of entries (AUREO-1115). */
+const HintCoverageSchema = z.object({
+  entries: z.number(),
+  withIo: z.number(),
+  withHints: z.number(),
+});
+
 const DatasetAuditSchema = z.object({
   generatedAt: z.string(),
   fast: z.boolean(),
@@ -138,6 +146,15 @@ const DatasetAuditSchema = z.object({
   }),
   /** Per-collection coverage metrics (denominator for "is the data thinning?"). */
   coverage: z.record(z.string(), CoverageSchema),
+  /**
+   * Entries whose io carries `rowPosition`/`columnPosition`, per collection
+   * and for `modular` on its own, so the hint campaign (AUREO-1112) can
+   * report progress against a number rather than a feeling.
+   */
+  hintCoverage: z.object({
+    byCollection: z.record(z.string(), HintCoverageSchema),
+    modular: HintCoverageSchema,
+  }),
   /** Every finding, all severities. */
   findings: z.array(FindingSchema),
   /** The bounded subset worth an LLM pass — the seam to Tier 2. */
@@ -614,6 +631,34 @@ function computeCoverage(
   return coverage;
 }
 
+/** True for a hardware entry filed under `modular`, as primary or secondary category. */
+function isModular(entry: Product): boolean {
+  return (
+    entry.primaryCategory === "modular" ||
+    (Array.isArray(entry.categories) && entry.categories.includes("modular"))
+  );
+}
+
+/**
+ * Layout hint coverage per collection and for modular entries. Only
+ * hardware carries io, so the other collections report zero with io; they
+ * are listed anyway so the per-collection shape matches `coverage`.
+ */
+export function computeHintCoverage(products: readonly { type: ProductType; entry: Product }[]): {
+  byCollection: Record<string, HintCoverage>;
+  modular: HintCoverage;
+} {
+  const byCollection: Record<string, HintCoverage> = {};
+  for (const type of PRODUCT_TYPES) byCollection[type] = emptyHintCoverage();
+  const modular = emptyHintCoverage();
+  for (const p of products) {
+    const io = (p.entry as Hardware).io;
+    countHintCoverage(byCollection[p.type], io);
+    if (p.type === "hardware" && isModular(p.entry)) countHintCoverage(modular, io);
+  }
+  return { byCollection, modular };
+}
+
 // =============================================================================
 // MAIN
 // =============================================================================
@@ -669,6 +714,7 @@ function generateAudit(fast: boolean): DatasetAudit {
       flagged: flagged.length,
     },
     coverage: computeCoverage(dataset.products),
+    hintCoverage: computeHintCoverage(dataset.products),
     findings,
     flagged,
   };
@@ -711,6 +757,17 @@ function printConsoleReport(audit: DatasetAudit): void {
         `price ${pct(c.withPrices, c.total)}, verified ${pct(c.withVerification, c.total)}`
     );
   }
+  console.log();
+
+  console.log("📐 Layout hints (rowPosition/columnPosition)");
+  console.log("─".repeat(40));
+  const hintLine = (label: string, h: HintCoverage) =>
+    `  ${label.padEnd(12)} ${String(h.withHints).padStart(5)} of ${h.withIo} entries with io ` +
+    `(${pct(h.withHints, h.withIo)}), ${h.entries} entries`;
+  for (const [collection, h] of Object.entries(audit.hintCoverage.byCollection)) {
+    console.log(hintLine(collection, h));
+  }
+  console.log(hintLine("modular", audit.hintCoverage.modular));
   console.log();
 
   const groups: { title: string; check: Finding["check"]; limit: number }[] = [
