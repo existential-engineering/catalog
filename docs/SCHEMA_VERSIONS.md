@@ -22,7 +22,24 @@ ORDER BY version;
 
 ## Version History
 
-### Version 22 (Current)
+### Version 23 (Current)
+
+**Description:** Added nullable hp column to hardware for Eurorack panel width
+
+**Breaking:** No
+
+**Changes:**
+
+- Added nullable `hp` column to `hardware`, carrying the YAML `hp` value: the
+  panel width in Eurorack HP (1 HP = 5.08 mm) as a positive integer
+- `NULL` where the entry declares none, which is every non-modular entry and
+  a modular entry whose width has not been sourced
+- Additive: a reader that selects columns by name never sees it, so
+  `schema_version` in `catalog_meta` stays at 1
+
+---
+
+### Version 22
 
 **Description:** Added optional term column to every prices table
 

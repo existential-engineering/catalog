@@ -94,6 +94,17 @@ describe("getErrorCodeFromZodIssue", () => {
     ).toBe(ValidationErrorCode.E202_DUPLICATE_CATEGORY);
   });
 
+  it("classifies an hp issue as a field type error by path", () => {
+    expect(
+      getErrorCodeFromZodIssue(issue({ message: "hp must be a positive integer", path: ["hp"] }))
+    ).toBe(ValidationErrorCode.E101_INVALID_FIELD_TYPE);
+    expect(
+      getErrorCodeFromZodIssue(
+        issue({ code: "invalid_type", message: "Invalid input: expected number", path: ["hp"] })
+      )
+    ).toBe(ValidationErrorCode.E101_INVALID_FIELD_TYPE);
+  });
+
   it("falls through to E199 for an invalid category message off the category path", () => {
     expect(getErrorCodeFromZodIssue(issue({ message: "Invalid category 'x'", path: ["io"] }))).toBe(
       ValidationErrorCode.E199_VALIDATION_ERROR
@@ -336,6 +347,24 @@ describe("validateFile", () => {
   it("returns null for a valid hardware entry", () => {
     const file = writeEntry("hardware", HARDWARE_OK);
     expect(validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS)).toBeNull();
+  });
+
+  it("accepts a positive integer hp on hardware", () => {
+    const file = writeEntry("hardware", `${HARDWARE_OK}hp: 12\n`);
+    expect(validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS)).toBeNull();
+  });
+
+  it("rejects an hp that is not a positive integer as E101", () => {
+    for (const bad of [`"12HP"`, "12.5", "0", "-4"]) {
+      const file = writeEntry("hardware", `${HARDWARE_OK}hp: ${bad}\n`);
+      const result = validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS);
+      expect(result?.details, bad).toHaveLength(1);
+      expect(result?.details?.[0], bad).toMatchObject({
+        code: ValidationErrorCode.E101_INVALID_FIELD_TYPE,
+        path: "hp",
+        line: 16,
+      });
+    }
   });
 
   it("reports YAML syntax errors as E110 with a line", () => {

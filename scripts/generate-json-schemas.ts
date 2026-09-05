@@ -411,6 +411,12 @@ const schemas: Record<string, unknown> = {
         description:
           "Audio processing operations this product performs (reverb, compression, amp-modeling...). A single-dimension axis, separate from 'categories', which also carries lifecycle, form factor and technology. Valid values are in schema/capabilities.yaml; there are no aliases. Omit the field when not yet assessed rather than guessing.",
       },
+      hp: {
+        type: "integer",
+        minimum: 1,
+        description:
+          "Panel width in Eurorack HP (1 HP = 5.08 mm), a positive integer. Only on modular entries, and only from a source (maker page, manual, the entry's own prose); omit when unknown rather than guessing.",
+      },
       translations: hardwareTranslationsSchema,
       io: {
         type: "array",

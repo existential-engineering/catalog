@@ -54,6 +54,19 @@ platforms:
   - windows
 ```
 
+Hardware `hp` (Eurorack panel width) is a positive integer. A string carrying
+the unit, a fraction, zero or a negative value each fail with this code:
+
+```yaml
+# Wrong
+hp: "12HP"
+hp: 12.5
+hp: 0
+
+# Correct
+hp: 12
+```
+
 **Fix:** Check the expected type for the field and correct it.
 
 ---
