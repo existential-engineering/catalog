@@ -36,6 +36,7 @@ describe("normalizeName", () => {
 
 type AuditPort = { name: string; type: string; category: string };
 
+/** A hardware product as the audit loads it, with only the io fields the checks read. */
 function hardware(slug: string, io: AuditPort[]): LoadedProduct {
   return {
     type: "hardware",

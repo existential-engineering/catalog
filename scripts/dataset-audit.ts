@@ -38,8 +38,8 @@
  *   6. cv-gate-category  — a `cv/gate` or `clock` io jack filed under a
  *                          category other than `audio` (AUREO-1103).
  *   7. expression-typed-cv — an io jack named for an expression or pedal
- *                          input but typed `cv/gate` instead of
- *                          `expression` (AUREO-1103).
+ *                          jack, in either direction, but typed `cv/gate`
+ *                          instead of `expression` (AUREO-1103).
  *
  * Findings with `needsLlmReview: true` are collected into `flagged`, the
  * seam handed to Tier 2. Deterministic findings (broken refs, orphans) are
@@ -499,6 +499,7 @@ interface AuditIoPort {
   type?: string;
 }
 
+/** The io list of a hardware entry, empty for every other collection. */
 function ioOf(entry: Product): AuditIoPort[] {
   const io = (entry as { io?: AuditIoPort[] }).io;
   return Array.isArray(io) ? io : [];
@@ -508,6 +509,7 @@ function ioOf(entry: Product): AuditIoPort[] {
 const CV_AUDIO_TYPES = new Set(["cv/gate", "clock"]);
 const EXPRESSION_NAME = /expression|pedal/i;
 
+/** Up to four port names for a finding's detail, with an ellipsis past that. */
 function portNames(ports: AuditIoPort[]): string {
   return (
     ports
@@ -559,7 +561,10 @@ export function checkCvGateCategory(products: LoadedProduct[]): Finding[] {
  * AUREO-1098 the setup graph draws that as a square on one pedal and a
  * triangle on the next for the same kind of jack. Mostly mechanical, but
  * a module's "Expression CV In" really is a CV input fed by a pedal, so
- * each one gets a Tier-2 look rather than a blanket rewrite.
+ * each one gets a Tier-2 look rather than a blanket rewrite. Direction is
+ * deliberately not a filter: an "Expression Out" that drives a pedal's
+ * expression input (Cre8audio NiftyKEYZ, ALM SBG) is an expression jack
+ * on the sending side, and only the review can say whether it is.
  */
 export function checkExpressionTypedCv(products: LoadedProduct[]): Finding[] {
   const findings: Finding[] = [];
