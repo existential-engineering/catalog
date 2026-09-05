@@ -42,6 +42,10 @@ export enum ValidationErrorCode {
   E119_INVALID_CAPABILITY = "E119",
   E120_STORAGE_MEDIA_SLOT = "E120",
   E121_UNKNOWN_KEY = "E121",
+  E122_IO_HINT_NOT_POSITIVE_INTEGER = "E122",
+  E123_IO_HINT_UNPAIRED = "E123",
+  E124_IO_HINT_CELL_OCCUPIED_TWICE = "E124",
+  E125_IO_HINT_EDGE_PARTIAL = "E125",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
@@ -215,6 +219,22 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E121_UNKNOWN_KEY]: {
     title: "Key not in the schema",
     anchor: "e121-key-not-in-the-schema",
+  },
+  [ValidationErrorCode.E122_IO_HINT_NOT_POSITIVE_INTEGER]: {
+    title: "IO layout hint is not a positive integer",
+    anchor: "e122-io-layout-hint-is-not-a-positive-integer",
+  },
+  [ValidationErrorCode.E123_IO_HINT_UNPAIRED]: {
+    title: "IO layout hint without its partner",
+    anchor: "e123-io-layout-hint-without-its-partner",
+  },
+  [ValidationErrorCode.E124_IO_HINT_CELL_OCCUPIED_TWICE]: {
+    title: "IO layout cell occupied twice",
+    anchor: "e124-io-layout-cell-occupied-twice",
+  },
+  [ValidationErrorCode.E125_IO_HINT_EDGE_PARTIAL]: {
+    title: "IO edge only partly hinted",
+    anchor: "e125-io-edge-only-partly-hinted",
   },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",

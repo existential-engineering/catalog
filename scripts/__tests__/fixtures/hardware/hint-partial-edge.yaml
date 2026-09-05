@@ -1,0 +1,22 @@
+# Fixture for scripts/__tests__/validate-io-hints.test.ts: E125.
+name: Hint Fixture Partial Edge
+manufacturer: eventide-audio
+primaryCategory: multi-effect
+description: Validation fixture with one hinted and one unhinted port on one edge.
+io:
+  - name: Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+    columnPosition: 1
+    rowPosition: 1
+  - name: Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top

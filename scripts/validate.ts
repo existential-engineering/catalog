@@ -13,6 +13,7 @@ import { z } from "zod";
 import { looksLikeAcronymName } from "./lib/acronym-exclusions.js";
 import { getDocsUrl, ValidationErrorCode } from "./lib/error-codes.js";
 import { isIoCombineCandidate, STORAGE_MEDIA_SLOT } from "./lib/io-heuristics.js";
+import { findHintFindings, isPositiveInteger } from "./lib/io-hints.js";
 import { findDuplicateIoKeys, IO_KEY_PATTERN } from "./lib/io-keys.js";
 import {
   findNameArtifacts,
@@ -242,6 +243,22 @@ function getErrorCodeFromZodIssue(issue: {
     return ValidationErrorCode.E117_INVALID_IO_TYPE;
   }
 
+  // Layout hint errors (E122 to E125). The cross-port rules carry a marker
+  // phrase; a hint that fails the number check is keyed to its path so a
+  // string or a float lands on E122 rather than the generic E101.
+  if (message.includes("io hint pair incomplete")) {
+    return ValidationErrorCode.E123_IO_HINT_UNPAIRED;
+  }
+  if (message.includes("io hint cell occupied twice")) {
+    return ValidationErrorCode.E124_IO_HINT_CELL_OCCUPIED_TWICE;
+  }
+  if (message.includes("io hint edge")) {
+    return ValidationErrorCode.E125_IO_HINT_EDGE_PARTIAL;
+  }
+  if (/\.(?:rowPosition|columnPosition)$/.test(path)) {
+    return ValidationErrorCode.E122_IO_HINT_NOT_POSITIVE_INTEGER;
+  }
+
   // Connector detail errors
   if (message.includes("connectordetail")) {
     return ValidationErrorCode.E115_INVALID_CONNECTOR_DETAIL;
@@ -437,6 +454,24 @@ const VersionSchema = z
     }
   );
 
+/**
+ * A layout hint field: a 1-based integer or absent. A float or zero here
+ * is a hint Studio would silently coerce, so it is an error (E122) rather
+ * than a value to round.
+ */
+const createHintValidator = (field: "columnPosition" | "rowPosition") =>
+  z
+    .number()
+    .optional()
+    .check((ctx) => {
+      if (ctx.value === undefined || isPositiveInteger(ctx.value)) return;
+      ctx.issues.push({
+        code: "custom",
+        message: `io hint ${field} must be a positive integer (1-based), got ${ctx.value}.`,
+        input: ctx.value,
+      });
+    });
+
 const IOSchema = z
   .object({
     // Stable per-port key (assigned by pnpm assign-ids). Optional until the
@@ -513,8 +548,11 @@ const IOSchema = z
           ctx.issues.push({ code: "custom", message, input: ctx.value });
         }
       }),
-    columnPosition: z.number().optional(),
-    rowPosition: z.number().optional(),
+    // Layout hints are 1-based integers (E122). Their pairing, cell
+    // uniqueness and edge coverage are checked across the whole io list
+    // in the hardware schema below.
+    columnPosition: createHintValidator("columnPosition"),
+    rowPosition: createHintValidator("rowPosition"),
     description: z.string().optional(),
   })
   .check((ctx) => {
@@ -768,6 +806,32 @@ const HardwareSchema = z
         message: `duplicate io key '${dup}' — io keys must be unique within an entry.`,
         path: ["io"],
         input: dup,
+      });
+    }
+  })
+  .check((ctx) => {
+    // Layout hints come in pairs, occupy distinct cells, and cover every
+    // port of the edge they appear on (E123 to E125). Studio takes a side
+    // with any hint down the grid path and back-fills the rest row-major,
+    // so a partly hinted edge renders a grid nobody drew. Edges are the
+    // canonical position so an alias and its target share one grid.
+    const io = ctx.value.io;
+    if (!io || io.length === 0) return;
+    const edges = io.map((port) => ({
+      ...port,
+      position: port.position
+        ? (schemaContext.ioPositionAliases[port.position] ?? port.position)
+        : undefined,
+    }));
+    for (const finding of findHintFindings(edges)) {
+      if (finding.kind === "not-positive-integer") continue; // E122, per field above
+      ctx.issues.push({
+        code: "custom",
+        message: finding.message,
+        // An unpaired finding names the missing field, which has no line
+        // to point at, so it and the edge findings anchor on the port.
+        path: ["io", finding.index],
+        input: io[finding.index],
       });
     }
   })

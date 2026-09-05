@@ -312,6 +312,14 @@ USB-C`). Not in an io entry: the io shape has no note field, so a note
 - **`type` and `connection` never swap.** A connector name in `type` is a
   hard error (E117), not an advisory warning, so an import that meets it
   must fix the value rather than keep it and note it.
+- **Layout hints come in pairs and cover the whole edge.** `rowPosition` and
+  `columnPosition` are 1-based integers (E122), always set together (E123),
+  unique per `(position, rowPosition, columnPosition)` cell (E124), and once
+  any port on an edge carries them every port on that edge does (E125),
+  because Studio takes a hinted side down the grid path and back-fills the
+  rest row-major. They are authored against a photo or manual with
+  `pnpm enrich-io` or `/io-enrich`, never by a bulk import, and a merge
+  refresh leaves an existing hint exactly as it found it.
 
 ## Capabilities
 

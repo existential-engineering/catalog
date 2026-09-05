@@ -397,6 +397,54 @@ value is genuinely new data, add it to the schema in the same PR.
 
 ---
 
+### E122: IO Layout Hint Is Not a Positive Integer
+
+An io entry's `rowPosition` or `columnPosition` is present but is not a 1-based
+integer: zero, a negative number, a fraction, or a string. Both hints are grid
+coordinates Studio reads as-is, so a value it would have to coerce is an error
+rather than a value to round.
+
+**Fix:** Count from 1. Column 1 is the leftmost jack and row 1 the topmost, viewing
+that face head-on. Remove the hint if the layout is not known.
+
+---
+
+### E123: IO Layout Hint Without Its Partner
+
+An io entry carries `rowPosition` without `columnPosition`, or the reverse. A
+single-column stack still has a column, so the pair is always set together. The
+three Black Lion patchbays carried `rowPosition` alone before AUREO-1115; they now
+carry `columnPosition: 1` as well.
+
+**Fix:** Set both fields, or neither. A single-row edge uses `rowPosition: 1` on
+every port and a single-column edge uses `columnPosition: 1`.
+
+---
+
+### E124: IO Layout Cell Occupied Twice
+
+Two io entries on the same `position` edge carry the same `(rowPosition,
+columnPosition)`. One cell holds one jack; a second jack in it is a numbering
+mistake, most often a copied port whose column was not advanced.
+
+**Fix:** Give each port on the edge its own cell. Stacked jacks share a
+`columnPosition` and differ by `rowPosition`.
+
+---
+
+### E125: IO Edge Only Partly Hinted
+
+On a `position` edge where at least one io entry carries a layout hint, another
+entry carries none. Studio's `computeHandleGrid` takes a side with any hint down the
+grid path and back-fills the unhinted ports row-major, so a partly hinted edge
+renders a layout nobody drew.
+
+**Fix:** Hint every port on that edge, or none of them. Hints come from
+`pnpm enrich-io <slug>` or `/io-enrich` against a photo or manual, never from a
+bulk import.
+
+---
+
 ### E199: Validation Error
 
 A generic validation error that doesn't fall into a more specific category.

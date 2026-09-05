@@ -1,0 +1,31 @@
+# Fixture for scripts/__tests__/validate-io-hints.test.ts: a fully hinted edge.
+name: Hint Fixture Clean
+manufacturer: eventide-audio
+primaryCategory: multi-effect
+description: Validation fixture with a correctly hinted rear edge.
+io:
+  - name: Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+    columnPosition: 1
+    rowPosition: 1
+  - name: Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+    columnPosition: 1
+    rowPosition: 2
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
