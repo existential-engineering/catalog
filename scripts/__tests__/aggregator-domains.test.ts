@@ -118,17 +118,25 @@ describe("isManufacturerOwnDomain", () => {
     expect(isManufacturerOwnDomain("best-service", "not a url")).toBe(false);
   });
 
-  it("does not match across a subdomain (known limitation)", () => {
-    // The label is built from every host part except the TLD, so a
-    // subdomain is concatenated in ("shopsplice" vs "splice") and the
-    // maker's own page reads as somebody else's. dataset-audit then
-    // flags it, and promote-canonical-urls will rewrite the url away.
+  it("matches the slug on a subdomain of the maker's own host", () => {
+    // tools.splice.com is Splice's own product page for Astra. Before
+    // #644 the label was every host part concatenated ("toolssplice"),
+    // so dataset-audit flagged it and promote-canonical-urls would have
+    // rewritten it away once the entry gained a links array.
     expect(isManufacturerOwnDomain("splice", "https://splice.com")).toBe(true);
-    expect(isManufacturerOwnDomain("splice", "https://shop.splice.com")).toBe(false);
+    expect(isManufacturerOwnDomain("splice", "https://shop.splice.com")).toBe(true);
+    expect(isManufacturerOwnDomain("splice", "https://tools.splice.com/astra")).toBe(true);
   });
 
-  it("does not match a multi-part TLD (known limitation)", () => {
-    // "bestservice.co.uk" reduces to "bestserviceco", not "bestservice".
-    expect(isManufacturerOwnDomain("best-service", "https://bestservice.co.uk")).toBe(false);
+  it("matches the slug under a multi-part TLD", () => {
+    expect(isManufacturerOwnDomain("best-service", "https://bestservice.co.uk")).toBe(true);
+  });
+
+  it("never matches the last label, so a slug equal to a TLD is not a match", () => {
+    expect(isManufacturerOwnDomain("com", "https://pluginboutique.com/x")).toBe(false);
+  });
+
+  it("does not match a slug that only appears as part of a label", () => {
+    expect(isManufacturerOwnDomain("splice", "https://notsplice.com")).toBe(false);
   });
 });
