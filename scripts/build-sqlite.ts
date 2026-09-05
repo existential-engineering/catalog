@@ -8,6 +8,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import Database from "better-sqlite3";
 import { marked } from "marked";
 
@@ -39,7 +40,7 @@ marked.setOptions({
 /**
  * Convert Markdown to HTML, or return null if input is empty
  */
-function markdownToHtml(markdown: string | undefined | null): string | null {
+export function markdownToHtml(markdown: string | undefined | null): string | null {
   if (!markdown) return null;
   const html = marked.parse(markdown);
   // marked.parse can return a Promise in async mode, but we're using sync mode
@@ -74,7 +75,7 @@ const localesSchema = loadYamlFile<LocalesSchema>(path.join(SCHEMA_DIR, "locales
 const APPROVED_LOCALES = new Set(localesSchema.locales.map((l) => l.code));
 
 // Normalize a category to its canonical form
-function normalizeCategory(category: string): string {
+export function normalizeCategory(category: string): string {
   return CATEGORY_ALIASES.get(category) ?? category;
 }
 
@@ -91,12 +92,12 @@ const IO_CONNECTION_ALIASES = new Map<string, string>(
 );
 
 // Normalize an IO position to its canonical form
-function normalizeIOPosition(position: string): string {
+export function normalizeIOPosition(position: string): string {
   return IO_POSITION_ALIASES.get(position) ?? position;
 }
 
 // Normalize an IO connection to its canonical form
-function normalizeIOConnection(connection: string): string {
+export function normalizeIOConnection(connection: string): string {
   return IO_CONNECTION_ALIASES.get(connection) ?? connection;
 }
 
@@ -107,7 +108,7 @@ function normalizeIOConnection(connection: string): string {
 // can. Old apps select `signal_flow` by name and never see the new column,
 // so this stays until pre-peer builds are extinct. Never flatten the raw
 // column, and never drop this one without bumping CATALOG_SCHEMA_VERSION.
-function normalizeIOSignalFlow(signalFlow: string): string {
+export function normalizeIOSignalFlow(signalFlow: string): string {
   return signalFlow === "bidirectional" ? "input" : signalFlow;
 }
 
@@ -120,7 +121,7 @@ function normalizeIOSignalFlow(signalFlow: string): string {
 // columns and tables never bump it: old readers select by name and cannot
 // see them, and bumping would needlessly freeze catalog updates for every
 // older app.
-const CATALOG_SCHEMA_VERSION = "1";
+export const CATALOG_SCHEMA_VERSION = "1";
 
 // Read version from package.json
 const packageJson = JSON.parse(
@@ -131,25 +132,46 @@ const CATALOG_VERSION = packageJson.version;
 const SCHEMA_FILE = path.join(import.meta.dirname, "schema.sql");
 const OUTPUT_FILE = path.join(OUTPUT_DIR, "catalog.sqlite");
 
+/**
+ * Where a build reads from and writes to. Every field defaults to the
+ * production value, so `pnpm build` is unchanged; the test suite points
+ * `dataDir` at a fixture tree and `outputFile` at a temp path, which is
+ * the only way to assert on what the build produces without building the
+ * whole catalog (catalog#646). The schema vocabularies (aliases, locales)
+ * are module-level and always come from `schema/`.
+ */
+export interface BuildOptions {
+  /** Root holding the five collection directories. Default: `data/`. */
+  dataDir?: string;
+  /** Path of the SQLite file to write. Default: `dist/catalog.sqlite`. */
+  outputFile?: string;
+  /** Catalog version written to `catalog_meta`. Default: package.json. */
+  version?: string;
+}
+
 // =============================================================================
 // BUILD FUNCTIONS
 /**
  * Builds the catalog SQLite database file from schema and YAML source data, inserting locales, manufacturers, software, and hardware, then records metadata and optimizes the database.
  *
- * @param version - The catalog version string to store in the database metadata
+ * @param options - Source tree, output path and version; see BuildOptions
  * @throws Error if a YAML entry is missing an `id` (e.g., when new entries need IDs assigned)
  */
-function buildDatabase(version: string): void {
+export function buildDatabase(options: BuildOptions = {}): void {
+  const dataDir = options.dataDir ?? DATA_DIR;
+  const outputFile = options.outputFile ?? OUTPUT_FILE;
+  const version = options.version ?? CATALOG_VERSION;
+
   // Ensure output directory exists
-  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  fs.mkdirSync(path.dirname(outputFile), { recursive: true });
 
   // Remove existing database
-  if (fs.existsSync(OUTPUT_FILE)) {
-    fs.unlinkSync(OUTPUT_FILE);
+  if (fs.existsSync(outputFile)) {
+    fs.unlinkSync(outputFile);
   }
 
   // Create new database
-  const db = new Database(OUTPUT_FILE);
+  const db = new Database(outputFile);
 
   // Apply schema
   const schema = fs.readFileSync(SCHEMA_FILE, "utf-8");
@@ -166,7 +188,7 @@ function buildDatabase(version: string): void {
   console.log(`  ✓ Inserted ${localesSchema.locales.length} locales`);
 
   // Load and insert manufacturers
-  const manufacturerFiles = getYamlFiles(path.join(DATA_DIR, "manufacturers"));
+  const manufacturerFiles = getYamlFiles(path.join(dataDir, "manufacturers"));
   const manufacturers = new Map<string, Manufacturer>();
   const manufacturerIds = new Map<string, string>(); // slug -> id mapping
 
@@ -268,7 +290,7 @@ function buildDatabase(version: string): void {
   console.log(`  ✓ Inserted ${manufacturers.size} manufacturers`);
 
   // Load and insert software
-  const softwareFiles = getYamlFiles(path.join(DATA_DIR, "software"));
+  const softwareFiles = getYamlFiles(path.join(dataDir, "software"));
   const softwareSupersedes = new Map<string, string>(); // id -> supersedes_id
   let softwareCount = 0;
 
@@ -282,7 +304,7 @@ function buildDatabase(version: string): void {
 
   // Build hardware slug -> nanoid lookup for resolving content-to-hardware compatibility
   const hardwareSlugToId = new Map<string, string>();
-  for (const file of getYamlFiles(path.join(DATA_DIR, "hardware"))) {
+  for (const file of getYamlFiles(path.join(dataDir, "hardware"))) {
     const data = loadYamlFile<Hardware>(file);
     const slug = path.basename(file, ".yaml");
     if (data.id) hardwareSlugToId.set(slug, data.id);
@@ -559,7 +581,7 @@ function buildDatabase(version: string): void {
   }
 
   // Load and insert content
-  const contentFiles = getYamlFiles(path.join(DATA_DIR, "content"));
+  const contentFiles = getYamlFiles(path.join(dataDir, "content"));
   const contentSupersedes = new Map<string, string>(); // id -> supersedes_id
   let contentCount = 0;
 
@@ -818,7 +840,7 @@ function buildDatabase(version: string): void {
   }
 
   // Load and insert hardware
-  const hardwareFiles = getYamlFiles(path.join(DATA_DIR, "hardware"));
+  const hardwareFiles = getYamlFiles(path.join(dataDir, "hardware"));
   const hardwareSupersedes = new Map<string, string>(); // id -> supersedes_id
   let hardwareCount = 0;
 
@@ -1202,7 +1224,7 @@ function buildDatabase(version: string): void {
   }
 
   // Load and insert accessories
-  const accessoryFiles = getYamlFiles(path.join(DATA_DIR, "accessories"));
+  const accessoryFiles = getYamlFiles(path.join(dataDir, "accessories"));
   const accessorySupersedes = new Map<string, string>(); // id -> supersedes_id
   let accessoryCount = 0;
 
@@ -1447,13 +1469,13 @@ function buildDatabase(version: string): void {
   db.close();
 
   // Get file size
-  const stats = fs.statSync(OUTPUT_FILE);
+  const stats = fs.statSync(outputFile);
   const sizeKB = (stats.size / 1024).toFixed(1);
 
   const totalProducts = softwareCount + contentCount + hardwareCount + accessoryCount;
 
   console.log(`\n✅ Database built successfully!`);
-  console.log(`   Output: ${OUTPUT_FILE}`);
+  console.log(`   Output: ${outputFile}`);
   console.log(`   Size: ${sizeKB} KB`);
   console.log(`   Version: ${version}`);
   console.log(`   Total products: ${totalProducts.toLocaleString()}`);
@@ -1463,6 +1485,10 @@ function buildDatabase(version: string): void {
 // MAIN
 // =============================================================================
 
-console.log("\n🔨 Building catalog database...\n");
-buildDatabase(CATALOG_VERSION);
-console.log();
+// Run only as a CLI: importing this module (the test suite does) must not
+// build dist/catalog.sqlite as a side effect.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  console.log("\n🔨 Building catalog database...\n");
+  buildDatabase();
+  console.log();
+}
