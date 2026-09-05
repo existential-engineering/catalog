@@ -1,0 +1,106 @@
+id: zh324BTNSqjV-Eu0gPi23
+name: PEDAL PAL STEREO
+manufacturer: calsynth
+primaryCategory: modular
+categories:
+  - effect
+  - utility
+url: https://calsynth.com/products/pedal-pal-stereo-diy-populated-pcb-panel-set
+prices:
+  - amount: 69
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: PEDAL PAL STEREO is an 8HP Eurorack pedal integration module that
+  lets you send and return signal to a stereo or mono guitar/FX pedal, blend dry
+  and wet signal, control send/return levels and tone, correct phase, and
+  modulate send level and pedal expression via CV.
+details: |-
+  PEDAL INTEGRATION MODULE 8HP
+
+  QUICK START GUIDE (opens in new window)
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP.
+
+  Connect a stereo or mono signal to the IN sockets (a mono signal to IN L is normalized to IN R), and retrieve the output signal from the OUT jacks. Link your FX pedal's inputs to the SEND output using a TRS audio cable, and connect the FX pedal's output to the RTRN return socket with another TRS audio cable. Fine-tune the blend of dry and wet signals with the central DRY WET knob. The level gain of the dry and the wet signal can be adjusted independently via trimmers on the back of the module. Rotate SEND to the right to increase the audio level sent to the pedal's input. The attenuator beneath the SEND CV jack controls the maximum send signal level, so remember to turn it to the right to activate the SEND jack. Increase the RETURN knob to control the effect signal's level returning from the FX pedal. Be cautious as the send signal can potentially overload the FX pedal's input, so adjust the send amount with care. Both the SEND and RETURN controls provide precise control over the signals sent to and from the effects unit for clean or slightly overdriven signals. The ST Modular logo LEDs indicate whether a signal is being sent from or returned to the module. Turn the TONE knob to the right to emphasize high frequencies or to the left for low frequencies in the SEND signal. Keep it in the center position to have no further effect. Activate the PHASE button to align the audio return signal with the dry input signal if your effects pedal reverses its phase. You may need to make further adjustments to the send and return settings afterwards. The real fun begins when you modulate the amount of audio sent to the FX pedal. Simply introduce a CV signal into the SEND CV input and adjust its level with the attenuator. Furthermore, you can also control the pedal's EXPRESSION input using CV. Connect a TRS audio cable to the EXPR I/O, and the voltage provided by the pedal will be attenuated with the EXPR knob and send back to the pedal, allowing you to manually control the expression parameters. Alternatively, you can patch modular control voltage into the EXP CV input to control the expression parameters of your FX unit, with the EXPR knob acting as an attenuator. The LED indicates when voltage is being forwarded to the pedal. Please ensure you check your FX pedals' specifications before using PEDAL PAL STEREO. Verify whether the pedal supplies its expression voltage on the tip or ring of the EXPR TRS cable and the accepted voltage level (most commonly 3V or 5V). Adjust the corresponding jumpers on the back of the module accordingly. In the video example below, I'm using an EarthQuaker Devices Avalanche Run Delay and Reverb pedal, which provides 3V on the ring of the TRS expression cable. This pedal is particularly well-suited for PEDAL PAL STEREO, as it allows for quick selection of the expression voltage destination, such as reverb amount, delay time, and more. For convenient parameter adjustments, particularly during live performances, potentiometers are positioned on the lower side, ensuring easy access when the module is mounted in the bottom row of a tabletop case.
+io:
+  - key: krGEsUeZ
+    name: In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: avqMr1pV
+    name: In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0XgcJtLO
+    name: Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: fgZxz7W7
+    name: Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: xu5JxyQl
+    name: Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: QOyHkBg1
+    name: Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ZGG9WyzZ
+    name: Expression I/O
+    signalFlow: bidirectional
+    category: audio
+    type: expression
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 9c8zslzl
+    name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: bWIv1BMv
+    name: Send CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 242nnZ3T
+    name: Exp CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,99 @@
+id: uvdOFeuy1PWlL6UVOgY-F
+name: Natural State
+manufacturer: calsynth
+primaryCategory: filter
+categories:
+  - modular
+capabilities:
+  - filter
+url: https://calsynth.com/products/natural-state-diy-populated-pcb-panel-set
+prices:
+  - amount: 69
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Natural State is a 16HP Eurorack dual envelope ducking filter with
+  two 24dB filters, each with a CV decay envelope and an internal LFO, designed
+  to create natural sounding grooves and soundscapes, including a ducking effect
+  between channels.
+details: |-
+  DUAL ENVELOPE DUCKING FILTER 16HP
+
+  QUICK START GUIDE (opens in new window)
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP.
+
+  Natural State consists of two 24db filters with a CV decay envelope and an internal LFO. It is designed to filter two waveforms in the most ear-friendly way possible to create natural and organic sounding grooves and soundscapes. Each of the two channels has a DECAY slider that adjusts the decay length, an OPEN slider that adjusts the filter cutoff, and a FORCE slider that adjusts the amount of decay CV that affects the filter. The STRIKE input takes any CV from +1 volt and triggers the decay envelope. Both the decay and the filter cutoff can be controlled via the CV inputs DECAY and CTRL. Attenuators can be used to change the strength of the applied CV. The decay attenuator also acts as a DECAY CV offset. A subtle internal LFO can be routed to the filter cutoff, which is attenuated with the CTRL controls. The LFO range is rather slow to create smooth filter sweeps. The resonance of the individual filters can be changed with the PEAK potentiometers. When the DUCK control is turned to the right, the decay of the left channel increasingly suppresses the signal of the right channel, creating a ducking effect. Both decay envelopes are also routed to the ENV sockets for further external processing.
+io:
+  - key: DC6FSNJ7
+    name: STRIKE IN 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: zJi08oEt
+    name: STRIKE IN 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: a1fMqRgH
+    name: DECAY CV IN 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: FdXhBfJM
+    name: DECAY CV IN 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 9mIX86nm
+    name: CTRL CV IN 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: kPNzTzCF
+    name: CTRL CV IN 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: F0NwsfYM
+    name: ENV OUT 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: HFvoTcUv
+    name: ENV OUT 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: J1gyzr3a
+    name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

@@ -85,6 +85,36 @@ reviews:
         - `platforms: [ios]` only when the page names iOS, iPadOS, AUv3, iPad or
           iPhone or links to the App Store.
 
+        Capabilities (CLAUDE.md "Capabilities") — one dimension, closed vocabulary,
+        no aliases. Every value is checked by validation (E119/E205), so review only
+        what it cannot see:
+        - A value describing what the product IS (form factor, lifecycle, technology,
+          era) belongs in `categories`. `capabilities` says what it DOES.
+        - Name the operation, not the algorithm: a "Shimmer" mode is `reverb` +
+          `pitch-shift`, "Neural Capture" is `amp-modeling`.
+        - A capability needs support either in the entry's own prose or in a
+          canonical `CATEGORY_CAPABILITIES` mapping from its declared
+          `primaryCategory`/`categories`, since `pnpm derive-capabilities` writes
+          the latter without reading prose at all. Flag a hand-authored capability
+          the `description`/`details`/`specs` do not support, and flag an operation
+          the prose plainly names that the list omits — that drift is what left the
+          Eventide H90 with no `granular` while its details described four granular
+          algorithms. A derived value that looks wrong means the category is wrong:
+          say so about the category rather than asking for the capability alone to
+          be dropped, or the two fields silently disagree.
+        - Prose naming an operation is not always a claim to it. A sibling product
+          ("also spawned DITTO LOOPER"), an influence ("inspired by the Akai S950
+          sampler"), compatibility ("works with cabinet simulators"), a simile
+          ("similar to auto-wah effects"), a measured spec ("total harmonic
+          distortion below 0.001%", a speaker's "compression driver") and a denied
+          spec row ("Arpeggiator/Sequencer: None") are each evidence against.
+        - Never suggest `capabilities: []`. An absent field means "not yet assessed",
+          which the coverage report can state; an empty one cannot be told from a
+          verified one.
+        - A new value must land in `schema/capabilities.yaml` in the same PR, and in
+          `CATEGORY_CAPABILITIES` in `scripts/derive-capabilities.ts` only when a
+          category implies it by definition.
+
         `supersedes` on import PRs: the importer resolves it after assign-ids behind
         a confidence gate and lists every link in the PR body. Do not ask the PR to
         hand-wire a link the resolver left out. An ambiguous or absent predecessor

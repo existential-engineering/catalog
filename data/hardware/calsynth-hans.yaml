@@ -1,0 +1,85 @@
+id: gQ5ELAUJI-hkWyqItwwl9
+name: HANS
+manufacturer: calsynth
+primaryCategory: filter
+categories:
+  - modular
+  - stereo
+capabilities:
+  - filter
+url: https://calsynth.com/products/hans-diy-populated-pcb-panel-set
+prices:
+  - amount: 59
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A 6HP stereo diode filter Eurorack module with an internal LFO,
+  featuring stereo inputs and outputs, resonance control, and an LFO output for
+  external processing.
+details: |-
+  STEREO DIODE FILTER + LFO 6HP
+
+  QUICK START GUIDE (opens in new window)
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP.
+
+  Designed for stereo signals, HANS comes equipped with stereo inputs (IN L and R) and stereo outputs (OUT L and R). However, if you want to use a mono signal, connect it to the IN L socket, which is internally normalised to the IN R input. Manual control of the filter cutoff frequency is achieved with the FREQ potentiometer. Additionally, the cutoff can be modulated using the internal LFO and/or external control voltage (CV). Adjust the LEVEL knob to introduce a triangle LFO to the cutoff frequency, cycling from +0V to a maximum of +10V. The RATE knob, indicated by an LED indicator, allows you to set the LFO's speed. It is designed for long cycles and enables very slow movements lasting more than 10 minutes, but does not achieve audio rates. To disengage LFO control, simply reduce the LEVEL knob
+
+  Simultaneously, external CV can be patched to the CV input, with the CV attenuator enabling external control of the filter's cutoff frequency. An LED indicates the current voltage level of the external CV. Improve the characteristics of the filter by using the RES potentiometer to apply positive feedback that emphasises higher frequencies. The signal may be distorted at very high resonance settings. Self-resonance is possible, but only at very high frequencies. For further external processing, the internal LFO's triangle waveform is accessible at the LFO output. This feature adds flexibility to your modular setup, enabling creative possibilities beyond the module's primary function
+io:
+  - key: uWvxfx7r
+    name: IN L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 4wYpFgoh
+    name: IN R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: mTY1P8Zi
+    name: OUT L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: PG2SdXdQ
+    name: OUT R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XyFtDgS7
+    name: CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6SRvOJEk
+    name: LFO OUT
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CVOmvt1B
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
