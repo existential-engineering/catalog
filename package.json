@@ -37,7 +37,8 @@
     "lint:fix": "biome check --write scripts/ vitest.config.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prepare": "husky"
+    "prepare": "husky",
+    "hp:backfill": "tsx scripts/backfill-hp.ts"
   },
   "lint-staged": {
     "scripts/**/*.ts": [
