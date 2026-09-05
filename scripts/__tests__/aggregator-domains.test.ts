@@ -139,4 +139,14 @@ describe("isManufacturerOwnDomain", () => {
   it("does not match a slug that only appears as part of a label", () => {
     expect(isManufacturerOwnDomain("splice", "https://notsplice.com")).toBe(false);
   });
+
+  it("does not match a maker's slug on a subdomain of another aggregator", () => {
+    // splice.pluginboutique.com is Plugin Boutique's host, whatever the
+    // subdomain says. The registrable domain is the aggregator entry the
+    // host matched, and only its labels are compared.
+    expect(isManufacturerOwnDomain("splice", "https://splice.pluginboutique.com/x")).toBe(false);
+    expect(isManufacturerOwnDomain("plugin-boutique", "https://splice.pluginboutique.com/x")).toBe(
+      true
+    );
+  });
 });

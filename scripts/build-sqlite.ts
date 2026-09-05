@@ -172,7 +172,31 @@ export function buildDatabase(options: BuildOptions = {}): void {
 
   // Create new database
   const db = new Database(outputFile);
+  let totalProducts: number;
+  try {
+    totalProducts = populateDatabase(db, dataDir, version);
+  } finally {
+    // A missing id throws partway through; the handle still has to go, or
+    // the next build cannot unlink the file it left behind.
+    db.close();
+  }
 
+  // Get file size
+  const stats = fs.statSync(outputFile);
+  const sizeKB = (stats.size / 1024).toFixed(1);
+
+  console.log(`\n✅ Database built successfully!`);
+  console.log(`   Output: ${outputFile}`);
+  console.log(`   Size: ${sizeKB} KB`);
+  console.log(`   Version: ${version}`);
+  console.log(`   Total products: ${totalProducts.toLocaleString()}`);
+}
+
+/**
+ * Fill an open, empty database from the collections under `dataDir`.
+ * Returns the number of product entries written.
+ */
+function populateDatabase(db: Database.Database, dataDir: string, version: string): number {
   // Apply schema
   const schema = fs.readFileSync(SCHEMA_FILE, "utf-8");
   db.exec(schema);
@@ -1466,19 +1490,7 @@ export function buildDatabase(options: BuildOptions = {}): void {
   db.exec("VACUUM");
   db.exec("ANALYZE");
 
-  db.close();
-
-  // Get file size
-  const stats = fs.statSync(outputFile);
-  const sizeKB = (stats.size / 1024).toFixed(1);
-
-  const totalProducts = softwareCount + contentCount + hardwareCount + accessoryCount;
-
-  console.log(`\n✅ Database built successfully!`);
-  console.log(`   Output: ${outputFile}`);
-  console.log(`   Size: ${sizeKB} KB`);
-  console.log(`   Version: ${version}`);
-  console.log(`   Total products: ${totalProducts.toLocaleString()}`);
+  return softwareCount + contentCount + hardwareCount + accessoryCount;
 }
 
 // =============================================================================

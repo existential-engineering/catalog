@@ -38,18 +38,27 @@ export function isAggregatorUrl(url: string): boolean {
  * True when an aggregator domain is actually the manufacturer's own
  * domain (e.g. the `best-service` manufacturer publishing on
  * bestservice.com). Compares the manufacturer slug, separators
- * stripped, against each host label except the last: a subdomain
- * (`tools.splice.com`) and a multi-part TLD (`bestservice.co.uk`) both
- * carry the maker's label somewhere other than second-from-the-right,
- * and concatenating every label read both as somebody else's site.
- * Measured against the dataset when this changed, the wider match
- * exempted exactly one entry (splice-astra on tools.splice.com).
+ * stripped, against the registrable domain's labels.
+ *
+ * The registrable domain is the AGGREGATOR_DOMAINS entry the host
+ * matched, when it matched one: that list already names each aggregator
+ * at its registrable level, so a maker's page under one of them
+ * (splice.pluginboutique.com) still reads as the aggregator's, while
+ * the maker's own subdomain (tools.splice.com) reads as the maker's.
+ * A host outside the list is compared on every label but the last, so a
+ * multi-part TLD (bestservice.co.uk) needs no public-suffix list. Both
+ * callers only consult this after isAggregatorUrl, so the wider
+ * fallback never decides an audit. Measured against the dataset when the
+ * subdomain case was fixed (#644), exactly one entry changed
+ * (splice-astra on tools.splice.com).
  */
 export function isManufacturerOwnDomain(manufacturerSlug: string, url: string): boolean {
   const host = urlHost(url);
   if (!host) return false;
   const slug = manufacturerSlug.toLowerCase().replace(/[^a-z0-9]/g, "");
   if (slug.length === 0) return false;
-  const labels = host.split(".").slice(0, -1);
+  const registrable =
+    AGGREGATOR_DOMAINS.find((domain) => host === domain || host.endsWith(`.${domain}`)) ?? host;
+  const labels = registrable.split(".").slice(0, -1);
   return labels.some((label) => label.replace(/[^a-z0-9]/g, "") === slug);
 }

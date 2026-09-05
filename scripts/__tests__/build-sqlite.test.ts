@@ -404,6 +404,14 @@ describe("buildDatabase failures", () => {
             version: "0.0.0-test",
           })
         ).toThrow(/Missing id .*nameless\.yaml.*pnpm assign-ids/);
+        // The handle is closed on the way out, so the same path builds again.
+        expect(() =>
+          buildDatabase({
+            dataDir: FIXTURE_DIR,
+            outputFile: path.join(root, "out.sqlite"),
+            version: "0.0.0-test",
+          })
+        ).not.toThrow();
       } finally {
         log.mockRestore();
       }
