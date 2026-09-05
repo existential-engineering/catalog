@@ -63,7 +63,9 @@ reviews:
           The io shape has no note field, so never ask for one there.
         - MIDI on a DIN socket is `connection: 5-pin din` (7-pin where documented).
           MIDI on a minijack or 1/4-inch keeps that connection with `type: midi`.
-        - Footswitch and expression jacks: `category: audio`, `type: expression`.
+        - Footswitch and expression jacks: `category: audio`, `type: expression`. A
+          jack named for an expression or sustain pedal is not `type: cv/gate`.
+        - CV, gate and clock jacks are `category: audio`; `word clock` stays `digital`.
         - USB host ports and network ports are `signalFlow: bidirectional`. Amplifier
           speaker outputs are `type: speaker-level`, one entry per jack, impedance in
           the name.

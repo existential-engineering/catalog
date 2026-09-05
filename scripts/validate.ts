@@ -7,6 +7,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import { marked } from "marked";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
@@ -96,7 +97,7 @@ const categoryGroupsSchema = loadYamlFile<{ groups: Record<string, string[]> }>(
 const POSITION_EXEMPT_CATEGORIES = new Set(categoryGroupsSchema.groups.Instruments ?? []);
 
 // Helper to check if a category is valid (canonical or alias)
-function isValidCategory(cat: string): boolean {
+export function isValidCategory(cat: string): boolean {
   return ALL_VALID_CATEGORY_INPUTS.has(cat);
 }
 
@@ -176,7 +177,7 @@ marked.setOptions({
 /**
  * Determine the appropriate error code from a Zod issue
  */
-function getErrorCodeFromZodIssue(issue: {
+export function getErrorCodeFromZodIssue(issue: {
   code: string;
   message: string;
   path: readonly (string | number | symbol)[];
@@ -309,7 +310,7 @@ function getErrorCodeFromZodIssue(issue: {
 }
 
 // Helper to validate markdown content
-function validateMarkdown(content: string): { valid: boolean; error?: string } {
+export function validateMarkdown(content: string): { valid: boolean; error?: string } {
   try {
     // Try to parse the markdown
     marked.parse(content);
@@ -359,7 +360,7 @@ function validateMarkdown(content: string): { valid: boolean; error?: string } {
 }
 
 // Helper to normalize string or string[] to a single markdown string
-function normalizeToMarkdownString(value: string | string[]): string {
+export function normalizeToMarkdownString(value: string | string[]): string {
   if (Array.isArray(value)) {
     // Join array items with double newlines (paragraph breaks)
     return value.join("\n\n");
@@ -989,7 +990,7 @@ interface DataWithOptionalFields {
  * @param validSupersedesIds - Optional set of valid IDs in the same collection used to verify a `supersedes` reference
  * @returns A ValidationError object containing a summary `errors` array and optional `details` (each with `code`, `message`, `path`, `line`, and `docsUrl`) when validation fails, or `null` when the file is valid
  */
-function validateFile(
+export function validateFile(
   filePath: string,
   schema: z.ZodType,
   allManufacturers: Set<string>,
@@ -1258,7 +1259,7 @@ function validateFile(
  * @param idToSlug - Map from an ID to its corresponding slug used for human-readable paths
  * @returns An array of slugs representing the cycle path (the first slug is repeated at the end to close the cycle), or `null` if no cycle is found
  */
-function detectSupersedeCycle(
+export function detectSupersedeCycle(
   startId: string,
   supersedesMap: Map<string, string>,
   idToSlug: Map<string, string>
@@ -1287,7 +1288,7 @@ function detectSupersedeCycle(
 // ADVISORY WARNING COLLECTION
 // =============================================================================
 
-interface WarningContext {
+export interface WarningContext {
   name?: string;
   primaryCategory?: string;
   io?: Array<{ name: string; type: string; connection: string; maxConnections?: number }>;
@@ -1308,7 +1309,7 @@ interface WarningContext {
  * Collect advisory warnings for a validated file.
  * These are non-blocking and do not affect CI exit code.
  */
-function collectWarnings(
+export function collectWarnings(
   filePath: string,
   data: WarningContext,
   document: ReturnType<typeof loadYamlFileWithPositions>["document"],
@@ -2153,7 +2154,7 @@ function writeConsoleOutput(result: ValidationResult): void {
 // SCOPED VALIDATION (--files)
 // =============================================================================
 
-const COLLECTION_SCHEMAS: Record<string, z.ZodType> = {
+export const COLLECTION_SCHEMAS: Record<string, z.ZodType> = {
   manufacturers: ManufacturerSchema,
   software: SoftwareSchema,
   content: ContentSchema,
@@ -2247,40 +2248,51 @@ function validateScoped(paths: string[]): number {
 // MAIN
 // =============================================================================
 
-const filesFlagIndex = process.argv.indexOf("--files");
-if (filesFlagIndex !== -1) {
-  const scopedPaths = process.argv.slice(filesFlagIndex + 1).filter((arg) => !arg.startsWith("-"));
-  if (scopedPaths.length === 0) {
-    console.error("❌ --files needs at least one path.");
-    process.exit(1);
+function main(): void {
+  const filesFlagIndex = process.argv.indexOf("--files");
+  if (filesFlagIndex !== -1) {
+    const scopedPaths = process.argv
+      .slice(filesFlagIndex + 1)
+      .filter((arg) => !arg.startsWith("-"));
+    if (scopedPaths.length === 0) {
+      console.error("❌ --files needs at least one path.");
+      process.exit(1);
+    }
+    process.exit(validateScoped(scopedPaths));
   }
-  process.exit(validateScoped(scopedPaths));
-}
 
-const result = validate();
-const idResult = validateIds();
+  const result = validate();
+  const idResult = validateIds();
 
-writeConsoleOutput(result);
+  writeConsoleOutput(result);
 
-// Output ID validation results
-console.log("─".repeat(50));
-console.log("🔢 ID Validation:");
-if (idResult.valid) {
-  console.log("   ✅ No duplicate or invalid IDs");
-} else {
-  console.log("   ❌ ID validation errors:");
-  for (const error of idResult.errors) {
-    console.log(`      ⚠️  ${error}`);
+  // Output ID validation results
+  console.log("─".repeat(50));
+  console.log("🔢 ID Validation:");
+  if (idResult.valid) {
+    console.log("   ✅ No duplicate or invalid IDs");
+  } else {
+    console.log("   ❌ ID validation errors:");
+    for (const error of idResult.errors) {
+      console.log(`      ⚠️  ${error}`);
+    }
   }
-}
-console.log(`   Entries with IDs:    ${idResult.stats.withIds}`);
-console.log(`   Entries without IDs: ${idResult.stats.withoutIds}`);
-if (idResult.stats.withoutIds > 0) {
-  console.log(`   (Run 'pnpm assign-ids' to assign IDs to new entries)`);
-}
-console.log();
+  console.log(`   Entries with IDs:    ${idResult.stats.withIds}`);
+  console.log(`   Entries without IDs: ${idResult.stats.withoutIds}`);
+  if (idResult.stats.withoutIds > 0) {
+    console.log(`   (Run 'pnpm assign-ids' to assign IDs to new entries)`);
+  }
+  console.log();
 
-writeGitHubSummary(result);
+  writeGitHubSummary(result);
 
-const isValid = result.valid && idResult.valid;
-process.exit(isValid ? 0 : 1);
+  const isValid = result.valid && idResult.valid;
+  process.exit(isValid ? 0 : 1);
+}
+
+// Run only as a CLI. Importing this module (the test suite does) must not
+// walk data/ and exit the process; the schema tables above still load, so
+// the exported units validate against the real vocabularies.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}
