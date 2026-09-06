@@ -1,0 +1,62 @@
+id: tUTpCy-drb4AD6LHfcn9j
+name: Hello World
+manufacturer: after-later-audio
+primaryCategory: granular
+categories:
+  - effect
+  - pedal
+  - reverb
+url: http://www.afterlateraudio.com/products/hello-world-pedal
+prices:
+  - amount: 300
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A pedal version of the Typhoon stereo granular sampler, replacing
+  modulation jacks with dip switches usable with external modulation or an
+  onboard LFO.
+details: |-
+  Bringing our stereo granular sampler, Typhoon, to pedal format. This removes all of the modulation jacks and replaces them with a set of dip switches that can used with external modulation or the onboard LFO. Two expression jacks for pedal control:
+
+  Requires a 9V tip negative power supply with at least 500mA. Full User Manual
+
+  Download here .
+specs: |-
+  - Modulation - You can send either the LFO or steady voltage to this jack and then use the dip switches to control which parameters the modulation applies to.
+  - Level - Control the input level to allow your reverb tails and effects to taper off naturally.
+  - Use the mute buttons next to the VU meters to mute either the input or output.
+  - Press and hold both mute buttons for 2s to start/stop the internal LFO. It is easiest to see the LFO start if you have a dip switch in the up position for one of the sliders (POS, DENS, SIZE, RVB).
+  - Hold the trig button and turn the pan knob to control the internal LFO rate. The rate becomes effective when the TRIG button is released. The freeze button flashing will not change rate.
+  - The original manual gives a great intro to the basics
+  - The Microcell manual has a good overview of the additional controls (it uses the same firmware)
+  - Hardware: cc-by-sa 3.0 – E. Gillet / Mutable Instruments ( GitHub )
+  - Software: MIT License – E. Gillet / Mutable Instruments – ( GitHub )
+  - Derivative Panel, PCB & Schematic provided by Jakplugg under creative commons CC-BY-SA-3.0 license
+  - Software: - SuperParasites – MIT License – Patrick Dowling – ( GitHub )
+  - Which is based on: - Parasites – MIT License – Matthias Puech – ( GitHub )
+  - Beat Repeat – MIT License – Julius Kammerl – ( GitHub )
+io:
+  - key: M3pRopFq
+    name: Expression 1
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: jAlL1uoo
+    name: Expression 2
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: VZcvv9F6
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

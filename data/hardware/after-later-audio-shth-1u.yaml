@@ -1,0 +1,106 @@
+id: P65CenXCGpIxCu9mKBLuI
+name: SHTH 1U
+manufacturer: after-later-audio
+primaryCategory: utility
+categories:
+  - modular
+  - noise
+url: http://www.afterlateraudio.com/products/shth-1u
+prices:
+  - amount: 99
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: SHTH is a Eurorack module that creates stepped voltage outputs
+  using sample & hold and track & hold synthesis techniques, including a
+  built-in noise source and meandering walk voltage.
+details: |-
+  SHTH - Sample and Hold - Track and Hold
+
+  Create stepped outputs using two different classic synthesis techniques, sample & hold and/or track & hold. Sample & Hold
+
+  The top four jacks make up the sample and hold section. There is a noise output that is normalled to the input so you can pass a gate/trig signal into the SAMP input to get a stepped output at the OUT jack. Track & Hold
+
+  The bottom four jacks make up the track and hold section. There is a walk signal (a randomish meandering voltage) that is normalled to the input. Track and hold is the opposite of sample and hold in that it will pass the IN value to the OUT jack until the TRACK input receives a high gate. While the TRACK input is high it will hold the value. After the TRACK input goes low, it will begin tracking the IN signal again. CC-BY-SA émilie gillet
+specs: |-
+  - IN - Signal that will be sampled, normalled to NSE output
+  - SAMP - When high updates the voltage being sent to the output
+  - NSE - White noise output
+  - OUT - The sampled output (freezes the value from the IN jack when the SAMP jack receives a high signal)
+  - IN - Signal that will be tracked
+  - TRACK - When high the value will be held at the output
+  - WALK - A meandering voltage
+  - OUT - The track output (follows IN while TRACK is low, held voltage while TRACK is high)
+io:
+  - key: qT92ESXo
+    name: Sample IN
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hHKXal17
+    name: SAMP
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vCyJql9y
+    name: NSE
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: cszPrLEL
+    name: Sample OUT
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 078giUkt
+    name: Track IN
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Q3HELvSS
+    name: TRACK
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8e1Xvcj1
+    name: WALK
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: lWT3M8ec
+    name: Track OUT
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5LKoclEB
+    name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

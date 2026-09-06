@@ -1,0 +1,165 @@
+id: wsNJEIyAj2GDBvVkb28QK
+name: BLEND
+manufacturer: after-later-audio
+primaryCategory: utility
+categories:
+  - modular
+  - gate
+url: http://www.afterlateraudio.com/products/blend
+prices:
+  - amount: 119
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack CV/audio mixer with dual VCA sections, two CV mixer
+  sections offering min/max/comparator/sum outputs, and LM13700-based VCAs with
+  a near-linear response curve.
+details: |-
+  A CV/Audio Mixer with Dual VCA
+
+  CV sections
+  Blend has two CV sections each with:
+
+  CV Mixer section
+  Blend takes the outputs of the two CV sections and offers the following:
+
+  VCA Sections
+  There are two VCA sections that are also have a mix output. The CV input for each VCA is normalled to the output of a CV section. The VCA circuits are LM13700 based so they will slightly color the sound. The response curve is nearly linear but offers a slight exponential curve. User manual
+specs: |-
+  - Input (normalled to a +5V signal)
+  - Attenuverter
+  - Output
+  - Min output
+  - Max output
+  - Comparator output (level brought down to 4.5V)
+  - Sum output
+  - The min and max sections do not attempt to be precision min/max measurements. They will be within two diode drops of the actual min or max voltage.
+io:
+  - key: rOEMJM3x
+    name: CV Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ujbSo9u7
+    name: CV Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: lDENKVAh
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: PLNbN1tt
+    name: CH1 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: LWjWsUfR
+    name: CH2 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: FWbOlGEz
+    name: Min Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: zP2UPqJt
+    name: Max Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Eow182UG
+    name: Comparator Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: VitRQMDI
+    name: Sum Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Aa6bLJDT
+    name: VCA 1 Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: jqARRKVz
+    name: VCA 1 CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: D5cb0N7U
+    name: VCA 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: qEr6gPnq
+    name: VCA 2 Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: EYcSC5Wy
+    name: VCA 2 CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 0fLvjWcQ
+    name: VCA 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: vfPGuN4A
+    name: VCA Mix Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom

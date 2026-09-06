@@ -1,0 +1,145 @@
+id: MdvHL3q3vv4GmwhOyiWce
+name: DARV
+manufacturer: after-later-audio
+primaryCategory: modulation
+categories:
+  - modular
+  - synthesizer
+url: http://www.afterlateraudio.com/products/darv
+prices:
+  - amount: 110
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A dual-channel Eurorack module offering function generator,
+  oscillator, slew limiter, envelope, and VCA functionality per channel,
+  cascadeable for more channels.
+details: |-
+  DARV - Dual Attack, Release, & VCA
+
+  Two channels of function generator, oscillator, slew limiter, envelope, and VCAs. This is half of our QARV module but is cascadeable. So you get two channels of modulation or a two channel envelope generator w/ mixer. You can then connect multiple units together to cascade to get 4, 6, or 8 channels. It can also be connected to our Mixer lineup (Bartender/Barback) so you don't have to use a channel on your final mixer. Both channels have the following features:
+
+  Channel 1
+
+  Channel 2:
+
+  QARV patch guide by Robots Are Red - Patch Guide
+specs: |-
+  - Uni-polar oscillator mode
+  - Attack and release time control via potentiometer and via input jack
+  - Shape control that controls shape for both attack and release
+  - Output attenuverter
+  - VCAs that normal to each subsequent channel (CH1 -> CH2, etc.). So you can get a mix of all channels out of the CH2 VCA output (unless you patch a VCA output from an earlier channel)
+  - Voltage source (5V)
+  - Can be switched between IN (slew mode) and TRIG (envelope) mode
+  - RISE and FALL gates. You can use our G&T module to turn these gates into triggers.
+  - Cycle times 50sec - 1kHz (0.5ms)
+  - Bi-polar oscillator mode
+  - Dedicated IN and TRIG jacks (helpful for adding offset to a triggered ENV)
+  - BOTH input jack to simplify patching both the attack and release (also inverts the input to give more standard pitch tracking of higher voltage equals higher pitch)
+  - Cycle times 200sec - 1kHz (0.5ms)
+io:
+  - key: tnDNTBkX
+    name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: 7aK4Mwry
+    name: CH1 Attack CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: swgSWiqq
+    name: CH1 Release CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: PijfXUt5
+    name: CH1 IN/TRIG Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: vGG8Ady9
+    name: CH1 RISE Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hOwIMsCc
+    name: CH1 FALL Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8uXpi7Yf
+    name: CH1 VCA Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gcalOaKQ
+    name: CH2 Attack CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: iQbn17KH
+    name: CH2 Release CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 7YLG58e8
+    name: CH2 IN Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: gcmzBtxT
+    name: CH2 TRIG Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: g8Sytg1j
+    name: CH2 BOTH Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: tcxyQ1aH
+    name: CH2 VCA Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

@@ -1,0 +1,71 @@
+id: 7dn9t_H57EZy74VI1fOs_
+name: Cloverleaf
+manufacturer: after-later-audio
+primaryCategory: utility
+categories:
+  - modular
+  - routing
+url: http://www.afterlateraudio.com/products/cloverleaf
+prices:
+  - amount: 89
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: An interface module for the 1/4-inch case jacks in Intellijel
+  cases, offering switchable consumer or professional line level input/output
+  and a pedal-level channel, feeding the case output to a headphone amp.
+details: |-
+  An interface for the case 1/4" jacks in Intelljel cases. The jacks are marked as if they are part of the case, so the jacks marked out, require an input. I know it's confusing, but my brain just may be a little backwards. The module sports both input and output for either a consumer line level (0.447Vpk) or a professional line level (1.095Vpk). These levels are controllable via jumper on the back of the module. It can also have a single input and output channel switched to pedal level. The case output is fed to the headphone amp that has a corresponding level control. The module otherwise does not have any level control and relies on using a VCA or other module to perform any level controls. The module can essentially be run in one of three modes:
+
+  1) Stereo line level in and out
+
+  2) Stereo line level in and out via the left side and mono pedal in and out on the right side. In this mode the stereo line levels leverage TRS on the 1/4" jacks. You can use the included 3.5mm couplers to get TRS on the 3.5mm side. 3) Mono line level in and out via the left side and mono pedal in and out on the right side. For Palette 64hp users only have two 1/4" jacks. You can choose if you want to use the case jacks as either inputs, outputs, or one input and one output.
+io:
+  - key: Mx7VDfiK
+    name: Left Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: DAtekcPU
+    name: Right Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: WriSfo72
+    name: Left Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: UtgDtIr6
+    name: Right Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: sswSCmAM
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: yYSsDxzO
+    name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom

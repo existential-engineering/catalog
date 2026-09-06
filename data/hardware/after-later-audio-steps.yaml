@@ -1,0 +1,98 @@
+id: DZwQUIYDBaci1PtTp99Fr
+name: STEPS
+manufacturer: after-later-audio
+primaryCategory: sequencer
+categories:
+  - utility
+  - modulation
+url: http://www.afterlateraudio.com/products/steps
+prices:
+  - amount: 129
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A random looping stepped CV and burst generator that can act as a
+  random stepped CV source or a repeating 8-step CV source, triggerable via a
+  burst generator.
+details: |-
+  Random Looping Stepped CV and Burst Generator
+
+  STEPS has three functional blocks:
+
+  You can either use this as a random stepped CV source or as a repeating 8 stepped CV source. You then can trigger the burst generator to play the 8 step loop or 8 random steps. All of this can use the internal or external clock signals. To get more complex patterns you can daisy chain STEPS modules together by tying together their clocks and sending EOB to TRIG. This way you can generate 16 step patterns (or longer). When first turning on STEPS you will need to run the module in RAND mode for at least 8 steps to fill the shift register with data. A caveat about STEPS:
+  If a trigger is received off beat from the internal clock, the first step duration will be shortened. S T E P S M A N U A L
+specs: |-
+  - Internal clock with rate control and output
+  - Burst generator
+  - Pulses output which generates 8 pulses on every trigger
+  - Gate output which is high during the burst event
+  - EOB output which fires at the end of a burst event
+  - Random Looping Stepped CV Generator
+  - R.gate output outputs a random gate during a burst event
+  - Random stepped output or a loop of 8 steps.
+  - Steps output with attenuverter. The Steps output is held low while there is no burst event.
+io:
+  - key: oDduVz5O
+    name: Clock Output
+    signalFlow: output
+    category: digital
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hCCr44HY
+    name: Pulses Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: HcDmaXh7
+    name: Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: OLk48bF5
+    name: EOB Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 7nhyKNP6
+    name: R.gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: jSSwD6jo
+    name: Steps Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GilKS6Dt
+    name: Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 626sW3xo
+    name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,86 @@
+id: b8hZEUTbY6Lg5klh7R1kR
+name: Valley
+manufacturer: after-later-audio
+primaryCategory: filter
+categories:
+  - synthesizer
+  - modulation
+capabilities:
+  - filter
+url: http://www.afterlateraudio.com/products/valley
+prices:
+  - amount: 99
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A mixer/crossfader and wavefolder module that works with the COCO
+  oscillator system or standalone, featuring a five-stage wavefolder, input and
+  output crossfaders, and CV control over all parameters.
+details: |-
+  This works with our COCO system and can also be used as a standalone module. Valley
+
+  Valley is both a mixer/crossfader and wavefolder/timbre generator.
+specs: |-
+  - Five stage wavefolder
+  - Input crossfader between the two inputs
+  - Output crossfader between the fundamentals and folded signal
+  - Odd and even harmonics
+  - CV control over all parameters
+  - Tuning and sync controls for connected COCO oscillators
+io:
+  - key: aORXLrYQ
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tGSw4AdL
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nACvkbFf
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: vvtP7W88
+    name: Fold CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Vgx1zO1U
+    name: COCO Sync Out
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 2kxPT3mg
+    name: COCO Tune Out
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Wr2Ul17M
+    name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

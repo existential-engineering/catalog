@@ -1,0 +1,66 @@
+id: T50D2lDTAyk79MM6EFtzG
+name: USB-2CH
+manufacturer: after-later-audio
+primaryCategory: audio-interface
+categories:
+  - utility
+url: http://www.afterlateraudio.com/products/usb-2ch
+prices:
+  - amount: 90
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A simple two-channel USB audio interface based on the PCM2904
+  chipset, supporting 16-bit/48kHz class-compliant USB audio for recording and
+  playback, with a standard mode and an insert mode.
+details: |-
+  A simple interface to record and playback audio over USB. This is based on the PCM2904 chipset so you get 16-bit @ 48kHz and fully class compliant with USB1.1. So probably not the best choice if you're scoring a major motion picture, but good enough to record most jam sessions. Pair it with an on-the-go cable and your recording and playing back from your phone. Standard Mode - Send two channels into your USB device and receive two channels from USB. Insert Mode - Send two channels to your USB device and get a copy of the sent signal in the outputs. Toggle between the modes via a pair of jumpers on the back. The USB-B to USB-A cable is provided with the module. Why use the cutting edge USB-B? I felt the jacks were way more sturdy than mounting USB-C jacks vertically. Expandable - Bartender, Barbacks, DVCA, Cast Iron, Mingles, and USB-2CH can all be connected with Dupont cables (aka female to female breadboard cables) via pin headers on the back of the modules. Connecting the in and out pins will send/receive the audio into the next module. Demos
+io:
+  - key: QRMOZfFP
+    name: USB Port
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Top
+  - key: yWFo0iVA
+    name: Channel 1 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: SuysaTvE
+    name: Channel 2 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: POM8rRRp
+    name: Channel 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bALpQ1eM
+    name: Channel 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FToRBRlI
+    name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
