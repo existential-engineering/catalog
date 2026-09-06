@@ -10,8 +10,8 @@ categories:
   - vintage
   - plugin
 formats:
-  - au
   - vst3
+  - au
   - aax
   - lv2
 platforms:
@@ -22,34 +22,36 @@ url: https://korneffaudio.com/product/chocolate-milk/
 prices:
   - amount: 49.99
     currency: USD
-description: "A multiband sonic enhancer that has the flavor of tape with none of the downsides. Brings the warmth and harmonics of analog tape without sacrificing punch and clarity through three processing bands: MOO (low end saturation with proprietary waveshaping), SQUISH (midrange compression with fully adjustable compressor for punch and sustain), and FROTH (high end sparkle with vintage Baxandall EQ modeling for air and gloss)."
+description: "A multiband processor that applies tape-style processing across three bands: MOO (low end saturation with proprietary waveshaping), SQUISH (midrange compression with a fully adjustable compressor), and FROTH (high end shaping with vintage Baxandall EQ modeling)."
 details: |-
-  Chocolate Milk is a multiband sonic enhancer designed as a better alternative to traditional tape emulation. It uses adjustable waveshaping algorithms to give you more control of bottom-end saturation, delivering the warmth and girth that magnetic tape is known for—without its limitations.
+  Chocolate Milk is a multiband processor that applies low-end saturation using adjustable waveshaping algorithms, giving control over the amount and character of that saturation.
 
-  The plugin features three distinct processors working across separate frequency bands. MOO handles low-end saturation using a proprietary waveshaping process that adds harmonics to thicken and define the low-end, with selectable odd/even harmonic distortion for fine-grained control. SQUISH is a fully adjustable midrange compressor with adjustable attack and release parameters that delivers punch and sustain without affecting the lows or highs. FROTH recreates a vintage Baxandall EQ through precise analog modeling, delivering silky, natural high-end enhancement—adding air and gloss without harshness.
+  Analog tape clips transients. Chocolate Milk instead compresses the midrange with a clean compression algorithm with adjustable attack and release, so the midrange is compressed without clipping the signal, and shapes the high end through a dedicated EQ stage rather than by retuning tape deck electronics.
 
-  Unlike traditional tape emulators, Chocolate Milk provides adjustable crossover frequencies, independent band muting, phase reversal per band, real-time visualization, and zero-latency operation. This gives engineers precise control over each frequency region that tape emulation cannot match.
+  The plugin splits into three named stages. MOO is a proprietary waveshaping process that adds harmonics to thicken and define the low end, applied only to the lows. SQUISH is a fully adjustable compressor working strictly on the midrange, between MOO and FROTH, without affecting the lows or the highs. FROTH recreates a vintage Baxandall EQ through analog modeling solved in real time.
 
-  The plugin supports Mac (VST3, AU, AAX), Windows (VST3, AAX), and Linux (VST3, LV2) in 64-bit formats. It uses a software-based licensing system with no dongles required, supporting up to four simultaneous machine activations.
+  Saturation is selectable between blends of odd and even harmonic distortion for control of the low end, and every parameter of the mid-band compressor can be adjusted. Crossover frequencies, levels, mutes and phase are all adjustable and displayed in real time, and individual bands can be soloed or shifted in phase.
+
+  Documented applications include low-end processing on kicks, bass and keyboards, vocal processing combining compression, saturation and high-end EQ, and processing of a full mix.
 specs: |-
-  - Three-band multiband processing: MOO (low-end), SQUISH (midrange), FROTH (high-end)
-  - MOO: proprietary waveshaping with selectable odd/even harmonic saturation
-  - SQUISH: fully adjustable midrange compressor with adjustable attack and release
-  - FROTH: vintage Baxandall EQ analog modeling for high-end enhancement
-  - Adjustable crossover frequencies between bands
-  - Independent band muting per frequency region
-  - Phase reversal per band
-  - Real-time visualization
-  - Zero-latency operation
+  - MOO: proprietary low-band waveshaping saturation with selectable odd and even harmonic blends
+  - SQUISH: fully adjustable midrange-only compressor with attack and release control
+  - FROTH: vintage Baxandall EQ recreated by real-time analog modeling for high-end sparkle
+  - Adjustable crossover frequencies, band levels, mutes and phase with real-time display
+  - Per-band solo for lo-fi effects and band-restricted phase shift
+  - Software-based licensing, no USB or hardware dongle and no special drivers
+  - Activation on up to four machines at the same time
+  - Internet connection required for activation and for all demos
+  - Minimum: Intel, AMD or Apple Silicon i5 quad core processor
+  - Minimum: 4GB of RAM
+  - Minimum: Mac OS X 10.14 or later
+  - Minimum: Windows 7 and above
+  - Linux minimum: Ubuntu 18.04 LTS or equivalent (x86-64)
+  - Linux recommended: Ubuntu 20.04 LTS or later, Debian 11+, Fedora 36+, or any modern distribution using glibc 2.28 or newer
+  - Minimum screen resolution: 1024 x 768
   - Mac 64-bit: VST3, AU, AAX
   - Windows 64-bit: VST3, AAX
   - Linux 64-bit: VST3, LV2
-  - Minimum: Intel, AMD or Apple Silicon i5 quad core processor
-  - Minimum: 4GB RAM
-  - Mac: macOS 10.14 or later
-  - Windows: Windows 7 and above
-  - Software-based licensing, no USB dongle required
-  - Up to 4 simultaneous machine activations
 versions:
   - name: 1.0.1
     releaseDate: 2025-11-02
