@@ -14,42 +14,81 @@ formats:
 platforms:
   - mac
   - windows
-url: https://klanghelm.com/contents/products/DC8C
+url: https://klanghelm.com/contents/products/DC8C.html
 prices:
   - amount: 23
     currency: EUR
-description: DC8C is an advanced, highly flexible compressor plugin designed for clean, smooth, and open compression. It supports a wide range of styles from invisible mastering compression to creative sound design with optional saturation, opto-style emulation, and zero-latency brick-wall limiting.
+description: DC8C is a highly flexible compressor plugin whose general character is clear, smooth, open and distinct. It was designed for very clean compressor action without unwanted artifacts or distortion, with two optional saturation models when coloration is wanted.
 details: |-
-  DC8C is one of the most flexible compressors available. While supporting many different compression styles, its general character is described as clear, smooth, open, and distinct. The main design goal was achieving very clean compression action without unwanted artifacts or distortion, making it suitable for demanding mastering sessions where coloration must be avoided.
+  DC8C is one of the most flexible compressors around. While making a lot of different compression styles possible, its general nature may be described as: clear, smooth, open, distinct.
 
-  The plugin features four operational modes: NORMAL for standard compression, CLEAN for 100% clean compression with no intermodulation, no distortion, and no aliasing, SMASH for ultrafast compression characteristics approaching clipper territory, and LIMIT for use as a zero-latency brick-wall limiter.
+  The main goal while designing DC8C was to get a very clean compressor action without unwanted and often almost inevitable artifacts/distortion. This way you can achieve almost invisible compression for your most demanding mastering sessions, when you want to avoid coloration. If you aim for color you can choose between two saturation models.
 
-  DC8C offers a unique Feedback-Mix-Control that allows morphing between Feedback and Feedforward compression topologies by controlling how much of the output is fed back into the detector. Combined with a detector network and gain reduction smoothing, it can emulate opto-style compression through the GR-smoothing control.
+  From opto-style, peak compression, external side-chaining, RMS compression, Feedback and Feedforward compression (and everything in-between) to negative ratios, zero latency brick-wall limiting, from snappy transient treatment to smooth transient rounding, everything is possible.
 
-  An optional saturation stage with two models can be placed freely in the signal chain: pre-compression, post-compression, or side-chain only. Up to 8x oversampling is available, and a side-chain filter provides high-pass, low-pass, and tilt controls to shape the detector frequency response.
-
-  An Easy Mode offers four distinct preset compression styles for quick use, while the full Expert mode exposes controls for parallel compression, peak and RMS detection, external side-chaining, negative ratios, pre-attack, hold, and program-dependency customization for both attack and release. A comprehensive preset browser, VU and peak metering, AGC, and GUI resizing are also included.
+  DC8C is available in the following formats, all included in a single license: Windows 10 or higher (64bit) as VST, VST3 and AAX Native for Pro Tools 11 or higher, and macOS 10.13 or higher as AU, VST, VST3 and AAX Native for Pro Tools 11 or higher.
 specs: |-
-  - Four operational modes: NORMAL, CLEAN, SMASH, LIMIT
-  - Zero latency brick-wall limiting capability
+  - Detector network and gain reduction smoothing for extra smooth operation
+  - Choose between two different attack and two release curves
+  - Four different operational modes: NORMAL, CLEAN (100% clean compression with no intermodulation, no distortion, no aliasing), SMASH (ultrafast compression characteristics, almost clipper territory), LIMIT (use DC8C as a zero latency limiter)
+  - Optional soft-clipper at the output
   - Up to 8x oversampling
-  - Unique Feedback-Mix-Control for topology morphing
-  - Two selectable attack curves and two release curves
+  - Side-chain filter with high pass and low pass filter plus tilt control, which lets you shift the frequency response of the detector
+  - The saturation stage can be put freely into the signal chain: pre compression, post compression and side-chain only
   - Three different compression curves selectable
-  - GR-smoothing control for opto-style compression emulation
-  - Pre-attack control to delay attack and shape transients
-  - Hold control for heavy pumping compression effects
-  - Side-chain filter with high-pass, low-pass, and tilt controls
-  - Optional saturation stage (two models) placeable pre, post, or side-chain only
-  - Optional soft-clipper at output
-  - Parallel compression support
-  - Peak and RMS compression modes
-  - External side-chain support
-  - Negative ratios possible
+  - Customize the program dependency of the compressor separately for Attack and Release
+  - GR-smoothing control to determine how sensitive the compressor reacts to changes in the computed gain reduction, great to emulate opto-style compression
+  - Hold control, great for heavy pumping compression effects
+  - Pre-attack control to delay the start of the attack to leave transients completely alone or radically shape the attack
+  - VU and peak metering
+  - Calibration control to set the reference level for the VU-meter and the saturation
+  - Unique Feedback-Mix-Control, which lets you determine how much of the compressor's output is fed back into the detector, morphing between Feedback and Feedforward compression topologies
   - True zero attack (0.0 ms)
+  - Negative ratios possible
+  - Parallel compression, peak-compression, RMS-compression
+  - External side-chain
+  - Side-chain listen
+  - Easy Mode which features 4 distinct compression styles
   - AGC (automatic gain compensation)
-  - Easy Mode with 4 preset compression styles
   - GUI resizing
-  - AAX Native requires Pro Tools 11 or higher
+  - Comprehensive preset-browser with lots of presets
+  - Windows 10 or higher (64bit): VST, VST3, AAX Native for Pro Tools 11 or higher
+  - macOS 10.13 or higher: AU, VST, VST3, AAX Native for Pro Tools 11 or higher
 versions:
-  - name: DC8C 3
+  - name: 3.5.2
+    releaseDate: 2023-07-17
+    description: When not using the "disable dynamic latency reporting" option, latency reporting was 1 sample off. This is fixed now.
+  - name: 3.5.1
+    releaseDate: 2023-03-11
+    description: Fixes a potential crash when using external sidechaining.
+  - name: 3.2.2
+    releaseDate: 2019-12-30
+    description: Fixed a crash when offline rendering and "Equal OS..." was ticked in the global settings.
+  - name: 3.0.1
+    releaseDate: 2018-06-27
+    description: Maintenance update fixing wrong labels for min. and max. attack/release times on the GUIs of each Easy Mode, plus more robust dynamic latency reporting and two extra global settings options.
+  - name: "3"
+    releaseDate: 2018-06-18
+    description: Major overhaul adding GUI resizing, AGC, a proper preset browser, linear phase oversampling filters, optional peak metering and an optional soft clipper at the output. New plugin-ID, so it can run side by side with older versions.
+  - name: 2.2.1
+    releaseDate: 2014-02-04
+    description: Fixes the external side-chain in feedback affected modes.
+  - name: "2.2"
+    releaseDate: 2014-01-29
+    description: Reworked feedback path, aligned oversampling modes and more.
+  - name: "2.1"
+    releaseDate: 2013-12-16
+    description: New metering, new GUIs and various fixes.
+  - name: "2"
+    releaseDate: 2013-07-26
+    description: Major update with many improvements, changes and new features. Free for existing DC8C users.
+  - name: "1.2"
+    releaseDate: 2012-05-16
+    description: Added VST3 support for OSX and Windows, external side-chaining in EASY mode, and removed the zero latency switch since DC8C is always zero latency.
+  - name: "1.1"
+    releaseDate: 2012-04-12
+    description: Redesigned side-chain filters, GR meter now reflects actual gain reduction and attack/release times, new soft bypass, side-chain listen and external stereo side-chain.
+  - name: "1.0"
+    releaseDate: 2012-03-19
+    description: Initial release after more than six months of development.
+releaseDate: 2012-03-19

@@ -7,9 +7,9 @@ categories:
   - creative
   - plugin
 formats:
-  - au
   - vst
   - vst3
+  - au
   - aax
 platforms:
   - mac
@@ -30,13 +30,17 @@ details: |-
 
   IVGI is internally calibrated to 0VU = -18dBFS and is freeware.
 specs: |-
-  - Internal calibration: 0VU = -18dBFS
-  - Dynamic reaction to input signal
-  - Modeled fluctuations that react dynamically based on drive setting
-  - Modeled stereo crosstalk behavior
-  - Controlled Randomness for internal drift and variance
-  - ASYM MIX knob to alter signal symmetry without affecting harmonic content
-  - RESPONSE control for frequency-dependent saturation adjustment
+  - Saturation and distortion processor, from subtle master-buss saturation to dense distortion
+  - Reacts dynamically to the input signal, with modeled fluctuations that change with the drive setting
+  - Modeled crosstalk behavior for stereo tracks
+  - Controlled Randomness determines internal drift and variance, with all internal processes modulated
+  - ASYM MIX knob alters the symmetry of the signal without affecting the harmonic content much
+  - RESPONSE control alters the frequency dependency of the saturation
+  - Internally calibrated to 0VU = -18dBFS
+  - 64-bit VST, VST3, Audio Units and AAX Native hosts (Pro Tools 11 or higher for AAX)
+  - Windows 10 or higher
+  - macOS 10.13 or higher, Intel and Apple Silicon (M1, M2, M3) supported natively
   - No copy protection
+  - New plugin ID and filename, so IVGI 2 can run alongside the original IVGI
 versions:
   - name: 2.5.0

@@ -14,26 +14,56 @@ formats:
 platforms:
   - mac
   - windows
-url: https://klanghelm.com/contents/products/MJUC
+url: https://klanghelm.com/contents/products/MJUC.html
 prices:
   - amount: 24
     currency: EUR
-description: Variable-tube compressor plugin featuring three distinct tube compression models representing different eras. Mk1 (1950s variable-mu, four compression stages, natural thick compression), Mk2 (1960s inspired, four ratios, density switch, interstage transformer), and Mk3 (modern hi-fi, dual variable-mu stages with feedforward and feedback for punchy compression). Includes TIMBRE and DRIVE controls for saturation and transformer load characteristics.
+description: MJUC is a variable-mu tube compressor plugin built on almost two years of research into vintage tube compression designs. It offers three distinct models, each with its own dedicated signal path and control set, plus TIMBRE and DRIVE controls for tone shaping and saturation.
 details: |-
-  MJUC is the most effortful Klanghelm plugin to date, the result of almost two years of extensive research and development into variable-mu tube compression. To capture the diversity of this compression topology, three different models were built, each representing a different era in the history of tube compression. Each model has its own dedicated signal path and dedicated control set.
+  MJUC is the most effortful Klanghelm plugin to date. It took almost two years of extensive, even excessive, research and development. Every variable-mu implementation Klanghelm could get hold of was researched and analyzed, to get the best of tube compression into a single processor. In order to do the diversity of this compression topology justice, three different models have been built. These are kind of a time travel though the history of tube compression to capture the essence of each generation. Each model has its own dedicated signal path and dedicated control set. If desired you can tweak the overall tone and saturation of each model with the unique TIMBRE and the DRIVE knob. DRIVE controls the load of the input and output transformers as well as the saturation of the tube gain stages, if applicable. The TIMBRE extends MJUC's use as a tone shaper.
 
-  The TIMBRE and DRIVE knobs are shared across all models. DRIVE controls the load of the input and output transformers as well as the saturation of the tube gain stages, while TIMBRE extends MJUC's use as a tone shaper beyond pure compression.
+  Model Mk1 is based on the very early variable-mu designs from the 50s. Due to its extremely high control voltage it doesn't impart any audible "thumping", most other variable-mu designs suffer from at high GR and fast timing constants. Also it has a very simple signal path, where the compression happens directly in the audio path. The result is a very natural compression character with very little distortion. The arrangement of four variable-mu stages add to the incredibly dense and thick nature of Mk1. Mk1 is the most colored of MJUC's models.
 
-  Model Mk1 is based on very early variable-mu designs from the 1950s. Its extremely high control voltage eliminates the audible "thumping" common in other variable-mu designs at high gain reduction and fast timing constants. With four variable-mu stages in a simple signal path, it produces a very natural compression character with very little distortion — the most colored of MJUC's three models.
+  Model Mk2 is built upon the more complex designs of the 175 and 176 from the early 1960s, the all-tube-predecessors of the classic 1176 FET compressor. It offers four ratios, a density switch, that enables a second variable-mu stage and reduces the program dependence of the attack and recovery timings to a minimum. Furthermore, it lets you activate the interstage transformer to reduce overall noise and distortion and making the compression more accentuated. Compared to Mk1 the second model is less Jazz and more Rock'n'Roll with enhanced generated harmonics and a more forward sounding character.
 
-  Model Mk2 is built upon the more complex designs of the 175 and 176 from the early 1960s — the all-tube predecessors of the classic 1176 FET compressor. It offers four ratios, a density switch that enables a second variable-mu stage, and an optional interstage transformer that reduces noise and distortion. Compared to Mk1, Mk2 is less subtle with enhanced harmonics and a more forward-sounding character.
+  Model Mk3 is the least colored and most Hi-Fi-sounding model in MJUC. It is Klanghelm's modern interpretation of this compression topology. The only design idea derived from another modern famous variable-mu comp is, that it's circuitry is done entirely differential, making the unit very quiet and almost distortion-free. But the real special thing about this model is, that the actual compression is done by two different variable-mu stages, which kind of work against each other, one works feedforward, while the other in a feedback configuration. This results in a attack accentuating, punchy compression, surprisingly closer to a British G type bus comp than to a 670.
 
-  Model Mk3 is Klanghelm's modern interpretation of variable-mu compression — the least colored and most hi-fi-sounding model. Its circuitry is entirely differential, making it very quiet and almost distortion-free. The compression is performed by two different variable-mu stages working against each other — one feedforward, one feedback — resulting in attack-accentuating, punchy compression closer in character to a British bus compressor than a classic 670.
+  Note from the manufacturer: "variable-mu" is the correct technical term for this compressor topology, but the term is also a registered trademark of Manley Labs. Where Klanghelm uses it, it refers only to the technically correct name for this more than 70 year-old compressor topology and is in no way intended to be confused with the product of the same name.
 specs: |-
-  - Three compression models: Mk1 (1950s), Mk2 (1960s), Mk3 (modern)
-  - Mk1: Four variable-mu stages, simple signal path, natural compression with minimal distortion
-  - Mk2: Four selectable ratios, density switch for dual-stage operation, optional interstage transformer
-  - Mk3: Fully differential circuitry, feedforward/feedback dual variable-mu stage design
-  - DRIVE knob controls transformer load and tube stage saturation
-  - TIMBRE knob for tone shaping across all models
-  - Compatible with Pro Tools 11 or higher
+  - Three variable-mu compressor models (Mk1, Mk2, Mk3), each with its own dedicated signal path and control set
+  - TIMBRE control for overall tone shaping
+  - DRIVE control for input and output transformer load and tube gain stage saturation
+  - Mk1: four variable-mu stages, compression directly in the audio path, very high control voltage to avoid audible thumping
+  - Mk2: four ratios, DENSITY switch enabling a second variable-mu stage, switchable interstage transformer
+  - Mk3: fully differential circuitry with two variable-mu stages, one feedforward and one feedback
+  - HQ mode
+  - Automatic gain compensation (AGC)
+  - Resizable GUI
+  - Preset browser with save, copy, paste and save-as-default
+  - A/B comparison
+  - Customizable knob behavior
+  - Windows 10 or higher (64-bit): VST, VST3, AAX Native for Pro Tools 11 or higher
+  - macOS 10.13 or higher: AU, VST, VST3, AAX Native for Pro Tools 11 or higher
+  - Native Apple Silicon support
+versions:
+  - name: "1.0"
+    releaseDate: 2015-07-14
+  - name: 1.0.1
+    releaseDate: 2015-07-24
+  - name: 1.0.2
+    releaseDate: 2015-07-30
+  - name: "1.1"
+    releaseDate: 2017-02-08
+  - name: 1.1.1
+    releaseDate: 2017-02-23
+  - name: 1.2.0
+    releaseDate: 2017-09-15
+  - name: 1.4.2
+    releaseDate: 2020-02-07
+releaseDate: 2015-07-14
+translations:
+  fr:
+    links:
+      - title: Manuel MJUC (PDF, français)
+        url: https://klanghelm.com/docs/MJUC-manuel_FR.pdf
+        type: resource
