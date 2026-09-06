@@ -1,0 +1,76 @@
+id: ato-tUFuE-6hunMYh0R17
+name: SOMI-1 Kit
+manufacturer: instruments-of-things
+primaryCategory: midi-controller
+categories:
+  - midi
+  - sequencer
+url: https://instrumentsofthings.com/products/somi-1
+prices:
+  - amount: 499
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A wireless MIDI controller system using wearable motion sensors
+  that send 3D movement data via Bluetooth to a receiver hub, which outputs MIDI
+  Note, Control Change and Pitch Bend signals. It includes an editor for Ableton
+  Live and a smartphone app with sound presets.
+specs: |-
+  - 2× SOMI-1 Motion Sensor
+  - 2× SOMI-1 Wristband
+  - SOMI-1 Receiver
+  - USB-C cable
+  - Up to 6 sensors simultaneously ( add more sensors )
+  - 7 different 3D movement parameters per sensor
+  - 9-DOF state-of-the-art sensor fusion
+  - Wireless via Bluetooth 5 based custom protocol
+  - Low latency under 10ms (no perceivable delay)
+  - High Precision (ca. 0.01 degrees)
+  - Range up to 50 meters (164 feet)
+  - Up to 30 hours battery lifetime
+  - MIDI 1.0 Interface (USB-MIDI, TRS-MIDI, MIDI Host)
+  - Connectivity to music software & hardware
+  - Button to pause sensors and MIDI mapping
+  - Encoder to adjust sensitivity
+  - MIDI Note, Control Change and Pitch Bend signals
+  - Adjustable MIDI channel
+  - Direct connection to music software and hardware (no extra drivers or software needed)
+  - Scale individual sensor values
+  - Inverse sensor values
+  - Slew limiters for smoothing
+  - Customize MIDI Note range and threshold
+  - Change MIDI Control Change controller
+  - Enable high resolution (14 bit) Control Change
+  - Save settings directly on the SOMI-1 hub
+  - Integrated editor for Ableton Live (Max for Live)
+  - Ableton Live preset projects
+  - Several different sound presets
+  - No need of additional software or hardware
+  - UI for easy usage without musical or technical pre-knowledge
+  - Editor to use SOMI-1 in combination with external MIDI compatible apps
+  - Bus-powered via the USB-C device port
+io:
+  - key: T62G2Bva
+    name: USB-C MIDI Host
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - key: vxV3oBbj
+    name: TRS MIDI
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: ZK7sUp6Q
+    name: USB-C MIDI Device Port (MIDI and Power)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
