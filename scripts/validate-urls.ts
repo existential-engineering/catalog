@@ -29,6 +29,41 @@ import { DATA_DIR, getYamlFiles } from "./lib/utils.js";
 
 const MAX_CONCURRENT_REQUESTS = 10;
 const MAX_CONCURRENT_FILES = 5;
+const REQUEST_TIMEOUT_MS = 10000;
+const USER_AGENT = "Aureo-Catalog-Validator/1.0";
+
+// Work limits for the changed-file (PR) path. Without them a single changed
+// YAML file carrying thousands of unique slow URLs keeps the PR runner busy
+// until its platform timeout, since every URL costs up to REQUEST_TIMEOUT_MS.
+const MAX_URLS_PER_FILE = 100;
+const MAX_URLS_PER_RUN = 500;
+const RUN_DEADLINE_MS = 5 * 60 * 1000;
+
+interface RunBudget {
+  // Aborts every in-flight request once the aggregate deadline passes.
+  signal: AbortSignal;
+  maxUrlsPerFile: number;
+  // Run-wide URL allowance, claimed by each file before it is checked.
+  remaining: number;
+}
+
+// Per-request options: the request timeout, plus the run's aggregate deadline
+// when one is in force.
+function requestOptions(method: "HEAD" | "GET", budget?: RunBudget): RequestInit {
+  const timeout = AbortSignal.timeout(REQUEST_TIMEOUT_MS);
+  return {
+    method,
+    redirect: "follow",
+    signal: budget ? AbortSignal.any([timeout, budget.signal]) : timeout,
+    headers: {
+      "User-Agent": USER_AGENT,
+    },
+  };
+}
+
+function isAbortError(error: unknown): boolean {
+  return error instanceof Error && (error.name === "TimeoutError" || error.name === "AbortError");
+}
 
 // Run async tasks with a concurrency limit
 async function runWithConcurrency<T, R>(
@@ -183,26 +218,39 @@ function getChangedFiles(baseSha: string): string[] {
   }
 }
 
-// Extract all URLs from a parsed YAML object
-function extractUrls(data: Record<string, unknown>): string[] {
-  const urls: string[] = [];
+// Extract all URLs from a parsed YAML object into a shared set, stopping once
+// `limit` unique URLs have been collected. The caller passes maxUrlsPerFile + 1
+// so a file over budget is provably over it without walking the rest of a
+// hostile document.
+function extractUrls(
+  data: Record<string, unknown>,
+  urls: Set<string> = new Set(),
+  limit: number = Number.POSITIVE_INFINITY
+): Set<string> {
+  if (urls.size >= limit) {
+    return urls;
+  }
 
   for (const [key, value] of Object.entries(data)) {
     if (typeof value === "string") {
       // Check if this is a URL field
       if (key === "url" || key === "source") {
         if (value.startsWith("http://") || value.startsWith("https://")) {
-          urls.push(value);
+          urls.add(value);
         }
       }
     } else if (Array.isArray(value)) {
       for (const item of value) {
         if (typeof item === "object" && item !== null) {
-          urls.push(...extractUrls(item as Record<string, unknown>));
+          extractUrls(item as Record<string, unknown>, urls, limit);
         }
       }
     } else if (typeof value === "object" && value !== null) {
-      urls.push(...extractUrls(value as Record<string, unknown>));
+      extractUrls(value as Record<string, unknown>, urls, limit);
+    }
+
+    if (urls.size >= limit) {
+      return urls;
     }
   }
 
@@ -216,6 +264,7 @@ async function checkUrl(
     cache?: UrlCache;
     useCache?: boolean;
     updateCache?: boolean;
+    budget?: RunBudget;
   }
 ): Promise<UrlCheckResult> {
   // Pre-flight check for YouTube URL format (no network request needed)
@@ -243,30 +292,28 @@ async function checkUrl(
     }
   }
 
+  const budget = options?.budget;
+
+  // The aggregate deadline has already passed: report rather than queue more work.
+  if (budget?.signal.aborted) {
+    return {
+      url,
+      status: "error",
+      redirected: false,
+      error: `Not checked: aggregate deadline of ${RUN_DEADLINE_MS / 1000}s exceeded`,
+    };
+  }
+
   let result: UrlCheckResult;
 
   try {
-    let response = await fetch(url, {
-      method: "HEAD",
-      redirect: "follow",
-      signal: AbortSignal.timeout(10000),
-      headers: {
-        "User-Agent": "Aureo-Catalog-Validator/1.0",
-      },
-    });
+    let response = await fetch(url, requestOptions("HEAD", budget));
 
     // Some servers block HEAD requests with an auth/automation status but
     // serve the page fine over GET. Retry with GET so these aren't reported
     // as false positives.
     if ([401, 403, 405].includes(response.status)) {
-      response = await fetch(url, {
-        method: "GET",
-        redirect: "follow",
-        signal: AbortSignal.timeout(10000),
-        headers: {
-          "User-Agent": "Aureo-Catalog-Validator/1.0",
-        },
-      });
+      response = await fetch(url, requestOptions("GET", budget));
     }
 
     const redirected = response.url !== url;
@@ -277,33 +324,37 @@ async function checkUrl(
       redirected,
       finalUrl: redirected ? response.url : undefined,
     };
-  } catch {
-    // Try GET request as fallback (some servers don't support HEAD)
-    try {
-      const response = await fetch(url, {
-        method: "GET",
-        redirect: "follow",
-        signal: AbortSignal.timeout(10000),
-        headers: {
-          "User-Agent": "Aureo-Catalog-Validator/1.0",
-        },
-      });
-
-      const redirected = response.url !== url;
-
-      result = {
-        url,
-        status: response.status,
-        redirected,
-        finalUrl: redirected ? response.url : undefined,
-      };
-    } catch (getError) {
+  } catch (headError) {
+    if (isAbortError(headError)) {
+      // A timed-out or deadline-aborted request is a deterministic failure.
+      // Retrying it with GET only doubles the time this URL holds the runner.
       result = {
         url,
         status: "error",
         redirected: false,
-        error: getError instanceof Error ? getError.message : String(getError),
+        error: headError instanceof Error ? headError.message : String(headError),
       };
+    } else {
+      // Try GET request as fallback (some servers don't support HEAD)
+      try {
+        const response = await fetch(url, requestOptions("GET", budget));
+
+        const redirected = response.url !== url;
+
+        result = {
+          url,
+          status: response.status,
+          redirected,
+          finalUrl: redirected ? response.url : undefined,
+        };
+      } catch (getError) {
+        result = {
+          url,
+          status: "error",
+          redirected: false,
+          error: getError instanceof Error ? getError.message : String(getError),
+        };
+      }
     }
   }
 
@@ -326,9 +377,27 @@ async function processFile(
     cache?: UrlCache;
     useCache?: boolean;
     updateCache?: boolean;
+    budget?: RunBudget;
   }
 ): Promise<FileResult> {
   const relativePath = path.relative(process.cwd(), filePath);
+  const budget = options?.budget;
+
+  // The aggregate deadline has already passed: report without reading or
+  // parsing, since a queued file's YAML parse is itself unbounded work.
+  if (budget?.signal.aborted) {
+    return {
+      file: relativePath,
+      urls: [
+        {
+          url: "(not checked)",
+          status: "error",
+          redirected: false,
+          error: `Not checked: aggregate deadline of ${RUN_DEADLINE_MS / 1000}s exceeded`,
+        },
+      ],
+    };
+  }
 
   let content: string;
   try {
@@ -364,7 +433,46 @@ async function processFile(
     };
   }
 
-  const urls = [...new Set(extractUrls(data))]; // Dedupe URLs
+  // Dedupe URLs, collecting at most one more than the per-file budget allows so
+  // that extraction is bounded too, not just the checking that follows it.
+  const urls = [
+    ...extractUrls(data, new Set(), budget ? budget.maxUrlsPerFile + 1 : Number.POSITIVE_INFINITY),
+  ];
+
+  // Reject rather than check a file that blows the URL budget: the run has to
+  // stay bounded even when the file under review is hostile.
+  if (budget) {
+    if (urls.length > budget.maxUrlsPerFile) {
+      return {
+        file: relativePath,
+        urls: [
+          {
+            url: "(url budget exceeded)",
+            status: "error",
+            redirected: false,
+            error: `File declares more than ${budget.maxUrlsPerFile} unique URLs, over the per-file budget`,
+          },
+        ],
+      };
+    }
+
+    if (urls.length > budget.remaining) {
+      return {
+        file: relativePath,
+        urls: [
+          {
+            url: "(url budget exceeded)",
+            status: "error",
+            redirected: false,
+            error: `Run-wide budget of ${MAX_URLS_PER_RUN} URLs exhausted before this file was checked`,
+          },
+        ],
+      };
+    }
+
+    budget.remaining -= urls.length;
+  }
+
   const results = await runWithConcurrency(urls, MAX_CONCURRENT_REQUESTS, (url) =>
     checkUrl(url, options)
   );
@@ -423,8 +531,18 @@ async function validate(
     }
   }
 
+  // The changed-file path runs on every PR against attacker-supplied YAML, so
+  // it is capped and deadlined. A full-catalog run is scheduled and trusted.
+  const budget: RunBudget | undefined = changedOnly
+    ? {
+        signal: AbortSignal.timeout(RUN_DEADLINE_MS),
+        maxUrlsPerFile: MAX_URLS_PER_FILE,
+        remaining: MAX_URLS_PER_RUN,
+      }
+    : undefined;
+
   const results = await runWithConcurrency(files, MAX_CONCURRENT_FILES, (file) =>
-    processFile(file, { cache, useCache, updateCache })
+    processFile(file, { cache, useCache, updateCache, budget })
   );
 
   let totalUrls = 0;
