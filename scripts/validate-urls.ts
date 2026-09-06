@@ -218,26 +218,39 @@ function getChangedFiles(baseSha: string): string[] {
   }
 }
 
-// Extract all URLs from a parsed YAML object
-function extractUrls(data: Record<string, unknown>): string[] {
-  const urls: string[] = [];
+// Extract all URLs from a parsed YAML object into a shared set, stopping once
+// `limit` unique URLs have been collected. The caller passes maxUrlsPerFile + 1
+// so a file over budget is provably over it without walking the rest of a
+// hostile document.
+function extractUrls(
+  data: Record<string, unknown>,
+  urls: Set<string> = new Set(),
+  limit: number = Number.POSITIVE_INFINITY
+): Set<string> {
+  if (urls.size >= limit) {
+    return urls;
+  }
 
   for (const [key, value] of Object.entries(data)) {
     if (typeof value === "string") {
       // Check if this is a URL field
       if (key === "url" || key === "source") {
         if (value.startsWith("http://") || value.startsWith("https://")) {
-          urls.push(value);
+          urls.add(value);
         }
       }
     } else if (Array.isArray(value)) {
       for (const item of value) {
         if (typeof item === "object" && item !== null) {
-          urls.push(...extractUrls(item as Record<string, unknown>));
+          extractUrls(item as Record<string, unknown>, urls, limit);
         }
       }
     } else if (typeof value === "object" && value !== null) {
-      urls.push(...extractUrls(value as Record<string, unknown>));
+      extractUrls(value as Record<string, unknown>, urls, limit);
+    }
+
+    if (urls.size >= limit) {
+      return urls;
     }
   }
 
@@ -368,6 +381,23 @@ async function processFile(
   }
 ): Promise<FileResult> {
   const relativePath = path.relative(process.cwd(), filePath);
+  const budget = options?.budget;
+
+  // The aggregate deadline has already passed: report without reading or
+  // parsing, since a queued file's YAML parse is itself unbounded work.
+  if (budget?.signal.aborted) {
+    return {
+      file: relativePath,
+      urls: [
+        {
+          url: "(not checked)",
+          status: "error",
+          redirected: false,
+          error: `Not checked: aggregate deadline of ${RUN_DEADLINE_MS / 1000}s exceeded`,
+        },
+      ],
+    };
+  }
 
   let content: string;
   try {
@@ -403,11 +433,14 @@ async function processFile(
     };
   }
 
-  const urls = [...new Set(extractUrls(data))]; // Dedupe URLs
+  // Dedupe URLs, collecting at most one more than the per-file budget allows so
+  // that extraction is bounded too, not just the checking that follows it.
+  const urls = [
+    ...extractUrls(data, new Set(), budget ? budget.maxUrlsPerFile + 1 : Number.POSITIVE_INFINITY),
+  ];
 
   // Reject rather than check a file that blows the URL budget: the run has to
   // stay bounded even when the file under review is hostile.
-  const budget = options?.budget;
   if (budget) {
     if (urls.length > budget.maxUrlsPerFile) {
       return {
@@ -417,7 +450,7 @@ async function processFile(
             url: "(url budget exceeded)",
             status: "error",
             redirected: false,
-            error: `File declares ${urls.length} unique URLs, over the per-file budget of ${budget.maxUrlsPerFile}`,
+            error: `File declares more than ${budget.maxUrlsPerFile} unique URLs, over the per-file budget`,
           },
         ],
       };
