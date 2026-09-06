@@ -1,0 +1,111 @@
+id: SkVLmYXZj0fIK42Y59wwQ
+name: State Variable Filter
+manufacturer: guru-gara-synth
+primaryCategory: filter
+categories:
+  - modular
+  - analog
+capabilities:
+  - filter
+url: https://www.gurugarasynth.com/products/state-variable-filter-eurorack-diy-kit-pcb-panel-ota-core-8hp
+prices:
+  - amount: 17.99
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: An all-analog multi-mode Eurorack VCF DIY kit built around a
+  classic OTA (LM13700) design, providing simultaneous High-Pass, Band-Pass, and
+  Low-Pass outputs from a single audio input. Two CV inputs with attenuators
+  allow expressive modulation of the cutoff frequency.
+details: |-
+  OTA State Variable VCF (Voltage Controlled Filter)
+
+  The OTA State Variable VCF Eurorack PCB and Front Panel Kit is a classic, all-analog multi-mode filter designed for DIY builders seeking versatile sound sculpting and rich sound flexibility. Built around a classic Operational Transconductance Amplifier (OTA – LM13700) design, this module delivers a deeply musical, fluid character with continuous, expressive control over your frequency spectrum. Unlike dedicated low-pass filters, the State Variable topology provides simultaneous access to three distinct filter characters, making it a powerful utility and creative processor for everything from smooth sub-basses to sharp, cutting lead sweeps. Key Features
+
+  Filter Character & Control
+
+  At its core, this OTA filter delivers a highly responsive, musical character that remains smooth. Because it is a State Variable filter, a single audio input splits into three distinct outputs simultaneously, giving you total patch flexibility:
+
+  With two dedicated Control Voltage (CV) inputs featuring integrated amount knobs, you can dynamically modulate the cutoff frequency with complex shapes. Feed an envelope into one input for quick snappy decays, and an LFO into the second for slow, drifting sweeps to create incredibly expressive movement within your system. DIY Build & Customization
+
+  Designed with the DIY community in mind, this kit features an intuitive, reliable layout optimized for clean soldering. Every single component position is cleanly silk-screened with highly visible labels directly on the PCB, making the assembly process smooth and enjoyable from the first resistor to the final jack socket. The matching 8HP front panel is cut from durable PCB substrate, perfectly matching the boutique, high-contrast white and orange aesthetic of the Guru Gara Synth lineup. Technical Specifications
+
+  Skiff Friendly Module
+
+  Video
+
+  State Variable Filter Hands-On Demonstration
+specs: |-
+  - Format & Size: Compact 8HP Eurorack module
+  - Kit Components: FR4 PCB and hand-screened front panel kit
+  - Circuit Core: Classic all-analog OTA State Variable design
+  - Outputs: Simultaneous High-Pass (HP), Band-Pass (BP), and Low-Pass (LP) outputs
+  - Modulation: Dual CV inputs with dedicated attenuators (Amount controls)
+  - Aesthetic: Front panel made from PCB material with striking white and orange screen prints
+  - Builder Friendly: Highly legible, clear component labeling directly on the PCB
+  - Low-Pass (LP): For rich, warm bass sculpting and foundational synth tones.
+  - Band-Pass (BP): Perfect for isolations.
+  - High-Pass (HP): Ideal for stripping out muddy low-end frequencies, bright lead articulation, and evolving soundscapes.
+  - Format: Eurorack
+  - Width: 8HP
+  - Skill Level: Beginner - Intermediate
+  - Filter Type: State Variable VCF (Multi-Mode)
+  - Inputs/Outputs: 1 Audio Input | 3 Simultaneous Outputs (HP, BP, LP)
+  - Modulation: 2x CV Frequency Inputs with Attenuators
+io:
+  - key: aaoIqsqz
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Qqopj4zx
+    name: Low-Pass Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0dHEYFjw
+    name: Band-Pass Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3SH4IU3Q
+    name: High-Pass Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: NEOsaVJn
+    name: CV Frequency Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 1Kl5uAgC
+    name: CV Frequency Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: OqPxJQgi
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
