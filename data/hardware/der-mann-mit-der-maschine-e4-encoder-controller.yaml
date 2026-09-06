@@ -1,0 +1,39 @@
+id: XUxZs2IH_uMd7687pcZai
+name: E4 - Encoder controller
+manufacturer: der-mann-mit-der-maschine
+primaryCategory: midi-controller
+categories:
+  - control-surface
+url: https://shop.dermannmitdermaschine.de/products/e4
+prices:
+  - amount: 168
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: The E4 is a Eurorack controller module with four endless rotary
+  encoders, each with a push button and a ring of 32 multicolor LEDs for value
+  feedback.
+details: |-
+  The E4 is a controller with four rotary encoders. The encoders look like normal potentiometers, but you can turn them endlessly in either direction. (Don't be fooled by the knobs, which do have a pointer). This allows for a wide range of applications and great flexibility. Each encoder is surrounded by a square of 32 multicolor LEDs. This LED ring is used to indicate the current value of the encoder. And it looks really great! The LEDs help you to give you an orientation by displaying the current value. Each encoder contains a push button, which can be used just like those on the P2B8 or on the B32. The E4 is perfect for mapping many different functions or presets to one encoder and then switch with the buttons of a P2B8 or B32 to some other context. Because of the LED rings you instantly see the current value after switching. And other than with pots, no "picking up" of the value is needed. Furthermore, the nature of the encoders allows for some useful features, for example:
+
+  As a bonus, there is a circuit called encoquencer, that allows you to build a melody sequencer based on the encoders and LEDs of the E4. It has the same features as the sequencer that is based on the motor faders of the M4 (motoquencer). Power consumption:
+
+  Hint: The LEDs only shine fully white when you set them up to do so in your DROID patch. As long as you use the encoders in a normal way, the LEDs display colored light which is not as bright, so the power consumption is much less under normal circumstances. Link to the E4 Encoder Controller on ModularGrid
+specs: |-
+  - Create a "multi turn" pot, that needs to be turned several rounds for going through the total range (which allows for a finer selection).
+  - Enable a mode where a slow movement of the encoder changes the value even slower, so it allows for instant fine tuning.
+  - Use an encoder as a switch with a fixed number of positions (the LEDs visualise that)
+  - Select a bipolar value with proper visualisation by the LEDs.
+  - Use an encoder for "strumming", where you get triggers when it is turned.
+  - +12V: 220 mA when all LEDs are white, 53 mA during normal use case
+  - -12V: 0 mA
+  - 5V: 0 mA
+io:
+  - key: bedGJm9x
+    name: Ribbon connection
+    signalFlow: bidirectional
+    category: power
+    type: proprietary
+    connection: idc
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,124 @@
+id: mNTrc7AdGvMuwktX2HhA7
+name: TRS Tool
+manufacturer: der-mann-mit-der-maschine
+primaryCategory: utility
+categories:
+  - modular
+  - routing
+  - midi
+url: https://shop.dermannmitdermaschine.de/products/trs-tool
+prices:
+  - amount: 48
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: TRS Tool is a passive Eurorack module for splitting, multiplying
+  and swapping stereo CV, audio and MIDI signals carried on 3.5 mm TRS jacks,
+  requiring no power supply.
+details: |-
+  TRS Tool is a multipurpose CV and audio signal distribution module for working with 3.5 mm stereo jacks (tip/ring/sleeve). These jacks are common for stereo audio but also for MIDI. The TRS TOOL has no active components and does not need a power supply. It contains 3 different sections set up as following from top to bottom:
+
+  TRS Split
+
+  The upper jack carries the tip signal
+
+  The middle jack carries the stereo/dual signal
+
+  The Lower jack carries the ring signal
+
+  Use cases:
+
+  TRS Quad Multiple
+
+  Multiply a stereo signal. Four TRS jacks to be used with stereo minijack cables. Use cases:
+
+  A/B Swapper
+
+  The bottom section of the module consists of two connected TRS jacks. Whatever signal applies to the tip in jack A will be routed to the ring in jack B. Whatever signal applies to the ring in jack A will be routed to the tip in jack B. Use cases:
+
+  Note: The MIDI input of the DROID X7 automatically detects A and B, so there is no switching necessary. The MIDI output of the X7 can be set to A or B with a switch on the back of the module. Current Draw: The module does not draw current Width: 2 HP Depth : 22 mm
+
+  Link to TRS Tool on ModularGrid
+specs: |-
+  - When you plug a stereo signal carried by a stereo (TRS) cable into the middle jack, you receive two separate mono signals by plugging in a mono (TS) cable in the upper jack to carry the left signal and a mono (TS) cable in the lower jack to carry the right signal. That way you can attack an "AUX" cable such as from your smartphone to your modular.
+  - Or the other way around: Send two separate mono signals by plugging in a mono (TS) cable in the upper jack to carry the left signal and a mono (TS) cable in the lower jack to carry the right signal. Receive a stereo signal at the middle jack to be used with a stereo (TRS) cable.
+  - Converting from stereo to dual mono and back allows you to alter the two sides of a stereo signal with different effects/filters.
+  - Some tuners such as the Korg NTS-2 accept inputs to tune two oscillators combined in one 3.5 mm stereo jack. With one splitter you can easily feed two VCO signals into such a tuner.
+  - You could use this to multiply the signal for headphones - listen to patches together.
+  - Or create sends - route one (or two) stereo signals to effects and use the third one as dry signal going to the mixer.
+  - Experimental: multiply a MIDI signal to two or three receivers: NOTE: depending on the output power of the MIDI sender and the power draw of the MIDI receivers this might or might not work. MIDI uses a current of typically 5 mA instead of voltage levels for data transmission. So when you attach too many devices to one output the current might not be enough to drive all of them. So this is strictly spoken not covered by the MIDI standard, but might work anyway.
+  - Switch the left and right side of a stereo audio signal.
+  - Switch between MIDI standard A and B: If you use MIDI over minijack, there's two standards A and B - some manufacturers use A some B - thus not all connections are working. Now you can easily switch between the standards using the TRS Split.
+io:
+  - key: KvO2lJip
+    name: TRS Split Jack 1
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: KwwMG5EI
+    name: TRS Split Jack 2
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: SOl0h4jc
+    name: TRS Split Jack 3
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: V66pioXh
+    name: Quad Multiple Jack 1
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: FFPUwQpi
+    name: Quad Multiple Jack 2
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: tSdM1F3U
+    name: Quad Multiple Jack 3
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: BCdv8WRM
+    name: Quad Multiple Jack 4
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: qOXwhwkc
+    name: A/B Swapper Jack A
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: kfV1UFew
+    name: A/B Swapper Jack B
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
