@@ -8,10 +8,10 @@ categories:
   - plugin
   - effect
 formats:
-  - aax
+  - au
   - vst2
   - vst3
-  - au
+  - aax
 platforms:
   - mac
   - windows
@@ -19,28 +19,41 @@ url: https://www.liquidsonics.com/software/hd-cart/
 prices:
   - amount: 199
     currency: USD
-description: HD Cart is a high-density reverb plugin modelled after a legendary expansion for one of the most sought after and expensive reverb units of all time, now available in 9.1.6. AAX, AU, VST
+description: HD Cart is a high-density reverb plugin modelled after a legendary
+  expansion cartridge for one of the most sought after and expensive reverb
+  units of all time, now available in 9.1.6.
 details: |-
-  HD Cart is a high-density reverb plugin modelled after a legendary expansion cartridge for one of the most sought-after and expensive reverb units of all time. The plugin faithfully recreates the character and sound of the original hardware, while adding modern capabilities and workflow enhancements.
+  HD Cart is a recreation of the rarest expansion cartridge for a seminal digital reverb, rebuilt as a modern plug-in. Originally only available in quad and 5.1, it has been upgraded for 7.1 and 9.1.6 so the period-authentic reverbs can be used in Atmos compatible sessions, giving access to heritage spaces and rooms with an instantly recognisable feel in contemporary surround workflows.
 
-  The plugin supports a wide range of channel configurations from mono through to 9.1.6 surround, making it suitable for both traditional stereo mixing and modern immersive audio workflows including Dolby Atmos. It features luscious chorusing effects with independent reflection and reverb chorusing, alongside extended roll-off curves at 6, 12, 18, and 24 dB slopes.
+  The algorithm was one of the first surround designs to consider the effect of early and late reflections in a quadraphonic field, pushing the dual-board design of the original hardware to its limit. The recreation includes the original high density stereo modes, quadraphonic and special 5.0 routing configurations, plus extensions for higher density stereo and 9.1.6 surround, while staying true to the original algorithmic and control concepts. In surround modes the reverb can be pushed towards the front, left in the centre for highest reflection density, or moved towards the rear of the simulated space.
 
-  HD Cart includes flexible dynamics processing with ducking, gating, and compression modules, all with external sidechain support. Pre-delay can be synced to DAW tempo, and the interface is fully scalable from 70% to 200%.
+  The full complement of controls from the original unit has been recreated, with extensions in several areas. Spread provides room enveloping control, while size and reverb time adjust the perceived room size and reverberation length. Early and late reverb roll-off controls add 12, 18 and 24 dB slopes alongside the usual 6 dB/oct, allowing bright reflections with more realistic late reverberation. The classic spin and wander effect was studied and reproduced, and can be supplemented with independent reflection and reverb chorusing. Full parameter locking and pre-delay DAW tempo sync are included.
 
-  The plugin ships with over 200 presets and has a low memory and CPU footprint. It requires iLok licensing via a physical dongle, machine activation, or iLok Cloud, and a 14-day free trial is available.
+  A dynamics module can duck the reverb, the reflections, or the combination of the two, so the spatialisation of the early room is retained without the reverb tail fighting the dry signal. The same module switches into compression mode for treatment of the reflections, reverb, wet or input signal, and a gate reproduces the 80s reverb gating technique used on drums and snare. A master EQ applies finishing touches to the mixed reverb with low, high and mid-band control.
+
+  In 2022 HD Cart received its largest update, free to existing owners, adding support for modern Atmos workflows across mono, stereo, LCR, quad, 5.0 to 5.1.4, 7.0 to 7.1.6 and 9.0.4 to 9.1.6, over 200 additional presets, a new chorus modulation type, pre-delay DAW tempo sync, the dynamics section with external sidechain support, new EQ modes and master EQ, a visual refresh with UI scaling from 70% to 200%, and comprehensive parameter locking. The plug-in has a low memory and CPU footprint.
 specs: |-
-  - Supported channel formats: Mono, Stereo, LCR, Quad, 5.0–5.1.4, 7.0–7.1.6, 9.0.4–9.1.6
-  - Plugin formats: AAX Native, VST 2.4, VST 3, Audio Unit (AUv2)
-  - macOS 10.13 and above — Intel and Apple Silicon native; Rosetta 2 supported
-  - Windows 7 and above
-  - 64-bit only
-  - Scalable UI: 70%–200%
-  - Pre-delay DAW tempo sync
-  - Extended roll-off curves: 6, 12, 18, 24 dB slopes
+  - Channel formats: mono, stereo, LCR, quad, 5.0 to 5.1.4, 7.0 to 7.1.6, 9.0.4 to 9.1.6
+  - Recreation of a rare expansion cartridge for a seminal digital reverb, extended beyond the original quad and 5.1 modes
+  - Unique early reflections with spin and wander, plus level, filter and timing control for the surround regions
+  - Surround reflection positioning towards the front, centre or rear of the simulated space
+  - Spread control for room enveloping, plus size and reverb time controls
+  - Early and late reverb roll-off with 6, 12, 18 and 24 dB/oct slopes
   - Independent reflection and reverb chorusing
-  - Dynamics with external sidechain support (ducker, gate, compressor)
-  - Parameter locking
-  - iLok license required (dongle, machine, or iLok Cloud)
+  - Pre-delay with DAW tempo sync
+  - Dynamics module: ducker, gate and compressor with external sidechain support
+  - Master EQ with low, high and mid-band control
+  - Over 200 additional presets added in the 2022 update, including signature artist presets
+  - User interface scalable in fixed steps from 70% to 200%
+  - Comprehensive parameter locking
+  - Low memory and CPU footprint
+  - Licensing: iLok 2/3 dongle, iLok machine activation or iLok Cloud required
+  - Windows 7 and above, 64-bit only
+  - macOS 10.13 and above
+  - Formats: VST 2.4, VST 3, Audio Unit (AUv2), AAX Native
+  - Intel or Apple Silicon processors (native and Rosetta 2 supported)
+  - macOS installer contains 64-bit Universal Binaries for VST2, VST3, AU and AAX
+  - 32-bit builds removed as of version 1.1.2
 versions:
   - name: 1.3.8
     description: UI performance optimizations; Rosetta crash fix on macOS 15.7.1 and 26.0
@@ -51,10 +64,12 @@ versions:
     releaseDate: 2025-05-03
     description: AudioSuite render bug fix in Pro Tools
   - name: 1.3.5
-    description: AudioSuite -20038 error correction; A/B preset container fix; M4 compatibility
+    description: AudioSuite -20038 error correction; A/B preset container fix; M4
+      compatibility
   - name: 1.2.0
     releaseDate: 2022-08-09
-    description: 7.1.6 surround support; ducker, gate, and EQ; 12/18/24dB roll-off; new chorus; scalable UI; 200+ presets
+    description: 7.1.6 surround support; ducker, gate, and EQ; 12/18/24dB roll-off;
+      new chorus; scalable UI; 200+ presets
   - name: 1.1.4
     releaseDate: 2022-03-04
     description: Apple Silicon native support
@@ -64,7 +79,31 @@ versions:
   - name: 1.0.0
     releaseDate: 2017-10-30
     description: Initial release
-releaseDate: "2017"
+  - name: 1.3.4
+  - name: 1.3.3
+  - name: 1.3.2
+  - name: 1.3.1
+  - name: 1.3.0
+  - name: 1.2.7
+  - name: 1.2.6
+  - name: 1.2.5
+  - name: 1.2.4
+  - name: 1.2.3
+  - name: 1.2.2
+  - name: 1.2.1
+  - name: 1.1.7
+  - name: 1.1.6
+  - name: 1.1.2
+  - name: 1.1.0
+  - name: 1.0.8
+  - name: 1.0.7
+  - name: 1.0.6
+  - name: 1.0.5
+  - name: 1.0.4
+  - name: 1.0.3
+  - name: 1.0.2
+  - name: 1.0.1
+releaseDate: 2017-10-30
 videos:
   - videoId: "736141574"
     provider: vimeo

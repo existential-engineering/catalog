@@ -1,14 +1,15 @@
 id: zvfgdG5ruCTDtZlds7QUs
 name: Reverberate 3
 manufacturer: liquidsonics
-primaryCategory: reverb
+primaryCategory: convolution
 categories:
+  - reverb
   - plugin
   - effect
 formats:
-  - au
   - vst2
   - vst3
+  - au
   - aax
 platforms:
   - mac
@@ -17,33 +18,51 @@ url: https://www.liquidsonics.com/software/reverberate-3/
 prices:
   - amount: 99
     currency: USD
-description: Modulated True-Stereo Convolution Reverb bringing your IR captures to life; use Lexicon, AMS, Bricasti and more reverb legends to life.
+description: Modulated true-stereo convolution reverb that brings your IR
+  captures to life, with Lexicon, AMS, Bricasti and other reverb legends.
 details: |-
-  Reverberate 3 is a dual-engine modulated true-stereo convolution reverb plugin developed by LiquidSonics. It processes captured impulse responses from legendary studio hardware reverbs through the proprietary Fusion-IR technology, enabling creative modulation and editing capabilities that go far beyond traditional static convolution.
+  Reverberate 3 is for the impulse responses aficionados. If you have captures of legendary studio hardware or even the overlooked gems, Reverberate 3 takes the impulse captures of iconic hardware reverbs and makes them sound better than ever before. Loaded with effects and modulation options ranging from the subtle to the sublime, it is a powerhouse of creative potential that can take impulse responses to new highs.
 
-  The plugin features independent early/late reverb adjustment, late pre-delay manipulation without phase disruption, and Re-Decay controls that let users scale reverb times from 0.25x to 1.75x the original duration. Split modulation separates pitch and non-pitching modulation for early and late reverb components independently.
+  A cornerstone of Reverberate's ability lies in its own proprietary modulated capture and playback technology format called Fusion-IR, an innovative approach to convolution capture and playback creating a lively, organic reverberation that is impossible to achieve with traditional static convolution. Fusion-IRs contain separately sampled early and late reverb components, so the early and late components of a reverb can be balanced independently just as on a hardware device. New in Reverberate 3 is the ability to independently adjust the late reverb pre-delay without disrupting the integrity of the sampled reflections, shifting the late tails forwards and backwards in time without ungluing the reflections.
 
-  Each reverb engine includes a full effects chain: double-oversampled EQ with LFO modulation, linear-interpolation chorus, stereo delay with modulation, a ducker with sidechain support, Sheen EQ for synthetic high-frequency enhancement, stereo widener, and an ADSHR envelope with shape control.
+  Reverberate 3 includes a re-decaying feature so reverb times can be adjusted from 0.25x to 1.75x of their original time without introducing stretch artefacts. Contouring above and below two user-controllable crossovers allows control over low and high reverb times, and those modified Fusion-IRs can still be sent into the regular array of editing tools including crop, envelope and resampling stretch.
 
-  Reverberate 3 ships with several Fusion-IR expansion packs including FS-24x, FS-48, FS-91, Bricasti M7 (44.1 kHz and 96 kHz), and FS-1 (44.1 kHz and 96 kHz). It supports WAV, AIFF, and FLAC impulse response files.
+  Many third party impulse responses are simple two channel captures, and Reverberate can simulate true stereo reverbs using those stereo captures, a technique that is especially powerful with reverbs never designed with true stereo in mind. In Reverberate 3 the simulated crossfeed channels can be modulated without impacting the essential structure and onset characteristics of the sampled reverb, since the direct channels are not modulated. Extended split modulation divides a capture into two halves at a point of the user's choosing, loads each into independent convolution engines, and modulates each half separately, with pitching and non-pitching modes selectable independently of the split point.
 
-  Licensing is handled via iLok License Manager and supports iLok 2/3 hardware dongle, machine activation, or iLok Cloud. A 14-day fully featured trial is available.
+  Additional spice comes from a comprehensive set of modulated equalisers, delays, ducker and chorus modules, while dispersion modelling simulates the whip-crack of real plate reverbs that was missing in almost all vintage digital plate algorithms. Reverberate 3 features a scalable interface with support for high resolution screens, enhanced metering, support for VST3 and the FS-24x, FS-48 and FS-91 Fusion-IR packs, with all DSP rearchitected to support Apple Silicon.
 specs: |-
-  - Dual convolution reverb engines with Fusion-IR technology
-  - True-stereo and simulated true-stereo modes
-  - Split modulation: separate early/late pitch and non-pitching modulation
-  - Re-Decay: scale reverb times 0.25x–1.75x
-  - IR format support: WAV, AIFF, FLAC
-  - Effects chain per engine: EQ, chorus, stereo delay, ducker, Sheen EQ, stereo widener, ADSHR envelope
-  - Zero latency mode or configurable 8192-sample delay
-  - Dispersion modeling for plate reverb simulation
-  - Synthetic early reflections and tail generation
-  - MIDI tempo sync
-  - Scalable high-resolution UI
-  - 64-bit only; Intel and Apple Silicon native (M1–M4)
-  - macOS 10.13+ and Windows 7+ supported
-  - iLok License Manager required (dongle, machine, or Cloud)
-  - Formats: VST 2.4, VST 3, AU/AUv2, AAX Native
+  - iLok 2/3, iLok machine activation or iLok Cloud
+  - Windows 7 and above
+  - macOS 10.13 and above
+  - VST 2.4, VST 3, Audio Unit (AUv2), AAX Native
+  - 64-bit DAW and OS required
+  - 500 MB disk space for a base installation
+  - Intel or Apple Silicon processors (native and Rosetta 2 supported)
+  - Fusion-IRs require additional disk space (can be installed to a separate drive)
+  - Not available for 32-bit DAWs
+  - Dual convolution reverbs
+  - Fusion-IR processing capability
+  - Synthetic early reflections and tail generation modules
+  - SplitMod early/late pitch and non-pitching modulation
+  - Modulated true stereo simulation for stereo IRs
+  - Double oversampled EQ with modulation per IR
+  - Re-decay the reverb time from 0.25-1.75x length
+  - Low and high reverb time multipliers for low and high decay time adjustment
+  - Linear-interpolation choruses for Reverb 1, Reverb 2 and Master effects
+  - Stereo delays with modulation for Reverb 1, Reverb 2 and Master effects
+  - Ducker for Reverb 1, Reverb 2 and Master effects including sidechain
+  - Post EQ with LFO modulation
+  - Sheen EQ filter for adding synthetic high frequency content to dark IRs
+  - Stereo widener
+  - ADSHR envelopes with shape control
+  - Zero latency (or up to 8192 sample delay for reduced CPU usage)
+  - Impulse response chaining
+  - Integrated preset and sample browsers
+  - Wav, Aiff and Flac file support
+  - Scalable interface with high resolution display compatibility
+  - Folder bookmarking
+  - Recursive file location searching for lost IRs
+  - FS-24x, FS-48, FS-1 and Bricasti M7 Fusion-IR expansion packs available (no additional purchase required)
 versions:
   - name: 3.4.6
     description: Fixed VST hosting compatibility in Pro Tools; graphics optimization
@@ -67,7 +86,24 @@ versions:
   - name: 3.0.0
     releaseDate: 2020-10
     description: Initial release
-releaseDate: "2020"
+  - name: 3.4.1
+  - name: 3.4.0
+  - name: 3.3.6
+  - name: 3.3.5
+  - name: 3.3.4
+  - name: 3.3.3
+  - name: 3.3.2
+  - name: 3.3.1
+  - name: 3.3.0
+  - name: 3.2.4
+  - name: 3.2.3
+  - name: 3.2.1
+  - name: 3.1.2
+  - name: 3.1.1
+  - name: 3.0.2
+  - name: 3.0.1
+  - name: "3.0"
+releaseDate: 2020-10-12
 videos:
   - videoId: "466321839"
     provider: vimeo
