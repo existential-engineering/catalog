@@ -1,0 +1,132 @@
+id: 2Mt1xM6J6mf52BJc28Cfn
+name: Matter
+manufacturer: folktek
+primaryCategory: drum-machine
+categories:
+  - synthesizer
+  - modular
+  - analog
+url: https://folktek.com/products/matter
+description: Matter is a Eurorack drum wave synthesizer with an onboard
+  jumper-based patch system, capable of producing triggerable drum sounds as
+  well as complex drone and synthesis.
+details: |-
+  "Matter" is drum wave synthesizer. While it could simply be called a drum synthesizer, the method of play is designed equally as much to make the all-analog drum-based synthesis playable as waves as it is to make triggerable drum sounds. This means Matter can take a "kick" oscillator, for example, and use it to generate a bass line, a "snare" can create washes of noise with peaking resonance, and so on. This allows for a very broad complexity of rhythm and tonality because triggering is not confined to a single point. That said, this module specializes in clicks and cuts style beats - little clicky sounds. Matter is also very capable of generating complex drone and rich synthesis and does not need to be used as a drum synth at all. It utilizes the same analog synthesis as Materia which means it also works with aspects of deductive synthesis where noise and sound is "patched out". THE PATCH SYSTEM
+
+  Like most future Eurorack modules by Folktek, Matter utilizes an onboard patch system with its own patch cables (supplied). The purpose for this is to allow for more possibility while keeping things compact. With future add-ons, use of the patch bay will be optional and interchangeable. In this case, Matter has two primary patch bays (1-10 and 11-20 (first run was incorrectly labeled 10-20) - note that points 4 and 5 are empty spots for future plug in development) which represent controllable access points within the circuitry for CV or gate signals to be applied (Each CV input has an led for voltage visualization). 18 access points each doubled for stacking input or creating direct patches. Up to a total of 8 CV/gate input jacks and an additional modulation CV/gate input are jumpered by the player to the main patch bay to generate sound. Hard patches (direct point to point) can be used to create layers, trigger multiple oscillators, generate drone and permanently alter the sound shape, filter or resonance. Once a jumper patch is set up, it does not need to be changed...it's completely optional - each CV/gate input will be dedicated to a trigger. CV/gate inputs can change and the trigger points will remain. Because the inputs are jumperable, they can also be used in a variety of different ways other than direct CV triggering. - Sound can be sent in to a few points on the Matter circuitry where it uses some of the pathways of filtration, overload and distortion. - External audio or CV signals can be jumpered through the modulation. SINE VACTROL AND CV MODULATION
+
+  Aside from the primary synthesis, Matter also has vactrol-based sine modulation which can be used in a number of ways:
+
+  - External audio can be patched into "mod trig CV" which sends the audio through the vactrol modulation. That audio can then be jumpered into the circuitry where it will be filtered, distorted or effected in any number of ways. Or, for a clean modulation the audio can be jumpered to another jack and output. - Matter audio output can be sent through the modulation and jumpered to a new jack. - External CV can be patched to the "mod trig CV" jack and jumpered to the main patchbay to have a modulated CV signal activating the synthesis. Or likewise, the CV signal can be jumpered to a jack to simply pass through the vactrol modulation. - Mod CV out outputs the modulation control voltage independant of the vactrol. Modulation has speed control dial, CV speed (vactrol), input ("mod trig CV" vactrol) and CV out. PLUGIN AND CARDS
+
+  Plug-ins and cards direct and expand the function of Matter creating presets, turning Matter into a drone synth, filter, touch-based effects, etc. More info and availability here . EXAMPLE PATCHES
+
+  1) Send external audio to any "CV in" and jump to any of these points on the main patchbays: 10, 11, 14, 15, 17 (when referencing numbers, remember the first run of Matter is labeled incorrectly). Now Matter will behave as a distortion/filter. Jump the other side of the header to any other "CV in" and patch that to an audio mixer and you can mix the clean signal with the dirty one. 2) Patch the "audio out" of Matter to any "CV in" and jump as described above and you'll get a different, distorted version of the sound from Matter (patch all other CV ins and triggers as you normally would). 3) Jump the modulation vactrol (the 2pt header) to points 14 and 2 to get some nice filtering. Works wonders with the external audio input described above (1) to get some nasty swells of filtering and distortion. 4) Jumping certain points (from a "CV in") to the main patchbay kills the noise completely even when those CV or gate signals are inactive. Try jumping from the other half of the "CV in" headers (where normally you would jump from the point closest to the jacks) - this way, in some cases you can still have your noise and your clicky sounds too. 5) Send external audio in to "mod trig CV" and jump from the right side of the vactrol header (the 2 point header) to any "CV in". Now that jack in audio passed through the modulation. Patch that signal to mixer or audio processor for modulated audio. 6) As described above (5), jump external audio through the vactrol and into the circuitry as described above (1). Now you have external audio being modulated by the vactrol and effected by Matter. 7) Follow the directions above (1) but instead of jumping external audio to a jack, jump to the left side of the header for "mod trig CV". Now follow the directions above (5) and you have your audio signal effected by Matter first, then modulated (the inverse of 6). SPECS
+
+  - Includes printed manual. View the online version here . - 8x cv/gate inputs
+  - 20pt patchbay (18 active)
+  - Modulation: speed dial, cv in, vactrol input, cv out
+  - Volume control
+  - Mono output
+  - +12 = 23ma
+  - -12v = 0
+  - 5v = 0
+  - 21HP
+  - 1" depth
+io:
+  - key: YP1wpWAv
+    name: CV/Gate Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: OfePP60V
+    name: CV/Gate Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: lr0i8SyU
+    name: CV/Gate Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AeeoeSFm
+    name: CV/Gate Input 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AJ0fWA1Z
+    name: CV/Gate Input 5
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: qfdAOqzT
+    name: CV/Gate Input 6
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: pApa4veK
+    name: CV/Gate Input 7
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VzjuklS5
+    name: CV/Gate Input 8
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: NmlWga4t
+    name: Mod Trig CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: xV6bSZJ0
+    name: Mod CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: dqvAgVwG
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KYyWl34j
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
