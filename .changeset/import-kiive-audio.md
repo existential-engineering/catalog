@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Kiive Audio (42 hardware/software entries).
+Import Kiive Audio (22 software entries).
