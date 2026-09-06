@@ -1,0 +1,143 @@
+id: 3OzXWplw28izc2DbP8nrG
+name: Conduit
+manufacturer: folktek
+primaryCategory: effect
+categories:
+  - delay
+  - filter
+  - modular
+  - synthesizer
+capabilities:
+  - delay
+  - filter
+url: https://folktek.com/products/conduit
+description: Conduit is a Eurorack delay, filter and 9-point harmonic oscillator
+  module that creates three independent, inter-mixable signal paths and can
+  interface directly with Matter for further processing.
+details: |-
+  Conduit is a delay, filter, and 9 point harmonic oscillation module which creates three independent signal paths that can be inter-mixed how you like. It's also capable of jumping directly into the circuitry of Matter for processing. The root circuitry is based on the conduit desktop piece which is no longer in production. Conduit now includes a touch-based plug-in. There are no photos yet but these, as well as all modules, will be available with a gold face as well. DELAY
+
+  At it's root Conduit is a delay with a warm, analog sound which is clean at tight times and tending toward something disgusting and noisy and slower times. External audio or internal oscillation can be processed by the delay. When multiple oscillation points are mixed, the delay feedback gets distorted and noisy. Using Resist to mix oscillations eliminates delay noise. As a delay it serves best as a source of texture. FILTER
+
+  The delay travels into a state-variable filter with fixed resonance. A clean signal passing by the delay will still be filtered. The filter has a vactrol-based cv in to control the cutoff. So this filter receiving voltage control is very wormy in nature. It's best to multiply and mix a signal going into Conduit if it's to be used for processing - giving you the filtered and unfiltered version. HARMONIC OSCILLATION
+
+  The purpose of this module is not simply as a delay or a filter - these are just components to a greater whole. With Conduit, aspects of the giant delay IC processing are accessed as a series of sound sources - harmonic oscillations based on the clocking of the delay. Therefore, delay time is the same as master pitch for these oscillations (also represented by "time cv"). There are a total of 8 harmonic oscillations and one noise source. All 9 points representing audio level harmonic oscillations are represented by a 9x4 female header so that each of these points or multiple points can be used as a sound source. Using Resist alongside allows one to control the level of the oscillation or mix multiple oscillations per vactrol. VACTROLS
+
+  There are two vactrol sections which act as VCA's. Each vactrol section has a 0-5v cv/trigger/gate input, input (for audio or cv), output and a 5x2 female header. Any or all of the oscillations can be jumped with dupont cables to either vactrol input, the vactrol can be triggered or accept an ADSR (for example) and output audio. The nature of the vactrols is decayed, meaning if it's given a 5v gate/trigger it will have a high peak and then fall away slowly like a bell. So by jumping one or more oscillations to the vactrol and sending a simple trigger or gate to the vactrol cv in, it very easily achieves harmonic bell sounds. But with slower ADSR's Conduit shines by creating more complex bowed sounds. So by jumping oscillations to the two vactrols, the outputs create two different signal paths which can be processed independently. And because these vactrols have an input (for audio or cv) they can be used on their own as vactrol-based VCA's. With the vactrol output headers, oscillations can be jumped directly into Matter to be processed. OSCILLATION TO DELAY AND ENVELOPE FOLLOWING
+
+  The oscillation points can also be jumped directly into the delay or jumped through a vactrol where it's triggered and the out can be jumped to the delay. The delay and filter can then process and/or destroy the sound. The delay input also acts as a cv out and becomes an envelope follower (cv based on the audio signal) to control anything external, or to control the time/pitch or filter. MIXING
+
+  Because there are three independent signal paths, and because they're all jumpable, they can be mixed in any number of ways to create a greater complexity to the sound. Send one oscillation to a reverb, another to a delay and utilize the onboard filter and delay as another. Or use the delay filter as processing and you can still output two other oscillation paths. INVOLVING MATTER
+
+  Oscillations from the main header, post-vactrol or delay out can all be sent directly into the circuitry of Matter where Matter will process the sound in any number of ways and will naturally mix with Matter triggering. Utilizing Resist can dim the Conduit oscillations to add more control. Matter Modulation also works exceptionally well to control Conduit filtering. And of course, Matter output can be sent into a vactrol to turn Matter drones into bigger beats or Matter can be processed by Conduit delay/filter. Using the Conduit touch plugin and the Matter touch card, sound can be sent into Matter exclusively via touch, utilizing the circuitry of Matter to act as filtering, overdrive and amp controls. SPECS
+
+  - Includes touch plate and product manual (view the online version of the manual here )
+  - Knobs: filter (w/cv in), mix, more, time 1, time 2, feedback
+  - Mono delay input, mono delay output
+  - CV out (envelope follower based on signal at delay in). - Patchbay: 9x4 harmonic osc, 5x2 vactrol in for 1 and 2, 5x2 delay in, 2x1 vactrol out for 1 and 2, 2x1 filter cv in, 2x1 delay out
+  - Vactrol 1 jacks: cv in, in, out
+  - Vactrol 2 jacks: cv in, in, out
+  - 23 mA +12V
+  - 0mA -12V
+  - 0mA 5V
+  - 20hp width
+  - 25 mm Depth
+
+  Add Conduit to your system on modular grid:
+  h ttps://www.modulargrid.net/e/folktek-conduit
+
+  INFO ON THE VIDEOS:
+
+  This is not intended to be a musical performance - just displaying the sound of the module. What's happening? First, there are three signal paths to Conduit:
+  - A simple Matter beat (created by 3 varigate 4 outs) is jacked into the Conduit delay input where it goes through delay and filtering (output to mixer)
+  - The clean Matter signal is multiplied which is essential (output sent to mixer)
+  - Two of the Conduit harmonic oscillations are jumped to the Resist module where they are mixed, then jumped to vactrol 1 (essentially a VCA). The vactrol is triggered by an envelope and the oscillation output is sent (via external reverb) to mixer. - The same is happening with vactrol 2 but this one is being sent to mixer via external delay. - Conduit is receiving a simple, slow, 4 part cv sequence via Octone which controls pitch of the oscillations as well as time for the delay (they are synonymous). - Conduit filter is receiving cv signal via LFO at first and then mid-video is re-patched to receive cv via Conduit internal envelope follower created by the delay input. - About mid-video and then throughout the reverb mix and the delay are turned up and down, displaying the three distinctly different Conduit pathways that are present.
+io:
+  - key: GaxZc1CI
+    name: Delay Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: HhLJgHNu
+    name: Delay Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zNfgHoW6
+    name: CV Envelope Follower Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GJrPNX4b
+    name: Filter CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BtfwTjFd
+    name: Vactrol 1 CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: y5bYwIxG
+    name: Vactrol 1 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZXnJBjIf
+    name: Vactrol 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: n3iY59ft
+    name: Vactrol 2 CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3oGLaC9W
+    name: Vactrol 2 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tWFcRo5V
+    name: Vactrol 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CQVBptN5
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

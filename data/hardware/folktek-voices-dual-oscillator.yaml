@@ -1,0 +1,154 @@
+id: E5OYeD5rxsej-2PqAZvjh
+name: Voices - Dual Oscillator
+manufacturer: folktek
+primaryCategory: synthesizer
+categories:
+  - modular
+  - analog
+  - subtractive
+url: https://folktek.com/products/voices
+description: A dual analog Eurorack oscillator with musically related tuning
+  between the two oscillators, a shared morphing waveform shape control, a sub
+  oscillator, and an output vactrol.
+details: |-
+  Oscillators
+
+  Dual analog oscillators paired with one another. The main frequency control covers both oscillators and osc 2 pitch control detunes high or low and then shifts to 5ths or 7ths of osc 1 for instant musicality. There's also an octave control to switch octaves up or down. When you jack in to oscillator 2 it becomes independent of oscillator 1 so Voices can become distinctly duophonic. Oscillator shape also covers both oscillators simultaneously and smoothly fades from square to saw to triangle to sine waveforms on a single control (with added CV) and there's a switch to determine which direction the control or a/r travels. Add to that a sine-based sub oscillator. We've included a vactrol on the output which, when plugged, cuts the output signal and only allows the signal to pass when it receives a voltage signal (trigger, gate, CV). This gives it that extra sweet flavor that only a vactrol provides and allows you to use voices without an additional VCA if desired as we do in the voices system. Controls
+
+  Oscillator frequency, fine frequency, sub level, osc 2 frequency, osc 2 level, osc shape, FM. CV
+
+  All attenuate-able: Octave, osc 2 level, osc shape, osc 1 CV, osc 2 CV. Inputs/Outputs
+
+  Every waveform (square, saw, triangle, sine), oscillator 2 and a mix of all events. sync, FM
+
+  What makes this module unique: Two oscillators musically tuned to eachother is a beautiful thing but it also acts as independent dual oscillators with shared shape control. Clean sweeping/cross-fading shape from square to sine of analog oscillators does not otherwise exist as far as we know. Add that delicious vactrol and Voice is its own animal. CONTROL
+
+  - Coarse frequency, osc shape, octave switching, osc 2 frequency, osc 2 level, FM all with CV
+  - Fine frequency, sub osc level
+
+  INS AND OUTS
+
+  - Outputs for all waveforms (sine, triangle, saw, square), mix and osc 2
+  - CV for all: osc 1 1v/oct, osc 2 1v/oct, sync, shape, osc 2 level, octave, FM
+  - Vactrol on output
+
+  SPECS
+
+  Includes mounting hardware and power connection in a beautiful Folktek box. + 12v = xma
+  -12v = xma
+  +5v = xma
+  width = 16HP
+  1" depth (skiff friendly)
+io:
+  - key: qOKwwAsG
+    name: Sine Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8MHMRst3
+    name: Triangle Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gXAK9Ndn
+    name: Saw Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: K5KCcj4I
+    name: Square Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: oGByJf1s
+    name: Osc 2 Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UpYDD3Hn
+    name: Mix Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: aRWmXl8c
+    name: Osc 1 1V/Oct In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VOJ1K1YZ
+    name: Osc 2 1V/Oct In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: i1HXlrkB
+    name: Sync In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: yfUcxzU7
+    name: Shape CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: OkKNAlx3
+    name: Osc 2 Level CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zFsslsRN
+    name: Octave CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: R5FbHFYj
+    name: FM In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rElUj6ns
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
