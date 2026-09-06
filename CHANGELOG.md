@@ -1,5 +1,168 @@
 # catalog
 
+## 3.59.0
+
+### Minor Changes
+
+- 64559b3: Add an additive `hp` field to hardware (Eurorack panel width, positive integer) with a nullable `hardware.hp` column (schema migration 23, no `schema_version` bump), a `modular-missing-hp` audit finding with hp coverage, a reproducible `pnpm hp:backfill` pass, and `hp` on 359 of the 408 modular entries from their own prose, maker pages and ModularGrid.
+- 2451e06: Import Acid Rain Technology (6 hardware entries).
+- 3531e1f: Import Advanced Audio Microphones (31 hardware/software entries).
+- 3eb2a4f: Import After Later Audio (75 hardware/software entries).
+- 782fb0b: Import AirTurn (29 hardware/software entries).
+- 8dbd99e: Import Ali Modular (1 hardware/software entries).
+- c90b1d9: Import Altec Lansing (36 hardware/software entries).
+- 9b1dfd0: Import Alternate Mode (65 hardware/software entries).
+- 44ebb15: Refresh AudioRealism: 4 new, 0 discontinued, 3 updated.
+
+  Adds ReDominator, Semi Modular X (ASM1X) and the TR-808 and TR-909
+  sample packs, and brings the Bass Line 2, Bass Line 3 and Drum Machine
+  entries up to date with the maker's current pages.
+
+- e4f0fd4: Refresh AudioThing: 50 new, 2 discontinued, 2 updated.
+
+  Adds the full AudioThing effect and instrument plugin range, from the
+  Things series and the Type tape emulations to Orbita, Wurly and the
+  sampled drum machines. Bells and Bowed Harp are retired, and Noises
+  and Dub Station are brought up to date.
+
+- 6491928: Import Black Noise (31 hardware/software entries).
+- 44cf66c: Import Breedlove (33 hardware/software entries).
+- a82f36f: Import Buchardt Audio (15 hardware/software entries).
+- 714bdcc: Import CalSynth (38 hardware/software entries).
+- b41f566: Import Campfire Audio (32 hardware/software entries).
+- 6af0645: Import Caparison (35 hardware/software entries).
+- 59dd806: Import Carvin (58 hardware/software entries).
+- a383cb8: Import Cloud Microphones (15 hardware/software entries).
+- 6d78fdf: Import Colossus Audio (14 hardware and content entries).
+- 4b18ec8: Import CubuSynth (3 hardware/software entries).
+- 3026495: Import Der Mann mit der Maschine (20 hardware/software entries).
+- e448c85: Import DIY Recording Equipment (39 hardware/software entries).
+- 9c8ceb5: Import dsp.coffee (6 hardware entries).
+- 08a11b3: Import Echo Fix (80 hardware/software entries).
+- 437c902: Import Fieldtone (3 hardware entries).
+- 2305084: Import Fulltone (29 hardware/software entries).
+- 9ca9693: Import Holocene Electronics (6 hardware/software entries).
+- b98b5b3: Import Humble Audio (2 hardware/software entries).
+- 5029ec7: Import Infrasonic Audio (3 hardware/software entries).
+- f13a527: Import ISOVOX (27 hardware/software entries).
+- 032d070: Refresh Korneff Audio: 1 new, 0 discontinued, 13 updated.
+
+  Adds the KA1776 Limiting Amplifier and refreshes every existing Korneff
+  Audio entry with current descriptions, feature lists and release notes.
+  Four plugins are now recorded as shipping Linux and LV2 builds.
+
+- 5f2966f: Refresh LANDR: 1 new, 0 discontinued, 21 updated.
+
+  Adds Retro, a lo-fi layered instrument, and refreshes the existing LANDR
+  plugin entries with current descriptions, specs, formats, platforms and
+  pricing from the maker's product pages.
+
+- ce81753: Refresh Louder Than Liftoff: 1 new, 0 discontinued, 30 updated.
+
+  Adds the FET-72 Colour Module and fills in technical specifications
+  for 28 existing Louder Than Liftoff entries, covering the Chroma and
+  Mister Focus hosts, the Colour and Mojo modules, and both Silver
+  Bullet tone amps. Recorded prices now carry the date and source they
+  were read from.
+
+- 812f1b7: Import Magnepan (14 hardware and accessory entries).
+- c3f2e8c: Import MasterSounds (34 hardware and accessory entries).
+- 668852b: Import Maxon (41 hardware/software entries).
+
+### Patch Changes
+
+- 1073861: Layout hints (`rowPosition`/`columnPosition`) are now validated for shape, and the five entries that carry them were checked against their manuals and photos (AUREO-1115).
+
+  `pnpm validate` fails a hint that is not a positive integer (E122), one
+  set without its partner (E123), a cell occupied twice on one edge (E124)
+  and an edge where some ports carry a hint and others none (E125), because
+  Studio takes a hinted side down the grid path and back-fills the rest
+  row-major. `pnpm dataset:audit` reports hint coverage per collection and
+  for modular entries. The three Black Lion patchbays gain the
+  `columnPosition: 1` their single-column rows implied, the PBR-8 gains
+  the mult row its front panel shows, and the Eventide H90's USB-C and
+  power jacks move to the lower row the quick reference guide draws them
+  on. The Apollo Twin X matched its hardware manual and is unchanged.
+
+- 8947a2c: Capabilities are now recorded on 911 hardware entries, up from 768, and 106 operations that entries described in their own text but did not list are filled in, including the Eventide H90's granular, freeze, reverse, pitch correction and stutter effects.
+
+  Nothing wrote `capabilities` during import, merge or maintenance, so the
+  field was frozen at whatever the original pass produced and everything
+  imported afterwards carried none. `pnpm derive-capabilities` populates the
+  143 effects entries that had accumulated, and a new `pnpm capability-gaps`
+  reads each assessed entry's prose back against the vocabulary to report
+  operations the list omits.
+
+  That report deliberately has no bulk apply. Tier-1 probes measured about
+  87% precision against the corpus and the residue is not lexical: prose
+  names a sibling product, an influence, a simile or a denied spec row.
+  `pnpm capability-gaps:apply` takes reviewed `slug<TAB>capability` pairs
+  only, and the accepted list ships in `docs/reviews/` with the rejections
+  and their reasons beside it.
+
+- b0c8370: Refresh Audio Blast: 0 new, 0 discontinued, 51 updated.
+
+  Every Audio Blast plugin and sample pack now carries the current
+  product text, specs and release dates from the maker's pages, and
+  video entries gained their missing provider and title fields.
+
+- d15d9e4: Refresh Klanghelm: 0 new, 0 discontinued, 10 updated.
+
+  Every Klanghelm entry now carries the current description, feature list
+  and system requirements from the maker's product pages, along with
+  release history for DC8C, VUMT and VUMT deluxe. MJUC gains a link to
+  the French edition of its manual.
+
+- 6df475d: Refresh Krotos Audio: 0 new, 0 discontinued, 61 updated.
+
+  Every Krotos Audio entry now carries the current description, feature list
+  and specifications from the maker's product pages, covering the nine
+  plugins and all 52 sound effects libraries. Krotos Studio's page has moved
+  to its own domain and its link is updated.
+
+- 81cacdc: Refresh Lindell Audio: 0 new, 0 discontinued, 15 updated.
+
+  Brings the existing Lindell Audio plugin entries up to date with current
+  descriptions, specs, formats, version history and pricing.
+
+- ed53834: Refresh Massey Plugins: 0 new, 0 discontinued, 9 updated.
+
+  Re-checked all nine plugins against the manufacturer site. Every
+  price, format and platform already matched, so the entries now
+  record the date and source their prices were verified from.
+
+- 8c9587f: Seven products superseded by a newer model are now marked discontinued (Belle Epoch, Kilobyte, Micro Clock mkII, Brick Lane 500, Phoenix, Tape Fiasco, Mininn Drum), and Splice's own Astra page is no longer flagged as an aggregator link.
+
+  Scripts: `validate.ts` and `build-sqlite.ts` no longer run on import.
+  Each main-guards its tail and exports its units, and both gain
+  characterization tests (#645, #646): the error-code mapping, markdown
+  scanning, supersedes cycle detection and every advisory warning for the
+  validator, and a fixture catalog built through the real `buildDatabase`
+  into a temp file for the SQLite build, asserting row counts, populated
+  FTS tables, alias search terms, compatibility edges, lineage, io
+  flattening, variants and translations. `buildDatabase` takes a
+  `{ dataDir, outputFile, version }` options object defaulting to the
+  production paths, so `pnpm build` is unchanged.
+
+  `isManufacturerOwnDomain` compares the manufacturer slug against each
+  host label rather than their concatenation (#644), so a maker's
+  subdomain or a multi-part TLD reads as the maker's own site. Measured
+  against the dataset, exactly one entry changes.
+
+- 61f2e29: `pnpm validate-urls --changed-only` is now bounded, so a PR file cannot hold
+  the runner open indefinitely (CWE-400).
+
+  The changed-file path checked every unique URL a file declared with no limit,
+  and a HEAD that timed out was followed by another ten-second GET, so N slow
+  URLs cost up to N×20s. It now carries a work budget: at most 100 unique URLs
+  per file and 500 per run, with a file over budget reported as broken rather
+  than checked, and a five-minute aggregate deadline shared by every request
+  through one `AbortSignal`, so URLs still queued when it fires report instead
+  of starting more work. A timed-out or aborted HEAD is no longer retried with
+  GET, since that failure is deterministic; the 401/403/405 GET retry is
+  unchanged. Scheduled full-catalog runs stay unbudgeted, and both workflow
+  jobs gain an explicit `timeout-minutes` backstop.
+
 ## 3.58.0
 
 ### Minor Changes
