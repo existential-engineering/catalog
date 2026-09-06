@@ -16,23 +16,28 @@ url: https://www.liquidsonics.com/software/m7-link/
 prices:
   - amount: 199
     currency: USD
-description: MIDI DAW integration for your Bricasti M7 hardware reverb unit - AAX, AU, VST
+description: MIDI DAW integration for your Bricasti M7 hardware reverb unit.
 details: |-
-  M7 Link is a MIDI DAW integration controller plugin for the Bricasti M7 hardware reverb unit, enabling full program recall, parameter control, and M7 system management across major DAWs via industry-standard MIDI protocol.
+  M7 Link is a plug-in that brings a Bricasti M7 hardware reverb under DAW control over the industry standard MIDI protocol. It offers full program recall, parameter control and comprehensive M7 system management across all major DAWs, so the hardware unit can be integrated into a modern studio session workflow.
 
-  The plugin supports full M7 patch save and recall to user presets, live automation capabilities, and system settings control including brightness and I/O configuration. Multi-unit support allows users to create instances for multiple hardware units within the same session.
+  Setup connects the MIDI input and output of the Bricasti M7 to a set of dedicated MIDI ports on a compatible MIDI device, after which the port is selected inside M7 Link and the reverb is controlled as though it were a plug-in. Audio is routed separately through the user's own audio interface, since the plug-in carries control data rather than the reverb signal itself.
 
-  M7 Link requires a compatible MIDI device and a Bricasti M7 or M7M hardware unit. Licensing is handled via iLok Cloud, iLok 2/3 dongle, or local iLok activation, with iLok License Manager v5 or later required. The plugin occupies approximately 50 MB of disk space.
+  Whole M7 patches can be saved and recalled to user-saves, live automation can be performed from the DAW timeline, and M7 unit system settings including display brightness and I/O configuration can be managed from the interface. Studios running racks of M7s can create one instance per hardware unit and drive them all from a single session.
 
-  A 14-day free trial is available for both macOS and Windows. macOS support covers 10.13 or later on Intel and Apple Silicon (native and Rosetta). Windows support covers Windows 7 or later on Intel and AMD processors.
+  The plug-in ships as VST 2.4, VST 3, Audio Unit (AUv2) and AAX Native, with the macOS installer providing 64-bit Universal Binaries for Apple Silicon and Intel x64. Licensing runs through iLok Cloud, an iLok 2/3 USB dongle or iLok local machine activation. Version 1.2.0 introduced a resizable interface, and Apple Silicon support arrived in version 1.1.1.
+
+  M7 Link was developed under the Reverb Foundry name.
 specs: |-
-  - Supported OS: macOS 10.13+, Windows 7+
-  - Architecture: 64-bit only (Intel, Apple Silicon native and Rosetta on Mac; Intel and AMD on Windows)
-  - Plugin formats: VST 2.4, VST 3, Audio Unit (AUv2), AAX Native (Pro Tools 12.5.1+)
-  - Licensing: iLok Cloud, iLok 2/3 dongle, or local iLok activation; iLok License Manager v5+
-  - Disk space: ~50 MB
-  - Hardware requirement: Bricasti M7 or M7M hardware unit
-  - MIDI device required for integration
+  - Windows 7 or macOS 10.13
+  - VST 2.4, VST 3, Audio Unit (AUv2) and AAX Native (Pro Tools 12.5.1 or above is required on Windows platforms)
+  - iLok Cloud, iLok 2/3 USB dongle or iLok local activation
+  - iLok License Manager v5 or above
+  - 50 MB per plug-in
+  - Compatible MIDI device (see the user guide for a list of known compatible devices)
+  - Bricasti M7 or Bricasti M7M hardware reverb
+  - 64-bit DAW and operating system (v1.0.3 and below available in 32-bit)
+  - Intel, AMD or Apple Silicon processor (native and Rosetta)
+  - macOS installer contains 64-bit Universal Binaries (Apple Silicon and Intel x64) for VST2, VST3, AU and AAX
 versions:
   - name: 1.2.8
     description: Current release
@@ -44,3 +49,26 @@ versions:
     description: Framework update; macOS 10.13 minimum
   - name: 1.2.3
     description: Cubase lock-up fix; GarageBand compatibility; macOS Sonoma support
+  - name: 1.2.6
+  - name: 1.2.2
+  - name: 1.2.1
+  - name: 1.2.0
+  - name: 1.1.3
+  - name: 1.1.2
+  - name: 1.1.1
+  - name: 1.1.0
+  - name: 1.0.6
+  - name: 1.0.5
+  - name: 1.0.4
+  - name: 1.0.3
+  - name: 1.0.2
+  - name: 1.0.1
+  - name: 1.0.0
+releaseDate: 2019-06-12
+videos:
+  - videoId: "794117478"
+    provider: vimeo
+    title: An Overview Of M7 Link For Bricasti M7
+  - videoId: "794118848"
+    provider: vimeo
+    title: Getting Started With M7 Link For Bricasti M7
