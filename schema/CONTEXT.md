@@ -745,6 +745,7 @@ Content entries (presets, sample packs, expansions) live in `data/content/` as a
 - `manufacturer` - Slug reference to manufacturer
 - `primaryCategory` - Main category (from list above)
 - `description` - Short description (markdown)
+- `hp` - Optional panel width in Eurorack HP (positive integer); modular entries only, never guessed
 
 ### Accessories
 Accessory entries (cables, stands, acoustic treatment) live in `data/accessories/` as a separate collection.
@@ -794,6 +795,9 @@ accurately. Both are optional 1-based integers; numbering is independent per edg
 - Ports stacked vertically share a `columnPosition` and differ by `rowPosition`.
   A single-row edge uses `rowPosition: 1` on every port.
 - Place `columnPosition`/`rowPosition` immediately after `position`.
+- `pnpm validate` enforces the shape (E122 to E125): positive integers, always set
+  as a pair, no two ports of an edge in one cell, and every port of a hinted edge
+  hinted. A single-column stack (a patchbay's rows) carries `columnPosition: 1`.
 
 These are visual/spatial values best read off product photos or the manufacturer's
 rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk import.

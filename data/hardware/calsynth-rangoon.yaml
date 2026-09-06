@@ -1,0 +1,84 @@
+id: UPtbc2Brt2cOjLAP2YzH1
+name: Rangoon
+manufacturer: calsynth
+primaryCategory: physical-modeling
+categories:
+  - modular
+  - synthesizer
+hp: 12
+url: https://calsynth.com/products/rangoon-mutable-rings-clone-with-sliders-silver
+prices:
+  - amount: 209
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: "Rangoon is a 12hp clone of the Mutable Instruments Rings module, a
+  modal resonator offering one, two or four-voice polyphony across three modes:
+  Modal, Sympathetic and Modulated/inharmonic."
+details: |-
+  NOW FEATURING A HIGH-QUALITY SILVER ALUMINUM PANEL
+
+  Rangoon is a 12hp clone of the venerable Rings module - resonating with one, two or four-voice polyphony in one of 3 modes, Modal, Sympathetic and Modulated/inharmonic. Three resonator models
+
+  All resonator models can be used polyphonically, with 1, 2 or 4 polyphony voices.
+specs: |-
+  - Modal resonator, as used in Elements.
+  - Sympathetic strings, modelled by a network of comb filters.
+  - String with non-linearity/dispersion (comb filter with multimode filter and non-linearities in the loop).
+  - Structure . With the modal and non-linear string models, controls the inharmonicity of the spectrum (which directly impacts the perceived "material"). With the sympathetic strings model, controls the intervals between strings.
+  - Brightness . Specifies the brightness and richness of the spectrum.
+  - Damping . Controls the damping rate of the sound, from 100ms to 10s.
+  - Position . Specifies at which point the structure is excited.
+  - Audio input accepting modular level signals, up to 16 Vpp.
+  - Two audio outputs, either splitting odd/even partials in monophonic mode, or even/odd notes in polyphonic mode.
+  - Voltage change detector on the V/O input, allocating a new polyphony voice each time a different note is played.
+  - Internal exciter triggered by the STRUM input (filtered pulse or noise burst), allowing the module to be used without an external excitation source.
+io:
+  - key: MIlsYjtL
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GS7jOb4U
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: oNg3XEBy
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: C9bD99rZ
+    name: V/O Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: erLOKYaR
+    name: STRUM
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zbYqhtLq
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Top

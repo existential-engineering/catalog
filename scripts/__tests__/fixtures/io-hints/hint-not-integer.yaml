@@ -1,0 +1,24 @@
+# Fixture for scripts/__tests__/validate-io-hints.test.ts: E122.
+name: Hint Fixture Not Integer
+manufacturer: eventide-audio
+primaryCategory: multi-effect
+description: Validation fixture with a zero row and a fractional column.
+io:
+  - name: Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+    columnPosition: 1
+    rowPosition: 0
+  - name: Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+    columnPosition: 1.5
+    rowPosition: 2

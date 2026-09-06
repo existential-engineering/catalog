@@ -1,0 +1,136 @@
+id: -kRfp2sGMcl0iJKj3Gim7
+name: Cinco
+manufacturer: calsynth
+primaryCategory: synthesizer
+categories:
+  - modular
+hp: 14
+url: https://calsynth.com/products/cinco-5-osc-in-1-module-populated-pcb-panel-set
+prices:
+  - amount: 75
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Cinco is a five-oscillator analog Eurorack module for generating
+  drones, chords and massive layered sounds, with individual tuning, level, and
+  pitch/FM CV controls plus a mixed and individual outputs.
+details: |-
+  five oscillators in a module
+
+  QUICK START GUIDE (opens in new window)
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP.
+
+  CINCO consists of a series of five oscillators that can be controlled in pitch from a single source. It generates drones, chords and massive walls of sound that stand out impressively from classic single-wave oscillators. key features
+
+  specs & downloads
+
+  documentation
+
+  videos
+
+  Cinco boasts five analog oscillators capable of generating drones or chords comprising five notes, accessible from the MIX OUT socket. Each oscillator's tuning can be adjusted independently using the TUNE and FINE controls. Simultaneous pitch control for all five oscillators is facilitated by patching CV to the CV ALL input. Moreover, the TUNE ALL knob allows for collective transposition of all oscillators, with the range of transpose amount adjustable via a trimmer located on the module's rear. While Cinco wasn't specifically designed for precise 1V per octave tracking, you can achieve close approximation by calibrating tuning using trimmers located on the module's back. The first oscillator is slightly tuned below the rest, while the last oscillator is slightly tuned above. The fixed oscillator tuning can be changed with optional capacitors on the circuit board. Oscillators 1 and 2 offer a choice between a SAW or PULSE waveform, each selectable via dedicated toggle switches. Pulse width adjustment can be done manually using the PLS WIDTH knobs or via CV modulation. In the case of CV modulation, the PWM knob controls the intensity of the modulation. It's important to note that these PWM knobs aren't attenuators; hence, incoming CV cannot be completely deactivated for pulse width control but can be reduced to a pleasant level. Oscillators 3 to 5 exclusively output a saw waveform and include additional frequency modulation inputs (FM IN). Applying voltage to these inputs modulates the frequency (pitch) of the oscillators. The FM AMT controls determine the degree of CV influence on the frequency. Similar to previous controls, the FM AMT knobs aren't attenuators, meaning full left rotation won't completely eliminate FM, but rather reduce it to a minimal level. Notably, the FM IN input of oscillator 3 is normalized to the other FM inputs. This facilitates pitch control for oscillators 3 to 5 alongside the primary CV ALL pitch input. If desired, this normalization can be disabled by desoldering an SMD bridge located on the back of the PCB or by connecting dummy cables (patch cables that are not connected further) to the other FM inputs. Utilize the five LEVEL controls to precisely adjust the volume of each oscillator or completely deactivate them by turning the controls fully counterclockwise. Additionally, each oscillator is individually outputted via the OUT sockets located at the bottom, allowing for further isolated processing of the signals with external modules. Importantly, these individual outputs are not affected by the LEVEL controls and typically produce louder signals compared to the mixed output. Cinco isn't just a source for rich and harmonically versatile analog sounds; it's also capable of generating harsh and earthshaking waveforms, particularly when utilizing the FM inputs.
+specs: |-
+  - Five Analog Oscillators
+  - 2x Saw or Pulse and 3x Saw Waves
+  - Individual Pitch Controls
+  - Single CV Pitch Input
+  - Transpose all Oscillators
+  - Internal Mixer
+  - Individual Outputs
+  - Pulse Width Control (OSC 1 & 2)
+  - FM Inputs (OSC 3, 4 & 5)
+  - Skiff friendly
+  - Wrong polarity protection
+  - width: 14 HP
+  - depth: 30 mm
+  - power: 65 mA @ +12V / 43 mA @ -12V
+io:
+  - key: sGwTPaPE
+    name: MIX OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: xWUerUgu
+    name: CV ALL
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: iLRjI2Fb
+    name: FM IN 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: hFVZ2N92
+    name: FM IN 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 2z2n5GJs
+    name: FM IN 5
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 5jBtFwKk
+    name: OUT 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: yPg5Oi8d
+    name: OUT 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: I5Ua8AiM
+    name: OUT 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 9Yb6Xv41
+    name: OUT 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: xaQBPMgB
+    name: OUT 5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 9II1NFZW
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

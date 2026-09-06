@@ -1,0 +1,181 @@
+id: O_HfzCXWQ6xfQz_O32sTr
+name: INFLUENCER
+manufacturer: calsynth
+primaryCategory: modular
+categories:
+  - utility
+  - sequencer
+hp: 14
+url: https://calsynth.com/products/influencer-diy-populated-pcb-panel-set
+prices:
+  - amount: 69
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: INFLUENCER is a 14HP Eurorack multiple random CV generator
+  combining a VC clock/LFO, fall envelope generator, sample & hold, AND/OR
+  comparator, and dual smooth random CV generator. It is sold as a populated PCB
+  and panel set requiring additional pots, jacks and knobs to complete.
+details: |-
+  MULTIPLE RANDOM CV GENERATOR 14HP
+
+  QUICK START GUIDE (opens in new window)
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP.
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP.
+
+  INFLUENCER offers a versatile collection of CV tools and creative unpredictability, divided into five distinctive sections, each serving a distinct purpose. With an array of modulation sources and an added touch of uncertainty, INFLUENCER stands as your comprehensive CV powerhouse. The TOP SECTION is the VC INTERNAL CLOCK and TRIANGLE LFO. The rate of the clock and LFO can be controlled by the RATE knob or CV. The clock signal is normalised to the trigger input of the FALL section. The TRIANGLE wave at the WAVE socket is also routed to the WAVE/RNDM SWITCH of the FALL section. When the switch is in the upper position and the attenuator is turned to the left, the wave will affect the FALL length. In the lower position, the FALL CV is slowly randomised. The SECOND SECTION is a FALL ENVELOPE GENERATOR. It can be triggered internally or externally and its fall time can be controlled by the FALL TIME knob or by CV. An inverted version of the fall output is also available. The THIRD SECTION is the SAMPLE & HOLD section. In one mode, it can sample and store a voltage from the FALL CV socket and output it at the SP OUT socket when the gate at GATE is high (Sample & Hold). In another mode, it can pass through the incoming voltage when GATE is high. It then samples and stores the last voltage applied when GATE is low (Sample & Track). The modes are selected by the MODE switch. The STEPPED potentiometer controls the level of the incoming CV signal. Internally the CLOCK is normalised to the GATE input. The CV input can be fed by an external signal, an internal SMOOTH RANDOM CV or by internal NOISE. Please note that this section may produce noise bursts in Sample & Track mode. The FOURTH SECTION is an AND / OR COMPARATOR that compares two mixable inputs and outputs the MAXIMUM CV and MINIMUM CV of both. It also generates a GATE at B-GATE if IN B is greater than IN A. Note that MIN LED barley flashes with low CV levels.The LAST SECTION is a DUAL SMOOTH RANDOM CV GENERATOR. It provides a constantly changing CV at SMOOTH I and SMOOTH II, slowly meandering in about 60 second cycles. The SMOOTH CV input will affect the SMOOTH outputs in unpredictable ways, sometimes not at all. Internally there is another SMOOTH RANDOM GENERATOR which is normalised to the RNDM switch position of the FALL section, the CLOCK CV and the SOURCE switch of the SAMPLE & HOLD section. Like the others, this SMOOTH GENERATOR may or may not be influenced by the INFLUENCE input. NOISE OUT allows access to the internal NOISE GENERATOR. You could also use the module as an OSCILLATOR.
+io:
+  - key: I28kljzE
+    name: RATE CV IN
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: R2uiuBXE
+    name: WAVE OUT
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: w46Zpa91
+    name: TRIG IN
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: mnBtD8Ot
+    name: FALL CV IN
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Z8aqxJRg
+    name: FALL OUT
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: DBTD11Sy
+    name: FALL OUT INV
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Jfa66RGl
+    name: SP OUT
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: jwkigrhL
+    name: GATE IN
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Zjr7gx8H
+    name: S&H CV IN
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: tOxsZdWa
+    name: IN A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: MeIBAU0z
+    name: IN B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: nOnMhS23
+    name: MAX CV OUT
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: hfS138zY
+    name: MIN CV OUT
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: kALbtUtn
+    name: B-GATE OUT
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: yjtPWgKc
+    name: SMOOTH I OUT
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: clSBlNTf
+    name: SMOOTH II OUT
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 2OnS4h4B
+    name: SMOOTH/INFLUENCE CV IN
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: kpXvN48H
+    name: NOISE OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: dHvgushE
+    name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

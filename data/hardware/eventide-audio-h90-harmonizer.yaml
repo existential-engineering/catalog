@@ -23,15 +23,21 @@ capabilities:
   - ring-modulation
   - rotary
   - wah
+  - freeze
+  - granular
+  - pitch-correction
+  - reverse
+  - beat-slicing
 url: https://www.eventideaudio.com/pedals/h90/
 description: A next-generation multi-effects powerhouse with 74 algorithms and
   comprehensive I/O, designed for guitar, bass, synths, and more, offering
   flexible routing and extensive sound possibilities.
 io:
-  # Most jacks are on the rear (Top) edge: Inputs and Outputs in 2x2 grids
-  # (columns left-to-right, rows top-to-bottom), then Exp/Ctl, USB-C, and Power
-  # in a single row to their right. The MIDI In and Out/Thru jacks are on the
-  # Left side of the pedal. See the H90 Quick Reference Guide.
+  # Most jacks are on the rear (Top) edge, viewed head-on: Inputs and Outputs
+  # in 2x2 grids (columns left-to-right, rows top-to-bottom), then Exp/Ctl 1
+  # over 2, then USB-C and Power, which sit on the lower row beside Exp/Ctl 2.
+  # The MIDI In and Out/Thru jacks are on the Left side of the pedal. See the
+  # H90 Quick Reference Guide (I/O page) and User Manual Fig. 2.4 and 2.5.
   # Audio jacks are 1/4-inch TS; each in/out can be toggled between instrument
   # and line level in the H90 software (the rear-panel "Line Lvl" LEDs indicate
   # the current setting). `type` records the typical default; the toggle is noted
@@ -177,7 +183,7 @@ io:
     maxConnections: 1
     position: Top
     columnPosition: 6
-    rowPosition: 1
+    rowPosition: 2
   - key: Oa2UxOht
     name: Power
     signalFlow: input
@@ -189,7 +195,7 @@ io:
     maxConnections: 1
     position: Top
     columnPosition: 7
-    rowPosition: 1
+    rowPosition: 2
   - key: ox2QSJzI
     name: MIDI In
     signalFlow: input

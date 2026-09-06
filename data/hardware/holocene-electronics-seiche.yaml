@@ -1,0 +1,88 @@
+id: cdw_8tBFwFkxrBG6aF9Ko
+name: SEICHE
+manufacturer: holocene-electronics
+primaryCategory: filter
+categories:
+  - distortion
+  - modulation
+capabilities:
+  - filter
+  - distortion
+url: http://www.holocene-electronics.net/products/seiche
+prices:
+  - amount: 230
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A 16HP complex filter module combining traditional analog filtering
+  with nonlinear wave shaping, offering two channels each with a switchable
+  state variable filter, integrated wavefolder, and ping input for percussive
+  ringing tones.
+details: |-
+  What is Seiche?(pronounced say-sh)
+
+  Seiche is a 16HP "Complex Filter" combining traditional analog filtering with nonlinear wave shaping. Each of the two channels offers:
+
+  QUICKGUIDE :)
+specs: |-
+  - OTA Based 2-pole State Variable Filter (Switchable between Lowpass, Bandpass, Highpass)
+  - Integrated Wavefolder
+  - Normalization for FM or AM between channels switchable using a toggle switch.
+  - Ping input for natural ringing percussive tones. Think of it as a dual voice core, filter sculptor, waveshaping distortion module, and character rich Lowpass gate all in one.
+io:
+  - key: Ew36yySh
+    name: Channel 1 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: InNXgKsU
+    name: Channel 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: swOkjZMr
+    name: Channel 1 Ping Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bgn6WvdL
+    name: Channel 2 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AzFfPuIe
+    name: Channel 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: mnnMklpa
+    name: Channel 2 Ping Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: o2zisVEX
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

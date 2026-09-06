@@ -1,0 +1,121 @@
+id: 59ijsoFRQ-_X7rVhLyl_G
+name: ALSTADEN
+manufacturer: calsynth
+primaryCategory: modular
+categories:
+  - synthesizer
+  - filter
+hp: 16
+url: https://calsynth.com/products/alstaden-diy-populated-pcb-panel-set
+prices:
+  - amount: 69
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: ALSTADEN is an analog waveshaping oscillator Eurorack module
+  offering five waveforms shaped by diode clipping and folding, with an onboard
+  equalizer and internal VCA.
+details: |-
+  ANALOG WAVESHAPING OSCILLATOR / 16 HP
+
+  QUICK START GUIDE (opens in new window)
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP.
+
+  ALSTADEN is your source for harsh and harmonically rich sounds. It is a newly developed waveshaping tone generator and resembles the secondary oscillator of the semi-modular synthesizer EUPHORIA. The waves are formed by a combination of diode clipping and folding of the waveform by adding mirror images of the upper and lower parts of the waveform. This creates more high harmonics and interesting timbral variations. It also features an equalizer, which is quite unusual for oscillators, but offers more sonic possibilities. The oscillator module offers five different waveforms WAVE A, WAVE B, PULSE, SUB and SINE. The level of the individual waveforms can be adjusted with sliding potentiometers. The range of the levels depends mainly on the gain you set during calibration. Distortion can easily occur in the upper positions of the sliders if you have set the gain high. The pulse width of the PULSE waveform can be changed manually with the PULSE PWM knob. There is also a CV input CV PWM with its own attenuator to control the pulse width via CV. At the heart of this oscillator are the two waveshapers WAVE A and WAVE B. Harmonics are added by wavefolding and can be changed by turning the SHAPE A and SHAPE B knobs. Additionally there is a CV input CV SHAPE A1 and CV SHAPE B1 with an attenuator each for voltage controlled wave folding. WAVE B has a second CV input without attenuator that allows even more control over the wavefolding state. The SUBOCTAVE has two stages of -1 and -2 octaves. Select your preferred division with the help of the SUB -1 and SUB -2 on/off switches. Unexpectedly, you can equalize the output of the oscillator with the TONE control. It accentuates either low or high frequencies of all waveforms before they are fed to a internal VCA. The INTERNAL VCA can be controlled via the ENV IN socket. Patch any CV here to change the level of the main output. Additionally, there is also a FM input. You can apply exponential or linear FM by feeding any (preferably high frequency) voltage into the FM input. Select an FM type with the EXP/LIN switch. If you set the switch to the middle position, no FM will be applied. V/OCT is the input for the application of a pitch CV. The pitch can be controlled manually with the PITCH and FINE potentiometers. EXT IN A and EXT IN B are audio inputs that allow you to use the oscillator as a waveshaper for external signals. When a jack is connected to these inputs, the corresponding internal waveform is switched off. The external signals will also be routed through the level potentiometers, EQ and VCA. Details:
+  • Analog Oscillator with 5 Waveforms
+  • CV Waveshaper and VCA
+  • EQ and External Inputs
+  • Level-Potentiometers
+  • Linear and Exponential FM
+  •3U Eurorack module, 16 HP wide
+  • Power consumption: 75mA at +12 V, 65mA at -12 V
+io:
+  - key: bII0Es1N
+    name: CV PWM
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: yzrVhXyz
+    name: CV SHAPE A1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: VD3dTSbX
+    name: CV SHAPE B1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: H2HuvP6D
+    name: CV SHAPE B2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: NVkycJFh
+    name: ENV IN
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Uy95LbmA
+    name: FM
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: C2LFVY61
+    name: V/OCT
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: t9yQRTOL
+    name: EXT IN A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: EjPza4Aq
+    name: EXT IN B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: EJymAc9d
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: YLUwH8YT
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

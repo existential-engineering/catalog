@@ -15,6 +15,11 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 - `pnpm typecheck` - Run TypeScript type checking
 - `pnpm build` - Build SQLite database
 - `pnpm format` - Format YAML files with Prettier
+- `pnpm capability-coverage` - Report which categories carry `capabilities`
+- `pnpm capability-gaps` - Report operations an entry's prose names but its
+  `capabilities` omits
+- `pnpm hp:backfill` - Fill `hp` on modular entries from their own prose and
+  a reviewed list (`--review <tsv>`, `--apply`)
 - `pnpm format:check` - Check formatting
 
 ## Catalog Schema Compatibility
@@ -295,7 +300,19 @@ USB-C`). Not in an io entry: the io shape has no note field, so a note
   its connection with `type: midi`.
 - **Footswitch and expression jacks** are `category: audio`,
   `type: expression`, with `connection` per the jack. This matches the
-  existing Benson entries that review confirmed.
+  existing Benson entries that review confirmed. A jack named for an
+  expression or sustain pedal but typed `cv/gate` is the same mistake from
+  the other side: Strymon and Fender entries typed them that way while
+  Chase Bliss typed them `expression`, and the setup graph now draws the
+  two as different shapes. `pnpm dataset:audit` lists them
+  (`expression-typed-cv`).
+- **CV, gate and clock jacks are `category: audio`.** They carry analog
+  control voltages and pulses whatever the connector; `word clock` is the
+  digital exception and stays `digital`. The catalog filed 461 cv/gate
+  jacks under `digital` before this was written, which is why Studio
+  resolves CV colour by type before category (AUREO-1099) and why
+  `pnpm dataset:audit` reports the split (`cv-gate-category`) rather than
+  `pnpm validate` failing on it.
 - **USB host ports and network ports are `signalFlow: bidirectional`.**
 - **Speaker outputs on amplifiers are `type: speaker-level`**, one entry per
   jack, with the impedance in the name (`Speaker Output 8 ohm`).
@@ -309,14 +326,23 @@ USB-C`). Not in an io entry: the io shape has no note field, so a note
 - **`type` and `connection` never swap.** A connector name in `type` is a
   hard error (E117), not an advisory warning, so an import that meets it
   must fix the value rather than keep it and note it.
+- **Layout hints come in pairs and cover the whole edge.** `rowPosition` and
+  `columnPosition` are 1-based integers (E122), always set together (E123),
+  unique per `(position, rowPosition, columnPosition)` cell (E124), and once
+  any port on an edge carries them every port on that edge does (E125),
+  because Studio takes a hinted side down the grid path and back-fills the
+  rest row-major. They are authored against a photo or manual with
+  `pnpm enrich-io` or `/io-enrich`, never by a bulk import, and a merge
+  refresh leaves an existing hint exactly as it found it.
 
 ## Capabilities
 
 `capabilities` records **what a product does** — the audio processing
 operations it performs — as a closed vocabulary in `schema/capabilities.yaml`.
 It is a hardware-only field today, populated across the Effects category group
-(hand-authored for `multi-effect`, derived elsewhere);
-`pnpm capability-coverage` reports which categories have been assessed.
+(hand-authored for `multi-effect`, derived elsewhere) and written by both
+import shapes for entries they create; `pnpm capability-coverage` reports which
+categories have been assessed.
 
 ```yaml
 primaryCategory: multi-effect
@@ -366,6 +392,51 @@ equidistant from every other.
   implies it by definition. Writing the value on an entry alone fails
   validation with E119.
 
+**A capability list is only as current as the pass that wrote it.** Until
+this pass nothing wrote the field during import, merge, or maintenance: the
+agent command never mentioned it and the fast runner's `vocab.ts` did not
+even load `capabilities.yaml`, so its structured schema could not emit
+one. Every populated entry came from the original `multi-effect` pass plus
+`pnpm derive-capabilities`, and everything imported afterwards carried
+nothing. Both import shapes now write it (see "Capabilities" in the racks
+repo's CLAUDE.md), which is what keeps the rest of this section from
+needing a re-run every quarter.
+
+`pnpm capability-gaps` reports the drift that accumulated meanwhile: for
+every entry that already carries capabilities, the operations its own
+`description`/`details`/`specs` name but the list does not. The Eventide
+H90 is the case it was built from — no `granular` while its `details`
+described four granular algorithms and it linked a page titled "Eventide
+Goes Granular". Scope is deliberately entries that already carry the field:
+one with none is unassessed, not wrong, and `pnpm capability-coverage`
+says so.
+
+- **There is no bulk apply, and that is the design.** Tier-1 probes measured
+  about 87% precision against the corpus before tightening, and the residue
+  is not lexical: prose names a sibling product ("the Mini platform that
+  also spawned DITTO LOOPER"), or a homonym (the Roland VP-550's "Mixed
+  Chorus" is a choir voice). `discontinued:apply` gets a blanket `--signal`
+  because "superseded" and "defunct manufacturer" are facts about the graph;
+  a probe is a guess about language, so this tool gets only the `--files`
+  half of that contract. `pnpm capability-gaps:apply --pairs <file>` takes
+  `slug<TAB>capability` lines and nothing else. The pair is the reviewed
+  unit rather than the slug, because an entry commonly has one accepted
+  finding and one rejected.
+- **The accepted list is committed** (`docs/reviews/`), with the rejections
+  and their reasons in comments beside it. A pass that leaves no record of
+  what it declined invites the next one to re-litigate the same entries.
+- **Five failure classes are guarded, one is not.** Denied spec rows
+  ("Arpeggiator/Sequencer: None"), measured specs ("total harmonic
+  distortion below 0.001%", a speaker's "compression driver"), compatibility
+  ("works with cabinet simulators"), influence ("inspired by the Akai S950
+  sampler") and simile ("similar to auto-wah effects") each defeated a probe
+  that looked sound until it ran, and each is a regression case in
+  `capability-probes.test.ts`. Sibling-product mentions have no guard,
+  because separating one needs a product index rather than a regex — which
+  is why those probes sit in the review tier and why the reviewed list
+  exists. A probe producing false positives moves down a tier; it never
+  acquires a per-entry exception list.
+
 **Two provenances, and the difference matters.** A hand-authored list is read
 out of the entry's own prose and can name operations the categories never
 admitted. A derived list, written by `pnpm derive-capabilities`, projects the
@@ -378,6 +449,41 @@ deliberately declines to map: family names (`dynamics`, `modulation`),
 topologies (`multiband`), composites (`preamp`, `channel-strip`) and the
 non-functional axes. Mapping any of those would be guessing, and a guessed
 capability is indistinguishable from a verified one once written.
+
+## HP
+
+`hp` is a hardware entry's panel width in Eurorack horizontal pitch units
+(1 HP = 5.08 mm), the one number Studio's faceplate node needs to draw a
+module at scale. It is additive in the database (`hardware.hp`, nullable,
+schema migration 23, no `schema_version` bump).
+
+```yaml
+primaryCategory: modular
+categories:
+  - utility
+hp: 20
+```
+
+- **Integer HP only.** `hp: 12` validates; `hp: "12HP"`, `hp: 12.5`, `hp: 0`
+  and a negative value fail with E101. Half-HP does not exist in the
+  standard, and the unit never goes in the value.
+- **Modular entries only.** Set it on entries filed under `modular` (as
+  `primaryCategory` or in `categories`). A pedal or rack unit has no HP; the
+  racks `io-lint` flags `hp` on a non-modular entry.
+- **Never guessed.** A value comes from the maker's page or manual, from the
+  entry's own prose ("12HP", "Width: 8 HP"), or from ModularGrid when the
+  maker states none. An entry with no source stays without `hp`, and
+  `pnpm dataset:audit` lists it (`modular-missing-hp`) and reports coverage
+  (`modular N of M entries carry hp`). A case, busboard or non-Eurorack
+  system filed under `modular` has no single panel width and stays without
+  `hp` on purpose; a case's row capacity ("104HP per row") is not a width.
+- **The backfill is reproducible.** `pnpm hp:backfill` reads every modular
+  entry's `name`/`description`/`details`/`specs`, applies a width the prose
+  states exactly once, and reports the rest as ambiguous or unsourced with
+  the url to read. Widths read off a page go in a `slug<TAB>hp<TAB>source`
+  review list, entries with no width to give in `slug<TAB>skip<TAB>reason`
+  lines, both committed under `docs/reviews/` so the next pass does not
+  re-litigate them (`docs/reviews/2026-09-hp-backfill.tsv` is the first).
 
 ## Prices
 

@@ -1,0 +1,81 @@
+id: kF9yBW4yFGH2eaUeoP0rJ
+name: YACE
+manufacturer: calsynth
+primaryCategory: modulation
+categories:
+  - modular
+hp: 6
+url: https://calsynth.com/products/yace-diy-populated-pcb-panel-set
+prices:
+  - amount: 59
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A fully featured Eurorack decay envelope module with
+  voltage-controlled decay length, cyclic mode, and adjustable response curve
+  for shaping VCAs, filters, and oscillators.
+details: |-
+  CV DECAY ENVELOPE 6HP
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP.
+
+  YACE is a fully featured decay envelope with voltage controlled decay length. It offers the best you can expect from a simple decay module and is a great companion for controlling other VCAs, filters or sound-changing oscillator controls. A trigger or gate signal at the GATE socket (INP in the picture) starts the decay envelope and a corresponding CV is output at the OUT socket. An inverted version is available at the INV socket. With the DECAY slider you can change the decay time manually or by CV. With a CV attenuator you can control the level of the length change by CV. The DEC LVL potentiometer controls the level of the decay and is great for controlling filters. A jumper on the rear panel lets you choose whether the DEC LVL potentiometer affects only the regular decay output or also the inverted output. With the RESPONSE control you can change the response curve from very snappy to rather long and soft. The RANGE switch offers three decay length ranges, from fast decay for drums to very long decay curves for slowly evolving sounds. The INP switch changes the input mode from trigger to pulse. Pulse mode adds a sustain stage to the envelope that holds the envelope as long as the incoming pulse is high
+
+  The CYC switch activates a cyclic mode where the decay restarts when it reaches its end. In addition, an EOC (End Of Cycle) pulse is output at the EOC socket. With the INFLUENCE input (marked by a curved arrow pointing upwards) you can further change the decay level. Connect an LFO or triggers here to create attacked and more organic decay envelopes. It only responds to voltages above 5V.
+io:
+  - key: 7oH8fSDO
+    name: Gate Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 56d8vX2u
+    name: Decay CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: n4xpJL7L
+    name: Influence Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: eYx0rvPe
+    name: Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 28OTlrus
+    name: Inv Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gl69gpHH
+    name: EOC Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 9uTzRkcG
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Top

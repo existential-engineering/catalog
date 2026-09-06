@@ -1,0 +1,72 @@
+id: SgxWDqIhrq_bgHV7DHHcc
+name: KAUI
+manufacturer: calsynth
+primaryCategory: modular
+categories:
+  - synthesizer
+  - analog
+hp: 8
+url: https://calsynth.com/products/kaui-diy-populated-pcb-panel-set
+prices:
+  - amount: 59
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: KAUI is an 8HP dual-oscillator Eurorack sound generator designed
+  for Techno basses and leads, featuring two oscillators with square-to-triangle
+  waveshaping blended with sine waves, noise, and CV pitch control.
+details: |-
+  DUAL TECHNO OSCILLATOR 8HP
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP.
+
+  KAU'I is a basic two oscillator sound generator that was designed to create Techno basses and leads. Oscillators A and B share identical designs but cover distinct pitch ranges. Using the A and B knobs located atop the module, you can seamlessly transition the waveform of each oscillator from a square-wave to a triangle wave. The SHAPE2 knobs then take this waveform and blend it with an independent sine-wave signal for each oscillator. The LVL knobs adjust the volume of each sound generator, while rotating the NOISE knob introduces white noise to oscillator A on the MIX output. Both oscillators feature a pitch control input accompanied by an attenuator. This input follows a linear voltage-to-frequency response (Hz/Oct), making it ideal for generating unique Techno sequences at lower frequencies. At the module's base, you'll discover a MIX OUT combining the outputs of both oscillators, alongside individual outputs for each oscillator.
+io:
+  - key: hmfydxuG
+    name: OSC A PITCH CV IN
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: El9jCwRU
+    name: OSC B PITCH CV IN
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: WdkIctiQ
+    name: MIX OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: C6X0nFVZ
+    name: OSC A OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: yIuKRi7J
+    name: OSC B OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: XJMrprMZ
+    name: Eurorack Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

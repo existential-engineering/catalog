@@ -18,6 +18,7 @@
 - [ ] Manufacturer exists (or I'm adding it in this PR)
 - [ ] Categories and formats are from the schema files
 - [ ] Identifiers are accurate, if provided (bundle IDs, etc.)
+- [ ] Any `hp` I added or changed names its source in the description
 
 ## Additional Notes
 

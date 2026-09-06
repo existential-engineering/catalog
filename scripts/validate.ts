@@ -7,12 +7,14 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import { marked } from "marked";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
 import { looksLikeAcronymName } from "./lib/acronym-exclusions.js";
 import { getDocsUrl, ValidationErrorCode } from "./lib/error-codes.js";
 import { isIoCombineCandidate, STORAGE_MEDIA_SLOT } from "./lib/io-heuristics.js";
+import { findHintFindings, isPositiveInteger } from "./lib/io-hints.js";
 import { findDuplicateIoKeys, IO_KEY_PATTERN } from "./lib/io-keys.js";
 import {
   findNameArtifacts,
@@ -95,7 +97,7 @@ const categoryGroupsSchema = loadYamlFile<{ groups: Record<string, string[]> }>(
 const POSITION_EXEMPT_CATEGORIES = new Set(categoryGroupsSchema.groups.Instruments ?? []);
 
 // Helper to check if a category is valid (canonical or alias)
-function isValidCategory(cat: string): boolean {
+export function isValidCategory(cat: string): boolean {
   return ALL_VALID_CATEGORY_INPUTS.has(cat);
 }
 
@@ -175,7 +177,7 @@ marked.setOptions({
 /**
  * Determine the appropriate error code from a Zod issue
  */
-function getErrorCodeFromZodIssue(issue: {
+export function getErrorCodeFromZodIssue(issue: {
   code: string;
   message: string;
   path: readonly (string | number | symbol)[];
@@ -242,6 +244,29 @@ function getErrorCodeFromZodIssue(issue: {
     return ValidationErrorCode.E117_INVALID_IO_TYPE;
   }
 
+  // Layout hint errors (E122 to E125). The cross-port rules carry a marker
+  // phrase; a hint that fails the number check is keyed to its path so a
+  // string or a float lands on E122 rather than the generic E101.
+  if (message.includes("io hint pair incomplete")) {
+    return ValidationErrorCode.E123_IO_HINT_UNPAIRED;
+  }
+  if (message.includes("io hint cell occupied twice")) {
+    return ValidationErrorCode.E124_IO_HINT_CELL_OCCUPIED_TWICE;
+  }
+  if (message.includes("io hint edge")) {
+    return ValidationErrorCode.E125_IO_HINT_EDGE_PARTIAL;
+  }
+  if (/\.(?:rowPosition|columnPosition)$/.test(path)) {
+    return ValidationErrorCode.E122_IO_HINT_NOT_POSITIVE_INTEGER;
+  }
+
+  // A hardware `hp` that is not a positive integer is a wrong-typed field,
+  // whichever check produced the issue (a string fails Zod's number check,
+  // a float or zero fails the integer check with a custom message).
+  if (path === "hp") {
+    return ValidationErrorCode.E101_INVALID_FIELD_TYPE;
+  }
+
   // Connector detail errors
   if (message.includes("connectordetail")) {
     return ValidationErrorCode.E115_INVALID_CONNECTOR_DETAIL;
@@ -292,7 +317,7 @@ function getErrorCodeFromZodIssue(issue: {
 }
 
 // Helper to validate markdown content
-function validateMarkdown(content: string): { valid: boolean; error?: string } {
+export function validateMarkdown(content: string): { valid: boolean; error?: string } {
   try {
     // Try to parse the markdown
     marked.parse(content);
@@ -342,7 +367,7 @@ function validateMarkdown(content: string): { valid: boolean; error?: string } {
 }
 
 // Helper to normalize string or string[] to a single markdown string
-function normalizeToMarkdownString(value: string | string[]): string {
+export function normalizeToMarkdownString(value: string | string[]): string {
   if (Array.isArray(value)) {
     // Join array items with double newlines (paragraph breaks)
     return value.join("\n\n");
@@ -437,6 +462,42 @@ const VersionSchema = z
     }
   );
 
+/**
+ * A layout hint field: a 1-based integer or absent. A float or zero here
+ * is a hint Studio would silently coerce, so it is an error (E122) rather
+ * than a value to round.
+ */
+const createHintValidator = (field: "columnPosition" | "rowPosition") =>
+  z
+    .number()
+    .optional()
+    .check((ctx) => {
+      if (ctx.value === undefined || isPositiveInteger(ctx.value)) return;
+      ctx.issues.push({
+        code: "custom",
+        message: `io hint ${field} must be a positive integer (1-based), got ${ctx.value}.`,
+        input: ctx.value,
+      });
+    });
+
+/**
+ * Eurorack panel width in HP: a positive integer or absent. Half-HP does not
+ * exist in the standard and a zero-width module is not a module, so a float,
+ * zero or negative here is a mistake (E101) rather than a value to round.
+ */
+const createHpValidator = () =>
+  z
+    .number()
+    .optional()
+    .check((ctx) => {
+      if (ctx.value === undefined || isPositiveInteger(ctx.value)) return;
+      ctx.issues.push({
+        code: "custom",
+        message: `hp must be a positive integer (Eurorack HP units), got ${ctx.value}.`,
+        input: ctx.value,
+      });
+    });
+
 const IOSchema = z
   .object({
     // Stable per-port key (assigned by pnpm assign-ids). Optional until the
@@ -513,8 +574,11 @@ const IOSchema = z
           ctx.issues.push({ code: "custom", message, input: ctx.value });
         }
       }),
-    columnPosition: z.number().optional(),
-    rowPosition: z.number().optional(),
+    // Layout hints are 1-based integers (E122). Their pairing, cell
+    // uniqueness and edge coverage are checked across the whole io list
+    // in the hardware schema below.
+    columnPosition: createHintValidator("columnPosition"),
+    rowPosition: createHintValidator("rowPosition"),
     description: z.string().optional(),
   })
   .check((ctx) => {
@@ -730,6 +794,7 @@ const HardwareSchema = z
     supersedes: z.string().optional(),
     searchTerms: z.array(z.string()).optional(),
     capabilities: createCapabilitiesValidator(),
+    hp: createHpValidator(),
     description: MarkdownSchema,
     details: MarkdownSchema,
     specs: MarkdownSchema,
@@ -768,6 +833,32 @@ const HardwareSchema = z
         message: `duplicate io key '${dup}' — io keys must be unique within an entry.`,
         path: ["io"],
         input: dup,
+      });
+    }
+  })
+  .check((ctx) => {
+    // Layout hints come in pairs, occupy distinct cells, and cover every
+    // port of the edge they appear on (E123 to E125). Studio takes a side
+    // with any hint down the grid path and back-fills the rest row-major,
+    // so a partly hinted edge renders a grid nobody drew. Edges are the
+    // canonical position so an alias and its target share one grid.
+    const io = ctx.value.io;
+    if (!io || io.length === 0) return;
+    const edges = io.map((port) => ({
+      ...port,
+      position: port.position
+        ? (schemaContext.ioPositionAliases[port.position] ?? port.position)
+        : undefined,
+    }));
+    for (const finding of findHintFindings(edges)) {
+      if (finding.kind === "not-positive-integer") continue; // E122, per field above
+      ctx.issues.push({
+        code: "custom",
+        message: finding.message,
+        // An unpaired finding names the missing field, which has no line
+        // to point at, so it and the edge findings anchor on the port.
+        path: ["io", finding.index],
+        input: io[finding.index],
       });
     }
   })
@@ -925,7 +1016,7 @@ interface DataWithOptionalFields {
  * @param validSupersedesIds - Optional set of valid IDs in the same collection used to verify a `supersedes` reference
  * @returns A ValidationError object containing a summary `errors` array and optional `details` (each with `code`, `message`, `path`, `line`, and `docsUrl`) when validation fails, or `null` when the file is valid
  */
-function validateFile(
+export function validateFile(
   filePath: string,
   schema: z.ZodType,
   allManufacturers: Set<string>,
@@ -1194,7 +1285,7 @@ function validateFile(
  * @param idToSlug - Map from an ID to its corresponding slug used for human-readable paths
  * @returns An array of slugs representing the cycle path (the first slug is repeated at the end to close the cycle), or `null` if no cycle is found
  */
-function detectSupersedeCycle(
+export function detectSupersedeCycle(
   startId: string,
   supersedesMap: Map<string, string>,
   idToSlug: Map<string, string>
@@ -1223,7 +1314,7 @@ function detectSupersedeCycle(
 // ADVISORY WARNING COLLECTION
 // =============================================================================
 
-interface WarningContext {
+export interface WarningContext {
   name?: string;
   primaryCategory?: string;
   io?: Array<{ name: string; type: string; connection: string; maxConnections?: number }>;
@@ -1244,7 +1335,7 @@ interface WarningContext {
  * Collect advisory warnings for a validated file.
  * These are non-blocking and do not affect CI exit code.
  */
-function collectWarnings(
+export function collectWarnings(
   filePath: string,
   data: WarningContext,
   document: ReturnType<typeof loadYamlFileWithPositions>["document"],
@@ -2089,7 +2180,7 @@ function writeConsoleOutput(result: ValidationResult): void {
 // SCOPED VALIDATION (--files)
 // =============================================================================
 
-const COLLECTION_SCHEMAS: Record<string, z.ZodType> = {
+export const COLLECTION_SCHEMAS: Record<string, z.ZodType> = {
   manufacturers: ManufacturerSchema,
   software: SoftwareSchema,
   content: ContentSchema,
@@ -2183,40 +2274,51 @@ function validateScoped(paths: string[]): number {
 // MAIN
 // =============================================================================
 
-const filesFlagIndex = process.argv.indexOf("--files");
-if (filesFlagIndex !== -1) {
-  const scopedPaths = process.argv.slice(filesFlagIndex + 1).filter((arg) => !arg.startsWith("-"));
-  if (scopedPaths.length === 0) {
-    console.error("❌ --files needs at least one path.");
-    process.exit(1);
+function main(): void {
+  const filesFlagIndex = process.argv.indexOf("--files");
+  if (filesFlagIndex !== -1) {
+    const scopedPaths = process.argv
+      .slice(filesFlagIndex + 1)
+      .filter((arg) => !arg.startsWith("-"));
+    if (scopedPaths.length === 0) {
+      console.error("❌ --files needs at least one path.");
+      process.exit(1);
+    }
+    process.exit(validateScoped(scopedPaths));
   }
-  process.exit(validateScoped(scopedPaths));
-}
 
-const result = validate();
-const idResult = validateIds();
+  const result = validate();
+  const idResult = validateIds();
 
-writeConsoleOutput(result);
+  writeConsoleOutput(result);
 
-// Output ID validation results
-console.log("─".repeat(50));
-console.log("🔢 ID Validation:");
-if (idResult.valid) {
-  console.log("   ✅ No duplicate or invalid IDs");
-} else {
-  console.log("   ❌ ID validation errors:");
-  for (const error of idResult.errors) {
-    console.log(`      ⚠️  ${error}`);
+  // Output ID validation results
+  console.log("─".repeat(50));
+  console.log("🔢 ID Validation:");
+  if (idResult.valid) {
+    console.log("   ✅ No duplicate or invalid IDs");
+  } else {
+    console.log("   ❌ ID validation errors:");
+    for (const error of idResult.errors) {
+      console.log(`      ⚠️  ${error}`);
+    }
   }
-}
-console.log(`   Entries with IDs:    ${idResult.stats.withIds}`);
-console.log(`   Entries without IDs: ${idResult.stats.withoutIds}`);
-if (idResult.stats.withoutIds > 0) {
-  console.log(`   (Run 'pnpm assign-ids' to assign IDs to new entries)`);
-}
-console.log();
+  console.log(`   Entries with IDs:    ${idResult.stats.withIds}`);
+  console.log(`   Entries without IDs: ${idResult.stats.withoutIds}`);
+  if (idResult.stats.withoutIds > 0) {
+    console.log(`   (Run 'pnpm assign-ids' to assign IDs to new entries)`);
+  }
+  console.log();
 
-writeGitHubSummary(result);
+  writeGitHubSummary(result);
 
-const isValid = result.valid && idResult.valid;
-process.exit(isValid ? 0 : 1);
+  const isValid = result.valid && idResult.valid;
+  process.exit(isValid ? 0 : 1);
+}
+
+// Run only as a CLI. Importing this module (the test suite does) must not
+// walk data/ and exit the process; the schema tables above still load, so
+// the exported units validate against the real vocabularies.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}

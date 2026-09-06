@@ -271,6 +271,7 @@ CREATE TABLE IF NOT EXISTS hardware (
     description TEXT,
     details TEXT,
     specs TEXT,
+    hp INTEGER,                       -- Eurorack panel width in HP, NULL when unknown or not a module
     created_at TEXT DEFAULT (datetime('now')),
     updated_at TEXT DEFAULT (datetime('now'))
 );
@@ -829,7 +830,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (19, 'Added content_hardware_compatibility table for content-to-hardware references', 0),
     (20, 'Added search_terms column to all FTS5 tables; changed tokenizer from porter unicode61 to unicode61', 1),
     (21, 'Added stable port_key column to hardware_io', 0),
-    (22, 'Added optional term column to every prices table', 0);
+    (22, 'Added optional term column to every prices table', 0),
+    (23, 'Added nullable hp column to hardware for Eurorack panel width', 0);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES

@@ -1,0 +1,84 @@
+id: FEQerarhMjK5iEMvo8mqc
+name: Controller
+manufacturer: calsynth
+primaryCategory: utility
+categories:
+  - modular
+hp: 12
+url: https://calsynth.com/products/controller-4-channel-voltage-controller-populated-pcb-panel-set-copy
+prices:
+  - amount: 75
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Controller is a four-channel CV control module with slider
+  potentiometers, LEDs, and strike buttons for immediately applying preset
+  voltages, useful for live performance control of external parameters.
+details: |-
+  four channel voltage controller
+
+  QUICK START GUIDE (opens in new window)
+
+  PLEASE NOTE: BUILD AND TROUBLESHOOTING ADVICE CAN NOT BE PROVIDED ON AN INDIVIDUAL BASIS. PLEASE GO TO THE FORUM ON THE ST MODULAR SITE IF YOU NEED HELP.
+
+  The CONTROLLER module is a versatile four-channel CV control unit designed for precise management of up to four external CV parameters. Serving as a centralized control hub, it eliminates the need to individually access each control destination, streamlining the control process and enhancing workflow efficiency. key features
+
+  specs & downloads
+
+  documentation
+
+  videos
+
+  Four slider potentiometers are provided, each offering a travel length of 45mm. These sliders enable the application of unipolar voltages ranging from +0V to either +5V or +10V, which can be selected via a jumper located on the module's rear. Adjusting the slider upwards increases the voltage applied to its respective OUT socket, with the slider LED indicating the voltage level. In addition to the sliders, each channel features a STRIKE button, allowing for the immediate application of a predetermined voltage on top of the voltage set by the slider. The maximum additional voltage that can be applied via the strike button is adjustable using the S MAX controls, ensuring seamless customization. This feature enables users to effortlessly set the desired voltage level to be activated with a simple button press. The Controller utility is a convenient tool specifically crafted to manage multiple parameters of various modules, enhancing their accessibility during live performances.
+specs: |-
+  - Four Channels with CV Output
+  - Slide Potentiometers with LEDs
+  - Strike-Buttons for immediate CV Changes
+  - Control over max. Strike-Voltage
+  - +5V or +10V max. Voltage Output
+  - Skiff friendly
+  - Wrong polarity protection
+  - width: 12 HP
+  - depth: 30 mm
+  - power: 45 mA @ +12V / 35 mA @ -12V
+io:
+  - key: lGMFVkbn
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: bnDNwL3Q
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: AIZDZxiP
+    name: Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: zJZZ8F0m
+    name: Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: zXomITAH
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

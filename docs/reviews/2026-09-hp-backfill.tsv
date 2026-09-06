@@ -1,0 +1,132 @@
+# hp backfill review list (AUREO-1110). Read by `pnpm hp:backfill --review`.
+#
+# slug<TAB>hp<TAB>source   a width read off the page named (maker page first,
+#                          ModularGrid where the maker page states none, or
+#                          the entry's own prose where the prose pass found
+#                          more than one figure and one of them is this entry)
+# slug<TAB>skip<TAB>reason an entry that has no single panel width: a case or
+#                          keyboard whose only HP figure is row capacity, a
+#                          power supply or busboard, or a system or desktop
+#                          unit filed under `modular` that is not a Eurorack
+#                          module. These stay without hp and keep showing in
+#                          `pnpm dataset:audit` (modular-missing-hp) on purpose.
+
+# --- prose that named more than one width -------------------------------------
+alm-busy-circuits-mmmidi	4	specs "Width: 4HP"; the 3HP figure is the optional mmT expander
+befaco-pony-vco	4	details "compact 4HP Eurorack format"; the 24HP figure is the 1U variant
+intellijel-dixie-2	6	specs "Width: 6 hp"; the 4 hp figure is the original Dixie it widened
+
+# --- maker product page ---------------------------------------------------------
+acid-rain-technology-constellation	28	https://acidraintechnology.com/products/constellation ("28hp 25mm deep")
+acid-rain-technology-junction	4	https://acidraintechnology.com/products/junction ("4hp 25mm deep")
+acid-rain-technology-maestro	20	https://acidraintechnology.com/products/maestro ("20hp 25mm deep")
+acid-rain-technology-navigator	4	https://acidraintechnology.com/products/navigator ("4hp 25mm deep")
+acid-rain-technology-ripsaw	6	https://acidraintechnology.com/products/ripsaw ("6hp 25mm deep")
+acid-rain-technology-ziggurat	14	https://acidraintechnology.com/products/ziggurat ("14hp 25mm deep")
+animal-factory-amplification-animal-8-coma-reactor-preorder	12	https://animalfactoryamps.com/products/animal-8-coma-reactor-preorder ("Length - 12HP")
+animal-factory-amplification-bonesaw-eurorack-filter	10	https://animalfactoryamps.com/products/bonesaw-eurorack-filter ("Length - 10HP")
+animal-factory-amplification-eurorack-orobas-ii-vacuum-tube-vca-saturator-distortion-ef86-edition	28	https://animalfactoryamps.com/products/eurorack-orobas-ii-vacuum-tube-vca-saturator-distortion-ef86-edition ("Length - 28HP")
+animal-factory-amplification-eurorack-tannhauser-gates	20	https://animalfactoryamps.com/products/eurorack-tannhauser-gates ("Length - 20HP")
+animal-factory-amplification-godeater-eurorack-fuzztortion-module	14	https://animalfactoryamps.com/products/godeater-eurorack-fuzztortion-module ("Length - 14HP")
+animal-factory-amplification-racketier-2-pit-viper-module	12	https://animalfactoryamps.com/products/racketier-2-pit-viper-module ("Length - 12HP")
+animal-factory-amplification-vivisect-4-channel-signal-processor-offset-and-noise-module	8	https://animalfactoryamps.com/products/vivisect-4-channel-signal-processor-offset-and-noise-module ("Length - 8HP")
+joranalogue-audio-design-cycle-5	6	https://joranalogue.com/products/cycle-5 ("VARI-WAVE OSCILLATOR 6 HP")
+joranalogue-audio-design-delay-1	12	https://joranalogue.com/products/delay-1 ("SPLIT-PHASE BUCKET BRIGADE DELAY LINE 12 HP")
+joranalogue-audio-design-orbit-3	10	https://joranalogue.com/products/orbit-3 ("DOUBLE-SCROLL CHAOS OSCILLATOR 10 HP")
+joranalogue-audio-design-step-8	16	https://joranalogue.com/products/step-8 ("SEQUENTIAL TRACKING/SAMPLING REGISTER 16 HP")
+joranalogue-audio-design-switch-4	8	https://joranalogue.com/products/switch-4 ("PERFORMANCE SWITCHER/ROUTER 8 HP")
+rossum-electro-music-assimil8or	28	https://www.rossum-electro.com/products/assimil8or ("Width 28 HP")
+rossum-electro-music-control-forge	22	https://www.rossum-electro.com/products/control-forge ("Control Forge is 22 HP wide")
+rossum-electro-music-evolution	16	https://www.rossum-electro.com/products/evolution ("Evolution is 16 HP wide")
+rossum-electro-music-locutus	6	https://www.rossum-electro.com/products/locutus ("Width 6 HP")
+rossum-electro-music-morpheus	18	https://www.rossum-electro.com/products/morpheus ("Morpheus is 18 HP wide")
+
+# --- ModularGrid, where the maker page states no width (befaco.org sits behind a
+# --- captcha; the Intellijel legacy, Colossus, 1V/Oct and 1010music pages carry none)
+1010-music-euroshield	8	https://modulargrid.net/e/1010-music-euroshield-1- ("Dimensions 8 HP"); the entry's own "~8 HP" is an estimate
+1voct-the-centre	28	https://modulargrid.net/e/1v-oct-the-centre ("Dimensions 28 HP")
+animal-factory-amplification-baron-samedi-12hp-eurorack-module-preorder	12	https://modulargrid.net/e/animal-factory-amplification-baron-samedi ("Dimensions 12 HP"); the maker url slug also says 12hp
+animal-factory-amplification-diy-kit-vivisect-mixer-beginner-friendly	8	https://modulargrid.net/e/animal-factory-amplification-vivisect ("Dimensions 8 HP"); kit of the same module
+befaco-i4-instrument-interface	8	https://modulargrid.net/e/befaco-instrument-interface-v2 ("Dimensions 8 HP"); the entry's combo jack, phantom power and gate extractor are the v2 feature set, the 11 HP original had a bandpass filter instead
+befaco-1u-motion-mtr	34	https://modulargrid.net/e/befaco-1u-motion-mtr ("Dimensions 34 HP", 1U)
+befaco-1u-st-amp	10	https://modulargrid.net/e/befaco-st-amp ("Dimensions 10 HP", "Available in all 1U formats")
+befaco-1u-trs	6	https://modulargrid.net/e/befaco-1u-trs ("Dimensions 6 HP", 1U)
+befaco-bf-22	17	https://modulargrid.net/e/befaco-sallen-key-filter-bf-22- ("Dimensions 17 HP")
+befaco-burst-2	8	https://modulargrid.net/e/befaco-burst- ("Dimensions 8 HP")
+befaco-chopping-kinky	8	https://modulargrid.net/e/befaco-chopping-kinky ("Dimensions 8 HP")
+befaco-crush-delay-v3	11	https://modulargrid.net/e/befaco-crush-delay-v3 ("Dimensions 11 HP")
+befaco-divkid-mutes-mk2	4	https://modulargrid.net/e/divkid-mutes-mk2-3u ("Dimensions 4 HP"); the entry is the 3U module with the optional 1U panel
+befaco-even-vco	8	https://modulargrid.net/e/befaco-even-vco- ("Dimensions 8 HP")
+befaco-hexmix	28	https://modulargrid.net/e/befaco-hexmix ("Dimensions 28 HP")
+befaco-hexmix-vca	14	https://modulargrid.net/e/befaco-hexmix-vca ("Dimensions 14 HP")
+befaco-hexpander	28	https://modulargrid.net/e/befaco-hexpander ("Dimensions 28 HP")
+befaco-lich	12	https://modulargrid.net/e/befaco-lich ("Dimensions 12 HP")
+befaco-midi-thing-v2	6	https://modulargrid.net/e/befaco-midi-thing-v2 ("Dimensions 6 HP")
+befaco-vcmc-2	20	https://modulargrid.net/e/befaco-vcmc ("Dimensions 20 HP")
+befaco-voltio	6	https://modulargrid.net/e/befaco-voltio ("Dimensions 6 HP")
+calsynth-sum-mix-and-pan	18	https://modulargrid.net/e/st-modular-sum-mix-pan- ("Dimensions 18 HP"); the Calsynth page sells it as the ST Modular SUM MIX & PAN populated PCB and panel set
+colossus-audio-corruptelam	12	https://modulargrid.net/e/colossus-audio-corruptelam ("Dimensions 12 HP")
+colossus-audio-rasp	8	https://modulargrid.net/e/colossus-audio-rasp ("Dimensions 8 HP")
+colossus-audio-signs	16	https://modulargrid.net/e/colossus-audio-signs ("Dimensions 16 HP")
+intellijel-atlantis	40	https://modulargrid.net/e/intellijel-atlantis ("Dimensions 40 HP")
+intellijel-dubmix-aux-expander	22	https://modulargrid.net/e/intellijel-dubmix-aux-expander ("Dimensions 22 HP")
+intellijel-dubmix-mini-expander	6	https://modulargrid.net/e/intellijel-dubmix-mini-expander ("Dimensions 6 HP")
+intellijel-korgasmatron-ii	20	https://modulargrid.net/e/intellijel-korgasmatron-ii ("Dimensions 20 HP")
+intellijel-quad-inverter	2	https://modulargrid.net/e/intellijel-quad-invert ("Dimensions 2 HP")
+intellijel-ustep-modulemodule	4	https://modulargrid.net/e/intellijel-%CE%BCstep ("Dimensions 4 HP")
+intellijel-uvcf	6	https://modulargrid.net/e/intellijel-%C2%B5vcf ("Dimensions 6 HP")
+waldorf-nw1-wavetable-module	32	https://modulargrid.net/e/waldorf-nw1 ("Dimensions 32 HP"); the maker page has no width
+
+# --- cases, keyboards and systems: the only HP figure is row capacity ----------
+analogue-systems-rs-integrator	skip	complete system; "168hp of module space" is case capacity
+arturia-rackbrute-3u	skip	case; 88 HP is row capacity
+arturia-rackbrute-6u	skip	case; 176 HP is row capacity
+befaco-befaco-7u-case	skip	case; 104HP is row capacity
+cre8audio-niftycase	skip	case; 84hp is usable case area
+cre8audio-niftykeyz	skip	keyboard case; 112hp is usable case area
+intellijel-4u-eurorack-case	skip	case; 104HP is row width
+intellijel-4u-palette-eurorack-case	skip	case; 62HP and 104HP are the two row widths
+intellijel-7u-audio-jacks-board-v2	skip	case jack board with no panel width
+intellijel-7u-performance-case-gen-2	skip	case; 104HP is row width
+pittsburgh-modular-lifeforms-systems-301	skip	system; 112hp is free case space
+waldorf-kb37	skip	keyboard case; 107HP is module capacity
+
+# --- power supplies and busboards: no front panel ------------------------------
+befaco-chikipower	skip	desktop USB-C power supply (54x52x20 mm), no panel
+befaco-excalibus	skip	busboard power supply, no panel
+befaco-lunchbus	skip	busboard power supply, no panel
+intellijel-mini-triple-power-supply-30w-skiffs-3u-6u-busboard	skip	busboard power supply, no panel
+intellijel-triple-power-supply-30w-3u-6u-busboard	skip	busboard power supply, no panel
+intellijel-triple-power-supply-80w-3u-6u-busboard	skip	busboard power supply, no panel
+
+# --- filed under modular but not a Eurorack module -------------------------------
+arp-synthesizers-2500	skip	non-Eurorack modular system (ARP cabinet format)
+bastl-instruments-kastle-synth	skip	desktop mini synth, not a Eurorack module
+buchla-100-series	skip	non-Eurorack modular system (Buchla format)
+buchla-200-series	skip	non-Eurorack modular system (Buchla format)
+buchla-200e-series	skip	non-Eurorack modular system (Buchla format)
+buchla-400-series	skip	non-Eurorack modular system (Buchla format)
+buchla-700-series	skip	non-Eurorack modular system (Buchla format)
+chimera-synthesis-bc16	skip	desktop unit, not a Eurorack module
+creamware-pulsar	skip	PCI card DSP system, not a Eurorack module
+doepfer-a-100	skip	system name for the whole A-100 line, not one module
+e-mu-systems-modular-systems	skip	non-Eurorack modular system
+eml-electrocomp-200	skip	non-Eurorack modular synthesizer
+korg-ms-50	skip	non-Eurorack expander unit
+moog-cp-251-control-processor	skip	desktop Moogerfooger-format unit
+moog-synthesizer-1c-2c-3c	skip	non-Eurorack modular system (Moog 5U format)
+nord-micro-modular	skip	desktop virtual modular, not a Eurorack module
+nord-modular	skip	keyboard virtual modular, not a Eurorack module
+roland-system-100m	skip	non-Eurorack modular system (Roland 100M format)
+roland-system-700	skip	non-Eurorack modular system
+rsf-modular-model-11	skip	non-Eurorack modular system
+serge-sts-modular	skip	non-Eurorack modular system (Serge 4U panels)
+sherman-quad-modular-filter	skip	rack unit, not a Eurorack module
+sonicsmith-modular-a1	skip	desktop semi-modular synth, not a Eurorack module
+steiner-parker-synthasystem	skip	non-Eurorack modular system
+synthesizerscom-portable-systems	skip	non-Eurorack modular system (MU format)
+synthesizerscom-rack-mount-systems	skip	non-Eurorack modular system (MU format)
+synthesizerscom-studio-systems	skip	non-Eurorack modular system (MU format)
+synton-fenix	skip	desktop modular synthesizer, not a Eurorack module
+technosaurus-selector	skip	rack unit, not a Eurorack module
+wiard-modular-systems	skip	non-Eurorack modular system

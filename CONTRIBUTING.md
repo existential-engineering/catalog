@@ -77,6 +77,41 @@ Fix any errors before submitting.
 2. Push to your fork
 3. Open a pull request
 
+## Panel Width (`hp`) on Modular Entries
+
+Eurorack modules carry `hp`, the panel width in horizontal pitch units
+(1 HP = 5.08 mm). The Studio app draws a module at that scale, so a wrong
+value is visible on screen.
+
+```yaml
+primaryCategory: modular
+categories:
+  - utility
+hp: 20
+```
+
+- **A bare integer.** `hp: 12` validates; `hp: "12HP"`, `hp: 12.5` and
+  `hp: 0` fail (E101). Half-HP does not exist in the standard.
+- **Modular entries only.** Set it on entries filed under `modular`, as
+  `primaryCategory` or in `categories`. A case, busboard, keyboard case or a
+  non-Eurorack system (Buchla, Serge, a Nord Modular) has no single panel
+  width and stays without it. A case's row capacity ("104HP per row") is not a
+  width.
+- **Never guessed.** Take the number from the maker's product page or manual
+  first, from the entry's own `specs` second, and from ModularGrid only when
+  the maker states none. Do not measure a photo, round, or infer from a
+  sibling model.
+- **Say where it came from.** The YAML has no field for the source, so name
+  it in the PR description, one line per entry (`intellijel-plonk: 12,
+  intellijel.com product page`). That is what lets a reviewer check the
+  change in seconds.
+- **Changing an existing value** follows the same rules, plus a sentence on
+  why the old value was wrong. Two plausible widths with no reason given is
+  the one case a reviewer cannot judge.
+
+`pnpm dataset:audit` lists modular entries that still lack `hp`
+(`modular-missing-hp`) if you are looking for ones to fill in.
+
 ## Naming Conventions
 
 ### Slugs (File Names)

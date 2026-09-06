@@ -35,6 +35,14 @@
  *                          page. Fix via scripts/promote-canonical-urls.ts
  *                          or manual research; acceptable only when no
  *                          official page exists.
+ *   6. cv-gate-category  — a `cv/gate` or `clock` io jack filed under a
+ *                          category other than `audio` (AUREO-1103).
+ *   7. expression-typed-cv — an io jack named for an expression or pedal
+ *                          jack, in either direction, but typed `cv/gate`
+ *                          instead of `expression` (AUREO-1103).
+ *   8. modular-missing-hp — a hardware entry filed under `modular` with no
+ *                          `hp`, so the faceplate width campaign can see
+ *                          its remaining coverage gap (AUREO-1110).
  *
  * Findings with `needsLlmReview: true` are collected into `flagged`, the
  * seam handed to Tier 2. Deterministic findings (broken refs, orphans) are
@@ -49,6 +57,7 @@
 import path from "node:path";
 import { z } from "zod";
 import { isAggregatorUrl, isManufacturerOwnDomain, urlHost } from "./lib/aggregator-domains.js";
+import { countHintCoverage, emptyHintCoverage, type HintCoverage } from "./lib/io-hints.js";
 import type { Accessory, Content, Hardware, Manufacturer, Software } from "./lib/types.js";
 import { DATA_DIR, getYamlFiles, loadYamlFile } from "./lib/utils.js";
 
@@ -79,6 +88,9 @@ const CheckSchema = z.enum([
   "name-tagline",
   "bundle-entry",
   "suspect-pin",
+  "cv-gate-category",
+  "expression-typed-cv",
+  "modular-missing-hp",
 ]);
 
 const SeveritySchema = z.enum(["blocking", "warning", "info"]);
@@ -109,6 +121,19 @@ const CoverageSchema = z.object({
   withVerification: z.number(),
 });
 
+/** Layout hint coverage for one group of entries (AUREO-1115). */
+const HintCoverageSchema = z.object({
+  entries: z.number(),
+  withIo: z.number(),
+  withHints: z.number(),
+});
+
+/** `hp` coverage over modular hardware entries (AUREO-1110). */
+const HpCoverageSchema = z.object({
+  modular: z.number(),
+  withHp: z.number(),
+});
+
 const DatasetAuditSchema = z.object({
   generatedAt: z.string(),
   fast: z.boolean(),
@@ -124,11 +149,28 @@ const DatasetAuditSchema = z.object({
       nameTagline: z.number(),
       bundleEntry: z.number(),
       suspectPin: z.number(),
+      cvGateCategory: z.number(),
+      expressionTypedCv: z.number(),
+      modularMissingHp: z.number(),
     }),
     flagged: z.number(),
   }),
   /** Per-collection coverage metrics (denominator for "is the data thinning?"). */
   coverage: z.record(z.string(), CoverageSchema),
+  /**
+   * Entries whose io carries `rowPosition`/`columnPosition`, per collection
+   * and for `modular` on its own, so the hint campaign (AUREO-1112) can
+   * report progress against a number rather than a feeling.
+   */
+  hintCoverage: z.object({
+    byCollection: z.record(z.string(), HintCoverageSchema),
+    modular: HintCoverageSchema,
+  }),
+  /**
+   * Modular entries carrying `hp` against all modular entries, the number
+   * the faceplate width backfill (AUREO-1110) reports progress against.
+   */
+  hpCoverage: HpCoverageSchema,
   /** Every finding, all severities. */
   findings: z.array(FindingSchema),
   /** The bounded subset worth an LLM pass — the seam to Tier 2. */
@@ -140,7 +182,7 @@ export type DatasetAudit = z.infer<typeof DatasetAuditSchema>;
 // HELPERS
 // =============================================================================
 
-interface LoadedProduct {
+export interface LoadedProduct {
   type: ProductType;
   slug: string;
   file: string;
@@ -483,6 +525,104 @@ function checkSuspectPins(products: LoadedProduct[]): Finding[] {
   return findings;
 }
 
+/** One io port as the audit reads it: only the keys the io checks look at. */
+interface AuditIoPort {
+  name?: string;
+  category?: string;
+  type?: string;
+}
+
+/** The io list of a hardware entry, empty for every other collection. */
+function ioOf(entry: Product): AuditIoPort[] {
+  const io = (entry as { io?: AuditIoPort[] }).io;
+  return Array.isArray(io) ? io : [];
+}
+
+/** Analog control types that belong under `audio`; `word clock` is digital and stays so. */
+const CV_AUDIO_TYPES = new Set(["cv/gate", "clock"]);
+const EXPRESSION_NAME = /expression|pedal/i;
+
+/** Up to four port names for a finding's detail, with an ellipsis past that. */
+function portNames(ports: AuditIoPort[]): string {
+  return (
+    ports
+      .map((port) => port.name ?? "?")
+      .slice(0, 4)
+      .join(", ") + (ports.length > 4 ? ", …" : "")
+  );
+}
+
+/**
+ * `cv/gate` and `clock` jacks filed under a category other than `audio`.
+ * The catalog carries 2,060 cv/gate jacks under `audio` against 461 under
+ * `digital` and 8 under `midi`, and the setup graph coloured a port by its
+ * category, so a patch cable between a Maths and a Toolbox changed colour
+ * at one end. The app now resolves CV by type first (AUREO-1099), which
+ * hides the split on the canvas and nowhere else, and the next import adds
+ * to it unless something says so. Deterministic: the fix is
+ * `category: audio`. One finding per product, not per port.
+ */
+export function checkCvGateCategory(products: LoadedProduct[]): Finding[] {
+  const findings: Finding[] = [];
+  for (const p of products) {
+    const off = ioOf(p.entry).filter(
+      (port) => CV_AUDIO_TYPES.has(port.type ?? "") && port.category !== "audio"
+    );
+    if (off.length === 0) continue;
+    const categories = [...new Set(off.map((port) => port.category ?? "?"))].join(", ");
+    findings.push({
+      check: "cv-gate-category",
+      severity: "info",
+      needsLlmReview: false,
+      collection: p.type,
+      name: p.entry.name,
+      manufacturer: p.entry.manufacturer,
+      files: [relPath(p.file)],
+      detail:
+        `${off.length} cv/gate or clock port(s) filed under category ${categories} ` +
+        `(${portNames(off)}). CV, gate and clock jacks are category audio; word clock stays digital.`,
+    });
+  }
+  return findings;
+}
+
+/**
+ * A jack typed `cv/gate` whose name says it is an expression or pedal
+ * jack. The convention (CLAUDE.md, "Footswitch and expression jacks")
+ * already makes these `type: expression`; Strymon and Fender entries type
+ * them `cv/gate` and Chase Bliss entries `expression`, and since
+ * AUREO-1098 the setup graph draws that as a square on one pedal and a
+ * triangle on the next for the same kind of jack. Mostly mechanical, but
+ * a module's "Expression CV In" really is a CV input fed by a pedal, so
+ * each one gets a Tier-2 look rather than a blanket rewrite. Direction is
+ * deliberately not a filter: an "Expression Out" that drives a pedal's
+ * expression input (Cre8audio NiftyKEYZ, ALM SBG) is an expression jack
+ * on the sending side, and only the review can say whether it is.
+ */
+export function checkExpressionTypedCv(products: LoadedProduct[]): Finding[] {
+  const findings: Finding[] = [];
+  for (const p of products) {
+    const typed = ioOf(p.entry).filter(
+      (port) => port.type === "cv/gate" && EXPRESSION_NAME.test(port.name ?? "")
+    );
+    if (typed.length === 0) continue;
+    findings.push({
+      check: "expression-typed-cv",
+      severity: "info",
+      needsLlmReview: true,
+      collection: p.type,
+      name: p.entry.name,
+      manufacturer: p.entry.manufacturer,
+      files: [relPath(p.file)],
+      detail:
+        `${typed.length} port(s) named for an expression or pedal jack are typed cv/gate ` +
+        `(${portNames(typed)}). Footswitch and expression jacks are category audio, type expression; ` +
+        "keep cv/gate only where the jack is a CV input that happens to accept a pedal.",
+    });
+  }
+  return findings;
+}
+
 function computeCoverage(
   products: LoadedProduct[]
 ): Record<string, z.infer<typeof CoverageSchema>> {
@@ -507,6 +647,80 @@ function computeCoverage(
   return coverage;
 }
 
+/** True for a hardware entry filed under `modular`, as primary or secondary category. */
+function isModular(entry: Product): boolean {
+  return (
+    entry.primaryCategory === "modular" ||
+    (Array.isArray(entry.categories) && entry.categories.includes("modular"))
+  );
+}
+
+/**
+ * A modular hardware entry with no `hp`. The field is the one number the
+ * faceplate node needs to draw a module at scale (5.08 mm per HP), and it
+ * is never guessed: an entry stays here until a maker page, manual or its
+ * own prose gives the width, which is why the finding is informational and
+ * not sent to Tier 2. Non-Eurorack systems filed under `modular` (Buchla,
+ * Serge, a Nord Modular) have no HP to give and stay listed rather than
+ * being excused, so the count reads as the real gap.
+ */
+export function checkModularMissingHp(products: LoadedProduct[]): Finding[] {
+  const findings: Finding[] = [];
+  for (const p of products) {
+    if (p.type !== "hardware" || !isModular(p.entry)) continue;
+    if ((p.entry as Hardware).hp !== undefined) continue;
+    findings.push({
+      check: "modular-missing-hp",
+      severity: "info",
+      needsLlmReview: false,
+      collection: p.type,
+      name: p.entry.name,
+      manufacturer: p.entry.manufacturer,
+      files: [relPath(p.file)],
+      detail:
+        "modular entry carries no hp. Source the panel width from the maker page, manual or " +
+        "the entry's own prose (pnpm hp:backfill); never guess it, and leave it absent for a " +
+        "system or case that has no single panel width.",
+    });
+  }
+  return findings;
+}
+
+/** `hp` coverage: modular hardware entries and how many carry the field. */
+export function computeHpCoverage(products: readonly { type: ProductType; entry: Product }[]): {
+  modular: number;
+  withHp: number;
+} {
+  let modular = 0;
+  let withHp = 0;
+  for (const p of products) {
+    if (p.type !== "hardware" || !isModular(p.entry)) continue;
+    modular++;
+    if ((p.entry as Hardware).hp !== undefined) withHp++;
+  }
+  return { modular, withHp };
+}
+
+/**
+ * Layout hint coverage per collection and for modular entries. Only
+ * hardware carries io, so the other collections report zero with io; they
+ * are listed anyway so the per-collection shape matches `coverage`.
+ */
+export function computeHintCoverage(products: readonly { type: ProductType; entry: Product }[]): {
+  byCollection: Record<string, HintCoverage>;
+  modular: HintCoverage;
+} {
+  const byCollection: Record<string, HintCoverage> = {};
+  for (const type of PRODUCT_TYPES) byCollection[type] = emptyHintCoverage();
+  const modular = emptyHintCoverage();
+  for (const p of products) {
+    const io = (p.entry as Hardware).io;
+    countHintCoverage(byCollection[p.type], io);
+    if (p.type === "hardware" && isModular(p.entry)) countHintCoverage(modular, io);
+  }
+  return { byCollection, modular };
+}
+
 // =============================================================================
 // MAIN
 // =============================================================================
@@ -529,6 +743,9 @@ function generateAudit(fast: boolean): DatasetAudit {
     ...checkNameTaglines(dataset.products),
     ...checkBundleEntries(dataset.products),
     ...checkSuspectPins(dataset.products),
+    ...checkCvGateCategory(dataset.products),
+    ...checkExpressionTypedCv(dataset.products),
+    ...checkModularMissingHp(dataset.products),
   ];
 
   // The Tier-2 seam: only ambiguous findings, highest severity first, capped.
@@ -546,6 +763,9 @@ function generateAudit(fast: boolean): DatasetAudit {
     nameTagline: findings.filter((f) => f.check === "name-tagline").length,
     bundleEntry: findings.filter((f) => f.check === "bundle-entry").length,
     suspectPin: findings.filter((f) => f.check === "suspect-pin").length,
+    cvGateCategory: findings.filter((f) => f.check === "cv-gate-category").length,
+    expressionTypedCv: findings.filter((f) => f.check === "expression-typed-cv").length,
+    modularMissingHp: findings.filter((f) => f.check === "modular-missing-hp").length,
   };
 
   return {
@@ -558,6 +778,8 @@ function generateAudit(fast: boolean): DatasetAudit {
       flagged: flagged.length,
     },
     coverage: computeCoverage(dataset.products),
+    hintCoverage: computeHintCoverage(dataset.products),
+    hpCoverage: computeHpCoverage(dataset.products),
     findings,
     flagged,
   };
@@ -586,6 +808,9 @@ function printConsoleReport(audit: DatasetAudit): void {
   console.log(`  Name taglines:          ${audit.summary.byCheck.nameTagline}`);
   console.log(`  Bundle entries:         ${audit.summary.byCheck.bundleEntry}`);
   console.log(`  Suspect pin connectors: ${audit.summary.byCheck.suspectPin}`);
+  console.log(`  CV/clock not audio:     ${audit.summary.byCheck.cvGateCategory}`);
+  console.log(`  Expression typed cv:    ${audit.summary.byCheck.expressionTypedCv}`);
+  console.log(`  Modular without hp:     ${audit.summary.byCheck.modularMissingHp}`);
   console.log(`  Flagged for LLM review: ${audit.summary.flagged}`);
   console.log();
 
@@ -600,6 +825,26 @@ function printConsoleReport(audit: DatasetAudit): void {
   }
   console.log();
 
+  console.log("📐 Layout hints (rowPosition/columnPosition)");
+  console.log("─".repeat(40));
+  const hintLine = (label: string, h: HintCoverage) =>
+    `  ${label.padEnd(12)} ${String(h.withHints).padStart(5)} of ${h.withIo} entries with io ` +
+    `(${pct(h.withHints, h.withIo)}), ${h.entries} entries`;
+  for (const [collection, h] of Object.entries(audit.hintCoverage.byCollection)) {
+    console.log(hintLine(collection, h));
+  }
+  console.log(hintLine("modular", audit.hintCoverage.modular));
+  console.log();
+
+  console.log("📏 Panel width (hp)");
+  console.log("─".repeat(40));
+  const hp = audit.hpCoverage;
+  console.log(
+    `  ${"modular".padEnd(12)} ${String(hp.withHp).padStart(5)} of ${hp.modular} entries carry hp ` +
+      `(${pct(hp.withHp, hp.modular)})`
+  );
+  console.log();
+
   const groups: { title: string; check: Finding["check"]; limit: number }[] = [
     { title: "🔁 Duplicate-name groups", check: "duplicate-name", limit: 30 },
     { title: "🔗 Broken compatibleWith references", check: "broken-compatible", limit: 30 },
@@ -609,6 +854,9 @@ function printConsoleReport(audit: DatasetAudit): void {
     { title: "✂️  Possible name taglines", check: "name-tagline", limit: 20 },
     { title: "📦 Bundle entries", check: "bundle-entry", limit: 20 },
     { title: "📌 Suspect pin connectors", check: "suspect-pin", limit: 20 },
+    { title: "🎛  CV and clock jacks outside audio", check: "cv-gate-category", limit: 20 },
+    { title: "🦶 Expression jacks typed cv/gate", check: "expression-typed-cv", limit: 20 },
+    { title: "📏 Modular entries without hp", check: "modular-missing-hp", limit: 20 },
   ];
 
   for (const { title, check, limit } of groups) {
