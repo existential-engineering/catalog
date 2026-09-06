@@ -1,0 +1,59 @@
+id: QXsxKKOjM4MQ_VLyVw4pE
+name: Seed3
+manufacturer: electrosmith
+primaryCategory: other
+url: https://electro-smith.com/products/seed3
+prices:
+  - amount: 29.99
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Seed3 is an embedded audio hardware platform featuring a 32-bit,
+  192kHz audio codec, an ARM Cortex-M7 MCU, and onboard USB-C for power and data
+  transfer, maintaining pin compatibility with the original Seed. It is
+  programmable in C++, Arduino, Max/MSP gen~, and Pure Data for prototyping and
+  embedded commercial audio applications.
+details: |-
+  Seed3 is the next generation of Daisy hardware. It features a new audio codec boosting audio fidelity to 32-bit, 192kHz, for a crystal clear audio experience. The Seed3 also carries an onboard USB-C port for data transfer and powering. All this while maintaining pin-to-pin compatibility with the original Seed pinout and footprint. Prototype today, and ship tomorrow. The Seed3 is both breadboard-ready and designed for embedded commercial applications. Documentation and Technical Assets: daisy.audio
+specs: |-
+  - Stereo audio IO - 192kHz / 32-bit audio hardware (AC-Coupled)
+  - Programmable in: C++ , Arduino , Max/MSP gen~ , Pure Data
+  - x31 GPIO, x12 ADC inputs (16-bit), x2 DAC outputs (12-bit, DC-Coupled)
+  - ARM Cortex-M7 MCU, running at 480MHz
+  - 65MB of SDRAM for up to 10 minute long audio buffers, 8MB external flash
+  - SD card interface, PWM outputs, and various serial protocols for external devices (SPI, UART, SAI/I2S, I2C)
+  - USB-C port for powering and data transfer
+  - Dedicated VIN pin for external power
+io:
+  - key: hBslvnCx
+    name: Stereo Audio Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin-header
+    maxConnections: 1
+    position: Top
+  - key: rNgxyCeG
+    name: Stereo Audio Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin-header
+    maxConnections: 1
+    position: Top
+  - key: fD2oDc2N
+    name: USB-C
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Top
+  - key: Ir1DppNI
+    name: VIN Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Top
