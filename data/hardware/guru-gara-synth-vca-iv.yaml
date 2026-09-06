@@ -1,0 +1,166 @@
+id: 3sskYsjzHFQZYzGMnoUrc
+name: VCA IV
+manufacturer: guru-gara-synth
+primaryCategory: modular
+categories:
+  - mixer
+url: https://www.gurugarasynth.com/products/vca-iv-quad-ota-vca-assembled
+prices:
+  - amount: 99.99
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A fully assembled four-channel OTA-based voltage-controlled
+  amplifier for Eurorack designed for precision signal shaping and mixing. It
+  features internal normalizations allowing use as two stereo pairs, plus a
+  summed Mix Out for voltage-controlled mixing.
+details: |-
+  VCA IV: Quad OTA VCA - Assembled
+
+  The VCA IV is a high-performance, four-channel voltage-controlled amplifier designed for precision signal shaping and mixing. This fully assembled module comes ready to install, offering a compact and powerful solution for managing audio levels in your Eurorack system. Key Features
+
+  Versatile Quad & Stereo Operation
+
+  The VCA IV is fundamentally designed as four individual VCAs, each equipped with its own signal input, CV input, and offset control. The offset knob allows for manual adjustment of the base amplification level before external CV is applied. Beyond standard quad operation, the module features internal normalizations that allow it to excel as two stereo pairs (VCA 1 & 2 and VCA 3 & 4):
+
+  Voltage-Controlled Mixing
+
+  All four channels are summed at the Mix Out, enabling the module to function as a compact voltage-controlled mixer. Design & Hardware
+
+  The VCA IV follows the premium visual style of Guru Gara Synth factory designs, featuring a durable black PCB front panel with white and gold-plated copper artwork. Included in the Box:
+
+  Technical Specifications
+specs: |-
+  - 4 Independent OTA-based VCAs: High-performance signal path optimized for audio and fast modulation.
+  - Stereo-Ready Architecture: Intelligently normalled inputs and CV for seamless paired operation.
+  - Built-in Summing Mixer: Dedicated Mix Out sums all four channels into a single signal path.
+  - Switched Outputs: Patching into an individual VCA Out automatically removes that channel from the mix.
+  - Plug-and-Play: Fully assembled, tested, and factory-calibrated for immediate use.
+  - Premium Aesthetics: Black PCB front panel featuring signature white and gold-plated copper artwork.
+  - Input Normalization: Input 1 is normalled to Input 2 (and 3 to 4) via a switched jack. Patching a mono signal into Input 1 automatically sends it to both VCAs in the pair.
+  - CV Normalization: CV 1 is normalled to CV 2 (and 3 to 4). This allows a single envelope or LFO to control the dynamics of a stereo image with perfect synchronization.
+  - Stereo Balancing: Even when using a single CV source, each channel retains an independent Offset knob, allowing you to fine-tune the center balance of your stereo field.
+  - Signal Integrity: Because the internal stereo connections can add signals to the mix, simply turn the Offset pot all the way down for any unused channels to ensure a clean, bleed-free output.
+  - Dynamic Sub-mixing: The switched jack architecture allows you to peel off individual channels for processing while the remaining signals stay in the main mix.
+  - 1x Fully Assembled VCA IV Module
+  - 1x 10-to-16 pin Ribbon Power Cable
+  - 4x M3 Mounting Screws
+  - Format: Eurorack
+  - Width: 10HP
+  - Depth: 25mm (Skiff Friendly)
+  - Current Draw: - - - +12V: 35 mA
+  - −12V: 35 mA
+  - +5V: 0 mA
+io:
+  - key: AD71CEbi
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: esW9NvG7
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: IUTMiGV7
+    name: Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: oIiNuwNz
+    name: Input 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6HtnsFTm
+    name: CV Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GoC6PpfJ
+    name: CV Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8WnkkteP
+    name: CV Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wlAxBGZT
+    name: CV Input 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: llsNkOBe
+    name: VCA Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0yKojoij
+    name: VCA Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: PGERbzEY
+    name: VCA Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: HYaeVn47
+    name: VCA Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5c1M423w
+    name: Mix Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: MXSNHg4D
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

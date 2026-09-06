@@ -1,0 +1,139 @@
+id: nWshKXBNJOQ-JET0Qcaw_
+name: Riot ST VCF
+manufacturer: guru-gara-synth
+primaryCategory: filter
+categories:
+  - modular
+  - stereo
+capabilities:
+  - filter
+url: https://www.gurugarasynth.com/products/riot-st-vcf
+prices:
+  - amount: 149.99
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A fully assembled analog stereo low-pass filter for Eurorack with
+  dedicated left and right audio inputs and outputs, and CV inputs for
+  Frequency, Resonance, and Stereo Space. A mono signal patched into the left
+  input only is automatically routed to both channels for stereo processing.
+details: |-
+  Riot ST VCF – Stereo Low-Pass Filter (Fully Assembled Eurorack Module)
+
+  The Riot ST VCF is a fully assembled analog stereo low-pass filter for Eurorack, designed to deliver a powerful, characterful sound with expressive stereo movement. Combining a thick low-end with refined resonance behavior, it offers both bold tone shaping and controlled modulation for modern modular systems. The module is housed behind a distinctive 12HP PCB front panel featuring black, white, and gold-plated PCB artwork, making it a striking visual centerpiece in any Eurorack setup. Key Features
+
+  Stereo Signal Path & Mono Compatibility
+
+  The Riot ST VCF features dedicated left and right audio inputs and outputs. When a mono signal is patched into the left input only, an internal switched jack automatically routes the signal to both channels, allowing mono sources to be processed in stereo without additional patching. Stereo Space Control
+
+  The Stereo Space fader defines the relationship between the cutoff frequencies of the left and right filter channels:
+
+  This design creates width, motion, and depth without sacrificing tonal balance. CV-Controlled Stereo Modulation
+
+  The Riot ST VCF provides CV inputs for Frequency, Resonance, and Stereo Space, allowing envelopes, LFOs, and sequencers to introduce dynamic stereo movement. When a control voltage is patched into the Stereo Space CV input, the fader acts as a bipolar depth control:
+
+  This enables responsive, evolving stereo modulation that remains musical and stable. Sound Character
+
+  The filter core delivers a thick, weighty low-end with a resonance that emphasizes musical movement rather than harsh self-oscillation. This makes the Riot ST VCF well suited for basses, pads, drones, and animated stereo textures—especially when modulated. Design & Build
+
+  The Riot ST VCF is fully assembled and ready to use. The PCB front panel is made from durable PCB material and finished with bold black, white, and gold-plated artwork, ensuring both reliability and a distinctive visual identity. Technical Specifications
+
+  -
+  Filter Core: OTA (Operational Transconductance Amplifier)
+
+  -
+  Depth: 25 mm
+
+  Skiff Friendly Module
+
+  Video Demo
+
+  All stereo movement in the videos is achieved by modulating the filter's stereo space via CV, or by manually moving the fader to create and control the cutoff frequency offset between the left and right channels.
+specs: |-
+  - Stereo analog low-pass filter for Eurorack
+  - True stereo inputs and outputs
+  - Mono-to-stereo operation via internal switched jack
+  - Stereo Space fader for animated stereo cutoff movement
+  - CV control over Frequency, Resonance, and Stereo Space
+  - Unique PCB art front panel with gold-plated traces
+  - Smooth, controlled resonance suitable for musical modulation
+  - Centered position : Both channels share the same cutoff frequency, behaving like a mono filter
+  - Fader moved left or right : One channel's cutoff increases while the other decreases by the same amount
+  - Center position: Incoming CV has no effect
+  - Move right : CV raises the right cutoff while lowering the left
+  - Move left: CV raises the left cutoff while lowering the right
+  - Format: Eurorack
+  - Width: 12HP
+  - Filter Type: Stereo low-pass
+  - Audio Inputs: Stereo (mono-to-stereo compatible)
+  - CV Inputs: Frequency, Resonance, Stereo Space
+  - Current Draw: - +12V: 70 mA
+  - −12V: 80 mA
+  - +5V: 0 mA
+  - Filter Core: OTA (Operational Transconductance Amplifier)
+  - Depth: 25 mm
+io:
+  - key: Sr0BxUFP
+    name: Left Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GzVkggqB
+    name: Right Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: xBaDDg3z
+    name: Left Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: M5Mdb2Jk
+    name: Right Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: G5Xh4HIP
+    name: Frequency CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: RzB8onaf
+    name: Resonance CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 7EzEjSTS
+    name: Stereo Space CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: PHRAOFa0
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
