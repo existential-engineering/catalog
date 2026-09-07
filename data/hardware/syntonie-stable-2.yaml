@@ -1,0 +1,104 @@
+id: y3Gxc16RLfhb6DCAg-owi
+name: Stable
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - utility
+url: https://syntonie.fr/products/stable
+prices:
+  - amount: 399
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: Stable is a Eurorack module combining a processing amplifier and
+  glitch stabilizer for Composite/Component video. It provides control over
+  contrast, brightness, hue and saturation while extracting and re-inserting
+  synchronization to keep the output signal stable.
+details: |-
+  This listing is for the module only, which requires a Eurorack case and power supply. The standalone version (module + enclosure) can be found here . An enclosure for the standalone option is available separately here . Stable is a processing amplifier and glitch stabilizer. – Processing Amplifier
+
+  The processing amplifier part gives control over contrast, brightness, hue and saturation of a Composite video signal, allowing for fine tuning of each of the parameters manually. In addition to manual controls, CV inputs and attenuverters on each of the parameters opens Stable to external modulation, from DC to video rate signals, so it can be easily integrated in the 1V video ecosystem. To make the integration with video generators even easier, a sync output at the back of Stable can be used to sync modules that requires it. Internal modulation is also possible, thanks to the two 1V jack outputs:
+
+  – pre-processor output: unprocessed video input signal, resulting in a solarization effect when used to modulate contrast
+  – post-processor output: processed video signal, creating feedback loops when patched into the processor parameters, which generate effects typical of analog video glitch
+
+  Self modulation makes Stable really powerful on its own, and using other processing modules in the loop extends the possibilities further. It is also possible to process Y from Component video, however, only the black and white information will be processed (since the color information is contained in the Pb and Pr signals). In this case, the all-pass filter used for hue shift will act as an enhancer type of effect, with the saturation knob controlling the intensity of the enhance. The chroma filtering switch can be set to off to avoid unwanted filtering, which results in a sharper picture, especially in HD formats. – Glitch Stabilizer
+
+  Composite video glitch processors can create very distinct effects, mainly because the black and white (Luma) and colors (Chroma) information are merged into a single video signal, which will affect each other when altered with such devices. However, one issue is that the synchronization signal is also embedded with Luma and Chroma, meaning that it is also altered, and if sync is too degraded, the receiving device (LCD monitor, video projector, capture card, etc…) may not be able to decode it properly, resulting in drops/blue screen. Stable solves that by extracting the synchronization from the clean signal present at the processor input, and later re-insert it to the glitched signal in the stabilizer part, along with adequate clipping and blanking, ensuring a stable signal in all instances. A similar technique is used in the processor part, meaning that both RCA outputs will provide a valid signal, regardless of what's happening to the video content. It is also possible to use the stabilizer part to process Composite/Component Y video with 1V compliant video modules, by connecting one of the processor outputs into such a module, and the output of the module back to the stabilizer jack input. It can also be processed with audio modules, however the bandwidth will probably be too limited, resulting in the color and finer details to be filtered. Then it's important to note that Stable isn't a TBC, so it needs a stable signal at the processor input, which means that it may not work properly with devices like VCRs or if the signal at the processor input is glitched/out of spec. Furthermore, the stabilizer part will correct hard glitch effects caused by invalid sync (ie: pictures bending horizontally, scrolling up/down/left/right), where a TBC may be able to display some of it. Since Stable signal path is purely analog, it won't "freeze" the picture or part of it as a TBC generally does with really distorted signals. Stable supports the following Composite (SD) & Component (SD/HD) formats:
+
+  - 288p50
+  - 240p59.94
+  - 576i50 (PAL)
+  - 480i59.94 (NTSC)
+  - 576p50
+  - 480p59.94
+  - 720p50
+  - 720p59.94
+  - 720p60
+  - 1080i50
+  - 1080i59.94
+  - 1080i60
+  - 1080p23.98
+  - 1080p24
+  - 1080p25
+  - 1080p29.97
+  - 1080p30
+
+  The format is detected and selected automatically. Specs:
+
+  - 16HP
+  - 310mA +12V
+  - 0mA -12V
+  - 0mA +5V
+  - 42mm deep
+
+  Can be powered through standard Eurorack 16pin connector or DC barrel connector. Documentation
+io:
+  - key: div5wrXV
+    name: Processor Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: qMA0MpR5
+    name: Stabilizer Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: zgE4jVSI
+    name: Pre-processor Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: gF5d9bRn
+    name: Post-processor Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: t57EdgIZ
+    name: Sync Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: yYzYv00o
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,88 @@
+id: LnunKWBiG-W2Rkv2D98G0
+name: Seuils
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - utility
+  - filter
+capabilities:
+  - filter
+url: https://syntonie.fr/products/seuils-triple-comparator-boolean-logic-ramp-shifter
+prices:
+  - amount: 339
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: Seuils is a Eurorack module built around a comparator and boolean
+  logic circuit designed to phase shift ramp/saw signals. It generates pulse and
+  shift outputs with three channels offering AND, OR and XOR logic combinations.
+details: |-
+  Seuils, french word for thresholds , is a module based around a saw animator circuit, with exposed comparator output and boolean logic. It's first intent is to phase shift ramp/saw signals, however, using it with other periodic waveforms (triangle, sine) or more complex signals offers some interesting waveshaping. The input signal goes through a high speed comparator (hard key generator), which will generate a pulse wave. The SHIFT knob and CV will determine the length of this pulse. The resulting signal is available at the front panel LOGIC output. The pulse is also used to offset part of the input signal, effectively phase shifting a ramp/saw, with the SHIFT knob and CV determining the shift amount. The resulting signal is available on the front panel SHIFT output. Each channel features the same core circuit when the logic switch is set to COMP (comparator), though each one can be set to produce different boolean logic combinations:
+
+  Those combinations are available at the LOGIC output, but are also used to shift the input signal, thus affecting the SHIFT output too. Three jumpers at the back of the module allows to modify the boundaries of the threshold for each channel individually, from 0V/+1V to -0.5V/+1.5V, this way, if the input signal is exceeding 0V/+1V, the threshold can be extended in order to sweep accross the whole range of the input signal. Here are the basic uses cases:
+
+  The module is powered through standard Eurorack connector or DC barrel. Inputs:
+  - 0-1V IN, 100kohm
+  - 0-1V CV, 100kohm
+
+  Outputs:
+
+  0-1V LOGIC, 75 ohm
+  0-1V SHIFT, 75 ohm
+
+  Specs:
+
+  - 12HP
+  - 200mA +12V
+  - 0mA -12V
+  - 0mA +5V
+  - 42mm deep
+
+  Documentation
+specs: |-
+  - Channel A features AND gates: when the logic switch is in A&B position, Channel A and Channel B comparator outputs are ANDed together, the resulting signal can then be ANDed again with Channel C when the switch is in (A&B)&C position.
+  - Channel B features OR gates: when the logic switch is in A|B position, Channel A and Channel B comparator outputs are ORed together, the resulting signal can then be ORed again with Channel C when the switch is in (A|B)|C position.
+  - Channel C features XOR gates: when the logic switch is in A^B position, Channel A and Channel B comparator outputs are XORed together, the resulting signal can then be XORed again with Channel C when the switch is in (A^B)^C position.
+  - 0V/+1V range when shifting single ramps, as extending the threshold to -0.5V/+1.5V can cause an offset on the shift output that may not be desirable.
+  - -0.5V/+1.5V when processing more complex signals that may exceed 0V/+1V.
+io:
+  - key: 8UqCgwMh
+    name: IN
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: pRCXHEHq
+    name: CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Xi1fcD9F
+    name: LOGIC
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: AA1tWS9s
+    name: SHIFT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 8SKvwGpE
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

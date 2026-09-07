@@ -1,0 +1,94 @@
+id: K1hrSvY-g12BgWpM27EkQ
+name: Isohélie - Triple 3-bit Posterizer
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - bit-crusher
+capabilities:
+  - bit-crush
+url: https://syntonie.fr/products/isohelie
+prices:
+  - amount: 399
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A triple 3-bit posterizer that quantizes an input signal into 8
+  equal steps using an ADC/DAC, with a bitswap feature that swaps bits together
+  to create colorization effects.
+details: |-
+  Isohélie is a term used in french versions of graphic editing softwares to describe posterization, it is formed on ancient Greek "iso" meaning equal and "hêlios" meaning sun/light. Each channel is based around a 3-bit ADC/DAC which will quantize the input signal into 8 equal steps, resulting in 8 different color shades. Processing a full RGB signal with the 3 channels will constrain it to 512 possible colors. The bitswap features allows to swap the 3 bits together before they're summed by the R2R DAC, which result in a colorization effect and can be controlled up to video rate. All 3 signal inputs and CV inputs are normalized together. Powered through standard Eurorack connector or DC barrel. Inputs:
+  - 0-1V IN, 499 ohm
+  - 0-1V CV, 499 ohm
+
+  Outputs:
+
+  - 0-1V Bitswap, 499 ohm
+  - 0-1V OUT, 499 ohm
+
+  Specs:
+
+  - 12HP
+  - 230mA +12V
+  - 0mA -12V
+  - 0mA +5V
+  - 42mm deep
+
+  Maybe one of our retailers has one:
+
+  Perfect Circuit (US)
+  Midwest Modular (US)
+  Schneidersladen (Germany)
+  Raw Voltage (Austria)
+  Signal Sounds (UK)
+  Elevator Sound (UK)
+
+  Documentation
+io:
+  - key: 1jrW4XHs
+    name: Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: eazwJdzY
+    name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: bPN0z3EE
+    name: Bitswap Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: HQBbjj1p
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: NQJl4qK0
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: 32ISyoUb
+    name: DC Barrel Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

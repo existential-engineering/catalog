@@ -1,0 +1,73 @@
+id: qU8ysxvvoJ7azX6bIW1vU
+name: Courbes - Triple Expo Log Shaper
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - filter
+url: https://syntonie.fr/products/courbes
+prices:
+  - amount: 259
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A triple exponential and logarithmic shaper with three identical
+  channels, featuring manual and voltage control over the curve of the input
+  signal, transitioning from exponential to linear to logarithmic.
+details: |-
+  Courbes (french for curves) is a triple exponential and logarithmic shaper with three identical channels, featuring manual control as well as voltage control over the curve of the input signal, smoothly transitioning from exponential to linear to logarithmic. Most obvious use is to shape ramps and oscillators to produce curved shapes like four branched stars (exponential) and ellipses (logarithmic). However, using Courbes on more complex signals will be akin to gamma correction, allowing to expand the contrast in exponential, making the dark parts of the signal darker, as well as compressing the contrast in logarithmic, making the dark parts of the signal brighter. It is different than brightness control, which will move the whole signal towards black or white level, thus loosing information once the signal exceed the black or white level. It is also possible to use Courbes as a sine/antisine wave shaper, by sending the same signal at the input and CV input, with the CV attenuverter allowing to transition from sine (max position) to antisine (min position). On a complex signal, the sine shaping will translate into the dark parts of the signal getting darker, and the bright parts of the signal brighter, and the antisine will make the dark parts brighter and the bright parts darker. Since Courbes features three channels, it can be used to process RGB signals, allowing to finely tune the gamma of each R, G and B signals. Then those three channels are independant and can be used to process H and V ramp/oscillator signals separately, allowing for precise shaping of the curve of the resulting shape. Inputs:
+
+  Outputs:
+
+  Specs:
+
+  - 8HP
+  - 200mA +12V
+  - 0mA -12V
+  - 0mA +5V
+  - 42mm deep
+
+  Can be powered through standard Eurorack 16pin connector or DC barrel connector. Documentation
+specs: |-
+  - 0-1V, 100kohm
+  - 0-1V, 75ohm
+io:
+  - key: dG20w7LJ
+    name: Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 4goRIgji
+    name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: LSROf4Ka
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: HzHpWSe5
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: C8YgFTtQ
+    name: DC Barrel Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

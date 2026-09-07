@@ -1,0 +1,100 @@
+id: VY0IXSniUqJWsfnQxphB_
+name: Détail - Softener / Enhancer - Standalone
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - filter
+  - effect
+capabilities:
+  - filter
+url: https://syntonie.fr/products/detail-softener-enhancer-standalone
+prices:
+  - amount: 369
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A Composite/Component video filter based around a lowpass/highpass
+  filter that can soften/blur or enhance/sharpen the incoming video signal, with
+  frequency, resonance and dry/wet controls. This standalone version comes
+  assembled in an enclosure with a +12V DC wall wart.
+details: |-
+  This listing is for the module + enclosure, making it standalone (no Eurorack case and power required). The module alone can be found here . Détail is a Composite/Component video filter. Inspired by old school video detailers, it is based around a lowpass/highpass filter, which can either soften/blur or enhance/sharpen the incoming video signal. It outputs a fully compliant Composite/Component Y video signal, meaning that the effects it produces can be pushed to the extreme without the need for stabilization (unlike most analog glitch video devices). However, it needs an in-spec signal at its input to operate correctly (a video signal coming from a glitch device or VCR will need to be stabilized prior to Détail). It features three main parameters, with video rate voltage control and attenuverter for each:
+
+  - Frequency: sets the cutoff frequency of the filter, ranging from 1MHz to 10MHz
+  - Resonance: feeds back the output of the filter into its input, allowing for negative or positive feedback for various effects. - Dry/Wet: crossfades between the unprocessed video input and the output of the filter, so the intensity of the blur or sharpen can be set independently from the frequency and resonance. The Luma Filter switch toggles between:
+
+  - Sharp: the filter is set to highpass and the output of the filter mixed with the input signal, resulting in a high frequency boost, enhancing the finer details of the picture. As the frequency decreases, more content of the input signal gets enhanced, resulting in an effect typical of analog video filters. In sharp mode, negative resonance creates a "edge feedback" effect, and positive resonance can create hue aberrations in Composite when the cutoff frequency gets close the subcarrier frequency (3-4MHz). - Blur: the filter is set as a lowpass, thus removing the finer details of the picture. As the cutoff frequency of the filter decrease, the video gets more and more blurry. The resonance isn't as impressive as in sharp mode, however negative resonance can create some nice "ghosting effect", where part of the pictures disappears, and the remaining parts have this glowing halo. The Chroma Filter switch allows to separate luma from chroma when set to ON, in order to apply filtering only to the luma.&nbsp;
+  However, it can be toggled to OFF, in order to process the full Composite video signal (luma + chroma).&nbsp;When processing a full Composite video signal, the sharp mode can act as a hue boost /shift in addition to the sharpening when the filter cutoff is close to subcarrier frequency. And in blur mode, the color information will be removed in addition to the blurring caused by the filter. Another use case for setting the chroma filter to OFF is when processing Component, to avoid any frequency/detail loss incurred by the chroma filter (especially in HD). Détail features two 1V outputs over minijack:
+
+  - Pre-filter output: buffers and scales the signal present at the Video IN, useful for luma-based modulation. - Post-filter output: buffers and scales the output of the filter, allowing for additional feedback when patching it into the CV inputs. Of course, the CV IO offers a lot of possibilities when combined with other modules. A couple examples:
+
+  - Luma key modulation using a key generator (like Seuils) on the pre-filter output. - Using Détail as an input module with a built-in filter to further process the signal in the 1V RGB realm (with the help of 1V processing modules and an RGB encoder like VU007B). - Filtered modulation on Stable parameters, to use either the blur mode to get some smooth hue shift, or the edge feedback effect of the sharp mode for that hard edged modulation. A RCA Sync output at the rear of the module allows to route the external video sync to a sync generator or any signal generator module with RCA sync IO. It supports the following Composite (SD) and Component (SD/HD) formats:
+
+  288p50
+  240p59.94
+  576i50 (PAL)
+  480i59.94 (NTSC)
+  576p50
+  480p59.94
+  720p50
+  720p59.94
+  720p60
+  1080i50
+  1080i59.94
+  1080i60
+  1080p23.98
+  1080p24
+  1080p25
+  1080p29.97
+  1080p30
+
+  The format is detected and selected automatically. Assembled standalone, module comes into an enclosure with a +12V DC wall wart. Documentation (WIP)
+io:
+  - key: WpN4rV9j
+    name: Video Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: EcorYawv
+    name: Video Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: SX1fvPLv
+    name: Pre-filter Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: cXqN5hUd
+    name: Post-filter Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 5ZxanPdO
+    name: Sync Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: vBfgwpW1
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

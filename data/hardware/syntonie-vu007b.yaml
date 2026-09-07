@@ -1,0 +1,88 @@
+id: PDP1o4Nu75zw-YRfO6b50
+name: VU007B
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - utility
+url: https://syntonie.fr/products/vu007b-sync-generator-rgb-encoder-pcb-set
+prices:
+  - amount: 90
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: VU007B is a Eurorack RGB to Composite/S-Video/Component encoder
+  with an integrated sync generator supporting multiple SD and HD video
+  standards. Sold as a DIY PCB set with pre-populated SMD parts.
+details: |-
+  Comes with the updated sync generator board. Inputs:
+
+  - 0-1V RGB, 499 ohm, jack
+  - 0-700mV Sync in, 75 ohm, RCA (rear)
+
+  Outputs:
+
+  - 0-700mV YPbPr/CVBS, 75 ohm, RCA
+  - 0-700mV S-Video, 75 ohm, Mini Din-5
+  - 0-700mV Sync out, 75 ohm, RCA (rear)
+  - 8 HP
+  - 120mA +12V
+  - 60mA -12V
+  - 0 mA +5V
+  - 50mm deep
+
+  (Depth indicated is with power cable fitted but without RCA cable plugged in. Vertical RCA sockets are used at the rear of the module, with the tallest RCA we've tested, the total depth is around 70mm, smaller or right angle RCA cable is ideal for shallow eurorack cases.)
+
+  PCB set includes the circuit boards required for the build, with pre-populated SMD parts (AD724, ADA4851-4, 4.43MHz/3.58MHz crystals), as well as pre-assembled, flashed and tested sync generator board. All the other components needs to be sourced by the user (check the BOM in the documentation). Note: the PCB set comes with a PCB front panel, if you'd like to upgrade it to an aluminum front panel, it can be purchased separately here . Documentation
+specs: |-
+  - RGB to Composite/S-Video/Component encoder
+  - Sync Generator capable of the following standards: 288p50/240p59.94/576i50/480i59.94/576p50/480p59.94/720p50/720p60/1080i50/1080i60/1080p25/1080p30 selected by the mean of 3 slide switches.
+  - RCA sync I/O at the rear of the module
+io:
+  - key: oZdYNXop
+    name: RGB
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 42HUmGwd
+    name: Sync in
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: YZcc5Ubf
+    name: YPbPr/CVBS
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: eSkq5i0I
+    name: S-Video
+    signalFlow: output
+    category: audio
+    type: line
+    connection: mini-din
+    maxConnections: 1
+    position: Top
+  - key: 7nS1qs4f
+    name: Sync out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: NT0I2Nmx
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

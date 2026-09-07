@@ -1,0 +1,97 @@
+id: ry_szBeEsqlEGUiYhQO80
+name: Solaire
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - utility
+url: https://syntonie.fr/products/solaire-full-wave-rectifier-21-mixer
+prices:
+  - amount: 249
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: Solaire is a Eurorack module combining a quad full wave rectifier
+  with a triple 2:1 mixer, with normalisation between rectifier stages and
+  mixers. It can convert ramp/saw waves into triangles, double triangle
+  frequencies, and create solarization-type folding effects.
+details: |-
+  Solaire, french for solar , is a quad full wave rectifier and triple 2:1 mixer with normalisation between rectifier stages and mixers. The full wave rectifier is a really useful circuit, it can be used to convert a ramp/saw wave into a triangle, a triangle wave into a triangle wave twice the frequency of the input, and using it on more complex signals will allow for solarization type of effect as the signal folds on itself, creating kind of metallic shades. The 2:1 mixer is also useful to combine two signals together, most obvious use would be H and V oscillators/ramps combination to produce 2D shapes or summing a signal with a slower signal like an LFO to modulate the offset. Each mixer features a switch to choose between:
+
+  Each rectifiers and mixers can be used individually, but are also normalized to each other as follow:
+
+  Rectifier 1 OUT -> Mixer 1 IN A
+  Mixer 1 OUT -> Rectifier 2 IN
+  Rectifier 2 OUT -> Mixer 2 IN A
+  Mixer 2 OUT -> Rectifier 3 IN
+  Rectifier 3 OUT -> Mixer 3 IN A
+  Mixer 3 OUT -> Rectifier 4 IN
+
+  This allows to use the mixers input B (IN B) to add a signal in-between each rectification stage, either for slow modulation or to create more complex shapes and shades. The module is powered through standard Eurorack connector or DC barrel. Inputs:
+  - 0-1V RECTIFIER IN, 100kohm
+  - 0-1V MIX IN A/B, 100kohm
+
+  Outputs:
+
+  0-1V RECTIFIER OUT, 75 ohm
+  0-1V MIX OUT, 75 ohm
+
+  – 8HP
+  – 100mA +12V
+  – 0mA -12V
+  – 0mA +5V
+  – 42mm deep
+
+  Documentation
+specs: |-
+  - AVG (average): signal A and signal B are added and the result divided by two ((A+B)/2).
+  - ADD (addition): signal A and signal B are added (A+B).
+  - SUB (subtract): signal A and signal B are subtracted (A-B).
+io:
+  - key: Du6Cas8Y
+    name: RECTIFIER IN
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: FUBaAogX
+    name: MIX IN A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: xs5PKArw
+    name: MIX IN B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: ropVcxsS
+    name: RECTIFIER OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: DXAdvDgV
+    name: MIX OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 3ej5w88N
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
