@@ -4,6 +4,7 @@ manufacturer: york-modular
 primaryCategory: utility
 categories:
   - modular
+hp: 2
 url: https://yorkmodular.com/products/am5-5-way-buffered-multiple-module-2hp
 prices:
   - amount: 25.99
@@ -18,6 +19,54 @@ details: |-
 
   Inputs are resistively coupled, so this module can be used for both control voltages and audio signals. If you're planning to distribute a control voltage amongst a number of modules then this is the module you need - since it's active (ie. powered), voltage losses are kept to a minimum. Also available as a partial build. Power is provided via a JST-to-Eurorack adapter, which is included with the module. WHAT DOES IT DO? A mult (multiple) will duplicate a signal - whatever is presented at the input will be duplicated, unmodified, at each of the outputs. Thus, you can use it to send a signal to multiple modules simultaneously. Mults can be active or passive - passive mults do not require any power, but there's a chance of a small voltage drop between the input and outputs. For this reason, if you're planning to route a control voltage to a VCO, or similar module which is sensitive to input voltages, an active mult is preferable.
 io:
+  - key: Gpf5F2FZ
+    name: Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bACUAGJk
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: kywRcrKJ
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bYXmSz3V
+    name: Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FFHvBcZO
+    name: Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2zyYemUE
+    name: Output 5
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
   - key: 48nvn7s6
     name: Power
     signalFlow: input

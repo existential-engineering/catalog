@@ -20,6 +20,70 @@ details: |-
 
   If you want super accurate cutoff frequencies then you're not going to get them (not at this price, anyway) but I have endeavoured to pick the resistor and capacitor values such that the nominal cutoff frequency is as close to the described value as possible - the elephant in the room is that the tolerance for capacitors is much wider than that for resistors (typically 20% for a cap, compared to around 1% for a typical SMD chip resistor), plus getting the values dead on would require some oddball resistor values which are either unavailable, insanely expensive or can only be realised using parallel resistor networks, which take up board space. Useful if you've got a PWM signal (eg. from one of my digital VCOs) and want to do something useful with it. There are other filter-based applications too - let your imagination run riot. 4HP wide.
 io:
+  - key: eTsvOwn7
+    name: Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: srzx5XYG
+    name: 63Hz output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tvXuacCv
+    name: 250Hz output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XIjNqnFi
+    name: 500Hz output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CbIUsrSp
+    name: 1.5kHz output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Fhrq4bmY
+    name: 3kHz output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: WfVBpGHn
+    name: 5kHz output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZwYWHipv
+    name: 8kHz output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
   - key: R4gJY3mo
     name: Power
     signalFlow: input

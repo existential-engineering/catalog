@@ -17,6 +17,30 @@ description: An 8-step sequencer module supplied without a faceplate, requiring
 details: |-
   An 8-step sequencer module that has, for whatever reason, no faceplate - perfectly functional, but will require a power cable and mounting, plus appropriate knobs. Suggested maximum knob diameter is 10mm - any bigger and operation will be very fiddly. Micro-knobs work well. If you wish to fabricate your own panel then I can supply the appropriate design files.
 io:
+  - key: n7bjy9aC
+    name: Clock
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: EQfy9irj
+    name: Reset
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6OC1r2nQ
+    name: Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
   - key: ronXgxEF
     name: Power
     signalFlow: input

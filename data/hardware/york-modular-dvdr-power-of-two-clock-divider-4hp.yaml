@@ -4,7 +4,6 @@ manufacturer: york-modular
 primaryCategory: sequencer
 categories:
   - modular
-  - midi
 url: https://yorkmodular.com/products/dvdr-power-of-two-clock-divider-4hp
 prices:
   - amount: 34.99
@@ -22,15 +21,63 @@ io:
     signalFlow: input
     category: audio
     type: clock
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: opAv9Ico
     name: Reset input
     signalFlow: input
     category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 9TDf5jNx
+    name: /2 output
+    signalFlow: output
+    category: audio
     type: clock
-    connection: 3.5mm
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: mEp3QQuA
+    name: /4 output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: afkaLboI
+    name: /8 output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: gPno2aOD
+    name: /16 output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: PLpbGB35
+    name: /32 output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: AhUh4z0Z
+    name: /64 output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: tfSktrbe

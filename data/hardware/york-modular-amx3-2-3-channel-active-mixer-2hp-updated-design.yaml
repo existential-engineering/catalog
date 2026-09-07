@@ -4,6 +4,7 @@ manufacturer: york-modular
 primaryCategory: mixer
 categories:
   - modular
+hp: 2
 url: https://yorkmodular.com/products/amx3-2-3-channel-active-mixer-2hp-updated-design
 prices:
   - amount: 25.99
@@ -16,6 +17,38 @@ description: A 3-channel active Eurorack mixer module with buffered inputs and
 details: |-
   An updated version of the AMX active mixer module - functionally the same as its predecessors but now quite a bit cheaper. As one of my 'high turnover' modules (ie. I sell a lot of 'em) the bulk of the assembly is now handled by the board fabricators with the final assembly and testing taking place 'in house'. There are several advantages to this: first, I can take advantage of the fact that parts from the fabricator are very cheap (economies of scale etc.) and second, I spend far less time faffing around with surface-mount components, leaving me to do final fitting of any through-hole parts plus any testing. A companion module to the 3-channel passive mixer - the inputs are resistively coupled, so any DC offset in the signal will be preserved. Since this is an active , rather than a passive, mixer, it is a better choice if you wish to mix control voltages, since each input is buffered prior to the mixing stage, and there is an additional gain stage to make up for any signal loss across the mixing resistors. 2HP wide, supplied with a EURO-to-JST power adapter.
 io:
+  - key: 9ryolKoW
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: EJvThAAj
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BBGbgPzZ
+    name: Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 4OnowjYF
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
   - key: Cqm0innY
     name: Power
     signalFlow: input
