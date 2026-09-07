@@ -1,0 +1,126 @@
+id: hFKUG7CQS25PkeMU2SLks
+name: CLRS
+manufacturer: modbap-modular
+primaryCategory: effect
+categories:
+  - filter
+  - saturation
+  - bit-crusher
+  - compressor
+  - stereo-widener
+  - modular
+capabilities:
+  - filter
+  - saturation
+  - distortion
+  - bit-crush
+  - compression
+  - stereo-widening
+url: https://www.modbap.com/products/clrs
+prices:
+  - amount: 399.99
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A 10HP stereo eurorack module offering a DJ-style filter,
+  drive/saturation, lo-fi bitcrushing, stereo width control, and a one-knob
+  compressor for end-of-chain audio processing.
+details: |-
+  Available and shipping now. Introducing the CLRS (pronounced colors) module by Modbap, a powerful 10HP reimagining of the HUE eurorack module, now expanded to stereo. At the core of CLRS is our versatile DJ-style filter, equipped with a single large top-center knob that controls both the high pass and low pass filters. With the low pass to the left and the high pass to the right, effortlessly sculpting your sound in the stereo field becomes second nature. Find the ideal frequency balance and bring your audio creations to life with a seamless and harmonious blend. Experience a transformative sonic journey with the Drive effect. From subtle saturation to edgy distortion, CLRS's Drive empowers you to sculpt the ideal sonic character that complements your creative vision. It adds warmth, character, and texture, taking your sound to harmonically rich territories. The newly added stereo width control enables precise adjustments to the stereo field, providing greater control over the spatial aspects of your audio. The Lofi effect on CLRS is a powerful feature that introduces a lo-fi or low-fidelity aesthetic to your audio. By reducing the sample rate, the "Lofi" knob emulates the characteristics of lower-quality audio recordings or older digital devices. This reduction in sample rate produces a vintage, degraded, or "lo-fi" sound, perfect for creating a nostalgic or retro vibe in your recordings. The Bit Depth knob decreases the bit depth. This introduces a sort of aliasing sound and distortion, adding to the lo-fi character of the audio. The result is a gritty, distorted, or "bitcrushed" sound reminiscent of older digital devices or low-quality audio formats. The Lofi CV input affects the combination of sample rate reduction and bit depth, opening up a range of possibilities to explore vintage recordings, nostalgia, and unique audio textures. The "Mag" effect, short for "Magnet," combines the characteristics of tape saturation and tape distortion into a single control knob. Adjusting the "Mag" knob introduces a magnetic-like effect to the audio signal, emulating the warmth, saturation, and subtle distortion associated with analog tape recordings. This feature allows you to add vintage and analog-style tonal qualities to your audio, bringing warmth and depth to digital recordings or achieving a vintage vibe. The "Mag" effect can also introduce light tape distortion, adding a touch of grit, character, and a slight edge to the sound, imparting a vintage or lo-fi aesthetic. CLRS offers an intuitive one-knob compressor, effortlessly controlling your audio dynamics. Elevate your mix to a professional level with depth and balance. The newly integrated 3-way switch for ratio control provides the freedom to choose between light, medium, and heavy compression settings. Also included in this expanded Compressor is a 'Duck' input which simulates side chain compressions allowing you to send LFOs, envelopes and the like to control the side chaining. Whether you seek gentle leveling or impactful squashing, CLRS's compressor adapts to your musical needs. In addition, CLRS features CV inputs for modulation of the filter, drive, mag, and lofi effects. This allows for dynamic and expressive control over your sound, adding an extra layer of creativity to your music production. Whether you're using CLRS in a Eurorack modular system or in your groovebox signal chain, it seamlessly integrates into your setup, providing you with a versatile and powerful tool for end-of-chain audio processing. Its CV inputs for modulation of the filter, drive, mag, and lofi effects add an extra layer of expressiveness and creativity to your music production, allowing you to dynamically shape and transform your sound. Experience the flexibility of audio processing with CLRS and unlock a world of sonic possibilities for your Eurorack or groovebox setup. From side chain compression and shaping frequencies to adding warmth, character, and vintage vibes, CLRS is the ultimate companion for taking your music to new heights. Features
+
+  Tech Specs
+
+  Documentation
+specs: |-
+  - Audio processing effect
+  - DJ Style Filter (HP and LP)
+  - Tape Saturation (mag), Drive, and Lofi effects
+  - One knob compressor with switchable ratio
+  - Ducking input
+  - Width Control - stereo field widening parameter
+  - CV inputs for Filter, Mag, Drive, Lofi.
+  - Stereo input and output
+  - Width: 10HP
+  - Depth: 24 mm
+  - Power: 115mA +12V, 6mA -12V
+io:
+  - key: k1I21i7q
+    name: Audio In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: sxCYxa0G
+    name: Audio In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: i6pvKBum
+    name: Audio Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: eoKp7JHZ
+    name: Audio Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 4QOyyz08
+    name: Filter CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Quwft67s
+    name: Drive CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: ReuupLMe
+    name: Mag CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: GYcdKpqj
+    name: Lofi CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: dfHPQcSo
+    name: Duck CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: UXLDwxSk
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
