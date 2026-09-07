@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Miktek (26 hardware/software entries).
+Import Miktek (25 hardware and accessory entries).

@@ -30,10 +30,34 @@ specs: |-
   - Includes a Wooden Presentation Case with Mic Clips, Shock-mounts, Windscreens, Stereo Bar Set, in a rugged aluminum carrying case
 io:
   - key: b63GpX9G
-    name: Audio Output
+    name: Mic 1 Output
     signalFlow: output
     category: audio
     type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: p71FbB4A
+    name: Mic 1 Phantom Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 7kwbuMJA
+    name: Mic 2 Output
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 7kFFbMAO
+    name: Mic 2 Phantom Power
+    signalFlow: input
+    category: power
+    type: power
     connection: xlr
     maxConnections: 1
     position: Right
