@@ -1,0 +1,55 @@
+id: 64Y7OrrPPGBZNk35LgXUU
+name: NCR1
+manufacturer: audix-microphones
+primaryCategory: rack-mount
+categories:
+  - microphone
+url: https://audixusa.com/products/ncr1
+prices:
+  - amount: 399
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: The AUDIX Novacore NCR1 is a compact, single-channel digital UHF
+  wireless receiver and the entry point into the Novacore digital wireless
+  ecosystem.
+details: |-
+  The AUDIX Novacore NCR1 is a compact, single-channel digital UHF wireless receiver and the entry point into the Novacore digital wireless ecosystem. Designed for small systems and portable use, it delivers professional-grade encrypted digital audio across a 48 MHz tuning range (494–542 MHz, country dependent), with one-touch IR sync pairing for fast setup with any Novacore handheld or bodypack transmitter.
+
+  The front-panel LCD provides real-time visibility into RF and audio levels, group/channel assignment, diversity status, battery condition, and squelch — with additional parameters accessible through the MODE menu. Dual rear RJ11 ports allow direct daisy-chaining to AUDIX Frequency Coordination software without a network switch, keeping setup simple in any environment.
+
+  Audio is delivered via a balanced XLR output at line level with switchable pad and ground lift. The NCR1 operates on a universal 100–240 VAC power supply and mounts in standard rack infrastructure via the optional single or dual rack mount kit. It is fully compatible with all Novacore transmitters, capsules, and accessories, and shares the same RF platform as the NCR2 and NCR4 for mixed-receiver deployments.
+specs: |-
+  - Type: single-channel digital UHF wireless receiver
+  - Tuning range: 48 MHz (494-542 MHz, country dependent)
+  - Latency: <3 ms
+  - Encryption: AES-256
+  - Audio output: balanced XLR, line level, switchable pad (-6/0/+16 dB) and ground lift
+  - Control ports: dual RJ11 for AUDIX Frequency Coordination daisy-chain
+  - Antennas: two detachable BNC
+  - Power: universal 100-240 VAC external supply (12 VDC)
+io:
+  - key: QAhNj1JF
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: ZRx0ZbKu
+    name: Frequency Coordination (RJ11)
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: rj11
+    maxConnections: 1
+    position: Right
+  - key: OGxrWzoa
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
