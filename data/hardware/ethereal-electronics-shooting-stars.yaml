@@ -4,10 +4,10 @@ manufacturer: ethereal-electronics
 primaryCategory: sequencer
 categories:
   - modular
-  - midi-effect
 capabilities:
   - sequencing
   - vibrato
+hp: 16
 url: https://www.etherealelectronics.nl/products/shooting-stars
 prices:
   - amount: 319
@@ -21,6 +21,102 @@ description: Shooting Stars is a 16HP Eurorack stochastic control voltage
 details: |-
   Shooting Stars is a high-performance 16HP Eurorack stochastic control voltage sequencer designed for modular synthesizers. It combines intuitive hands-on control with more advanced features, allowing musicians, sound designers, and performers to create evolving melodies.
 io:
+  - key: znAGLk6m
+    name: Root CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JodSepQR
+    name: Mean CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hUbkcIiz
+    name: Range CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Cl0vzoFd
+    name: Recall CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: mGZtOXIZ
+    name: Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Bs1eNdhT
+    name: Reseed Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5gkfwQQ7
+    name: Restart Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ARIy1DmM
+    name: Recall Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rDxEr5md
+    name: Note 1 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 9VB5cryf
+    name: Note 2 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: plJoDKI9
+    name: Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tnbfce7X
+    name: Drift Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
   - key: 6U400ajl
     name: Power
     signalFlow: input
