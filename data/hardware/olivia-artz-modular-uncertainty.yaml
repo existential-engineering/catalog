@@ -1,0 +1,64 @@
+id: p3Wd23ORyNES_MYXkh4vS
+name: Uncertainty
+manufacturer: olivia-artz-modular
+primaryCategory: utility
+categories:
+  - meter
+  - noise-gate
+capabilities:
+  - gating
+url: https://oamodular.org/products/uncertainty
+prices:
+  - amount: 180
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A tiny Eurorack gate-processor, VU meter, and open-source firmware
+  platform that by default randomly drops gates passed through it.
+details: |-
+  Uncertainty is a tiny gate-processor, VU meter, and open-source platform for Eurorack. Out of the box, Uncertainty is a stochastic gate-processor that randomly drops gates you try to pass through it. You can use Uncertainty to create branches in your patch where events are channeled into one river or another. Plug Uncertainty into your computer you can replace this default firmware with others that completely change the functionality of the module. OAM will be continuously releasing new, free, open-source firmware for Uncertainty , but we also have a community writing and sharing their own code. It's got a fast processor and can be coded in C++ , Python , and Go , so it's easy to jump in. As of March 2023, Uncertainty has its second official firmware, VU Meter. Just a perfectly normal VU Meter where each LED gets its own gate output. Wait, what? No one's ever done that? But it makes gated effects and modulation so easy. Seriously, try it. It's too cool. Also, you can use jumpers on the module to invert the VU Meter or switch it into dot-mode, where only the peak LED is activated. So the loudness contour of a patch can strum things! Uncertainty uses 53ma on the +12V rail plus 9-10ma per gate that is being sent out at any given moment. 2HP and 42mm deep
+
+  📖 Manual (PDF)
+
+  💾 Firmware (see manual)
+
+  🎛️ Uncertainty on ModularGrid
+
+  The code for Uncertainty is completely open-source and public domain. Here you can find alternative firmware ands instructions on writing your own: Uncertainty on GitHub
+
+  Designed, engineered, and developed by Olivia Artz, Kate Artz, and Eris Fairbanks. Featuring artwork by Rosette Artz
+
+  Based on an idea by Aaron Taylor-Waldman that was inspired by Émilie Gillet's work. Special thanks to Morgan and everyone else on the OAM private chat server. Comes with a power cable. Send us an email if you'd like screws.
+io:
+  - key: HuQuPtS9
+    name: Gate Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: sGZGMWwR
+    name: Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: qCtEFKMa
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Top
+  - key: MZ2IBAmA
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
