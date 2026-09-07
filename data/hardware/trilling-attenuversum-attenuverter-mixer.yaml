@@ -1,0 +1,56 @@
+id: M3idrefA4AabJOFihehJG
+name: Attenuversum - Attenuverter-Mixer
+manufacturer: trilling
+primaryCategory: utility
+categories:
+  - modular
+url: http://www.trillingsynths.com/products/attenuversum
+prices:
+  - amount: 50
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: Outputs the sum of two attenuverted inputs with amplification up to
+  x2, suited for gates, control voltages, or audio, plus an offset control for
+  the output.
+details: |-
+  Outputs the sum of two attenuverted inputs with amplification up to ×2 (range ×−2…×+2). Inputs can be gates, control voltages or audio, with linear mixing best suited to control signals. Offset control for the output.
+specs: |-
+  - Width 3hp (15mm)
+  - Depth 33mm (including power cable)
+  - Universal 10/16 pin Eurorack power connector (16 pin cable included)
+  - Standard 3.5mm TS jacks
+  - Power 5mA 12V, 5mA -12V
+io:
+  - key: Dwtc5llX
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: DTfO0iuH
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: aCnkw8Uw
+    name: Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: zc9N9btP
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

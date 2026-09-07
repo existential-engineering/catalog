@@ -1,0 +1,82 @@
+id: phY4ltyvpv7Ybvu3PtS-6
+name: 4051 - Permutational Sequencer
+manufacturer: trilling
+primaryCategory: sequencer
+categories:
+  - modular
+capabilities:
+  - sequencing
+url: http://www.trillingsynths.com/products/4051
+prices:
+  - amount: 160
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A sequencer that turns three gate signals into complex sequences by
+  combining them as a binary number to determine the order of its steps. It
+  produces adjustable CV output and a trigger pulse each time it advances to a
+  new step.
+details: |-
+  The 4051 Permutational Sequencer turns simple gate signals into complex sequences. This sequencer uses three gate inputs as a binary number, which determines the order of its steps. This sequencer is a powerful tool for creating evolving patterns that push your creativity to new heights. Tech specs:
+
+  🎛️ ModularGrid
+  📖 Manual
+specs: |-
+  - Dynamic Variations : Feed it three successively halved standard notes like quarter, eighth and sixteenth notes for a standard left-to-right sequence. But the real magic happens when you replace any of the inputs with another signal, resulting in limitless creative possibilities and rhythmic variation.
+  - User-Friendly Design : Color-coded inputs make it easy to understand and control.
+  - CV Output Range and Level Options : The CV output range is adjustable via a dedicated switch, allowing you to tailor it to your specific needs. Additionally, the level knob provides precise control over attenuation for fine-tuning the signal.
+  - Trigger Output : Each time the sequencer advances to a new step, a trigger pulse is sent from the trigger output, making it easy to synchronize with other modules or external gear.
+  - Width 16hp (80.9mm)
+  - Depth 35mm (including power cable)
+  - Standard 16 pin Eurorack power connector (cable included)
+  - Standard 3.5mm TS jacks
+  - Power 35mA 12V, 10mA -12V
+io:
+  - key: 4nd3UsHh
+    name: Gate Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: xE7UGutt
+    name: Gate Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: XFdWoTsN
+    name: Gate Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: QZgabhLe
+    name: CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: nPwCawX2
+    name: Trigger Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: sdpzjaZf
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

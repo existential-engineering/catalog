@@ -1,0 +1,63 @@
+id: x_O4vsJd9gTqK0eUZfZz3
+name: T=3x·2y - MIDI Clock Divider
+manufacturer: trilling
+primaryCategory: midi-effect
+categories:
+  - modular
+url: http://www.trillingsynths.com/products/t3x2y
+prices:
+  - amount: 160
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A MIDI clock divider that organizes divided clock outputs into
+  triplet, standard, and dotted note divisions, with a front panel showing the
+  relationship between outputs for building grooves and polyrhythms.
+details: |-
+  The T=3 x ⋅2 y Midi Clock Divider makes it easy to explore rhythmic possibilities. The intuitive front panel shows the relationship between all outputs at a glance. Whether you're building complex grooves or experimenting with polyrhythms, this module simplifies the process. Tech specs:
+
+  🎛️ ModularGrid
+  📖 Manual
+specs: |-
+  - Flexible Rhythms : Outputs are organized into triplet, standard, and dotted note divisions, perfect for creating musically meaningful patterns.
+  - Seamless Integration : Combine any three outputs with the 4051 Permutational Sequencer for instant access to unique and inspiring sequences.
+  - Reset in and out: To sync to other modules or use the reset in to make it reset itself if you want different sequence lengths.
+  - Width 8hp (40.3mm)
+  - Depth 36mm (including power cable)
+  - Standard 16 pin Eurorack power connector (cable included)
+  - Standard 3.5mm TS jacks
+  - Standard 3.5mm TRS jack for MIDI (Type A)
+  - Power 120mA 12V
+io:
+  - key: 6XlhLU83
+    name: MIDI Input
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ae0co3xH
+    name: Reset Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: JDR8KknR
+    name: Reset Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ARkDRGOT
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
