@@ -1,0 +1,88 @@
+id: Xkc7FFCsoEr25pGyWqMdS
+name: "PM4x4: 4x4 passive matrix mixer"
+manufacturer: york-modular
+primaryCategory: modular
+categories:
+  - mixer
+  - utility
+url: https://yorkmodular.com/products/pm4x4-4x4-passive-matrix-mixer-pcb-panel-set-14hp-copy
+prices:
+  - amount: 54.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A 4x4 passive matrix mixer that routes multiple input signals to
+  multiple output destinations for flexible custom mixing.
+details: |-
+  A re-release of one of my older modules - a 4x4 passive matrix mixer. For those not in the know, a matrix mixer is a device that routes multiple input signals to multiple output destinations. It allows for flexible and complex routing of signals, enabling users to create custom mixes and effects chains. Unlike a traditional mixer, which typically combines inputs into a single output, a matrix mixer provides individual control over the routing and mixing of each input to each output. TL;DR - you can do funky mixing effects with it. Note that as this is a passive mixer, meaning that you won't be able to generate feedback and other squally effects using the module on its own (you'd need some external amplification for that) but it's still good for taking up to four sources, mashing them together and then sending them to up to four different destinations. Note also that as this is a passive device there's a considerable tradeoff between mixer resistance value and voltage drop/channel crosstalk. I use 10k resistors by default. There are three options available - please state which you want:
+
+  In the absence of any other information I will assume that resistive coupling is OK.
+specs: |-
+  - Resistive coupling - best if you're planning to mix CV sources.
+  - Capacitive coupling - removes any DC offset from the channel; best for audio or non-CV signals. Not recommended for CV mixing.
+  - None - if you'd rather fit your own components to the inputs; in this case the relevant footprints (JP1-JP4) will be left unpopulated.
+io:
+  - key: 77uJNQtF
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: gEyQkL9d
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: ulHD9zA5
+    name: Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: pWv1AUkE
+    name: Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 4zMlrFSS
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: k3aIxn3d
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: S705O9B1
+    name: Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: rsqoNAvE
+    name: Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

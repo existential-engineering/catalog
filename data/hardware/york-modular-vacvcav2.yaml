@@ -1,0 +1,60 @@
+id: uA2bCb02wdYiZZCgUx5lI
+name: VACVCAv2
+manufacturer: york-modular
+primaryCategory: modular
+categories:
+  - utility
+capabilities:
+  - distortion
+url: https://yorkmodular.com/products/vacvcav2-vactrol-vca-6hp
+prices:
+  - amount: 44.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A single-channel vactrol-based VCA module in a 6HP form factor,
+  well suited to pads and ambient soundscapes due to the vactrol's inherent
+  attack and decay characteristics.
+details: |-
+  This is a remix of my old 4HP vactrol VCA - it's now in a form factor which is a bit friendlier to those who insist on running unfeasibly shallow cases, although that comes at the expense of a bit more width. Vactrols have an intrinsic 'attack' and 'decay', so if you're after a snappy response of the sort you'd get from, say, an LM13700 then this probably isn't the module you're looking for. That said, the characteristics of the vactrol mean that this is a great module if you're big on pads or ambient-type soundscapes. You can also use it as a mute-style module, although unlike my other VCAs this one is only single channel (a multi-channel version is a possibility if the demand is there)
+
+  There's a bunch of controls broken out onto the front panel:
+
+  The finished module is 6HP wide and has a single-board design which is approximately 25mm deep with the power cable attached. The faceplate is my 'new' style of black with gold and white lettering.
+specs: |-
+  - CV LEVEL/SIGNAL LEVEL - controls the amplitude of the CV and signal inputs (respectively)
+  - CV TRIM - controls the current through the LED part of the vactrol. Use this to control the character of the output signal. Lower levels will lead to a more 'saturated' sound, as more current will be flowing through the vactrol. Start with this turned fully clockwise and work backwards from there.
+  - GAIN - controls the output gain. It's quite easy to overdrive and get some really dirty distortion, depending on the input signal and other settings.
+io:
+  - key: QCjxAYcm
+    name: CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: PBcgAuFw
+    name: Signal In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: KNkkx83S
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: o21ZUijk
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

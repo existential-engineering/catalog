@@ -1,0 +1,51 @@
+id: 1t0Wdrk3BPshi6jDQgmYr
+name: "VC2: Voltage-controlled 2-way switch module"
+manufacturer: york-modular
+primaryCategory: routing
+categories:
+  - modular
+  - midi-effect
+url: https://yorkmodular.com/products/vc2-voltage-controlled-2-way-switch-module-3hp
+prices:
+  - amount: 19.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A voltage-controlled 2-way switch module built around the DG419
+  SPDT switch IC, used to route a single source to two destinations or two
+  sources to one destination.
+details: |-
+  Another blast from the past - this is a voltage-controlled switch module built around the DG419 SPDT switch IC. You can think of it as being an ON-ON version of the 2WAY manual switch, except that it's controlled via a logic input. You can use it to switch one source between two destinations, or switch between two sources routing to a single destination - it does, to coin a phrase, swing both ways. Switching is handled via logic-level signal on the SWITCH jack, and there are a couple of LED indicators on the 'outputs' so you can see what's going where. Finally, if you're curious about the unpopulated footprint on the board it was meant for a 5V Zener diode which turned out to be unnecessary. Note also that this module probably won't fit in silly shallow cases - figure on having at least 40mm of depth available once the power cable is connected. There are plans to resurrect this module in a 2HP format at some point, but for now here are a couple of throwbacks from the bits box (working throwbacks, though)
+io:
+  - key: Us39ukYt
+    name: Switch
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: rNFCNHWk
+    name: Common
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: HwI5wrpc
+    name: Output A
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: pc3u9HQu
+    name: Output B
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

@@ -1,0 +1,82 @@
+id: fmIyLRQQg3PY_kB9QOBmv
+name: "YaSVF: State-variable VCF"
+manufacturer: york-modular
+primaryCategory: filter
+categories:
+  - modular
+capabilities:
+  - filter
+url: https://yorkmodular.com/products/yasvf-state-variable-vcf-10hp
+prices:
+  - amount: 44.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A state-variable voltage-controlled filter that provides
+  simultaneous low-pass, band-pass, and high-pass outputs with individually
+  tunable output levels, built around an LM13700 dual OTA.
+details: |-
+  Three filters in one ... sort of. According to a lazily-concocted summary, a state-variable filter can be described thus:
+
+  "A state variable filter (SVF) is a versatile second-order active RC filter that provides simultaneous low-pass, high-pass, and band-pass outputs from one circuit"
+
+  And that's precisely what we've got here - one input gives three outputs: low-pass, bandpass and high-pass, with individually tunable output levels for each, so you can mix and match them to approximate notch filters and the like. The cutoff and resonance controls will affect all three outputs simultaneously
+
+  Is it a 'universal' filter? Not really, but it can do quite a bit if you're particularly creative. Both CV and signal inputs have a pair of jacks, meaning you can do freaky modulation stuff if that's what floats your boat. In terms of sound, it's at the more mellow end of the scale - it's built around an LM13700 dual OTA and it can be made to resonate, but it's not nearly as gnarly as the YaVCF or diode-ladder filters. This module sits at the 'softer' end of the spectrum, with the diode-ladder filter over there somewhere and the YaVCF hanging around in the middle. Supplied as a complete module - partial builds will be offered if there's a demand. 10HP wide.
+io:
+  - key: B3OChpr0
+    name: Signal In 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: ALbe76lw
+    name: Signal In 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Ewjt8PCY
+    name: CV In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: YbwrR7Fy
+    name: CV In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: MISnvnnV
+    name: Low-pass Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: uMKACCIF
+    name: Band-pass Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: frXcTBPW
+    name: High-pass Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

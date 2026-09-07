@@ -1,0 +1,53 @@
+id: hA1J3U0awHhCwrxwUxFLI
+name: SEQ4.2
+manufacturer: york-modular
+primaryCategory: sequencer
+categories:
+  - modular
+capabilities:
+  - sequencing
+url: https://yorkmodular.com/products/seq4-2-4-step-cv-sequencer-with-reset-4hp-updated-design
+prices:
+  - amount: 36.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A 4-step CV sequencer module with reset functionality, featuring a
+  clock input, reset input, and step output.
+details: |-
+  An updated version of the SEQ4.2 sequencer module - functionally the same as its predecessors but now quite a bit cheaper. As one of my 'high turnover' modules (ie. I sell a lot of 'em) the bulk of the assembly is now handled by the board fabricators with the final assembly and testing taking place 'in house'. There are several advantages to this: first, I can take advantage of the fact that parts from the fabricator are very cheap (economies of scale etc.) and second, I spend far less time faffing around with surface-mount components, leaving me to do final fitting of any through-hole parts plus any testing. Nothing flash here, just a regular sequencer with four steps, a reset input and an output - no muss, no fuss. Plus, it fits behind a 4HP panel. The obligatory blinkenlights are present and correct, too. Trigger and clock require at least 5V to activate (more is better, within reason) and some clock sources may require buffering - this is highly dependent on the source, though. In any event, the clock input needs a clean square/pulse waveform (a decent LFO will provide this - you may be able to use an envelope generator in a pinch)
+
+  Both clock and reset will trigger on the rising edge of an incoming signal - furthermore, the sequencer will be held at step 1 for as long as the reset signal is high. Counting will not resume until the reset signal goes low again. CURRENT CONSUMPTION: varies with clocking speed - figure on 15-20mA (+12). Does not use -12V.
+io:
+  - key: CBEqRqqp
+    name: Clock
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: qMT9zirt
+    name: Reset
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 2Znl6r6e
+    name: Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: V31gk7Vd
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

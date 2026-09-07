@@ -1,0 +1,28 @@
+id: sD27F8LCS9koSnpDrcVay
+name: ADSR exponential envelope generator with range switch (4HP - updated design)
+manufacturer: york-modular
+primaryCategory: envelope-filter
+categories:
+  - modular
+url: https://yorkmodular.com/products/adsr-exponential-envelope-generator-with-range-switch-4hp-updated-design
+prices:
+  - amount: 34.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack envelope generator module using a 555 timer configured
+  as a Schmitt trigger to generate an exponential ADSR-style envelope, with a
+  range switch and hysteresis input buffering.
+details: |-
+  An updated version of the ADSR envelope generator module - functionally the same as its predecessors but now quite a bit cheaper. As one of my 'high turnover' modules (ie. I sell a lot of 'em) the bulk of the assembly is now handled by the board fabricators with the final assembly and testing taking place 'in house'. There are several advantages to this: first, I can take advantage of the fact that parts from the fabricator are very cheap (economies of scale etc.) and second, I spend far less time faffing around with surface-mount components, leaving me to do final fitting of any through-hole parts plus any testing. This is an updated envelope generator which uses a 555 timer configured as a Schmitt trigger (see: https://www.nutsvolts.com/magazine/article/555-monostable-circuits 🔗- figure 15 in particular) from which the envelope is generated. The net result is something that not only triggers at around 1V but also has far fewer parts. I'm going to call that a win, and it isn't dissimilar to the design that Doepfer use in their EG modules, albeit without the bells and whistles. In addition, I've 'borrowed' a couple of features from a Rene Schmitz design, specifically: the resistor R13 is optional, but adding it will give the input a bit of hysteresis (the degree of which is governed by the values of R13 - 1MΩ is what I use) which is handy if you're using a slowly changing waveform as a trigger. Secondly, there's a buffer between the sustain and decay pots which removes any interdependence between the two. It also uses up an otherwise uncommitted op-amp. As built, the two capacitor values are 220nF (good for percussive patches)and 2.2uF (good for pads etc.)
+
+  4HP wide.
+io:
+  - key: c0ZX36UH
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,30 @@
+id: GkqWXUOLFIiyA0dN3j-ci
+name: "FRiSK: fixed Sallen-Key filter bank (4HP)"
+manufacturer: york-modular
+primaryCategory: filter
+categories:
+  - modular
+capabilities:
+  - filter
+url: https://yorkmodular.com/products/frcl-rev2-0-fixed-rc-filter-bank-4hp
+prices:
+  - amount: 22.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack module containing seven fixed low-pass filters with
+  cutoff frequencies from 63Hz to 8kHz, acting as a filtered multiple for an
+  input signal.
+details: |-
+  Another blast from the past - originally offered as a 3HP module it was a bit on the ... deep side. Now it has been rejigged as a 4HP module in a form which is a bit more usable in the absurdly shallow cases that seem to be de rigeur these days ... In one respect, this module can be thought of as a filtered mult - this isn't as confusing as it sounds: the input is routed through seven separate low-pass filter with approximate 3dB cutoff values at: 63Hz, 250Hz, 500Hz, 1.5kHz, 3kHz, 5kHz and 8kHz
+
+  If you want super accurate cutoff frequencies then you're not going to get them (not at this price, anyway) but I have endeavoured to pick the resistor and capacitor values such that the nominal cutoff frequency is as close to the described value as possible - the elephant in the room is that the tolerance for capacitors is much wider than that for resistors (typically 20% for a cap, compared to around 1% for a typical SMD chip resistor), plus getting the values dead on would require some oddball resistor values which are either unavailable, insanely expensive or can only be realised using parallel resistor networks, which take up board space. Useful if you've got a PWM signal (eg. from one of my digital VCOs) and want to do something useful with it. There are other filter-based applications too - let your imagination run riot. 4HP wide.
+io:
+  - key: R4gJY3mo
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
