@@ -1,0 +1,108 @@
+id: 8bZSZ4ixZW3qwyziQDKcy
+name: Clock Divider
+manufacturer: stoel-music-systems
+primaryCategory: sequencer
+categories:
+  - modular
+  - utility
+capabilities:
+  - sequencing
+url: https://www.stoelmusicsystems.com/products/clock-divider
+prices:
+  - amount: 115
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack module that divides an incoming clock signal into
+  progressively slower rates from /2 to /64, each with an LED indicator, plus a
+  reset jack to restart the count.
+details: |-
+  The Stoel Music Systems Clock Divider divides incoming clock signals into slower ones. The input accepts a clock input, such as a MIDI sync clock, a gate signal, or a square wave LFO. The first output (/2) has half the speed of the input. The remaining outputs (/4 to /64) are each half the rate of the previous stage. In addition, each output features an LED to indicate if the corresponding output is high (on) or low (off). The reset jack sets all the output jacks off and restarts the counting process. For example, on the divided outputs, a 128-beats-per-minute clock would be output at 64, 32, 16, 8, 4, and 2 beats per minute. This module is excellent for triggering percussion and noise sweeps. It can also be used for adding unpredictability and creating generative music. All Stoel Music Systems modules feature aluminum front panels with a durable high-gloss white finish. For a crisp appearance and exceptional durability, the front panel markings are digitally printed at high-resolution with UV-cured ink. Mounting holes are plated to significantly reduce screw rash. The power connection features polarity protection to prevent accidental damage to the module if it is connected backward. Each module includes a 12" long 10-pin to 16-pin ribbon cable compatible with the Eurorack standard, M3 mounting screws, and a complimentary sticker. Technical Specifications
+
+  Width
+  4 HP
+
+  Depth
+  27 mm
+
+  Current Draw
+  +12V: 26mA, -12V: 0mA, +5V: 0mA
+specs: |-
+  - Divides incoming clock signals into slower ones
+  - The input accepts a clock input, such as a MIDI sync clock, a gate signal, or a square wave LFO
+  - The first output (/2) has half the speed of the input and the remaining outputs (/4 to /64) are each half the rate of the previous stage
+  - Each output features an LED to indicate if the corresponding output is high (on) or low (off)
+  - The reset jack sets all the output jacks off and restarts the counting process
+io:
+  - key: cUSTxifu
+    name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: mwHFgy9F
+    name: Reset In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: aGqH3Dzj
+    name: /2 Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: FNs1spo7
+    name: /4 Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: AisjXsMH
+    name: /8 Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: IoHoN8ix
+    name: /16 Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 3No9yGkI
+    name: /32 Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: uRf0rYya
+    name: /64 Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: lfrZa3tj
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

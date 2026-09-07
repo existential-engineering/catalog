@@ -1,0 +1,74 @@
+id: ppRXzKYvIu4UKO5sT64pJ
+name: Headphone Amplifier
+manufacturer: stoel-music-systems
+primaryCategory: headphone-amp
+categories:
+  - utility
+  - amplifier
+url: https://www.stoelmusicsystems.com/products/headphone-amplifier
+prices:
+  - amount: 129
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A high-fidelity Eurorack headphone amplifier with a discrete
+  transistor output section that accepts mono or stereo signals and outputs to
+  both 1/4-inch and 1/8-inch headphone jacks.
+details: |-
+  The Stoel Music Systems Headphone Amplifier provides a high-fidelity headphone amplifier with a discrete transistor output section. It accepts mono or stereo signals. The signal is copied to the right channel if only the left input jack is connected. Each input has a signal presence LED, and the headphone output is available on both 1/4" and 1/8" stereo jacks. WARNING: When used with headphones, this device can deliver sound pressure levels over 85dB, which may cause permanent hearing damage. All Stoel Music Systems modules feature aluminum front panels with a durable high-gloss white finish. For a crisp appearance and exceptional durability, the front panel markings are digitally printed at high-resolution with UV-cured ink. Mounting holes are plated to significantly reduce screw rash. The power connection features polarity protection to prevent accidental damage to the module if it is connected backward. Each module includes a 12" long 10-pin to 16-pin ribbon cable compatible with the Eurorack standard, M3 mounting screws, and a complimentary sticker. Technical Specifications
+
+  Width
+  6 HP
+
+  Depth
+  36 mm
+
+  Current Draw
+  +12V: 85mA, -12V: 80mA, +5V: 0mA
+specs: |-
+  - A stereo amplifier designed especially for headphones
+  - Accepts mono or stereo signals
+  - The signal is copied to the right channel if only the left input jack is connected
+  - Each input has a signal presence LED
+  - The headphone output is available on both 1/4" and 1/8" stereo jacks
+io:
+  - key: B1POyi0v
+    name: Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: yJcvkw4y
+    name: Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: GbwhmN9B
+    name: Headphone Output 1/4-inch
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: uMDrteJe
+    name: Headphone Output 1/8-inch
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 1jXeXOjc
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,68 @@
+id: H-09geaf8c78US3irCdse
+name: Vacuum Tube Distortion
+manufacturer: stoel-music-systems
+primaryCategory: distortion
+categories:
+  - saturation
+capabilities:
+  - distortion
+  - saturation
+url: https://www.stoelmusicsystems.com/products/vacuum-tube-distortion
+prices:
+  - amount: 295
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack module providing two stages of vacuum tube distortion
+  and waveshaping with switchable single or dual gain stages, harmonic content
+  control, and CV control over saturation.
+details: |-
+  The Stoel Music Systems Vacuum Tube Distortion provides two stages of vacuum tube distortion/waveshaping with a switch that selects between using one or both gain stages in series. The first stage is always active. A two-position switch adds the second stage in series after the first. The harmonics knob controls the amount of even-order or odd-order harmonics in the first gain stage. The saturation knob controls the gain and the shaping of the waveform. The saturation is also controllable with CV by using the front panel jack and corresponding knob to set the amount of CV applied to the shape parameter. At extreme negative CV, the tube will go into cutoff, making it function as a voltage-controlled gate. The recommended tube is a 12AT7/ECC81, which ships with the module. If experimenting with tubes is desired, we suggest trying variations of the 12AU7, including the ECC82, ECC802, 5814A, 6189, or 6680. The 12AX7 will also function and does not harm the module, but during our testing, the sonic results varied too widely from tube to tube for us to recommend using it, so consider it an experimental option. We do not recommend or support the use of any other tubes. The tube socket is a high-quality ceramic socket. Technical Specifications
+
+  Width
+  10 HP
+
+  Depth
+  55 mm
+
+  Current Draw
+  +12V: 370mA, -12V: 10mA, +5V: 0mA
+specs: |-
+  - Provides harmonically-rich vacuum tube distortion
+  - Select between single or two gain stages
+  - Adjustable harmonic content
+  - CV control over saturation
+  - Full size, socketed vacuum tube
+io:
+  - key: UW9iZxKh
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: r3UF7rFr
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 7NSGe1qM
+    name: Saturation CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: gsUPwNnt
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom

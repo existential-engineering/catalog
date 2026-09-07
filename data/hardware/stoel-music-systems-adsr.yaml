@@ -1,0 +1,63 @@
+id: Ayuz8aeKCJs-1QSM81Ss-
+name: ADSR
+manufacturer: stoel-music-systems
+primaryCategory: modular
+categories:
+  - synthesizer
+url: https://www.stoelmusicsystems.com/products/adsr
+prices:
+  - amount: 97
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack envelope generator module providing classic attack,
+  decay, sustain, and release control with normal and inverted outputs, plus a
+  manual trigger button.
+details: |-
+  The Stoel Music Systems ADSR provides a classic synthesizer envelope. Attack, decay, sustain, and release are all controlled with knobs. The ADSR envelope output is provided in both normal and inverted forms. The manual trigger button fires off the ADSR without a gate signal present, which is excellent for playing sounds live or sorting out complicated patches. Technical Specifications
+
+  Width
+  6 HP
+
+  Depth
+  21 mm
+
+  Current Draw
+  +12V: 15mA, -12V: 11mA, +5V: 0mA
+specs: |-
+  - Classic attack, decay, sustain, and release envelope
+  - Output has normal and inverted modes
+  - Manual button triggers the envelope without gate signal
+io:
+  - key: BXn1mTst
+    name: Envelope Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: GQDJ8I5j
+    name: Inverted Envelope Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: Adx9DCvo
+    name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: jn5HAs9q
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
