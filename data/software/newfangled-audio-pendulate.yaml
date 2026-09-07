@@ -6,10 +6,10 @@ categories:
   - virtual-instrument
   - plugin
 formats:
+  - aax
   - au
   - vst
   - vst3
-  - aax
 platforms:
   - mac
   - windows
@@ -17,7 +17,9 @@ url: https://www.newfangledaudio.com/pendulate
 prices:
   - amount: 0
     currency: USD
-description: A chaotic monosynth that uses a brand new double-pendulum-oscillator to create previously unheard sounds — biting basses, searing leads, and gritty textures.
+description: Get your free copy of Pendulate, a unique synth plugin that's great
+  for cinematic sounds and characterful basses, with custom modulation options.
+  Download as VST, AU, and AAX.
 details: |-
   Pendulate is a free monosynth plugin built around a double-pendulum oscillator rooted in chaos theory physics, producing sounds that range from stable tones to fully chaotic noise depending on parameter settings.
 
@@ -29,18 +31,91 @@ details: |-
 
   Pendulate supports MPE (MIDI Polyphonic Expression), making it compatible with expressive controllers for per-note pitch, pressure, and slide. It runs on macOS 10.9+ and Windows 10+, both 64-bit only, with native Apple Silicon support.
 specs: |-
-  - Double-pendulum oscillator based on chaos physics
-  - Buchla 259-inspired wavefolder with MIX and CUTOFF controls
-  - Buchla 292-based low pass gate with POLES and RESONANCE
-  - Up to 325 simultaneous modulation routings
-  - Looping envelope and LFO with multiple outputs
-  - MPE (MIDI Polyphonic Expression) support
-  - Over 200 factory presets
-  - Artist presets from Matt Lange and Matthew Wang
-  - Resizable user interface with three color scheme options
-  - MIDI Learn functionality
-  - macOS 10.9+, 64-bit (AAX, AU, VST, VST3, Apple Silicon compatible)
-  - Windows 10+, 64-bit (AAX, VST, VST3)
+  - Novel chaotic oscillator based on the double pendulum makes sounds you've never heard before, but will want to hear again
+  - Wavefolder based on the one in the Buchla 259 Complex Waveform Generator, adding MIX and CUTOFF
+  - Low Pass Gate based on the Buchla 292 adds controls for POLES and RESONANCE
+  - Innovative modulation UI allows modulation over every control from the main page, allowing up to 325 simultaneous modulation routings
+  - MPE support allows amazing control from innovative new controllers
+  - Looping Envelope and LFO each have multiple outputs generated at once, and can modulate each other, like a modular synth
+  - Modulation! Every mod output to every control means up to 325 modulation points in an intuitive single pane
+  - Animations! The Double Pendulum, Wavefolder, and Low Pass Gate modules each have animations to show how each module responds to your input, and to modulation
+  - Fully resizable UI!
+  - Intuitive Midi Learn functionality allows you to assign MIDI CCs to any control with just a click
+  - Three unique color schemes to customize your look
+  - 136 Presets including artist presets from Matt Lange and Matthew Wang
+  - macOS 10.9+, 64-bit AAX, AU, VST, VST3, all formats Apple Silicon compatible
+  - Windows 10+, 64-bit AAX, VST, VST3
+versions:
+  - name: 1.7.4
+    releaseDate: 2026-03-01
+    description: Added Tutorial on first open. Fixed Preset List dropdown size on
+      Windows. Fixed FTZ bit handling.
+  - name: 1.6.3
+    description: Preset name is now saved with Session. Fixed reveal preset folder
+      on Windows. Unknown is now No Category. Enter button saves preset on
+      preset save page. User Bank is added to the preset drop down list. Added
+      cycle UI message to OpenGL Button. Added IMPORT button for presets.
+      Favorite flags are now persistent load and save, even when modified. Made
+      logos render more clearly on Windows. Passes Windows Smart Screen.
+  - name: 1.5.6
+  - name: 1.5.5
+    description: Third Party Banks are now shown in the main dropdown. Author and
+      Banks now show presets by category as well. EXPORT is now called SAVE AS
+      and SAVE is now SAVE TO USER. Neither SAVE nor SAVE AS will clear tags,
+      category, or description. SAVE AS remembers your previous save position.
+      Added scroll bar to the LIBRARY page. LIBRARY page has resizable columns.
+      Removed duplicate files when saving a .tide as a .nfa. ACTIVE button is
+      gone from the LIBRARY and SAVE pages.
+  - name: 1.5.1
+    description: Automatically rescans plug-ins folder on every open.
+  - name: 1.5.0
+    description: New preset librarian adds Categories, Tags, Descriptions, Artist
+      links, Favorites, and Search to all presets. Multi level undo/redo for
+      easier workflow. True A/B comparison for making better mixing decisions.
+      SET AS DEFAULT button allows you to save any settings as your default.
+  - name: 1.4.1
+    description: Support for AAX Silicon Native (Mac Only). Plug-ins default to
+      OpenGL Off on Windows. Removed support for Windows 8 (Windows Only).
+  - name: 1.3.7
+    description: Mac only. Added support for macOS Ventura.
+  - name: 1.3.6
+    description: Fixed a potential initialization bug.
+  - name: 1.3.5
+    description: Improved UI performance.
+  - name: 1.3.1
+    description: Fixed an issue where version 1.3.0 was loading LFO times from older
+      presets incorrectly.
+  - name: 1.3.0
+    description: Added Triplets to the LFO. Subtle usability improvements to the
+      modulation system.
+  - name: 1.2.5
+    description: Mac only. Native support for Apple Silicon.
+  - name: 1.2.1
+    description: Added support for new tunings via MTS-ESP. Added master pitch
+      modulation to the Pitch Bend knob. Put the Generator Interval Parameter on
+      a full knob and made it a modulation destination. Added modulation to the
+      LFO and Envelope sections. Added a LOOP mode to the Envelope, allowing it
+      to function as an LFO. Added a modulatable Output Level control to the
+      LFO, plus a Bipolar switch allowing it to have bipolar outputs. New
+      presets from SonalSystem.
+  - name: 1.1.0
+    description: "Added Resizable UI. Added Midi Learn: right click a parameter to
+      learn a Midi CC value. Improved the Twin Turbo and Newfangled color
+      schemes. Fixed some UI drawing bugs. Fixed a bug with the note pitch value
+      rarely getting stuck."
+  - name: 1.0.7
+    description: Made sure the RND button returns unique random presets in all
+      hosts, platforms, and plug-in types. Made sure the Output Level and Pitch
+      Bend are properly restored in all hosts, platforms, and plug-in types.
+  - name: 1.0.6
+    description: Added new presets from Black Sheep. Fixed some clicks in audio
+      output after changing a preset while playing. Fixed a potential crash when
+      running multiple instances with DRAW CABLES ALWAYS, and a related UI bug.
+      Reduced the CPU overhead of painting the UI.
+  - name: 1.0.3
+    description: Fixed an issue where some MPE controllers would produce dead notes.
+  - name: 1.0.2
+    description: Initial Release.
 videos:
   - provider: youtube
     videoId: FdSfhArJ8T8

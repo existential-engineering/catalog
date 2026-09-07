@@ -8,10 +8,10 @@ categories:
   - exciter
   - limiter
 formats:
+  - aax
   - au
   - vst
   - vst3
-  - aax
 platforms:
   - mac
   - windows
@@ -19,60 +19,114 @@ url: https://www.newfangledaudio.com/saturate
 prices:
   - amount: 49
     currency: USD
-description: Saturate is a detail-preserving clipper plugin that lets you
-  overdrive signals up to 24dB while maintaining tonal balance and fine detail,
-  processing individual frequency sine waves independently to prevent low
-  frequencies from masking midrange and high-frequency content.
+description: Saturate clips without clipping, adding loudness and grit while its
+  Detail Preservation algorithm keeps the fine detail other clippers lose.
 details: |-
-  Saturate is built around Newfangled Audio's Detail Preservation algorithm, which processes each frequency independently rather than treating the full signal as a whole. This approach prevents low-frequency content from obscuring midrange and high-frequency detail during heavy saturation — a common problem with traditional clippers and saturators.
+  Add some loudness and grit to your instrument or mix. Transparently reduce the dynamic range, or overdrive it and make it gel. The unique detail preservation maintains the fine detail that you lose with other clippers, allowing you to clip without clipping.
 
-  The plugin offers up to 24dB of overdrive with a Shape control that morphs between hard clipping and smooth saturation curves. A Symmetry control lets you introduce even-order harmonics, while the Ceiling control sets the clipping threshold. An optional anti-aliasing mode is available for cleaner results at the cost of additional latency.
+  Saturate's controls belie a sophisticated signal processing engine which allows it to overdrive a signal without losing fine detail no matter how hard you push it. Add up to 24 dB of overdrive without losing the fine detail from the audio source, or creating a "tubby" or muffled sound. Additionally, the SHAPE control allows you to smoothly morph between hard clipping and the mathematically smoothest curve possible. Use Saturate to overdrive individual tracks or your entire mix.
 
-  Saturate includes independent INPUT and OUTPUT level controls with AUTO gain compensation, mastering-quality peak and RMS metering, and 24 factory presets covering a range of saturation styles. A resizable interface and full undo/redo support are included.
+  Any audio signal can be broken down into a number of sine waves at different frequencies. When you overdrive that signal the higher amplitude low frequencies can often swamp the midrange and higher frequencies that your ear is more sensitive to. Because of this, signals under heavy overdrive can lose some of their finer detail and sound "tubby", "woofy" or "muddy". This is because the lower amplitude sine waves of the midrange and high frequencies are being removed by the saturator when the low frequencies are at the top and bottom of their swing. This causes shifts in the tonal balance which are dependent on the frequency content of the signal.
 
-  Version 1.12.0 introduced a major preset librarian overhaul with A/B comparison and Delta Listen Mode, allowing users to hear only the saturation artifacts being added. The plugin supports Apple Silicon natively and is compatible with macOS 10.9+ and Windows 10+.
+  Saturate uses a special Detail Preservation algorithm that adds this finer detail back into the saturated signal. The signal is still saturated based on the curve, but the sine waves at different frequencies are treated independently, meaning that the large low frequencies don't crowd out the finer detail frequencies, and that the tonal balance at the output is the same as the input, with only harmonics added.
+
+  Saturate also uses a very efficient anti-aliasing method that removes aliasing artifacts as well as very high oversampling with a fraction of the CPU resources.
 specs: |-
-  - Up to 24dB of overdrive
-  - Detail Preservation algorithm processes individual frequency sine waves independently
-  - Shape control morphs between hard clipping and smooth saturation curves
-  - Symmetry control for even-order harmonic generation
-  - Ceiling control for clipping threshold
-  - Optional anti-aliasing mode
-  - Independent INPUT/OUTPUT levels with AUTO gain scaling
-  - Mastering-quality peak and RMS metering
-  - 24 factory presets
-  - Resizable UI
-  - Undo/redo support
-  - A/B comparison
-  - Delta Listen Mode
-  - Apple Silicon native (AAX Silicon Native from v1.11.0)
-  - macOS 10.9+, Windows 10+
+  - Saturation plug-in ideal for single tracks or the entire mix
+  - Unique Detail Preservation algorithm maintains tonal balance and fine detail for an open and pleasant saturation sound
+  - Anti-aliasing mode removes aliasing artifacts better than oversampling (added in 1.10)
+  - Symmetry control allows you to add even harmonics for a richer tone (added in 1.10)
+  - Ceiling control allows you to set the clipping threshold (added in 1.10)
+  - Smoothly adjust from the softest to the hardest possible clipping shape
+  - Independent INPUT and OUTPUT levels, with AUTO output level scaling for easy and precise gain scaling
+  - Saturation Curve Display and Meter shows you how your signal is hitting the selected clipping shape
+  - Mastering Quality Input and Output metering show you both peak and RMS levels
+  - 24 professional presets
+  - macOS 10.9+, 64-bit AAX, AU, VST, VST3, all formats Apple Silicon compatible
+  - Windows 10+, 64-bit AAX, VST, VST3
 versions:
   - name: 1.14.4
+    releaseDate: 2026-03-01
+    description: Added Tutorial on first open. Fixed Preset List dropdown size on
+      Windows. Fixed FTZ bit handling.
   - name: 1.14.0
+    releaseDate: 2025-07-02
+    description: Corrected Registration Documentation. Improved performance of
+      opt-click to return to default.
   - name: 1.13.9
+    releaseDate: 2024-07-18
+    description: Fixed potential UI lockup.
   - name: 1.13.2
+    releaseDate: 2024-05-31
+    description: Fixed a crash on preset save under certain conditions.
   - name: 1.13.0
+    releaseDate: 2024-05-04
+    description: Preset name is now saved with Session. Fixed reveal preset folder
+      on Windows. Unknown is now No Category. Enter button saves preset on
+      preset save page. User Bank added to the preset drop down list. Added
+      cycle UI message to OpenGL Button. Added IMPORT button for presets.
+      Favorite flags are now persistent on load and save. Made logos render more
+      clearly on Windows. Passes Windows Smart Screen.
   - name: 1.12.7
+    description: Fixes a potential crash and/or distortion that could be caused with
+      DETAIL PRESERVATION on and SHAPE off.
   - name: 1.12.6
   - name: 1.12.5
+    description: Third Party Banks are now shown in the main dropdown. Author and
+      Banks now show presets by category. EXPORT is now called SAVE AS and SAVE
+      is now SAVE TO USER. Neither SAVE nor SAVE AS will clear tags, category,
+      or description. SAVE AS remembers your previous save position. Added
+      scroll bar and resizable columns to the LIBRARY page. Removed duplicate
+      files when saving a .tide as a .nfa.
   - name: 1.12.1
+    description: Automatically rescans plug-ins folder on every open. Delta Listen
+      Mode now works correctly for high DRIVE values.
   - name: 1.12.0
+    description: New preset librarian adds Categories, Tags, Descriptions, Artist
+      links, Favorites, and Search to presets. Multi level undo/redo. True A/B
+      comparison. New Delta Listen Mode. SET AS DEFAULT button allows you to
+      save any settings as your default.
   - name: 1.11.0
+    description: Support for AAX Silicon Native (Mac only). Improved performance on
+      Windows machines. Plug-ins default to OpenGL Off on Windows. Removed
+      support for Windows 8.
   - name: 1.10.2
+    description: Mac only. Added support for macOS Ventura.
   - name: 1.10.1
+    description: Fixed a potential initialization bug.
   - name: 1.10.0
   - name: 1.9.1
+    description: Mac only. Fix Pro Tools bypass button. Fix problem with Saturate
+      Drive at 0 dB. Fix Saturate's latency reporting.
   - name: 1.9.0
+    description: Mac only. Native support for Apple Silicon.
   - name: 1.8.1
+    description: Added resizable UI, click and drag the bottom right corner to
+      resize. Animated meters can now be drawn with or without OpenGL.
   - name: 1.7.0
+    description: Added DETAIL PRESERVATION knob which allows you to control the
+      amount of audio detail that's preserved while clipping. Added gain
+      reduction meter. Added scrolling waveform meter. Removed 32-bit Windows
+      builds. Signed Windows installers.
   - name: 1.6.6
+    description: Fixed preset location. Fixed the INFO button so that it launches
+      the manual again.
   - name: 1.6.4
+    description: Plug-ins now load and work in GarageBand in Catalina. Fixed error
+      message when installing VST3 without VST2 on Mac. Fixed potential crash.
   - name: 1.6.2
+    description: Mac only. Fixed Tooltips.
   - name: 1.6.1
+    description: Mac only. Support for OSX Catalina. Moved plug-ins from the
+      Eventide subdirectory to the Newfangled Audio subdirectory. Moved Presets
+      and Manuals from ~/Documents/Eventide to ~/Music/Newfangled Audio.
   - name: 1.5.15
+    description: Windows only. Fixed an issue where plug-ins might get blacklisted
+      in Cubase 10.
   - name: 1.5.12
+    description: Windows only. Fix an issue where plug-ins would crash on Windows 7.
   - name: 1.5.11
+    description: Initial release.
 links:
   - type: resource
     title: User Guide
