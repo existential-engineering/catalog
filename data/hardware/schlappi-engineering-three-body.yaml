@@ -36,8 +36,24 @@ specs: |-
   - Skiff friendly 30mm depth
   - current consumption of 95mA on +12V (less than 200mA on startup) and 50mA on -12V
 io:
+  - key: sY8iMwrj
+    name: Transpose Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
   - key: 7dcqRGVQ
     name: Oscillator 1 V/OCT Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: BjUY9aHR
+    name: Oscillator 1 Sync Input
     signalFlow: input
     category: audio
     type: cv/gate
@@ -100,6 +116,70 @@ io:
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
+  - key: z8F0V8WY
+    name: Oscillator 2 V/OCT Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: YkQcU5Zw
+    name: Oscillator 2 Sync Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: tWpRiQgX
+    name: Oscillator 2 Freq Mod Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 4K2WfBSh
+    name: Oscillator 2 Phase Mod 1 Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: e0XSlunj
+    name: Oscillator 2 Phase 1 Index CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: N2VLAA54
+    name: Oscillator 2 Phase Mod 2 Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 6Kwt1SuG
+    name: Oscillator 2 Phase 2 Index CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 7U5PJxzS
+    name: Oscillator 2 Sine Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
   - key: EnQnj5wK
     name: Oscillator 2 Cosine Output
     signalFlow: output
@@ -108,8 +188,104 @@ io:
     connection: 1/8-inch
     maxConnections: 1
     position: Bottom
+  - key: pj8e6L2y
+    name: Oscillator 2 Triangle Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: VoBEV3Ut
+    name: Oscillator 2 Saw Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
   - key: kvAwcvhd
     name: Oscillator 2 Cosaw Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: s1jCrYJu
+    name: Oscillator 2 Square Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: cJfC9QRg
+    name: Oscillator 3 V/OCT Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: J64IomXs
+    name: Oscillator 3 Sync Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: kGahsICi
+    name: Oscillator 3 Phase Mod Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: E5J4PRKK
+    name: Oscillator 3 Freq Mod Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: hxKosJaP
+    name: Oscillator 3 Mod Index CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 7hwSmjIW
+    name: Oscillator 3 Sine Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: UBZlgy7Y
+    name: Oscillator 3 Triangle Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: B48HJ0KS
+    name: Oscillator 3 Saw Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: UTMqkH22
+    name: Oscillator 3 Square Output
     signalFlow: output
     category: audio
     type: line
