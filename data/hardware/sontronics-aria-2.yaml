@@ -1,12 +1,10 @@
 id: 8MXcTctB-HFk5VZgUKqBx
-name: Sontronics ARIA 2
+name: ARIA 2
 manufacturer: sontronics
 primaryCategory: condenser
 categories:
   - vocal
   - microphone
-capabilities:
-  - compression
 url: https://sontronics.com/products/sontronics-aria-2-valve-tube-condenser-microphone
 prices:
   - amount: 1599
@@ -17,27 +15,7 @@ description: A valve condenser microphone hand-built in England with a
   large-diaphragm gold-sputtered capsule, designed for vocals, voiceover, and
   acoustic instrument recording with warmth and clarity.
 details: |-
-  ARIA 2 is a professional valve condenser microphone, hand-built in England to deliver stunning vocal recordings with warmth, clarity and character. Whether you're working in a studio, a vocal booth or a live room, ARIA 2 gives singers, voiceover artists , musicians and engineers the confidence to capture every performance exactly as it should be heard. At its core is a brand-new proprieta ry 34mm gold-sputtered ca p sule, developed exclusively for this model. The result is a smoother, more open sound, with beautifully balanced mids and a detailed top end that brings out the best in vocals, spoken word, acoustic instruments and more. Tuned for a tailored silky-smooth frequency response and consistent results, ARIA 2 is built to deliver t ime and time again . Upgraded internal circuitry gives you increased sensitivity, lower self- n oise and a cleaner, more dynamic signal straight out of the box. Finished in premium black with golden accents and supplied in a rugged ABS flight case, ARIA 2 doesn ' t just sound exceptional, it looks the part too. Whether you ' re upgrading your first mic or adding a trusted new flagship to your setup, ARIA 2 is ready to earn its place in your workflow. FEATURES
-
-  Key Features
-
-  IDEAL FOR
-
-  The ARIA 2 is perfect for:
-
-  TECH SPECS
-
-  Technical Specifications
-
-  Frequency Response
-
-  WHAT'S INCLUDED
-
-  What's in the Box? WATCH
-
-  LISTEN
-
-  ARIA 2 used by Sophie Ellis-Bextor
+  ARIA 2 is a professional valve condenser microphone, hand-built in England to deliver stunning vocal recordings with warmth, clarity and character. Whether you're working in a studio, a vocal booth or a live room, ARIA 2 gives singers, voiceover artists , musicians and engineers the confidence to capture every performance exactly as it should be heard. At its core is a brand-new proprieta ry 34mm gold-sputtered ca p sule, developed exclusively for this model. The result is a smoother, more open sound, with beautifully balanced mids and a detailed top end that brings out the best in vocals, spoken word, acoustic instruments and more. Tuned for a tailored silky-smooth frequency response and consistent results, ARIA 2 is built to deliver t ime and time again . Upgraded internal circuitry gives you increased sensitivity, lower self- n oise and a cleaner, more dynamic signal straight out of the box. Finished in premium black with golden accents and supplied in a rugged ABS flight case, ARIA 2 doesn ' t just sound exceptional, it looks the part too. Whether you ' re upgrading your first mic or adding a trusted new flagship to your setup, ARIA 2 is ready to earn its place in your workflow.
 specs: |-
   - Proprietary large-diaphragm 34mm capsule for smoother, more open sound
   - Precision-tuned for silky-smooth response
@@ -86,10 +64,18 @@ io:
     maxConnections: 1
     position: Right
   - key: 7sqbuZrY
-    name: Power Supply Input
+    name: Power Supply Audio Output
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: kL8vTsWq
+    name: Power Supply Mains Input
     signalFlow: input
     category: power
     type: power
-    connection: xlr
+    connection: iec-c14
     maxConnections: 1
     position: Right
