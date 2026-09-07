@@ -4,6 +4,8 @@ manufacturer: stoel-music-systems
 primaryCategory: spring
 categories:
   - reverb
+  - modular
+hp: 6
 capabilities:
   - reverb
 url: https://www.stoelmusicsystems.com/products/spring-reverb
@@ -30,7 +32,7 @@ details: |-
   9EB2C1B: Horizontal/open side down, 3 Spring, Medium Decay
   9EB3C1B: Horizontal/open side down, 3 Spring, Long Decay
 
-  All Stoel Music Systems modules feature aluminum front panels with a durable high-gloss white finish. For a crisp appearance and exceptional durability, the front panel markings are digitally printed at high-resolution with UV-cured ink. Mounting holes are plated to significantly reduce screw rash. The power connection features polarity protection to prevent accidental damage to the module if it is connected backward. Each module includes M3 mounting screws and a complimentary sticker. The reverb tank and cable are not included. Technical Specifications
+  All Stoel Music Systems modules feature aluminum front panels with a durable high-gloss white finish. For a crisp appearance and exceptional durability, the front panel markings are digitally printed at high-resolution with UV-cured ink. Mounting holes are plated to significantly reduce screw rash. The power connection features polarity protection to prevent accidental damage to the module if it is connected backward. Each module includes a 12" long 10-pin to 16-pin ribbon cable compatible with the Eurorack standard, M3 mounting screws, and a complimentary sticker. The reverb tank and reverb-tank cable are not included. Technical Specifications
 
   Width
   6 HP
@@ -42,7 +44,7 @@ details: |-
   +12V: 35mA, -12V: 7mA, +5V: 0mA
 specs: |-
   - Includes standard level, wet/dry mix, and tone emphasis controls, the feedback control re-introduces the reverb signal back at the input
-  - Reverb tank and cable not included
+  - Reverb tank and reverb-tank cable not included
   - By sending the feedback signal through a filter, unique reverb textures can be created
 io:
   - key: ocPPnM1n
@@ -50,7 +52,7 @@ io:
     signalFlow: input
     category: audio
     type: line
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: YEmVQWoi
@@ -58,7 +60,7 @@ io:
     signalFlow: output
     category: audio
     type: line
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: aKM7uP5j
@@ -66,7 +68,7 @@ io:
     signalFlow: output
     category: audio
     type: line
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: nDcT867N
@@ -74,7 +76,7 @@ io:
     signalFlow: input
     category: audio
     type: line
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: FdGBtSnB
@@ -82,6 +84,6 @@ io:
     signalFlow: input
     category: power
     type: power
-    connection: proprietary
+    connection: idc
     maxConnections: 1
     position: Bottom

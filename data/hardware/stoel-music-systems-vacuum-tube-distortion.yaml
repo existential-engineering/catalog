@@ -4,6 +4,8 @@ manufacturer: stoel-music-systems
 primaryCategory: distortion
 categories:
   - saturation
+  - modular
+hp: 10
 capabilities:
   - distortion
   - saturation
@@ -26,7 +28,7 @@ details: |-
   55 mm
 
   Current Draw
-  +12V: 370mA, -12V: 10mA, +5V: 0mA
+  +12V: 370mA (650mA at turn on), -12V: 10mA, +5V: 0mA
 specs: |-
   - Provides harmonically-rich vacuum tube distortion
   - Select between single or two gain stages
@@ -39,7 +41,7 @@ io:
     signalFlow: input
     category: audio
     type: line
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: r3UF7rFr
@@ -47,7 +49,7 @@ io:
     signalFlow: output
     category: audio
     type: line
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: 7NSGe1qM
@@ -55,7 +57,7 @@ io:
     signalFlow: input
     category: audio
     type: cv/gate
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: gsUPwNnt
@@ -63,6 +65,6 @@ io:
     signalFlow: input
     category: power
     type: power
-    connection: proprietary
+    connection: idc
     maxConnections: 1
     position: Bottom
