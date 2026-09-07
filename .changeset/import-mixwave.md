@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import MixWave (33 hardware/software entries).
+Import MixWave (33 content/software entries).
