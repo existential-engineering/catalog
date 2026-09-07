@@ -1,0 +1,93 @@
+id: dMYrduZkj0tszKWW8eLjP
+name: Mikro KPG
+manufacturer: p4l
+primaryCategory: modular
+categories:
+  - sequencer
+  - midi-effect
+capabilities:
+  - sequencing
+url: https://p4l-store.com/products/mikro-kpg-built-module
+prices:
+  - amount: 15800
+    currency: JPY
+    asOf: 2026-09-04
+    source: official-website
+description: A compact 6HP Eurorack version of the KPG that generates complex
+  polyrhythmic gate patterns from three CV inputs, changing its eight
+  gate/trigger outputs as the CV input states toggle between high and low.
+details: |-
+  こちらは受注後に組み立てするBuild to Orderの商品となっております。
+  お支払い確認後1〜2週間前後での納品となりますのでご了承ください。
+
+  <商品説明>
+  "MIKRO KPG"はKPGを8ゲート出力とすることで6HPに コンパクト化し基本的な機能はそのままに多くの方に取り入れやすい仕様となっています。
+
+  3箇所のCV入力にシグナルをパッチすることによって複雑で多様なゲートパターンを生成するポリリズミックなゲート/トリガージェネレーターです。
+  3つのCV入力のステイタス(High/Low)が変化するとアウトプットジャックが変化します。
+
+  ・3 CV INPUT
+  ・SYNC INPUT
+  ・背面のトリマーでCVのスレッショルド電圧を調整可能。
+  ・8 GATE / TRIGGER OUTPUT
+  (背面のジャンパーをカットすることで 各出力ごとにGATE/TRIGGERの設定を切り替えることができます。)
+
+  マニュアル(JP)
+
+  Manual(ENG)
+
+  付属品: 電源ケーブル
+
+  Width: 6HP
+  Depth: 21mm
+  Power: +12V 6mA / -12V 3mA
+
+  Built by hand in Japan.
+
+  <注意事項>
+
+  ※電源を入れる前に電源の接続を再度ご確認ください。
+  当製品の使用により直接または間接的に発生した人身事故、機器の損傷、使用不能について、一切の責任を負いません。
+
+  基板製造に伴い発生してしまう印刷ムラやスレ、キズなどがある場合がございますのでご了承ください。
+io:
+  - key: fSB1YgGa
+    name: CV Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: wlwvY2nK
+    name: CV Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: TopobTit
+    name: CV Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: nNi3ynXe
+    name: Sync Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: tdE0NYbS
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
