@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Spector (92 hardware/software entries).
+Import Spector (83 hardware/accessory entries).
