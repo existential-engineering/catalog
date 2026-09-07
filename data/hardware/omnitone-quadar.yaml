@@ -5,6 +5,7 @@ primaryCategory: utility
 categories:
   - modular
   - analog
+hp: 6
 url: https://omnitone.ca/products/quadar-eurorack-analog-attack-and-release-module-4-channel-slew-rate-limiter
 prices:
   - amount: 109
@@ -26,7 +27,7 @@ io:
     signalFlow: input
     category: audio
     type: line
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: wBwleIwI
@@ -34,7 +35,55 @@ io:
     signalFlow: output
     category: audio
     type: line
-    connection: 3.5mm
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: tsgv0BKo
+    name: Channel Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JzQPdAhL
+    name: Channel Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: O5SKNEUt
+    name: Channel Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: S2ouimSe
+    name: Channel Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 7d65BKVl
+    name: Channel Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: usRUkf9v
+    name: Channel Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: gvAhogyv
@@ -42,6 +91,6 @@ io:
     signalFlow: input
     category: power
     type: power
-    connection: pin-header
-    maxConnections: 10
+    connection: idc
+    maxConnections: 1
     position: Bottom

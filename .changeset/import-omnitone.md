@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Omnitone (13 hardware/software entries).
+Import Omnitone (9 hardware entries and 4 accessories).
