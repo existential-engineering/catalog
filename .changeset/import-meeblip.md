@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Meeblip (8 hardware/software entries).
+Import Meeblip (7 hardware entries).
