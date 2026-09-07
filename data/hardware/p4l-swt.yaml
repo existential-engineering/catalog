@@ -5,61 +5,104 @@ primaryCategory: utility
 categories:
   - routing
   - modular
+hp: 2
 url: https://p4l-store.com/products/swt-full-diy-kit
 prices:
   - amount: 4800
     currency: JPY
     asOf: 2026-09-04
     source: official-website
-description: SWT is a passive Eurorack utility module with a 3-in/1-out routing
-  selector. A manual 3-way switch selects which of three inputs is sent to the
-  output, allowing it to route audio, CV, or gate signals.
+description: SWT is a passive Eurorack utility module carrying two 3-in/1-out
+  routing selectors. A manual 3-way switch selects which of three inputs is sent
+  to the output, allowing it to route audio, CV, or gate signals.
 details: |-
-  こちらはDIYビルダー向けの基板と部品のフルセットとなっております。
+  This is a full set of PCB and parts for DIY builders. Assembly difficulty: ★☆☆☆☆
 
-  制作難易度: ★☆☆☆☆
-  DIYビギナーの方でも比較的製作が簡単なモジュールです。
-  ※注意点: [写真2]のようにジャックのグランドピンを斜めに曲げて取り付けます。
-
-  SWTは3IN/1OUTのルーティングセレクターが2系統備わったシンプルなユーティリティモジュールです。
-
-  マニュアル操作の3WAYスイッチで3つの入力のうちどれを出力させるかを切り替えることができ、オーディオ/CV/GATEなど信号のルーティングセレクターとして使うことができます。
-  3つのインプットジャックがトグルスイッチの上中下に対応し、選択されているポジションの信号が白い丸で囲われたOUTPUTジャックから出力されます。 パッシブですのでIN/OUTを逆に接続し1IN/3OUTのOUTPUTセレクターとしても使用可能です。
+  SWT is a simple utility module carrying two 3-in/1-out routing selectors. A manual 3-way switch selects which of the three inputs is sent to the output, so it can be used as a routing selector for audio, CV or gate signals. The three input jacks correspond to the up, middle and down positions of the toggle switch, and the signal at the selected position leaves the output jack ringed in white. Because it is passive, IN and OUT can be reversed to use it as a 1-in/3-out output selector.
 
   Size: 2HP
-  Depth: 13mm Power: ----
-
-  基盤の色は予告なく変更する場合があります。
+  Depth: 13mm
+  Power: no power required
 io:
   - key: uzF66GY3
-    name: Input 1
-    signalFlow: input
+    name: Selector 1 Input 1
+    signalFlow: bidirectional
     category: audio
     type: cv/gate
     connection: 3.5mm
     maxConnections: 1
     position: Top
   - key: brLxAylg
-    name: Input 2
-    signalFlow: input
+    name: Selector 1 Input 2
+    signalFlow: bidirectional
     category: audio
     type: cv/gate
     connection: 3.5mm
     maxConnections: 1
     position: Top
   - key: pvXotQQ8
-    name: Input 3
-    signalFlow: input
+    name: Selector 1 Input 3
+    signalFlow: bidirectional
     category: audio
     type: cv/gate
     connection: 3.5mm
     maxConnections: 1
     position: Top
   - key: yApF9Eur
-    name: Output
-    signalFlow: output
+    name: Selector 1 Output
+    signalFlow: bidirectional
     category: audio
     type: cv/gate
     connection: 3.5mm
     maxConnections: 1
     position: Top
+  - key: mE7cyWJf
+    name: Selector 2 Input 1
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: nHQKPkII
+    name: Selector 2 Input 2
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 3aoMDOuz
+    name: Selector 2 Input 3
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: gb34lNgJ
+    name: Selector 2 Output
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+translations:
+  ja:
+    details: |-
+      こちらはDIYビルダー向けの基板と部品のフルセットとなっております。
+
+      制作難易度: ★☆☆☆☆
+      DIYビギナーの方でも比較的製作が簡単なモジュールです。
+      ※注意点: [写真2]のようにジャックのグランドピンを斜めに曲げて取り付けます。
+
+      SWTは3IN/1OUTのルーティングセレクターが2系統備わったシンプルなユーティリティモジュールです。
+
+      マニュアル操作の3WAYスイッチで3つの入力のうちどれを出力させるかを切り替えることができ、オーディオ/CV/GATEなど信号のルーティングセレクターとして使うことができます。
+      3つのインプットジャックがトグルスイッチの上中下に対応し、選択されているポジションの信号が白い丸で囲われたOUTPUTジャックから出力されます。
+      パッシブですのでIN/OUTを逆に接続し1IN/3OUTのOUTPUTセレクターとしても使用可能です。
+
+      Size: 2HP
+      Depth: 13mm
+      Power: ----

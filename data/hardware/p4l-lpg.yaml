@@ -5,6 +5,7 @@ primaryCategory: modular
 categories:
   - filter
   - gate
+hp: 4
 capabilities:
   - filter
   - gating
@@ -19,36 +20,20 @@ description: A Eurorack low pass gate module recreating the circuit of the Model
   added resonance effect, following the interface layout of the Model 208's LPG
   section.
 details: |-
-  こちらは受注後に組み立てするBuild to Orderの商品となっております。 お支払い確認後1〜2週間前後での納品となりますのでご了承ください。
+  "LPG" recreates the circuit of the MODEL 292C low pass gate in the Eurorack format. It covers everything from the natural percussive sound characteristic of a low pass gate through to aggressive tones produced by the added resonance. The control interface follows the LPG section of the MODEL 208. The vactrols are Excelitas (formerly Perkin Elmer) parts, which are now hard to obtain.
 
-  <商品説明>
-  "LPG"はローパスゲート、MODEL 292Cの回路をユーロラックフォーマットで再現したモジュールです。 ローパスゲートの特徴である自然なパーカッション・サウンドからレゾナンスの効果を追加したことによるアグレッシブなサウンドまで幅広い音作りを可能にしています。 操作部のインターフェースはMODEL 208のLPGパートを踏襲しています。 バクトロール素子に現在入手が難しいExcelitas (旧Perkin Elmer)製のものを使用した貴重な一台となっています。
+  Notable features
+  - Resonance added in Low Pass Filter mode
+  - In LPF mode, feeding a gate signal into ACC IN while the module self-oscillates gives kick, tom and bongo style percussion sounds
+  - Excelitas (formerly Perkin Elmer) vactrols
 
-  特徴的な機能
-  ・Low Pass Filter モード時にレゾナンス効果を追加
-  ・LPFモード時に自己発振した状態でACC INにゲートシグナルを入力することでキックやタム、ボンゴのようなパーカッション・サウンドを提供します。
-  ・ Excelitas (旧Perkin Elmer)製バクトロールを使用
-
-  マニュアル(JP)
-  MANUAL(EN)
-
-  付属品:
-  電源ケーブル
-  交換用スペアパネル(ご注文いただいた色以外のパネルが付属いたします)
-  マニュアル
+  Supplied with a power cable, a spare panel in the colour that was not ordered, and a manual.
 
   Width: 4HP
   Depth: 28mm
   Power: +12V 7mA / -12V 7mA
 
   Built by hand in Japan.
-
-  <注意事項>
-
-  ※電源を入れる前に電源の接続を再度ご確認ください。
-  当製品の使用により直接または間接的に発生した人身事故、機器の損傷、使用不能について、一切の責任を負いません。
-
-  基板製造に伴い発生してしまう印刷ムラやスレ、キズなどがある場合がございますのでご了承ください。
 io:
   - key: NCsschce
     name: ACC In
@@ -66,3 +51,18 @@ io:
     connection: pin-header
     maxConnections: 1
     position: Bottom
+translations:
+  ja:
+    details: |-
+      "LPG"はローパスゲート、MODEL 292Cの回路をユーロラックフォーマットで再現したモジュールです。ローパスゲートの特徴である自然なパーカッション・サウンドからレゾナンスの効果を追加したことによるアグレッシブなサウンドまで幅広い音作りを可能にしています。操作部のインターフェースはMODEL 208のLPGパートを踏襲しています。バクトロール素子には現在入手が難しいExcelitas (旧Perkin Elmer)製のものを使用しています。
+
+      特徴的な機能
+      ・Low Pass Filter モード時にレゾナンス効果を追加
+      ・LPFモード時に自己発振した状態でACC INにゲートシグナルを入力することでキックやタム、ボンゴのようなパーカッション・サウンドを提供します。
+      ・Excelitas (旧Perkin Elmer)製バクトロールを使用
+
+      付属品: 電源ケーブル、交換用スペアパネル(ご注文いただいた色以外のパネルが付属いたします)、マニュアル
+
+      Width: 4HP
+      Depth: 28mm
+      Power: +12V 7mA / -12V 7mA

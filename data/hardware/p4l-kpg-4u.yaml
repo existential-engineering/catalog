@@ -9,7 +9,7 @@ capabilities:
   - sequencing
 url: https://p4l-store.com/products/kpg-4u-built-diy-kit
 prices:
-  - amount: 38000
+  - amount: 72000
     currency: JPY
     asOf: 2026-09-04
     source: official-website
@@ -18,39 +18,20 @@ description: A Buchla 4U format polyrhythmic gate/trigger generator that creates
   sixteen gate/trigger outputs as the CV input states toggle between high and
   low.
 details: |-
-  こちらは受注後に組み立てするBuild to Orderの商品となっております。
-  お支払い確認後2〜3週間前後での納品となりますのでご了承ください。
+  KPG 4U is a module built to the Buchla 4U system specification.
 
-  1月中旬以降の発送予定となりますのでご了承ください。
+  "KPG" is a polyrhythmic gate/trigger generator that produces complex and varied gate patterns from signals patched into its four CV inputs. The output jacks change as the state (high or low) of the four CV inputs changes.
 
-  <商品説明>
+  - 4 CV INPUT
+  - SYNC INPUT
+  - 16 GATE / TRIGGER OUTPUT (each output can be switched between gate and trigger by soldering the pads on the rear)
+  - A trimmer on the rear adjusts the CV input threshold voltage, and a switch selects the SYNC input voltage source
 
-  ※KPG 4UはBuchla 4Uシステムに準拠した仕様のモジュールです。
-
-  "KPG"は4箇所のCV入力にシグナルをパッチすることによって複雑で多様なゲートパターンを生成するポリリズミックなゲート/トリガージェネレーターです。
-  4つのCV入力のステイタス(High/Low)が変化するとアウトプットジャックが変化します。
-
-  ・4 CV INPUT
-  ・SYNC INPUT
-  ・16 GATE / TRIGGER OUTPUT
-  (背面のハンダパッドをハンダ付け することで各出力ごとにGATE/TRIGGERの設定を切り替えることができます。)
-  ・ 背面にCV入力のスレッショルド電圧調整用トリマー、SYNC入力の電圧ソース選択スイッチ。
-
-  DIYキットにはパネル＆基板（SMD部品は半田付け済み）、LEDやスタンドオフなどの部品が付属します（バナナジャック・電源コネクタを除く）。
-  DIY BOM
-
-  User Guide & Build Guide
+  The DIY kit version supplies the panel and board (SMD parts pre-soldered) with LEDs, standoffs and other parts, excluding the banana jacks and the power connector.
 
   Built by hand in Japan. Tested with the following modules
   200e: 281e / 267e / 250e / 251e
   DIY: 208 / 281 / TSMN
-
-  <注意事項>
-
-  ※電源を入れる前に電源の接続を再度ご確認ください。
-  当製品の使用により直接または間接的に発生した人身事故、機器の損傷、使用不能について、一切の責任を負いません。
-
-  基板製造に伴い発生してしまう印刷ムラやスレ、キズなどがある場合がございますのでご了承ください。
 io:
   - key: yUsDUvfA
     name: CV Input 1
@@ -92,3 +73,154 @@ io:
     connection: banana
     maxConnections: 1
     position: Bottom
+  - key: PWoDOgd0
+    name: Gate/Trigger Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: ya42EdvX
+    name: Gate/Trigger Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: 3x0eedWL
+    name: Gate/Trigger Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: EkZeAI2W
+    name: Gate/Trigger Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: P8xMlY41
+    name: Gate/Trigger Output 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: tbfBKXut
+    name: Gate/Trigger Output 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: SnoJr59C
+    name: Gate/Trigger Output 7
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: OvHhIvus
+    name: Gate/Trigger Output 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: 7RNZI1IM
+    name: Gate/Trigger Output 9
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: 8z3087gE
+    name: Gate/Trigger Output 10
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: vJsPiv3v
+    name: Gate/Trigger Output 11
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: 4xcW4XrR
+    name: Gate/Trigger Output 12
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: lgPJHpiv
+    name: Gate/Trigger Output 13
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: wS7t7dAh
+    name: Gate/Trigger Output 14
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: 5sHelx3j
+    name: Gate/Trigger Output 15
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: fBs7BSiJ
+    name: Gate/Trigger Output 16
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: banana
+    maxConnections: 1
+    position: Bottom
+  - key: mxslECfL
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+translations:
+  ja:
+    details: |-
+      ※KPG 4UはBuchla 4Uシステムに準拠した仕様のモジュールです。
+
+      "KPG"は4箇所のCV入力にシグナルをパッチすることによって複雑で多様なゲートパターンを生成するポリリズミックなゲート/トリガージェネレーターです。
+      4つのCV入力のステイタス(High/Low)が変化するとアウトプットジャックが変化します。
+
+      ・4 CV INPUT
+      ・SYNC INPUT
+      ・16 GATE / TRIGGER OUTPUT
+      (背面のハンダパッドをハンダ付けすることで各出力ごとにGATE/TRIGGERの設定を切り替えることができます。)
+      ・背面にCV入力のスレッショルド電圧調整用トリマー、SYNC入力の電圧ソース選択スイッチ。
+
+      DIYキットにはパネル＆基板(SMD部品は半田付け済み)、LEDやスタンドオフなどの部品が付属します(バナナジャック・電源コネクタを除く)。
