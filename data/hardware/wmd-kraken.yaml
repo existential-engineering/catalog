@@ -1,0 +1,89 @@
+id: Oqeo1tYaqilBHr70GPUt3
+name: Kraken
+manufacturer: wmd
+primaryCategory: drum-machine
+categories:
+  - snare
+  - physical-modeling
+  - modular
+capabilities:
+  - distortion
+  - pitch-shift
+  - bit-crush
+url: http://www.wmdevices.com/products/kraken
+prices:
+  - amount: 329
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Kraken is a physical modeling snare drum module for Eurorack that
+  uses 100% digital synthesis with delay, filters, and noise to create realistic
+  snare sounds. It features an optional pitch shifter, three distortion modes,
+  and Head, Rim, and Accent gate inputs for sequencing.
+details: |-
+  "We're in an Octopus' Garden". Kraken is a physical modeling snare drum module for eurorack modular synthesizers. No samples, 100% digital synthesis with the ability to make realistic snare drums of all sizes, shapes, materials, and colors. Similar to Crucible, Kraken uses a network of classic synthesis blocks like delay, digital filters, and noise to create a very unique resonator. "Crack-in" to the snare drum sound you're into most by adjusting parameters that corelate to physical drum properties such as shell type and size, head tightness, amount of overtone, and how tight and bright the snares sound. You like snare samples? Great! Although Kraken does not use any recordings to generate sound, you can get a perfectly repeatable snare sound, similar to a sampler by using digital noise to generate the sound of the "snares". Want your snare to sound more realistic? Try analog noise to imitate the subtle difference of a drummer hitting the snare slightly different on each hit. Perfect Pitch... kind-of. Optional pitch shifter on the output widens the sonic palette as well as the frequency range, while imparting a unique character of it's own, reminiscent of old school samplers and pitch shifter pedals. Pitch knob and CV input take control of the pitch shifter when in this mode. Wreck the ship with the Wreck switch and CV input. Three different distortion characters push the envelope that much further with an analog style gained up hard clipping, wavefolding, and bit depth reduction. At some shell settings, gain gets loud like running a snare mic through a distortion pedal. The wave folder sounds like over-the-top compression with lots of high frequency content,. The bit depth reduction setting lets you dial in a desired amount of "vintage" digital artifacts. Moving the switch to these different modes is only a preview. Use the Wreck CV input for the most control and variety in sound. Kraken is begging to be sequenced. Use the Head, Rim, and Accent gate inputs to start your basic rhythm of hits, sidesticks, rimshots and accented sounds. Sequence the Velocity input with a variable CV source to bring the pattern to life and put the drummer behind the kit. Pair with Crater , Fracture , Chimera , and Crucible for an inspiringly flavorful set of drums for your Eurorack Modular Synthesizer. PDF MANUAL
+io:
+  - key: YMA9RG9P
+    name: Head Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: kZXLsvMI
+    name: Rim Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 0SVI8XCu
+    name: Accent Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: FapJgfaE
+    name: Velocity CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: a3RItvFp
+    name: Wreck CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: bl9rGr82
+    name: Pitch CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 0sz5X7ND
+    name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: MZKRM6mZ
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

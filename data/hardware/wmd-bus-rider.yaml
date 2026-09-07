@@ -1,0 +1,118 @@
+id: b9MhZsKZAr4UH6OOzRoe5
+name: Bus Rider
+manufacturer: wmd
+primaryCategory: mastering
+categories:
+  - equalizer
+  - compressor
+  - limiter
+  - multiband
+  - stereo
+capabilities:
+  - equalization
+  - compression
+  - limiting
+  - saturation
+url: http://www.wmdevices.com/products/bus-rider
+prices:
+  - amount: 299
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Bus Rider is a stereo multiband EQ, dynamics processor, and
+  lookahead limiter designed for on-the-fly mastering, submix, and channel
+  processing. It combines a 3-band isolator EQ, multiband compressor, and
+  lookahead limiter with saturation in one module.
+details: |-
+  Bus Rider is a stereo multiband EQ/dynamics processor + lookahead limiter designed for on the fly mastering at the end of your signal chain. It's also useful for submix and individual channel processing. The Isolator EQ is a great performance tool beyond fitting your mix to the room/sound system you are playing on. EQ, multiband compression, and limiting, all in one module
+
+  At the top of the module, a three way toggle switch lets you choose between pages of controls. The SHIFT button gives access to secondary functions, allowing you to change the "set and forget" set of features with ease. ISO: The left position gives you control of 3 band isolator eq with +12dB boost and total cut (-∞) for each band. The shift functions let you change the low and high band crossover points. DYN: The center position enables the interface for the multiband compressor with controls for threshold and ratio on each band. LIMIT: With the switch to the right, the interface is in control over a lookahead limiter with controls for input gain, ceiling, release time, and saturation. Compact interface with thoughtful design
+
+  Bus Rider has an intuitive layout and interface. The LEDs will match the color of the labels on the panel, reminding you which set of controls you are currently using. The LED bar on the right acts as an overall VU meter, showing gain reduction in the limiter section, and switches to display the value of whichever knob is currently being turned. All sections of the module are active at all times, each can be made inactive by setting the knobs appropriately. The entire module can be bypassed with the I/O button. The module's audio signal path begins at the crossovers, then runs through the multiband compressor, eq, and is recombined before going into the lookahead limiter. The User Interface
+
+  BUTTONS AND SWITCHES
+
+  - PRESET: 9 user settable / recallable presets. -
+
+  SHIFT : Hold and press buttons or turn knobs for shift functionality. - EQ, DYN, LIMIT: Switches between the three pages of controls. ISO EQ
+
+  - MID: Level control for the mid band
+  - LOW: Level control for the low band
+
+  DYN
+
+  - M: THLD: Threshold control for the mid band
+  - L: THLD: Threshold control for the low band
+
+  LIMIT
+
+  - RELEASE: Adjusts the release time for the limiter. Attack time is determined by the lookahead buffer (1.5 ms). - SAT: Adjusts the input gain into the saturation (mid-high bands only)
+
+  JACKS
+specs: |-
+  - I/O: Bypasses all sections of the module - LINK : Links the limiter's detectors, driving both channels from the left input so they limit together and hold the stereo image. Unlinked, each side limits on its own signa.
+  - PRESET: 9 user settable / recallable presets.
+  - SHIFT : Hold and press buttons or turn knobs for shift functionality.
+  - EQ, DYN, LIMIT: Switches between the three pages of controls.
+  - HIGH: Level control for the high band - XOVER : Crossover frequency for the high band
+  - MID: Level control for the mid band
+  - LOW: Level control for the low band - XOVER : Crossover frequency for the low band
+  - H: THLD: Threshold control for the high band - RATIO : Ratio control for the high band
+  - M: THLD: Threshold control for the mid band - RATIO : Ratio control for the mid band
+  - L: THLD: Threshold control for the low band - RATIO : Ratio control for the low band
+  - GAIN: Input gain to push your signal into the limiter ceiling - CEIL : Adjusts the limiter ceiling
+  - RELEASE: Adjusts the release time for the limiter. Attack time is determined by the lookahead buffer (1.5 ms). - LINK: Stereo Linking on or off for the detector.
+  - SAT: Adjusts the input gain into the saturation (mid-high bands only) - L SAT: Adds the low band information into the saturator
+  - LOW CUT: CV input over the low band ISO EQ level to cut the lows
+  - CV: Assignable CV input
+  - IN L / IN R: Stereo input
+  - OUT L / OUT R: Stereo output
+io:
+  - key: rdgFulMH
+    name: IN L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: qweJzc7f
+    name: IN R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 88cuNz9P
+    name: OUT L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: FzcpIgHG
+    name: OUT R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 95wiiKoG
+    name: LOW CUT
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: kc7vbxDY
+    name: CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top

@@ -1,0 +1,124 @@
+id: 3vMnLAQ6t2K0qtMtBH0Vu
+name: OSD (OR / SUM / DIF)
+manufacturer: wmd
+primaryCategory: utility
+categories:
+  - modular
+url: http://www.wmdevices.com/products/osd-or-sum-dif
+prices:
+  - amount: 199
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: OSD is a 4HP Eurorack utility module with three independent blocks
+  for combining voltages using OR, SUM, and DIF operations, suitable for audio,
+  V/Oct, and control voltage.
+details: |-
+  OSD, aka OR SUM DIF, is 3 independent blocks of useful utility in 4HP. OSD is centered around combining voltage in useful ways. Audio, V/Oct, and control voltage are at home in this utility. OSD offers a fully DC coupled signal path with precision components to make this happen. High quality, configurability, and compact size ensure OSD will always find it's way into your patch. - Combine v/Oct sequences with precision summing, or enable the the precision OR circuit for completely different results. - Mix two envelopes or an envelope and lfo using sum to create large accented voltages or combine with OR to keep the output in the original range. - Crossfade between audio or control voltage using the potentiometer in block one. Setting DIF will invert the signal at the B jack. What is OR, SUM, and DIF? OR - Input voltages are compared and the higher of the two is passed to the output. For example if A = 4V and B = 8V, the output will be 8V. SUM - Input voltages are added together to create the output voltage. For example if A= 3V and B=4V, the output will be 7V. This clips at -10V and 10V. DIF - B voltage source is subtracted from the A voltage, producing an output of the difference between the two. For example if A= 3V and B = 5V, the output will be 2V. Controls / Configuration
+
+  Block 1 - Sum, OR, or Difference of two inputs and effect the mix of the A input to the B input with the Knob. The third input ORs with the result of the A/B inputs. Not a precision channel. Block 2 - Sum, OR, or Difference of two inputs with high precision. The third input ORs with the result of the A/B inputs. Block 3 - 3 input OR with high precision. Mix gates or CV from three sources for some wild results.
+io:
+  - key: PUIW75RU
+    name: Block 1 A Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: iuPARlvn
+    name: Block 1 B Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: kpWVArtt
+    name: Block 1 Third Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: E9QkcMbi
+    name: Block 1 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: soVHTD4q
+    name: Block 2 A Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: kZ9CvL9d
+    name: Block 2 B Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: fl7EGEL5
+    name: Block 2 Third Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: vcqceKqG
+    name: Block 2 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 3THnJgVC
+    name: Block 3 Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Ejzj50N1
+    name: Block 3 Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 6Ck65FZP
+    name: Block 3 Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: UYulC9mZ
+    name: Block 3 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: qQ4P7moA
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

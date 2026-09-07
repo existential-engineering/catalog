@@ -1,0 +1,69 @@
+id: bC9GVJZrm8Mv3er9rTG1r
+name: Fracture
+manufacturer: wmd
+primaryCategory: drum-machine
+categories:
+  - granular
+  - percussion
+  - modular
+  - sampler
+capabilities:
+  - reverb
+  - granular
+  - filter
+url: http://www.wmdevices.com/products/fracture
+prices:
+  - amount: 329
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Fracture is a multi-particle percussion synthesizer that applies
+  analog clap circuit concepts to granular synthesis using proprietary
+  micro-samples of claps, snaps, and similar impulse sounds. Density, Decay, and
+  Tail controls shape tone from tight drum-machine claps to full audience
+  applause.
+details: |-
+  Multi-particle crowd percussion synthesizer
+
+  Originally inspired by audience applause, hip-hop samples, and classic drum machines, Fracture is a multi-particle percussion synthesizer that applies concepts from classic analogue clap circuits to granular synthesis methods. It all starts from proprietary micro-samples we recorded specifically for this purpose and ends with an engine built to suit these samples. Unlike our other percussion module, Chimera, which uses impulse rich samples as it's tonal center, Fracture uses single impulse samples like claps, snaps, ping pong balls, opening a beer can, and many more. It then plays a group of similar samples back in a psuedo random order for unique hits. Density, Decay, and Tail affect tone and how "tight" your virtual clappers are to playing together. Our goal was to design a clap percussion module covering the range from classic drum machine claps all the way to full audience applause. We ended up with a module that covers a huge range of timbres beyond claps. We hope this engine provides you with the tools to intuitively create wild percussion sounds that bring your system to life in a new way.
+io:
+  - key: nvfJ2saF
+    name: Trigger 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 5Y1pDjGl
+    name: Trigger 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: IQ60cZIt
+    name: Audio Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: JDPeQ459
+    name: Audio Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 9cS0AKZj
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

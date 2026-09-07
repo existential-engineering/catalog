@@ -1,0 +1,89 @@
+id: hzxGu1AU3abm5YzkAJcC3
+name: MSCL
+manufacturer: wmd
+primaryCategory: compressor
+categories:
+  - modular
+  - dynamics
+capabilities:
+  - compression
+  - limiting
+url: http://www.wmdevices.com/products/mscl
+prices:
+  - amount: 279
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: MSCL is a stereo analog compressor in 4hp for Eurorack, designed
+  for master bus glue, featuring independent attack and release, a combined
+  threshold/ratio/gain knob, a limit switch for peak limiting, and a sidechain
+  input.
+details: |-
+  Stereo analog compressor in 4hp
+
+  MSCL is a stereo compressor in 4 hp designed for your master bus to help "glue" your mix together. Inspired by the DBX "Over Easy" style compressor, it features independent attack and release knobs, output gain, and an all-in-one knob function for compression which decreases threshold, increases gain and ratio all with one turn. Limit Switch allows MSCL to act more like a peak limiter. The threshold switch lets you compress signals of different amplitudes. It also features a side chain input for classic ducking sounds on stereo tracks. CONTROLS
+
+  Comp knob: adjusts makeup gain, threshold, ratio simultaneously. - 1.25:1 to infinite:1 ratio
+
+  Attack Knob: Controls how fast the compressor will react to incoming transients
+
+  Attack speed: 0.15ms/dB to 0.1s/dB
+
+  Release Knob: Controls the speed in which the compressor will release. Release speed: 0.6ms/dB to 4s/dB
+
+  Gain Knob: Adds up to +-35dB on the output
+
+  Threshold Switch: Changes the threshold rainge
+
+  Three ranges (Left to Right) +5dBu, -4dBu, -15dBu
+
+  Limit Switch: Limits the comp knob's makeup gain. Makes the MSCL operate more as a peak limiter. Three selections (Left to Right): Inf, 9dB, 3dB
+io:
+  - key: c0UoNX0R
+    name: Left Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: WEbxkrq4
+    name: Right Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: CGqa6t3p
+    name: Left Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: apWb7CDF
+    name: Right Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 9PXgUBDI
+    name: Sidechain Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: G8cT7HNs
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

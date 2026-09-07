@@ -1,0 +1,141 @@
+id: dJriF329e07RrXGkg2EQs
+name: Quad Anti Aliasing Filter (QAAF)
+manufacturer: wmd
+primaryCategory: filter
+categories:
+  - modular
+capabilities:
+  - filter
+url: http://www.wmdevices.com/products/quad-anti-aliasing-filter-qaaf
+prices:
+  - amount: 229
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack module with four independent analog filters designed to
+  eliminate aliasing and stair-step distortion, usable standalone or as an
+  expansion for the Phase Displacement Oscillator.
+details: |-
+  These last 3 modules have silver panels. I have black panel kits that I can ship from another warehouse if you want, please send me a note on the order or an email! 4 independent filters in one seamless module
+
+  The WMD Quad Anti Aliasing Filter (QAAF) was conceptualized as the first expansion for the Phase Displacement Oscillator. It is designed to eliminate aliasing and stair-step distortion from the Digital to Analog converters. We opted to make this a separate module because it is useful by itself as well as coupled with the PDO. PDF MANUAL
+
+  PDO EXPANSION CONNECTION GUIDE
+
+  Controls and I/O
+
+  CV Input - This input is roughly calibrated to 1v/octave. It drives a vactrol that will cause the QAAF to open quickly and close slowly. Freq Knob - This knob controls the cutoff directly or acts as a bias/level shift control for the CV input. CLK - This jack serves as a clock input or output, directly controlling the filter's frequencies at a ratio of 100:1. A jumper on the back (lower jumper) selects it's mode. Jump for clock output, leave open for clock input. Inputs 1-4 - Audio Inputs, these are normaled from the expansion header going to the PDO. This normal is broken by plugging into these jacks. Outputs 1-4 - These jacks are for each channel's outut. Mix - This output is a sum of each channel's filtered input. Frequency Limit Jumper - This rear jumper (upper set of pins) will limit the low frequency cutoff to about 300Hz. This will stop the QAAF from producing aliasing noise itself as it's clock frequency will be limited to 30kHz. Jump for limiting, leave open to disable.
+specs: |-
+  - Our 4-pole filters
+  - Channel to Channel Freq +-0.5%
+  - Switched Capacitor Design
+  - Butterworth Response Curve
+  - CV Input
+  - Frequency Offset Knob
+  - Clock Input/Output
+  - Mix Output
+  - Low-Frequency Limit Jumper
+  - 4 HP
+  - Completely Analog
+  - Great for Pre & Post Filtering
+  - Power: +12V = 35mA; -12V = 35mA
+  - Size: 4HP
+  - Depth: 40mm.
+  - We will take care of you.
+io:
+  - key: a2NPJGOg
+    name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: UQQoRkkb
+    name: CLK
+    signalFlow: bidirectional
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 2PmTg8b2
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: A9WBIYu8
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: WqTsVlGt
+    name: Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 1ne6FtY6
+    name: Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 8ouJGr9g
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 5mfFguGh
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: ATCnscKQ
+    name: Output 3
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: qKtcTAM7
+    name: Output 4
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Uca3qIp7
+    name: Mix
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: J6ZDkP74
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,63 @@
+id: 8KVTDed9D3Ge2E8DiQk5V
+name: Geiger Counter Eurorack
+manufacturer: wmd
+primaryCategory: effect
+categories:
+  - bit-crusher
+  - distortion
+  - modular
+capabilities:
+  - bit-crush
+  - distortion
+  - overdrive
+url: http://www.wmdevices.com/products/geiger-counter-eurorack
+prices:
+  - amount: 339
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack module version of the Geiger Counter distortion pedal
+  offering digital destruction via 252 wave tables, variable sample rate and bit
+  depth, with CV control over every parameter and a direct input to bypass the
+  preamp.
+details: |-
+  NOW SHIPPING IN BLACK
+
+  Digital Destruction for Eurorack
+
+  Our flagship Geiger Counter guitar pedal turned Eurorack module. Added features include direct input to bypass the gain and tone circuits and CV control over every parameter. The Eurorack Geiger Counter is fully DC coupled and will accept audio and CV signals. Run a slow LFO into the direct input, tweak the wave table knob and see what happens! The Controls
+
+  Gain - Low settings provide clean tones with no distortion at all, while high settings will brickwall your signal for great sustain. Use the Gain control as a coarse setting for getting the desired tone from the selected wave table. Tone - The Geiger Counter's tone control blends muffled low-mids with chimey and clear upper mids and highs providing a very large range of sounds in junction with the Gain. All the way down and the sound is muffled and grungy with little upper harmonic content. The middle range is smooth and full bodied. The top range cuts the lows completely for only upper harmonic content. Use the Tone to fine tune the sound of the wave table. Tone Enable/Disable - This switch removes the tone control from the preamp circuit. The tone control sucks some volume from the gain, and this allows the pure ultra hot signal to go directly into the Wave Table. If a very clean tone is desired, set to Disable and adjust the gain to get the right amount of breakup. For most wave tables, disabling the Tone will produce completely different sounds by brickwalling to the extremes of the tables faster. Direct In/Level - The direct input allows a signal to be injected directly to the Geiger Counter's digital heart and bypassing the preamps coloration. Sample Rate - Controls the length of the samples your signal is converted into. Full up and the Geiger Counter samples faster than a CD. Dial it down a little and you'll lower the fidelity and frequency response, adding overtones and difference frequencies. Down a little produces some very nice chimey clean tones. Down more and higher notes disappear into difference frequencies, all the way down to 280Hz. The sample rate is sort of like a flange whammy. When the LED is Red, the Sample Rate is in fine mode where the range is limited to the upper end. The CV input and attenuator are only active when a cable is plugged into the CV jack. When CV controlled, the Sample Rate knob selects the center frequency about which the CV signal moves. When the LED is Green, the Sample Rate knob is logically ANDed with the CV signal, producing some interesting sounds as the CV changes. Bit Depth - This controls the finer details of the signal. All up and your signal is represented by the full 8 bits. Each step down cuts the resolution in half, adding quantization error distortion, all the way down to 1 bit making a nasty square wave from a once clean tone. This produces a lo-fi gated distortion sound. The LED when Green engages Mask mode where your signal is logically ANDed to the 8 bit number produced by the Bit Depth knob. This produces uneven gaps in your signal for some interesting distortion sounds. The Bit Depth CV and level control is only active when a cable is plugged into the Bit Depth CV input. The Bit Depth knob then controls the center frequency. However, unlike the Sample Rate control, the bit depth can wrap around the edges of the control if the CV signal is larger than the range allows for. Wave Table - This knob and display select the wave table to run your signal through. The wave table stage takes your signal and destroys it with math. This produces some incredible sounds. The wave tables are organized so that a more extreme version is typically found one up from the current one. There are 252 wave tables in all, each with different harmonic content. The display is in HEX, displaying the numbers 0-9 and the letters A-F. Don't be alarmed, it actually makes remembering your desired wave table easier! The wave table is remembered when the pedal is turned off. The Wave Table CV input is similar to the Bit Depth's. The CV signal is only active when a cable is plugged in. The Wave Table will wrap around the end points 00 and FB. The center is set by the WaveTable knob.
+io:
+  - key: i4C7NID1
+    name: Direct In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: qUwDeSND
+    name: CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: q4eur5a8
+    name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: K17BmqLM
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

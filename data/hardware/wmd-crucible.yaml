@@ -1,0 +1,79 @@
+id: -w_totxucZNOMTCmL4CpX
+name: Crucible
+manufacturer: wmd
+primaryCategory: synthesizer
+categories:
+  - modular
+  - digital
+  - percussion
+  - cymbals
+capabilities:
+  - filter
+  - delay
+url: http://www.wmdevices.com/products/crucible
+prices:
+  - amount: 329
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Crucible is a Eurorack cymbal and metal synthesizer that digitally
+  synthesizes sounds resembling struck metal, cymbals, gongs, and bells in real
+  time. It offers Size, Pitch, Tone, and Deform controls plus Edge and Mid
+  trigger inputs.
+details: |-
+  Crucible = Molten Chalice
+
+  Curved Metal and Cymbal Synthesizer
+
+  Feel the sizzle as you harness the energy of liquid metal. Forge your sonic desires, and rain hot fire onto the eardrums of your listeners. Cymbals, gongs, bells, and sheet metal are the territory of Crucible. Have you ever wanted to start with the smallest cowbell, and then CV it until it becomes a gong larger than the room you're standing in? Crucible makes this possible. By utilizing classic digital synthesis blocks like delay and digital filters, Crucible can fully synthesize, in real time, sounds similar to thin struck pieces of metal. We expose the engine to the user through parameters specifically chosen for their sonic resemblance to the "parameters" of a real drum kit cymbal. Size, Pitch, Tone, and Deform give the user the tools to shape their cymbal. The Excite knob allow the user to shape their exciter, completely changing Crucible's response. Finally, select where the exciter contacts the engine by triggering the EDGE and MID inputs, or trigger both to strike the "bell."
+
+  All of this adds up to a module that is lively and energetic, completely mimicking the feeling of playing a real cymbal, while still incorporating WMD's "New Sounds, Maximum Experience" philosophy. MKI shown in pictures, MKII version is dual board design, which is easier to manufacture. There are no functional differences.
+io:
+  - key: CxjqnZk0
+    name: Edge Trigger
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 378iw7ke
+    name: Mid Trigger
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 8tgS7gUL
+    name: Choke In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: D4Sm1KK3
+    name: Audio In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: xgUBtjUs
+    name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: jc3a5hhv
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

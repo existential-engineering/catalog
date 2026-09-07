@@ -1,0 +1,128 @@
+id: 6wjtZfWC4b7CT3mbALWEe
+name: Modbox MKII
+manufacturer: wmd
+primaryCategory: modular
+categories:
+  - synthesizer
+  - utility
+capabilities:
+  - sampling
+url: http://www.wmdevices.com/products/modbox-mkii
+prices:
+  - amount: 279
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Modbox MKII is a dual-LFO and multifunction modulation module
+  featuring a three-phase LFO, a variable-skew LFO, a digital sample & hold with
+  Turing-machine mode, and an analog noise source, all with clock sync.
+details: |-
+  Modbox MKII — Dual Modulation Oscillator & Multifunction Tool
+
+  Modbox MKII is a deeply musical dual-LFO & utility module designed to supplement your patches with useful and controllable modulation. Especially useful with clock sync. This sequel to the highly sought after WMD/SSF Modbox is better in every way. Three Phase LFO (3ɸ LFO)
+
+  Designed to create lush and complex modulation in your patches, the three outputs have multiple ways of relating to each other, picking up what the original Modbox started, and incorporating the magic of the Phase Displacement Oscillator. This oscillator has three primary modes of operation, selectable with the MODE button. FREQ is the base frequency of the oscillator. When synced to clock, FREQ becomes the ratio to the incoming clock frequency. The WAVE knob smoothly morphs the outputs from saw → sine → triangle → ramp. Hold SHIFT and FREQ becomes LVL, adjusting the overall level of the outputs. By default OUT2 and OUT3 are the same frequency as OUT1. Hold SHIFT and adjust the corresponding RTO pot to change frequency ratios. The ratio applies to all three operational modes. The 3ɸ LFO tracks 1V/octave and also works at audio rate. Skew LFO
+
+  The right side of Modbox MKII is a powerful variable-skew LFO, meaning it morphs from saw → triangle → ramp. It syncs to incoming clock and resets intelligently, creating complex and musical modulation. FREQ is the base frequency of the oscillator. When synced to clock, FREQ becomes the ratio to the incoming clock frequency. SLOPE controls the morphing: saw → triangle → ramp. Hold SHIFT and FREQ becomes PHASE. This sets the relative phase to the incoming clock and reset pulses for precise modulation timing. Hold SHIFT and SLOPE becomes SHAPE. Adjusting the curvature of the output from exponential → linear → logarithmic without affecting the frequency. The Skew LFO tracks 1V/octave and also works at audio rate. Sample & Hold (S&H)
+
+  Modbox MKII's S&H circuit is digital, so the droop is gone, and we added a couple additional useful modes. Press MODE to change the operational mode of the S&H sub-module. The S&H IN jack is normaled to the analog noise source. The Skew oscillator generates a pulse normaled to the SMPL input: Creating a SMPL event when the Skew oscillator peaks. When using the normal, T&H mode will track while the Skew oscillator is descending. CLOCK and RESET
+
+  Modbox is designed for synchronous playing. Both CLOCK and RESET jacks can be used with either or both LFO's. When clock synced the rate pots provide clock divisions from 1:512 up to 4:1 in factors of 2. Removing a clock while synced with an LFO keeps the clock synced at the previous rate and the rate pot will now divide from the previously synced clock until the mode is changed. Analog Noise. A true analog white noise generator sits in the signal chain, factory-calibrated to about 14Vpp. The original Modbox was a useful modulation workhorse for any sized system. Modbox MKII is a major level up: same spirit, bit more density, way more depth.
+specs: |-
+  - Three Phase (3ɸ) LFO: Three outputs with interrelated frequency and phase relationships for creating complex and rhythmic modulation.
+  - Skew LFO: Ramp to triangle to sawtooth, infinitely variable with intelligent sync and reset behavior.
+  - Sample & Hold (S&H): A digital sample and hold with integrated slew and a few other fun tricks.
+  - Analog Noise: Simple white noise source that drives the S&H or whatever you need it for.
+  - Phase Offset (ɸΔ): Outputs of the same frequency, SPREAD shifts the phase of OUT2 and OUT3 in opposite directions 360°.
+  - Phase Modulation (ɸMOD): This mode offers cascading phase distortion. OUT1 modulates OUT2, which modulates OUT3, with SPREAD setting depth of the modulation.
+  - Frequency Spread (𝑓Δ): Outputs are the same frequency when SPREAD is counter clockwise. SPREAD then increases the frequency of OUT2, and decreases the frequency of OUT3 smoothly to 8x and 1/8x respectively.
+  - Sample & Hold (S&H): Captures the input (S&H IN) on a rising edge of SMPL (gate or button) and holds that voltage on S&H OUT until the next TRIG event.
+  - Track & Hold (T&H): Gate mode of S&H, while SMPL is high, the signal will pass through, and when SMPL goes low (or button is released), the sample will be held until the next SMPL event.
+  - Turing Machine (TM): A variation on the traditional Sample & Hold design, where a buffer holds a loop of samples, creating slowly evolving patterns. - The SLEW knob now controls PROBability of pulling a new sample or outputting what's in the buffer.
+  - With PROB at 12 o'clock, each SMPL event will grab a fresh sample from the S&H IN jack.
+  - Move PROB clockwise and a loop will start to form, changing less and less until it's fully locked at clockwise. Move PROB fully counterclockwise, and the same loop will play in reverse, barring any new samples introduced while the knob was in motion. CW and CCW are fully locked.
+  - Hold SHIFT and PROB now controls the loop length, from 1 to 32 samples.
+  - These functions are shared by the CLOCK/RESET button
+  - Tap to cycle through RESET modes for both oscillators
+  - HOLD to cycle through CLOCK modes for both oscillators
+io:
+  - key: bdZPGmnQ
+    name: Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: VF8gEYw5
+    name: Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: VRHJGSCN
+    name: Out 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: vQxqTR5r
+    name: Skew Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 9qlhRB4Q
+    name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: T5jzn80J
+    name: Reset In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: JNgj000g
+    name: S&H In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: czUL0WDE
+    name: SMPL In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 6Wr7g0oL
+    name: S&H Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: DRqep8TZ
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,91 @@
+id: Ni8GB__Mq03Uj4bN6wGQm
+name: Javelin
+manufacturer: wmd
+primaryCategory: modular
+categories:
+  - sequencer
+url: http://www.wmdevices.com/products/javelin
+prices:
+  - amount: 259
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Javelin is a Eurorack ADSR envelope generator with an integrated
+  VCA, featuring 3 level ranges, 3 time ranges, and a unique Accent input that
+  climbs higher with consecutive gates for expressive sequences. It also
+  includes Choke and Reset inputs plus CV over Attack and Release.
+details: |-
+  Javelin is the envelope we at WMD have always needed to make. We took the best parts from our classic Multimode Envelope and combined them with the simplicity and convenience of an ADSR with integrated VCA. We then took the tricks we have learned from live performance and use of other awesome synthesizers and put it all together to create what we truly believe is the ultimate Eurorack envelope. Javelin starts out as a simple ADSR envelope. We then added 3 level ranges, giving you control over the envelope's overall amplitude. Next, 3 time ranges allow for quick switching of the feel of the envelope. These ranges were carefully designed to work with each other, making the switch a fun and playable part of the interface. Short and snappy, long and drawn out (max 88 minutes per stage with 5V in a stage's CV input), the Javelin will suit any style of music or playing style. Expression is key. We wanted to make the most expressive, emotional sounding envelope we possibly could. The addition of Accent and Choke inputs make for very interesting sequences that are just a couple gates away. The Accent behavior is incredibly unique. Multiple consecutive gates while the Accent input is high cause the envelope to climb a bit higher with each gate, causing whatever you are controlling to accent a bit harder on each next gate. When controlling a filter, this creates a sound that can be personified with breathing, laughing, screaming, or crying, and is the key to the perfect, funky, acid style bass line. This behavior can also be disabled if you prefer a static Accent level. As if that's not enough, the Accent input is actually a CV input which lets you use CV to effect the amount of accent with intention. 3 different accent ranges let you choose the maximum amount that the envelope will accent to. Complete control! Reset lets you stop the envelope in it's tracks with a gate signal. This is great for using long envelope times for some steps and cutting them off for others without the need for another CV channel. However, Attack and Release also have CV inputs can can be sequenced externally. Release CV can even be routed to control Decay and Release simultaneously, a common control scheme in vintage style synthesizer envelopes. Combining all of these methods of control on Javelin let you pinpoint the sound you are after. An absolute joy to work with.
+io:
+  - key: tI87mRLi
+    name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: gmgFT9hl
+    name: Reset In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: Gp0EHqKA
+    name: Accent CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: HOM7h1Kt
+    name: Choke In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: TmxkYWAt
+    name: Attack CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: oFo5Q3Pm
+    name: Release CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: pqnH3Xh4
+    name: Signal In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 09mVLGOQ
+    name: Signal Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: e7IucSPr
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

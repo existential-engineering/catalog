@@ -1,0 +1,81 @@
+id: S-3yzfdgul7_VG8YQgq9W
+name: Orion
+manufacturer: wmd
+primaryCategory: phaser
+categories:
+  - modular
+  - effect
+capabilities:
+  - phaser
+url: http://www.wmdevices.com/products/orion
+prices:
+  - amount: 239
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Orion is an analog phaser effect module for Eurorack, usable in
+  mono or mono-to-stereo mode, with user-selectable filter stages, an internal
+  LFO, CV control, and a pre-phaser wavefolder.
+details: |-
+  LIMITED RUN OF 600! Set your Phaser to "FUN", and proceed with confidence! Orion is an analog Phaser effect module for eurorack modular synthesizers in 4HP. It can be used in mono or as a mono to stereo effect, creating cosmic swirls of spaced out texture. An instant bypass switch allows for hands-on engaging of the sound. The number of stages can be set by the user and the resonance, depth, rate, and frequency-center controls make for quick dialing in of the perfect effect. Orion features it's own internal LFO that ranges from mild to wild, but if that's not enough, use the Freq CV input to control the effect from an external effect. A 100% analog audio path means a purely unique sound that is both warm and smooth. CONTROLS
+
+  Pole Select / Bypass Switch: Tap to engage and disengage the filter effect (LED on means Engaged). Hold to switch the amount of filter poles, increasing how dramatic the effect will be. Stereo switch: Tapping this switch engages the mono to stereo effect. If not engaged, both outputs will be identical. Freq Knob: Controls the center frequency of the phaser's filters. Move this manually and park it to find a fixed sound or modulate around this frequency with the internal LFO or external CV source to enhance movement in the effect. Depth knob: Controls the amount of modulation that the internal LFO will have on the movement of the filter. Resonance: Controls the amount of feedback in the circuit, defining the character of the sound. Just like a standard filter, resonanceis a buildup of gain around the center frequency, and will create a more "ringy" sound when pushed. Rate Knob: Controls the rate of the internal LFO
+
+  Fold/Stereo: Multi-use button for enabling the wavefolder and stereo effect. Tapping this button will toggle the pre phaser wavefolder. Holding the button toggles the phaser stereo effect. The status of both effects are indicated by their coresponding LEDs.
+io:
+  - key: HFRo68Gw
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: RHSg2cf7
+    name: Left Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: hEIBnpHf
+    name: Right Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: wwwesPgg
+    name: Freq CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: ZEIYcxrs
+    name: Resonance CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 5eSKEhV1
+    name: Depth CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: JYQfyEud
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
