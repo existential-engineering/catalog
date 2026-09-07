@@ -1,0 +1,62 @@
+id: iQ_5HYdJ6zw-wYyEoiPhi
+name: EVOLVING PATTERNS
+manufacturer: nocturnis-audio
+primaryCategory: sequencer
+categories:
+  - modular
+  - midi-effect
+capabilities:
+  - sequencing
+url: https://nocturnisaudio.com/products/evolving-patterns
+prices:
+  - amount: 200
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: EVOLVING PATTERNS is a Eurorack module that generates semi-random
+  gate sequences, acting as a source of randomness for rhythmic patterns. It
+  offers control over gate length, note length, density, and randomness, with
+  clock, reset and enable inputs.
+details: |-
+  EVOLVING PATTERNS by Nocturnis Audio is a s emi-random gate sequence generator and source of randomness.
+io:
+  - key: XS0AV1G8
+    name: Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: OdX2gs2X
+    name: Reset Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: ENwm2Jp0
+    name: Enable Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: nDmJEbJr
+    name: Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: Zf3wsMNz
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
