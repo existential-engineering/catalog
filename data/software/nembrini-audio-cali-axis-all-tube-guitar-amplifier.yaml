@@ -6,10 +6,11 @@ categories:
   - emulation
   - plugin
 formats:
-  - au
   - vst2
   - vst3
   - aax
+  - au
+  - standalone
 platforms:
   - mac
   - windows
@@ -18,39 +19,66 @@ url: https://www.nembriniaudio.com/products/cali-axis-all-tube-guitar-amplifier
 prices:
   - amount: 29.99
     currency: USD
-description: Cali Axis is a plugin modeled after the Mesa Boogie TriAxis
-  preamplifier, delivering an arsenal of powerful guitar tones in plugin format.
-  It features eight distinct amp modes, a full effects chain, six cabinet
-  models, four microphone emulations, and an impulse response loader.
+description: Nembrini Audio Cali Axis All Tube Guitar Amplifier plugin is based
+  on the Mesa Boogie TriAxis preamplifier, an arsenal of powerful guitar tones
+  in plugin format.
 details: |-
-  Cali Axis is a comprehensive guitar amplifier plugin meticulously modeled after the legendary Mesa Boogie TriAxis preamplifier. It offers eight separate amp modes spanning clean to high-gain voicings, including creamy gain characteristics, focused midrange, scooped rhythm voicing, and modified British lead modes. The power amplifier section features four virtual EL34 tubes in a class AB push-pull configuration with presence, resonance, volume, and power switch controls, plus a Modern button for modified negative feedback behavior.
+  Nembrini Audio Cali Axis All Tube Guitar Amplifier plugin is based on Mesa Boogie TriAxis* preamplifier. Eight separate modes deliver the elusive creamy gain of the Mk I, the heralded focus of the Mk I, the scooped Rhythm of the Mk IV, and a modified British lead mode. But these are just a few of the classic sounds at your fingertips.
 
-  The plugin includes a fully featured effects chain with selectable, orderable individual processors. Available effects include a digital delay with Lo-Fi filter and time offset, analog modulation (switchable between chorus and tremolo), an ambient hall reverb algorithm, an A/B filter with tight, rumbling, and harsh characteristics, an analog noise gate optimized for guitar and bass, and a studio compressor for dynamic control.
+  The FX section lets you select, enable and change the order of the single FXs. The power amplifier is powered by four EL34 virtual tubes with presence, resonance, volume and power switch in class AB push-pull configuration, and a MODERN button changes the negative feedback in a way to have a more "modern" presence behaviour.
 
-  The cabinet and microphone section provides six guitar cabinet models with four microphone emulations featuring on/off-axis positioning and continuous position and distance controls. An impulse response loader supports up to three third-party IRs with blending capabilities, and free impulse responses from Choptones are included with the plugin.
+  Effects include a digital delay with a FILTER to make the delay Lo-Fi and OFFSET to create a time offset in the left/right delay sections, analog modulations with a choice of Chorus or Tremolo, an ambient Hall reverb algorithm, filters A/B with TIGHT (clockwise rotation reduces low frequency content tightening the low range, suitable for 7/8 string guitars), RUMBLING (clockwise rotation reduces low frequency content) and HARSH (clockwise rotation reduces high frequency content), an analog noise gate tuned for guitar and bass with GATE speed control, and a studio compressor to keep your dynamics in check, whether just thickening the sound or keeping levels consistent.
 
-  System requirements include Mac OS 10.13 or newer or Windows 7 or newer, an Intel-compatible or Apple Silicon CPU, a minimum of 1GB RAM, and a 64-bit DAW. The plugin is available in AU, VST2, VST3, and AAX formats. A companion iOS app is also available for iPhone and iPad via the Apple App Store.
+  Nembrini Audio Cali Axis All Tube Guitar Amplifier features six different guitar cabinets, four microphone emulations with on/off axis position switch, continuous position and distance knobs. The Impulse Loader lets you load up to three third-party impulse responses that you can even blend together using volume, pan, phase, solo and mute controls. Free impulse responses are included, with presets and sound samples by www.choptones.com.
+
+  Legal Disclaimer: TriAxis is a registered trademark of Mesa Engineering. Nembrini Audio Cali Axis was developed by Nembrini Audio SRL based on its own modelling techniques. Mesa Engineering has not endorsed nor sponsored the Nembrini Audio Cali Axis in any manner, nor licensed any intellectual property for use in this product.
 specs: |-
-  - Eight distinct amp modes modeled after Mesa Boogie TriAxis
-  - Power amp: four virtual EL34 tubes, class AB push-pull configuration
-  - Controls: presence, resonance, volume, power switch, Modern button
-  - Digital delay with Lo-Fi filter and time offset
-  - Analog modulation: chorus or tremolo (switchable)
-  - Ambient hall reverb algorithm
-  - Filter A/B: tight, rumbling, and harsh characteristics
-  - Analog noise gate optimized for guitar and bass
-  - Studio compressor for dynamic control
-  - Six guitar cabinet models
-  - Four microphone emulations with on/off-axis positioning
-  - Continuous microphone position and distance controls
-  - Impulse response loader: supports three third-party IRs with blending
-  - Free Choptones impulse responses included
-  - Platforms: Mac OS 10.13+, Windows 7+
-  - iOS app available (iPhone/iPad)
-  - Formats: AU, VST2, VST3, AAX
-  - 64-bit DAW required
-  - Minimum 1GB RAM
-  - Intel or Apple Silicon CPU
+  - Based on the Mesa Boogie TriAxis preamplifier
+  - Eight separate preamp modes
+  - Power amplifier with four EL34 virtual tubes in class AB push-pull, with presence, resonance, volume and power switch
+  - MODERN button changes the negative feedback for a more modern presence behaviour
+  - Reorderable FX section
+  - Digital delay with Lo-Fi FILTER and left/right OFFSET
+  - Analog modulation with Chorus or Tremolo
+  - Hall reverb algorithm
+  - Filters A/B: Tight, Rumbling, Harsh
+  - Analog noise gate tuned for guitar and bass with GATE speed control
+  - Studio compressor
+  - Six guitar cabinets with four microphone emulations, on/off axis switch, position and distance knobs
+  - Impulse response loader for up to three third-party IRs with volume, pan, phase, solo and mute
+  - Free impulse responses, presets and sound samples by choptones.com
+  - Requires a VST2, VST3, AAX or AudioUnits compatible host
+  - iOS version for iPhone and iPad
+  - Intel compatible or Apple Silicon CPU, 1GB RAM
+  - Mac OS 10.13 or newer, Windows 7 or newer, 64-bit DAW
+versions:
+  - name: 1.0.8
+    releaseDate: 2026-05-11
+    description: Added subscription license support.
+  - name: 1.0.7
+    releaseDate: 2026-04-08
+    description: Updated GUI appearance. Fixed a licensing issue.
+  - name: 1.0.5
+    releaseDate: 2025-11-10
+    description: Upgrade the authorization to OPT login. Updated GUI cosmetics for
+      toolbars and dialogs. Added preset search function.
+  - name: 1.0.4
+    releaseDate: 2025-03-01
+    description: Minor fix. Added standalone format.
+  - name: 1.0.3
+    releaseDate: 2024-10-07
+    description: Minimum system requirement fallback to Windows 7. Minor fix for
+      plugin scanning.
+  - name: 1.0.2
+    releaseDate: 2024-09-10
+    description: Minor fix. Removed iLok, added proprietary license.
+  - name: 1.0.1
+    releaseDate: 2023-09-27
+    description: Minor fix. Fix iLok issue between Audio Units and GarageBand.
+  - name: 1.0.0
+    releaseDate: 2023-08-01
+    description: Release version.
+releaseDate: 2023-08-01
 videos:
   - videoId: LgtnB5ruCzU
     provider: youtube
