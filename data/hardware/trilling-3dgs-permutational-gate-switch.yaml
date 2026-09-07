@@ -1,0 +1,66 @@
+id: tsWdJE1TZshesSKUIQFD5
+name: 3DGS - Permutational Gate/Switch
+manufacturer: trilling
+primaryCategory: modular
+categories:
+  - utility
+url: http://www.trillingsynths.com/products/3dgs
+prices:
+  - amount: 120
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: An analog 1:8 switch controlled by three gate signals. It works
+  bidirectionally to switch gates, control voltages, or audio signals, using the
+  three control gates as a binary number to select the active input/output.
+details: |-
+  Analog 1:8 switch controlled by 3 gates. Works in both directions to switch gates, control voltages or audio signals. Three control gates combine into a binary number to determine the active input/output. When nothing is connected to the common i/o, the active output will be high (5V). Tech specs:
+
+  ModularGrid
+specs: |-
+  - Width 10hp (50.8mm)
+  - Depth 33mm (including power cable)
+  - Universal 10/16 pin Eurorack power connector (16 pin cable included)
+  - Standard 3.5mm TS jacks
+  - Power 35mA 12V, <1mA -12V
+io:
+  - key: XBQa3Y2e
+    name: Gate Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: psGd5LMT
+    name: Gate Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: RFFb8J8W
+    name: Gate Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: KaqotGF8
+    name: Common I/O
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: uDpr6grM
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
