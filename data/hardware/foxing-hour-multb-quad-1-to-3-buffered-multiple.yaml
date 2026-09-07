@@ -10,134 +10,134 @@ description: MULTB is a Quad 1-to-3 video rate buffered multiple Eurorack
   module. It buffers each of four inputs to three identical unity-gain outputs,
   avoiding the attenuation and crosstalk of passive stacking cables.
 details: |-
-  MULTB, aka the YRGB Mult, is a Quad 1-to-3 Video Rate Buffered Multiple. Inputs are buffered to provide three identical unity gain outputs per. Using a buffered multiple instead of stackable cables prevents unwanted attenuation as well as potential crosstalk from modules without input buffers. Input switches are cascaded downward, so using just the first input will provide a user with twelve identical unity gain outputs. Inputs are terminated with a 100Kohm resistor and each output has a series resistance of 499ohms. Two versions are available for Assembled modules. One is 8HP and the other is 6HP. The 6HP version is assembled with surface mount components and is not as deep as the 8HP version. The full dimensions are below: Dimensions: 8HP 6HP 41mm deep 32mm deep Current Draw: 11 mA +12V 11 mA -12V 0 mA +5V BOM & Build Guide
+  MULTB, aka the YRGB Mult, is a Quad 1-to-3 Video Rate Buffered Multiple. Inputs are buffered to provide three identical unity gain outputs per. Using a buffered multiple instead of stackable cables prevents unwanted attenuation as well as potential crosstalk from modules without input buffers. Input switches are cascaded downward, so using just the first input will provide a user with twelve identical unity gain outputs. Inputs are terminated with a 100Kohm resistor and each output has a series resistance of 499ohms. Two versions are available for Assembled modules. One is 8HP and the other is 6HP. The 6HP version is assembled with surface mount components and is not as deep as the 8HP version. The full dimensions are below: Dimensions: 8HP 6HP 41mm deep 32mm deep Current Draw: 11 mA +12V 11 mA -12V 0 mA +5V
 io:
   - key: FnhURkw0
     name: Input 1
     signalFlow: input
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: dE6GNieU
     name: Input 2
     signalFlow: input
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: gXRgoaFS
     name: Input 3
     signalFlow: input
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: ZvpjENFZ
     name: Input 4
     signalFlow: input
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: 2EMV9NbD
     name: Output 1
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: 1DMVDR25
     name: Output 2
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: HZdaemfB
     name: Output 3
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: dEe8rZrS
     name: Output 4
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: r1Gq8B5g
     name: Output 5
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: A3OCO8LZ
     name: Output 6
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: LtUezp4C
     name: Output 7
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: UmElRXCv
     name: Output 8
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: vLpIoegy
     name: Output 9
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: zMpE4duD
     name: Output 10
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: kdIMhFb6
     name: Output 11
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: jU6bbtsD
     name: Output 12
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: vjQ3rCaZ
@@ -145,6 +145,6 @@ io:
     signalFlow: input
     category: power
     type: power
-    connection: pin-header
+    connection: idc
     maxConnections: 1
     position: Bottom

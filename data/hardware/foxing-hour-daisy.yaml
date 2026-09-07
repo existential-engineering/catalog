@@ -5,6 +5,7 @@ primaryCategory: modular
 categories:
   - utility
   - routing
+hp: 12
 url: https://foxinghour.com/products/daisy-chainable-matrix-mixer
 prices:
   - amount: 37
@@ -29,38 +30,84 @@ details: |-
   54 mA -12V
 
   0 mA 5V
-
-  BOM & Guide
 io:
+  - key: VgOb7AVP
+    name: Chain R Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: EYdgpv5O
+    name: Chain G Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 0m0zwy1t
+    name: Chain B Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: flM3CfhV
+    name: Matrix R Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: H1WjgsvM
+    name: Matrix G Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: p1tj6dCm
+    name: Matrix B Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
   - key: 13sp89t6
-    name: RGB Output
+    name: R Output
     signalFlow: output
     category: audio
     type: cv/gate
-    connection: 3.5mm
-    maxConnections: 1
-    position: Top
-  - key: flM3CfhV
-    name: RGB Chain Input
-    signalFlow: input
-    category: audio
-    type: cv/gate
-    connection: 3.5mm
-    maxConnections: 1
-    position: Top
-  - key: MH3QbEAA
-    name: +12V Power
-    signalFlow: input
-    category: power
-    type: power
-    connection: pin-header
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
-  - key: lsv71X5o
-    name: -12V Power
+  - key: uf5CyoPg
+    name: G Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: NesLDKhM
+    name: B Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: MH3QbEAA
+    name: Eurorack Power
     signalFlow: input
     category: power
     type: power
-    connection: pin-header
+    connection: idc
     maxConnections: 1
     position: Bottom

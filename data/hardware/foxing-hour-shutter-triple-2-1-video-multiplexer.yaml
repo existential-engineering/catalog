@@ -4,6 +4,7 @@ manufacturer: foxing-hour
 primaryCategory: modular
 categories:
   - utility
+hp: 8
 url: https://foxinghour.com/products/shutter-triple-2-1-video-multiplexer
 prices:
   - amount: 32
@@ -20,56 +21,56 @@ io:
     name: Ch A Red
     signalFlow: input
     category: audio
-    type: proprietary
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: qunsDOsz
     name: Ch A Green
     signalFlow: input
     category: audio
-    type: proprietary
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: LiyGRdTJ
     name: Ch A Blue
     signalFlow: input
     category: audio
-    type: proprietary
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: QDvvKvgJ
     name: Ch B Red
     signalFlow: input
     category: audio
-    type: proprietary
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: VQbZ3Meg
     name: Ch B Green
     signalFlow: input
     category: audio
-    type: proprietary
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: ab5S1aED
     name: Ch B Blue
     signalFlow: input
     category: audio
-    type: proprietary
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: sgTzmhiS
     name: Switch Input 1
     signalFlow: input
     category: audio
     type: cv/gate
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: ueOyfinp
@@ -77,7 +78,7 @@ io:
     signalFlow: input
     category: audio
     type: cv/gate
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: Vmkm9kjU
@@ -85,7 +86,7 @@ io:
     signalFlow: input
     category: audio
     type: cv/gate
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: NSaCio1H
@@ -93,14 +94,38 @@ io:
     signalFlow: input
     category: audio
     type: cv/gate
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
+  - key: IWDL8osx
+    name: R Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: bK5EyilZ
+    name: G Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Svit1tXT
+    name: B Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
   - key: oLCUguvR
     name: Eurorack Power
     signalFlow: input
     category: power
     type: power
-    connection: pin-header
+    connection: idc
     maxConnections: 1
     position: Bottom

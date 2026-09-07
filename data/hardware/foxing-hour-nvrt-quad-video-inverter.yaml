@@ -15,14 +15,14 @@ description: NVRT is a Eurorack module that inverts luma levels of a video
   It inverts around a 0.5 volt reference rather than around 0 volts as an audio
   inverter would.
 details: |-
-  NVRT inverts luma levels from light to dark and dark to light and provides four circuits. A video inverter is unlike an audio inverter in that it does not invert around 0 volts. Instead, it inverts around a 0.5 volt reference meaning a video signal of 0 to 1 volt becomes 1 to 0 volts. Documentation
+  NVRT inverts luma levels from light to dark and dark to light and provides four circuits. A video inverter is unlike an audio inverter in that it does not invert around 0 volts. Instead, it inverts around a 0.5 volt reference meaning a video signal of 0 to 1 volt becomes 1 to 0 volts.
 io:
   - key: BMP3y5t7
     name: Video Input 1
     signalFlow: input
     category: audio
     type: video
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: 180yiqIP
@@ -30,7 +30,7 @@ io:
     signalFlow: input
     category: audio
     type: video
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: ipsNFcps
@@ -38,7 +38,7 @@ io:
     signalFlow: input
     category: audio
     type: video
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: UQYd3nur
@@ -46,7 +46,7 @@ io:
     signalFlow: input
     category: audio
     type: video
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: nZEfAeZl
@@ -54,7 +54,7 @@ io:
     signalFlow: output
     category: audio
     type: video
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: Febd4aZe
@@ -62,7 +62,7 @@ io:
     signalFlow: output
     category: audio
     type: video
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: 32xjN3ZJ
@@ -70,7 +70,7 @@ io:
     signalFlow: output
     category: audio
     type: video
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: r4ogmHdV
@@ -78,6 +78,14 @@ io:
     signalFlow: output
     category: audio
     type: video
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
+  - key: QwXe8lDe
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

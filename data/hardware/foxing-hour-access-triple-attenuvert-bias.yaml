@@ -4,6 +4,7 @@ manufacturer: foxing-hour
 primaryCategory: modular
 categories:
   - utility
+hp: 8
 url: https://foxinghour.com/products/access-triple-attenuvert-bias-module
 prices:
   - amount: 25
@@ -27,38 +28,60 @@ details: |-
   30 mA -12V
 
   0 mA 5V
-
-  BOM & Build Guide
 io:
   - key: Nb6xvvkN
     name: R Input
     signalFlow: input
     category: audio
     type: cv/gate
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: 6jRV7r2Y
     name: G Input
     signalFlow: input
     category: audio
     type: cv/gate
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
   - key: rTeJgsiK
     name: B Input
     signalFlow: input
     category: audio
     type: cv/gate
-    connection: 3.5mm
+    connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Bottom
+  - key: oZ8FBrWW
+    name: R Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: YKMMEQPj
+    name: G Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: eJh5oAEP
+    name: B Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
   - key: 9RhMtWw5
-    name: Power
+    name: Eurorack Power
     signalFlow: input
     category: power
     type: power
-    connection: pin-header
+    connection: idc
     maxConnections: 1
     position: Bottom

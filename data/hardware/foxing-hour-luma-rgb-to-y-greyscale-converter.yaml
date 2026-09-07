@@ -4,6 +4,7 @@ manufacturer: foxing-hour
 primaryCategory: modular
 categories:
   - utility
+hp: 4
 url: https://foxinghour.com/products/luma-rgb-to-y-greyscale-converter
 prices:
   - amount: 22
@@ -24,54 +25,52 @@ details: |-
   16 mA +12V
   14 mA -12V
   0 mA 5V
-
-  Documentation
 io:
   - key: isKjJ5Yv
     name: R Input
     signalFlow: input
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: Iz3Y4hAw
     name: G Input
     signalFlow: input
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: prRSAiot
     name: B Input
     signalFlow: input
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: k8EOspvv
     name: Y Output
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: vvriigCC
     name: Inverted Y Output
     signalFlow: output
     category: audio
-    type: cv/gate
-    connection: 3.5mm
+    type: video
+    connection: 1/8-inch
     maxConnections: 1
     position: Bottom
   - key: FPrRlv2w
-    name: Power
+    name: Eurorack Power
     signalFlow: input
     category: power
     type: power
-    connection: pin-header
+    connection: idc
     maxConnections: 1
     position: Bottom

@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Foxing Hour (17 hardware/software entries).
+Import Foxing Hour (14 hardware entries).
