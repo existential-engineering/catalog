@@ -2,9 +2,12 @@
 
 `pnpm dataset:audit` reports 407 entries whose top-level `url` points at an
 aggregator. `scripts/promote-canonical-urls.ts` found 218 of them carrying an
-official link in `links` it could promote. Every one of those 218 candidate URLs
-was fetched to see whether it is actually live. This file records the outcome so
-the next pass does not repeat ~218 network round trips.
+official link in `links` it could promote. Every one of those candidate URLs was
+fetched to see whether it is actually live. This file records the outcome so the
+next pass does not repeat ~218 network round trips.
+
+The 218 candidates partition exactly: 13 promoted + 156 dead vendor +
+33 page gone + 16 unverified.
 
 ## Promoted (13)
 
@@ -29,33 +32,36 @@ the maker's own. These are now those entries' `url`.
 
 CLAUDE.md allows an aggregator `url` when the maker has no official page anywhere
 (dead vendor, KVR-only freeware). The link in `links` points at a domain that no
-longer resolves at all -- NXDOMAIN from the container resolver, the agent proxy
-and WebFetch alike -- so the aggregator page is the only page these products still
+longer resolves at all -- NXDOMAIN from the container resolver, the agent proxy and
+WebFetch alike -- so the aggregator page is the only page these products still
 have. These entries are correct as they stand, and `aggregator-url` will keep
 listing them.
 
+Counts are entries, not domains: two entries share the same hercsmusicsystems.com.au
+url.
+
 - timbresandtones.com (130)
 - www.everythingturns.com (4)
+- www.hercsmusicsystems.com.au (2)
 - spartan-sounds.com (2)
-- www.acquitrecords.com (1)
-- www.usefulnoiseonline.com (1)
 - dnbapp.com (1)
-- urthwurk.com (1)
-- www.hercsmusicsystems.com.au (1)
-- www.soulviasound.com (1)
-- www.ipmsounds.com (1)
-- bicubicaudio.com (1)
-- 7soundware.netsons.org (1)
+- www.acquitrecords.com (1)
+- hansbickel.com (1)
 - www.fananteampro.com (1)
-- www.wnpsounds.net (1)
+- www.hawkvst.co.za (1)
+- www.audiobits-vst.com (1)
+- www.soulviasound.com (1)
+- urthwurk.com (1)
+- www.jeversi.com (1)
+- 7soundware.netsons.org (1)
+- bicubicaudio.com (1)
+- kineticsoundprism.com (1)
+- www.eastboundsounds.com (1)
+- www.ipmsounds.com (1)
 - www.pluginplayers.com (1)
 - www.scrubbingmonkeys.com (1)
-- www.jeversi.com (1)
-- hansbickel.com (1)
-- www.audiobits-vst.com (1)
-- kineticsoundprism.com (1)
-- www.hawkvst.co.za (1)
-- www.eastboundsounds.com (1)
+- www.usefulnoiseonline.com (1)
+- www.wnpsounds.net (1)
 
 ## Candidate page is gone (33)
 
@@ -83,15 +89,16 @@ these need a replacement page found by hand before anything can be promoted.
 - www.hotmusicfactory.com (1)
 - www.zensound.es (1)
 
-## Unverified from this environment (15)
+## Unverified from this environment (16)
 
-Host resolves, but neither a direct fetch nor the agent proxy could complete a
-request (the proxy answered 502 to CONNECT). Not evidence either way -- recheck
+Neither a direct fetch nor the agent proxy could complete a request -- the host
+resolves but the proxy answered 502 to CONNECT. Not evidence either way -- recheck
 from a network that can reach them.
 
 - absolutepianos.com (4)
 - tikov.com (3)
 - detunized.com (2)
+- blz.sbrk.org (1)
 - www.ntsaudio.com (1)
 - www.signaldust.com (1)
 - www.js-synthese.de (1)
