@@ -1,0 +1,91 @@
+id: agx3MG7mBzbArF6URvMTA
+name: GAMMA - Dual Square and Logarithm
+manufacturer: foxing-hour
+primaryCategory: modular
+categories:
+  - utility
+  - filter
+url: https://foxinghour.com/products/gamma-dual-square-and-logarithm
+prices:
+  - amount: 26
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: GAMMA is a Eurorack module featuring dual squaring and logarithm
+  functions used to shape control voltage or luma ramps into curves, circles,
+  and four-point star shapes.
+details: |-
+  GAMMA features dual squaring and logarithm functions to adjust the light/dark distribution of provided luma signals. Also featured are two averaged outputs which mix both of the above square and log results to easily create circles and four-point stars given a Horizontal- and Vertical-triangle ramp. Square and Log functions may be used to shape the curves of Control Voltages, adjust the gamma of luma signals and process ramps into soft-edged shapes. Each gamma shaping sub-circuit is functionally identical but patching both a horizontal and vertical triangle ramp or oscillator will result in circles and four-point stars at the bottom two outputs. Patch the Circle and Star outputs into keyers for hard edges or into faders to modulate between the shapes.
+io:
+  - key: Nyo3oE4M
+    name: Horizontal Ramp Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: 7WI8xClT
+    name: Vertical Ramp Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: zcGbhoMf
+    name: Square Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: nRCJ9Zfx
+    name: Square Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 6Y4ubYXL
+    name: Log Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: j0Nu5Lo3
+    name: Log Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: IMHhv8XM
+    name: Circle Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: NWMoXLXS
+    name: Star Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: T9AvET8y
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

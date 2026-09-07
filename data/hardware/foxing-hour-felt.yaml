@@ -1,0 +1,61 @@
+id: WYXKU6UcnlJdsvR6Szpgx
+name: FELT
+manufacturer: foxing-hour
+primaryCategory: filter
+categories:
+  - modular
+  - utility
+capabilities:
+  - filter
+url: https://foxinghour.com/products/felt
+prices:
+  - amount: 209
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: FELT is a Eurorack module that filters video signals, providing
+  simultaneous High-Pass and Low-Pass outputs for edge extraction and image
+  smearing. Its cutoff frequency is voltage controlled over a wide range.
+details: |-
+  FELT is a filter for video with simultaneous High- and Low-Pass outputs for edge extraction and variable smearing respectively. The cutoff frequency is voltage controlled over a wide range. The High-Pass output is a bipolar signal meaning rising edges are provided above zero volts and falling edges are below zero. Accessing falling edges is as simple as inverting the output, or patching through an "absolute value" function to mix both rising- and falling-edges together. The Low-Pass output delays the rise and fall time of provided luma signals to blur them from left to right as they appear on your display. One FELT module is all you need to begin extracting edge maps or smearing any video rate luma signal. Three FELT modules can be used in parallel for full-color RGB patches.
+io:
+  - key: GpL0T3DI
+    name: Video In
+    signalFlow: input
+    category: digital
+    type: video
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: NbMlag4f
+    name: High-Pass Out
+    signalFlow: output
+    category: digital
+    type: video
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: avREzYT8
+    name: Low-Pass Out
+    signalFlow: output
+    category: digital
+    type: video
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: YWuF5qZo
+    name: Cutoff CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Top
+  - key: pEw8vib5
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
