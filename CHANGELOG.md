@@ -1,5 +1,31 @@
 # catalog
 
+## 3.60.0
+
+### Minor Changes
+
+- 67fc357: Remove five consumer audio brands that fall outside the catalog's scope: Dekoni (143), Altec Lansing (36), Campfire Audio (32), Buchardt Audio (15) and Magnepan (14).
+
+  All five were imported in the last 48 hours by the tier 5 campaign. They are home hi-fi, consumer Bluetooth speakers and audiophile headphone accessories rather than music production gear, and the tier manifests now exclude them so nothing re-imports. No remaining entry references any of the 240 removed ids.
+
+### Patch Changes
+
+- b603995: Post-merge cleanup after the 2026-09-06 import wave, plus the standing
+  dataset-audit backlog.
+
+  Import-wave fixes: `hp` backfilled on modular entries from sourced widths, 33
+  colorway duplicates folded into `variants`, tagline separators dropped from 9
+  names, specs lines restating structured fields removed, a scraped placeholder
+  description rewritten.
+
+  Backlog: every cv/gate, clock and expression jack filed by its documented rule
+  (548 ports across 127 entries), 260 dead AlphaTheta manual links repointed at
+  the help-center articles that replaced them (closes #673), 13 canonical urls
+  promoted over aggregator ones, and `hp` coverage on modular entries raised from
+  54% to 84%.
+
+  Adds `5-pin xlr` and `proprietary` to the io connection vocabulary.
+
 ## 3.59.0
 
 ### Minor Changes
