@@ -1,0 +1,72 @@
+id: _d1plx6tDPMl07IN9g1Ak
+name: RECT - Dual Rectifier and Frequency Doubler
+manufacturer: foxing-hour
+primaryCategory: modular
+categories:
+  - effect
+  - other
+hp: 4
+capabilities:
+  - distortion
+url: https://foxinghour.com/products/dual-rectifier
+prices:
+  - amount: 22
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack module offering two clipping and frequency doubling
+  sections that process a video-rate signal. One output clips signal below
+  mid-grey to accentuate bright portions, another clips above mid-grey to
+  accentuate dark portions, and a third produces a solarization or
+  frequency-doubling effect.
+details: |-
+  Dual RECTIFIER offers two clipping and frequency doubling sections. The first output clips inputs below mid-grey and accentuates the bright portions of the signal. The second output clips signals above mid-grey and accentuates the darker portions of the signal. The third output gives a single stage solarization or frequency doubling effect. The third output of the first section is normalled into the section input's section for more variations of one signal. Putting a signal into the top input and taking the bottom output will give you a twice frequency doubled output.
+io:
+  - key: 731jWF2R
+    name: Top Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FaZ7TUcT
+    name: Bottom Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: TZGlmLuE
+    name: First Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bkMXJeEK
+    name: Second Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8Bed6Ew2
+    name: Third Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: e7hZEVgi
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

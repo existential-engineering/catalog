@@ -1,0 +1,76 @@
+id: Flk9onL3Mu3Gq8-mQkeeK
+name: LUMA - RGB to Y Greyscale Converter
+manufacturer: foxing-hour
+primaryCategory: modular
+categories:
+  - utility
+hp: 4
+url: https://foxinghour.com/products/luma-rgb-to-y-greyscale-converter
+prices:
+  - amount: 22
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: LUMA is a Eurorack module that converts an RGB image into its
+  greyscale Y equivalent using ITU-R BT.601 luminance weighting. It also buffers
+  the original RGB inputs and offers an inverted Y output.
+details: |-
+  LUMA converts an RGB image into the greyscale equivalent Y. Y is the specially weighted mix of R, G and B that accurately represents the luminance intensities of each color as they are perceived by the human eye according to the "International Telecommunication Union Recommendation (ITU-R) BT.601."
+
+  Briefly speaking, users may now get Y from any arbitrary RGB set they choose. LUMA also buffers the original RGB inputs and offers an inverted Y. Dimensions:
+  4 HP
+  42 mm deep
+
+  Current Draw:
+  16 mA +12V
+  14 mA -12V
+  0 mA 5V
+io:
+  - key: isKjJ5Yv
+    name: R Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Iz3Y4hAw
+    name: G Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: prRSAiot
+    name: B Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: k8EOspvv
+    name: Y Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: vvriigCC
+    name: Inverted Y Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: FPrRlv2w
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
