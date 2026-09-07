@@ -1,0 +1,95 @@
+id: xb1QJF4ZJdPzX00ytmMgR
+name: Boundary
+manufacturer: schlappi-engineering
+primaryCategory: modular
+categories:
+  - utility
+capabilities:
+  - distortion
+url: https://schlappiengineering.com/products/boundary
+prices:
+  - amount: 235
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: The Boundary is a multi-purpose modulation and signal control
+  module combining a cycling slew with a four quadrant multiplier VCA. It can
+  generate envelopes, act as a modulation oscillator, and provide ring
+  modulation or distortion via its VCA output.
+details: |-
+  The Boundary is a multi-purpose modulation and signal control center. It consists of a cycling slew and a four quadrant multiplier (VCA). Features:
+
+  Download quickstart guide here
+
+  Download full manual here
+specs: |-
+  - LFO and modulation oscillator (from cycles measured in minutes to high audio rate)
+  - Trig input can be used for attack-decay envelope
+  - Slew input can be used with gate signals for attack-release envelope
+  - Slew input can also be used as portamento for v/oct signals
+  - Rectify input has a full wave rectifier to act as a high quality envelope follower
+  - Bound input allows for unique bouncing ball effects and combined AM/FM modulation
+  - Trig input can also be used for voltage controlled frequency division at clock or audio rate
+  - EOR output can be used for gate/trigger delay
+  - Four quadrant VCA allows for ring modulation
+  - Soft limiter on the VCA output allows for taming or distortion of wild signals
+  - 12HP
+  - Skiff friendly 25mm depth
+  - Max current draw: +12V 112mA -12V 59mA
+io:
+  - key: Ku9ennXq
+    name: Trig Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: hXdQ4AKJ
+    name: Slew Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 71u1Lesc
+    name: Rectify Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: sSw2Y9bW
+    name: Bound Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: JUw6njNM
+    name: EOR Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: elyqrm3C
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: gsY27ioS
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

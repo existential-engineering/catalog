@@ -1,0 +1,72 @@
+id: S2v6NGaG7FpEplu6qTB6F
+name: BTMX
+manufacturer: schlappi-engineering
+primaryCategory: modular
+categories:
+  - midi-effect
+url: https://schlappiengineering.com/products/btmx
+prices:
+  - amount: 200
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: BTMX (BitMix) is a four channel selectable logic function module
+  offering hands on control over logic and rhythmic gate signals. Gate outputs
+  are summed with binary weights to generate stepped voltages for melodic or
+  modulation signals.
+details: |-
+  BTMX (BitMix) gives hands on control over logic and rhythmic gate signals with a switch for every input and 4 different logic functions. It is a 4 channel selectable logic function module, with each channel having two inputs. All channels share the same logic function and the gate outs are summed with binary weights to create a stepped voltage to generate melodic or modulation signals from the outputs. It pairs well with the Nibbler, other 4 bit logic modules, or any modules that generates gates (such as clock dividers and sequencers) and can also be used at audio rates. Quickstart Guide
+
+  Manual
+
+  Features
+specs: |-
+  - 8 switched inputs
+  - 4 dual input logic functions (AND, OR, ADD, XOR)
+  - 4 gate outputs
+  - 1 stepped output
+  - LED indication for every input and output
+  - Works at LFO and audio rate
+  - 8 HP
+  - Current consumption: +12v 26mA, -12V 10mA
+io:
+  - key: m76jQcR4
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: YrPZhuVM
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: ALpfqJTI
+    name: Gate Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: jCkFa4CY
+    name: Stepped Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: tgk1fxOH
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

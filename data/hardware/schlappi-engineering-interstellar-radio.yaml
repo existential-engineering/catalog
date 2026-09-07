@@ -1,0 +1,90 @@
+id: B155RjumLApQQmC2HDUiH
+name: Interstellar Radio
+manufacturer: schlappi-engineering
+primaryCategory: distortion
+categories:
+  - modular
+  - filter
+capabilities:
+  - distortion
+  - filter
+url: https://schlappiengineering.com/products/interstellar-radio
+prices:
+  - amount: 210
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: The Interstellar Radio is a destructive transmission line module
+  that modulates and demodulates a signal using different clock references,
+  producing extreme distortion and frequency modulation of complex and noisy
+  timbres. It functions as an effect or as a complex non-v/oct oscillator.
+details: |-
+  The Interstellar Radio is a destructive transmission line. It modulates and demodulates a signal with different clock references which results in extreme distortions and frequency modulation of complex and noisy timbres. Features
+
+  Download quickstart guide here
+
+  Download manual here
+specs: |-
+  - Simulates the process of modulating and demodulating a signal for radio transmission
+  - Effect or complex oscillator (non v/oct)
+  - Voltage controlled aliasing, distortion, and frequency modulation effects
+  - Two wide ranging voltage controlled square wave oscillators with individual outputs
+  - CARRIER oscillator converts input into high frequency pulse train
+  - DEMODULATOR oscillator inside control loop brings sound back to audio range
+  - CV applies external voltage control to oscillators or uses input signal as audio rate FM
+  - Internal oscillators can be replaced with external modulation sources
+  - TYPE selects demodulation loop type (changes timbre and response)
+  - ERROR output with threshold control
+  - TONE control for filtering out the harshest of frequencies
+  - All analog design
+  - 14 HP
+  - Power requirements :+12V 40mA, -12V 30mA
+io:
+  - key: HzrSCucz
+    name: Signal Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: JJnofsyC
+    name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: F61Boq6F
+    name: Carrier Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 1KgI1R9z
+    name: Demodulator Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 7Ri9OuiP
+    name: Error Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 6P6Ymgnd
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

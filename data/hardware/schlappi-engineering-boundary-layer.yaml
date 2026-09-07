@@ -1,0 +1,99 @@
+id: lGHu7UQFoXqH_WynlPdFd
+name: Boundary Layer
+manufacturer: schlappi-engineering
+primaryCategory: modular
+categories:
+  - utility
+url: https://schlappiengineering.com/products/boundary-layer
+prices:
+  - amount: 325
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Boundary Layer is a triple cycling slew module that can act as a
+  modulation oscillator, voltage controlled slew, or AR/AD envelope generator on
+  each of its three channels. It provides combined MAX, MID, and MIN outputs and
+  can be patched for stereo drone synthesis at audio rate.
+details: |-
+  Boundary Layer is a triple cycling slew acting as a powerhouse of modulation, audio
+  mayhem, and obscure modular tricks. Each of the channels can act individually as:
+
+  -a modulation oscillator
+
+  -voltage controlled slew (including portamento)
+
+  -AR/AD envelope (decay or release determined by choice of input). All three channels are tied together by three global inputs, as well as three outputs which select the MAX, MID, and MIN of all three voltages. Using different combinations at audio rate allows for patch programmable stereo drone synth capabilities. DOWNLOAD MANUAL
+
+  DOWNLOAD QUICKSTART
+
+  Features
+specs: |-
+  - 3 separate channels
+  - 3 global inputs
+  - 3 combined outputs MAX/MID/MIN
+  - Oscillates from low LFO rate (a minute?) to audio rate (>10kHz with exponential feedback)
+  - A CV input switchable between RISE/FALL/BOTH
+  - Bound input for simultaneous control over cycling rate and amplitude
+  - TRIG input for AD envelopes
+  - SLEW input for AR envelopes and portamento or filtering
+  - EOC ouput header switchable between EOR and EOF
+  - 16 HP
+  - Skiff friendly 32mm depth (including cable)
+  - current draw: +12V 170mA, -12V 100mA
+io:
+  - key: WoAK1cd5
+    name: Global Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: ip25LJ9C
+    name: Global Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 579SeWvT
+    name: Global Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: W3e39Zo4
+    name: MAX Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: 5bMRzojo
+    name: MID Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: LuZUNXZo
+    name: MIN Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 3.5mm
+    maxConnections: 1
+    position: Bottom
+  - key: xcc1FdZR
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
