@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Recovery Effects and Devices (41 hardware/software entries).
+Import Recovery Effects and Devices (39 hardware/software entries).
