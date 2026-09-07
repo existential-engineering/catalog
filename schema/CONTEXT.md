@@ -844,6 +844,7 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `2.5mm`
 - `xlr`
 - `mini-xlr`
+- `5-pin xlr`
 - `combo jack`
 - `4-pin din`
 - `5-pin din`
@@ -893,6 +894,7 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `pin`
 - `mmcx`
 - `apple-30-pin`
+- `proprietary`
 
 **Aliases:**
 
