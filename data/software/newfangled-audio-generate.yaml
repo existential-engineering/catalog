@@ -6,10 +6,10 @@ categories:
   - virtual-instrument
   - plugin
 formats:
+  - aax
   - au
   - vst
   - vst3
-  - aax
 platforms:
   - mac
   - windows
@@ -17,54 +17,110 @@ url: https://www.newfangledaudio.com/generate
 prices:
   - amount: 99
     currency: USD
-description: Generate is a chaotic polysynth plugin featuring eight unique oscillator types based on chaos theory mathematics, designed to create complex, evolving textures for cinematic pads, leads, basses, and experimental sounds.
+description: A unique synth plugin featuring evolving oscillators based on
+  pendulum behavior with options for virtual circuit-bending, plus loads of
+  modulation options, support for MPE, and premium effects. Access a world of
+  lush and deep cinematic sounds.
 details: |-
-  Generate is a polysynth built around eight chaotic generator types — Double Pendulum, Vortex, Pulsar, Discharge, Turbine, Helix, Crescent, and Magma — each derived from chaos theory mathematics to produce complex, non-repeating waveforms.
+  Generate is based on a set of chaotic generators. What looks like randomness contains underlying patterns, interconnectedness, constant feedback loops, repetition, self-similarity, fractals, and self-organization. Each of Generate's 8 chaotic generators bring out these underlying patterns and create an oscillator that can smoothly fade from a sine wave to total chaos, with an expanse of territory to explore in between. The musical textures created include distortion, harmonics, grunge, static, and noise. All of which can be predictably or unpredictably modulated.
 
-  The synth pairs these generators with five wavefolder algorithms including a Buchla 259-inspired design, a Saturate algorithm-based folder, a Fractal folder, and an Animated Equation folder, giving each patch a rich, organic harmonic character.
+  Beautifully complex pads. Warm moving keys. Jittery sequenced basses. Out of control leads. Textures, oh my God textures. Take Chaos to the next level with Generate.
 
-  A Low Pass Gate with pole and resonance control, dual envelopes, dual LFOs, Sample & Hold, and a Step Sequencer provide comprehensive modulation tools. The modulation matrix supports over 1,440 simultaneous routings, enabling deeply evolving and generative patches.
+  Generate's Chaotic Generator is unique among synthesizer oscillators and has been in development for 4 years. The initial idea was to find out what a double pendulum would sound like if sped up to audio rate. It sounded great, but not very musical. After a lot of tweaking to the dynamical model (underlying math), a set of Generators emerged that was worth releasing in this plug-in.
 
-  Built-in effects including EQ, Chorus, Delay, Reverb, and a Limiter are fully modulation-capable, and the plugin ships with over 1,000 presets including artist contributions. MPE is fully supported.
+  Even after settling on the oscillator building the rest of the voice took several iterations. The best fit ended up being the "west coast" voice originally developed by the genius Don Buchla. However, building those modules led to ideas for other wavefolder equations. These ideas eventually became the Animated and Fractal wavefolder options.
 
-  Generate features a resizable, themeable UI with a full preset librarian including tagging and search, and is available as a 14-day fully featured free trial.
+  The reverb in Generate is an incredibly efficient new design inspired by the writings of Michael Gerzon. The limiter is also a new design based on the geometry of signals, rather than on an analog or digital prototype. Generate's Bent 259 Wavefolder is based on a new technique called Model Bending.
 specs: |-
-  - 8 chaotic oscillator types: Double Pendulum, Vortex, Pulsar, Discharge, Turbine, Helix, Crescent, Magma
-  - 5 wavefolder algorithms: Buchla 259-based, Saturate algorithm-based, Fractal, Animated Equation
-  - Low Pass Gate with pole and resonance control
-  - Dual envelopes and dual LFOs
-  - Sample & Hold and Step Sequencer
-  - Modulation matrix supporting 1,440+ simultaneous routings
-  - Built-in effects: EQ, Chorus, Delay, Reverb, Limiter (all modulation-capable)
-  - MPE support
-  - 1,000+ factory presets with artist packs
-  - Full preset librarian with tagging and search
-  - Resizable UI with color scheme options
-  - macOS 10.9+, 64-bit, Apple Silicon compatible
-  - Windows 10+, 64-bit
-  - Formats: AAX, AU, VST, VST3 (AU on Mac only)
+  - Novel chaotic oscillator has 8 types: Double Pendulum, Vortex, Pulsar, Discharge, Turbine, Helix, Crescent, and Magma
+  - 5 Wavefolders based on the Buchla 259 Complex Waveform Generator, the Saturate plug-in, Fractals, and a special Animated Equation
+  - Generate 1.3 adds new wavefolders based on the Saturate algorithm and a model bent version of the Buchla 259
+  - Generate 1.3 adds the ability to modulate the effects
+  - Generate 1.3 includes an updated Sequencer
+  - Low Pass Gate based on the Buchla 292 adds controls for POLES and RESONANCE
+  - Modulate all controls with MIDI/MPE, two Loopable Envelopes, two LFOs, Sample and Hold/Random, and a Step Sequencer
+  - Innovative modulation UI allows modulation over every control from the main page, including modulating modulators, allowing up to 1440 simultaneous modulation routings
+  - Innovative and modulatable EQ, Chorus, Delay, Reverb, and Limiter effects
+  - MPE support allows amazing control from expressive controllers
+  - All mod sources have multiple outputs generated at once, like a modular synth should
+  - Animations: the Double Pendulum, Wavefolder, and Low Pass Gate modules each have animations to show how each module responds to your input, and to modulation
+  - Fully resizable UI
+  - Intuitive MIDI Learn functionality allows you to assign MIDI CCs to any control with just a click
+  - Color Schemes
+  - Over 1000 Presets, including many artist presets
+  - Full Preset Librarian with Categories, Tags, Descriptions, UNDO, and A/B Comparison
+  - macOS 10.9+, 64-bit AAX, AU, VST, VST3, all formats Apple Silicon compatible
+  - Windows 10+, 64-bit AAX, VST, VST3
 versions:
   - name: 1.7.4
+    releaseDate: 2026-03-01
+    description: Added a button to rerun the tutorial. Fixed Preset List dropdown
+      size on Windows. Midi Map Coloring should load correctly.
   - name: 1.7.2
+    releaseDate: 2026-02-25
+    description: 100 new presets. A tutorial that launches the first time it's used.
   - name: 1.7.0
+    releaseDate: 2025-07-02
+    description: Corrected Registration Documentation. Improved performance of
+      opt-click return to default. Added additional Obsydian Factory Presets
+      from Spektralisk. Fixed authorization problem on some Ryzen CPUs.
   - name: 1.6.9
+    releaseDate: 2024-07-18
+    description: Added Obsydian Factory Preset Bank from Spektralisk. Fixed
+      potential loss of audio output. Fixed potential UI lockup.
   - name: 1.6.3
+    description: Preset name is now saved with Session. Fixed reveal preset folder
+      on Windows. Added IMPORT button for presets. Favorite flags are now
+      persistent. Made logos render more clearly on Windows. Passes Windows
+      Smart Screen.
   - name: 1.5.6
   - name: 1.5.5
+    description: Third Party Banks are now shown in the main dropdown. Author and
+      Banks now show presets by category as well. EXPORT is now called SAVE AS
+      and SAVE is now SAVE TO USER. Added scroll bar and resizable columns to
+      the LIBRARY page.
   - name: 1.5.1
+    description: Automatically rescans plug-ins folder on every open.
   - name: 1.5.0
+    description: New preset librarian adds Categories, Tags, Descriptions, Artist
+      links, Favorites, and Search to all presets. Multi level undo/redo. True
+      A/B comparison. SET AS DEFAULT button.
   - name: 1.4.1
+    description: Support for AAX Silicon Native (Mac only). Plug-ins default to
+      OpenGL Off on Windows. Removed support for Windows 8.
   - name: 1.3.7
+    description: Added support for macOS Ventura (Mac only).
   - name: 1.3.6
+    description: Fixed a potential initialization bug.
   - name: 1.3.5
+    description: 81 new artist presets from The Unfinished and Spektralisk. Improved
+      UI performance.
   - name: 1.3.1
+    description: Fixed an issue where version 1.3.0 was loading LFO times from older
+      presets incorrectly.
   - name: 1.3.0
   - name: 1.2.5
+    description: Native support for Apple Silicon (Mac only).
   - name: 1.2.1
+    description: New Helix, Crescent and Magma generator modes. Added support for
+      new tunings via MTS-ESP. Added master pitch modulation to the Pitch Bend
+      knob. Added modulation to the LFOs, Envelopes, and S+H module. Added a
+      LOOP mode to the Envelopes. New presets from SonalSystem.
   - name: 1.1.0
+    description: Added Resizable UI. Added MIDI Learn. Improved the Twin Turbo and
+      Newfangled color schemes. Improved voice panning in Poly mode. Added new
+      artist presets from Adam Schatz and Black Sheep Audio. Fixed DRIFT control
+      and UI drawing bugs.
   - name: 1.0.7
+    description: RND button returns unique random presets in all hosts, platforms,
+      and plug-in types. Output Level and Pitch Bend are properly restored.
   - name: 1.0.6
+    description: Added new presets including artist presets from Robert Dudzic and
+      Black Sheep, bringing total to 658. Generate can now load Pendulate
+      presets. Fixed clicks in audio output after changing a preset while
+      playing. Reduced the CPU overhead of painting the UI.
   - name: 1.0.3
+    description: Initial Release
 videos:
   - provider: youtube
     videoId: 86_E4ZgJ408

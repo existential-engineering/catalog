@@ -18,62 +18,121 @@ url: https://www.newfangledaudio.com/elevate
 prices:
   - amount: 199
     currency: USD
-description: The most advanced mastering plug-in ever created. This unique multi-band limiter, human-ear EQ and powerful audio maximizer will increase the loudness of your mix while maintaining or improving its dynamic perception.
+description: An all-in-one mastering limiter with a human-ear EQ, transient
+  shaper, and saturator built in, tuned to frequency bands modeled on how you
+  actually hear.
 details: |-
-  Elevate is a mastering limiter plugin by Newfangled Audio (distributed by Eventide) that analyzes and modifies gain, speed, and transients across 26 frequency bands in real time. It uses linear phase auditory filters based on the Mel Scale to match the way human ears perceive sound, resulting in a more natural and musical loudness increase.
+  Elevate is the most advanced mastering plug-in ever created. This unique multi-band limiter, human-ear EQ and powerful audio maximizer will increase the loudness of your mix while maintaining or improving its dynamic perception. It uses intelligent, adaptive technology that responds in real time to your music, creating not only the loudest, but the best sounding master.
 
-  The plugin's adaptive algorithms intelligently reduce common limiting artifacts such as pumping and breathing, maintaining or even improving the dynamic perception of your mix at higher loudness levels. A built-in Spectral Clipper is also available for more aggressive coloration and saturation-style processing.
+  Developed by Newfangled Audio, Elevate maintains subtle dynamics and improves the tonal balance of your mix. The adaptive limiter analyzes 26 frequency bands and alters the gain, speed and transients for each band in real time. The result is a transparent, natural sound, no matter how hard you push it.
 
-  Elevate includes six different metering types for comprehensive monitoring, plus an Auto Output Level compensation feature that lets you compare the limited and unlimited signals at matched loudness. Band soloing allows detailed inspection of per-band processing.
+  Elevate utilizes 26 critical filter bands modeled from the human ear. Each of the bands are spaced to give maximum control over how the sound hits your eardrum. Draw curves, solo bands and manipulate the transient attack for each individual band to bring out particular instruments such as kick or snare drums.
 
-  The plugin ships with over 66 professional presets crafted by industry engineers, covering a wide range of musical styles and mastering scenarios. A 14-day fully featured free trial is available. macOS 10.9+ and Windows 10+ are supported; the macOS version is Apple Silicon compatible.
+  Elevate uses machine learning algorithms to make it easy for you to get the best sounds, but you can still get under the hood for as much precise control as you desire. This includes giving you control over the tonal balance and transients inside the final limiting stage. The adaptive algorithms reduce audible artifacts and the additional controls give you maximum flexibility with professional results.
 specs: |-
-  - 26-band multiband limiter with per-band gain, speed, and transient control
-  - Linear phase auditory filters based on the Mel Scale
-  - Adaptive algorithms to reduce pumping and breathing artifacts
-  - Spectral Clipper for aggressive coloration
-  - Six metering types
-  - Auto Output Level compensation for matched-loudness A/B comparison
-  - Band soloing for per-band inspection
-  - 66+ professional presets
-  - macOS 10.9+ (64-bit), Apple Silicon compatible
-  - Windows 10+ (64-bit)
-  - Formats: AAX, AU, VST, VST3
+  - Analyzes and alters the gain, speed and transients of each filter band in real time.
+  - Automatically adapts the attack, release and look-ahead parameters for each filter band to greatly reduce "pumping" and breathing artifacts and perceived distortion.
+  - Preserves or emphasizes fast transients to avoid squashing your mix.
+  - Manipulates transients across the critical bands to preserve the attacks from kick drums, snares and cymbals, without affecting the entire mix.
+  - Uses linear phase auditory filters, based on the Mel Scale, to manipulate the audio in a way that is natural to your inner ear.
+  - Solo the output of one band (or a number of bands) to hone in on problem frequencies, tweak transients or alter gain.
+  - Use the Auto Output Level feature to compare the limited signal to non-limited signals with the same amount of gain allowing you to easily hear what impact the processing is having on your sound.
+  - Use the Spectral Clipper to overdrive the final output without affecting the tonal balance or allowing the signal to get "tubby." Perfect for a more aggressive sound.
+  - Six different types of metering allow you to keep an eye on every aspect of your output audio.
+  - Includes presets by: APS Mastering, Matt Lange, Jeremy Lubsey, Eric Beam, ROCAsound, Chris Tabron and John McCaig.
+  - 66 professional presets.
+  - macOS 10.9+: 64-bit AAX, AU, VST, VST3. All formats are Apple Silicon compatible.
+  - Windows 10+: 64-bit AAX, VST, VST3.
 versions:
   - name: 1.14.4
+    releaseDate: 2026-03-01
+    description: Added Tutorial on first open. Fixed Preset List dropdown size on
+      Windows. Fixed FTZ bit handling.
   - name: 1.14.0
+    releaseDate: 2025-07-02
+    description: Corrected Registration Documentation. Improved performance of
+      opt-click to return to default.
   - name: 1.13.9
+    releaseDate: 2024-07-18
+    description: Fixed potential UI lockup.
   - name: 1.13.2
+    releaseDate: 2024-05-31
+    description: Added artist presets from Maor Appelbaum. Fixed a crash on preset
+      save under certain conditions.
   - name: 1.13.0
+    releaseDate: 2024-05-04
+    description: Preset name is now saved with Session. Fixed reveal preset folder
+      on Windows. Unknown is now No Category. Enter button saves preset on
+      preset save page. User Bank is added to the preset drop down list. Added
+      cycle UI message to OpenGL Button. Added IMPORT button for presets.
+      Favorite flags are now persistent. Made logos render more clearly on
+      Windows. Passes Windows Smart Screen.
   - name: 1.12.7
   - name: 1.12.6
   - name: 1.12.5
+    description: Third Party Banks are now shown in the main dropdown. Author and
+      Banks now show presets by category as well. EXPORT is now called SAVE AS
+      and SAVE is now SAVE TO USER. Neither SAVE nor SAVE AS will clear tags,
+      category, or description. SAVE AS remembers your previous save position.
+      Added scroll bar to the LIBRARY page. LIBRARY page has resizable columns.
+      Removed duplicate files when saving a .tide as a .nfa.
   - name: 1.12.1
   - name: 1.12.0
+    description: New preset librarian adds Categories, Tags, Descriptions, Artist
+      links, Favorites, and Search to presets. Multi level undo/redo. True A/B
+      comparison. New Delta Listen Mode. SET AS DEFAULT button.
   - name: 1.11.0
+    description: Support for AAX Silicon Native (Mac only). Improved performance on
+      Windows machines. Plug-ins default to OpenGL Off on Windows. Removed
+      support for Windows 8.
   - name: 1.10.2
+    description: Mac only. Added support for macOS Ventura.
   - name: 1.10.1
+    description: "Fixed a potential initialization bug. Windows only: rolled
+      Elevate, EQuivocate, and Punctuate back to 1.8.2 for improved DSP
+      performance on Windows."
   - name: 1.10.0
   - name: 1.9.1
   - name: 1.9.0
+    description: Mac only. Native support for Apple Silicon.
   - name: 1.8.1
+    description: Added resizable UI, click and drag the bottom right corner to
+      resize. Animated meters can now be drawn with or without OpenGL.
   - name: 1.7.0
   - name: 1.6.6
+    description: Fixed preset location. Fixed the INFO button so that it launches
+      the manual again.
   - name: 1.6.4
+    description: Plug-ins now load and work in Garage Band in Catalina. Fixed error
+      message when installing VST3 without VST2 on Mac. Fixed potential crash.
   - name: 1.6.2
+    description: Mac only. Fixed Tooltips.
   - name: 1.6.1
+    description: Mac only. Support for OSX Catalina. Moved plug-ins from the
+      Eventide subdirectory to the Newfangled Audio subdirectory. Moved presets
+      and manuals from the ~/Documents/Eventide directory to the
+      ~/Music/Newfangled Audio directory.
   - name: 1.5.15
+    description: Windows only. Fixed an issue where plug-ins might get blacklisted
+      in Cubase 10.
   - name: 1.5.12
+    description: Windows only. Fix an issue where plug-ins would crash on Windows 7.
 videos:
   - provider: youtube
     videoId: KardBa0JpLw
+    title: Elevate Mastering Limiter Plug-in - Overview
   - provider: youtube
     videoId: sBE3h2EKyW0
+    title: DJ/Producer Matt Lange on Elevate Mastering Limiter
   - provider: youtube
     videoId: OHeHDwdqMho
+    title: Mastering Engineer Alex Saltz on Elevate Limiter Plug-in
   - provider: youtube
     videoId: SjNCeoXbdd8
+    title: Elevate Review
   - provider: youtube
     videoId: dFzfOjU3Fug
+    title: Newfangled Audio's Elevate from Eventide - Quick Mastering Demo
   - provider: youtube
     videoId: 77KdTj9cHj8
+    title: Introducing Elevate Mastering Bundle v1.5

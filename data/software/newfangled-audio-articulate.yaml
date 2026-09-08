@@ -18,38 +18,54 @@ url: https://www.newfangledaudio.com/articulate
 prices:
   - amount: 69
     currency: USD
-description: An audio ADSR which gives you unprecedented direct control of the
-  entire envelope, separating audio into four independent bands (Attack, Decay,
-  Sustain, Release) for dynamic shaping. Adds smack, punch, body, and air to any
-  audio source.
+description: Articulate is an audio ADSR that puts smack, punch, body, and air
+  on four faders, replacing compressors, gates, and expanders in one plugin.
 details: |-
-  Articulate is an audio ADSR envelope and transient shaper from Newfangled Audio that gives users direct, independent control over each stage of a sound's envelope: Attack, Decay, Sustain, and Release. Rather than working as a traditional compressor, Articulate isolates and reshapes each envelope stage separately, allowing precise sculpting of dynamics without the side effects of conventional compression.
+  Take control of your mix with Articulate, the next generation envelope shaper that makes fixing dynamics as simple as using an EQ. More than a transient shaper, Articulate separates your audio into four bands: Attack, Decay, Sustain, and Release. By dialing in the desired level on the corresponding fader, you can instantly add Smack, Punch, Body, and Air to any source.
 
-  The plugin includes sidechain detection capability, solo and mute controls per envelope stage, and a real-time visual envelope display so users can see exactly how the signal is being shaped. A peak limiter with adjustable threshold is included to prevent clipping during aggressive shaping.
+  Articulate divides the envelope of any sound into four powerful segments: Attack (Smack), Decay (Punch), Sustain (Body), and Release (Air). Giving you direct control to enhance transients, boost presence, or subtly control sustain, dial in clarity, punch, and precision exactly how you want.
 
-  Articulate ships with 70+ professional presets organized by category, a full preset librarian with tag filtering and A/B comparison, and a resizable UI with selectable color schemes. It is compatible with Apple Silicon natively on macOS.
+  Articulate combines two areas of research that are central to Newfangled Audio's work. The company spent 10 years researching the best ways to measure the amplitude envelope of an audio signal. One might think it's a trivial problem, but getting a very accurate measure that is both fast and stable is quite difficult. With this highly accurate envelope detector in hand, a good measure of psychoacoustic understanding was applied to separate the audio signal into elements that are important to how we, as humans, experience sound. This research is ongoing, and the results of these experiments were promising enough to release this product now.
 
-  The plugin is available as a permanent license and includes a free 14-day fully featured trial. Loyalty pricing is offered to existing Newfangled Audio plugin owners.
+  Transients are one of the most essential elements of a good mix. Both Punctuate and Articulate are first class products for controlling the transient impact of your sound, but how are they different? Punctuate is uniquely suited to mastering and 2-bus scenarios where you want to change the transient impact of an entire mix without artifacts. Articulate is an audio ADSR which gives you unprecedented direct control of the entire envelope of a single instrument, allowing you to fit sounds in the mix almost without thinking about it. Articulate and Punctuate use entirely different algorithms to achieve their unique goals.
+
+  Articulate's Sidechain mode shapes one sound with another, ducking transients and reshaping envelopes based on an external input, so you can tighten bass with a kick, clean up reverb tails, or add groove without crushing dynamics.
 specs: |-
-  - Independent envelope shaping across Attack, Decay, Sustain, and Release stages
-  - Sidechain detection capability
-  - Solo and mute controls per envelope stage
-  - Real-time visual envelope display
-  - Peak limiter with adjustable threshold
-  - Stereo LINK control
-  - Scrolling gain reduction meter
-  - 70+ professional presets with category tagging and A/B comparison
-  - Resizable UI with color schemes
-  - Apple Silicon native (macOS)
-  - macOS 10.14 and later, 64-bit
-  - Windows 10 and later, 64-bit
+  - Independent Envelope Shaping: precision over ATTACK, DECAY, SUSTAIN, and RELEASE stages for transient definition
+  - Sidechain Detection: use external audio sources to shape transients and envelopes dynamically
+  - Separation Control: adjust from smooth shaping to aggressive transient enhancement
+  - Solo and Mute per envelope stage
+  - Visual Graphic Display: real-time envelope trace
+  - Professional Peak Limiter with adjustable threshold
+  - Stereo Link Control: linked detection for consistent stereo imaging, or unlinked for dual-mono shaping
+  - Fully resizable UI
+  - Color schemes
+  - 70+ presets across drums, synths and keys, guitar, effects/ambience/creative, vocals, bass, mixbuss and mastering, and sidechain categories
+  - Full preset librarian with categories, tags, descriptions, UNDO, and A/B comparison
+  - macOS 10.14+, 64-bit AAX, AU, VST, VST3, all formats Apple Silicon compatible
+  - Windows 10+, 64-bit AAX, VST, VST3
 versions:
   - name: 1.1.4
+    releaseDate: 2026-03-01
+    description: Added Tutorial on first open. Fixed Preset List dropdown size on
+      Windows. Fixed FTZ bit handling. Fixed bypass latency when using Pro Tools
+      bypass button.
   - name: 1.1.1
+    releaseDate: 2025-09-08
+    description: Stereo LINK control is properly restored when loading presets.
   - name: 1.1.0
+    releaseDate: 2025-09-01
+    description: Added Stereo LINK control for better control over the stereo field.
+      Added LIMITER THRESHOLD control for better control over the output level.
+      Added a scrolling gain reduction meter so you can more easily visualize
+      what Articulate is doing.
   - name: 1.0.3
+    releaseDate: 2025-05-22
+    description: Fixed delay compensation issue in Bypass.
   - name: 1.0.2
-releaseDate: "2025"
+    releaseDate: 2025-05-06
+    description: Initial Release.
+releaseDate: 2025-05-06
 links:
   - type: resource
     title: User Guide (PDF)

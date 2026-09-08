@@ -7,10 +7,10 @@ categories:
   - dynamics
   - multiband
 formats:
+  - aax
   - au
   - vst
   - vst3
-  - aax
 platforms:
   - mac
   - windows
@@ -18,51 +18,111 @@ url: https://www.newfangledaudio.com/punctuate
 prices:
   - amount: 99
     currency: USD
-description: Punctuate is an intelligent transient shaper that uses auditory
-  modeling based on human ear critical bands to reshape transients across 26
-  frequency bands independently rather than affecting the entire signal at once.
+description: Punctuate shapes transients across 26 frequency bands, so you can
+  push drums forward or pull hi-hats out of a snare mic without touching
+  anything else.
 details: |-
-  Punctuate is a multi-band transient shaper that divides audio into 26 critical frequency bands, allowing independent transient emphasis or suppression in each band. This approach mirrors how the human auditory system processes sound, enabling surgical transient control without affecting the full-spectrum signal.
+  Transient shapers are used by top mix engineers to either crank up or soften the transients of instruments, emphasizing either the attack or sustain. However, traditional transient shapers work on the whole signal at once, modulating the whole frequency range when the transient snap is only happening in one band.
 
-  The plugin uses intelligent adaptive algorithms to control all 26 shapers with just four primary controls, making complex multi-band transient shaping accessible without an overwhelming interface. An advanced filter bank page is available for expert-level customization beyond the main controls.
+  Punctuate uses a model of the human ear to run a set of transient shapers across the whole spectrum of human hearing. This allows you to tailor the attack of a whole range of instruments, busses, and whole mixes without messing with the entire frequency range. The result is unparalleled transient shaping power focused where you need it, and not where you don't.
 
-  Punctuate includes 40 professional presets covering drums, bass, guitars, vocals, and full mixes, along with integrated metering to visualize the effect. Linear phase FIR filters with triangular shaping ensure phase coherence across the frequency bands.
+  Humans can only detect the presence of a tone if it is a certain distance from another tone playing at the same time. The Mel Scale defines the arrangement of auditory frequency bands such that each band sounds equally spaced from all others. This division of sound describes how humans hear.
 
-  Punctuate is part of the Elevate Mastering Bundle alongside Elevate, Saturate, and EQuivocate. It is available as a standalone purchase or as part of that bundle, with a free 14-day fully featured trial.
+  Most graphic EQs are IIR (infinite impulse response) or analog-style filters. These have a lot of great properties, but unfortunately the shape of an IIR filter isn't very flexible. For instance, even with every band set flat, the total filter shape isn't actually flat. Furthermore, when you boost or cut each band you're effecting the ones next to it, as well. Punctuate uses a linear phase FIR (finite impulse response) filter that doesn't have these problems so what you hear is true to what you see on the screen. Instead of using what DSP engineers call "ideal" rectangular FIR filters, these are triangularly shaped filters. These are often used in hearing models as a first approximation to the critical bands in your inner ear. When you shape filters like the ones in your ear, the filtered signal sounds natural. In a complex signal, at any given time, you can really only hear one sound source in each filter.
+
+  Punctuate uses these filters to break the incoming audio signal into the 26 critical bands, and runs a transient shaper on each band for unprecedented control over the transients of the audio signal. By doing this Punctuate allows you to add punch in only the places where the signal needs, instead of just slamming the level of the entire signal up and down at the transient point. Because you have independent control over the bands, you can even emphasize transients in some bands while suppressing them in others. And because it's based on Critical Bands, it does this in such a way that sounds natural to the human ear, so you don't hear any artifacts. Finally, Punctuate allows you to smooth the transient modulation across bands using the ADAPTIVE TRANSIENT control. This allows you to run the bands independently for ultimate control, or couple them for a smoother sound.
 specs: |-
-  - 26 critical frequency band transient shapers
-  - 4 main controls govern all 26 bands via intelligent adaptive algorithms
-  - Linear phase FIR filters (triangularly shaped)
-  - Filter bank page for expert customization
-  - 40 professional presets included
-  - Integrated metering
-  - macOS 10.9+ (Apple Silicon compatible), 64-bit only
-  - Windows 10+, 64-bit only
-  - Formats: AAX, AU (Mac only), VST, VST3
+  - Multi-Band Transient Emphasis or Suppression magically reshapes the dynamics of your single channel or whole mix
+  - Auditory Modelling means that even drastic changes sound natural
+  - Intelligent Adaptive Algorithms allow you to control up to 26 transient shapers with just 4 controls
+  - Integrated metering shows you what the algorithm is doing at all times
+  - Filter Bank page lets you modify the filters and solo each channel for expert tweaking if desired
+  - Linear phase FIR filter bank based on the 26 critical bands of the human ear (Mel Scale)
+  - ADAPTIVE TRANSIENT control smooths transient modulation across bands
+  - 40 professional presets
+  - macOS 10.9+, 64-bit AAX, AU, VST, VST3, all formats Apple Silicon compatible
+  - Windows 10+, 64-bit AAX, VST, VST3
 versions:
   - name: 1.14.4
+    releaseDate: 2026-03-01
+    description: Added Tutorial on first open. Fixed Preset List dropdown size on
+      Windows. Fixed FTZ bit handling.
   - name: 1.14.0
+    releaseDate: 2025-07-02
+    description: Corrected Registration Documentation. Improved performance of
+      opt-click -> return to default.
   - name: 1.13.9
+    releaseDate: 2024-07-18
+    description: Fixed potential UI lockup. Presets were not always loading
+      correctly when the number of filters changed.
   - name: 1.13.2
+    releaseDate: 2024-05-31
+    description: Fixed a crash on preset save under certain conditions.
   - name: 1.13.0
+    releaseDate: 2024-05-04
+    description: Preset name is now saved with Session. Fixed reveal preset folder
+      on Windows. Unknown is now No Category. Enter button saves preset on
+      preset save page. User Bank is added to the preset drop down list. Added
+      cycle UI message to OpenGL Button. Added IMPORT button for presets.
+      Favorite flags are now persistent load and save, even when modified. Made
+      logos render more clearly on Windows. Passes Windows Smart Screen.
   - name: 1.12.6
+    description: Preset RESCAN no longer hangs with very large preset collections.
+      Clearer descriptions for Unknown preset Categories and Banks. Punctuate
+      input meters now show the proper values.
   - name: 1.12.5
+    description: Third Party Banks are now shown in the main dropdown. Author and
+      Banks now show presets by category as well. EXPORT is now called SAVE AS
+      and SAVE is now SAVE TO USER. Neither SAVE nor SAVE AS will clear tags,
+      category, or description. SAVE AS remembers your previous save position.
+      Added scroll bar to the LIBRARY page. LIBRARY page has resizable columns.
+      Removed duplicate files when saving a .tide as a .nfa.
   - name: 1.12.1
+    description: Automatically rescans plug-ins folder on every open.
   - name: 1.12.0
+    description: New preset librarian adds Categories, Tags, Descriptions, Artist
+      links, Favorites, and Search to presets. Multi level undo/redo for easier
+      workflow. True A/B comparison for making better mixing decisions. New
+      Delta Listen Mode allows you to hear the changes being applied to your
+      input. SET AS DEFAULT button allows you to save any settings as your
+      default.
   - name: 1.11.0
+    description: Support for AAX Silicon Native (Mac Only). Improved performance on
+      Windows machines (Windows Only). Plug-ins default to OpenGL Off on
+      Windows. Removed support for Windows 8 (Windows Only).
   - name: 1.10.2
+    description: "Mac Only: Added support for macOS Ventura."
   - name: 1.10.1
+    description: "Mac Only: Fixed a potential initialization bug."
   - name: 1.10.0
+    description: "Mac Only: Improved UI performance."
   - name: 1.9.1
+    description: "Mac Only: Fix Pro Tools bypass button."
   - name: 1.9.0
+    description: "Mac Only: Native support for Apple Silicon."
   - name: 1.8.1
+    description: Added resizable UI, click and drag the bottom right corner to
+      resize. Animated meters can now be drawn with or without OpenGL.
   - name: 1.7.0
+    description: Removed 32-bit Windows builds. Signed Windows installers.
   - name: 1.6.6
+    description: Fixed preset location. Fixed the INFO button so that it launches
+      the manual again.
   - name: 1.6.4
+    description: Plug-ins now load and work in Garage Band in Catalina. Fixed error
+      message when installing VST3 without VST2 on Mac. Fixed potential crash.
   - name: 1.6.2
+    description: "Mac Only: Fixed Tooltips."
   - name: 1.6.1
+    description: "Mac Only: Support for OSX Catalina. Moved Plug-ins from the
+      Eventide subdirectory to the Newfangled Audio subdirectory. Moved Presets
+      and Manuals from the ~/Documents/Eventide directory to the
+      ~/Music/Newfangled Audio directory."
   - name: 1.5.15
+    description: "Windows Only: Fixed an issue where plug-ins might get blacklisted
+      in Cubase 10."
   - name: 1.5.14
+    description: Added more presets.
 links:
   - type: resource
     title: User Guide (PDF)
