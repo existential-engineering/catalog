@@ -13,19 +13,113 @@ url: https://mixedinkey.com/wingman/
 prices:
   - amount: 49
     currency: USD
-description: Get chords and bassline ideas that fit the audio in your DAW. Wingman analyzes audio input and generates harmonically-matched chord and bassline suggestions, with instant stem separation, audio-to-MIDI conversion, and a built-in effects chain.
+description: Get chords and bassline ideas that fit the audio in your DAW.
+  Wingman listens to your track, gives you ideas that make musical sense, and
+  lets you shape the results without leaving your session.
 details: |-
-  Context-aware chord and bassline generation based on audio analysis.
+  Wingman is a plugin that runs inside a DAW and listens to the audio on a track, then returns compatible musical parts. It analyses what it hears and suggests chord progressions and basslines that match the track's key, rhythm and feel, so a producer can start with a vocal, a loop or a full track and build the music around it.
 
-  Instant stem separation (vocals, bass, drums, instruments). Audio-to-MIDI conversion. Support for user's own VST synths.
+  Alongside idea generation it performs instant stem separation into vocals, bass, drums and other parts, and converts audio to editable MIDI. Ideas can be based on a chosen stem (vocals, instruments, bass or drums) so the suggestions follow the part that matters most, and the separated stems can be dragged straight back into the session.
 
-  Rhythm presets for chords and basslines. Accent controls and groove shaping. Built-in effects chain (filters, delay, reverb, OTT, sidechain).
+  Version 3.0 adds a complete drums channel with suggestions by genre, optional kicks and transitions, and per-element export, plus Real Guitars, live-recorded guitar parts by session musicians that adapt automatically to the chosen chord progression. Chord control was deepened with a dedicated passing-chord button, advanced chord timing that sets how often the harmony changes, and the ability to split, delete and resize chords in the progression.
 
-  MIDI and WAV export. Key detection and modification.
+  Sound shaping happens inside the plugin: chord and bass rhythm presets, an accent editor, and built-in filter, delay, reverb, OTT, sidechain and special FX. Wingman can also host the user's own VST instruments, including Serum, Diva, Pigments, Omnisphere, Kontakt, Nexus, Massive X, Sylenth and Phase Plant, so previews use the sounds already in the producer's workflow.
 
-  Version 2.0 added Pro Tools support, hundreds of Serum presets, performance optimizations, and presets with built-in effects.
+  Everything exports back to the DAW as MIDI, WAV, separated stems or individual drum elements. Wingman is compatible with Ableton Live, Logic Pro, FL Studio, Cubase, Studio One and Pro Tools, and is sold as a one-time purchase rather than a subscription.
 specs: |-
-  - macOS 12 or above; Apple Silicon (M1/M2/M3/M4/M5) or Intel
-  - Windows 10 or above
-  - Stem Separation requires Apple Silicon (Mac) or GPU with 4GB+ VRAM (Windows)
-  - Compatible with Ableton Live, Logic Pro, FL Studio, Studio One, Cubase, Pro Tools
+  - Context-aware chord and bassline generation from the audio playing in your DAW
+  - Instant stem separation into vocals, bass, drums and other stems
+  - Audio to MIDI conversion
+  - Drums channel with genre-based patterns, optional kicks and transitions
+  - Real Guitars: live-recorded guitar parts that adapt to the chord progression
+  - Chord editing: passing chords, advanced chord timing, split, delete and resize
+  - Chord and bass rhythm presets, accent editor with waveform view and grid options
+  - Built-in effects: filter, delay, reverb, OTT, sidechain and special FX
+  - Hosts your own VST instruments and presets
+  - Export as MIDI, WAV, separated stems, or individual drum elements
+  - Base ideas on vocals, instruments, bass or drums
+  - Key override with instant regeneration of suggestions
+  - Incorrect tempo detection warns when captured audio does not match the DAW tempo
+  - Compatible DAWs: Ableton Live, Logic Pro, FL Studio, Cubase, Studio One, Pro Tools
+  - macOS 12 and above, with all features on Apple Silicon and Intel except stem separation, which requires Apple Silicon (M1/M2/M3/M4/M5)
+  - Windows 10 and above, where stem separation recommends a dedicated GPU with at least 4 GB of RAM
+  - Plugin only, not a standalone application
+versions:
+  - name: 3.0.0.2093 (Mac)
+    releaseDate: 2026-08-06
+    description: New Drums channel with genre suggestions, kicks and transitions,
+      and per-element export. Real Guitars with live-recorded parts that adapt
+      to the chord progression. Passing Chord button, Advanced Chord Timing,
+      split and delete chords, incorrect tempo detection, and improved stability
+      and DAW integration.
+    url: https://mixedinkey.com/release-notes/wingman/
+  - name: 3.0.808.0 (Windows)
+    releaseDate: 2026-08-06
+    description: New Drums channel with genre suggestions, kicks and transitions,
+      and per-element export. Real Guitars with live-recorded parts that adapt
+      to the chord progression. Passing Chord button, Advanced Chord Timing,
+      split and delete chords, incorrect tempo detection, and improved stability
+      and DAW integration.
+    url: https://mixedinkey.com/release-notes/wingman/
+  - name: 2.0.4.1762 (Mac)
+    releaseDate: 2026-06-11
+    description: Improved chord progression and Sound Design pickers with full UI
+      scaling, better window positioning for Pro Tools, FL Studio and Logic, and
+      a new Muted by Other Solo state. Fixed an AAX crash on Intel Macs and
+      under Rosetta, AAX state restoration, and chord preview playback.
+    url: https://mixedinkey.com/release-notes/wingman/
+  - name: 2.0.637.0 (Windows)
+    releaseDate: 2026-05-27
+    description: Updated Serum presets. Fixed recording after authorization, sound
+      selection when changing progression, and a Pro Tools installation issue.
+    url: https://mixedinkey.com/release-notes/wingman/
+  - name: 2.0.3.1729 (Mac)
+    releaseDate: 2026-05-26
+    description: Updated Serum presets, including changes to some sounds and their
+      categories.
+    url: https://mixedinkey.com/release-notes/wingman/
+  - name: 2.0.1.1714 (Mac)
+    releaseDate: 2026-05-21
+    description: Redesigned Sound Design workflow with a multi-column instrument
+      picker, new Accent Editor with waveform visualization and rhythm editing,
+      Delay, Reverb, Filter, OTT, Sidechain and Special FX, multiple guitar
+      playing styles, support for hosted synths including Serum, Diva, Pigments,
+      Omnisphere, Kontakt, Nexus, Massive X and Sylenth, full AAX support for
+      Pro Tools, and full plugin window resizing.
+    url: https://mixedinkey.com/release-notes/wingman/
+  - name: 2.0.617.0 (Windows)
+    releaseDate: 2026-05-21
+    description: Redesigned Sound Design workflow, new Accent Editor, custom
+      rhythms, full AAX plugin support, Genre and Style selection for idea
+      generation, Abletunes Serum preset loading, Filter, Delay, Reverb and
+      Special FX controls, improved VST instrument browsing, full plugin window
+      resizing, and limiter support on audio export.
+    url: https://mixedinkey.com/release-notes/wingman/
+  - name: 1.1.1.1000 (Mac)
+    releaseDate: 2026-02-04
+    description: "Hotfix: fixed a bug in Logic 12 that prevented audio input stems
+      from exporting."
+    url: https://mixedinkey.com/release-notes/wingman/
+  - name: 1.0.327.0 (Windows)
+    releaseDate: 2026-01-30
+    description: Chord inversion buttons, removed the audio capture length limit,
+      support for sus and borrowed chords, clickable piano keys in the chord
+      suggestion dialog, and trackpad and jog wheel zooming. Faster stem saving
+      and loading, and fixes for stem separation fallback and blank Ideas on
+      project reload.
+    url: https://mixedinkey.com/release-notes/wingman/
+  - name: 1.1.0.994 (Mac)
+    releaseDate: 2026-01-30
+    description: Chord inversion buttons, removed the audio capture length limit,
+      and support for sus and borrowed (modal mixture) chords. Faster saving and
+      loading of capture stems, and the playhead now stays aligned when zooming
+      and scrolling.
+    url: https://mixedinkey.com/release-notes/wingman/
+  - name: 1.0.257.0 (Windows)
+    releaseDate: 2026-01-16
+    description: New chord editing panel with a clickable piano roll, chord preview
+      from the piano roll, clickable piano keys in chord suggestions, and
+      playhead scrubbing during playback. Clearer messaging when a system does
+      not meet the stem separation requirements, plus key detection and
+      stability improvements.
+    url: https://mixedinkey.com/release-notes/wingman/
