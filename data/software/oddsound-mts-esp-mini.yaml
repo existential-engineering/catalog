@@ -18,28 +18,31 @@ url: https://oddsound.com/mtsespmini.php
 prices:
   - amount: 0
     currency: USD
-description: A free DAW plugin that loads .scl, .kbm or .tun files and retunes
-  all connected MTS-ESP client plugins, enabling global microtuning across your
-  entire session.
+description: The MTS-ESP Mini plug-in loads .scl, .kbm or .tun files and retunes all connected MTS-ESP client plugins. It can also load and receive MIDI Tuning Standard (MTS) SysEx messages.
 details: |-
-  MTS-ESP Mini is a free microtuning master plugin that acts as the global tuning source for any MTS-ESP compatible instruments in your DAW session. It loads industry-standard tuning files in .scl (Scala), .kbm (keyboard mapping), .tun, and Anamark TUN .msf formats, then broadcasts the tuning to all connected client plugins in real time.
+  MTS-ESP Mini is ODDSound's free master plug-in for global microtuning inside a DAW. It loads .scl, .kbm or .tun files and retunes every connected MTS-ESP client plug-in from one place, so instead of updating dozens of virtual instruments individually the tuning is changed from a central location, reducing the time it takes to get everything in tune.
 
-  The plugin includes a built-in sine/saw synthesizer for auditioning tuning systems directly within the plugin, allowing composers and sound designers to hear their chosen scale or temperament without needing a separate instrument.
+  Beyond file import, the plug-in can load and receive MIDI Tuning Standard (MTS) SysEx messages, either from a file or sent in via the DAW. It supports all MTS SysEx formats, and multi-channel mapping is handled through Anamark TUN .msf files or multi-channel .kbm files.
 
-  MTS-ESP Mini supports multi-channel mapping, enabling different tunings to be applied across MIDI channels. It also supports MIDI Tuning Standard (MTS) SysEx messages for compatibility with hardware and software that implements the MTS protocol.
+  A basic sine/saw synth is built in for auditioning the current tuning and acting as a pitch reference. Tuning is stored and recalled with the DAW session, and a bypass button returns everything to 12 TET instantly. CPU use is minimal and the interface is deliberately simple, with Mac Retina and Windows HiDPI support.
 
-  A bypass function is included for instant switching back to standard 12-tone equal temperament (12-TET), and all session state — including loaded tuning files and settings — is stored and recalled with the project. The plugin is designed for minimal CPU overhead and supports Retina/HiDPI displays on both Mac and Windows.
+  MTS-ESP itself is the tuning standard ODDSound developed with Richard D. James (Aphex Twin), letting plug-ins read from a single global tuning table that updates in real time. Plug-ins that natively support MTS-ESP need no setup at all: load them into a session alongside an MTS-ESP master plug-in, set the tuning and start composing. The larger MTS-ESP Suite extends dynamic tuning to non-aware plug-ins and to hardware devices.
+
+  The plug-in is completely free. Like all ODDSound plug-ins there is no standalone application, so it runs inside a host such as Pro Tools, Cubase, Ableton Live or Logic Pro.
 specs: |-
-  - Supported tuning file formats: .scl (Scala), .kbm (keyboard mapping), .tun, Anamark TUN .msf
-  - Multi-channel KBM mapping support
-  - MIDI Tuning Standard (MTS) SysEx transmit and receive
-  - Built-in sine/saw synthesizer for tuning audition
-  - Bypass function for instant 12-TET return
-  - Session state storage and recall
-  - Minimal CPU overhead
-  - Retina/HiDPI display support (Mac and Windows)
-  - Windows: Vista through Windows 11, 32-bit and 64-bit
-  - macOS: 10.9 and later, 64-bit only, Intel and Apple Silicon (ARM)
+  - Import .scl, .kbm and .tun tuning and mapping files
+  - Support for multi-channel mapping using Anamark TUN .msf or multi-channel .kbm formats
+  - Support for all MTS SysEx formats, either loading from file or sending in via DAW
+  - Automatically update tuning of MTS-ESP aware plugins
+  - Includes basic sine/saw synth for auditioning tuning and acting as a pitch reference
+  - Stores and recalls tuning in a DAW session
+  - Bypass button to return to 12 TET instantly
+  - Tiny CPU use
+  - Simple, ergonomic interface
+  - Mac Retina and Windows HiDPI support
+  - Free
+  - Windows: Vista / Windows 7 / Windows 8 / Windows 10 / Windows 11, 32 bit or 64 bit, host supporting VST, VST3 or AAX
+  - Mac OS: macOS 10.9 or newer, 64 bit only, Intel or ARM Mac, host supporting VST, VST3, AU or AAX
 versions:
   - name: "1.13"
     releaseDate: 2026-02-09
