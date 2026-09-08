@@ -1,0 +1,61 @@
+id: 5ExEkc1ZCcaLEHd4S4Qwl
+name: Rhythmi
+manufacturer: omnitone
+primaryCategory: sequencer
+categories:
+  - drum-machine
+  - modular
+hp: 12
+capabilities:
+  - sequencing
+url: https://omnitone.ca/products/rhythmi-semi-random-drum-sequencer
+prices:
+  - amount: 385
+    currency: CAD
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack drum sequencer that generates evolving rhythmic patterns
+  with controls for energy, evolve, length and swing, and pairs with Beatsi via
+  a jumper cable.
+details: |-
+  Rhythmi is a Eurorack drum sequencer that allows you to dial in your groove, and explore it by evolving the pattern and modulating the energy. It allows for rhythmic inspiration and creativity without the burden of step programming. The evolve parameter enables smooth transitions between related rhythms through the use of branches. New branches can be generated at the push of a button, loading up a whole new branch of related rhythms to explore. The Evolve parameter is the heart of Rhythmi, its inspiration, and defining feature. Allowing rhythms to shift, transform, and melt into one another. The Clock Section provides internal or external clocking with division or multiplication. The Customize Section shapes individual drum elements through density and syncopation. The Global Section introduces macro-level control over the rhythm via the Energy, Evolve, Length and Swing parameters, dynamically shaping fills and variations. Rhythmi has a jumper cable connector on the back to pair up seamlessly with Beatsi, the drum voice it was designed alongside with. TECHNICAL SPECS:
+  - Module Size: 3U X 12HP X 25 mm Deep. - Current Draw: 120mA (170mA peak)@ 12V, 10mA@ -12V. WHAT'S IN THE BOX:
+  1x Rhythmi module
+  1x User Manual
+  1x Power cable
+  4x Mounting screws
+
+  Read the technical doc
+io:
+  - key: HazEFhKn
+    name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: K4SLMfqT
+    name: Clock Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 75odba8C
+    name: Jumper Connector
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: proprietary
+    maxConnections: 1
+    position: Bottom
+  - key: i7toQlDi
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

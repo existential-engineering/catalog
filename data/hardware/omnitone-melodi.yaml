@@ -1,0 +1,90 @@
+id: scPueJ2iYh35Pi3kAmOjh
+name: Melodi
+manufacturer: omnitone
+primaryCategory: sequencer
+categories:
+  - modular
+  - digital
+hp: 8
+capabilities:
+  - sequencing
+url: https://omnitone.ca/products/melodi-eurorack-module-random-sequence-generator
+prices:
+  - amount: 239
+    currency: CAD
+    asOf: 2026-09-04
+    source: official-website
+description: A semi-random Eurorack sequencer module that generates note
+  sequences with adjustable skip, tie, trend, scale, range, length and speed
+  parameters.
+details: |-
+  Melodi generates sequences based on the mood you set so you can create the sound you're searching for—It can be tweaked to create anything from a powerful bassline to a sparkly melody. SHIPS WITH VERSION 2 OF FIRMWARE
+  Improvements: Skip, tie, length are now LIVE knobs. Added a ping-pong trend line and a blues scale. GENERATE
+  1. NEW — will prompt Melodi to generate a new sequence. 2. TRIGGER IN — accepts a trigger to prompt Melodi to generate a new sequence. CYCLE
+  1. ON/OFF — determines if the sequence will loop or require retriggering. 2. TRIGGER — button and jack trigger the sequence to restart at the beginning. TUNE
+  * While adjusting tunable parameters, the light bar will reflect the current selection. For continuous parameters the light bar shows amount from 0-100%, for quantized parameters the light bar shows steps. 1. SKIP (continuous) — sets the probability that a note will be skipped in a sequence. 2. PLUCK (continuous) — sets the length of the gate, from short plucks to gliding between notes (portamento). 3. TIE (continuous)— sets the probability that a note gets tied to the next (effectively making the note last two clock cycles). 4. TREND (continuous) — sets whether the sequence trends upwards or downwards in pitch. 5. SCALE (quantized) — select the quantization of the notes used in the sequence. Choose from perfect notes, pentatonic scale, diatonic scale, chromatic scale and completely unquantized. 6. RANGE (continuous) — sets the range of notes from 1 to 4 octaves (unquantized)
+  7. LENGTH (quantized) — select the number of notes to play in a sequence (from 1-16, or infinitely generating at the max position). 8. SPEED (continuous) — sets the tempo of the internal clock, between 20 and 2000 BPM. OUT
+  1. GATE — outputs the gate of the notes in the sequence. 2. PITCH — outputs the pitch (in V/OCT) of the sequence. CLOCK
+  1. SELECT — Melodi will generate internal clock signal if select switch is up, and will use external clock signal when down
+  2. IN — connect external clock signal
+  3. OUT — output clock signal
+
+  TECHNICAL SPECS:
+  - Module Size: 3U X 8HP X 25 Mm Deep. - Current Draw: 85mA @ 12V, 10mA @ -12V.
+io:
+  - key: GRnnWdcH
+    name: Generate Trigger In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: qT7d8lR3
+    name: Cycle Trigger
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3Dfb5wkY
+    name: Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: JOwrRZEu
+    name: Pitch Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: nub61211
+    name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: rqVQXSkw
+    name: Clock Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: nSbXTaTE
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

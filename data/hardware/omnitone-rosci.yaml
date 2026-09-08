@@ -1,0 +1,41 @@
+id: MmiwV1tQuq2y5VijjvTh9
+name: Rosci
+manufacturer: omnitone
+primaryCategory: synthesizer
+categories:
+  - modular
+  - digital
+hp: 6
+url: https://omnitone.ca/products/rosci-random-waveform-oscillator
+prices:
+  - amount: 259
+    currency: CAD
+    asOf: 2026-09-04
+    source: official-website
+description: A digital voltage-controlled oscillator that generates random
+  waveforms with adjustable complexity, roundness, harmonics, formants and
+  detune, or can output basic waveforms.
+details: |-
+  Welcome to the Rosci soundscape. Rosci is a digital VCO that generates random waveforms to create unique, rich, and full sounds. You are able to control how complex the sound is--add harmonics and have a completely unique shape generate using the generate button/trigger. BUT, it can also be tuned to output basic waveforms (sine, square, sawtooth) if you so desire. TUNABLE PARAMETERS BREAKDOWN:
+  COMPLEXITY: Essentially a generation of unique timbre. ROUNDNESS: Set the basic shape of your waveform. Go from from sharp to soft sound, similar to filtering. HARMONICS: Add up to 6 harmonies to your sound. The choir's here. FORMANTS: Accentuate certain overtones in your sound (like a voice singing "ooo", "ahh", "eee"). DETUNE: Add a classic 'detune' with a changing phase wave for extra wide sound. HOW DOES IT WORK? It is a pipeline of algorithms, which generates and modifies a waveform starting from top to bottom. Rosci works on a principle of key points: the generate button generates key point location and amplitudes to be passed down the pipeline. Tunable parameters:
+  Beginning with complexity, you set the number of key points (even numbers only to create a waveform). Lowest complexity sets two points, and highest complexity sets up to 20 points. The number of key points will vary with each waveform generated. From there, the roundness sets the type of interpolation of the key points, from square to sine. Adjusting the harmonics creates copies of the waveform and adds them to the original waveform at double, triple, ... up to 6x the base frequency. Formants maintains the frequency of the wave, but squishes it so there is 'empty space' in between (this is also called pulsar synthesis). Finally, detune copies the waveform and 'detunes it' by increasing the frequency ever so slightly. And there you have it: a unique Rosci soundscape :)
+
+  TECHNICAL SPECS:
+  Module Size: 3U X 6HP X 25 mm Deep. Current Draw: 160mA@ 12V, 20mA@ -12V.
+io:
+  - key: WGKBqaq4
+    name: Generate Trigger In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: OpERrSTL
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
