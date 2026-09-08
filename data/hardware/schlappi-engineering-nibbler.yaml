@@ -1,0 +1,190 @@
+id: J9YykAsOCC38nfShTY-GQ
+name: Nibbler
+manufacturer: schlappi-engineering
+primaryCategory: sequencer
+categories:
+  - modular
+url: https://schlappiengineering.com/products/nibbler-preorder
+prices:
+  - amount: 240
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: The Nibbler is a four-bit digital accumulator based on CMOS logic
+  that counts in binary from zero to fifteen, with individual bit inputs/outputs
+  and stepped voltage outputs. It can generate rhythms, modulation voltages,
+  melodies, subharmonics, and modem-like noise depending on clock speed.
+details: |-
+  The Nibbler is a four bit digital accumulator based on CMOS logic. This means that it counts in binary from zero to fifteen, with inputs and outputs for individual bits as well as stepped voltage outputs (digital to analog converters). It does this with individual logic chips instead of a CPU. The concept here is that counting in binary (and its expression in bits) is inherently musical, and with slow clock speeds we can use it to create both rhythms and modulation voltages (or melodies). At audio rate we can generate subharmonics and modem-like sounds (or noise). Download manual here
+
+  Download quickstart guide here
+
+  Features
+specs: |-
+  - 5 rhythmically related gate outputs (or audio rate square waves)
+  - 2 stepped voltage outputs
+  - Second stepped voltage has selectable phase offset
+  - Cherry MX Brown switch for reset
+  - 4 gate inputs for modulation
+  - Chainable using carry in and out
+  - Reset input can be used as hard sync at audio rate
+  - Subtract input can add variation to sequences
+  - Synchronous and asynchronous output modes
+  - Shift register functionality (including Rungling)
+  - CMOS logic deisgn
+  - 12 HP
+  - Skiff friendly 28mm depth (35mm including cables)
+  - POWER DRAW: +12V 37mA, -12V 17mA
+io:
+  - key: erwSpIDK
+    name: Clock Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: JX2mLNBL
+    name: Reset Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Le1ROeE0
+    name: Sub Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: KOYBXtJW
+    name: Gate Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: MQIxtGyp
+    name: Gate Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: U6HfMD2A
+    name: Gate Input 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: EZvq7C6H
+    name: Gate Input 8
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 5ZlD5zfe
+    name: Shift Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: a8LG4N1p
+    name: Shift Data Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: gaDyhCfv
+    name: Data XOR Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ZgyQusB5
+    name: Carry In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ArnSVlfV
+    name: Carry Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 3fLe64zF
+    name: Gate Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 1VBWXWJ2
+    name: Gate Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: t1awQYxT
+    name: Gate Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Btnikrqh
+    name: Gate Output 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Q8ex95oG
+    name: Stepped Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: cUOH3FD3
+    name: Stepped Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Aw6mmAqW
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,127 @@
+id: 2wLumbvo1mJGSLzKrJllg
+name: ANGLE GRINDER
+manufacturer: schlappi-engineering
+primaryCategory: filter
+categories:
+  - distortion
+  - modular
+  - subtractive
+capabilities:
+  - filter
+  - distortion
+url: https://schlappiengineering.com/products/angle-grinder
+prices:
+  - amount: 335
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Angle Grinder is a quadrature sine wave oscillator that can also
+  function as a filter and distortion effect depending on knob positions and
+  input signals. It produces four phase-related outputs and offers voltage
+  controlled harmonic distortion or state variable filtering.
+details: |-
+  Angle Grinder is a quadrature sine wave oscillator or filter and distortion effect. The function of the Angle Grinder depends on both the position of the knobs and the presence of an input signal. Features:
+
+  Download quickstart guide here
+
+  Download manual here
+specs: |-
+  - Quadrature Sine wave VCO with four phase related outputs: 0°, 90°, 180°, 270°
+  - HIGH range from 10Hz to over 20kHz
+  - LOW range from 0.3Hz to over 500Hz
+  - Tracks 4+ octaves of volts per octave at the V/OCT input
+  - FM1 is linearFM
+  - FM2 is additional exponential V/OCT jack
+  - With no input GRIND section provides voltage controlled harmonic content
+  - With input GRIND section compares each phase against GRIND IN signal
+  - Each slider subtracts the compared signal from the input signal, creating complex waveshapes
+  - When GRIND is fed into the SPIN section the outputs become a state variable filter
+  - DAMPING counteracts the oscillation and allows an external signal through
+  - When filtering the four phase related outputs are: LOW PASS, BAND PASS, HIGH PASS, and INVERTED BAND PASS
+  - When filtering the GRIND section is a nonlinear feedback network for harsh and unpredictable timbres
+  - The four phase feedback paths can be separately voltage controlled
+  - The INJECT jack can be used as a second input for either audio or CV, bypassing GRIND
+  - All analog OTA based design
+  - 18 HP
+  - Power requirements :+12V 81mA, -12V 78mA
+io:
+  - key: gjyRCZaB
+    name: V/OCT Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ztgNZycT
+    name: FM1 Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 2zSkuGTB
+    name: FM2 Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: YCY00VKe
+    name: Grind Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: CEu1iImA
+    name: Inject Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: UtRCECXb
+    name: Output 1 (0°/Low Pass)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: PQo2lLJj
+    name: Output 2 (90°/Band Pass)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: vgOMNg4Z
+    name: Output 3 (180°/High Pass)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: fe36xHty
+    name: Output 4 (270°/Inverted Band Pass)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: vWAlTTYW
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
