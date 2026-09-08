@@ -1,5 +1,53 @@
 # catalog
 
+## 3.61.0
+
+### Minor Changes
+
+- 02c9449: Import Audix Microphones (252 hardware/software entries).
+
+  Handheld and wireless vocal mics (OM, VX, F-series), studio and
+  installation condensers (SCX, M3, M40, gooseneck series), UHF and
+  2.4GHz Novacore wireless systems, in-ear monitors, drum mic packs,
+  and mounting/cabling accessories.
+
+- c1666a3: Import Circuit Happy (2 hardware and accessory entries).
+- 3cfba89: Import Ethereal Electronics (4 hardware/software entries).
+- 72a1ceb: Import Foxing Hour (14 hardware entries).
+- 5c8ef55: Import Meeblip (7 hardware entries).
+- d42dff9: Import Mesanovic Microphones (6 hardware entries).
+- 1c4e5d9: Import Miktek (25 hardware and accessory entries).
+- c9ee8f6: Import Milkman Sound (75 hardware/software entries).
+- 00d25a1: Refresh Mixed In Key: 5 new, 0 discontinued, 12 updated.
+
+  Adds the three Pilot instruments (Arpeggio, Bass and Melody), the Flow
+  8 Deck DJ application, and the Futurism Volume 1 style pack. The twelve
+  existing entries gain current descriptions, feature lists, release
+  history and video links.
+
+- 2d9dd40: Import MixWave (33 content/software entries).
+- 05696f5: Import Neunaber (97 hardware/software entries).
+- 3cdfc1f: Import Nocturnis Audio (2 hardware/software entries).
+- 8999488: Import OLLO Audio (20 hardware/software entries).
+- f9fd3e1: Import Omnitone (9 hardware entries and 4 accessories).
+- 214abf9: Import One Control (104 hardware/software entries).
+- db40a01: Import Recovery Effects and Devices (39 hardware/software entries).
+- c07099c: Import Schlappi Engineering (11 hardware entries).
+- 0a221ca: Import Singular Sound (47 hardware/software entries).
+- ae2f3f3: Import Soundpaint (149 hardware/software entries).
+- 2dde0fe: Import Trilling (17 hardware/software entries).
+- 4001375: Import WMD (47 hardware/software entries).
+- bfb6c4c: Import XOXO Modular (11 hardware and accessory entries).
+- 155d1ab: Import York Modular (32 hardware/software entries).
+
+### Patch Changes
+
+- 21461a8: Refresh Newfangled Audio: 0 new, 0 discontinued, 11 updated.
+
+  All eleven plugins gain current feature lists, system requirements and
+  full release histories read from each product's own release-notes page.
+  No products were added or retired.
+
 ## 3.60.0
 
 ### Minor Changes
