@@ -1,0 +1,167 @@
+id: efzjkb8-nBqOVNPbD2DHx
+name: Clutch
+manufacturer: wmd
+primaryCategory: sampler
+categories:
+  - percussion
+  - drums
+  - modular
+  - filter
+capabilities:
+  - sampling
+  - filter
+  - reverb
+  - chorus
+  - delay
+url: http://www.wmdevices.com/products/clutch
+prices:
+  - amount: 349
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Clutch is a dual sample player module built for creating dynamic
+  hi-hat sounds, blending built-in samples with a library of memory card sample
+  pairs. It features onboard effects, filters, a rhythmic Feel control, and CV
+  control over most parameters.
+details: |-
+  Finally, the Hi Hat of Our Collective Dreams is Reality
+
+  The long-awaited Clutch module is a dual sample player built specifically for creating dynamic, expressive hi-hat sounds through an immediately playable interface. With two layers of samples, Clutch lets you blend dependable "bread-and-butter" built in hits with a massive library of sample pairs hosted on a memory card. The controls for the card based samples are always accessible and intuitively arranged, making it easy to dial in sounds quickly during performance or patching. And yes, you can load your own samples! The second layer lives on assignable knobs and is intentionally inaccessible via CV. This ensures that no matter how wild your modulation or sound design gets on layer A, whether from hands-on tweaking or external CV, layer B is ready for the breakdown. It's your steady, set-and-forget foundation that keeps the groove anchored. A CV Disable switch lets you instantly cut modulation, snapping back to the sound defined by your current knob positions. Perfect for live sets, quick resets, or moments when you just want to return to that sweet spot. Onboard effects and a Chimera-inspired "Feel" control take Clutch beyond static sample playback, letting you control the groove, add movement, character, and dynamics to every hit. Clutch cuts through the noise with pure sound and unmatched versatility thanks to it's sample based architecture while it's intuitive interface keeps your performance at your fingertips. In this house, there is rhythm, there is swing. In this house, there is Clutch. Check out the editor ClutchEdit from Om Ohm productions! The Controls
+
+  Surface A
+
+  Global & Layer Controls
+
+  Multifunction Controls & Mode Switches
+
+  -
+  SURFACE B / PITCH B / LPF – Determines the function of the knob below. Bank & FX Control
+
+  BANK BUTTON – Tap to switch between 8 banks of samples stored on the SD card (Surface A sounds). The LED color corresponds to the folder name on the SD card. Hold this button to enter FX Mode. In FX Mode, the bottom two knobs control the two FX parameters. The LED flashes to indicate FX Mode is active, showing the color of the selected effect. ACCENT / FEEL / FX SWITCH – Three-way, spring-loaded switch. Jacks
+
+  -
+  CHOKE – Stops sound at the output with a quick envelope. -
+  PITCH A - CV sums with Pitch A control. -
+  A/B - CV sums with A/B control. -
+  SRF A - CV sums with Surface A control. -
+  RELEASE - CV sums with Release control. -
+  VELOCITY – CV input for global velocity control of open and closed sounds. -
+  FX PRM – CV input for FX parameter control. -
+  OUT – Final mono output of all sounds. So much more... Edit the HIHAT.INI file on the memory card for adjusting all kinds of parameters for Clutch. If you have any questions, please submit a support ticket on our contact page. The point of the HIHAT.INI file is to tune Clutch to how you want to use it. Modification is not necessary for a great experience, but there are a lot of simple settings that may be interesting to your workflow.
+specs: |-
+  - SURFACE A – Selects which sample will play on Surface A. Sampled on Trigger.
+  - PITCH A – Direct pitch control for Surface A sounds only.
+  - RELEASE – Global release control for both open and closed sounds.
+  - A/B – Crossfades between Surface A and Surface B sounds.
+  - BALANCE / RELEASE OFFSET / HPF – Determines the function of the knob below. - BAL – Adjusts volume balance between closed and open sounds.
+  - R. OFFSET – Shortens the closed sound relative to the open sound.
+  - HPF – High-pass filter on the output.
+  - SURFACE B / PITCH B / LPF – Determines the function of the knob below. - SRFB – Sample select for Surface B sounds.
+  - PITCH B – Pitch control for Surface B sounds.
+  - LPF – Low-pass filter on the output.
+  - Hold left to change accent behavior.
+  - Hold right to toggle the FEEL function.
+  - Tap left or right to change the FEEL sequence.
+  - When FX Mode is active, tap left or right to select different effects.
+  - CLSD – Trigger input for closed hi-hat sounds.
+  - OPEN – Trigger input for open hi-hat sounds. - Trigger both simultaneously for an accented hit.
+  - CHOKE – Stops sound at the output with a quick envelope.
+  - PITCH A - CV sums with Pitch A control.
+  - A/B - CV sums with A/B control.
+  - SRF A - CV sums with Surface A control.
+  - RELEASE - CV sums with Release control.
+  - VELOCITY – CV input for global velocity control of open and closed sounds.
+  - FX PRM – CV input for FX parameter control.
+  - OUT – Final mono output of all sounds.
+  - Gate / Trigger Mode
+  - Max Release Envelope Tuning
+  - Pitch Knob Range
+  - Independent Release for Closed Envelope
+  - Feel Modifier scale settings
+  - Positional Takeup or Wiggle for the two soft knobs.
+  - LPF/HPF frequency min, max, and resonance
+  - FX customization - lots of parameters
+  - Customize Feel Patterns and Colors 1 - 32 steps
+  - Customize Effects Assignment and Colors
+  - Colors are customizable (can be removed) to help with Colorblindness clarity
+io:
+  - key: MYQ4rofG
+    name: CLSD
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: PDWuAukm
+    name: OPEN
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: HsyirA7V
+    name: CHOKE
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FZOKkDrx
+    name: PITCH A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Z4sZ3ONW
+    name: A/B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Q7h4lGaY
+    name: SRF A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8Qxw2LIN
+    name: RELEASE
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: h0UrgHmp
+    name: VELOCITY
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: u31FwpYP
+    name: FX PRM
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: caDG2Iz9
+    name: OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

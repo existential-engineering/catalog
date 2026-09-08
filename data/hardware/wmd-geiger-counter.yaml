@@ -1,0 +1,60 @@
+id: e-jnfK4_Y9IARihfZzely
+name: Geiger Counter
+manufacturer: wmd
+primaryCategory: pedal
+categories:
+  - distortion
+  - bit-crusher
+capabilities:
+  - distortion
+  - bit-crush
+  - overdrive
+url: http://www.wmdevices.com/products/geiger-counter
+prices:
+  - amount: 339
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A digital destruction guitar pedal driving an 8-bit computer with a
+  high-gain preamp, offering sounds from tubey overdrive to harsh digital
+  errors. Controls include Gain, Tone, Sample Rate, Bit Depth, and 252 wave
+  tables, with CV input for expression control.
+details: |-
+  STANDARD - Low frequency roll off for clarity in the mids, ideal for guitar and for higher gain settings. BASS MOD - Less rolloff of low frequencies, allowing for more clarity at low gain. Great for bass, synths, drum machines, etc. Digital Destruction
+
+  The WMD Geiger Counter is hundreds of entirely new face melting sounds. A high gain modern preamp drives an 8 bit computer, creating sounds which range from nice (tubey overdrive, lofi aliasing, hot gated leads) to total madness (impossible amounts of gain, multiple octave foldover, harsh digital data errors, and piercing sculpted noise). The Controls
+
+  The Geiger Counter may seem overwhelming, but once broken down, the controls are quite logical. Gain - Low settings provide clean tones with no distortion at all, while high settings will brickwall your signal for great sustain. Use the Gain control as a coarse setting for getting the desired tone from the selected wave table. Tone - The Geiger Counter's tone control blends muffled low-mids with chimey and clear upper mids and highs providing a very large range of sounds in junction with the Gain. All the way down and the sound is muffled and grungy with little upper harmonic content. The middle range is smooth and full bodied. The top range cuts the lows completely for only upper harmonic content. Use the Tone to fine tune the sound of the wave table. Tone Enable/Disable - This switch removes the tone control from the preamp circuit. The tone control sucks some volume from the gain, and this allows the pure ultra hot signal to go directly into the Wave Table. If a very clean tone is desired, set to Disable and adjust the gain to get the right amount of breakup. For most wave tables, disabling the Tone will produce completely different sounds by brickwalling to the extremes of the tables faster. Sample Rate - Controls the length of the samples your signal is converted into. Full up and the Geiger Counter samples faster than a CD. Dial it down a little and you'll lower the fidelity and frequency response, adding overtones and difference frequencies. Down a little produces some very nice chimey clean tones. Down more and higher notes disappear into difference frequencies, all the way down to 280Hz. The sample rate is sort of like a flange whammy. The LED by the Sample Rate knob shows the CV input and coarse/fine modes. When green, the CV input is active. When red, the sample rate is changed in smaller increments (fine mode), allowing for smoother adjustment for the high range of sample rates. The LED is yellow if the CV input and fine mode are both active. Push the Wave Table knob to change the modes of the Bit Depth and Sample Rate LEDs. Bit Depth - This controls the finer details of the signal. All up and your signal is represented by the full 8 bits. Each step down cuts the resolution in half, adding quantization error distortion, all the way down to 1 bit making a nasty square wave from a once clean tone. This produces a lo-fi gated distortion sound. The LED by the Bit Depth knob shows the CV input and post/pre wave table modes. When green, the CV input is active. The Bit Depth function is available before (LED red) or after (LED off) the wave table algorythms for different sounds. Use the bit depth before wave table mode to change the response of the wave table. The LED is yellow if the CV input and pre wave table modes are both active. Bits/Mask - This switch controls how the Bit Depth knob works. In Bits mode, the Bit Depth knob reduces the resolution of the signal. In Mask mode, the signal is filtered through a number (0 to 255). This mode can be used to reduce noise and add gain. In pre wave table mode, it can turn off small ranges of the wave table, creating altered harmonic content from the tables. Adjust the knob to taste when in Mask mode. Wave Table - This knob and display select the wave table to run your signal through. The wave table stage takes your signal and destroys it with math. This produces some incredible sounds. The wave tables are organized so that a more extreme version is typically found one up from the current one. There are 252 wave tables in all, each with different harmonic content. The display is in HEX, displaying the numbers 0-9 and the letters A-F. Don't be alarmed, it actually makes remembering your desired wave table easier! The wave table is remembered when the pedal is turned off. CV Input - The CV Input allows control over the Sample Rate, Bit Depth or both simultaneously. A slow LFO creates some incredible sweeping difference frequencies when modulating the sample rate, a faster LFO creates some cool tremolo sounds when modulating the bit depth. Use an expression pedal for direct control. The CV input has a 5.6 volt output on the ring of the CV jack, 0 volts on the sleeve and the CV input on the tip. Use any standard expression pedal or any 0-5 volt CV source for modulation. The 5.6 volt output will be shorted and will degrade battery life if a mono cable is used, but it will not damage the Geiger Counter. Sample Rate CV In - In normal mode (LED not green) the knob controls the sample rate directly. Turn it green and the CV input controls the Sample Rate. Turn the knob all the way up and the CV input has direct control. Dial it down to introduce variations and interesting patterns in the sample rate. Bit Depth CV In - In normal mode (LED not green) the knob controls the bit depth directly. If green, the CV input controls the bit depth. With the knob all the way up, the CV in will have smooth control. Dial it down to introduce graininess and patterns from the CV input. CV input works with both bits and mask modes. Bypass - New Geiger Counters use a soft touch momentary footswitch (not pictured yet...) and a relay for quieter and easier actuation.
+io:
+  - key: rGELyDLW
+    name: Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: feOgfLNj
+    name: Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: KUAkRgyn
+    name: CV Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: H4PCqmnh
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

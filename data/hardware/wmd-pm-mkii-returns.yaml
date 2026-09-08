@@ -1,0 +1,74 @@
+id: rN-cSeslwOfIZ2yWi7RHk
+name: PM MKII Returns
+manufacturer: wmd
+primaryCategory: routing
+categories:
+  - mixer
+url: http://www.wmdevices.com/products/pm-mkii-returns-3-additional-aux-returns-for-pm-mkii
+prices:
+  - amount: 139
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A passive expansion module for the PM MKII providing three
+  additional stereo aux returns that can be summed into the main mix or balanced
+  outputs via a toggle switch.
+details: |-
+  Returns:
+
+  Due to panel space limitations on the PM MKII, I couldn't include a bunch of Aux Returns. So I've made an expansion so that you have the choice to bring in returns simply to the mix bus. This module is passive, it does not require power. It simply brings in a return into a pot, and sums it to either the main mix, which is before the Master Insert, or to the balanced outputs, where the MIX IN sums. A toggle switch selects between AUX RET and MIX IN. Returns works with Channels MKII also -- however, it only will sum to the Channels MKII's MIX out. Connecting a Returns to Channels MKII does not sum to the connected PM MKII's MIX IN or AUX RET busses. Impedance:
+
+  These inputs mix directly into the PM MKII summing nodes. To avoid complication and cost there is no impedance conversion on this module. The input impedance is ~5k Ω, which is 20x lower than normal eurorack. What does this mean? Usually you won't notice because most modules have a low output impedance, but you might notice a lot of attenuation if your source module has an output attenuator that is not at 100%. It can throw off the perceived curves of some potentiometers. This won't be an issue for 95% of modules, and it will work with all WMD modules. Please note that a mono signal input on L will normal to R, and will see an impedance of 2.5k Ω. This will likely cause a good drop in voltage, so you will need to turn the pot up quite a bit. This is totally normal, just something to be aware of. Connection:
+
+  RETURNS connects with a single 8 pin 2.0mm ribbon cable. There is no possibility of messing up the connection because the headers are shrouded. Alternate Panel:
+
+  To ease the placement in your rack, I've designed an alternate panel that will allow the module to be mounted upside-down. All modules will ship with the alternate panel and reverse knobs.
+io:
+  - key: cb994JZ3
+    name: Return 1 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: CAoKKGQ8
+    name: Return 1 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: TDZ7xMEh
+    name: Return 2 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 1hH8klEO
+    name: Return 2 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: tCO929XH
+    name: Return 3 L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: nYM1W4yk
+    name: Return 3 R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom

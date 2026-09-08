@@ -1,0 +1,79 @@
+id: 1MLXmnANhEDxRc1GbPcBM
+name: Digital VCA MKIII
+manufacturer: wmd
+primaryCategory: modular
+categories:
+  - utility
+  - gain
+  - ring-modulator
+capabilities:
+  - ring-modulation
+url: http://www.wmdevices.com/products/digital-vca-mkiii
+prices:
+  - amount: 249
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A dual zero-crossing VCA and polarizer Eurorack module with
+  digitally controlled CV and attenuation for clickless amplitude changes. It
+  includes trigger mode, built-in sample and hold, and bipolar polarizer/ring
+  modulation capability.
+details: |-
+  I've done several designs of this circuit over the years, the first one had no knobs, the second was too small, the MKIII is finally how this circuit should be packaged. This module does some really cool stuff and is super useful in any system. The Digital VCA lets signal through like a normal VCA, but the CV and attenuation level is controlled digitally. This lets us do things like wait until there is a zero crossing to change the amplitude, resulting in clickless amplitude changes. The Trigger mode causes the VCA to only update when a trigger is received. The addition of a noise circuit for each side let us do a very quick and easy sample and hold that never droops. With no input, 5V is normaled to the attenuator, so you get a 0-5V sample and hold. In Bipolar mode, you can get -5 to +5V. Both sides have bipolar VCA mode (polarizer), which lets them invert the signal when negative CV comes in. Also known as ring modulation. With the zero crossing detector, this can produce some super wild wave shapes. Limited run of 410 units for Eurorack Modular Synthesizer systems. I won't be making more or doing another version in the future.
+io:
+  - key: GqCKoUE9
+    name: CV In A
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CpgkvmJM
+    name: Signal In A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vbYvzgzN
+    name: Signal Out A
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rNqwTGgz
+    name: CV In B
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: RINsE4ri
+    name: Signal In B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UwMwKK9E
+    name: Signal Out B
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wjFzJdXM
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

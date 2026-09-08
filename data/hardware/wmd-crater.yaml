@@ -1,0 +1,57 @@
+id: qyD8VWkPHUWXuzPOySoz2
+name: Crater
+manufacturer: wmd
+primaryCategory: drum-machine
+categories:
+  - kick
+  - modular
+  - synthesizer
+  - analog
+  - digital
+capabilities:
+  - distortion
+url: http://www.wmdevices.com/products/crater
+prices:
+  - amount: 369
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Crater is an analog/digital hybrid Eurorack kick drum module
+  combining a 909-style analog oscillator with a digital attack layer. It
+  features a pitch envelope, 1V/octave tracking, a sustain stage for gate-length
+  sequencing, and a digital timbre section with click decay control.
+details: |-
+  Best of both worlds, Crater is an analog/digital hybrid bass drum that plays as hard as it kicks. The analog side is where crater gets it's tone, it's umf' and it's power. Like a 909 style kick drum, Crater's analog section features a pitch envelope that ranges from snappy attacks, to lazer sounds, to disco toms. 1 volt per octave tracking and an amplitude envelope that allows users to use Crater for classic 808 style hip hop bass lines as well as rolling techno kicks. Speaking of rolling bass, Crater has a new feature we have yet to see on a dedicated kick drum module, which is the Sustain stage. The sustain knob lets you dial in a sustain level that Crater will stay at as long as the gate is high. Inspired by using samplers in "gate mode", the sustain circuit lets you use gate length to sequence different kick lengths, while keeping your decay setting constant. This is perfect for getting multiple sounds from of one module. The Digital side is where we feel Crater really becomes unique and ultra-useful in a live performance Eurorack system. The "secret sauce" of kick drums is usually found in layering different sounds to create a drum that cuts through the mix in the high frequencies, while remaining powerful in the lows. Many kicks you hear in dance music tracks are samples made from layering two or more sounds and we wanted to achieve this level of polished sound with our kick. So, what we did was add in a digital section for the Attack side of the kick drum. The Timbre knob lets you dial in different attack sounds we've created, inspired by classic drum machines, music we like, and sample packs we've used in the past. The "Click Decay" knob shapes the attack while adding a bit of delayed noise which simulates things in the room being affected by the kick such as loose lugs or a snare drum rattling near by. This gives the kick more of a natural and acoustic feel to the sound.
+io:
+  - key: lMhMcoeR
+    name: Pitch CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: oWRvh25g
+    name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: EGcmQjng
+    name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 1zF8BUTs
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,142 @@
+id: eFfSuzJoqksuoebYJ4pmh
+name: Legion
+manufacturer: wmd
+primaryCategory: analog
+categories:
+  - synthesizer
+  - modular
+  - fm
+hp: 8
+url: http://www.wmdevices.com/products/legion
+prices:
+  - amount: 499
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Legion is an analog Eurorack oscillator with multiple individual
+  waveform outputs, extensive CV inputs, thru-zero linear and exponential FM, a
+  unique windowed saw wave, an analog supersaw output, and a thru-zero
+  sub-oscillator.
+details: |-
+  A legion of waveforms awaits. Endless possibilities ahead. Legion is a new breed of analog oscillator with tons of individual waveform outputs, a host of useful CV inputs, and a few never-been-done-before analog tricks. First off, this oscillator means precision. Built-in digital calibration means once you tune, you'll stay in tune. The tune knob can be switched between a fine and coarse mode, and can be locked out to protect against unintentional movement during a performance. It also features octave switches for quick movement between registers. Power in pairs. Legion is great on it's own but thrives when it has a twin sibling in the case. Thru-zero linear FM keeps your fundamental in-tact while modulating it with another oscillator and onboard attenuator lets you dial in the amount. Stay in-tune while adding harmonic content with the classic technique. Thru-zero FM also works well with the saw wave output, adding more colors to your sonic palette. A separate exponential FM input with correlating attenuator allows for simultaneous "wobble" or could be used for more traditional FM effects, when that is desired and the easy tuning makes for lush. consistent FM sounds in a flash. The Alpha in the pack. In addition to the traditional waveforms commonly found in analog oscillators, Legion has a unique saw wave section. Inspired by the oscillator in the Alpha Juno synthesizer, we've added what we call "windows" to the saw wave output. A window is essentially a negative pulse in the center of the saw wave, creating an overtone to the classic waveforms sound. Use the switch to add more windows, creating a more complex high end. Then, use pulse-width modulation to really bring this effect to life by increasing and decreasing the size of the windows with an external CV source such as an LFO. This effect really adds teeth to the waveform. In addition to the above, Legion also has an output called Swarm, which is essentially an analog supersaw. For this output, we start with a saw wave and then use seven DAC LFOs to modulate the phase of multiple reset points within the original. What this does is create the illusion of multiple saws being stacked on top of eachother, slightly going in and out of tune with each other. Control the intensity of the unison effect with the detune knob, and switch on up to seven LFOs with the Timbre switch for a powerful, detuned supersaw effect that remains 100% analog. Legion also hosts a sub-oscillator with switchable octave and Saw, Triangle, Square, and PW waveforms, a first in Eurorack in that it also fully reacts to Thru-Zero FM! A Thru-Zero sub oscillator that's not just a square wave. The oscillator was designed around the SSI2130 TZFM oscillator chip, with a ton of WMD designed peripherals, waveshapers, digital control, etc. We found that all the extra stuff used a ton of power, so this took some serious engineering work on the internal power supplies. The result is a module that uses very little power and thus stays cool and consistent in temperature, meaning that it's incredibly stable for tuning. Far better than any other oscillator we've designed, and we're well known for stable oscillators. The downside is that these power supply parts and special opamps are entirely unavailable due to the world wide semiconductor shortage. We secured enough parts for 600 Legions, and that's it. Get it while you can, there isn't another run planned. PDF MANUAL
+
+  CONTROLS
+
+  OCT Switches - Transpose up or down by one octave with these buttons. Tune Knob- Master tune over the oscillator's pitch. Push encoder to switch between coarse and fine tune, hold to lock tuning. PW/Detune knob - Set pulse width for Pulse outputs and waveforms with Windows
+
+  PWM Knob- Attenuator for Pulse Width (PW) Input
+
+  LIN FM knob - Attenuator for Linear FM input
+
+  EXP FM knob - Attenuverter for Exponential FM input
+
+  Windows Switch - Hold to select waveform, tap to cycle through number of windows. Left = Fewer, Right = More
+
+  Sub Oct Switch - Controls the sub oscillator. Tap to select 1 or 2 octaves down. Hold for Waveform Selection
+
+  Swarm Timbre Switch - Cycle through amount of "voices" in the supersaw swarm
+io:
+  - key: 0OQEexZq
+    name: 1V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JxByFMig
+    name: Linear FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: g68CiU1v
+    name: Exponential FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: qCW04Rje
+    name: PW Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: RtoigG1Q
+    name: Sync Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hHooQFga
+    name: Detune CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: icBW0dFv
+    name: Sine Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: T8Ee7YQg
+    name: Triangle Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: foeslEaX
+    name: Saw Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tDywQl5x
+    name: Pulse Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tQbzmrEt
+    name: Swarm Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: QrzJ6wQT
+    name: Sub Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Vib4giDQ
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

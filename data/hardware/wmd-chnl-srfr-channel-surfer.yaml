@@ -1,0 +1,112 @@
+id: cnQS_RvnlDd50Og05JHkS
+name: CHNL SRFR (Channel Surfer)
+manufacturer: wmd
+primaryCategory: channel-strip
+categories:
+  - equalizer
+  - filter
+  - effect
+  - stereo
+capabilities:
+  - equalization
+  - filter
+  - chorus
+  - flanger
+  - reverb
+  - delay
+  - gating
+url: http://www.wmdevices.com/products/channel-surfer
+prices:
+  - amount: 299
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: Channel Surfer is a 4HP Eurorack channel strip module combining EQ,
+  filter, sidechain ducking, and DJ-style performance effects for individual
+  voices, submixes, or full program material. It can connect to a Performance
+  Mixer MkII insert or be used independently via front jacks.
+details: |-
+  Channel Surfer (CHNL SRFR) is a 4HP eurorack channel strip module (EQ, Filter, Ducking, DJ Effects) for use with individual voices, submixes, or full program material. It can be used in mono or stereo and can be connected to the Performance Mixer MkII Insert header with a ribbon cable for seamless integration, or to the front jacks for independent use. Three modules in one
+
+  At the top of the module, a three-way switch lets you choose between three sets of controls, combining three processors into a compact 4HP package. The shift button doubles the number of controls, giving you access to the more 'set and forget' parameters. EQ: With the switch to the left, you have direct control over a 3-band parametric EQ with boost and cut. The shift functions let you sweep the frequency of each band to shape the incoming signal to your liking. FILTER: With the switch in the center, you have access to the filter section, which includes a low pass filter, high pass filter, and filter drive. Use these to add character to a sound, fit a busy signal into the mix, or create movement and dynamics through filtering. EFFECTS + DUCKER: With the switch to the right, the interface controls the effects section and sidechain ducker. Add performance effects like dub delay, chorus, flanger, reverb, and more. Mult your kick or any other signal into the SC input to duck the signal running through the Channel Surfer with a fixed, no-click attack, and control the amount of ducking with the lower knob. Its shift control sets the release envelope. All three sections of the module are active at all times but can be made transparent. The signal path can be bypassed with the I/O button. The signal path is serial, starting at the EQ, then running through the filters, FX, and finally the ducker. Visual feedback, extended control
+
+  Channel Surfer has an intuitive layout and interface. The LEDs match the color of the labels on the panel, reminding you which set of controls you are currently using. The LED bar on the right acts as an overall VU meter, and switches to display the value of whichever knob is currently being turned. An assignable CV input adds further movement or external control, providing instant access to a parameter at any time regardless of where the interface switch is set. Built for live performance
+
+  Three sets of controls keep the module compact while exposing only what you need to tweak live and in the moment, letting you save space in your system by replacing multiple modules dedicated to mixing and processing. For example, set the EQ, dial in the ducker, add effects, and leave the switch in the filter section for hands-on tone shaping. Presets
+
+  Save and recall settings to any of nine slots. Settings can be morphed through with CV. BUTTONS AND SWITCHES
+
+  3 BAND EQ
+
+  - MID: Level control for the mid band
+  - LOW: Level control for the low band
+
+  FILTER
+
+  - DRIVE: Amount of filter drive
+
+  JACKS
+specs: |-
+  - I/O: Bypasses all sections of the module
+  - FX SEL : Changes the current effect.
+  - PRESET: 9 user settable / recallable presets.
+  - SHIFT : Hold and press buttons or turn knobs for shift functionality.
+  - EQ, FILT, FX: Switches between the three sets of controls.
+  - HIGH: Level control for the high band - FREQ : Frequency control for the high band
+  - MID: Level control for the mid band - FREQ : Frequency control for the mid band
+  - LOW: Level control for the low band - FREQ : Frequency control for the low band
+  - LPF: Cutoff frequency for the low pass filter - RES : Resonance control for the low pass filter
+  - DRIVE: Amount of filter drive - BOOST : Adds gain to the drive control
+  - DUCK: Dedicated sidechain input for the ducker section
+  - CV: Assignable CV input
+  - IN L / IN R: Stereo input
+  - OUT L / OUT R: Stereo output
+io:
+  - key: Ooad79Ag
+    name: IN L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: K1f3JQ1E
+    name: IN R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: jDdvtU9l
+    name: OUT L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CTLTXSLv
+    name: OUT R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: suR1OBFz
+    name: DUCK
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: l1ddRpFd
+    name: CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

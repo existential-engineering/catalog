@@ -1,0 +1,199 @@
+id: grrasH5fs-AWjdnZ5z1dQ
+name: Skorpion - Waveform Reanimator
+manufacturer: wmd
+primaryCategory: modular
+categories:
+  - wavetable
+  - stereo
+capabilities:
+  - distortion
+  - stereo-widening
+url: http://www.wmdevices.com/products/skorpion-waveform-reanimator
+prices:
+  - amount: 999
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: An 8-stage analog wavefolder Eurorack module that mangles simple
+  waveforms into complex shapes using thresholds and target voltages, with
+  internal modulation sources for animating multiple parameters simultaneously.
+details: |-
+  After five years of conceptualization, development, stress, company destruction and relocation, redesign, existential questions, prototyping, and willpower, WMD's Skorpion is ready to decimate and reanimate whatever you throw at it -- creating goosebump worthy sounds you've never heard before. I am doing a single run of Skorpion via preorder only. Once they're gone, they are gone. I'm doing this so that I can personally move on to the next great idea without my head being stuck marketing the last great idea. Skorpion is the epitome of WMD's ethos, "New Sounds, Maximum Experience". Painstakingly designed UI, all the CV I/O and controls you could ask for, and a broad spectrum of subtle to 100% NOT subtle swarms of harmonics, chaos, and character. This module is packed full of features to provide continuously explorable fun whether you are experimenting or meticulously crafting a sound that is 100% yours. Skorpion builds on William's long pedigree of experimental module designs, exploring a new method of wavefolding using thresholds and target voltages to control a powerful vector core. The design process has been very technically challenging, using high speed cmos and precise analog design with hybrid digital overlay for a solid UI. Skorpion is an 8-stage analog wavefolder that allows you to precisely mangle simple waveforms into complex shapes with a fun, hands on slider interface. Taking the concept many steps further, internal modulation sources allow for macro animation of multiple parameters simultaneously, creating rich, evolving harmonic movement never heard before in hardware. Be sure to follow us on Instagram and Youtube for more information! @WMDevices. Youtube.com/WMDevices. The Controls
+
+  The SHAPE and SLOPE controls allow for smoother or harsher added harmonics, and the 1V/OCT CV input is required for tracking timbre across notes. FOLD controls the input gain of the signal, causing it to hit each of the eight THRESHOLDS causing a reversal in the output at each point. The signal can be driven towards one of three TARGETs: 5V, the Sliders, or the signal at the CLIP jack (normaled from IN ). SLOPE controls the baseline rate of the output, the higher the slope, the higher the harmonics. The overall slope rate is modified by 1V/OCT and SHAPE . SHIFT is the classical vertical shift that makes the wavefolder sound like a chorus with subtle modulation. SHAPE is a feedback control affecting the slope rate of the wavefolder. Eight different sources are available for feedback. The SYM switch decides whether the modulation is applied symmetrically when above or below 0V. OUTPUT controls what's at the output jacks, the DRY signal (CCW), the WET signal (noon), or a stereo WIDE signal (CW). The crossfade curves are intended to bring in the harmonic content smoothly. The WIDE signal is generated using a mid-side filter matrix of Low Pass (always mid) and High Pass (delayed difference as side energy). DC / FILTERs controls whether the LPF/HPF is active in the Mid/Side matrix. DC mode will delay all frequencies, and is fully DC coupled throughout. FILTERs forces frequencies below 240Hz to the mid, and frequencies above 240Hz that align through the delay to be at the MID, and frequencies above 240Hz that differ to be at the SIDE. The EQUALIZE THOLDs switch disables the sliders and forces an equally spaced threshold more akin to classic wavefolders. Modulation is disabled in this mode. Also controllable with a jack. TARGET ORDER determines which slider is selected when the threshold is activated. Basically, it allows for a different order on the way up as way down producing pleasingly different timbres when using the sliders for target. SYNC has three modes, OFF in the center. HARD which resets the vector core to 0V at every zero crossing of the input waveform. and SOFT which vectors core toward 0V at the current rate. HALT IF TARG=0 makes the vector core draw a horizontal line if the TARGET slider for that threshold is at 0 (fully down). DRY IF NO THLDs forces the TARGET control to pass the dry input signal to the core if no thresholds are active. This allows Skorpion to always pass signal. FOLD and SHIFT affect the thresholds that are activated. Put SHIFT at NOON for best results. The SLOPE will still affect the signal flowing through. ANIMATION - Sliders, Spring Action Switch, and Macro Envelope:
+
+  There are 13 total internal modulation sources. A primary MACRO ENVELOPE , eight (8) Threshold LFOs, and four (4) CV modulators that normal to the FOLD, SLOPE, SHIFT, and SHAPE attenuverters. The CV modulators can be LFOs or Envelopes. The switch rests in the center, making the sliders control the THRESHOLDs . When held to the left, the sliders set the TARGETs. When held to the right, the sliders control the MACRO SETUP detailed below. The MACRO ENVELOPE is an Attack/Sustain/Release style envelope. A gate here will start the envelope, lighting the LED blue, while the envelopes level will glow red. The times for Attack and Release are controlled in the MACRO SETUP mode by the first two sliders. The MACRO ENVELOPE modulates the amplitude of all LFOs. If the CV modulators are set as envelopes, then the gate will start the envelopes, but they otherwise operate independently. MACRO SETUP:
+
+  Parameters are modified in MACRO SETUP by holding the switch to the right and moving respective sliders. Envelope Times are shortest at the bottom of the slider and longest at the top. LFO Rates are slowest at the bottom of the slider and fastest at the top. Fold, Slope, Shift, and Shape modulation can be either an LFO or an Envelope. To change modes:
+
+  LFOs can be disabled by moving the slider to the bottom. Envelopes can not be disabled. Input jacks not yet mentioned:
+
+  CLIP this signal goes to the TARGET control, and is the destination voltage. Use another waveform here to overlay/interleave something different than the input waveform. TRGT MOD always modulates the TARGET regardless of the pot setting. The SYM switch controls whether the waveform is applied symmetrically or asymmetrically. THLDS/ applies weighted CV to all THRESHOLDS . Meaning the CV is 100% for THLD8, 50% for THLD7, 25% for THLD6, etc. THLD 1 applies CV just to THRESHOLD 1 . TRGTs applies CV to all TARGETS equally. HALT stops the vector core from changing voltage. It has a normal from the HALT IF TARG=0 switch. Output jacks not yet mentioned:
+
+  ABS(IN) is a full wave rectifier, outputting the positive only version of the IN signal. G(IN>0) outputs a gate if the input signal is positive. TRGTs outputs the chosen TARGET from the sliders. DIFF outputs the vector core's difference between target and current voltage. +-G(DIR) outputs a +5V signal if the vector core is going positive, and a -5V signal if the core is going negative. COUNT/ outputs a staircase waveform of the number of active THRESHOLDS . DAC outputs a weighted staircase (R2R network) of the number of active THRESHOLDS . DELAY is a raw output of the delayed vector core
+
+  OUT L and OUT R are stereo main outputs.
+specs: |-
+  - Macro Envelope's Attack Time
+  - Macro Envelope's Release Time
+  - Threshold LFO Amount
+  - Threshold LFO Rates
+  - Fold LFO/ENV Rate/Time - CV(5)
+  - Slope LFO/ENV Rate/Time - CV(6)
+  - Shift LFO/ENV Rate/Time - CV(7)
+  - Shape LFO/ENV Rate/Time - CV(8)
+  - ENV: Hit the bottom then the top within 0.5 seconds.
+  - LFO: Hit the top then the bottom within 0.5 seconds.
+io:
+  - key: jNz2e2Ea
+    name: IN
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8U31k7kq
+    name: 1V/OCT
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: lnvtSRxh
+    name: CLIP
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Df54ZD3J
+    name: TRGT MOD
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BINrUIym
+    name: THLDS/
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KLGJ2jAa
+    name: THLD 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: NJ4F8fW1
+    name: TRGTs In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: RsgWGbjv
+    name: HALT
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: j6uDuf4F
+    name: ABS(IN)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: LkNUDrzk
+    name: G(IN>0)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wLMkpLZm
+    name: TRGTs Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3DiuHrUI
+    name: DIFF
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: j2RkI2bk
+    name: +-G(DIR)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: HeUrcpg4
+    name: COUNT/
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: YYp7Y8Ba
+    name: DAC
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: syUlGb6t
+    name: DELAY
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nJPX9YhV
+    name: OUT L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: jeokdlYs
+    name: OUT R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: IwXdHRak
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
