@@ -1,5 +1,26 @@
 # catalog
 
+## 3.62.0
+
+### Minor Changes
+
+- a190e1e: Import Polyend (18 hardware/accessory entries).
+
+  Current groovebox and tracker lineup (Tracker, Tracker+, Tracker Mini,
+  Tracker Mini Aluminum, Tracker Silver Edition, Play, Play+, Synth,
+  Drums), the pedal line (Endless, Mess, Step, Press), and five
+  Polyend-branded accessories (Hard Case, Power Supply, MIDI Jack to DIN
+  Adapter, Stereo Jack Adapter, USB-C Cable).
+
+### Patch Changes
+
+- b19e73c: Refresh ODDSound: 0 new, 0 discontinued, 3 updated.
+
+  MR Editor, MTS-ESP Mini and MTS-ESP Suite now carry the descriptions,
+  overviews and feature lists published on oddsound.com. MR Editor is
+  recategorised from MIDI effect to utility, which is what a sound editor
+  and librarian for Ensoniq MR hardware actually is.
+
 ## 3.61.0
 
 ### Minor Changes
