@@ -1,0 +1,138 @@
+id: gUVzE--ow7J5sMygHebDr
+name: Minimal Series MIDI Input Selector
+manufacturer: one-control
+primaryCategory: routing
+categories:
+  - midi
+  - pedal
+url: https://one-control.com/products/oc-m-mis
+prices:
+  - amount: 137.99
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A passive true-bypass input selector that switches between two
+  instruments via footswitch or MIDI, and can be reversed to act as a stereo A/B
+  box.
+details: |-
+  This compact yet powerful device allows you to seamlessly switch between two instruments such as guitars, stereo synthesizers, or other line-level gear using either a foot switch or MIDI control. Because of its passive true-bypass design, it can also function as a stereo A/B box when connected in reverse. Features:
+
+  Switch between two input sources via foot switch or MIDI
+
+  Stereo or mono compatible with full stereo input and output
+
+  Can be used as an AB box when connected in reverse
+
+  Two foot switch operation modes: Standard and Flash
+
+  MIDI PC and CC control with selectable MIDI channel via DIP switch
+
+  Compact and lightweight design for easy integration into pedalboards
+
+  Front Panel and Connections:
+
+  Inputs A and B: Connect your instruments or signal sources
+
+  Output: Connect to your amplifier, audio interface, or other gear (can be reversed for AB box use)
+
+  Foot Switch: Switches between input sources
+
+  LED Indicator: Red for Standard mode, White for Flash mode
+
+  MIDI In: Accepts MIDI signals for remote switching
+
+  Operation:
+
+  Foot Switch Modes
+
+  Standard Mode (LED Red):
+  Press the foot switch once to toggle between Input A and Input B
+
+  Flash Mode (LED White):
+  Input switches only while the foot switch is held down. Releasing the foot switch returns to the original input
+
+  Switching Between Foot Switch Modes
+
+  ・From Standard to Flash Mode:
+
+  ・From Flash to Standard Mode:
+
+  MIDI Control
+
+  MIDI Channel Selection:
+
+  Use the DIP switch on the side to select the desired channel. When power is connected, the LED flashes the number of the currently set channel
+
+  MIDI Program Change (PC):
+  PC number 0 selects Input A, PC number 1 selects Input B
+
+  MIDI Control Change (CC):
+  CC number 102 with values 0 to 63 selects Input A. Values 64 to 127 select Input B
+
+  Note:
+
+  MIDI PC and CC numbers range from 0 to 127. Some devices label PC numbers as 1 to 128. In that case, increase the PC number by one
+
+  Technical Specifications:
+
+  Current Consumption: 60 mA
+
+  Dimensions: 35 × 48 × 98 mm
+
+  Weight: 127 g
+
+  Tips for Best Use:
+
+  To use as a stereo AB box, reverse the input and output connections. Always check the LED indicator to confirm the current mode (Standard red, Flash white). For stable MIDI operation, ensure your sending device is set to the correct channel and number format. Safety and Handling:
+
+  Use only with a proper power supply adapter. Do not expose to moisture, extreme heat, or strong impact. Disconnect the power supply when switching operation modes. ・ Minimal Series MIDI Input Selector Manual.pdf
+
+  Promotional Pictures（for dealers）
+  2000pix×2000pix 350dpi
+specs: |-
+  - Power on the unit and select an input while not pressing the foot switch in Flash mode
+  - Turn off the power by removing the adapter
+  - Reconnect the adapter while holding the foot switch until the LED turns white
+  - Turn off the power by removing the adapter
+  - Reconnect the adapter while holding the foot switch until the LED turns red
+io:
+  - key: FlSuIfWI
+    name: Input A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: J1KaSc9k
+    name: Input B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: PdOx3zJt
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 0jxfIhRa
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: NvMWanLD
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
