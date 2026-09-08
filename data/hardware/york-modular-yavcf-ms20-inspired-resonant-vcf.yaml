@@ -1,0 +1,53 @@
+id: JKFtj0B9l76BYONoWhbHB
+name: "YaVCF: MS20-inspired resonant VCF"
+manufacturer: york-modular
+primaryCategory: filter
+categories:
+  - modular
+  - vintage
+capabilities:
+  - filter
+url: https://yorkmodular.com/products/yavcf-ms20-inspired-resonant-vcf-4hp-updated-version
+prices:
+  - amount: 39.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: An MS20-inspired resonant voltage-controlled filter built around an
+  LM13700 transconductance amplifier, using LEDs in the feedback path, with
+  separate low-pass and high-pass inputs.
+details: |-
+  An updated version of the updated MS20-style filter module - functionally the same as its predecessors but now quite a bit cheaper. As one of my 'high turnover' modules (ie. I sell a lot of 'em) the bulk of the assembly is now handled by the board fabricators with the final assembly and testing taking place 'in house'. There are several advantages to this: first, I can take advantage of the fact that parts from the fabricator are very cheap (economies of scale etc.) and second, I spend far less time faffing around with surface-mount components, leaving me to do final fitting of any through-hole parts plus any testing. This is a redesigned version of the old 4HP module which is a bit friendlier for those who insist on running ludicrously shallow cases. As a result, the module is now 4HP wide and only 15mm deep. Built around an LM13700 transconductance amplifier, this filter uses a pair of red LEDs in the feedback path (rather than the string of diodes in the original Korg design) to make things a little more ... interesting, but other than that it's a straight-up lifting of the classic MS20 design. Has both low-pass and high-pass inputs, which should be pretty self-explanatory and there's nothing at all to stop you using them both together if you want a freaky bandpass response. 4HP
+io:
+  - key: L3deRBha
+    name: Low-pass In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: aB4S2eQ8
+    name: High-pass In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ACvIn5dx
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: RuIp8AEQ
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

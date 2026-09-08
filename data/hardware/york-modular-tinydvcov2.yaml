@@ -1,0 +1,57 @@
+id: usdgpqbBl5ilMtyYQpr-i
+name: TinyDVCOv2
+manufacturer: york-modular
+primaryCategory: synthesizer
+categories:
+  - digital
+  - wavetable
+  - modular
+hp: 2
+url: https://yorkmodular.com/products/tinydvcov2-avr-based-wavetable-digital-vco-2hp-updated-design
+prices:
+  - amount: 32.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A microcontroller-based digital VCO in a 2HP form factor, offering
+  pitch CV input, filtered and unfiltered PWM waveform outputs, and waveform
+  selection.
+details: |-
+  A VCO, albeit a microcontroller-based one, in 2HP? Yes indeed. Obviously, given the limitations of the 2HP form factor you're not going to find huge amounts of functionality - there's an input for pitch CV and an output for the PWM filtered waveform, plus pots for pitch CV attenuation and waveform selection. This iteration adds an output jack for the unfiltered PWM signal, which is more useful than it sounds. The PWM output is a 5V square wave which means it's extremely amenable to feeding into things like logic modules, clock dividers, filters (even something as simple as a 1-pole RC filter) and suchlike to create even weirder sounds or rhythms. Despite the 2HP form-factor I've decided to stick with a through-hole microcontroller - experience has shown me that SMD microcontrollers aren't a great idea if you're a tinkerer or flash the firmware a lot (in fact, they're a massive pain in the backside to program in-situ). Most of the other components are surface-mount in order to keep costs down whilst still allowing repairability
+
+  The oscillator has a range of around 5 octaves, but be aware that the V/oct tracking will not be perfect - this is due to the limitations of using the internal clock on the microcontroller plus a 10-bit DAC. You can get round this if you're willing to tinker with the firmware. Works best with a sequencer, and as supplied the base frequency is around 32Hz. The firmware is made available under a permissive license and you are positively encouraged to do interesting things with it. The same firmware will run without modification on the original TinyDVCO
+
+  The firmware source can be found here: https://github.com/yorkmodular/tinydvco 🔗
+io:
+  - key: ASnpruyX
+    name: Pitch CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rwNK36ml
+    name: Filtered Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: mmxM25WI
+    name: Unfiltered PWM Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tIhJQMxA
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,55 @@
+id: Pibym26vOLRJMwZC77CTP
+name: "SEQ8.2: PCB/panel set"
+manufacturer: york-modular
+primaryCategory: sequencer
+categories:
+  - modular
+capabilities:
+  - sequencing
+url: https://yorkmodular.com/products/seq8-2-8-step-cv-sequencer-with-reset-6hp-pcb-panel
+description: A DIY PCB/panel set for the SEQ8.2 sequencer module with
+  surface-mount components pre-soldered, requiring the builder to add
+  through-hole components.
+details: |-
+  This is a PCB/panel set for the SEQ8.2 sequencer module. All surface-mount components have been pre-soldered - it is up to you to provide the necessary through-hole componentry to complete the build.
+specs: |-
+  - 1x Eurorack power header (2x5) 🔗 - the chevron on the silkscreen corresponds to -12V
+  - 8x Alpha RK097N pots (or compatible) - 50k linear taper recommended.
+  - 3x PJ301M-12 (aka THONKICONN) jacks (or compatible)
+  - 8x 3mm LEDs - I recommend Vishay TLHR4400 🔗 LEDs, as they have a voltage drop of only 2V. The reference designator is placed on the ground side of the LED footprint.
+  - 8x knobs to suit - micro-knobs will be your best bet. Davies-style knobs will fit, but clearance will be extremely tight. Anything with a diameter of over 13mm plain won't work.
+  - An 8 or 9-volt TO-92 voltage regulator (7808/7809) 🔗 - assuming you use red LEDs this will give you a working voltage range of around 0-6V.
+  - Power cable and mounting hardware (M3x6 machine screws will suffice)
+io:
+  - key: 2GqEwndd
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: IKzlZcA0
+    name: Jack 1
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AogSWotO
+    name: Jack 2
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FIZk8IgB
+    name: Jack 3
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

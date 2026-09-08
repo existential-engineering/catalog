@@ -1,0 +1,60 @@
+id: LpyYHWUWmZBCi5D7jzp-l
+name: AVR wavetable DVCO firmware IC
+manufacturer: york-modular
+primaryCategory: synthesizer
+categories:
+  - digital
+  - modular
+url: https://yorkmodular.com/products/avr-wavetable-dvco-firmware
+prices:
+  - amount: 5.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A pre-flashed ATTiny85 microcontroller loaded with
+  voltage-controlled oscillator firmware that outputs a PWM waveform with
+  voltage-selected waveforms, intended for DIY synth builds.
+details: |-
+  A firmware IC for the TinyDVCO, for those who want to roll their own - although the source code is readily available, some people lack the skill or inclination to burn their own firmware ICs. For those people, we've got you covered. The stock firmware is fairly simple - a voltage controlled oscillator with voltage-selected waveforms. The output is a PWM waveform which will need to be filtered - a simple RC low-pass filter (1k/100nF) does the job, but feel free experiment. The firmware is flashed to a through-hole (DIP-8) ATTiny85 microcontroller, which can also be used as part of a breadboard layout. The IC pinouts are as follows:
+
+  Pins 5 and 7 are unused - if you're mucking around with the firmware then you can use these for whatever you like (or not at all). The source code for this firmware is available on GitHub: https://github.com/yorkmodular/tinydvco 🔗
+specs: |-
+  - Pin 1: RESET - connect to VCC via a 10k resistor
+  - Pin 2: WAVE - Waveform selection CV (0-5V)
+  - Pin 3: CV - pitch control voltage (input)
+  - Pin 4: GND
+  - Pin 6: PWM output (output)
+  - Pin 8: VCC (5.5V absolute max)
+io:
+  - key: XGwhhx7j
+    name: CV pitch input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - key: FYTDP8EE
+    name: Waveform CV input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - key: 5FBqjC4r
+    name: PWM output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - key: wfrFOqfs
+    name: VCC
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,60 @@
+id: gebFlLT81SqwuLaIfpVNK
+name: Diode ladder VCF (6HP)
+manufacturer: york-modular
+primaryCategory: filter
+categories:
+  - modular
+capabilities:
+  - filter
+url: https://yorkmodular.com/products/diode-ladder-vcf-6hp
+prices:
+  - amount: 39.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A voltage-controlled diode-ladder filter Eurorack module with
+  voltage-controlled cutoff and resonance, offering a gnarly, characterful
+  filter response.
+details: |-
+  An updated version of my old diode-ladder filter - now shrinkified so that it fits into 6HP rather than 8HP. It is, as it's name suggests, a filter which utilises a ladder of diodes and capacitors to work its magic. It's surprisingly versatile, and with voltage-controlled resonance as well as cutoff you can make this sound as gnarly as you like. Or not. There are two trimmer pots on the rear of the board which you can use to adjust the response of the filter. The CV trim will be pre-adjusted so that with the cutoff pot fully counter-clockwise there'll be nothing passing through the filter. There's also a V/octave trimmer which you can use to alter the cutoff CV response - I generally leave this alone but you can fiddle with it to your heart's content. If you want something potentially nasty sounding then this could be for you - if you'd prefer something more mellow then the state-variable or YaVCF filters may be a better fit; they're all based around the LM13700 dual OTA but have slightly different topologies. This initial run will be pre-built only, but I plan to offer partial builds starting with the next board run.
+io:
+  - key: Ku0nxUf6
+    name: Signal input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: R9Rlpr7P
+    name: Cutoff CV input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: B1wupBSx
+    name: Resonance CV input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: oWcd8WZH
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: d7FUt1r4
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

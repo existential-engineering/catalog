@@ -1,0 +1,90 @@
+id: zBYQDKtAw5HDUeyoTC8As
+name: "DVDR: Power-of-two clock divider (4HP)"
+manufacturer: york-modular
+primaryCategory: sequencer
+categories:
+  - modular
+url: https://yorkmodular.com/products/dvdr-power-of-two-clock-divider-4hp
+prices:
+  - amount: 34.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack clock divider module that divides an incoming clock
+  signal into power-of-two ratios from /2 down to /64, with clock and reset
+  inputs.
+details: |-
+  An updated version of old DIV2 divider module - functionally the same as its predecessors but now quite a bit cheaper. As one of my 'high turnover' modules (ie. I sell a lot of 'em) the bulk of the assembly is now handled by the board fabricators with the final assembly and testing taking place 'in house'. There are several advantages to this: first, I can take advantage of the fact that parts from the fabricator are very cheap (economies of scale etc.) and second, I spend far less time faffing around with surface-mount components, leaving me to do final fitting of any through-hole parts plus any testing. Basically, this module will divide a clock signal into a number of power-of-two ratios from /2 down to /64 - handy for triggering multiple modules at different tempos. The on-board IC will handle divisions down to /2048 (!) but if you want to take advantage of this you'll either need to break out the soldering iron or buy two modules and cascade them together. Note that because the CD4040 chip triggers on a falling, rather than rising, edge the 'reset on power-up' dodge I use with the sequencers won't work (trust me, I tried) and the modules will power up in an 'indeterminate' state. This is easily remedied by toggling the reset input on power up - of course you can also do this any time during a performance too. Despite this, in regular use, inputs to either the clock or reset lines (or both) will cause the chip to trigger on a rising signal, meaning your divided signals won't be out of whack with your master clock. 4HP wide
+io:
+  - key: lEFwnAZ7
+    name: Clock input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: opAv9Ico
+    name: Reset input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 9TDf5jNx
+    name: /2 output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: mEp3QQuA
+    name: /4 output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: afkaLboI
+    name: /8 output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: gPno2aOD
+    name: /16 output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: PLpbGB35
+    name: /32 output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: AhUh4z0Z
+    name: /64 output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: tfSktrbe
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

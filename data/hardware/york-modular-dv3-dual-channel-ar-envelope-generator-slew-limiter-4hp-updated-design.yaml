@@ -1,0 +1,58 @@
+id: l6-uH3WjjrWP0JebMqqm8
+name: "DV3: Dual-channel AR envelope generator/slew limiter (4HP - updated design)"
+manufacturer: york-modular
+primaryCategory: envelope-filter
+categories:
+  - modular
+url: https://yorkmodular.com/products/dv3-dual-channel-ar-envelope-generator-slew-limiter-4hp-updated-design
+prices:
+  - amount: 32.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A dual-channel attack-release envelope generator and slew limiter
+  Eurorack module with independent attack and release controls per channel,
+  useful for percussion patches or slewing sequenced voltages.
+details: |-
+  An updated version of the venerable DV3 module - functionally the same as its predecessors but now quite a bit cheaper. As one of my 'high turnover' modules (ie. I sell a lot of 'em) the bulk of the assembly is now handled by the board fabricators with the final assembly and testing taking place 'in house'. There are several advantages to this: first, I can take advantage of the fact that parts from the fabricator are very cheap (economies of scale etc.) and second, I spend far less time faffing around with surface-mount components, leaving me to do final fitting of any through-hole parts plus any testing. Functionally, it's the same as it ever was: two separate channels with independent attack and release controls; use it as an envelope generator and run it into a VCA, or in combination with a sequencer and a VCO/filter as a slew limiter. It may not be as fancy as a full-fat ADSR generator but it's very useful for percussion patches, which was its original design purpose. 4HP wide.
+io:
+  - key: qWPQ3VtT
+    name: Channel 1 trigger input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fayWeeTt
+    name: Channel 1 envelope output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FTeEBeGl
+    name: Channel 2 trigger input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0miJjKVP
+    name: Channel 2 envelope output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Wlc9VFYo
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

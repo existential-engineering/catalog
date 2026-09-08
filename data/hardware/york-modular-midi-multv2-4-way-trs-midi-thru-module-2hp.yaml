@@ -1,0 +1,70 @@
+id: rDSzj4SnZAkFjy6sNNydT
+name: "MIDI-MULTv2: 4-way TRS MIDI thru module (2HP)"
+manufacturer: york-modular
+primaryCategory: midi
+categories:
+  - modular
+url: https://yorkmodular.com/products/midi-multv2-4-way-trs-midi-thru-module-2hp
+prices:
+  - amount: 29.99
+    currency: GBP
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack MIDI thru module using Type A TRS MIDI connections that
+  mirrors input MIDI data to four outputs, acting as a buffered multiple for
+  MIDI signals.
+details: |-
+  IMPORTANT: This module uses Type A MIDI TRS connections - this is used by the likes of Korg, Akai and others, and is the adopted standard for MIDI over TRS. If you are unsure which standard your gear supports you can find an incomplete list at https://minimidi.world/ 🔗 - there are currently no plans to support Type B or TS connections, since I have no suitable gear to test them with. A 4-way MIDI THRU module to allow you to control your MIDI gear from your modular setup (or vice versa); think of it as a buffered multiple, but for MIDI data. This is the replacement for the old, 4HP module - the move to 2HP and the corresponding reduction in available space means that I had to remove two output channels (but on the other hand, buy two and you've potentially got a 7-way mult)
+
+  Any data presented at the input is mirrored to each of the outputs, and since this is a 'dumb' module there is no capability for fancy routing or filtering (I'll have other modules for that, eventually)
+
+  This module has a working voltage of 5V , so make sure that anything you plan to connect to the module is 5V tolerant (most gear is, but it's worth checking beforehand). Should you require a module that runs at 3.3V, contact me in the first instance and we can sort something out. 2HP wide - supplied with power cable.
+io:
+  - key: 35oxfl2Z
+    name: MIDI input
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ZVfBqEj4
+    name: MIDI output 1
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: kfsOBjAQ
+    name: MIDI output 2
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: pxkU27m5
+    name: MIDI output 3
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: LPQBmRyW
+    name: MIDI output 4
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: KOqKKdWx
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
