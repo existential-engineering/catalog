@@ -19,26 +19,46 @@ prices:
     currency: USD
 description: Wider is a unique stereo "mono-compatible" plugin. Any signal that has been extended will always remain in phase, even if summed to mono.
 details: |-
-  Increase stereo image up to 200% on mono signals
-  Full mono compatibility — no phase cancellation when summed to mono
-  Low-frequency bypass option (v2.0)
-  Mono compatibility checker button (v2.0)
-  Single, intuitive knob interface
-  Developed in collaboration with Infected Mushroom
-  Also available as Wider 1.0 for iPhone and iPad
+  Wider is a pseudo stereo widener that gives a mono signal the illusion of an expanded stereo image, up to 200% of full stereo. It is mono compatible, so a widened signal stays in phase with itself and the effect cancels itself out when the signal is summed back to mono.
+
+  The width comes from an all-pass and comb filtering algorithm, which is intended to avoid the phase cancellation that other stereo effects introduce when a track is folded down to mono.
+
+  Version 2.0 adds two controls. Low frequencies can be excluded from the expansion so the side information below a chosen frequency stays intact, and a mono button checks how the widened signal sounds when summed.
+
+  The effect began as the stereo section of Polyverse's Manipulator and was developed in collaboration with the electronic music duo Infected Mushroom.
+
+  Wider is distributed at no cost in VST2, VST3, AU and AAX formats, for Windows 64 bit and OSX 10.9 or later 64 bit. Wider 1.0 is still available for iPhone and iPad.
 specs: |-
-  - macOS 10.9+ 64-bit
-  - Mobile: Wider 1.0 for iPhone and iPad (iOS App Store)
+  - Increase the stereo image of any mono signal by up to 200%
+  - Maintains full mono compatibility
+  - Bypass low frequencies from the effect
+  - Mono compatibility check button
+  - All-pass and comb filtering algorithm
+  - Effect cancels itself out when summed to mono
+  - Supports VST2, VST3, AU and AAX plug-in formats
+  - For Windows 64bit and OSX 10.9+ 64bit
+  - Wider 1.0 is still available for iPhone and iPad
+versions:
+  - name: "2.0"
+    description: Desktop release for Windows and macOS. Adds exclusion of low frequencies from the expansion and a mono compatibility check button.
+  - name: "1.0"
+    description: Still available for iPhone and iPad.
 videos:
   - provider: youtube
     videoId: YC30nR0P608
+    title: Wider
   - provider: youtube
     videoId: OaGRhdFRGcA
+    title: The Best Free Stereo Widener
   - provider: youtube
     videoId: ByOP3-29lEc
+    title: In-Phase Stereo Plugin
   - provider: youtube
     videoId: e94PmL119eg
+    title: Wider deep dive
   - provider: youtube
     videoId: _-5RbZQmhzc
+    title: Wider On Reverb Bus
   - provider: youtube
-    videoId: "-yDfHa-pnAQ"
+    videoId: -yDfHa-pnAQ
+    title: Wider 1.0 for iOS and iPad
