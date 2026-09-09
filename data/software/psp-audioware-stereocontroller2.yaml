@@ -19,14 +19,39 @@ prices:
     currency: USD
 description: A correction tool designed to control, adjust, and rescue incorrectly recorded dual channel stereo tracks, or process them for specialized applications. Features up to 2ms delay to repair microphone distance mismatches, width expansion up to 400%, master gain control, low/high frequency dedicated controls, M-S decoder, polarity switches, channel swap, and correlation and balance meters. Supports sample rates up to 384 kHz.
 details: |-
-  PSP stereoController2 provides up to 2ms delay (repairs ~68cm microphone distance mismatch), width expansion up to 400%, master gain control +-12dB, dedicated low and high frequency controls, M-S decoder, polarity switches and channel swap, and correlation and balance meters. Requires free iLok user ID and iLok License Manager. Supports 3 activation locations.
+  PSP stereoController2 is designed to control, adjust, and rescue incorrectly recorded dual channel stereo tracks, or process them for specialized applications or cool sonic tricks.
+
+  PSP stereoController2 can be used in various situations. It corrects an unbalanced stereo image caused by a level difference between channels, e.g. in dual microphone stereo recordings, and a slight time alignment shift between channels. It adjusts a track's stereo image when it is too narrow or too wide for the mix, and repositions a center instrument that seems to be shifted to one side. It can virtually emulate an instrument's location in the soundfield via combined level and delay panning, correct one or both channels having reversed polarity or the channels being swapped, and decode a Mid-Side (M-S) encoded track into L/R stereo. It reduces the stereo width of low frequencies, or makes them mono, for proper speaker or subwoofer replay or for reliably cutting vinyl, widens stereo width of high frequencies for more 'airy' harmonics and spaciousness, and allows fine adjustment of stereo imaging during the mastering process.
+
+  PSP stereoController2 focuses on addressing mic placement issues, incorrect panning, and left-right balance problems in stereo recordings. It gives you precise control over inter-channel delay, center-position panning, side signal balance, and full stereo width. It is designed for post-recording stereo correction, features Low and High section controls for width and gain, and is ideal for fixing mic setups, rebalancing panned instruments, and mastering work.
+
+  Although both plugins deal with stereo image control, PSP stereoController2 and PSP stereoAligner2 are built for different purposes and complement each other in a professional audio workflow. While there's some overlap in delay, balance, and width controls, each plugin serves a unique role: use stereoAligner2 when you're working with phase-sensitive stereo material or need multi-band spatial precision and creativity, and use stereoController2 for practical stereo fixes, mic correction, and mastering-focused balance and width shaping.
+
+  In order to run PSP stereoController2 in 30-day trial mode or activate it, you need an iLok user ID which you can create for free at www.ilok.com, and you need to install the free iLok License Manager application but you don't need any hardware dongle. You can activate the license in 3 separate locations, each of which can be either a computer or an iLok dongle (2nd generation or above). You can move these licenses at any time using PACE's iLok License Manager software.
 specs: |-
-  - Platforms: macOS (Intel and Apple Silicon, 10.14-15, 64-bit), Windows 7-11 (64-bit)
-  - Formats: AU, VST2, VST3, AAX
-  - Max delay: 2ms
-  - Width range: 0-400%
-  - Master gain: +-12dB
-  - Supported sample rates: up to 384 kHz
-  - Licensing: iLok (3 activations, no dongle required)
+  - High quality signal processing algorithms
+  - Up to 2 ms of delay - can repair up to ~68 cm / 2 ft of distance mismatch between mics
+  - Width expansion up to 400% for narrowly recorded stereo tracks
+  - Master gain control up to ±12dB
+  - Optional dedicated width and gain controls for Low and/or High frequencies
+  - Low and High band gain control up to ±6dB
+  - Stability (sides) balance control without affecting the center content localization
+  - Center control to adjust the panorama location of the center content
+  - Standard balance control of channels
+  - M-S decoder
+  - Output monitoring and solo capability for Mid and Side signals
+  - Channel swap
+  - Polarity switches for both channels
+  - Correlation meter
+  - Balance meter
+  - Dedicated sections for Low and High frequency level and width control
+  - Parameter filtering for smooth and click-free parameter adjustment
+  - Support for sample rates up to 384 kHz
+  - Windows 7 - Windows 11 (VST, VST3, AAX, 64-bit)
+  - macOS 10.14 - macOS Tahoe, Intel or Silicon (AudioUnit, VST, VST3, AAX, 64-bit)
+  - iLok License Manager required (no hardware dongle needed), license activatable in 3 locations
 versions:
   - name: 2.0.2
+videos:
+  - videoId: 891kt9CbpKA
+    provider: youtube
