@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Roswell Pro Audio (21 hardware/software entries).
+Import Roswell Pro Audio (24 hardware and accessory entries).

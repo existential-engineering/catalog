@@ -18,7 +18,15 @@ details: |-
   The Mini K87 is a neutrally-voiced studio condenser microphone that has won acclaim on sources as diverse as vocals, brass, piano, bass cab, and drum overheads. The mic uses our exclusive K87 capsule and a tuned, transformerless circuit to create a wide bandwidth, very smooth frequency response with low distortion. Each Mini K87 is individually hand tuned in our shop to match the frequency response of the "gold master" Mini K87. The frequency response at 9-10kHz is within 1dB of the response at 1kHz, creating a neutral sound without high-frequency hype. We match Mini K87s to 0.5dB in sensitivity (measured at 1kHz), and 1.5dB (or better) in frequency response, 50Hz–15kHz. Acoustic testing is done at Roswell HQ in northern California. The matching procedure uses a calibrated, proprietary low-diffraction speaker to produce a swept sine wave, which we record with each Mini K87 to measure both sensitivity and frequency response. Each microphone is also auditioned by Roswell staff as a part of our rigorous QC process. Each microphone includes our exclusive Cutaway metal-frame shockmount (with spare elastics). Matched pairs ship in a single stereo-pair aluminum flightcase, which holds two microphones and two shockmounts. Custom Shop
 io:
   - key: k12m46cp
-    name: Audio Output
+    name: Audio Output 1
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: HcaFBq8C
+    name: Audio Output 2
     signalFlow: output
     category: audio
     type: mic
@@ -26,7 +34,15 @@ io:
     maxConnections: 1
     position: Right
   - key: 9cLmQ6Vx
-    name: Power Input
+    name: Power Input 1
+    signalFlow: input
+    category: power
+    type: power
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: xyzjxHmo
+    name: Power Input 2
     signalFlow: input
     category: power
     type: power

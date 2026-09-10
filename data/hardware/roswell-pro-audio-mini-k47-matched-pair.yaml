@@ -21,7 +21,15 @@ details: |-
   We match Mini K47s to 0.5dB in sensitivity (measured at 1kHz), and about 1.5dB in frequency response, 50Hz–15kHz. All soldering, assembly, voicing, and testing is done at Roswell HQ in northern California. The matching procedure uses a calibrated, proprietary low-diffraction speaker to produce a swept sine wave, which we record with each Mini K47 to measure both sensitivity and frequency response. Each microphone is also auditioned by Roswell staff as a part of our rigorous QC process. Each microphone includes our exclusive Cutaway metal-frame shockmount (with spare elastics). Matched pairs ship in a single stereo-pair aluminum flightcase, which holds two microphones and two shockmounts. While these were designed for studio use, a pair has toured the world with Little Feat since late 2021. The robust build quality effortlessly stands up to the abuses of road life. Custom Shop
 io:
   - key: AM2F3xdi
-    name: Audio Output
+    name: Audio Output 1
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: QfyH5VNT
+    name: Audio Output 2
     signalFlow: output
     category: audio
     type: mic
@@ -29,7 +37,15 @@ io:
     maxConnections: 1
     position: Right
   - key: 2Uriwyul
-    name: Power Input
+    name: Power Input 1
+    signalFlow: input
+    category: power
+    type: power
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: neONEzgo
+    name: Power Input 2
     signalFlow: input
     category: power
     type: power

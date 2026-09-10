@@ -31,7 +31,15 @@ specs: |-
   - Low-noise circuit with fast, clean transient response : we chose a neutrally voiced circuit topology to capture ambient sound with high resolution and fidelity. Because room tracks are often heavily compressed, we opted to reduce circuit distortion as much as possible.
 io:
   - key: PGIrKjIG
-    name: Audio Output
+    name: Audio Output 1
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: y7d6Kvwb
+    name: Audio Output 2
     signalFlow: output
     category: audio
     type: mic
@@ -39,7 +47,15 @@ io:
     maxConnections: 1
     position: Right
   - key: SU0crBTn
-    name: Power Input
+    name: Power Input 1
+    signalFlow: input
+    category: power
+    type: power
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: ARkFzsdJ
+    name: Power Input 2
     signalFlow: input
     category: power
     type: power
