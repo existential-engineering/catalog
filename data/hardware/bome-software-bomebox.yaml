@@ -3,41 +3,37 @@ name: BomeBox
 manufacturer: bome-software
 primaryCategory: midi-controller
 url: https://www.bome.com/products/bomebox
-description: The BomeBox is the solution for connecting and mapping devices via
-  MIDI, Ethernet, Wifi, and USB (without the need of a computer).
-details: |-
-  The bomebox can run basic or complex mappings and scripts on the MIDI data in
-  realtime: load and execute bome MIDI translator pro project files for all your
-  MIDI needs (the editor bome MIDI translator pro is sold separately).
-
-  Quick set-up in the web config via tablet, smartphone, or computer. Create
-  long distance MIDI connections via Ethernet. MIDI networking: centralized
-  access to all MIDI devices connected to the Ethernet network.
-
-  Wireless MIDI connections via built-in Wifi. Wifi works as hotspot, hub, or
-  client. Connects to windows, macos, ios, ipados, linux, and raspberry pi using
-  Ethernet or Wifi (free bome network tool).
-
-  Unlimited mappings/splits/scenes/conditional routing and MIDI processing with
-  built-in MIDI translator pro engine. Use USB qwerty keyboards and map to MIDI
-  (since firmware v1.3). Pass on poe and MIDI connections using poe out port.
-specs: |-
-  - MIDI-din: 1x input, 1x output
-  - USB host type a
-  - Built-in MIDI router
-  - Ethernet connectivity
-  - 2-port Ethernet switch
-  - Wifi connectivity
-  - Power-over-Ethernet (poe) with 48v
-  - 5v micro-USB power supply
-  - Built-in MIDI translator pro engine
-  - USB qwerty keyboard mapping
-  - Allen & heath dlive, gld, qu, sq, and ilive mixer support
-  - Robust reinforced abs case
-  - 180g / 6.3oz weight
 prices:
   - amount: 245
     currency: USD
+description: The BomeBox is the solution for connecting and mapping MIDI devices via MIDI DIN, USB, Ethernet, and WiFi (without the need of a computer).
+details: |-
+  The BomeBox is a standalone MIDI hub for stage and studio. It cross-connects USB-MIDI devices (powered by the BomeBox), MIDI 5-pin DIN gear, other BomeBoxes, computers, iPhones, and iPads, with no computer required in the signal path. The case is robust, reinforced ABS, and the unit is small and light at 180g / 6.3oz.
+
+  A built-in MIDI router provides an unlimited virtual MIDI patch bay: arbitrary MIDI Thru connections (routes) can be defined from and to every connected MIDI device. Set-up is done in the web config, reached from any tablet, smartphone, or computer connected to the BomeBox' built-in WiFi via a standard browser such as Safari, Chrome, or Firefox.
+
+  The BomeBox can run MIDI mappings, MIDI logic, and MIDI scripts in realtime by loading Bome MIDI Translator Pro project files, giving unlimited mappings, splits, scenes, conditional routing and MIDI processing through the built-in MIDI Translator Pro engine (the editor software Bome MIDI Translator Pro is sold separately). Since firmware v1.3 a USB QWERTY keyboard can be attached and mapped to MIDI.
+
+  Ethernet creates long-distance MIDI connections and MIDI networking, giving centralized access to all MIDI devices connected to the Ethernet network. A built-in 2-port Ethernet switch and the free Bome Network tool connect the BomeBox to Windows, macOS, iOS, iPadOS, Linux, and Raspberry Pi over Ethernet or WiFi. Wireless MIDI runs over the built-in WiFi, which works as a hotspot, hub, or client. Allen & Heath digital mixers are supported over Ethernet.
+
+  Power comes either from a standard 5V micro-USB cell phone charger or from Power-over-Ethernet at 48V via the PoE In port. The BomeBox provides power for connected USB-MIDI devices (max. 1A at 5V) and, when itself powered via PoE, can pass PoE and MIDI connections on to a daisy-chained BomeBox through the PoE Out port.
+specs: |-
+  - MIDI-DIN: 1x input, 1x output (more can be added via the USB Host)
+  - USB 2 Host (Type A receptacle) for MIDI controllers, synthesizers, serial ports, USB hubs
+  - 2x Ethernet 100MBit/s, built-in 2-port Ethernet switch
+  - WiFi: 802.11 b/g/n, 2.4 GHz, works as hotspot, hub, or client
+  - Built-in MIDI Router: unlimited virtual MIDI patch bay
+  - Web Config for configuration from any WiFi enabled device
+  - Loads and executes MIDI Translator Pro project files (editor sold separately)
+  - MIDI in and out with very low latency
+  - Allen & Heath digital mixer support via Ethernet
+  - USB QWERTY keyboard mapping to MIDI (since firmware v1.3)
+  - Power: requires 0.75W, via Micro-USB Type B 5V (150mA) or Power over Ethernet (48V) on the PoE In port
+  - Provides up to 1A at 5V for connected USB-MIDI devices
+  - Passes PoE and MIDI to daisy-chained BomeBoxes via PoE Out (when powered via PoE)
+  - Robust, reinforced ABS case
+  - Dimensions: 121mm x 96mm x 38mm (4.8" x 3.7" x 1.5")
+  - Weight: 180g / 6.3oz
 io:
   - key: nHRdTDAK
     name: MIDI Input 1
@@ -79,3 +75,12 @@ io:
     connection: ethernet
     maxConnections: 1
     position: Right
+versions:
+  - name: 1.6.1
+    releaseDate: 2026-07-31
+    description: Bug fixes and stability improvements
+    url: https://www.bome.com/products/bomebox
+videos:
+  - videoId: A9_-dVotx5w
+    provider: youtube
+    title: BomeBox
