@@ -4,9 +4,11 @@ manufacturer: olivia-artz-modular
 primaryCategory: midi-controller
 categories:
   - control-surface
+searchTerms:
+  - Teletouch by Non Verbal Poetry
 url: https://oamodular.org/products/teletouch
 prices:
-  - amount: 65
+  - amount: 340
     currency: USD
     asOf: 2026-09-04
     source: official-website
@@ -18,6 +20,7 @@ details: |-
 specs: |-
   - Teletouch Manual
   - Teletouch Firmware
+  - Bus-powered over the Teensy USB socket, no separate power connector
 io:
   - key: Rc7uVnra
     name: USB
@@ -32,6 +35,30 @@ io:
     signalFlow: bidirectional
     category: digital
     type: proprietary
-    connection: pin-header
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: bS1Jw4Kz
+    name: Gate Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: oImxMzzi
+    name: Gate Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: OgtmaTbJ
+    name: Gate Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
     maxConnections: 1
     position: Right
