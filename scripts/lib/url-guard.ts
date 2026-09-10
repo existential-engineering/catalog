@@ -63,11 +63,14 @@ blocked.addSubnet("::", 96, "ipv6"); // unspecified, loopback, deprecated IPv4-c
 blocked.addSubnet("64:ff9b::", 96, "ipv6"); // NAT64, carries an IPv4 address
 blocked.addSubnet("64:ff9b:1::", 48, "ipv6"); // local-use NAT64
 blocked.addSubnet("100::", 64, "ipv6"); // discard-only
+blocked.addSubnet("2001::", 32, "ipv6"); // Teredo, carries an IPv4 address
+blocked.addSubnet("2002::", 16, "ipv6"); // 6to4, carries an IPv4 address
 blocked.addSubnet("2001:db8::", 32, "ipv6"); // documentation
 blocked.addSubnet("fc00::", 7, "ipv6"); // unique local
 blocked.addSubnet("fe80::", 10, "ipv6"); // link-local
 blocked.addSubnet("ff00::", 8, "ipv6"); // multicast
 
+/** Thrown for a destination the guard refuses; `code` lets node-style callers branch on it. */
 export class PrivateDestinationError extends Error {
   readonly code = "EPRIVATEDEST";
 
@@ -80,6 +83,7 @@ export class PrivateDestinationError extends Error {
   }
 }
 
+/** True for a guard refusal, by class or by its `code`, so it survives a realm boundary. */
 export function isPrivateDestinationError(error: unknown): error is PrivateDestinationError {
   return (
     error instanceof PrivateDestinationError ||

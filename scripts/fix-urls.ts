@@ -68,6 +68,7 @@ interface LiveCheck {
   httpStatus?: number | "error";
 }
 
+/** One guarded request, following redirects, read into a verdict on the URL. */
 async function probe(url: string, method: "HEAD" | "GET"): Promise<LiveCheck> {
   const { response, url: finalUrl } = await fetchPublic(url, {
     method,
@@ -95,6 +96,7 @@ async function probe(url: string, method: "HEAD" | "GET"): Promise<LiveCheck> {
   return { broken: false, redirected: false, reason: "ok", httpStatus: response.status };
 }
 
+/** The verdict for a request that could not complete: broken, with the error as the reason. */
 function failed(error: unknown): LiveCheck {
   return {
     broken: true,
@@ -104,6 +106,7 @@ function failed(error: unknown): LiveCheck {
   };
 }
 
+/** Check a URL live, HEAD first and GET when HEAD fails, since some servers refuse HEAD. */
 async function checkUrlLive(url: string): Promise<LiveCheck> {
   try {
     return await probe(url, "HEAD");

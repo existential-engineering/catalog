@@ -179,6 +179,7 @@ const publicResolver = new dns.promises.Resolver();
 publicResolver.setServers(["1.1.1.1", "8.8.8.8"]);
 const dnsCache = new Map<string, Promise<ResolvedAddress[]>>();
 
+/** A records for `hostname` from the public resolver, one lookup per host per run. */
 function resolve4Cached(hostname: string): Promise<ResolvedAddress[]> {
   let pending = dnsCache.get(hostname);
   if (!pending) {
@@ -284,6 +285,7 @@ function redirectStillThisProduct(original: string, final: string, name: string)
   );
 }
 
+/** Follow `url` hop by hop and decide whether it still lands on this product's page. */
 async function checkUrl(url: string, name: string): Promise<CheckResult> {
   let current = url;
   for (let hop = 0; hop < MAX_REDIRECTS; hop++) {

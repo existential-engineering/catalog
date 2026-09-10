@@ -39,8 +39,12 @@ lifetime. So the code and the credential are kept in separate jobs.
 - `push` is the only job that mints the App token. It executes nothing from
   the branch: no install, git hooks disabled, `git apply` of a patch that is
   data. It refuses a patch reaching outside `data/**/*.yaml`, commits, and
-  pushes `HEAD:` onto the PR branch, which fails if the branch moved in the
-  meantime (that push started its own run).
+  pushes `HEAD:` onto the PR branch under an exact `--force-with-lease` on
+  the sha `assign` worked from, so the push lands only if the branch has not
+  moved in the meantime (a branch that moved has its own run). The lease
+  matters because a plain push refuses only non-fast-forwards: a branch
+  rewound to an ancestor would still accept this commit and get the removed
+  commits back.
 
 The fork gate still applies to both jobs: a fork PR gets no secrets and could
 not push anyway. The split is for a same-repository PR, whose author already

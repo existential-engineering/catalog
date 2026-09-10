@@ -48,9 +48,11 @@ interface RunBudget {
   remaining: number;
 }
 
-// Per-request options: the request timeout, plus the run's aggregate deadline
-// when one is in force. Redirects are fetchPublic's to follow, so that every
-// hop is checked against the destination guard.
+/**
+ * Per-request options: the request timeout, plus the run's aggregate deadline
+ * when one is in force. Redirects are fetchPublic's to follow, so that every
+ * hop is checked against the destination guard.
+ */
 function requestOptions(method: "HEAD" | "GET", budget?: RunBudget): RequestInit {
   const timeout = AbortSignal.timeout(REQUEST_TIMEOUT_MS);
   return {
@@ -258,7 +260,7 @@ function extractUrls(
   return urls;
 }
 
-// Check a single URL (with optional cache support)
+/** Check a single URL, through the cache when one is enabled. */
 async function checkUrl(
   url: string,
   options?: {

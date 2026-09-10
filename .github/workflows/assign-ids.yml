@@ -154,13 +154,19 @@ jobs:
           git -c core.hooksPath=/dev/null commit -m "chore: assign IDs to new entries"
 
       # The branch name is chosen by whoever opened the PR, so it reaches the
-      # shell through env and never through `${{ }}` inside `run:`. Pushing
-      # `HEAD:` onto the branch is refused if the branch moved since `assign`
-      # ran, which is the right answer: that push has its own run.
+      # shell through env and never through `${{ }}` inside `run:`. The push
+      # carries an exact lease on the sha `assign` worked from, so it lands
+      # only if the branch is still there: a branch that moved on has its own
+      # run, and a plain push would not catch every move, since a branch
+      # rewound to an ancestor still takes this commit as a fast-forward and
+      # gets the removed commits back.
       - name: Push changes
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
           HEAD_REF: ${{ github.head_ref }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           gh auth setup-git
-          git -c core.hooksPath=/dev/null push origin "HEAD:refs/heads/$HEAD_REF"
+          git -c core.hooksPath=/dev/null push \
+            --force-with-lease="refs/heads/$HEAD_REF:$EXPECTED_HEAD" \
+            origin "HEAD:refs/heads/$HEAD_REF"
