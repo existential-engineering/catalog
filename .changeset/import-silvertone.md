@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Silvertone (38 hardware/software entries).
+Import Silvertone (39 hardware and accessory entries).
