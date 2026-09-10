@@ -19,6 +19,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 import { getCachedUrl, loadUrlCache, type UrlCache } from "./lib/url-cache.js";
+import { fetchPublic, isPrivateDestinationError } from "./lib/url-guard.js";
 import { DATA_DIR, getYamlFiles } from "./lib/utils.js";
 
 // =============================================================================
@@ -59,73 +60,60 @@ async function runWithConcurrency<T, R>(
   return results;
 }
 
-async function checkUrlLive(url: string): Promise<{
+interface LiveCheck {
   broken: boolean;
   redirected: boolean;
   finalUrl?: string;
   reason: string;
   httpStatus?: number | "error";
-}> {
+}
+
+async function probe(url: string, method: "HEAD" | "GET"): Promise<LiveCheck> {
+  const { response, url: finalUrl } = await fetchPublic(url, {
+    method,
+    signal: AbortSignal.timeout(10000),
+    headers: { "User-Agent": "Aureo-Catalog-Validator/1.0" },
+  });
+
+  if (response.status >= 400) {
+    return {
+      broken: true,
+      redirected: false,
+      reason: `HTTP ${response.status}`,
+      httpStatus: response.status,
+    };
+  }
+  if (finalUrl !== url) {
+    return {
+      broken: false,
+      redirected: true,
+      finalUrl,
+      reason: "redirect",
+      httpStatus: response.status,
+    };
+  }
+  return { broken: false, redirected: false, reason: "ok", httpStatus: response.status };
+}
+
+function failed(error: unknown): LiveCheck {
+  return {
+    broken: true,
+    redirected: false,
+    reason: error instanceof Error ? error.message : "connection error",
+    httpStatus: "error",
+  };
+}
+
+async function checkUrlLive(url: string): Promise<LiveCheck> {
   try {
-    const response = await fetch(url, {
-      method: "HEAD",
-      redirect: "follow",
-      signal: AbortSignal.timeout(10000),
-      headers: { "User-Agent": "Aureo-Catalog-Validator/1.0" },
-    });
-
-    if (response.status >= 400) {
-      return {
-        broken: true,
-        redirected: false,
-        reason: `HTTP ${response.status}`,
-        httpStatus: response.status,
-      };
-    }
-    if (response.url !== url) {
-      return {
-        broken: false,
-        redirected: true,
-        finalUrl: response.url,
-        reason: "redirect",
-        httpStatus: response.status,
-      };
-    }
-    return { broken: false, redirected: false, reason: "ok", httpStatus: response.status };
-  } catch {
+    return await probe(url, "HEAD");
+  } catch (headError) {
+    // A refused destination is a verdict on the URL, not on HEAD support.
+    if (isPrivateDestinationError(headError)) return failed(headError);
     try {
-      const response = await fetch(url, {
-        method: "GET",
-        redirect: "follow",
-        signal: AbortSignal.timeout(10000),
-        headers: { "User-Agent": "Aureo-Catalog-Validator/1.0" },
-      });
-
-      if (response.status >= 400) {
-        return {
-          broken: true,
-          redirected: false,
-          reason: `HTTP ${response.status}`,
-          httpStatus: response.status,
-        };
-      }
-      if (response.url !== url) {
-        return {
-          broken: false,
-          redirected: true,
-          finalUrl: response.url,
-          reason: "redirect",
-          httpStatus: response.status,
-        };
-      }
-      return { broken: false, redirected: false, reason: "ok", httpStatus: response.status };
-    } catch (error) {
-      return {
-        broken: true,
-        redirected: false,
-        reason: error instanceof Error ? error.message : "connection error",
-        httpStatus: "error",
-      };
+      return await probe(url, "GET");
+    } catch (getError) {
+      return failed(getError);
     }
   }
 }
