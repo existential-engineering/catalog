@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import ModularPlug (1 hardware/software entries).
+Import ModularPlug (1 hardware entry).
