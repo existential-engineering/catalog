@@ -24,6 +24,33 @@ and the PR is unmergeable with nothing obviously wrong.
 Pushing under an App identity makes the resulting `synchronize` event look like
 any other contributor push, so the required checks run and report normally.
 
+### Why it is two jobs
+
+The workflow runs code the pull request controls: `pnpm install` executes the
+repo's lifecycle scripts (`prepare` installs husky today), and `pnpm assign-ids`
+and `pnpm format` are `scripts/*.ts` straight off the PR branch. Anything that
+runs inside a job can read every credential the job references, whatever step
+the credential was scoped to, because the runner holds them all for the job's
+lifetime. So the code and the credential are kept in separate jobs.
+
+- `assign` references no secret at all. It checks out the PR's head sha with a
+  read-only token, installs, runs the scripts, and uploads the resulting diff
+  of `data/` as a one-day artifact.
+- `push` is the only job that mints the App token. It executes nothing from
+  the branch: no install, git hooks disabled, `git apply` of a patch that is
+  data. It refuses a patch reaching outside `data/**/*.yaml`, commits, and
+  pushes `HEAD:` onto the PR branch under an exact `--force-with-lease` on
+  the sha `assign` worked from, so the push lands only if the branch has not
+  moved in the meantime (a branch that moved has its own run). The lease
+  matters because a plain push refuses only non-fast-forwards: a branch
+  rewound to an ancestor would still accept this commit and get the removed
+  commits back.
+
+The fork gate still applies to both jobs: a fork PR gets no secrets and could
+not push anyway. The split is for a same-repository PR, whose author already
+has write access but should not be able to reach the App's identity from a
+`postinstall`.
+
 ### Setup
 
 1. Create a GitHub App on the org (Settings → Developer settings → GitHub Apps).

@@ -31,10 +31,15 @@ import dns from "node:dns";
 import fs from "node:fs";
 import http from "node:http";
 import https from "node:https";
-import type { LookupFunction } from "node:net";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 import { isAggregatorUrl, isManufacturerOwnDomain, urlHost } from "./lib/aggregator-domains.js";
+import {
+  assertPublicUrl,
+  guardLookup,
+  isPrivateDestinationError,
+  type ResolvedAddress,
+} from "./lib/url-guard.js";
 import { DATA_DIR } from "./lib/utils.js";
 
 const PRODUCT_KINDS = ["software", "hardware", "content"] as const;
@@ -166,42 +171,27 @@ const ACCEPTABLE_ERROR_STATUSES = new Set([401, 403, 405, 429]);
 /**
  * Resolve via public DNS (1.1.1.1 / 8.8.8.8) rather than the system
  * resolver: local ad-block DNS setups blackhole some legitimate vendor
- * domains to 0.0.0.0, which would falsely mark them dead.
+ * domains to 0.0.0.0, which would falsely mark them dead. The answers go
+ * through the destination guard, which refuses a host that resolves to
+ * any non-public address before the socket is opened.
  */
 const publicResolver = new dns.promises.Resolver();
 publicResolver.setServers(["1.1.1.1", "8.8.8.8"]);
-const dnsCache = new Map<string, Promise<string[]>>();
+const dnsCache = new Map<string, Promise<ResolvedAddress[]>>();
 
-function resolve4Cached(hostname: string): Promise<string[]> {
+/** A records for `hostname` from the public resolver, one lookup per host per run. */
+function resolve4Cached(hostname: string): Promise<ResolvedAddress[]> {
   let pending = dnsCache.get(hostname);
   if (!pending) {
     pending = publicResolver
       .resolve4(hostname)
-      .then((addresses) => addresses.filter((a) => a !== "0.0.0.0" && !a.startsWith("127.")));
+      .then((addresses) => addresses.map((address) => ({ address, family: 4 })));
     dnsCache.set(hostname, pending);
   }
   return pending;
 }
 
-const publicLookup: LookupFunction = (hostname, options, callback) => {
-  resolve4Cached(hostname)
-    .then((addresses) => {
-      if (addresses.length === 0) {
-        callback(
-          Object.assign(new Error(`no A records for ${hostname}`), { code: "ENOTFOUND" }),
-          []
-        );
-      } else if (options.all) {
-        callback(
-          null,
-          addresses.map((address) => ({ address, family: 4 }))
-        );
-      } else {
-        (callback as (err: null, address: string, family: number) => void)(null, addresses[0], 4);
-      }
-    })
-    .catch((error) => callback(error, []));
-};
+const publicLookup = guardLookup(resolve4Cached);
 
 /**
  * Single GET without redirect following. Uses node:http(s) directly with
@@ -295,14 +285,20 @@ function redirectStillThisProduct(original: string, final: string, name: string)
   );
 }
 
+/** Follow `url` hop by hop and decide whether it still lands on this product's page. */
 async function checkUrl(url: string, name: string): Promise<CheckResult> {
   let current = url;
   for (let hop = 0; hop < MAX_REDIRECTS; hop++) {
     let response: { status: number; location?: string; bodySample: string };
     try {
+      // Every hop is checked, the redirect target as much as the URL the
+      // entry carries, and the guarded lookup checks what it resolves to.
+      assertPublicUrl(current);
       response = await requestOnce(current);
     } catch (error) {
-      const code = (error as NodeJS.ErrnoException).code ?? (error as Error).message;
+      const code = isPrivateDestinationError(error)
+        ? error.message
+        : ((error as NodeJS.ErrnoException).code ?? (error as Error).message);
       return { ok: false, detail: `fetch failed (${code})`, finalUrl: current };
     }
     if (response.status >= 300 && response.status < 400 && response.location) {

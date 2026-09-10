@@ -25,6 +25,7 @@ import {
   setCachedUrl,
   type UrlCache,
 } from "./lib/url-cache.js";
+import { fetchPublic, isPrivateDestinationError } from "./lib/url-guard.js";
 import { DATA_DIR, getYamlFiles } from "./lib/utils.js";
 
 const MAX_CONCURRENT_REQUESTS = 10;
@@ -47,13 +48,15 @@ interface RunBudget {
   remaining: number;
 }
 
-// Per-request options: the request timeout, plus the run's aggregate deadline
-// when one is in force.
+/**
+ * Per-request options: the request timeout, plus the run's aggregate deadline
+ * when one is in force. Redirects are fetchPublic's to follow, so that every
+ * hop is checked against the destination guard.
+ */
 function requestOptions(method: "HEAD" | "GET", budget?: RunBudget): RequestInit {
   const timeout = AbortSignal.timeout(REQUEST_TIMEOUT_MS);
   return {
     method,
-    redirect: "follow",
     signal: budget ? AbortSignal.any([timeout, budget.signal]) : timeout,
     headers: {
       "User-Agent": USER_AGENT,
@@ -257,7 +260,7 @@ function extractUrls(
   return urls;
 }
 
-// Check a single URL (with optional cache support)
+/** Check a single URL, through the cache when one is enabled. */
 async function checkUrl(
   url: string,
   options?: {
@@ -307,27 +310,28 @@ async function checkUrl(
   let result: UrlCheckResult;
 
   try {
-    let response = await fetch(url, requestOptions("HEAD", budget));
+    let checked = await fetchPublic(url, requestOptions("HEAD", budget));
 
     // Some servers block HEAD requests with an auth/automation status but
     // serve the page fine over GET. Retry with GET so these aren't reported
     // as false positives.
-    if ([401, 403, 405].includes(response.status)) {
-      response = await fetch(url, requestOptions("GET", budget));
+    if ([401, 403, 405].includes(checked.response.status)) {
+      checked = await fetchPublic(url, requestOptions("GET", budget));
     }
 
-    const redirected = response.url !== url;
+    const redirected = checked.url !== url;
 
     result = {
       url,
-      status: response.status,
+      status: checked.response.status,
       redirected,
-      finalUrl: redirected ? response.url : undefined,
+      finalUrl: redirected ? checked.url : undefined,
     };
   } catch (headError) {
-    if (isAbortError(headError)) {
+    if (isAbortError(headError) || isPrivateDestinationError(headError)) {
       // A timed-out or deadline-aborted request is a deterministic failure.
       // Retrying it with GET only doubles the time this URL holds the runner.
+      // A refused destination is a verdict on the URL itself.
       result = {
         url,
         status: "error",
@@ -337,15 +341,15 @@ async function checkUrl(
     } else {
       // Try GET request as fallback (some servers don't support HEAD)
       try {
-        const response = await fetch(url, requestOptions("GET", budget));
+        const checked = await fetchPublic(url, requestOptions("GET", budget));
 
-        const redirected = response.url !== url;
+        const redirected = checked.url !== url;
 
         result = {
           url,
-          status: response.status,
+          status: checked.response.status,
           redirected,
-          finalUrl: redirected ? response.url : undefined,
+          finalUrl: redirected ? checked.url : undefined,
         };
       } catch (getError) {
         result = {

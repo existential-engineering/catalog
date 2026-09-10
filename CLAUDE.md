@@ -59,6 +59,13 @@ cohort working:
 - All entries must pass `pnpm validate` before commit
 - Use Prettier for YAML formatting
 - Data follows strict schemas defined in `scripts/lib/types.ts`
+- A script that requests a URL taken from the data goes through
+  `scripts/lib/url-guard.ts` (`fetchPublic`, or `guardLookup` on a node:http
+  request), never bare `fetch`. The URL is contributor-chosen, so a checker
+  that follows it blindly will request localhost, a router, or a runner's
+  metadata service on the contributor's behalf. The guard refuses those
+  destinations, checks every redirect hop, and resolves each host before
+  connecting to it.
 
 ### Incremental Patches
 

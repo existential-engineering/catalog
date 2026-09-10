@@ -13,9 +13,78 @@ concurrency:
 permissions:
   contents: read
 
+# Two jobs, split by what they hold. `assign` runs code the pull request
+# controls: `pnpm install` executes the repo's lifecycle scripts, and
+# `pnpm assign-ids` and `pnpm format` are scripts/*.ts from the PR branch.
+# Anything running in a job can read every credential that job references,
+# so this job references none: a read-only GITHUB_TOKEN and nothing else.
+# It hands its result to `push` as a patch. `push` executes nothing from the
+# branch (no install, git hooks disabled, a patch is data) and is the only
+# job that ever holds the App token or a contents-write token.
+#
+# The fork gate keeps a fork PR out entirely: a fork gets no secrets and its
+# push would be refused anyway. A same-repository PR is the case the split
+# is for: its author already has write access, but the App token is a
+# different identity with its own standing, and it should not be reachable
+# from a `postinstall`.
 jobs:
-  assign-ids:
+  assign:
     if: github.event.pull_request.head.repo.fork == false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
+
+    steps:
+      # Pinned to the sha rather than the branch, so `push` applies the patch
+      # onto exactly the tree it was computed from.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: "24"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Assign IDs to new entries
+        run: pnpm assign-ids
+
+      - name: Format YAML files
+        run: pnpm format
+
+      # Only data/ is collected. The bot commits catalog entries and nothing
+      # else, and `push` checks the same bound before it commits.
+      - name: Collect changes
+        id: diff
+        run: |
+          git add -A -- data
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git diff --staged --binary > "$RUNNER_TEMP/assign-ids.patch"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload patch
+        if: steps.diff.outputs.changed == 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: assign-ids-patch
+          path: ${{ runner.temp }}/assign-ids.patch
+          retention-days: 1
+          if-no-files-found: error
+
+  push:
+    needs: assign
+    if: needs.assign.outputs.changed == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -58,46 +127,46 @@ jobs:
           private-key: ${{ secrets.ASSIGN_IDS_APP_PRIVATE_KEY }}
           permission-contents: write
 
-      # persist-credentials: false — nothing in .git/config for `pnpm install`
-      # (which runs PR-controlled lifecycle scripts) to read. The push step
-      # re-authenticates for itself.
+      # The same sha `assign` worked on. No `pnpm install` runs here, so no
+      # husky hooksPath gets configured either; hooks are disabled below all
+      # the same, so that this job stays inert if that ever changes.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
-          ref: ${{ github.head_ref }}
-          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
           token: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
           persist-credentials: false
 
-      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
-
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+      - name: Download patch
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
         with:
-          node-version: "24"
-          cache: "pnpm"
+          name: assign-ids-patch
+          path: ${{ runner.temp }}
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Assign IDs to new entries
-        run: pnpm assign-ids
-
-      - name: Format YAML files
-        run: pnpm format
-
-      # Git hooks are PR-controlled (`pnpm install` ran the repo's `prepare`
-      # script, which installs husky's hooksPath), so disable them for the
-      # bot's git operations and keep the token out of the commit step's
-      # environment entirely — only the push step ever sees it.
       - name: Commit changes
         run: |
+          git apply --index "$RUNNER_TEMP/assign-ids.patch"
+          if git diff --staged --name-only | grep -vE '^data/.*\.yaml$'; then
+            echo "::error::patch reaches outside data/**/*.yaml; refusing to commit it"
+            exit 1
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git diff --staged --quiet || git -c core.hooksPath=/dev/null commit -m "chore: assign IDs to new entries"
+          git -c core.hooksPath=/dev/null commit -m "chore: assign IDs to new entries"
 
+      # The branch name is chosen by whoever opened the PR, so it reaches the
+      # shell through env and never through `${{ }}` inside `run:`. The push
+      # carries an exact lease on the sha `assign` worked from, so it lands
+      # only if the branch is still there: a branch that moved on has its own
+      # run, and a plain push would not catch every move, since a branch
+      # rewound to an ancestor still takes this commit as a fast-forward and
+      # gets the removed commits back.
       - name: Push changes
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token || secrets.GITHUB_TOKEN }}
+          HEAD_REF: ${{ github.head_ref }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           gh auth setup-git
-          git -c core.hooksPath=/dev/null push
+          git -c core.hooksPath=/dev/null push \
+            --force-with-lease="refs/heads/$HEAD_REF:$EXPECTED_HEAD" \
+            origin "HEAD:refs/heads/$HEAD_REF"
