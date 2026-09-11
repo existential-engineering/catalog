@@ -1,0 +1,64 @@
+id: gPK_cw8RDRuw2Jwd5I0PM
+name: Teletouch
+manufacturer: olivia-artz-modular
+primaryCategory: midi-controller
+categories:
+  - control-surface
+searchTerms:
+  - Teletouch by Non Verbal Poetry
+url: https://oamodular.org/products/teletouch
+prices:
+  - amount: 340
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A touch-plate performance controller for Monome Teletype and Norns
+  that outputs note and pressure information over I2C and USB MIDI, with
+  buttons, knobs, and sliders for additional control.
+details: |-
+  Teletouch is an expressive performance instrument designed primarily for the Monome Teletype and Norns systems. Inspired by the long history of touch plate surfaces in synthesis, Teletouch finds ways to add gesture and manual control to modular instruments. An all in one human interface, the copper touch plates output both note and pressure information, over both I2C (duophonically) and USB MIDI (fully polyphonically), the 8 buttons allow for mode-switching, event triggering and midi note drones, and the 4 knobs and 6 sliders add midi cc output and physical control over teletype variables, making Teletouch a natural centre of control in your system. While over MIDI, the keypresses and cc messages are fairly pre-defined, teletype can be processing I2C messages in a whole range of ways! Try using the sliders to define values in a 6 step sequence. Use the key pressure value to control the rate of a clock! Use the touch plates to jump between different sets of sequenced patterns! Teletouch turns teletype into an incredibly performable device. While Teletype and Norns were the primary inspiration for Teletouch, its I2C outputs can be read by any I2C host, such as monome crow, which expands possibilities further to interaction with Cycling 74's Max MSP, while its behaviour as a class compliant USB device lets all its knobs, buttons, sliders and touch plates work perfectly with any computer or other midi host. Please note: while Teletouch has gate outs, it is not designed for direct intergration as a cv controller. These gate outs are instead there to be patced directly into Teletype trigger inputs. Anyone with a Teletype will know that the constant fast polling necessary for an I2C device to trigger note on messages is unviable. Teletouch gets around this by providing physical triggers. When a keypress is detected, Teletouch will physically trigger a Teletype script, which can then immediately read the note value of Teletouch. This way, Teletouch can be extremely responsive, even over I2C.
+specs: |-
+  - Teletouch Manual
+  - Teletouch Firmware
+  - Bus-powered over the Teensy USB socket, no separate power connector
+io:
+  - key: Rc7uVnra
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - key: gXf4OC2o
+    name: I2C
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: bS1Jw4Kz
+    name: Gate Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: oImxMzzi
+    name: Gate Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: OgtmaTbJ
+    name: Gate Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right

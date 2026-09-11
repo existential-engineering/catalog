@@ -1,0 +1,76 @@
+id: R91gBNNpmERv-rZf7XHqc
+name: Spoke of Fortune
+manufacturer: olivia-artz-modular
+primaryCategory: utility
+categories:
+  - modular
+  - sequencer
+hp: 2
+searchTerms:
+  - Spoke of Fortune by six
+url: https://oamodular.org/products/spoke-of-fortune
+prices:
+  - amount: 100
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A clockable, resettable D-latch module with normal, inverted, and
+  trigger outputs, usable as a component for building flip-flops and clock
+  dividers.
+details: |-
+  Spoke of Fortune is a clockable, resettable D-latch with normal, inverted, and trigger outputs. It's a fundamental component of computing you can use to quantize the timing of triggers. You can self patch it to build a flip-flop. And a flip flop is a clock-divider! And a clock-divider is a suboctavizer! There's a lot you can do with it and it's weird you don't have one. Spoke stores the binary state present at the D(ata) input. When you C(lock) the module, the state is retrieved from the Q output. Spoke of Fortune Manual
+
+  Spoke on ModularGrid
+
+  - 2hp wide
+  - 41mm deep (including power cable)
+  - 6ma +12 V, 0ma -12 V, 0ma +5 V
+io:
+  - key: Hb5pjlCz
+    name: Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5PA8tU1b
+    name: Data Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: kEbqCLyg
+    name: Q Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: mgLY5ziM
+    name: Inverted Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Gh25bGN8
+    name: Trigger Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Z0O7Au2I
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
