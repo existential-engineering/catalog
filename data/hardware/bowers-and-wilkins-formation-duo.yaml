@@ -38,7 +38,15 @@ specs: |-
   - Stands are not included
 io:
   - key: 1rHnAZC8
-    name: Network (Ethernet)
+    name: Network (Ethernet, Left)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: 4tz15jGh
+    name: Network (Ethernet, Right)
     signalFlow: bidirectional
     category: digital
     type: ethernet
@@ -46,7 +54,15 @@ io:
     maxConnections: 1
     position: Right
   - key: VIoSBKvC
-    name: USB (Service Only)
+    name: USB (Service Only, Left)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right
+  - key: riDjA7fa
+    name: USB (Service Only, Right)
     signalFlow: bidirectional
     category: digital
     type: usb
@@ -54,7 +70,15 @@ io:
     maxConnections: 1
     position: Right
   - key: lurm8wY9
-    name: Mains Power Input
+    name: Mains Power Input (Left)
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c8
+    maxConnections: 1
+    position: Right
+  - key: s4REXM1a
+    name: Mains Power Input (Right)
     signalFlow: input
     category: power
     type: power

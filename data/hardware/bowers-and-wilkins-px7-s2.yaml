@@ -39,9 +39,17 @@ specs: |-
 io:
   - key: HSP3lNs5
     name: USB-C
-    signalFlow: bidirectional
+    signalFlow: input
     category: digital
     type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - key: czPMiu1j
+    name: USB-C Charging
+    signalFlow: input
+    category: power
+    type: power
     connection: usb-c
     maxConnections: 1
     position: Bottom

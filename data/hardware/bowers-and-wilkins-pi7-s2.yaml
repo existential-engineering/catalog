@@ -44,9 +44,17 @@ specs: |-
 io:
   - key: tV6KSwUX
     name: USB-C (case)
-    signalFlow: bidirectional
+    signalFlow: input
     category: digital
     type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Bottom
+  - key: CODeDPGJ
+    name: USB-C Charging (case)
+    signalFlow: input
+    category: power
+    type: power
     connection: usb-c
     maxConnections: 1
     position: Bottom
