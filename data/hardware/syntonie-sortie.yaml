@@ -54,10 +54,26 @@ specs: |-
   - 1080p30
 io:
   - key: vlZEMkMP
-    name: RGB
+    name: R Input
     signalFlow: input
     category: audio
-    type: line
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BzXRldvz
+    name: G Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zVcpZLG5
+    name: B Input
+    signalFlow: input
+    category: audio
+    type: video
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -65,23 +81,39 @@ io:
     name: Sync in
     signalFlow: input
     category: audio
-    type: line
+    type: video
     connection: rca
     maxConnections: 1
     position: Right
   - key: XOoE2e1I
-    name: YPbPr/CVBS
+    name: Y/CVBS Output
     signalFlow: output
     category: audio
-    type: line
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: ESjtdDTe
+    name: Pb Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: LyVTkxQL
+    name: Pr Output
+    signalFlow: output
+    category: audio
+    type: video
     connection: rca
     maxConnections: 1
     position: Top
   - key: CUqqKtff
-    name: S-Video
+    name: S-Video Output
     signalFlow: output
     category: audio
-    type: line
+    type: video
     connection: mini-din
     maxConnections: 1
     position: Top
@@ -89,12 +121,20 @@ io:
     name: Sync out
     signalFlow: output
     category: audio
-    type: line
+    type: video
     connection: rca
     maxConnections: 1
     position: Right
+  - key: BfFFr1Op
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
   - key: ODV7YNqp
-    name: Power
+    name: DC Barrel Power
     signalFlow: input
     category: power
     type: power

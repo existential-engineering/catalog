@@ -39,10 +39,26 @@ specs: |-
   - RCA sync I/O at the rear of the module
 io:
   - key: oZdYNXop
-    name: RGB
+    name: R Input
     signalFlow: input
     category: audio
-    type: line
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hZcWRKBA
+    name: G Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 1IfczbZR
+    name: B Input
+    signalFlow: input
+    category: audio
+    type: video
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -50,23 +66,39 @@ io:
     name: Sync in
     signalFlow: input
     category: audio
-    type: line
+    type: video
     connection: rca
     maxConnections: 1
     position: Right
   - key: YZcc5Ubf
-    name: YPbPr/CVBS
+    name: Y/CVBS Output
     signalFlow: output
     category: audio
-    type: line
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: sdctRyPN
+    name: Pb Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: T2hbdS4F
+    name: Pr Output
+    signalFlow: output
+    category: audio
+    type: video
     connection: rca
     maxConnections: 1
     position: Top
   - key: eSkq5i0I
-    name: S-Video
+    name: S-Video Output
     signalFlow: output
     category: audio
-    type: line
+    type: video
     connection: mini-din
     maxConnections: 1
     position: Top
@@ -74,15 +106,15 @@ io:
     name: Sync out
     signalFlow: output
     category: audio
-    type: line
+    type: video
     connection: rca
     maxConnections: 1
     position: Right
   - key: NT0I2Nmx
-    name: Power
+    name: Eurorack Power
     signalFlow: input
     category: power
     type: power
-    connection: barrel
+    connection: pin-header
     maxConnections: 1
-    position: Right
+    position: Bottom

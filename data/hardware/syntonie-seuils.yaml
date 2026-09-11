@@ -47,7 +47,7 @@ specs: |-
   - -0.5V/+1.5V when processing more complex signals that may exceed 0V/+1V.
 io:
   - key: 8UqCgwMh
-    name: IN
+    name: Channel A IN
     signalFlow: input
     category: audio
     type: line
@@ -55,7 +55,7 @@ io:
     maxConnections: 1
     position: Top
   - key: pRCXHEHq
-    name: CV
+    name: Channel A CV
     signalFlow: input
     category: audio
     type: cv/gate
@@ -63,7 +63,7 @@ io:
     maxConnections: 1
     position: Top
   - key: Xi1fcD9F
-    name: LOGIC
+    name: Channel A LOGIC
     signalFlow: output
     category: audio
     type: line
@@ -71,15 +71,87 @@ io:
     maxConnections: 1
     position: Top
   - key: AA1tWS9s
-    name: SHIFT
+    name: Channel A SHIFT
     signalFlow: output
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
     position: Top
+  - key: 9cVaLj9G
+    name: Channel B IN
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0Es4T5iH
+    name: Channel B CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: l7yzjNhX
+    name: Channel B LOGIC
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: aq7yDGiw
+    name: Channel B SHIFT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: A0OxrBIF
+    name: Channel C IN
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: cEGUwTk4
+    name: Channel C CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 62TSkIY1
+    name: Channel C LOGIC
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JLgnZhSa
+    name: Channel C SHIFT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: yBvTulZC
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
   - key: 8SKvwGpE
-    name: Power
+    name: DC Barrel Power
     signalFlow: input
     category: power
     type: power

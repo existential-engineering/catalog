@@ -39,18 +39,66 @@ specs: |-
   - Y pass-through RCA at the rear of the module to sync the sync generator/encoder to the external video signal.
 io:
   - key: 1DdNqq08
-    name: YPbPr
+    name: Y Input
     signalFlow: input
     category: audio
-    type: line
+    type: video
     connection: rca
     maxConnections: 1
     position: Right
+  - key: eeuvt0G4
+    name: Pb Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: W0kRsWlQ
+    name: Pr Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: cic0YZFm
+    name: Processor In
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
   - key: uj3jfw3W
-    name: RGBY
+    name: R Output
     signalFlow: output
     category: audio
-    type: line
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AckNEXGZ
+    name: G Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: MLU4wgh1
+    name: B Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nkxakc8J
+    name: Y Output
+    signalFlow: output
+    category: audio
+    type: video
     connection: 1/8-inch
     maxConnections: 1
     position: Top
@@ -58,12 +106,12 @@ io:
     name: Y pass-through
     signalFlow: output
     category: audio
-    type: line
+    type: video
     connection: rca
     maxConnections: 1
     position: Right
   - key: WWyPj6yO
-    name: Power
+    name: DC Barrel Power
     signalFlow: input
     category: power
     type: power
