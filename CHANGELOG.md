@@ -1,5 +1,124 @@
 # catalog
 
+## 3.63.0
+
+### Minor Changes
+
+- 40ceacd: Refresh baltic audio: 93 new, 0 discontinued, 8 updated.
+
+  Adds the label's Serum, Spire and Sylenth1 preset series, the Slap
+  House, Trap, Festival Ammo and Essential Pop Moments sample packs, and
+  its loop and drum collections. The eight entries already in the catalog
+  gain current prices in EUR, video previews and refreshed copy.
+  Multi-pack bundles are deliberately left out, since what a user installs
+  is the individual pack.
+
+- 1bfb146: Refresh Black Rooster: 25 new, 0 discontinued, 2 updated.
+
+  Adds the rest of the Black Rooster Audio plugin range, including the
+  VLA opto and FET compressors, the Pultec-style VEQ equalizers, the
+  OmniTec tube preamp and compressor, the RO plate and spring reverbs,
+  the TD-201 tape echo and the Koen Heldens signature series. The two
+  entries already in the catalog, BlackAsh SC-5 and BlueAsh SC-5, pick
+  up formats, platforms, prices and refreshed details.
+
+- 64b70d3: Refresh Blue Microphones: 6 new, 0 discontinued, 1 updated.
+
+  Adds the current Yeti microphone line (Yeti, Yeti Nano, Yeti Orb, Yeti GX
+  and the active dynamic XLR Yeti Studio) plus the Radius III shockmount, and
+  fills in the Compass boom arm entry, which until now carried only a name and
+  a one-line description. Blue is owned by Logitech and its products are sold
+  on logitechg.com, so that is where this roster was read from.
+
+- ddadf44: Refresh Bome Software: 10 new, 0 discontinued, 3 updated.
+
+  Adds the rest of the Bome range, including MIDI Translator Pro and
+  Classic, Send SX, Mouse Keyboard, MIDI-CI Tools, the BMIDI Virtual MIDI
+  SDK, and the BomeBox 2 preview, plus the retired CS1x-Edit and Renovator
+  for ReBirth 2. Refreshes BomeBox, Bome Network and Bome Network Pro with
+  current descriptions, specifications, prices and release history.
+
+- 0a680f5: Refresh Bowers & Wilkins: 63 new, 5 discontinued, 15 updated.
+
+  Adds the custom-install ranges the catalog did not carry (CCM and CWM
+  in-wall and in-ceiling, CT series, ISW subwoofers), the 800 Series D5
+  generation, the Formation and Zeppelin wireless families, marine
+  speakers and the CDA-2HD amplifier. Retires the 803 D4, DB1D, HTM81 D4
+  and the D4 Signature pair, and adds capabilities and a second currency
+  to entries the catalog already carried.
+
+- d223849: Refresh Catalinbread: 19 new, 4 discontinued, 59 updated.
+
+  Adds the Knight School kit pedal line, the Ghost artwork reissues, the
+  Galileo 4K and the EG1 Lo-Fi Delay. Existing entries gain manufacturer
+  spec tables, dated USD prices and missing capability tags. Four legacy
+  pedals the brand no longer sells are marked discontinued.
+
+- 5bc61af: Import mnemonic devices (3 hardware entries).
+- 92837ad: Add Modbap Modular: 3 Eurorack modules, 12 sample and wavetable packs, and 3 accessories.
+- 1c47557: Import ModularPlug (1 hardware entry).
+- abba316: Refresh Nembrini Audio: 2 new, 0 discontinued, 61 updated.
+
+  Adds the Bass 3500 bass amplifier and the Blue Clipper saturator. The
+  sixty-one existing plugins gain current descriptions, feature lists,
+  release history and demo videos, and every entry is now correctly
+  classified as software.
+
+- 078c15a: Refresh oeksound: 1 new, 1 discontinued, 3 updated.
+
+  Adds soothe3, the current generation of oeksound's dynamic resonance
+  suppressor, and retires soothe2, whose product page now redirects to it.
+  bloom, spiff and soothe live pick up the feature lists and version history
+  published on oeksound.com.
+
+- 32735bc: Import Olivia Artz Modular (7 hardware and 2 content entries).
+- b3f0101: Import P4L (13 hardware and accessory entries).
+- eec6665: Refresh PSP Audioware: 1 new, 0 discontinued, 58 updated.
+
+  Adds PSP BBDelay, a bucket brigade delay and ambience processor, and
+  refreshes the existing 58 plug-in entries with current descriptions,
+  feature lists, demo videos and prices. Two bundle entries had a stale
+  free price sitting beside their real one, and fourteen entries listed
+  the generic VST format where they support VST 2.4 specifically.
+
+- 97f5056: Add Rivolta: 39 guitars and basses plus 3 accessories.
+- 6a4fad4: Import Roswell Pro Audio (23 hardware and accessory entries).
+- 8f3b34a: Import Silvertone (39 hardware and accessory entries).
+- 8396757: Import Smoothie Audio (1 hardware entry).
+- 37ef768: Import Sontronics (34 hardware/software entries).
+- ba7e851: Import Spector (83 hardware/accessory entries).
+- af0f427: Import Stoel Music Systems (28 hardware and 3 accessory entries).
+
+### Patch Changes
+
+- b5045c5: Refresh Black Octopus Sound with current pack contents and descriptions.
+
+  Reconciles the label's existing sample pack entries against its current
+  product pages: 0 new, 0 discontinued, 19 updated. Adds Serum compatibility
+  and release dates, expands the pack contents from the current spec sheets,
+  and replaces storefront marketing copy with factual descriptions. Existing
+  prices were reviewed against the storefront and left unchanged.
+
+- 9d97e7c: Refresh Polyverse Music: 0 new, 0 discontinued, 8 updated.
+
+  Comet, Filterverse, Filtron, Gatekeeper, I Wish, Manipulator, Supermodal and
+  Wider pick up current feature lists and demo videos. Marketing copy is out of
+  the descriptions, Filterverse's filter count now reads the same in every
+  field, and Wider gains its version history.
+
+- 1270ceb: Refresh SIR Audio Tools: 0 new, 0 discontinued, 6 updated.
+
+  Product links now point at the manufacturer's current product pages rather
+  than the retired ones, which had been redirecting. Euro pricing is listed
+  alongside dollar pricing for StandardCLIP, SpectrumAnalyzer, StandardEQ and
+  qwertyGO!, and StandardEQ gains its 1.6.042 release.
+
+- e187b25: Refresh Sonarworks: 0 new, 0 discontinued, 2 updated.
+
+  SoundID Reference picks up its 5.13.7 and 5.13.8 releases, and SoundID
+  VoiceAI gains a release history it had been missing entirely, back to
+  2.6.0. Both are dated from the manufacturer's own release notes.
+
 ## 3.62.0
 
 ### Minor Changes
