@@ -1,0 +1,143 @@
+id: IphuyOU-8hClM7tAjq238
+name: Smear
+manufacturer: smoothie-audio
+primaryCategory: filter
+categories:
+  - modular
+  - effect
+  - phaser
+  - delay
+hp: 12
+capabilities:
+  - filter
+  - delay
+  - phaser
+  - flanger
+url: https://smoothieaudio.com/products/smear
+prices:
+  - amount: 450
+    currency: CAD
+    asOf: 2026-09-04
+    source: official-website
+description: Smear is a Eurorack module featuring a dual stereo 98-pole allpass
+  filter that creates spectral delay, phasing, and flanging effects by shifting
+  the phase of audio across many stages. It offers per-section Frequency,
+  Resonance, and Stages controls with CV inputs, plus a global Feedback control
+  for resonant and physical-modeling-like tones.
+details: |-
+  Dual Stereo 98-Pole Allpass Filter Module
+
+  Smear is Smoothie Audio's first Eurorack module, a dual stereo 98-pole allpass filter unlike anything else in your rack. At its core, Smear takes a deceptively simple concept, the allpass filter usually buried deep inside reverb algorithms, and refines it into a playable, sculptural processor. A single allpass subtly shifts the phase of incoming audio while passing the entire signal unfiltered. Stack 98 poles in series, and the effect becomes striking: frequencies across the spectrum are delayed by different amounts, creating a rich spectral delay that can smear, morph, and transform sound. Smear can become different effects, according to how you set the parameters:
+
+  Interface & Controls
+
+  The panel is laid out symmetrically, with two identical sections (Left and Right). By default, stereo audio flows left → right → out, but a dedicated Split Mode allows each side to process audio independently. Each section offers three core parameters (Frequency, Resonance, and Stages), each with dedicated CV inputs. Frequency and Resonance have attenuverters for precise modulation. A global Feedback control (with CV) unlocks resonant, flanger-like, and physical-modeling behaviors. The Stage sliders reveal Smear's hidden depth: with LEDs indicating crossfade modes between filter poles, you can dive into complex notch filtering, animated flams, and evolving timbral movement. Modulate them, and the module comes alive with unpredictable, dynamic filtering effects. 12hp 30mm depth
+
+  Power 108mA at 12V 70mA at -12V 0mA at 5V
+
+  digital module based on the electrosmith Patch SM
+
+  48 kHz sampling rate
+
+  rack screws not included
+specs: |-
+  - Transient Smearing & Spectral Delay that reshapes transients, can add punch
+  - Resonator & Percussion Voice for metallic, physical-modeling tones when pushed into feedback territory
+  - Morphing Filter & Phasor for animated timbral movement
+io:
+  - key: PxVD9k5Q
+    name: Audio In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bryXqzIJ
+    name: Audio In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: dhW59KmC
+    name: Audio Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6NdxuBzn
+    name: Audio Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 29ezp4KD
+    name: Frequency CV L
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: C1iKyuVi
+    name: Resonance CV L
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: qALdyKu3
+    name: Stages CV L
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5VR36UYg
+    name: Frequency CV R
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: qEGlJT6X
+    name: Resonance CV R
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gzHKDEaE
+    name: Stages CV R
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UG1X0d3D
+    name: Feedback CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ahjemTqn
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
