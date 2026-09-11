@@ -1,0 +1,107 @@
+id: iIIbbLVlhVlaj6UgSaqB_
+name: Voltage Controlled Switch
+manufacturer: stoel-music-systems
+primaryCategory: routing
+categories:
+  - utility
+  - modular
+hp: 4
+url: https://www.stoelmusicsystems.com/products/voltage-controlled-switch
+prices:
+  - amount: 69
+    currency: USD
+    asOf: 2026-09-04
+    source: official-website
+description: A Eurorack module providing two bi-directional electronically
+  controlled switches that route a common jack to one of two other jacks based
+  on an applied CV signal, supporting both audio and CV signals.
+details: |-
+  The Stoel Music Systems Dual Voltage-Controlled Switch provides two electronically controlled switches. The two switches are bi-directional so that the signal can flow in either direction. CV or audio signals are supported. Each switch can be used with one input (COM jack) that may be selectively routed to two different outputs (A or B), or as two inputs (A or B) that can be selected to go to one output (COM jack). Without CV input on the CV jack, the common jack is connected to the A jack. When CV is applied, the common jack is connected to the B jack. LEDs indicate whether A or B is connected to the COM jack. Technical Specifications
+
+  Width
+  4 HP
+
+  Depth
+  4 mm
+
+  Current Draw
+  +12V: 10mA, -12V: 0mA, +5V: 0mA
+specs: |-
+  - Two independent voltage-controlled switches
+  - Signal flows in any direction
+  - Supports audio or CV signals up to +/-12V
+  - Four LEDs to indicate position of switches
+  - High gloss white front panel with UV cured ink
+io:
+  - key: geaRt9kr
+    name: Switch 1 COM
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: aZ0o4jPj
+    name: Switch 1 A
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: aYTHQGZl
+    name: Switch 1 B
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: QHIGV7nj
+    name: Switch 1 CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: HUuVW2gn
+    name: Switch 2 COM
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: SEUnrUxE
+    name: Switch 2 A
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: B6bjTwwz
+    name: Switch 2 B
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: NiDvVdkr
+    name: Switch 2 CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: euzYp0I0
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
