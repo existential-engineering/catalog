@@ -1,0 +1,119 @@
+id: hLjfDy2sqlg7aXBqnkZUh
+name: BomeBox 2
+manufacturer: bome-software
+primaryCategory: midi
+categories:
+  - routing
+  - patch-bay
+  - utility
+url: https://www.bome.com/products/bomebox2
+description: The second-generation BomeBox is a standalone MIDI router and
+  network interface, adding 2x MIDI DIN inputs and outputs, 2x USB host ports,
+  and more memory and processing power for MIDI processing.
+details: |-
+  The BomeBox 2 is the second generation of Bome Software's standalone MIDI router. Bome describes it as keeping everything from the original BomeBox while adding 2x MIDI DIN inputs and outputs, 2x USB Host ports, and more memory and processing power for MIDI processing. Firmware updates are planned to continue adding features, especially further MIDI 2.0 functionality.
+
+  It works as an unlimited virtual MIDI patch bay: arbitrary MIDI Thru connections (routes) can be defined from and to all connected MIDI devices, including devices attached over USB and over the network. The FAQ confirms the multiple MIDI DIN ports can be used to merge MIDI traffic, act as a MIDI Thru box, and merge or duplicate MIDI streams from USB-MIDI devices and from devices connected via network.
+
+  Networking is central to the unit. Two 100MBit Ethernet ports form a 2-port switch for long-distance MIDI connections and centralized access to every MIDI device on the network, and a built-in 2.4 GHz 802.11 b/g/n WLAN radio can be configured as hotspot, hub, or client for quick configuration and wireless MIDI. It connects to Windows, macOS, iOS, iPadOS, Linux and Raspberry Pi over Ethernet or WiFi using the free Bome Network tool or via Network MIDI 2.0, and it can link to other BomeBoxes, computers, iPads and iPhones. A PAIR button handles pairing, and Allen & Heath digital mixers are supported over Ethernet.
+
+  Configuration is done through a Web Config interface from any WiFi-enabled device. For advanced work the unit runs the built-in MIDI Translator Pro engine, loading and executing MIDI Translator Pro project files for unlimited mappings, splits, scenes, conditional routing and MIDI processing (the editor is sold separately). USB QWERTY keyboards can be connected to the USB host ports and mapped to MIDI.
+
+  New on this generation: USB-C for power (5V, up to 2.5A from a standard USB-C supply), and a USER button with an RGB LED that can be assigned various functions or act as a one-button MIDI controller. Both Ethernet ports are PoE In (48V, 15W), so either can power the unit, but unlike the original BomeBox there is no PoE Out port for daisy-chaining power to another BomeBox. The case is reinforced ABS, measuring 121mm x 96mm x 38mm (4.8" x 3.7" x 1.5") and weighing approximately 200g.
+specs: |-
+  - Robust, reinforced ABS case
+  - Define arbitrary MIDI Thru connections (routes) from/to all connected MIDI devices (unlimited virtual MIDI patch bay)
+  - Web Config for easy configuration from any WiFi enabled device
+  - Long distance MIDI connections via Ethernet
+  - MIDI Networking: centralized access to all MIDI devices connected to the Ethernet network
+  - Connects to Windows, macOS, iOS, iPadOS, Linux, and Raspberry Pi using Ethernet or WiFi (free Bome Network tool or via Network MIDI 2.0)
+  - For advanced mappings, load & execute MIDI Translator Pro project files (editor sold separately)
+  - Use USB QWERTY keyboards and map to MIDI
+  - MIDI connections to computers using high-speed network protocol via Ethernet or WLAN using Bome Network Tool
+  - Unlimited mappings/splits/scenes/conditional routing and MIDI processing with built-in MIDI Translator Pro engine (editor sold separately)
+  - Allen & Heath digital mixer support via Ethernet
+  - 2x MIDI DIN IN & OUT with very low latency (more can be added via the USB Host ports)
+  - 2x USB 2.0 Host (Type A receptacle) for connecting USB-MIDI controllers, synthesizers, USB hubs, etc.
+  - 2x Ethernet 100MBit/s (2-port Ethernet switch)
+  - WLAN: 802.11 b/g/n, 2.4 GHz, configurable as hotspot, hub, or client
+  - USER button with RGB LED, assignable to various functions or usable as a one-button MIDI controller
+  - PAIR button for connecting to other BomeBoxes, computers, iPads and iPhones
+  - Power: minimum 2W, maximum 13W
+  - Power via USB-C: 5V (up to 2.5A) with a standard USB-C power supply
+  - Power over Ethernet (PoE, 48V, 15W); both Ethernet ports are PoE In
+  - Main processor with 650MHz, 128MB RAM, 32MB flash memory built-in
+  - Dimensions: 121mm x 96mm x 38mm (4.8" x 3.7" x 1.5")
+  - Weight: approx. 200g
+io:
+  - key: ZVszEvad
+    name: USB Host 1
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Left
+  - key: mgneCuFJ
+    name: USB Host 2
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Left
+  - key: 1wtroUZd
+    name: MIDI 1 In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - key: 9pGPQ6je
+    name: MIDI 1 Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - key: PF7h90pn
+    name: MIDI 2 In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - key: eMYSibkV
+    name: MIDI 2 Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Left
+  - key: DHR0vVXh
+    name: Network 1 (PoE In)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: 0m0yx3P6
+    name: Network 2 (PoE In)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: 8teyvIvA
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-c
+    maxConnections: 1
+    position: Right
