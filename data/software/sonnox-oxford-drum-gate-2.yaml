@@ -7,26 +7,51 @@ categories:
   - effect
   - dynamics
 formats:
-  - au
-  - vst3
   - aax
+  - vst3
+  - au
 platforms:
   - mac
   - windows
+identifiers:
+  sku: NAT-DRG-V2
 url: https://sonnox.com/products/oxford-drum-gate-2
 prices:
   - amount: 179.99
     currency: USD
-description: Purpose-built drum detection engine for mixing live-tracked drums. Offers intelligent hit detection, phase-locked alignment across tracks, adaptive decay, and dynamic leveling without losing expressive playing dynamics.
+  - amount: 149.99
+    currency: GBP
+description: Purpose-built drum detection engine for mixing live-tracked drums.
+  Offers intelligent hit detection, phase-locked alignment across tracks,
+  adaptive decay, and dynamic leveling without losing expressive playing
+  dynamics.
 details: |-
-  Purpose-built drum detection engine that classifies kicks, snares, hi-hats, and toms. Adaptive decay modeling based on hit velocity preserves natural drum resonance while minimizing bleed. Time, polarity, and phase alignment across multiple drum tracks via the Align module. Leveller module for dynamic consistency and hit clipper with intelligent response. MIDI export for sample-accurate drum triggering and external sidechain/MIDI triggering support.
+  Rather than a threshold-based noise gate or source separation, Drum Gate 2 uses a purpose-built drum detection engine that identifies kicks, snares, hi-hats and toms with precision, even in complex playing. Ghost notes and cross stick stay intact while bleed from the rest of the kit is removed, whether the source is live-tracked drums across close mics, overheads and rooms, or kit sounds shaped from stems.
+
+  Adaptive Decay adjusts decay time based on each hit's velocity so drums keep their natural resonance while unwanted noise is clamped down, and the Level tab smooths out performance variations while preserving the contrast between louder hits and subtle ghost notes. The Hit Clipper is fed peak information by the Intelligent Leveller so each transient is clipped on its own terms, giving uniform power and density in dense mixes.
+
+  Drum Gate 2 aligns an entire drum setup in both time and phase, locking the kit together from any instance via the Align tab. It can also be triggered from an external sidechain or MIDI when transients are already mapped, and it exports isolated hits as MIDI with sample-accurate timing and original dynamics for layering or sample replacement.
 specs: |-
-  - Formats: AAX Native, VST3, AudioUnit (AU)
-  - macOS 11.0+ (Intel i5 or Apple M1 minimum)
-  - Windows 10/11 64-bit
-  - Latency: 167–169.5 ms (DAW delay compensation required)
-  - iLok account authorization required
-  - Perpetual license — 2 simultaneous activations
+  - Intelligent drum hit detection for kicks, snares, hi-hats and toms
+  - Adaptive Decay that adjusts decay time to each hit's velocity
+  - Leveller for smoothing dynamic inconsistencies while preserving ghost notes
+  - Hit Clipper fed by the Intelligent Leveller for consistent transient clipping
+  - Time, polarity and phase alignment across the whole kit via the Align tab
+  - Source selection: audio input, MIDI input, external sidechain, or alignment only
+  - MIDI export of detected hits with sample-accurate timing and original dynamics
+  - Confidence/Sensitivity and Min ReTrigger Time controls for detection tuning
+  - Learn and Remove hits for rescuing or rejecting individual transients
+  - Alignment-only mode for overhead and room mics (analysed but not gated)
+  - Reported latency: 169.5 ms at 44.1/88.2/176.4 kHz, 167 ms at 48/96/192 kHz
+  - Sample rates supported: 44.1, 48, 88.2, 96, 176.4 and 192 kHz
+  - Minimum macOS: macOS 11.0, Intel i5 6600 CPU, 8 GB RAM
+  - Minimum Windows: Windows 10 22H2 (64-bit), Intel i5 6600 CPU or equivalent, 8 GB RAM
+  - Recommended macOS: macOS 12.0 or higher, Apple M1 CPU or higher, more than 8 GB RAM
+  - Recommended Windows: Windows 11 (64-bit), Intel i7 9700 CPU or higher, more than 8 GB RAM
+  - AAX Native requires Avid Pro Tools 11 or higher
+  - Perpetual licence with two simultaneous activations
+  - Authorisation via free iLok account: Local Machine, iLok2/iLok3 USB device, or iLok Cloud
+  - 15-day fully functional free trial
 videos:
   - provider: youtube
     videoId: 8kMYs4LCKaI
