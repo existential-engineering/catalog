@@ -14,24 +14,67 @@ platforms:
   - mac
   - windows
 url: https://oeksound.com/plugins/bloom
-description: "An adaptive tone shaper that analyzes the character of a signal
-  and applies dynamic, context-aware corrections to the perceived tonal balance.
-  Described as what an EQ should do — controls irregularities in rough sounds,
-  increases warmth, clarity, or brightness safely, and transforms tone with
-  natural-sounding results."
+description: An adaptive tone shaper that analyzes the character of a signal and applies dynamic, context-aware corrections to the perceived tonal balance. Described as what an EQ should do. It controls irregularities in rough sounds, increases warmth, clarity, or brightness safely, and transforms tone with natural-sounding results.
 details: |-
-  Control irregularities in rough sounds
-  Increase warmth, clarity, or brightness safely
-  Transform tone with natural-sounding results
-  Low latency mode for tracking
-  Four tone control sliders for personalization
-  Squash mode for frequency-dependent compression
-  Works as starting point or finishing processor
-  Broad-strokes EQ with color-box characteristics
+  bloom is described by oeksound as an adaptive tone shaper: it analyzes the character of a signal and applies corrections to the perceived tonal balance for a more even and refined sound. It also lets the user shape the tone and character of a track, for example by adding warmth, brightness, or clarity. Tonal adjustments are dynamic and context-aware, which, together with the interface design, is intended to keep material sounding natural even when making radical changes.
 
-  iLok account required. One license activates on 3 machines. Valid for both Windows and macOS. Online activation required.
+  The plug-in boosts and cuts frequencies only when needed, with the stated aim of mitigating energy build-ups and revealing more detail. The page gives the example of boosting the high end on vocals without emphasizing unwanted sibilance, summarising the intent as bright not needing to mean shrill and big not needing to mean boomy.
 
-  20-day fully featured trial
+  bloom is positioned both as a starting point when shaping a sound and as a finishing touch. The page describes it as useful for quickly crafting single tracks towards a cohesive mix, and equally functional as a bus processor for sculpting groups or shaping a master. Four tone controls let the user shape the tonal balance freely, and they change the overall tonal balance bloom is working towards rather than making the absolute cuts or boosts found in an EQ, so bigger moves need less compensation or automation around problems.
+
+  Pushing the amount control engages squash mode, in which bloom applies frequency-dependent upward and downward compression to reduce the dynamic range of the signal and mold it towards the specified shape. The page describes using it either to subtly bring out detail or to dramatically over-emphasize it, adding grit without saturation. A low latency mode allows tracking through the plug-in.
+
+  oeksound frames bloom as a broad-strokes EQ tool and as its take on a color box, able to give character, glue, or grit, and notes it might be used in place of a dynamic EQ, multiband compressor, saturator, or compressor while falling under none of those categories. The page traces the design back to research questions studied since 2018 (what warmth is in audio, what presence is, and how to bring out and balance overtones present in a sound), followed by two years of critical listening, numerous prototypes and interface testing.
 specs: |-
-  - mac: OS X 10.14 (Mojave) through macOS 26 (Tahoe). 64-bit only. Apple Silicon supported. Intel support through macOS 15 (Sequoia).
-  - windows: Windows 10-11. 64-bit only. No ARM support.
+  - Adaptive tone shaping: analyzes signal character and corrects perceived tonal balance dynamically and context-aware
+  - Four tone controls that shift the overall tonal balance rather than applying absolute EQ cuts or boosts
+  - Squash mode, engaged by increasing the amount control, applying frequency-dependent upward and downward compression
+  - Low latency mode for tracking through the plug-in
+  - Preset menu with search, categories, favourites filter, user preset editing and a pinnable user default
+  - Quality mode and Squash Cal can be locked when changing presets
+  - A/B state and undo history
+  - Windows 10 - 11, 64-bit, no ARM support
+  - Windows formats: 64-bit VST3 and AAX (Pro Tools 2018.1 and up)
+  - Mac OS X 10.14 (Mojave) - macOS 26 (Tahoe)
+  - macOS formats: 64-bit VST3, AU and AAX (Pro Tools 2018.1 and up)
+  - Apple Silicon Macs supported, Intel support up to macOS 15 (Sequoia)
+  - iLok account and iLok License Manager installation required, iLok dongle is not required
+  - Online access required for the initial activation of the product and trial
+  - One license allows activation on 3 machines, valid for both Windows and macOS
+  - Fully featured 20-day trial
+versions:
+  - name: 1.1.3
+    releaseDate: 2025-11-04
+    description: "Windows: fixed an issue with automatic GUI resizing behaviour."
+    url: https://oeksound.com/changelog/bloom
+  - name: 1.1.2
+    releaseDate: 2025-10-06
+    description: Fixed Tone Control Link modifier-key reverting, replaced the Favorites preset category with a heart-icon filter, fixed Logic (Intel) crashes on channel-configuration changes, significant DSP performance improvements on Windows and Intel macOS, improved Windows GUI scaling, fixed a potential UI memory leak.
+    url: https://oeksound.com/changelog/bloom
+  - name: 1.1.1
+    releaseDate: 2025-05-15
+    description: "Logic: fixed playback overloads triggered by the initial GUI opening, plus minor fixes and improvements."
+    url: https://oeksound.com/changelog/bloom
+  - name: 1.1.0
+    releaseDate: 2025-01-14
+    description: Improved preset menu (preset info editing, favorites, user preset categories, pinnable user default, reveal in Finder or File Explorer), option to lock Quality mode and Squash Cal when changing presets, expanded character set for user preset names, Windows CPU optimizations, new factory presets and various UX enhancements and bug fixes.
+    url: https://oeksound.com/changelog/bloom
+  - name: 1.0.8
+    releaseDate: 2024-10-16
+    description: Fixed an issue with AMD Zen 5 processors on Windows (latest iLok License Manager also required) and a crash when using Ableton Live on macOS Sequoia (both Intel and Rosetta).
+    url: https://oeksound.com/changelog/bloom
+  - name: 1.0.7
+    releaseDate: 2024-03-13
+    description: Initial release.
+    url: https://oeksound.com/changelog/bloom
+releaseDate: 2024-03-13
+videos:
+  - provider: youtube
+    videoId: VBpY4BZUrmg
+    title: quickstart video
+  - provider: youtube
+    videoId: D5QSPr9hlK0
+    title: overview video
+  - provider: youtube
+    videoId: 1yiJZZr2H2w
+    title: bloom sizzle reel

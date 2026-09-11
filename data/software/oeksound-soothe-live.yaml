@@ -7,30 +7,48 @@ categories:
   - de-esser
   - plugin
 url: https://oeksound.com/plugins/soothe-live
-description: "A dynamic resonance suppressor optimized for live audio that
-  identifies problematic resonances and applies matching reduction in real-time.
-  Features low latency processing (64 samples algorithm latency, ~1ms roundtrip
-  on S6L), sidechain functionality for addressing bleed, and a touch
-  screen-optimized interface with gesture support."
+description: A dynamic resonance suppressor optimized for live audio that identifies problematic resonances and applies matching reduction in real-time. Features low latency processing (64 samples algorithm latency, ~1ms roundtrip on S6L), sidechain functionality for addressing bleed, and a touch screen-optimized interface with gesture support.
 details: |-
-  Real-time harshness removal without manual frequency notching
-  Sidechain functionality for addressing bleed
-  Low latency (64 samples algorithm latency)
-  Touch screen-optimized interface with gesture support
-  Simple parameter controls: Depth, EQ nodes, Speed, Detail
-  Effective on individual channels and busses
+  soothe live is a dynamic resonance suppressor optimized for live audio. It adapts the technology behind soothe and soothe2 for live use, and is designed for the Avid VENUE | S6L console and the Fourier Audio transform.engine plug-in host, where it identifies problematic resonances and applies matching reduction in real time.
 
-  Avid VENUE S6L
-  Fourier Audio transform.engine
+  It removes harshness from any sound source without notching out frequencies by hand, clears muddiness, boominess and proximity effect, and reduces cymbal bleed via its sidechain. The reduction follows resonant frequencies, acting when and where it is needed. Typical dynamic equalizers suit consistent inputs, while live inputs change from night to night, so soothe live is built around that variability.
 
-  Details not specified on product page
+  Built from scratch for the live environment, it has a latency of only 64 samples on both platforms. On the S6L the resulting roundtrip latency is less than 1 ms, or 95 samples. The optimized processing removes harshness throughout the frequency spectrum while using minimal resources, allowing up to 54 mono or 36 stereo instances on a single 18-core HDX card.
 
-  20-day trial available
+  The interface is optimized for live sound, with parameters designed for live mixing and mapped to favor useful settings and common use cases. It can be driven with knobs on the control surface, a mouse, or a touch screen with gestures. The depth knob increases processing and is reflected in the reduction graph for instant feedback, EQ nodes select which frequency areas to target so processing is more sensitive to boosted frequencies, the speed knob combines attack and release into a mapped dial with golden zones for different sound sources, and the detail knob adjusts between sharp cuts for narrow resonances and broad reduction for general tone shaping.
+
+  It works on individual channels and busses alike, combating resonances and uneven tonal balance across the frequency spectrum, evening out low-mid frequencies or taming bright instruments. The sidechain input tames bleed from other instruments, such as cymbal bleed in a vocal mic, or carves out space for vocals in a crowded mix while leaving the rest of the frequency spectrum intact.
 specs: |-
-  - 44.1 kHz
-  - 48 kHz
-  - 88.2 kHz
-  - 96 kHz
-  - algorithmLatency: 0.66 ms (64 samples)
-  - roundtripLatency: ~1.0 ms on Avid S6L
-  - capacity: 54 mono or 36 stereo instances on single 18-core HDX card
+  - Available for Avid VENUE S6L and Fourier Audio transform.engine
+  - 96 kHz, 88.2 kHz, 48 kHz, and 44.1 kHz
+  - Algorithm latency of 0.66 ms at 96 kHz
+  - Roundtrip latency ~1.0 ms on Avid S6L
+  - Can run 54 mono or 36 stereo instances on a single 18-core HDX card
+  - Full frequency range operation
+  - Sidechain feature
+  - Touch screen optimized with touch gestures
+  - Latency of 64 samples on both platforms (95 samples roundtrip on S6L)
+  - Requires an iLok user ID
+  - Requires Avid VENUE version 7.1.1 or later on the S6L
+versions:
+  - name: 1.0.3
+    releaseDate: 2025-01-23
+    description: soothe live for Fourier Audio transform.engine
+    url: https://oeksound.com/download-soothe-live
+  - name: 1.0.1
+    releaseDate: 2023-04-04
+    description: soothe live for Avid VENUE | S6L, requires VENUE version 7.1.1 or later
+    url: https://oeksound.com/download-soothe-live
+videos:
+  - videoId: GNFqOVHtzBA
+    provider: youtube
+    title: watch the teaser
+  - videoId: XrwowG6q6d4
+    provider: youtube
+    title: soothe live quickstart
+  - videoId: _QMozKdFzMg
+    provider: youtube
+    title: soothe live walkthrough
+  - videoId: Vs1_x41-65U
+    provider: youtube
+    title: Testimonials
