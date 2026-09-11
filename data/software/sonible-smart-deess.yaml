@@ -1,31 +1,57 @@
 id: dqN2baG506L5WrUctJ_y4
 name: smart:deess
 manufacturer: sonible
-primaryCategory: de-esser
+primaryCategory: dynamics
 categories:
   - plugin
 formats:
-  - vst
-  - vst3
   - au
+  - vst2
+  - vst3
   - aax
 platforms:
   - mac
   - windows
-url: https://www.sonible.com/smartdeess/
-description: An advanced, ai-powered de-esser that goes beyond traditional
-  volume reduction to create a more natural, balanced sound in vocal and speech
-  tracks.
 identifiers:
   default: com.sonible.smartdeess
+url: https://www.sonible.com/smartdeess/
+prices:
+  - amount: 129
+    currency: USD
+description: smart:deess is a content-aware de-esser plug-in that uses a trained neural network to detect individual phonemes and treat sibilance and plosives in vocal and speech recordings. Rather than only reducing level, it processes the entire phoneme spectrally for a more natural, better balanced result.
+details: |-
+  smart:deess analyzes the actual content of a signal rather than the level of a single frequency band before deciding what to do. As soon as the plug-in is loaded on a channel it builds a voiceprint of the incoming voice and starts balancing whatever sibilants and plosives are present, so the remaining work is reviewing and refining the analysis rather than correcting a sound by hand. Both sibilance and plosives are covered in one plug-in.
+
+  A fully trained neural network identifies specific individual phonemes (S, Z, Sh, Ch, T, P) in real time and determines the exact start and end point of each sibilance, so no threshold has to be set. The whole sibilant is processed rather than only its loudest part, which makes the result far more natural, and each phoneme type is identified and processed independently, so an Ess is treated differently from a Ch or a T. The outcome sounds as though the original recording had simply been better balanced.
+
+  Where most de-essers act as automatic volume controls, smart:deess pairs a broadband component with additional spectral processing that shapes and refines harsh sounds at a deeper level. The Color controls tune the character of the sibilants to soft, balanced or sharp, so the intended balance can be reached without losing edge, and dull or lisping sibilants can be revived by the same spectral processing.
 specs: |-
-  - Ai-powered neural network processing
-  - Spectral processing
-  - Phoneme identification
-  - Real-time phoneme analysis
-  - Color controls
-  - Broadband component
-  - Individual phoneme processing
+  - Content-aware analysis of the signal's actual content, not the level of a single frequency band
+  - Voiceprint of the input voice built on load, with AI processing setting parameters from the source material
+  - Real-time detection of individual phonemes (S, Z, Sh, Ch, T, P) with exact start and end points, so no threshold is needed
+  - Each phoneme type identified and processed independently
+  - Broadband plus spectral processing, so sibilants are shaped and refined rather than only turned down
+  - Color controls for soft, balanced or sharp sibilant character
+  - Plug-in formats (Mac): VST, VST3, AU, AAX
+  - Plug-in formats (Windows): VST, VST3, AAX
+  - Supported sample rates: 44.1 kHz to 192 kHz
+  - Authorization: machine-based or iLok
+  - Apple Silicon support: native
+  - Latency: approx. 70 ms
+  - Windows: Windows 10 (64 bit)
+  - macOS: OSX 10.14 or later
+  - RAM: 4 GB
+  - CPU: Intel Core (i5) or Apple Silicon
+  - GPU: OpenGL version 3.2 or later
+versions:
+  - name: 1.0.2
+links:
+  - url: https://www.audiopluginguy.com/review-sonible-smartdeess/
+    type: review
+    title: Audio Plugin Guy Review
+  - url: https://www.sonible.com/edu-program/
+    type: resource
+    title: Education Program
 videos:
   - videoId: lgKAzohhZjs
     title: Product Demo
@@ -35,25 +61,3 @@ videos:
     title: Product Demo
   - videoId: Kl7-0Sj-0k8
     title: Product Demo
-links:
-  - url: https://www.audiopluginguy.com/review-sonible-smartdeess/
-    type: review
-    title: Audio Plugin Guy Review
-  - url: https://www.sonible.com/edu-program/
-    type: resource
-    title: Education Program
-prices:
-  - amount: 99
-    currency: USD
-details: |-
-  smart:deess is a content-aware de-esser plugin that uses advanced ai and neural network technology to analyze and process vocal recordings. It goes beyond traditional de-essing by identifying and processing specific phonemes with unprecedented precision, creating more natural and balanced sound quality.
-
-  The plugin uses a sophisticated approach to sibilance reduction, identifying individual phoneme types like s, z, sh, ch, t, and p in real time. It determines the exact start and end points of each sibilance without manual threshold setting, processing the entire phoneme rather than just the loudest part.
-
-  Users can customize the sibilant character using color controls, allowing for soft, balanced, or sharp sound shaping. The plugin can revive dull or lisping sibilants through its advanced spectral processing, providing more nuanced control over vocal audio than traditional de-essers.
-
-  Smart:deess automatically builds a voiceprint of the input voice signal upon loading, balancing sibilants and plosives with minimal user intervention. The plugin aims to save time by allowing users to focus on achieving the desired sound rather than constantly correcting unwanted audio artifacts.
-
-  The plugin offers a comprehensive visual interface and supports various vocal processing needs, with particular effectiveness noted for challenging vocal recordings like German vocals. It provides a more intelligent and adaptive approach to de-essing compared to traditional volume-based audio processing tools.
-versions:
-  - name: 1.0.2

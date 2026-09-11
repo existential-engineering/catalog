@@ -5,15 +5,49 @@ primaryCategory: metering
 categories:
   - plugin
 formats:
+  - vst
   - vst3
+  - au
+  - aax
 platforms:
   - mac
-url: https://www.sonible.com/truelevel/
-description: true:level is a metering plug-in that visualizes the interplay
-  between loudness and dynamics, making it apparent if a mix is ready to
-  publish.
+  - windows
 identifiers:
   default: com.sonible.truelevel
+url: https://www.sonible.com/truelevel/
+prices:
+  - amount: 69
+    currency: USD
+description: true:level is a metering plug-in that visualizes the interplay between loudness and dynamics in a meaningful way, making it immediately apparent whether a mix is ready to publish. It combines real-time true peak, loudness and dynamics readouts with reference targets and text-based suggestions.
+details: |-
+  true:level measures loudness and dynamics together rather than in isolation, so the trade-off between the two is visible at a glance. Real-time readouts cover integrated, short-term and momentary loudness in LUFS, loudness range in LU, dynamics derived from the peak to loudness ratio, and true peak in dBTP using high-resolution oversampling.
+
+  A range of predefined references ships with the plug-in, including the loudness standards of publishing platforms and dynamic references for different genres. Aiming at those values avoids surprises at publication. Up to 8 custom reference tracks can be loaded to compare a mix against, which keeps levels consistent across an entire project.
+
+  The visualization draws a reference zone from the chosen loudness and dynamics reference, or from the uploaded reference tracks. When a track sits outside that zone, the Level Check gives text-based hints on what to change to bring it inside. Target indicators sit beside the key readouts so the distance to the chosen reference stays readable without reading numbers.
+
+  The plug-in handles mono, stereo and Dolby Surround 5.1 material at sample rates from 44.1 kHz to 192 kHz, and runs natively on Apple Silicon. It is also available as part of sonible's Metering Bundle alongside true:balance.
+specs: |-
+  - Real-time metering of true peak, loudness and dynamics
+  - Loudness [LUFS]: integrated, short-term, momentary
+  - Loudness Range [LU]: integrated, short-term, momentary
+  - Dynamics [dB] based on peak to loudness ratio
+  - True Peak [dBTP] using high-resolution oversampling
+  - Predefined platform loudness standards and genre dynamics references
+  - Up to 8 custom reference tracks for project-wide consistency
+  - Calculated reference zone with target indicators on key readouts
+  - Level Check with text-based suggestions
+  - Plug-in formats (Mac): VST, VST3, AU, AAX
+  - Plug-in formats (Windows): VST, VST3, AAX
+  - Supported formats: mono, stereo, Dolby Surround 5.1
+  - Supported sample rates: 44.1 kHz to 192 kHz
+  - Authorization: machine-based or iLok
+  - Apple Silicon support: native
+  - Windows 10 or later (64 bit), macOS 10.12 or later
+  - 4GB RAM, Intel Core (i5) or Apple Silicon CPU, OpenGL 3.2 or later
+versions:
+  - name: 1.0.2
+  - name: 1.0.4
 videos:
   - videoId: 7XXqs8MSkdo
     title: Demo
@@ -35,5 +69,3 @@ videos:
     title: Demo
   - videoId: fZ6kPkcxj-w
     title: Demo
-versions:
-  - name: 1.0.2
