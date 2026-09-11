@@ -2,72 +2,39 @@ id: DcHcw91rpQOBTb1UBr16e
 name: BlackAsh SC-5
 manufacturer: black-rooster
 primaryCategory: compressor
-url: https://blackroosteraudio.com/en/products/blackash_sc-5
-description: "Accurately modeled after the 'black' version of a classic and
-  sought-after VCA compressor the sc-5 opens up a whole world of versatility:
-  you're going for super gentle compression to sweeten up the signal on your
-  masterbuss? You're looking for a colorful or smashed sound on your drum buss?
-  You want to tame lively and dynamic material? The BlackAsh SC-5 handles it
-  all."
-details: |-
-  Accurately modeled after the 'black' version of a classic and sought-after VCA
-  compressor the sc-5 opens up a whole world of versatility: you're going for
-  super gentle compression to sweeten up the signal on your masterbuss? You're
-  looking for a colorful or smashed sound on your drum buss? You want to tame
-  lively and dynamic material? The BlackAsh SC-5 handles it all.
-
-  The blackash sc-5 adds an external sidechain input that can be engaged by
-  depressing the "ext sc" button. The blackash sc-5 is a feedback compressor
-  design, thus feeding an external sidechain input into the existing feed-back
-  loop circuit would result in feed-forward topology, which would result in
-  different compression behaviour. To overcome this problem, the external
-  sidechain input is treated just like the normal audio signal, while the
-  resulting control voltage is fed into a mirror vca that modulates the audio
-  signal. This way feed-back operation can be retained in both the normal and
-  external sidechain modes.
-
-  The blackash sc-5 is a fixed threshold compressor: more compression can be
-  achieved by increasing the input gain. This will of course boost your signal's
-  volume. Drag the input gain knob while holding the right mouse button and the
-  output gain will be adjusted so the perceived output level will remain
-  approximately the same.
-
-  Our real time spice type component based circuit simulation approach allows to
-  authentically capture the sound and feel of the analog counterpart in all
-  nuances. Every crucial part of the circuit, including the custom vca design,
-  the dual time-constant detector circuit, the feedback compressor loop and the
-  audio path have been faithfully modeled. Dsp operations are pipe-lined using
-  the sse2 instruction set. This ensures highest possible performance operation
-  despite very complex computations.
-
-  Aliasing artifacts are efficiently attenuated using a low latency linear phase
-  dolph-chebyshev poly-phase design. The oversampling is auto adjusted to your
-  session's sample rate to save valuable cpu power while offering the most
-  transparent sound possible. All our plug-ins support high pixel density on mac
-  os x and windows to bring you the most enjoyable user experience on high dpi
-  displays.
-specs: |-
-  - External sidechain input
-  - Auto gain compensation
-  - Fixed threshold compressor
-  - Feedback compressor design
-  - Custom VCA design
-  - Dual time-constant detector circuit
-  - Spice type component based circuit simulation
-  - SSE2 optimized code
-  - Auto-adjusted oversampling
-  - Linear phase dolph-chebyshev poly-phase design
-  - Highdpi support
-  - Retina support
-  - Universal 2 binary
-  - SSE2 compatible processor
-  - 1gb RAM
-  - Windows 7 or newer
-  - Mac 10.9 or later
-  - 1280x1024 display resolution or higher
-prices:
-  - amount: 129
-    currency: USD
+formats:
+  - aax
+  - au
+  - vst2
+  - vst3
 platforms:
   - mac
   - windows
+url: https://blackroosteraudio.com/en/products/blackash_sc-5
+prices:
+  - amount: 129
+    currency: USD
+  - amount: 39
+    currency: EUR
+description: "Accurately modeled after the 'black' version of a classic and sought-after VCA compressor the sc-5 opens up a whole world of versatility: you're going for super gentle compression to sweeten up the signal on your masterbuss? You're looking for a colorful or smashed sound on your drum buss? You want to tame lively and dynamic material? The BlackAsh SC-5 handles it all."
+details: |-
+  Inspired by the Ashly SC-50: the BlackAsh SC-5 recreates the black-frontplate 1980s revision of a classic American VCA compressor, the darker, more aggressive sibling built with an external sidechain input on board. It is a feedback VCA compressor that handles the same wide range of jobs as the blue-faced original, from gentle mix-bus glue to fully smashed drum-bus destruction, but voices things differently: the audio path sits darker, the harmonic structure shifts, and it adds an external sidechain the earlier unit never had.
+
+  A real-time, SPICE-style circuit simulation models every crucial stage as a living circuit: the custom VCA, the dual time-constant detector, the feedback compressor loop and the audio path are rebuilt component by component. The black revision runs a first-order lowpass at 31.2kHz in the audio path that the blue unit never had, quietly rolling the very top and lending the BlackAsh its more closed, aggressive tone. It is a fixed-threshold design: the amount of compression is set by pushing the input Gain, with the makeup trimmed via Output.
+
+  Attack runs from 200µs up to 20ms, release from 100ms to 2s, and Ratio sweeps from a gentle 1:2 all the way to a limiting 1:∞. A dedicated Limit switch bypasses just the compressor path so the output stage and meters stay live while A/B-ing a setting.
+
+  On a drum bus it delivers weight and menace with a fast attack; on vocals its darker path flatters bright or sibilant sources, and the external sidechain (engaged via "Ext SC") allows driving a de-esser or EQ'd feed into the detector for frequency-conscious ducking or de-essing. The external signal is blended into the feedback detector path so the unit keeps its feedback behaviour. On the mix bus it glues, on bass it tightens, and wound to its topmost ratio it clamps like a limiter.
+specs: |-
+  - External sidechain input on a dedicated bus ("Ext SC") for de-essing, ducking and creative effects, blended into the feedback detector path
+  - 31.2kHz first-order lowpass in the audio path (black-revision voicing)
+  - Fixed-threshold Gain with auto gain compensation (right-click drag links Gain/Output)
+  - Stepped Ratio: 1:2, 1:2.5, 1:3, 1:5.5, 1:7, 1:10, 1:20, 1:30, 1:100, 1:∞ (limiting)
+  - Attack 200µs to 20ms, release 100ms to 2 seconds
+  - Link switch for stereo-linked or dual-mono operation
+  - Limit switch bypasses only the compressor path, output stage and meters stay live
+  - Gain-reduction and threshold LEDs, plus host gain-reduction meter
+  - Real-time SPICE-type component-based circuit simulation of the custom VCA, dual time-constant detector, feedback compressor loop and audio path
+  - SSE2-optimised DSP
+  - Low-latency, linear-phase Dolph-Chebyshev polyphase oversampling, auto-adjusted to session sample rate
+  - HighDPI / Retina support on macOS and Windows
