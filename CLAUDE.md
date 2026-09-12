@@ -600,9 +600,9 @@ else. **Only the host of a root url counts.** A brand whose url is a deep
 path on another company's domain is hosted there rather than the owner of
 it, and `bock-audio` points at `uaudio.com/pages/microphones` because
 Universal Audio distributes the mics, so counting a subpath would let one
-maker's domain vouch for another's ids. Racks' triage alias
-(`triage/catalog-keys.ts`) resolves a submitted brand by the same rule,
-for the same reason.
+maker's domain vouch for another's ids. The triage alias in the racks repo
+(`scripts/catalog-import/triage/catalog-keys.ts`) resolves a submitted
+brand by the same rule, for the same reason.
 
 The writer adds an unlisted format beside its identifier, since the build
 writes `software_formats` rows for listed formats only, and adds a version
