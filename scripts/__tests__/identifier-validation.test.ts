@@ -35,6 +35,18 @@ describe("validateIdentifier", () => {
     });
   });
 
+  describe("VST3 identifiers", () => {
+    it("accepts the bundle id and the 32-digit class id alike", () => {
+      expect(validateIdentifier("vst3", "com.native-instruments.Massive").valid).toBe(true);
+      expect(validateIdentifier("vst3", "ABCDEF019182FAEB53634D7353633346").valid).toBe(true);
+      expect(validateIdentifier("vst3", "abcdef019182faeb53634d7353633346").valid).toBe(true);
+    });
+
+    it("rejects a class id of the wrong length", () => {
+      expect(validateIdentifier("vst3", "ABCDEF019182FAEB53634D73536333").valid).toBe(false);
+    });
+  });
+
   describe("AAX identifiers", () => {
     it("accepts valid 4-character PACE code", () => {
       expect(validateIdentifier("aax", "XfRc")).toEqual({ valid: true });

@@ -648,7 +648,7 @@ A plugin identifier doesn't match the expected format.
 | Format | Pattern            | Example                          |
 | ------ | ------------------ | -------------------------------- |
 | `au`   | Reverse domain     | `com.xferrecords.Serum`          |
-| `vst3` | Reverse domain     | `com.native-instruments.Massive` |
+| `vst3` | Reverse domain, or a 32-digit hex class id | `com.native-instruments.Massive` |
 | `aax`  | 4-letter PACE code | `XfRc`                           |
 | `clap` | Reverse domain     | `com.u-he.Diva`                  |
 

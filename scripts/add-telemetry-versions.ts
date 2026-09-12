@@ -34,6 +34,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import { parseDocument } from "yaml";
+import {
+  coercedEqual,
+  compareCoercedDesc,
+  isJunkVersion,
+  type VersionRecord,
+} from "./lib/version-names.js";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 const DATA_DIR = path.join(REPO_ROOT, "data");
@@ -47,44 +53,7 @@ interface TelemetryEntry {
   versions: string[];
 }
 
-interface VersionRecord {
-  name: string;
-  [key: string]: unknown;
-}
-
-/** Coerce a version string to [major, minor, patch], like semver.coerce. */
-function coerce(version: string): [number, number, number] | null {
-  const match = version.match(/(\d+)(?:\.(\d+))?(?:\.(\d+))?/);
-  if (!match) {
-    return null;
-  }
-  return [Number(match[1]), Number(match[2] ?? 0), Number(match[3] ?? 0)];
-}
-
-function coercedEqual(a: string, b: string): boolean {
-  const ca = coerce(a);
-  const cb = coerce(b);
-  if (!ca || !cb) {
-    return false;
-  }
-  return ca[0] === cb[0] && ca[1] === cb[1] && ca[2] === cb[2];
-}
-
-function isJunkVersion(version: string): boolean {
-  const c = coerce(version);
-  return !c || (c[0] === 0 && c[1] === 0 && c[2] === 0);
-}
-
-/** Descending compare of coerced versions; unparseable names sort last. */
-function compareCoercedDesc(a: string, b: string): number {
-  const ca = coerce(a);
-  const cb = coerce(b);
-  if (!ca || !cb) {
-    return ca ? -1 : cb ? 1 : 0;
-  }
-  return cb[0] - ca[0] || cb[1] - ca[1] || cb[2] - ca[2];
-}
-
+/** Every entry file by its id, across the four product collections. */
 function buildIdIndex(): Map<string, string> {
   const index = new Map<string, string>();
   for (const collection of COLLECTIONS) {
@@ -106,6 +75,7 @@ function buildIdIndex(): Map<string, string> {
   return index;
 }
 
+/** `--input <file>` and `--write`, with usage on a missing input. */
 function parseArgs(): { input: string; write: boolean } {
   const args = process.argv.slice(2);
   const inputIndex = args.indexOf("--input");
@@ -117,6 +87,7 @@ function parseArgs(): { input: string; write: boolean } {
   return { input, write: args.includes("--write") };
 }
 
+/** CLI entry: add reported versions the entries lack, dry run unless `--write`. */
 function main(): void {
   const { input, write } = parseArgs();
   const entries = JSON.parse(fs.readFileSync(input, "utf-8")) as TelemetryEntry[];
