@@ -1,5 +1,150 @@
 # catalog
 
+## 3.64.0
+
+### Minor Changes
+
+- 7382f9e: Make `default` and `bundle` identifiers reach `software_formats`.
+
+  An entry holding its identifier under `identifiers.default` (208
+  entries) or `identifiers.bundle` (5) built to a NULL identifier on every
+  format row, because the build looked each format up by name and nothing
+  else. Studio's plugin matcher reads only that column, so 217 of the 247
+  entries with identifiers could never match a scanned plugin. The build
+  now resolves each listed format as its own key, then `default`, then
+  `bundle` for `au` and `standalone`. Rows with a non-null identifier go
+  from 46 to 822. Additive, so `schema_version` is unchanged.
+
+- d0850ad: Add the identifier writer and the lanes that feed it.
+
+  Software identifiers were the thinnest field in the catalog (247 of
+  4,443 entries) and the one plugin sync depends on. Every observed
+  identifier now lands through one writer, `scripts/lib/identifier-writer.ts`,
+  which refuses a `local.*` fallback, an invalid value, a format already
+  resolving to a different id and a vendor segment naming another maker,
+  and adds an unlisted format beside its id and a version the entry lacks.
+  It is fed by `pnpm identifiers:from-telemetry` (Studio's name-match
+  observations, two or more installs), `pnpm identifiers:apply` (a
+  reviewed TSV), `pnpm identifiers:from-registry` (the Open Audio Stack
+  registry) and `pnpm identifiers:from-juce` (a JUCE project's build file).
+  `vst3` accepts the 32-digit class id beside the bundle id. No data file
+  changes and `schema_version` is unchanged.
+
+- b37e401: Import Ashdown Engineering (263 hardware/accessory entries).
+
+  British bass and guitar amplification maker, family run since 1997.
+  Covers the ABM, RM Rootmaster, Original, CTM, MAG, AGM and UK-made
+  head, combo and cabinet ranges, the SX guitar amp line, Woodsman
+  acoustic combos, NFR studio monitors, several compressor and drive
+  pedals, and footswitch accessories.
+
+- e85535c: Refresh Cherry Audio: 3 new, 2 discontinued, 40 updated.
+
+  Adds the Crumar DS-2, Ensoniq ESQ-1 and Memorymode 2 instruments. Retires
+  Memorymode and Pro VS Mini, whose product pages are gone. The refreshed
+  entries pick up missing formats, platforms, prices, videos and current
+  product copy.
+
+- d3d872e: Refresh DHPlugins: 10 new, 0 discontinued, 1 updated.
+
+  Adds the HALO 2 hybrid synth with its FX and Lite editions, the LFO-EQ
+  filter plugin, and six HALO 2 expansion packs (Beast-Mode, Borg Bass,
+  Cyberfunk, Junglist, Mono-Synth and Raw). BASS-FACE picks up video titles
+  from its current product page.
+
+- e8d6828: Refresh sonible: 15 new, 1 discontinued, 3 updated.
+
+  Adds the pure and learn era of sonible's range, including pure:EQ, pure:limit, pure:level, pure:unmask, pure:deess, smart:EQ 4, smart:comp 3, smart:reverb 2, smart:gate, smart:chain, prime:vocal, entropy:EQ+, proximity:EQ+, true:balance and the free puffer:fish. smart:EQ 3 is marked discontinued, and smart:deess, smart:limit and true:level gain current specs, formats, prices and descriptions.
+
+- 1df4743: Refresh Sonuscore: 2 new, 0 discontinued, 89 updated.
+
+  Adds Elysion Elements and The Sculpture, and refreshes the rest of the
+  Sonuscore range with current prices, specifications and descriptions.
+  Review rewrote manufacturer marketing copy into factual prose across
+  the range and removed several claims that belonged to other products.
+  The refresh also surfaced that a large share of these entries are
+  resold third-party libraries, which is noted on the pull request for a
+  person to decide.
+
+- 3a3ff1c: Refresh STL Tones: 5 new, 0 discontinued, 233 updated.
+
+  Adds five AmpHub models (Fenix Super, Max Drive M808X, Mizar Wild OD,
+  My Crunch Drive and Osaka J120) and refreshes the rest of the range
+  with current prices and descriptions. 128 entries had their product
+  link updated after the store renamed its handles, and several
+  descriptions that had been cut off mid-sentence are now complete.
+
+- 4f70f8b: Import Syntonie (28 hardware/software entries).
+- d235d2c: Refresh Three-Body Technology: 1 new, 0 discontinued, 21 updated.
+
+  Adds Future DS, a spectral de-esser, and brings the existing twenty-one
+  plugin and instrument entries up to date with the maker's current site.
+  Every entry now carries its regular list price, replacing promotional
+  figures captured at earlier imports.
+
+### Patch Changes
+
+- e7c838b: Back-fill seven identifiers from Studio telemetry, and let a maker's own
+  domain satisfy the vendor-segment check.
+
+  The vendor-segment guard compared a reverse-domain identifier against the
+  manufacturer's slug and display name only. A bundle id is built from the
+  maker's domain rather than its name, and the two need not resemble each
+  other: Universal Audio ships `com.uaudio.effects.*` from `uaudio.com`,
+  which matches neither `universal-audio` nor `Universal Audio`, so every
+  identifier for that maker's 156 entries was refused as naming somebody
+  else. `vendorSegmentMatches` now also accepts the host of the
+  manufacturer's url, and only of a root url, because a brand whose url is a
+  deep path on another company's domain is hosted there rather than the
+  owner of it (`bock-audio` sits on `uaudio.com/pages/microphones`).
+
+  The seven rows are in `docs/reviews/2026-09-identifier-backfill-telemetry.tsv`
+  with the rejections and the reason each was declined. Six entries gain an
+  identifier they had none for. The seventh, the API Vision Channel Strip
+  Collection, already held the right id under `default` and listed no formats
+  at all, so the build wrote it onto no row and the matcher could not reach
+  it; it gains `formats: [vst3]`, the format actually observed.
+
+- 55330c2: Validate every identifier value, `default` and `bundle` included.
+
+  `pnpm validate` now reports E400 for an identifier that does not match
+  its key's pattern. Until the build applied `default` and `bundle` to
+  format rows a malformed value under either key never reached the
+  database, so nothing checked it. `pnpm identifier-coverage` now counts
+  an entry as covered only when a listed format resolves, so a `bundle`
+  beside vst3 and aax, or a `productId` alone, is listed by what is still
+  missing rather than skipped.
+
+- bce757b: Write down that a maker's own domain satisfies the vendor-segment check.
+
+  catalog#863 taught `vendorSegmentMatches` to accept the host of the
+  manufacturer's `url` alongside the slug and display name, and only of a
+  root url, but left the Identifiers section describing the old two-spelling
+  behaviour. Anyone reading it would not know why `com.uaudio.effects.*`
+  passes on `universal-audio`, which is the shape of change this file exists
+  to stop being re-litigated. No code or data changes.
+
+- 3c8c054: Refresh Sonnox: 0 new, 0 discontinued, 15 updated.
+
+  Adds GBP pricing and product identifiers across the Oxford plugin
+  range, Claro, Voca, VoxDoubler and ListenHub, and expands the
+  specifications on every entry. Product descriptions were rewritten
+  from promotional copy into factual prose, which also corrected two
+  errors: Oxford Dynamics described five of its six processes, and
+  Oxford SuprEsser DS carried the base SuprEsser's description along
+  with a linear-phase claim that contradicted its own latency spec.
+
+- 5afcc32: Refresh Synchro Arts: 0 new, 0 discontinued, 5 updated.
+
+  Updates the five Synchro Arts plugin entries from the maker's current
+  site, filling in details, specs and licence terms for RePitch Elements,
+  RePitch Standard, Revoice Pro 5, VocAlign Pro and VocAlign Standard.
+  Each entry now records its perpetual licence term alongside its price,
+  and the tier-specific feature lists separate what Standard and Pro each
+  include.
+
+- 3821709: Restore the Wildhunt edition prices removed during PR #851 review
+
 ## 3.63.0
 
 ### Minor Changes
