@@ -652,6 +652,10 @@ A plugin identifier doesn't match the expected format.
 | `aax`  | 4-letter PACE code | `XfRc`                           |
 | `clap` | Reverse domain     | `com.u-he.Diva`                  |
 
+`default` and `bundle` take the reverse-domain pattern too, because the build
+writes them onto format rows (see E401 below). A key with no pattern, such as
+`productId`, accepts any value.
+
 **Fix:** Update the identifier to match the expected format for that plugin type.
 
 ---
@@ -668,11 +672,11 @@ A `default` key covers every listed format at once, and is the right
 choice when the plugin ships one bundle id across AU, VST3 and AAX (most
 JUCE-built plugins do). The build resolves each format in this order:
 
-| Precedence | Key                           | Applies to                  |
-| ---------- | ----------------------------- | --------------------------- |
-| 1          | The format's own key (`vst3`) | That format only            |
-| 2          | `default`                     | Every listed format         |
-| 3          | `bundle`                      | `au` and `standalone` only  |
+| Precedence | Key                           | Applies to                 |
+| ---------- | ----------------------------- | -------------------------- |
+| 1          | The format's own key (`vst3`) | That format only           |
+| 2          | `default`                     | Every listed format        |
+| 3          | `bundle`                      | `au` and `standalone` only |
 
 A per-format key overrides `default` for that format; `bundle` names a
 macOS app or component bundle, so it is not assumed for VST3 or AAX.
@@ -765,7 +769,6 @@ drop prices to satisfy it.
 
 **Fix:** Set `term` on each price (`perpetual`, `monthly`, `yearly`, `rent-to-own`),
 or keep one price per currency. One price per currency never needs a term.
-
 
 ---
 

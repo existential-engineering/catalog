@@ -79,8 +79,8 @@ export function normalizeCategory(category: string): string {
   return CATEGORY_ALIASES.get(category) ?? category;
 }
 
-// Load IO position and connection aliases for normalization
 import { resolveFormatIdentifier } from "./lib/identifier-fallback.js";
+// Load IO position and connection aliases for normalization
 import { loadSchemaContext } from "./lib/schema-loader.js";
 import { expandSearchTerms } from "./lib/synonyms.js";
 

@@ -20,15 +20,14 @@
  *      component bundle, and a VST3 or AAX bundle can carry a different one
  *
  * `pnpm identifier-coverage` reads the same function, so what the report
- * counts as covered is what the database carries. Documented in CLAUDE.md
- * ("Identifiers") and docs/VALIDATION_ERRORS.md (E401).
+ * counts as covered is what the database carries, and `pnpm validate`
+ * checks every key's value against its pattern (E400) because a value here
+ * now ships. Documented in CLAUDE.md ("Identifiers") and
+ * docs/VALIDATION_ERRORS.md (E400, E401).
  */
 
 /** Formats a bare `bundle` key stands in for. */
 export const BUNDLE_FALLBACK_FORMATS: ReadonlySet<string> = new Set(["au", "standalone"]);
-
-/** Keys in `identifiers` that are not format names but feed formats. */
-export const FALLBACK_IDENTIFIER_KEYS = ["default", "bundle"] as const;
 
 /**
  * The identifier `software_formats.identifier` carries for one listed

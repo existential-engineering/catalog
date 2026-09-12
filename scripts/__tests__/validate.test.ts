@@ -483,6 +483,46 @@ describe("validateFile", () => {
     });
   });
 
+  it("hard-fails a malformed identifier as E400, default and bundle included", () => {
+    // Before catalog#860 a value under `default` never reached the database,
+    // so nothing checked it. Now the build writes it onto every format row.
+    const file = writeEntry(
+      "software",
+      `name: Widget
+manufacturer: acme
+primaryCategory: plugin
+platforms:
+  - mac
+identifiers:
+  default: Acme Widget
+`
+    );
+    expect(validateFile(file, COLLECTION_SCHEMAS.software, MAKERS)?.details?.[0]).toMatchObject({
+      code: ValidationErrorCode.E400_INVALID_IDENTIFIER_FORMAT,
+      path: "identifiers.default",
+      line: 7,
+    });
+  });
+
+  it("accepts reverse-domain identifiers under any key, and any value under a key with no pattern", () => {
+    const file = writeEntry(
+      "software",
+      `name: Widget
+manufacturer: acme
+primaryCategory: plugin
+platforms:
+  - mac
+identifiers:
+  default: com.acme.Widget
+  bundle: com.acme.Widget
+  vst3: com.acme.Widget.vst3
+  aax: AcmW
+  productId: "106832"
+`
+    );
+    expect(validateFile(file, COLLECTION_SCHEMAS.software, MAKERS)).toBeNull();
+  });
+
   it("hard-fails a name artifact as E118", () => {
     const file = writeEntry(
       "software",
