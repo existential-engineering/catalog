@@ -55,7 +55,8 @@ export const DEFAULT_MIN_DEVICES = 2;
 
 /**
  * Turn telemetry rows into writer rows, keeping only those enough
- * machines agree on. A row with several versions becomes one writer row
+ * machines agree on. `devices` is a count of distinct installs, so
+ * anything but a positive integer is under threshold, never agreement. A row with several versions becomes one writer row
  * per version, so each is offered to `versions`; the identifier is the
  * same on all of them and the writer reports the repeats as `same`.
  */
@@ -66,7 +67,7 @@ export function selectTelemetryRows(
   const rows: IdentifierRow[] = [];
   const underThreshold: TelemetryIdentifier[] = [];
   for (const entry of entries) {
-    if (!Number.isFinite(entry.devices) || entry.devices < minDevices) {
+    if (!Number.isInteger(entry.devices) || entry.devices < 1 || entry.devices < minDevices) {
       underThreshold.push(entry);
       continue;
     }
@@ -84,6 +85,7 @@ export function selectTelemetryRows(
   return { rows, underThreshold };
 }
 
+/** CLI entry: read the aggregated JSON, apply above the threshold, report the rest. */
 function main(): void {
   const { values } = parseArgs({
     options: {

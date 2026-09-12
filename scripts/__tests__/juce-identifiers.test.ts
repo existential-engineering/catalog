@@ -44,6 +44,17 @@ describe("extractJuceIdentifiers", () => {
     expect(info).toMatchObject({ manufacturerCode: "ACME", pluginCode: "VERB", formats: ["vst3"] });
   });
 
+  it("survives parentheses inside a quoted argument before the identifiers", () => {
+    const info = extractJuceIdentifiers(
+      'juce_add_plugin(x DESCRIPTION "A synth (mono and poly)" BUNDLE_ID com.acme.Synth PLUGIN_CODE Syn1 FORMATS AU VST3)'
+    );
+    expect(info).toMatchObject({
+      bundleId: "com.acme.Synth",
+      pluginCode: "Syn1",
+      formats: ["au", "vst3"],
+    });
+  });
+
   it("reads the attributes off a .jucer root element", () => {
     expect(extractJuceIdentifiers(jucer)).toEqual({
       bundleId: "com.digitalsuburban.Dexed",

@@ -101,9 +101,24 @@ function alnum(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
+/** A VST3 class id: 32 hex digits, which moduleinfo.json writes in either case. */
+function isClassId(identifier: string): boolean {
+  return /^[0-9a-f]{32}$/i.test(identifier);
+}
+
 /** A reverse-domain identifier: at least two dot-separated segments, no hex CID. */
 function isReverseDomain(identifier: string): boolean {
-  return identifier.includes(".") && !/^[0-9a-f]{32}$/i.test(identifier);
+  return identifier.includes(".") && !isClassId(identifier);
+}
+
+/**
+ * Whether two identifiers name the same thing. A class id compares
+ * case-insensitively, since the same FUID is written upper-case by one
+ * SDK and lower-case by another; a bundle id is compared as written.
+ */
+export function sameIdentifier(a: string, b: string): boolean {
+  if (isClassId(a) && isClassId(b)) return a.toLowerCase() === b.toLowerCase();
+  return a === b;
 }
 
 /**
@@ -137,6 +152,7 @@ export function vendorSegmentMatches(
   });
 }
 
+/** Every software entry by id and by slug, so a row may name either. */
 function buildSoftwareIndex(dataDir: string): SoftwareIndex {
   const byId = new Map<string, SoftwareTarget>();
   const bySlug = new Map<string, SoftwareTarget>();
@@ -153,6 +169,7 @@ function buildSoftwareIndex(dataDir: string): SoftwareIndex {
   return { byId, bySlug };
 }
 
+/** A manufacturer's display name from its own file, or empty when it has none. */
 function manufacturerName(dataDir: string, slug: string): string {
   const file = path.join(dataDir, "manufacturers", `${slug}.yaml`);
   if (!fs.existsSync(file)) {
@@ -193,7 +210,12 @@ export function applyIdentifierRows(
     }
     const file = path.relative(dataDir, target.file);
 
-    if (!isValidFormat(row.format) || row.format === "standalone") {
+    // `standalone` is a legal format with no identifier of its own, so a
+    // row may list it (with a version) but never write an id under it.
+    if (
+      !isValidFormat(row.format) ||
+      (row.format === "standalone" && row.identifier !== undefined)
+    ) {
       outcomes.push({
         row,
         kind: "unsupported-format",
@@ -240,8 +262,8 @@ export function applyIdentifierRows(
     let detail =
       identifier === undefined
         ? `${row.format} already listed`
-        : `${row.format} already resolves to ${identifier}`;
-    if (identifier !== undefined && existing && existing !== identifier) {
+        : `${row.format} already resolves to ${existing ?? identifier}`;
+    if (identifier !== undefined && existing && !sameIdentifier(existing, identifier)) {
       outcomes.push({
         row,
         kind: "conflict",
@@ -334,8 +356,12 @@ export function printApplySummary(summary: ApplySummary, write: boolean): void {
     }
   }
   for (const outcome of summary.outcomes) {
-    if (outcome.kind === "conflict" || outcome.kind === "not-found") {
-      console.log(`  ${outcome.kind}: ${outcome.row.target} ${outcome.detail}`);
+    // Every refusal is printed, not only the ones a person must resolve: a
+    // skipped or unsupported row that is merely counted cannot be checked.
+    if (outcome.kind !== "written" && outcome.kind !== "same") {
+      console.log(
+        `  ${outcome.kind}: ${outcome.row.target} ${outcome.row.format} ${outcome.detail}`
+      );
     }
   }
   const parts = [...counts.entries()].map(([kind, count]) => `${count} ${kind}`);

@@ -66,10 +66,41 @@ function juceFormat(token: string): string | null {
   }
 }
 
+/**
+ * The argument text of the first `juce_add_plugin(...)` call, or null.
+ * Scanned with a quote-aware paren counter rather than a regex: a quoted
+ * `DESCRIPTION "A synth (mono)"` holds a `)` that a lazy match stops at,
+ * cutting off every keyword after it. Comments run to end of line.
+ */
+function juceAddPluginBody(text: string): string | null {
+  const start = /juce_add_plugin\s*\(/.exec(text);
+  if (!start) return null;
+  const from = start.index + start[0].length;
+  let depth = 1;
+  let quoted = false;
+  for (let i = from; i < text.length; i++) {
+    const c = text[i];
+    if (quoted) {
+      if (c === "\\") i++;
+      else if (c === '"') quoted = false;
+    } else if (c === '"') {
+      quoted = true;
+    } else if (c === "#") {
+      const eol = text.indexOf("\n", i);
+      i = eol === -1 ? text.length : eol;
+    } else if (c === "(") {
+      depth++;
+    } else if (c === ")" && --depth === 0) {
+      return text.slice(from, i);
+    }
+  }
+  return null;
+}
+
+/** Identifiers out of a CMake project's `juce_add_plugin` call. */
 function parseCmake(text: string): JuceIdentifiers | null {
-  const call = /juce_add_plugin\s*\(([\s\S]*?)\)/.exec(text);
-  if (!call) return null;
-  const body = call[1].replace(/#[^\n]*/g, "");
+  const body = juceAddPluginBody(text)?.replace(/#[^\n]*/g, "");
+  if (body === undefined) return null;
   const tokens = body.match(/"[^"]*"|\S+/g) ?? [];
   const values = new Map<string, string[]>();
   let current: string | null = null;
@@ -93,11 +124,13 @@ function parseCmake(text: string): JuceIdentifiers | null {
   };
 }
 
+/** A double-quoted XML attribute value, or undefined when absent or empty. */
 function attr(text: string, name: string): string | undefined {
   const match = new RegExp(`\\b${name}="([^"]*)"`).exec(text);
   return match?.[1] || undefined;
 }
 
+/** Identifiers off a `.jucer` file's `JUCERPROJECT` root element. */
 function parseJucer(text: string): JuceIdentifiers | null {
   if (!/<JUCERPROJECT\b/.test(text)) return null;
   const formats = (attr(text, "pluginFormats") ?? "")

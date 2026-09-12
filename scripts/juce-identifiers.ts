@@ -16,6 +16,7 @@ import { parseArgs } from "node:util";
 import { extractJuceIdentifiers, juceRows } from "./lib/juce-identifiers.js";
 import { rowsToTsv } from "./lib/open-audio-registry.js";
 
+/** CLI entry: print review rows for one entry from one JUCE build file. */
 function main(): void {
   const { values } = parseArgs({
     options: { slug: { type: "string" }, file: { type: "string" } },

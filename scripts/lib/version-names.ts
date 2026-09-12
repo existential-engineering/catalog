@@ -19,6 +19,7 @@ export function coerceVersion(version: string): [number, number, number] | null 
   return [Number(match[1]), Number(match[2] ?? 0), Number(match[3] ?? 0)];
 }
 
+/** Whether two version strings coerce to the same major.minor.patch. */
 export function coercedEqual(a: string, b: string): boolean {
   const ca = coerceVersion(a);
   const cb = coerceVersion(b);

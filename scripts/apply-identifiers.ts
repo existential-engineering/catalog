@@ -27,6 +27,7 @@ import {
   printApplySummary,
 } from "./lib/identifier-writer.js";
 
+/** CLI entry: parse the reviewed TSV and apply it through the writer. */
 function main(): void {
   const { values } = parseArgs({
     options: {

@@ -53,6 +53,7 @@ interface TelemetryEntry {
   versions: string[];
 }
 
+/** Every entry file by its id, across the four product collections. */
 function buildIdIndex(): Map<string, string> {
   const index = new Map<string, string>();
   for (const collection of COLLECTIONS) {
@@ -74,6 +75,7 @@ function buildIdIndex(): Map<string, string> {
   return index;
 }
 
+/** `--input <file>` and `--write`, with usage on a missing input. */
 function parseArgs(): { input: string; write: boolean } {
   const args = process.argv.slice(2);
   const inputIndex = args.indexOf("--input");
@@ -85,6 +87,7 @@ function parseArgs(): { input: string; write: boolean } {
   return { input, write: args.includes("--write") };
 }
 
+/** CLI entry: add reported versions the entries lack, dry run unless `--write`. */
 function main(): void {
   const { input, write } = parseArgs();
   const entries = JSON.parse(fs.readFileSync(input, "utf-8")) as TelemetryEntry[];

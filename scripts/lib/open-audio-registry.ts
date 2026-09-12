@@ -69,10 +69,12 @@ const FORMAT_MAP: Record<string, string> = {
   lv2: "lv2",
 };
 
+/** Letters and digits only, lowercased, so spellings differing in punctuation match. */
 function alnum(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
+/** The match key: normalized manufacturer and product name. */
 function key(manufacturer: string, name: string): string {
   return `${alnum(manufacturer)}/${alnum(name)}`;
 }

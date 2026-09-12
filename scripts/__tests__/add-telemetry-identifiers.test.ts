@@ -29,9 +29,16 @@ describe("selectTelemetryRows", () => {
     expect(rows.every((r) => r.identifier === "com.acme.Verb")).toBe(true);
   });
 
-  it("treats a missing device count as under threshold rather than as agreement", () => {
-    const { rows, underThreshold } = selectTelemetryRows([{ ...base, devices: Number.NaN }], 1);
+  it("treats anything but a positive integer device count as under threshold", () => {
+    const { rows, underThreshold } = selectTelemetryRows(
+      [
+        { ...base, devices: Number.NaN },
+        { ...base, devices: 1.5 },
+        { ...base, devices: 0 },
+      ],
+      1
+    );
     expect(rows).toHaveLength(0);
-    expect(underThreshold).toHaveLength(1);
+    expect(underThreshold).toHaveLength(3);
   });
 });

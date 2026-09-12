@@ -208,6 +208,38 @@ describe("applyIdentifierRows", () => {
     expect(text).not.toContain("identifiers");
   });
 
+  it("treats a VST3 class id as the same identifier whatever its case", () => {
+    writeEntry(
+      "fabfilter-pro-q-3",
+      "name: Pro-Q 3\nmanufacturer: fabfilter\nformats:\n  - vst3\nidentifiers:\n  vst3: ABCDEF019182FAEB53634D7353633346\n"
+    );
+    const summary = applyIdentifierRows(
+      [
+        {
+          target: "fabfilter-pro-q-3",
+          format: "vst3",
+          identifier: "abcdef019182faeb53634d7353633346",
+        },
+      ],
+      { write: true, dataDir }
+    );
+    expect(summary.outcomes[0].kind).toBe("same");
+    expect(summary.filesChanged).toBe(0);
+  });
+
+  it("lists standalone with a version when the row carries no identifier", () => {
+    const summary = applyIdentifierRows(
+      [{ target: "fabfilter-pro-q-3", format: "standalone", version: "3.24" }],
+      { write: true, dataDir }
+    );
+    expect(summary.outcomes[0]).toMatchObject({
+      kind: "written",
+      formatAdded: true,
+      versionAdded: true,
+    });
+    expect(readEntry("fabfilter-pro-q-3")).toContain("  - standalone\n");
+  });
+
   it("accepts a VST3 class id without a vendor check", () => {
     const summary = applyIdentifierRows(
       [

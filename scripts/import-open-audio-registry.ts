@@ -28,6 +28,7 @@ import { fetchPublic } from "./lib/url-guard.js";
 export const REGISTRY_INDEX_URL =
   "https://open-audio-stack.github.io/open-audio-stack-registry/index.json";
 
+/** The registry index, from a local file or fetched through the URL guard. */
 async function loadRegistry(file: string | undefined): Promise<Registry> {
   if (file) {
     return JSON.parse(fs.readFileSync(file, "utf-8")) as Registry;
@@ -41,6 +42,7 @@ async function loadRegistry(file: string | undefined): Promise<Registry> {
   return (await response.json()) as Registry;
 }
 
+/** CLI entry: match the registry and write the review files. */
 async function main(): Promise<void> {
   const { values } = parseArgs({
     options: {
