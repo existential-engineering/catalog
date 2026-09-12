@@ -15,33 +15,64 @@ platforms:
   - windows
 url: https://www.threebodytech.com/en/products/kirchhoffeq
 prices:
-  - amount: 119
+  - amount: 150
     currency: USD
-description: Kirchhoff-EQ is a ultimate 32-band parametric EQ plugin featuring refined sound quality, analog-matched curves, 15 filter types with continuously variable shape, 32 EQ types modeled from vintage hardwares, and flexible low-distortion dynamic processing functions. Built for all critical professional applications, Kirchhoff-EQ is ready to be your next-generation go-to.
+description: Kirchhoff-EQ is an ultimate 32-band parametric EQ plugin featuring refined sound quality, analog-matched curves, 15 filter types with continuously variable shape, 32 EQ types modeled from vintage hardware, and flexible low-distortion dynamic processing functions.
 details: |-
-  32-band parametric EQ with 15 unique filter types including low/high pass, band pass, bell, notch, shelves, flat tilt, flat top, sword, brickwall, and allpass variants. Continuously variable filter slopes from 0 dB/oct up to 96 dB/oct across most filter types. 32 filter types modeled from 9 historic vintage EQ hardware units with adjustable frequency points.
+  Kirchhoff-EQ is a 32-band parametric EQ plugin built for critical professional applications. It combines refined sound quality, analogue-matched curves, 15 filter types with continuously variable shape and 32 vintage EQ types modeled from real-world devices, with built-in dynamic processing functions that are highly flexible and have ultra-low distortion.
 
-  4 phase modes: zero-latency (minimum-phase), analogue phase, linear phase, and mixed phase. Flexible dynamic EQ functions across all filter types (except low/high pass, band pass, notch) including vintage-modeled types. Harmonic Shifted Envelope technology shifts odd-harmonic energy to even-harmonics for ultra-low noise floor in dynamic processing. Two-way threshold control: above-threshold acts as compressor/upward-expander; below-threshold acts as expander/upward-compressor. Detect/Relative Envelope Detection with freely adjustable detect and relative band frequency/Q, plus sidechain mode. Onsets Detection Mix for fine-tuning transient response independently from sustained envelope.
+  An originally developed Robust Nyquist-matched Transform brings the digital-domain frequency response closer to its analogue counterpart without the high-frequency cramping found in regular IIR equalizers, and the technique is applied to all filter types. Internal processing is always 64-bit regardless of the host DAW's working precision, and a Double-Double technique makes a switchable 117-bit internal precision available (linear-phase mode remains 64-bit because it is an FIR filter). Psychoacoustic Adaptive Filter Topologies change the filter structure to a best-fitting state as band frequency changes, optimising sound quality in both low and high frequencies.
 
-  Robust Nyquist-matched Transform for analog-matched frequency response without high-frequency cramping. 64-bit internal processing standard with switchable 117-bit ultra-high precision (Double-Double technique). Psychoacoustic Adaptive Filter Topologies auto-adjust filter structure based on band frequency for optimized round-off error. Switchable 2x oversampling, lookahead function, and GPU-accelerated GUI via OpenGL. Per-band mid/side or left/right processing; global stereo width control with Mid/Side ratio and Side gain. Spectrum Grab for rapid frequency peak location directly on the spectrum display. 40+ factory presets for mixing and mastering; fully customizable GUI themes.
+  The 15 filter types include low pass, high pass and band pass continuously variable from 0 dB/oct to 96 dB/oct, bell and notch from 12 dB/oct to 96 dB/oct, low shelf, high shelf and tilt shelf from 6 dB/oct to 96 dB/oct, flat tilt and flat top, a sword type with a sharper slope than bell for digging out resonances, plus brickwall low pass, brickwall high pass, allpass low and allpass high. Nine vintage EQ hardware units are modeled as a total of 32 EQ types, each with adjustable frequency points rather than the fixed positions of the original hardware, and only the ideal linear parts of the physical models are reproduced. Phase mode switches between zero-latency, analogue, linear phase and a mixed mode that uses zero-latency at low band frequencies and linear phase at high ones.
+
+  Dynamic processing can be applied to all filter types except low/high pass, band pass and notch, including the vintage-modeled ones. A Harmonic Shifted Envelope shifts most of the energy of odd harmonics into even harmonics for an ultra-low noise floor. A two-way threshold lets the above stage act as a compressor or upward expander while the below stage acts as an expander or upward compressor. Detect/Relative Envelope Detection weighs a band against the overall volume envelope, with a freely adjustable detect and relative band frequency and Q, a sidechain option, and an adjustable contribution from 0% to 100%. An Onsets mix makes the envelope detector react more specifically to transients.
+
+  Further features include spectrum grab for locating peaks directly on the analyzer, switchable 2x oversampling, per-band mid/side or left/right directional EQ, global left/right/mid/side monitoring, lookahead, global stereo width control, an operational band list, hand-written assembly optimisation for low CPU use, reduced clicking noise on parameter and type changes, an OpenGL-accelerated and themeable GUI, and a configurable spectrometer whose decibel range, refresh speed, resolution, frequency scaling, brightness and centre frequency can all be set.
 specs: |-
-  - Bands: 32 parametric bands
-  - Filter types: 15 unique types (low pass, high pass, band pass, bell, notch, low shelf, high shelf, tilt shelf, flat tilt, flat top, sword, brickwall low pass, brickwall high pass, allpass low, allpass high)
-  - Vintage models: 32 filter types modeled from 9 hardware EQ units
-  - Filter slopes: continuously variable from 0–96 dB/oct (type-dependent)
-  - Phase modes: minimum-phase (zero-latency), analogue, linear, mixed
-  - Internal processing: 64-bit standard; 117-bit ultra-high precision (switchable)
-  - Oversampling: 2x (switchable)
-  - Latency – Minimum-Phase: 0 samples
-  - Latency – Analogue Phase: 63 samples (~1.4 ms @ 44100 Hz)
-  - Latency – Mixed Phase: 63–2047 samples (frequency-dependent)
-  - Latency – Linear Phase: 2047 / 4095 / 8191 / 16383 / 32767 samples (user-selectable)
-  - OS: macOS 11 or later; Windows 10 or later
-  - CPU: Intel/AMD with SSE 4.1, or Apple Silicon (native)
-  - RAM: 2 GB minimum
-  - Disk: 300 MB
-  - Activation: Plugin Alliance account required
-  - Trial: 14-day fully functional free trial
+  - 32-band parametric EQ
+  - Robust Nyquist-matched Transform applied to all filter types
+  - 64-bit internal processing, switchable to 117-bit Double-Double precision
+  - Psychoacoustic Adaptive Filter Topologies
+  - 15 filter types with continuously variable slopes up to 96 dB/oct
+  - 32 filter types modeled from 9 historic vintage EQ hardware units
+  - Four phase modes: zero-latency, analogue, linear and mixed
+  - Dynamic processing with Harmonic Shifted Envelope and two-way threshold
+  - Detect/Relative envelope detection with sidechain option
+  - Onsets detection mix
+  - Switchable 2x oversampling
+  - Per-band mid/side and left/right directional EQ
+  - Lookahead and global stereo width control
+  - OpenGL GPU-accelerated, resizable and themeable GUI
+  - 40+ presets for mixing and mastering, undo/redo and A/B switching
+  - Multiple display ranges: 3 dB, 6 dB, 12 dB, 18 dB, 30 dB
+  - Latency, minimum-phase: 0
+  - Latency, analog phase: 63 sample points, about 1.4 ms at 44100 Hz
+  - Latency, mix phase: 63 to 2047 sample points depending on band frequency
+  - Latency, linear phase: 2047, 4095, 8191, 16383 or 32767 sample points
+  - Minimum system requirements: Intel or AMD CPU with SSE 4.1, or Apple Silicon
+  - Minimum system requirements: macOS 11 / Windows 10
+  - Minimum system requirements: 2 GB RAM and 300 MB disk space
+  - Plugin formats: 64-bit VST2, VST3, AAX and Audio Unit
+  - Activation requires a Plugin Alliance account
+versions:
+  - name: 1.7.5
+    releaseDate: 2026-09-01
+  - name: 1.7.4
+    releaseDate: 2026-07-17
+  - name: 1.7.3
+    releaseDate: 2026-04-15
+  - name: 1.7.2
+    releaseDate: 2026-03-25
+  - name: 1.7.1
+    releaseDate: 2024-10-24
+  - name: 1.7.0
+    releaseDate: 2024-07-09
+  - name: 1.6.4
+    releaseDate: 2023-03-28
+  - name: 1.6.2
+    releaseDate: 2023-03-08
+  - name: 1.6.0
+    description: Initial PA Release
 videos:
   - provider: youtube
     videoId: tMOq1X5Eo-A

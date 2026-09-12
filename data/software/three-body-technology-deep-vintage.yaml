@@ -15,14 +15,43 @@ platforms:
   - mac
   - windows
 url: https://www.threebodytech.com/en/products/deepvintage
-prices:
-  - amount: 0
-    currency: USD
-description: Suite of legendary hardware simulation plugins using proprietary APNN
-  2.0 (Audio Processing Neural Network) technology. Includes 12 plugins simulating
-  preamps, tape machines, EQs, and converters to reproduce vintage analog character
-  in a digital world.
+description: Suite of legendary hardware simulation plugins using proprietary APNN 2.0 (Audio Processing Neural Network) technology. Includes 12 plugins simulating preamps, tape machines, EQs, and converters to reproduce vintage analog character in a digital world.
 details: |-
-  12 plugins: Brit 73, Brit 84, US Rack, Thick Pre, Transformer X, Green AD, Nylon, Tube Shelf, Tube Bell, Tube Filter, Tape S, Tape M. Trained with APNN 2.0 neural network on real hardware units. Captures both dynamic and tonal characteristics. Minimal CPU usage. Approximately 0.6ms latency at 44.1kHz.
+  Deep Vintage is a series of legendary hardware simulation plugins. Rather than pursuing circuit replication or a specific tonal quality, it simulates the entirety of the sound to reproduce the vintage character of the original units in a digital world, with minimal CPU usage and latency.
+
+  The series is trained with APNN 2.0 (Audio Processing Neural Network), a neural network specialised in simulating analog hardware. During training the network and the hardware receive the same audio, and the network learns how the hardware changes that audio in both the waveform and spectrum dimensions, so a trained instance captures both the dynamic and the tonal characteristics of its source. APNN is composed of a large combination of audio processing modules (EQ, compressor, overdrive and others) and automatically adjusts its structure and parameters until the difference between its output and the hardware's output diminishes, reaching an error signal of phase cancellation of roughly -40 dB to -75 dB depending on the model.
+
+  Twelve plugins make up the series. Brit 73 is inspired by a class-A transistor preamp with EQ. Brit 84 is inspired by that preamp's original model and adds frequency bands, a High Q mode and an extra low pass filter. US Rack is inspired by a US-style channel strip with a preamp, a line driver and a renowned EQ. Thick Pre is inspired by a vintage-style preamp known for a thick, warm, smooth sound, with a Presence control and a Deep switch. Transformer X is inspired by a custom colour box using a vintage US transformer. Green AD is inspired by a top-tier AD/DA converter. Nylon offers two coloration modes, Yellow for shimmering highs and Green for robust lows, both transparent overdrive effects. Tube Shelf emulates an iconic program EQ for low and high frequencies, Tube Bell handles mid frequencies with two Peak sections and a Dip section using bell filters, and Tube Filter adds High Cut and Low Cut. Tape S is inspired by a 1/4-inch tape machine from the late 1980s to early 1990s, and Tape M by a 2-track tape machine from 1970s Germany with richer coloration and more pronounced wow and flutter.
+
+  Beyond frequency response and coloration, the models capture dynamics, airness, phase shifts, tube voltage sag and transformer iron sound. Harmonics can be controlled independently of the other tonal characteristics, which is not possible on the hardware, and the transformer low-frequency saturation can be toggled on or off to switch between transformer and transformer-less versions. A redesigned resampling algorithm makes the simulation sample-rate agnostic, and up to 8x oversampling is supported.
+
+  EQ co-training simultaneously learns the hardware's saturation characteristics while fine-tuning a pre-modelled EQ module based on the circuit, so EQ adjustment is fully continuous rather than limited to the discrete states most neural networks capture. Tape wow and flutter are physically modelled and co-trained with the network in the same way. The hardware's inherent noise floor is simulated with an adjustable amount, and a Retro DAW button reproduces the sub -140 dB changes introduced by a classic DAW from around the year 2000. Everything runs locally with low CPU usage.
 specs: |-
-  macOS 10.9 or later. Windows 7 or later. Intel or AMD CPU with SSE 4.1 or Apple Silicon. 4GB RAM. 300MB disk space per plugin. 64-bit only.
+  - Twelve plugins: Brit 73, Brit 84, US Rack, Thick Pre, Transformer X, Green AD, Nylon, Tube Shelf, Tube Bell, Tube Filter, Tape S, Tape M
+  - Trained with APNN 2.0 (Audio Processing Neural Network)
+  - Phase cancellation error signal of about -40 dB to -75 dB depending on the hardware model
+  - Independent harmonics control, separate from other tonal characteristics
+  - Switchable transformer low-frequency saturation (transformer or transformer-less)
+  - Sample-rate agnostic resampling / up-sampling
+  - Up to 8x oversampling
+  - EQ co-training for fully continuous EQ adjustment
+  - Tape wow/flutter co-training with a physically modelled simulation
+  - Adjustable simulated noise floor
+  - Retro DAW simulation toggle
+  - Apple Silicon native support
+  - Undo/redo, A/B switching
+  - Input/output level meter
+  - Mono mode
+  - LR/MS processing
+  - Phase invert
+  - GUI re-scaling
+  - Latency: 26 sample points, about 0.6 ms at 44100 Hz
+  - Minimum system requirements: Intel or AMD CPU with SSE 4.1 instruction set, or Apple Silicon
+  - Minimum OS: macOS 10.9 / Windows 7
+  - 4 GB RAM, 300 MB disk space for each plugin
+  - 64-bit plugin formats only
+videos:
+  - videoId: 1OhoUYnfnU4
+    provider: youtube
+  - videoId: rCTq0T72bMQ
+    provider: youtube

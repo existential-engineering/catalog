@@ -1,42 +1,71 @@
 id: ZhXFyM1-mrMFlQZp1b1qm
 name: SpecCraft
 manufacturer: three-body-technology
-primaryCategory: spectral
+primaryCategory: equalizer
 categories:
   - effect
   - plugin
   - compressor
 formats:
-  - au
   - vst2
   - vst3
   - aax
+  - au
 platforms:
   - mac
   - windows
 url: https://www.threebodytech.com/en/products/speccraft
 prices:
-  - amount: 89
+  - amount: 149
     currency: USD
-    term: perpetual
-description: SpecCraft is a next-generation dynamic resonance suppressor,
-  spectrum compressor, and smart EQ designed to eliminate unwanted resonances in
-  audio mixing while maintaining sound quality and dynamics. It features
-  real-time adaptive threshold control, self-adaptive spectral compensation, and
-  analog-modeled processing with zero latency and linear phase modes.
+description: SpecCraft is a next-generation dynamic resonance suppressor, spectrum compressor, and smart EQ designed to eliminate unwanted resonances in audio mixing while maintaining sound quality and dynamics. It features real-time adaptive threshold control, self-adaptive spectral compensation, and analog-modeled processing with zero latency and linear phase modes.
 details: |-
-  Real-Time Adaptive Threshold Control with self-adaptive amplitude-based thresholding. Self-adaptive Spectral Compensation with three potential global EQ curves. Dynamics Compensation based on psychoacoustic loudness restoration. Formant Boost to preserve spectral character. Treble Compensation with adjustable high-frequency response. Spectrum Slope with 0–12 dB/OCT tilt adjustment. Priority Curve for surgical frequency sculpting. Profiling for custom frequency response thresholds.
+  SpecCraft is a next-generation dynamic resonance suppressor, spectrum compressor, and smart EQ. It specializes in eliminating the greatest enemy in a mix: unwanted resonances. Whether harsh shrills or muddy booms, SpecCraft identifies them all and dynamically applies matching suppression at each and every audio frame. It also fills the void left behind by generating real-time spectrum compensation curves, so there is no dynamics loss or artifacts due to resonance suppression.
 
-  Zero Delay Feedback Level Detector. Analog-modeled processing. Zero Latency Mode and Linear Phase Mode. Lookahead feature. 2x, 4x, 8x oversampling. Flexible stereo/Mid-Side linking controls. 8-band parametric side chain EQ.
+  Resonances are not inherently bad, unwanted resonances are, so they are better adjusted with care than subdued with force. Complete and concise controls locate unwanted resonances quickly, and a smart amplitude-based real-time thresholding algorithm continuously finds the optimal amplitude threshold for the resonances that need suppression, functioning like a self-adaptive threshold automation. Threshold adjustments can be fully automated, fully manual, or anywhere in between.
 
-  GPU-accelerated GUI with theme customization and resizable interface. A/B switching, Undo/Redo. 25+ presets included. Free unlimited demo available (no registration required)
+  A proprietary self-adaptive spectral compensation algorithm continuously calculates three potential global EQ compensation curves based on the amount, frequencies, and levels of the suppressed resonances, avoiding a flat, unnatural, and overly compressed sound. A psychoacoustic-based dynamics compensation algorithm restores the volume envelope lost to suppression, Formant Boost compensates for the suppressed resonances' contribution to their formants, and an adjustable Treble Compensation preserves high-frequency presence or, with no compensation, lets SpecCraft function like a de-esser.
+
+  Spectrum Slope tilts the spectrum display from 0 dB/OCT to 12 dB/OCT so that high and low unwanted resonances interact equally with the threshold curve, and the Priority Curve fine-tunes the amount of processing across different frequency bands. Profiling applies a custom frequency response curve as the threshold, similar to EQ-matching but executed dynamically on every audio frame, chosen from preset threshold profiles, extracted from audio files, or recorded and captured on the fly.
+
+  A Zero Delay Feedback filter structure is applied to the envelope detector for superior sound quality on fast percussive sounds and continuously changing sibilants, and suppression and compensation are modelled after classic hardware for a natural, warm tone. Linear phase filters are used by default, while Zero Latency Mode switches to minimum phase filters for live performance and arranging. An adjustable Lookahead preserves musical transients at minimal Attack settings, and switchable 2x, 4x and 8x oversampling eliminates aliasing.
+
+  Side chain controls support Left/Right and Mid/Side stereo processing modes, channel linking from 100% stereo linked to 100% dual mono compression, and an 8-band parametric side chain EQ powered by Kirchhoff-EQ.
 specs: |-
-  - macOS 11+ (Apple Silicon native, Retina compatible)
-  - Windows 8+ (high-DPI compatible)
-  - CPU: Intel/AMD with SSE 4.1 or Apple Silicon
-  - RAM: 4 GB minimum
-  - Disk: 100 MB
-  - 64-bit only
-  - Latency (Linear Phase Mode): ~46 ms (2048 samples at 44.1 kHz)
-  - Latency (Zero Latency Mode): 0 ms
-  - Oversampling: 2x, 4x, 8x
+  - Real-Time Adaptive Threshold Control
+  - Self-adaptive Spectral Compensation
+  - Dynamics Compensation
+  - Formant Boost
+  - Treble Compensation
+  - Spectrum Slope, adjustable from 0 dB/OCT to 12 dB/OCT
+  - Priority Curve
+  - Profiling from preset threshold profiles, audio files, or captured on the fly
+  - Zero Delay Feedback level detector
+  - Analog-modeled resonance suppression and compensation
+  - Zero Latency Mode with minimum phase filters
+  - Adjustable Lookahead
+  - Switchable 2x, 4x and 8x oversampling
+  - Side chain modes: Left/Right and Mid/Side
+  - Stereo linking / MS linking from 100% stereo linked to 100% dual mono
+  - 8-band parametric side chain EQ
+  - Real-time frequency display
+  - Side chain monitoring
+  - External side chain
+  - Dry mix
+  - 25+ presets, preset selector
+  - Undo/Redo, A/B switching
+  - User-defined default settings, customizable behavior settings
+  - Theme customization, resizable GUI, full-screen mode
+  - Extreme CPU optimization, GPU accelerated GUI
+  - Apple Silicon native support
+  - macOS Retina / Windows high-DPI support
+  - Latency in Linear Phase Mode: 2048 sample points, about 46 ms at 44100 Hz
+  - Latency in Zero Latency Mode: 0 sample points, 0 ms
+  - Minimum system requirements: Intel or AMD CPU with SSE 4.1 instruction set, or Apple Silicon
+  - macOS 11 / Windows 8
+  - 4GB RAM and 100MB disk space
+  - Supported plugin formats: 64-bit VST2, VST3, AAX and Audio Unit
+videos:
+  - videoId: jKY-O2DKfwg
+    provider: youtube
+    title: SpecCraft trailer

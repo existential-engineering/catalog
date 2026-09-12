@@ -19,34 +19,50 @@ prices:
     currency: USD
 description: Future MB is the ultimate time- and frequency-domain multiband dynamic processor. It delivers comprehensive control over dynamics and frequency content through three processing stages per band, featuring revolutionary Delta Matrix technology for routing gain deltas between bands.
 details: |-
-  Up to 6 independent dynamic bands with variable crossover slopes from 6 to 48 dB/oct and three phase modes: Minimum Phase, Linear Phase, and Liquid Phase. Each band features a complete dynamic processing suite including Gate, Upward/Spike upward compressor, and Compressor/Ducking with three morphable character styles: Clean, Glue, and OTT. Spectral Mode enables fluid continuum processing where time-domain and frequency-domain coexist, allowing resonance taming and harmonic lifting within each band. Delta Matrix routes gain deltas between bands — compress one range and use the reduction signal to boost another for inter-band dynamic relationships. Auto-Gain uses the ITU 1770 loudness matching algorithm to balance output across any processing configuration.
+  Future MB is a time- and frequency-domain multiband dynamic processor that delivers simultaneous control over dynamics and frequency content through three processing stages per band. Rather than slicing the whole spectrum with a rigid crossover, it instantiates up to six independent dynamic bands wherever the audio demands, treating them as isolated processing zones or snapping them together into a classic continuous crossover network, with variable slopes from 6 dB/oct to 48 dB/oct.
+
+  Three phase modes are available. Linear Phase guarantees zero phase distortion, Minimum Phase provides the lowest latency with classic phase characteristics, and Liquid Phase applies phase shifts only when gain actually changes, delivering a zero-latency signal with no pre-ringing.
+
+  Every band carries three independent switchable processing stages: Gate, Upward/Spike and Compressor/Ducking. The compressor is built on an adaptive envelope algorithm that gives boutique analog character at slow attack and release settings and remains transparent at brick-wall settings. Ducking Mode unlocks intentionally extreme, pumping compression. Upward uses a dual-threshold design that boosts quiet musical detail between Threshold 1 and 2 while leaving the noise floor below Threshold 2 untouched, and Spike Mode inverts it into upward expansion that makes loud sounds louder. The gate is powered by a Hilbert Envelope Detector for smooth open and close behaviour without chattering, with independent sidechain controls.
+
+  Spectral Mode opens a continuum between time-domain and frequency-domain processing, controlled by a single SPEC slider. In the compressor stage spectral processing tames sharp resonances without crushing the whole band. In the upward stage it lifts spectral dips to fill in sonic holes. Each band also carries three dynamic styles, Clean, Glue and OTT, which morph smoothly between one another in real time.
+
+  Delta Matrix routes the gain delta of one band to modulate any other band, positively or inversely, so energy removed from one range becomes creative fuel elsewhere: the snap of a kick attack reinforcing its body, vocal sibilance turned into harmonic presence, or a reduction at 300 Hz inversely routed to boost the 100 Hz fundamental. Sidechain support covers L/R and M/S modes with adjustable stereo linking per band and Internal, External or Free Mode sources, and a dedicated sidechain Priority EQ per band separates the detection signal from the audio path so bands stay broad while detection targets a specific frequency.
+
+  An advanced measurement-based auto-gain system using an ITU 1770 loudness matching algorithm analyses perceived loudness in real time and holds output level steady across any processing configuration. Compact Mode collapses a complex preset into a streamlined, custom-skinned interface that can be shared, and a preset browser offers click-to-filter tags and instant favourites.
 specs: |-
-  - Up to 6 independent dynamic bands
-  - Variable crossover slopes: 6–48 dB/oct
-  - Phase modes: Minimum Phase, Linear Phase, Liquid Phase
-  - Per-band processing: Gate, Upward, Spike, Compressor, Ducking
-  - Dynamic character styles: Clean, Glue, OTT (morphable)
-  - Spectral Mode for time/frequency domain hybrid processing
-  - Delta Matrix inter-band gain delta routing
-  - Priority EQ sidechain for targeted triggering
-  - Auto-Gain using ITU 1770 loudness matching
-  - L/R and M/S sidechain modes with adjustable stereo linking
-  - Real-time Spectrum Analyzer
-  - Global Delta Scale, Global Time Adjustment, Global Mix Control
-  - Lookahead and Oversampling
+  - Up to six independent dynamic bands, isolated or snapped into a continuous crossover
+  - Variable crossover slopes from 6 dB/oct to 48 dB/oct
+  - Three phase modes: Minimum Phase, Linear Phase, Liquid Phase
+  - Three switchable processing stages per band: Gate, Upward/Spike, Compressor/Ducking
+  - Adaptive envelope algorithm in the compressor stage
+  - Ducking mode for extreme, pumping compression
+  - Upward compression with dual-threshold design
+  - Spike mode (upward expansion)
+  - Gate/Expander with Hilbert Envelope Detector
+  - Spectral Mode with SPEC slider blending time- and frequency-domain processing
+  - Three morphable dynamic styles per band: Clean, Glue, OTT
+  - Delta Matrix for positive or inverse inter-band gain delta routing
+  - Sidechain: L/R and M/S modes, adjustable stereo linking, Internal / External / Free Mode sources
+  - Priority EQ sidechain filter per band
+  - Measurement-based auto-gain using an ITU 1770 loudness matching algorithm
+  - Compact Mode with custom skins and shareable interfaces
+  - Preset browser with click-to-filter tags and instant favourites
   - 64-bit processing precision
-  - GPU-accelerated graphics
-  - Native Apple Silicon support
-  - Retina / High-DPI support
-  - Extreme CPU optimization
-  - Advanced preset browser with tag filtering
-  - Compact Mode for custom streamlined interfaces
-  - Undo/Redo, A/B switching
+  - Global Delta Scale, Global Time Adjustment, Global Mix Control
+  - Lookahead and oversampling
+  - Real-time spectrum analyzer
+  - L / R / M / S monitoring, sidechain monitoring, external sidechain support
+  - Preset library and advanced preset browser
+  - Undo / Redo, A/B switching
+  - User-defined default settings, customizable behavior settings
   - Theme & skin support, resizable GUI, full-screen mode
-  - Minimum: Intel or AMD CPU with SSE 4.1, or Apple Silicon
+  - Extreme CPU optimization, GPU-accelerated graphics
+  - Native Apple Silicon support, Retina / High-DPI support
+  - Minimum system requirements: Intel or AMD CPU with SSE 4.1 instruction set, or Apple Silicon
   - Minimum OS: macOS 10.15 / Windows 8
-  - Minimum RAM: 4 GB
-  - Disk space: 250 MB
+  - 4 GB RAM and 250 MB disk space
+  - 64-bit plugin formats only
 videos:
   - videoId: BGUCqAZqUMg
     provider: youtube
@@ -54,3 +70,30 @@ videos:
   - videoId: 4SbMC-hfCQI
     provider: youtube
     title: Future MB Review
+  - videoId: XJ79xtO3GyY
+    provider: youtube
+    title: "Future MB | Gating: Snare Control"
+  - videoId: 72Pj9Teah9k
+    provider: youtube
+    title: "Future MB | Priority EQ: De-Essing"
+  - videoId: LGo73CUjT2c
+    provider: youtube
+    title: "Future MB | Spectral Mode: Drum Overheads"
+  - videoId: Y7Y2_pl_IAY
+    provider: youtube
+    title: "Future MB | Delta Matrix: Mix Bus"
+  - videoId: sbxDDq37JTw
+    provider: youtube
+    title: "Future MB | Delta Matrix & Spectral Mode: Female Vocals"
+  - videoId: c0n81SVrGDM
+    provider: youtube
+    title: "Future MB | Delta Matrix: Male Vocals"
+  - videoId: 7mQNmeslpH8
+    provider: youtube
+    title: "Future MB | Spike & Ducking: Drum Room"
+  - videoId: yb2B4Q2PjAw
+    provider: youtube
+    title: "Future MB | Spike & Ducking: EDM Bus"
+  - videoId: 7VEV1OANSKE
+    provider: youtube
+    title: Future MB | Compact Mode & Theme

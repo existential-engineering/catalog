@@ -15,19 +15,29 @@ platforms:
   - windows
 url: https://www.threebodytech.com/en/products/ownthd
 prices:
-  - amount: 79
+  - amount: 99
     currency: USD
 description: Audio processor for customizing harmonic distortion. Simulates nine vintage equipment types plus three ideal circuit modules (solid-state, tube, tape) with adjustable drive, bias, feedback, depth, and sweet spot parameters.
 details: |-
-  9 types of classic equipment simulation targeting different genres. Focuses on nonlinear behavior simulation rather than exact equipment emulation. 4 customizable drive knobs for adjusting harmonic color. Adjustable Bias, Feedback, and Depth parameters. Per-equipment 'sweet spot' frequency characteristic adjustment.
+  OwnTHD is an analog feeling processor that gives the user freedom to adjust the analog feeling of a mix. Its purpose is not to simulate a piece of equipment as closely as possible, nor to count how many units it can simulate, but to let the user build their own colour of sound. That is the meaning behind the name: building your own THD, or total harmonic distortion.
 
-  3 ideal circuit module simulations: Solid-State, Tube, and Tape. Mix Solid-State, Tube, and Tape simulations in series by proportion. Named equipment types include: 2A, A8, N-Pre, VOC, S-Pre, 4K (referenced in demos)
+  The plugin provides 9 types of classic equipment simulation suited to different genres. Rather than modelling a full channel, it focuses on the nonlinear behaviour of the equipment, so the colour of a 2A-type compressor can be had without compressing the audio. Four ways of customising the result are provided, so a given piece of equipment can be used as a baseline and then adjusted.
 
-  Free demo available with no time limit (no registration required; saving/loading disabled, 30-second mute every 30s)
+  The mechanism by which vintage gear produces distortion is more complex than a simple waveshaper, and OwnTHD both simulates that complexity and makes it adjustable. On the original preamp that the N-Pre type is based on, the amount of harmonics can only be set by input level. In OwnTHD the amount of colour is set with four drive knobs. Bias and feedback with depth control are common elements of audio equipment design that are not usually exposed to the user, and all three are adjustable here, with feedback settable positive or negative and bias and depth able to be increased or decreased.
+
+  Each classic piece of equipment has its own sweet spot, some with a warm low end and others with a smooth high end. OwnTHD reproduces the sweet spot of the 9 modelled units and makes it adjustable, so that, for example, the punchy low-frequency character of the 4K type can be applied to the middle frequencies instead, or the reverse.
+
+  Besides the classic equipment simulations, OwnTHD provides 3 ideal circuit module simulations: solid-state, tube and tape. Setting the proportion between them behaves like a solid-state preamp, a tube preamp and a tape machine connected in series, without the added noise and impedance mismatch that such a chain would introduce in the real world, so the silky character of a solid-state preamp, the warmth of a tube preamp and the vintage feel of a tape machine can be combined and balanced.
 specs: |-
-  - Mac: OS X 10.9 or later
-  - Windows: Windows 7 or later
-  - CPU: Intel or AMD with SSE 4.1 instruction set
-  - Apple Silicon: native support not available
-  - RAM: 4 GB minimum
-  - Disk space: 100 MB
+  - 9 types of classic equipment simulation focusing on nonlinear behaviour
+  - 4 ways of customising each simulated unit
+  - 4 drive knobs controlling the amount of harmonic colour
+  - Adjustable bias, feedback (positive or negative) and depth
+  - Adjustable sweet spot per modelled unit
+  - 3 ideal circuit module simulations: solid-state, tube and tape, with adjustable proportion
+  - Minimum system requirements: Intel or AMD CPU with SSE 4.1 instruction set
+  - Native support for Apple Silicon is currently unavailable
+  - Minimum system requirements: Mac OS X 10.9 / Windows 7
+  - Minimum system requirements: 4 GB RAM and 100 MB disk space
+  - Plugin formats, Windows: 32-/64-bit VST2, 64-bit AAX
+  - Plugin formats, Mac: 64-bit VST2, Audio Unit and AAX

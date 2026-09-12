@@ -8,46 +8,89 @@ categories:
 formats:
   - vst2
   - vst3
-  - au
   - aax
+  - au
 platforms:
   - mac
   - windows
 url: https://www.threebodytech.com/en/products/cenozoixcompressor
 prices:
-  - amount: 109
+  - amount: 112
     currency: USD
 description: Cenozoix is the definitive all-terrain compressor plugin delivering unparalleled sound quality and adaptability with 24 vintage & modern compressor styles. Engineered for the future, Cenozoix is poised to redefine the landscape of compressor plugins.
 details: |-
-  Features 12 vintage and 12 modern compressor style simulations with 24 freely matchable harmonic distortion styles. Employs Anti-Derivative Anti-Aliasing (ADAA) applied to rectifiers for aliasing suppression and Adaptive Oversampling Interpolation for envelope detection. Includes adjustable Clamp for recompressing leaked transients and De-Click for transforming clicking transients into overdrive. Offers an 8-band parametric side chain EQ powered by Kirchhoff-EQ technology with multiple stereo and mid/side modes. Supports switchable oversampling up to 16x, lookahead, A/B switching, 50+ presets, and full GUI theme customization with resizable interface.
+  Cenozoix Compressor is an all-terrain compressor plugin whose 24 vintage and modern compressor styles each support detailed customization. Aliasing suppression is the design's first priority, since a compressor generates excessive high-frequency harmonics and the resulting mirrored signal is a distortion that exists only in the digital domain.
+
+  Anti-Derivative Anti-Aliasing reduces aliasing artifacts in nonlinear processing without oversampling by transferring discrete sampling points into continuous signals, giving the system an effectively unlimited sample rate. The technique was originally invented by Native Instruments for waveshapers, and Cenozoix applies it to the rectifier at the heart of every envelope detector, which behaves as a waveshaper inside the compressor's algorithm. The attack/release stage is the other major source of aliasing, since each switch introduces a sharp turn in the gain reduction curve that in theory needs at least 32x oversampling to smooth. Adaptive Oversampling Interpolation turns oversampling on only while switching between attack and release and runs at the original sample rate the rest of the time.
+
+  The 24 styles comprise 12 classic vintage styles and 12 modern styles. Harmonics are modelled separately from compression: each of the 12 vintage styles carries simulated harmonic distortions inspired by its hardware model, and 12 drive styles are provided for the modern styles. Extra harmonic distortion is adjustable between 50% and 200%, and a compressor style can be paired with a different drive style.
+
+  Fine-tuning controls define the character. A Peak/RMS control switches between pure modes or blends them. An Odd/Even control artificially generates even-order harmonics for a warmer sound where regular compressors produce only odd-order harmonics. Feed-forward and feedback compression can be switched or blended. For transients, an adjustable Clamp recompresses transients a long attack time left uncompressed by subtracting the envelopes before and after attack/release. An adjustable De-Click detects clicking transients in real time and routes them into a purpose-built overdrive so the clicking is reduced while the transient keeps its power, and a Punch/Pump slider bends the shape of the attack stage between a linear, punchier response and a concave, pumping one.
+
+  Release is handled by a Program Dependent Compressor that adjusts attack and release times by analysing the dynamics and high/low frequency proportion of the current audio, with its own PDC settings per style. Sensitive modulates the release to match different transients in the content, and Tight shortens attack and release for low-frequency content when turned right, or extends them to naturalize the low end when turned left. Sidechain processing covers Left/Right, Mid/Side, Mid Only, Side Only, Mid to Side and Side to Mid modes, adjustable channel linking from fully stereo-linked to dual mono, and an 8-band parametric sidechain EQ powered by Kirchhoff-EQ.
 specs: |-
-  - 24 compressor styles: 12 vintage (Brit VCA, Dist. VCA, Black FET, Diode-Bridge, Virtual Mu, Vintage Tube, etc.) + 12 modern (Clean, Tight, Vocal, Pluck, Hard, Bus, etc.)
+  - 24 compressor styles: 12 vintage model simulations and 12 modern styles
+  - 12 drive styles with extra harmonic distortion adjustable from 50% to 200%
+  - Compressor style and drive style can be mixed and matched
+  - ADAA (Anti-Derivative Anti-Aliasing) applied to the rectifiers
+  - Adaptive Oversampling Interpolation envelope detection
   - Switchable oversampling: 2x, 4x, 8x, 16x
-  - Default latency: 4 sample points (~0.1ms at 44100 Hz)
-  - Latency at 16x oversampling: 271 sample points (~6.1ms at 44100 Hz)
-  - 8-band parametric side chain EQ (powered by Kirchhoff-EQ)
-  - Stereo modes: Left/Right, Mid/Side, Mid Only, Side Only, Mid→Side, Side→Mid
-  - Peak/RMS blending, feed-forward/feedback mixing
+  - Peak/RMS blend control
   - Odd/Even harmonic adjustment
-  - Lookahead, Hold, Knee, Range, Makeup & Auto Makeup parameters
-  - System requirements: Intel/AMD CPU with SSE 4.1 or Apple Silicon, macOS 11 / Windows 10, 2GB RAM, 300MB disk
-  - Native Apple Silicon support, Retina display support, high-DPI support on Windows
+  - Feed-forward / feedback blend
+  - Adjustable Clamp for recompressing leaked transients
+  - Adjustable De-Click routing clicking transients into an overdrive stage
+  - Punch/Pump attack shape control
+  - Program Dependent Compressor with per-style settings
+  - Sensitive adaptive release modulation
+  - Tight control for low-frequency attack and release behaviour
+  - Sidechain modes: Left/Right, Mid/Side, Mid Only, Side Only, Mid to Side, Side to Mid
+  - Stereo/MS linking from 100% linked to 100% dual mono
+  - 8-band parametric sidechain EQ powered by Kirchhoff-EQ
+  - Side chain monitoring and external side chain
+  - Lookahead, Hold, Knee, Range
+  - Makeup and Auto Makeup, switchable pre/post-makeup dry mix
+  - Phase invert
+  - Waveform display, threshold curve display, gain reduction displays
+  - Input / output / gain reduction level meters
+  - 50+ presets, preset selector
+  - Compact mode, resizable GUI, full-screen mode
+  - Undo/redo, A/B switching
+  - User-defined default settings, customizable behavior settings and knob speeds, theme customization
+  - GPU accelerated GUI and extreme CPU optimization
+  - Apple Silicon native support, macOS Retina / Windows high-DPI support
+  - Latency, default: 4 sample points, about 0.1 ms at 44100 Hz
+  - Latency, 2x oversampling: 146 sample points, about 3.3 ms at 44100 Hz
+  - Latency, 4x oversampling: 217 sample points, about 4.9 ms at 44100 Hz
+  - Latency, 8x oversampling: 253 sample points, about 5.7 ms at 44100 Hz
+  - Latency, 16x oversampling: 271 sample points, about 6.1 ms at 44100 Hz
+  - Minimum system requirements: Intel or AMD CPU with SSE 4.1 instruction set, or Apple Silicon
+  - Minimum OS: macOS 11 / Windows 10
+  - 2 GB RAM and 300 MB disk space
+  - 64-bit plugin formats only
 versions:
+  - name: 1.1.4
+    releaseDate: 2026-09-01
+    description: Fixed the plugin not correctly reporting its latency information to the host when loaded, fixed parameter values not displaying in Logic Pro's system parameter control interface, and improved menu interaction on macOS.
+  - name: 1.1.3
+    releaseDate: 2026-07-17
+    description: Fixed a crash when rapidly toggling instances on systems with Intel GPUs, fixed multiple OpenGL-accelerated plugins eventually making the host unresponsive, fixed a crash launching under Rosetta on Apple Silicon, and fixed the spectrum display not being visible in the Sidechain EQ.
   - name: 1.1.2
     releaseDate: 2026-03-25
-    description: Fixed crash on Apple Silicon with Linear Phase mode; fixed crash on mono tracks in Studio One/Digital Performer; fixed Notch filter abnormal noise; fixed dialog cutoff issues with non-100% GUI scale.
+    description: Fixed crash on Apple Silicon with Linear Phase mode. Fixed crash on mono tracks in Studio One/Digital Performer. Fixed Notch filter abnormal noise. Fixed dialog cutoff issues with non-100% GUI scale.
   - name: 1.1.1
     releaseDate: 2024-10-24
-    description: Fixed dialog display and preset naming bugs; added parameter panel for SideChain EQ band selection; added status indicators for sidechain mode/EQ; expanded waveform display dB options; added background image support in themes.
+    description: Fixed dialog display and preset naming bugs. Added parameter panel for SideChain EQ band selection. Added status indicators for sidechain mode/EQ. Expanded waveform display dB options. Added background image support in themes.
   - name: 1.1.0
     releaseDate: 2024-04-19
-    description: Implemented Drive modeling with 24 style variations; implemented Post-Makeup Dry Mix; implemented compact mode.
+    description: Implemented Drive modeling with 24 style variations. Implemented Post-Makeup Dry Mix. Implemented compact mode.
   - name: 1.0.1
     releaseDate: 2024-02-21
-    description: Fixed oversampling DSP initialization; fixed latency compensation phase issues; fixed Logic Pro undo functionality; fixed Hold parameter display; improved oversampling IR kernel.
+    description: Fixed oversampling DSP initialization. Fixed latency compensation phase issues. Fixed Logic Pro undo functionality. Fixed Hold parameter display. Improved oversampling IR kernel.
   - name: 1.0.0
     releaseDate: 2024-02-06
     description: Initial release.
+releaseDate: 2024-02-06
 videos:
   - videoId: 9DWKdjecoZg
     provider: youtube

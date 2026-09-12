@@ -19,14 +19,46 @@ prices:
     currency: USD
 description: Cabinetron is the ultimate IR loader & cabinet simulator that integrates IR browsing, editing, mixing, EQing, tone matching, exporting, born to be your one and only tool to find every missing process between your amp and your ears.
 details: |-
-  Includes 400+ IR presets across various genres with a full-featured IR file browser supporting search, tagging, and favorites. Features Spectrum Smoothing Technology and 31 EQ Curve Mutations for shaping cabinet tone. Simulates the FRED miking technique with virtual microphone positioning for realistic mic placement. Includes Speaker Impedance Simulation EQ and Non-linear Enhancement modeling that emulates voice coil behavior. Provides a 24-band parametric EQ with 10 filter types, Auto Phase Alignment, and Tone Matching with 100+ classic tones.
+  Cabinetron is an impulse response loader and guitar cabinet simulator that covers browsing, editing, mixing, EQing, tone matching and exporting. A noise-shaping algorithm designed specifically for IR convolution addresses the rounding errors in convolution DSP that make otherwise identical IR loaders sound different from one another. Beyond transparent linear convolution, Cabinetron also models the non-linear behaviour of a voice coil moving within the magnet, and that enhancement is exposed as a parameter that can be dialled in or left alone.
+
+  An integrated IR File Browser handles large collections with search, tagging, favourites and multi-path organisation, and over 400 IR presets are supplied for a range of genres and styles. As an IR editor it compares or mixes up to 8 cabinets at once. Spectrum Smoothing removes the fuzzy components of an IR's spectrum, reducing resonant frequencies and phase chaos, and can be taken as far as an outline of the frequency response. A Mutation knob applies any of 31 guitar EQ curves to an IR, producing 31 variants of the original.
+
+  A FRED control simulates the real-world miking technique of mixing two microphones positioned at a 45-degree angle and adjusting the ratio between them. Virtual Microphone Positioning moves the virtual microphone by horizontal position and vertical distance. A Speaker Impedance Simulation EQ, implemented as a 3-band EQ with HP/LP filters and based on a model of physical cabinet circuits, offsets the frequency drifts different power amps introduce. Auto Phase Alignment aligns multiple IRs with differing latencies in one click.
+
+  The Dimension Mixer sets the ratio of each loaded IR by dragging inside the virtual space between them rather than by tweaking sliders. EQing uses core functionality from Kirchhoff-EQ: a 24-band parametric EQ with 10 filter types, multi-band control, multiple display ranges and customizable behaviours and themes. Tone Matching matches against a Reference spectrum curve captured from a guitar or bass track, a whole loaded track, or one of over 100 classic tone presets, with the matched curve shaped further by smoothness, processing depth, gain range and frequency range. Its minimum-phase filter produces 0 samples latency and no pre-ringing.
+
+  Everything applied inside the plugin, including all editing and processing, can be exported as a single IR file loadable by any other software or hardware IR loader supporting .wav, although nonlinear enhancement cannot be exported as IR content. Cabinetron also saves loaded IR content and file paths with the project and flags IRs that were modified or moved, offering to keep working with the saved content, save it as new files, or replace it with available IR files.
 specs: |-
-  - macOS 11+, Windows 8+
-  - 64-bit only
+  - Impulse response loader with noise-shaping convolution algorithm and double precision FFT
+  - Optional non-linear enhancement modelling voice coil behaviour
+  - Integrated IR File Browser with search, tagging, favourites and multi-path organisation
+  - Over 400 IR presets
+  - Compare or mix up to 8 cabinets
+  - Spectrum Smoothing Technology
+  - 31 EQ curve mutations
+  - FRED miking technique simulation
+  - Virtual microphone positioning by position and distance
+  - Speaker Impedance Simulation EQ: 3-band EQ with HP/LP filters
+  - Auto Phase Alignment
+  - Dimension Mixer for ratio mixing between IRs
+  - 24-band parametric EQ with 10 filter types, derived from Kirchhoff-EQ
+  - Tone Matching against a captured reference curve, a loaded track, or 100+ classic tone presets
+  - Tone Matching minimum-phase filter with 0 samples latency and no pre-ringing
+  - Export all editing and processing as a single .wav IR file
+  - Missing IR file detection and recovery
+  - Auto Gain to balance IR volume
+  - Stereo input support
+  - Doubler for one-click double tracking simulation
+  - Dry/wet mix and output level meter
+  - Zero latency
+  - IR browser multi-language support
+  - Undo/redo, A/B switching
+  - Flexible preference settings, user-defined defaults, customizable themes
   - Apple Silicon native support
-  - Intel/AMD CPU with SSE 4.1 or Apple Silicon required
-  - 2 GB RAM minimum
-  - 300 MB disk space
+  - Minimum system requirements: Intel or AMD CPU with SSE 4.1 instruction set, or Apple Silicon
+  - Minimum OS: macOS 11 / Windows 8
+  - 2 GB RAM and 300 MB disk space
+  - 64-bit plugin formats only
 videos:
   - videoId: wJ9ZbkJiwZ4
     provider: youtube
