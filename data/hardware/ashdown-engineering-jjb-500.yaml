@@ -1,0 +1,114 @@
+id: l_eIvbEWm1w55x4FljfEd
+name: JJB-500
+manufacturer: ashdown-engineering
+primaryCategory: bass-amplifier
+categories:
+  - amplifier
+url: https://ashdownmusic.com/products/jjb-500
+description: The JJB-500 is a signature bass amp head developed with The
+  Stranglers bass icon JJ Burnel. Built as a versatile, rack-mounting head with
+  a thrilling dynamic range and an ultra-clean, fast-response 575-watt RMS
+  output section, it offers a balanced low-impedance XLR input alongside a
+  conventional jack, a 12-band graphic EQ, the Ashdown Harmonic Emphasis
+  circuit, a switchable pre/post-EQ balanced DI output, a tuner output with
+  mute, an effects loop, a line output, and speaker outputs on both jack and
+  Speakon connectors.
+details: |-
+  Signature bass head developed with JJ Burnel (The Stranglers), originally the AL-JJ500. Versatile, rack-mounting head with an ultra-clean, fast-response 575-watt RMS output section. Low-impedance balanced XLR input for suitably equipped instruments plus a conventional jack for standard instruments; input level set by an input gain control with a classic illuminated Ashdown VU meter. 12-band graphic EQ switchable in/out from the front panel. Ashdown Harmonic Emphasis circuit synthesizes new harmonics for extra top-end zing under variable level control. Balanced DI output on the front panel switchable pre/post EQ. Tuner output with mute switch for silent tuning. Line output, effects loop, and speaker outputs on jack and Speakon connectors. Custom-designed shielded toroidal transformer. Power output 575W. DI output 600 Ohm balanced, level -20 dBu nominal. Tuner output impedance 22 kOhm, level 0 dBu nominal. Minimum impedance 4 Ohms. EQ +/-15 dB at 12 centre frequencies. Effects send 22 kOhm / 0 dBu nominal; effects return 10 kOhm / 0 dBu nominal. Dimensions 195 x 525 x 325 mm (H x W x D). Weight 14 kg.
+specs: |-
+  - Power output: 575W RMS
+  - 12-band graphic EQ (+/-15 dB at 12 centre frequencies), switchable in/out
+  - Harmonic Emphasis circuit (variable level)
+  - Illuminated Ashdown VU meter with input gain control
+  - Low-impedance balanced XLR input plus conventional jack input
+  - Balanced DI output (600 Ohm, -20 dBu nominal), switchable pre/post EQ
+  - Tuner output with mute switch (22 kOhm, 0 dBu nominal)
+  - Line output
+  - Effects loop (send 22 kOhm / 0 dBu; return 10 kOhm / 0 dBu)
+  - Speaker outputs on jack and Speakon connectors
+  - Minimum impedance: 4 Ohms
+  - Custom shielded toroidal transformer
+  - Rack-mounting format
+  - Dimensions: 195 x 525 x 325 mm (H x W x D)
+  - Weight: 14 kg
+io:
+  - key: nAtIFd8E
+    name: Balanced Instrument Input (XLR)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: hVPXzRFE
+    name: Instrument Input (Jack)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: GtU8UWLE
+    name: Effects Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 2e86jdd6
+    name: Effects Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: K460cknE
+    name: Balanced DI Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: aZIKXlkC
+    name: Tuner Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 0z6VsZuI
+    name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: aDI6ll7w
+    name: Speaker Output (Jack)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: IAgGBmvx
+    name: Speaker Output (Speakon)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Bottom
+  - key: xxpo4GBq
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,72 @@
+id: HS7gp7aySqcBHC1kwdi0a
+name: PiBass 240
+manufacturer: ashdown-engineering
+primaryCategory: bass-amplifier
+categories:
+  - amplifier
+url: https://ashdownmusic.com/products/pibass-240
+description: Designed with bass maestro Wojtek Pilichowski, the PiBass 240 is a
+  compact digital bass amp head packing 240 watts into a 1.5kg (3.3lbs) box
+  small enough for a gig-bag pocket. A digital design delivers the fat low-end
+  Ashdown is known for, with a single 8 ohm output for full power through one
+  cab. A flexible EQ offers four sliders (Bass, Lo-Mid, Hi-Mid, Treble) that
+  boost or cut up to 15dB, with FREQ-Hz rotary controls setting the frequency
+  for the mid and treble sliders. A Bright switch adds warmer, vintage-flavoured
+  EQ, and input level switching accommodates active or passive instruments. A
+  Ground Lift switch (specified by Wojtek) eliminates noise from bad power, and
+  a headphone output and professional DI output round out the connections.
+details: |-
+  Digital bass amp head designed with Wojtek Pilichowski. 240W, 1.5kg (3.3lbs). Single 8 ohm speaker output. Four-slider EQ (Bass, Lo-Mid, Hi-Mid, Treble) +/-15dB with FREQ-Hz frequency-select rotaries. Bright switch for warmer vintage EQ. Input level switching for active/passive instruments. Ground Lift switch. Headphone output and professional DI output.
+specs: |-
+  - Power output: 240 watts
+  - Speaker outputs: Jack / Speakon (single 8 ohm output)
+  - Frequency response: -3dB at 20Hz and 25kHz
+  - High instrument input: 10K ohms impedance, input range 300mV - 20V p-p
+  - Low instrument input: 1M ohms impedance, input range 150mV - 10V p-p
+  - Line output: headphone out
+  - DI output: 600 ohms balanced, level -20dBu nominal with ground lift
+  - Signal to noise: better than 80dB (EQ flat)
+  - EQ: Bass +/-15dB @ 45Hz; Lo-Mid +/-15dB @ 220Hz; Middle +/-15dB @ 660Hz; Hi-Mid +/-15dB @ 1.6kHz; Treble +/-15dB @ 7kHz shelving/bright
+  - Distortion: less than 0.5% THD
+  - Weight: 1.5 kg
+io:
+  - key: 2X8FZA78
+    name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: 7ggL2c2j
+    name: Speaker Output
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Bottom
+  - key: vlXif5RT
+    name: DI Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - key: CPEoW5lQ
+    name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: 9qSBiiQk
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
