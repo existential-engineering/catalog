@@ -15,25 +15,70 @@ platforms:
   - windows
 url: https://www.threebodytech.com/en/products/trinityshaper
 prices:
-  - amount: 99
+  - amount: 100
     currency: USD
     term: perpetual
-description: Trinity Shaper is the next-generation single/multi-band transient
-  shaping plugin, offers a revolutionary approach to dynamics processing with
-  our signature control flexibility.
+description: Trinity Shaper is the next-generation single/multi-band transient shaping plugin, offering a revolutionary approach to dynamics processing with signature control flexibility.
 details: |-
-  Triple-stage processing: Attack, Body (20–50ms post-transient), and Sustain stages with customizable lengths. Proprietary 'Body' stage for enhanced control over the critical post-transient region. Multi-band mode with 4 customizable frequency bands. 'Focus' filters: high-pass and low-pass filtering for targeted frequency processing. ADAA (Anti-Derivative Anti-Aliasing) technology to reduce digital distortions.
+  Trinity Shaper is a single and multi-band transient shaping plugin. Mastering the trinity of Attack, Sustain and a proprietary Body stage, it sculpts dynamics with a few knob tweaks, whether enhancing snare punches, reducing decay or amplifying room sounds. With its 'Focus' filters and multi-band mode it can target fully customizable frequency ranges, tightening snare hits by boosting midrange transients, eliminating high-frequency clicks from bass slaps, or fine-tuning dynamics across the entire mix.
 
-  Lookahead function for smooth transient curve detection. Analog-modeled clipper for warm, transparent limiting. Flexible sidechain controls with Mid/Side and Left/Right modes. 8-band parametric sidechain EQ. Real-time waveform display. 20+ factory presets.
+  Beyond the conventional Attack-Sustain division found in most transient shapers, Body is a middle stage that completes the Triple-Stage processing. In two-stage shapers the initial 1-10 ms of a drum hit is identified as Attack and everything after it is grouped into Sustain, which then carries the decay, the reverb and any recording noise at once, so any Sustain adjustment affects every sound after the first 10 ms. The Body stage targets the content 20-50 ms after a transient to isolate most of the decaying part of a hit, so decay and tail can be adjusted separately. The lengths of the Attack and Body stages are fully customizable.
 
-  GPU-accelerated GUI with resizable interface and full-screen mode. Zero latency in single-band and multi-band modes (no oversampling/lookahead) 2x–16x oversampling options (3.3–6.1ms latency at 44.1kHz)
+  ADAA (Anti-Derivative Anti-Aliasing) technology, also used in Cenozoix Compressor, reduces aliasing and digital distortion, while a refined envelope detection algorithm keeps the processed sound transparent whether a stage is boosted or reduced. Processing is entirely time-domain, which blocks the FFT artifacts that frequency-domain processing introduces. Switchable 2x, 4x, 8x and 16x oversampling is available, along with a switchable Lookahead that detects the signal in advance to smooth the curve of rapid transients, and an optional analog-modeled clipper in place of a cold digital one.
+
+  In single-band mode, High Pass and Low Pass filters focus processing on a specific frequency range at each of the three detected stages: low-mids to tighten a snare without emphasizing high-end clicks, high-mids to add punch without muddying the lows, highs to reduce harshness in a tail while preserving the ringing. Multi-band mode splits the audio into four customizable frequency bands with Attack, Body and Sustain adjusted and monitored separately on each, and its Perfect Reconstruction Filter Banks algorithm achieves zero processing latency and zero static phase shift when no gain processing is applied.
+
+  Side chain controls cover Left/Right and Mid/Side stereo processing modes, channel linking anywhere from 100% stereo linked to 100% dual mono, and an 8-band parametric side chain EQ powered by Kirchhoff-EQ. Activation requires a Plugin Alliance account, and a fully functional 14-day trial licence is available after installation.
 specs: |-
-  - macOS 11+ (Intel, AMD, Apple Silicon native)
-  - Windows 10+ (Intel, AMD)
-  - 64-bit only
-  - Formats: VST2, VST3, AAX, AU
-  - SSE 4.1 instruction set or Apple Silicon required
-  - 4 GB RAM minimum
-  - 100 MB disk space
-  - Latency: 0ms (no oversampling/lookahead); 3.3–6.1ms at 44.1kHz with oversampling
-  - Oversampling: 2x, 4x, 8x, 16x
+  - Triple-Stage processing: Attack, Body and Sustain
+  - Body stage targets content 20-50 ms after transients
+  - Fully customizable Attack and Body stage lengths
+  - ADAA (Anti-Derivative Anti-Aliasing) technology
+  - Complete time-domain processing
+  - 'Focus' High Pass and Low Pass filters per stage in single-band mode
+  - Multi-band mode with 4 customizable frequency bands
+  - Perfect Reconstruction Filter Banks: zero processing latency, zero static phase shift with no gain processing
+  - Switchable 2x, 4x, 8x and 16x oversampling
+  - Switchable Lookahead
+  - Optional analog-modeled clipper (Limit)
+  - Side chain modes: Left/Right and Mid/Side
+  - Stereo/MS linking from 100% linked to 100% dual mono
+  - 8-band parametric side chain EQ powered by Kirchhoff-EQ
+  - Real-time waveform display, gain change display, side chain monitoring, external side chain
+  - Dry mix
+  - 20+ presets with preset selector
+  - Undo/Redo, A/B switching, user-defined default settings
+  - Customizable behavior settings and knob speeds, theme customization
+  - Resizable GUI, full-screen mode, GPU accelerated GUI
+  - Apple Silicon native support, macOS Retina / Windows high-DPI support
+  - Latency: 0 in both single and multi-band modes with oversampling and lookahead disabled
+  - Latency: 2x oversampling 144 samples (about 3.3 ms at 44,100 Hz)
+  - Latency: 4x oversampling 216 samples (about 4.9 ms at 44,100 Hz)
+  - Latency: 8x oversampling 252 samples (about 5.7 ms at 44,100 Hz)
+  - Latency: 16x oversampling 270 samples (about 6.1 ms at 44,100 Hz)
+  - Minimum system requirements: Intel or AMD CPU with SSE 4.1 instruction set, or Apple Silicon
+  - macOS 11 / Windows 10
+  - 4 GB RAM and 100 MB disk space
+  - 64-bit VST2, VST3, AAX and Audio Unit
+  - Activation requires a Plugin Alliance account, with a 14-day fully functional trial licence
+versions:
+  - name: 1.1.2
+    releaseDate: 2026-07-17
+    description: "Bug fixes: crash when rapidly toggling instances on systems with Intel GPUs, host unresponsiveness with multiple OpenGL-accelerated plugins, crash launching under Rosetta on Apple Silicon, spectrum display not visible in the Sidechain EQ."
+  - name: 1.1.1
+    releaseDate: 2026-03-25
+    description: "Bug fixes: crash on Apple Silicon loading multiple Linear Phase instances, crash on mono tracks in Studio One and Digital Performer, abnormal noise from the Notch filter, dialogs cut off when global scale was not 100%."
+  - name: 1.1.0
+    releaseDate: 2024-10-24
+    description: Added per-band gain adjustment knobs in multi-band mode and a button to toggle the processing order between Makeup and Limiter, plus Sidechain EQ parameter panel, sidechain status indicator, multi-band frequency visibility and theme background images.
+  - name: 1.0.0
+    releaseDate: 2024-09-12
+    description: Initial release.
+releaseDate: 2024-09-12
+videos:
+  - videoId: AYyqZfFtUPY
+    provider: youtube
+    title: Trinity Shaper trailer
+  - videoId: dPhsAgFWJvs
+    provider: youtube
+    title: Trinity Shaper walkthrough
