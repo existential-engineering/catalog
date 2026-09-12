@@ -13,6 +13,7 @@ import { parse as parseYaml } from "yaml";
 import { z } from "zod";
 import { looksLikeAcronymName } from "./lib/acronym-exclusions.js";
 import { getDocsUrl, ValidationErrorCode } from "./lib/error-codes.js";
+import { validateIdentifier } from "./lib/identifier-validation.js";
 import { isIoCombineCandidate, STORAGE_MEDIA_SLOT } from "./lib/io-heuristics.js";
 import { findHintFindings, isPositiveInteger } from "./lib/io-hints.js";
 import { findDuplicateIoKeys, IO_KEY_PATTERN } from "./lib/io-keys.js";
@@ -1002,6 +1003,7 @@ interface DataWithOptionalFields {
   secondaryCategory?: string;
   categories?: string[];
   supersedes?: string;
+  identifiers?: Record<string, string>;
   description?: string | string[];
   details?: string | string[];
   specs?: string | string[];
@@ -1236,6 +1238,40 @@ export function validateFile(
           file: path.relative(process.cwd(), filePath),
           errors: categoryErrors,
           details: categoryDetails,
+        };
+      }
+    }
+
+    // E400: an identifier that is not what its key claims. Until the build
+    // applied `default` and `bundle` to format rows (catalog#860) a malformed
+    // value under either key was inert; now it reaches every format row, and
+    // this is the only gate in front of `software_formats.identifier`. A key
+    // without a pattern (`productId`) is accepted as before.
+    if (data.identifiers && typeof data.identifiers === "object") {
+      const identifierErrors: string[] = [];
+      const identifierDetails: ValidationErrorDetail[] = [];
+      const errorCode = ValidationErrorCode.E400_INVALID_IDENTIFIER_FORMAT;
+      for (const [key, value] of Object.entries(data.identifiers)) {
+        const result = validateIdentifier(key, value);
+        if (result.valid || !result.error) continue;
+        const message = result.suggestion
+          ? `${result.error}. Expected: ${result.suggestion}`
+          : result.error;
+        const line = getLineForPath(document, lineCounter, ["identifiers", key]);
+        identifierErrors.push(`identifiers.${key}: ${message}`);
+        identifierDetails.push({
+          code: errorCode,
+          message,
+          path: `identifiers.${key}`,
+          line: line ?? undefined,
+          docsUrl: getDocsUrl(errorCode),
+        });
+      }
+      if (identifierErrors.length > 0) {
+        return {
+          file: path.relative(process.cwd(), filePath),
+          errors: identifierErrors,
+          details: identifierDetails,
         };
       }
     }

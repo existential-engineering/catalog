@@ -551,8 +551,10 @@ entries. Keep `default` legal rather than migrating it into per-format
 keys: the shared id is a fact about how the plugin is built, and one key
 cannot drift out of step with itself. `pnpm identifier-coverage` reads
 the same resolver, so its per-format figures are what the database
-carries. `productId` (Antelope's store numbers) feeds nothing and stays
-where it is.
+carries, and `pnpm validate` checks every key's value against its
+pattern (E400), `default` and `bundle` included, because a value under
+either now ships where it used to be inert. `productId` (Antelope's
+store numbers) feeds nothing, has no pattern, and stays where it is.
 
 ## Content Entries
 

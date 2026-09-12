@@ -4,10 +4,15 @@
  *
  * Generates a report of identifier coverage across software entries:
  * - Overall coverage percentage
- * - Coverage by format type, counting the `default` and `bundle` fallbacks
- *   the build applies (see lib/identifier-fallback.ts), so the report says
- *   what `software_formats.identifier` will carry
+ * - Coverage by format type
  * - Priority list of entries missing identifiers
+ *
+ * Every figure counts what the build resolves onto `software_formats`,
+ * fallbacks included (lib/identifier-fallback.ts): an entry is covered when
+ * at least one of its listed formats gets an identifier, and a format is
+ * missing when the resolver yields nothing for it. A `productId` key or a
+ * `default` on an entry with no formats declares something and covers
+ * nothing, and is reported that way.
  *
  * Usage:
  *   pnpm identifier-coverage             # Console output
@@ -28,8 +33,10 @@ interface SoftwareEntry {
   file: string;
   name: string;
   formats: string[];
+  /** At least one listed format resolves to an identifier. */
   hasIdentifiers: boolean;
   identifiers: Record<string, string>;
+  resolvedFormats: string[];
   missingFormats: string[];
   invalidIdentifiers: { format: string; value: string; error: string }[];
 }
@@ -47,6 +54,8 @@ interface CoverageReport {
     totalSoftware: number;
     withIdentifiers: number;
     withoutIdentifiers: number;
+    /** Entries carrying an `identifiers` block that resolves onto no format. */
+    declaredUnresolved: number;
     coveragePercent: number;
     invalidIdentifiers: number;
   };
@@ -73,12 +82,13 @@ function analyzeSoftware(filePath: string, data: Software): SoftwareEntry {
   const relativePath = path.relative(DATA_DIR, filePath);
   const formats = data.formats || [];
   const identifiers = data.identifiers || {};
-  const hasIdentifiers = Object.keys(identifiers).length > 0;
 
-  // Find formats the build resolves no identifier for, fallbacks included
+  // What the build writes: a format resolves or it does not, fallbacks included
+  const resolvedFormats = formats.filter((f) => resolveFormatIdentifier(identifiers, f) !== null);
   const missingFormats = formats.filter(
     (f) => resolveFormatIdentifier(identifiers, f) === null && f !== "standalone"
   );
+  const hasIdentifiers = resolvedFormats.length > 0;
 
   // Validate existing identifiers
   const invalidIdentifiers: { format: string; value: string; error: string }[] = [];
@@ -95,6 +105,7 @@ function analyzeSoftware(filePath: string, data: Software): SoftwareEntry {
     formats,
     hasIdentifiers,
     identifiers,
+    resolvedFormats,
     missingFormats,
     invalidIdentifiers,
   };
@@ -142,18 +153,23 @@ function categorizePriority(entries: SoftwareEntry[]): CoverageReport["priority"
   const low: SoftwareEntry[] = [];
 
   for (const entry of entries) {
-    if (entry.hasIdentifiers) continue; // Already has identifiers
+    // Every listed format resolves: nothing to add. An entry whose formats
+    // resolve only partly (a `bundle` beside vst3 and aax) is listed by what
+    // is still missing, since a declared key is not coverage of the rest.
+    if (entry.hasIdentifiers && entry.missingFormats.length === 0) continue;
 
-    // High priority: Has AU or VST3 format without identifier
-    const hasPluginFormats = entry.formats.some((f) => ["au", "vst3", "aax", "clap"].includes(f));
+    // High priority: an AU, VST3, AAX or CLAP row will carry no identifier
+    const missingPluginFormat = entry.missingFormats.some((f) =>
+      ["au", "vst3", "aax", "clap"].includes(f)
+    );
 
-    if (hasPluginFormats && entry.missingFormats.length > 0) {
+    if (missingPluginFormat) {
       high.push(entry);
-    } else if (entry.formats.length > 0 && !entry.formats.every((f) => f === "standalone")) {
-      // Medium priority: Has other plugin formats
+    } else if (entry.missingFormats.length > 0) {
+      // Medium priority: other plugin formats without an identifier
       medium.push(entry);
     } else {
-      // Low priority: Standalone only or no formats
+      // Low priority: standalone only or no formats
       low.push(entry);
     }
   }
@@ -176,6 +192,9 @@ function generateReport(): CoverageReport {
 
   const withIdentifiers = entries.filter((e) => e.hasIdentifiers).length;
   const withoutIdentifiers = entries.length - withIdentifiers;
+  const declaredUnresolved = entries.filter(
+    (e) => !e.hasIdentifiers && Object.keys(e.identifiers).length > 0
+  ).length;
 
   const allInvalid: CoverageReport["invalidIdentifiers"] = [];
   for (const entry of entries) {
@@ -194,6 +213,7 @@ function generateReport(): CoverageReport {
       totalSoftware: entries.length,
       withIdentifiers,
       withoutIdentifiers,
+      declaredUnresolved,
       coveragePercent:
         entries.length > 0 ? Math.round((withIdentifiers / entries.length) * 100) : 0,
       invalidIdentifiers: allInvalid.length,
@@ -216,6 +236,9 @@ function printConsoleReport(report: CoverageReport): void {
   console.log(`  Total software:      ${report.summary.totalSoftware}`);
   console.log(`  With identifiers:    ${report.summary.withIdentifiers}`);
   console.log(`  Without identifiers: ${report.summary.withoutIdentifiers}`);
+  if (report.summary.declaredUnresolved > 0) {
+    console.log(`    declared, unusable: ${report.summary.declaredUnresolved}`);
+  }
   console.log(`  Coverage:            ${report.summary.coveragePercent}%`);
   if (report.summary.invalidIdentifiers > 0) {
     console.log(`  Invalid identifiers: ${report.summary.invalidIdentifiers}`);
