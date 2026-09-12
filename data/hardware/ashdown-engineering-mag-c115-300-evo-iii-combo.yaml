@@ -4,6 +4,11 @@ manufacturer: ashdown-engineering
 primaryCategory: bass-amplifier
 categories:
   - amplifier
+capabilities:
+  - overdrive
+  - equalization
+  - compression
+  - octave
 url: https://ashdownmusic.com/products/mag-c115-300-evo-iii-combo
 description: The MAG C115-300 EVO III is a 300-watt bass combo with a single 15"
   driver. Its feature-packed preamp offers rotary bass, middle and treble plus
@@ -96,5 +101,13 @@ io:
     category: audio
     type: speaker-level
     connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: npAh5gdJ
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
     maxConnections: 1
     position: Right

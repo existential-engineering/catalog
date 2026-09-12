@@ -4,6 +4,11 @@ manufacturer: ashdown-engineering
 primaryCategory: bass-amplifier
 categories:
   - amplifier
+capabilities:
+  - overdrive
+  - equalization
+  - compression
+  - octave
 url: https://ashdownmusic.com/products/mag-300h-evo-iii
 description: The MAG 300H EVO III is a bass amplifier head with a fan-cooled
   300-watt power section. It carries a comprehensive 5-band EQ with rotary bass,
@@ -96,5 +101,13 @@ io:
     category: audio
     type: speaker-level
     connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: kxYIBjEY
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
     maxConnections: 1
     position: Right
