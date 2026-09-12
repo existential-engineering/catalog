@@ -4,7 +4,9 @@
  *
  * Generates a report of identifier coverage across software entries:
  * - Overall coverage percentage
- * - Coverage by format type
+ * - Coverage by format type, counting the `default` and `bundle` fallbacks
+ *   the build applies (see lib/identifier-fallback.ts), so the report says
+ *   what `software_formats.identifier` will carry
  * - Priority list of entries missing identifiers
  *
  * Usage:
@@ -13,6 +15,7 @@
  */
 
 import path from "node:path";
+import { resolveFormatIdentifier } from "./lib/identifier-fallback.js";
 import { validateIdentifier } from "./lib/identifier-validation.js";
 import type { Software } from "./lib/types.js";
 import { DATA_DIR, getYamlFiles, loadYamlFile } from "./lib/utils.js";
@@ -72,10 +75,9 @@ function analyzeSoftware(filePath: string, data: Software): SoftwareEntry {
   const identifiers = data.identifiers || {};
   const hasIdentifiers = Object.keys(identifiers).length > 0;
 
-  // Find formats without identifiers
-  const formatsWithIdentifiers = new Set(Object.keys(identifiers));
+  // Find formats the build resolves no identifier for, fallbacks included
   const missingFormats = formats.filter(
-    (f) => !formatsWithIdentifiers.has(f) && f !== "standalone"
+    (f) => resolveFormatIdentifier(identifiers, f) === null && f !== "standalone"
   );
 
   // Validate existing identifiers
@@ -112,7 +114,7 @@ function calculateFormatCoverage(entries: SoftwareEntry[]): FormatCoverage[] {
       const stats = formatStats.get(format);
       if (stats) {
         stats.withFormat++;
-        if (entry.identifiers[format]) {
+        if (resolveFormatIdentifier(entry.identifiers, format)) {
           stats.withIdentifier++;
         }
       }

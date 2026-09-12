@@ -524,6 +524,36 @@ the one key reported as E199 instead, checked on the raw object before
 any schema runs, because product images live in R2 keyed by id. A field
 that is genuinely new data goes into the schema in the same PR.
 
+## Identifiers
+
+`identifiers` is keyed by plugin format (`au`, `vst3`, `aax`, `clap`,
+`lv2`), and two keys that are not formats are legal beside them. Studio's
+plugin matcher reads `software_formats.identifier` and nothing else, so an
+identifier only counts once the build has written it onto a format row.
+The build resolves each listed format in this order
+(`scripts/lib/identifier-fallback.ts`):
+
+1. A key naming the format itself (`vst3: com.xferrecords.Serum.vst3`)
+   always wins.
+2. `default` fills every listed format that has no key of its own. It is
+   the right key for most plugins: a JUCE-built product ships one macOS
+   bundle id across its AU, VST3 and AAX bundles, so repeating it per
+   format is noise, and only a vendor that suffixes per format needs the
+   override above.
+3. `bundle` fills `au` and `standalone` only. It names a macOS app or
+   component bundle, and a VST3 or AAX bundle from the same vendor can
+   carry a different id, so it is not assumed for them.
+
+Until this rule existed, 217 of the 247 entries carrying `identifiers`
+held theirs under `default` or `bundle` alone, the build looked each
+format up by name and wrote NULL, and the matcher could reach about 30
+entries. Keep `default` legal rather than migrating it into per-format
+keys: the shared id is a fact about how the plugin is built, and one key
+cannot drift out of step with itself. `pnpm identifier-coverage` reads
+the same resolver, so its per-format figures are what the database
+carries. `productId` (Antelope's store numbers) feeds nothing and stays
+where it is.
+
 ## Content Entries
 
 Content entries (presets, sample packs, expansions) live in `data/content/` as a separate collection. Content `primaryCategory` values include `preset`, `preset-pack`, `sample-pack`, `drum-sample-pack`, `loop-pack`, `sound-library`, `soundfont`, `impulse-response`, and `multisample`.

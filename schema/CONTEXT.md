@@ -726,7 +726,7 @@ Approved locales for translations:
 - `manufacturer` - Slug reference to manufacturer
 - `primaryCategory` - Main category (from list above)
 - `platforms` - Array of supported platforms
-- `identifiers` - Bundle IDs per format (e.g., `au: com.xferrecords.Serum`)
+- `identifiers` - Bundle IDs per format (e.g., `au: com.xferrecords.Serum`); `default` covers every listed format, a per-format key overrides it
 
 ### Content
 Content entries (presets, sample packs, expansions) live in `data/content/` as a separate collection.
