@@ -81,6 +81,51 @@ describe("vendorSegmentMatches", () => {
     expect(vendorSegmentMatches("com.waves.Renaissance", "softube", "Softube")).toBe(false);
     expect(vendorSegmentMatches("com.izotope.Ozone", "fabfilter", "FabFilter")).toBe(false);
   });
+
+  // A bundle id is built from the maker's domain, not its name, and the two
+  // need not resemble each other. Universal Audio ships com.uaudio.effects.*
+  // from uaudio.com, so without the url every one of its 156 entries is
+  // refused: the id is right and the check had no way to see it.
+  it("accepts a vendor segment matching the manufacturer's own domain", () => {
+    expect(
+      vendorSegmentMatches(
+        "com.uaudio.effects.UI06",
+        "universal-audio",
+        "Universal Audio",
+        "https://www.uaudio.com/"
+      )
+    ).toBe(true);
+  });
+
+  // A brand hosted on another company's site does not own that domain, so
+  // its subpath url must not lend the host as a vendor spelling.
+  it("ignores a domain the manufacturer only occupies a subpath of", () => {
+    expect(
+      vendorSegmentMatches(
+        "com.uaudio.effects.UI06",
+        "bock-audio",
+        "Bock Audio",
+        "https://www.uaudio.com/pages/microphones"
+      )
+    ).toBe(false);
+  });
+
+  it("still refuses another maker's id when a url is present", () => {
+    expect(
+      vendorSegmentMatches(
+        "com.izotope.Ozone",
+        "fabfilter",
+        "FabFilter",
+        "https://www.fabfilter.com/"
+      )
+    ).toBe(false);
+  });
+
+  it("tolerates a url that names no host", () => {
+    expect(
+      vendorSegmentMatches("com.fabfilter.Pro-Q-3", "fabfilter", "FabFilter", "not a url")
+    ).toBe(true);
+  });
 });
 
 describe("applyIdentifierRows", () => {

@@ -1,0 +1,43 @@
+# Reviewed identifier backfill from Studio telemetry (AUREO-1227).
+# Read by `pnpm identifiers:apply --rows`.
+#
+# target<TAB>format<TAB>identifier<TAB>version<TAB>source
+#   identifier `-` adds the format alone, for an entry that already holds the
+#   right id under a key the build can resolve but lists no format to put it on.
+#
+# Source is one macOS release CSV (2026-09-09 sync, 223 unmatched plugins on one
+# machine, 12 users in the export). Every row below is an entry that already
+# exists under the right manufacturer and carried no identifier for the scanned
+# format, matched on name after normalisation. The version column is left empty
+# deliberately: an installed build is one machine's state, not release history,
+# and `add-telemetry-versions.ts` is the lane for that. 190 of the 223 needed no
+# row at all, their identifiers already resolve since catalog#860.
+#
+# Rejected, and why a probe cannot take them:
+#   sonible-smartreverb-2      com.sonible.smartreverb       — scan is smart:reverb 1 (v1.1.2), only v2 is in the catalog
+#   sonible-smartcomp-3        com.sonible.smartcomp2        — scan is smart:comp 2, only v3 is in the catalog
+#   waves-intrigger-drum-replacer  com.WavesAudio.InTriggerLive  — "InTrigger Live" may be a separate component, entry holds com.WavesAudio.InTrigger
+#   waves-nx-germano-studios-new-york  com.WavesAudio.NxGermanoStudios  — `waves-nx` scores equally, needs a human
+#
+# Collection-vs-member, all left for a person: UAD ships one binary per member
+# of a "Collection" entry and `identifiers` holds one value per format, so the
+# catalog cannot express them yet. Affected scans:
+#   universal-audio-1176-classic-limiter-collection    U39V / U39X / U39Z (Rev A, LN Rev E, AE)
+#   universal-audio-fairchild-tube-limiter-collection  U3AV (670) vs U3AX already held
+#   universal-audio-teletronix-la-2a-tube-compressor   U3A5 / U3A7 / U3A9 (LA-2, Gray, Silver)
+#   universal-audio-manley-massive-passive             holds U393 (the MST), scan says U391 is the base EQ
+#   universal-audio-topline-vocal-suite                holds UI13, scan says UI14
+#   universal-audio-hitsville-reverb-chambers          holds U3D5, scan says U3D7
+
+sonible-smartgate	vst3	com.sonible.smartgate		studio-telemetry 2026-09-09
+sonible-truebalance	vst3	com.sonible.truebalance		studio-telemetry 2026-09-09
+sonible-smarteq-4	vst3	com.sonible.smarteq4		studio-telemetry 2026-09-09
+waves-j37-tape	au	com.WavesAudio.J37		studio-telemetry 2026-09-09
+waves-emo-generator	au	com.WavesAudio.SignalGenerator		studio-telemetry 2026-09-09
+universal-audio-polymax-synth	vst3	com.uaudio.effects.UI06		studio-telemetry 2026-09-09
+
+# Already holds `default: com.uaudio.effects.U3CY` and lists no formats, so the
+# build writes the id onto no row and the matcher cannot reach it. vst3 is the
+# format the scan observed; au and aax are not added because nothing here
+# observed them.
+universal-audio-api-vision-channel-strip-collection	vst3	-		studio-telemetry 2026-09-09
