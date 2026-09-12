@@ -604,13 +604,13 @@ maker's domain vouch for another's ids. Racks' triage alias
 (`triage/catalog-keys.ts`) resolves a submitted brand by the same rule,
 for the same reason.
 
-It adds an unlisted format beside its
-identifier, since the build writes `software_formats` rows for listed
-formats only, and adds a version the row carries when the entry lacks it
-under the same coercion rule as `add-telemetry-versions.ts`
-(`scripts/lib/version-names.ts`). A row may carry `-` for its identifier
-and add the format and version alone. The AU `type:subtype:manufacturer`
-triplet Studio also reads has no field here yet and is withheld upstream.
+The writer adds an unlisted format beside its identifier, since the build
+writes `software_formats` rows for listed formats only, and adds a version
+the row carries when the entry lacks it under the same coercion rule as
+`add-telemetry-versions.ts` (`scripts/lib/version-names.ts`). A row may
+carry `-` for its identifier and add the format and version alone. The AU
+`type:subtype:manufacturer` triplet Studio also reads has no field here
+yet and is withheld upstream.
 
 ## Content Entries
 
