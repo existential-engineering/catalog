@@ -587,7 +587,24 @@ a value that fails the format's pattern, a format the entry already
 resolves to a different id (a per-format override or a Studio mis-match,
 and the writer cannot tell which), and a reverse-domain id whose vendor
 segment names nobody like the entry's manufacturer, which is the
-AUREO-696 mis-match signal itself. It adds an unlisted format beside its
+AUREO-696 mis-match signal itself.
+
+That last check reads three spellings of the maker: the slug, the display
+name, and the host of the manufacturer's own `url`. The domain is in the
+set because a bundle id is built from it rather than from the brand's
+name, and the two need not resemble each other: Universal Audio ships
+`com.uaudio.effects.*` from `uaudio.com`, which matches neither
+`universal-audio` nor `Universal Audio`, so without the url every
+identifier for that maker's 156 entries was refused as naming somebody
+else. **Only the host of a root url counts.** A brand whose url is a deep
+path on another company's domain is hosted there rather than the owner of
+it, and `bock-audio` points at `uaudio.com/pages/microphones` because
+Universal Audio distributes the mics, so counting a subpath would let one
+maker's domain vouch for another's ids. Racks' triage alias
+(`triage/catalog-keys.ts`) resolves a submitted brand by the same rule,
+for the same reason.
+
+It adds an unlisted format beside its
 identifier, since the build writes `software_formats` rows for listed
 formats only, and adds a version the row carries when the entry lacks it
 under the same coercion rule as `add-telemetry-versions.ts`
