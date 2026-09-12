@@ -1,0 +1,120 @@
+id: RgvK71L_iquSfJd9C3qnH
+name: VU003B
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - utility
+url: https://syntonie.fr/products/vu003b-component-to-rgb-decoder-luma-processor
+prices:
+  - amount: 25
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: VU003B is a Eurorack Component to RGB decoder and luma processor,
+  converting SD/HD Component (YPbPr) video to 1V RGBY outputs with a normalized
+  processor input for contrast and brightness control. Sold as a DIY PCB set.
+details: |-
+  Updated version of VU003. Inputs:
+
+  - 0-700mV YPbPr, 75 ohm, RCA
+
+  Outputs:
+
+  - 0-1V RGBY, 499 ohm, jack
+  - 0-700mV Y, 75 ohm, RCA (rear)
+  - 8 HP
+  - 67mA +12V
+  - 41 mA -12V
+  - 0 mA +5V
+  - 45mm deep (DIY) / 20mm deep (Assembled)
+
+  (Depth indicated is with power cable fitted but without RCA cable plugged in. A vertical RCA socket is used at the rear of the module, with the tallest RCA we've tested, the total depth is around 70mm, smaller or right angle RCA cable is ideal for shallow eurorack cases.)
+
+  PCB set includes the circuit boards required for the build, with pre-populated SMD part (LMH1980). All the other components needs to be sourced by the user (check the BOM in the documentation). Some of the improvements implemented on Entrée can be applied to VU003B (both DIY and production versions), the modifications are detailed in this document VU003B_Modif.pdf
+
+  Note: the PCB set comes with a PCB front panel, if you'd like to upgrade it to an aluminum front panel, it can be purchased separately here . Documentation
+specs: |-
+  - Converts SD/HD Component (YPbPr) to 1V RGBY outputs.
+  - Y signal is normalized to the processor input which features an attenuverter (contrast) and offset (brightness), plugging a jack in the processor input will break the normalization to allow the processing of another signal.
+  - Y pass-through RCA at the rear of the module to sync the sync generator/encoder to the external video signal.
+io:
+  - key: 1DdNqq08
+    name: Y Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: eeuvt0G4
+    name: Pb Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: W0kRsWlQ
+    name: Pr Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: cic0YZFm
+    name: Processor In
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: uj3jfw3W
+    name: R Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AckNEXGZ
+    name: G Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: MLU4wgh1
+    name: B Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nkxakc8J
+    name: Y Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2wGnlYHu
+    name: Y pass-through
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: WWyPj6yO
+    name: DC Barrel Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

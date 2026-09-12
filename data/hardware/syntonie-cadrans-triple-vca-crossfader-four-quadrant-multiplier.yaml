@@ -1,0 +1,126 @@
+id: L9HSgCebT6OKdIucMtA1F
+name: Cadrans - Triple VCA / Crossfader / Four Quadrant Multiplier
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - utility
+url: https://syntonie.fr/products/cadrans
+prices:
+  - amount: 289
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A triple multiplier with three identical channels, featuring manual
+  and voltage control over amplitude, and a mode switch selecting between
+  VCA/crossfade and two four-quadrant multiplier modes.
+details: |-
+  Cadrans (french for dials) is a triple multiplier with three identical channels, featuring manual control as well as voltage control over the amplitude, as well as a mode switch to select one of the three different modes :
+
+  The two other modes are four quadrant multipliers, in which the signal present at IN1 will be attenuated before being inverted, in a similar way as an attenuverter works. In those modes, IN2 is disabled. Since Cadrans features three channels, it can be used to process RGB signals, fading them to black/white, crossfading them with another set of RGB signals, or invert them. Then those three channels are independant and can be used on their own, for example, to process H and V signals using two channels, and use the third one as a crossfader between the two first channels to produce 2D shapes. Inputs:
+
+  Outputs:
+
+  Specs:
+
+  - 12HP
+  - 170mA +12V
+  - 0mA -12V
+  - 0mA +5V
+  - 42mm deep
+
+  Can be powered through standard Eurorack 16pin connector or DC barrel connector. Documentation
+specs: |-
+  - VCA/XFADE : in this mode, Cadrans works as a voltage controlled amplifier when only one signal is connected to IN1 or IN2. When connected to IN1, the signal fades from maximum value to 0V (black) and when connected to IN2, the signal fades from maximum value to +1V (white). When two signals are going to IN1 and IN2, Cadrans acts as a crossfader, smoothly fading from one signal to the other.
+  - 4Q BI : this mode expects a bipolar signal (ie : +/-1V) and will output a bipolar signal. It is also possible to use it with a more standard unipolar signal (+1V), though the output will be bipolar as well, meaning that the inverted version of the signal will be under black level (0V). This can be useful to bring some negative space in a patch, as this mode will fade to black 2x faster than the VCA mode.
+  - 4 UNI : this mode expects a unipolar signal (+1V) and will output a unipolar signal (+1V), which means that, as opposed to the 4Q BI mode, the inverted version of the signal will stay in the 0V to 1V range, with a midpoint at grey level.
+  - 0-1V or +/-1V inputs, 100kohm
+  - 0-1V or +/-1V outputs, 75ohm
+io:
+  - key: Qua6HDuI
+    name: Channel 1 IN1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6kkcCbg4
+    name: Channel 1 IN2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wl3gk8lp
+    name: Channel 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: soz3jwDa
+    name: Channel 2 IN1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: kTkFQcGD
+    name: Channel 2 IN2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VgLo0p00
+    name: Channel 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: PR4ah0Lx
+    name: Channel 3 IN1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: cvHNnBZP
+    name: Channel 3 IN2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: m7X7sy0e
+    name: Channel 3 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 63puMhFc
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: dGUhN02f
+    name: DC Barrel Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

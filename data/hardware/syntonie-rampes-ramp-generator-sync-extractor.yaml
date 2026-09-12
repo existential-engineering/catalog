@@ -1,0 +1,116 @@
+id: tlvf9coJiJGUcwWysZzsM
+name: Rampes - Ramp Generator / Sync Extractor
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - utility
+url: https://syntonie.fr/products/rampes-ramp-generator-sync-extractor
+prices:
+  - amount: 319
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A video ramp generator and sync extractor producing horizontal and
+  vertical ramps, mirrored ramps, sync outputs, and 2D shapes such as diamond,
+  rectangle, cross, star and ellipse.
+details: |-
+  Rampes, french for ramps, is a video ramp generator and sync extractor, supporting the following formats:
+
+  - 288p50
+  - 240p59.94
+  - 576i50 (PAL)
+  - 480i59.94 (NTSC)
+  - 576p50
+  - 480p59.94
+  - 720p50
+  - 720p59.94
+  - 720p60
+  - 1080i50
+  - 1080i59.94
+  - 1080i60
+  - 1080p23.98
+  - 1080p24
+  - 1080p25
+  - 1080p29.97
+  - 1080p30
+
+  The format is detected and selected automatically. In video, a ramp is a signal which produces a gradient that goes from minimum to maximum during the line interval (horizontal ramp) or the frame interval (vertical ramp). By mirroring and processing them, it is possible to generate 2D shapes. Rampes also features horizontal, vertical and Odd/Even sync outputs, which allows to sync other video modules, as well as audio modules. On its left side, Rampes features (top to bottom):
+
+  - horizontal and vertical ramps with their inversions
+  - mirrored horizontal and vertical ramps with their inversions
+
+  On its right side, Rampes features (top to bottom):
+
+  - Horizontal, vertical and Odd/Even sync
+  - Diamond, Rectangle, Cross, Star and Ellipse shapes
+
+  Rampes requires a sync signal over RCA to operate, coming either from a sync generator module , or an external video signal (Composite or Y from Component). The module is powered through standard Eurorack connector or DC barrel. Inputs:
+
+  - RCA Sync input (rear), 75ohm
+
+  Outputs:
+
+  - RCA Sync output (rear), 75ohm
+  - 0-1V Ramp and shapes outputs, 75ohm
+  - 0-5V Sync outputs, 75ohm
+
+  Specs:
+
+  - 8HP
+  - 200mA +12V
+  - 0mA -12V
+  - 0mA +5V
+  - 45mm deep
+
+  Note that the depth indicated is when using right angle RCA cables
+
+  Documentation
+io:
+  - key: QqunTR3g
+    name: Sync Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: t9gsahhs
+    name: Sync Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: MBr9FwOS
+    name: Ramp/Shape Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: sjdzu5lz
+    name: Sync Output (Front)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VsWx2C1v
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: 0twAHTuD
+    name: DC Barrel Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

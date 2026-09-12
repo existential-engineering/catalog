@@ -1,0 +1,126 @@
+id: XE5vxOD2ALbelwqXY5lDE
+name: Combines - Triple Analog Combiner
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - utility
+url: https://syntonie.fr/products/combines-triple-analog-combiner
+prices:
+  - amount: 229
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A triple analog combiner aimed at combining two signals in various
+  ways such as average, difference, min, max, XOR and mix, useful for combining
+  video signals to create 2D shapes.
+details: |-
+  Combines is a triple analog combiner, aimed at combining two signals in various ways. Each of the three channels features:
+
+  - AVG: average of the two inputs, (A+B)/2
+  - DIFF: difference of the two inputs, ((A-B)/2)+0.5)
+  - MIN: minimum of the two inputs, min(A, B)
+  - MAX: maximum of the two inputs, max(A, B)
+  - XOR: absolute of the difference of the two inputs, abs(A-B)
+  - MIX: mix of three of the above, scaled to 1V, different on each of the three channels
+  CH1: (AVG+DIFF+MIN)/3
+  CH2: (AVG+MIN+XOR)/3
+  CH3: (AVG+DIFF+XOR)/3
+
+  As the front panel suggests, Combines can be used to combine a horizontal and vertical triangle signals (like rectified ramps or oscillators), resulting in 2D shapes, represented on the outputs. Of course, the inputs are not limited to triangle waves, as any signals can be combined together, such as different wave shapes, as well as 2D shapes to create even more complex shapes or an external video signal. It features 3 channels to allow for RGB processing, however the channels can be chained together as well, increasing the complexity of the resulting output. Specs:
+
+  - 8HP
+  - 125mA +12V
+  - 0mA -12V
+  - 0mA +5V
+  - 42mm deep
+
+  Can be powered through standard Eurorack 16pin connector or DC barrel connector. User Guide
+io:
+  - key: In23F1gF
+    name: Channel 1 A Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: V6tWCyap
+    name: Channel 1 B Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: aSwCgqJW
+    name: Channel 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: HYxbSeqk
+    name: Channel 2 A Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: czgxVCx1
+    name: Channel 2 B Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: MkIBjo4Y
+    name: Channel 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZJwuhJn1
+    name: Channel 3 A Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AxwWjz90
+    name: Channel 3 B Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Ms2SHrty
+    name: Channel 3 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BKfy9lkY
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: RSmerrzA
+    name: DC Barrel Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

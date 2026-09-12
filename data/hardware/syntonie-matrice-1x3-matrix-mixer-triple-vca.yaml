@@ -1,0 +1,96 @@
+id: PeChGlXjVs2D0c6RgKD_S
+name: Matrice - 1x3 Matrix Mixer / Triple VCA
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - utility
+url: https://syntonie.fr/products/matrice-1x3-matrix-mixer-triple-vca
+prices:
+  - amount: 359
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: A 1x3 matrix mixer with its outputs normalized to 3 VCAs, allowing
+  any of three inputs to be mixed to any of three outputs with dedicated
+  attenuators, plus a VCA section for amplitude control.
+details: |-
+  Matrice is a 1x3 matrix mixer with its outputs normalized to 3 VCA. Matrix section:
+
+  The matrix section allows to mix any of the signals present at the inputs 1, 2 and 3 to any of the outputs A, B and C, with a dedicated attenuator for each input/output pairs. The attenuators have a gain of 1 in maximum position. In addition to the attenuators, it is also possible to invert the signals using the invert switches, either before the matrix (PRE) or after the matrix (POST). Used in a RGB processing context, just before the RGB encoder, Matrice allows to reach a great variety of color palettes, especially when using matte/keyed shapes or posterizing. It is also possible to use the matrix to mix and invert signals before further processing, in that case, the luma content will be affected rather than the overall color palette. VCA section:
+
+  The VCA section allows to control the amplitude of the signals (ie: contrast) at the outputs of the matrix mixer: either manually with the knobs or through control voltages. When no signal is present at the VCA CV inputs, the VCA knobs acts as attenuator, going from black to max value. Once an external signal is plugged into the CV inputs, the VCA knobs now acts as attenuverter for the CV. The VCA essentially works as a fade to black, allowing to tame the colors, which is especially useful after the matrix, since it can outputs signals up to 3V, as well as inverting them, that can result in a really bright composition. Normalization:
+
+  The matrix inputs are normalized together, so any signal plugged into input 1 will be routed to input 2, until a signal is plugged into input 2. Similarly, the signal present at input 2 will be routed to input 3, until a signal is plugged into input 3. This is handy to colorize a single monochrome source in a RGB context. The outputs of the matrix section are normalized to the VCA inputs to cover the previously mentioned workflow. However, plugging a signal into the VCA inputs will break the normalization from the matrix section, so both sections can be used independently. Specs:
+
+  - 16HP
+  - 310mA +12V
+  - 0mA -12V
+  - 0mA +5V
+  - 42mm deep
+
+  Can be powered through standard Eurorack 16pin connector or DC barrel connector. User Guide
+io:
+  - key: Wxib4sVS
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: e8sXvHNQ
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: xbTOcv6s
+    name: Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KkY3qxe3
+    name: Output A
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: YOKuoddv
+    name: Output B
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: qlrP2bFp
+    name: Output C
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Xtcnn8YB
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: UUETsf3E
+    name: DC Barrel Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

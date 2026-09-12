@@ -1,0 +1,84 @@
+id: skl9bitAjYcX-pLES0kPz
+name: VU007
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - utility
+url: https://syntonie.fr/products/vu007-rgb2component
+prices:
+  - amount: 30
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: VU007 is a Eurorack module that encodes 1V RGB video into SD
+  Component video, using a 14pin sync cable for composite sync and blanking.
+  Sold as a DIY PCB set.
+details: |-
+  1V RGB to SD Component Encoder. Uses 14pin sync cable for composite sync and blanking. PCB set and DIY kit comes with pre-soldered ADA4851-4. Input : 0-1V RGB, 499 ohms, jack
+
+  Output : 0-700mV YpbPr, 75 ohms, RCA
+
+  PCB Set: includes Main/Control/Clip/Power/Panel PCBs and pre-soldered ADA4851-4. - 4 HP
+  - 53mA +12V
+  - 44 mA -12V
+  - 0 mA +5V
+  - 65mm deep
+
+  Documentation
+io:
+  - key: QAnPN515
+    name: R Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: NHS9TPeq
+    name: G Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hW7wVSqb
+    name: B Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Jc6dSkXv
+    name: Y Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: MTvWz3u2
+    name: Pb Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: OBiTRClL
+    name: Pr Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: OpmcRaBN
+    name: DC Barrel Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

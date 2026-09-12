@@ -1,0 +1,143 @@
+id: SyadOcGOsaguyg19QpIeP
+name: Sortie
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - utility
+url: https://syntonie.fr/products/sortie-sync-generator-rgb-encoder
+prices:
+  - amount: 319
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: Sortie is a Eurorack RGB to Composite/S-video/Component encoder and
+  sync generator supporting SD and HD standards. It automatically selects the
+  video standard when an external sync signal is present.
+details: |-
+  Sortie (french for output) is a RGB to Composite/S-video/Component encoder and sync generator supporting SD and HD. The internal standard is selected by the mean of a push button, with a dedicated LED indicator for each standard. When an external video signal is present at the sync input of the module, the standard will be selected automatically and the external sync LED indicator will light up. RCA sync I/O at the rear of the module. Supports the following standards:
+
+  Inputs:
+
+  - 0-1V RGB, 100k ohm, jack
+  - 0-700mV Sync in, 75 ohm, RCA (rear)
+
+  Outputs:
+
+  - 0-700mV YPbPr/CVBS, 75 ohm, RCA
+  - 0-700mV S-Video, 75 ohm, Mini Din-4
+  - 0-700mV Sync out, 75 ohm, RCA (rear)
+
+  Specs:
+
+  - 8HP
+  - 130mA +12V
+  - 0mA -12V
+  - 0mA +5V
+  - 42mm deep
+
+  Can be powered through standard Eurorack 16pin connector or DC barrel connector. Documentation
+specs: |-
+  - 576i50 (PAL)
+  - 480i59.94 (NTSC)
+  - 576p50
+  - 480p59.94
+  - 720p50
+  - 720p59.94
+  - 720p60
+  - 1080i50
+  - 1080i59.94
+  - 1080i60
+  - 1080p23.98
+  - 1080p24
+  - 1080p25
+  - 1080p29.97
+  - 1080p30
+io:
+  - key: vlZEMkMP
+    name: R Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BzXRldvz
+    name: G Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zVcpZLG5
+    name: B Input
+    signalFlow: input
+    category: audio
+    type: video
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nsirJ08O
+    name: Sync in
+    signalFlow: input
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: XOoE2e1I
+    name: Y/CVBS Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: ESjtdDTe
+    name: Pb Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: LyVTkxQL
+    name: Pr Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: CUqqKtff
+    name: S-Video Output
+    signalFlow: output
+    category: audio
+    type: video
+    connection: mini-din
+    maxConnections: 1
+    position: Top
+  - key: 0JPsDu2V
+    name: Sync out
+    signalFlow: output
+    category: audio
+    type: video
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: BfFFr1Op
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: ODV7YNqp
+    name: DC Barrel Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,74 @@
+id: AM-1na8TRbMtgkFO3SX8A
+name: VU006
+manufacturer: syntonie
+primaryCategory: modular
+categories:
+  - synthesizer
+url: https://syntonie.fr/products/vu006-quadrature-oscillator
+prices:
+  - amount: 25
+    currency: EUR
+    asOf: 2026-09-04
+    source: official-website
+description: VU006 is a low frequency to audio rate quadrature oscillator
+  Eurorack module, outputting four sinewaves 90 degrees apart, based around two
+  self-oscillating filters. Sold as a DIY PCB set.
+details: |-
+  Low frequency to audio rate quadrature oscillator, outputting 4 sinewaves 90 degrees apart. Based around two self-oscillating filter, it features a buffered frequency modulation input with attenuverter, a switch to cover 3 frequency ranges and fine tuning. PCB Set: includes Control/Main/Power/Front panel pcbs with pre-soldered BCM857
+
+  - 4 HP
+  - 30mA +12V
+  - 28mA -12V
+  - 0 mA +5V
+  - 50mm deep
+
+  Documentation
+io:
+  - key: DdcizdKs
+    name: FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: cftsT0jy
+    name: Sine 0°
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: OlbKUySn
+    name: Sine 90°
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZvqoOJ3i
+    name: Sine 180°
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: A7lExYdQ
+    name: Sine 270°
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: w3TLn5IW
+    name: DC Barrel Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
