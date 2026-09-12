@@ -21,8 +21,11 @@ const IDENTIFIER_PATTERNS: Record<string, RegExp> = {
   // Segments may start with digits (e.g., com.fabfilter.Pro-C.AU.3)
   au: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,}$/,
 
-  // macOS bundle identifier
+  // macOS bundle identifier, applied to `au` and `standalone` by the build
   bundle: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,}$/,
+
+  // Fallback for every listed format without its own key (lib/identifier-fallback.ts)
+  default: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,}$/,
 
   // VST3 uses similar bundle ID format
   vst3: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,}$/,
@@ -43,6 +46,7 @@ const IDENTIFIER_PATTERNS: Record<string, RegExp> = {
 const FORMAT_HINTS: Record<string, string> = {
   au: "Reverse domain notation (e.g., com.xferrecords.Serum)",
   bundle: "Reverse domain notation (e.g., com.vendor.AppName)",
+  default: "Reverse domain notation shared by every format (e.g., com.vendor.Product)",
   vst3: "Reverse domain notation (e.g., com.native-instruments.Massive)",
   clap: "Reverse domain notation (e.g., com.u-he.Diva)",
   aax: "4-character PACE code (e.g., XfRc) or reverse domain notation",

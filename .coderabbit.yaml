@@ -15,6 +15,7 @@ reviews:
         - Identifiers (bundle IDs) are recommended for software but not required — they are typically populated via sync
         - Valid URLs for url fields
         - If identifiers are present, check for proper bundle identifier formatting (reverse domain notation)
+        - `identifiers.default` is legal and preferred when one bundle id covers every format (most JUCE-built plugins); the build applies it to every listed format, a per-format key overrides it, and `bundle` feeds only `au` and `standalone`. Do not ask for `default` to be copied into per-format keys (see CLAUDE.md "Identifiers")
         - Categories should exist in schema/categories.yaml
 
         Field formatting conventions:

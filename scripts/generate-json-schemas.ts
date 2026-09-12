@@ -373,7 +373,8 @@ const schemas: Record<string, unknown> = {
       identifiers: {
         type: "object",
         additionalProperties: { type: "string" },
-        description: "Plugin identifiers keyed by format (e.g., au, vst3)",
+        description:
+          "Plugin identifiers keyed by format (e.g., au, vst3). `default` covers every listed format without its own key; `bundle` covers au and standalone.",
       },
       compatibleWith: {
         type: "array",

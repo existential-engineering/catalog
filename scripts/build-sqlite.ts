@@ -80,6 +80,7 @@ export function normalizeCategory(category: string): string {
 }
 
 // Load IO position and connection aliases for normalization
+import { resolveFormatIdentifier } from "./lib/identifier-fallback.js";
 import { loadSchemaContext } from "./lib/schema-loader.js";
 import { expandSearchTerms } from "./lib/synonyms.js";
 
@@ -464,7 +465,7 @@ function populateDatabase(db: Database.Database, dataDir: string, version: strin
     // Insert formats
     if (data.formats) {
       for (const format of data.formats) {
-        const identifier = data.identifiers?.[format] ?? null;
+        const identifier = resolveFormatIdentifier(data.identifiers, format);
         insertFormat.run(id, format, identifier);
       }
     }
