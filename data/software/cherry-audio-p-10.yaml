@@ -8,7 +8,7 @@ categories:
   - vintage
 formats:
   - au
-  - vst2
+  - vst
   - vst3
   - aax
   - standalone
@@ -19,43 +19,64 @@ url: https://cherryaudio.com/products/p-10
 prices:
   - amount: 69
     currency: USD
-description: >-
-  Cherry Audio's P-10 is modeled after one of the most desirable flagship analog
-  polysynths ever created, featuring dual layers with 16-voice polyphony each, a
-  four-track step sequencer, and comprehensive modulation capabilities.
+description: P-10 is based on one of the most desirable flagship analog
+  polysynths ever created, a dual-layer synth that was essentially two of the
+  revolutionary P5s in one behemoth dual-manual case. P-10 exactingly reproduces
+  all that is exceptional in this classic, including the original P5 and P10
+  factory presets.
 details: |-
-  Cherry Audio's P-10 is modeled after one of the most desirable flagship analog
-  polysynths ever created by Sequential Circuits in 1980. The original could
-  operate as two independent five-voice synths, a single ten-voice synth,
-  dual-patch layered, or alternating between layers with each keystroke.
+  P-10 is based on one of the most desirable flagship analog polysynths ever created. Released by SCI in 1980, the original instrument was essentially two of the revolutionary P5 programmable synths in one behemoth dual-manual case, plus a poly sequencer built into the bottom-manual end cheek. It could be configured to play as two independent five-voice synths, a single ten-voice synth, dual-patch layered, or alternating between layers with each keystroke.
 
-  The virtual instrument reproduces the original's exceptional features while
-  modernizing the experience. It includes original P5 and P10 factory presets
-  and adds expanded 16-voice polyphony per layer, a four-track step sequencer,
-  velocity, polyphonic aftertouch, and keyboard split capabilities.
+  P-10 exactingly reproduces all that is exceptional in this classic, including the original P5 and P10 factory presets, while boosting its feature set for modern music production and workflow.
 
-  The synth features comprehensive modulation systems including Mono Mod with
-  LFO/Noise source mixing, Poly Mod with individual voice modulation paths,
-  Aux Mod extending pedal mod capabilities, and Pressure Mod supporting mono
-  and polyphonic aftertouch.
+  Each aspect of P-10 is modelled, from the Curtis 3340 oscillators and 3320 filters to the unmistakable oscillator sync. Alongside the sound, the emulation adds an expanded 16-voice per layer polyphony, a four-track step sequencer, velocity, polyphonic aftertouch, and keyboard split.
 
-  An additional panel contains an arpeggiator with tempo sync and an
-  independent effects section for each layer, including distortion, phaser,
-  flanger/chorus, delay, and reverb.
+  Modulation covers Mono Mod with an LFO and noise source mix, the Poly Mod section with individual voice modulation paths, an Aux Mod section that extends the original's Pedal Mod capabilities, and a Pressure Mod section supporting mono and polyphonic aftertouch. A second panel carries an arpeggiator and a complete effects section for each layer, including an independently assignable LFO section and modulation of key effects parameters via aftertouch.
+
+  P-10 offers comprehensive MIDI mapping and over 500 presets, including the original P5 and P10 factory patches.
 specs: |-
-  - 16 polyphonic voices per layer (configurable as dual-layer or single synth)
-  - Dual VCOs per voice based on CEM3340 with ramp, triangle, pulse waveforms
-  - VCF filter based on CEM3320 with 24 dB/oct lowpass and highpass modes
-  - Step sequencer with four monophonic sequences, up to 128 steps each
-  - Arpeggiator with tempo sync
-  - Effects chain: distortion, phaser (4/6/12-stage), flanger/chorus, delay, reverb
-  - Original P5 and P10 factory presets included
-  - Velocity and polyphonic aftertouch support
-  - Keyboard split capabilities
-  - Complete MIDI control and DAW automation
-  - macOS 10.13+ and Windows 7+ (64-bit)
-  - 104 MB disk space required
+  - Dual-layer voicing architecture with 16 polyphonic voices per layer, configurable as two independent synths, a single synth, dual-preset layered, or alternating between layers with each keystroke
+  - Keyboard split or stacked layer modes allow two simultaneously playable layers, with separate per-layer controls for all parameters, including arpeggio and effects
+  - Per-layer controls for pan, volume, and tune
+  - Over 500 presets, including the original P5 and P10 factory patches, accessible in a preset browser
+  - Rendered UI with show/hide keyboard option
+  - Two virtual VCOs per voice based on the CEM3340 with simultaneously available ramp, triangle, or variable-width pulse waveforms
+  - Per-layer controls for noise, glide, number of voices, unison with detune, mono retrig, and drone
+  - Reproduction of the original's oscillator sync implementation
+  - Virtual VCF filter based on the CEM3320 with the classic 24 dB/oct lowpass mode, expanded with a highpass mode
+  - LFOs with all original waveforms plus an additional random waveform and tempo-sync plus key reset
+  - Pressure Mod with support for mono and polyphonic aftertouch, routable to oscillator frequencies and pulse width, filter cutoff, VCA amplitude, LFO amount and frequency
+  - Poly Mod, which uses individual voices' filter envelopes and/or Oscillator B to enable each voice to have its own modulation routed to Oscillator A pitch, Oscillator A pulse width, filter cutoff, and amplitude
+  - Mono Mod allows LFO and/or noise to modulate frequency and pulse width of both oscillators, filter cutoff, and amplitude
+  - Aux Mod extends the original Pedal Mod section to any MIDI hardware control, allowing modulation of oscillator frequencies, filter cutoff, VCA amplitude, or Mono-Mod amount
+  - Per-layer drift control subtly varies oscillator and filter parameters for analog character
+  - Layer utility functions for duplicating and exchanging synthesis and effects parameters between layers and presets
+  - Step sequencer consisting of four individual monophonic sequences, each with a user-definable length of up to 128 steps, assignable to either layer, and stored individually with each preset
+  - Step sequencer utility operation for copying, swapping, and moving sequencer data between tracks, or from one preset to another
+  - Arpeggiator with tempo sync, independently assignable to both layers
+  - Two independent effects chains with global or dual layer modes: distortion, 4/6/12-stage phaser, flanger/chorus, three types of delay with sync, and five types of reverb
+  - Independent, per-layer FX-LFOs with all original waveforms plus an additional random waveform and tempo-sync plus key reset
+  - Independent, per-layer FX Pressure-Mod that uses mono aftertouch data to modulate key effects parameters
+  - Independent, per-layer FX Mono-Mod allows LFO and/or noise to modulate key effects parameters
+  - Directly import original P5 and P10 patch bank SysEx data (Syntech format) via drag-and-drop
+  - Complete MIDI control and DAW automation for all controls, with MIDI learn and mapping (Preset and Global)
+  - Focus zoom-in feature, as well as standard UI zoom and resize via drag
+  - Documentation available directly online from the instrument or in downloadable PDF format
+  - Optimized coding with multithreaded processing for presets using Split and Layer modes
+  - User-adjustable oversampling control
+  - macOS requirements: 10.13 or above, macOS 13 Ventura supported, 64-bit required, native Apple M1 or greater processor support including Ultra, 3.4 GHz quad-core or M1 CPU with 8GB of RAM recommended, 104 MB hard disk space
+  - Windows requirements: Windows 7 or above (including Windows 11), 64-bit required, quad-core computer with 8GB of RAM recommended, 104 MB hard disk space
+  - An internet connection is required for product activation
+versions:
+  - name: 1.0.11
+  - name: 1.0.10
+  - name: 1.0.9
 videos:
   - videoId: xxSahItqCHM
     provider: youtube
     title: P-10 Release Video
+  - videoId: BAznAagsU-U
+    provider: youtube
+    title: Introduction to P-10
+  - videoId: ChH9vY4Tq5c
+    provider: youtube

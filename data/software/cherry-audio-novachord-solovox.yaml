@@ -1,14 +1,14 @@
 id: XDmJziljMsSRwxeT3BAk6
 name: Novachord + Solovox
 manufacturer: cherry-audio
-primaryCategory: virtual-instrument
+primaryCategory: synthesizer
 categories:
   - keyboard
   - organ
   - vintage
 formats:
   - au
-  - vst2
+  - vst
   - vst3
   - aax
   - standalone
@@ -19,27 +19,48 @@ url: https://cherryaudio.com/products/novachord-solovox
 prices:
   - amount: 39
     currency: USD
-description: >-
-  A dual virtual instrument emulating two early electronic instruments: the 1939
-  Hammond Novachord polyphonic synthesizer and the related monophonic Solovox
-  keyboard.
+description: Novachord + Solovox is a collection of two virtual synthesizer
+  instruments emulating the forerunners of mass-produced synthesizers. Novachord
+  is based on the revolutionary polyphonic instrument from 1939 that used a
+  staggering 163 vacuum tubes and 1,000 custom capacitors.
 details: |-
-  The Novachord + Solovox collection emulates two early electronic instruments that were precursors of modern synthesizers. Novachord is based on the revolutionary polyphonic instrument from 1939, while Solovox replicates a related monophonic keyboard instrument intended to provide organ-style leads.
+  The Novachord + Solovox collection emulates two early electronic instruments that were precursors of modern synthesizers. Novachord is based on the revolutionary polyphonic instrument from 1939, while Solovox replicates a related monophonic keyboard instrument intended to provide organ-style leads. These exceedingly rare instruments set standards for tone generation and synthesis techniques that continue to influence today's electronic music instruments.
 
-  Manufactured by the Hammond company from 1939 to 1942 and debuting at the World's Fair, the original Novachord contained 163 vacuum tubes and over 1,000 custom capacitors. Its divide-down oscillator architecture combined full 72-key polyphony with an early version of analog subtractive synthesis.
+  Manufactured by the Hammond company from 1939 to 1942 and debuting at the World's Fair, the Novachord contained 163 vacuum tubes and over 1,000 custom capacitors. Its divide-down oscillator architecture combined full 72-key polyphony with an early version of analog subtractive synthesis. The Novachord's architecture predicted the ADSR envelope, utilized a resonant band-pass filter, and included a vibrato unit. These now-familiar methods resemble designs adopted decades later in Moog and ARP polyphonic synthesizers.
 
-  Due to their unique place in the history of electronic instruments, award-winning developer and DSP designer Mark Barton presented Cherry Audio with the prospect of teaming up to revive these instruments and their unique mystical sounds. The Novachord interface is a magnificent recreation of the original, complete with white Plakson and black Bakelite keys, teardrop rotary levers, and gorgeous cherry wood.
+  Despite its historical importance, the Novachord did not enjoy commercial success. Although it resembled a standard organ at a glance, the front panel controls were not well-suited to the performance techniques of organists or pianists of the period. In addition, the numerous vacuum tubes were unstable, making the 500-pound instrument challenging to maintain. Production stopped in 1942 because of poor sales and parts shortages during the Second World War, with Hammond only manufacturing around 1,000 Novachords.
 
-  The result is the Novachord + Solovox experience, a breathtaking feast for both the ears and the eyes, packaged together at one low price with complete MIDI control, DAW automation, and user-adjustable oversampling.
+  The Solovox, manufactured by Hammond between 1940 and 1950, was another classic instrument of the era. Based on the Novachord's oscillator and divider circuits, the Solovox with its 18 vacuum tubes was a small monophonic keyboard instrument attached beneath a piano keyboard and intended to augment it with organ-type lead voices. It consisted of two units: the three-octave mini keyboard, and a tone cabinet for the electronic sound generator, amplifier, and loudspeaker. Like the Clavioline and Ondioline, the Solovox produced a range of string, woodwind, and organ sounds and was widely used in light music from the 1940s and into the 1960s.
+
+  The Novachord interface is a recreation of the original, replete with the white Plakson and black Bakelite keys, teardrop rotary levers, and cherry wood. With Solovox, responsive vacuum tubes light up and respond to settings. Both instruments are modelled with virtual synthesis and no sampling, and include over 100 combined presets and flexible MIDI mapping.
 specs: |-
   - Novachord: 32 polyphonic voices, synthesized not sampled
-  - Three resonators with bandpass filters at 400 Hz, 800 Hz, and 2000 Hz
-  - Deep Tone and Brilliant Tone settings with fixed-frequency filters
-  - Attack knob with seven envelope options
-  - Adjustable depth vibrato with two options
-  - Novachord: 56 presets with integrated reverb
-  - Solovox: monophonic virtual analog emulation
-  - Bass, Tenor, Contralto, and Soprano octave switches
-  - Two bandpass filters, Deep Tone, Brilliant Tone, and Full Tone settings
-  - Solovox: 50 presets with glide, vibrato, and reverb
-  - User-adjustable oversampling and focus zoom feature
+  - Novachord: three Resonators, a resonant bandpass filter network operating consecutively in low (400 Hz), mid (800 Hz) and high (2000 Hz) frequency ranges
+  - Novachord: Deep Tone setting with a one-pole (6dB per-octave slope) lowpass filter at a fixed frequency of 160 Hz
+  - Novachord: Brilliant Tone setting with a one-pole (6dB per-octave slope) highpass filter at a fixed frequency of 2000 Hz
+  - Novachord: Full Tone setting controls the amplitude of the dry (no filters applied) tone generator signal
+  - Novachord: tones routed in parallel to all of the filters, processed and then summed together to create a composite tone
+  - Novachord: Attack knob with seven Attack/Decay/Sustain envelope options, from Slow to Fast, with sustain-pedal controlled release (approximately 3.5 seconds)
+  - Novachord: adjustable depth vibrato with two options, Vibrato I as used in the earliest Novachord models and Vibrato II as used in later Novachords
+  - Novachord: integrated reverb effect with Room and Hall algorithms plus speaker emulation
+  - Novachord: 56 presets covering Basses, Keys, Pads and Strings
+  - Solovox: virtual analog emulation of the monophonic keyboard attachment instrument
+  - Solovox: combinable Bass/Tenor/Contralto/Soprano switches to set note range in octaves
+  - Solovox: First Voice and Second Voice two-pole bandpass filters with level controls and variable center frequencies of 400 Hz and 800 Hz respectively
+  - Solovox: Deep Tone setting with a one-pole (6dB per-octave slope) lowpass filter at a fixed frequency of 200 Hz
+  - Solovox: Brilliant Tone setting with a one-pole (6dB per-octave slope) highpass filter at a fixed frequency of 2000 Hz
+  - Solovox: Full Tone setting controls the amplitude of the dry (no filters applied) tone generator signal
+  - Solovox: adjustable Glide and fixed-rate Vibrato
+  - Solovox: Mute control to filter harmonics from the oscillator voice
+  - Solovox: reverb effect with Room algorithm
+  - Solovox: glowing vacuum tubes respond to the volume setting of each filter
+  - Solovox: 50 presets covering Basses, Strings, Leads and Woodwinds
+  - Complete MIDI control and DAW automation for all controls, with MIDI learn and mapping (Preset and Global)
+  - Focus zoom-in feature, as well as standard UI zoom and resize via drag
+  - User-adjustable oversampling control
+  - macOS requirements: 10.13 or above, 64-bit required, native Apple M1 or greater processor support including Ultra, 3.4 GHz Quad-Core or M1 CPU with 8GB of RAM recommended
+  - Windows requirements: Windows 7 or above (including Windows 11), 64-bit required, quad-core computer with 8GB of RAM recommended
+  - Internet connection required for product activation
+videos:
+  - videoId: rb4MZRFoR28
+    provider: youtube
