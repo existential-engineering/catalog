@@ -27,8 +27,11 @@ const IDENTIFIER_PATTERNS: Record<string, RegExp> = {
   // Fallback for every listed format without its own key (lib/identifier-fallback.ts)
   default: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,}$/,
 
-  // VST3 uses similar bundle ID format
-  vst3: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,}$/,
+  // VST3: the macOS bundle id (reverse domain) or the class id every
+  // platform carries, a 32-digit hex FUID from moduleinfo.json. Studio
+  // reads the bundle id on macOS and the class id on Windows and Linux,
+  // so either is a value the scanner can look up.
+  vst3: /^([0-9A-Fa-f]{32}|[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,})$/,
 
   // CLAP uses reverse domain notation
   clap: /^[a-zA-Z][a-zA-Z0-9-]*(\.[a-zA-Z0-9][a-zA-Z0-9-]*){1,}$/,
@@ -47,7 +50,7 @@ const FORMAT_HINTS: Record<string, string> = {
   au: "Reverse domain notation (e.g., com.xferrecords.Serum)",
   bundle: "Reverse domain notation (e.g., com.vendor.AppName)",
   default: "Reverse domain notation shared by every format (e.g., com.vendor.Product)",
-  vst3: "Reverse domain notation (e.g., com.native-instruments.Massive)",
+  vst3: "Reverse domain notation (e.g., com.native-instruments.Massive) or a 32-digit hex class id",
   clap: "Reverse domain notation (e.g., com.u-he.Diva)",
   aax: "4-character PACE code (e.g., XfRc) or reverse domain notation",
   lv2: "URI format (e.g., https://vendor.com/plugins/name)",

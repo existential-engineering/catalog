@@ -20,6 +20,17 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
   `capabilities` omits
 - `pnpm hp:backfill` - Fill `hp` on modular entries from their own prose and
   a reviewed list (`--review <tsv>`, `--apply`)
+- `pnpm identifier-coverage` - Report which software entries carry
+  `identifiers`, per format
+- `pnpm identifiers:apply --rows <tsv>` - Write reviewed identifiers,
+  formats and versions (`--write` to apply)
+- `pnpm identifiers:from-telemetry --input <json>` - Write the identifiers
+  Studio reported behind name-based matches (`--write`, `--min-devices`)
+- `pnpm identifiers:from-registry` - Match the Open Audio Stack registry
+  against the catalog and emit a review TSV
+- `pnpm identifiers:from-juce --slug <entry> --file <build file>` - Read a
+  JUCE project's bundle id and plugin codes into review rows (a
+  `CMakeLists.txt` calling `juce_add_plugin`, or a `.jucer`)
 - `pnpm format:check` - Check formatting
 
 ## Catalog Schema Compatibility
@@ -553,6 +564,34 @@ cannot drift out of step with itself. `pnpm identifier-coverage` reads
 the same resolver, so its per-format figures are what the database
 carries. `productId` (Antelope's store numbers) feeds nothing and stays
 where it is.
+
+`vst3` holds either the macOS bundle id or the 32-digit hex class id from
+`moduleinfo.json`, because Studio reads the first on macOS and the second
+on Windows and Linux, and a value the scanner cannot produce matches
+nothing. One value per format is the schema's limit today, so an entry
+matched on both platforms needs a second key and a second
+`software_formats` row, which is additive and not yet done.
+
+**Every observed identifier is written through one writer**,
+`scripts/lib/identifier-writer.ts`, whichever lane observed it:
+`pnpm identifiers:from-telemetry` for the pairs Studio reports behind
+name-based matches (input aggregated in the racks repo from the Aptabase
+exports, applied only where two or more installs agree), and
+`pnpm identifiers:apply --rows reviewed.tsv` for a reviewed list from the
+racks installer-introspection lane, the open-registry importer or a hand.
+The writer refuses four things and reports each rather than writing:
+a `local.*` or empty id (the scanner's stand-in for a bundle with none),
+a value that fails the format's pattern, a format the entry already
+resolves to a different id (a per-format override or a Studio mis-match,
+and the writer cannot tell which), and a reverse-domain id whose vendor
+segment names nobody like the entry's manufacturer, which is the
+AUREO-696 mis-match signal itself. It adds an unlisted format beside its
+identifier, since the build writes `software_formats` rows for listed
+formats only, and adds a version the row carries when the entry lacks it
+under the same coercion rule as `add-telemetry-versions.ts`
+(`scripts/lib/version-names.ts`). A row may carry `-` for its identifier
+and add the format and version alone. The AU `type:subtype:manufacturer`
+triplet Studio also reads has no field here yet and is withheld upstream.
 
 ## Content Entries
 
