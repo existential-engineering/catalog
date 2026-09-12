@@ -125,9 +125,18 @@ export function sameIdentifier(a: string, b: string): boolean {
  * Whether a reverse-domain identifier plausibly belongs to the manufacturer.
  * Every segment between the TLD and the product name is a vendor
  * candidate (`com.fabfilter.Pro-Q`, `uk.co.acme.Verb`, `de.u-he.Diva`), and
- * one of them has to be contained in the manufacturer's slug or display
- * name, or contain it, once both are reduced to letters and digits. A
- * two-segment id (`vendor.Product`) is judged on its first segment.
+ * one of them has to be contained in the manufacturer's slug, display name
+ * or own domain, or contain it, once all are reduced to letters and digits.
+ * A two-segment id (`vendor.Product`) is judged on its first segment.
+ *
+ * The domain is in the set because a bundle id is built from it, not from
+ * the brand's name, and the two need not resemble each other: Universal
+ * Audio ships `com.uaudio.effects.*` from `uaudio.com`, which matches
+ * neither `universal-audio` nor `Universal Audio` and so was refused on
+ * every one of that maker's 156 entries. Only the host of a root url
+ * counts, the same rule racks' triage alias uses, because a brand whose
+ * url is a deep path on another company's domain is hosted there rather
+ * than the owner of it.
  *
  * Deliberately tolerant: it exists to catch `com.waves` on a Softube
  * entry, not to demand that a vendor spell its own name one way.
@@ -135,11 +144,16 @@ export function sameIdentifier(a: string, b: string): boolean {
 export function vendorSegmentMatches(
   identifier: string,
   manufacturerSlug: string,
-  manufacturerName: string
+  manufacturerName: string,
+  manufacturerUrl = ""
 ): boolean {
   const segments = identifier.split(".").filter(Boolean);
   const candidates = segments.length >= 3 ? segments.slice(1, -1) : segments.slice(0, 1);
-  const names = [alnum(manufacturerSlug), alnum(manufacturerName)].filter((n) => n.length >= 3);
+  const names = [
+    alnum(manufacturerSlug),
+    alnum(manufacturerName),
+    alnum(vendorHostLabel(manufacturerUrl)),
+  ].filter((n) => n.length >= 3);
   if (names.length === 0) {
     return true;
   }
@@ -150,6 +164,28 @@ export function vendorSegmentMatches(
     }
     return names.some((n) => n.includes(s) || s.includes(n));
   });
+}
+
+/**
+ * The leading host label of a root url, or "" when the url names no domain
+ * the brand owns. A subpath means the brand is hosted on someone else's
+ * site (`bock-audio` sits on `uaudio.com/pages/microphones`), so it
+ * contributes nothing.
+ */
+function vendorHostLabel(url: string): string {
+  if (url === "") {
+    return "";
+  }
+  let parsed: URL;
+  try {
+    parsed = new URL(url);
+  } catch {
+    return "";
+  }
+  if (parsed.pathname !== "" && parsed.pathname !== "/") {
+    return "";
+  }
+  return parsed.hostname.replace(/^www\./, "").split(".")[0] ?? "";
 }
 
 /** Every software entry by id and by slug, so a row may name either. */
@@ -169,14 +205,22 @@ function buildSoftwareIndex(dataDir: string): SoftwareIndex {
   return { byId, bySlug };
 }
 
-/** A manufacturer's display name from its own file, or empty when it has none. */
-function manufacturerName(dataDir: string, slug: string): string {
+/**
+ * A manufacturer's display name and url from its own file, each empty when
+ * the file has none. Both feed the vendor-segment check, which needs the
+ * url because a bundle id is built from the domain rather than the name.
+ */
+function manufacturerIdentity(dataDir: string, slug: string): { name: string; url: string } {
   const file = path.join(dataDir, "manufacturers", `${slug}.yaml`);
   if (!fs.existsSync(file)) {
-    return "";
+    return { name: "", url: "" };
   }
-  const match = fs.readFileSync(file, "utf-8").match(/^name:\s*(.+)$/m);
-  return match ? match[1].trim().replace(/^["']|["']$/g, "") : "";
+  const text = fs.readFileSync(file, "utf-8");
+  const field = (key: string): string => {
+    const match = text.match(new RegExp(`^${key}:\\s*(.+)$`, "m"));
+    return match ? match[1].trim().replace(/^["']|["']$/g, "") : "";
+  };
+  return { name: field("name"), url: field("url") };
 }
 
 interface EntryShape {
@@ -245,8 +289,8 @@ export function applyIdentifierRows(
     const entry = doc.toJSON() as EntryShape;
     const slug = entry.manufacturer ?? "";
     if (identifier !== undefined && isReverseDomain(identifier)) {
-      const name = manufacturerName(dataDir, slug);
-      if (!vendorSegmentMatches(identifier, slug, name)) {
+      const maker = manufacturerIdentity(dataDir, slug);
+      if (!vendorSegmentMatches(identifier, slug, maker.name, maker.url)) {
         outcomes.push({
           row,
           kind: "conflict",
@@ -286,7 +330,13 @@ export function applyIdentifierRows(
       doc.set("formats", [...formats, row.format]);
       formatAdded = true;
       kind = "written";
-      detail += ` (added ${row.format} to formats)`;
+      // An identifier-less row exists to add the format, so it replaces the
+      // "already listed" default rather than appending to it: the two read as
+      // a contradiction on the row that needed the format most.
+      detail =
+        identifier === undefined
+          ? `added ${row.format} to formats`
+          : `${detail} (added ${row.format} to formats)`;
     }
     if (row.version && !isJunkVersion(row.version)) {
       const merged = insertVersion(entry.versions ?? [], row.version);
