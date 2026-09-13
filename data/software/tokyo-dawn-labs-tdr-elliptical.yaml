@@ -14,15 +14,35 @@ formats:
 platforms:
   - mac
   - windows
+  - linux
 url: https://www.tokyodawn.net/tdr-elliptical/
 prices:
   - amount: 0
     currency: EUR
-description: "Specializes in controlling stereo width at low frequencies using
-  elliptical filters that operate on the stereo difference channel. Provides
-  precise analysis and control of both Stereo Difference and Stereo
-  Correlation."
+  - amount: 40
+    currency: EUR
+description: A modern take on the elliptical filter. Supports both minimum and linear phase modes and advanced compensation options.
 details: |-
-  Version 1.2.1. Minimum phase and linear phase operation. Continuously variable filter slope. Filter energy compensation options including harmonic generators. Freely resizable hardware-accelerated UI with frequency analyzer. Down to DC analysis capability.
+  TDR Elliptical specializes in controlling the stereo width at low frequencies. Elliptical filters operate on the stereo difference channel. They have important applications in disk mastering, and whenever the amount of positional information in a mix asks for control.
+
+  Contrary to traditional elliptical filters, this filter can selectively control either stereo difference or stereo correlation. It further offers a continuously variable slope, minimum and linear phase modes, and a dry mix control. Various compensation options ranging from Dynamic Bump over harmonic generators to “Haas delays”, permit the operator to creatively counter-act subjective energy losses introduced by the filtering and/or stereo to mono summing.
+
+  TDR Elliptical comes with a freely resizable user interface, including a frequency analyser that offers insight into the stereo difference at lowest registers, down to DC.
 specs: |-
-  Windows Vista or above (32-bit and 64-bit). Mac OS X 10.9 or above (64-bit). VST2, VST3, Audio-Unit, or AAX compatible plugin host.
+  - Precise analysis and control of both Stereo Difference and Stereo Correlation
+  - Minimum phase and linear phase operation
+  - Continuously variable filter slope
+  - Various filter energy compensation options, including harmonic generators
+  - Effective stereo to mono loss compensation
+  - Freely resizable hardware accelerated user interface, full-screen capable
+  - VST2, VST3, Audio-Unit or AAX compatible plugin host
+  - Windows Vista or higher
+  - Mac OS X 10.9 or higher
+  - Linux x86-64 with GLIBC 2.14 or higher
+  - OpenGL support
+  - Windows 32-bit: VST2, VST3. Windows 64-bit: VST2, VST3, AAX
+  - Mac 64-bit: VST2, VST3, AU, AAX. Linux 64-bit: VST2, VST3
+versions:
+  - name: 1.2.1
+videos:
+  - videoId: tMzQVOfNVbo

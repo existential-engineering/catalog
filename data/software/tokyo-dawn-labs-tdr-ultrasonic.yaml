@@ -14,15 +14,43 @@ formats:
 platforms:
   - mac
   - windows
+  - linux
 url: https://www.tokyodawn.net/tdr-ultrasonic/
 prices:
   - amount: 0
     currency: EUR
-description: "A filter designed to control ultrasonic content accumulation in
-  oversampled recording, processing, or playback chains. Prevents ultrasonics
-  from interfering with nonlinear systems like limiters, distortion devices, and
-  compressors."
+  - amount: 30
+    currency: EUR
+description: A filter that controls the accumulation of ultrasonic content in oversampled recording, processing, or playback chains, preventing ultrasonics from running into nonlinear systems.
 details: |-
-  Version 1.0.4. Linear phase, continuously variable slope filtering. Ultrasonic gate with dynamic control. Support for sample rates up to 20MHz. Precise ultrasonic frequency analyzer. Bypass All function for A/B testing. Freely resizable hardware-accelerated UI with full-screen capability.
+  TDR Ultrasonic is a filter designed to control the accumulation of ultrasonic content in oversampled recording, processing, or playback chains. The idea is to prevent ultrasonics from running into nonlinear systems.
+
+  Examples of nonlinear systems are peak limiters, creative distortion devices, compressors, and other forms of modulation. Analog capture devices such as tape recorders and disc cutting systems also exhibit nonlinear behavior, as do all playback systems (albeit to a lesser degree).
+
+  The total distortion produced by a nonlinear system grows with the incoming signal bandwidth. This is true for both audible and inaudible content, and applies throughout production: While a narrow-band monophonic signal such as guitars or vocals can artistically handle huge amounts of distortion, a wideband mix can audibly fall apart with only the slightest amount of saturation. This is because nonlinearities not only produce harmonic distortion but also intermodulation distortion, a largely non-harmonic type of distortion.
+
+  TDR Ultrasonic controls the same effect, on a larger scale. It allows for losslessly reducing the amount of intermodulation distortion otherwise provoked by ultrasonic content running into nonlinear devices.
+
+  A freely resizable user interface provides intuitive access to all traditional filter parameters and a set of exotic tricks such as a Dynamic Ultrasonic Gate, the enforcement of infinite attenuation at Nyquist, and a neat “Bypass All” function allowing for A/B testing of the effect of ultrasonic filters over whole mixes. A precise ultrasonic frequency analyzer gives detailed insight into the ultrasonic spectrum and the filtering in action.
 specs: |-
-  Windows Vista or above. Mac OS X 10.9 or above. VST2, VST3, Audio-Unit, or AAX compatible plugin host. Windows 32-bit: VST2, VST3. Windows 64-bit: VST2, VST3, AAX. Mac 32-bit: VST2, VST3, AU, AAX. Mac 64-bit: VST2, VST3, AU, AAX.
+  - Linear phase, continuously variable slope filtering
+  - Ultrasonic gate
+  - “Bat Mode” allowing to inspect ultrasonic content by ear
+  - HF Noise generator allows to “dither” ultrasonic content, offering an alternative to filtering
+  - Support for sample-rates up to 20MHz
+  - Freely resizable hardware accelerated user interface, full-screen capable
+  - Windows: 32-bit VST2, VST3; 64-bit VST2, VST3, AAX
+  - macOS: 64-bit VST2, VST3, AU, AAX
+  - Linux x86-64: VST2, VST3
+  - System requirements: Windows Vista or higher, Mac OS X 10.9 or higher, Linux x86-64 with GLIBC 2.14 or higher; OpenGL support
+versions:
+  - name: 1.0.6
+  - name: 1.0.5
+  - name: 1.0.4
+  - name: 1.0.3
+  - name: 1.0.2
+  - name: 1.0.1
+  - name: 1.0.0
+videos:
+  - videoId: tMzQVOfNVbo
+    title: TDR Ultrasonic

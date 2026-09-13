@@ -17,10 +17,69 @@ url: https://www.tokyodawn.net/tdr-kotelnikov/
 prices:
   - amount: 0
     currency: EUR
-description: "A wideband dynamics processor combining high fidelity dynamic
-  range control with musical flexibility. Features a stealthy sonic signature
-  perfectly suited for stereo bus compression and other critical applications."
+description: A state of the art wideband dynamic range controller. Perfectly suited for stereo bus compression and other critical applications.
 details: |-
-  Version 1.6.7. 64-bit multi-rate processing structure. Delta oversampled signal path, bit transparent at 0dB gain reduction. Super fast, natural-sounding compression. Crest factor based control scheme with independent release controls for peak and RMS events. Flexible sidechain highpass filter. Advanced stereo linking options for stereo bus. Delta preview mode. Latency compensated, click-free bypass. User interface rescaling at 100%, 125%, 150%.
+  TDR Kotelnikov is a wideband dynamics processor combining high fidelity dynamic range control with deep musical flexibility. As a descendant of the venerable TDR Feedback Compressor product family, Kotelnikov has directly inherited several unique features such as a proven control scheme, individual release control for peak and RMS content, an intuitive user interface, and powerful, state of the art, high-precision algorithms.
+
+  With a sonic signature best described as “stealthy”, Kotelnikov has the ability to manipulate the dynamic range by dramatic amounts, while carefully preserving the original tone, timbre and punch of a musical signal. As such, it is perfectly suited to stereo bus compression as well as other critical applications.
+
+  The concept is “proudly digital” in the sense that it doesn't try to emulate any previously existing device. This is the original!
 specs: |-
-  Windows 7 or above. Mac OS X 10.9 or above. OpenGL support required. Windows 32-bit and 64-bit: VST2, VST3, AAX. Mac 32-bit and 64-bit: VST2, VST3, AU, AAX.
+  - 64bit multi-rate processing structure for highest accuracy
+  - “Delta” oversampled signal path (bit transparent at 0dB gain reduction)
+  - Super fast, yet natural sounding compression
+  - “Crest factor” based control scheme offering independent release controls for peak and RMS events
+  - Flexible sidechain highpass filter
+  - Advanced stereo linking options optimized for the stereo bus
+  - Delta preview mode previews the difference between compressed and original signal
+  - Latency compensated, click free bypass (processing never interrupted)
+  - User interface rescaling (100%, 125%, 150%)
+  - VST2, VST3, Audio Unit or AAX compatible plugin host. Windows 7 or above, Mac OS X 10.9 or above. OpenGL support required. Windows 32-bit: VST2, VST3. Windows 64-bit: VST2, VST3, AAX. Mac 64-bit: VST2, VST3, AU, AAX.
+versions:
+  - name: 1.6.7
+    description: Fixed a bug affecting host undo history
+  - name: 1.6.6
+    description: AAX Apple native Silicon support added
+  - name: 1.6.5
+    description: Fixed mousewheel behaviour of certain knobs (in inverted mouse-button mode); Fixed inline help typos
+  - name: 1.6.4
+    description: AAX compatiblity fix; Fixed update lookup
+  - name: 1.6.3
+    description: Added suppport for native Mac Silicon
+  - name: 1.6.2
+    description: Inline help layout updated; Fixed dropdown menus occasionally not opening on click; Fixed small graphical details
+  - name: 1.6.1
+    description: "VST3 format compatibility fixes; MacOSX installer fixes; Settings: Added framerate control for primary UI elements (meters, analyzers); User-manual moved online (pdf removed)"
+  - name: 1.6.0
+    description: VST3 format added; MacOS Catalina support; Small fixes
+  - name: 1.5.2
+    description: Small changes to mouse settings window; New "Set quality for all instances" function (quality menu)
+  - name: 1.5.1
+    description: Fixed collapsed inline help texts on some systems; Added 64bit support I/O for VST; Small UI fixes
+  - name: 1.5.0
+    description: 'New global setting "Always render at highest quality"; New UI rescaling options: 100%, 125% and 150%; Plugin toolbar and settings updated; UI performance improved; Minor fixes and enhancements'
+  - name: 1.1.2
+    description: SC meter initialization fixed; UI performance improved; Minor fixes and enhancements; New settings screen
+  - name: 1.1.1
+    description: Fixed a bug related to the DRYMIX / DRYWET switch
+  - name: 1.1.0
+    description: DRY MIX can now be switched to a DRY WET mode (doubleclick the label); ATTACK and RELEASE PEAK ranges have been increased; Added support for stepped sliders and custom parameter steps; Text input field below knobs can now be dragged like knobs; New circular meters for SC level and gain reduction; various stability fixes
+  - name: 1.0.7
+    description: Added product update lookup functionality (optional); Added experimental openGL renderer (see settings dialog); Added "Save As Default Preset" function; Comboboxes can now be used like sliders; UI performance improved; Fixed an issue in INSANE mode preventing full bit transparency at zero GR; Fixed a rare Window XP issue sometimes closing plugin host a fter a few hours; Fixed an "white UI" issue appearing in Renoise/mac/32bit; Minimal fixes
+  - name: 1.0.6
+    description: Fixed crackling sometimes appearing in Sum/Diff channel modes; New LEFT and RIGHT channel modes; Minor performance improvements
+  - name: 1.0.5
+    description: Fixed issue with "soft bypass" in Cubase; Minor changes related to the main toolbar
+  - name: 1.0.4
+    description: Fixed an issue appearing with Sum/Diff Delta; Fixed an issue related to processing-"tail" reporting; Minor performance updates; Minor changes to info dialog
+  - name: 1.0.3
+    description: Fixed a persitence problem for attack parameter (sorry!)
+  - name: 1.0.2
+    description: Fixed rare crash when unloading the plugin; Fixed a preset persistence problem related to time values greater than 500ms
+  - name: 1.0.1
+    description: Fixed latency reporting error
+  - name: 1.0.0
+    description: Initial release
+videos:
+  - videoId: Cpokm0j1DXQ
+    provider: youtube
