@@ -1,7 +1,7 @@
 id: usCHS8fT1auyaoXVQ-q_8
 name: OD Ancora
 manufacturer: tokyo-dawn-labs
-primaryCategory: utility
+primaryCategory: stereo
 categories:
   - plugin
   - mastering
@@ -13,14 +13,28 @@ formats:
 platforms:
   - mac
   - windows
+  - linux
 url: https://www.tokyodawn.net/od-ancora/
 prices:
   - amount: 0
     currency: EUR
-description: "A stereo image correction processor that intelligently anchors the
-  stereo field for improved mono compatibility. Developed by Ohlhorst Digital
-  for mastering applications."
+  - amount: 129
+    currency: EUR
+description: Stereo image correction that intelligently anchors the stereo field for improved mono compatibility.
 details: |-
-  Version 1.0.3. Three primary parameters: Depth, Timing, and Target, all frequency-adjustable. Two modes: L/R mode with minimum phase filtering and M/S mode with linear phase filtering. RePhase feature compensates for phase artifacts from stereo width processing. Level-independent processing with set and forget functionality.
+  OD Ancora, named after the Latin word for “anchor”, is a stereo image correction processor that intelligently anchors the stereo field for improved mono compatibility. Three primary parameters provide intuitive control of the operation, each freely adjustable over frequency.
+
+  Depth adjusts how strongly corrections are applied, bringing excessively wide elements closer to a controlled stereo field. Timing defines how quickly the processor responds to changes in the stereo content. Target sets the threshold at which correction begins, preserving the natural stereo field below.
+
+  Operating without fixed crossovers, Ancora offers two complementary modes: L/R mode redistributes panning energy between channels using minimum phase filtering, while M/S mode provides active correlation control using linear phase filtering. The unique RePhase feature compensates for phase artifacts and energy loss introduced by stereo width processing, maintaining natural punch and presence. The processing is independent of input level, providing true “set & forget” functionality.
+
+  Ohlhorst Digital is a brand by Jan Ohlhorst. Initially developed exclusively for his work as a mastering engineer, these well refined products are now being made publicly accessible.
 specs: |-
-  Windows 7 or above. Mac OS X 10.13 or above. VST2, VST3, Audio-Unit, or AAX compatible plugin host.
+  - VST2, VST3, Audio-Unit or AAX compatible plugin host
+  - Windows 10 or higher
+  - Mac OS X 10.13 or higher
+  - Linux x86-64 with GLIBC 2.35 or higher
+  - Windows 32-bit: VST2, VST3. Windows 64-bit: VST2, VST3, AAX
+  - Mac 64-bit: VST2, VST3, AU, AAX. Linux 64-bit: VST3
+versions:
+  - name: 1.2.3

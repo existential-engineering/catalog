@@ -18,11 +18,45 @@ url: https://www.tokyodawn.net/tdr-molot-ge/
 prices:
   - amount: 0
     currency: EUR
-description: "A dynamic range compressor combining classic compression
-  mechanisms with sophisticated saturation, creative tone control, and a snappy
-  peak limiter. Supports mellow leveling, tight dynamic control, and aggressive
-  compression."
+  - amount: 50
+    currency: EUR
+description: Characterful dynamic range compression with sophisticated saturation, creative tone control, and a snappy peak limiter.
 details: |-
-  Version 1.0.7. Analog style brickwall limiter. Sophisticated saturation section. Creative tone control section. Dual-stage timing section with auto-release control. Feedforward and feedback compression types. Crossover-based adjustable stereo link. Detailed coloration features including negative ratios, sidechain phase rotation, and bit-crushing. Multiple quality modes including zero-latency operation. M/S mode with dedicated width controls. Equal loudness workflow functions.
+  Russian for “Hammer”, Molot is the name of a popular dynamic compressor originally released in 2011 by Vladislav Goncharov. With a modernized concept, extended flexibility, and a generous dose of Rock 'n Roll, Molot GE proudly takes over the job of its predecessor.
+
+  Molot GE is a particularly characterful dynamic range compressor melding several classic compression mechanisms with sophisticated saturation, creative tone control, and a snappy peak limiter. Whether it be mellow leveling, tight dynamic control, or aggressively vibrant compression, Molot GE covers a remarkable wide range of compression colors. While Molot GE doesn't emulate any “vintage” device, its sound and behavior was definitely inspired by their most interesting musical peculiarities. This flexibility makes it suited for almost any source, be it drums asking for more crisp and impact, solidification and enrichment of vocals, or the enhancement of guitar and bass recordings of all types.
+
+  As with all TDR plugins, Molot GE employs state of the art audio processing technology keeping unwanted distortion under strict control. An intuitive and well documented user interface offers quick access to all relevant parameters in a rewarding manner. Several helpers such as the equal loudness bypass and trimming, unlimited undo/redo, optional stepped controls, and many more features help the operator achieve consistent results within a short time.
 specs: |-
-  Windows 7 or above (32-bit and 64-bit). Mac OS X 10.9 or above (32-bit and 64-bit). VST2, VST3, Audio-Unit, or AAX compatible plugin host. OpenGL support required.
+  - Musically intriguing compression flavours
+  - Analog style brickwall limiter
+  - Sophisticated saturation section
+  - Creative tone control section
+  - Dual-stage timing section offering control over auto-release behaviour
+  - Feedforward and feedback compression types
+  - Crossover based adjustable stereo link
+  - Detailed colouration features such as negative ratios, sidechain phase rotation, and bit-crushing
+  - Different quality modes including zero-latency operation
+  - M/S mode with dedicated width controls
+  - Equal loudness workflow, with equal loudness bypass and equal loudness trim
+  - VST2, VST3, Audio Unit or AAX compatible plugin host. Windows 7 or above, Mac OS X 10.9 or above. OpenGL support required. Windows 32-bit: VST2, VST3. Windows 64-bit: VST2, VST3, AAX. Mac 64-bit: VST2, VST3, AU, AAX.
+versions:
+  - name: 1.0.7
+    description: Fixed a bug affecting host undo history
+  - name: 1.0.6
+    description: 'Sonoma: Fixed graphical glitches; Wavelab montages: Fixed "*" not appearing after changes; Graphics: Improved hi res display support'
+  - name: 1.0.5
+    description: AAX Apple native Silicon support added
+  - name: 1.0.4
+    description: Fixed bug in update lookup logic
+  - name: 1.0.3
+    description: Slow/fast meter speed bug fixed (keep the selected speed on ff/fb change); Preset default values bug fix (default values were unpredictably changed on some occasions); Meter speed in "slow" mode fixed (now slightly faster)
+  - name: 1.0.2
+    description: "Fixed compatiblity with mac os 10.9.5; Added new GR meter options: Meter Source, Meter Speed"
+  - name: 1.0.1
+    description: Fixed non ascii texts occasionally disappearing on windows; Saturation unlocked in “Eco” mode and in also “Live” mode if sample rate is 88.2 and higher; Fixed “whistling” effect, which occurs in “lo-fi” mode in some settings; Fixed channel mode behaviour in UI; Fixed minor compatibility issues.
+  - name: 1.0.0
+    description: Initial Release
+videos:
+  - videoId: JxVnt21eJV0
+    provider: youtube

@@ -14,15 +14,55 @@ formats:
 platforms:
   - mac
   - windows
+  - linux
 url: https://www.tokyodawn.net/tdr-infrasonic/
 prices:
   - amount: 0
     currency: EUR
-description: "Specialized low-frequency filter addressing predominantly
-  inaudible low-frequency regions of a mix. Operates in minimum and mixed phase
-  modes with variable filter slope control, dry mix options, and creative energy
-  compensation methods."
+  - amount: 40
+    currency: EUR
+description: Specialized low-frequency filter addressing predominantly inaudible low-frequency regions of a mix. Operates in minimum and mixed phase modes with variable filter slope control, dry mix options, and creative energy compensation methods.
 details: |-
-  Version 1.1.1. Minimum phase and mixed phase operation. Continuously variable filter slope. Energy compensation options including Dynamic Bump mode and Harmonic generators. Highly precise low frequency spectrum analyzer down to DC. Subwoofer channel creation. Inv mode inverts filter to low-pass. Low Clamp option with distortion-shielded clipper. ECO mode. Freely resizable hardware-accelerated UI with full-screen capability.
+  TDR Infrasonic addresses the predominantly inaudible low-frequency regions of a mix. This specialized filter operates in minimum and mixed phase mode, it features a continuously variable filter slope control, a dry mix option and an exotic range of filtering loss compensation methods: A dynamic bump mode and a set of harmonic generators help the operator to creatively compensate for any unwanted energy-loss introduced by the filtering process.
+
+  The plugin is an ideal choice when transferring material to a medium/environment of lower spectral bandwidth, such as disk mastering, audio cassettes, analogue broadcast or P.A. systems. It's exotic filtering compensation options further make it a valuable tool in all traditional recording, mixing, restoration, and mastering applications.
+
+  The plugin comes in a modern, freely resizable user interface. Its low frequency spectral analyzer offers exceptionally detailed insight into the lowest registers of a mix, down to DC.
 specs: |-
-  Windows Vista or above. Mac OS X 10.9 or above. VST2, VST3, Audio-Unit, or AAX compatible plugin host. Windows 32-bit: VST2, VST3. Windows 64-bit: VST2, VST3, AAX. Mac 32-bit: VST2, VST3, AU, AAX. Mac 64-bit: VST2, VST3, AU, AAX.
+  - Minimum phase and mixed phase operation
+  - Continuously variable filter slope
+  - Various energy compensation options including a Dynamic Bump mode and harmonic generators
+  - Highly precise low frequency spectrum analyzer
+  - Freely resizable hardware accelerated user interface, full-screen capable
+  - Subwoofer channel creation
+  - VST2, VST3, Audio Unit or AAX compatible plugin host. Windows Vista or higher, Mac OS X 10.9 or higher, Linux x86-64 with GLIBC 2.14 or higher. OpenGL support required. Windows 32-bit: VST2, VST3. Windows 64-bit: VST2, VST3, AAX. Mac 64-bit: VST2, VST3, AU, AAX. Linux 64-bit: VST2, VST3.
+versions:
+  - name: 1.1.2
+    description: Added new subsonic monitoring mode
+  - name: 1.1.1
+    description: Fixed a bug affecting host undo history
+  - name: 1.1.0
+    description: 'Added "Inv" mode, inverts the filter into a low-pass filter; Added "Low Clamp" option, a distortion "shielded" clipper acting on the low band; Added individual level control for bump, harmonics, subharmonics and LF Clamp; Increased max cutoff freq to 100Hz; Added ECO mode; Fixed plugin resize mouse behaviour; Wavelab montages: Fixed "*" not appearing after changes'
+  - name: 1.0.9
+    description: DSP recall issue fixed
+  - name: 1.0.8
+    description: Energy compensation recall from prev versions fixed
+  - name: 1.0.7
+    description: Moved energy compensation option to main UI; Multi-display fullscreen fixes; Animation framerate issues fixed
+  - name: 1.0.6
+    description: Fixed crash when both in and out analysers turned off
+  - name: 1.0.5
+    description: Added option "Slope in Decibel" to context menu; Added 3 analyzer smoothing options to context menu; Fixed dry mix behaviour; Small graphical improvements and performance optimizations
+  - name: 1.0.4
+    description: Fixed dynamic latency reporting (Reaper); Fixed an issue in even harmonics mode
+  - name: 1.0.3
+    description: Added "filtered energy factor" option to context menu (scales the intensity of bump and harmonics generators)
+  - name: 1.0.2
+    description: Cubase dynamic latency change fixed part II; Cubase soft bypass fixed
+  - name: 1.0.1
+    description: Cubase dynamic latency change fixed
+  - name: 1.0.0
+    description: Initial Release
+videos:
+  - videoId: tMzQVOfNVbo
+    provider: youtube

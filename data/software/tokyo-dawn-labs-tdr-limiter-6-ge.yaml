@@ -17,14 +17,60 @@ formats:
 platforms:
   - mac
   - windows
+  - linux
 url: https://www.tokyodawn.net/tdr-limiter6-ge/
 prices:
   - amount: 0
     currency: EUR
-description: "A modern dynamics compression and limiting toolkit featuring six
-  specialized modules in variable order. Designed for loudness control,
-  brick-walling, and creative mix bus processing."
+  - amount: 60
+    currency: EUR
+description: A modern dynamics compression and limiting toolkit featuring six specialized modules in variable order. Designed for loudness control, brick-walling, and creative mix bus processing.
 details: |-
-  Version 1.3.0. Six modules: Dynamics Compressor, Clipper, High Frequency Limiter, Peak Limiter, Output Protection Limiter, True Peak and EBU Loudness Meter. Advanced true peak and EBU R128 compliant loudness metering. Equal loudness bypass. Visual aesthetics with detailed signal dynamics insight. Preset starting points for loudness maximization.
+  TDR Limiter 6 GE is a modern dynamics compression and limiting toolkit featuring six specialized modules that can be arranged in variable order. Together, they cover a remarkable range of applications from creative crunching to precise and competitive loudness control.
+
+  Each module offers dedicated control over different types of events, from macro to micro, and allows you to determine the signal path. Combined wisely they can greatly increase the perceived loudness of a mix while preserving superior musical fidelity, punch, and excitement.
+
+  With its appealing visual aesthetic, the advanced metering section gives a detailed insight into the signal's dynamics, incl. EBU compliant True Peak and Loudness meters, and a psycho-acoustically most elaborate Zwicker Loudness meter. The equal loudness bypass will also make sure the operators' aural perception doesn't get tricked by any loudness differences.
+
+  A collection of sensible starting points allows for quick, yet precise loudness maximization. If needed, a wide range of options offer endless creative possibilities for getting that optimal setting. Going further, Limiter 6 also enables the operator to build their own personal take on loudness maximization, bus processing, and much more.
 specs: |-
-  Windows 7 or above. Mac OS X 10.9 or above. VST2, VST3, Audio-Unit, or AAX compatible plugin host. OpenGL support required. 64-bit.
+  - Module: Dynamics Compressor
+  - Module: Clipper, both upward and downward
+  - Module: High Frequency Limiter, with absolute and relative control
+  - Module: Peak Limiter
+  - Module: Precise True Peak Output Protection Limiter
+  - Module: EBU compliant True Peak and Loudness Meter, further supporting the Zwicker Loudness algorithm
+  - Modules can be arranged in variable order
+  - VST2, VST3, Audio Unit or AAX compatible plugin host. Windows Vista or higher, Mac OS X 10.9 or higher, Linux x86-64 with GLIBC 2.14 or higher. OpenGL support required. Windows 32-bit: VST2, VST3. Windows 64-bit: VST2, VST3, AAX. Mac 64-bit: VST2, VST3, AU, AAX. Linux 64-bit: VST2, VST3.
+versions:
+  - name: 2.0.1
+    description: Fixed bug when loudness meter stops working in some rare conditions
+  - name: 2.0.0
+    description: Added Linux support; Added new Peak Limiter model; Added new Clipper parameter "UPWARD".; Added Zwicker Loudness model (ISO 532-1) to meter module; Added "NUKE" (ratio) mode for compressor; UI improved; Fixed compressor dry mix not working in mono mode
+  - name: 1.3.0
+    description: Peak Limiter in Sum/Diff + Brickwall On now does what it says; Peak Limiter in Sum/Diff + Brickwall Off tolerates overshoots, as before; Clipper Limiter in Sum/Diff + Brickwall On now does what it says; Clipper Limiter in Sum/Diff + Brickwall Off tolerates overshoots, as before; Old projects recall according to previous logic; Fixed a bug affecting host undo history
+  - name: 1.2.7
+    description: Fixed compressor "DRY AMT" showing no effect; Fixed "*" not appearing in Wavelab montages after changes; Fixed graphical glitches appearing in Macos Sonoma; Improved support for hi-res displays
+  - name: 1.2.6
+    description: AAX Apple native Silicon support added
+  - name: 1.2.5
+    description: Added new 3 band compressor mode "Broadcast"; Fixed Compressor Leveller mode; Fixed Equal Loudness Pad; Fixed a graphical issue
+  - name: 1.2.4
+    description: AAX compatiblity fix; Fixed update lookup
+  - name: 1.2.3
+    description: Added support for native Mac Silicon
+  - name: 1.2.2
+    description: Fixed HF Limiter DRY WET/DRY MIX doubleclick not functioning; Inline help layout updated; Fixed dropdown menus occasionally not opening on click; Fixed small graphical details; VST3 format compatibility fixes; Logic 10.5 compatibility fixes; Fixed bug in multiband modes
+  - name: 1.2.1
+    description: "VST3 format compatibility fixes; MacOSX installer fixes; Settings: Added framerate control for primary UI elements (meters, analyzers); User-manual moved online (pdf removed)"
+  - name: 1.2.0
+    description: Added MacOS Catalina compatiblity; Added VST3 support; Added relative gain preservation on reording (hold cmd/alt on drag for the old behavior); Improved GR-meter overload/autoscale behavior; Fixed bug in meter-module mouse behaviour; Various little improvements
+  - name: 1.1.0
+    description: 'New compressor mode "Nova"; GR meter range now grow automatically; New UI scales 100%, 125% and 150%; Peak meter UI updated, threshold markers added.; UI performance improvements; Various little changes to toolbar and context menu; Fixed unwanted loudness meter reset on audio reset; Option added: "Always render at highest quality"; Loudness meter: mono mode fixed'
+  - name: 1.0.1
+    description: New unlinked LR mode for COMPRESSOR and PEAK LIMITER (alt + click).; New 16 bit dither option added to QUALITY dropdown.; UI performance improved; DSP performance improved
+  - name: 1.0.0
+    description: Initial release
+videos:
+  - videoId: I4DPPsQAU2A
+    provider: youtube
