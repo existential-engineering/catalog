@@ -18,10 +18,75 @@ url: https://www.tokyodawn.net/tdr-nova/
 prices:
   - amount: 0
     currency: EUR
-description: "A parallel dynamic equalizer combining parametric EQ layout with
-  full dynamics processing on each band. Features WYSIWYG drag-and-drop display
-  with classic knob controls, spectrum analyzer, and equal loudness functions."
+description: A parallel dynamic equalizer combining parametric EQ layout with full dynamics processing on each band. Features WYSIWYG drag-and-drop display with classic knob controls, spectrum analyzer, and equal loudness functions.
 details: |-
-  Version 2.2.2. Four dynamic EQ bands with high-pass and low-pass filters. Parametric equalization, dynamic EQ, frequency-selective compression, multi-band compression, and wideband compression capabilities. Built-in spectrum analyzer. Preset manager, undo/redo, A/B comparison, copy/paste functionality. Band solo feature. Resizable plugin window with three UI scales. External sidechain support.
+  NOVA is a parallel dynamic equalizer. Appearing in the familiar layout of a parametric equalizer, each band also includes a full featured dynamics section allowing the processor to cover an impressively wide range of applications. Be it a master lacking density, the drum bus asking for more crispiness, or a sibilance problem in your perfect take: NOVA has an elegant answer.
+
+  A user friendly WYSIWYG drag and drop display paired with a classic “knob” interface gives quick and smooth access to the various parameters driving NOVA's powerful processing capabilities. With its four dynamic EQ bands and additional high-pass and low-pass filter sections, NOVA can meet the most exotic demand. Intuitive equal loudness functions help finding the optimal setting without getting distracted by loudness differences.
+
+  In practice, the processor covers a whole bucket of tasks: parametric equalization, dynamic equalization, frequency selective compression, multi-band compression and wideband compression.
+
+  Of course NOVA features all helpers and workflow enhancements you've come to expect in a TDR plugin: A preset manager, undo/redo, A/B, detailed documentation, copy & paste, and much more.
 specs: |-
-  Windows 7 or above. Mac OS X 10.9 or above. OpenGL support required. Windows 32-bit and 64-bit: VST2, VST3, AAX. Mac 32-bit and 64-bit: VST2, VST3, AU, AAX.
+  - Parametric equalization
+  - Dynamic equalization
+  - Frequency selective compression
+  - Multi-band compression
+  - Wideband compression
+  - Four dynamic EQ bands plus high-pass and low-pass filter sections
+  - Built-in spectrum analyzer
+  - Equal loudness functions
+  - Preset manager, undo/redo, A/B comparison, copy and paste
+  - VST2, VST3, Audio Unit or AAX compatible plugin host. Windows 7 or above, Mac OS X 10.9 or above. OpenGL support required. Windows 32-bit: VST2, VST3. Windows 64-bit: VST2, VST3, AAX. Mac 64-bit: VST2, VST3, AU, AAX.
+versions:
+  - name: 2.2.2
+    description: Fixed a bug affecting host undo history
+  - name: 2.2.1
+    description: Added optional smoothing for output gain and dry mix parameters (see context menu > Parameter Smoothing); Fixed WBand controls appearing in grouped band selection; Fixed EQ Auto Gain indication bar around the output gain knob
+  - name: 2.2.0
+    description: 'Band Solo is now a parameter; Graphics updated for hires displays; Fixed shelf/bell Q recall bevaviour; Fixed plugin resize mouse behaviour; Fixed graphical glitches in Sonoma; Wavelab montages: Fixed "*" not appearing after changes; Various mouse logic and UI improvements'
+  - name: 2.1.6
+    description: AAX Apple native Silicon support added
+  - name: 2.1.5
+    description: AAX compatiblity fix; Fixed update lookup
+  - name: 2.1.4
+    description: Added suppport for native Mac Silicon
+  - name: 2.1.3
+    description: Fixed band selection/activation logic; Inline help layout updated; Fixed dropdown menus occasionally not opening on click; Fixed small graphical details
+  - name: 2.1.2
+    description: VST3 format compatibility fixes; Logic 10.5 compatibility fixes; Added "Analyzer Speed" control; EQ display context menu extended; Small graphical improvements
+  - name: 2.1.1
+    description: "VST3 format compatibility fixes; MacOSX installer fixes; Settings: Added framerate control for primary UI elements (meters, analyzers); User-manual moved online (pdf removed)"
+  - name: 2.1.0
+    description: Added VST3 support; Added Catalina support; Improved analyzer responsiveness; Fixed AU external sidechain in Reaper
+  - name: 2.0.2
+    description: Fixed recall problems
+  - name: 2.0.1
+    description: Fixed AAX version 1 to version 2 automation recall issues; Corrected several little UI bugs; Fixed filter instability on changing peaking/low-shelving filter type
+  - name: 2.0.0
+    description: 'UI: resizable plugin-window, 3 different UI scales, "no display" mode.; UI: Significant UI performance improvements; Analyzer: precision increased, faster reaction; Analyzer: source selection moved above the blue analyzer/threshold scale; Dynamics: Added "Int SC (flat)" option to external sidechain menu to turn off Nova''s internal 3dB/oct sidechain filters.; Controls: Grouping of continuous parameters now always relative; Controls: Added instance name editing dialogue to context menu; Toolbar: Settings dialogue updated; Option added: "Always render at highest quality"; New presets added; Many bugfixes'
+  - name: 1.2.0
+    description: Significant UI performance improvements; New "Band Solo" button; New settings dialog; Added support for custom snapmaps; Minor fixes and enhancements
+  - name: 1.1.0
+    description: Attack and release ranges increased; Added EQ auto gain switch; UI performance substantially improved; Fixed wrong "greyed out" states; Various inline help corrections; Manual updated; Fixed rare PT related race-conditions; Mouse handling improved
+  - name: 1.0.8
+    description: Added product update lookup functionality (optional); SOLO mode mouse handling fixes; Comboboxes can now be used like sliders; UI performance improved; Fixed a rare Window XP issue sometimes closing plugin host a fter a few hours; Fixed an "white UI" issue appearing in Renoise/mac/32bit; Minimal fixes
+  - name: 1.0.7
+    description: Added new 72dB/oct HP filter mode for (HP and LP); Added "Save As Default Preset" function.; Create HP and LP bands via double click outside the audible band (dashed lines in display); Better indication of SOLO state (band on/off buttons grey out accordingly); UI Performance improved; Added experimental openGL renderer (see settings dialog); Fixed a structural issue related to LP filtering; Minor fixes and improvements
+  - name: 1.0.6
+    description: UI Performance improved; Deactivation of band groups now possible (via the ON buttons); Dragging band group in the analyzer while in band solo mode now possible; Fixed bug where the ratio knob appeared twice; Fixed minor graphical issues; Fixed bug related to Q and ORDER BY FREQ; RELEASE range increased (down to 10ms); Mousewheel in SOLO mode corrected
+  - name: 1.0.5
+    description: UI Performance improved; Audible clicks related to filter type changes reduced; Fixed issue related to shift + double click
+  - name: 1.0.4
+    description: Fixed severe persitence issue (shame on us!); Fixed various little mouse-handling issues
+  - name: 1.0.3
+    description: Solo band activation changed to CMD(i.e. CTRL) + SHIFT; Solo band doesn't mute audio anymore if no band is selected; Solo band autogain behaviour fixed; Analyzer mode no more affected by preset changes; Fixed delta for solo, Sum/Diff and Left/Right processing modes; Fixed threshold curve disapearing; Fixed bug related to preset handling and Q parameters; Fixed gfx refresh issues in some hosts (e.g. FL Studio)
+  - name: 1.0.2
+    description: Added support for SOLO band preview via CTRL/COMMAND; UI startup performance improved (audible clicks fixed); Corrected attack of all dynamics sections (they were fixed to 1ms! sorry); New HP/LP filter issues fixed; Fixed Protools soft-bypass ignoring DRYMIX and OUTGAIN; Band selection via mouse-wheel disabled for "continuous motion" mouses
+  - name: 1.0.1
+    description: UI performance improved; HP/LP filter issues in ECO mode fixed; Attempt to fix a rare mousewheel "crash"
+  - name: 1.0.0
+    description: Initial release
+videos:
+  - videoId: 1CHFv4mWQYM
+    provider: youtube
