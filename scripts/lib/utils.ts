@@ -171,6 +171,52 @@ export function getYamlFiles(dir: string): string[] {
 }
 
 /**
+ * Confirm `candidate` names a regular file whose canonical path stays
+ * beneath `root`.
+ *
+ * Three of the scripts take a path from somewhere a contributor reaches:
+ * a `--from-mapping` JSON file, an explicit `pnpm format` argument, the
+ * name of a file a pull request changed. Each then reads it, and two of
+ * them write it back. `path.join` does not care about `..`, and
+ * `fs.existsSync`/`readFileSync` follow a symlink wherever it points, so
+ * without this a committed `data/software/x.yaml -> /dev/urandom` is an
+ * unbounded read and a mapping entry of `../../.github/workflows/ci.yml`
+ * is a write outside the catalog.
+ *
+ * Returns the canonical path on success, or the reason it was refused.
+ * `lstat` rather than `stat`, so a symlink is refused as one rather than
+ * inspected through; `realpath` after that, because a *parent* directory
+ * can still be a link out of the tree.
+ */
+export function checkContainedRegularFile(
+  candidate: string,
+  root: string
+): { path: string; reason?: undefined } | { path?: undefined; reason: string } {
+  const resolved = path.resolve(candidate);
+  let stats: fs.Stats;
+  try {
+    stats = fs.lstatSync(resolved);
+  } catch {
+    return { reason: "does not exist" };
+  }
+  if (stats.isSymbolicLink()) return { reason: "is a symlink" };
+  if (!stats.isFile()) return { reason: "is not a regular file" };
+
+  let real: string;
+  let realRoot: string;
+  try {
+    real = fs.realpathSync(resolved);
+    realRoot = fs.realpathSync(root);
+  } catch {
+    return { reason: "cannot be resolved" };
+  }
+  if (real !== realRoot && !real.startsWith(realRoot + path.sep)) {
+    return { reason: `is outside ${root}` };
+  }
+  return { path: real };
+}
+
+/**
  * Slugs of manufacturers marked `defunct: true` in their YAML.
  * Products of these manufacturers are treated as discontinued by the
  * discontinued-candidates report and apply tooling.

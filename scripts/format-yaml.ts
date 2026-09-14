@@ -29,7 +29,7 @@ import path from "node:path";
 import { parseDocument } from "yaml";
 import { normalizeDocument } from "./lib/format-normalize.js";
 import type { CategoryAliasesSchema } from "./lib/types.js";
-import { loadYamlFile } from "./lib/utils.js";
+import { checkContainedRegularFile, loadYamlFile } from "./lib/utils.js";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 const DATA_DIR = path.join(REPO_ROOT, "data");
@@ -76,11 +76,6 @@ function filesToFormat(): { files: string[]; scoped: boolean } {
   const args = process.argv.slice(2).filter((arg) => !arg.startsWith("-"));
   if (args.length > 0) {
     const resolved = args.map((arg) => path.resolve(process.cwd(), arg));
-    const missing = resolved.filter((file) => !fs.existsSync(file));
-    if (missing.length > 0) {
-      console.error(`No such file(s):\n${missing.map((f) => `  ${f}`).join("\n")}`);
-      process.exit(1);
-    }
     // Only YAML: every file is parsed as a YAML document, so a stray .md
     // or .json argument would crash inside the parser rather than report
     // anything useful. The unscoped path cannot hit this because
@@ -89,6 +84,22 @@ function filesToFormat(): { files: string[]; scoped: boolean } {
     if (notYaml.length > 0) {
       console.error(
         `Not YAML (this script only formats .yaml/.yml):\n${notYaml.map((f) => `  ${f}`).join("\n")}`
+      );
+      process.exit(1);
+    }
+    // Confined to data/: this script rewrites whatever it is handed and
+    // then hands the same path to Prettier, which loads configuration from
+    // the *target's* directory and imports a .prettierrc.js there as code.
+    // A target outside the repository therefore chooses the code Prettier
+    // runs. Nothing legitimate calls this on a path outside data/ — the
+    // import lanes pass the entries they just wrote.
+    const refused = resolved
+      .map((file) => ({ file, reason: checkContainedRegularFile(file, DATA_DIR).reason }))
+      .filter((entry): entry is { file: string; reason: string } => entry.reason !== undefined);
+    if (refused.length > 0) {
+      console.error(
+        `Not formattable (must be a regular file under ${path.relative(REPO_ROOT, DATA_DIR)}/):\n` +
+          refused.map((entry) => `  ${entry.file} ${entry.reason}`).join("\n")
       );
       process.exit(1);
     }
@@ -141,8 +152,18 @@ console.log(scoped ? `Running Prettier on ${files.length} file(s)...` : "Running
 // passed as argv rather than interpolated into a command string: the
 // scoped paths come from argv, and with no shell in between there is no
 // quoting to get wrong. Prettier expands the glob itself.
+// `--config` and `--no-editorconfig` pin the formatting rules to this
+// repository's own .prettierrc instead of letting Prettier discover a
+// config file next to each target. Targets are confined to data/ above, so
+// discovery could only find the repository's own config today; naming it
+// means a future caller cannot widen that, and a .prettierrc.js Prettier
+// would import as code is never consulted.
 const targets = scoped ? files.map((file) => path.relative(REPO_ROOT, file)) : ["data/**/*.yaml"];
-execFileSync("prettier", ["--write", ...targets], {
-  cwd: REPO_ROOT,
-  stdio: "inherit",
-});
+execFileSync(
+  "prettier",
+  ["--config", path.join(REPO_ROOT, ".prettierrc"), "--no-editorconfig", "--write", ...targets],
+  {
+    cwd: REPO_ROOT,
+    stdio: "inherit",
+  }
+);

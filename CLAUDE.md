@@ -75,8 +75,40 @@ cohort working:
   request), never bare `fetch`. The URL is contributor-chosen, so a checker
   that follows it blindly will request localhost, a router, or a runner's
   metadata service on the contributor's behalf. The guard refuses those
-  destinations, checks every redirect hop, and resolves each host before
-  connecting to it.
+  destinations and checks every redirect hop.
+  **The socket is pinned to an address the guard returned**, through
+  node:http's `lookup` option or, for `fetchPublic`, an undici dispatcher's
+  `connect.lookup` — which is why `fetchPublic` uses `undici.fetch` and not
+  the global one. Resolving a host, approving the answer and then handing
+  the _hostname_ to something that resolves it again is not a check: a host
+  an attacker controls can answer publicly for the first lookup and
+  privately for the second. The hostname still reaches the socket, for the
+  Host header and TLS verification; only the address is pinned.
+- A script that reads or writes a path it did not choose itself — a
+  `--from-mapping` entry, a `pnpm format` argument, the name of a file a
+  pull request changed — puts it through `checkContainedRegularFile`
+  (`scripts/lib/utils.ts`) first. `path.join` does not care about `..`, and
+  `readFileSync` follows a symlink wherever it points, so a committed
+  `data/software/x.yaml -> /dev/urandom` is an unbounded read on the
+  runner. The helper refuses a symlink, a non-regular file, and anything
+  whose canonical path leaves the given root. Re-check immediately before
+  a write: a read earlier in the run is not a statement about now.
+- A script that builds a shell command from a filename uses `execFileSync`
+  with an argument array, never `execSync` with an interpolated string.
+  Quoting does not disarm `$(...)` or a backtick, and catalog filenames
+  arrive through pull requests.
+- A workflow that lays a catalog value out in a Markdown table passes it
+  through that workflow's `cell()` encoder. The value is data, not markup:
+  a newline ends the row, a pipe adds a column, a backtick opens a code
+  span, a bare `@name` notifies a real person from a bot's comment, and
+  `[text](url)` renders as a live link the report appears to vouch for.
+  `pnpm validate` rejects control characters in single-line values (E126)
+  so the two halves meet.
+- A workflow that downloads an executable verifies it against a digest
+  pinned in the workflow file before running it, and does so in a step
+  that holds no secrets. `curl | tar xz` into a step carrying the catalog
+  signing key let whoever could replace that archive choose the code that
+  ran beside the key.
 
 ### Incremental Patches
 

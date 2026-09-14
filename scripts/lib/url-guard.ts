@@ -19,19 +19,27 @@
  * - `resolvePublicAddresses` and `guardLookup` reject a hostname whose DNS
  *   answer includes a non-public address. Fail closed: one private answer
  *   among public ones rejects the host, because a connect that races its
- *   candidate addresses can land on the private one. The node:http path
- *   takes the guarded lookup directly, so the address the socket connects
- *   to is the one that was checked. `fetch` exposes no lookup hook, so
- *   `fetchPublic` resolves immediately before each hop instead; an answer
- *   that flips between that lookup and fetch's own is the residual gap,
- *   and the resolver cache is what keeps it narrow.
+ *   candidate addresses can land on the private one. Both request paths
+ *   take the guarded lookup directly — node:http through its `lookup`
+ *   option, `fetchPublic` through an undici dispatcher's `connect.lookup`
+ *   — so the address a socket connects to is always one that passed.
  *
- * Redirects are followed by hand so every hop passes both layers. fetch's
- * own `redirect: "follow"` checks only the URL it was given.
+ * That dispatcher is the whole reason `fetchPublic` does not use the
+ * global `fetch`. Checking a lookup and then handing the *hostname* to
+ * something that looks it up again is not a check: the two answers need
+ * not agree, and a host an attacker controls can answer publicly for the
+ * first and privately for the second (DNS rebinding). The hostname still
+ * travels to the socket for the Host header and TLS verification;
+ * only the address is pinned.
+ *
+ * Redirects are followed by hand so every hop passes both layers, and
+ * each hop resolves and connects independently. fetch's own
+ * `redirect: "follow"` checks only the URL it was given.
  */
 
 import dns from "node:dns";
 import net, { type LookupFunction } from "node:net";
+import { Agent, fetch as undiciFetch } from "undici";
 
 export const MAX_REDIRECTS = 10;
 
@@ -83,12 +91,38 @@ export class PrivateDestinationError extends Error {
   }
 }
 
-/** True for a guard refusal, by class or by its `code`, so it survives a realm boundary. */
+/**
+ * True for a guard refusal, by class or by its `code`, so it survives a
+ * realm boundary — and through a `cause` chain, because a refusal raised
+ * inside the dispatcher's lookup reaches the caller as undici's
+ * `TypeError: fetch failed` with the real error underneath.
+ */
 export function isPrivateDestinationError(error: unknown): error is PrivateDestinationError {
-  return (
-    error instanceof PrivateDestinationError ||
-    (error instanceof Error && (error as { code?: unknown }).code === "EPRIVATEDEST")
-  );
+  for (let current = error, depth = 0; current instanceof Error && depth < 8; depth++) {
+    if (
+      current instanceof PrivateDestinationError ||
+      (current as { code?: unknown }).code === "EPRIVATEDEST"
+    ) {
+      return true;
+    }
+    current = current.cause;
+  }
+  return false;
+}
+
+/**
+ * The guard refusal inside `error`, if there is one. `fetchPublic`
+ * rethrows it in place of the wrapper so a caller reports "private
+ * destination refused for x" rather than "fetch failed", which is the
+ * difference between a verdict on the URL and an unexplained error in a
+ * data report.
+ */
+function unwrapPrivateDestinationError(error: unknown): PrivateDestinationError | undefined {
+  for (let current = error, depth = 0; current instanceof Error && depth < 8; depth++) {
+    if (current instanceof PrivateDestinationError) return current;
+    current = current.cause;
+  }
+  return undefined;
 }
 
 /** True for a globally routable IPv4 or IPv6 address; false for anything else, including junk. */
@@ -196,20 +230,64 @@ export interface PublicFetchResult {
   url: string;
 }
 
+/** The shape of `undici.fetch`, so a test can pass a stand-in for it. */
+export type FetchLike = (
+  input: string | URL,
+  init?: RequestInit & { dispatcher?: unknown }
+) => Promise<Response>;
+
+/**
+ * One dispatcher per resolver, built the first time that resolver is used.
+ *
+ * Per-request would be correct too but wasteful: `validate-urls` makes
+ * thousands of requests, and an Agent is also the connection pool. Keeping
+ * one is safe because the guarded lookup runs per connection, not per
+ * Agent — a pooled socket was opened to an address that passed, and a new
+ * host gets a new lookup.
+ */
+const dispatchers = new Map<ResolveAll, Agent>();
+
+/** The dispatcher for `resolveAll`, created on first use and reused after. */
+function guardedDispatcher(resolveAll: ResolveAll): Agent {
+  let dispatcher = dispatchers.get(resolveAll);
+  if (!dispatcher) {
+    dispatcher = new Agent({ connect: { lookup: guardLookup(resolveAll) } });
+    dispatchers.set(resolveAll, dispatcher);
+  }
+  return dispatcher;
+}
+
+/** Close the pooled connections, so a finished script's process can exit. */
+export async function closeGuardedDispatchers(): Promise<void> {
+  const open = [...dispatchers.values()];
+  dispatchers.clear();
+  await Promise.all(open.map((dispatcher) => dispatcher.close()));
+}
+
 /**
  * `fetch` that follows redirects itself, checking every hop against the
- * guard and resolving each hostname immediately before requesting it.
+ * guard and connecting only to an address the guard returned.
  * `init.redirect` is ignored; the loop is the redirect policy.
+ *
+ * The pre-hop `resolvePublicAddresses` is not the pin — the dispatcher's
+ * `connect.lookup` is. It stays because it refuses a private host before
+ * any socket work, which keeps the refusal cheap and its error specific.
  */
 export async function fetchPublic(
   input: string,
   init: RequestInit = {},
-  resolveAll: ResolveAll = systemResolveAll
+  resolveAll: ResolveAll = systemResolveAll,
+  fetchImpl: FetchLike = undiciFetch as unknown as FetchLike
 ): Promise<PublicFetchResult> {
+  const dispatcher = guardedDispatcher(resolveAll);
   let current = assertPublicUrl(input);
   for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
     await resolvePublicAddresses(bareHostname(current), resolveAll);
-    const response = await fetch(current, { ...init, redirect: "manual" });
+    const response = await fetchImpl(current, { ...init, redirect: "manual", dispatcher }).catch(
+      (error: unknown) => {
+        throw unwrapPrivateDestinationError(error) ?? error;
+      }
+    );
     const location = response.headers.get("location");
     if (!REDIRECT_STATUSES.has(response.status) || !location) {
       return { response, url: current.toString() };

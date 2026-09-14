@@ -7,7 +7,7 @@
  * Run with: npx tsx scripts/migrate-content.ts
  */
 
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
@@ -41,6 +41,14 @@ function resolveCategory(category: string): string {
 function isContentCategory(category: string): boolean {
   return CONTENT_CATEGORIES.has(resolveCategory(category));
 }
+
+/**
+ * Catalog filenames are slugs (see CLAUDE.md), so anything outside this
+ * shape is not a catalog entry to move. The check is a guard as much as a
+ * filter: these names come out of a contributed pull request, and a name
+ * carrying a shell metacharacter used to reach `git mv` through a shell.
+ */
+const SLUG_FILENAME = /^[a-z0-9]+(?:-[a-z0-9]+)*\.ya?ml$/;
 
 const softwareDir = path.join(DATA_DIR, "software");
 const contentDir = path.join(DATA_DIR, "content");
@@ -80,6 +88,12 @@ for (const file of filesToMove) {
   const filename = path.basename(file);
   const dest = path.join(contentDir, filename);
 
+  if (!SLUG_FILENAME.test(filename)) {
+    console.error(`  ✗ Skipping ${filename}: not a slug filename`);
+    failed++;
+    continue;
+  }
+
   if (fs.existsSync(dest)) {
     console.error(`  ✗ Skipping ${filename}: already exists in data/content/`);
     failed++;
@@ -89,7 +103,10 @@ for (const file of filesToMove) {
   try {
     const relSrc = path.relative(process.cwd(), file);
     const relDest = path.relative(process.cwd(), dest);
-    execSync(`git mv "${relSrc}" "${relDest}"`, { stdio: "pipe" });
+    // execFileSync, not execSync: no shell means the paths are arguments
+    // rather than text a filename could break out of. `--` stops git
+    // reading a leading dash as an option.
+    execFileSync("git", ["mv", "--", relSrc, relDest], { stdio: "pipe" });
     moved++;
   } catch (err) {
     console.error(`  ✗ Failed to move ${filename}: ${err}`);

@@ -40,7 +40,7 @@ import {
   isPrivateDestinationError,
   type ResolvedAddress,
 } from "./lib/url-guard.js";
-import { DATA_DIR } from "./lib/utils.js";
+import { checkContainedRegularFile, DATA_DIR } from "./lib/utils.js";
 
 const PRODUCT_KINDS = ["software", "hardware", "content"] as const;
 
@@ -166,6 +166,16 @@ function pickCandidate(
 
 const MAX_CONCURRENT = 10;
 const MAX_REDIRECTS = 5;
+/** Socket inactivity timeout. Reset by every byte, so not a lifetime bound. */
+const IDLE_TIMEOUT_MS = 15000;
+/**
+ * Wall-clock lifetime of one request, whatever the peer does in between.
+ * Without it a host that dribbles a byte every ten seconds resets
+ * IDLE_TIMEOUT_MS forever and keeps one of MAX_CONCURRENT slots for good.
+ */
+const REQUEST_DEADLINE_MS = 30000;
+/** Enough of the body to recognise a parking lander; the rest is not read. */
+const BODY_SAMPLE_BYTES = 4096;
 const ACCEPTABLE_ERROR_STATUSES = new Set([401, 403, 405, 429]);
 
 /**
@@ -204,13 +214,32 @@ function requestOnce(
   return new Promise((resolve, reject) => {
     const parsed = new URL(url);
     const lib = parsed.protocol === "http:" ? http : https;
+    let settled = false;
+    let deadline: NodeJS.Timeout | undefined;
+
+    const finish = (
+      outcome: { status: number; location?: string; bodySample: string } | Error,
+      response?: http.IncomingMessage
+    ): void => {
+      if (settled) return;
+      settled = true;
+      if (deadline) clearTimeout(deadline);
+      // Destroying both ends releases the socket whether the body finished
+      // or we stopped reading it; without the response destroy an abandoned
+      // stream stays subscribed to incoming data.
+      response?.destroy();
+      request.destroy();
+      if (outcome instanceof Error) reject(outcome);
+      else resolve(outcome);
+    };
+
     const request = lib.get(
       {
         host: parsed.hostname,
         port: parsed.port || undefined,
         path: `${parsed.pathname}${parsed.search}`,
         lookup: publicLookup,
-        timeout: 15000,
+        timeout: IDLE_TIMEOUT_MS,
         headers: {
           "user-agent": "Mozilla/5.0 (compatible; AureoCatalog/1.0)",
           accept: "text/html,application/xhtml+xml,*/*;q=0.8",
@@ -218,22 +247,38 @@ function requestOnce(
       },
       (response) => {
         let bodySample = "";
+        const done = (): void =>
+          finish(
+            {
+              status: response.statusCode ?? 0,
+              location: response.headers.location,
+              bodySample,
+            },
+            response
+          );
         response.on("data", (chunk: Buffer) => {
-          if (bodySample.length < 4096) bodySample += chunk.toString("utf-8");
-          else response.resume();
+          bodySample += chunk.toString("utf-8");
+          // The sample is the whole reason the body is read at all, so the
+          // request is answered the moment it is full rather than draining
+          // however many megabytes the peer wants to send.
+          if (bodySample.length >= BODY_SAMPLE_BYTES) {
+            bodySample = bodySample.slice(0, BODY_SAMPLE_BYTES);
+            done();
+          }
         });
-        response.on("end", () =>
-          resolve({
-            status: response.statusCode ?? 0,
-            location: response.headers.location,
-            bodySample,
-          })
-        );
-        response.on("error", reject);
+        response.on("end", done);
+        response.on("error", (error: Error) => finish(error, response));
       }
     );
-    request.on("timeout", () => request.destroy(new Error("timeout")));
-    request.on("error", reject);
+
+    // Measured from the request, not from the last byte: an idle timeout
+    // alone bounds silence, and a slow drip is not silence.
+    deadline = setTimeout(
+      () => finish(new Error(`deadline of ${REQUEST_DEADLINE_MS}ms exceeded`)),
+      REQUEST_DEADLINE_MS
+    );
+    request.on("timeout", () => finish(new Error("timeout")));
+    request.on("error", (error: Error) => finish(error));
   });
 }
 
@@ -402,6 +447,32 @@ function removeLinkEntry(content: string, url: string): string {
   return lines.join("\n");
 }
 
+/**
+ * A mapping entry's `file` is `<collection>/<slug>.yaml` relative to
+ * `data/`, and nothing else. The mapping comes from a research pass rather
+ * than from the repository, so `path.join(DATA_DIR, item.file)` on its own
+ * would take `../../.github/workflows/release.yml` out of the catalog for
+ * a synchronous read and, under `--apply`, a rewrite.
+ *
+ * Returns the canonical path, or null after reporting why it was refused.
+ */
+const MAPPING_FILE = new RegExp(`^(${PRODUCT_KINDS.join("|")})/[a-z0-9]+(?:-[a-z0-9]+)*\\.yaml$`);
+
+function resolveMappingFile(relative: unknown): string | null {
+  if (typeof relative !== "string" || !MAPPING_FILE.test(relative)) {
+    console.error(
+      `  [!] Skipping mapping entry ${String(relative)}: not a <collection>/<slug>.yaml path`
+    );
+    return null;
+  }
+  const checked = checkContainedRegularFile(path.join(DATA_DIR, relative), DATA_DIR);
+  if (!checked.path) {
+    console.error(`  [!] Skipping mapping entry ${relative}: ${checked.reason}`);
+    return null;
+  }
+  return checked.path;
+}
+
 function applyPromotion(content: string, promotion: Promotion): string {
   let result = removeLinkEntry(content, promotion.rawLinkUrl);
   if (promotion.linkRemovalExpected && result === content) {
@@ -443,7 +514,8 @@ async function main(): Promise<void> {
       fs.readFileSync(args[mappingIndex + 1], "utf-8")
     );
     for (const item of mapping) {
-      const filePath = path.join(DATA_DIR, item.file);
+      const filePath = resolveMappingFile(item.file);
+      if (!filePath) continue;
       const doc = parseYaml(fs.readFileSync(filePath, "utf-8"));
       if (!doc?.url || !isAggregatorUrl(doc.url) || isAggregatorUrl(item.url)) continue;
       promotions.push({
@@ -525,8 +597,16 @@ async function main(): Promise<void> {
   for (const promotion of verified) {
     console.log(`${promotion.file}:\n  ${promotion.oldUrl}\n  -> ${promotion.newUrl}`);
     if (apply) {
-      const content = fs.readFileSync(promotion.filePath, "utf-8");
-      fs.writeFileSync(promotion.filePath, applyPromotion(content, promotion));
+      // Re-checked immediately before the write: the read happened earlier
+      // in the run, and a live check in between gave the filesystem time to
+      // change under a path that came from outside the repository.
+      const checked = checkContainedRegularFile(promotion.filePath, DATA_DIR);
+      if (!checked.path) {
+        console.log(`  [!] Not written: ${promotion.file} ${checked.reason}`);
+        continue;
+      }
+      const content = fs.readFileSync(checked.path, "utf-8");
+      fs.writeFileSync(checked.path, applyPromotion(content, promotion));
     }
   }
 

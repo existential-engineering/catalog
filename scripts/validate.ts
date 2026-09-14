@@ -12,6 +12,7 @@ import { marked } from "marked";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
 import { looksLikeAcronymName } from "./lib/acronym-exclusions.js";
+import { findControlCharacters, formatControlCharacterPath } from "./lib/control-characters.js";
 import { getDocsUrl, ValidationErrorCode } from "./lib/error-codes.js";
 import { validateIdentifier } from "./lib/identifier-validation.js";
 import { isIoCombineCandidate, STORAGE_MEDIA_SLOT } from "./lib/io-heuristics.js";
@@ -1083,6 +1084,32 @@ export function validateFile(
           code: errorCode,
           message: `Key '${finding.key}' is not in the schema and would be silently dropped. Remove it or add it to the schema.`,
           path: formatUnknownKeyPath(finding),
+          line: line ?? undefined,
+          docsUrl: getDocsUrl(errorCode),
+        };
+      });
+      return {
+        file: path.relative(process.cwd(), filePath),
+        errors: details.map((d) => `${d.path}${d.line ? `:${d.line}` : ""}: ${d.message}`),
+        details,
+      };
+    }
+
+    // Reject control characters before Zod, which lets them through: a
+    // newline inside a `url` survives `z.url()` and reaches the workflows
+    // that lay catalog values out in Markdown table rows. Those encode
+    // each cell now; this keeps the value single-line at the source so
+    // every other consumer inherits that, one sink at a time not being a
+    // guarantee about the data.
+    const controlCharacters = findControlCharacters(rawData);
+    if (controlCharacters.length > 0) {
+      const errorCode = ValidationErrorCode.E126_CONTROL_CHARACTER;
+      const details: ValidationErrorDetail[] = controlCharacters.map((finding) => {
+        const line = getLineForPath(document, lineCounter, finding.path);
+        return {
+          code: errorCode,
+          message: `Control character ${finding.codePoint} in a single-line value. Remove it.`,
+          path: formatControlCharacterPath(finding),
           line: line ?? undefined,
           docsUrl: getDocsUrl(errorCode),
         };
