@@ -1,0 +1,106 @@
+# Formats read from a KVR Studio Manager scan log (macOS, 2026-09-13).
+# Read by `pnpm identifiers:apply --rows`.
+#
+# target<TAB>format<TAB>identifier<TAB>version<TAB>source
+#   identifier `-` adds the format alone: the log carries no bundle ids at
+#   all, only name/brand/version/format per scanned plugin, so every row
+#   here is a format the entry ships in and did not list.
+#
+# The scan's 1687 plugin rows collapse to 1267 products; 137 resolved to a
+# catalog entry on an exact or punctuation-insensitive name match under the
+# same manufacturer, and only these five lacked a format they were observed
+# in. Versions went through `add-telemetry-versions.ts` instead, which is
+# the lane that owns them (27 entries, see the commit).
+#
+# Rejected, and why:
+#   fabfilter-*  vst3 versions  — FabFilter's VST3 bundles report a two-digit
+#       minor with an inserted dot ("3.2.3.0" where the AU and AAX bundles of
+#       the same install both read "3.23"). Every FabFilter version below was
+#       taken from the format majority, so the mangled reading is outvoted
+#       rather than written. A scan carrying VST3 alone for this maker has no
+#       usable version.
+#   soundtheory-gullfoss  au    — the shell lists only VST3 for Gullfoss; the
+#       entry's AU is not evidenced by this log either way.
+#
+# Not matched, left for a person or a later import:
+#   ~1077 Waves names are WaveShell component names (per-band and per-channel
+#       variants, shorthand: "RCompressor", "SSLComp", "Q4", "REQ 6"), which
+#       do not stand 1:1 against catalog product names. Fuzzy-matching these
+#       is what the reviewed-list contract exists to avoid.
+#   44 Universal Audio names are members of "Collection" entries, the known
+#       limitation already recorded in 2026-09-identifier-backfill-telemetry.tsv
+#       (one `identifiers` value per format cannot express a collection).
+#   roli ROLI Studio Player / ROLI Studio Drums — no `roli` product entries
+#       exist in any collection; a genuine gap, needs a real import.
+#   roland SP-404MKII (VST3, Roland Cloud) — no SP-404MKII entry in software
+#       or hardware; a genuine gap.
+#   soundtheory Gullfoss Live / Gullfoss Master — separate products from
+#       Gullfoss, neither in the catalog.
+#   native-instruments Kontakt 7 / Kontakt 8 — the catalog models Kontakt as
+#       one entry with a version history, not per-major entries. Correct as is.
+#   sonible smartReverb / smartComp2 — the scan is v1 and v2, the catalog
+#       carries smart:reverb 2 and smart:comp 3. Already recorded in the
+#       telemetry review list.
+#
+# Also noticed, out of scope for this pass: waves-rs56 duplicates
+# waves-abbey-road-rs56-passive-eq, and waves-the-king-s-microphones
+# duplicates waves-abbey-road-the-king-s-microphones.
+#
+# ---------------------------------------------------------------------------
+# SECOND PASS: the response half of the log.
+#
+# The first pass read only the request the app POSTs. The response KVR sends
+# back matches every scanned plugin to its own product database and carries
+# `pdbPath` (a canonical product slug), `pdbVersion` (the newest version KVR
+# knows) and `status`. `pdbPath` collapses the 1687 rows to 306 products and
+# resolves the WaveShell shorthand the first pass had to give up on:
+# RCompressor -> Renaissance Compressor, SSLEQ -> SSL G-Equalizer,
+# REQ 6 -> Renaissance Equalizer, GW PianoCentric -> Greg Wells PianoCentric.
+# 218 of the 306 resolved to a catalog entry.
+#
+# `pdbPath` IS AN UPGRADE POINTER, NOT A PRODUCT IDENTITY. 1490 of the rows
+# carry status `pdbNewer`, and for those KVR names the product it wants you to
+# upgrade TO, not the one installed. Matching on it without a guard writes an
+# older product's data onto its successor's entry:
+#
+#   installed Pro-Q 3  ->  pro-q-4-by-fabfilter
+#   installed Pro-C 2  ->  pro-c-3-by-fabfilter
+#   installed Pro-R    ->  pro-r-2-by-fabfilter
+#
+# Rejected by the generation guard (catalog name carries a trailing generation
+# token none of the scanned names share), and left for a person:
+#   fabfilter-pro-q-4   catalog "Pro-Q 4"  scanned "Pro-Q 3"
+#   fabfilter-pro-c-3   catalog "Pro-C 3"  scanned "Pro-C 2"
+#   fabfilter-pro-r-2   catalog "Pro-R 2"  scanned "Pro-R"
+#   waves-gtr3          catalog "GTR3"     scanned "GTR Tuner" / "GTR Stomp 6"
+#       (an over-rejection: the GTR3 components do not carry the line's "3".
+#        Harmless, and cheaper than loosening the guard.)
+#
+# `pdbVersion` is aggregator-sourced and was written deliberately, on an
+# explicit call, for all 203 entries that lacked it. Two things to know before
+# trusting it: for Waves it is ONE number (17.1.42, the current shell version)
+# replicated across ~200 entries, because Waves versions its whole bundle
+# together; and where it could be cross-checked it agreed with the catalog --
+# every FabFilter, u-he, Valhalla and Soundtheory pdbVersion was already
+# present, which is why only four non-Waves entries gained one.
+#
+# The installed-version reconciliation from the first pass still applies here:
+# FabFilter's VST3 bundles report "3.2.3.0" where AU and AAX read "3.23", so a
+# lone format is outvoted. Kontakt gained no installed version at all because
+# KVR maps Kontakt 7 and Kontakt 8 to one product and the two tie.
+#
+# No bundle identifiers exist anywhere in the log, in either half. Verified:
+# the 1687 product objects carry exactly uid/name/brand/type/category/version/
+# format/filename/hidden; the only reverse-domain strings in the file are
+# vendor hostnames; the only 32-hex strings are the machine's deviceId. There
+# is nothing here for `identifiers` and there never was.
+
+fabfilter-pro-q-3	aax	-		kvr-studio-manager-2026-09-13
+soundtheory-gullfoss	vst3	-		kvr-studio-manager-2026-09-13
+u-he-satin	vst3	-		kvr-studio-manager-2026-09-13
+waves-abbey-road-rs56-passive-eq	vst3	-		kvr-studio-manager-2026-09-13
+waves-abbey-road-the-king-s-microphones	vst3	-		kvr-studio-manager-2026-09-13
+waves-360-surround-tools	au	-		kvr-studio-manager-2026-09-13
+waves-360-surround-tools	vst3	-		kvr-studio-manager-2026-09-13
+waves-abbey-road-rs56-passive-eq	au	-		kvr-studio-manager-2026-09-13
+waves-abbey-road-the-king-s-microphones	au	-		kvr-studio-manager-2026-09-13
