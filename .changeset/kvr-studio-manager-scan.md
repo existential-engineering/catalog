@@ -2,7 +2,8 @@
 "catalog": patch
 ---
 
-Backfill plugin formats and versions from a KVR Studio Manager scan: 5
-entries gain a format they ship in but did not list, 27 gain an observed
-version. u-he Satin's existing VST3 identifier now reaches Studio's
-matcher, which it could not while the entry listed no formats.
+Backfill plugin formats and versions from a KVR Studio Manager scan: 9 formats
+across 8 entries, and 236 versions across 231 entries. The scan's response half
+matches each plugin to KVR's product database, which resolves WaveShell
+component names (RCompressor, SSLEQ, REQ 6) to real Waves products and supplies
+a current version for 203 entries that had none.

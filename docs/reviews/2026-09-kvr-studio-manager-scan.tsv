@@ -45,9 +45,62 @@
 # Also noticed, out of scope for this pass: waves-rs56 duplicates
 # waves-abbey-road-rs56-passive-eq, and waves-the-king-s-microphones
 # duplicates waves-abbey-road-the-king-s-microphones.
+#
+# ---------------------------------------------------------------------------
+# SECOND PASS: the response half of the log.
+#
+# The first pass read only the request the app POSTs. The response KVR sends
+# back matches every scanned plugin to its own product database and carries
+# `pdbPath` (a canonical product slug), `pdbVersion` (the newest version KVR
+# knows) and `status`. `pdbPath` collapses the 1687 rows to 306 products and
+# resolves the WaveShell shorthand the first pass had to give up on:
+# RCompressor -> Renaissance Compressor, SSLEQ -> SSL G-Equalizer,
+# REQ 6 -> Renaissance Equalizer, GW PianoCentric -> Greg Wells PianoCentric.
+# 218 of the 306 resolved to a catalog entry.
+#
+# `pdbPath` IS AN UPGRADE POINTER, NOT A PRODUCT IDENTITY. 1490 of the rows
+# carry status `pdbNewer`, and for those KVR names the product it wants you to
+# upgrade TO, not the one installed. Matching on it without a guard writes an
+# older product's data onto its successor's entry:
+#
+#   installed Pro-Q 3  ->  pro-q-4-by-fabfilter
+#   installed Pro-C 2  ->  pro-c-3-by-fabfilter
+#   installed Pro-R    ->  pro-r-2-by-fabfilter
+#
+# Rejected by the generation guard (catalog name carries a trailing generation
+# token none of the scanned names share), and left for a person:
+#   fabfilter-pro-q-4   catalog "Pro-Q 4"  scanned "Pro-Q 3"
+#   fabfilter-pro-c-3   catalog "Pro-C 3"  scanned "Pro-C 2"
+#   fabfilter-pro-r-2   catalog "Pro-R 2"  scanned "Pro-R"
+#   waves-gtr3          catalog "GTR3"     scanned "GTR Tuner" / "GTR Stomp 6"
+#       (an over-rejection: the GTR3 components do not carry the line's "3".
+#        Harmless, and cheaper than loosening the guard.)
+#
+# `pdbVersion` is aggregator-sourced and was written deliberately, on an
+# explicit call, for all 203 entries that lacked it. Two things to know before
+# trusting it: for Waves it is ONE number (17.1.42, the current shell version)
+# replicated across ~200 entries, because Waves versions its whole bundle
+# together; and where it could be cross-checked it agreed with the catalog --
+# every FabFilter, u-he, Valhalla and Soundtheory pdbVersion was already
+# present, which is why only four non-Waves entries gained one.
+#
+# The installed-version reconciliation from the first pass still applies here:
+# FabFilter's VST3 bundles report "3.2.3.0" where AU and AAX read "3.23", so a
+# lone format is outvoted. Kontakt gained no installed version at all because
+# KVR maps Kontakt 7 and Kontakt 8 to one product and the two tie.
+#
+# No bundle identifiers exist anywhere in the log, in either half. Verified:
+# the 1687 product objects carry exactly uid/name/brand/type/category/version/
+# format/filename/hidden; the only reverse-domain strings in the file are
+# vendor hostnames; the only 32-hex strings are the machine's deviceId. There
+# is nothing here for `identifiers` and there never was.
 
 fabfilter-pro-q-3	aax	-		kvr-studio-manager-2026-09-13
 soundtheory-gullfoss	vst3	-		kvr-studio-manager-2026-09-13
 u-he-satin	vst3	-		kvr-studio-manager-2026-09-13
 waves-abbey-road-rs56-passive-eq	vst3	-		kvr-studio-manager-2026-09-13
 waves-abbey-road-the-king-s-microphones	vst3	-		kvr-studio-manager-2026-09-13
+waves-360-surround-tools	au	-		kvr-studio-manager-2026-09-13
+waves-360-surround-tools	vst3	-		kvr-studio-manager-2026-09-13
+waves-abbey-road-rs56-passive-eq	au	-		kvr-studio-manager-2026-09-13
+waves-abbey-road-the-king-s-microphones	au	-		kvr-studio-manager-2026-09-13
