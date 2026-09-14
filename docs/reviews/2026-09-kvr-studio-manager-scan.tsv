@@ -1,0 +1,53 @@
+# Formats read from a KVR Studio Manager scan log (macOS, 2026-09-13).
+# Read by `pnpm identifiers:apply --rows`.
+#
+# target<TAB>format<TAB>identifier<TAB>version<TAB>source
+#   identifier `-` adds the format alone: the log carries no bundle ids at
+#   all, only name/brand/version/format per scanned plugin, so every row
+#   here is a format the entry ships in and did not list.
+#
+# The scan's 1687 plugin rows collapse to 1267 products; 137 resolved to a
+# catalog entry on an exact or punctuation-insensitive name match under the
+# same manufacturer, and only these five lacked a format they were observed
+# in. Versions went through `add-telemetry-versions.ts` instead, which is
+# the lane that owns them (27 entries, see the commit).
+#
+# Rejected, and why:
+#   fabfilter-*  vst3 versions  — FabFilter's VST3 bundles report a two-digit
+#       minor with an inserted dot ("3.2.3.0" where the AU and AAX bundles of
+#       the same install both read "3.23"). Every FabFilter version below was
+#       taken from the format majority, so the mangled reading is outvoted
+#       rather than written. A scan carrying VST3 alone for this maker has no
+#       usable version.
+#   soundtheory-gullfoss  au    — the shell lists only VST3 for Gullfoss; the
+#       entry's AU is not evidenced by this log either way.
+#
+# Not matched, left for a person or a later import:
+#   ~1077 Waves names are WaveShell component names (per-band and per-channel
+#       variants, shorthand: "RCompressor", "SSLComp", "Q4", "REQ 6"), which
+#       do not stand 1:1 against catalog product names. Fuzzy-matching these
+#       is what the reviewed-list contract exists to avoid.
+#   44 Universal Audio names are members of "Collection" entries, the known
+#       limitation already recorded in 2026-09-identifier-backfill-telemetry.tsv
+#       (one `identifiers` value per format cannot express a collection).
+#   roli ROLI Studio Player / ROLI Studio Drums — no `roli` product entries
+#       exist in any collection; a genuine gap, needs a real import.
+#   roland SP-404MKII (VST3, Roland Cloud) — no SP-404MKII entry in software
+#       or hardware; a genuine gap.
+#   soundtheory Gullfoss Live / Gullfoss Master — separate products from
+#       Gullfoss, neither in the catalog.
+#   native-instruments Kontakt 7 / Kontakt 8 — the catalog models Kontakt as
+#       one entry with a version history, not per-major entries. Correct as is.
+#   sonible smartReverb / smartComp2 — the scan is v1 and v2, the catalog
+#       carries smart:reverb 2 and smart:comp 3. Already recorded in the
+#       telemetry review list.
+#
+# Also noticed, out of scope for this pass: waves-rs56 duplicates
+# waves-abbey-road-rs56-passive-eq, and waves-the-king-s-microphones
+# duplicates waves-abbey-road-the-king-s-microphones.
+
+fabfilter-pro-q-3	aax	-		kvr-studio-manager-2026-09-13
+soundtheory-gullfoss	vst3	-		kvr-studio-manager-2026-09-13
+u-he-satin	vst3	-		kvr-studio-manager-2026-09-13
+waves-abbey-road-rs56-passive-eq	vst3	-		kvr-studio-manager-2026-09-13
+waves-abbey-road-the-king-s-microphones	vst3	-		kvr-studio-manager-2026-09-13
