@@ -100,7 +100,8 @@ cohort working:
 - A workflow that lays a catalog value out in a Markdown table passes it
   through that workflow's `cell()` encoder. The value is data, not markup:
   a newline ends the row, a pipe adds a column, a backtick opens a code
-  span, and a bare `@name` notifies a real person from a bot's comment.
+  span, a bare `@name` notifies a real person from a bot's comment, and
+  `[text](url)` renders as a live link the report appears to vouch for.
   `pnpm validate` rejects control characters in single-line values (E126)
   so the two halves meet.
 - A workflow that downloads an executable verifies it against a digest

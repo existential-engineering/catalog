@@ -60,10 +60,13 @@ and response, and stops reading once the sample is full.
 
 **Markdown injection, `.github/workflows/url-health.yml` (CWE-116).** A
 catalog URL went raw into a Markdown table row. The workflow's `cell()`
-encoder now collapses control characters, escapes table and code-span
-metacharacters and defuses `@mentions`; the same hardening lands in
+encoder now collapses control characters, escapes table, code-span and
+link metacharacters and defuses `@mentions`; the same hardening lands in
 `dataset-audit.yml` and `discontinued-check.yml`, whose weaker `cell()`
-escaped pipes only. The other half is new validation: `z.url()` accepts a
+escaped pipes only. Link delimiters (`[`, `]`, `(`, `)`, `!`) are in the
+set because an unescaped `[text](url)` renders as a live link that a
+bot-authored report appears to vouch for — the same "apparent authorship"
+problem as a raw `@mention`, caught by review on the first pass. The other half is new validation: `z.url()` accepts a
 URL containing a newline, a NUL or a pipe, so **E126** now rejects control
 characters in single-line values (newlines stay legal in `description`,
 `details` and `specs`, which are prose). The full catalog passes as-is.

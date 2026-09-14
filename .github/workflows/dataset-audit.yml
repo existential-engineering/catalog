@@ -48,12 +48,13 @@ jobs:
             const dedent = (str) => str.replace(/^[ \t]+/gm, '');
             // A pipe is not the only thing in a catalog value that can
             // restructure this table: a newline ends the row, a backtick
-            // opens a code span and a bare @name notifies a real user from
-            // a bot's comment. Names and descriptions come from merged
-            // pull requests, so they are data rather than markup.
+            // opens a code span, a bare @name notifies a real user from a
+            // bot's comment, and [text](url) renders as a live link this
+            // report appears to vouch for. Names and descriptions come from
+            // merged pull requests, so they are data rather than markup.
             const cell = (s) => String(s)
               .replace(/[\u0000-\u001f\u007f-\u009f\u2028\u2029]+/g, ' ')
-              .replace(/[\\`|<>@]/g, (ch) => '\\' + ch)
+              .replace(/[\\`|<>@[\]()!]/g, (ch) => '\\' + ch)
               .trim() || '-';
 
             const title = '🔎 Dataset Audit';
