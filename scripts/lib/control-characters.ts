@@ -49,6 +49,7 @@ export interface ControlCharacterFinding {
   codePoint: string;
 }
 
+/** A character as its code point, `U+000A`, so a report names it legibly. */
 function describe(character: string): string {
   return `U+${character.codePointAt(0)?.toString(16).toUpperCase().padStart(4, "0")}`;
 }
@@ -62,6 +63,12 @@ function describe(character: string): string {
 export function findControlCharacters(value: unknown): ControlCharacterFinding[] {
   const findings: ControlCharacterFinding[] = [];
 
+  /**
+   * Descend one value, carrying the path to it and whether an enclosing key
+   * made it prose. `multiline` only ever turns on: a `description` nested
+   * under `translations.de` is prose for the same reason the top-level one
+   * is.
+   */
   const walk = (node: unknown, path: (string | number)[], multiline: boolean): void => {
     if (typeof node === "string") {
       const offender =

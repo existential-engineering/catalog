@@ -173,6 +173,7 @@ describe("guardLookup", () => {
 
 describe("fetchPublic", () => {
   const fetchMock = vi.fn<typeof fetch>();
+  /** A bodyless response, with a Location header when a redirect is wanted. */
   const respond = (status: number, location?: string): Response =>
     new Response(null, { status, headers: location ? { location } : {} });
 

@@ -247,6 +247,7 @@ export type FetchLike = (
  */
 const dispatchers = new Map<ResolveAll, Agent>();
 
+/** The dispatcher for `resolveAll`, created on first use and reused after. */
 function guardedDispatcher(resolveAll: ResolveAll): Agent {
   let dispatcher = dispatchers.get(resolveAll);
   if (!dispatcher) {
