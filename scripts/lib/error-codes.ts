@@ -46,6 +46,7 @@ export enum ValidationErrorCode {
   E123_IO_HINT_UNPAIRED = "E123",
   E124_IO_HINT_CELL_OCCUPIED_TWICE = "E124",
   E125_IO_HINT_EDGE_PARTIAL = "E125",
+  E126_CONTROL_CHARACTER = "E126",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
@@ -235,6 +236,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E125_IO_HINT_EDGE_PARTIAL]: {
     title: "IO edge only partly hinted",
     anchor: "e125-io-edge-only-partly-hinted",
+  },
+  [ValidationErrorCode.E126_CONTROL_CHARACTER]: {
+    title: "Control character in a string value",
+    anchor: "e126-control-character-in-a-string-value",
   },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",

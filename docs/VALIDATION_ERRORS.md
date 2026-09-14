@@ -458,6 +458,28 @@ bulk import.
 
 ---
 
+### E126: Control Character in a String Value
+
+A string value carries a control character: a C0 or C1 code, a DEL, a Unicode line
+or paragraph separator, or — in a single-line field — a newline, carriage return or
+tab. Newlines and tabs stay legal inside the prose fields (`description`, `details`,
+`specs`, and the same fields under `translations`), because that is how those are
+written.
+
+Nothing rejected these before, and `z.url()` in particular accepts a URL with a
+newline, a NUL, a pipe or a backtick in it. That matters because catalog values
+leave the repository as text in line-oriented places: `url-health.yml` lays a broken
+URL out as a Markdown table row, and a newline inside the value ends the row, so an
+accepted URL could restructure a bot-generated report or change whose name appeared
+to have written it. The workflows encode each table cell now, which is the fix at the
+sink; this keeps the value single-line where it is authored, so every other consumer
+inherits that rather than each one having to remember.
+
+**Fix:** Remove the character. A value that genuinely needs paragraphs is prose and
+belongs in `description`, `details` or `specs` as a `|-` block scalar.
+
+---
+
 ### E199: Validation Error
 
 A generic validation error that doesn't fall into a more specific category.

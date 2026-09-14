@@ -26,7 +26,7 @@ import {
   type UrlCache,
 } from "./lib/url-cache.js";
 import { fetchPublic, isPrivateDestinationError } from "./lib/url-guard.js";
-import { DATA_DIR, getYamlFiles } from "./lib/utils.js";
+import { checkContainedRegularFile, DATA_DIR, getYamlFiles } from "./lib/utils.js";
 
 const MAX_CONCURRENT_REQUESTS = 10;
 const MAX_CONCURRENT_FILES = 5;
@@ -208,13 +208,28 @@ function getChangedFiles(baseSha: string): string[] {
       encoding: "utf-8",
     });
 
-    return output
-      .split("\n")
-      .filter((f) =>
-        f.match(/^data\/(software|content|hardware|accessories|manufacturers)\/.*\.yaml$/)
-      )
-      .map((f) => path.join(process.cwd(), f))
-      .filter((f) => fs.existsSync(f));
+    // The pathname match is lexical, so it says nothing about what is at
+    // the path. A pull request can commit a symlink at
+    // data/software/x.yaml, and existsSync/readFileSync would both follow
+    // it: pointed at /dev/urandom that is an unbounded read on the runner.
+    // checkContainedRegularFile refuses a symlink, a device, and anything
+    // whose canonical path leaves data/.
+    const changed: string[] = [];
+    for (const relative of output.split("\n")) {
+      if (
+        !relative.match(/^data\/(software|content|hardware|accessories|manufacturers)\/.*\.yaml$/)
+      ) {
+        continue;
+      }
+      const checked = checkContainedRegularFile(path.join(process.cwd(), relative), DATA_DIR);
+      if (checked.path) {
+        changed.push(checked.path);
+      } else if (checked.reason !== "does not exist") {
+        // A deleted file is nothing to check; anything else is worth saying.
+        console.error(`Skipping ${relative}: ${checked.reason}`);
+      }
+    }
+    return changed;
   } catch (error) {
     console.error("Failed to get changed files:", error);
     return [];
@@ -403,9 +418,27 @@ async function processFile(
     };
   }
 
+  // Re-checked at the read itself, not only where the file list is built:
+  // the whole-catalog run gets its list from readdir, which would hand a
+  // committed symlink straight to readFileSync.
+  const contained = checkContainedRegularFile(filePath, DATA_DIR);
+  if (!contained.path) {
+    return {
+      file: relativePath,
+      urls: [
+        {
+          url: "(not a catalog file)",
+          status: "error",
+          redirected: false,
+          error: `Not checked: ${relativePath} ${contained.reason}`,
+        },
+      ],
+    };
+  }
+
   let content: string;
   try {
-    content = fs.readFileSync(filePath, "utf-8");
+    content = fs.readFileSync(contained.path, "utf-8");
   } catch (error) {
     return {
       file: relativePath,

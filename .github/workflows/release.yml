@@ -63,14 +63,43 @@ jobs:
           sha256sum dist/catalog.sqlite > dist/catalog.sqlite.sha256
           sha256sum dist/catalog-index.json > dist/catalog-index.json.sha256
 
+      # Split from the signing step below so the signing secrets are not in
+      # the environment while unverified bytes are being downloaded and
+      # extracted. `curl | tar xz` ran an executable straight out of a
+      # release URL: anything that could replace that archive — upstream
+      # account compromise, a re-tagged release, an interfering proxy —
+      # chose the code that then ran alongside the catalog signing key.
+      #
+      # The digest is the trust anchor: it lives here, in review, in git.
+      # It was taken from the archive upstream signs with the minisign
+      # public key published in its README
+      # (RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3), whose
+      # detached signature is minisign-0.11-linux.tar.gz.minisig on the
+      # same release. Re-derive it the same way when bumping the version;
+      # verifying that signature here instead would mean checking the
+      # download with the binary out of the download.
+      - name: Install minisign
+        if: steps.changesets.outputs['has-changesets'] == 'false'
+        env:
+          MINISIGN_VERSION: "0.11"
+          MINISIGN_SHA256: f0a0954413df8531befed169e447a66da6868d79052ed7e892e50a4291af7ae0
+        run: |
+          set -euo pipefail
+          archive=/tmp/minisign.tar.gz
+          curl -sSfL --proto '=https' --tlsv1.2 -o "$archive" \
+            "https://github.com/jedisct1/minisign/releases/download/${MINISIGN_VERSION}/minisign-${MINISIGN_VERSION}-linux.tar.gz"
+          echo "${MINISIGN_SHA256}  ${archive}" | sha256sum -c -
+          tar xzf "$archive" -C /tmp minisign-linux/x86_64/minisign
+          sudo install -m 755 /tmp/minisign-linux/x86_64/minisign /usr/local/bin/minisign
+          rm -f "$archive"
+          minisign -v
+
       - name: Sign catalog with minisign
         if: steps.changesets.outputs['has-changesets'] == 'false'
         env:
           CATALOG_SIGNING_KEY: ${{ secrets.CATALOG_SIGNING_KEY }}
           CATALOG_SIGNING_KEY_PASSWORD: ${{ secrets.CATALOG_SIGNING_KEY_PASSWORD }}
         run: |
-          curl -sL https://github.com/jedisct1/minisign/releases/download/0.11/minisign-0.11-linux.tar.gz | tar xz
-          sudo install -m 755 minisign-linux/x86_64/minisign /usr/local/bin/minisign
           echo "$CATALOG_SIGNING_KEY" > /tmp/minisign.key
           VERSION=$(node -p "require('./package.json').version")
           echo "$CATALOG_SIGNING_KEY_PASSWORD" | minisign -S \

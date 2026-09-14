@@ -1,6 +1,9 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import http from "node:http";
+import type { AddressInfo } from "node:net";
+import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import {
   assertPublicUrl,
+  closeGuardedDispatchers,
   fetchPublic,
   guardLookup,
   isPrivateDestinationError,
@@ -175,24 +178,35 @@ describe("fetchPublic", () => {
 
   afterEach(() => {
     fetchMock.mockReset();
-    vi.unstubAllGlobals();
   });
 
   function stub(...responses: Response[]): void {
     for (const response of responses) fetchMock.mockResolvedValueOnce(response);
-    vi.stubGlobal("fetch", fetchMock);
   }
 
   it("never lets fetch follow a redirect on its own", async () => {
     stub(respond(200));
-    await fetchPublic("https://example.com/", { method: "HEAD", redirect: "follow" }, PUBLIC);
+    await fetchPublic(
+      "https://example.com/",
+      { method: "HEAD", redirect: "follow" },
+      PUBLIC,
+      fetchMock
+    );
     expect(fetchMock).toHaveBeenCalledTimes(1);
     expect(fetchMock.mock.calls[0]?.[1]).toMatchObject({ method: "HEAD", redirect: "manual" });
   });
 
+  it("hands every hop a dispatcher, so the socket cannot resolve the host itself", async () => {
+    stub(respond(301, "https://cdn.example/"), respond(200));
+    await fetchPublic("https://example.com/", {}, PUBLIC, fetchMock);
+    for (const call of fetchMock.mock.calls) {
+      expect((call[1] as { dispatcher?: unknown }).dispatcher).toBeDefined();
+    }
+  });
+
   it("follows a public redirect chain and reports where it ended", async () => {
     stub(respond(301, "https://example.com/new"), respond(302, "/newer"), respond(200));
-    const result = await fetchPublic("https://example.com/old", {}, PUBLIC);
+    const result = await fetchPublic("https://example.com/old", {}, PUBLIC, fetchMock);
     expect(result.url).toBe("https://example.com/newer");
     expect(result.response.status).toBe(200);
     expect(fetchMock.mock.calls.map((call) => String(call[0]))).toEqual([
@@ -204,7 +218,7 @@ describe("fetchPublic", () => {
 
   it("refuses a redirect into a private destination before requesting it", async () => {
     stub(respond(302, "http://169.254.169.254/latest/meta-data/"));
-    await expect(fetchPublic("https://example.com/", {}, PUBLIC)).rejects.toThrow(
+    await expect(fetchPublic("https://example.com/", {}, PUBLIC, fetchMock)).rejects.toThrow(
       PrivateDestinationError
     );
     expect(fetchMock).toHaveBeenCalledTimes(1);
@@ -216,7 +230,7 @@ describe("fetchPublic", () => {
       hostname === "intranet.example"
         ? [{ address: "10.1.1.1", family: 4 }]
         : [{ address: "93.184.216.34", family: 4 }];
-    await expect(fetchPublic("https://example.com/", {}, resolveAll)).rejects.toThrow(
+    await expect(fetchPublic("https://example.com/", {}, resolveAll, fetchMock)).rejects.toThrow(
       PrivateDestinationError
     );
     expect(fetchMock).toHaveBeenCalledTimes(1);
@@ -225,13 +239,13 @@ describe("fetchPublic", () => {
   it("resolves each hop's host immediately before requesting it", async () => {
     stub(respond(307, "https://cdn.example/"), respond(200));
     const resolveAll = vi.fn<ResolveAll>(PUBLIC);
-    await fetchPublic("https://example.com/", {}, resolveAll);
+    await fetchPublic("https://example.com/", {}, resolveAll, fetchMock);
     expect(resolveAll.mock.calls.map((call) => call[0])).toEqual(["example.com", "cdn.example"]);
   });
 
   it("refuses the initial URL without a request", async () => {
     stub();
-    await expect(fetchPublic("http://localhost:3000/", {}, PUBLIC)).rejects.toThrow(
+    await expect(fetchPublic("http://localhost:3000/", {}, PUBLIC, fetchMock)).rejects.toThrow(
       PrivateDestinationError
     );
     expect(fetchMock).not.toHaveBeenCalled();
@@ -239,9 +253,62 @@ describe("fetchPublic", () => {
 
   it("returns a 3xx that carries no Location as the final response", async () => {
     stub(respond(304));
-    const result = await fetchPublic("https://example.com/", {}, PUBLIC);
+    const result = await fetchPublic("https://example.com/", {}, PUBLIC, fetchMock);
     expect(result.response.status).toBe(304);
     expect(result.url).toBe("https://example.com/");
+  });
+
+  /**
+   * The regression case for the rebinding gap: these run the real
+   * undici fetch, so the refusal has to come from the dispatcher's
+   * connect-time lookup rather than from the pre-hop check.
+   */
+  describe("against a real socket", () => {
+    let server: http.Server;
+    let port = 0;
+    let served = 0;
+
+    beforeAll(async () => {
+      server = http.createServer((_request, response) => {
+        served++;
+        response.end("ok");
+      });
+      await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+      port = (server.address() as AddressInfo).port;
+    });
+
+    afterAll(async () => {
+      await closeGuardedDispatchers();
+      await new Promise<void>((resolve) => server.close(() => resolve()));
+    });
+
+    it("refuses a host that answers publicly once and privately at connect time", async () => {
+      // A host an attacker controls: public for the guard's own lookup,
+      // then loopback for the lookup the socket does. Before the
+      // dispatcher, the second answer was native fetch's and unchecked.
+      let answered = 0;
+      const rebinding: ResolveAll = async () => {
+        answered++;
+        return answered === 1
+          ? [{ address: "93.184.216.34", family: 4 }]
+          : [{ address: "127.0.0.1", family: 4 }];
+      };
+
+      const before = served;
+      const error = await fetchPublic(`http://rebind.example:${port}/`, {}, rebinding).catch(
+        (e) => e
+      );
+
+      // Two lookups: the guard's own, then the socket's. The second one
+      // going through the guard at all is the fix — native fetch resolved
+      // the hostname itself and never consulted this resolver.
+      expect(answered).toBe(2);
+      expect(isPrivateDestinationError(error)).toBe(true);
+      expect((error as Error).message).toContain("127.0.0.1");
+      // The local server stands in for anything bound to loopback on the
+      // runner: it must not have been reached.
+      expect(served).toBe(before);
+    });
   });
 
   it("gives up on a redirect loop", async () => {
@@ -249,7 +316,7 @@ describe("fetchPublic", () => {
       respond(302, "https://example.com/loop")
     );
     stub(...loop);
-    await expect(fetchPublic("https://example.com/loop", {}, PUBLIC)).rejects.toThrow(
+    await expect(fetchPublic("https://example.com/loop", {}, PUBLIC, fetchMock)).rejects.toThrow(
       "too many redirects"
     );
     expect(fetchMock).toHaveBeenCalledTimes(MAX_REDIRECTS + 1);

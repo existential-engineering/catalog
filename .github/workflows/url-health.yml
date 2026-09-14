@@ -69,6 +69,18 @@ jobs:
           script: |
             const fs = require('fs');
 
+            // A Markdown table cell built from catalog data. The URL comes
+            // from an entry a pull request merged, so it is data and not
+            // markup: a newline ends the row, a pipe adds a column, a
+            // backtick opens a code span and a bare @name notifies a real
+            // user from a bot's comment. Any of those lets an accepted URL
+            // restructure this report or change whose name appears to have
+            // written it.
+            const cell = (s) => String(s)
+              .replace(/[\u0000-\u001f\u007f-\u009f\u2028\u2029]+/g, ' ')
+              .replace(/[\\`|<>@]/g, (ch) => '\\' + ch)
+              .trim() || '-';
+
             // Read the URL cache to get broken URLs
             let brokenUrls = [];
             try {
@@ -99,7 +111,7 @@ jobs:
 
             | URL | Status | Last Checked |
             |-----|--------|--------------|
-            ${brokenUrls.map(u => `| ${u.url} | ${u.status} | ${u.lastChecked} |`).join('\n')}
+            ${brokenUrls.map(u => `| ${cell(u.url)} | ${cell(u.status)} | ${cell(u.lastChecked)} |`).join('\n')}
 
             ### Next Steps
 
