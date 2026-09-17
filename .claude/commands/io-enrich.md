@@ -129,12 +129,19 @@ leave column/row off the whole edge rather than guessing.
 
 1. Edit only the `io:` block of the YAML, preserving the rest of the file. A
    brief comment above `io:` describing the panel layout is welcome.
-2. `npx prettier --write data/hardware/<slug>.yaml` then `pnpm validate`.
-3. Fix any errors and re-run. There must be no new advisory warnings for this
+2. `pnpm assign-ids` — **required, not optional, whenever you added a port.**
+   A new jack is written without a key (see the preservation rule above) and
+   this is the step that gives it one. `pnpm validate` will not catch a
+   missing key, because `key` is optional there; the build refuses it, and
+   `validate.yml` runs `pnpm build` on every pull request, so skipping this
+   reddens CI on a file that looked clean locally.
+3. `npx prettier --write data/hardware/<slug>.yaml` then `pnpm validate`.
+4. Fix any errors and re-run. There must be no new advisory warnings for this
    file — especially **W128** (combine), **W120** (unknown type), **W121**
    (unknown connection). Add genuinely-new connector/type values to the schema
    YAML via the same PR only when you've confirmed they're valid.
-4. Optional: `pnpm build` and query `hardware_io` to confirm the rows land.
+5. `pnpm build` — confirms every port carries a key, and lets you query
+   `hardware_io` to check the rows land.
 
 For just column/row on an already-correct entry, `pnpm enrich-io <slug>` is the
 interactive shortcut instead of hand-editing.
