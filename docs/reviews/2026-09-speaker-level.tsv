@@ -1,0 +1,257 @@
+# Reviewed speaker-level retypings, 2026-09 (AUREO-568 sibling pass).
+#
+# Source: pnpm speaker-level-audit --tsv
+# Apply:  pnpm speaker-level:apply --rows docs/reviews/2026-09-speaker-level.tsv --apply
+#
+# Columns: slug<TAB>port<TAB>current type<TAB>connection
+#
+# The audit returned 231 rows. 227 are accepted below. The four rejected are
+# recorded here with their reason so the next pass does not re-litigate them:
+#
+#   kef-coda-w / USB-C Inter-Speaker Link          REJECT (typed usb)
+#   kef-lsx-2-lt / Inter-Speaker USB-C             REJECT (typed usb)
+#     Both are POWERED speakers ("all-in-one wireless bookshelf speaker
+#     system ... 70W + ..."), so the link between the two cabinets carries
+#     a digital signal over USB-C, not an amplified one. `usb` is correct.
+#
+#   blackstar-unity / Cabinet Link (XLR)           REJECT (stays line)
+#     Unity Pro Bass are bass COMBOS, so the cabinet link leaves a powered
+#     unit, and every other port on the entry is line or instrument. A
+#     speaker-level feed on XLR would be unusual enough to need a manual
+#     to confirm, and nothing in the entry does.
+#
+#   ik-multimedia-tonex-capture / Cabinet Output   REJECT (needs /io-enrich)
+#     This one is probably speaker-level, and that is exactly why it is not
+#     in a mechanical sweep. TONEX Capture sits between an amp and its cab,
+#     so "FROM AMP Input" carries the same amplified signal as "Cabinet
+#     Output" — but the audit only matches the port whose NAME says cabinet,
+#     so accepting this row alone would leave one end of one signal path
+#     retyped and the other still `line`. The entry needs both ports looked
+#     at together against the manual.
+aguilar-db-115	Speaker Input	line	1/4-inch
+aguilar-db-210	Speaker Input	line	1/4-inch
+aguilar-db-410	Speaker Input	line	1/4-inch
+aguilar-tone-hammer-700	Speaker Output	line	speakon
+ampeg-rb-115	Extension Speaker Output	line	1/4-inch
+ampeg-rb-210	Extension Speaker Output	line	1/4-inch
+ampeg-svt-3pro	1/4" Speaker Output	line	1/4-inch
+ampeg-svt-4pro	Speaker Output A (1/4")	line	1/4-inch
+ampeg-svt-4pro	Speaker Output B (1/4")	line	1/4-inch
+ampeg-v-4b	Speaker Output	line	1/4-inch
+blackstar-carmen-vandenberg-cv10	Speaker Output 16 Ohm (A)	line	1/4-inch
+blackstar-carmen-vandenberg-cv10	Speaker Output 8 Ohm	line	1/4-inch
+blackstar-carmen-vandenberg-cv10	Speaker Output 16 Ohm (B)	line	1/4-inch
+blackstar-debut-100rh-212v	Speaker Output 16 Ohm	line	1/4-inch
+blackstar-debut-100rh-212v	Speaker Output 8 Ohm	line	1/4-inch
+blackstar-dept-10-amped-1	Speaker Output (8/16 Ohm)	line	1/4-inch
+blackstar-dept-10-amped-2	Speaker Output (8/16 Ohm)	line	1/4-inch
+blackstar-dept-10-amped-3	Speaker Output (8 Ohm)	line	1/4-inch
+blackstar-dept-10-amped-3	Speaker Output (16 Ohm)	line	1/4-inch
+blackstar-fly-bass	FLY 103 Extension Speaker Out	line	1/8-inch
+blackstar-fly	FLY 103 Extension Speaker Out	line	1/8-inch
+blackstar-series-one-mkii	Speaker Output	line	1/4-inch
+blackstar-toby-lee-signature	Speaker Output	line	1/4-inch
+blackstar-unity-elite	Speaker Output	line	1/4-inch
+burl-audio-b22-orca	Speaker Output A L	line	xlr
+burl-audio-b22-orca	Speaker Output A R	line	xlr
+burl-audio-b22-orca	Speaker Output B L	line	xlr
+burl-audio-b22-orca	Speaker Output B R	line	xlr
+burl-audio-b26-orca	Speaker Output 1 L	line	xlr
+burl-audio-b26-orca	Speaker Output 1 R	line	xlr
+burl-audio-b26-orca	Speaker Output 2 L	line	xlr
+burl-audio-b26-orca	Speaker Output 2 R	line	xlr
+cranborne-audio-500r8	Speaker A Output L	line	xlr
+cranborne-audio-500r8	Speaker A Output R	line	xlr
+cranborne-audio-500r8	Speaker B Output L	line	1/4-inch
+cranborne-audio-500r8	Speaker B Output R	line	1/4-inch
+dangerous-music-d-box-plus	Speaker Output 1 Left	line	1/4-inch
+dangerous-music-d-box-plus	Speaker Output 1 Right	line	1/4-inch
+dangerous-music-d-box-plus	Speaker Output 2 Left	line	1/4-inch
+dangerous-music-d-box-plus	Speaker Output 2 Right	line	1/4-inch
+dangerous-music-d-box-plus	Speaker Output 3 Left	line	1/4-inch
+dangerous-music-d-box-plus	Speaker Output 3 Right	line	1/4-inch
+dangerous-music-d-box	Main Speaker Output L	line	xlr
+dangerous-music-d-box	Main Speaker Output R	line	xlr
+dangerous-music-d-box	Alt Speaker Output L	line	xlr
+dangerous-music-d-box	Alt Speaker Output R	line	xlr
+dangerous-music-monitor-sr	Speaker 1 Output (6CH Surround)	line	db25
+dangerous-music-monitor-sr	Speaker 2 Output (6CH Surround)	line	db25
+dangerous-music-monitor-sr	Speaker 3 / Sub Output	line	db25
+dangerous-music-monitor-st	Speaker & Subwoofer Outputs 1-3	line	db25
+dangerous-music-source	Speaker 1 Output Left	line	xlr
+dangerous-music-source	Speaker 1 Output Right	line	xlr
+dangerous-music-source	Speaker 2 Output Left	line	1/4-inch
+dangerous-music-source	Speaker 2 Output Right	line	1/4-inch
+dynaudio-delta-20	Speaker Outputs (4CH)	line	pin
+dynaudio-delta-40	Speaker Outputs (4CH)	line	pin
+dynaudio-delta-80	Speaker Outputs (4CH)	line	pin
+electro-voice-sx600	SJO Speaker Cable Input	line	built-in
+electro-voice-xle181	Speaker Input	line	pin
+electro-voice-zx1i	Speaker Input	line	pin
+evh-5150iii-4x12-cabinet	Speaker Input	line	1/4-inch
+evh-5150iii-50w-6l6-2x12-combo	Speaker Out 1	line	1/4-inch
+evh-5150iii-50w-6l6-2x12-combo	Speaker Out 2	line	1/4-inch
+focusrite-vocaster-one	Speaker Output L	line	1/4-inch
+focusrite-vocaster-one	Speaker Output R	line	1/4-inch
+focusrite-vocaster-two	Speaker Output L	line	1/4-inch
+focusrite-vocaster-two	Speaker Output R	line	1/4-inch
+kef-kasa500-amplifier	Speaker Level Input L	line	built-in
+kef-kasa500-amplifier	Speaker Level Input R	line	built-in
+kemper-profiler-powerhead	SPEAKER OUTPUT	line	1/4-inch
+kemper-profiler-powerrack	SPEAKER OUTPUT	line	1/4-inch
+marantz-model-30	Speaker Terminals (Marantz Original SPKT-100+)	line	rca
+marantz-model-40n	Speaker Out (SPKT-1+)	line	1/4-inch
+marshall-1922-2x12-cabinet	Speaker Input A (Mono / Stereo Left)	line	1/4-inch
+marshall-1922-2x12-cabinet	Speaker Input B (Stereo Right)	line	1/4-inch
+marshall-1959-handwired-head	Speaker Output	line	1/4-inch
+marshall-1959-handwired-head	Speaker Output	line	1/4-inch
+marshall-1959-modified	Speaker Output	line	1/4-inch
+marshall-1959-modified	Speaker Output	line	1/4-inch
+marshall-1960a-4x12-angled-cabinet	Speaker Input 1	line	1/4-inch
+marshall-1960a-4x12-angled-cabinet	Speaker Input 2	line	1/4-inch
+marshall-1960ahw-4x12-handwired-angled-cabinet	Speaker Input	line	1/4-inch
+marshall-1960ax-4x12-angled-cabinet	Speaker Input	line	1/4-inch
+marshall-1960bhw-handwired-4x12-base-cabinet	Speaker Input	line	1/4-inch
+marshall-1960bv-4x12-base-cabinet	Speaker Input 1	line	1/4-inch
+marshall-1960bv-4x12-base-cabinet	Speaker Input 2	line	1/4-inch
+marshall-1960bx-4x12-base-cabinet	Speaker Input	line	1/4-inch
+marshall-1960tv-4x12-tall-angled-cabinet	Speaker Input	line	1/4-inch
+marshall-1962-bluesbreaker-combo	Speaker Output 1 (selectable 16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-1962-bluesbreaker-combo	Speaker Output 2 (selectable 16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-1974cx-1x12-handwired-cabinet	Speaker Input	line	1/4-inch
+marshall-1974x-handwired-combo	Speaker Output (8Ω)	line	1/4-inch
+marshall-1987x-vintage-reissue-head	Speaker Output	line	1/4-inch
+marshall-1987x-vintage-reissue-head	Speaker Output	line	1/4-inch
+marshall-2536-2x12-cabinet	Speaker Input 1	line	1/4-inch
+marshall-2536-2x12-cabinet	Speaker Input 2	line	1/4-inch
+marshall-2536a-2x12-cabinet	Speaker Input	line	1/4-inch
+marshall-dsl1-combo	Speaker Output (16Ω)	line	1/4-inch
+marshall-dsl1-head	Speaker Output (16 Ω)	line	1/4-inch
+marshall-dsl100-head	Speaker Output 1	line	1/4-inch
+marshall-dsl100-head	Speaker Output 2	line	1/4-inch
+marshall-dsl100-head	Speaker Output 3	line	1/4-inch
+marshall-dsl100-head	Speaker Output 4	line	1/4-inch
+marshall-dsl100-head	Speaker Output 5	line	1/4-inch
+marshall-dsl20-combo	Speaker Output (16Ω)	line	1/4-inch
+marshall-dsl20-combo	Speaker Output (8Ω)	line	1/4-inch
+marshall-dsl20-combo	Speaker Output (8Ω)	line	1/4-inch
+marshall-dsl20-head	Speaker Output 1 (16 Ω / 8 Ω)	line	1/4-inch
+marshall-dsl20-head	Speaker Output 2 (16 Ω / 8 Ω)	line	1/4-inch
+marshall-dsl20-head	Speaker Output 3 (16 Ω / 8 Ω)	line	1/4-inch
+marshall-dsl40-combo	Speaker Output 1 (16 ohm)	line	1/4-inch
+marshall-dsl40-combo	Speaker Output 2 (8 ohm)	line	1/4-inch
+marshall-dsl40-combo	Speaker Output 3 (8 ohm)	line	1/4-inch
+marshall-dsl40-combo	Speaker Output 4 (4 ohm)	line	1/4-inch
+marshall-dsl40-combo	Speaker Output 5 (4 ohm)	line	1/4-inch
+marshall-dsl5-combo	Speaker Output	line	1/4-inch
+marshall-jcm800-2203-vintage-reissue-head	Speaker Output	line	1/4-inch
+marshall-jcm800-modified	Speaker Output	line	1/4-inch
+marshall-jcm800-modified	Speaker Output	line	1/4-inch
+marshall-jcm900-4100-vintage-reissue-head	Speaker Output	line	1/4-inch
+marshall-jtm45-2245-vintage-reissue-head	Speaker Output 1 (selectable 16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-jtm45-2245-vintage-reissue-head	Speaker Output 2 (selectable 16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-jvm-2x12-cabinet	Speaker Input	line	1/4-inch
+marshall-jvm205-combo	Speaker Output (selectable 16Ω / 8Ω / 4Ω load)	line	1/4-inch
+marshall-jvm205-head	Speaker Output	line	1/4-inch
+marshall-jvm210-combo	Speaker Output 1 (selectable 16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-jvm210-combo	Speaker Output 2 (selectable 16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-jvm210-combo	Speaker Output 3 (selectable 16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-jvm210-combo	Speaker Output 4 (selectable 16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-jvm210-combo	Speaker Output 5 (selectable 16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-jvm210-head	Speaker Output	line	1/4-inch
+marshall-jvm215-combo	Speaker Output	line	1/4-inch
+marshall-jvm410-combo	Speaker Output 1 (16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-jvm410-combo	Speaker Output 2 (16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-jvm410-combo	Speaker Output 3 (16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-jvm410-combo	Speaker Output 4 (16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-jvm410-combo	Speaker Output 5 (16Ω / 8Ω / 4Ω)	line	1/4-inch
+marshall-jvm410-head	Speaker Output	line	1/4-inch
+marshall-mx112-1x12-cabinet	Speaker Input	line	1/4-inch
+marshall-mx212-2x12-cabinet	Speaker Input	line	1/4-inch
+marshall-mx212a-2x12-angled-cabinet	Speaker Input	line	1/4-inch
+marshall-mx412a-4x12-angled-cabinet	Speaker Input	line	1/4-inch
+marshall-mx412b-4x12-base-cabinet	Speaker Input	line	1/4-inch
+marshall-origin20-combo	Speaker Output (16Ω)	line	1/4-inch
+marshall-origin20-combo	Speaker Output (8Ω)	line	1/4-inch
+marshall-origin20-combo	Speaker Output (8Ω)	line	1/4-inch
+marshall-origin20-head	Speaker Output	line	1/4-inch
+marshall-origin212a-2x12-angled-cabinet	Speaker Input	line	1/4-inch
+marshall-origin212b-2x12-base-cabinet	Speaker Input	line	1/4-inch
+marshall-origin412a-4x12-angled-cabinet	Speaker Input	line	1/4-inch
+marshall-origin412b-4x12-base-cabinet	Speaker Input	line	1/4-inch
+marshall-origin50-combo	Speaker Output 1 (16Ω)	line	1/4-inch
+marshall-origin50-combo	Speaker Output 2 (8Ω)	line	1/4-inch
+marshall-origin50-combo	Speaker Output 3 (4Ω)	line	1/4-inch
+marshall-origin50-head	Speaker Output	line	1/4-inch
+marshall-studio-900-combo	Speaker Output	line	1/4-inch
+marshall-studio-900-head	Speaker Output	line	1/4-inch
+marshall-studio-classic-1x12-cabinet	Speaker Input	line	1/4-inch
+marshall-studio-classic-2x12-cabinet	Speaker Input	line	1/4-inch
+marshall-studio-classic-combo	Speaker Output (16Ω)	line	1/4-inch
+marshall-studio-classic-combo	Speaker Output (8Ω)	line	1/4-inch
+marshall-studio-classic-combo	Speaker Output (4Ω)	line	1/4-inch
+marshall-studio-classic-head	Speaker Output (16Ω)	line	1/4-inch
+marshall-studio-classic-head	Speaker Output (16Ω)	line	1/4-inch
+marshall-studio-classic-head	Speaker Output (8Ω)	line	1/4-inch
+marshall-studio-classic-head	Speaker Output (8Ω)	line	1/4-inch
+marshall-studio-classic-head	Speaker Output (4Ω)	line	1/4-inch
+marshall-studio-jtm-1x12-cabinet	Speaker Input	line	1/4-inch
+marshall-studio-jtm-2x12-angled-cabinet	Speaker Input	line	1/4-inch
+marshall-studio-jtm-combo	Speaker Output (selectable 16Ω / 8Ω)	line	1/4-inch
+marshall-studio-jtm-head	Speaker Output	line	1/4-inch
+marshall-studio-jubilee-1x12-cabinet	Speaker Input (16Ω)	line	1/4-inch
+marshall-studio-jubilee-combo	Speaker Output (16Ω)	line	1/4-inch
+marshall-studio-jubilee-combo	Speaker Output (8Ω)	line	1/4-inch
+marshall-studio-jubilee-combo	Speaker Output (8Ω)	line	1/4-inch
+marshall-studio-jubilee-combo	Speaker Output (4Ω)	line	1/4-inch
+marshall-studio-jubilee-combo	Speaker Output (4Ω)	line	1/4-inch
+marshall-studio-jubilee-head	Speaker Output	line	1/4-inch
+marshall-studio-vintage-1x12-cabinet	Speaker Input (16Ω)	line	1/4-inch
+marshall-studio-vintage-combo	Speaker Output 1 (16Ω)	line	1/4-inch
+marshall-studio-vintage-combo	Speaker Output 2 (16Ω)	line	1/4-inch
+marshall-studio-vintage-combo	Speaker Output 3 (8Ω)	line	1/4-inch
+marshall-studio-vintage-combo	Speaker Output 4 (8Ω)	line	1/4-inch
+marshall-studio-vintage-combo	Speaker Output 5 (4Ω)	line	1/4-inch
+marshall-studio-vintage-head	Speaker Output (16Ω)	line	1/4-inch
+marshall-studio-vintage-head	Speaker Output (8Ω) #1	line	1/4-inch
+marshall-studio-vintage-head	Speaker Output (8Ω) #2	line	1/4-inch
+marshall-studio-vintage-head	Speaker Output (4Ω) #1	line	1/4-inch
+marshall-studio-vintage-head	Speaker Output (4Ω) #2	line	1/4-inch
+numark-n-wave-580	Speaker Interconnection	line	1/4-inch
+numark-n-wave-580l	Speaker Interconnect	line	1/4-inch
+prs-archon-1x12-cabinet	Speaker Input	line	1/4-inch
+prs-archon-2x12-cabinet	Speaker Input	line	1/4-inch
+prs-archon-4x12-cabinet	Speaker Input	line	1/4-inch
+prs-archon-50w-combo	External Speaker Output	line	1/4-inch
+prs-archon-50w-head	Speaker Output	line	1/4-inch
+prs-archon-classic-head	Speaker Output	line	1/4-inch
+prs-dg-2x12-open-back	Speaker Input	line	1/4-inch
+prs-dg-custom-30	Speaker Output	line	1/4-inch
+prs-dgt-15	Speaker Output	line	1/4-inch
+prs-dgt-1x12-cabinet	Speaker Input	line	1/4-inch
+prs-hdrx-100	Speaker Output	line	1/4-inch
+prs-hdrx-1x12-cabinet	Speaker Input	line	1/4-inch
+prs-hdrx-20	Speaker Output	line	1/4-inch
+prs-hdrx-2x12	Speaker Input	line	1/4-inch
+prs-hdrx-4x12-cabinet	Speaker Input	line	1/4-inch
+prs-hdrx-50	Speaker Output	line	1/4-inch
+prs-mt-100	Speaker Output	line	1/4-inch
+prs-mt-15-cabinet	Speaker Input	line	1/4-inch
+prs-mt-15	Speaker Output	line	1/4-inch
+prs-sonzera-20-combo	External Speaker Output	line	1/4-inch
+seymour-duncan-powerstage-100-stereo	Speaker Output 1	line	1/4-inch
+seymour-duncan-powerstage-100-stereo	Speaker Output 2	line	1/4-inch
+seymour-duncan-powerstage-170	Speaker Output 1	line	1/4-inch
+seymour-duncan-powerstage-200	Speaker Output 1	line	1/4-inch
+seymour-duncan-powerstage-200	Speaker Output 2	line	1/4-inch
+seymour-duncan-powerstage-700-bass	Speaker Output 1	line	1/4-inch
+seymour-duncan-powerstage-700	Speaker Output 1	line	speakon
+seymour-duncan-powerstage-700	Speaker Output 2	line	speakon
+tannoy-tkt122	Speaker In (Barrier Strip)	line	built-in
+tannoy-vq-100	Speaker Input (Barrier Strip)	line	built-in
+tannoy-vq-60	Speaker Input (MF/HF)	line	built-in
+tannoy-vq-64df	Speaker Input (Barrier Strip)	line	built-in
+tannoy-vx-8-2	Speaker Input	line	built-in
+tannoy-vx-8-2	Speaker Link Output	line	built-in
+tascam-ma-bt240	Speaker Out (High-Impedance)	line	built-in
+tascam-ma-bt240	Speaker Out (Low-Impedance)	line	built-in
