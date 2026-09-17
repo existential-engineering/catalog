@@ -18,15 +18,13 @@ prices:
     currency: EUR
 description: HoRNet DynEQ is a dynamic equalizer that only apply the eq curve if the level is above the set threshold, which can also be automatically set
 details: |-
-  HoRNet DynEq is a dynamic equalizer plugin designed to make equalization adjustments based on the intensity of the input signal. Unlike traditional EQs that apply a static filter across the entire track, a dynamic EQ adjusts in real-time, modifying the frequency response only when the signal exceeds a set threshold. This ability to dynamically alter the EQ's response makes it an essential tool for dealing with specific frequency issues that may arise in a track, such as excessive resonance, without negatively affecting the overall sound.
+  HoRNet DynEq is a dynamic equalizer plugin designed to make equalization adjustments based on the intensity of the input signal. Unlike traditional EQs that apply a static filter across the entire track, a dynamic EQ adjusts in real-time, modifying the frequency response only when the signal exceeds a set threshold. This ability to dynamically alter the EQ’s response makes it an essential tool for dealing with specific frequency issues that may arise in a track, such as excessive resonance, without negatively affecting the overall sound.
 
   In most audio production situations, certain frequencies in a track can become problematic when they are too prominent, especially when dealing with instruments like bass guitars, kick drums, or vocals. These elements can sometimes cause particular frequencies to ring out louder than others, creating an imbalance that may need to be corrected. Traditional EQs, while effective, can sometimes cut too much of a frequency range, leaving the sound feeling unnatural. This is where a dynamic equalizer like HoRNet DynEq stands out. It offers a solution to address frequency imbalances in a way that retains the integrity of the overall sound.
 
-  HoRNet DynEq is designed with simplicity and effectiveness in mind. It offers a single parametric band of equalization with standard controls: frequency, gain, and Q. These parameters allow users to adjust the frequency range they wish to target, as well as the amount of boost or cut, and the width of the filter (Q factor). This flexibility allows you to focus on a specific resonance or frequency area, providing targeted control that is both efficient and intuitive. If you find that one instance of DynEq isn't enough to handle all the frequency issues in a track, you can add additional instances of the plugin to address multiple bands.
+  The key to understanding dynamic equalization lies in its responsiveness. Traditional EQs apply a fixed filter across a frequency range, but dynamic EQs, like HoRNet DynEq, engage only when the signal reaches a particular level or threshold. This means that if the frequency in question isn’t overly prominent at any given time, the EQ won’t affect it. When the resonance or problematic frequency becomes too pronounced, the dynamic EQ kicks in, reducing or boosting the level based on the intensity of the signal.
 
-  HoRNet DynEq includes two powerful auto features that simplify the dynamic EQ process even further: auto-speed and auto-threshold. The auto-speed feature automatically syncs the attack and release times of the internal envelope detector with the host tempo, synchronizing them with a 1/4 note division. The auto-threshold function dynamically adjusts the threshold of the EQ based on the level of the input signal, comparing the targeted frequency with the incoming signal so that only the difference between the signal and the targeted frequency is processed.
-
-  The internal envelope detector of DynEq works by assessing the input signal level and comparing it to the threshold. When the input signal surpasses the threshold, the EQ reacts by either reducing or boosting the targeted frequency. This allows you to tame troublesome resonances without removing too much of the frequency range. Additionally, the smoothness of the transition between the EQ's action and inaction ensures that the process is transparent and musical.
+  This form of EQ is especially useful when working with instruments that have a tendency to resonate, such as bass guitar strings or certain vocal frequencies. Often, standard EQ adjustments might either remove too much of the frequency spectrum or leave the issue unresolved. A dynamic EQ, however, ensures that the frequency is only affected when necessary, providing a much more transparent and musical solution.
 specs: |-
   - One equalizer band with: Frequency, Gain and Q
   - Full band frequency from 20 to 20000 Hz
@@ -51,3 +49,6 @@ videos:
   - videoId: 67FGUBKtxog
     provider: youtube
     title: HoRNet updates DynEQ to v1.1.0 - Apple Silicon compatibility
+  - videoId: pjsfpWKxwkE
+    title: HoRNet DynEq, dynamic equalizer overview
+  - videoId: dfDRl6QNfK0

@@ -17,32 +17,33 @@ prices:
     currency: EUR
 description: ZeroComp is the intelligent compressor that learns your audio and auto-configures compression with zero effort. Three models for versatility.
 details: |-
-  ZeroComp is an intelligent compressor built around the idea that the compressor should adapt to the audio rather than the other way around. Instead of setting threshold, ratio, attack and release in the dark for every source, it performs real-time crest factor analysis and auto-calibrates all compression parameters based on the material's own dynamic characteristics.
+  ZeroComp is a compressor built on the idea that the compressor should adapt to the audio rather than the other way around. It analyses the material in real time, auto-calibrates all parameters, and offers three parallel models that instantly change character.
 
-  Three parallel compression models are always active and can be switched instantly to change character. Smooth gives a sweet, musical response for melodic vocals and transparent master bus control. Tight is a fast, precise response for drums and acoustic guitars with emphasis on transients. Fat delivers a full, decisive tone for bass, aggressive vocals and punchy drums, adding body, density and presence.
+  Real-time crest factor analysis automatically sets threshold, ratio, attack, release, knee and makeup gain from the audio's own characteristics. Convergence indicators give visual feedback on the learning progress, showing per-model status so it is clear when ZeroComp has analysed enough material to deliver optimal compression.
 
-  The control set is deliberately minimal. A single Compression percentage from 0 to 100% modulates gain reduction proportionally, where 100% compresses the full dynamic range detected by the analysis engine. A Distortion control adds pre-compression harmonic saturation for presence and density, while Style switches models, Reset re-triggers the learning algorithm for new material, and Bypass gives instant A/B comparison.
+  The processing engine is designed to avoid parameter oscillations and pumping artifacts, using anti-oscillation algorithms, stable gain reduction and musical response curves for consistent results across all material types.
 
-  Convergence indicators show the learning progress per model so it is clear when enough material has been analyzed for optimal compression. The processing engine is designed with anti-oscillation algorithms to avoid parameter oscillation and pumping artifacts, aiming for stable gain reduction and musical response curves across tracking, mixing and mastering stages.
+  Three models change the character instantly. Smooth is a sweet, musical response for melodic vocals and transparent master bus control, suited to R&B, pop and ballads. Tight is a fast, precise response for drums and acoustic guitars with emphasis on transients, and works on buses with light compression around 3 dB of gain reduction. Fat is a full, decisive tone for bass, aggressive vocals and punchy drums, adding body, density and presence for rock, punk and rap.
 
-  The interface uses minimalist, scalable GPU-accelerated graphics that work on standard and retina displays, with real-time input, output and gain reduction meters. The plugin is Apple Silicon native and optimized for M1/M2/M3/M4 chips, has minimal latency suitable for live tracking, and exposes full parameter automation to the DAW.
+  Controls are deliberately few: a single Compression percentage from 0 to 100%, where 100% compresses the full dynamic range detected by the analysis engine, a Distortion control for pre-compression harmonic saturation, a Style switch between the three models, a Reset that re-triggers learning, and a Bypass for instant A/B comparison.
 specs: |-
-  - Real-time crest factor analysis with automatic parameter calibration (threshold, ratio, attack, release, knee, makeup gain)
-  - Three parallel compression models: Smooth, Tight, Fat
-  - Per-model convergence indicators with learning progress visualization
-  - Compression control: single 0-100% percentage for compression amount
-  - Distortion control: pre-compression harmonic saturation
-  - Reset control to re-trigger the learning algorithm
+  - Real-time crest factor analysis with automatic parameter calibration
+  - Adaptive threshold, ratio, attack, release, knee and makeup gain
+  - Convergence indicators with per-model learning status
+  - Anti-oscillation engine for stable, pumping-free gain reduction
+  - Three models: Smooth, Tight and Fat
+  - Single Compression percentage control (0 to 100%)
+  - Distortion control for pre-compression harmonic saturation
+  - Reset to re-trigger the learning algorithm
   - Bypass for instant A/B comparison
-  - Anti-oscillation, stable gain-reduction engine
-  - Real-time input, output and gain reduction meters
-  - Hardware-accelerated, scalable interface for standard and retina displays
-  - Apple Silicon native ARM support, optimized for M1/M2/M3/M4
+  - Input, output and gain reduction meters
+  - Full parameter automation in the DAW
   - Minimal latency, suitable for live tracking
-  - Full parameter automation with DAW integration
-  - Platforms: macOS 10.13+, Windows 10+
-  - Formats: Audio Units (AU), VST3, AAX
-  - No copy protection, files watermarked with the purchaser's email address
+  - Hardware-accelerated, scalable graphics
+  - Apple Silicon native support, optimized for M1/M2/M3/M4
+  - macOS 10.13+ and Windows 10+
+  - Audio Units (AU), VST3 and AAX formats
+  - No copy protection, only a watermark carrying the buyer's email
 versions:
   - name: 1.0.2
 videos:

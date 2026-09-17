@@ -18,40 +18,35 @@ prices:
     currency: EUR
 description: ThirtyOne MK2 is a plugin that includes a spectrum analyzer and a graphic equalizer, both have the standard 31 one third octave bands
 details: |-
-  ThirtyOne MK2 is a powerful plugin that includes both a spectrum analyzer and a graphic equalizer, with each feature utilizing the standard 31 one-third octave bands. This combination of tools is a fundamental component of any professional live sound setup, often appearing in the final stage of the master bus in many audio mixers. Given its importance in live sound environments, HoRNet meticulously recreated the behavior and response time of a well-known Italian analog spectrum analyzer.
+  ThirtyOne MK2 combines a spectrum analyzer and a graphic equalizer, each using the standard 31 one-third octave bands. This pairing is a fundamental part of professional live sound setups, often appearing at the final stage of the master bus, and HoRNet recreated the behaviour and response time of a well-known Italian analog spectrum analyzer.
 
-  The graphic equalizer within the ThirtyOne MK2 plugin draws inspiration from analog units, offering a familiar feel that audio engineers and musicians alike will appreciate. By utilizing the characteristics of classic analog devices, it aims to deliver a sense of continuity in the master chain, allowing you to feel at home with this tool just as you would with traditional hardware units.
+  The graphic equalizer draws on analog units for a familiar feel in the master chain. The analyzer reproduces the smooth LED lighting behaviour of the original hardware, where the LEDs were driven by a smoothly increasing current flow. Each column of twelve LEDs represents a frequency range, controlled by a 20dB/octave filter as in the analog counterpart, and the analyzer response speed is selectable between 0.25, 1 and 4 seconds.
 
-  One of the standout features is its attention to the smooth LED lighting behavior. In the original hardware units the LEDs were driven by a smoothly increasing current flow, and that effect is replicated accurately in this plugin. Each column of twelve LEDs represents a frequency range, and the behavior of these LEDs is controlled by a 20dB/octave filter, exactly like the one found in the analog counterpart. The response speed of the analyzer can be adjusted with options for 0.25, 1, or 4 seconds, allowing a more precise view of both fast peaks and average frequency levels. Each LED in the bar can represent a value of 1, 2, or 3 dBs, with a 6dB/LED option for a more sensitive display, and a maximum peak hold LED is available for each frequency band.
+  Each LED can represent 1, 2 or 3 dB, closely matching the original device, and a 6dB/LED option is included for a more sensitive display. The scale to the left of the LED display updates whenever the resolution is changed. A maximum peak hold LED per frequency band can be enabled or disabled, a feature the original hardware did not offer.
 
-  Directly beneath the spectrum analyzer sit the 31 sliders, which shape the output and fix specific resonance issues. Each slider controls a 1/3 octave second-order filter, allowing adjustments in the range of -15 to +15 dB, and values can also be typed directly into the box below the sliders for precise control.
+  Beneath the analyzer sit 31 sliders, each controlling a one-third octave second-order filter adjustable from -15 to +15 dB, with values also typed directly into the box below each slider.
 
-  One of the most innovative features of the ThirtyOne MK2 is its Auto EQ functionality. When enabled, Auto EQ automatically adjusts the gain for each EQ band based on the spectrum analyzer output, tuning the equalizer toward a balanced and harmonically rich sound. Three distinct Auto EQ algorithms are offered: Average, Median, and Lucky. The first two are based on mathematical models, while the Lucky algorithm was kept simply because it sounds good. Because Auto EQ is deeply integrated with the analyzer, the analysis speed directly affects how the algorithm adjusts the equalization: 0.25s tracks fast frequency spikes, while 4s focuses on average frequency content.
-
-  To fine-tune the output of the Auto EQ, a compensation curve applies an offset to the levels computed by the algorithm, and a custom compensation curve can be exported and loaded into other projects with the load and save buttons. The EQ Amount knob scales the entire EQ curve, adjusting every gain computed by the Auto EQ algorithm by a fixed value so the ratio between frequency bands is maintained while the overall level increases or decreases.
+  Auto EQ automatically adjusts the gain of each band based on the spectrum analyzer output. Three algorithms are offered, Average, Median and Lucky, and the analysis speed directly affects how the algorithm adjusts equalization. A compensation curve applies an offset to the computed levels and can be saved and loaded, while an EQ Amount knob scales the entire curve.
 specs: |-
-  - 31, one third octave, spectrum analyzer bands
-  - Spectrum analyzer carefully crafted to give you the feeling of analog hardware units
+  - 31 one third octave spectrum analyzer bands
+  - Spectrum analyzer crafted to give the feeling of analog hardware units
   - Three different integration times for the analyzer
   - Four scale ranges for the analyzer
   - Peak hold display
-  - Display both the L+R (mid) component or the L-R (side) component of the audio spectrum
-  - 31, one third octave, equalizer
-  - Each band of the equalizer can be bypassed
-  - Each band of the equalizer can be put in solo mode
-  - Each band of the equalizer can be disabled for the AutoEQ
-  - Each band gain adjustable from -15 to +15 dBs
-  - “Auto EQ” automatically balances frequency content
+  - Displays both the L+R (mid) and L-R (side) component of the audio spectrum
+  - 31 one third octave equalizer bands
+  - Each band can be bypassed, soloed or disabled for the AutoEQ
+  - Each band gain adjustable from -15 to +15 dB
+  - Auto EQ automatically balances frequency content
   - Three different algorithms for AutoEQ
-  - AutoEQ can work both in continuous or fixed mode
+  - AutoEQ can work in continuous or fixed mode
   - Each of the two modules can be disabled to save CPU
   - AutoEQ amount knob to scale the effect impact
-  - Custom compensation EQ profile for the AutoEQ algorithm
-  - Compensation curve can be saved and loaded
+  - Custom compensation EQ profile for the AutoEQ algorithm, saveable and loadable
   - Preset save and load
   - Bypass button for the equalizer
-  - GUI is scalable and hardware accelerated
-  - macOS (>=10.11, Metal required) and Windows (Windows 7 and later, OpenGL 2.1 required) support
+  - Scalable and hardware accelerated GUI
+  - macOS (10.11 or later, Metal required) and Windows (7 and later, OpenGL 2.1 required) support
   - Apple Silicon native support
   - 64-bit plugin for Mac and Windows
   - Audio Units, VST2.4, VST3 and AAX format

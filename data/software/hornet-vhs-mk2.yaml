@@ -1,12 +1,12 @@
 id: 2wAFLwz7OD3l3gGqbylRK
 name: VHS MK2
 manufacturer: hornet
-primaryCategory: spatial
+primaryCategory: utility
 categories:
   - plugin
 formats:
-  - au
   - vst3
+  - au
   - aax
 platforms:
   - mac
@@ -17,30 +17,29 @@ prices:
     currency: EUR
 description: Accurate headphone mixing with ray-tracing room simulation. Corrects 100+ models + AutoEQ import. Mix anywhere with studio precision.
 details: |-
-  VHS MK2 (Virtual Headphone System) addresses the problem of mixes made on headphones failing to translate to other playback systems. Every pair of headphones has its own frequency-response fingerprint that colours what the engineer hears, so a mix that sounds correct in headphones can arrive muddy, harsh or wrongly imaged on monitors, in a car or on earbuds.
+  VHS MK2, the Virtual Headphone System, addresses the problem that every pair of headphones has a sonic fingerprint: a unique frequency response that colours what the engineer hears, so a mix made on headphones often fails to translate to speakers, cars or earbuds.
 
-  The plugin combines precise headphone correction with ray-tracing room simulation. The headphone correction module analyses the selected headphone model and applies an inverse EQ curve that neutralises its response toward the Harman Over Ear 2018 target curve, which HoRNet describes as the industry standard for natural, balanced headphone listening rather than an arbitrary flat curve.
+  The plugin combines precise headphone correction with ray-tracing room simulation, physics-based algorithms that recreate how sound behaves in a treated studio rather than applying a generic flat curve. Thousands of sound rays bounce through the virtual studio, simulating how material interacts with sound, how walls reflect and how the ears hear the combined result, so the model is dynamic rather than a static impulse response.
 
-  The room simulation is physics-based rather than a static impulse response. Thousands of sound rays are calculated in real time as they bounce through a virtual studio, accounting for how materials interact with sound, how walls reflect and how both ears hear the combined result. Virtual speakers and the listening position can be placed by the user, producing natural cross-feed, accurate stereo balance and the impression of sitting two to three metres from a pair of monitors.
+  The headphone correction module analyses the headphone model and applies an inverse EQ curve, neutralising the frequency response to match the Harman Over Ear 2018 target, the result of thousands of listening tests. Over 100 professionally measured headphone profiles are included, and AutoEQ import gives access to thousands of community-measured profiles for any headphone model.
 
-  Over 100 professionally measured headphone profiles are included, and AutoEQ import gives access to community-measured profiles for models that are not in the database. A dual simulation mode switches between pure headphone correction and full room simulation in one click, so a mix can be checked against different speaker configurations, and an advanced preset system stores complete room and headphone configurations, including a default that loads automatically.
+  A dual simulation mode switches between pure headphone correction and full room simulation in one click, so a mix can be checked against different virtual monitors and speaker configurations. Virtual speakers and the listening position are positioned by the user, and the algorithm calculates reflections, room modes, natural cross-feed and stereo imaging.
 
-  The plugin ships in VST3, AU and AAX formats for macOS 10.13 or later (Intel and Apple Silicon native) and Windows 10 or 11, both 64-bit, and has been tested in Logic, Ableton, Pro Tools, FL Studio, Cubase, Reaper, Studio One and Bitwig. There is no copy protection: licensing is a watermark carrying the user's email address, and updates and new headphone profiles are free.
+  An advanced preset system saves and loads complete room and headphone configurations, with a default that loads automatically and presets that can be shared with other VHS MK2 users.
 specs: |-
-  - Headphone correction module applying an inverse EQ curve toward the Harman Over Ear 2018 target
-  - Ray-tracing room simulation calculating reflections, room modes and stereo imaging in real time
+  - Headphone correction against the Harman Over Ear 2018 target
   - 100+ professionally measured headphone profiles included
-  - AutoEQ profile import for headphones outside the included database
-  - Dual simulation mode switching between headphone correction only and full room simulation
-  - User-positionable virtual speakers and listening position
-  - Advanced preset system saving complete room and headphone configurations, with an auto-loading default
-  - Two ray tracing modes: Advanced (physics-based) and Simple (optimized)
-  - macOS 10.13+ (Intel and Apple Silicon native), Windows 10/11 (64-bit)
-  - CPU: dual-core 2.0 GHz or faster
-  - RAM: 4 GB minimum
-  - Graphics: OpenGL 2.0 compatible
-  - Licensing: watermark with user email, no authorization required
-  - Free updates and free profile additions
+  - AutoEQ profile import for any headphone model
+  - Ray-tracing room simulation with Advanced (physics-based) and Simple (optimized) modes
+  - Dual simulation mode: headphone correction or full room simulation
+  - User-positioned virtual speakers and listening position
+  - Advanced preset system with a default preset and shareable configurations
+  - Plugin formats: VST3, AU, AAX (64-bit)
+  - macOS 10.13+ (Intel and Apple Silicon native)
+  - Windows 10/11 (64-bit)
+  - Tested in Logic, Ableton, Pro Tools, FL Studio, Cubase, Reaper, Studio One and Bitwig
+  - CPU: dual-core 2.0 GHz or faster, RAM: 4 GB minimum, OpenGL 2.0 compatible graphics
+  - No copy protection, only a watermark carrying the buyer's email
 versions:
   - name: 2.0.5
 videos:

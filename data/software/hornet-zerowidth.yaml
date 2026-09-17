@@ -19,34 +19,30 @@ url: https://www.hornetplugins.com/plugins/hornet-zerowidth/
 prices:
   - amount: 24.99
     currency: EUR
-description: ZeroWidth is the intelligent stereo widener that learns your mix's
-  correlation profile. Auto Side EQ, 7 frequency bands, mono-safe by design.
+description: ZeroWidth is the intelligent stereo widener that learns your mix's correlation profile. Auto Side EQ, 7 frequency bands, mono-safe by design.
 details: |-
-  ZeroWidth is a stereo widener built around real-time correlation profile analysis. Rather than asking the engineer to set auto EQ, side gain and learning parameters by hand, it analyses the incoming material and auto-calibrates its widening parameters to that material's correlation characteristics.
+  Traditional wideners force you to guess. Every audio source has its unique correlation characteristics, and you are setting parameters in the dark hoping they will work. Meanwhile the material you are widening keeps changing, and you end up micro-managing every single setting.
 
-  The analysis is multi-band: ZeroWidth sets auto Side EQ, auto Width and per-band correlation learning across seven bands, each of which can be overridden manually. Visual convergence indicators show the learning progress so the user knows when enough material has been analysed for the plugin to deliver its intended result.
+  ZeroWidth lets the widener adapt to your audio rather than the other way around. It analyzes your material in real time, auto-calibrates all parameters, and offers seven multi-band bands to instantly change character. Whether you are recording vocals, taming nervous acoustic guitars, or adding controlled width to the mix bus, it adapts with zero setup time.
 
-  Three of the band characters are called out explicitly. 10kHz gives a sweet, musical response aimed at melodic vocals and transparent master bus control; 1.25kHz gives a fast, precise response for drums and acoustic guitars with emphasis on transients; 156Hz gives a fuller, denser tone for bass, aggressive vocals and wide drums.
+  Real-time correlation profile analysis automatically sets auto Side EQ, auto Width and per-band correlation learning, with seven manual band overrides. Visual feedback shows the learning progress, so you know when enough material has been analyzed. The zero-latency, per-sample processing engine is designed to avoid parameter oscillations and phase cancellation.
 
-  The control set is deliberately small: a single Widening percentage from 0 to 100%, an Auto EQ control scaling the per-band Auto Side EQ amount from 0% to 200%, a Reset that re-triggers the learning algorithm when the material changes, and a Bypass for instant A/B comparison. All parameters are DAW-automatable.
+  Controls are deliberately simple. Widening is a single percentage from 0 to 100%, where 100% widens the full correlation profile detected by the analysis engine. Auto EQ scales the per-band Auto Side EQ amount from 0% (disabled) to 200% (intensified). Reset re-triggers the learning algorithm when the material changes, and Bypass gives an instant A/B comparison.
 
-  The processing engine works per sample and is designed to avoid parameter oscillation and phase cancellation, keeping the result mono-safe. The interface uses hardware-accelerated, scalable graphics with input, output and correlation meters, and the plugin is native on Apple Silicon. HoRNet ships it with no copy protection, watermarking downloaded files with the purchaser's email address instead.
+  The interface is minimalist with scalable, GPU-accelerated graphics, and input, output and correlation meters provide instant visual feedback on widening behaviour.
 specs: |-
-  - Real-time correlation profile analysis with adaptive auto EQ and side gain
-  - Multi-band correlation analysis across 7 frequency bands
-  - Auto Side EQ with per-band targets and manual band overrides
-  - Learning progress visualization with per-model convergence indicators
-  - Zero-latency per-sample processing designed to prevent phase cancellation
-  - Widening control from 0 to 100% of the detected correlation profile
-  - Auto EQ control scaling per-band Auto Side EQ from 0% to 200%
-  - Reset control to re-trigger learning on new material
-  - Bypass for instant A/B comparison
-  - All parameters DAW-automatable
+  - Real-time correlation profile analysis with adaptive widening engine
+  - Auto Side EQ with per-band targets
+  - Seven manual frequency band overrides
+  - Widening control, 0 to 100%
+  - Auto EQ control, 0 to 200%
+  - Reset and Bypass controls
   - Input, output and correlation meters
-  - Hardware-accelerated, scalable graphics for standard and retina displays
-  - Apple Silicon native, optimized for M1/M2/M3/M4
-  - Minimal latency, suitable for live tracking
-  - macOS 10.15 or later, Windows 10 or later
+  - Zero-latency per-sample processing, suitable for live tracking
+  - Hardware-accelerated, scalable graphics
+  - Formats: Audio Units (AU), VST3, AAX
+  - macOS 10.15+ and Windows 10+
+  - Apple Silicon native, M1/M2/M3/M4 optimized
 links:
   - url: https://www.hornetplugins.com/demo/
     type: resource
