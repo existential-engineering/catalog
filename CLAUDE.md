@@ -18,6 +18,10 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 - `pnpm capability-coverage` - Report which categories carry `capabilities`
 - `pnpm capability-gaps` - Report operations an entry's prose names but its
   `capabilities` omits
+- `pnpm speaker-level-audit` - Report speaker ports not typed `speaker-level`
+  (`--tsv` for a review list)
+- `pnpm speaker-level:apply --rows <tsv>` - Retype the reviewed ports
+  (`--apply` to write)
 - `pnpm hp:backfill` - Fill `hp` on modular entries from their own prose and
   a reviewed list (`--review <tsv>`, `--apply`)
 - `pnpm identifier-coverage` - Report which software entries carry
@@ -301,6 +305,28 @@ stay legal with `connection: card-slot`.
 (speakON, binding-post, banana, euroblock, barrier/spring terminals) carry
 amplified signals — set `type: speaker-level`. `line` is for low-voltage
 preamp/mixer outputs; a powered speaker input is never `line`.
+
+Nothing enforced that, so 231 ports across 143 files carried `line` when
+`pnpm speaker-level-audit` was first run: every Marshall, PRS and EVH
+cabinet input, and most amp speaker outputs. `pnpm speaker-level:apply`
+writes a reviewed list and 227 of them were retyped in
+`docs/reviews/2026-09-speaker-level.tsv`.
+
+It reports rather than fixes, on the same contract as `capability-gaps`,
+because one distinction is real and not a tuning problem: a **speaker
+emulated** or cabinet-simulated output carries LINE level, so the name says
+speaker and the signal does not. Those are correctly `line` and the audit
+excludes them; including them turns 231 findings into 242. The four rows
+the reviewed pass rejected are recorded with their reasons in that file, so
+the next pass does not re-litigate them.
+
+Two things about the writer are worth not undoing, because each shipped
+broken first. **An entry can hold several jacks with one name** — the
+one-entry-per-jack rule means a Marshall head carries two ports both called
+"Speaker Output" — so each row consumes the next unclaimed match rather
+than the first; the first cut reported 227 applied while changing 217. And
+`checkContainedRegularFile` returns `{ path }` or `{ reason }`, never a
+boolean, so `if (!check)` is always false and leaves the guard inert.
 
 **Required presence (blocks CI):** every hardware `io` entry must include
 `maxConnections` (default `1`) and, except on played instruments
