@@ -1,7 +1,7 @@
 id: UZcvt1GVKOp5j5qzA4DZm
 name: MIDIQ
 manufacturer: wa-production
-primaryCategory: utility
+primaryCategory: midi-effect
 categories:
   - creative
 formats:
@@ -14,10 +14,37 @@ url: https://www.waproduction.com/plugins/view/midiq
 prices:
   - amount: 0
     currency: USD
-description: "MIDI sequence generator with slot-machine-style interface that
-  generates near-limitless chord sequence possibilities using a pattern language
-  system requiring no music theory knowledge."
+description: MIDIQ is a MIDI sequence generator for chord progressions, harmonies and bass lines, driven by a pattern language of repeating symbols laid out on a slot machine style interface. Each pattern position generates a chord along with eight alternative sequences that can be auditioned during playback.
 details: |-
-  Pattern-based chord definition. Eight alternative chord variants per pattern. Piano roll display. Drag-and-drop. Preset management. Arpeggiator compatibility. Keyboard/MIDI triggering.
+  MIDIQ is a MIDI sequence generator for studio and live use, aimed at chord sequences, harmonies and bass lines. It uses a simple pattern language to define repeating chords, laid out on a highly interactive interface that resembles a slot machine, and produces results without requiring knowledge of music theory.
+
+  Adding or changing a pattern symbol makes the algorithm generate a chord for that position along with a set of eight alternative chord sequences for the current pattern of symbols. Clicking one of the chord boxes switches to a new variant, which is played back from the next loop onset, with a yellow countdown bar showing the time until that point, and clicking the button again restores the main sequence.
+
+  Chords can also be edited by hand. Clicking a chord allows its symbols to be changed, at which point the corresponding pattern element is replaced by a lock symbol and the music intelligence algorithms build a new matching progression around it. The unlock button returns the element to its previous state.
+
+  MIDIQ runs in any DAW with MIDI routing support, either on a generator track or as multiple instances assigned to different tracks, which allows layered polyphonic progressions and polyrhythmic loops. Copy and paste moves parameters from one instance to another, preset data is saved automatically in DAW sessions and can be exported for other sessions, and chords drag from the simplified piano roll display to the host sequencer.
+
+  A computer keyboard or an external MIDI keyboard can trigger chords in the progression manually, with the duration and volume of the input creating rhythmic and dynamic variations of the generated progression. A MIDI sequence recorded in the DAW can also be used as the trigger.
 specs: |-
-  Windows 10/11 (64-bit). macOS 10.15+ (64-bit).
+  - Pattern definition area for building repeating chord sequences
+  - Eight alternative chord sequences generated per pattern
+  - Manual chord editing with per-element locking and unlocking
+  - Individual MIDI velocity adjustment and muting per generated chord
+  - Simplified piano roll display
+  - Drag to export chords to the host sequencer
+  - Copy and paste of parameters between plugin instances
+  - Preset data saved with the DAW session and exportable
+  - Keyboard and external MIDI trigger input for manual chord playback
+  - Factory presets
+  - Windows 10/11 or higher (64 bit)
+  - macOS 10.15 or higher (64 bit)
+  - Available as a VST and AU MIDI effect plug-in
+versions:
+  - name: 1.0.0
+videos:
+  - videoId: vPLxm5Pg_7E
+  - videoId: 1tbFgWrDk9E
+  - videoId: Hhv-AphF08w
+  - videoId: ZqGoIwy0_XM
+  - videoId: goiABdpyFgI
+  - videoId: NEYufuFyOYA

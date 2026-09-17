@@ -1,7 +1,7 @@
 id: VkWLRzpAQoj_mm-N-lPjF
 name: Vocal Cleaner
 manufacturer: wa-production
-primaryCategory: utility
+primaryCategory: vocal-processor
 categories:
   - effect
 formats:
@@ -16,10 +16,38 @@ url: https://www.waproduction.com/plugins/view/vocal-cleaner-1
 prices:
   - amount: 0
     currency: USD
-description: "Vocal processing plugin for cleaning up recordings by removing
-  noise, taming sibilance, and reducing plosives with de-noise, de-ess, noise
-  gate, and presence controls."
+description: Vocal Cleaner is a vocal clean-up plugin combining de-noise, de-ess and noise gate stages with high and low pass filtering and a presence control. It is designed to sit first in a vocal chain, removing background noise, harsh sibilance and breath sounds before further processing.
 details: |-
-  De-noise. De-ess. Noise gate. Presence control. Designed for cleaning vocal recordings.
+  Vocal Cleaner handles the first stage of vocal processing, taming harsh sibilance and removing intermittent noise before compression or reverb enter the chain. Simple threshold sliders and Amount dials operate each of the three stages.
+
+  The De-Noise stage applies an intelligent algorithm that splits the incoming signal into voice and noise, allowing background hum, hiss and other extraneous noise to be stripped away. The main fader and the Amount dial together set how far the noise is reduced without compromising vocal quality.
+
+  The De-Es unit detects harsh high frequency sibilance and builds an intelligent, adaptable EQ curve to reduce the volume of those artefacts. The Noise Gate sets a minimum amplitude threshold, clamping down on quiet sections such as breath sounds and room noise while letting louder parts through, with an Amount dial for keeping the result natural.
+
+  Bright, Natural and Dark buttons switch between signal algorithms optimised for high frequency noise, balanced material and noise in the lower register. High and low pass filters roll off unwanted hum and upper frequencies, and the Presence control restores definition using a combination of saturation, compression and EQ.
+
+  A smoothed bypass control works with the Output dial for click and pop free A/B testing, and a central Master Mix control blends the cleaned signal with the original raw audio for parallel processing. Live VU meters show what is happening at each stage of cleaning in real time, and the included presets cover female, male and backing vocals among other voice types.
 specs: |-
-  Windows 10/11 (64-bit). macOS 10.15+ (64-bit).
+  - Three processing stages
+  - De-noise, de-ess and noise gate
+  - Bright, Natural and Dark optimisation modes
+  - Presence control
+  - Low and high pass filters
+  - Master Mix control for parallel processing
+  - Pop and click free bypass
+  - Real-time VU metering
+  - Responsive and CPU friendly
+  - Factory presets
+  - Full PDF manual and tutorial video
+  - Resizable interface
+  - Windows 10/11 or higher (64 bit)
+  - macOS 10.15 or higher (64 bit)
+  - AAX requires Pro Tools 12 or higher
+versions:
+  - name: 2.0.0
+  - name: 2.1.0
+videos:
+  - videoId: 2LQjiq3OgwY
+  - videoId: 739QdUE6Z60
+  - videoId: fNZbup-mynE
+  - videoId: uBwi148iGvE

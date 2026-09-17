@@ -1,7 +1,7 @@
 id: xvmGVQmjv-pEYYFP_gcOg
 name: InstaScale
 manufacturer: wa-production
-primaryCategory: utility
+primaryCategory: scale-helper
 categories:
   - creative
 formats:
@@ -16,9 +16,44 @@ url: https://www.waproduction.com/plugins/view/instascale
 prices:
   - amount: 0
     currency: USD
-description: "Scale-oriented MIDI processor with 16 relative keys enabling users
-  to play any instrument while staying within chosen scales."
+description: Scale oriented MIDI processor with 16 smart keys that play notes relative to the previous note and the selected scale. Runs as a VST instrument with MIDI routing or as an AU MIDI effect, so any target instrument can be played within a chosen scale.
 details: |-
-  16-key relative note system. Scale editing capabilities. MIDI processing for staying in key.
+  InstaScale is a scale oriented MIDI processor built around 16 smart keys. Each key can play a different note depending on the selected scale, the position of the previous note and the action assigned to that key, so playing is relative rather than fixed to one note per key.
+
+  It runs as a VST instrument in hosts that support MIDI routing, and as an AU MIDI effect in hosts such as Logic Pro X. Incoming MIDI from a controller is swapped for the processed result, which can then be routed to any other instrument in the host.
+
+  Each playing key has a mapping menu that sets where it sits on the controller and an action menu that sets what it does, with static values such as Home and Repeat alongside relative offsets such as plus 2 or minus 3. Separate control keys can be assigned to change scale, root, home note and octave from the controller, either by stepping up and down or by switching directly to a value from an assigned range of notes.
+
+  The scale list covers major, minor, melodic minor, harmonic minor, Spanish, Arabic, major and minor pentatonic, blues, In Sen, Hirajoshi and others, and the full version allows existing scales to be edited and new ones to be added. The home note can be moved from the root to any other note in the scale, which makes it possible to play modes or follow chord changes.
+
+  Polyphonic playing allows notes to be stacked into chords, with the order in which notes are created determining how each one is processed. An octave shifter moves the output octave up and down and can also shift the input playing position, and a pass through mode bypasses the processing so the target instrument can be played normally. The maker also suggests it as a tool for learning scales and for ear training.
 specs: |-
-  Windows 10/11 (64-bit). macOS 10.15+ (64-bit).
+  - Scale oriented MIDI processor with 16 playing keys
+  - Relative note playing based on scale, previous note and key action
+  - Runs as a VST instrument with MIDI routing or as an AU MIDI effect
+  - Scale list including major, minor, melodic minor, harmonic minor, Spanish, Arabic, pentatonics, blues, In Sen and Hirajoshi
+  - Scale editing and user created scales in the full version
+  - Movable home note for playing modes and following chord changes
+  - Mapping and action menus for every playing key
+  - Control keys for root, scale, home and octave, by step or by switch
+  - Polyphonic playing with stacked notes for chords
+  - Octave shifter for output and input
+  - Pass through mode
+  - Resizable interface with scaling options
+  - Windows 10 or 11 or higher, 64 bit
+  - macOS 10.15 or higher, 64 bit
+versions:
+  - name: 1.0.1
+  - name: 1.0.2
+  - name: 1.0.3
+  - name: 1.1.0
+  - name: 1.1.2
+  - name: 1.1.4
+  - name: 1.1.6
+videos:
+  - videoId: COSzLF-IYto
+  - videoId: 20uvRRY0sWo
+  - videoId: LtBS0DGwSjI
+  - videoId: 1V-VSqUsA0I
+  - videoId: x72Tve63l7k
+  - videoId: d6xCbcB0vF4

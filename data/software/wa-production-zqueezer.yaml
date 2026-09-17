@@ -1,7 +1,7 @@
 id: kbCaGTABPv5G2aHoTIxLC
 name: Zqueezer
 manufacturer: wa-production
-primaryCategory: effect
+primaryCategory: filter
 categories:
   - creative
 formats:
@@ -16,10 +16,26 @@ url: https://www.waproduction.com/plugins/view/zqueezer
 prices:
   - amount: 0
     currency: USD
-description: "Adaptive filtering plugin that squashes sound with emphasis on
-  harmonics and formant-shifting effects. Functions as adaptive filter for
-  monophonic audio and overtone mangler for polyphonic material."
+description: Zqueezer is an effect plugin that squeezes the harmonic content of a signal, working as an adaptive filter on monophonic sources and mangling overtones on polyphonic material. Its filter coefficients are derived from the waveform itself, so the response continuously tracks the incoming audio.
 details: |-
-  Overtone control to isolate flageolet tones. Gain adjustment for amplitude correction. Dry/Wet mixing dial. Visual feedback. Factory presets optimized for guitars, bass, drums, synths, and vocals.
+  Zqueezer is an effect plugin from W. A. Production intended to transform synths, bass lines and vocals beyond their original form without building a complex chain of effects or routing audio through outboard equipment. With monophonic source audio it functions as a kind of adaptive filter, squashing the sound with an emphasis on harmonics and producing a formant-shifting effect. With more complex polyphonic material it mangles the overtones, resulting in a denser network of partial tones and intermodulations.
+
+  The Overtone control selects and isolates the flageolet overtones of the signal. As the dial is raised, the results grow more intense and the squeezed frequencies rise in pitch, with individual overtones becoming audible. At extreme values the pitch-shifting effect resembles a band-pass filter but with far more complexity in the harmonics. The filter coefficients keep changing and are derived from the waveform of the sound itself, so the filter constantly adapts to the audio.
+
+  The Gain control corrects amplitude at the output and boosts the brilliance of the signal. It is useful at higher fraction values and when balancing the source audio against the processed version of itself.
+
+  A dry / wet knob mixes the waveforms Zqueezer creates with the original source audio, covering subtle brightening through to heavily mangled and harmonically distorted results. Factory presets are included for guitars, bass, drums, synths and vocals, ranging from subtle transformations to extreme mutations.
 specs: |-
-  Windows 10/11 (64-bit). macOS 10.15+ (64-bit). ProTools 12+ for AAX.
+  - Adaptive squeezed filtering derived from the source waveform
+  - Adjustable Overtone control to isolate flageolet tones
+  - Gain control for output amplitude correction
+  - Dry / wet dial for parallel blending
+  - Visual feedback display
+  - Factory presets for guitars, bass, drums, synths and vocals
+  - PDF manual and tutorial video
+  - Windows 10/11 or higher (64 bit)
+  - macOS 10.15 or higher (64 bit)
+  - AAX requires Pro Tools 12 or higher
+versions:
+  - name: 1.0.3
+  - name: 1.0.4

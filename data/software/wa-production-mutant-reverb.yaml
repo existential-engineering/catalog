@@ -6,9 +6,9 @@ categories:
   - effect
 formats:
   - vst
-  - vst3
   - au
   - aax
+  - vst3
 platforms:
   - mac
   - windows
@@ -16,10 +16,37 @@ url: https://www.waproduction.com/plugins/view/mutant-reverb
 prices:
   - amount: 0
     currency: USD
-description: "Mono-to-stereo reverb plugin with built-in ducker for maintaining
-  clarity, clean algorithmic reverb with compressor-style ducking controls and
-  stereo split processing."
+description: Mutant Reverb is a mono-to-stereo algorithmic reverb with a built-in ducker that lowers the reverb tail in response to the dry source, keeping the original signal defined. Controls cover tail time, pre-delay, room size, diffusion, high and low pass filtering with dampening, and compressor-style ducking.
 details: |-
-  Mono-to-stereo processing. Built-in ducker. Clean algorithmic reverb. Compressor-style ducking controls. Stereo split processing. Frequency shaping.
+  Mutant Reverb is a mono-to-stereo reverb plugin with an internal ducker, intended for vocals, percussion, synths and other material where precise control of the reverb tail matters. Reverb adds warmth and places a sound in a space, but a tail that masks the original signal leaves a muddy and undefined result. The ducker moves the reverb out of the way of the dry audio without any sidechain or compression routing.
+
+  Stereo Split processing turns a mono source into a stereo reverb signal through the reverb algorithm. The Time dial sets the length of the tail, up to an infinite amount for endless ambience, and an additional dot control adjusts pre-delay of up to 100 ms. The Size dial sets the simulated room size, with its own dot control for diffusion, which smooths the sound of the simulated room.
+
+  High and low pass filter nodes limit the output of the ambience to chosen upper and lower frequency limits, reducing high and low end clutter. The dot control attached to the filter adjusts dampening, simulating a more natural sounding space.
+
+  The Internal Ducker works like a standard compressor. Threshold sets the level at which it starts working and Ratio dictates how much gain reduction is applied, with Attack, Hold and Release dials for finer shaping. Attack ignores transients in the original signal, Hold stabilises the generated gain reduction and Release sets the fade out time. The Mix dial sets the wet reverb level, and a mute button silences the source so the ducked reverb can be heard in isolation or the plugin used on an effects send.
+
+  A waveform graph at the top of the interface shows the dry and wet signals in two distinct colours, making the reverb tail and the ducking easy to read. The plugin logo acts as a click and pop free bypass for the whole effect, and factory presets cover ambience from plate and room emulations through to special effects, alongside user presets. Version 2.1.0 added a resizable interface, an updated preset manager, updated licence management and bug fixes, and version 2.2.0 added native Apple Silicon and arm64 support.
 specs: |-
-  Windows 10/11 (64-bit). macOS 10.15+ (64-bit).
+  - Mono-to-stereo algorithmic reverb with Stereo Split processing
+  - Time dial with tail length up to an infinite amount
+  - Pre-delay of up to 100 ms
+  - Size and Diffusion controls for the simulated room
+  - High and low pass filter nodes with dampening control
+  - Built-in ducker with Threshold, Ratio, Attack, Hold and Release controls
+  - Mix dial and source mute for effects send use
+  - Real-time waveform display of dry and wet signals
+  - Click free bypass on the plugin logo
+  - Factory presets from plate and room emulations to special effects
+  - User preset saving
+  - Resizable interface and updated preset manager in version 2.1.0
+  - Native Apple Silicon and arm64 support in version 2.2.0
+  - Full PDF manual and tutorial video
+  - Windows 10/11 or higher (64 bit)
+  - macOS 10.15 or higher (64 bit)
+  - AAX requires Pro Tools 12 or higher
+versions:
+  - name: 2.1.0
+  - name: 2.2.0
+videos:
+  - videoId: leR8_O-_eVg

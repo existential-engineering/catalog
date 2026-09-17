@@ -14,10 +14,26 @@ url: https://www.waproduction.com/plugins/view/combear
 prices:
   - amount: 0
     currency: USD
-description: "Free parallel compression effect plugin for adding dynamic sound
-  to drums, synths, vocals, and other audio elements with compress, mix, and
-  gain controls."
+description: A parallel compression effect for drums, synths and vocals, built around a single Compress control blended against the dry signal. Input Gain, Make-Up Gain, Mix and Bypass complete the controls.
 details: |-
-  Parallel compression. Compress, mix, input gain, makeup gain, and bypass controls. Not compatible with Pro Tools or M1 Mac.
+  ComBear is a parallel compression effect intended for drums, synths, vocals and other sources. Its controls are Compress, Mix, Input Gain, Make-Up Gain and Bypass, with the Compress dial setting the amount of parallel compression applied on a scale from 0 to 100.
+
+  The intended workflow is to compress a part heavily and blend it against an uncompressed duplicate of the same part. Parallel compression, also called New York compression, is a form of upward compression achieved by mixing a dry or lightly compressed signal with a heavily compressed version of the same signal.
+
+  Make-Up Gain compensates for the gain reduction the compression causes and restores fullness to the processed sound. Pushed too far it can clip both the plugin and the source material.
+
+  Input Gain sets how much level arrives at the plugin from the source. Lowering it may need to be compensated for with Make-Up Gain.
+
+  The Mix control sets how much of the processed signal is heard and can be automated, for example to bring the compressed signal into a track gradually to build intensity.
 specs: |-
-  Windows 10/11 (64-bit). macOS 10.15+ (64-bit). Not compatible with Catalina or Apple Silicon.
+  - Parallel compression effect
+  - Compress control from 0 to 100
+  - Input Gain, Make-Up Gain and Mix controls
+  - Bypass switch
+  - Windows 10/11 or higher (64 bit)
+  - macOS 10.15 or higher (64 bit)
+  - No AAX version provided, so not compatible with Pro Tools
+  - Not compatible with macOS Catalina
+  - Not compatible with Apple M1 Macs
+videos:
+  - videoId: nG3g1Tfk4h0
