@@ -29,6 +29,15 @@ const generateKey = customAlphabet(
   IO_KEY_LENGTH
 );
 
+/**
+ * Generate a key that is unique within `existing` and adds it to that set,
+ * so a caller assigning several keys to one entry passes the same set
+ * through and cannot collide with a key it has just handed out.
+ *
+ * Retries on two conditions rather than one: a collision, and a candidate
+ * that fails IO_KEY_PATTERN (which is how an all-digit key is excluded —
+ * see the module header for why that matters).
+ */
 export function generateUniqueIoKey(existing: Set<string>): string {
   let key: string;
   do {
