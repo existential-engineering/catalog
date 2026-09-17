@@ -17,11 +17,13 @@
  *
  * A row is data from a file someone edited by hand, so nothing in it is
  * trusted. An entry that cannot be read, a port the entry does not have, a
- * port already typed `speaker-level` and a name that no longer matches the
- * audit's own predicate are each skipped and reported. That last one is the
- * important one: it means the reviewed list cannot be widened after review
- * by editing a name, and a row that went stale because the entry changed
- * underneath it is refused rather than applied to whatever is there now.
+ * port already typed `speaker-level` and a port the audit's own predicate no
+ * longer accepts are each skipped and reported. That last one is the
+ * important one: it means the reviewed list cannot be widened after review by
+ * editing a name, a row that went stale because the entry changed underneath
+ * it is refused rather than applied to whatever is there now, and the
+ * connector and prose exclusions the audit applies are enforced a second time
+ * at the point of writing.
  *
  * Usage:
  *   pnpm speaker-level:apply --rows reviewed.tsv           # dry run
@@ -34,7 +36,7 @@ import { pathToFileURL } from "node:url";
 
 import { parseDocument } from "yaml";
 import { checkContainedRegularFile, DATA_DIR } from "./lib/utils.js";
-import { isSpeakerPort } from "./speaker-level-audit.js";
+import { entryProse, isPassiveSpeakerPort } from "./speaker-level-audit.js";
 
 export interface Row {
   slug: string;
@@ -93,11 +95,17 @@ export function applyRows(rows: Row[], dir: string, write: boolean): Outcome {
     const file = candidate.path;
 
     const doc = parseDocument(fs.readFileSync(file, "utf8"));
-    const data = doc.toJSON() as { io?: { name?: string; type?: string }[] } | null;
+    const data = doc.toJSON() as {
+      io?: { name?: string; type?: string; connection?: string }[];
+      description?: string;
+      details?: string;
+      specs?: string;
+    } | null;
     if (!Array.isArray(data?.io)) {
       for (const row of slugRows) outcome.skipped.push({ row, reason: "entry has no io" });
       continue;
     }
+    const prose = entryProse(data);
 
     // An entry can hold SEVERAL jacks with one name, which is correct here:
     // CLAUDE.md requires one io entry per physical jack, so a Marshall head
@@ -106,35 +114,49 @@ export function applyRows(rows: Row[], dir: string, write: boolean): Outcome {
     // matches the first one every time: the first cut of this script
     // reported 227 ports applied while changing 217, having retyped ten
     // ports twice and their siblings never. Each row consumes the next
-    // unclaimed match instead.
+    // unclaimed match instead, and prefers one that is still mistyped, or a
+    // half-correct entry (one jack retyped by hand, its sibling not) would
+    // claim the correct jack and leave the mistyped one alone.
     const claimed = new Set<number>();
-    let changed = false;
+    const changedHere: Row[] = [];
     for (const row of slugRows) {
-      const index = data.io.findIndex((io, at) => io?.name === row.port && !claimed.has(at));
+      const matches = (io: { name?: string }, at: number) =>
+        io?.name === row.port && !claimed.has(at);
+      const index = data.io.findIndex((io, at) => matches(io, at) && io.type !== "speaker-level");
       if (index === -1) {
-        outcome.skipped.push({ row, reason: "entry has no such port" });
+        const correct = data.io.findIndex(matches);
+        outcome.skipped.push({
+          row,
+          reason: correct === -1 ? "entry has no such port" : "already speaker-level",
+        });
+        if (correct !== -1) claimed.add(correct);
         continue;
       }
       claimed.add(index);
-      const port = data.io[index];
-      if (port.type === "speaker-level") {
-        outcome.skipped.push({ row, reason: "already speaker-level" });
-        continue;
-      }
-      if (!isSpeakerPort(row.port)) {
-        outcome.skipped.push({ row, reason: "name is not a passive-speaker port" });
+      if (!isPassiveSpeakerPort(data.io[index], prose)) {
+        outcome.skipped.push({ row, reason: "not a passive-speaker port" });
         continue;
       }
       doc.setIn(["io", index, "type"], "speaker-level");
-      outcome.applied++;
-      changed = true;
+      changedHere.push(row);
     }
 
-    if (changed && write) {
-      const target = checkContainedRegularFile(file, dir);
-      if (target.reason !== undefined) continue;
-      fs.writeFileSync(target.path, doc.toString());
+    if (changedHere.length === 0) continue;
+    if (!write) {
+      outcome.applied += changedHere.length;
+      continue;
     }
+
+    // A row counts as applied only once its file is written. The first cut
+    // incremented before this guard, so an entry that became unreadable
+    // between the read and the write was reported as applied and was not.
+    const target = checkContainedRegularFile(file, dir);
+    if (target.reason !== undefined) {
+      for (const row of changedHere) outcome.skipped.push({ row, reason: target.reason });
+      continue;
+    }
+    fs.writeFileSync(target.path, doc.toString());
+    outcome.applied += changedHere.length;
   }
 
   return outcome;
@@ -148,7 +170,16 @@ function main(): void {
   }
   const write = process.argv.includes("--apply");
   const dir = path.join(DATA_DIR, "hardware");
-  const rows = parseRows(fs.readFileSync(process.argv[rowsIndex + 1], "utf8"));
+  // The review list is a path someone typed, so it goes through the same
+  // guard as every other path this tooling did not choose (CLAUDE.md): a
+  // symlink, a FIFO or a device would otherwise be read, and a FIFO never
+  // reaches EOF.
+  const rowsFile = checkContainedRegularFile(process.argv[rowsIndex + 1], process.cwd());
+  if (rowsFile.reason !== undefined) {
+    console.error(`Cannot read --rows file: ${rowsFile.reason}`);
+    process.exit(1);
+  }
+  const rows = parseRows(fs.readFileSync(rowsFile.path, "utf8"));
   const outcome = applyRows(rows, dir, write);
 
   console.log(`\n🔊 ${write ? "Applied" : "Would apply"}: ${outcome.applied} port(s)`);
