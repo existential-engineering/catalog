@@ -80,6 +80,7 @@ export function normalizeCategory(category: string): string {
 }
 
 import { resolveFormatIdentifier } from "./lib/identifier-fallback.js";
+import { IO_KEY_PATTERN } from "./lib/io-keys.js";
 // Load IO position and connection aliases for normalization
 import { loadSchemaContext } from "./lib/schema-loader.js";
 import { expandSearchTerms } from "./lib/synonyms.js";
@@ -1025,9 +1026,24 @@ function populateDatabase(db: Database.Database, dataDir: string, version: strin
     // Insert I/O ports (with normalization)
     if (data.io) {
       for (const io of data.io) {
+        // A port key is what a Studio setup edge references, so a build
+        // that ships a port without one hands every consumer a port they
+        // cannot address, and the next build assigns a key the saved
+        // edges have never seen. Same gate, same remedy and same reason
+        // as the missing-id throw above: `pnpm assign-ids` owns both
+        // fields and writes them in one pass, so neither is checked by
+        // `pnpm validate` (that runs on a pull request in parallel with
+        // the assign-ids workflow, before its patch lands) and both are
+        // checked here, on main, where the patch is already in (AUREO-705).
+        if (!io.key || !IO_KEY_PATTERN.test(io.key)) {
+          throw new Error(
+            `Missing or malformed io key for port '${io.name}' in ${file}. ` +
+              `Run 'pnpm assign-ids' to assign io keys to new ports.`
+          );
+        }
         insertHardwareIO.run(
           id,
-          io.key ?? null,
+          io.key,
           io.name,
           normalizeIOSignalFlow(io.signalFlow),
           io.signalFlow,

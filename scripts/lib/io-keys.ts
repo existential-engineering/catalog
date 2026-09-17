@@ -3,7 +3,18 @@
  *
  * Studio setup edges reference hardware ports by these keys, so they must
  * be unique within an entry and immutable once assigned. Keys are 8-char
- * alphanumeric (no `-`/`_`: Studio handle strings are hyphen-delimited).
+ * alphanumeric (no `-`/`_`: Studio handle strings are hyphen-delimited)
+ * and carry at least one letter.
+ *
+ * That last rule is why the pattern is not a plain `{8}` class. The
+ * alphabet includes digits, so an all-digit key is reachable (about
+ * 4e-7 per key), and such a key's handle re-enters Studio's legacy
+ * numeric-fallback parsing on every load. Exact match wins first, so it
+ * is harmless today, but the fallback is one refactor away from being
+ * the path that answers, and a key is immutable once assigned: the
+ * cheap moment to exclude it is before one is ever written. No key in
+ * the catalog is all-digit today, so the tightening rejects nothing
+ * that exists (AUREO-705).
  */
 
 import { customAlphabet } from "nanoid";
@@ -11,7 +22,7 @@ import type { Document } from "yaml";
 import type { IO } from "./types.js";
 
 export const IO_KEY_LENGTH = 8;
-export const IO_KEY_PATTERN = /^[0-9a-zA-Z]{8}$/;
+export const IO_KEY_PATTERN = /^(?=.*[a-zA-Z])[0-9a-zA-Z]{8}$/;
 
 const generateKey = customAlphabet(
   "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
@@ -22,7 +33,7 @@ export function generateUniqueIoKey(existing: Set<string>): string {
   let key: string;
   do {
     key = generateKey();
-  } while (existing.has(key));
+  } while (existing.has(key) || !IO_KEY_PATTERN.test(key));
   existing.add(key);
   return key;
 }

@@ -32,6 +32,33 @@ describe("generateUniqueIoKey", () => {
     expect(existing.has(key)).toBe(true);
     expect(existing.size).toBe(2);
   });
+
+  it("never returns an all-digit key", () => {
+    // The generator alphabet includes digits, so an all-digit key is
+    // reachable and would put the port's handle back on Studio's legacy
+    // numeric-fallback parse. A key is immutable once assigned, so the
+    // only place to exclude one is before it is written (AUREO-705).
+    const existing = new Set<string>();
+    for (let i = 0; i < 2000; i++) {
+      expect(generateUniqueIoKey(existing)).toMatch(/[a-zA-Z]/);
+    }
+  });
+});
+
+describe("IO_KEY_PATTERN", () => {
+  it("accepts 8 alphanumeric characters carrying at least one letter", () => {
+    expect("abc12345").toMatch(IO_KEY_PATTERN);
+    expect("1234567a").toMatch(IO_KEY_PATTERN);
+    expect("ABCDEFGH").toMatch(IO_KEY_PATTERN);
+  });
+
+  it("rejects an all-digit key, and the wrong length or alphabet", () => {
+    expect("12345678").not.toMatch(IO_KEY_PATTERN);
+    expect("abc1234").not.toMatch(IO_KEY_PATTERN);
+    expect("abc123456").not.toMatch(IO_KEY_PATTERN);
+    expect("abc-1234").not.toMatch(IO_KEY_PATTERN);
+    expect("abc_1234").not.toMatch(IO_KEY_PATTERN);
+  });
 });
 
 describe("findDuplicateIoKeys", () => {

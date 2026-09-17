@@ -30,6 +30,23 @@ Core rules that drive everything below:
 - `position` is the device edge the jack sits on (Top = rear edge, Bottom =
   front, Left/Right = sides). `columnPosition`/`rowPosition` order jacks within
   that edge (left→right / top→bottom, viewing the face head-on).
+- **Never modify or drop an existing `io[].key`.** A key is a port's permanent
+  identity: Studio setup edges reference ports by it, so reusing one on a
+  different jack silently re-points a user's cable and dropping one deletes the
+  edge (AUREO-702). This command is the one that rewrites whole io lists, so it
+  is the one most able to cause that. Carry each key with its jack:
+  - Renaming, re-typing or re-positioning a jack **keeps** its key. That is the
+    intended workflow, not a violation.
+  - Splitting a collapsed pair keeps the original key on **one** of the halves
+    and leaves the other keyless for `pnpm assign-ids`.
+  - Deleting a jack the product does not have deletes its key with it.
+  - A genuinely new jack gets **no** key by hand. Leave it out and run
+    `pnpm assign-ids`, which generates one that cannot collide.
+
+  The Validate workflow's `check-id-immutability.ts` step is the backstop, not
+  the plan: it fails the PR after the fact, where following the rule costs
+  nothing. Check yourself before pushing with
+  `pnpm exec tsx scripts/check-id-immutability.ts origin/main`.
 
 ## Phase 1 — Select the target and read current state
 

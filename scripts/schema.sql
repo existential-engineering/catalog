@@ -315,7 +315,11 @@ CREATE TABLE IF NOT EXISTS hardware_search_terms (
 CREATE TABLE IF NOT EXISTS hardware_io (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     hardware_id TEXT NOT NULL REFERENCES hardware(id) ON DELETE CASCADE,
-    port_key TEXT,                    -- stable per-port key from YAML io[].key (unique per hardware)
+    port_key TEXT NOT NULL,           -- stable per-port key from YAML io[].key (unique per hardware)
+                                      -- NOT NULL since AUREO-705: every io entry carries a key and
+                                      -- build-sqlite.ts refuses one that does not, so the unique index
+                                      -- below is a real constraint (SQLite treats NULLs as distinct,
+                                      -- so a nullable port_key let any number of keyless ports coexist).
     name TEXT NOT NULL,
     signal_flow TEXT NOT NULL,        -- input, output (bidirectional flattened to input for pre-peer Studio builds)
     signal_flow_raw TEXT,             -- unflattened YAML value (input, output, bidirectional); newer Studio reads this first
