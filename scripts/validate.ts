@@ -502,12 +502,25 @@ const createHpValidator = () =>
 
 const IOSchema = z
   .object({
-    // Stable per-port key (assigned by pnpm assign-ids). Optional until the
-    // backfill completes, then flipped to required (AUREO-705). Immutable
-    // once assigned: Studio setup edges reference ports by this key.
+    // Stable per-port key (assigned by pnpm assign-ids). Immutable once
+    // assigned: Studio setup edges reference ports by this key.
+    //
+    // Optional HERE and required in the BUILD, which is the same split
+    // `id` takes and for the same reason: assign-ids.yml and validate.yml
+    // both fire on `pull_request`, so this validator runs on a head commit
+    // the assign-ids patch has not landed on yet. Requiring a key here
+    // would fail the first run of every pull request that adds a port,
+    // which is every import and every `/io-enrich` pass. `build-sqlite.ts`
+    // throws on a missing or malformed key instead: it runs on main, after
+    // the patch is in, and shipping a keyless port is the failure that
+    // actually costs something (AUREO-705, resolved this way rather than
+    // the flip to required the ticket proposed).
     key: z
       .string()
-      .regex(IO_KEY_PATTERN, "IO key must be exactly 8 alphanumeric characters")
+      .regex(
+        IO_KEY_PATTERN,
+        "IO key must be exactly 8 alphanumeric characters, at least one a letter"
+      )
       .optional(),
     name: z.string().check((ctx) => {
       if (STORAGE_MEDIA_SLOT.test(ctx.value)) {

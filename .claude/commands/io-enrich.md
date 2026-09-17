@@ -30,6 +30,23 @@ Core rules that drive everything below:
 - `position` is the device edge the jack sits on (Top = rear edge, Bottom =
   front, Left/Right = sides). `columnPosition`/`rowPosition` order jacks within
   that edge (left→right / top→bottom, viewing the face head-on).
+- **Never modify or drop an existing `io[].key`.** A key is a port's permanent
+  identity: Studio setup edges reference ports by it, so reusing one on a
+  different jack silently re-points a user's cable and dropping one deletes the
+  edge (AUREO-702). This command is the one that rewrites whole io lists, so it
+  is the one most able to cause that. Carry each key with its jack:
+  - Renaming, re-typing or re-positioning a jack **keeps** its key. That is the
+    intended workflow, not a violation.
+  - Splitting a collapsed pair keeps the original key on **one** of the halves
+    and leaves the other keyless for `pnpm assign-ids`.
+  - Deleting a jack the product does not have deletes its key with it.
+  - A genuinely new jack gets **no** key by hand. Leave it out and run
+    `pnpm assign-ids`, which generates one that cannot collide.
+
+  The Validate workflow's `check-id-immutability.ts` step is the backstop, not
+  the plan: it fails the PR after the fact, where following the rule costs
+  nothing. Check yourself before pushing with
+  `pnpm exec tsx scripts/check-id-immutability.ts origin/main`.
 
 ## Phase 1 — Select the target and read current state
 
@@ -112,12 +129,19 @@ leave column/row off the whole edge rather than guessing.
 
 1. Edit only the `io:` block of the YAML, preserving the rest of the file. A
    brief comment above `io:` describing the panel layout is welcome.
-2. `npx prettier --write data/hardware/<slug>.yaml` then `pnpm validate`.
-3. Fix any errors and re-run. There must be no new advisory warnings for this
+2. `pnpm assign-ids` — **required, not optional, whenever you added a port.**
+   A new jack is written without a key (see the preservation rule above) and
+   this is the step that gives it one. `pnpm validate` will not catch a
+   missing key, because `key` is optional there; the build refuses it, and
+   `validate.yml` runs `pnpm build` on every pull request, so skipping this
+   reddens CI on a file that looked clean locally.
+3. `npx prettier --write data/hardware/<slug>.yaml` then `pnpm validate`.
+4. Fix any errors and re-run. There must be no new advisory warnings for this
    file — especially **W128** (combine), **W120** (unknown type), **W121**
    (unknown connection). Add genuinely-new connector/type values to the schema
    YAML via the same PR only when you've confirmed they're valid.
-4. Optional: `pnpm build` and query `hardware_io` to confirm the rows land.
+5. `pnpm build` — confirms every port carries a key, and lets you query
+   `hardware_io` to check the rows land.
 
 For just column/row on an already-correct entry, `pnpm enrich-io <slug>` is the
 interactive shortcut instead of hand-editing.

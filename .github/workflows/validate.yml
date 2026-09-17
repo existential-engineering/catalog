@@ -84,6 +84,19 @@ jobs:
         if: github.event_name == 'pull_request'
         run: pnpm exec tsx scripts/check-id-immutability.ts origin/main
 
+      # `pnpm assign-ids` owns `id` and `io[].key`, and the build refuses an
+      # entry missing either. This workflow and assign-ids.yml both fire on
+      # `pull_request` and run in parallel, so the tree checked out here is
+      # the one BEFORE that workflow's patch lands: without this step the
+      # test build below fails on any pull request that adds an entry or a
+      # port, and only passes on the re-run after the patch is pushed.
+      # Nothing is committed here — the assignment is local to the runner,
+      # so this makes the test build self-sufficient without taking any
+      # write permission. assign-ids.yml stays the thing that actually
+      # writes the keys to the branch (AUREO-705).
+      - name: Assign ids and io keys (local, not committed)
+        run: pnpm assign-ids
+
       - name: Build database (test)
         run: pnpm build 0
 
