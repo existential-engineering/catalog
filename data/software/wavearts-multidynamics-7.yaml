@@ -14,20 +14,39 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/multidynamics-7
-description: A versatile multi-band dynamics processor combining equalization and dynamics processing for mastering, track processing, sound design, and noise reduction. Features six independently configurable bands for compression or expansion/gating.
+description: MultiDynamics is a versatile multi-band dynamics plugin for mastering, track processing, sound design, and noise reduction. Each of its six bands can be individually configured for compression or expansion and gating, providing precise control over the audio.
 details: |-
-  - Up to 6 independent bands, each configurable as a full-featured compressor or expander/gate, providing flexible multi-band dynamics control.
-  - Proprietary crossover filter network eliminates amplitude distortion, with selectable slopes of 6 dB/oct, 18 dB/oct, and 30 dB/oct.
-  - Clean and vintage compression modes with adjustable knees and lookahead; zero latency operation available when lookahead is disabled.
-  - External sidechain input and sidechain EQ filter support, with a learn function for automatic threshold setting and per-band bypass, solo, and mute controls.
-  - Real-time spectrum display, output peak limiter, and multiple metering options including Peak, Peak & RMS, RMS, and K-system; iLok licensing supported but not required.
+  Multiband dynamics processing combines the techniques of equalization and dynamics processing, and is more powerful than a static equalizer or a single band dynamics processor. A simple application is frequency-dependent dynamics, compressing the vocals in a mix without affecting the low frequencies (bass, kick drum) or high frequencies (snare, cymbals), done by creating a midrange band over the vocal range and setting it to compress.
+
+  Multiband dynamics can also be thought of as level-dependent EQ. A high frequency band that increases gain when the input is below threshold will brighten a hi-hat only when the drums are played softly, which a shelving EQ cannot do because it changes the tonal balance at all levels equally.
+
+  Noise reduction is another use, accomplished with multiple gating bands whose thresholds are set just above the ambient noise level. MultiDynamics excels at de-noising and does not suffer from the artifacts typical of FFT-based de-noisers. It can also duck music behind narration, and because the processor is multiband the music is ducked only in the frequency ranges where there is dialog energy, which makes for a more transparent effect.
+
+  MultiDynamics 7 introduces a new dark-theme interface and extensive sidechain capability. Each dynamics band can be driven from the input signal or an external sidechain input, using a wide-band or band-filtered signal, or either signal filtered by a separate sidechain EQ, so one frequency band can be driven from another. A Learn feature automatically sets band thresholds to detected peak or RMS levels, a peak limiter has been added to the output processing, input meters and an input gain control have been added, and the metering section offers peak, peak and RMS, RMS, and K-system options alongside a realtime spectrum display. MultiDynamics 7 is included in Power Suite 7.
 specs: |-
-  - Bands: up to 6 independent bands
-  - Crossover slopes: 6 dB/oct, 18 dB/oct, 30 dB/oct
-  - Compression modes: Clean and Vintage
-  - Sidechain: external sidechain input + sidechain EQ filter
-  - Lookahead: adjustable (zero latency when disabled)
-  - Metering: Peak, Peak & RMS, RMS, K-system
-  - Licensing: iLok supported (not required)
-  - macOS: AU, VST3, AAX; requires macOS 10.13+; Apple Silicon native; 64-bit hosts only; AAX requires Pro Tools 11+
-  - Windows: VST2, VST3, AAX; requires Windows 7/8/10/11; 64-bit hosts only; AAX requires Pro Tools 11+
+  - Up to 6 independent bands
+  - Proprietary crossover filter network eliminates amplitude distortion between bands
+  - 6 dB/oct, 18 dB/oct, and 30 dB/oct crossover slopes
+  - Full featured compressor or expander/gate per band
+  - Clean and vintage compression modes
+  - Supports external sidechain input and sidechain EQ filter
+  - Adjustable knees and lookahead
+  - Zero latency operation when lookahead is off
+  - Latency compensation
+  - Per band bypass, solo and mute controls
+  - Comprehensive visualization of input levels and dynamic EQ response
+  - Learn function to automatically set band thresholds
+  - Realtime spectrum display
+  - Output peak limiter
+  - Level meters support Peak, Peak & RMS, RMS, and K-system
+  - Requires a host program that supports audio plug-ins
+  - iLok licensing is supported but not required
+  - Macintosh formats: AU, VST3, AAX
+  - Windows formats: VST2, VST3, AAX
+  - macOS 10.13 (High Sierra) and higher
+  - Apple Silicon natively supported (AU, VST3, AAX)
+  - Windows 7/8/10/11
+  - AAX requires Pro Tools 11 and higher
+  - 64-bit hosts only
+videos:
+  - videoId: v3grVBE5Kpg

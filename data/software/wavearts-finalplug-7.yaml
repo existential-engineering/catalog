@@ -14,21 +14,34 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/finalplug-7
-description: FinalPlug 7 is a peak limiting and loudness compliance plugin combining a lookahead peak limiter with ITU BS.1770 loudness metering for mastering and gain staging. It features true peak limiting, automated loudness/true peak targeting via a MATCH button, and integrated dithering for final delivery.
+description: FinalPlug combines a lookahead peak limiter with ITU BS.1770 loudness metering, making it an ideal plugin for audio mastering. It can be used as an insert effect to provide limiting for gain staging or volume maximization, or placed at the end of a mastering chain to meet loudness and true peak delivery requirements.
 details: |-
-  FinalPlug 7 combines a sonically transparent lookahead peak limiter with ITU BS.1770 loudness metering, making it a complete solution for mastering and loudness-compliant delivery to streaming platforms. The plugin features a MATCH button that automatically sets the output ceiling and gain to meet preset loudness and true peak targets for common streaming and broadcast standards. True peak limiting mode with 8x oversampling prevents inter-sample peaks from exceeding the target ceiling, ensuring compliance across all playback systems. FinalPlug 7 includes bit depth truncation from 4 to 24 bits with TPDF dithering for optimal quantization noise shaping when rendering to lower bit depths. The UI is resizable and includes high-resolution graphics for HiDPI displays. Streaming and CD mastering target presets are built in, with information tips available for all preset and target settings.
+  The FinalPlug interface could hardly be simpler. When used as a loudness maximizer, select a desired output ceiling level, say -0.1 dB, and then adjust the threshold level. Decreasing the threshold increases the volume.
+
+  To meet loudness and true peak delivery standards, select the Analyze preset and then a delivery target specification, which sets up the integrated loudness and true peak target levels. Playing the session displays integrated loudness and true peak levels as the music plays, coloured orange if they exceed the target levels. Clicking MATCH at the end of playback sets the limiter parameters to meet the target specification, so a second pass yields the desired integrated loudness without exceeding the true peak level and the compliant audio can be exported.
+
+  FinalPlug 7 is included in Power Suite 7.
 specs: |-
-  - Lookahead peak limiter with auto-release and 8x oversampling
-  - True peak limiting mode (compliant with ITU BS.1770)
-  - ITU BS.1770 integrated loudness metering (LUFS) with overflow detection
-  - MATCH button for automated loudness/true peak targeting
-  - Preset streaming targets (Spotify, Apple Music, YouTube, etc.) and CD mastering targets
-  - Bit depth truncation: 4–24 bits with TPDF dithering
-  - Resizable UI with high-resolution HiDPI support
-  - macOS: AU, VST3, AAX (64-bit, macOS 10.13+, native Apple Silicon support)
-  - Windows: VST2, VST3, AAX (64-bit, Windows 7/8/10/11)
-  - Pro Tools 11 and higher required for AAX
-  - 30-day fully functional free trial available
+  - Sonically transparent peak limiting, for use as peak limiter or volume maximizer
+  - True peak limiting mode
+  - Auto-release mode
+  - Limiter oversampling up to 8x
+  - ITU BS.1770 loudness metering
+  - Writes loudness and overflow state as automation parameters
+  - MATCH button automatically configures the limiter to meet loudness and true peak delivery targets
+  - Preset menu of common industry delivery targets, or user-defined targets
+  - Bit depth truncation from 4 to 24 bits
+  - TPDF dithering with comprehensive noise shaping options
+  - Customizable UI that can show only the features needed
+  - Requires a host program that supports audio plug-ins
+  - iLok licensing is supported but not required
+  - Macintosh formats: AU, VST3, AAX
+  - Windows formats: VST2, VST3, AAX
+  - macOS 10.13 (High Sierra) and higher
+  - Apple Silicon natively supported (AU, VST3, AAX)
+  - Windows 7/8/10/11
+  - AAX requires Pro Tools 11 and higher
+  - 64-bit hosts only
 versions:
   - name: "7.06"
     releaseDate: 2025-08-20
@@ -48,3 +61,5 @@ versions:
   - name: "7.01"
     releaseDate: 2023-11-07
     description: Initial release
+videos:
+  - videoId: lfe2VyDlQ84

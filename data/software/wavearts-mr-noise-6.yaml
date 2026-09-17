@@ -14,31 +14,38 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/mr-noise-6
-description: MR Noise 6 is a stellar-sounding broadband noise reduction plugin that works in the frequency domain, automatically learning the noise spectrum for fast, transparent noise removal with low latency suitable for live applications.
+description: MR Noise is a broadband noise reduction processor. It distinguishes itself by being both great sounding and incredibly easy to use.
 details: |-
-  MR Noise 6 offers frequency spectrum-based noise reduction that automatically learns the noise floor, enabling effective reduction without manual setup required in most cases. The plugin operates with extremely low latency (under 20 milliseconds), making it suitable for live processing as well as post-production work.
+  MR Noise is a broadband noise reduction processor. Like most noise reduction systems it works in the frequency domain, and requires that the noise spectrum be learned before noise reduction can commence. If a track starts with a bit of silence then MR Noise works right out of the box, since the Learn parameter is enabled by default, so on playback MR Noise learns the noise profile and starts noise reduction. The default parameters work extremely well for most cases.
 
-  The noise floor learning algorithm works in as little as 50 milliseconds, allowing quick setup even on short noise samples. Auto Dynamics mode intelligently preserves sharp transients while still reducing steady-state noise, helping maintain the natural feel of the audio.
+  MR Noise combines existing noise reduction algorithms with new innovations, in particular the Auto Dynamics mode. That mode automatically adjusts the attack and release times of the noise reduction processor based upon the amount of transients in the input signal. It minimizes artifacts in the noise reduction processing while maintaining sharp transients that would normally be smeared by other methods.
 
-  A Monitor feature lets users audibly isolate the removed noise signal, making it easy to verify that only unwanted noise is being attenuated rather than musical content. The frequency response display shows input, output, and noise floor spectra simultaneously for complete visual feedback.
+  The frequency response display shows the spectrum of the input signal, noise floor, and output signal, so the frequencies being reduced are visible at a glance. A monitor feature plays back the noise that is being removed, with separate volume control. For most cases it is enough to select a preset and hit play, then set the Amount control. For fine tweaking, the noise floor and all the reduction parameters can be edited as a function of frequency by dragging control points on the frequency response display.
 
-  Manual noise floor editing is supported for cases where automatic learning needs refinement, and parameters can be adjusted on a per-frequency basis for surgical control. The plugin supports up to 192 kHz sample rates and operates in both mono and stereo configurations.
-
-  On macOS, formats available are AU, VST3, and AAX. On Windows, VST2, VST3, and AAX are provided. Apple Silicon is natively supported on macOS 10.13 (High Sierra) and higher. Windows 7/8/10/11 are supported with both 32-bit and 64-bit hosts.
+  MR Noise 6 is included in Master Restoration Suite 6.
 specs: |-
-  - Frequency spectrum-based broadband noise reduction
-  - Automatic noise floor learning in as little as 50 ms
-  - Ultra-low latency under 20 ms — suitable for live use
-  - Auto Dynamics mode preserves sharp transients
-  - Monitor mode to audibly isolate removed noise
-  - Frequency response display: input, output, and noise floor spectra
-  - Manual noise floor editing with per-frequency parameter control
-  - Supports up to 192 kHz sample rates
-  - Mono and stereo operation
-  - Latency compensation compatible with supported hosts
-  - iLok licensing supported (optional)
-  - macOS: AU, VST3, AAX; requires 10.13+; Apple Silicon native; 64-bit hosts only
-  - Windows: VST2, VST3, AAX; supports Windows 7/8/10/11; 32-bit and 64-bit hosts
+  - Frequency spectrum based noise reduction
+  - Low latency (under 20 msec), hence can be used in live situations
+  - Fast noise floor learning time (down to 50 msec), hence noise looping is not required
+  - Auto dynamics mode keeps transients sharp while avoiding squirrelly artifacts
+  - Monitor feature to hear removed noise
+  - Comprehensive display shows spectrum of input signal, output signal and noise floor
+  - Noise floor can be manually edited
+  - Parameters can be edited as function of frequency
+  - Latency compensation via compatible hosts
+  - Up to 192 kHz sampling rate
+  - Mono or stereo
+  - Requires a host program that supports audio plug-ins
+  - iLok licensing is supported but not required
+  - Macintosh formats: AU, VST3, AAX
+  - macOS 10.13 (High Sierra) and higher
+  - Apple Silicon natively supported (AU, VST3, AAX)
+  - AAX on macOS requires Pro Tools 11 and higher
+  - macOS: 64-bit hosts only
+  - Windows formats: VST2, VST3, AAX
+  - Windows 7/8/10/11
+  - AAX on Windows requires Pro Tools 10.3.5 and higher
+  - Windows: 32-bit and 64-bit hosts supported
 versions:
   - name: "6.09"
     releaseDate: 2023-10-26
@@ -70,3 +77,5 @@ versions:
   - name: "6.00"
     releaseDate: 2020-09-25
     description: Initial v6 release with macOS Catalina support, VST3 support, notarized installers, Wave Arts licensing for AAX, user preset manager, and dark theme.
+videos:
+  - videoId: x3AJJQreoxw

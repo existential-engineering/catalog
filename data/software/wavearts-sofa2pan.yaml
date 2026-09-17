@@ -1,0 +1,40 @@
+id: Eup7v8IGpwoPdlnoLRf5w
+name: Sofa2Pan
+manufacturer: wavearts
+primaryCategory: utility
+categories:
+  - standalone
+  - binaural
+  - spatial
+  - ir
+formats:
+  - standalone
+platforms:
+  - mac
+  - windows
+url: https://wavearts.com/products/plugins/sofa2pan
+prices:
+  - amount: 0
+    currency: USD
+description: Sofa2Pan is for Panorama 7 users who may want to import HRIR data
+  in SOFA format. SOFA (Spatially Oriented Format for Acoustics) is a standard
+  file format used for interchange of head-related impulse responses.
+details: |-
+  Free application to convert SOFA format HRIRs to Panorama format. Sofa2Pan is for Panorama 7 users who may want to import HRIR data in SOFA format. SOFA (Spatially Oriented Format for Acoustics) is a standard file format used for interchange of head-related impulse responses, and there are large publicly available sets of binaural responses in that format. Sofa2Pan converts SOFA format HRIR data to Panorama format, and by default leaves the converted HRIR data in the directory that Panorama 7 scans for user HRIRs. It can be launched from Panorama 7 via the HRIR menu option 'Import SOFA data'.
+
+  Conversion is done by selecting locations from the SOFA data to populate the Panorama data. Panorama expects data to be spaced uniformly in azimuth at each elevation, and for elevations to be spaced uniformly. SOFA HRIR data may have some other spatial distribution, and may not extend to all elevations. Sofa2Pan first scans the distribution of locations in the SOFA data and determines the minimum and maximum elevations represented, and also the average angular spacing between locations. It then chooses Panorama compatible elevations and azimuth spacing, and iterates through these. At each elevation and azimuth it selects the closest location in the SOFA data and populates the Panorama data, so there may be some location errors, though in practice the errors are small and not noticeable during spatialization.
+
+  For Sofa2Pan to work well, the HRIR data must be reasonably well distributed around the head. If all the sampled locations are on one side of the head, or if there are only a handful of locations sampled, the results will not be good. By default, Sofa2Pan converts the HRIR data to minimum-phase responses, separately calculating the interaural time delay, an option that sounds best with Panorama when spatializing moving sources.
+specs: |-
+  - Converts SOFA format HRIRs to Panorama format
+  - Option to batch convert entire directory trees
+  - Options for no processing, crop, or convert to minimum-phase
+  - Uses the NetCDF libraries to read SOFA format data
+  - On Windows, select 'Add netCDF to the system PATH for all users' when installing the NetCDF libraries
+  - MacOS 10.11 and up, 64-bit only
+  - Intel x86 code, will run under Rosetta on Apple silicon
+  - Windows 7/8/10/11, 64-bit only
+links:
+  - url: https://wavearts.com/support/version-history/sofa2pan
+    type: support
+    title: Version History

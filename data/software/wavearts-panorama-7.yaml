@@ -14,32 +14,36 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/panorama-7
-description: An advanced virtual acoustics plugin utilizing HRTF-based binaural synthesis and acoustic environment modeling. It replicates 3D sound propagation within physical spaces for both headphone and loudspeaker playback.
+description: Panorama is an advanced virtual acoustics plugin that delivers lifelike auditory experiences suitable for both headphone and loudspeaker playback. Using HRTF-based binaural synthesis and acoustic environment modeling, Panorama replicates 3D sound propagation within physical spaces.
 details: |-
-  Panorama 7 is billed as the definitive 3D spatializer, using head-related impulse response (HRIR) binaural synthesis to place audio sources anywhere in a 3D space around the listener.
+  Panorama has many possible uses. For 3D audio production it is inserted on each track in a mix and used to pan individual sounds around a virtual space, which works best for headphone mixes but applies to loudspeaker playback as well. Source positions can be driven by the sequencer as motion trajectories or simply automated.
 
-  The plugin models complete acoustic environments including early room reflections and late diffuse reverberation, simulating how sound propagates within physical spaces.
+  In conventional stereo mixes, 3D processing can create a panning effect that stands out from conventional power panning, and the sequencer allows all kinds of modulating auto-pan effects. Panorama can also process stereo mixes to sound very wide over loudspeakers, and it can simulate stereo and surround playback on headphones for virtual monitoring.
 
-  A position sequencer enables trajectory automation and beat-synced movement effects, while Doppler pitch shifting and distance modeling add further realism to moving sources.
+  The main new feature in Panorama 7 is the position sequencer, which pans a sound along a set of trajectory waypoints for trajectory automation and beat-synced musical effects. Version 7 also brings a new dark-theme interface, a larger panning area with side and rear view options, a zoom control, and a virtual area extended from the range of -10 to +10 feet in Panorama 6 to a range of -100 to +100 feet.
 
-  For loudspeaker playback, Panorama 7 includes a crosstalk canceling mode that converts binaural output for stereo speakers. SOFA format HRIR and user-supplied HRIR files are supported for custom head measurements.
-
-  The dark-theme UI features an expandable panning area spanning -100 to +100 feet, zoom controls, and multiple view options. A fully functional 30-day demo is available. The plugin is also included in the Power Suite 7 bundle.
+  Panorama 7 adds support for SOFA format HRIRs, the standard file format for interchange of head-related impulse responses, via a conversion application called Sofa2Pan. Third-party HRIRs are specified by filename and sample rate converted to the session rate when loaded. A Near Head Model improves reproduction accuracy for positions close to the head, and Stereo Pan and Stereo Passthru HRIRs implement traditional stereo panning and binaural to loudspeaker conversion. Panorama 7 is included in Power Suite 7.
 specs: |-
-  - HRIR binaural synthesis
-  - Early room reflection and late diffuse reverberation modeling
-  - SOFA format HRIR support
-  - User-supplied HRIR support
-  - Position sequencer for trajectory automation and beat-synced effects
-  - Doppler pitch effect and distance modeling
-  - Crosstalk canceling for loudspeaker playback
-  - Stereo panning and binaural-to-loudspeaker conversion
-  - Dark theme UI with expandable panning area (-100 to +100 feet)
-  - Zoom controls and multiple view options
-  - Mac: AU, VST3, AAX (64-bit hosts, macOS 10.13+, Apple Silicon native)
-  - Windows: VST2, VST3, AAX (64-bit hosts, Windows 7/8/10/11)
-  - Pro Tools 11+ required for AAX format
-  - 30-day fully functional demo available
+  - Head-related impulse response (HRIR) based binaural synthesis
+  - Early room reflection modeling
+  - Late diffuse reverberation
+  - Doppler pitch effect
+  - Distance modeling
+  - Position sequencer for automating trajectories and creating musical panning effects (auto-pan)
+  - Crosstalk canceling based on real head models for loudspeaker playback
+  - Support for SOFA format HRIRs
+  - Support for user supplied HRIRs
+  - Conventional stereo panning mode
+  - Binaural to loudspeaker conversion
+  - Requires a host program that supports audio plug-ins
+  - iLok licensing is supported but not required
+  - Macintosh formats: AU, VST3, AAX
+  - Windows formats: VST2, VST3, AAX
+  - macOS 10.13 (High Sierra) and higher
+  - Apple Silicon natively supported (AU, VST3, AAX)
+  - Windows 7/8/10/11
+  - AAX requires Pro Tools 11 and higher
+  - 64-bit hosts only
 versions:
   - name: "7.09"
     releaseDate: 2025-08-20
@@ -68,3 +72,5 @@ versions:
   - name: "7.01"
     releaseDate: 2022-12-06
     description: Initial release
+videos:
+  - videoId: OPOE7PA4Ozg

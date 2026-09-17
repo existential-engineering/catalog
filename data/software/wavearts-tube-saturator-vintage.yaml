@@ -16,27 +16,37 @@ url: https://wavearts.com/products/plugins/tube-saturator-vintage
 prices:
   - amount: 0
     currency: USD
-description: A free reissue of the original Tube Saturator that uses 64-bit circuit simulation technology to faithfully reproduce the sound of a dual triode preamp. Simulates a basic circuit with a three-band EQ feeding two 12AX7 triode preamp stages for adding analog warmth or distortion to recordings.
+description: Tube Saturator Vintage is a free reissue of the original Tube Saturator. It uses circuit simulation technology to faithfully reproduce the sound of a dual triode preamp.
 details: |-
-  - 64-bit circuit simulation technology faithfully reproduces the sound of a dual triode preamp circuit, providing authentic analog warmth and harmonic saturation.
-  - Simulates two common cathode 12AX7 triode preamp stages preceded by a Baxandall 3-band EQ with bypass option for tonal shaping before saturation.
-  - Drive control allows adjustment of distortion amount; FAT mode increases punch for more aggressive saturation characteristics.
-  - Zero latency operation with support for sample rates up to 192 kHz (CPU dependent), suitable for both tracking and mixing workflows.
-  - Supports mono or stereo processing with analog-style metering; Apple Silicon natively supported; GUI scaling and dark theme options available.
+  Tube Saturator Vintage is a free reissue of the original Tube Saturator. It uses circuit simulation technology to faithfully reproduce the sound of a dual triode preamp. That technology is very CPU intensive, which is why the successor, Tube Saturator 2, was developed to be vastly more efficient, nearly identical in simulation accuracy, and to add other features. Some players prefer the sound of the original, so it has been reissued as a free plug-in. It is free but still requires registration, either through the Register button in the plug-in or from a Wave Arts account page.
+
+  Tube Saturator uses state of the art circuit simulation technology to capture every nuance of an analog circuit, rather than the radically simplified models other tube simulators use. With circuit simulation, the analog schematic, consisting of the individual resistors, capacitors, tubes, and so on, completely defines the signal processing. The schematic is converted into a system of non-linear differential equations which is solved at each sampling period, in real time, so it sounds like the analog circuit.
+
+  Tube Saturator is a basic circuit consisting of a Baxandall type three-band EQ feeding two 12AX7 triode preamp stages, similar to preamp stages found in a guitar or high fidelity amp, and hence it gives the same distortion and tonal characteristics as saturating a real tube preamp. The circuit simulation technology is very CPU intensive and a fast computer is recommended to run the plug-in.
+
+  Increasing the Drive control increases the digital input gain while decreasing the digital output gain, so distortion levels are easy to adjust. The FAT switch changes the bias circuit of the first preamp stage to increase gain and saturation. It suits adding a bit of analog warmth to recordings, or more drive for distortion, and it also works as a saturating peak limiter.
 specs: |-
-  - Formats (macOS): AU, VST2, VST3, AAX
-  - Formats (Windows): VST2, VST3, AAX
-  - Platform: macOS 10.13 (High Sierra) and higher; Apple Silicon native
-  - Platform: Windows 7, 8, 10, 11
-  - Host requirement: 64-bit DAW only
-  - Pro Tools AAX (Mac): Pro Tools 11+
-  - Pro Tools AAX (Windows): Pro Tools 10.3.5+
-  - Latency: Zero latency
-  - Maximum sample rate: 192 kHz (CPU dependent)
-  - Processing: Mono or stereo
-  - Tube stages: Two common cathode 12AX7 triode preamp stages
-  - EQ: Baxandall 3-band with bypass
-  - Licensing: Free, requires registration
+  - Accurate tube preamp simulator using 64-bit circuit simulation technology
+  - Two common cathode 12AX7 preamp stages
+  - Baxandall 3-band EQ
+  - Drive control for distortion adjustment
+  - EQ bypass
+  - FAT mode for increased punch
+  - Analog style metering
+  - No latency
+  - Up to 192 kHz sampling rate, depending on CPU speed
+  - Mono or stereo
+  - Requires a host program that supports audio plug-ins
+  - iLok licensing is not supported
+  - Macintosh formats: AU, VST2, VST3, AAX
+  - macOS 10.13 (High Sierra) and higher
+  - Apple Silicon natively supported (AU, VST2, VST3, AAX)
+  - AAX on macOS requires Pro Tools 11 and higher
+  - macOS: 64-bit hosts only
+  - Windows formats: VST2, VST3, AAX
+  - Windows 7/8/10/11
+  - AAX on Windows requires Pro Tools 10.3.5 and higher
+  - Free, registration required
 versions:
   - name: "1.11"
     releaseDate: 2025-01-21
@@ -65,3 +75,5 @@ versions:
   - name: "1.03"
     releaseDate: 2017-06-19
     description: Initial release
+videos:
+  - videoId: HTlHysI8Um0
