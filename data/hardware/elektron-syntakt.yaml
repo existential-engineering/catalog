@@ -1,12 +1,132 @@
 id: fZUyttOiECgoskhCH9YDU
 name: Syntakt
 manufacturer: elektron
-primaryCategory: synthesizer
+primaryCategory: drum-machine
+capabilities:
+  - subtractive-synthesis
+  - sequencing
+  - overdrive
+  - filter
+  - equalization
+  - delay
+  - reverb
+url: https://www.elektron.se/explore/syntakt
 prices:
   - amount: 1149
     currency: USD
-description: Twelve-track drum computer and synthesizer combining analog and
-  digital sound engines. Features eight analog tracks with dedicated circuitry
-  for bass drum, snare, hi-hat, cymbal, and analog synthesis, plus four digital
-  tracks with a wide range of synthesis algorithms. Includes Elektron's
-  signature sequencer with parameter locks, trig conditions, and sound locks.
+description: Twelve-track drum computer and synthesizer combining analog and digital sound engines. Features eight analog tracks with dedicated circuitry for bass drum, snare, hi-hat, cymbal, and analog synthesis, plus four digital tracks with a wide range of synthesis algorithms. Includes Elektron's signature sequencer with parameter locks, trig conditions, and sound locks.
+details: |-
+  Enter a sonic metropolis with Syntakt. Analog and Digital synthesis. Drum and melody. In full fusion. All your sound crafting, sequencing, and performance needs are fulfilled, in an all-round music mega box that fits in your lap. Syntakt is a drum specialist, full of percussive possibilities, but its four analog and eight digital tracks can be used for melody, harmony, and bass sounds too.
+
+  There are 40 sound-generating machines to call on, covering a wide range of drum and melodic sounds, and sample playing. Some machines have been reimagined from Analog Rytm and Model:Cycles, with deeper sound control for the latter, while others are entirely new. For each machine there is a set of parameter controls tailor-made for that type of sound, and you can let loose with analog or digital overdrive depending on the tracks you are playing with.
+
+  Syntakt lets you route any of your synth tracks or external audio sources through the FX block. This gives you analog distortion and filtering, and a couple of LFOs to go to town with. Additionally, you can also call on Delay and Reverb as powerhouse send effects, and all of those effects can be sequenced with the FX track.
+
+  Wield a little extra trig craft using the four modifiers, offering four varied levels of expression. Configure the first two to give you the retrig or velocity behavior you desire, and use the other two to access custom intensities of other parameters. Syntakt's keyboard mode gives you a whole bunch of different scales to play with, across a single octave like a piano keyboard or folded over several octaves.
+
+  All tracks have a Multimode filter, with the digital tracks also able to call on Parametric EQ and a Base-width filter. Choose from two amplitude envelope types, ADSR or AHD, to define the ideal contour of your sound. All synth tracks have two full-featured LFOs with multiple waveforms and modulation destinations.
+specs: |-
+  - 8 digital tracks with 11 selectable machines each (bass drum, snare, cymbal/hihat, percussion, clap, 5 tonal synths, twinshot sample player)
+  - 3 analog drum tracks with 19 selectable machines each
+  - 1 analog cymbal track with 13 selectable machines
+  - 1 digital overdrive, 1 digital multimode filter and 1 digital base-width filter per digital track
+  - 1 analog overdrive and 1 analog multimode filter per analog track
+  - 2 assignable LFOs per track, every track switchable to a MIDI machine
+  - FX track: delay and reverb automation, analog stereo overdrive, analog stereo multimode filter, 2 assignable LFOs, external in
+  - 1 retrig modifier, 1 velocity modifier, 2 assignable trig modifiers
+  - Keyboard mode with 36 different scales
+  - MIDI machines: 4 note polyphony per step, 8 assignable CC controls, 1 assignable LFO per track
+  - 64 steps per pattern and track, individual pattern length and time scale multiplier per track
+  - Parameter locks, trig conditions and trig chance, retrig, micro timing
+  - 1 Euclidean sequence generator per track
+  - Send effects: delay, reverb
+  - 128 x 64 pixel OLED screen
+  - 2 x 1/4" impedance balanced audio out jacks
+  - 2 x 1/4" audio in jacks
+  - 1 x 1/4" stereo headphone jack
+  - 48 kHz, 24-bit D/A and A/D converters
+  - Hi-Speed USB 2.0 port
+  - MIDI In/Out/Thru with DIN Sync out
+  - Sturdy steel casing, W215 x D176 x H63 mm (8.5" x 6.9" x 2.5")
+  - Weight: approximately 1.53 kg (3.6 lbs)
+  - 100 x 100 mm VESA mounting holes, M4 screws with a max length of 7 mm
+  - Overbridge enabled, class-compliant USB audio, external input mixer
+  - 3 year Elektron warranty
+io:
+  - name: Main Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Main Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Audio Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+videos:
+  - videoId: XCpPdygkts4
+    title: Syntakt — At A Glance
+  - videoId: Ej1XF0PD95w
+    title: Turning Syntakt into a Sample Player with Twinshot
+  - videoId: oLj39auaSdQ
+    title: Syntakt OS Upgrade
