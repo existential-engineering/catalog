@@ -14,30 +14,39 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/mr-hum-6
-description: MR Hum 6 is a precise hum and buzz removal plugin combining hum removal, buzz removal, brickwall filtering, and high-resolution spectrum analysis for cleaning recordings with electrical interference.
+description: MR Hum combines hum removal, buzz removal, brickwall filtering, and spectrum analysis into one plug-in for cleaning up recordings carrying any sort of hum or buzz.
 details: |-
-  MR Hum 6 removes electrical hum and buzz from recordings using up to ten harmonic notch filters. The fundamental frequency is adjustable from 20 to 200 Hz to target any hum source, and notch widths are variable to match the characteristics of the interference.
+  MR Hum combines hum removal, buzz removal, brickwall filtering, and spectrum analysis into one plug-in for cleaning up recordings carrying any sort of hum or buzz.
 
-  A separate Buzz removal processor addresses irregular or broadband buzz that harmonic filtering alone may not resolve. Brickwall filtering removes subsonic rumble and high-frequency hiss at the signal extremes, providing a complete interference-cleaning toolset in a single plugin.
+  The hum removal section works by applying a set of notch filters spaced at multiples of the fundamental hum frequency, usually 60 Hz or 50 Hz. The controls set the fundamental frequency, the number of harmonics to eliminate (up to 10), and the width of the notches, and there are presets for the usual cases of 60 Hz and 50 Hz hum. Any fundamental frequency from 20 to 200 Hz can be dialled in continuously, which matters when hum recorded on analog tape is played back on a different machine and the hum frequency shifts.
 
-  A high-resolution spectrum analyzer displays the signal before and after processing simultaneously, making it straightforward to verify that hum artifacts have been attenuated without affecting the wanted audio. A Monitor function lets users listen to the removed signal in isolation to confirm the plugin is targeting only the unwanted components.
+  The high resolution spectrum display makes the hum frequency and the number of harmonics required easy to see. It can run before processing, to show the input signal spectrum, or after processing, to show the output signal spectrum. The monitor feature plays back the signal being removed, offering another way to set the parameters.
 
-  MR Hum 6 operates with zero latency, making it suitable for live applications as well as post-production. It supports sample rates up to 192 kHz and processes both mono and stereo audio.
+  MR Hum contains a separate processor for buzz, a periodic signal with frequency harmonics through the entire audible spectrum that would otherwise require hundreds of notch filters to eliminate. The buzz algorithm uses a different and far more efficient approach, and because buzz can come from a motor or other interference as well as from the line frequency, the buzz processor also allows any frequency from 20 to 200 Hz. MR Hum also provides brickwall filters to eliminate low or high frequency interference.
 
-  On macOS, formats available are AU, VST3, and AAX. On Windows, VST2, VST3, and AAX are provided. Apple Silicon is natively supported on macOS 10.13 (High Sierra) and higher. Windows 7/8/10/11 are supported with both 32-bit and 64-bit hosts.
+  MR Hum 6 is included in Master Restoration Suite 6.
 specs: |-
-  - Hum removal with 1–10 harmonic notch filters
-  - Adjustable fundamental frequency: 20–200 Hz
-  - Variable notch widths
-  - Dedicated buzz removal processor
-  - Brickwall filtering for rumble and hiss
-  - High-resolution spectrum analyzer (pre/post processing display)
-  - Monitor mode to isolate and audition removed signal
-  - Zero latency operation
-  - Supports up to 192 kHz sample rates
-  - Mono and stereo processing
-  - macOS: AU, VST3, AAX; requires 10.13+; Apple Silicon native; 64-bit hosts only
-  - Windows: VST2, VST3, AAX; supports Windows 7/8/10/11; 32-bit and 64-bit hosts
+  - Hum removal using from 1 to 10 harmonic notch filters
+  - Buzz removal
+  - Hum and Buzz frequencies continuously adjustable from 20 to 200 Hz
+  - Adjustable notch widths
+  - Brickwall filtering for rumble and hiss removal
+  - High resolution spectrum analysis display, pre or post processing
+  - All sections can be monitored to hear removed signal
+  - No latency
+  - Up to 192 kHz sampling rate
+  - Mono or stereo
+  - Requires a host program that supports audio plug-ins
+  - iLok licensing is supported but not required
+  - Macintosh formats: AU, VST3, AAX
+  - macOS 10.13 (High Sierra) and higher
+  - Apple Silicon natively supported (AU, VST3, AAX)
+  - AAX on macOS requires Pro Tools 11 and higher
+  - macOS: 64-bit hosts only
+  - Windows formats: VST2, VST3, AAX
+  - Windows 7/8/10/11
+  - AAX on Windows requires Pro Tools 10.3.5 and higher
+  - Windows: 32-bit and 64-bit hosts supported
 versions:
   - name: "6.09"
     releaseDate: 2023-10-26
@@ -66,3 +75,5 @@ versions:
   - name: "6.00"
     releaseDate: 2020-09-25
     description: Initial v6 release with macOS Catalina support, VST3 support, notarized installers, Wave Arts licensing for AAX, user preset manager, and dark theme.
+videos:
+  - videoId: SzzicFVEKeE

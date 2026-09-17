@@ -13,35 +13,37 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/tube-saturator-2
-description: An authentic tube preamp simulator with analog EQ that delivers warming effects at gentle settings or fat distortion when driven hard. Uses circuit simulation technology to mathematically model analog circuits, running approximately 7x faster than its predecessor with improved accuracy.
+description: Tube Saturator 2 is a super accurate circuit simulation of a tube pre-amp with analog EQ, which can be overdriven gently for warming effects, or cranked for fat distortion.
 details: |-
-  Tube Saturator 2 uses circuit simulation technology to accurately model analog circuits, specifically two cathode preamp stages. The simulator runs approximately 7x faster than its predecessor while maintaining or improving accuracy.
+  Tube Saturator 2 is a super accurate circuit simulation of a tube pre-amp with analog EQ, which can be overdriven gently for warming effects, or cranked for fat distortion. Like its predecessor, Tube Saturator Vintage, TS-2 is based on circuit simulation technology to capture every nuance of an analog circuit. The circuit, consisting of the individual tubes, resistors, and capacitors, is converted into a mathematical system of equations which is numerically solved to produce the exact same sound as a real circuit.
 
-  Users can select between 12AX7 and 12AU7 tube models to shape the character of saturation. A Baxandall 3-band analog EQ is included and can be switched pre or post saturation for flexible tone shaping.
+  While the original consumed large amounts of CPU power to compute the solutions in real time, TS-2 uses large tables of pre-computed solutions. The Saturation section of TS-2 runs about 7x faster than the original and yet the modelling is even more accurate. TS-2 includes the original circuit simulation of the three band Baxandall type EQ as found in many guitar amplifiers.
 
-  The plugin supports mono and stereo operation, zero latency processing, and sample rates up to 192 kHz. A high-quality 2x oversampling mode is available for reduced aliasing, and a wet/dry mix control allows parallel processing.
-
-  A noise gate was added in version 2.18 to suppress low-level limit cycle oscillation, and the plugin features infinite undo with shift-click redo. iLok licensing is supported but not required — Wave Arts' own online activation is the default.
+  TS-2 has many other features. It can switch between 12AX7 and 12AU7 tubes for different harmonic characteristics. The EQ can be switched to run pre or post saturation, and saturation and EQ are separately switchable. A 2x oversampling mode using a very high quality resampling algorithm attenuates aliased distortion harmonics, and the mix control blends the processed sound with the original.
 specs: |-
-  - Two cathode preamp stages with circuit simulation
-  - Tube models: 12AX7 and 12AU7
-  - Baxandall 3-band analog EQ (pre/post saturation switching)
-  - Drive control for adjustable saturation/distortion
+  - Accurate tube preamp simulator using circuit simulation technology
+  - Two common cathode preamp stages
+  - 12AX7 and 12AU7 tube models
+  - Drive control for distortion adjustment
+  - Baxandall 3-band analog EQ
+  - Saturation and EQ bypass switches
+  - High quality 2X oversampling mode
   - Wet/dry mix control
-  - Zero latency operation
-  - High-quality 2x oversampling mode
-  - Sample rate support up to 192 kHz
-  - Mono and stereo operation
-  - Analog-style metering
-  - Noise gate (added v2.18) to suppress limit cycle oscillation
-  - Infinite undo (shift-click for redo)
-  - UI scaling support
-  - macOS: AU, VST3, AAX (64-bit); Apple Silicon native
-  - Windows: VST2, VST3, AAX (32-bit and 64-bit)
-  - macOS 10.13 (High Sierra) or higher required
-  - Windows 7/8/10/11 supported
-  - AAX: Pro Tools 11+ (Mac), Pro Tools 10.3.5+ (Windows)
-  - iLok supported but not required
+  - Analog style metering
+  - No latency
+  - Up to 192 kHz sampling rate
+  - Mono or stereo
+  - Requires a host program that supports audio plug-ins
+  - iLok licensing is supported but not required
+  - Macintosh formats: AU, VST3, AAX
+  - macOS 10.13 (High Sierra) and higher
+  - Apple Silicon natively supported (AU, VST3, AAX)
+  - AAX on macOS requires Pro Tools 11 and higher
+  - macOS: 64-bit hosts only
+  - Windows formats: VST2, VST3, AAX
+  - Windows 7/8/10/11
+  - AAX on Windows requires Pro Tools 10.3.5 and higher
+  - Windows: 32-bit and 64-bit hosts supported
 versions:
   - name: "2.18"
     releaseDate: 2025-06-10
@@ -70,3 +72,5 @@ versions:
   - name: "2.10"
     releaseDate: 2016-06-14
     description: Complete code rewrite using JUCE framework; Wave Arts online activation licensing introduced; VST3 format support added; new preset and preferences managers; DC-offset filtering in saturation section
+videos:
+  - videoId: bTF0MFiIYQA

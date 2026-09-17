@@ -14,27 +14,38 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/mr-click-6
-description: MR Click 6 is a click and crackle filter for vinyl or digital sources, featuring separate processors for clicks and crackles to restore phonograph recordings and remove impulsive contamination from audio.
+description: MR Click combines click and crackle filtering for cleanup of phonograph recordings or other impulsive contamination. MR Click has separate processors for clicks and crackles because of the different nature of the contaminants.
 details: |-
-  MR Click 6 provides dedicated algorithms for two distinct types of impulsive noise: clicks and crackles. Separate processors allow targeted treatment of each artifact type, with sophisticated detection algorithms designed to focus on contaminating events rather than transient musical content.
+  MR Click combines click and crackle filtering for cleanup of phonograph recordings or other impulsive contamination. It has separate processors for clicks and crackles because of the different nature of the contaminants.
 
-  Onset detection helps preserve attack transients so that the natural punch and feel of the audio is maintained even at aggressive settings. A Monitor feature lets users audition the removed artifacts in isolation, making it easy to verify that only unwanted clicks and crackles are being attenuated.
+  A click is a large disturbance, such as one caused by a phonograph scratch or a splice in a digital signal. The click processor automatically detects clicks and reconstructs the audio signal in the neighborhood of the click to eliminate it. Crackle is the high frequency scratchiness that comes from dust or wear in the grooves of a phonograph. The crackle processor automatically detects crackle and eliminates it by smoothing the signal around the crackle event, and it contains an onset detector that inhibits de-crackling at the onset of events like snare hits or cymbal crashes.
 
-  A stereo display shows signal level, clicks, crackles, and onset events simultaneously, providing visual feedback about what the plugin is detecting and removing. Latency compensation is supported for hosts that implement it, and the plugin handles sampling rates up to 192 kHz in both mono and stereo configurations.
+  MR Click has a scrolling time display showing all the click and crackle events detected, so the detection thresholds are easy to adjust. There is also a monitor feature for hearing the removed clicks and crackles.
 
-  On macOS, formats available are AU, VST3, and AAX. On Windows, VST2, VST3, and AAX are provided. Apple Silicon is natively supported on macOS 10.13 (High Sierra) and higher. Windows 7/8/10/11 are supported with both 32-bit and 64-bit hosts.
+  MR Click 6 is included in Master Restoration Suite 6.
 specs: |-
-  - Separate algorithms for click and crackle processing
-  - Sophisticated detection algorithms targeting contaminating events
-  - Onset detection to preserve attack transients
-  - Monitor mode to audibly audition removed artifacts
-  - Stereo display showing signal level, clicks, crackles, and onset events
-  - Latency compensation support
-  - Supports up to 192 kHz sample rates
-  - Mono and stereo operation
-  - macOS: AU, VST3, AAX; requires 10.13+; Apple Silicon native; 64-bit hosts only
-  - Windows: VST2, VST3, AAX; supports Windows 7/8/10/11; 32-bit and 64-bit hosts
+  - Separate algorithms optimized for click and crackle processing
+  - Sophisticated detection algorithms for clicks and crackle focus processing on contaminating events
+  - Onset detection allows crackle processing to bypass onset events, keeping attacks bright
+  - Monitoring feature for hearing eliminated clicks and crackle
+  - Comprehensive stereo display of signal level, clicks, crackle, and onset events
+  - Latency compensation via compatible hosts
+  - Up to 192 kHz sampling rate
+  - Mono or stereo
+  - Requires a host program that supports audio plug-ins
+  - iLok licensing is supported but not required
+  - Macintosh formats: AU, VST3, AAX
+  - macOS 10.13 (High Sierra) and higher
+  - Apple Silicon natively supported (AU, VST3, AAX)
+  - AAX on macOS requires Pro Tools 11 and higher
+  - macOS: 64-bit hosts only
+  - Windows formats: VST2, VST3, AAX
+  - Windows 7/8/10/11
+  - AAX on Windows requires Pro Tools 10.3.5 and higher
+  - Windows: 32-bit and 64-bit hosts supported
 versions:
   - name: "6.10"
     releaseDate: 2024-04-03
     description: Fix Windows build bug — MR Click iLok wrapper was looking for MR Gate license.
+videos:
+  - videoId: 1Vqi4JE876s

@@ -15,26 +15,41 @@ platforms:
   - mac
   - windows
 url: https://wavearts.com/products/plugins/dialog-2
-description: Dialog 2 is a post-production plugin designed for speech and voice processing, combining multiple tools to clean up, adjust, and enhance voice recordings for voiceover, film/TV, and broadcast applications.
+description: Dialog combines in one plug-in all the processing needed to clean up, adjust, and sweeten recordings of the spoken voice. It suits voice-over, film/tv recordings on location or sound stage, and broadcast.
 details: |-
-  Dialog 2 provides a comprehensive suite of voice processing tools in a single plugin, including a 10-band parametric EQ with 11 filter types and 64-bit processing, plus low/high pass brickwall filters with variable rolloff slopes. Noise and interference removal tools include broadband noise reduction via the MR Noise algorithm, hum and buzz removal with notch filtering for 50/60 Hz harmonics, and a De-plode function for controlling plosives and wind rumble. Dynamics processing includes a vintage-style compressor (TrackPlug Vintage), a De-ess function for sibilant management, and a peak limiter — all fully automatable within the host DAW. Dialog 2 supports up to 192 kHz sample rates, operates in both mono and stereo, and includes comprehensive metering with latency compensation built in. The plugin is available in AU, VST3, and AAX formats on macOS (with Apple Silicon native support), and VST2, VST3, and AAX on Windows, supporting both 32-bit and 64-bit hosts on Windows.
+  Dialog combines in one plug-in all the processing needed to clean up, adjust, and sweeten recordings of the spoken voice. It suits voice-over, film/tv recordings on location or sound stage, and broadcast.
+
+  Dialog includes brickwall filters, de-hum and de-buzz processing, broadband noise reduction, de-ploding, de-essing, 10-band equalization, compression, and limiting. Separate presets for each section make results fast to reach.
+
+  The brickwall filters have variable rolloff slopes and can cut off low or high frequency ranges. The de-hum processor uses notch filters to eliminate 10 harmonics of either 50 Hz or 60 Hz hum, and the de-buzz processor squelches line frequency buzzes. The de-noise processor is the MR Noise algorithm with a simplified interface. De-plode and de-ess are custom processors, de-plode to tame plosive sounds and de-ess to adjust the amount of sibilants.
+
+  The EQ section is the TrackPlug equalizer, with 10 bands of equalization, 11 different filter types to choose from, and a variety of presets. The compressor is the TrackPlug Vintage compressor, with presets tailored to voice processing.
 specs: |-
-  - 10-band parametric EQ with 11 filter types
-  - 64-bit internal processing
-  - Low/high pass brickwall filters with variable rolloff slopes
-  - Hum and buzz removal (notch filtering for 50/60 Hz harmonics)
-  - MR Noise broadband noise reduction algorithm
-  - De-plode function for plosive/wind rumble control
-  - De-ess function for sibilant management
-  - TrackPlug Vintage compressor
+  - 10-band EQ section with 11 different filter types and 64-bit processing
+  - Low and high pass brickwall filters with various rolloff slopes
+  - Hum and buzz removal
+  - Broadband noise reduction
+  - De-plode function for plosive or wind rumble attenuation
+  - De-ess function for sibilant attenuation
+  - Compressor
   - Peak limiter
-  - Comprehensive metering and latency compensation
-  - Fully automatable parameters
-  - Up to 192 kHz sample rate support
-  - Mono and stereo operation
-  - macOS: AU, VST3, AAX; requires macOS 10.13+ (High Sierra); Apple Silicon native
-  - Windows: VST2, VST3, AAX; requires Windows 7/8/10/11; 32-bit and 64-bit hosts supported
-  - AAX requires Pro Tools 11+ (Mac) or Pro Tools 10.3.5+ (Windows)
+  - Comprehensive metering
+  - Master preset manager and preset manager per section
+  - Latency compensation
+  - Fully automatable
+  - Up to 192K support
+  - Mono or stereo
+  - Requires a host program that supports audio plug-ins
+  - iLok licensing is supported but not required
+  - Macintosh formats: AU, VST3, AAX
+  - macOS 10.13 (High Sierra) and higher
+  - Apple Silicon natively supported (AU, VST3, AAX)
+  - AAX on macOS requires Pro Tools 11 and higher
+  - macOS: 64-bit hosts only
+  - Windows formats: VST2, VST3, AAX
+  - Windows 7/8/10/11
+  - AAX on Windows requires Pro Tools 10.3.5 and higher
+  - Windows: 32-bit and 64-bit hosts supported
 versions:
   - name: "2.11"
     releaseDate: 2024-04-23
@@ -69,3 +84,5 @@ versions:
   - name: "2.01"
     releaseDate: 2020-08-04
     description: Initial release of Dialog 2.
+videos:
+  - videoId: rpNLne6bQ3w
