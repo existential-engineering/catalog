@@ -308,25 +308,44 @@ preamp/mixer outputs; a powered speaker input is never `line`.
 
 Nothing enforced that, so 231 ports across 143 files carried `line` when
 `pnpm speaker-level-audit` was first run: every Marshall, PRS and EVH
-cabinet input, and most amp speaker outputs. `pnpm speaker-level:apply`
-writes a reviewed list and 227 of them were retyped in
-`docs/reviews/2026-09-speaker-level.tsv`.
+cabinet input, and most amp speaker outputs. `speaker-level-audit --tsv`
+writes the review list and `pnpm speaker-level:apply` consumes it; 193 rows
+were accepted and applied from `docs/reviews/2026-09-speaker-level.tsv`.
 
 It reports rather than fixes, on the same contract as `capability-gaps`,
-because one distinction is real and not a tuning problem: a **speaker
-emulated** or cabinet-simulated output carries LINE level, so the name says
-speaker and the signal does not. Those are correctly `line` and the audit
-excludes them; including them turns 231 findings into 242. The four rows
-the reviewed pass rejected are recorded with their reasons in that file, so
-the next pass does not re-litigate them.
+because the distinctions it cannot make are real rather than tuning problems.
+A **speaker emulated** or cabinet-simulated output carries LINE level, so the
+name says speaker and the signal does not; including those turns 231 findings
+into 242. And a **monitor controller** names its balanced line feeds to a pair
+of powered monitors "Speaker Output" too.
+
+**The connector is the discriminator, not the category.** A passive
+loudspeaker is driven through speakON, binding posts, banana, euroblock, a
+barrier strip or a 1/4-inch jack, and never down an XLR or a DB25, which is
+what a monitor controller uses to send a line feed. `primaryCategory` cannot
+do this job: `monitor` holds both those controllers and passive stage wedges
+whose speakON inputs are the real thing. The entry's own prose covers the rest
+where it says "monitor controller", "control room monitor" or "summing mixer",
+and that wording is deliberately narrow, because the obvious wider signals
+("powered monitors", "active speakers", "balanced ... line level") appear in
+the prose of seven genuine amplifiers and cabinets here.
+
+That is written down because the first cut of this pass got it wrong and a
+human approved it: 34 of 227 accepted rows, across ten monitor controllers,
+converters and interfaces, were balanced line feeds retyped as amplified
+outputs. The connector column was in the review list on every one of those
+rows. A row the tool cannot settle now carries a `review` mark, which is the
+only thing that separates a summary from a rubber stamp when a list runs to
+two hundred rows.
 
 Two things about the writer are worth not undoing, because each shipped
 broken first. **An entry can hold several jacks with one name** — the
 one-entry-per-jack rule means a Marshall head carries two ports both called
 "Speaker Output" — so each row consumes the next unclaimed match rather
-than the first; the first cut reported 227 applied while changing 217. And
-`checkContainedRegularFile` returns `{ path }` or `{ reason }`, never a
-boolean, so `if (!check)` is always false and leaves the guard inert.
+than the first, preferring one still typed `line`; the first cut reported 227
+applied while changing 217. And `checkContainedRegularFile` returns
+`{ path }` or `{ reason }`, never a boolean, so `if (!check)` is always false
+and leaves the guard inert.
 
 **Required presence (blocks CI):** every hardware `io` entry must include
 `maxConnections` (default `1`) and, except on played instruments
