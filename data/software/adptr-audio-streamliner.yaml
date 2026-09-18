@@ -1,66 +1,72 @@
 id: XFEpj5ii9cJVQ_hI2yD3L
 name: Streamliner
 manufacturer: adptr-audio
-primaryCategory: mastering
+primaryCategory: metering
 categories:
   - plugin
   - meter
-  - metering
   - loudness
   - analyzer
   - utility
   - effect
 formats:
+  - aax
+  - au
   - vst2
   - vst3
-  - au
-  - aax
 platforms:
   - mac
   - windows
 url: https://adptraudio.com/product/streamliner/
 prices:
-  - amount: 100.0
+  - amount: 100
     currency: USD
     term: perpetual
+  - amount: 100
+    currency: USD
 description: Prepare your masters for streaming with one simple workflow.
-  Preview how your music will be heard on streaming platforms with presets for
-  all streaming platforms, codecs and loudness normalisation, plus beautiful
-  metering for loudness and dynamics.
-details: |-
-  Streamliner prepares your masters for streaming with one simple workflow.
-  Preview how your music will be heard on streaming platforms with presets for
+  Preview your music as it will be heard on streaming platforms with presets for
   all streaming platforms, codecs and loudness normalisation.
+details: |-
+  Streamliner prepares masters for streaming with a single workflow: preview how a track will be heard on streaming platforms using presets for the platforms, codecs and loudness normalisation those services apply, then reveal and correct problems before delivery.
 
-  Hear exactly how your mixes will sound to end listeners — each streaming
-  service transcodes your music differently, which can lead to clipping and
-  other undesirable effects. Streamliner's Codec Auditioning feature allows you
-  to preview your audio through the same algorithms used by Spotify, Apple
-  Music, YouTube, and many other streaming platforms.
+  Its Platform Codec Preview auditions audio in real time through the same algorithms used by Spotify, Apple Music, YouTube and other services, so the artefacts introduced by encoding can be isolated and the original compared against the encoded version with a single click. Premade presets cover over 20 platforms, including social media platforms and global TV broadcast and advertising standards.
 
-  Discover how loudness normalization will affect your masters and hear how your
-  mix stacks up to others in a streaming playlist. Over 100 presets for target
-  levels drawn from hit records covering loudness, dynamics and true peak levels
-  across all styles of music and all platforms, including global TV Broadcast
-  and advertising standards.
+  Loudness matching applies each platform's loudness normalisation so a mix can be heard as it will sit beside other tracks in a playlist, and a real-time A/B reference feature loads favourite artist tracks for objective comparison, with manual, loop and cue playback modes or synchronisation to the host position for auditioning pre and post mastering versions.
 
-  Streamliner simplifies your workflow by offering a batch export feature that
-  allows you to export all codec profiles from your current platform preset in a
-  single click. Export codecs include Spotify, Tidal, Apple Music, YouTube
-  Music, Deezer, Pandora, Soundcloud, Bandcamp, and more, as well as all major
-  music formats including MP3, AAC, Opus and OGG Vorbis.
+  The metering suite covers loudness (Integrated, Short Term and Momentary), PSR and PLR dynamic range, and true peak, at zero latency. Over 100 target level presets drawn from hit records and from international broadcast levels for TV and film guide those readings, and a Meters Only view reduces the plugin to a small footprint during mix sessions. The UI is otherwise freely resizeable.
+
+  Batch export writes every codec profile in the current platform preset in one click, or a custom set of platforms, covering AAC, MP3, Ogg Vorbis and Opus at bitrates from 320 down to 32 kbps, so the results can be tested on phones, laptops and other playback devices.
 specs: |-
-  - Streaming platform codec preview and auditioning
-  - Supports Spotify, Apple Music, YouTube, Tidal, Deezer, Pandora, Soundcloud, Bandcamp, and more
-  - Codec formats: MP3, AAC, Opus, OGG Vorbis
-  - Over 100 target level presets
-  - Loudness normalization preview
-  - State-of-the-art metering for Loudness, Dynamics, and True Peak
-  - Automatic loudness matching for A/B reference comparison
-  - Batch export for all codec profiles
-  - Global TV Broadcast and advertising standards presets
-  - Meters-only view for small footprint during mix sessions
-releaseDate: "2020-10-02"
+  - Premade presets for over 20 streaming platforms, plus social media and global TV broadcast and advertising standards
+  - Real-time codec preview through the algorithms used by Spotify, Tidal, Apple Music, YouTube Music, Deezer, Pandora, Soundcloud, Bandcamp, Napster, Beatport Pro, Primephonic, Mixcloud, Facebook Video, Instagram, Twitch and Gaana
+  - Artefact auditioning: single-click switching between original and encoded audio
+  - Loudness normalisation preview and automatic level matching for all streaming platforms
+  - Over 100 target level presets for loudness, dynamics and true peak, drawn from hit mixes and broadcast standards
+  - Zero-latency metering: Integrated, Short Term and Momentary loudness, PSR and PLR dynamic range, true peak
+  - Meters Only mode with reduced footprint and half the UI space
+  - Real-time A/B reference track comparison with manual, loop, cue and host-sync playback modes
+  - Sync start offset for reference tracks, with invalid start point detection
+  - Batch export of all codec profiles from the current platform preset in one click
+  - Export codecs: AAC, MP3, Ogg Vorbis, Opus at 320/256/224/192/160/128/96/64/32 kbps
+  - Resizeable user interface
+  - Supported plugin formats: AAX Native, AU, VST2, VST3
+  - macOS 10.11 El Capitan through macOS 15 Sequoia, Intel or Apple Silicon (native M1 and M2)
+  - Windows 7 through Windows 11, x64-compatible CPU
+  - Display resolution 1440 x 900px or 1280 x 960px or higher
+  - Memory: 4 GB+ RAM (8 GB+ suggested)
+versions:
+  - name: 1.1.0
+    releaseDate: 2023-09-22
+    description: Apple Silicon Native support for all plugin formats including AAX;
+      Meters Only Mode; Reference Track Sync Start Offset; improved Sync Mode
+      compatibility with Wavelab/Logic; Artefact Auditioning button; Integrated
+      LUFS Auto-Reset; new Broadcast and Streaming presets; Batch Export;
+      Windows M4a file support
+  - name: "1.0"
+    releaseDate: 2020-10-02
+    description: Initial release
+releaseDate: 2020-10-02
 videos:
   - videoId: HOeHrCPe2jc
     provider: youtube
@@ -68,14 +74,3 @@ videos:
   - videoId: toWrHjS2uC4
     provider: youtube
     title: Streamliner Platform Optimisation
-versions:
-  - name: "1.1.0"
-    releaseDate: "2023-09-22"
-    description: Apple Silicon Native support for all plugin formats including AAX;
-      Meters Only Mode; Reference Track Sync Start Offset; improved Sync Mode
-      compatibility with Wavelab/Logic; Artefact Auditioning button; Integrated
-      LUFS Auto-Reset; new Broadcast and Streaming presets; Batch Export;
-      Windows M4a file support
-  - name: "1.0"
-    releaseDate: "2020-10-02"
-    description: Initial release
