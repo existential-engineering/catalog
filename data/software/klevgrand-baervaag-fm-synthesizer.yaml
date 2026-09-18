@@ -2,62 +2,52 @@ id: pNmNeBHeSXpcYGMMqTqtC
 name: Baervaag - FM Synthesizer
 manufacturer: klevgrand
 primaryCategory: synthesizer
-url: https://klevgrand.se/products/baervaag
-description: Baervaag is an easy to use, but still powerful and tweakable, FM
-  synthesizer. During development, focus has been on creating a playable and
-  expressive instrument with an intuitive interface. In addition to the FM
-  synthesis there's a LP filter, a "wobbler" (for that analogue touch) and a
-  stereo chorus under the hood.
-details: |-
-  Baervaag is an easy to use, but still powerful and tweakable, FM synthesizer.
-  During development, focus has been on creating a playable and expressive
-  instrument with an intuitive interface. In addition to the FM synthesis
-  there's a LP filter, a "wobbler" (for that analogue touch) and a stereo chorus
-  under the hood.
-
-  The carrier has an xy pad with pwm x sine-square wave shape; an envelope with
-  an attack modulated by velocity; and feedback to control how much the carrier
-  is modulated by the modulator, and optionally by MIDI velocity. The modulator
-  has the same xy pad but you can multiply the frequency value of the note
-  played from 0.5 to 4x, and you can set the adsr so each value can be higher or
-  lower relative to the carrier.
-
-  Effects include a pitch/amplitude wobble with control on frequency and depth;
-  a lp resonating filter based on the carrier or MIDI velocity; a delay with bpm
-  and note length, feedback, hp/lp and dry/wet mix; and a chorus.
-
-  Fm feedback, filter, adsr attack and volume can be modulated by velocity.
-  Oscillators can seamlessly be shaped between sine, square and pwm. One adsr
-  for each oscillator. Built-in tempo synchronised ping-pong delay. Controllable
-  wobble factor that adds analogue unpredictability.
-specs: |-
-  - FM synthesis
-  - LP filter
-  - Stereo chorus
-  - Wobbler
-  - 77 handcrafted presets
-  - FM feedback modulation
-  - Filter modulation by velocity
-  - ADSR attack modulation by velocity
-  - Volume modulation by velocity
-  - Oscillator wave shaping (sine, square, PWM)
-  - One ADSR per oscillator
-  - Tempo synchronized ping-pong delay
-  - Controllable wobble factor
-  - Xy pad (carrier)
-  - Xy pad (modulator)
-  - Modulator frequency multiplication (0.5x to 4x)
-  - Velocity modulation
-  - Pitch/amplitude wobble
-  - LP resonating filter
-  - Delay with bpm and note length
-  - Delay feedback control
-  - HP/LP filter in delay
-  - Dry/wet mix control
-prices:
-  - amount: 4.99
-    currency: USD
+formats:
+  - au
+  - vst
+  - vst3
+  - aax
+  - standalone
 platforms:
   - mac
   - windows
   - ios
+url: https://klevgrand.com/products/baervaag
+prices:
+  - amount: 4.99
+    currency: USD
+description: Baervaag is a fairly simple FM synthesizer with one carrier and one
+  modulator. The oscillator waveforms can be modified seamlessly between sine
+  wave to pure square wave with PWM (pulse width modulation).
+details: |-
+  Baervaag is a fairly simple FM synthesizer with one carrier and one modulator. The oscillator waveforms can be modified seamlessly between sine wave to pure square wave with PWM (pulse width modulation).
+
+  The Carrier Oscillator XY pad controls pulse width modulation on the X axis and the wave shape on the Y axis. The Carrier ADSR controls the carrier oscillator envelope, and its attack time is optionally reactive to MIDI Velocity.
+
+  The Modulator Oscillator XY pad works like the Carrier Oscillator, but it also has a frequency multiplier button. The Modulator relative ADSR sliders control the envelope of the Modulator oscillator and are relative to the Carrier ADSR: if all values of the sliders are in the middle, the Modulator envelope will be the same as the Carrier's.
+
+  The FX & Master section provides a High Quality Delay, a High Quality Chorus and a High Quality Master Output Knob. FM Feedback, Filter, ADSR Attack and Volume can be modulated by velocity, and a controllable wobble factor adds analogue unpredictability. Baervaag ships with 50+ handcrafted presets created by professional musicians.
+specs: |-
+  - FM synthesizer with one carrier and one modulator oscillator
+  - Oscillators can be shaped between sine, square and PWM
+  - FM Feedback, Filter, ADSR Attack and Volume can be modulated by velocity
+  - One ADSR for each oscillator
+  - Modulator ADSR values are relative to the Carrier ADSR
+  - Carrier Oscillator XY pad: pulse width modulation on the X axis, wave shape on the Y axis
+  - Modulator Oscillator XY pad with an additional frequency multiplier button
+  - Controllable wobble factor that adds analogue unpredictability
+  - FX & Master section with High Quality Delay, High Quality Chorus and High Quality Master Output Knob
+  - 50+ handcrafted presets created by professional musicians
+  - macOS: requires macOS 10.12 or later, running an AU, VST or AAX compatible 64-bit host
+  - Windows: requires Windows 7 (SP1) or later, running a VST or AAX compatible 64-bit host
+  - macOS binaries support ARM (M1) CPU natively
+  - AAX supports Apple Silicon as of v1.3.1
+  - 64-bit only
+  - iPad/iPhone version available as a standalone app and an AUv3 plugin
+versions:
+  - name: 1.1.0
+  - name: 1.1.1
+  - name: 1.2.0
+  - name: 1.2.1
+  - name: 1.3.0
+  - name: 1.3.1
