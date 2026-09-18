@@ -7,9 +7,9 @@ categories:
   - vintage
 formats:
   - au
+  - vst
   - vst3
   - aax
-  - vst
 platforms:
   - mac
   - windows
@@ -20,15 +20,15 @@ prices:
     currency: EUR
 description: HoRNet ADDA is the ultimate bitcrusher that emulates classic analog-to-digital converters. Add lo-fi character, warmth, and digital grit.
 details: |-
-  Experience the distinctive vibe of early digital gear with HoRNet ADDA, an advanced bitcrusher plugin that faithfully emulates vintage analog-to-digital (ADC) and digital-to-analog (DAC) converters. HoRNet ADDA brings the gritty, lo-fi magic and warmth of late '80s and early '90s digital sound directly to your DAW. HoRNet ADDA offers a powerful and intuitive way to control both the ADC and DAC stages of your audio, giving you precise control over bit depth and sampling rates.
+  HoRNet ADDA is a bitcrusher plugin that emulates vintage analog-to-digital (ADC) and digital-to-analog (DAC) converters, bringing the gritty, lo-fi character of late 1980s and early 1990s digital sound into a modern DAW. It gives precise control over both the ADC and DAC stages, over bit depth and over sampling rates.
 
-  HoRNet ADDA features dedicated bitcrusher modules for both the ADC and DAC stages, allowing you to reduce the bit depth of your audio from a transparent 24-bit signal all the way down to the harsh, gritty textures of 4-bit audio. With multiple selectable resampling algorithms and adjustable sampling frequencies, you can easily tailor the amount of digital distortion you want to introduce.
+  Dedicated bitcrusher modules for the ADC and DAC stages reduce bit depth from a transparent 24-bit signal down to the harsh textures of 4-bit audio, and the resampling frequency is adjustable from 44.1 kHz down to 4 kHz. Four selectable interpolation algorithms (None, Linear, Sample and Hold, Cubic) and an optional anti-alias filter shape the digital artifacts, so the amount and flavour of digital distortion can be tailored precisely.
 
-  In addition to its bitcrushing capabilities, HoRNet ADDA also features carefully modeled analog input and output stages. These analog emulations add genuine warmth, harmonic richness, and even adjustable analog hiss to your bitcrushed sounds. The intuitive pre-emphasis and de-emphasis filters give you the ability to shape your audio in even greater detail before and after the bitcrushing stage.
+  Beyond bitcrushing, ADDA carries carefully modeled analog input and output stages that add warmth, harmonic richness and adjustable analog hiss. Linkable pre-emphasis and de-emphasis filters shape the high and low frequencies before and after the bitcrushing stage, and linked input and output gain controls keep loudness consistent while driving the saturation.
 
-  To ensure the best possible sound quality, HoRNet ADDA comes with up to 4x oversampling, which eliminates the harsh artifacts that can sometimes arise when applying bitcrushing or downsampling effects. The "auto" option intelligently adjusts the plugin's settings to maintain sufficient bandwidth for high-quality processing, regardless of the sample rate in your DAW.
+  Internal oversampling of up to 4x, plus an automatic adaptive mode, removes the harsh artifacts that bitcrushing and downsampling can otherwise produce. The auto option adjusts the plugin's settings to maintain sufficient bandwidth regardless of the DAW's sample rate.
 
-  The interface is provided in both light and dark modes, which automatically match your operating system's theme. Despite its advanced features and capabilities, HoRNet ADDA is CPU-efficient, meaning you can run multiple instances of the plugin in your session without taxing your system.
+  The interface is provided in both light and dark modes, matching the operating system theme automatically or via a manual selector, and is drawn as a vector UI that stays sharp at every resolution. Individual plugin modules can be bypassed independently, and the plugin is CPU-efficient enough to run in many instances at once. ADDA is also available as an AUv3 app on iPad and iPhone through the App Store.
 specs: |-
   - Authentic ADC emulation with adjustable bitcrushing and resampling
   - Faithful DAC emulation with controllable bit depth and dithering
@@ -49,7 +49,7 @@ specs: |-
   - macOS (10.13 and later) and Windows (Windows 10 and later) support
   - 64-bit on Mac and Windows
   - Audio Units, VST, VST3 and AAX format
-  - Available for iOS and iPadOS as an AUv3 plugin
+  - Available as AUv3 on iPad and iPhone
   - No copy protection
 versions:
   - name: 1.0.4

@@ -19,27 +19,27 @@ prices:
     currency: EUR
 description: ZeroLoud is an intelligent maximizer that automatically hits your target LUFS. No more guessing, let ZeroLoud calculate gain and limiting.
 details: |-
-  Traditional limiters and maximizers force you to guess: you set threshold by ear, estimate makeup gain, hope the release time doesn't pump, and hope you land somewhere near -14 LUFS for Spotify or -9 LUFS for club play. Every track has different dynamics, so the recalibration starts again on every session.
+  You know that sinking feeling: your mix sounds incredible, but when you insert a maximizer to hit streaming loudness standards, everything falls apart. Too much gain and it's crushed and distorted. Too little and it's too quiet. You're stuck riding that impossible line between "loud enough" and "destroyed."
 
-  ZeroLoud is an intelligent maximizer that analyzes your track, calculates the gain and limiting curve, and delivers your exact target LUFS, whether that is -14 for streaming, -9 for CD, or anything in between. Target loudness can be set anywhere from -30 to -5 LUFS and the plugin works out the gain and limiting parameters needed to reach that level.
+  Traditional limiters and maximizers force you to guess. You set threshold by ear, estimate makeup gain, pray the release time doesn't pump, and hope you land somewhere near -14 LUFS for Spotify or -9 LUFS for club play. Meanwhile, every track has different dynamics, and you're manually recalibrating every single time.
 
-  It runs through a 4-step guided workflow: Learning (the plugin records 10 seconds of your loudest audio section), Target Selection (you choose the desired LUFS level), Analysis (ZeroLoud calculates the optimal gain and limiting curve offline), and Application (press Apply and the plugin processes in real time). The workflow is identical whether you are processing a vocal, a drum bus, or a full master.
+  ZeroLoud lets the maximizer analyze your audio and auto-calibrate everything for you. It analyzes your track, calculates the gain and limiting curve, and delivers your exact target LUFS, whether it's -14 for streaming, -9 for CD, or anything in between.
 
-  After analysis, two precision controls stay available: TRIM adjusts input level by ±6 dB without re-running the analysis, and CEILING sets the maximum True Peak output level from -6.0 to 0.0 dB, useful for setting -1.0 dB TP for streaming safety. Complete LUFS metering shows Momentary (400 ms), Short-term (3 s) and Integrated readings simultaneously, so no external metering plugin is needed.
+  The plugin runs a four-step guided workflow: Learning, where it records 10 seconds of the loudest section; Target Selection, where you choose the desired LUFS level; Analysis, where it calculates the optimal gain and limiting curve offline; and Application, where it processes in real time. Two fine-tuning controls follow, a TRIM adjusting input level by plus or minus 6 dB post-analysis, and a CEILING setting the maximum True Peak output from -6.0 to 0.0 dB.
 
-  Automatic 2x oversampling engages for sample rates below 88.2 kHz to keep limiting transparent and free of aliasing, and the interface uses GPU-accelerated, scalable graphics. Version 1.0.1 added correct VST3 loading in Cubase, Nuendo and Reason, lower CPU usage during long sessions, an end to crackling or distortion during playback, and a fix for interface loading in Logic Pro.
+  Complete LUFS metering shows Momentary (400 ms), Short-term (3 s) and Integrated values simultaneously, and automatic 2x oversampling for sample rates below 88.2 kHz keeps limiting transparent without aliasing.
 specs: |-
   - Target loudness range: -30 to -5 LUFS
-  - True peak ceiling: -6.0 to 0.0 dB (adjustable)
-  - TRIM control: ±6 dB post-analysis adjustment
-  - LUFS metering: Momentary (400 ms), Short-term (3 s), Integrated
+  - True Peak ceiling: -6.0 to 0.0 dB (adjustable)
+  - TRIM control: plus or minus 6 dB post-analysis adjustment
+  - LUFS metering: Momentary (400ms), Short-term (3s), Integrated
   - Analysis method: offline processing on a 10-second buffer
-  - Oversampling: automatic 2x for sample rates below 88.2 kHz
-  - Supported formats: VST3, Audio Units (AU), AAX
-  - macOS 10.13 (High Sierra) or later, Apple Silicon native
+  - Oversampling: automatic 2x for sample rates below 88.2kHz
+  - Formats: VST3, Audio Units (AU), AAX
+  - macOS 10.13 (High Sierra) or later
   - Windows 10 or Windows 11
-  - Interface: GPU-accelerated, scalable graphics
-  - No copy protection, watermarked with the buyer's email
+  - GPU-accelerated, scalable interface
+  - Apple Silicon native
 versions:
   - name: 1.0.1
 videos:

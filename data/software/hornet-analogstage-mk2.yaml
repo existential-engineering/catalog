@@ -18,21 +18,21 @@ prices:
     currency: EUR
 description: HoRNet AnalogStage MK2 is an analog console emulation plugin that re-creates those sound characteristics usually associated with analog gear
 details: |-
-  HoRNet AnalogStage MK2 is a console emulation plugin designed to bring the warmth and character of analog gear into the digital realm. It emulates the distinctive sound characteristics often associated with classic analog equipment, such as saturation, hiss, and non-linear frequency response, all of which contribute to the richness and authenticity of analog consoles. With AnalogStage MK2, you can add these qualities to your mixes, recreating the unique flavor of an analog console, whether applied on each individual channel or across your bus.
+  HoRNet AnalogStage MK2 is a console emulation plugin designed to bring the warmth and character of analog gear into the digital realm. It emulates the sound characteristics associated with classic analog equipment, such as saturation, hiss and non-linear frequency response, and can be applied on each individual channel or across the bus.
 
-  One of the most exciting features of AnalogStage is its ability to simulate the behavior of three distinct types of analog technologies: operational amplifiers, transistor circuits, and tube gear. The operational amplifiers are the cleanest and most modern of the three, offering transparency and accuracy. The transistor mode is designed to capture the spirit of the 1970s, with warm, fat saturation and punchy character. The tube mode provides the classic, smooth saturation found in vintage tube gear, with gradual compression and harmonics. Both the transistor and tube modes include an advanced transformer emulation.
+  The plugin simulates the behaviour of three distinct types of analog technology: operational amplifiers, transistor circuits and tube gear. The operational amplifiers are the cleanest and most modern of the three, offering transparency and accuracy for mixing tasks that require precision, while the transistor and tube models push the sound in progressively more coloured directions.
 
-  The plugin allows you to use each instance independently or link them together, either in groups or globally. By default, some of the key parameters that define the sound of the analog console are linked globally, and a right-click lets you unlink certain controls so they work only within the group or globally across all instances.
+  An age control simulates the aging of the analog device, changing both saturation and frequency response, and an analog component tolerance emulation introduces the small variations that separate one physical channel from another. Saturation amount and hiss are freely adjustable and controlled separately.
 
-  To ensure optimal performance, AnalogStage MK2 includes a stereo VU meter calibrated to -18dBFS, which helps you properly gain stage the plugin, alongside auto gain technology that automatically adjusts the input level. An age slider simulates the effects of an aging analog console, such as dried capacitors, which affect both the saturation and frequency response.
+  Input gain is adjustable from -20 dB to +20 dB, and a Mic mode adds a further +20 dB boost for heavy distortion. The channel also carries 6 dB/octave high pass and low pass filters, a phase reversal button, a stereo VU meter calibrated to -18 dBFS, and an adjustable automatic gain technology to keep levels consistent as saturation is pushed.
 
-  Additional tone shaping comes from 6dB/octave high-pass and low-pass filters, a phase reversal button, and a mic mode button that provides a 20dB boost at the input, driving the preamp harder for greater distortion and character. The plugin features intelligent oversampling up to 4x and operates with an internal sample rate of 192kHz.
+  Parameter changes can be sent to other instances on the same group or globally, which makes setting up a whole console quick. Intelligent oversampling keeps the plugin working internally at 192 kHz, and the vector user interface is freely resizable and stays sharp at every resolution.
 specs: |-
   - Three different types of emulation: op.amp., transistor and tube
   - Parameter changes can be sent to instances on the same group or globally
   - Age control simulates the aging of the analog device changing saturation and frequency response
   - Adjustable input gain from -20dB to +20dB
-  - “Mic” mode for an additional +20dB boost to create heavy distortions
+  - 'Mic' mode for an additional +20dB boost to create heavy distortions
   - Stereo VU meter calibrated to -18 dBFS
   - Adjustable automatic gain technology
   - Separate saturation and hiss controls
@@ -47,7 +47,6 @@ specs: |-
   - macOS (10.11 and later) and Windows (Vista and later) support
   - 64-bit on Mac and Windows
   - Audio Units, VST, VST3 and AAX format
-  - No copy protection
 versions:
   - name: 1.0.5
 videos:
