@@ -1,7 +1,7 @@
 id: AsM7wtwtPIj5v2wXGG7nC
 name: Outlaw
 manufacturer: wa-production
-primaryCategory: utility
+primaryCategory: dynamics
 categories:
   - effect
 formats:
@@ -16,9 +16,38 @@ url: https://www.waproduction.com/plugins/view/outlaw
 prices:
   - amount: 0
     currency: USD
-description: "Automatic gain-riding plugin that listens to incoming audio and
-  compensates for volume changes, mimicking mixing desk fader movement."
+description: A gain riding plugin that tracks incoming audio and compensates for level changes automatically, standing in for manual fader moves. Advanced settings add band-pass detection, attack and release shaping and adjustable limits on how far the gain rides.
 details: |-
-  MIX, TARGET, GATE, GAIN controls. High-pass/Low-pass filters with variable slopes. Attack/Release/Direction parameters. Visual feedback display for peak/RMS levels.
+  Outlaw is a gain riding processor for mixing live sound, smoothing vocals and balancing solo instruments. It listens to the incoming audio and compensates for volume changes, mimicking the fader movement of a real mixing engineer, so detailed volume automation does not have to be drawn by hand.
+
+  Four main dials cover the fundamentals. MIX sets the intensity of the effect, TARGET sets the RMS target level, GATE sets a relative level below which the gain rider ignores softer sounds, and GAIN controls the master output, which is useful for setting accurate levels for A/B comparison.
+
+  A secondary panel holds the advanced settings. A band-pass mode with high-pass and low-pass filters and four slope settings allows gain riding on material carrying low rumble, hi-hat bleed or other problematic frequency content. Attack and release shape the transients and sustains of the processed audio, and a Direction parameter sets whether they act upwards, downwards or in both directions. Maximum up and maximum down values limit how far the gain is allowed to move, and a choice of RMS detection speeds sets how quickly the plugin reacts to the incoming signal.
+
+  A large visual feedback display shows peak and RMS volume for the left and right channels, with the amount of gain riding in the centre.
+
+  The plugin is developed in the JUCE framework and runs in all supported plugin formats on Mac and PC, with support for retina and high definition screens, including AAX for Pro Tools.
 specs: |-
-  Windows 10/11 (64-bit). macOS 10.15+ (64-bit).
+  - Automatic gain riding against an RMS target
+  - MIX control for effect intensity
+  - TARGET control for the RMS target level
+  - GATE control to ignore softer sounds relative to the target
+  - High-pass and low-pass detection filters with variable slopes
+  - Attack, release and direction controls for the gain movement
+  - Maximum up and maximum down limits on applied gain
+  - Slow, medium and fast RMS detection, plus instant and zero RMS time options
+  - Peak and RMS metering with a central gain riding display
+  - Resizable interface
+  - Updated preset manager
+  - Native Apple Silicon and arm64 support
+  - Windows 10/11 or higher (64 bit)
+  - macOS 10.15 or higher (64 bit)
+  - AAX requires Pro Tools 12 or higher
+versions:
+  - name: 2.1.0
+  - name: 2.2.0
+  - name: 2.3.0
+videos:
+  - videoId: l0KGOWF8d84
+  - videoId: YAUecG-ioX0
+  - videoId: tWM0gU_Zx20

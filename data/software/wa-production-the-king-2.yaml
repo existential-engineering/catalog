@@ -1,7 +1,7 @@
 id: NxMQGs2TQ9rYpaT91ef2c
 name: The KING 2
 manufacturer: wa-production
-primaryCategory: compressor
+primaryCategory: multiband
 categories:
   - limiter
   - equalizer
@@ -18,10 +18,35 @@ url: https://www.waproduction.com/plugins/view/the-king
 prices:
   - amount: 0
     currency: USD
-description: "Dynamically enhanced 5-band multiband compression plugin for
-  mastering with built-in limiter, upward/downward compression, and Magic EQ
-  with three curves."
+description: The KING 2 is a five band compression plugin designed for mastering, with per-band threshold and makeup gain alongside separate upward and downward compression controls. It also carries a Magic EQ section with three cleaning curves and a built-in limiter.
 details: |-
-  5-band compressor with customizable threshold and makeup gain. Built-in limiter. Upward and downward compression. Magic EQ with three curves. Input/output gain adjustment.
+  The KING 2 is a dynamically enhanced multi-band compression plugin designed for mastering. Rather than the usual three bands it splits the signal across five (Low, Low Mid, Mid, Mid High and High), each with its own threshold and makeup gain control.
+
+  Upward and downward compression sit on separate knobs on the interface. Both default to 100 and can be dropped to 0 or raised to 200. A Time knob adjusts the attack and release time of both compression stages.
+
+  The Mix knob toggles between the processed and dry signal for comparison, and can also be used for parallel compression by blending a proportion of the processed sound back into the mix. Input and output gain controls set how much signal enters the plugin and how much of its processing is pushed out into the mix.
+
+  A built-in limiter is switched in with a single control and keeps a master track, individual audio file or MIDI instrument from exceeding the 0 dB mark, avoiding clipping without a third party plugin. The Magic EQ offers three shapes and curves aimed at cleaning: the first reduces muddy frequencies on an individual element, while the second and third are intended for master tracks, cleaning a wide range of elements at once and amplifying what has been cleaned.
+
+  Version 2.0.0 brought a new interface, a presets manager, macOS Catalina compatibility and Pro Tools AAX support. Version 2.1.0 added resizability with updated preset and license management, version 2.2.0 added native Apple silicon and arm64 support, and version 2.3.0 fixed an interface bug.
 specs: |-
-  Windows 10/11 (64-bit). macOS 10.15+ (64-bit).
+  - Five band threshold controls
+  - Five band makeup gain controls
+  - Input and output gain
+  - Upward compression and downward compression knobs
+  - Time knob for the attack and release of both compression stages
+  - Overall plugin mix knob
+  - Magic EQ with three shapes and curves
+  - Built-in limiter
+  - Presets manager
+  - Resizable interface
+  - Windows 10/11 or higher (64 bit)
+  - macOS 10.15 or higher (64 bit)
+  - AAX requires Pro Tools 12 or higher
+versions:
+  - name: 2.0.0
+  - name: 2.1.0
+  - name: 2.2.0
+  - name: 2.3.0
+videos:
+  - videoId: r351qf1AShw
