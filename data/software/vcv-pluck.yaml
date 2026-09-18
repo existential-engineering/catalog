@@ -1,7 +1,7 @@
 id: rSBKOq4ajLDGCqluyMakJ
 name: Pluck
 manufacturer: vcv
-primaryCategory: virtual-instrument
+primaryCategory: physical-modeling
 categories:
   - synthesizer
 platforms:
@@ -12,11 +12,40 @@ url: https://vcvrack.com/Pluck
 prices:
   - amount: 0
     currency: USD
-description: "Physical modeling synthesizer that simulates acoustic properties
-  of real instruments including vibrating strings, resonating tubes, and struck
+description: Physical modeling synthesizer that simulates acoustic properties of
+  real instruments including vibrating strings, resonating tubes, and struck
   surfaces. Includes 74 models of plucked and hammered strings, bells, and
-  hybrid sounds."
+  hybrid sounds.
 details: |-
-  74 instrument models across six categories: Bass, Bells, Guitar, Keys, Synth, and Traditional. Model morphing and blending capabilities. Six adjustable parameters (HIT, DTN, POS, TONE, RING, DCY) ranging from -100% to 100%. CV modulation inputs for performance control. Polyphonic capability. MIDI compatible via V/OCT and GATE inputs.
+  A physical modeling synthesizer simulates the acoustic properties of real instruments such as vibrating strings, resonating tubes, and struck surfaces. VCV Pluck uses DSP algorithms to model physical instruments with an intuitive interface to perform and fine-tune the sound. Musicians and sound designers can use this module to create familiar sounds or explore novel sounds beyond acoustic instruments.
+
+  Like many synth voices, VCV Pluck can be controlled by sequencers or MIDI sources via its V/OCT pitch and GATE inputs. If a polyphonic cable is patched to V/OCT, VCV Pluck generates a polyphonic voice. Optionally, patch a trigger signal into RETR if you need to retrigger the voice while the gate is active, which re-strikes the instrument even when playing legato notes. The VEL velocity input controls the intensity of sound from a 0-10 V signal. If VEL is unpatched, the voice's intensity behaves like a 5 V velocity signal.
+
+  Enable HOLD to sustain the voice after the gate falls. This is useful for triggering percussive models like bells while allowing them to ring out completely, or for creating sustained drones.
+
+  VCV Pluck contains 74 models of physical and imaginary instruments, selectable by clicking MODEL A's name in the display screen for a menu, or by clicking the arrow buttons. Two models can be blended by selecting MODEL B and moving the MORPH slider horizontally. Morphing two models produces a new model with similar acoustic characteristics to its “parents”, and the blend balance can be modulated with control voltage. The choice of model can be modulated by patching a CV signal to MDL A or MDL B, where each increment of 0.1 V selects the next model.
+
+  VCV Pluck is not limited to synthesizing just 74 instruments. The model (or morphed model) can be fine-tuned by adjusting 6 parameters between -100% and 100%. Each parameter can be modulated with CV and an attenuverter.
 specs: |-
-  Requires VCV Rack 2.
+  - 74 models of plucked and hammered strings, bells, and hybrid sounds
+  - Morph between two selected models (MODEL A and MODEL B) with a MORPH slider, modulatable by CV
+  - Model selection modulatable via MDL A and MDL B CV inputs, 0.1 V per model
+  - 6 fine-tuning parameters from -100% to +100%, each with CV input and attenuverter: HIT (initial impulse shape), DTN (detuning of the resonant body), POS (exciter position on the resonant body), TONE (resonator harmonics and filter cutoff), RING (resonator low-pass filter decay), DCY (amplitude decay)
+  - V/OCT pitch and GATE inputs, playable from sequencers or MIDI sources
+  - Polyphonic: a polyphonic cable patched to V/OCT generates a polyphonic voice
+  - Multitimbral: multiple models playable simultaneously via polyphonic V/OCT, GATE and MDL A/B signals
+  - RETR trigger input to retrigger the voice while the gate is active, re-striking on legato notes
+  - VEL velocity input, 0-10 V, behaving as 5 V when unpatched
+  - HOLD to sustain the voice after the gate falls
+  - Models, Bass: Soul Bass, Pick Round, Pick Tight, Pick Dirty, Fretless Doom, Bass Metallizer
+  - Models, Bells: Tubular Bells, Dream of Bells, Ghost of Bells, Bass Bell, Velvet Bells, Dream of Chimes, Bell Metallizer, Dream of Gong
+  - Models, Guitar: Round Strings, Steel Strings, Dream of Steel, Mellow Steel, Octave Steel, Dream of Octaves, Strings Theory, Nylon Round, Nylon Tight, Dream of Nylon, Disco Pluck, Mute Metallizer, Crazy Flange, Distant Chorus, Clavitar, Velvet Strings, Dream of Pluck
+  - Models, Keys: Acousticlavinet, Funklavinet, EP Round, Dream of EP, Ghost of EP, Dream of Tines, Ghost of Tines, Velvet Tines, Dream of CP, Ghost of CP, Dream of Grand, Ghost of Grand, Grand Metallizer, Bell Grand, Tubular Grand, Metal Grand, Glass Grand, Mellow Keys
+  - Models, Synth: Struck Quartz, Bowed Quartz, Blown Quartz, Acoustic Synth, Bowed Synth, Plucked Synth, Velvet Synth, Bowed Neutron, Blown Neutron
+  - Models, Traditional: Harp Round, Harp Tight, Harp Octaves, Glass Harp, Dream of Harp, Sitar, Sitar Lush, Dream of Sitar, Banjo, Dream of Kalimba, Koto, Dream of Koto, Dream of Charango, Dream of Kantele, Ghost of Kantele, Harpsichord
+versions:
+  - name: 2.0.0
+releaseDate: 2024-08-21
+videos:
+  - videoId: XQ0dVWschzU
+  - videoId: UueJjvxQHuI

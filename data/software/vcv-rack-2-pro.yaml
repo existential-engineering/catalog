@@ -18,11 +18,35 @@ url: https://vcvrack.com/Rack
 prices:
   - amount: 0
     currency: USD
-description: "Professional version of the virtual Eurorack studio with DAW
-  plugin support. Runs as a VST2, VST3, Audio Unit, or CLAP plugin inside any
-  major DAW, with up to 16 audio I/O channels, MIDI I/O, parameter automation,
-  and offline rendering."
+description: Paid edition of the VCV Rack 2 virtual Eurorack studio. Rack 2 Pro
+  runs as VST2, VST3, Audio Unit, CLAP and standalone, with free and Pro modules
+  and professional support.
 details: |-
-  Includes everything in Rack 2 Free plus DAW integration. Save patches inside DAW projects, use multiple Rack instances, render offline. Supported DAWs: Ableton Live, Cubase, FL Studio, Reason, Bitwig, Reaper, Mixbus, Studio One, Cakewalk, Logic Pro, and GarageBand. Also includes access to Pro-exclusive modules (Chorus, Flanger, Phaser, Reverb, Convolver, Compressor) and professional support.
+  VCV Rack 2 is the virtual modular platform based on Eurorack synthesizers. It is used to learn modular synthesis basics and advanced patch techniques, perform sounds in real-time and process live audio, compose unique rhythms and melodies with algorithmic and generative techniques, and record complete multi-track pieces and design your own synth patches. It extends beyond hardware limitations with polyphonic cables, module preset sharing, total patch recall, and more.
+
+  Rack 2 Pro is the paid edition. Where Rack 2 Free is standalone only, Rack 2 Pro is distributed as VST2, VST3, Audio Unit, CLAP and standalone, gives access to both Free and Pro modules, and comes with professional support.
+
+  The DAW plugin is only in Rack Pro. It lets you save patches inside your DAW project, use multiple Rack instances, and render offline. It loads as an instrument or effect plugin with up to 16 audio inputs/outputs, 16 MIDI inputs/outputs, and parameter automation. The VCV manual documents 16 audio input channels (8 stereo inputs) and 16 audio output channels (8 stereo outputs), and MIDI handling of data messages on channels 1-16, transport events (start/stop/continue), 24 PPQN clock, song position, and SysEx data. Audio Unit is macOS only, while VST2/VST3 cover Windows, macOS and Linux and CLAP is cross-platform.
+
+  Rack integrates with hardware and software through multi-interface input/output for audio or CV and polyphonic MIDI input/output for hardware control. VST plugins can also be hosted inside Rack and their parameters controlled with CV using VCV Host, which is purchased separately.
+
+  Rack ships with 30+ built-in modules, 170+ official modules from Eurorack manufacturers, and 2000+ modules available on the VCV Library. Users can develop their own modules with the C++ VCV SDK.
 specs: |-
-  System requirements: Windows 7+, macOS 10.9+, or Linux (Ubuntu 16.04+). CPU: Intel/AMD 64-bit (SSE4.2, 2011+) or Apple M1+. Dedicated Nvidia/AMD GPU from 2013+. 1 GB RAM, 1 GB disk space. Plugin: up to 16 audio inputs/outputs, 16 MIDI inputs/outputs.
+  - Distribution: VST2, VST3, Audio Unit, CLAP, standalone
+  - Free and Pro modules included
+  - Professional support
+  - DAW plugin (Rack Pro only): save patches inside your DAW project, use multiple Rack instances, render offline
+  - Instrument/effect plugin with up to 16 audio inputs/outputs and 16 MIDI inputs/outputs
+  - Parameter automation
+  - Audio Unit is macOS only, VST2/VST3 on Windows, macOS and Linux, CLAP cross-platform
+  - MIDI: data messages on channels 1-16, transport (start/stop/continue), 24 PPQN clock, song position, SysEx
+  - Supported DAWs: Ableton Live, Cubase, FL Studio, Reason, Bitwig, Reaper, Mixbus, Studio One, Cakewalk, Logic Pro, GarageBand (other DAWs may run Rack but are unsupported by VCV)
+  - Windows 7+, macOS 10.9+, or Linux (such as Ubuntu 16.04+)
+  - CPU: Intel/AMD 64-bit processor (x64) supporting SSE4.2 (2011 or later), or Apple M1 (ARM64) or higher
+  - Graphics: Dedicated Nvidia/AMD graphics card from 2013 or later with recent driver update. Integrated graphics such as Intel HD are not recommended and may cause significantly increased CPU usage
+  - Memory: 1 GB
+  - Disk space: 1 GB
+  - 30+ built-in modules, 170+ official Eurorack manufacturer modules, 2000+ modules on the VCV Library
+  - C++ VCV SDK for developing your own modules
+versions:
+  - name: 2.6.6

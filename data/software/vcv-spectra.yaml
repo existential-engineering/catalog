@@ -1,7 +1,7 @@
 id: wB7kZWHEANeC45X4U6JMa
 name: Spectra
 manufacturer: vcv
-primaryCategory: effect
+primaryCategory: spectral-processor
 categories:
   - utility
 platforms:
@@ -12,10 +12,40 @@ url: https://vcvrack.com/Spectra
 prices:
   - amount: 0
     currency: USD
-description: "16-band spectral designer that combines filter bank and spectral
-  processor concepts into a single module. Functions as a vocoder, graphic EQ,
-  VCF, and transient generator for percussion."
+description: Two filter bank models, with modulation over all frequency band
+  responses. Perfect as a vocoder, a colorful graphic EQ, a VCF for synth
+  voices, and a transient generator for percussion.
 details: |-
-  Two filter bank models: Vintage (based on 296r Spectral Processor) and Digital (ideal filters). 16 independent frequency bands with CV control. Spectrum transfer functions (even-to-odd, odd-to-even, AUX modulation). Master filter with lowpass/highpass/bandpass. Band envelope followers with adjustable decay. Real-time visual display with multiple modes.
+  Spectra combines many filter bank and spectral processor concepts into a single module, but it follows one simple principle. Signals are split into multiple frequency bands, an amplitude adjustment is made to each band, and the bands are recombined into a single signal.
+
+  The ODD and EVEN inputs route a signal into the odd-numbered (1, 3, 5, ...) and even-numbered (2, 4, 6, ...) bands. The inputs are normalized to each other, so if only one cable is patched into ODD or EVEN, that signal is routed to all bands. The ODD and EVEN outputs are the mixed signals from all odd and even band outputs, and the BOTH output is the sum of both odd and even (all) bands. The ODD and EVEN faders and CV inputs apply up to 12 dB of pre-gain to the odd and even bands.
+
+  All 16 frequency bands are shown on the display. In Visual mode ("V") the levels of each band are shown in real-time, in Level mode ("L") the level of each band can be adjusted, and in Decay mode ("D") the envelope decay time of each band can be adjusted. Each band has independent CV control of its own amplitude with the LEVEL INPUTS section, BAND INSERTS interrupt the signal from the main ODD/EVEN inputs so certain bands can be replaced with different signals, ENV OUTPUTS provides an envelope follower for each band, and BAND OUTPUTS generates audio processed by the band's filter.
+
+  The spectrum transfer feature allows you to cross-modulate one set of signals with another set of signals using the internal envelope followers of each band. The E:O (even-to-odd) function applies the envelope of each even band to the next odd band's amplitude, and the O:E (odd-to-even) function applies the envelope of each odd band to the next even band's amplitude. These functions can be used to construct a simple vocoder with the modulator signal applying the envelope of its 8 bands to the 8 bands of the carrier signal. A signal patched into AUX is processed internally to generate 16 envelope signals for each band, which is applied to all odd- and even-numbered bands, at a cost of about 50% more CPU load.
+
+  The Master Filter section controls the amplitude of all 16 bands with just three parameters, in a traditional lowpass/highpass/bandpass fashion: FREQ controls the center frequency of the bandpass filter, WIDTH specifies the width of the "plateau", and SLOPE controls the slope of each side of the plateau. Spectra also includes two filter bank models, one based on real hardware and one an "ideal" digital model, selected by right-clicking on the panel.
 specs: |-
-  Requires VCV Rack 2.
+  - 16 independent frequency bands
+  - Two filter bank models: Vintage (modeled on the 296r Spectral Processor, measured at 192 kHz) and Digital (ideal brick-wall filters with precise frequency spacing, flat plateaus and sharp slopes)
+  - ODD, EVEN and AUX signal inputs, ODD, EVEN and BOTH signal outputs
+  - ODD and EVEN faders with CV inputs applying up to 12 dB of pre-gain, plus a BOTH fader applying pre-gain to all bands
+  - Band display with Visual, Level and Decay modes
+  - LEVEL INPUTS: independent CV control of each band's amplitude
+  - BAND INSERTS for patching a signal directly into a filter band
+  - ENV OUTPUTS: envelope follower per band with adjustable decay
+  - BAND OUTPUTS: per-band filtered audio
+  - Spectrum XFER with E:O (even-to-odd) and O:E (odd-to-even) transfer functions plus CV inputs
+  - AUX input generating 16 band envelopes applied to all odd- and even-numbered bands (about 50% higher CPU load when patched)
+  - Master Filter with FREQ, WIDTH and SLOPE controls over all 16 bands
+  - Dark panels (added in 2.0.4)
+  - Polyphonic audio inputs are summed
+versions:
+  - name: 2.0.4
+  - name: 1.0.2
+  - name: 1.0.1
+  - name: 1.0.0
+videos:
+  - videoId: "281667892"
+    provider: vimeo
+    title: VCV Spectra

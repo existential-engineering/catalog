@@ -1,7 +1,7 @@
 id: tBnehU1AvFW6LMSLdGcFv
 name: Parametra
 manufacturer: vcv
-primaryCategory: effect
+primaryCategory: equalizer
 categories:
   - utility
 platforms:
@@ -12,10 +12,41 @@ url: https://vcvrack.com/Parametra
 prices:
   - amount: 0
     currency: USD
-description: "Stereo parametric EQ with eight CV-controllable filters and a
-  spectrum viewer. Features 17 types of biquad filters enabling audio-rate
-  modulation for sound design and mixing."
+description: A stereo parametric EQ with eight CV-controllable filters and a
+  spectrum viewer. Includes 17 types of filters for polishing tracks in a mix or
+  designing complex VCFs allowing audio-rate modulation.
 details: |-
-  8 configurable filters with CV control for frequency and gain. 17 filter types: Lowpass (12/24/48 dB/oct), Highpass (12/24/48 dB/oct), Lowshelf, Highshelf, Bandpass, Peak (variable Q), and Notch. Spectrum display showing amplitude analysis. Master output gain with soft-clipping protection. L/R VCA for CV-controllable amplification. Dark panel option. Version 2.0.4.
+  A parametric EQ allows you to design your own complex filter by configuring multiple filters of certain types in series. Parametra includes 8 filters that can be modulated in two dimensions up to audio-rate frequencies.
+
+  Each filter is represented by a node in the spectrum display. Drag a node horizontally to adjust the cutoff frequency of a filter and vertically to adjust its gain. These positions can be controlled by a CV signal using the FREQ and GAIN inputs for each filter.
+
+  Toggle the on/off state of each filter by clicking the node below the spectrum display, right-clicking the node itself, or by sending a 2V or higher trigger in the filter's STATE input.
+
+  To change the filter type, click the filter type name/diagram at the bottom of the main display and select the desired filter from the dropdown menu. Parametra includes 17 transparent biquad filter types. A higher Q (quality) value produces a filter with a narrower bandwidth.
+
+  The spectrum shows the amplitude of each frequency of the output signal in POST mode or the input signal in PRE mode. In the OUTPUT section, the master knob adjusts the output gain, and the L/R VCA applies CV-controllable amplification to the signal. The output signal is soft-clipped at -5V to 5V, shown by the top red LED on the VU meter.
 specs: |-
-  Requires VCV Rack 2.
+  - Stereo parametric EQ with 8 CV-controllable filters
+  - 17 transparent biquad filter types
+  - LP: Lowpass 12, 24, and 48 dB/oct
+  - HP: Highpass 12, 24, and 48 dB/oct
+  - LS: Lowshelf 12 and 24 dB/oct
+  - HS: Highshelf 12 and 24 dB/oct
+  - BP: Bandpass
+  - PK: Peak Q=1, 2, 4, 8, and 16
+  - NT: Notch
+  - FREQ, GAIN and STATE CV inputs per filter
+  - Filters modulated in two dimensions up to audio-rate frequencies
+  - Spectrum display with POST (output) and PRE (input) modes
+  - Node drag interface: horizontal for cutoff frequency, vertical for gain
+  - Filter on/off toggled by click, right-click, or a 2V or higher trigger to STATE
+  - OUTPUT section with master output gain knob and L/R VCA for CV-controllable amplification
+  - Output soft-clipped at -5V to 5V, indicated by the top red LED on the VU meter
+  - Contains one module: VCV Parametra
+versions:
+  - name: 2.0.4
+  - name: 2.0.3
+videos:
+  - videoId: "272071567"
+    provider: vimeo
+    title: VCV Parametra

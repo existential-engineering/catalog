@@ -1,7 +1,7 @@
 id: 00piGQeTBMLMR_jS92Kwd
 name: Drums
 manufacturer: vcv
-primaryCategory: virtual-instrument
+primaryCategory: drum-machine
 categories:
   - synthesizer
 platforms:
@@ -12,10 +12,44 @@ url: https://vcvrack.com/Drums
 prices:
   - amount: 0
     currency: USD
-description: "Analog-modeled modular drum machine featuring 9 individual drum
-  modules with full CV control. Includes virtual analog models of vintage drum
-  machines using Vult DSP technology."
+description: Analog-modeled modular drum machine. Virtual analog models of
+  vintage drum machines using Vult DSP technology, with 9 individual drum
+  modules with CV control for full modularity.
 details: |-
-  9 standalone drum instruments: Kick, Snare, Tom, Rim, Clap, Closed Hat, Open Hat, Crash, and Ride. Includes a combined drum machine module with stereo mixing, volume and pan controls. Multiple drum circuit models based on classic hardware (808, 909-style). CV modulation inputs for each parameter, global tune and accent controls. Dark panel option available. Built on Vult DSP modeling technology.
+  VCV Drums is a set of analog-modeled drum modules for VCV Rack, built on Vult DSP technology. It provides virtual analog models of vintage drum machines: 9 individual drum modules with CV control for full modularity, plus a drum machine module for quick patching, stereo mixing, and global accent and tune.
+
+  Each of the 9 standalone drum modules simulates the sound of an analog circuit based on classic drum synthesizer hardware. To trigger a drum module, click the trigger button or patch a trigger signal into the TRIG input and a drum sound is played from the module's audio output. A sequencer, random gate generator, or VCV MIDI-Gate with a MIDI controller can all be used to trigger the modules.
+
+  On each drum module, the TUNE knob and CV input control the pitch or size of the drum, except Clap, which is pitchless and uses TONE instead. ACC produces an accented drum sound when the drum is triggered with GATE, and the intensity of the accent can be adjusted. Some drum modules increase their volume when accented, while others increase transient intensity and harmonics.
+
+  The Kick offers two models, based on an 808- and a 909-like kick drum circuit, selectable by right-clicking the panel. Snare, Rim and Clap are modeled on 909-like circuits, and Tom offers Low, Mid and High models with different oscillator harmonics. Closed Hat, Open Hat, Crash and Ride share METAL, ATTACK and DECAY controls, with MUTE on the hi-hats for choking one with the other.
+
+  The VCV Drum Machine module combines all 9 drum instruments, with two tom channels, into a compact stereo drum mixer, with every drum parameter exposed to CV modulation. Global TUNE and ACC inputs and attenuverters affect all drum channels, and the two CV inputs are normalized to 10V so the attenuverters can apply a constant pitch or accent offset when unpatched. Each channel has VOL with up to 12 dB of gain and a PAN knob with pan-law scaling like VCV Console.
 specs: |-
-  Requires VCV Rack 2.
+  - 9 individual analog-modeled drum modules plus a combined Drum Machine mixer module
+  - VCV Kick: SWEEP, ATTACK, DECAY, with two models based on 808- and 909-like kick circuits
+  - VCV Snare: NOISE, SNAP, DECAY, TUNE, with a 909-like snare circuit model
+  - VCV Tom: Low, Mid and High models with different oscillator harmonics
+  - VCV Rim: VELO, ATTACK, DECAY, with a 909-like rimshot circuit model
+  - VCV Clap: TONE, VELO, SPACE, DECAY, with a 909-like hand-clap circuit model
+  - VCV Closed Hat: METAL, ATTACK, DECAY, MUTE choke input
+  - VCV Open Hat: METAL, ATTACK, DECAY, MUTE choke input
+  - VCV Crash: METAL, ATTACK, DECAY
+  - VCV Ride: METAL, ATTACK, DECAY
+  - VCV Drum Machine: all 9 instruments with two tom channels in a compact stereo mixer
+  - CV modulation inputs on all drum parameters
+  - TRIG input and trigger button on every drum module
+  - ACC accent input with adjustable intensity, global on the Drum Machine
+  - Global TUNE and ACC CV inputs with attenuverters, normalized to 10V
+  - Per-channel VOL with up to 12 dB of gain and PAN with pan-law scaling
+  - Dark panels available
+  - Built on Vult DSP virtual analog modeling technology
+versions:
+  - name: 2.1.10
+  - name: 2.1.9
+  - name: 2.1.8
+  - name: 2.1.7
+  - name: 2.1.5
+  - name: 1.1.0
+  - name: 1.0.0
+releaseDate: 2021-09-11
