@@ -4,36 +4,329 @@ manufacturer: mackie
 primaryCategory: mixer
 categories:
   - audio-interface
+capabilities:
+  - equalization
+  - filter
+  - compression
+  - reverb
+  - delay
+  - chorus
+  - flanger
+  - overdrive
+  - distortion
+  - wah
 url: https://mackie.com/en/products/mixers/profxv3-series/ProFX12v3.html
-description: "Mackie ProFX12v3 12-channel professional analog mixer with USB,
-  featuring seven Onyx mic preamps, the GigFX effects engine, and 192 kHz USB
-  recording."
+prices:
+  - amount: 379.99
+    currency: USD
+    asOf: 2026-09-19
+    source: official-website
+description: Designed for musicians and creators who want high-resolution audio,
+  The Mackie ProFX12v3 is an analog USB mixer with effects and award-winning
+  Onyx mic preamps.
 details: |-
+  Experience the best-in-class series of professional analog USB mixers with effects. The Mackie ProFX12v3 is a 12-channel mixer that gives recording artists, live performers and content creators a new level of studio-quality performance.
+
   Legendary sound is within reach, whether you're recording a podcast or performing at a coffee shop. The Mackie ProFX12v3 features seven award-winning Onyx preamps and a versatile GigFX effects engine, allowing you to get colorful high-resolution recordings with sample rates up to 192 kHz.
 
-  Record podcasts, stream gameplay or produce the next hit—all with ultra-clean, transparent audio. Our award-winning Onyx Mic Preamps deliver analog warmth so you sound great, no matter what you do.
+  Channels 1 and 2 are XLR and 1/4 inch combo inputs with Hi-Z switches, channels 3 and 4 add separate XLR mic and 1/4 inch line jacks, all four mono channels carry single-knob compression and a 1/4 inch insert. Channels 5/6, 7/8 and 9/10 are hybrid stereo channels pairing an XLR mic input with left/mono and right 1/4 inch line inputs, and channel 11/12 takes the 1/8 inch stereo input or the USB 3-4 return.
 
-  The Mackie ProFX12v3 has a high-resolution effects engine to give your sound the perfect touch, whether you need to add a bit of reverb to a guitar track or give your podcast a creative edge.
+  The GigFX engine offers 24 presets covering rooms, halls, plates and a spring reverb, choruses, a doubler, echo and ping-pong delays, flange, auto-wah and an overdrive/distortion, with an FX send jack and a footswitch input for FX mute.
 
-  Waveform OEM is a multi award-winning workstation, featuring powerful and creative tools to inspire the modern musician.
+  A 2x4 24-bit / 192 kHz USB interface records to Mac or PC and returns two independent stereo streams. Outputs include main mix on XLR and 1/4 inch, stereo control room outputs, a stereo sub 1-2 output bus, a mon send and a headphone jack. Power comes through a 3-pin IEC line cord and a universal 100-240 VAC supply.
 specs: |-
-  - 12-channel USB mixer with seven low-noise Onyx preamps (60dB gain)
-  - 3-band EQ with On/Off hard bypass switch
-  - Dual stereo USB return
-  - Latency-free direct monitoring
-  - High-resolution recording up to 192 kHz via USB (2x4)
-  - 24 included effects (reverbs, delays, choruses) via GigFX engine
-  - Built-in compression
-  - Switchable Hi-Z inputs for guitars/bass
-  - 100Hz low-cut filter and 48V phantom power
-  - Aux/Monitor with per-channel send control
-  - Stereo subgroup output bus with per-channel assignment
-  - Headphone output with separate level and blend control
+  - 12-channel USB mixer with seven low-noise, high-headroom Onyx preamps providing 60 dB of gain
+  - 3-band EQ with On/Off hard bypass switch on all channels (80 Hz low, 2.5 kHz mid, 12 kHz high, +/-15 dB)
+  - 100 Hz low-cut filter at 18 dB/octave and 48V phantom power on all mic channels
+  - Single-knob compression on channels 1-4
+  - Switchable Hi-Z inputs on channels 1 and 2 for guitars, bass and other instruments
+  - Four 1/4 inch channel inserts on channels 1-4
+  - 24 GigFX effects presets: Bright Room, Warm Lounge, Small Stage, Warm Theater, Warm Hall, Concert Hall, Cathedral, Small Plate, Large Plate, Chorus 1, Chorus 2, Delay + Reverb, Doubler, Echo, Delay 1, Delay 2, Delay 3, Ping-Pong Delay, Overdrive/Distortion, Spring Reverb, Early Reflections, Auto-Wah, Flange and Slapback Reverb
+  - 24-bit / 192 kHz 2x4 USB recording interface (1 stereo input, 2 stereo outputs)
+  - Dual stereo USB return with latency-free direct monitoring and a blend control
+  - Aux/mon send with dedicated per-channel send control
+  - Stereo sub 1-2 output bus with per-channel assignment
+  - Dedicated stereo control room outputs and headphone output with separate level and blend control
   - Footswitch input for FX mute
-  - Waveform OEM professional software bundle included
-prices:
-  - amount: 311
-    currency: USD
+  - Break switch mutes all channels to the main, control room and phones outputs
+  - Two columns of 12-segment main meters
+  - Equivalent input noise -126 dBu, all inputs +22 dBu maximum, main mix XLR +28 dBu
+  - Universal 100-240 VAC power supply via 3-pin IEC line cord, 30 watts
+  - Rack-mountable using the optional ProFX12v3 rack ear kit
+  - Dimensions 13.0 x 14.8 x 4.0 in / 330 x 376 x 102 mm, weight 7.9 lb / 3.6 kg
+io:
+  - key: mAamcYkp
+    name: Mic/Line Combo Input 1 (Hi-Z switchable)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Top
+  - key: mSldDcA3
+    name: Mic/Line Combo Input 2 (Hi-Z switchable)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Top
+  - key: V7xcmx20
+    name: Mic Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: Fmg8uPPk
+    name: Mic Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: GL9Edlug
+    name: Line Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: RB8sV5ra
+    name: Line Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: bnLPOtGm
+    name: Channel 1 Insert
+    signalFlow: bidirectional
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: zM4tq9Qg
+    name: Channel 2 Insert
+    signalFlow: bidirectional
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: O5EYJR3A
+    name: Channel 3 Insert
+    signalFlow: bidirectional
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: s55YJLue
+    name: Channel 4 Insert
+    signalFlow: bidirectional
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: gFuedPY9
+    name: Mic Input 5/6
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: zdoUEReX
+    name: Mic Input 7/8
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: 5KuF1oMp
+    name: Mic Input 9/10
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: Q0JCaali
+    name: Line Input 5 (Channel 5/6 Left/Mono)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: hfyNPkDa
+    name: Line Input 6 (Channel 5/6 Right)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: 34fS79f8
+    name: Line Input 7 (Channel 7/8 Left/Mono)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: ls3wubS5
+    name: Line Input 8 (Channel 7/8 Right)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: CH0brjRu
+    name: Line Input 9 (Channel 9/10 Left/Mono)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: ooaFwfYw
+    name: Line Input 10 (Channel 9/10 Right)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: oQaG6eRj
+    name: 1/8-inch Stereo Line Input (Channel 11/12)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: cTvZkg4C
+    name: FX Mute Footswitch Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: KQOXMPIs
+    name: Main Mix Output Left (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: j2DnxUqO
+    name: Main Mix Output Right (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: QqB6YrT4
+    name: Main Mix Output Left (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: MvspKiMc
+    name: Main Mix Output Right (1/4-inch)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: PuYKgSTq
+    name: Control Room Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: 4Vbnq3sf
+    name: Control Room Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: DtsBPbyx
+    name: Sub Out 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: BtpBufpz
+    name: Sub Out 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: GnEe9HKi
+    name: Mon Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: x1xMjoZH
+    name: FX Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: EzvDQJE7
+    name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: tEam2UIw
+    name: USB Port
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: r4JQ2Dcb
+    name: AC Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
 videos:
   - videoId: pX2rTE4Iens
     provider: youtube

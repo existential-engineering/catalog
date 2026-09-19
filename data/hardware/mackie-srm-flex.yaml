@@ -4,30 +4,104 @@ manufacturer: mackie
 primaryCategory: speaker
 categories:
   - mixer
+capabilities:
+  - equalization
+  - crossover
+  - limiting
+  - reverb
 url: https://mackie.com/en/products/loudspeakers/srm-flex/srm_flex.html
-description: "Legendary SRM Series sound quality in an ultra-portable design
-  that is flexible, reliable, and easy to control."
+prices:
+  - amount: 899.99
+    currency: USD
+description: Legendary SRM Series sound quality in an ultra-portable design that
+  is flexible, reliable, and easy to control.
 details: |-
-  Ultra-portable all-in-one portable column PA system featuring 1300W of power with a custom wide-dispersion array that delivers room-filling sound for audiences up to 100 people. The 6-driver wide-dispersion array pairs with an integrated 10" subwoofer for full-range performance.
+  The ultra-portable Mackie SRM-Flex Portable Column PA System features 1300W of power and a custom wide-dispersion array ensuring plenty of headroom for crystal-clear, room-filling sound. A 6-driver array pairs with a 10" subwoofer, and the adjustable height directs the sound at ear level for optimal coverage.
 
-  Built-in 6-channel digital mixer with physical knobs gives hands-on control plus wireless control via the SRM-Flex Connect app for iOS and Android. Inputs accommodate mics, instruments, and media players, with a professional XLR output for connecting an additional SRM-Flex or front-of-house mixer.
+  The built-in 6-channel digital mixer offers control through physical knobs or wirelessly on a phone via the SRM-Flex Connect app on iOS and Android. Music or backing tracks can be streamed from any Bluetooth enabled device.
 
-  Bluetooth streaming lets users play music and backing tracks from any Bluetooth-enabled device. Application-specific voicing modes (Music, Speech, Live) along with three reverb options and 2-band EQ make it easy to dial in the right sound for any situation.
+  Inputs cover mics, instruments and media players, and a professional XLR out connects to an additional SRM-Flex or a front-of-house mixer. 2-band EQ on channels 1 and 2 adjusts the tone of a mic, guitar or keyboard, and application voicing modes tailor the system to the venue with a choice of Music, Speech and Live.
 
-  Designed for portability, the system weighs 29.6 lb (13.4 kg) and includes a universal 100-240 VAC power supply with Power Factor Correction for reliable performance worldwide.
+  Three reverbs are available to finish the sound, and tactile knobs for every critical function avoid menu navigation on a small screen. A carry bag for the array module and extenders plus a protective cover for the subwoofer and mixer module are included.
 specs: |-
-  - 1300W power
-  - 6-driver wide-dispersion array with 10" subwoofer
+  - 1300W peak system power (LF 1000W peak, HF 300W peak, both Class-D with active cooling)
+  - 10" / 254 mm low-frequency driver with ferrite magnet
+  - 6x 2.0" / 51 mm silk dome tweeters in a wide-dispersion array
+  - Frequency range (-10 dB): 40 Hz - 20 kHz
+  - Frequency range (-3 dB): 50 Hz - 20 kHz
+  - Maximum SPL peak: 118 dB
+  - Coverage: 90 degrees horizontal, 50 degrees vertical
+  - Crossover frequency: 600 Hz, 18 dB Butterworth
   - Built-in 6-channel digital mixer
-  - SRM-Flex Connect app for iOS and Android wireless control
-  - Bluetooth audio streaming
-  - Application-specific voicing modes (Music, Speech, Live)
-  - 3 reverb options and 2-band EQ
-  - Professional XLR output for daisy-chaining or FOH
-  - Universal 100-240 VAC power supply with Power Factor Correction
-  - Weight: 29.6 lb (13.4 kg)
-  - Dimensions with extenders: 78.8 x 13 x 14.4 in (2002 x 330 x 366 mm)
-  - Supports audiences up to 100 people
+  - 2-band EQ on channels 1 and 2 (+5 / -15 dB at 90 Hz and 6.0 kHz)
+  - 3 speaker voicing modes: Music, Speech and Live
+  - 3 reverb programs (short, medium, long)
+  - Bluetooth 4.2 Class 1 for audio streaming and user interface control
+  - SRM-Flex Connect app for iOS 11 or later and Android 6 or later
+  - Professional male XLR Mix Out, 600 ohm balanced
+  - Peak and RMS limiting, power supply and amplifier thermal protection
+  - Universal power supply 100-240 VAC, 50-60 Hz, 110W with Power Factor Correction
+  - Black polypropylene enclosure with polyurea finish and powder-coated perforated steel grille
+  - Total size with extenders (H x W x D): 79.0 x 13.0 x 14.2 in / 2007 x 330 x 361 mm
+  - Weight: 29.6 lb / 13.4 kg
+  - Included: carry bag for array module and extenders, protective cover for subwoofer/mixer module
+io:
+  - key: BLq2jUHJ
+    name: Channel 1 Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Top
+  - key: ByvCjQoF
+    name: Channel 2 Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Top
+  - key: E7Hd5FNj
+    name: Channel 3/4 Line Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: afOEdCpa
+    name: Channel 3/4 Line Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: BbsB5wvC
+    name: Channel 5/6 Stereo Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VBfrl2Wp
+    name: Mix Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: sZpnx4S8
+    name: AC Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom
 links:
   - type: resource
     title: Owner's Manual
