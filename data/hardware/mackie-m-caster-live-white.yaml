@@ -4,25 +4,108 @@ manufacturer: mackie
 primaryCategory: mixer
 categories:
   - audio-interface
+capabilities:
+  - equalization
+  - compression
+  - filter
+  - pitch-shift
 url: https://mackie.com/en/products/mixers/mcaster-series/m_caster_live_white.html
-description: "Looking to step up your audio game on your streams, podcast, or
-  videos? M-Caster Live is the ultimate portable audio solution for mobile
-  devices and Mac/PC."
-details: |-
-  Plug in your mic, sweeten your sound, then go live. IT'S THAT SIMPLE.
-
-  From quick streams and video on Instagram and Tik Tok to all-nighters on Twitch and YouTube Live, M-Caster Live makes it insanely easy to give your fans pro studio quality sound without having to be an audio nerd.
-specs: |-
-  - Connect directly to smartphone's headphone jack for send/receive audio
-  - Connect favorite mic, headset, and more
-  - Selectable ContourFX Presets for vocal sound shaping
-  - StreamFX voice-changing effects
-  - RGB LED strip with 7 user-selectable colors
-  - USB connectivity for Mac/PC audio interface use
-  - Automatic Mix Minus on smartphone input
 prices:
   - amount: 229.99
     currency: USD
+description: Looking to step up your audio game on your streams, podcast, or
+  videos? M-Caster Live is the ultimate portable audio solution for mobile
+  devices and Mac/PC.
+details: |-
+  Easily mix, optimize and enhance audio for live streaming and content creation on mobile devices and Mac/PC. M•Caster Live is the ultimate portable audio solution for mobile devices and Mac/PC: plug in your mic, sweeten your sound, then go live.
+
+  M•Caster Live plays nicely with DSLRs, headsets and smartphones as well as professional microphones. When it comes to monitoring, there are dedicated headphone and studio monitor outputs, and a 1/8 inch TRRS connection to a phone's headphone jack both sends and receives audio with automatic mix minus.
+
+  At the heart of M•Caster is a sound-shaping engine. The ContourFX preset selector chooses between seven digital signal processors such as EQ, compression and filtering, and the ContourFX control knob blends in as much of the chosen preset as you want.
+
+  StreamFX adds seven signal-altering voice effects, from super deep voice to chipmunk, with a control knob setting the intensity per channel.
+
+  Channel 1 takes the XLR mic input or the 1/8 inch gaming headset, channel 2 takes the 1/8 inch instrument/line jack or the USB-C computer connection, and channel 3 is the smartphone jack. An RGB LED strip under the chassis offers seven user-selectable colors. The unit runs from USB-C power, including a portable power bank, and measures 5.1 x 8.0 x 2.0 inches at 1.2 lb.
+specs: |-
+  - Connect directly to a smartphone's headphone jack to both send and receive audio, with automatic mix minus
+  - XLR mic input with switchable 48V phantom power on channel 1
+  - 1/8 inch TRRS gaming headset jack as an alternative channel 1 input (no phantom power)
+  - USB-C audio interface connection for Mac/PC on channel 2
+  - 1/8 inch instrument / line input on channel 2
+  - 1/8 inch TRRS smartphone stereo jack on channel 3
+  - Dedicated 1/8 inch headphone output and 1/8 inch stereo speaker output
+  - Seven selectable ContourFX presets covering EQ, compression, filtering and more, with a blend control
+  - Seven StreamFX voice-changing effect presets with an intensity control
+  - RGB LED strip with seven user-selectable downlit colors
+  - Powered over USB-C at 5V 1A 5W, from the supplied adapter or a portable power bank (USB audio connection is not a power source)
+  - System requirements: Windows 10 or higher, macOS 10.8 or higher, iOS 13 or higher, Android 9 or higher
+  - Included accessories: USB cable, 1/8 inch TRS aux cable, 1/8 inch TRRS smartphone cable, power supply
+  - Dimensions 5.1 x 8.0 x 2.0 in / 129 x 203 x 52 mm, weight 1.2 lb / 0.5 kg
+io:
+  - key: DXIzDK2a
+    name: USB-C Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - key: aN3q19a1
+    name: Mic Input (Channel 1)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 8C4Dnrtc
+    name: Headset Jack (Channel 1, 1/8-inch TRRS)
+    signalFlow: bidirectional
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: v1GREU2R
+    name: USB-C Computer I/O (Channel 2)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - key: t9r04PSV
+    name: Instrument / Line Input (Channel 2, 1/8-inch TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 9EGJUvgS
+    name: Smartphone Stereo Jack (Channel 3, 1/8-inch TRRS)
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 9McBsybc
+    name: Headphone Output (1/8-inch TRS)
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: tU3WcNSu
+    name: Speaker Output (1/8-inch stereo, line level)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
 videos:
   - videoId: GH9HURyM4fc
     provider: youtube

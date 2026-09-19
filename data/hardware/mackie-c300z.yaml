@@ -4,17 +4,76 @@ manufacturer: mackie
 primaryCategory: speaker
 categories:
   - monitor
+capabilities:
+  - crossover
 url: https://mackie.com/en/products/loudspeakers/c-series/C300z.html
-description: 12" Compact Passive SR Monitor. Experience the same Mackie sound
-  quality heard from the legendary SRM Series Powered speakers in an incredibly
-  versatile passive design.
-details: |-
-  Experience the same Mackie sound quality heard from the legendary SRM Series Powered speakers in an incredibly versatile passive design. C-Series loudspeakers are built with rugged road worthy molded cabinets, custom designed high-output drivers and a precision tuned asymmetrical crossover for natural, high-fidelity sound.
-
-  C-Series loudspeakers are an excellent choice just about anywhere you can place them. Build the dream PA for your band with a pair of C-Series speakers and a PPM Series Powered Mixer or integrate them into an existing system. Add on a few more and an FRS Series amplifier for an impressive floor monitor setup. Since they are fully flyable, the C-Series is perfect for install systems like a small sanctuary, youth room, bars and small clubs.
 prices:
   - amount: 529.99
     currency: USD
+description: The C300z is a full-range portable loudspeaker providing
+  high-output, ultra-wide dispersion and low-distortion performance in a
+  compact, composite molded enclosure.
+details: |-
+  The C300z is a 12 inch 2-way portable passive loudspeaker for portable PA, stage monitor and permanent installation work, built in a compact composite molded enclosure.
+
+  A heat-treated titanium compression driver with a multi-cell aperture directs highs through an exponential high-frequency waveguide for ultra-wide dispersion of highs and mids, delivering clear sound to listeners up to 45 degrees off axis. The custom-designed 12 inch woofer with a 3 inch voice coil runs cooler and holds performance after long hours near peak volume.
+
+  The crossover is a Low Impedance Compensated Crossover (LICC) design whose EQ and crossover points are chosen so that beamwidth patterns match in both drivers, keeping the response natural at all volume levels.
+
+  The polypropylene cabinet has reinforcement ribbing and structural strengthening, a weather-resistant steel grille and an integrated pole mount on the bottom. The asymmetrical trapezoidal shape gives a floor monitoring position, and ten integrated M10 rigging points allow flying with the optional eyebolt kit.
+specs: |-
+  - 2-way portable Precision Passive loudspeaker system
+  - 750W peak / 500W music / 300W RMS power handling at 8 ohms
+  - 12 inch long-throw low-frequency transducer with 3 inch voice coil
+  - High-output 1.75 inch heat-treated titanium compression driver with multi-cell aperture
+  - Frequency Response (-3 dB): 55 Hz to 18 kHz
+  - Frequency Range (-10 dB): 45 Hz to 20 kHz
+  - Max SPL long-term: 123 dB @ 1 m
+  - Crossover Point: 1800 Hz, 24 dB/octave on both bands, low-frequency time offset corrected
+  - Integrated Low Impedance Compensated Crossover (LICC) with full driver protection
+  - Over-excursion protection via second-order high-pass filter
+  - Input Impedance: 8 ohms
+  - Input / Thru connectors: speakON-style NL-4 jack and 1/4 inch TS jack, wired in parallel
+  - Horizontal coverage 90 degrees (1 kHz to 20 kHz), vertical coverage 45 degrees (2.8 kHz to 20 kHz)
+  - Asymmetrical trapezoidal polypropylene cabinet, black textured finish
+  - Perforated metal grille with weather-resistant coating
+  - Floor mount, pole mount or fly via 10 integrated M10 threaded inserts
+  - Dimensions: 26.1 in / 663 mm (H) x 16.0 in / 406 mm (W) x 14.8 in / 376 mm (D)
+  - Net Weight: 46.0 lb / 20.9 kg
+  - Passive design, requires an external power amplifier and has no power input
+io:
+  - key: 1AfsshAH
+    name: Speaker Input (speakON NL-4)
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Right
+  - key: fTx5vfXM
+    name: Speaker Thru (speakON NL-4, parallel)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: speakon
+    maxConnections: 1
+    position: Right
+  - key: B8YHK9Nu
+    name: Speaker Input (1/4 inch TS)
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: zoQRyCxn
+    name: Speaker Thru (1/4 inch TS, parallel)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
 links:
   - type: resource
     title: Owner's Manual

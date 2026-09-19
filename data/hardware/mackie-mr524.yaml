@@ -4,23 +4,82 @@ manufacturer: mackie
 primaryCategory: studio-monitor
 categories:
   - monitor
+capabilities:
+  - equalization
+  - filter
+  - crossover
 url: https://mackie.com/en/products/studio-monitoring/mr-series/MR524.html
-description: 5" Powered Studio Monitor with Mackie's logarithmic waveguide
-  design for ultra-wide dispersion and balanced sound across the entire
-  frequency spectrum.
-specs: |-
-  - Equipped with Mackie's proven logarithmic waveguide design
-  - Ultra-wide dispersion for enhanced stereo imaging and listening sweet spot
-  - Precise acoustic alignment offers incredibly balanced sound across the entire frequency spectrum
-  - 1" silk dome tweeter provides fast transient response for detailed high end and vocal clarity
-  - 5" polypropylene woofer delivers responsive, dynamic low-frequency response
-  - 50 watts of bi-amplified Class A/B amplification
-  - Frequency response: 45 Hz – 20 kHz
-  - Adjustable acoustic space filters maintain flat response in typical placement configurations
-  - HF filter applies boost or cut to compensate for particularly dull or bright sounding rooms
 prices:
   - amount: 144
     currency: USD
+  - amount: 189.99
+    currency: USD
+description: Mackie MR524 powered 5-inch studio monitors clearly reproduce audio
+  across the entire frequency spectrum, so you can create professional mixes in
+  your home studio.
+details: |-
+  MR524 is the 5.25 in / 133 mm model of Mackie's MR Series powered studio monitors, a bi-amplified two-way design built around a 5.25 in / 133 mm polypropylene woofer and a 1 inch silk-dome tweeter on a neodymium magnet.
+
+  Mackie's logarithmic waveguide and precise acoustic alignment are the series' stated basis for its wide dispersion and stereo imaging, with the aim of mix translation that holds up on other playback systems.
+
+  Two rear controls adapt the monitor to the room. Acoustic Space applies a shelving cut for quarter-space, half-space or whole-space placement (speakers in corners, against a wall, or away from walls), and a High Frequency Filter boosts or cuts by 2 dB above 3 kHz to compensate for a dull or bright room. An input level control sits alongside them.
+
+  Three input connectors are fitted and are wired together electrically, so only one source should be connected at a time: a balanced XLR, a balanced or unbalanced 1/4 inch jack, and an unbalanced RCA. The manual gives the AES pin wiring for each.
+
+  The cabinet is all-wood with custom internal bracing and sound-tightening acoustic absorption material, and a custom-tuned rear port extends the low end. Mackie positions the MRS10 subwoofer as the companion for further low-frequency extension.
+specs: |-
+  - 50 watts of bi-amplified Class AB amplification
+  - 5.25 in / 133 mm polypropylene woofer
+  - 1 in / 25 mm silk dome tweeter with neodymium magnet
+  - Frequency response (-3 dB): 57 Hz - 20 kHz
+  - Frequency response (-10 dB): 45 Hz - 20 kHz
+  - Sound pressure level at 1 m, +4 dBu into balanced input: 102 dB SPL @ 1m
+  - Maximum SPL per pair: 108 dB SPL @ 1m
+  - Low frequency amplifier: 30 watts, 4 Ohm load, 60 watts peak
+  - High frequency amplifier: 20 watts, 6 Ohm load, 40 watts peak
+  - Amplifier type: monolithic IC, Class AB with DMOS power stage
+  - Crossover: 24 dB/octave at 2 kHz
+  - Sensitivity: +4 dBu at 300 Hz for full output
+  - Input impedance: 20 kOhm balanced bridging, 10 kOhm unbalanced
+  - High frequency EQ: +/-2 dB at 3 kHz and above
+  - Adjustable acoustic space filter (quarter, half, whole space)
+  - Balanced XLR, balanced/unbalanced 1/4 inch and unbalanced RCA inputs
+  - Professional all-wood cabinet with custom internal bracing
+  - Size (H x W x D): 11.1 x 7.1 x 8.7 in / 281 x 180 x 221 mm
+  - Weight: 10.2 lb / 4.6 kg
+io:
+  - key: V5IAwQQ1
+    name: Line Input (TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: G0fZyQHe
+    name: Line Input (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: xKchWwwJ
+    name: Line Input (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: ck6ZnAWG
+    name: AC Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
 videos:
   - videoId: yN7dkU-xbOw
     provider: youtube

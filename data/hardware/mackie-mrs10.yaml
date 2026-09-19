@@ -4,24 +4,124 @@ manufacturer: mackie
 primaryCategory: subwoofer
 categories:
   - studio-monitor
+capabilities:
+  - crossover
+  - filter
 url: https://mackie.com/en/products/studio-monitoring/mr-series/MRS10.html
-description: "When the recipe calls for deep, satisfying low-end sound, look no
-  further than the Mackie MRS10 powered studio subwoofer."
+prices:
+  - amount: 479.99
+    currency: USD
+description: The Mackie MRS10 powered studio subwoofer delivers 120 watts of
+  bass that musicians, producers and engineers need for mixing music that hits
+  hard and low.
 details: |-
-  If you're working on music that's all about that bass—hip-hop, EDM, metal—you need speakers that speak low-end. The Mackie MRS10 powered subwoofer is the professional, yet affordable, solution for producers and beatmakers.
+  MRS10 is the powered subwoofer of Mackie's MR Series, built around a 10 inch glass aramid composite woofer in a shelf-ported all-wood cabinet, driven by 120 watts of Class D amplification.
 
-  Equipped with a 10" glass aramid composite woofer, this mighty subwoofer is perfect for anyone who wants to experience deep, powerful bass in their studio. Powerful, deep extended low end for your studio, perfect for electronic music, hip-hop and more.
+  It is wired in line between the source and the monitors: stereo balanced XLR and 1/4 inch inputs feed the sub, and a matching pair of stereo XLR and 1/4 inch outputs feed the mains, wired identically to the inputs. The output frequency range depends on where the crossover is set.
 
-  Professional all-wood cabinet design built to last and look great in any studio.
+  The crossover point is continuously adjustable from 40 Hz to 180 Hz and a polarity switch selects 0 or 180 degrees, so the sub can be aligned to the mains and to its position in the room. An input level control and an auto power switch sit alongside.
+
+  A footswitch is included and connects to the rear Sub/HPF Bypass jack on an unbalanced 1/4 inch TRS connector. Engaging it takes the subwoofer out of circuit and returns the connected monitors to full range, and the front panel LED pulses while it is engaged.
+
+  The cabinet sits on vibration-absorbing rubber feet to limit resonance, and Mackie positions the sub as the companion to MR Series monitors so those cabinets can concentrate on mids and highs.
 specs: |-
-  - 120 watts Class-D amplification
-  - 10" glass aramid composite woofer
-  - Shelf-ported design
-  - Adjustable 40Hz to 180Hz crossover point
-  - Polarity switch (0°/180°)
-  - Vibration-absorbing rubber feet
-  - Included footswitch bypass function
-  - Professional all-wood cabinet design
+  - 120 watts of Class D amplification
+  - 10 in / 254 mm glass aramid composite woofer
+  - Frequency range (-3 dB): 35 Hz - 180 Hz
+  - Frequency range (-10 dB): 28 Hz - 180 Hz
+  - Maximum SPL peak: 119 dB
+  - Low frequency power: 120 watts, 4 Ohm load, 240 watts peak
+  - Amplifier type: monolithic IC, Class D with DMOS power stage
+  - Crossover type: 12 dB/octave
+  - Adjustable crossover frequency: 40 Hz - 180 Hz
+  - Sensitivity: +4 dBu at 65 Hz for full output
+  - Input impedance: 20 kOhm balanced, 10 kOhm unbalanced
+  - Polarity switch (0 degrees / 180 degrees)
+  - Stereo XLR and 1/4 inch inputs and outputs
+  - Included footswitch bypasses the subwoofer and returns the connected monitors to full range
+  - Shelf-ported all-wood cabinet with vibration-absorbing rubber feet
+  - Voltage-select switch: ~100-120V or ~220-240V, 50/60 Hz
+io:
+  - key: eHBaybPL
+    name: Left Input (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: qtFUmLkC
+    name: Right Input (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: sP6U9SVX
+    name: Left Input (TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 0HWFW7Tt
+    name: Right Input (TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 0YRsK2r6
+    name: Left Output (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: NkPZIKgm
+    name: Right Output (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: ruYHGfXI
+    name: Left Output (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Oi7Ul8x8
+    name: Right Output (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: gTUFQ3Na
+    name: Sub/HPF Bypass Footswitch
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: r98B5YII
+    name: AC Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
 links:
   - type: product
     title: MR524
