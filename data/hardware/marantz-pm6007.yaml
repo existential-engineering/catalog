@@ -233,7 +233,7 @@ io:
     name: Flasher IR In
     signalFlow: input
     category: digital
-    type: proprietary
+    type: gpio
     connection: 1/8-inch
     maxConnections: 1
     position: Right
@@ -261,19 +261,38 @@ io:
     connection: iec-c14
     maxConnections: 1
     position: Right
+variants:
+  - name: Silver-Gold
 links:
   - url: https://www.marantz.com/on/demandware.static/-/Library-Sites-marantz_northamerica_shared/default/dw00236235/./archive-downloads/marantz_pm6007_informaiton_sheet.pdf
     type: resource
     title: Information Sheet
   - url: https://manuals.marantz.com/PM6007/NA/EN/index.php
     type: resource
-    title: User Guide - English
-  - url: https://manuals.marantz.com/PM6007/NA/ES/index.php
-    type: resource
-    title: User Guide - Spanish
-  - url: https://manuals.marantz.com/PM6007/NA/FR/index.php
-    type: resource
-    title: User Guide - French
+    title: User Guide
   - url: https://www.marantz.com/on/demandware.static/-/Library-Sites-marantz_northamerica_shared/default/dw65b17c05/./archive-downloads/pm6007u_eng_quick_start_guide_27082020.pdf
     type: resource
-    title: Quick Start Guide - English
+    title: Quick Start Guide
+translations:
+  es:
+    links:
+      - url: https://www.marantz.com/on/demandware.static/-/Library-Sites-marantz_northamerica_shared/default/dw00236235/./archive-downloads/marantz_pm6007_informaiton_sheet.pdf
+        type: resource
+        title: Hoja de información
+      - url: https://manuals.marantz.com/PM6007/NA/ES/index.php
+        type: resource
+        title: Guía del usuario
+      - url: https://www.marantz.com/on/demandware.static/-/Library-Sites-marantz_northamerica_shared/default/dw65b17c05/./archive-downloads/pm6007u_eng_quick_start_guide_27082020.pdf
+        type: resource
+        title: Guía de inicio rápido
+  fr:
+    links:
+      - url: https://www.marantz.com/on/demandware.static/-/Library-Sites-marantz_northamerica_shared/default/dw00236235/./archive-downloads/marantz_pm6007_informaiton_sheet.pdf
+        type: resource
+        title: Fiche d'information
+      - url: https://manuals.marantz.com/PM6007/NA/FR/index.php
+        type: resource
+        title: Guide de l'utilisateur
+      - url: https://www.marantz.com/on/demandware.static/-/Library-Sites-marantz_northamerica_shared/default/dw65b17c05/./archive-downloads/pm6007u_eng_quick_start_guide_27082020.pdf
+        type: resource
+        title: Guide de démarrage rapide

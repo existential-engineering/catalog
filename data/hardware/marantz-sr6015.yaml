@@ -10,12 +10,16 @@ capabilities:
   - spatialization
   - harmonic-enhancement
 url: https://www.marantz.com/en-us/product/archive-av-receivers/sr6015/SR6015.html
+description: SR6015 is an 8K AV receiver with nine discrete amplifier channels
+  rated at 110 W into 8 ohms and 11.2 channel preamp processing. It decodes
+  Dolby Atmos, DTS:X and IMAX Enhanced, carries seven HDMI inputs with 8K/60
+  and 4K/120 pass-through, and adds Audyssey MultEQ XT32 room correction with
+  HEOS streaming and AirPlay 2.
 specs: |-
   - 9 discrete power amplifier channels
   - 11.2 channel processing
   - Power output: 110 W (8 ohm, 20 Hz to 20 kHz, 0.05%, 2 channel drive)
-  - Power output: 150 W (6 ohm, 1 kHz, 0.7%, 2 channel drive)
-  - 185 W (6 ohm, 1 kHz, 1%, 1 channel drive)
+  - Power output: 150 W (6 ohm, 1 kHz, 0.7%, 2 channel drive), 185 W (6 ohm, 1 kHz, 1%, 1 channel drive)
   - HDMI inputs back / front: 7 / 0
   - HDMI outputs main / zone: 2 / 1
   - HDMI 8K, 4K, CEC and eARC
@@ -71,7 +75,7 @@ io:
     name: Flasher IR In
     signalFlow: input
     category: digital
-    type: proprietary
+    type: gpio
     connection: 1/8-inch
     maxConnections: 1
     position: Right

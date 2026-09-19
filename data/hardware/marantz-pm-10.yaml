@@ -30,8 +30,7 @@ specs: |-
   - damping factor 500
   - Phono EQ: Marantz Musical Premium
   - phono input MM and MC
-  - Input sensitivity MM: 2.6 mV / 47 kohm
-  - MC: 280
+  - Input sensitivity MM: 2.6 mV / 47 kohm, MC: 280 uV (10 / 49 ohm selectable)
   - Input sensitivity high level: 400 mV / 20 kohm
   - balanced high level: 800 mV / 40 kohm
   - S/N ratio high level: 111 dB (2 V input / rated output)
@@ -290,16 +289,29 @@ io:
     connection: iec-c14
     maxConnections: 1
     position: Right
+variants:
+  - name: Gold
 links:
   - url: https://www.marantz.com/on/demandware.static/-/Library-Sites-marantz_northamerica_shared/default/dwd26622e7/./archive-downloads/mz_pm10_specsheet_u_en.pdf
     type: resource
     title: Specification Sheet
   - url: https://manuals.marantz.com/PM10/NA/EN/index.php
     type: resource
-    title: User Guide - English
-  - url: https://manuals.marantz.com/PM10/NA/ES/index.php
-    type: resource
-    title: User Guide - Spanish
-  - url: https://manuals.marantz.com/PM10/NA/FR/index.php
-    type: resource
-    title: User Guide - French
+    title: User Guide
+translations:
+  es:
+    links:
+      - url: https://www.marantz.com/on/demandware.static/-/Library-Sites-marantz_northamerica_shared/default/dwd26622e7/./archive-downloads/mz_pm10_specsheet_u_en.pdf
+        type: resource
+        title: Hoja de especificaciones
+      - url: https://manuals.marantz.com/PM10/NA/ES/index.php
+        type: resource
+        title: Guía del usuario
+  fr:
+    links:
+      - url: https://www.marantz.com/on/demandware.static/-/Library-Sites-marantz_northamerica_shared/default/dwd26622e7/./archive-downloads/mz_pm10_specsheet_u_en.pdf
+        type: resource
+        title: Fiche technique
+      - url: https://manuals.marantz.com/PM10/NA/FR/index.php
+        type: resource
+        title: Guide de l'utilisateur
