@@ -896,12 +896,17 @@ function printConsoleReport(audit: DatasetAudit): void {
  *
  * The slug comes from the file path rather than the name, because the
  * key has to be the same next month and a display name is edited.
+ *
+ * `Finding.files` is relative to `data/` (see `relPath`), while a findings
+ * row's `file` is repo-relative the way the other three audits emit it.
+ * The inbox prints it as `Entry:` and the nightly triage resolves it from
+ * the repo root, so a data-relative path there names nothing.
  */
 export function toFindings(findings: readonly Finding[]): FindingInput[] {
   return findings
     .filter((f) => f.check === "modular-missing-hp" && f.files[0])
     .map((f) => {
-      const file = f.files[0]!;
+      const file = path.posix.join("data", f.files[0]!);
       const slug = file.replace(/^.*\//, "").replace(/\.ya?ml$/, "");
       return {
         kind: "missing-hp" as const,

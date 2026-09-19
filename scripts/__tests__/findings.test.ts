@@ -261,7 +261,8 @@ describe("what each audit files, and what it holds back", () => {
         collection: "hardware",
         name: "Maths",
         manufacturer: "make-noise",
-        files: ["data/hardware/make-noise-maths.yaml"],
+        // `relPath` in dataset-audit.ts makes this relative to `data/`.
+        files: ["hardware/make-noise-maths.yaml"],
         detail: "modular entry carries no hp.",
       },
       {
@@ -270,12 +271,13 @@ describe("what each audit files, and what it holds back", () => {
         needsLlmReview: true,
         collection: "hardware",
         name: "Thing",
-        files: ["data/hardware/a.yaml", "data/hardware/b.yaml"],
+        files: ["hardware/a.yaml", "hardware/b.yaml"],
         detail: "two files",
       },
     ]);
     expect(rows.map((r) => r.key)).toEqual(["missing-hp:make-noise-maths"]);
     expect(rows[0]!.brand).toBe("make-noise");
+    expect(rows[0]!.file).toBe("data/hardware/make-noise-maths.yaml");
   });
 
   it("gives every key a stable identity, with no date, run or count in it", () => {
@@ -314,7 +316,8 @@ describe("what each audit files, and what it holds back", () => {
           collection: "hardware",
           name: "S",
           manufacturer: "m",
-          files: ["data/hardware/s.yaml"],
+          // `relPath` in dataset-audit.ts makes this relative to `data/`.
+          files: ["hardware/s.yaml"],
           detail: "d",
         },
       ]),
@@ -324,6 +327,54 @@ describe("what each audit files, and what it holds back", () => {
       expect(r.key, r.key).not.toMatch(/\d{4}-\d{2}-\d{2}|\b20\d\d\b/);
       expect(FINDING_KINDS).toContain(r.kind);
       expect(r.key.startsWith(`${r.kind}:`), r.key).toBe(true);
+    }
+  });
+
+  it("gives every kind a repo-relative file, whatever the audit calls its own", () => {
+    // The inbox prints this as `Entry:` and the nightly triage resolves it
+    // from the repo root. dataset-audit's `files` are relative to `data/`
+    // while the other three are relative to the root, and 200 of 431 rows
+    // shipped naming `hardware/x.yaml`, which resolves to nothing.
+    const all = [
+      ...powerFindings([
+        { slug: "s", manufacturer: "m", category: "mixer", evidence: "e", ports: 1, review: false },
+      ]),
+      ...portFindings([
+        {
+          slug: "s",
+          manufacturer: "m",
+          port: "Speaker Output",
+          type: "line",
+          connection: "speakon",
+          review: false,
+        },
+      ]),
+      ...gapFindings([
+        {
+          slug: "s",
+          manufacturer: "m",
+          name: "S",
+          primaryCategory: "multi-effect",
+          capabilities: ["reverb"],
+          hits: [{ capability: "looper", tier: "auto", excerpt: "x" }],
+        },
+      ]),
+      ...hpFindings([
+        {
+          check: "modular-missing-hp",
+          severity: "info",
+          needsLlmReview: false,
+          collection: "hardware",
+          name: "S",
+          manufacturer: "m",
+          files: ["hardware/s.yaml"],
+          detail: "d",
+        },
+      ]),
+    ];
+    expect(all).toHaveLength(4);
+    for (const r of all) {
+      expect(r.file, `${r.kind} file`).toBe("data/hardware/s.yaml");
     }
   });
 });
