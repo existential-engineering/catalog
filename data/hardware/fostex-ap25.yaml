@@ -5,20 +5,33 @@ primaryCategory: power-amp
 categories:
   - amplifier
 url: https://www.fostex.jp/en/products/ap25/
-description: The top-of-the-line model of the 'AP Series' that achieves clear,
-  high-quality sound through a high sound quality design employing
-  acoustic-specific parts in various parts. Personal amplifier with gold-plated
-  speaker terminals (compatible with banana plugs and Y-lugs), RCA line input,
-  and a PRE OUT (post-volume) RCA output for connecting an active subwoofer or
-  recording device.
+description: The top-of-the-line model of the 'AP Series' that achieves clear, high-quality sound through a high sound quality design employing acoustic-specific parts in various parts. Personal amplifier with gold-plated speaker terminals (compatible with banana plugs and Y-lugs), RCA line input, and a PRE OUT (post-volume) RCA output for connecting an active subwoofer or recording device.
 details: |-
-  Subtitle: Personal Amplifier
+  The series' largest 25W+25W output high performance digital amplifier, operational amplifier, and other high quality acoustic dedicated parts such as coils and capacitors are used to achieve clear and high quality sound through a design that pursues low distortion and low noise.
 
-  Series: AP Series
+  The AP series features a simple, rigid steel compact size housing, 133 mm wide, 42 mm high and 165 mm deep, that matches a variety of situations.
 
-  Included: AC adapter (x1), Speaker cable 1.5 m (x2), Stereo RCA cable 1.5 m (x1)
+  A pre-output terminal expands the system by connecting an active subwoofer, power amplifier and similar equipment. The signal is output at line level after the volume has been adjusted by the AP25 volume, so operating the AP25 volume adjusts a connected subwoofer in conjunction with the main speakers connected to the speaker outputs.
 
-  Speaker Terminals: Gold-plated screw-type, compatible with banana plugs and Y-lugs (2 channels, passive speakers)
+  The output terminals for passive speakers are gold-plated screw-type speaker terminals compatible with banana plugs and Y-lugs for secure connections.
+
+  An auto-standby function complying with the European Eco-Design Directive switches the unit to standby and reduces power consumption to 0.5W or less when the input remains at no signal or near signal level. It can be turned ON/OFF and the delay set to either 1 minute or 12 minutes using the dipswitch on the bottom of the unit.
+specs: |-
+  - Maximum output: 25W + 25W (4 ohm load), 17W + 17W (8 ohm load)
+  - Applicable load impedance: 4 ohm to 8 ohm
+  - Frequency response: 20Hz to 20kHz
+  - Total Harmonic Distortion: 0.01% or less (output 3W, load 8 ohm, 1kHz)
+  - S/N ratio: 100 dB or more
+  - Input terminal: RCA (1 system), input sensitivity 300mV
+  - Output terminal (PRE OUT): RCA (1 system), signal output after the volume control
+  - Speaker output terminals: gold-plated screw type, compatible with banana plugs and Y-lugs
+  - Power: DC20V (dedicated AC adapter included)
+  - Power consumption: 68W (maximum), 0.5W or less (standby)
+  - Auto-standby switchable ON/OFF with 1 minute or 12 minute delay via bottom dipswitch
+  - External dimensions: 133mm (W) x 42mm (H) x 165mm (D) including maximum projection
+  - Mass: 750g
+  - Accessories: AC adapter x 1, speaker cable (1.5m) x 2, stereo RCA cable (1.5m) x 1
+  - Complies with the European RoHS Directive
 io:
   - key: SgrWaITu
     name: LINE IN L
@@ -57,7 +70,7 @@ io:
     signalFlow: output
     category: audio
     type: speaker-level
-    connection: spring-terminal
+    connection: binding-post
     maxConnections: 1
     position: Bottom
   - key: FYRTR8Gs
@@ -65,7 +78,15 @@ io:
     signalFlow: output
     category: audio
     type: speaker-level
-    connection: spring-terminal
+    connection: binding-post
+    maxConnections: 1
+    position: Bottom
+  - key: h8IKQXSb
+    name: DC IN
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
     maxConnections: 1
     position: Bottom
 links:

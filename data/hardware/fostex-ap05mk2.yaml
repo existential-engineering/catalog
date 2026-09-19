@@ -5,10 +5,31 @@ primaryCategory: power-amp
 categories:
   - amplifier
 url: https://www.fostex.jp/en/products/ap05mk2/
-description: Compact size personal amplifier ideal for use with D.I.Y. speakers.
-  5W + 5W output housed in a card-size steel enclosure designed for easy
-  portability. Features an auto-standby function conforming to the ErP Directive
-  that reduces power consumption when no signal is detected.
+description: Compact size personal amplifier ideal for use with D.I.Y. speakers. 5W + 5W output housed in a card-size steel enclosure designed for easy portability. Features an auto-standby function conforming to the ErP Directive that reduces power consumption when no signal is detected.
+details: |-
+  The AP05mk2 is a 5W+5W personal amplifier that can easily play D.I.Y. speakers. Further improvements have been made to the popular previous model to achieve a clearer and more balanced sound.
+
+  A large, easy-to-adjust volume knob is positioned in the center, and combined with the compact, card-sized steel housing, the design is easy to use.
+
+  The device is equipped with an auto-standby function that conforms to the ErP Directive for Design for Environment Deployment in Europe. When the input to the unit remains at no signal or near signal level, it automatically switches to standby mode and reduces power consumption to 0.5W or less.
+
+  This function can be turned ON/OFF and the time until the standby mode is activated can be set to either 1 minute or 12 minutes with the dipswitch on the bottom of the unit, depending on the operating environment and application.
+
+  Only a passive speaker unit or speaker system without an amplifier may be connected to the outputs, at an impedance of 8 to 16 ohms directly to one output. This product is intended for private use by individuals.
+specs: |-
+  - Maximum output: 5 W + 5 W
+  - Applicable load impedance: 8 ohm to 16 ohm
+  - Frequency response: 20 Hz to 20 kHz
+  - Total Harmonic Distortion: less than 0.1% (1 W output, 8 ohm load, 1 kHz)
+  - S/N Ratio: over 80 dB (A-weighted)
+  - Input terminal: Stereo mini-jack (1 channel), input sensitivity 630 mV
+  - Power: DC 12 V (dedicated AC adapter included)
+  - Power consumption: 22 W (max), 0.5 W or less (standby)
+  - Auto-standby switchable ON/OFF with 1 minute or 12 minute delay via bottom dipswitch
+  - External dimensions: 86 mm (W) x 28 mm (H) x 75 mm (D) including maximum protrusion
+  - Mass of main unit: approx. 200 g
+  - Accessories: AC adapter x 1, speaker cable (1.5m) x 2, stereo mini cable (0.8m) x 1
+  - Complies with the European RoHS Directive
 io:
   - key: HjNrw6YY
     name: Input
@@ -32,6 +53,14 @@ io:
     category: audio
     type: speaker-level
     connection: spring-terminal
+    maxConnections: 1
+    position: Bottom
+  - key: mGJBhpt2
+    name: DC IN
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
     maxConnections: 1
     position: Bottom
 releaseDate: 2020-01-14
