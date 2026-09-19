@@ -117,6 +117,14 @@ export function checkContainedDirectory(
 /**
  * Append findings to `dir/findings.jsonl`.
  *
+ * Opened with `O_NOFOLLOW`, because `findingsDirArg` refuses a symlinked
+ * DIRECTORY and that is only half the door. A `findings.jsonl` that is
+ * itself a link to `/etc/cron.d/x` passes every check on the directory
+ * and then takes the append, which is the same failure
+ * `checkContainedRegularFile` exists to stop one level up. `O_NOFOLLOW`
+ * makes the open fail with ELOOP instead, and the failure is reported
+ * like any other.
+ *
  * Fail-open and reported, never thrown: this is bookkeeping beside a
  * report that has already been produced, and an audit that found 305
  * entries must still print them when it cannot write them down.
@@ -131,14 +139,19 @@ export function recordFindings(dir: string, findings: FindingInput[]): number {
   const rows = findings
     .map((f) => `${JSON.stringify({ ...f, recordedAt: f.recordedAt ?? at })}\n`)
     .join("");
+  let fd: number | undefined;
   try {
-    fs.appendFileSync(path.join(dir, FINDINGS_FILE), rows, "utf-8");
+    const flags = fs.constants.O_WRONLY | fs.constants.O_CREAT | fs.constants.O_APPEND;
+    fd = fs.openSync(path.join(dir, FINDINGS_FILE), flags | fs.constants.O_NOFOLLOW, 0o644);
+    fs.writeSync(fd, rows);
     return findings.length;
   } catch (err) {
     process.stderr.write(
       `findings: could not write to ${dir}: ${err instanceof Error ? err.message : String(err)}\n`
     );
     return 0;
+  } finally {
+    if (fd !== undefined) fs.closeSync(fd);
   }
 }
 
@@ -166,7 +179,32 @@ export function findingsDirArg(args: string[], root: string): string | undefined
   return checked.path;
 }
 
-/** Every row in `dir`, first occurrence per key kept. For tests and reports. */
+/**
+ * True for a row carrying everything a filed issue needs.
+ *
+ * The same guard `scripts/catalog-import/findings.ts` applies in the
+ * racks repo, on purpose: the two halves read and write one format, and
+ * a reader that accepts more than the writer emits is how a malformed
+ * row reaches an inbox a person reads.
+ *
+ * It also has to run BEFORE the dedup. `JSON.parse` enforces nothing, so
+ * a garbage row that happens to carry a `key` would otherwise claim that
+ * key and make a later good row with the same key look like a duplicate:
+ * the bad row is kept and the real finding is dropped.
+ */
+function isFinding(v: unknown): v is Finding {
+  if (typeof v !== "object" || v === null) return false;
+  const f = v as Record<string, unknown>;
+  const required = ["brand", "key", "title", "detail", "recordedAt"] as const;
+  const optional = ["file", "url"] as const;
+  if (typeof f.kind !== "string" || !KINDS.has(f.kind)) return false;
+  if (!required.every((k) => typeof f[k] === "string" && (f[k] as string).length > 0)) return false;
+  return optional.every((k) => f[k] === undefined || typeof f[k] === "string");
+}
+
+const KINDS: ReadonlySet<string> = new Set(FINDING_KINDS);
+
+/** Every valid row in `dir`, first occurrence per key kept. For tests and reports. */
 export function readFindings(dir: string): Finding[] {
   let raw: string;
   try {
@@ -178,15 +216,15 @@ export function readFindings(dir: string): Finding[] {
   const out: Finding[] = [];
   for (const line of raw.split("\n")) {
     if (line.trim() === "") continue;
-    let parsed: Finding;
+    let parsed: unknown;
     try {
-      parsed = JSON.parse(line) as Finding;
+      parsed = JSON.parse(line);
     } catch {
       // A torn final line is skipped rather than thrown on: a run killed
       // mid-append must not make the whole ledger unreadable.
       continue;
     }
-    if (!parsed?.key || seen.has(parsed.key)) continue;
+    if (!isFinding(parsed) || seen.has(parsed.key)) continue;
     seen.add(parsed.key);
     out.push(parsed);
   }

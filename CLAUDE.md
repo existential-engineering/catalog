@@ -39,11 +39,13 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
   `CMakeLists.txt` calling `juce_add_plugin`, or a `.jucer`)
 - `pnpm format:check` - Check formatting
 
-Every corpus audit above takes `--findings <dir>`, which appends its
-findings to `<dir>/findings.jsonl` beside the report it already prints.
-That file is what the racks repo's `file-findings.ts` carries into the
-`catalog-submissions` inbox, one issue per finding, ever. See "Findings"
-below.
+Four of the audits above take `--findings <dir>`: `power-input-audit`,
+`speaker-level-audit`, `capability-gaps` and `dataset:audit`. Each
+appends its findings to `<dir>/findings.jsonl` beside the report it
+already prints, and that file is what the racks repo's
+`file-findings.ts` carries into the `catalog-submissions` inbox, one
+issue per finding, ever. The coverage reports and the apply steps take
+no such flag, because neither produces a finding. See "Findings" below.
 
 ## Findings
 

@@ -59,10 +59,54 @@ describe("recordFindings", () => {
     expect(all[0]!.detail).toBe("first");
   });
 
+  it("does not let a malformed row claim a key a good row needs", () => {
+    // JSON.parse enforces nothing. A garbage row carrying a `key` used to
+    // be added to `seen` before it was checked, so the real finding that
+    // followed read as a duplicate: the bad row kept and the good one
+    // dropped. The guard has to run before the dedup, not after.
+    fs.writeFileSync(
+      path.join(dir, "findings.jsonl"),
+      `${JSON.stringify({ key: row.key, kind: "invented-kind" })}\n`
+    );
+    recordFindings(dir, [row]);
+    const all = readFindings(dir);
+    expect(all).toHaveLength(1);
+    expect(all[0]).toMatchObject(row);
+  });
+
+  it("drops a row whose kind nothing downstream routes", () => {
+    fs.writeFileSync(
+      path.join(dir, "findings.jsonl"),
+      `${JSON.stringify({ ...row, kind: "invented-kind", recordedAt: "2026-09-19T00:00:00Z" })}\n`
+    );
+    expect(readFindings(dir)).toEqual([]);
+  });
+
+  it("drops a row missing a field the issue body needs", () => {
+    const { detail: _drop, ...noDetail } = row;
+    fs.writeFileSync(
+      path.join(dir, "findings.jsonl"),
+      `${JSON.stringify({ ...noDetail, recordedAt: "2026-09-19T00:00:00Z" })}\n`
+    );
+    expect(readFindings(dir)).toEqual([]);
+  });
+
   it("skips a torn final line rather than losing the ledger", () => {
     recordFindings(dir, [row]);
     fs.appendFileSync(path.join(dir, "findings.jsonl"), '{"kind":"missing-pow');
     expect(readFindings(dir)).toHaveLength(1);
+  });
+
+  it("refuses to write through a symlinked findings.jsonl", () => {
+    // findingsDirArg refuses a symlinked DIRECTORY, and that is only half
+    // the door: a findings.jsonl that is itself a link to /etc/cron.d/x
+    // passes every check on the directory and then takes the append.
+    // O_NOFOLLOW makes the open fail instead.
+    const target = path.join(dir, "elsewhere.txt");
+    fs.writeFileSync(target, "");
+    fs.symlinkSync(target, path.join(dir, "findings.jsonl"));
+    expect(recordFindings(dir, [row])).toBe(0);
+    expect(fs.readFileSync(target, "utf-8")).toBe("");
   });
 
   it("returns 0 rather than throwing when the directory is gone", () => {
