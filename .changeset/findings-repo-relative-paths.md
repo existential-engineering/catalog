@@ -22,3 +22,13 @@ where `checkModularMissingHp` emits `relPath(p.file)`. Both fixtures now
 carry the real shape, and a cross-audit case asserts all four kinds land
 on the same repo-relative path, so the next audit to join them cannot
 pick the other convention silently.
+
+`relPath` is `path.relative`, which separates with a backslash on
+Windows, and `path.posix.join` keeps it, so the same function produced a
+mixed `data/hardware\x.yaml` there. That is not only cosmetic: the slug
+takes everything after the last forward slash, so the mixed path keys as
+`missing-hp:hardware\x` and a Windows run would file all 200 findings a
+second time against entries a Linux run had already filed. Backslashes
+are now normalized unconditionally rather than on `path.sep`, because
+`path.sep` is `/` on the runner that files these and a guard written
+against it could never fail on CI.
