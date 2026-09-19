@@ -262,6 +262,13 @@ export function getErrorCodeFromZodIssue(issue: {
     return ValidationErrorCode.E122_IO_HINT_NOT_POSITIVE_INTEGER;
   }
 
+  // A price amount that is negative or not finite (E127). Keyed to the
+  // message rather than the path, because prices nest under versions and
+  // variants as well as at the top level.
+  if (message.includes("invalid price amount")) {
+    return ValidationErrorCode.E127_INVALID_PRICE_AMOUNT;
+  }
+
   // A hardware `hp` that is not a positive integer is a wrong-typed field,
   // whichever check produced the issue (a string fails Zod's number check,
   // a float or zero fails the integer check with a custom message).
@@ -399,7 +406,36 @@ const MarkdownSchema = z
 // =============================================================================
 
 const PriceSchema = z.object({
-  amount: z.number(),
+  /**
+   * E127: a negative or non-finite amount is never a real price. Zero is
+   * legal here and checked advisorily (W133) instead, because a verified
+   * free product and a price an importer could not read are the same
+   * value, and 296 entries predate the provenance that separates them.
+   *
+   * Non-finite is caught by the `error` map rather than by the check
+   * below, because `z.number()` rejects NaN and Infinity itself as an
+   * `invalid_type` issue and a `.check()` never runs on a value the base
+   * type refused. YAML reaches both (`amount: .nan`, `amount: .inf`), so
+   * without the map they failed as E101 while this rule claimed them. The
+   * map fires only when the input really was a number, so a string amount
+   * keeps Zod's own wrong-type message and its E101.
+   */
+  amount: z
+    .number({
+      error: (issue) =>
+        typeof issue.input === "number"
+          ? `Invalid price amount '${issue.input}'. An amount is a finite number of zero or more.`
+          : undefined,
+    })
+    .check((ctx) => {
+      if (ctx.value < 0) {
+        ctx.issues.push({
+          code: "custom",
+          message: `Invalid price amount '${ctx.value}'. An amount is a finite number of zero or more.`,
+          input: ctx.value,
+        });
+      }
+    }),
   currency: z.string().check((ctx) => {
     if (!VALID_CURRENCIES.has(ctx.value)) {
       let message = `Invalid currency '${ctx.value}'.`;
@@ -1439,6 +1475,30 @@ export function collectWarnings(
         code: ValidationErrorCode.W131_PRICE_TERM_MISSING,
         message: `Several ${group.currency} prices and ${reason}. Set term (${PRICE_TERMS.join(", ")}) on each, or keep one price per currency.`,
         path: formatPricePath([...path, first]),
+        line: line ?? undefined,
+      });
+    }
+  }
+
+  // W133: a zero amount is the catalog's only way to say "free", and it is
+  // also what an importer writes when it reads a free-trial call to action
+  // as a price. Nothing in the value separates the two, so provenance does:
+  // a verified free product carries `source` and `asOf` like any other
+  // price. Advisory rather than an error while 296 entries predate the
+  // rule, the same staging E121 took through W132 (catalog#716).
+  for (const { path, prices } of collectPriceArrays(data)) {
+    for (let i = 0; i < prices.length; i++) {
+      const price = prices[i];
+      // Both fields, not either: a `source` with no `asOf` cannot say the
+      // price was checked recently, and an `asOf` with no `source` cannot
+      // say what was checked.
+      if (price?.amount !== 0 || (price.source && price.asOf)) continue;
+      const line = getLineForPath(document, lineCounter, [...path, i]);
+      warnings.push({
+        code: ValidationErrorCode.W133_UNVERIFIED_FREE_PRICE,
+        message:
+          "A free price needs both source and asOf, so that a verified giveaway is not confused with a price an import could not read. Drop the price if it was never verified.",
+        path: formatPricePath([...path, i]),
         line: line ?? undefined,
       });
     }

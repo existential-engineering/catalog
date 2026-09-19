@@ -662,6 +662,38 @@ silence a duplicate-price review finding: add the term instead.
 `prices[].type`, `prices[].note`, `prices[].label` and similar keys are not
 schema and are silently dropped (see Unknown Keys).
 
+**A zero amount is a claim that the product is free, and it is load-bearing
+in Studio.** `isFreeProduct` reads it to render "Free" instead of "$0.00",
+to keep the item out of the G.A.S. spend ratio, and to suppress affiliate
+purchase links entirely. So a zero written by an import that could not read
+a price does not merely mis-state a number: it tells a reader a paid plugin
+costs nothing and removes the link they would buy it through.
+
+That is what made it the catalog's largest price defect. Every Joey Sturgis
+Tones entry but one read `amount: 0` while the store charged for all of
+them (JST Heat $199, Toneforge Jeff Loomis $149), and ujam, WA Production,
+Dear Reality and Tritik carried the same thing: 154 entries in all,
+clustered on the vendors whose product page leads with a free trial or a
+demo. catalog#857 shipped 60 of them in one PR.
+
+- **Zero and "unread" are the same value, so provenance is what separates
+  them.** A verified free product carries `source` and `asOf` like any other
+  price; `pnpm validate` warns (W133) on a zero missing either of them. It is
+  advisory, not an error, because 286 entries predate the rule, the same
+  staging E121 took through W132. Do not read a green run as proof a zero
+  was checked.
+- **A negative or non-finite amount is a hard error (E127).** Nothing
+  legitimate produces one, so there is no corpus to stage behind.
+- **An unverifiable price is dropped, never guessed.** Absent prices mean
+  "unknown", which is honest; a zero left in place asserts free. Dear
+  Reality's pages now redirect to a Sennheiser hub and Tritik injects its
+  prices client-side under `data-nosnippet`, so those 20 entries carry no
+  price rather than a wrong one.
+- **The Shopify lane already refuses this and the agent lane does not.**
+  `regularPrice` in the racks repo's `shopify-bulk-extract.ts` filters
+  `n > 0`, so the fast runner cannot write a zero. Every entry in this
+  defect came through the agent path, which has no equivalent check.
+
 ## Unknown Keys
 
 Zod strips every key a schema does not declare, so an entry carrying

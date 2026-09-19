@@ -480,6 +480,20 @@ belongs in `description`, `details` or `specs` as a `|-` block scalar.
 
 ---
 
+### E127: Price Amount Is Negative or Not a Finite Number
+
+A `prices[].amount` is below zero, or is `NaN`/`Infinity`. Nothing a maker charges
+produces such a value, so this is a hard error with no legacy corpus behind it.
+
+Zero is deliberately **not** an error here. It is the catalog's only way to say a
+product is free, and Studio reads it that way. An unverified zero is reported as the
+advisory W133 instead.
+
+**Fix:** Write the real amount, or drop the price. An amount the import could not
+read is omitted, never written as a placeholder.
+
+---
+
 ### E199: Validation Error
 
 A generic validation error that doesn't fall into a more specific category.
@@ -791,6 +805,32 @@ drop prices to satisfy it.
 
 **Fix:** Set `term` on each price (`perpetual`, `monthly`, `yearly`, `rent-to-own`),
 or keep one price per currency. One price per currency never needs a term.
+
+---
+
+### W133: Free Price Is Missing Source or asOf
+
+A `prices[].amount` is `0` and the price is missing `source`, `asOf`, or both. The
+warning clears only when **both** are present: a `source` with no `asOf` cannot say
+the price was checked recently, and an `asOf` with no `source` cannot say what was
+checked.
+
+Zero means "this product is free", and Studio treats it as a fact: `isFreeProduct`
+renders "Free" rather than `$0.00`, keeps the item out of the G.A.S. spend ratio, and
+suppresses affiliate purchase links. It is also exactly what an import writes when a
+product page leads with a free trial and the extractor finds no price. The value
+cannot tell the two apart, so provenance does: a giveaway somebody checked carries
+`source` and `asOf` like any other price.
+
+This is how 154 entries came to claim they were free while their makers charged for
+them, every Joey Sturgis Tones plugin but one among them.
+
+It is advisory rather than an error because 286 entries predate the rule, the same
+staging E121 took through W132. A green run is not evidence that a zero was verified.
+
+**Fix:** Confirm the price on the maker's own page. If it really is free, add both
+`source` and `asOf`. If it is not, write the real amount. If you cannot tell, remove
+the `prices` block: absent means "unknown", which is honest, where zero asserts free.
 
 ---
 

@@ -53,6 +53,22 @@ describe("getErrorCodeFromZodIssue", () => {
     );
   });
 
+  it("classifies a bad price amount as E127 wherever the price nests", () => {
+    // Keyed to the message, because prices sit under versions and variants
+    // as well as at the top level.
+    expect(getErrorCodeFromZodIssue(issue({ message: "Invalid price amount '-5'." }))).toBe(
+      ValidationErrorCode.E127_INVALID_PRICE_AMOUNT
+    );
+    expect(
+      getErrorCodeFromZodIssue(
+        issue({
+          message: "Invalid price amount '-5'.",
+          path: ["versions", 0, "prices", 0, "amount"],
+        })
+      )
+    ).toBe(ValidationErrorCode.E127_INVALID_PRICE_AMOUNT);
+  });
+
   it("classifies url errors, with the youtube variant first", () => {
     expect(getErrorCodeFromZodIssue(issue({ message: "Invalid URL" }))).toBe(
       ValidationErrorCode.E103_INVALID_URL_FORMAT
@@ -354,6 +370,47 @@ describe("validateFile", () => {
     expect(validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS)).toBeNull();
   });
 
+  it("rejects a negative or non-finite price amount as E127", () => {
+    // `.nan` and `.inf` are reachable from YAML, and z.number() refuses
+    // both at the base type check, so they never reach the `.check()`.
+    // The schema's error map is what keeps them on E127 rather than E101.
+    for (const bad of ["-69", ".nan", ".inf", "-.inf"]) {
+      const file = writeEntry(
+        "hardware",
+        `${HARDWARE_OK}prices:\n  - amount: ${bad}\n    currency: USD\n`
+      );
+      const result = validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS);
+      expect(result?.details, bad).toHaveLength(1);
+      expect(result?.details?.[0], bad).toMatchObject({
+        code: ValidationErrorCode.E127_INVALID_PRICE_AMOUNT,
+        path: "prices.0.amount",
+      });
+    }
+  });
+
+  it("keeps a wrong-typed price amount on E101, not E127", () => {
+    // The error map fires only when the input really was a number, so a
+    // string keeps Zod's own wrong-type message and its existing code.
+    const file = writeEntry(
+      "hardware",
+      `${HARDWARE_OK}prices:\n  - amount: "49"\n    currency: USD\n`
+    );
+    const result = validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS);
+    expect(result?.details?.[0]).toMatchObject({
+      code: ValidationErrorCode.E101_INVALID_FIELD_TYPE,
+    });
+  });
+
+  it("accepts a zero and a positive price amount", () => {
+    for (const ok of ["0", "49", "9.99"]) {
+      const file = writeEntry(
+        "hardware",
+        `${HARDWARE_OK}prices:\n  - amount: ${ok}\n    currency: USD\n`
+      );
+      expect(validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS), ok).toBeNull();
+    }
+  });
+
   it("rejects an hp that is not a positive integer as E101", () => {
     for (const bad of [`"12HP"`, "12.5", "0", "-4"]) {
       const file = writeEntry("hardware", `${HARDWARE_OK}hp: ${bad}\n`);
@@ -581,6 +638,36 @@ describe("collectWarnings", () => {
     expect(warn(HARDWARE_OK.replace("connection: 1/4-inch", "connection: trs"))).toEqual([
       { code: "W121", path: "io[0].connection", line: 13 },
     ]);
+  });
+
+  it("W133: a free price with no provenance, and none once it carries some", () => {
+    // A verified giveaway and a price an import could not read are the same
+    // value, so `source` and `asOf` are what separate them.
+    const free = HARDWARE_OK + "prices:\n  - amount: 0\n    currency: USD\n";
+    expect(warn(free)).toEqual([{ code: "W133", path: "prices[0]", line: 17 }]);
+    expect(warn(free + "    asOf: 2026-09-19\n    source: official-website\n")).toEqual([]);
+  });
+
+  it("W133: needs BOTH provenance fields, so either alone still warns", () => {
+    // A source with no asOf cannot say the price was checked recently, and
+    // an asOf with no source cannot say what was checked.
+    const free = HARDWARE_OK + "prices:\n  - amount: 0\n    currency: USD\n";
+    expect(warn(free + "    source: official-website\n")).toEqual([
+      { code: "W133", path: "prices[0]", line: 17 },
+    ]);
+    expect(warn(free + "    asOf: 2026-09-19\n")).toEqual([
+      { code: "W133", path: "prices[0]", line: 17 },
+    ]);
+  });
+
+  it("W133: stays quiet on a real price, and fires on a nested free one", () => {
+    expect(warn(HARDWARE_OK + "prices:\n  - amount: 49\n    currency: USD\n")).toEqual([]);
+    expect(
+      warn(
+        HARDWARE_OK +
+          "versions:\n  - name: '1.0'\n    prices:\n      - amount: 0\n        currency: USD\n"
+      )
+    ).toEqual([{ code: "W133", path: "versions[0].prices[0]", line: 19 }]);
   });
 
   it("W128: several jacks collapsed into one entry, unless the entry is a patchbay", () => {
