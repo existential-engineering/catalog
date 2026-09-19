@@ -388,9 +388,12 @@ USB-C`). Not in an io entry: the io shape has no note field, so a note
   single most repeated finding (Sonicware, Darkglass, Empress, Benson,
   Joranalogue), and stayed that way because nothing checked it: the rule was
   enforced only where a reviewer happened to look, one import PR at a time.
-  `pnpm power-input-audit` reports it across the corpus — 305 entries at the
-  time of writing, 182 of them in categories that are mains-powered by
-  definition. It reports and never writes, on the same contract as
+  `pnpm power-input-audit` reports it across the corpus — 311 entries at the
+  time of writing, 169 of them in categories that are mains-powered by
+  definition. A power port that is an **output** is not a power input: a
+  supply modelling its DC outputs and no mains inlet read as powered until
+  the audit started checking `signalFlow`, and six entries went missing
+  that way. It reports and never writes, on the same contract as
   `capability-gaps`: the entry's prose proves a supply exists, but only the
   maker's manual gives the connector, so each row is a worklist item for
   `pnpm enrich-io <slug>` rather than something to apply in bulk.

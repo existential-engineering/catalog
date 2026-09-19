@@ -153,6 +153,11 @@ export const PASSIVE_CATEGORIES = new Set([
  * power port on one of these is a defect rather than a question.
  *
  * Anything outside this set still reports, marked `review`.
+ *
+ * `outboard` is deliberately NOT here, because the header above says an
+ * outboard unit may be a passive DI and belongs in the review column. It
+ * was in this set anyway, so 13 entries that this file's own prose says a
+ * person has to judge were reported as settled.
  */
 export const MAINS_POWERED_CATEGORIES = new Set([
   "audio-interface",
@@ -166,7 +171,6 @@ export const MAINS_POWERED_CATEGORIES = new Set([
   "amplifier",
   "mixer",
   "console",
-  "outboard",
   "channel-strip",
   "synthesizer",
   "drum-machine",
@@ -206,9 +210,26 @@ export function entryProse(data: {
     .join(" ");
 }
 
-/** True when any io entry is a power port. */
-export function hasPowerPort(io: IO[]): boolean {
-  return io.some((entry) => entry.category === "power");
+/**
+ * True when the entry models a port that can bring power IN.
+ *
+ * The distinction is the whole check, and the first cut accepted any
+ * `category: power` entry whatever its direction. A power supply is the
+ * counter-example that makes it obvious: `bae-audio-bi-polar-psu` and
+ * `maxon-power-all-eco-dapter` model their DC outputs and no mains inlet,
+ * and an output-only reading counted those as "has power" and skipped the
+ * entry. Six entries were excluded that way, every one of them a unit that
+ * plugs into the wall to feed something else.
+ *
+ * `bidirectional` counts because a USB-C or PoE port carries power in as
+ * well as out.
+ */
+export function hasPowerInput(io: IO[]): boolean {
+  return io.some(
+    (entry) =>
+      entry.category === "power" &&
+      (entry.signalFlow === "input" || entry.signalFlow === "bidirectional")
+  );
 }
 
 /** True when the entry already models a port that could carry bus power. */
@@ -236,11 +257,15 @@ export function findEntriesMissingPowerInput(dir: string): Finding[] {
   const findings: Finding[] = [];
   for (const file of getYamlFiles(dir)) {
     const data = loadYamlFile<Hardware>(file);
-    if (!data || !Array.isArray(data.io) || data.io.length === 0) continue;
+    // An absent `io` key is an entry nobody has modelled yet, which is a
+    // different finding and not this one. An explicit `io: []` IS
+    // modelled, and modelled as carrying no ports at all, so an entry
+    // documenting a supply belongs in the report with `ports: 0`.
+    if (!data || !Array.isArray(data.io)) continue;
 
     const category = data.primaryCategory ?? "";
     if (PASSIVE_CATEGORIES.has(category)) continue;
-    if (hasPowerPort(data.io)) continue;
+    if (hasPowerInput(data.io)) continue;
 
     const prose = entryProse(data);
     if (!POWER_PROSE.test(prose)) continue;
