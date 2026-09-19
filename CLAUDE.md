@@ -18,6 +18,8 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 - `pnpm capability-coverage` - Report which categories carry `capabilities`
 - `pnpm capability-gaps` - Report operations an entry's prose names but its
   `capabilities` omits
+- `pnpm power-input-audit` - Report powered entries whose prose documents a
+  supply but whose `io` carries no power port (`--tsv` for a review list)
 - `pnpm speaker-level-audit` - Report speaker ports not typed `speaker-level`
   (`--tsv` for a review list)
 - `pnpm speaker-level:apply --rows <tsv>` - Retype the reviewed ports
@@ -384,7 +386,17 @@ rest. Write new ones here first, then mirror them in `.coderabbit.yaml`.
 USB-C`). Not in an io entry: the io shape has no note field, so a note
   there is stripped like any other unknown key. A missing power input was the
   single most repeated finding (Sonicware, Darkglass, Empress, Benson,
-  Joranalogue).
+  Joranalogue), and stayed that way because nothing checked it: the rule was
+  enforced only where a reviewer happened to look, one import PR at a time.
+  `pnpm power-input-audit` reports it across the corpus — 311 entries at the
+  time of writing, 169 of them in categories that are mains-powered by
+  definition. A power port that is an **output** is not a power input: a
+  supply modelling its DC outputs and no mains inlet read as powered until
+  the audit started checking `signalFlow`, and six entries went missing
+  that way. It reports and never writes, on the same contract as
+  `capability-gaps`: the entry's prose proves a supply exists, but only the
+  maker's manual gives the connector, so each row is a worklist item for
+  `pnpm enrich-io <slug>` rather than something to apply in bulk.
 - **One entry per physical connector.** A name carrying `L/R`, `1-4` or
   `1/2` is a split candidate. `maxConnections` above 1 on 1/4-inch,
   1/8-inch, xlr, combo jack, rca, 5-pin din, usb or thunderbolt is a
