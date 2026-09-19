@@ -901,12 +901,21 @@ function printConsoleReport(audit: DatasetAudit): void {
  * row's `file` is repo-relative the way the other three audits emit it.
  * The inbox prints it as `Entry:` and the nightly triage resolves it from
  * the repo root, so a data-relative path there names nothing.
+ *
+ * `relPath` is `path.relative`, which separates with `\` on Windows, and
+ * `path.posix.join` would keep those. That is not only an ugly path: the
+ * slug below takes everything after the last `/`, so `data/hardware\x.yaml`
+ * keys as `missing-hp:hardware\x` and files every finding a second time
+ * against the entries a Linux run already filed. The replacement is
+ * unconditional rather than on `path.sep`, because a slug filename never
+ * contains a backslash and a guard keyed to the host separator cannot be
+ * tested on the Linux runner that files these.
  */
 export function toFindings(findings: readonly Finding[]): FindingInput[] {
   return findings
     .filter((f) => f.check === "modular-missing-hp" && f.files[0])
     .map((f) => {
-      const file = path.posix.join("data", f.files[0]!);
+      const file = path.posix.join("data", f.files[0]!.replaceAll("\\", "/"));
       const slug = file.replace(/^.*\//, "").replace(/\.ya?ml$/, "");
       return {
         kind: "missing-hp" as const,

@@ -377,4 +377,25 @@ describe("what each audit files, and what it holds back", () => {
       expect(r.file, `${r.kind} file`).toBe("data/hardware/s.yaml");
     }
   });
+
+  it("normalizes a Windows separator, which the key depends on", () => {
+    // `relPath` is path.relative, so on Windows it hands back
+    // `hardware\\x.yaml`. The slug takes everything after the last `/`, so
+    // an unnormalized path keys as `missing-hp:hardware\\x` and files every
+    // finding a second time against entries a Linux run already filed.
+    const rows = hpFindings([
+      {
+        check: "modular-missing-hp",
+        severity: "info",
+        needsLlmReview: false,
+        collection: "hardware",
+        name: "Maths",
+        manufacturer: "make-noise",
+        files: ["hardware\\make-noise-maths.yaml"],
+        detail: "modular entry carries no hp.",
+      },
+    ]);
+    expect(rows[0]!.file).toBe("data/hardware/make-noise-maths.yaml");
+    expect(rows[0]!.key).toBe("missing-hp:make-noise-maths");
+  });
 });
