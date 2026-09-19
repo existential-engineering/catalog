@@ -2,33 +2,261 @@ id: yCuBRqf7AlyUrIpjhCleZ
 name: Mix12FX
 manufacturer: mackie
 primaryCategory: mixer
+capabilities:
+  - equalization
+  - filter
+  - reverb
+  - chorus
+  - flanger
+  - delay
 url: https://mackie.com/en/products/mixers/mix-series/mix12fx.html
 prices:
   - amount: 159.99
     currency: USD
-description: "Loaded with immersive onboard effects, the Mackie Mix12FX is a
+description: Loaded with immersive onboard effects, the Mackie Mix12FX is a
   12-channel compact mixer that delivers high-headroom, low-noise audio for
-  recording and mixing."
+  recording and mixing.
 details: |-
-  When you need to take your mix to the next level, reach for the Mackie Mix12FX. Our 12-channel compact mixer features high-headroom, low-noise preamps, onboard mixer effects and flexible I/O, helping you turn the music in your head into a reality.
+  Mix Series compact mixers are reliably rugged, with the proven quality you expect from the world leader in compact mixer design. Mix12FX is the largest of the three, with 12 channels in a metal chassis measuring 11.7 x 9.6 x 2.1 inches.
 
-  Adding depth and dimension to your mixes has never been easier-or more affordable. With 12 onboard effects, the Mackie Mix12FX makes adding depth to your vocals, drums, keyboards and more a breeze. Our 12-channel mixer features four microphones/line inputs that are equipped with our low-noise, studio-quality preamps, a high-pass filter and 3-band EQ to fine-tune your sound. Plus, it offers four stereo channels for keyboards and other line-level instruments and gear.
+  Four mono channels each pair an XLR mic input with a 1/4 inch line input, a 75 Hz low-cut filter and 3-band EQ. Four stereo 1/4 inch line channels follow, each with a +4/-10 dB level switch for professional or consumer gear.
+
+  A 12-preset effects processor is built in, covering small stage, small and large room, warm and bright hall, classic, bright and vocal plate reverbs, chorus, flanger, slapback and space echo. An FX send jack carries the same mix to an external processor.
+
+  Outputs are main mix left and right, stereo control room outputs, a stereo RCA tape output and a headphone jack, all with the tape-to-main and tape-to-control-room routing switches of the series.
+
+  Every feature is on the top of the mixer except the power connector, which takes the supplied external AC power supply.
 specs: |-
-  - 12-channel compact effects mixer with proven high-headroom, low-noise performance
-  - 4 mic/line inputs with studio-level audio quality
-  - 3-band EQ with clean, precise tone shaping
-  - Low cut filter (75Hz)
-  - Pan, level and overload indication
-  - Phantom power for studio condenser mics
-  - 4 stereo 1/4" line inputs
-  - +4/-10dB operation
-  - Balance, level and overload indication
-  - 12 great-sounding integrated effects including reverbs, choruses and delays
+  - 12-channel compact mixer with high-headroom, low-noise performance
+  - 4 mic/line inputs with XLR and 1/4 inch jacks
+  - 4 stereo 1/4 inch line inputs with +4/-10 dB and balance operation
+  - 3-band EQ: low shelving 80 Hz, mid peaking 2.5 kHz, high shelving 12 kHz, +/-15 dB each
+  - 75 Hz low-cut filter at 18 dB/octave on channels 1-4
+  - Globally switched 48V phantom power for studio condenser mics
+  - 12 integrated effects presets including reverbs, chorus, flanger and delays, with an FX send output
   - Dedicated stereo RCA inputs/outputs for playback or recording
-  - 60mm fader for Main L/R outputs
-  - Headphone and stereo control room outputs
-  - Rugged, reliable design built to last
-  - Extremely compact and portable
+  - Main L/R outputs, stereo control room outputs and headphone output
+  - Equivalent input noise -122 dBu (150 ohm termination)
+  - Mic input maximum level +19 dBu, all other inputs and outputs +21 dBu
+  - External AC power supply, AC18V 1000mA output (US)
+  - Dimensions 11.7 x 9.6 x 2.1 in / 297 x 244 x 53 mm, weight 3.7 lb / 1.7 kg
+io:
+  - key: 6EIA0y9S
+    name: Mic Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: 7mgVVoFw
+    name: Mic Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: 9Vycl8lR
+    name: Mic Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: kQ0JTiH2
+    name: Mic Input 4
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: 4gnqxYzH
+    name: Line Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: i98ikEcK
+    name: Line Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: fLCGSwUx
+    name: Line Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: FlP2p8fN
+    name: Line Input 4
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: RWyJ4kJf
+    name: Line Input 5/6 Left (Mono)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: luNoiOrf
+    name: Line Input 5/6 Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: Kj7iPU3q
+    name: Line Input 7/8 Left (Mono)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: 92m3HKaL
+    name: Line Input 7/8 Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: MR5VPUB0
+    name: Line Input 9/10 Left (Mono)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: 3Itug23X
+    name: Line Input 9/10 Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: xhHELnSL
+    name: Line Input 11/12 Left (Mono)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: vlKFIY5d
+    name: Line Input 11/12 Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: FQ3HE5rd
+    name: Tape Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: lwMenDFF
+    name: Tape Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: S1MunFNi
+    name: FX Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: nwaQj3lT
+    name: Main Mix Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: ZvgOqNEa
+    name: Main Mix Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: XJdGDMwg
+    name: Control Room Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: yH2YvQOF
+    name: Control Room Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: JBDI3BdI
+    name: Tape Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: jRGLPo8I
+    name: Tape Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: LE0yAz8I
+    name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: c7EKaI4e
+    name: Power Input (external AC power supply)
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
 links:
   - type: resource
     title: Owner's Manual

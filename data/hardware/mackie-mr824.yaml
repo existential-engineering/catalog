@@ -4,30 +4,82 @@ manufacturer: mackie
 primaryCategory: studio-monitor
 categories:
   - monitor
+capabilities:
+  - equalization
+  - filter
+  - crossover
 url: https://mackie.com/en/products/studio-monitoring/mr-series/MR824.html
-description: '8" Powered Studio Monitor delivering unmatched accuracy and
-  clarity for a clean stereo image in any room, so you can create professional
-  mixes that sound great anywhere.'
-details: |-
-  The MR824 delivers professional mixing capabilities with a proven logarithmic waveguide design that creates ultra-wide dispersion for enhanced stereo imaging and a wider listening sweet spot. Precise acoustic alignment across the frequency spectrum lets you trust what you hear when crafting a mix.
-
-  A 1" silk dome tweeter provides fast transient response for detailed high end and vocal clarity, while an 8" polypropylene woofer delivers responsive, dynamic low-frequency response. 85 watts of bi-amplified Class A/B amplification drives the system with headroom to spare.
-
-  Adjustable acoustic space filters and an HF filter (with boost or cut options) allow the MR824 to be optimized for a wide variety of room configurations and placements. Flexible inputs allow simple connection to almost any audio source.
-
-  The all-wood cabinet incorporates custom internal bracing to reduce distortion and resonance, contributing to the monitor's clean, accurate reproduction.
-specs: |-
-  - 8" polypropylene woofer
-  - 1" silk dome tweeter
-  - 85W bi-amplified Class A/B amplification
-  - Frequency response: 35 Hz – 20 kHz
-  - Logarithmic waveguide for ultra-wide dispersion
-  - Adjustable acoustic space filters
-  - HF filter with boost or cut options
-  - All-wood cabinet with custom internal bracing
 prices:
-  - amount: 234
+  - amount: 299.99
     currency: USD
+    asOf: 2026-09-19
+    source: official-website
+description: Mackie MR824 powered 8” studio monitors provide a clean stereo
+  image in any room, allowing you to create professional mixes that sound great
+  anywhere.
+details: |-
+  MR824 is the 8 in / 203 mm model of Mackie's MR Series powered studio monitors, a bi-amplified two-way design built around a 8 in / 203 mm polypropylene woofer and a 1 inch silk-dome tweeter on a neodymium magnet.
+
+  Mackie's logarithmic waveguide and precise acoustic alignment are the series' stated basis for its wide dispersion and stereo imaging, with the aim of mix translation that holds up on other playback systems.
+
+  Two rear controls adapt the monitor to the room. Acoustic Space applies a shelving cut for quarter-space, half-space or whole-space placement (speakers in corners, against a wall, or away from walls), and a High Frequency Filter boosts or cuts by 2 dB above 3 kHz to compensate for a dull or bright room. An input level control sits alongside them.
+
+  Three input connectors are fitted and are wired together electrically, so only one source should be connected at a time: a balanced XLR, a balanced or unbalanced 1/4 inch jack, and an unbalanced RCA. The manual gives the AES pin wiring for each.
+
+  The cabinet is all-wood with custom internal bracing and sound-tightening acoustic absorption material, and a custom-tuned rear port extends the low end. Mackie positions the MRS10 subwoofer as the companion for further low-frequency extension.
+specs: |-
+  - 85 watts of bi-amplified Class AB amplification
+  - 8 in / 203 mm polypropylene woofer
+  - 1 in / 25 mm silk dome tweeter with neodymium magnet
+  - Frequency response (-3 dB): 38 Hz - 20 kHz
+  - Frequency response (-10 dB): 35 Hz - 20 kHz
+  - Sound pressure level at 1 m, +4 dBu into balanced input: 107 dB SPL @ 1m
+  - Maximum SPL per pair: 113 dB SPL @ 1m
+  - Low frequency amplifier: 55 watts, 4 Ohm load, 110 watts peak
+  - High frequency amplifier: 30 watts, 6 Ohm load, 60 watts peak
+  - Amplifier type: monolithic IC, Class AB with DMOS power stage
+  - Crossover: 24 dB/octave at 1.9 kHz
+  - Sensitivity: +4 dBu at 300 Hz for full output
+  - Input impedance: 20 kOhm balanced bridging, 10 kOhm unbalanced
+  - High frequency EQ: +/-2 dB at 3 kHz and above
+  - Adjustable acoustic space filter (quarter, half, whole space)
+  - Balanced XLR, balanced/unbalanced 1/4 inch and unbalanced RCA inputs
+  - Professional all-wood cabinet with custom internal bracing
+  - Size (H x W x D): 15.7 x 10.1 x 12.6 in / 400 x 256 x 320 mm
+  - Weight: 23.0 lb / 10.4 kg
+io:
+  - key: SzPBceI9
+    name: Line Input (TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: t9TdRv3D
+    name: Line Input (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: SFkpyZbw
+    name: Line Input (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: 26NCMYFn
+    name: AC Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
 videos:
   - videoId: yN7dkU-xbOw
     provider: youtube

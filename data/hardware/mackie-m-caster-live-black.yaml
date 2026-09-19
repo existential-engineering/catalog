@@ -4,29 +4,93 @@ manufacturer: mackie
 primaryCategory: mixer
 categories:
   - audio-interface
+capabilities:
+  - equalization
+  - pitch-shift
 url: https://mackie.com/en/products/mixers/mcaster-series/m_caster_live_black.html
-description: "Portable Live Streaming Mixer. Looking to step up your audio game
-  on your streams, podcast, or videos? M·Caster Live is the ultimate portable
-  audio solution for mobile devices and Mac/PC."
-details: |-
-  Looking to step up your audio game on your streams, podcast, or videos? M·Caster Live is the ultimate portable audio solution for mobile devices and Mac/PC.
-
-  Plug in your mic, sweeten your sound, then go live. IT'S THAT SIMPLE.
-
-  Connect directly to your smartphone's headphone jack to both send and receive audio.
-
-  Sure, you can use your favorite professional microphone, but it doesn't stop there. M·Caster Live plays nicely with DSLR's, Headsets, and Smartphones too.
-specs: |-
-  - Connect directly to smartphone's headphone jack
-  - Connect favorite mic, headset, and more
-  - Selectable ContourFX Presets
-  - StreamFX voice-changing effects
-  - RGB LED strip with 7 user-selectable colors
-  - USB connectivity for Mac/PC audio interface use
-  - Automatic Mix Minus on smartphone input
 prices:
   - amount: 229.99
     currency: USD
+description: Portable Live Streaming Mixer. Looking to step up your audio game
+  on your streams, podcast, or videos? M·Caster Live is the ultimate portable
+  audio solution for mobile devices and Mac/PC.
+details: |-
+  Easily mix, optimize, and enhance audio for live streaming and content creation on mobile devices and Mac/PC. Plug in your mic, sweeten your sound, then go live.
+
+  From quick streams and video on Instagram and TikTok to all-nighters on Twitch and YouTube Live, M•Caster Live makes it easy to give your fans studio quality sound without having to be an audio nerd.
+
+  At the heart of a M•Caster is serious sound-shaping horsepower. Choose between an array of different ContourFX Presets that can add anything from thunderous depth to sparkly angelic tones to your voice with the turn of a single knob. Once you find one that feels right, you can blend it in to perfection.
+
+  Want to add a little audio flair to your stream? From super deep voice to chipmunk, StreamFX makes it easy with voice changing effects that you can activate at the turn of a knob.
+
+  You can use your favorite professional microphone, but it does not stop there. M•Caster Live plays nicely with DSLRs, headsets, and smartphones too. When it comes to monitoring, there are dedicated headphone and studio monitor outputs. Just connect the 1/8-inch cable from your phone headphone jack straight into M•Caster Live, and on a Mac or PC, USB connectivity turns M•Caster Live into an audio interface.
+specs: |-
+  - Connect directly to your smartphone headphone jack to both send and receive audio
+  - Pristine sound quality and unmatched flexibility in an ultra-compact design
+  - Connect your favorite mic, headset, and more
+  - Pick the perfect vocal sound with selectable ContourFX Presets
+  - StreamFX voice-changing effects
+  - RGB LED strip with 7 user-selectable colors
+  - USB connectivity allows for use as an audio interface on a Mac/PC
+  - Automatic Mix Minus on smartphone input
+  - Included accessories: USB cable, 1/8-inch TRS / aux cable, 1/8-inch TRRS cable for smartphones, power supply
+io:
+  - key: TCcnpIsH
+    name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: UB6AOOgn
+    name: Headset Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 1PjiZtZR
+    name: Smartphone Input/Output (1/8-inch TRRS)
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: g5JPydfD
+    name: Monitor Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 8l3ePPF4
+    name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: dN3ORJNa
+    name: USB Port (audio interface)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - key: fW6aIJSL
+    name: Power Input (external power supply)
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-c
+    maxConnections: 1
+    position: Right
 videos:
   - videoId: GH9HURyM4fc
     provider: youtube

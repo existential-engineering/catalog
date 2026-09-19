@@ -2,32 +2,113 @@ id: va6b7_nKtpQGZwKeJvidX
 name: SRT212
 manufacturer: mackie
 primaryCategory: speaker
+capabilities:
+  - equalization
+  - compression
+  - limiting
+  - crossover
+  - alignment-delay
 url: https://mackie.com/en/products/loudspeakers/srt-series/SRT212.html
-description: 'Mackie SRT212 12" 1600W professional powered loudspeaker with
-  Advanced Impulse DSP acoustic tuning, Class-D amplifier, SRT Mix Control
-  built-in 4-channel digital mixer, and Bluetooth streaming.'
+prices:
+  - amount: 649.99
+    currency: USD
+description: Mackie SRT212 professional loudspeakers deliver 1600W of pure
+  Mackie power to bands, solo artists, DJs and venues. DSP features sound great
+  and save time.
 details: |-
-  Designed with real-world 'throw and go' situations in mind, Mackie SRT212 12-inch powered speakers bundle our Advanced Impulse DSP acoustic tuning technology with an ultra-powerful 1600W Class-D amplifier, custom transducers, and Bluetooth® streaming to create the ultimate workhorse loudspeaker.
+  With Mackie SRT212 powered speakers, you can be amplified and ready to rock within minutes. Time-saving features like the SRT Mix Control built-in 4-channel digital mixer with Bluetooth and Advanced Impulse DSP tuning help you get your SRT212 loudspeakers dialed in for clear, consistent sound at any venue. And with transparent system protection, your system will keep the party going all night.
 
-  Be amplified to rock within minutes. The Mackie SRT212 12-inch powered speakers is loaded with time-saving features like the SRT Mix Control™ built-in 4-channel digital mixer with Bluetooth and Advanced Impulse™ DSP tuning to help you get up and running quickly with crystal clear sound. And with its transparent system protection, the amplifier won't give up when it matters most—because the show must go on.
+  Advanced Impulse DSP is Mackie's FIR-based acoustic tuning. The goal is to remove the anomalies that loudspeakers and horns contribute to a signal, from honkiness or squelch to mushy low end, effectively making the drivers invisible and output nothing but clean sound. It works by measuring the negative frequency response and time-domain impacts that each transducer and horn introduces, on axis as well as off, and reversing those anomalies before the signal hits the speaker.
+
+  The custom Sym-X horn was designed to bring out the best from the HF transducer while maintaining the flattest possible response at the crossover point. The design allows the compression driver to operate at near maximum efficiency, and the transition between LF and HF is a symmetrical, flat response that contributes to a smooth midrange.
+
+  Rather than lowering overall output, the processor-controlled system monitoring analyses the audio signal, identifies problem areas and dynamically applies multi-band compression to those specific frequencies. Input limiting keeps a hot source signal in check.
+
+  With the SRT Connect app for iOS and Android, levels, EQ, meters and configuration are available for up to two speakers simultaneously, and memory presets can be saved. When two SRT loudspeakers are linked, the whole system is controlled in one view. Music can also be streamed directly from any Bluetooth enabled device.
 specs: |-
-  - 1600W Class-D amplifier
-  - 12" LF driver
-  - 1.4" HF driver
-  - Dual XLR/TRS inputs (mic, line, instrument)
-  - Stereo 1/8" aux input
-  - XLR Direct Out per channel
-  - XLR Mix Out
   - Frequency response: 44Hz – 20kHz
   - Max SPL: 132 dB
-  - Coverage: 90° horizontal x 60° vertical
-  - Alignment delay – up to 100 feet
+  - LF driver: 12"
+  - HF driver: 1.4"
+  - 1600W Class-D amplifier with transparent system limiting and protection
+  - Advanced Impulse DSP proprietary acoustic tuning
+  - Custom Sym-X horn
+  - Coverage: 90 degrees horizontal x 60 degrees vertical
+  - SRT Mix Control built-in 4-channel digital mixer with Bluetooth
+  - Dual independent channels supporting mic, line and instrument signals
+  - Dedicated 1/8-inch stereo aux channel
+  - High-contrast full colour display with single-knob access to mixer and processing
+  - Application and venue specific voicing modes
+  - Alignment delay up to 100 feet
+  - Save and recall up to 10 user presets
+  - System lock with 4-digit passcode
+  - Front LED on, off and signal-present modes
+  - SRT Connect app control for iOS and Android
+  - Wireless speaker linking with up to 100 metres of range between linked speakers
+  - Stereo or dual-zone linking modes
+  - Dual-angled cabinet for use as a floor monitor
+  - Dual-angle pole mount with 7-degree downward tilt option
+  - M10 flypoints for professional installation
+  - Universal Power Supply (100-240VAC) with Power Factor Correction
   - Weight: 32.5 lb / 14.7 kg
   - Dimensions: 25.9 x 15.2 x 14.2 in / 658 x 386 x 361 mm
-  - Bluetooth streaming
-  - SRT Mix Control™ built-in 4-channel digital mixer
-  - Advanced Impulse™ DSP tuning
-  - M10 flypoints
+io:
+  - key: 8xsNnXp6
+    name: Channel 1 Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Bottom
+  - key: ZDC64RWi
+    name: Channel 2 Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Bottom
+  - key: rPd0vvQu
+    name: Aux Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: LEvbsPDF
+    name: Channel 1 Direct Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - key: S8SsQcKR
+    name: Channel 2 Direct Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - key: 8f3sEWah
+    name: Mix Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - key: mQs4mN1p
+    name: AC Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom
 links:
   - type: resource
     title: Owner's Manual
@@ -54,3 +135,6 @@ videos:
   - videoId: nDcVVz76-80
     provider: youtube
     title: SRT™ Pairing vs Linking
+  - videoId: JbUtAwupG1M
+    provider: youtube
+    title: Full rundown from a Mackie Acoustic Engineer
