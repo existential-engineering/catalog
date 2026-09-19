@@ -808,9 +808,12 @@ or keep one price per currency. One price per currency never needs a term.
 
 ---
 
-### W133: Free Price Carries No Source and asOf
+### W133: Free Price Is Missing Source or asOf
 
-A `prices[].amount` is `0` and the price carries no `source` and no `asOf`.
+A `prices[].amount` is `0` and the price is missing `source`, `asOf`, or both. The
+warning clears only when **both** are present: a `source` with no `asOf` cannot say
+the price was checked recently, and an `asOf` with no `source` cannot say what was
+checked.
 
 Zero means "this product is free", and Studio treats it as a fact: `isFreeProduct`
 renders "Free" rather than `$0.00`, keeps the item out of the G.A.S. spend ratio, and
@@ -825,9 +828,9 @@ them, every Joey Sturgis Tones plugin but one among them.
 It is advisory rather than an error because 286 entries predate the rule, the same
 staging E121 took through W132. A green run is not evidence that a zero was verified.
 
-**Fix:** Confirm the price on the maker's own page. If it really is free, add `source`
-and `asOf`. If it is not, write the real amount. If you cannot tell, remove the
-`prices` block: absent means "unknown", which is honest, where zero asserts free.
+**Fix:** Confirm the price on the maker's own page. If it really is free, add both
+`source` and `asOf`. If it is not, write the real amount. If you cannot tell, remove
+the `prices` block: absent means "unknown", which is honest, where zero asserts free.
 
 ---
 

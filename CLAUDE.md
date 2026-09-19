@@ -678,7 +678,7 @@ demo. catalog#857 shipped 60 of them in one PR.
 
 - **Zero and "unread" are the same value, so provenance is what separates
   them.** A verified free product carries `source` and `asOf` like any other
-  price; `pnpm validate` warns (W133) on a zero that carries neither. It is
+  price; `pnpm validate` warns (W133) on a zero missing either of them. It is
   advisory, not an error, because 286 entries predate the rule, the same
   staging E121 took through W132. Do not read a green run as proof a zero
   was checked.

@@ -352,8 +352,8 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     anchor: "w131-several-prices-in-one-currency-without-a-term",
   },
   [ValidationErrorCode.W133_UNVERIFIED_FREE_PRICE]: {
-    title: "Free price carries no source and asOf",
-    anchor: "w133-free-price-carries-no-source-and-asof",
+    title: "Free price is missing source or asOf",
+    anchor: "w133-free-price-is-missing-source-or-asof",
   },
 };
 
