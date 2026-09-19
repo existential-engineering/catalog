@@ -61,9 +61,9 @@
 
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-
+import { type FindingInput, findingsDirArg, recordFindings } from "./lib/findings.js";
 import type { Hardware, IO } from "./lib/types.js";
-import { DATA_DIR, getYamlFiles, loadYamlFile } from "./lib/utils.js";
+import { DATA_DIR, getYamlFiles, loadYamlFile, REPO_ROOT } from "./lib/utils.js";
 
 /**
  * Prose that documents a mains or adapter supply.
@@ -185,6 +185,12 @@ export const MAINS_POWERED_CATEGORIES = new Set([
 
 export interface Finding {
   slug: string;
+  /**
+   * The entry's own `manufacturer:` slug, never the filename prefix. A
+   * `dean-markley-*` file is not a Dean Guitars product, and a finding
+   * filed under the wrong brand is filed for the wrong person.
+   */
+  manufacturer: string;
   category: string;
   /** The prose fragment that evidences a supply, trimmed for the report. */
   evidence: string;
@@ -255,6 +261,7 @@ export function findEntriesMissingPowerInput(dir: string): Finding[] {
 
     findings.push({
       slug: path.basename(file, path.extname(file)),
+      manufacturer: data.manufacturer ?? "",
       category: category || "(none)",
       evidence: powerEvidence(prose),
       ports: data.io.length,
@@ -264,9 +271,44 @@ export function findEntriesMissingPowerInput(dir: string): Finding[] {
   return findings;
 }
 
+/**
+ * The inbox rows for a run's findings.
+ *
+ * Only the definitional ones. A `review` row is on a category that holds
+ * both a passive cabinet and an active monitor, and the tool cannot tell
+ * them apart, so filing it would put a guess in front of a person as a
+ * task. Those stay in the report, where the `review` column says what
+ * they are. The terminal report is unchanged either way: this is an
+ * additional sink, not a replacement.
+ */
+export function toFindings(findings: Finding[]): FindingInput[] {
+  return findings
+    .filter((f) => !f.review)
+    .map((f) => ({
+      kind: "missing-power-input" as const,
+      brand: f.manufacturer || "catalog",
+      key: `missing-power-input:${f.slug}`,
+      title: `no power input on a ${f.category} entry`,
+      detail:
+        `\`${f.slug}\` is filed under \`${f.category}\`, carries ${f.ports} io ` +
+        `entr${f.ports === 1 ? "y" : "ies"}, and none of them is \`category: power\`. ` +
+        `Its own prose documents a supply:\n\n> ${f.evidence}\n\n` +
+        "The connector has to come from the maker's manual or a rear-panel photo. " +
+        "A voltage does not give it, and an inferred inlet is worse than a tracked absence.",
+      file: `data/hardware/${f.slug}.yaml`,
+    }));
+}
+
 function main(): void {
   const findings = findEntriesMissingPowerInput(path.join(DATA_DIR, "hardware"));
   const tsv = process.argv.includes("--tsv");
+
+  const dir = findingsDirArg(process.argv.slice(2), REPO_ROOT);
+  if (dir) {
+    const rows = toFindings(findings);
+    const written = recordFindings(dir, rows);
+    process.stderr.write(`findings: wrote ${written} of ${rows.length} to ${dir}\n`);
+  }
 
   if (tsv) {
     console.log("# slug\tcategory\tports\treview\tevidence");

@@ -34,12 +34,18 @@
 
 import path from "node:path";
 import { type ProbeHit, type ProbeTier, probeProse } from "./lib/capability-probes.js";
+import { type FindingInput, findingsDirArg, recordFindings } from "./lib/findings.js";
 import { getCapabilitiesSet } from "./lib/schema-loader.js";
 import type { Hardware } from "./lib/types.js";
-import { DATA_DIR, getYamlFiles, loadYamlFile } from "./lib/utils.js";
+import { DATA_DIR, getYamlFiles, loadYamlFile, REPO_ROOT } from "./lib/utils.js";
 
 export interface GapRow {
   slug: string;
+  /**
+   * The entry's own `manufacturer:` slug, never the filename prefix: a
+   * `dean-markley-*` file is not a Dean Guitars product.
+   */
+  manufacturer: string;
   name: string;
   primaryCategory: string;
   capabilities: string[];
@@ -66,6 +72,7 @@ export function findGaps(tier?: ProbeTier): GapRow[] {
     if (hits.length === 0) continue;
     rows.push({
       slug: path.basename(file, path.extname(file)),
+      manufacturer: data.manufacturer ?? "",
       name: data.name,
       primaryCategory: data.primaryCategory ?? "(none)",
       capabilities: data.capabilities,
@@ -118,6 +125,41 @@ function report(rows: GapRow[]): void {
   console.log("\n   '?' marks a tier-2 gap. Inspect one with --slug <slug>.\n");
 }
 
+/**
+ * The inbox rows for a run's gaps, one per accepted **pair**.
+ *
+ * The pair is the reviewed unit and not the entry, for the reason
+ * `capability-gaps:apply --pairs` takes pairs: an entry commonly has one
+ * finding a person accepts and one they reject, and an issue per entry
+ * cannot be closed by half.
+ *
+ * Tier 1 only. A tier-2 probe sits in the review tier because it was
+ * measured to produce false positives that are not lexical: prose names
+ * a sibling product ("the Mini platform that also spawned DITTO
+ * LOOPER"), or a homonym (the Roland VP-550's "Mixed Chorus" is a choir
+ * voice). Separating those needs a product index rather than a regex,
+ * which is why the reviewed list exists and why this does not file them.
+ */
+export function toFindings(rows: GapRow[]): FindingInput[] {
+  return rows.flatMap((row) =>
+    row.hits
+      .filter((hit) => hit.tier === "auto")
+      .map((hit) => ({
+        kind: "capability-gap" as const,
+        brand: row.manufacturer || "catalog",
+        key: `capability-gap:${row.slug}:${hit.capability}`,
+        title: `\`${hit.capability}\` is missing from ${row.name}`,
+        detail:
+          `\`${row.slug}\` carries \`capabilities\` (${row.capabilities.join(", ")}) ` +
+          `and its own prose describes \`${hit.capability}\`:\n\n> ${hit.excerpt}\n\n` +
+          "Check the prose really claims the operation rather than denying it, " +
+          "measuring it, or naming a sibling product, then accept the pair into a " +
+          "reviewed list and apply with `pnpm capability-gaps:apply --pairs <file>`.",
+        file: `data/hardware/${row.slug}.yaml`,
+      }))
+  );
+}
+
 function main(): void {
   const args = process.argv.slice(2);
   const tierIndex = args.indexOf("--tier");
@@ -142,6 +184,13 @@ function main(): void {
         );
       }
     }
+  }
+
+  const dir = findingsDirArg(args, REPO_ROOT);
+  if (dir) {
+    const findingRows = toFindings(rows);
+    const written = recordFindings(dir, findingRows);
+    process.stderr.write(`findings: wrote ${written} of ${findingRows.length} to ${dir}\n`);
   }
 
   const slugIndex = args.indexOf("--slug");

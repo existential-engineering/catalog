@@ -57,9 +57,10 @@
 import path from "node:path";
 import { z } from "zod";
 import { isAggregatorUrl, isManufacturerOwnDomain, urlHost } from "./lib/aggregator-domains.js";
+import { type FindingInput, findingsDirArg, recordFindings } from "./lib/findings.js";
 import { countHintCoverage, emptyHintCoverage, type HintCoverage } from "./lib/io-hints.js";
 import type { Accessory, Content, Hardware, Manufacturer, Software } from "./lib/types.js";
-import { DATA_DIR, getYamlFiles, loadYamlFile } from "./lib/utils.js";
+import { DATA_DIR, getYamlFiles, loadYamlFile, REPO_ROOT } from "./lib/utils.js";
 
 // =============================================================================
 // CONSTANTS
@@ -882,6 +883,45 @@ function printConsoleReport(audit: DatasetAudit): void {
   }
 }
 
+/**
+ * The inbox rows for this audit's findings.
+ *
+ * `modular-missing-hp` only, of the eleven checks. The rest are either
+ * whole-dataset relations that name several files at once
+ * (duplicate-name, orphan-manufacturer) and so have no single entry to
+ * close an issue against, or they already have a tool that settles them
+ * inside this repo. A width is different: it exists only on a page
+ * somebody has to open, which is what makes it a task rather than a
+ * report line.
+ *
+ * The slug comes from the file path rather than the name, because the
+ * key has to be the same next month and a display name is edited.
+ */
+export function toFindings(findings: readonly Finding[]): FindingInput[] {
+  return findings
+    .filter((f) => f.check === "modular-missing-hp" && f.files[0])
+    .map((f) => {
+      const file = f.files[0]!;
+      const slug = file.replace(/^.*\//, "").replace(/\.ya?ml$/, "");
+      return {
+        kind: "missing-hp" as const,
+        brand: f.manufacturer || "catalog",
+        key: `missing-hp:${slug}`,
+        title: `${f.name} carries no panel width`,
+        detail:
+          `\`${slug}\` is filed under \`modular\` and has no \`hp\`, which is the one ` +
+          "number Studio's faceplate node needs to draw the module at scale.\n\n" +
+          "Read the width off the maker's page or manual, or off ModularGrid when the " +
+          "maker states none, then add it to `docs/reviews/` and apply with " +
+          "`pnpm hp:backfill --review <tsv> --apply`. Never guess it. A case, busboard " +
+          "or non-Eurorack system has no single panel width and stays without one on " +
+          "purpose: record that as a `skip` row with its reason rather than closing this " +
+          "with a number.",
+        file,
+      };
+    });
+}
+
 // =============================================================================
 // RUN
 // =============================================================================
@@ -893,6 +933,13 @@ const fast = args.includes("--fast");
 // Parse against the schema so a shape regression fails loudly rather than
 // silently emitting malformed JSON the workflow / Tier 2 would choke on.
 const audit = DatasetAuditSchema.parse(generateAudit(fast));
+
+const findingsDir = findingsDirArg(args, REPO_ROOT);
+if (findingsDir) {
+  const rows = toFindings(audit.findings);
+  const written = recordFindings(findingsDir, rows);
+  process.stderr.write(`findings: wrote ${written} of ${rows.length} to ${findingsDir}\n`);
+}
 
 if (jsonOutput) {
   console.log(JSON.stringify(audit, null, 2));

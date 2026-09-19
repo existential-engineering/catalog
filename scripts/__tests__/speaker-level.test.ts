@@ -221,13 +221,24 @@ describe("findMistypedSpeakerPorts", () => {
       `  - name: ${name}\n    signalFlow: output\n    category: audio\n    type: ${type}\n    connection: 1/4-inch\n    maxConnections: 1\n    position: Right\n`;
     fs.writeFileSync(
       path.join(dir, "amp.yaml"),
-      `name: Amp\nio:\n${port("Speaker Output", "line")}${port("Speaker Output 8 ohm", "speaker-level")}${port("Speaker Emulated Output", "line")}`
+      `name: Amp\nmanufacturer: marshall\nio:\n${port("Speaker Output", "line")}${port("Speaker Output 8 ohm", "speaker-level")}${port("Speaker Emulated Output", "line")}`
     );
 
     const findings = findMistypedSpeakerPorts(dir);
 
+    // `manufacturer` is read from the entry's own field and never from
+    // the filename prefix, because a `dean-markley-*` file is not a Dean
+    // Guitars product and a finding filed under the wrong brand is filed
+    // for the wrong person.
     expect(findings).toEqual([
-      { slug: "amp", port: "Speaker Output", type: "line", connection: "1/4-inch", review: true },
+      {
+        slug: "amp",
+        manufacturer: "marshall",
+        port: "Speaker Output",
+        type: "line",
+        connection: "1/4-inch",
+        review: true,
+      },
     ]);
   });
 });

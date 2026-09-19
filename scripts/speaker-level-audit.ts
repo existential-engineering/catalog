@@ -31,9 +31,9 @@
 
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-
+import { type FindingInput, findingsDirArg, recordFindings } from "./lib/findings.js";
 import type { Hardware } from "./lib/types.js";
-import { DATA_DIR, getYamlFiles, loadYamlFile } from "./lib/utils.js";
+import { DATA_DIR, getYamlFiles, loadYamlFile, REPO_ROOT } from "./lib/utils.js";
 
 /**
  * A port whose name mentions a speaker or cabinet.
@@ -101,8 +101,42 @@ export const AMPLIFIED_CATEGORIES = new Set([
   "pedal",
 ]);
 
+/**
+ * The connectors a passive loudspeaker is actually driven through.
+ *
+ * CLAUDE.md names them: "A passive loudspeaker is driven through
+ * speakON, binding posts, banana, euroblock, a barrier strip or a
+ * 1/4-inch jack, and never down an XLR or a DB25". `LINE_LEVEL_CONNECTIONS`
+ * above is the other half of that sentence and rules out what a line
+ * feed uses. This is the positive half, and it exists because ruling out
+ * the known line connectors is not the same as recognising a speaker
+ * one: `kef-coda-w` carries a port called "USB-C Inter-Speaker Link" on
+ * `usb-c`, which is neither, and reads as a finding under a rule built
+ * only from exclusions.
+ *
+ * Used for filing, not for reporting. The report is a worklist and a
+ * near miss on it costs a glance; an inbox issue is a task and a near
+ * miss on it costs somebody's afternoon.
+ */
+export const SPEAKER_CONNECTIONS = new Set([
+  "speakon",
+  "banana",
+  "binding-post",
+  "binding-posts",
+  "euroblock",
+  "barrier-strip",
+  "spring-terminal",
+  "1/4-inch",
+]);
+
 export interface Finding {
   slug: string;
+  /**
+   * The entry's own `manufacturer:` slug, never the filename prefix: a
+   * `dean-markley-*` file is not a Dean Guitars product, and a finding
+   * filed under the wrong brand is filed for the wrong person.
+   */
+  manufacturer: string;
   port: string;
   type: string;
   connection: string;
@@ -165,6 +199,7 @@ export function findMistypedSpeakerPorts(dir: string): Finding[] {
       if (io.type === "speaker-level") continue;
       findings.push({
         slug,
+        manufacturer: data.manufacturer ?? "",
         port: io.name ?? "",
         type: io.type ?? "(none)",
         connection: io.connection ?? "(none)",
@@ -175,9 +210,60 @@ export function findMistypedSpeakerPorts(dir: string): Finding[] {
   return findings;
 }
 
+/**
+ * The inbox rows for a run's findings.
+ *
+ * Two narrowings the report does not make, because a report row costs a
+ * glance and an inbox issue costs an afternoon. A row marked `review` is
+ * on a category holding both a passive wedge and a monitor controller,
+ * and the tool says so rather than guessing. A row whose connector is
+ * not one a passive loudspeaker is driven through is not settled by its
+ * name alone, whatever that name says.
+ *
+ * Keyed on the entry and the port NAME rather than an index, because an
+ * index moves when a port list is reordered and the key would file the
+ * same jack again under a new issue. Two jacks sharing a name on one
+ * entry (a Marshall head carries two "Speaker Output") are one finding
+ * for whoever has to open the manual.
+ */
+export function toFindings(findings: Finding[]): FindingInput[] {
+  const seen = new Set<string>();
+  const rows: FindingInput[] = [];
+  for (const f of findings) {
+    if (f.review) continue;
+    if (!SPEAKER_CONNECTIONS.has(f.connection.toLowerCase())) continue;
+    const key = `mistyped-port:${f.slug}:${f.port.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    rows.push({
+      kind: "mistyped-port",
+      brand: f.manufacturer || "catalog",
+      key,
+      title: `\`${f.port}\` is typed \`${f.type}\` on a ${f.connection} jack`,
+      detail:
+        `\`${f.slug}\` carries a port named \`${f.port}\` on a \`${f.connection}\` ` +
+        `connector, typed \`${f.type}\`. That connector drives a passive loudspeaker, ` +
+        "so the jack carries an amplified signal and belongs to `speaker-level`. " +
+        "`line` is for low-voltage preamp and mixer outputs, and Studio colours and " +
+        "shapes a handle from its io `type`.\n\n" +
+        "Confirm against the maker's rear panel, then apply with " +
+        "`pnpm speaker-level:apply --rows <tsv> --apply`.",
+      file: `data/hardware/${f.slug}.yaml`,
+    });
+  }
+  return rows;
+}
+
 function main(): void {
   const findings = findMistypedSpeakerPorts(path.join(DATA_DIR, "hardware"));
   const tsv = process.argv.includes("--tsv");
+
+  const dir = findingsDirArg(process.argv.slice(2), REPO_ROOT);
+  if (dir) {
+    const rows = toFindings(findings);
+    const written = recordFindings(dir, rows);
+    process.stderr.write(`findings: wrote ${written} of ${rows.length} to ${dir}\n`);
+  }
 
   if (tsv) {
     console.log("# slug\tport\tcurrent type\tconnection\treview");

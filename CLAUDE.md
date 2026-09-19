@@ -39,6 +39,60 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
   `CMakeLists.txt` calling `juce_add_plugin`, or a `.jucer`)
 - `pnpm format:check` - Check formatting
 
+Every corpus audit above takes `--findings <dir>`, which appends its
+findings to `<dir>/findings.jsonl` beside the report it already prints.
+That file is what the racks repo's `file-findings.ts` carries into the
+`catalog-submissions` inbox, one issue per finding, ever. See "Findings"
+below.
+
+## Findings
+
+A corpus audit reports to a person at a terminal, and until now that was
+the only place its output went. `pnpm power-input-audit` finds 305
+entries with no power input, against the rule this file calls "the single
+most repeated finding" on import review. Nothing carried them anywhere:
+the next run recomputed them, and whoever read the last one was the only
+record that it had been read.
+
+`--findings <dir>` is the durable half. `power-input-audit`,
+`speaker-level-audit`, `capability-gaps` and `dataset:audit` each append
+rows to `<dir>/findings.jsonl` in the shape `scripts/lib/findings.ts`
+defines, and the racks repo's `file-findings.ts` opens one inbox issue
+per row. The terminal report is unchanged: this is an additional sink,
+never a replacement.
+
+- **The `key` is the whole of the dedup.** It carries the kind and the
+  thing, and never a date, a run id or a count. A key that moves between
+  runs files the same finding again every night into an inbox a person
+  reads. `mistyped-port` keys on the port NAME rather than an index,
+  because an index moves when a port list is reordered, and two jacks
+  sharing a name on one entry (a Marshall head carries two "Speaker
+  Output") are one finding for whoever opens the manual.
+- **A finding is filed only when the audit can settle it.** Each `--findings`
+  pass is narrower than its own report, deliberately: a report row costs a
+  glance and an inbox issue costs an afternoon. `power-input-audit` files
+  its definitional rows and holds back the `review` ones.
+  `speaker-level-audit` files only ports on a connector a passive
+  loudspeaker is actually driven through, because ruling out the known
+  line connectors is not the same as recognising a speaker one
+  (`kef-coda-w` carries a "USB-C Inter-Speaker Link" on `usb-c`).
+  `capability-gaps` files tier-1 pairs only, for the reason the review
+  tier exists. `dataset:audit` files `modular-missing-hp` and nothing
+  else: its other checks name several files at once, so there is no
+  single entry to close an issue against.
+- **The kind strings are a cross-repo contract.** The reader drops a row
+  whose `kind` it does not know, silently and by design, so a typo is a
+  run that reports findings and files none.
+  `scripts/__tests__/findings.test.ts` pins each string literally rather
+  than deriving it, so a rename has to be made in both repos on purpose.
+- **The writer is fail-open and says what it wrote.** An audit that found
+  305 entries must still print them when it cannot write them down, so a
+  failed append is reported on stderr and the report continues. The
+  `--findings` directory goes through `checkContainedDirectory` first,
+  same contract as `checkContainedRegularFile`: it is a path the script
+  did not choose, and a `findings -> /etc/cron.d` would turn an append
+  into a write outside the checkout.
+
 ## Catalog Schema Compatibility
 
 Studio downloads whatever `catalog.sqlite` is newest, on its own schedule,
