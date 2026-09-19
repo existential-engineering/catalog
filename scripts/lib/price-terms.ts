@@ -12,10 +12,17 @@
 export const PRICE_TERMS = ["perpetual", "monthly", "yearly", "rent-to-own"] as const;
 export type PriceTerm = (typeof PRICE_TERMS)[number];
 
-/** The subset of a price this module reads. */
+/**
+ * The subset of a price the price checks read. `term` and `currency` serve
+ * W131; `amount`, `source` and `asOf` serve W133, which tells a verified
+ * free product from a price an import could not read.
+ */
 export interface PriceLike {
+  amount?: number;
   currency?: string;
   term?: string;
+  source?: string;
+  asOf?: string;
 }
 
 /** A currency that carries several prices and cannot tell them apart. */

@@ -47,6 +47,7 @@ export enum ValidationErrorCode {
   E124_IO_HINT_CELL_OCCUPIED_TWICE = "E124",
   E125_IO_HINT_EDGE_PARTIAL = "E125",
   E126_CONTROL_CHARACTER = "E126",
+  E127_INVALID_PRICE_AMOUNT = "E127",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
@@ -79,6 +80,7 @@ export enum ValidationErrorCode {
   W129_MANUFACTURER_IN_NAME = "W129",
   W130_NAME_TAGLINE = "W130",
   W131_PRICE_TERM_MISSING = "W131",
+  W133_UNVERIFIED_FREE_PRICE = "W133",
 }
 
 // =============================================================================
@@ -241,6 +243,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     title: "Control character in a string value",
     anchor: "e126-control-character-in-a-string-value",
   },
+  [ValidationErrorCode.E127_INVALID_PRICE_AMOUNT]: {
+    title: "Price amount is negative or not a finite number",
+    anchor: "e127-price-amount-is-negative-or-not-a-finite-number",
+  },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",
     anchor: "e199-validation-error",
@@ -344,6 +350,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.W131_PRICE_TERM_MISSING]: {
     title: "Several prices in one currency without a term",
     anchor: "w131-several-prices-in-one-currency-without-a-term",
+  },
+  [ValidationErrorCode.W133_UNVERIFIED_FREE_PRICE]: {
+    title: "Free price carries no source and asOf",
+    anchor: "w133-free-price-carries-no-source-and-asof",
   },
 };
 

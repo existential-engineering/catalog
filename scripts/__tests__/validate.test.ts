@@ -53,6 +53,22 @@ describe("getErrorCodeFromZodIssue", () => {
     );
   });
 
+  it("classifies a bad price amount as E127 wherever the price nests", () => {
+    // Keyed to the message, because prices sit under versions and variants
+    // as well as at the top level.
+    expect(getErrorCodeFromZodIssue(issue({ message: "Invalid price amount '-5'." }))).toBe(
+      ValidationErrorCode.E127_INVALID_PRICE_AMOUNT
+    );
+    expect(
+      getErrorCodeFromZodIssue(
+        issue({
+          message: "Invalid price amount '-5'.",
+          path: ["versions", 0, "prices", 0, "amount"],
+        })
+      )
+    ).toBe(ValidationErrorCode.E127_INVALID_PRICE_AMOUNT);
+  });
+
   it("classifies url errors, with the youtube variant first", () => {
     expect(getErrorCodeFromZodIssue(issue({ message: "Invalid URL" }))).toBe(
       ValidationErrorCode.E103_INVALID_URL_FORMAT
@@ -581,6 +597,24 @@ describe("collectWarnings", () => {
     expect(warn(HARDWARE_OK.replace("connection: 1/4-inch", "connection: trs"))).toEqual([
       { code: "W121", path: "io[0].connection", line: 13 },
     ]);
+  });
+
+  it("W133: a free price with no provenance, and none once it carries some", () => {
+    // A verified giveaway and a price an import could not read are the same
+    // value, so `source` and `asOf` are what separate them.
+    const free = HARDWARE_OK + "prices:\n  - amount: 0\n    currency: USD\n";
+    expect(warn(free)).toEqual([{ code: "W133", path: "prices[0]", line: 17 }]);
+    expect(warn(free + "    asOf: 2026-09-19\n    source: official-website\n")).toEqual([]);
+  });
+
+  it("W133: stays quiet on a real price, and fires on a nested free one", () => {
+    expect(warn(HARDWARE_OK + "prices:\n  - amount: 49\n    currency: USD\n")).toEqual([]);
+    expect(
+      warn(
+        HARDWARE_OK +
+          "versions:\n  - name: '1.0'\n    prices:\n      - amount: 0\n        currency: USD\n"
+      )
+    ).toEqual([{ code: "W133", path: "versions[0].prices[0]", line: 19 }]);
   });
 
   it("W128: several jacks collapsed into one entry, unless the entry is a patchbay", () => {
