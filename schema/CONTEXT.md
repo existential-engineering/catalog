@@ -861,6 +861,7 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `thunderbolt 3`
 - `toslink`
 - `bnc`
+- `f-type`
 - `firewire 400`
 - `ethernet`
 - `ethercon`
