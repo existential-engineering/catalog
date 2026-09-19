@@ -1,5 +1,272 @@
 # catalog
 
+## 3.66.0
+
+### Minor Changes
+
+- d87fc5f: Refresh Klevgrand: 62 new, 0 discontinued, 1 updated.
+
+  Adds the full current Klevgrand range, 40 plugins and instruments plus 22
+  OneShot and Tomofon expansion packs, and brings the existing Baervaag entry up
+  to date with its current page.
+
+- 8941844: Refresh Korneff Audio: 1 new, 0 discontinued, 14 updated.
+
+  Adds the Sound Techniques Alpha Range Channel and brings the existing fourteen
+  plugins up to their current pages, including four prices that had drifted.
+
+- 3048e75: Refresh Kush Audio: 22 new, 0 discontinued, 1 updated.
+
+  Adds the current Kush range, 15 plugins and 7 analog units including the 500
+  series modules, and brings the existing AR-1 entry up to its current page.
+
+- b4961a5: Refresh Mackie: 4 new, 1 discontinued, 141 updated.
+
+  Adds the CR3.5 and CR3.5BT studio monitors and the Thrash12v2 and
+  Thrash15v2 powered loudspeakers. Retires the MC-50BT headphones, whose
+  page now redirects to the MC-60BT. The existing 141 entries gain
+  connector detail, prices, product links and videos read from Mackie's
+  own spec sheets and owner's manuals.
+
+- 847c495: Refresh Marantz: 9 new, 1 discontinued, 31 updated.
+
+  Adds the PM-10 and PM6007 integrated amplifiers, the MM7055 power
+  amplifier, the CD 70 player, the AV8805A processor, the NR1711, SR6015
+  and SR7015 receivers and the Grand Horizon wall mount. Retires the
+  M-CR612, whose page now redirects to the archive. The existing 31
+  entries gain connector detail, prices and documentation links read from
+  Marantz's own manuals and rear-panel photography.
+
+- 5be2381: Refresh Wave Arts: 23 new, 0 discontinued, 14 updated.
+
+  Adds the twenty Convology impulse response libraries, covering vintage
+  plates, springs, digital reverbs, real spaces and guitar amps, plus the
+  MasterRestoration 6 plugin and the free IR measurement tools. Every
+  existing Wave Arts plugin gains full details, feature specs and links.
+
+- 704deae: Refresh zplane: 2 new, 0 discontinued, 7 updated.
+
+  Adds TIMBRE, a real-time formant-shifting plugin, and PEEL STEMS 2, which
+  zplane sells as a separate plugin from PEEL STEMS rather than an update to
+  it. Brings current descriptions, formats and release history to the existing
+  élastique, PEEL, reTune, TONIC and DECODA entries.
+
+### Patch Changes
+
+- d8b7fa2: Add the 16 DAWs and notation apps Studio's scanner recognises but the catalog did not carry
+
+  Studio's DAW scanner ships a per-platform table of products it identifies by
+  bundle id, `.desktop` entry or uninstall key. Diffing that table against the
+  catalog found 16 products with no entry at all, so a user with any of them
+  installed got a scan result the catalog could not resolve.
+
+  Added: WaveLab, Mixbus, Waveform, Samplitude, Sibelius, Dorico, Finale,
+  MuseScore, LMMS, Qtractor, Rosegarden, Hydrogen, Hindenburg PRO, VirtualDJ,
+  djay Pro and n-Track Studio, with nine new manufacturers (Boris FX, LMMS,
+  rncbc, Rosegarden, Hydrogen, Hindenburg Systems, Atomix Productions,
+  Algoriddim, n-Track Software).
+
+  Three entries carry a decision worth a reviewer's eye. Samplitude is filed
+  under a new `boris-fx` manufacturer rather than MAGIX, because Boris FX
+  acquired it with Sequoia and Music Studio in August 2025 and borisfx.com is
+  the only live official page, the MAGIX product page having gone to a redirect.
+  Finale takes the `discontinued` category, MakeMusic having sunset it in August 2024. Hindenburg PRO is stored as `name: PRO` under Hindenburg Systems,
+  following the same stripping the catalog already applies to Bitwig Studio and
+  Serato DJ Pro, with the composed form in `searchTerms`.
+
+  Prices are omitted throughout. Every one of these sells either a multi-tier
+  lineup or a subscription that could not be read off a maker's own store page,
+  and a single figure would misrepresent the product.
+
+- 603a7a7: Give the corpus audits a durable sink. `power-input-audit`,
+  `speaker-level-audit`, `capability-gaps` and `dataset:audit` each take
+  `--findings <dir>` and append their findings to `findings.jsonl` beside the
+  report they already print, in the shape the submissions inbox reads. Each
+  pass files less than it reports, because a report row costs a glance and an
+  inbox issue costs an afternoon: only what the audit can settle without
+  opening a maker's page.
+- 0d69842: Remove 31 doubled words from entry prose
+
+  Sweeps the backlog reported in catalog-submissions #24. Widening the grep from
+  eight function words to seventeen finds 46 hits, of which only 31 are genuine
+  repeats. The other 15 are correct as written (`plug-in in`, `in in-ear`,
+  `that that`, `a a-a` for the Alfred Arnold bandoneon, `the THE ORCHESTRA`, and
+  `the The Plex`), so every hit was reviewed in context rather than fixed by a
+  blanket regex, which would have broken all fifteen. Eleven of the genuine ones
+  are a single Echo Fix boilerplate paragraph repeated across sibling entries.
+  Two were near-repeats rather than adjacent ones (`as well as as a standalone
+application`), which the `duplicated-word` rule cannot see, so whether
+  prose-lint should gain a near-repeat rule stays open on that issue.
+
+- 2500ec4: Give the hp findings a path that resolves from the repo root
+
+  `pnpm dataset:audit --findings <dir>` wrote its `file` as
+  `hardware/x.yaml`, while the other three audits write
+  `data/hardware/x.yaml`. Of the 431 rows the four audits file against
+  `main`, 200 carried a path that names nothing from the repo root.
+
+  The racks inbox prints the field as ``Entry: `...` `` on every issue it
+  opens, and the nightly triage resolves it to read the entry, so a
+  data-relative path there is a dead reference on just under half the
+  corpus. `Finding.files` is relative to `DATA_DIR` because that is what
+  the terminal report prints; the findings row is repo-relative because
+  that is what reads it.
+
+  The test fixture is the reason this shipped: it passed
+  `files: ["data/hardware/make-noise-maths.yaml"]`, already repo-relative,
+  where `checkModularMissingHp` emits `relPath(p.file)`. Both fixtures now
+  carry the real shape, and a cross-audit case asserts all four kinds land
+  on the same repo-relative path, so the next audit to join them cannot
+  pick the other convention silently.
+
+  `relPath` is `path.relative`, which separates with a backslash on
+  Windows, and `path.posix.join` keeps it, so the same function produced a
+  mixed `data/hardware\x.yaml` there. That is not only cosmetic: the slug
+  takes everything after the last forward slash, so the mixed path keys as
+  `missing-hp:hardware\x` and a Windows run would file all 200 findings a
+  second time against entries a Linux run had already filed. Backslashes
+  are now normalized unconditionally rather than on `path.sep`, because
+  `path.sep` is `/` on the runner that files these and a guard written
+  against it could never fail on CI.
+
+- 8570791: Correct 154 software prices that wrongly read as free. Every Joey Sturgis
+  Tones entry but one carried a zero amount while the store charged for all
+  of them, and ujam, WA Production, Dear Reality and Tritik carried the same
+  thing, clustered on vendors whose product page leads with a free trial.
+  Prices are re-read from each maker's own page: 124 entries gain a real
+  amount, 30 whose maker page is retired or serves its price client-side
+  carry none rather than a wrong one, and the 10 that really are free keep
+  their zero with source and asOf. Adds E127, a hard error on a negative or
+  non-finite amount, and W133, an advisory on a zero carrying no provenance.
+- 7c4d1d2: Correct HoRNet plugin formats: add AAX to Graffio, which gained it in
+  1.1.0, and drop VST 2.4 from Cassette644's spec prose, which 1.0.3
+  removed.
+- 2d3b77e: Refresh ADPTR Audio: 0 new, 0 discontinued, 5 updated.
+
+  Brings current descriptions, formats, prices and release history to Hype,
+  Metric AB, Sculpt, Streamliner and Utopia.
+
+- e999ff8: Refresh A.O.M.: 0 new, 0 discontinued, 15 updated.
+
+  Updated descriptions, details, specs and version histories for the A.O.M.
+  plugin range from the maker's current product pages, covering the Invisible
+  Limiter and tranQuilizr generations, Kujaku, Wave Shredder and the rest of
+  the line.
+
+- 675fe61: Refresh Auburn Sounds: 0 new, 2 discontinued, 10 updated.
+
+  Updated descriptions, details, specs and version histories across the Auburn
+  Sounds plugin range from the maker's current product pages, and retired GFM
+  Koch and GFM Distort, which the maker now lists as legacy products.
+
+- 6b2162f: Refresh Audiaire: 0 new, 0 discontinued, 3 updated.
+
+  Updated descriptions, details and specs for Zone, Nuxx and Zenith from the
+  maker's current product pages, and recorded the plugin formats each page
+  states.
+
+- 75cc042: Refresh DW Drums: 0 new, 68 discontinued, 159 updated.
+
+  Refreshed every DW Drums entry against the current dwdrums.com product
+  pages, updating prices, descriptions, details, specs and images. Retired
+  68 entries whose product pages now return 404, covering older Collector's
+  and Performance shells, Zikit snares and earlier pedal revisions.
+
+- 39162aa: Refresh Elektron: 0 new, 5 discontinued, 22 updated.
+
+  Refreshed every current Elektron entry against elektron.se, adding
+  capabilities to the instruments and refreshing prices, details and specs.
+  Retired the Analog Drive, Analog Keys, Digitone Keys and two Machinedrum
+  models, whose product pages are gone.
+
+- 920424a: Refresh ESP Guitars: 0 new, 1 discontinued, 54 updated.
+
+  Refreshed every ESP entry against the current espguitars.com pages, adding
+  prices to the LTD and E-II lines and refreshing specs and details
+  throughout. Retired the LTD Deluxe SN-1000FR, whose page now returns 404.
+
+- 28746ac: Refresh Focal: 0 new, 1 discontinued, 20 updated.
+
+  Refreshed every Focal entry against the current focal.com product pages,
+  replacing shared boilerplate descriptions with each product's own copy and
+  adding details, specs and capabilities throughout. Marked the Shape 40 as
+  discontinued, which its page now states outright.
+
+- 922b957: Refresh Fostex: 0 new, 3 discontinued, 56 updated.
+
+  Refreshed every Fostex entry against the current fostex.jp pages, adding
+  details, specs, images and manual links throughout. Gave 14 headphone
+  entries the cable input ports they were missing, and retired the GS17H,
+  HP-A3mk2 and PC100USB-HR2, which the maker now marks discontinued.
+
+- 9b3d465: Refresh HoRNet Plugins: 0 new, 0 discontinued, 87 updated.
+
+  Refreshed every HoRNet entry against the current hornetplugins.com pages,
+  updating details, specs, videos and categories throughout, with corrected
+  formats on 22 entries, descriptions on 17 and prices on 3. Linked four
+  generation pairs, including Spaces MK2 to the Spaces it replaces.
+
+- ad7e152: Refresh Impact Soundworks: 0 new, 0 discontinued, 1 updated.
+
+  Refreshed the Plectra Series 1 bouzouki entry against its current
+  impactsoundworks.com page, adding the price, host compatibility, videos and
+  images.
+
+- bc44ccf: Refresh TSE Audio: 0 new, 0 discontinued, 5 updated.
+
+  Adds release history to all five plugins, a user manual link for B.O.D.
+  and the walkthrough video for X50 v2. Every entry already matched the
+  maker's current pages, so no existing prose changed.
+
+- 504bd64: Refresh VCV: 0 new, 0 discontinued, 8 updated.
+
+  Every VCV entry gains full product details and feature specs from the
+  current product pages, plus release history. Categories are now more
+  specific, so Drums is a drum machine, Spectra a spectral processor,
+  Sound Stage a reverb and Pluck a physical modeling instrument.
+
+- 1d8104e: Refresh W. A. Production: 0 new, 0 discontinued, 73 updated.
+
+  Every W. A. Production entry gains full product details and feature specs
+  from the current product pages, plus demo videos and release history. Many
+  categories are now more specific, so the InstaChord plugins are chord
+  generators, Puncher and Imprint are transient shapers and Dynawide is a
+  stereo widener.
+
+- 392c90b: Refresh Waves Factory: 0 new, 0 discontinued, 36 updated.
+
+  Adds real prices, current descriptions and release history to the plugin
+  and Kontakt library range, and drops the €0 records that stood in for the
+  free demo download on every entry that now carries its selling price.
+
+- 2b6d0ff: Add `pnpm power-input-audit`, which reports hardware entries whose prose
+  documents a power supply but whose `io` carries no power port. Reports
+  only; the connector has to come from the maker's documentation.
+- 613b8c2: Correct the signal type on 193 passive-speaker ports across 129 entries
+
+  Every Marshall, PRS and EVH cabinet input, and most amplifier speaker outputs,
+  were typed `line` when they carry an amplified signal. CLAUDE.md has required
+  `speaker-level` for these since the field existed, but nothing checked it, so
+  Studio drew them with the colour and shape it gives a low-voltage preamp jack.
+  Added `pnpm speaker-level-audit` to report them and `pnpm speaker-level:apply`
+  to write a reviewed list. Speaker-emulated outputs and a monitor controller's
+  balanced line feed to powered monitors both keep `line`, and the audit excludes
+  them: a passive loudspeaker is never fed down an XLR or a DB25.
+
+- 4c13722: Apply the Studio submission batch and correct the IR-Live identifier
+
+  Added 31 observed versions and one new identifier (Phase Fiasco Tape Fiasco 2)
+  from catalog-submissions #25-57. The 29 Universal Audio items already carried
+  their exact identifier, so what the batch actually contributed was version data
+  for entries that had none.
+
+  IR-Live carried `com.WavesAudio.IR-L`, which belongs to IR-L. That made IR-Live
+  unmatchable by its own id, and a real install fell through to name matching and
+  landed on Mixed In Key's "Live" entry instead. IR-Live now carries the observed
+  `com.WavesAudio.IRLive`, and IR-L takes the id that was sitting on its sibling.
+  The sonible smart:reverb submission was withheld: its version places it in the
+  original smart:reverb, which the catalog does not carry, not in smart:reverb 2.
+
 ## 3.65.0
 
 ### Minor Changes
