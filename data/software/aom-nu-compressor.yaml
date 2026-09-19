@@ -19,34 +19,54 @@ prices:
   - amount: 250
     currency: USD
     term: perpetual
-description: A multi-purpose track compressor plugin with 52 carefully-crafted
-  programs offering varied reduction curves, envelope generation algorithms,
-  knee shapes, and frequency response controls.
+  - amount: 250
+    currency: USD
+description: Nu Compressor is a multi-purpose track compressor plugin, with carefully-crafted 52 programs.
 details: |-
-  Nu Compressor is a versatile track compressor featuring 52 specialized
-  programs, each with dedicated reduction behaviors tailored for different
-  source material and compression styles.
+  Nu Compressor is a multi-purpose track compressor plugin, with carefully-crafted 52 programs. Each program varies the reduction curve shape, the envelope generation algorithm, the knee shape, the static and dynamic control of frequency response and saturation, and the preferred range of attack time and release time.
 
-  The plugin provides standard compressor controls including input gain and
-  threshold, complemented by switchable VU and QPPM reduction metering for
-  visual feedback. Internal and external sidechain inputs with filtering allow
-  precise control over the detection signal, with sidechain monitoring
-  capability for fine-tuning.
+  Alongside the programs, the plugin offers the common compressor controls such as input gain and threshold, plus internal and external side-chain input with side-chain input filtering, side-chain monitoring and a dedicated side-chain input meter.
 
-  A compact view with collapsible right panel allows efficient use of screen
-  real estate. The programs cover a wide range of compression characteristics
-  through varied reduction curves, envelope generation algorithms, knee shapes,
-  and frequency response controls.
+  The reduction meter is switchable between VU and Quasi-PPM styles, and the interface offers a compact view in which the right panel can be collapsed.
 
-  All processing operates at 64-bit floating-point precision with support for
-  sample rates from 44.1kHz to 384kHz.
+  The 52 programs are grouped by application: Clear & Smooth, Drive & Saturation, Snare, Vocals, Instruments, Kick, Bass, Special, Bus and Unplugged. Programs include Standard Nu Compressor, Digital RMS Compressor, Ultra Fast Compressor, Transient Crush, Tight Snare, Steady Vocal, Optical LA, Fat Kick, Stable Bass Line, Ducking Compressor, Nu Bus Compressor and Natural Acoustic.
+
+  The plugin supports sample rates from 44.1 kHz to 384 kHz with 64-bit floating-point internal precision, latency compensation, factory and user presets, snapshots, undo/redo, and reset to default.
 specs: |-
-  - 52 specialized compression programs
-  - Switchable VU/QPPM reduction metering
-  - Internal and external sidechain input
-  - Sidechain filtering and monitoring
-  - Compact view with collapsible panel
-  - Sample rates: 44.1kHz to 384kHz
-  - 64-bit floating-point internal precision
-  - Latency compensation included
-releaseDate: "2020-09-20"
+  - 52 programs with dedicated reduction behaviors and sound characters
+  - Common compressor controls like input gain, threshold, etc.
+  - Switchable VU/QPPM reduction meter
+  - Internal and external side-chain input
+  - Side-chain input filtering
+  - Side-chain monitoring
+  - Side-chain input meter
+  - Compact view; right panel can be collapsed
+  - Supports 44.1k - 384kHz Sample Rate
+  - 64-bit Floating-point Internal Precision
+  - Latency Compensation
+  - Factory Preset
+  - User Preset
+  - Snapshot
+  - Undo/Redo
+  - Reset to Default
+  - Windows: x64-compatible CPU, Windows 11 24H2 or 25H2
+  - Windows plugin formats: VST2, VST3, AAX-Native, CLAP
+  - Mac: Intel / Apple Silicon, macOS Monterey 12 through macOS Tahoe 26
+  - Mac plugin formats: VST2, VST3, Audio Unit, AAX-Native, CLAP
+versions:
+  - name: 1.15.3
+    releaseDate: 2022-09-09
+    description: CLAP plugin format is now supported.
+  - name: 1.11.8
+    releaseDate: 2021-09-08
+    description: Enlarge GUI size by ~10%.
+  - name: 1.11.7
+    releaseDate: 2021-08-08
+    description: Add Quasi-PPM reduction meter. Add “color” lamp, which indicates nonlinear processing in tone processor.
+  - name: 1.11.4
+    releaseDate: 2021-03-15
+    description: Add AVX2 Installer.
+  - name: 1.11.0
+    releaseDate: 2020-09-20
+    description: Initial release.
+releaseDate: 2020-09-20

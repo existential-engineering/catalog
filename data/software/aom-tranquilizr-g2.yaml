@@ -18,41 +18,67 @@ prices:
   - amount: 150
     currency: USD
     term: perpetual
-description: A second-generation equalizer plugin with fully configurable eight
-  bands, per-band channel options, three equalizer types, and dual spectrum
-  analyzers.
+  - amount: 150
+    currency: USD
+description: tranQuilizr G2 is an equalizer plugin employing fully configurable eight bands.
 details: |-
-  tranQuilizr G2 is the second generation of A.O.M.'s transparent equalizer,
-  expanding to eight fully configurable bands with enhanced capabilities across
-  the board.
+  tranQuilizr G2 is an equalizer plugin employing fully configurable eight bands. Each band can be configured as peaking, shelving, baxandall or cutting, with center frequency from 1Hz to 50kHz, gain from -24 to +24dB and bandwidth from 0.05 to 10 octaves.
 
-  Each band can be configured as peaking, shelving, baxandall, or cutting type,
-  with independent per-band channel options including Stereo (LR), Left, Right,
-  Mid, and Side processing. The frequency range extends from 1Hz to 50kHz center
-  frequency.
+  Every band carries its own channel setting, covering Stereo (LR), Left, Right, Mid and Side, and the plugin adds an M/S balance adjustment alongside multi-channel support. Monitoring channels are selectable across the same Stereo (LR), Left, Right, Mid and Side set.
 
-  Three equalizer types are available: Minimum-Phase, Maximum-Phase, and
-  Conventional, each offering different sonic characteristics. Multiple
-  gain-bandwidth interaction modes provide further tonal flexibility. M/S
-  balance adjustment allows fine-tuning of the stereo field.
+  Three equalizer types give different sound characters: Minimum-Phase, Maximum-Phase and Conventional. Gain-Bandwidth interaction can be set to Standard, Gentle, Focus or Hybrid, and Automatic Gain Compensation is available. The over-sampler was totally rewritten for this version and is A.O.M.'s fourth generation engine.
 
-  Dual spectrum analyzers are included: a traditional graph analyzer and a
-  belt-shaped analyzer for alternative visualization. Automatic Gain
-  Compensation and multi-channel support round out the feature set.
+  The interface provides dual spectrum analyzers, a graph display and a belt-shaped display, plus a configurable mouse modifier key. Common features across A.O.M. plugins include factory and user presets, snapshots, undo/redo and reset to default.
+
+  Windows builds run on an x64-compatible CPU under Windows 11 (24H2, 25H2) in VST2, VST3, AAX-Native and CLAP formats. Mac builds run on Intel or Apple Silicon under macOS Monterey 12 through macOS Tahoe 26 in VST2, VST3, Audio Unit, AAX-Native and CLAP formats.
 specs: |-
-  - Eight fully configurable bands (peaking, shelving, baxandall, cutting)
-  - Per-band channel: Stereo, Left, Right, Mid, Side
-  - Frequency range: 1Hz to 50kHz
-  - Gain: -24 to +24dB, Bandwidth: 0.05-10 octaves
-  - Three EQ types: Minimum-Phase, Maximum-Phase, Conventional
-  - Multiple gain-bandwidth interaction modes
-  - M/S balance adjustment
-  - Dual spectrum analyzers (Graph and Belt-Shaped)
+  - Eight bands configurable as peaking, shelving, baxandall, cutting
+  - Per-band channel setting: Stereo(LR), Left, Right, Mid and Side
+  - Band parameter covers from 1Hz to 50kHz center frequency, -24 to +24dB gain and 0.05 to 10 octave bandwidth
+  - Three equalizer types of different sound characters: Minimum-Phase, Maximum-Phase, Conventional
   - Automatic Gain Compensation
+  - M/S balance adjustment
+  - Gain-Bandwidth interaction: Standard, Gentle, Focus, Hybrid
+  - Totally rewritten over-sampler (fourth generation engine)
+  - Selectable Monitoring Channels: Stereo(LR), Left, Right, Mid and Side
   - Multi-channel support
-  - Sample rates: 44.1kHz to 384kHz
-  - 64-bit floating-point internal precision
-releaseDate: "2019-07-31"
+  - Dual spectrum analyzers: Graph and Belt-Shaped
+  - Configurable mouse modifier key
+  - Supports 44.1k - 384kHz Sample Rate
+  - 64-bit Floating-point Internal Precision
+  - Latency Compensation
+  - Factory Preset, User Preset, Snapshot, Undo/Redo, Reset to Default
+  - Windows: x64-compatible CPU, Windows 11 24H2 / 25H2
+  - Mac: Intel / Apple Silicon, macOS Monterey 12 through macOS Tahoe 26
+versions:
+  - name: 1.18.0
+    releaseDate: 2024-12-27
+    description: Shipped with a new skin.
+  - name: 1.15.3
+    releaseDate: 2022-09-09
+    description: CLAP plugin format is now supported.
+  - name: 1.14.2
+    releaseDate: 2022-07-08
+    description: Add Algorithm IV.
+  - name: 1.13.3
+    releaseDate: 2022-01-27
+    description: Add Algorithm III.
+  - name: 1.11.4
+    releaseDate: 2021-03-15
+    description: Add AVX2 Installer. Add Algorithm II.
+  - name: 1.10.3
+    releaseDate: 2020-04-19
+    description: Band palette beside equalizer points. EQ curve display in Pro Tools' mix window.
+  - name: 1.10.2
+    releaseDate: 2020-03-01
+    description: CPU load is reduced to 95% of previous version.
+  - name: 1.10.1
+    releaseDate: 2020-01-12
+    description: Support mouse wheel behavior configuration.
+  - name: 1.10.0
+    releaseDate: 2019-07-31
+    description: Initial release.
+releaseDate: 2019-07-31
 links:
   - type: support
     title: Supported Platform

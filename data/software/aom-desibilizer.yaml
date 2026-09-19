@@ -19,33 +19,43 @@ prices:
   - amount: 150
     currency: USD
     term: perpetual
-description: A de-esser plugin that reduces sibilants in vocal and speech by
-  detecting long sibilants rather than strong ones, preserving groove while
-  maintaining natural sound.
+  - amount: 150
+    currency: USD
+description: A de-esser plugin that reduces sibilants in vocal and speech by detecting long sibilants rather than strong ones, preserving groove while maintaining natural sound.
 details: |-
-  DeSibilizer is a specialized de-esser plugin designed to reduce sibilants in
-  vocal and speech recordings. Unlike conventional de-essers that react to
-  signal strength, DeSibilizer detects long sibilants, providing more musical
-  and natural-sounding results.
+  DeSibilizer is a de-esser plugin, which reduces sibilants in vocal and speech. Rather than reacting to strong sibilants, its detector targets long sibilants, and the de-essing behaviour is controlled by two factors: detection sensitivity and detection threshold. Sensitivity can be fixed or adaptive, and the frequency range to act on is selected directly.
 
-  The plugin features intuitive frequency range selection with detection
-  sensitivity and threshold controls that can operate in both fixed and adaptive
-  modes. It preserves groove by maintaining sibilant heads while reducing the
-  sustained portions, resulting in very low sound coloring.
+  By default the plugin preserves groove by keeping the head of sibilants intact, while a lookahead feature can be engaged to reduce whole sibilants instead. A compensation boost applies gain to the total band signal, synchronised to the reduction, and the processing is designed for very low sound coloring.
 
-  A lookahead feature (0-60 milliseconds) allows the plugin to capture and
-  reduce entire sibilants from their onset. A compensation boost synchronized to
-  the reduction amount ensures the overall tonal balance is maintained.
+  DeSibilizer ships alongside DeSibilizer LL (Low Latency), and both can be unlocked with a DeSibilizer license or a Total Bundle license. DeSibilizer offers the lookahead feature (0 to 60 msec) at a plugin latency of 60.7 msec and is recommended for mixing and mastering, while DeSibilizer LL has no lookahead and a plugin latency of 0.67 msec for cases where near-zero latency monitoring is required.
 
-  Two variants are included: the standard DeSibilizer with full lookahead
-  capability (60.7ms latency) and DeSibilizer LL, a low-latency variant
-  operating at just 0.67ms latency without lookahead functionality.
+  The plugin runs on Windows 11 (24H2, 25H2) with an x64-compatible CPU as VST2, VST3, AAX-Native and CLAP, and on macOS Monterey 12 through Tahoe 26 on Intel or Apple Silicon as VST2, VST3, Audio Unit, AAX-Native and CLAP. Sample rates from 44.1 kHz to 384 kHz are supported with 64-bit floating-point internal precision.
 specs: |-
+  - Detects long sibilants rather than strong sibilants
   - Intuitive frequency range selection
-  - Fixed and adaptive detection threshold controls
-  - Lookahead feature (0-60ms) for complete sibilant reduction
-  - Compensation boost synchronized to reduction
-  - Low-latency variant (DeSibilizer LL) included
-  - Sample rates: 44.1kHz to 384kHz
+  - Control de-essing behavior by two factors: detection sensitivity and detection threshold
+  - Fixed and adaptive sensitivity
+  - Very low sound coloring
+  - Preserve groove by keeping head of sibilants by default
+  - Lookahead feature to reduce whole sibilants
+  - Compensation boost: gain to total band signal, synchronizing to reduction
+  - Lookahead range 0 to 60 msec; plugin latency 60.7 msec
+  - Supports 44.1k - 384kHz sample rate
   - 64-bit floating-point internal precision
-releaseDate: "2021-12-22"
+  - Latency compensation
+  - Factory and user presets
+  - Snapshot
+  - Undo/Redo
+  - Reset to default
+versions:
+  - name: 1.15.3
+    releaseDate: 2022-09-09
+    description: CLAP plugin format is now supported.
+  - name: 1.13.0
+    releaseDate: 2021-12-22
+    description: Initial release.
+releaseDate: 2021-12-22
+videos:
+  - videoId: WYFlgZmLo0k
+    provider: youtube
+    title: Screencast

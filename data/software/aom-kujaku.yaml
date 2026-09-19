@@ -19,35 +19,37 @@ prices:
   - amount: 120
     currency: USD
     term: perpetual
-description: A convolution-based multi-effects plugin with graphically editable
-  impulse response and 10 togglable, reorderable post-processing effects for
-  diverse sound design applications.
+description: Kujaku is a multi-FX based on convolution reverb. Impulse reponse is graphically editable, and with post effects, Kujaku achieves various sound making.
 details: |-
-  Kujaku is a multi-effects plugin centered on convolution reverb technology. It
-  features a graphically editable impulse response that allows direct
-  manipulation of the reverb character through visual controls.
+  Kujaku is a multi-FX plugin from A.O.M. built around convolution reverb. Its impulse response is graphically editable, and combined with post effects the plugin is aimed at a wide range of sound making rather than room emulation alone.
 
-  Beyond the convolution engine, Kujaku includes 10 togglable and reorderable
-  post-processing effects that can be chained in any order. This modular
-  approach enables diverse sound design applications from subtle spatial
-  enhancement to creative transformations.
+  The signal path pairs the editable convolution reverb with ten post effects that can each be toggled on or off and reordered, so the processing chain after the reverb is arranged by the user. A block diagram of the full signal flow is published on the product page.
 
-  The plugin supports sample rates from 44.1kHz to 384kHz with 64-bit
-  floating-point internal precision. Factory and user presets, snapshot
-  functionality, and undo/redo support provide a complete workflow for saving
-  and recalling complex effect chains.
+  Common to A.O.M.'s plugin line, Kujaku supports sample rates from 44.1 kHz to 384 kHz, runs at 64-bit floating-point internal precision, and reports latency compensation to the host. Factory and user presets, snapshots, undo/redo and reset to default are provided.
 
-  Kujaku was initially released in August 2023 as one of A.O.M.'s more recent
-  products, expanding their lineup beyond dynamics and equalization into
-  creative effects territory.
+  On Windows the plugin requires an x64-compatible CPU and Windows 11 (24H2 or 25H2), and ships as VST2, VST3, AAX-Native and CLAP. On macOS it runs on Intel or Apple Silicon under macOS Monterey 12 through macOS Tahoe 26, adding Audio Unit to the same format list.
 specs: |-
   - Graphically editable convolution reverb
-  - 10 togglable, reorderable post effects
-  - Sample rates: 44.1kHz to 384kHz
-  - 64-bit floating-point internal precision
-  - Latency compensation included
-  - Factory and user presets with snapshots
-releaseDate: "2023-08-07"
+  - Togglable, reorderable 10 post effects
+  - Supports 44.1k - 384kHz Sample Rate
+  - 64-bit Floating-point Internal Precision
+  - Latency Compensation
+  - Factory Preset
+  - User Preset
+  - Snapshot
+  - Undo/Redo
+  - Reset to Default
+  - Windows CPU: x64-compatible CPU
+  - Windows OS: Windows 11 24H2, Windows 11 25H2
+  - Windows plugin formats: VST2, VST3, AAX-Native, CLAP
+  - Mac CPU: Intel / Apple Silicon
+  - Mac OS: macOS Monterey 12, Ventura 13, Sonoma 14, Sequoia 15, Tahoe 26
+  - Mac plugin formats: VST2, VST3, Audio Unit, AAX-Native, CLAP
+versions:
+  - name: 1.17.0
+    releaseDate: 2023-08-07
+    description: Initial Release
+releaseDate: 2023-08-07
 videos:
   - provider: youtube
     videoId: ZIkYemmetpE

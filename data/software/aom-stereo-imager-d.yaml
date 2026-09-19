@@ -1,7 +1,7 @@
 id: OrKZgBUIclWPTqub_03XE
 name: Stereo Imager D
 manufacturer: aom
-primaryCategory: utility
+primaryCategory: stereo
 categories:
   - effect
 formats:
@@ -18,31 +18,51 @@ prices:
   - amount: 70
     currency: USD
     term: perpetual
-description: A correlation-based stereo image processor offering true stereo
-  processing by decomposing L/R inputs into L'/C/R' components, preserving tonal
-  balance without M/S artifacts.
+  - amount: 70
+    currency: USD
+description: A.O.M. Stereo Imager D is a correlation-based stereo image processor. It offers non-Mid/Side, a true stereo processing.
 details: |-
-  Stereo Imager D is a stereo image processing plugin that takes a fundamentally
-  different approach from typical Mid/Side processors. Instead of M/S
-  decomposition, it uses a correlation-based algorithm to decompose L/R inputs
-  into L', C, and R' components.
+  A.O.M. Stereo Imager D is a correlation-based stereo image processor. It offers non-Mid/Side, a true stereo processing.
 
-  This approach preserves stereo information without breaking the tonal balance
-  that can occur with conventional M/S processing. The result is more
-  natural-sounding stereo width adjustments that maintain the integrity of the
-  original stereo image.
+  Common stereo imager (typically using M/S decomposition) plugins can not retain stereo information of source singal. These plugins sometimes emphasizes side component of input signals, however, such processing easily breaks tonal balance and stereo image of input singals.
 
-  The plugin operates at 64-bit floating-point precision with support for sample
-  rates from 44.1kHz to 384kHz. Factory and user presets with snapshot
-  functionality allow quick recall of settings.
+  In contrast to others, A.O.M. Stereo Imager D uses on correlation-based decomposition. This algorithm decomposes L/R inputs into L'/C/R'. The correlated component of both channels is mapped to C, the decorrelated components are mapped to L'/R'. The L' and R' components have no correlation, it means a true stereo.
+
+  On Windows the plugin requires an x64-compatible CPU and Windows 11 24H2 or 25H2, and ships as VST2, VST3, AAX-Native and CLAP. On Mac it runs on Intel and Apple Silicon under macOS Monterey 12 through macOS Tahoe 26, and ships as VST2, VST3, Audio Unit, AAX-Native and CLAP.
+
+  Common features across the A.O.M. range include sample rates from 44.1 kHz to 384 kHz, 64-bit floating-point internal precision, latency compensation, factory and user presets, snapshots, undo/redo and reset to default.
 specs: |-
-  - Correlation-based stereo decomposition (not M/S)
-  - L'/C/R' component processing
-  - Preserves tonal balance during width adjustment
-  - Sample rates: 44.1kHz to 384kHz
-  - 64-bit floating-point internal precision
-  - Latency compensation included
-releaseDate: "2011-05-04"
+  - Correlation-based decomposition of L/R input into L'/C/R' components (non-Mid/Side, true stereo processing)
+  - Supports 44.1k - 384kHz Sample Rate
+  - 64-bit Floating-point Internal Precision
+  - Latency Compensation
+  - Factory Preset
+  - User Preset
+  - Snapshot
+  - Undo/Redo
+  - Reset to Default
+  - Windows: x64-compatible CPU, Windows 11 24H2 / 25H2
+  - Mac: Intel / Apple Silicon, macOS Monterey 12 through macOS Tahoe 26
+versions:
+  - name: 1.16.1
+    releaseDate: 2023-03-22
+    description: Update GUI with Hi-DPI images.
+  - name: 1.15.3
+    releaseDate: 2022-09-09
+    description: CLAP plugin format is now supported.
+  - name: 1.11.4
+    releaseDate: 2021-03-15
+    description: Add AVX2 Installer.
+  - name: 1.6.0
+    releaseDate: 2013-09-27
+    description: AAX-Native is now supported.
+  - name: 1.4.0
+    releaseDate: 2012-11-21
+    description: Support Windows VST 64bit. Support Mac OS X VST and Audio Unit.
+  - name: 1.3.0
+    releaseDate: 2011-05-04
+    description: Initial release.
+releaseDate: 2011-05-04
 videos:
   - provider: youtube
     videoId: S1HXtZvm6AE

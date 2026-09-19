@@ -18,36 +18,62 @@ prices:
   - amount: 120
     currency: USD
     term: perpetual
-description: A transparent equalizer plugin employing a new method of equalizer
-  design to avoid the distortion and coloring typical of conventional digital
-  equalizers.
+description: tranQuilizr is an equalizer plugin with transparent sound and intuitive operations.
 details: |-
-  tranQuilizr is an equalizer plugin that emphasizes transparent sound through a
-  novel approach to digital equalizer design. The plugin aims to avoid the
-  distortion and coloring that can occur with conventional digital EQ
-  implementations.
+  tranQuilizr is an equalizer plugin with transparent sound and intuitive operations. Conventional digital equalizers are bound to conventional equalizer design method, such as bilinear transform, and brings equalizing curve distortion and unwanted sound coloring. tranQuilizr employs a new method on equalizer design and provides really transparent sound.
 
-  The plugin provides six equalizer bands plus dedicated Lo-Cut and Hi-Cut
-  filters. Each band offers flexible channel management with independent Stereo,
-  Left, Right, Mid, and Side processing options. Three equalizer types provide
-  different sonic characters.
+  Users can adjust tradeoffs between quality and CPU load by Quality parameter. tranQuilizr also offers flexible channel management; every band can be inserted on LR/L/R/M/S channels independently. Automatic Gain Compensation (AGC) enables gain control against total gain changes caused by equalizer bands.
 
-  Frequency range extends from 20Hz to 30kHz for center frequencies, with gain
-  of plus or minus 24dB and bandwidth adjustable from 0.05 to 10 octaves.
-  Automatic Gain Compensation helps maintain consistent perceived loudness
-  during adjustments.
+  The plugin provides six equalizer bands plus Lo-Cut and Hi-Cut filters, each of which can be placed on a Stereo (LR), Left, Right, Mid or Side channel independently. Bands cover 20Hz to 30kHz center frequency, -24 to +24dB gain and 0.05 to 10 octave bandwidth, in three equalizer types of different sound characters, with an on/off and solo switch for every band.
 
-  A built-in spectrum analyzer includes an Ear-Only mode for focused listening.
-  The internal sample rate can reach up to 1,536kHz, and the plugin operates at
-  just 64 samples of latency with a mouse-friendly graphical interface.
+  Monitoring can be switched between Stereo (LR), Left, Right, Mid and Side, and the plugin adds a phase invert switch, M/S balance adjustment and an output gain. Internal processing runs at up to a 1,536kHz internal sample rate at 64-bit floating-point precision, while plug-in latency stays at 64 samples.
+
+  Released in April 2013, tranQuilizr gained a spectrum analyzer in 1.5.2, AAX-Native support in 1.6.0, surround configurations up to 8in/8out in 1.7.3, the "Ear-Only" analyzer mode in 1.7.4, and the CLAP plugin format in 1.15.3.
 specs: |-
-  - Six EQ bands plus Lo-/Hi-Cut filters
-  - Per-band Stereo/Left/Right/Mid/Side channel selection
-  - Three equalizer types with different characters
-  - Frequency range: 20Hz to 30kHz
-  - Gain: +/-24dB, Bandwidth: 0.05-10 octaves
-  - Automatic Gain Compensation
-  - Spectrum analyzer with Ear-Only mode
+  - Unique transparent sound
+  - Six equalizer bands and Lo-/Hi-Cut filters
+  - All equalizer bands and filters can be put on a channel in Stereo (LR), Left, Right, Mid and Side
+  - Equalizer supports 20Hz to 30kHz center frequency, -24 to +24dB gain and 0.05 to 10 octave bandwidth
+  - Three equalizer types of different sound characters
+  - Filters support 1Hz-10kHz for Lo-Cut and 100Hz-30kHz for Hi-Cut
+  - On/off and solo switch for every band
+  - Automatic Gain Compensation (AGC)
   - Up to 1,536kHz internal sample rate
-  - 64-sample latency
-  - Sample rates: 44.1kHz to 384kHz
+  - Phase invert switch
+  - M/S balance adjustment
+  - Monitoring channels selectable from Stereo (LR), Left, Right, Mid and Side
+  - Mouse-friendly paragraphic operation
+  - Small plug-in latency (64 samples)
+  - Output gain
+  - Supports 44.1k - 384kHz sample rate
+  - 64-bit floating-point internal precision
+  - Latency compensation
+  - Factory presets, user presets, snapshot, undo/redo and reset to default
+  - Windows: x64-compatible CPU, Windows 11 24H2 or 25H2
+  - Mac: Intel / Apple Silicon, macOS Monterey 12 through macOS Tahoe 26
+versions:
+  - name: 1.15.3
+    releaseDate: 2022-09-09
+    description: CLAP plugin format is now supported.
+  - name: 1.11.4
+    releaseDate: 2021-03-15
+    description: Add AVX2 Installer.
+  - name: 1.7.4
+    releaseDate: 2016-01-31
+    description: Add "Ear-Only" mode. Add new analyzer features.
+  - name: 1.7.3
+    releaseDate: 2015-05-03
+    description: Supports surround configuration up to 8in/8out.
+  - name: 1.7.2
+    releaseDate: 2014-03-31
+    description: Performance improvement for 10-20%.
+  - name: 1.6.0
+    releaseDate: 2013-09-27
+    description: AAX-Native is now supported.
+  - name: 1.5.2
+    releaseDate: 2013-06-30
+    description: Performance improvement for 55%. Add spectrum analyzer.
+  - name: 1.5.0
+    releaseDate: 2013-04-28
+    description: Initial release.
+releaseDate: 2013-04-28
