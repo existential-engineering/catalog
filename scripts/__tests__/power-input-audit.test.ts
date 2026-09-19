@@ -1,9 +1,13 @@
-import { describe, expect, it } from "vitest";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import type { IO } from "../lib/types.js";
 import {
   BUS_POWERED_CONNECTIONS,
+  findEntriesMissingPowerInput,
   hasBusPoweredPort,
-  hasPowerPort,
+  hasPowerInput,
   MAINS_POWERED_CATEGORIES,
   PASSIVE_CATEGORIES,
   POWER_PROSE,
@@ -72,12 +76,30 @@ describe("SELF_POWERED", () => {
   });
 });
 
-describe("hasPowerPort", () => {
+describe("hasPowerInput", () => {
   it("finds a power port by category, not by name", () => {
-    expect(hasPowerPort([port({ name: "DC IN", category: "power" })])).toBe(true);
+    expect(hasPowerInput([port({ name: "DC IN", category: "power" })])).toBe(true);
     // A port merely *called* power is not one; category is the contract.
-    expect(hasPowerPort([port({ name: "Power Amp Out", category: "audio" })])).toBe(false);
-    expect(hasPowerPort([])).toBe(false);
+    expect(hasPowerInput([port({ name: "Power Amp Out", category: "audio" })])).toBe(false);
+    expect(hasPowerInput([])).toBe(false);
+  });
+
+  // Regression: the first cut accepted any `category: power` entry whatever
+  // its direction, so a power supply that models its DC outputs and no
+  // mains inlet read as "has power" and was skipped. Six entries went
+  // missing that way, every one a unit that plugs into the wall to feed
+  // something else: both BAE Bi-Polar PSUs, the Befaco Pedal Pow, two Maxon
+  // supplies and the Joranalogue DIM-2.
+  it("does not count a power OUTPUT as a power input", () => {
+    const out = port({ name: "DC Output 1", signalFlow: "output", category: "power" });
+    expect(hasPowerInput([out])).toBe(false);
+    expect(hasPowerInput([out, port({ name: "IEC Inlet", category: "power" })])).toBe(true);
+  });
+
+  it("counts a bidirectional power port, which carries power in as well as out", () => {
+    expect(
+      hasPowerInput([port({ name: "USB-C", signalFlow: "bidirectional", category: "power" })])
+    ).toBe(true);
   });
 });
 
@@ -130,5 +152,61 @@ describe("category sets", () => {
     // person rather than an assumption.
     expect(MAINS_POWERED_CATEGORIES.has("speaker")).toBe(false);
     expect(PASSIVE_CATEGORIES.has("speaker")).toBe(false);
+  });
+});
+
+describe("findEntriesMissingPowerInput", () => {
+  let dir: string;
+  beforeEach(() => {
+    dir = fs.mkdtempSync(path.join(os.tmpdir(), "power-audit-"));
+  });
+  afterEach(() => {
+    fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  const write = (slug: string, yaml: string) =>
+    fs.writeFileSync(path.join(dir, `${slug}.yaml`), yaml);
+
+  const powerOut =
+    "  - name: DC Output 1\n    signalFlow: output\n    category: power\n" +
+    "    type: power\n    connection: dc-barrel\n    maxConnections: 1\n    position: Right\n";
+
+  it("reports a supply that models its outputs and no inlet", () => {
+    write(
+      "psu",
+      `name: PSU\nmanufacturer: maxon\nprimaryCategory: power-conditioner\n` +
+        `description: "Power Supply: 120VAC wall adapter."\nio:\n${powerOut}`
+    );
+    const [found] = findEntriesMissingPowerInput(dir);
+    expect(found?.slug).toBe("psu");
+    expect(found?.ports).toBe(1);
+  });
+
+  it("reports an entry whose io list is explicitly empty", () => {
+    // `io: []` is modelled, and modelled as carrying no ports at all. An
+    // ABSENT io key is an entry nobody has modelled yet, which is a
+    // different finding, so that one stays out.
+    write(
+      "empty",
+      `name: Thing\nmanufacturer: m\nprimaryCategory: mixer\n` +
+        `description: Connects to the mains with the supplied cable.\nio: []\n`
+    );
+    write(
+      "unmodelled",
+      `name: Other\nmanufacturer: m\nprimaryCategory: mixer\n` +
+        `description: Connects to the mains with the supplied cable.\n`
+    );
+    const found = findEntriesMissingPowerInput(dir);
+    expect(found.map((f) => f.slug)).toEqual(["empty"]);
+    expect(found[0]?.ports).toBe(0);
+  });
+
+  it("leaves an outboard unit in the review column, since it may be a passive DI", () => {
+    write(
+      "di",
+      `name: Box\nmanufacturer: m\nprimaryCategory: outboard\n` +
+        `description: "Power Supply: 120/230VAC, 23 watts."\nio: []\n`
+    );
+    expect(findEntriesMissingPowerInput(dir)[0]?.review).toBe(true);
   });
 });
