@@ -8,56 +8,60 @@ categories:
   - transient-shaper
   - effect
 formats:
+  - aax
+  - au
   - vst2
   - vst3
-  - au
-  - aax
 platforms:
   - mac
   - windows
 url: https://adptraudio.com/product/sculpt/
 prices:
-  - amount: 150.0
+  - amount: 150
     currency: USD
     term: perpetual
-description: Transparently reshape dynamics, tone, and transients in ways you
-  never have before. Sculpt can push and pull sound in all directions using four
-  parallel processors.
+description: Transparently reshape dynamics, tone, and transients in ways you never have before. Sculpt can push and pull sound in all directions using four parallel processors.
 details: |-
-  Designed for master and group buses, SCULPT lets you thoroughly and cleanly
-  reshape your sounds in ways that other processors simply can't. Use it to add
-  refining touches to masters and mix buses, or to enhance specific elements
-  inside of samples, stems and instrument groups.
+  ADPTR Audio's Sculpt represents the future of dynamic and tonal control. Designed to be able to push dynamic shaping in every conceivable direction, Sculpt presents the most sophisticated selection of tools with a workflow that goes as deep as you could ever need to coax every nuance required to produce a masterpiece. From corrective to creative, Sculpt delivers the ultimate dynamic experience.
 
-  Sculpt is built on top of four dynamic modules that run in parallel. The
-  Upward Compression module offers an uncommon spin on dynamic control with
-  greater transparency, while a high-quality Downwards Compression offers more
-  conventional dynamic control. The one-of-a-kind Tone Sculpt module accentuates
-  or suppresses specific aspects of your audio, while the Transient Sculpt
-  module manipulates the onset of each sound for precise control over its sonic
-  envelope.
+  Sculpt is built on top of four dynamic modules that run in parallel. The Upward Compression module offers an uncommon spin on dynamic control with greater transparency, while a high-quality Downwards Compression offers more conventional dynamic control. The beauty of Sculpt is that it doesn't apply frequency-dependent processing. Instead, it affects the gain of your input on a sample-by-sample basis, which leads to unbelievably transparent results.
 
-  SCULPT uses a state-of-the-art Envelope Detection Algorithm which mirrors the
-  way humans perceive loudness and frequency, producing a more natural and
-  responsive sound than conventional compressor technology. Unlike conventional
-  compressors, it will never produce harmonic distortion, even when processing
-  complex material using super-fast attack and release settings.
+  The one-of-a-kind Tone Sculpt module accentuates or suppresses specific aspects of your audio, while the Transient Sculpt module manipulates the onset of each sound for precise control over its sonic "envelope". Each module has its own mute, solo and output meter so you can see and hear how they're affecting your audio.
 
-  Advanced Adaptive Auto Gain (AAAG) analyzes incoming audio and accurately
-  applies makeup gain as you adjust every parameter, allowing you to truly hear
-  the difference and compare presets with confidence. The presets also adapt
-  themselves based on the dynamics of your incoming audio signal.
+  Each of Sculpt's modules come with frequency controls that affect the way Sculpt analyzes your signal. These function as side-chain EQ controls within the compressor modules, as tonal balance controls within the Tone Sculpt module, and as transient selection controls within the Transient Sculpt module. The Tone Sculpt module also includes a tonal balance graph that displays the frequency balance of tracks, allowing for constant tone monitoring.
+
+  Sculpt uses a state-of-the-art Envelope Detection Algorithm which mirrors the way humans perceive loudness and frequency, producing a more natural and responsive sound than conventional compressor technology. Advanced Adaptive Auto Gain (AAAG) analyzes incoming audio and accurately applies makeup gain as you adjust every parameter, allowing you to truly hear the difference and compare presets with confidence.
 specs: |-
-  - Four parallel processing modules: Upward Compression, Downward Compression, Tone Sculpt, Transient Sculpt
-  - State-of-the-art Envelope Detection Algorithm (EDA)
-  - Distortion-free processing even with super-fast attack and release
-  - Advanced Adaptive Auto Gain (AAAG)
-  - Side-chain EQ controls per module
-  - Per-module mute, solo and output metering
-  - Tonal balance graph display
-  - Adaptive presets that respond to incoming audio dynamics
-  - Designed for master bus, group buses, stems and instrument groups
-releaseDate: "2022-02-17"
+  - Four dynamics modules running in parallel: upwards compressor/expander, downwards compressor/expander, tonal balance module, and transient processor
+  - Side-chain filters on each module: low and high-shelf filters plus a Spectrum Tilt EQ, usable internally or fed from an external side-chain input
+  - Independent bypass of each module's bands and scaling of the processing applied
+  - Envelope Detection Algorithm (EDA) for distortion-free processing of complex material
+  - Advanced Adaptive Auto Gain (AAAG) makeup gain based on perceived loudness
+  - Master Mixer Panel with bypass control, wet/dry mix knob, and mid/side processing options
+  - Preset library that adapts to the dynamics of the incoming signal
+  - Tonal Balance Visualizer with absolute and relative (input vs output) visualisation modes
+  - Master output meters with adjustable range and dynamics trace displays for upwards and downwards gain change
+  - Channel formats: Mono (1 in 1 out), Mono-Stereo and Full Stereo; tested with Pro Tools side-chain input
+  - Resizable UI with day and night themes
+  - Supported plugin formats: AAX Native, AU, VST2, VST3
+  - macOS 10.11 El Capitan through macOS 15 Sequoia (Intel, or Apple Silicon M1 and M2)
+  - Windows 7 through Windows 11 (x64-compatible CPU)
+  - Display resolution: 1440 x 900px or 1280 x 960px or higher
+  - Memory: 2 GB RAM
+versions:
+  - name: 1.3.0
+    releaseDate: 2024-02-08
+    description: High-pass/low-shelf toggle, external sidechain audition, auto-gain analysis improvements, mono sidechain for Pro Tools
+  - name: 1.2.0
+    releaseDate: 2023-03-16
+    description: Precision mode, adjustable meter range, mono channel support
+  - name: 1.1.2
+    releaseDate: 2022-08-24
+    description: M1 native builds, performance menu, latency/CPU optimizations
+  - name: 1.0.5
+    releaseDate: 2022-02-17
+    description: Initial release
+releaseDate: 2022-02-17
 videos:
   - videoId: C50oP5er4aI
     provider: youtube
@@ -65,17 +69,3 @@ videos:
   - videoId: TEOomVAfIzQ
     provider: youtube
     title: Everything New is Sculpt Version 1.2
-versions:
-  - name: "1.3.0"
-    releaseDate: "2024-02-08"
-    description: High-pass/low-shelf toggle, external sidechain audition, auto-gain
-      analysis improvements, mono sidechain for Pro Tools
-  - name: "1.2.0"
-    releaseDate: "2023-03-16"
-    description: Precision mode, adjustable meter range, mono channel support
-  - name: "1.1.2"
-    releaseDate: "2022-08-24"
-    description: M1 native builds, performance menu, latency/CPU optimizations
-  - name: "1.0.5"
-    releaseDate: "2022-02-17"
-    description: Initial release
