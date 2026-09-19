@@ -2,39 +2,93 @@ id: Uom0FTSn-dsXJRZBt7TZT
 name: SRM350
 manufacturer: mackie
 primaryCategory: speaker
+capabilities:
+  - crossover
+  - limiting
+  - feedback-suppression
 url: https://mackie.com/en/products/loudspeakers/srm-portable/SRM350.html
 prices:
   - amount: 499.99
     currency: USD
-description: "The ultra portable and powerful SRM350 powered loudspeaker ia
-  great for small events, bars, and practice spaces."
+description: The ultra portable and powerful SRM350 powered loudspeaker is great
+  for small events, bars, and practice spaces.
 details: |-
-  The Mackie SRM is the most widely used portable loudspeaker ever. It's unparalleled ease-of-use, professional sound quality and indestructible portability has made it a live sound legend. Now with more power and flexibility than ever.
+  The Mackie SRM is the most widely used portable loudspeaker ever. Its ease-of-use, professional sound quality and durable portability have made it a live sound legend, now with more power and flexibility.
 
-  BEYOND PROVEN — The 1000W SRM350 features modern tools like application-specific speaker modes and an automatic feedback destroyer, each with a single-button interface that gets you optimized performance in just seconds. And with the integrated 2-channel mixer, you can easily mix multiple sources.
+  Modern tools such as application-specific speaker modes and an automatic feedback destroyer each sit behind a single-button interface, so the system is optimised in seconds. High-Definition Audio Processing, a precision 2-way crossover and driver time alignment with phase correction handle the rest, built on patented acoustic correction developed with the touring engineers at EAW.
 
-  1000W system power paired with custom transducers deliver gig-level volumes with room to spare, including a 10" high-output LF driver and 1.4" titanium dome compression driver. High-Definition Audio Processing delivers professional sound with unmatched clarity via patented acoustic correction developed with touring geniuses at EAW, a precision 2-way crossover, and driver time alignment and phase correction.
+  An integrated 2-channel mixer with dual Mackie Wide-Z inputs handles anything from mics to guitars to mixers with a single twist of the gain knob, and stereo RCA inputs connect a music source directly. Smart Protect DSP steps in to protect the system when it is pushed too hard.
 
-  Quick one-button Speaker Mode selection provides application-specific voicing (PA, DJ, Monitor and Soloist). Effortlessly eliminate nasty feedback with one-button automatic Feedback Destroyer, and use the integrated 2-channel mixer featuring dual Mackie Wide-Z inputs to handle anything from mics to guitars to mixers with a single twist of the gain knob. Includes stereo RCA inputs for easy connection to music source.
-
-  Smart Protect DSP kicks in to protect your investment when things get pushed a little too hard. Monitor-specific angle and voicing mode is perfect for cutting through on stage, and the speaker is flyable for permanent install, both vertically and horizontally, with a proven highly-durable, portable design.
+  A monitor-specific cabinet angle and voicing mode suit stage use, and the cabinet can be flown for permanent installation.
 specs: |-
-  - Big Power. High Output.
-  - Built-In 2-Channel Mixer
-  - Intuitive Sound Tools
-  - Use Them Everywhere
-  - 1000W system power
-  - 10" high-output LF driver / 1.4" titanium dome compression driver
-  - Patented acoustic correction developed with EAW
-  - Precision 2-way crossover
-  - Driver time alignment and phase correction
-  - One-button Speaker Mode selection (PA, DJ, Monitor, Soloist)
+  - 1000W peak / 500W rms system power (LF 800W peak Class-D, HF 200W peak Class-AB)
+  - 10.0" / 254 mm paper cone woofer with ferrite magnet
+  - 1.4" / 36 mm titanium diaphragm compression driver
+  - Frequency response (-3 dB): 55 Hz - 20 kHz
+  - Frequency response (-10 dB): 50 Hz - 23 kHz
+  - Maximum peak SPL: 126 dB
+  - Crossover point: 3 kHz
+  - Dispersion (H x V): 90 x 80 degrees, monitor angle 50 degrees
+  - High-Definition Audio Processing with driver time alignment and phase correction
+  - One-button speaker mode selection: PA, DJ, Monitor and Soloist
   - One-button automatic Feedback Destroyer
-  - Integrated 2-channel mixer with dual Mackie Wide-Z inputs
-  - Stereo RCA inputs
-  - Smart Protect DSP
-  - Monitor-specific angle and voicing mode
-  - Flyable for permanent install (vertical or horizontal)
+  - Smart Protect DSP with peak and RMS limiting plus power supply and amplifier thermal protection
+  - Integrated 2-channel mixer with dual Mackie Wide-Z inputs and stereo RCA inputs
+  - Male XLR Thru output, passive or active depending on the Ch 1 / Mix switch
+  - Universal power supply 100-240 VAC, 50-60 Hz, 130W
+  - Polypropylene cabinet with black textured finish and weather-resistant perforated metal grille
+  - Floor mount, pole mount or fly via the optional bracket kit
+  - Dimensions (H x W x D): 20.8 x 13.1 x 12.3 in / 527 x 333 x 311 mm
+  - Weight: 23 lb / 10.4 kg
+io:
+  - key: b54K3PmE
+    name: Channel 1 Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Bottom
+  - key: vuZclwyZ
+    name: Channel 2 Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Bottom
+  - key: 9QQJSJbZ
+    name: Channel 2 RCA Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - key: ej0LEMVg
+    name: Channel 2 RCA Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Bottom
+  - key: R8SHu881
+    name: Thru
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - key: 2aV8B8zF
+    name: AC Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom
 links:
   - type: resource
     title: Owner's Manual SRMv3 (English)

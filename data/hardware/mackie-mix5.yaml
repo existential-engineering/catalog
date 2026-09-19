@@ -2,28 +2,151 @@ id: JMkc70OSMv-ZH3UkrDjnt
 name: Mix5
 manufacturer: mackie
 primaryCategory: mixer
+capabilities:
+  - equalization
 url: https://mackie.com/en/products/mixers/mix-series/mix5.html
-description: Don't let its compact size fool you—the Mackie Mix5 compact mixer
-  packs a punch. A 5-channel compact mixer with high-headroom preamps and a
-  precision 2-band EQ.
+prices:
+  - amount: 79.99
+    currency: USD
+description: Ideal for musicians, streamers and other content creators, the
+  Mackie Mix5 is a 5-channel compact mixer that delivers high-headroom,
+  low-noise audio.
 details: |-
   For more than 30 years, musicians and engineers have grown up mixing on a Mackie. You can find our mixers everywhere from major venues to small (but mighty) home studios. Now you can join that legacy with the Mackie Mix5 compact mixer.
 
   Featuring high-headroom preamps, a precision 2-band EQ and more, this 5-channel mixer has everything that musicians, content creators, gamers and podcasters need to get professional sound without the big price tag.
+
+  Channel 1 is a mono channel with an XLR mic input and a 1/4 inch line input sharing one gain control. Channels 2/3 and 4/5 are stereo pairs with left (mono) and right 1/4 inch line inputs. A dedicated stereo RCA pair handles playback and recording.
+
+  Outputs are main mix left and right on 1/4 inch jacks, a stereo RCA tape output and a 1/4 inch headphone jack with its own level control. All jacks sit on the top panel except the power connector, which is on the rear.
+
+  Mix5 runs from a supplied external AC power supply and its XLR input always provides +15V for condenser microphones. The chassis is metal and the unit measures 5.5 x 7.7 x 1.7 inches at 1.4 lb.
 specs: |-
-  - 5-channel compact mixer with proven high-headroom, low-noise performance
-  - 1 mic/line input with studio-level audio quality
-  - 2-band EQ with clean, precise tone shaping
-  - Phantom power for studio condenser mics
-  - 2 stereo 1/4" line inputs
+  - 5-channel compact mixer with high-headroom, low-noise performance
+  - 1 mic/line input with XLR and 1/4 inch jacks
+  - 2 stereo 1/4 inch line inputs (channels 2/3 and 4/5)
+  - 2-band EQ: low shelving +/-15 dB at 80 Hz, high shelving +/-15 dB at 12 kHz
+  - Phantom power for studio condenser mics (+15V, always on at the XLR input)
   - Dedicated stereo RCA inputs/outputs for playback or recording
-  - Main L/R outputs
-  - Headphone output with separate volume control
-  - Rugged, reliable design built to last
-  - Extremely compact and portable
-prices:
-  - amount: 79.99
-    currency: USD
+  - Main L/R outputs and headphone output with separate volume control
+  - Equivalent input noise -125 dBu (150 ohm termination)
+  - Mic input maximum level +18 dBu, all other inputs and outputs +21 dBu
+  - Frequency response +0/-1 dB, 20 Hz to 30 kHz
+  - External AC power supply, AC18V 600mA output (US)
+  - Dimensions 5.5 x 7.7 x 1.7 in / 140 x 196 x 43 mm, weight 1.4 lb / 0.6 kg
+io:
+  - key: dTpADeS8
+    name: Mic Input (Channel 1)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Top
+  - key: w0PzACO9
+    name: Line Input (Channel 1)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: Ni9jCHjL
+    name: Line Input 2/3 Left (Mono)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: 50RwiHRf
+    name: Line Input 2/3 Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: xyhdLZBn
+    name: Line Input 4/5 Left (Mono)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: OUKUdTYz
+    name: Line Input 4/5 Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: Ba6z7TJj
+    name: CD/Tape Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: tz2tlPMh
+    name: CD/Tape Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: nik1q9B4
+    name: Main Mix Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: N3e3T29p
+    name: Main Mix Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: sVvETILy
+    name: CD/Tape Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: vtoitahy
+    name: CD/Tape Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: RVM9AZRF
+    name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: pVEaZ1AC
+    name: Power Input (external AC power supply)
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
 links:
   - type: resource
     title: Owner's Manual

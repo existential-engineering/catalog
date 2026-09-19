@@ -2,26 +2,33 @@ id: cwIiB8h1oKtRmOO5-aUle
 name: 802VLZ4
 manufacturer: mackie
 primaryCategory: mixer
+capabilities:
+  - equalization
+  - filter
 url: https://mackie.com/en/products/mixers/vlz4-series/802VLZ4.html
 prices:
   - amount: 219.99
     currency: USD
 description: Mackie 802VLZ4 8-Channel Ultra-Compact Analog Mixer.
 details: |-
-  VLZ4 ups the level of sonic quality at every level, featuring Mackie's flagship Onyx mic preamps and premium components from front to back. The result is the most rock solid, the most easy to use and, yes, the best sounding compact mixer ever created.
+  Meet the desk-friendly 802VLZ4. Equipped with the perfect combination of pro features and channel count while keeping the size small enough for any desk, the 802VLZ4 is suited to home recording, broadcast, content creation and more.
 
-  Meet the desk-friendly 802VLZ4. Equipped with the perfect combination of pro features, channel count while keeping the size small enough for any desk. The 802VLZ4 is perfect for home recording, broadcast, content creation, and more.
+  The 8-channel 802VLZ4 features the proven performance of Mackie's flagship Onyx mic preamps in a desk-friendly, ultra-compact design. From every input to every output it is built for high headroom and low noise.
+
+  Channels 1 and 2 are mono channels with XLR mic inputs, 1/4 inch line inputs, channel inserts and an instrument switch. Channel 3 also carries an XLR mic input, and channels 3-4, 5-6 and 7-8 are fully balanced stereo line pairs.
+
+  The output section carries main outs on both 1/4 inch TRS and XLR jacks with a level switch on the XLR pair, an ALT 3-4 stereo bus output, stereo control room outputs, a balanced aux send, a stereo return pair, RCA tape in and out, and a 1/4 inch headphone jack.
+
+  A control room and phones source matrix chooses between the main mix, the ALT 3-4 stereo bus, soloed channels and the tape input. Power comes from an external AC adapter.
 specs: |-
-  - 3 boutique-quality Onyx mic preamps
-  - Ultra-wide 60dB gain range
+  - 3 boutique-quality Onyx mic preamps with ultra-wide 60dB gain range
   - 128.5 dB dynamic range
   - +22 dBu line input handling
-  - Extended frequency response
-  - Distortion under 0.0007% (20Hz – 50kHz)
+  - Distortion under 0.0007% (20Hz to 50kHz)
   - Improved RF rejection perfect for broadcast applications
   - Phantom power for condenser mics
   - 8 high-headroom line inputs
-  - Selectable instrument inputs on first two channels – no DI box needed
+  - Selectable instrument inputs on first two channels, no DI box needed
   - 3-band EQ (80Hz, 2.5kHz, 12kHz)
   - 18 dB/oct 100Hz low-cut filter on mic input channels
   - Aux send, level, pan and PFL solo on each channel
@@ -29,9 +36,252 @@ specs: |-
   - ALT 3/4 stereo bus for added routing flexibility
   - Control room / phones source matrix
   - High-resolution 12-segment stereo meters
-  - Sealed rotary controls resist dust and grime
-  - "Built-Like-A-Tank" rugged steel chassis with powder-coat finish
-  - High-visibility, high-contrast controls deliver convenient "at-a-glance" visual feedback
+  - Maximum levels: mic in +21 dBu, tape in +22 dBu, main mix XLR out +28 dBu
+  - Power consumption 13 watts
+  - External supply input 100-240V~ 50/60Hz, output 12.0 VDC 2000 mA
+  - Dimensions (H x W x D): 1.8 x 8.9 x 10.7 in / 47 x 227 x 273 mm
+  - Weight: 4.5 lb / 2.0 kg without power supply, 5.5 lb / 2.5 kg with
+io:
+  - key: 0rJ7qJIG
+    name: Mic Input 1
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: Zmd7WMQu
+    name: Mic Input 2
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: hqC80Y7P
+    name: Mic Input 3
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 7JhHR7rt
+    name: Line Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: jKfmxujs
+    name: Line Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: cDZoA0yu
+    name: Stereo Line Input 3 (L)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Fba05qwR
+    name: Stereo Line Input 4 (R)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: vvOW6Hdi
+    name: Stereo Line Input 5 (L)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: aMzqvBYp
+    name: Stereo Line Input 6 (R)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 8hQt7QXF
+    name: Stereo Line Input 7 (L)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 3Wvskhpq
+    name: Stereo Line Input 8 (R)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: uWt1aL98
+    name: Channel 1 Insert
+    signalFlow: bidirectional
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: bYdv9XYT
+    name: Channel 2 Insert
+    signalFlow: bidirectional
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: sKqrqpH1
+    name: Stereo Return L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: cZwFXeKI
+    name: Stereo Return R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: HLiOfcxw
+    name: Aux Send 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: vGybrI7b
+    name: Alt 3-4 Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: OMLO8kru
+    name: Alt 3-4 Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 9TTjcLtj
+    name: Control Room Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: UGYAtRp3
+    name: Control Room Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: K99Bct56
+    name: Main Output L (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: VmC1Lzqz
+    name: Main Output R (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: jVzrfzAc
+    name: Main Output L (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: auOoae06
+    name: Main Output R (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: AFFwWHYQ
+    name: Tape Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: xDA1bSf2
+    name: Tape Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: F6XSOIdL
+    name: Tape Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: qkPj2sYM
+    name: Tape Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: dnW7reAP
+    name: Phones Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: PyeAznr1
+    name: Power Input (12 VDC external supply)
+    signalFlow: input
+    category: power
+    type: power
+    connection: proprietary
+    maxConnections: 1
+    position: Right
 links:
   - type: resource
     title: Owner's Manual
