@@ -19,37 +19,67 @@ prices:
   - amount: 120
     currency: USD
     term: perpetual
-description: A transparent look-ahead brickwall limiter with automatic
-  attack/release-time optimization designed to minimize differences between
-  original and limited signals.
+description: A.O.M. Invisible Limiter is a transparent look-ahead brickwall limiter with automatic attack/release-time optimization.
 details: |-
-  Invisible Limiter is a transparent brickwall limiter designed for mastering
-  applications. Its core algorithm automatically optimizes attack and release
-  times to minimize the audible difference between the original and limited
-  signals.
+  A.O.M. Invisible Limiter is a transparent look-ahead brickwall limiter with automatic attack/release-time optimization. The Invisible Limiter's limiting algorithm minimizes the difference between the original and the limited signals. This behavior is appropriate to avoid coloration your material through final limiting stage in mastering. Under ordinal amount of reduction, it is hard to distinguish before and after limitation.
 
-  The plugin features Unity Gain Monitoring, which applies negative makeup gain
-  to prevent loudness-based listening bias during critical evaluation.
-  Oversampling support ranges from 1x to 16x for accurate intersample peak
-  detection.
+  Final limiting in audio mastering is the place of compromise. You should find the best level of your track, but that is not an easy stuff because making tracks louder often breaks its sound. Using Invisible Limiter, you can make your tracks louder with minimum sound degradation. The limiter works to minimize the difference between original and limited sound.
 
-  Processing modes include both L/R and M/S configurations, with logarithmic and
-  linear shape modes available. Three overshoot handling modes (suppression,
-  clipping, and thru) provide flexibility for different mastering scenarios.
-  Controls offer 0.01dB step precision for exacting adjustments.
+  It's very hard to avoid the affection caused by sound level. Louder sound often brings better sound impression for listeners, but the same effect leads engineers to a wrong sound judgement. The idea of Unity Gain Monitoring is very simple, putting negative gain on output stage. The amount of negative gain is same as makeup gain. Thus, using Unity Gain Monitoring, the makeup gain is cancelled and engineers can concentrate the sound difference through limiting.
 
-  Two latency modes are available: the standard mode at 50.5-52.2ms for maximum
-  transparency, and a Low Latency (LL) mode at 5.5-7.2ms for tracking and
-  monitoring applications.
+  Non-oversampling peak limiters have a problem on detecting peaks. Non-oversampling (1x) samples and oversampling (8x) samples result a same analog waveform. Non-oversampling (1x) limiters can't detect the true peak in resulting analog waveform. In contrast, oversampling (8x) limiters can detect and process the true peaks.
+
+  Both of Invisible Limiter / Invisible Limiter LL can be unlocked with Invisible Limiter license or Total Bundle license. Invisible Limiter has a plugin latency of 50.5 to 52.2msec, while Invisible Limiter LL (Low Latency) has a plugin latency of 5.5 to 7.2msec.
 specs: |-
-  - Automatic attack/release-time optimization
-  - Unity Gain Monitoring for unbiased listening
-  - Oversampling up to 16x for intersample peak detection
-  - L/R and M/S processing modes
-  - Logarithmic and linear shape modes
-  - Three overshoot modes: suppression, clipping, thru
-  - 0.01dB step control precision
-  - Normal mode: 50.5-52.2ms latency
-  - Low Latency (LL) mode: 5.5-7.2ms latency
-  - Sample rates: 44.1kHz to 384kHz
-  - 64-bit floating-point internal precision
+  - Transparent look-ahead brickwall limiting with automatic attack/release-time optimization
+  - Unity Gain Monitoring
+  - Oversampling for intersample (true) peak detection
+  - Plugin latency 50.5 - 52.2msec (Invisible Limiter) / 5.5 - 7.2msec (Invisible Limiter LL)
+  - Supports 44.1k - 384kHz Sample Rate
+  - 64-bit Floating-point Internal Precision
+  - Latency Compensation
+  - Factory Preset
+  - User Preset
+  - Snapshot
+  - Undo/Redo
+  - Reset to Default
+  - Windows: x64-compatible CPU, Windows 11 24H2 / 25H2
+  - Mac: Intel / Apple Silicon, macOS Monterey 12 through macOS Tahoe 26
+versions:
+  - name: 1.18.0
+    releaseDate: 2024-12-27
+    description: Shipped with a new skin. Add Invisible Limiter LL.
+  - name: 1.15.3
+    releaseDate: 2022-09-09
+    description: CLAP plugin format is now supported.
+  - name: 1.14.0
+    releaseDate: 2022-03-31
+    description: Reduce CPU load up to 40%, except for suppress mode.
+  - name: 1.11.4
+    releaseDate: 2021-03-15
+    description: Add AVX2 Installer.
+  - name: 1.10.2
+    releaseDate: 2020-03-01
+    description: CPU load is reduced to 60% of previous version.
+  - name: 1.7.3
+    releaseDate: 2015-05-03
+    description: Supports surround configuration up to 8in/8out.
+  - name: 1.7.2
+    releaseDate: 2014-03-31
+    description: Shipped with a new skin, designed by Ryo Asakura. Adds "Suppress" mode in OVERSHOOT parameter.
+  - name: 1.6.1
+    releaseDate: 2013-10-06
+    description: Long-term maximum reduction amount display.
+  - name: 1.6.0
+    releaseDate: 2013-09-27
+    description: AAX-Native is now supported.
+  - name: 1.5.0
+    releaseDate: 2013-04-28
+    description: Support 0.01dB step for controls.
+  - name: 1.4.2
+    releaseDate: 2013-01-26
+    description: Unity Gain Monitoring feature.
+  - name: 1.3.0
+    releaseDate: 2011-05-04
+    description: Initial release.
+releaseDate: 2011-05-04

@@ -6,7 +6,6 @@ categories:
   - gate
   - effect
 formats:
-  - vst2
   - vst3
   - au
   - aax
@@ -19,35 +18,39 @@ prices:
   - amount: 70
     currency: USD
     term: perpetual
-description: A precision ducking tool that reduces signal level according to
-  sidechain input, offering precise envelope detection with advantages over
-  general-purpose sidechain compressors.
+description: Track Symbiosis is a precise ducking tool. It reduces signal level of main input according to sidechain input level.
 details: |-
-  Track Symbiosis is a specialized ducking plugin that reduces the signal level
-  of a main input according to sidechain input level. It provides more precise
-  envelope detection and ducking behavior compared to general-purpose sidechain
-  compressors.
+  Track Symbiosis is a precise ducking tool. It reduces signal level of main input according to sidechain input level.
 
-  The plugin features three envelope detection algorithms, each suited for
-  different types of source material and ducking scenarios. Envelope adjustment
-  via soft clipping provides smooth and musical reduction curves.
+  Ducking mixes two signals by reducing the main input signal so that it gives a room to the side-chain signal, in contrast to mixing the two without any level reduction.
 
-  A distortion suppression feature prevents artifacts that can occur during
-  rapid level changes. Sidechain channel selection allows precise control over
-  which elements trigger the ducking behavior.
+  Despite ducking can be done by general purpose sidechain compressor, Track Symbiosis still has quite advantages on preciseness of reduction curve and intuitive user interface.
 
-  The intuitive user interface makes it easy to set up complex ducking
-  relationships between tracks, with advantages in reduction curve accuracy
-  compared to using a standard compressor's sidechain input.
+  Since Track Symbiosis's functionality is based on sidechain function of each plugin format, it is not provided in VST2 plugin format.
 specs: |-
-  - Three envelope detection algorithms
-  - Envelope adjustment via soft clipping
+  - Precise envelope detection and ducking
+  - Insightful composition of three envelope detection algorithms
+  - Envelope adjustment by soft clipping
   - Distortion suppression
   - Sidechain channel selection
-  - Sample rates: 44.1kHz to 384kHz
-  - 64-bit floating-point internal precision
-  - Latency compensation included
-releaseDate: "2023-03-12"
+  - Intuitive user interface
+  - Supports 44.1k - 384kHz Sample Rate
+  - 64-bit Floating-point Internal Precision
+  - Latency Compensation
+  - Factory Preset
+  - User Preset
+  - Snapshot
+  - Undo/Redo
+  - Reset to Default
+  - Windows: x64-compatible CPU, Windows 11 24H2 / 25H2
+  - Mac: Intel / Apple Silicon, macOS Monterey 12 through macOS Tahoe 26
+  - Windows plugin formats: VST3, AAX-Native, CLAP
+  - Mac plugin formats: VST3, Audio Unit, AAX-Native, CLAP
+versions:
+  - name: 1.16.0
+    releaseDate: 2023-03-12
+    description: Initial Release
+releaseDate: 2023-03-12
 videos:
   - provider: youtube
     videoId: beWhH6apHxY

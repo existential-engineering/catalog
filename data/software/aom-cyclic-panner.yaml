@@ -1,7 +1,7 @@
 id: LpLNYgcPdqzfswGsD5f_W
 name: Cyclic Panner
 manufacturer: aom
-primaryCategory: utility
+primaryCategory: panning
 categories:
   - effect
 formats:
@@ -18,36 +18,45 @@ prices:
   - amount: 70
     currency: USD
     term: perpetual
-description: An innovative pan/width control tool using axis transformation
-  technology that maintains stereo width even at extreme panning positions, with
-  pan-linked lowpass filtering.
+description: Cyclic Panner is an unique pan/width control tool based on axis transformation. Common panners employs channel gain-based panning, however, it often reduces stereo width at the left/right ends of panning.
 details: |-
-  Cyclic Panner is a panning and stereo width control plugin that uses a unique
-  axis transformation approach instead of traditional channel gain-based
-  panning. This allows it to maintain stereo width even at extreme panning
-  positions.
+  Cyclic Panner is a pan and width control tool built on axis transformation rather than the channel gain-based panning most panners use. Gain-based panning often narrows stereo width as a source approaches the left or right end of the image, and the axis transformation approach is what Cyclic Panner uses to avoid that.
 
-  The plugin includes a visual sound field display for real-time feedback on
-  stereo positioning. A pan-linked low-pass filter applies lowpass filtering to
-  opposite channels, simulating the natural frequency response differences heard
-  when sounds originate from different positions.
+  Using Cyclic Panner, the material's sound field is retained even when it is placed at the left or right end of the sound field. A pan-linked low-pass filter makes the "lowpass-ing opposite channel" panning technique dramatically easy, and a visual display of the sound field helps the user understand the current sound field intuitively. The plugin is also stated to have very low CPU load.
 
-  Designed for minimal CPU consumption, Cyclic Panner is efficient enough for
-  use across many tracks in a session. The plugin provides an alternative
-  approach to stereo placement that goes beyond what conventional pan knobs
-  offer.
+  On Windows the plugin runs on an x64-compatible CPU under Windows 11 24H2 and 25H2, in VST2, VST3, AAX-Native and CLAP formats. On Mac it runs on Intel and Apple Silicon under macOS Monterey 12 through macOS Tahoe 26, adding Audio Unit to the same format list.
 
-  All processing operates at 64-bit floating-point precision with support for
-  sample rates from 44.1kHz to 384kHz.
+  Common specifications across A.O.M. plugins apply: sample rates from 44.1 kHz to 384 kHz, 64-bit floating-point internal precision, latency compensation, factory and user presets, snapshots, undo/redo and reset to default. Version 1.7.3 added support for a 1-in/2-out configuration.
 specs: |-
-  - Axis transformation-based panning (not channel gain)
-  - Maintains stereo width at extreme pan positions
-  - Visual sound field display
+  - Unique panning / width control tool based on axis transformation
+  - Visual display of sound field
   - Pan-linked low-pass filter
-  - Minimal CPU consumption
-  - Sample rates: 44.1kHz to 384kHz
+  - Very low CPU load
+  - Supports 44.1k - 384kHz sample rate
   - 64-bit floating-point internal precision
-releaseDate: "2013-11-23"
+  - Latency compensation
+  - Factory preset, user preset and snapshot
+  - Undo/redo and reset to default
+  - 1in/2out configuration supported
+  - Windows: x64-compatible CPU, Windows 11 24H2 / 25H2
+  - Mac: Intel / Apple Silicon, macOS Monterey 12 to macOS Tahoe 26
+versions:
+  - name: 1.15.3
+    releaseDate: 2022-09-09
+    description: CLAP plugin format is now supported.
+  - name: 1.11.4
+    releaseDate: 2021-03-15
+    description: Add AVX2 Installer.
+  - name: 1.9.5
+    releaseDate: 2019-03-26
+    description: Change panpot value representation like "C" or "L 50".
+  - name: 1.7.3
+    releaseDate: 2015-05-03
+    description: Support 1in/2out configuration.
+  - name: 1.7.0
+    releaseDate: 2013-11-23
+    description: Initial release.
+releaseDate: 2013-11-23
 videos:
   - provider: youtube
     videoId: lfep7G4cuto

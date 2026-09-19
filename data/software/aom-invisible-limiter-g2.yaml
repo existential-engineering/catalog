@@ -19,39 +19,56 @@ prices:
   - amount: 200
     currency: USD
     term: perpetual
-description: An advanced mastering limiter prioritizing precise control and
-  sound quality, with Easy Mode, multiple reduction algorithms, and support for
-  up to 12-channel symmetric I/O.
+description: Invisible Limiter G2 is focusing to allow precise control to user. Its basic algorithm is inherited from the predecessor Invisible Limiter, but there are a lot of enhancements, such as reduction shape controls, softknee, channel link, manual attack/release time, dither, side chain filter, etc.
 details: |-
-  Invisible Limiter G2 is the second generation of A.O.M.'s flagship mastering
-  limiter series. It focuses on practical limiting beyond mere loudness
-  maximization, incorporating advanced features for precise control over the
-  limiting behavior.
+  Loudness war is over, limiting just for loudness is no longer an issue, however, how we should limit signals is still an issue. Limiters continue to play one of crucial roles in mastering process, and become a more aggressive part in sound tuning.
 
-  The plugin features an Easy Mode for simplified operation alongside deep
-  controls including reduction shape, soft knee, and channel linking parameters.
-  Multiple reduction mode algorithms (Modern II through V variants) offer
-  different sonic characteristics for various source material.
+  Invisible Limiter G2 is focusing to allow precise control to user. Its basic algorithm is inherited from the predecessor Invisible Limiter, but there are a lot of enhancements, such as reduction shape controls, softknee, channel link, manual attack/release time, dither, side chain filter, etc. You will get huge amount of freedom.
 
-  Unity Gain Monitoring reduces loudness-based perception bias during critical
-  listening. The 8x oversampling engine with true peak awareness employs
-  advanced low-pass filtering achieving 160dB reduction in the oversampling
-  stage. The plugin supports up to 12-channel symmetric I/O for immersive audio
-  formats.
+  The freedom of control also brings complexity and difficulties in learning. Invisible Limiter G2 offers "Easy Mode". In this mode, the limiter shows only essential controls for rapid learning and practical use.
 
-  Additional features include built-in dither, sidechain filter, manual
-  attack/release controls, and a comprehensive preset system with factory and
-  user presets.
+  Loudness affects to perception. Louder sound often brings better impression for listeners, but the same effect leads engineers to a wrong sound judgement. The idea of Unity Gain Monitoring is simple, putting negative gain on output stage. The amount of negative gain is same as makeup gain. Using Unity Gain Monitoring, the makeup gain is cancelled and you can focus the sound difference through limiting.
+
+  Non-oversampling peak limiters have a problem on detecting peaks. Non-oversampling(1x) limiters cannot detect a true peak in resulting analog waveform. In contrast, oversampling(8x) limiters can detect and process the true peaks. Note that Invisible Limiter G2 is true peak aware, but it is for sound, not for measurement. There is an obscure but important improvement in oversampling low-pass filter. In Invisible Limiter the filter has achieved 70 to 80dB reduction, the corresponding part in Invisible Limiter G2 does 160dB.
 specs: |-
-  - Easy Mode for simplified operation
-  - Unity Gain Monitoring
-  - 8x oversampling with true peak awareness
-  - 160dB low-pass filtering in oversampling stage
-  - Multiple reduction algorithms (Modern II-V)
-  - Up to 12-channel symmetric I/O
-  - Built-in dither
-  - Sidechain filter
-  - Manual attack/release controls
-  - Sample rates: 44.1kHz to 384kHz
-  - 64-bit floating-point internal precision
-releaseDate: "2016-05-20"
+  - Reduction shape controls, softknee, channel link, manual attack/release time, dither, side chain filter
+  - Easy Mode showing only essential controls
+  - Unity Gain Monitoring cancels makeup gain for unbiased sound judgement
+  - 8x oversampling with true peak aware detection
+  - Oversampling low-pass filter with 160dB reduction
+  - Supports 44.1k - 384kHz Sample Rate
+  - 64-bit Floating-point Internal Precision
+  - Latency Compensation
+  - Factory Preset
+  - User Preset
+  - Snapshot
+  - Undo/Redo
+  - Reset to Default
+  - Windows: x64-compatible CPU, Windows 11 24H2, Windows 11 25H2
+  - Mac: Intel / Apple Silicon, macOS Monterey 12 through macOS Tahoe 26
+versions:
+  - name: 1.15.3
+    releaseDate: 2022-09-09
+    description: CLAP plugin format is now supported.
+  - name: 1.13.3
+    releaseDate: 2022-01-27
+    description: Added Modern V mode.
+  - name: 1.11.4
+    releaseDate: 2021-03-15
+    description: Added Modern IV mode. Add AVX2 Installer.
+  - name: 1.10.2
+    releaseDate: 2020-03-01
+    description: CPU load is reduced to 55% of previous version.
+  - name: 1.9.6
+    releaseDate: 2019-07-16
+    description: Added Modern III mode.
+  - name: 1.8.2
+    releaseDate: 2017-12-28
+    description: Add new factory preset.
+  - name: 1.8.1
+    releaseDate: 2017-07-06
+    description: Added Modern II mode. Support up to quality 10. Support up to 12 channels symmetric I/O. Reduce CPU load by 30-40%.
+  - name: 1.8.0
+    releaseDate: 2016-05-20
+    description: Initial release.
+releaseDate: 2016-05-20

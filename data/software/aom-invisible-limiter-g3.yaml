@@ -19,40 +19,40 @@ prices:
   - amount: 200
     currency: USD
     term: perpetual
-description: The third generation mastering limiter with significant algorithmic
-  updates, featuring separate Soft Limiter and Brickwall Limiter sections,
-  Mid/Side processing, and oversampling up to 1.5MHz.
+description: Invisible Limiter G3 is the third generation of Invisible Limiter series coming with significant updates around fundamental limiting algorithm and oversampling engine.
 details: |-
-  Invisible Limiter G3 is the third generation of the Invisible Limiter series,
-  featuring significant updates to the fundamental limiting algorithm and
-  oversampling engine. It is designed to support modern mastering techniques
-  with enhanced flexibility.
+  Invisible Limiter G3 is the third generation of Invisible Limiter series coming with significant updates around fundamental limiting algorithm and oversampling engine. Supporting modern mastering techinque, Invisible Limiter G3's limiter features have been refined and reorganized from the previous generation.
 
-  The plugin introduces a conceptual separation between intermediate peak
-  envelope control and final brickwall limiting. The Soft Limiter section
-  provides flexible peak envelope control, while the refined Brickwall Limiter
-  handles final peak management.
+  The goal of multistage peak limiting, frequently used in modern mastering process, is flexible peak envelope control in intermediate limiting stages. Soft Limiter section is a sophisticated toolset built for control of peak envelope. Unlike a conventional compressor and limiter, the Soft Limiter has large capability and flexibleness of peak envelope shaping by analyzing direct waveform instead of signal energy.
 
-  Mid/Side processing and parallel compression capabilities expand the creative
-  possibilities. The flexible reduction curve shape adjustment includes
-  time-axis bending for precise control over the limiting character. True peak
-  limiting is supported with dedicated reduction, peak, and level meters.
+  Since Soft Limiter does not enforce brickwall limiting, users can place Invisible Limiter G3 at intermediate position of their mastering chain for peak envelope control.
 
-  The oversampling engine can reach approximately 1.5MHz internal sample rate,
-  combined with Unity Gain Monitoring for unbiased critical listening during
-  mastering sessions.
+  The brickwall limiting algoritm has been refined from Invisible Limiter G2. It reduces many undesired side-effects such as narrow stereo image, signal smearing, spatial orientation change and groove alternation.
+
+  Invisible Limiter G3 enhanced its reduction curve shape adjustment feature from G2. It supports curve bending on time axis.
 specs: |-
-  - Separate Soft Limiter and Brickwall Limiter sections
+  - Conceptual separation of intermediate peak envelope control and brickwall limiting
   - Mid/Side processing
   - Parallel compression
-  - Flexible reduction curve shape with time-axis bending
-  - True peak limiting with dedicated metering
-  - Oversampling up to approximately 1.5MHz
+  - Flexible control of reduction curve shape
+  - True peak limiting
+  - Reduction, peak and level meters
+  - Oversampling up to approx. 1.5MHz
   - Unity Gain Monitor
-  - Sample rates: 44.1kHz to 384kHz
+  - Supports 44.1k - 384kHz sample rate
   - 64-bit floating-point internal precision
-  - Latency compensation included
-releaseDate: "2022-08-04"
+  - Latency compensation
+  - Factory preset, user preset, snapshot, undo/redo, reset to default
+  - Windows: x64-compatible CPU, Windows 11 24H2 / 25H2
+  - Mac: Intel / Apple Silicon, macOS Monterey 12 through macOS Tahoe 26
+versions:
+  - name: 1.15.3
+    releaseDate: 2022-09-09
+    description: CLAP plugin format is now supported.
+  - name: 1.15.0
+    releaseDate: 2022-08-04
+    description: Initial Release
+releaseDate: 2022-08-04
 links:
   - type: support
     title: Feature comparison among Invisible Limiter generations

@@ -1,7 +1,7 @@
 id: xToIpZTP0a6emTZObBwQy
 name: Triple Fader
 manufacturer: aom
-primaryCategory: utility
+primaryCategory: gain
 categories:
   - meter
   - metering
@@ -18,30 +18,33 @@ url: https://aom-factory.jp/products/triple-fader/
 prices:
   - amount: 0
     currency: USD
-description: A simple gain plugin with three range-configurable gain faders,
-  per-fader toggle, sample peak meter, and multiple metering modes including
-  LUFS.
+description: Triple Fader is a simple gain plugin. It has a triple of range-configurable gain fader. This is a free plugin.
 details: |-
-  Triple Fader is a straightforward gain control plugin featuring three
-  range-configurable and automatable gain faders. Each fader has an independent
-  toggle button for quick A/B comparison or bypass.
+  Triple Fader is a free gain plugin from A.O.M. Corporation. It provides three gain faders in a single instance, each with a configurable range, so the fader travel can be matched to the amount of adjustment the task calls for.
 
-  The plugin includes a sample peak meter alongside a versatile level meter
-  supporting multiple measurement modes: RMS at 0.3, 0.6, 1.0, and 3.0 second
-  integration times, VU metering, LUFS Short-Term, and LUFS Momentary.
+  Every fader is automatable and carries its own toggle button, allowing a gain change to be switched in and out for comparison without resetting the fader position.
 
-  High precision calculation ensures transparent gain adjustment without
-  artifacts. The plugin supports sample rates from 44.1kHz to 384kHz with 64-bit
-  floating-point internal precision.
+  Metering covers a sample peak meter alongside a level meter offering RMS at 0.3, 0.6, 1.0 and 3.0 second integration times, VU, LUFS Short-Term and LUFS Momentary.
 
-  Triple Fader is offered as a free plugin, making it an accessible entry point
-  to the A.O.M. product ecosystem.
+  The plugin runs at sample rates from 44.1 kHz to 384 kHz with 64-bit floating-point internal precision and latency compensation, and supports factory presets, user presets, snapshots, undo/redo and reset to default.
 specs: |-
-  - Three range-configurable automatable gain faders
+  - Range-configurable and automatable gain faders
   - Per-fader toggle button
   - Sample peak meter
-  - Level meter modes: RMS (0.3/0.6/1.0/3.0s), VU, LUFS Short-Term, LUFS Momentary
+  - Level meter (RMS 0.3/0.6/1.0/3.0s, VU, LUFS Short-Term, LUFS Momentary)
   - High precision calculation
-  - Sample rates: 44.1kHz to 384kHz
+  - Supports 44.1k - 384kHz sample rate
   - 64-bit floating-point internal precision
-releaseDate: "2022-03-31"
+  - Latency compensation
+  - Factory preset, user preset, snapshot
+  - Undo/redo, reset to default
+  - Windows: x64-compatible CPU, Windows 11 24H2 / 25H2, VST2, VST3, AAX-Native, CLAP
+  - Mac: Intel / Apple Silicon, macOS Monterey 12 through macOS Tahoe 26, VST2, VST3, Audio Unit, AAX-Native, CLAP
+versions:
+  - name: 1.15.3
+    releaseDate: 2022-09-09
+    description: CLAP plugin format is now supported.
+  - name: 1.14.0
+    releaseDate: 2022-03-31
+    description: Initial release.
+releaseDate: 2022-03-31
