@@ -1,5 +1,76 @@
 # catalog
 
+## 3.67.0
+
+### Minor Changes
+
+- 173f2e6: Refresh Hosa: 14 new, 0 discontinued, 1 updated.
+
+  Adds per-SKU entries for Hosa microphone cables, interconnects, patch
+  cables, snakes, Y cables and stereo breakouts, and refreshes the YPP-111
+  Y-Cable with its current page copy, price and connector detail.
+
+### Patch Changes
+
+- f0222dd: Refresh Cytomic: 0 new, 0 discontinued, 3 updated.
+
+  The Glue, The Scream and The Drop now carry the current descriptions,
+  feature details and technical specs from Cytomic's product pages, along
+  with demo videos and release history. The Scream gains its full version
+  list back to 1.0.7.
+
+- 0d6e252: Retire the Dear Reality plugin line and refresh its copy: 0 new, 9 discontinued, 5 updated.
+
+  Sennheiser has wound Dear Reality down as an independent company and
+  states on its brand page that the plugins are no longer developed or
+  maintained, so every entry now carries the discontinued category (two
+  already did). dearVR PRO 2, dearVR MICRO, dearVR MUSIC, EXOVERB and
+  EXOVERB MICRO also pick up refreshed descriptions and feature lists from
+  that page.
+
+- d4a2c9b: Name the Marantz FM antenna connector and point a retired entry at its own page
+
+  Five Marantz receivers and processors recorded their FM antenna jack as
+  `proprietary`, which said the connector had no standard name. It has
+  one: the threaded 75 ohm coaxial F connector, read off the NR1711's own
+  rear-panel photograph and confirmed by the F-plug on the supplied indoor
+  antenna in each owner's manual. `f-type` joins the connection
+  vocabulary and the five entries use it, so a reader can tell this jack
+  from the AM spring terminal beside it.
+
+  The M-CR612's `url` pointed at the live-catalogue path, which answers
+  200 only by redirecting to the archive path. Marantz moves a product's
+  path rather than its id when it retires one, so the entry now names the
+  page that serves it directly. It was the only retired Marantz entry
+  still carrying the pre-archive path.
+
+- 78798c3: Correct the Power Grid Disruptor price and two doubled words
+
+  Power Grid Disruptor carried a stale 99.99 USD. Korneff Audio gives the
+  plugin away: its JSON-LD AggregateOffer reads a zero low and high price
+  and InStock, and the struck-through 347.99 is a gag anchor on an April
+  Fools release the maker kept up. The entry now carries a verified zero
+  with source and asOf, which is what separates a giveaway from a price an
+  import could not read, so Studio renders "Free" and suppresses the
+  purchase link instead of quoting a price nobody can pay
+  (catalog-submissions #64).
+
+  Four more Korneff prices were re-read at source and confirmed correct as
+  they stand, one issue each (catalog-submissions #60, #61, #62 and #63),
+  so those close with no edit. Shure Level-Loc is the one worth noting: the
+  store shows 79.99 today, but that is display_price, a live sale, against
+  a display_regular_price of 149.99. A check reading the JSON-LD alone
+  publishes only the sale figure, so it would have "confirmed" the wrong
+  number and retired a correct price.
+
+  Two doubled words are fixed, "at at 96 khz" and "set at at 15ips". Both
+  sit inside wrapped block scalars and neither uses a function word the
+  earlier sweeps grepped for, which is why 3.66.0 left them: a line-based
+  scan over the raw file cannot see a pair that straddles a wrap, and this
+  pass read the parsed YAML values instead. The remaining hits on main are
+  the fifteen that sweep already judged correct as written, which stand
+  (catalog-submissions #24).
+
 ## 3.66.0
 
 ### Minor Changes
