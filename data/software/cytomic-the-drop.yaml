@@ -16,25 +16,36 @@ url: https://cytomic.com/product/drop/
 prices:
   - amount: 99
     currency: USD
-description: "Analog modelled resonant filter plug-in based on classic analog
-  synth filters, as well as completely new designs, with detailed circuit
-  modeling preserving original non-linearities."
+description: The Drop is an analog modelled resonant filter plug-in based on classic analog synth filters, as well as completely new designs. There is a huge level of detail in the models, which gives them amazing drive and tone, as well as smooth audio rate modulation behaviour.
 details: |-
-  Multiple filter circuit models (PT1, MS1, and custom designs)
+  The Drop is an analog modelled resonant filter plug-in based on classic analog synth filters, as well as completely new designs. The original structure of the circuits is preserved in each model, as is the location and shape of all major non-linearities.
 
-  High-pass and low-pass filter modes
+  Eleven filter models are on offer, many of them classic synthesiser filters updated to run in stereo with Cytomic's precision modelling, plus newly designed circuits by Cytomic including high pass versions of many filters that originally only came in low pass.
 
-  Resonant filter with self-oscillation
+  Two analog modelled envelopes are based on the classic envelope circuit of the Moog Taurus. They have been extended to allow triggering from different sources, and behave either as AHR envelopes or as envelope followers for auto wah type effects.
 
-  Audio-rate LFO modulation
+  The Drop has both high and low pass filters which can be run in High Detail or Medium Detail (HD / MD) modes, and in series or parallel. Each filter will self oscillate with high resonance, and a safe button can prevent this. The filter visualiser shows an accurate frequency response of the combined filtering and the modulated position of both filters.
 
-  Envelope follower
-
-  Keytracking support
-
-  Drive/saturation controls
+  High quality oversampling reduces aliasing by any amount, at the cost of a little latency and cpu, with separate settings for realtime use and offline renders (x2 realtime and x8 offline recommended). Zero latency operation is possible by disabling all oversampling, and minimum, intermediate or linear phase modes trade latency against phase alignment.
 specs: |-
-  - version: 1.9.0
-  - releaseDate: 2025-10-17
-  - macOS: 10.13 or above (Intel/M1, 64-bit)
-  - windows: 10 or above (Intel/AMD, 64-bit)
+  - Eleven filter models: MS1 (Korg MS20 rev 1, BJT Sallen Key), MS2 (Korg MS20 rev 2, OTA Sallen Key), OSR (Oxford Synthesizer Co. OSCar state variable), JRP (Roland Jupiter 8 / Juno 6, IR3109 OTA cascade), SHR (Roland SH101 / SH-09, IR3109 OTA cascade), PRD (Moog Prodigy, BJT ladder cascade), WSP (Wasp, CMOS SVF with self oscillation modifications), PT1 (Prophet 5 rev1 discrete OTA cascade), SMP (Cytomic design between Sallen Key and SVF), AMU (transposed SVF as used in the Odyssey Mk1), KSM (MS2 Sallen Key variation with stronger resonance)
+  - High pass and low pass filters, runnable in series or parallel
+  - High Detail (HD) and Medium Detail (MD) filter modes
+  - Self oscillation with a safe button to prevent it
+  - Filter visualiser showing combined frequency response and modulated filter positions
+  - Two analog modelled envelopes based on the Moog Taurus envelope circuit, usable as AHR envelopes or envelope followers
+  - LFO with phase offset and rate multiplier reaching audio rate, with automatic re-sync to the nearest bar
+  - Keytracking of filter cutoff from incoming MIDI notes
+  - Oversampling with separate realtime and offline render settings (x2 realtime, x8 offline recommended), or zero latency mode with oversampling disabled
+  - Minimum, intermediate and linear phase oversampling modes, with latency reported to the DAW
+  - macOS 10.13 or above, Intel/M1 cpu (64-bit)
+  - Windows 10 or above, Intel/AMD cpu (64-bit)
+versions:
+  - name: 1.10.5
+    releaseDate: 2026-08-14
+videos:
+  - videoId: CYJ2J07xqhY
+    provider: youtube
+  - videoId: _iXU6VdhK94
+    provider: youtube
+    title: A Little Taste of Wobble Bass

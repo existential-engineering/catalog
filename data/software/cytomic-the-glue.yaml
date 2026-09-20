@@ -16,25 +16,37 @@ url: https://cytomic.com/product/glue/
 prices:
   - amount: 99
     currency: USD
-description: "Analog modelled compressor plug-in based on the classic 80's
-  British big console buss compressor with mix, range, sidechain high pass,
-  external sidechain, peak clip, and advanced oversampling."
+description: The Glue is an analog modelled compressor plug-in based on the classic 80's British big console buss compressor with some handy additional features. The compressor action is smooth and transparent as it uses the same high quality algorithms used in circuit simulators, but optimised to run fast.
 details: |-
-  Mix/Range/Sidechain High Pass knobs
+  The Glue is an analog modelled compressor plug-in based on the classic 80's British big console buss compressor with some handy additional features. The compressor action is smooth and transparent as it uses the same high quality algorithms used in circuit simulators, but optimised to run fast. In addition to the regular compressor controls it has: Mix / Range / Sidechain High Pass knobs, External Sidechain support, Peak Clip, and Advanced Oversampling.
 
-  External sidechain support
+  If used subtly on the main bus this produces gorgeously smooth and transparent compression that never goes out of style. When used heavily on a drum bus the classic "crack" of the attack portion of drums is produced, adding impact while controlling levels. The sidechain "detector" is a diode based envelope follower that smooths out the audio being sent to it. The detected amplitude of the sidechain input is used to control the level of the main signal, but is also sent to control the level of the input to the detector itself, in what is called a feed-back loop. This gives a different result to a feed-forward compressor, where the detector only changes the level of the main signal.
 
-  Peak clip functionality
+  Forming the core of the smooth behaviour of The Glue is an analog modelled dual diode envelope follower, which is solved using optimised nodal analysis. This results in a "soft maximum", as the smoothed sum of both the left and right detected amplitude is used to control the stereo level. This is called "stereo linking", and results in no change in the stereo image, as both left and right VCAs use the same detected voltage to set their gain amounts. In The Glue you can also vary how much the detectors are linked in 25% steps down to dual mono behaviour.
 
-  Advanced oversampling (x2, x4, x8)
+  A new addition to the original circuit is the Range knob, which controls the maximum dynamic swing in changes of compression. When set to full this control preserves the behaviour of the cleanest analog circuit, but the Range can be reduced slightly to emulate older units, or drastically for new creative control. If you want to reduce compression pump due to loud low frequency components the built in soft -6 dB/Oct high pass filter can be used to filter the signal being detected, and the Mix knob cross fades the dry input signal with the compressed signal in a phase accurate manner.
 
-  Diode envelope follower with dual diode configuration
-
-  Stereo linking via soft maximum detection
-
-  Soft -6 dB/Oct high pass filter for sidechain
+  Cytomic plugins allow reduction of aliasing by any amount you want with very high quality oversampling filters, at the cost of a little latency and cpu. There are separate oversampling settings for realtime use and offline renders, with x2 realtime and x8 offline recommended. If you prefer to save cpu and have zero latency this is also possible by disabling all oversampling, and minimum phase, intermediate phase and linear phase modes trade latency against phase alignment.
 specs: |-
-  - version: 1.8.1
-  - releaseDate: 2025-10-17
-  - macOS: 10.13 or above (Intel/M1, 64-bit)
-  - windows: 10 or above (Intel/AMD, 64-bit)
+  - Analog modelled dual diode envelope follower solved using optimised nodal analysis
+  - Stereo linking adjustable in 25% steps down to dual mono behaviour
+  - Mix knob cross fades dry and compressed signal in a phase accurate manner, shown in decibels
+  - Range knob controls the maximum dynamic swing in changes of compression
+  - Built in soft -6 dB/Oct sidechain high pass filter
+  - External sidechain support
+  - Peak Clip soft clipping waveshaper (PEAKCLIP IN)
+  - Advanced oversampling with minimum phase, intermediate phase and linear phase modes
+  - Separate realtime and offline oversampling settings (x2 realtime and x8 offline recommended)
+  - Zero latency mode available by disabling all oversampling
+  - White RMS needle plus toggleable yellow Peak needle with short hold time, and numeric RMS and Peak compression readouts
+  - Latency reported to the DAW for correction
+  - macOS 10.13 or above, Intel/M1 cpu (64-bit)
+  - Windows 10 or above, Intel/AMD cpu (64-bit)
+versions:
+  - name: 1.9.3
+    releaseDate: 2026-08-14
+videos:
+  - videoId: CXtl5_NlTIs
+    provider: youtube
+  - videoId: zl3HDy546xk
+    provider: youtube
