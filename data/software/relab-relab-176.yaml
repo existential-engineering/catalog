@@ -15,29 +15,28 @@ url: https://relabdevelopment.com/relab-176/
 prices:
   - amount: 199
     currency: USD
-description: Hardware-accurate tube compression in software form, modeled from a vintage 1960s 176-style compressor using real-time circuit solving to recreate every tube, transformer, and timing network.
+description: "Accurately modeled from the entire audio circuit of a vintage 1960s 176-style compressor: every tube, transformer, timing network, and power supply interaction is re-created using a real time circuit solver. This preserves the tone, timing, and dynamic behavior of the original hardware."
 details: |-
-  The Relab 176 is a software compressor/limiter plugin modeled after a vintage 1960s 176-style hardware unit. It uses real-time circuit solving to faithfully recreate the behavior of every tube, transformer, and timing network found in the original hardware.
+  The Relab 176 reproduces everything: the tone, timing, and dynamic behavior of the hardware. Every tube stage, transformer, and timing network responds as it does in the original.
 
-  The plugin offers four hardware ratios — 2:1, 4:1, 8:1, and 12:1 — along with program-dependent timing behavior derived from the RC-tube interaction of the original circuit. This results in a dynamic, musical response that changes with the incoming signal.
+  The Relab 176 follows the original fixed-threshold design with four hardware ratios: 2:1, 4:1, 8:1, and 12:1. Knee position and slope change with each ratio, producing compression that ranges from smooth leveling to assertive limiting. Compression intensity adapts naturally, ensuring nuanced dynamic shaping at every setting.
 
-  Relab 176 includes polarity-selective sidechain detection and switchable stage coupling paths (transformer and resistor), giving engineers control over the tonal character and how the compressor responds to transients.
+  Attack and release times come from resistor-capacitor networks directly coupled to the tube gain stage. Timing is program-dependent, shaped by signal level, transient size, tube nonlinearity, and transformer interaction, not fixed millisecond values. The Fixed/Auto toggle changes how release adapts to the program.
 
-  Advanced calibration controls for bias and harmonics allow users to fine-tune the harmonic content and saturation character of the plugin, extending beyond what was adjustable on the original hardware. Factory presets are included to help users get started quickly.
+  The Sidechain Polarity control in the Relab 176 changes how the detector responds to the positive, negative, or both halves of the waveform. This lets you target specific transient edges, for example, clamping kick drum attack without touching low-end body, or controlling plosives in vocals without affecting overall presence.
 
-  Authorization uses iLok account-based licensing; a hardware iLok dongle is supported but not required. The plugin ships with factory presets, community access, tutorials, and customer support.
+  Calibration shifts the internal tube bias and balance, just like adjusting multiple trim pots on the original hardware, changing threshold, harmonic profile, and dynamic feel. It is a single control that moves multiple internal parameters together, with extra flexibility available via the plugin's back-panel trims.
 specs: |-
-  - Formats: AU, VST3, AAX (64-bit only)
-  - Mac: macOS 10.15 (Catalina) or higher, Apple Silicon M1 or newer required
-  - Windows: Windows 10 and up, Intel Core i7 8th-gen+ or AMD Ryzen 5 3000-series+
-  - RAM: 8 GB minimum, 16 GB+ recommended
-  - Supported DAWs: Pro Tools 2020.11+, Cubase 9.5+, Nuendo 8+, Ableton Live 10+, Reaper 7+
-  - Four hardware ratios: 2:1, 4:1, 8:1, 12:1
-  - Program-dependent timing from RC-tube interaction
-  - Polarity-selective sidechain detection
-  - Switchable stage coupling (transformer/resistor paths)
-  - Advanced calibration controls for bias and harmonics
-  - iLok account required (hardware dongle optional)
-  - 30-day money-back guarantee
+  - Four hardware ratios: 2:1, 4:1, 8:1 and 12:1, with knee position and slope changing per ratio
+  - Fixed-threshold, variable-gain design where ratio, drive and source material interact to shape timing, curve and harmonics
+  - Program-dependent attack and release from resistor-capacitor networks coupled to the tube gain stage, with a Fixed/Auto release toggle
+  - Sidechain Polarity control: detector responds to the positive, negative or both halves of the waveform
+  - Stage Coupling switch: Transformer path for faster (sub-ms possible) attack, Resistor path for slower attack and vintage low-frequency thump
+  - Calibration control shifting 6BC8 and 12AX7 tube bias and balance, threshold, dynamic response and tone together
+  - Advanced back-panel controls (click the Relab logo): trim pots for 6BC8 bias, 6BC8 anode balance and 12AX7 bias, plus a Reference Level control
+  - Hand-crafted factory presets
+  - 64-bit only; macOS 10.15 (Catalina) or higher on Apple Silicon M1 or newer; Windows 10 and up on Intel Core i7 (8th-gen+) or AMD Ryzen 5 (3000-series+) with AVX2
+  - 8 GB RAM minimum, 16 GB+ recommended
+  - iLok account authorization, no hardware dongle required (local computer authorization or iLok USB key V2 or above)
 versions:
   - name: 1.2.0
