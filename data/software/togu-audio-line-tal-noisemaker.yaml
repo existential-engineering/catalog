@@ -8,6 +8,7 @@ categories:
   - analog
 formats:
   - vst
+  - vst2
   - vst3
   - au
   - aax
@@ -20,10 +21,94 @@ url: https://tal-software.com/products/tal-noisemaker
 prices:
   - amount: 0
     currency: USD
-description: "TAL-NoiseMaker is a virtual analog synthesizer with a great sound
-  and low CPU usage. Features 3 oscillators (including sub osc), pulse
-  modulation, FM, oscillator sync, ring modulation, self-resonating 4x
-  oversampled filters (7 filter types), 3 envelopes (filter ADSR, volume ADSR,
-  routable ADSR), 2 LFOs with multiple running modes, built-in effects (reverb,
-  delay, chorus, bitcrusher), velocity control, and up to 6 voices with
-  portamento."
+description: TAL-NoiseMaker is a virtual analog synthesizer with a great sound and low CPU usage. It offers three oscillators, self-resonating 4x oversampled multimode filters, two LFOs, a routable modulation envelope and built in chorus, reverb, delay and bitcrusher effects.
+details: |-
+  TAL-NoiseMaker is a virtual analog synthesizer from TAL Software (Togu Audio Line), built around a compact single-panel layout with no hidden pages. The product page describes it as a synthesizer with a great sound and low CPU usage, and it is published in the FREE Plug-Ins section of the TAL products index.
+
+  The oscillator section provides three sources: Osc 1 with +/- 24 semitones, fine tune and phase control offering saw, pulse and noise; Osc 2 with the same tuning range and phase control offering saw, rectangle, triangle and sine; and a rectangle sub oscillator. Osc 1 adds phase modulation for its pulse waveform, Osc 2 can be frequency modulated by Osc 1, and both main oscillators can sync to the sub oscillator. A ring modulator multiplies Osc 1 with Osc 2, and master tune and transpose are adjustable.
+
+  Filtering is handled by self-resonating 4x oversampled filters offering 24 dB LP, 18 dB LP, 12 dB LP, 6 dB LP, 12 dB HP, 12 dB BP and notch responses, with adjustable filter drive and an additional one pole high pass filter. Modulation comes from a bipolar filter ADSR, a volume ADSR, a routable ADSR that can target filter, Osc 1, Osc 2, pulse width and FM, and two LFOs that run free, sync to host or trigger from a note, with sine, triangle, saw, square, sample and hold and noise shapes plus phase control. Velocity and the pitch wheel can be mapped to volume, filter contour, cutoff and pitch.
+
+  The synth is up to six voice polyphonic with portamento in mono and poly modes, a random detune function, and built in effects: a Juno style chorus with several modes, a reverb, a delay and a bitcrusher that sits before the filter stage. MIDI learn is available for every knob, and a panic button is provided.
+
+  The download ships 256 presets by Frank "Xenox" Neumann (Particular Sound), The Unshushable Coktor, Alexandra Sendy, TAL and Patrick Kunz, and the page also points to free preset sets from Echo Season and a 33 preset Sci-Fi Sensation bank by Alessandro Cardinale. Current builds are version 5.0.6; older 4.7.0 (previous UI) and 4.3.1 (32 bit support) installers remain linked on the page.
+specs: |-
+  - 3 oscillators: Osc 1 (+/- 24 semitones, fine tune, phase control: saw, pulse, noise), Osc 2 (+/- 24 semitones, fine tune, phase control: saw, rectangle, triangle, sine), Sub Osc (rectangle)
+  - Osc 1 PM for pulse waveform
+  - Osc 2 FM controlled by Osc 1
+  - Osc 1 and Osc 2 sync to sub osc (saw, pulse, rectangle, triangle bipolar sync)
+  - Adjustable master tune and transpose
+  - Up to 6 voices
+  - Portamento in mono and poly mode (off, auto, on)
+  - Ringmod modulates Osc 1 with Osc 2
+  - Self resonating 4x oversampled filters (24 dB LP, 18 dB LP, 12 dB LP, 6 dB LP, 12 dB HP, 12 dB BP, Notch)
+  - Filter ADSR (negative and positive)
+  - Volume ADSR
+  - Routable ADSR modulating Filter, Osc 1, Osc 2, PW, FM (negative and positive)
+  - 2 LFOs with running modes free, sync to host, triggered by note; modulate filter, osc 1, osc 2, fm, pw, lfo rate, panorama and volume; sine, triangle, saw, square, s&h, noise; positive and negative modulation; phase control
+  - Adjustable velocity dependent control over volume, filter contour and cutoff
+  - Adjustable pitch wheel control over cutoff and pitch
+  - One pole HP filter
+  - Detune, detunes notes randomly
+  - Juno chorus with different modes
+  - Built in reverb
+  - Built in delay
+  - Adjustable filter drive
+  - Bitcrusher affecting osc 1 and osc 2, pre filter stage
+  - MIDI learn for all knobs
+  - Panic button
+  - Easy to use, no hidden panels
+  - 256 presets (Frank "Xenox" Neumann / Particular Sound, The Unshushable Coktor, Alexandra Sendy, TAL, Patrick Kunz)
+  - Requirements, Windows: Windows 7 or higher (64 bit host)
+  - Requirements, macOS: 10.9 or higher (64 bit host), Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3)
+  - Requirements, AAX: Pro Tools 10.3.6 or higher (64 bit)
+  - Requirements, Linux: 64 bit, Ubuntu 18 or similar
+versions:
+  - name: 5.0.6
+    releaseDate: 2023-08-16
+    description: New preset browser. Minor fixes.
+  - name: 5.0.5
+    releaseDate: 2023-01-12
+    description: AAX native M1 support. Base framework updated (JUCE 7). Minor fixes.
+  - name: 5.0.4
+    releaseDate: 2021-07-05
+    description: Minor bugfixes.
+  - name: 5.0.3 beta
+    releaseDate: 2021-06-30
+    description: Some older presets do not load fixed.
+  - name: 5.0.2 beta
+    releaseDate: 2021-06-28
+    description: Fresh UI. Maintenance UI and Audio Processor. Audio engine is still the same and the plugin is backward compatible.
+  - name: 4.7.0
+    releaseDate: 2021-04-05
+    description: VST3 parameter automation fix.
+  - name: 4.6.2
+    description: VST3 saves and loads incorrect state fixed.
+  - name: 4.6.1
+    description: VST3 saves and loads incorrect state fixed.
+  - name: 4.6.0
+    description: Native Apple M1 support. Minor bug fixes. VST3 installer for Windows. Linux VST3 support.
+  - name: 4.5.1
+    description: Compatibility with older OSX versions fixed (OSX only). Optimised build (OSX only).
+  - name: 4.3.2
+    description: Preset name fixed.
+  - name: 4.3.1
+    description: Backward compatibility to OSX 10.7, 10.8, 10.9 restored.
+  - name: 4.2.2
+    description: Possible AAX crash fixed.
+  - name: 4.2.1
+    description: Possible envelope editor crashes fixed.
+  - name: 4.2.0
+    description: Portamento / sample rate issues fixed.
+  - name: 4.1.0
+    description: Updated plugin version, Cubase should now also load older presets. AAX support.
+  - name: 4.0.0
+    description: Minor fixes. Compatible with OSX 10.11.
+  - name: "3.22"
+    description: AudioUnit not showing up in Logic fixed.
+  - name: "3.21"
+    description: Hanging notes in some hosts fixed. New feedback delay free 24dB LP filter added.
+  - name: "3.10"
+    description: 3 new filter types added (24dB State Variable Filter, LP, BP, HP). Clicks while releasing note under some conditions fixed.
+  - name: "3.7"
+    description: Problem with hanging notes after stop in some hosts fixed. Other small bugfixes.

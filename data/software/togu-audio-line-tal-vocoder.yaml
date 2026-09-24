@@ -19,7 +19,70 @@ url: https://tal-software.com/products/tal-vocoder
 prices:
   - amount: 0
     currency: USD
-description: TAL-Vocoder is a vintage-style vocoder with 11 bands that produces the sound of vocoders from the early 80's. Mixes analog-modeled components with digital algorithms. Includes a built-in synth with a VCO (Voltage Controlled Oscillator) to create classic analog waveforms as carrier signals. Flexible sidechain routing allows feeding external carrier signals.
+description: TAL-Vocoder is a vintage-style vocoder with 11 bands that produces the sound of vocoders from the early 80's. It mixes analog-modeled components with digital algorithms and includes a synth with a VCO to create carrier signals.
+details: |-
+  TAL-Vocoder is a vintage-style vocoder with 11 bands that produces the sound of vocoders from the early 80's. Togu Audio Line describes it as mixing analog-modeled components and usability with digital algorithms to create an outstanding vocoder sound. It is listed under the FREE Plug-Ins section of the TAL product catalogue.
+
+  The plugin has included a synth with a VCO (Voltage Controlled Oscillator) to create classic analog waveforms, which can produce carrier signals with a lot of overtones. Flexible sidechain routing possibilities also allow feeding external carrier signals into the plugin, and the 3.0.0 release added carrier and modulator volume controls with a meter.
+
+  The plug-in ships in VST, VST3, AU, AAX and CLAP formats, with installers offered for Windows, macOS and Linux. The Linux build is distributed as a 64-bit package covering VST2 and VST3. A user manual PDF is published alongside the installers.
+
+  System requirements given by TAL are Windows 7 or higher with a 64-bit host, macOS 10.9 or higher with a 64-bit host, and 64-bit Linux on Ubuntu 18 or similar. The macOS build is a Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3 and later). AAX use requires Pro Tools 10.3.6 or higher in 64-bit.
+
+  The download block names version 3.0.4 as current. The changelog's most recent dated entry is 3.0.3 of 16.08.2023, which added a new preset browser, following 3.0.2 and 3.0.1 bug-fix releases and the 3.0.0 rewrite of 24.04.2023 that brought the scalable UI, the file preset browser, the sidechain routing and a documented break in backward compatibility for the old L and R input mode routing. Earlier releases added AAX native M1 support with a JUCE 7 update (2.2.1), native Apple M1 support with a Windows VST3 installer and Linux VST3 support (2.2.0), and further back sidechain input, pitch wheel support and AAX Pro Tools support. Legacy downloads remain available for versions 2.2.1, 2.0.0 (including 32-bit support) and 1.0.0.
+specs: |-
+  - Vintage-style vocoder with 11 bands, modelled on vocoders from the early 80's
+  - Analog-modeled components combined with digital algorithms
+  - Built-in synth with a VCO (Voltage Controlled Oscillator) producing classic analog waveforms for carrier signals rich in overtones
+  - Flexible sidechain routing for feeding external carrier signals to the plugin
+  - Carrier and modulator volume controls with a meter
+  - Scalable UI with file preset browser
+  - Pitch wheel support
+  - Formats: VST, VST3, AU, AAX, CLAP
+  - Windows: Windows 7 or higher (64 bit host)
+  - macOS: 10.9 or higher (64 bit host), Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3...)
+  - Linux: 64 bit, Ubuntu 18 or similar (x64 VST2 and VST3)
+  - AAX: Pro Tools 10.3.6 or higher (64 bit)
+  - User manual PDF provided
+  - Legacy downloads available: versions 2.2.1, 2.0.0 (with 32-bit support) and 1.0.0
+versions:
+  - name: 3.0.4
+    description: Current download version named in the Downloads block. No changelog entry is published for it.
+  - name: 3.0.3
+    releaseDate: 2023-08-16
+    description: New preset browser.
+  - name: 3.0.2
+    releaseDate: 2023-05-03
+    description: Regression bug with image buttons introduced in 3.0.1 fixed.
+  - name: 3.0.1
+    releaseDate: 2023-05-01
+    description: Hanging notes when switching poly button fixed. Panic button fixed. Minor fixes.
+  - name: 3.0.0
+    releaseDate: 2023-04-24
+    description: "New carrier and modulator volume controls with a meter. New flexible routing possibilities using sidechain signals. New scalable UI with file preset browser. A lot of improvements and fixes. Not 100% backward compatible: the input mode routing with the L and R channel is not available anymore, replaced by the new sidechain routing possibilities."
+  - name: 2.2.1
+    releaseDate: 2023-01-12
+    description: AAX native M1 support. Base framework updated (JUCE 7). Minor fixes.
+  - name: 2.2.0
+    description: Native Apple M1 support. VST3 installer for Windows. Linux VST3 support.
+  - name: 2.1.2
+    description: State loading issue fixed.
+  - name: 2.0.0
+    description: "Side chain support for input mode: when SC is enabled the side chain is the carrier and the plugin channel is the modulator. Parameter handling updated."
+  - name: 1.3.3
+    description: Backward compatibility to OSX 10.7, 10.8, 10.9 restored.
+  - name: 1.3.1
+    description: Pitch wheel support added.
+  - name: 1.3.0
+    description: Side Chain input beta.
+  - name: 1.2.1
+    description: Possible AAX crash fixed.
+  - name: 1.2.0
+    description: Framework update. Fixes UI performance issues on some OSX hosts with VST.
+  - name: "1.03"
+    description: AAX Pro-Tools support. OSX 10.5 not supported anymore.
+  - name: "1.02"
+    description: Bypass issue when loading plugin fixed.
 videos:
   - videoId: RRwovzECxUI
     provider: youtube

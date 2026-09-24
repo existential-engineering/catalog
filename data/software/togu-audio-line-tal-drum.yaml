@@ -18,32 +18,42 @@ url: https://tal-software.com/products/tal-drum
 prices:
   - amount: 59
     currency: USD
-description: TAL-Drum is a powerful audio plug-in that combines the nostalgic
-  charm of vintage drum machines with modern usability, featuring a meticulously
-  sampled collection of iconic drum machine sounds and a unique lo-fi resampler
-  for distinctive character.
+description: TAL-Drum is a powerful audio plug-in that combines the nostalgic charm of vintage drum machines with modern usability. It also offers a unique lo-fi resampler, giving your beats a distinct character that sets them apart from the rest.
 details: |-
-  TAL-Drum combines the nostalgic charm of vintage drum machines with modern usability. Its superfast workflow features sample, pad, and mapping drag-and-drop, and the plugin includes 64 pads with 8 layers and up to 16 stereo outputs.
+  TAL-Drum is a powerful audio plug-in that combines the nostalgic charm of vintage drum machines with modern usability. This intuitive tool lets you effortlessly create captivating beats with its meticulously sampled collection of iconic drum machine sounds. But TAL-Drum doesn't stop there. It also offers a unique lo-fi resampler, giving your beats a distinct character that sets them apart from the rest.
 
-  Each mapping has a parametric EQ, LFO, spline envelope, amp AHDSR, and two modulation AHDSRs for precise control. Different time-stretch modes (high quality Crisp or Smooth, Vintage AK4I Cycle mode) allow creative sample manipulation.
+  The user interface offers a 16, 32 and 64 pad view for an optimal workflow, and pads can be named and coloured. Drag and drop moves samples, pads and mappings around for a fast workflow: dragging a pad while holding CTRL creates a copy, and multiple pads or pad-mappings can be selected with CTRL click and changed together. Every pad can have up to 8 mappings, either layered or split across velocity ranges.
 
-  The built-in Lo-Fi effects and slice editor with MIDI-to-host ability and BPM detection make it easy to create authentic vintage beats. Users can also record audio and create samples directly in the plugin. Over 20 factory kits and more than 600 samples are included from Goldbaby, emptyvessel, Solidtrax, and Saif Sameer.
+  There are 64 voice groups available, each with up to 16 voices, and cycle and random round-robin modes can be configured for two or more pads that share a MIDI note or within a pad's mappings. Up to 16 stereo outputs are available. The plug-in only contains a few effects on purpose, the idea being that you mix and add your favourite effects and EQs in your DAW.
+
+  Built-in Lo-Fi effects change the way the plug-in resamples, affecting the internal sample rate and bit depth. Samples can be sliced and applied to pads in a few clicks, with auto-slice and equal slicing from a given sample BPM. Different time-stretch algorithms suit drum loops and other samples, including a vintage Ak4I cycle time stretcher, and samples can be recorded directly from the main or sidechain stereo inputs then truncated and normalised in the plug-in.
+
+  Modulation comes from one LFO, two AHDSR envelopes, a spline-based envelope and other sources, routed to pitch, pan, filter cutoff and other parameters. The plug-in ships with more than 20 factory kits and more than 600 samples by Goldbaby, emptyvessel, Solidtrax and Saif Sameer (the demo has one kit), reads the most common audio formats (wav, aif, flac, ogg, mp3), and installs lightweight since the installer only copies the plug-in to the plug-in location.
 specs: |-
-  - 64 pads with 8 layers
-  - Up to 16 stereo outputs
-  - Parametric EQ, LFO, spline envelope, amp AHDSR per mapping
-  - Time-stretch modes: Crisp, Smooth, Vintage AK4I Cycle
-  - Realtime Lo-Fi effects
-  - Slice editor with MIDI to host and BPM detection
-  - In-plugin audio recording
-  - 20+ factory kits, 600+ samples
-  - Supported formats: wav, aif, flac, ogg, mp3
-  - Windows 10 or higher (64-bit host)
-  - macOS 10.11 or higher (64-bit host), Universal Binary 2
-  - Pro Tools 10.3.6 or higher for AAX (64-bit)
-  - Linux 64-bit / Ubuntu 20.04 or similar
+  - Superfast workflow with sample, pad, and mapping drag and drop.
+  - 64 pads with 8 layers.
+  - Up to 16 stereo outputs.
+  - One parametric EQ, LFO, spline envelope, amp AHDSR and two modulation AHDSR for every mapping.
+  - Different time-stretch modes (high quality Crisp or Smooth, Vintage AK4I Cycle mode).
+  - Realtime LO-FI effects.
+  - Slice editor with "MIDI to host" ability and BPM detection.
+  - Record audio and create samples directly in the plugin.
+  - More than 20 Factory kits and more than 600 samples by Goldbaby, emptyvessel, Solidtrax and Saif Sameer (demo has one kit).
+  - Most common audio formats supported (wav, aif, flac, ogg, mp3).
+  - Super lightweight. The installer only copies the plugin to the plug-in location.
+  - 16, 32 and 64 pad views, pads can be named and coloured.
+  - 64 voice groups, each with up to 16 voices.
+  - Cycle and random round-robin modes.
+  - SFZ format support and TAL-Sampler talwav audio format support.
+  - Windows: Windows 10 or higher (64 bit host).
+  - macOS: 10.11 or higher (64 bit host). Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3).
+  - AAX: Pro Tools 10.3.6 or higher (64 bit).
+  - Linux: 64 bit, Ubuntu 18 or similar.
+  - Demo restriction: the plug-in produces a rising white noise sound every minute.
 versions:
   - name: 3.1.4
+    releaseDate: 2026-09-09
+    description: Possible crash when closing UI fixed.
   - name: 2.9.8
     releaseDate: 2026-05-08
     description: Regression LFO DAW sync fixed
@@ -55,10 +65,13 @@ versions:
     description: Reverse fade-in, modulation envelope, waveform position-drag fixes
   - name: 2.9.4
     releaseDate: 2025-11-24
+    description: Possible UI/deadlock issue fixed (cleanup).
   - name: 2.9.1
     releaseDate: 2025-11-08
+    description: Possible crash when stretching fixed. Negative delay times which introduce DAW latency (experimental).
   - name: 2.8.2
     releaseDate: 2025-06-12
+    description: Round robin random fix. Reduced memory usage.
   - name: 2.7.6
     releaseDate: 2025-01-21
     description: CLAP support added
@@ -71,6 +84,210 @@ versions:
   - name: 1.0.0
     releaseDate: 2022-04-13
     description: Initial release
+  - name: 3.1.5
+    releaseDate: 2026-09-20
+    description: Show pitch (note) of the precussion sample in sample waveform view if possible.
+  - name: 3.1.2
+    releaseDate: 2026-09-03
+    description: Don't skip empty pads when saving the state. Keep pad-gaps.
+  - name: 3.1.2
+    releaseDate: 2026-08-31
+    description: Rename pads does not update UI in every case fixed.
+  - name: 3.1.1
+    releaseDate: 2026-08-30
+    description: Also read wav files with malformed chunk data.
+  - name: 2.9.3
+    releaseDate: 2025-11-18
+    description: Possible UI/deadlock issue fixed.
+  - name: 2.9.2
+    releaseDate: 2025-11-16
+    description: Always One-Shot enabled regression fixed.
+  - name: 2.8.0
+    releaseDate: 2025-06-10
+    description: Minor fixes. Sample EQ improvements. Framework update. Improved random sample algorithm.
+  - name: 2.7.8
+    releaseDate: 2025-03-10
+    description: Regression with Lo-Fi HISS feature fixed. Minor fixes and improvements.
+  - name: 2.7.5
+    releaseDate: 2025-01-20
+    description: Memory consumption reduced again (regression). Report note names to DAW added (does not work in all DAWs and formats - we are working on this). Minor fixes. Base framework updated.
+  - name: 2.7.3
+    releaseDate: 2024-12-11
+    description: ADHSR shape not saved fixed.
+  - name: 2.7.1
+    releaseDate: 2024-12-05
+    description: Memory consumption optimized. AHDSR preview on waveform for different pitches fixed. LFO preview on waveform for different pitches fixed. Underlying framework updated.
+  - name: 2.7.0
+    releaseDate: 2024-11-11
+    description: Time stretch for long audio files with Smooth or Crisp does not stretch the whole audio, fixed. (this may is a breaking change if you stretched long audio files longer 10 seconds. We recommend to truncate the file first before update TAL-Drum in that case. Use truncate from the menu (right click on the waveform and choose truncate and save it)). Slice editor fixes when working with truncated files. Underlying framework updated.
+  - name: 2.6.4
+    releaseDate: 2024-08-05
+    description: Copy/paste resets other pads settings fixed (regression). Empty mapping sets stereo to zero fixed.
+  - name: 2.6.3
+    releaseDate: 2024-07-23
+    description: Highlight mapping when drag and drop audio file over it. Possible crash fixed when drag and drop audio file to mapping view. Open folder option when right click on audio file in browser.
+  - name: 2.6.2
+    releaseDate: 2024-07-23
+    description: Time stretcher uses random settings fixed. Overview waveform disappears fixed.
+  - name: 2.6.1
+    releaseDate: 2024-07-01
+    description: Drag and drop audio export did not work in some situations fixed. Slice editor does not reset zoom when double click.
+  - name: 2.6.0
+    releaseDate: 2024-07-01
+    description: Possible problems with pitch- and mod-wheel MIDI offline rendering fixed.
+  - name: 2.5.9
+    releaseDate: 2024-06-25
+    description: Pad-preset files do not load when set to default fixed. Clear EQ settings when reset pad fixed.
+  - name: 2.5.8
+    releaseDate: 2024-06-24
+    description: Pad-preset files also using relative paths for samples.
+  - name: 2.5.7
+    releaseDate: 2024-06-14
+    description: The pad name is highlighted in sample preview mode. Minor fixes
+  - name: 2.5.3
+    releaseDate: 2024-05-24
+    description: Stereo, left and right sample channel options for mapping. Fix in the MIX view with multi-selection. Labels show up on MIX view sliders under some conditions fixed. Show all mapping layers over-blended on the pads in the overview.
+  - name: 2.5.2
+    releaseDate: 2024-05-16
+    description: Minor fixes and improvements.
+  - name: 2.5.1
+    releaseDate: 2024-05-07
+    description: Minor fixes.
+  - name: 2.5.0
+    releaseDate: 2024-05-02
+    description: Smaller plugin state. +-48 semitones tune range. Minor fixes.
+  - name: 2.3.3
+    releaseDate: 2024-04-08
+    description: Minor fixes.
+  - name: 2.2.0
+    releaseDate: 2024-03-08
+    description: Improved overall usability in the wave and mapping editor. Attack shape parameter added. Text edit for start, stop, and loop parameters. Text edit for matrix amount. Improved real-time modulation view on knobs. Wrong recording threshold fixed. Drag and drop from explorer loads on the wrong pad fixed. DC offset because of a too-low HP filter frequency fixed.
+  - name: 2.1.4
+    releaseDate: 2023-10-26
+    description: Support for the TAL-Sampler talwav audio format.
+  - name: 2.1.3
+    releaseDate: 2023-09-19
+    description: Skip the very first note fixed.
+  - name: 2.1.2
+    releaseDate: 2023-09-13
+    description: New pad MIDI notes not saved when generated with Auto increment MIDI notes... fixed.
+  - name: 2.1.1
+    releaseDate: 2023-08-04
+    description: Regression fixed where modulation envelope points do not save in some cases.
+  - name: 2.1.0
+    releaseDate: 2023-08-02
+    description: Some parameters of a saved single pad do not load the right way fixed. Minor fixes.
+  - name: 2.0.7
+    releaseDate: 2023-07-24
+    description: Improved slice detection. Minor fixes.
+  - name: 2.0.6
+    releaseDate: 2023-07-14
+    description: Bug when loading initialisation preset fixed. Stereo to mono knob added.
+  - name: 2.0.5
+    releaseDate: 2023-06-27
+    description: Possible crash when copy / paste plugin fixed. Improved auto-slice. Minor fixes.
+  - name: 2.0.4
+    releaseDate: 2023-06-16
+    description: Next sample arrow keys fixed. Pad pitch reset when adding new mapping fixed. Minor fixes.
+  - name: 2.0.2
+    releaseDate: 2023-06-08
+    description: New PANEL mode. Control the current visible pad or mapping with MIDI. New always visible sample shuffle button in the pad view on the bottom. LEARN for pad MIDI note fixed. New option to increment the pad's MIDI note number for all pads above. Improved plug-in loading times. Bug fixes.
+  - name: 1.2.8
+    releaseDate: 2023-02-02
+    description: Crash when entering invalid value for compressor ratio fixed.
+  - name: 1.2.6
+    releaseDate: 2023-01-31
+    description: Random sample selection button in pad view added.
+  - name: 1.2.4
+    releaseDate: 2023-01-12
+    description: AAX native M1 support. Base framework updated (JUCE 7). Minor fixes.
+  - name: 1.2.4
+    releaseDate: 2022-10-20
+    description: Output-bus problem in ableton live fixed.
+  - name: 1.2.2
+    releaseDate: 2022-07-11
+    description: Possible loud noises fixed when loop is outside of the sample start / end.
+  - name: 1.2.0
+    releaseDate: 2022-07-01
+    description: CLAP plug-in added. Load sample play when preview slice in some situations fixed. Sample tune does not load correctly from older presets fixed. Remember preview volume. Preview and master volume now also can be entered as text.
+  - name: 1.1.3
+    releaseDate: 2022-06-02
+    description: Minor improvements and fixes.
+  - name: 1.1.2
+    releaseDate: 2022-05-09
+    description: Direct access to 8 pad colors in pop up menu added (right click on pad). Right click on color rectangle allows to edit that color. Voice Group "C" button added. All the other pads in the same voice group get choked when this button is enabled.
+  - name: 1.1.0
+    releaseDate: 2022-05-06
+    description: Hard-Clipper high frequency gap fixed. Minor improvements and fixes.
+  - name: 1.0.8
+    releaseDate: 2022-04-30
+    description: Possible crash on windows with S (solo) button fixed. Reads bpm from the filename. Reads sample loop data if available.
+  - name: 1.0.7
+    releaseDate: 2022-04-26
+    description: Fade in/out in waveform-view. Right click in waveform-view allows to save truncated sample. Minor fixes.
+  - name: 1.0.4
+    releaseDate: 2022-04-24
+    description: Non Destructive sample truncate added. Set sample start and end. Right click on the waveform in the SAMPLE view -> Truncate. Lock single pads to keep them while changing presets, make chromatic or applying slices. Right click on pad -> Lock. Random gap problem fixed when assigning slices to pads.
+  - name: 1.0.3
+    releaseDate: 2022-04-21
+    description: A right click on a pad opens a dialog to assign the pad's sample to it's neighbour pads with chromatic pitch. Double click shows the whole waveform also in the slice view. Selected pad better visible (brighter border color). CTRL or SHIFT + Right-Arrow-Key in the file browser now loads the current selected sample or preset. Unnecessary sample loading in some cases fixed.
+  - name: 1.0.2
+    releaseDate: 2022-04-18
+    description: Possible crash while switching kits fixed.
+  - name: 1.0.1
+    releaseDate: 2022-04-18
+    description: Right arrow keyboard key in the sample browser plays/stops sample. Possible crash when navigating with arrow keys in file browser fixed.
+  - name: 0.9.95
+    releaseDate: 2022-04-11
+    description: Possible click fixed when hiss is enabled. Drag and drop multiple files from explorer/finder in pad view. Minor fixes.
+  - name: 0.9.94
+    releaseDate: 2022-04-07
+    description: Change pad colour when multiple pads are selected fixed. Amp AHDSR added to automation parameters. Automation parameters grouped. Minor fixes.
+  - name: 0.9.93
+    releaseDate: 2022-04-07
+    description: Preview not working fixed. Minor improvments.
+  - name: 0.9.92
+    releaseDate: 2022-04-06
+    description: Possible crash when closing plugin view fixed. The E button in the mix view now opens the sample editor.
+  - name: 0.9.91
+    releaseDate: 2022-04-05
+    description: Multi-select pads also in the mix view. Bpm range increased. Minor fixes.
+  - name: 0.9.86
+    releaseDate: 2022-04-04
+    description: New MIX overview improved. Ping Pong loop mode added. Minor fixes.
+  - name: 0.9.85
+    releaseDate: 2022-04-03
+    description: New MIX overview that shows all pads in a list for fast pad switching when in edit mode. Sample PREVIEW added. Replaces REPLACE sample feature. CTRL & drag snaps to zero crossings in the waveform view. Select multiple pads with the SHIFT key. It's now possible to hide the preset browser. Loading with relative path fixed when switching between different users or computers.
+  - name: 0.9.83
+    releaseDate: 2022-03-23
+    description: Possible crash in logic x fixed when opening a session and hit play.
+  - name: 0.9.82
+    releaseDate: 2022-03-23
+    description: Right click adds points to spline mode envelope. CTRL + click in the slice view adds a new slice. Auto slicing improved and fixed. Sidechain not working in cubase fixed. Pitch wheel not modulate sample start fixed.
+  - name: 0.9.81
+    releaseDate: 2022-03-22
+    description: Slice view simpified. A click now plays the slice and a right click into the slice opens the menu. Blocking UI while auto slice fixed. Auto preview stop fixed. Mapping duplication and copy pads switching off sample normalize setting fixed.
+  - name: 0.9.80
+    releaseDate: 2022-03-21
+    description: Side chain input for recording fixed. Increased slicing detector window range. Mouse wheel zoom while the curser is over a slice fixed. Clear affects all selected pads. Possible crash when stepping through presets fixed. Minor UI changes.
+  - name: 0.9.70
+    releaseDate: 2022-03-18
+    description: MONO button added for every mapping Multi pad selection now also populate the parameters of the selected mapping not only pad related parameters AHDSR attack of a few milliseconds fixed. Assign sequenced outputs to the first 16 pads added (click at the preset name -> Assign sequenced outputs).
+  - name: 0.9.60
+    releaseDate: 2022-03-16
+    description: Multi-selection of Pads with CTRL allows changing all pad parameters, text, and color for the selected Pads Multi-selection of Mappings inside the Pad with CTRL (replicates all changing parameters to the selected mappings does not affect spline editor and slicing) CTRL and click on Pad S (solo button on the bottom) disables all other solo pads Sample name lock added in the menu (this allows dragging pads around without moving the pad name) Always select pad 1 when switching 16/32 view Right-click closes the color dialog Remember Kit or Sample view when closing UI
+  - name: 0.9.45
+    releaseDate: 2022-03-11
+    description: macOS installer fixed (notarization did not work because of a new apple contract that we had to agree first :/ ).
+  - name: 0.9.45
+    releaseDate: 2022-03-11
+    description: Modulation source NOISE added. Modulation destinations amp ATTACK and DECAY added. Beats to BPM calculation (click at the BPM label to edit the number of beats the samples has to calculate the BPM's) MIDI key lock option (in menu -> click at the preset name on the top) Sync LFO is no also host synced. Write drag & drop MIDI to tmp folder fixed. Possible crash fixed. Minor improvements and fixes.
+  - name: 0.9.40
+    releaseDate: 2022-03-08
+    description: AAX does not show up fixed. Assign GM Drum names to pads (click at the preset name on the top -> Set GM Drum names) Keep sample preview volume when closing and reopen UI. Minor fixes.
+  - name: 0.9.32
+    releaseDate: 2022-03-07
+    description: Public beta release
 releaseDate: 2022-04-13
 videos:
   - videoId: u6dmaqmtWJE
@@ -85,3 +302,17 @@ videos:
   - videoId: D905Kq4ICHc
     provider: youtube
     title: Andi Vax TAL-DRUM - All Kits Bundle III
+  - provider: youtube
+    videoId: LTt3sjsPrDE
+  - provider: youtube
+    videoId: YhP7cSAOtzg
+  - provider: youtube
+    videoId: vU-xNqkyXyo
+  - provider: youtube
+    videoId: Cs1ml3towVQ
+  - provider: youtube
+    videoId: mld7eROlDl0
+  - provider: youtube
+    videoId: lkyikxhHj8g
+  - provider: youtube
+    videoId: pGR1pR06m8U

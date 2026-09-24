@@ -19,21 +19,90 @@ url: https://tal-software.com/products/tal-dac
 prices:
   - amount: 19
     currency: USD
-description: TAL-DAC brings back the character and sound of 80's samplers and lo-fi devices in one effect plug-in. It emulates the unique sound of vintage digital-to-analog converters, faithfully reproducing the subtle imperfections, harmonics, and nonlinearities that give digital audio a vintage vibe and character.
+description: TAL-DAC brings back the character and sound of the 80's samplers and Lo-Fi devices in one effect plug-in. You can use it for subtle sound changes but also extreme effects.
+details: |-
+  TAL-DAC brings back the character and sound of the 80's samplers and Lo-Fi devices in one effect plug-in. You can use it for subtle sound changes but also extreme effects.
+
+  TAL-DAC emulates the unique sound of vintage digital-to-analog converters, known for their distinct sonic characteristics. These converters were integral to the sound of early digital samplers, adding warmth and color to digital recordings. TAL-DAC faithfully reproduces the subtle imperfections, harmonics, and nonlinearities that give digital audio a vintage vibe and character.
+
+  The change log records how the processing grew. Version 2.0.0 increased the sample-rate range to 500 to 48000 Hz, increased the jitter range by a factor of ten, added a dither feature for bit reduction and made values editable, while staying backward compatible with previous versions. Version 1.2.0 moved jitter to the recording stage as in TAL-Sampler and added optional oversampling, and a Recording ADC Quality parameter arrived in 1.1.7. Earlier beta entries name a shelf filter with an on / off switch, a dry / wet control and a stereo jitter mode.
+
+  The current download is version 2.0.3, released on 16.08.2023, offered as a Windows installer, a macOS installer, a Linux x64 archive covering VST2 and VST3, and a PDF user manual. Plug-in formats listed on the page are VST, VST3, AU, AAX and CLAP. Older builds stay available under Old Downloads: v2.0.3 with Windows 7 support, v1.5.1 for the old serial key, and v1.1.7 including 32 bit support.
+
+  Requirements are Windows 7 or higher (64 bit host), macOS 10.9 or higher (64 bit host) as a Universal Binary 2 with native Intel and Apple silicon support for M1, M2, M3 and later, Pro Tools 10.3.6 or higher (64 bit) for AAX, and 64 bit Linux on Ubuntu 18 or similar. The plug-in is free for TAL-Sampler owners, who activate it with their TAL-Sampler serial. The demo version produces a rising white noise sound every minute.
 specs: |-
-  - systemRequirements: Windows 7+ (64-bit), macOS 10.9+ (Universal Binary 2), Pro Tools 10.3.6+ (64-bit), Linux Ubuntu 18+ (64-bit)
+  - Emulation of vintage digital-to-analog converters from 80's samplers and Lo-Fi devices
+  - Reproduces the imperfections, harmonics and nonlinearities of early digital converters
+  - Sample-Rate range 500 - 48000 Hz (increased in version 2.0.0)
+  - Jitter range increased by factor x10 (version 2.0.0)
+  - Jitter applied at the recording stage, as in TAL-Sampler (version 1.2.0)
+  - Stereo jitter mode
+  - Dither feature for bit reduction (version 2.0.0)
+  - Recording ADC Quality parameter (version 1.1.7)
+  - Optional oversampling (version 1.2.0)
+  - Shelf filter with on / off switch
+  - Dry / wet control
+  - Editable values (version 2.0.0)
+  - Preset browser (reworked in version 2.0.3)
+  - Undo / Redo (version 1.5.0)
+  - MIDI automation
+  - Backward compatible with previous versions
+  - Plug-in formats: VST, VST3, AU, AAX, CLAP
+  - Windows: Windows 7 or higher (64 bit host)
+  - macOS: 10.9 or higher (64 bit host), Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3...)
+  - AAX: Pro Tools 10.3.6 or higher (64 bit)
+  - Linux: 64 bit / Ubuntu 18 or similar
+  - Free for TAL-Sampler owners, activated with the TAL-Sampler serial
+  - Demo restriction: the plug-in produces a rising white noise sound every minute
 versions:
   - name: 2.0.3
     releaseDate: 2023-08-16
+    description: New preset browser. Minor fixes.
   - name: 2.0.2
     releaseDate: 2023-01-12
+    description: AAX native M1 support. Base framework updated (JUCE 7). Minor fixes.
   - name: 2.0.1
     releaseDate: 2022-07-02
+    description: CLAP plugin format added. Possible silence for 200 ms when hosts set plugin state fixed.
   - name: 2.0.0
     releaseDate: 2022-06-09
+    description: Sample-Rate range increased (500 - 48000 Hz). Jitter range increased by factor x10. Dither feature for bit reduction added. Editable values and UI refresh. Backward compatible to previous versions. Minor fixes. Free update for all TAL-DAC and TAL-Sampler owners.
   - name: 1.6.2
     releaseDate: 2021-07-27
+    description: Improved preset browser / fixes.
   - name: 1.6.1
     releaseDate: 2021-07-15
+    description: Improved preset browser.
   - name: 1.6.0
     releaseDate: 2021-06-07
+    description: New serial protection.
+  - name: 1.5.1
+    releaseDate: 2021-04-30
+    description: MIDI automation fixed. Unwanted volume fade-in when start playing in DAW with VST2 plug-in fixed.
+  - name: 1.5.0
+    releaseDate: 2021-04-29
+    description: UI updated. Fade out while changing presets. New preset browser. Updated presets. Undo / Redo added.
+  - name: 1.4.0
+    description: Native Apple M1 support. VST3 installer for Windows. Linux VST3 support. Linux dot folder for settings and factory presets. Minor bug fixes.
+  - name: 1.3.1
+    description: Modes do not work as expected fixed. Audio drop outs through invalid calculations fixed.
+  - name: 1.2.2
+    description: Shelf EQ does not restore value after loading session under some conditions.
+  - name: 1.2.1
+    description: Compatibility with older OS X versions fixed (OS X only). Optimised build (OS X only).
+  - name: 1.2.0
+    description: Jitter improved (jitter moved to the recording stage like in TAL-Sampler). Optional oversampling added. Small UI changes. Base framework updated. Notarized installer for OS X.
+  - name: 1.1.7
+    description: Recording ADC Quality parameter added. Up-sampling not working in some cases fixed.
+  - name: 1.1.6
+    description: Bug fixes.
+  - name: 1.1.5
+    description: Combo box values issue fixed.
+  - name: 1.1.4
+    description: Bug fixes / VST3 support.
+  - name: 1.0.4
+    description: Bug fixes.
+  - name: 1.0.1 beta
+    description: Reset sample rate value when bypass / reset in some hosts fixed.
+  - name: 0.8.4 beta
+    description: Shelf filter On / Off switch added. Shelf filters improved (transition from peak to shelf filters), a breaking change requiring readjustment. Phase issues with Dry / Wet knob fixed. Stereo Jitter mode added.

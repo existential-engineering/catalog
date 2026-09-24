@@ -7,6 +7,7 @@ categories:
   - plugin
 formats:
   - vst
+  - vst2
   - vst3
   - au
   - aax
@@ -19,9 +20,72 @@ url: https://tal-software.com/products/tal-reverb-4
 prices:
   - amount: 0
     currency: USD
-description: TAL-Reverb-4 is a high quality plate reverb with a vintage 80's character. Features modulated vintage reverb sound, very diffuse sound, fast build up time even with long reverb sounds, DAMP control for smooth reverb tails, bit depth and sample rate control, and pitch shifter tuning.
+description: TAL-Reverb-4 is a high quality plate reverb with a vintage 80's character. It is a free stereo-only plug-in with a modulated, very diffuse reverb sound and a fast build up time.
+details: |-
+  TAL-Reverb-4 is Togu Audio Line's free plate reverb plug-in, described on its product page as "a high quality plate reverb with a vintage 80's character". The page positions it as a modulated vintage reverb with a very diffuse sound and a fast build up time that holds up even with long reverb tails, and states it works on almost every audio material while being easy to use.
+
+  The plug-in processes stereo channels only, which the product page calls out in bold among its feature bullets. Later versions added a stereo / mono amount control, a ducking mode, a harmonic engine and a peak EQ for mid frequencies, alongside a DAMP control for smooth reverb tails and bit depth and sample rate controls for lo-fi colouration.
+
+  It is distributed as VST, VST3, AU, AAX and CLAP, with installers for Windows, macOS and Linux linked directly from the product page. The macOS build is a Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3 and later), and the Linux package covers x64 in both VST2 and VST3 form.
+
+  Version 4.0.4, released 16 August 2023, is the current release and introduced a new preset browser plus minor fixes. The 4.0.x line followed the 4.0.2 overhaul of November 2022, which improved reverb quality and the pitch shifter used for tune, added the DAMP control and bit depth and sample rate controls, and shipped a new UI and updated presets.
+
+  TAL-Reverb-4 is listed under "FREE Plug-Ins" on the TAL products index and its page carries no price or purchase control. Older releases (v2.3.0 and v2.2.6) remain downloadable from an "Old downloads" tab, which also hosts the separate earlier TAL-Reverb-2 and TAL-Reverb-3 plug-ins.
 specs: |-
-  - systemRequirements: Windows 7+ (64-bit), macOS 10.9+ (Universal Binary 2), Pro Tools 10.3.6+ (64-bit), Linux Ubuntu 18+ (64-bit)
+  - Modulated vintage reverb sound
+  - Very diffuse sound
+  - Fast build up time, also with long reverb sounds
+  - Works on almost every audio material
+  - Easy to use
+  - Only stereo channels supported
+  - Stereo / mono amount control
+  - Ducking mode
+  - Harmonic engine
+  - Peak EQ for mid frequencies
+  - DAMP control for smooth reverb tails
+  - Bit depth and sample rate control
+  - Preset browser
+  - Resizable plug-in UI
+  - Windows: Windows 7 or higher (64 bit host)
+  - macOS: 10.9 or higher (64 bit host), Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3...)
+  - AAX: Pro Tools 10.3.6 or higher (64 bit)
+  - Linux: 64 bit / Ubuntu 18 or similar
+versions:
+  - name: 4.0.4
+    releaseDate: 2023-08-16
+    description: New preset browser. Minor fixes.
+  - name: 4.0.3
+    releaseDate: 2023-01-12
+    description: AAX native M1 support. Base framework updated (JUCE 7). Minor fixes.
+  - name: 4.0.2
+    releaseDate: 2022-11-21
+    description: Improved reverb quality. Improved pitch shifter quality for tune. DAMP control added for smooth reverb tails. Bit depth and sample rate control. New UI. New and updated presets.
+  - name: 3.0.1
+    releaseDate: 2022-05-19
+    description: Pro Tools AAX compatibility fix.
+  - name: 3.0.0
+    releaseDate: 2022-05-16
+    description: Stereo / mono amount added. Ducking mode added. Harmonic engine added. Peak EQ for mid frequencies added. Minor fixes and enhancements.
+  - name: 2.3.0
+    description: Native apple M1 support. Minor bug fixes. VST3 installer for windows. Linux VST3 support. Linux dot folder for settings and factory presets.
+  - name: 2.2.3
+    description: VST Channel configuration issue fixed.
+  - name: 2.2.2
+    description: Modulation settings change when saving and reloading preset fixed (AAX).
+  - name: 2.2.1
+    description: Compatibility with older OSX versions fixed (OSX only). Optimised build (OSX only).
+  - name: 2.2.0
+    description: UI updated. Plug-in resize feature added.
+  - name: 2.1.0
+    description: Improved more stable and smoother sound while modulated. Notarized installer for OSX. Small bugfixes. Framework update.
+  - name: 2.0.0 beta
+    description: More options and improved sound.
+  - name: 1.3.1
+    description: Backward compatibility to OSX 10.7, 10.8, 10.9 restored.
+  - name: 1.2.1
+    description: Possible AAX crash fixed.
+  - name: 1.2.0
+    description: Framework update. Fixes UI performance issues on some OSX hosts with VST.
 videos:
   - videoId: 27tJgiDYcXQ
     provider: youtube
