@@ -4,6 +4,7 @@ manufacturer: tritik
 primaryCategory: creative
 categories:
   - effect
+  - discontinued
 formats:
   - vst
   - vst3
@@ -13,10 +14,55 @@ platforms:
   - mac
   - windows
 url: https://www.tritik.com/product/krush/
-description: "A free bitcrusher plugin combining bit crushing and downsampling
-  with a drive stage and analog-modeled resonant filters. Offers the crispy
-  taste of the digital realm with warmth through modulation capabilities."
+description: A free bitcrusher plugin combining bit crushing and downsampling with a drive stage and analog-modeled resonant filters. Offers the crispy taste of the digital realm with warmth through modulation capabilities.
 details: |-
   Bit depth reduction. Sample rate reduction. Crunchy drive stage. Analog-modeled low-pass and high-pass filters. Modulation section (free or tempo-synced). 4 modulation waveforms. Fully resizable interface. File-based preset system. Multi-language support (English, French, Portuguese, Spanish).
 specs: |-
   Version 1.3.0. macOS 10.9 or later. Windows 10 or later.
+versions:
+  - name: 1.3.0
+    releaseDate: 2024-05-07
+    description: "added: 'Dice Roll' for random parameter adjustments. tweak: disable filter modulation knobs when the filter is off."
+  - name: 1.2.5
+    releaseDate: 2023-03-27
+    description: "added: AAX Apple Silicon support. (mac, aax) Stability improvement. Minor ui tweaks."
+  - name: 1.2.4
+    releaseDate: 2022-09-14
+    description: "fixed: Sessions not always correctly recalled in certain hosts (notably Ableton Live). (vst3) fixed: Presets names sometimes marked as modified when they should not."
+  - name: 1.2.3
+    releaseDate: 2022-06-10
+    description: "fixed: Performance downgrade in v1.2.2. (mac)"
+  - name: 1.2.2
+    releaseDate: 2022-03-25
+    description: "fixed: Channels layout issue in certain hosts (notably Bitwig and FL studio). (vst3)"
+  - name: 1.2.1
+    releaseDate: 2022-02-08
+    description: "fixed: LFO sync not working while host playhead is stopped."
+  - name: 1.2.0
+    releaseDate: 2021-11-04
+    description: "added: VST3 format. added: Native Apple Silicon Support (M1 ARM Chip). fixed: Potential crash or audio burst when switching filters. fixed: Copy/paste menu not opening when right-clicking the preset name. improved: Minor changes in the graphical user interface."
+  - name: 1.1.4
+    releaseDate: 2019-05-06
+    description: "fixed: Validation failing on certain systems. (aax) fixed: Old sessions not correctly recalled in certain hosts (notably live and cubase). (vst) improved: Resizing behaviour. (vst)"
+  - name: 1.1.3
+    releaseDate: 2018-12-04
+    description: "fixed: Plugin state not correctly recalled in certain hosts (notably live and cubase). (vst)"
+  - name: 1.1.2
+    releaseDate: 2018-10-24
+    description: "fixed/improved: Overall stability. added: 30 extra presets."
+  - name: 1.1.1
+    releaseDate: 2017-10-17
+    description: "fixed: Wet/dry parameters not correctly recalled when linked. fixed: Automation of certain parameters not working in FL studio. fixed: Presets not listed in alphabetical order (macOS 10.13). tweak: Knobs do not follow horizontal mouse movements anymore (but only vertical ones). tweak: When resizing the UI, save last size as default UI size. tweak: A few UI improvements (smoother resizing; widgets animation...)."
+  - name: 1.1.0
+    releaseDate: 2016-10-18
+    description: "added: Undo/Redo. added: A-B states switch. added: MIDI learn support. added: MIDI program change support. Several User Interface improvements."
+  - name: 1.0.3
+    releaseDate: 2016-03-28
+    description: "fixed: Anormal signal distorsion for buffer sizes smaller than 256."
+  - name: 1.0.2
+    releaseDate: 2016-03-17
+    description: "fixed: Frozen GUI on update checking. fixed: LFO sync not following tempo changes (v1.0.1)."
+  - name: 1.0.0
+    releaseDate: 2016-03-13
+    description: First public release.
+releaseDate: 2016-03-13

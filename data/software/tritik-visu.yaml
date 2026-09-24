@@ -11,11 +11,43 @@ platforms:
   - mac
   - windows
 url: https://www.tritik.com/product/visu/
-description: "A real-time spectrogram plugin for audio analysis and
-  visualization that displays how frequency content changes over time. Features
-  classic and enhanced modes using time-frequency reassignment for sharper
-  transients and clearer pitches."
+description: Visu is a real-time spectrogram plugin with classic and enhanced modes. Fully functional free in black and white, with optional colour maps.
 details: |-
-  Classic and enhanced spectrogram modes. Freeze and PNG export capabilities. HiDPI support. Multiple frequency scales (Linear, Log, Mel, Bark, ERB). Optional piano keyboard overlay. Auto Pause sync to host playhead. Customizable frequency range and FFT size. Scroll or static draw modes. 40+ color maps (color-blind friendly). Free version available in black and white only.
+  Visu is a real-time spectrogram plugin for audio analysis and visualisation. A spectrogram displays how the frequency content of a signal changes over time, with amplitude represented by colour. Think of it as an audio X-ray, useful for spotting transients, analyzing pitch and harmonics, detecting unwanted noise, and tracking how a sound evolves.
+
+  Alongside a classic spectrogram mode, Visu includes an enhanced mode with greater precision in both time and frequency. It uses time-frequency reassignment (a technique that relocates energy to its most accurate position using phase information) resulting in sharper transients, clearer pitches, and a more detailed image.
+
+  Visu is fully functional in black-and-white (no licence needed). You can try it without restrictions and see how it works for you. If you find it useful, you can get a licence to unlock colour maps.
 specs: |-
-  Version 1.2.0. macOS 10.15 or later (Intel and ARM). Windows 10/11.
+  - Classic and Enhanced spectrogram modes
+  - Freeze and PNG export
+  - HiDPI support
+  - Linear, Log, Mel, Bark, and ERB frequency scales
+  - Optional piano keyboard on the frequency ruler
+  - Auto Pause function (sync to host playhead)
+  - Customizable frequency range
+  - Adjustable FFT size
+  - Scroll or Static draw modes
+  - Speed control
+  - Frequency readout
+  - Completely usable free version (black & white)
+  - 40+ colour maps (colour-blind friendly)
+  - Windows 10/11, and a VST3 host or Pro Tools
+  - macOS 10.15 or later (Intel and ARM), and an Audio Units host, VST3 host, or Pro Tools
+versions:
+  - name: 1.2.1
+    releaseDate: 2026-04-21
+    description: Added "Set Preset as Default" menu option. Fixed latency increase introduced in v1.2.0. Fixed resizing limitations on external displays. Improved spectrogram accuracy. Stability improvements.
+  - name: 1.2.0
+    releaseDate: 2025-11-09
+    description: Added Mel, Bark, and ERB frequency scales. Added option to display a piano keyboard on the frequency ruler. Added Auto Pause mode (pauses display according to the DAW playhead). Middle note now adapts to the DAW's C3/C4 convention. Improved scrolling smoothness. Fixed plugin view not being correctly saved or recalled in some cases.
+  - name: 1.1.0
+    releaseDate: 2025-08-06
+    description: Added speed control. Added min and max frequency controls. Added burger menu with presets save/recall options. Added frequency ruler. Added ceiling control. Added bottom-left frequency readout. Added a right-click menu for quick access to actions. Moved the manual to the new burger menu.
+  - name: 1.0.1
+    releaseDate: 2025-06-25
+    description: (Windows) Fixed a potential crash in Ableton Live. Fixed a potential crash when moving Visu between different displays. Fixed freq popup sometimes appearing off-screen. Fixed wrong plugin size in some cases.
+  - name: 1.0.0
+    releaseDate: 2025-06-16
+    description: First public release.
+releaseDate: 2025-06-16
