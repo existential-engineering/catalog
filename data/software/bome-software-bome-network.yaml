@@ -17,30 +17,33 @@ description: Bome Network is a versatile solution for creating reliable and
   Windows, Linux, Raspberry Pi, and iOS, it makes it easy to connect computers,
   mobile devices, and MIDI hardware across your network.
 details: |-
-  Bome Network is a versatile solution for creating reliable and low-latency MIDI connections over Ethernet or Wi-Fi. Available for macOS, Windows, Linux, Raspberry Pi, and iOS, it makes it easy to connect computers, mobile devices, and MIDI hardware across your network.
+  Bome Network is Bome Software's network-MIDI application, a standalone utility for carrying MIDI over Ethernet or Wi-Fi with low latency. The page positions it as a way to connect computers, mobile devices and MIDI hardware across a local network, and states that all Bome Network connections are persistent and reconnect automatically after a restart.
 
-  Its integrated MIDI Router gives you complete control over how MIDI data is routed between devices. All Bome Network connections are persistent, automatically reconnecting after a restart.
+  An integrated MIDI Router sits at the centre of the application and gives complete control over how MIDI data is routed between devices. Version 1.7.0 adds management of MIDI ports and port aliases, the ability to expose individual MIDI ports on the network as Direct MIDI ports, and export/import of settings.
 
-  Bome Network makes it easy to connect your computer to one or more BomeBoxes over Ethernet or Wi-Fi. Any MIDI application on your computer can send MIDI data to a BomeBox and receive MIDI from it. You can also access MIDI devices connected to the BomeBox directly using Remote Direct MIDI, forwarding selected devices, or all of them, over the network. For even greater convenience, clicking the world icon opens the BomeBox web configuration interface for the selected device.
+  The standard application's headline use case is pairing a computer with one or more BomeBoxes over Ethernet or Wi-Fi. Any MIDI application on the computer can send MIDI to a BomeBox and receive MIDI back, and Remote Direct MIDI forwards selected MIDI devices attached to the BomeBox (or all of them) over the network. Clicking the world icon opens the BomeBox web configuration interface for the selected device.
 
-  Add-ons extend the base application. Bome MIDI Translator BN runs Bome MIDI Translator Pro project files directly in Bome Network, integrating translations and mappings with both local and network MIDI ports and devices; creating and editing translation projects still requires Bome MIDI Translator Pro. The Unlimited Named MIDI Ports add-on lets you create as many custom virtual MIDI ports as you need, available in both the Bome Network MIDI Router and any other MIDI application on your computer, and exposable on the network as Direct MIDI ports.
+  Three paid add-ons extend the free application rather than replacing it. Bome Network Pro unlocks computer-to-computer network MIDI (Macs, PCs, iPhones and iPads) with automatic discovery and Remote Direct MIDI to remote virtual ports and physical devices. Bome MIDI Translator BN runs Bome MIDI Translator Pro project files inside Bome Network, including on Linux, Raspberry Pi, iPhone and iPad, though creating and editing projects still requires MIDI Translator Pro. Unlimited Named MIDI Ports allows arbitrary custom virtual MIDI ports usable in the Bome Network MIDI Router and in any other MIDI application.
 
-  Compatibility: Bome Network runs on all Apple computers running one of the specified versions of macOS, and on all PCs running one of the specified 64-bit versions of Windows. The virtual MIDI ports are not compatible with Windows on Arm (yet). For older computers, Bome provides a download archive with previous versions.
+  Builds are published for Windows 10 and 11 (64-bit), macOS 10.13 through 26, iOS and iPadOS 15 through 26 via the App Store, Linux 64-bit, and Raspberry Pi in 32-bit and 64-bit variants. Bome notes that the Windows virtual MIDI ports are not yet compatible with Windows on Arm, and that older machines are served by the download archive.
 specs: |-
-  - Low-latency MIDI over Ethernet or Wi-Fi
-  - Network MIDI 2.0 protocol (using MIDI 1.0)
-  - Integrated MIDI Router for routing MIDI data between devices
+  - Network MIDI over Ethernet or Wi-Fi, described as reliable and low-latency
+  - Integrated MIDI Router for routing MIDI data between local and network devices
   - Persistent connections that automatically reconnect after a restart
-  - Remote Direct MIDI: access MIDI devices connected to a BomeBox over the network
-  - Expose individual MIDI ports on the network as Direct MIDI ports
-  - Manage MIDI ports and port aliases
-  - Export/import settings
-  - Configurable window scaling (text size/zoom)
-  - Windows 10, 11 (native 64-bit application)
-  - macOS 10.13 - 26
-  - iOS + iPadOS 15 - 26
-  - Raspberry Pi 32-bit and 64-bit
-  - Virtual MIDI ports are not compatible with Windows on Arm
+  - Remote Direct MIDI: forward selected or all MIDI devices attached to a BomeBox over the network
+  - Opens the BomeBox web configuration interface for the selected device from the world icon
+  - Network MIDI 2.0 protocol support (using MIDI 1.0), added in 1.7.0
+  - Individual MIDI ports can be exposed on the network as Direct MIDI ports (1.7.0)
+  - MIDI port and port alias management, plus export/import of settings (1.7.0)
+  - In-app alerts and error messages instead of pop-up dialogs, configurable window scaling (text size/zoom), adjustable log text size (1.7.0)
+  - Windows build is a native 64-bit application as of 1.7.0
+  - Runs as a tray/menu-bar application: B icon in the macOS top menu bar, green B icon in the Windows tray
+  - Works over Windows Remote Desktop (MSTSC/RDP) when remote audio is set to Play on Remote Computer
+  - Windows virtual MIDI ports are not yet compatible with Windows on Arm
+  - System requirements 1.7.0: Windows 10/11 (64-bit), macOS 10.13 - 26, iOS + iPadOS 15 - 26, Linux 64-bit, Raspberry Pi 32-bit and 64-bit
+  - Optional add-on Bome Network Pro: computer-to-computer network MIDI between Macs, PCs, iPhones and iPads with automatic discovery
+  - Optional add-on Bome MIDI Translator BN: runs MIDI Translator Pro project files inside Bome Network on macOS, Windows, Linux, Raspberry Pi, iPhone and iPad
+  - Optional add-on Unlimited Named MIDI Ports: unlimited custom virtual MIDI ports, usable in the MIDI Router and other MIDI applications, and exposable on the network
 versions:
   - name: 1.7.0
     releaseDate: 2026-08-01

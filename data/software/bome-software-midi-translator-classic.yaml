@@ -17,15 +17,28 @@ description: Bome MIDI Translator Classic is the smaller sister of MIDI
   Translator Pro. It has the same powerful MIDI processing engine, but can only
   convert MIDI messages to other MIDI messages, or to keystrokes.
 details: |-
-  Bome MIDI Translator Classic is the smaller sister of MIDI Translator Pro. It has the same powerful MIDI processing engine, but can only convert MIDI messages to other MIDI messages, or to keystrokes. Also, the rules and conditional MIDI translation are not available with the Classic Edition.
+  MIDI Translator Classic is the reduced edition of Bome's MIDI Translator family, sharing the same MIDI processing engine as MIDI Translator Pro while limiting what that engine is allowed to do. It converts incoming MIDI messages into other MIDI messages or into keystrokes, which covers the common case of driving a piece of software that has keyboard shortcuts but no MIDI learn from a hardware controller.
 
-  The Classic Edition is only available for Windows and it will not evolve anymore. It is free for personal use, except that it displays a nag screen at start-up.
+  The feature line between Classic and Pro is drawn at rules and conditional translation: those are not available in the Classic Edition. Bome's own comparison page places Classic without scripting, rules and conditional execution, without timers, without mouse emulation, serial port actions or the MIDI Router, and without the ability to open signed .bmtp or encrypted .bmte project files. Users who need those are pointed at MIDI Translator Pro, which adds keystroke-to-MIDI translation along with timers and rules for manipulating data and events.
 
-  Bome MIDI Translator Classic provides an easy to use interface for defining your translator definitions. It covers MIDI-to-MIDI conversion and MIDI-to-keystroke mapping, lets you organize mappings in presets, create your own presets, and exchange presets with other MIDI Translator users.
+  The application presents an editor for building translator definitions, where each translator pairs an incoming action with an outgoing action. Definitions are organised into presets, users can create their own presets, and presets can be exchanged with other MIDI Translator users, so a mapping worked out for a particular controller and application can be passed around rather than rebuilt.
 
-  Compared with the Pro edition, Classic handles incoming MIDI messages and outgoing MIDI messages, keystroke emulation, preset switching and preset enabling, with unlimited translators per preset and unlimited presets per project. Keystroke-to-MIDI, mouse emulation, timers, serial port actions, virtual MIDI ports, the MIDI Router and scripting, rules and conditional execution are Pro features.
+  Distribution is Windows-only and frozen. The current build is version 1.6.1, offered as a direct download from Bome, and the product page states that the Classic Edition will not evolve anymore. Bome's comparison table lists Classic at 1.6.1 on Windows alongside Pro at 1.9 on Windows, macOS and Linux, confirming that the Classic branch has stopped receiving the platform and feature work that continues on Pro.
 
-  If you are a commercial user, or if you want to remove the nag screen at start-up, you are asked to purchase a license. The commercial license is EUR 29 including VAT, and the current download is version 1.6.1 for Windows.
+  Licensing is free for personal use, with the free build showing a nag screen at start-up. Commercial users, and personal users who want the nag screen removed, are asked to buy a licence at EUR 29 including VAT, a figure Bome's comparison page repeats as the Classic commercial licence price against EUR 59 for Pro.
+specs: |-
+  - MIDI-to-MIDI conversion
+  - MIDI-to-keystroke mapping
+  - Translator definitions organised in presets
+  - Create your own presets
+  - Exchange presets with other MIDI Translator users
+  - Same MIDI processing engine as MIDI Translator Pro
+  - No rules, scripting or conditional MIDI translation (Pro only)
+  - No timers, mouse emulation, serial port actions or MIDI Router (Pro only)
+  - Opens regular .bmtp project files; signed .bmtp and encrypted .bmte files are Pro only
+  - Windows only; version 1.6.1 is the final build, the Classic Edition will not evolve anymore
+  - Free for personal use, displays a nag screen at start-up
+  - Commercial licence removes the start-up nag screen
 versions:
   - name: 1.6.1
 links:

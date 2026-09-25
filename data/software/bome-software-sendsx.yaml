@@ -14,13 +14,37 @@ description: This powerful utility for Windows creates small Sys Ex messages and
   can easily test small Sys Ex requests, since the reply as well as all other
   events from the MIDI device are displayed.
 details: |-
-  This powerful utility for Windows creates small Sys Ex messages and can send them to any MIDI device. It's also a great little MIDI monitor, and can easily test small Sys Ex requests, since the reply as well as all other events from the MIDI device are displayed.
+  Send SX is Bome's small Windows utility for working with MIDI System Exclusive data by hand. The user types or pastes the bytes of a Sys Ex message into an outgoing box and sends them to any MIDI device on the system, which covers the everyday cases of poking a synth with a parameter change or firing off a device-specific request without needing a dedicated editor for that instrument.
 
-  Additional features include loading and saving of Sys Ex files, so you can archive bulk dumps from your MIDI device and send them later back to the device.
+  It doubles as a MIDI monitor. Everything the selected MIDI input receives is displayed, so a Sys Ex request can be tested by sending it and reading the device's reply in the same window, and ordinary MIDI events coming from the device are shown alongside the Sys Ex traffic. An option restricts the display to Sys Ex only when the rest of the stream is noise, and a separate MIDI thru setting works independently of that filter.
 
-  The current download is version 1.4 (February 2019) for Windows. An older build, Bome SendSX 1.1 (June 1999), is also offered for 16-bit Windows 3.11.
+  Sys Ex files can be loaded and saved, which is how the program is used for bulk dumps: capture a device's dump to a file, keep it as an archive, and send it back to the device later. MIDI files can be loaded as well. The display is built for large data, with file size limited only by available memory, a high-performance view for the Sys Ex boxes, a progress readout with transfer rate during sending and receiving, and a most-recently-used file list.
 
-  Version 1.4 changed the default font to Courier New, added the ability to disable throttling and send data "as is" for full messages, added an option to disable chunking in 128-byte chunks when sending, and added a "/send" command line parameter that sends the outgoing data.
+  Transmission behaviour is adjustable for devices that cannot keep up. Send delay is configurable, send speed is set in bytes per second, only a selected portion of the data can be sent, and since version 1.4 both the throttling and the splitting of transfers into 128-byte chunks can be switched off so that full messages go out as is. A "/send" command line parameter sends the outgoing data, which allows the program to be driven from a script or a shortcut.
+
+  The application has a long release history stretching back to a 16-bit build for Windows 3.11 in June 1999, through 1.20 and 1.21 in 2001, 1.22 in January 2005, a 1.3 beta, and the current 1.4 from February 2019. Both the current 1.4 installer and the old 16-bit 1.1 archive are offered as direct downloads from Bome. The page states no price and no licence terms.
+specs: |-
+  - Create and send arbitrary Sys Ex messages to any MIDI device
+  - MIDI monitor: displays replies and all other incoming events from the MIDI device
+  - Load and save Sys Ex files for archiving and restoring bulk dumps
+  - Loading of MIDI files
+  - Option to receive Sys Ex only
+  - MIDI thru independent of the "only sys ex" setting
+  - Auto-detect new and removed MIDI devices
+  - Configurable send delay
+  - Send speed selectable in bytes per second
+  - Option to disable 128-byte chunking and throttling, sending full messages as is
+  - Send only a selected portion of the data
+  - Progress display with transfer rate during send and receive
+  - Action and activity logs
+  - Split status bar for MIDI IN and MIDI OUT messages
+  - File size limited only by available memory, with fast loading of large files
+  - Choice of font and font size, Courier New by default
+  - Comments (//, ;, #) allowed in the MIDI Out box
+  - Context menus with copy and paste for the data boxes
+  - Most recently used file list, and opening a file passed as a parameter
+  - Command line parameter "/send" sends the outgoing data
+  - Option to allow only one instance
 versions:
   - name: "1.4"
     releaseDate: 2019-02
