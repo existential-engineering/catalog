@@ -13,11 +13,101 @@ platforms:
   - mac
   - windows
 url: https://www.tritik.com/product/tkdelay/
-description: "A versatile delay plugin featuring independent left/right delay
-  times, feedback, and time modulations to create wide and animated delays.
-  Includes a frequency shifter in the feedback path, warm drive with analog
-  modeling, reverse module, and filter modulations."
+prices:
+  - amount: 49
+    currency: EUR
+    asOf: 2026-09-26
+    source: official-website
+description: TkDelay is a creative delay plugin featuring a stereo frequency shifter, a reverse delay mode, overdrive, analog filters, ducking function and more. From classic delays to experimental sounds, it is a versatile delay with independent left and right delay times, feedback and modulation.
 details: |-
-  Host-synced and free delay times (per channel). Tap-tempo functionality. Overdrive and ducking controls. Frequency shifter in feedback path. Reverse module for blended echoes. Resonant filters (low-pass, high-pass, band-pass). Filter modulations with free or synced LFO. MIDI-learn capability. Fully resizable interface. Preset browser with safe-recall freezer. Dark/bright UI themes. Multi-language support (English, French, Spanish, Portuguese).
+  From classic delays to experimental sounds, TkDelay is a versatile delay plugin with a bunch of functionalities that makes it unique.
+
+  Independent left/right delay times, feedback, and time modulations create wide and animated delays. A frequency shifter sits within the feedback path for subtle modulations or out of this world echoes, alongside a warm drive and analog modeled filtering stage.
+
+  A reverse module blends in reversed echoes, and the filters can be modulated with a free or host-synced LFO, placed either inside or outside the feedback loop.
+
+  TkDelay also includes useful features such as tap-tempo, ducking, a presets manager, left-right channel 'linkers', parameters safe-recall and dark/bright UI themes.
+
+  The interface is fully resizable, with fast access to synced times through menus, synced delay times displayed as notes or ratios, interactive MIDI-learn, and tooltips and preferences in English, French, Spanish and Portuguese. The preset system is file based, accessible through the menu or a browser, with a presets 'freezer' for safe recall and copy/paste of the current state via the system clipboard.
+
+  The demo is fully functional, but the audio output is muted occasionally until a license is purchased.
 specs: |-
-  Version 1.5.0. macOS 10.9 or later. Windows 7 or later. Demo available with periodic muted output.
+  - Host-synced and free delay times (per channel)
+  - Delay times modulation (per channel)
+  - Feedback gains with infinite loop support (per channel)
+  - Frequency shifter (per channel)
+  - Reverse mode
+  - Ping-pong via cross-feedback control
+  - Tap-tempo
+  - Overdrive
+  - Ducking
+  - Wet/Dry and output gain controls
+  - Phase inversion
+  - Resonant low-pass, resonant hi-pass and band-pass filters
+  - Highpass + lowpass filter combination
+  - Filter frequency modulation with free or host-synced rate
+  - Filters placeable inside or outside the feedback loop
+  - Filter bypass switch
+  - Fully resizable interface
+  - Fast access to synced times through menus
+  - Synced delay times displayed as notes or ratios
+  - Interactive MIDI-learn
+  - Left-Right parameter links
+  - Tooltips and preferences in English, French, Spanish, Portuguese
+  - File based preset system, accessible through menu or browser
+  - Presets 'freezer' for safe recall
+  - Copy/paste current state using the system clipboard
+  - Requirements: Windows 7 or later, macOS 10.9 or later
+  - Current version 1.5.0
+  - Native Apple Silicon support (since 1.5.0)
+versions:
+  - name: 1.5.0
+    description: Added VST3 format and native Apple Silicon support. Stability improvements, better user interface scaling and minor UI tweaks.
+  - name: 1.4.6
+    description: Fixed AAX validation failing on certain systems and old VST sessions not correctly recalled in certain hosts (notably Live and Cubase). Improved VST resize behaviour.
+  - name: 1.4.5
+    description: Fixed VST plugin state not correctly recalled in certain hosts (notably Live and Cubase).
+  - name: 1.4.4
+    description: Fixed a crash under certain circumstances (notably in WaveLab).
+  - name: 1.4.3
+    description: Fixed the plugin not showing up in macOS 10.14 (Mojave). Improved overall stability and load time. Added 30 extra presets.
+  - name: 1.4.2
+    description: Fixed presets not listed in alphabetical order on macOS 10.13. Filter LFO phase in sync mode is now consistent, the filter is active by default, knobs follow vertical mouse movements only, and resizing saves the last size as the default UI size. Added AAX automation menus shortcut support and 28 new presets from Sink.
+  - name: 1.4.1
+    description: Fixed a license validation issue.
+  - name: 1.4.0
+    description: Added undo/redo, an A-B states switch, MIDI program change support and Portuguese language. Demo mode restriction changed so output is now occasionally muted. Several user interface improvements.
+  - name: 1.3.3
+    description: Fixed an offline rendering issue (notably for FL Studio users), occasional flicker on tooltips and the MIDI-learn popup menu size.
+  - name: 1.3.2
+    description: Fixed graphical glitches on certain Mac OS X machines.
+  - name: 1.3.1
+    description: Added an option to copy/paste the plug-in's state via right click on the preset title. Fixed parameters not correctly recalled when frozen by default in the freezer.
+  - name: 1.3.0
+    description: Added ducking. Delay time durations can now be typed in.
+  - name: 1.2.1
+    description: Fixed input gains and modulation parameters not always correctly recalled when linked.
+  - name: 1.2.0
+    description: Added AAX support.
+  - name: 1.1.1
+    description: Fixed CPU spikes under certain circumstances and a silent right channel in certain configurations with single input.
+  - name: 1.1.0
+    description: Added a new theme. Fixed user defined default preset not correctly recalling delay times and the delay line not fully re-initialized on sample rate changes.
+  - name: 1.0.0
+    description: Added more filter options (resonant 24dB highpass, resonant 24dB lowpass, hi-pass plus low-pass combination at 12dB each), host-synced filter modulation, preset access from the main preset menu, a save option in the presets menu, and interactive MIDI learn. Increased delay times range and precision. Fixed delay time modulation offset when rate is 0, the first reversed echo not taking modulation into account, new presets not showing up, and filter frequency being modified by LFO depth at zero rate.
+  - name: 1.0.0 beta 5
+    description: "Windows only: added XP support and fixed some installation issues."
+  - name: 1.0.0 beta 4
+    description: "Added tap-tempo with a GUI preference to hide it. AU only: fixed delayed sound being stopped when the playhead starts back a loop. Improved tooltip sizes and resizing."
+  - name: 1.0.0 beta 3
+    description: Fixed a filter that could lead to strong noise under certain circumstances. The Windows installer now allows selecting the destination folder.
+  - name: 1.0.0 beta 2
+    description: "AU only: fixed validation failure."
+  - name: 1.0.0 beta 1
+    description: First public release.
+videos:
+  - provider: youtube
+    videoId: gf6oQSlDgBk
+  - provider: youtube
+    videoId: NwooeFcSbfE
+    title: Consordini review
