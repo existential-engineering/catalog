@@ -9,10 +9,10 @@ formats:
 platforms:
   - windows
 url: https://www.bome.com/products/sendsx
-description: This powerful utility for Windows creates small Sys Ex messages and
-  can send them to any MIDI device. It's also a great little MIDI monitor, and
-  can easily test small Sys Ex requests, since the reply as well as all other
-  events from the MIDI device are displayed.
+description: A Windows utility that creates small Sys Ex messages and sends them
+  to any MIDI device. It also works as a MIDI monitor for testing Sys Ex
+  requests, since the reply and all other events from the MIDI device are
+  displayed.
 details: |-
   Send SX is Bome's small Windows utility for working with MIDI System Exclusive data by hand. The user types or pastes the bytes of a Sys Ex message into an outgoing box and sends them to any MIDI device on the system, which covers the everyday cases of poking a synth with a parameter change or firing off a device-specific request without needing a dedicated editor for that instrument.
 
@@ -22,7 +22,7 @@ details: |-
 
   Transmission behaviour is adjustable for devices that cannot keep up. Send delay is configurable, send speed is set in bytes per second, only a selected portion of the data can be sent, and since version 1.4 both the throttling and the splitting of transfers into 128-byte chunks can be switched off so that full messages go out as is. A "/send" command line parameter sends the outgoing data, which allows the program to be driven from a script or a shortcut.
 
-  The application has a long release history stretching back to a 16-bit build for Windows 3.11 in June 1999, through 1.20 and 1.21 in 2001, 1.22 in January 2005, a 1.3 beta, and the current 1.4 from February 2019. Both the current 1.4 installer and the old 16-bit 1.1 archive are offered as direct downloads from Bome. The page states no price and no licence terms.
+  The application has a long release history stretching back to a 16-bit build for Windows 3.11 in June 1999, through 1.20 and 1.21 in 2001, 1.22 in January 2005, a 1.3 beta, and the current 1.4, announced in November 2014 (the current 1.4 download is dated February 2019). Both the 1.4 installer and the old 16-bit 1.1 archive are offered as direct downloads from Bome.
 specs: |-
   - Create and send arbitrary Sys Ex messages to any MIDI device
   - MIDI monitor: displays replies and all other incoming events from the MIDI device
@@ -47,7 +47,7 @@ specs: |-
   - Option to allow only one instance
 versions:
   - name: "1.4"
-    releaseDate: 2019-02
+    releaseDate: 2014-11-04
     description: Better default font (Courier New), disable throttling and send data
       "as is" for full messages, option to disable chunking in 128-byte chunks
       when sending, and a "/send" command line parameter that sends the outgoing

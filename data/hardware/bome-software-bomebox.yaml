@@ -8,8 +8,10 @@ categories:
   - utility
 url: https://www.bome.com/products/bomebox
 prices:
-  - amount: 245
-    currency: USD
+  - amount: 225
+    currency: EUR
+    source: official-website
+    asOf: 2026-09-26
 description: The MIDI hub for stage and studio. The BomeBox is the solution for
   connecting and mapping MIDI devices via MIDI DIN, USB, Ethernet and WiFi,
   without the need of a computer.
@@ -60,10 +62,10 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Right
+    position: Left
   - key: V4JgfaCh
     name: USB Host Type A
-    signalFlow: input
+    signalFlow: bidirectional
     category: digital
     type: usb
     connection: usb-a
@@ -76,12 +78,20 @@ io:
     type: power
     connection: usb-b-micro
     maxConnections: 1
-    position: Top
+    position: Right
   - key: TvCt7RUq
-    name: PoE Out
-    signalFlow: output
-    category: power
-    type: power
+    name: Network (PoE Out)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: tJAOvJr9
+    name: Network (PoE In)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
     connection: ethernet
     maxConnections: 1
     position: Right

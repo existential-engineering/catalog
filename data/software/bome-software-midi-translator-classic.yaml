@@ -4,6 +4,7 @@ manufacturer: bome-software
 primaryCategory: midi
 categories:
   - utility
+  - standalone
   - legacy
 formats:
   - standalone
@@ -14,18 +15,18 @@ prices:
   - currency: EUR
     amount: 29
 description: Bome MIDI Translator Classic is the smaller sister of MIDI
-  Translator Pro. It has the same powerful MIDI processing engine, but can only
+  Translator Pro. It has the same MIDI processing engine, but can only
   convert MIDI messages to other MIDI messages, or to keystrokes.
 details: |-
   MIDI Translator Classic is the reduced edition of Bome's MIDI Translator family, sharing the same MIDI processing engine as MIDI Translator Pro while limiting what that engine is allowed to do. It converts incoming MIDI messages into other MIDI messages or into keystrokes, which covers the common case of driving a piece of software that has keyboard shortcuts but no MIDI learn from a hardware controller.
 
-  The feature line between Classic and Pro is drawn at rules and conditional translation: those are not available in the Classic Edition. Bome's own comparison page places Classic without scripting, rules and conditional execution, without timers, without mouse emulation, serial port actions or the MIDI Router, and without the ability to open signed .bmtp or encrypted .bmte project files. Users who need those are pointed at MIDI Translator Pro, which adds keystroke-to-MIDI translation along with timers and rules for manipulating data and events.
+  The feature line between Classic and Pro is drawn at rules and conditional translation: those are not available in the Classic Edition. Bome's own comparison page places Classic without scripting, rules and conditional execution, without timers, without mouse emulation, serial port actions, multiple MIDI ports or the MIDI Router. Classic opens regular and signed .bmtp project files, while encrypted .bmte files run only in an OEM MT Player. Users who need those are pointed at MIDI Translator Pro, which adds keystroke-to-MIDI translation along with timers and rules for manipulating data and events.
 
   The application presents an editor for building translator definitions, where each translator pairs an incoming action with an outgoing action. Definitions are organised into presets, users can create their own presets, and presets can be exchanged with other MIDI Translator users, so a mapping worked out for a particular controller and application can be passed around rather than rebuilt.
 
-  Distribution is Windows-only and frozen. The current build is version 1.6.1, offered as a direct download from Bome, and the product page states that the Classic Edition will not evolve anymore. Bome's comparison table lists Classic at 1.6.1 on Windows alongside Pro at 1.9 on Windows, macOS and Linux, confirming that the Classic branch has stopped receiving the platform and feature work that continues on Pro.
+  Distribution is Windows-only and frozen. The current build is version 1.6.1, offered as a direct download from Bome, and the product page states that the Classic Edition will not evolve anymore. Bome's comparison table lists Classic at 1.6.1 on Windows alongside Pro at 1.9 on Windows and macOS, confirming that the Classic branch has stopped receiving the platform and feature work that continues on Pro.
 
-  Licensing is free for personal use, with the free build showing a nag screen at start-up. Commercial users, and personal users who want the nag screen removed, are asked to buy a licence at EUR 29 including VAT, a figure Bome's comparison page repeats as the Classic commercial licence price against EUR 59 for Pro.
+  Licensing is free for personal use, with the free build showing a nag screen at start-up. Commercial users, and personal users who want the nag screen removed, are asked to buy a licence at EUR 29 including VAT, the same figure Bome's comparison page lists as the Classic commercial licence price.
 specs: |-
   - MIDI-to-MIDI conversion
   - MIDI-to-keystroke mapping
@@ -34,8 +35,8 @@ specs: |-
   - Exchange presets with other MIDI Translator users
   - Same MIDI processing engine as MIDI Translator Pro
   - No rules, scripting or conditional MIDI translation (Pro only)
-  - No timers, mouse emulation, serial port actions or MIDI Router (Pro only)
-  - Opens regular .bmtp project files; signed .bmtp and encrypted .bmte files are Pro only
+  - No timers, mouse emulation, serial port actions, multiple MIDI ports or MIDI Router (Pro only)
+  - Opens regular and signed .bmtp project files; encrypted .bmte files run only in an OEM MT Player
   - Windows only; version 1.6.1 is the final build, the Classic Edition will not evolve anymore
   - Free for personal use, displays a nag screen at start-up
   - Commercial licence removes the start-up nag screen

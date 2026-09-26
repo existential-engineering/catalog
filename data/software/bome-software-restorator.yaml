@@ -16,13 +16,13 @@ details: |-
 
   Restorator is used for translation/localization, customization, design improvement and development. Documentation with examples is published alongside it, and support runs through the discussion forums or by email.
 
-  Restorator modifies resources: application-dependant data that the respective programmer includes in his program. Inside the program file they are separated from the program itself and therefore may be changed. In the file, resources are organized in a tree, where the first level defines the resource type (Bitmap, Icon, etc.) and the second level defines the name of the resource. Windows provides some standard resource types whereas other resource types may be defined by the programmer and are displayed by Restorator in upper case.
+  Restorator modifies resources: application-dependant data that the programmer includes in the program. Inside the program file they are separated from the program itself and therefore may be changed. In the file, resources are organized in a tree, where the first level defines the resource type (Bitmap, Icon, etc.) and the second level defines the name of the resource. Windows provides some standard resource types whereas other resource types may be defined by the programmer and are displayed by Restorator in upper case.
 
   It is possible for one resource to be stored multiple times for different languages. If this is the case, Restorator adds a level in the tree with the language. You can add several languages to a single application, and your application will automatically start with the correct language, i.e. the default Windows language. The .res file has been standardized, allowing you to save all resources in one file, and Restorator includes full support for creating, editing, opening and saving res files.
 
   With Restorator you can translate existing applications (localization), customize the look and feel of programs, replace logos and icons (branding), enhance control over resource files in the software development process, and hack into the inner workings of applications on your computer.
 specs: |-
-  - Edits Windows resources in PE files, 64-bit PE files, RES files and RC files
+  - Edits Windows resources in PE files, RES files and RC files, with limited support for 64-bit PE files (amd64, ia64)
   - Supported file extensions include .exe, .dll, .res, .rc and .dcr (also .scr and .ocx PE files)
   - WYSIWYG dialog editing: move, resize and re-label dialog elements with the mouse
   - Add multilingual support to an application, which then starts in the default Windows language
@@ -47,7 +47,7 @@ specs: |-
 versions:
   - name: "2018"
     releaseDate: 2018-06
-    description: Build 1792. PNG image support, improved toolbar display, 64-bit exe support and various bug fixes. Current version.
+    description: Build 1792. PNG image support, improved toolbar display, limited 64-bit exe support (amd64, ia64) and various bug fixes. Current version.
     url: https://www.bome.com/products/restorator/restorator-version-history
   - name: "2007"
     releaseDate: "2007"
