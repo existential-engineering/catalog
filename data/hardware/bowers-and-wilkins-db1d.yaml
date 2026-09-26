@@ -34,7 +34,7 @@ specs: |-
   - Inputs: 2 x XLR, 2 x RCA, 2 x 3.5mm 12V trigger, RS-232 9-pin D connector
   - Dimensions: height 460mm (18.1in), width 429mm (16.9in), depth 410mm (16.1in)
   - Net weight: 43kg
-  - Cabinet finishes: Gloss Black (black grilles), Rosenut (black grilles), Satin White (grey grilles)
+  - Cabinet finishes: Gloss Black (black grilles), Rosenut (black grilles), Satin White (grey grilles); also offered in Stealth Black and Warm White
 io:
   - key: aGq6Y9rM
     name: XLR In L
@@ -68,24 +68,16 @@ io:
     connection: rca
     maxConnections: 1
     position: Bottom
-  - key: TTGdoYM8
-    name: 3.5mm In L
-    signalFlow: input
-    category: audio
-    type: line
-    connection: 1/8-inch
-    maxConnections: 1
-    position: Bottom
-  - key: Nnvq466u
-    name: 3.5mm In R
-    signalFlow: input
-    category: audio
-    type: line
-    connection: 1/8-inch
-    maxConnections: 1
-    position: Bottom
   - key: g8Gv5s4T
-    name: 12V Trigger In
+    name: 12V Trigger 1
+    signalFlow: input
+    category: power
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: RHVrspJ0
+    name: 12V Trigger 2
     signalFlow: input
     category: power
     type: line
@@ -100,9 +92,19 @@ io:
     connection: db9
     maxConnections: 1
     position: Bottom
+  - key: pljIpE98
+    name: Mains Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom
 variants:
   - name: Gloss Black
   - name: Rosenut
+  - name: Stealth Black
+  - name: Warm White
 links:
   - type: support
     title: DB Series Owner's Manual (PDF)

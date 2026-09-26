@@ -5,7 +5,6 @@ primaryCategory: subwoofer
 capabilities:
   - crossover
   - equalization
-  - filter
 url: https://www.bowerswilkins.com/en-us/product/subwoofers/db-series/db2d/150194.html
 prices:
   - amount: 5800
@@ -40,7 +39,7 @@ specs: |-
   - Supplied accessories: power cable(s), magnetically attached fabric grilles, spike, decoupling and rubber feet
   - Dimensions: Height 430mm (16.9in), Width 377mm (14.8in), Depth 360mm (14.2in)
   - Net weight: 36kg
-  - Cabinet finishes: Gloss Black, Satin White
+  - Cabinet finishes: Gloss Black, Satin White; also offered in Stealth Black and Warm White
   - Grille finishes: Black, Grey
 io:
   - key: ug4tgGD0
@@ -75,24 +74,16 @@ io:
     connection: rca
     maxConnections: 1
     position: Bottom
-  - key: KZgMDGOF
-    name: 3.5mm Input 1
-    signalFlow: input
-    category: audio
-    type: line
-    connection: 1/8-inch
-    maxConnections: 1
-    position: Bottom
-  - key: TRBg1dC5
-    name: 3.5mm Input 2
-    signalFlow: input
-    category: audio
-    type: line
-    connection: 1/8-inch
-    maxConnections: 1
-    position: Bottom
   - key: 3Wu8YtMk
-    name: 12V Trigger
+    name: 12V Trigger 1
+    signalFlow: input
+    category: power
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: hzgdOOp5
+    name: 12V Trigger 2
     signalFlow: input
     category: power
     type: line
@@ -107,8 +98,18 @@ io:
     connection: db9
     maxConnections: 1
     position: Bottom
+  - key: OdZuSf7U
+    name: Mains Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Bottom
 variants:
   - name: Gloss Black
+  - name: Stealth Black
+  - name: Warm White
 links:
   - type: support
     title: DB Series Owner's Manual (PDF)

@@ -38,13 +38,30 @@ specs: |-
   - Finish: cabinet black painted
   - Compact vertical surround speaker, offered as an alternative to the CT8 DS where space is limited; can also be used front, side or rear
   - Passive: no on-board amplifier and no mains inlet, driven from an external power amplifier
+  - Rear panel connections: two pairs of binding post terminals and one Neutrik speakON socket; both methods allow bi-wiring
 io:
   - key: vmH3zIHH
-    name: Speaker Binding Posts
+    name: Speaker Binding Posts (Pair 1)
     signalFlow: input
     category: audio
     type: speaker-level
     connection: binding-post
+    maxConnections: 1
+    position: Bottom
+  - key: Rk4tWq8N
+    name: Speaker Binding Posts (Pair 2)
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: binding-post
+    maxConnections: 1
+    position: Bottom
+  - key: Hc2pLx7D
+    name: Speakon Socket
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: speakon
     maxConnections: 1
     position: Bottom
 links:

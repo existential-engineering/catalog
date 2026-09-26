@@ -31,7 +31,7 @@ specs: |-
   - Inputs: 2 x XLR, 2 x RCA, 2 x 3.5mm 12V trigger, RS-232 9-pin D connector
   - Input impedance: RCA 10 kOhm, XLR 20 kOhm
   - Signal / noise: 82 dB
-  - Power consumption: 195W at 1/8th of rated power
+  - Power consumption: 195W at 1/8th of rated power; standby below 0.5W
   - Set-up and control: Bowers & Wilkins DB Subwoofers app over Bluetooth Low Energy (iOS/Android); the subwoofer can only be set up with the app
   - Room EQ and preset EQ for music and movie material, plus a five-band custom equaliser and low-pass filter set-up in the app
   - Auto-standby after 20 minutes unused; standby button on the rear panel
@@ -72,24 +72,16 @@ io:
     connection: rca
     maxConnections: 1
     position: Bottom
-  - key: 0I1CsK8M
-    name: 3.5mm In L
-    signalFlow: input
-    category: audio
-    type: line
-    connection: 1/8-inch
-    maxConnections: 1
-    position: Bottom
-  - key: qzaerCQ5
-    name: 3.5mm In R
-    signalFlow: input
-    category: audio
-    type: line
-    connection: 1/8-inch
-    maxConnections: 1
-    position: Bottom
   - key: W6mbP6OK
-    name: 12V Trigger In
+    name: 12V Trigger 1
+    signalFlow: input
+    category: power
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Yp0014qp
+    name: 12V Trigger 2
     signalFlow: input
     category: power
     type: line
@@ -102,6 +94,14 @@ io:
     category: digital
     type: line
     connection: db9
+    maxConnections: 1
+    position: Bottom
+  - key: Oo5328fp
+    name: Mains Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
     maxConnections: 1
     position: Bottom
 variants:

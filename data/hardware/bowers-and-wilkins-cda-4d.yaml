@@ -7,7 +7,6 @@ categories:
 capabilities:
   - crossover
   - equalization
-  - filter
   - alignment-delay
 url: https://www.bowerswilkins.com/en-us/product/in-wall-in-ceiling-speakers/amplifiers/cda-4d/300591.html
 prices:
@@ -30,7 +29,7 @@ specs: |-
   - Output power per channel, non-clipped: 60W into 8 ohms, 125W into 4 ohms
   - Output power bridge mode, non-clipped: 250W into 8 ohms
   - Output power total, all channels: 500W short term, >125W continuous
-  - Load impedance range: >3 ohms per channel (>6 ohms in bridge mode); minimum load in bridge mode is 8 ohms
+  - Load impedance range: >3 ohms per channel (>6 ohms in bridge mode); the manual's connection instructions give 8 ohms as the bridge-mode minimum and warn that 4 ohm bridged loads may cause distortion and overheating
   - Bridgeable for a 2-channel or 2.1 setup
   - Frequency response (-3dB): <10Hz to >30kHz, any load impedance
   - Frequency response accuracy 20Hz-20kHz: +/-1dB
@@ -43,6 +42,7 @@ specs: |-
   - Signal sense threshold: 2.5mV (independent of gain setting)
   - 12V trigger input threshold: typically 3V (recommended input 5-15V)
   - Three power mode options: on, auto detect or 12V trigger, with 0-20s auto-on delay and Wake on LAN
+  - Wake-up time: <0.2s if other zones active, <2s from all zones inactive
   - Turn-off time: 15 minutes from last signal detected
   - 8-band parametric EQ per output (20Hz-20kHz), filter types parametric, high shelf or low shelf
   - High-pass and low-pass crossover filters, filter order -6, -12, -18 or -24dB/octave
@@ -57,9 +57,9 @@ specs: |-
   - AC supply: 100-240V 50/60Hz; AC inlet IEC C14, switched
   - Power consumption: <0.5W standby (WoL enabled or disabled), 130W maximum average, 1,600W peak
   - Thermal dissipation: 1.7 BTU/hr standby, 130 BTU/hr idle, 500 BTU/hr maximum
-  - Height: 42.5mm (1.7in) 1U [55.5mm (2.2in) plus feet per the manual, 57.5mm (2.3in) per the product page]
-  - Width: 436mm (17.2in) per the product page; 437mm (17.2in) per the manual specification table
-  - Depth: 300mm (11.8in) per the product page; 310mm (12.2in) per the manual specification table
+  - Height: 42.5mm (1.7in) 1U; 55.5mm (2.2in) with feet
+  - Width: 437mm (17.2in); 483mm (19in) with rack ears
+  - Depth: 310mm (12.2in)
   - Net weight: 4.1kg (9.0lb)
   - Finish: Black
   - Supplied with rack-mount ears and feet; full-rack-width 1U design
@@ -126,7 +126,7 @@ io:
     category: audio
     type: speaker-level
     connection: euroblock
-    maxConnections: 2
+    maxConnections: 1
     position: Right
   - key: ofI5ZpO9
     name: Speaker Output 2 (4 ohm)
@@ -134,7 +134,7 @@ io:
     category: audio
     type: speaker-level
     connection: euroblock
-    maxConnections: 2
+    maxConnections: 1
     position: Right
   - key: lr5hWKPQ
     name: 12V Trigger In
