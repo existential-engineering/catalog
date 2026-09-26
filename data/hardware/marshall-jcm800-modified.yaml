@@ -11,7 +11,13 @@ url: https://www.marshall.com/us/en/product/jcm800-modified
 prices:
   - amount: 3449.99
     currency: USD
-description: The JCM800 Modified honours the original amp's iconic roots, while building on its legacy with modern features designed for today's guitarist. Seamlessly transition from smooth, warm breakup to commanding high-gain roars. A celebration of musicians and gear enthusiasts who customise their amps, this amp captures the essence of Marshall's storied legacy while integrating modern features tailored to push sonic boundaries. The legendary JCM800 tone, with new modifications.
+description: The JCM800 Modified honours the original amp's iconic roots, while
+  building on its legacy with modern features designed for today's guitarist.
+  Seamlessly transition from smooth, warm breakup to commanding high-gain roars.
+  A celebration of musicians and gear enthusiasts who customise their amps, this
+  amp captures the essence of Marshall's storied legacy while integrating modern
+  features tailored to push sonic boundaries. The legendary JCM800 tone, with
+  new modifications.
 details: |-
   The JCM800 Modified honours the original amp's iconic roots, while building on its legacy with modern features designed for today's guitarist. Seamlessly transition from smooth, warm breakup to commanding high-gain roars. Designed and engineered in UK. Made in UK.
 
@@ -41,29 +47,53 @@ specs: |-
   - Colour: Black
 io:
   - key: TVsUodTZ
-    name: Instrument Input
+    name: High Input
     signalFlow: input
     category: audio
     type: instrument
     connection: 1/4-inch
     maxConnections: 1
     position: Top
+  - key: ke3YCBtR
+    name: Low Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: kyosXwg4
+    name: FX Loop Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Uw2Wl5k9
+    name: FX Loop Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: gDrnkoHf
-    name: Speaker Output
+    name: Speaker Output 1 (16/8/4 ohm selectable)
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Bottom
+    position: Right
   - key: GiDV1hZk
-    name: Speaker Output
+    name: Speaker Output 2 (16/8/4 ohm selectable)
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Bottom
+    position: Right
   - key: Zv3ojiOo
     name: Power Input
     signalFlow: input
@@ -71,7 +101,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 videos:
   - videoId: X7avNiyTI2M
     provider: youtube

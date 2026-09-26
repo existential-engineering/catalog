@@ -29,14 +29,14 @@ details: |-
 
   Step out of your comfort zone with built-in reverb controls. Experiment with your sound and unleash breathtaking solos that will leave a lasting impression.
 
-  Originally released in January 1990, the JCM900 4100 boasted higher gain and lower noise coupled with the classic Marshall tone. Today, the JCM900 is part of our Vintage Reissue series. Skilfully crafted at our factory in Bletchley, England, the JCM900 effortlessly channels the Marshall spirit and is fashioned with the iconic touches you've come to expect from us. This all-valve amp is famous for its tone and roadworthiness, while still maintaining the original high gain and dual reverb functions.
+  Originally released in January 1990, the JCM900 4100 boasted higher gain and lower noise coupled with the classic Marshall tone. Today, the JCM900 is part of Marshall's Vintage Reissue series. Skilfully crafted at Marshall's factory in Bletchley, England, the JCM900 effortlessly channels the Marshall spirit and carries the classic Marshall touches. This all-valve amp is famous for its tone and roadworthiness, while still maintaining the original high gain and dual reverb functions.
 specs: |-
   - Model: JCM900 4100 Vintage Reissue Head
   - Range: vintage reissue
   - Channels: 2
   - Technology: valve
   - Output wattage: 100W, switchable to 50W
-  - Outputs: 2 x 1/4" jack speaker outputs, selectable 16 ohm / 8 ohm / 4 ohm load
+  - Outputs: 2 x 1/4" jack speaker outputs, selectable 16 ohm / 8 ohm load (the quick start guide rules out loads below 8 ohm), plus a recording compensated line out and a direct line out
   - Inputs: 1 x 1/4" jack instrument input
   - Controls: Channel A Gain, Channel B Lead Gain, Treble, Middle, Bass, Presence, Channel A (Volume, Reverb), Channel B (Volume, Reverb)
   - Effects: spring reverb
@@ -59,14 +59,14 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: UAsCL3O5
-    name: Speaker Output
-    signalFlow: output
+  - key: iPlaPrzr
+    name: Footswitch (PEDL-91004)
+    signalFlow: input
     category: audio
-    type: speaker-level
+    type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Bottom
+    position: Top
   - key: jSF7kc1H
     name: FX Loop Send
     signalFlow: output
@@ -74,7 +74,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: zoZe2ien
     name: FX Loop Return
     signalFlow: input
@@ -82,15 +82,39 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: iPlaPrzr
-    name: Footswitch (PEDL-91004)
-    signalFlow: input
+    position: Right
+  - key: 3hV3LdZz
+    name: Recording Compensated Line Out
+    signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: pdfo7ugn
+    name: Direct Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: UAsCL3O5
+    name: Speaker Output 1 (16/8 ohm selectable)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Modp1cBC
+    name: Speaker Output 2 (16/8 ohm selectable)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: qUhAgDTx
     name: Power Input
     signalFlow: input
@@ -98,7 +122,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 releaseDate: 1990-01
 videos:
   - videoId: CajXa89rl34

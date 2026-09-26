@@ -1,5 +1,5 @@
 id: Y_Nqp_3FVR7N0xaVU2YhQ
-name: Origin 50 Combo
+name: Origin50 Combo
 manufacturer: marshall
 primaryCategory: guitar-amplifier
 categories:
@@ -7,6 +7,9 @@ categories:
 capabilities:
   - overdrive
   - cabinet-simulation
+searchTerms:
+  - Origin 50
+  - ORI50C
 url: https://www.marshall.com/us/en/product/origin50-combo
 prices:
   - amount: 879.99
@@ -54,30 +57,38 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: 9iLNWbSE
-    name: Effects Loop Send
+  - key: BXsd8ZwS
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
-    type: line
+    type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: y1fBmdIj
-    name: Effects Loop Return
-    signalFlow: input
+    position: Right
+  - key: DkrLPXBv
+    name: Speaker Output 8 ohm A
+    signalFlow: output
     category: audio
-    type: line
+    type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: kOnHfeIE
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: 57hmOVWf
-    name: Emulated Line Output (DI)
+    name: DI Output
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: EfPGlSY2
     name: Footswitch (Gain Boost / FX Loop on/off)
     signalFlow: input
@@ -85,31 +96,23 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: BXsd8ZwS
-    name: Speaker Output 1 (16Ω)
+    position: Right
+  - key: 9iLNWbSE
+    name: Effects Loop Send
     signalFlow: output
     category: audio
-    type: speaker-level
+    type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: DkrLPXBv
-    name: Speaker Output 2 (8Ω)
-    signalFlow: output
+    position: Right
+  - key: y1fBmdIj
+    name: Effects Loop Return
+    signalFlow: input
     category: audio
-    type: speaker-level
+    type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: kOnHfeIE
-    name: Speaker Output 3 (4Ω)
-    signalFlow: output
-    category: audio
-    type: speaker-level
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Top
+    position: Right
   - key: JXT3B7To
     name: Mains Input (IEC)
     signalFlow: input
@@ -117,6 +120,6 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 videos:
   - videoId: rpMZ40cfk8k

@@ -10,7 +10,11 @@ url: https://www.marshall.com/us/en/product/origin20-head
 prices:
   - amount: 589.99
     currency: USD
-description: Expressive 20W valve guitar amplifier head with Powerstem power reduction technology, allowing operation at 20W, 3W, or 0.5W without changing sonic character. Features Tilt control to blend between normal and high-treble voicings, footswitchable gain boost, and an effects loop for pedal integration. Ships with a 2-way footswitch.
+description: Expressive 20W valve guitar amplifier head with Powerstem power
+  reduction technology, allowing operation at 20W, 3W, or 0.5W without changing
+  sonic character. Features Tilt control to blend between normal and high-treble
+  voicings, footswitchable gain boost, and an effects loop for pedal
+  integration. Ships with a 2-way footswitch.
 details: |-
   The Origin20 Head provides a classic all-valve, rich and harmonic tone at 20W, 3W and 0.5W with Powerstem technology. This makes it ideal to play in different environments, from bedrooms to rehearsal studios and small venues.
 
@@ -54,22 +58,38 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: tAs1KzYI
-    name: FX Loop Send
+  - key: 085wiyY2
+    name: Speaker Output 16 ohm
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: S7Uge7Vh
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: YIdydyaz
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: M9QaVbJz
+    name: DI Output
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: Xauh3RNs
-    name: FX Loop Return
-    signalFlow: input
-    category: audio
-    type: line
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Top
+    position: Right
   - key: 0ssgSWaM
     name: Footswitch
     signalFlow: input
@@ -77,15 +97,23 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: 085wiyY2
-    name: Speaker Output
+    position: Right
+  - key: tAs1KzYI
+    name: FX Loop Send
     signalFlow: output
     category: audio
-    type: speaker-level
+    type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: Xauh3RNs
+    name: FX Loop Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: aWWpit1E
     name: Power
     signalFlow: input
@@ -93,6 +121,6 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 videos:
   - videoId: rpMZ40cfk8k

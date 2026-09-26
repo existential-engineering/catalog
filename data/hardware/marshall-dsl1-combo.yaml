@@ -66,21 +66,29 @@ io:
     maxConnections: 1
     position: Top
   - key: 61uyB9Yl
-    name: Aux In / Footswitch (combined)
+    name: Aux In
     signalFlow: input
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: yYbBIIjA
+    name: Footswitch
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: kkXLKPUR
-    name: Speaker Output (16Ω)
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: aePLQnlA
     name: Emulated Line Out
     signalFlow: output
@@ -88,7 +96,7 @@ io:
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: EOrbsISJ
     name: FX Loop Send
     signalFlow: output
@@ -96,7 +104,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: srDvMHYQ
     name: FX Loop Return
     signalFlow: input
@@ -104,7 +112,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: UddQvHSt
     name: Mains Input (IEC)
     signalFlow: input
@@ -112,7 +120,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 videos:
   - provider: youtube
     videoId: dnbNblbp5Ug

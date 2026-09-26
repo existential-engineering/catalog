@@ -11,7 +11,16 @@ url: https://www.marshall.com/us/en/product/studio-jtm-combo
 prices:
   - amount: 1599.99
     currency: USD
-description: The Studio JTM Combo is a compact 20W all-valve guitar amplifier from Marshall's Studio range that brings the era-defining tones of the original JTM45 to a smaller, more home- and studio-friendly format. Built at Marshall's Bletchley, England factory, it pairs the iconic warm and smooth JTM45 voicing with modern flexibility, including a power reduction switch that drops the output from 20W down to 5W for lower-volume settings. The amp delivers its sound through a single 12" Celestion G12M-65 Creamback speaker for rich low end, warm mids, and refined highs, and includes a series effects loop. Visually it pays homage to the 1960s originals with a solid metal logo, gold piping, and gold beading.
+description: The Studio JTM Combo is a compact 20W all-valve guitar amplifier
+  from Marshall's Studio range that brings the era-defining tones of the
+  original JTM45 to a smaller, more home- and studio-friendly format. Built at
+  Marshall's Bletchley, England factory, it pairs the iconic warm and smooth
+  JTM45 voicing with modern flexibility, including a power reduction switch that
+  drops the output from 20W down to 5W for lower-volume settings. The amp
+  delivers its sound through a single 12" Celestion G12M-65 Creamback speaker
+  for rich low end, warm mids, and refined highs, and includes a series effects
+  loop. Visually it pays homage to the 1960s originals with a solid metal logo,
+  gold piping, and gold beading.
 details: |-
   The Studio JTM Combo brings the iconic 60s tone that initially launched Marshall to the present day, in a more compact format. Whether you are at home, in the studio, or on the big stage, it can adapt to bring exceptional tone to any situation with built-in power reduction technology.
 
@@ -25,7 +34,7 @@ details: |-
 specs: |-
   - Model: ST20C
   - Range: Studio
-  - Built in our UK factory
+  - Built in Marshall's UK factory
   - All-valve
   - Same smooth tones as the original JTM45
   - Output wattage: 20W (with power reduction option to 5W)
@@ -51,7 +60,23 @@ specs: |-
   - Colour: Black
 io:
   - key: uQSlK0jN
-    name: Channel Input I (High sensitivity)
+    name: Input 1 High Treble (High sensitivity)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: W5azKWle
+    name: Input 1 High Treble (Low sensitivity)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: 8rsJV5kB
+    name: Input 2 Normal (High sensitivity)
     signalFlow: input
     category: audio
     type: instrument
@@ -59,7 +84,7 @@ io:
     maxConnections: 1
     position: Top
   - key: 8ECvOceP
-    name: Channel Input II (Low sensitivity)
+    name: Input 2 Normal (Low sensitivity)
     signalFlow: input
     category: audio
     type: instrument
@@ -73,7 +98,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: CUscvrts
     name: Effects Loop Return
     signalFlow: input
@@ -81,15 +106,55 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: CMYPENYT
-    name: Speaker Output (selectable 16Ω / 8Ω)
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: 0YUiHnXi
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: H2czILgl
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: N0E5aSoE
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: s6kaKcdY
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 5FlTC6ZD
+    name: DI Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: jlrzR4Ru
     name: Mains Input (IEC)
     signalFlow: input
@@ -97,7 +162,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 videos:
   - videoId: lUQD-fJXjE8
     title: Studio JTM Combo

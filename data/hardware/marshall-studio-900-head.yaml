@@ -32,7 +32,7 @@ details: |-
 specs: |-
   - Model: SN20H
   - Range: Studio
-  - Technology: Valve
+  - Technology: valve preamp and power amp (2 x ECC83 + ECC83 phase splitter, 2 x 5881), which Marshall describes as a hybrid design with solid-state components
   - Channels: 2
   - Output wattage: 20W (with power reduction option to 5W), <1W
   - Outputs: Speaker outputs 5 x 1/4" jack sockets (16Ω load / 8Ω load / 4Ω load), DI output, Compensated DI output
@@ -63,7 +63,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: mLJo3qCn
     name: FX Loop Return
     signalFlow: input
@@ -71,23 +71,71 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: If1Anyyv
-    name: Speaker Output
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: QU4eZqpQ
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: PNDVYTOO
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: K5zaIUjY
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: BqPp7JGS
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: M4t1iFv1
     name: Footswitch
     signalFlow: input
     category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: hFfmuZHb
+    name: Direct Line Out
+    signalFlow: output
+    category: audio
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: rBzDcYjk
+    name: Recording Compensated Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: supHorbp
     name: Power Input
     signalFlow: input
@@ -95,7 +143,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 links:
   - url: https://assets.ctfassets.net/javen7msabdh/1dfPssUbF6WkLjd4Eyb5eI/9432ddb522ac72ef5bc148a9d6df89f1/Studio_900_SN20HC_QSG_CATS-00278-01_240913_TRANSLATIONS_v5_Multi_4.pdf
     type: support

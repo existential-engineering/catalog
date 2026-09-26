@@ -23,9 +23,9 @@ description: The DSL20 Head is an all-valve 20W guitar amplifier head from
   for everything from rehearsal-room volumes to more intimate home or studio
   settings. The rear panel provides three 1/4-inch speaker outputs (selectable
   16 Ω / 8 Ω load), a series effects loop, a 3.5 mm emulated line output for
-  silent recording or monitoring, a 3.5 mm aux/footswitch jack, and a PEDL-90012
-  footswitch is included in the box. Two ECC83 preamp valves plus a third ECC83
-  phase splitter feed a pair of EL34 power valves.
+  silent recording or monitoring, a 3.5 mm aux input, a 1/4-inch footswitch
+  jack, and a PEDL-90012 footswitch is included in the box. Two ECC83 preamp
+  valves plus a third ECC83 phase splitter feed a pair of EL34 power valves.
 details: |-
   The DSL20 Head is for those who need the full rich tone of a valve amp in a compact and portable format. From the moment you plug in, the DSL provides you with the functionality you need to take your sound from rehearsal to the studio with confidence.
 
@@ -65,13 +65,21 @@ io:
     maxConnections: 1
     position: Top
   - key: 1ZbJjuLM
-    name: Aux In / Footswitch
+    name: Aux In
     signalFlow: input
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: YT319CUF
+    name: Footswitch
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: UaqNjhi7
     name: Effects Loop Send
     signalFlow: output
@@ -79,7 +87,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: y5sfrBAC
     name: Effects Loop Return
     signalFlow: input
@@ -87,31 +95,31 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 0v4A1bJn
-    name: Speaker Output 1 (16 Ω / 8 Ω)
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: ntYRL6bs
-    name: Speaker Output 2 (16 Ω / 8 Ω)
+    name: Speaker Output 8 ohm A
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: erPsbD5d
-    name: Speaker Output 3 (16 Ω / 8 Ω)
+    name: Speaker Output 8 ohm B
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: mJ45C8ZX
     name: Emulated Line Out
     signalFlow: output
@@ -119,7 +127,7 @@ io:
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: z0od7wWW
     name: Mains Input
     signalFlow: input
@@ -127,7 +135,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 videos:
   - provider: youtube
     videoId: dnbNblbp5Ug

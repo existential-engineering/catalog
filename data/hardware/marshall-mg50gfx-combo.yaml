@@ -51,7 +51,7 @@ specs: |-
   - Speaker configuration: 1x12"
   - Speaker model: custom speaker (8 ohm, 50W)
   - Unit impedance: 8 ohm
-  - Inputs: 1 x 1/4" jack instrument input, 2 x 3.5 mm aux in
+  - Inputs: 1 x 1/4" jack instrument input, 1 x 3.5 mm MP3/line input
   - Emulated speaker output for direct recording and silent practice
   - Included in the box: PEDL-90010 2-way latching footswitch, detachable power cable
   - Also compatible with the PEDL-90008 footswitch (sold separately)
@@ -70,14 +70,6 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: cXQZlIHA
-    name: MP3/Line Input
-    signalFlow: input
-    category: audio
-    type: line
-    connection: 1/8-inch
-    maxConnections: 1
-    position: Top
   - key: Ye9pevkn
     name: Headphone / Emulated Line Output
     signalFlow: output
@@ -86,14 +78,14 @@ io:
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - key: vyWXwGEl
-    name: FX Loop Send
-    signalFlow: output
+  - key: cXQZlIHA
+    name: MP3/Line Input
+    signalFlow: input
     category: audio
     type: line
-    connection: 1/4-inch
+    connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: ftDHk1lS
     name: FX Loop Return
     signalFlow: input
@@ -101,15 +93,31 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: KUMtFvwZ
-    name: Footswitch
-    signalFlow: input
+    position: Right
+  - key: vyWXwGEl
+    name: FX Loop Send
+    signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: KUMtFvwZ
+    name: Footswitch
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: cn0Ng6K9
+    name: Speaker Output 8 ohm
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: kOmqzGAT
     name: Mains Input (IEC)
     signalFlow: input
@@ -117,6 +125,6 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 videos:
   - videoId: MAwHr_4cuBY

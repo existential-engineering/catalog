@@ -12,7 +12,13 @@ url: https://www.marshall.com/us/en/product/jvm410-head
 prices:
   - amount: 1999.99
     currency: USD
-description: Versatile 100W all-valve guitar amplifier head, hand-assembled in the UK. The JVM410H delivers four channels (Clean, Crunch, OD1, OD2), each with three switchable gain modes (green/orange/red) for 12 distinct voices ranging from pristine cleans to high-gain distortion. Three-band EQ per channel, presence and resonance, studio-quality digital reverb (per channel), two FX loops (one series-parallel, one series), MIDI for channel/mode storage and recall, and an emulated XLR line out for silent recording.
+description: Versatile 100W all-valve guitar amplifier head, hand-assembled in
+  the UK. The JVM410H delivers four channels (Clean, Crunch, OD1, OD2), each
+  with three switchable gain modes (green/orange/red) for 12 distinct voices
+  ranging from pristine cleans to high-gain distortion. Three-band EQ per
+  channel, presence and resonance, studio-quality digital reverb (per channel),
+  two FX loops (one series-parallel, one series), MIDI for channel/mode storage
+  and recall, and an emulated XLR line out for silent recording.
 details: |-
   With three modes available on each of the four channels, this amp can create 12 individual sounds from pristine cleans all the way through to heavy distortion. The JVM410 Head also features two master volume controls, making it the ultimate all-in-one for professional players.
 
@@ -22,9 +28,9 @@ details: |-
 
   The JVM410 Head is equipped with recording capabilities and a standby function designed specifically for silent recording. Simply connect your amplifier to a recording device through the line out, making sure to keep the standby switch in the off position.
 
-  Each amplifier in this series is attentively hand-assembled at our UK factory, from loading the circuit boards to achieving the iconic black, white and gold finish. Designed and engineered in UK. Made in UK.
+  Each amplifier in this series is attentively hand-assembled at Marshall's UK factory, from loading the circuit boards to achieving the iconic black, white and gold finish. Designed and engineered in UK. Made in UK.
 specs: |-
-  - Built in our UK factory
+  - Built in Marshall's UK factory
   - All-valve
   - Four channels with dedicated volume controls
   - Silent recording mode
@@ -59,13 +65,45 @@ io:
     maxConnections: 1
     position: Top
   - key: WP0wyKXL
-    name: Speaker Output
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: A4S8TLdG
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 36kCsbvO
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: OpZIgk7h
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 17DbSBi2
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: tUS1hoEO
     name: Emulated Line Out
     signalFlow: output
@@ -73,7 +111,7 @@ io:
     type: line
     connection: xlr
     maxConnections: 1
-    position: Top
+    position: Right
   - key: FElqYINb
     name: FX Loop 1 Send (Series/Parallel)
     signalFlow: output
@@ -81,7 +119,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: akF10seJ
     name: FX Loop 1 Return (Series/Parallel)
     signalFlow: input
@@ -89,7 +127,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 5L19TJkz
     name: FX Loop 2 Send (Series)
     signalFlow: output
@@ -97,7 +135,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 5FkNv6e8
     name: FX Loop 2 Return (Series)
     signalFlow: input
@@ -105,7 +143,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: LPZlXEmH
     name: MIDI In
     signalFlow: input
@@ -113,7 +151,7 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 9RHhjvQC
     name: MIDI Thru
     signalFlow: output
@@ -121,7 +159,7 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
+    position: Right
   - key: psBU6EUU
     name: Footswitch
     signalFlow: input
@@ -129,7 +167,7 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: atijDLmd
     name: Power Input
     signalFlow: input
@@ -137,7 +175,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 links:
   - url: https://www.marshall.com/us/en/support/amps/support-for-jvm410-head
     type: support

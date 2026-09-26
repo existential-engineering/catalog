@@ -35,7 +35,7 @@ specs: |-
   - Inputs: 1 x 1/4" jack instrument input
   - Outputs: 1 x 1/4" jack headphone out
   - Controls: Volume, tone, select either 'On' voice or 'Overdrive' voice
-  - Power: mains or batteries
+  - Power: 9V battery or 9V DC power adapter (not included)
   - Additions: Belt clip
   - Weight: 0.34 kg / 1 lb
   - Width: 110 mm / 4.3"
@@ -57,15 +57,15 @@ io:
     signalFlow: output
     category: audio
     type: headphone
-    connection: 1/8-inch
+    connection: 1/4-inch
     maxConnections: 1
     position: Top
   - key: 3mWI12bu
-    name: Battery Compartment (9V)
+    name: DC Power Input (9V)
     signalFlow: input
     category: power
     type: power
-    connection: built-in
+    connection: barrel
     maxConnections: 1
     position: Top
 variants:

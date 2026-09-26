@@ -25,7 +25,7 @@ details: |-
 
   This instantly recognisable tone is driven by two ECC83s in the preamp along with an ECC83 phase splitter and two EL34s in the power amp, and the head carries the same familiar EQ found on the Silver Jubilee 2555X Vintage Reissue Head.
 
-  Meticulously crafted at our Bletchley, England facility, the Studio Jubilee Head is built on our unrivalled expertise in creating legendary sound. Rooted in our heritage but made for today, the studio series incorporates elements of hand-soldering and mirrors the circuit design of its larger, older counterparts. Designed and engineered in UK. Made in UK.
+  Meticulously crafted at Marshall's Bletchley, England facility, the Studio Jubilee Head draws on Marshall's amp-building heritage, and the studio series incorporates elements of hand-soldering and mirrors the circuit design of its larger, older counterparts. Designed and engineered in UK. Made in UK.
 specs: |-
   - Model: 2525H
   - Range: Studio
@@ -59,18 +59,50 @@ io:
     name: Footswitch
     signalFlow: input
     category: audio
-    type: line
+    type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: YzlQ1N7A
-    name: Speaker Output
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: 9lI0FqWE
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Jr1WwYQb
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: uG7qpHWV
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: NgsQKziI
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: jNZIRWx1
     name: DI Output
     signalFlow: output
@@ -78,7 +110,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: tfdfbt5L
     name: FX Loop Send
     signalFlow: output
@@ -86,7 +118,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 8BMveqW9
     name: FX Loop Return
     signalFlow: input
@@ -94,7 +126,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 9QVY2Uiy
     name: Power Input
     signalFlow: input
@@ -102,7 +134,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 links:
   - url: https://assets.ctfassets.net/javen7msabdh/3iSwREzxqnB1xeBicsscdK/f46c9c89f842681f810b5311cd749de2/M3311.404_Studio_Jubilee_QSG_CATS-00247-03_web.pdf
     type: support
