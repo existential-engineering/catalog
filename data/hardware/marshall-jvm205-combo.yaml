@@ -6,6 +6,11 @@ categories:
   - amplifier
   - reverb
   - midi
+capabilities:
+  - reverb
+  - overdrive
+  - distortion
+  - cabinet-simulation
 url: https://www.marshall.com/us/en/product/jvm205-combo
 prices:
   - amount: 1899.99
@@ -20,35 +25,38 @@ description: Control every aspect of your playing with the 50W JVM205C. Two
   Celestion Heritage G12H speaker and one Celestion Vintage speaker, creating
   the perfect blend to complement the voicing of the amp.
 details: |-
-  - All-valve 50W 2x12" guitar combo
-  - Two independent channels with three gain modes each (six total voicings)
-  - Per-channel gain, three-band EQ, reverb, and master volume select
-  - Shared presence and resonance controls
-  - Studio-quality digital reverb (per channel)
-  - Two effects loops: one series/parallel, one series
-  - Emulated XLR line out for silent recording / direct to mixer
-  - MIDI In and MIDI Thru for full channel/mode/effects recall
-  - Programmable footswitch (PEDL-91006) included
-  - 1 x Celestion Heritage G12H + 1 x Celestion Vintage speakers
-  - Hand-assembled at Marshall's UK factory
+  Intensify your tone with the JVM205 Combo. With two channels, each with three different modes, this amp can take you from clean to high-gain overdrive and anything in between.
+
+  Whether you are experimenting, performing or recording, this versatile amp is the complete package. The two channels carry individual master volume controls, so a solo can be set apart from the rhythm sound.
+
+  Built-in reverb controls are independent per channel, and the whole front panel can be stored and recalled from the programmable footswitch included in the box.
+
+  The combo loads a Celestion Heritage G12H and a Celestion Vintage speaker, and carries two effects loops, an emulated XLR line out and MIDI in and thru for external switching.
+
+  The JVM205 Combo is crafted in the traditional manner at the UK factory, from loading the circuit boards to the black and gold finish, with every amplifier in the series assembled by hand. Designed and engineered in UK. Made in UK.
 specs: |-
-  - Output Wattage: 50W
-  - Channels: 2 (Multi)
-  - Gain Modes: 3 per channel (green / orange / red) = 6 total voicings
-  - Controls: Channel and mode select (button), gain (per channel), treble (per channel), middle (per channel), bass (per channel), reverb (per channel), presence, resonance, master volume select, master volume (switchable for each channel)
+  - Model: JVM205C
+  - Range: JVM
+  - Channels: 2 (multi), each with three modes
+  - Technology: Valve
+  - Output wattage: 50W
+  - Outputs: 5 x 1/4-inch jack speaker sockets (16 ohm load / 8 ohm load / 4 ohm load), Emulated Line Out (XLR), MIDI Thru
+  - Inputs: 1 x 1/4-inch jack instrument input, MIDI In, Footswitch
+  - Controls: channel and mode select (button), gain (per channel), treble (per channel), middle (per channel), bass (per channel), reverb (per channel), presence, resonance, master volume select, master volume (switchable for each channel)
   - Effects: Digital reverb
-  - Effects Loop: 2, 1 x series parallel, 1 x series
-  - Preamp Valves: 4 x ECC83, 1 x ECC83 (phase splitter)
-  - Power Amp Valves: 2 x EL34
-  - Speaker Configuration: 2x12"
-  - Speaker Model: 1 x Celestion Heritage G12H (8Ω, 80W), 1 x Celestion Vintage (8Ω, 70W)
-  - Unit Impedance: 16Ω
-  - Inputs: 1 x 1/4" jack instrument input, MIDI In, Footswitch
-  - Outputs: Speaker outputs: 5 x 1/4" jack sockets (16Ω load / 8Ω load / 4Ω load), Emulated Line Out (XLR), MIDI Thru
-  - Width: 690 mm / 27.2"
-  - Height: 510 mm / 20.1"
-  - Depth: 265 mm / 10.4"
+  - Effects loop: 2, 1 x series parallel, 1 x series
+  - Speaker configuration: 2x12 inch
+  - Speaker model: 1 x Celestion Heritage G12H (8 ohm, 80W), 1 x Celestion Vintage (8 ohm, 70W)
+  - Unit impedance: 16 ohm
+  - Preamp valves: 4 x ECC83, 1 x ECC83 (phase splitter)
+  - Power amp valves: 2 x EL34
   - Weight: 29.5 kg / 65 lb
+  - Width: 690 mm / 27.2 inches
+  - Height: 510 mm / 20.1 inches
+  - Depth: 265 mm / 10.4 inches
+  - Country of origin: Designed and engineered in UK. Made in UK.
+  - Box contents: Footswitch PEDL-91006 included, detachable power cable included
+  - Colour: Black
 io:
   - key: YllgFttD
     name: Instrument Input
@@ -65,7 +73,7 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: k8wMZt0X
     name: Emulated Line Out
     signalFlow: output
@@ -73,7 +81,7 @@ io:
     type: line
     connection: xlr
     maxConnections: 1
-    position: Top
+    position: Right
   - key: h4QjHK6Y
     name: Series/Parallel FX Loop Send
     signalFlow: output
@@ -81,7 +89,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: Cuey905R
     name: Series/Parallel FX Loop Return
     signalFlow: input
@@ -89,7 +97,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 8UhX9w0b
     name: Series FX Loop Send
     signalFlow: output
@@ -97,7 +105,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: zxJT1m8H
     name: Series FX Loop Return
     signalFlow: input
@@ -105,15 +113,47 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 0PFO0N2I
-    name: Speaker Output (selectable 16Ω / 8Ω / 4Ω load)
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: MMFSj5oR
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: THi0pnV2
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: xSPfUPSE
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: cfYsb980
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: bEVnWzwQ
     name: MIDI In
     signalFlow: input
@@ -121,7 +161,7 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 2PDzzFwa
     name: MIDI Thru
     signalFlow: output
@@ -129,7 +169,7 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
+    position: Right
   - key: Jwj6tJmu
     name: Mains Input (IEC)
     signalFlow: input
@@ -137,8 +177,11 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 links:
   - url: https://www.marshall.com/us/en/support/amps/support-for-jvm205-combo
     type: support
     title: support for jvm205 combo
+videos:
+  - videoId: MJJHOrGhTTo
+    title: JVM205 Combo

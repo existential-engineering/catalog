@@ -4,6 +4,10 @@ manufacturer: marshall
 primaryCategory: guitar-amplifier
 categories:
   - amplifier
+capabilities:
+  - reverb
+  - overdrive
+  - distortion
 url: https://www.marshall.com/us/en/product/studio-900-combo
 prices:
   - amount: 1599.99
@@ -18,26 +22,33 @@ description: The legendary JCM900 tone, in a compact design. Combining the
   crunch, clarity, and distinctive tone. Designed, engineered and made in the
   UK.
 details: |-
-  - Hybrid valve design (two ECC83 preamp valves, two 5881 power amp valves, one ECC83 phase splitter)
-  - Switchable power: 20W / 5W / <1W
-  - Built-in spring reverb
-  - Built-in effects loop
-  - Two channels (Clean / Crunch)
-  - 1 x 12" Celestion G12T-75 speaker
-  - Designed, engineered and made in the UK
+  Sculpt new sounds with the Studio 900 Combo. Built for versatility and compact in design, it retains the original JCM900's powerful crunch, clarity and distinctive tone.
+
+  A 20W powerhouse: featuring two ECC83 preamp valves, two 5881 power amp valves and one ECC83 phase splitter, the Studio 900 Combo faithfully captures the original 100W amp in a 20W output, and switches between 20W, 5W and under 1W power attenuation settings.
+
+  Inspired by the JCM900: combining the warmth and responsiveness of traditional valve amps with the reliability of modern technology, the combo delivers everything from sparkling cleans to screaming leads. It is crafted at Marshall's workshop in Bletchley, England, the same UK factory as the JCM900.
+
+  Your tone, anywhere and at any volume: the combo comes packed with features including a built-in effects loop and straightforward controls so you can adjust gain, EQ and volume. Dual channels offer an extensive array of tones, and each channel can be configured with different settings so you can switch between distinct sounds and styles.
+
+  Built-in reverb: an integrated spring reverb adds rich, dynamic layers and depth to the tone. The cabinet carries a single 12 inch Celestion G12T-75 speaker. Designed and engineered in UK. Made in UK.
 specs: |-
-  - Output Wattage: 20W (with power reduction to 5W and <1W)
-  - Technology: Hybrid valve (with solid-state components)
-  - Preamp Valves: 2 x ECC83
-  - Power Amp Valves: 2 x 5881
-  - Phase Splitter: 1 x ECC83
-  - Speaker Configuration: 1 x 12"
-  - Speaker Model: Celestion G12T-75 (16 Ω, 75 W)
-  - Speaker Outputs: 5 x 1/4" jack sockets (16Ω load / 8Ω load / 4Ω load)
-  - Effects: Built-in spring reverb
-  - Effects Loop: Yes
-  - Controls: Gain, EQ, and volume (dual channel: Clean Channel A, Crunch Channel A & B per the page's sound clip demos)
-  - Origin Country: United Kingdom (designed, engineered and made in UK)
+  - Model: SN20C
+  - Range: Studio
+  - Technology: valve preamp and power amp (2 x ECC83 + ECC83 phase splitter, 2 x 5881), which Marshall describes as a hybrid design with solid-state components
+  - Channels: 2
+  - Output wattage: 20W (with power reduction to 5W), <1W
+  - Outputs: Speaker outputs 5 x 1/4" jack sockets (16Ω load / 8Ω load / 4Ω load), DI output, Compensated DI output
+  - Valves: 2 x ECC83, 1 x ECC83 (phase splitter) and 2 x 5881
+  - Effects: Integrated spring reverb
+  - Effects loop: Built-in effects loop
+  - Speaker configuration: 1 x 12"
+  - Speaker model: Celestion G12T-75 (16 Ω, 75 W)
+  - Weight: 17.9 kg / 39.5 lb
+  - Width: 510 mm / 20.1"
+  - Height: 460 mm / 18.1"
+  - Depth: 255 mm / 10"
+  - Colour: Black
+  - Country of origin: Designed and engineered in UK. Made in UK.
 io:
   - key: ksgNO3SV
     name: Instrument Input
@@ -48,13 +59,45 @@ io:
     maxConnections: 1
     position: Top
   - key: 7qK38euy
-    name: Speaker Output
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: DPh7jpTB
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: UlPbWp3N
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: x7O1xvUF
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: vQyu9iw8
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: 3V6GXEkx
     name: FX Loop Send
     signalFlow: output
@@ -62,7 +105,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: DUb0tAS4
     name: FX Loop Return
     signalFlow: input
@@ -70,7 +113,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: JL5MeczA
     name: Footswitch
     signalFlow: input
@@ -78,7 +121,23 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: 6aNmloM9
+    name: Direct Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: yeCkn6tf
+    name: Recording Compensated Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: gvc48jSW
     name: Power Input
     signalFlow: input
@@ -86,7 +145,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 links:
   - url: https://www.marshall.com/us/en/product/studio-900-head
     type: resource

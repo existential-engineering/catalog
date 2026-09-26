@@ -1,45 +1,53 @@
 id: Y_Nqp_3FVR7N0xaVU2YhQ
-name: Origin 50 Combo
+name: Origin50 Combo
 manufacturer: marshall
 primaryCategory: guitar-amplifier
 categories:
   - amplifier
+capabilities:
+  - overdrive
+  - cabinet-simulation
+searchTerms:
+  - Origin 50
+  - ORI50C
 url: https://www.marshall.com/us/en/product/origin50-combo
-description: A 50W valve combo amplifier from Marshall's Origin series, built
-  around a single 12" Celestion G12N-60 Midnight 60 speaker. The Origin 50C
-  pairs ECC83 preamp valves with EL34 power valves for a classic British rock
-  voice and uses Marshall's Powerstem switching to step the amp down from 50W to
-  10W or 5W without altering its sonic character, making cranked tones usable at
-  lower volumes. The single-channel layout offers Gain, Bass, Middle, Treble and
-  Volume controls, a Tilt control that blends between Normal and Bright inputs,
-  and a footswitchable Gain Boost. Rear-panel features include an effects loop,
-  an emulated DI line output for silent recording, multiple speaker outputs with
-  selectable impedance, and a 2-way footswitch jack for gain boost and FX loop
-  on/off.
+prices:
+  - amount: 879.99
+    currency: USD
+description: A 50W valve combo amplifier from Marshall's Origin series, built around a single 12" Celestion G12N-60 Midnight 60 speaker. The Origin 50C pairs ECC83 preamp valves with EL34 power valves for a classic British rock voice and uses Marshall's Powerstem switching to step the amp down from 50W to 10W or 5W without altering its sonic character, making cranked tones usable at lower volumes. The single-channel layout offers Gain, Bass, Middle, Treble and Volume controls, a Tilt control that blends between Normal and Bright inputs, and a footswitchable Gain Boost. Rear-panel features include an effects loop, an emulated DI line output for silent recording, multiple speaker outputs with selectable impedance, and a 2-way footswitch jack for gain boost and FX loop on/off.
 details: |-
-  Origin50C
+  Innovate and craft your sound using this 50W combo. A Celestion Midnight 60 12" type speaker provides a classic all-valve, rich and harmonic Marshall tone.
 
-  Origin
+  Powerstem, power reduction technology, perfectly matches your tone at 50W, 10W and 5W, allowing you to perform on stage or practise in the studio. It works by reducing the voltage rails around the power amplifier rather than by traditional pentode or triode reduction, so the sonic character is unaltered at any volume.
 
-  Valve
+  Use the tilt control to fine-tune your sound, smoothly transitioning from a standard tone to a high treble setting. The attribute is drawn from the multi-input technology present in iconic amplifiers such as the 1959SLP and JTM45, condensed into a single knob.
 
-  Combo
+  With a 2-way footswitch you can control the gain boost and turn the FX loop on and off. Engaging the boost introduces an additional layer of gain, adding a distinctive crunch to the tone.
 
-  1 (single channel with footswitchable Gain Boost)
+  The Celestion G12N-60 Midnight 60 speaker captures the essence of the iconic Celestion style, providing balanced cleans and sparkling high frequencies, with a deep low-end warmth and mid-range character when pushed. Designed and engineered in UK. Made in Vietnam.
 specs: |-
-  - Output Wattage: 50W (switchable to 10W or 5W via Powerstem)
+  - Model: Origin50C
+  - Range: Origin
   - Channels: 1
-  - Controls: GAIN, BASS, MIDDLE, TREBLE, TILT, VOLUME, BOOST (footswitchable), PRESENCE, POWER, STANDBY
-  - Equalisation: Bass, Middle, Treble, Presence, Tilt
-  - Inputs: 1 x 1/4" jack instrument input
-  - Outputs: 3 x 1/4" jack speaker outputs (selectable 16Ω / 8Ω / 4Ω load); 1 x 1/4" emulated line output (DI)
-  - Effects Loop: Yes (series, footswitchable on/off)
-  - Footswitch: 2-way footswitch jack (Gain Boost and FX Loop on/off)
-  - Preamp Valves: 3 x ECC83
-  - Power Amp Valves: 2 x EL34
-  - Speaker Config: 1 x 12"
-  - Speaker Model: Celestion G12N-60 Midnight 60 (60W)
-  - Power Reduction: Powerstem switching: 50W / 10W / 5W
+  - Technology: valve
+  - Output wattage: high power 50W, mid power approx 10W, low power approx 5W
+  - Outputs: speaker outputs 3 x 1/4" jack sockets (16 ohm load / 8 ohm load), DI (1/4" jack)
+  - Inputs: 1 x 1/4" jack instrument input, footswitch
+  - Controls: GAIN (PULL BOOST), TILT, BASS, MIDDLE, TREBLE, MASTER, PRESENCE, POWERSTEM POWER SCALING
+  - Effects: none
+  - Effects loop: yes, 1 x series switchable
+  - Speaker configuration: 1x12"
+  - Speaker model: Celestion G12N-60 Midnight 60 (16 ohm, 60W)
+  - Unit impedance: 16 ohm
+  - Preamp valves: 2 x ECC83, 1 x ECC83 (phase splitter)
+  - Power amp valves: 2 x EL34
+  - Weight: 18.2 kg / 40 lb
+  - Width: 580 mm / 22.8"
+  - Height: 480 mm / 18.9"
+  - Depth: 245 mm / 9.6"
+  - In the box: PEDL-90016 footswitch, detachable power cable
+  - Colour: Black
+  - Country of origin: designed and engineered in UK, made in Vietnam
 io:
   - key: oI8yC7KW
     name: Instrument Input
@@ -49,30 +57,38 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Top
-  - key: 9iLNWbSE
-    name: Effects Loop Send
+  - key: BXsd8ZwS
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
-    type: line
+    type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: y1fBmdIj
-    name: Effects Loop Return
-    signalFlow: input
+    position: Right
+  - key: DkrLPXBv
+    name: Speaker Output 8 ohm A
+    signalFlow: output
     category: audio
-    type: line
+    type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: kOnHfeIE
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: 57hmOVWf
-    name: Emulated Line Output (DI)
+    name: DI Output
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: EfPGlSY2
     name: Footswitch (Gain Boost / FX Loop on/off)
     signalFlow: input
@@ -80,31 +96,23 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: BXsd8ZwS
-    name: Speaker Output 1 (16Ω)
+    position: Right
+  - key: 9iLNWbSE
+    name: Effects Loop Send
     signalFlow: output
     category: audio
-    type: speaker-level
+    type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: DkrLPXBv
-    name: Speaker Output 2 (8Ω)
-    signalFlow: output
+    position: Right
+  - key: y1fBmdIj
+    name: Effects Loop Return
+    signalFlow: input
     category: audio
-    type: speaker-level
+    type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: kOnHfeIE
-    name: Speaker Output 3 (4Ω)
-    signalFlow: output
-    category: audio
-    type: speaker-level
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Top
+    position: Right
   - key: JXT3B7To
     name: Mains Input (IEC)
     signalFlow: input
@@ -112,7 +120,6 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
-prices:
-  - amount: 718
-    currency: USD
+    position: Right
+videos:
+  - videoId: rpMZ40cfk8k

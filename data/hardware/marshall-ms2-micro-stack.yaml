@@ -4,6 +4,8 @@ manufacturer: marshall
 primaryCategory: guitar-amplifier
 categories:
   - amplifier
+capabilities:
+  - overdrive
 url: https://www.marshall.com/us/en/product/ms2-micro-stack
 prices:
   - amount: 54.99
@@ -16,22 +18,31 @@ description: The MS-2 is Marshall's pocket-sized 1W micro stack — a tiny
   front panel. A belt clip on the back lets the amp hang off jeans or a strap
   for stand-up jamming away from a power outlet.
 details: |-
-  MS-2
+  The MS-2 is a 1W micro stack that may be small but will deliver the true Marshall tone. Powered either by plugging into mains or by batteries, it is versatile enough to play on the move or practice in your bedroom.
 
-  Micro Stack (head + cab styling)
+  The MS-2 features volume, tone and overdrive controls, and is available in a variety of colours and styles: black, red, or classic dark grey. The two split channels are selected with the same switch that powers the amp, choosing either the clean 'On' voice or the 'Overdrive' voice.
 
-  Solid-state
+  A single 2-inch speaker sits in the miniature cabinet, and a belt clip is included so the amp can be worn and played on the move. A 1/4-inch headphone output on the cabinet allows silent practice.
 
-  Single channel with switchable clean/overdrive
-
-  Belt clip, battery-powered portability, miniature half-stack styling
+  Designed and engineered in UK. Made in Vietnam.
 specs: |-
-  - Output Wattage: 1W
-  - Speaker: 2-inch
-  - Controls: Volume, tone, overdrive (clean/overdrive switch)
-  - Power Source: 9V battery (also commonly powered via optional 9V DC adapter)
-  - Construction: Solid-state
-  - Intended Use: Practice and portable playing
+  - Model: MS-2
+  - Range: Micro amp
+  - Technology: Solid State
+  - Channels: 2 (Split)
+  - Output wattage: 1W
+  - Speaker configuration: 1x2"
+  - Inputs: 1 x 1/4" jack instrument input
+  - Outputs: 1 x 1/4" jack headphone out
+  - Controls: Volume, tone, select either 'On' voice or 'Overdrive' voice
+  - Power: 9V battery or 9V DC power adapter (not included)
+  - Additions: Belt clip
+  - Weight: 0.34 kg / 1 lb
+  - Width: 110 mm / 4.3"
+  - Height: 140 mm / 5.5"
+  - Depth: 60 mm / 2.4"
+  - Colour: Black
+  - Country of origin: designed and engineered in UK, made in Vietnam
 io:
   - key: pmmWKUXN
     name: Instrument Input
@@ -46,14 +57,19 @@ io:
     signalFlow: output
     category: audio
     type: headphone
-    connection: 1/8-inch
+    connection: 1/4-inch
     maxConnections: 1
     position: Top
   - key: 3mWI12bu
-    name: Battery Compartment (9V)
+    name: DC Power Input (9V)
     signalFlow: input
     category: power
     type: power
-    connection: built-in
+    connection: barrel
     maxConnections: 1
     position: Top
+variants:
+  - name: Red
+    slug: red
+  - name: Classic Grey
+    slug: classic-grey

@@ -5,6 +5,8 @@ primaryCategory: guitar-amplifier
 categories:
   - amplifier
   - vintage
+capabilities:
+  - overdrive
 url: https://www.marshall.com/us/en/product/studio-jtm-combo
 prices:
   - amount: 1599.99
@@ -20,31 +22,61 @@ description: The Studio JTM Combo is a compact 20W all-valve guitar amplifier
   loop. Visually it pays homage to the 1960s originals with a solid metal logo,
   gold piping, and gold beading.
 details: |-
-  Studio JTM
+  The Studio JTM Combo brings the iconic 60s tone that initially launched Marshall to the present day, in a more compact format. Whether you are at home, in the studio, or on the big stage, it can adapt to bring exceptional tone to any situation with built-in power reduction technology.
 
-  Studio
+  Power reduction switches the output between 20W and 5W at the flick of a switch, so the amp can move between the rehearsal room and home.
 
-  JTM45
+  The Studio JTM line replicates the renowned, velvety tones of the original Marshall JTM45, with two bridgeable voices, a series effects loop and a DI output.
 
-  Valve
+  The Celestion G12M-65 Creamback speaker gives the timeless G12M tone while accommodating higher power levels, with a rich low end, warm mid-range, crunchy upper-mids and refined highs.
 
-  Combo
-
-  Single channel with two voices
-
-  Designed, engineered and made in UK (Bletchley, England)
+  Skilfully crafted at Marshall's factory in Bletchley, England, the Studio JTM carries classic Marshall touches including a solid metal coffin logo and gold piping and beading that harks back to the 1960s. Designed and engineered in UK. Made in UK.
 specs: |-
-  - Output Wattage: 20W (switchable to 5W)
-  - Power Reduction: 20W / 5W switch
-  - Channels: Single channel with two voices
-  - Effects Loop: Yes (series)
-  - Speaker Config: 1 x 12"
-  - Speaker Model: Celestion G12M-65 Creamback
-  - Construction: All-valve
-  - Aesthetics: Solid metal logo, gold piping and gold beading
+  - Model: ST20C
+  - Range: Studio
+  - Built in Marshall's UK factory
+  - All-valve
+  - Same smooth tones as the original JTM45
+  - Output wattage: 20W (with power reduction option to 5W)
+  - Channels: 2, bridgeable
+  - Technology: valve
+  - Outputs: speaker outputs 5 x 1/4-inch jack sockets (16 ohm load / 8 ohm load / 4 ohm load), DI (1/4-inch jack)
+  - Inputs: 4 x 1/4-inch jack instrument inputs (high/low sensitivity)
+  - Controls: normal/loudness II, high treble/loudness I, treble, middle, bass, presence
+  - Effects: none
+  - Effects loop: yes, 1 x series switchable
+  - Speaker configuration: 1x12"
+  - Power handling: 65W
+  - Speaker model: Celestion G12M-65 Creamback (16 ohm, 65W)
+  - Unit impedance: 16 ohm
+  - Preamp valves: 2 x ECC83, 1 x ECC83 (phase splitter)
+  - Power amp valves: 2 x 5881
+  - Weight: 17.8 kg / 39.2 lb
+  - Width: 500 mm / 19.7 inches
+  - Height: 460 mm / 18.1 inches
+  - Depth: 265 mm / 10.4 inches
+  - Country of origin: designed and engineered in UK, made in UK
+  - Box contents: detachable power cable included
+  - Colour: Black
 io:
   - key: uQSlK0jN
-    name: Channel Input I (High sensitivity)
+    name: Input 1 High Treble (High sensitivity)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: W5azKWle
+    name: Input 1 High Treble (Low sensitivity)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: 8rsJV5kB
+    name: Input 2 Normal (High sensitivity)
     signalFlow: input
     category: audio
     type: instrument
@@ -52,7 +84,7 @@ io:
     maxConnections: 1
     position: Top
   - key: 8ECvOceP
-    name: Channel Input II (Low sensitivity)
+    name: Input 2 Normal (Low sensitivity)
     signalFlow: input
     category: audio
     type: instrument
@@ -66,7 +98,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: CUscvrts
     name: Effects Loop Return
     signalFlow: input
@@ -74,15 +106,55 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: CMYPENYT
-    name: Speaker Output (selectable 16Ω / 8Ω)
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: 0YUiHnXi
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: H2czILgl
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: N0E5aSoE
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: s6kaKcdY
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 5FlTC6ZD
+    name: DI Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: jlrzR4Ru
     name: Mains Input (IEC)
     signalFlow: input
@@ -90,4 +162,10 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
+videos:
+  - videoId: lUQD-fJXjE8
+    title: Studio JTM Combo
+  - videoId: "910111592"
+    provider: vimeo
+    title: Studio JTM Combo

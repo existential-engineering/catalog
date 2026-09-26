@@ -5,6 +5,8 @@ primaryCategory: guitar-amplifier
 categories:
   - amplifier
   - vintage
+capabilities:
+  - overdrive
 url: https://www.marshall.com/us/en/product/studio-jtm-head
 prices:
   - amount: 1349.99
@@ -20,30 +22,35 @@ description: "The Studio JTM Head (ST20H) is a compact 20W all-valve guitar
   pedalboard integration easy. Aesthetics nod to the 1960s originals with a
   solid metal Marshall logo, gold piping and gold beading."
 details: |-
-  - All-valve, era-defining JTM45 voicing
-  - Single channel with two voices
-  - Power reduction switch (20W / 5W)
-  - Series FX loop
-  - DI out for direct recording / FOH
-  - Two ECC83 preamp valves + ECC83 phase splitter
-  - Two 5881 power amp valves
-  - Built in Marshall's Bletchley, England factory
+  Built in the UK and inspired by Marshall's first ever amp, the Studio JTM Head can create any tone from smooth to crunchy. If you are looking for something unique, blend the two voices together and create your own sound.
+
+  This amplifier provides you with the versatility to tailor your power output to suit your environment. Effortlessly select between 20W and 5W power output to seamlessly transition from the rehearsal room to the communal space and back again, without compromising on tone.
+
+  Reproducing the legendary, warm and smooth tones of the original JTM45, the Studio JTM range looks as good as it sounds. Let the all-valve, era-defining sound of the JTM steal the show, whether playing at home or on stage.
+
+  This instantly recognisable tone is driven by two ECC83 preamp valves, two 5881 power amp valves and one ECC83 phase splitter.
+
+  Meticulously crafted in Marshall's Bletchley, England, factory the Studio JTM features classic Marshall touches such as a robust metal coffin logo with golden piping and beading that pays homage to the 1960s. After extensive years of development, the Studio JTM delivers the timeless and velvety tones reminiscent of the original JTM. Designed and engineered in UK. Made in UK.
 specs: |-
   - Model: ST20H
   - Range: Studio
-  - Inspired By: JTM45
-  - Output Wattage: 20W (switchable to 5W)
-  - Power Reduction: 20W / 5W switch
-  - Channels: Single channel with two voices
-  - Technology: All-valve
-  - Preamp Valves: 2 x ECC83, 1 x ECC83 (phase splitter)
-  - Power Amp Valves: 2 x 5881
-  - Effects Loop: Yes (series), rear-panel send/return
-  - Di Out: Yes
-  - Inputs: 4 x 1/4" jack inputs (High/Low across two voicings)
-  - Construction: All-valve, hand-wired heritage styling
-  - Aesthetics: Solid metal Marshall logo, gold piping and gold beading
-  - Country Of Origin: Designed and engineered in UK. Made in UK (Bletchley, England).
+  - Channels: 2, bridgeable
+  - Technology: Valve
+  - Output wattage: 20W (with power reduction option to 5W)
+  - Outputs: Speaker outputs 5 x 1/4" jack sockets (16 ohm load / 8 ohm load / 4 ohm load), DI (1/4" jack)
+  - Inputs: 4 x 1/4" jack instrument inputs (high/low sensitivity)
+  - Controls: Normal/Loudness II, High Treble/Loudness I, Treble, Middle, Bass, Presence
+  - Effects: None
+  - Effects loop: Yes, 1 x series switchable
+  - Preamp valves: 2 x ECC83, 1 x ECC83 (phase splitter)
+  - Power amp valves: 2 x 5881
+  - Weight: 9.25 kg / 20.4 lb
+  - Width: 500 mm / 19.7"
+  - Height: 240 mm / 9.4"
+  - Depth: 230 mm / 9.1"
+  - Country of origin: Designed and engineered in UK. Made in UK.
+  - Box contents: Detachable power cable included, speaker cable included
+  - Colour: Black
 io:
   - key: VqPBSn7C
     name: High Treble Input
@@ -84,7 +91,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: OVW6It3H
     name: FX Loop Return
     signalFlow: input
@@ -92,7 +99,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 9XnZlnOw
     name: DI Output
     signalFlow: output
@@ -100,15 +107,47 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: WNanil8K
-    name: Speaker Output
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: ZaAvYWLr
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: DQgGHA47
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: NrQ3zrWM
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: bElmc05E
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: 43QgpIiZ
     name: Mains Input (IEC)
     signalFlow: input
@@ -116,7 +155,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 links:
   - url: https://assets.ctfassets.net/javen7msabdh/4CUgSyE4vr6ixQHnkrt8cR/a873ce2230cb1e545605810c1e3e90d1/M3311.451_Studio_JTM_QSG_CATS-00261-03_web.pdf
     type: support
@@ -133,3 +172,5 @@ links:
 videos:
   - videoId: lUQD-fJXjE8
     provider: youtube
+  - provider: vimeo
+    videoId: "910111592"

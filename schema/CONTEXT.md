@@ -885,6 +885,7 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `barrier-strip`
 - `barrel`
 - `iec-c6`
+- `iec-c8`
 - `iec-c14`
 - `iec-c20`
 - `powercon`

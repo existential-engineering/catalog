@@ -4,6 +4,8 @@ manufacturer: marshall
 primaryCategory: guitar-amplifier
 categories:
   - amplifier
+capabilities:
+  - overdrive
 url: https://www.marshall.com/us/en/product/studio-classic-combo
 prices:
   - amount: 1599.99
@@ -15,32 +17,38 @@ description: Compact 20W all-valve guitar combo built in the UK. A modern
   effects loop, and a Celestion VT-Junior speaker. Hand-soldered at Marshall's
   Bletchley, England factory as part of the Studio series.
 details: |-
-  - All-valve, single-channel design
-  - Power reduction switch (20W / 5W)
-  - Cathode-biased power valves (no biasing required when replaced)
-  - Series switchable FX loop
-  - Master volume and full EQ (Treble, Middle, Bass, Presence)
-  - Celestion VT-Junior 10" speaker
-  - Hand-soldered, built in Bletchley, England
+  Get the legendary tone of the JCM800 at lower volumes with this portable combo. With the option to reduce the power down to 5W, you can own that genre-defining hard rock sound in the comfort of your own home.
+
+  Pick your power. Choose between 20W and 5W power output at the flick of a switch. Transition perfectly between your rehearsal room, home and back again.
+
+  A portable replica of the classic JCM800 which was originally introduced in the 80s. It offered more gain, taking you from clean to barking overdrive and soaring solos. The original is played by some of the greatest rock musicians of all time, so you are sure to get amazing tones out of its smaller brother.
+
+  Similar to its larger V-Type counterpart, the Celestion VT-Junior speaker provides a harmonious and well-balanced sound. Its compact 10-inch size delivers a powerful low mid punch, a sparkling high end as well as extreme responsiveness that allows you to stay engaged with your music.
+
+  The Studio Classic Combo is built on tradition. Constructed at Marshall's factory in Bletchley, England, it channels that classic Marshall spirit and is fine-tuned with iconic detailing. The studio series has a similar circuit design to its larger, older brothers and even features some hand-soldering. Designed and engineered in UK. Made in UK.
 specs: |-
   - Model: SC20C
   - Range: Studio
-  - Output Wattage: 20W (with power reduction option to 5W)
-  - Channels: 1
-  - Technology: Valve
-  - Preamp Valves: 2 x ECC83, 1 x ECC83 (phase splitter)
-  - Power Amp Valves: 2 x EL34
-  - Speaker: 1 x 10" Celestion VT-Junior (16Ω, 50W)
-  - Controls: Preamp Volume, Master Volume, Treble, Middle, Bass, Presence
-  - Effects: None
-  - Effects Loop: Yes, 1 x series switchable
+  - Technology: All-valve
+  - Channels: Single channel
+  - Output wattage: 20W (with power reduction option to 5W)
+  - Outputs: Speaker outputs 5 x 1/4" jack sockets (16Ω load / 8Ω load / 4Ω load), DI (1/4" jack)
   - Inputs: 2 x 1/4" jack instrument inputs (high/low sensitivity)
-  - Outputs: Speaker outputs: 5 x 1/4" jack sockets (16Ω / 8Ω / 4Ω load), DI (1/4" jack)
-  - Product Height: 460 mm / 18.1"
-  - Product Width: 510 mm / 20.1"
-  - Product Depth: 255 mm / 10"
+  - Controls: Preamp volume, master volume, treble, middle, bass, presence
+  - Effects: None
+  - Effects loop: Yes, 1 x series switchable
+  - Speaker configuration: 1x10"
+  - Speaker model: Celestion VT-Junior (16Ω, 50W)
+  - Unit impedance: 16Ω
+  - Preamp valves: 2 x ECC83, 1 x ECC83 (phase splitter)
+  - Power amp valves: 2 x EL34
   - Weight: 14.55 kg / 32 lb
-  - Country Of Origin: Designed and engineered in UK. Made in UK.
+  - Width: 510 mm / 20.1"
+  - Height: 460 mm / 18.1"
+  - Depth: 255 mm / 10"
+  - Colour: Black
+  - Box contents: Detachable power cable included
+  - Country of origin: Designed and engineered in UK. Made in UK.
 io:
   - key: Rj9CTmy1
     name: High Sensitivity Input
@@ -59,29 +67,45 @@ io:
     maxConnections: 1
     position: Top
   - key: eRsu8OR1
-    name: Speaker Output (16Ω)
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: AhMrZDLW
-    name: Speaker Output (8Ω)
+    name: Speaker Output 8 ohm A
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: nvOyWWVQ
-    name: Speaker Output (4Ω)
+    name: Speaker Output 8 ohm B
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: Dyz6UjhG
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: KcGTGSbt
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: SzvBRAUg
     name: DI Output
     signalFlow: output
@@ -89,7 +113,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: jIhCmm3a
     name: FX Loop Send
     signalFlow: output
@@ -97,7 +121,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: ilUU2ma9
     name: FX Loop Return
     signalFlow: input
@@ -105,7 +129,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: gAuLGG6j
     name: Power Input
     signalFlow: input
@@ -113,7 +137,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 links:
   - url: https://assets.ctfassets.net/javen7msabdh/4qJx59jhEBanW5sbaVDNA4/735a55aa8d6a72ae297c891b4acd4356/M3311.405_Studio_Classic_QSG_CATS-00246-04_web.pdf
     type: support

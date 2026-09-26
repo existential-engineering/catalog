@@ -4,6 +4,10 @@ manufacturer: marshall
 primaryCategory: guitar-amplifier
 categories:
   - amplifier
+capabilities:
+  - reverb
+  - overdrive
+  - distortion
 url: https://www.marshall.com/us/en/product/dsl1-head
 prices:
   - amount: 349.99
@@ -22,44 +26,34 @@ description: The DSL1 Head is an all-valve 1W guitar amplifier head from
   ECC83 preamp valves and one ECC82 power valve drive the circuit, packaged in a
   compact lunchbox-style head cabinet.
 details: |-
-  DSL1HR
+  The DSL1 Head has the classic Marshall tone and features expected from a DSL but at a lower power to suit those who play at home. The DSL sound has been perfectly crafted to suit those with eclectic tastes, looking for tonal experimentation.
 
-  DSL
+  Take control of your playing volume. Select between 1W and a more subdued 0.1W power output with a simple flick of a switch. Perfect for effortlessly moving between the rehearsal space and your home.
 
-  All-valve
+  The DSL1 Head was built for optimal convenience. Its compact size is not only ideal for home use but also makes it highly transportable, so you can take it to band practice with ease.
 
-  Head
+  Equipped with two distinct gain channels, ultra gain and classic gain, this amplifier offers enhanced versatility in sculpting your tone. The dual gain channels typically exhibit different levels of gain and distortion, enabling seamless transitions between cleaner tones and more intense overdriven or distorted sounds without the need for significant adjustments.
 
-  Two (Classic Gain and Ultra Gain)
-
-  Footswitchable (PEDL-90011 included)
-
-  2 x ECC83
-
-  1 x ECC82
-
-  Digital
-
-  PEDL-90011 footswitch, detachable power cable
-
-  1007150
+  An emulated output is provided for recording or headphones. Designed and engineered in UK. Made in Vietnam.
 specs: |-
-  - Output Wattage: 1W
-  - Power Reduction: 1W to 0.1W switch
-  - Channels: 2 (Classic Gain, Ultra Gain)
-  - Controls: Classic Gain channel volume, channel select switch, Ultra Gain channel gain and volume, tone shift switch, treble, middle, bass, reverb
+  - Model: DSL1HR
+  - Range: DSL
+  - Technology: All-valve
+  - Channels: 2
+  - Output wattage: 1W with optional power reduction to 0.1W
+  - Outputs: 1 x 1/4" jack speaker output (16Ω load only), 1 x 3.5mm jack emulated line out
+  - Inputs: 1 x 1/4" instrument jack, 1 x 3.5mm jack aux in, footswitch
+  - Controls: Classic gain channel volume, channel select switch, ultra gain channel gain and volume, tone shift switch, treble, middle, bass, reverb
   - Effects: Digital reverb
-  - Effects Loop: Yes, 1 x series
-  - Preamp Valves: 2 x ECC83
-  - Power Amp Valves: 1 x ECC82
-  - Speaker Output: 1 x 1/4" jack, 16 Ω load only
-  - Emulated Output: 1 x 3.5 mm jack emulated line out (also usable for headphones)
-  - Aux In: 1 x 3.5 mm jack
-  - Footswitch: Included (PEDL-90011)
-  - Width: 360 mm / 14.2 in
-  - Height: 210 mm / 8.3 in
-  - Depth: 215 mm / 8.5 in
+  - Effects loop: Yes, 1 x series
+  - Preamp valves: 2 x ECC83
+  - Power amp valves: 1 x ECC82
   - Weight: 5.6 kg / 12 lb
+  - Width: 360 mm / 14.2"
+  - Height: 210 mm / 8.3"
+  - Depth: 215 mm / 8.5"
+  - Country of origin: Designed and engineered in UK. Made in Vietnam.
+  - Box contents: PEDL-90011 footswitch included, detachable power cable included
 io:
   - key: TfZA303H
     name: Instrument Input
@@ -76,7 +70,7 @@ io:
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: M3fFhGht
     name: Footswitch
     signalFlow: input
@@ -84,7 +78,7 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: WPnFyJNJ
     name: Effects Loop Send
     signalFlow: output
@@ -92,7 +86,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: cQtIuttr
     name: Effects Loop Return
     signalFlow: input
@@ -100,15 +94,15 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: hmmwaXAo
-    name: Speaker Output (16 Ω)
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: cP8BdxKd
     name: Emulated Line Out / Headphone
     signalFlow: output
@@ -116,7 +110,7 @@ io:
     type: headphone
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: B0LpSGpU
     name: Mains Input
     signalFlow: input
@@ -124,7 +118,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 links:
   - url: https://assets.ctfassets.net/javen7msabdh/4bHNndf2diiJAx0dPCBdFO/7e439ac92327d8deb2b46c6ed37e8637/M3311.430_DSL1CR___DSL1HR_QSG_CATS-90261-v04_web.pdf
     type: support

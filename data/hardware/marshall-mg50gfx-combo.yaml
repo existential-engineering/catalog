@@ -5,6 +5,17 @@ primaryCategory: guitar-amplifier
 categories:
   - amplifier
   - modeling
+capabilities:
+  - overdrive
+  - equalization
+  - reverb
+  - delay
+  - chorus
+  - flanger
+  - phaser
+  - vibrato
+  - octave
+  - cabinet-simulation
 url: https://www.marshall.com/us/en/product/mg50gfx-combo
 prices:
   - amount: 429.99
@@ -19,27 +30,37 @@ description: The MG50GFX is a 50W solid-state guitar combo amplifier from
   emulated headphone output for silent practice and direct recording, and
   connections for an external FX pedal and footswitch.
 details: |-
-  MG50GFX
+  A gig-worthy 50W amp with an undeniably bold sound. With four channels, three-band EQ and a range of digital FX, the MG50FX gives you full control of your tone.
 
-  MG Gold
+  Each channel can store and recall your settings instantly, while the included 2-way latching footswitch lets you switch between clean:crunch and overdrive channels for hands-free control. The MG50FX is also compatible with PEDL-90008 (sold separately).
 
-  Solid-state
+  Its custom 12" speaker delivers powerful sound, making the MG50FX a versatile choice that can easily cope with gigs while remaining well-suited for studio use.
 
-  Combo
+  Recording directly and practising silently is now more effortless than ever, thanks to the emulated speaker output. This feature not only simplifies the direct recording process from the amplifier, but also allows silent practice sessions. And the MP3/line input feature allows you to play along with all your favourite songs.
 
-  Four (Clean, Crunch, OD1, OD2)
-
-  Built-in digital FX (reverb, chorus, phaser, flanger, delay)
-
-  12-inch custom
+  The MG50FX is purposefully crafted with FX pedals in mind. It features built-in digital FX and also seamlessly accommodates the use of external FX pedals through its series effects loop. Designed and engineered in UK. Made in Vietnam.
 specs: |-
-  - Output Wattage: 50W
-  - Channels: Four (Clean, Crunch, OD1, OD2)
-  - Eq: Three-band (Bass, Middle, Treble)
-  - Digital Fx: Built-in digital effects section
-  - Emulated Output: Yes (via headphone output)
-  - Speaker: 12-inch custom speaker
-  - Construction: Solid-state
+  - Model: MG50FX, MG Gold range
+  - Output wattage: 50W
+  - Technology: solid state
+  - Channels: 4 (store and recall) - clean, crunch, OD1, OD2
+  - Effects: reverb, chorus, phaser, flanger, vibe, octave, delay
+  - Controls: gain, clean/crunch select, bass, OD1/OD2 select, middle, treble, reverb, volume, tuner, tap, store, FX select, delay, ext FX switch, master volume, damping switch, store switch
+  - Effects loop: yes, 1 x series
+  - Speaker outputs: 1 x 1/4" jack socket (minimum 8 ohm load)
+  - Speaker configuration: 1x12"
+  - Speaker model: custom speaker (8 ohm, 50W)
+  - Unit impedance: 8 ohm
+  - Inputs: 1 x 1/4" jack instrument input, 1 x 3.5 mm MP3/line input
+  - Emulated speaker output for direct recording and silent practice
+  - Included in the box: PEDL-90010 2-way latching footswitch, detachable power cable
+  - Also compatible with the PEDL-90008 footswitch (sold separately)
+  - Weight: 16.6 kg / 37 lb
+  - Width: 520 mm / 20.5"
+  - Height: 505 mm / 19.9"
+  - Depth: 280 mm / 11"
+  - Colour: black and gold
+  - Country of origin: designed and engineered in UK, made in Vietnam
 io:
   - key: Czz4WR77
     name: Instrument Input
@@ -47,14 +68,6 @@ io:
     category: audio
     type: instrument
     connection: 1/4-inch
-    maxConnections: 1
-    position: Top
-  - key: cXQZlIHA
-    name: MP3/Line Input
-    signalFlow: input
-    category: audio
-    type: line
-    connection: 1/8-inch
     maxConnections: 1
     position: Top
   - key: Ye9pevkn
@@ -65,14 +78,14 @@ io:
     connection: 1/8-inch
     maxConnections: 1
     position: Top
-  - key: vyWXwGEl
-    name: FX Loop Send
-    signalFlow: output
+  - key: cXQZlIHA
+    name: MP3/Line Input
+    signalFlow: input
     category: audio
     type: line
-    connection: 1/4-inch
+    connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: ftDHk1lS
     name: FX Loop Return
     signalFlow: input
@@ -80,7 +93,15 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: vyWXwGEl
+    name: FX Loop Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: KUMtFvwZ
     name: Footswitch
     signalFlow: input
@@ -88,7 +109,15 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: cn0Ng6K9
+    name: Speaker Output 8 ohm
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: kOmqzGAT
     name: Mains Input (IEC)
     signalFlow: input
@@ -96,4 +125,6 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
+videos:
+  - videoId: MAwHr_4cuBY

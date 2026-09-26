@@ -4,6 +4,10 @@ manufacturer: marshall
 primaryCategory: guitar-amplifier
 categories:
   - amplifier
+capabilities:
+  - reverb
+  - overdrive
+  - cabinet-simulation
 url: https://www.marshall.com/us/en/product/dsl40-combo
 prices:
   - amount: 749.99
@@ -20,28 +24,43 @@ description: The DSL40 Combo is an all-round 40W all-valve guitar combo from
   silent practice, and MIDI compatibility for integration with switching rigs
   and controllers.
 details: |-
-  DSL40
+  The DSL40 Combo has been designed with a 12" G-12 V-Type speaker for those who need exceptional tone and flexibility. With rich functionality including the ability to move between two sounds within each gain channel, players can experiment and release their personality through sound. Designed and engineered in UK. Made in Vietnam.
 
-  DSL
+  Power reduction from 40W to 20W at the flick of a switch: you decide how loud you want the music to be. Choose between 40W and 20W power output at the flick of a switch. Perfect for jumping between practice and the stage over and over again.
 
-  Valve
+  Can be controlled using any MIDI equipment: the features on the amp are fully compatible with any MIDI equipment, meaning that, for those technical players, you can play this amp and different MIDI equipment simultaneously.
 
-  Combo
+  Five speaker outputs: whether you're practising or performing, the DSL40 is the amp for you. With five speaker outputs, this amp offers you plenty of tonal options. Simply change the speaker configuration to significantly alter the sound produced by the amp.
 
-  Two (Classic Gain and Ultra Gain), each with two modes
-
-  Footswitchable / MIDI-controllable
+  Celestion G-12 V-Type speaker: elevate your sound with the V-Type speaker, renowned for its sweet and harmonious sound. Immerse yourself in a perfectly balanced tonal signature that captures the essence of vintage music, with a modern twist. Whether you're playing clean melodies or unleashing a fiery overdrive, this speaker ensures that every note resonates with clarity and definition. With its mid-band warmth, it adds depth and richness to your lead playing, giving your sound a full-bodied presence.
 specs: |-
-  - Output Wattage: 40W (switchable to 20W)
-  - Power Reduction: 40W / 20W pentode-triode switch
-  - Channels: Two channels with two modes per channel
-  - Effects Loop: Yes
-  - Emulated Output: Yes
-  - Midi: MIDI compatible / MIDI-controllable
-  - Speaker Config: 1 x 12"
-  - Speaker Model: Celestion V-Type
-  - Speaker Outputs: Five speaker outputs
-  - Construction: All-valve
+  - All-valve
+  - 40W to 20W at the flick of a switch
+  - 12-inch Celestion V-Type speaker
+  - Five speaker outputs
+  - Compact and portable
+  - Suitable for a variety of genres
+  - Model: DSL40 Combo
+  - Range: DSL
+  - Channels: 2, each with 2 modes
+  - Technology: Valve
+  - Output wattage: 40W (with power reduction option to 20W)
+  - Outputs: speaker outputs 5 x 1/4" jack sockets (16 ohm load / 8 ohm load / 4 ohm load), 1 x 1/4" jack emulated line out
+  - Inputs: 1 x 1/4" instrument jack, 1 x 3.5 mm jack aux input, MIDI in, footswitch
+  - Controls: classic gain channel (gain, volume, clean crunch switch), ultra gain channel (gain, volume, OD1/OD2 switch), treble, middle, bass, tone shift switch, presence, resonance, reverb (classic gain channel), reverb (ultra gain channel), master select switch, master volume I, master volume II, loop on/off switch, low power option (on rear)
+  - Effects: digital reverb
+  - Effects loop: yes, series, send/return
+  - Speaker configuration: 1x12"
+  - Speaker model: Celestion V-Type speaker (16 ohm, 70 W)
+  - Unit impedance: 16 ohm
+  - Preamp valves: 4 x ECC83
+  - Power amp valves: 2 x EL34
+  - Weight: 22.9 kg / 50 lb
+  - Width: 620 mm / 24.4"
+  - Height: 490 mm / 19.3"
+  - Depth: 252 mm / 9.9"
+  - Country of origin: designed and engineered in UK, made in Vietnam
+  - Box contents: PEDL-90012 footswitch included, compatible with PEDL-91016 (modes 1 clean, 2 crunch, 3 OD1, 4 OD2, 5 master 1 / master 2 toggle, 6 FX loop on/off), detachable power cable included
 io:
   - key: ZXh5cUdY
     name: Instrument Input
@@ -58,7 +77,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: QLhmBSfI
     name: Effects Loop Return
     signalFlow: input
@@ -66,23 +85,15 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 9vgyZaCh
-    name: Emulated Line Out
+    name: Emulated Line Out / Headphone
     signalFlow: output
     category: audio
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
-  - key: xNHf4ip8
-    name: Headphone Output
-    signalFlow: output
-    category: audio
-    type: headphone
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Top
+    position: Right
   - key: CewInfSA
     name: Footswitch
     signalFlow: input
@@ -90,7 +101,15 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: epyEOE0T
+    name: Aux In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
   - key: o0CL8Kr0
     name: MIDI In
     signalFlow: input
@@ -98,47 +117,47 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
+    position: Right
   - key: WXgbboCT
-    name: Speaker Output 1 (16 ohm)
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: wAx2w34H
-    name: Speaker Output 2 (8 ohm)
+    name: Speaker Output 8 ohm A
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: wNXdnxch
-    name: Speaker Output 3 (8 ohm)
+    name: Speaker Output 8 ohm B
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: VdrR2uJx
-    name: Speaker Output 4 (4 ohm)
+    name: Speaker Output 4 ohm A
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: N7HQq4Rp
-    name: Speaker Output 5 (4 ohm)
+    name: Speaker Output 4 ohm B
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: F9rOE9xc
     name: Mains Input (IEC)
     signalFlow: input
@@ -146,4 +165,4 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right

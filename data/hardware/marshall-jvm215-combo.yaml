@@ -1,10 +1,16 @@
 id: zaab03SgM5QLvXvLsTSo7
-name: JVM215 50W Combo Amp
+name: JVM215 Combo
 manufacturer: marshall
 primaryCategory: guitar-amplifier
 categories:
   - amplifier
   - midi
+capabilities:
+  - reverb
+  - overdrive
+  - distortion
+searchTerms:
+  - JVM215C
 url: https://www.marshall.com/us/en/product/jvm215-combo
 prices:
   - amount: 2099.99
@@ -16,37 +22,43 @@ description: Versatile 50W all-valve 1x12" combo built in the UK. The JVM215C is
   in/thru for channel and mode recall, and a 50W power section driving a
   Celestion G12 B150 speaker. Hand-built in Marshall's UK factory.
 details: |-
-  - Two channels (Clean/Crunch and OD1/OD2) with four modes total
-  - Dedicated volume and reverb per channel
-  - Dual switchable master volumes for instant solo boost
-  - Digital reverb
-  - Series effects loop plus additional series/parallel effects loop
-  - MIDI In / MIDI Thru for channel and mode recall
-  - Emulated XLR line out for silent recording
-  - Standby mode for silent recording
-  - PEDL-91006 programmable footswitch included
-  - Hand-built in the UK factory
+  With three gain modes on each of the two channels, the JVM215 Combo is just as comfortable playing clean tones as it is heavy distortion.
+
+  Featuring one Celestion G12 B150 speaker and two master volumes, get an instant volume boost when it is time for your big moment. It has a master volume for each channel which means you can create explosive solo moments.
+
+  The JVM215 Combo has recording capabilities as well as a standby mode for silent recording. All you have to do to capture the perfect take is connect your amplifier's line out to a recording device and keep the standby switch turned off.
+
+  With the programmable footswitch, which is included, you can recall your mode, master and reverb settings. This gives you power and flexibility when and where you need it.
+
+  The JVM215 Combo is built in Marshall's UK factory, from the loading of the circuit boards to the signature black, white and gold finishes. Designed and engineered in UK. Made in UK.
 specs: |-
+  - Built in Marshall's UK factory
+  - All-valve
+  - 12" Celestion G12 B150 speaker
+  - Two channels with dedicated volume controls
+  - Silent recording mode
+  - Store your settings
   - Model: JVM215C
   - Range: JVM
-  - Output Wattage: 50W
   - Channels: 2 (Multi)
   - Technology: Valve
-  - Preamp Valves: 4 x ECC83, 1 x ECC83 (phase splitter)
-  - Power Amp Valves: 2 x EL34
-  - Speaker Configuration: 1x12"
-  - Speaker Model: Celestion G12 B150 (8Ω, 150W)
-  - Unit Impedance: 8Ω
+  - Output wattage: 50W
+  - Outputs: Speaker outputs 5 x 1/4" jack sockets (16Ω load / 8Ω load / 4Ω load), Emulated Line Out (XLR), MIDI Thru
+  - Inputs: 1 x 1/4" jack instrument input, MIDI In, Footswitch
   - Controls: Channel and mode select (button), gain (per channel), treble (per channel), middle (per channel), bass (per channel), volume (per channel), reverb (per channel), presence, resonance, master volume select, master volume (switchable for each channel)
   - Effects: Digital reverb
-  - Effects Loop: 2: 1 x series, 1 x series/parallel
-  - Inputs: 1 x 1/4" jack instrument input, MIDI In, Footswitch
-  - Outputs: Speaker outputs: 5 x 1/4" jack sockets (16Ω / 8Ω / 4Ω load), Emulated Line Out (XLR), MIDI Thru
-  - Product Height: 510 mm / 20.1"
-  - Product Width: 605 mm / 23.8"
-  - Product Depth: 265 mm / 10.4"
+  - Effects loop: 2, 1 x series parallel, 1 x series
+  - Speaker configuration: 1x12"
+  - Speaker model: Celestion G12 B150 (8Ω, 150w)
+  - Unit impedance: 8Ω
+  - Preamp valves: 4 x ECC83, 1 x ECC83 (phase splitters)
+  - Power amp valves: 2 x EL34
   - Weight: 26.5 kg / 58 lb
-  - Country Of Origin: Designed and engineered in UK. Made in UK.
+  - Width: 605 mm / 23.8"
+  - Height: 510 mm / 20.1"
+  - Depth: 265 mm / 10.4"
+  - Country of origin: Designed and engineered in UK. Made in UK.
+  - Box contents: PEDL-91006 footswitch included, detachable power cable included
 io:
   - key: o8KpmVat
     name: Instrument Input
@@ -57,13 +69,45 @@ io:
     maxConnections: 1
     position: Top
   - key: fsyBSfqu
-    name: Speaker Output
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: eRZU80UU
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: ZKaqmy06
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: P34JX2JE
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: A85EcuYs
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: pw8jWbqG
     name: Emulated Line Out
     signalFlow: output
@@ -71,7 +115,7 @@ io:
     type: line
     connection: xlr
     maxConnections: 1
-    position: Top
+    position: Right
   - key: eruRBk3T
     name: FX Loop Send (Series)
     signalFlow: output
@@ -79,7 +123,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 5o4vDnSS
     name: FX Loop Return (Series)
     signalFlow: input
@@ -87,7 +131,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: oMWrLNv6
     name: FX Loop Send (Series/Parallel)
     signalFlow: output
@@ -95,7 +139,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: JyAFJ5N2
     name: FX Loop Return (Series/Parallel)
     signalFlow: input
@@ -103,7 +147,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: e8s0KZiF
     name: MIDI In
     signalFlow: input
@@ -111,7 +155,7 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
+    position: Right
   - key: d87GDuv9
     name: MIDI Thru
     signalFlow: output
@@ -119,7 +163,7 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
+    position: Right
   - key: jMr2emBw
     name: Footswitch
     signalFlow: input
@@ -127,7 +171,7 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: wIsgqUkf
     name: Power Input
     signalFlow: input
@@ -135,7 +179,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 links:
   - url: https://downloads.ctfassets.net/javen7msabdh/1jY1ahs1MbZXJyiYmu3qQA/a4929983d76cd15730d386f2275507ce/M3311.395_JVM2_QSG_CATS-00259-03_web.pdf
     type: support
@@ -146,3 +190,4 @@ links:
 videos:
   - videoId: MJJHOrGhTTo
     provider: youtube
+    title: JVM215 Combo

@@ -1,9 +1,16 @@
 id: 7-RYz3cPrpAcYUP0_dLwp
-name: JVM205H
+name: JVM205 Head
 manufacturer: marshall
 primaryCategory: guitar-amplifier
 categories:
   - amplifier
+capabilities:
+  - reverb
+  - overdrive
+  - distortion
+  - cabinet-simulation
+searchTerms:
+  - JVM205H
 url: https://www.marshall.com/us/en/product/jvm205-head
 prices:
   - amount: 1799.99
@@ -17,34 +24,35 @@ description: Versatile 50W all-valve guitar amplifier head built in the UK. Two
   volume select, reverb on/off, and FX loop on/off via MIDI. Hand-assembled at
   Marshall's UK factory.
 details: |-
-  - All-valve 50W guitar amplifier head
-  - Two independent channels (Clean and Overdrive 1) with three gain modes each (Green/Orange/Red)
-  - Per-channel gain, three-band EQ, reverb, and master volume
-  - Shared presence and resonance controls
-  - Studio-quality digital reverb (per channel)
-  - Two effects loops: one series/parallel, one series
-  - Emulated XLR line out for silent recording / direct to mixer
-  - MIDI In and MIDI Thru for full channel/mode/effects recall
-  - Programmable footswitch included
-  - Hand-assembled in the UK
+  Enhance your sound with the JVM205 Head. Packed full of versatile features, this amp effortlessly showcases Marshall's broad sound palette.
+
+  Green, orange and red LED lights guide you through the modes, each with more gain than the last, to find the sound that will set you apart. The amp carries two channels, each with its own master volume, so a solo can be set apart from the rhythm sound.
+
+  Built-in reverb controls are independent per channel, and mode, master and reverb settings are recalled from the programmable footswitch included in the box.
+
+  Two effects loops (one series and parallel, one series), an emulated XLR line out and MIDI in and thru handle switching and connection to the rest of a rig.
+
+  The JVM205 Head is constructed at the UK factory, from loading the circuit boards to the black, white and gold finish, with each amplifier in the series assembled by hand. Designed and engineered in UK. Made in UK.
 specs: |-
   - Model: JVM205H
   - Range: JVM
-  - Output Wattage: 50W
-  - Channels: 2 (Multi)
+  - Channels: 2 (multi), each with three modes
   - Technology: Valve
-  - Preamp Valves: 4 x ECC83, 1 x ECC83 (phase splitter)
-  - Power Amp Valves: 2 x EL34
-  - Controls: Channel and mode select (button), gain (per channel), treble (per channel), middle (per channel), bass (per channel), reverb (per channel), presence, resonance, master volume select, master volume (switchable for each channel)
+  - Output wattage: 50W
+  - Outputs: 5 x 1/4-inch jack speaker sockets (16 ohm load / 8 ohm load / 4 ohm load), Emulated Line Out (XLR), MIDI Thru
+  - Inputs: 1 x 1/4-inch jack instrument input, MIDI In, Footswitch
+  - Controls: channel and mode select (button), gain (per channel), treble (per channel), middle (per channel), bass (per channel), reverb (per channel), presence, resonance, master volume select, master volume (switchable for each channel)
   - Effects: Digital reverb
-  - Effects Loop: 2, 1 x series parallel, 1 x series
-  - Inputs: 1 x 1/4" jack instrument input, MIDI In, Footswitch
-  - Outputs: Speaker outputs: 5 x 1/4" jack sockets (16Ω load / 8Ω load / 4Ω load), Emulated Line Out (XLR), MIDI Thru
-  - Product Height: 310 mm / 12.2"
-  - Product Width: 740 mm / 29.1"
-  - Product Depth: 215 mm / 8.5"
+  - Effects loop: 2, 1 x series parallel, 1 x series
+  - Preamp valves: 4 x ECC83, 1 x ECC83 (phase splitter)
+  - Power amp valves: 2 x EL34
   - Weight: 17.5 kg / 39 lb
-  - Country Of Origin: Designed and engineered in UK. Made in UK.
+  - Width: 740 mm / 29.1 inches
+  - Height: 310 mm / 12.2 inches
+  - Depth: 215 mm / 8.5 inches
+  - Country of origin: Designed and engineered in UK. Made in UK.
+  - Box contents: PEDL-91006 footswitch included, detachable power cable included, speaker cable included
+  - Colour: Black
 io:
   - key: kTMuODzI
     name: Instrument Input
@@ -55,13 +63,45 @@ io:
     maxConnections: 1
     position: Top
   - key: eiHUO1JS
-    name: Speaker Output
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: vMhG5ntr
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: pN6bT7KQ
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 5bWerLXx
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: lb3JpAF3
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: tM7hef4E
     name: Emulated Line Out
     signalFlow: output
@@ -69,7 +109,7 @@ io:
     type: line
     connection: xlr
     maxConnections: 1
-    position: Top
+    position: Right
   - key: WhDo5NVJ
     name: FX Loop 1 Send (Series/Parallel)
     signalFlow: output
@@ -77,7 +117,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: E47kQnPE
     name: FX Loop 1 Return (Series/Parallel)
     signalFlow: input
@@ -85,7 +125,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: O2qSKyUA
     name: FX Loop 2 Send (Series)
     signalFlow: output
@@ -93,7 +133,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: eUBzQFtf
     name: FX Loop 2 Return (Series)
     signalFlow: input
@@ -101,7 +141,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: KIh24d7Z
     name: MIDI In
     signalFlow: input
@@ -109,7 +149,7 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
+    position: Right
   - key: ttIqFTx6
     name: MIDI Thru
     signalFlow: output
@@ -117,7 +157,7 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
+    position: Right
   - key: ANp4muLN
     name: Footswitch
     signalFlow: input
@@ -125,7 +165,7 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: aHFtIXMq
     name: Power Input
     signalFlow: input
@@ -133,7 +173,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 links:
   - url: https://www.marshall.com/us/en/support/amps/support-for-jvm205-head
     type: support
@@ -141,3 +181,4 @@ links:
 videos:
   - videoId: MJJHOrGhTTo
     provider: youtube
+    title: JVM205 Head

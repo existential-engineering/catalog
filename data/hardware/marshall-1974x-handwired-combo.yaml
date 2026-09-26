@@ -5,6 +5,8 @@ primaryCategory: guitar-amplifier
 categories:
   - amplifier
   - vintage
+capabilities:
+  - tremolo
 url: https://www.marshall.com/us/en/product/1974x-handwired-combo
 prices:
   - amount: 2549.99
@@ -17,28 +19,34 @@ description: A faithful reissue of the legendary 18-watt 1974 combo, handwired
   classic Marshall touches, it captures the rich, dynamic response of the
   original 1960s 1974 combo.
 details: |-
-  1974X
+  Just like the original, the 1974X Handwired Combo is valve driven, hand soldered, with an aluminium chassis, and has a Tremolo circuit. The special 12-inch Celestion G12M-20 Greenback in this amp has been aged to get as close as possible to that vintage, worn in sound of the 1974.
 
-  Handwired / Vintage Reissue
+  Expertly crafted and handwired at Marshall's factory in Bletchley, England, the 1974X Handwired Combo effortlessly captures the Marshall spirit. It carries the classic touches of Marshall's earlier handwired amps.
 
-  Valve
+  Classics are classics for a reason. The 1974X Handwired Combo incorporates an analogue tremolo circuit. Despite the advantages of digital effects in certain applications, many guitar players still favour the analogue tremolo for its vintage sound, providing a timeless appeal.
 
-  Combo
+  The G12M Greenback speaker has undergone some changes over time, but it has always managed to keep its highly sought-after sound. The 20W version of this speaker has a bold mid-range and tight high-end, giving it aggressive tones for chords and searing leads. It is perfect for bringing drive and clarity to modern high gain amps.
 
-  2 voices (Normal and Tremolo)
-
-  Handwired in Bletchley, England, UK
+  Unlock the legendary power of Marshall's iconic sound with the 1974X Handwired Combo. Create your own sound by blending the two voices. Designed and engineered in UK. Made in UK.
 specs: |-
-  - Output Wattage: 18W
-  - Channels: 2 voices (Normal and Tremolo)
-  - Controls: VOLUME I (Normal), VOLUME II (Tremolo), TONE, TREMOLO SPEED, TREMOLO INTENSITY, POWER, STANDBY
-  - Inputs: 4 x 1/4" jack instrument inputs (2 per channel: high/low sensitivity)
-  - Outputs: 1 x 1/4" jack speaker output (8Ω)
-  - Effects: Analogue tremolo circuit (channel 2 only)
-  - Footswitch: Yes, 1/4" jack (tremolo on/off)
-  - Speaker Config: 1 x 12"
-  - Speaker Model: Celestion G12M-20 Greenback (20W)
-  - Color: Black
+  - Output wattage: 18W
+  - Outputs: 2 x 1/4-inch jack speaker outputs, selectable 16 ohm / 8 ohm / 4 ohm load
+  - Inputs: 4 x 1/4-inch jack instrument inputs (high/low sensitivity)
+  - Controls: Channel 2 (Volume, Tone), Channel 1 (Volume, Tone, Tremolo Intensity, Tremolo Speed)
+  - Effects: valve tremolo
+  - Effects loop: no
+  - Speaker configuration: 1 x 12-inch
+  - Speaker model: Celestion Heritage G12M-20 (15 ohm, 20W)
+  - Unit impedance: 15 ohm
+  - Preamp valves: 2 x ECC83, 1 x ECC83 (phase splitter)
+  - Power amp valves: 2 x EL84
+  - Weight: 19 kg / 42 lb
+  - Width: 610 mm / 24 inches
+  - Height: 535 mm / 21.1 inches
+  - Depth: 230 mm / 9.1 inches
+  - Country of origin: designed and engineered in UK, made in UK
+  - In the box: PEDL-10034 footswitch, detachable power cable
+  - Colour: Black
 io:
   - key: tYR7jhCQ
     name: Channel 1 (Normal) Input - High sensitivity
@@ -79,15 +87,23 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: iAm52A4j
-    name: Speaker Output (8Ω)
+    name: Speaker Output 1 (16/8/4 ohm selectable)
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: 3nK1f4uB
+    name: Speaker Output 2 (16/8/4 ohm selectable)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: m1SHqQ42
     name: Mains Input (IEC)
     signalFlow: input
@@ -95,4 +111,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
+videos:
+  - videoId: 6Ap4Afv0Zcw
+    title: 1974X Handwired Combo

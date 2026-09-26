@@ -4,6 +4,10 @@ manufacturer: marshall
 primaryCategory: guitar-amplifier
 categories:
   - amplifier
+capabilities:
+  - reverb
+  - overdrive
+  - distortion
 url: https://www.marshall.com/us/en/product/jvm210-head
 prices:
   - amount: 1899.99
@@ -17,35 +21,39 @@ description: The JVM210 Head offers versatility and power in equal measure. It's
   voicings driven by an all-valve preamp (ECC83) and EL34 power section. Built
   in Marshall's UK factory.
 details: |-
-  - All-valve construction
-  - Two channels (Clean and OD), each with three modes (six total voicings)
-  - Clean channel modes: Clean 1, Clean 2, Crunch 1
-  - OD channel modes: Crunch 2, Crunch 3, OD
-  - Digital reverb (independent level per channel)
-  - Two effects loops (1 x series/parallel, 1 x series)
-  - Selectable speaker output loads: 16Ω / 8Ω / 4Ω
-  - Emulated XLR line out
-  - MIDI In and Thru (programmable footswitch + MIDI control)
-  - Six-button programmable footswitch (PEDL-91006) included
-  - Built in Marshall's UK factory
+  The JVM210 Head offers versatility and power in equal measure. It is a formidable force whether you enjoy cleans, breakup or distortion.
+
+  At 100W, this amp effortlessly handles the demands of playing the biggest shows whilst still boasting a versatile sound palette that will let your personality shine through.
+
+  The JVM210 Head brings you to the front of the stage. With one master volume for each channel, you can create explosive solo moments that will be impossible to ignore.
+
+  Step out of your comfort zone with built-in reverb controls. Recall your mode, master and reverb options with the programmable footswitch, which is included, giving you power and flexibility exactly when and where you need it.
+
+  The meticulous craftsmanship of the JVM210 Head at Marshall's UK factory reflects Marshall's attention to build quality. From loading the circuit boards to achieving the iconic black, white and gold finish, every amplifier in this series is carefully hand-assembled. Designed and engineered in UK. Made in UK.
 specs: |-
-  - Output Wattage: 100W
+  - Built in Marshall's UK factory
+  - All-valve
+  - Store your settings
+  - Two channels, each with dedicated volume controls
+  - Built-in reverb options
+  - Model: JVM210 Head
+  - Range: JVM
   - Channels: 2 (Multi)
   - Technology: Valve
-  - Preamp Valves: 4 x ECC83, 1 x ECC83 (phase splitter)
-  - Power Amp Valves: 4 x EL34
-  - Effects: Digital reverb
-  - Effects Loop: 2, 1 x series parallel, 1 x series
-  - Controls: Channel and mode select (button), gain (per channel), treble (per channel), middle (per channel), bass (per channel), volume (per channel), reverb (per channel), presence, resonance, master volume select, master volume (switchable for each channel)
+  - Output wattage: 100W
+  - Outputs: Speaker outputs 5 x 1/4" jack sockets (16Ω load / 8Ω load / 4Ω load), Emulated Line Out (XLR), MIDI Thru
   - Inputs: 1 x 1/4" jack instrument input, MIDI In, Footswitch
-  - Outputs: Speaker outputs: 5 x 1/4" jack sockets (16Ω load / 8Ω load / 4Ω load), Emulated Line Out (XLR), MIDI Thru
-  - Product Height: 310 mm / 12.2"
-  - Product Width: 740 mm / 29.1"
-  - Product Depth: 215 mm / 8.5"
-  - Weight: 22 kg / 49 LB
-  - Color: Black
-  - Box Contents: PEDL-91006 included; Detachable power cable included; Speaker cable included
-  - Origin Country: Designed and engineered in UK. Made in UK
+  - Controls: Channel and mode select (button), gain (per channel), treble (per channel), middle (per channel), bass (per channel), volume (per channel), reverb (per channel), presence, resonance, master volume select, master volume (switchable for each channel)
+  - Effects: Digital reverb
+  - Effects loop: 2, 1 x series parallel, 1 x series
+  - Preamp valves: 4 x ECC83, 1 x ECC83 (phase splitter)
+  - Power amp valves: 4 x EL34
+  - Weight: 22 kg / 49 lb
+  - Width: 740 mm / 29.1"
+  - Height: 310 mm / 12.2"
+  - Depth: 215 mm / 8.5"
+  - Country of origin: Designed and engineered in UK. Made in UK.
+  - Box contents: PEDL-91006 footswitch included, detachable power cable included, speaker cable included
 io:
   - key: ydMcOL7q
     name: Instrument Input
@@ -56,13 +64,45 @@ io:
     maxConnections: 1
     position: Top
   - key: h5yXautq
-    name: Speaker Output
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: XZXG502g
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: isJgLtNA
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 9iOPTv7P
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: dTZi0ula
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: tKnhVxIX
     name: Emulated Line Out
     signalFlow: output
@@ -70,7 +110,7 @@ io:
     type: line
     connection: xlr
     maxConnections: 1
-    position: Top
+    position: Right
   - key: WhtX00dt
     name: FX Loop Send (Series/Parallel)
     signalFlow: output
@@ -78,7 +118,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: Wo5T3vx9
     name: FX Loop Return (Series/Parallel)
     signalFlow: input
@@ -86,7 +126,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: Zq8bSo5O
     name: FX Loop Send (Series)
     signalFlow: output
@@ -94,7 +134,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: vyIvVqD6
     name: FX Loop Return (Series)
     signalFlow: input
@@ -102,7 +142,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: zkoz3swo
     name: MIDI In
     signalFlow: input
@@ -110,7 +150,7 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
+    position: Right
   - key: ujWPG1rV
     name: MIDI Thru
     signalFlow: output
@@ -118,7 +158,7 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 6NDJdLhh
     name: Footswitch (PEDL-91006)
     signalFlow: input
@@ -126,7 +166,7 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: Ojhd3TVf
     name: Power Input
     signalFlow: input
@@ -134,4 +174,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
+videos:
+  - videoId: PgyE1romW-w
+    title: JVM Series Official Demo

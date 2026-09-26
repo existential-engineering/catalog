@@ -4,6 +4,10 @@ manufacturer: marshall
 primaryCategory: guitar-amplifier
 categories:
   - amplifier
+capabilities:
+  - reverb
+  - overdrive
+  - distortion
 url: https://www.marshall.com/us/en/product/studio-900-head
 prices:
   - amount: 1349.99
@@ -16,27 +20,33 @@ description: Compact 20W hybrid valve guitar amplifier head delivering the
   venue or recording environment. Hand-built at Marshall's factory in Bletchley,
   England.
 details: |-
-  - Iconic JCM900 crunch tone in a compact 20W package
-  - Two channels (Clean and Crunch/High Gain) for versatile tone shaping
-  - Hybrid design: valve warmth combined with solid-state reliability
-  - Power attenuation switch: 20W, 5W, and <1W output settings
-  - Built-in spring reverb
-  - Built-in series effects loop
-  - Two ECC83 preamp valves, two 5881 power amp valves, one ECC83 phase splitter
-  - Treble, middle, bass and presence EQ controls
-  - Hand-built in the UK at Marshall's Bletchley factory
+  Featuring two ECC83 preamp valves, two 5881 power amp valves, and one ECC83 phase splitter, the Studio 900 Head faithfully captures the original 100W amp in a 20W output. Effortlessly switch between 20W, 5W, and <1W power attenuation settings and adapt the amp's output to any venue or recording environment.
+
+  Combining the warmth and responsiveness of traditional valve amps with the reliability of modern technology, the Studio 900 Head delivers everything from sparkling cleans to screaming leads. Enjoy playing the authentic tones that made the original a legend.
+
+  Crafted at Marshall's workshop in Bletchley, England, the Studio 900 is built to Marshall's standard of craftsmanship and passes the company's testing process before it ships.
+
+  Small in stature, iconic in sound, the Studio 900 Head comes packed with features including a built-in effects loop and straightforward controls so you can effortlessly adjust gain, EQ, and volume. Dual channels offer an extensive array of tones, and you can configure each channel with different settings and switch between distinct sounds and styles.
+
+  Add rich, dynamic layers to your sound with the Studio 900 Head's integrated spring reverb, enhancing the depth of your tone. Designed and engineered in UK. Made in UK.
 specs: |-
   - Model: SN20H
   - Range: Studio
-  - Output Wattage: 20W (with power reduction to 5W), <1W
-  - Channels: 2 (Clean and Crunch/High Gain)
-  - Technology: Hybrid (valve preamp/power section with solid-state components)
-  - Preamp Valves: 2 x ECC83, 1 x ECC83 (phase splitter)
-  - Power Amp Valves: 2 x 5881
+  - Technology: valve preamp and power amp (2 x ECC83 + ECC83 phase splitter, 2 x 5881), which Marshall describes as a hybrid design with solid-state components
+  - Channels: 2
+  - Output wattage: 20W (with power reduction option to 5W), <1W
+  - Outputs: Speaker outputs 5 x 1/4" jack sockets (16Ω load / 8Ω load / 4Ω load), DI output, Compensated DI output
   - Controls: Treble, middle, bass and presence
-  - Effects: Built-in spring reverb
-  - Effects Loop: Yes (built-in effects loop)
-  - Country Of Origin: Designed and engineered in UK. Made in UK.
+  - Effects: Integrated spring reverb
+  - Effects loop: Built-in effects loop
+  - Preamp valves: 2 x ECC83, 1 x ECC83 (phase splitter)
+  - Power amp valves: 2 x 5881
+  - Weight: 11.2 kg / 24.5 lb
+  - Width: 510 mm / 20.1"
+  - Height: 245 mm / 9.6"
+  - Depth: 240 mm / 9.4"
+  - Colour: Black
+  - Country of origin: Designed and engineered in UK. Made in UK.
 io:
   - key: 4YHnLOOC
     name: Instrument Input
@@ -53,7 +63,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: mLJo3qCn
     name: FX Loop Return
     signalFlow: input
@@ -61,15 +71,47 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: If1Anyyv
-    name: Speaker Output
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: QU4eZqpQ
+    name: Speaker Output 8 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: PNDVYTOO
+    name: Speaker Output 8 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: K5zaIUjY
+    name: Speaker Output 4 ohm A
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: BqPp7JGS
+    name: Speaker Output 4 ohm B
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: M4t1iFv1
     name: Footswitch
     signalFlow: input
@@ -77,7 +119,23 @@ io:
     type: expression
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: hFfmuZHb
+    name: Direct Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: rBzDcYjk
+    name: Recording Compensated Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: supHorbp
     name: Power Input
     signalFlow: input
@@ -85,7 +143,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
 links:
   - url: https://assets.ctfassets.net/javen7msabdh/1dfPssUbF6WkLjd4Eyb5eI/9432ddb522ac72ef5bc148a9d6df89f1/Studio_900_SN20HC_QSG_CATS-00278-01_240913_TRANSLATIONS_v5_Multi_4.pdf
     type: support

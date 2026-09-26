@@ -4,6 +4,10 @@ manufacturer: marshall
 primaryCategory: guitar-amplifier
 categories:
   - amplifier
+capabilities:
+  - reverb
+  - overdrive
+  - distortion
 url: https://www.marshall.com/us/en/product/dsl20-head
 prices:
   - amount: 659.99
@@ -19,51 +23,38 @@ description: The DSL20 Head is an all-valve 20W guitar amplifier head from
   for everything from rehearsal-room volumes to more intimate home or studio
   settings. The rear panel provides three 1/4-inch speaker outputs (selectable
   16 Ω / 8 Ω load), a series effects loop, a 3.5 mm emulated line output for
-  silent recording or monitoring, a 3.5 mm aux/footswitch jack, and a PEDL-90012
-  footswitch is included in the box. Two ECC83 preamp valves plus a third ECC83
-  phase splitter feed a pair of EL34 power valves.
+  silent recording or monitoring, a 3.5 mm aux input, a 1/4-inch footswitch
+  jack, and a PEDL-90012 footswitch is included in the box. Two ECC83 preamp
+  valves plus a third ECC83 phase splitter feed a pair of EL34 power valves.
 details: |-
-  DSL20HR
+  The DSL20 Head is for those who need the full rich tone of a valve amp in a compact and portable format. From the moment you plug in, the DSL provides you with the functionality you need to take your sound from rehearsal to the studio with confidence.
 
-  DSL
+  Selecting your preferred power setting should always be easy. That is why you can opt for either a commanding 20W or a more restrained 10W power output on the DSL20 Head at the flip of a switch. This feature is ideal for seamlessly transitioning from the rehearsal area to a more intimate home setting.
 
-  Valve
+  Give your sound more bite and depth thanks to additional presence and resonance features. With these elements you can finely tune and sculpt your tone, ensuring a more dynamic and impactful auditory experience during your performances or practice sessions.
 
-  Head
+  The adaptability of having three speaker outputs not only allows for customisation to match your unique acoustic preferences but also facilitates recording capabilities. The DSL20 Head is an ideal choice for both live gigs and studio practice sessions.
 
-  Two (Classic Gain and Ultra Gain)
-
-  Footswitchable (PEDL-90012 included)
-
-  2 x ECC83, 1 x ECC83 (phase splitter)
-
-  2 x EL34
-
-  Digital
-
-  PEDL-90012 footswitch, detachable power cable
-
-  Designed and engineered in UK. Made in Vietnam.
-
-  1007162
+  Its compact and portable design offers you convenience and flexibility. Its small size is perfect for home use and it is also easy to carry, making it an excellent companion for musicians on the move. Designed and engineered in UK. Made in Vietnam.
 specs: |-
-  - Output Wattage: 20W (with power reduction option to 10W)
-  - Power Reduction: 20W / 10W switch
-  - Channels: 2 (Classic Gain, Ultra Gain)
-  - Controls: Classic Gain channel gain and volume, channel select switch, Ultra Gain channel gain and volume, tone shift switch, treble, middle, bass, presence, reverb
+  - Model: DSL20HR
+  - Range: DSL
+  - Technology: All-valve
+  - Channels: 2
+  - Output wattage: 20W (with power reduction option to 10W)
+  - Outputs: 3 x 1/4" jack sockets (16Ω load / 8Ω load), 1 x 3.5mm jack emulated line out
+  - Inputs: 1 x 1/4" instrument jack, 1 x 3.5mm jack aux in, footswitch
+  - Controls: Classic gain channel gain and volume, channel select switch, ultra gain channel gain and volume, tone shift switch, treble, middle, bass, presence, reverb
   - Effects: Digital reverb
-  - Effects Loop: Yes, 1 x series
-  - Preamp Valves: 2 x ECC83, 1 x ECC83 (phase splitter)
-  - Power Amp Valves: 2 x EL34
-  - Speaker Outputs: 3 x 1/4" jack sockets (16 Ω load / 8 Ω load)
-  - Emulated Output: 1 x 3.5 mm jack emulated line out
-  - Instrument Input: 1 x 1/4" instrument jack
-  - Aux Footswitch Input: 1 x 3.5 mm jack (aux in / footswitch)
-  - Footswitch: Included (PEDL-90012)
-  - Width: 500 mm / 19.7 in
-  - Height: 250 mm / 9.8 in
-  - Depth: 240 mm / 9.4 in
+  - Effects loop: Yes, 1 x series
+  - Preamp valves: 2 x ECC83, 1 x ECC83 (phase splitter)
+  - Power amp valves: 2 x EL34
   - Weight: 9.7 kg / 21 lb
+  - Width: 500 mm / 19.7"
+  - Height: 250 mm / 9.8"
+  - Depth: 240 mm / 9.4"
+  - Country of origin: Designed and engineered in UK. Made in Vietnam.
+  - Box contents: PEDL-90012 footswitch included, detachable power cable included
 io:
   - key: doFsW8DM
     name: Instrument Input
@@ -74,13 +65,21 @@ io:
     maxConnections: 1
     position: Top
   - key: 1ZbJjuLM
-    name: Aux In / Footswitch
+    name: Aux In
     signalFlow: input
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Right
+  - key: YT319CUF
+    name: Footswitch
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: UaqNjhi7
     name: Effects Loop Send
     signalFlow: output
@@ -88,7 +87,7 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: y5sfrBAC
     name: Effects Loop Return
     signalFlow: input
@@ -96,31 +95,31 @@ io:
     type: line
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: 0v4A1bJn
-    name: Speaker Output 1 (16 Ω / 8 Ω)
+    name: Speaker Output 16 ohm
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: ntYRL6bs
-    name: Speaker Output 2 (16 Ω / 8 Ω)
+    name: Speaker Output 8 ohm A
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: erPsbD5d
-    name: Speaker Output 3 (16 Ω / 8 Ω)
+    name: Speaker Output 8 ohm B
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: mJ45C8ZX
     name: Emulated Line Out
     signalFlow: output
@@ -128,7 +127,7 @@ io:
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Top
+    position: Right
   - key: z0od7wWW
     name: Mains Input
     signalFlow: input
@@ -136,4 +135,7 @@ io:
     type: power
     connection: built-in
     maxConnections: 1
-    position: Top
+    position: Right
+videos:
+  - provider: youtube
+    videoId: dnbNblbp5Ug
