@@ -1,5 +1,101 @@
 # catalog
 
+## 3.68.0
+
+### Minor Changes
+
+- effd1a3: Refresh Blue Microphones: 1 new, 0 discontinued, 7 updated.
+
+  Adds the Yeti 2 multi-pattern USB microphone. Refreshes the Yeti, Yeti
+  GX, Yeti Nano, Yeti Orb and Yeti Studio microphones plus the Compass
+  boom arm and Radius III shockmount with current descriptions, specs,
+  prices and support links from the Logitech G product pages.
+
+- a840bfd: Refresh Bowers & Wilkins: 6 new, 0 existing products discontinued, 108 updated.
+
+  Adds the 804 D5 and 805 D5 loudspeakers, the CDA-4D distribution
+  amplifier, the CT8.4 LCRS in-wall speaker, the FS-HTM D5 stand and the
+  Formation Flex wall bracket. Refreshes the whole existing range,
+  including the 600, 700 and 800 Series, the CCM and CWM in-wall lines,
+  the ASW, DB and ISW subwoofers, and the Px and Pi headphones, with
+  current descriptions, specs, prices and support links.
+
+  The Formation Flex wall bracket is new to the catalog but already
+  archived by the maker, so it arrives tagged discontinued. Six live
+  products that were wrongly shown as discontinued (702 S3, 705 S3,
+  801 D4, 805 D4, HTM71 S3 and Pi8) are current again: their Signature
+  and McLaren editions no longer claim to supersede them.
+
+- 0866604: Refresh Marshall: 36 new, 0 discontinued, 94 updated.
+
+  Adds Marshall's consumer speaker and headphone range (Acton, Emberton,
+  Stanmore, Woburn, Kilburn, Stockwell, Willen, Middleton, Bromley, Heston,
+  Major, Minor, Monitor, Motif, Milton, Mode) plus three PEDL footswitches
+  and the 1959BJA signature head. Refreshes every existing amp, cabinet and
+  pedal entry with current prose, specs, prices, videos and capabilities.
+
+- 34a12d0: Refresh Togu Audio Line: 3 new, 5 discontinued, 26 updated.
+
+  Adds TAL-Flanger, TAL-Tube and TAL-USE, three legacy plugins that were
+  only ever reachable through TAL's bundled effects page. Marks
+  TAL-BassLine, TAL-Dub, TAL-Dub-2, TAL-Dub-3 and TAL-Elek7ro as
+  discontinued, matching the maker's own deprecated list. Fills in
+  details, specs and release history across the rest of the range.
+
+- 505ed99: Refresh Tritik: 1 new, 1 discontinued, 9 updated.
+
+  Adds Krush2, the paid successor that now sells where the original Krush
+  used to, links it to Krush through `supersedes`, and marks the original
+  Krush discontinued now that Tritik no longer maintains it. Adds release
+  history and the maker's EUR prices across the range, gives each entry a
+  specific primary category, and drops VST2 from Tymee and Visu, whose
+  installers ship only VST3, AU and AAX.
+
+- 9a45ced: Refresh UJAM Instruments: 6 new, 0 discontinued, 73 updated.
+
+  Adds Virtual Drummer NEON, Symphonic Elements CHOOIR, RETROCRAFT,
+  Beautyflute Pro, Vox Humana and the MIDI Drum and Beat Pack. Refreshes
+  the descriptions, feature details and system requirements across the
+  Beatmaker, Virtual Bassist, Virtual Drummer, Virtual Guitarist, Virtual
+  Pianist, Usynth, UFX, Finisher, Groovemate and Symphonic Elements
+  ranges, and corrects five stale Beatmaker prices to the current 49 USD.
+
+### Patch Changes
+
+- 3c841f8: Refresh Bome Software: 0 new, 0 discontinued, 13 updated.
+
+  Brings all thirteen Bome entries up to date with the current bome.com
+  pages, including release history for MIDI Translator Pro, the BomeBox
+  and Send SX, refreshed specs and prices, and current support links.
+
+- 1e07567: Refresh Relab Development: 0 new, 0 discontinued, 12 updated.
+
+  Refreshed details, specs, versions and pricing for the full Relab
+  plugin range, including LX480, Sonsig, Q82, REV6000 and the Maselec
+  models. Category, format and primary-category conflicts were settled
+  against the maker's pages, and a sale price was dropped for LX480.
+
+- 6d0977e: Retype Marshall cabinet inputs and footswitch jacks, add the Thrash v2 firmware port
+
+  Seven passive Marshall cabinets (1936, 1936V, 1960AV, 1960B, 2551AV,
+  2551BV, Studio Vintage 2x12) recorded their 1/4-inch inputs as `line`.
+  They carry an amplifier's speaker output, so they are now
+  `speaker-level`. `speaker-level-audit` did not flag them because their
+  port names ("Input 1 (Mono / Stereo Left)") never say "speaker".
+
+  Nineteen Marshall amps typed their dedicated footswitch jack `line`. It
+  is now `expression`, per the footswitch and expression jack rule. The
+  two combined "Aux In / Footswitch" minijacks on the DSL1 Combo and
+  DSL20 Head are left alone: one jack shares an audio input and needs the
+  manual.
+
+  The Mackie Thrash12v2 and Thrash15v2 gain the rear USB-C port the owner's
+  manual documents for firmware updates.
+
+  Two Elektron sound packs (Haunted Hearts, Gutnishy Islands) carried the
+  date they were ingested as `releaseDate`, years after release. Both
+  dates are removed until a primary source gives the real one.
+
 ## 3.67.0
 
 ### Minor Changes
