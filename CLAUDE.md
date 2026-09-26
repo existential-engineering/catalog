@@ -200,6 +200,12 @@ second time, and that is the whole point of its shape.
   does not have, which is what makes the other failures hard to diagnose after
   the fact.
 
+- **A patch refuses to cross a schema migration.** It carries rows, never
+  DDL, so a database at the source tag has none of the tables or columns a
+  newer migration adds, and the first insert naming one would fail halfway.
+  `pnpm patch` compares the migrations `scripts/schema.sql` recorded at that
+  tag with the built database's and stops when any are new.
+
 A patch only rewrites entries whose YAML changed, so renaming a manufacturer
 leaves the denormalized `manufacturer_name` stale in the FTS rows of its
 unchanged products. Ship a full database when manufacturer names move.

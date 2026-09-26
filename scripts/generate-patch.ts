@@ -341,6 +341,40 @@ function getDeletedEntryId(since: string, filePath: string): string | null {
  * Paths outside the five collections, and non-YAML files, are skipped rather
  * than guessed at: they carry no entry for a patch to rewrite.
  */
+/**
+ * The highest `schema_migrations` version a `scripts/schema.sql` text
+ * records, or 0 when it records none.
+ */
+export function highestMigration(schemaSql: string): number {
+  const start = schemaSql.indexOf("INSERT OR REPLACE INTO schema_migrations");
+  if (start === -1) return 0;
+  let highest = 0;
+  for (const match of schemaSql.slice(start).matchAll(/\(\s*(\d+)\s*,\s*'/g)) {
+    highest = Math.max(highest, Number(match[1]));
+  }
+  return highest;
+}
+
+/**
+ * Migrations HEAD's schema adds over the one at `since`. A patch carries rows,
+ * never DDL, so a database at `since` has none of the tables or columns these
+ * add, and the first insert that names one fails halfway through the patch.
+ */
+function migrationsSince(since: string, db: Database.Database): number[] {
+  let before = 0;
+  try {
+    before = highestMigration(
+      execFileSync("git", ["show", `${since}:scripts/schema.sql`], { encoding: "utf-8" })
+    );
+  } catch {
+    // No schema.sql at that tag: every migration is new to it.
+  }
+  const rows = db
+    .prepare("SELECT version FROM schema_migrations WHERE version > ? ORDER BY version")
+    .all(before) as { version: number }[];
+  return rows.map((row) => row.version);
+}
+
 function getChangedFiles(since: string): Change[] {
   const changes: Change[] = [];
   const output = execFileSync("git", ["diff", "--name-status", since, "HEAD", "--", "data/"], {
@@ -525,6 +559,18 @@ function generatePatch(fromTag: string, toVersion: string, dbPath: string): void
   console.log(`   Found ${changes.length} changes\n`);
 
   const db = new Database(dbPath, { readonly: true });
+  const newMigrations = migrationsSince(fromTag, db);
+  if (newMigrations.length > 0) {
+    // The same rule as a manufacturer rename: a database the schema moved
+    // under is shipped whole, never patched.
+    console.error(
+      `\n❌ Refusing to write a patch: schema migration(s) ${newMigrations.join(", ")} ` +
+        `landed since ${fromTag}, and a patch carries no DDL. Ship a full database.`
+    );
+    process.exitCode = 1;
+    db.close();
+    return;
+  }
   const schemas = new Map<Change["category"], CollectionSchema>(
     COLLECTION_ORDER.map((category) => [category, reflectCollection(db, category)])
   );

@@ -84,6 +84,20 @@ describe("identifier uniqueness", () => {
     ]);
     expect([...shared]).toEqual([["com.acme.A", ["one", "two"]]]);
   });
+
+  it("compares a VST3 class id without case, and a bundle id with it", () => {
+    const upper = "ABCDEF0123456789ABCDEF0123456789";
+    const shared = findSharedIdentifiers([
+      { slug: "one", identifiers: { vst3: upper } },
+      { slug: "two", componentIdentifiers: { vst3: [upper.toLowerCase()] } },
+      { slug: "three", identifiers: { default: "com.acme.Verb" } },
+      { slug: "four", identifiers: { default: "com.acme.verb" } },
+    ]);
+    expect([...shared.values()]).toEqual([["one", "two"]]);
+    expect(
+      findComponentIdentifierRepeats({ vst3: upper }, { vst3: [upper.toLowerCase()] })
+    ).toHaveLength(1);
+  });
 });
 
 describe("buildDatabase with fallback identifiers", () => {

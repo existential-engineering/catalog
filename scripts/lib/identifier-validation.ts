@@ -144,6 +144,16 @@ export function hasValidationPattern(format: string): boolean {
  * `identifiers`. Either would write the same `software_format_identifiers`
  * row twice and reads as a mistake rather than a second binary.
  */
+/**
+ * The form two identifiers are compared in. A VST3 class id is hex, so its
+ * case carries no meaning (the writer's `sameIdentifier` agrees); a
+ * reverse-domain id keeps its case, because macOS bundle ids are
+ * case-sensitive.
+ */
+export function identifierKey(value: string): string {
+  return /^[0-9A-Fa-f]{32}$/.test(value) ? value.toLowerCase() : value;
+}
+
 export function findComponentIdentifierRepeats(
   identifiers: Record<string, string> | undefined,
   componentIdentifiers: Record<string, string[]>
@@ -151,13 +161,15 @@ export function findComponentIdentifierRepeats(
   const problems: { key: string; value: string; reason: string }[] = [];
   for (const [key, values] of Object.entries(componentIdentifiers)) {
     const seen = new Set<string>();
+    const primary = identifiers?.[key];
     for (const value of values) {
-      if (seen.has(value)) {
+      const normalized = identifierKey(value);
+      if (seen.has(normalized)) {
         problems.push({ key, value, reason: "listed twice" });
-      } else if (identifiers?.[key] === value) {
+      } else if (primary !== undefined && identifierKey(primary) === normalized) {
         problems.push({ key, value, reason: `already the primary identifiers.${key}` });
       }
-      seen.add(value);
+      seen.add(normalized);
     }
   }
   return problems;
@@ -178,9 +190,10 @@ export interface IdentifierOwner {
 export function findSharedIdentifiers(entries: IdentifierOwner[]): Map<string, string[]> {
   const owners = new Map<string, Set<string>>();
   const claim = (value: string, slug: string) => {
-    const set = owners.get(value) ?? new Set<string>();
+    const normalized = identifierKey(value);
+    const set = owners.get(normalized) ?? new Set<string>();
     set.add(slug);
-    owners.set(value, set);
+    owners.set(normalized, set);
   };
   for (const entry of entries) {
     for (const [key, value] of Object.entries(entry.identifiers ?? {})) {
