@@ -22,8 +22,134 @@ prices:
   - amount: 59
     currency: USD
 description: TAL-U-NO-LX is a synthesizer plug-in that faithfully recreates the iconic sound of the analog Juno 60 synth. Each oscillator, filter, and envelope has been painstakingly modeled to capture the essence of the original hardware, delivering an unparalleled level of authenticity. The synth was calibrated after a hardware device owned by TAL.
+details: |-
+  TAL-U-NO-LX is a synthesizer plug-in that faithfully recreates the iconic sound of the analog Juno 60 synth. Each oscillator, filter, and envelope has been painstakingly modeled to capture the essence of the original hardware, delivering an unparalleled level of authenticity.
+
+  This virtual instrument captures the warmth, richness, and nostalgic charm of the hardware device. The synth was calibrated after a hardware device that's property of TAL.
+
+  The plug-in ships for Windows, macOS and Linux in VST, VST3, Audio Unit, AAX and CLAP formats. The macOS build is a Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3 and later), and AAX runs in Pro Tools 10.3.6 or higher (64 bit).
+
+  A large ecosystem of third-party preset banks is available, both free and commercial, from sound designers including Thomas Ueber (64 presets), Alexander Ermolaev (48 presets), Symbiotic (50 presets), kreziesounds (145 presets), TwolegsToneworks (32 presets), Luftrum, Espen Kraft, NEWLOOPS, Reverb Machine, Oblivion Sound Lab and P.O Haas.
+
+  A demo version is available with the restriction that the plug-in produces a rising white noise sound every minute. Older builds remain downloadable for compatibility: v4.9.5 for Windows 7, v4.4.5 for the old serial key scheme, and v3.2.4 including 32 bit support.
 specs: |-
-  - systemRequirements: Windows 10+ (64-bit), macOS 10.11+ (Universal Binary 2), Pro Tools 10.3.6+ (64-bit), Linux Ubuntu 18+ (64-bit)
+  - Emulation of the Roland Juno 60 analog synthesizer, calibrated against a hardware unit owned by TAL
+  - MPE support with MPE keyboard view and options for different MPE hardware devices such as the Osmose
+  - Direct LFO DCO modulation wheel support
+  - Arpeggiator with as-played, random and up-and-down modes, host sync, round robin, poly aftertouch and note-based velocity
+  - Unison mode with random unison phases and a round robin voice mode
+  - Built-in chorus, plus delay and reverb effects
+  - Microtuning via MTS support and .tun tuning file import
+  - Portamento with TIME mode and filter keyfollow
+  - Preset browser with categories, default-preset support and MIDI program change
+  - MIDI learn, MIDI output and 14-bit MIDI controller support for CC 1 to 31
+  - Undo and redo functionality
+  - Scalable vector user interface with resize support
+  - Reduced aliasing through improved oversampling
+  - Service Control (SC) dialog with voice detuning, random and lock buttons
+  - Roland SFC 60 hardware controller integration, sending parameter values to the controller
+  - Windows: Windows 10 or higher (64 bit host)
+  - macOS: 10.11 or higher (64 bit host), Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3 and later)
+  - Linux: 64 bit, Ubuntu 18 or similar
+  - AAX: Pro Tools 10.3.6 or higher (64 bit)
+  - Demo restriction: the plug-in produces a rising white noise sound every minute
+versions:
+  - name: 5.1.3
+  - name: 5.1.2
+    releaseDate: 2025-11-03
+    description: MPE pitch not stay in note release fixed.
+  - name: 5.1.1
+    releaseDate: 2025-09-17
+    description: More MPE options to improve compatibility for different MPE hardware devices (Osmose). Framework update. Small UI changes.
+  - name: 5.0.0
+    releaseDate: 2025-04-17
+    description: Direct LFO DCO modulation wheel support (new option in the control section). Framework update (at least Windows 10 required). Small UI changes.
+  - name: 4.9.5
+    releaseDate: 2024-11-05
+    description: More flexible serial key verification (header and footer not required).
+  - name: 4.9.4
+    releaseDate: 2024-10-31
+    description: UI changes (VT dialog updated, overall cleanup). Arp in N mode uses round robin fixed. Framework update.
+  - name: 4.9.3
+    releaseDate: 2024-06-26
+    description: MIDI CC rendering problem in some DAWs fixed. MIDI LEARN problem introduced with 4.9.1 fixed.
+  - name: 4.9.1
+    releaseDate: 2024-06-21
+    description: Fixes preset arrow CC assignment problems introduced with 4.8.9.
+  - name: 4.9.0
+    releaseDate: 2024-05-28
+    description: Fixes preset-arrows not working, introduced with 4.8.9.
+  - name: 4.8.9
+    releaseDate: 2024-05-28
+    description: Arp playing without note input when switching presets while playing fixed. Minor fixes.
+  - name: 4.8.8
+    releaseDate: 2024-05-06
+    description: Arp RR also in normal mode. Fixes arp bug introduced with 4.8.6.
+  - name: 4.8.6
+    releaseDate: 2024-05-06
+    description: Minor fixes.
+  - name: 4.8.5
+    releaseDate: 2024-05-06
+    description: Arp not play first note under special conditions fixed. Minor fixes.
+  - name: 4.8.4
+    releaseDate: 2024-02-13
+    description: New MPE keyboard view. Possible crash on some systems fixed. Minor fixes.
+  - name: 4.8.3
+    releaseDate: 2023-09-18
+    description: Mod and pitch-wheel decoupled from automation. Reduced aliasing (improved oversampling). Improved UI resize behaviour. Minor fixes.
+  - name: 4.8.1
+    releaseDate: 2023-08-16
+    description: Bug fixes.
+  - name: 4.7.7
+    releaseDate: 2023-06-14
+    description: New improved preset browser. Poly aftertouch support (channel pressure support for the arpeggiator). Note based velocity support in the arpeggiator.
+  - name: 4.7.4
+    releaseDate: 2023-02-06
+    description: LED does not show right value fixed.
+  - name: 4.7.3
+    releaseDate: 2023-01-12
+    description: AAX native M1 support. Base framework updated (JUCE 7). Minor fixes.
+  - name: 4.7.2
+    releaseDate: 2022-08-13
+    description: Compatibility fixes.
+  - name: 4.6.8
+    releaseDate: 2022-07-25
+    description: Random unison phases for the very first note. VST2 does not play very first note fixed.
+  - name: 4.6.6
+    releaseDate: 2022-07-13
+    description: CLAP MPE now works in Bitwig.
+  - name: 4.6.4
+    releaseDate: 2022-07-09
+    description: Voice 1 noise not working fixed.
+  - name: 4.6.3
+    releaseDate: 2022-07-05
+    description: Possible crash on Windows when pressing a keyboard key fixed. VCO noise oscillator in unison mode improved.
+  - name: 4.6.2
+    releaseDate: 2022-07-05
+    description: Round Robin also with arpeggiator.
+  - name: 4.6.0
+    releaseDate: 2022-07-02
+    description: CLAP plugin format added. New unisono mode. New round robin voice mode.
+  - name: 4.5.4
+    releaseDate: 2021-09-08
+    description: Preset browser fixes. MTS library updated.
+  - name: 4.5.3
+    releaseDate: 2021-07-27
+    description: Improved preset browser / fixes.
+  - name: 4.5.2
+    releaseDate: 2021-07-15
+    description: MTS (microtuning) lock fixed. Improved preset browser.
+  - name: 4.5.1
+    releaseDate: 2021-06-14
+    description: MTS (microtuning) support added. Always create factory presets when starting a new instance fixed.
+  - name: 4.5.0
+    releaseDate: 2021-06-07
+    description: New serial protection.
+  - name: 4.4.5
+    releaseDate: 2021-03-25
+    description: Skips presets when using arrow buttons in some hosts fixed. Minor bug fixes. UI refresh.
+  - name: "1.0"
+    description: Original release, still offered as an older download.
 videos:
   - videoId: keXGZdIgCQc
     provider: youtube
@@ -37,3 +163,25 @@ videos:
   - videoId: Siztl1bXigc
     provider: youtube
     title: Neon Retro Strings & Pads TAL-U-NO-LX
+  - provider: youtube
+    videoId: CL0DdL6MfTY
+    title: MMTV - TAL Software TAL-U-No-LX - Produce a Synth Pop Track | Kevin Ochoa
+  - provider: youtube
+    videoId: O0ClEqdWPQQ
+    title: FREE TAL U -NO -LX Presets Demo
+  - provider: youtube
+    videoId: OSEkHozGrPs
+    title: TAL U NO LX Presets Bank Main Demo
+  - provider: youtube
+    videoId: 2O1UVQBmKrk
+    title: Meridian | Modern Synth Presets for TAL U-NO-LX
+  - provider: youtube
+    videoId: Q88XxFJKTOk
+    title: Night City - Retro Futurist soundset for TAL-U-No-LX
+  - provider: youtube
+    videoId: hrEwg1I1GhM
+    title: Helios Volume II - Presets Walkthrough (Cinematic Sci-Fi Presets for TAL U-No-LX)
+  - provider: youtube
+    videoId: KaAt6Pklq8w
+  - provider: youtube
+    videoId: lhqYGp_kSUw

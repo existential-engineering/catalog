@@ -4,6 +4,12 @@ manufacturer: relab
 primaryCategory: multiband
 categories:
   - plugin
+  - effect
+  - compressor
+  - expander
+  - dynamics
+  - mastering
+  - emulation
 formats:
   - vst3
   - au
@@ -17,30 +23,32 @@ prices:
     currency: USD
 description: The first and only officially endorsed software recreation of the legendary Maselec MLA-4 hardware unit, developed in direct collaboration with Leif Mases. A triband compressor/expander designed for mixing, mastering, and stem processing.
 details: |-
-  The Maselec MLA-4 is a triband compressor/expander plugin developed in direct collaboration with Leif Mases, the designer of the original hardware unit. It is the first and only officially endorsed software recreation of the legendary Maselec MLA-4 hardware, which retails for approximately $10,000 new.
+  The Maselec MLA-4 Triband Compressor/Expander is the first and only officially endorsed software recreation of the legendary hardware unit, developed in direct collaboration with Leif Mases. Designed for mixing, mastering, and stem processing, the MLA-4 delivers natural, musical dynamic shaping with precise multiband control, now enhanced with modern workflow features only possible in software.
 
-  The plugin features Auto Spectral Balance, a proprietary algorithm that preserves the overall tonal integrity of a mix while dynamics processing is applied across the three frequency bands. This allows for transparent dynamic control without shifting the perceived spectral balance of the source material.
+  With compression (up to 6:1) and expansion (down to 1:2) per band, the plug-in can tighten low-end boom while lifting air in the highs, or recover lost transients from an over-processed mix, all in real time. Per-band threshold, ratio, attack, and release controls allow compression and expansion to work in harmony without unwanted pumping, dulling, or overcorrection.
 
-  Per-Band THD Control enables selective harmonic enhancement on a band-by-band basis, allowing engineers to add saturation characteristics inspired by the analog hardware. Each band supports compression up to 6:1 and expansion down to 1:2 ratios.
+  A five-mode sidechain linking system adapts compression and expansion behaviour to the material. Full linking provides full-band cohesion, independent bands provide surgical control, and the in-between modes let low frequencies shape mid and high-band compression and expansion while maintaining clarity.
 
-  A five-mode sidechain linking system gives users precise control over inter-band relationships and transient behavior, while per-band solo and left/right cut monitoring facilitate detailed surgical adjustments. Auto Level functionality helps maintain consistent output levels during processing.
+  Auto Spectral Balance applies independent gain compensation to the low, mid, and high bands so heavy processing in one band does not throw off the balance of the mix, and an Auto Level option lets the user choose between preserving tonal balance or reshaping it. Per-band THD control decides exactly where harmonic colour is introduced rather than applying distortion across the whole spectrum.
 
-  Authorization is handled via PACE iLok, which can be tied to a local computer license or a physical iLok USB key (V2 or higher). No hardware dongle is required if using computer-based authorization.
+  Monitoring goes beyond the original hardware with per-band solo and left/right cut functions. Left and right cut focus on a single channel's contribution to the processing, while per-band soloing isolates lows, mids, or highs to hear how compression or expansion is affecting each frequency range.
 specs: |-
-  - Triband compressor/expander architecture
-  - Compression up to 6:1 per band
-  - Expansion down to 1:2 per band
-  - Auto Spectral Balance algorithm
-  - Per-Band THD (Total Harmonic Distortion) control
+  - Triband compressor/expander modelled on the Maselec MLA-4 hardware, endorsed and developed with Leif Mases
+  - Compression up to 6:1 and expansion down to 1:2 per band
+  - Per-band threshold, ratio, attack, and release controls
   - Five-mode sidechain linking system
+  - Auto Spectral Balance with independent per-band gain compensation
+  - Auto Level
+  - Per-band THD (harmonic distortion) control
   - Per-band solo monitoring
-  - Left/right cut monitoring per band
-  - Auto Level functionality
-  - 64-bit only
-  - macOS: 10.15 or higher, Intel or Apple Silicon M1+, 2 GB RAM
-  - Windows: Windows 10 or higher, Core i7 8th-gen+ or AMD Ryzen 5+, 2 GB RAM
-  - DAW compatibility: Logic Pro 10.x+, Pro Tools 11.3.2+, Cubase 9.5+, Nuendo 8+, Ableton Live 9+
-  - Authorization: PACE iLok (computer license or iLok USB key V2+)
+  - Left and right input cut monitoring
+  - Phase-coherent multiband processing
+  - Hand-crafted factory presets
+  - Mac: OS X 10.15 or higher, Intel or M1 processor, 2GB RAM, 64-bit only
+  - Windows: Windows 10 or higher, Core 2 or higher, 2GB RAM, 64-bit only
+  - Compatible hosts: Logic Pro 10.x (Mac), Pro Tools 11.3.2 and up, Cubase 9.5 and up, Nuendo 8 and up, Live 9 and up
+  - No hardware dongle required: local computer authorization or iLok USB key (V2 or above), free PACE iLok account needed for activation
 versions:
+  - name: 1.2.1
   - name: 1.2.0
   - name: 1.1.0

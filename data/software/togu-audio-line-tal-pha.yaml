@@ -21,9 +21,103 @@ url: https://tal-software.com/products/tal-pha
 prices:
   - amount: 69
     currency: USD
-description: TAL-Pha is an instrument plug-in that emulates the sound of the analog 80's synthesizer Alpha Juno II (MKS-50 is the rack version). The plug-in produces the classic analog sound, combined with modern flexibility and many additional features including resonance boost, DCO pulse modulation, FX section with delay/reverb/bell-eq, arpeggiator, stereo unison mode, aftertouch and MPE support, and microtuning.
+description: TAL-Pha is an instrument plug-in that emulates the sound of the analog 80's synthesizer Alpha Juno II (MKS-50 is the rack version). The plug-in produces the classic analog sound, combined with modern flexibility and many additional features.
 details: |-
-  380+
+  TAL-Pha is an instrument plug-in that emulates the sound of the analog 80's synthesizer Alpha Juno II (MKS-50 is the rack version). The plug-in produces the classic analog sound, combined with modern flexibility and many additional features. The plug-in can read and convert sysex information from the hardware and can also be used as a controller.
+
+  Beyond the authentic emulation of the 80's hardware synthesizer, the plug-in adds a resonance boost for filter self-oscillation, the possibility to detune, modulate and sync the pulse part of the DCO, and individual tuning for every voice, which converts the synth's DCO into a VCO. A stereo UNISON mode runs up to seven voices and an arpeggiator offers different modes.
+
+  A simple but powerful FX section provides delay, reverb and a bell-eq. The plug-in supports aftertouch and MPE, along with microtuning through tun file import and an MTS Client.
+
+  The original factory banks are included alongside more than 380 fresh presets by Electric Himalaya, The Unfinished, Saif Sameer, emptyvessel and TAL. The plug-in reads Sysex files and Sysex MIDI from the hardware device, and can also control a hardware device by sending Sysex through the plug-in MIDI output when the DAW supports it.
+
+  System requirements: Windows 7 or higher (64 bit host); macOS 10.9 or higher (64 bit host) as a Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3...); AAX requires Pro Tools 10.3.6 or higher (64 bit); Linux 64 bit, Ubuntu 18 or similar. The demo version produces a rising white noise sound every minute.
+specs: |-
+  - Authentic emulation of the 80's hardware synthesizer
+  - Resonance boost for filter self-oscillation
+  - The possibility to detune, modulate, and sync the pulse part of the DCO
+  - Simple but powerful FX section with delay, reverb, and a bell-eq
+  - Arpeggiator with different modes
+  - Stereo UNISON mode with up to seven voices
+  - Aftertouch and MPE support
+  - Microtuning support (tun file import and MTS Client)
+  - Original factory banks included
+  - More than 380 fresh presets by Electric Himalaya, The Unfinished, Saif Sameer, emptyvessel and TAL
+  - Individual tuning for every voice converts the synths DCO into a VCO
+  - Reads Sysex files and Sysex MIDI from the hardware device
+  - Can also control a hardware device, sending Sysex through the plug-in MIDI output when supported by the DAW
+  - Windows: Windows 7 or higher (64 bit host)
+  - macOS: 10.9 or higher (64 bit host), Universal Binary 2 with native Intel and Apple silicon support
+  - AAX: Pro Tools 10.3.6 or higher (64 bit)
+  - Linux: 64 bit, Ubuntu 18 or similar
+versions:
+  - name: 1.4.3
+    releaseDate: 2026-04-22
+    description: MacOS damaged build fixed. MTS state lost fixed. Sysex import fix.
+  - name: 1.3.8
+    releaseDate: 2025-03-10
+    description: Maintenance update.
+  - name: 1.3.6
+    releaseDate: 2025-12-29
+    description: 14-bit MPE zone pitch range in Bitwig fixed. Single preset Sysex import fix (invalid ranges for keyfollow and some aftertouch values fixed).
+  - name: 1.3.6
+    releaseDate: 2025-12-05
+    description: Minor fixes.
+  - name: 1.3.4
+    releaseDate: 2025-11-21
+    description: S&H LFO host sync problem fixed.
+  - name: 1.3.3
+    releaseDate: 2025-10-23
+    description: Smaller default UI size when loading the UI the first time. Improved Linux CLAP mouse interactions.
+  - name: 1.3.1
+    releaseDate: 2025-10-06
+    description: Windows OS crash introduced with version 1.3.0 fixed.
+  - name: 1.3.0
+    releaseDate: 2025-10-02
+    description: LFO delay time reset when notes are in release state.
+  - name: 1.2.8
+    releaseDate: 2025-09-17
+    description: More MPE options to improve compatibility for different MPE hardware devices (osmose). Framework update.
+  - name: 1.2.6
+    releaseDate: 2025-04-10
+    description: Minor fixes. UI improvements. Fixes a problem that could lead to a crash. Framework update (at least Windows 10 required).
+  - name: 1.2.2
+    releaseDate: 2024-07-31
+    description: MONO-Chord mode added (similar to hardware). Changing sample-rate can lead to detuned voices fixed.
+  - name: 1.2.0
+    releaseDate: 2024-04-19
+    description: Arpeggiator host-sync timing problem fixed.
+  - name: 1.1.9
+    releaseDate: 2024-03-27
+    description: Slow attack in MPE mode fixed. Centred snap for MIDI CC values with zero at center. Update envelope in LCD view also when controlled with MIDI CCs.
+  - name: 1.1.8
+    releaseDate: 2024-03-11
+    description: Pops when switching presets fixed (problem was introduced with version 1.1.6).
+  - name: 1.1.7
+    releaseDate: 2024-03-02
+    description: Saw PW and Pulse PW sync fixed.
+  - name: 1.1.6
+    releaseDate: 2024-03-01
+    description: Massive CPU optimization (especially for x64 systems).
+  - name: 1.1.3
+    releaseDate: 2024-02-27
+    description: Always play filter envelope to the end even with amp gate mode.
+  - name: 1.1.2
+    releaseDate: 2024-02-26
+    description: SAW PW and PULSE PW not in sync with fast LFO modulations fixed. Wrong delay sync delay time text fixed.
+  - name: 1.1.1
+    releaseDate: 2024-02-23
+    description: Color theme file import/export. Fixed LFO sync not working. PW LFO (improved sound, more authentic behavior). Fixed wrong delay sync delay time text introduced with the previous version. Minor fixes.
+  - name: 1.1.0
+    releaseDate: 2024-02-20
+    description: New "Normal" filter mode for most possible accuracy with the hardware. Optional direct hardware MIDI output for simple hardware control. Simple color dialog for the gray scheme. Automatable next/previous preset buttons. CPU optimisations. Minor fixes.
+  - name: 1.0.3
+    releaseDate: 2024-02-16
+    description: Delay sync time fixed. Smoother preset switching.
+  - name: 1.0.0
+    releaseDate: 2024-02-15
+    description: Public release.
+releaseDate: 2024-02-15
 videos:
   - videoId: okb1BoBNXKU
     provider: youtube
@@ -34,3 +128,18 @@ videos:
   - videoId: lYgj1hIJZPI
     provider: youtube
     title: Silica - Soundset for TAL-Pha
+  - provider: youtube
+    videoId: 3bOCVR4NO38
+    title: TAL-Pha intro by Jim Daneker
+  - provider: youtube
+    videoId: 9t4qrc0uRtU
+    title: TAL Pha vs MKS 50 II
+  - provider: youtube
+    videoId: PQlA0wAoiv0
+    title: TAL-Pha 80's Demo
+  - provider: youtube
+    videoId: vPK9tsM189A
+    title: Let's Make a Noise 03 - TAL-Pha Synth
+  - provider: youtube
+    videoId: AR34C1-nJGQ
+    title: KIKO1 Tal-Pha Demo

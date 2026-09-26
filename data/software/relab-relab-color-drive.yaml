@@ -5,6 +5,9 @@ primaryCategory: saturation
 categories:
   - creative
   - plugin
+  - effect
+  - overdrive
+  - emulation
 formats:
   - au
   - vst3
@@ -18,26 +21,29 @@ prices:
     currency: USD
 description: A saturation plugin built on real analog circuit modeling, featuring the Relab 176's variable-gain 6BC8 tube circuit with input/output transformers. Offers true hardware saturation in software form with drive control ranging from subtle warmth to bold crunch, calibration control for bias adjustment and harmonic tuning, low-end crossover filter, and pre/post tilt emphasis filters.
 details: |-
-  Color Drive doesn't stack algorithms or approximate "warmth." It solves the Relab 176 tube stage, with the input transformer, 6BC8 variable-gain tube, calibration bias, and output transformer, as a single, living circuit. That's why it behaves like hardware: every move changes the way the whole system responds.
+  Color Drive solves the Relab 176 tube stage, with the input transformer, 6BC8 variable-gain tube, calibration bias, and output transformer, as a single circuit rather than stacking algorithms, so every control change alters how the whole system responds.
 
-  When you increase the Drive you're not just adding "more effect" — you're pushing an accurate 6BC8 tube (and switchable output transformer) model inside a complete analog circuit. Harmonics build naturally, transients round in a controlled way, and the signal picks up that understated weight and glow you normally only get from real hardware.
+  Because the full circuit is solved in real time, density, tone, and transient shape interact exactly like they do in hardware. From barely-there warmth to real tube crunch, it can tuck transients, add harmonic weight, and give instruments presence without pushing them forward in level.
 
-  Switching to transformer coupling inserts the Relab 176's output transformer back into the signal path, completing the full analog chain. With Calibration centered, the stage produces mostly odd-order harmonics, adding focus, punch, and that familiar hardware solidity to a mix.
+  Raising Drive pushes the 6BC8 tube model (and switchable output transformer) harder inside the complete analog circuit: harmonics build, transients round in a controlled way, and the signal gains weight.
 
-  Calibration adjusts the tube's bias point, letting you introduce just the right amount of even-order harmonics when you need warmth or contour. Especially when paired with the output transformer, it becomes a precise way to shape the harmonic mix.
+  Switching to transformer coupling inserts the Relab 176's output transformer back into the signal path, completing the full analog chain. With Calibration centered, the stage produces mostly odd-order harmonics, adding focus, punch, and that familiar hardware solidity to a mix. Calibration adjusts the tube's bias point, introducing even-order harmonics for warmth or contour.
 
-  Color Drive launches with the Relab 176 tube stage, but the architecture is ready for additional circuits as future "color pack" upgrades — downloadable right into this system, giving you an expanding library of real circuits and tones, all inside one unified workflow.
+  The low-end crossover can route the deep bass around the drive circuit, keeping low-end weight without muddying the harmonics, and the pre/post tilt or high-shelf emphasis filters steer which frequencies push the tube harder. Color Drive launches with the Relab 176 tube stage, but the architecture is ready for additional circuits as new hardware models are released, with future color pack upgrades downloadable right into this system.
 specs: |-
-  - Real-time circuit solving of the Relab 176 tube stage (6BC8 tube, input/output transformers)
-  - Drive control that pushes an accurate 6BC8 tube model with switchable output transformer
-  - Transformer coupling switch to insert the Relab 176 output transformer into signal path
-  - Calibration control to adjust the tube's bias point for harmonic mix shaping
-  - Low-end crossover routing to keep deep bass out of the drive circuit
-  - Pre/post tilt and high-shelf filters to steer which frequencies push the tube
-  - Expandable preset manager with factory presets included
-  - iLok account required for authorization (hardware dongle optional)
-  - Mac: macOS 12 Monterey or higher, Apple Silicon M1 or newer, AU/VST3/AAX (64-bit)
-  - Windows: Windows 10 and up (64-bit), Intel Core i7 8th-gen+ or AMD Ryzen 5 3000-series+ with AVX2, VST3/AAX (64-bit)
-  - RAM: 8 GB minimum, 16 GB+ recommended
-  - Compatible DAWs: Pro Tools 2020.11+, Cubase 9.5+, Nuendo 8+, Ableton Live 10+, Reaper 7+
+  - Real-time solved model of the Relab 176 tube stage: input transformer, 6BC8 variable-gain tube, calibration bias and output transformer
+  - Drive control pushing the 6BC8 tube model inside a complete analog circuit
+  - Switchable output coupling: transformer coupling inserts the Relab 176 output transformer into the signal path
+  - Calibration control adjusts the tube bias point to dial in even-order harmonics
+  - Low-end crossover routes deep bass around the drive circuit
+  - Pre/post tilt and high-shelf emphasis filters to steer which frequencies push the tube
+  - Expandable architecture for future downloadable color pack circuit models
+  - Hand-crafted factory presets with preset manager
+  - macOS 12 Monterey or higher, Apple Silicon M1 or newer, 8 GB RAM minimum (16 GB+ recommended)
+  - Windows 10 and up (64-bit), Intel Core i7 8th-gen+ or AMD Ryzen 5 3000-series+ with AVX2, 8 GB RAM minimum (16 GB+ recommended)
+  - 64-bit only: AU, VST3 and AAX on macOS; VST3 and AAX on Windows
+  - iLok authorization (account required, no dongle required; local machine or iLok USB key V2 or above)
+  - Tested hosts: Pro Tools 2020.11+, Cubase 9.5+, Nuendo 8+, Ableton Live 10+, Reaper 7+
+versions:
+  - name: 1.1.0
 releaseDate: 2025-11-12
