@@ -56,6 +56,7 @@ export enum ValidationErrorCode {
   E205_DUPLICATE_CAPABILITY = "E205",
   E203_PARENT_COMPANY_NOT_FOUND = "E203",
   E204_IO_TRANSLATION_MISMATCH = "E204",
+  E206_UNKNOWN_COMPATIBLE_WITH = "E206",
 
   // Content errors (E3xx)
   E300_INVALID_MARKDOWN = "E300",
@@ -72,7 +73,6 @@ export enum ValidationErrorCode {
   // Advisory warnings (W1xx) — non-blocking
   W120_UNKNOWN_IO_TYPE = "W120",
   W121_UNKNOWN_IO_CONNECTION = "W121",
-  W123_UNKNOWN_COMPATIBLE_WITH = "W123",
   W124_DUPLICATE_URL = "W124",
   W125_MANUFACTURER_URL_IN_LINKS = "W125",
   W126_SPECS_OVERLAP = "W126",
@@ -274,6 +274,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     title: "Duplicate capability",
     anchor: "e205-duplicate-capability",
   },
+  [ValidationErrorCode.E206_UNKNOWN_COMPATIBLE_WITH]: {
+    title: "Unknown compatibleWith reference",
+    anchor: "e206-unknown-compatiblewith-reference",
+  },
 
   // Content errors
   [ValidationErrorCode.E300_INVALID_MARKDOWN]: {
@@ -319,10 +323,6 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.W121_UNKNOWN_IO_CONNECTION]: {
     title: "Unknown IO connection",
     anchor: "w121-unknown-io-connection",
-  },
-  [ValidationErrorCode.W123_UNKNOWN_COMPATIBLE_WITH]: {
-    title: "Unknown compatibleWith reference",
-    anchor: "w123-unknown-compatible-with",
   },
   [ValidationErrorCode.W124_DUPLICATE_URL]: {
     title: "Duplicate URL",

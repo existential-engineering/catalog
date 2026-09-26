@@ -853,7 +853,7 @@ compatibleWith:
   - elektron-digitone
 ```
 
-Advisory warning W123 fires if a `compatibleWith` slug doesn't match an existing software or hardware file. Category aliases in `schema/category-aliases.yaml` map common synonyms (e.g., `soundbank` → `preset-pack`) to canonical categories.
+`pnpm validate` fails (E206) if a `compatibleWith` slug doesn't match an existing software or hardware file. Category aliases in `schema/category-aliases.yaml` map common synonyms (e.g., `soundbank` → `preset-pack`) to canonical categories.
 
 ## Accessory Entries
 

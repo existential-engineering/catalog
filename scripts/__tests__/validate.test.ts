@@ -6,6 +6,7 @@ import { ValidationErrorCode } from "../lib/error-codes.js";
 import { loadYamlFileWithPositions } from "../lib/utils.js";
 import {
   COLLECTION_SCHEMAS,
+  checkCompatibleWith,
   collectWarnings,
   detectSupersedeCycle,
   getErrorCodeFromZodIssue,
@@ -602,12 +603,39 @@ platforms:
   });
 });
 
+describe("checkCompatibleWith", () => {
+  const PACK = `name: Pack
+manufacturer: acme
+primaryCategory: preset-pack
+compatibleWith:
+  - serum
+  - some-synth
+`;
+
+  it("returns null when every slug names a software or hardware file", () => {
+    const file = writeEntry("content", PACK);
+    expect(checkCompatibleWith(file, new Set(["serum"]), new Set(["some-synth"]))).toBeNull();
+    expect(
+      checkCompatibleWith(writeEntry("content", HARDWARE_OK), new Set(), new Set())
+    ).toBeNull();
+  });
+
+  it("E206: an unknown slug is an error, keyed to its line", () => {
+    // `kontakt` for `native-instruments-kontakt` shipped while this was the
+    // advisory W123, and Studio lost the compatibility without a word.
+    const file = writeEntry("content", PACK);
+    const result = checkCompatibleWith(file, new Set(["serum"]), new Set());
+    expect(result?.file).toBe(path.relative(process.cwd(), file));
+    expect(result?.details?.map((d) => ({ code: d.code, path: d.path, line: d.line }))).toEqual([
+      { code: "E206", path: "compatibleWith[1]", line: 6 },
+    ]);
+  });
+});
+
 describe("collectWarnings", () => {
   function warn(
     yaml: string,
     ctx: {
-      software?: Set<string>;
-      hardware?: Set<string>;
       mfrUrls?: Map<string, string>;
       mfrNames?: Map<string, string>;
     } = {},
@@ -620,8 +648,6 @@ describe("collectWarnings", () => {
       data as WarningContext,
       document,
       lineCounter,
-      ctx.software,
-      ctx.hardware,
       ctx.mfrUrls,
       ctx.mfrNames
     );
@@ -676,23 +702,6 @@ describe("collectWarnings", () => {
     expect(warn(collapsed.replace("primaryCategory: pedal", "primaryCategory: patch-bay"))).toEqual(
       []
     );
-  });
-
-  it("W123: compatibleWith resolves against software or hardware slugs, when either set is given", () => {
-    const yaml = `name: Pack
-manufacturer: acme
-primaryCategory: preset-pack
-compatibleWith:
-  - serum
-  - some-synth
-`;
-    expect(warn(yaml, {}, "content")).toEqual([]);
-    expect(
-      warn(yaml, { software: new Set(["serum"]), hardware: new Set(["some-synth"]) }, "content")
-    ).toEqual([]);
-    expect(warn(yaml, { software: new Set(["serum"]) }, "content")).toEqual([
-      { code: "W123", path: "compatibleWith[1]", line: 6 },
-    ]);
   });
 
   it("W124: a link repeating url or an earlier link", () => {

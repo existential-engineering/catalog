@@ -233,7 +233,7 @@ Content entries (presets, sample packs, expansions) live in \`data/content/\` as
 - \`primaryCategory\` - Content category (e.g., \`preset\`, \`preset-pack\`, \`sample-pack\`, \`sound-library\`)
 - \`compatibleWith\` - Optional array of software slugs for host products (e.g., \`["serum", "omnisphere-2"]\`)
 - Does NOT have \`platforms\`, \`formats\`, or \`identifiers\` fields
-- Advisory warning W123 fires if a \`compatibleWith\` slug doesn't match an existing software file
+- \`pnpm validate\` fails (E206) if a \`compatibleWith\` slug doesn't match an existing software or hardware file
 
 ### Hardware
 - \`slug\` - URL-safe identifier
