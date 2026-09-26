@@ -79,7 +79,10 @@ export function normalizeCategory(category: string): string {
   return CATEGORY_ALIASES.get(category) ?? category;
 }
 
-import { resolveFormatIdentifier } from "./lib/identifier-fallback.js";
+import {
+  resolveFormatComponentIdentifiers,
+  resolveFormatIdentifier,
+} from "./lib/identifier-fallback.js";
 import { IO_KEY_PATTERN } from "./lib/io-keys.js";
 // Load IO position and connection aliases for normalization
 import { loadSchemaContext } from "./lib/schema-loader.js";
@@ -355,6 +358,10 @@ function populateDatabase(db: Database.Database, dataDir: string, version: strin
     INSERT INTO software_formats (software_id, format, identifier)
     VALUES (?, ?, ?)
   `);
+  const insertFormatIdentifier = db.prepare(`
+    INSERT OR IGNORE INTO software_format_identifiers (software_id, format, identifier, is_primary)
+    VALUES (?, ?, ?, ?)
+  `);
   const insertPlatform = db.prepare(`
     INSERT INTO software_platforms (software_id, platform)
     VALUES (?, ?)
@@ -468,6 +475,13 @@ function populateDatabase(db: Database.Database, dataDir: string, version: strin
       for (const format of data.formats) {
         const identifier = resolveFormatIdentifier(data.identifiers, format);
         insertFormat.run(id, format, identifier);
+        if (identifier) insertFormatIdentifier.run(id, format, identifier, 1);
+        for (const component of resolveFormatComponentIdentifiers(
+          data.componentIdentifiers,
+          format
+        )) {
+          insertFormatIdentifier.run(id, format, component, 0);
+        }
       }
     }
 

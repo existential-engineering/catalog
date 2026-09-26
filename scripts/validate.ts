@@ -14,7 +14,12 @@ import { z } from "zod";
 import { looksLikeAcronymName } from "./lib/acronym-exclusions.js";
 import { findControlCharacters, formatControlCharacterPath } from "./lib/control-characters.js";
 import { getDocsUrl, ValidationErrorCode } from "./lib/error-codes.js";
-import { validateIdentifier } from "./lib/identifier-validation.js";
+import {
+  findComponentIdentifierRepeats,
+  findSharedIdentifiers,
+  type IdentifierOwner,
+  validateIdentifier,
+} from "./lib/identifier-validation.js";
 import { isIoCombineCandidate, STORAGE_MEDIA_SLOT } from "./lib/io-heuristics.js";
 import { findHintFindings, isPositiveInteger } from "./lib/io-hints.js";
 import { findDuplicateIoKeys, IO_KEY_PATTERN } from "./lib/io-keys.js";
@@ -790,6 +795,7 @@ const SoftwareSchema = z
       }),
     platforms: createPlatformArrayValidator(),
     identifiers: z.record(z.string(), z.string()).optional(),
+    componentIdentifiers: z.record(z.string(), z.array(z.string()).min(1)).optional(),
     compatibleWith: z.array(z.string()).optional(),
     url: z.url().optional(),
     releaseDate: z.string().optional(),
@@ -1054,6 +1060,7 @@ interface DataWithOptionalFields {
   categories?: string[];
   supersedes?: string;
   identifiers?: Record<string, string>;
+  componentIdentifiers?: Record<string, string[]>;
   description?: string | string[];
   details?: string | string[];
   specs?: string | string[];
@@ -1323,25 +1330,57 @@ export function validateFile(
     // value under either key was inert; now it reaches every format row, and
     // this is the only gate in front of `software_formats.identifier`. A key
     // without a pattern (`productId`) is accepted as before.
-    if (data.identifiers && typeof data.identifiers === "object") {
+    // `componentIdentifiers` values ship to software_format_identifiers the
+    // same way, so each one passes the pattern of the key it sits under.
+    if (
+      (data.identifiers && typeof data.identifiers === "object") ||
+      (data.componentIdentifiers && typeof data.componentIdentifiers === "object")
+    ) {
       const identifierErrors: string[] = [];
       const identifierDetails: ValidationErrorDetail[] = [];
       const errorCode = ValidationErrorCode.E400_INVALID_IDENTIFIER_FORMAT;
-      for (const [key, value] of Object.entries(data.identifiers)) {
+      const checks: { key: string; value: string; path: (string | number)[] }[] = [];
+      for (const [key, value] of Object.entries(data.identifiers ?? {})) {
+        checks.push({ key, value, path: ["identifiers", key] });
+      }
+      for (const [key, values] of Object.entries(data.componentIdentifiers ?? {})) {
+        values.forEach((value, index) => {
+          checks.push({ key, value, path: ["componentIdentifiers", key, index] });
+        });
+      }
+      for (const { key, value, path: yamlPath } of checks) {
         const result = validateIdentifier(key, value);
         if (result.valid || !result.error) continue;
         const message = result.suggestion
           ? `${result.error}. Expected: ${result.suggestion}`
           : result.error;
-        const line = getLineForPath(document, lineCounter, ["identifiers", key]);
-        identifierErrors.push(`identifiers.${key}: ${message}`);
+        const line = getLineForPath(document, lineCounter, yamlPath);
+        identifierErrors.push(`${yamlPath.join(".")}: ${message}`);
         identifierDetails.push({
           code: errorCode,
           message,
-          path: `identifiers.${key}`,
+          path: yamlPath.join("."),
           line: line ?? undefined,
           docsUrl: getDocsUrl(errorCode),
         });
+      }
+      if (data.componentIdentifiers) {
+        const repeatCode = ValidationErrorCode.E402_DUPLICATE_IDENTIFIER;
+        for (const { key, value, reason } of findComponentIdentifierRepeats(
+          data.identifiers,
+          data.componentIdentifiers
+        )) {
+          const message = `'${value}' is ${reason}`;
+          const line = getLineForPath(document, lineCounter, ["componentIdentifiers", key]);
+          identifierErrors.push(`componentIdentifiers.${key}: ${message}`);
+          identifierDetails.push({
+            code: repeatCode,
+            message,
+            path: `componentIdentifiers.${key}`,
+            line: line ?? undefined,
+            docsUrl: getDocsUrl(repeatCode),
+          });
+        }
       }
       if (identifierErrors.length > 0) {
         return {
@@ -1838,12 +1877,22 @@ function validate(): ValidationResult {
     allHardwareSlugs.add(path.basename(file, path.extname(file)));
   }
 
-  // Collect software IDs and supersedes relationships
+  // Collect software IDs and supersedes relationships, and every entry's
+  // identifiers for the cross-file E402 check below
+  const identifierOwners: IdentifierOwner[] = [];
   for (const file of softwareFiles) {
     const slug = path.basename(file, path.extname(file));
     try {
       const content = fs.readFileSync(file, "utf-8");
-      const data = parseYaml(content) as { id?: string; supersedes?: string };
+      const data = parseYaml(content) as { id?: string; supersedes?: string } & Omit<
+        IdentifierOwner,
+        "slug"
+      >;
+      identifierOwners.push({
+        slug,
+        identifiers: data.identifiers,
+        componentIdentifiers: data.componentIdentifiers,
+      });
       if (data.id) {
         softwareIds.add(data.id);
         softwareIdToSlug.set(data.id, slug);
@@ -1945,6 +1994,18 @@ function validate(): ValidationResult {
         // Ignore parse errors - they're caught by YAML validation
       }
     }
+  }
+
+  // E402 across entries: Studio's matcher resolves an identifier to one
+  // entry, so two entries claiming one value is a silent mis-match.
+  for (const [value, slugs] of findSharedIdentifiers(identifierOwners)) {
+    const errorCode = ValidationErrorCode.E402_DUPLICATE_IDENTIFIER;
+    const message = `identifier '${value}' is claimed by ${slugs.join(", ")}; an identifier resolves to one entry`;
+    errors.push({
+      file: slugs.map((slug) => path.join("data", "software", `${slug}.yaml`)).join(", "),
+      errors: [message],
+      details: [{ code: errorCode, message, path: "identifiers", docsUrl: getDocsUrl(errorCode) }],
+    });
   }
 
   // Validate content (supersedes must reference valid content ID)

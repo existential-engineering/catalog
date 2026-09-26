@@ -67,6 +67,7 @@ export enum ValidationErrorCode {
   // Identifier errors (E4xx)
   E400_INVALID_IDENTIFIER_FORMAT = "E400",
   E401_MISSING_IDENTIFIER = "E401",
+  E402_DUPLICATE_IDENTIFIER = "E402",
 
   // Advisory warnings (W1xx) — non-blocking
   W120_UNKNOWN_IO_TYPE = "W120",
@@ -304,6 +305,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E401_MISSING_IDENTIFIER]: {
     title: "Missing identifier",
     anchor: "e401-missing-identifier",
+  },
+  [ValidationErrorCode.E402_DUPLICATE_IDENTIFIER]: {
+    title: "Duplicate identifier",
+    anchor: "e402-duplicate-identifier",
   },
 
   // Advisory warnings

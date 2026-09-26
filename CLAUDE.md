@@ -747,9 +747,44 @@ store numbers) feeds nothing, has no pattern, and stays where it is.
 `vst3` holds either the macOS bundle id or the 32-digit hex class id from
 `moduleinfo.json`, because Studio reads the first on macOS and the second
 on Windows and Linux, and a value the scanner cannot produce matches
-nothing. One value per format is the schema's limit today, so an entry
-matched on both platforms needs a second key and a second
-`software_formats` row, which is additive and not yet done.
+nothing. An entry matched on both platforms keeps one of the two in
+`identifiers.vst3` and the other in `componentIdentifiers.vst3` (below).
+
+**`componentIdentifiers` holds every further binary one entry ships.** It
+takes the same keys and the same precedence as `identifiers`, with a list
+per key, and exists because `identifiers` holds one value per key while a
+UAD collection installs one binary per member: the 1176 Classic Limiter
+Collection is `U3CM` plus Rev A (`U39V`), LN Rev E (`U39X`) and AE
+(`U39Z`), and Studio saw each member as an unmatched plugin until it could
+resolve all four.
+
+```yaml
+identifiers:
+  default: com.uaudio.effects.U3CM
+componentIdentifiers:
+  default:
+    - com.uaudio.effects.U39V
+    - com.uaudio.effects.U39X
+    - com.uaudio.effects.U39Z
+```
+
+- **The primary stays in `identifiers`.** `software_formats.identifier` is
+  what every Studio build that predates schema migration 24 reads, so the
+  value that goes there is unchanged. The build writes the primary and
+  every component into `software_format_identifiers` (`is_primary` tells
+  them apart), which is what the matcher reads when the table exists.
+- **A component is a binary of this product, never a sibling product.** A
+  plugin sold on its own gets its own entry (IR-Live beside IR-1), and a
+  component bundled with its parent goes here (InTrigger Live, which ships
+  with every InTrigger licence and has no page of its own).
+- **An identifier belongs to one entry.** `pnpm validate` fails an
+  identifier claimed by two entries, repeated in one list, or repeated
+  from `identifiers` under the same key (E402), because the matcher
+  resolves a value to one entry and would otherwise pick one silently.
+- **The writer treats a listed component as agreement.** A telemetry row
+  naming a value already in `componentIdentifiers` reports `same`, not the
+  conflict it would be against the primary alone. Adding a component is a
+  reviewed hand edit, the same as any other identifier the writer refuses.
 
 **Every observed identifier is written through one writer**,
 `scripts/lib/identifier-writer.ts`, whichever lane observed it:

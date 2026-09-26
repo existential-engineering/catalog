@@ -22,7 +22,25 @@ ORDER BY version;
 
 ## Version History
 
-### Version 23 (Current)
+### Version 24 (Current)
+
+**Description:** Added software_format_identifiers table for every identifier a format resolves to
+
+**Breaking:** No
+
+**Changes:**
+
+- Added `software_format_identifiers` (`software_id`, `format`, `identifier`,
+  `is_primary`), one row per identifier a listed format resolves to
+- `is_primary = 1` is the value `software_formats.identifier` carries; each
+  YAML `componentIdentifiers` value adds an `is_primary = 0` row, so a
+  collection whose members ship their own binaries (UAD's 1176 Classic
+  Limiter Collection) is reachable from every member's bundle id
+- Indexed on `identifier` for the plugin matcher's lookup
+- Additive: `software_formats` is unchanged, a reader that predates the table
+  never sees it, and `schema_version` in `catalog_meta` stays at 1
+
+### Version 23
 
 **Description:** Added nullable hp column to hardware for Eurorack panel width
 
