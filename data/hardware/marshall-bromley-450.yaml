@@ -8,8 +8,8 @@ url: https://www.marshall.com/us/en/product/bromley-450
 prices:
   - amount: 799.99
     currency: USD
-description: Portable party speaker with 40+ hours of playtime from a replaceable
-  LFP battery, two mic/instrument combo inputs and an IP55 rating.
+description: Portable party speaker with 40+ hours of playtime from a
+  replaceable LFP battery, two mic/instrument combo inputs and an IP55 rating.
 details: |-
   Whether the party is indoors or out, never sacrifice the sound quality. True Stereophonic 360 degree sound lets everyone know the party is on. And you can keep it going with a portable playtime that lasts as long as the crowd wants. It can take a bit of dirt and water, so no need to stay inside. Living room, festival or backyard, this Bluetooth party speaker goes the distance.
 
@@ -60,8 +60,16 @@ io:
     maxConnections: 1
     position: Right
   - key: eHJjGPQH
-    name: AUX In / Out
-    signalFlow: bidirectional
+    name: AUX In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: FikbmMvV
+    name: AUX Out
+    signalFlow: output
     category: audio
     type: line
     connection: 1/8-inch
