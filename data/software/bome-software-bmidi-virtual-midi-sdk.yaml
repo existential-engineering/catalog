@@ -12,20 +12,40 @@ platforms:
   - ios
   - android
 url: https://www.bome.com/products/bmidi
-description: Essentially, BMIDI provides a simple library which allows
-  applications to expose one or more MIDI ports to other MIDI applications.
-  Those other applications use the BMIDI ports as if they were external hardware
-  MIDI ports.
+description: BMIDI provides a simple library which allows applications to expose
+  one or more MIDI ports to other MIDI applications. Those other applications
+  use the BMIDI ports as if they were external hardware MIDI ports.
 details: |-
-  BMIDI is a cross platform SDK for developers or manufacturers who want to add virtual MIDI ports to their application or driver. It is used by many companies, from very small to very large, for quick and easy virtual port support in their software.
+  BMIDI is a cross platform SDK for developers and manufacturers who want to add virtual MIDI ports to their own application or driver. Bome describes it as in use by many companies, from very small to very large, that want quick and easy virtual port support in their software, and reports hundreds of thousands of end users running products built on it.
 
-  Essentially, BMIDI provides a simple library which allows applications to expose one or more MIDI ports to other MIDI applications. Those other applications use the BMIDI ports as if they were external hardware MIDI ports.
+  The library lets an application expose one or more MIDI ports to other MIDI applications, which then address those ports as if they were external hardware MIDI ports. BMIDI is explicitly not a loopback driver: one endpoint is always private, inside the host application, which Bome presents as the reason for its performance. An application uses the BMIDI API to add and remove ports, query ports, and send and receive data, and the same API is used on Windows, macOS, iOS/iPadOS and Linux/Raspberry Pi.
 
-  BMIDI is not a loopback driver: one endpoint is always private, i.e. in your application. This architecture ensures best performance. A BMIDI application uses the BMIDI API to add or remove ports, to query ports, and to send/receive data to/from ports. The same BMIDI API is used on Windows, macOS, iOS/iPadOS, and Linux/RaspberryPi.
+  Language and framework coverage is broad. The native API is C and C++, with wrappers for C# (Unity, Mono, .NET), Java and Python, plus RtMidi bindings, and Bome states compatibility with frameworks such as Juce and Qt. Other wrappers can be developed on request, and source code integration support is offered. Ports can carry arbitrary names, MIDI messages can be of arbitrary length, and there is no stated limit on the number of virtual ports.
 
-  The API is available for C and C++, with wrappers for C# (e.g. for Unity, Mono, .NET), Java and Python, plus RtMidi bindings, and it is compatible with frameworks like Juce and Qt. Other wrappers can be developed on request, and source code integration support is offered.
+  Platform support differs in the details. On Windows the product is a WDM kernel driver compatible with UEFI Secure Boot, running on Windows XP through 11, Intel 32-bit and 64-bit only with no Arm support yet, installed silently and exposing both MME and DirectMusic ports. On macOS no installation is required because BMIDI is integrated as a library, covering current macOS versions back to 10.7 with native x86 and Arm64 (Apple Silicon) builds. Linux support covers desktop distributions such as Ubuntu plus Raspberry Pi OS, iOS/iPadOS support goes back to iOS 10, and Android is supported from API Level 23 with the limitation that the set of virtual ports must be fixed at build time rather than added and removed dynamically.
 
-  The BMIDI Bome Virtual MIDI Port driver works fine with the currently rolled out Windows MIDI Services. The typical licensing model for BMIDI is a one-time fee.
+  Bome publishes a BMIDI white paper and a stand-alone Windows installer (BMIDI 2.1.0.44) for troubleshooting, and states that the typical licensing model is a one-time fee, with no amount given and inquiries routed through a licensing contact form. Additional paid services are offered alongside the SDK, including GUI implementations, added engine or library features, and drivers for custom hardware.
+specs: |-
+  - Cross platform SDK for adding virtual MIDI ports to an application or driver
+  - Send and receive MIDI data to and from other MIDI applications
+  - MIDI messages can be of arbitrary length
+  - Virtual MIDI ports can have arbitrary names
+  - Create an unlimited number of virtual MIDI ports
+  - Not a loopback driver: one endpoint is always private to the host application
+  - Same API across Windows, macOS, iOS/iPadOS and Linux/Raspberry Pi
+  - API: C and C++, with C# (Unity, Mono, .NET), Java and Python wrappers and RtMidi bindings
+  - Compatible with frameworks such as Juce and Qt; other wrappers on request
+  - Source code integration support
+  - Compatible with 32-bit, 64-bit and Arm (Apple Silicon) architectures
+  - Windows: XP, Vista, 7, 8, 10 and 11; Intel 32-bit and 64-bit only, no Arm support yet
+  - Windows: WDM kernel driver compatible with UEFI Secure Boot, silent installer, exposes both MME and DirectMusic ports
+  - macOS: all current versions since 10.7, no installation required, native x86 and Arm64 support
+  - Linux: current desktop distributions such as Ubuntu, plus Raspberry Pi OS
+  - iOS/iPadOS: all current versions since iOS 10, integrated as a library
+  - Android: API Level 23 (Android M) and later, accessed from native C/C++ code, with a fixed set of virtual ports defined by the app
+  - In use by hundreds of thousands of end users
+  - Licensing is typically a one-time fee, quoted on inquiry
+  - Additional services offered: GUI implementations, engine or library features, drivers for custom hardware
 versions:
   - name: 2.1.0.44
 links:
