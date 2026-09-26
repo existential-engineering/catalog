@@ -8,7 +8,7 @@ categories:
   - lo-fi
   - plugin
 formats:
-  - vst
+  - vst2
   - vst3
   - au
   - aax
@@ -18,18 +18,34 @@ platforms:
   - windows
   - linux
 url: https://tal-software.com/products/tal-bitcrusher
-description: TAL-Bitcrusher is a new version of the deprecated TAL-Bitcrusher
-  plugin with minor improvements, capable of creating the same crunchy
-  bitcrusher sound that shaped many records. The sample rate parameter features
-  a more practical scaling for better adjustments in the most useful sample rate
-  ranges.
+prices:
+  - amount: 0
+    currency: USD
+    asOf: 2026-09-26
+    source: official-website
+description: TAL-Bitcrusher is a remake of the original plugin, first released more than a decade ago. It shares the same algorithms, with some improvements and fixes.
 details: |-
-  TAL-Bitcrusher is a new version of the deprecated TAL-Bitcrusher plugin from Togu Audio Line. It retains the classic crunchy bitcrusher character that shaped many records while introducing minor improvements over the original. Note that presets are not compatible with the old version.
+  TAL-Bitcrusher is a remake of the original TAL plugin that Togu Audio Line first released more than a decade ago. The remake keeps the same core algorithms as the original, with improvements and fixes applied on top of them.
 
-  The plugin features a revised sample rate parameter with more practical scaling, allowing for better adjustments within the most useful sample rate ranges. This makes dialing in lo-fi textures more intuitive and precise compared to the previous version.
+  The headline addition in the remake is a COMPANDING parameter. TAL describes it as a way to boost quieter audio and add even more noise and sparkle to your samples, extending the plugin's bit-crushing character beyond what the original offered.
 
-  Available as VST, VST3, AU, AAX, and CLAP formats, TAL-Bitcrusher supports all major plugin hosts on Windows, macOS, and Linux. macOS builds are Universal Binary 2 with native support for both Intel and Apple Silicon (M1, M2, M3 and later).
+  The interface has been reworked for the remake: the UI is now resizable, and a preset browser has been built into the plug-in. Presets from the old version are not compatible with this release, so existing patches do not carry over.
+
+  The current download is version 0.9.9, offered as installers for Windows and macOS and as a 64-bit Linux archive containing VST2 and VST3 builds. Plug-in formats are VST, VST3, AU, AAX and CLAP. The macOS build is a Universal Binary 2 with native Intel and Apple silicon support.
+
+  TAL-Bitcrusher is one of TAL's free plug-ins, alongside TAL-Filter-2, TAL-Reverb-4, TAL-Chorus-LX, TAL-NoiseMaker and TAL-Vocoder.
+specs: |-
+  - Remake of the original TAL-Bitcrusher, sharing the same algorithms with improvements and fixes
+  - COMPANDING parameter to boost quieter audio and add extra noise and sparkle
+  - Resizable user interface
+  - Built-in preset browser (presets not compatible with the old version)
+  - Plug-in formats: VST, VST3, AU, AAX, CLAP
+  - Windows: Windows 10 or higher, 64-bit host
+  - macOS: 10.11 or higher, 64-bit host; Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3...)
+  - AAX: Pro Tools 10.3.6 or higher, 64-bit
+  - Linux: 64-bit, Ubuntu 20.4 or similar; VST2 and VST3 builds
 versions:
   - name: 0.9.6
     releaseDate: 2026-03-05
     description: AAX identifier fixed.
+  - name: 0.9.9

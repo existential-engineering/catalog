@@ -22,22 +22,112 @@ prices:
     currency: USD
 description: TAL-Dub-X is a new edition of the popular original freeware plug-in TAL-Dub with many additional functions and various echo modes. Create unique delay effects with the included resonance filter and saturation stage. Choose between different delay algorithms with different filters and saturation modes. Features LFO modulation for pitch and filter cutoff, a TAL-Dub-1 RAW mode (1:1 port of original code), and LO-FI settings for bit depth and sample rate reduction.
 specs: |-
-  - systemRequirements: Windows 10+ (64-bit), macOS 10.11+ (Universal Binary 2), Pro Tools 10.3.6+ (64-bit), Linux Ubuntu 18+ (64-bit)
+  - Delay and echo plug-in with several selectable delay algorithms and echo modes
+  - Resonance filter with adjustable cutoff and a saturation stage
+  - Different filters and saturation modes per delay algorithm
+  - TAL-Dub-1 RAW mode, a 1:1 port of the original TAL-Dub code
+  - Modulation section: LFO modulates delay line pitch and filter cutoff
+  - LFO waveforms: S&H, saw, sine, triangle, pulse and noise
+  - Host sync mode with adjustable phase control
+  - Ducking mode
+  - Ping pong delay mode
+  - LO-FI settings for bit depth and sample rate
+  - Low cut control
+  - Dry and wet volume sliders (replacing the earlier MIX and VOLUME knobs)
+  - Preset browser with factory presets, plus undo and redo
+  - Colour dialog for custom colour schemes with import and export
+  - Bypass button and custom preset path via config file
+  - Windows: Windows 10 or higher (64 bit host)
+  - macOS: 10.11 or higher (64 bit host), Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3...)
+  - AAX: Pro Tools 10.3.6 or higher (64 bit)
+  - Linux: 64 bit, Ubuntu 18 or similar
+  - Demo restriction: the plug-in produces a rising white noise sound every minute
 versions:
   - name: 2.2.8
     releaseDate: 2025-11-03
+    description: Delay mode not selected the right way in some cases when using MIDI automation or automation fixed.
   - name: 2.2.5
     releaseDate: 2025-01-22
+    description: TAL-Dub-1 RAW mode added (1:1 port of the original TAL-Dub code). TAL-Dub-1 factory presets added. New LO-FI settings (BITS and Sample Rate). Color dialog added, set your own colors and import / export them. Delay link problem when loading preset fixed.
   - name: 2.2.3
     releaseDate: 2025-01-07
+    description: Fixes a possible NaN problem.
   - name: 2.2.2
     releaseDate: 2024-11-05
+    description: More flexible serial key verification (header and footer not required).
   - name: 2.2.1
     releaseDate: 2024-10-31
+    description: Fixes a bug introduced with 2.2.0.
   - name: 2.2.0
     releaseDate: 2024-10-31
+    description: New delay algorithm added. More presets added. UI changes. Bug fixes. Maintenance update.
   - name: 2.1.0
     releaseDate: 2024-03-04
+    description: Fixes wrong label values in some cases. Maintenance update.
+  - name: 2.0.5
+    releaseDate: 2023-08-16
+    description: New preset browser. Minor fixes.
+  - name: 2.0.4
+    releaseDate: 2023-01-12
+    description: AAX native M1 support. Base framework updated (JUCE 7). Minor fixes.
+  - name: 2.0.2
+    releaseDate: 2022-10-04
+    description: Tempo sync wrong when enabled and DAW transport active (possible breaking change when synced modulation was enabled). CLAP support added.
+  - name: 2.0.1
+    releaseDate: 2022-06-08
+    description: Parameters not initialized when default preset is missing.
+  - name: 2.0.0
+    releaseDate: 2022-05-30
+    description: Ducking mode added. Host sync mode with adjustable phase control added. New LFO waveforms (S&H, SAW, SINE, TRIANGLE, PULSE, NOISE).
+  - name: 1.8.3
+    releaseDate: 2021-07-27
+    description: Improved preset browser / fixes.
+  - name: 1.8.2
+    releaseDate: 2021-07-15
+    description: Improved preset browser.
+  - name: 1.8.0
+    releaseDate: 2021-06-07
+    description: New serial protection.
+  - name: 1.7.2
+    releaseDate: 2021-05-01
+    description: MIDI automation skipps MIDI CC values fixed.
+  - name: 1.7.1
+    releaseDate: 2021-04-21
+    description: Preset browser updated. New factory presets optimized for preset browser. UNDO / REDO feature. Dry / Wet volume sliders replace MIX and VOLUME knob (backward compatible).
+  - name: 1.6.0
+    description: Native apple M1 support. Minor bug fixes. VST3 installer for windows. Linux VST3 support. Linux dot folder for settings and factory presets.
+  - name: 1.5.1
+    description: Compatibility with older OSX versions fixed (OSX only). Optimised build (OSX only).
+  - name: 1.5.0
+    description: Notarisation for OSX catalina added. Framework update.
+  - name: 1.3.3
+    description: Bug fixes.
+  - name: 1.3.2
+    description: Framework update and bug fixes / VST3 support.
+  - name: 1.2.3
+    description: Framework update and bug fixes.
+  - name: 1.2.2
+    description: Possible crash fixed.
+  - name: 1.2.0
+    description: TAL-Dub-I and TAL-Dub-II modes added.
+  - name: 1.1.1
+    description: Backward compatibility to OSX 10.7, 10.8, 10.9 restored.
+  - name: 1.0.3
+    description: Delay time can not be changed in hosts that report 0 Bpm fixed.
+  - name: 1.0.2
+    description: Possible AAX crash fixed.
+  - name: 1.0.1
+    description: Define custom presets path in config file. Bypass button added. Sync delay time names fixed.
+  - name: 1.0.0
+    description: Low cut and cutoff UI knob orders changed. More visible button state.
+  - name: 0.8.3
+    description: Interpolation changed.
+  - name: 0.8.2
+    description: Possible crash fixed.
+  - name: 0.8.1
+    description: Possible audio drop out with Ping Pong mode and long delay times.
+  - name: 0.8.0
+    description: Release.
 videos:
   - videoId: -w9mSfJyAG4
     provider: youtube

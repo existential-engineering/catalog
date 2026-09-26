@@ -21,8 +21,140 @@ prices:
   - amount: 39
     currency: USD
 description: TAL-Mod is a virtual analog semi-modular synthesizer with exceptional sound and almost unlimited modulation possibilities. Features 3 oscillators with saw/pulse/triangle/sine waveforms, noise oscillator, 2 high quality analog resonance filters with multiple modes, full stereo signal path, FM/ring modulation, hard sync, up to 7 sound generators per oscillator, 2 LFOs, 3 ADSRs, modulation envelope with spline/step modes, virtual patch cable routing, sequencer/arpeggiator, and effects.
+details: |-
+  TAL-Mod is a virtual analog synthesizer with an exceptional sound and almost unlimited modulation possibilities. Its special oscillator model is able to create a wide range of sounds, from classic mono to rich stereo leads, effects and pads.
+
+  Routings can be done with virtual patch cables. Just connect a modulation output with a modulation target. After that it's possible to adjust the intensity of the modulation. You don't need to be a modular expert. The plug-in is suitable for beginners and experts!
+
+  The synthesis engine runs three oscillators offering saw, pulse, triangle and sine waveforms plus an additional noise oscillator with adjustable color. Two oscillators support hard sync, FM and ring mode are available, and osc I and osc II can stack up to seven sound generators each for stereo sounds and rich harmonics. Two high quality analog sounding resonance filters offer LP, HP, Notch, All Pass and BP modes with parallel or serial routing and selectable oscillator sources, all through a full stereo signal path.
+
+  Modulation sources include two LFOs with different waveforms, sync, trigger and unipolar modes and a modulatable rate, three ADSR envelopes, and a modulation envelope with spline or optional step mode plus trigger and host sync. An optional sequencer or arpeggiator, basic effects (high pass filter, chorus, eq, reverb and delay), mono and polyphonic modes, microtuning support via file import and MTS Client, a resizable UI and user-chosen UI colors round out the instrument.
+
+  The current download is version 1.9.8, available as a Windows, macOS and Linux installer alongside a PDF user manual. Requirements are Windows 7 or higher (64 bit host), macOS 10.9 or higher (64 bit host, Universal Binary 2 with native Intel and Apple silicon support for M1, M2, M3 and later), Pro Tools 10.3.6 or higher (64 bit) for AAX, and 64 bit Linux on Ubuntu 18 or similar. The demo version produces a rising white noise sound every minute.
 specs: |-
-  - systemRequirements: Windows 7+ (64-bit), macOS 10.9+ (Universal Binary 2), Pro Tools 10.3.6+ (64-bit), Linux Ubuntu 18+ (64-bit)
+  - 3 oscillators with optional saw, pulse, triangle and sine waveforms
+  - 1 additional noise oscillator with adjustable color
+  - Microtuning support (file import and MTS Client)
+  - 2 high quality analog sounding resonance filters with different modes (LP, HP, Notch, All Pass, BP)
+  - Different filter routing possibilities (parallel and serial), with the possibility to choose the oscillator sources
+  - Full stereo signal path
+  - FM / RingMode support
+  - 2 oscillators support hard sync for saw, pulse, triangle waveforms
+  - Up to 7 sound generators per oscillator for osc I and osc II, for stereo sounds and rich harmonics
+  - 2 LFOs with different waveforms, sync, trigger, unipolar modes and the possibility to modulate the rate
+  - 3 ADSRs
+  - Modulation envelope with spline or optional step mode, trigger and host sync mode
+  - Almost unlimited modulation possibilities with patch cable routing
+  - Optional sequencer or arpeggiator
+  - Basic effects: high pass filter, chorus, eq, reverb and delay
+  - Mono and polyphonic mode
+  - Resizable UI with user-chosen colors
+  - MPE support (added in version 1.5.0)
+  - Windows: Windows 7 or higher (64 bit host)
+  - macOS: 10.9 or higher (64 bit host), Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3...)
+  - AAX: Pro Tools 10.3.6 or higher (64 bit)
+  - Linux: 64 bit / Ubuntu 18 or similar
+  - Demo restriction: the plug-in produces a rising white noise sound every minute
+versions:
+  - name: 1.9.8
+    releaseDate: 2024-07-10
+    description: macOS crash when closing window fixed. Minor fixes.
+  - name: 1.9.5
+    releaseDate: 2023-09-25
+    description: Smooth aftertouch and mod wheel controller changes. Smooth breath controller changes.
+  - name: 1.9.4
+    releaseDate: 2023-08-16
+    description: New preset browser. Minor fixes.
+  - name: 1.9.0
+    releaseDate: 2023-01-12
+    description: AAX native M1 support. Base framework updated (JUCE 7). UI updated. Minor fixes.
+  - name: 1.8.2
+    releaseDate: 2021-07-15
+    description: MTS (microtuning) lock fixed. Improved preset browser.
+  - name: 1.8.1
+    releaseDate: 2021-06-14
+    description: MTS (microtuning) support added. Always create factory presets when starting a new instance fixed.
+  - name: 1.8.0
+    releaseDate: 2021-06-07
+    description: New serial protection.
+  - name: 1.7.1
+    releaseDate: 2021-04-06
+    description: Possible click when voice stealing fixed.
+  - name: 1.7.0
+    releaseDate: 2021-03-30
+    description: Preset browser added. UI refresh. Minor bug fixes.
+  - name: 1.6.0
+    description: Native Apple M1 support. VST3 installer for Windows. Linux VST3 support. Linux dot folder for settings and factory presets. Performance fix for Windows. Minor bug fixes.
+  - name: 1.5.9
+    description: Hard sync to sub osc with wave sine fixed.
+  - name: 1.5.8
+    description: Too many stereo outputs fixed. Colored noise as modulation source added. Hard sync for sine added.
+  - name: 1.5.6
+    description: LFO MONO mode added (one lfo for all voices). Negative LFO rate not possible anymore. Framework update.
+  - name: 1.5.4
+    description: MPE Pressure fixed.
+  - name: 1.5.2
+    description: MPE Timbre / Slide now isn't bipolar anymore. Modulation snap feature fixed. UI improvements. Minor bug fixes.
+  - name: 1.5.1
+    description: Mod wheel not working fixed.
+  - name: 1.5.0
+    description: MPE support added. UI updated. Snap feature for modulation depth added (the "s" button).
+  - name: 1.4.2
+    description: Compatibility mode added for automation compatibility with versions smaller than 1.4.0 and reversed effect order. Bug fixes.
+  - name: 1.4.0
+    description: More resonance also at higher cutoff frequencies. Increased cutoff range. Added some small amount of instability to the oscillators to get a more natural sound. Bug fixes.
+  - name: 1.3.6
+    description: Reverb after delay. Added triples and dot sequencer and modulation envelope speeds.
+  - name: 1.3.5
+    description: Only show manual parameter changes on display.
+  - name: 1.3.4
+    description: Bug fixes.
+  - name: 1.3.3
+    description: Bug fixes, info screen position changed.
+  - name: 1.3.2
+    description: Combo box values issue fixed.
+  - name: 1.3.0
+    description: VST3 plug-in format added. Framework update with better support for Windows high resolution screens. Pulse hard sync improved.
+  - name: 1.2.2
+    description: UI updates and bug fixes.
+  - name: 1.1.8
+    description: Framework update and bug fixes.
+  - name: 1.1.7
+    description: Improved more natural volume PAN. LFO SLEW added for smooth transitions (SH, SAW, Rectangle).
+  - name: 1.1.6
+    description: Improved ADSR scaling.
+  - name: 1.1.5
+    description: Improved ADSR range. Minor bug fixes.
+  - name: 1.1.4
+    description: Velocity intensity knob with different scalings added.
+  - name: 1.1.3
+    description: Delay time automation fixed.
+  - name: 1.1.2
+    description: Step sequencer with velocity zero fixed. Velocity at zero disables velocity for portamento free legato mode.
+  - name: 1.1.1
+    description: OSC 3 sine hard sync trigger fixed. Arpeggiator modes UP and DOWN added.
+  - name: 1.0.8
+    description: Arp / Seq tempo bug fixed.
+  - name: 1.0.7
+    description: Better UI performance. CPU spikes on Windows fixed. Microtuning fix.
+  - name: 1.0.6
+    description: Decay shape knob added. Bug fixes.
+  - name: 1.0.5
+    description: Key-stealing optional analogue type mode. Bug fixes.
+  - name: 1.0.4
+    description: Fixes a bug where no note is playing when voice stealing is active.
+  - name: 1.0.3
+    description: No voice stealing when free voices are available and playing the same note again. UI ADSR sliders width increased. Mod envelope view when disabling UNIPOLAR fixed. ADSR release improved (CPU). Note skipping under some conditions fixed.
+  - name: 1.0.2
+    description: More factory presets. Different and cleaner note stealing. Keyboard tracking added. ADSR slider behavior optimized. Another ADSR added. Smoother ADSR release. Bug fixes.
+  - name: 1.0.1
+    description: Delete routings in patching dialogs added. New factory presets. Improved envelopes (attack and decay). MIDI timing issue fixed. Bug when releasing note in mono (1 voice) mode fixed.
+  - name: 1.0.0
+    description: Lock feature fixed. Change sustain while playing fixed.
+  - name: 0.9.9
+    description: OS X installer updated. Dragging cables with right mouse button directly shows modulation amount dialog. Slow attack with overlapping notes fixed. Zipping noises in filter in some special conditions fixed. Possible crash in sequencer fixed. Attack / release shape knob added.
+  - name: 0.9.8
+    description: MIDI automation for ADSR added. +2 modulator added. Negative filter keyfollow added. Improved envelope step when drawing near +-1. Copy / paste for sequencer steps.
 videos:
   - videoId: hc5hEe8HOOE
     provider: youtube

@@ -18,28 +18,79 @@ url: https://tal-software.com/products/tal-eq
 prices:
   - amount: 49
     currency: USD
-description: TAL-EQ is a versatile graphical equalizer designed for great sound and a fast workflow, featuring analog frequency response and phase behavior, zero latency operation, dynamic band processing, and MIDI learn for all band parameters.
+description: TAL-EQ is a versatile graphical equalizer designed for great sound, a fast workflow, and effortless usability. It features dynamic processing and multiple stereo editing modes.
 details: |-
-  TAL-EQ is a versatile graphical equalizer designed for great sound and a fast workflow. The frequency display shows frequency content and all changes in real time, supporting band frequencies up to 30 kHz.
+  TAL-EQ is a versatile graphical equalizer designed for great sound, a fast workflow, and effortless usability. It features dynamic processing and multiple stereo editing modes. The spectrum view displays the frequency content and all changes in real time. Supports band frequencies from 10Hz up to 30kHz.
 
-  The plugin always runs with zero latency without oversampling and emulates the frequency response and phase behavior of analog equalizers, with no cramping near the Nyquist frequency. The topology-preserving TPT filter core remains stable even with fast dynamic changes.
+  This plugin always runs with zero latency without oversampling and emulates the frequency response of analog equalizers. The topology-preserving filter remains stable even with fast dynamic modulations and is optimized for CPU efficiency. Each band can be fully automated. Undo/redo and A/B comparison are also included, making it easy to find the perfect setting for any audio material. Use the mouse wheel to zoom in and out.
 
-  Shelf and bell filters support dynamic processing — the EQ band gain is controlled by the input level of the affected frequency range, achieving more transparent mixes with frequency-specific compression. Most filters support slopes from 12dB up to 96dB per octave.
+  The workflow is intuitive and simple. Double-click to create a new EQ band. Hold down SHIFT while creating a band to enable dynamics immediately. Use the mouse and mouse wheel to set the position and adjust Q, or use the knobs at the bottom, or enter values directly with the keyboard. Multi-selection is also possible to edit multiple bands in one step. Adjust the slope of the bell curve to create a flat-top bell filter, a flat-top bandpass, or a steeper shelf, low-pass, or high-pass filter. Most filters support a slope from 12dB up to 96dB per octave.
 
-  All band parameters support full DAW automation and MIDI Learn including band selection. Undo/redo and A/B comparison are included. Double-click to create a new EQ band; hold SHIFT while creating to enable dynamics immediately.
+  Shelf and bell filters support dynamic processing. This allows the EQ band gain to be controlled by the input level of the affected frequency range, helping you achieve more transparent mixes. For example, you can reduce the low end of a bass only when the kick plays, similar to sidechain compression, but less intrusive, since it affects only specific frequency ranges rather than the entire signal. It can also be used for de-essing when certain frequencies exceed a threshold, while leaving quiet parts untouched.
+
+  You can adjust the output volume or pan the signal. With MS enabled, the volume of the mono or stereo part can be adjusted separately. A phase invert button is also available. Each band offers STEREO, LEFT / RIGHT, MID and SIDE processing options. When expanded, the meter shows the actual LUFS-M value as additional information. Customize the plugin: scale the UI to expand the EQ workspace, adjust the size of knobs and text, or change text and background colors to your liking.
 specs: |-
-  - Zero latency, no oversampling
-  - Analog frequency response and phase behavior (no Nyquist cramping)
-  - Per-band frequency range up to 30 kHz
-  - Robust TPT filter core stable under modulation
-  - Dynamic processing on shelf and bell filters
-  - Slopes from 12dB to 96dB per octave
-  - Full DAW automation and MIDI Learn for all band parameters
-  - A/B comparison and undo/redo
-  - Windows 10 or higher (64-bit host)
-  - macOS 10.11 or higher, Universal Binary 2 (Intel + Apple Silicon)
-  - Pro Tools 10.3.6 or higher for AAX (64-bit)
-  - Linux 64-bit / Ubuntu 20.04 or similar
+  - Always zero latency, as on an analog mixing desk. No oversampling.
+  - Frequency response and phase behavior of analog gear (no cramping near Nyquist).
+  - Per-band frequency range up to 30 kHz.
+  - Band frequencies from 10Hz up to 30kHz.
+  - Robust TPT (topology-preserving transform) filter core that stays stable even when modulated.
+  - Dynamic EQ option with variable attack and release times for ducking effects that groove.
+  - Clean and transparent sound in every situation, without adding distortion (no aliasing).
+  - Intuitive, customizable, modern UI with multi-selection and more.
+  - No overwhelming experimental features. Simple and robust.
+  - One-time lifetime license with free updates.
+  - Set different background colors for instances in DAW sessions.
+  - Real-time spectrum view (FFT analyzer) behind the EQ curves.
+  - Filter types: bell, flat-top bell, flat-top bandpass, shelf, low-pass, high-pass. Most filters support a slope from 12dB up to 96dB per octave.
+  - Dynamic controls per band: DYNAMIC on/off, S-CHAIN side-chain input, AUTO threshold mode with manual threshold slider, RANGE +-36dB, ATTACK / RELEASE in milliseconds.
+  - Per-band processing modes: STEREO, LEFT / RIGHT, MID, SIDE.
+  - Output section with volume, pan, phase invert and MS mode with separate mono/stereo volume.
+  - LUFS-M metering shown on the expanded meter.
+  - Full automation of every band, undo/redo, A/B comparison, preset browser and preset save.
+  - MIDI LEARN for every band parameter, including band selection.
+  - SCALE control for the global scale of all EQ gains.
+  - UI scaling for knobs, buttons and text, plus custom hex colors (first two digits are opacity).
+  - Many factory presets, most by Andi Vax, a few by Solidtrax and one by Saif Sameer.
+  - Windows: Windows 10 or higher (64 bit host).
+  - macOS: 10.11 or higher (64 bit host). Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3).
+  - AAX: Pro Tools 10.3.6 or higher (64 bit).
+  - Linux: 64 bit / Ubuntu 18 or similar.
+  - Demo restriction: the plug-in produces a rising white noise sound every minute until registered.
+versions:
+  - name: 1.3.2
+    releaseDate: 2026-09-09
+    description: Possible crash when closing UI fixed.
+  - name: 1.3.1
+    releaseDate: 2026-08-31
+    description: Minor fixes and UI improvements. Framework update.
+  - name: 1.2.9
+    releaseDate: 2025-10-23
+    description: "Regression: settings not visible when creating first band fixed. Improved and smoother mouse behaviour for CLAP under Linux."
+  - name: 1.2.6
+    releaseDate: 2025-10-09
+    description: Minor fixes and improvements.
+  - name: 1.2.5
+    releaseDate: 2025-10-07
+    description: Important bug fixes.
+  - name: 1.2.4
+    releaseDate: 2025-09-30
+    description: Set different background colors for EQ instances in DAW session. UI cleanup.
+  - name: 1.2.2
+    releaseDate: 2025-09-22
+    description: Fixes crash when right-click on volume slider.
+  - name: 1.2.1
+    releaseDate: 2025-09-18
+    description: Improved multi-selection behaviour when changing gain. Framework update.
+  - name: 1.2.0
+    releaseDate: 2025-09-09
+    description: Increased frequency range up to 30kHz. Various minor fixes and improvements.
+  - name: 1.1.6
+    releaseDate: 2025-09-08
+    description: Enhanced filter algorithms for greater accuracy near the Nyquist limit. Optimized for improved CPU efficiency.
+  - name: 1.1.4
+    releaseDate: 2025-09-03
+    description: Important bug fixes.
 videos:
   - videoId: gla-DVfZJY8
     provider: youtube

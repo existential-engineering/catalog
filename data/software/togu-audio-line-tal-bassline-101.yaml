@@ -21,47 +21,102 @@ url: https://tal-software.com/products/tal-bassline-101
 prices:
   - amount: 59
     currency: USD
-description: TAL-BassLine-101 is a monophonic bass synthesizer that faithfully captures the essence of the iconic Roland SH-101, featuring a highly accurate analog emulation with a 24dB low pass filter, built-in sequencer and arpeggiator, filter-FM, distortion effect, and microtuning support.
+description: TAL-BassLine-101 is an accurate emulation of the popular SH 101. The GUI is intuitive and easy to use. It produces the raw sound you know from analogue devices with some additional features like a distortion effect and a 12 dB filter mode.
 details: |-
-  TAL-BassLine-101 is an accurate emulation of the popular Roland SH-101, a monophonic bass synthesizer. The GUI is intuitive and easy to use, producing the raw sound associated with classic analogue devices, with some additional features like a distortion effect and a 12 dB filter mode.
+  TAL-BassLine-101 is an accurate emulation of the popular SH 101. The GUI is intuitive and easy to use. It produces the raw sound you know from analogue devices with some additional features like a distortion effect and a 12 dB filter mode.
 
-  At the core of the instrument is a 24dB low pass filter meticulously calibrated to deliver an authentic analog sound without digital artifacts, even when pushed to extremes. All waveforms are generated in real-time rather than sampled, providing unmatched flexibility and sonic authenticity. Precise envelope modeling ensures correct transitions between overlapping notes.
+  Experience the TAL-BassLine-101, a monophonic bass synthesizer that faithfully captures the essence of the iconic SH-101 while adding a touch of modern versatility.
 
-  Filter-FM allows an oscillator waveform to be used as a modulation source for the filter cutoff, enabling a wide array of unique sounds beyond what the original hardware offered. The built-in step sequencer and arpeggiator with swing support make it easy to create classic acid basslines and rhythmic patterns.
+  The 24dB low pass filter is meticulously calibrated to deliver an authentic analog sound without any unwanted digital artifacts, even when pushed to extremes. Every detail, including envelope transitions between overlapping notes, is carefully modeled. All waveforms are generated in real-time rather than sampled, providing flexibility and sonic authenticity.
 
-  MIDI integration includes full automation support in DAWs and MPE support for cutoff and volume parameters. Microtuning is supported including MTS (MIDI Tuning Standard). The plug-in ships with an extensive factory preset library and supports third-party sound banks.
+  Filter-FM uses an oscillator waveform as a modulation source for the filter cutoff, allowing a vast array of unique sounds and adding a modern twist to the classic SH-101 experience. A built-in sequencer and arpeggiator cover intricate bass patterns and rhythms, and a distortion effect adds harmonic richness and crunch.
+
+  Parameters can be controlled and automated over MIDI in the host, including MPE support for cutoff and volume. The plug-in ships with a preset browser and sound banks, and supports microtuning including MTS.
 specs: |-
-  - Monophonic (primary) and polyphonic mode
-  - 24dB low pass filter with authentic analog calibration
-  - 12dB filter mode
-  - Real-time oscillator waveform generation (no sample playback)
-  - Filter-FM: oscillator waveform as filter cutoff modulation source
-  - Sub-oscillator
-  - Built-in step sequencer with slide and accent
-  - Arpeggiator with multiple modes and swing (50–75%)
+  - Authentic emulation of the Roland SH-101 with raw analog character
+  - Monophonic bass synthesizer with poly mode
+  - 24dB low pass filter calibrated for authentic analog tone, plus a 12 dB filter mode
+  - Precise envelope modeling including transitions between overlapping notes
+  - Real-time oscillators, no sampled waveforms
+  - Filter-FM using an oscillator waveform as modulation source for filter cutoff
+  - Built-in sequencer and arpeggiator
   - Bandlimited distortion effect
-  - MPE support for cutoff and volume parameters
-  - Microtuning support including MTS (MIDI Tuning Standard)
-  - 14-bit MIDI controller support for CC 1–31
-  - MIDI drag-and-drop export
-  - Preset browser with factory and user presets
-  - Multiple UI color themes
-  - Scalable UI
-  - Windows 10 or higher (64-bit host)
-  - macOS 10.11 or higher (64-bit host), Universal Binary 2 (Intel + Apple Silicon M1/M2/M3)
-  - Pro Tools 10.3.6 or higher for AAX (64-bit)
-  - Linux 64-bit / Ubuntu 20.04 or similar
+  - MIDI control and automation with MPE support for cutoff and volume
+  - Preset browser with factory presets and sound banks
+  - Microtuning support including MTS
+  - Scalable UI with high-resolution screen support and multiple color themes
+  - Windows: Windows 10 or higher (64 bit host)
+  - macOS: 10.11 or higher (64 bit host), Universal Binary 2 with native Intel and Apple silicon support
+  - Linux: 64 bit, Ubuntu 20.04 or similar
+  - AAX: Pro Tools 10.3.6 or higher (64 bit)
+  - Demo restriction: the plug-in produces a rising white noise sound every minute
 versions:
   - name: 4.1.0
+    releaseDate: 2026-05-24
+    description: UI update (grains fixed). Framework update.
   - name: 4.0.2
+    releaseDate: 2026-04-08
+    description: UI update. Framework update.
   - name: 3.9.5
+    releaseDate: 2024-12-11
+    description: Restore state for older plug-in sessions not work fixed. Framework update.
   - name: 3.9.4
+    releaseDate: 2024-09-13
+    description: MIDI drag and drop crash regression fixed.
   - name: 3.9.3
+    releaseDate: 2024-09-12
+    description: Base-Framework update. Bug fixes.
   - name: 3.9.2
   - name: 3.9.0
+    releaseDate: 2024-03-22
+    description: Framework update. Bug fixes.
   - name: 3.8.2
+    releaseDate: 2023-11-15
+    description: Regression with GATE mode fixed.
   - name: 3.8.1
+    releaseDate: 2023-09-27
+    description: New bandlimited distortion fx added. 12 dB filter mode added. Sub-Osc II waveform fixed. Improved VCO. Improved filter oversampling. Improved UI.
   - name: 3.7.1
+    releaseDate: 2023-08-29
+    description: Possible hanging notes with LFO trigger and poly mode fixed. UI performance improvements.
+  - name: 3.6.9
+    releaseDate: 2023-08-04
+    description: Updated preset browser. Minor fixes.
+  - name: 3.6.6
+    releaseDate: 2023-01-12
+    description: AAX native M1 support. Base framework updated (JUCE 7). Minor fixes.
+  - name: 3.6.5
+    releaseDate: 2022-11-21
+    description: Pitch-wheel problem fixed. Framework update.
+  - name: 3.6.4
+    releaseDate: 2022-09-20
+    description: CLAP show/hide keyboard fixed. Minor fixes.
+  - name: 3.6.0
+    releaseDate: 2022-07-26
+    description: CLAP support added. Minor fixes.
+  - name: 3.5.3
+    releaseDate: 2021-07-27
+    description: Improved preset browser / fixes.
+  - name: 3.5.2
+    releaseDate: 2021-07-15
+    description: MTS (microtuning) lock fixed. Improved preset browser.
+  - name: 3.5.1
+    releaseDate: 2021-06-14
+    description: MTS (microtuning) support added. Always create factory presets when starting a new instance fixed.
+  - name: 3.5.0
+    releaseDate: 2021-06-07
+    description: New serial protection.
+  - name: 3.4.0
+    releaseDate: 2021-03-25
+    description: Preset browser added. New green color theme added. UI refresh. Minor bug fixes.
+  - name: 3.3.0
+    description: Native Apple M1 support. VST3 installer for Windows. Linux VST3 support. Minor bug fixes.
+  - name: 2.1.0
+    description: VST3 support added. Optimized for windows high resolution screens.
+  - name: "1.218"
+    description: AAX support for Pro Tools 10.3.6 or higher and Pro Tools 11 added. Filter-FM for all waveforms as source added.
+  - name: "1.01"
+    description: Release.
 videos:
   - videoId: wox7sZISOuc
     provider: youtube

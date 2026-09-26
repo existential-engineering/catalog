@@ -19,11 +19,75 @@ url: https://tal-software.com/products/tal-g-verb
 prices:
   - amount: 42
     currency: USD
-description: TAL-G-Verb is a musical effect capable of building high quality artificial reverb sounds. Suitable for all types of sounds from drums to huge pads and special effects. Features an internal editor for manipulating the reverb algorithm, an embedded grain engine that can convert mono sounds into complex cinematic stereo sounds, chords and synced arp patterns, and more than 100 factory presets. Includes a REVERB-only mode.
+description: TAL-G-Verb is a musical effect capable to build high quality artificial reverb sounds. Suitable for all types of sounds from drums to huge pads and special effects, with an internal editor to manipulate and tune the reverb algorithm and an embedded grain engine.
 details: |-
-  100+
+  TAL-G-Verb is a musical effect capable to build high quality artificial reverb sounds. Suitable for all types of sounds from drums to huge pads and special effects. An internal editor allows to manipulate and tune the reverb algorithm for your needs.
+
+  The embedded grain engine has the power to convert mono sounds into complex cinematic stereo sounds, chords and synced arp patterns. TAL-G-Verb contains more than 100 factory presets, divided into different categories such as drums, vocals and synth reverbs, including presets created by Solidtrax.
+
+  The reverb engine has been optimized to reduce coloration and digital artifacts to a minimum. As a result, this reverb can be used for a wide range of material, from small rooms to huge plate-like reverbs. The included graphic EQ can be used to shape the output spectrum of the reverb. A single color control determines how much the reverb is modulated: no color results in a crystal clear reverb, a large amount of color results in a broader and more diffuse reverb sound.
+
+  The degree of coloration and the overall sound, including the early reflections, depends heavily on the internal reverb delays. By default, the plug-in has various carefully tuned delay settings pre-installed. However, it also allows you to create your own delay/reverb templates, which can then be used in the presets. A complex network between the delay lines ensures that the delays do not have to be perfectly adjusted to sound good.
+
+  The grain engine can be used to pitch the sound with different pitch offsets or add more chaos and variation to the final reverb output, and different routings are possible. As an addition, the grain synchronisation allows to create host synced arp patterns, and the pattern can be restarted by MIDI NoteOn events.
 specs: |-
-  - systemRequirements: Windows 10+ (64-bit), macOS 10.11+ (Universal Binary 2), Pro Tools 10.3.6+ (64-bit), Linux Ubuntu 18+ (64-bit)
+  - Reverb engine optimized to reduce coloration and digital artifacts to a minimum
+  - Covers small rooms through to huge plate-like reverbs
+  - Graphic EQ to shape the output spectrum of the reverb
+  - Single color control sets how much the reverb is modulated, from crystal clear to broad and diffuse
+  - Internal reverb editor for adjusting the internal reverb delays and early reflections
+  - Pre-installed tuned delay settings plus user-created delay/reverb templates usable in presets
+  - Complex network between the delay lines, so delays do not have to be perfectly adjusted
+  - Grain engine for pitching the sound with different pitch offsets or adding chaos and variation
+  - Different grain routings available
+  - Grain synchronisation for host-synced arp patterns, restartable by MIDI NoteOn events
+  - REVERB mode showing only the reverb without the grain engine (added in 2.1.0)
+  - CHAOS parameter for a more diffuse and lush output (added in 2.2.1)
+  - Wet Solo (added in 2.0.1)
+  - More than 100 factory presets in categories such as drums, vocals and synth reverbs, including presets by Solidtrax
+  - Windows: Windows 10 or higher (64 bit host)
+  - macOS: 10.11 or higher (64 bit host), Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3)
+  - AAX: Pro Tools 10.3.6 or higher (64 bit)
+  - Linux: 64 bit, Ubuntu 18 or similar
+  - Demo restriction: the plug-in produces a rising white noise sound every minute
+versions:
+  - name: 2.2.4
+    releaseDate: 2026-09-09
+    description: Possible crash when closing UI fixed.
+  - name: 2.2.3
+    releaseDate: 2026-09-08
+    description: Possible scaling issue fixed.
+  - name: 2.2.2
+    releaseDate: 2026-09-05
+    description: AU Validation fixed.
+  - name: 2.2.1
+    releaseDate: 2026-09-03
+    description: New CHAOS param to make the output more diffuse and lush. Minor improvements in the base algorithm. Presets updated (delete preset folder to get the latest presets after the update). Framework update.
+  - name: 2.1.0
+    releaseDate: 2026-02-08
+    description: New REVERB mode. In this mode only the reverb without the grain engine is visible and active. UI improved. Slightly improved reverb algorithm.
+  - name: 2.0.2
+    releaseDate: 2025-09-02
+    description: Slightly improved reverb algorithm. Minor fixes.
+  - name: 2.0.1
+    releaseDate: 2025-04-16
+    description: Wet Solo added. UI cleanup.
+  - name: 2.0.0
+    releaseDate: 2025-04-15
+    description: Updated user interface for better usability. Graphic performance improved. Framework update.
+  - name: 1.2.9
+    releaseDate: 2025-01-23
+    description: Graphic issue on windows fixed. Framework update.
+  - name: 1.2.8
+    releaseDate: 2024-10-21
+    description: Issue with key verification in some rare cases fixed.
+  - name: 1.2.7
+    releaseDate: 2024-10-07
+    description: UI artefacts when moving knobs on some windows systems fixed. Framework update.
+  - name: 1.2.6
+    releaseDate: 2024-10-03
+    description: Public release.
+releaseDate: 2024-10-03
 videos:
   - videoId: z1T6tuz2Nu4
     provider: youtube

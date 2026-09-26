@@ -8,6 +8,7 @@ categories:
   - analog
   - virtual-instrument
   - arpeggiator
+  - subtractive
 formats:
   - vst2
   - vst3
@@ -22,18 +23,35 @@ url: https://tal-software.com/products/tal-j-8x
 prices:
   - amount: 69
     currency: USD
-description: TAL-J-8X is an instrument plug-in that emulates the sound of the
-  Roland JX-8P analog 80's synthesizer, with additional modern features
-  including MPE support, microtuning, arpeggiator, and built-in EQ, Delay, and
-  Reverb effects.
+description: TAL-J-8X is an instrument plug-in that emulates the sound of the analog 80's synthesizer with additional features that add a fresh touch to this synth.
 details: |-
-  TAL-J-8X is a meticulous emulation of the Roland JX-8P analog synthesizer (rev 2 / OS 3.1) from the 1980s, bringing the classic hardware sound into a modern plug-in format. The emulation captures the original DCO-based architecture while adding a modern filter mode that allows self-oscillation, which was not available on the original hardware.
+  TAL-J-8X is an instrument plug-in that emulates the sound of the analog 80's synthesizer with additional features that add a fresh touch to this synth. The emulation is modelled on the hardware revision 2 running OS 3.1.
 
-  The plug-in includes a fully-featured arpeggiator with multiple modes, chord creation and playback functionality, and comprehensive MIDI support including Aftertouch and MPE. Microtuning is supported via .tun file import and MTS Client integration, and individual voice tuning allows the DCO to behave like a VCO.
+  Alongside the faithful emulation, the plug-in adds a modern filter mode that allows self-oscillation, the ability to create and play chords, and an arpeggiator with different modes. High quality EQ, delay and reverb effects are built in.
 
-  Compatibility with the original hardware is a key focus: TAL-J-8X can read Sysex files and Sysex MIDI from the JX-8P, JX-10, and MKS-70, and can also control a hardware device by sending Sysex through the plug-in MIDI output. The original factory banks are included alongside more than 600 presets from contributors including Electric Himalaya, Saif Sameer, Sound Author, Empty Vessel, VIC-20, TAL, Heat Audio, FMR, and others.
+  Individual tuning for every voice converts the synth's DCO into a VCO. The plug-in supports aftertouch and MPE, and offers microtuning through tun file import and an MTS Client.
 
-  Built-in effects include High Quality EQ, Delay, and Reverb, making it a self-contained synthesizer plug-in. It supports all major plug-in formats (VST2, VST3, AU, AAX, CLAP) and runs natively on both Intel and Apple Silicon Macs via Universal Binary 2.
+  The plug-in reads Sysex files and Sysex MIDI from the hardware device, accepting tone data from the JX-8P, JX-10 and MKS-70. It can also control a hardware device by sending Sysex through the plug-in MIDI output when the DAW supports it.
+
+  Original factory banks are included, along with more than 600 presets by Electric Himalaya, Saif Sameer, Sound Author, Empty Vessel, VIC-20, TAL, Heat Audio, FMR and others. Additional factory presets and a DT800 MIDI CC mapping preset are offered as separate downloads.
+specs: |-
+  - Emulation of the 80's hardware synthesizer (rev 2 / OS 3.1)
+  - Modern filter mode that allows self-oscillation
+  - Create and play chords
+  - Arpeggiator with different modes
+  - High Quality EQ, Delay and Reverb FX
+  - Aftertouch and MPE support
+  - Microtuning support (tun file import and MTS Client)
+  - Original factory banks included
+  - More than 600 presets by Electric Himalaya, Saif Sameer, Sound Author, Empty Vessel, VIC-20, TAL, Heat Audio, FMR and others
+  - Individual tuning for every voice converts the synths DCO into a VCO
+  - Reads Sysex files and Sysex MIDI from the hardware device (tone data from JX-8P, JX-10, MKS-70)
+  - Can also control a hardware device, sending Sysex through the plug-in MIDI output (only possible when supported by the DAW)
+  - Windows: Windows 10 or higher (64 bit host)
+  - macOS: 10.11 or higher (64 bit host). Universal Binary 2 with native Intel and Apple silicon support (M1, M2, M3...)
+  - AAX: Pro Tools 10.3.6 or higher (64 bit)
+  - Linux: 64 bit / Ubuntu 22.04 or similar
+  - Demo restriction: the plug-in produces a rising white noise sound every minute
 versions:
   - name: 1.0.9
     releaseDate: 2026-04-15
@@ -46,8 +64,7 @@ versions:
     description: Fixed envelope modulation amount. Better default values.
   - name: 1.0.5
     releaseDate: 2026-04-09
-    description: Fixed possible click with voice stealing and VCA dynamic. Aftertouch
-      volume with VCA dynamic fixed. Chorus improved.
+    description: Fixed possible click with voice stealing and VCA dynamic. Aftertouch volume with VCA dynamic fixed. Chorus improved.
   - name: 1.0.0
     releaseDate: 2026-03-31
     description: Initial release.
@@ -57,6 +74,24 @@ versions:
   - name: 0.9.8
     releaseDate: 2026-03-23
     description: DSP stability fixes. ARP stops playing regression fixed.
+  - name: 0.9.7
+    releaseDate: 2026-03-12
+    description: Cleaner chorus / delay interpolation. ARP hanging note in SOLO modes fixed.
+  - name: 0.9.6
+    releaseDate: 2026-03-10
+    description: LFO sync while playing fixed. ARP improvements.
+  - name: 0.9.5
+    releaseDate: 2026-03-09
+    description: AM modulation calibrated. Chorus calibrated after hardware. Exact hardware DCO 2 sysex fine tune. Envelope number visible on UI chooser. Delay not synced to host bpm fixed. Emulate always running voice engine when switching presets / settings. Performance optimisations.
+  - name: 0.9.4
+    releaseDate: 2026-03-05
+    description: Plugin code fixed (breaks backward compatibility). Audio Unit Bundle ID fixed (breaks backward compatibility audio unit).
+  - name: 0.9.3
+    releaseDate: 2026-03-05
+    description: MTS microtuning lock not working fixed. Sustain pedal fixes.
+  - name: 0.9.0
+    releaseDate: 2026-03-01
+    description: New presets added. Delete preset folder and load instance to force creation of the new presets.
 releaseDate: 2026-03-31
 links:
   - type: resource
@@ -69,3 +104,12 @@ videos:
   - provider: youtube
     videoId: gef4uJy-KKg
     title: TAL J-8X
+  - provider: youtube
+    videoId: 3myKUpZ-fNg
+    title: 151 Analog Presets for TAL-J-8X | Analog Octane X | a Sonic Cookbook
+  - provider: youtube
+    videoId: 3wBZJ-anz5w
+    title: Roland JX-8P Megapack 192 Patches | Also works for TAL-J-8X and PG-8X
+  - provider: youtube
+    videoId: SomeMmCaDCg
+    title: TAL-J-8X - "Best Analog & Ambient Sounds" 64 Presets
