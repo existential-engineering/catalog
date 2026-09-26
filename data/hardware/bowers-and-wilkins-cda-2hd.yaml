@@ -15,48 +15,55 @@ prices:
 description: A high-power distribution amplifier, with two channels, DSP for
   product optimization and dynamic EQ for subwoofers.
 details: |-
-  CDA-2HD distribution power amplifier can drive any Bowers & Wilkins custom installation speaker to new heights of performance. Offering 2 channels of high quality amplification, the CDA-2HD offers your home speaker system a powerful upgrade yet takes up minimal space thanks to its compact 2U, half width design. CDA-2HD configuration also supports bridging of its Class D stereo channels into even more powerful mono outputs, if needed.
+  CDA-2HD is a two-channel distribution power amplifier for custom installation, built to drive Bowers & Wilkins installation speakers and subwoofers. It carries DSP for product optimisation and dynamic EQ for subwoofers, and delivers 500W per channel into 4 ohms from a Class D output stage while occupying a half-rack-width 2U chassis.
 
-  Features listed by the manufacturer are 2 channel amplification with 500 watts per channel delivering high-resolution audio, engineering to work with Bowers & Wilkins installation speakers and subwoofers, left and right outputs that can be bridged to provide a mono output of double the power at 1,000 watts, three power mode control options (on, auto detect or 12V trigger), protection features preventing damage due to overload, short circuits or heat, a Product Configuration page for customisable setup, and Audio Video Bridging (AVB) compatibility when two or more Bowers & Wilkins CDA amplifiers are connected to the same wired network using AVB enabled network hardware.
+  The two channels can be bridged into a single mono output of double the power, quoted at 1,000W into 8 ohms, which is how a bridge-tied-load subwoofer is driven. Three modes of use are selectable: Speaker Mode for two channels in stereo or mono, Subwoofer Mode for the bridged configuration, and CT-800 Mode, which exposes presets for driving the multi-way CT800 series from the two outputs. Minimum load impedance is 3 ohms per channel, or 6 ohms in bridge mode.
 
-  CDA-2HD can be easily set up via the Product Configuration page, which allows customisable complex DSP tuning. The configuration page exposes an 8 band parametric EQ (filter types parametric, high shelf and low shelf), High Pass and Low Pass crossover filters, and a delay adjustment shown in milliseconds, feet or meters with a minimum of 0.01 milliseconds and a maximum of 20 milliseconds. Each CDA DSP amplifier is also loaded with Bowers & Wilkins speaker presets, selectable from Speaker Mode, Subwoofer / Bridge Tied Load Mode and CT800 Mode.
+  Setup happens entirely in a browser. A network connection is mandatory for configuration: the amplifier ships with DHCP on and is reached at a hostname built from the product name and serial number, which opens the Product Configuration Page. From there the installer sets input routing, trim, mode of use, zone volume, turn-on volume and maximum volume, and can import, export, copy and rename presets, lock settings, update firmware and print a full settings list. Alert notifications can be emailed when selected faults trigger.
 
-  The rear panel carries a power input socket (IEC C14), a reset button, a Gigabit-only Ethernet (RJ45) socket, 12V trigger in and out, digital inputs, analogue inputs and the speaker outputs. A network connection is mandatory for setup and configuration. Speakers connect through a Neutrik SpeakOn connector, and speakers can also be wired to bridge into a single channel to increase the power available to a single speaker, in which case the minimum load impedance is 8 ohms.
+  The DSP section provides an 8-band parametric EQ per output with selectable parametric, high shelf and low shelf filter types over 20Hz to 20kHz, high-pass and low-pass crossover filters with filter orders of -6, -12, -18 or -24dB/octave, 180-degree phase inversion, and a delay adjustable from 0.01 to 20 milliseconds entered in milliseconds, feet or metres. Bowers & Wilkins speakers get named presets with listening modes and tone control instead; third-party loads use the full parametric set. A built-in pink noise generator is included for measurement.
 
-  The amplifier is intended for installation in a standard 19-inch equipment rack and is supplied with two rack mounting ears, though not with rack mount bolts and nuts. A link bracket is provided so two CDA-2HD units can be mounted side by side. It can also be table mounted using the supplied feet and feet screws. In either case the ventilation apertures must be left unobstructed, with at least 50mm (2in) clear at the sides.
+  Power behaviour is configurable between always-on, auto-detect signal sensing and a 12V trigger, with an auto-on delay of 0 to 20 seconds for sequencing multiple amplifiers and Wake on LAN for control-system integration. Standby draw is under 0.5W either way, and the amplifier drops to standby after 15 minutes without signal. Two or more CDA amplifiers on the same AVB-enabled wired network can share analogue or digital input sources between them. The chassis measures 85mm (3.4in) high, 218mm (8.6in) wide and 323mm (12.7in) deep, weighs 3.4kg, ships with rack ears, a link bracket for mounting two side by side, and feet for table use, and is finished in black.
 specs: |-
-  - Description: 2-channel Class D distribution power amplifier, half-rack width, 1U (2U with feet)
-  - Load impedance range: >3Ω per channel (>6Ω in bridge mode)
-  - Output power per channel, non-clipped: 250W into 8Ω, 500W into 4Ω
-  - Output power bridge mode, non-clipped: 1,000W into 8Ω
+  - 2 channels of Class D amplification, 500 watts per channel
+  - Output power per channel, non-clipped: 250W into 8 ohms, 500W into 4 ohms
+  - Output power bridge mode, non-clipped: 1,000W into 8 ohms
   - Output power total, all channels: 1,000W short term, >250W continuous
-  - DC offset voltage: <50mV
+  - Load impedance range: >3 ohms per channel (>6 ohms in bridge mode)
+  - Left/Right outputs can be bridged for a mono output of double the power (1,000 watts)
   - Frequency response (-3dB): <10Hz to >30kHz, any load impedance
-  - Frequency response accuracy 20Hz to 20kHz: +/-1dB
+  - Frequency response accuracy 20Hz-20kHz: +/-1dB
   - Dynamic range: >85dB A-weighted
-  - THD+N (1kHz, 500W, 4Ω): less than 1%
+  - THD+N (1kHz, 500W, 4 ohms): less than 1%
   - Voltage gain: 21dB to 45dB, adjustable
-  - Input impedance: 10kΩ
-  - Maximum input voltage: 4 Vrms
+  - Input impedance: 10k ohms; maximum input voltage 4 Vrms
+  - DC offset voltage: <50mV
   - Signal sense threshold: 2.5mV (independent of gain setting)
+  - 12V trigger input threshold: typically 3V (recommended input 5-15V)
   - Wake-up time: <0.2s if other zones active, <2s from all zones inactive
+  - Three power mode options: on, auto detect or 12V trigger, with 0-20s auto-on delay and Wake on LAN
   - Turn-off time: 15 minutes from last signal detected
-  - 12V trigger input threshold: typically 3V (recommended input is 5 to 15V)
-  - Front panel indicators: 1x power LED, 1x network status LED, 1x zone status LED
-  - Rear panel controls: reset button
-  - Input connectors: 1x RCA (pair) phono socket analogue line in, 1x RCA phono socket digital line in, 1x Ethernet
-  - Output connectors: 1x SpeakOn
+  - Modes of use: Speaker Mode, Subwoofer Mode (bridged) and CT-800 Mode with CT800 speaker presets
+  - 8-band parametric EQ per output (20Hz-20kHz), filter types parametric, high shelf or low shelf
+  - High-pass and low-pass crossover filters, filter order -6, -12, -18 or -24dB/octave
+  - Delay 0.01ms to 20ms, enterable in milliseconds, feet or metres; phase invert 180 degrees
+  - Built-in pink noise generator for speaker measurement
+  - Browser-based Product Configuration Page; DHCP on by default, static IP supported
+  - Audio Video Bridging (AVB) compatible between CDA amplifiers on an AVB-enabled wired network
+  - Connectors, input: 1x RCA (pair) phono socket analogue line in, 1x RCA phono socket digital line in, 1x Ethernet
+  - Connectors, output: 1x SpeakOn
   - 12V trigger control: 1x 3.5mm jack in, 1x 3.5mm jack out (maximum 100mA pass-through)
-  - DSP: 8 band parametric EQ, high pass and low pass crossover filters, 0.01 to 20ms delay, Bowers & Wilkins speaker presets
-  - Audio Video Bridging (AVB) compatible between Bowers & Wilkins CDA amplifiers on an AVB enabled wired network
-  - Power consumption: <0.5W standby, 200W maximum average, 2,800W peak
-  - AC supply: 100-240V 50/60Hz
-  - AC inlet: IEC C14, switched
-  - Thermal dissipation: 1.7 BTU/hr standby, 150 BTU/hr idle, 850 BTU/hr max
-  - Dimensions: Height 85mm (3.4in) 1U, 100mm (3.9in) plus feet, Width 218mm (8.6in), Depth 315mm (12.4in) [323mm (12.7in) in the manual and dimension drawing]
+  - Front panel: power LED, network status LED, zone status LED. Rear panel: reset button
+  - AC supply: 100-240V 50/60Hz; AC inlet IEC C14, switched
+  - Power consumption: <0.5W standby (WoL enabled or disabled), 200W maximum average, 2,800W peak
+  - Thermal dissipation: 1.7 BTU/hr standby, 150 BTU/hr idle, 850 BTU/hr maximum
+  - Height: 85mm (3.4in) 2U [100mm (3.9in) plus feet]
+  - Width: 218mm (8.6in)
+  - Depth: 315mm (12.4in)
   - Rack width with ears: 482mm (19in)
   - Net weight: 3.4kg (7.5lb)
   - Finish: Black
+  - Supplied with 2x rack-mount ears, 1x link bracket, power cable and 4x feet; half-rack-width 2U design
 io:
   - key: CFMFKNiV
     name: Analogue In 1
