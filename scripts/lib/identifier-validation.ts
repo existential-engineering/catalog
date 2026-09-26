@@ -133,3 +133,82 @@ export function getKnownFormats(): string[] {
 export function hasValidationPattern(format: string): boolean {
   return format in IDENTIFIER_PATTERNS;
 }
+
+// =============================================================================
+// COMPONENT IDENTIFIERS AND UNIQUENESS
+// =============================================================================
+
+/**
+ * Problems within one entry's `componentIdentifiers`: a value repeated under
+ * one key, or a value that is already the primary under the same key in
+ * `identifiers`. Either would write the same `software_format_identifiers`
+ * row twice and reads as a mistake rather than a second binary.
+ */
+/**
+ * The form two identifiers are compared in. A VST3 class id is hex, so its
+ * case carries no meaning (the writer's `sameIdentifier` agrees); a
+ * reverse-domain id keeps its case, because macOS bundle ids are
+ * case-sensitive.
+ */
+export function identifierKey(value: string): string {
+  return /^[0-9A-Fa-f]{32}$/.test(value) ? value.toLowerCase() : value;
+}
+
+export function findComponentIdentifierRepeats(
+  identifiers: Record<string, string> | undefined,
+  componentIdentifiers: Record<string, string[]>
+): { key: string; value: string; reason: string }[] {
+  const problems: { key: string; value: string; reason: string }[] = [];
+  for (const [key, values] of Object.entries(componentIdentifiers)) {
+    const seen = new Set<string>();
+    const primary = identifiers?.[key];
+    for (const value of values) {
+      const normalized = identifierKey(value);
+      if (seen.has(normalized)) {
+        problems.push({ key, value, reason: "listed twice" });
+      } else if (primary !== undefined && identifierKey(primary) === normalized) {
+        problems.push({ key, value, reason: `already the primary identifiers.${key}` });
+      }
+      seen.add(normalized);
+    }
+  }
+  return problems;
+}
+
+export interface IdentifierOwner {
+  slug: string;
+  identifiers?: Record<string, string>;
+  componentIdentifiers?: Record<string, string[]>;
+}
+
+/**
+ * Identifiers claimed by more than one software entry. Studio's matcher maps
+ * an identifier to one entry, so a value two entries share matches whichever
+ * the query returns last, silently. `productId` is exempt: it is a store
+ * number that feeds nothing.
+ */
+export function findSharedIdentifiers(entries: IdentifierOwner[]): Map<string, string[]> {
+  const owners = new Map<string, Set<string>>();
+  const claim = (value: string, slug: string) => {
+    const normalized = identifierKey(value);
+    const set = owners.get(normalized) ?? new Set<string>();
+    set.add(slug);
+    owners.set(normalized, set);
+  };
+  for (const entry of entries) {
+    for (const [key, value] of Object.entries(entry.identifiers ?? {})) {
+      if (key !== "productId" && typeof value === "string") claim(value, entry.slug);
+    }
+    for (const values of Object.values(entry.componentIdentifiers ?? {})) {
+      if (!Array.isArray(values)) continue;
+      for (const value of values) {
+        if (typeof value === "string") claim(value, entry.slug);
+      }
+    }
+  }
+  const shared = new Map<string, string[]>();
+  for (const [value, slugs] of owners) {
+    if (slugs.size > 1) shared.set(value, [...slugs].sort());
+  }
+  return shared;
+}

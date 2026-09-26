@@ -133,6 +133,12 @@ export interface Software {
   formats?: string[];
   platforms?: string[];
   identifiers?: Record<string, string>;
+  /**
+   * Further identifiers per key, for a product that ships more than one
+   * binary per format (a collection's members). Same keys and precedence
+   * as `identifiers`, which keeps the primary.
+   */
+  componentIdentifiers?: Record<string, string[]>;
   url?: string;
   releaseDate?: string;
   releaseDateYearOnly?: boolean;

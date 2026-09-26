@@ -32,7 +32,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { parseDocument } from "yaml";
-import { resolveFormatIdentifier } from "./identifier-fallback.js";
+import {
+  resolveFormatComponentIdentifiers,
+  resolveFormatIdentifier,
+} from "./identifier-fallback.js";
 import { validateIdentifier } from "./identifier-validation.js";
 import { isValidFormat } from "./schema-loader.js";
 import { DATA_DIR, getYamlFiles } from "./utils.js";
@@ -227,6 +230,7 @@ interface EntryShape {
   manufacturer?: string;
   formats?: string[];
   identifiers?: Record<string, string>;
+  componentIdentifiers?: Record<string, string[]>;
   versions?: VersionRecord[];
 }
 
@@ -307,7 +311,21 @@ export function applyIdentifierRows(
       identifier === undefined
         ? `${row.format} already listed`
         : `${row.format} already resolves to ${existing ?? identifier}`;
-    if (identifier !== undefined && existing && !sameIdentifier(existing, identifier)) {
+    // A collection member's binary is already on the entry when the
+    // observed id is one of its componentIdentifiers: that is agreement,
+    // not the mis-match the conflict below exists to catch.
+    const isComponent =
+      identifier !== undefined &&
+      resolveFormatComponentIdentifiers(entry.componentIdentifiers, row.format).some((c) =>
+        sameIdentifier(c, identifier)
+      );
+    if (isComponent) detail = `${row.format} already carries ${identifier} as a component`;
+    if (
+      identifier !== undefined &&
+      existing &&
+      !isComponent &&
+      !sameIdentifier(existing, identifier)
+    ) {
       outcomes.push({
         row,
         kind: "conflict",
@@ -319,7 +337,7 @@ export function applyIdentifierRows(
 
     let formatAdded = false;
     let versionAdded = false;
-    if (identifier !== undefined && !existing) {
+    if (identifier !== undefined && !existing && !isComponent) {
       const identifiers = { ...(entry.identifiers ?? {}), [row.format]: identifier };
       doc.set("identifiers", identifiers);
       kind = "written";

@@ -723,6 +723,23 @@ carries. See `scripts/lib/identifier-fallback.ts` and CLAUDE.md
 
 ---
 
+### E402: Duplicate Identifier
+
+An identifier is claimed twice: by two software entries, twice within one
+entry's `componentIdentifiers`, or in `componentIdentifiers` under the same
+key that already holds it in `identifiers`.
+
+Studio's plugin matcher resolves an identifier to one entry, so a value two
+entries share matches whichever the query happens to return. `productId` is
+exempt, since it feeds nothing.
+
+**Fix:** Keep the identifier on the one entry the binary belongs to. A
+collection's member plugins go in that collection's `componentIdentifiers`,
+not in a second entry, and a value already in `identifiers` needs no
+repeat.
+
+---
+
 ## Running Validation
 
 To validate your entries:

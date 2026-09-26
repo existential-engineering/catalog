@@ -2339,6 +2339,17 @@
       },
       "description": "Plugin identifiers keyed by format (e.g., au, vst3). `default` covers every listed format without its own key; `bundle` covers au and standalone."
     },
+    "componentIdentifiers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1
+      },
+      "description": "Further identifiers for a product that ships more than one binary per format (a collection's members), keyed and resolved like `identifiers`, which keeps the primary."
+    },
     "compatibleWith": {
       "type": "array",
       "items": {

@@ -16,18 +16,20 @@
 # Rejected, and why a probe cannot take them:
 #   sonible-smartreverb-2      com.sonible.smartreverb       — scan is smart:reverb 1 (v1.1.2), only v2 is in the catalog
 #   sonible-smartcomp-3        com.sonible.smartcomp2        — scan is smart:comp 2, only v3 is in the catalog
-#   waves-intrigger-drum-replacer  com.WavesAudio.InTriggerLive  — "InTrigger Live" may be a separate component, entry holds com.WavesAudio.InTrigger
-#   waves-nx-germano-studios-new-york  com.WavesAudio.NxGermanoStudios  — `waves-nx` scores equally, needs a human
 #
-# Collection-vs-member, all left for a person: UAD ships one binary per member
-# of a "Collection" entry and `identifiers` holds one value per format, so the
-# catalog cannot express them yet. Affected scans:
+# Settled on review 2026-09-26 and written by hand:
+#   waves-intrigger-drum-replacer  com.WavesAudio.InTriggerLive  — a component every InTrigger licence ships, now in componentIdentifiers
+#   waves-nx-germano-studios-new-york  com.WavesAudio.NxGermanoStudios  — the Germano room, sold on its own; `waves-nx` is a different product
+#
+# Collection-vs-member: UAD ships one binary per member of a "Collection"
+# entry and `identifiers` holds one value per format. Resolved 2026-09-26 by
+# `componentIdentifiers` (CLAUDE.md "Identifiers"), written by hand:
 #   universal-audio-1176-classic-limiter-collection    U39V / U39X / U39Z (Rev A, LN Rev E, AE)
-#   universal-audio-fairchild-tube-limiter-collection  U3AV (670) vs U3AX already held
-#   universal-audio-teletronix-la-2a-tube-compressor   U3A5 / U3A7 / U3A9 (LA-2, Gray, Silver)
-#   universal-audio-manley-massive-passive             holds U393 (the MST), scan says U391 is the base EQ
-#   universal-audio-topline-vocal-suite                holds UI13, scan says UI14
-#   universal-audio-hitsville-reverb-chambers          holds U3D5, scan says U3D7
+#   universal-audio-fairchild-tube-limiter-collection  U3AV (670) beside U3AX
+#   universal-audio-teletronix-la-2a-tube-compressor   U3A7 primary (Gray), U3A5 / U3A9 (LA-2, Silver)
+#   universal-audio-manley-massive-passive             U391 (base EQ) beside U393 (MST)
+#   universal-audio-topline-vocal-suite                UI14 beside UI13
+#   universal-audio-hitsville-reverb-chambers          U3D7 beside U3D5
 
 sonible-smartgate	vst3	com.sonible.smartgate		studio-telemetry 2026-09-09
 sonible-truebalance	vst3	com.sonible.truebalance		studio-telemetry 2026-09-09

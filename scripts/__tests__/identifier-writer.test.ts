@@ -178,6 +178,33 @@ describe("applyIdentifierRows", () => {
     expect(readEntry("fabfilter-pro-q-3")).toContain("vst3: com.fabfilter.Pro-Q-3.vst3");
   });
 
+  it("reports a collection member already listed as a component as same, not a conflict", () => {
+    writeEntry(
+      "fabfilter-pro-q-3",
+      "name: Pro-Q 3\nmanufacturer: fabfilter\nformats:\n  - vst3\nidentifiers:\n  default: com.fabfilter.Pro-Q-3\ncomponentIdentifiers:\n  default:\n    - com.fabfilter.Pro-Q-3-Mono\n"
+    );
+    const summary = applyIdentifierRows(
+      [{ target: "fabfilter-pro-q-3", format: "vst3", identifier: "com.fabfilter.Pro-Q-3-Mono" }],
+      { write: true, dataDir }
+    );
+    expect(summary.outcomes[0].kind).toBe("same");
+    expect(summary.outcomes[0].detail).toContain("as a component");
+    expect(summary.filesChanged).toBe(0);
+  });
+
+  it("never promotes a component to the primary on an entry with no primary for the format", () => {
+    writeEntry(
+      "fabfilter-pro-q-3",
+      "name: Pro-Q 3\nmanufacturer: fabfilter\nformats:\n  - vst3\ncomponentIdentifiers:\n  vst3:\n    - com.fabfilter.Pro-Q-3-Mono\n"
+    );
+    const summary = applyIdentifierRows(
+      [{ target: "fabfilter-pro-q-3", format: "vst3", identifier: "com.fabfilter.Pro-Q-3-Mono" }],
+      { write: true, dataDir }
+    );
+    expect(summary.outcomes[0].kind).toBe("same");
+    expect(readEntry("fabfilter-pro-q-3")).not.toContain("identifiers:\n  vst3");
+  });
+
   it("refuses a vendor segment naming another maker, which is the mis-match signal", () => {
     const summary = applyIdentifierRows(
       [{ target: "fabfilter-pro-q-3", format: "vst3", identifier: "com.waves.Renaissance-EQ" }],

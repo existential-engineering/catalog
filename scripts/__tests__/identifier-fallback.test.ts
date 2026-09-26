@@ -5,7 +5,14 @@ import Database from "better-sqlite3";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { buildDatabase } from "../build-sqlite.js";
 import { insertStatements, reflectCollection } from "../generate-patch.js";
-import { resolveFormatIdentifier } from "../lib/identifier-fallback.js";
+import {
+  resolveFormatComponentIdentifiers,
+  resolveFormatIdentifier,
+} from "../lib/identifier-fallback.js";
+import {
+  findComponentIdentifierRepeats,
+  findSharedIdentifiers,
+} from "../lib/identifier-validation.js";
 import { getYamlFiles } from "../lib/utils.js";
 import { COLLECTION_SCHEMAS, validateFile } from "../validate.js";
 
@@ -38,12 +45,68 @@ describe("resolveFormatIdentifier", () => {
   });
 });
 
+describe("resolveFormatComponentIdentifiers", () => {
+  it("applies the same precedence as the primary", () => {
+    const ids = { default: ["com.acme.Member"], vst3: ["com.acme.Member.vst3"] };
+    expect(resolveFormatComponentIdentifiers(ids, "vst3")).toEqual(["com.acme.Member.vst3"]);
+    expect(resolveFormatComponentIdentifiers(ids, "au")).toEqual(["com.acme.Member"]);
+    expect(resolveFormatComponentIdentifiers({ bundle: ["com.acme.Helper"] }, "vst3")).toEqual([]);
+    expect(resolveFormatComponentIdentifiers({ bundle: ["com.acme.Helper"] }, "au")).toEqual([
+      "com.acme.Helper",
+    ]);
+    expect(resolveFormatComponentIdentifiers(undefined, "au")).toEqual([]);
+  });
+});
+
+describe("identifier uniqueness", () => {
+  it("flags a component repeated or already the primary under its key", () => {
+    expect(
+      findComponentIdentifierRepeats(
+        { default: "com.acme.A" },
+        { default: ["com.acme.A", "com.acme.B", "com.acme.B"] }
+      )
+    ).toEqual([
+      { key: "default", value: "com.acme.A", reason: "already the primary identifiers.default" },
+      { key: "default", value: "com.acme.B", reason: "listed twice" },
+    ]);
+    // A different key is a different claim, so it is not a repeat.
+    expect(findComponentIdentifierRepeats({ vst3: "com.acme.A" }, { au: ["com.acme.A"] })).toEqual(
+      []
+    );
+  });
+
+  it("flags an identifier two entries claim, whichever field holds it", () => {
+    const shared = findSharedIdentifiers([
+      { slug: "one", identifiers: { default: "com.acme.A", productId: "1" } },
+      { slug: "two", componentIdentifiers: { default: ["com.acme.A"] } },
+      { slug: "three", identifiers: { productId: "1" } },
+      { slug: "four", identifiers: { default: "com.acme.B" } },
+    ]);
+    expect([...shared]).toEqual([["com.acme.A", ["one", "two"]]]);
+  });
+
+  it("compares a VST3 class id without case, and a bundle id with it", () => {
+    const upper = "ABCDEF0123456789ABCDEF0123456789";
+    const shared = findSharedIdentifiers([
+      { slug: "one", identifiers: { vst3: upper } },
+      { slug: "two", componentIdentifiers: { vst3: [upper.toLowerCase()] } },
+      { slug: "three", identifiers: { default: "com.acme.Verb" } },
+      { slug: "four", identifiers: { default: "com.acme.verb" } },
+    ]);
+    expect([...shared.values()]).toEqual([["one", "two"]]);
+    expect(
+      findComponentIdentifierRepeats({ vst3: upper }, { vst3: [upper.toLowerCase()] })
+    ).toHaveLength(1);
+  });
+});
+
 describe("buildDatabase with fallback identifiers", () => {
   const ids = {
     acme: "MFR00000000000000acme",
     shared: "SW0000000000000shared",
     app: "SW00000000000000000app",
     mixed: "SW00000000000000mixed",
+    collection: "SW00000000collection",
   };
 
   let tmp: string;
@@ -129,6 +192,30 @@ describe("buildDatabase with fallback identifiers", () => {
       ].join("\n")
     );
 
+    // A collection whose members ship their own binaries: the 1176 shape.
+    write(
+      "software/acme-collection.yaml",
+      [
+        `id: ${ids.collection}`,
+        "name: Acme Collection",
+        "manufacturer: acme-audio",
+        "primaryCategory: compressor",
+        "formats:",
+        "  - au",
+        "  - vst3",
+        "platforms:",
+        "  - mac",
+        "identifiers:",
+        "  default: com.acme.Collection",
+        "componentIdentifiers:",
+        "  default:",
+        "    - com.acme.MemberA",
+        "    - com.acme.MemberB",
+        "description: One entry, three binaries.",
+        "",
+      ].join("\n")
+    );
+
     const log = vi.spyOn(console, "log").mockImplementation(() => {});
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
     try {
@@ -177,6 +264,47 @@ describe("buildDatabase with fallback identifiers", () => {
       { format: "au", identifier: "com.acme.Mixed" },
       { format: "vst3", identifier: "com.acme.Mixed.vst3" },
     ]);
+  });
+
+  it("keeps software_formats at the primary and lists every binary in software_format_identifiers", () => {
+    expect(rows(ids.collection)).toEqual([
+      { format: "au", identifier: "com.acme.Collection" },
+      { format: "vst3", identifier: "com.acme.Collection" },
+    ]);
+    const all = db
+      .prepare(
+        "SELECT format, identifier, is_primary FROM software_format_identifiers WHERE software_id = ? ORDER BY format, is_primary DESC, identifier"
+      )
+      .all(ids.collection);
+    expect(all).toEqual([
+      { format: "au", identifier: "com.acme.Collection", is_primary: 1 },
+      { format: "au", identifier: "com.acme.MemberA", is_primary: 0 },
+      { format: "au", identifier: "com.acme.MemberB", is_primary: 0 },
+      { format: "vst3", identifier: "com.acme.Collection", is_primary: 1 },
+      { format: "vst3", identifier: "com.acme.MemberA", is_primary: 0 },
+      { format: "vst3", identifier: "com.acme.MemberB", is_primary: 0 },
+    ]);
+  });
+
+  it("carries the primary alone into software_format_identifiers for a plain entry", () => {
+    const all = db
+      .prepare(
+        "SELECT format, identifier, is_primary FROM software_format_identifiers WHERE software_id = ? ORDER BY format"
+      )
+      .all(ids.app);
+    // vst3 resolves no identifier, so it has no row here at all.
+    expect(all).toEqual([
+      { format: "au", identifier: "com.acme.App", is_primary: 1 },
+      { format: "standalone", identifier: "com.acme.App", is_primary: 1 },
+    ]);
+  });
+
+  it("reaches software_format_identifiers in the incremental patch through reflection", () => {
+    const schema = reflectCollection(db, "software");
+    const statements = insertStatements(db, schema, ids.collection) ?? [];
+    const rows = statements.filter((s) => s.includes('INSERT INTO "software_format_identifiers"'));
+    expect(rows).toHaveLength(6);
+    expect(rows.some((s) => s.includes("'com.acme.MemberB'"))).toBe(true);
   });
 
   it("reaches the incremental patch through reflection, with no hand-written block", () => {

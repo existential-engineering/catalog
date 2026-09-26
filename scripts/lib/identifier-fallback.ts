@@ -43,3 +43,30 @@ export function resolveFormatIdentifier(
   if (identifiers.bundle && BUNDLE_FALLBACK_FORMATS.has(format)) return identifiers.bundle;
   return null;
 }
+
+/**
+ * The extra identifiers one listed format carries through
+ * `componentIdentifiers`, under the same precedence as the primary.
+ *
+ * `identifiers` holds one value per key, which is right for a plugin that
+ * ships one binary. A UAD collection ships one binary per member (the 1176
+ * Classic Limiter Collection installs Rev A, LN Rev E and AE, each with its
+ * own bundle id), and a product can ship more than one component (Manley
+ * Massive Passive and its MST variant). Studio sees each binary separately,
+ * so every one of them has to resolve to the entry or the scan leaves it
+ * unmatched. The primary stays in `identifiers` because Studio builds that
+ * predate `software_format_identifiers` read `software_formats.identifier`
+ * alone.
+ */
+export function resolveFormatComponentIdentifiers(
+  componentIdentifiers: Record<string, string[]> | undefined,
+  format: string
+): string[] {
+  if (!componentIdentifiers) return [];
+  if (componentIdentifiers[format]) return componentIdentifiers[format];
+  if (componentIdentifiers.default) return componentIdentifiers.default;
+  if (componentIdentifiers.bundle && BUNDLE_FALLBACK_FORMATS.has(format)) {
+    return componentIdentifiers.bundle;
+  }
+  return [];
+}

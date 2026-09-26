@@ -80,6 +80,22 @@ CREATE TABLE IF NOT EXISTS software_formats (
 
 CREATE INDEX idx_software_formats_format ON software_formats(format);
 
+-- Every identifier a listed format resolves to: the primary from
+-- `identifiers` (is_primary = 1, the same value software_formats carries)
+-- plus each `componentIdentifiers` value (is_primary = 0). A collection or a
+-- multi-component product ships one binary per member, and Studio's matcher
+-- needs each binary's id to reach the entry. Additive: software_formats is
+-- unchanged for readers that predate this table.
+CREATE TABLE IF NOT EXISTS software_format_identifiers (
+    software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
+    format TEXT NOT NULL,
+    identifier TEXT NOT NULL,
+    is_primary INTEGER NOT NULL DEFAULT 0,
+    PRIMARY KEY (software_id, format, identifier)
+);
+
+CREATE INDEX idx_software_format_identifiers_identifier ON software_format_identifiers(identifier);
+
 -- Software Platforms (many-to-many)
 CREATE TABLE IF NOT EXISTS software_platforms (
     software_id TEXT NOT NULL REFERENCES software(id) ON DELETE CASCADE,
@@ -835,7 +851,8 @@ INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change)
     (20, 'Added search_terms column to all FTS5 tables; changed tokenizer from porter unicode61 to unicode61', 1),
     (21, 'Added stable port_key column to hardware_io', 0),
     (22, 'Added optional term column to every prices table', 0),
-    (23, 'Added nullable hp column to hardware for Eurorack panel width', 0);
+    (23, 'Added nullable hp column to hardware for Eurorack panel width', 0),
+    (24, 'Added software_format_identifiers table for every identifier a format resolves to', 0);
 
 -- Insert initial metadata (version comes from build script)
 INSERT OR REPLACE INTO catalog_meta (key, value) VALUES

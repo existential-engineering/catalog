@@ -7,6 +7,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 import {
   type CollectionSchema,
   deleteStatements,
+  highestMigration,
   insertStatements,
   reflectCollection,
 } from "../generate-patch.js";
@@ -305,5 +306,24 @@ describe("insertStatements", () => {
     expect(target.prepare(`SELECT supersedes_id FROM hardware WHERE id = 'hw2'`).get()).toEqual({
       supersedes_id: "hw1",
     });
+  });
+});
+
+describe("highestMigration", () => {
+  it("reads the highest schema_migrations row, and 0 from a schema without one", () => {
+    const sql = [
+      "CREATE TABLE foo (id TEXT);",
+      "INSERT OR REPLACE INTO schema_migrations (version, description, breaking_change) VALUES",
+      "    (1, 'First; with a semicolon', 0),",
+      "    (24, 'Added software_format_identifiers', 0),",
+      "    (3, 'Third', 1);",
+    ].join("\n");
+    expect(highestMigration(sql)).toBe(24);
+    expect(highestMigration("CREATE TABLE foo (id TEXT);")).toBe(0);
+  });
+
+  it("matches the schema this repo builds", () => {
+    const sql = fs.readFileSync(path.join(import.meta.dirname, "../schema.sql"), "utf-8");
+    expect(highestMigration(sql)).toBe(24);
   });
 });
