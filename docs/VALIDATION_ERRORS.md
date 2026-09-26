@@ -604,6 +604,33 @@ similarity scoring.
 
 ---
 
+### E206: Unknown compatibleWith Reference
+
+A `compatibleWith` slug on a software or content entry matches no file in
+`data/software/` or `data/hardware/`.
+
+The entry builds and ships either way, but Studio cannot resolve the slug, so the
+compatibility is silently lost. `kontakt` in place of `native-instruments-kontakt`
+reached `main` this way while the check was the advisory W123.
+
+**Example:**
+
+```yaml
+# Wrong - no data/software/kontakt.yaml
+compatibleWith:
+  - kontakt
+
+# Correct - the file name of the host's entry
+compatibleWith:
+  - native-instruments-kontakt
+```
+
+**Fix:** Use the slug (file name without `.yaml`) of the host's software or hardware
+entry. If the host is not in the catalog yet, add it in the same PR or drop the
+reference.
+
+---
+
 ## Content Errors (E3xx)
 
 ### E300: Invalid Markdown

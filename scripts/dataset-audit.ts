@@ -26,8 +26,8 @@
  *                          model-number families ("Bassysm-F" vs "Bassysm-J")
  *                          that edit-distance matching drowns you in.
  *   2. broken-compatible — `compatibleWith` slug resolves to no software or
- *                          hardware entry. (validate's W123 only covers
- *                          software/hardware entries; content is checked here.)
+ *                          hardware entry. (validate fails on this as E206;
+ *                          kept here so the audit report stays complete.)
  *   3. orphan-manufacturer — a manufacturer referenced by zero products.
  *   4. thin-description  — description present but suspiciously short.
  *   5. aggregator-url    — canonical `url` points at an aggregator

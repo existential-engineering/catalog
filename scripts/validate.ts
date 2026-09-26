@@ -1461,6 +1461,43 @@ export function detectSupersedeCycle(
   return null;
 }
 
+/**
+ * E206: every `compatibleWith` slug names a software or hardware file.
+ * An unknown slug builds and ships, and Studio drops the compatibility
+ * without a word (`kontakt` for `native-instruments-kontakt`). The check
+ * was the advisory W123, which is how that one reached `main`.
+ */
+export function checkCompatibleWith(
+  filePath: string,
+  softwareSlugs: Set<string>,
+  hardwareSlugs: Set<string>
+): ValidationError | null {
+  const { data, document, lineCounter } = loadYamlFileWithPositions(filePath);
+  const compatibleWith = (data as { compatibleWith?: unknown })?.compatibleWith;
+  if (!Array.isArray(compatibleWith)) return null;
+
+  const errorCode = ValidationErrorCode.E206_UNKNOWN_COMPATIBLE_WITH;
+  const details: ValidationErrorDetail[] = [];
+  for (let i = 0; i < compatibleWith.length; i++) {
+    const slug = compatibleWith[i];
+    if (softwareSlugs.has(slug) || hardwareSlugs.has(slug)) continue;
+    const line = getLineForPath(document, lineCounter, ["compatibleWith", i]);
+    details.push({
+      code: errorCode,
+      message: `Unknown compatibleWith reference '${slug}'. No matching software or hardware file found.`,
+      path: `compatibleWith[${i}]`,
+      line: line ?? undefined,
+      docsUrl: getDocsUrl(errorCode),
+    });
+  }
+  if (details.length === 0) return null;
+  return {
+    file: path.relative(process.cwd(), filePath),
+    errors: details.map((d) => `${d.path}${d.line ? `:${d.line}` : ""}: ${d.message}`),
+    details,
+  };
+}
+
 // =============================================================================
 // ADVISORY WARNING COLLECTION
 // =============================================================================
@@ -1469,7 +1506,6 @@ export interface WarningContext {
   name?: string;
   primaryCategory?: string;
   io?: Array<{ name: string; type: string; connection: string; maxConnections?: number }>;
-  compatibleWith?: string[];
   url?: string;
   links?: Array<{ url: string }>;
   manufacturer?: string;
@@ -1491,8 +1527,6 @@ export function collectWarnings(
   data: WarningContext,
   document: ReturnType<typeof loadYamlFileWithPositions>["document"],
   lineCounter: ReturnType<typeof loadYamlFileWithPositions>["lineCounter"],
-  allSoftwareSlugs?: Set<string>,
-  allHardwareSlugs?: Set<string>,
   manufacturerUrlMap?: Map<string, string>,
   manufacturerNameMap?: Map<string, string>
 ): ValidationWarning | null {
@@ -1568,24 +1602,6 @@ export function collectWarnings(
           code: ValidationErrorCode.W128_IO_COMBINE_CANDIDATE,
           message: `IO '${io.name}' sets maxConnections ${io.maxConnections} on a single-jack connection ('${io.connection}'). If this is several physical jacks, give each its own io entry with maxConnections: 1.`,
           path: `io[${i}].maxConnections`,
-          line: line ?? undefined,
-        });
-      }
-    }
-  }
-
-  // Check compatibleWith references (advisory) — checks both software and hardware slugs
-  if (Array.isArray(data.compatibleWith) && (allSoftwareSlugs || allHardwareSlugs)) {
-    for (let i = 0; i < data.compatibleWith.length; i++) {
-      const slug = data.compatibleWith[i];
-      const inSoftware = allSoftwareSlugs?.has(slug) ?? false;
-      const inHardware = allHardwareSlugs?.has(slug) ?? false;
-      if (!inSoftware && !inHardware) {
-        const line = getLineForPath(document, lineCounter, ["compatibleWith", i]);
-        warnings.push({
-          code: ValidationErrorCode.W123_UNKNOWN_COMPATIBLE_WITH,
-          message: `Unknown compatibleWith reference '${slug}'. No matching software or hardware file found.`,
-          path: `compatibleWith[${i}]`,
           line: line ?? undefined,
         });
       }
@@ -1865,13 +1881,13 @@ function validate(): ValidationResult {
     }
   }
 
-  // allSoftwareSlugs used for compatibleWith validation (software only, not content)
+  // allSoftwareSlugs used for compatibleWith validation (E206; software only, not content)
   const allSoftwareSlugs = new Set<string>();
   for (const file of softwareFiles) {
     allSoftwareSlugs.add(path.basename(file, path.extname(file)));
   }
 
-  // allHardwareSlugs used for compatibleWith validation (content can target hardware too)
+  // allHardwareSlugs used for compatibleWith validation (E206; content can target hardware too)
   const allHardwareSlugs = new Set<string>();
   for (const file of hardwareFiles) {
     allHardwareSlugs.add(path.basename(file, path.extname(file)));
@@ -1971,7 +1987,9 @@ function validate(): ValidationResult {
 
   // Validate software (supersedes must reference valid software ID)
   for (const file of softwareFiles) {
-    const error = validateFile(file, SoftwareSchema, allManufacturers, softwareIds);
+    const error =
+      validateFile(file, SoftwareSchema, allManufacturers, softwareIds) ??
+      checkCompatibleWith(file, allSoftwareSlugs, allHardwareSlugs);
     if (error) {
       errors.push(error);
     } else {
@@ -1984,8 +2002,6 @@ function validate(): ValidationResult {
           data as WarningContext,
           document,
           lineCounter,
-          allSoftwareSlugs,
-          allHardwareSlugs,
           manufacturerUrlMap,
           manufacturerNameMap
         );
@@ -2010,12 +2026,14 @@ function validate(): ValidationResult {
 
   // Validate content (supersedes must reference valid content ID)
   for (const file of contentFiles) {
-    const error = validateFile(file, ContentSchema, allManufacturers, contentIds);
+    const error =
+      validateFile(file, ContentSchema, allManufacturers, contentIds) ??
+      checkCompatibleWith(file, allSoftwareSlugs, allHardwareSlugs);
     if (error) {
       errors.push(error);
     } else {
       stats.content++;
-      // Collect advisory warnings for valid files (compatibleWith checks against software and hardware slugs)
+      // Collect advisory warnings for valid files
       try {
         const { data, document, lineCounter } = loadYamlFileWithPositions(file);
         const w = collectWarnings(
@@ -2023,8 +2041,6 @@ function validate(): ValidationResult {
           data as WarningContext,
           document,
           lineCounter,
-          allSoftwareSlugs,
-          allHardwareSlugs,
           manufacturerUrlMap,
           manufacturerNameMap
         );
@@ -2050,8 +2066,6 @@ function validate(): ValidationResult {
           data as WarningContext,
           document,
           lineCounter,
-          undefined,
-          allHardwareSlugs,
           manufacturerUrlMap,
           undefined
         );
@@ -2077,8 +2091,6 @@ function validate(): ValidationResult {
           data as WarningContext,
           document,
           lineCounter,
-          undefined,
-          allHardwareSlugs,
           manufacturerUrlMap,
           undefined
         );
