@@ -154,12 +154,32 @@ jobs:
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
 
+      # Studio shows this release's body before it offers a catalog update,
+      # parsing the `- <sha>: summary` changeset lines into a short
+      # what's-new list. GitHub's generated notes are PR titles, which
+      # Studio ignores, so the body leads with this version's CHANGELOG
+      # section and the generated list follows it for maintainers. The
+      # version reaches awk through `env:`, never interpolated into `run:`.
+      - name: Extract release notes from CHANGELOG
+        if: steps.changesets.outputs['has-changesets'] == 'false' && steps.tag_check.outputs.exists == 'false'
+        env:
+          VERSION: ${{ steps.pkg.outputs.version }}
+        run: |
+          set -euo pipefail
+          awk -v heading="## ${VERSION#v}" \
+            '$0 == heading { found = 1; next } /^## / && found { exit } found' \
+            CHANGELOG.md > dist/release-notes.md
+          if [ ! -s dist/release-notes.md ]; then
+            echo "::warning::CHANGELOG.md has no section for ${VERSION}; the release body will carry only the generated notes."
+          fi
+
       - name: Create GitHub Release
         if: steps.changesets.outputs['has-changesets'] == 'false' && steps.tag_check.outputs.exists == 'false'
         uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3
         with:
           tag_name: ${{ steps.pkg.outputs.version }}
           name: Catalog ${{ steps.pkg.outputs.version }}
+          body_path: dist/release-notes.md
           generate_release_notes: true
           files: |
             dist/catalog.sqlite
