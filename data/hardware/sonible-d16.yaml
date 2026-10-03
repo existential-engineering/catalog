@@ -1,0 +1,242 @@
+id: 7M82b0bM6ury3EWqulGfX
+name: d:16
+manufacturer: sonible
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+capabilities:
+  - equalization
+  - compression
+  - limiting
+  - crossover
+  - alignment-delay
+url: https://www.sonible.com/d16/
+description: The d:16 multi-channel amp delivers brilliant sound for high-end
+  audio installations in science, research, and industry.
+details: |-
+  The d:16 is a 16-channel power amplifier for high-end audio installations in science, research and industry, rated at 250 W per channel into 4 Ω and 125 W into 8 Ω, with a signal-to-noise ratio above 112 dB per channel. Sixteen channels of amplification fit into three rack units, and the chassis weighs about 20 kg.
+
+  The base model takes analog audio on two DB-25 sockets wired to the Tascam analog norm. A factory-fitted digital input slot accepts one of three optional cards: MADI (coaxial and optical), Dante or AES/EBU. All digital modules carry D/A converters and allow free routing of every single channel, and a unit fitted with the Dante module adds a 16x16 matrix mixer for summing multiple input channels to multiple output channels (firmware 3.0 or higher required).
+
+  An optional DSP module adds per-channel signal processing: gain up to 20 dB, delay up to 11.5 ms and phase inversion, crossover with low cut and high cut (Linkwitz-Riley, Bessel or Butterworth up to 4th order), five parametric EQ bands (bell, shelf or cut), and a compressor and limiter with soft knee. With the DSP option the amplifier works as a compact all-in-one solution for systems carrying a large number of speakers, such as Higher Order Ambisonics (HOA) or Wave Field Synthesis (WFS) installations.
+
+  All settings are remote-controlled over an Ethernet connection and a web interface, and the amplifier can be integrated into automation systems through a RESTful API. The rear panel also carries a 4-pin Euroblock panic mute connector for a hardware mute switch: the circuit is closed in normal operation and opening it hard-mutes every channel, and the connector can be cascaded across up to five amplifiers. A 6.5 inch resistive touch display on the front handles local setup.
+
+  Typical applications are research and development work in virtual acoustics (HOA, WFS) and acoustical measurements, and custom installations such as home theatres, surround sound and multi-room systems.
+specs: |-
+  - Channels: 16
+  - Output power: 250 W @ 4 Ω (THD <= 0.05%), 125 W @ 8 Ω (THD <= 0.04%)
+  - Minimum load impedance: >= 4 Ω (single channel), >= 8 Ω (bridged)
+  - Channel bridging: in pairs of two, doubling output voltage
+  - SNR: > 112 dB
+  - Frequency response: -3 dB @ 10 Hz, -2 dB @ 50 kHz
+  - Typical THD (10 Hz - 30 kHz): <= 0.05% at 15 dBu, < 0.01% at 0 dBu, 0.03% at -20 dBu
+  - Inter-channel crosstalk: < 64 dB
+  - Maximum analog input level: +15 dBu
+  - Voltage gain: 17 dB +/- 0.5 dB
+  - Input impedance: 95 kΩ
+  - Analog inputs: 2x DB-25 (Tascam analog norm)
+  - Speaker outputs: 16x 2-pin Euroblock
+  - Network connection: 1x etherCON by Neutrik
+  - Panic mute connector: 4-pin Euroblock (cascadable, up to five devices)
+  - Optional MADI module: 1x SC connector (multimode) optical MADI in/out, 2x BNC 75 Ω coaxial MADI in/out
+  - Optional Dante module: 2x RJ45 (primary, secondary), 16x16 matrix mixer with firmware 3.0 or higher
+  - Optional AES/EBU and S/PDIF module: 2x DB-25 (Tascam analog norm), 16 + 8 ch. ASRC
+  - Optional DSP module: per-channel EQ, compressor, limiter and delay
+  - DSP gain and delay: gain up to 20 dB, delay up to 11.5 ms, phase inversion
+  - DSP EQ: crossover, low cut, high cut (Linkwitz-Riley, Bessel or Butterworth up to 4th order), 5 parametric bands (bell, shelf or cut)
+  - Power supply: 1x powerCON 32A by Neutrik
+  - Input voltage: 100-120 VAC or 220-240 VAC, 50-60 Hz (factory fitted)
+  - Idle loss: < 270 W
+  - Standby power consumption: < 2.5 W
+  - Operating air temperature: 10 °C - 30 °C
+  - Cooling: active, front-to-rear, 5 temperature-controlled fans
+  - Control surface: 6.5 inch resistive touch display
+  - Network control: web interface and HTTP RESTful API
+  - Dimensions: 482.6 mm x 132.5 mm x 517 mm (19" / 3U / 20.4")
+  - Weight: approx. 20 kg (44 lbs)
+io:
+  - key: hOhWjNxr
+    name: Analog Input Ch 1-8 (DB-25)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - key: JBllvD1g
+    name: Analog Input Ch 9-16 (DB-25)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - key: ogIa1Ses
+    name: Digital Input Option Slot
+    signalFlow: input
+    category: digital
+    type: proprietary
+    connection: card-slot
+    maxConnections: 1
+    position: Right
+  - key: J1Ub58Te
+    name: Network (etherCON)
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethercon
+    maxConnections: 1
+    position: Right
+  - key: SdKrfiGx
+    name: Panic Mute Switch
+    signalFlow: input
+    category: digital
+    type: gpio
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: uzPSvWL6
+    name: Speaker Output 1 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: zlTqGedb
+    name: Speaker Output 2 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: 8JrKKvgE
+    name: Speaker Output 3 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: tKtsdaaG
+    name: Speaker Output 4 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: prM4KDOY
+    name: Speaker Output 5 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: fDoSKqNW
+    name: Speaker Output 6 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: kq2fXqtY
+    name: Speaker Output 7 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: Asgk8cLs
+    name: Speaker Output 8 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: Blft5QXf
+    name: Speaker Output 9 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: DMKM1VqK
+    name: Speaker Output 10 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: wVLKoWHy
+    name: Speaker Output 11 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: ooOvWelb
+    name: Speaker Output 12 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: djZ0j0eO
+    name: Speaker Output 13 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: S1dKosfg
+    name: Speaker Output 14 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: cOWq9o4O
+    name: Speaker Output 15 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: FEV13aaG
+    name: Speaker Output 16 (min 4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: Lzo2UPXA
+    name: Mains Inlet (powerCON 32A)
+    signalFlow: input
+    category: power
+    type: power
+    connection: powercon
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.sonible.com/wp-content/uploads/2020/05/d-serie_owners-manual_ENG.pdf
+    type: resource
+    title: d:series Owner's Manual
+  - url: https://www.sonible.com/download
+    type: resource
+    title: Downloads

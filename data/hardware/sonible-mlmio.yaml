@@ -1,0 +1,108 @@
+id: -iK7bQr-vw-sy7ZdMEHSO
+name: ml:mio
+manufacturer: sonible
+primaryCategory: routing
+categories:
+  - digital
+  - utility
+  - discontinued
+url: https://www.sonible.com/mlmio/
+description: The ml:mio is a compact MADI media converter, router and splitter.
+  Convert MADI streams freely between coaxial, optical (SC) and twisted pair
+  signals.
+details: |-
+  The ml:mio provides you with a compact MADI converter that effortlessly translates from any one type of plug and cable to any other. It offers 100% bit-transparent transmission between BNC, optical and CAT, works independent of control software, manufacturer software or external control programs, and allows simple splitting to create redundancies for multi-track recordings.
+
+  The ml:mio converts MADI-streams between optical, coaxial BNC and twisted pair. This greatly simplifies the planning of setups and saves a lot of time, in particular when working at live events. Especially when on big tours or when a venue comes with pre-installed cabling, it no longer matters whether people work with BNC, optical or CAT cables: with the ml:mio as a universal connector, the right adapter is always ready to hand.
+
+  For more complex setups any input can be routed to any number of outputs. No matter how intricate the setup, this makes rerouting and splitting signals an effortless task. To combine a mixing console and a recording device or create redundancies, incoming MADI-streams can be split into several signals.
+
+  The three toggle switches mounted directly on the ml:mio ensure ease of use with no need for additional devices. No notebook is required to remote-control the ml:mio: smartly integrated LEDs always indicate the current status of the signals and their routing, so the unit stays readable at a glance even under low light conditions.
+
+  Flashing LEDs on the inputs immediately show whether a MADI stream is stable or has been lost recently. The color of the output LEDs indicates the chosen source medium routed to this output, green for BNC, red for optical and blue or white for twisted pair. A vendor mode switches the twisted pair pinout between Soundcraft / Studer and DiGiCo, and an RX/TX button swaps the sending and receiving twisted pair.
+specs: |-
+  - MADI media converter, splitter and router
+  - 100% bit-transparent transmission between BNC, optical and CAT
+  - Operates fully autonomously, without external control software
+  - Any input can be routed to any number of outputs, and the two BNC outputs always carry the same signal
+  - Three built-in routing switches select the source for the twisted pair, optical and BNC outputs
+  - RX/TX button swaps the sending and receiving twisted pair
+  - Vendor modes for twisted pair: Soundcraft / Studer and DiGiCo
+  - MADI inputs: 1x twisted pair (DiGiCo and Soundcraft compatible), 1x optical (SC, 50/62.5 um multimode), 1x coaxial BNC 75 ohm
+  - MADI outputs: 1x twisted pair (DiGiCo and Soundcraft compatible), 1x optical (SC, 50/62.5 um multimode), 2x coaxial BNC 75 ohm
+  - Sample rates: no restrictions, 32 kHz to 192 kHz
+  - Channels: 56 ch and 64 ch
+  - Size: 183 x 93 x 40 mm
+  - Weight: approximately 1000 g
+  - Power supply: 100 to 240 V AC, 50 to 60 Hz, Neutrik powerCON connector (cable included)
+io:
+  - key: UZy2BH4E
+    name: MADI Twisted Pair In/Out
+    signalFlow: bidirectional
+    category: digital
+    type: madi
+    connection: ethernet
+    maxConnections: 64
+    position: Right
+  - key: qTsArmF5
+    name: MADI Optical Out
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: sc
+    maxConnections: 64
+    position: Right
+  - key: dCatUOOw
+    name: MADI Optical In
+    signalFlow: input
+    category: digital
+    type: madi
+    connection: sc
+    maxConnections: 64
+    position: Right
+  - key: q4QR6sWA
+    name: MADI BNC Out 1
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - key: JTZ06J3k
+    name: MADI BNC Out 2
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - key: 1GxyrD79
+    name: MADI BNC In
+    signalFlow: input
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - key: Td2WG5hT
+    name: Mains Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: powercon
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.sonible.com/wp-content/uploads/2018/03/sonible_mlmio_manual_EN.pdf
+    type: resource
+    title: Manual (PDF)
+  - url: https://www.sonible.com/download
+    type: resource
+    title: Downloads
+  - url: https://help.sonible.com
+    type: resource
+    title: Support
+videos:
+  - provider: youtube
+    videoId: 5n7pCtU7GbM
+    title: ml:mio by sonible - MADI media converter, splitter and router | EN
