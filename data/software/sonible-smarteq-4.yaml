@@ -13,39 +13,47 @@ formats:
 platforms:
   - mac
   - windows
+identifiers:
+  vst3: com.sonible.smarteq4
 url: https://www.sonible.com/smarteq4/
 prices:
   - amount: 129
     currency: USD
-description: smart:EQ 4 is an equalizer that uses AI to correct spectral issues
-  and achieve tonal balance in individual tracks. Intelligent cross-channel
-  processing adds hierarchical control over multiple tracks, so spectral
-  unmasking can be set up by dragging and dropping.
+description: Within seconds, smart:EQ 4 creates spectral balance in single audio
+  tracks and lets you create an unmasking hierarchy via drag and drop.
 details: |-
-  Unlike equalizers that leave the context of a mix out of their processing, smart:EQ 4 allows multi-track unmasking across up to 10 tracks arranged by drag and drop. Priorities set for each smart:filter bring some elements to the forefront of the sonic stage, leave others in the middle and push the rest into the background. Any instance within the same group can be remotely controlled from any other instance, so switching back and forth between plug-in windows is not needed. The traditional bottom-up approach, starting with individual elements and building a mix piece by piece, still works here thanks to the plug-in's spectral shaping of each channel.
+  smart:EQ 4 uses AI to correct spectral issues and achieve tonal balance. The equalizer approaches a project from a mix perspective: intelligent cross-channel processing offers hierarchical control over multiple tracks and allows spectral mixing to be set up by dragging and dropping.
 
-  The centerpiece is the smart:filter, which automatically balances a signal against a target profile chosen for the track. The smart:filter widget exposes a Smoothing parameter for gentler filtering and an Adaptive option for highly dynamic signals, and the green weighting curve can be split so the intelligent algorithms only work on a defined frequency range. The smart:filter runs in three modes: Track balances the channel, Group leaves the channel alone but reduces masking between it and other group members, and Track and Group applies balancing while also subjecting the channel to unmasking.
+  Unlike equalizers that leave the context of a mix out of any processing, smart:EQ 4 allows multi-track unmasking across up to 10 tracks arranged by drag and drop. Priorities set for each smart:filter bring some elements to the forefront of the sonic stage, leave others in the middle and push the rest into the background. Any instance within the same group can be remotely controlled from any other instance, so switching back and forth between instances is not needed. The traditional bottom-up method, starting with individual elements and building a mix piece by piece, still works here thanks to the plug-in's spectral shaping of each channel.
+
+  The centerpiece of smart:EQ 4 is the smart:filter, which automatically balances the signal based on a target profile chosen for the track. The smart:filter widget exposes a Smoothing parameter for gentler filtering and an Adaptive option for smoothing out highly dynamic signals, and the green weighting curve can be split to define the frequency range the intelligent algorithms work on. The smart:filter runs in three modes: Track balances the channel, Group leaves the channel unaffected but reduces masking between it and other group members, and Track and Group applies balancing to the channel while also subjecting it to unmasking.
 
   Profiles cover instruments and vocals for use on single tracks or busses, plus genre-based profiles for a final spectral polish on a mix. Loading a reference track creates a custom profile so smart:EQ 4 emulates that spectral character and balance on the channel or buss, and the maximum learning time used to analyze the input signal can be specified.
 
-  Beyond the smart:filter, the standard EQ bands offer dynamic behavior through a Dynamic Filter Widget with familiar compressor-like controls, and they can be used alongside or instead of the smart:filter bands in any instance. An auto gain feature compensates for level changes, mid-side processing is available throughout, and the analyzer shows not only the track at hand but every instance in the same group.
+  Beyond the smart:filter, the standard EQ bands offer dynamic behavior through a Dynamic Filter Widget with familiar compressor-like controls, and they can be used alongside or instead of the main smart:filter bands in any instance. An auto gain feature compensates for level changes, comprehensive mid-side processing is available, and the analyzer shows not only the track at hand but every instance in the same group.
 specs: |-
-  - AI-powered smart:filter for automatic correction of tonal imbalances
-  - Intelligent cross-channel processing for spectral unmasking across up to 10 tracks
+  - Intelligent cross-channel processing for spectral unmasking
+  - AI-filter to automatically correct tonal imbalances
+  - Dynamic EQing, mix profiles, reference track feature, auto gain
+  - Spectral mixing across up to 10 tracks by drag and drop
   - smart:filter modes: Track, Group, Track and Group
-  - Instrument, vocal and genre-based target profiles, plus custom profiles from a reference track
-  - Adjustable maximum learning time for input analysis
   - Smoothing and Adaptive controls, splittable weighting curve with a definable frequency range
+  - Instrument, vocal and genre-based profiles, plus custom profiles from a reference track
+  - Adjustable maximum learning time for input analysis
   - Dynamic standard EQ bands with a Dynamic Filter Widget
-  - Auto gain, mid-side processing, group-wide analyzer
+  - Mid/Side processing, auto gain, group-wide analyzer
   - Remote control of any instance within a group from any other instance
   - Plug-in formats (Mac): VST, VST3, AU, AAX
   - Plug-in formats (Windows): VST, VST3, AAX
   - Supported sample rates: 44.1 kHz to 192 kHz
   - Authorization: machine-based or iLok
-  - Native Apple Silicon support
-  - Windows 10 (64 bit) or macOS 10.14 and later
-  - 4 GB RAM, Intel Core i5 or Apple Silicon CPU, OpenGL 3.2+ GPU
+  - Apple Silicon support: native
+  - Latest version: 1.1.1
+  - System requirements (PC): Windows 10 (64 bit)
+  - System requirements (Mac): OSX 10.14+
+  - RAM: 4GB
+  - CPU: Intel Core (i5), Apple Silicon
+  - GPU: OpenGL Version 3.2+
 versions:
   - name: 1.1.1
   - name: 1.0.2
@@ -62,5 +70,4 @@ links:
 videos:
   - videoId: cPD0s70HOT0
     title: Demo
-identifiers:
-  vst3: com.sonible.smarteq4
+    provider: youtube
