@@ -1,0 +1,164 @@
+id: _FdaYPxXTXlVtK_0W_j92
+name: CAT
+manufacturer: behringer
+primaryCategory: synthesizer
+categories:
+  - analog
+  - subtractive
+capabilities:
+  - subtractive-synthesis
+  - filter
+url: https://www.behringer.com/en/products/0718-aah
+description: A duophonic analog synthesizer built as an ultra-affordable homage
+  to the 1975 original, with a pure analog signal path based on authentic VCO,
+  VCF and VCA designs. Two VCOs give four variable and simultaneous oscillator
+  shapes with Duophonic/Paraphonic operation, a 16-voice Poly Chain, and a main
+  module that transfers into a standard Eurorack case.
+details: |-
+  The 1970s spawned the first truly portable analog synthesizer, and while it was quickly adopted by renowned artists including Jan Hammer, Chick Corea, Rick Wakeman, Jean-Michel Jarre, Isao Tomita and Keith Emerson, it was somewhat temperamental and very expensive. In 1975 a new synth strolled into town: the Cat, an analog, duophonic, three octave synthesizer very similar to the ARP Odyssey, whose keyboard produced two control voltages routed into its two VCOs. An ultra-affordable and even more feature-packed homage to that iconic synthesizer comes in the form of the CAT, with a pure analog signal path based on authentic VCO, VCF and VCA designs alongside four variable and simultaneous oscillator shapes and Duophonic/Paraphonic capabilities.
+
+  Great care has been taken in engineering the CAT, including the true to the original analog circuitry and the legendary VCO, VCF and VCA designs that come together to recreate classic tones evocative of classic electronic music. That attention to detail is what gives the CAT its ultra-flexible sound shaping capability, covering super-fat bass, tasty leads, and dreamy ambience.
+
+  The very heart of the CAT's sound is its two VCOs. The Duophonic/Paraphonic nature of the instrument allows both oscillators to be controlled independently, with Fine and Coarse Frequency controls to tune VCO1 to VCO2. Keyboard control can be set to Mono or Poly: Poly mode lets VCO1 generate the highest note played while VCO2 handles the lowest, allowing two notes at once, and Mono mode makes VCO1 generate the lowest note depressed. VCO2 also carries a Sync switch that locks VCO1 to it so the pair act as one larger oscillator.
+
+  The VCF filter section adds more complex and robust tones, with a Q slider to emphasize harmonics and a Filter Cutoff slider acting as a low-pass filter. A Transient Generator creates a detailed voltage transient every time a key is depressed, with Attack, Decay, Sustain and Release sliders, while the AR transient generator works similarly with less detailed control. The ADSR can be set to repeat automatically or only while a key is held, and the Sample and Hold switch either samples the VCO1 setting or, in Noise mode, produces a random output pattern.
+
+  The CAT features a slew of inputs and outputs that expand its capabilities: external control voltages can be routed to VCO1, VCO2 and the VCF, external line-level audio can be fed in, and other synthesizers can be driven from the Gate, ADSR, AR or Keyboard outputs. The 16-note Poly Chain function combines multiple units for up to 16-voice polyphony, with improved reliability and stability over its 1970s and 1980s predecessors.
+specs: |-
+  - Pure analog signal path based on authentic VCO, VCF and VCA designs
+  - Authentic reproduction of the original CAT SRM II circuitry with matched transistors and JFETs
+  - Dual VCO design with Duophonic/Paraphonic mode, both oscillators independently controllable
+  - 4 variable and simultaneous oscillator shapes: sawtooth, triangle, modulated pulse, sub-octave square
+  - VCO2 Sync switch locks VCO1 to VCO2
+  - Oscillators modulated from 6 different sources with 2 modulation depth attenuators
+  - Classic low-pass filter with peak/resonance and self-resonance capability
+  - Filter modulated from 6 different sources with 2 modulation depth attenuators
+  - Dedicated fully analog sine/square wave LFO with delay control
+  - 2 analog envelope generators (ADSR and AR) for modulation of VCF and VCA, ADSR with optional repeat
+  - Sample and Hold with VCO1 or noise source
+  - White noise generator
+  - Pitch bend slider of plus or minus 1 octave, extendable to plus or minus 2 octaves via Octave Shift
+  - Glide (portamento) slider
+  - 16-voice Poly Chain for combining multiple synthesizers
+  - Comprehensive USB/MIDI implementation with MIDI channel and Voice Priority selection
+  - 47 controls
+  - Main module transferable to a standard Eurorack case
+io:
+  - key: q9YYeqaK
+    name: Audio In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: bEJ1xlBN
+    name: VCO1 CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: nZvTE2UU
+    name: VCO2 CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: H1emN7sd
+    name: VCF CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 53CnSMcL
+    name: Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: PcaYqiVS
+    name: ADSR Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: pejAOJlt
+    name: AR Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 5XsuA0Ht
+    name: High Note CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: JLJOey3V
+    name: Low Note CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: ioj1LIMR
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 391ThSsG
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: O2RxvWA3
+    name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: SxmgAsfM
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn-media.empowertribe.com/6c16b8be2ce943c1b752376f0c35479b/QSG_BE_0718-AAH_CAT_WW.pdf
+    type: resource
+    title: Quick Start Guide (PDF)
+  - url: https://cdn-media.empowertribe.com/4483b075e91b0f90c6ab6bbdcb0ac883/Synthtribe-3.2.4.zip
+    type: resource
+    title: SynthTribe App 3.2.4 (Windows)
+  - url: https://cdn-media.empowertribe.com/b833ec314ae73b23acc7493741426ec8/Synthtribe-3.2.4.dmg
+    type: resource
+    title: SynthTribe App 3.2.4 (macOS)
+videos:
+  - provider: youtube
+    videoId: EqCboLUPDC8
+    title: Introducing the CAT Synthesizer
