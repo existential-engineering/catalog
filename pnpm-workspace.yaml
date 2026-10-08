@@ -27,6 +27,11 @@ minimumReleaseAgeExclude:
 #   (launch-editor NTLMv2 disclosure). Patched in vite 8.0.16.
 # - esbuild >=0.28.1: vite/tsx pull esbuild@0.28.0, vulnerable to
 #   GHSA-g7r4-m6w7-qqqr (arbitrary file read via dev server). Patched in 0.28.1.
+# - shell-quote >=1.11.0: @changesets/cli > launch-editor pulls shell-quote
+#   in >=1.8.4 <1.11.0, vulnerable to GHSA-pqg4-j6r4-53mv (critical). Patched
+#   in 1.11.0.
+# - source-map-js >=1.2.2: vitest > vite > postcss pulls source-map-js in
+#   >=1.0.0 <1.2.2, vulnerable to GHSA-68fv-2mgg-jv7q (high). Patched in 1.2.2.
 #
 # No override is needed for postcss or nanoid. They reached this repo through
 # vitest > vite and went stale only because the lockfile had not been
@@ -47,3 +52,5 @@ minimumReleaseAgeExclude:
 overrides:
   vite: ">=8.0.16 <9"
   esbuild: ">=0.28.1"
+  shell-quote: ">=1.11.0"
+  source-map-js: ">=1.2.2"
