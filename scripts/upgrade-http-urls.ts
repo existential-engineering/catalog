@@ -93,6 +93,27 @@ const SECOND_LEVEL_SUFFIXES = new Set([
   "org",
 ]);
 
+/**
+ * Hosting platforms that give each tenant its own subdomain. Under these
+ * the tenant label is the site, so `a.github.io` and `b.github.io` are two
+ * sites and a redirect between them is not an upgrade.
+ */
+const SHARED_HOST_SUFFIXES = [
+  "blogspot.com",
+  "github.io",
+  "gitlab.io",
+  "herokuapp.com",
+  "myshopify.com",
+  "netlify.app",
+  "pages.dev",
+  "storenvy.com",
+  "tumblr.com",
+  "vercel.app",
+  "weebly.com",
+  "wixsite.com",
+  "wordpress.com",
+];
+
 export type Verdict = "upgrade" | "keep" | "skip";
 
 export interface Occurrence {
@@ -139,6 +160,14 @@ export function extractHttpUrls(text: string, file: string): Occurrence[] {
 export function registrableDomain(hostname: string): string {
   const host = hostname.toLowerCase().replace(/\.$/, "");
   if (/^[\d.]+$/.test(host) || host.includes(":")) return host;
+  const shared = SHARED_HOST_SUFFIXES.find((suffix) => host.endsWith(`.${suffix}`));
+  if (shared) {
+    const tenant = host
+      .slice(0, -shared.length - 1)
+      .split(".")
+      .at(-1);
+    return `${tenant}.${shared}`;
+  }
   const labels = host.split(".");
   const tld = labels.at(-1) ?? "";
   const second = labels.at(-2) ?? "";

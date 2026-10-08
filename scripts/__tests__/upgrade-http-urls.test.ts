@@ -50,6 +50,25 @@ describe("registrableDomain", () => {
   });
 });
 
+describe("registrableDomain on shared hosting", () => {
+  it("treats each tenant as its own site", () => {
+    expect(registrableDomain("a.github.io")).toBe("a.github.io");
+    expect(registrableDomain("www.a.weebly.com")).toBe("a.weebly.com");
+    expect(registrableDomain("github.io")).toBe("github.io");
+  });
+
+  it("keeps a cross-tenant redirect from passing as an upgrade", () => {
+    expect(
+      judgeResponse("http://a.github.io/", { status: 200, finalUrl: "https://b.github.io/" })
+        .verdict
+    ).toBe("keep");
+    expect(
+      judgeResponse("http://a.github.io/", { status: 200, finalUrl: "https://a.github.io/" })
+        .verdict
+    ).toBe("upgrade");
+  });
+});
+
 describe("judgeResponse", () => {
   const original = "http://www.example.com/p";
 
