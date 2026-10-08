@@ -20,6 +20,7 @@ details: |-
   STEPS has three functional blocks:
 
   You can either use this as a random stepped CV source or as a repeating 8 stepped CV source. You then can trigger the burst generator to play the 8 step loop or 8 random steps. All of this can use the internal or external clock signals. To get more complex patterns you can daisy chain STEPS modules together by tying together their clocks and sending EOB to TRIG. This way you can generate 16 step patterns (or longer). When first turning on STEPS you will need to run the module in RAND mode for at least 8 steps to fill the shift register with data. A caveat about STEPS:
+
   If a trigger is received off beat from the internal clock, the first step duration will be shortened. S T E P S M A N U A L
 specs: |-
   - Internal clock with rate control and output

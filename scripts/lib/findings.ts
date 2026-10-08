@@ -28,7 +28,7 @@ export const FINDINGS_FILE = "findings.jsonl";
  * The kinds the catalog's own audits produce.
  *
  * A subset: the inbox also takes the kinds the racks import lanes record
- * and the review collector files. These four are the ones a whole-corpus
+ * and the review collector files. These five are the ones a whole-corpus
  * pass can see and a single PR cannot, which is the reason they exist as
  * kinds at all.
  *
@@ -48,6 +48,8 @@ export const FINDING_KINDS = [
   "capability-gap",
   /** A modular entry with no panel width. */
   "missing-hp",
+  /** A `details` or `specs` paragraph too long to read (prose-layout-audit). */
+  "wall-of-text",
 ] as const;
 
 export type FindingKind = (typeof FINDING_KINDS)[number];

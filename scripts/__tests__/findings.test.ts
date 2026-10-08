@@ -12,6 +12,7 @@ import {
   recordFindings,
 } from "../lib/findings.js";
 import { toFindings as powerFindings } from "../power-input-audit.js";
+import { toFindings as proseFindings } from "../prose-layout-audit.js";
 import { toFindings as portFindings } from "../speaker-level-audit.js";
 
 let dir: string;
@@ -39,6 +40,7 @@ describe("the kind strings are the cross-repo contract", () => {
       "mistyped-port",
       "capability-gap",
       "missing-hp",
+      "wall-of-text",
     ]);
   });
 });
@@ -280,6 +282,44 @@ describe("what each audit files, and what it holds back", () => {
     expect(rows[0]!.file).toBe("data/hardware/make-noise-maths.yaml");
   });
 
+  it("files a wall of text once per entry and holds back every probe", () => {
+    // A paragraph over the threshold is a fact about the text. An inline
+    // "A - B - C" is as often three ranges as a list, and a fixable row is
+    // settled by prose-layout:apply, so neither reaches the inbox. Two
+    // walls on one entry are one afternoon for whoever opens it.
+    const base = {
+      collection: "software",
+      slug: "gospel-musicians-talkbox-jr",
+      manufacturer: "gospel-musicians",
+      excerpt: "We are bringing back the classic sound",
+      url: "https://example.com/talkbox",
+    };
+    const rows = proseFindings([
+      { ...base, field: "details", check: "wall", fixable: false, detail: "2,400 characters" },
+      {
+        ...base,
+        field: "translations.de.details",
+        check: "wall",
+        fixable: false,
+        detail: "1,900 characters",
+      },
+      { ...base, field: "details", check: "inline-list", fixable: false, detail: "list" },
+      {
+        ...base,
+        slug: "other",
+        field: "details",
+        check: "soft-breaks",
+        fixable: true,
+        detail: "x",
+      },
+    ]);
+    expect(rows.map((r) => r.key)).toEqual(["wall-of-text:gospel-musicians-talkbox-jr"]);
+    expect(rows[0]!.brand).toBe("gospel-musicians");
+    expect(rows[0]!.file).toBe("data/software/gospel-musicians-talkbox-jr.yaml");
+    expect(rows[0]!.url).toBe("https://example.com/talkbox");
+    expect(rows[0]!.detail).toContain("translations.de.details");
+  });
+
   it("gives every key a stable identity, with no date, run or count in it", () => {
     // findings.ts: one issue per key ever. A key that moves between runs
     // files the same finding again every night into an inbox a person
@@ -321,8 +361,20 @@ describe("what each audit files, and what it holds back", () => {
           detail: "d",
         },
       ]),
+      ...proseFindings([
+        {
+          collection: "hardware",
+          slug: "s",
+          manufacturer: "m",
+          field: "details",
+          check: "wall",
+          fixable: false,
+          detail: "d",
+          excerpt: "e",
+        },
+      ]),
     ];
-    expect(all).toHaveLength(4);
+    expect(all).toHaveLength(5);
     for (const r of all) {
       expect(r.key, r.key).not.toMatch(/\d{4}-\d{2}-\d{2}|\b20\d\d\b/);
       expect(FINDING_KINDS).toContain(r.kind);
@@ -371,8 +423,20 @@ describe("what each audit files, and what it holds back", () => {
           detail: "d",
         },
       ]),
+      ...proseFindings([
+        {
+          collection: "hardware",
+          slug: "s",
+          manufacturer: "m",
+          field: "details",
+          check: "wall",
+          fixable: false,
+          detail: "d",
+          excerpt: "e",
+        },
+      ]),
     ];
-    expect(all).toHaveLength(4);
+    expect(all).toHaveLength(5);
     for (const r of all) {
       expect(r.file, `${r.kind} file`).toBe("data/hardware/s.yaml");
     }

@@ -40,10 +40,15 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 - `pnpm https-upgrade --out <tsv>` - Probe the `https://` form of every
   `http://` URL in `data/` into a review list (`--rows <tsv> --apply` writes
   its `upgrade` rows)
+- `pnpm prose-layout-audit` - Report `details`/`specs` that render as a wall
+  of text (`--tsv` for the review list)
+- `pnpm prose-layout:apply` - Apply the lossless layout fixes (`--write` to
+  apply)
 - `pnpm format:check` - Check formatting
 
-Four of the audits above take `--findings <dir>`: `power-input-audit`,
-`speaker-level-audit`, `capability-gaps` and `dataset:audit`. Each
+Five of the audits above take `--findings <dir>`: `power-input-audit`,
+`speaker-level-audit`, `capability-gaps`, `prose-layout-audit` and
+`dataset:audit`. Each
 appends its findings to `<dir>/findings.jsonl` beside the report it
 already prints, and that file is what the racks repo's
 `file-findings.ts` carries into the `catalog-submissions` inbox, one
@@ -60,7 +65,8 @@ the next run recomputed them, and whoever read the last one was the only
 record that it had been read.
 
 `--findings <dir>` is the durable half. `power-input-audit`,
-`speaker-level-audit`, `capability-gaps` and `dataset:audit` each append
+`speaker-level-audit`, `capability-gaps`, `prose-layout-audit` and
+`dataset:audit` each append
 rows to `<dir>/findings.jsonl` in the shape `scripts/lib/findings.ts`
 defines, and the racks repo's `file-findings.ts` opens one inbox issue
 per row. The terminal report is unchanged: this is an additional sink,
@@ -82,7 +88,10 @@ never a replacement.
   line connectors is not the same as recognising a speaker one
   (`kef-coda-w` carries a "USB-C Inter-Speaker Link" on `usb-c`).
   `capability-gaps` files tier-1 pairs only, for the reason the review
-  tier exists. `dataset:audit` files `modular-missing-hp` and nothing
+  tier exists. `prose-layout-audit` files `wall-of-text` once per entry
+  and nothing else: a paragraph over the threshold is a fact about the
+  text, its other review checks are probes about language, and its
+  fixable rows are settled by `prose-layout:apply`. `dataset:audit` files `modular-missing-hp` and nothing
   else: its other checks name several files at once, so there is no
   single entry to close an issue against.
 - **The kind strings are a cross-repo contract.** The reader drops a row
@@ -320,6 +329,37 @@ specs: |-
 ```
 
 Do NOT use YAML arrays for `details` or `specs`. Do NOT use `|` (use `|-` to strip trailing newlines).
+
+### Prose layout
+
+The build renders `details` and `specs` with `marked`, and Studio shows
+the HTML. Markdown joins lines separated by a single newline into one
+paragraph, renders a four-space indent as a code block and treats `•` as
+text, so an import that scraped a page one block per line ships every
+heading, paragraph and bullet of it as one run-on paragraph. That is the
+wall of text AUREO-1192 was filed against, and nothing caught it, because
+the YAML is valid and only the rendering breaks.
+
+- **One block per paragraph, blank line between.** A line break that is
+  not a blank line is not a break once rendered.
+- **Lists are `- ` items**, never `•`, `●`, `»` or `✓`, and never
+  flattened into a sentence ("- A - B - C", "1. a 2. b 3. c"). Lists of
+  specifications belong in `specs`.
+- **No leftover markup**: HTML tags, entities, `\n` written out, mojibake
+  (`Grandâ` for `Grand®`).
+
+`pnpm prose-layout-audit` reports all of it, each row `fixable` or not, and
+`pnpm prose-layout:apply --write` applies the fixable ones. **The apply step
+only moves whitespace and swaps a glyph for a list marker**: it splits a
+paragraph only when every break in it falls between blocks (the next line
+does not continue in lowercase, the one before does not end on a comma or
+"the"), leaves hard-wrapped prose alone, and proves every rewritten value
+still holds every word in order before it writes. A paragraph over
+`WALL_CHARS` (1,500, four times the corpus median), a flattened list, a
+table scraped one cell per line and mojibake all need someone who has read
+the text, so they go to `docs/reviews/2026-10-prose-layout.tsv` and to the
+inbox as `wall-of-text`, never to a guess. Never shorten or reword a wall
+to fix it: the content is the maker's, only its layout is wrong.
 
 **Hardware I/O entries** use this field order with all fields present:
 
