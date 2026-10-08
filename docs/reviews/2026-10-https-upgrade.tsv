@@ -1,0 +1,482 @@
+# http:// URLs probed over https (AUREO-1191). Read by `pnpm https-upgrade --rows`.
+#
+# verdict  upgrade  https answered 2xx on the same site; the scheme is rewritten
+#          keep     https failed, landed elsewhere or served a parked page (reason says which)
+#          skip     not evidence either way: a refusal, an explicit port, a guarded destination
+#
+# Only `upgrade` rows are written. Delete or re-mark a row to decline it.
+file	line	field	url	verdict	reason
+data/manufacturers/1goodknob.yaml	3	url	http://www.themaschinewarehouse.com	keep	https failed: ENOTFOUND
+data/manufacturers/1st-creative-labs.yaml	3	url	http://www.1stcreativesolutions.co.uk	keep	https failed: ENOTFOUND
+data/manufacturers/acousmodules.yaml	3	url	http://acousmodules.free.fr	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/after-later-audio.yaml	3	url	http://www.afterlateraudio.com	upgrade	https 2xx via https://afterlateraudio.com/
+data/manufacturers/anton-savov.yaml	3	url	http://antonsavov.net	upgrade	https 2xx
+data/manufacturers/antonov-samples.yaml	3	url	http://www.antonovsamples.com	skip	https refused (403); not evidence either way
+data/manufacturers/aquest.yaml	3	url	http://www.a-quest.com	upgrade	https 2xx
+data/manufacturers/archaea.yaml	3	url	http://archaea.co.uk	upgrade	https 2xx
+data/manufacturers/ariescode.yaml	3	url	http://ariescode.com	upgrade	https 2xx
+data/manufacturers/art-vista.yaml	3	url	http://www.artvista.net	upgrade	https 2xx
+data/manufacturers/artsacoustic.yaml	3	url	http://www.artsacoustic.com	upgrade	https 2xx
+data/manufacturers/artvera.yaml	3	url	http://www.artvera-music.com	upgrade	https 2xx
+data/manufacturers/atomic-afro-recordings.yaml	3	url	http://www.atomic-afro.com	keep	https failed: ENOTFOUND
+data/manufacturers/atomosynth.yaml	3	url	http://www.atomosynth.com/	upgrade	https 2xx
+data/manufacturers/audiosyn.yaml	3	url	http://www.audiosyn.com	upgrade	https 2xx via https://audiosyn.com/
+data/manufacturers/aum.yaml	3	url	http://homepage.ntlworld.com	keep	https failed: ENOTFOUND
+data/manufacturers/auricula-software.yaml	3	url	http://www.auriculaonline.com	upgrade	https 2xx
+data/manufacturers/avonsynth.yaml	3	url	http://www.AvonSynth.com	upgrade	https 2xx via https://avonsynth.com/
+data/manufacturers/azeta.yaml	3	url	http://azeta66.altervista.org	keep	https failed: ENOTFOUND
+data/manufacturers/barcode-circuits.yaml	3	url	http://barcodecircuits.net/	keep	https timed out
+data/manufacturers/barton-musical-circuits.yaml	3	url	http://www.bartonmusicalcircuits.com/	upgrade	https 2xx
+data/manufacturers/basement-hum.yaml	3	url	http://www.basementhum.com	keep	https failed: ENOTFOUND
+data/manufacturers/beast-tek.yaml	3	url	http://www.beast-tek.com/	upgrade	https 2xx
+data/manufacturers/beat.yaml	3	url	http://www.beat.de	upgrade	https 2xx
+data/manufacturers/benedict-roff-marsh.yaml	3	url	http://www.benedictroffmarsh.com	upgrade	https 2xx via https://benedictroffmarsh.com/
+data/manufacturers/big-dream-producer.yaml	3	url	http://www.bigdreamproducer.com	keep	https failed: ENOTFOUND
+data/manufacturers/bigwerks.yaml	3	url	http://bigwerks.com	upgrade	https 2xx
+data/manufacturers/binary-bleeps.yaml	3	url	http://www.binarybleeps.com	upgrade	https 2xx
+data/manufacturers/blaknblu.yaml	3	url	http://www.blaknblu.com	upgrade	https 2xx
+data/manufacturers/blood-cells-audio.yaml	3	url	http://www.bloodcellsaudio.com/domixx	upgrade	https 2xx via https://bloodcellsaudio.com/products/domixx
+data/manufacturers/blue-lantern-modules.yaml	3	url	http://www.bluelanternmodules.com/	keep	https failed: ENOTFOUND
+data/manufacturers/bluenoise-plugins.yaml	3	url	http://www.bluenoiseplugins.com	upgrade	https 2xx
+data/manufacturers/bob-perry-audio.yaml	3	url	http://www.bobperry-audio.com	upgrade	https 2xx via https://www.bobperry-audio.com/?v=3a52f3c22ed6
+data/manufacturers/bolder-sounds.yaml	3	url	http://www.boldersounds.com	upgrade	https 2xx
+data/manufacturers/boomplug.yaml	3	url	http://boomplug.co.uk	keep	https failed: ENOTFOUND
+data/manufacturers/bpm-recordings.yaml	3	url	http://sounds.beatport.com	keep	https lands on a different site (www.loopcloud.com)
+data/manufacturers/cgs.yaml	3	url	http://www.cgs.synth.net/	keep	https failed: ENOTFOUND
+data/manufacturers/cliostudios.yaml	3	url	http://www.cliostudios.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/contralogic-productions.yaml	3	url	http://www.contralogic.com	upgrade	https 2xx
+data/manufacturers/control.yaml	3	url	http://ctrl-mod.com	upgrade	https 2xx via https://www.ctrl-mod.com/
+data/manufacturers/copper-traces.yaml	3	url	http://www.coppertracesmusic.com/	upgrade	https 2xx
+data/manufacturers/cosmotronic.yaml	3	url	http://www.cosmotronic.nl	upgrade	https 2xx via https://cosmotronic.nl/
+data/manufacturers/crane-song.yaml	3	url	http://cranesong.com/	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/crypto-cipher.yaml	3	url	http://www.cryptocipher.in	upgrade	https 2xx via https://cryptocipher.in/
+data/manufacturers/cubicaudio.yaml	3	url	http://www.cubic-audio.info	keep	https failed: ENOTFOUND
+data/manufacturers/cubusynth.yaml	3	url	http://www.cubusynth.com	upgrade	https 2xx via https://cubusynth.com/
+data/manufacturers/dapoup.yaml	3	url	http://dapoup.celeonet.fr	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/dario-lupo-daze.yaml	3	url	http://www.dariolupo.com	upgrade	https 2xx
+data/manufacturers/darkware.yaml	3	url	http://www.gersic.com	keep	https lands on a different site (tomgersic.com)
+data/manufacturers/db-audioware.yaml	3	url	http://www.db-audioware.com	upgrade	https 2xx
+data/manufacturers/derknott.yaml	3	url	http://www.derknott.de	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/detroit-underground.yaml	3	url	http://detroitunderground.net	upgrade	https 2xx
+data/manufacturers/devilbytes.yaml	3	url	http://www.devilbytes.de	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/dinsync.yaml	3	url	http://www.dinsync.info/	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/dlab.yaml	3	url	http://www.dlab.ch	upgrade	https 2xx via https://dlab.ch/
+data/manufacturers/docnashsynths.yaml	3	url	http://flexibeatz.weebly.com	upgrade	https 2xx
+data/manufacturers/dovemans.yaml	3	url	http://www.dovemans.com	keep	https failed: ENOTFOUND
+data/manufacturers/drum-werks.yaml	3	url	http://www.drumwerks.com	upgrade	https 2xx
+data/manufacturers/dubturbo.yaml	3	url	http://www.dubturbo.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/error-instruments.yaml	3	url	http://www.errorinstruments.com	skip	https refused (403); not evidence either way
+data/manufacturers/extream-software-development.yaml	3	url	http://www.extreamsd.com	upgrade	https 2xx
+data/manufacturers/ez-sound.yaml	3	url	http://www.ez-sound.com	upgrade	https 2xx
+data/manufacturers/fabled-audio.yaml	3	url	http://fabledaudio.com	upgrade	https 2xx
+data/manufacturers/fatloops.yaml	3	url	http://www.fatloops.com	upgrade	https 2xx via https://fatloops.com/
+data/manufacturers/fieldtone.yaml	3	url	http://www.fieldtone.uk	upgrade	https 2xx
+data/manufacturers/fluffyaudio.yaml	3	url	http://fluffyaudio.com	upgrade	https 2xx
+data/manufacturers/forge-audio-designs.yaml	3	url	http://www.forgeaudiodesigns.com	keep	https failed: ENOTFOUND
+data/manufacturers/fpb.yaml	3	url	http://fpb-synths.de/	upgrade	https 2xx
+data/manufacturers/frank-mantek.yaml	3	url	http://www.beatfactorapp.com	upgrade	https 2xx
+data/manufacturers/future-moments.yaml	3	url	http://future-moments.com	upgrade	https 2xx
+data/manufacturers/gbr-loops.yaml	3	url	http://www.gbrloops.com	upgrade	https 2xx
+data/manufacturers/gerzonic.yaml	3	url	http://www.gerzonic.net	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/gibbon-digital.yaml	3	url	http://www.gibbondigital.com	keep	https failed: ENOTFOUND
+data/manufacturers/granny-s-audio.yaml	3	url	http://www.grannysaudio.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/granted-software.yaml	3	url	http://www.grantedsw.com	upgrade	https 2xx
+data/manufacturers/grayscale.yaml	3	url	http://grayscale.info	upgrade	https 2xx
+data/manufacturers/hawk-virtual-synthesizers.yaml	3	url	http://www.hawkvst.co.za	keep	https failed: ENOTFOUND
+data/manufacturers/hellosamples.yaml	3	url	http://www.hellosamples.com	upgrade	https 2xx via https://hellosamples.com/
+data/manufacturers/hidden-path-audio.yaml	3	url	http://www.hiddenpathaudio.com	upgrade	https 2xx
+data/manufacturers/holocene-electronics.yaml	3	url	http://www.holocene-electronics.net	upgrade	https 2xx via https://holocene-electronics.net/
+data/manufacturers/hydrogen.yaml	3	url	http://hydrogen-music.org/	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/iform-software.yaml	3	url	http://www.autobacktrack.com	keep	https failed: ENOTFOUND
+data/manufacturers/ijdata.yaml	3	url	http://www.ijdata.com	upgrade	https 2xx
+data/manufacturers/infinite-machinery.yaml	3	url	http://www.infinitemachinery.com	skip	https refused (403); not evidence either way
+data/manufacturers/insert-piz-here.yaml	3	url	http://www.thepiz.org	keep	https timed out
+data/manufacturers/io-instruments.yaml	3	url	http://www.io-instruments.de	upgrade	https 2xx via https://io-instruments.de/
+data/manufacturers/jazzmutant.yaml	3	url	http://www.jazzmutant.com	keep	https failed: ENOTFOUND
+data/manufacturers/jc-productionz.yaml	3	url	http://jcproductionz.com	keep	https timed out
+data/manufacturers/jeremy-jurksztowicz.yaml	3	url	http://www.arkonnekt.com	keep	https failed: ENOTFOUND
+data/manufacturers/klanglabde.yaml	3	url	http://www.klanglab.de	skip	https refused (403); not evidence either way
+data/manufacturers/knobfarm.yaml	3	url	http://knob.farm	upgrade	https 2xx
+data/manufacturers/kriminal.yaml	3	url	http://www.kara-moon.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/lab-one-recordings.yaml	3	url	http://lab-one-recordings.co.uk	upgrade	https 2xx
+data/manufacturers/larix-elektro.yaml	3	url	http://www.larix-elektro.com/	upgrade	https 2xx
+data/manufacturers/leap-into-void.yaml	3	url	http://liv.mikaeladle.se	upgrade	https 2xx
+data/manufacturers/livestock-electronics.yaml	3	url	http://www.livestockelectronics.com	upgrade	https 2xx via https://livestockelectronics.com/
+data/manufacturers/lpzwmodules.yaml	3	url	http://leipzigwest.org	upgrade	https 2xx
+data/manufacturers/magnetic-freak.yaml	3	url	http://www.magnetic-freak.com	upgrade	https 2xx via https://magnetic-freak.com/
+data/manufacturers/manikk.yaml	3	url	http://www.manikk.com	upgrade	https 2xx via https://manikk.com/
+data/manufacturers/manx.yaml	3	url	http://www.manxsynthesizers.epizy.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/mario-gil.yaml	3	url	http://www.audiostudiomanager.com	keep	https failed: ENOTFOUND
+data/manufacturers/marvin.yaml	3	url	http://marvin.starfree.jp	keep	https timed out
+data/manufacturers/matthias-becker.yaml	3	url	http://helium.freebasic.de	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/medic-modules.yaml	3	url	http://analoguesolutions.com	upgrade	https 2xx via https://www.analoguesolutions.com/
+data/manufacturers/mellotron.yaml	3	url	http://www.mellotron.com	upgrade	https 2xx
+data/manufacturers/mental-noise.yaml	3	url	http://linktr.ee/mentalnoise	upgrade	https 2xx
+data/manufacturers/metatronic-mods.yaml	3	url	http://www.metatronicmods.com	keep	https failed: ENOTFOUND
+data/manufacturers/mh-eurorack.yaml	3	url	http://database-help.co.uk/mheurorack/	keep	https lands on a different site (mheurorack.com)
+data/manufacturers/midikarval.yaml	3	url	http://www.midikarval.net	upgrade	https 2xx
+data/manufacturers/mike-norrish.yaml	3	url	http://www.armchairguitarist.com	upgrade	https 2xx via https://armchairguitarist.com/
+data/manufacturers/mind-doctors-make-acid.yaml	3	url	http://www.minddoctorsmakeacid.com	keep	https failed: ENOTFOUND
+data/manufacturers/mourack.yaml	3	url	http://mzourack.com	upgrade	https 2xx
+data/manufacturers/mtg.yaml	3	url	http://www.mtg.upf.edu	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/muon-software.yaml	3	url	http://www.muon-software.com	upgrade	https 2xx
+data/manufacturers/nay-seven.yaml	3	url	http://nay-seven.com	upgrade	https 2xx
+data/manufacturers/noh-modular.yaml	3	url	http://nohmodular.com	upgrade	https 2xx
+data/manufacturers/noisetoysound.yaml	3	url	http://www.noisetoysound.org.uk	keep	https failed: ENOTFOUND
+data/manufacturers/nucleus-soundlab.yaml	3	url	http://www.nucleus-soundlab.com	upgrade	https 2xx via https://nucleus-soundlab.com/
+data/manufacturers/oficina-de-sonido.yaml	3	url	http://www.oficinadesonido.org	upgrade	https 2xx
+data/manufacturers/one-red-dog.yaml	3	url	http://www.onereddog.com.au	upgrade	https 2xx
+data/manufacturers/open-studio-networks.yaml	3	url	http://openstudionetworks.com	keep	https failed: ENOTFOUND
+data/manufacturers/overtone.yaml	3	url	http://overtone.github.io	upgrade	https 2xx
+data/manufacturers/pechenegfx.yaml	3	url	http://pechenegfx.org	upgrade	https 2xx
+data/manufacturers/percussa.yaml	3	url	http://www.percussa.com/	upgrade	https 2xx
+data/manufacturers/playgrind.yaml	3	url	http://playgrind.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/pluggotic.yaml	3	url	http://www.sampleism.com	keep	https lands on a different site (www.lootaudio.com)
+data/manufacturers/plughugger.yaml	3	url	http://www.plughugger.com	upgrade	https 2xx
+data/manufacturers/plum-audio.yaml	3	url	http://www.plum-audio.com	upgrade	https 2xx
+data/manufacturers/pro-audio-vault.yaml	3	url	http://www.proaudiovault.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/projectone.yaml	3	url	http://p1.rocks.it	keep	https failed: ENOTFOUND
+data/manufacturers/prolody.yaml	3	url	http://focusone-plugin.com	keep	https returned 523
+data/manufacturers/pure-data.yaml	3	url	http://puredata.info	upgrade	https 2xx
+data/manufacturers/qosmo-modular.yaml	3	url	http://www.qosmomodular.com/	upgrade	https 2xx
+data/manufacturers/rattly-raw.yaml	3	url	http://www.rattlyandraw.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/raw-analogue-sound.yaml	3	url	http://www.rawanaloguesound.com/	upgrade	https 2xx
+data/manufacturers/retro-sampling.yaml	3	url	http://www.retrosampling.se	upgrade	https 2xx
+data/manufacturers/reverse-landfill.yaml	3	url	http://www.reverselandfill.org	upgrade	https 2xx via https://www.reverselandfill.org/?v=0b3b97fa6688
+data/manufacturers/rides-in-the-storm.yaml	3	url	http://www.rides-in-the-storm.de	upgrade	https 2xx via https://rides-in-the-storm.de/
+data/manufacturers/ritual-electronics.yaml	3	url	http://ritualelectronics.com/	upgrade	https 2xx via https://www.ritualelectronics.com/shop
+data/manufacturers/river.yaml	3	url	http://riversynths.com/	keep	https failed: ENOTFOUND
+data/manufacturers/robotplanet-dk.yaml	3	url	http://www.robotplanet.dk	upgrade	https 2xx
+data/manufacturers/rossignol-studio.yaml	3	url	http://www.rossignol-studio.fr	upgrade	https 2xx via https://www.rossignol-studio.fr/fr/
+data/manufacturers/rumpelrausch-taips.yaml	3	url	http://rumpelrausch.de.vu	keep	https failed: ENOTFOUND
+data/manufacturers/s-v-studio.yaml	3	url	http://samplebit.com	upgrade	https 2xx
+data/manufacturers/schenkwork.yaml	3	url	http://schenkwork.storenvy.com/products/30400447-tributary	keep	https sends a deep link to the home page (https://www.storenvy.com/?utm_campaign=store404redirect)
+data/manufacturers/scopic-modular.yaml	3	url	http://www.scopicmodular.com	upgrade	https 2xx
+data/manufacturers/scrapcode-modular.yaml	3	url	http://www.scrapcode.co.uk	upgrade	https 2xx
+data/manufacturers/secret-base-design.yaml	3	url	http://secretbasedesign.com	upgrade	https 2xx
+data/manufacturers/seelake.yaml	3	url	http://www.seelake.it	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/seer-systems.yaml	3	url	http://www.seersystems.com	upgrade	https 2xx
+data/manufacturers/semerika.yaml	3	url	http://www.semerika.com	upgrade	https 2xx
+data/manufacturers/seok.yaml	3	url	http://www.escapefromnoise.com	upgrade	https 2xx via https://escapefromnoise.com/sv/
+data/manufacturers/setonixsynth.yaml	3	url	http://setonixsynth.com/shop	upgrade	https 2xx via https://www.setonixsynth.com/shop
+data/manufacturers/shuriken.yaml	3	url	http://www.shuriken.se	upgrade	https 2xx
+data/manufacturers/sismo.yaml	3	url	http://www.sismo.net.br	keep	https failed: ENOTFOUND
+data/manufacturers/skull-circuits.yaml	3	url	http://www.skullandcircuits.com	upgrade	https 2xx
+data/manufacturers/softknobs.yaml	3	url	http://www.softknobs.com	upgrade	https 2xx
+data/manufacturers/solcito-m-sica.yaml	3	url	http://solcitomusica.blogspot.com.ar	keep	https lands on a different site (solcitomusica.blogspot.com)
+data/manufacturers/sonic-engineering.yaml	3	url	http://www.kellyindustries.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/soundbytes.yaml	3	url	http://www.soundbytes.de	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/sounds-and-effects.yaml	3	url	http://soundsandeffects.com	upgrade	https 2xx
+data/manufacturers/speargear.yaml	3	url	http://speargear.co.nr	keep	https lands on a different site (ellisvlad.co.nr)
+data/manufacturers/spike-stent.yaml	3	url	http://www.markspikestent.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/stem-modular.yaml	3	url	http://www.stemmodular.com	upgrade	https 2xx
+data/manufacturers/string-theories.yaml	3	url	http://www.stringtheories.net	keep	https failed: ENOTFOUND
+data/manufacturers/submatrix.yaml	3	url	http://submatrixaudio.com	upgrade	https 2xx
+data/manufacturers/sunset-sound.yaml	3	url	http://www.sunsetsound.com	upgrade	https 2xx
+data/manufacturers/sunsine-audio.yaml	3	url	http://www.sunsineaudio.com	keep	https timed out
+data/manufacturers/synquanon.yaml	3	url	http://www.synquanon.com	upgrade	https 2xx
+data/manufacturers/synth-kiiwi.yaml	3	url	http://synthkiiwi.c1.biz	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/syntler.yaml	3	url	http://www.syntler.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/taleweaver-orchestra.yaml	3	url	http://www.taleweaver-orchestra.de/	keep	https failed: ENOTFOUND
+data/manufacturers/teragon-audio.yaml	3	url	http://teragonaudio.com	upgrade	https 2xx
+data/manufacturers/thawney.yaml	3	url	http://www.thawney.com	upgrade	https 2xx
+data/manufacturers/the-sound-department-austin.yaml	3	url	http://sound-dept.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/the-sound-guy.yaml	3	url	http://www.sfxmachine.com	upgrade	https 2xx
+data/manufacturers/threetom-modular.yaml	3	url	http://www.threetom.com	upgrade	https 2xx
+data/manufacturers/tre-modular.yaml	3	url	http://www.tremodular.com	upgrade	https 2xx via https://tremodular.com/
+data/manufacturers/trilling.yaml	3	url	http://www.trillingsynths.com	upgrade	https 2xx
+data/manufacturers/twang-modular.yaml	3	url	http://www.twangmodular.com	upgrade	https 2xx via https://twangmodular.com/
+data/manufacturers/ufo-modular.yaml	3	url	http://ufomodular.com	keep	https timed out
+data/manufacturers/uglyplugins.yaml	3	url	http://www.uglyplugins.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/void-modular.yaml	3	url	http://WWW.VOIDMODULAR.COM	keep	https returned 404
+data/manufacturers/voltkitchen.yaml	3	url	http://glenstegner.com	skip	https refused (403); not evidence either way
+data/manufacturers/water-resist-synths.yaml	3	url	http://www.liefactory.org	keep	https failed: ENOTFOUND
+data/manufacturers/way-music.yaml	3	url	http://rreplay.com	upgrade	https 2xx
+data/manufacturers/weatherm.yaml	3	url	http://www.weatherm.net	keep	https returned 404
+data/manufacturers/west-oakland-music-systems.yaml	3	url	http://westoaklandmusicsystems.com/	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/white-noise-audio.yaml	3	url	http://www.bleepboxapp.com	keep	https timed out
+data/manufacturers/whitelabel.yaml	3	url	http://dazdisley.co.uk	upgrade	https 2xx
+data/manufacturers/wiz.yaml	3	url	http://www.wiz.nildram.co.uk	keep	https failed: ENOTFOUND
+data/manufacturers/wmd.yaml	3	url	http://www.wmdevices.com/	upgrade	https 2xx via https://wmdevices.com/
+data/manufacturers/wobblophones.yaml	3	url	http://www.wobblophones.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/wok.yaml	3	url	http://www.wokwave.com	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/manufacturers/zebra-synth.yaml	3	url	http://ZebraSynth.net	keep	https timed out
+data/manufacturers/zephod.yaml	3	url	http://www.blokmodular.com	keep	https lands on a different site (www.hugedomains.com)
+data/manufacturers/zerosum-inertia.yaml	3	url	http://zerosuminertia.com/	keep	https timed out
+data/manufacturers/zob.yaml	3	url	http://zlobmodular.com	upgrade	https 2xx
+data/software/audiomulch-audiomulch.yaml	83	url	http://www.audiomulch.com/info/release-notes#version_2.2.5_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	87	url	http://www.audiomulch.com/info/release-notes#version_2.2.4_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	91	url	http://www.audiomulch.com/info/release-notes#version_2.2.3_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	95	url	http://www.audiomulch.com/info/release-notes#version_2.2.2_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	99	url	http://www.audiomulch.com/info/release-notes#version_2.2.1_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	103	url	http://www.audiomulch.com/info/release-notes#version_2.2.0_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	107	url	http://www.audiomulch.com/info/release-notes#version_2.1.2_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	111	url	http://www.audiomulch.com/info/release-notes#version_2.1.1_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	115	url	http://www.audiomulch.com/info/release-notes#version_2.1.0_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	119	url	http://www.audiomulch.com/info/release-notes#version_2.0.4_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	123	url	http://www.audiomulch.com/info/release-notes#version_2.0.3_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	127	url	http://www.audiomulch.com/info/release-notes#version_2.0.2_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	131	url	http://www.audiomulch.com/info/release-notes#version_2.0.1_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiomulch-audiomulch.yaml	134	url	http://www.audiomulch.com/info/release-notes#version_2.0.0_update	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/audiorealism-redominator.yaml	51	url	http://303clones.com/redominator/ReDominator_Manual_1_0p.pdf	upgrade	https 2xx
+data/software/audiorealism-redominator.yaml	54	url	http://303clones.com/redominator/junoconv.html	upgrade	https 2xx
+data/software/audiorealism-redominator.yaml	66	url	http://www.musicradar.com/reviews/tech/audiorealism-redominator-597336/	upgrade	https 2xx via https://www.musicradar.com/reviews/tech/audiorealism-redominator-597336
+data/software/audiorealism-redominator.yaml	69	url	http://www.gearjunkies.com/news_info.php?news_id=9493	keep	https returned 404
+data/software/crane-song-peacock.yaml	13	url	http://cranesong.com/peacock.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/crane-song-peacock.yaml	36	url	http://cranesong.com/Peacock_manual_VER_1.05.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/crane-song-peacock.yaml	39	url	http://cranesong.com/digital_source.wav	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/crane-song-peacock.yaml	42	url	http://cranesong.com/vinyl_shibata_stylus.wav	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/crane-song-peacock.yaml	45	url	http://cranesong.com/Peacock_shibata_pre_set.wav	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/crane-song-phoenix-ii.yaml	17	url	http://cranesong.com/phoenix_II.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/crane-song-phoenix-ii.yaml	43	url	http://cranesong.com/phoenix_II_manual_VER_1.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/crane-song-phoenix.yaml	15	url	http://cranesong.com/phoenix.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/crane-song-phoenix.yaml	39	url	http://cranesong.com/phoenix_manual_ver3.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/crane-song-phoenix.yaml	42	url	http://cranesong.com/Phoenix_Resolution.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/crane-song-phoenix.yaml	45	url	http://cranesong.com/phoenix_review_tape_op.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/hydrogen-hydrogen.yaml	59	url	http://hydrogen-music.org/	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/software/tokyo-dawn-labs-tdr-feedback-compressor-2.yaml	35	url	http://www.tokyodawn.net/labs/TDR%20Feedback%20Compressor%20II%20-%20Manual.pdf	upgrade	https 2xx
+data/software/tokyo-dawn-labs-tdr-feedback-compressor.yaml	27	url	http://www.tokyodawn.net/labs/TDR%20Feedback%20Compressor%20-%20Manual.pdf	upgrade	https 2xx
+data/software/tokyo-dawn-labs-vladg-molot-compressor.yaml	29	url	http://www.tokyodawn.net/labs/vladgsound/molot-en.pdf	upgrade	https 2xx
+data/software/tokyo-dawn-labs-vladg-molot-compressor.yaml	38	url	http://www.tokyodawn.net/labs/vladgsound/molot-ru.pdf	upgrade	https 2xx
+data/hardware/after-later-audio-bartender.yaml	10	url	http://www.afterlateraudio.com/products/bartender	upgrade	https 2xx via https://afterlateraudio.com/products/bartender
+data/hardware/after-later-audio-benjolin-v2.yaml	9	url	http://www.afterlateraudio.com/products/benjolin-v2	upgrade	https 2xx via https://afterlateraudio.com/products/benjolin-v2
+data/hardware/after-later-audio-bleep-bloop-2000.yaml	9	url	http://www.afterlateraudio.com/products/bleep-bloop-2000	upgrade	https 2xx via https://afterlateraudio.com/products/bleep-bloop-2000
+data/hardware/after-later-audio-blend.yaml	9	url	http://www.afterlateraudio.com/products/blend	upgrade	https 2xx via https://afterlateraudio.com/products/blend
+data/hardware/after-later-audio-bosc.yaml	9	url	http://www.afterlateraudio.com/products/bosc	upgrade	https 2xx via https://afterlateraudio.com/products/bosc
+data/hardware/after-later-audio-boulder-folder.yaml	11	url	http://www.afterlateraudio.com/products/boulder-folder-pedal	upgrade	https 2xx via https://afterlateraudio.com/products/boulder-folder-pedal
+data/hardware/after-later-audio-brooks.yaml	10	url	http://www.afterlateraudio.com/products/brooks	upgrade	https 2xx via https://afterlateraudio.com/products/brooks
+data/hardware/after-later-audio-canyon.yaml	9	url	http://www.afterlateraudio.com/products/canyon	upgrade	https 2xx via https://afterlateraudio.com/products/canyon
+data/hardware/after-later-audio-cascades.yaml	10	url	http://www.afterlateraudio.com/products/cascades	upgrade	https 2xx via https://afterlateraudio.com/products/cascades
+data/hardware/after-later-audio-cast-iron.yaml	9	url	http://www.afterlateraudio.com/products/cast-iron	upgrade	https 2xx via https://afterlateraudio.com/products/cast-iron
+data/hardware/after-later-audio-cloverleaf.yaml	9	url	http://www.afterlateraudio.com/products/cloverleaf	upgrade	https 2xx via https://afterlateraudio.com/products/cloverleaf
+data/hardware/after-later-audio-compactor.yaml	11	url	http://www.afterlateraudio.com/products/compactor	upgrade	https 2xx via https://afterlateraudio.com/products/compactor
+data/hardware/after-later-audio-cumulus.yaml	9	url	http://www.afterlateraudio.com/products/cumulus	upgrade	https 2xx via https://afterlateraudio.com/products/cumulus
+data/hardware/after-later-audio-currents.yaml	9	url	http://www.afterlateraudio.com/products/currents	upgrade	https 2xx via https://afterlateraudio.com/products/currents
+data/hardware/after-later-audio-darv.yaml	9	url	http://www.afterlateraudio.com/products/darv	upgrade	https 2xx via https://afterlateraudio.com/products/darv
+data/hardware/after-later-audio-dice.yaml	8	url	http://www.afterlateraudio.com/products/dice	upgrade	https 2xx via https://afterlateraudio.com/products/dice
+data/hardware/after-later-audio-dirty-laundry.yaml	12	url	http://www.afterlateraudio.com/products/dirty-laundry	upgrade	https 2xx via https://afterlateraudio.com/products/dirty-laundry
+data/hardware/after-later-audio-dual-vca-dvca-1u-intellijel-format.yaml	9	url	http://www.afterlateraudio.com/products/dual-vca-dvca-1u-intellijel-format	upgrade	https 2xx via https://afterlateraudio.com/products/dual-vca-dvca-1u-intellijel-format
+data/hardware/after-later-audio-dvca.yaml	9	url	http://www.afterlateraudio.com/products/dvca	upgrade	https 2xx via https://afterlateraudio.com/products/dvca
+data/hardware/after-later-audio-enigma-expander-for-alan-and-benjolin-v2.yaml	9	url	http://www.afterlateraudio.com/products/enigma-expander-for-micro-turing-machine-alan	upgrade	https 2xx via https://afterlateraudio.com/products/enigma-expander-for-micro-turing-machine-alan
+data/hardware/after-later-audio-envy.yaml	9	url	http://www.afterlateraudio.com/products/envy	upgrade	https 2xx via https://afterlateraudio.com/products/envy
+data/hardware/after-later-audio-ffs.yaml	12	url	http://www.afterlateraudio.com/products/ffs	upgrade	https 2xx via https://afterlateraudio.com/products/ffs
+data/hardware/after-later-audio-filthy-1u.yaml	10	url	http://www.afterlateraudio.com/products/filthy-1u	upgrade	https 2xx via https://afterlateraudio.com/products/filthy-1u
+data/hardware/after-later-audio-filthy.yaml	10	url	http://www.afterlateraudio.com/products/filthy	upgrade	https 2xx via https://afterlateraudio.com/products/filthy
+data/hardware/after-later-audio-flip.yaml	9	url	http://www.afterlateraudio.com/products/flip	upgrade	https 2xx via https://afterlateraudio.com/products/flip
+data/hardware/after-later-audio-for-fuzz-sake-pedal.yaml	9	url	http://www.afterlateraudio.com/products/for-fuzz-sake-pedal	upgrade	https 2xx via https://afterlateraudio.com/products/for-fuzz-sake-pedal
+data/hardware/after-later-audio-for-fuzz-sake-pedal.yaml	50	url	http://www.afterlateraudio.com/products/for-fuzz-sake-grey-pedal	upgrade	https 2xx via https://afterlateraudio.com/products/for-fuzz-sake-grey-pedal
+data/hardware/after-later-audio-fuse.yaml	9	url	http://www.afterlateraudio.com/products/fuse	upgrade	https 2xx via https://afterlateraudio.com/products/fuse
+data/hardware/after-later-audio-g-t-gates-and-triggers-1u-intellijel-format.yaml	9	url	http://www.afterlateraudio.com/products/gt-gates-and-triggers-1u-intellijel-format	upgrade	https 2xx via https://afterlateraudio.com/products/gt-gates-and-triggers-1u-intellijel-format
+data/hardware/after-later-audio-g-t-gates-and-triggers.yaml	9	url	http://www.afterlateraudio.com/products/gt-gates-and-triggers	upgrade	https 2xx via https://afterlateraudio.com/products/gt-gates-and-triggers
+data/hardware/after-later-audio-hello-world.yaml	9	url	http://www.afterlateraudio.com/products/hello-world-pedal	upgrade	https 2xx via https://afterlateraudio.com/products/hello-world-pedal
+data/hardware/after-later-audio-keanu.yaml	9	url	http://www.afterlateraudio.com/products/keanu	upgrade	https 2xx via https://afterlateraudio.com/products/keanu
+data/hardware/after-later-audio-light-rail-pair.yaml	9	url	http://www.afterlateraudio.com/products/light-rail-pair	upgrade	https 2xx via https://afterlateraudio.com/products/light-rail-pair
+data/hardware/after-later-audio-merge.yaml	8	url	http://www.afterlateraudio.com/products/merge	upgrade	https 2xx via https://afterlateraudio.com/products/merge
+data/hardware/after-later-audio-mingles.yaml	8	url	http://www.afterlateraudio.com/products/mingles	upgrade	https 2xx via https://afterlateraudio.com/products/mingles
+data/hardware/after-later-audio-mult-2.yaml	9	url	http://www.afterlateraudio.com/products/mult	upgrade	https 2xx via https://afterlateraudio.com/products/mult
+data/hardware/after-later-audio-mult.yaml	9	url	http://www.afterlateraudio.com/products/mult-1u-intellijel-format	upgrade	https 2xx via https://afterlateraudio.com/products/mult-1u-intellijel-format
+data/hardware/after-later-audio-ornate-criminal.yaml	9	url	http://www.afterlateraudio.com/products/ornate-criminal	upgrade	https 2xx via https://afterlateraudio.com/products/ornate-criminal
+data/hardware/after-later-audio-popple.yaml	11	url	http://www.afterlateraudio.com/products/popple-presale	upgrade	https 2xx via https://afterlateraudio.com/products/popple-presale
+data/hardware/after-later-audio-qarv.yaml	9	url	http://www.afterlateraudio.com/products/qarv	upgrade	https 2xx via https://afterlateraudio.com/products/qarv
+data/hardware/after-later-audio-send-vca.yaml	7	url	http://www.afterlateraudio.com/products/send-vca	upgrade	https 2xx via https://afterlateraudio.com/products/send-vca
+data/hardware/after-later-audio-sends.yaml	9	url	http://www.afterlateraudio.com/products/sends	upgrade	https 2xx via https://afterlateraudio.com/products/sends
+data/hardware/after-later-audio-shth-1u.yaml	9	url	http://www.afterlateraudio.com/products/shth-1u	upgrade	https 2xx via https://afterlateraudio.com/products/shth-1u
+data/hardware/after-later-audio-shth.yaml	9	url	http://www.afterlateraudio.com/products/shth	upgrade	https 2xx via https://afterlateraudio.com/products/shth
+data/hardware/after-later-audio-smoosher.yaml	9	url	http://www.afterlateraudio.com/products/smoosher	upgrade	https 2xx via https://afterlateraudio.com/products/smoosher
+data/hardware/after-later-audio-stairs.yaml	9	url	http://www.afterlateraudio.com/products/stairs	upgrade	https 2xx via https://afterlateraudio.com/products/stairs
+data/hardware/after-later-audio-steps-1u.yaml	8	url	http://www.afterlateraudio.com/products/steps-1u	upgrade	https 2xx via https://afterlateraudio.com/products/steps-1u
+data/hardware/after-later-audio-steps.yaml	8	url	http://www.afterlateraudio.com/products/steps	upgrade	https 2xx via https://afterlateraudio.com/products/steps
+data/hardware/after-later-audio-sum-inv.yaml	7	url	http://www.afterlateraudio.com/products/sum-inv	upgrade	https 2xx via https://afterlateraudio.com/products/sum-inv
+data/hardware/after-later-audio-the-force.yaml	7	url	http://www.afterlateraudio.com/products/the-force	upgrade	https 2xx via https://afterlateraudio.com/products/the-force
+data/hardware/after-later-audio-threads-1u.yaml	8	url	http://www.afterlateraudio.com/products/threads-1u	upgrade	https 2xx via https://afterlateraudio.com/products/threads-1u
+data/hardware/after-later-audio-tilt.yaml	10	url	http://www.afterlateraudio.com/products/tilt	upgrade	https 2xx via https://afterlateraudio.com/products/tilt
+data/hardware/after-later-audio-typhoon.yaml	9	url	http://www.afterlateraudio.com/products/typhoon	upgrade	https 2xx via https://afterlateraudio.com/products/typhoon
+data/hardware/after-later-audio-uburst.yaml	8	url	http://www.afterlateraudio.com/products/uburst	upgrade	https 2xx via https://afterlateraudio.com/products/uburst
+data/hardware/after-later-audio-ugrids.yaml	7	url	http://www.afterlateraudio.com/products/ugrids	upgrade	https 2xx via https://afterlateraudio.com/products/ugrids
+data/hardware/after-later-audio-usb-2ch.yaml	7	url	http://www.afterlateraudio.com/products/usb-2ch	upgrade	https 2xx via https://afterlateraudio.com/products/usb-2ch
+data/hardware/after-later-audio-utides-v2.yaml	8	url	http://www.afterlateraudio.com/products/utides-v2	upgrade	https 2xx via https://afterlateraudio.com/products/utides-v2
+data/hardware/after-later-audio-valley.yaml	10	url	http://www.afterlateraudio.com/products/valley	upgrade	https 2xx via https://afterlateraudio.com/products/valley
+data/hardware/after-later-audio-warp-drive.yaml	7	url	http://www.afterlateraudio.com/products/warp-drive	upgrade	https 2xx via https://afterlateraudio.com/products/warp-drive
+data/hardware/after-later-audio-waves.yaml	7	url	http://www.afterlateraudio.com/products/waves	upgrade	https 2xx via https://afterlateraudio.com/products/waves
+data/hardware/alternate-mode-ktmp1.yaml	18	prose	http://www.katpercussion.com	upgrade	https 2xx
+data/hardware/befaco-percall.yaml	177	url	http://befaco.org/docs/Percall/Percall_V1_User_Manual.pdf	upgrade	https 2xx
+data/hardware/benchmark-dac1-usb-digital-to-analog-converter.yaml	96	url	http://cdn.shopify.com/s/files/1/0321/7609/files/dac1-usb_spec_sheet_0.pdf	upgrade	https 2xx
+data/hardware/burl-audio-b1-mic-pres.yaml	67	url	http://tapeop.com/reviews/gear/111/b1-b1d-500-series-mic-preamps/	upgrade	https 2xx via https://tapeop.com/reviews/gear/111/b1-b1d-500-series-mic-preamps
+data/hardware/burl-audio-b2-bomber-adc.yaml	118	url	http://tapeop.com/reviews/gear/79/b2-bomber-adc-dac/	upgrade	https 2xx via https://tapeop.com/reviews/gear/79/b2-bomber-adc-dac
+data/hardware/burl-audio-b2-bomber-dac.yaml	103	url	http://tapeop.com/reviews/gear/79/b2-bomber-adc-dac/	upgrade	https 2xx via https://tapeop.com/reviews/gear/79/b2-bomber-adc-dac
+data/hardware/burl-audio-b26-orca.yaml	199	url	http://www.tapeop.com/reviews/gear/102/b26-orca-monitor-controller/	upgrade	https 2xx via https://tapeop.com/reviews/gear/102/b26-orca-monitor-controller
+data/hardware/burl-audio-b32-vancouver.yaml	42	url	http://tapeop.com/reviews/gear/99/b32-vancouver-mix-bus/	upgrade	https 2xx via https://tapeop.com/reviews/gear/99/b32-vancouver-mix-bus
+data/hardware/burl-audio-b80-mothership.yaml	71	url	http://tapeop.com/reviews/gear/84/b80-mothership/	upgrade	https 2xx via https://tapeop.com/reviews/gear/84/b80-mothership
+data/hardware/chase-bliss-gravitas.yaml	93	url	http://chaseblissaudio.com/wp-content/uploads/2016/08/CBA_GravitasMidiSheet-Web.pdf	keep	https timed out
+data/hardware/crane-song-avocet-iia.yaml	5	url	http://cranesong.com/avocet.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-avocet-iia.yaml	36	url	http://cranesong.com/AVOCET_IIA_VER2.1.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-avocet-iia.yaml	39	url	http://cranesong.com/avocet_manual_rev8.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-avocet-iia.yaml	42	url	http://cranesong.com/Avocet_PAR.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-avocet-iia.yaml	45	url	http://cranesong.com/AVOCET_Resolution.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-avocet-iia.yaml	48	url	http://cranesong.com/Avocet2Review.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-egret.yaml	7	url	http://cranesong.com/egret.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-egret.yaml	38	url	http://cranesong.com/EGRET%20MANUAL%20ver1_1.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-falcon.yaml	7	url	http://cranesong.com/FALCON.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-falcon.yaml	29	url	http://cranesong.com/FALCON_MANUAL_1.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-flamingo.yaml	5	url	http://cranesong.com/flamingo.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-flamingo.yaml	29	url	http://cranesong.com/flamingo_manual_ver.1_1.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-flamingo.yaml	32	url	http://cranesong.com/FLAMINGO_PAR.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-hedd-quantum.yaml	5	url	http://cranesong.com/Hedd_Quantum.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-hedd-quantum.yaml	30	url	http://cranesong.com/HEDD_QUANTUM_MANUAL_VER1.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-hedd-quantum.yaml	33	url	http://cranesong.com/hedd_quantum_a_first_look.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-ibis.yaml	7	url	http://cranesong.com/ibis.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-ibis.yaml	53	url	http://cranesong.com/ibis_manual_rev1.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-ibis.yaml	56	url	http://cranesong.com/IBIS_PAR.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-ibis.yaml	59	url	http://cranesong.com/IBIS_Resolution.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-insigna.yaml	7	url	http://cranesong.com/INSIGNA.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-insigna.yaml	24	url	http://cranesong.com/insigna_PRO_08_15_Crane%20Song.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-insigna.yaml	27	url	http://cranesong.com/insigna_manual%20_ver_1.0.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-interstellar.yaml	7	url	http://cranesong.com/INTERSTELLAR.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-interstellar.yaml	161	url	http://cranesong.com/INTERSTELLAR_MANUAL.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-interstellar.yaml	164	url	http://cranesong.com/Cranesong_Interstellar_2.9.96.5.zip	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-solaris-quantum.yaml	7	url	http://cranesong.com/SOLARIS_QUANTUM.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-solaris-quantum.yaml	104	url	http://cranesong.com/solaris_manual_version_1_2.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-solaris-quantum.yaml	107	url	http://cranesong.com/CraneSongUSBDriver-1.0.zip	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-spider.yaml	8	url	http://cranesong.com/spider.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-spider.yaml	39	url	http://cranesong.com/spider_manual_ver1.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-spider.yaml	42	url	http://cranesong.com/SPIDER_PAR.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-stc-8.yaml	12	url	http://cranesong.com/stc-8.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-stc-8.yaml	81	url	http://cranesong.com/stc-8_manual_ver1.2.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-stc-8.yaml	84	url	http://cranesong.com/STC8_REVIEW_BARRY_CLEVELAND.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-stc-8.yaml	87	url	http://cranesong.com/STC8_REVIEW_EDDIE.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-syren.yaml	5	url	http://cranesong.com/SYREN.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-syren.yaml	25	url	http://cranesong.com/SYREN_MANUAL.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-titan-2.yaml	13	url	http://cranesong.com/titan_2.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-titan-2.yaml	50	url	http://cranesong.com/TITAN_SQUARED.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-trakker.yaml	10	url	http://cranesong.com/trakker.html	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-trakker.yaml	29	url	http://cranesong.com/trakker_manual_rev1.1.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-trakker.yaml	32	url	http://cranesong.com/TRAKKER_REVIEW_BARRY_RUDOLPH.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/crane-song-trakker.yaml	35	url	http://cranesong.com/TRAKKER_REVIEW_EDDIE.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/denon-dj-vl12-prime.yaml	87	url	http://denondj.com/documents/VL12%20Prime%20-%20User%20Guide%20-%20v1.4.pdf	keep	https returned 404
+data/hardware/denon-dj-vl12-prime.yaml	90	url	http://denondj.com/kb/article/2284	keep	https returned 404
+data/hardware/diy-recording-equipment-eqp5-passive-equalizer.yaml	38	prose	http://www.jameschildsmusic.com	upgrade	https 2xx
+data/hardware/esp-arrow-1000.yaml	48	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-arrow-400.yaml	48	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-ec-1000.yaml	48	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-esp-horizon-ii-ht.yaml	56	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-esp-m-ii-ctm-7-fr.yaml	56	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-esp-m-ii-ctm-7-nt.yaml	58	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-exl-200.yaml	48	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-gl-200k.yaml	53	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-m-ii-ntb-fr-usa.yaml	53	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-mh-1000nt.yaml	51	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-mt-i.yaml	55	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-phoenix-204dx.yaml	48	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-rs-1000.yaml	49	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-sc-607-baritone.yaml	57	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-sn-1000fr.yaml	48	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-sn-1000ht.yaml	51	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-th-1000-evertune.yaml	50	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/esp-th-400.yaml	48	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/fieldtone-box-of-uncertainty.yaml	8	url	http://www.fieldtone.uk/products/box-of-uncertainty	upgrade	https 2xx
+data/hardware/fieldtone-weaver-modular.yaml	10	url	http://www.fieldtone.uk/products/weaver-modular	upgrade	https 2xx
+data/hardware/fieldtone-weaver.yaml	8	url	http://www.fieldtone.uk/products/weaver-forest-green	upgrade	https 2xx
+data/hardware/holocene-electronics-air-wave-modulation-source.yaml	8	url	http://www.holocene-electronics.net/products/air-wave-modulation-source	upgrade	https 2xx via https://holocene-electronics.net/products/air-wave-modulation-source
+data/hardware/holocene-electronics-non-linear-memory-machine.yaml	8	url	http://www.holocene-electronics.net/products/nlmm	upgrade	https 2xx via https://holocene-electronics.net/products/nlmm
+data/hardware/holocene-electronics-scanni-mix.yaml	8	url	http://www.holocene-electronics.net/products/scanni-mix	upgrade	https 2xx via https://holocene-electronics.net/products/scanni-mix
+data/hardware/holocene-electronics-seiche.yaml	11	url	http://www.holocene-electronics.net/products/seiche	upgrade	https 2xx via https://holocene-electronics.net/products/seiche
+data/hardware/holocene-electronics-sipo.yaml	8	url	http://www.holocene-electronics.net/products/sipo	upgrade	https 2xx via https://holocene-electronics.net/products/sipo
+data/hardware/holocene-electronics-slip-slope.yaml	10	url	http://www.holocene-electronics.net/products/slip-slope	upgrade	https 2xx via https://holocene-electronics.net/products/slip-slope
+data/hardware/intellijel-spock.yaml	141	url	http://intellijel.com/manuals/Spock%20manual%20v1.0.pdf	keep	https returned 404
+data/hardware/music-man-axis-30th-anniversary.yaml	58	url	http://static.music-man.com.s3-us-west-2.amazonaws.com/website/files/sche	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/music-man-caprice-bass.yaml	52	url	http://static.music-man.com.s3-us-west-2.amazonaws.com/website/files/sche	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/music-man-cutlass-bass.yaml	55	url	http://static.music-man.com.s3-us-west-2.amazonaws.com/website/files/sche	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/hardware/numark-dj2go.yaml	45	url	http://www.virtualdj.com/manuals/hardware/numark/dj2go.html	upgrade	https 2xx via https://virtualdj.com/manuals/hardware/numark/dj2go.html
+data/hardware/numark-idj-live-ii.yaml	47	url	http://www.virtualdj.com/manuals/hardware/numark/idjliveii.html	upgrade	https 2xx via https://virtualdj.com/manuals/hardware/numark/idjliveii.html
+data/hardware/numark-mixtrack-3.yaml	37	url	http://support.numark.com/en/support/solutions	upgrade	https 2xx
+data/hardware/numark-mixtrack-quad.yaml	46	url	http://www.virtualdj.com/manuals/hardware/numark/mixtrackquad.html	upgrade	https 2xx via https://virtualdj.com/manuals/hardware/numark/mixtrackquad.html
+data/hardware/numark-mixtrackpro.yaml	56	url	http://www.virtualdj.com/manuals/hardware/numark/mixtrackpro.html	upgrade	https 2xx via https://virtualdj.com/manuals/hardware/numark/mixtrackpro.html
+data/hardware/numark-ndx500.yaml	58	url	http://www.virtualdj.com/manuals/hardware/numark/ndx500.html	upgrade	https 2xx via https://virtualdj.com/manuals/hardware/numark/ndx500.html
+data/hardware/numark-ns6.yaml	184	url	http://www.virtualdj.com/manuals/hardware/numark/ns6.html	upgrade	https 2xx via https://virtualdj.com/manuals/hardware/numark/ns6.html
+data/hardware/numark-ns7ii.yaml	199	url	http://www.virtualdj.com/manuals/hardware/numark/ns7ii.html	upgrade	https 2xx via https://virtualdj.com/manuals/hardware/numark/ns7ii.html
+data/hardware/numark-nvii.yaml	182	url	http://support.numark.com/en/support/solutions/articles/69000851198-numark-nvii-download-setup-and-connecting-with-serato-dj	upgrade	https 2xx
+data/hardware/numark-party-mix.yaml	76	url	http://www.virtualdj.com/manuals/hardware/numark/partymix.html	upgrade	https 2xx via https://virtualdj.com/manuals/hardware/numark/partymix.html
+data/hardware/trilling-3dgs-permutational-gate-switch.yaml	7	url	http://www.trillingsynths.com/products/3dgs	upgrade	https 2xx
+data/hardware/trilling-4051-permutational-sequencer.yaml	9	url	http://www.trillingsynths.com/products/4051	upgrade	https 2xx
+data/hardware/trilling-a-o-x-boolean-gate-logic.yaml	7	url	http://www.trillingsynths.com/products/a-o-x	upgrade	https 2xx
+data/hardware/trilling-attenuversum-attenuverter-mixer.yaml	7	url	http://www.trillingsynths.com/products/attenuversum	upgrade	https 2xx
+data/hardware/trilling-darp-dual-arpeggio.yaml	9	url	http://www.trillingsynths.com/products/darp	upgrade	https 2xx
+data/hardware/trilling-flip-switch.yaml	7	url	http://www.trillingsynths.com/products/flip	upgrade	https 2xx
+data/hardware/trilling-m5t-trsa-midi-thru-trs-type-a.yaml	7	url	http://www.trillingsynths.com/products/m5t-trsa	upgrade	https 2xx
+data/hardware/trilling-mc2vq-dual-voice-quantizer.yaml	8	url	http://www.trillingsynths.com/products/mc2vq	upgrade	https 2xx
+data/hardware/trilling-not-gate-inverter.yaml	7	url	http://www.trillingsynths.com/products/not	upgrade	https 2xx
+data/hardware/trilling-passaggio-morphing-vco.yaml	8	url	http://www.trillingsynths.com/products/passaggio	upgrade	https 2xx
+data/hardware/trilling-t-3x-2y-midi-clock-divider.yaml	7	url	http://www.trillingsynths.com/products/t3x2y	upgrade	https 2xx
+data/hardware/trilling-tetrapod-signal-splitter.yaml	7	url	http://www.trillingsynths.com/products/tetrapod	upgrade	https 2xx
+data/hardware/wmd-4tten.yaml	8	url	http://www.wmdevices.com/products/4tten	upgrade	https 2xx via https://wmdevices.com/products/4tten
+data/hardware/wmd-arpitecht-triad.yaml	9	url	http://www.wmdevices.com/products/arpitecht-triad	upgrade	https 2xx via https://wmdevices.com/products/arpitecht-triad
+data/hardware/wmd-arpitecht.yaml	8	url	http://www.wmdevices.com/products/arpitecht	upgrade	https 2xx via https://wmdevices.com/products/arpitecht
+data/hardware/wmd-axxent.yaml	8	url	http://www.wmdevices.com/products/axxent	upgrade	https 2xx via https://wmdevices.com/products/axxent
+data/hardware/wmd-axys.yaml	11	url	http://www.wmdevices.com/products/axys	upgrade	https 2xx via https://wmdevices.com/products/axys
+data/hardware/wmd-buffered-mult.yaml	8	url	http://www.wmdevices.com/products/buffered-mult	upgrade	https 2xx via https://wmdevices.com/products/buffered-mult
+data/hardware/wmd-bus-rider.yaml	18	url	http://www.wmdevices.com/products/bus-rider	upgrade	https 2xx via https://wmdevices.com/products/bus-rider
+data/hardware/wmd-c4rbn.yaml	12	url	http://www.wmdevices.com/products/c4rbn	upgrade	https 2xx via https://wmdevices.com/products/c4rbn
+data/hardware/wmd-chimera.yaml	13	url	http://www.wmdevices.com/products/chimera	upgrade	https 2xx via https://wmdevices.com/products/chimera
+data/hardware/wmd-chnl-srfr-channel-surfer.yaml	18	url	http://www.wmdevices.com/products/channel-surfer	upgrade	https 2xx via https://wmdevices.com/products/channel-surfer
+data/hardware/wmd-clutch.yaml	16	url	http://www.wmdevices.com/products/clutch	upgrade	https 2xx via https://wmdevices.com/products/clutch
+data/hardware/wmd-cosmic-debris.yaml	15	url	http://www.wmdevices.com/products/cosmic-debris	upgrade	https 2xx via https://wmdevices.com/products/cosmic-debris
+data/hardware/wmd-crater.yaml	13	url	http://www.wmdevices.com/products/crater	upgrade	https 2xx via https://wmdevices.com/products/crater
+data/hardware/wmd-crucible.yaml	13	url	http://www.wmdevices.com/products/crucible	upgrade	https 2xx via https://wmdevices.com/products/crucible
+data/hardware/wmd-digital-vca-mkiii.yaml	11	url	http://www.wmdevices.com/products/digital-vca-mkiii	upgrade	https 2xx via https://wmdevices.com/products/digital-vca-mkiii
+data/hardware/wmd-fracture.yaml	13	url	http://www.wmdevices.com/products/fracture	upgrade	https 2xx via https://wmdevices.com/products/fracture
+data/hardware/wmd-geiger-counter-civilian-issue-gcci.yaml	12	url	http://www.wmdevices.com/products/geiger-counter-civilian-issue-gcci	upgrade	https 2xx via https://wmdevices.com/products/geiger-counter-civilian-issue-gcci
+data/hardware/wmd-geiger-counter-eurorack.yaml	13	url	http://www.wmdevices.com/products/geiger-counter-eurorack	upgrade	https 2xx via https://wmdevices.com/products/geiger-counter-eurorack
+data/hardware/wmd-geiger-counter-pro.yaml	13	url	http://www.wmdevices.com/products/geiger-counter-pro	upgrade	https 2xx via https://wmdevices.com/products/geiger-counter-pro
+data/hardware/wmd-geiger-counter.yaml	12	url	http://www.wmdevices.com/products/geiger-counter	upgrade	https 2xx via https://wmdevices.com/products/geiger-counter
+data/hardware/wmd-javelin.yaml	8	url	http://www.wmdevices.com/products/javelin	upgrade	https 2xx via https://wmdevices.com/products/javelin
+data/hardware/wmd-kraken.yaml	14	url	http://www.wmdevices.com/products/kraken	upgrade	https 2xx via https://wmdevices.com/products/kraken
+data/hardware/wmd-legion.yaml	10	url	http://www.wmdevices.com/products/legion	upgrade	https 2xx via https://wmdevices.com/products/legion
+data/hardware/wmd-metron.yaml	11	url	http://www.wmdevices.com/products/metron	upgrade	https 2xx via https://wmdevices.com/products/metron
+data/hardware/wmd-modbox-mkii.yaml	11	url	http://www.wmdevices.com/products/modbox-mkii	upgrade	https 2xx via https://wmdevices.com/products/modbox-mkii
+data/hardware/wmd-mscl.yaml	12	url	http://www.wmdevices.com/products/mscl	upgrade	https 2xx via https://wmdevices.com/products/mscl
+data/hardware/wmd-orion.yaml	11	url	http://www.wmdevices.com/products/orion	upgrade	https 2xx via https://wmdevices.com/products/orion
+data/hardware/wmd-osd-or-sum-dif.yaml	8	url	http://www.wmdevices.com/products/osd-or-sum-dif	upgrade	https 2xx via https://wmdevices.com/products/osd-or-sum-dif
+data/hardware/wmd-performance-mixer-mkii.yaml	11	url	http://www.wmdevices.com/products/performance-mixer-mkii	upgrade	https 2xx via https://wmdevices.com/products/performance-mixer-mkii
+data/hardware/wmd-pm-channels-mkii.yaml	9	url	http://www.wmdevices.com/products/pm-channels-mkii	upgrade	https 2xx via https://wmdevices.com/products/pm-channels-mkii
+data/hardware/wmd-pm-db25-mkii.yaml	8	url	http://www.wmdevices.com/products/pm-db25-mkii	upgrade	https 2xx via https://wmdevices.com/products/pm-db25-mkii
+data/hardware/wmd-pm-mkii-direct-outs-expansion.yaml	7	url	http://www.wmdevices.com/products/pm-mkii-direct-outs-expansion-8-stereo-channels-pre-or-post	upgrade	https 2xx via https://wmdevices.com/products/pm-mkii-direct-outs-expansion-8-stereo-channels-pre-or-post
+data/hardware/wmd-pm-mkii-returns.yaml	7	url	http://www.wmdevices.com/products/pm-mkii-returns-3-additional-aux-returns-for-pm-mkii	upgrade	https 2xx via https://wmdevices.com/products/pm-mkii-returns-3-additional-aux-returns-for-pm-mkii
+data/hardware/wmd-protostar.yaml	12	url	http://www.wmdevices.com/products/protostar	upgrade	https 2xx via https://wmdevices.com/products/protostar
+data/hardware/wmd-quad-anti-aliasing-filter-qaaf.yaml	9	url	http://www.wmdevices.com/products/quad-anti-aliasing-filter-qaaf	upgrade	https 2xx via https://wmdevices.com/products/quad-anti-aliasing-filter-qaaf
+data/hardware/wmd-sclpl.yaml	13	url	http://www.wmdevices.com/products/sclpl	upgrade	https 2xx via https://wmdevices.com/products/sclpl
+data/hardware/wmd-skorpion-waveform-reanimator.yaml	11	url	http://www.wmdevices.com/products/skorpion-waveform-reanimator	upgrade	https 2xx via https://wmdevices.com/products/skorpion-waveform-reanimator
+data/hardware/wmd-sl3kt.yaml	8	url	http://www.wmdevices.com/products/sl3kt	upgrade	https 2xx via https://wmdevices.com/products/sl3kt
+data/hardware/wmd-subway.yaml	10	url	http://www.wmdevices.com/products/subway	upgrade	https 2xx via https://wmdevices.com/products/subway
+data/hardware/wmd-time-warp.yaml	8	url	http://www.wmdevices.com/products/time-warp	upgrade	https 2xx via https://wmdevices.com/products/time-warp
+data/hardware/wmd-volt.yaml	9	url	http://www.wmdevices.com/products/volt	upgrade	https 2xx via https://wmdevices.com/products/volt
+data/hardware/wmd-voltera.yaml	11	url	http://www.wmdevices.com/products/voltera	upgrade	https 2xx via https://wmdevices.com/products/voltera
+data/accessories/after-later-audio-bartender-v1-upgrade.yaml	5	url	http://www.afterlateraudio.com/products/bartender-v1-upgrade	upgrade	https 2xx via https://afterlateraudio.com/products/bartender-v1-upgrade
+data/accessories/after-later-audio-braided-patch-cables-12inch-pack-of-5.yaml	5	url	http://www.afterlateraudio.com/products/braided-patch-cables-45cm-packs-of-5	upgrade	https 2xx via https://afterlateraudio.com/products/braided-patch-cables-45cm-packs-of-5
+data/accessories/after-later-audio-braided-patch-cables-18inch-pack-of-5.yaml	5	url	http://www.afterlateraudio.com/products/braided-patch-cables-60cm-packs-of-5	upgrade	https 2xx via https://afterlateraudio.com/products/braided-patch-cables-60cm-packs-of-5
+data/accessories/after-later-audio-braided-patch-cables-24inch-pack-of-5.yaml	5	url	http://www.afterlateraudio.com/products/braided-patch-cables-pack-of-21-various-sizes-colors	upgrade	https 2xx via https://afterlateraudio.com/products/braided-patch-cables-pack-of-21-various-sizes-colors
+data/accessories/after-later-audio-braided-patch-cables-6inch-pack-of-5.yaml	5	url	http://www.afterlateraudio.com/products/braided-patch-cables-30cm-5-packs	upgrade	https 2xx via https://afterlateraudio.com/products/braided-patch-cables-30cm-5-packs
+data/accessories/after-later-audio-double-end-stackable-patch-cable.yaml	5	url	http://www.afterlateraudio.com/products/stackable-patch-cable-for-eurorack-in-packs-of-5-black	upgrade	https 2xx via https://afterlateraudio.com/products/stackable-patch-cable-for-eurorack-in-packs-of-5-black
+data/accessories/after-later-audio-pixie-aluminum-panel.yaml	5	url	http://www.afterlateraudio.com/products/pixie-aluminum-panel	upgrade	https 2xx via https://afterlateraudio.com/products/pixie-aluminum-panel
+data/accessories/after-later-audio-rack-screws-tin-of-30.yaml	5	url	http://www.afterlateraudio.com/products/rack-screws-tin-of-30	upgrade	https 2xx via https://afterlateraudio.com/products/rack-screws-tin-of-30
+data/accessories/after-later-audio-resonate-aluminum-panel.yaml	5	url	http://www.afterlateraudio.com/products/resonate-aluminum-panel	upgrade	https 2xx via https://afterlateraudio.com/products/resonate-aluminum-panel
+data/accessories/after-later-audio-right-angle-patch-cables-12-inch.yaml	5	url	http://www.afterlateraudio.com/products/right-angle-patch-cables-12-inch-set-of-5	upgrade	https 2xx via https://afterlateraudio.com/products/right-angle-patch-cables-12-inch-set-of-5
+data/accessories/after-later-audio-right-angle-patch-cables-18-inch.yaml	5	url	http://www.afterlateraudio.com/products/right-angle-patch-cables-18-inch-pack-of-5	upgrade	https 2xx via https://afterlateraudio.com/products/right-angle-patch-cables-18-inch-pack-of-5
+data/accessories/after-later-audio-right-angle-patch-cables-24-inch.yaml	5	url	http://www.afterlateraudio.com/products/right-angle-patch-cables-24-inch-pack-of-5	upgrade	https 2xx via https://afterlateraudio.com/products/right-angle-patch-cables-24-inch-pack-of-5
+data/accessories/after-later-audio-right-angle-patch-cables-6-inch.yaml	5	url	http://www.afterlateraudio.com/products/right-angle-patch-cables-6-inch-pack-of-5	upgrade	https 2xx via https://afterlateraudio.com/products/right-angle-patch-cables-6-inch-pack-of-5
+data/accessories/after-later-audio-single-end-stackable-patch-cable.yaml	5	url	http://www.afterlateraudio.com/products/single-end-stackable-patch-cable-in-packs-of-5-black-shorter-connector	upgrade	https 2xx via https://afterlateraudio.com/products/single-end-stackable-patch-cable-in-packs-of-5-black-shorter-connector
+data/accessories/after-later-audio-stackable-patch-cable-for-eurorack.yaml	5	url	http://www.afterlateraudio.com/products/stackable-eurorack-patch-cable-red	upgrade	https 2xx via https://afterlateraudio.com/products/stackable-eurorack-patch-cable-red
+data/accessories/cubusynth-eurorack-power-bus-board.yaml	8	url	http://www.cubusynth.com/products/eurorack-power-bus-board	upgrade	https 2xx via https://cubusynth.com/products/eurorack-power-bus-board
+data/accessories/cubusynth-eurorack-prototype-pcbs-and-aluminium-panels.yaml	7	url	http://www.cubusynth.com/products/eurorack-prototype-pcbs	upgrade	https 2xx via https://cubusynth.com/products/eurorack-prototype-pcbs
+data/accessories/cubusynth-sr-16-2p4t-4-position-rotary-switch-16mm.yaml	5	url	http://www.cubusynth.com/products/sr-16-2p4t-4-position-rotary-switch-16mm	upgrade	https 2xx via https://cubusynth.com/products/sr-16-2p4t-4-position-rotary-switch-16mm
+data/accessories/esp-ltd-b-series-bass-pack.yaml	14	url	http://cdn.growassets.net/user_files/esp/site_assets/000/000/436/original.pdf	keep	https returned 503: upstream connect error or disconnect/reset before headers
+data/accessories/fostex-ex-ep-rp-suede.yaml	21	url	http://www.fostex.jp/cms/wp-content/uploads/op_earpa_e.mp4	upgrade	https 2xx
+data/accessories/trilling-blank-panel-1hp.yaml	5	url	http://www.trillingsynths.com/products/blank-panel-1hp	upgrade	https 2xx
+data/accessories/trilling-blank-panel-2hp.yaml	5	url	http://www.trillingsynths.com/products/blank-panel-2hp	upgrade	https 2xx
+data/accessories/trilling-blank-panel-3hp.yaml	5	url	http://www.trillingsynths.com/products/blank-panel-3hp	upgrade	https 2xx
+data/accessories/trilling-blank-panel-4hp.yaml	5	url	http://www.trillingsynths.com/products/blank-panel-4hp	upgrade	https 2xx
+data/accessories/trilling-midi-extension.yaml	7	url	http://www.trillingsynths.com/products/midi-extension	upgrade	https 2xx
+data/accessories/wmd-eurorack-power-cables.yaml	5	url	http://www.wmdevices.com/products/eurorack-power-cables	upgrade	https 2xx via https://wmdevices.com/products/eurorack-power-cables
+data/accessories/wmd-legion-power-synchronizer.yaml	5	url	http://www.wmdevices.com/products/legion-power-synchronizer	upgrade	https 2xx via https://wmdevices.com/products/legion-power-synchronizer
+data/accessories/wmd-pm-db25-mkii-conversion-board.yaml	7	url	http://www.wmdevices.com/products/pm-db25-mkii-conversion-board-for-use-with-original-performance-mixer	upgrade	https 2xx via https://wmdevices.com/products/pm-db25-mkii-conversion-board-for-use-with-original-performance-mixer
+data/accessories/wmd-sandisk-8gb-sdhc-class-4-memory-card.yaml	5	url	http://www.wmdevices.com/products/sandisk-8gb-sdhc-class-4-memory-card	upgrade	https 2xx via https://wmdevices.com/products/sandisk-8gb-sdhc-class-4-memory-card
+data/accessories/wmd-soft-start-module.yaml	7	url	http://www.wmdevices.com/products/soft-start-module	upgrade	https 2xx via https://wmdevices.com/products/soft-start-module
