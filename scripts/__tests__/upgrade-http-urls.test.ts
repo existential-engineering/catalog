@@ -46,7 +46,7 @@ describe("registrableDomain", () => {
 
   it("keeps three labels under a co.uk-shaped suffix", () => {
     expect(registrableDomain("www.shop.co.uk")).toBe("shop.co.uk");
-    expect(registrableDomain("a.blogspot.com.ar")).toBe("blogspot.com.ar");
+    expect(registrableDomain("www.shop.com.ar")).toBe("shop.com.ar");
   });
 });
 
@@ -55,6 +55,9 @@ describe("registrableDomain on shared hosting", () => {
     expect(registrableDomain("a.github.io")).toBe("a.github.io");
     expect(registrableDomain("www.a.weebly.com")).toBe("a.weebly.com");
     expect(registrableDomain("github.io")).toBe("github.io");
+    expect(registrableDomain("a.blogspot.com")).toBe("a.blogspot.com");
+    expect(registrableDomain("www.a.blogspot.com.ar")).toBe("a.blogspot.com.ar");
+    expect(registrableDomain("a.blogspot.de")).toBe("a.blogspot.de");
   });
 
   it("keeps a cross-tenant redirect from passing as an upgrade", () => {

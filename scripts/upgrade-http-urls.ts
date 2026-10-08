@@ -99,7 +99,6 @@ const SECOND_LEVEL_SUFFIXES = new Set([
  * sites and a redirect between them is not an upgrade.
  */
 const SHARED_HOST_SUFFIXES = [
-  "blogspot.com",
   "github.io",
   "gitlab.io",
   "herokuapp.com",
@@ -160,6 +159,10 @@ export function extractHttpUrls(text: string, file: string): Occurrence[] {
 export function registrableDomain(hostname: string): string {
   const host = hostname.toLowerCase().replace(/\.$/, "");
   if (/^[\d.]+$/.test(host) || host.includes(":")) return host;
+  // Blogspot serves every tenant under a country domain too (blogspot.com.ar,
+  // blogspot.de), so it is matched on the label rather than listed per country.
+  const blogspot = /(?:^|\.)([^.]+)\.(blogspot(?:\.[a-z]{2,3}){1,2})$/.exec(host);
+  if (blogspot) return `${blogspot[1]}.${blogspot[2]}`;
   const shared = SHARED_HOST_SUFFIXES.find((suffix) => host.endsWith(`.${suffix}`));
   if (shared) {
     const tenant = host
