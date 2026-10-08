@@ -1,0 +1,138 @@
+id: US3lq2BK7COaQUA0CkXjy
+name: Perform-VG
+manufacturer: tc-helicon
+primaryCategory: vocal-processor
+categories:
+  - vocals
+  - harmonizer
+  - reverb
+  - echo
+  - autotune
+  - acoustic
+capabilities:
+  - harmonizer
+  - pitch-correction
+  - reverb
+  - delay
+  - detune
+  - chorus
+  - equalization
+  - compression
+  - de-essing
+  - gating
+  - feedback-suppression
+  - distortion
+url: https://www.tchelicon.com/en/products/0726-abr
+description: Mic-stand mounted processor for voice and acoustic guitar. It reads
+  the chords played on the connected guitar to key two voices of harmony, runs
+  Adaptive Tone on the vocal and an acoustic voicing engine on the guitar, and
+  carries XLR mic in and out, a guitar in and thru, aux in and USB.
+details: |-
+  Perform-VG clamps to a microphone stand and takes both a vocal and an acoustic guitar, processing each on its own side of the same unit. One footswitch jack and a single row of lit buttons cover both signal paths.
+
+  The guitar connects directly and sets the key for the harmonies: the unit reads the chords being played, so no tap tempo, MIDI foot controller or manual key entry is involved. The harmony voices sit above the lead vocal, change as the chords change and stop when the singing stops. Adaptive Tone handles EQ, compression, de-essing and gating on the vocal in real time.
+
+  The guitar side runs a voicing engine made up of body resonance restoration, anti-feedback and light compression, aimed at the thin sound an under-saddle pickup sends to a PA. Chorus, reverb and echo are available on the guitar channel, with reverb, a doubler, megaphone and HardTune on the vocal channel.
+
+  The rear panel carries an XLR microphone input with switchable 48V phantom power, an XLR mic output, a 1/4-inch guitar input and a 1/4-inch guitar thru, a 1/8-inch aux input for backing tracks, a 1/4-inch pedal jack, USB for recording to a computer and a ground lift. A 1/8-inch headphone output sits on the front edge.
+specs: |-
+  - Two-part harmony keyed automatically from the chords played on the connected guitar
+  - Adaptive Tone sweeps EQ, compression, de-essing and gating on the vocal
+  - Acoustic guitar voicing engine with BodyRez body resonance, anti-feedback and compression
+  - Reverb, doubler, megaphone and HardTune on the vocal channel
+  - Chorus, reverb and echo on the guitar channel
+  - Built-in tuner reached from the Mix button
+  - XLR microphone input with switchable 48V phantom power
+  - Ground lift switch
+  - Mic-stand mount
+  - External DC power supply
+io:
+  - key: AA1Q6LuO
+    name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: QPPKFum5
+    name: Mic Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: IBFawAfn
+    name: Guitar Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 0jffvGhO
+    name: Guitar Thru
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: ORNbl2E5
+    name: Aux Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: jQfLrrXI
+    name: Pedal Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: zYgaPQ4k
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b-mini
+    maxConnections: 1
+    position: Right
+  - key: RGhPMvIV
+    name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - key: 6fsuPUfv
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn-media.empowertribe.com/67f589b5135442f1a54931ba8b6a0660/QSG_TH_0726-ABR_PERFORM-VG_WW.pdf
+    type: resource
+    title: Quick Start Guide
+  - url: https://cdn-media.empowertribe.com/57b2cec83b4b4130bd6c1c8b0e0686f7/PERFORM-VG_M_EN.pdf
+    type: resource
+    title: User Manual
+  - url: https://cdn-media.empowertribe.com/30581e1ec113bc068ddafa9389aa7cc2/VoiceSupport2_1.1.02_build139.zip
+    type: resource
+    title: VoiceSupport 2 (Windows)
+  - url: https://cdn-media.empowertribe.com/55697e9f42ca0b5631329a384a1eee9e/VoiceSupport2_1.1.02_build139.dmg
+    type: resource
+    title: VoiceSupport 2 (macOS)
+videos:
+  - provider: youtube
+    videoId: mtWWP8iGiNQ
+    title: Overview

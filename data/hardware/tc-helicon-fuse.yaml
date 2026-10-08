@@ -1,0 +1,81 @@
+id: 2MqWVqeJi9Je5zpujwwvr
+name: FUSE
+manufacturer: tc-helicon
+primaryCategory: vocal-processor
+categories:
+  - audio-interface
+capabilities:
+  - equalization
+  - gating
+  - distortion
+  - pitch-shift
+  - pitch-correction
+  - delay
+url: https://www.tchelicon.com/en/products/0803-aac
+description: Handheld headset microphone enhancer and vocal effects processor
+  for gaming consoles, Android, iOS, PC and Mac. It connects over USB as a
+  digital audio interface or over a 1/8 inch TRRS cable to a console controller
+  or phone.
+details: |-
+  FUSE is a handheld processor that sits between a headset and a host, enhancing the headset microphone and adding vocal effects before the audio reaches a stream or a party chat. It is aimed at gaming consoles, mobile phones, PC and Mac.
+
+  It connects two ways. Over USB it works as a digital audio interface for a computer or a PlayStation console, and over a 1/8 inch TRRS cable it plugs into the headset jack of a console controller or a phone. The two connections are not meant to be used at the same time, since doing so can introduce ground loop noise.
+
+  A headset with a single TRRS connector plugs into the headphone/headset jack. A split-connector headset uses that same jack for its headphones and the auxiliary microphone input for its microphone, so no headset adapter is needed, and a lavalier microphone can use the auxiliary input in the same way.
+
+  Four buttons cover megaphone distortion, a mute whose tone presets combine equalization and gate settings, pitch shift with auto-tune, and echo. Two touch sliders set headphone level and the balance between microphone and game audio, each with its own LED segment display. The unit is battery powered from an internal rechargeable cell charged over USB.
+specs: |-
+  - Megaphone distortion, pitch shift with auto-tune, and echo effects, each with selectable presets
+  - Tone presets combining equalization and gate settings, selected from the mute button
+  - Mute button and censor (bleep) button for the microphone
+  - Touch sliders for headphone level and microphone/game balance, with LED segment displays
+  - Battery powered from an internal rechargeable cell, charged from a powered USB port, a USB charger or a computer
+  - Charging LED and on-demand battery level readout on the slider displays
+  - Selectable LED colour options, cycled from the power button
+  - Supplied with a USB cable and a 1/8 inch TRRS cable
+io:
+  - key: rMyoYZCp
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b-micro
+    maxConnections: 1
+    position: Top
+  - key: XfiGroyb
+    name: Console
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: dIuk4BRD
+    name: Headphone/Headset
+    signalFlow: bidirectional
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: NYjDv3Z1
+    name: Auxiliary Mic
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://cdn-media.empowertribe.com/2ff8eb832c7e4b8798e227646bff26d6/QSG_TH_0803-AAC_FUSE_WW.pdf
+    type: resource
+    title: Quick Start Guide
+  - url: https://cdn-media.empowertribe.com/30581e1ec113bc068ddafa9389aa7cc2/VoiceSupport2_1.1.02_build139.zip
+    type: resource
+    title: VoiceSupport 2 for Windows
+  - url: https://cdn-media.empowertribe.com/55697e9f42ca0b5631329a384a1eee9e/VoiceSupport2_1.1.02_build139.dmg
+    type: resource
+    title: VoiceSupport 2 for macOS
+videos:
+  - provider: youtube
+    videoId: Ds0NggJFIPY

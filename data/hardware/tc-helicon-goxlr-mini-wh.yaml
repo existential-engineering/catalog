@@ -1,0 +1,96 @@
+id: ozuV3T3GlGVTa17k0wGL4
+name: GoXLR Mini-WH
+manufacturer: tc-helicon
+primaryCategory: mixer
+categories:
+  - audio-interface
+capabilities:
+  - equalization
+  - compression
+  - gating
+url: https://www.tchelicon.com/en/products/0803-aai
+description: Compact broadcast mixer and USB audio interface for streamers in a
+  white finish, with a Midas microphone preamp and on-board equalization,
+  compression and gating.
+details: |-
+  GoXLR Mini-WH is the white-enclosure version of GoXLR Mini, an all-in-one audio interface and broadcast mixer for live streamers and content creators. It establishes multiple USB audio devices on a Windows host, so application volumes can be assigned to their own faders and adjusted independently.
+
+  The microphone channel uses the same Midas low-noise preamp as the larger GoXLR and has enough gain for microphones that need a lot of it, with phantom power available for condensers. Equalization, compression and gating are processed on the unit's own hardware rather than on the host CPU.
+
+  A manual censor button and a cough button mute or bleep the microphone on demand. Lighting, audio routing, mute modes and profiles are configured in the GoXLR app, which is required to operate the unit and is published for Windows only.
+
+  Rear-panel connections cover an XLR microphone input, line in and line out on 1/8 inch jacks, an optical input for a games console, and a USB port that carries audio to the host and powers the unit. A headset microphone input and a headphone output sit on the front edge.
+specs: |-
+  - Four channel faders with LED level displays
+  - Midas low-noise microphone preamp with phantom power for condenser microphones
+  - On-board equalization, compression and gating
+  - Establishes multiple USB audio devices on the host so application volumes can be assigned to separate faders
+  - Censor button and cough button for the microphone
+  - Customizable RGB lighting, routing, mute modes and profiles set in the app
+  - USB bus powered, no external power supply
+  - Requires the GoXLR app, published for Windows 7, 8, 10 and 11, with no official macOS or Linux build
+  - White enclosure, electrically identical to the black GoXLR Mini (0803-AAB)
+io:
+  - key: nqI46wu2
+    name: XLR In
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: vs4TQvlv
+    name: Line In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: RF8OZpaN
+    name: Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: PKO1mL1U
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: mOkuqdmw
+    name: Optical
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - key: iydoiGVU
+    name: Mic
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - key: Fr3pDHR6
+    name: Phones
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+links:
+  - url: https://cdn-media.empowertribe.com/5f99e537a5336e4588da1840ea7f7688/GoXLR%20App%20V1.6.4.014%20Installer(Signed).zip
+    type: resource
+    title: GoXLR App for Windows
+  - url: https://cdn-media.empowertribe.com/a353e36c48234454b71192db695cc09c/TC-Helicon_GoXLR_Driver_5.12.zip
+    type: resource
+    title: GoXLR Audio Driver for Windows

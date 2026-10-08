@@ -1,0 +1,119 @@
+id: 87QH9c8NMKmExoT7_IQg2
+name: GoXLR
+manufacturer: tc-helicon
+primaryCategory: mixer
+categories:
+  - audio-interface
+  - vocal-processor
+capabilities:
+  - equalization
+  - compression
+  - de-essing
+  - gating
+  - reverb
+  - delay
+  - pitch-shift
+  - pitch-correction
+  - distortion
+  - sampling
+url: https://www.tchelicon.com/en/products/0803-aaa
+description: Desktop broadcast mixer for streamers, combining a four-channel USB
+  audio path with motorized faders, a Midas microphone preamp, a sample board
+  and on-board vocal effects.
+details: |-
+  GoXLR is a desktop broadcast mixer built around a four-channel USB audio path, so a streamer can balance microphone, game, music, chat and system audio in real time without leaving the stream. Each channel runs on a motorized fader with an LCD scribble strip, and fader positions recall with the rest of the configuration.
+
+  The microphone channel runs through a low-noise Midas preamp, with a condenser setting in the app that supplies 48 V phantom power. On-board processing covers equalization, compression, de-essing and gating, and the vocal effects section adds reverb, echo, pitch shift, formant shift, robot, megaphone and HardTune. All of it is processed on the hardware rather than on the host CPU.
+
+  A sound board with sample pads and multiple banks holds bumpers and clips, and samples can be recorded straight to a pad from the unit. A cough button mutes the microphone while held, and a censor button bleeps it on demand.
+
+  Setup and recall run through the GoXLR app, which is required to operate the unit and is published for Windows only. The app also drives the RGB lighting, the mixer assignments and the stored effect presets.
+specs: |-
+  - Four-channel USB mixer with motorized faders and LCD scribble strips
+  - Midas low-noise microphone preamp with a condenser setting that supplies 48 V phantom power
+  - On-board equalization, compression, de-essing and gating
+  - Vocal effects: reverb, echo, pitch shift, formant shift, robot, megaphone and HardTune
+  - Sound board with four sample pads and multiple sample banks, with on-board sample recording
+  - Cough button for momentary mute and a censor button for bleeps
+  - Full RGB lighting control
+  - Requires the GoXLR app, published for Windows 7, 8, 10 and 11, with no official macOS or Linux build
+  - Powered from the included 12 V DC adapter
+  - Kensington security slot on the rear panel
+io:
+  - key: NrXv5gFt
+    name: XLR In
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 7aNaYjtP
+    name: Line In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: kx6CT8GC
+    name: Mic
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 1Ln0Fjqp
+    name: Phones
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: vFDkt0fj
+    name: Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: knFHk5dW
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: OvkvOaIH
+    name: Optical
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - key: qix2Mh9g
+    name: DC In
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn-media.empowertribe.com/13f11c0021434280af822d0f7a7f22c7/QSG_TH_0803-AAA_GoXLR_WW.pdf
+    type: resource
+    title: Quick Start Guide
+  - url: https://cdn-media.empowertribe.com/72531afff01340b0b111b90901bab52f/GO%20XLR_M_EN.pdf
+    type: resource
+    title: User Manual (English)
+  - url: https://cdn-media.empowertribe.com/5f99e537a5336e4588da1840ea7f7688/GoXLR%20App%20V1.6.4.014%20Installer(Signed).zip
+    type: resource
+    title: GoXLR App for Windows
+  - url: https://cdn-media.empowertribe.com/85af9507cf00c1509e3b4335e4c90580/TC-HELICON_GoXLR_v5.72.0_2024-12-13.zip
+    type: resource
+    title: GoXLR Audio Driver for Windows

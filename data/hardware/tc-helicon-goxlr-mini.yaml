@@ -1,0 +1,112 @@
+id: f9Awp_fiwCYH4xJeYUrkc
+name: GoXLR Mini
+manufacturer: tc-helicon
+primaryCategory: mixer
+categories:
+  - audio-interface
+capabilities:
+  - equalization
+  - compression
+  - gating
+url: https://www.tchelicon.com/en/products/0803-aab
+description: Compact broadcast mixer and USB audio interface for streamers, with
+  a Midas microphone preamp and on-board equalization, compression and gating.
+details: |-
+  GoXLR Mini is a desktop broadcast mixer and USB audio interface aimed at live streamers and content creators. It presents several separate USB audio devices to a Windows host, so individual applications can be assigned to their own faders and ridden independently without tabbing out of a game.
+
+  The microphone channel uses the same Midas low-noise preamp as the larger GoXLR, with a condenser setting in the app that supplies phantom power for microphones that need it. Equalization, compression and gating run on the unit's own hardware rather than on the host CPU.
+
+  A censor button bleeps the microphone and a cough button mutes it while held. Lighting, audio routing, mute modes and profiles are configured in the GoXLR app, which is required to operate the unit and is published for Windows only.
+
+  Rear-panel connections cover an XLR microphone input, line in and line out on 1/8 inch jacks, an optical input for a games console, and a USB port that carries audio to the host and powers the unit. A headset microphone input and a headphone output sit on the front edge.
+specs: |-
+  - Four channel faders with LED level displays
+  - Midas low-noise microphone preamp with a condenser setting that supplies phantom power
+  - On-board equalization, compression and gating
+  - Presents multiple USB audio devices to the host so application volumes can be assigned to separate faders
+  - Censor button and cough button for the microphone
+  - Customizable RGB lighting, routing, mute modes and profiles set in the app
+  - USB bus powered, no external power supply
+  - Designed for USB 2.0 host ports. USB 3.0 and 3.1 ports can cause audio dropouts and disconnections
+  - Requires the GoXLR app, published for Windows 7, 8, 10 and 11, with no official macOS or Linux build
+io:
+  - key: K0RjIBhV
+    name: XLR In
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: j8ajrPGs
+    name: Line In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: htN27Hz0
+    name: Line Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: FJ5q9bwo
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: VD7z47OC
+    name: Optical
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - key: vJfHmCHw
+    name: Mic
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - key: wx9XKZJK
+    name: Phones
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+links:
+  - url: https://cdn-media.empowertribe.com/7e3ef0beca7c4f0c86215d594aa197f0/QSG_TH_0803-AAB_GoXLR%20MINI_WW.pdf
+    type: resource
+    title: Quick Start Guide
+  - url: https://cdn-media.empowertribe.com/4616bb9c32ff42e286722807be798301/0803-AAB%20(GoXLR%20MINI)%20QSG%20Delivered.pdf
+    type: resource
+    title: Quick Start Guide (English)
+  - url: https://cdn-media.empowertribe.com/5f99e537a5336e4588da1840ea7f7688/GoXLR%20App%20V1.6.4.014%20Installer(Signed).zip
+    type: resource
+    title: GoXLR App for Windows
+  - url: https://cdn-media.empowertribe.com/a353e36c48234454b71192db695cc09c/TC-Helicon_GoXLR_Driver_5.12.zip
+    type: resource
+    title: GoXLR Audio Driver for Windows
+translations:
+  ja:
+    links:
+      - title: Quick Start Guide
+        url: https://cdn-media.empowertribe.com/2ea4ec5f71d049cdba38566c2a901e0d/QSG_TH_0803-AAB_GoXLR%20MINI_JP.pdf
+        type: resource
+  zh:
+    links:
+      - title: Quick Start Guide
+        url: https://cdn-media.empowertribe.com/d5c6739d4d4740bc8b4e53848069bca6/QSG_TH_0803-AAB_GoXLR%20MINI_CN.pdf
+        type: resource
