@@ -193,6 +193,26 @@ describe("applyRows", () => {
     expect(fs.readFileSync(outside, "utf8")).toBe("url: http://a.com/p\n");
   });
 
+  it("inserts a URL carrying a replacement pattern literally", () => {
+    fs.writeFileSync(path.join(root, file), "url: http://a.com/p?x=$&y=$'\n");
+    const outcome = applyRows(
+      [
+        {
+          file,
+          line: 1,
+          field: "url",
+          url: "http://a.com/p?x=$&y=$'",
+          verdict: "upgrade",
+          reason: "",
+        },
+      ],
+      true,
+      root
+    );
+    expect(outcome.applied).toBe(1);
+    expect(fs.readFileSync(path.join(root, file), "utf8")).toBe("url: https://a.com/p?x=$&y=$'\n");
+  });
+
   it("does not write on a dry run", () => {
     applyRows(
       [{ file, line: 2, field: "url", url: "http://a.com/p", verdict: "upgrade", reason: "" }],

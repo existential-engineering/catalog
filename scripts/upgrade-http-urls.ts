@@ -385,7 +385,7 @@ export function applyRows(
       continue;
     }
     const lines = fs.readFileSync(check.path, "utf8").split("\n");
-    let changed = false;
+    let matched = 0;
     for (const row of fileRows) {
       const content = lines[row.line - 1];
       if (!row.url.startsWith("http://") || content === undefined) {
@@ -398,11 +398,12 @@ export function applyRows(
         outcome.skipped.push({ row, reason: "URL is no longer on that line" });
         continue;
       }
-      lines[row.line - 1] = content.replace(whole, toHttps(row.url));
-      outcome.applied++;
-      changed = true;
+      // A replacer function, so a `$&` or `$'` in a URL is inserted literally.
+      const replacement = toHttps(row.url);
+      lines[row.line - 1] = content.replace(whole, () => replacement);
+      matched++;
     }
-    if (changed && write) {
+    if (matched > 0 && write) {
       // Re-check immediately before the write: the read above is not a statement about now.
       const recheck = checkContainedRegularFile(target, dataDir);
       if (recheck.path === undefined) {
@@ -411,7 +412,10 @@ export function applyRows(
       }
       fs.writeFileSync(recheck.path, lines.join("\n"));
     }
-    if (changed) outcome.files.push(file);
+    if (matched > 0) {
+      outcome.applied += matched;
+      outcome.files.push(file);
+    }
   }
   return outcome;
 }
