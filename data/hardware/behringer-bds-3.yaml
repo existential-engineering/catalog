@@ -39,72 +39,144 @@ specs: |-
   - Editable with the SynthTribe app (Windows and macOS)
 io:
   - key: Ag0qaZVh
-    name: Trigger In 1
+    name: Mic In 1
     signalFlow: input
     category: audio
-    type: cv/gate
+    type: mic
     connection: 1/8-inch
     maxConnections: 1
-    position: Right
+    position: Top
   - key: KrUgCFq4
-    name: Trigger In 2
+    name: Mic In 2
     signalFlow: input
     category: audio
-    type: cv/gate
+    type: mic
     connection: 1/8-inch
     maxConnections: 1
-    position: Right
+    position: Top
   - key: hvkquNJh
-    name: Trigger In 3
+    name: Mic In 3
     signalFlow: input
     category: audio
-    type: cv/gate
+    type: mic
     connection: 1/8-inch
     maxConnections: 1
-    position: Right
+    position: Top
   - key: 1orlNLty
-    name: Trigger In 4
+    name: Mic In 4
     signalFlow: input
     category: audio
-    type: cv/gate
+    type: mic
     connection: 1/8-inch
     maxConnections: 1
-    position: Right
+    position: Top
   - key: 9ynDCiTH
-    name: Output 1
+    name: Channel Out 1
     signalFlow: output
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Right
+    position: Top
   - key: iAo07nt4
-    name: Output 2
+    name: Channel Out 2
     signalFlow: output
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Right
+    position: Top
   - key: mdbbFehR
-    name: Output 3
+    name: Channel Out 3
     signalFlow: output
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Right
+    position: Top
   - key: t2F3qJt2
-    name: Output 4
+    name: Channel Out 4
     signalFlow: output
     category: audio
     type: line
     connection: 1/8-inch
     maxConnections: 1
-    position: Right
+    position: Top
+  - key: aDebn103
+    name: Mic Out 1
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: lKycVNy6
+    name: Mic Out 2
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rm7gSzYn
+    name: Mic Out 3
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 9D6hnh0L
+    name: Mic Out 4
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UhqMBmxw
+    name: Mix Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AFQMJN8R
+    name: Pitch Pedal Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
   - key: uckmlti8
     name: MIDI In
     signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - key: xJZpyJ9M
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: TLANwyzj
+    name: Decay Kill
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: uZJHSije
+    name: MIDI Thru
+    signalFlow: output
     category: midi
     type: midi
     connection: 5-pin din
