@@ -45,7 +45,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "prepare": "husky",
-    "hp:backfill": "tsx scripts/backfill-hp.ts"
+    "hp:backfill": "tsx scripts/backfill-hp.ts",
+    "https-upgrade": "tsx scripts/upgrade-http-urls.ts"
   },
   "lint-staged": {
     "scripts/**/*.ts": [

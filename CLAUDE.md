@@ -37,6 +37,9 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
 - `pnpm identifiers:from-juce --slug <entry> --file <build file>` - Read a
   JUCE project's bundle id and plugin codes into review rows (a
   `CMakeLists.txt` calling `juce_add_plugin`, or a `.jucer`)
+- `pnpm https-upgrade --out <tsv>` - Probe the `https://` form of every
+  `http://` URL in `data/` into a review list (`--rows <tsv> --apply` writes
+  its `upgrade` rows)
 - `pnpm format:check` - Check formatting
 
 Four of the audits above take `--findings <dir>`: `power-input-audit`,
