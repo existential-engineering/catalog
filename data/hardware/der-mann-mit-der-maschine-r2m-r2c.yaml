@@ -21,10 +21,13 @@ details: |-
   These modules are not just passive connectors but contain special driver ICs that transform the electronic voltage levels, which run in the 6-pin ribbon, to something more stable and reliable that is fit for longer distances in a more hostile environment. The controllers do not receive their power from the master but from the R2C module, which has a power connector and a voltage regulator for that purpose. Each chain of the R2C module provides the same power to its controller chain as the master does (it contains the identical voltage regulator). That means that you can connect up to 32 controllers (!) to one R2C. Another nice thing: The R2M/R2C combination allows for two of these master / controller connections in parallel. That means that you can have two masters being attached to their individual controller chains. That does not mean, that each of the masters can access each of the controllers at the same time, however. Both master / controller connections work completely separately. Package contents
 
   Current Draw:
+
   R2M: 3 mA +12V | 0 mA -12V | 0 mA 5V
+
   R2C: 2 mA +12V | 0 mA -12V | 0 mA 5V
 
   Width: 2 HP
+
   Depth : 13 mm
 
   Link to R2M on ModularGrid

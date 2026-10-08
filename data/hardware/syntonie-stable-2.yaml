@@ -20,6 +20,7 @@ details: |-
   The processing amplifier part gives control over contrast, brightness, hue and saturation of a Composite video signal, allowing for fine tuning of each of the parameters manually. In addition to manual controls, CV inputs and attenuverters on each of the parameters opens Stable to external modulation, from DC to video rate signals, so it can be easily integrated in the 1V video ecosystem. To make the integration with video generators even easier, a sync output at the back of Stable can be used to sync modules that requires it. Internal modulation is also possible, thanks to the two 1V jack outputs:
 
   – pre-processor output: unprocessed video input signal, resulting in a solarization effect when used to modulate contrast
+
   – post-processor output: processed video signal, creating feedback loops when patched into the processor parameters, which generate effects typical of analog video glitch
 
   Self modulation makes Stable really powerful on its own, and using other processing modules in the loop extends the possibilities further. It is also possible to process Y from Component video, however, only the black and white information will be processed (since the color information is contained in the Pb and Pr signals). In this case, the all-pass filter used for hue shift will act as an enhancer type of effect, with the saturation knob controlling the intensity of the enhance. The chroma filtering switch can be set to off to avoid unwanted filtering, which results in a sharper picture, especially in HD formats. – Glitch Stabilizer
