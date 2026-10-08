@@ -22,6 +22,7 @@ reviews:
         - `manufacturer` must be a slug reference (lowercase-with-hyphens filename), NOT a display name
         - `details` must use block scalar `|-` with paragraphs separated by blank lines, NOT YAML arrays
         - `specs` must use block scalar `|-` with `- ` prefixed list items, NOT YAML arrays
+        - A single newline is not a paragraph break once `details`/`specs` render (markdown joins the lines), so a scrape with one block per line and no blank lines ships as a wall of text. Flag it, flag `•`/`●`/`»`/`✓` bullet glyphs and lists flattened into one line, and flag a paragraph over 1,500 characters; `pnpm prose-layout-audit` reports them (see CLAUDE.md "Prose layout")
         - `description` should use flow scalar format (Prettier auto-wraps)
         - Do NOT use `|` for block scalars; always use `|-` (strips trailing newlines)
         - Hardware `io` entries must use field order: name, signalFlow, category, type, connection, maxConnections, position
