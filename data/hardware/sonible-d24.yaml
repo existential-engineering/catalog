@@ -1,0 +1,298 @@
+id: nGfg6wk1LCszFkgGbB8UW
+name: d:24
+manufacturer: sonible
+primaryCategory: power-amp
+categories:
+  - amplifier
+  - rack-mount
+url: https://www.sonible.com/d24/
+description: The d:24 multi-channel amp delivers brilliant sound for high-end
+  audio installations in science, research, and industry.
+details: |-
+  sonible's d:24 multi-channel amplifier delivers brilliant sound for high-end audio installations in science, research, industry and other applications: reliable, true to the signal and compact. It provides 24 x 250 Watts of power, is completely noise-free with an SNR above 112 dB per channel, and fits multi-channel amplification into only 3 RU.
+
+  As a true team player, the d:24 cooperates with pre-installed systems. The analog inputs of the base model are expandable with three different digital input options: MADI (coaxial and optical), Dante and AES/EBU. All digital modules are equipped with high-end D/A converters and allow free routing of every single channel, and the modules can be retrofitted. d:series amplifiers equipped with the Dante input module offer a matrix mixer feature to sum multiple input channels to multiple output channels.
+
+  For maximum comfort with every installation, the d:24 comes with a set of convenient signal processing tools. The optional DSP module offers an equalizer, a compressor, a limiter, and a delay. Even with complex installations, the multi-channel amplifier can thus function as a compact all-in-one solution. The DSP option turns the d:24 into a flexible partner for implementing compact systems with a large number of speakers, for example when working with modern 3D audio formats such as Higher Order Ambisonics (HOA) or Wave Field Synthesis (WFS).
+
+  All settings of the d:series amplifiers can be remote-controlled via an Ethernet connection and a web interface, which allows for making instant adjustments to the system. Additionally, the d:series amplifiers can be integrated in automation systems via a RESTful API. For critical development work or sensitive installations, the d:24 features an emergency stop: all channels can be deactivated via an optional hardware switch connected to the amplifier without having to deal with software.
+
+  Leading academic institutions in multichannel audio like the IEM (Austria), the IRCAM (France) and the DTU (Denmark) use the d:24 for research and development applications in the fields of virtual acoustics (HOA, WFS). The amplifier is also used for 3D audio performances, for example together with the IKO 3D audio speaker.
+specs: |-
+  - 24 x 250 W @ 4 ohm (THD <= 0.05%), 125 W @ 8 ohm (THD <= 0.04%)
+  - Minimum loads: 4 ohm (single channel), 8 ohm (bridged)
+  - SNR greater than 112 dB per channel
+  - Frequency response: -3 dB @ 10 Hz, -2 dB @ 50 kHz
+  - Typical THD (10 Hz to 30 kHz): 0.05% at 15 dBu, below 0.01% at 0 dBu, 0.03% at -20 dBu
+  - Inter-channel cross talk below 64 dB
+  - Max analog input level: +15 dBu, voltage gain 17 dB (plus or minus 0.5 dB), input impedance 95 kohm
+  - Analog inputs: 3x DB-25 (Tascam analog norm)
+  - Speaker outputs: 24x 2-pin Euroblock
+  - Network connection: 1x etherCON by Neutrik
+  - Panic mute connector: 4-pin Euroblock
+  - Power supply: 1x powerCON 32A by Neutrik, 100-120 VAC or 220-240 VAC, 50-60 Hz (factory fitted)
+  - Idle loss below 270 W, standby power consumption below 2.5 W
+  - Optional MADI module: 1x SC connector (multimode) optical MADI in/out, 2x BNC 75 ohm coaxial MADI in/out
+  - Optional Dante module: 2x RJ45 (primary, secondary), 24x24 matrix mixer (firmware 3.0 or higher required)
+  - Optional AES/EBU and S/PDIF module: 2x DB-25 (Tascam analog norm), 16 + 8 channels ASRC
+  - Optional DSP module, per channel: EQ, compressor, limiter, delay
+  - DSP gain and delay: gains up to 20 dB, delay up to 11.5 ms, phase invert
+  - DSP EQ: cross-over, low cut, high cut (Linkwitz-Riley, Bessel or Butterworth up to 4th order), 5 parametric EQs (bell, shelf or cut)
+  - DSP dynamics: compressor and limiter, including soft knee
+  - Remote control via Ethernet and web interface, RESTful API for automation systems
+  - Dimensions: 482.6 mm x 132.5 mm x 517 mm (19 inch / 3U / 20.4 inch)
+  - Weight: approx. 20 kg (44 lbs)
+  - Operating air temperature: 10 C to 30 C
+io:
+  - key: l2WmiuuR
+    name: Mains Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: powercon
+    maxConnections: 1
+    position: Right
+  - key: yp8dgzDL
+    name: Analog Input Channels 1-8
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - key: j1tmpVhZ
+    name: Analog Input Channels 9-16
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - key: otkicv2k
+    name: Analog Input Channels 17-24
+    signalFlow: input
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - key: zYlsvzi6
+    name: Digital Input Option Slot
+    signalFlow: input
+    category: digital
+    type: proprietary
+    connection: card-slot
+    maxConnections: 1
+    position: Right
+  - key: TKDVxhsX
+    name: Network
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethercon
+    maxConnections: 1
+    position: Right
+  - key: wEIirkmn
+    name: Panic Mute Connector
+    signalFlow: input
+    category: digital
+    type: gpio
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: ezBEMl6B
+    name: Speaker Output 1 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: p8OszJT8
+    name: Speaker Output 2 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: 2xM79czi
+    name: Speaker Output 3 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: lIkCJEuX
+    name: Speaker Output 4 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: 8F56dFSV
+    name: Speaker Output 5 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: rrEqjlge
+    name: Speaker Output 6 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: zMScACxw
+    name: Speaker Output 7 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: BQ8wIntt
+    name: Speaker Output 8 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: f6mdG5M2
+    name: Speaker Output 9 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: Ab7Donjs
+    name: Speaker Output 10 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: oqfZepq4
+    name: Speaker Output 11 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: MvSaTwAK
+    name: Speaker Output 12 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: zZdEfNIi
+    name: Speaker Output 13 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: dffQRUv9
+    name: Speaker Output 14 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: Dj9x9h24
+    name: Speaker Output 15 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: mk88BHZs
+    name: Speaker Output 16 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: ZPqHfAoS
+    name: Speaker Output 17 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: 7Lm0depj
+    name: Speaker Output 18 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: gvIalfJe
+    name: Speaker Output 19 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: bqhR3XaP
+    name: Speaker Output 20 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: qxK8zcOw
+    name: Speaker Output 21 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: avIgSA9y
+    name: Speaker Output 22 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: nq4NdjGm
+    name: Speaker Output 23 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+  - key: FFn7RxeI
+    name: Speaker Output 24 (4 ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: euroblock
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.sonible.com/wp-content/uploads/2020/05/d-serie_owners-manual_ENG.pdf
+    type: resource
+    title: d:series Owner's Manual
