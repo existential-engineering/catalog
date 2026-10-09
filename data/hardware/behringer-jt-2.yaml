@@ -1,0 +1,112 @@
+id: pOCeGegdN8FBynlPS8h76
+name: JT-2
+manufacturer: behringer
+primaryCategory: synthesizer
+categories:
+  - analog
+  - subtractive
+capabilities:
+  - subtractive-synthesis
+  - filter
+  - fm-synthesis
+url: https://www.behringer.com/en/products/0718-aay
+description: A compact monophonic analog synthesizer modelled on the Roland
+  Jupiter-8, with dual VCOs offering saw, triangle/sine, square, noise and PWM
+  plus oscillator sync and FM, a switchable 12/24 dB resonant lowpass filter and
+  an additional highpass filter. A paraphonic two-note mode, a four-pattern
+  arpeggiator and 16-voice Poly Chain extend it, and the main module can be
+  transferred into a standard Eurorack case.
+details: |-
+  The Roland Jupiter-8 defined a sound that built careers, lush, powerful, instantly recognisable. The JT-2 captures that DNA in a compact Eurorack format. Dual VCOs deliver saw, triangle/sine, square, noise, PWM, oscillator sync and FM, everything you need to build the rich, complex patches the Jupiter is famous for.
+
+  The switchable 12/24 dB resonant lowpass filter is the star of the show, giving you both the soft glassy sweeps and the punchier edge in one synth. An additional highpass filter adds fine-tuning headroom that the original never offered. Two ADSR envelopes with key follow modulate VCOs, VCF and VCA, while the LFO with sine, saw, square and random waveforms drives expressive modulation. Cross modulation and oscillator sync between VCOs unlock the gnarlier corners of analog sound design.
+
+  Switch to paraphonic mode for two-note performances, or use the 16-voice Poly Chain to link multiple JT-2 units for true polyphonic firepower. The four-pattern arpeggiator (Up, Down, Up-Down, Random) ranges over four octaves for instant inspiration. External CV/gate, full MIDI implementation and a complete Eurorack-transferable layout make the JT-2 a no-compromise reissue.
+specs: |-
+  - Monophonic analog synthesizer with dual oscillator design
+  - Pure analog signal path based on authentic VCO, VCF and VCA designs
+  - Authentic reproduction of the original Jupiter 8 circuitry
+  - 2 oscillators with saw, triangle/sine, square, noise, PWM, oscillator sync and FM
+  - LFO and envelope control of VCO 1 and/or VCO 2, with FM cross modulation and oscillator sync between the VCOs
+  - Switchable 12 dB / 24 dB resonating low-pass filter
+  - Additional high-pass filter
+  - LFO with sine, saw, square and random waveforms
+  - 2 analog ADSR envelope generators with key follow, modulating VCOs, VCF and VCA
+  - Arpeggiator with Up, Down, Up-Down and Random patterns, up to 4 octaves range
+  - Paraphonic mode for 2-note performances
+  - 16-voice Poly Chain for up to 16-voice polyphony across multiple units
+  - Complete Eurorack solution: the main module can be transferred to a standard Eurorack case
+  - 53 controls for direct real-time access to all important parameters
+  - External CV and Gate input
+  - Comprehensive MIDI implementation with MIDI channel and Voice Priority selection
+  - Editable from the SynthTribe app (Windows and macOS), which connects over USB
+io:
+  - key: 2mk2q7BM
+    name: CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: YQ9qpMwJ
+    name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nq69frx1
+    name: Main Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: olwQlHWL
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: NcKEehJK
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: jPtqh20o
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: AlI5kKU3
+    name: DC Power In
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn-media.empowertribe.com/1fefb565c06f4835a37f7fc8e64d4c26/QSG_BE_0718-AAY_JT-2.pdf
+    type: resource
+    title: Quick Start Guide
+  - url: https://cdn-media.empowertribe.com/0720f6983dbdf494b1d98481f3f23e84/QSG_BE_0718-AAY_JT-2_2026-01-12_Rev.0.pdf
+    type: resource
+    title: Quick Start Guide (Multi-Language)
+  - url: https://cdn-media.empowertribe.com/4483b075e91b0f90c6ab6bbdcb0ac883/Synthtribe-3.2.4.zip
+    type: resource
+    title: SynthTribe App 3.2.4 (Windows)
+  - url: https://cdn-media.empowertribe.com/b833ec314ae73b23acc7493741426ec8/Synthtribe-3.2.4.dmg
+    type: resource
+    title: SynthTribe App 3.2.4 (macOS)

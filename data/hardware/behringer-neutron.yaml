@@ -1,0 +1,175 @@
+id: RonuXcsU9YGfb0VuQSHtr
+name: Neutron
+manufacturer: behringer
+primaryCategory: synthesizer
+categories:
+  - analog
+  - semi-modular
+  - subtractive
+capabilities:
+  - subtractive-synthesis
+  - filter
+  - delay
+  - overdrive
+url: https://www.behringer.com/en/products/0718-aab
+description: Paraphonic analog and semi-modular synthesizer with dual 3340 VCOs,
+  a multi-mode 12 dB state variable filter, 2 ADSRs, BBD delay and an overdrive
+  circuit in a Eurorack format. Default routings mean no patching is needed to
+  play it, while a 32 in / 24 out jack matrix opens the signal path up for
+  modular patching.
+details: |-
+  The 1970s and '80s spawned the first wave of portable analog synthesizers, and while quickly adopted by a bevy of renowned musical artists including Jan Hammer, Chick Corea, Rick Wakeman, Jean-Michel Jarre, Isao Tomita and Keith Emerson to name a few, they were somewhat temperamental and very expensive. An updated incarnation of its predecessors with all the original features and then some, the Neutron lets you conjure up virtually any monophonic sound imaginable with incredible finesse and ease. The pure analog signal path is based on authentic VCO, VCF, VCA and state variable filter designs in conjunction with a flexible, multi-wave LFO and classic Bucket Brigade Delay (BBD). Neutron's Paraphonic mode allows both 3340 analog oscillators to be independently controlled for an expanded palette of tonal options.
+
+  Semi-Modular Design
+
+  Designed around an intuitively-linear workflow, Neutron benefits greatly from its semi-modular design, which requires no patching for immediate performance. Just put your Neutron into self-oscillation, connect your favorite keyboard or computer via MIDI over DIN or USB, and start exploring the world of analog music synthesis right out-of-the-box.
+
+  VCO Double Play
+
+  Neutron's highly-flexible dual Voltage Controlled Oscillators (VCOs) provide an incredible range using 5 unique waveforms for sculpting the perfect sound. Oscillators 1 and 2 options include: Tone Mod; Square; Sawtooth; Triangular or Sine; which can be adjusted across an extremely-wide, 3-octave range (32', 16', 8').
+
+  12 dB State Variable Filter and VCA
+
+  The very heart of Neutron's sound is its highly-flexible 12 dB State Variable Filter, which lets you freely experiment with the cutoff Frequency (10 Hz - 15 kHz), Modulation and Envelope Depth to dial in the perfect sound. Neutron's Filter Mode switch provides 3 settings (high pass, band pass and low pass) for a broad range of tonal options. Additionally, support for filter Keytracking enables you to select the amount of filtering that is applied to the note being played. The VCA can even be overloaded via Neutron's Overdrive circuit to add spice and edge to your sounds, without saying goodbye to your precious low-end content.
+
+  Runaway Brigade
+
+  The all-analog, bucket-brigade circuit inside Neutron provides 25 - 640 ms of delay time. At lower time settings, your echoes will be crisp and punchy, but at longer settings, you'll experience the natural high-end roll-off that is the hallmark of a great analog delay. And when you max out the repeats, you get a full dose of self-oscillation, for runaway delay strings.
+
+  Eurorack Ready
+
+  Designed to handle the rigors of life on the road or in the studio, your Neutron can easily be transferred into a standard Eurorack 80HP case for integration into an existing system.
+specs: |-
+  - Paraphonic synthesizer with dual authentic 3340 analog oscillators
+  - Pure analog signal path with VCO, VCF and VCA circuits
+  - Oscillator waveform control blends between 5 shapes: tone mod, pulse, sawtooth, triangle, sine
+  - Individual pulse width / tone mod control per oscillator
+  - Oscillator range: 3 octaves (32', 16', 8')
+  - Paraphonic mode allows both oscillators to be independently controlled
+  - Self-oscillating, multi-mode 12 dB state variable VCF with dual output (e.g. LP+HP available on jacks)
+  - Filter cutoff frequency range: 10 Hz - 15 kHz
+  - Filter modes: high pass, band pass, low pass, with keytracking
+  - 2 analog ADSR envelope generators for modulation of VCF and VCA
+  - Multiple stage analog delay based on BBD (Bucket Brigade Delay) technology, 25 - 640 ms
+  - Flexible LFO with five waveform shapes, MIDI clock sync and key sync
+  - Noise generator
+  - Overdrive circuit
+  - Patchable audio-rate sample and hold with glide
+  - Utility functions including attenuators, multiples, slew rate limiter and summers
+  - 36 knobs and 7 switches
+  - 32 in / 24 out jack matrix on TS 1/8 inch (3.5 mm) connections
+  - Headphone output with dedicated level control
+  - External audio input for processing external sound sources
+  - MIDI I/O and Thru over USB / MIDI DIN
+  - Semi-modular architecture with default routings requires no patching for immediate performance
+  - Mountable in a standard 80 HP Eurorack case
+  - Firmware updatable, current release 2.0.3, with a Neutron Companion Application for macOS and Windows (version 1.0.3)
+io:
+  - key: tHhZRaxp
+    name: Frequency Mod Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fxiTNC6B
+    name: Main Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 9nYxleTu
+    name: Main Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: sIThm0lS
+    name: Phones
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: qDUtPPJ1
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: Wbiq7G35
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 28alIQio
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: 6Mlv4H8X
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn-media.empowertribe.com/9e763d12ad384405af454c86c4f7042d/NEUTRON_M_EN.pdf
+    type: resource
+    title: User Manual
+  - url: https://cdn-media.empowertribe.com/046210219b1940bb9302eb4ddc26712f/QSG_BE_0718-AAB_NEUTRON_WW.pdf
+    type: resource
+    title: Quick Start Guide, All Languages
+  - url: https://cdn-media.empowertribe.com/bb1476382aac4bfc97467e4b46555002/Release-Notes_BE_0718-AAB_NEUTRON-Firmware-Update_v2-0-3_2022-12-15_Rev-1.pdf
+    type: resource
+    title: Firmware Release Notes, version 2.0.3
+  - url: https://cdn-media.empowertribe.com/91d28d7415b14dfc83bc2f45db514d7f/Neutron%20Firmware%20Updater%20v2.0.3_WIN.zip
+    type: support
+    title: Firmware Updater 2.0.3, Windows
+  - url: https://cdn-media.empowertribe.com/7525131e5d2244399be1aec2d2f7a580/Neutron%20Firmware%20Updater%20v2.0.3_MAC.zip
+    type: support
+    title: Firmware Updater 2.0.3, macOS
+  - url: https://cdn-media.empowertribe.com/7845df76ef8b450d9b77bc7fcc20ac55/Neutron-1.0.3-universal.dmg
+    type: support
+    title: Neutron Companion Application 1.0.3, macOS
+  - url: https://cdn-media.empowertribe.com/1d6bf57b5601477cad10bf810b79bd0d/Neutron%20Setup%201.0.3.exe
+    type: support
+    title: Neutron Companion Application 1.0.3, Windows
+  - url: https://cdn-media.empowertribe.com/fbf5da3b5f444df78354258e34a95a1d/Release-Notes_BE_0718-AAB_NEUTRON-Application_v1-0-3.pdf
+    type: resource
+    title: Neutron Companion Application Release Notes, version 1.0.3
+videos:
+  - provider: youtube
+    videoId: FWwI2sa4PU4
+    title: Neutron Overview
+  - provider: youtube
+    videoId: 4vaxG5g266A
+    title: Neutron Announcement
+  - provider: youtube
+    videoId: KqAhLFyT0nI
+    title: Neutron Filter and Drive
+  - provider: youtube
+    videoId: UJzRbOZaDHg
+    title: Exploring the Neutron, featuring Gianni Grisanzio
+  - provider: youtube
+    videoId: f7yXBF6r8MU
+    title: Multi Neutron Live Performance
+  - provider: youtube
+    videoId: 6XIMVs1kcpg
+    title: "Synth Exploration: Neutron and Model D"

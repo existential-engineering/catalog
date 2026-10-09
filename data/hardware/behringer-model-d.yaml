@@ -1,0 +1,196 @@
+id: 7qIHj26681PjxfhhhG8RN
+name: MODEL D
+manufacturer: behringer
+primaryCategory: synthesizer
+categories:
+  - analog
+  - semi-modular
+  - subtractive
+capabilities:
+  - subtractive-synthesis
+  - filter
+  - overdrive
+url: https://www.behringer.com/en/products/0718-aac
+description: An ultra-affordable homage to the iconic 1970s portable analog
+  synthesizer, MODEL D is a monophonic instrument whose pure analog signal path
+  is built on authentic VCO, VCF, VCA and ladder filter designs alongside a
+  dedicated analog triangle/square wave LFO. Its semi-modular layout needs no
+  patching to play, and the main module can be transferred into a standard
+  Eurorack case.
+details: |-
+  The 1970s spawned the first truly portable analog synthesizer, and while it was quickly adopted by renowned musical artists including Jan Hammer, Chick Corea, Rick Wakeman, Jean-Michel Jarre, Isao Tomita and Keith Emerson, it was somewhat temperamental and very expensive. An ultra-affordable homage to that iconic synthesizer, with all the features of the original and then some, MODEL D conjures up virtually any monophonic sound imaginable.
+
+  Great care has been taken in designing MODEL D, including the true to the original "D Type" circuitry with its matched transistors and JFETs, ultra-high precision 0.1% thin film resistors and polyphenylene sulphide capacitors. This attention to detail gives MODEL D an ultra-flexible sound shaping capability, covering everything from super-fat bass and lead tones to stunning effects and progressive organ sounds.
+
+  MODEL D's 3 highly-flexible Voltage Controlled Oscillators provide a range of 5 waveforms for sculpting a sound. Oscillators 1 and 2 options include triangular, triangular/saw, saw, square, wide pulse and narrow pulse, while OSC 3 features triangular, reverse saw, saw, square, wide pulse and narrow pulse. All 3 VCOs can be adjusted across an extremely wide 6-octave range (LO, 32', 16', 8', 4' and 2').
+
+  The very heart of MODEL D's sound is its highly-flexible 24 dB Ladder Filter, with Cutoff Frequency, Emphasis and Contour controls. The Filter Mode switch can be set to either Lo- or Hi-pass, and the Attack, Decay and Sustain controls shape the cutoff frequency over time. Filter keytracking selects how much filtering is applied based on the note being played, and the VCA can be overloaded via the feedback circuit to add edge to a sound without losing low-end content.
+
+  Onboard modulation covers adjustable Tune, Mod Depth, LFO Rate, Glide (portamento) and Mod Mix knobs, with switches for triangle or square wave oscillation, modulation on or off, OSC 3 or Filter EG, and Noise or LFO as the modulation source. The internal noise generator is switchable between pink and white noise and acts as the default modulation source unless an external source is connected at the 3.5 mm input jack.
+
+  Designed around a linear workflow, MODEL D's semi-modular design requires no patching for immediate performance: connect a keyboard or computer via MIDI over DIN or USB and start playing. Although it is monophonic, the 16-note Poly Chain function combines multiple units for up to 16-voice polyphony, and the main module can be transferred into a standard Eurorack case for integration into an existing system.
+specs: |-
+  - Analog monophonic synthesizer, pure analog VCO, VCF and VCA signal path
+  - 3 Voltage Controlled Oscillators
+  - OSC 1 and 2 waveforms: triangular, triangular/saw, saw, square, wide pulse, narrow pulse
+  - OSC 3 waveforms: triangular, reverse saw, saw, square, wide pulse, narrow pulse
+  - 6-octave oscillator range: LO, 32', 16', 8', 4', 2'
+  - 24 dB ladder filter with resonance (Emphasis), switchable lo-pass / hi-pass
+  - Filter envelope with Attack, Decay and Sustain, plus filter keytracking
+  - VCA with Decay switch, overloadable via the feedback circuit
+  - Dedicated fully analog triangle / square wave LFO
+  - Noise generator switchable between pink and white noise
+  - Glide (portamento) control
+  - 16-note Poly Chain for up to 16-voice polyphony across multiple units
+  - Semi-modular: no patching required for immediate performance
+  - 0.1% thin film resistors and polyphenylene sulphide capacitors, matched transistors and JFETs
+  - 29 knobs and 19 switches (48 controls)
+  - Main module transferable into a standard Eurorack case
+  - Low and high level outputs
+io:
+  - key: VVYFuTY1
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: WAELE9Yk
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: eKvvKPJT
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: KHg8SYX0
+    name: External Audio In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: UIMP0TRx
+    name: Modulation Source In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: HKqbXN91
+    name: OSC 1 Frequency CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: p6Hc9G8S
+    name: Filter Cutoff CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: elSsgATP
+    name: Filter Resonance CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: IU7JIBcU
+    name: Filter Contour CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: wo344qKX
+    name: Main Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: pnYf7JbN
+    name: Phones
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: AetJwDFA
+    name: DC Power In
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn-media.empowertribe.com/8c8a01b4c7ad4ef5972fdbe9a0e841de/M_BE_0718-AAC_MODEL-D_EN.pdf
+    type: resource
+    title: User Manual (EN)
+  - url: https://cdn-media.empowertribe.com/e3eb36f0346f4e55bef93bd75b0b92fd/QSG_BE_0718-AAC_MODEL%20D_WW.pdf
+    type: resource
+    title: Quick Start Guide (All Languages)
+  - url: https://cdn-media.empowertribe.com/4483b075e91b0f90c6ab6bbdcb0ac883/Synthtribe-3.2.4.zip
+    type: resource
+    title: SynthTribe App 3.2.4 (Windows)
+  - url: https://cdn-media.empowertribe.com/b833ec314ae73b23acc7493741426ec8/Synthtribe-3.2.4.dmg
+    type: resource
+    title: SynthTribe App 3.2.4 (macOS)
+videos:
+  - provider: youtube
+    videoId: DGdhbbAqnQw
+    title: An Era, a Legend. Model D
+  - provider: youtube
+    videoId: bNvWsnT6aSw
+    title: Luke Neptune
+  - provider: youtube
+    videoId: W4xrrvtPXbk
+    title: Model D Unboxing with Dylan Meek
+  - provider: youtube
+    videoId: k14zybabbfU
+    title: Sequencer Editor - Secret Settings on your Synth
+  - provider: youtube
+    videoId: 6XIMVs1kcpg
+    title: "Synth Exploration: Neutron / Model D"
+  - provider: youtube
+    videoId: x9K9x6x-1xs
+    title: Demo with Gianni Grisanzio
+  - provider: youtube
+    videoId: tEsG0ycDDLk
+    title: Behringer Model D
+  - provider: youtube
+    videoId: n-jc3UmqdTk
+    title: Behringer Model D 01 - Features, Sounds, Patches
+  - provider: youtube
+    videoId: I6bauM2Yc0w
+    title: Behringer Model D Analog Synthesizer Module Review
+  - provider: youtube
+    videoId: 3pRiUSf_QFw
+    title: Behringer Model D Demo Comparison (by Synthpro)
+  - provider: youtube
+    videoId: yMnEcXOYzWs
+    title: Behringer Model D demo 01
+  - provider: youtube
+    videoId: qVLnihiJFOs
+    title: What's Inside the Behringer Model D (by synthpro)

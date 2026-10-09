@@ -1,0 +1,220 @@
+id: Bf9k-OWOOYrztbpxjPMz5
+name: BQ-10
+manufacturer: behringer
+primaryCategory: outboard
+categories:
+  - analog
+capabilities:
+  - sequencing
+url: https://www.behringer.com/en/products/0718-abc
+description: The BQ-10 is an analog step sequencer in Eurorack format with 24
+  steps and full CV control, a modern take on the SQ-10 of the 1970s. It runs as
+  a single 16-step sequence or as dual 8-step sequences on channels A and B,
+  with a separate 8-step channel C for driving filter or amplitude on a
+  connected synthesizer via CV.
+details: |-
+  In the world of analog synthesis, few pieces of gear evoke as much nostalgia and creativity as the SQ-10. With its powerful 12-step sequencer, it quickly became a staple for electronic musicians, but like a lot of synths at that time, it was big and bulky. The BQ-10 is a fresh take on that vintage design, paying tribute to a classic while introducing new updated features.
+
+  The BQ-10 can function as a single 16-step sequencer or split into dual 8-step sequences (channels A and B) for added flexibility. Channel C is a separate 8-step channel where an external synth such as the Behringer K-2 MKII can be connected via CV for controlling filter or amplitude. Each step features a voltage output knob as well as a dedicated trigger output, allowing sequences to be shortened by connecting specific steps to the Reset input.
+
+  The rotary Sequence Mode knob selects between 8 play modes for channels A and B, while channel C can run continuously depending on the mode. By default a sequence runs on the internal clock of the BQ-10, which can be adjusted with the Clock Generator knob from 20 bpm to 500 bpm. CV inputs are also available for plugging in external voltage sources to override the internal clock. Each channel features its own portamento control, for steps that glide into one another or a more staccato feel.
+
+  Designed to handle the rigors of life on the road or in the studio, the BQ-10 can easily be transferred to any standard Eurorack case for integration into a larger setup.
+specs: |-
+  - Analog step sequencer based on the SQ-10 sequencer of the 1970s
+  - 24 steps arranged as three 8-step channels (A, B and C)
+  - Single 16-step sequence or double 8-step sequences on channels A and B
+  - Separate 8-step channel C for controlling filter or amplitude on a connected synthesizer via CV
+  - 8 play modes for channels A and B, including Alternating, Parallel, Series and Random
+  - Internal clock generator adjustable from 20 bpm to 500 bpm
+  - CV input for the internal clock, allowing external voltage sources to override it
+  - Trigger input for syncing with external clocks
+  - Dedicated trigger output per step, for shortening sequences via the Reset input
+  - Per-channel portamento control for glide between steps
+  - Duty cycle control for adjusting the overall gate length
+  - 2 input sum for convenient patching
+  - 45 controls for direct real-time access to all important parameters
+  - Comprehensive MIDI implementation with MIDI channel and MIDI transport controls
+  - Eurorack format: the main module can be transferred to a standard Eurorack case
+io:
+  - key: q5YKxoNW
+    name: Channel A CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GSfI4SpR
+    name: Channel B CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KspRI6xB
+    name: Channel C CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CkkDbJWA
+    name: Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rWL1XlO6
+    name: Step 1 Trigger Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: IKeMvG1n
+    name: Step 2 Trigger Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0F7hGp2W
+    name: Step 3 Trigger Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5xHKMDh9
+    name: Step 4 Trigger Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: RjnKTAlY
+    name: Step 5 Trigger Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FrPhJEqp
+    name: Step 6 Trigger Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: HwtLklZU
+    name: Step 7 Trigger Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: EUKEZwIi
+    name: Step 8 Trigger Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fb5A0Gwa
+    name: Trigger In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: paIIjqBu
+    name: Clock CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0XPANXZH
+    name: Reset In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: knJT6zBQ
+    name: Sum In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vk9bGpX8
+    name: Sum In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: cSsoUKME
+    name: Sum Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6vRpuS8z
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: SLocA1Bv
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: xzygXpK6
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://cdn-media.empowertribe.com/796702a1499745a4a0c828270d2bcff9/QSG_BE_0718-ABC_BQ-10_WW.pdf
+    type: resource
+    title: BQ-10 Quick Start Guide
+  - url: https://cdn-media.empowertribe.com/40f84ba84d809329afbd51aba3ce7f7c/ControlTribe-1.10.1-win.zip
+    type: resource
+    title: ControlTribe App 1.10.1 (Windows)
+  - url: https://cdn-media.empowertribe.com/436092e059164a4460a560548173aceb/ControlTribe-1.10.1-osx.dmg
+    type: resource
+    title: ControlTribe App 1.10.1 (macOS)
+videos:
+  - provider: youtube
+    videoId: JqPSEy0nrcQ
