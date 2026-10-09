@@ -66,14 +66,292 @@ specs: |-
   - 50 controls
   - Comprehensive MIDI implementation with MIDI channel and Voice Priority selection
 io:
-  - key: vr5e38S6
-    name: Main Audio Output
+  - key: R0GlwAdh
+    name: OSC Timbre CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gCLIyAnv
+    name: OSC HAR CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: Oscillator Harmonics CV.
+  - key: cyNhMISl
+    name: OSC FM
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: cstXYRsD
+    name: OSC Morph CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: deWjiSQk
+    name: VCF In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: External audio input to the VCF.
+  - key: 3VGtAs4o
+    name: VCF Cutoff
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wjAgLzLD
+    name: VCF Res
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: NRvedOK4
+    name: Mix 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: Mix 1 input to the VC MIX crossfader.
+  - key: bAs70Qq1
+    name: Mix 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: Mix 2 input to the VC MIX crossfader.
+  - key: PxG3n1PS
+    name: VC Mix
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: VC MIX control CV input.
+  - key: uEI4cFpe
+    name: OSC Model
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: Selects the oscillator model by control voltage.
+  - key: UkajHoCz
+    name: OSC V/Oct
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: Oscillator pitch CV, 1 V/octave.
+  - key: uHHVIGiu
+    name: OSC Level
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZJMrBMmt
+    name: OSC Trig
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 9IPZRRma
+    name: Tempo
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: Sequencer tempo.
+  - key: 0fRkQabP
+    name: Play/Stop
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: Sequencer play/stop.
+  - key: OuEFrjTb
+    name: Reset
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: Sequencer reset.
+  - key: WPBZBR5Z
+    name: Hold
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: Sequencer hold.
+  - key: 5luPMHBf
+    name: ENV Gate
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: o7t5gEVh
+    name: VCA CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FSMiYq2j
+    name: LFO Rate
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 1humybX3
+    name: VC Mix
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: VC MIX crossfader output.
+  - key: dImZQ9eC
+    name: LFO Tri
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: HWRlzVk9
+    name: OSC Out 1
     signalFlow: output
     category: audio
     type: line
-    connection: 1/4-inch
+    connection: 1/8-inch
     maxConnections: 1
-    position: Right
+    position: Top
+  - key: EmzJE3w9
+    name: OSC Out 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gL1To0ED
+    name: ENV
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vr5e38S6
+    name: VCA/Line
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: Main line-level audio output (3.5 mm TS).
+  - key: MvcpEJEr
+    name: Phones
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: 3.5 mm TRS stereo headphone output.
+  - key: iDK9bEGG
+    name: LFO Squ
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 7tyrbpXY
+    name: Noise
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 9FxO6dQ9
+    name: Assign
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: F7bkT21s
+    name: KB CV
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CRf5jM6A
+    name: Gate
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 7x0Bc5sG
+    name: VCF
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
   - key: OjQh0eXl
     name: MIDI In
     signalFlow: input
@@ -81,15 +359,15 @@ io:
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Right
+    position: Top
   - key: cHWaRVZK
-    name: MIDI Thru
+    name: MIDI Out/Thru
     signalFlow: output
     category: midi
     type: midi
     connection: 5-pin din
     maxConnections: 1
-    position: Right
+    position: Top
   - key: c3j9epFz
     name: USB
     signalFlow: bidirectional
