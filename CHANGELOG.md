@@ -1,5 +1,111 @@
 # catalog
 
+## 3.70.0
+
+### Minor Changes
+
+- 86f3439: Import Behringer desktop and semi-modular synthesizers (34 hardware entries).
+
+  Covers the Behringer desktop synth line: the MODEL D, NEUTRON, CRAVE,
+  PRO-1, PRO-800, 2600 and its BLUE MARVIN and GRAY MEANIE special
+  editions, the DEEPMIND 12D and 12XD, UB-Xa D, the TD-3 and TD-3-MO
+  bass line synths in three finishes each, plus the CAT, JT-2, K-2 MK II,
+  KOBOL EXPANDER, MODEL 15, PROTON, SOLINA STRING ENSEMBLE, TORO,
+  WASP DELUXE, 2-XM, GRIND, SPICE, CZ-1 MINI, EDGE, BDS-3,
+  SYNCUSSION SY-1 and the BQ-10 sequencer.
+
+  This is the first of several Behringer batches. The rest of the
+  manufacturer's catalogue is recorded in the import's deferred manifest,
+  grouped by product family, for follow-up runs.
+
+- 347c298: Import Cycling '74 (15 software and content entries).
+
+  Covers the current line (Max, Max for Live, RNBO and the Mira iPad
+  controller), the four Cycles audio source libraries by Ron MacLeod, and
+  seven products retired from sale (M, Pluggo, Hipno, Mode, Octirama,
+  Upmix and Radial) found on the maker's discontinued downloads page and
+  tagged with the discontinued category.
+
+- 5c514bc: Import KRK Systems (45 hardware and accessory entries).
+
+  Covers the ROKIT Generation Five and Generation 4 monitors, the V Series
+  Five and V Series 4 monitors, the Classic and Kreate ranges, the GoAUX
+  portable pairs, the S.4 and 12sHO subwoofers, the KNS-6402 and KNS-8402
+  headphones, and the grilles, cushions, cables and mount brackets that go
+  with them. Fourteen retired models are tagged discontinued.
+
+- 8d11110: Refresh sonible: 6 new, 0 discontinued, 18 updated.
+
+  Adds the d:16 and d:24 installation amplifiers, the ml:1 USB DI box and the
+  ml:mio MADI converter, alongside the pure:comp and pure:verb plug-ins.
+  Refreshes descriptions, specs, prices and release history across the
+  existing 18 entries.
+
+- 6b2be7b: Import TC-Helicon (37 hardware, software and accessory entries).
+
+  Covers the vocal processing line (VoiceTone single-button
+  stompboxes, VoiceLive, Perform-V, Play Acoustic, Harmony Singer 2,
+  Mic Mechanic 2, Critical Mass, Duplicator, Talkbox Synth), the
+  GoXLR broadcast mixers and their white colourways, the MP-60 and
+  MP-85 handheld vocal microphones, the Go Guitar and Go Vocal
+  mobile interfaces, the Harmony V60 acoustic amplifier, and the
+  VoiceSupport 2, VoiceJam and Voice Jam Studio applications.
+
+  Also corrects the TC-Helicon manufacturer URL, which pointed at a
+  domain that no longer resolves.
+
+- 8a6de1f: Refresh Universal Audio: 10 new, 1 discontinued, 0 updated.
+
+  Adds the Volt Gen 2 and Volt Max audio interfaces, the UAD Enigmatic '82
+  Overdrive Special and Topline Vocal Tune plug-ins, and the UA Connect and
+  UAD Console applications. Retires the Boss CE-1 Chorus Ensemble plug-in,
+  whose page is gone. Ten renamed products were matched to the entries they
+  already have rather than duplicated, and their new names and urls are
+  left for review.
+
+- 30e5d62: Fix `details` and `specs` that rendered as a wall of text (AUREO-1192).
+
+  Adds `pnpm prose-layout-audit`, which reads both fields the way the
+  build's `marked` pass renders them and reports one-block-per-line scrapes
+  that markdown joins into one paragraph, paragraphs over 1,500 characters,
+  bullet glyphs standing in for a list, lists flattened into prose,
+  four-space-indented lists that render as code, leftover markup, list-less
+  `specs`, and values not written as a `|-` block. `pnpm prose-layout:apply`
+  applies the lossless fixes, and this release carries them: 720 values in
+  668 entries. The 531 entries that need a person are listed in
+  `docs/reviews/2026-10-prose-layout.tsv`, and `--findings` files the walls
+  as a new `wall-of-text` kind.
+
+### Patch Changes
+
+- f2cb410: Model the GRIND, CRAVE and EDGE patch bays from Behringer's quick start guides.
+
+  Adds 73 patch points (33 on GRIND, 31 on CRAVE, 9 on EDGE), each a 3.5 mm
+  top-panel jack named from the panel legend. Corrects the main output on all
+  three to the 3.5 mm VCA jack (none has a 1/4-inch output), moves their MIDI
+  jacks to the top panel, and flips EDGE's Pitch jack to an output.
+
+- a99f58e: Upgrade 292 `http://` URLs to `https://` where the site serves the same page
+  over https, and add `pnpm https-upgrade` to probe and apply the rest on a later
+  pass (AUREO-1191).
+- 2b03232: Refresh Spitfire Audio: 14 entries updated with current prices, formats, platforms and product copy.
+
+  Adds GBP pricing, plugin formats, platforms, search terms and video links
+  across the Abbey Road One, Abbey Road Two, Albion, AIR Studios, Aperture and
+  BBC Symphony Orchestra entries, and replaces thin or lowercased copy with the
+  current product text, so names like BBC Studios and Maida Vale Studios now
+  read correctly.
+
+  Differences a refresh must not decide on its own are left for review rather
+  than overwritten: 13 urls, 11 primary categories, 7 category lists and one
+  product name. Every entry also carries a stale USD price that no current page
+  supports, reported separately.
+
+- cef0971: Rename MuseScore to MuseScore Studio, the desktop app's name since 4.3,
+  keeping "MuseScore" as a search term, and add its macOS bundle id
+  (`org.musescore.MuseScore`, unchanged through 4.7) so Studio matches it
+  on macOS by identifier whatever name its scanner reports.
+
 ## 3.69.0
 
 ### Minor Changes
