@@ -1,0 +1,106 @@
+id: f5h1Wh9Zj-gyyDdlDI9t3
+name: ml:1
+manufacturer: sonible
+primaryCategory: di-box
+categories:
+  - audio-interface
+  - test-tone
+  - utility
+  - discontinued
+url: https://www.sonible.com/ml1/
+description: "The swiss army knife for audio: the ml:1 by sonible is a robust
+  plug & play audio interface, stereo USB-DI-Box and test tone generator all in
+  one."
+details: |-
+  The ml:1 is a robust, multi-functional USB-DI-box for first-rate audio playback, combining a plug and play USB playback device, a passive stereo DI box and a stand-alone test tone generator in one enclosure. Because analog and digital transmission coexist in live sound, the analog and digital outputs are driven at the same time, so the unit can feed a digital mixing console and an analog system from the same source.
+
+  Compatible with all notebooks and most smartphones and tablets, the audio interface simplifies the playback of audio material by conforming to the USB Audio Class standard. As soon as a device is connected via USB, it is ready to play back, with no need to install additional drivers. The quality of the audio signal is significantly higher and substantially more robust than that provided by headphone jacks, and the Neutrik USB connection can be locked to withstand sudden jerky movements.
+
+  Equipped with two 6.3 mm jack plugs, the ml:1 can also be used as a passive DI box that offers clean, symmetrical signal routing. Low-distortion signal transformers ensure galvanic separation and a signal that is free of interference, and a ground lift switch remedies problematic ground loops. Inserting a 1/4 inch plug overrides the USB audio signal on the analog outputs and passes the inserted signal exclusively to the output transformers, while the digital AES output stays connected to the USB interface, so the analog and digital outputs can carry two different galvanically isolated stereo signals at once.
+
+  The integrated test tone generator provides a line check before the actual signal source is connected. It runs from a lithium battery, so it operates independently of phantom power or any other external power source. A multi-tone, a complex wave form, makes it possible to test whether all channels are playing correctly and whether the cabling works, and to check whether there are any sources of disturbance in the system, all without an external device.
+
+  For the digital AES/EBU output, a digital signal transformer and a line driver allow for long cable runs and high impedance tolerances of connections and cables, so even simple microphone XLR cables can be used for short to mid cable runs, while cables conforming to the 110 ohm AES/EBU standard remain mandatory over longer distances. The AES output is synced by an internal PLL that derives its clock from the USB signal, so a receiver either provides an asynchronous sample rate converter or locks to the ml:1 as clock master.
+specs: |-
+  - Driverless operation, USB Audio Class 1 compliant
+  - Bus powered over USB, current draw 40 mA or less (needed for USB audio only), with no mains or DC power input
+  - Test tone generator powered by a replaceable 3 V CR123A lithium battery, independent of phantom power
+  - Passive stereo DI box with low-distortion signal transformers, galvanic separation and balancing
+  - Ground lift switch, breaks the internal ground connection of pin 1 on both analog outputs
+  - Pad switch: 0 dB / -18 dB, attenuates the analog outputs but not the test tone
+  - Momentary test tone switch with a one second delay to prevent accidental activation
+  - Test tone waveform: harmonic multitone at -10 dBu (200 kohm)
+  - DAC sample rate: 44.1 kHz, 48 kHz (set by the USB host)
+  - DAC sample word length: 16 bit
+  - SNR: 96 dB
+  - Output level: 0 dBFS equals +3 dBu
+  - Analog XLR outputs: transformer balanced, pin 1 ground, pin 2 hot, pin 3 cold, 600 to 800 ohm high level
+  - Analog jack inputs: unbalanced, switched, 600 ohm, for line signals, ring and sleeve tied to ground internally
+  - Digital output: transformer balanced AES/EBU, 110 ohm, S/PDIF compatible
+  - Lockable Neutrik USB type B receptacle
+  - Status LED, lights white when the connection to the USB host is established
+  - USB audio is routed to the analog and digital outputs simultaneously, and an inserted analog jack takes priority on the analog outputs
+  - Supported hosts (user guide): Windows XP, Vista, 7 and 8, Mac OS X 10.5 or higher, Linux with a USB Audio Class compliant kernel module, Apple iOS 6 or higher except iPhone
+  - Apple mobile devices tested by sonible (support FAQ): iPad (iOS 5 or higher) with the iPad Camera Connection Kit, iPad Air with the Lightning to USB Camera Adapter, iPhone 5 with the Lightning to USB Camera Adapter
+  - Size: 183 x 93 x 40 mm
+  - Weight: approximately 1000 g
+io:
+  - key: uh23si1b
+    name: Analog Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: dJmFyssa
+    name: Analog Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: K2yj0eWo
+    name: Analog Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: uS9xqxx5
+    name: Analog Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: FNBF9Xjt
+    name: Digital Output AES/EBU
+    signalFlow: output
+    category: digital
+    type: aes/ebu
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 5qVJSNfs
+    name: USB (audio and bus power)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.sonible.com/wp-content/uploads/2016/11/sonible-ml1-user-guide.pdf
+    type: resource
+    title: ml:1 User Guide
+  - url: https://help.sonible.com
+    type: resource
+    title: Support
+videos:
+  - provider: youtube
+    videoId: Y2mNU5p0cW8
+    title: ml:1 by sonible - USB audio interface and stereo DI-Box | EN
