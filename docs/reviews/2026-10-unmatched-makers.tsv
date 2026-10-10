@@ -1,0 +1,108 @@
+# Reviewed rows for the September sync baseline's top unmatched makers
+# (AUREO-1350) and the Waves V17 gap seen in one real sync (AUREO-1286).
+# Read by `pnpm identifiers:apply --rows`.
+#
+# target<TAB>format<TAB>identifier<TAB>version<TAB>source
+#   identifier `-` adds the version alone. Every row names vst3, a format the
+#   entry already lists, so no row adds a format.
+#
+# WAVES V17 (AUREO-1286 item 1)
+#
+# 197 Waves entries listed 17.1.42 beside 16.7.33; these 54 listed 16.7.33
+# alone (49) or no version at all (5), so an installed 16.7.33 read as
+# current. Waves versions its whole bundle together: 17.1.42 is the one V17
+# shell version every refreshed entry carries
+# (2026-09-kvr-studio-manager-scan.tsv says the same of the KVR lane).
+#
+# Checked per product, 2026-10-10, because AUREO-1286 warned the only-16
+# entries could be products Waves dropped in V17. None were:
+#   - Waves release notes, 2026-06-23: "All Waves Plugins: Across-the-board
+#     software update to V17". No release note from May 2023 on names a
+#     plugin discontinued or left out of V17. The 2026-06-23 Preset Menu
+#     exception list (Q-Clone, Curves, IR1, IRLive, GTR Series, Tune
+#     Real-Time, X-Noise, Z-Noise) is a missing feature, not a removal.
+#   - Each entry's own waves.com product page is live, carries no
+#     "Product Discontinued" note (Waves uses one, on the CA1000/CA2000
+#     engine records), and lists V17 in its supported versions
+#     ("V17, V16, ... V9" on most; Clarix LB "V17, V16"; Lil Tube and
+#     Spherix from V14; the two StudioVerse products from V15). Fourteen are
+#     bundle-only (C360/M360/R360/S360, the DTS Neural trio, GTR3 Amps/
+#     Stomps/ToolRack/Tuner, the L3 variants) and still list V17.
+#
+# Not written here, noticed on the way:
+#   waves-studiorack is StudioVerse Audio Effects (renamed 2024-06-24 per the
+#   release notes); its name already says so, only the slug is old. Slugs are
+#   ids for Studio, so it stays.
+#   waves-rs56 / waves-the-king-s-microphones still duplicate their abbey-road-*
+#   siblings (already recorded in 2026-09-kvr-studio-manager-scan.tsv).
+#
+# NO IDENTIFIER ROWS, AND WHY
+#
+# The baseline (racks tools/reports/data/baseline.json) is an aggregate: 227
+# unmatched, five maker strings, no rows. The row-level
+# `catalog_unmatched_plugin` events live only in the gitignored Aptabase CSV
+# exports (`*-release.csv`), which are in neither repo. No identifier is
+# written without a row that observed it, so this pass has none to write:
+#   sonible   installers sit behind downloads10.sonible.com, whose robots.txt
+#             is `Disallow: /`, so the installer-introspection lane may not
+#             read them. 14 of 23 entries still carry no identifier.
+#   waves     Waves Central only; no public installer to introspect.
+#   uaudio    UA Connect only; AUREO-1286's LA-2A Gray (U3A7) already landed
+#             in catalog#922, and Topline Vocal Suite already lists 1.1.11.
+#   roli      roli-studio-player already carries com.roli.StudioPlayer.
+#   Open Audio Stack registry covers open-source plugins, none of these makers.
+
+waves-api-2500	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-api-550	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-api-560	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-b360-ambisonics-encoder	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-c360-surround-compressor	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-clarix-lb	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-codex	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-dts-neural-mono2stereo	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-dts-neural-surround-downmix	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-dts-neural-surround-upmix	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-element	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-gtr3-amps	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-gtr3-stomps	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-gtr3-toolrack	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-gtr3-tuner	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-gtr3	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-h-reverb-hybrid-reverb	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-inphase-lt	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-j37-tape	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-l3-ll-multimaximizer	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-l3-ll-ultramaximizer	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-l3-ultramaximizer	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-lil-tube	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-m360-surround-manager-mixdown	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-mv2	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-ns1-noise-suppressor	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-nx	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-oneknob-brighter	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-oneknob-driver	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-oneknob-filter	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-oneknob-louder	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-oneknob-phatter	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-oneknob-pressure	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-oneknob-pumper	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-oneknob-wetter	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-pse-primary-source-expander	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-puigchild-compressor	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-puigtec-eqs	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-r360-surround-reverb	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-reel-adt	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-rs56	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-s360-surround-imager-panner	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-smack-attack-transient-shaper	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-spherix-immersive-compressor-limiter	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-ssl-e-channel	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-ssl-g-master-buss-compressor	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-studiorack	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-studioverse-instruments	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-the-king-s-microphones	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-v-comp	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-v-eq3	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-v-eq4	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-wlm-loudness-meter	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
+waves-x-fdbk	vst3	-	17.1.42	waves.com V17 release notes 2026-06-23 + product page 2026-10-10
