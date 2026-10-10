@@ -1,5 +1,36 @@
 # catalog
 
+## 3.71.0
+
+### Minor Changes
+
+- e3bd2ad: Import Schecter (21 hardware entries).
+
+  The 2026 model year and the 50th Anniversary Collection guitars,
+  including the C-1, Avenger and Tempest 50th Anniversary pairs,
+  the Hydro-dip and Omen Extreme-II models, the Nick Johnston and
+  Synyster signature guitars, and the USA Sunset Custom-II 24.
+  Left-handed models are separate entries. Schecter's wider
+  catalogue (about 480 further models) is deferred to follow-up
+  imports.
+
+- 1a52242: Import Zildjian (60 hardware entries).
+
+  Size-specific cymbals and gongs across the A Zildjian, K, K Custom,
+  K Constantinople, Kerope, I, S, Z Custom, Planet Z, L80 Low Volume
+  and FX families, plus the 400th Anniversary Vault pieces. Drumsticks,
+  cymbal packs, apparel and the electronic E-FAMILY line are deferred
+  to follow-up imports.
+
+### Patch Changes
+
+- e80d8e6: Add the Waves V17 version (17.1.42) to the 54 Waves entries that listed only
+  16.7.33 or no version, so an installed 16.7.33 no longer reads as current.
+  Each product was checked against its waves.com page (live, lists V17) and the
+  2026-06-23 "across-the-board update to V17" release note before the row was
+  written through `pnpm identifiers:apply`. The reviewed list is
+  `docs/reviews/2026-10-unmatched-makers.tsv`.
+
 ## 3.70.0
 
 ### Minor Changes
