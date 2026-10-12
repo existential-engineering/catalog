@@ -478,6 +478,23 @@ describe("validateFile", () => {
     });
   });
 
+  it("reaches raw html and unsafe links inside table cells", () => {
+    // marked keeps a table's cells under `header` and `rows`, not `tokens`.
+    const table =
+      "| Mode | Note |\n|------|------|\n" +
+      '| Hall | <img src=x onerror="alert(1)"> |\n' +
+      "| Room | [more](javascript:alert(2)) |";
+    const file = writeEntry(
+      "hardware",
+      `${HARDWARE_OK}details: |-\n  ${table.replace(/\n/g, "\n  ")}\n`
+    );
+    const result = validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS);
+    expect(result?.details?.map((d) => d.code).sort()).toEqual([
+      ValidationErrorCode.E128_UNSAFE_URL_SCHEME,
+      ValidationErrorCode.E305_RAW_HTML_IN_PROSE,
+    ]);
+  });
+
   it("reads angle brackets the lexer takes as text as text, not html", () => {
     // In the corpus: a tracklist entry written as <The Lord's Funeral>.
     const file = writeEntry(

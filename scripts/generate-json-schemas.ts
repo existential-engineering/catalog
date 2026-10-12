@@ -63,11 +63,13 @@ const videoLinkSchema = {
 };
 
 // Every `url` field: an http or https page, which `pnpm validate` enforces
-// as E128. `format: "uri"` alone admits `javascript:` and `data:`.
+// as E128. `format: "uri"` alone admits `javascript:` and `data:`. The
+// scheme is matched case-insensitively because the URL parser lowercases
+// it, so `HTTPS://` passes `pnpm validate` and has to pass here too.
 const urlSchema = {
   type: "string",
   format: "uri",
-  pattern: "^https?://",
+  pattern: "^[Hh][Tt][Tt][Pp][Ss]?://",
   description: "An http or https URL.",
 };
 

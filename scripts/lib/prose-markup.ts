@@ -73,6 +73,13 @@ export function findProseMarkup(markdown: string): ProseMarkup {
       }
       if ("tokens" in token && Array.isArray(token.tokens)) walk(token.tokens);
       if ("items" in token && Array.isArray(token.items)) walk(token.items);
+      // A table keeps its cells under `header` and `rows`, not `tokens`,
+      // so a walk over `tokens` alone never reaches a cell's inline HTML
+      // or link.
+      if (token.type === "table") {
+        for (const cell of token.header) walk(cell.tokens);
+        for (const row of token.rows) for (const cell of row) walk(cell.tokens);
+      }
     }
   };
   walk(marked.lexer(markdown));
