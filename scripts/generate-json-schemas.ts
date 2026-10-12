@@ -62,6 +62,15 @@ const videoLinkSchema = {
   },
 };
 
+// Every `url` field: an http or https page, which `pnpm validate` enforces
+// as E128. `format: "uri"` alone admits `javascript:` and `data:`.
+const urlSchema = {
+  type: "string",
+  format: "uri",
+  pattern: "^https?://",
+  description: "An http or https URL.",
+};
+
 const linkSchema = {
   type: "object",
   required: ["type", "url"],
@@ -74,7 +83,7 @@ const linkSchema = {
         "Link type. Valid values are defined in schema/link-types.yaml. To add a new type, submit a PR updating that file.",
     },
     title: { type: "string" },
-    url: { type: "string", format: "uri" },
+    url: urlSchema,
     description: { type: "string" },
   },
 };
@@ -89,7 +98,7 @@ const versionSchema = {
     releaseDateYearOnly: { type: "boolean" },
     preRelease: { type: "boolean" },
     unofficial: { type: "boolean" },
-    url: { type: "string", format: "uri" },
+    url: urlSchema,
     description: { type: "string" },
     prices: { type: "array", items: priceSchema },
     links: { type: "array", items: linkSchema },
@@ -168,7 +177,7 @@ const variantSchema = {
     },
     releaseDate: { type: "string" },
     releaseDateYearOnly: { type: "boolean" },
-    url: { type: "string", format: "uri" },
+    url: urlSchema,
     description: { type: "string" },
     prices: { type: "array", items: priceSchema },
     links: { type: "array", items: linkSchema },
@@ -191,7 +200,7 @@ const baseTranslationProperties = {
   description: { type: "string" },
   details: { type: "string" },
   specs: { type: "string" },
-  url: { type: "string", format: "uri" },
+  url: urlSchema,
   links: { type: "array", items: linkSchema },
   videos: { type: "array", items: videoLinkSchema },
 };
@@ -266,7 +275,7 @@ const sharedFields = {
     description:
       "Additional categories. Valid values are in schema/categories.yaml. Common synonyms (e.g., 'eq' for 'equalizer') are mapped in schema/category-aliases.yaml. To add a new category, submit a PR updating the schema file.",
   },
-  url: { type: "string", format: "uri" },
+  url: urlSchema,
   releaseDate: {
     type: "string",
     description: "ISO date (YYYY-MM-DD) or year-only (YYYY) if releaseDateYearOnly is true.",

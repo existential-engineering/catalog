@@ -15,19 +15,31 @@ on:
 permissions:
   contents: read
 
+# Two jobs, split by what they hold, on the same reasoning as
+# assign-ids.yml. `check-urls` runs `pnpm install` (the repo's lifecycle
+# scripts) and then thousands of guarded requests to contributor-chosen
+# URLs. Anything running in that job can read every credential the job
+# references, so it references a read-only token and nothing else, and
+# hands its one product, the refreshed cache, to `commit-cache` as an
+# artifact. `commit-cache` is the only job that holds a contents-write
+# token: it installs nothing, runs no script from the tree, checks the
+# artifact is the JSON it expects, and pushes that one file.
 jobs:
   check-urls:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
-      contents: write
+      contents: read
       issues: write
+    outputs:
+      cache: ${{ steps.cache.outputs.present }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 1
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
@@ -40,27 +52,40 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # The input is a workflow_dispatch boolean, so it reaches the shell
+      # through env rather than `${{ }}` inside `run:`, like every other
+      # value these workflows did not choose.
       - name: Run URL validation
         id: urls
         continue-on-error: true
+        env:
+          FORCE_RECHECK: ${{ inputs.force_recheck }}
         run: |
-          if [ "${{ inputs.force_recheck }}" = "true" ]; then
+          if [ "$FORCE_RECHECK" = "true" ]; then
             pnpm validate-urls --update-cache --ignore-cache
           else
             pnpm validate-urls --use-cache --update-cache
           fi
 
-      - name: Commit cache updates
+      # Only the cache file is handed on. The first run may not create it.
+      - name: Check for cache updates
+        id: cache
         if: always()
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Only add cache file if it exists (first run may not create it)
           if [ -f .github/url-cache.json ]; then
-            git add .github/url-cache.json
-            git diff --staged --quiet || git commit -m "chore: update URL cache"
-            git push || echo "Push failed - may need manual intervention"
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Upload cache
+        if: always() && steps.cache.outputs.present == 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: url-cache
+          path: .github/url-cache.json
+          retention-days: 1
+          if-no-files-found: error
 
       - name: Create or update issue for broken URLs
         if: steps.urls.outcome == 'failure'
@@ -78,7 +103,7 @@ jobs:
             // accepted URL restructure the report or change whose name
             // appears to have written it.
             const cell = (s) => String(s)
-              .replace(/[\u0000-\u001f\u007f-\u009f\u2028\u2029]+/g, ' ')
+              .replace(/[\u0000-\u001f\u007f-\u009f  ]+/g, ' ')
               .replace(/[\\`|<>@[\]()!]/g, (ch) => '\\' + ch)
               .trim() || '-';
 
@@ -181,3 +206,50 @@ jobs:
               });
               console.log(`Closed issue #${existingIssue.number}`);
             }
+
+  commit-cache:
+    needs: check-urls
+    if: always() && needs.check-urls.outputs.cache == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      # No `pnpm install` runs here, so no husky hooksPath gets configured
+      # either; hooks are disabled below all the same.
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 1
+
+      - name: Download cache
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: url-cache
+          path: .github
+
+      # The artifact was produced by a job that ran contributor-reachable
+      # code, so it is data to check, not a file to trust: it has to parse
+      # as the cache shape `scripts/lib/url-cache.ts` writes, and nothing
+      # else may have changed.
+      - name: Verify cache artifact
+        run: |
+          node -e '
+            const fs = require("node:fs");
+            const cache = JSON.parse(fs.readFileSync(".github/url-cache.json", "utf-8"));
+            const ok = cache && cache.version === 1 && cache.entries && typeof cache.entries === "object" && !Array.isArray(cache.entries);
+            if (!ok) { console.error("::error::url-cache.json is not a version 1 cache; refusing to commit it"); process.exit(1); }
+          '
+          if git status --porcelain | grep -vE '^.. \.github/url-cache\.json$'; then
+            echo "::error::artifact changed something other than .github/url-cache.json; refusing to commit"
+            exit 1
+          fi
+
+      - name: Commit cache updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/url-cache.json
+          git diff --staged --quiet && exit 0
+          git -c core.hooksPath=/dev/null commit -m "chore: update URL cache"
+          git -c core.hooksPath=/dev/null push || echo "Push failed - may need manual intervention"

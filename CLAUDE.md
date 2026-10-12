@@ -171,6 +171,27 @@ cohort working:
   with an argument array, never `execSync` with an interpolated string.
   Quoting does not disarm `$(...)` or a backtick, and catalog filenames
   arrive through pull requests.
+- Every data file is read through `readRegularFile` (`loadYamlFile`,
+  `loadYamlFileWithPositions`), which `lstat`s first and refuses a symlink
+  or anything that is not a regular file. A directory listing is a list of
+  names, and `readFileSync` follows a name wherever it points, so a
+  committed `data/software/x.yaml -> /dev/zero` was an unbounded read in
+  `pnpm validate` and `pnpm build` until this existed.
+- Prose is Markdown and a `url` is an http(s) page, at both ends. The build
+  renders `description`/`details`/`specs` with marked, which passes raw
+  HTML through by design, and Studio shows the result; `z.url()` accepts
+  `javascript:` and `data:` because the URL parser does. `pnpm validate`
+  refuses raw HTML (E305) and any scheme but http and https (E128), on
+  `url` fields and on links inside prose, read off marked's own lexer so
+  the verdict is the renderer's. `markdownToHtml` in `build-sqlite.ts`
+  escapes raw HTML and drops unsafe link destinations regardless, because
+  the build reads whatever is on disk and a validator is only a statement
+  about files that went through it. The shared rule lives in
+  `scripts/lib/prose-markup.ts`.
+- `fix-urls` never writes a redirect target that leaves the maker's
+  registrable domain. The target is whatever the server at the old address
+  says today, and a lapsed domain answers with its buyer's store; a
+  cross-site redirect is reported and left for a person.
 - A workflow that lays a catalog value out in a Markdown table passes it
   through that workflow's `cell()` encoder. The value is data, not markup:
   a newline ends the row, a pipe adds a column, a backtick opens a code

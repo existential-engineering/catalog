@@ -1,5 +1,52 @@
-import { describe, expect, it } from "vitest";
-import { escapeSQL, findClosestMatch, formatValidOptions, parseErrorPath } from "../lib/utils.js";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { afterEach, describe, expect, it } from "vitest";
+import {
+  escapeSQL,
+  findClosestMatch,
+  formatValidOptions,
+  loadYamlFile,
+  parseErrorPath,
+  readRegularFile,
+} from "../lib/utils.js";
+
+describe("readRegularFile", () => {
+  const dirs: string[] = [];
+  afterEach(() => {
+    for (const dir of dirs.splice(0)) fs.rmSync(dir, { recursive: true, force: true });
+  });
+  const tmp = (): string => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "catalog-utils-"));
+    dirs.push(dir);
+    return dir;
+  };
+
+  it("reads a regular file", () => {
+    const dir = tmp();
+    const file = path.join(dir, "a.yaml");
+    fs.writeFileSync(file, "name: A\n");
+    expect(readRegularFile(file)).toBe("name: A\n");
+    expect(loadYamlFile<{ name: string }>(file)).toEqual({ name: "A" });
+  });
+
+  it("refuses a symlink rather than reading through it", () => {
+    // A committed `data/software/x.yaml -> /dev/zero` was an unbounded
+    // read in validate and build; the link is refused as a link.
+    const dir = tmp();
+    const target = path.join(dir, "real.yaml");
+    fs.writeFileSync(target, "name: A\n");
+    const link = path.join(dir, "link.yaml");
+    fs.symlinkSync(target, link);
+    expect(() => readRegularFile(link)).toThrow(/symbolic link/);
+    expect(() => loadYamlFile(link)).toThrow(/symbolic link/);
+  });
+
+  it("refuses something that is not a regular file", () => {
+    const dir = tmp();
+    expect(() => readRegularFile(dir)).toThrow(/not a regular file/);
+  });
+});
 
 describe("findClosestMatch", () => {
   it("returns exact match when found", () => {

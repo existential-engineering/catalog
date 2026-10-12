@@ -31,6 +31,23 @@ describe("pure normalizers", () => {
     expect(markdownToHtml(null)).toBeNull();
   });
 
+  it("markdownToHtml escapes raw html and renders an unsafe link as its text", () => {
+    // marked passes raw HTML through by design; Studio shows these columns
+    // as HTML. Validation refuses this at the source (E305, E128); the
+    // build refuses it again because it reads whatever is on disk.
+    expect(markdownToHtml('Hi <img src=x onerror="alert(1)"> there')).toBe(
+      "<p>Hi &lt;img src=x onerror=&quot;alert(1)&quot;&gt; there</p>"
+    );
+    expect(markdownToHtml("<script>alert(2)</script>")).toBe(
+      "&lt;script&gt;alert(2)&lt;/script&gt;"
+    );
+    expect(markdownToHtml("[click](javascript:alert(3))")).toBe("<p>click</p>");
+    expect(markdownToHtml("![alt](javascript:alert(4))")).toBe("<p>alt</p>");
+    expect(markdownToHtml("[site](https://x.example/) and [mail](mailto:a@x.example)")).toBe(
+      '<p><a href="https://x.example/">site</a> and <a href="mailto:a@x.example">mail</a></p>'
+    );
+  });
+
   it("normalizeCategory maps an alias to its canonical value and passes the rest through", () => {
     expect(normalizeCategory("eq")).toBe("equalizer");
     expect(normalizeCategory("equalizer")).toBe("equalizer");
