@@ -10,8 +10,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import Database from "better-sqlite3";
-import { marked } from "marked";
-
+import { Marked, type Tokens } from "marked";
+import { escapeHtml, isSafeHref } from "./lib/prose-markup.js";
 import type {
   Accessory,
   CategoryAliasesSchema,
@@ -31,10 +31,38 @@ import {
   slugify,
 } from "./lib/utils.js";
 
-// Configure marked for safe HTML output
-marked.setOptions({
+/**
+ * The renderer behind every `*_html` column. Its own `Marked` instance,
+ * so the overrides never reach the global `marked` that `validate.ts`
+ * lexes with.
+ *
+ * marked passes raw HTML through by design, and Studio shows these
+ * columns as HTML, so until this renderer existed a `<script>` or an
+ * `<img onerror>` in an entry's prose shipped verbatim in the signed
+ * database. `pnpm validate` now refuses raw HTML (E305) and non-http
+ * links (E128) at the source; this is the same rule at the sink, because
+ * a validator is a statement about files that went through it and the
+ * build reads whatever is on disk.
+ *
+ * Returning `false` from an override hands the token back to marked's own
+ * renderer, so a safe link or image is rendered exactly as before.
+ */
+const renderer = new Marked({
   gfm: true, // GitHub Flavored Markdown
   breaks: false, // Don't convert \n to <br>
+  renderer: {
+    html({ text }: Tokens.HTML | Tokens.Tag): string {
+      return escapeHtml(text);
+    },
+    link(token: Tokens.Link): string | false {
+      if (isSafeHref(token.href)) return false;
+      return this.parser.parseInline(token.tokens);
+    },
+    image(token: Tokens.Image): string | false {
+      if (isSafeHref(token.href)) return false;
+      return escapeHtml(token.text);
+    },
+  },
 });
 
 /**
@@ -42,7 +70,7 @@ marked.setOptions({
  */
 export function markdownToHtml(markdown: string | undefined | null): string | null {
   if (!markdown) return null;
-  const html = marked.parse(markdown);
+  const html = renderer.parse(markdown);
   // marked.parse can return a Promise in async mode, but we're using sync mode
   return typeof html === "string" ? html.trim() : null;
 }

@@ -55,10 +55,35 @@ export function normalizeMarkdown(value: string | string[] | undefined): string 
 // =============================================================================
 
 /**
+ * Read a catalog file that has to be a regular file.
+ *
+ * Every data file reaches the scripts by its name in a directory listing
+ * or a pull request's change list, and `readFileSync` follows a symlink
+ * wherever it points: a committed `data/software/x.yaml -> /dev/zero` was
+ * an unbounded read in `pnpm validate` and `pnpm build`, on a CI runner
+ * and on every contributor's pre-commit hook. `lstat` first, so a link is
+ * refused as one rather than inspected through, and a FIFO or device is
+ * refused for not being a file. The parent directories are the
+ * repository's own, which is why this does not also need
+ * `checkContainedRegularFile`'s root; a path from outside the checkout
+ * still goes through that.
+ */
+export function readRegularFile(filePath: string): string {
+  const stats = fs.lstatSync(filePath);
+  if (stats.isSymbolicLink()) {
+    throw new Error(`${filePath} is a symbolic link; catalog files must be regular files`);
+  }
+  if (!stats.isFile()) {
+    throw new Error(`${filePath} is not a regular file`);
+  }
+  return fs.readFileSync(filePath, "utf-8");
+}
+
+/**
  * Load and parse a YAML file
  */
 export function loadYamlFile<T>(filePath: string): T {
-  const content = fs.readFileSync(filePath, "utf-8");
+  const content = readRegularFile(filePath);
   return parseYaml(content) as T;
 }
 
@@ -80,7 +105,7 @@ export interface ParsedYamlWithPositions<T> {
  * Load and parse a YAML file with position tracking for error reporting
  */
 export function loadYamlFileWithPositions<T>(filePath: string): ParsedYamlWithPositions<T> {
-  const content = fs.readFileSync(filePath, "utf-8");
+  const content = readRegularFile(filePath);
   const lineCounter = new LineCounter();
   const document = parseDocument(content, { lineCounter });
 

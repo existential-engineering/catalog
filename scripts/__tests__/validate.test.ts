@@ -70,6 +70,34 @@ describe("getErrorCodeFromZodIssue", () => {
     ).toBe(ValidationErrorCode.E127_INVALID_PRICE_AMOUNT);
   });
 
+  it("classifies an unsafe scheme as E128 before the generic url branch", () => {
+    expect(
+      getErrorCodeFromZodIssue(
+        issue({ message: "Unsafe URL scheme 'javascript:': only http and https are allowed." })
+      )
+    ).toBe(ValidationErrorCode.E128_UNSAFE_URL_SCHEME);
+    expect(
+      getErrorCodeFromZodIssue(
+        issue({
+          message:
+            "Unsafe URL scheme in prose link 'data:x': only http, https and mailto links render.",
+          path: ["details"],
+        })
+      )
+    ).toBe(ValidationErrorCode.E128_UNSAFE_URL_SCHEME);
+  });
+
+  it("classifies raw html as E305 before the markdown branch", () => {
+    expect(
+      getErrorCodeFromZodIssue(
+        issue({
+          message:
+            "Raw HTML in prose: '<script>'. Write Markdown; the build never passes markup through to Studio.",
+        })
+      )
+    ).toBe(ValidationErrorCode.E305_RAW_HTML_IN_PROSE);
+  });
+
   it("classifies url errors, with the youtube variant first", () => {
     expect(getErrorCodeFromZodIssue(issue({ message: "Invalid URL" }))).toBe(
       ValidationErrorCode.E103_INVALID_URL_FORMAT
@@ -387,6 +415,101 @@ describe("validateFile", () => {
         path: "prices.0.amount",
       });
     }
+  });
+
+  it("rejects a url whose scheme is not http(s) as E128, on the entry and on a link", () => {
+    for (const bad of [
+      "javascript:alert(1)",
+      "data:text/html,hi",
+      "file:///etc/passwd",
+      "ftp://x.example/a",
+    ]) {
+      const file = writeEntry("hardware", `${HARDWARE_OK}url: ${bad}\n`);
+      const result = validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS);
+      expect(result?.details, bad).toHaveLength(1);
+      expect(result?.details?.[0], bad).toMatchObject({
+        code: ValidationErrorCode.E128_UNSAFE_URL_SCHEME,
+        path: "url",
+      });
+    }
+    const link = writeEntry(
+      "hardware",
+      `${HARDWARE_OK}links:\n  - type: resource\n    title: Evil\n    url: "javascript:alert(1)"\n`
+    );
+    expect(validateFile(link, COLLECTION_SCHEMAS.hardware, MAKERS)?.details?.[0]).toMatchObject({
+      code: ValidationErrorCode.E128_UNSAFE_URL_SCHEME,
+      path: "links.0.url",
+    });
+  });
+
+  it("leaves a malformed url to E103 rather than reporting it twice", () => {
+    const file = writeEntry("hardware", `${HARDWARE_OK}url: not a url\n`);
+    const result = validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS);
+    expect(result?.details).toHaveLength(1);
+    expect(result?.details?.[0].code).toBe(ValidationErrorCode.E103_INVALID_URL_FORMAT);
+  });
+
+  it("rejects raw html in prose as E305 and an unsafe prose link as E128", () => {
+    const html = writeEntry(
+      "hardware",
+      HARDWARE_OK.replace(
+        "description: A pedal.",
+        'description: A pedal with <img src=x onerror="alert(1)"> inside.'
+      )
+    );
+    expect(validateFile(html, COLLECTION_SCHEMAS.hardware, MAKERS)?.details?.[0]).toMatchObject({
+      code: ValidationErrorCode.E305_RAW_HTML_IN_PROSE,
+      path: "description",
+    });
+
+    const block = writeEntry(
+      "hardware",
+      `${HARDWARE_OK}details: |-\n  First paragraph.\n\n  <script>alert(2)</script>\n`
+    );
+    expect(validateFile(block, COLLECTION_SCHEMAS.hardware, MAKERS)?.details?.[0]).toMatchObject({
+      code: ValidationErrorCode.E305_RAW_HTML_IN_PROSE,
+      path: "details",
+    });
+
+    const link = writeEntry("hardware", `${HARDWARE_OK}specs: "- [Click](javascript:alert(3))"\n`);
+    expect(validateFile(link, COLLECTION_SCHEMAS.hardware, MAKERS)?.details?.[0]).toMatchObject({
+      code: ValidationErrorCode.E128_UNSAFE_URL_SCHEME,
+      path: "specs",
+    });
+  });
+
+  it("reaches raw html and unsafe links inside table cells", () => {
+    // marked keeps a table's cells under `header` and `rows`, not `tokens`.
+    const table =
+      "| Mode | Note |\n|------|------|\n" +
+      '| Hall | <img src=x onerror="alert(1)"> |\n' +
+      "| Room | [more](javascript:alert(2)) |";
+    const file = writeEntry(
+      "hardware",
+      `${HARDWARE_OK}details: |-\n  ${table.replace(/\n/g, "\n  ")}\n`
+    );
+    const result = validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS);
+    expect(result?.details?.map((d) => d.code).sort()).toEqual([
+      ValidationErrorCode.E128_UNSAFE_URL_SCHEME,
+      ValidationErrorCode.E305_RAW_HTML_IN_PROSE,
+    ]);
+  });
+
+  it("reads angle brackets the lexer takes as text as text, not html", () => {
+    // In the corpus: a tracklist entry written as <The Lord's Funeral>.
+    const file = writeEntry(
+      "hardware",
+      `${HARDWARE_OK}details: |-\n  Tracks include <The Lord's Funeral> and a [page](https://x.example).\n`
+    );
+    expect(validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS)).toBeNull();
+  });
+
+  it("refuses to read an entry through a symlink", () => {
+    const real = writeEntry("hardware", HARDWARE_OK);
+    const link = path.join(path.dirname(real), "linked.yaml");
+    fs.symlinkSync(real, link);
+    const result = validateFile(link, COLLECTION_SCHEMAS.hardware, MAKERS);
+    expect(result?.errors[0]).toMatch(/symbolic link/);
   });
 
   it("keeps a wrong-typed price amount on E101, not E127", () => {

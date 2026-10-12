@@ -35,6 +35,7 @@ import {
   formatPricePath,
   PRICE_TERMS,
 } from "./lib/price-terms.js";
+import { findProseMarkup, urlScheme } from "./lib/prose-markup.js";
 import type {
   CategoriesSchema,
   CategoryAliasesSchema,
@@ -49,6 +50,7 @@ import type {
 } from "./lib/types.js";
 import { collectUnknownKeys, formatUnknownKeyPath } from "./lib/unknown-keys.js";
 import {
+  checkContainedRegularFile,
   DATA_DIR,
   findClosestMatch,
   formatValidOptions,
@@ -196,6 +198,15 @@ export function getErrorCodeFromZodIssue(issue: {
   // Name hygiene errors
   if (message.includes("name artifact")) {
     return ValidationErrorCode.E118_NAME_ARTIFACT;
+  }
+
+  // E128 and E305 go before the URL and Markdown branches, each of which
+  // would otherwise claim the message on the word it carries.
+  if (message.includes("unsafe url scheme")) {
+    return ValidationErrorCode.E128_UNSAFE_URL_SCHEME;
+  }
+  if (message.includes("raw html")) {
+    return ValidationErrorCode.E305_RAW_HTML_IN_PROSE;
   }
 
   // URL errors
@@ -404,6 +415,26 @@ const MarkdownSchema = z
         input: ctx.value,
       });
     }
+    // E305 and E128: the build renders this field with marked, which passes
+    // raw HTML through, and Studio shows the result. Read off the lexer so
+    // the verdict is the renderer's own, not a regex's.
+    const markup = findProseMarkup(ctx.value);
+    for (const html of markup.html) {
+      ctx.issues.push({
+        code: "custom",
+        message:
+          `Raw HTML in prose: '${html.slice(0, 60)}'. Write Markdown; ` +
+          "the build never passes markup through to Studio.",
+        input: ctx.value,
+      });
+    }
+    for (const href of markup.unsafeLinks) {
+      ctx.issues.push({
+        code: "custom",
+        message: `Unsafe URL scheme in prose link '${href}': only http, https and mailto links render.`,
+        input: ctx.value,
+      });
+    }
   });
 
 // =============================================================================
@@ -463,6 +494,23 @@ const VideoLinkSchema = z.object({
   description: z.string().optional(),
 });
 
+/**
+ * E128: a `url` is a page a person is sent to, so it is http or https and
+ * nothing else. `z.url()` accepts every scheme the URL parser does, and a
+ * `javascript:`, `data:` or `file:` value is a payload rather than an
+ * address once Studio opens it. Quiet when the format check already
+ * failed: a value that is not a URL at all is E103's to report.
+ */
+const HttpUrlSchema = z.url().check((ctx) => {
+  const scheme = urlScheme(ctx.value);
+  if (scheme === null || scheme === "http:" || scheme === "https:") return;
+  ctx.issues.push({
+    code: "custom",
+    message: `Unsafe URL scheme '${scheme}': only http and https are allowed.`,
+    input: ctx.value,
+  });
+});
+
 const LinkSchema = z.object({
   type: z.string().check((ctx) => {
     if (!VALID_LINK_TYPES.has(ctx.value)) {
@@ -480,7 +528,7 @@ const LinkSchema = z.object({
     }
   }),
   title: z.string().optional(),
-  url: z.url(),
+  url: HttpUrlSchema,
   description: z.string().optional(),
 });
 
@@ -491,7 +539,7 @@ const VersionSchema = z
     releaseDateYearOnly: z.boolean().optional(),
     preRelease: z.boolean().optional(),
     unofficial: z.boolean().optional(),
-    url: z.url().optional(),
+    url: HttpUrlSchema.optional(),
     description: z.string().optional(),
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
@@ -675,7 +723,7 @@ const VariantSchema = z
       .optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
-    url: z.url().optional(),
+    url: HttpUrlSchema.optional(),
     description: z.string().optional(),
     prices: z.array(PriceSchema).optional(),
     links: z.array(LinkSchema).optional(),
@@ -747,7 +795,7 @@ const ManufacturerSchema = z.object({
   companyName: z.string().optional(),
   parentCompany: z.string().optional(),
   defunct: z.boolean().optional(),
-  url: z.url().optional(),
+  url: HttpUrlSchema.optional(),
   description: MarkdownSchema,
   searchTerms: z.array(z.string()).optional(),
 });
@@ -797,7 +845,7 @@ const SoftwareSchema = z
     identifiers: z.record(z.string(), z.string()).optional(),
     componentIdentifiers: z.record(z.string(), z.array(z.string()).min(1)).optional(),
     compatibleWith: z.array(z.string()).optional(),
-    url: z.url().optional(),
+    url: HttpUrlSchema.optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator(),
@@ -843,7 +891,7 @@ const HardwareSchema = z
           }
         }
       }),
-    url: z.url().optional(),
+    url: HttpUrlSchema.optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator(),
@@ -970,7 +1018,7 @@ const ContentSchema = z
         }
       }),
     compatibleWith: z.array(z.string()).optional(),
-    url: z.url().optional(),
+    url: HttpUrlSchema.optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator(),
@@ -1015,7 +1063,7 @@ const AccessorySchema = z
           }
         }
       }),
-    url: z.url().optional(),
+    url: HttpUrlSchema.optional(),
     releaseDate: z.string().optional(),
     releaseDateYearOnly: z.boolean().optional(),
     primaryCategory: createCategoryValidator(),
@@ -2419,11 +2467,17 @@ function validateScoped(paths: string[]): number {
   let checked = 0;
 
   for (const given of paths) {
-    const file = path.resolve(process.cwd(), given);
-    if (!fs.existsSync(file)) {
-      console.error(`❌ No such file: ${given}`);
+    // The path is the caller's, not this script's: the racks import lanes
+    // pass the files a pull request changed. `existsSync` follows a
+    // symlink, so a committed `data/software/x.yaml -> /dev/zero` was an
+    // unbounded read here; the guard refuses a link, a device and anything
+    // whose canonical path leaves data/.
+    const contained = checkContainedRegularFile(path.resolve(process.cwd(), given), DATA_DIR);
+    if (contained.path === undefined) {
+      console.error(`❌ ${given} ${contained.reason}.`);
       return 1;
     }
+    const file = contained.path;
     // JSON is valid YAML, so without this a stray .json inside a collection
     // directory would parse, validate and exit 0 — reporting success for a
     // file the catalog never reads.

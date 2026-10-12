@@ -48,6 +48,7 @@ export enum ValidationErrorCode {
   E125_IO_HINT_EDGE_PARTIAL = "E125",
   E126_CONTROL_CHARACTER = "E126",
   E127_INVALID_PRICE_AMOUNT = "E127",
+  E128_UNSAFE_URL_SCHEME = "E128",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
@@ -64,6 +65,7 @@ export enum ValidationErrorCode {
   E302_UNCLOSED_CODE_BLOCK = "E302",
   E303_UNBALANCED_BACKTICKS = "E303",
   E304_TRUNCATED_CONTENT = "E304",
+  E305_RAW_HTML_IN_PROSE = "E305",
 
   // Identifier errors (E4xx)
   E400_INVALID_IDENTIFIER_FORMAT = "E400",
@@ -248,6 +250,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     title: "Price amount is negative or not a finite number",
     anchor: "e127-price-amount-is-negative-or-not-a-finite-number",
   },
+  [ValidationErrorCode.E128_UNSAFE_URL_SCHEME]: {
+    title: "URL scheme is not http or https",
+    anchor: "e128-url-scheme-is-not-http-or-https",
+  },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",
     anchor: "e199-validation-error",
@@ -299,6 +305,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E304_TRUNCATED_CONTENT]: {
     title: "Truncated content",
     anchor: "e304-truncated-content",
+  },
+  [ValidationErrorCode.E305_RAW_HTML_IN_PROSE]: {
+    title: "Raw HTML in prose",
+    anchor: "e305-raw-html-in-prose",
   },
 
   // Identifier errors

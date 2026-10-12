@@ -494,6 +494,38 @@ read is omitted, never written as a placeholder.
 
 ---
 
+### E128: URL Scheme Is Not http or https
+
+A `url` field (the entry's own, a link's, a version's, a manufacturer's) carries a
+scheme other than `http` or `https`: `javascript:`, `data:`, `file:`, `ftp:` and so
+on. `z.url()` accepts any of them, because the URL parser does, and nothing
+rejected them before. A `url` is a page Studio sends a person to, so a
+`javascript:` or `data:` value is a payload rather than an address once a client
+opens it, and the catalog's signature would be vouching for it.
+
+The same rule applies to a link written inside prose (`[text](javascript:...)` in
+`description`, `details` or `specs`): the build renders those with marked, and a
+link it refuses is rendered as its text alone.
+
+**Examples:**
+
+```yaml
+# Wrong
+url: javascript:alert(1)
+links:
+  - type: resource
+    title: White paper
+    url: ftp://ftp.example.com/paper.pdf
+
+# Correct
+url: https://example.com/product
+```
+
+**Fix:** Point the field at the maker's http(s) page. A document only reachable
+over another scheme has no place in `links`; mention it in `details` instead.
+
+---
+
 ### E199: Validation Error
 
 A generic validation error that doesn't fall into a more specific category.
@@ -697,6 +729,41 @@ description: Use the `foo` command to run it
 ```
 
 **Fix:** Ensure inline code has matching opening and closing backticks.
+
+---
+
+### E305: Raw HTML in Prose
+
+A prose field (`description`, `details`, `specs`, or the same under
+`translations`) contains raw HTML: a tag, a comment, an inline element. The build
+renders these fields with marked, which passes HTML through unchanged by design,
+and Studio displays the result as HTML. So until this rule existed, a `<script>`
+or an `<img onerror=...>` in an entry's prose shipped verbatim in the signed
+database, and nothing between a pull request and a release looked for it.
+
+The check reads marked's own token stream rather than matching `<` in the text,
+so it refuses exactly what the renderer would have emitted as markup and leaves
+alone what the renderer reads as text (a `<The Lord's Funeral>` in a tracklist is
+not a tag). The build also escapes any raw HTML it is handed, as a second layer;
+this error is the one a contributor sees.
+
+**Examples:**
+
+```yaml
+# Wrong
+details: |-
+  Three modes, <b>including shimmer</b>.
+
+  <iframe src="https://example.com/embed"></iframe>
+
+# Correct
+details: |-
+  Three modes, **including shimmer**.
+```
+
+**Fix:** Write Markdown. Bold is `**text**`, a list is `- item`, a link is
+`[text](https://...)`. An embed or a widget has no place in prose; link to the
+page that hosts it.
 
 ---
 

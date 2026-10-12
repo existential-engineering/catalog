@@ -21,6 +21,7 @@ import { parse as parseYaml } from "yaml";
 import { getCachedUrl, loadUrlCache, type UrlCache } from "./lib/url-cache.js";
 import { fetchPublic, isPrivateDestinationError } from "./lib/url-guard.js";
 import { DATA_DIR, getYamlFiles } from "./lib/utils.js";
+import { registrableDomain } from "./upgrade-http-urls.js";
 
 // =============================================================================
 // TYPES
@@ -136,10 +137,32 @@ function isGenuinelyBroken(status: number | "error"): boolean {
  * - Strip tracking parameters (?v=...)
  * - Return null if redirect target is non-HTTPS (suspicious)
  * - Return null if redirect just adds a locale path to the same host
+ * - Return null, and say so, if the redirect leaves the maker's site
+ *
+ * The last one is the trust boundary. `url` is the maker's own page, and
+ * a redirect target is whatever the server at the old address says today:
+ * a lapsed domain bought by a squatter, or a compromised host, answers
+ * with its own store, and rewriting the entry would promote that answer
+ * to the catalog's official URL with nothing left in the diff to show
+ * where it came from. A redirect within the same registrable domain is
+ * the maker reorganising; one that crosses domains is a decision for a
+ * person, so it is reported and never written.
  */
 function cleanRedirectTarget(originalUrl: string, redirectUrl: string): string | null {
   // Don't follow redirects to non-HTTPS
   if (redirectUrl.startsWith("http://")) return null;
+
+  try {
+    const from = registrableDomain(new URL(originalUrl).hostname);
+    const to = registrableDomain(new URL(redirectUrl).hostname);
+    if (from !== to) {
+      console.warn(`  ⚠️  ${originalUrl} redirects off-site to ${redirectUrl}; left for review`);
+      return null;
+    }
+  } catch {
+    // Not parseable as URLs: nothing to compare, and nothing worth writing.
+    return null;
+  }
 
   let cleaned = redirectUrl;
 
@@ -290,8 +313,11 @@ function applyActionsToContent(content: string, actions: UrlAction[]): string {
 
   for (const action of actions) {
     if (action.action === "update" && action.newUrl) {
-      // Simple string replacement of the URL
-      result = result.replace(action.url, action.newUrl);
+      // Simple string replacement of the URL. The replacement is a
+      // function so a `$&` or `$1` in a server-chosen target is written
+      // literally rather than read as a replacement pattern.
+      const target = action.newUrl;
+      result = result.replace(action.url, () => target);
     } else if (action.action === "remove") {
       if (action.field === "url" || action.field === "source") {
         // Remove the entire line for top-level fields
@@ -467,13 +493,18 @@ if (useLive && urlsToCheck.length > 0) {
     if (result.broken && isGenuinelyBroken(result.httpStatus ?? "error")) {
       action = { field: item.field, url: item.url, action: "remove", reason: result.reason };
     } else if (result.redirected && result.finalUrl) {
-      action = {
-        field: item.field,
-        url: item.url,
-        action: "update",
-        newUrl: result.finalUrl,
-        reason: result.reason,
-      };
+      // The same filter the cached path applies: the live path used to
+      // write the final URL as it came, off-site redirects included.
+      const cleanedTarget = cleanRedirectTarget(item.url, result.finalUrl);
+      if (cleanedTarget) {
+        action = {
+          field: item.field,
+          url: item.url,
+          action: "update",
+          newUrl: cleanedTarget,
+          reason: `redirects to ${cleanedTarget}`,
+        };
+      }
     } else if (item.url.startsWith("http://")) {
       action = { field: item.field, url: item.url, action: "remove", reason: "non-https" };
     }
