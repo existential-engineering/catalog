@@ -796,6 +796,24 @@ the one key reported as E199 instead, checked on the raw object before
 any schema runs, because product images live in R2 keyed by id. A field
 that is genuinely new data goes into the schema in the same PR.
 
+## Duplicates and Ids
+
+**A duplicate is a group, reported once.** `pnpm validate` warns W134 when
+two entries in a collection share a manufacturer and a normalised name,
+and W135 when they share a `url` (read without scheme, `www.` or a
+trailing slash), on the first file of each group naming the others;
+`pnpm dataset:audit` lists the same groups from the one implementation
+in `scripts/lib/duplicates.ts`, so the two never disagree about a pair.
+Both are advisory because `main` carried 66 name groups and 149 url
+groups when the check was written. Reviewers are no longer asked to spot
+exact collisions by eye; only a product filed under a different name is
+still theirs to find.
+
+An `id` is the 21-character nanoid `pnpm assign-ids` writes (E129),
+unique across every collection (E207), and leaves the catalog only under
+a pull request labelled `retirement`, which is what lets
+`check-id-immutability` fail a deletion or a rename that drops one.
+
 ## Identifiers
 
 `identifiers` is keyed by plugin format (`au`, `vst3`, `aax`, `clap`,
