@@ -7,14 +7,17 @@
  * Usage:
  *   pnpm validate-urls                              # Validate all files
  *   pnpm validate-urls --changed-only --base <sha>  # Validate only changed files
+ *   pnpm validate-urls --files <list>               # Validate the data files listed
+ *                                                   # one per line (`-` reads stdin)
  *   pnpm validate-urls --use-cache                  # Use cached results
  *   pnpm validate-urls --update-cache               # Update cache with results
  *   pnpm validate-urls --ignore-cache               # Force recheck all URLs
  */
 
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import { parse as parseYaml } from "yaml";
 import {
   getCachedUrl,
@@ -178,62 +181,107 @@ interface ValidationResult {
 interface ParsedArgs {
   changedOnly: boolean;
   baseSha?: string;
+  // Path of a file listing the data files to check, `-` for stdin.
+  filesList?: string;
   useCache: boolean;
   updateCache: boolean;
   ignoreCache: boolean;
 }
 
-function parseArgs(): ParsedArgs {
-  const args = process.argv.slice(2);
+export function parseArgs(args: string[]): ParsedArgs {
   const changedOnly = args.includes("--changed-only");
   const baseIndex = args.indexOf("--base");
   const baseSha = baseIndex !== -1 ? args[baseIndex + 1] : undefined;
+  const filesIndex = args.indexOf("--files");
+  const filesList = filesIndex !== -1 ? args[filesIndex + 1] : undefined;
   const useCache = args.includes("--use-cache");
   const updateCache = args.includes("--update-cache");
   const ignoreCache = args.includes("--ignore-cache");
 
-  return { changedOnly, baseSha, useCache, updateCache, ignoreCache };
+  if (changedOnly && !baseSha) {
+    throw new Error("--changed-only requires --base <sha>");
+  }
+  if (filesIndex !== -1 && !filesList) {
+    throw new Error("--files requires a path (or - for stdin)");
+  }
+  // Each flag names the file set on its own; silently taking the union
+  // would hide which lane the caller meant.
+  if (changedOnly && filesList !== undefined) {
+    throw new Error("--changed-only and --files are mutually exclusive");
+  }
+
+  return { changedOnly, baseSha, filesList, useCache, updateCache, ignoreCache };
+}
+
+/**
+ * Resolve a list of data paths, one per line, to the files it names. The
+ * pathname match is lexical, so it says nothing about what is at the path.
+ * A pull request can commit a symlink at data/software/x.yaml, and
+ * existsSync/readFileSync would both follow it: pointed at /dev/urandom
+ * that is an unbounded read on the runner. checkContainedRegularFile
+ * refuses a symlink, a device, and anything whose canonical path leaves
+ * `root`, and a refused path is reported and never read.
+ */
+export function resolveListedFiles(
+  list: string,
+  root: string = DATA_DIR,
+  options: { ignoreMissing?: boolean } = {}
+): string[] {
+  const files: string[] = [];
+  for (const line of list.split("\n")) {
+    const relative = line.trim();
+    if (relative === "") continue;
+    const checked = checkContainedRegularFile(path.resolve(relative), root);
+    if (checked.path) {
+      files.push(checked.path);
+    } else if (!(options.ignoreMissing && checked.reason === "does not exist")) {
+      console.error(`Skipping ${relative}: ${checked.reason}`);
+    }
+  }
+  return files;
 }
 
 // Get list of changed YAML files in data/
 function getChangedFiles(baseSha: string): string[] {
-  // Validate SHA format to prevent command injection
+  // The sha reaches git as one argv entry, so a shell never sees it. The
+  // format check stays because a ref that is not a sha is a caller mistake
+  // worth naming rather than something to hand to git.
   if (!/^[a-f0-9]{7,40}$/i.test(baseSha)) {
     console.error(`Invalid git SHA format: ${baseSha}`);
     return [];
   }
 
   try {
-    const output = execSync(`git diff --name-only ${baseSha} HEAD`, {
+    const output = execFileSync("git", ["diff", "--name-only", baseSha, "HEAD"], {
       encoding: "utf-8",
     });
 
-    // The pathname match is lexical, so it says nothing about what is at
-    // the path. A pull request can commit a symlink at
-    // data/software/x.yaml, and existsSync/readFileSync would both follow
-    // it: pointed at /dev/urandom that is an unbounded read on the runner.
-    // checkContainedRegularFile refuses a symlink, a device, and anything
-    // whose canonical path leaves data/.
-    const changed: string[] = [];
-    for (const relative of output.split("\n")) {
-      if (
-        !relative.match(/^data\/(software|content|hardware|accessories|manufacturers)\/.*\.yaml$/)
-      ) {
-        continue;
-      }
-      const checked = checkContainedRegularFile(path.join(process.cwd(), relative), DATA_DIR);
-      if (checked.path) {
-        changed.push(checked.path);
-      } else if (checked.reason !== "does not exist") {
-        // A deleted file is nothing to check; anything else is worth saying.
-        console.error(`Skipping ${relative}: ${checked.reason}`);
-      }
-    }
-    return changed;
+    const changed = output
+      .split("\n")
+      .filter((relative) =>
+        /^data\/(software|content|hardware|accessories|manufacturers)\/.*\.yaml$/.test(relative)
+      )
+      .join("\n");
+    // A deleted file is nothing to check; anything else is worth saying.
+    return resolveListedFiles(changed, DATA_DIR, { ignoreMissing: true });
   } catch (error) {
     console.error("Failed to get changed files:", error);
     return [];
   }
+}
+
+// The listed files for `--files`: a file on disk, or stdin for `-`. The
+// list itself is a path the caller chose, so it goes through the guard
+// before it is read, like every path this script did not pick.
+function readFilesList(filesList: string): string {
+  if (filesList === "-") {
+    return fs.readFileSync(0, "utf-8");
+  }
+  const checked = checkContainedRegularFile(filesList, process.cwd());
+  if (!checked.path) {
+    throw new Error(`Cannot read --files ${filesList}: ${checked.reason}`);
+  }
+  return fs.readFileSync(checked.path, "utf-8");
 }
 
 // Extract all URLs from a parsed YAML object into a shared set, stopping once
@@ -524,6 +572,7 @@ async function processFile(
 async function validate(
   changedOnly: boolean,
   baseSha?: string,
+  filesList?: string,
   cacheOptions?: {
     useCache: boolean;
     updateCache: boolean;
@@ -541,6 +590,9 @@ async function validate(
       );
     }
     console.log(`Checking ${files.length} changed file(s)...`);
+  } else if (filesList !== undefined) {
+    files = resolveListedFiles(readFilesList(filesList));
+    console.log(`Checking ${files.length} listed file(s)...`);
   } else {
     // Get all YAML files
     files = [
@@ -569,8 +621,12 @@ async function validate(
   }
 
   // The changed-file path runs on every PR against attacker-supplied YAML, so
-  // it is capped and deadlined. A full-catalog run is scheduled and trusted.
-  const budget: RunBudget | undefined = changedOnly
+  // it is capped and deadlined, and a listed run gets the same budget: it is
+  // the import lanes' pre-commit form of the same check, and a file that
+  // would fail the PR runner should fail here too. A full-catalog run is
+  // scheduled and trusted.
+  const scoped = changedOnly || filesList !== undefined;
+  const budget: RunBudget | undefined = scoped
     ? {
         signal: AbortSignal.timeout(RUN_DEADLINE_MS),
         maxUrlsPerFile: MAX_URLS_PER_FILE,
@@ -753,20 +809,26 @@ function writeConsoleOutput(result: ValidationResult): void {
 }
 
 // Main
-const { changedOnly, baseSha, useCache, updateCache, ignoreCache } = parseArgs();
+async function main(): Promise<void> {
+  const { changedOnly, baseSha, filesList, useCache, updateCache, ignoreCache } = parseArgs(
+    process.argv.slice(2)
+  );
 
-if (changedOnly && !baseSha) {
-  console.error("Error: --changed-only requires --base <sha>");
-  process.exit(1);
+  const result = await validate(changedOnly, baseSha, filesList, {
+    useCache,
+    updateCache,
+    ignoreCache,
+  });
+
+  writeConsoleOutput(result);
+  writeGitHubSummary(result);
+
+  process.exit(result.valid ? 0 : 1);
 }
 
-const result = await validate(changedOnly, baseSha, {
-  useCache,
-  updateCache,
-  ignoreCache,
-});
-
-writeConsoleOutput(result);
-writeGitHubSummary(result);
-
-process.exit(result.valid ? 0 : 1);
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => {
+    console.error(`Error: ${error instanceof Error ? error.message : String(error)}`);
+    process.exit(1);
+  });
+}

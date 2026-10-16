@@ -44,6 +44,8 @@ Community-driven database of audio software, plugins, DAWs, and hardware for mus
   of text (`--tsv` for the review list)
 - `pnpm prose-layout:apply` - Apply the lossless layout fixes (`--write` to
   apply)
+- `pnpm validate-urls --files <list>` - Check the URLs of the data files
+  listed one per line (`-` reads stdin), before an import has committed
 - `pnpm format:check` - Check formatting
 
 Five of the audits above take `--findings <dir>`: `power-input-audit`,
