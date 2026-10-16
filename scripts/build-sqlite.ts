@@ -207,12 +207,37 @@ export function buildDatabase(options: BuildOptions = {}): void {
   const db = new Database(outputFile);
   let totalProducts: number;
   try {
-    totalProducts = populateDatabase(db, dataDir, version);
-  } finally {
-    // A missing id throws partway through; the handle still has to go, or
-    // the next build cannot unlink the file it left behind.
+    // A fresh file written by one process, and read by nobody until it is
+    // done, has nothing an fsync protects: a failed build deletes it below.
+    // Not stored in the file, so there is nothing to restore before VACUUM.
+    db.pragma("synchronous = OFF");
+
+    // Apply schema. It stays outside the transaction because it switches
+    // the journal to WAL, which SQLite refuses mid-transaction, and the
+    // switch is kept: WAL is written into the file header, and every
+    // catalog.sqlite shipped so far has carried it. (journal_mode = OFF is
+    // not an option either way: better-sqlite3 opens in SQLite's defensive
+    // mode, which answers that pragma with DELETE and changes nothing.)
+    db.exec(fs.readFileSync(SCHEMA_FILE, "utf-8"));
+
+    // One transaction for every row. As autocommits, each INSERT was its own
+    // synced transaction and the full corpus took 43 s to build; this takes
+    // about 23 s.
+    totalProducts = db.transaction(() => populateDatabase(db, dataDir, version))();
+
+    // Optimize database. VACUUM refuses to run inside a transaction.
+    db.exec("VACUUM");
+    db.exec("ANALYZE");
+  } catch (err) {
+    // A missing id throws partway through. The handle has to go, or the
+    // next build cannot unlink the file it left behind, and so does the
+    // file: a catalog.sqlite with its schema and part of its rows reads as
+    // a built one to whoever opens it next.
     db.close();
+    fs.rmSync(outputFile, { force: true });
+    throw err;
   }
+  db.close();
 
   // Get file size
   const stats = fs.statSync(outputFile);
@@ -226,14 +251,12 @@ export function buildDatabase(options: BuildOptions = {}): void {
 }
 
 /**
- * Fill an open, empty database from the collections under `dataDir`.
- * Returns the number of product entries written.
+ * Fill an open database that already carries the schema from the
+ * collections under `dataDir`. Returns the number of product entries
+ * written. Runs inside the one transaction `buildDatabase` opens, so
+ * nothing here may VACUUM, commit or change the journal mode.
  */
 function populateDatabase(db: Database.Database, dataDir: string, version: string): number {
-  // Apply schema
-  const schema = fs.readFileSync(SCHEMA_FILE, "utf-8");
-  db.exec(schema);
-
   // Insert approved locales
   const insertLocale = db.prepare(`
     INSERT INTO locales (code, name, native_name, enabled)
@@ -1545,10 +1568,6 @@ function populateDatabase(db: Database.Database, dataDir: string, version: strin
   updateMeta.run("version", version);
   updateMeta.run("updated_at", new Date().toISOString());
   updateMeta.run("schema_version", CATALOG_SCHEMA_VERSION);
-
-  // Optimize database
-  db.exec("VACUUM");
-  db.exec("ANALYZE");
 
   return softwareCount + contentCount + hardwareCount + accessoryCount;
 }

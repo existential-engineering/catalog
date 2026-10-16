@@ -130,6 +130,16 @@ cohort working:
   (`apps/studio/src-tauri/src/data/mod.rs`), and only after the builds
   that cannot read the new schema are considered abandonable. Additive
   changes never bump it.
+- **`pnpm build` writes every row inside one transaction with
+  `synchronous = OFF`**, after `schema.sql` has switched the file to WAL.
+  Every INSERT used to be its own fsynced autocommit, which was 20 of the
+  build's 43 seconds on every PR and release. SQLite refuses the WAL
+  switch mid-transaction and the WAL flag is part of the shipped file
+  header, so the schema runs first; better-sqlite3's defensive mode
+  silently answers `journal_mode = OFF` with `delete`, so that pragma is
+  not an option; and a failed build closes the handle and deletes the
+  file rather than relying on a rollback, so a partial database never
+  looks complete.
 
 ## Project Structure
 
