@@ -752,9 +752,17 @@ CREATE INDEX idx_hardware_io_translations ON hardware_io_translations(hardware_i
 -- FULL-TEXT SEARCH
 -- =============================================================================
 
+-- `id` is stored but UNINDEXED in every *_fts table: it is the join key
+-- back to the base row (Studio selects it and filters `id = x.id`), never
+-- a thing a person searches for, and indexing a 21-character nanoid per
+-- row only grew the index and let a search for a name match an id that
+-- happened to contain it. The MATCH interface is unchanged: the column
+-- is still there, in the same position, so the bm25() weights Studio
+-- passes per column still line up.
+
 -- Manufacturer FTS index
 CREATE VIRTUAL TABLE IF NOT EXISTS manufacturers_fts USING fts5(
-    id,
+    id UNINDEXED,
     name,
     company_name,
     description,
@@ -764,7 +772,7 @@ CREATE VIRTUAL TABLE IF NOT EXISTS manufacturers_fts USING fts5(
 
 -- Content FTS index
 CREATE VIRTUAL TABLE IF NOT EXISTS content_fts USING fts5(
-    id,
+    id UNINDEXED,
     name,
     manufacturer_name,
     categories,
@@ -777,7 +785,7 @@ CREATE VIRTUAL TABLE IF NOT EXISTS content_fts USING fts5(
 -- Note: Not using content='' (contentless mode) because we need to retrieve
 -- the id column to join back to the software table for full results
 CREATE VIRTUAL TABLE IF NOT EXISTS software_fts USING fts5(
-    id,
+    id UNINDEXED,
     name,
     manufacturer_name,
     categories,
@@ -790,7 +798,7 @@ CREATE VIRTUAL TABLE IF NOT EXISTS software_fts USING fts5(
 -- Note: Not using content='' (contentless mode) because we need to retrieve
 -- the id column to join back to the hardware table for full results
 CREATE VIRTUAL TABLE IF NOT EXISTS hardware_fts USING fts5(
-    id,
+    id UNINDEXED,
     name,
     manufacturer_name,
     categories,
@@ -801,7 +809,7 @@ CREATE VIRTUAL TABLE IF NOT EXISTS hardware_fts USING fts5(
 
 -- Accessories FTS index
 CREATE VIRTUAL TABLE IF NOT EXISTS accessories_fts USING fts5(
-    id,
+    id UNINDEXED,
     name,
     manufacturer_name,
     categories,
