@@ -104,9 +104,9 @@ describe("buildDatabase with fallback identifiers", () => {
   const ids = {
     acme: "MFR00000000000000acme",
     shared: "SW0000000000000shared",
-    app: "SW00000000000000000app",
+    app: "SW0000000000000000app",
     mixed: "SW00000000000000mixed",
-    collection: "SW00000000collection",
+    collection: "SW000000000collection",
   };
 
   let tmp: string;

@@ -409,14 +409,16 @@ io:
 
 **IO field validation** uses a two-tier system:
 
-- **Strict (errors, blocks CI):** `signalFlow`, `category`, `type`, `position`, `price.currency`
+- **Strict (errors, blocks CI):** `signalFlow`, `category`, `type`, `connection`, `position`, `price.currency`
   - `signalFlow`: input, output, bidirectional
   - `category`: audio, midi, digital, power
   - `type`: closed vocabulary in `schema/io-types.yaml` — unknown values fail with E117
+  - `connection`: closed vocabulary in `schema/io-connections.yaml` — unknown values fail
+    with E130 (the advisory W121 until the corpus carried one unknown value)
   - `position`: Top, Bottom, Left, Right
   - `currency`: ISO 4217 codes (USD, EUR, GBP, etc.) — see `schema/currencies.yaml`
-- **Advisory (warnings, non-blocking):** `connection`, `link.type`
-  - Known values listed in `schema/io-connections.yaml`, `schema/link-types.yaml`
+- **Advisory (warnings, non-blocking):** `link.type`
+  - Known values listed in `schema/link-types.yaml`
   - Unknown values produce warnings in `pnpm validate` output
   - Add new values to schema files via PR when they're confirmed valid
 
@@ -508,7 +510,7 @@ two — bulk imports get this wrong. E.g. the Eventide H90 has 14 discrete jacks
 
 **Patchbays are the exception.** A `patch-bay` entry models each row as one `io`
 entry with `maxConnections` set to the point count (a 48-point TRS row, not 48
-entries), so W128 skips that category. TT/Bantam patch points use
+entries), so E131 skips that category. TT/Bantam patch points use
 `connection: tt`.
 
 ## I/O Modelling Conventions
@@ -793,6 +795,24 @@ flag and pass it on their changed files. A top-level `images` block is
 the one key reported as E199 instead, checked on the raw object before
 any schema runs, because product images live in R2 keyed by id. A field
 that is genuinely new data goes into the schema in the same PR.
+
+## Duplicates and Ids
+
+**A duplicate is a group, reported once.** `pnpm validate` warns W134 when
+two entries in a collection share a manufacturer and a normalised name,
+and W135 when they share a `url` (read without scheme, `www.` or a
+trailing slash), on the first file of each group naming the others;
+`pnpm dataset:audit` lists the same groups from the one implementation
+in `scripts/lib/duplicates.ts`, so the two never disagree about a pair.
+Both are advisory because `main` carried 66 name groups and 149 url
+groups when the check was written. Reviewers are no longer asked to spot
+exact collisions by eye; only a product filed under a different name is
+still theirs to find.
+
+An `id` is the 21-character nanoid `pnpm assign-ids` writes (E129),
+unique across every collection (E207), and leaves the catalog only under
+a pull request labelled `retirement`, which is what lets
+`check-id-immutability` fail a deletion or a rename that drops one.
 
 ## Identifiers
 

@@ -6,9 +6,8 @@
  * per-file: they check each entry in isolation. As the catalog grows past
  * ~12k entries — with imports dropping hundreds of products per PR — the
  * problems that slip through are *cross-entry*: the same product filed
- * twice, a `compatibleWith` pointing at a slug that doesn't exist, a
- * manufacturer with no products, descriptions that are technically present
- * but useless.
+ * twice, a manufacturer with no products, descriptions that are
+ * technically present but useless, prices nobody has checked in years.
  *
  * This script loads the WHOLE dataset and runs the deterministic
  * cross-entry checks that scale with dataset size (cheap, no LLM). It is
@@ -25,9 +24,11 @@
  *                          only (not fuzzy) — a product catalog is full of
  *                          model-number families ("Bassysm-F" vs "Bassysm-J")
  *                          that edit-distance matching drowns you in.
- *   2. broken-compatible — `compatibleWith` slug resolves to no software or
- *                          hardware entry. (validate fails on this as E206;
- *                          kept here so the audit report stays complete.)
+ *                          The same groups `pnpm validate` warns on (W134),
+ *                          from the one implementation in lib/duplicates.ts.
+ *   2. duplicate-url     — same collection + normalized `url` (W135 in
+ *                          validate). Two entries on one product page are
+ *                          usually one product filed twice.
  *   3. orphan-manufacturer — a manufacturer referenced by zero products.
  *   4. thin-description  — description present but suspiciously short.
  *   5. aggregator-url    — canonical `url` points at an aggregator
@@ -43,6 +44,13 @@
  *   8. modular-missing-hp — a hardware entry filed under `modular` with no
  *                          `hp`, so the faceplate width campaign can see
  *                          its remaining coverage gap (AUREO-1110).
+ *   9. price-staleness   — prices with no `asOf`, or one older than
+ *                          eighteen months, grouped by manufacturer so a
+ *                          re-check is one vendor's store at a time.
+ *
+ * `broken-compatible` used to be check 2. `compatibleWith` to an unknown
+ * slug has been the error E206 since the advisory W123 was promoted, so
+ * the count was always zero and the monthly issue gated on it anyway.
  *
  * Findings with `needsLlmReview: true` are collected into `flagged`, the
  * seam handed to Tier 2. Deterministic findings (broken refs, orphans) are
@@ -57,8 +65,10 @@
 import path from "node:path";
 import { z } from "zod";
 import { isAggregatorUrl, isManufacturerOwnDomain, urlHost } from "./lib/aggregator-domains.js";
+import { findDuplicateNameGroups, findDuplicateUrlGroups } from "./lib/duplicates.js";
 import { type FindingInput, findingsDirArg, recordFindings } from "./lib/findings.js";
 import { countHintCoverage, emptyHintCoverage, type HintCoverage } from "./lib/io-hints.js";
+import { collectPriceArrays } from "./lib/price-terms.js";
 import type { Accessory, Content, Hardware, Manufacturer, Software } from "./lib/types.js";
 import { DATA_DIR, getYamlFiles, loadYamlFile, REPO_ROOT } from "./lib/utils.js";
 
@@ -75,6 +85,10 @@ type Product = Software | Content | Hardware | Accessory;
 const THIN_DESCRIPTION_CHARS = 40;
 /** Cap on the LLM-bound `flagged` list, prioritized by severity. */
 const MAX_FLAGGED = 100;
+/** A price checked longer ago than this is stale, whatever the vendor. */
+const PRICE_STALE_MONTHS = 18;
+/** Files named on a per-manufacturer finding, so a vendor with 300 entries stays one row. */
+const STALE_PRICE_FILES_SHOWN = 10;
 
 // =============================================================================
 // SCHEMAS
@@ -82,7 +96,7 @@ const MAX_FLAGGED = 100;
 
 const CheckSchema = z.enum([
   "duplicate-name",
-  "broken-compatible",
+  "duplicate-url",
   "orphan-manufacturer",
   "thin-description",
   "aggregator-url",
@@ -92,6 +106,7 @@ const CheckSchema = z.enum([
   "cv-gate-category",
   "expression-typed-cv",
   "modular-missing-hp",
+  "price-staleness",
 ]);
 
 const SeveritySchema = z.enum(["blocking", "warning", "info"]);
@@ -143,7 +158,7 @@ const DatasetAuditSchema = z.object({
     manufacturers: z.number(),
     byCheck: z.object({
       duplicateName: z.number(),
-      brokenCompatible: z.number(),
+      duplicateUrl: z.number(),
       orphanManufacturer: z.number(),
       thinDescription: z.number(),
       aggregatorUrl: z.number(),
@@ -153,6 +168,7 @@ const DatasetAuditSchema = z.object({
       cvGateCategory: z.number(),
       expressionTypedCv: z.number(),
       modularMissingHp: z.number(),
+      priceStaleness: z.number(),
     }),
     flagged: z.number(),
   }),
@@ -198,32 +214,12 @@ function slugOf(file: string): string {
   return path.basename(file, path.extname(file));
 }
 
-/** Collapse a display name to a comparable key (lowercase, alphanumerics only). */
-export function normalizeName(name: string): string {
-  return (
-    name
-      .toLowerCase()
-      // A "+" marks a distinct SKU, so preserve it as a "plus" token instead of
-      // stripping it. This covers both a trailing "+" (ProFX10v3 vs ProFX10v3+,
-      // Prime 4 vs Prime 4+) and an internal "+" that precedes more of the name
-      // (Vision+ Console vs Vision Console, SPS-1UW+ MKII vs SPS-1UW MKII).
-      .replace(/\+/g, "plus")
-      .replace(/[^a-z0-9]+/g, "")
-  );
-}
-
 function descriptionText(entry: Product): string {
   return (entry.description ?? "").trim();
 }
 
 function hasPrices(entry: Product): boolean {
   return Array.isArray(entry.prices) && entry.prices.length > 0;
-}
-
-/** `compatibleWith` only exists on software and content in the schema. */
-function compatibleWithOf(entry: Product): string[] {
-  const value = (entry as Software | Content).compatibleWith;
-  return Array.isArray(value) ? value : [];
 }
 
 // =============================================================================
@@ -233,15 +229,12 @@ function compatibleWithOf(entry: Product): string[] {
 interface Dataset {
   products: LoadedProduct[];
   manufacturers: { slug: string; file: string; entry: Manufacturer }[];
-  /** Slugs that a `compatibleWith` is allowed to point at (software + hardware). */
-  hostSlugs: Set<string>;
   /** Manufacturer slugs referenced by at least one product. */
   usedManufacturers: Set<string>;
 }
 
 function loadDataset(): Dataset {
   const products: LoadedProduct[] = [];
-  const hostSlugs = new Set<string>();
   const usedManufacturers = new Set<string>();
 
   for (const type of PRODUCT_TYPES) {
@@ -249,7 +242,6 @@ function loadDataset(): Dataset {
       const entry = loadYamlFile<Product>(file);
       const slug = slugOf(file);
       products.push({ type, slug, file, entry });
-      if (type === "software" || type === "hardware") hostSlugs.add(slug);
       if (entry.manufacturer) usedManufacturers.add(entry.manufacturer);
     }
   }
@@ -260,7 +252,19 @@ function loadDataset(): Dataset {
     entry: loadYamlFile<Manufacturer>(file),
   }));
 
-  return { products, manufacturers, hostSlugs, usedManufacturers };
+  return { products, manufacturers, usedManufacturers };
+}
+
+/** A product as the duplicate finder reads it: collection, path, name, maker, url. */
+function duplicateCandidate(p: LoadedProduct) {
+  return {
+    collection: p.type,
+    file: relPath(p.file),
+    name: p.entry.name,
+    manufacturer: p.entry.manufacturer,
+    url: (p.entry as { url?: string }).url,
+    product: p,
+  };
 }
 
 // =============================================================================
@@ -275,23 +279,13 @@ function loadDataset(): Dataset {
  * "Bassysm-J", "Amethyst" vs "Amethyst2") that edit-distance matching would
  * flag by the thousands. An exact collision is still worth an LLM glance —
  * usually a duplicate or a cosmetic variant that belongs in one entry's
- * `variants`, occasionally a genuine pair of distinct products.
+ * `variants`, occasionally a genuine pair of distinct products. The
+ * grouping is `lib/duplicates.ts`, shared with validate's W134.
  */
 function checkDuplicateNames(products: LoadedProduct[]): Finding[] {
-  const buckets = new Map<string, LoadedProduct[]>();
-  for (const p of products) {
-    const norm = normalizeName(p.entry.name);
-    if (!norm) continue;
-    const key = `${p.type} ${p.entry.manufacturer ?? ""} ${norm}`;
-    const list = buckets.get(key) ?? [];
-    list.push(p);
-    buckets.set(key, list);
-  }
-
   const findings: Finding[] = [];
-  for (const group of buckets.values()) {
-    if (group.length < 2) continue;
-    const first = group[0];
+  for (const group of findDuplicateNameGroups(products.map(duplicateCandidate))) {
+    const first = group.entries[0].product;
     findings.push({
       check: "duplicate-name",
       severity: "warning",
@@ -299,9 +293,9 @@ function checkDuplicateNames(products: LoadedProduct[]): Finding[] {
       collection: first.type,
       name: first.entry.name,
       manufacturer: first.entry.manufacturer,
-      files: group.map((g) => relPath(g.file)),
+      files: group.entries.map((e) => e.file),
       detail:
-        `${group.length} entries share the normalized name "${normalizeName(first.entry.name)}" ` +
+        `${group.entries.length} entries share the name "${group.value}" ` +
         "under the same manufacturer — likely the same product filed more than once " +
         "(cosmetic variants belong in a single entry's `variants`).",
     });
@@ -310,24 +304,95 @@ function checkDuplicateNames(products: LoadedProduct[]): Finding[] {
 }
 
 /**
- * `compatibleWith` slugs that resolve to no software/hardware entry. These
- * are deterministic data errors — actionable without LLM judgment.
+ * Same collection + normalized `url`. A product page belongs to one
+ * product, so two entries on it are usually one product filed twice, and
+ * occasionally a vendor whose pages are one storefront (which is a url to
+ * fix, not an entry to merge). Shared with validate's W135.
  */
-function checkBrokenCompatible(products: LoadedProduct[], hostSlugs: Set<string>): Finding[] {
+function checkDuplicateUrls(products: LoadedProduct[]): Finding[] {
   const findings: Finding[] = [];
-  for (const p of products) {
-    const refs = compatibleWithOf(p.entry);
-    const broken = refs.filter((slug) => !hostSlugs.has(slug));
-    if (broken.length === 0) continue;
+  for (const group of findDuplicateUrlGroups(products.map(duplicateCandidate))) {
+    const first = group.entries[0].product;
     findings.push({
-      check: "broken-compatible",
+      check: "duplicate-url",
       severity: "warning",
+      needsLlmReview: true,
+      collection: first.type,
+      name: first.entry.name,
+      manufacturer: first.entry.manufacturer,
+      files: group.entries.map((e) => e.file),
+      detail:
+        `${group.entries.length} entries share the url ${group.value} — ` +
+        "likely the same product filed more than once; otherwise each needs its own product page.",
+    });
+  }
+  return findings;
+}
+
+/** Months between two dates, whole, ignoring the day. */
+function monthsBetween(from: Date, to: Date): number {
+  return (
+    (to.getUTCFullYear() - from.getUTCFullYear()) * 12 + (to.getUTCMonth() - from.getUTCMonth())
+  );
+}
+
+/**
+ * Prices nobody has checked lately: `asOf` missing, or older than
+ * eighteen months. One finding per manufacturer rather than per entry,
+ * because a re-check is a pass over one vendor's store and a list of
+ * 2,000 entries is not a worklist. Informational, and never a Tier-2
+ * finding: the fix is to open the page, which no model can do here.
+ */
+export function checkPriceStaleness(
+  products: readonly LoadedProduct[],
+  now = new Date()
+): Finding[] {
+  interface Tally {
+    manufacturer: string;
+    files: string[];
+    missing: number;
+    stale: number;
+  }
+  const byMaker = new Map<string, Tally>();
+  for (const p of products) {
+    let missing = 0;
+    let stale = 0;
+    for (const { prices } of collectPriceArrays(p.entry)) {
+      for (const price of prices) {
+        const asOf = (price as { asOf?: unknown }).asOf;
+        const checked =
+          asOf instanceof Date ? asOf : typeof asOf === "string" && asOf ? new Date(asOf) : null;
+        if (!checked || Number.isNaN(checked.getTime())) missing++;
+        else if (monthsBetween(checked, now) >= PRICE_STALE_MONTHS) stale++;
+      }
+    }
+    if (missing === 0 && stale === 0) continue;
+    const maker = p.entry.manufacturer ?? "(none)";
+    const tally = byMaker.get(maker) ?? { manufacturer: maker, files: [], missing: 0, stale: 0 };
+    tally.files.push(relPath(p.file));
+    tally.missing += missing;
+    tally.stale += stale;
+    byMaker.set(maker, tally);
+  }
+
+  const findings: Finding[] = [];
+  for (const tally of [...byMaker.values()].sort((a, b) => b.files.length - a.files.length)) {
+    const parts: string[] = [];
+    if (tally.missing > 0) parts.push(`${tally.missing} with no asOf`);
+    if (tally.stale > 0) parts.push(`${tally.stale} checked over ${PRICE_STALE_MONTHS} months ago`);
+    findings.push({
+      check: "price-staleness",
+      severity: "info",
       needsLlmReview: false,
-      collection: p.type,
-      name: p.entry.name,
-      manufacturer: p.entry.manufacturer,
-      files: [relPath(p.file)],
-      detail: `compatibleWith references no existing software/hardware: ${broken.join(", ")}`,
+      collection: "prices",
+      name: tally.manufacturer,
+      manufacturer: tally.manufacturer,
+      files: tally.files.slice(0, STALE_PRICE_FILES_SHOWN),
+      detail:
+        `${tally.files.length} entries carry prices that need a re-check (${parts.join(", ")})` +
+        (tally.files.length > STALE_PRICE_FILES_SHOWN
+          ? `; the first ${STALE_PRICE_FILES_SHOWN} files are listed.`
+          : "."),
     });
   }
   return findings;
@@ -737,7 +802,7 @@ function generateAudit(fast: boolean): DatasetAudit {
 
   const findings: Finding[] = [
     ...checkDuplicateNames(dataset.products),
-    ...checkBrokenCompatible(dataset.products, dataset.hostSlugs),
+    ...checkDuplicateUrls(dataset.products),
     ...checkOrphanManufacturers(dataset),
     ...(fast ? [] : checkThinDescriptions(dataset.products)),
     ...checkAggregatorUrls(dataset),
@@ -747,6 +812,7 @@ function generateAudit(fast: boolean): DatasetAudit {
     ...checkCvGateCategory(dataset.products),
     ...checkExpressionTypedCv(dataset.products),
     ...checkModularMissingHp(dataset.products),
+    ...checkPriceStaleness(dataset.products),
   ];
 
   // The Tier-2 seam: only ambiguous findings, highest severity first, capped.
@@ -757,7 +823,7 @@ function generateAudit(fast: boolean): DatasetAudit {
 
   const byCheck = {
     duplicateName: findings.filter((f) => f.check === "duplicate-name").length,
-    brokenCompatible: findings.filter((f) => f.check === "broken-compatible").length,
+    duplicateUrl: findings.filter((f) => f.check === "duplicate-url").length,
     orphanManufacturer: findings.filter((f) => f.check === "orphan-manufacturer").length,
     thinDescription: findings.filter((f) => f.check === "thin-description").length,
     aggregatorUrl: findings.filter((f) => f.check === "aggregator-url").length,
@@ -767,6 +833,7 @@ function generateAudit(fast: boolean): DatasetAudit {
     cvGateCategory: findings.filter((f) => f.check === "cv-gate-category").length,
     expressionTypedCv: findings.filter((f) => f.check === "expression-typed-cv").length,
     modularMissingHp: findings.filter((f) => f.check === "modular-missing-hp").length,
+    priceStaleness: findings.filter((f) => f.check === "price-staleness").length,
   };
 
   return {
@@ -802,7 +869,7 @@ function printConsoleReport(audit: DatasetAudit): void {
   console.log(`  Product entries:        ${audit.summary.totalEntries}`);
   console.log(`  Manufacturers:          ${audit.summary.manufacturers}`);
   console.log(`  Duplicate-name groups:  ${audit.summary.byCheck.duplicateName}`);
-  console.log(`  Broken compatibleWith:  ${audit.summary.byCheck.brokenCompatible}`);
+  console.log(`  Duplicate-url groups:   ${audit.summary.byCheck.duplicateUrl}`);
   console.log(`  Orphan manufacturers:   ${audit.summary.byCheck.orphanManufacturer}`);
   console.log(`  Thin descriptions:      ${audit.summary.byCheck.thinDescription}`);
   console.log(`  Aggregator urls:        ${audit.summary.byCheck.aggregatorUrl}`);
@@ -812,6 +879,7 @@ function printConsoleReport(audit: DatasetAudit): void {
   console.log(`  CV/clock not audio:     ${audit.summary.byCheck.cvGateCategory}`);
   console.log(`  Expression typed cv:    ${audit.summary.byCheck.expressionTypedCv}`);
   console.log(`  Modular without hp:     ${audit.summary.byCheck.modularMissingHp}`);
+  console.log(`  Makers with stale prices: ${audit.summary.byCheck.priceStaleness}`);
   console.log(`  Flagged for LLM review: ${audit.summary.flagged}`);
   console.log();
 
@@ -848,7 +916,7 @@ function printConsoleReport(audit: DatasetAudit): void {
 
   const groups: { title: string; check: Finding["check"]; limit: number }[] = [
     { title: "🔁 Duplicate-name groups", check: "duplicate-name", limit: 30 },
-    { title: "🔗 Broken compatibleWith references", check: "broken-compatible", limit: 30 },
+    { title: "🔗 Duplicate-url groups", check: "duplicate-url", limit: 30 },
     { title: "🏷  Orphan manufacturers", check: "orphan-manufacturer", limit: 20 },
     { title: "📝 Thin descriptions", check: "thin-description", limit: 20 },
     { title: "🔀 Aggregator canonical urls", check: "aggregator-url", limit: 20 },
@@ -858,6 +926,7 @@ function printConsoleReport(audit: DatasetAudit): void {
     { title: "🎛  CV and clock jacks outside audio", check: "cv-gate-category", limit: 20 },
     { title: "🦶 Expression jacks typed cv/gate", check: "expression-typed-cv", limit: 20 },
     { title: "📏 Modular entries without hp", check: "modular-missing-hp", limit: 20 },
+    { title: "💸 Makers with stale prices", check: "price-staleness", limit: 20 },
   ];
 
   for (const { title, check, limit } of groups) {
@@ -886,7 +955,7 @@ function printConsoleReport(audit: DatasetAudit): void {
 /**
  * The inbox rows for this audit's findings.
  *
- * `modular-missing-hp` only, of the eleven checks. The rest are either
+ * `modular-missing-hp` only, of the twelve checks. The rest are either
  * whole-dataset relations that name several files at once
  * (duplicate-name, orphan-manufacturer) and so have no single entry to
  * close an issue against, or they already have a tool that settles them

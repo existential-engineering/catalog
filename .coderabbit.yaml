@@ -51,9 +51,10 @@ reviews:
         - Distinct concurrent SKUs (different I/O or capabilities) must each be their own
           top-level entry — never a nested `versions` entry.
 
-        Check for potential duplicates:
-        - Flag if product name is very similar to an existing entry
-        - Flag if url matches another entry in the same collection
+        Check for potential duplicates (an exact name or url collision within
+        a collection is mechanised: `pnpm validate` warns W134/W135 and the
+        monthly dataset audit lists the groups, so flag only what a
+        normalised exact match cannot see):
         - Flag if the same product might exist under a different slug/name
         - Software products should NOT be in manufacturers/ (they belong in software/)
 

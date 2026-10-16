@@ -526,6 +526,58 @@ over another scheme has no place in `links`; mention it in `details` instead.
 
 ---
 
+### E129: Id Is Not a 21-Character Nanoid
+
+The `id` field is not the 21-character nanoid `pnpm assign-ids` writes
+(letters, digits, `-` and `_`). Nothing else is meant to write the field: a
+hand-typed `id: 1`, a slug pasted into it or a truncated paste used to
+validate, build and ship, and Studio keys `supersedes` and product images on
+the value.
+
+**Fix:** Remove the hand-written `id` and let CI assign one. An entry may
+leave the field out entirely; `assign-ids.yml` fills it on the pull request.
+
+---
+
+### E130: Unknown IO Connection
+
+The `connection` field in an IO entry is not in the known connections list.
+This was the advisory W121 until the corpus carried a single unknown value
+(`sc`, the duplex fibre connector optical MADI uses, now in the schema), so
+an unknown value is the same hard error an unknown `type` is (E117).
+
+**Known connections are listed in:** `schema/io-connections.yaml`
+
+**Fix:** If the value is a real connector, add it to
+`schema/io-connections.yaml` in the same PR, verified against the manual or a
+photo. If it names a signal (`line`, `midi`), it belongs in `type`. `trs` is
+not a connection: the schema models the jack size (`1/4-inch`, `1/8-inch`)
+and a stereo jack is one entry.
+
+---
+
+### E131: IO Entry Collapses Several Physical Jacks
+
+An IO entry sets `maxConnections` greater than 1 on a single-jack connection
+(`1/4-inch`, `1/8-inch`, `2.5mm`, `xlr`, `mini-xlr`, `rca`, `5-pin din`,
+`7-pin din`). Those connectors carry one physical link each, so a value above
+1 is several jacks collapsed into one entry, the mistake bulk imports made
+most. This was the advisory W128 until the corpus carried no hit.
+
+**Fix:** Model each physical jack as its own `io` entry with
+`maxConnections: 1` (the Eventide H90 is the worked example: fourteen
+discrete jacks). If the entry really is an aggregate on a connector that
+carries several links (a D-sub snake, ADAT), use that `connection` instead.
+
+Not flagged: names describing an intentional aggregate ("All Slots", "Bank
+A"), and entries whose `primaryCategory` is `patch-bay`, where a 48-point row
+is one `io` entry by design.
+
+**Triage tip:** `pnpm io-quality` lists the wider, lower-precision worklist
+(collapsed-pair names, missing I/O, layout coverage gaps).
+
+---
+
 ### E199: Validation Error
 
 A generic validation error that doesn't fall into a more specific category.
@@ -663,6 +715,19 @@ reference.
 
 ---
 
+### E207: Id Claimed by Two Entries
+
+The same `id` appears on two entries, in one collection or across two.
+`pnpm assign-ids` draws every collection's ids from one pool, and product
+images are served from R2 keyed by id alone, so an id shared by a hardware
+entry and a manufacturer is a collision even though the two tables never
+meet. The check used to be per collection.
+
+**Fix:** Keep the id on the entry that had it first (check `git log`) and
+remove it from the other; CI assigns that one a fresh id.
+
+---
+
 ## Content Errors (E3xx)
 
 ### E300: Invalid Markdown
@@ -729,6 +794,19 @@ description: Use the `foo` command to run it
 ```
 
 **Fix:** Ensure inline code has matching opening and closing backticks.
+
+---
+
+### E304: Truncated Content
+
+The `description` ends with an ellipsis (`...`), the way a scraped page
+excerpt is cut: "featuring 12 algorithms, a looper and..." is not a
+description, and nothing downstream can finish it. A trailing "and more...",
+"etc...", "others..." or "so on..." is a phrase rather than a cut and is not
+flagged.
+
+**Fix:** Replace the field with the complete text from the maker's page, or
+end it at the last full sentence.
 
 ---
 
@@ -853,37 +931,59 @@ pnpm format
 
 Warnings are non-blocking — they appear in `pnpm validate` output but do not affect the exit code or CI status. They flag values that are not in the known schema but may be valid.
 
-### W120: Unknown IO Type
+Retired codes: W120 (unknown io `type`) became E117, W121 (unknown io
+`connection`) became E130, W123 (unknown `compatibleWith`) became E206, W128
+(collapsed jacks) became E131 and W132 (unknown key) became E121. A code is
+never reused.
 
-The `type` field in an IO entry is not in the known types list.
+### W124: Duplicate URL
 
-**Known types are listed in:** `schema/io-types.yaml`
+A `links[].url` repeats the entry's own `url` or an earlier link in the same
+entry. Studio renders every link, so the reader sees the same page twice.
 
-**Fix:** If the value is valid, add it to `schema/io-types.yaml`. If it's a mistake, correct it in the data file. Note: `type` describes the signal characteristic (e.g., `line`, `instrument`, `headphone`), not the physical connector.
-
----
-
-### W121: Unknown IO Connection
-
-The `connection` field in an IO entry is not in the known connections list.
-
-**Known connections are listed in:** `schema/io-connections.yaml`
-
-**Fix:** If the value is valid, add it to `schema/io-connections.yaml`. If it's a mistake, correct it in the data file. Note: `connection` describes the physical connector (e.g., `1/4-inch`, `xlr`, `usb-c`), not the signal type.
+**Fix:** Remove the duplicate link entry. If the two differ only in a fragment
+or a tracking parameter, keep the plain one.
 
 ---
 
-### W128: IO Entry May Combine Multiple Physical Jacks
+### W125: Link Matches Manufacturer Homepage
 
-An IO entry sets `maxConnections` greater than 1 on a single-jack connection type (e.g., `1/4-inch`, `xlr`, `rca`, `5-pin din`). These connectors carry one physical link each, so a value above 1 usually means several jacks were collapsed into one entry during import.
+The entry's `url`, or one of its `links[].url`, is the manufacturer's homepage
+(compared without scheme, `www.` and trailing slashes). The manufacturer file
+already carries that page, and Studio shows the maker beside every product, so
+the link adds nothing and a product `url` that is a homepage is not a product
+page.
 
-**Fix:** Model each physical jack as its own `io` entry with `maxConnections: 1` (see the Eventide H90 for an example). If the entry really is an intentional aggregate for a connector that carries multiple links (e.g., a D-sub snake), use the correct `connection` type instead. Names containing words like "all", "slots", or "bank" are treated as aggregates and not flagged.
+**Fix:** Point `url` at the product's own page, or remove it so the field
+reads as unknown. Drop the redundant link.
 
-Not flagged: entries whose `primaryCategory` is `patch-bay`. A patchbay row is a
-run of identical points that users patch into as one group, so a 48-point row
-stays a single `io` entry rather than 48 near-identical ones.
+---
 
-**Triage tip:** Run `pnpm io-quality` to see the full I/O data-quality worklist (combine candidates, collapsed-pair names, missing I/O, and column/row coverage gaps).
+### W126: Specs Line Overlaps With Structured Field
+
+A `specs` bullet only restates what `formats` or `platforms` already declare
+("- VST3, AU and AAX", "- macOS and Windows"). Studio renders both, so the
+reader sees the same fact twice, and a bullet that drifts from the structured
+field misleads where the field is what search filters on.
+
+**Fix:** Delete the bullet; keep the structured field as the single source.
+A bullet that says more than the field (a version requirement, a host it is
+tested in) stays.
+
+---
+
+### W127: Entry Would Benefit From searchTerms
+
+The name is a short all-caps acronym (`MPC`, `SM7B`, `OB-Xa`) and the entry
+carries no `searchTerms`. Search composes manufacturer and name, so a reader
+typing the expansion or a spaced form finds nothing.
+
+Not flagged: ordinary words that happen to be capitalised (`BOOM`, `HALO`),
+listed in `scripts/lib/acronym-exclusions.ts`.
+
+**Fix:** Add `searchTerms` with the expansion and the forms people type
+(`SM-7B`, `SM 7B`). Do not add the product's own name or the manufacturer's
+display name; both are already indexed.
 
 ---
 
@@ -942,6 +1042,50 @@ staging E121 took through W132. A green run is not evidence that a zero was veri
 **Fix:** Confirm the price on the maker's own page. If it really is free, add both
 `source` and `asOf`. If it is not, write the real amount. If you cannot tell, remove
 the `prices` block: absent means "unknown", which is honest, where zero asserts free.
+
+---
+
+### W134: Name Shared With Another Entry of the Same Maker
+
+Two or more entries in one collection share a manufacturer and a name, compared
+after lowercasing and dropping everything but letters and digits (`Pro-Q 3` and
+`ProQ3`; a trailing `+` survives as `plus`, so `Prime 4+` is not `Prime 4`). That
+is the same product filed twice, a cosmetic variant that belongs in one entry's
+`variants`, or two distinct products whose names need disambiguating. Reported
+once per group, on the first file, naming the others.
+
+Reviewers used to be asked to spot this by eye on every import PR. It is
+advisory while `main` carries 66 groups; the monthly dataset audit lists the
+same groups for review.
+
+**Fix:** Merge the entries (keep the older id, see E207), fold a colour or
+finish into `variants`, or give distinct products distinct names.
+
+---
+
+### W135: URL Shared With Another Entry in the Collection
+
+Two or more entries in one collection carry the same `url`, compared without
+scheme, `www.` and trailing slashes. A product page belongs to one product, so
+this is usually one product filed twice, and occasionally a vendor whose entries
+all point at the storefront, which is a `url` to fix rather than entries to
+merge. Reported once per group. Advisory while `main` carries 149 groups.
+
+**Fix:** Merge duplicates, or point each entry at its own product page. A
+product with no page of its own leaves `url` out.
+
+---
+
+### W136: Hardware or Accessory Entry Has No Description
+
+A hardware or accessory entry carries no `description`, or an empty one.
+CLAUDE.md has always required the field on both collections ("Hardware
+requires: name, manufacturer, primaryCategory, description"), and the schema
+never did; 33 entries on `main` carry none, so the check is staged as a warning
+rather than E100 until those are filled.
+
+**Fix:** Write one or two sentences from the maker's page in flow scalar
+format. Do not paste the maker's tagline as the description.
 
 ---
 

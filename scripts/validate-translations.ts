@@ -19,7 +19,7 @@ import type {
   Manufacturer,
   Software,
 } from "./lib/types.js";
-import { DATA_DIR, getYamlFiles, loadYamlFile, SCHEMA_DIR } from "./lib/utils.js";
+import { DATA_DIR, getYamlFiles, loadYamlFile, readRegularFile, SCHEMA_DIR } from "./lib/utils.js";
 
 // =============================================================================
 // LOAD APPROVED LOCALES
@@ -280,7 +280,7 @@ function validateTranslations(): TranslationValidationResult {
   const manufacturerFiles = getYamlFiles(path.join(DATA_DIR, "manufacturers"));
   for (const file of manufacturerFiles) {
     try {
-      const content = fs.readFileSync(file, "utf-8");
+      const content = readRegularFile(file);
       const data = parseYaml(content) as Manufacturer;
 
       if (data.translations) {
@@ -309,7 +309,7 @@ function validateTranslations(): TranslationValidationResult {
   const softwareFiles = getYamlFiles(path.join(DATA_DIR, "software"));
   for (const file of softwareFiles) {
     try {
-      const content = fs.readFileSync(file, "utf-8");
+      const content = readRegularFile(file);
       const data = parseYaml(content) as Software;
 
       if (data.translations) {
@@ -338,7 +338,7 @@ function validateTranslations(): TranslationValidationResult {
   const contentDataFiles = getYamlFiles(path.join(DATA_DIR, "content"));
   for (const file of contentDataFiles) {
     try {
-      const rawContent = fs.readFileSync(file, "utf-8");
+      const rawContent = readRegularFile(file);
       const data = parseYaml(rawContent) as Content;
 
       if (data.translations) {
@@ -367,7 +367,7 @@ function validateTranslations(): TranslationValidationResult {
   const hardwareFiles = getYamlFiles(path.join(DATA_DIR, "hardware"));
   for (const file of hardwareFiles) {
     try {
-      const content = fs.readFileSync(file, "utf-8");
+      const content = readRegularFile(file);
       const data = parseYaml(content) as Hardware;
 
       if (data.translations) {
@@ -396,7 +396,7 @@ function validateTranslations(): TranslationValidationResult {
   const accessoryFiles = getYamlFiles(path.join(DATA_DIR, "accessories"));
   for (const file of accessoryFiles) {
     try {
-      const rawContent = fs.readFileSync(file, "utf-8");
+      const rawContent = readRegularFile(file);
       const data = parseYaml(rawContent) as Accessory;
 
       if (data.translations) {

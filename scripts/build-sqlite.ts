@@ -6,6 +6,7 @@
  * Run with: pnpm build
  */
 
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -1566,10 +1567,30 @@ function populateDatabase(db: Database.Database, dataDir: string, version: strin
     VALUES (?, ?)
   `);
   updateMeta.run("version", version);
-  updateMeta.run("updated_at", new Date().toISOString());
+  updateMeta.run("updated_at", buildTimestamp());
   updateMeta.run("schema_version", CATALOG_SCHEMA_VERSION);
 
   return softwareCount + contentCount + hardwareCount + accessoryCount;
+}
+
+/**
+ * The `updated_at` stamp: the HEAD commit's date, so two builds of one
+ * commit produce one database (the release attests the bytes, and a
+ * wall-clock stamp made every rebuild a different artifact). The clock
+ * is the fallback for a build outside a checkout.
+ */
+function buildTimestamp(): string {
+  try {
+    const committed = execFileSync("git", ["log", "-1", "--format=%cI"], {
+      encoding: "utf-8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+    const date = new Date(committed);
+    if (!Number.isNaN(date.getTime())) return date.toISOString();
+  } catch {
+    // Not a git checkout, or git is missing: the clock is all there is.
+  }
+  return new Date().toISOString();
 }
 
 // =============================================================================

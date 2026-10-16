@@ -836,7 +836,7 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `ground`
 - `proprietary`
 
-### IO Connections (advisory — unknown values produce warnings)
+### IO Connections (strict — unknown values fail validation with E130)
 
 - `1/4-inch`
 - `tt`
@@ -870,6 +870,7 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `lightning`
 - `aes/ebu`
 - `digilink`
+- `sc`
 - `2-pin`
 - `db9`
 - `db15`

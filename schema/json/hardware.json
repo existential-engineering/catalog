@@ -2481,7 +2481,7 @@
           },
           "connection": {
             "type": "string",
-            "description": "Physical connector (e.g., 1/4-inch, xlr, usb-c). Describes the plug/jack, not the signal type. Known values are in schema/io-connections.yaml — unknown values produce warnings."
+            "description": "Physical connector (e.g., 1/4-inch, xlr, usb-c). Describes the plug/jack, not the signal type. Known values are in schema/io-connections.yaml — an unknown value fails validation (E130)."
           },
           "connectorDetail": {
             "type": "array",
