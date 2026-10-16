@@ -17,19 +17,7 @@ import { nanoid } from "nanoid";
 import { parseDocument } from "yaml";
 import { assignIoKeys } from "./lib/io-keys.js";
 import type { Collection } from "./lib/types.js";
-
-const REPO_ROOT = path.resolve(import.meta.dirname, "..");
-const DATA_DIR = path.join(REPO_ROOT, "data");
-
-function getYamlFiles(dir: string): string[] {
-  if (!fs.existsSync(dir)) {
-    return [];
-  }
-  return fs
-    .readdirSync(dir)
-    .filter((f) => f.endsWith(".yaml") || f.endsWith(".yml"))
-    .map((f) => path.join(dir, f));
-}
+import { DATA_DIR, getYamlFiles, readRegularFile } from "./lib/utils.js";
 
 /** Load all existing IDs across all collections into a Set */
 function loadExistingIds(): Set<string> {
@@ -45,7 +33,7 @@ function loadExistingIds(): Set<string> {
   for (const collection of collections) {
     const files = getYamlFiles(path.join(DATA_DIR, collection));
     for (const file of files) {
-      const content = fs.readFileSync(file, "utf-8");
+      const content = readRegularFile(file);
       const doc = parseDocument(content);
       const data = doc.toJSON() as Record<string, unknown>;
       if (typeof data.id === "string" && data.id.length > 0) {
@@ -82,7 +70,7 @@ function assignIds(): void {
     const files = getYamlFiles(path.join(DATA_DIR, collection));
 
     for (const file of files) {
-      const content = fs.readFileSync(file, "utf-8");
+      const content = readRegularFile(file);
       const doc = parseDocument(content);
       const data = doc.toJSON() as Record<string, unknown>;
 

@@ -28,7 +28,7 @@ import Database from "better-sqlite3";
 import { parse as parseYaml } from "yaml";
 
 import type { Change } from "./lib/types.js";
-import { DATA_DIR, escapeSQL, OUTPUT_DIR } from "./lib/utils.js";
+import { DATA_DIR, escapeSQL, OUTPUT_DIR, readRegularFile } from "./lib/utils.js";
 
 const PATCHES_DIR = path.join(OUTPUT_DIR, "patches");
 const DEFAULT_DB = path.join(OUTPUT_DIR, "catalog.sqlite");
@@ -533,7 +533,7 @@ export function insertStatements(
 function readEntryId(category: Change["category"], slug: string): string | null {
   try {
     const file = path.join(DATA_DIR, category, `${slug}.yaml`);
-    return (parseYaml(fs.readFileSync(file, "utf-8")) as { id?: string }).id ?? null;
+    return (parseYaml(readRegularFile(file)) as { id?: string }).id ?? null;
   } catch {
     return null;
   }

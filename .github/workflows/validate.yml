@@ -80,8 +80,15 @@ jobs:
       - name: Check formatting
         run: pnpm format:check
 
+      # An id may leave the catalog only on purpose: the check fails a
+      # deletion or a rename that drops an id unless the pull request
+      # carries the `retirement` label. The labels reach the script through
+      # env, never `${{ }}` inside `run:`, since a label name is text
+      # somebody typed.
       - name: Check ID immutability
         if: github.event_name == 'pull_request'
+        env:
+          PR_LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
         run: pnpm exec tsx scripts/check-id-immutability.ts origin/main
 
       # `pnpm assign-ids` owns `id` and `io[].key`, and the build refuses an

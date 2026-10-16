@@ -6,6 +6,7 @@ import {
   escapeSQL,
   findClosestMatch,
   formatValidOptions,
+  getYamlFiles,
   loadYamlFile,
   parseErrorPath,
   readRegularFile,
@@ -45,6 +46,27 @@ describe("readRegularFile", () => {
   it("refuses something that is not a regular file", () => {
     const dir = tmp();
     expect(() => readRegularFile(dir)).toThrow(/not a regular file/);
+  });
+});
+
+describe("getYamlFiles", () => {
+  const dirs: string[] = [];
+  afterEach(() => {
+    for (const dir of dirs.splice(0)) fs.rmSync(dir, { recursive: true, force: true });
+  });
+
+  it("lists regular .yaml and .yml files, sorted, and nothing that is not a regular file", () => {
+    // A listing is a list of names: a symlink named x.yaml is not a catalog
+    // file, and neither is a directory named one.
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "catalog-list-"));
+    dirs.push(dir);
+    fs.writeFileSync(path.join(dir, "b.yaml"), "name: B\n");
+    fs.writeFileSync(path.join(dir, "a.yml"), "name: A\n");
+    fs.writeFileSync(path.join(dir, "notes.md"), "");
+    fs.symlinkSync("/dev/zero", path.join(dir, "link.yaml"));
+    fs.mkdirSync(path.join(dir, "dir.yaml"));
+    expect(getYamlFiles(dir)).toEqual([path.join(dir, "a.yml"), path.join(dir, "b.yaml")]);
+    expect(getYamlFiles(path.join(dir, "missing"))).toEqual([]);
   });
 });
 

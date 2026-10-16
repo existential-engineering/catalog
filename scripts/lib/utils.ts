@@ -180,13 +180,22 @@ export function parseErrorPath(pathStr: string): (string | number)[] {
 }
 
 /**
- * Get all YAML files in a directory
+ * The YAML files in a collection directory.
+ *
+ * Regular files only, read off the dirent rather than the name: a
+ * directory listing is a list of names, and a name says nothing about
+ * what is at it. A committed `data/software/x.yaml -> /dev/zero` is a
+ * symlink, not a catalog file, so it is not listed, and the read that
+ * follows still goes through `readRegularFile`, because a listing is a
+ * statement about then and the read is now.
  */
 export function getYamlFiles(dir: string): string[] {
   if (!fs.existsSync(dir)) return [];
   return (
     fs
-      .readdirSync(dir)
+      .readdirSync(dir, { withFileTypes: true })
+      .filter((entry) => entry.isFile())
+      .map((entry) => entry.name)
       .filter((f) => f.endsWith(".yaml") || f.endsWith(".yml"))
       // Sorted so the SQLite build is deterministic: readdir order is
       // filesystem-dependent, and insertion order feeds autoincrement ids.
