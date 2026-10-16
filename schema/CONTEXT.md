@@ -926,6 +926,7 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `GBP`
 - `HKD`
 - `HUF`
+- `IDR`
 - `INR`
 - `JPY`
 - `KRW`
