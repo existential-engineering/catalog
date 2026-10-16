@@ -13,6 +13,13 @@ import { parse as parseYaml } from "yaml";
 import { z } from "zod";
 import { looksLikeAcronymName } from "./lib/acronym-exclusions.js";
 import { findControlCharacters, formatControlCharacterPath } from "./lib/control-characters.js";
+import {
+  type DuplicateCandidate,
+  findDuplicateNameGroups,
+  findDuplicateUrlGroups,
+  normalizeUrl,
+} from "./lib/duplicates.js";
+import { ENTRY_ID_PATTERN } from "./lib/entry-id.js";
 import { getDocsUrl, ValidationErrorCode } from "./lib/error-codes.js";
 import {
   findComponentIdentifierRepeats,
@@ -59,6 +66,7 @@ import {
   loadYamlFile,
   loadYamlFileWithPositions,
   parseErrorPath,
+  readRegularFile,
   SCHEMA_DIR,
   slugify,
 } from "./lib/utils.js";
@@ -108,6 +116,27 @@ const POSITION_EXEMPT_CATEGORIES = new Set(categoryGroupsSchema.groups.Instrumen
 // Helper to check if a category is valid (canonical or alias)
 export function isValidCategory(cat: string): boolean {
   return ALL_VALID_CATEGORY_INPUTS.has(cat);
+}
+
+/**
+ * `id` as `pnpm assign-ids` writes it (E129). Optional here and required
+ * in the build, the same split `io[].key` takes: validate.yml runs on a
+ * head commit the assign-ids patch has not landed on yet.
+ */
+function createIdValidator() {
+  return z
+    .string()
+    .check((ctx) => {
+      if (ENTRY_ID_PATTERN.test(ctx.value)) return;
+      ctx.issues.push({
+        code: "custom",
+        message:
+          `Invalid id '${ctx.value}': an id is the 21-character nanoid pnpm assign-ids writes ` +
+          "(letters, digits, '-' and '_'). Remove a hand-written id and let CI assign one.",
+        input: ctx.value,
+      });
+    })
+    .optional();
 }
 
 // Capabilities are validated strictly (E119) rather than advisorily. The whole
@@ -195,6 +224,12 @@ export function getErrorCodeFromZodIssue(issue: {
   const path = issue.path.join(".");
   const message = issue.message.toLowerCase();
 
+  // The entry id (E129) is keyed to its path: the message names the
+  // value, which could carry any word the branches below key on.
+  if (path === "id") {
+    return ValidationErrorCode.E129_INVALID_ID_FORMAT;
+  }
+
   // Name hygiene errors
   if (message.includes("name artifact")) {
     return ValidationErrorCode.E118_NAME_ARTIFACT;
@@ -260,6 +295,12 @@ export function getErrorCodeFromZodIssue(issue: {
   }
   if (message.includes("invalid io type")) {
     return ValidationErrorCode.E117_INVALID_IO_TYPE;
+  }
+  if (message.includes("unknown io connection")) {
+    return ValidationErrorCode.E130_UNKNOWN_IO_CONNECTION;
+  }
+  if (message.includes("several physical jacks")) {
+    return ValidationErrorCode.E131_IO_COLLAPSED_JACKS;
   }
 
   // Layout hint errors (E122 to E125). The cross-port rules carry a marker
@@ -391,20 +432,13 @@ export function validateMarkdown(content: string): { valid: boolean; error?: str
   }
 }
 
-// Helper to normalize string or string[] to a single markdown string
-export function normalizeToMarkdownString(value: string | string[]): string {
-  if (Array.isArray(value)) {
-    // Join array items with double newlines (paragraph breaks)
-    return value.join("\n\n");
-  }
-  return value;
-}
-
-// Zod schema for markdown content validation (accepts string or string[])
+// Zod schema for markdown content validation. A string only: CLAUDE.md
+// has always asked for block scalars rather than YAML arrays in `details`
+// and `specs`, and the corpus carried no array when the union that
+// accepted one was dropped, so an array is the type error E101.
 const MarkdownSchema = z
-  .union([z.string(), z.array(z.string())])
+  .string()
   .optional()
-  .transform((val) => (val ? normalizeToMarkdownString(val) : val))
   .check((ctx) => {
     if (!ctx.value) return;
     const result = validateMarkdown(ctx.value);
@@ -660,7 +694,21 @@ const IOSchema = z
         ctx.issues.push({ code: "custom", message, input: ctx.value });
       }
     }),
-    connection: z.string(),
+    // Closed vocabulary like `type` (E117). This was the advisory W121
+    // until the corpus carried one unknown value (`sc`, the optical MADI
+    // connector, now in the schema), so a new connector lands in
+    // schema/io-connections.yaml in the same PR as the entry.
+    connection: z.string().check((ctx) => {
+      if (KNOWN_IO_CONNECTIONS.has(ctx.value)) return;
+      const suggestion = findClosestMatch(ctx.value, KNOWN_IO_CONNECTIONS);
+      let message = `Unknown IO connection '${ctx.value}'.`;
+      if (suggestion) {
+        message += ` Did you mean '${suggestion}'?`;
+      }
+      message += " If this is a real connector, add it to schema/io-connections.yaml.";
+      message += " If it names a signal, it belongs in `type`.";
+      ctx.issues.push({ code: "custom", message, input: ctx.value });
+    }),
     connectorDetail: z.array(z.string()).optional(),
     maxConnections: z.number(),
     position: z
@@ -791,6 +839,7 @@ const createNameValidator = () =>
 // =============================================================================
 
 const ManufacturerSchema = z.object({
+  id: createIdValidator(),
   name: createNameValidator(),
   companyName: z.string().optional(),
   parentCompany: z.string().optional(),
@@ -802,6 +851,7 @@ const ManufacturerSchema = z.object({
 
 const SoftwareSchema = z
   .object({
+    id: createIdValidator(),
     name: createNameValidator(),
     manufacturer: z.string().min(1, "Manufacturer reference is required"),
     categories: z
@@ -870,6 +920,7 @@ const SoftwareSchema = z
 
 const HardwareSchema = z
   .object({
+    id: createIdValidator(),
     name: createNameValidator(),
     manufacturer: z.string().min(1, "Manufacturer reference is required"),
     categories: z
@@ -925,6 +976,27 @@ const HardwareSchema = z
           input: port,
         });
       }
+    });
+  })
+  .check((ctx) => {
+    // One io entry per physical jack: a single-jack connection claiming
+    // more than one connection is several jacks collapsed into one entry,
+    // the mistake bulk imports made most. The heuristic (shared with
+    // `pnpm io-quality`) exempts named aggregates and patchbay rows. It
+    // was the advisory W128 until the corpus carried no hit.
+    const data = ctx.value;
+    if (!data.io || data.io.length === 0) return;
+    data.io.forEach((port, i) => {
+      if (!isIoCombineCandidate(port, { primaryCategory: data.primaryCategory })) return;
+      ctx.issues.push({
+        code: "custom",
+        message:
+          `io entry '${port.name}' sets maxConnections ${port.maxConnections} on a single-jack ` +
+          `connection ('${port.connection}'), which collapses several physical jacks into one ` +
+          "entry. Give each jack its own io entry with maxConnections: 1.",
+        path: ["io", i, "maxConnections"],
+        input: port,
+      });
     });
   })
   .check((ctx) => {
@@ -998,6 +1070,7 @@ const HardwareSchema = z
 // Content schema: like Software but without formats, platforms, identifiers
 const ContentSchema = z
   .object({
+    id: createIdValidator(),
     name: createNameValidator(),
     manufacturer: z.string().min(1, "Manufacturer reference is required"),
     categories: z
@@ -1044,6 +1117,7 @@ const ContentSchema = z
 // Accessory schema: like Hardware but without io, variants
 const AccessorySchema = z
   .object({
+    id: createIdValidator(),
     name: createNameValidator(),
     manufacturer: z.string().min(1, "Manufacturer reference is required"),
     categories: z
@@ -1109,9 +1183,9 @@ interface DataWithOptionalFields {
   supersedes?: string;
   identifiers?: Record<string, string>;
   componentIdentifiers?: Record<string, string[]>;
-  description?: string | string[];
-  details?: string | string[];
-  specs?: string | string[];
+  description?: string;
+  details?: string;
+  specs?: string;
 }
 
 /**
@@ -1443,9 +1517,7 @@ export function validateFile(
     // Matches text cut mid-word ("featur...") or ending with generic ellipsis,
     // but excludes legitimate trailing phrases like "and more..." or "etc..."
     if (data.description) {
-      const descText = Array.isArray(data.description)
-        ? data.description.join("\n\n")
-        : data.description;
+      const descText = data.description;
       if (/\.{3,}\s*$/.test(descText) && !/(?:more|etc|others|so on)\.{3,}\s*$/i.test(descText)) {
         const line = getLineForPath(document, lineCounter, ["description"]);
         const errorCode = ValidationErrorCode.E304_TRUNCATED_CONTENT;
@@ -1553,7 +1625,7 @@ export function checkCompatibleWith(
 export interface WarningContext {
   name?: string;
   primaryCategory?: string;
-  io?: Array<{ name: string; type: string; connection: string; maxConnections?: number }>;
+  description?: string;
   url?: string;
   links?: Array<{ url: string }>;
   manufacturer?: string;
@@ -1625,35 +1697,22 @@ export function collectWarnings(
     }
   }
 
-  // io.type is not checked here: it is a hard error (E117) via the Zod IOSchema,
-  // so an unknown value fails validation outright. io.connection remains advisory.
-  if (Array.isArray(data.io)) {
-    for (let i = 0; i < data.io.length; i++) {
-      const io = data.io[i];
-
-      if (io.connection && !KNOWN_IO_CONNECTIONS.has(io.connection)) {
-        const line = getLineForPath(document, lineCounter, ["io", i, "connection"]);
-        warnings.push({
-          code: ValidationErrorCode.W121_UNKNOWN_IO_CONNECTION,
-          message: `Unknown IO connection '${io.connection}' on '${io.name}'. Consider adding to schema/io-connections.yaml if valid.`,
-          path: `io[${i}].connection`,
-          line: line ?? undefined,
-        });
-      }
-
-      // A single-jack connection carries one physical link; maxConnections>1
-      // usually means several jacks were collapsed into one entry (aggregates
-      // like "All Slots" are excluded).
-      if (isIoCombineCandidate(io, { primaryCategory: data.primaryCategory })) {
-        const line = getLineForPath(document, lineCounter, ["io", i, "maxConnections"]);
-        warnings.push({
-          code: ValidationErrorCode.W128_IO_COMBINE_CANDIDATE,
-          message: `IO '${io.name}' sets maxConnections ${io.maxConnections} on a single-jack connection ('${io.connection}'). If this is several physical jacks, give each its own io entry with maxConnections: 1.`,
-          path: `io[${i}].maxConnections`,
-          line: line ?? undefined,
-        });
-      }
-    }
+  // W136: CLAUDE.md requires `description` on hardware and accessories,
+  // and the schema never did. Staged as a warning while 33 entries on
+  // `main` carry none; io.type and io.connection are hard errors (E117,
+  // E130) in the Zod IOSchema and are not repeated here.
+  const collection = path.basename(path.dirname(filePath));
+  if (
+    (collection === "hardware" || collection === "accessories") &&
+    !(typeof data.description === "string" && data.description.trim())
+  ) {
+    const line = getLineForPath(document, lineCounter, ["name"]);
+    warnings.push({
+      code: ValidationErrorCode.W136_MISSING_DESCRIPTION,
+      message: `A ${collection} entry needs a description (CLAUDE.md "Data Entry Format"). Write one sentence from the maker's page.`,
+      path: "description",
+      line: line ?? undefined,
+    });
   }
 
   // Check for duplicate URLs within the file
@@ -1687,15 +1746,9 @@ export function collectWarnings(
   if (data.manufacturer && manufacturerUrlMap) {
     const mfrUrl = manufacturerUrlMap.get(data.manufacturer);
     if (mfrUrl) {
-      const normalize = (u: string) =>
-        u
-          .replace(/^https?:\/\//, "")
-          .replace(/^www\./, "")
-          .replace(/\/+$/, "")
-          .toLowerCase();
-      const normalizedMfr = normalize(mfrUrl);
+      const normalizedMfr = normalizeUrl(mfrUrl);
 
-      if (data.url && normalize(data.url) === normalizedMfr) {
+      if (data.url && normalizeUrl(data.url) === normalizedMfr) {
         const line = getLineForPath(document, lineCounter, ["url"]);
         warnings.push({
           code: ValidationErrorCode.W125_MANUFACTURER_URL_IN_LINKS,
@@ -1708,7 +1761,7 @@ export function collectWarnings(
       if (Array.isArray(data.links)) {
         for (let i = 0; i < data.links.length; i++) {
           const linkUrl = data.links[i].url;
-          if (linkUrl && normalize(linkUrl) === normalizedMfr) {
+          if (linkUrl && normalizeUrl(linkUrl) === normalizedMfr) {
             const line = getLineForPath(document, lineCounter, ["links", i, "url"]);
             warnings.push({
               code: ValidationErrorCode.W125_MANUFACTURER_URL_IN_LINKS,
@@ -1920,7 +1973,7 @@ function validate(): ValidationResult {
     const slug = path.basename(file, path.extname(file));
     allManufacturers.add(slug);
     try {
-      const content = fs.readFileSync(file, "utf-8");
+      const content = readRegularFile(file);
       const mfrData = parseYaml(content) as { url?: string; name?: string };
       if (mfrData.url) manufacturerUrlMap.set(slug, mfrData.url);
       if (mfrData.name) manufacturerNameMap.set(slug, mfrData.name);
@@ -1941,17 +1994,33 @@ function validate(): ValidationResult {
     allHardwareSlugs.add(path.basename(file, path.extname(file)));
   }
 
+  // Every product's name, manufacturer and url, for the cross-file
+  // duplicate groups (W134, W135) reported after the per-file pass.
+  type DuplicateFields = { name?: string; manufacturer?: string; url?: string };
+  const duplicateCandidates: DuplicateCandidate[] = [];
+  const noteCandidate = (collection: string, file: string, data: DuplicateFields) => {
+    duplicateCandidates.push({
+      collection,
+      file: path.relative(process.cwd(), file),
+      name: typeof data.name === "string" ? data.name : undefined,
+      manufacturer: typeof data.manufacturer === "string" ? data.manufacturer : undefined,
+      url: typeof data.url === "string" ? data.url : undefined,
+    });
+  };
+
   // Collect software IDs and supersedes relationships, and every entry's
   // identifiers for the cross-file E402 check below
   const identifierOwners: IdentifierOwner[] = [];
   for (const file of softwareFiles) {
     const slug = path.basename(file, path.extname(file));
     try {
-      const content = fs.readFileSync(file, "utf-8");
+      const content = readRegularFile(file);
       const data = parseYaml(content) as { id?: string; supersedes?: string } & Omit<
         IdentifierOwner,
         "slug"
-      >;
+      > &
+        DuplicateFields;
+      noteCandidate("software", file, data);
       identifierOwners.push({
         slug,
         identifiers: data.identifiers,
@@ -1973,8 +2042,9 @@ function validate(): ValidationResult {
   for (const file of contentFiles) {
     const slug = path.basename(file, path.extname(file));
     try {
-      const rawContent = fs.readFileSync(file, "utf-8");
-      const data = parseYaml(rawContent) as { id?: string; supersedes?: string };
+      const rawContent = readRegularFile(file);
+      const data = parseYaml(rawContent) as { id?: string; supersedes?: string } & DuplicateFields;
+      noteCandidate("content", file, data);
       if (data.id) {
         contentIds.add(data.id);
         contentIdToSlug.set(data.id, slug);
@@ -1991,8 +2061,9 @@ function validate(): ValidationResult {
   for (const file of hardwareFiles) {
     const slug = path.basename(file, path.extname(file));
     try {
-      const content = fs.readFileSync(file, "utf-8");
-      const data = parseYaml(content) as { id?: string; supersedes?: string };
+      const content = readRegularFile(file);
+      const data = parseYaml(content) as { id?: string; supersedes?: string } & DuplicateFields;
+      noteCandidate("hardware", file, data);
       if (data.id) {
         hardwareIds.add(data.id);
         hardwareIdToSlug.set(data.id, slug);
@@ -2009,8 +2080,9 @@ function validate(): ValidationResult {
   for (const file of accessoryFiles) {
     const slug = path.basename(file, path.extname(file));
     try {
-      const rawContent = fs.readFileSync(file, "utf-8");
-      const data = parseYaml(rawContent) as { id?: string; supersedes?: string };
+      const rawContent = readRegularFile(file);
+      const data = parseYaml(rawContent) as { id?: string; supersedes?: string } & DuplicateFields;
+      noteCandidate("accessories", file, data);
       if (data.id) {
         accessoryIds.add(data.id);
         accessoryIdToSlug.set(data.id, slug);
@@ -2149,6 +2221,45 @@ function validate(): ValidationResult {
     }
   }
 
+  // W134 and W135: the same product filed twice, by name or by url. Each
+  // group is reported once, on its first file, naming the others, so the
+  // count in the summary is a count of pairs to look at rather than of
+  // files. Advisory while `main` carries them (66 name groups and 150
+  // url groups when the check was written); the monthly dataset audit
+  // carries the same groups into its issue.
+  for (const group of findDuplicateNameGroups(duplicateCandidates)) {
+    const [first, ...rest] = group.entries;
+    warnings.push({
+      file: first.file,
+      warnings: [
+        {
+          code: ValidationErrorCode.W134_DUPLICATE_NAME_IN_COLLECTION,
+          message:
+            `'${group.value}' is also the name of ${rest.map((e) => e.file).join(", ")} under the ` +
+            "same manufacturer. Merge the entries, fold a cosmetic variant into `variants`, or " +
+            "disambiguate the names.",
+          path: "name",
+        },
+      ],
+    });
+  }
+  for (const group of findDuplicateUrlGroups(duplicateCandidates)) {
+    const [first, ...rest] = group.entries;
+    warnings.push({
+      file: first.file,
+      warnings: [
+        {
+          code: ValidationErrorCode.W135_DUPLICATE_URL_IN_COLLECTION,
+          message:
+            `url '${group.value}' is also the url of ${rest.map((e) => e.file).join(", ")}. ` +
+            "Two entries on one page are usually one product filed twice; otherwise give each " +
+            "its own product page.",
+          path: "url",
+        },
+      ],
+    });
+  }
+
   // Check for cycles in supersedes chains (software)
   for (const [id, _supersedes] of softwareSupersedesMap) {
     const cycle = detectSupersedeCycle(id, softwareSupersedesMap, softwareIdToSlug);
@@ -2267,13 +2378,18 @@ function validateIds(): IdValidationResult {
     "accessories",
   ];
 
+  // One map across every collection (E207). Product images are served
+  // from R2 keyed by id alone, and `pnpm assign-ids` draws from one pool,
+  // so an id shared by a hardware entry and a manufacturer is a collision
+  // even though the two tables never meet.
+  const seenIds = new Map<string, string>(); // id -> collection/slug
+
   for (const collection of collections) {
     const files = getYamlFiles(path.join(DATA_DIR, collection));
-    const seenIds = new Map<string, string>(); // id -> slug
 
     for (const file of files) {
       try {
-        const content = fs.readFileSync(file, "utf-8");
+        const content = readRegularFile(file);
         const data = parseYaml(content) as { id?: unknown };
         const slug = path.basename(file, path.extname(file));
 
@@ -2289,11 +2405,12 @@ function validateIds(): IdValidationResult {
           // Check for duplicates
           if (seenIds.has(data.id)) {
             errors.push(
-              `${collection}: duplicate id '${data.id}' in '${seenIds.get(data.id)}' and '${slug}'`
+              `${ValidationErrorCode.E207_DUPLICATE_ID}: id '${data.id}' is claimed by ` +
+                `'${seenIds.get(data.id)}' and '${collection}/${slug}' (${getDocsUrl(ValidationErrorCode.E207_DUPLICATE_ID)})`
             );
             stats.duplicates++;
           }
-          seenIds.set(data.id, slug);
+          seenIds.set(data.id, `${collection}/${slug}`);
           stats.withIds++;
         } else {
           stats.withoutIds++;

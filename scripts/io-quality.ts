@@ -17,8 +17,8 @@
  *      raw material the setup graph needs (densest devices first).
  *
  * The report is advisory triage: heuristics favor recall, so a human reviews
- * the worklist. The high-precision subset is enforced separately as warning
- * W128 in `pnpm validate`.
+ * the worklist. The high-precision subset is enforced separately as error
+ * E131 in `pnpm validate`.
  *
  * Usage:
  *   pnpm io-quality                # console report

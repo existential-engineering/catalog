@@ -409,14 +409,16 @@ io:
 
 **IO field validation** uses a two-tier system:
 
-- **Strict (errors, blocks CI):** `signalFlow`, `category`, `type`, `position`, `price.currency`
+- **Strict (errors, blocks CI):** `signalFlow`, `category`, `type`, `connection`, `position`, `price.currency`
   - `signalFlow`: input, output, bidirectional
   - `category`: audio, midi, digital, power
   - `type`: closed vocabulary in `schema/io-types.yaml` — unknown values fail with E117
+  - `connection`: closed vocabulary in `schema/io-connections.yaml` — unknown values fail
+    with E130 (the advisory W121 until the corpus carried one unknown value)
   - `position`: Top, Bottom, Left, Right
   - `currency`: ISO 4217 codes (USD, EUR, GBP, etc.) — see `schema/currencies.yaml`
-- **Advisory (warnings, non-blocking):** `connection`, `link.type`
-  - Known values listed in `schema/io-connections.yaml`, `schema/link-types.yaml`
+- **Advisory (warnings, non-blocking):** `link.type`
+  - Known values listed in `schema/link-types.yaml`
   - Unknown values produce warnings in `pnpm validate` output
   - Add new values to schema files via PR when they're confirmed valid
 
@@ -508,7 +510,7 @@ two — bulk imports get this wrong. E.g. the Eventide H90 has 14 discrete jacks
 
 **Patchbays are the exception.** A `patch-bay` entry models each row as one `io`
 entry with `maxConnections` set to the point count (a 48-point TRS row, not 48
-entries), so W128 skips that category. TT/Bantam patch points use
+entries), so E131 skips that category. TT/Bantam patch points use
 `connection: tt`.
 
 ## I/O Modelling Conventions

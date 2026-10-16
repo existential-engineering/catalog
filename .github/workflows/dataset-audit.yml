@@ -59,10 +59,12 @@ jobs:
 
             const title = '🔎 Dataset Audit';
             const byCheck = audit.summary.byCheck;
-            // Actionable = needs a data fix. Orphan manufacturers and thin
-            // descriptions are informational and large; they don't gate the
-            // issue open/closed (otherwise it would never close).
-            const actionable = byCheck.duplicateName + byCheck.brokenCompatible;
+            // Actionable = needs a data fix. Orphan manufacturers, thin
+            // descriptions and stale prices are informational and large;
+            // they don't gate the issue open/closed (otherwise it would
+            // never close). Broken compatibleWith used to be counted here
+            // and was always zero, since E206 fails validation on it.
+            const actionable = byCheck.duplicateName + byCheck.duplicateUrl;
 
             const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
@@ -94,7 +96,7 @@ jobs:
             }
 
             const dupes = audit.findings.filter(f => f.check === 'duplicate-name');
-            const broken = audit.findings.filter(f => f.check === 'broken-compatible');
+            const dupeUrls = audit.findings.filter(f => f.check === 'duplicate-url');
 
             const coverageRows = Object.entries(audit.coverage).map(([name, c]) => {
               const p = (n) => c.total ? `${Math.round((n / c.total) * 100)}%` : '—';
@@ -113,9 +115,10 @@ jobs:
             | Check | Count | Action |
             |-------|-------|--------|
             | Duplicate-name groups | ${byCheck.duplicateName} | Merge, fold into \`variants\`, or disambiguate |
-            | Broken \`compatibleWith\` | ${byCheck.brokenCompatible} | Fix the slug or remove the reference |
+            | Duplicate-url groups | ${byCheck.duplicateUrl} | Merge, or give each entry its own product page |
             | Orphan manufacturers | ${byCheck.orphanManufacturer} | Informational — manufacturers with no products |
             | Thin descriptions | ${byCheck.thinDescription} | Informational — descriptions under 40 chars |
+            | Makers with stale prices | ${byCheck.priceStaleness} | Informational — prices with no \`asOf\` or older than 18 months |
             | Flagged for LLM review | ${audit.summary.flagged} | \`/dataset-review\` |
 
             ### Coverage
@@ -144,16 +147,18 @@ jobs:
               `);
             }
 
-            if (broken.length > 0) {
-              body += dedent(`### Broken \`compatibleWith\` references (${broken.length})
+            if (dupeUrls.length > 0) {
+              body += dedent(`### Duplicate-url groups (${dupeUrls.length})
+
+              Same collection + normalized \`url\`. Usually one product filed twice; otherwise each entry needs its own product page.
 
               <details>
               <summary>Click to expand</summary>
 
-              | File | Detail |
-              |------|------|
-              ${broken.slice(0, 100).map(f => `| \`${cell(f.files[0])}\` | ${cell(f.detail)} |`).join('\n')}
-              ${broken.length > 100 ? `\n*... and ${broken.length - 100} more*` : ''}
+              | Collection | Files | Detail |
+              |------|------|------|
+              ${dupeUrls.slice(0, 100).map(f => `| ${cell(f.collection)} | ${f.files.map(x => `\`${cell(x)}\``).join(' + ')} | ${cell(f.detail)} |`).join('\n')}
+              ${dupeUrls.length > 100 ? `\n*... and ${dupeUrls.length - 100} more*` : ''}
 
               </details>
 

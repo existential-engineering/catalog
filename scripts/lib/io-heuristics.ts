@@ -1,7 +1,7 @@
 /**
  * Shared IO data-quality heuristics.
  *
- * Used by both `validate.ts` (warning W128) and the `io-quality` report so the
+ * Used by both `validate.ts` (error E131) and the `io-quality` report so the
  * CI signal and the triage report stay in lockstep.
  */
 

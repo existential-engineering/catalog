@@ -49,6 +49,9 @@ export enum ValidationErrorCode {
   E126_CONTROL_CHARACTER = "E126",
   E127_INVALID_PRICE_AMOUNT = "E127",
   E128_UNSAFE_URL_SCHEME = "E128",
+  E129_INVALID_ID_FORMAT = "E129",
+  E130_UNKNOWN_IO_CONNECTION = "E130",
+  E131_IO_COLLAPSED_JACKS = "E131",
   E199_VALIDATION_ERROR = "E199",
 
   // Reference errors (E2xx)
@@ -58,6 +61,7 @@ export enum ValidationErrorCode {
   E203_PARENT_COMPANY_NOT_FOUND = "E203",
   E204_IO_TRANSLATION_MISMATCH = "E204",
   E206_UNKNOWN_COMPATIBLE_WITH = "E206",
+  E207_DUPLICATE_ID = "E207",
 
   // Content errors (E3xx)
   E300_INVALID_MARKDOWN = "E300",
@@ -73,17 +77,17 @@ export enum ValidationErrorCode {
   E402_DUPLICATE_IDENTIFIER = "E402",
 
   // Advisory warnings (W1xx) — non-blocking
-  W120_UNKNOWN_IO_TYPE = "W120",
-  W121_UNKNOWN_IO_CONNECTION = "W121",
   W124_DUPLICATE_URL = "W124",
   W125_MANUFACTURER_URL_IN_LINKS = "W125",
   W126_SPECS_OVERLAP = "W126",
   W127_MISSING_SEARCH_TERMS = "W127",
-  W128_IO_COMBINE_CANDIDATE = "W128",
   W129_MANUFACTURER_IN_NAME = "W129",
   W130_NAME_TAGLINE = "W130",
   W131_PRICE_TERM_MISSING = "W131",
   W133_UNVERIFIED_FREE_PRICE = "W133",
+  W134_DUPLICATE_NAME_IN_COLLECTION = "W134",
+  W135_DUPLICATE_URL_IN_COLLECTION = "W135",
+  W136_MISSING_DESCRIPTION = "W136",
 }
 
 // =============================================================================
@@ -254,6 +258,18 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     title: "URL scheme is not http or https",
     anchor: "e128-url-scheme-is-not-http-or-https",
   },
+  [ValidationErrorCode.E129_INVALID_ID_FORMAT]: {
+    title: "Id is not a 21-character nanoid",
+    anchor: "e129-id-is-not-a-21-character-nanoid",
+  },
+  [ValidationErrorCode.E130_UNKNOWN_IO_CONNECTION]: {
+    title: "Unknown IO connection",
+    anchor: "e130-unknown-io-connection",
+  },
+  [ValidationErrorCode.E131_IO_COLLAPSED_JACKS]: {
+    title: "IO entry collapses several physical jacks",
+    anchor: "e131-io-entry-collapses-several-physical-jacks",
+  },
   [ValidationErrorCode.E199_VALIDATION_ERROR]: {
     title: "Validation error",
     anchor: "e199-validation-error",
@@ -283,6 +299,10 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.E206_UNKNOWN_COMPATIBLE_WITH]: {
     title: "Unknown compatibleWith reference",
     anchor: "e206-unknown-compatiblewith-reference",
+  },
+  [ValidationErrorCode.E207_DUPLICATE_ID]: {
+    title: "Id claimed by two entries",
+    anchor: "e207-id-claimed-by-two-entries",
   },
 
   // Content errors
@@ -326,14 +346,6 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   },
 
   // Advisory warnings
-  [ValidationErrorCode.W120_UNKNOWN_IO_TYPE]: {
-    title: "Unknown IO type",
-    anchor: "w120-unknown-io-type",
-  },
-  [ValidationErrorCode.W121_UNKNOWN_IO_CONNECTION]: {
-    title: "Unknown IO connection",
-    anchor: "w121-unknown-io-connection",
-  },
   [ValidationErrorCode.W124_DUPLICATE_URL]: {
     title: "Duplicate URL",
     anchor: "w124-duplicate-url",
@@ -350,10 +362,6 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
     title: "Entry would benefit from searchTerms",
     anchor: "w127-missing-search-terms",
   },
-  [ValidationErrorCode.W128_IO_COMBINE_CANDIDATE]: {
-    title: "IO entry may combine multiple physical jacks",
-    anchor: "w128-io-entry-may-combine-multiple-physical-jacks",
-  },
   [ValidationErrorCode.W129_MANUFACTURER_IN_NAME]: {
     title: "Manufacturer name duplicated in product name",
     anchor: "w129-manufacturer-name-duplicated-in-product-name",
@@ -369,6 +377,18 @@ const ERROR_INFO: Record<ValidationErrorCode, ErrorInfoEntry> = {
   [ValidationErrorCode.W133_UNVERIFIED_FREE_PRICE]: {
     title: "Free price is missing source or asOf",
     anchor: "w133-free-price-is-missing-source-or-asof",
+  },
+  [ValidationErrorCode.W134_DUPLICATE_NAME_IN_COLLECTION]: {
+    title: "Name shared with another entry of the same maker",
+    anchor: "w134-name-shared-with-another-entry-of-the-same-maker",
+  },
+  [ValidationErrorCode.W135_DUPLICATE_URL_IN_COLLECTION]: {
+    title: "URL shared with another entry in the collection",
+    anchor: "w135-url-shared-with-another-entry-in-the-collection",
+  },
+  [ValidationErrorCode.W136_MISSING_DESCRIPTION]: {
+    title: "Hardware or accessory entry has no description",
+    anchor: "w136-hardware-or-accessory-entry-has-no-description",
   },
 };
 

@@ -11,7 +11,6 @@ import {
   detectSupersedeCycle,
   getErrorCodeFromZodIssue,
   isValidCategory,
-  normalizeToMarkdownString,
   validateFile,
   validateMarkdown,
   type WarningContext,
@@ -286,17 +285,6 @@ describe("validateMarkdown", () => {
   });
 });
 
-describe("normalizeToMarkdownString", () => {
-  it("returns a string unchanged", () => {
-    expect(normalizeToMarkdownString("one\ntwo")).toBe("one\ntwo");
-  });
-
-  it("joins an array with blank lines as paragraph breaks", () => {
-    expect(normalizeToMarkdownString(["one", "two"])).toBe("one\n\ntwo");
-    expect(normalizeToMarkdownString([])).toBe("");
-  });
-});
-
 describe("detectSupersedeCycle", () => {
   const slugs = new Map([
     ["a", "alpha"],
@@ -397,6 +385,71 @@ describe("validateFile", () => {
   it("accepts a positive integer hp on hardware", () => {
     const file = writeEntry("hardware", `${HARDWARE_OK}hp: 12\n`);
     expect(validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS)).toBeNull();
+  });
+
+  it("rejects an id that is not a 21-character nanoid as E129, on every collection", () => {
+    for (const bad of ["1", "serum", "aaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaa!"]) {
+      const file = writeEntry("hardware", HARDWARE_OK.replace("aaaaaaaaaaaaaaaaaaaaa", bad));
+      const result = validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS);
+      expect(result?.details, bad).toHaveLength(1);
+      expect(result?.details?.[0], bad).toMatchObject({
+        code: ValidationErrorCode.E129_INVALID_ID_FORMAT,
+        path: "id",
+        line: 1,
+      });
+    }
+    const maker = writeEntry("manufacturers", "id: nope\nname: Acme\n");
+    expect(
+      validateFile(maker, COLLECTION_SCHEMAS.manufacturers, MAKERS)?.details?.[0]
+    ).toMatchObject({ code: ValidationErrorCode.E129_INVALID_ID_FORMAT, path: "id" });
+    // Optional: assign-ids writes it after validate.yml's first run.
+    const none = writeEntry("hardware", HARDWARE_OK.replace("id: aaaaaaaaaaaaaaaaaaaaa\n", ""));
+    expect(validateFile(none, COLLECTION_SCHEMAS.hardware, MAKERS)).toBeNull();
+  });
+
+  it("rejects a YAML array in a prose field as E101", () => {
+    // CLAUDE.md has always asked for a block scalar; the union that accepted
+    // an array was dropped once the corpus carried none.
+    const file = writeEntry("hardware", `${HARDWARE_OK}specs:\n  - one\n  - two\n`);
+    expect(validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS)?.details?.[0]).toMatchObject({
+      code: ValidationErrorCode.E101_INVALID_FIELD_TYPE,
+      path: "specs",
+    });
+  });
+
+  it("rejects an unknown io connection as E130, keyed to the connection line", () => {
+    // The advisory W121 until the vocabulary was clean; `trs` is the
+    // mistake it meets most (the schema models the jack size instead).
+    const file = writeEntry(
+      "hardware",
+      HARDWARE_OK.replace("connection: 1/4-inch", "connection: trs")
+    );
+    const result = validateFile(file, COLLECTION_SCHEMAS.hardware, MAKERS);
+    expect(result?.details).toHaveLength(1);
+    expect(result?.details?.[0]).toMatchObject({
+      code: ValidationErrorCode.E130_UNKNOWN_IO_CONNECTION,
+      path: "io.0.connection",
+      line: 13,
+    });
+  });
+
+  it("rejects several jacks collapsed into one io entry as E131, unless the entry is a patchbay", () => {
+    const collapsed = HARDWARE_OK.replace("maxConnections: 1", "maxConnections: 2");
+    const result = validateFile(
+      writeEntry("hardware", collapsed),
+      COLLECTION_SCHEMAS.hardware,
+      MAKERS
+    );
+    expect(result?.details).toHaveLength(1);
+    expect(result?.details?.[0]).toMatchObject({
+      code: ValidationErrorCode.E131_IO_COLLAPSED_JACKS,
+      path: "io.0.maxConnections",
+      line: 14,
+    });
+    const patchbay = collapsed.replace("primaryCategory: pedal", "primaryCategory: patch-bay");
+    expect(
+      validateFile(writeEntry("hardware", patchbay), COLLECTION_SCHEMAS.hardware, MAKERS)
+    ).toBeNull();
   });
 
   it("rejects a negative or non-finite price amount as E127", () => {
@@ -783,10 +836,16 @@ describe("collectWarnings", () => {
     expect(collectWarnings(file, data as WarningContext, document, lineCounter)).toBeNull();
   });
 
-  it("W121: unknown io connection, keyed to the connection line", () => {
-    expect(warn(HARDWARE_OK.replace("connection: 1/4-inch", "connection: trs"))).toEqual([
-      { code: "W121", path: "io[0].connection", line: 13 },
+  it("W136: a hardware or accessory entry with no description, keyed to the name line", () => {
+    // CLAUDE.md requires the field on both collections; the schema never
+    // did, and 33 entries on main carry none, so it is staged as a warning.
+    const bare = HARDWARE_OK.replace("description: A pedal.\n", "");
+    expect(warn(bare)).toEqual([{ code: "W136", path: "description", line: 2 }]);
+    expect(warn(bare.replace("categories:", "description: ''\ncategories:"))).toEqual([
+      { code: "W136", path: "description", line: 2 },
     ]);
+    expect(warn(bare, {}, "accessories")).toEqual([{ code: "W136", path: "description", line: 2 }]);
+    expect(warn(bare, {}, "software")).toEqual([]);
   });
 
   it("W133: a free price with no provenance, and none once it carries some", () => {
@@ -817,14 +876,6 @@ describe("collectWarnings", () => {
           "versions:\n  - name: '1.0'\n    prices:\n      - amount: 0\n        currency: USD\n"
       )
     ).toEqual([{ code: "W133", path: "versions[0].prices[0]", line: 19 }]);
-  });
-
-  it("W128: several jacks collapsed into one entry, unless the entry is a patchbay", () => {
-    const collapsed = HARDWARE_OK.replace("maxConnections: 1", "maxConnections: 2");
-    expect(warn(collapsed)).toEqual([{ code: "W128", path: "io[0].maxConnections", line: 14 }]);
-    expect(warn(collapsed.replace("primaryCategory: pedal", "primaryCategory: patch-bay"))).toEqual(
-      []
-    );
   });
 
   it("W124: a link repeating url or an earlier link", () => {
@@ -923,9 +974,9 @@ specs: |-
 
   it("accumulates every warning the file earns", () => {
     const yaml = HARDWARE_OK.replace("name: Widget", "name: ADT | Acme").replace(
-      "connection: 1/4-inch",
-      "connection: trs"
+      "description: A pedal.\n",
+      ""
     );
-    expect(warn(yaml).map((w) => w.code)).toEqual(["W121", "W130"]);
+    expect(warn(yaml).map((w) => w.code)).toEqual(["W136", "W130"]);
   });
 });

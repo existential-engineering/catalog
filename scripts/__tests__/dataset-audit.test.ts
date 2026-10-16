@@ -4,11 +4,12 @@ import {
   checkCvGateCategory,
   checkExpressionTypedCv,
   checkModularMissingHp,
+  checkPriceStaleness,
   computeHintCoverage,
   computeHpCoverage,
   type LoadedProduct,
-  normalizeName,
 } from "../dataset-audit.js";
+import { normalizeName } from "../lib/duplicates.js";
 import type { Hardware } from "../lib/types.js";
 import { DATA_DIR } from "../lib/utils.js";
 
@@ -177,5 +178,62 @@ describe("computeHpCoverage", () => {
         { type: "software", entry: { name: "Plugin", manufacturer: "m" } },
       ])
     ).toEqual({ modular: 2, withHp: 1 });
+  });
+});
+
+describe("checkPriceStaleness", () => {
+  const now = new Date("2026-10-16T00:00:00Z");
+  const priced = (
+    slug: string,
+    maker: string,
+    prices: Record<string, unknown>[]
+  ): LoadedProduct => ({
+    type: "software",
+    slug,
+    file: path.join(DATA_DIR, "software", `${slug}.yaml`),
+    entry: { name: slug, manufacturer: maker, prices } as unknown as Hardware,
+  });
+
+  it("groups missing and stale asOf by manufacturer and leaves fresh prices alone", () => {
+    const findings = checkPriceStaleness(
+      [
+        priced("a", "acme", [{ amount: 1, currency: "USD" }]),
+        priced("b", "acme", [{ amount: 1, currency: "USD", asOf: "2024-01-01" }]),
+        priced("c", "acme", [{ amount: 1, currency: "USD", asOf: "2026-09-01" }]),
+        priced("d", "other", [{ amount: 1, currency: "USD", asOf: "2025-04-16" }]),
+        priced("e", "other", [{ amount: 1, currency: "USD", asOf: "2025-04-15" }]),
+      ],
+      now
+    );
+    expect(findings.map((f) => [f.name, f.files, f.detail])).toEqual([
+      [
+        "acme",
+        ["software/a.yaml", "software/b.yaml"],
+        "2 entries carry prices that need a re-check (1 with no asOf, 1 checked over 18 months ago).",
+      ],
+      [
+        "other",
+        ["software/d.yaml", "software/e.yaml"],
+        "2 entries carry prices that need a re-check (2 checked over 18 months ago).",
+      ],
+    ]);
+    expect(findings.every((f) => f.check === "price-staleness" && !f.needsLlmReview)).toBe(true);
+  });
+
+  it("reads nested prices and caps the files it names", () => {
+    const many = Array.from({ length: 12 }, (_, i) =>
+      priced(`p${i}`, "acme", [{ amount: 1, currency: "USD" }])
+    );
+    const nested: LoadedProduct = {
+      ...priced("v", "acme", []),
+      entry: {
+        name: "v",
+        manufacturer: "acme",
+        versions: [{ name: "1", prices: [{ amount: 1, currency: "USD" }] }],
+      } as unknown as Hardware,
+    };
+    const [finding] = checkPriceStaleness([...many, nested], now);
+    expect(finding.files).toHaveLength(10);
+    expect(finding.detail).toMatch(/^13 entries .* the first 10 files are listed\.$/);
   });
 });

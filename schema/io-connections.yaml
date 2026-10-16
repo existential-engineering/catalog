@@ -1,8 +1,9 @@
-# Valid IO connection/connector types (advisory - warning if not matched)
+# Valid IO connection/connector types (closed vocabulary: E130 if not matched)
 #
 # The `connection` field describes the physical connector of an IO port.
-# Add new values here as they appear in data. Unknown values generate warnings
-# in `pnpm validate` and are surfaced during data review.
+# An unknown value fails `pnpm validate`, the same as an unknown `type`
+# (E117), so a genuinely new connector lands here in the same PR as the
+# entry that needs it, verified against the manual or a photo.
 connections:
   # Quarter-inch jacks
   - 1/4-inch
@@ -53,6 +54,7 @@ connections:
   - lightning
   - aes/ebu
   - digilink # Avid DigiLink (Pro Tools HD/HDX interface ports)
+  - sc # SC duplex fibre (optical MADI, e.g. sonible ml:mio)
 
   # Multi-pin connectors
   - 2-pin
