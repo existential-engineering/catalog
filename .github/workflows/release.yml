@@ -10,15 +10,34 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 permissions:
   contents: read
 
+# Three jobs, split by what each holds, on the reasoning of assign-ids.yml
+# and url-health.yml: a job that runs code from the tree (`pnpm install`
+# executes dependency lifecycle scripts, and the build is scripts/*.ts)
+# references no credential it does not need, and the job holding the
+# signing key runs nothing from the tree at all.
+#
+#   version          changesets/action. It needs the checkout and
+#                    `pnpm run version`, so it installs, and it needs a
+#                    write token to open the version PR. That token is the
+#                    one credential here, and it was already in the job
+#                    that ran install before the split.
+#   build            install, validate, build, index, checksums, SBOM. A
+#                    read-only token and nothing else; hands dist/ on as
+#                    an artifact.
+#   sign-and-release downloads that artifact, installs nothing, verifies
+#                    minisign by digest, signs under umask 077 with the
+#                    key in a mktemp file, attests and publishes. Until
+#                    the split, `pnpm install` and the build ran in the
+#                    job that wrote the signing key to /tmp under the
+#                    default umask.
 jobs:
-  release:
+  version:
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
-      # For build-provenance attestation of release artifacts
-      id-token: write
-      attestations: write
+    outputs:
+      has-changesets: ${{ steps.changesets.outputs['has-changesets'] }}
 
     steps:
       - name: Checkout
@@ -37,9 +56,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Validate before release
-        run: pnpm validate
-
       - name: Create Release Pull Request or Tag
         id: changesets
         uses: changesets/action@198f833dd7d863100ea6e28967bc9a9fdefadb0a # v2.1.0
@@ -49,37 +65,126 @@ jobs:
           commit-message: "chore: version packages"
           pr-title: "chore: version packages"
 
+  build:
+    needs: version
+    if: needs.version.outputs.has-changesets == 'false'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      # fetch-depth 1 is enough: the build stamps `updated_at` with the
+      # HEAD commit's date, which a shallow clone carries.
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: "24"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate before release
+        run: pnpm validate
+
       - name: Build database
-        if: steps.changesets.outputs['has-changesets'] == 'false'
         run: pnpm build
 
       - name: Build web index
-        if: steps.changesets.outputs['has-changesets'] == 'false'
         run: pnpm build:index
 
       - name: Generate checksum
-        if: steps.changesets.outputs['has-changesets'] == 'false'
         run: |
           sha256sum dist/catalog.sqlite > dist/catalog.sqlite.sha256
           sha256sum dist/catalog-index.json > dist/catalog-index.json.sha256
 
-      # Split from the signing step below so the signing secrets are not in
-      # the environment while unverified bytes are being downloaded and
-      # extracted. `curl | tar xz` ran an executable straight out of a
-      # release URL: anything that could replace that archive — upstream
-      # account compromise, a re-tagged release, an interfering proxy —
-      # chose the code that then ran alongside the catalog signing key.
+      # Here rather than beside the signature because the SBOM describes
+      # the dependencies the build ran with, and node_modules exists only
+      # in this job.
+      - name: Generate SBOM
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
+        with:
+          artifact-name: catalog-sbom.spdx.json
+          output-file: dist/catalog-sbom.spdx.json
+
+      - name: Upload build output
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: catalog-dist
+          path: |
+            dist/catalog.sqlite
+            dist/catalog.sqlite.sha256
+            dist/catalog-index.json
+            dist/catalog-index.json.sha256
+            dist/catalog-sbom.spdx.json
+          retention-days: 1
+          if-no-files-found: error
+
+  sign-and-release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      # For build-provenance attestation of release artifacts
+      id-token: write
+      attestations: write
+
+    steps:
+      # No `pnpm install` runs here, so no husky hooksPath gets configured
+      # either. The checkout is data: package.json for the version, the
+      # CHANGELOG for the release body, the tags for the exists check.
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Download build output
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: catalog-dist
+          path: dist
+
+      # The artifact was produced by a job that ran code from the tree, so
+      # it is data to check, not a directory to trust: exactly the files
+      # the build is expected to hand over, each matching its checksum.
+      - name: Verify build output
+        run: |
+          set -euo pipefail
+          expected='catalog-index.json
+          catalog-index.json.sha256
+          catalog-sbom.spdx.json
+          catalog.sqlite
+          catalog.sqlite.sha256'
+          if [ "$(ls -A dist | LC_ALL=C sort)" != "$expected" ]; then
+            echo "::error::dist/ holds something other than the five build files; refusing to sign it"
+            ls -la dist
+            exit 1
+          fi
+          (cd dist && sha256sum -c catalog.sqlite.sha256 catalog-index.json.sha256)
+
+      # Verified by a digest pinned here, in review, in git, before the
+      # signing key exists anywhere in this job. `curl | tar xz` ran an
+      # executable straight out of a release URL: anything that could
+      # replace that archive — upstream account compromise, a re-tagged
+      # release, an interfering proxy — chose the code that then ran
+      # alongside the catalog signing key.
       #
-      # The digest is the trust anchor: it lives here, in review, in git.
-      # It was taken from the archive upstream signs with the minisign
-      # public key published in its README
+      # The digest was taken from the archive upstream signs with the
+      # minisign public key published in its README
       # (RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3), whose
       # detached signature is minisign-0.11-linux.tar.gz.minisig on the
       # same release. Re-derive it the same way when bumping the version;
       # verifying that signature here instead would mean checking the
       # download with the binary out of the download.
       - name: Install minisign
-        if: steps.changesets.outputs['has-changesets'] == 'false'
         env:
           MINISIGN_VERSION: "0.11"
           MINISIGN_SHA256: f0a0954413df8531befed169e447a66da6868d79052ed7e892e50a4291af7ae0
@@ -94,37 +199,34 @@ jobs:
           rm -f "$archive"
           minisign -v
 
+      # The key lives in a mktemp file created under umask 077, so it is
+      # readable by this user alone for the seconds it exists, and the
+      # trap removes it however the step ends.
       - name: Sign catalog with minisign
-        if: steps.changesets.outputs['has-changesets'] == 'false'
         env:
           CATALOG_SIGNING_KEY: ${{ secrets.CATALOG_SIGNING_KEY }}
           CATALOG_SIGNING_KEY_PASSWORD: ${{ secrets.CATALOG_SIGNING_KEY_PASSWORD }}
         run: |
-          echo "$CATALOG_SIGNING_KEY" > /tmp/minisign.key
+          set -euo pipefail
+          umask 077
+          key=$(mktemp)
+          trap 'rm -f "$key"' EXIT
+          printf '%s\n' "$CATALOG_SIGNING_KEY" > "$key"
           VERSION=$(node -p "require('./package.json').version")
           echo "$CATALOG_SIGNING_KEY_PASSWORD" | minisign -S \
-            -s /tmp/minisign.key \
+            -s "$key" \
             -m dist/catalog.sqlite \
             -t "catalog v${VERSION}"
           echo "$CATALOG_SIGNING_KEY_PASSWORD" | minisign -S \
-            -s /tmp/minisign.key \
+            -s "$key" \
             -m dist/catalog-index.json \
             -t "catalog-index v${VERSION}"
-          rm /tmp/minisign.key
-
-      - name: Generate SBOM
-        if: steps.changesets.outputs['has-changesets'] == 'false'
-        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
-        with:
-          artifact-name: catalog-sbom.spdx.json
-          output-file: dist/catalog-sbom.spdx.json
 
       # Sigstore build provenance for the release artifacts (SLSA). The
       # bundle is also attached to the release as catalog.intoto.jsonl so
       # consumers (and OpenSSF Scorecard) can verify it offline. Best-effort:
       # a bookkeeping step must never be able to break a release.
       - name: Attest build provenance
-        if: steps.changesets.outputs['has-changesets'] == 'false'
         id: attest
         continue-on-error: true
         uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4
@@ -134,18 +236,16 @@ jobs:
             dist/catalog-index.json
 
       - name: Stage provenance bundle for release
-        if: steps.changesets.outputs['has-changesets'] == 'false' && steps.attest.outcome == 'success'
+        if: steps.attest.outcome == 'success'
         env:
           BUNDLE_PATH: ${{ steps.attest.outputs.bundle-path }}
         run: cp "$BUNDLE_PATH" dist/catalog.intoto.jsonl
 
       - name: Get package version
-        if: steps.changesets.outputs['has-changesets'] == 'false'
         id: pkg
         run: echo "version=v$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
 
       - name: Check if tag exists
-        if: steps.changesets.outputs['has-changesets'] == 'false'
         id: tag_check
         run: |
           if git rev-parse "${{ steps.pkg.outputs.version }}" >/dev/null 2>&1; then
@@ -161,7 +261,7 @@ jobs:
       # section and the generated list follows it for maintainers. The
       # version reaches awk through `env:`, never interpolated into `run:`.
       - name: Extract release notes from CHANGELOG
-        if: steps.changesets.outputs['has-changesets'] == 'false' && steps.tag_check.outputs.exists == 'false'
+        if: steps.tag_check.outputs.exists == 'false'
         env:
           VERSION: ${{ steps.pkg.outputs.version }}
         run: |
@@ -174,7 +274,7 @@ jobs:
           fi
 
       - name: Create GitHub Release
-        if: steps.changesets.outputs['has-changesets'] == 'false' && steps.tag_check.outputs.exists == 'false'
+        if: steps.tag_check.outputs.exists == 'false'
         uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3
         with:
           tag_name: ${{ steps.pkg.outputs.version }}
