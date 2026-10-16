@@ -14,8 +14,12 @@ on:
       - "pnpm-lock.yaml"
       - "pnpm-workspace.yaml"
       - ".github/workflows/validate.yml"
-  # Keep these paths in sync with the push trigger above.
+  # Keep these paths in sync with the push trigger above. `labeled` and
+  # `unlabeled` are listed because the ID immutability step reads the
+  # `retirement` label: without them a maintainer adding the label gets
+  # no new run, and a re-run keeps the original payload.
   pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
     branches: [main]
     paths:
       - "data/**"

@@ -1069,7 +1069,7 @@ Two or more entries in one collection carry the same `url`, compared without
 scheme, `www.` and trailing slashes. A product page belongs to one product, so
 this is usually one product filed twice, and occasionally a vendor whose entries
 all point at the storefront, which is a `url` to fix rather than entries to
-merge. Reported once per group. Advisory while `main` carries 150 groups.
+merge. Reported once per group. Advisory while `main` carries 149 groups.
 
 **Fix:** Merge duplicates, or point each entry at its own product page. A
 product with no page of its own leaves `url` out.

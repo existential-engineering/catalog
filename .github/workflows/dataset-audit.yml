@@ -34,10 +34,33 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # Every audit appends its settled findings to findings/findings.jsonl
+      # (see "Findings" in CLAUDE.md); the racks repo's file-findings.ts
+      # carries that file into the catalog-submissions inbox, one issue per
+      # finding, ever. The terminal reports are unchanged. Each audit is
+      # `|| true`: a red audit must not stop the next one or the issue
+      # update below, and the findings file is uploaded whatever happened.
       - name: Generate dataset audit
         id: audit
         run: |
-          pnpm dataset:audit --json > audit.json
+          mkdir -p findings
+          pnpm dataset:audit --json --findings findings > audit.json
+
+      - name: Run the corpus audits with findings
+        run: |
+          pnpm power-input-audit --findings findings || true
+          pnpm speaker-level-audit --findings findings || true
+          pnpm capability-gaps --findings findings || true
+          pnpm prose-layout-audit --findings findings || true
+          wc -l findings/findings.jsonl || true
+
+      - name: Upload findings
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: audit-findings
+          path: findings/findings.jsonl
+          if-no-files-found: ignore
+          retention-days: 45
 
       - name: Create or update dataset audit issue
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9

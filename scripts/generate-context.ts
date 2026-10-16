@@ -296,7 +296,7 @@ rear-panel diagram — assign them with \`pnpm enrich-io <slug>\`, not during bu
 
 ${context.ioTypes.map((v) => `- \`${v}\``).join("\n")}
 
-### IO Connections (advisory — unknown values produce warnings)
+### IO Connections (strict — unknown values fail validation with E130)
 
 ${context.ioConnections.map((v) => `- \`${v}\``).join("\n")}
 

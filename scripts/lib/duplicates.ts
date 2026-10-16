@@ -16,7 +16,7 @@
  * `pnpm dataset:audit` carries the same groups into the monthly issue,
  * from this one implementation so the two never disagree about a pair.
  * Reviewers used to be asked to spot both by eye, one import PR at a
- * time, which is how 150 url groups came to sit on `main`.
+ * time, which is how 149 url groups came to sit on `main`.
  */
 
 export interface DuplicateCandidate {

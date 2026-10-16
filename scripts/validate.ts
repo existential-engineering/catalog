@@ -2224,7 +2224,7 @@ function validate(): ValidationResult {
   // W134 and W135: the same product filed twice, by name or by url. Each
   // group is reported once, on its first file, naming the others, so the
   // count in the summary is a count of pairs to look at rather than of
-  // files. Advisory while `main` carries them (66 name groups and 150
+  // files. Advisory while `main` carries them (66 name groups and 149
   // url groups when the check was written); the monthly dataset audit
   // carries the same groups into its issue.
   for (const group of findDuplicateNameGroups(duplicateCandidates)) {
