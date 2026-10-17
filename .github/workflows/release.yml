@@ -23,7 +23,8 @@ permissions:
 #                    that ran install before the split.
 #   build            install, validate, build, index, checksums, SBOM. A
 #                    read-only token and nothing else; hands dist/ on as
-#                    an artifact.
+#                    an artifact. Lives in release-build.yml, which
+#                    release-dry-run.yml also calls on pull requests.
 #   sign-and-release downloads that artifact, installs nothing, verifies
 #                    minisign by digest, signs under umask 077 with the
 #                    key in a mktemp file, attests and publishes. Until
@@ -68,64 +69,9 @@ jobs:
   build:
     needs: version
     if: needs.version.outputs.has-changesets == 'false'
-    runs-on: ubuntu-latest
     permissions:
       contents: read
-
-    steps:
-      # fetch-depth 1 is enough: the build stamps `updated_at` with the
-      # HEAD commit's date, which a shallow clone carries.
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-        with:
-          persist-credentials: false
-
-      - name: Setup Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
-        with:
-          node-version: "24"
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Validate before release
-        run: pnpm validate
-
-      - name: Build database
-        run: pnpm build
-
-      - name: Build web index
-        run: pnpm build:index
-
-      - name: Generate checksum
-        run: |
-          sha256sum dist/catalog.sqlite > dist/catalog.sqlite.sha256
-          sha256sum dist/catalog-index.json > dist/catalog-index.json.sha256
-
-      # Here rather than beside the signature because the SBOM describes
-      # the dependencies the build ran with, and node_modules exists only
-      # in this job.
-      - name: Generate SBOM
-        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
-        with:
-          artifact-name: catalog-sbom.spdx.json
-          output-file: dist/catalog-sbom.spdx.json
-
-      - name: Upload build output
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: catalog-dist
-          path: |
-            dist/catalog.sqlite
-            dist/catalog.sqlite.sha256
-            dist/catalog-index.json
-            dist/catalog-index.json.sha256
-            dist/catalog-sbom.spdx.json
-          retention-days: 1
-          if-no-files-found: error
+    uses: ./.github/workflows/release-build.yml
 
   sign-and-release:
     needs: build
@@ -155,23 +101,10 @@ jobs:
       # The artifact was produced by a job that ran code from the tree, so
       # it is data to check, not a directory to trust: exactly the files
       # the build is expected to hand over, each matching its checksum.
+      # A composite action from this commit's .github/, shell only, shared
+      # with release-dry-run.yml so a pull request exercises this check.
       - name: Verify build output
-        run: |
-          set -euo pipefail
-          expected='catalog-index.json
-          catalog-index.json.sha256
-          catalog-sbom.spdx.json
-          catalog.sqlite
-          catalog.sqlite.sha256'
-          if [ "$(ls -A dist | LC_ALL=C sort)" != "$expected" ]; then
-            echo "::error::dist/ holds something other than the five build files; refusing to sign it"
-            ls -la dist
-            exit 1
-          fi
-          # Checked from the repository root: each .sha256 line names its
-          # file as `dist/<name>`, the path the build job hashed it under,
-          # so a `cd dist` first makes sha256sum look for dist/dist/<name>.
-          sha256sum -c dist/catalog.sqlite.sha256 dist/catalog-index.json.sha256
+        uses: ./.github/actions/verify-dist
 
       # Verified by a digest pinned here, in review, in git, before the
       # signing key exists anywhere in this job. `curl | tar xz` ran an
