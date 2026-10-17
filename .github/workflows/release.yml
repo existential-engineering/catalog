@@ -168,7 +168,10 @@ jobs:
             ls -la dist
             exit 1
           fi
-          (cd dist && sha256sum -c catalog.sqlite.sha256 catalog-index.json.sha256)
+          # Checked from the repository root: each .sha256 line names its
+          # file as `dist/<name>`, the path the build job hashed it under,
+          # so a `cd dist` first makes sha256sum look for dist/dist/<name>.
+          sha256sum -c dist/catalog.sqlite.sha256 dist/catalog-index.json.sha256
 
       # Verified by a digest pinned here, in review, in git, before the
       # signing key exists anywhere in this job. `curl | tar xz` ran an
