@@ -1,5 +1,47 @@
 # catalog
 
+## 3.73.0
+
+### Minor Changes
+
+- b0cba2b: Import A-Designs (2 entries).
+
+  Adds the two EM-series 500-slot preamps the catalog was missing, the
+  EM-Red and the EM-Blue, completing the five-module family alongside the
+  EM-Gold, EM-Silver and P-1 modules already listed. Both are marked
+  discontinued: A-Designs now offer only the P-1 and the EM-PEQ from the
+  500-series line.
+
+- 45421ae: Import Aguilar (34 entries).
+
+  Adds the DB 700 Hybrid Amp and Aguilar's bass pickup range, which the
+  catalog carried none of: the AG and DCB passive pickup sets for Jazz,
+  Precision, PJ, Music Man and soapbar formats, plus the OBP onboard
+  preamps. Cables, replacement drivers and refurbished listings are
+  deliberately left out.
+
+- e737d7c: Refresh Softube: 17 new, 0 discontinued, 119 updated.
+
+  Adds Console 1 Compact, Flow Studio and the Single Unit Stand alongside
+  fourteen plug-ins the catalog was missing, including Limit Pro, Limit Go,
+  Core Dimensions, Stereo Delay and both Reference equalizers. Refreshes
+  prices, prose and specs across the existing range, and fills in the I/O
+  for Console 1 Channel and Fader Mk III, which previously carried none.
+
+### Patch Changes
+
+- d1660d8: Accept Indonesian rupiah (IDR) prices.
+
+  The racks extraction schema can already emit an IDR price, and the
+  catalog rejected it as an unknown currency. `schema/currencies.yaml`
+  lists IDR and the JSON schemas are regenerated.
+
+- 3910d61: Fix: the Aguilar DB 700's mains inlet is an IEC C14.
+
+  The import wrote the bare `iec`, which the connection vocabulary does
+  not hold, so the strict E130 on `main` refused every validation run
+  after it merged.
+
 ## 3.72.0
 
 ### Minor Changes
