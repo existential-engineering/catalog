@@ -37,9 +37,11 @@ jobs:
       # Every audit appends its settled findings to findings/findings.jsonl
       # (see "Findings" in CLAUDE.md); the racks repo's file-findings.ts
       # carries that file into the catalog-submissions inbox, one issue per
-      # finding, ever. The terminal reports are unchanged. Each audit is
-      # `|| true`: a red audit must not stop the next one or the issue
-      # update below, and the findings file is uploaded whatever happened.
+      # finding, ever. The terminal reports are unchanged. Each corpus
+      # audit is `|| true`, so a red one does not stop the next or the
+      # issue update. `dataset:audit` is not: the issue update parses its
+      # JSON, so its failure has to fail the job. The upload runs
+      # `always()`, so whatever was written still reaches the inbox.
       - name: Generate dataset audit
         id: audit
         run: |
@@ -55,6 +57,7 @@ jobs:
           wc -l findings/findings.jsonl || true
 
       - name: Upload findings
+        if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: audit-findings
