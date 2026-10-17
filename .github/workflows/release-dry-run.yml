@@ -1,0 +1,53 @@
+name: Release dry run
+
+# Rehearses release.yml up to the signature: the same build job, then the
+# same artifact check sign-and-release runs before it touches the key.
+# Release only runs on a push to main, so without this a change to the
+# release path is first exercised by a real release. No secret is
+# referenced anywhere here, so a pull request's code can run it.
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/release.yml"
+      - ".github/workflows/release-build.yml"
+      - ".github/workflows/release-dry-run.yml"
+      - ".github/actions/verify-dist/**"
+      - "scripts/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: ./.github/workflows/release-build.yml
+    with:
+      assign-ids: true
+
+  verify:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Download build output
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          name: catalog-dist
+          path: dist
+
+      - name: Verify build output
+        uses: ./.github/actions/verify-dist

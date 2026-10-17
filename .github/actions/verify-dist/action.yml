@@ -1,0 +1,27 @@
+name: Verify build output
+description: >-
+  Check that dist/ holds exactly the five files the release build hands
+  over, each matching its checksum. Shell only, from the same commit as
+  the workflow that calls it: nothing installed, nothing from scripts/.
+
+runs:
+  using: composite
+  steps:
+    - name: Verify build output
+      shell: bash
+      run: |
+        set -euo pipefail
+        expected='catalog-index.json
+        catalog-index.json.sha256
+        catalog-sbom.spdx.json
+        catalog.sqlite
+        catalog.sqlite.sha256'
+        if [ "$(ls -A dist | LC_ALL=C sort)" != "$expected" ]; then
+          echo "::error::dist/ holds something other than the five build files; refusing to sign it"
+          ls -la dist
+          exit 1
+        fi
+        # Checked from the repository root: each .sha256 line names its
+        # file as `dist/<name>`, the path the build job hashed it under,
+        # so a `cd dist` first makes sha256sum look for dist/dist/<name>.
+        sha256sum -c dist/catalog.sqlite.sha256 dist/catalog-index.json.sha256

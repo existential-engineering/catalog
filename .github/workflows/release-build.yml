@@ -1,0 +1,84 @@
+name: Release build
+
+# The release's `build` job, callable so that release.yml and
+# release-dry-run.yml run the same steps. A dry run that copied them
+# would drift from the release it is meant to rehearse, which is how
+# the checksum check in #952 reached main untested.
+on:
+  workflow_call:
+    inputs:
+      assign-ids:
+        description: >-
+          Run `pnpm assign-ids` locally before validating. A pull request
+          gets its ids from assign-ids.yml in parallel, so its tree may
+          not carry them yet; main always does.
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      # fetch-depth 1 is enough: the build stamps `updated_at` with the
+      # HEAD commit's date, which a shallow clone carries.
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: "24"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Assign ids and io keys (local, not committed)
+        if: inputs.assign-ids
+        run: pnpm assign-ids
+
+      - name: Validate before release
+        run: pnpm validate
+
+      - name: Build database
+        run: pnpm build
+
+      - name: Build web index
+        run: pnpm build:index
+
+      - name: Generate checksum
+        run: |
+          sha256sum dist/catalog.sqlite > dist/catalog.sqlite.sha256
+          sha256sum dist/catalog-index.json > dist/catalog-index.json.sha256
+
+      # Here rather than beside the signature because the SBOM describes
+      # the dependencies the build ran with, and node_modules exists only
+      # in this job.
+      - name: Generate SBOM
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0
+        with:
+          artifact-name: catalog-sbom.spdx.json
+          output-file: dist/catalog-sbom.spdx.json
+
+      - name: Upload build output
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: catalog-dist
+          path: |
+            dist/catalog.sqlite
+            dist/catalog.sqlite.sha256
+            dist/catalog-index.json
+            dist/catalog-index.json.sha256
+            dist/catalog-sbom.spdx.json
+          retention-days: 1
+          if-no-files-found: error
