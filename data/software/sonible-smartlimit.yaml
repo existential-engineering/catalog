@@ -4,6 +4,10 @@ manufacturer: sonible
 primaryCategory: limiter
 categories:
   - plugin
+  - effect
+  - dynamics
+  - loudness
+  - metering
 formats:
   - vst
   - vst3
@@ -20,37 +24,39 @@ prices:
     currency: USD
 description: smart:limit delivers limiter settings in seconds and gives you all the loudness and dynamics info you need for confident publishing.
 details: |-
-  smart:limit is a content-aware limiter built around a straightforward set, check, publish workflow. Its intelligent processing is designed to preserve the detail of a track and provide transparent, uncompromised limiting quality, and its extensive loudness and dynamics monitoring removes the need for additional metering plug-ins. Alongside real-time loudness information, it guides a mix towards the safe zone requirements of streaming platforms and loudness standards and gives feedback through interactive Quality Check hints.
+  smart:limit is all about worry-free limiting: Its intelligent processing will preserve the detail of your track and provide a transparent, uncompromised limiting quality. With smart:limit's extensive loudness and dynamics monitoring, you won't have to use any additional metering plug-ins. Besides providing you with all the necessary loudness information in real-time for confident publishing, smart:limit guides you towards hitting the safe zone requirements of streaming platforms or loudness standards, and gives you feedback via interactive Quality Check hints.
 
-  Automatic parametrization analyzes the signal and finds limiting parameters that let a mix breathe in a few seconds. A genre-based profile primes the plug-in for different limiting characteristics, or a reference track can be uploaded when a specific limiting style is the target. The automatic parametrization can be used on its own, bypassed entirely, or combined with manual settings.
+  The plug-in analyzes your signal and finds limiting parameters that let your mix breathe, all in just a few seconds. By choosing a genre-based profile that fits your mix, you can prime the smart:limit for different limiting characteristics. Or instead, upload a reference track, if you are aiming for a specific limiting style. You can use smart:limit with or without the automatic parametrization, or go for a combination of both.
 
-  The Loudness Monitoring section expands into an information hub covering loudness and dynamics, with all relevant loudness readouts, visual guidance for different publishing targets and information on the dynamics of the track. The Instant Impact Prediction feature reflects a parameter change in real time, so the loudness measurement does not have to be restarted and the entire input signal does not have to be played back again. Monitored metrics include integrated, short-term and momentary loudness in LUFS, loudness range in LU, dynamics in dB based on peak to loudness ratio, true peak in dBTP using high-resolution oversampling, and gain reduction in dB.
+  Extend the Loudness Monitoring section to access an extensive information hub on loudness and dynamics: Here you will find all relevant loudness readouts, visual guidance regarding different publishing targets and information on the dynamics of your track. With the Instant Impact Prediction feature you won't have to restart the loudness measurements every time you change a parameter, the change will be reflected in real-time without having to repeatedly play back the entire input signal.
 
-  A set of sound-shaping controls sits beside the limiting stage. The Style dial moves freely between a soft and a hard limiting style, Saturation adds subtle warmth or inflates the signal more heavily, Balance applies spectral polish prior to publishing, and Bass Control tightens the low end for a rich and compact bottom.
+  When your sound is in need of a little bit of extra vibe, smart:limit has got you covered. Use the Style dial to freely choose between either a soft or hard limiting style. Play with Saturation to add some subtle warmth or to really inflate your signal. Adapt the Balance to give your track that perfect spectral polish prior to publishing and tweak the Bass Control for a rich and compact low end.
 specs: |-
-  - Automatic parametrization in just a few seconds
-  - Extensive loudness and dynamics monitoring
-  - Unique set of sound-shaping tools
-  - Genre-based profiles, or parametrization from an uploaded reference track
-  - Instant Impact Prediction reflects parameter changes in real time
-  - Interactive Quality Check hints against streaming and loudness-standard targets
-  - Loudness readouts: LUFS integrated, short-term and momentary, loudness range in LU
-  - Dynamics readout in dB based on peak to loudness ratio
-  - True peak readout in dBTP using high-resolution oversampling
-  - Gain reduction readout in dB
-  - Sound-shaping controls: Style, Saturation, Balance, Bass Control
-  - Plug-in formats (Mac): VST, VST3, AU, AAX
-  - Plug-in formats (Windows): VST, VST3, AAX
-  - Supported formats: mono, stereo, Dolby Surround 5.1
-  - Supported sample rates: 44.1 kHz to 192 kHz
-  - Authorization: machine-based or iLok
-  - Latest version: 1.1.5
+  - plug-in formats (Mac): VST, VST3, AU, AAX
+  - plug-in formats (Windows): VST, VST3, AAX
+  - supported formats: mono, stereo, Dolby Surround 5.1
+  - supported sample rates: 44.1 kHz to 192 kHz
+  - authorization: machine-based or iLok
+  - latest version: 1.1.5
   - Apple Silicon support: native
-  - PC: Windows 10 (64 bit)
-  - Mac: OSX 10.9+
+  - System requirements, PC: Windows 10 (64 bit)
+  - System requirements, Mac: OSX 10.9+
   - RAM: 4GB
   - CPU: Intel Core (i5), Apple Silicon
   - GPU: OpenGL Version 3.2+
+  - Automatic parametrization in just a few seconds
+  - Extensive loudness and dynamics monitoring
+  - Unique set of sound-shaping tools
+  - Loudness [LUFS]: integrated, short-term, momentary
+  - Loudness Range [LU]: integrated, short-term, momentary
+  - Dynamics [dB]: based on Peak to Loudness Ratio
+  - True Peak [dBTP]: using high-resolution oversampling
+  - Gain Reduction [dB]
+  - Interactive Quality Check hints
+  - Instant Impact Prediction
+  - Style, Saturation, Balance and Bass Control sound-shaping parameters
+  - Genre-based profiles and reference track upload
+  - 30-day trial available
 versions:
   - name: 1.1.6
   - name: 1.1.4
@@ -59,6 +65,27 @@ links:
   - type: review
     title: Studio Magazin review (PDF)
     url: https://www.sonible.com/wp-content/uploads/2022/03/studio-magazin_01-22_sonible-smartlimit.pdf
+  - url: https://help.sonible.com/hc/en-us/articles/360017065019-Where-do-I-find-the-latest-manual-for-my-plug-in-
+    type: resource
+    title: Manual
+  - url: https://help.sonible.com/hc/en-us/sections/360004395480-Authorization
+    type: resource
+    title: Authorization FAQ
+  - url: https://help.sonible.com/hc/en-us/articles/360015380200-In-which-DAWs-do-sonible-plug-ins-work-
+    type: resource
+    title: List of tested DAWs
+  - url: https://help.sonible.com
+    type: resource
+    title: Support
+  - url: https://www.sonible.com/blog/smartlimit-main-features/
+    type: resource
+    title: "Tutorial: How to use smart:limit's main features"
+  - url: https://www.sonible.com/blog/smartlimit-sound-shaping/
+    type: resource
+    title: "Tutorial: Easy sound shaping with smart:limit"
+  - url: https://www.sonible.com/blog/smartlimit-tracks-publishing-ready/
+    type: resource
+    title: "Tutorial: Get your track ready for publishing with smart:limit"
 videos:
   - videoId: 1u99ZzvBYqg
     title: Demo
