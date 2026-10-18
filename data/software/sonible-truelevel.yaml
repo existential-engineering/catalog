@@ -4,6 +4,10 @@ manufacturer: sonible
 primaryCategory: metering
 categories:
   - plugin
+  - meter
+  - loudness
+  - analyzer
+  - utility
 formats:
   - vst
   - vst3
@@ -18,46 +22,59 @@ url: https://www.sonible.com/truelevel/
 prices:
   - amount: 69
     currency: USD
-description: true:level is a metering plug-in that visualizes the interplay
-  between loudness and dynamics in a meaningful way, making it immediately
-  apparent whether a mix is ready to publish. It combines real-time true peak,
-  loudness and dynamics readouts with reference targets and text-based
-  suggestions.
+description: true:level is a metering plug-in that visualizes the interplay between loudness and dynamics in a meaningful way, making it immediately apparent whether a mix is ready to publish. It combines real-time true peak, loudness and dynamics readouts with reference targets and text-based suggestions.
 details: |-
-  true:level is a metering plug-in that shows loudness and dynamics together rather than in isolation, so the link between the two values is readable at a glance and it stays apparent whether a mix is ready to publish.
+  true:level is a metering plug-in that visualizes the interplay between loudness and dynamics in a meaningful way, making it immediately apparent if a mix is ready to publish. It offers real-time metering of true peak, loudness and dynamics, predefined references and custom reference options, and a level check with text-based suggestions.
 
-  The plug-in ships with a range of predefined references, including the loudness standards of publishing platforms and dynamic references for different genres. Aiming for those reference values avoids unpleasant surprises at publication, and up to 8 custom reference tracks can be loaded to compare a mix against for consistency across an entire project.
+  true:level comes with a range of predefined references, including the loudness standards of publishing platforms and dynamic references for different genres. Aiming for these reference values avoids unpleasant surprises when publishing a mix. To ensure consistency across an entire project, up to 8 reference tracks can be loaded to compare a mix with.
 
-  The visualization draws a calculated reference zone from the chosen loudness and dynamics reference, or from the uploaded custom reference tracks. When a track sits outside that zone, the Level Check gives text-based hints on which actions are needed to bring it inside.
+  The plug-in makes the link between loudness and dynamics of a mix immediately apparent and provides a holistic overview of both values. The calculated reference zone is specified either by the chosen loudness and dynamics reference or by the custom reference tracks that were uploaded. For guidance on how to modify a track to bring it within the reference zone, the Level Check provides hints as to what actions are needed.
 
-  Key readouts are deliberately limited to the ones that matter and are backed by target indicators, so the distance to the chosen reference stays visible without reading every number. Readouts cover integrated, short-term and momentary loudness in LUFS, loudness range in LU, dynamics in dB based on the peak to loudness ratio, and true peak in dBTP using high-resolution oversampling.
+  All displayed readouts as well as their visualizations are designed so that what is shown does not have to be second-guessed, and so that too many details do not become a distraction. true:level's key readouts are supported by target indicators, showing whether a track is close to the values of the chosen reference.
 
-  Mono, stereo and Dolby Surround 5.1 material is supported at sample rates from 44.1 kHz to 192 kHz, with native Apple Silicon support. true:level is also offered alongside true:balance as part of sonible's Metering Bundle.
+  Key readouts are monitored at a glance: loudness in LUFS (integrated, short-term, momentary), loudness range in LU (integrated, short-term, momentary), dynamics in dB based on the Peak to Loudness Ratio, and true peak in dBTP using high-resolution oversampling.
 specs: |-
-  - Real-time metering of true peak, loudness and dynamics
-  - Loudness [LUFS]: integrated, short-term, momentary
-  - Loudness Range [LU]: integrated, short-term, momentary
-  - Dynamics [dB] based on peak to loudness ratio
-  - True Peak [dBTP] using high-resolution oversampling
-  - Predefined references including publishing platform loudness standards and genre dynamics references
-  - Up to 8 custom reference tracks for project-wide consistency
-  - Calculated reference zone with target indicators on the key readouts
-  - Level check with text-based suggestions
-  - Plug-in formats (Mac): VST, VST3, AU, AAX
-  - Plug-in formats (Windows): VST, VST3, AAX
-  - Supported formats: mono, stereo, Dolby Surround 5.1
-  - Supported sample rates: 44.1 kHz to 192 kHz
-  - Authorization: machine-based or iLok
-  - Latest version: 1.0.4
+  - plug-in formats (Mac): VST, VST3, AU, AAX
+  - plug-in formats (Windows): VST, VST3, AAX
+  - supported formats: mono, stereo, Dolby Surround 5.1
+  - supported sample rates: 44.1 kHz to 192 kHz
+  - authorization: machine-based or iLok
+  - latest version: 1.0.4
   - Apple Silicon support: native
   - System requirements (PC): Windows 10+ (64 bit)
   - System requirements (Mac): MacOS 10.12+
-  - 4GB RAM
+  - RAM: 4GB
   - CPU: Intel Core (i5), Apple Silicon
   - GPU: OpenGL Version 3.2+
+  - Real-time metering of true peak, loudness and dynamics
+  - Predefined references and custom reference options
+  - Level check with text-based suggestions
+  - Up to 8 custom reference tracks
 versions:
   - name: 1.0.2
   - name: 1.0.4
+links:
+  - url: https://help.sonible.com/hc/en-us/articles/360017065019-Where-do-I-find-the-latest-manual-for-my-plug-in-
+    type: resource
+    title: Manual
+  - url: https://help.sonible.com/hc/en-us/sections/360004395480-Authorization
+    type: resource
+    title: Authorization FAQ
+  - url: https://help.sonible.com/hc/en-us/articles/360015380200-In-which-DAWs-do-sonible-plug-ins-work-
+    type: resource
+    title: List of tested DAWs
+  - url: https://help.sonible.com
+    type: resource
+    title: Support
+  - url: https://www.sonible.com/blog/truelevel-user-guide/
+    type: resource
+    title: true:level User Guide
+  - url: https://www.sonible.com/blog/truelevel-main-features/
+    type: resource
+    title: true:level's main features
+  - url: https://www.sonible.com/blog/truelevel-reference-tracks/
+    type: resource
+    title: true:level and reference tracks
 videos:
   - videoId: 7XXqs8MSkdo
     title: Demo
