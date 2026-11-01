@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Ear Trumpet Labs (18 hardware/software entries).
+Import Ear Trumpet Labs (14 hardware and 4 accessory entries).
