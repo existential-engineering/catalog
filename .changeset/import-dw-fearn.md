@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import D.W. Fearn (1 hardware/software entries).
+Import D.W. Fearn (8 hardware/software entries).
