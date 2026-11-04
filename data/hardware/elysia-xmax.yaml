@@ -1,0 +1,151 @@
+id: enOjHVv3WKbswXHCWvXyR
+name: xmax
+manufacturer: elysia
+primaryCategory: compressor
+categories:
+  - multiband
+  - mid-side
+  - mastering
+  - limiter
+  - analog
+  - rack-mount
+  - outboard
+capabilities:
+  - compression
+  - limiting
+  - saturation
+  - equalization
+  - crossover
+  - stereo-widening
+url: https://www.elysia.com/xmax/
+description: xmax is a Masterbus Processor with internal Mid/Side processing,
+  with pristine audio quality without compromising the natural integrity of your
+  mix.
+details: |-
+  The core of xmax is its Class-A circuitry with internal Mid/Side processing, delivering pristine audio quality without compromising the natural integrity of your mix. The multiband compression, split into low, mid and side bands, allows for detailed control of each frequency range, letting you shape your sound with precision.
+
+  xmax uses Mid-Side technology to encode the incoming stereo signal into Mid and Side signals. The Mid signal is further split into Low and Mid band, allowing for three independent compressors in one unit. After processing, the signal passes through a High-Shelf Filter for rich analog high-end, is decoded back to stereo, followed by a Soft Clipper and Output Control.
+
+  All bands have a fixed attack time of 10 milliseconds, chosen to preserve the natural transients of the signal while still offering effective compression across the frequency bands. When gain reduction reaches 8 dB or more, Auto Fast automatically shortens the attack time for fast and loud transients, preventing distortion and preserving clarity. A default ratio of 1:1.45 provides gentle, transparent compression, while punch mode engages a 1:2.55 ratio for more pronounced control. The adjustable crossover between the low and mid bands operates over a range of 40 Hz to 470 Hz, and a global release control defines the return phase of all three bands.
+
+  The VariLink function blends from fully independent band control to a fully linked mode, where all three bands share the same control voltage. In full link, xmax behaves more like a classic stereo VCA compressor, where the band with the most energy sets the compression response of the others. Which band acts as master can be chosen simply by adjusting the individual threshold controls.
+
+  The Soft Clip Limiter, derived from the alpha compressor, is specialized in catching short, transient-like signals reliably. Rather than a classic brickwall design, it works like an analog tape machine driving loud impulses into saturation, rounding peaks instead of cutting them off, so the signal can be driven harder without clipping external AD converters. Tone is a high-shelf filter ranging from -8 dB to +8 dB, and high-end analog meters display gain reduction for the low, mid and side bands as well as the soft clip limiter.
+specs: |-
+  - Class-A technology with discrete circuit designs
+  - Internal Mid/Side processing with three independent compressor bands (low, mid and side)
+  - Fixed 10 ms attack time per band, with Auto Fast shortening the attack from 8 dB gain reduction
+  - Two ratio settings: 1:1.45 default and 1:2.55 punch mode
+  - Variable crossover frequency between low and mid band, 40 Hz to 470 Hz
+  - Global release control for all three compressor bands
+  - VariLink: from unlinked to fully linked band thresholds
+  - Tone control: high-shelf filter, -8 dB to +8 dB
+  - Soft Clip Limiter based on discrete transistors, derived from the alpha compressor
+  - Analog metering for gain reduction of all three bands and for the soft clip limiter
+  - Frequency response: < 10 Hz to 180 kHz (-3 dB)
+  - THD+N @ 0 dBu, 20 Hz to 22 kHz: 0.01%
+  - Noise floor, 20 Hz to 20 kHz (A-weighted): -91.3 dBu
+  - Dynamic range, 20 Hz to 22 kHz: 112 dB
+  - Maximum input level: +21 dBu
+  - Maximum output level: +22 dBu
+  - Input impedance: 20 kOhm, output impedance: 68 Ohm
+  - Dimensions (1 RU rack, W x H x D incl. knobs): 483 mm x 44.45 mm x 232 mm (19" x 1.75" x 9.2")
+  - Weight (1 RU rack): 1.76 kg / 3.88 lbs
+  - Power consumption (1 RU rack): 12 Watts
+  - Potentiometers: 41 steps
+io:
+  - key: qCFN8KGm
+    name: Audio Input Left (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: dYKvePkv
+    name: Audio Input Right (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: T0cCkilk
+    name: Audio Input Left (TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: z3uCRkln
+    name: Audio Input Right (TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 3qgZAOhc
+    name: Audio Output Left (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: TpfPzwA9
+    name: Audio Output Right (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: rH3HFwMN
+    name: Audio Output Left (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Cw8nmFAR
+    name: Audio Output Right (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: fBO0QpGJ
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.elysia.com/download-file/49424/
+    type: resource
+    title: Rack Series Manual
+  - url: https://www.elysia.com/download-file/49422
+    type: resource
+    title: Recall Sheet Rack Series
+  - url: https://elysia.com/support/
+    type: resource
+    title: Support
+videos:
+  - provider: youtube
+    videoId: GnX7D5kUTAI
+    title: xmax walkthrough with Ruben Tilgner
+  - provider: youtube
+    videoId: oCDpqzpKIC0
+    title: xmax on Electronic Music
+  - provider: youtube
+    videoId: 2bjeL9qWPsU
+    title: xmax Review
+  - provider: youtube
+    videoId: QmA8FPbR07U
+    title: xmax Review + Sound Demo

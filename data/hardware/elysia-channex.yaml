@@ -1,0 +1,181 @@
+id: 00VtYNLb_GzXazsyPgxAo
+name: channex|studio
+manufacturer: elysia
+primaryCategory: channel-strip
+categories:
+  - preamp
+  - equalizer
+  - compressor
+  - limiter
+  - outboard
+  - analog
+capabilities:
+  - compression
+  - limiting
+  - equalization
+  - filter
+  - reverb
+  - saturation
+url: https://www.elysia.com/channex/
+description: channex|studio is the first class-A recall channel-strip from
+  elysia. The ultimate recording front-end for your studio.
+details: |-
+  channex|studio is a class-A recall channel strip built for tracking sessions, recording and mixing. It combines a high-end preamp, an analog dynamic equalizer, a compressor and limiter, a flavor colouring section and a zero-latency monitor section in one device, with the aim of delivering a mix-ready signal at the point of capture. Everything in the signal path is analog, while settings are fully recallable both on the unit and through the channex|studio plugin in a DAW session.
+
+  The front end is a DC-coupled microphone preamplifier with up to 64 dB of gain, an adjustable high-pass filter, switchable +48V phantom power and polarity reverse on a long press of the button. A High-Z instrument input sits on the front panel and a line level input is available on the rear via an XLR/TRS combo socket, with gain settings stored per input and switched automatically when the input changes. Levels are monitored through the elysia Shell Precision Metering.
+
+  The 4-band analog equalizer carries a low band, two switchable mid bands and a high band, with frequency and gain on six elysia Shell controllers, an adjustable Q per band and shelf filters on the low and high bands. Each band can also act dynamically, a behaviour normally found only in plugins, and an intelligent gain function keeps the dynamic response tied to the level inside the set band rather than the overall input level. The compressor is driven by threshold, release and make-up gain with attack available in a sub menu, and is backed by a Gain Reduction Limiter plus the Soft Clip Limiter in the output section.
+
+  The flavor section offers five colouring options that can be mixed together, each with up to five intensity levels, from off to strongly coloured, and the whole section can be bypassed by button for comparison. Monitoring is zero latency, with two headphone amplifiers and three independent mixes for the producer, the artist and the studio monitors, each with its own levels for DAW playback, the processed input signal and a built-in reverb. A talkback microphone input with preamp on the rear can be triggered by push-button or footswitch, and a mute macro switches between recording and playback mute settings.
+
+  Recall is the defining feature: up to 22 presets are stored on the device itself for standalone use, and the channex|studio plugin adds preset naming, reordering, import and export, DAW automation and the same control over the unit's routing. The equalizer, compressor and limiter, hardware insert and flavor sections can be arranged in any order from the hardware or the plugin. Rear-panel connectivity covers insert send and return, a stereo DAW or console playback input, main output, an additional FX input, talkback and footswitch inputs, monitor outputs, independent headphone outputs, and Ethernet and USB for plugin control, recall and automation. Settings are retained when the device is switched off, and remote workflows are supported by controlling the hardware over a VPN or remote desktop connection while audio is streamed to the producer.
+io:
+  - key: dFL14d2S
+    name: Mic / Line Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - key: t8yTuZIC
+    name: Instrument Input (High-Z)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: 9uRot1qq
+    name: Insert Send
+    signalFlow: output
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: AHSiF2In
+    name: Insert Return
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: HhcGE2tM
+    name: DAW / Console Playback Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: k63Q4N4e
+    name: DAW / Console Playback Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: cJHVmq7F
+    name: FX Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: YaJfxE09
+    name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 2iHebH0W
+    name: Monitor Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: eQVYxaht
+    name: Monitor Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: D50ovajM
+    name: Talkback Microphone Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: CnksR58U
+    name: Footswitch Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: mCxwZvMs
+    name: Headphone Output 1
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: UFLzYuhn
+    name: Headphone Output 2
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: aBq2SgHs
+    name: Ethernet
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: OpHiTkHu
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - key: XRevfjYi
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.elysia.com/download-file/53798
+    type: resource
+    title: Manual
+  - url: https://www.elysia.com/download-file/53797
+    type: resource
+    title: Software Manual
+  - url: https://www.elysia.com/download-file/53792
+    type: resource
+    title: Software Download
+videos:
+  - videoId: Yg_9Q_ZLr5g
+    title: channex|studio Walkthrough with Ruben Tilgner
