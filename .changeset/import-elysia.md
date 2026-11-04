@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import elysia (12 hardware/software entries).
+Import elysia (10 hardware entries and 2 content entries).
