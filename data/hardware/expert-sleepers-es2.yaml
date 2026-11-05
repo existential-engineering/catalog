@@ -1,0 +1,79 @@
+id: DzelWi-sVDUH3hYggYBgm
+name: ES-2
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - utility
+  - discontinued
+hp: 4
+url: https://www.expert-sleepers.co.uk/es2.html
+description: The ES-2 is a Eurorack CV to audio interface designed for use with
+  software such as Expert Sleepers Silent Way. It takes CVs from analogue synths
+  and effects on 3.5mm jacks and outputs them as audio on 1/4" jacks for a
+  computer audio interface, where the Silent Way CV Input plug-in interprets
+  them.
+details: |-
+  The Expert Sleepers ES-2 CV/Audio Interface is a Eurorack module designed for use with software such as Expert Sleepers Silent Way. It takes CVs from analogue synths and effects as inputs on 3.5mm jacks and outputs audio signals on 1/4" jacks that connect to a computer audio interface. The Silent Way CV Input plug-in then interprets the audio signal and outputs CVs in the DAW for recording and processing.
+
+  One variant has been produced, the ES-2-2, with two inputs and two outputs. Expert Sleepers notes that a larger version, for example an ES-2-8, may one day follow.
+
+  The panel is 4HP wide and the module is 26mm deep. Inputs are 3.5mm jack sockets carrying CV from a synth, and outputs are impedance-balanced 1/4" TRS jack sockets feeding an audio interface. Maximum input voltage is approximately plus or minus 11V DC and the maximum output signal is approximately 0 dBV, with an effectively infinite input impedance from a FET buffer and a 100 Ohm output impedance.
+
+  The front panel is drilled for both Doepfer and Analogue Systems mounting holes, using a slot rather than a single round hole, and the power connector is a Doepfer standard 16 way IDC with -12V furthest from the top of the board. Two panel options were offered, 3mm translucent orange acrylic and 2mm orange painted aluminium, with no difference in specification. The circuit works unmodified with plus and minus 15V supplies.
+
+  There are no user-adjustable settings on the ES-2 and no dedicated user manual. Setup instructions live in the Silent Way user manual, which covers the Silent Way CV Input plug-in the module is designed to work with.
+specs: |-
+  - Panel width: 4HP
+  - Module depth: 26mm
+  - Input connections (CV from synth): 3.5mm jack sockets
+  - Output connections (to audio interface): impedance-balanced 1/4" TRS jack sockets
+  - Two inputs and two outputs (ES-2-2 variant)
+  - Maximum input voltage: approximately plus or minus 11V DC
+  - Maximum output signal: approximately 0 dBV
+  - Input impedance: effectively infinite (FET buffer)
+  - Output impedance: 100 Ohms
+  - Current draw: 8mA on the +12V rail, 6mA on the -12V rail (14mA total)
+  - Power connector: Doepfer standard 16 way IDC, -12V furthest from the top of the board
+  - Works unmodified with plus and minus 15V supplies
+  - Panel options: 3mm translucent orange acrylic or 2mm orange painted aluminium
+io:
+  - key: Gw6JmCJt
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2CSjjoBo
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gLRk8ZlF
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: V1SuDrLP
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+  - key: DWTkZVpG
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

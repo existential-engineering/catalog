@@ -1,0 +1,98 @@
+id: wWUAtnOjGAzitO78MCmym
+name: disting mk3
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - utility
+  - effect
+  - multi-effect
+  - legacy
+supersedes: km8_GK_RXMFKYoiUSu5Sx
+capabilities:
+  - delay
+  - chorus
+  - flanger
+  - vibrato
+  - phaser
+  - vocoder
+  - bit-crush
+  - filter
+  - sampling
+hp: 4
+url: https://www.expert-sleepers.co.uk/distingmk3.html
+description: The disting mk3 is a many-in-1 multifunction Eurorack module
+  offering a variety of CV and audio processes, including a selection of LFOs
+  and VCOs. Introduced in November 2015, it added user-updatable firmware from a
+  MicroSD card and lifted the earlier limit of sixteen algorithms.
+details: |-
+  The disting is a many-in-1 multifunction module offering a variety of CV and audio processes, including a selection of oscillators (LFOs and VCOs). Every algorithm has two high-precision inputs and outputs plus a third control input, which is exposed both on a front panel knob and on a CV input.
+
+  The algorithms are arranged in banks. The first bank is the classic set of sixteen: a precision adder, a four quadrant multiplier, a full-wave rectifier, minimum/maximum, a linear and exponential converter, a quantizer with selectable scales, a comparator with adjustable hysteresis, a dual waveshaper, sample and hold, a slew rate limiter, a pitch and envelope tracker, a clockable delay/echo, an LFO with through zero frequency control, a clockable LFO, and two VCOs.
+
+  The second bank is largely audio processing: a precision adder with fractional offsets, a resonator for drum synthesis, filters (LP/HP, LP/BP, BP/HP, BP/notch and a smoothly variable state variable filter), a voltage controlled delay line for vibrato, chorus and flange effects, a 12 band vocoder, a tape delay with voltage controlled tape speed, clockable ping pong delays and a bit crusher.
+
+  The third and fourth banks cover envelopes and CV utilities, including AR and dual AR envelopes with and without a VCA, clockable AD envelopes, shift register random CVs, quantized CVs and triggers, Euro to Buchla and Buchla to Euro converters, ES-1 and ES-2 emulations, dual quantizers, crossfade and pan, dual sample and hold, dual Euclidean patterns and a dual delayed pulse generator. The fifth and sixth banks play back audio and MIDI files from the MicroSD card, with clocked and free running playback, V/Oct and Z speed variants, an end CV variant and an audio recorder.
+
+  Compared with the original disting, the mk3 is 42mm deep rather than 53mm, draws over 50% less power at 70mA combined, takes code updates from a MicroSD card, is no longer limited to sixteen algorithms, and adds an encoder and push buttons for more control options. The panel is 4HP wide, drilled for both Doepfer and Analogue Systems mounting holes, and the power connector is a Doepfer standard 16 way IDC with -12V furthest from the top of the board. The module is built around a PIC microcontroller with a programming and debug header, and Expert Sleepers publishes an open source framework for custom algorithms.
+specs: |-
+  - Panel width: 4HP
+  - Module depth: 42mm
+  - X and Y inputs, A and B outputs
+  - Sample rate: 75kHz
+  - ADC: 24 bit, THD+N -93dB, dynamic range 99dB, SNR 99dB
+  - DAC: 24 bit, THD+N -94dB, dynamic range 105dB, SNR 104dB
+  - Z input sample rate: 75kHz
+  - CPU: Microchip PIC32MX at up to 50MHz
+  - Current draw: 50mA on the +12V rail, 20mA on the -12V rail (70mA total)
+  - Power connector: Doepfer standard 16 way IDC, -12V furthest from the top of the board
+  - Six banks of algorithms, user-updatable via MicroSD card
+  - Introduced November 2015
+io:
+  - key: h6Nplo9H
+    name: X Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: RsT13W4Z
+    name: Y Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bML2xmDV
+    name: Z Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Ac6YLsmN
+    name: A Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nrkhnikZ
+    name: B Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: lzMslrha
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

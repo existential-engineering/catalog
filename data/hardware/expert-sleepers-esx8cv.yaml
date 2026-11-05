@@ -1,0 +1,104 @@
+id: pLmEJxw3zqF7O8CoI27Hw
+name: ESX-8CV
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - utility
+hp: 4
+url: https://www.expert-sleepers.co.uk/esx8cv.html
+description: The ESX-8CV is a Eurorack expansion module for the Expert Sleepers
+  ES-4, ES-40 or ES-5, adding eight hardware-calibrated CV outputs from one
+  expansion header.
+details: |-
+  The ESX-8CV is an expansion module for the Expert Sleepers ES-4, ES-40 or ES-5, adding eight CV outputs from one expansion header.
+
+  To squeeze eight 12 bit channels through one 8 bit connection, the channels are time-multiplexed and so effectively run at between one third and one twenty fourth of the audio sample rate. With the audio interface or DAW running at 48kHz, for example, the outputs run at between 16kHz and 2kHz depending on how many channels are active. That is fast enough for most CV purposes apart from audio-rate modulation and the very fastest envelopes. Because the outputs are still derived from the audio stream, they keep the advantages of the ES-3 and ES-4 over traditional MIDI-based interfaces, namely solid timing and the absence of jitter.
+
+  The outputs are hardware calibrated and so do not require software calibration of the sort Silent Way offers when used with standard V/octave synths and oscillators. The 12 bit resolution is adequate for software calibration where it is wanted, for example to cater for oscillators that do not track well to a standard calibration, or to support oscillators with a Hz/V response. A jumper setting selects between plus or minus 5.33V hardware calibrated and plus or minus 9.5V uncalibrated output.
+
+  The ESX-8CV requires software in order to time-multiplex the eight output signals and encode them for the ES-4 or ES-5. The options are the ESX-8CV Combiner plug-in that forms part of Expert Sleepers Silent Way, the Expert Sleepers Max/MSP external, and a free Expert Sleepers plug-in for VCV Rack. Silent Way is offered in AudioUnit, VST and AAX formats for Mac OS X and Windows and so needs a compatible host application. A Silent Way licence is not included with the ESX-8CV, and the ESX-8CV Combiner plug-in functions in a licence-free mode.
+
+  May 2017 saw the launch of the ESX-8CV mk2. Functionally equivalent to the original, it adds illuminated jack sockets, reduces power consumption, and matches the look of the ES-8 and the other 2017 updates. The front panel is drilled for both Doepfer and Analogue Systems mounting holes, using a slot rather than a single round hole, and the power connector is a Doepfer standard 16 way IDC with -12V furthest from the top of the board.
+specs: |-
+  - Panel width: 4HP
+  - Module depth: 49mm
+  - Digital input: connection from ES-4, ES-40 or ES-5 module
+  - Analogue outputs: 8x 3.5mm jacks, DC-coupled
+  - Output voltages: plus or minus 5.33V hardware calibrated, or plus or minus 9.5V uncalibrated (jumper setting)
+  - D/A conversion: 12 bit, using high precision Analog Devices DACs
+  - Indicators: illuminated jack sockets
+  - Current draw: 41mA on the +12V rail, 33mA on the -12V rail
+  - Power connector: Doepfer standard 16 way IDC
+io:
+  - key: h5BIQqUT
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Y2BfVEIV
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: C3RTujuj
+    name: Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UvmIoC0J
+    name: Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3KgvAYhl
+    name: Output 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2lUfBqZL
+    name: Output 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0IqMC6Qa
+    name: Output 7
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: pw4IrWO2
+    name: Output 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: WQ5r0c1M
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

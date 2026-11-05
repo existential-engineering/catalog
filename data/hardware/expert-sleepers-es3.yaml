@@ -1,0 +1,116 @@
+id: QpBvaK6r_SqLoAuhQ525r
+name: ES-3
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - utility
+  - audio-interface
+hp: 8
+url: https://www.expert-sleepers.co.uk/es3.html
+description: The ES-3 is a Eurorack module that converts eight channels of ADAT
+  Lightpipe input to DC coupled outputs on 3.5mm jacks, connecting a DAW
+  directly to analogue synthesizers. The outputs serve as control voltages or as
+  audio at modular synth compatible levels.
+details: |-
+  The ES-3 is a Eurorack format module which converts eight channels of ADAT Lightpipe input to DC coupled outputs on 3.5mm jacks, for connecting a DAW directly to analogue synthesizers. A single optical cable brings CV control from the DAW into the heart of a modular system.
+
+  The outputs can be used as control voltages, for example with software such as Expert Sleepers Silent Way, and can also be used as audio outputs at high, modular synth compatible levels. The module is directly compatible with computer-based CV generation software including Silent Way, Max/MSP, Reaktor, CV Toolkit, zMors, Audulus and Bitwig Studio.
+
+  The panel is 8HP wide and the module is 50mm deep. The input is an optical connection to the ADAT Lightpipe standard, D/A conversion is 24 bit with a typical SNR of 113dB, and the eight outputs are DC-coupled 3.5mm jacks with a maximum output voltage of approximately plus or minus 10V DC. An LED indicates ADAT clock sync and illuminated sockets indicate positive and negative output voltage. The front panel is drilled for both Doepfer and Analogue Systems mounting holes, and the power connector is a Doepfer standard 16 way IDC with -12V furthest from the top of the board.
+
+  Several revisions have been produced. ES-3s shipped from January 2012 to August 2013 were marked ES-3 mk2 and had an identical specification to the original, with the addition of a couple of expansion headers, the first expansion module for which was the ES-5. The ES-3 mk3 arrived in September 2013, functionally equivalent to the mk2 but with higher specification DACs and lower noise circuitry, easier access to the expansion headers, a more robust ADAT port and more visible LEDs. The ES-3 mk4 followed in February 2017, functionally equivalent to the mk3 and adding illuminated jack sockets and a shallower depth.
+
+  At 44.1 and 48kHz the ES-3 produces eight outputs as normal. In double speed mode, at 88.2 and 96kHz, it outputs four channels duplicated across pairs of outputs, so outputs 1 and 2 both carry ADAT channel 1, outputs 3 and 4 carry ADAT channel 2 and so on. Users of Silent Way can use the Silent Way SMUX plug-in to interleave CVs on the 96kHz stream, restoring the number of usable CV outputs to eight.
+specs: |-
+  - Panel width: 8HP
+  - Module depth: 50mm
+  - Input connection: optical, ADAT Lightpipe standard
+  - D/A conversion: 24 bit, 113dB SNR typical
+  - Output connections: 8x 3.5mm jacks, DC-coupled
+  - Maximum output voltage: approximately plus or minus 10V DC
+  - Indicators: LED for ADAT clock sync, illuminated sockets indicate output voltage polarity
+  - Current draw: 148mA on the +12V rail, 18mA on the -12V rail
+  - Power connector: Doepfer standard 16 way IDC, -12V furthest from the top of the board
+  - Four outputs duplicated across output pairs at 88.2 and 96kHz, eight at 44.1 and 48kHz
+  - Expansion headers for the ES-5 from the mk2 revision onward
+io:
+  - key: MKG8J0Dg
+    name: ADAT In
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Top
+  - key: RW5egv1L
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KBGPUU5R
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tpDcUbNp
+    name: Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 79hNK7Js
+    name: Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: C3vMd9w1
+    name: Output 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: h6gcx7cR
+    name: Output 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: APVKvIt2
+    name: Output 7
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hLeL72TM
+    name: Output 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 04nWyH4Y
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

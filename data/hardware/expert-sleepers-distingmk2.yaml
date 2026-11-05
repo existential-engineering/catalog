@@ -1,0 +1,88 @@
+id: km8_GK_RXMFKYoiUSu5Sx
+name: disting mk2
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - utility
+  - effect
+  - discontinued
+capabilities:
+  - delay
+hp: 4
+url: https://www.expert-sleepers.co.uk/distingmk2.html
+description: The disting is a 16-in-1 multifunction Eurorack module offering a
+  variety of CV and audio processes, including a selection of LFOs and VCOs. The
+  mk2 revision raised the maximum delay time of the Clockable Delay/Echo
+  algorithm to over 1.6 seconds.
+details: |-
+  The disting is a 16-in-1 multifunction module offering a variety of CV and audio processes, including a selection of oscillators (LFOs and VCOs). Every algorithm has two high-precision inputs and outputs plus a third control input, which is exposed both on a front panel knob and on a CV input.
+
+  The sixteen algorithms are arranged in four groups of four. The first group covers a precision adder with integer voltage offsets, a four quadrant multiplier with integer multiply and divide, a full-wave rectifier and a minimum/maximum function. The second group covers a linear and exponential converter, a quantizer with selectable scales, a comparator with adjustable hysteresis and a dual waveshaper (a wavefolder and a triangle-to-sine shaper).
+
+  The third group covers sample and hold with a noise source and adjustable slew rate, a slew rate limiter with linear and exponential slew, a pitch and envelope tracker, and a clockable delay/echo. The fourth group covers an LFO with through zero frequency control and waveshaping, a clockable LFO with multiply and divide, a VCO with linear FM offering sine and saw outputs, and a VCO with waveshaping offering saw, triangle and pulse outputs.
+
+  The panel is 4HP wide and the module is 53mm deep. The front panel is drilled for both Doepfer and Analogue Systems mounting holes, using a slot rather than a single round hole, and the power connector is a Doepfer standard 10 way IDC with -12V furthest from the top of the board.
+
+  The disting is built around a PIC microcontroller with a programming and debug header on the board, so a user can write custom functions for it with Microchip's free development tools. Expert Sleepers publishes an open source code framework that developers can slot their own algorithms into, and the forum carries a thread on disting firmware hacking.
+specs: |-
+  - Panel width: 4HP
+  - Module depth: 53mm
+  - X and Y inputs, A and B outputs
+  - Sample rate: 78.125kHz
+  - ADC: 24 bit, THD+N -93dB, dynamic range 99dB, SNR 99dB
+  - DAC: 24 bit, THD+N -94dB, dynamic range 105dB, SNR 104dB
+  - Z input sample rate: 10kHz approx
+  - CPU: Microchip PIC32MX at up to 40MHz
+  - Current draw: 111mA on the +12V rail, 37mA on the -12V rail (148mA total)
+  - Power connector: Doepfer standard 10 way IDC, -12V furthest from the top of the board
+  - 16 algorithms in four groups of four
+  - mk2 raises the Clockable Delay/Echo maximum delay time to over 1.6 seconds
+io:
+  - key: JAm9udBX
+    name: X Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: dFVzyeNB
+    name: Y Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BwEkwDIc
+    name: Z Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: yOY6byld
+    name: A Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UvgptFeT
+    name: B Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: p6QpH7Qh
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
