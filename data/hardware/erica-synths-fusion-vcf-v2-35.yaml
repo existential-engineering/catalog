@@ -1,0 +1,94 @@
+id: P-_xIAN6EE4yYY79qdNUa
+name: Fusion VCF V2
+manufacturer: erica-synths
+primaryCategory: filter
+categories:
+  - discontinued
+  - modular
+  - analog
+capabilities:
+  - filter
+  - overdrive
+hp: 14
+url: https://www.ericasynths.lv/fusion-vcf-v2-35/
+description: Erica Synths Fusion VCF is our take on a four pole lowpass filter.
+  Each side of the double triode drives signal between 2nd and 3rd stage of the
+  filter, while germanium diodes are used to limit the output signal.
+details: |-
+  A four pole lowpass filter with a deep sound and a character of its own. Each side of the double triode drives the signal between the 2nd and 3rd stage of the filter, while germanium diodes limit the output signal. A resonance volume compensation circuit and a selectable filter slope make it suited to live performance.
+
+  A bonus feature is a three input mixer with its own dedicated mixer output. Patching the MIX OUT back into one of the mixer inputs and raising the input level until the mixer goes into self-oscillation gives a drone the filter can then shape, which makes the Fusion VCF an instrument in its own right.
+
+  The Fusion series modules are designed by combining vacuum tubes and semiconductors, so they bring the warm, powerful sound and overdrive possibilities of vacuum tubes into a modular system. The series covers a range of sound shaping circuits: VCO, Mixer, a real ring modulator using audio transformers and a germanium diode ring, VCF, VCA and analogue Delay / Flanger.
+
+  All Fusion modules are by default configured to work with a regular eurorack PSU. Because cold tube heaters have lower resistance, Fusion modules have a significant power consumption peak at startup, when consumption almost doubles for 1 to 2 seconds. This is not a problem with linear PSUs that have power inertia, but it may cause a switching PSU internal protection to turn the power supply off, so the PSU should have some headroom before multiple Fusion modules are installed.
+specs: |-
+  - 4 pole lowpass resonant VCF with tube drive between stages
+  - Three input signal mixer
+  - Selectable 24dB/12dB filter slope
+  - Signal drop compensation when resonance is increased
+  - Germanium diode based output signal limiter
+  - Audio input level up to 20V ptp
+  - CV input level (full cutoff span) -10V to +10V
+  - Panel width 14HP
+  - Module depth 35mm
+  - Power supply bipolar +-12V, eurorack standard
+  - Eurorack PSU configuration 35mA@+12V, 170mA@-12V
+  - Start-up power consumption for a few seconds is -250mA
+io:
+  - key: rLIZk9S5
+    name: Mixer Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Y8ArsQ5W
+    name: Mixer Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hX1KNnil
+    name: Mixer Input 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: lDlyENrv
+    name: Mix Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: S6uGaIwi
+    name: Cutoff CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nliKAOPR
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: u9VqBVdA
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

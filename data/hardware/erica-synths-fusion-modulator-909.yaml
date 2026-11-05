@@ -1,0 +1,94 @@
+id: wwwxF2QFSMyw_-AwbBnHs
+name: Fusion Modulator
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - discontinued
+  - modular
+  - analog
+  - noise
+hp: 22
+url: https://www.ericasynths.lv/fusion-modulator-909/
+description: Complex analogue modulation source.
+details: |-
+  Fusion Modulator is a complex, all analogue modulation source with a number of distinct features. It consists of several blocks: two looping envelope generators inspired by the EMS Synthi, a VCA, a noise generator and a sample and hold circuit.
+
+  Each envelope generator provides simultaneous unipolar (0V to 10V) and bipolar (-5V to +5V) outputs, with Attack, On, Decay and Off time controls, CV control over the decay time, a manual trigger button and an end of cycle output.
+
+  That combination makes the Fusion Modulator a versatile modulation source for advanced modular setups, particularly drone oriented ones. Setting the looping envelope generators to high frequencies turns them into two sub bass sound sources, the VCA controls the amplitude of the envelope signal, and random voltages from the sample and hold circuit can modulate the decay time for an ever evolving result.
+
+  The noise source is a zener diode based white noise generator, and the sample and hold circuit runs from either its internal clock or an external clock source. The VCA carries an offset control.
+specs: |-
+  - Attack time 6ms to 850ms
+  - On time 0 to 1.5s
+  - Decay time 16ms to 2s
+  - Off time 14ms to 1.3s
+  - Sustain level +10V
+  - Panel width 22HP
+  - Module depth 36mm
+  - Power consumption 125mA@+12V, 74mA@-12V
+io:
+  - key: zaQHKGS6
+    name: Decay CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zxQtzP9Y
+    name: Envelope Output (Unipolar)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: DPSloi43
+    name: Envelope Output (Bipolar)
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3OqjGFha
+    name: End of Cycle Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XsqvQBxi
+    name: Noise Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XxEBkFFQ
+    name: Sample and Hold Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: l6dRO74G
+    name: Sample and Hold Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 406rUNyW
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

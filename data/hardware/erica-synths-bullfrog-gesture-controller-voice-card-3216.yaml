@@ -1,0 +1,51 @@
+id: mV3WZ7J9u7JXrEUSm8zpo
+name: Bullfrog Gesture Controller Voice Card
+manufacturer: erica-synths
+primaryCategory: control-surface
+categories:
+  - semi-modular
+  - theremin
+url: https://www.ericasynths.lv/bullfrog-gesture-controller-voice-card-3216/
+prices:
+  - amount: 45
+    currency: EUR
+    term: perpetual
+description: Control your Bullfrog without touching it.
+details: |-
+  The GESTURE CONTROLLER voice card gives a new type of control over the Bullfrog, allowing it to be played like a Theremin with some handy extras. The PITCH and VCA/VCF sensors are internally routed to the VCO pitch and to the VCA level and VCF cutoff parameters of the Bullfrog once the card is connected.
+
+  The card carries a built-in pitch quantizer that can be turned on or off as desired and an adjustable pitch range for the sensors of 1V, 3V or 5V. Another toggle switch adds an internal connection that sends gates to the Bullfrog's envelope generators from the VCA/VCF sensor.
+
+  Besides those internal connections, the card has separate outputs for PITCH CV and for VCA/VCF CV taken from the sensors, so the gesture control can be patched elsewhere.
+specs: |-
+  - Instant Theremin feature
+  - Built in pitch quantizer
+  - Adjustable pitch range (1V, 3V or 5V)
+  - PITCH and VCA/VCF sensors internally routed to the Bullfrog
+  - Switchable gate connection from the VCA/VCF sensor
+  - Separate PITCH CV and VCA/VCF CV outputs
+io:
+  - key: uf9qGCRQ
+    name: Voice Card Power Connector
+    signalFlow: input
+    category: power
+    type: power
+    connection: card-slot
+    maxConnections: 1
+    position: Bottom
+  - key: vss358kr
+    name: Pitch CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8M7BZwP8
+    name: VCA/VCF CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

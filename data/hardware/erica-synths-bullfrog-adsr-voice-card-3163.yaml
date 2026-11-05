@@ -1,0 +1,49 @@
+id: PcVy5rPFaqMYvU5ItG1Zy
+name: Bullfrog ADSR Voice Card
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - semi-modular
+url: https://www.ericasynths.lv/bullfrog-adsr-voice-card-3163/
+prices:
+  - amount: 25
+    currency: EUR
+    term: perpetual
+description: Add an ADSR envelope to your Bullfrog.
+details: |-
+  The ADSR voice card adds a full four stage attack, decay, sustain and release envelope to the Bullfrog. The envelope can be triggered by the Bullfrog's GATE button or by notes played on a connected MIDI keyboard.
+
+  Once the card is inserted the envelope is internally routed to the VCA. A RELEASE CV input places the release stage under voltage control, and a separate OUTPUT carries another copy of the envelope that can be patched elsewhere.
+
+  Selectable gate and loop modes change how the envelope responds, so the same card serves both as a conventional note envelope and as a cycling modulation source.
+specs: |-
+  - Four stage attack, decay, sustain and release envelope
+  - CV controllable release stage
+  - Selectable Gate and Loop modes
+  - Internally routed to the VCA once connected
+  - Separate envelope output for patching elsewhere
+io:
+  - key: hrv20OKS
+    name: Voice Card Power Connector
+    signalFlow: input
+    category: power
+    type: power
+    connection: card-slot
+    maxConnections: 1
+    position: Bottom
+  - key: dVJRzle3
+    name: Release CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Le1A7SVG
+    name: Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

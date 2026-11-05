@@ -1,0 +1,69 @@
+id: HW--IVRmpclh1x37my7Xt
+name: Pico Mixer
+manufacturer: erica-synths
+primaryCategory: mixer
+categories:
+  - modular
+  - utility
+hp: 3
+url: https://www.ericasynths.lv/pico-mixer-501/
+prices:
+  - amount: 50
+    currency: EUR
+    term: perpetual
+description: Mix audio and CV signals!
+details: |-
+  Pico Mixer is a simple 3 channel DC coupled mixer intended to mix audio signals and CV signals in order to obtain complex modulations. Because the signal path is DC coupled, slow control voltages pass through as readily as audio does.
+
+  With a single channel in use it also serves as a CV and audio attenuator, so the module doubles as a level control. Mixer gain is unity and the inputs carry diode protection against overvoltage.
+
+  The module is 3HP wide and 35mm deep and draws only +4mA and -4mA from the bus, which makes it cheap to add to a full case.
+specs: |-
+  - 3 inputs
+  - DC coupled
+  - Mixer gain 1
+  - Diode protection against overvoltage
+  - Power consumption +4mA, -4mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: GJP9IQuO
+    name: In 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: K1QCaYTu
+    name: In 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CrQMsB2V
+    name: In 3
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: W6pbvm8s
+    name: Mix Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 4eicVwBe
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

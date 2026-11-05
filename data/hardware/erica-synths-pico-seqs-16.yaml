@@ -1,0 +1,100 @@
+id: wx45W2Q2oliErIJF6dUPe
+name: Pico SEQS
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - discontinued
+  - modular
+  - routing
+hp: 3
+url: https://www.ericasynths.lv/pico-seqs-16/
+description: Erica Synths Pico SEQS is an advanced 4 channel sequential switch
+  with sophisticated control over switching the channels – it combines clock
+  and/or CV signals to advance to the next step and to define the number of
+  steps.
+details: |-
+  Erica Synths Pico SEQS is a four channel sequential switch with unusually detailed control over how the channels advance. It combines clock and CV signals both to step to the next channel and to set how many steps the sequence runs.
+
+  Only one of the four switches is on at any time, so the module routes CV or audio sources one at a time, which is how it produces distinct modulations and soundscapes from a static set of inputs.
+
+  An external clock input advances the switch, and CV control covers both the direction of the sequence and its length. Status LEDs indicate which channel is currently open.
+
+  Signals pass at up to 20Vptp and the CV control inputs take -5V to +5V. The panel is 3HP wide and the module is 35mm deep, part of the Pico Series brief Erica Synths set itself, to fit superior synth functionality into 3HP at an affordable price.
+
+  One working note from the page: the inputs do not work with stackable cables.
+specs: |-
+  - Number of switches: 4
+  - Simultaneous switches on: 1
+  - CV control over sequence direction and length
+  - External clock input
+  - Channel status indication LEDs
+  - Input/output signal amplitude 0V to 20Vptp
+  - CV signal amplitude -5V to +5V
+  - Power consumption +22mA, -5mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: pgC7ex7z
+    name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XqkAhR1w
+    name: CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: yj7jIyWM
+    name: Channel 1
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: pFWR3DiQ
+    name: Channel 2
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: QV8IgGHm
+    name: Channel 3
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: sI2fHGnf
+    name: Channel 4
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: V5KZtB5Z
+    name: Common
+    signalFlow: bidirectional
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2MmS6sPd
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

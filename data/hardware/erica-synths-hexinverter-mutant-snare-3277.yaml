@@ -1,0 +1,86 @@
+id: rNny0WVT8t2G9sNgEJMAt
+name: Hexinverter Mutant Snare
+manufacturer: erica-synths
+primaryCategory: snare
+categories:
+  - modular
+  - analog
+  - percussion
+capabilities:
+  - filter
+hp: 13
+url: https://www.ericasynths.lv/hexinverter-mutant-snare-3277/
+prices:
+  - amount: 180
+    currency: EUR
+    term: perpetual
+description: Mutant Snare Designed by Hexinverter, from classic electro snares
+  to warping, alien percussion, the Mutant Snare is a radical departure from the
+  static sounds of the TR-808.
+details: |-
+  The Mutant Snare reaches from classic electro snares to warping, alien percussion, and is a deliberate departure from the static sounds of the TR-808. The shell is built from analog bridged-T sinewave oscillators, for the organic tones associated with the 808, and a TONE control blends between the two sinewaves of different frequency while SHELL PITCH tunes one of them to move the pitch of the drum.
+
+  SNAPPY adds noise to the snare, fed from an analog white noise generator. An external input lets any sound source be patched into the SNAPPY generator in place of that noise, and the decay of SNAPPY is itself voltage controllable.
+
+  SNAPPY then feeds an analog filter switchable between high-pass and band-pass response, with voltage control over the cutoff frequency. When nothing is plugged into the cutoff CV input, either the SNAPPY envelope or the adjustable sinewave from the SHELL generator normalizes through the CV attenuverter, and a jumper on the back of the module selects which of those internal modulation signals is routed there. The filter has three resonance settings: classic 808 low resonance, high resonance, and self oscillation. CV inputs carry bipolar attenuators, also known as attenuverters.
+
+  The module is 13HP wide and 20mm deep, puts out 10Vptp at the audio output, works with CV levels from -5V to +5V, and draws 62mA on the +12V rail and 57mA on the -12V rail.
+
+  Erica Synths redesigned the module in close collaboration with Hexinverter. After Hexinverter Électronique founder Stacy Gaudreau announced the close of operations in September 2022, Erica Synths took over manufacturing, sales and support for several Hexinverter Électronique modules, retaining the functionality of the originals and supporting the reissue modules only.
+specs: |-
+  - Audio output 10Vptp
+  - CV levels -5V - +5V
+  - Power consumption +62mA, -57mA
+  - Module width 13HP
+  - Module depth 20mm
+  - Analog bridged-t sinewave oscillators
+  - TONE control blends the two shell sinewaves
+  - SHELL PITCH tunes one sinewave
+  - Analog white noise generator feeds the SNAPPY circuit
+  - External input for patching any source into the SNAPPY generator
+  - Voltage control of SNAPPY decay
+  - Selectable high-pass or band-pass filter with cutoff CV
+  - Three filter resonance settings: classic 808, high resonance, self oscillation
+  - Rear jumper selects the internal cutoff modulation source
+  - Bipolar attenuators (attenuverters) on CV inputs
+io:
+  - key: vteCkHXn
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: EKgSVBeq
+    name: SNAPPY External Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 9PmkTP3P
+    name: SNAPPY Decay CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: uuWTs3WO
+    name: Filter Cutoff CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Evadm28H
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

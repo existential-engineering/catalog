@@ -1,0 +1,108 @@
+id: NvtWH_9UZJusegzi22ZIy
+name: Graphic VCO
+manufacturer: erica-synths
+primaryCategory: synthesizer
+categories:
+  - modular
+  - digital
+  - wavetable
+capabilities:
+  - wavetable-synthesis
+  - fm-synthesis
+  - ring-modulation
+  - bit-crush
+hp: 16
+url: https://www.ericasynths.lv/graphic-vco-2/
+prices:
+  - amount: 230
+    currency: EUR
+    term: perpetual
+description: Erica Synths Graphic VCO allows you to draw your own waveforms,
+  arrange them in wavetables and wavetable banks, morph between two selected
+  waves and alter the resulting wave in advanced ways (FXes) – apply FM, phase
+  distortion, ring modulation, wavefold/wavewrap, bitcrush.
+details: |-
+  The Graphic VCO is a waveform designer: custom waveforms are drawn on the module, arranged into wavetables and wavetable banks, and morphed between two selected waves. The resulting wave can then be altered with a set of effects, covering FM, phase distortion, ring modulation, wavefold and wavewrap, and bitcrush.
+
+  Waves, wavetables, effects and other settings can be saved and recalled from memory instantly as snapshots, and 32 classic wavetables are included. The module has two outputs, the main output and an output carrying a configurable suboscillator, which can be tuned from -1 to -24 semitones and detuned within 50 cents.
+
+  The unit runs at a 96kHz sample rate across an octave range of C0 to C8, takes both unipolar (0V to +10V) and bipolar (-10V to +10V) CV, and the panel is skiff friendly.
+
+  Firmware can be upgraded over a miniUSB cable, with a standalone firmware updater available for Windows and macOS and the procedure documented in the user manual.
+specs: |-
+  - Versatile waveform designer
+  - Morphing between two selected waves
+  - Wavetable design and wavetable matrix design
+  - Waveform alteration: FM, phase distortion, ring modulation, wavefold, wavewrap, bitcrush
+  - 32 classic wavetables included
+  - Module state saving (Snapshots)
+  - Configurable suboscillator output
+  - Suboscillator tuning from -1 to -24 semitones
+  - Suboscillator detuning +/- 50 cents
+  - Skiff-friendly design
+  - Firmware upgrade via USB
+  - Audio output amplitude 10Vptp
+  - Octave range C0 to C8
+  - Sample rate 96kHz
+  - Unipolar CV input range 0 to +10V
+  - Bipolar CV input range -10V to +10V
+  - Panel width 16HP
+  - Module depth 30mm
+  - Power consumption 152mA@+12V, 20mA@-12V
+io:
+  - key: T74n54dQ
+    name: 1V/Oct CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: D20RBQSh
+    name: Unipolar CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6BmycOTG
+    name: Bipolar CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: kFVE4sbm
+    name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: b4KF2e8r
+    name: Suboscillator Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zoH4HVuA
+    name: USB (firmware update)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b-mini
+    maxConnections: 1
+    position: Top
+  - key: G4X1HmE5
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

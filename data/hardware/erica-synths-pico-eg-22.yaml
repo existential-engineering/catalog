@@ -1,0 +1,52 @@
+id: 9WSmamALqJLWhq99sf-vX
+name: Pico EG
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - discontinued
+  - modular
+hp: 3
+url: https://www.ericasynths.lv/pico-eg-22/
+description: Erica Synths Pico Envelope Generator brings you a straightforward
+  AR/ASR linear or logarithmic envelope generator and LFO in a 3HP module.
+details: |-
+  Pico Envelope Generator is a straightforward AR/ASR envelope generator and LFO in a 3HP module. AD and ASR modes are selectable, as are short, medium and long envelope times, and linear or logarithmic envelope shapes.
+
+  An AR trigger mode makes the module behave as a triggered AR envelope even when it is fed long gates, so a sustained gate from a sequencer still produces a plucked shape. Switched into LFO mode it becomes a modulation source with variable waveshapes.
+
+  An output signal control LED shows the envelope at a glance. The module is part of the Pico Series, Erica Synths' effort to fit substantial functionality into an affordable 3HP panel. It is 3HP wide and 35mm deep, drawing +22mA and -5mA from the bus.
+specs: |-
+  - Selectable AD or ASR modes
+  - Selectable Short, Medium and Long envelope times
+  - AR trigger mode (works as triggered AR envelope even with long gates)
+  - Selectable linear or logarithmic envelope shapes
+  - LFO mode with variable waveshapes
+  - Output signal control LED
+  - Power consumption +22mA, -5mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: vUsFooDg
+    name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 7Tuclq0W
+    name: Envelope Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: oZsGekQW
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

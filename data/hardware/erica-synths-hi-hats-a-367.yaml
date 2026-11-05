@@ -1,0 +1,103 @@
+id: A3nemsp-tA7nejyD4D_dC
+name: Hi-Hats A
+manufacturer: erica-synths
+primaryCategory: hi-hat
+categories:
+  - modular
+  - analog
+  - percussion
+hp: 10
+url: https://www.ericasynths.lv/hi-hats-a-367/
+prices:
+  - amount: 133
+    currency: EUR
+    term: perpetual
+description: Erica Synths full analogue hi-hats module with accent and manual
+  and CV control over Tone and Decay (individual for each hi-hat) allows you to
+  create lot of variations in hi-hats track. Closed hat and Open hat can be
+  played independently or exclusively (Open hat will not trigger, if Closed hat
+  is triggered). The module is developed in collaboration with French company
+  e-licktronic.
+details: |-
+  Hi-Hats A is a fully analogue hi-hats module with accent and with manual and CV control over Tone and Decay, set individually for each hi-hat, which opens up a lot of variation across a hi-hat track. It was developed in collaboration with the French company e-licktronic.
+
+  Closed hat and open hat can be played independently or exclusively. In exclusive mode the open hat will not trigger while the closed hat is being triggered, which gives the natural choke behaviour of a real hi-hat pair.
+
+  Tone and Decay each have a panel control and a CV input with its own attenuator, an independent and exclusive switch sets the choke behaviour, a manual trigger button plays the module by hand, and an accent input adds expression.
+
+  Decay runs from 10ms to 200ms on the closed hat and from 110ms to 800ms on the open hat. Audio output level is -5V to +5V, full span CV level is -5V to +5V, accent CV level is 5V, and trigger level is 5V with a 1ms trigger time.
+
+  The module is 10HP wide and 50mm deep, and draws 33mA on the +12V rail and 26mA on the -12V rail.
+specs: |-
+  - Decay range Closed hat 10ms - 200ms
+  - Decay range Open hat 110ms - 800ms
+  - Audio output level -5…+5V
+  - CV level (full span) -5V - +5V
+  - Accent CV level 5V
+  - Trigger level 5V
+  - Trigger time 1ms
+  - Power consumption 33mA @ +12V, 26mA @ -12V
+  - Module width 10HP
+  - Module depth 50mm
+  - Tone and Decay controls
+  - CV control with an attenuator over Tone and Decay
+  - Independent/Exclusive switch
+  - Manual trigger
+  - Accent for better expression
+io:
+  - key: 6FBVJNhy
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: Xdcg1jvR
+    name: Closed Hat Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Wh3GwYmf
+    name: Open Hat Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: dk3QsnNn
+    name: Accent Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vT2JT8Pk
+    name: Tone CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ytS5ms1h
+    name: Decay CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vM4BGmVN
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

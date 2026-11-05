@@ -1,0 +1,88 @@
+id: o1zE00TnjfVyukzNww-ZG
+name: Fusion VCO
+manufacturer: erica-synths
+primaryCategory: synthesizer
+categories:
+  - discontinued
+  - modular
+  - hybrid
+capabilities:
+  - subtractive-synthesis
+hp: 24
+url: https://www.ericasynths.lv/fusion-vco-31/
+description: Erica Synths Fusion VCO is a special kind of VCO – it fuses the
+  great tuning of a digital VCO with the warm and unique sound of vacuum tubes
+  that work in suboscillator circuit.
+details: |-
+  A VCO that fuses the stable tuning of a digital oscillator with the sound of vacuum tubes working in the suboscillator circuit. The module contains two double triodes in a bistable latch connection that act as suboscillators at -1 and -2 octaves, with plenty of mixing opportunities between them.
+
+  Three basic waveforms (sine, triangle and pulse) are available with voltage controlled morphing, so the triangle morphs from sawtooth to ramp, and tuning tracks 1V/oct over 8 octaves. The suboscillator waveshape is adjustable, the -1 and -2 octave mix is controllable manually or by CV, a dry and wet control sets the balance between the VCO and the suboscillators, and a passive lowpass filter is on hand for extreme subbass sound.
+
+  An external audio signal can replace the internal VCO through the audio input, which makes the tube suboscillator circuit available as a processor for other sources.
+
+  All Fusion modules are by default configured to work with a regular eurorack PSU. Because cold tube heaters have lower resistance, Fusion modules have a significant power consumption peak at startup, when consumption almost doubles for 1 to 2 seconds. This is not a problem with linear PSUs that have power inertia, but it may cause a switching PSU internal protection to turn the power supply off, so the PSU should have some headroom before multiple Fusion modules are installed.
+specs: |-
+  - 3 basic waveforms (sine, triangle and pulse) with VC morphing
+  - 1V/oct tuning over 8 octaves
+  - Vacuum tube based suboscillators -1 and -2 oct
+  - Manual and CV controlled -1/-2 oct mixing
+  - Adjustable suboscillator waveshape
+  - Dry/Wet (VCO/suboscillators) mixing
+  - Passive lowpass filter for extreme subbass sound
+  - Audio input signal level up to 20V ptp
+  - Output signal level 10V ptp
+  - VCO range C1 to C8
+  - Power supply bipolar +-12V, eurorack standard
+  - Power consumption (eurorack PSU configuration): 215mA@+12V, 185mA@-12V
+  - Start-up power consumption for a few seconds is +-250mA
+  - Module width 24HP
+  - Module depth 35mm
+io:
+  - key: wEhUlbLB
+    name: 1V/Oct CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Z15WuPgr
+    name: Morph CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Km0N8F8i
+    name: Suboscillator Mix CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: w2bM1CF9
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hCwJNEZt
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gSjks7RZ
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

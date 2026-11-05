@@ -1,0 +1,56 @@
+id: F1tmvXUSmget871Mx-PRD
+name: Pikocore XL
+manufacturer: erica-synths
+primaryCategory: sampler
+categories:
+  - lo-fi
+  - sequencer
+capabilities:
+  - sampling
+  - sequencing
+  - filter
+url: https://www.ericasynths.lv/pikocore-3204/
+prices:
+  - amount: 160
+    currency: EUR
+    term: perpetual
+description: Lo-fi music mangled based on RPi Pico.
+details: |-
+  The Pikocore is a lo-fi music mangler based on the Raspberry Pi Pico, developed by Zack Scholl. It holds up to eight minutes of 8-bit 33 kHz monophonic samples and plays them back under a hands-on interface rather than a menu.
+
+  The original DIY kit comes in a miniature pocket calculator form factor. Erica Synths wanted to make it more playable, so the company worked with Zack Scholl on the Pikocore XL version, which has identical functionality but comes in the Erica Synths signature hands-on user interface and a proper aluminium enclosure. Infinite Digits Pikocore XL by Erica Synths is a full DIY kit that includes all the components to build the instrument, and the RP board in the kit is pre-programmed and ready to use.
+
+  Playback is tempo-synced with a selectable BPM between 60 and 300, with samples mangled by beat-synced effects (stutter, retrig, gate, tunneling) alongside real-time effects like a resonant filter, timestretching, volume and wavefolding. A 128-step sequencer records and plays back patterns, and patches are saved to and loaded from EEPROM for instant recall.
+
+  Custom firmware and new samples load over USB-C, which also powers the unit. It is sync-compatible with Pocket Operators, and the project is open source and hackable.
+specs: |-
+  - Lo-fi music mangler based on the Raspberry Pi Pico
+  - Holds 8 minutes of 8-bit 33 kHz monophonic samples
+  - Powered by USB-C
+  - Tempo-synced with selectable BPM between 60 and 300
+  - Beat-synced effects: stutter, retrig, gate, tunneling
+  - Real-time effects: resonant filter, timestretching, volume, wavefolding
+  - 128-step sequencer with recording and playback
+  - Patch save and recall via EEPROM
+  - Custom firmware and sample loading over USB-C
+  - Sync-compatible with Pocket Operators
+  - Open source
+  - Full DIY kit with pre-programmed RP board
+  - Aluminium enclosure
+io:
+  - key: gSyION4p
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: vooyeXpF
+    name: USB-C
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right

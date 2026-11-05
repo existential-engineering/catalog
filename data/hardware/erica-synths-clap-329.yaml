@@ -1,0 +1,80 @@
+id: Lf91gZUJNoMOM0atLW0zR
+name: Clap
+manufacturer: erica-synths
+primaryCategory: modular
+categories:
+  - percussion
+  - analog
+hp: 6
+url: https://www.ericasynths.lv/clap-329/
+prices:
+  - amount: 130
+    currency: EUR
+    term: perpetual
+description: Erica Synths Clap is developed together with French company
+  e-licktronic and it's our take on analogue clap circuits adapted for modular
+  systems. Sharp, punchy sound, Accent & CV control over Tone make it
+  distinctively expressive in studio and live performances.
+details: |-
+  Clap is Erica Synths' take on analogue clap circuits adapted for modular systems, developed together with the French company e-licktronic. The sound is sharp and punchy, and accent together with CV control over tone make the module distinctively expressive in the studio and in live performance.
+
+  Tone and decay are set by knobs on the panel, with decay reaching from 120ms to 1100ms. Tone can be voltage controlled through an attenuated CV input, and a manual trigger button fires the voice without a patch cable.
+
+  The accent input raises the level of a hit for better expression, taking up to 10V, while the trigger input responds to a 5V pulse of about 1ms. The audio output swings between -5V and +5V, and CV inputs take a full span of -5V to +5V.
+
+  The module is 6HP wide and 35mm deep and draws 24mA from the +12V rail and 20mA from the -12V rail. Erica Synths notes that on this run of modules the pitch and decay CV inputs are inverted, so rising CV decreases pitch and falling CV increases it.
+specs: |-
+  - Tone and Decay controls
+  - CV control with an attenuator over Tone
+  - Manual trigger
+  - Accent for better expression
+  - Decay range: 120ms to 1100ms
+  - Audio output level: -5V to +5V
+  - CV level (full span): -5V to +5V
+  - Trigger level: 5V
+  - Trigger time: 1ms
+  - Accent CV level: 10V
+  - Power consumption: 24mA@+12V, 20mA@-12V
+  - Module width: 6HP
+  - Module depth: 35mm
+io:
+  - key: X6FY4pgN
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: MocCmiJa
+    name: Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: YlANI4m6
+    name: Tone CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Zd97i59E
+    name: Accent Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: a4nur08W
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

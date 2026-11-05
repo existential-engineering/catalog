@@ -1,0 +1,69 @@
+id: FIm-_APtblH5jmbe54btl
+name: Pico Quant
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - modular
+  - scale-helper
+hp: 3
+url: https://www.ericasynths.lv/pico-quant-3/
+prices:
+  - amount: 120
+    currency: EUR
+    term: perpetual
+description: Advanced CV quantizer.
+details: |-
+  Erica Synths Pico Quant is an advanced CV quantizer in 3HP, with two features that are unusual at any size: quarter tone accuracy and a web based interface for building user generated scales.
+
+  Eight preset scales are held in the module itself. The web interface adds user generated scales and extra presets on top of those, including microtonal quarter tone scales.
+
+  Quantization runs either clocked or independently of a clock, and the tolerance is adjustable, so the module can be made more or less eager to snap an incoming voltage to the next note.
+
+  A CV glide between notes is adjustable as well, which turns stepped quantized output into a portamento line. The CV output reaches 0V to 10V, and negative input voltages are ignored.
+
+  The panel is 3HP wide and the module is 35mm deep, part of the Pico Series brief Erica Synths set itself, to fit superior synth functionality into 3HP at an affordable price.
+specs: |-
+  - 8 preset scales
+  - Web based interface for user generated and extra preset scales
+  - Microtonal quarter tone scales
+  - Adjustable tolerance
+  - Adjustable CV glide between notes
+  - Clocked and independent quantization
+  - CV out amplitude 0V to 10V
+  - Negative CV input voltages are ignored
+  - Power consumption +25mA, -6mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: a1GobpHH
+    name: CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8zDlBclV
+    name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5UNmxa5Q
+    name: CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ERkF9nwQ
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

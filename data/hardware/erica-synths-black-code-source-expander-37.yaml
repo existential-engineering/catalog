@@ -1,0 +1,55 @@
+id: KiOsxROK7LDnhE3hrBwun
+name: Black Code Source Expander
+manufacturer: erica-synths
+primaryCategory: modular
+categories:
+  - chiptune
+hp: 6
+url: https://www.ericasynths.lv/black-code-source-expander-37/
+prices:
+  - amount: 60
+    currency: EUR
+    term: perpetual
+description: Takes the Code Source to the next level.
+details: |-
+  The Erica Synths Black Code Source Expander takes the Code Source further by adding an autobend feature and more noise and CV modes.
+
+  Autobend provides an attack envelope for the internal clock generator's pitch and for some outside CV control. That feature helps to quickly reach authentic chip-tune percussion and oldschool electronic game sounds.
+
+  The Expander connects to the Code Source with the ribbon cable supplied with the module, and the security jumper on the Code Source's socket has to be removed first. The connector socket marking matters, because that socket must not be confused with the PSU connector.
+
+  The Expander works only with the Code Source module and is not intended to work as a standalone module. Connecting a PSU directly to the Expander will permanently damage it, so all of its power arrives over the ribbon link from the host module.
+specs: |-
+  - Autobend (attack) time control
+  - Autobend depth attenuverter
+  - Alternative mode switch
+  - Autobend envelope output
+  - Clock output
+  - Power consumption +16 mA, -11 mA
+  - Module width 6HP
+  - Module depth 25 mm
+io:
+  - key: eg0WQ1mo
+    name: Expander Ribbon Header (to Code Source)
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Top
+  - key: tnfWVcys
+    name: Autobend Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Ex1SdGlu
+    name: Clock Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

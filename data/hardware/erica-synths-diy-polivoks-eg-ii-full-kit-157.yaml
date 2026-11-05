@@ -1,0 +1,75 @@
+id: MLhqanpG-g2SLH_Qxde7O
+name: DIY Polivoks EG II Full kit
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - discontinued
+  - modular
+  - analog
+hp: 8
+url: https://www.ericasynths.lv/diy-polivoks-eg-ii-full-kit-157/
+description: The core of the Envelope Generator is borrowed from the famous
+  Russian synth Polivoks.
+details: |-
+  The core of this envelope generator is taken from the Polivoks, the Russian synthesizer Erica Synths has drawn on across its DIY range. The schematic was then significantly updated for current modular practice, with eurorack standard positive gates, envelope amplitude control, an inverted envelope output and a looping feature that runs while a gate is held.
+
+  The envelope itself is a full ADSR, with attack running up to three seconds, decay and release up to twelve seconds, and sustain level adjustable across the full zero to 10V span of the envelope amplitude.
+
+  A Gate Delay output is the module's bonus feature. It puts out a delayed gate signal once the attack stage has finished, so several envelope generators can be chained, each firing the next, to build evolving polyphonic synth-like pads from four or five modules.
+
+  Looping comes in gated and independent modes, so the envelope can either repeat only while a gate is present or run free as a slow modulation source. The panel is 8HP wide with a 30mm depth and a skiff-friendly build.
+specs: |-
+  - Full ADSR envelope
+  - Envelope amplitude 0 to 10V
+  - Attack time 0 to 3 seconds
+  - Decay time 0 to 12 seconds
+  - Sustain level 0 to 10V
+  - Release time 0 to 12 seconds
+  - Direct and inverted envelope outputs
+  - Gated and independent looping modes
+  - Gate delay (after Attack stage) output
+  - Eurorack standard positive gates
+  - Skiff-friendly design
+  - Panel width 8HP
+  - Module depth 30mm
+io:
+  - key: O3xvF5Io
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Top
+  - key: WM69L4io
+    name: Gate Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ryrr7yEj
+    name: Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: NbqtSl1f
+    name: Inverted Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KMQFoL4z
+    name: Gate Delay Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

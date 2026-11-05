@@ -1,0 +1,120 @@
+id: HnAaKMLMGd9Snw7aoCxW2
+name: Black Hole DSP 2
+manufacturer: erica-synths
+primaryCategory: modular
+categories:
+  - effect
+  - multi-effect
+  - digital
+hp: 16
+url: https://www.ericasynths.lv/black-hole-dsp2-334/
+prices:
+  - amount: 265
+    currency: EUR
+    term: perpetual
+description: Module with 24 custom FV-1 effects.
+details: |-
+  The Black Hole DSP 2 is a Eurorack multi-effects module carrying 24 custom FV-1 effects, with stereo inputs and stereo outputs and a full analogue dry/wet control so the balance stays out of the digital path.
+
+  Three parameters per effect are controllable both manually and by CV, and effect selection is CV controlled as well. The DSP CPU clock rate is also manual and CV controllable, which pulls the sampling behaviour of the processor itself into the performance.
+
+  Effect settings memory holds the state of the module between sessions, and a clipping LED warns when the input stage is being pushed past its range.
+
+  The panel is 16HP wide at a depth of 35mm. Input signals run between -5V and +5V (or 0 to +10V), outputs between -10V and +10V, the maximum sampling rate is 48kHz and CV spans -5V to +5V. Power draw is 170mA on the positive rail against 56mA on the negative one.
+specs: |-
+  - 24 custom FV-1 effects
+  - Stereo INs and OUTs
+  - 3 manually and CV controllable parameters
+  - CV controlled effect selection
+  - Manually and CV controllable DSP CPU clock rate
+  - Effect settings memory
+  - Full analogue Dry/Wet control
+  - Clipping LED
+  - Input signal amplitude -5...+5V (or 0...+10V)
+  - Output signal amplitude -10V - +10V
+  - Max sampling rate 48kHz
+  - CV level (full span) -5V - +5V
+  - Module width 16HP
+  - Module depth 35mm
+  - Power consumption +170mA, -56mA
+io:
+  - key: 8rP7SBgI
+    name: Audio In L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: mJu2Wx3j
+    name: Audio In R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: phyNSc9C
+    name: Audio Out L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: EiLuVKrU
+    name: Audio Out R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: X7Gu4tGA
+    name: Parameter 1 CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: sQecc2NW
+    name: Parameter 2 CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GQodlZYS
+    name: Parameter 3 CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Z1BEsPk3
+    name: Effect Select CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6m6GfhaA
+    name: DSP Clock Rate CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0ItpA3Vf
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

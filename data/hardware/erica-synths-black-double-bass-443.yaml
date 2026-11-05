@@ -1,0 +1,120 @@
+id: tAC-ylN09r0ARwVqn7P7L
+name: Black Double Bass
+manufacturer: erica-synths
+primaryCategory: octave
+categories:
+  - discontinued
+  - modular
+  - analog
+  - filter
+capabilities:
+  - subharmonic-synthesis
+  - filter
+  - distortion
+  - limiting
+hp: 10
+url: https://www.ericasynths.lv/black-double-bass-443/
+description: Erica Synths Black Double Bass is unique module that combines two
+  transistor suboscillators (-1 and -2 octaves) and lowpass filter. It does not
+  make sound on its own, but it will turn any VCO or beeper into massive bass
+  sound with CV control over octave mix and cutoff frequency. Sync input that
+  resets suboscillators on incoming pulse, provides even more versatility in
+  sound design. The module can be also provide aggressive distortion, when used
+  with percussive sounds like bassdrums.
+details: |-
+  Erica Synths Black Double Bass is a module that combines two transistor suboscillators, at -1 and -2 octaves, with a lowpass filter. It does not make sound on its own, but it will turn any VCO or beeper into a massive bass sound with CV control over octave mix and cutoff frequency.
+
+  A sync input that resets the suboscillators on an incoming pulse provides even more versatility in sound design. The module can also provide aggressive distortion when used with percussive sounds like bass drums.
+
+  The Double Bass module is not an audio source by itself and needs an audio input.
+
+  Fade between the two suboscillators is controlled manually and by CV, as is the lowpass VCF. Individual outputs of the suboscillators, a signal Thru output, CV level attenuators and a limiter on the output to avoid clipping round out the panel.
+
+  Audio input level spans -5V to +5V and CV level covers -5V to +5V across the full sweep. The module is 10HP wide and 35mm deep, drawing +50mA and -39mA.
+specs: |-
+  - Two transistor based -1 and -2 octaves suboscillators
+  - Manually and CV controlled fade between suboscillators
+  - Manually and CV controlled lowpass VCF
+  - Suboscillator synchronisation input
+  - Individual outputs of suboscillators
+  - Limiter on the output to avoid clipping
+  - Signal Thru output
+  - CV level attenuators
+  - Audio input level -5V - +5V
+  - CV level (full sweep) -5V - +5V
+  - Power consumption +50mA, -39mA
+  - Module width 10HP
+  - Module depth 35mm
+io:
+  - key: MspQezXJ
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rEri8Vz4
+    name: Sync Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 9er8wTJE
+    name: Fade CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0P1ek0PR
+    name: Cutoff CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: C8SYzW3d
+    name: Suboscillator -1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: DMDzUieY
+    name: Suboscillator -2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: auVVlykv
+    name: Thru Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GcP0skSp
+    name: Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: R9InvACj
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Top

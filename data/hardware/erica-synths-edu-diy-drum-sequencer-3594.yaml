@@ -1,0 +1,75 @@
+id: PYYoQ1WmEDz_TUnpKvEiS
+name: EDU DIY Drum Sequencer
+manufacturer: erica-synths
+primaryCategory: sequencer
+categories:
+  - modular
+capabilities:
+  - sequencing
+hp: 34
+url: https://www.ericasynths.lv/edu-diy-drum-sequencer-3594/
+prices:
+  - amount: 110
+    currency: EUR
+    term: perpetual
+description: Hands-on rhythm engine.
+details: |-
+  Most drum sequencers are complex machines, packed with buttons and LEDs and all driven by a microcontroller. The mki x es.edu DIY Drum Sequencer kit takes the opposite approach: a hands-on rhythm engine with a minimalist interface, built from just a handful of logic chips.
+
+  Each of the sequencer's four channels is programmed in real time using a single button. Patterns loop automatically, can be shortened on the fly, and support half-time playback for slower, evolving grooves.
+
+  Accents are handled using synced LFOs, while a simple resistor-DAC turns patterns into stepped control voltages, which suits modulating pitch, decay or other parameters.
+
+  The kit suits anyone looking to learn about sequencer design, sharpen soldering skills, or simply wanting a drum sequencer that plays like an instrument. It packs surprising depth into a refreshingly simple interface.
+
+  The panel is 34HP wide and power draw is 27mA on the +12V rail and 20mA on the -12V rail.
+specs: |-
+  - 4 independent channels with one-button step input/removal
+  - 16 steps per channel, individually reducible to 12 or 7
+  - Optional half-time mode per channel
+  - Two syncable analog LFOs for dynamic accents
+  - Resistor-DAC output for pitch or decay modulation
+  - Internal clock with 16th, 8th, and quarter note outputs, syncable to external gear
+  - Module width: 34HP
+  - 27mA @+12V; 20mA @-12V
+io:
+  - key: c1lXSXs5
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: Q7HvIjCx
+    name: Clock Output 16th
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: YYtnlcXy
+    name: Clock Output 8th
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 9M56hjn0
+    name: Clock Output Quarter
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 26rlsMCL
+    name: DAC CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
