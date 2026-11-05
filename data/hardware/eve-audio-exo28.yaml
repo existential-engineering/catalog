@@ -5,11 +5,9 @@ primaryCategory: studio-monitor
 categories:
   - monitor
   - speaker
-supersedes: Oq_etFRnENVtZkHdVpwqZ
 capabilities:
   - crossover
   - equalization
-  - filter
   - limiting
 url: https://www.eve-audio.com/exo-monitors/exo28
 description: The EXO 28 is the largest monitor of the EVE Audio EXO Series, an
@@ -74,8 +72,16 @@ io:
     maxConnections: 1
     position: Right
   - key: 8xxJGdnc
-    name: S/PDIF Coaxial In/Out
-    signalFlow: bidirectional
+    name: S/PDIF Coaxial Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: vQXnog4v
+    name: S/PDIF Coaxial Output
+    signalFlow: output
     category: digital
     type: s/pdif
     connection: rca

@@ -5,11 +5,9 @@ primaryCategory: studio-monitor
 categories:
   - monitor
   - speaker
-supersedes: n1eOKJM0wnwAfLnIi3kTb
 capabilities:
   - crossover
   - equalization
-  - filter
   - limiting
 url: https://www.eve-audio.com/exo-monitors/exo25
 description: The EXO 25 is an active 2-way nearfield studio monitor from EVE
@@ -74,8 +72,16 @@ io:
     maxConnections: 1
     position: Right
   - key: KD6UqEbC
-    name: S/PDIF Coaxial In/Out
-    signalFlow: bidirectional
+    name: S/PDIF Coaxial Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: 927PlAk7
+    name: S/PDIF Coaxial Output
+    signalFlow: output
     category: digital
     type: s/pdif
     connection: rca

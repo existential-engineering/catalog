@@ -8,7 +8,6 @@ categories:
 capabilities:
   - crossover
   - equalization
-  - filter
   - limiting
 url: https://www.eve-audio.com/exo-monitors/exo24
 description: The EXO 24 is a compact active 2-way studio monitor from EVE Audio,
@@ -73,8 +72,16 @@ io:
     maxConnections: 1
     position: Right
   - key: xaCaBWpS
-    name: S/PDIF Coaxial In/Out
-    signalFlow: bidirectional
+    name: S/PDIF Coaxial Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: fpYNFhqb
+    name: S/PDIF Coaxial Output
+    signalFlow: output
     category: digital
     type: s/pdif
     connection: rca
