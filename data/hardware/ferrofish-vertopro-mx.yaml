@@ -41,36 +41,39 @@ specs: |-
   - Dimensions 34 x 22 x 8 cm
 io:
   - key: f10S6sE7
-    name: MADI SFP Interface 1
+    name: MADI SFP 1
     signalFlow: bidirectional
     category: digital
     type: madi
-    connection: card-slot
-    maxConnections: 64
+    connection: lc
+    maxConnections: 1
+    description: Pre-installed multimode MADI SFP module, LC duplex fibre
     position: Right
   - key: e7bDRT34
-    name: MADI SFP Interface 2
+    name: MADI SFP 2
     signalFlow: bidirectional
     category: digital
     type: madi
-    connection: card-slot
-    maxConnections: 64
+    connection: lc
+    maxConnections: 1
+    description: Pre-installed multimode MADI SFP module, LC duplex fibre
     position: Right
   - key: GnFYRT5w
-    name: Dante Primary
+    name: Network PRI
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
-    maxConnections: 64
+    maxConnections: 1
     position: Right
   - key: YCRiPeBx
-    name: Dante Secondary
+    name: Network SEC
     signalFlow: bidirectional
     category: digital
     type: dante
     connection: ethernet
-    maxConnections: 64
+    maxConnections: 1
+    description: Second Dante port for redundant or switched operation
     position: Right
   - key: kNa7JKIB
     name: Word Clock Input

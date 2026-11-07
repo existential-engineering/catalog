@@ -47,6 +47,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: OmSNBmsm
@@ -55,6 +57,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: 5S5YtGum
@@ -63,6 +67,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: kVPxLAV9
@@ -71,6 +77,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: EgxsdA0P
@@ -79,6 +87,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: IeyPjhhh
@@ -87,6 +97,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: eHhLH6mg
@@ -95,6 +107,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: z0AXmut2
@@ -103,6 +117,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: SmWBjV3c
@@ -111,6 +127,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: MohQwzED
@@ -119,6 +137,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: wKqJhAo4
@@ -127,6 +147,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: 2ueFd8u5
@@ -135,6 +157,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: GexA9eLD
@@ -143,6 +167,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: dFy5dfuq
@@ -151,6 +177,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: wJRqFMIh
@@ -159,6 +187,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: iVvSBeH5
@@ -167,6 +197,8 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
   - key: 3lbOCK3C
@@ -175,7 +207,7 @@ io:
     category: digital
     type: adat
     connection: toslink
-    maxConnections: 8
+    maxConnections: 1
     position: Right
   - key: z87N8upQ
     name: ADAT Input 2
@@ -183,7 +215,7 @@ io:
     category: digital
     type: adat
     connection: toslink
-    maxConnections: 8
+    maxConnections: 1
     position: Right
   - key: 14WEDJjv
     name: ADAT Output 1
@@ -191,7 +223,7 @@ io:
     category: digital
     type: adat
     connection: toslink
-    maxConnections: 8
+    maxConnections: 1
     position: Right
   - key: dxQXHKlT
     name: ADAT Output 2
@@ -199,7 +231,7 @@ io:
     category: digital
     type: adat
     connection: toslink
-    maxConnections: 8
+    maxConnections: 1
     position: Right
   - key: 89K4KOpc
     name: Word Clock Input
@@ -231,21 +263,48 @@ io:
     category: midi
     type: midi
     connection: 1/8-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
+    description: 3.5 mm MIDI jack, type A wiring, 5-pin DIN via adapter cable
   - key: MPuu4MTB
     name: MIDI Output
     signalFlow: output
     category: midi
     type: midi
     connection: 1/8-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
+    description: 3.5 mm MIDI jack, type A wiring, 5-pin DIN via adapter cable
+  - key: YfxJmbys
+    name: DSP Stick Slot
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: card-slot
+    maxConnections: 1
+    position: Right
+    description: Slot reserved for a future DSP stick extension
   - key: ZxzqHA8N
     name: Power Input
     signalFlow: input
     category: power
     type: power
     connection: barrel
+    connectorDetail:
+      - center-positive
     maxConnections: 1
     position: Right
+  - key: s9gCAUPa
+    name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+    description: Front-panel headphone output on its own DAC, independent of the
+      analog outputs
