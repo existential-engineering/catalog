@@ -1,0 +1,135 @@
+id: FZcGrJy_FGyAu_SMJmeji
+name: Ritchie Blackmore Signature E650
+manufacturer: engl
+primaryCategory: guitar-amplifier
+categories:
+  - amplifier
+capabilities:
+  - distortion
+  - overdrive
+  - equalization
+  - gating
+url: https://www.engl-amps.com/shop/signature/ritchie-blackmore-signature-e650/
+description: 100-watt all-tube Ritchie Blackmore signature guitar amplifier head
+  based on the Savage, with four channels, switchable Master A/B, a
+  tube-buffered FX loop with balance control and a noise gate.
+details: |-
+  Ritchie Blackmore is not just a well-known player, he created one of the most famous guitar riffs in the universe. For ENGL this was reason enough to have him as an artist.
+
+  Ritchie has a fine ear for tone and has had a long-standing impact on rock music, so his signature amp was created based on the Savage. Ritchie's amp is slimmed down features-wise compared to the standard Savage, but it is just as tonefully powerful.
+
+  The 6L6 power tubes deliver the vintage sound which is Ritchie's signature, while the two channels actually turn out to be four, there are two switchable master volumes and the proven Lo/Hi gain circuit.
+specs: |-
+  - 4 channels: Clean, Crunch, Soft Lead, Heavy Lead
+  - All tube head
+  - Tube buffered FX loop with balance control
+  - Noise gate
+  - Master A/B, two switchable master volumes
+  - S.A.C.: serial amp control port
+  - Power tube monitor
+  - Sound options: Bright, Contour, Gain Lo/Hi
+  - Controls: Gain (for clean and lead channels), 3-band EQ, Lead Presence, Lead Volume, Master A, Master B, FX Loop Balance
+  - Poweramp output: 1 x 4 ohm, 1 x 8 ohm, 1 x 16 ohm, or 2 x 8 ohm / 2 x 16 ohm in parallel
+  - Footswitch: ENGL Z4 or Z9 (channels, Master A/B, Contour, FX loop, noise gate) over the 9-pin Custom Footswitch Port
+  - Preamp tubes: 4 x ENGL ECC83 / 12AX7
+  - Output tubes: 4 x ENGL 6L6GC
+  - Output wattage: 100 W
+  - Dimensions: 71 x 27 x 29 cm
+  - Weight: 20.5 kg
+io:
+  - key: jCmbQ0PN
+    name: Guitar Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: yxuRemE3
+    name: FX Loop Send
+    signalFlow: output
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: jSHNczi0
+    name: FX Loop Return
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: T41fVFNs
+    name: Custom Footswitch Port
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: proprietary
+    maxConnections: 1
+    position: Right
+  - key: GtW5ka2N
+    name: S.A.C. Serial Amp Control
+    signalFlow: input
+    category: digital
+    type: proprietary
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Right
+    description: Serial Amp Control, ENGL's proprietary protocol over a stereo 1/4-inch cable from the Z-9 footswitch
+  - key: I7HVEPmo
+    name: Speaker Output 4 Ohm 1
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: "Left 4 Ohm jack: one 4 Ohm cabinet alone, or the first of two 8 Ohm cabinets"
+  - key: 2TDIzyJ2
+    name: Speaker Output 4 Ohm 2
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: "Right 4 Ohm jack, wired in parallel with the left: takes the second of two 8 Ohm cabinets"
+  - key: kQWhB3pf
+    name: Speaker Output 8 Ohm 1
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: "Left 8 Ohm jack: one 8 Ohm cabinet alone, or the first of two 16 Ohm cabinets"
+  - key: 47RZdimU
+    name: Speaker Output 8 Ohm 2
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: "Right 8 Ohm jack, wired in parallel with the left: takes the second of two 16 Ohm cabinets"
+  - key: Kktggh8z
+    name: Speaker Output 16 Ohm
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: Single 16 Ohm jack for one 16 Ohm cabinet
+  - key: O6eIc2YE
+    name: Mains Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right

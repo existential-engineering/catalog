@@ -1,0 +1,155 @@
+id: tHOMys1rPBPc7sxUXRQsA
+name: Modern Rock Preamp E530
+manufacturer: engl
+primaryCategory: preamp
+categories:
+  - rack-mount
+  - guitar-amplifier
+  - cabinet-sim
+capabilities:
+  - distortion
+  - overdrive
+  - equalization
+  - cabinet-simulation
+url: https://www.engl-amps.com/shop/rackmount/modern-rock-preamp-e530/
+description: The Modern Rock Preamp E530 is a 1U, 19-inch all-valve guitar
+  preamp with four channels, a stereo serial FX loop, frequency-compensated and
+  uncompensated stereo line outputs and a 1.5-watt stereo power amp for
+  headphone and practice use.
+details: |-
+  The E530 valve preamp fits a great deal into a single rack unit. It has four channels, because the Clean and Lead channels each carry a Lo and Hi gain option. Each channel has its own tone controls, and the lead channel adds two mid-range controls, Lo Mid and Hi Mid.
+
+  A miniature 1.5-watt power amplifier is built in, so the preamp can be used straight away for practising, recording and playing with headphones without an additional power amp.
+
+  For full volumes the stereo output is used, and the recording output is stereo as well. The output level can be raised by up to 15 dB where needed.
+
+  The preamp runs two ENGL ECC83 / 12AX7 valves, carries a stereo serial FX loop, a preamp defeat switch, a headphone and guitar cab selector switch and both frequency-compensated and uncompensated stereo line outputs. The chassis is 19 inch, 1 rack unit, and weighs 4 kg.
+specs: |-
+  - 4 channels: Clean, Crunch, Soft Lead, Heavy Lead
+  - All-valve 19-inch rack preamp, 1 rack unit
+  - Preamp defeat
+  - Headphone output
+  - 1.5 W stereo power amp
+  - Stereo frequency-compensated line out
+  - Stereo line out, uncompensated
+  - Stereo serial FX loop
+  - Sound options: Bright, Contour, Gain Lo/Hi
+  - Controls: Gain (each channel), 3-band EQ (Clean/Crunch), 4-band EQ (Soft Lead/Heavy Lead), Clean Volume, Lead Volume
+  - Headphone and guitar cab selector switch
+  - Line level: 0 dB to 15 dB
+  - Preamp valves: 2 x ENGL ECC83 / 12AX7
+  - Dimensions: 19 inch, 1 rack unit
+  - Weight: 4 kg
+io:
+  - key: Aip5FiCo
+    name: Guitar Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: v7zIj3O1
+    name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: iHJVMJvk
+    name: Footswitch 1 (Clean/Lead, Gain Lo/Hi)
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Right
+    description: Dual footswitch on a stereo jack, also fed by the Z-11 MIDI switcher
+  - key: eGrTTIdk
+    name: Footswitch 2 (Preamp Defeat, Contour)
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Right
+    description: Dual footswitch on a stereo jack, also fed by the Z-11 MIDI switcher
+  - key: MrPaoC0J
+    name: Instrument Output / FX Loop Send
+    signalFlow: output
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: "One jack: the preamp signal for an FX loop, or a guitar-level instrument output when Preamp Defeat is on"
+  - key: rvh3R9xE
+    name: FX Loop Return Left
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 8ohlVEzE
+    name: FX Loop Return Right
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: JOw0sDg9
+    name: Frequency Compensated Line Out Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: ihm94GA4
+    name: Frequency Compensated Line Out Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 4jsusYPX
+    name: Line Out Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: xR7vv8qZ
+    name: Line Out Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: WqEg9lth
+    name: Auxiliary Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: Rear supplementary preamp input in series with the front input; a plug in the front input disconnects it
+  - key: 6SkGJSgV
+    name: Mains Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right

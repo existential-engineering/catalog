@@ -1,0 +1,116 @@
+id: -9M2mNsbKQLc6Nkh2ASlP
+name: E611 Savage 30
+manufacturer: engl
+primaryCategory: guitar-amplifier
+categories:
+  - amplifier
+capabilities:
+  - distortion
+  - overdrive
+  - equalization
+  - gating
+url: https://www.engl-amps.com/shop/heads/engl-e611-savage-30/
+description: The E611 Savage 30 is a compact 30-watt, two-channel, all-valve
+  guitar amplifier head with a valve-buffered serial FX loop, a footswitchable
+  noise gate and a power soak, hand-crafted in Germany.
+details: |-
+  The Savage 30 is built around a single idea: get a player to the point where the amp disappears and only the strings and the sound remain, in a head small enough to fit in a bag.
+
+  This 30-watt all-valve head carries two channels, taking in clean tones that breathe and shimmer as well as high-gain crunch. An onboard noise gate keeps the sound tight when the gain is pushed, and its threshold is footswitchable.
+
+  Every Savage 30 is hand-crafted in Germany. Small in size, it carries the tone and craftsmanship ENGL Amplifiers has built its name on.
+
+  The preamp runs four ECC83 (12AX7) valves into a pair of EL34 output valves for 30 watts, with a rear power soak offering full, mid and low power settings plus a speaker-off position. Speaker outputs cover one 8 to 16 Ohm cabinet or two 16 Ohm cabinets, and a line output sits alongside them. An S.A.C. port takes the ENGL Z9 and a dual footswitch jack takes the ENGL Z4.
+specs: |-
+  - 2 channels: Clean, Lead
+  - All-valve 30 W head
+  - Valve-buffered serial FX loop
+  - Noise gate with footswitchable threshold
+  - S.A.C. port for the ENGL Z9 and a dual footswitch jack for the ENGL Z4
+  - Made in Germany
+  - Controls: Gain (per channel), Bass, Middle, Treble, Lead Volume, Presence, Master
+  - Rear controls: Power soak (full, mid, low power, speaker off), noise gate threshold level
+  - Sound shaping options: Gain Lo / Hi, Contour, Depth Boost
+  - Speaker outputs: 1 x 8 to 16 Ohm or 2 x 16 Ohm
+  - Line output
+  - Preamp valves: 4 x ECC83 (12AX7)
+  - Power amp valves: 2 x EL34
+  - Output power: 30 W
+  - Dimensions: 23 x 42 x 20 cm
+  - Weight: 11 kg
+io:
+  - key: o0WwN79j
+    name: Guitar Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: tJU4zYYQ
+    name: FX Loop Send
+    signalFlow: output
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: z89w8woi
+    name: FX Loop Return
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: pZQBEHgS
+    name: Speaker Output 8-16 Ohm
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: OrHyuH5N
+    name: Speaker Output 16 Ohm
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 0AmynpUU
+    name: Line Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: kkrYtpX9
+    name: Dual Footswitch Jack
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 6BNXuMXk
+    name: S.A.C. Serial Amp Control Port
+    signalFlow: input
+    category: digital
+    type: proprietary
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Right
+    description: Serial Amp Control, ENGL's proprietary protocol over a stereo 1/4-inch cable from the Z-9 footswitch
+  - key: b4l2p1vb
+    name: Mains Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right

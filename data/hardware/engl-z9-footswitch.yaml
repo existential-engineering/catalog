@@ -1,0 +1,56 @@
+id: ypxMTLBKEIBt90QMOQ9Nh
+name: Z9
+manufacturer: engl
+primaryCategory: control-surface
+searchTerms:
+  - Z-9
+categories:
+  - midi-controller
+url: https://www.engl-amps.com/shop/accessories/engl-z9-footswitch/
+description: Stainless steel foot controller for ENGL amps, working either as a
+  simple MIDI controller with ten memory slots or over S.A.C. to switch channels
+  and other amp functions, with an 8 m cable included.
+details: |-
+  The Z-9 Footswitch can serve as a simple MIDI controller with 10 memory slots, or for ENGL amps with S.A.C. operate the channel switching and other features.
+
+  In MIDI operating mode the ten slots are arranged as Bank A and Bank B with five memory slots each, and solid footswitches with LED indicators show what is active.
+
+  Power is supplied via the MIDI cable, a power supply, or the S.A.C. interface, so no separate supply is needed when it is driven from a compatible amp.
+
+  The housing is stainless steel, and an 8 m ENGL premium cable is included.
+specs: |-
+  - Stainless steel housing
+  - Solid footswitches with LED indicators
+  - MIDI operating mode: Bank A/B with 5 memory slots each (10 total)
+  - S.A.C. operating mode for channel switching and other functions on ENGL amps with S.A.C.
+  - Powered via the MIDI cable, a power supply, or the S.A.C. interface
+  - 8 m ENGL premium cable included
+  - Dimensions: 50 x 12 x 5 cm
+io:
+  - key: t58bR0cG
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: lSwYGGyv
+    name: S.A.C. Port
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Right
+    description: Serial Amp Control, ENGL's proprietary protocol over a stereo 1/4-inch cable from the Z-9 footswitch
+  - key: xgOoS9jn
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
