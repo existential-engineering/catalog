@@ -871,6 +871,7 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `aes/ebu`
 - `digilink`
 - `sc`
+- `lc`
 - `2-pin`
 - `db9`
 - `db15`

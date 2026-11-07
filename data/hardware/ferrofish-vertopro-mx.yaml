@@ -1,0 +1,133 @@
+id: FJ1_5yqGS3zOpk4D0tRH5
+name: VERTOpro MX
+manufacturer: ferrofish
+primaryCategory: routing
+categories:
+  - audio-interface
+  - rack-mount
+url: https://www.ferrofish.com/de/product/vertopro-mx/
+prices:
+  - amount: 1599
+    currency: EUR
+    asOf: 2026-11-07
+    source: https://www.ferrofish.com
+description: The Ferrofish VERTOpro MX is a dual-MADI to Dante converter and
+  router. Its two MADI SFP interfaces can run as independent streams, form a
+  redundant connection or route signals between MADI ports, and two multimode
+  MADI SFP modules are included.
+details: |-
+  The Ferrofish VERTOpro MX is a dual-MADI-to-Dante converter and router for professional audio systems. Its two MADI SFP interfaces can run as independent streams, form a redundant connection or route signals between MADI ports.
+
+  Each MADI interface carries up to 64 input and 64 output channels at 48 kHz, so both running independently reach 128 MADI inputs and 128 MADI outputs. The Dante interface handles up to 64 input and 64 output channels at 48 kHz over two Gigabit Ethernet ports, which can run switched or redundant, with AES67 support. Sample rates reach 192 kHz, with channel counts reduced at the higher rates.
+
+  Routing runs between MADI and Dante, or between the two MADI interfaces, in blocks of eight or channel by channel. A 3-inch IPS colour display shows levels, routing, clock status and configuration, and an integrated 6.3 mm headphone output monitors digital signals.
+
+  RemoteFish control runs from Windows or macOS over USB-MIDI or MIDI, and word clock input and output sit on BNC connectors. The compact half-width, 1U unit comes with a power supply, manual and two multimode MADI SFP modules.
+specs: |-
+  - Two MADI SFP interfaces: up to 64 input and 64 output channels per interface at 48 kHz
+  - Up to 128 MADI input and 128 MADI output channels when both interfaces operate independently at 48 kHz
+  - Dante interface with up to 64 input and 64 output channels at 48 kHz
+  - Two Gigabit Ethernet ports for switched or redundant Dante network operation
+  - AES67 support
+  - Sample rates up to 192 kHz, with channel counts reduced at higher rates
+  - Routing between MADI and Dante, or between the two MADI interfaces, in blocks of eight or channel by channel
+  - 3-inch IPS colour display for levels, routing, clock status and configuration
+  - Integrated 6.3 mm headphone output for monitoring digital signals
+  - RemoteFish control from Windows or macOS via USB-MIDI or MIDI
+  - Word clock input and output on BNC connectors
+  - Supplied with power supply, manual and two multimode MADI SFP modules
+  - Compact half-width 1U housing
+  - Weight 2 kg
+  - Dimensions 34 x 22 x 8 cm
+io:
+  - key: f10S6sE7
+    name: MADI SFP 1
+    signalFlow: bidirectional
+    category: digital
+    type: madi
+    connection: lc
+    maxConnections: 1
+    position: Right
+    description: Pre-installed multimode MADI SFP module, LC duplex fibre
+  - key: e7bDRT34
+    name: MADI SFP 2
+    signalFlow: bidirectional
+    category: digital
+    type: madi
+    connection: lc
+    maxConnections: 1
+    position: Right
+    description: Pre-installed multimode MADI SFP module, LC duplex fibre
+  - key: GnFYRT5w
+    name: Network PRI
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: YCRiPeBx
+    name: Network SEC
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+    description: Second Dante port for redundant or switched operation
+  - key: kNa7JKIB
+    name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: pyYNIvz1
+    name: Word Clock Output
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: 9Ac510vM
+    name: USB Port
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - key: KCtCF4H0
+    name: MIDI Input
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: Tzg44Ghb
+    name: MIDI Output
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: smxKC8NN
+    name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: iKzcMtdS
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
