@@ -28,3 +28,32 @@ specs: |-
   - As sold, compatible with the disting mk4 and older modules by other manufacturers
   - With the disting EX, receives from the Select Bus but does not drive it
   - Full disting EX compatibility: R4 470R to 33K, R7 10K to 680R, D1 removed
+io:
+  - key: MiGNNP9J
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+    description: Drives the Select Bus from an external MIDI sender
+  - key: CAuFoHlR
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+    description: Select Bus messages out as MIDI, a MIDI Thru when the breakout
+      drives the bus
+  - key: LQA8GpZG
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+    description: 16-way Eurorack bus connector, carries the Select Bus line
