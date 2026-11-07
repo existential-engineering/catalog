@@ -1,5 +1,27 @@
 # catalog
 
+## 3.74.0
+
+### Minor Changes
+
+- acd99f1: Import Duesenberg (44 hardware/software entries).
+- 4d33256: Import D.W. Fearn (8 entries: 7 hardware and 1 accessory).
+- 37924ef: Import Ear Trumpet Labs (14 hardware and 4 accessory entries).
+- 38c35af: Import elysia (10 hardware entries and 2 content entries).
+- 85365b4: Import ENGL (45 hardware/software entries).
+- 81ba025: Import Erica Synths (272 hardware/software entries).
+- 5cf188b: Import EVE Audio (16 hardware and 3 accessory entries).
+- bd26670: Import Expert Sleepers (50 hardware/software entries).
+- 334eb65: Import Faderfox (28 hardware/software entries).
+- a9bed0a: Import Ferrofish (10 hardware/software entries).
+- cb8d6e5: Refresh Spitfire Audio: 173 new, 0 discontinued, 14 updated.
+
+  Adds the rest of the Spitfire Audio library roster, covering the Abbey Road
+  One and Abbey Road Orchestra ranges, the Albion and Originals series, the
+  artist signature libraries and the studio and symphonic collections. The 16
+  entries already in the catalog gain refreshed categories, prices and prose
+  where the current product pages agreed with them.
+
 ## 3.73.1
 
 ### Patch Changes
