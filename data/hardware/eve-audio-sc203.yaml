@@ -1,0 +1,107 @@
+id: KZAd_UnxDjh2-Xg5ul4Jw
+name: SC203
+manufacturer: eve-audio
+primaryCategory: studio-monitor
+categories:
+  - monitor
+  - speaker
+capabilities:
+  - crossover
+  - equalization
+url: https://www.eve-audio.com/products/sc203
+description: The SC203 is a compact 2-way active-passive desktop speaker set
+  from EVE Audio, built around a 3" SilverCone woofer, a µA.M.T. tweeter and
+  four internal PWM amplifiers. Analog RCA, digital optical and USB inputs plus
+  a volume controlled subwoofer output make it a small-footprint monitoring
+  system for desktops, home setups and mobile work.
+details: |-
+  When a small footprint but a big sound is what you are looking for, the SC203 becomes one of those few examples where small also means powerful. It is a solution for professional desktops with a limited amount of physical space, for discerning home and gaming users, and for mobile studios during travel. To further extend its flexibility, each speaker is provided with the FlexiPad, a rubberized pad that allows the speaker to be decoupled from its base and angled precisely at 0°, 7,5° or 15°.
+
+  When using woofers in small desktop speakers, some special considerations have to be taken into account. To meet the demands of a precise reproduction in the low frequency region, EVE Audio developed a 3" woofer coupled with a 1" voice coil capable of handling a longer linear excursion. With a 16 mm-height voice coil, a linear back and forth swing of ±5 mm is easily achieved, which requires a multilayer paper membrane material capable of withstanding such rigorous use while maintaining consistency. After numerous careful tests, coated paper turned out to be the best solution for low resonance, stability and transmission linearity.
+
+  A passive radiator, which can be thought of as a passive speaker that moves through the force of air, is located at the backside of the SC203. It reinforces the reproduction of low frequencies and allows the speaker response to go down as low as 62 Hz (-3 dB) with very low distortion.
+
+  Each SC203 setup is configured as a 2-way active-passive desktop speaker set and features four power amplifiers. Each woofer and tweeter gets its own dedicated 30 W PWM amplifier with separate filter section for precise control. For connectivity, the SC203 houses three inputs, analog RCA, digital optical and USB, which allow a wide range of sources to be connected. A volume controlled subwoofer output lets an additional subwoofer (TS107 and TS108) be connected to the active speaker to create a 2.1 system, and a DIP switch on the speaker's back panel selects whether the SC203 works as a satellite from 80 Hz upwards or as a full range unit.
+
+  Bringing the sound quality, low distortion and high resolution of the EVE Audio Air Motion Transformer tweeter to a much smaller format speaker produced a new tweeter, the µA.M.T. The folded membrane of this high resolution µA.M.T. is only 400 mm² in surface area, about less than half that of the RS1 tweeter, and an integrated waveguide helps create an optimal dispersion pattern over a wide frequency range. Non-detachable loudspeaker grilles protect both the woofer and the µA.M.T. tweeter against damage.
+specs: |-
+  - Frequency range: 62 Hz - 21 kHz
+  - Woofer size: 3"
+  - Max. SPL: 94 dB
+  - Dimensions: 116x190x134 mm (4.6x7.5x5.3 inches, WxHxD)
+  - Output power: 60 W per speaker
+  - Output power tweeter: 30 W
+  - Output power woofer: 30 W
+  - Tweeter: µA.M.T.
+  - Passive radiator: 3" diameter
+  - Cross-over frequency: 4800 Hz between drivers
+  - Weight: 1,9 kg (4.2 lb)
+  - Input level dip switch: +8 dBu / +22 dBu
+  - Power consumption: less than 1 W standby, 110 VA maximum
+io:
+  - key: UcnKNp4a
+    name: RCA Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: 0FNaxBdE
+    name: RCA Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: sDiPz0C9
+    name: Digital Optical Input
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: toslink
+    maxConnections: 1
+    position: Right
+  - key: dJ090rPt
+    name: USB Input
+    signalFlow: input
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: Azkr0ltW
+    name: Subwoofer Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: T8Qsgb9N
+    name: Speaker Link Output
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: proprietary
+    maxConnections: 1
+    position: Right
+    description: "On the master speaker: feeds the slave over the supplied 4-pin stereo link cable"
+  - key: 8XkdX83Q
+    name: Speaker Link Input
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: proprietary
+    maxConnections: 1
+    position: Right
+    description: "On the slave speaker: receives the master's signal and power over the supplied 4-pin link cable"
+  - key: k6JuotyG
+    name: Power Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
