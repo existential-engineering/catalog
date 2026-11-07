@@ -1,0 +1,56 @@
+id: qrlFY0BwZ4mZDy2o0_Gb3
+name: Little Mikey
+manufacturer: expert-sleepers
+primaryCategory: preamp
+categories:
+  - modular
+hp: 8
+url: https://www.expert-sleepers.co.uk/littlemikey.html
+description: Little Mikey is a mic and instrument pre-amp in an 8HP Eurorack
+  module, providing up to 60dB of exceptionally clean gain. It supplies 48V
+  phantom power to condenser microphones and has a high impedance input option
+  for direct connection of instruments such as electric guitars.
+details: |-
+  Little Mikey is a microphone and instrument pre-amp built as an 8HP Eurorack module, providing up to 60dB of exceptionally clean gain so that quiet sources can be brought up to a usable level inside a modular system.
+
+  The module supplies 48V phantom power for condenser microphones and other phantom-powered equipment. A high impedance input option, 1MΩ when engaged, allows direct connection of instruments such as electric guitars.
+
+  The input is a genuine Neutrik combination XLR and 1/4 inch TRS jack socket, and the output is an illuminated 3.5mm jack socket. Front panel controls are one pot and four switches, with indicators for peak level and phantom power.
+
+  Expert Sleepers gives the gain range as -3dB to 60dB, the module depth as 43mm, and the current draw as 51mA on the +12V rail and 19mA on the -12V rail.
+specs: |-
+  - Panel width: 8HP
+  - Module depth: 43mm
+  - Current draw: 51mA on the +12V rail, 19mA on the -12V rail
+  - Input: combination XLR / 1/4 inch TRS jack socket (genuine Neutrik)
+  - Output: 3.5mm jack socket (illuminated)
+  - Controls: 1 pot, 4 switches
+  - Gain range: -3dB to 60dB
+  - Input impedance (Hi-Z engaged): 1MΩ
+  - Phantom power: 48V
+  - Indicators: peak level, phantom power
+io:
+  - key: XOmn119D
+    name: Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: combo jack
+    maxConnections: 1
+    position: Top
+  - key: xMogTIDa
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: iRSqOihE
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

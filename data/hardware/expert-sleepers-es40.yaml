@@ -1,0 +1,112 @@
+id: qmu2KkZbPEp0zd7uhewNP
+name: ES-40
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - utility
+  - routing
+hp: 6
+url: https://www.expert-sleepers.co.uk/es40.html
+description: The ES-40 is a Eurorack format module that converts a standard
+  S/PDIF input into five channels of expansion headers for use with the Expert
+  Sleepers ESX range of expanders. It also carries an S/PDIF output, used by
+  expansion modules such as the ES-7 to send data back to the computer.
+details: |-
+  The ES-40 is a Eurorack format module which converts a standard S/PDIF input to five channels of expansion headers, used in conjunction with the Expert Sleepers ESX range of expanders (currently the ESX-8GT, the ESX-4CV, the ESX-8CV and the ESX-8MD). It will connect to any audio device using the S/PDIF standard, including the digital audio output provided as standard on many recent Macs.
+
+  The ES-40 also includes an S/PDIF output for sending data back to the computer. That output is used by expansion modules connected to the ES-40, currently the ES-7 CV Input Expander. The ES-40 is essentially an ES-4 with the DACs and CV outputs removed, so much of what Expert Sleepers has written about the ES-4, including its tutorial videos, still applies.
+
+  The module does nothing by itself and instead forms the basis of a configurable system, built up by adding the expansion modules needed. An ES-40 plus an ESX-8CV gives eight general purpose CVs for a flexible modular controller, and adding an ESX-8GT brings that to eight CV and gate pairs, enough for eight classic monosynths. An ES-40 and an ESX-8GT alone give eight sample-accurate drum triggers, with up to four more ESX-8GTs taking the count to 40 triggers, gates and clocks. An ES-40 with an ESX-8MD forms a sample-accurate, jitter-free, multi-port MIDI interface, and an ES-40 with an ES-7 gives two channels of 24 bit analogue to digital conversion for getting modular audio into a DAW.
+
+  Unlike the ES-3, the ES-40 requires particular software in order to generate meaningful output signals. The options are the ES-4 Controller plug-in that forms part of Expert Sleepers Silent Way, the Expert Sleepers Max/MSP external, and the free Expert Sleepers VCV Rack plug-in. The ES-40 works with all software written for the previously available ES-4, the two being interchangeable on the software side. Silent Way is offered in AudioUnit, VST and AAX formats for Mac OS X and Windows and so needs a compatible host application. A Silent Way licence is not included with the ES-40, and the ES-4 Controller plug-in functions in a licence-free mode.
+
+  The front panel is drilled for both Doepfer and Analogue Systems mounting holes, using a slot rather than a single round hole. The power connector is a Doepfer standard 16 way IDC, with -12V furthest from the top of the board.
+specs: |-
+  - Panel width: 6HP
+  - Module depth: 51mm
+  - Digital input: coaxial S/PDIF, standard rates up to 192kHz
+  - Digital output: coaxial S/PDIF
+  - Indicators: LED for S/PDIF sync lock
+  - Expansion: 5 headers for connecting ESX series modules
+  - Expansion: digital audio I/O header (I2S format) for input expansion, for example the ES-7
+  - Current draw: 26mA on the +12V rail only, rising with sample rate (26mA at 48kHz, 32mA at 96kHz)
+  - Power connector: Doepfer standard 16 way IDC
+io:
+  - key: yAh2TXno
+    name: S/PDIF In
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: njLcbnXA
+    name: S/PDIF Out
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: WNLZMiRr
+    name: ESX Expansion Header 1
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+    description: 10-way header for one ESX series expander
+  - key: ad0jZfXp
+    name: ESX Expansion Header 2
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+    description: 10-way header for one ESX series expander
+  - key: fxeFXwL5
+    name: ESX Expansion Header 3
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+    description: 10-way header for one ESX series expander
+  - key: eT5s1p0X
+    name: ESX Expansion Header 4
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+    description: 10-way header for one ESX series expander
+  - key: T8SZmm0l
+    name: ESX Expansion Header 5
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+    description: 10-way header for one ESX series expander
+  - key: eabOajaY
+    name: I2S Expansion Header
+    signalFlow: input
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+    description: Digital audio input expansion, e.g. an ES-7
+  - key: XDh1dxM9
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

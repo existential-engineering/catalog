@@ -1,0 +1,25 @@
+id: KcwsDajB7JefuUr7kkY1y
+name: Latency Fixer
+manufacturer: expert-sleepers
+primaryCategory: utility
+categories:
+  - plugin
+url: https://www.expert-sleepers.co.uk/latencyfixer.html
+description: Latency Fixer is a plug-in that reports a latency of its own to the
+  host application, set by its parameters, while applying no processing to the
+  audio signal. The host's own delay compensation then advances the audio fed
+  into the plug-in by the requested amount.
+details: |-
+  The plug-in reports to the host application that it has a latency, controlled by the plug-in parameters, but does not actually apply any processing to the audio signal. This causes the host to use its own latency compensation to advance the audio fed into the plug-in by the requested amount.
+
+  This is useful to compensate for routing audio via outboard effect processors, where the audio's journey out of an audio interface and back into the computer introduces a latency into the signal. It can be used in conjunction with the Logic Helper I/O plug-in, for example.
+
+  For it to work, the host application must support plug-in delay compensation and the feature must be turned on. Recent versions of Logic and Digital Performer support it, under Preferences, Audio, General in Logic.
+
+  In general, applications will not respond to changes in the latency setting during playback. To set the latency interactively, set this plug-in to a large value and use the Buffer Delay plug-in to experiment with different settings, then subtract the Buffer Delay amount from the latency setting and remove Buffer Delay.
+
+  Logic 6 does not respond to changes of latency at all, even when playback is stopped. As a workaround, Latency Fixer remembers its last used settings and uses them as defaults when creating a new instance of the plug-in, which is the only time Logic 6 queries the latency. Logic 7 responds to latency changes in the plug-in properly.
+specs: |-
+  - Reports a latency to the host, set by the plug-in parameters, and applies no processing to the audio signal
+  - Requires a host that supports plug-in delay compensation, with the feature enabled
+  - Remembers its last used settings and uses them as the defaults for a new instance

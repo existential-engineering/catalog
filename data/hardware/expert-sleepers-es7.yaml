@@ -1,0 +1,65 @@
+id: CkDiowTvtVjoywD1Axrm0
+name: ES-7
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - utility
+hp: 4
+url: https://www.expert-sleepers.co.uk/es7.html
+description: The ES-7 is a Eurorack expansion module that provides two channels
+  of DC-coupled CV input to a connected Expert Sleepers ES-4, ES-40 or ES-6
+  module.
+details: |-
+  The ES-7 provides two channels of DC-coupled CV input to a connected Expert Sleepers ES-4, ES-40 or ES-6 module. Where the host modules send signals out of a modular system, the ES-7 adds the return path.
+
+  How those two channels appear depends on the host. Used with an ES-4 or an ES-40, the ES-7's inputs are carried on the host's S/PDIF output jack. Used with an ES-6, they provide channels 7 and 8 of the ES-6's eight channel lightpipe output.
+
+  The two inputs are 3.5mm jacks, DC-coupled, with an input voltage range of plus or minus 10V and an input impedance of 100 kOhms. Conversion is 24 bit with a typical signal to noise ratio of 103dB.
+
+  The front panel is drilled for both Doepfer and Analogue Systems mounting holes, using a slot rather than a single round hole. The power connector is a Doepfer standard 16 way IDC, with -12V furthest from the top of the board.
+
+  December 2017 saw the launch of the ES-7 mk2. Functionally equivalent to the original ES-7, it adds illuminated jack sockets to match the rest of the current Expert Sleepers range.
+specs: |-
+  - Panel width: 4HP
+  - Module depth: 50mm
+  - Digital I/O: connection from ES-4, ES-40 or ES-6 module
+  - Analogue inputs: 2x 3.5mm jacks, DC-coupled
+  - Input voltage range: plus or minus 10V
+  - Input impedance: 100kOhms
+  - A/D conversion: 24 bit, 103dB SNR typical
+  - Current draw: 35mA on the +12V rail, 17mA on the -12V rail
+  - Power connector: Doepfer standard 16 way IDC
+io:
+  - key: h45s8EQI
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fODbncs8
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nMqpJ2KM
+    name: Host Header
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+    description: 10-way cable to the ES-6, ES-4 or ES-40 host
+  - key: t1gYt9GO
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

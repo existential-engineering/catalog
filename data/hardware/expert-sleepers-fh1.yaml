@@ -1,0 +1,145 @@
+id: sVwVwKZpuFTXqLutFDmkp
+name: FH-1 'faderHost'
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - midi
+  - utility
+  - discontinued
+capabilities:
+  - sequencing
+hp: 8
+url: https://www.expert-sleepers.co.uk/fh1.html
+description: The FH-1 'faderHost' is a USB MIDI host in an 8HP Eurorack module,
+  allowing a USB MIDI controller to be connected directly to a modular
+  synthesizer. Expert Sleepers has discontinued it and replaced it with the
+  FH-2.
+details: |-
+  The FH-1 'faderHost' is a USB MIDI host in an 8HP Eurorack module, allowing a USB MIDI controller to be connected directly to a modular synthesizer.
+
+  With a suitable connector box, the term USB MIDI controller here extends to an iPad or a plain computer.
+
+  As well as simple direct control of the output CVs from MIDI CCs, the FH-1 offers LFOs on each output, step sequencers, arpeggiators, polyphonic MIDI to CV conversion, and MIDI and analogue clocks in and out.
+
+  The module provides eight outputs with 14 bit digital to analogue conversion and a jumper selectable voltage range, plus two digital inputs for clocks and similar signals. It can be expanded with the FHX-1 Output Expander, for a maximum of 64 outputs.
+
+  Expert Sleepers has discontinued the FH-1 and replaced it with the FH-2.
+specs: |-
+  - Panel width: 8HP
+  - Module depth: 43mm
+  - Current draw: 64mA on the +12V rail, 27mA on the -12V rail (revision 1.1, from November 2015), plus the power requirement of the attached USB device
+  - Revision 1.0 current draw: 70mA on the +12V rail, 30mA on the -12V rail
+  - Outputs: 8
+  - Digital-to-analogue conversion: 14 bit
+  - Voltage range: jumper selectable between +/-5V, 0-10V and 0-5V
+  - Inputs: 2 digital inputs for clocks etc.
+  - Trigger voltage approximately 1.8V
+  - USB socket: Type A
+  - Expansion: one header for connecting FHX-1 Output Expanders
+  - Power connector: Doepfer standard 10 way IDC, with -12V furthest from the top of the board
+  - Front panel drilled for both Doepfer and Analogue Systems mounting holes
+io:
+  - key: KvYASNh3
+    name: Digital Input 1
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Ag3jNPtM
+    name: Digital Input 2
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2sadOuqG
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Q7K2yaOt
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: WHCLtRYn
+    name: Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: riOmO1aZ
+    name: Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 4Aeq6Hkt
+    name: Output 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rGdSiomF
+    name: Output 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2nOLIkwd
+    name: Output 7
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: MdGDa5dU
+    name: Output 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: N9qufk1W
+    name: USB Host
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Top
+  - key: vCEE38Ey
+    name: Expansion Header
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: RwywCcXN
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

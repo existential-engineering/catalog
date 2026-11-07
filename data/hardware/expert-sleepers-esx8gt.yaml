@@ -1,0 +1,103 @@
+id: ReidEJwApEbIFjFC7nrK_
+name: ESX-8GT
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - utility
+hp: 4
+url: https://www.expert-sleepers.co.uk/esx8gt.html
+description: The ESX-8GT is a Eurorack expansion module for the Expert Sleepers
+  ES-4, ES-40, ES-5 or FHX-8GT, adding eight on/off outputs from one expansion
+  header for use as gates, triggers and clocks. Driven from an audio connection,
+  the outputs can also carry DIN sync or a full MIDI port.
+details: |-
+  The ESX-8GT is an expansion module for the Expert Sleepers ES-4, ES-40, ES-5 or FHX-8GT, adding eight on/off outputs from one expansion header for use as gates, triggers and clocks.
+
+  The ES-4/5 Controller software, part of Expert Sleepers Silent Way, also allows the ESX-8GT outputs to be used for DIN sync or MIDI output, and not only MIDI clock but an actual MIDI port capable of sending any MIDI message. Because the outputs are driven from an audio connection they have sample-accurate timing, which no USB MIDI interface can claim. Expert Sleepers notes that the MIDI out feature is only officially supported at sample rates of 48kHz and above, though some users report success with specific hardware at 44.1kHz, and that the ESX-8MD mk2 module works for MIDI output at all sample rates. The ESX-8MD is the dedicated option for MIDI and DINsync duties.
+
+  The eight outputs are 3.5mm jacks, DC-coupled, swinging between 0V and 5V, with illuminated jack sockets as indicators. Power is supplied by the hosting ES-4, ES-5 or ES-40 module and is used for the LEDs only, so with no LEDs lit the current draw is 0mA. The front panel is drilled for both Doepfer and Analogue Systems mounting holes, using a slot rather than a single round hole.
+
+  February 2017 saw the launch of the ESX-8GT mk3. Functionally equivalent to the ESX-8GT mk2, it adds illuminated jack sockets and matches the look of the ES-8 and the other updates of that month. A free Expert Sleepers plug-in for VCV Rack is available to ease integration of the ESX-8GT into the Rack environment.
+specs: |-
+  - Panel width: 4HP
+  - Module depth: 24mm
+  - Analogue outputs: 8x 3.5mm jacks, DC-coupled
+  - Output voltages: 0V/5V
+  - Indicators: illuminated jack sockets
+  - Current draw: 20mA on the +12V rail, 0mA on the -12V rail
+  - Power supplied by the hosting ES-4, ES-5 or ES-40 module, used for the LEDs only
+io:
+  - key: 5W7OcTP2
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vkZwVPVx
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FdEuqAg2
+    name: Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: NAXG60Rv
+    name: Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nEnMpU14
+    name: Output 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gMNqi0JP
+    name: Output 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BRITtvEY
+    name: Output 7
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: xUX8taCC
+    name: Output 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fWyTpgS3
+    name: Expansion Input Header
+    signalFlow: input
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+    description: 10-way cable from the ES-4, ES-40, ES-5 or FHX-8GT host, which also
+      powers the module

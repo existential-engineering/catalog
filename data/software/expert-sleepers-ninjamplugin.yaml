@@ -1,0 +1,36 @@
+id: BKmx8Q41Bkvm6qiaHFteA
+name: NINJAM plug-in
+manufacturer: expert-sleepers
+primaryCategory: utility
+categories:
+  - plugin
+  - routing
+formats:
+  - au
+platforms:
+  - mac
+url: https://www.expert-sleepers.co.uk/ninjamplugin.html
+description: The NINJAM plug-in is a plug-in client for NINJAM, the online
+  collaborative jamming system. Hosting the client inside a plug-in makes it
+  easy to combine NINJAM with a computer-based music setup and opens up routing
+  options for signals going in and out of it.
+details: |-
+  The NINJAM plug-in is a plug-in client for NINJAM, the online collaborative jamming system, and the NINJAM site is worth visiting first for the rest of this to make sense.
+
+  Existing NINJAM client applications are generally designed around the assumption that the computer is only being used to send and receive audio, with instruments fed into the computer's audio interface. Where the instrument is the computer itself, getting audio in and out of the NINJAM system conveniently is not really possible. Putting the NINJAM client in a plug-in makes it easy to combine NINJAM with a normal computer-based music setup, and gives many more creative options for routing signals in and out of it, even without multichannel audio hardware attached.
+
+  As built, the plug-in is a 4-in, 9-out effect, the outputs intended as four stereo pairs plus a mono output for the metronome. Added to an audio track it achieves much the same result as the standalone NINJAM client, with the standard monitor mixing controls (volume, pan, mute and solo) working as expected, while the extra channels let a host's routing separate remote channels and the metronome onto different channels. Some hosts cannot handle a 4-in 9-out plug-in and need it rebuilt as a basic stereo plug-in.
+
+  To connect to a server, the connection details are entered beside the Connect button in the form server, username, password, separated by semicolons, with an anonymous connection using a username in the format anonymous:name and a blank password.
+
+  The NINJAM client code is open sourced under the GPL and so is this plug-in, published as an Xcode project alongside the binary. Expert Sleepers lists the known limitations: Audio Unit only rather than VST, a working folder hardcoded to a folder called ninjamplugin on the desktop, no control over saving session files, automatic acceptance of the server license, an output channel list that does not scroll when it exceeds the window, and a GUI that appears in its own window rather than embedded in the host's Audio Unit editor window.
+specs: |-
+  - Current version: 1.1.0
+  - Audio Unit plug-in only, not VST
+  - Universal Binary
+  - 4-in, 9-out effect as built
+  - Nine outputs: four stereo pairs plus a mono metronome output
+  - Standard NINJAM monitor mixing controls: volume, pan, mute, solo
+  - Open source under the GPL, source published as an Xcode project
+  - Source project targets Xcode 2 on Mac OS X 10.4, and builds run on later versions
+  - Builds require the official Mac NINJAM client v0.02a source plus libogg and libvorbis

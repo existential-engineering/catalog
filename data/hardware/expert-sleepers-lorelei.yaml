@@ -1,0 +1,101 @@
+id: DrqSTyJJVUhXnspw0Blkm
+name: Lorelei
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - synthesizer
+  - analog
+url: https://www.expert-sleepers.co.uk/lorelei.html
+description: Lorelei is a VCO (voltage controlled oscillator) with quadrature
+  sine outputs, waveshaping, and sync and cross-modulation options. The module
+  is 100% analogue, using discrete transistor OTAs.
+details: |-
+  Lorelei is a VCO (voltage controlled oscillator) with quadrature sine outputs, waveshaping, and sync and cross-modulation options.
+
+  The module has three waveform outputs, all affected by the same waveshaping controls, a front panel knob and a CV input. The first output offers a variable pulse width square wave.
+
+  The remaining two outputs offer waveforms based on quadrature sine waves, 90 degrees out of phase with each other. The waveshape control progressively turns the first sine output into a triangle-like waveform, while the second sine output becomes a saw-like waveform.
+
+  The cross-modulation input is somewhat like the sync input found on more conventional VCOs, but it has more nuances of operation, allowing for a wider choice of sounds.
+
+  Lorelei is 100% analogue, built using discrete transistor OTAs.
+specs: |-
+  - Three waveform outputs: variable pulse width square, plus two quadrature sine based waveforms
+  - Waveshaping from a front panel knob and a CV input, affecting all three outputs
+  - Cross-modulation input, comparable to a sync input but with more nuances of operation
+  - 100% analogue, using discrete transistor OTAs
+io:
+  - key: zMZwuNxu
+    name: Square Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JvX16rZc
+    name: Sine Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: oaWL0hhs
+    name: Sine Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: v0posyfw
+    name: Pitch CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: 1V/octave
+  - key: sahi33mE
+    name: Linear FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hif4tZG9
+    name: Exponential FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+    description: With attenuator
+  - key: bQQQND09
+    name: Waveshape CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FtPkcHpm
+    name: Cross-Modulation Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: mu4GKlpv
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
