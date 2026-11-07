@@ -1,0 +1,101 @@
+id: jdspI8q1lwr-SQv9JZBcu
+name: Pandora
+manufacturer: expert-sleepers
+primaryCategory: filter
+categories:
+  - modular
+  - distortion
+  - analog
+capabilities:
+  - filter
+  - distortion
+hp: 8
+url: https://www.expert-sleepers.co.uk/pandora.html
+description: Pandora is a bandpass filter and distortion processor for Eurorack,
+  based on an unusual combination of power MOSFET transistors and vactrols.
+  Voltage control is provided over the two sides of the filter, the gain, the
+  filter feedback and the wet/dry mix.
+details: |-
+  Pandora is a bandpass filter and distortion processor, based on an unusual combination of power MOSFET transistors and vactrols. Voltage control is provided over the two sides of the filter, the gain and the filter feedback.
+
+  A wet/dry mixer is provided, also under voltage control, so the amount of processed signal in the output can be modulated along with the filter and the drive.
+
+  A range switch drops the filter response several octaves, at which point the module becomes capable of synthesising percussion sounds when fed trigger pulses.
+
+  The module is 100% analogue, and the vactrols used in it are compliant with RoHS legislation.
+specs: |-
+  - Panel width: 8HP
+  - Module depth: 42mm
+  - Current draw: 69mA on the +12V rail, 58mA on the -12V rail
+  - Inputs: CV inputs for filter Alpha, filter Beta, gain, feedback and mix
+  - Inputs: audio input
+  - Outputs: audio output
+  - Bandpass filter built from power MOSFET transistors and vactrols
+  - Range switch drops the filter response several octaves for percussion synthesis
+  - Vactrols compliant with RoHS legislation
+  - 100% analogue
+io:
+  - key: 7Z796LgT
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rhJ9OkDj
+    name: Filter Alpha CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GmE1iOrD
+    name: Filter Beta CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 81oTPMhV
+    name: Gain CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Pn0UGqMz
+    name: Feedback CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GTtT109x
+    name: Mix CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3rNdSdvz
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: kM4MvV5S
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,124 @@
+id: xfkmbtbSqodD0mNJcKukK
+name: disting mk4
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - utility
+  - effect
+  - multi-effect
+  - digital
+  - sampler
+supersedes: wWUAtnOjGAzitO78MCmym
+capabilities:
+  - delay
+  - reverb
+  - chorus
+  - flanger
+  - phaser
+  - vibrato
+  - filter
+  - compression
+  - gating
+  - bit-crush
+  - vocoder
+  - frequency-shift
+  - pitch-shift
+  - granular
+  - reverse
+  - sampling
+  - sequencing
+  - wavetable-synthesis
+hp: 4
+url: https://www.expert-sleepers.co.uk/disting.html
+description: The disting mk4 is a many-in-1 multifunction Eurorack module
+  offering a variety of CV and audio processes, including oscillators, and it
+  also plays WAV and MIDI files from a micro SD card.
+details: |-
+  The disting is a many-in-1 multifunction module, offering a variety of CV and audio processes, including a selection of oscillators such as LFOs and VCOs. All algorithms have two high-precision inputs and outputs, plus a third control input exposed on both a front panel knob and a CV input. The disting is also a sample (WAV) file and MIDI file player, with a variety of options for sample triggering and playback speed.
+
+  There are currently 112 distinct algorithms. The first 16, the 'classic disting' set, are a precision adder with integer voltage offsets, a four quadrant multiplier with integer multiply and divide, a full-wave rectifier, minimum and maximum, a linear and exponential converter, a quantizer with selectable scales, a comparator with adjustable hysteresis, a dual waveshaper, a sample and hold with noise source, a slew rate limiter, a pitch and envelope tracker, a clockable delay and echo, two LFOs and two VCOs.
+
+  The remaining algorithms range across delays and reverbs, state variable and multimode filters, a 12 band vocoder, a phaser of up to 10 stages, a bit crusher, a DJ filter, mono and stereo and side-chain compressors, AR and clockable AD envelopes, shift register random sources, Euclidean patterns, wavetable oscillators and waveshapers, chorus, a granular pitch shifter, a frequency shifter, a tuner with pitch and frequency references, MIDI to CV and CV to MIDI conversion, Euro to Buchla converters, audio recording and multisample playback.
+
+  The mk4 was introduced at the NAMM show in January 2017. Compared with the disting mk3 it adds a dot matrix screen capable of showing text and numeric values, a micro SD card slot accessible on the front panel, compatibility with the Select Bus protocol, an internal precision clock that allows algorithms such as the tuner and the pitch and frequency references, and MIDI in and out ports on a breakout header.
+
+  The front panel is drilled for both Doepfer and Analogue Systems mounting holes, using a slot rather than a single round hole, and the power connector is a Doepfer standard 16 way IDC with -12V furthest from the top of the board. The disting is based around a PIC microcontroller with a programming and debug header on the board, and Expert Sleepers provides an open source code framework into which developers can slot their own algorithms.
+specs: |-
+  - Panel width: 4HP
+  - Module depth: 42mm
+  - X and Y inputs, A and B outputs
+  - Sample rate: 75kHz
+  - ADC: 24 bit, THD+N -93dB, dynamic range 99dB, SNR 99dB
+  - DAC: 24 bit, THD+N -94dB, dynamic range 105dB, SNR 104dB
+  - Z input sample rate: 75kHz
+  - CPU: Microchip PIC32MX at up to 50MHz
+  - Current draw: 51mA on the +12V rail, 19mA on the -12V rail
+  - Power connector: Doepfer standard 16 way IDC
+  - 112 distinct algorithms
+  - Micro SD card slot on the front panel
+  - Dot matrix screen
+io:
+  - key: YxKIDLYQ
+    name: X Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: kxON0S0G
+    name: Y Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZewoIUdc
+    name: Z Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Gvd0oKoD
+    name: A Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: PDi4lWkq
+    name: B Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: oSl76x6t
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: EIWkuVEU
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: SuTQFtQa
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

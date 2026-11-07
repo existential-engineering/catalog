@@ -1,0 +1,133 @@
+id: 9afoKuOg4X4J_nmHe29Jc
+name: NTX-8CV
+manufacturer: expert-sleepers
+primaryCategory: midi
+categories:
+  - modular
+  - utility
+  - audio-interface
+hp: 4
+url: https://www.expert-sleepers.co.uk/ntx8cv.html
+description: "The NTX-8CV is a 4HP Eurorack module with three quite distinct
+  purposes: MIDI to CV conversion, eight channels of USB audio class CV or audio
+  output, and expanding a disting NT with eight more CV outputs. Its dual role
+  USB port works both as a class compliant device and as a USB host."
+details: |-
+  The NTX-8CV is a 4HP Eurorack module with three quite distinct purposes.
+
+  It offers MIDI to CV conversion, using a design based on the Expert Sleepers FH-2 but in a more compact form factor. Its dual role USB port allows the NTX-8CV to operate both as a USB MIDI class compliant device, connected to a computer or tablet, and as a USB host, so that a USB MIDI controller can be plugged straight in. Power is provided to a connected USB MIDI device.
+
+  The NTX-8CV also operates as a USB Audio Class compliant device, offering 8 channels of DC coupled audio or CV outputs, which makes it compatible with Silent Way, CV Tools and Bitwig Studio. Expert Sleepers states that the USB audio is genuine audio rather than CV only, supporting 32 bit audio at up to 96kHz.
+
+  The module also connects directly to a disting NT, adding 8 CV outputs, and additional NTX-8CV units can be daisy-chained for up to 64 extra CV outputs on top of the NT's own 8. Daisy chaining applies to the expander role only, not to the USB audio or USB MIDI to CV roles, and the module provides outputs only rather than inputs. Outputs carry gates as well as CVs, since Expert Sleepers uses CV to mean all manner of output voltages, of which gates are a subset.
+
+  An ES-5 can be used alongside the NTX-8CV when expanding a disting NT, connected to the NTX-8CV's daisychain output, and the USB functions can be used at the same time as the expander role with disting NT firmware v1.18, with the outputs assigned to each task as required. The NTX-8CV cannot be expanded by other Expert Sleepers expansion modules such as the FHX-8CV, cannot currently expand modules with an ES-5 connection such as the ES-8 and ES-9, and does not communicate back to a disting NT, so it cannot be used as a USB MIDI host to play one. A 1U panel adaptor is available.
+specs: |-
+  - Panel width: 4HP
+  - Module depth: 36mm
+  - Current draw: 74mA on the +12V rail, 17mA on the -12V rail, plus any current drawn by an attached USB device
+  - Outputs: 8, DC coupled
+  - USB: Type C, dual role (host or device)
+  - USB audio: 32 bit at up to 96kHz
+  - PCB headers: input from disting NT, output to further expanders
+  - Up to 64 extra CV outputs when daisy-chained as a disting NT expander
+  - USB MIDI class compliant and USB Audio Class compliant
+  - Supplied with a 16 way indexed power cable and a 10-way ribbon cable for connection to a disting NT or another NTX-8CV
+  - A USB cable is not supplied
+io:
+  - key: uQPhHmtS
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: oHQZVQ3Z
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JFcglrBY
+    name: Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: yGzHs9g9
+    name: Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VeSEVsnO
+    name: Output 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ym90rsZE
+    name: Output 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GAb4885x
+    name: Output 7
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bBJMpbvT
+    name: Output 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: pSwcQNZM
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Top
+  - key: gDRnfVWd
+    name: disting NT Input Header
+    signalFlow: input
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: kH79TroW
+    name: Expander Output Header
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: HQW6C2XV
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

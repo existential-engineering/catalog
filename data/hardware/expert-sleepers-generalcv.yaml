@@ -1,0 +1,145 @@
+id: tZ3EEHQZf1hGO2w6boM4R
+name: General CV
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - synthesizer
+  - midi
+capabilities:
+  - reverb
+  - chorus
+  - equalization
+hp: 12
+url: https://www.expert-sleepers.co.uk/generalcv.html
+description: The General CV is a 12HP Eurorack module combining a General MIDI
+  synthesizer, a multi-channel CV to MIDI converter, and a host processor
+  capable of generating large amounts of MIDI data, either in response to
+  control voltages or entirely algorithmically.
+details: |-
+  The General CV is a combination of a powerful General MIDI synthesizer, a multi-channel CV to MIDI converter, and a host processor capable of generating huge amounts of MIDI data, either in response to control voltages or entirely algorithmically.
+
+  The module's software provides a layer of control over the synthesizer that reaches well beyond the familiar sounds of General MIDI, from making the synth behave like a VCO, to creating complex chords and textures, to abusing drum sounds into pitched audio sources. It will also play any MIDI file of 1980s pop tunes downloaded from the web.
+
+  The General CV has a number of modes of operation. It can behave like a modular VCO while using a massively multitimbral and polyphonic synthesizer engine as its tone source, automatically create chords and arpeggios from a pitch CV, play MIDI files from an SD card with special support for playing loops synchronised to a clock pulse, and act as a drum machine with up to nine independent drum trigger inputs.
+
+  Every mode also benefits from an internal four band EQ, and from stereo reverb and chorus effects.
+
+  The General CV is a 12HP Eurorack module with five rotary encoders, each with a push button, a 0.91 inch OLED display and a microSD card slot. It will also operate as a general purpose CV to MIDI module in conjunction with the Expert Sleepers MIDI Breakout.
+specs: |-
+  - Panel width: 12HP
+  - Module depth: 50mm
+  - Inputs (3.5mm jack sockets): 2 digital inputs
+  - Inputs (3.5mm jack sockets): 3 unipolar CV inputs (0-5V)
+  - Inputs (3.5mm jack sockets): 4 bipolar CV inputs (+/-5V)
+  - Outputs (3.5mm jack sockets): 2, stereo left and right
+  - 5 rotary encoders, each with push button
+  - 0.91 inch OLED display
+  - MicroSD card slot
+  - Select Bus compatible (receive only)
+  - Expansion header for MIDI I/O, compatible with the disting mk4 MIDI breakout
+  - Current draw: 91mA on the +12V rail, 27mA on the -12V rail
+io:
+  - key: sBmkINed
+    name: Digital Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BJmmbQw4
+    name: Digital Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 9RClYVgE
+    name: Unipolar CV Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: iVoElIdU
+    name: Unipolar CV Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ogYoD8m1
+    name: Unipolar CV Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 87oxZVmC
+    name: Bipolar CV Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KHKjRiKq
+    name: Bipolar CV Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XatYeDFc
+    name: Bipolar CV Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 846AuyK0
+    name: Bipolar CV Input 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZP2IlToM
+    name: Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: v2Ws3v6H
+    name: Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: qbgjgHYG
+    name: MIDI Expansion Header
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: R15pLS08
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

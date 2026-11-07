@@ -1,0 +1,151 @@
+id: PJ3xsu_5m1zHOuYl86pOU
+name: ES-4
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - utility
+  - discontinued
+hp: 8
+url: https://www.expert-sleepers.co.uk/es4.html
+description: The ES-4 is a Eurorack module that converts a standard S/PDIF input
+  to five channels of control voltage, two of them calibrated for over five
+  octaves of 1V/octave pitch CV. The five channels are encoded onto the stereo
+  S/PDIF stream by software supplied with Expert Sleepers Silent Way.
+details: |-
+  The ES-4 is a Eurorack format module which converts a standard S/PDIF input to five channels of control voltage. Two of the five channels are calibrated to provide over five octaves of 1V/octave pitch CV, and the remaining three are general purpose outputs for gates, envelopes and LFOs, each with a nominal range of 0 to 10V or plus and minus 5V, selected by the user.
+
+  Since S/PDIF is a stereo-only format, encoding the five channels onto two is handled by software supplied as part of Expert Sleepers Silent Way. The module connects to any audio device using the S/PDIF standard, including the digital audio output fitted as standard to many Macs. It also includes an S/PDIF output for sending data back to the computer, used by expansion modules connected to the ES-4, of which the ES-7 CV Input Expander was the only one.
+
+  The panel is 8HP wide and the module is 51mm deep. The digital input is coaxial S/PDIF at standard rates up to 192kHz, with a coaxial S/PDIF output alongside it, and the five analogue outputs are DC-coupled 3.5mm jacks. Channels 1 and 2 cover 0 to 5.3V when trimmed for 1V/octave response and channels 3 to 5 are jumper selectable per channel between 0 to 10V and plus and minus 5V. D/A conversion is 8 bit using high precision Analog Devices DACs, and the module carries an LED for S/PDIF sync lock plus two LEDs per channel on channels 3 to 5 for output polarity.
+
+  Expansion comes from five headers for connecting ES-4 Gate Expander modules and a digital audio I/O header in I2S format for future expansion. The front panel is drilled for both Doepfer and Analogue Systems mounting holes, using a slot rather than a single round hole, and the power connector is a Doepfer standard 16 way IDC with -12V furthest from the top of the board.
+
+  Unlike the ES-3, the ES-4 requires particular software to generate meaningful output signals. The ES-4 Controller plug-in, part of Silent Way, is the main option, alongside an Expert Sleepers external for Max/MSP that lets Max users integrate the module into their patchers. Silent Way comes in AudioUnit, VST and AAX formats for macOS and Windows and so needs a compatible host application, but a Silent Way licence is not required, because the ES-4 Controller plug-in works in a licence-free mode.
+specs: |-
+  - Panel width: 8HP
+  - Module depth: 51mm
+  - Digital input: coaxial S/PDIF, standard rates up to 192kHz
+  - Digital output: coaxial S/PDIF
+  - Analogue outputs: 5x 3.5mm jacks, DC-coupled
+  - Channels 1 and 2: 0 to 5.3V when trimmed for 1V/octave response
+  - Channels 3 to 5: 0 to 10V or plus and minus 5V, jumper selectable per channel
+  - D/A conversion: 8 bit, high precision Analog Devices DACs
+  - Indicators: LED for S/PDIF sync lock, 2 LEDs per channel on channels 3 to 5
+  - Expansion: five headers for ES-4 Gate Expander modules
+  - Expansion: digital audio I/O header (I2S format)
+  - Current draw: 50mA on the +12V rail, 20mA on the -12V rail (70mA total)
+  - Power connector: Doepfer standard 16 way IDC, -12V furthest from the top of the board
+  - Requires ES-4 Controller software, part of Expert Sleepers Silent Way
+io:
+  - key: 5iJBuhR3
+    name: S/PDIF In
+    signalFlow: input
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: e1pVRoDf
+    name: S/PDIF Out
+    signalFlow: output
+    category: digital
+    type: s/pdif
+    connection: rca
+    maxConnections: 1
+    position: Top
+  - key: olxPa72w
+    name: CV Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: RPAMq0tW
+    name: CV Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: TiTM07rK
+    name: CV Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KY7vPm6Z
+    name: CV Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UeICvxhD
+    name: CV Output 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Y9YSXHdf
+    name: Gate Expander Header 1
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: BWOgJl6Y
+    name: Gate Expander Header 2
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: QAst2dlY
+    name: Gate Expander Header 3
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: 5up9Ikoh
+    name: Gate Expander Header 4
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: SZOGfHiB
+    name: Gate Expander Header 5
+    signalFlow: output
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: 48arTJh3
+    name: Digital Audio I/O Header
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: HcPBf9Jh
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

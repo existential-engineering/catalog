@@ -1,0 +1,61 @@
+id: O_3JZvJN6o1nnjWbemI9Q
+name: Persephone
+manufacturer: expert-sleepers
+primaryCategory: utility
+categories:
+  - modular
+  - gain
+  - distortion
+  - analog
+capabilities:
+  - saturation
+  - distortion
+url: https://www.expert-sleepers.co.uk/persephone.html
+description: Persephone is a Eurorack VCA (Voltage Controlled Amplifier) that
+  uses a discrete JFET as its gain element, which can be gently or heavily
+  overdriven for saturation and distortion effects. It also includes a
+  zero-crossing detector that keeps fast gain changes free of clicks.
+details: |-
+  Persephone is a VCA (Voltage Controlled Amplifier) using a discrete JFET as the gain element. The JFET can be tastefully or violently overdriven for saturation and distortion effects.
+
+  Persephone also includes a zero-crossing detector, which can be used to restrict gain changes to zeros in the audio waveform, preventing the clicks and pops that can occur with very fast envelopes, especially on lower pitched sounds. With the zero-crossing circuit engaged, a simple gate can be used as the CV input without clicks.
+
+  The module's signal and CV paths are 100% analogue, with a little discrete logic involved in the zero-cross circuitry.
+specs: |-
+  - Discrete JFET gain element, able to be overdriven for saturation and distortion
+  - Zero-crossing detector restricts gain changes to zeros in the audio waveform
+  - Accepts a simple gate as the CV input without clicks when the zero-crossing circuit is engaged
+  - Signal and CV paths 100% analogue, with a little discrete logic in the zero-cross circuitry
+io:
+  - key: RKON1fmm
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AdP5DFi9
+    name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: OipboOJf
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hFjIU2qn
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

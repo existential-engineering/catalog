@@ -1,0 +1,168 @@
+id: gev_39MxEmqzH25-WMIpO
+name: ES-8
+manufacturer: expert-sleepers
+primaryCategory: audio-interface
+categories:
+  - modular
+  - utility
+hp: 8
+url: https://www.expert-sleepers.co.uk/es8.html
+description: The ES-8 is a USB 2.0 class-compliant audio interface in a Eurorack
+  module, with DC-coupled inputs and outputs that can carry both CVs and audio.
+  ADAT inputs and outputs and an expansion header for the ES-5 extend the
+  channel count beyond the eight outputs and four inputs on the panel.
+details: |-
+  The ES-8 is a USB 2.0 class-compliant audio interface in a Eurorack module, with DC-coupled inputs and outputs that can be used for both CVs and audio. That makes it directly compatible with computer-based CV generation software such as Silent Way, Max/MSP, Reaktor, CV Toolkit, zMors, Audulus and Bitwig Studio, as well as with audio and CV processing iOS apps.
+
+  The ES-8 also has ADAT inputs and outputs. Those can expand the I/O count by way of an Expert Sleepers ES-3 or ES-6, or connect a traditional audio interface to add mic preamps or 1/4 inch line outputs. Without a USB connection the ES-8 works as a standalone ADAT to audio converter, providing DC-coupled I/O expansion for another ADAT-equipped audio interface.
+
+  An expansion header allows connection of an Expert Sleepers ES-5, to which Expert Sleepers gate, CV and MIDI expanders can in turn be connected. The ES-8 has a high quality internal clock and can optionally sync to the clock from the incoming ADAT signal.
+
+  The channel count is 12 in and 16 out at sample rates of 44.1kHz, 48kHz, 88.2kHz and 96kHz, with a 24 bit sample depth. The panel carries eight 3.5mm TS outputs reaching approximately plus or minus 10V DC and four 3.5mm TS inputs accepting approximately the same range, all DC-coupled. The USB socket is Type B, and the interface is class-compliant, needing no driver on macOS and iOS, with Windows drivers provided by Expert Sleepers.
+
+  The front panel is drilled for both Doepfer and Analogue Systems mounting holes, using a slot rather than a single round hole. The power connector is a Doepfer standard 16 way IDC, with -12V furthest from the top of the board. Expert Sleepers suggests the ES-10 as an alternative for anyone who wants DC-coupled inputs and outputs but already owns an audio interface.
+specs: |-
+  - Panel width: 8HP
+  - Module depth: 50mm
+  - Current draw: 198mA on the +12V rail, 52mA on the -12V rail (at 96kHz)
+  - USB socket: Type B
+  - Driver support: class-compliant USB 2.0, no driver required for macOS and iOS, Windows drivers provided
+  - Channel count: 12 in, 16 out
+  - Supported sample rates: 44.1kHz, 48kHz, 88.2kHz, 96kHz
+  - Audio sample depth: 24 bit
+  - Output connections: 8x 3.5mm TS jacks, DC-coupled
+  - Maximum output voltage: approximately plus or minus 10V DC
+  - Analogue inputs: 4x 3.5mm TS jacks, DC-coupled
+  - Input voltage range: approximately plus or minus 10V
+  - Digital I/O: 1x ADAT input, 1x ADAT output
+  - Expansion headers: 1 for ES-5, 1 for ES-6
+  - Power connector: Doepfer standard 16 way IDC
+io:
+  - key: XX1gMDvV
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JijaJQwF
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BJjifwO5
+    name: Input 3
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: oocObv6L
+    name: Input 4
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 04egBxVF
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8IIwpNMw
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: b93NtRpG
+    name: Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: SZ2PY4Iz
+    name: Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GpG0el1I
+    name: Output 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BKeJ7Hdq
+    name: Output 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2DT5KZnW
+    name: Output 7
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3BKssPK4
+    name: Output 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Wx0n1LIa
+    name: ADAT In
+    signalFlow: input
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Top
+  - key: 5FwouBik
+    name: ADAT Out
+    signalFlow: output
+    category: digital
+    type: adat
+    connection: toslink
+    maxConnections: 8
+    position: Top
+  - key: 6Ofzi5WP
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Top
+  - key: uGU3weC7
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

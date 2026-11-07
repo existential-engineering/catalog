@@ -1,0 +1,74 @@
+id: 7HC9N4XGn_j2boM52qrsL
+name: ESX-4CV
+manufacturer: expert-sleepers
+primaryCategory: modular
+categories:
+  - utility
+  - discontinued
+hp: 4
+url: https://www.expert-sleepers.co.uk/esx4cv.html
+description: The ESX-4CV is a Eurorack expansion module for the Expert Sleepers
+  ES-4, ES-40 or ES-5, adding four hardware-calibrated CV outputs from one
+  expansion header. Expert Sleepers lists it as discontinued and points to the
+  ESX-8CV as an alternative.
+details: |-
+  The ESX-4CV is an expansion module for the Expert Sleepers ES-4, ES-40 or ES-5, adding four CV outputs from one expansion header.
+
+  To squeeze four 12 bit channels through one 8 bit connection, the channels are time-multiplexed and so effectively run at one eighth of the audio sample rate. With the audio interface or DAW running at 48kHz, for example, the ESX-4CV's outputs run at 6kHz. That is fast enough for most CV purposes apart from audio-rate modulation and the very fastest envelopes. Because the outputs are still derived from the audio stream, they keep the advantages of the ES-3 and ES-4 over traditional MIDI-based interfaces, namely solid timing and the absence of jitter.
+
+  The outputs are hardware calibrated and so do not require software calibration of the sort Silent Way offers when used with standard V/octave synths and oscillators. The 12 bit resolution is adequate for software calibration where it is wanted, for example to cater for oscillators that do not track well to a standard calibration, or to support oscillators with a Hz/V response.
+
+  The ESX-4CV requires software in order to time-multiplex the four output signals and encode them for the ES-4 or ES-5. The options are the ESX-4CV Combiner plug-in that forms part of Expert Sleepers Silent Way and the Expert Sleepers Max/MSP external. Silent Way is offered in AudioUnit, VST and AAX formats for Mac OS X and Windows and so needs a compatible host application. A Silent Way licence is not included with the ESX-4CV, and the ESX-4CV Combiner plug-in functions in a licence-free mode.
+
+  The front panel is drilled for both Doepfer and Analogue Systems mounting holes, using a slot rather than a single round hole. The power connector is a Doepfer standard 16 way IDC, with -12V furthest from the top of the board.
+specs: |-
+  - Panel width: 4HP
+  - Module depth: 26mm
+  - Digital input: connection from ES-4, ES-40 or ES-5 module
+  - Analogue outputs: 4x 3.5mm jacks, DC-coupled
+  - Output voltages: plus or minus 5.33V, hardware calibrated
+  - D/A conversion: 12 bit, using high precision Analog Devices DACs
+  - Indicators: 2 LEDs per channel (positive and negative voltages)
+  - Current draw: 22mA on the +12V rail, 18mA on the -12V rail (40mA total)
+  - Power connector: Doepfer standard 16 way IDC
+io:
+  - key: 0JYsygAo
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: qgQPQPuH
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: MatOhoPe
+    name: Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: DW1lA9UV
+    name: Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: h8ZN071T
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
