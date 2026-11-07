@@ -1,0 +1,103 @@
+id: dE6cQgSnaWEinbvbLvo7H
+name: skulpter 500
+manufacturer: elysia
+primaryCategory: preamp
+categories:
+  - outboard
+  - compressor
+  - filter
+  - analog
+capabilities:
+  - compression
+  - saturation
+  - filter
+url: https://www.elysia.com/skulpter/
+description: "elysia skulpter: Shape your sound with precision and warmth.
+  Explore limitless sonic possibilities with this high-end analog preamp."
+details: |-
+  skulpter is a high-end analog preamp for recording and mixing, built around discrete class-A circuit designs and a DC-coupled input. It uses an audiophile topology for setting gain, with fixed resistors switched by a cascade of relays and electronic switches. An encoder with 20 steps per rotation provides a total of 40 gain values in 1.5/2 dB steps across a gain range of 3 to 65 dB. The mic preamp and the direct input each carry a separate gain value, so changing from Mic to DI or back changes the gain accordingly, and the current gain setting is saved automatically when the unit is powered off.
+
+  The open, natural sound character can be shaped by two independent combinations of saturation and tweaked filter curves. Shape One, for instruments, adds harmonics (THD) whose intensity is determined by the input level and the amount of preamp gain, producing a large sound with body but no harsh peaks. Shape Two, for vocals, applies the same saturation enhancement with a tube-like characteristic curve, which results in musical soft clip limiting rather than actual distortion.
+
+  A variable low cut filter covers a wide range from 10 Hz to 375 Hz with a slope of 12 dB per octave, and its amplifier is a discrete class-A design optimised for transparency. The phase reverse function adds no additional circuitry to the signal path, so the sound stays the same in both switch positions, and switching it automatically triggers a brief mute to avoid cracking and popping. A dedicated mute switch reduces the output level to zero so instruments on the DI, cables and microphones can be swapped safely, and the unit soft starts with mute enabled for a short moment on power up.
+
+  An integrated compressor is operated by a single knob, which sets the threshold against a fixed 3:1 ratio and a soft knee characteristic. The all discrete class-A circuitry and an RMS detector optimised for vocals and instruments are supported by elysia's signature Auto Fast function, which automatically reduces the attack to its shortest value when strong impulses and transients require it. An integrated front panel JFET DI with one megohm input impedance accepts instruments with passive pickups directly, handles levels up to +19 dBu, and takes both balanced and unbalanced signals, which also makes it suitable for line sources.
+
+  Fifteen LEDs provide four pieces of information. A single LED at the top indicates input clipping and increases in brightness with the intensity of the overload, a single LED at the bottom shows the amount of compression applied, and thirteen LEDs in the middle show the output level with brightness changes for smooth transitions. Pushing the Gain encoder turns the level meter into a gain indicator read against the scale printed on the right of the LEDs. skulpter also generates its own 48V phantom power on board, so that supply voltage is independent of the rack frame being used, and the output is briefly muted whenever phantom power is switched on or off.
+specs: |-
+  - Total gain range: 3 to 65 dB in 1.5/2 dB steps
+  - 40 gain values via an encoder with 20 steps per rotation, separate gain value for mic and DI
+  - Gain setting saved automatically at power off
+  - Frequency response at 3 dB gain: 10 Hz to 170 kHz (-3 dB)
+  - Frequency response at 29 dB gain: 10 Hz to 170 kHz (-3 dB)
+  - THD+N at 6 dBu, 20 Hz to 22 kHz: 0.007% at 3 dB gain, 0.007% at 29 dB gain
+  - Noisefloor 20 Hz to 20 kHz (A-weighted): -97 dBu at 3 dB gain, -93 dBu at 29 dB gain
+  - Common mode rejection ratio at +6 dBu output level, 29 dB gain: +87 dB at 1 kHz, +69 dB at 10 kHz
+  - Maximum input level: 19 dBu (Mic), 19 dBu (DI)
+  - Impedance: Mic input 13.6 kOhm, DI input 1 MOhm, output 62 Ohm
+  - Variable low cut filter, 10 Hz to 375 Hz, 12 dB/octave slope, discrete class-A amplifier
+  - Dual Sound Shaper with two saturation and filter curve combinations (Instruments, Vocals)
+  - Integrated one-knob compressor, fixed 3:1 ratio, soft knee, RMS detector, Auto Fast function
+  - Balanced front panel JFET DI, 1 MOhm input impedance, accepts balanced and unbalanced signals
+  - Pure polarity reverse with automatic short signal mute
+  - Signal mute switch and soft start with mute enabled
+  - Onboard +48V phantom power, independent of the rack frame
+  - Fifteen LED multifunction meter: input clipping, compression intensity, 13-step level meter, gain indicator
+  - DC-coupled input
+  - Discrete class-A technology
+  - Power consumption (500 Series Module): 90 mA
+io:
+  - key: SICGrij6
+    name: Mic Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: edac
+    maxConnections: 1
+    position: Bottom
+  - key: HHyIM91b
+    name: DI Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 157QwPXz
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: edac
+    maxConnections: 1
+    position: Bottom
+  - key: uopGOF8L
+    name: 500 Series Frame Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: edac
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.elysia.com/download-file/36559/
+    type: resource
+    title: 500/qube Series Manual
+  - url: https://www.elysia.com/download-file/32502/?tmstv=1688547591
+    type: resource
+    title: Recall Sheet 500/qube Series
+videos:
+  - videoId: pXJftBmyfnU
+    title: Deep Dive with Ruben Tilgner
+  - videoId: fhfmcmtkJXs
+    title: Overview
+  - videoId: B5mxiuHwOLs
+    title: Overview
+  - videoId: OWtWmP8A6Tc
+    title: skulpter|500 in Action
+  - videoId: 5doYWyjaVhY
+    title: Sound Demo
+  - videoId: -iH6aByHTYw
+    title: Review
+  - videoId: SYueLiSvP_4
+    title: Preamp for Mastering?
