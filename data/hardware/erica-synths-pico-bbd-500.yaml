@@ -1,0 +1,73 @@
+id: wutwX-iZBClU1ZI35tbGG
+name: Pico BBD
+manufacturer: erica-synths
+primaryCategory: delay
+categories:
+  - discontinued
+  - modular
+  - effect
+  - analog
+  - flanger
+capabilities:
+  - delay
+  - flanger
+hp: 3
+url: https://www.ericasynths.lv/pico-bbd-500/
+description: Pico BBD is great sounding, full analogue 4092 stage bucket brigade
+  delay module; the smallest BBD in eurorack. Besides nice flanger and delay
+  effects, at full CW settings of TIME and feedback knobs it can produce extreme
+  sonic artefacts. Take note that this BBD unit doesn't have any kind of post
+  delay filter therefore the higher the delay time setting the higher the
+  produced noise in the output!
+details: |-
+  Pico BBD is a full analogue bucket brigade delay built around a 4092 stage BBD chip, and the smallest BBD in eurorack. Delay times reach up to 300ms, under manual control and under CV.
+
+  Beyond flanger and delay effects, pushing the TIME and feedback knobs fully clockwise drives the circuit into extreme sonic artefacts.
+
+  Unlike most BBD units, where noise is filtered off with a low pass filter at the output and higher frequency signal is permanently lost in the process, this one has no post delay filter at all. The longer the delay time setting, the more noise appears in the output, which is the trade the design makes on purpose.
+
+  The module is 3HP wide and 35mm deep, with input and output protection against overvoltage and protection against a reversed PSU connection.
+specs: |-
+  - Full analogue circuit
+  - 4092 stage BBD chip
+  - Up to 300ms delay time
+  - CV control over delay time
+  - Input and output protection against overvoltage
+  - Protection against reverse PSU connection
+  - CV input level (full span) -5V to +5V
+  - Power consumption +20mA, -9mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: 70GXjgvm
+    name: Audio In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: N9OxRVab
+    name: Time CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZATwOfQU
+    name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0gBaJulX
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

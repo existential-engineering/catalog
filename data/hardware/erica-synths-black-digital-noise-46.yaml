@@ -1,0 +1,90 @@
+id: 9NP2nnzu-KFurtftpw0da
+name: Black Digital Noise
+manufacturer: erica-synths
+primaryCategory: noise
+categories:
+  - discontinued
+  - modular
+  - digital
+hp: 10
+url: https://www.ericasynths.lv/black-digital-noise-46/
+description: The Black Digital Noise is our pathological brainchild. A unique
+  noise module that makes wide range of noise effects; almost pure white noise,
+  Atari console-like one bit noise and other crazy, more or less predictable
+  sounds. At the heart of the module is a programmable logic matrix that
+  includes two linear feedback shift registers that generate polynomial noise
+  effects.
+details: |-
+  The Black Digital Noise is a noise module that makes a wide range of noise effects, from almost pure white noise through Atari console-like one bit noise to other crazy, more or less predictable sounds. At the heart of the module is a programmable logic matrix that includes two linear feedback shift registers which generate polynomial noise effects.
+
+  A similar noise generation scheme was used in several classical drum machines, and the technology comes from techniques used in data scrambling.
+
+  The two polynomial feedback shift registers have CV control to set the noise character, noise frequency is adjustable, and an external clock input lets the module follow the frequency of a VCO. A sync feature resets the polynomial, and the module can also process audio signals, including voice.
+
+  Output signal amplitude runs -5V to +5V, noise bit-width spans 1 bit to 4 bits and CV level covers -10V to +10V. Inputs and outputs are protected against over-voltage and there is diode protection on reversed power supply.
+
+  The module is 10HP wide and 25mm deep, drawing +93mA and -25mA.
+specs: |-
+  - Wide range of noise effects (pure white noise to 1bit and 4bit vintage computer style noises)
+  - Two polynomial feedback shift registers with CV control to set noise character
+  - Adjustable noise frequency
+  - External clock in, can follow frequency of VCO
+  - Sync feature, polynomial reset
+  - Can process audio signals
+  - Inputs/outputs are protected against over-voltage
+  - Diode protection on reversed power supply
+  - Output signal amplitude -5 - +5 V
+  - Noise bit-width 1bit - 4 bits
+  - CV level -10V - +10 V
+  - Power consumption +93mA, -25mA
+  - Module width 10 HP
+  - Module depth 25 mm
+io:
+  - key: JdU5x5f5
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5cthc2EW
+    name: Noise Character CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Gf9NRHX4
+    name: External Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gazVpgOM
+    name: Sync Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: a3FClBvj
+    name: Noise Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ypSVxjFL
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Top

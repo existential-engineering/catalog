@@ -1,0 +1,87 @@
+id: 3VbZiLddRIOfKFoDoL9uk
+name: Plasma Drive
+manufacturer: erica-synths
+primaryCategory: distortion
+categories:
+  - modular
+  - effect
+capabilities:
+  - distortion
+  - octave
+  - equalization
+hp: 16
+url: https://www.ericasynths.lv/plasma-drive-426/
+prices:
+  - amount: 310
+    currency: EUR
+    term: perpetual
+description: High-voltage distortion.
+details: |-
+  Plasma Drive is developed in collaboration with Gamechanger Audio, a Latvian company that explores the uncharted territories of music electronics. In their Plasma Pedal they combined a Tesla coil with a lot of rock and roll, producing one of the world's heaviest sounds.
+
+  Like the Plasma Pedal, Plasma Drive gives a previously unexplored method of achieving signal clipping. Instead of using LED circuits, transistors or vacuum tubes to produce overdrive, the Plasma Drive boosts the audio signal to 3000V and transforms it into a series of continuous high-voltage discharges in a xenon-filled tube. In essence, you are playing a lightning bolt of electricity, and the electrical discharges produced by your instrument are instantly converted back into an analogue audio signal, producing a quick, responsive and extremely heavy distortion with plenty of character.
+
+  The eurorack module takes the sounds of the Plasma Pedal further. To eurorack standards Erica Synths added CV control over distortion level and dry/wet mix, as well as octave up and one and two octave down tracking oscillators that add even more harmonics to the original signal. The tracking oscillators can be switched on and off manually or via trigger signals, and an assignable equalizer can sit pre or post effect.
+
+  The module is powered from the conventional eurorack PSU ribbon cable. Note that it is 50 mm deep because of the shielding, so case clearance matters.
+specs: |-
+  - Unique distortion flavor
+  - CV control over distortion and dry/wet mix
+  - Assignable equalizer (pre and post effect)
+  - 1 octave up and 1 and 2 octave down tracking oscillators
+  - Audio input level up to 20V ptp
+  - EQ low freq boost/cut plus or minus 9dB, 600Hz corner freq
+  - EQ hi freq boost/cut plus or minus 10dB, 1.5kHz corner freq
+  - CV input level -10V to +10V
+  - Panel width 16HP
+  - Module depth 50mm
+  - Power consumption 135mA@+12V, 87mA@-12V
+io:
+  - key: eOIYq9az
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZKAfIPrQ
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2jyMCLWt
+    name: Distortion CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vtosfyK4
+    name: Dry/Wet Mix CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KThUcHMV
+    name: Tracking Oscillator Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fovX8r1s
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

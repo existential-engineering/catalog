@@ -1,0 +1,75 @@
+id: DiZercRQLTn9_Y7CbwGqQ
+name: MIDI to Clock V2
+manufacturer: erica-synths
+primaryCategory: midi
+categories:
+  - discontinued
+  - modular
+  - utility
+hp: 6
+url: https://www.ericasynths.lv/midi-to-clock-v2-76/
+description: Esrica Synths MIDI to Clock V2 is an essential module if you wish
+  to sync your modular system to MIDI devices.
+details: |-
+  MIDI to Clock V2 is the module to reach for when a modular system needs to run in step with MIDI devices. What sets it apart from others is that it works both ways: it derives an analogue clock from MIDI messages, and a switch flips it around so an incoming analogue clock is turned into MIDI clock and MIDI devices follow the modular instead.
+
+  For more versatility the module accepts several incoming clock PPQ settings, selectable between 1, 4 and 24 PPQ, and divisions and multiplications of the incoming clock are available straight away. Division by 2, 4 and 8 and multiplication by 4, 6 and 16 are on offer, with two multiplied clock outputs running at once.
+
+  Transport is covered as well. A start and stop button sits on the panel, MIDI start and stop messages are implemented, and LEDs show incoming and outgoing clock so the sync state can be read at a glance.
+
+  The clock signal level is 0V to +5V with a 50% duty cycle. The module is 6HP wide and 20mm deep, and draws 25mA on the +12V rail and nothing on the -12V rail.
+specs: |-
+  - Bidirectional MIDI to clock conversion
+  - 1, 4 and 24 PPQ selection
+  - Division by 2, 4, 8
+  - Multiplication by 4, 6, 16
+  - Two simultaneous multiplied clock outputs
+  - Start/Stop button
+  - MIDI start/stop message implementation
+  - Incoming/outgoing clock LEDs
+  - Clock signal level 0 - +5V
+  - CLK signal duty cycle 50%
+  - Power consumption 25mA@+12V, 0mA@-12V
+  - Module width 6HP
+  - Module depth 20mm
+io:
+  - key: bdrFqTy7
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: ONoLjoFI
+    name: MIDI
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Top
+  - key: zsRSMl7g
+    name: Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: PIkpPXGO
+    name: Clock Output 1
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: PzSc0weB
+    name: Clock Output 2
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

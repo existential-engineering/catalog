@@ -1,0 +1,83 @@
+id: GWoYzQsjyBDt7MuFhFRmF
+name: Black LFO
+manufacturer: erica-synths
+primaryCategory: modular
+categories:
+  - discontinued
+  - utility
+hp: 12
+url: https://www.ericasynths.lv/black-lfo-50/
+description: Erica Synths Black LFO is a broad function module, but some of it's
+  features set it apart from other LFOs, like for example the gate input for a
+  key follow function and a built in VCA circuit that controls LFO amplitude in
+  both auto and gated modes.
+details: |-
+  The Black LFO is a broad function low frequency oscillator with 6 waveforms plus sample and hold, a frequency divider and multiplier, tap tempo and a built-in VCA circuit. An LED shows the state of the LFO output at a glance.
+
+  Two features set it apart from other LFOs. A gate input provides a key follow function, so the LFO starts when a gate signal is sent to GATE, and the built-in VCA controls the amplitude of the LFO signal, auto looping when no gate signal is applied.
+
+  External sync locks the LFO frequency to an incoming signal, and the divide and multiply controls work on that external sync as well as on the internal rate, so one clock can feed several different modulation speeds.
+
+  Erica Black series are high-end modules with unique functionality. Only the highest quality components are used and all inputs and outputs are protected against undesired overvoltage. When designing the Black Series, Erica Synths did not economise on module width, putting design and usability first.
+
+  The panel is 12HP wide at a depth of 25mm. CV inputs accept -10V to +10V, the output swings -5V to +5V, the frequency range runs 0,1Hz to 60Hz, hold and attack reach 2 seconds and decay 5 seconds. Power draw is 25mA on the positive rail against 13mA on the negative one, with diode protection on a reversed power supply.
+specs: |-
+  - 6 waveforms + S&H
+  - TAP tempo
+  - External sync for LFO frequency
+  - Divide and multiply LFO frequency (can multiply/divide ext. sync too)
+  - LED for LFO output state
+  - Built in VCA that controls LFO signal amplitude
+  - Built in VCA auto loops if no gate signal is applied
+  - Key follow function, LFO will start when gate signal is sent to GATE
+  - Inputs/outputs are protected against over-voltage
+  - Diode protection on reversed power supply
+  - CV input signal level -10V - +10V
+  - Output signal level -5V - +5V
+  - Frequency range 0,1Hz - 60Hz
+  - Hold/Attack time 0 - 2''
+  - Decay time 0 - 5''
+  - Power consumption +25mA, -13mA
+  - Module width 12HP
+  - Module depth 25mm
+io:
+  - key: XS2cmxqd
+    name: CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: k68aVoaN
+    name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3FfOaaow
+    name: Sync In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zhtnMzOf
+    name: LFO Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8qccuR2H
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,104 @@
+id: PH3TtqRWv0Cn6tr7bGYLQ
+name: Cymbals
+manufacturer: erica-synths
+primaryCategory: modular
+categories:
+  - percussion
+  - cymbals
+  - hybrid
+hp: 10
+url: https://www.ericasynths.lv/cymbals-364/
+prices:
+  - amount: 190
+    currency: EUR
+    term: perpetual
+description: Erica Synths Cymbals is a distinct topology digital/analogue
+  module, where cymbal samples are passed thru AS3330 based VCA and controlled
+  via envelope generators of unique design. The module features 10 sets of
+  custom Crash and Ride cymbal samples with Tune control and individual Decay
+  control. Accent and CV control over Tone and Decay allow you to create lot of
+  variations in the Cymbals track. An extra feature is sample looping – when
+  it’s on, a certain part of the sample is looped while the envelope decay is
+  on, thus creating a distinct, delay-like effect. Cymbal samples are developed
+  by producer and musician Nero Bellum.
+details: |-
+  Cymbals is a digital and analogue module of distinct topology, where cymbal samples are passed through an AS3330 based VCA and controlled by envelope generators of unique design. It carries 10 sets of custom Crash and Ride cymbal samples, developed by producer and musician Nero Bellum.
+
+  Tune is shared across the sets while decay is set individually, and CV inputs with attenuators cover both Tune and Decay so that a cymbal track can be varied from hit to hit. Accent adds a further layer of expression, and manual triggers on the panel fire the voices without a patch cable.
+
+  Sample looping is an extra feature. With looping on, a certain part of the sample is repeated while the envelope decay is running, which creates a distinct delay-like effect.
+
+  The module is 10HP wide and 45mm deep and draws 95mA from the +12V rail and 36mA from the -12V rail. The audio output swings between -5V and +5V, CV inputs take a full span of -5V to +5V, the accent input takes up to 10V and the trigger inputs respond to a 5V pulse of about 1ms.
+specs: |-
+  - 10 sets of custom cymbal samples
+  - Analogue VCA and EG
+  - Tune and Decay controls
+  - CV control with attenuators over Tune and Decay
+  - Sample loop for Crash and Ride
+  - Manual triggers
+  - Accent for better expression
+  - Audio output level: -5V to +5V
+  - CV level (full span): -5V to +5V
+  - Accent CV level: 10V
+  - Trigger level: 5V
+  - Trigger time: 1ms
+  - Power consumption: 95mA @ +12V, 36mA @ -12V
+  - Module width: 10HP
+  - Module depth: 45mm
+io:
+  - key: ltycId8H
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: 2TMiXUT8
+    name: Crash Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nKOS7nhz
+    name: Ride Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: WfL7SQgs
+    name: Tune CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JxKC4NoR
+    name: Decay CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Ue9xq0TI
+    name: Accent Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: uxHw4tMe
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

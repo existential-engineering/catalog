@@ -1,0 +1,105 @@
+id: aisL_T6xNUzmO_wjy0FHu
+name: Hexinverter VCNO
+manufacturer: erica-synths
+primaryCategory: noise
+categories:
+  - modular
+hp: 6
+url: https://www.ericasynths.lv/hexinverter-vcno-2718/
+prices:
+  - amount: 165
+    currency: EUR
+    term: perpetual
+description: VCNO is a noise oscillator, capable of producing full spectrum
+  white noise and various random signals. But that’s where its similarity to
+  other noise generators stops. VCNO can be used like a VCO – you can modulate
+  the pitch over CV and use its multiple outputs simultaneously, each with a
+  distinct sonic character. As well, you can patch it into a VCA or use it to
+  modulate and trigger other elements in your modular system.
+details: |-
+  VCNO is a noise oscillator that produces full spectrum white noise and various random signals, and that is where its similarity to other noise generators stops. It can be played like a VCO, with the pitch modulated over CV and several outputs used at once, each with its own sonic character, and it can be patched into a VCA or used to modulate and trigger other elements of a modular system.
+
+  NOISE is the main shift register output. With the pitch knob turned fully clockwise it delivers pure white noise, and as the pitch comes down the noise evolves into a crunchy character reminiscent of vintage video game sounds. GATE is a DC-coupled output, suited to supplying random triggers across a system.
+
+  SCREECH adds a dark, howling overtone to the main NOISE output. SIZZLE has a related control that moves from pure white noise when turned fully clockwise to a vinyl-like crackle when turned anti-clockwise. TEAR sounds as though the noise generator is breaking and tearing itself apart.
+
+  All of the outputs work simultaneously and are affected together by the pitch knob or the CV input, so the frequency of the whole module can be swept from one jack. A clock signal input bypasses the internal frequency generator, which means a clock from a trigger sequencer can produce a pseudorandom drum trigger pattern locked to the rest of the drums.
+
+  The module is 6HP wide and 30mm deep, and draws 49mA on the +12V rail and 39mA on the -12V rail. Erica Synths redesigned it in close collaboration with Hexinverter. After Hexinverter Électronique founder Stacy Gaudreau announced the close of operations in September 2022, Erica Synths took over manufacturing, sales and support for several Hexinverter Électronique modules, retaining the functionality of the originals and supporting the reissue modules only.
+specs: |-
+  - Width 6HP
+  - Depth 30mm
+  - Current draw +49mA, -39mA @ 12V
+  - NOISE is the main LFSR output, pure white noise through to crunchy noise
+  - GATE is a DC-coupled output for random triggers
+  - SCREECH adds a dark, howling overtone to the NOISE output
+  - SIZZLE moves from white noise to vinyl-like crackle
+  - TEAR is a torn, broken noise character
+  - All outputs work simultaneously and follow the pitch knob or CV
+  - CV input for frequency modulation
+  - Clock input bypasses the internal frequency generator
+io:
+  - key: q6AnUw28
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: Wb6C8N8t
+    name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nQ99hhwJ
+    name: Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FEO46wGa
+    name: NOISE Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: c5kH4AW2
+    name: SCREECH Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: D4F1578Q
+    name: SIZZLE Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5BnBhzut
+    name: TEAR Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: oiw8uPpQ
+    name: GATE Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

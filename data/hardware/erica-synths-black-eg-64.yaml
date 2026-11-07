@@ -1,0 +1,78 @@
+id: imYrvQw68Mjf0_FXYEIJM
+name: Black EG
+manufacturer: erica-synths
+primaryCategory: modular
+categories:
+  - discontinued
+  - analog
+  - utility
+hp: 8
+url: https://www.ericasynths.lv/black-eg-64/
+description: Erica Synths Black Envelope Generator is a compact, fully analogue
+  envelope generator with some cool bonus features like gated loop and gate
+  delay for nice acid basslines and veeeerrryyy slow drones.
+details: |-
+  The Black EG is a compact, fully analogue ADSR envelope generator for Eurorack, with direct and inverted envelope outputs. A short/long switch moves each stage between a fast range and a very slow one, so the same panel covers both acid basslines and drones that take tens of seconds to run their course.
+
+  A distinct looping feature is included: when the gate patchcable is patched, looping starts on gate on. A separate Gate Delay output issues a delayed gate signal after the Attack stage. Chaining up several envelope generators, four or five of them, each with delayed gate, creates evolving polyphonic synth-like pads.
+
+  Erica Black series are high-end modules with unique functionality. Only the highest quality components are used and all inputs and outputs are protected against undesired overvoltage. When designing the Black Series, Erica Synths did not economise on module width, putting design and usability first, and big knobs are assigned to the functions that make a difference in sound. Together the Erica Black series are a range of modules that make an entire synthesizer.
+
+  The panel is 8HP wide at a depth of 25mm, and the skiff-friendly design suits shallow cases. Gate inputs accept 3 to 10V, the envelope swings 0 to 10V, and power draw is 25mA on the +12V rail against 15mA on the -12V rail.
+specs: |-
+  - Gate input level 3...10V
+  - Envelope amplitude 0...10V
+  - Attack time (short/long) 0...600ms / 6,5"
+  - Decay time (short/long) 0...3" / 30"
+  - Sustain level 0...10V
+  - Release time (short/long) 0...3" / 35"
+  - Panel width 8HP
+  - Module depth 25mm
+  - Power consumption 25mA@+12V, 15mA@-12V
+  - Full ADSR envelope
+  - Short/Long envelope switch
+  - Direct and inverted envelope outputs
+  - Gated and independent looping modes
+  - Gate delay (after Attack stage) output
+  - Skiff-friendly design
+io:
+  - key: PT0VqSRn
+    name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: M1jkFdRd
+    name: Envelope Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bp2vvcRk
+    name: Inverted Envelope Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 1RA0Be8e
+    name: Gate Delay Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0Iafo5Bu
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

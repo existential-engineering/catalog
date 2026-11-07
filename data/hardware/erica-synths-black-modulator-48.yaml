@@ -1,0 +1,112 @@
+id: JAacLT8JV3rQTw6L0ndwJ
+name: Black Modulator
+manufacturer: erica-synths
+primaryCategory: modular
+categories:
+  - discontinued
+  - analog
+  - noise
+  - utility
+hp: 10
+url: https://www.ericasynths.lv/black-modulator-48/
+description: Erica Synths Black Modulator is a fully analogue modulation and noise source.
+details: |-
+  The Black Modulator is a fully analogue modulation and noise source combining three circuits in 10HP. An LFO and audio frequency oscillator offers three simultaneous waveform outputs, a Zener diode based noise generator covers three noise flavours, and a clockable sample and hold sits alongside them.
+
+  The oscillator carries sine, triangle and pulse outputs at once, and an LFO and audio range switch moves it between 0,2Hz to 25Hz for modulation and 18Hz to 750Hz for audible tones. Output level swings between -5V and +5V.
+
+  The noise generator produces massive, full spectrum white noise at 10V peak to peak, with a pink noise filter and a noise crush knob. Turning the crush control fades the crushed noise output from 1 bit noise down to individual random trigger bursts, which makes the noise section a source of rhythmic events as well as hiss.
+
+  The sample and hold circuit is built around a rare, high quality S&H chip and has its own CV and clock inputs, accepting up to 20V peak to peak. Any of the module's own sources or an external voltage can be sampled.
+
+  Erica Black series are high-end modules with unique functionality. Only the highest quality components are used and all inputs and outputs are protected against undesired overvoltage. The panel is 10HP wide at a depth of 25mm, and power draw is 34mA on the positive rail against 28mA on the negative one.
+specs: |-
+  - LFO with sine, triangle and pulse outputs
+  - LFO/Audio range switch
+  - Zener diode-based noise generator for massive, full spectrum white noise
+  - Pink noise filter
+  - Noise crush knob and crushed noise output, fade from 1 bit noise to individual random trigger bursts
+  - Clockable sample and hold circuit
+  - S&H circuit based on rare, high quality S&H chip
+  - S&H CV and clock inputs
+  - LFO frequency 0,2Hz - 25Hz
+  - Audio rate frequency 18Hz - 750Hz
+  - LFO output level -5V - +5V
+  - Noise output level 10Vptp
+  - S&H CV input level up to 20Vptp
+  - Power consumption +34mA, -28mA
+  - Module width 10HP
+  - Module depth 25mm
+io:
+  - key: frnBeWWC
+    name: LFO Sine Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: dknft8NE
+    name: LFO Triangle Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: G3Wt6bYZ
+    name: LFO Pulse Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Fp87SkOq
+    name: Noise Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: PU3B0Nxh
+    name: Crushed Noise Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: cNTbxLFa
+    name: S&H CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Y4ouGHQi
+    name: S&H Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: dtCS5X7B
+    name: S&H Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wOwnKfyT
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

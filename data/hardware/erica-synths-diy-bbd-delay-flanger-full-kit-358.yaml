@@ -1,0 +1,93 @@
+id: cDspbLWVUIkUfddRxeYz2
+name: DIY BBD Delay/Flanger (Full kit)
+manufacturer: erica-synths
+primaryCategory: delay
+categories:
+  - discontinued
+  - modular
+  - effect
+  - flanger
+capabilities:
+  - delay
+  - flanger
+  - filter
+  - overdrive
+hp: 14
+url: https://www.ericasynths.lv/diy-bbd-delay-flanger-full-kit-358/
+description: Erica Synths DIY BBD Delay/Flanger is one of the few BBD (bucket
+  brigade delay) chip based DIY modules. The module is designed to provide
+  variety of effects from flanger to delays with adjustable flavours and plenty
+  of modulation possibilities.
+details: |-
+  Erica Synths' DIY BBD Delay/Flanger is built around a 4092 stage bucket brigade delay chip, which makes it one of the few DIY eurorack modules to use that approach. Delay times reach up to 300 ms, and the circuit covers the range from flanging through to short delays.
+
+  A built in LFO with a selectable shape handles modulation duty and is also available on a dedicated LFO output. Delay time can be modulated from elsewhere in the system through a CV input with its own attenuator.
+
+  The feedback path carries two customizable overdrive flavours and breaks out to Send and Return connectors, so external effects can be applied to the feedback signal. A low pass filter with selectable cutoff sits on the output, and a dedicated Wet output is available alongside it.
+
+  At maximum feedback settings the module falls into self oscillation, which turns it into an experimental sound source rather than an effect.
+
+  The module occupies 14 HP of panel space and is 45 mm deep, and it was sold as a full DIY kit.
+specs: |-
+  - 4092 stage BBD
+  - Max delay time 300 ms
+  - Audio output amplitude 10V ptp
+  - CV amplitude (full span) -5V to +5V
+  - Delay time CV input with an attenuator
+  - Feedback Send-Return circuit for external effects
+  - Built in LFO with selectable shape and dedicated output
+  - Two customizable feedback overdrive flavours
+  - LP filter on the output with selectable cutoff
+  - Dedicated Wet output
+  - Panel width 14 HP
+  - Module depth 45 mm
+  - Power consumption 30mA@+12V, 20mA@-12V
+io:
+  - key: AY1sJNQo
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Top
+  - key: ahFslC7b
+    name: Delay Time CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: sDrgncef
+    name: LFO Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VXmqPXxH
+    name: Feedback Send
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: sRiohkv0
+    name: Feedback Return
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ixUpVwRG
+    name: Wet Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

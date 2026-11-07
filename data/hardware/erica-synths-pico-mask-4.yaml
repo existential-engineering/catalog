@@ -1,0 +1,71 @@
+id: qv-A3I3Z65sbs1SMOxQ8M
+name: Pico Mask
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - discontinued
+  - modular
+hp: 3
+url: https://www.ericasynths.lv/pico-mask-4/
+description: Erica Synths Pico Mask is an advanced random CV signal generator
+  that generates sample and hold CV signal within user defined mask.
+details: |-
+  Pico MASK is an advanced random CV signal generator that produces a sample and hold CV signal within a user defined mask. Two CV inputs set the boundaries of that area and two manual controls define the sample and hold parameters, which is what gives a certain amount of control over randomness.
+
+  An external sample and hold trigger input sets the rate at which new values are taken, and two selectable CV distribution modes change how values fall within the mask. LEDs indicate the incoming trigger and the output CV.
+
+  Pico MASK can play a key role in self-generating music and also works as a CV processor, a waveshaper and a bitcrusher.
+
+  The module is part of the Pico Series, Erica Synths' effort to fit substantial functionality into an affordable 3HP panel. It is 3HP wide and 35mm deep, handling CV from -5V to +5V in and out.
+specs: |-
+  - User defined S&H area with 2 CV inputs
+  - External S&H trigger
+  - Two manual controls to define S&H parameters
+  - 2 selectable CV distribution modes
+  - S&H trigger in and output CV control LEDs
+  - Incoming CV amplitude -5V, +5V
+  - Output CV amplitude -5V, +5V
+  - Power consumption +12mA, -6mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: 54tSjpaN
+    name: CV In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ousxSXqf
+    name: CV In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: s2ZjIOsF
+    name: S&H Trigger
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: TogztbzE
+    name: CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XYOyt9ir
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

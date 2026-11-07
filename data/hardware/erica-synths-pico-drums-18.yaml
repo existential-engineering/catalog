@@ -1,0 +1,76 @@
+id: B0-VXASiIMsPLvVQQ9WVw
+name: Pico Drums
+manufacturer: erica-synths
+primaryCategory: drum-machine
+categories:
+  - discontinued
+  - modular
+  - percussion
+  - sampler
+  - digital
+hp: 3
+url: https://www.ericasynths.lv/pico-drums-18/
+description: Erica Synths Pico DRUM1 module gives you two independent and great
+  sounding drums with versatile control over different parameters and a huge
+  collection of drum samples.
+details: |-
+  Pico DRUM1 gives two independent and great sounding drums with versatile control over different parameters and a large collection of drum samples. Each drum holds 64 samples and has independent control over Pitch, Decay and Level, with a separate trigger input of its own.
+
+  An exclusive switch selects how the two drums interact when they are triggered at the same time, and the mixed drum sounds leave the module on a single audio output. Several Pico Drums can be chained up to build one of the smallest modular drum setups in the modular world.
+
+  A USB interface is provided for uploading user samples, with the sample upload application available for Windows and for macOS on both Apple silicon and Intel machines. Playback is 12 bit at a 44kHz sampling frequency.
+
+  The module is part of the Pico Series, Erica Synths' effort to fit substantial functionality into an affordable 3HP panel. It is 3HP wide and 35mm deep.
+specs: |-
+  - 2 independent drums
+  - 64 samples for each drum
+  - USB interface for user samples upload
+  - Independent control over Pitch, Decay and Level for each drum
+  - Separate triggers for each drum
+  - Audio output of mixed drum sounds
+  - Exclusive switch to select how the two drums interact when triggered at the same time
+  - 12bit resolution, 44kHz sampling frequency
+  - Power consumption +35mA, -15mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: aZMSWIVz
+    name: Trigger 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: r8dQ64Q4
+    name: Trigger 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tKk6QRwX
+    name: Audio Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VgND4j19
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b-micro
+    maxConnections: 1
+    position: Top
+  - key: si7KAjxj
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

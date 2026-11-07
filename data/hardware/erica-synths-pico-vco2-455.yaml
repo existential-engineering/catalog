@@ -1,0 +1,74 @@
+id: 02zEXJB0KpLItPWI-TtP4
+name: Pico VCO2
+manufacturer: erica-synths
+primaryCategory: synthesizer
+categories:
+  - modular
+  - analog
+hp: 3
+url: https://www.ericasynths.lv/pico-vco2-455/
+prices:
+  - amount: 100
+    currency: EUR
+    term: perpetual
+description: Analogue VCO in 3hp.
+details: |-
+  Pico VCO2 is a full analogue oscillator with good tracking over eight octaves, in a 3HP panel. Combine two of them, add some PWM, and the result is the sound of a real analogue beast.
+
+  The panel carries manual TUNE and PWM controls plus a plus or minus one octave switch, with a 1V/oct input for pitch and a separate CV input for pulse width modulation that takes -5V to +5V over its full span.
+
+  Pulse and triangle waveforms are available at their own outputs, at an amplitude of -5V to +5V. The inputs are protected against overvoltage and the module is protected against a reverse PSU connection. It is 3HP wide and 35mm deep and draws +21mA and -19mA from the bus.
+specs: |-
+  - Manual TUNE and PWM controls
+  - Plus or minus 1 octave switch
+  - 1V/oct input with good tracking across 8 octaves
+  - PWM CV input
+  - Pulse and triangle waveform outputs
+  - Input protection against overvoltage
+  - Protection against reverse PSU connection
+  - Output signal amplitude -5V to +5V
+  - PWM CV input (full span) -5V to +5V
+  - Power consumption +21mA, -19mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: 8fGQsE3e
+    name: 1V/Oct Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Wsa6wa2W
+    name: PWM CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: m3IomBPA
+    name: Pulse Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: NHMnG4Nh
+    name: Triangle Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: caW9uzj3
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

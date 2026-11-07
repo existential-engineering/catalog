@@ -1,0 +1,73 @@
+id: cbtZhyjpiERTpKDcYjkE9
+name: EDU DIY Sequencer
+manufacturer: erica-synths
+primaryCategory: sequencer
+categories:
+  - modular
+capabilities:
+  - sequencing
+url: https://www.ericasynths.lv/edu-diy-sequencer-2131/
+prices:
+  - amount: 65
+    currency: EUR
+    term: perpetual
+description: Compact, yet versatile 5 step sequencer.
+details: |-
+  Newcomers to DIY synthesizer building often run into the same issue: a first VCO goes up on a breadboard, a good while goes into troubleshooting the stubborn thing, and then there is nothing to actually control it with. For an established modular setup that still lacks a simple, hands-on sequencer the answer is the same module.
+
+  This is a compact, yet versatile 5 step sequencer with adjustable sequence length, per step gate status and adjustable output range. It runs from both an internal and an external clock and has a reset input for more complex sequences when several sequencers are chained up. Clocked at audio rate it also works as a waveshaper.
+
+  Erica Synths and Moritz Klein developed a series of educational DIY kits under the brand name mki x es.EDU with one specific goal in mind: to teach people with little-to-no prior experience how to design analog synthesizer circuits from scratch. What arrives in the box is not simply meant to be soldered together and then disappear in a rack. Instead the kit walks the builder through the circuit design process step by step, explaining every choice that was made and how it impacts the finished module.
+
+  In total nine kits were developed to build a fully-featured modular monosynth: a sequencer, a VCO, a wavefolder, a noise/S&H module, a mixer, a VCF, an envelope generator, a dual VCA, and an output stereo mixer with a headphone amplifier. An affordable eurorack case with a DIY PSU is part of the series as well.
+
+  Each kit comes with an extensive user manual of 40 or more pages, downloadable separately, that dives deep into both the electronics behind the circuit and the fundamental principles of sound synthesis.
+specs: |-
+  - 5 steps
+  - Adjustable sequence length
+  - Per step gate status
+  - Adjustable output range
+  - Runs from an internal or an external clock
+  - Reset input for chaining several sequencers
+  - Works as a waveshaper when clocked at audio rate
+io:
+  - key: U3Kyl0lQ
+    name: Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JDQnHjon
+    name: Reset Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: z6MQ2WfH
+    name: CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AhNoO1w9
+    name: Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 78QOVGth
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

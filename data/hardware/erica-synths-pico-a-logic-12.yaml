@@ -1,0 +1,84 @@
+id: BuMtqWamefPDPXfIVZTIw
+name: Pico A Logic
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - discontinued
+  - modular
+hp: 3
+url: https://www.ericasynths.lv/pico-a-logic-12/
+description: Erica Synths Pico A LOGIC module is our CERN Hadron Collider for
+  CVs! It takes two incoming CVs and outputs momentary SUM and DIFFERENCE of
+  both CVs as well as follows curves MAXIMUM and MINIMUM values of both CVs.
+details: |-
+  Pico A LOGIC is an analogue CV combiner. It takes two incoming CVs and outputs the momentary SUM and DIFFERENCE of both, while also following the curves of the MAXIMUM and MINIMUM values of the two inputs. All four outputs are available simultaneously, each with its own signal control LED.
+
+  The inputs accept audio as readily as CV, and patching audio signals into both of them yields distinct ringmodulation and waveshaping effects.
+
+  The module is part of the Pico Series, Erica Synths' effort to fit substantial functionality into an affordable 3HP panel. It is 3HP wide and 35mm deep, and accepts input signals from -10V to +10V.
+specs: |-
+  - 2 CV/audio inputs
+  - Simultaneous outputs of sum, difference, maximum and minimum levels of both inputs
+  - 4 output signal control LEDs
+  - Max input signal level -10V to +10V
+  - Output level up to -12V to +12V
+  - Power consumption +22mA, -5mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: XqRDkIKf
+    name: In 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: DqzHNS2F
+    name: In 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 1yjBcjeG
+    name: Sum Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: u8XQTKj6
+    name: Difference Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: uqxrhe3K
+    name: Maximum Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 46dWKHOK
+    name: Minimum Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: mmQOC7zk
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

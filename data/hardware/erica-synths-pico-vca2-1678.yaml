@@ -1,0 +1,88 @@
+id: 0TsIOEcrphEJzKJwc74vQ
+name: Pico VCA2
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - modular
+hp: 3
+url: https://www.ericasynths.lv/pico-vca2-1678/
+prices:
+  - amount: 85
+    currency: EUR
+    term: perpetual
+description: Compact VCA module.
+details: |-
+  The Erica Synths Pico VCA2 is a compact voltage controlled amplifier module built around the AS3330 chip. It features two independent channels, and the first one comes with a manual offset adjustment that is useful for full span vibrato effects.
+
+  Audio and CV inputs of the first VCA are normalled to the second one, so the module can also be used as a buffered audio splitter. Both VCAs are DC coupled, which means they can be used to control the amplitude of control voltage signals as readily as audio.
+
+  The two VCAs have a linear response and the inputs are protected against overvoltage, with further protection against a reverse PSU connection. At 3HP wide and 35mm deep, the module fits the Pico Series goal of putting full functionality into a very small panel.
+specs: |-
+  - Two independent VCAs with a linear response
+  - Manual bias adjustment on the top VCA
+  - Input normalling between the two channels
+  - DC coupled signal path
+  - Input protection against overvoltage
+  - Protection against reverse PSU connection
+  - CV level (full span) -5V to +10V
+  - Max attenuation -110dB
+  - Power consumption +20mA, -19mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: 8VpIkuWx
+    name: VCA 1 Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: iwOjNLeF
+    name: VCA 1 CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BQTb41GS
+    name: VCA 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: p8YqSzTx
+    name: VCA 2 Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: SXjz62bV
+    name: VCA 2 CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Ko7qtSwo
+    name: VCA 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: o9jnKx64
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

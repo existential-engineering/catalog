@@ -1,0 +1,72 @@
+id: K614t2VRy3CLY4a9sbhHQ
+name: Pico MScale
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - modular
+hp: 3
+url: https://www.ericasynths.lv/pico-mscale-5/
+prices:
+  - amount: 60
+    currency: EUR
+    term: perpetual
+description: Precision scaler for Moog synths.
+details: |-
+  Erica Synths Pico MSCALE, short for Moog Scale, is a precision scaler that adapts the Moog Mother 32 to the eurorack standard 1V/oct control voltage range.
+
+  The Mother 32 needs -5V to +5V on its 1V/oct input to operate over its full range, where the eurorack standard is 0V to +10V. Driving the Mother 32 from a eurorack sequencer therefore means biasing the sequencer output five volts down, and the reverse is true in the other direction, because the Mother 32 sequencer puts out -5V to +5V on its own 1V/oct output and a eurorack VCO expects that biased five volts up.
+
+  MSCALE does exactly that in two sections. The upper one adds 5V to the input voltage and the lower one subtracts 5V from it. Neither section is tied to the Mother 32, so the module also works as a general purpose eurorack precision voltage scaler.
+
+  The circuit is built for high precision and high temperature stability, with a maximum frequency drift over five octaves of plus or minus 4 cents. The panel is 3HP wide and the module is only 25mm deep, which makes it skiff friendly.
+specs: |-
+  - Max frequency drift over 5 octaves +-4 cents
+  - Offset +5V or -5V
+  - Moog to eurorack section
+  - Eurorack to Moog section
+  - High precision, high temperature stability
+  - Skiff friendly, compact design
+  - Power consumption +6mA, -6mA
+  - Module width 3HP
+  - Module depth 25mm
+io:
+  - key: X6kl1ReW
+    name: Moog to Eurorack In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Roex4bRO
+    name: Moog to Eurorack Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: g7jOIo97
+    name: Eurorack to Moog In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: D8JLcayl
+    name: Eurorack to Moog Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6zwLNHyV
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
