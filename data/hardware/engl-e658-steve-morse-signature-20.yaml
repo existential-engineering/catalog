@@ -43,21 +43,78 @@ io:
     maxConnections: 1
     position: Left
   - key: 9OTulvZR
-    name: Speaker Output
+    name: Speaker Output 1 (8 or 16 Ohm)
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
     position: Right
+    description: "Left jack: one 8 to 16 Ohm cabinet alone, or one of two 16 Ohm cabinets"
+  - key: jF8VdNav
+    name: Speaker Output 2 (16 Ohm)
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: Second jack, used with the first for two 16 Ohm cabinets
   - key: xcI5ix6q
     name: Headphone Output
     signalFlow: output
     category: audio
     type: headphone
+    connection: 1/8-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Right
+  - key: z9rCZLV8
+    name: FX Loop Send
+    signalFlow: output
+    category: audio
+    type: insert
     connection: 1/4-inch
     maxConnections: 1
     position: Right
+  - key: vi0CKHyJ
+    name: FX Loop Return
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Ulup1Oik
+    name: IR Balanced Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+    description: Balanced cabinet-simulated output from the IR loader
+  - key: fGEEF8zp
+    name: Footswitch Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Right
+    description: Clean/Lead and Gain Boost switching with a dual TRS footswitch (ENGL Z4)
+  - key: mA4QKV4z
+    name: USB Port
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+    description: IR loading and firmware over USB
   - key: fb7GSfX5
     name: MIDI In
     signalFlow: input

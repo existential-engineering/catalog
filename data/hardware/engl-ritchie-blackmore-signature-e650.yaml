@@ -71,28 +71,65 @@ io:
     position: Right
   - key: GtW5ka2N
     name: S.A.C. Serial Amp Control
-    signalFlow: bidirectional
+    signalFlow: input
     category: digital
     type: proprietary
     connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
+    description: Serial Amp Control, ENGL's proprietary protocol over a stereo
+      1/4-inch cable from the Z-9 footswitch
   - key: I7HVEPmo
-    name: Speaker Output 1 (4-16 Ohm)
+    name: Speaker Output 4 Ohm 1
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
     position: Right
+    description: "One of two 4 Ohm jacks wired in parallel: one 4 Ohm cabinet, or
+      two 8 Ohm cabinets across both"
   - key: 2TDIzyJ2
-    name: Speaker Output 2 (8-16 Ohm)
+    name: Speaker Output 4 Ohm 2
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
     position: Right
+    description: "One of two 4 Ohm jacks wired in parallel: one 4 Ohm cabinet, or
+      two 8 Ohm cabinets across both"
+  - key: kQWhB3pf
+    name: Speaker Output 8 Ohm 1
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: "One of two 8 Ohm jacks wired in parallel: one 8 Ohm cabinet, or
+      two 16 Ohm cabinets across both"
+  - key: 47RZdimU
+    name: Speaker Output 8 Ohm 2
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: "One of two 8 Ohm jacks wired in parallel: one 8 Ohm cabinet, or
+      two 16 Ohm cabinets across both"
+  - key: Kktggh8z
+    name: Speaker Output 16 Ohm
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: Single 16 Ohm jack for one 16 Ohm cabinet
   - key: O6eIc2YE
     name: Mains Input
     signalFlow: input

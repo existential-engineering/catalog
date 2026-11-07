@@ -65,21 +65,45 @@ io:
     maxConnections: 1
     position: Right
   - key: 3uYjvuma
-    name: Speaker Output 4 Ohm
+    name: Speaker Output 4 Ohm 1
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
     position: Right
+    description: "One of two 4 Ohm jacks wired in parallel: one 4 Ohm cabinet, or
+      two 8 Ohm cabinets across both"
+  - key: f53X6OPX
+    name: Speaker Output 4 Ohm 2
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: "One of two 4 Ohm jacks wired in parallel: one 4 Ohm cabinet, or
+      two 8 Ohm cabinets across both"
   - key: gsNMkIRN
-    name: Speaker Output 8 Ohm
+    name: Speaker Output 8 Ohm 1
     signalFlow: output
     category: audio
     type: speaker-level
     connection: 1/4-inch
     maxConnections: 1
     position: Right
+    description: "One of two 8 Ohm jacks wired in parallel: one 8 Ohm cabinet, or
+      two 16 Ohm cabinets across both"
+  - key: JyjoIO1g
+    name: Speaker Output 8 Ohm 2
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: "One of two 8 Ohm jacks wired in parallel: one 8 Ohm cabinet, or
+      two 16 Ohm cabinets across both"
   - key: bmmgtkaE
     name: Speaker Output 16 Ohm
     signalFlow: output
@@ -88,6 +112,7 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Right
+    description: Single 16 Ohm jack for one 16 Ohm cabinet
   - key: 5nR3pERm
     name: Dual Footswitch Jack
     signalFlow: input
@@ -99,11 +124,15 @@ io:
   - key: HLqb4UPk
     name: S.A.C. Serial Amp Control Port
     signalFlow: input
-    category: audio
-    type: expression
-    connection: proprietary
+    category: digital
+    type: proprietary
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
     maxConnections: 1
     position: Right
+    description: Serial Amp Control, ENGL's proprietary protocol over a stereo
+      1/4-inch cable from the Z-9 footswitch
   - key: GfaWTj01
     name: Mains Power Input
     signalFlow: input

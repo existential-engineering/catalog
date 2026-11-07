@@ -57,22 +57,38 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Left
+  - key: iHJVMJvk
+    name: Footswitch 1 (Clean/Lead, Gain Lo/Hi)
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Right
+    description: Dual footswitch on a stereo jack, also fed by the Z-11 MIDI switcher
+  - key: eGrTTIdk
+    name: Footswitch 2 (Preamp Defeat, Contour)
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    connectorDetail:
+      - TRS
+    maxConnections: 1
+    position: Right
+    description: Dual footswitch on a stereo jack, also fed by the Z-11 MIDI switcher
   - key: MrPaoC0J
-    name: FX Loop Send Left
+    name: Instrument Output / FX Loop Send
     signalFlow: output
     category: audio
     type: insert
     connection: 1/4-inch
     maxConnections: 1
     position: Right
-  - key: N6oprW7D
-    name: FX Loop Send Right
-    signalFlow: output
-    category: audio
-    type: insert
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Right
+    description: "One jack: the preamp signal for an FX loop, or a guitar-level
+      instrument output when Preamp Defeat is on"
   - key: rvh3R9xE
     name: FX Loop Return Left
     signalFlow: input
@@ -121,6 +137,15 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Right
+  - key: WqEg9lth
+    name: Auxiliary Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+    description: Rear supplementary preamp input in series with the front input
   - key: 6SkGJSgV
     name: Mains Power Input
     signalFlow: input
