@@ -1,0 +1,70 @@
+id: YuKT68hOvlhB0S4i582s7
+name: Black EG2
+manufacturer: erica-synths
+primaryCategory: modular
+categories:
+  - utility
+hp: 8
+url: https://www.ericasynths.lv/black-eg2-2623/
+prices:
+  - amount: 150
+    currency: EUR
+    term: perpetual
+description: Envelope which can turn triggers into gates.
+details: |-
+  The Erica Synths Envelope Generator 2 is a re-triggerable, looping envelope generator with some unconventional features that are very useful for experimental setups. It produces a full exponential ADSR shape and can be retriggered from the input.
+
+  What sets the Black EG2 apart from other envelope generators is its optional GATE LENGTH setting, which allows for generating full ADSR envelopes even if a short trigger is used at the input. An internal gate generator with adjustable gate length stands in for the sustain portion a trigger cannot supply.
+
+  The gate length is both manual and CV controlled, which allows for using this envelope generator in compact modular setups controlled by trigger sequencers only. In LOOP mode the module outputs a full ADSR envelope instead of a classical AD envelope.
+
+  The panel is 8HP wide at a depth of 25mm. Gate inputs accept 3 to 10V, the envelope swings 0 to 10V, stage times reach 7,4 seconds of attack, 19 seconds of decay and 17 seconds of release, and the internal gate runs up to 3,7 seconds. Power draw is 29mA on the +12V rail against 33mA on the -12V rail.
+specs: |-
+  - Gate input level 3...10V
+  - Envelope amplitude 0...10V
+  - Attack time 0...7,4"
+  - Decay time 0...19"
+  - Sustain level 0...10V
+  - Release time 0...17"
+  - Gate length 0...3,7"
+  - Panel width 8HP
+  - Module depth 25mm
+  - Power consumption 29mA@+12V, 33mA@-12V
+  - Full exponential ADSR envelope
+  - Retriggering option
+  - Internal gate generator with adjustable gate length
+  - Manual and voltage-controlled gate length
+  - Full ADSR looping mode
+io:
+  - key: QknR2a0G
+    name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Xic8MvXL
+    name: Gate Length CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Dm21139s
+    name: Envelope Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Q9eNZqau
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

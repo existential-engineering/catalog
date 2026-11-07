@@ -1,0 +1,74 @@
+id: oIp-0qSxsJy8MlrAAe_K2
+name: Fusion Delay/Flanger/Vintage Ensemble
+manufacturer: erica-synths
+primaryCategory: multi-effect
+categories:
+  - modular
+  - delay
+  - flanger
+  - analog
+capabilities:
+  - delay
+  - flanger
+  - overdrive
+  - filter
+  - stereo-widening
+hp: 20
+url: https://www.ericasynths.lv/fusion-delay-flanger-vintage-ensemble-36/
+prices:
+  - amount: 350
+    currency: EUR
+    term: perpetual
+description: BBD based multifunctional analogue effects module.
+details: |-
+  The Erica Synths Fusion Delay/Flanger/Vintage Ensemble module is a distinct multifunctional analogue effects module that combines BBD chip based effects with an adjustable tube overdrive in the delay output and a feedback path for extra thickness of the sound.
+
+  For more flexibility, lowpass filtering is fully adjustable from none to extreme. A special feature, not found elsewhere in eurorack, is the Vintage Stereo Ensemble, an effect common on vintage synthesizers that creates a moving and thick spatial sound from a monaural tone generator, be it FM, DCO or any other kind. Such a spatial effect is achieved by mixing the dry source with a delayed and lowpass filtered out of phase signal.
+
+  All Fusion modules are configured by default to work with a regular eurorack PSU. Because cold tube heaters have lower resistance, Fusion modules have a significant power consumption peak at startup, when consumption almost doubles for 1 to 2 seconds. This is not a problem with linear PSUs, which have power inertia, but it may cause a switching PSU internal protection to turn the power supply off, so the PSU should have some headroom before multiple Fusion modules are installed.
+
+  The module is 20HP wide and 35mm deep. Delay times reach 20ms on the SHORT setting and 200ms on the LONG setting, with an LFO range of 0.1Hz to 30Hz and an audio input level of up to 20V ptp.
+specs: |-
+  - Audio input signal level up to 20V ptp
+  - Max delay time SHORT setting 20ms
+  - Max delay time LONG setting 200ms
+  - LFO range 0.1Hz to 30Hz
+  - Power supply bipolar +-12V, eurorack standard
+  - Power consumption 35mA@+12V, 170mA@-12V
+  - Start-up power consumption peak of -250mA for a few seconds
+  - 2 BBD chips based multi-FX
+  - Module width 20HP
+  - Module depth 35mm
+io:
+  - key: EqQTVvPb
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: LOOvRWk7
+    name: Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: W9dEisjT
+    name: Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: vV6WnKme
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

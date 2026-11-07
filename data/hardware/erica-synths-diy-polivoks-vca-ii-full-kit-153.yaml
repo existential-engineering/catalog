@@ -1,0 +1,100 @@
+id: hw0Mr21H7v7gI0kMy_f6a
+name: DIY Polivoks VCA II Full kit
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - discontinued
+  - modular
+  - analog
+  - gain
+hp: 8
+url: https://www.ericasynths.lv/diy-polivoks-vca-ii-full-kit-153/
+description: Erica Synths DIY Polivoks-inspired VCA is 35mm deep, skiff
+  friendly, has solid mechanical construction and doesn’t require wiring.
+details: |-
+  The Polivoks VCA has a distinctive architecture, two differential opamp VCAs in series built around the Russian K118UD1B integrated circuits, one taking LFO control and the other ADSR control over signal amplitude independently of each other.
+
+  Control voltage to attenuation behaviour in this circuit is neither linear nor logarithmic. That response is kept authentic to the original Polivoks, which is the point of the design.
+
+  Most of the surrounding circuit was improved by Erica Synths for compatibility with eurorack signal and CV standards, higher dynamic range, better reliability, lower noise, acceptance of higher signal levels, consistent behaviour, self-tuning of two internal offsets and higher linearity. The heart of the VCA is unchanged.
+
+  The audio signal path was also redesigned so the module works as two independent VCAs or as two VCAs in series in the manner of the original Polivoks, with a summed signal output alongside them at a lower signal gain. CV level is adjustable for each VCA.
+
+  Gain is 1.2, CV level spans -10V to +10V and attenuation at 0V CV is 80dB. The panel is 8HP wide and 35mm deep, skiff friendly, with solid mechanical construction and no wiring required during the build.
+specs: |-
+  - Single or Dual VCA mode
+  - CV level adjustment for each VCA
+  - Summed audio output at lower signal gain
+  - Skiff-friendly design
+  - VCA gain 1.2
+  - CV level -10V to +10V
+  - Attenuation at 0V CV 80dB
+  - Russian K118UD1B differential opamp ICs
+  - Panel width 8HP
+  - Module depth 35mm
+  - Power consumption 24mA@+12V, 18mA@-12V
+io:
+  - key: usOSQcaB
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Top
+  - key: sVfUwpRo
+    name: Audio Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: qZ0UE7iL
+    name: Audio Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gq8iDKHn
+    name: CV Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: sc7tTI2e
+    name: CV Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nryFkeoo
+    name: Audio Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: kZE3ymUs
+    name: Audio Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: S4oPTVY1
+    name: Summed Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

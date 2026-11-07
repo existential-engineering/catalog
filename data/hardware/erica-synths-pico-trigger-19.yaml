@@ -1,0 +1,95 @@
+id: sSy3RtteMC7mkmn-xU_3L
+name: Pico Trigger
+manufacturer: erica-synths
+primaryCategory: sequencer
+categories:
+  - modular
+capabilities:
+  - sequencing
+hp: 3
+url: https://www.ericasynths.lv/pico-trigger-19/
+prices:
+  - amount: 100
+    currency: EUR
+    term: perpetual
+description: Clock & trigger generator.
+details: |-
+  The Erica Synths Pico Trigger module provides the master clock for a Pico system and generates up to 16 step patterns across four triggers, from simple clock divider patterns through to polyrhythmic patterns of differing step length for triggering drums.
+
+  The clock is selectable between internal and external, the internal one running from 20BPM to 420BPM, with adjustable shuffle. A clock output passes it on to the rest of the system, and four trigger outputs carry the patterns, at 5V and 10ms per trigger.
+
+  Eight patterns are held in memory. Patterns are designed in a custom web interface, or in desktop software for Windows and macOS, and then uploaded to the module through the 3,5mm CLK input jack, so no data connector is needed.
+
+  The panel is 3HP wide and the module is 35mm deep, part of the Pico Series brief Erica Synths set itself, to fit superior synth functionality into 3HP at an affordable price.
+specs: |-
+  - Selectable internal clock or external clock
+  - Clock output
+  - Polyrhythmic patterns
+  - Adjustable shuffle
+  - 4 trigger outputs
+  - 8 pattern memory
+  - Web-based pattern design interface
+  - Pattern upload via CLK input
+  - Clock rate 20BPM to 420BPM
+  - Trigger amplitude 5V
+  - Trigger duration 10ms
+  - Power consumption +20mA, -5mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: izY9rxcr
+    name: CLK In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: IU59VR9U
+    name: Clock Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: SvUf5j9X
+    name: Trigger Out 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Xya11q3I
+    name: Trigger Out 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: h3ROgclr
+    name: Trigger Out 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 4Hm2BIQI
+    name: Trigger Out 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BS55CdQg
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

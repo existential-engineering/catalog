@@ -1,0 +1,75 @@
+id: iDTCLmj3UXsjsbvsayIP_
+name: Hexinverter Mutant BD9
+manufacturer: erica-synths
+primaryCategory: drums
+categories:
+  - modular
+  - analog
+  - percussion
+  - kick
+capabilities:
+  - distortion
+url: https://www.ericasynths.lv/hexinverter-mutant-bd9-3329/
+prices:
+  - amount: 180
+    currency: EUR
+    term: perpetual
+description: Bassdrum with more power, grit and flexibility.
+details: |-
+  A combination of voltage controlled distortion and the flavour of the TR-909. Hexinverter's take on that bass drum in modular format gives it more power, grit and flexibility. The primary analog VCO offers classic 909-esque sinusoidal bassdrums and can also be switched to generate a square wave bassdrum.
+
+  The pitch of the VCO spans several octaves, from about 30Hz to 240Hz, and can be modulated by voltage control. A novel pitch decay circuit adjusts the duration and the amount of the pitch modulation envelope applied to the bassdrum, from short blips to exaggerated tom-like sweeps.
+
+  The amplitude decay sets the length of the bassdrum, from short punchy kicks to massive booms, and is voltage controlled with a snappy CV response time, so the duration of each kick can be modulated per step. The click generator is responsible for the attack intensity, with a fair amount of circuitry devoted to that subtle punch at the beginning of the kick, and its level is adjustable up to a fairly dramatic extreme.
+
+  A square wave sub-oscillator derived from the primary oscillator's pitch can be mixed in, manually or by voltage control, for anything from subtle deepness to extreme timbre changes. The overall timbre varies with the DRIVE control, from warm analog bassdrums at low settings to speaker-shattering overdriven sounds at high settings, and the output carries modular level signals rather than the line level of many classic percussive devices.
+specs: |-
+  - Primary analog VCO, sinusoidal or square wave bassdrum
+  - Pitch range about 30Hz to 240Hz, voltage controllable
+  - Pitch decay circuit with adjustable duration and amount
+  - Voltage controlled amplitude decay with snappy CV response time
+  - Click generator for adjustable attack intensity
+  - Square wave sub-oscillator with manual and voltage controlled mixing
+  - DRIVE control for timbre
+  - Modular level output
+io:
+  - key: eOMtGcnz
+    name: Pitch CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: iG4Tuj93
+    name: Amplitude Decay CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: sYL5kqS6
+    name: Sub-oscillator Mix CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fLfNeGlI
+    name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BQrQI2ls
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

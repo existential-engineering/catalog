@@ -1,0 +1,83 @@
+id: d-IHo2Yc1CGyKecIJ_d2K
+name: Pico RND
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - modular
+  - noise
+hp: 3
+url: https://www.ericasynths.lv/pico-rnd-29/
+prices:
+  - amount: 80
+    currency: EUR
+    term: perpetual
+description: LFO & random source.
+details: |-
+  Erica Synths Pico RND is a combined LFO and random source in 3HP, meant to bring a degree of uncertainty to a modular setup.
+
+  The LFO produces sine and pulse waves with a manually controlled frequency from 0,1Hz to 20Hz, and its rate can be synchronised to an external clock rather than set by hand.
+
+  Alongside it sits a white noise generator and a sample and hold CV output, which can be clocked internally or from the same external clock. The pulse wave can be given a random duty cycle, and a separate random trigger output fires irregular events.
+
+  LFO, sample and hold and noise outputs all reach 10Vptp. The panel is 3HP wide and the module is 35mm deep, part of the Pico Series brief Erica Synths set itself, to fit superior synth functionality into 3HP at an affordable price.
+specs: |-
+  - Sine and pulse LFO with manually controlled frequency
+  - White noise generator
+  - LFO rate synchronization to the external clock
+  - Internally and externally clocked S&H CV output
+  - Random trigger output
+  - LFO frequency range 0,1Hz to 20Hz
+  - Noise output amplitude 10Vptp
+  - LFO and S&H output amplitude 10Vptp
+  - Power consumption +28mA, -15mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: fVr7xb2u
+    name: Clock In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: iN2PdQz0
+    name: LFO Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hG5SMG4u
+    name: Noise Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6GeFzy2y
+    name: Sample and Hold CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: xg7Rq83I
+    name: Random Trigger Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Krq8EjWV
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

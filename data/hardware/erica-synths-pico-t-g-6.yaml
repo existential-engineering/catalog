@@ -1,0 +1,72 @@
+id: En_Jr1FvYM41lQK0NWA7D
+name: Pico T→G
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - discontinued
+  - modular
+hp: 3
+url: https://www.ericasynths.lv/pico-t-g-6/
+description: Erica Synths Pico Trigger to Gate module is one of the few modules
+  around that converts triggers to gates using smart algorithms that enhance
+  your musical compositions and rhythm patterns.
+details: |-
+  The Erica Synths Pico Trigger to Gate module converts triggers into gates, one of few modules to do so, using algorithms meant to serve a composition rather than simply stretch a pulse.
+
+  That turns a simple trigger sequencer into a musical pattern generator. The creation of the module was inspired by the compositions of Ryoji Ikeda.
+
+  Gate length is set manually or by control voltage, and so is the probability that a gate is skipped altogether, which is where the rhythmic variation comes from. The module runs in a triggered mode or in an independent mode.
+
+  Incoming triggers are expected at 0V to +5V, tolerating up to +10V, with a minimum length of 1ms, and output gates run 0V to +5V. LEDs indicate the incoming trigger and the output gate. The panel is 3HP wide and the module is 35mm deep.
+specs: |-
+  - Manually and CV controlled gate length
+  - Manually and CV controlled gate skipping probability
+  - Triggered and Independent modes
+  - Incoming trigger in and output gate control LEDs
+  - Incoming trigger amplitude 0V to +5V (max +10V)
+  - Min incoming trigger length 1ms
+  - Output gate amplitude 0V to +5V
+  - Power consumption +14mA, -9mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: jWMq6Oy6
+    name: Trigger In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6K8LARS2
+    name: Gate Length CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6u53j9KV
+    name: Probability CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: qvXy8vDP
+    name: Gate Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 7Us3sZYF
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

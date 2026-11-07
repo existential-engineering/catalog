@@ -1,0 +1,67 @@
+id: yPgnvtdHpeBuqJRZ3118h
+name: Pico Modulator
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - modular
+hp: 3
+url: https://www.ericasynths.lv/pico-modulator-8/
+prices:
+  - amount: 110
+    currency: EUR
+    term: perpetual
+description: Envelope and VCA combo.
+details: |-
+  Erica Synths Pico Modulator combines an envelope generator and a VCA in one 3HP eurorack module, with straightforward controls aimed at live performance.
+
+  The envelope generator runs in selectable AD or ASR modes and in either linear or logarithmic shapes. A loop mode cycles the envelope without a Gate signal at the input, which turns the module into a free running modulation source.
+
+  Attack and decay or release times each run from 0 to 4 seconds, stretching to 8 seconds in loop mode, and the envelope output swings from 0V to 10V. The VCA is a linear design with a gain of 1, attenuating by -80dB with 0V at its CV input.
+
+  LEDs indicate the incoming gate and the output signal level. The panel is 3HP wide and the module is 35mm deep, the result of the Pico Series brief Erica Synths set itself, to fit superior synth functionality into 3HP at an affordable price.
+specs: |-
+  - Attack time 0 to 4 seconds (8 seconds in loop mode)
+  - Decay/Release time 0 to 4 seconds (8 seconds in loop mode)
+  - EG amplitude 0V to 10V
+  - VCA attenuation level (0V CV in) -80dB
+  - VCA gain 1
+  - Selectable AD or ASR modes
+  - Selectable linear or logarithmic envelope shapes
+  - Loop mode without Gate in
+  - Gate in and output signal control LEDs
+  - Power consumption +28mA, -5mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: YHVmY4Gc
+    name: Gate In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bLmQOVzV
+    name: CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Yx5V0oxf
+    name: Envelope Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: eCzCDJnj
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,93 @@
+id: R_4vRWYawnIjahGk0rwMB
+name: Black LPG
+manufacturer: erica-synths
+primaryCategory: filter
+categories:
+  - modular
+  - analog
+capabilities:
+  - filter
+  - overdrive
+hp: 10
+url: https://www.ericasynths.lv/black-lpg-1220/
+prices:
+  - amount: 170
+    currency: EUR
+    term: perpetual
+description: Versatile LPG with envelope.
+details: |-
+  Erica Synths' Black LPG is their take on the Lowpass Gate idea, designed from scratch around a 2nd order lowpass VCF (the original Buchla lowpass gate used a 1st order VCF) and a VCA combo, with a distinct resonance circuit on top.
+
+  Voltage control over VCF cutoff frequency and VCA offset, voltage control over the mode (VCF, VCF+VCA or VCA), and a built in decay envelope generator make it a versatile module for sound shaping in any modular setup.
+
+  Three vactrols drive the 2nd order filter. Resonance depth is set manually, and a resonance overdrive switch is available for a more aggressive character.
+
+  The built in decay envelope generator reaches a maximum decay time of 4 seconds, set manually or by voltage, and the envelope itself is available at a CV output for use elsewhere in the system.
+
+  The panel is 10HP wide and the module is 35mm deep, with a skiff friendly design. Audio output amplitude is 10Vptp, CV range is -5V to +5V across the full span, and power consumption is 44mA at +12V and 45mA at -12V.
+specs: |-
+  - Three vactrols for 2nd order VCF
+  - VCF/VCF+VCA/VCA modes
+  - Manual and voltage controlled cutoff/offset
+  - Manually and voltage controlled mode selection
+  - Manual resonance depth control
+  - Resonance overdrive switch
+  - Built in decay envelope generator
+  - Manually and voltage controlled decay time
+  - Envelope CV output
+  - Skiff-friendly design
+  - Audio output amplitude 10Vptp
+  - CV range (full span) -5V to +5V
+  - Max decay time 4 seconds
+  - Panel width 10HP
+  - Module depth 35mm
+  - Power consumption 44mA@+12V, 45mA@-12V
+io:
+  - key: WhwgCek0
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VEon3qpJ
+    name: Cutoff/Offset CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: jdiGw9uk
+    name: Mode CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: T6uesacx
+    name: Decay CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: sxo7tv0Y
+    name: Envelope CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: OhTRbtkv
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Top

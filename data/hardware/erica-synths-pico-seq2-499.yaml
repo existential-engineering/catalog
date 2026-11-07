@@ -1,0 +1,59 @@
+id: oiR6Fzgt15Duz4RY64avx
+name: Pico SEQ2
+manufacturer: erica-synths
+primaryCategory: sequencer
+categories:
+  - discontinued
+  - modular
+capabilities:
+  - sequencing
+hp: 3
+url: https://www.ericasynths.lv/pico-seq2-499/
+description: Pico SEQ2 is straight-forward, full analogue 4 step
+  sequencer/waveshaper with adjustable sequence length. If you want to have a
+  simple, compact stepped modulation source in your setup, then this is it!
+  Particularly interesting use of the Pico SEQ2 is waveshaping – just apply any
+  audio source to the CLK IN, tweak the knobs and be amazed!
+details: |-
+  Pico SEQ2 is a straightforward, fully analogue four step sequencer with adjustable sequence length, built as a simple and compact stepped modulation source.
+
+  Step count is selectable between two, three and four steps, and each step has its own knob, so a pattern is set by hand rather than programmed.
+
+  The second use the module is known for is waveshaping. Feeding an audio rate signal to the CLK input rather than a clock turns the four steps into a stepped transfer function, and the knobs then shape the waveform.
+
+  The output swings from 0V to +6V. Inputs and output are protected against overvoltage and the module is protected against a reverse PSU connection. The panel is 3HP wide and the module is 35mm deep.
+specs: |-
+  - Up to 4 steps analogue sequencer
+  - Step count selection 2-3-4
+  - Full analogue circuit
+  - Output amplitude 0V to +6V
+  - Input and output protection against overvoltage
+  - Protection against reverse PSU connection
+  - Power consumption +16mA, -12mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: 4Mv5vRNw
+    name: CLK In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: d51rZDuy
+    name: CV Out
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VHv6tErt
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,86 @@
+id: LSMprTqUIloy0dFKvzRDc
+name: Pico VCA
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - discontinued
+  - modular
+hp: 3
+url: https://www.ericasynths.lv/pico-vca-10/
+description: Erica Pico Dual VCA is a simple, reliable LM13700 based linear
+  voltage controlled amplifier that can be configured as two independent VCAs or
+  a stereo VCA with the same CV control.
+details: |-
+  Erica Pico Dual VCA is a simple, reliable linear voltage controlled amplifier built around the LM13700, with two independent VCAs on a 3HP panel.
+
+  CV addressing is configurable, so the pair works either as two independent VCAs with their own control voltages or as a stereo VCA with one CV controlling both channels.
+
+  The VCA 1 input is copied to VCA 2, which is what makes the stereo configuration practical without patching the same source twice or reaching for a multiple.
+
+  Attenuation reaches -80dB with the CV at rest, and diode protection guards the inputs and outputs against overvoltage. The panel is 3HP wide and the module is 35mm deep, part of the Pico Series brief Erica Synths set itself, to fit superior synth functionality into 3HP at an affordable price.
+specs: |-
+  - 2 independent VCAs in one module
+  - VCA1 input copied on VCA2
+  - Configurable CV addressing
+  - Diode protection against input/output overvoltage
+  - Attenuation level -80dB
+  - Power consumption +14mA, -14mA
+  - Module width 3HP
+  - Module depth 35mm
+io:
+  - key: G1M9CFwT
+    name: VCA 1 In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Np8HvkED
+    name: VCA 1 CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8ErbjBZC
+    name: VCA 1 Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UBclFPsQ
+    name: VCA 2 In
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: lPEQbiez
+    name: VCA 2 CV In
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: n9tKHZTb
+    name: VCA 2 Out
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nRanoSZl
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

@@ -1,0 +1,69 @@
+id: A263RetpEWysP7iFCUguu
+name: Black XFade
+manufacturer: erica-synths
+primaryCategory: utility
+categories:
+  - modular
+capabilities:
+  - boost
+hp: 10
+url: https://www.ericasynths.lv/black-xfade-49/
+prices:
+  - amount: 84
+    currency: EUR
+    term: perpetual
+description: Module for smooth cross-fading.
+details: |-
+  Erica Synths Black XFade is a crossfader for audio and CV signals. The fade curve is calculated so that signal amplitude is not lost at any stage of the crossfade, and LEDs give visual feedback on the currently active input.
+
+  The crossfade position can be set by hand or driven by CV. Used with CVs, the module helps to build advanced modulations, and it can also be used to boost CV and audio signals.
+
+  Two inputs each have their own amplifier and attenuator, and an Audio/CV mode switch matches the module to the kind of signal in use.
+
+  Erica Black series are high-end modules with unique functionality. Only the highest quality components are used and all inputs and outputs are protected against undesired overvoltage. Module width was not economised on, design and usability came first, and big knobs are assigned to the functions that make a difference in sound. Together the Erica Black series are a range of modules that make an entire synthesizer.
+
+  The panel is 10HP wide and the module is 25mm deep. Input signal amplitude is up to 20Vptp, crossfade CV amplitude over the full sweep is -5V to +5V, input gain is 2, and power consumption is 35mA on the positive rail and 34mA on the negative rail.
+specs: |-
+  - 2 inputs with amplifiers and attenuators
+  - Manually and CV controlled crossfade
+  - Audio/CV mode switch
+  - Crossfade status indication LEDs
+  - Input signal amplitude up to 20Vptp
+  - Xfade CV amplitude (full sweep) -5V to +5V
+  - Input gain 2
+  - Power consumption +35mA, -34mA
+  - Module width 10HP
+  - Module depth 25mm
+io:
+  - key: cLsdIVik
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Top
+  - key: 1PXFrhFA
+    name: Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ew8CtVTr
+    name: Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 1aJ1D7IA
+    name: XFade CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

@@ -1,0 +1,106 @@
+id: -r5bIewcJac6z2fU8esLV
+name: Hi-Hats D (pins)
+manufacturer: erica-synths
+primaryCategory: hi-hat
+categories:
+  - modular
+  - digital
+  - percussion
+hp: 10
+url: https://www.ericasynths.lv/hi-hats-d-pins-362/
+prices:
+  - amount: 200
+    currency: EUR
+    term: perpetual
+description: Hi-Hats D is Erica Synths take on classical digital hi-hats.
+  Instead of using an integrated circuit DAC chip Hi-Hats D are using 6-bit
+  discrete DAC for that unmistakable crunchy sound. For amplitude shaping
+  samples are passed trough AS3330 based VCA and are controlled with an analog
+  envelope generator for versatile and snappy sound. Extra feature is Open
+  Hi-Hat looping – when it’s on, a certain part of the sample is looped while
+  the envelope decay is on, thus creating distinct, delay-like effect.
+details: |-
+  Hi-Hats D is Erica Synths' take on classical digital hi-hats. In place of an integrated circuit DAC chip it uses a 6-bit discrete DAC, which is where the crunchy character comes from. Amplitude shaping runs the samples through an AS3330 based VCA under the control of an analog envelope generator, for a versatile and snappy sound.
+
+  Open Hi-Hat looping is the extra feature. With it switched on, a section of the sample is looped for as long as the envelope decay runs, which produces a distinct, delay-like effect.
+
+  This is the version with internal connectors. The Erica Synths Drum Sequencer carries connectors for internal Trigger and Accent connections to Erica Synths drum modules, made with six wire ribbon cables and 2x3 connectors similar to eurorack PSU connectors, which saves patch cables in a rack holding several Erica Synths drum modules. Internal connections work only with Erica Synths modules and no other manufacturer's module supports the feature, and a cheaper version without the internal connectors is also offered.
+
+  Tune and Decay each have a panel control and a CV input with an attenuator, there is a VCA response control, a manual trigger button, and accent for better expression.
+
+  Audio output level is -5V to +5V, full span CV level is -5V to +5V, accent CV level is 10V, and trigger level is 5V with a 1ms trigger time. The module is 10HP wide and 45mm deep, and draws 56mA on the +12V rail and 35mA on the -12V rail.
+specs: |-
+  - Audio output level -5...+5V
+  - CV level (full span) -5 - +5V
+  - Accent CV level 10V
+  - Trigger level 5V
+  - Trigger time 1ms
+  - Power consumption 56mA @ +12V, 35mA @ -12V
+  - Module width 10HP
+  - Module depth 45mm
+  - 6-bit discrete DAC
+  - Analog VCA and EG
+  - Tune and Decay controls
+  - CV control with attenuators over Tune and Decay
+  - VCA response control
+  - Open HiHat looping
+  - Manual trigger
+  - Accent for better expression
+  - Internal 2x3 trigger and accent connector for the Erica Synths Drum Sequencer
+io:
+  - key: LuvarQV7
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: JWpJ8S2T
+    name: Internal Trigger and Accent Connector
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: idc
+    maxConnections: 1
+    position: Bottom
+  - key: 0XTIQYeT
+    name: Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: LqGoH90E
+    name: Accent Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fiFQf5u4
+    name: Tune CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: qC9c5Uch
+    name: Decay CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Nkt7nOUS
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
