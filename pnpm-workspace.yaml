@@ -22,9 +22,13 @@ minimumReleaseAgeExclude:
 # safe to drop: comment it out, run `pnpm install --no-frozen-lockfile`, then
 # `pnpm audit` — if the corresponding advisory no longer appears, remove it.
 #
-# - vite >=8.0.16: vitest still resolves vite@8.0.13 by default, which trips
+# - vite >=8.2.4: vitest still resolves vite@8.0.13 by default, which trips
 #   GHSA-fx2h-pf6j-xcff (server.fs.deny bypass) and GHSA-v6wh-96g9-6wx3
-#   (launch-editor NTLMv2 disclosure). Patched in vite 8.0.16.
+#   (launch-editor NTLMv2 disclosure), patched in 8.0.16. Raised to 8.2.4
+#   for GHSA-587h-7wmj-h5pm (launch-editor `fs.existsSync()` bypass on
+#   Windows), which vite <=8.2.3 bundles.
+# - launch-editor >=2.14.2: the same GHSA-587h-7wmj-h5pm, reached directly
+#   through @changesets/cli, whose ^2.14.1 range already admits the fix.
 # - esbuild >=0.28.1: vite/tsx pull esbuild@0.28.0, vulnerable to
 #   GHSA-g7r4-m6w7-qqqr (arbitrary file read via dev server). Patched in 0.28.1.
 # - shell-quote >=1.11.0: @changesets/cli > launch-editor pulls shell-quote
@@ -50,7 +54,8 @@ minimumReleaseAgeExclude:
 # CI workflow's "Verify release tooling can load the workspace" step still
 # guards the load path if a future bump drags the chain back in.
 overrides:
-  vite: ">=8.0.16 <9"
+  vite: ">=8.2.4 <9"
+  launch-editor: ">=2.14.2"
   esbuild: ">=0.28.1"
   shell-quote: ">=1.11.0"
   source-map-js: ">=1.2.2"
