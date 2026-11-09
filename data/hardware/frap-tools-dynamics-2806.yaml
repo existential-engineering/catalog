@@ -1,0 +1,64 @@
+id: xoinlC3syzEjOnyqQR7sx
+name: Dynamics 2806
+manufacturer: frap-tools
+primaryCategory: compressor
+categories:
+  - dynamics
+  - expander
+  - outboard
+  - analog
+capabilities:
+  - compression
+  - expansion
+  - transient-shaping
+  - de-essing
+url: https://frap.tools/products/dynamics-2806/
+prices:
+  - amount: 1115
+    currency: EUR
+    asOf: 2026-11-09
+    source: https://frap.tools
+description: The Dynamics 2806 is a single-VCA mono expander and compressor for
+  the 500-series format, designed to handle a wide dynamic gamut in the most
+  straightforward way. Its independent compressor and expander sidechains both
+  work over that one VCA, with filtering, two sets of time constants and an
+  external sidechain input.
+details: |-
+  The Dynamics 2806 is a single-VCA mono expander and compressor for the 500-series format, built to handle a wide dynamic gamut in the most straightforward way. The compressor reduces gain above a threshold and so narrows the dynamic range; the expander reduces gain below a threshold and so widens it, the behaviour usually called downward expansion.
+
+  The two circuits are independent. In each, the signal feeds a filter set and then an envelope follower, and the resulting control voltage feeds two integrators whose time constants generate two independent sidechains, both acting on the same VCA level. Keeping one VCA stage in the path is a deliberate choice: fewer gain cells mean fewer causes of sound deterioration and a light, responsive architecture.
+
+  The sidechains differ by design. The expander's monitors the VCA input, making it feed-forward, while the compressor's monitors the VCA output, making it feedback, and a switch moves that feedback point pre- or post-makeup for more control over the makeup gain. Both sections can work at once, and the Priority switch lets the expander act only while the compressor is not reducing gain. Two sets of compressor time constants are available, the default sharp and precise, the Classic mode more coloured with audible pumping but less harmonic distortion. The unit is also calibrated to follow the articulation of the incoming sound, moving faster with fast sources and slower with slow ones.
+
+  A versatile sidechain circuit takes a second input that can drive either section, and can be summed with the internal sidechain when routed to the compressor. The signal feeding both detectors is always filtered, the expander through a low-pass and a high-pass and the compressor through the Contour shelf that attenuates the low end, and the Listen switch monitors either sidechain so the filtering can be set by ear. Switched off, the module offers a hard bypass through a relay or an off mode that keeps the signal in the circuit with no active modulation, which retains the VCA's colour.
+
+  The output stage is a discrete current stage feeding a Lundahl LL1585 transformer. Unnecessary decoupling capacitors are left out, with high-end capacitors on the inputs and insert outputs to protect the circuit against a wrong connection such as phantom power or a source with DC offset, and every section runs behind active filter stages on its power rails, which is also part of the maker's stated aim of easy maintenance and a long service life.
+specs: |-
+  - Mono expander and compressor sharing a single VCA stage
+  - Feed-forward expander sidechain from the VCA input, feedback compressor sidechain from the VCA output, switchable pre- or post-makeup
+  - Compressor and expander usable at the same time, with a Priority switch that gives the compressor precedence
+  - Two sets of compressor time constants, a precise default and a Classic mode
+  - Sidechain input that can drive either section, summable with the internal sidechain on the compressor
+  - Sidechain filtering: low-pass and high-pass on the expander, Contour shelf on the compressor
+  - Listen switch to monitor either sidechain
+  - Hard relay bypass or an off mode that keeps the signal in the circuit
+  - Lundahl LL1585 output transformer fed by a discrete output current stage
+  - High-end capacitors on inputs and insert outputs to guard against phantom power or a DC-offset source
+  - Active filter stages on the power rails of every section
+  - 500-series format module: audio I/O and power come from the host 500-series rack
+io:
+  - key: HK0Puzb6
+    name: 500 Series Rack Connector (audio I/O and power)
+    signalFlow: bidirectional
+    category: power
+    type: power
+    connection: edac
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://frap.tools/docs/Manual_Dynamics_2806.pdf
+    type: resource
+    title: Manual
+videos:
+  - provider: youtube
+    videoId: FrR3R6913Hg

@@ -1,0 +1,134 @@
+id: rylUdCcdFs5z-Wnh_qz1x
+name: G Group
+manufacturer: frap-tools
+primaryCategory: mixer
+categories:
+  - modular
+capabilities:
+  - saturation
+  - distortion
+url: https://frap.tools/products/g/
+prices:
+  - amount: 175
+    currency: EUR
+    asOf: 2026-11-09
+    source: https://frap.tools
+description: "The G is the group module of the CGM Creative Mixer: a stereo
+  module that blends the signals of up to eight channel modules linked to it and
+  manages their routing. It puts into practice the volume, effect send and
+  panning settings made on the channels, and its stereo outputs carry either the
+  local sum or the wet signal alone."
+details: |-
+  The group is the first section of the CGM Creative Mixer that actually mixes: it blends the signals of the channel modules linked to it, up to eight of either kind, and puts into practice all the information their controls define, meaning volume, effect send volume and stereo panning. It then routes the channels' sum on to a master module when one is present.
+
+  The panel is laid out in three sections, the amplitude controls in white and the two effect send and return circuits in yellow and green. A front-panel switch defines what the group outputs carry: either the sum of all the channels plus their effect returns, or the wet signal alone. The first setting suits a smaller system, where the group is the last stage in the audio chain and no master is needed, while the second opens up parallel effect processing or multitrack recording alongside a master.
+
+  Each of the two effect circuits pairs an independent monophonic output, carrying the sum of every channel's send level, with a stereo input for the return. A CV input over each stereo return level automates the effect section for gated reverbs and similar treatments, or turns a return into an auxiliary stereo channel.
+
+  The mute button takes the group out of the master sum with a click and deliberately leaves the local outputs alone: in a small system where the group is the output module that prevents an accidental mute, and in a large one it keeps the local outputs live for parallel processing. The Safe Solo switch recalls a scene of channels prepared with their own solo-in-place controls, working as a mute group, and the PFL button sends the group to the master's pre-fader listening section so it can be auditioned while muted or with the fader down.
+
+  Two peak LEDs show when the group is clipping, and clipping is also a sound on offer here rather than only a fault: pushed on purpose the group gives either a creamy saturation or a marked distortion.
+specs: |-
+  - Mixes up to eight CGM channel modules of either kind
+  - Stereo local outputs, switchable on the front panel between the post-fader local mix with FX returns and the wet signal alone
+  - Two effect circuits, each a mono send and a stereo return
+  - Two CV inputs over the stereo FX return levels
+  - Electronic latching mute and PFL, mechanical Safe Solo switch
+  - Two peak LEDs on the group bus
+  - 12 mm fader knob
+  - Links to channel and master modules through the CGM Link System 10-pole IDC pin headers on the back, which carry audio, power and controls
+  - Bus-powered from the Eurorack case through its power header, with no power jack of its own
+  - Ships with a one-group-to-two-channels Link System cable
+io:
+  - key: WgbBQxEX
+    name: FX Send Yellow
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 8Sy2k2Oq
+    name: FX Send Green
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: cLWqkkpM
+    name: FX Return Yellow Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: SJvO6roH
+    name: FX Return Yellow Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ee0VFfaZ
+    name: FX Return Green Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: fAwTNxz7
+    name: FX Return Green Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: tGBJnPXs
+    name: FX Return Yellow Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: QYiReZqW
+    name: FX Return Green Level CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: zyI0eMEq
+    name: Group Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: alZyIZPt
+    name: Group Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: a7fjVTU1
+    name: Eurorack Bus Power Header
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://frap.tools/manualone/
+    type: resource
+    title: Manual

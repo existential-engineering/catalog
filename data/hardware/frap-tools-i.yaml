@@ -1,0 +1,111 @@
+id: j8gN-G-51WQT2PgosB379
+name: I Insert
+manufacturer: frap-tools
+primaryCategory: utility
+categories:
+  - modular
+  - routing
+url: https://frap.tools/products/i/
+prices:
+  - amount: 120
+    currency: EUR
+    asOf: 2026-11-09
+    source: https://frap.tools
+description: The insert module connects stereo effects to a CGM setup, either
+  inserted between two points of the internal summing bus or placed in parallel
+  as a stereo send and return. It carries two couples of outputs and inputs with
+  their own gain switches, the first being the insert circuit and the second the
+  parallel one.
+details: |-
+  The insert module is a break in the CGM stereo sum. It lets stereo effects be patched into the mixer, either by inserting them between two points of the internal summing bus or by hanging them off it in parallel, as in a rudimentary stereo send and return.
+
+  It consists of two couples of outputs and inputs, each couple stereo and each with its own gain switches. The first couple is the insert circuit, which overrides the internal summing bus and routes whatever sum arrives at the module out through an external effect and back. The second stays parallel to the main sum, which suits stereo ambience effects that should sit alongside the dry signal rather than replace it.
+
+  Placement is the point of the module. It can sit between a group and a master as an end-of-chain bus, between two groups, between a channel and a group, between two channels, or between a channel and a master with no group in between. Put between two series of channels on the same group it creates a channel subgroup with independent solo-in-place controls.
+
+  The gain switches on the outputs and inputs offer three degrees of attenuation with matching amplification, so the module can scale the CGM's internal level to most outboard audio equipment and back again. The module ships with two insert cables that fit every member of the CGM family, including the ones no longer made.
+specs: |-
+  - Two stereo couples of outputs and inputs, the first the insert circuit and the second a parallel send and return
+  - The insert circuit overrides the internal CGM summing bus
+  - Gain switches on outputs and inputs give three degrees of attenuation with matching amplification
+  - Can be placed between a group and a master, two groups, a channel and a group, two channels, or a channel and a master with no group
+  - Ships with two insert cables compatible with every member of the CGM family
+  - Bus-powered from the Eurorack case through its power header, with no power jack of its own
+  - Weight 0.138 kg
+io:
+  - key: VZ2IRtLe
+    name: Insert Send Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: FEMGgcTD
+    name: Insert Send Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: jv2Dc4Mw
+    name: Insert Return Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: NMDkaW5x
+    name: Insert Return Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: eR301KX9
+    name: Parallel Send Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: og6dattN
+    name: Parallel Send Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: lyTjDwZx
+    name: Parallel Return Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: T4ienoMP
+    name: Parallel Return Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: DCbEySfH
+    name: Eurorack Bus Power Header
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://frap.tools/manualone/
+    type: resource
+    title: Manual
