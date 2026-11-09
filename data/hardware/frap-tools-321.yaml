@@ -1,0 +1,106 @@
+id: e3Qul6soiXhoiA39qjz-B
+name: "321"
+manufacturer: frap-tools
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+url: https://frap.tools/products/321/
+prices:
+  - amount: 90
+    currency: EUR
+    asOf: 2026-11-09
+    source: https://frap.tools
+description: The 321 is a three-section utility module for audio and CV, where
+  each section can scale a signal, invert it and add a positive or negative
+  offset. Two summing outputs provide the total of all three sections or only of
+  the sections whose local output is left unpatched.
+details: |-
+  The 321 is a multi-purpose utility module for high-quality audio and CV processing. It consists of three sections, each capable of scaling a signal, inverting it, and adding a positive or negative offset. The signals feed two summing stages: one for all the sections and another that excludes the sections whose output socket has a cable plugged into it.
+
+  Each section carries a DC-coupled amplifier that can attenuate or amplify audio and CV, adding up to 6 dB or doubling a signal level. A switch flips the phase of an audio source or inverts the values of a control voltage, and pairing that switch with an attenuator rather than using an attenuverter allows zero to be reached precisely so a channel can be muted completely.
+
+  The Offset section adds or subtracts a DC offset from the incoming signal, which is useful for making unipolar signals bipolar or the reverse, and a switch disables the offset entirely for more transparent audio treatment. When no signal is patched to a section, its Offset control turns that section into a plain DC source, outputting a steady positive or negative voltage according to the knob position.
+
+  Two outputs at the top of the panel provide two different sums. The right one outputs all three sections, including any offsets, while the left one outputs only the sections that are not using their local outputs, so a dummy cable patched to a section's output removes it from the Unpatched sum. Both sum outputs carry a -6 dB switch that halves the output amplitude when the sum is too hot.
+
+  The summing stage borrows its design from the CGM creative mixer series, which gives transparent amplification and summing for both control voltages and audio signals.
+specs: |-
+  - Three independent sections, each able to scale, invert and offset an audio or CV signal
+  - DC-coupled amplifier per section, attenuating or amplifying by up to 6 dB
+  - Phase and polarity inversion switch per section, paired with an attenuator so exact zero can be reached
+  - Positive or negative DC offset per section, with a switch to bypass the offset stage
+  - Each section outputs a steady DC voltage when nothing is patched to its input
+  - Two summing outputs at the top of the panel: All for the three sections and Unpatched for the sections whose local output is unused
+  - -6 dB switch on each of the two sum outputs
+  - Summing stage derived from the CGM creative mixer series
+  - Bus-powered from the Eurorack case power bus, with no power jack of its own
+io:
+  - key: FtmfQFHD
+    name: Section 1 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ELLIa9cu
+    name: Section 2 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: JyJMB4FF
+    name: Section 3 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 787cCmFt
+    name: Section 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: r34rzloI
+    name: Section 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: MRSi2fE1
+    name: Section 3 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Ebf2k2x2
+    name: Unpatched Sum Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VSwRfn6U
+    name: All Sum Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://frap.tools/manualone/
+    type: resource
+    title: Manual

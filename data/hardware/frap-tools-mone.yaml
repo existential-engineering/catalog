@@ -1,0 +1,92 @@
+id: 29MYCfKZihKUzvjtLtTJO
+name: MONE
+manufacturer: frap-tools
+primaryCategory: mixer
+categories:
+  - modular
+  - utility
+url: https://frap.tools/products/mone/
+prices:
+  - amount: 265
+    currency: EUR
+    asOf: 2026-11-09
+    source: https://frap.tools
+description: The Masterone is a Eurorack master output module designed to be
+  connected exclusively to non-Eurorack equipment, with four separate output
+  sections on Neutrik connectors and adjustable gain levels. It carries balanced
+  XLR stereo outputs, pseudo-balanced 1/4 inch TRS stereo and mono outputs, a
+  headphone output and a 12-LED VU meter.
+details: |-
+  The Masterone is the first Frap Tools module designed to be connected exclusively with non-Eurorack equipment. It features four separate output sections with different Neutrik connectors and adjustable gain levels to suit the most common live and studio situations. With no inputs and just large-format outputs, it pushes further the concept behind the M module of being a Eurorack system's gateway to the outside world.
+
+  Two XLR connectors, left and right, provide a balanced output with the expected 6 dB of extra gain, which in many cases allows a DI box to be bypassed. A second pair of outputs on large 1/4 inch jacks works on the same principle as the ones on the M module: standard TS cables can be patched to use them as unbalanced outputs, or TRS cables can interface them with balanced equipment, with the ground routed to both the ring and the sleeve for better performance than a regular unbalanced output.
+
+  If the two stereo outputs are too hot, a set of switches attenuates them. The Line/Mic switch on the XLR outputs attenuates by about 30 dB, while the Line/Inst switch on the TRS outputs attenuates by about 15 dB.
+
+  The Headphones section monitors the Master output with an independent volume knob while keeping access to the PFL function on the Channel and Group modules: rotating the PFL crossfader towards the blue section blends the PFL modules with the Master sum. An auxiliary monophonic output covers an extra stage monitor or a whole system running through a vintage amp for parallel processing, providing the sum of both channels on a pseudo-balanced output with a dedicated fader that attenuates the line level by 15 dB or amplifies it by 6 dB.
+
+  A 12-LED VU meter per channel monitors signal amplitude from -40 dB to +15 dB, with peak memory held on the upper LEDs. Compared with the M module, the Masterone adds the balanced XLR pair, the pseudo-balanced mono output with its own fader, large-format 1/4 inch connectors in place of 3.5 mm, the Line/Mic and Line/Inst attenuation options and a latching PFL crossfader, and it drops the M module's auxiliary input.
+specs: |-
+  - Four separate output sections on Neutrik connectors, with no inputs
+  - Balanced stereo XLR outputs, left and right, with 6 dB extra gain
+  - Pseudo-balanced 1/4 inch TRS stereo outputs, with ground routed to both ring and sleeve
+  - Line/Mic switch attenuating the XLR outputs by about 30 dB
+  - Line/Inst switch attenuating the TRS outputs by about 15 dB
+  - Stereo headphone output on 1/4 inch TRS with an independent volume knob and PFL blending
+  - Auxiliary pseudo-balanced mono 1/4 inch TRS output summing both channels, with a dedicated fader for 15 dB attenuation or 6 dB gain
+  - 2 x 12-LED VU meter covering -40 dB to +15 dB, with peak memory
+  - Latching PFL crossfader and a 20 mm fader knob
+  - Bus-powered from the Eurorack case power bus, with no power jack of its own
+io:
+  - key: lV1pew1e
+    name: Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - key: NcOLD8UO
+    name: Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Bottom
+  - key: mpLx68e4
+    name: Pseudo-Balanced Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: iOqh2SCF
+    name: Pseudo-Balanced Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: WXk5kMyU
+    name: Pseudo-Balanced Mono Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 3cR9WKEm
+    name: Headphones Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://frap.tools/manualone/
+    type: resource
+    title: Manual
