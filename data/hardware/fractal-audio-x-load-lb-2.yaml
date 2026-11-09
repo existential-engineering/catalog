@@ -1,0 +1,71 @@
+id: 5AGFQTyk1XcQR2jX0T8nx
+name: X-Load LB-2
+manufacturer: fractal-audio
+primaryCategory: utility
+categories:
+  - outboard
+url: https://www.fractalaudio.com/x-load-lb-2-load-box/
+description: The X-LOAD LB-2 Reactive Load Box is a high-quality load box with
+  great features including front-panel output level control, a voicing switch,
+  speaker thru capability, and both active and passive DI outs.
+details: |-
+  The X-Load LB-2 is a reactive load box that stands in for a speaker cabinet on the output of a tube amplifier, so a head can be driven hard and recorded silently. Front-panel controls cover output level and voicing, and the unit carries a speaker thru jack alongside both active and passive DI outputs, for live and studio use alike.
+
+  Load emulation uses Fractal Audio's proprietary Dynamic Impedance Technology, which changes the load according to the power level of the connected amplifier rather than presenting a fixed resistance. A speaker cabinet's reactive impedance curve is part of how an amplifier sounds, and tracking that curve is what makes the amp interact with the LB-2 as it would with a real cabinet.
+
+  Speaker tone is deliberately left alone. Guitar speakers are limited in bandwidth compared with full-range speakers, typically in the region of 75 Hz to 5 kHz, and the LB-2 does not reproduce that colouration. The signal leaving its DI outputs is instead meant to be re-cabbed with the speaker simulations in an Axe-Fx, AX8 or Cab-Lab, or with third-party impulse responses, so the entry point stays current as cabinet simulation technology changes.
+
+  A Voicing Switch selects between load behaviours drawn from iconic UK and US speaker loads, changing how the connected amplifier responds. Speaker Thru lets the LB-2 run with or without a cabinet attached, covering silent recording as well as a silent DI feed taken while a speaker plays at full volume. With no speaker connected, the load box safely loads the amplifier as though a cabinet were in place.
+
+  The LB-2 also works as a partial attenuator. Feeding one 4 ohm amplifier output into an 8 ohm speaker and the other 4 ohm output into the Amp In jack puts two 8 ohm loads in parallel, which the amplifier sees as a 4 ohm load, sending half its power to the speaker and half into the load box for a 6 dB volume reduction. The DI outputs remain usable in that configuration.
+specs: |-
+  - Reactive load box for the speaker-level output of a tube amplifier head
+  - Dynamic Impedance Technology varies the load with the power level of the connected amplifier
+  - Presents an 8 ohm load to the amplifier
+  - Front-panel output level control
+  - Voicing switch selecting UK or US speaker load characteristics
+  - Speaker Thru jack for use with or without a connected speaker cabinet
+  - Active and passive DI outputs
+  - No speaker tone or cabinet simulation, by design, for re-cabbing with external speaker simulations or impulse responses
+  - Usable as a partial attenuator, diverting half of the amplifier's power to the load for a 6 dB reduction in volume
+  - No mains, DC or other power input is stated anywhere on the product page
+io:
+  - key: OLHJyQ0r
+    name: Amp In (8 ohm Load)
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Nhq5MwFc
+    name: Speaker Thru
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 8vvE05uZ
+    name: Active DI Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 7MpvNesC
+    name: Passive DI Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.fractalaudio.com/downloads/manuals/x-load-lb-2/X-Load-LB-2-Owners-Manual.pdf
+    type: resource
+    title: X-LOAD LB-2 Owner's Manual
+videos:
+  - provider: youtube
+    videoId: 36ZTYwONAqE
