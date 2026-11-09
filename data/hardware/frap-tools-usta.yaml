@@ -1,0 +1,206 @@
+id: 4eewFzrcvntb4YtGU3azp
+name: USTA
+manufacturer: frap-tools
+primaryCategory: sequencer
+categories:
+  - modular
+  - digital
+capabilities:
+  - sequencing
+url: https://frap.tools/products/usta/
+prices:
+  - amount: 650
+    currency: EUR
+    asOf: 2026-11-09
+    source: https://frap.tools
+description: USTA is a 4×4 track sequencer for control voltages and gates with
+  variable stage duration, built to show and edit several voltage relationships
+  at once. Sixteen push rotary encoders arranged in an oval layout with a
+  circular playhead give direct access to every stage.
+details: |-
+  USTA is a 4×4 tracks sequencer for voltages and gates with variable stage duration, designed to quickly see and edit multiple voltage relationships in real time. Variable stage duration means that every single stage duration can be individually set in relation to the clock, instead of being constrained to a one-to-one ratio of one stage per clock impulse. The 4×4 tracks description means that every stage can store and generate up to four separate voltages, two CVs and two gates, and that up to four independent stage sequences can be arranged into as many different tracks.
+
+  The architecture is based on an array of 16 stages that form a pattern, 16 patterns that form a track, and four tracks that form a project. Within each track, each stage can provide two gates and two CVs, and a wide set of options defines and modifies the value of each output, called Layers, and the way it is played, called Colors. Every stage has a dedicated stepped encoder, and all 16 encoders are arranged in an oval layout with a circular playhead, each surrounded by a ring of 16 LEDs plus an RGB LED for visual feedback of the current setting.
+
+  Each track carries two programmable gate and CV outputs for a total of four streams of data, which allows eight potential melodies to play at once. The same outputs can instead produce unquantized voltages with 1 mV resolution for complex arbitrary functions. Each track can be quantized independently to a given root or scale, with up to four user-written scales, and octave divisions of 15, 19, 22 or 24 tones are available alongside the usual 12-tone temperament.
+
+  Each track can have its own clock division or multiplication and even its own clock speed, and some tracks can run from an external clock, which makes polyrhythmic structures and experimental multitempos straightforward. Stage durations are individually variable in relation to the track clock for syncopated melodies and odd time signatures, and a swing function sits on top of that.
+
+  Pattern structure can be modified live through pattern recalling, pattern mixing on the fly and custom loop points, or defined in advance with song mode, while the Stage Loop function sets a parallel cross-pattern loop with a flexible starting point, length and duration. Composition Mode allows note-by-note editing while the sequencer is stopped, including note entry from an external CV controller. Every CV and gate sequence can be modulated non-destructively through the internal Variation controls or the two CV inputs, which address pitch, gate, stage, variation, root, phase and pattern targets across the four tracks, and the results can always be stored as a new pattern.
+specs: |-
+  - 8 CV outputs at 16-bit resolution, each with a soft selectable range of ±5 V or 0 V to +10 V
+  - 2 CV inputs at 12-bit resolution, accepting -5 V to +10 V
+  - 8 gate outputs
+  - 2 gate inputs
+  - 16 stages per pattern, 16 patterns per track, 4 tracks per project
+  - Two CVs and two gates per stage on each track
+  - 1 mV resolution on unquantized CV output
+  - Per-track quantization to a root and scale, with up to four user-written scales
+  - Octave divisions of 15, 19, 22 and 24 tones alongside 12-tone equal temperament
+  - Per-track clock division, multiplication and independent clock speed, with external clock available per track
+  - Individually variable stage duration relative to the track clock, plus a swing function
+  - Three stage colors per CV or gate value: nominal, slide and ratchet, or skip
+  - Sixteen push rotary encoders, each ringed by 16 LEDs and an RGB LED, with three modifier buttons
+  - CV input targets: pitch shift, gate shift, stage shift, vari shift, root shift, phase shift and pattern shift
+  - Bus-powered from the Eurorack case power bus, with no power jack of its own
+io:
+  - key: lsc74qwF
+    name: CV Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: xp0Ow55G
+    name: CV Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: gngSgtK2
+    name: CV Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: J44EGdX1
+    name: CV Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: sT16Duv7
+    name: CV Output 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: FD5CB72w
+    name: CV Output 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: I1Le9VzN
+    name: CV Output 7
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 7ggf5aR3
+    name: CV Output 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: tDNlj6LZ
+    name: Gate Output 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: FIAMMnl2
+    name: Gate Output 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 3mjvY93a
+    name: Gate Output 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: WEmb13bA
+    name: Gate Output 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: yVl0oPdc
+    name: Gate Output 5
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: DKgyuP4S
+    name: Gate Output 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: StST6Yel
+    name: Gate Output 7
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: fLVn5OvN
+    name: Gate Output 8
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: q6eVTwXo
+    name: CV Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: yLCGDipG
+    name: CV Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: fiGQOu9t
+    name: Gate Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: TWAmcgeC
+    name: Gate Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom

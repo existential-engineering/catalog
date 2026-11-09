@@ -1,0 +1,119 @@
+id: MZDFVFNn8ERvr8ZLjmmO-
+name: SC Stereo Channel
+manufacturer: frap-tools
+primaryCategory: mixer
+categories:
+  - modular
+capabilities:
+  - saturation
+url: https://frap.tools/products/sc/
+prices:
+  - amount: 175
+    currency: EUR
+    asOf: 2026-11-09
+    source: https://frap.tools
+description: The Stereo Channel is a single-channel stereo module for the CGM
+  Eurorack mixer, fully compatible with every other product of that family. Its
+  semi-normalled I/O lets it work stereo to stereo, mono to mono, mono to stereo
+  or stereo to mono, and every parameter is voltage-controllable.
+details: |-
+  The SC is the stereo member of the CGM channel family, a single-channel module through which a Eurorack signal enters the mixer and starts its way to the outside world. It is compatible with every other product in the family, and it sets the input gain, the volume in the mix, the two effect send levels and the stereo placement of the sound.
+
+  A flexible I/O semi-normalization pattern means the channel is not restricted to stereo work. A mono signal can be patched in and recorded in stereo straight after the VCA to follow the voltage-controlled panning, two mono sources can be blended into one, and the direct outputs behave the same way: the left output alone gives a mono sum, both together a stereo signal.
+
+  There are two amplitude stages, a voltage-controlled input VCA and a volume fader. With enough level at the input the VCA overdrives into a creamy, fat saturation, and a peak LED shows when the signal is clipping. The direct output can be taken pre-fader, straight after the input VCA, or post-fader with the main fader shaping its amplitude, which suits parallel processing or multitrack recording.
+
+  The two effect sends, marked yellow and green, work pre- or post-fader and are both voltage-controllable. So is the pan knob, and a Pan/Crossfade switch turns the channel into a dual mono mixer in which the pan pot balances the two inputs into a mono sum.
+
+  Mute, PFL and Solo-In-Place complete the strip. The electronic latching mute acts on the input VCA, so it removes the channel from the group sum and silences its effect sends with it. The Solo-In-Place switch prepares a scene of channels to be isolated, recalled from the Safe Solo switch on the group, and the PFL button previews the channel on the master's PFL fader, which is handy for tuning an oscillator before bringing it into the mix.
+specs: |-
+  - One stereo channel circuit, usable stereo to stereo, mono to mono, mono to stereo or stereo to mono through a semi-normalled I/O pattern
+  - Voltage-controlled input VCA that saturates when pushed, with a peak LED
+  - 12 mm volume fader
+  - Two effect sends, switchable pre- or post-fader, both voltage-controllable
+  - Voltage-controlled pan with a Pan/Crossfade switch for dual mono blending
+  - Semi-normalled mono or stereo direct output, selectable pre- or post-fader
+  - Electronic latching mute and PFL, mechanical Solo-In-Place switch
+  - Links to a group module through the CGM Link System 10-pole IDC pin headers on the back, which carry audio, power and controls
+  - Bus-powered from the Eurorack case through its power header, with no power jack of its own
+  - Ships with power cables only; the group it links to supplies the two-channel Link System cable
+io:
+  - key: IHNGd2EU
+    name: Audio Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: qFy5wlen
+    name: Audio Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: QdCWWoyP
+    name: Direct Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: aj2w9EAF
+    name: Direct Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: SBMvebiW
+    name: Input VCA CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: qbXi4NqN
+    name: Pan CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: feVccgyY
+    name: FX Send Yellow CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: P6w0MhPT
+    name: FX Send Green CV
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: SA6QlDPj
+    name: Eurorack Bus Power Header
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://frap.tools/manualone/
+    type: resource
+    title: Manual
+videos:
+  - provider: youtube
+    videoId: aJXOOXmY2eE

@@ -1,0 +1,218 @@
+id: 5vxFNQUSMe4i0FhhUVHMt
+name: SAPÈL
+manufacturer: frap-tools
+primaryCategory: utility
+categories:
+  - modular
+  - analog
+url: https://frap.tools/products/sapel/
+prices:
+  - amount: 440
+    currency: EUR
+    asOf: 2026-11-09
+    source: https://frap.tools
+description: SAPÈL is an analog random control voltage generator for Eurorack
+  systems, built around two clusters of four sample and hold circuits that
+  sample analog thermal noise. A second section provides four analog noise
+  outputs in blue, white, pink and red.
+details: |-
+  SAPÈL is an analog generator of random control voltages for Eurorack modular systems. It generates a wide variety of random values to add dynamics to a patch, and those values are sampled on analog thermal noise to guarantee the truest random generation. Its main section is composed of two identical clusters of four sample and hold circuits each, yellow and green, generating as many different random values simultaneously.
+
+  Three of the four sample and hold circuits in each cluster provide stepped random voltages: two are quantized in notes and one is unquantized. The fourth circuit features an integrator that generates a fluctuating stream of random voltages, independent of the clock and with its own potentiometer to set its rate. The three stepped generators are synced, so they output three different values at the same time.
+
+  The yellow and green generators have two independent internal clocks, each of which can be replaced with an external clock or temporarily overridden by an external signal or the manual button. The internal clock rate can also be modulated externally. Regardless of the clock in use, each cluster carries two clock outputs, one mirroring the input clock and one providing random clock behaviour: in Less Than mode the random clock outputs occasional clocks, in More Than mode it outputs more clocks than the main one, and the Global Rate of Change sets the random clock density.
+
+  The quantized circuits draw on the classic Buchla 266 but were redesigned from scratch for a more even and musical value distribution. The 2^n circuit generates random voltages tuned to 12-EDO semitones and the n+1 circuit outputs voltages quantized to octaves, with each circuit's knob setting n from 1 to 6, so the semitone section can output 2, 4, 8, 16, 32 or 64 semitones and the octave section 2, 3, 4, 5, 6 or 7 octaves. Each generator also carries a classic unquantized sample and hold circuit with a wide range.
+
+  A probability distribution control sets the average magnitude of the random voltages, biasing the sample and hold circuits towards low, mid or high values, and on each section it can be routed to each of the four generators independently. The second section of the module provides four analog noise outputs, blue, white, pink and red, derived from the same analog noise used to sample the random values.
+specs: |-
+  - Two independent random sections, yellow and green, each with four sample and hold circuits
+  - Eight random voltages generated simultaneously from analog thermal noise
+  - Two quantized random outputs per section: a 2^n circuit tuned to 12-EDO semitones and an n+1 circuit quantized to octaves
+  - Quantization knobs set n from 1 to 6, giving 2, 4, 8, 16, 32 or 64 semitones and 2, 3, 4, 5, 6 or 7 octaves
+  - Fixed 6-bit quantization with variable source amplitude
+  - One unquantized sample and hold random output per section, unipolar
+  - One fluctuating random voltage output per section with its own rate control, unipolar and clock-independent
+  - Two internal clock generators with a range of about 0.1 Hz to 60 Hz, each overridable by an external clock, an external signal or the panel button
+  - Clock output and random clock output per section, with selectable More Than or Less Than random clock behaviour
+  - Global Rate of Change control setting random clock density
+  - Probability distribution control per section, routable to each of the four generators independently
+  - Four analog noise outputs: blue, white, pink and red
+  - Bus-powered from the Eurorack case power bus, with no power jack of its own
+io:
+  - key: GUUR902z
+    name: Yellow Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Jrw510LP
+    name: Yellow Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: huFNbBNC
+    name: Yellow Clock Rate CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: pG5bjBZt
+    name: Yellow Quantized Semitone Random Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: gAzgR6dU
+    name: Yellow Quantized Octave Random Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: lObV7OIi
+    name: Yellow Unquantized Random Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 1UQERuA7
+    name: Yellow Fluctuating Random Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: olA3Xg3q
+    name: Yellow Clock Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: gWPBKGaI
+    name: Yellow Random Clock Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: d2mDF8BV
+    name: Green Clock Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: Ue8debte
+    name: Green Trigger Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: O0ydWfXc
+    name: Green Clock Rate CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: h7wfh74E
+    name: Green Quantized Semitone Random Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: PECvvR3k
+    name: Green Quantized Octave Random Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: WUbWS7DB
+    name: Green Unquantized Random Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 2TvVRJiN
+    name: Green Fluctuating Random Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: qWP8sy6i
+    name: Green Clock Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: HQwzW8ZD
+    name: Green Random Clock Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: NZXI9Pa1
+    name: Blue Noise Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: EyiZ8J0g
+    name: White Noise Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ZwPcOKBo
+    name: Pink Noise Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: g3ONZYB5
+    name: Red Noise Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
