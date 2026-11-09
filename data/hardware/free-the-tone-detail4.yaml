@@ -42,8 +42,24 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Right
+  - key: ybXrkMsN
+    name: Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: 09y6Aitx
     name: Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 5LFd9K0j
+    name: Tuner Output
     signalFlow: output
     category: audio
     type: line
@@ -130,16 +146,24 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Right
-  - key: wTCdMJhT
-    name: Control Terminal 1
-    signalFlow: output
+  - key: vAhsItDS
+    name: Separate Loop Input
+    signalFlow: input
     category: audio
-    type: expression
+    type: line
     connection: 1/4-inch
     maxConnections: 1
     position: Right
-  - key: 9cvORtEE
-    name: Control Terminal 2
+  - key: 6wu5LY2d
+    name: Separate Loop Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: wTCdMJhT
+    name: Control Terminal C1/C2
     signalFlow: output
     category: audio
     type: expression
@@ -147,8 +171,16 @@ io:
     maxConnections: 1
     position: Right
   - key: xJYTpy6r
-    name: Control Terminal 3
+    name: Control Terminal C3
     signalFlow: output
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: nkuLJ6rb
+    name: External Switch Input
+    signalFlow: input
     category: audio
     type: expression
     connection: 1/4-inch
