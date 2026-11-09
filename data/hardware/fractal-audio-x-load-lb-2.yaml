@@ -21,17 +21,17 @@ details: |-
 specs: |-
   - Reactive load box for the speaker-level output of a tube amplifier head
   - Dynamic Impedance Technology varies the load with the power level of the connected amplifier
-  - Presents an 8 ohm load to the amplifier
+  - Presents an 8 ohm load to the amplifier, maximum power rating 100W (do not connect an amplifier rated above 100W)
   - Front-panel output level control
   - Voicing switch selecting UK or US speaker load characteristics
   - Speaker Thru jack for use with or without a connected speaker cabinet
   - Active and passive DI outputs
   - No speaker tone or cabinet simulation, by design, for re-cabbing with external speaker simulations or impulse responses
   - Usable as a partial attenuator, diverting half of the amplifier's power to the load for a 6 dB reduction in volume
-  - No mains, DC or other power input is stated anywhere on the product page
+  - Active XLR DI output needs either a 9-24V DC center-negative supply or XLR phantom power; the passive 1/4-inch DI output needs neither
 io:
   - key: OLHJyQ0r
-    name: Amp In (8 ohm Load)
+    name: Amp In (8 ohm Load, 100W max)
     signalFlow: input
     category: audio
     type: speaker-level
@@ -60,6 +60,14 @@ io:
     category: audio
     type: line
     connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Lb2Pw3Vd
+    name: DC Power Input (9-24V, center negative)
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
     maxConnections: 1
     position: Right
 links:

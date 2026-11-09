@@ -32,14 +32,14 @@ specs: |-
   - 7-pin MIDI out supports phantom powering the unit
   - Three different ways to connect to an Axe-Fx or other rig
   - Up to 384 preset numbers and names displayed on the floor
-  - No AC adapter needed: the unit is powered over CAT5 from the Axe-Fx II, over FASLINK, or by phantom power on the 7-pin MIDI out
+  - Powered over CAT5 from the Axe-Fx II, over FASLINK, or by phantom power on the 7-pin MIDI out, otherwise by the supplied 9VAC adapter (never connect the adapter while using Ethernet/EtherCON, FASLINK or phantom power)
   - Axe-Fx Mode with dedicated tap tempo, tuner display and Looper Control Mode on the Axe-Fx II
 io:
   - key: FWbdHLhr
     name: EtherCON Port (Axe-Fx II, powers unit over CAT5)
     signalFlow: bidirectional
     category: digital
-    type: ethernet
+    type: proprietary
     connection: ethercon
     maxConnections: 1
     position: Right
@@ -54,6 +54,14 @@ io:
   - key: 91sV0VB5
     name: MIDI Out (7-pin, accepts phantom power for the unit)
     signalFlow: output
+    category: midi
+    type: midi
+    connection: 7-pin din
+    maxConnections: 1
+    position: Right
+  - key: Mi1nPq7Z
+    name: MIDI In (firmware updates and remote control)
+    signalFlow: input
     category: midi
     type: midi
     connection: 7-pin din
@@ -92,15 +100,7 @@ io:
     maxConnections: 1
     position: Right
   - key: 7apdda1I
-    name: External Switch 1
-    signalFlow: input
-    category: audio
-    type: expression
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Right
-  - key: ibPh75wi
-    name: External Switch 2
+    name: External Switch Jack 1+2
     signalFlow: input
     category: audio
     type: expression
@@ -108,19 +108,19 @@ io:
     maxConnections: 1
     position: Right
   - key: Q4AtDxl5
-    name: External Switch 3
+    name: External Switch Jack 3+4
     signalFlow: input
     category: audio
     type: expression
     connection: 1/4-inch
     maxConnections: 1
     position: Right
-  - key: TD9dVwEa
-    name: External Switch 4
+  - key: Pw9vAcQ2
+    name: 9VAC Power Input
     signalFlow: input
-    category: audio
-    type: expression
-    connection: 1/4-inch
+    category: power
+    type: power
+    connection: barrel
     maxConnections: 1
     position: Right
 links:

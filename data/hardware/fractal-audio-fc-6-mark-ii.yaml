@@ -15,7 +15,7 @@ details: |-
 
   The unit is designed to be easy to use while granting extreme flexibility. For simplicity it is virtually plug-and-play, with the Master Layout Menu selecting from Layouts, pages of footswitches arranged in familiar and intuitive ways. On each layout the LED rings change color to show switch functions and statuses (on, off, dim) while smart LCD mini-displays give an automatic readout for each switch, removing the need for labels. EZ Mode modifies any switch in seconds to control presets, banks, scenes, effects, channels, tuner, tempo, looper and control switches, and any layout can be rebuilt with custom tap and hold functions, custom mini-display text, and per-preset overrides of individual footswitches.
 
-  The unit is housed in a powdercoated 16-gauge steel chassis with durable protective endcaps that double as feet, and the SSS footswitches are quiet and durable with no mechanical contacts to fail. The LED rings and displays stay readable from darkness to full sunlight. FASLINK II carries two-way communication between the FC and the Axe-Fx III, FM9 or FM3 over one standard XLR cable, faster than MIDI and more rugged than Ethernet. A FASLINK thru port allows up to four FC units to be daisy-chained, and FASLINK II powers the first FC while an AC adapter is used for downstream units.
+  The unit is housed in a powdercoated 16-gauge steel chassis with durable protective endcaps that double as feet, and the SSS footswitches are quiet and durable with no mechanical contacts to fail. The LED rings and displays stay readable from darkness to full sunlight. FASLINK II carries two-way communication between the FC and the Axe-Fx III, FM9 or FM3 over one standard XLR cable, faster than MIDI and more rugged than Ethernet. A FASLINK thru port allows daisy-chaining up to four FC units with the Axe-Fx III (two with the FM3), and FASLINK II powers the first FC while an AC adapter is used for downstream units.
 
   Four jacks connect expression pedals such as the Fractal Audio EV, and another two jacks connect up to four external switches, which the Axe-Fx III, FM9 or FM3 can use for a range of global and modifier control options. Mirroring lets an on-stage and an off-stage FC imitate each other completely without dual programming, with any change on either reflected on both. FC firmware and settings are built into the host processor, so the controller does not normally need to be updated or backed up separately and can gain new features for years to come.
 specs: |-
@@ -26,7 +26,7 @@ specs: |-
   - EZ Mode assigns a switch to presets, banks, scenes, effects, channels, tuner, tempo, looper and control switches
   - Per-preset overrides of individual footswitch functions
   - Mirroring between an on-stage and an off-stage FC, with both units acting as master
-  - Daisy-chain up to four FC units
+  - Daisy-chain up to four FC units with the Axe-Fx III (two maximum with the FM3)
   - FASLINK II port for connecting to an Axe-Fx III, FM9 or FM3, plus a FASLINK II thru port for other FC units
   - Powered over FASLINK II as the first unit in the chain, with an AC adapter used for downstream units
   - Four expression pedal jacks plus two jacks for up to four external switches
@@ -99,6 +99,14 @@ io:
     category: audio
     type: expression
     connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Pw6mQz8T
+    name: DC Power Input (9-12V, negative center, for daisy-chained units)
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
     maxConnections: 1
     position: Right
 links:
