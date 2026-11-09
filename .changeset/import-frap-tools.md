@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Frap Tools (15 hardware/software entries).
+Import Frap Tools (19 hardware entries).
