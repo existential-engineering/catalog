@@ -1,0 +1,78 @@
+id: 8NCHQR7GxtYJI98BOgcwv
+name: PHA-1
+manufacturer: free-the-tone
+primaryCategory: analyzer
+categories:
+  - meter
+  - utility
+url: https://www.freethetone.com/en/products/detail57/
+prices:
+  - amount: 33000
+    currency: JPY
+description: Phase analyzer that measures whether a device or a chain of effects
+  units passes signal in phase or out of phase, using a generated test signal in
+  either a repeated or a continuous measurement mode. Combined with the ARC-4
+  Audio Routing Controller it also displays the level of the signal fed to or
+  output from that unit, and the waveform of the incoming signal.
+details: |-
+  The phase of a sound matters in live performance and in recording. Two signals of the same frequency added in phase produce a higher combined level, while a normal phase and a reverse phase signal at the same frequency cancel and the level drops. The effect is easier to picture as waves meeting on a shore, where parts of the colliding waves become higher, lower or flat.
+
+  To avoid that cancellation it has become standard to output guitar or bass in the same phase as the kick drum, but some combinations of effects units or amplifier channels invert the signal and cancellation happens unintentionally. Out of phase is not always bad, since wah-wah pedals and compressors among others are used for their out of phase character, so what matters is an environment in which the phase can be determined and controlled.
+
+  The PHA-1 offers two measurement methods. In Repeated Measurement mode a test signal is fed into the device under test and its output routed back to the PHA-1, which analyses the returned signal and reports in phase or out of phase. That mode copes with units built on delay elements, such as a phaser, chorus or delay, and with devices whose AD and DA converters or DSP introduce latency. In Continuous Measurement mode the generated test signal is compared against the same timing length of the subject waveform to analyse their phases.
+
+  Two displays round the unit out. Combined with the ARC-4 the PHA-1 shows the level of the signal fed to or output from that controller, and on its own it shows the waveform of the incoming signal, with the displayed magnitude adjustable by the RANGE button. Because the ARC-4 carries a Phase Invert function, a chain the PHA-1 finds out of phase can be flipped back in phase from the controller.
+
+  Power comes from a 9 to 12 V DC external supply or a PP3 9 V battery, and the unit is small at 110 x 53 x 46 mm and about 230 g. The optional KS-EP-1 bracket secures it to the EFS-3 extension footswitch for the ARC-4.
+specs: |-
+  - Terminals: TEST SIGNAL OUT terminal, ANALYZER IN terminal, DC9-12V IN jack, OPTION-2 terminal (DIN 7-pin)
+  - Power source: AC-DC adaptor or PP3/9V battery, supports 9 to 12 VDC external supply
+  - Consumption current: approx. 52 mA (9 VDC driven)
+  - Two measurement modes: Repeated Measurement and Continuous Measurement
+  - Level meter display when combined with the ARC-4
+  - Waveform display with RANGE button to adjust displayed magnitude
+  - Dimensions: 110 (W) x 53 (D) x 46 (H) mm, including protuberances such as knobs and switches
+  - Weight: approx. 230 g
+  - Accessories: warranty card, Web Access Card, PP3/9V battery
+  - Optional KS-EP-1 bracket secures the PHA-1 to the EFS-3 extension footswitch for the ARC-4
+  - Optional RC-7 connection cable (40cm / 50cm / 80cm / 100cm) links the ARC-4 to the EFS-3 or PHA-1
+io:
+  - key: fCw7a4YT
+    name: TEST SIGNAL OUT
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: LbvfsVmY
+    name: ANALYZER IN
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: StFKks8C
+    name: OPTION-2
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: 7-pin din
+    maxConnections: 1
+    position: Right
+  - key: dIiuUapl
+    name: DC 9-12V IN
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.freethetone.com/upload/en/file/manual/system/pha1/PHA-1_manual_en.pdf
+    type: resource
+    title: PHA-1 PHASE ANALYZER Operation Manual
+  - url: https://www.freethetone.com/upload/en/file/manual/system/efs3/Option_manual_e.pdf
+    type: resource
+    title: KS-AE-1/KS-EP-1/KS-LD-1 Installation manual
