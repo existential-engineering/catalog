@@ -37,7 +37,7 @@ specs: |-
   - Two peak LEDs on the group bus
   - 12 mm fader knob
   - Links to channel and master modules through the CGM Link System 10-pole IDC pin headers on the back, which carry audio, power and controls
-  - Bus-powered from the Eurorack case through its power header, with no power jack of its own
+  - Powered by a connected channel module through the CGM Link System, with no power jack of its own
   - Ships with a one-group-to-two-channels Link System cable
 io:
   - key: WgbBQxEX
@@ -118,14 +118,6 @@ io:
     category: audio
     type: line
     connection: 1/8-inch
-    maxConnections: 1
-    position: Bottom
-  - key: a7fjVTU1
-    name: Eurorack Bus Power Header
-    signalFlow: input
-    category: power
-    type: power
-    connection: pin-header
     maxConnections: 1
     position: Bottom
 links:
