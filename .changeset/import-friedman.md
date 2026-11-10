@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Friedman Amplification (73 hardware/software entries).
+Import Friedman Amplification (73 hardware and accessory entries).
