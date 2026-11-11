@@ -1,0 +1,88 @@
+id: mQkZL7dCU1w9_jGzBn_00
+name: INTEGRATED GATE IG-1N
+manufacturer: free-the-tone
+primaryCategory: noise-reduction
+categories:
+  - pedal
+  - noise-gate
+  - dynamics
+capabilities:
+  - noise-reduction
+  - gating
+url: https://www.freethetone.com/en/products/detail66/
+prices:
+  - amount: 28000
+    currency: JPY
+description: The INTEGRATED GATE IG-1N is a noise reduction and noise gate pedal
+  with a fully analog audio path controlled by a digital signal monitoring
+  circuit, switchable via MIDI.
+details: |-
+  The INTEGRATED GATE addresses the noise picked up by guitar and bass pickups, which the maker notes has grown with the spread of computers, LED light bulbs, cellular phones and wireless devices. Of the available approaches, such as noise-cancelling pickups, better shielding or a high-cut filter, each changes the instrument's sound; automatically reducing the level of the signal coming out of the instrument was chosen instead as the way to preserve both the sound quality and the natural decay of the instrument's sound. In effect the volume reduction a player would make by hand is performed electronically and at high speed.
+
+  The audio signal line is left in the analog domain rather than being digitized, while the output level is controlled quickly and accurately by a digital circuit, the digitally controlled analog approach Free The Tone also uses in the PA-1Q series programmable analog 10-band EQ and the TRI AVATAR TA-2H.
+
+  Pickup noise becomes more noticeable as string vibration decays, and that decay is not linear but swells and dips as it falls away, which can make conventional gates sound unnatural at the end of a note. A signal monitoring function constantly watches the input signal with a CPU, analysing the input waveforms and controlling the output level accordingly to obtain natural attenuation.
+
+  Two modes are provided. In Noise Reduction mode the circuit gradually reduces the volume once the signal drops below the THRESHOLD setting, and immediately passes a signal above it unchanged. In Noise Gate mode the sound is muted as soon as the volume falls below the threshold, which stops the sound immediately and can be used as a crisp gate effect. An input impedance select switch chooses between Hi-Z and Lo-Z.
+
+  A MIDI IN terminal allows the effect to be switched on and off by MIDI control change messages, which suits use alongside an audio routing controller such as the maker's ARC-4 or ARC-53M without connecting the unit into an effect loop. The HTS (Holistic Tonal Solution) circuit performs impedance conversion while bringing out the instrument's sound characteristics and prevents degradation of the sound even when the effect is off, and the output signal is in the same phase as the input signal.
+specs: |-
+  - Input impedance: 800k Ohm (Hi-Z), 300k Ohm (Lo-Z)
+  - Output load impedance: min. 10k Ohm
+  - Max. input level: +15 dBu
+  - Controls: THRESHOLD, input impedance select switch (Hi-Z/Lo-Z)
+  - Terminals: 2 x 1/4 inch standard phone jacks (input, output), DC9V input jack (for AC adapter connection), 3.5-mm stereo mini jack (MIDI IN)
+  - Power supply: 9-volt PP3 battery, or 9V DC center negative polarity
+  - Current consumption: 35 mA
+  - Dimensions (D x W x H): 72 x 115 x 50 mm including protuberances such as footswitches and jacks
+  - Weight: approx. 190 g excluding battery
+  - Noise Reduction and Noise Gate operating modes
+  - Effect on and off controllable by MIDI control change number
+  - Battery life: 15 hours or more with an alkaline battery, 4 hours or more with a manganese battery
+  - Output signal in the same phase as the input signal
+io:
+  - key: M2Qrjrsm
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: rvMbyuyT
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: AGbF5QqZ
+    name: MIDI IN
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: X5fhFbdG
+    name: DC 9V Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+versions:
+  - name: "1.1"
+    description: Firmware version 1.1
+links:
+  - url: https://www.freethetone.com/upload/en/file/manual/effects/IG-1N/IG-1N_manual_e.pdf
+    type: resource
+    title: INTEGRATED GATE IG-1N Manual
+  - url: https://www.freethetone.com/upload/en/file/manual/effects/IG-1N/IG-1N_FirmwareUpdate_E.pdf
+    type: resource
+    title: INTEGRATED GATE Firmware Update Procedure Manual
+  - url: https://www.freethetone.com/en/support/download/firmware/#product_66
+    type: resource
+    title: INTEGRATED GATE IG-1N firmware download
