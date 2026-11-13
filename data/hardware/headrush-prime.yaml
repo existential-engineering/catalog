@@ -64,28 +64,60 @@ specs: |-
   - Stereo FX loop with four-cable method support
   - Road-ready steel chassis
 io:
+  - key: HtDDiCsl
+    name: Guitar Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: jszKgpJP
-    name: Mic / Instrument Combo Input
+    name: Mic Input
     signalFlow: input
     category: audio
     type: mic
     connection: combo jack
     maxConnections: 1
     position: Right
-  - key: V0DKSDXQ
-    name: XLR Output L
-    signalFlow: output
+  - key: ucM2lNXQ
+    name: Aux Input
+    signalFlow: input
     category: audio
     type: line
-    connection: xlr
+    connection: 1/8-inch
     maxConnections: 1
     position: Right
-  - key: tOpoINWr
-    name: XLR Output R
+  - key: pRh5c9lM
+    name: Expression Pedal Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: ZQK2mUyK
+    name: Expression Pedal Toe Switch Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 1iCtVss3
+    name: FX Loop Send
     signalFlow: output
     category: audio
-    type: line
-    connection: xlr
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: cukoi4zy
+    name: FX Loop Return
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: 1/4-inch
     maxConnections: 1
     position: Right
   - key: MIPRmFnV
@@ -104,36 +136,36 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Right
-  - key: 1iCtVss3
-    name: FX Loop Send L
+  - key: V0DKSDXQ
+    name: XLR Output L
     signalFlow: output
     category: audio
-    type: insert
-    connection: 1/4-inch
+    type: line
+    connection: xlr
     maxConnections: 1
     position: Right
-  - key: kxfgDioZ
-    name: FX Loop Send R
+  - key: tOpoINWr
+    name: XLR Output R
     signalFlow: output
     category: audio
-    type: insert
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: d3ANAuqM
+    name: External Amp Footswitch Output
+    signalFlow: output
+    category: audio
+    type: expression
     connection: 1/4-inch
     maxConnections: 1
     position: Right
-  - key: cukoi4zy
-    name: FX Loop Return L
-    signalFlow: input
+  - key: e3EJz4u6
+    name: Headphone Output
+    signalFlow: output
     category: audio
-    type: insert
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Right
-  - key: ZFWzkNKd
-    name: FX Loop Return R
-    signalFlow: input
-    category: audio
-    type: insert
-    connection: 1/4-inch
+    type: headphone
+    connection: 1/8-inch
     maxConnections: 1
     position: Right
   - key: P4gnXp0G
@@ -145,11 +177,19 @@ io:
     maxConnections: 1
     position: Right
   - key: hRCveKqF
-    name: MIDI Out
+    name: MIDI Out/Thru
     signalFlow: output
     category: midi
     type: midi
     connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: QB6HACp5
+    name: USB-B Port
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
     maxConnections: 1
     position: Right
   - key: QHZjYW8c
@@ -158,5 +198,13 @@ io:
     category: digital
     type: usb
     connection: usb-a
+    maxConnections: 1
+    position: Right
+  - key: HpGkYGYj
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
     maxConnections: 1
     position: Right

@@ -69,6 +69,38 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Right
+  - key: l6PoIHte
+    name: Aux Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 83JqfI5V
+    name: Expression Pedal Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: DUmadlTg
+    name: FX Loop Send
+    signalFlow: output
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: dFrO2ktb
+    name: FX Loop Return
+    signalFlow: input
+    category: audio
+    type: insert
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
   - key: tCi6eFGC
     name: TRS Output L
     signalFlow: output
@@ -85,36 +117,12 @@ io:
     connection: 1/4-inch
     maxConnections: 1
     position: Right
-  - key: DUmadlTg
-    name: FX Loop Send L
+  - key: yncnv2yz
+    name: Headphone Output
     signalFlow: output
     category: audio
-    type: insert
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Right
-  - key: Qe5oFgXk
-    name: FX Loop Send R
-    signalFlow: output
-    category: audio
-    type: insert
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Right
-  - key: dFrO2ktb
-    name: FX Loop Return L
-    signalFlow: input
-    category: audio
-    type: insert
-    connection: 1/4-inch
-    maxConnections: 1
-    position: Right
-  - key: peY3qkdW
-    name: FX Loop Return R
-    signalFlow: input
-    category: audio
-    type: insert
-    connection: 1/4-inch
+    type: headphone
+    connection: 1/8-inch
     maxConnections: 1
     position: Right
   - key: nu61dy2G
@@ -126,10 +134,26 @@ io:
     maxConnections: 1
     position: Right
   - key: KNZQj4mI
-    name: MIDI Out
+    name: MIDI Out/Thru
     signalFlow: output
     category: midi
     type: midi
     connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 1exBgonx
+    name: USB-B Port
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: 9erami3B
+    name: Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
     maxConnections: 1
     position: Right
