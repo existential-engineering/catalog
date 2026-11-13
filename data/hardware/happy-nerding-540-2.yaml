@@ -1,0 +1,65 @@
+id: gKtl243E2ZoPiFkvZe1F6
+name: LED Meter
+manufacturer: happy-nerding
+primaryCategory: meter
+categories:
+  - modular
+  - metering
+  - utility
+url: https://happynerding.com/540-2/
+prices:
+  - amount: 100
+    currency: USD
+  - amount: 89
+    currency: EUR
+description: LED Meter is a handy utility module designed to show audio levels,
+  with 30 LED segments covering roughly 30 dB of measurement range.
+details: |-
+  LED Meter is a handy utility module designed to show audio levels. There are a total of 30 LED segments, each one roughly corresponding to 1 dB of level, so 30 dB of measurement range is available with this module.
+
+  Five colour versions are available: all blue, all yellow, green with yellow-red peak segments on a silver panel, green with yellow-red peak segments on a black panel, and a yellow (positive) and blue (negative) bipolar version.
+
+  The dual colour version (blue-yellow) and the green colour version sold since 2019 have a mode jumper on the back side. When the jumper is installed, bipolar operation is active, and when the jumper is removed the module works as an ordinary audio meter.
+
+  The module has an input for the signal to be displayed, and its buffered copy is sent to the output for further processing, so no external splitter is needed.
+
+  Two trimmers are accessible via holes on the front panel: the left trimmer adjusts brightness and the right trimmer is used for level adjustment, so the module can represent full scale signals ranging from 2 V to 12 V. Reverse power protected like any other Happy Nerding module.
+specs: |-
+  - 30 LED segments, each roughly 1 dB, for 30 dB of measurement range
+  - Measurement input level: accepts inputs ranging from [-2V... +2V] to [-12V... +12V] using an onboard trimmer
+  - Front panel trimmers for brightness and level
+  - Buffered copy of the input sent to the output, no external splitter needed
+  - Mode jumper on the back side for bipolar operation (dual colour and green versions sold since 2019)
+  - Module depth: 4 cm
+  - Power consumption: depends on brightness, max +150 mA at +12 Vdc, -50 mA at -12 Vdc
+  - Reverse power protected
+io:
+  - key: IEktWenF
+    name: Signal Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BXf93W7P
+    name: Buffered Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: g3LfhOVD
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+variants:
+  - name: All blue
+  - name: All yellow
+  - name: Green with yellow-red peak segments, black panel
+  - name: Bipolar, yellow positive and blue negative

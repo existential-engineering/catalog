@@ -1,0 +1,96 @@
+id: 4iO-Qwbg4utqQaOpJhZp3
+name: FX AID Pro
+manufacturer: happy-nerding
+primaryCategory: multi-effect
+categories:
+  - modular
+  - effect
+  - digital
+capabilities:
+  - bit-crush
+url: https://happynerding.com/fx-aid-pro/
+prices:
+  - amount: 330
+    currency: USD
+  - amount: 300
+    currency: EUR
+description: Stereo effects module for Eurorack with 200 onboard effects that
+  can be arranged in any order with an online editor, an OLED screen showing the
+  current effect and its three parameters, and three internal LFOs, in 14 HP.
+details: |-
+  FX AID Pro carries 200 onboard effects that can be arranged in any order through the online editor at fxaid.app/pro. An OLED screen shows the current effect's number, its name and its three parameters, and effects can be switched instantly or picked with a seek then activate option.
+
+  The stereo input has its own level control. The SRR input sets the sample rate and can also be routed to parameters 1 to 3 or to effect selection, with a bipolar oscilloscope on screen for the incoming signal. The sample rate can also be set by hand, with one click returning the default position.
+
+  Three internal LFOs can be routed to the sample rate, to parameters 1 to 3 or to effect selection. Ten user storable presets keep each stored parameter, shown by indicator lines, and a screensaver can be set to 1, 10, 30 or 60 minutes.
+
+  Firmware is updated by playing a wav file into the SRR input at line level, with a level indicator for matching volumes. Holding the encoder for 10 seconds enters firmware update mode, and a properly generated wav file is 13 MB and 2 minutes 20 seconds long. If the module stops responding after an update, switching the case power off, holding the encoder and switching the power back on reboots it into update mode.
+
+  The module is 14 HP wide and reverse power protected like other Happy Nerding modules. The effects list keeps growing, so the editor page carries the current set, and a factory bank preset can be loaded into the editor for easier editing.
+specs: |-
+  - 200 onboard effects, arranged in any order with the online editor
+  - OLED screen showing effect number, name and three parameters
+  - Instant effect switching, or seek then activate
+  - Stereo input level control
+  - SRR input routable to parameters 1 to 3 or to effect selection
+  - Three internal LFOs routable to the sample rate, parameters 1 to 3 or effect selection
+  - SRR input bipolar oscilloscope
+  - Manual sample rate control, one click for the default position
+  - 10 user storable presets with indicator lines for each stored parameter
+  - Screensaver with 1, 10, 30 and 60 minute options
+  - Firmware update by playing a wav file (13 MB, 2 min 20 sec) into the SRR input
+  - 14 HP width
+  - Reverse power protected
+io:
+  - key: rQ2jz7js
+    name: Audio Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: lmaw1bJQ
+    name: Audio Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VgBrSN5X
+    name: SRR Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5xlxqogO
+    name: Audio Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: cGdpkARI
+    name: Audio Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 0PTJWSmj
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://fxaid.app/pro
+    type: resource
+    title: FX AID Pro online effects editor

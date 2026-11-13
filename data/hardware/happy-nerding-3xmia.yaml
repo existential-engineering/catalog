@@ -1,0 +1,122 @@
+id: mpvLz9AdoJxTxiGA4FkMW
+name: 3xMIA
+manufacturer: happy-nerding
+primaryCategory: mixer
+categories:
+  - modular
+  - utility
+  - analog
+hp: 6
+url: https://happynerding.com/3xmia/
+prices:
+  - amount: 100
+    currency: USD
+  - amount: 88
+    currency: EUR
+description: 3xMIA is a 6-channel attenuverting mixer, offset, scale and
+  polarizer built from 3 blocks of 2-channel attenuverting mixers using dual
+  concentric pots.
+details: |-
+  3xMIA is a 6-channel attenuverting mixer / offset / scale / polarizer.
+
+  It is built from 3 blocks of 2-channel attenuverting mixers, using dual concentric pots. Each channel can be switched to mix with the subsequent channel, allowing for 2-2-2, 4-2 and 6 mix configurations.
+
+  With nothing plugged into an input, an offset is normalled to that channel. The inner knobs control the A inputs, while the outer knobs control the B inputs.
+
+  DC coupled, so it can be used for audio, CV, or both at the same time.
+
+  Reverse power protected like any other Happy Nerding module.
+specs: |-
+  - 6 attenuverting channels in 3 blocks of 2
+  - Dual concentric pots: inner knobs control A inputs, outer knobs control B inputs
+  - Switchable mixing with the subsequent channel for 2-2-2, 4-2 and 6 configurations
+  - Normalled offset on any channel with no input plugged in
+  - DC coupled for audio, CV, or both at once
+  - 80 mA +12V
+  - 80 mA -12V
+  - 35 mm depth
+  - 6 HP wide (24 HP for the 1U version)
+  - Reverse power protected
+io:
+  - key: oJgtdZVm
+    name: Channel 1A Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CTEgg7OX
+    name: Channel 1B Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Vs9U04RP
+    name: Channel 2A Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZpILWYMU
+    name: Channel 2B Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 5Kiqw7mi
+    name: Channel 3A Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: pXRAwFew
+    name: Channel 3B Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AETB0gA2
+    name: Block 1 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: rqw5gCMh
+    name: Block 2 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 25rYZsfV
+    name: Block 3 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: no0i1WdT
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+variants:
+  - name: Black

@@ -1,0 +1,102 @@
+id: zH6jh3ALTYyUJW4pxX9YE
+name: FX AID
+manufacturer: happy-nerding
+primaryCategory: multi-effect
+categories:
+  - modular
+  - effect
+  - digital
+capabilities:
+  - bit-crush
+url: https://happynerding.com/fx-aid/
+prices:
+  - amount: 200
+    currency: USD
+  - amount: 170
+    currency: EUR
+description: Eurorack effects module running 32 unique audio effects arranged in
+  4 banks of 8, with three effect controls, an analog Dry/Wet control with its
+  own CV input and a high quality stereo signal pass.
+details: |-
+  FX AID runs 32 unique audio effects arranged in 4 banks of 8 effects, with three effect controls plus an analog Dry/Wet control that has a dedicated CV input. The signal path is a high quality stereo pass.
+
+  A second, assignable CV input can be routed to the effect controls or to the Sample Rate Reducer, which changes the internal clock. Four user storable presets keep the selected program and all three controls, and the CV assignment, the presets and the last used effect are remembered across power offs. The Dry/Wet control responds to CV in reverse: positive CV crossfades from wet to dry, and negative CV crossfades from dry to wet.
+
+  The module is not limited to the 32 factory effects. It can be reflashed with other Happy Nerding effects in any order, and a standalone FX AID editor application also loads custom or free Spin programs. The standalone editor for PC or Mac is downloaded from the Download section of the web editor, and needs an internet connection on first run to load the program files and the current effects list, after which it updates itself and picks up new effects.
+
+  Reflashing is done by playing a 40 second wav file at line level amplitude into the CV input. Firmware update mode is entered by holding both buttons for 10 seconds, at which point the two inner LEDs of the upper row blink to show readiness. If an error occurs the two outer LEDs of the upper row blink, and pressing any button resets the indication so the firmware can be played again. If the level causes errors, lowering it usually clears them.
+
+  Presets are stored by holding the Right button for 4 seconds until all LEDs go off, then pressing the Left button to light the first LED of the lower row and pressing again to step to position 1 to 4, releasing the Right button once the slot is reached. The Dry/Wet knob position is not stored. The module is reverse power protected like other Happy Nerding modules.
+specs: |-
+  - 32 unique audio effects in 4 banks of 8
+  - Three effect controls plus analog Dry/Wet control
+  - Dedicated CV input for the Dry/Wet control, with reverse CV response
+  - Assignable CV input to the effect controls or to the Sample Rate Reducer
+  - High quality stereo signal pass
+  - Four user storable presets covering the program and all three controls
+  - CV assignment, presets and last used effect retained after power off
+  - Reflashable with other Happy Nerding effects in any order
+  - Standalone editor application for PC and Mac, loads custom and free Spin programs
+  - Firmware update by playing a 40 second line level wav file into the CV input
+  - Reverse power protected
+io:
+  - key: cM9tTSpb
+    name: Audio Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JA795R9n
+    name: Audio Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: OUSNegV5
+    name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 58c9ebbz
+    name: Dry/Wet CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: LiSFKYaC
+    name: Audio Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: t0ss3i9y
+    name: Audio Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: FDv5cCTV
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://fxaid.app/
+    type: resource
+    title: FX AID online effects editor

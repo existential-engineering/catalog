@@ -1,0 +1,54 @@
+id: 9ahGT7ntHxBfBv9rGeq8E
+name: ADSR
+manufacturer: happy-nerding
+primaryCategory: modulation
+categories:
+  - modular
+  - utility
+url: https://happynerding.com/adsr-2/
+description: ADSR (Attack-Decay-Sustain-Release) is a module designed to
+  generate a voltage, which acts as the envelope with the adjustable stages.
+  This envelope, generated in response to the incoming gate signal or manually
+  pushed button, can then be used to shape the sound amplitude via VCA, modulate
+  filter's cutoff frequency or any other parameters expecting CV control.
+details: |-
+  ADSR (Attack-Decay-Sustain-Release) is a module designed to generate a voltage, which acts as the envelope with the adjustable stages. This envelope, generated in response to the incoming gate signal or manually pushed button, can then be used to shape the sound amplitude via VCA, modulate filter's cutoff frequency or any other parameters expecting CV control.
+
+  It features exponential Attack, Decay and Release stages, a switch to select fast/slow operation mode, and a push button with LED indicator to manually activate the envelope.
+
+  Reverse power protected like any other Happy Nerding module.
+specs: |-
+  - Attack: 1,5 ms to 10 s (x10 in slow mode)
+  - Decay: 2 ms to 10 s (x10 in slow mode)
+  - Sustain: 0 to 100 % or 0 to 7,5 V
+  - Release: 1 ms to 10 s (x10 in slow mode)
+  - Output level: 0 to 7,5 V
+  - Output impedance: 500 Ohm
+  - Module depth: 2.5 cm or 1 inch
+  - Power consumption: +20 mA / -10 mA at +/-12 Vdc
+  - Reverse power protected
+io:
+  - key: YNA7Ns78
+    name: Gate Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: QivHg83G
+    name: Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: qlyX75KX
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

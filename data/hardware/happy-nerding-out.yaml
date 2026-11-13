@@ -1,0 +1,114 @@
+id: Cp4GZ3cJzFK3dtYDAg99Q
+name: OUT
+manufacturer: happy-nerding
+primaryCategory: summing-mixer
+categories:
+  - modular
+  - mixer
+  - headphone-amp
+  - utility
+url: https://happynerding.com/out/
+description: Eurorack output module providing two balanced outs, Left and Right,
+  for the sum of its two stereo inputs, with a separate headphone output on a
+  1/4 inch jack and an LED meter on the main out.
+details: |-
+  OUT provides two balanced outs, Left and Right, for the summed two stereo inputs. One of those stereo inputs can be attenuated with the knob next to its input jacks, and jumpers on the back side select 10x amplification for that input, so line level devices can be brought up to normal modular levels.
+
+  There is also a standard 1/4 inch jack for headphones. The headphone level is adjusted independently with the lower knob, while the upper knob sets the main out, Left and Right, whose level is shown on the LED meter.
+
+  All left channel inputs are normalled, so they can be used as mono inputs.
+
+  A stereo send connector is available from the PCB side, which lets OUT be connected internally to other Happy Nerding stereo modules. Isolator, PanMix Jr and 3x Stereo Mixer can receive that stereo signal internally.
+
+  The module is 6 HP wide, 50 mm deep, draws 125 mA on +12 V and 65 mA on -12 V, and is reverse power protected like other Happy Nerding modules.
+specs: |-
+  - Two balanced main outputs, Left and Right
+  - Two stereo inputs summed to the main output
+  - Attenuation knob on one stereo input
+  - Rear jumpers for 10x amplification on that input, for line level sources
+  - Standard 1/4 inch headphone jack with its own level knob
+  - LED meter on the main output
+  - All left channel inputs normalled for mono use
+  - Stereo send connector on the PCB side for internal connection to Isolator, PanMix Jr and 3x Stereo Mixer
+  - 125 mA on +12 V
+  - 65 mA on -12 V
+  - 50 mm depth
+  - 6 HP wide
+  - Reverse power protected
+io:
+  - key: QiMuyTHy
+    name: Stereo Input 1 Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hRiTcKMO
+    name: Stereo Input 1 Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UNHBNuv6
+    name: Stereo Input 2 Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tyFs1I0N
+    name: Stereo Input 2 Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: TlYXsksU
+    name: Balanced Output Left
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 0QeVavwf
+    name: Balanced Output Right
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: dFcbuXFI
+    name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: X4WQCnn8
+    name: Internal Stereo Send
+    signalFlow: output
+    category: audio
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+  - key: sOsnBcDa
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://www.patreon.com/posts/changing-output-14360499
+    type: resource
+    title: Changing Output Modules
