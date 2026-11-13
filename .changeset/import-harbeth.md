@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Harbeth (16 hardware/software entries).
+Import Harbeth (15 hardware entries and 1 accessory entry).

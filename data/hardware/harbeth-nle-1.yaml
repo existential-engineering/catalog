@@ -32,6 +32,7 @@ specs: |-
   - Drive units: 19mm ferrofluid-cooled tweeter
   - Frequency range: 75Hz to 20kHz, plus or minus 3dB free-space
   - Inputs: XLR and RCA
+  - With the XLR as the audio input, the RCA connector can be used as an output to the Harbeth Nelson bass extender
   - Amplification: two 50W ultra-low-distortion, high-damping-factor Class-D amplifiers, one per drive unit
   - Internal DSP crossover with individual control of each drive unit
   - Personality mode switch adds an extra octave of bass at lower volumes
@@ -51,8 +52,8 @@ io:
     maxConnections: 1
     position: Right
   - key: zof6Vwla
-    name: RCA Input
-    signalFlow: input
+    name: RCA Input/Output
+    signalFlow: bidirectional
     category: audio
     type: line
     connection: rca
