@@ -1,0 +1,91 @@
+id: Wo1Qlbqmi2KRYfRwBR1i3
+name: Isolator
+manufacturer: happy-nerding
+primaryCategory: utility
+categories:
+  - modular
+  - routing
+  - headphone-amp
+url: https://happynerding.com/698-2/
+prices:
+  - amount: 130
+    currency: USD
+  - amount: 110
+    currency: EUR
+description: Isolator is a 4 HP solution for galvanic isolation between its
+  inputs and quarter inch TRS balanced outputs, interfacing a Eurorack system
+  with external equipment without an electrical connection and preventing ground
+  loop issues.
+details: |-
+  Isolator is your 4 HP solution for galvanic isolation between its inputs and quarter inch TRS balanced outputs, interfacing your Eurorack modular system without an electric connection with the external equipment, which prevents possible ground loop issues.
+
+  If no signal is plugged to the right input, then the left input will be sent to both Left and Right outputs.
+
+  The Level knob adjusts output level for the Left and Right channels, and the Phones knob sets the level for the headphones output.
+
+  If jumpers are installed, which is the default, the headphones output has the max gain. If the gain is too high for a particular headphones model, both jumpers should be removed.
+
+  Reverse power protected like any other Happy Nerding module.
+specs: |-
+  - Galvanic isolation between inputs and outputs, preventing ground loops
+  - Quarter inch TRS balanced outputs
+  - Right input normalled to the left input, so a left-only signal feeds both outputs
+  - Level knob for the Left and Right outputs, Phones knob for the headphones output
+  - Rear jumpers set maximum headphone gain, installed by default
+  - 50 mA +12V
+  - 50 mA -12V
+  - 45 mm depth
+  - 4 HP wide
+  - Reverse power protected
+io:
+  - key: f5IsDdQY
+    name: Left Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6Y9DdyJf
+    name: Right Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: in0IFSjc
+    name: Left Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ZKT7TI5m
+    name: Right Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 9iUGzvtm
+    name: Headphones Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ar43rsRq
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://happynerding.com/wp-content/uploads/2018/02/Isolator-test.zip
+    type: resource

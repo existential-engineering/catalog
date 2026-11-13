@@ -1,0 +1,120 @@
+id: _ezFrS2t3KSKqUkUT-F98
+name: FUN VCF
+manufacturer: happy-nerding
+primaryCategory: filter
+categories:
+  - modular
+  - analog
+  - stereo
+capabilities:
+  - filter
+url: https://happynerding.com/fun-vcf/
+prices:
+  - amount: 200
+    currency: USD
+description: FUN VCF is a double state variable filter with common controls and
+  separate outputs. Its core is based on the soviet Polivoks synthesizer's
+  filter, featuring new stock KR140UD1208 and KR140UD18 operational amplifiers.
+details: |-
+  FUN VCF is a double state variable filter with the common controls and separate outputs. Its core is based on the soviet Polivoks synthesizer's filter featuring new stock KR140UD1208 and KR140UD18 operational amplifiers.
+
+  The original schematic was redesigned in the following way: a High Pass output was added, a full frequency sweep in the hearing range is now possible from 20 Hz to 20 kHz, there are no artifacts for the filter passing unwanted high frequencies at the Low Pass output, and the inherent distortion when the Frequency is set to its low range is eliminated, with the compensation omittable via a jumper on the PCB.
+
+  Two identical state variable filters are available in one module, each of them has a separate input and three outputs: High Pass (12 dB/oct), Band Pass (6 dB/oct) and Low Pass (12 dB/oct), plus a Frequency Modulation (FM) input common to both filters. Both filters are factory fine tuned to be as identical as possible for good stereo operation.
+
+  But the module is not limited to stereo filtering. The user can take any output of one filter and patch it to the second filter's input. This way not only the usual combinations of 12+12=24 dB/oct Low Pass and High Pass, or 6+6=12 dB/oct Band Pass filter modes are possible, but also any in-between modes like passing a 12 dB/oct High Pass through a 6 dB/oct Band Pass.
+
+  It should be mentioned that this filter's resonance is self oscillating and has a huge impact on the sound, which becomes merely monstrous in case a serial connection of both onboard filters is used.
+specs: |-
+  - Two identical state variable filters with common controls
+  - Three outputs per filter: High Pass (12 dB/oct), Band Pass (6 dB/oct), Low Pass (12 dB/oct)
+  - Frequency Modulation input common to both filters
+  - Full 20 Hz to 20 kHz frequency sweep
+  - Self oscillating resonance
+  - Low-range distortion compensation, defeatable with a PCB jumper
+  - Input level: -5V to +5V, can also accept inputs exceeding [-5V to +5V] amplitude with peculiar distortion
+  - Output level: around -2,5V to +2,5V at low Resonance settings, up to -15V to +15V in self oscillation
+  - Output impedance: 1 kOhm
+  - Module depth: 3 cm or 1,5 inches
+  - Power consumption: +15 / -15 mA at +/-15 Vdc (DOTCOM format)
+io:
+  - key: 3rEnbFzT
+    name: Filter 1 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: cxDllmQ6
+    name: Filter 1 High Pass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: gZmaxVAE
+    name: Filter 1 Band Pass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 9Zbnotwd
+    name: Filter 1 Low Pass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: adZW6i2y
+    name: Filter 2 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 1TmdtMOn
+    name: Filter 2 High Pass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: bVtMoD9n
+    name: Filter 2 Band Pass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: mgn3v6Bo
+    name: Filter 2 Low Pass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: vd6zqpJi
+    name: Frequency Modulation Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: v3ryOolL
+    name: Bus Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
