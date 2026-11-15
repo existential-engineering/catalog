@@ -1,0 +1,221 @@
+id: BkEqD6y4D5AXZdlAWKOYA
+name: QSC
+manufacturer: frap-tools
+primaryCategory: mixer
+categories:
+  - modular
+  - analog
+capabilities:
+  - saturation
+url: https://frap.tools/products/qsc/
+prices:
+  - amount: 450
+    currency: EUR
+    asOf: 2026-11-09
+    source: https://frap.tools
+description: The Quad Stereo Channel (QSC) packs four stereo mixer channels with
+  voltage-controlled input VCAs, two effect sends each and switchable pan or
+  crossfade. It works inside a standard CGM configuration or as a standalone
+  stereo mixer with mono effect sends.
+details: |-
+  The Quad Stereo Channel (QSC) consists of four stereo channels, with a design based on the Channel module that also borrows some concepts from the Group and the Master modules. The colour scheme reflects the same routing as those modules: VCA in red, two effect sends in yellow and green, pan in pink, auxiliary input in purple, and main faders in white. The feature set allows the QSC to sit inside a standard CGM configuration or to work as a standalone stereo mixer with mono effect sends.
+
+  Each channel features two amplitude controls, an input stereo VCA and a volume fader. The input VCA is voltage-controllable and, given enough input amplitude, it can overdrive the circuit for a creamy, fat saturation, with a peak LED indicating when the signal is clipping. A mute button removes a channel from the group sum and works over the input VCA, so it mutes the effect sends as well.
+
+  The yellow and green knobs set two effect send levels per channel, switchable pre- or post-fader, and two of them can be voltage-controlled. A switch selects whether the panpot places the channel in the stereo field or crossfades between two monophonic sources, which allows the module to be used as a limited eight-channel mono mixer. CV control is available over the pan and crossfade sections of channels 1 and 4.
+
+  Two unbalanced outputs, left and right, provide the local sum of the four channels, so the QSC can act as a standalone four-channel stereo mixer in smaller systems or be parallel-processed in larger ones. Two monophonic jack outputs mirror the effect send sum passed to the group, which keeps the send capability usable in a compact system where the Group module does not fit, and allows advanced routing in larger setups by processing the same sum twice. An auxiliary mono input adds one more signal straight to the final sum with no attenuation and no controls.
+
+  The Solo-In-Place button prepares a scene of channels to be isolated from the others, recalled through the Safe Solo button on the Group module, which works as a mute group that silences everything outside the solo scene. The PFL button, used with the PFL fader on the Master module, previews a channel for tuning oscillators or checking a source before it enters the mix.
+specs: |-
+  - Four stereo channels, usable as stereo or as dual mono
+  - Voltage-controlled stereo input VCA per channel, able to saturate when driven hard, with a peak LED
+  - Volume fader per channel with a 12 mm knob
+  - Two effect sends per channel, yellow and green, switchable pre- or post-fader
+  - CV over the input VCA on all four channels
+  - CV over pan on channels 1 and 4
+  - CV over the yellow send on channel 1 and the green send on channel 4
+  - Pan or crossfade switch per channel, allowing use as an eight-channel mono mixer
+  - Electronic latching mute and PFL per channel, with a mechanical solo-in-place switch
+  - Two unbalanced local sum outputs, left and right, for standalone four-channel stereo mixing
+  - Two monophonic effect send outputs mirroring the send sum passed to the Group module
+  - Auxiliary mono input added straight to the final sum with no attenuation or controls
+  - Usable inside a standard CGM configuration or as a standalone stereo mixer
+  - Bus-powered from the Eurorack case power bus, with no power jack of its own
+io:
+  - key: 6YdJP83A
+    name: Channel 1 Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: jK1jdKJL
+    name: Channel 1 Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: I2kkQQU1
+    name: Channel 2 Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: KxK6RBF7
+    name: Channel 2 Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: w9l415PE
+    name: Channel 3 Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: HMejSggh
+    name: Channel 3 Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: DwTY1rZe
+    name: Channel 4 Input L
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: MtPCu7rk
+    name: Channel 4 Input R
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: fXFlTmUi
+    name: Channel 1 VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: PFYdZjeg
+    name: Channel 2 VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: H8cHMD4E
+    name: Channel 3 VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: SqkhE8UD
+    name: Channel 4 VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: R2CyNDXF
+    name: Channel 1 Pan CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: TuNEdo0x
+    name: Channel 4 Pan CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: mLhv1pXi
+    name: Channel 1 Yellow Send CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: vxSHs179
+    name: Channel 4 Green Send CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: aPtZMeFH
+    name: Auxiliary Mono Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: PSLgDWT9
+    name: Local Sum Output L
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: JJTLV6GX
+    name: Local Sum Output R
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: rqj6VmZg
+    name: Yellow Effect Send Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: qzq7UtcN
+    name: Green Effect Send Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: https://frap.tools/manualone/
+    type: resource
+    title: Manual
+videos:
+  - provider: youtube
+    videoId: K3xBzZQnzkQ
+    title: QSC Quad Stereo Channel

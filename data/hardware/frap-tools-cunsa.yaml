@@ -1,0 +1,403 @@
+id: ehwKdmZW4huPH-q6yzba5
+name: CUNSA
+manufacturer: frap-tools
+primaryCategory: filter
+categories:
+  - modular
+  - analog
+capabilities:
+  - filter
+  - saturation
+  - distortion
+url: https://frap.tools/products/cunsa/
+prices:
+  - amount: 850
+    currency: EUR
+    asOf: 2026-11-09
+    source: https://frap.tools
+description: CUNSA is a quadruple analog pingable multimode resonant filter,
+  saturator, mixer and oscillator. Each of its four state-variable filters gives
+  lowpass, bandpass and highpass simultaneously, with a Character circuit for
+  feedback and saturation, and the four can be used independently or linked
+  through seminormalizations.
+details: |-
+  CUNSA is a quadruple analog pingable multimode resonant filter, saturator, mixer and oscillator. It is Frap Tools' sound seasoning tool, able to gently even out a patch with a final touch or to set it on fire with a ridiculous amount of spice. It consists of four multimode resonant filters with a custom saturation and feedback control, usable independently or in various combinations and roles thanks to a series of seminormalizations.
+
+  The four state-variable filters each provide three behaviors simultaneously: lowpass, bandpass and highpass. Every behavior has a 12 dB/oct slope, except the lowpass, which can be switched between 12 and 24 dB/oct. Beyond the usual Q control that emphasizes the cutoff frequency, the Character circuit defines the amount of soft clipping when the filter overloads: high clipping gives a controlled behavior with a fat tone and pure resonance, while low or no clipping lets the signal saturate the filter stages and scream.
+
+  Each filter responds to a V/oct signal with close tracking, so the cutoff frequency can follow a melody, or the filter can be made to resonate with no input at all and turn CUNSA into a multiple oscillator. The AC-coupled Ping circuit responds to incoming gates with a selectable decay curve, creating natural decay sounds from trigs or smoother envelopes from any other voltage, like a linear integrator with a custom decay. Feeding the audio input with trigs at high Q settings makes the filter ring.
+
+  The four filters can work independently or be arranged in groups through seminormalled inputs and sum outputs, so CUNSA can be a 4x1, a 2x2 or a single 1x4 filter, as well as odd configurations such as 1+2+1 or 3+1, for mono, stereo or quadraphonic audio. Four input types carry a cascaded seminormalization, audio, VCA CV, V/oct and Ping, so a signal patched to one filter also feeds those to its right, and patching a dummy cable removes the seminormalization.
+
+  Every filter output can be routed to an analog mix bus that sums the four filters and presents them in three combinations, all, 1+2 and 3+4, with a gentle shelving EQ on the higher frequencies of the All output for extra timbral variety. When the filter behavior is set to COMBINED, cutoff frequency control also acts on the input VCA, reducing amplitude and saturation as it approaches the lowest range. Besides the seminormalled inputs, every filter carries additional CV inputs for cutoff frequency, Q and Character, each with a dedicated attenuverter.
+specs: |-
+  - Four analog state-variable multimode filters, usable independently or linked and mixed
+  - Lowpass, bandpass and highpass available simultaneously per filter, at 12 dB/oct, with the lowpass switchable to 24 dB/oct
+  - Character circuit sets the amount of soft clipping on filter overload, from controlled fat resonance to full saturation of the filter stages
+  - V/oct tracking on every filter, so the bank can resonate with no input and act as a quadruple oscillator
+  - V/oct inputs seminormalled so one CV can control several filters
+  - AC-coupled Ping circuit with selectable decay curve, responding to gates for natural decays or to any other voltage like a linear integrator
+  - Audio inputs fed with trigs ring the filter at high Q settings
+  - Group configurations of 4x1, 2x2 and 1x4, plus odd splits such as 1+2+1 and 3+1, for mono, stereo or quadraphonic audio
+  - COMBINED filter behavior links cutoff control to the input VCA, reducing amplitude and saturation toward the low range
+  - Cascaded seminormalization on four input types (audio, VCA CV, V/oct and Ping), removed by patching a dummy cable
+  - Analog mix bus with All, 1+2 and 3+4 outputs, plus a gentle high-frequency shelving EQ on the All output
+  - Additional CV inputs for cutoff frequency, Q and Character on every filter, each with its own attenuverter
+  - Dimensions as listed by the maker: 15.6 x 23.6 x 6 cm
+  - Eurorack module, bus-powered from the case's power header, with no power jack of its own
+io:
+  - key: taWiokHn
+    name: Filter 1 Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: mRgGSUfc
+    name: Filter 1 VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: IEM4szg8
+    name: Filter 1 V/oct Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UXwhSccc
+    name: Filter 1 Ping Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: mPi045bQ
+    name: Filter 1 Cutoff Frequency CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: DbGERJo9
+    name: Filter 1 Q CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GsrWoTUa
+    name: Filter 1 Character CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8qacivjK
+    name: Filter 1 Lowpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8ctBoFL2
+    name: Filter 1 Bandpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AIN8P72R
+    name: Filter 1 Highpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: AQSmkqaa
+    name: Filter 2 Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GwgfV2bS
+    name: Filter 2 VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: x1TuafmL
+    name: Filter 2 V/oct Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CowIudKL
+    name: Filter 2 Ping Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: qjfadqFg
+    name: Filter 2 Cutoff Frequency CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: FkJg0Sgy
+    name: Filter 2 Q CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 4jV67Moa
+    name: Filter 2 Character CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: MmKSgjXX
+    name: Filter 2 Lowpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: d1eq8Liw
+    name: Filter 2 Bandpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: SqLOdwaP
+    name: Filter 2 Highpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: mUfDAkFF
+    name: Filter 3 Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 44tgTBZp
+    name: Filter 3 VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: v8sEBMYc
+    name: Filter 3 V/oct Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: WGqzW4iA
+    name: Filter 3 Ping Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KAn8EWSK
+    name: Filter 3 Cutoff Frequency CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: EpmDGeyT
+    name: Filter 3 Q CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Ve0yC40e
+    name: Filter 3 Character CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wHDFBhtp
+    name: Filter 3 Lowpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hxHsbF9K
+    name: Filter 3 Bandpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: EYvC2kOk
+    name: Filter 3 Highpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UkuQ5HTL
+    name: Filter 4 Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: cjnsMqxc
+    name: Filter 4 VCA CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zuCadFmt
+    name: Filter 4 V/oct Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 9jEn0Hom
+    name: Filter 4 Ping Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: PMOqq55b
+    name: Filter 4 Cutoff Frequency CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: VRwUmCp2
+    name: Filter 4 Q CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: SAjtKC1G
+    name: Filter 4 Character CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: QaSci1TH
+    name: Filter 4 Lowpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ONJ3ZJbC
+    name: Filter 4 Bandpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: KzWKJIQL
+    name: Filter 4 Highpass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nhr3Bswa
+    name: Mix Bus All Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 0jRe5Wif
+    name: Mix Bus 1+2 Group Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: hko2iqKp
+    name: Mix Bus 3+4 Group Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: dRy0Utpt
+    name: Dry Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+videos:
+  - provider: youtube
+    videoId: V_bplfUqtxU

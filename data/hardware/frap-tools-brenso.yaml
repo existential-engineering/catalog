@@ -1,0 +1,205 @@
+id: 3-Wgu5OyXiZrROUJnXXQn
+name: Brenso
+manufacturer: frap-tools
+primaryCategory: synthesizer
+categories:
+  - modular
+  - analog
+capabilities:
+  - fm-synthesis
+  - ring-modulation
+url: https://frap.tools/products/brenso/
+prices:
+  - amount: 550
+    currency: EUR
+    asOf: 2026-11-09
+    source: https://frap.tools
+description: BRENSO is Frap Tools' primary analog source of articulated
+  waveforms, a complex oscillator whose degree of entanglement can be precisely
+  set by the musician. It pairs two thru-zero triangle-core oscillators with a
+  timbre modulation section and a four-quadrant multiplier for amplitude or ring
+  modulation.
+details: |-
+  BRENSO is Frap Tools' primary analog source of articulated waveforms, whose degree of entanglement can be precisely set by the musician. Its concept developed from a reflection on the meaning of the word complex, which comes from the Latin verb plector, literally 'to weave'. Rather than a pre-defined weft of controls and waveforms, BRENSO offers many threads to be woven together, for clarity, manageability and more sonic options.
+
+  The module consists of three sections, two for sound generation (yellow and green) and one for sound processing (white and red). The generation sections give control over two triangle-core oscillators, which can be modulated and synced both internally and externally, and their frequency modulation can be any combination of exponential and linear through-zero.
+
+  The processing section is composed of a Timbre Modulation section (white) and a final stage of Amplitude Modulation (red). The Timbre Modulation contains two parallel waveshapers with a PWM circuit, which are mixed with a crossfader and processed by a wavefolder. The wavefolder has symmetry control and can be pinged through a dedicated clock input with a shapeable, nonlinear behavior.
+
+  A four-quadrant multiplier further modulates the timbre-modulated sound with the green oscillator's sine wave. It can perform amplitude modulation or ring modulation, and a crossfader defines the balance between the modulated and unmodulated signal.
+
+  The Timbre section CV inputs are semi-normalled to a Timbre Modulation Bus, which is in turn semi-normalled to the green sine wave. Many other modulation destinations are semi-normalled to the other oscillator's sine wave, with attenuverters and attenuators for precise control, and every semi-normalization can be broken anywhere throughout the signal routing according to the musician's needs.
+specs: |-
+  - Two analog thru-zero triangle-core oscillators, yellow and green, for tracking and response to audio-rate modulation
+  - Independent FM circuit per oscillator, with exponential and linear thru-zero FM set independently and FM Deviation on two separate knobs or CV inputs
+  - Green oscillator can run at sub-audio rate and act as a complex LFO
+  - Coarse Frequency Lock button per oscillator, which freezes the Coarse knob while the Fine knob stays available for small adjustments
+  - Eight waveform outputs: sine, triangle, square and sawtooth from the green oscillator, and sine, triangle, a selectable square or shaped square and a Final output from the yellow one
+  - Timbre Modulation section with two parallel waveshapers, a PWM circuit, a crossfader and a wavefolder with symmetry control
+  - Pingable wavefolder: an external trig opens the fold above its maximum level, then closes it with a manually adjustable non-linear slope for percussive tones with an organic decay
+  - Dedicated VCA sets the global amount of modulation reaching each parameter section, with the green oscillator as the default modulator
+  - Four-quadrant multiplier performing amplitude or ring modulation against the green oscillator's sine wave, with a crossfader between modulated and unmodulated signal
+  - Two sync modes: Lock Sync removes unwanted beating and preserves tracking, Flip Sync reverts the synchronized oscillator's direction on the rising edge without forced restarts
+  - Semi-normalled modulation routing throughout, with attenuverters and attenuators, and every semi-normalization breakable by patching
+  - Eurorack module, bus-powered from the case's power header, with no power jack of its own
+io:
+  - key: 6lrQ2lLO
+    name: Yellow Oscillator 1V/oct Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: uZJG7fUZ
+    name: Yellow Oscillator FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: dLDkqPNi
+    name: Yellow Oscillator Exponential FM Deviation CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UDhvniaM
+    name: Yellow Oscillator Linear Through-Zero FM Deviation CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: r2kajvFf
+    name: Yellow Oscillator Sync Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fVZBrmdq
+    name: Green Oscillator 1V/oct Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bGfFXxZI
+    name: Green Oscillator FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 01LjjbmR
+    name: Green Oscillator Exponential FM Deviation CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: HzaYeLNx
+    name: Green Oscillator Linear Through-Zero FM Deviation CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6vAqwTcF
+    name: Green Oscillator Sync Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: OHOhoxmm
+    name: Timbre Modulation Bus Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: LXQzQWwI
+    name: Wavefolder Ping Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3dRjYzqh
+    name: Green Oscillator Sine Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: pqveGsVX
+    name: Green Oscillator Triangle Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wZgGwJKj
+    name: Green Oscillator Square Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: YsCgAeF8
+    name: Green Oscillator Sawtooth Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ahqch6jt
+    name: Yellow Oscillator Sine Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: q6QpgKuu
+    name: Yellow Oscillator Triangle Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: MkDq8wzA
+    name: Yellow Oscillator Square or Shaped Square Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: OZjWM0pd
+    name: Final Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top

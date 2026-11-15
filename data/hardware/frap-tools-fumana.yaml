@@ -1,0 +1,534 @@
+id: OgGUQofvuOvkWCKzmbhxE
+name: Fumana
+manufacturer: frap-tools
+primaryCategory: filter
+categories:
+  - modular
+  - analog
+  - vocoder
+capabilities:
+  - filter
+  - equalization
+  - vocoder
+url: https://frap.tools/products/fumana/
+prices:
+  - amount: 850
+    currency: EUR
+    asOf: 2026-11-09
+    source: https://frap.tools
+description: FUMANA is a dual all-analog fixed filter bank built from two arrays
+  of sixteen bandpass filters, one that processes a sound and one that analyses
+  it. Sixteen voltage-controllable faders, per-band envelope followers and
+  global parametric controls let it work as a spectral editor or as a
+  sixteen-band vocoder.
+details: |-
+  FUMANA is a dual all-analog fixed filter bank. Each filter bank is composed of an array of 16 independent bandpass filters tuned to specific frequencies. It is built around one basic core principle: modify the spectral content of an incoming audio signal by filtering it through 16 bandpass filters in parallel, then vary the amplitude of each resulting band.
+
+  Simple as that principle is, the key feature of FUMANA is the breadth of control it offers over the bands' amplitude. The spectrum of the incoming sound can be modified by the faders, which are individually CV-controllable, by the envelope followers generated from the analysis of the sound patched into the Modulation input, and by global parametric controls such as Tilt and Scan.
+
+  The two arrays serve different jobs. The first, with 48 dB/oct filters, is the colorful processing path for the incoming sound, while the second, with 36 dB/oct filters, analyzes a sound and extracts sixteen envelopes for spectral transferring. Four voltage-controlled functions, Tilt, Peak/Notch, Center and Width, animate the timbre above the sixteen individual faders.
+
+  A flexible input and output routing lets the musician split the 16 filters into two 8-band spectral processors by grouping the odd and even bands separately. Two semi-normalled inputs make it possible to process two independent signals, to blend two signals into a single All output, to route one signal's odd and even bands to two different points of a patch for a stereo spread, or to perform two different treatments of the same signal and send each to its own output section.
+
+  Because the parallel analysis array covers all sixteen bands, FUMANA performs spectral transferring and vocoding over the whole spectrum, or two simultaneous eight-band vocoding operations using different sounds for the odd and even bands. Attack and release times of the spectral transferring are set independently, and individual outputs are available for each band, both for the Main filtered sound and for the Mod envelopes, so analysis bands can be re-routed to synthesis bands by hand as in classic analog vocoders. A global Envelope Follower output drives external ducking or other parallel processing, and a dedicated input for an external noise source supplies fricative and sibilant sounds.
+specs: |-
+  - Two arrays of sixteen analog bandpass filters: 48 dB/oct for processing the sound and 36 dB/oct for analysing it
+  - Sixteen faders set each band's amplitude and are individually voltage-controllable
+  - Four voltage-controlled global functions: Tilt, Peak/Notch, Center and Width
+  - Two semi-normalled inputs split the sixteen filters into odd and even eight-band spectral editors
+  - Odd and even grouping allows two sounds merged to a single All output, one sound split to two points of a patch for stereo spread, or two separate sounds with independent routing
+  - Spectral transferring and vocoding across all sixteen bands, or two eight-band vocoding operations at once on the odd and even bands
+  - Independent attack and release control over the spectral transferring
+  - Individual outputs for every band, for the Main filtered sound and for the Mod envelopes, so analysis bands can be re-routed to synthesis bands by hand
+  - Global Envelope Follower output for external ducking or parallel processing
+  - Dedicated external noise input for fricative and sibilant sounds
+  - Eurorack module, bus-powered from the case's power header, with no power jack of its own
+io:
+  - key: 2IThL5Sj
+    name: Odd Bands Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZgaC23v4
+    name: Even Bands Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: LRHKxkkr
+    name: Odd Bands Modulation Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bt38bsov
+    name: Even Bands Modulation Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6KVdBF6Y
+    name: External Noise Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8MvWp8mC
+    name: Tilt CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: IA5ULmdY
+    name: Peak/Notch CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: sgFGtSlI
+    name: Center CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: auxmdR6O
+    name: Width CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: cgfAE851
+    name: Band 1 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wACfxGvB
+    name: Band 2 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ynl5OVeY
+    name: Band 3 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rdh6ayXf
+    name: Band 4 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: uf732SEJ
+    name: Band 5 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: JLaeUeV4
+    name: Band 6 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: v6gGvwRG
+    name: Band 7 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: YrloAKDh
+    name: Band 8 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bUIiqpsY
+    name: Band 9 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2MAvPutP
+    name: Band 10 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: a4fT2cQ2
+    name: Band 11 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: dcwxmpNo
+    name: Band 12 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 59t2YpkW
+    name: Band 13 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: nxbhMysl
+    name: Band 14 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 3b2jG5NF
+    name: Band 15 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: NdxMpnlI
+    name: Band 16 Fader CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: LikcO60L
+    name: Band 1 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 2W2eyjJb
+    name: Band 2 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: xHhwxG5D
+    name: Band 3 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: apgJ2VHt
+    name: Band 4 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: r3Iu6oqT
+    name: Band 5 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0oV4ivVG
+    name: Band 6 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: PFNhlWoi
+    name: Band 7 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 9SQetS1m
+    name: Band 8 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: hTS5oWwf
+    name: Band 9 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: tiySqsN3
+    name: Band 10 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: C3dLAKBl
+    name: Band 11 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: YrMJbvwU
+    name: Band 12 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0cSmPg7q
+    name: Band 13 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: jSLnJHrE
+    name: Band 14 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: r0f80638
+    name: Band 15 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: c66ubwMF
+    name: Band 16 Main Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: BXwVR1T1
+    name: Band 1 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: dOAawDlH
+    name: Band 2 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: MQZGpuVM
+    name: Band 3 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: yVTUMvG7
+    name: Band 4 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GxDicMB9
+    name: Band 5 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZfTVBpTE
+    name: Band 6 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: jAx6ZV0l
+    name: Band 7 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: rOoEoaqN
+    name: Band 8 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: uDeQzbWi
+    name: Band 9 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 4eI7uwNd
+    name: Band 10 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: SLn0AmgE
+    name: Band 11 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: ZlzD3Zzq
+    name: Band 12 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 49Gxukle
+    name: Band 13 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CR1Hqly7
+    name: Band 14 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: zu2UViXY
+    name: Band 15 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: EWzvxeGI
+    name: Band 16 Mod Envelope Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: GfrGwcQP
+    name: All Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: gm3qkLuj
+    name: Odd Bands Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: i8BFmaf2
+    name: Even Bands Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: HLmvUTPK
+    name: Global Envelope Follower Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
