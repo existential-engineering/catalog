@@ -1,0 +1,117 @@
+id: yq_vsOph4hpivYtr2KlEe
+name: MMM VCF
+manufacturer: happy-nerding
+primaryCategory: filter
+categories:
+  - modular
+  - analog
+  - effect
+capabilities:
+  - filter
+url: https://happynerding.com/mmm-vcf/
+description: MMM VCF (Moog Multi Mode Voltage Controlled Filter) is a dual
+  voltage controlled filter with common controls for both parts, usable as a
+  stereo filter or patched in other combinations of its inputs and outputs.
+details: |-
+  MMM VCF (Moog Multi Mode Voltage Controlled Filter) is a dual VCF with common controls for both parts. It can be used as a stereo filter, or patched with different combinations of the available inputs and outputs, and the whole of that functionality fits a compact 8 hp panel.
+
+  The filter uses the transistor ladder core introduced by Bob Moog, and adds Band Pass and High Pass modes that the original design does not have. Those extra modes widen the spectral modification available on the input sound.
+
+  Low Pass comes out at 24 dB/oct, with Band Pass and High Pass at 12 dB/oct. The manual frequency range runs from 20 Hz to 22 kHz, resonance self oscillates from 35 Hz to 22 kHz, and 0 to 5 V on the FM input modulates the whole hearing range at maximum settings.
+
+  The module was designed for very small noise and bleed, has an output impedance of 500 Ohm, is 4 cm deep, and is reverse power protected like other Happy Nerding modules.
+specs: |-
+  - Dual multi mode VCF with common controls for both parts
+  - Transistor ladder core, with added Band Pass and High Pass modes
+  - FREQ: 20 Hz to 22 kHz manual frequency range
+  - RES: 35 Hz to 22 kHz self oscillation range
+  - FM: 0 to 5 V modulates the whole hearing range at maximum settings
+  - LP: 24 dB/oct Low Pass output
+  - BP: 12 dB/oct Band Pass output
+  - HP: 12 dB/oct High Pass output
+  - Outputs impedance: 500 Ohm
+  - Module depth: 4 cm
+  - Width: 8 HP (the page's specification list states 6 HP)
+  - Power consumption: +42 mA / -40 mA at +/-12 Vdc
+  - Reverse power protected
+io:
+  - key: dzK5nHjD
+    name: Audio Input 1
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: CW5pGpbq
+    name: Audio Input 2
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: T81CyzlI
+    name: FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: L1OaLB5U
+    name: Low Pass Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: aslqerep
+    name: Band Pass Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: BG14E8KA
+    name: High Pass Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 79nOmOGv
+    name: Low Pass Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: DAmmajEt
+    name: Band Pass Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: UMzTRKAl
+    name: High Pass Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 0pJL29W0
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

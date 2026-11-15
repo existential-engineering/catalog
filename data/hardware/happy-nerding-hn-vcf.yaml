@@ -1,0 +1,111 @@
+id: dC-ZUlINE4ag2IT6PK0dd
+name: HN VCF
+manufacturer: happy-nerding
+primaryCategory: filter
+categories:
+  - modular
+  - effect
+capabilities:
+  - filter
+  - saturation
+url: https://happynerding.com/601-2/
+prices:
+  - amount: 150
+    currency: USD
+  - amount: 140
+    currency: EUR
+description: HN VCF is a 6 HP state variable filter with 12 dB low pass, 12 dB
+  high pass, 6 dB band pass and an 18 dB low pass with extra drive, each of its
+  three parameters offering bipolar CV control.
+details: |-
+  HN VCF is a state variable filter having 12 dB low pass, 12 dB high pass and 6 dB band pass responses, plus an 18 dB low pass marked LP! because it has extra drive.
+
+  All three parameters, Freq, Resonance and Drive, have dual knobs with the outer knobs controlling bipolar CV amount. These affected CVs are then shown by the relative green and blue LEDs.
+
+  The possibility to have CV over Resonance and Drive makes it a very capable 6 HP filter.
+
+  HN VCF can be used to transform mono sound to pseudo stereo. To do this the user should send the LP output to one channel and LP! to another. With some Drive added to the sound it starts to be spread over the stereo field.
+
+  Reverse power protected like any other Happy Nerding module.
+specs: |-
+  - State variable filter topology
+  - 12 dB low pass, 12 dB high pass and 6 dB band pass outputs
+  - 18 dB low pass output marked LP! with extra drive
+  - Dual knobs on Freq, Resonance and Drive, outer knob sets bipolar CV amount
+  - Green and blue LEDs show the applied CV
+  - Pseudo stereo operation by patching LP and LP! to separate channels
+  - 6 HP wide
+  - Reverse power protected
+io:
+  - key: 85HqEO2M
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 6rD3OXdr
+    name: Freq CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XHm6fTgf
+    name: Resonance CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 7RgD4RzY
+    name: Drive CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Q5URZtb8
+    name: LP Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: IwOQEYMU
+    name: LP! Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: GV9mtZ4t
+    name: HP Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 3xGYKsRq
+    name: BP Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: yPxOiHmh
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

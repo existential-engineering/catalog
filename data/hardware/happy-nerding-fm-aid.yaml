@@ -1,0 +1,107 @@
+id: 71eYJX46VPDtsmKhwoAh5
+name: FM AID
+manufacturer: happy-nerding
+primaryCategory: fm
+categories:
+  - modular
+  - analog
+  - modulation
+capabilities:
+  - fm-synthesis
+url: https://happynerding.com/fm-aid/
+prices:
+  - amount: 150
+    currency: USD
+  - amount: 135
+    currency: EUR
+description: FM AID is a module designed to perform through-zero linear
+  Frequency Modulation (FM) in the analog modular world. Any arbitrary signals
+  can be used as a Carrier and Modulator, and the module copies FM the way it is
+  done in digital implementations but in a completely analog circuit free of
+  digital aliasing artifacts.
+details: |-
+  FM AID is a module designed to perform through-zero linear Frequency Modulation (FM) in the analog modular world. Any arbitrary signals can be used as a Carrier and Modulator. The module copies FM in how it is done in digital implementation, but in a completely analog circuit free of digital aliasing artifacts.
+
+  Digital or software FM oscillators are mainly based on a ramp waveform which is then shaped to other waveforms. This is also represented in the FM AID module: a sawtooth signal is expected on the Carrier input to give the indicated sine, triangle, sawtooth and square waveforms on the respective outputs. However the user is not limited to only use sawtooth for the Carrier, and any other signal can be plugged in, giving many complex waveforms at the outputs.
+
+  All known FM tricks from digital implementation are also applied. You can endlessly experiment with the Carrier and Modulator frequency ratios, modulation index (FM knob), the Modulator's amplitude shaping (CV knob), feedback FM (output is fed back to the Modulator's input) and much more.
+
+  The Carrier input has a normalled connection to the Modulator's input. This internal routing is disconnected each time a plug is inserted in the Modulator's input. That is a handy option which allows the module to be used with only one signal source: this single signal will act as Carrier and Modulator at the same time. There won't be any frequency differences between Carrier and Modulator in this case, but many interesting wave folding sounds will be available anyway.
+
+  Technically speaking FM AID uses Phase Modulation, not Frequency Modulation. The sonic difference is that the produced sound is brighter.
+specs: |-
+  - Through-zero linear FM in a fully analog circuit
+  - Sine, triangle, sawtooth and square outputs
+  - Carrier input normalled to the Modulator input, disconnected when a plug is inserted
+  - Carrier input level: -5V to +5V (can also accept inputs ranging from [-1V to +1V] to [-12V to +12V] / [-15V to +15V] using an onboard trimmer)
+  - Modulator input level: preferably -5V to +5V
+  - CV input level: preferably -5V to +5V
+  - Outputs level: -5V to +5V
+  - Outputs impedance: 1 kOhm
+  - Module depth: 3 cm or 1,5 inches
+  - Power consumption: +45 / -45 mA at +/-12 Vdc, +50 / -50 mA at +/-15 Vdc
+io:
+  - key: oLcLMIhl
+    name: Carrier Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: tg9MqyNs
+    name: Modulator Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: TnV1ZavI
+    name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 7dQRyQvZ
+    name: Sine Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: XaVTTqG8
+    name: Triangle Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 0LReHV2E
+    name: Sawtooth Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: f1NEkson
+    name: Square Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: oGTyVEbI
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

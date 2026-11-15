@@ -1,0 +1,105 @@
+id: Bl2tPCok38P6adKbBStGa
+name: HM VCO
+manufacturer: happy-nerding
+primaryCategory: synthesizer
+categories:
+  - modular
+  - analog
+  - discontinued
+url: https://happynerding.com/hm-vco/
+description: HM VCO (Hearn Morley Voltage Controlled Oscillator) is an analog
+  VCO giving the four classic waveforms, sawtooth, pulse, triangle and sine, in
+  a narrow 6 HP width.
+details: |-
+  HM VCO (Hearn Morley Voltage Controlled Oscillator) is an analog VCO built to give the four classic waveforms, sawtooth, pulse, triangle and sine, in a narrow 6 HP width.
+
+  It features a counting 10 turn Tune knob, where each turn corresponds to one octave of frequency range, so the manual frequency sweep covers 10 octaves from 16 Hz up to 16 kHz. That single knob takes on the duties of the separate Coarse and Fine tune knobs usually found on an oscillator, and it has a lock so the knob can be held against accidental moves and the exact frequency setting kept unchanged.
+
+  The panel space saved that way goes to the FM knob, which provides exponential frequency modulation taking the modulator's signal from the matching FM jack. There is no linear FM: Happy Nerding points to its FM AID module instead, which couples with HM VCO for different flavours of linear frequency and phase modulation.
+
+  The remaining jacks are a standard 1V/oct input with more than 7 octaves of tracking, a Sync input for hard syncing to a master oscillator, and a PWM input for pulse width modulation.
+specs: |-
+  - Tune: 16 Hz to 16 kHz
+  - 10 turn Tune knob, one octave per turn, with knob lock
+  - 1V/oct input tracking over more than 7 octaves
+  - Exponential FM input, no linear FM
+  - Sync input for hard sync to a master oscillator
+  - PWM input for pulse width modulation
+  - Outputs level: -5 to 5 V
+  - Outputs impedance: 1 kOhm
+  - Module depth: 5 cm (2 inches)
+  - Width: 6 HP
+  - Power consumption: +46 mA / -46 mA at +/-12 Vdc
+io:
+  - key: sooYVf4o
+    name: 1V/Oct Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Z2c6hn2l
+    name: FM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Y1ojMOhe
+    name: Sync Input
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: XqU32j0H
+    name: PWM Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: bKe1Qtxk
+    name: Sawtooth Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: LRPY1Ymu
+    name: Pulse Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ydllbDfb
+    name: Triangle Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: nsHn4ITJ
+    name: Sine Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ZfvTGM0l
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

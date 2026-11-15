@@ -1,0 +1,111 @@
+id: JrDoMXhVdldWMaFpiajZI
+name: Dual xFade
+manufacturer: happy-nerding
+primaryCategory: utility
+categories:
+  - modular
+  - panning
+  - stereo
+url: https://happynerding.com/dual-xfade/
+prices:
+  - amount: 140
+    currency: USD
+  - amount: 125
+    currency: EUR
+description: Dual xFade is a compact voltage controlled crossfader suitable for
+  both audio and CVs. Smaller knobs set manual crossfade between A and B, bigger
+  knobs are CV attenuverters, and the DC coupled signal path works for audio and
+  CV alike.
+details: |-
+  Dual xFade is a compact voltage controlled crossfader suitable for both audio and CVs. Smaller knobs set manual crossfade between A and B, and bigger knobs are CV attenuverters. LEDs show the adjusted positive and negative CV sides for easy monitoring. DC coupled signal pass, so it can be used for both audio and CVs.
+
+  Upper inputs (section 1) are normalled to lower inputs (section 2). Thus the same signal pair A and B can be differently crossfaded in both sections. A switch clones section 1's controls to section 2, which is useful to make stereo Dry/Wet adjustment or a stereo VCA.
+
+  So this module can be used as two independent crossfades, two independent VCAs, a stereo crossfade or Dry/Wet control, a stereo VCA, or a panner.
+
+  Four jumpers on the back can give optional 5x amplification for each A or B input, so it is easy to crossfade modular level with line level from pedals. Installed jumpers give 1x amplification, removing jumpers gives 5x amplification. Output 1 is mixed with output 2 if left unconnected.
+
+  Reverse power protected like any other Happy Nerding module.
+specs: |-
+  - Two sections of voltage controlled crossfade, each with manual crossfade knob and CV attenuverter
+  - LED indication of positive and negative CV sides
+  - DC coupled signal path, usable for audio and CV
+  - Section 1 inputs normalled to section 2 inputs
+  - Switch clones section 1 controls to section 2 for stereo operation
+  - Output 1 mixed into output 2 when left unconnected
+  - Four rear jumpers select 1x or 5x input amplification per A or B input
+  - Usable as two crossfaders, two VCAs, stereo crossfade or Dry/Wet, stereo VCA, or panner
+  - Reverse power protected
+io:
+  - key: JwKlBp98
+    name: Input A (Section 1)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UXuQdl4m
+    name: Input B (Section 1)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: aaMylkGH
+    name: CV Input (Section 1)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 1k47xp4F
+    name: Output 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: dwGxf0JU
+    name: Input A (Section 2)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: PkxtR7iZ
+    name: Input B (Section 2)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ynACDLNn
+    name: CV Input (Section 2)
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: KRQh1aKZ
+    name: Output 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: NSnoDFrJ
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom

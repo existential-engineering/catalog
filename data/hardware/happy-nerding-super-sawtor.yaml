@@ -1,0 +1,78 @@
+id: MFBZkvyPZKmS1iWWqppfn
+name: Super Sawtor
+manufacturer: happy-nerding
+primaryCategory: effect
+categories:
+  - modular
+  - analog
+  - pitch
+  - enhancer
+  - exciter
+capabilities:
+  - pitch-shift
+  - harmonic-enhancement
+url: https://happynerding.com/super-sawtor/
+prices:
+  - amount: 150
+    currency: USD
+description: Super Sawtor is a module designed to produce unison like waveforms
+  from an incoming signal, with the unison spread tuned to give almost the same
+  harmonics smearing as the famous Roland JP80x0 supersaw oscillator.
+details: |-
+  Super Sawtor is the module designed to produce unison like waveforms from the incoming signal. The best results are achieved using sawtooth, triangle or sine waveforms as an input signal. Unison spread has been tuned to give almost the same type of harmonics smearing as the famous Roland JP80x0 supersaw oscillator, so feeding the Super Sawtor with a sawtooth waveform will result in a typical supersaw output.
+
+  Though having some common features with sawtooth animators, Super Sawtor gives that vivid tension of the supersaw waveform, which is different to the imitation of multiple oscillators most sawtooth animators are capable of. The main difference is in the approach used: sawtooth animators tend to recreate the continuously moving phase shift of slightly detuned or drifting oscillators, while Super Sawtor creates additional pitch shifted harmonics to the input signal, which gives a different sonic character compared to sawtooth animators.
+
+  Super Sawtor is a completely analog circuit free of aliasing. No external modulation sources are required for proper operation of the module. However the user can add changes and modulation to the manually set Spread amount by using the CV input and adjusting the CV knob to the desired degree.
+
+  The EURO version has one module, in contrast to two modules in DOTCOM format, but with an added MIX control. This MIX control internally mixes the input signal (0 dial position) and the supersaw output.
+
+  Reverse power protected like any other Happy Nerding module.
+specs: |-
+  - Completely analog circuit, free of aliasing
+  - Unison spread tuned after the Roland JP80x0 supersaw oscillator
+  - EURO version adds a MIX control that internally mixes the input signal with the supersaw output
+  - Spread amount settable manually or modulated via the CV input and CV knob
+  - Input level: -5V to +5V (can also accept inputs ranging from -2.5V/+2.5V to -15V/+15V using onboard trimmers)
+  - Output level: averages around -5V to +5V
+  - Output impedance: 500 Ohm
+  - Module depth: 3 cm (1.5 inch)
+  - Power consumption: +45/-45 mA at +/-12 Vdc through EURO standard 10 pin connector
+  - 4 HP width
+  - Reverse power protected
+io:
+  - key: I4LOvzu2
+    name: Audio Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: RNXcoeWO
+    name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: Tq0HfIih
+    name: Audio Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: SidFncxK
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
+links:
+  - url: http://navsmodularlab.blogspot.de/2013/03/super-sawtor-demo.html
+    type: resource

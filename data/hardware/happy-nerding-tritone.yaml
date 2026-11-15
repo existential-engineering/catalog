@@ -1,0 +1,128 @@
+id: hX_Oveu1FAgGcHwUOzSnk
+name: TriTone
+manufacturer: happy-nerding
+primaryCategory: equalizer
+categories:
+  - modular
+  - filter
+  - saturation
+  - overdrive
+  - effect
+  - analog
+capabilities:
+  - equalization
+  - filter
+  - saturation
+  - overdrive
+url: https://happynerding.com/tritone/
+prices:
+  - amount: 160
+    currency: USD
+  - amount: 144
+    currency: EUR
+description: TriTone is a three section EQ plus saturator, with Hi Shelf, Band
+  Pass and Low Shelf sections that each offer +20 dB of gain and 30 dB of
+  reduction and can be used independently or serially chained.
+details: |-
+  TriTone is a three section EQ plus saturator. Inner knobs control frequency and outer knobs control plus/minus gain. All three sections, Hi Shelf, Band Pass and Low Shelf, have +20 dB of gain and 30 dB of reduction. Each section can work independently or the sections can be serially connected by the switches. The middle input in each section accepts CV for its frequency, so all three sections can be individually FMed by external CVs.
+
+  If the inputs are fed with modular level signals (+/-5V), then there is little room for plus EQ gains before saturation starts. In this case the input level should be attenuated first, if saturation is not desired and much plus gain is needed. Otherwise saturation drastically enriches the tone and the module works like a very flexible overdrive FX.
+
+  When the switches are set to the upper positions, all three sections work independently. With the maximum gain reduction (CCW position) of the upper section (Hi Shelf) it becomes a useful kind of low pass filter. On the contrary, maximum gain reduction of the lower section (Low Shelf) makes it a high pass filter.
+
+  Note the internal routing done by the switches: the output of the upper section is added to the input of the subsequent lower section. If nothing is connected to the lower section's input, then only the upper section's output is processed. This makes it a 3 band EQ with the switches set to the lower position, and having separated inputs opens up more possibilities over ordinary EQs.
+
+  Reverse power protected like any other Happy Nerding module.
+specs: |-
+  - Three sections: Hi Shelf, Band Pass and Low Shelf
+  - Inner knobs control frequency, outer knobs control plus/minus gain
+  - +20 dB of gain and 30 dB of reduction per section
+  - Sections usable independently or serially connected by switches
+  - CV input per section for frequency, so each section can be individually FMed
+  - Separate input per section, with the upper section's output added to the subsequent lower section's input when switched
+  - Saturator stage, usable as a flexible overdrive FX
+  - 6 HP, 45 mm deep
+  - 55 mA +12V
+  - 65 mA -12V
+  - Reverse power protected
+io:
+  - key: MztOoKTM
+    name: Hi Shelf Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: fKGMonbl
+    name: Hi Shelf Frequency CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 8JAgBK5y
+    name: Hi Shelf Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: 0FgMIo5u
+    name: Band Pass Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: SDBr5qpJ
+    name: Band Pass Frequency CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: UAHLvjX5
+    name: Band Pass Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Top
+  - key: wZ553hkg
+    name: Low Shelf Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 1wDuQPUG
+    name: Low Shelf Frequency CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: XaBlS3oX
+    name: Low Shelf Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: uAa2sS37
+    name: Eurorack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin-header
+    maxConnections: 1
+    position: Bottom
