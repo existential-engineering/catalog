@@ -1,0 +1,135 @@
+id: lwkrlWqpixC3nIEcJVQwT
+name: MFC-101 Mark III
+manufacturer: fractal-audio
+primaryCategory: midi-controller
+categories:
+  - control-surface
+  - discontinued
+url: https://www.fractalaudio.com/p-mfc-101-midi-foot-controller/
+description: The Fractal Audio Systems MFC-101 Mark III is a powerful,
+  versatile, easy-to-use MIDI foot controller designed for use with the Axe-Fx
+  II, Axe-Fx Ultra, Axe-Fx Standard, and any other MIDI devices. It puts total
+  control at your feet, with capabilities musicians have come to demand from a
+  best-in-class foot controller.
+details: |-
+  The Fractal Audio Systems MFC-101 Mark III is a powerful, versatile, easy-to-use MIDI foot controller designed for use with the Axe-Fx II, Axe-Fx Ultra, Axe-Fx Standard, and any other MIDI devices. In comparison to previous models, the Mark III features both a rugged EtherCon connector, instead of a standard RJ-45 port, and Fractal's proprietary FASLINK for interconnection with the Axe-Fx II XL or XL+. FASLINK provides both power and 2-way communication over a single cable.
+
+  The MFC-101 is impressively easy to use and virtually plug and play, requiring only that an Axe-Fx model is selected and the connection method specified. Up to 384 preset numbers and names appear on the floor, and effect switching functions are easy to set up and customize.
+
+  Deeper control options are available for a modern rig. Preset switches can send program changes, CCs and custom MIDI data, Instant Access switches handle typical control change functions as well as program change and custom MIDI data, and expression pedals and external switches with global controls can be set up with different MIDI capabilities for each preset.
+
+  The unit is built for the road, with a 16-gauge powder-coated steel chassis, twenty-one solid state switches with no mechanical contacts to fail, twenty-one bi-color LEDs and a 20-character transflective display. A typical rig connects the MFC-101 to an Axe-Fx II by a CAT5 cable, which also powers the unit without the need for an AC adapter, with four external expression pedals and four external switches attached.
+
+  Axe-Fx Mode makes the MFC-101 the easiest way to control an Axe-Fx II, Ultra or Standard, offering hassle-free setup, smart preset integration, easy FX control, dedicated tap tempo with matching LED flash and a tuner display on the floor. Presets are read and displayed dynamically at each stomp, the unit configures itself to control effect blocks without manual CC# mapping, the bi-color LEDs show whether each assigned effect is on, off or not present, and with the Axe-Fx II a dedicated Looper Control Mode gives access to all Looper functions in one layout.
+specs: |-
+  - 16-gauge powder-coated steel chassis
+  - Twenty-one quiet solid state switches with no mechanical contacts to fail
+  - Twenty-one bi-color LEDs
+  - 20-character transflective display
+  - Jacks for 4 expression pedals and 4 external switches
+  - EtherCON/Ethernet port to connect an Axe-Fx II original or Mark II
+  - FASLINK port to connect an Axe-Fx II XL or XL+ over a single XLR cable
+  - 7-pin MIDI out supports phantom powering the unit
+  - Three different ways to connect to an Axe-Fx or other rig
+  - Up to 384 preset numbers and names displayed on the floor
+  - Powered over CAT5 from the Axe-Fx II, over FASLINK, or by phantom power on the 7-pin MIDI out, otherwise by the supplied 9VAC adapter (never connect the adapter while using Ethernet/EtherCON, FASLINK or phantom power)
+  - Axe-Fx Mode with dedicated tap tempo, tuner display and Looper Control Mode on the Axe-Fx II
+io:
+  - key: FWbdHLhr
+    name: EtherCON Port (Axe-Fx II, powers unit over CAT5)
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: ethercon
+    maxConnections: 1
+    position: Right
+  - key: uyzabYHz
+    name: FASLINK Port (power and 2-way communication)
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 91sV0VB5
+    name: MIDI Out (7-pin, accepts phantom power for the unit)
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 7-pin din
+    maxConnections: 1
+    position: Right
+  - key: Mi1nPq7Z
+    name: MIDI In (firmware updates and remote control)
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 7-pin din
+    maxConnections: 1
+    position: Right
+  - key: f4ZpfyD7
+    name: Expression Pedal 1
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 6AOdEMH7
+    name: Expression Pedal 2
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 5zYBpmNj
+    name: Expression Pedal 3
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: ciJ0kvZC
+    name: Expression Pedal 4
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 7apdda1I
+    name: External Switch Jack 1+2
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Q4AtDxl5
+    name: External Switch Jack 3+4
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: Pw9vAcQ2
+    name: 9VAC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.fractalaudio.com/support/
+    type: resource
+    title: "Support section: MFC-101 manual and firmware"
+  - url: https://www.fractalaudio.com/mfc-downloads/
+    type: resource
+    title: MFC-101 downloads
+  - url: https://www.fractalaudio.com/mfc-edit/
+    type: resource
+    title: MFC-Edit
