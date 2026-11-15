@@ -2,4 +2,4 @@
 "catalog": minor
 ---
 
-Import Hofner (208 hardware/software entries).
+Import Hofner (124 hardware entries and 63 accessory entries).
