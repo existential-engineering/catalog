@@ -1,5 +1,22 @@
 # catalog
 
+## 3.75.0
+
+### Minor Changes
+
+- c777873: Import Fractal Audio Systems (31 hardware/software entries).
+- 6a5497a: Import Frap Tools (19 hardware entries).
+- bb8d8c6: Import Free The Tone (29 hardware and 15 accessory entries).
+- f5cdab1: Import Friedman Amplification (73 hardware and accessory entries).
+- 6bd285d: Import G&L (107 hardware/software entries).
+- a88ac8f: Import Gamechanger Audio (18 hardware/software entries).
+- 0ba5c58: Import Happy Nerding (23 hardware/software entries).
+- d25f478: Import Harbeth (15 hardware entries and 1 accessory entry).
+- a817aa6: Import HeadRush (7 hardware/software entries).
+- 64a2f85: Import Heil Sound (37 hardware/software entries).
+- 74e9aa4: Import Hofner (124 hardware entries and 63 accessory entries).
+- b8bddc6: Import Hughes & Kettner (27 hardware/software entries).
+
 ## 3.74.0
 
 ### Minor Changes
