@@ -1,0 +1,64 @@
+id: NPkt6u0zwPHT5tsHvTn6-
+name: MIC-NO-MO
+manufacturer: friedman
+primaryCategory: di-box
+categories:
+  - cabinet-sim
+  - analog
+capabilities:
+  - mic-modeling
+  - cabinet-simulation
+url: https://friedmanamplification.com/shop/essentials/mic-no-mo/
+prices:
+  - amount: 99.99
+    currency: USD
+    asOf: 2026-11-10
+    source: https://friedmanamplification.com
+description: The MIC-NO-MO is a passive, all-analog guitar cabinet simulation DI
+  box that removes the need for a microphone on the speaker cabinet. It sits
+  between the amplifier and the speaker cab and sends a balanced,
+  cabinet-simulated signal to a mixer or interface.
+details: |-
+  The Friedman MIC-NO-MO is an all-analog cabinet simulation box that eliminates issues like mic bleed, cluttered stages and inconsistent mic placement. It does so with the cabinet simulation found in the Friedman Runt series of amplifiers.
+
+  The box is placed between the amplifier and the speaker cabinet. A simulated mic placement is selected on the Axis switch, and the balanced XLR output sends the signal to the audience or to a recording rig without the headaches associated with using actual microphones.
+
+  A 2-position ground lift switch removes ground loops, and a level switch pads the output between -10 dB and -30 dB so the box can be paired properly with other audio equipment.
+
+  The MIC-NO-MO is not a load box, so an appropriate speaker cabinet must always be connected. It is a passive design and needs no power supply.
+specs: |-
+  - Passive guitar cabinet emulated DI box
+  - All-analog cabinet simulation, as used in the Friedman Runt series of amplifiers
+  - From amp: connects to the amplifier speaker output with a 1/4 inch speaker cable
+  - To speaker: connects to the speaker cabinet with a 1/4 inch speaker cable
+  - Balanced output: connects to a mixer or interface with an XLR cable
+  - Ground lift: 2-position switch eliminates ground loops
+  - Axis: selects between the brighter center and darker edge simulated mic placements
+  - Level: -10 dB to -30 dB pad for pairing with other audio equipment
+  - Not a load box, always use with an appropriate speaker cabinet
+  - Passive design, no power supply required
+io:
+  - key: CNI2ttYF
+    name: From Amp
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: eEYeD4Su
+    name: To Speaker
+    signalFlow: output
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: TVoGoi0L
+    name: Balanced Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
