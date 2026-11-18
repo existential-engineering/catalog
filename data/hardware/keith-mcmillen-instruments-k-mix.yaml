@@ -11,7 +11,6 @@ capabilities:
   - equalization
   - compression
   - gating
-  - filter
   - reverb
 url: https://keithmcmillen.com/products/k-mix/
 prices:
@@ -27,14 +26,14 @@ details: |-
 
   Every channel carries a high pass filter, three band EQ, a gate and a compressor, with an onboard reverb on a dedicated send and return bus. Signal can be routed to four stereo output buses and to USB, and the headphones can monitor channels, buses or a dedicated mix. Standalone operation includes quad, 5.1, 7.1 and octo surround mixing.
 
-  As an interface it carries 8-in/10-out audio with low noise microphone preamps, AKM converters and a 32-bit floating point signal path, and draws its power from the USB bus.
+  As an interface it carries 8-in/10-out audio with low noise microphone preamps, AKM converters and a 32-bit floating point signal path, and draws its power from the USB bus. The back panel carries an Audio micro-USB port, which connects to a computer or tablet and powers the unit, and a Control mini-USB port, which takes a USB power supply for standalone use or connects the optional KMI MIDI Expander for bidirectional 5-pin DIN MIDI. The headphone output is a 1/8-inch stereo jack at the front of the unit.
 
   As a control surface it provides precision rotaries and faders plus user assignable MIDI controls in three banks, for commanding a DAW. The unit has no moving parts and the maker lists it as discontinued and no longer available.
 specs: |-
   - High pass filter, three band EQ, gate, and compressor on every channel
   - Onboard reverb with a dedicated send and return bus
   - Flexible routing to four stereo output buses and USB
-  - Headphone monitoring of channels, buses, or a dedicated mix
+  - 1/8-inch stereo headphone output on the front, monitoring channels, buses, or a dedicated mix
   - Standalone quad, 5.1, 7.1, and octo surround mixer
   - Onboard preset storage, operates with no computer required
   - 8-in/10-out audio
@@ -43,6 +42,8 @@ specs: |-
   - 32-bit floating point signal path
   - Precision rotaries and faders
   - User assignable MIDI controls in three banks
+  - Audio micro-USB port for computer connection and bus power
+  - Control mini-USB port for a USB power supply or the optional KMI MIDI Expander
   - USB bus powered, no external power supply
   - No moving parts
 io:
@@ -179,14 +180,22 @@ io:
     signalFlow: output
     category: audio
     type: headphone
-    connection: 1/4-inch
+    connection: 1/8-inch
     maxConnections: 1
-    position: Right
+    position: Left
   - key: I9ogTXCy
-    name: USB
+    name: Audio USB
     signalFlow: bidirectional
     category: digital
     type: usb
     connection: usb-b-micro
+    maxConnections: 1
+    position: Right
+  - key: yF4Iz7K3
+    name: Control USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b-mini
     maxConnections: 1
     position: Right

@@ -5,7 +5,8 @@ primaryCategory: midi-controller
 categories:
   - keyboard
   - control-surface
-url: https://keithmcmillen.com/products/k-board-pro-4/
+  - discontinued
+url: https://keithmcmillen.com/downloads/
 prices:
   - amount: 449.25
     currency: USD
@@ -18,7 +19,9 @@ details: |-
 
   Under each key is the Smart Sensor Fabric technology used across the maker's MIDI control surfaces. Resilient silicone keys and the absence of moving parts are intended to keep the surface durable in use.
 
-  The keyboard is USB powered and class compliant, so it works with all operating systems as well as MIDI capable hardware without a driver.
+  The keyboard is USB powered and class compliant, so it works with all operating systems as well as MIDI capable hardware without a driver. The back of the unit carries two USB ports, a micro-USB port for the host connection and a mini-USB Expander port for the optional KMI MIDI Expander, and the keyboard can be powered from either. Beside them are a sustain pedal input, which accepts a momentary switch pedal, and an expression pedal input that works best with a 10 V linear pedal such as the Roland EV.
+
+  The maker lists the K-Board Pro 4 as discontinued.
 specs: |-
   - 48 keys, four octaves
   - MPE MIDI keyboard controller with multiple dimensions of touch sensitivity per key
@@ -26,7 +29,9 @@ specs: |-
   - Smart Sensor Fabric sensing under each key
   - Resilient silicone keys with no moving parts
   - Class compliant, no driver required
-  - USB bus powered, no external power supply
+  - Micro-USB host port and mini-USB Expander port for the optional KMI MIDI Expander
+  - Sustain pedal input and expression pedal input
+  - USB bus powered from either USB port, no external power supply
 io:
   - key: 0Y0f1i5A
     name: USB
@@ -34,5 +39,13 @@ io:
     category: digital
     type: usb
     connection: usb-b-micro
+    maxConnections: 1
+    position: Right
+  - key: ToCBSe5H
+    name: Expander
+    signalFlow: bidirectional
+    category: midi
+    type: midi
+    connection: usb-b-mini
     maxConnections: 1
     position: Right

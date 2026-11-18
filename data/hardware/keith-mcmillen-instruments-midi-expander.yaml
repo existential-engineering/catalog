@@ -15,9 +15,13 @@ description: The MIDI Expander is a small 5-pin MIDI in and out box that
 details: |-
   The MIDI Expander is a 5-pin MIDI in and out box that connects Keith McMillen controllers to MIDI hardware devices. A controller such as QuNeo, BopPad or QuNexus attaches to the box over USB, and the box presents that controller's MIDI stream on standard 5-pin DIN sockets, so the controller can drive synthesizers and other MIDI gear without a computer in the chain.
 
+  The box carries two USB sockets: a USB-A Expand port the controller plugs into, and a USB-B Power port fed by a 5 V USB power supply or a computer's USB port, which powers both the box and the attached controller.
+
   The box ships with two 2 m USB cables, one USB-A to USB-B and one USB-A to USB-B Micro, covering the USB sockets found on the controllers it serves.
 specs: |-
   - 5-pin DIN MIDI in and out
+  - USB-A Expand port for the controller
+  - USB-B Power port, 5 V from a USB power supply or computer
   - Connects Keith McMillen controllers to MIDI hardware over USB
   - Includes a 2 m USB-A to USB-B cable
   - Includes a 2 m USB-A to USB-B Micro cable
@@ -39,10 +43,18 @@ io:
     maxConnections: 1
     position: Right
   - key: IE0iM8iD
-    name: USB
+    name: Expand
     signalFlow: bidirectional
     category: digital
     type: usb
     connection: usb-a
+    maxConnections: 1
+    position: Right
+  - key: ZUrlXl0u
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b
     maxConnections: 1
     position: Right
