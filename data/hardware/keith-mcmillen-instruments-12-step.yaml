@@ -1,0 +1,66 @@
+id: hMu0_x8P8PfLt54g3aa8G
+name: 12 Step2
+manufacturer: keith-mcmillen-instruments
+primaryCategory: midi-controller
+categories:
+  - keyboard
+  - control-surface
+url: https://keithmcmillen.com/products/12-step/
+prices:
+  - amount: 239.25
+    currency: USD
+    asOf: 2026-11-18
+    source: https://www.keithmcmillen.com
+description: 12 Step2 is a foot-operated MIDI keyboard controller with 13 keys,
+  playing single notes or chords of up to five notes per key, with TRS MIDI out,
+  two CV outputs, an expression pedal input and MIDI over USB-C.
+details: |-
+  12 Step2 is a foot-operated MIDI keyboard controller. Its 13 keys follow a familiar keyboard layout, so single notes or chords of up to five notes per key can be played by foot, and legato and toggle modes hold notes to build pads and backing harmonies.
+
+  Presets are programmed with the included 12 Step Editor software. Pressure and tilt can be mapped to MIDI CC numbers for continuous control of effects parameters, and an expression pedal can be plugged in and mapped to send MIDI CC messages.
+
+  The controller reaches external hardware over MIDI on USB-C, a TRS MIDI output for 5-pin MIDI hardware and synthesizers using the type A wiring standard, and two CV outputs that send pitch and gate messages to Eurorack and modular rigs. Both CV outputs share a single 1/8-inch TRS jack, CV1 on the tip and CV2 on the ring, split to two mono plugs with the breakout adapter in the KMI Step Adapter Kit (sold separately). The expression pedal input is a 3.5 mm TRS jack, so a 1/4-inch pedal connects through the kit's adapter cable.
+specs: |-
+  - 13 keys in a familiar keyboard layout, played by foot
+  - Single notes or chords of up to 5 notes per key
+  - Legato and toggle modes hold notes
+  - Pressure and tilt mappable to MIDI CC numbers
+  - Presets programmed with the included 12 Step Editor software
+  - TRS MIDI output (type A) for 5-pin MIDI hardware and synthesizers
+  - 2 CV outputs on one 1/8-inch TRS jack (CV1 on the tip, CV2 on the ring) for pitch and gate to Eurorack and modular synthesizers
+  - Expression pedal input on a 3.5 mm (1/8-inch) TRS jack sends MIDI CC messages
+  - MIDI over USB-C
+  - USB bus powered, no external power supply
+io:
+  - key: tTb8mBYy
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - key: F5auU0Nv
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: T5Ksfv9u
+    name: CV Out 1/2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: ncXYtNZC
+    name: Expression Pedal Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right

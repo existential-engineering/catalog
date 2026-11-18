@@ -1,0 +1,63 @@
+id: E52T2HzBg25aK7tDuTqdl
+name: SoftStep3
+manufacturer: keith-mcmillen-instruments
+primaryCategory: midi-controller
+categories:
+  - control-surface
+url: https://keithmcmillen.com/products/softstep/
+prices:
+  - amount: 295.2
+    currency: USD
+    asOf: 2026-11-18
+    source: https://www.keithmcmillen.com
+description: SoftStep3 is a MIDI foot controller whose pads sense pressure in
+  three dimensions, with TRS MIDI out, two CV outputs, an expression pedal input
+  and MIDI over USB-C.
+details: |-
+  SoftStep3 is a MIDI foot controller that sends MIDI notes, CC and program change messages. Each of its 10 keys carries sensors that detect pressure in three dimensions, so the x, y and z axes can be mapped to CCs for continuous control of effects parameters while playing.
+
+  Each key is programmed with the SoftStep Editor software, which assigns the notes, CC numbers and program change messages a key sends. An expression pedal can be plugged in and mapped to send MIDI CC messages.
+
+  Connections cover MIDI over USB-C, a TRS MIDI output for 5-pin MIDI hardware and synthesizers using the type A wiring standard, and two CV outputs that send pitch and gate messages to Eurorack and modular rigs. Both CV outputs share a single 1/8-inch TRS jack, CV1 on the tip and CV2 on the ring, split to two mono plugs with the breakout adapter in the KMI Step Adapter Kit (sold separately). The expression pedal input is a 3.5 mm TRS jack, so a 1/4-inch pedal connects through the kit's adapter cable.
+specs: |-
+  - 10 keys, each with sensors detecting pressure in 3D on the x, y, and z axes
+  - Sends MIDI notes, CC numbers, and program change messages
+  - Programmed with the SoftStep Editor software
+  - TRS MIDI output (type A) for 5-pin MIDI hardware and synthesizers
+  - 2 CV outputs on one 1/8-inch TRS jack (CV1 on the tip, CV2 on the ring) for pitch and gate to Eurorack and modular synthesizers
+  - Expression pedal input on a 3.5 mm (1/8-inch) TRS jack sends MIDI CC messages
+  - MIDI over USB-C
+  - USB bus powered, no external power supply
+io:
+  - key: Yj9rMe12
+    name: USB
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - key: saL9UWYq
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: W54i20Ga
+    name: CV Out 1/2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 7vlMw0EP
+    name: Expression Pedal Input
+    signalFlow: input
+    category: audio
+    type: expression
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
