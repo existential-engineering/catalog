@@ -1,0 +1,38 @@
+id: wr1uSUqxzz7-_X5utVxkA
+name: DN32-WSG
+manufacturer: klark-teknik
+primaryCategory: routing
+categories:
+  - audio-interface
+url: https://www.klarkteknik.com/en/products/0606-ACZ
+description: The DN32-WSG is a Waves SoundGrid network interface card for Midas
+  M32 and Behringer X32 mixing consoles. It lets those consoles mix, record and
+  play back multichannel audio through plugins hosted on Waves SoundGrid servers
+  at very low latency.
+details: |-
+  Waves plugins can run anywhere on the SoundGrid network, either on dedicated SoundGrid servers or as native plugins on connected personal computers. Native processing allows standard audio computers to be used, while SoundGrid plugin servers keep I/O latency minimal, which matters for live monitoring. Processing can be applied, mixed and cascaded anywhere in the network.
+
+  The card offers full-duplex audio streaming for 32 channels in and out at 48 kHz or 44.1 kHz and 24-bit resolution. Round-trip network latencies down to 0.8 ms are possible depending on the complexity of the network infrastructure. Individual plugins may add latency of their own, so low-latency processing such as the live versions of plugins is recommended when inserting effects into live monitoring paths.
+
+  Once audio routes have been configured in a SoundGrid network using applications such as Waves SuperRack, MultiRack or StudioRack, the audio paths are re-established automatically at every startup. There are no network specific settings to configure in the mixing console: send signals are routed to the card outputs and the processed signals returned where needed.
+
+  External processing can be used in two ways on the M32 and X32. Up to six channel inserts can be assigned on Aux 1 to 6 when the Aux outputs are in insert mode, with Aux input home routing set to Card 1 to 6 and the card outputs to Aux 1 to 6 or Mon. Alternatively up to four blocks of eight, or 32 external plugins, can be inserted by routing all input signals directly to the card outputs and returning the processed signals to input home by selecting Card 1 to 32. In that second case channels see only digital input signals, so preamp input gain and phantom power controls are available on the Setup and Preamps page only.
+
+  Tracks Live, a free multi-track recording application for SoundGrid systems, captures live performances and switches between stereo out and multi out modes, so recording and virtual soundcheck can be toggled directly. Its automatic multichannel re-routing engine adapts to changes made on the fly, which helps when setting up large shows with hundreds of tracks.
+specs: |-
+  - Waves SoundGrid network interface for Midas M32 and Behringer X32 consoles
+  - Full-duplex streaming of 32 channels in and 32 out
+  - 44.1 kHz or 48 kHz sample rate, 24-bit resolution
+  - Round-trip network latency down to 0.8 ms depending on network infrastructure
+  - Plugins hosted on SoundGrid servers or run natively on connected computers
+  - Up to 6 channel inserts on Aux 1 to 6, or up to 32 external plugin inserts
+  - Audio routes re-established automatically at startup
+io:
+  - key: CckfY21i
+    name: SoundGrid Network
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right

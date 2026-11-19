@@ -1,0 +1,44 @@
+id: PXvNYmzv-yYsZSjSFTmma
+name: VNET USB RS232 INTERFACE
+manufacturer: klark-teknik
+primaryCategory: routing
+categories:
+  - rack-mount
+url: https://www.klarkteknik.com/en/products/0302-ABH
+description: The VNET USB RS232 is a rackmountable interface for connecting a
+  Windows PC running VNET Software to any VNET loudspeaker network. Capable of
+  driving a network span up to 1 km and 50 devices, it gives the PC user
+  complete control, tuning and diagnostics of all devices on the network.
+specs: |-
+  - Drives a network span up to 1 km
+  - Supports up to 50 devices on the network
+  - Connects to a Windows PC or laptop over USB or RS232 serial cabling
+  - Interconnection between VNET devices via Cat5 cables and RJ45 connectors
+  - Rugged steel enclosure with Ethercon connectors
+  - Rackmountable
+  - Powered over USB; an external supply (VNET INTERFACE POWER SUPPLY) is required when RS232 control is used
+io:
+  - key: aM9CKiyF
+    name: USB (PC Connection)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-b
+    maxConnections: 1
+    position: Right
+  - key: BNFxjTaY
+    name: RS232 Serial (PC Connection)
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: db9
+    maxConnections: 1
+    position: Right
+  - key: vjXwGTcT
+    name: VNET Network
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethercon
+    maxConnections: 1
+    position: Right

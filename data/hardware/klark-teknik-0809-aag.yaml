@@ -1,0 +1,103 @@
+id: 4zGEOW38zIveNZlTNj9L1
+name: DN200
+manufacturer: klark-teknik
+primaryCategory: di-box
+categories:
+  - outboard
+url: https://www.klarkteknik.com/en/products/0809-AAG
+description: The DN200 builds on the DN100 with the same high headroom, dynamic
+  response and sonic clarity, adding two stereo channels in the same sized
+  enclosure. It suits interfacing computers, keyboards, samplers and other
+  electronic musical instruments to mixing consoles, and is intended for
+  professional applications where +48 V phantom power is standard on the
+  console, giving +10 dBu output into a 2 kilohm load.
+details: |-
+  The increased headroom means much higher level input signals can be accommodated without an attenuating pad. Combined with a very low noise input circuit topology, the unit offers a wide dynamic range and needs only a single -20 dB pad, optimised for use with electronic musical instruments. A thick aluminium extrusion protects the electronics and is covered by a tough silicone rubber sleeve.
+
+  Two signal routing options are offered. In Sum mode both inputs are summed at -6 dB, to maintain the overall signal level, and routed to the left output. In Split mode the left input is routed to both outputs at unity gain. Both option switches include LEDs for clear indication of the signal routing.
+
+  Components were selected through listening tests with active and passive bass guitars, electro-acoustic guitars and electronic musical instruments. The line-driving characteristics of the transformer outputs were optimised for the best frequency and phase responses over short and long cables and widely differing line and termination impedances, and the design avoids audio transformer core saturation. A fixed high pass filter rolls off frequencies below those that are musically important: the lowest note on a 5 or 6-string bass guitar is B0 at 30.87 Hz and the lowest note on an 88-key piano is A0 at 27.50 Hz, and frequency response is held to plus or minus 0.5 dB at those notes. Separate transformers also isolate the independent power rails of the two input circuits from the phantom power supply sourced from the output XLR connectors, and used with the Earth Lift switch this full galvanic isolation avoids earth loops when taking direct feeds from stage backline equipment.
+
+  A custom instrumentation-grade input circuit provides the very high input impedance passive guitar and bass pickups require while keeping component values low to minimise noise. There are two Neutrik Combo combined XLR and 1/4 inch TRS connectors with dual input impedances: 20 kilohms on the XLR input, suited to line level equipment and offering even lower noise, which is removed from the circuit when a jack plug is inserted into the 1/4 inch TRS input, leaving a nominal 1 megohm input impedance for passive electric pickups. Stereo RCA phono inputs are provided for consumer audio equipment, also at 20 kilohms, and link output 1/4 inch TRS jack connectors are included for each channel.
+
+  Illuminated global 20 dB Pad and Earth Lift switches act on both channels simultaneously, and individual +48 V indicator LEDs cover the independent phantom powering of the two channels, giving an at-a-glance status display even at wide distances and viewing angles. The Earth Lift switch separates the input and output grounds to eliminate earth loops between equipment on different mains supplies, and Neutrik XLR connectors are used for the audio connections.
+specs: |-
+  - Two-channel active stereo DI box, +48 V phantom powered from the output XLRs
+  - Independent phantom powering of the two channels
+  - Output +10 dBu into a 2 kilohm load
+  - Single global -20 dB pad optimised for electronic musical instruments
+  - Sum mode sums both inputs at -6 dB to the left output; Split mode routes the left input to both outputs at unity gain
+  - Two Neutrik Combo XLR and 1/4 inch TRS inputs with dual impedance: 20 kilohms on XLR, nominal 1 megohm with a jack inserted
+  - Stereo RCA phono inputs at 20 kilohm input impedance
+  - Link output 1/4 inch TRS jack per channel
+  - Transformer-balanced outputs, with separate transformers isolating the input power rails
+  - Fixed high pass filter below the musically important range
+  - Frequency response within plus or minus 0.5 dB at 27.50 Hz and 30.87 Hz
+  - Illuminated global Pad and Earth Lift switches, per-channel +48 V indicator LEDs
+  - Aluminium extrusion chassis with protective silicone rubber sleeve
+  - Neutrik XLR connectors
+io:
+  - key: XMMaL8U5
+    name: Channel 1 Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - key: gU0Wti8m
+    name: Channel 2 Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: combo jack
+    maxConnections: 1
+    position: Right
+  - key: sgI6g9Hs
+    name: Phono Input Left
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: xMMEWTXJ
+    name: Phono Input Right
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Right
+  - key: bBieG6eM
+    name: Channel 1 Link Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: aWq2g4F0
+    name: Channel 2 Link Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: DIMojubl
+    name: Channel 1 Balanced Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: hjcEP1eZ
+    name: Channel 2 Balanced Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right

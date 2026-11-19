@@ -1,0 +1,36 @@
+id: qUyQrJwINiEjpQfXiKZHO
+name: VNET2-DANTE BRIDGE
+manufacturer: klark-teknik
+primaryCategory: routing
+categories:
+  - rack-mount
+url: https://www.klarkteknik.com/en/products/0302-ABO
+description: The VNET2-DANTE BRIDGE is a rackmountable device that connects a
+  computer or IT system to products that do not natively support the Dante audio
+  protocol, including VNET networked loudspeaker systems. It converts Dante
+  audio to analogue for connection to any product with analogue inputs, with or
+  without VNET control for first-generation VNET equipped products.
+specs: |-
+  - Drives a network span up to 1 km without digital audio
+  - Network span up to 600 m with digital audio
+  - Supports up to 25 devices
+  - Converts Dante audio to analogue
+  - Operates with or without VNET control, for use with first-generation VNET equipped products
+  - Rackmountable
+io:
+  - key: DgMdi4AQ
+    name: Dante Network
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: GhL1ijT5
+    name: VNET Network
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right

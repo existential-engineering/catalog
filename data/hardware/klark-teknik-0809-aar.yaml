@@ -1,0 +1,63 @@
+id: 9Fu6JbN5n_8m0Mcj4_qsF
+name: DN100 V2
+manufacturer: klark-teknik
+primaryCategory: di-box
+categories:
+  - preamp
+  - outboard
+supersedes: TEgFp6ZfasKdrol_B3Rfm
+url: https://www.klarkteknik.com/en/products/0809-AAR
+description: The DN100 V2 is an active DI box with extended dynamic range for
+  instruments and line-level sources, powered by +48 V phantom. It sits between
+  an instrument and the desk, sending the source to a mixer or recording
+  interface over a balanced XLR cable while a link-through jack keeps feeding
+  the player's own amplifier.
+details: |-
+  A bass or keyboard sounds right through its own amp, while out front the engineer still needs a clean feed for the mix. The DN100 sits between the two and sends the instrument to the mixer or recording interface.
+
+  An instrument or line-level source plugs into the 1/4" TRS or XLR input, and the other 1/4" connector works as a link-through to an amplifier. When only the XLR input is used, an impedance of 20 kOhm suits line-level sources; otherwise a nominal 1 MOhm suits instrument pickups.
+
+  PAD reduces the input signal by 20 dB for hot sources, raising the maximum input level to 35 dBu. EARTH separates the input and output grounds, which can remove earth loops between equipment on different mains supplies.
+
+  The DN100 is powered by +48 V phantom and must be powered to operate correctly. The 48 V LED lights when it receives enough.
+specs: |-
+  - Frequency response: 20 Hz to 20 kHz, ±1 dB into a 10 kOhm load
+  - Input impedance: nominal 1 MOhm for instrument sources, 20 kOhm when only the XLR input is used
+  - PAD switch: -20 dB, maximum input level 35 dBu with the pad enabled
+  - EARTH switch separating input and output grounds
+  - Powered by +48 V phantom power only (must be powered to operate)
+  - 48 V presence LED
+  - Weight: 0.44 kg
+io:
+  - key: mSNDcv4T
+    name: Input (1/4" TRS)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: 25Ig9Bpj
+    name: Input (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - key: T88UTtIX
+    name: Link Thru
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 3HlNgRiT
+    name: Output (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right

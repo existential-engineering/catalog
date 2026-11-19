@@ -1,0 +1,88 @@
+id: Xv_6kHgxXs6XW_lziY0u0
+name: 2A-KT
+manufacturer: klark-teknik
+primaryCategory: compressor
+categories:
+  - limiter
+  - dynamics
+  - rack-mount
+  - outboard
+capabilities:
+  - compression
+  - limiting
+url: https://www.klarkteknik.com/en/products/0817-ABI
+description: The 2A-KT Classic Leveling Amplifier is an homage to the Teletronix
+  LA-2A, a tube compressor and limiter built around a lag-free optical
+  attenuator. It offers mastering quality compression and limiting at a price
+  intended to suit a studio and a live rack equally.
+details: |-
+  The 2A-KT draws inspiration from the original Teletronix LA-2A leveling amplifier, first produced in the early 1960s. Teletronix leveling amplifiers have since been prized for a smooth musical sound and used at all stages of the recording process, from tracking to mastering.
+
+  At the heart of the 2A-KT is a vintage lag-free optical attenuator based on the same electroluminescent technology used in its predecessor, constructed from discrete components that meet or exceed the LA-2A's original specifications. Its characteristic warmth comes from a set of hand-selected 12AX7, 12BH7 and EL84 tubes, a combination chosen for low-noise analogue output with tight, warm bass, smooth midrange and airy treble.
+
+  Frequency response extends from 10 Hz to 20 kHz within 1 dB, with gain limiting from 0 to 30 dB, an attack time of 10 milliseconds and a release time ranging from 50 milliseconds to a full 5 seconds. The Limit/Compress switch selects between the internally fixed compression ratio of Compress mode and the near-infinite ratio of Limit mode, and a built-in adjustable stereo-link TRS connection allows a pair of 2A-KTs to blend their sidechain signals for a shared threshold response.
+
+  A Pre-Emphasis trimmer adjusts the interaction between compressor and sidechain: set fully clockwise the sidechain responds to the full frequency bandwidth of the incoming audio, and turned counterclockwise the compressor responds less to high frequency transients. The Peak Reduction knob controls the threshold of the compressor and limiter, with a maximum 40 dB of gain reduction available, and the Output Gain knob provides makeup gain for setting the output to the optimal level.
+
+  Metering stays true to the original: a classic d'Arsonval movement averages out short duration peaks and troughs for a more realistic view of perceived loudness, and a Meter Selection knob displays either gain reduction or output level. Balanced inputs and outputs are provided on both XLR and 1/4-inch TRS with custom-designed Midas transformers, both operating at line level, and unbalanced connections are available through 1/4-inch TS cables.
+specs: |-
+  - Tube leveling amplifier with vintage lag-free optical attenuator
+  - Hand-selected 12AX7, 12BH7 and EL84 tubes
+  - Custom-designed Midas input and output transformers
+  - Frequency response: 10 Hz to 20 kHz, plus or minus 1 dB
+  - Gain limiting: 0 to 30 dB
+  - Attack time: 10 ms; release time: 50 ms to 5 s
+  - Peak Reduction provides up to 40 dB of gain reduction
+  - Limit/Compress switch: internally fixed ratio or near-infinite ratio
+  - Balanced XLR and 1/4-inch TRS inputs and outputs at line level, unbalanced via 1/4-inch TS
+  - Adjustable stereo-link TRS connection for sidechain linking of two units
+  - Illuminated VU meter with d'Arsonval movement, switchable between gain reduction and output level
+io:
+  - key: u0Qn0E6d
+    name: Audio Input (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: wMC8qcJW
+    name: Audio Input (TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: N58yGhcF
+    name: Audio Output (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: NXlC2gzh
+    name: Audio Output (TRS)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: otyqcS4Y
+    name: Stereo Link
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: hCOrXCC3
+    name: Mains Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right

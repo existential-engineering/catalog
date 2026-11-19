@@ -1,0 +1,65 @@
+id: iH9zpdICsmmneqfDVx-1O
+name: DI 10A
+manufacturer: klark-teknik
+primaryCategory: di-box
+categories:
+  - preamp
+  - outboard
+url: https://www.klarkteknik.com/en/products/0809-AAO
+description: The DI 10A PRO DI ACTIVE is an active direct injection box for
+  interfacing keyboards, samplers and other electronic musical instruments to
+  mixing consoles, with high headroom, dynamic response and sonic clarity. It
+  runs on +48 V phantom power with 9 V battery backup and carries a switchable
+  input attenuator that accommodates instrument, line and loudspeaker level
+  signals.
+details: |-
+  The ultra-compact DI 10A is built to handle the rigours of life on the road via a thick and rugged aluminium extrusion that protects the electronics. The enclosure's roadworthiness is further enhanced through sturdy rubber corner bumpers.
+
+  A custom instrumentation-grade input circuit uses advanced analogue design techniques to create the very high input impedance required by passive guitar and bass pickups, whilst keeping the actual component values low to minimise noise. The result is a very low noise floor which, combined with the high clipping point, creates a wide dynamic range in a +48 V phantom powered DI box.
+
+  Connectivity uses industry-standard XLR and high impedance 1/4" TS connectors. The input connectors accept balanced and unbalanced signals over TRS, TS or XLR cables, the Thru jack passes an unbalanced 1/4" TS signal to local amps or monitors, and the Output XLR jack sends a balanced version of the input signal to a mixing board or other processing device.
+
+  The input Pad accommodates signal levels ranging from +10 to +50 dBu. The Earth Lift switch separates the input and output grounds, eliminating earth loops between equipment on different mains electricity supplies. Power is managed via a dedicated switch with an LED indicator: the LED blinks on battery power, stays off when battery power is off, and is constantly lit when phantom power is active.
+
+  MIDAS custom-designed transformers are used for signal integrity, continuing the transformer lineage of the MIDAS consoles that Klark Teknik shares a parent with.
+specs: |-
+  - Frequency response: 10 Hz to 90 kHz (±3 dB)
+  - Input noise: -112 dBu
+  - Input pad accommodates signal levels from +10 to +50 dBu
+  - Powered by +48 V phantom power with automatic 9 V battery backup
+  - MIDAS custom-design input transformer
+  - Earth Lift switch separating input and output grounds
+  - Aluminium extrusion enclosure with rubber corner bumpers
+io:
+  - key: zHFDFOqx
+    name: Input (1/4" TS)
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: tRT1WVVJ
+    name: Input (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - key: VryJs9fs
+    name: Thru
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: uPeFNB9u
+    name: Output (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,47 @@
+id: o2lz26NltWrlbpTY--2iP
+name: KT-DANTE64
+manufacturer: klark-teknik
+primaryCategory: routing
+categories:
+  - other
+url: https://www.klarkteknik.com/en/products/0606-ABY
+description: The KT-DANTE64 network module provides Audinate Dante compatibility
+  for the Klark Teknik DN9650 and DN9652 Network Bridges, with up to 64 or 32
+  bidirectional channels at 48 kHz or 96 kHz respectively. It offers
+  direct-to-computer audio recording, flexible routing and plug-and-play
+  operation with low latency, low jitter and sub-microsecond synchronisation.
+details: |-
+  Dante is Internet Protocol compliant, so it operates over conventional Ethernet networks running on off-the-shelf computer networking hardware and does not require dedicated network infrastructure. Its zero configuration protocol lets Dante-enabled devices identify and configure themselves automatically when connected to a network: they discover one another and learn each other's capabilities, including the number of input and output channels, sample rates and bit depths supported, and a connected device also sets up its own network configuration. The module is electrically and mechanically compatible with the industry standard Cirrus CM-1 format.
+
+  Dante Virtual Soundcard allows the direct connection of a computer for recording, processing and playback using any audio application and any combination of Dante-enabled devices. It uses a standard Ethernet port, so no additional audio interface hardware is required, and routes up to 64 channels of uncompressed bidirectional audio to different destinations and devices. It suits virtual soundchecks and live playback and recording, is available for Windows and Mac OS X, and its licences are purchased from Audinate.
+
+  Primary and Secondary interfaces allow operation in dual redundant Dante networks, with LED indicators for network activity and speed.
+
+  A network of Dante devices uses the IEEE-1588 Precision Time Protocol to synchronise local clocks, with each device acting as a PTP master or slave and at least one master required on the network. A hardware device can derive its clock from its onboard clock circuit or from an externally connected word clock, while Dante Virtual Soundcard uses the computer's clock. This module supports Slave to External Word Clock and can synchronise to one of the available external clock sources in either the DN9650 or DN9652 host unit.
+
+  Dante Controller, a free application from Audinate for Windows and Mac OS X, handles device configuration and audio routing on a Dante network. It provides device status information and real-time network monitoring, including device-level latency and clock stability statistics, multicast bandwidth usage and customised event logging, and supports backup, restore, move and reuse of network configurations as presets along with offline editing of routing configurations.
+specs: |-
+  - Audinate Dante network module for the DN9650 and DN9652 Network Bridges
+  - Up to 64 bidirectional channels at 48 kHz, 32 at 96 kHz
+  - Primary and Secondary interfaces for dual redundant Dante networks
+  - IEEE-1588 Precision Time Protocol synchronisation, sub-microsecond
+  - Supports Slave to External Word Clock from the host unit's clock sources
+  - Electrically and mechanically compatible with the Cirrus CM-1 format
+  - LED indicators for network activity and speed
+io:
+  - key: p90g2odt
+    name: Dante Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: PVcn26E4
+    name: Dante Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right

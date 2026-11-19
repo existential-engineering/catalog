@@ -1,0 +1,113 @@
+id: F7mlPw9q67Gt9NwyEAUwP
+name: DN9650
+manufacturer: klark-teknik
+primaryCategory: routing
+categories:
+  - rack-mount
+  - sample-rate-converter
+url: https://www.klarkteknik.com/en/products/0606-AAZ
+description: DN9650 provides a multichannel interface between AES50 networks and
+  third party digital audio networks and point-to-point interfaces. The AES50
+  and third party interfaces operate in separate clock domains connected by a
+  bidirectional asynchronous sample rate converter, allowing up to 64
+  bidirectional channels to pass between two independently clocked domains that
+  can run at different sample rates.
+details: |-
+  Currently supporting MADI and Audinate Dante via the Klark Teknik KT-MADI and KT-DANTE64 network modules, DN9650 can support new and emerging protocols via its industry-standard expansion slot, which is compatible with the Cirrus CM-1 format. It allows Midas PRO Series digital consoles, Midas digital I/O hardware and other 96 kHz-enabled AES50 devices to interface to multichannel MADI and Dante connections.
+
+  SuperMAC (AES50-compliant) digital audio networking technology from Klark Teknik provides high channel counts, low and deterministic latencies, sample-synchronous and phase-aligned networked clock distribution, error detection and correction, network redundancy, and ease of deployment, to meet the requirements of live concert touring. DN9650 is compatible with all Midas digital consoles, audio system engines and digital I/O units, as well as with any other AES50-equipped devices.
+
+  The multichannel bidirectional asynchronous sample rate converter allows the AES50 and third party domains to function independently, and features a bypass facility so that the third party network domain can be directly clocked from the AES50 domain where the two networks need to be synchronised. When the domains operate independently, a clock failure or loss of synchronisation in one domain will not necessarily affect the other. A user-configurable bidirectional output clock inhibit feature stops the output clock if the incoming clock synchronisation fails, so that a failure can be recognised and switchover to a redundant network initiated.
+
+  DN9650 supports 24 bit audio at 48 kHz and 96 kHz independently in both the AES50 domain and the third party network domain. With the on-board oscillator selected, all three AES50 ports operate globally at either 48 kHz or 96 kHz; with AES50 external clock selected, each AES50 port can provide 24 bidirectional channels at either rate individually. Word clock input and output connections plus a black burst horizontal video sync input are provided on BNC connectors, the latter supporting PAL, SECAM and NTSC in standard definition and 720P, 1080P and 1080i in high definition. A precision AES Grade 1 reference temperature-compensated oscillator with 1 ppm stability serves as the AES50 internal clock source.
+
+  An on-board web server allows platform-independent configuration from a web browser, covering network module and DN9650 settings including sample rates for both domains, clock synchronisation, ASRC bypass and the bidirectional output clock inhibit. Status LEDs on the front panel indicate AES50 and network synchronisation, Ethernet control port activity and the ASRC and clock inhibit states, and an alphanumeric LCD display allows individual units to be labelled. The rugged steel 1U rackmount enclosure uses industry-standard RJ45 and BNC connectors, and the universal switch-mode power supply is auto-voltage sensing for worldwide use.
+specs: |-
+  - Up to 64 bidirectional channels between two independently clocked domains
+  - 24 bit audio at 48 kHz or 96 kHz in both domains
+  - Three AES50 ports; 24 bidirectional channels per port with external clock selected
+  - Bidirectional asynchronous sample rate converter with bypass
+  - User-configurable bidirectional output clock inhibit
+  - SuperMAC AES50-compliant digital audio networking
+  - Industry-standard expansion slot compatible with the Cirrus CM-1 format
+  - Supports MADI and Audinate Dante via the KT-MADI and KT-DANTE64 network modules
+  - Word clock input and output on BNC
+  - Black burst horizontal video sync input on BNC, supporting PAL, SECAM, NTSC, 720P, 1080P and 1080i
+  - AES Grade 1 reference temperature-compensated clock oscillator with 1 ppm stability
+  - On-board web server for platform-independent configuration
+  - Alphanumeric LCD display for unit labelling
+  - 1 U rugged steel rackmount enclosure
+  - Auto-ranging universal switch-mode power supply
+io:
+  - key: LJ8gHST1
+    name: AES50 Port 1
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: hjFCfq5i
+    name: AES50 Port 2
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: e9aID01A
+    name: AES50 Port 3
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: lzS7SAXY
+    name: Ethernet Control Port
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: Bmh4jwdy
+    name: Network Module Expansion Slot
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: card-slot
+    maxConnections: 1
+    position: Right
+  - key: 3raEh2at
+    name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: BsCacpR1
+    name: Word Clock Output
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: pxUP23G8
+    name: Black Burst Video Sync Input
+    signalFlow: input
+    category: digital
+    type: video
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: nVaMlTUT
+    name: Mains Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right

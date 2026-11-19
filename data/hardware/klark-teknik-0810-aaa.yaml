@@ -1,0 +1,57 @@
+id: W-FckecKCrIJkzLMQoMrX
+name: DN 30T
+manufacturer: klark-teknik
+primaryCategory: routing
+categories:
+  - audio-interface
+url: https://www.klarkteknik.com/en/products/0810-AAA
+description: The DN 30T is a compact Dante audio transmitter that takes an
+  analogue source and puts it on a Dante network, connecting to any Dante
+  equipped receiver such as the Klark Teknik DN 30R. Its high headroom design
+  and 96 kHz analogue to digital conversion are intended to carry sound quality
+  from any audio source onto the network.
+details: |-
+  The DN 30T connects to any Dante equipped receiver, such as the Klark Teknik DN 30R, over a standard network cable.
+
+  Balanced or unbalanced 1/4", RCA or stereo 1/8" cables can be used for connecting a smartphone, tablet, microphone or instrument.
+
+  Input levels are adjusted with the level knob on the unit.
+specs: |-
+  - 96 kHz analogue to digital conversion
+  - High headroom input design
+  - Dante network audio transmitter
+  - Accepts balanced or unbalanced 1/4", RCA and stereo 1/8" sources
+  - Front-panel input level knob
+io:
+  - key: Mq43cRNL
+    name: Analogue Input (1/4")
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: kCfeNwAi
+    name: Analogue Input (RCA)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: rca
+    maxConnections: 1
+    position: Left
+  - key: HNibOjhj
+    name: Stereo Input (1/8")
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - key: UbKAvrKc
+    name: Dante Network
+    signalFlow: output
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right

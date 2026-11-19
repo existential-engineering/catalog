@@ -1,0 +1,69 @@
+id: TEgFp6ZfasKdrol_B3Rfm
+name: DN100
+manufacturer: klark-teknik
+primaryCategory: di-box
+categories:
+  - outboard
+url: https://www.klarkteknik.com/en/products/0809-AAF
+description: The DN100 is an active DI box with high headroom, dynamic response
+  and sonic clarity that reproduces the character of electric and acoustic
+  instruments. It is intended for professional applications where +48 V phantom
+  power is standard on the mixing console, and its design reaches a
+  significantly higher clipping point than many other active DI boxes, giving
+  +10 dBu output into a 2 kilohm load.
+details: |-
+  The increased headroom means much higher level input signals can be accommodated without an attenuating pad. Combined with a very low noise input circuit topology, the unit offers a wide dynamic range and needs only a single -30 dB pad, for use when connecting directly to instrument amplifier outputs. A thick aluminium extrusion protects the electronics and is covered by a tough silicone rubber sleeve.
+
+  Components were selected through listening tests with active and passive bass guitars, electro-acoustic guitars and electronic musical instruments. The choice of audio transformer mattered, as did the impedances of the surrounding components, and the line-driving characteristics of the transformer output were optimised for the best frequency and phase responses over short and long cables and widely differing line and termination impedances. The design avoids audio transformer core saturation, and a fixed high pass filter rolls off frequencies below those that are musically important: the lowest note on a 5 or 6-string bass guitar is B0 at 30.87 Hz and the lowest note on an 88-key piano is A0 at 27.50 Hz, and frequency response is held to plus or minus 0.5 dB at those notes.
+
+  Besides the transformer in the signal path, a second transformer isolates the power rails of the input circuit from the phantom power supply sourced from the output XLR connector. Used with the Earth Lift switch, this full galvanic isolation of the input and output interfaces avoids any risk of earth loops when taking a direct feed from stage backline equipment.
+
+  A custom instrumentation-grade input circuit provides the very high input impedance that passive guitar and bass pickups require while keeping component values low to minimise noise, which produces a very low noise floor. There is one parallel-connected XLR input and two 1/4 inch TRS inputs, one of which may also be used as a link output for connection to a guitar or bass amplifier. With the XLR input alone the input impedance is 20 kilohms, suited to line level equipment and offering even lower noise; that impedance is removed from the circuit when a jack plug is inserted into a 1/4 inch TRS input, leaving a nominal 1 megohm input impedance for passive electric pickups.
+
+  Illuminated Pad and Earth Lift switches and a +48 V phantom power indicator LED give an at-a-glance status display even at wide distances and viewing angles, and the Earth Lift switch separates the input and output grounds to eliminate earth loops between equipment on different mains supplies. A locating slot takes a Kensington lock for added security, and Neutrik XLR connectors are used for the audio connections.
+specs: |-
+  - Active DI box, +48 V phantom powered from the output XLR
+  - Output +10 dBu into a 2 kilohm load
+  - Single -30 dB pad for connection to instrument amplifier outputs
+  - Input impedance 20 kilohms on the XLR input, nominal 1 megohm with a jack inserted
+  - One parallel-connected XLR input and two 1/4 inch TRS inputs, one usable as a link output
+  - Transformer-balanced output, with a second transformer isolating the input power rails
+  - Fixed high pass filter below the musically important range
+  - Frequency response within plus or minus 0.5 dB at 27.50 Hz and 30.87 Hz
+  - Illuminated Pad and Earth Lift switches, +48 V indicator LED
+  - Kensington lock slot
+  - Aluminium extrusion chassis with protective silicone rubber sleeve
+  - Neutrik XLR connectors
+io:
+  - key: CKMuEplk
+    name: Input (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: w5xHtzDF
+    name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 4ONOjlyJ
+    name: Instrument Input / Link Output
+    signalFlow: bidirectional
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: lqv7sw5M
+    name: Balanced Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right

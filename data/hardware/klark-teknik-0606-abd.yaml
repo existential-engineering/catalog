@@ -1,0 +1,55 @@
+id: ZGmNbnhq3QkzlTrn4NgSy
+name: KT-MADI
+manufacturer: klark-teknik
+primaryCategory: routing
+categories:
+  - other
+url: https://www.klarkteknik.com/en/products/0606-ABD
+description: The KT-MADI network module provides MADI compatibility for the
+  Klark Teknik DN9650 and DN9652 network bridges, with up to 64 or 32
+  bidirectional channels at 48 kHz or 96 kHz respectively. It offers
+  point-to-point links over both industry standard optical fibre and coaxial
+  copper connections, with dual redundant operation and automatic failover to
+  the coaxial copper interface if the optical fibre interface fails.
+specs: |-
+  - Up to 64 bidirectional channels at 48 kHz
+  - Up to 32 bidirectional channels at 96 kHz
+  - Optical fibre and coaxial copper MADI interfaces
+  - Dual redundant operation with automatic failover to the coaxial copper interface
+  - Can act as MADI clock master or MADI clock slave
+  - Can synchronise to an external clock source in the DN9650 or DN9652 host unit
+  - Electrically and mechanically compatible with the industry standard Cirrus CM-1 format
+  - Powered by the DN9650 or DN9652 host unit, so the module has no power inlet of its own
+io:
+  - key: FwKwj5rp
+    name: MADI Optical Input
+    signalFlow: input
+    category: digital
+    type: madi
+    connection: sc
+    maxConnections: 1
+    position: Right
+  - key: kc2nk9ti
+    name: MADI Optical Output
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: sc
+    maxConnections: 1
+    position: Right
+  - key: 1Xb2xLeo
+    name: MADI Coaxial Input
+    signalFlow: input
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 1
+    position: Right
+  - key: LMg8wdK6
+    name: MADI Coaxial Output
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 1
+    position: Right

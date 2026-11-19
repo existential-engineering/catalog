@@ -1,0 +1,115 @@
+id: efFbT4LkpIrP7tNVtAUZn
+name: DN500
+manufacturer: klark-teknik
+primaryCategory: dynamics
+categories:
+  - compressor
+  - limiter
+  - expander
+  - rack-mount
+  - outboard
+capabilities:
+  - compression
+  - limiting
+  - expansion
+  - de-essing
+url: https://www.klarkteknik.com/en/products/0817-AAW
+description: The DN500 is a two-channel full-function dynamics processor
+  combining compression, expansion, limiting and peak clipping in a single rack
+  unit. It is characterised by exceptionally quiet operation, typically more
+  than 2 dB below the noise floor of comparable products of its period, which
+  the page attributes to the THAT VCA topology at the heart of the signal path.
+details: |-
+  The compressor section offers variable-knee control from hard to soft, attack from 50 us to 20 ms and release from 60 ms to 2 s, with an auto attack and release mode for transparent handling of programme material. The expander section provides downward expansion with its own threshold and ratio controls.
+
+  A peak limiter with variable threshold and programme-dependent release sits after the compressor, and a peak clipper tracks the limiter threshold to eliminate transient overload. Maximum output level is +21 dBu into 600 ohm.
+
+  The two channels link for true stereo operation. Both the compressor and expander sections accept independent side-chain inputs, allowing frequency-conscious dynamics for de-essing or programme-dependent gating without affecting the main signal path.
+
+  Applications named on the page are broadcast loudness control, mastering-grade dynamics on programme material and FOH bus compression, with the combined peak clip and limiter suiting an insert on broadcast transmitter feeds.
+specs: |-
+  - Dual-channel compressor, limiter, expander and peak clipper
+  - THAT VCA topology, dynamic range typically more than 2 dB below comparable units
+  - Variable knee from hard to soft
+  - Attack: 50 us to 20 ms
+  - Release: 60 ms to 2 s
+  - Auto attack and release mode
+  - Downward expansion with independent threshold and ratio
+  - Peak limiter with variable threshold and programme-dependent release, plus peak clipper tracking the limiter threshold
+  - Independent side-chain inputs on the compressor and expander sections
+  - Stereo link for true stereo operation
+  - Maximum output level: +21 dBu into 600 ohm
+  - 1U rackmount
+io:
+  - key: 5YSWfBlS
+    name: Channel 1 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 1wpcOGLf
+    name: Channel 2 Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: Q9GcpLMx
+    name: Channel 1 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: GK5ebZDl
+    name: Channel 2 Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: JJlp0ka1
+    name: Channel 1 Compressor Side Chain Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: UXK4Xp4G
+    name: Channel 1 Expander Side Chain Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: CyU52Ccw
+    name: Channel 2 Compressor Side Chain Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: a9OP2PAh
+    name: Channel 2 Expander Side Chain Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: g1amQtuN
+    name: Mains Inlet
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,45 @@
+id: -nxcHBA_eUaOsyg-T-vD_
+name: DN32-DANTE
+manufacturer: klark-teknik
+primaryCategory: routing
+categories:
+  - audio-interface
+url: https://www.klarkteknik.com/en/products/0606-ACM
+description: The DN32-DANTE expansion card provides up to 32 channels of
+  bidirectional networked audio to a Midas M32 or Behringer X32 mixing console
+  for integration with Dante enabled IP networks. Dante provides uncompressed
+  multichannel digital media networking with low latency and synchronisation
+  over existing IP network infrastructure.
+details: |-
+  Based on information technology standards, Dante focuses on interoperability over an existing IP network infrastructure and has been adopted by many pro audio manufacturers. The card shares up to 32 x 32 channels over single or redundant Ethernet.
+
+  Two Gigabit Ethernet ports are connected through an internal switch, which allows Ethernet remote control data for the console to be merged with bidirectional multichannel audio streams on the same cable. When both the primary and secondary interfaces are connected, the secondary acts as a redundant connection and is activated automatically if the primary becomes unavailable. Dante runs on Gigabit or 100 MBit/s network infrastructure and requires QoS capable switches.
+
+  A high-precision word clock on the card can serve as clock master for the Dante network and the console, or the console can provide the master word clock for distribution to the network. Dante supports unicast and multicast flows and allows signal routing on a per-channel basis, with all routings and device parameters controlled from anywhere on the network using the Dante Controller application.
+
+  The Dante Virtual Soundcard application for PC and Mac allows streaming to and from Dante enabled devices on a networked computer, including remote recording or playback over standard IP infrastructure. Live recordings of up to 64 channels are possible by receiving signals from more than one mixing console, and Windows WDM and ASIO along with Mac OS X Core Audio are supported for low-latency signal handling.
+specs: |-
+  - Up to 32 x 32 channels of bidirectional networked audio
+  - Two Gigabit Ethernet ports connected through an internal switch
+  - Primary and secondary interfaces with automatic redundancy switchover
+  - Requires Gigabit or 100 MBit/s QoS capable network switches
+  - High-precision onboard word clock, usable as Dante network clock master
+  - Unicast and multicast flows, per-channel signal routing
+  - Fits the expansion slot of the Midas M32 and Behringer X32 consoles
+io:
+  - key: tpWLVayg
+    name: Dante Primary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: 7suN6ve0
+    name: Dante Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: dante
+    connection: ethernet
+    maxConnections: 1
+    position: Right
