@@ -1,0 +1,56 @@
+id: GijexBlryTd8lPnxlAJxx
+name: Roland SH-1000 MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/roland-sh-1000-midi-retrofit-kit/
+prices:
+  - amount: 255
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI retrofit kit for the Roland SH-1000. It adds MIDI In and Thru
+  sockets and control of notes, modulation, pitchbend, both filter cutoffs,
+  sustain and portamento, plus its own MIDI syncable LFO.
+details: |-
+  This retrofit kit adds MIDI control to the Roland SH-1000 without changing the instrument's own behaviour, and switches automatically between keyboard and MIDI control. Any of the 16 MIDI channels can be selected.
+
+  Incoming MIDI covers notes in the range 36 to 96 with transposition available and pitchbend with a selectable range of two semitones, a fifth or an octave. Aftertouch, velocity and pitchbend can each be routed to control volume and both filter cutoffs. CC#1 drives the SH-1000's own LFO by default and can instead be set to control the retrofit's own MIDI syncable LFO, CC#64 sustains notes, CC#65 switches the retrofit's glide on and off, CC#5 sets the glide rate, and CC#16 controls the low pass filter cutoff.
+
+  The retrofit carries its own LFO, which can modulate the oscillator and the filter cutoff. CC#12 sets its MIDI sync, CC#13 its waveshape, CC#14 its speed, CC#15 its amount to the oscillator and CC#17 its amount to the low pass filter cutoff. Different CCs can be assigned to any of these parameters.
+
+  Added hardware consists of MIDI In and Thru sockets plus a push button for programming the setup, which is stored in non-volatile EEPROM memory.
+
+  The kit comprises a MIDI circuit board that fits inside the SH-1000, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions covering the default settings, and step by step fitting instructions. A separate CV, Gate and filter socket kit is available for the same instrument. Fitting is a job for a competent synthesiser service engineer rather than the end user.
+specs: |-
+  - Selectable across all 16 MIDI channels
+  - Note range MIDI 36 to 96, transposition available
+  - Pitchbend range selectable as two semitones, a fifth or an octave
+  - Aftertouch, velocity and pitchbend routable to volume and both filter cutoffs
+  - Controls low pass and high pass filter cutoff
+  - CC#1 drives the SH-1000 own LFO by default, or the retrofit LFO
+  - CC#64 sustain and CC#65 portamento on or off
+  - CC#5 portamento time and CC#16 low pass filter cutoff
+  - Built in MIDI syncable LFO with CC#12 sync, CC#13 waveshape, CC#14 speed, CC#15 amount to oscillator and CC#17 amount to low pass filter
+  - CC assignments are user changeable
+  - Automatic switching between keyboard and MIDI control
+  - Setup stored in non-volatile EEPROM memory
+  - Powered from inside the host SH-1000, so the kit has no power connector of its own
+io:
+  - key: 5VEnxL6R
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: yDmxLA1t
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

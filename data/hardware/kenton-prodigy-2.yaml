@@ -1,0 +1,55 @@
+id: Y1h-LPQ6LlccJIcY7mByv
+name: Prodigy MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - synthesizer
+url: https://kentonuk.com/product/prodigy-2/
+prices:
+  - amount: 270
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: A MIDI retrofit kit for the Moog Prodigy, adding MIDI In and Thru
+  sockets with note, pitchbend, mod wheel, filter cutoff, sustain and glide
+  control, plus its own MIDI syncable LFO.
+details: |-
+  A MIDI retrofit for the Prodigy. Once fitted, the synthesiser responds to incoming MIDI on any selectable channel, covering notes in the range of MIDI note numbers 36 to 96 with transposition possible, pitchbend with a selectable range of two semitones, a fifth or an octave, mod wheel, low pass filter cutoff, a sustain pedal and portamento.
+
+  The mod wheel (CC#1) controls the Prodigy's own LFO by default, but it can be reassigned to the retrofit's own MIDI syncable LFO instead. Filter cutoff defaults to CC#16 and can be moved to any other CC or driven from velocity. The sustain pedal message (CC#64) sustains notes, and CC#65 controls the glide built into the retrofit.
+
+  The kit adds MIDI In and Thru sockets and a push button for programming the MIDI setup. The resulting setup is held in non-volatile EEPROM memory, so it survives a power cycle.
+
+  Installation is a skilled job. The kit is not intended for end-user fitting and should be installed by a competent synth service engineer, or fitted at the manufacturer's premises in Tadworth, just outside London.
+
+  Retrofit kits are built to order once payment has been processed, and are checked and tested before despatch.
+specs: |-
+  - Fits the Moog Prodigy
+  - Incoming MIDI note range: MIDI note numbers 36 to 96, transpose possible
+  - Any MIDI channel selectable
+  - Pitchbend range selectable: 2 semitones, a fifth or an octave
+  - Mod wheel (CC#1) routed to the Prodigy's own LFO by default, reassignable to the retrofit's MIDI syncable LFO
+  - Filter cutoff: default CC#16, assignable to any CC or to velocity
+  - Sustain: CC#64
+  - Portamento (glide) built into the retrofit, controlled by CC#65
+  - Adds MIDI In and Thru sockets, no MIDI Out
+  - Adds a push button for programming the MIDI setup
+  - Setup stored in non-volatile EEPROM memory
+  - Powered from the host synthesiser, no separate power connection
+io:
+  - key: rqPx6fDn
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: FHK5r9HE
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

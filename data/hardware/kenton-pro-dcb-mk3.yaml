@@ -1,0 +1,98 @@
+id: kqwu826343B70umIt8M_P
+name: Pro DCB Mk3
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+  - discontinued
+url: https://kentonuk.com/product/pro-dcb-mk3/
+prices:
+  - amount: 174.9
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: A bi-directional MIDI to DCB interface for the Roland Juno-60 and
+  Jupiter-8, adding MIDI note control plus filter and arpeggio clock outputs and
+  a programmable LFO, and letting the keyboard act as a MIDI master.
+details: |-
+  The Pro-DCB brings MIDI to the Roland Juno-60 and Jupiter-8 over their DCB port, with no modification to the instrument. Beyond note control, and program change on the Jupiter-8, the interface adds output sockets for filter control and arpeggio clocking.
+
+  A built-in LFO is fully programmable, syncable to MIDI and offers nine waveshapes including sample and hold. The interface is bi-directional, so a Juno can also be used as a master keyboard driving other MIDI equipment. Settings are held in non-volatile memory.
+
+  Analogue outputs cover a clock output at 0 to 5V for syncing the arpeggiator and an auxiliary output at 0 to 12.5V for VCF or VCA control. MIDI In, Out and Thru sockets are fitted alongside the DCB socket for the keyboard connection.
+
+  A 1.8 metre cable with a 14 pin DCB plug is supplied, which suits every Juno-60, a Juno-6 that has had a 14 pin DCB socket added, and a Jupiter-8 fitted with a 14 pin DCB socket. A Jupiter-8 with the 20 pin OP-8 socket needs the separate 14 pin to 20 pin adaptor lead in addition to the supplied DCB lead, and some early Jupiter-8s have neither socket and cannot be controlled over DCB at all.
+
+  Two 3.5mm mono jack to 1/4 inch mono jack leads for clock and VCF are included with the DCB lead. A 9V multi-region switch mode power supply is also included, with four interchangeable heads covering the UK, Europe, the USA, Canada, Japan, Australia and New Zealand.
+specs: |-
+  - Power: 9 to 15V DC, centre positive
+  - Included power supply: 9V multi-region switch mode, four interchangeable heads
+  - Dimensions: 167 x 97 x 40 mm
+  - Weight: 600g
+  - MIDI: In, Out and Thru
+  - Analogue output: clock, 0 to 5V, for syncing the arpeggiator
+  - Analogue output: aux, 0 to 12.5V, for VCF or VCA control
+  - DCB port, bi-directional (in and out)
+  - Built-in LFO: fully programmable, MIDI syncable, nine waveshapes including sample and hold
+  - Settings stored in non-volatile memory
+  - Supplied with a 1.8 metre 14 pin DCB cable
+  - Supplied with two 3.5mm mono jack to 1/4 inch mono jack leads for clock and VCF
+  - Compatible with all Juno-60 synths, a Juno-6 with a 14 pin DCB socket fitted, and a Jupiter-8 with a 14 pin DCB or 20 pin OP-8 connector
+  - A 20 pin OP-8 Jupiter-8 requires the separate 14 pin to 20 pin adaptor lead
+io:
+  - key: G3EoaY7e
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: cCVI77PB
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 5m6RHpOD
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: pUIAv5cx
+    name: Clock Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: gIF4KsoN
+    name: Aux Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 6rGjbmu6
+    name: DCB
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: mini-din
+    maxConnections: 1
+    position: Right
+  - key: MRF8ZfNk
+    name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

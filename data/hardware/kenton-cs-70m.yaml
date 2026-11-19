@@ -1,0 +1,55 @@
+id: GFyVn5ODN4DfCi7qjnkFa
+name: Yamaha CS-70M MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/cs-70m/
+prices:
+  - amount: 465
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: Adds MIDI note, program change, pitchbend, modulation, aftertouch,
+  filter cutoff, volume, sustain and portamento control to the Yamaha CS-70M.
+  The kit receives MIDI only, and MIDI Out is not supported.
+details: |-
+  A MIDI retrofit kit for the Yamaha CS-70M. It adds MIDI reception for notes, program change, pitchbend, modulation, aftertouch, low pass filter cutoff, volume, sustain and portamento. The kit receives MIDI only, and MIDI Out is not supported.
+
+  Any MIDI channel can be selected. Notes cover MIDI note numbers 36 to 96 and can be transposed, program change responds to numbers 1 to 32, and pitchbend bends up and down two semitones.
+
+  By default pitchbend follows pitchbend messages, the mod wheel follows CC#1, aftertouch follows aftertouch messages, filter cutoff follows CC#16, volume follows CC#7, sustain follows CC#64 and portamento follows CC#65. These assignments can be remapped if required, so velocity could be mapped to control volume for example.
+
+  Added hardware consists of MIDI In and MIDI Thru DIN sockets and a push button for programming the MIDI setup. Setups are held in non-volatile EEPROM memory.
+
+  The kit comprises a circuit board that fits on top of the metal processor box, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions and a step by step fitting guide with diagrams. All kits are checked and tested before despatch. The kits are not intended for installation by the end user and should always be fitted by an experienced synthesiser engineer.
+specs: |-
+  - Fits the Yamaha CS-70M
+  - Receives MIDI only; MIDI Out is not supported
+  - Adds MIDI In and MIDI Thru DIN sockets plus a programming push button
+  - Any MIDI channel can be selected
+  - Note range: MIDI note numbers 36 to 96, transposable
+  - Program change: numbers 1 to 32
+  - Pitchbend bends up and down 2 semitones
+  - Default assignments: CC#1 mod wheel, CC#7 volume, CC#16 filter cutoff, CC#64 sustain, CC#65 portamento
+  - All controller assignments are remappable
+  - Setups stored in non-volatile memory (EEPROM)
+  - Circuit board fits on top of the metal processor box
+  - Powered from the host synthesiser, so the kit has no power input of its own
+io:
+  - key: PsoD8Vh6
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: BHPKAMHM
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

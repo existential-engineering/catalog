@@ -1,0 +1,87 @@
+id: 5FOcKVzp61iUmcbyJ4qZO
+name: Pro CV to MIDI
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/pro-cv-to-midi/
+prices:
+  - amount: 159.9
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: High specification Single Synth CV to MIDI converter
+details: |-
+  The Pro CV to MIDI is the reverse of a MIDI to CV converter, generating monophonic MIDI from analogue CV and gate signals. CV tracking is accurate enough that notes are sent with accompanying MIDI pitch bend, reproducing the full range of the analogue signal rather than quantising it to semitone steps.
+
+  Two assignable auxiliary inputs convert other voltages into MIDI CCs, aftertouch, note velocity and more, and incoming clock signals can be converted to MIDI clock. The main CV input runs a 16 bit A to D converter with its own reference for stable pitch, and the response time is fast.
+
+  Pitch CV can be read as 1V/oct, Hz/V or 1.2V/oct, and gate signalling as V-trig or S-trig. An intelligent learn mode asks for a series of notes to be played in and works out the CV scaling and gate settings on its own, and an auto tune feature simplifies tuning further. Fine tune and scale are adjustable from the front panel buttons.
+
+  Transposition covers 12 semitones up and down, and the pitchbend range is adjustable up to 48 semitones in each direction. Any MIDI channel can be selected for the output. CV, gate and auxiliary inputs are on 3.5mm mono jack sockets, with the MIDI output on a 5 pin DIN socket.
+
+  A 9V multi-region switch mode power supply is included, with four interchangeable heads covering the UK, Europe, USA, Canada, Japan, Australia and New Zealand. Connecting leads are sold separately, since the choice depends on the equipment being connected.
+specs: |-
+  - One CV input and one gate input, plus two assignable auxiliary inputs
+  - Main CV input: 16 bit A to D converter with reference
+  - CV scaling switchable: 1V/oct, Hz/V, 1.2V/oct
+  - Gate mode selectable: V-trig or S-trig
+  - CV, gate and aux inputs on 3.5mm mono jack sockets
+  - MIDI output on 5 pin DIN socket, any MIDI channel selectable
+  - Notes sent with accompanying MIDI pitch bend for full analogue range, not limited to semitone steps
+  - Auxiliary inputs convert voltages to MIDI CCs, aftertouch, note velocity and more
+  - Converts incoming clock signals to MIDI clock
+  - Learn mode derives CV scaling and gate settings from played notes
+  - Auto tune feature, with fine tune and scale adjustable from front panel buttons
+  - Transpose: up and down 12 semitones
+  - Pitchbend range: adjustable, maximum 48 semitones up and down
+  - Included power supply: 9V multi-region switch mode, four interchangeable heads (UK, Europe, USA, Canada, Japan, Australia, New Zealand)
+io:
+  - key: 4LRcAYMD
+    name: CV Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: JwAmBk55
+    name: Gate Input
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: AiLO7AnG
+    name: Aux Input 1
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: D8Yh0kmX
+    name: Aux Input 2
+    signalFlow: input
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: aVrLpzsX
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: xKofcpf1
+    name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

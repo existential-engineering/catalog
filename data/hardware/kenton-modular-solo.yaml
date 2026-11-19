@@ -1,0 +1,129 @@
+id: k3evVx6YiZZiqRBfKHJPt
+name: Modular Solo
+manufacturer: kenton
+primaryCategory: modular
+categories:
+  - midi
+hp: 10
+url: https://kentonuk.com/product/modular-solo/
+description: High specification Eurorack modular MIDI to CV converter for A100
+  format modular systems. It adds four continuously variable auxiliary outputs
+  and two dedicated clock outputs alongside its main CV and gate outputs.
+details: |-
+  The Modular Solo is a MIDI to CV converter built for Eurorack modular users, carrying the tuning stability Kenton converters are known for. Alongside the main CV and gate outputs it provides four continuously variable auxiliary outputs for controlling other aspects of a modular system, and two dedicated clock outputs that can each be set to different division ratios so the rest of the rack stays synchronised to MIDI clock.
+
+  The main CV output can operate at the usual 1V/Oct, or as Hz/Volt or 1.2V/Oct, with scaling and tuning adjustable to accommodate unruly modules. A 16 bit D/A converter drives that output for steady pitches. The gate output can work at several different voltage levels and can be set to produce S-trig instead of V-trig, with or without a pull-up. The MIDI OUT port can be switched to output DIN Sync 24, so vintage Roland equipment can be clocked from the same module, and DIN sync and clock can be used at the same time as the CV and gate outputs.
+
+  CV, gate, aux and clock outputs appear on 3.5mm mono jack sockets, and the CV and gate signals can alternatively be sent through the ribbon cable to the system bus, selected using jumpers. MIDI arrives on a 5 pin DIN socket and any MIDI channel can be selected. The module is 10HP wide and 80mm deep, and includes a 20cm ribbon cable for connection to standard Doepfer-style power supplies.
+
+  Playing behaviour is extensively programmable. Transpose covers 12 semitones up and down, pitchbend range is adjustable up to 12 semitones, and fine tune and scale are software controllable. Note priority can be set to newest, lowest or highest, with multiple and single trigger modes, and old notes are remembered to make trills and similar playing easier. Portamento offers fixed rate and fixed time modes, an auto mode where legato playing switches it on, and a selectable controller number defaulting to 65.
+
+  A programmable LFO offers nine wave shapes including random, and can modulate pitch, the aux output or both, with separate controllers for LFO to CV and LFO to aux and minimum, maximum and reset values for each. The LFO can be synchronised to MIDI clock, its sync point selected, and reset by key-on. The two clock outputs are fully independent, switchable between 5V and 10V, and can each be set from 1 to 12, 24 or 48 clocks per quarter note. Settings are stored in non-volatile memory for recall, all parameters are controllable in real time over SysEx, and a MIDI monitor mode is included for troubleshooting.
+specs: |-
+  - 10HP wide, 80mm deep
+  - 16 bit D/A converter for the main CV output
+  - CV output scaling switchable between 1V/Oct, Hz/V and 1.2V/Oct
+  - Gate output programmable as V-trig up to 10V, or S-trig with or without pull-up
+  - Four programmable auxiliary analogue outputs, controllable by any MIDI controller
+  - Two fully independent clock outputs, 5V or 10V selectable
+  - Clock outputs independently selectable from 1 to 12, 24 or 48 clocks per quarter note
+  - CV, gate, aux and clock outputs on 3.5mm mono jack sockets
+  - MIDI IN on 5 pin DIN; MIDI OUT/THRU on 5 pin DIN, switchable to DIN Sync 24
+  - Transpose up and down 12 semitones
+  - Pitchbend range adjustable up to 12 semitones
+  - Note priority selectable: newest, lowest or highest
+  - Portamento in fixed rate or fixed time modes, with selectable controller (default 65)
+  - Programmable LFO with 9 wave shapes including random, synchronisable to MIDI clock
+  - CV and gate can be routed to the system bus over the ribbon cable, selected by jumpers
+  - Settings stored in non-volatile memory
+  - All parameters controllable in real time by SysEx
+  - Includes a 20cm ribbon cable for standard Doepfer-style power supplies
+io:
+  - key: hJ3i7Qdx
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - key: 5nyJmU3u
+    name: MIDI Out/Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Bottom
+  - key: 9BnmHxK5
+    name: CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: h0eQkXsU
+    name: Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: yfnZR35j
+    name: Aux 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: 4CQ052uo
+    name: Aux 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: ytQ5pgiA
+    name: Aux 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: oV6K51Xq
+    name: Aux 4
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: RhLDzRHp
+    name: Clock Output 1
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: wIgBbVkF
+    name: Clock Output 2
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Bottom
+  - key: OWfKglX1
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: idc
+    maxConnections: 1
+    position: Bottom

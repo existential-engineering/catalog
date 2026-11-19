@@ -1,0 +1,60 @@
+id: v0t68oJAAFXekwHZk6L7O
+name: Roland TR-808 MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/roland-tr-808-midi-retrofit-kit/
+prices:
+  - amount: 390
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI retrofit kit for the Roland TR-808. It adds MIDI In, Out and
+  Thru sockets, maps each voice to a MIDI note with full velocity control, and
+  syncs the drum machine's sequencer to MIDI clock in either direction.
+details: |-
+  This retrofit kit adds MIDI control to the Roland TR-808 without changing the drum machine's own functionality. It maps each of the TR-808's voices to a MIDI note, gives full velocity control of those voices, plays the internal sequencer from MIDI clock, and can also drive the tempo of other devices over MIDI clock.
+
+  Incoming MIDI can be received on any channel, with channel 10 as the default, and the kit responds to MIDI clock, stop and start. Any sound can be mapped to any MIDI note number, with defaults of 36 to 46. Velocity controls note volume by default, or can instead select accented and unaccented playback.
+
+  Outgoing MIDI works on any selectable channel, again defaulting to channel 10, and sends MIDI clock, stop and start. The sounds generate MIDI notes according to the mapping table, with notes given velocity 64 when unaccented and velocity 127 when accented.
+
+  Added hardware consists of MIDI In, Out and Thru sockets plus a push button for programming the MIDI setup. Setups are held in non-volatile EEPROM memory.
+
+  The kit comprises a circuit board that fits in the base of the TR-808, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions covering the default settings, and step by step fitting instructions with diagrams. Fitting is a job for an experienced synthesiser engineer rather than the end user.
+specs: |-
+  - Incoming and outgoing MIDI on any channel, default channel 10
+  - Sends and responds to MIDI clock, stop and start
+  - Each TR-808 voice mapped to a MIDI note, defaults 36 to 46
+  - Full velocity control of voice volume, or velocity selects accented and unaccented playback
+  - Internal sequencer playable from MIDI clock, and able to drive other devices over MIDI clock
+  - Outgoing notes sent with velocity 64 when unaccented and 127 when accented
+  - Setups stored in non-volatile EEPROM memory
+  - Circuit board fits in the base of the TR-808
+  - Powered from inside the host TR-808, so the kit has no power connector of its own
+io:
+  - key: AFb723pd
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: FZ6cGwFI
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: WtZn2uLK
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

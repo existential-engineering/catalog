@@ -1,0 +1,117 @@
+id: gElvfQcJhQ2V_8-TQi4mY
+name: Pro Solo Mk3
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/pro-solo-mk3/
+prices:
+  - amount: 149.9
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: A high specification single synth MIDI to CV converter with CV,
+  gate and three continuously variable auxiliary outputs, a built-in LFO and
+  ADSR envelope generator, and a MIDI Thru port switchable to DIN Sync 24.
+details: |-
+  The Pro Solo Mk3 is the latest in the Pro Solo line of single synth MIDI to CV converters, improving on its predecessor with three continuously variable auxiliary outputs, a built-in ADSR envelope generator and adjustable output slew rate to smooth out steppy MIDI CCs. It is aimed at bringing an analogue synthesiser, vintage or current, into a MIDI setup.
+
+  CV output runs from a 16 bit D/A converter and covers the usual 1V/oct and Hz/V standards plus any scaling from 0.92V/oct up to 1.62V/oct, which accommodates almost any synth including Buchla and EML. Tuning is coarse and fine adjustable up to plus or minus two octaves, pitchbend reaches 48 semitones in each direction, and the gate output works at 5, 10 or 15V or delivers S-trig with no pullup or with a 5, 10 or 15V pullup. Note priority is selectable as new, low or high, and portamento can be always on, always off, automatic or driven by a MIDI CC, at a fixed rate or fixed time.
+
+  The three auxiliary outputs sit on 3.5mm jack sockets and drive control voltage inputs such as filter cutoff or VCA volume. Each has its own controller selection, covering MIDI CC 0 to 119, aftertouch, velocity, pitchbend, either clock divider, clock start/stop, note trigger, drum trigger, the ADSR envelope generator and auto portamento. Aux 1 additionally accepts keyboard scale and the LFO on top of its selected controller, so modulation and keyboard scaling can both reach a filter cutoff.
+
+  The internal LFO runs from roughly 0.1Hz to 100Hz with triangle, sawtooth, pulse (10 to 50%) and sample and hold waveforms, is syncable to MIDI clock, and can be free-running or reset on key-on. By default it is routed to the CV output for vibrato from the modulation wheel. Note trigger mode produces a pulse on any incoming note for vintage ARP synths such as the 2600 that need a trigger alongside a gate, and drum trigger mode produces a short velocity-scaled pulse on a specific note for driving a drum synthesiser.
+
+  The MIDI Thru port can be reassigned as a DIN Sync / Sync 24 output at 24ppqn for Roland drum machines and the MC-202 or 48ppqn for Linn, Oberheim and some Korg machines, and the MIDI clock can also be divided down to 1 to 12ppqn. Two clock dividers can run simultaneously on different outputs. Thirty-two program memories store setups recallable by MIDI program change, pre-loaded setups cover many popular synths, and the 32 bit ARM processor is flash upgradable over SysEx. Configuration is done from the three-button front panel and three character LED display or from the Configuration Manager app. Connecting leads are sold separately.
+specs: |-
+  - Power: 9V DC regulated or unregulated, 2.1mm centre positive, never more than 12V
+  - Included power supply: 9V multi-region switch mode, four interchangeable heads (UK, Europe, USA, Canada, Japan, Australia, New Zealand)
+  - Current draw: 50mA
+  - Dimensions: 140mm x 87mm x 45mm
+  - Weight: 210g
+  - Inputs: 5 pin DIN MIDI In and MIDI Thru, Thru configurable as Sync 24
+  - Outputs: five 3.5mm mono jack sockets
+  - CV output: 1 to 1.5 V/oct or Hz/V, with fine scaling adjustment up to plus or minus 8%
+  - CV scaling range: 0.92 V/oct to 1.62 V/oct
+  - Gate output: 5, 10 or 15V gate, or S-trig with no pullup or 5, 10 or 15V pullup
+  - Aux 1 range: approximately -2.7 to +10V
+  - Aux 2 range: approximately -2.7 to +10V
+  - Aux 3 range: approximately 0 to +10V
+  - DAC resolution: CV 16 bit, Aux 1 and 2 12 bit, Aux 3 10 bit
+  - Tuning: coarse and fine, up to plus or minus 2 octaves
+  - Pitchbend range: up to plus or minus 48 semitones
+  - Note priority: new, low or high
+  - LFO: 0.1Hz to 100Hz approximately, triangle, sawtooth, pulse 10 to 50% and sample and hold, MIDI clock syncable, free-running or reset on key-on
+  - Built-in ADSR envelope generator, routable to any aux output, phases controllable by MIDI CC
+  - Two clock dividers, 24 or 48ppqn, or MIDI clock divided to 1 to 12ppqn
+  - Variable gate-off time for re-trigger
+  - 32 program memories, recallable by MIDI program change
+  - Processor: 32 bit ARM, flash upgradable over SysEx
+  - Display: 3 character LED panel with 3 configuration buttons
+  - Case: brushed aluminium with black text
+  - Supplied with user manual and power supply
+io:
+  - key: qKAN1O8Z
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: zOKcBnW0
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: zPOrNRA4
+    name: CV Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: Z4POfYPp
+    name: Gate Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: gFGZqRdp
+    name: Aux 1 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: KYAmlUIL
+    name: Aux 2 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: MSAbqeFP
+    name: Aux 3 Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 5RcV4QtP
+    name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

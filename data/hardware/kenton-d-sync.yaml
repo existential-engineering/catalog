@@ -1,0 +1,84 @@
+id: 4bBK9cdcgLKzC5vXHY7k-
+name: D-Sync
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/d-sync/
+prices:
+  - amount: 89.9
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: Bi-directional MIDI to DIN Sync converter that translates MIDI
+  Clock and DIN Sync in both directions simultaneously, in Sync-24 or Sync-48
+  mode.
+details: |-
+  A converter that integrates vintage DIN Sync-only drum machines and synths into a MIDI environment. D-Sync converts between MIDI Clock and DIN Sync in both directions simultaneously, so a Roland TB-303, TR-606, TR-808 or MC-202 can be synchronised with MIDI devices.
+
+  It receives MIDI clock and stop/start data and converts it to DIN Sync, and receives DIN Sync data and converts it to MIDI Clock. Sync-24 and Sync-48 modes are both supported, the latter for instruments such as the Korg KPR-77, DDM-110 and DDM-220, and a two colour status LED shows which mode is active, green for sync-24 and red for sync-48.
+
+  A Soft Thru mode combines data received at MIDI In with the clock signal from Sync In and sends the result to MIDI Out, which allows MIDI data to be merged with DIN Sync data. Further configuration is handled by the D-Sync Configuration Manager application.
+
+  The unit carries MIDI In, MIDI Out, Sync In and Sync Out sockets on 5 pin DIN, with an opto-isolated MIDI input, and is housed in a metal box so it can withstand knocks. Power arrives on a USB mini-B socket from the supplied multi-region mains adaptor.
+
+  Supplied with a user manual, a 5V 1A multi-region power supply suitable for the UK, EU, US and Canada, Japan and Australia and New Zealand, and a 1.8m USB Type A to Mini-B cable for the power supply. Leads are sold separately.
+specs: |-
+  - Converts MIDI Clock to DIN Sync and DIN Sync to MIDI Clock, both directions simultaneously
+  - Sync-24 and Sync-48 modes
+  - Opto-isolated MIDI input
+  - Soft Thru mode merges MIDI In data with the Sync In clock signal to MIDI Out
+  - Two colour status LED: green for sync-24, red for sync-48
+  - Connectors: 2 x 5 pin DIN for MIDI In and MIDI Out
+  - Connectors: 2 x 5 pin DIN for Sync In and Sync Out
+  - Power via USB mini-B socket, power supply included
+  - Current draw: 90mA, leaving 910mA for USB bus power
+  - Power supply: 5V 1A multi-region
+  - Dimensions: 110 x 55 x 32 mm
+  - Weight: 150g excluding power supply
+  - Metal enclosure
+io:
+  - key: bcZCPDZn
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: co1diSDB
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 8xYdDKX3
+    name: Sync In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 7Dby1NTn
+    name: Sync Out
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: rXMP4PQn
+    name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b-mini
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://kenton.co.uk/support/apps
+    type: resource
+    title: Kenton support applications (D-Sync Configuration Manager)

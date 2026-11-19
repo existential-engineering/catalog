@@ -1,0 +1,50 @@
+id: ue_FvebgFGDpA52hLU6rz
+name: MIDI Retrofit Kit for Roland Vocoder Plus VP-330
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - vocoder
+  - discontinued
+url: https://kentonuk.com/product/roland-vocoder-vp-330-mki-mk2/
+description: A retrofit kit that adds MIDI control to the Roland Vocoder Plus
+  VP-330, so the instrument can be played from a MIDI master keyboard or
+  sequencer. Separate kits are built for the Mk1 and Mk2 versions, which differ
+  in internal wiring.
+details: |-
+  This retrofit kit adds MIDI control to the Roland Vocoder Plus VP-330, and is intended to allow the instrument to be played from a MIDI master keyboard or sequencer.
+
+  For incoming MIDI, any MIDI channel can be selected, notes are received across MIDI note numbers 36 to 84 with transpose possible, and pitchbend bends down only, matching the pitch shift slider control on the synth, with its range dependent on the setting of the pitch set control.
+
+  On the hardware side the kit adds MIDI In and Thru sockets and a push button for programming the MIDI setup. Setups are stored in non-volatile EEPROM memory.
+
+  The kit comprises a circuit board that fits in the base of the vocoder with a mounting bracket, a small pack containing DIN sockets and mounting hardware, a large pack containing cable assemblies, user instructions covering how to change the default settings, and step by step fitting instructions with diagrams of where to connect what. All kits are fully checked and tested before despatch.
+
+  The functions provided for the VP-330 Mk1 and the VP-330 Mk2 are identical, but there are internal wiring differences, so the correct kit has to be ordered. A Mk1 can be identified by its rocker switches and a Mk2 by its LED switches. Fitting is a skilled job for an experienced synth engineer and the kits are not intended for installation by the end user.
+specs: |-
+  - Adds MIDI In and MIDI Thru sockets on 5 pin DIN
+  - Any MIDI channel can be selected
+  - Receives MIDI note numbers 36 to 84, transpose possible
+  - Pitchbend bends down only, matching the synth's pitch shift slider, range depends on the pitch set control
+  - Push button for programming the MIDI setup
+  - Setups stored in non-volatile EEPROM memory
+  - Circuit board fits in the base of the vocoder with a mounting bracket
+  - Supplied with DIN sockets, mounting hardware, cable assemblies, user instructions and fitting instructions
+  - Separate kits for the Mk1 (rocker switches) and Mk2 (LED switches) versions
+  - Powered from the host instrument, so the kit has no power inlet of its own
+io:
+  - key: 4tyTI615
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: hQQFKbMD
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

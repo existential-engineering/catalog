@@ -1,0 +1,52 @@
+id: 0Av0UOLhqMk2zNzD3y2lB
+name: Roland SH-101 MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/roland-sh-101-midi-retrofit-kit/
+prices:
+  - amount: 305
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI retrofit kit for the Roland SH-101. It adds MIDI In and Thru
+  sockets and lets the synthesiser be played from a DAW, MIDI controller or
+  sequencer.
+details: |-
+  This retrofit adds MIDI control to the Roland SH-101, so the synthesiser can be played from a DAW, a MIDI controller or a sequencer. Any MIDI channel can be selected for incoming data.
+
+  Notes in the range 36 to 96 are played, with transposition available, and pitchbend range can be set to two semitones, a fifth or an octave. CC#1 drives the SH-101's own LFO by default and can instead be set to control the retrofit's own MIDI syncable LFO.
+
+  Filter cutoff for the low pass filter is on CC#16 by default and can be reassigned to any CC or to velocity. CC#64 sustains notes, and CC#65 controls the glide built into the retrofit.
+
+  Added hardware consists of MIDI In and Thru sockets plus a push button for programming the MIDI setup. The setup is stored in non-volatile EEPROM memory, so it survives a power cycle.
+
+  Installing the kit is a job for a competent synthesiser service engineer rather than the end user.
+specs: |-
+  - Incoming MIDI on any selectable channel
+  - Note range MIDI 36 to 96, transposition available
+  - Pitchbend range selectable as two semitones, a fifth or an octave
+  - CC#1 drives the SH-101 own LFO by default, or the retrofit MIDI syncable LFO
+  - Low pass filter cutoff on CC#16 by default, reassignable to any CC or to velocity
+  - CC#64 sustains notes
+  - CC#65 controls the glide built into the retrofit
+  - Setup stored in non-volatile EEPROM memory
+  - Powered from inside the host SH-101, so the kit has no power connector of its own
+io:
+  - key: FcgoKNqJ
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: dOB6a9dg
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,56 @@
+id: kYqrAj6ddmrX5xXAYevK_
+name: Yamaha CS-80 MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/cs-80/
+prices:
+  - amount: 955
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: A MIDI retrofit kit for the Yamaha CS-80 that adds MIDI note,
+  program change, pitchbend, modulation, filter, portamento, sustain and volume
+  control to the instrument. The kit receives MIDI only.
+details: |-
+  A MIDI retrofit kit for the Yamaha CS-80 that adds MIDI control to the instrument. The kit is receive-only, so MIDI can be sent to the keyboard but no MIDI is sent from it, and any MIDI channel can be selected for the incoming data.
+
+  Incoming MIDI covers notes (MIDI note numbers 36 to 96, with transpose possible), program change (numbers 1 to 14 on the top row and 17 to 30 on the bottom row), pitchbend that bends up and down a fifth, mod wheel with a switch to enable it, the cutoff frequency of the low pass filter, portamento, sustain and volume.
+
+  By default pitchbend is controlled by pitchbend messages, the mod wheel by Mod Wheel (CC#1) and also by aftertouch messages, filter cutoff by CC#16, resonance by CC#17, volume by MIDI volume (CC#7), sustain by Sustain (CC#64) and portamento by Portamento (CC#65). Any controller, aftertouch or velocity can be mapped to control other things, so velocity could instead be mapped to control volume.
+
+  On the hardware side the kit adds MIDI In and Thru sockets and a push button for programming the MIDI setup, with setups stored in non-volatile EEPROM memory. The kit comprises a circuit board that fits in the base of the CS-80, a small pack containing DIN sockets and mounting hardware, a large pack containing cable assemblies, user instructions covering how to change the default settings, and step by step fitting instructions with diagrams of where to connect what.
+
+  Installing the kit is a skilled job intended for a competent synth service engineer rather than the end user, and this model is described as the hardest of the range to fit. Kits are built to order and every kit is checked and tested before despatch, with a build and test lead time of up to 25 working days.
+specs: |-
+  - Receives MIDI only, no MIDI is transmitted from the keyboard
+  - Any MIDI channel can be selected
+  - MIDI note numbers 36 to 96, transpose possible
+  - Program change numbers 1 to 14 (top row) and 17 to 30 (bottom row)
+  - Pitchbend range: up and down a fifth
+  - Default mod wheel control: CC#1 and aftertouch
+  - Default filter cutoff control: CC#16
+  - Default resonance control: CC#17
+  - Default volume control: CC#7 (MIDI volume)
+  - Default sustain control: CC#64
+  - Default portamento control: CC#65
+  - Setups stored in non-volatile memory (EEPROM)
+  - Circuit board fits in the base of the CS-80
+io:
+  - key: 8Ppx46vE
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: ymlVFn4I
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,53 @@
+id: lYcI8EZhC6HbMSAfmECD0
+name: Sequential Pro-One MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - synthesizer
+url: https://kentonuk.com/product/pro-one/
+prices:
+  - amount: 315
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: A MIDI retrofit kit for the Sequential Pro-One, adding MIDI In and
+  Thru sockets with note, pitchbend, mod wheel, filter cutoff and sustain
+  control. Built to order and intended for installation by an experienced synth
+  engineer.
+details: |-
+  A MIDI retrofit kit for the Sequential Pro-One. Once fitted, the synthesiser responds to incoming MIDI on any selectable channel, covering notes in the range of MIDI note numbers 36 to 96 with transposition possible, pitchbend, mod wheel, the cutoff frequency of the low pass filter and sustain.
+
+  The default assignments take pitchbend from pitchbend messages, mod wheel from CC#1 and aftertouch, filter cutoff from CC#16 and sustain from CC#64. Any destination can be remapped to another controller, to aftertouch or to velocity, so velocity can be set to control filter cutoff instead.
+
+  The kit adds MIDI In and Thru sockets and a push button for programming the MIDI setup. Setups are held in non-volatile EEPROM memory, so the configuration survives a power cycle.
+
+  Contents are a MIDI circuit board, a small pack of DIN sockets and mounting hardware, a large pack of ready-made cable assemblies, user instructions covering changes to the default settings, and step by step fitting instructions with diagrams of the connection points. Every kit is checked and tested before despatch.
+
+  Installation is a skilled job. The kit is not intended for end-user fitting and should be installed by a competent synth service engineer, or fitted at the manufacturer's premises in Tadworth, just outside London. Kits are built to order, and the exact kit supplied may differ slightly depending on the model it is fitted in.
+specs: |-
+  - Fits the Sequential Pro-One
+  - Incoming MIDI note range: MIDI note numbers 36 to 96, transpose possible
+  - Any MIDI channel selectable
+  - Default controller map: pitchbend messages, mod wheel CC#1 plus aftertouch, filter cutoff CC#16, sustain CC#64
+  - Any controller, aftertouch or velocity can be remapped to any supported destination
+  - Adds MIDI In and Thru sockets, no MIDI Out
+  - Adds a push button for programming the MIDI setup
+  - Setups stored in non-volatile EEPROM memory
+  - Powered from the host synthesiser, no separate power connection
+io:
+  - key: RcKcvb5q
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: WsbeMS7W
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

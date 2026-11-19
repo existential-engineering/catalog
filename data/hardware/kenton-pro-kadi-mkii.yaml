@@ -1,0 +1,99 @@
+id: -or8NkPbTHjR5tfDyqpGY
+name: PRO-KADI MkII
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+  - drum-machine
+url: https://kentonuk.com/product/pro-kadi-mkii/
+prices:
+  - amount: 178.2
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI to Digital drum machine interface
+details: |-
+  A multi-mode MIDI trigger unit for pre-MIDI drum machines, designed primarily around the Roland TR-808 and TR-606 and the EDP Wasp and Gnat, though it can trigger many other drum machines and devices including the CR-78 and CR-8000. Most drum machines need a small modification to work with the interface, and socket kits for the TR-808, TR-606, CR-78 and CR-8000 can be supplied or fitted.
+
+  Three operating modes cover the range of targets: Wasp mode controls Wasp and Gnat synths, KADI mode drives drum machines fitted with a Kenton socket upgrade (with an adjustable accent threshold), and trigger mode provides 13 TTL outputs. The Pro-KADI can also trigger the voices of a Simmons SDS-V or SDS-7, although that requires a self-made breakout cable.
+
+  The TTL outputs can be latching, going high while a key is held, or pulsed, with pulses set to a rising or falling leading edge. Pulse width is adjustable between 100us and 10ms in 100us steps, and a long 250ms pulse width is available for driving relays. Note numbers are assignable individually per output, and triggers can be controlled by note or by program change.
+
+  Clocking covers Sync 24 and arpeggio clock outputs, with a variable clock divide rate and polarity. A MIDI Thru socket is fitted alongside MIDI In and Out, and a three digit LED display drives the user interface. Settings are made from the front panel.
+
+  Because the outputs are simple triggers, uses beyond music exist, including lighting control, robotics, MIDI control of servo motors of the kind used in radio controlled models, and theatrical pyrotechnics. Signal leads are sold separately, and a power adapter of the correct type for the destination country is included.
+specs: |-
+  - Power: 9 to 15V DC, 9V 100mA centre positive, adapter included
+  - Dimensions: 167 x 97 x 40 mm
+  - Weight: 600g
+  - MIDI: In, Out and Thru
+  - Capable of driving up to 13 outputs
+  - Wasp mode for Wasp and Gnat synths
+  - KADI mode for drum machines with a Kenton socket upgrade, accent threshold adjustable
+  - Trigger mode: 13 TTL outputs
+  - TTL outputs can be latching (high while a key is pressed) or pulsed
+  - Pulse polarity selectable: leading edge rising or leading edge falling
+  - Pulse width adjustable 100us to 10ms in 100us steps
+  - Long 250ms pulse width available for pulsing relays
+  - Individual note numbers assignable for each TTL output
+  - Triggers controllable by note or by program change
+  - Sync 24 and arpeggio clock outputs, with variable clock divide rate and polarity
+  - Display: 3 digit LED
+  - Socket kits available for the Roland TR-808, TR-606, CR-78 and CR-8000
+io:
+  - key: GqtdLK7x
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 1vO6me2p
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 0SG5wmgQ
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: CimRr8ZF
+    name: Sync 24 Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: x05LYKjx
+    name: Arpeggio Clock Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 0s1Qj5DS
+    name: Trigger Output
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: proprietary
+    maxConnections: 13
+    position: Right
+  - key: ZEmLi5ma
+    name: DC Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

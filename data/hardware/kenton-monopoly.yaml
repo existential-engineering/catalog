@@ -1,0 +1,55 @@
+id: V8hjXPAA84ZgH1fqTO6Qo
+name: Korg Monopoly MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - synthesizer
+url: https://kentonuk.com/product/monopoly/
+prices:
+  - amount: 520
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI retrofit kit for the Korg Monopoly, adding MIDI In and Thru
+  sockets with note, pitchbend, mod wheel and filter cutoff control.
+details: |-
+  A MIDI retrofit kit for the Korg Monopoly. The added hardware is a pair of MIDI In and Thru sockets and a push button for programming the MIDI setup, with setups stored in non-volatile EEPROM memory.
+
+  Incoming MIDI can be received on any selectable MIDI channel and covers notes (MIDI note numbers 41 to 84, with transpose possible), pitchbend that bends up and down over the range set by the synth's own range control, mod wheel and low pass filter cutoff frequency.
+
+  By default pitchbend follows pitchbend messages, the mod wheel follows CC#1 and aftertouch, filter cutoff follows CC#16 and sustain follows CC#64. Any controller, aftertouch or velocity can instead be mapped to control other destinations, so velocity could be mapped to volume. No MIDI can be sent out by this kit.
+
+  The kit comprises a circuit board that fits in the base of the Monopoly, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions and step by step fitting instructions with diagrams of where to connect what. Every kit is checked and tested before despatch.
+
+  Installation is a skilled job and the kits are not intended for installation by the end user; they should be fitted by an experienced synth engineer or at Kenton's own premises. Kits are built to order, with a current build time of up to 25 working days.
+specs: |-
+  - Fits the Korg Monopoly
+  - Adds MIDI In and Thru sockets
+  - Receives on any MIDI channel
+  - Note range MIDI 41 to 84, transpose possible
+  - Pitchbend bends up and down over the range set by the synth's own range control
+  - Receives mod wheel and low pass filter cutoff frequency
+  - Default mappings: CC#1 and aftertouch to mod wheel, CC#16 to filter cutoff, CC#64 to sustain
+  - Any controller, aftertouch or velocity can be remapped
+  - No outgoing MIDI
+  - Setups stored in non-volatile EEPROM
+  - Push button for programming the MIDI setup
+  - Powered from the host instrument, so the kit has no power inlet of its own
+  - Build time currently up to 25 working days
+io:
+  - key: z8FGt4AR
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: PpRWgn0Y
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

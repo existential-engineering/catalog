@@ -1,0 +1,31 @@
+id: mYCtl0N6mAYoAQv0btGPP
+name: Plugstation Firmware
+manufacturer: kenton
+primaryCategory: other
+url: https://kentonuk.com/product/plugstation-firmware/
+description: Firmware for the Kenton Plugstation, offered as a downloadable zip
+  file of the latest release. The page documents how to read the installed
+  version from the unit's MASTER SETTINGS menu and lists the full firmware
+  history.
+details: |-
+  Firmware for the Kenton Plugstation is supplied as a download, with version 1565 the latest release listed. The installed version can be read from the unit itself: turn on the power while holding down the DATA ENTRY knob to enter the MASTER SETTINGS menu, which opens on the EXIT screen. Scrolling across twice reaches the DRNO (Device Revision Number) item, and pressing the DATA ENTRY knob displays the version number. Scrolling back to EXIT and pressing the DATA ENTRY knob again leaves the menu.
+
+  The firmware history runs from version 1542 in September 2001 to version 1565 in November 2004. Several releases add recognition and default settings for newly released Yamaha PLG card types: version 1554 covers the PLG150-DR and PLG150-PC, and version 1565 covers the PLG150-AP.
+
+  Version 1550 introduced two global menu options. Setting "cntp" to yes sends the controller number and value set in each individual PLG card menu to that card whenever programs are changed and at power up. Setting "cc7y" to yes makes CC7 control the volumes of the PLG cards to the Y board, applying only to CC7 messages arriving at the MIDI input on the rear of the Plugstation. Version 1552 extended this so that CC10 controls the balance of the PLG cards to the Y board alongside CC7 when "cc7y" is set.
+
+  Earlier releases were fixes. Version 1550 also resolved a problem where a VL card would only work in slot 4, so that all cards work in all slots. Version 1545 fixed large bulk dumps to AN and VL cards not always getting through, and version 1542 fixed the "waiting for computer" setting not always being acted on when enabled. Version 1560 corrected the SysEx response to channel and part changes.
+specs: |-
+  - Latest listed firmware version: 1565, dated 28/11/2004
+  - Download size: 16k zip file
+  - Installed version readable from the DRNO (Device Revision Number) item in the MASTER SETTINGS menu
+  - Firmware history spans versions 1542 (01/09/2001) to 1565 (28/11/2004)
+  - Supports Yamaha PLG150-AP, PLG150-DR and PLG150-PC plug-in cards
+versions:
+  - name: "1565"
+  - name: "1560"
+  - name: "1554"
+  - name: "1552"
+  - name: "1550"
+  - name: "1545"
+  - name: "1542"

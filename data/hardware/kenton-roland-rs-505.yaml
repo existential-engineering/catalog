@@ -1,0 +1,47 @@
+id: ziDG1zi-n2mQk93OXCn4f
+name: Roland RS-505 MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/roland-rs-505/
+prices:
+  - amount: 570
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI retrofit kit for the Roland RS-505. It adds MIDI In and Thru
+  sockets so the instrument can be played from a MIDI master keyboard or
+  sequencer.
+details: |-
+  This retrofit kit adds MIDI control to the Roland RS-505. Any MIDI channel can be selected for incoming data, and notes in the range 36 to 84 are played with transposition available.
+
+  Pitchbend bends down only, matching the behaviour of the pitch shift slider on the instrument, and its range depends on the setting of the pitch set control. The retrofit is intended to let the instrument be played from a MIDI master keyboard or sequencer rather than to add deeper parameter control.
+
+  Added hardware consists of MIDI In and Thru sockets plus a push button for programming the MIDI setup. No MIDI Out socket is fitted, since the retrofit does not transmit. Setups are held in non-volatile EEPROM memory.
+
+  The kit comprises a circuit board that fits in the base of the RS-505 with a mounting bracket, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions covering the default settings, and step by step fitting instructions with diagrams. Fitting is a job for an experienced synthesiser engineer rather than the end user.
+specs: |-
+  - Incoming MIDI on any selectable channel
+  - Note range MIDI 36 to 84, transposition available
+  - Pitchbend bends down only, range dependent on the pitch set control
+  - Setups stored in non-volatile EEPROM memory
+  - Circuit board fits in the base of the RS-505 with a mounting bracket
+  - Powered from inside the host RS-505, so the kit has no power connector of its own
+io:
+  - key: ze0JCaUi
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: S6DBSKhi
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

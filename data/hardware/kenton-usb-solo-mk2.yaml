@@ -1,0 +1,119 @@
+id: Y5FUNEg8rzc_-VRr0L92A
+name: USB Solo mk2
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+  - synthesizer
+url: https://kentonuk.com/product/usb-solo-mk2/
+prices:
+  - amount: 166.5
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: A high specification single synth MIDI to CV converter with both
+  USB and 5 pin DIN MIDI ports, which also works as a USB MIDI interface.
+details: |-
+  With both USB and 5 pin DIN MIDI ports, the USB Solo mk2 is a configurable MIDI to CV converter for controlling any kind of mono-synth from a DAW. Alongside the conversion it works as a USB MIDI interface, so 5 pin DIN devices can be attached to a computer. It carries the CV conversion features of the Pro Solo mk3, including three continuously variable auxiliary outputs, a built-in LFO and an ADSR envelope generator, and the ability to smooth out steppy MIDI CCs.
+
+  Two modes of operation use the dual ports. In standard mode, MIDI arriving over USB and over 5 pin DIN is converted to CV, and data received at the DIN MIDI in is passed to MIDI Thru. In interface mode it also routes MIDI from USB to the DIN MIDI Thru and from the DIN MIDI in to USB. The MIDI Thru socket can instead be reassigned as a DIN Sync / Sync 24 output at 24 ppqn for Roland drum machines and the MC-202, or 48 ppqn for Linn, Oberheim and some Korg machines, or the MIDI clock can be divided down to 1 to 12 ppqn.
+
+  The CV output runs at 1 V/Oct or Hz/Volt and at any scaling from 0.92 to 1.62 V/Oct, which covers synths as unusual as Buchla and EML, with coarse and fine tuning across plus or minus two octaves and a wide pitchbend range. The gate output works at several voltage levels or delivers S-trig. Pitch comes from notes on a chosen MIDI channel with new, low or high note priority, and portamento can be always on, always off, automatic or under a MIDI CC, at a fixed rate or a fixed time.
+
+  The three auxiliary outputs sit on 3.5mm jack sockets and each has its own controller, drawn from MIDI CCs 0 to 119, aftertouch, velocity, pitchbend, two clock dividers, clock start and stop, note trigger, drum trigger, the ADSR envelope generator and auto portamento. Aux 1 can additionally carry keyboard scale and the LFO. Note trigger suits vintage ARP models such as the 2600 that need a trigger pulse as well as a gate, and drum trigger produces a velocity-scaled pulse of a set length from a chosen MIDI note.
+
+  Configuration is done from the front panel or from the USB Solo mk2 Configuration Manager app. The unit is powered over USB-C and ships with a USB-A to USB-C lead; all other leads are sold separately.
+specs: |-
+  - Power: 5V DC over USB-C, no separate power jack
+  - Current draw: 50mA
+  - Dimensions: 140mm x 87mm x 45mm
+  - Weight: 210g
+  - USB-C port for power and MIDI
+  - 5 pin DIN MIDI In and MIDI Thru, with MIDI Thru configurable as Sync 24
+  - 5 x 3.5mm mono jack outputs: CV, Gate, Aux 1, Aux 2, Aux 3
+  - CV: 1 to 1.5 V/Oct or Hz/V, plus fine scaling adjustment of up to plus or minus 8%
+  - CV scaling can be set from 0.92 V/Oct to 1.62 V/Oct, covering Buchla and EML
+  - Gate: 5, 10 or 15V gate, or S-trig with no pullup or with 5, 10 or 15V pullup
+  - Aux 1 and Aux 2 range approx -2.7 to +10V, Aux 3 approx 0 to +10V
+  - DAC resolution: CV 16 bit, Aux 1 and 2 12 bit, Aux 3 10 bit
+  - Pitchbend range up to plus or minus 48 semitones
+  - Note priority: new, low or high note
+  - DIN Sync output at 24 or 48 ppqn, or MIDI clock divided to 1 to 12 ppqn
+  - LFO rate approx 0.1 Hz to 100 Hz, with triangle, sawtooth, pulse (10 to 50%) and sample and hold waveforms
+  - LFO is MIDI clock syncable, free-running or reset on key-on
+  - Built-in ADSR envelope generator, routable to any auxiliary output, phases assignable to MIDI CCs
+  - Aux outputs have adjustable slew rate to smooth controller jumps
+  - 32 program memories, recallable by MIDI program change, with presets pre-loaded for many popular synths
+  - Variable gate-off time for re-trigger
+  - 32 bit ARM processor, flash upgradable over SysEx
+  - Display: 3 character LED panel with 3 buttons for configuration
+  - Included: user manual and a 2m USB 2.0 Type A to Type C lead
+io:
+  - key: eD28ilsv
+    name: USB-C
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-c
+    maxConnections: 1
+    position: Right
+  - key: HPLU9N8S
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: QziLkL4m
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: KWspzFdY
+    name: CV
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: p24H3DFY
+    name: Gate
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: aKEKDkAE
+    name: Aux 1
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: RqsocL60
+    name: Aux 2
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: 7oMRiZCt
+    name: Aux 3
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://kenton.co.uk/support/apps
+    type: resource
+    title: Kenton support apps, including the USB Solo mk2 Configuration Manager

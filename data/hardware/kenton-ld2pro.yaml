@@ -1,0 +1,54 @@
+id: g4KAPRJKxbwq44Q7412H1
+name: LD2PRO
+manufacturer: kenton
+primaryCategory: meter
+categories:
+  - midi
+  - utility
+  - metering
+url: https://kentonuk.com/product/ld2pro/
+prices:
+  - amount: 137.6
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: Programmable MIDI level display
+details: |-
+  A standalone MIDI level display intended for situations where a volume reading has to be visible at a distance. The level is shown both as a number, switchable between 0 to 127 and 0 to 20, and on a 20 segment bargraph.
+
+  The display is not limited to volume. It can be reconfigured to show the data value of any continuous controller on any MIDI channel, with the factory default set to controller 7 (MIDI volume) on channel 1, and it can also be set to show program changes. Configuration is done through a recessed Learn button.
+
+  The bargraph is multi colour, with 13 green segments, 4 amber and 3 red, so the reading can be taken at a glance from across a stage or an orchestra pit.
+
+  The unit is housed in a steel case and runs from an external mains adapter, and at around 119 mm wide it sits comfortably on a synthesiser or a music stand.
+specs: |-
+  - Display: 3 x 7 segment numeric display plus 2 x 10 segment bargraph
+  - Numeric readout switchable between 0 to 127 and 0 to 20
+  - 20 segment multi-colour bargraph: 13 green, 4 amber, 3 red
+  - Displays any continuous controller on any MIDI channel, default CC 7 on channel 1
+  - Can be configured to display program changes
+  - Configured via a recessed Learn button
+  - Power: 9 to 12V DC, 2.1mm centre positive, power supply included
+  - Current draw: 110 mA
+  - Supplied power supply is a 9V multi-region switch mode unit with 4 interchangeable mains heads
+  - MIDI: 1 x 5 pin DIN MIDI In
+  - Dimensions: 119 x 60 x 44 mm
+  - Weight: 285 g, 395 g including the power supply
+  - Steel enclosure
+io:
+  - key: TEvyW4JY
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: EGYineCI
+    name: DC In
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,59 @@
+id: d_hgoehA_KNsMP91oFTRI
+name: Roland CR-68 MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/roland-cr-68/
+prices:
+  - amount: 400
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI retrofit kit for the Roland CR-68 drum machine. It adds MIDI
+  In, Out and Thru sockets, with note mapping, velocity accenting and MIDI clock
+  sync for the internal sounds.
+details: |-
+  This retrofit kit adds MIDI control to the Roland CR-68 drum machine. Incoming MIDI can be received on any MIDI channel, with channel 10 as the default, and the kit responds to MIDI clock, stop and start messages.
+
+  Any of the CR-68 sounds can be mapped to any MIDI note number, with defaults of 36 to 51. Incoming velocity determines whether a sound is played accented or unaccented.
+
+  The kit also transmits MIDI. An outgoing channel can be selected, MIDI clock, stop and start are sent, and the sounds generate MIDI notes according to the same mapping table. Notes are given velocity 64 when unaccented and velocity 127 when accented.
+
+  Added hardware consists of MIDI In, Out and Thru sockets plus a push button for programming the MIDI setup. Setups are held in non-volatile EEPROM memory, so they survive a power cycle.
+
+  The kit comprises a circuit board that attaches to the back panel inside the CR-68, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions covering the default settings, and step by step fitting instructions with diagrams. Fitting is a job for an experienced synthesiser service engineer rather than the end user.
+specs: |-
+  - Incoming MIDI on any channel, default channel 10
+  - Responds to MIDI clock, stop and start
+  - Any sound mappable to any MIDI note number, defaults 36 to 51
+  - Incoming velocity selects accented or unaccented playback
+  - Outgoing MIDI on any channel, default channel 10
+  - Outgoing notes sent with velocity 64 when unaccented and 127 when accented
+  - Setups stored in non-volatile EEPROM memory
+  - Powered from inside the host CR-68, so the kit has no power connector of its own
+io:
+  - key: aruRR4q7
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: Ih499V0s
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 5Tq3gT4t
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

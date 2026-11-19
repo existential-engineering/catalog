@@ -1,0 +1,128 @@
+id: EjQAEjOfp-YC05BVaQaK8
+name: Merge-8
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - routing
+  - utility
+url: https://kentonuk.com/product/merge-8/
+prices:
+  - amount: 124.9
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI Merge boxes combine the data from a number of MIDI sources
+  into a single output. See also Merge-4.
+details: |-
+  Merge-8 merges the data from up to eight separate MIDI sources, such as master keyboards or controllers, into a single MIDI data stream that appears at both of its MIDI out sockets. All MIDI data is merged, including MIDI Clock, MIDI time code and SysEx.
+
+  A recessed button reconfigures the unit as two completely independent four into one mergers. The eight MIDI inputs are opto-isolated to eliminate ground loops and hum and to prevent electrical damage, and each of the two MIDI outputs carries the merged data from the inputs.
+
+  Certain message types are handled intelligently rather than simply passed along. For MIDI Clock, all clock messages are passed to the MIDI outs at power on, and the most recent input to receive a START command, or a Song Position Pointer of 0 followed by CONTINUE, becomes the clock master until another input satisfies the same condition.
+
+  For Active Sensing, the first input to receive an Active Sensing message becomes the Active Sensing master and messages from other inputs are ignored. That input remains master until no further Active Sensing messages arrive at it for around five seconds, after which another input can take over. For SysEx, an input handling a SysEx message becomes the SysEx master and messages from all other inputs are locked out until the master's message finishes, terminated either by an End Of SysEx command (F7) or by any other status command.
+
+  Latency is 0.4 ms to 1 ms depending on message type. A power and data indicator LED is fitted, and the unit is housed in an aluminium case finished in brushed aluminium with black screen print so it can withstand knocks.
+specs: |-
+  - 8 opto-isolated 5 pin DIN MIDI In ports
+  - 2 x 5 pin DIN MIDI Out, each carrying the merged data
+  - Switchable to two independent 4 in, 1 out mergers by a recessed button
+  - Merges all MIDI messages including Clock, SysEx and MTC
+  - Intelligent handling of Clock, SysEx and Active Sensing
+  - Latency 0.4 ms to 1 ms depending on message type
+  - Power: 9 V DC regulated or unregulated, 2.1 mm centre-positive
+  - Current draw: 100 mA
+  - Dimensions: 155 x 80 x 32 mm
+  - Weight: 220 g excluding power supply, 290 g including power supply
+  - Power and data indicator LED
+  - Aluminium case
+  - Supplied with user manual and a 9 V multi-region switch mode power supply with four interchangeable heads
+io:
+  - key: b2kLTCfk
+    name: MIDI In 1
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: uekipBFt
+    name: MIDI In 2
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: vo9gJjGZ
+    name: MIDI In 3
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: Wx05V2iq
+    name: MIDI In 4
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 885MaNmq
+    name: MIDI In 5
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: Nh4Mubb8
+    name: MIDI In 6
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: jTmoVbey
+    name: MIDI In 7
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: AjStMivS
+    name: MIDI In 8
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: St3sCsz0
+    name: MIDI Out 1
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: SjyJSnBC
+    name: MIDI Out 2
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 4A7GHxj1
+    name: 9 V DC In
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

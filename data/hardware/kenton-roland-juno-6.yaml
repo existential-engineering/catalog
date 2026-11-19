@@ -1,0 +1,63 @@
+id: 8M9C19R_0dLU3LfG8K7IQ
+name: Roland Juno-6 MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/roland-juno-6/
+prices:
+  - amount: 480
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI retrofit kit for the Roland Juno-6. It adds MIDI In, Out and
+  Thru sockets and lets the synthesiser be played from a MIDI keyboard or
+  sequencer, with control of notes, pitchbend, modulation, filter cutoff, volume
+  and sustain.
+details: |-
+  This retrofit kit adds MIDI control to the Roland Juno-6. Any MIDI channel can be selected for incoming data, and the kit responds to notes in the range 36 to 96 with transposition available, pitchbend covering a fifth up and down, mod wheel, low pass filter cutoff, volume and sustain. The arpeggio clock can be synchronised to MIDI clock.
+
+  By default pitchbend is driven by pitchbend messages, the mod wheel by CC#1 and also by aftertouch, filter cutoff by CC#16, volume by CC#7 and sustain by CC#64. Any controller, aftertouch or velocity can be remapped to control other parameters, so velocity could be set to drive volume instead.
+
+  For outgoing MIDI, any channel can be selected, notes in the range 36 to 96 are sent with transposition available, and program changes 1 to 61 can be sent using a button press followed by a key press. No other MIDI is transmitted, since the retrofit is primarily intended to let the synthesiser be played from a MIDI master keyboard or sequencer.
+
+  Added hardware consists of MIDI In, Out and Thru sockets plus a push button for programming the MIDI setup. Setups are held in non-volatile EEPROM memory.
+
+  The kit comprises a circuit board that fits in the base of the Juno-6, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions covering the default settings, and step by step fitting instructions with diagrams. Fitting is a job for an experienced synthesiser engineer rather than the end user.
+specs: |-
+  - Incoming and outgoing MIDI on any selectable channel
+  - Note range MIDI 36 to 96, transposition available
+  - Pitchbend bends up and down a fifth
+  - Mod wheel on CC#1, also driven by aftertouch, by default
+  - Low pass filter cutoff on CC#16 by default
+  - Volume on CC#7 and sustain on CC#64 by default
+  - Any controller, aftertouch or velocity can be remapped to other parameters
+  - Arpeggio clock synchronisable to MIDI clock
+  - Program changes 1 to 61 transmittable by button press plus key press
+  - Setups stored in non-volatile EEPROM memory
+  - Powered from inside the host Juno-6, so the kit has no power connector of its own
+io:
+  - key: wBEPox5I
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 5yf9njqy
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: JS0QCQbP
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
