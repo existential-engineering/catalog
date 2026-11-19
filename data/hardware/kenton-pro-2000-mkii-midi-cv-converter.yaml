@@ -40,14 +40,14 @@ specs: |-
   - Note priority: newest, lowest or highest, with multiple and single trigger modes
   - Six programmable auxiliary outputs, assignable to any MIDI controller on any MIDI channel
   - Two programmable independent LFOs, nine wave shapes each including random, synchronisable to MIDI clock
-  - Clock output: selectable 1 to 12 cpqn plus 24 and 48 cpqn
+  - Clock output on 3.5mm mono jack: selectable 1 to 12 cpqn plus 24 and 48 cpqn
   - DIN SYNC 24 socket
   - Display: 16x2 character LCD
   - 24 memory locations for setups, stored in non-volatile memory
   - Polyphonic operation selectable with three note assignment types
   - All parameters controllable in real time by SysEx, with SysEx dump and load
   - MIDI monitor mode for troubleshooting
-  - Expansion port: 15 pin high density D or 8 pin mini DIN, depending on version
+  - Optional expansion port, not fitted on a standard unit: 15 pin high density D (KADI/WASP) or 8 pin mini DIN (DCB)
   - Optional ports: DCB with cable, KADI/WASP with cable
   - Case: steel
 io:
@@ -147,12 +147,28 @@ io:
     connection: 1/8-inch
     maxConnections: 1
     position: Right
-  - key: aBRBgIvc
-    name: Expansion Port
+  - key: Mt5c6xqd
+    name: Aux Output 5
     signalFlow: output
     category: audio
     type: cv/gate
-    connection: db15
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: rCYdR3qt
+    name: Aux Output 6
+    signalFlow: output
+    category: audio
+    type: cv/gate
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Right
+  - key: dI726lcg
+    name: Clock Output
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 1/8-inch
     maxConnections: 1
     position: Right
   - key: xqKl3FHq

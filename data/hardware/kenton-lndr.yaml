@@ -31,6 +31,7 @@ specs: |-
   - CAT5 limits the run to 100 metres; screened 24 AWG solid copper core CAT5e for runs over 100 metres
   - CAT5e cable not included
   - Connectors per unit: 1 x RJ45, 2 x 5 pin DIN (MIDI In, MIDI Out)
+  - Only the main unit has a power input socket, and it supplies power for both units
   - LEDs for power and MIDI activity
   - Power: 9V DC via 2.1mm centre positive jack socket, power supply included
   - Current draw: 85 mA
@@ -40,7 +41,7 @@ specs: |-
   - Protocol compatible with the LNDX MIDI Line Driver Pro
 io:
   - key: t9T0N7KG
-    name: MIDI In
+    name: Main MIDI In
     signalFlow: input
     category: midi
     type: midi
@@ -48,7 +49,7 @@ io:
     maxConnections: 1
     position: Right
   - key: VhKJvIba
-    name: MIDI Out
+    name: Main MIDI Out
     signalFlow: output
     category: midi
     type: midi
@@ -56,18 +57,42 @@ io:
     maxConnections: 1
     position: Right
   - key: n88mvcE3
-    name: CAT5 Link
+    name: Main CAT5 Link
     signalFlow: bidirectional
     category: digital
     type: proprietary
     connection: ethernet
     maxConnections: 1
-    position: Right
+    position: Left
   - key: Qw2jQ19B
-    name: DC In
+    name: Main DC In
     signalFlow: input
     category: power
     type: power
     connection: barrel
     maxConnections: 1
     position: Right
+  - key: 0zSAkk1J
+    name: Secondary MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: xVJOG2va
+    name: Secondary MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: rsuSbLiQ
+    name: Secondary CAT5 Link
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: ethernet
+    maxConnections: 1
+    position: Left
