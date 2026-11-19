@@ -28,7 +28,8 @@ specs: |-
   - Frets: 24 stainless steel jumbo, .110 inch wide x .055 inch tall
   - Scale length: 25.5 inch
   - Pickups: direct-mount passive Kiesel Vantium humbuckers
-  - Electronics: master volume control, 3-way pickup selector, flush mount output jack and rear access output jack offered
+  - Electronics: master volume control, 3-way pickup selector
+  - Output jacks: a flush mount output jack and a rear Access output jack, both fitted as standard
   - Bridge: Kiesel/Hipshot tremolo system, .4125 inch (10.5 mm) spacing
   - Tuners: premium Kiesel locking tuners, 19:1 ratio
   - Headstock: painted 2x4 headstock with gold Kiesel logo
@@ -43,6 +44,14 @@ specs: |-
 io:
   - key: KICAdOF6
     name: Output
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: qQTAJTe5
+    name: Access Jack Output
     signalFlow: output
     category: audio
     type: instrument
