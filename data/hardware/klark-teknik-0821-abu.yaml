@@ -23,10 +23,34 @@ specs: |-
   - Provides snapshot recall, scene management and parameter adjustment
 io:
   - key: OnoOf2Ow
-    name: DN3600 Master Connection
+    name: DN3698 Connection
     signalFlow: bidirectional
     category: digital
     type: proprietary
-    connection: proprietary
+    connection: 5-pin xlr
+    maxConnections: 1
+    position: Left
+  - key: E7Pw5ldK
+    name: Pro-MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 0S8qpDJy
+    name: Pro-MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: Rp7Rzkts
+    name: Mains Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
     maxConnections: 1
     position: Right

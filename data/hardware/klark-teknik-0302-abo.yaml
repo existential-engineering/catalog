@@ -18,6 +18,22 @@ specs: |-
   - Operates with or without VNET control, for use with first-generation VNET equipped products
   - Rackmountable
 io:
+  - key: gie7xVMh
+    name: Audio Out 1
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 43gKIXJ2
+    name: Audio Out 2
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
   - key: DgMdi4AQ
     name: Dante Network
     signalFlow: bidirectional
@@ -32,5 +48,13 @@ io:
     category: digital
     type: ethernet
     connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: 5e46SnB4
+    name: EXT Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: 1/8-inch
     maxConnections: 1
     position: Right

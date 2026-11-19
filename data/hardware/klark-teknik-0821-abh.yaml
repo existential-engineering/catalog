@@ -29,9 +29,25 @@ specs: |-
   - Designed for use alongside DN-series graphic equalisers during system tuning
   - Rackmount DN-series chassis
 io:
-  - key: RHWb57ta
-    name: Measurement Input
+  - key: kAzrkL0b
+    name: Microphone Input
     signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - key: RHWb57ta
+    name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: 64qtG42i
+    name: Pink Noise Output
+    signalFlow: output
     category: audio
     type: line
     connection: xlr

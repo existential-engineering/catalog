@@ -22,11 +22,27 @@ specs: |-
   - Snapshot recall, parameter access and scene management
   - Conservatively rated electronics with robust connector and cable assemblies
 io:
+  - key: oboRIPNZ
+    name: Pro-MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: VukyL7Xm
+    name: Pro-MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: xlr
+    maxConnections: 1
+    position: Right
   - key: P39Vqofo
     name: Docking Station Connection
     signalFlow: bidirectional
     category: digital
     type: proprietary
-    connection: proprietary
+    connection: 5-pin xlr
     maxConnections: 1
-    position: Bottom
+    position: Right

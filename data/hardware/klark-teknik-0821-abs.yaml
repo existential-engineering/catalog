@@ -26,12 +26,52 @@ specs: |-
   - Analogue signal path
   - Remote operation via DN3603 docking station and DN3698 handheld remote
 io:
+  - key: UAW6lCDi
+    name: Input A
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: RQvC3g0k
+    name: Input B
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: KrNd553B
+    name: Output A
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: lx4pQ4oT
+    name: Output B
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
   - key: JaDQZeVh
-    name: MIDI In
+    name: Pro-MIDI In
     signalFlow: input
     category: midi
     type: midi
-    connection: 5-pin din
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: m1Lk9kAY
+    name: Pro-MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: xlr
     maxConnections: 1
     position: Right
   - key: azeU8y9k
