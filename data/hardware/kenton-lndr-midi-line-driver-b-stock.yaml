@@ -1,0 +1,73 @@
+id: fudtyIN63kKFWNJX2AEmh
+name: LNDR MIDI Line Driver - B-Stock
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+  - routing
+url: https://kentonuk.com/product/lndr-midi-line-driver-b-stock/
+prices:
+  - amount: 91.68
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: The MIDI Line Driver - extend MIDI up to 1000 metres with CAT5e.
+  See also LNDX MIDI Line Driver Pro.
+details: |-
+  The LNDR MIDI Line Driver offered as B-Stock, meaning a unit that is fully functional and fully tested and carries a full warranty but may have cosmetic damage. Such units are ex-demo, returned unused by a customer, or returned faulty and since repaired.
+
+  The LNDR carries MIDI far beyond the 15 metre (50 foot) limit of the MIDI specification by sending it over CAT5e cable. It is supplied as a main and secondary pair, and the link passes MIDI accurately in both directions at the same time over distances of more than 1000 metres (3280 feet), which is over 66 times the reach of ordinary MIDI cabling.
+
+  The reach comes from combining balanced line drivers with the twisted pair construction of CAT5e, giving a high degree of immunity to induced noise and so a reliable MIDI link at lengths plain MIDI cable cannot manage. Each unit carries LEDs for power and MIDI activity.
+
+  CAT5e cable is recommended. Plain CAT5 limits the run to 100 metres, and beyond 100 metres a screened 24 AWG solid copper core CAT5e cable should be used. The cable is not supplied, since the required length depends on the installation. The run is for the link alone: the cable from a main unit must go to a secondary unit, never to a second main unit and never to any other device that happens to take the same connector, Ethernet equipment included.
+
+  The LNDR and the LNDX MIDI Line Driver Pro share the same communications protocol, so one of each can be used at opposite ends of a link.
+specs: |-
+  - B-Stock condition: fully functional and tested, full warranty, possible cosmetic damage
+  - Supplied as a main and secondary pair
+  - Extends MIDI up to 1000 metres between main and secondary units over CAT5e
+  - Full duplex, MIDI passes in both directions simultaneously
+  - RS-422 signalling over CAT5, requiring exclusive use of the cable
+  - CAT5 limits the run to 100 metres; screened 24 AWG solid copper core CAT5e for runs over 100 metres
+  - CAT5e cable not included
+  - Connectors per unit: 1 x RJ45, 2 x 5 pin DIN (MIDI In, MIDI Out)
+  - LEDs for power and MIDI activity
+  - Power: 9V DC via 2.1mm centre positive jack socket, power supply included
+  - Current draw: 85 mA
+  - Dimensions per unit: 100 x 46 x 32 mm
+  - Weight per unit: 110 g excluding power supply
+  - Protocol compatible with the LNDX MIDI Line Driver Pro
+io:
+  - key: sGxT6VYO
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: wHrzC4bu
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: OB3Iz7Xt
+    name: CAT5 Link
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: n9UuiJBU
+    name: DC In
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

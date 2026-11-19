@@ -1,0 +1,33 @@
+id: bdchyHSKOr2zLPPq56HMe
+name: Killamix Mini Firmware Update
+manufacturer: kenton
+primaryCategory: other
+url: https://kentonuk.com/product/killamix-mini-firmware-update/
+description: Downloadable firmware updates for the Kenton Killamix Mini MIDI
+  controller, in three builds selected by the unit's serial number. The page
+  explains how to read the installed revision from the LED rings and lists the
+  firmware history for each serial-number range.
+details: |-
+  Firmware updates for the Killamix Mini are offered as downloads, with a different update depending on the serial number of the unit. Units from serial number 0781 onwards do not need updating. Three builds are published: version 1031 for serial numbers up to and including 0409, version 1104 for serial numbers 0410 to 772, and version 2017 for serial numbers 773 to 780.
+
+  The installed version is read from the unit. Power it on by plugging it into a USB port while holding buttons 1 and 3 pressed down, allow a couple of seconds for the USB interface to initialise, then release the buttons. Buttons 1 and 3 light to indicate the mode. LED rings 1 to 4 then show the four-digit revision number, ring 1 giving thousands, ring 2 hundreds, ring 3 tens and ring 4 units. Going clockwise from the left segment, the first nine LEDs of a ring indicate the digits 1 to 9 and a zero is shown by the fifteenth and last LED. Pressing button 9 starts normal operation and the LED startup display.
+
+  The history for the earliest units runs from version 1001 in December 2006 to version 1031 in November 2011. Version 1010 added Button Setup mode with On only, On/Off and Toggle options, a config mode at power up, Joystick mode with a four pole mode, Receive CCs for Encoders and Push Buttons mode, Encoder Incremental mode with Doepfer and Ableton Signed 7 Bit modes, received CCs updating knob positions and push buttons on all MIDI channels, and button modes selectable per MIDI channel. Version 1014 added a switch mode to Joystick mode and improved error checking for firmware upgrades.
+
+  Version 1022 added Hi-Speed Encoder mode, a Buttons Send MIDI Notes mode, a Knobs Pressed Send Controller Messages mode and the ability to offset CC numbers, along with fixes to toggle-mode button behaviour, button LED blanking and running more than one Killamix Mini on macOS 10.5. Version 1030 added the ability to request the firmware version number over SysEx, a second mode in which button LEDs respond only to external controller information, and a Continuum mode. Version 1031 changed the Continuum joystick mode from mode 2 to mode 1, a change also carried by version 1104 for the middle serial range, which additionally fixed real-time bytes overwriting MIDI status. Version 2017 for the 773 to 780 range allows the brightness of the push buttons and LED rings to be adjusted.
+specs: |-
+  - Three builds by serial number: 1031 for serials up to 0409, 1104 for serials 0410 to 772, 2017 for serials 773 to 780
+  - Units from serial number 0781 onwards do not require updating
+  - Installed revision shown as a four-digit number across LED rings 1 to 4
+  - Version check entered by powering on over USB with buttons 1 and 3 held
+  - Firmware version number can be requested over SysEx from version 1030 onwards
+  - Supports running more than one Killamix Mini on macOS 10.5 from version 1022 onwards
+versions:
+  - name: "2017"
+  - name: "1104"
+  - name: "1031"
+  - name: "1030"
+  - name: "1022"
+  - name: "1014"
+  - name: "1010"
+  - name: "1001"

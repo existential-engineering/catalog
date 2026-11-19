@@ -1,0 +1,75 @@
+id: WQ4iqWr1CTpoQSgb09xRX
+name: LNDX MIDI Line Driver Pro
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+  - routing
+url: https://kentonuk.com/product/lndx-midi-line-driver-pro/
+prices:
+  - amount: 145.6
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: The MIDI Line Driver Pro - extend MIDI up to 1000 metres with
+  etherCON. See also LNDR MIDI Line Driver.
+details: |-
+  A professional MIDI line driver that carries MIDI far beyond the 15 metre (50 foot) limit of the MIDI specification, over CAT5e cable terminated with etherCON connectors. It is supplied as a main and secondary pair, and the link passes MIDI accurately in both directions at the same time across more than 1000 metres (3280 feet), over 66 times the reach of ordinary MIDI cabling.
+
+  The reach comes from combining balanced line drivers with the twisted pair construction of CAT5e, giving a high degree of immunity to induced noise and so a reliable MIDI link at lengths plain MIDI cable cannot manage. Each unit carries two LEDs covering power and MIDI In and MIDI Out activity.
+
+  etherCON is a ruggedised, lockable RJ45 connector system intended for professional use. CAT5e cables can be bought with etherCON connectors already fitted, and shells are available to convert existing RJ45 CAT5e cables, while the socket on the unit accepts cables terminated with either etherCON or plain RJ45. The cable itself is not supplied, since the required length depends on the installation.
+
+  Only the main unit needs mains power: it runs from the included supply and feeds the secondary unit over the CAT5e cable. The run is for the link alone, so the cable from a main unit must go to a secondary unit, never to a second main unit and never to any other device that takes the same connector, Ethernet equipment included.
+
+  CAT5e is recommended. Plain CAT5 limits the run to 100 metres, and beyond 100 metres a screened 24 AWG solid copper core CAT5e cable should be used. The LNDX shares its communications protocol with the LNDR MIDI Line Driver, so one of each can sit at opposite ends of a link.
+specs: |-
+  - Supplied as a main and secondary pair
+  - Extends MIDI up to 1000 metres between main and secondary units over CAT5e
+  - Full duplex, MIDI passes in both directions simultaneously
+  - etherCON B series RJ45 connector, RS485 full duplex over CAT5, requiring exclusive use of the cable
+  - Socket accepts cables terminated with etherCON or plain RJ45
+  - CAT5 limits the run to 100 metres; screened 24 AWG solid copper core CAT5e for runs over 100 metres
+  - etherCON cable not included
+  - Connectors per unit: 1 x etherCON RJ45, 2 x 5 pin DIN (MIDI In, MIDI Out)
+  - Secondary unit is powered by the main unit over the CAT5e cable
+  - Power: 9V DC via 2.1mm centre positive jack socket, power supply included
+  - Current draw: 85 mA
+  - Supplied with a 9V regulated multi-region power supply for UK, EU, US and Canada, and Australia and New Zealand
+  - 2 LEDs indicating power and MIDI In and MIDI Out activity
+  - Dimensions per unit: 98 x 54 x 43 mm
+  - Weight per unit: 96 g excluding power supply
+  - Protocol compatible with the LNDR MIDI Line Driver
+io:
+  - key: Muerrvht
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: LB8qatHE
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 5dyyU3y0
+    name: CAT5 Link
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: ethercon
+    maxConnections: 1
+    position: Right
+  - key: 1LnTeRTs
+    name: DC In
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

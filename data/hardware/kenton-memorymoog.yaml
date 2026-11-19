@@ -1,0 +1,64 @@
+id: SmBGUORbdheZ8PyryPy55
+name: Memorymoog MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/memorymoog/
+prices:
+  - amount: 570
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI retrofit kit for the Memorymoog and Memorymoog Plus, adding
+  MIDI In, Out and Thru sockets with note, program change, pitchbend and
+  controller support.
+details: |-
+  A MIDI retrofit kit for the Memorymoog and Memorymoog Plus. It fits inside the instrument and adds MIDI In, Out and Thru sockets along with a push button for programming the MIDI setup.
+
+  Incoming MIDI can be received on any MIDI channel and covers notes (MIDI note numbers 36 to 96, with transpose possible), program change (numbers 1 to 40), pitchbend that bends up and down as set for the Memorymoog's own bender, mod wheel, low pass filter cutoff frequency, both foot controller inputs, volume and sustain (decay on-off).
+
+  By default pitchbend follows pitchbend messages, the mod wheel follows CC#1 and aftertouch, pedal 1 input follows CC#16 (pitch, volume, filter), pedal 2 input follows CC#17 (mod amount, osc 2), volume follows CC#7 and sustain follows CC#64. Any controller, aftertouch or velocity can instead be mapped to control other destinations, so velocity could be mapped to the pedal 1 input.
+
+  Outgoing MIDI can be sent on any MIDI channel and covers notes 36 to 96 with transpose, plus program changes 1 to 61 sent using a button press followed by a key press. No other MIDI is transmitted, as the retrofit is primarily intended to let the synth be played from a MIDI master keyboard or sequencer.
+
+  The kit comprises a circuit board that fits in the base of the Memorymoog, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions and step by step fitting instructions with wiring diagrams. Setups are stored in non-volatile EEPROM memory. Installation is a skilled job for an experienced synth service engineer and is not intended for the end user; kits are built to order and every kit is checked and tested before despatch.
+specs: |-
+  - Fits the Memorymoog and Memorymoog Plus
+  - MIDI In, Out and Thru sockets
+  - Receives on any MIDI channel
+  - Note range MIDI 36 to 96, transpose possible
+  - Program change receive: 1 to 40
+  - Program change send: 1 to 61, by button press followed by a key press
+  - Receives pitchbend, mod wheel, filter cutoff, two foot controller inputs, volume and sustain
+  - Default mappings: CC#1 and aftertouch to mod wheel, CC#16 to pedal 1, CC#17 to pedal 2, CC#7 to volume, CC#64 to sustain
+  - Any controller, aftertouch or velocity can be remapped
+  - Push button for programming the MIDI setup
+  - Setups stored in non-volatile EEPROM
+  - Powered from the host instrument, so the kit has no power inlet of its own
+  - Build time currently up to 25 working days
+io:
+  - key: 3QwpioI0
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: elYXEViP
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: tE3i2nKZ
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,63 @@
+id: uJ7-QFcaZ-mCfAbSNL_4h
+name: AN-16
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - midi-controller
+  - utility
+url: https://kentonuk.com/product/an-16/
+prices:
+  - amount: 68
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: 16 analogue input to MIDI module board See also SW-16 for our
+  switched input to MIDI module board.
+details: |-
+  The AN-16 is a ready built and tested circuit board that converts sixteen control voltages into MIDI data. It is aimed at anyone building a custom controller, or a project that needs several control voltages turned into MIDI. It is supplied as a board only, with no case and no power supply.
+
+  The board has 16 analogue inputs covering 0 to 5 volts. Any MIDI data can be generated on any MIDI channel from any input, including sysex and NRPN messages. Potentiometers wired to the inputs should be no less than 1K and ideally no greater than 10K ohms.
+
+  Programming is done with the free PC or Mac editor, or from a Control Freak Studio or Control Freak Live. The board is effectively a cut-down Control Freak Studio Edition controller, with just the inputs for the sixteen potentiometers and none of the sliders or knobs, while keeping the same operating system.
+
+  MIDI In and MIDI Out are provided, and power comes from a 2.1mm centre positive DC jack taking 9 volts DC at 100mA, regulated or unregulated. More than 12 volts must never be applied, and an unregulated supply rated above 9 volts is unsuitable because such supplies typically deliver more than their marked output. A 6 volt version can be supplied by special request.
+
+  The board measures 80 by 60 by 22 mm and weighs around 50 grams. Typical applications include schools, colleges, research establishments, animatronics and automation.
+specs: |-
+  - 16 analogue inputs, 0 to 5 volts
+  - Any MIDI data on any MIDI channel from any input, including sysex and NRPN
+  - MIDI: 1 x MIDI In, 1 x MIDI Out
+  - Power socket: DC jack 2.1mm centre positive
+  - Power requirement: 9V DC regulated or unregulated, 100mA
+  - Never apply more than 12V
+  - 6V operation available by special request
+  - Recommended potentiometer value: 1K to 10K ohms
+  - Dimensions: 80 x 60 x 22 mm
+  - Weight: approximately 50 grams
+  - Supplied as a bare board, with no case and no power supply
+  - The 16 analogue inputs are board connections for external potentiometers rather than panel jacks
+io:
+  - key: fhvEnbo2
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: p6GfWZEV
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: y4Em7uG6
+    name: DC Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

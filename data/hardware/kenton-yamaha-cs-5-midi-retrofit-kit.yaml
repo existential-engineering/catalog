@@ -1,0 +1,57 @@
+id: WHjMOg6BzKSKSw2y7SOA-
+name: Yamaha CS-5 MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+  - synthesizer
+url: https://kentonuk.com/product/yamaha-cs-5-midi-retrofit-kit/
+prices:
+  - amount: 385
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: A MIDI retrofit kit for the Yamaha CS-5, adding MIDI control of
+  notes, pitchbend, modulation, volume, sustain, portamento and the synth's LFO
+  and filter cutoff.
+details: |-
+  A retrofit kit that adds MIDI control to the Yamaha CS-5 without changing the synthesiser's own behaviour. Once fitted, the CS-5 can be played from a DAW, a sequencer or any other MIDI controller, and it switches automatically between keyboard and MIDI control. Any of the 16 MIDI channels can be selected, and the setup is held in non-volatile EEPROM memory.
+
+  Incoming MIDI covers note numbers 36 to 96 with transposition, pitchbend over a range selectable between two semitones, a fifth or an octave, and volume, sustain and glide. CC#1 drives the CS-5's own LFO or the kit's MIDI-syncable LFO, CC#7 volume, CC#64 sustain, CC#65 and CC#5 portamento on and off and its rate, and CC#16 the low pass filter cutoff frequency. The kit's own LFO has its MIDI sync, waveshape, speed, LFO to VCO amount and LFO to filter cutoff amount on CC#12 to CC#17. Every one of those assignments can be moved to a different CC, and pitchbend, aftertouch and velocity can each be routed to volume and filter cutoff.
+
+  The kit's own LFO can modulate the VCO and the filter cutoff. Added hardware is a MIDI In socket, a MIDI Thru socket and a push button for programming the MIDI setup.
+
+  The kit comprises a MIDI circuit board that fits inside the CS-5, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions covering the default settings, and step by step fitting instructions. Every kit is checked and tested before despatch, and each one is built to order.
+specs: |-
+  - Adds MIDI functionality to the Yamaha CS-5 without changing the synth's own functionality
+  - Switches automatically between keyboard and MIDI control
+  - Any of the 16 MIDI channels selectable
+  - Controls note pitch, pitchbend, modulation, filter cutoff, volume, sustain and slide/portamento
+  - Note range: MIDI note numbers 36 to 96, transposable
+  - Pitchbend range selectable between 2 semitones, a fifth or an octave
+  - Aftertouch, velocity and pitchbend routable to volume and filter cutoff
+  - Built-in MIDI-syncable LFO that can modulate VCO and filter cutoff
+  - Default CC map: CC#1 modulation, CC#7 volume, CC#64 sustain, CC#65 portamento on/off, CC#5 portamento time, CC#16 low pass filter cutoff, CC#12 LFO MIDI sync, CC#13 LFO waveshape, CC#14 LFO speed, CC#15 LFO to VCO amount, CC#17 LFO to filter cutoff amount
+  - All CC assignments can be reassigned
+  - Setup stored in non-volatile EEPROM memory
+  - Adds MIDI In and MIDI Thru sockets plus a push button for programming
+  - Kit contents: MIDI circuit board, DIN sockets and mounting hardware, cable assemblies, user instructions, fitting instructions
+  - No power connection of its own: the board is powered from the host synthesiser
+  - Currently available only fitted at Kenton's premises
+io:
+  - key: rYvIHzsA
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: EYeNdqSa
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

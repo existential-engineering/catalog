@@ -1,0 +1,67 @@
+id: JLCEJgEOuykfM36frp48M
+name: Roland Jupiter-8 MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/roland-jupiter-8/
+prices:
+  - amount: 580
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI retrofit kit for the Roland Jupiter-8, suitable for all
+  versions of the synthesiser including both the 12 and 14 bit DAC variants. It
+  adds MIDI In, Out and Thru sockets and does not require a DCB or Op-8 port to
+  be present.
+details: |-
+  This retrofit kit adds MIDI control to the Roland Jupiter-8 and suits every version of the instrument, both the 12 bit and the 14 bit DAC variants. A DCB or Op-8 port is not required, and one being present does no harm.
+
+  Any MIDI channel can be selected for incoming data. The kit responds to notes in the range 36 to 96 with transposition available, program changes 1 to 128 where 1 to 64 select whole or upper and 65 to 128 select lower when the keyboard is split, pitchbend matching the range set for the bender wheel, mod wheel, low pass filter cutoff, volume, sustain and an auto tune request. The arpeggio clock can be synchronised to MIDI clock. Hold lower, hold upper, dual, split, whole, manual and patch presets 1 to 8 can also be driven over MIDI.
+
+  By default pitchbend is driven by pitchbend messages, the mod wheel by CC#1 and also by aftertouch, filter cutoff by CC#16, volume by CC#7 and sustain by CC#64. Any controller, aftertouch or velocity can be remapped to control other parameters, so velocity could be set to drive volume instead.
+
+  For outgoing MIDI, any channel can be selected, notes in the range 36 to 96 are sent with transposition available, and program changes 1 to 61 can be sent using a button press followed by a key press. No other MIDI is transmitted, since the retrofit is primarily intended to let the synthesiser be played from a MIDI master keyboard or sequencer. Added hardware consists of MIDI In, Out and Thru sockets plus a push button for programming the setup, which is held in non-volatile EEPROM memory.
+
+  The kit comprises a circuit board that fits inside the top section of the Jupiter-8, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions and step by step fitting instructions with diagrams. The exact kit supplied may differ slightly depending on the model it is to be fitted in, and fitting is a job for an experienced synthesiser engineer rather than the end user.
+specs: |-
+  - Suitable for all Jupiter-8 versions, both 12 bit and 14 bit DAC
+  - DCB or Op-8 port not required
+  - Incoming and outgoing MIDI on any selectable channel
+  - Note range MIDI 36 to 96, transposition available
+  - Incoming program changes 1 to 128, with 1 to 64 for whole or upper and 65 to 128 for lower when split
+  - Pitchbend range matches the setting for the bender wheel
+  - Mod wheel on CC#1, also driven by aftertouch, by default
+  - Low pass filter cutoff on CC#16 by default
+  - Volume on CC#7 and sustain on CC#64 by default
+  - Auto tune request over MIDI
+  - Hold lower, hold upper, dual, split, whole, manual and patch presets 1 to 8 controllable over MIDI
+  - Arpeggio clock synchronisable to MIDI clock
+  - Program changes 1 to 61 transmittable by button press plus key press
+  - Setups stored in non-volatile EEPROM memory
+  - Powered from inside the host Jupiter-8, so the kit has no power connector of its own
+io:
+  - key: AUvCxcEx
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 42Ac4P0r
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: Y7kM9e79
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

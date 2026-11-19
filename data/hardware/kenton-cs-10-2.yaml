@@ -1,0 +1,55 @@
+id: Zn2iMGq-AZ7S1GmnVoSL9
+name: Yamaha CS-10 MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/cs-10-2/
+prices:
+  - amount: 235
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: A MIDI retrofit kit for the Yamaha CS-10. It adds MIDI In and Thru
+  sockets and MIDI control of notes, pitchbend, modulation, filter cutoff,
+  sustain and portamento. The kit receives MIDI only, the instrument cannot send
+  it.
+details: |-
+  A MIDI retrofit kit for the Yamaha CS-10. It adds MIDI reception to the synthesiser so that notes and several performance parameters can be driven from a keyboard, sequencer or DAW. The kit receives MIDI only, and no MIDI can be sent from the instrument.
+
+  Any MIDI channel can be selected. Notes cover MIDI note numbers 36 to 96 and can be transposed, and the pitchbend range is selectable between two semitones, a fifth or an octave. The mod wheel on CC#1 controls the CS-10's own LFO by default and can instead be set to control the kit's own MIDI syncable LFO.
+
+  Low pass filter cutoff frequency defaults to CC#16 but can be moved to any continuous controller or driven from velocity. Sustain arrives on CC#64 and holds notes, and portamento on CC#65 controls the glide built into the kit. The setup is held in non-volatile EEPROM memory.
+
+  Added hardware consists of MIDI In and MIDI Thru DIN sockets and a push button for programming the MIDI setup.
+
+  The kit comprises a MIDI circuit board that fits inside the CS-10, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions and a step by step fitting guide with diagrams. All kits are checked and tested before despatch. The kits are not intended for installation by the end user and should always be fitted by an experienced synthesiser engineer.
+specs: |-
+  - Fits the Yamaha CS-10
+  - Receives MIDI only; the instrument cannot send MIDI
+  - Adds MIDI In and MIDI Thru DIN sockets plus a programming push button
+  - Any MIDI channel can be selected
+  - Note range: MIDI note numbers 36 to 96, transposable
+  - Pitchbend range selectable: 2 semitones, a fifth or an octave
+  - Mod wheel on CC#1 drives the CS-10's own LFO or the kit's MIDI syncable LFO
+  - Low pass filter cutoff defaults to CC#16 and can be any CC or velocity
+  - Sustain on CC#64 and portamento on CC#65
+  - Setup stored in non-volatile memory (EEPROM)
+  - Powered from the host synthesiser, so the kit has no power input of its own
+io:
+  - key: TsKG9bjB
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 060USUgW
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

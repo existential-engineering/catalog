@@ -1,0 +1,72 @@
+id: pwmtzEsS3Ye-ZPR_2LGjQ
+name: MIDI USB Host mk3
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+  - routing
+url: https://kentonuk.com/product/midi-usb-host-mk3/
+prices:
+  - amount: 78.9
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: USB Host to MIDI converter for 'Class Compliant' USB MIDI Devices
+details: |-
+  The MIDI USB Host is a standalone USB to DIN MIDI converter that connects class-compliant USB MIDI devices to 5 pin DIN MIDI without a computer, which suits a DAWless rig or taking USB gear on the road.
+
+  It converts DIN MIDI to USB MIDI in both directions simultaneously and provides the USB host role normally filled by a PC, Mac or iPad. With the supplied 5 V multi-region mains adapter it can also supply up to 900 mA to power the connected USB device.
+
+  A USB MIDI device plugged into the Type A socket receives whatever arrives at the MIDI In socket, and MIDI arriving over USB is sent to the MIDI Out socket. Up to four USB MIDI devices can be connected through a USB hub, and a powered hub is recommended even though 900 mA is enough for most USB MIDI devices. Linking the unit's own MIDI In and MIDI Out with a short MIDI lead lets USB MIDI devices see each other, although some USB synths that echo received MIDI back out of their USB port create a MIDI loop and are unsuitable used this way.
+
+  Besides its standard mode there are two merge modes. Merge mode 1 sends MIDI from both the MIDI In socket and USB to MIDI Out, so synths can be played from 5 pin DIN and USB controllers alike. Merge mode 2 does the same and additionally sends data received at MIDI In out to USB. Both modes work with up to four USB devices through a hub. This merging does not arbitrate multiple clock, active sensing or SysEx sources the way the intelligent Merge boxes do.
+
+  A device is class-compliant when it follows the USB forum's rules for class compliance, and as a rule of thumb a USB MIDI device that needs a driver is not class-compliant. The unit copes with devices that use interrupt transfers where the specification requires bulk transfers, and with some descriptor errors. Because USB allows only one host on a bus, and this unit is itself a host, it cannot be connected to a computer's USB port.
+specs: |-
+  - Standalone USB host to 5 pin DIN MIDI converter
+  - Bidirectional, simultaneous DIN MIDI to USB MIDI conversion
+  - Supports up to 4 USB MIDI devices through a USB hub
+  - Two merge modes combining 5 pin DIN and USB MIDI
+  - Supplies up to 900 mA of USB bus power to the connected device
+  - Power via USB mini-B socket, power supply included
+  - Current draw: 90 mA, leaving 910 mA for USB bus power
+  - Connectors: USB Type A for USB MIDI, USB mini-B for power, 2 x 5 pin DIN for MIDI In and MIDI Out
+  - Recessed push button to change between modes
+  - Three colour LED indicating mode (red, amber, green), flashing while awaiting a USB device
+  - Dimensions: 110 x 55 x 32 mm
+  - Weight: 100 g excluding power supply
+  - Supplied with user manual, 5 V 1 A multi-region power supply and a 1.8 m USB Type A to mini-B cable
+  - Known incompatibilities: Korg SQ-1, Roland Boutique range, many BOSS products; Novation Launchpad Mini mk3 and Launchkey Mini mk3 send but do not receive MIDI
+io:
+  - key: qtvBXbKl
+    name: USB Type A (USB MIDI)
+    signalFlow: bidirectional
+    category: digital
+    type: usb
+    connection: usb-a
+    maxConnections: 1
+    position: Right
+  - key: qfdgd8oJ
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: 5sh8InHl
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: SGWSfwF8
+    name: USB Mini-B (Power)
+    signalFlow: input
+    category: power
+    type: power
+    connection: usb-b-mini
+    maxConnections: 1
+    position: Right

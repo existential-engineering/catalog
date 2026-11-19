@@ -1,0 +1,61 @@
+id: leXfEBydGdCQhAy1DsvOV
+name: Linndrum Mk2/Mk3 MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - utility
+url: https://kentonuk.com/product/linndrum-mk2-mk3/
+prices:
+  - amount: 250
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: Adds MIDI In, Out and Thru sockets to the Linndrum Mk2 and Mk3, so
+  the machine can be sequenced and synchronised over MIDI and can send its own
+  notes and clock.
+details: |-
+  A MIDI retrofit kit for the Linndrum Mk2 and Mk3 drum machines, fitted internally so the instrument can be sequenced and synchronised over MIDI.
+
+  On incoming MIDI the retrofit responds on any channel, default 10, and follows MIDI clock with start, stop and continue. Any of the machine's sounds can be mapped to any MIDI note number, with defaults running from 36 to 51. Velocity control of note volume is available at two levels for Bass, Snare, Hihat, Tamb and Cabasa; the remaining sounds play at one level only.
+
+  Outgoing MIDI uses the same mapping table. The retrofit transmits on any channel, default 10, sends MIDI clock with start and stop, and gives generated notes velocity 64 for a low volume hit and 127 for a high volume one.
+
+  In hardware terms the kit adds MIDI In, Out and Thru DIN sockets plus a push button for programming the MIDI setup, with setups held in non-volatile EEPROM. It comprises a circuit board that fits inside the Linndrum, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions and step by step fitting instructions with diagrams.
+
+  Installation is a skilled job and the kits are not meant to be fitted by the end user: they should be installed by an experienced synthesiser engineer, or fitted by the maker at its premises in Tadworth, outside London.
+specs: |-
+  - Fits the Linndrum Mk2 and Mk3
+  - Receives on any MIDI channel, default channel 10
+  - Follows MIDI clock, start, stop and continue
+  - Any sound mappable to any MIDI note number, defaults 36 to 51
+  - Two level velocity control of note volume for Bass, Snare, Hihat, Tamb and Cabasa; other sounds one level
+  - Transmits on any MIDI channel, default channel 10
+  - Sends MIDI clock, start and stop
+  - Transmitted notes use velocity 64 for low volume and 127 for high volume
+  - Adds MIDI In, Out and Thru DIN sockets and a programming push button
+  - Setups stored in non-volatile EEPROM
+io:
+  - key: 37x8XFTa
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: g1v10REZ
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: FyUye9mf
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

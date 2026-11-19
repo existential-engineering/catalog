@@ -1,0 +1,33 @@
+id: ONaI_M1EVZH6ciquroUHf
+name: Flash update for the MIDI USB Host mkI & mkII
+manufacturer: kenton
+primaryCategory: utility
+categories:
+  - midi
+url: https://kentonuk.com/product/midi-usb-host-mki-mkii-flash-update/
+description: Firmware flash update for the MIDI USB Host mkI and mkII. The same
+  firmware can be applied to a mkI to bring it up to mkII functionality, and
+  units with serial numbers 0001 to 0540 cannot be updated by flash.
+details: |-
+  A downloadable firmware image for the MIDI USB Host mkI and mkII. The page provides the file directly, so the update is installed by the owner rather than being sent back for service. Units with serial numbers 0001 to 0540 cannot be updated by flash, and owners of those units are asked to get in touch about an upgrade.
+
+  The MIDI USB Host mkII was replaced by the mk3 in February 2021, and a mkII cannot be upgraded to mk3 specification. The firmware here can however be applied to a mkI, which gives that earlier unit the same functionality as a mkII.
+
+  The firmware history on the page tracks what successive releases added. Later revisions became more tolerant of incorrect descriptor data reported by attached USB devices, and earlier ones added support for USB devices that use interrupt transfers rather than bulk transfers, and for large USB packet sizes.
+
+  One release added support for a USB hub, preferably a powered one, allowing up to four USB devices to be attached to the MIDI USB Host at once, along with support for devices that contain an internal USB hub. With a lead connected from one MIDI DIN socket to the other, up to four USB devices plugged into a suitable hub can talk to one another. The same release allowed firmware upgrades and firmware version requests without a device plugged into the USB socket, and fixed a bug where large SysEx files were not always handled correctly.
+specs: |-
+  - Serial numbers 0001 to 0540 cannot be updated by flash
+  - Applies to the MIDI USB Host mkI and mkII; a mkII cannot be upgraded to mk3
+  - Applying the firmware to a mkI gives it mkII functionality
+  - Supports a USB hub (preferably powered) for up to 4 attached USB devices
+  - Supports USB devices containing an internal USB hub
+  - Supports USB devices using interrupt transfers as well as bulk transfers
+  - Supports large USB packet sizes
+  - Firmware upgrades and version requests can be performed without a device plugged into the USB socket
+versions:
+  - name: "2009"
+  - name: "2007"
+  - name: "2006"
+  - name: "2005"
+  - name: "2004"

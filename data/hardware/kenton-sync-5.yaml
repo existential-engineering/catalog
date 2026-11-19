@@ -1,0 +1,96 @@
+id: -WNpOqeTOx4Nh1Ju30efh
+name: SYNC-5
+manufacturer: kenton
+primaryCategory: routing
+categories:
+  - utility
+url: https://kentonuk.com/product/sync-5/
+prices:
+  - amount: 68.5
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: "A DIN Sync distribution box that takes one DIN Sync input and
+  produces five identical DIN Sync outputs. It is not a MIDI product: neither
+  the input nor the outputs carry MIDI."
+details: |-
+  The SYNC-5 receives DIN Sync data, sometimes called Sync-24, from a single source such as a sequencer or drum machine, and produces identical copies at five DIN Sync out sockets. Those connect to the sync in sockets of the other devices in a rig.
+
+  Presenting a clean DIN Sync signal to every device at once avoids the problems that multiple splitter cables can introduce. Splitters are fine for two or three devices, but a growing rig can suffer voltage drops, jitter or missed clock pulses. Each output socket can drive up to three sync inputs when a splitter cable is used on it.
+
+  The input carries active circuitry to restore signal quality and supports up to 15V. Latency through the box is under one microsecond, and a power and data indicator LED is fitted. It works with Sync24 (Roland) or Sync48 (Korg), but cannot convert between the two.
+
+  The case is brushed aluminium with black screen print, so the unit stands up to knocks, and it runs from an included mains adapter.
+specs: |-
+  - 1 x DIN Sync In, 5 x DIN Sync Out
+  - DIN Sync In has active circuitry to restore signal quality and supports up to 15V
+  - Each DIN Sync output can drive up to 3 sync inputs when used with a splitter cable
+  - Works with Sync24 (Roland) or Sync48 (Korg), but cannot convert between the two
+  - Less than one microsecond latency
+  - Power and data indicator LED
+  - Power: 9V DC regulated or unregulated, 2.1mm centre-positive
+  - Current draw: 10mA idle, 40mA maximum
+  - 9V multi-region switch mode power supply included, with 4 interchangeable heads for the UK, Europe, USA, Canada, Japan, Australia and New Zealand
+  - Dimensions: 100mm x 50mm x 35mm
+  - Weight: 200 g including power supply, 110 g excluding power supply
+  - Aluminium case with black screen print
+  - User manual included
+  - Not a MIDI product: neither the input nor the outputs are MIDI
+  - Leads sold separately
+io:
+  - key: 0LtNLY5A
+    name: DIN Sync In
+    signalFlow: input
+    category: audio
+    type: clock
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: LOriR9oh
+    name: DIN Sync Out 1
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: CY9ymcrj
+    name: DIN Sync Out 2
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: pEsvlhU2
+    name: DIN Sync Out 3
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: o2Ckwba3
+    name: DIN Sync Out 4
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: eOplJ4cB
+    name: DIN Sync Out 5
+    signalFlow: output
+    category: audio
+    type: clock
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: NA7F7h6x
+    name: Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

@@ -1,0 +1,54 @@
+id: EFdOaoXvmXh6c3NbIOI6K
+name: Micromoog MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - synthesizer
+url: https://kentonuk.com/product/micromoog/
+prices:
+  - amount: 320
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI retrofit kit for the Micromoog, adding MIDI In and Thru
+  sockets with note, pitchbend, filter and portamento control plus a MIDI
+  syncable LFO.
+details: |-
+  A MIDI retrofit for the Micromoog. It adds MIDI In and Thru sockets and a push button for programming the MIDI setup.
+
+  Incoming MIDI can be received on any selectable MIDI channel. Notes are received across MIDI note numbers 36 to 96 with transpose possible, and pitchbend range is selectable between two semitones, a fifth and an octave.
+
+  The mod wheel (CC#1) controls the Micromoog's own LFO by default, and can instead be set to control the retrofit's own MIDI syncable LFO. Low pass filter cutoff frequency defaults to CC#16 but can be assigned to any CC or to velocity. A sustain pedal message (CC#64) sustains notes, and portamento (CC#65) controls the glide built into the retrofit.
+
+  The setup is stored in non-volatile EEPROM memory. Installation is a skilled job for a competent synth service engineer, or the kit can be fitted at Kenton's own premises, and kits are built to order with a current build time of up to 25 working days.
+specs: |-
+  - Fits the Micromoog
+  - Adds MIDI In and Thru sockets
+  - Receives on any MIDI channel
+  - Note range MIDI 36 to 96, transpose possible
+  - Pitchbend range selectable: 2 semitones, a fifth or an octave
+  - Mod wheel (CC#1) routes to the Micromoog LFO or to the retrofit's MIDI syncable LFO
+  - Low pass filter cutoff on CC#16 by default, assignable to any CC or velocity
+  - Sustain on CC#64
+  - Portamento on CC#65, controlling glide built into the retrofit
+  - Setup stored in non-volatile EEPROM
+  - Push button for programming the MIDI setup
+  - Powered from the host instrument, so the kit has no power inlet of its own
+  - Build time currently up to 25 working days
+io:
+  - key: v3DYk3UG
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: PpCQyHCd
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right

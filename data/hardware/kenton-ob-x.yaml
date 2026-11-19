@@ -1,0 +1,65 @@
+id: fBrSdE9-kamD_gLbkKhLa
+name: Oberheim OB-X MIDI Retrofit Kit
+manufacturer: kenton
+primaryCategory: midi
+categories:
+  - synthesizer
+url: https://kentonuk.com/product/ob-x/
+prices:
+  - amount: 550
+    currency: GBP
+    asOf: 2026-11-19
+    source: official-website
+description: MIDI retrofit kit for the Oberheim OB-X, adding MIDI In, Out and
+  Thru sockets with note, program change, pitchbend, filter, volume and sustain
+  control.
+details: |-
+  A MIDI retrofit kit for the Oberheim OB-X. The added hardware is a set of MIDI In, Out and Thru sockets plus a push button for programming the MIDI setup, with setups stored in non-volatile EEPROM memory.
+
+  Incoming MIDI can be received on any selectable MIDI channel and covers notes (MIDI note numbers 36 to 96, with transpose possible), program change (numbers 1 to 32), pitchbend that bends up and down an octave, mod wheel, low pass filter cutoff frequency, volume and sustain.
+
+  By default pitchbend follows pitchbend messages, the mod wheel follows CC#1 and aftertouch, filter cutoff follows CC#16, volume follows CC#7 and sustain follows CC#64. Any controller, aftertouch or velocity can instead be mapped to control other destinations, so velocity could be mapped to volume.
+
+  Outgoing MIDI can be sent on any MIDI channel and covers notes 36 to 96 with transpose, plus program changes 1 to 61 sent using a button press followed by a key press. No other MIDI is transmitted, as the retrofit is primarily intended to let the synth be played from a MIDI master keyboard or sequencer.
+
+  The kit comprises a circuit board that fits in the base of the OB-X, a small pack of DIN sockets and mounting hardware, a large pack of cable assemblies, user instructions and step by step fitting instructions with diagrams of where to connect what. Every kit is checked and tested before despatch. The kits are not intended for installation by the end user and should always be fitted by an experienced synth engineer; they are built to order with a current build time of up to 25 working days.
+specs: |-
+  - Fits the Oberheim OB-X
+  - MIDI In, Out and Thru sockets
+  - Receives on any MIDI channel
+  - Note range MIDI 36 to 96, transpose possible
+  - Program change receive: 1 to 32
+  - Program change send: 1 to 61, by button press followed by a key press
+  - Pitchbend bends up and down an octave
+  - Receives mod wheel, low pass filter cutoff, volume and sustain
+  - Default mappings: CC#1 and aftertouch to mod wheel, CC#16 to filter cutoff, CC#7 to volume, CC#64 to sustain
+  - Any controller, aftertouch or velocity can be remapped
+  - Setups stored in non-volatile EEPROM
+  - Push button for programming the MIDI setup
+  - Powered from the host instrument, so the kit has no power inlet of its own
+  - Build time currently up to 25 working days
+io:
+  - key: M7TxbmHY
+    name: MIDI In
+    signalFlow: input
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: gDhNU7Qs
+    name: MIDI Out
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
+  - key: iKkwUlSo
+    name: MIDI Thru
+    signalFlow: output
+    category: midi
+    type: midi
+    connection: 5-pin din
+    maxConnections: 1
+    position: Right
