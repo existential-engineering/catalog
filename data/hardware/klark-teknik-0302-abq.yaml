@@ -1,0 +1,51 @@
+id: anyt4KKALPaAdJDTYPGE6
+name: SENTINEL SM1
+manufacturer: klark-teknik
+primaryCategory: utility
+categories:
+  - rack-mount
+url: https://www.klarkteknik.com/en/products/0302-ABQ
+description: The SENTINEL SM1 System Monitor provides system-wide fault
+  monitoring and reporting for mission-critical QFLEX loudspeaker systems,
+  especially in PA/VA and life safety applications. Issues are reported via
+  relay contacts to the main monitoring panel, on the front panel display, or
+  through an external audible alarm, and multiple SM1 devices can monitor each
+  other on the same network for dual redundancy.
+details: |-
+  The SENTINEL SM1 System Monitor is a QFLEX network accessory for applications that demand dependability and demonstrable functionality. The SM1 monitors the status of all devices on the same QFLEX network and reports any fault condition occurring on any connected device. It may be used in stand-alone mode or via a control Windows PC running the Tannoy PodWare software application. Faults located on the network are displayed on the front panel with supplementary information so issues can be quickly located and remedied, and a set of on-board relay contacts can report faults directly to other alarm systems such as a fire panel or an audible alert.
+
+  The companion PodWare PC Windows software application uses a small panel, MonIcon, to display SM1 status information at a glance, making it possible to verify the overall health of the system. The complete control panel is one click away from the MonIcon and provides in-depth adjustment of all parameters of the SM1's operation, though there is little to no setup required for most applications.
+
+  Designed to work with the range of Tannoy QFLEX loudspeakers, the SM1 reports Check conditions including temperature and driver impedance warnings, and Fault conditions including missing pilot tone, out-of-range driver impedance, amplifier over-current, amplifier over-temperature and mains power availability.
+
+  The front panel and LCD display provide system information at a glance, including Check and Fault conditions, a missing control PC or other devices on the network, a history log with fault recording, and redundant monitoring capability when used with other SENTINEL devices. The panel also features status indicator LEDs for System Normal, PC Online, PC Fault, Check System and System Fault conditions.
+
+  A rugged 1U rackmount chassis allows secure installation, and an auto-ranging universal switch-mode power supply allows the SM1 to be used anywhere in the world. The SENTINEL SM1 is designed for continuous service in demanding applications.
+specs: |-
+  - 1 U rackmount steel chassis
+  - Auto-ranging universal switch-mode power supply
+  - Monitors all devices on the same QFLEX network
+  - Stand-alone operation or control from a Windows PC running Tannoy PodWare
+  - On-board relay contacts for fault reporting to external alarm systems
+  - Front panel LCD display with history log and fault recording
+  - Status LEDs for System Normal, PC Online, PC Fault, Check System and System Fault
+  - Reports temperature and driver impedance warnings as Check conditions
+  - Reports missing pilot tone, out-of-range driver impedance, amplifier over-current, amplifier over-temperature and mains power availability as Fault conditions
+  - Multiple SM1 units can monitor each other for dual redundancy
+io:
+  - key: e2Nsv6WX
+    name: QFLEX Network
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: UcaSXGFM
+    name: Mains Power Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right

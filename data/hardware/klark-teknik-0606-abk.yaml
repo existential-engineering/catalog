@@ -1,0 +1,80 @@
+id: 42FPEtHyn5OGcQZQpyl6u
+name: DN9610
+manufacturer: klark-teknik
+primaryCategory: routing
+categories:
+  - other
+url: https://www.klarkteknik.com/en/products/0606-ABK
+description: The DN9610 is a dual AES50 repeater that addresses the 100 metre
+  limitation Ethernet and CAT5 cabling imposes on the physical size of AES50
+  networks. It allows two independent AES50 connections to be extended by up to
+  an additional 100 metres without format conversion or optical fibre cable,
+  needing only a source of mains power.
+details: |-
+  The compact form factor allows the DN9610 to be placed where required to increase the length of a network connection. It is capable of both 48 kHz and 96 kHz operation, with its two AES50 connections able to operate at different sample rates simultaneously. Each connection can support 48 bidirectional channels at 96 kHz, or 96 bidirectional channels at 48 kHz.
+
+  The two AES50 connections also suit dual-redundant networks, such as the X and Y connections used on MIDAS digital console systems. Multiple units can be connected in series, allowing AES50 to be transmitted over considerable distances. Although AES50 is bidirectional in operation, each of the two connections features a nominal input and output port to simplify reference clock distribution when cascading units. Through-unit propagation delay is less than 0.5 microseconds, which has a negligible effect on overall AES50 system link latencies.
+
+  SuperMAC (AES50-compliant) digital audio networking technology provides high channel counts, ultra low and deterministic latencies, sample-synchronous and phase-aligned networked clock distribution, error detection and correction, network redundancy, and ease of deployment for live concert touring. The unit is compatible with all Midas digital consoles, audio system engines and digital I/O units, as well as any other AES50-equipped device.
+
+  Status LED indicators cover the dual redundant power supply inputs and the input and output port activity for the two AES50 connections, giving an at-a-glance display even at wide distances and viewing angles. A tough aluminium extrusion is designed for the rigours of live touring, and a protective silicone rubber sleeve insulates the chassis to provide electrical isolation. Industry-standard RJ45 connectors are used for reliable network connections.
+
+  An external auto-ranging universal switch-mode power supply adapter is provided, auto-voltage sensing for worldwide use. Dual-redundant external power supply inputs operate from +9 V to +18 V DC and provide seamless switchover in the event of the loss of one supply, with locking connectors to eliminate the risk of a supply becoming unplugged.
+specs: |-
+  - Dual AES50 (SuperMAC) repeater, extends each connection by up to 100 m
+  - 48 kHz and 96 kHz operation, the two connections able to run at different sample rates simultaneously
+  - 48 bidirectional channels per connection at 96 kHz, 96 bidirectional channels at 48 kHz
+  - Through-unit propagation delay less than 0.5 microseconds
+  - RJ45 network connectors
+  - Dual-redundant external DC power inputs, +9 V to +18 V DC, locking connectors
+  - External auto-ranging universal switch-mode power supply adapter supplied
+  - Aluminium extrusion chassis with protective silicone rubber sleeve
+io:
+  - key: 8ERaDpkn
+    name: AES50 A Input
+    signalFlow: input
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: 1jfsB1YJ
+    name: AES50 A Output
+    signalFlow: output
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: tUYqed3T
+    name: AES50 B Input
+    signalFlow: input
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: oCok0beJ
+    name: AES50 B Output
+    signalFlow: output
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: CDoFbMA8
+    name: DC Power Input 1
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right
+  - key: CoAxlaWj
+    name: DC Power Input 2
+    signalFlow: input
+    category: power
+    type: power
+    connection: barrel
+    maxConnections: 1
+    position: Right

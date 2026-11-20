@@ -1,0 +1,43 @@
+id: iuH4ZTzxhAKwjDGyQGJf8
+name: NM-COBRA28
+manufacturer: klark-teknik
+primaryCategory: routing
+categories:
+  - other
+url: https://www.klarkteknik.com/en/products/0606-ABH
+description: The NM-COBRA28 is a 28-channel bidirectional CobraNet network
+  module built around the Cirrus Logic CobraNet CM-1 chipset. It is a retrofit
+  interface card designed to bring CobraNet audio-over-Ethernet connectivity to
+  host Klark Teknik signal processors, supporting the standard CobraNet bundle
+  and conductor protocol.
+details: |-
+  Up to 28 24-bit bidirectional channels are carried at 48 kHz or 96 kHz sample rates across the CobraNet network. Primary and secondary Ethernet interfaces provide dual-redundant networking with automatic failover, the standard topology for installations where audio reliability cannot tolerate a single point of failure.
+
+  The module operates from the internal CobraNet master clock or accepts external word-clock from the host unit. Clock jitter is specified at less than 1 nanosecond, suitable for studio-grade conversion. Network latency is selectable at 1.33 ms, 2.66 ms or 5.33 ms to balance throughput against round-trip time for monitor-mix applications.
+
+  Typical applications are large installation projects, broadcast facilities and stadium installs that standardised on CobraNet during its mid-2000s peak. The module retrofits into compatible Klark Teknik chassis as part of a wider CobraNet backbone.
+specs: |-
+  - Cirrus Logic CobraNet CM-1 format module
+  - Up to 28 bidirectional 24-bit channels at 48/96 kHz
+  - Primary and secondary Ethernet for redundant networking
+  - Internal CobraNet clock or external word-clock
+  - Clock jitter less than 1 ns
+  - Selectable 1.33/2.66/5.33 ms network latency
+  - LED indicators for network activity, speed and conductor status
+io:
+  - key: DYAex8uQ
+    name: CobraNet Primary
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right
+  - key: P78mUGTU
+    name: CobraNet Secondary
+    signalFlow: bidirectional
+    category: digital
+    type: ethernet
+    connection: ethernet
+    maxConnections: 1
+    position: Right

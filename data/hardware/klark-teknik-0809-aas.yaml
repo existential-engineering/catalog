@@ -1,0 +1,101 @@
+id: 1UwButAGiTNlcVNSIn_jy
+name: DN200 V2
+manufacturer: klark-teknik
+primaryCategory: di-box
+categories:
+  - preamp
+  - outboard
+supersedes: 4zGEOW38zIveNZlTNj9L1
+url: https://www.klarkteknik.com/en/products/0809-AAS
+description: The DN200 V2 is a 2-channel active DI box with extended dynamic
+  range, sum and split modes, a 20 dB pad and input/output ground separation. It
+  takes a stereo source arriving on unbalanced jacks or a 1/8" cable and sends
+  two channels to balanced XLR outputs, powered by +48 V phantom from the mixer
+  or recording interface.
+details: |-
+  SUM adds the left and right inputs together and feeds both outputs, while SPLIT sends the left input to the left and right outputs. Either mode needs phantom power on both output connections, and with one channel connected the DN200 still works as a mono device.
+
+  For hot signals, PAD drops the input by 20 dB. EARTH splits the grounds of input and output, which can clear ground loops between gear on separate mains supplies. The 48V LED lights when the unit receives sufficient phantom power.
+
+  The L/R inputs take balanced or unbalanced XLR or 1/4" cables, and LINK THRU sends the signals on over 1/4" cables. A 1/8" stereo TRS jack takes a line-level source, with the L/R and LINK THRU jacks left unplugged.
+specs: |-
+  - 2 channels, with SUM and SPLIT modes
+  - Frequency response: 20 Hz to 20 kHz, ±1 dB
+  - PAD switch: -20 dB
+  - EARTH switch separating input and output grounds
+  - Powered by +48 V phantom power from the mixer or interface
+  - 48 V presence LED
+  - Weight: 0.65 kg
+io:
+  - key: npRxYY1g
+    name: Input L (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - key: Ymgp2ECx
+    name: Input R (XLR)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Left
+  - key: eGW7xxxX
+    name: Input L (1/4")
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: qfjcH3g6
+    name: Input R (1/4")
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: jdK40avM
+    name: Stereo Line Input (1/8" TRS)
+    signalFlow: input
+    category: audio
+    type: line
+    connection: 1/8-inch
+    maxConnections: 1
+    position: Left
+  - key: UMMZbQEZ
+    name: Link Thru L
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 8N5L1goI
+    name: Link Thru R
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: H49OJYkd
+    name: Output L (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: ZqB5Dho6
+    name: Output R (XLR)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
