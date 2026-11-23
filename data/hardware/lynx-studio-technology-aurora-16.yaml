@@ -33,7 +33,7 @@ specs: |-
   - Line out: frequency response plus or minus 0.01 dB, 20 Hz to 20 kHz
   - Line out: crosstalk 120 dB maximum @ 1 kHz, -1dBFS signal
   - Analog I/O ports: 25-pin female D-sub connectors
-  - Digital I/O ports: 25-pin female D-sub connectors
+  - Digital I/O ports: two 25-pin female D-sub connectors, Port A carrying AES/EBU inputs and outputs 1-8 and Port B carrying 9-16, Yamaha digital pinout
   - External clock: 75 ohm BNC word clock input and output with SynchroLock sample clock technology
   - MIDI (for firmware updates only): one input and one output, standard optoisolated 5-pin female DIN connectors
   - On-board 32 channel digital mixer for I/O routing
@@ -77,32 +77,16 @@ io:
     maxConnections: 8
     position: Right
   - key: aJREGALT
-    name: Digital In 1-8 (AES/EBU)
-    signalFlow: input
+    name: AES I/O 1-8 (Port A)
+    signalFlow: bidirectional
     category: digital
     type: aes/ebu
     connection: db25
     maxConnections: 8
     position: Right
   - key: at808rlB
-    name: Digital In 9-16 (AES/EBU)
-    signalFlow: input
-    category: digital
-    type: aes/ebu
-    connection: db25
-    maxConnections: 8
-    position: Right
-  - key: Ntjgb4gA
-    name: Digital Out 1-8 (AES/EBU)
-    signalFlow: output
-    category: digital
-    type: aes/ebu
-    connection: db25
-    maxConnections: 8
-    position: Right
-  - key: J4wE7JuP
-    name: Digital Out 9-16 (AES/EBU)
-    signalFlow: output
+    name: AES I/O 9-16 (Port B)
+    signalFlow: bidirectional
     category: digital
     type: aes/ebu
     connection: db25

@@ -9,7 +9,7 @@ description: The AES16e is an x1 PCI Express card providing 16 channels of
   multi-channel A/D and D/A converters, hard disk recorders and digital audio
   workstations with Windows and Macintosh computers.
 details: |-
-  The AES16e offers 16 channels of 192 kHz AES/EBU I/O. In addition to the base model, the AES16e-SRC includes sixteen channels of sample rate conversion.
+  The AES16e offers 16 channels of 192 kHz AES/EBU I/O on two bracket-mounted 26-pin high-density D-sub connectors, I/O Port A carrying digital inputs and outputs 1-8 and I/O Port B carrying 9-16, each served by its own breakout cable. In addition to the base model, the AES16e-SRC includes sixteen channels of sample rate conversion.
 
   The AES16e builds on the capabilities of the industry-standard AES16 with an updated feature set and the benefits of the PCI Express interface. The architecture and higher bandwidth of PCI Express reduces bottlenecks and overhead, which provides higher performance for computer-based high end audio.
 
@@ -22,7 +22,7 @@ specs: |-
   - 24-bit AES/EBU audio at sample rates up to 192 kHz
   - Single-wire and dual-wire AES modes
   - Transformer coupled AES/EBU I/O
-  - Digital I/O on a 26-pin D-sub connector, broken out to four male and four female XLR by the optional CBL-AES1604 cable
+  - Digital I/O on two bracket-mounted 26-pin high-density D-sub connectors, I/O Port A (digital in/out 1-8) and I/O Port B (digital in/out 9-16), each broken out to four female and four male XLR plus BNC word clock by the optional CBL-AES1604 cable, or to a 25-pin D-sub by the optional CBL-AES1605
   - Optional sixteen channels of sample rate conversion (AES16e-SRC), conversion ratios up to 16:1 with 144 dB dynamic range and -140 dB THD+N
   - Extensive on-board digital mixer
   - Optional AES50 interface
@@ -30,3 +30,45 @@ specs: |-
   - Multi-channel support of 5.1 and 7.1 surround playback formats
   - SynchroLock sample clock generator with 3000:1 jitter rejection on external clock sources
   - Supports ASIO and WDM for Windows and CoreAudio for Mac OS X
+  - Internal LStream expansion port (14-pin header) for the LS-ADAT card and two 2-pin headers for internal word clock in and out
+io:
+  - key: o6JgWIDV
+    name: I/O Port A (Digital In/Out 1-8)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: hd26
+    maxConnections: 8
+    position: Right
+  - key: bqcfp7AQ
+    name: I/O Port B (Digital In/Out 9-16)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: hd26
+    maxConnections: 8
+    position: Right
+  - key: 9c3EEu83
+    name: LStream Expansion Port
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Top
+  - key: oRvkKydc
+    name: Internal Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: pin-header
+    maxConnections: 1
+    position: Top
+  - key: lqrnZ14q
+    name: Internal Word Clock Output
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: pin-header
+    maxConnections: 1
+    position: Top

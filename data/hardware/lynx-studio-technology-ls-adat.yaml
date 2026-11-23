@@ -25,7 +25,7 @@ specs: |-
   - 16 I/O channels at sample rates up to 48 kHz
   - 8 I/O channels at 96 kHz using S/MUX technology
   - 4 I/O channels at 192 kHz
-  - ADAT Sync In port offering sample accurate synchronization by ASIO and by the LS-ADAT's built-in cue point capability (the page does not name the connector)
+  - ADAT Sync In port on the bracket, a 9-pin D-sub taking a standard ADAT 9-pin sync cable, offering sample accurate synchronization by ASIO Positioning Protocol and by the LS-ADAT's built-in cue point capability
   - Sample clock can be derived from word clock or composite video received by the LynxTWO, from either light-pipe input, or from the Sync port
   - Wide variety of sample rate sync options; sample accurate synchronization
   - Controlled from the Lynx Mixing Application supplied with the host card
@@ -63,4 +63,12 @@ io:
     type: adat
     connection: toslink
     maxConnections: 8
+    position: Right
+  - key: qK7HknYV
+    name: ADAT Sync In
+    signalFlow: input
+    category: digital
+    type: proprietary
+    connection: db9
+    maxConnections: 1
     position: Right

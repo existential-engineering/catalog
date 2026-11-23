@@ -37,7 +37,7 @@ specs: |-
   - Digital I/O: 8 inputs and 8 outputs, 24 bit AES/EBU format, transformer coupled
   - Sample rates: all standard rates and variable rates up to 192kHz in both single-wire and dual-wire modes
   - Analog I/O ports: 25-pin female D-sub connectors
-  - Digital I/O ports: 25-pin female D-sub connectors
+  - Digital I/O port: one 25-pin female D-sub connector carrying AES/EBU inputs and outputs 1-8, Yamaha digital pinout
   - External clock: 75 ohm BNC word clock input and output
   - MIDI (for firmware updates only): one input and one output, standard optoisolated, 5-pin female DIN connectors
   - AC power: 100 / 115 / 230 VAC, 70 watts
@@ -63,16 +63,8 @@ io:
     maxConnections: 8
     position: Right
   - key: pTHQihDA
-    name: AES/EBU Digital Input 1-8
-    signalFlow: input
-    category: digital
-    type: aes/ebu
-    connection: db25
-    maxConnections: 8
-    position: Right
-  - key: Ah13bGXG
-    name: AES/EBU Digital Output 1-8
-    signalFlow: output
+    name: AES I/O 1-8 (Port A)
+    signalFlow: bidirectional
     category: digital
     type: aes/ebu
     connection: db25
