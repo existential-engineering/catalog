@@ -1,0 +1,63 @@
+id: 0c_L7odGMdxb07MKO9JhR
+name: LM-DIG
+manufacturer: lynx-studio-technology
+primaryCategory: audio-interface
+categories:
+  - digital
+url: https://www.lynxstudio.com/products/lm-dig/
+prices:
+  - amount: 460
+    currency: USD
+    asOf: 2026-11-23
+    source: https://www.lynxstudio.com/products/lm-dig/
+description: The LM-DIG is a digital I/O expansion module for the Lynx Aurora(n)
+  that provides 16 channels in and 16 channels out of 24-bit AES/EBU, with
+  bit-perfect transmission at sample rates of up to 192 kHz. It integrates with
+  the Aurora(n)'s mixing and routing engine and allows it to replace any current
+  Aurora system that requires AES/EBU connectivity.
+details: |-
+  The LM-DIG is an expansion module for the Aurora(n). It integrates seamlessly with the mixing and routing engine on the Aurora(n) and allows the Aurora(n) to replace any current Aurora system that requires AES/EBU connectivity.
+
+  The LM-DIG provides 16 channels in and 16 channels out of 24-bit AES/EBU, with bit-perfect transmission at sample rates of up to 192kHz. AES/EBU is a world standard for digital interfacing, and the addition of the LM-DIG to the Aurora(n) means that studios and engineers can quickly and easily integrate its superior audio quality and precise conversion/routing tools with almost any professional-quality recording system, control surface, or other tools that use the AES/EBU standard.
+
+  For larger applications that require even more channels and varieties of interfacing, the LM-DIG offers expansion ports that support daughterboard add-ons. The optional DB-ADAT daughterboard will allow for expansion to an additional 16 channels of ADAT digital I/O. An installed LM-DIG is required for DB-ADAT operation.
+
+  The LM-DIG module can be installed into any existing Aurora(n)-8, -16 or -24 with an easy and free firmware update. The Aurora(n) can also be purchased with the LM-DIG pre-installed, as the Aurora(n) 8-DIG, the Aurora(n) 16-DIG and the Aurora(n) 24-DIG.
+specs: |-
+  - 16 input and 16 output channels on two 25-pin female D-subs, Yamaha digital I/O pinout
+  - 24-bit AES/EBU (AES3) data format
+  - Balanced, transformer-coupled, 110 ohm, RF filtered electrical interface
+  - 44.1 kHz to 192 kHz sample rates supported, with bit-perfect transmission
+  - Expansion ports support daughterboard add-ons; the optional DB-ADAT adds 16 channels of ADAT digital I/O and requires an installed LM-DIG
+  - Installs into any existing Aurora(n)-8, -16 or -24 with a free firmware update
+  - Also available factory-installed as the Aurora(n) 8-DIG, Aurora(n) 16-DIG and Aurora(n) 24-DIG
+  - Option module with no power connector of its own; powered by the host Aurora(n) chassis
+io:
+  - key: DkXdfRaK
+    name: AES/EBU I/O 1 (D-sub)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - key: uDTwTOpf
+    name: AES/EBU I/O 2 (D-sub)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - key: O4qpcN3g
+    name: Daughterboard Expansion Port
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: card-slot
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.lynxstudio.com/products/db-adat/
+    type: resource
+    title: DB-ADAT daughterboard

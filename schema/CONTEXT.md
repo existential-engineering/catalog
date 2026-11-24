@@ -870,12 +870,15 @@ rear-panel diagram — assign them with `pnpm enrich-io <slug>`, not during bulk
 - `lightning`
 - `aes/ebu`
 - `digilink`
+- `mini-digilink`
 - `sc`
 - `lc`
 - `2-pin`
 - `db9`
 - `db15`
+- `hd15`
 - `db25`
+- `hd26`
 - `dt12 37-pin`
 - `edac`
 - `idc`

@@ -1,0 +1,93 @@
+id: LWIABvj4kf_LSS1fujGvI
+name: E44
+manufacturer: lynx-studio-technology
+primaryCategory: audio-interface
+url: https://www.lynxstudio.com/products/e44/
+prices:
+  - amount: 1099
+    currency: USD
+    source: https://www.lynxstudio.com/products/e44/
+description: The four analog, four digital PCI Express card. Built upon the
+  legacy of the industry-leading LynxONE and LynxTWO cards, the E series takes a
+  leap forward to offer the highest performance A/D and D/A conversion system
+  ever incorporated into a PCI Express card.
+details: |-
+  As with the LynxTWO-A, but in PCI express format, the E44 is designed to satisfy the most demanding professional recording and broadcast studio requirements.
+
+  The E44 is ideal for:
+
+  - Audio production. The E44 is the best sounding 4 channel PCIe card for DAW recording and playback
+  - Broadcast applications requiring 24/7 flawless operation
+  - Audio playback. The E44's pristine audio quality makes it ideal for the most demanding high-end hi-fi systems
+  - Capturing and archiving historic and classic material with extreme accuracy and transparency
+  - Audio measurement. As a precise audio instrument the E44 is exceptionally accurate and transparent
+  - Medical, military and industrial applications that require full audio spectrum capabilities and extreme reliability and precision
+
+  The E44 card utilizes sophisticated design methodologies to achieve high performance levels. Components are meticulously chosen to support low noise and distortion. Circuit topologies are compact and cancel external noise pickup. Capacitors with solid dielectrics provide high reliability and long life. Considerable effort is applied to PCB layout which focuses on component placement and routing of traces, as well as copious use of copper planes for shielding and power distribution.
+
+  The use of field-programmable-gate-arrays (FPGA) is another core technology pioneered for use in audio devices by Lynx. The E series uses the latest devices with a wealth of resources for parallel processing in our 16 X 8 mixer and V2 DMA engine which maximizes throughput on the PCIe bus while minimizing CPU workload. As always, FPGA's allow for field-upgradeability to add features in the future.
+specs: |-
+  - Four channels of A/D and D/A conversion
+  - Four channels of AES3 or S/PDIF I/O, format software selectable, transformer coupled
+  - Sample rates: 44.1, 48, 88.2, 96, 176.4 and 192 kHz
+  - A/D and D/A type: 24-bit, multi-level, delta-sigma
+  - Analog I/O type: electronically balanced or unbalanced, XLR connectors on the breakout cable
+  - Analog level: +20 dBu full-scale or +6 dBV full-scale, software selectable
+  - Input impedance: 24 kOhm balanced, 12 kOhm unbalanced
+  - Output impedance: 100 Ohm balanced, 50 Ohm unbalanced
+  - Output drive capability: 600 impedance, 0.2 uF capacitance
+  - Frequency response: 20 Hz to 20 kHz, plus or minus 0.05 dB on both line in and line out
+  - Line in dynamic range 117 dB, THD+N -111 dB (0.0003%) at -1 dBFS 1 kHz, channel crosstalk below -128 dB
+  - Line out dynamic range 120 dB, THD+N -108 dB (0.0004%) at -1 dBFS 1 kHz, channel crosstalk below -130 dB
+  - Extremely low-jitter SynchroLock sample clock generator
+  - Word clock: one external input and output on BNC connectors carried by the sync cable, one internal input and output on board-mounted headers, TTL / 75 Ohm
+  - Relay controlled trim levels on all analog I/O, with automatic output muting on power on and off (de-thump)
+  - FPGA-based on-board hardware mixer: 16 input channels, 8 sub outputs, 16 x 8 monitor mixing with no limitations
+  - Metering: peak levels to -120 dB on all inputs and outputs
+  - Audio port: bracket-mounted 25-pin female D-sub connector for analog audio I/O
+  - Sync port: bracket-mounted 15-pin high-density female D-sub connector for digital input and output, word clock in and out
+  - Optional CBL-L2AudioA audio cable breaks the 25-pin D-sub out to 4 male and 4 female XLR connectors on six-foot shielded twisted pair cabling
+  - Optional CBL-ESYNC sync cable breaks the 15-pin high-density D-sub out to 2 male and 2 female XLR on six-foot shielded twisted pair cabling plus 2 female BNC connectors on six-foot 75 Ohm coaxial cabling
+  - PCI Express bus: x1
+  - Data transfers: Lynx V2 DMA engine, bus mastering
+  - Powered from the PCI Express slot, with no auxiliary power connector: +3.3 V at 630 mA, +12 V at 500 mA
+  - Windows drivers: Windows 10 / 11 MME, DirectSound, WASAPI (WaveRT), ASIO 2.3
+  - macOS drivers: macOS 12 Monterey or higher
+  - Lynx Mixer application provides complete control of the digital mixer and all hardware settings
+  - Thunderbolt compatible
+  - CE and FCC Class B, RoHS certified
+  - Shipping weight: 1 pound
+  - Designed and built in the USA
+io:
+  - key: 5Xvyxdvq
+    name: Analog Audio Port
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - key: 3udAGGWc
+    name: Sync Port (Digital I/O and Word Clock)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: hd15
+    maxConnections: 8
+    position: Right
+  - key: oq6oMzh1
+    name: Internal Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: pin-header
+    maxConnections: 1
+    position: Top
+  - key: n1Bj52Zx
+    name: Internal Word Clock Output
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: pin-header
+    maxConnections: 1
+    position: Top

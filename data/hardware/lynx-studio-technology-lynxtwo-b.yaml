@@ -1,0 +1,84 @@
+id: Lbm2qQJfNJHGYW0lBWIqU
+name: LynxTWO-B
+manufacturer: lynx-studio-technology
+primaryCategory: audio-interface
+categories:
+  - discontinued
+url: https://www.lynxstudio.com/products/lynxtwo/
+description: LynxTWO-B is the two analog inputs and six analog outputs model of
+  the LynxTWO, a 192 kHz multichannel audio reference interface on a PCI card
+  offering 192 kHz analog audio and 96 kHz digital audio with on-board
+  converters, hardware mixing and time code synchronization, intended for 5.1
+  playback or any application needing six outputs.
+details: |-
+  The LynxTWO family of PCI cards were Lynx's first 192 kHz audio products. Introduced in 2000, these three versatile cards offered 192 kHz analog audio and 96 kHz digital audio with world-class converters and time code synchronization on board. With performance that exceeds many stand-alone converters, LynxTWO has set the standard for signal purity, versatile synchronization, powerful hardware mixing, and extensibility to support a variety of multichannel formats including ADAT and multiple AES/EBU or SPDIF.
+
+  The LynxTWO-B model, with two analog inputs and six analog outputs, is an excellent choice for playback of 5.1 audio or any application where six outputs are necessary, often precluding the need for a second or third card. On the L2Audio port the B model replaces IN 3 and IN 4 of the A model with OUT 5 and OUT 6. All three models share the same two bracket-mounted ports: the L2Audio port, a 25-pin D-sub broken out to eight XLR connectors by the included L2Audio cable, and the L2Sync port, a high-density 15-pin D-sub broken out to one male and one female XLR for AES3/S/PDIF digital I/O and four BNC connectors for word clock and LTC in and out by the included L2Sync cable.
+
+  LynxTWO's powerful 16-channel mixer allows extensive routing, control and metering with excellent visual reference. With the latest software, you can mix up to four inputs to any of 16 outputs. In addition to the inputs and outputs on the LynxTWO, the mixer incorporates program material from the optional LS-ADAT daughter card or from Aurora converters.
+
+  With a design very similar to that of Lynx's highly acclaimed Aurora converters, LynxTWO delivers near Aurora-quality specs and performance in the compact PCI card format. Using the optional LynxTWO/Aurora Interface Kit, a LynxTWO can act as the computer interface and front end for the Aurora converter.
+specs: |-
+  - PCI card, powered from the host computer's PCI slot, no separate power connector
+  - LynxTWO-B: two analog inputs and six analog outputs (Analog In 1-2 and Analog Out 1-6), electronically balanced or unbalanced, +4 dBu or -10 dBV nominal, software selectable in channel pairs
+  - 200 kHz sample rate / 100 kHz analog bandwidth, supported with all drivers
+  - 192 kHz analog audio and 96 kHz digital audio
+  - 24-bit AES3 or S/PDIF I/O with full status and subcode support
+  - L2Audio port: bracket-mounted 25-pin female D-sub for analog audio in and out, with included 25-pin to XLR breakout cable
+  - L2Sync port: bracket-mounted 15-pin high-density female D-sub for digital in and out, word clock in and out and LTC in and out, with included breakout cable to two XLR and four BNC connectors
+  - Internal LStream 2 expansion header (14-pin) for the LS-ADAT daughter card, plus 2-pin internal word clock in and out headers
+  - Up to 8 LynxTWO cards in one Windows computer, up to three in Macintosh computers
+  - Sample rate conversion on digital input
+  - Non-audio digital I/O support for Dolby Digital and HDCD
+  - 32-channel / 32-bit digital mixer with 16 sub outputs
+  - Multiple dither algorithms per channel
+  - SMPTE time code reader and generator with MTC conversion
+  - Optional LS-ADAT daughter card adds ADAT I/O
+  - Optional LynxTWO/Aurora Interface Kit allows the card to front-end an Aurora converter
+  - Sold alongside the LynxTWO-A (four in / four out), LynxTWO-B (two in / six out) and LynxTWO-C (six in / two out)
+searchTerms:
+  - LynxTWO B
+  - Lynx Two B
+  - LynxTWO
+io:
+  - key: 5jVtYyjN
+    name: L2Audio Port (Analog In 1-2 and Analog Out 1-6)
+    signalFlow: bidirectional
+    category: audio
+    type: line
+    connection: db25
+    maxConnections: 8
+    position: Right
+  - key: s72FxpCl
+    name: L2Sync Port (Digital I/O, Word Clock and LTC)
+    signalFlow: bidirectional
+    category: digital
+    type: aes/ebu
+    connection: hd15
+    maxConnections: 6
+    position: Right
+  - key: hP97xCL3
+    name: LStream 2 Expansion Header
+    signalFlow: bidirectional
+    category: digital
+    type: proprietary
+    connection: pin-header
+    maxConnections: 1
+    position: Top
+  - key: P12dicIv
+    name: Internal Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: pin-header
+    maxConnections: 1
+    position: Top
+  - key: x7AXD4iU
+    name: Internal Word Clock Output
+    signalFlow: output
+    category: digital
+    type: word clock
+    connection: pin-header
+    maxConnections: 1
+    position: Top
+releaseDate: "2000"
