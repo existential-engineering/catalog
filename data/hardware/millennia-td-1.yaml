@@ -1,0 +1,177 @@
+id: 8m3_uecYaH6ib-YLfhzAf
+name: TD-1
+manufacturer: millennia
+primaryCategory: channel-strip
+searchTerms:
+  - TD1
+  - TD 1
+categories:
+  - preamp
+  - equalizer
+  - di-box
+  - routing
+  - headphone-amp
+  - outboard
+  - rack-mount
+  - analog
+  - discontinued
+capabilities:
+  - equalization
+url: https://www.mil-media.com/product/td-1/
+description: The TD-1 is a half-rack channel strip that takes four kinds of
+  input, instrument DI, microphone, line and guitar power amp, and routes them
+  to nine outputs including patented Re-Amp feeds, a headphone output and a
+  transformer microphone level output. Two bands of mastering-grade NSEQ-2
+  parametric EQ provide tonal shaping, with the DI stage switchable between
+  vacuum tube and discrete solid state.
+details: |-
+  The TD-1 is a half-rack channel strip with four distinct inputs, each optimised for a different source. Instruments go to a Twin Topology DI channel using either a dual-triode 12AT7 vacuum tube or a discrete FET solid state stage, microphones go to a discrete solid state HV-3 microphone preamplifier, DAW and tape outputs go to a discrete solid state line level amplifier, and guitar power amp outputs go to a Speaker Soak input. The DI input impedance is switchable between 470 kilohms, 2 megohms and 10 megohms to suit any instrument.
+
+  Tonal shaping comes from two bands of the mastering-grade NSEQ-2 parametric equalizer, with 20 Hz to 20 kHz center frequency coverage, a Q range of 0.4 to 4.0 and plus or minus 15 dB of boost and cut over a 21 step detented pot. Phase error with the EQ out stays within plus or minus 5 degrees from 50 Hz to 20 kHz.
+
+  Nine outputs cover the routing side. Patented Re-Amp outputs use custom-designed magnetics that emulate Les Paul and Strat pickups, there is an audiophile headphone output, balanced and unbalanced monolithic outputs, balanced and unbalanced discrete FET outputs, and a microphone level output through the large-geometry DIT-01 transformer rated at -3 dB from 3 Hz to 300 kHz.
+
+  Input headroom exceeds 100 V and output headroom 30 V, and numerous ground lifts and isolations are provided for hum removal. The unit uses a toroid power supply on an internal sub-chassis, gold connectors, OFC audio wiring and silver Teflon power wiring.
+specs: |-
+  - Instrument / DI Input Amplifier: Twin Topology, tube is a selected twin triode vacuum tube amplifier (200 V), solid state is a selected all discrete J-FET amplifier (50 V)
+  - THD + Noise (20 Hz to 30 kHz, 35 dB Gain): 0.0005% typical mic / line, 0.03% typical vacuum tube
+  - Intermodulation Distortion: 0.0009% typical mic / line, 0.03% typical vacuum tube
+  - Frequency Response at -3 dB points: 3 Hz to 300 kHz typical, varies with routing and topology
+  - Maximum Balanced Line Input Level: +23 dBu (+43 dBu with pad engaged or > 110 volts rms)
+  - Maximum DI Input Level (Both Tube and SS): +18 dBu (+26 dBu with pad engaged or > 15 volts rms)
+  - Maximum Output Level: +32 dBu active balanced outputs, +26 dBu unbalanced outputs
+  - Maximum System Gain: 65 dB
+  - Input Impedance (DI): Switchable 470 kilohms / 2 megohms / 10 megohms
+  - Noise (Mic, 60 dBu gain): -128 dB EIN with 150 ohm source, -130 dB EIN common source
+  - Noise (Line, 10 dBu gain): -105 dBu
+  - Noise (DI, 10 dBu gain): -90 dBu (solid state)
+  - Phase Error (EQ out): Less than +/- 5 degrees, 50 Hz to 20 kHz
+  - Maximum EQ Boost and Cut: +/- 15 dB (21 step detented pot)
+  - "Q" Range: Q = 0.4 to 4.0 sweepable
+  - Power Consumption: 35 watts maximum
+  - Power Requirements: Selectable 100-120, 200-240 V ac, 50/60 Hz
+  - Dimensions/Shipping Weight: 8.5 in W x 3.5 in H x 13.0 in D, 20 lbs
+io:
+  - key: 5inm6ise
+    name: Instrument DI Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: IQYbeMnP
+    name: Microphone Input
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: yFrFV19e
+    name: Line Input
+    signalFlow: input
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: MGnLG4Dk
+    name: Speaker Soak Input
+    signalFlow: input
+    category: audio
+    type: speaker-level
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: EWj1CrPL
+    name: Re-Amp Output 1
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 2C4dt1O6
+    name: Re-Amp Output 2
+    signalFlow: output
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: 1Ql5TyWV
+    name: Headphone Output
+    signalFlow: output
+    category: audio
+    type: headphone
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Left
+  - key: qj8mWuZM
+    name: Balanced Monolithic Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: xGqBIZiT
+    name: Unbalanced Monolithic Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: F3qsHB6x
+    name: Balanced Discrete FET Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: R1W2vUeU
+    name: Unbalanced Discrete FET Output
+    signalFlow: output
+    category: audio
+    type: line
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Right
+  - key: KpCLHZ1c
+    name: Microphone Level Output
+    signalFlow: output
+    category: audio
+    type: mic
+    connection: xlr
+    maxConnections: 1
+    position: Right
+  - key: NLPCt6wP
+    name: AC Mains Input
+    signalFlow: input
+    category: power
+    type: power
+    connection: iec-c14
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.mil-media.com/wp-content/uploads/2025/02/TD-1EQ082006.pdf
+    type: resource
+    title: Mitch Gallagher, EQ
+  - url: https://www.mil-media.com/wp-content/uploads/2025/02/TD-1FutureMusic_0406.pdf
+    type: resource
+    title: Marco Migliari, Future Music
+  - url: https://www.mil-media.com/wp-content/uploads/2025/02/How-to-Change-Voltage-030322.pdf
+    type: support
+    title: How to Change Voltage Between 120V and 240V
+  - url: https://www.mil-media.com/wp-content/uploads/2025/02/TD-1-Data-Sheet-031022.pdf
+    type: resource
+    title: TD-1 Data Sheet
+  - url: https://www.mil-media.com/wp-content/uploads/2025/02/TD-1-Manual-031022.pdf
+    type: support
+    title: TD-1 Manual
+  - url: https://www.mil-media.com/wp-content/uploads/2025/02/TD-1-Reset-Template-031022.pdf
+    type: support
+    title: TD-1 Reset Template
