@@ -1,0 +1,77 @@
+id: A4k927htGEAchht3pBqWK
+name: MADI D Option
+manufacturer: millennia
+primaryCategory: audio-interface
+searchTerms:
+  - MADI-D
+  - MADID
+categories:
+  - digital
+  - routing
+  - rack-mount
+url: https://www.mil-media.com/product/madi-d-option/
+prices:
+  - amount: 1525.99
+    currency: USD
+description: The MADI D Option is a factory-installed card that adds an eight
+  channel 24-bit 192 kHz MADI digital output to any HV-3D microphone
+  preamplifier. It carries optical and BNC MADI connections plus an external
+  word clock input, and can clock from the incoming MADI stream.
+details: |-
+  The MADI D Option adds eight channels of MADI digital output to an HV-3D microphone preamplifier at up to 24-bit 192 kHz, referenced to -18 dBFS. It is built on an industry standard i64 style MADI card with custom software, and any HV-3D unit can have the option installed.
+
+  Optical and BNC MADI input and output connectors are provided, along with an external word clock input. Clocking can be taken from the incoming MADI stream and defaults to 48 kHz. The card is installed at the factory and powered by the host preamplifier rather than a supply of its own.
+specs: |-
+  - Channels: 8 MADI outputs
+  - Resolution: 24-bit, up to 192 kHz
+  - Reference Level: -18 dBFS
+  - Clocking: External from the MADI stream, defaults to 48 kHz
+  - Connectors: Optical and BNC MADI input and output, external word clock input
+  - Card: Industry standard i64 MADI style card with custom software
+  - Host Compatibility: All HV-3D units
+  - Installation: Factory-installed, powered by the host unit
+io:
+  - key: PKvrMaBY
+    name: MADI Optical Input
+    signalFlow: input
+    category: digital
+    type: madi
+    connection: proprietary
+    maxConnections: 64
+    position: Right
+  - key: NWBHhHC2
+    name: MADI Optical Output
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: proprietary
+    maxConnections: 64
+    position: Right
+  - key: JYoMHjP3
+    name: MADI Coaxial Input
+    signalFlow: input
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - key: lDlRuI5p
+    name: MADI Coaxial Output
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - key: k5yDT4Mw
+    name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.mil-media.com/wp-content/uploads/2025/02/MADI-2-User-Guide-010723.pdf
+    type: support
+    title: MADI-D User Guide

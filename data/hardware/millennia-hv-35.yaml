@@ -1,0 +1,84 @@
+id: zb5pYpDPivvVWxSxsryHq
+name: HV-35
+manufacturer: millennia
+primaryCategory: preamp
+searchTerms:
+  - HV35
+  - HV 35
+categories:
+  - rack-mount
+  - outboard
+  - analog
+url: https://www.mil-media.com/product/hv-35/
+prices:
+  - amount: 763.99
+    currency: USD
+description: The HV-35 is a single channel microphone preamplifier in API 500
+  series compatible format, with continuously variable gain, a front panel
+  instrument input and a selectable DC coupled ribbon microphone path. Phantom
+  power at 48V is supplied through the host 500 series rack.
+details: |-
+  The HV-35 carries one channel of the HV-3 microphone preamplifier in an API 500 series compatible module, taking its audio connections and its power from the host rack.
+
+  Gain is continuously variable from 14.5 dB to 60 dB, falling to 1 dB with the pad engaged, and the selectable DC coupled ribbon microphone setting adds a 10 dB boost for a 70 dB maximum. The front panel adds an instrument input for direct sources, an 80 Hz rolloff filter, a 15 dB pad, polarity flip and 48V phantom power.
+
+  Frequency response is quoted from below 10 Hz to above 200 kHz at the -3 dB points, equivalent input noise is -130 dB, and total harmonic distortion plus noise is typically under 0.001 percent. Input impedance is 2.2 kilohm on the phantom path and 1 megohm on the instrument input.
+
+  The module measures 1.5 inches wide by 5.25 inches high by 6 inches deep and ships at 2 pounds. Rated operating range is 0 to +40 degrees C at 10 to 80 percent relative humidity up to 3,000 meters.
+specs: |-
+  - Minimum Gain: 14.5 dB, 1dB with Pad
+  - Maximum Gain (continuously variable): 60 dB (70 dB in Ribbon Mode)
+  - Frequency Response (-3 dB): < 10 Hz to > 200 kHz, typical -1.0 dB @ 10 Hz, typical -1.5 dB @ 200 kHz
+  - Noise (60 dBu Gain, 10 Hz - 30 kHz, Inputs common): -130 dB EIN
+  - Total Harmonic Distortion + Noise (35 dB Gain, 10 Hz - 20 kHz bandwidth, +24 dBu Out): < .003%, Typical < .001%
+  - Intermodulation Distortion (50 Hz & 7 kHz, 35 dB Gain): < .0006% +12 dBu Out, < .001% +20 dBu Out
+  - Phase Response (35 dB Gain, 50 Hz - 20 kHz bandwidth, +27 dBu Out): < 2 degrees deviation
+  - Common Mode Rejection Ratio (35 dB Gain, 10 Hz - 20 kHz bandwidth, 100 mV C.M.): > 65 dB, Typ > 85 dB
+  - Slew Rate (35 dB Gain, +24 dBu Out): > 25 Volts per microsecond
+  - Maximum Input Level (20 Hz - 40 kHz): +12dBu @ 0.02% THD+N, +18dBu @ 0.02% THD+N with pad
+  - Maximum Output Level (1 kHz @ 35dB of gain): THD+N < 0.001% at +26dBu output, < 0.05% at +28 dBu output
+  - Input Impedance (1 kHz): 2k2 phantom / 1M inst
+  - Output Impedance: 24.3 Ohms (x2)
+  - Phantom Powering: provided by 500 rack
+  - Dimensions/Shipping Weight: 1.5" W x 5.25" H x 6" D, 2 lbs.
+  - Environmental: 0 to +40 C / +32 to +104 F, 10% to 80% RH, maximum altitude 3,000 meters
+io:
+  - key: 68MbhPRw
+    name: Microphone Input (Rack Connector)
+    signalFlow: input
+    category: audio
+    type: mic
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - key: 38e3xaWS
+    name: Line Output (Rack Connector)
+    signalFlow: output
+    category: audio
+    type: line
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - key: J4a6BgS0
+    name: Rack Power
+    signalFlow: input
+    category: power
+    type: power
+    connection: pin
+    maxConnections: 1
+    position: Bottom
+  - key: HtoEBryp
+    name: Instrument Input
+    signalFlow: input
+    category: audio
+    type: instrument
+    connection: 1/4-inch
+    maxConnections: 1
+    position: Top
+links:
+  - url: https://www.mil-media.com/wp-content/uploads/2025/02/HV-35-User-Guide-030322.pdf
+    type: support
+    title: HV-35 User Guide
+  - url: https://www.mil-media.com/wp-content/uploads/2025/02/HV-3-preamp-comparison-090423.pdf
+    type: resource
+    title: HV-3 Preamp Comparison

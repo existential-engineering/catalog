@@ -1,0 +1,76 @@
+id: cHxJ7KRvovvjMjP2zIp4f
+name: MADI 316 Option
+manufacturer: millennia
+primaryCategory: audio-interface
+searchTerms:
+  - MADI316
+  - MADI-316
+categories:
+  - digital
+  - routing
+  - rack-mount
+url: https://www.mil-media.com/product/madi-316-option/
+prices:
+  - amount: 895.79
+    currency: USD
+description: The MADI 316 Option is a factory-installed card that adds a sixteen
+  channel 24-bit 192 kHz MADI digital output to the HV-316 microphone
+  preamplifier. It carries optical and BNC MADI connections plus an external
+  word clock input, and can clock from the incoming MADI stream.
+details: |-
+  The MADI 316 Option adds sixteen channels of MADI digital output to the HV-316 microphone preamplifier at up to 24-bit 192 kHz. It is built on an industry standard i64 style MADI card with custom software, and any HV-316 unit can have the option installed.
+
+  Optical and BNC MADI input and output connectors are provided, along with an external word clock input. Clocking can be taken from the incoming MADI stream and defaults to 48 kHz. The card is installed at the factory and powered by the host preamplifier rather than a supply of its own.
+specs: |-
+  - Channels: 16 MADI outputs
+  - Resolution: 24-bit, up to 192 kHz
+  - Clocking: External from the MADI stream, defaults to 48 kHz
+  - Connectors: Optical and BNC MADI input and output, external word clock input
+  - Card: Industry standard i64 MADI style card with custom software
+  - Host Compatibility: All HV-316 units
+  - Installation: Factory-installed, powered by the host unit
+io:
+  - key: DKLItHlE
+    name: MADI Optical Input
+    signalFlow: input
+    category: digital
+    type: madi
+    connection: proprietary
+    maxConnections: 64
+    position: Right
+  - key: j9vKXe4z
+    name: MADI Optical Output
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: proprietary
+    maxConnections: 64
+    position: Right
+  - key: 8xIoWsku
+    name: MADI Coaxial Input
+    signalFlow: input
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - key: yY9dkkTg
+    name: MADI Coaxial Output
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - key: F51rkcD6
+    name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
+    maxConnections: 1
+    position: Right
+links:
+  - url: https://www.mil-media.com/wp-content/uploads/2025/02/HV-316-Manual-With-MADI-032723-1.pdf
+    type: support
+    title: HV-316 Manual rev 032723
