@@ -28,7 +28,7 @@ details: |-
 
   Switching uses Grayhill mil-spec gold contacts and the universal supply accepts 100 V to 240 V at 50 or 60 Hz. Phantom powering is +48 V dc, and a non-phantom 130 V DPA (B&K) microphone powering input is available as a per-channel option alongside a ribbon-optimized DC coupled input and an extra 10 dB of gain at no charge.
 
-  The digital specification block published on this page is the Dante table shared with the HV-3D-8 Dante build, covering Ethernet on dual RJ-45 ports at 1 Gbps, sample rates from 44.1 kHz to 192 kHz and a minimum latency of 250 microseconds. The page states no medium, connector or channel count for the MADI output itself.
+  The fitted MADI D card carries eight channels of MADI digital output at up to 24-bit 192 kHz, referenced to -18 dBFS, on an industry standard i64 style MADI card with custom software. Optical and BNC MADI input and output connectors are provided along with an external word clock input, and clocking can be taken from the incoming MADI stream, defaulting to 48 kHz.
 specs: |-
   - Minimum Gain: 8.5 dB
   - Maximum Gain (1.5 dB per step, 36 steps): 60 dB (up to 70 dB on request)
@@ -188,12 +188,44 @@ io:
     connection: xlr
     maxConnections: 1
     position: Right
+  - key: hT4mQzWv
+    name: MADI Optical Input
+    signalFlow: input
+    category: digital
+    type: madi
+    connection: sc
+    maxConnections: 64
+    position: Right
   - key: nrwBuFZ4
-    name: MADI Output
+    name: MADI Optical Output
     signalFlow: output
     category: digital
     type: madi
-    connection: proprietary
+    connection: sc
+    maxConnections: 64
+    position: Right
+  - key: pL9kRbTc
+    name: MADI Coaxial Input
+    signalFlow: input
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - key: Ys6wNdHj
+    name: MADI Coaxial Output
+    signalFlow: output
+    category: digital
+    type: madi
+    connection: bnc
+    maxConnections: 64
+    position: Right
+  - key: Vd3nJcT8
+    name: Word Clock Input
+    signalFlow: input
+    category: digital
+    type: word clock
+    connection: bnc
     maxConnections: 1
     position: Right
   - key: kC6jZYHS
